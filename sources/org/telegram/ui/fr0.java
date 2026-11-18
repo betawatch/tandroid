@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class fr0 {
     public float A;
@@ -43,7 +43,7 @@ public class fr0 {
     public final ViewGroup a;
     public final ViewGroup b;
     public final boolean c;
-    public org.telegram.ui.Cells.u5 d;
+    public org.telegram.ui.Cells.v5 d;
     public View e;
     public ImageReceiver f;
     public ImageReceiver g;
@@ -139,16 +139,16 @@ public class fr0 {
                 viewGroup.getParent().requestDisallowInterceptTouchEvent(true);
                 this.e = viewGroup;
                 this.D = fjVar;
-                org.telegram.ui.Cells.u5 u5Var = this.d;
+                org.telegram.ui.Cells.v5 v5Var = this.d;
                 ViewGroup viewGroup2 = this.a;
                 boolean z10 = this.c;
-                if (u5Var != null || z10) {
+                if (v5Var != null || z10) {
                     i12 = -1;
                 } else {
                     i12 = -1;
-                    org.telegram.ui.Cells.u5 u5Var2 = new org.telegram.ui.Cells.u5(this, viewGroup2.getContext());
-                    this.d = u5Var2;
-                    u5Var2.setFocusable(false);
+                    org.telegram.ui.Cells.v5 v5Var2 = new org.telegram.ui.Cells.v5(this, viewGroup2.getContext());
+                    this.d = v5Var2;
+                    v5Var2.setFocusable(false);
                     this.d.setFocusableInTouchMode(false);
                     this.d.setEnabled(false);
                 }
@@ -297,8 +297,8 @@ public class fr0 {
                     if (fjVar != null && org.telegram.messenger.fj.L4(fjVar.k) && MediaController.B().I(fjVar)) {
                         this.R = true;
                         MediaController B = MediaController.B();
-                        org.telegram.ui.Cells.u5 u5Var3 = this.d;
-                        B.p0((TextureView) u5Var3.d, (j4) u5Var3.e, (FrameLayout) u5Var3.c, true);
+                        org.telegram.ui.Cells.v5 v5Var3 = this.d;
+                        B.p0((TextureView) v5Var3.d, (j4) v5Var3.e, (FrameLayout) v5Var3.c, true);
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ((FrameLayout) this.d.c).getLayoutParams();
                         ((FrameLayout) this.d.c).setTag(R.id.parent_tag, imageReceiver);
                         if (layoutParams.width != imageReceiver.N0 || layoutParams.height != imageReceiver.O0) {
@@ -372,8 +372,8 @@ public class fr0 {
             }
             this.n = false;
         }
-        org.telegram.ui.Cells.u5 u5Var = this.d;
-        if (u5Var != null && u5Var.getParent() != null) {
+        org.telegram.ui.Cells.v5 v5Var = this.d;
+        if (v5Var != null && v5Var.getParent() != null) {
             this.a.removeView(this.d);
             this.d.b.getImageReceiver().f();
             xh.e eVar = this.k;
@@ -435,9 +435,9 @@ public class fr0 {
         if (this.c && (view = this.e) != null) {
             view.invalidate();
         }
-        org.telegram.ui.Cells.u5 u5Var = this.d;
-        if (u5Var != null) {
-            u5Var.invalidate();
+        org.telegram.ui.Cells.v5 v5Var = this.d;
+        if (v5Var != null) {
+            v5Var.invalidate();
         }
     }
 

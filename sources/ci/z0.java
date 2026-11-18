@@ -43,7 +43,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.widget.OverScroller;
-import bi.u4;
+import bi.t4;
 import com.google.android.gms.internal.vision.e2;
 import di.o8;
 import fi.s2;
@@ -73,7 +73,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.y1;
-import org.telegram.ui.Cells.u6;
+import org.telegram.ui.Cells.v6;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.lr;
@@ -84,7 +84,7 @@ import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.wu0;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class z0 extends View {
     public static int[] E9;
@@ -1898,7 +1898,7 @@ public final class z0 extends View {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.h ? p5.c.k(" ", upperCase) : upperCase);
                     if (this.h) {
                         f14 = f34;
-                        spannableStringBuilder.setSpan(new u6(this.H5), 0, 1, 33);
+                        spannableStringBuilder.setSpan(new v6(this.H5), 0, 1, 33);
                     } else {
                         f14 = f34;
                     }
@@ -7500,7 +7500,7 @@ public final class z0 extends View {
     public final void d1(int i7, String str, String str2) {
         long currentTimeMillis = 0 - System.currentTimeMillis();
         if (currentTimeMillis > 0) {
-            postDelayed(new u4((Object) this, i7, str, (Serializable) str2, 1), currentTimeMillis);
+            postDelayed(new t4((Object) this, i7, str, (Serializable) str2, 1), currentTimeMillis);
             return;
         }
         this.o1 = i7;

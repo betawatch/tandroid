@@ -31,10 +31,10 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Components.y60;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import p5.e;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class d implements ib.b, q5.b {
     public final /* synthetic */ int a;
@@ -191,7 +191,7 @@ public final class d implements ib.b, q5.b {
                 Context context = (Context) ((fd.a) this.b).get();
                 e eVar = (e) ((fd.a) this.c).get();
                 v5.d dVar = (v5.d) ((fd.a) this.d).get();
-                md0 md0Var = (md0) ((md0) this.e).get();
+                nd0 nd0Var = (nd0) ((nd0) this.e).get();
                 Executor executor = (Executor) ((fd.a) this.f).get();
                 w5.c cVar = (w5.c) ((fd.a) this.h).get();
                 qb.a aVar = new qb.a(28);
@@ -201,7 +201,7 @@ public final class d implements ib.b, q5.b {
                 cVar3.a = context;
                 cVar3.b = eVar;
                 cVar3.c = dVar;
-                cVar3.d = md0Var;
+                cVar3.d = nd0Var;
                 cVar3.e = executor;
                 cVar3.f = cVar;
                 cVar3.g = aVar;

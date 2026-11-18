@@ -16,9 +16,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.bn;
 import org.telegram.ui.ne;
-import org.telegram.ui.t60;
+import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class p implements Runnable {
             case 4:
                 h2 h2Var = (h2) obj3;
                 hi.d dVar = (hi.d) obj;
-                if (!((bi.h6) obj2).canScrollVertically(1)) {
+                if (!((bi.g6) obj2).canScrollVertically(1)) {
                     h2Var.p = true;
                 }
                 dVar.setEnabled((!h2Var.p || h2Var.m || h2Var.n) ? false : true);
@@ -135,7 +135,7 @@ public final /* synthetic */ class p implements Runnable {
                 l2 l2Var3 = (l2) obj2;
                 g2 g2Var = (g2) obj3;
                 l2Var3.getClass();
-                k kVar2 = new k((t60) obj, 2);
+                k kVar2 = new k((u60) obj, 2);
                 TL_wallet.tonConnectSession tonconnectsession3 = g2Var.e;
                 if (!tonconnectsession3.closed && !tonconnectsession3.closing && tonconnectsession3.manifest_error == null && tonconnectsession3.manifest != null) {
                     if (!g2Var.f) {
@@ -154,7 +154,7 @@ public final /* synthetic */ class p implements Runnable {
             case 8:
                 boolean[] zArr = (boolean[]) obj3;
                 w2 w2Var = (w2) obj;
-                z2.a.remove((bi.d5) obj2);
+                z2.a.remove((bi.c5) obj2);
                 if (!zArr[0]) {
                     zArr[0] = true;
                     lc.c0(gd.M0(2131742701, null));

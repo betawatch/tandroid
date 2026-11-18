@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public oa A0;
@@ -169,9 +169,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.h2 impleme
                 if (d2 == null) {
                     return;
                 }
-                org.telegram.ui.Cells.m8 m8Var = (org.telegram.ui.Cells.m8) view;
-                m8Var.setChecked(!m8Var.d());
-                d2.sponsored_enabled = m8Var.d();
+                org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
+                n8Var.setChecked(!n8Var.d());
+                d2.sponsored_enabled = n8Var.d();
                 TL_account.toggleSponsoredMessages togglesponsoredmessages = new TL_account.toggleSponsoredMessages();
                 togglesponsoredmessages.enabled = d2.sponsored_enabled;
                 premiumPreviewFragment.getConnectionsManager().sendRequest(togglesponsoredmessages, new l(premiumPreviewFragment, 17));
@@ -238,7 +238,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.h2 impleme
                     }
                 }
                 Long i15 = org.telegram.messenger.o10.i(premiumPreviewFragment.getUserConfig().f());
-                bi.m6 m6Var = new bi.m6(26, premiumPreviewFragment, js0Var2);
+                bi.l6 l6Var = new bi.l6(26, premiumPreviewFragment, js0Var2);
                 if (premiumPreviewFragment.v0 == null) {
                     i11[] i11VarArr = new i11[1];
                     boolean z10 = ((float) (js0Var2.getHeight() + js0Var2.getTop())) > ((float) premiumPreviewFragment.a.getMeasuredHeight()) / 2.0f;
@@ -279,7 +279,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.h2 impleme
                         i11 = 0;
                     }
                     int i16 = i10;
-                    ns0 ns0Var = new ns0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i11), z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), z10 ? 24 : 16, m6Var, i11VarArr);
+                    ns0 ns0Var = new ns0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i11), z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), z10 ? 24 : 16, l6Var, i11VarArr);
                     ns0Var.h1 = true;
                     ns0Var.setSelected(i15);
                     ns0Var.setSaveState(3);
@@ -953,13 +953,13 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.h2 impleme
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = org.telegram.messenger.ks.l5;
-        int i12 = org.telegram.messenger.ks.i5;
+        int i11 = org.telegram.messenger.ks.m5;
+        int i12 = org.telegram.messenger.ks.j5;
         if (i7 == i11 || i7 == i12) {
             y0(false);
             this.V.a();
         }
-        if (i7 == org.telegram.messenger.ks.h5 || i7 == i12) {
+        if (i7 == org.telegram.messenger.ks.i5 || i7 == i12) {
             this.V.b();
             this.V.a();
             B0();
@@ -1023,9 +1023,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.h2 impleme
         if (getMessagesController().K3()) {
             return false;
         }
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l5);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.h5);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.i5);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.m5);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.i5);
+        getNotificationCenter().c(this, org.telegram.messenger.ks.j5);
         if (getMediaDataController().E != null) {
             ArrayList<TLRPC.Document> arrayList = getMediaDataController().E.videos;
             int size = arrayList.size();
@@ -1045,9 +1045,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.h2 impleme
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l5);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.h5);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.i5);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.m5);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.i5);
+        getNotificationCenter().n(this, org.telegram.messenger.ks.j5);
     }
 
     @Override // org.telegram.ui.ActionBar.h2

@@ -21,9 +21,9 @@ import org.telegram.ui.Components.z41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.rj;
-import org.telegram.ui.t80;
+import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ab extends org.telegram.ui.Components.sa implements fs {
     public final za T1;
@@ -45,7 +45,7 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
         int i7 = this.u0;
         final int i10 = 0;
         ck0Var.setPadding(i7, 0, i7, 0);
-        this.o1.setOnItemClickListener(new bi.i8(this, 3));
+        this.o1.setOnItemClickListener(new bi.h8(this, 3));
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
@@ -143,7 +143,7 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
         }
         super.dismiss();
         org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
-        t80 t80Var = LaunchActivity.H1.w0;
+        u80 u80Var = LaunchActivity.H1.w0;
         if (T == null) {
             return;
         }
@@ -156,8 +156,8 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
             org.telegram.ui.Components.gc L = org.telegram.ui.Components.lc.b0(T).L(R.raw.stars_send, gd.M0(2131744865, null), org.telegram.messenger.g0.W2(gd.G((int) l41Var.C, "StarsGiftSentPopupInfo", o10.l(abVar.V1))), gd.M0(2131743315, null), new g3(j3, i7));
             L.j = 5000;
             L.k(true);
-            if (t80Var != null) {
-                t80Var.c(true);
+            if (u80Var != null) {
+                u80Var.c(true);
             }
             x8.y(abVar.a, false).R(true);
         }

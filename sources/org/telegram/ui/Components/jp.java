@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jp extends bk0 {
     public final org.telegram.ui.ActionBar.i6 c;
@@ -82,7 +82,7 @@ public final class jp extends bk0 {
                 boolean z10 = false;
                 while (true) {
                     try {
-                        int read = fileInputStream2.read(org.telegram.ui.Cells.ha.q3);
+                        int read = fileInputStream2.read(org.telegram.ui.Cells.ia.q3);
                         if (read == -1) {
                             fileInputStream = fileInputStream2;
                             break;
@@ -95,7 +95,7 @@ public final class jp extends bk0 {
                                 fileInputStream = fileInputStream2;
                                 break;
                             }
-                            byte[] bArr = org.telegram.ui.Cells.ha.q3;
+                            byte[] bArr = org.telegram.ui.Cells.ia.q3;
                             if (bArr[i13] == 10) {
                                 int i15 = i13 - i14;
                                 int i16 = i15 + 1;

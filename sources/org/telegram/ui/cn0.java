@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class cn0 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public int E;
@@ -148,17 +148,17 @@ public final class cn0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         cn0Var.i0(str, "", z10, false);
     }
 
-    public static org.telegram.ui.Cells.r5 a0(cn0 cn0Var, int i7) {
+    public static org.telegram.ui.Cells.s5 a0(cn0 cn0Var, int i7) {
         int childCount = cn0Var.L.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = cn0Var.L.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.r5) {
-                org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                int intValue = ((Integer) r5Var.getTag()).intValue();
+            if (childAt instanceof org.telegram.ui.Cells.s5) {
+                org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                int intValue = ((Integer) s5Var.getTag()).intValue();
                 org.telegram.messenger.ue ueVar = cn0Var.K;
                 if (ueVar == null ? !(intValue < 0 || intValue >= cn0Var.f.size()) : !(intValue < 0 || intValue >= ueVar.e.size())) {
                     if (intValue == i7) {
-                        return r5Var;
+                        return s5Var;
                     }
                 }
             }
@@ -399,8 +399,8 @@ public final class cn0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
 
     public final void f0(View view, Object obj) {
         boolean z10 = d0(-1, obj) == -1;
-        if (view instanceof org.telegram.ui.Cells.h7) {
-            ((org.telegram.ui.Cells.h7) view).b(this.c.contains(Integer.valueOf(((org.telegram.messenger.ef) this.K.e.get(((Integer) view.getTag()).intValue())).C)), true);
+        if (view instanceof org.telegram.ui.Cells.i7) {
+            ((org.telegram.ui.Cells.i7) view).b(this.c.contains(Integer.valueOf(((org.telegram.messenger.ef) this.K.e.get(((Integer) view.getTag()).intValue())).C)), true);
         }
         n0(z10 ? 1 : 2);
         this.t0.u();
@@ -602,19 +602,19 @@ public final class cn0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             int childCount = this.L.getChildCount();
             for (int i7 = 0; i7 < childCount; i7++) {
                 View childAt = this.L.getChildAt(i7);
-                boolean z10 = childAt instanceof org.telegram.ui.Cells.r5;
+                boolean z10 = childAt instanceof org.telegram.ui.Cells.s5;
                 org.telegram.messenger.ue ueVar = this.K;
                 ArrayList arrayList = this.c;
                 if (z10) {
-                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
                     Integer num = (Integer) childAt.getTag();
                     if (ueVar != null) {
-                        r5Var.setNum(this.e ? arrayList.indexOf(Integer.valueOf(((org.telegram.messenger.ef) ueVar.e.get(num.intValue())).C)) : -1);
+                        s5Var.setNum(this.e ? arrayList.indexOf(Integer.valueOf(((org.telegram.messenger.ef) ueVar.e.get(num.intValue())).C)) : -1);
                     } else {
-                        r5Var.setNum(this.e ? arrayList.indexOf(((org.telegram.messenger.hf) this.f.get(num.intValue())).B) : -1);
+                        s5Var.setNum(this.e ? arrayList.indexOf(((org.telegram.messenger.hf) this.f.get(num.intValue())).B) : -1);
                     }
-                } else if (childAt instanceof org.telegram.ui.Cells.h7) {
-                    ((org.telegram.ui.Cells.h7) childAt).b(arrayList.indexOf(Integer.valueOf(((org.telegram.messenger.ef) ueVar.e.get(((Integer) childAt.getTag()).intValue())).C)) != 0, false);
+                } else if (childAt instanceof org.telegram.ui.Cells.i7) {
+                    ((org.telegram.ui.Cells.i7) childAt).b(arrayList.indexOf(Integer.valueOf(((org.telegram.messenger.ef) ueVar.e.get(((Integer) childAt.getTag()).intValue())).C)) != 0, false);
                 }
             }
         }

@@ -15,9 +15,9 @@ import android.graphics.Typeface;
 import android.view.TextureView;
 import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class rz0 extends org.telegram.ui.Cells.q1 {
+public final class rz0 extends org.telegram.ui.Cells.r1 {
     public final RectF Ad;
     public final RectF Bd;
     public RadialGradient Cd;
@@ -47,7 +47,7 @@ public final class rz0 extends org.telegram.ui.Cells.q1 {
         this.Jd = new org.telegram.ui.Components.c6(0.0f, this, 0L, 120L, new LinearInterpolator());
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public final void N0(Canvas canvas) {
         Paint paint = this.Dd;
         tz0 tz0Var = this.Md;
@@ -122,24 +122,24 @@ public final class rz0 extends org.telegram.ui.Cells.q1 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public final void O0(Canvas canvas) {
         float f10 = this.Md.w;
         Typeface typeface = org.telegram.messenger.g0.a;
         super.O0(canvas);
     }
 
-    @Override // org.telegram.ui.Cells.q1, org.telegram.ui.Cells.z
+    @Override // org.telegram.ui.Cells.r1, org.telegram.ui.Cells.z
     public final int getBoundsLeft() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.q1, org.telegram.ui.Cells.z
+    @Override // org.telegram.ui.Cells.r1, org.telegram.ui.Cells.z
     public final int getBoundsRight() {
         return getWidth();
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public final void o1(Canvas canvas, float f10, Integer num) {
         canvas.save();
         int i7 = -this.O.b;
@@ -149,7 +149,7 @@ public final class rz0 extends org.telegram.ui.Cells.q1 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         tz0 tz0Var = this.Md;
@@ -190,7 +190,7 @@ public final class rz0 extends org.telegram.ui.Cells.q1 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final void onMeasure(int i7, int i10) {
         setMeasuredDimension(this.Kd, this.Ld);
     }
@@ -205,7 +205,7 @@ public final class rz0 extends org.telegram.ui.Cells.q1 {
         textureView.setVisibility(i7);
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public final void y1(float f10, Canvas canvas, boolean z10) {
         canvas.save();
         tz0 tz0Var = this.Md;
@@ -226,7 +226,7 @@ public final class rz0 extends org.telegram.ui.Cells.q1 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final void setPressed(boolean z10) {
     }
 }

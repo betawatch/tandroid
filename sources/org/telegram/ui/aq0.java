@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -201,9 +201,9 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
             photoViewer.f0.setLayerType(2, null);
             photoViewer.w2(false);
             photoViewer.o4 = System.currentTimeMillis();
-            org.telegram.messenger.g0.g3(new ve0(26, this, animatorSet));
+            org.telegram.messenger.g0.g3(new we0(26, this, animatorSet));
         }
-        backgroundDrawable.d = new ve0(27, this, wq0Var);
+        backgroundDrawable.d = new we0(27, this, wq0Var);
         bn bnVar = photoViewer.l4;
         if (bnVar == null || bnVar.getFragmentView() == null) {
             return true;

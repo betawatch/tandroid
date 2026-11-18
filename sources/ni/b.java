@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.d6;
+import bi.c6;
 import c8.ma;
 import di.j0;
 import hi.w4;
@@ -50,9 +50,9 @@ import org.telegram.ui.ActionBar.r0;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.c2;
-import org.telegram.ui.Cells.h6;
-import org.telegram.ui.Cells.n4;
+import org.telegram.ui.Cells.d2;
+import org.telegram.ui.Cells.l3;
+import org.telegram.ui.Cells.o4;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.g8;
 import org.telegram.ui.Components.h0;
@@ -65,11 +65,11 @@ import org.telegram.ui.Components.y60;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.a1;
 import org.telegram.ui.b5;
-import org.telegram.ui.bd0;
 import org.telegram.ui.bn;
 import org.telegram.ui.c5;
 import org.telegram.ui.c51;
 import org.telegram.ui.c7;
+import org.telegram.ui.cd0;
 import org.telegram.ui.dt;
 import org.telegram.ui.f9;
 import org.telegram.ui.g4;
@@ -101,7 +101,7 @@ import org.telegram.ui.y;
 import org.telegram.ui.yn;
 import ug.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -181,7 +181,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                             q qVar = new q(g4Var, i13);
                             q qVar2 = new q(g4Var, 2);
                             y yVar = new y(g4Var, u10, k3Var, i12);
-                            d6 d6Var = kVar.x;
+                            c6 c6Var = kVar.x;
                             ImageView imageView = kVar.f;
                             if (favicon == null) {
                                 imageView.setImageResource(R.drawable.msg_language);
@@ -211,12 +211,12 @@ public final /* synthetic */ class b implements View.OnClickListener {
                             kVar.M = xVar;
                             kVar.N = qVar;
                             kVar.O = qVar2;
-                            kVar.e.setOnClickListener(new bd0(26, kVar, wVar));
+                            kVar.e.setOnClickListener(new cd0(26, kVar, wVar));
                             kVar.n.setOnClickListener(yVar);
                             kVar.b = false;
                             kVar.setInput(null);
-                            d6Var.g3.O(true);
-                            d6Var.v0(0);
+                            c6Var.g3.O(true);
+                            c6Var.v0(0);
                         }
                         l0 l0Var = g4Var.i0;
                         d dVar = new d(9, k3Var, activity);
@@ -249,7 +249,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 b5Var.e.c((c5) obj);
                 break;
             case 7:
-                ((x6) ((v6) obj2).f).x0((c2) obj);
+                ((x6) ((v6) obj2).f).x0((d2) obj);
                 break;
             case 8:
                 c7 c7Var = (c7) obj2;
@@ -335,9 +335,9 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 bn.p1((bn) obj2, (y60) obj);
                 break;
             case 15:
-                c2 c2Var = (c2) obj2;
-                boolean z12 = !c2Var.b();
-                c2Var.c(z12, true);
+                d2 d2Var = (d2) obj2;
+                boolean z12 = !d2Var.b();
+                d2Var.c(z12, true);
                 ((AtomicBoolean) obj).set(z12);
                 break;
             case 16:
@@ -349,29 +349,29 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 w4 w4Var = new w4(context, (i6) null);
                 ((x2) w4Var.b).v0 = false;
                 LinearLayout g10 = f3.g(context, 1);
-                n4 n4Var = new n4(context, n6.n5, 23, 15, false, null);
-                n4Var.setHeight(47);
-                n4Var.setText(gd.M0(2131752222, "ChatHistory"));
-                g10.addView(n4Var);
+                o4 o4Var = new o4(context, n6.n5, 23, 15, false, null);
+                o4Var.setHeight(47);
+                o4Var.setText(gd.M0(2131752222, "ChatHistory"));
+                g10.addView(o4Var);
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setOrientation(1);
                 g10.addView(linearLayout, ma.o(-1, -2));
-                h6[] h6VarArr = new h6[2];
+                org.telegram.ui.Cells.i6[] i6VarArr = new org.telegram.ui.Cells.i6[2];
                 int i17 = 0;
                 while (i17 < i11) {
-                    h6 h6Var = new h6(context, true);
-                    h6VarArr[i17] = h6Var;
-                    h6Var.setTag(Integer.valueOf(i17));
-                    u6.Q(h6VarArr[i17], n6.N0(false), r72, u6.M(n6.i6), r72);
+                    org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, true);
+                    i6VarArr[i17] = i6Var;
+                    i6Var.setTag(Integer.valueOf(i17));
+                    u6.Q(i6VarArr[i17], n6.N0(false), r72, u6.M(n6.i6), r72);
                     if (i17 == 0) {
-                        h6VarArr[i17].b(gd.M0(2131752217, "ChatHistoryVisible"), gd.M0(2131752216, "ChatHistoryVisibleInfo"), true, !rnVar.K0);
+                        i6VarArr[i17].b(gd.M0(2131752217, "ChatHistoryVisible"), gd.M0(2131752216, "ChatHistoryVisibleInfo"), true, !rnVar.K0);
                     } else if (v3.T(rnVar.x0)) {
-                        h6VarArr[i17].b(gd.M0(2131752221, "ChatHistoryHidden"), gd.M0(2131752220, "ChatHistoryHiddenInfo"), false, rnVar.K0);
+                        i6VarArr[i17].b(gd.M0(2131752221, "ChatHistoryHidden"), gd.M0(2131752220, "ChatHistoryHiddenInfo"), false, rnVar.K0);
                     } else {
-                        h6VarArr[i17].b(gd.M0(2131752221, "ChatHistoryHidden"), gd.M0(2131752219, "ChatHistoryHiddenInfo2"), false, rnVar.K0);
+                        i6VarArr[i17].b(gd.M0(2131752221, "ChatHistoryHidden"), gd.M0(2131752219, "ChatHistoryHiddenInfo2"), false, rnVar.K0);
                     }
-                    linearLayout.addView(h6VarArr[i17], ma.o(-1, -2));
-                    h6VarArr[i17].setOnClickListener(new y(rnVar, h6VarArr, w4Var, 8));
+                    linearLayout.addView(i6VarArr[i17], ma.o(-1, -2));
+                    i6VarArr[i17].setOnClickListener(new y(rnVar, i6VarArr, w4Var, 8));
                     i17++;
                     i11 = 2;
                     r72 = 0;
@@ -391,9 +391,9 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 break;
             case 21:
                 final h0 h0Var = (h0) obj2;
-                final i6 i6Var = (i6) obj;
-                org.telegram.ui.Cells.k3 k3Var2 = h0Var.X1;
-                org.telegram.ui.Cells.k3 k3Var3 = h0Var.W1;
+                final i6 i6Var2 = (i6) obj;
+                l3 l3Var = h0Var.X1;
+                l3 l3Var2 = h0Var.W1;
                 org.telegram.ui.Components.mp mpVar = h0Var.Z1;
                 hi.d dVar3 = h0Var.c2;
                 if (!dVar3.R) {
@@ -408,8 +408,8 @@ public final /* synthetic */ class b implements View.OnClickListener {
                             TL_aicompose.createTone createtone = new TL_aicompose.createTone();
                             createtone.display_author = mpVar.a.q;
                             createtone.emoji_id = h0Var.d2.longValue();
-                            createtone.title = k3Var3.getText().toString();
-                            createtone.prompt = k3Var2.getText().toString();
+                            createtone.title = l3Var2.getText().toString();
+                            createtone.prompt = l3Var.getText().toString();
                             ConnectionsManager.getInstance(h0Var.a).sendRequestTyped(createtone, new d3.b(i13), new q10() { // from class: org.telegram.ui.Components.c0
                                 @Override // org.telegram.messenger.q10
                                 public final void a(Object obj4, Object obj5) {
@@ -421,7 +421,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                                             h0Var2.c2.setLoading(false);
                                             if (aiComposeTone == null) {
                                                 if (tL_error != null) {
-                                                    org.telegram.ui.Cells.c0.t(h0Var2.b2, i6Var, tL_error, false);
+                                                    org.telegram.ui.Cells.c0.t(h0Var2.b2, i6Var2, tL_error, false);
                                                     break;
                                                 }
                                             } else {
@@ -440,12 +440,12 @@ public final /* synthetic */ class b implements View.OnClickListener {
                                             if (aiComposeTone == null) {
                                                 if (tL_error != null) {
                                                     boolean equalsIgnoreCase = "TONES_SAVED_TOO_MANY".equalsIgnoreCase(tL_error.text);
-                                                    org.telegram.ui.ActionBar.i6 i6Var2 = i6Var;
+                                                    org.telegram.ui.ActionBar.i6 i6Var3 = i6Var2;
                                                     if (!equalsIgnoreCase) {
-                                                        org.telegram.ui.Cells.c0.t(frameLayout, i6Var2, tL_error, false);
+                                                        org.telegram.ui.Cells.c0.t(frameLayout, i6Var3, tL_error, false);
                                                         break;
                                                     } else {
-                                                        m0.z1(new lc(frameLayout, i6Var2), h0Var3.a);
+                                                        m0.z1(new lc(frameLayout, i6Var3), h0Var3.a);
                                                         break;
                                                     }
                                                 }
@@ -470,9 +470,9 @@ public final /* synthetic */ class b implements View.OnClickListener {
                             updatetone.flags |= 2;
                             updatetone.emoji_id = h0Var.d2.longValue();
                             updatetone.flags |= 4;
-                            updatetone.title = k3Var3.getText().toString();
+                            updatetone.title = l3Var2.getText().toString();
                             updatetone.flags |= 8;
-                            updatetone.prompt = k3Var2.getText().toString();
+                            updatetone.prompt = l3Var.getText().toString();
                             ConnectionsManager.getInstance(h0Var.a).sendRequestTyped(updatetone, new d3.b(i13), new q10() { // from class: org.telegram.ui.Components.c0
                                 @Override // org.telegram.messenger.q10
                                 public final void a(Object obj4, Object obj5) {
@@ -484,7 +484,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                                             h0Var2.c2.setLoading(false);
                                             if (aiComposeTone == null) {
                                                 if (tL_error != null) {
-                                                    org.telegram.ui.Cells.c0.t(h0Var2.b2, i6Var, tL_error, false);
+                                                    org.telegram.ui.Cells.c0.t(h0Var2.b2, i6Var2, tL_error, false);
                                                     break;
                                                 }
                                             } else {
@@ -503,12 +503,12 @@ public final /* synthetic */ class b implements View.OnClickListener {
                                             if (aiComposeTone == null) {
                                                 if (tL_error != null) {
                                                     boolean equalsIgnoreCase = "TONES_SAVED_TOO_MANY".equalsIgnoreCase(tL_error.text);
-                                                    org.telegram.ui.ActionBar.i6 i6Var2 = i6Var;
+                                                    org.telegram.ui.ActionBar.i6 i6Var3 = i6Var2;
                                                     if (!equalsIgnoreCase) {
-                                                        org.telegram.ui.Cells.c0.t(frameLayout, i6Var2, tL_error, false);
+                                                        org.telegram.ui.Cells.c0.t(frameLayout, i6Var3, tL_error, false);
                                                         break;
                                                     } else {
-                                                        m0.z1(new lc(frameLayout, i6Var2), h0Var3.a);
+                                                        m0.z1(new lc(frameLayout, i6Var3), h0Var3.a);
                                                         break;
                                                     }
                                                 }
@@ -544,7 +544,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 boolean[] zArr = (boolean[]) obj2;
                 boolean z13 = !zArr[0];
                 zArr[0] = z13;
-                ((c2) view).c(z13, true);
+                ((d2) view).c(z13, true);
                 ((yn) obj).run();
                 break;
             case 25:

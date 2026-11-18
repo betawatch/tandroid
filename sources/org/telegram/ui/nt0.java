@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nt0 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -108,12 +108,12 @@ public final /* synthetic */ class nt0 implements org.telegram.ui.ActionBar.r1 {
                 contactsController.getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new org.telegram.messenger.t4(i11, contactsController, mt0Var));
                 break;
             case 4:
-                de0 de0Var = new de0();
+                ee0 ee0Var = new ee0();
                 mt0 mt0Var2 = new mt0(privacySettingsActivity, 2);
-                de0Var.G = 3;
-                de0Var.a = 12;
-                de0Var.e0 = mt0Var2;
-                privacySettingsActivity.presentFragment(de0Var);
+                ee0Var.G = 3;
+                ee0Var.a = 12;
+                ee0Var.e0 = mt0Var2;
+                privacySettingsActivity.presentFragment(ee0Var);
                 break;
         }
     }

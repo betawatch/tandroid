@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class n50 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public int E;
@@ -52,7 +52,7 @@ public final class n50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         }
         if (!n50Var.N) {
             if (i7 >= n50Var.F && i7 < n50Var.G) {
-                n50Var.i0((TLRPC.TL_messages_stickerSet) org.telegram.messenger.ri.d0(n50Var.currentAccount).u0(n50Var.h0()).get(i7 - n50Var.F), ((org.telegram.ui.Cells.g8) view).a(), false);
+                n50Var.i0((TLRPC.TL_messages_stickerSet) org.telegram.messenger.ri.d0(n50Var.currentAccount).u0(n50Var.h0()).get(i7 - n50Var.F), ((org.telegram.ui.Cells.h8) view).a(), false);
             }
             if (i7 == n50Var.K) {
                 n50Var.i0(n50Var.r, true, false);
@@ -61,11 +61,11 @@ public final class n50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             return;
         }
         if (i7 > n50Var.f.d.size()) {
-            boolean a10 = ((org.telegram.ui.Cells.g8) view).a();
+            boolean a10 = ((org.telegram.ui.Cells.h8) view).a();
             m50 m50Var = n50Var.f;
             n50Var.i0((TLRPC.TL_messages_stickerSet) m50Var.e.get((i7 - m50Var.d.size()) - 1), a10, false);
         } else if (i7 != n50Var.f.d.size()) {
-            n50Var.i0((TLRPC.TL_messages_stickerSet) n50Var.f.d.get(i7), ((org.telegram.ui.Cells.g8) view).a(), true);
+            n50Var.i0((TLRPC.TL_messages_stickerSet) n50Var.f.d.get(i7), ((org.telegram.ui.Cells.h8) view).a(), true);
         }
     }
 
@@ -140,7 +140,7 @@ public final class n50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 for (int i10 = 0; i10 < n50Var.d.getChildCount(); i10++) {
                     View childAt = n50Var.d.getChildAt(i10);
                     if (n50Var.d.T(childAt).b() == n50Var.F + i7) {
-                        ((org.telegram.ui.Cells.g8) childAt).b(false, true);
+                        ((org.telegram.ui.Cells.h8) childAt).b(false, true);
                         break;
                     }
                 }
@@ -152,7 +152,7 @@ public final class n50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 for (int i11 = 0; i11 < n50Var.d.getChildCount(); i11++) {
                     View childAt2 = n50Var.d.getChildAt(i11);
                     if (n50Var.d.T(childAt2).b() == n50Var.F + n50Var.n) {
-                        ((org.telegram.ui.Cells.g8) childAt2).b(true, true);
+                        ((org.telegram.ui.Cells.h8) childAt2).b(true, true);
                         return;
                     }
                 }

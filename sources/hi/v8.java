@@ -17,7 +17,7 @@ import org.telegram.messenger.ec;
 import org.telegram.messenger.fs;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ int a;
@@ -280,8 +280,8 @@ public final /* synthetic */ class v8 implements Runnable {
                             if (p02 != null) {
                                 tg.p0 p0Var = p02.s0;
                                 if (p0Var.getChildCount() == 1 && i18 > 0 && i19 > 0) {
-                                    if (p0Var.getChildAt(0) instanceof org.telegram.ui.Cells.q1) {
-                                        r12 = ((org.telegram.ui.Cells.q1) p0Var.getChildAt(0)).getPhotoImage();
+                                    if (p0Var.getChildAt(0) instanceof org.telegram.ui.Cells.r1) {
+                                        r12 = ((org.telegram.ui.Cells.r1) p0Var.getChildAt(0)).getPhotoImage();
                                         if (r12 != 0) {
                                             float f10 = r12.N0;
                                             if (((int) f10) > 0) {
@@ -1302,8 +1302,8 @@ public final /* synthetic */ class v8 implements Runnable {
                     if (p03 != null) {
                         tg.p0 p0Var2 = p03.s0;
                         if (p0Var2.getChildCount() == 1 && i31 > 0 && i32 > 0) {
-                            if (p0Var2.getChildAt(0) instanceof org.telegram.ui.Cells.q1) {
-                                imageReceiver = ((org.telegram.ui.Cells.q1) p0Var2.getChildAt(0)).getPhotoImage();
+                            if (p0Var2.getChildAt(0) instanceof org.telegram.ui.Cells.r1) {
+                                imageReceiver = ((org.telegram.ui.Cells.r1) p0Var2.getChildAt(0)).getPhotoImage();
                                 if (imageReceiver != null) {
                                     float f19 = imageReceiver.N0;
                                     if (((int) f19) > 0) {

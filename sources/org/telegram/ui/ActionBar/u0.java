@@ -10,7 +10,7 @@ import org.telegram.ui.Components.xm0;
 import org.telegram.ui.Components.xz;
 import org.telegram.ui.Components.ym0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class u0 extends xz {
     public final /* synthetic */ int e;
@@ -88,25 +88,25 @@ public final class u0 extends xz {
             case 0:
                 return ((v0) this.f).getSpeed();
             case 1:
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.f;
-                org.telegram.ui.Cells.i1 i1Var = q1Var.D4;
-                if (q1Var.Q5.I3()) {
-                    f10 = i1Var.b;
-                    i7 = i1Var.f;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.f;
+                org.telegram.ui.Cells.j1 j1Var = r1Var.D4;
+                if (r1Var.Q5.I3()) {
+                    f10 = j1Var.b;
+                    i7 = j1Var.f;
                     i10 = vm0.E;
                 } else {
-                    if (!fj.R4(q1Var.Q5.k)) {
-                        if (q1Var.Q5.h4()) {
-                            return q1Var.Q5.b0;
+                    if (!fj.R4(r1Var.Q5.k)) {
+                        if (r1Var.Q5.h4()) {
+                            return r1Var.Q5.b0;
                         }
                         return 0.0f;
                     }
-                    if (q1Var.C4) {
-                        bn0 bn0Var = q1Var.E4;
+                    if (r1Var.C4) {
+                        bn0 bn0Var = r1Var.E4;
                         return bn0Var.a / bn0Var.g;
                     }
-                    f10 = i1Var.b;
-                    i7 = i1Var.f;
+                    f10 = j1Var.b;
+                    i7 = j1Var.f;
                     i10 = vm0.E;
                 }
                 return f10 / (i7 - i10);
@@ -122,29 +122,29 @@ public final class u0 extends xz {
                 ((v0) this.f).e(true, f10);
                 break;
             case 1:
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.f;
-                bn0 bn0Var = q1Var.E4;
-                org.telegram.ui.Cells.i1 i1Var = q1Var.D4;
-                if (q1Var.Q5.I3()) {
-                    i1Var.h(f10);
-                } else if (fj.R4(q1Var.Q5.k)) {
-                    if (q1Var.C4) {
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.f;
+                bn0 bn0Var = r1Var.E4;
+                org.telegram.ui.Cells.j1 j1Var = r1Var.D4;
+                if (r1Var.Q5.I3()) {
+                    j1Var.h(f10);
+                } else if (fj.R4(r1Var.Q5.k)) {
+                    if (r1Var.C4) {
                         bn0Var.g(false, f10);
                     } else {
-                        i1Var.h(f10);
+                        j1Var.h(f10);
                     }
-                } else if (q1Var.Q5.h4()) {
-                    if (q1Var.C4) {
+                } else if (r1Var.Q5.h4()) {
+                    if (r1Var.C4) {
                         if (bn0Var != null) {
                             bn0Var.g(false, f10);
                         }
-                    } else if (i1Var != null) {
-                        i1Var.h(f10);
+                    } else if (j1Var != null) {
+                        j1Var.h(f10);
                     }
-                    q1Var.Q5.b0 = f10;
+                    r1Var.Q5.b0 = f10;
                 }
-                q1Var.a(f10);
-                q1Var.invalidate();
+                r1Var.a(f10);
+                r1Var.invalidate();
                 break;
             default:
                 ym0 ym0Var = (ym0) this.f;

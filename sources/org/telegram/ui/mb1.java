@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class mb1 extends org.telegram.ui.Components.ij0 {
     public final Context c;
@@ -81,8 +81,8 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
     @Override // v4.i0
     public final void A(v4.f1 f1Var) {
         View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.h4) {
-            ((org.telegram.ui.Cells.h4) view).a.getImageReceiver().c();
+        if (view instanceof org.telegram.ui.Cells.i4) {
+            ((org.telegram.ui.Cells.i4) view).a.getImageReceiver().c();
         }
     }
 
@@ -194,16 +194,16 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
             if (i11 != 2) {
                 return;
             }
-            org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
+            org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i7 != 0 || usersSelectActivity.G) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131750785, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131750785, null));
                 return;
             } else {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131750786, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131750786, null));
                 return;
             }
         }
-        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+        org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) view;
         if (this.n) {
             int size = this.d.size();
             jg.z1 z1Var = this.f;
@@ -250,8 +250,8 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
                                 spannableStringBuilder3 = spannableStringBuilder2;
                                 if (y10) {
                                 }
-                                h4Var.d(obj, charSequence, spannableStringBuilder3);
-                                org.telegram.ui.ActionBar.u6.X(h4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
+                                i4Var.d(obj, charSequence, spannableStringBuilder3);
+                                org.telegram.ui.ActionBar.u6.X(i4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
                                 if (j3 == j10) {
                                 }
                             } else {
@@ -261,13 +261,13 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
                                 spannableStringBuilder3 = spannableStringBuilder4;
                                 if (y10) {
                                 }
-                                h4Var.d(obj, charSequence, spannableStringBuilder3);
-                                org.telegram.ui.ActionBar.u6.X(h4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
+                                i4Var.d(obj, charSequence, spannableStringBuilder3);
+                                org.telegram.ui.ActionBar.u6.X(i4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
                                 if (j3 == j10) {
                                 }
                             }
                         } else if (!this.n) {
-                            Paint.FontMetricsInt fontMetricsInt = h4Var.getStatusTextView().getPaint().getFontMetricsInt();
+                            Paint.FontMetricsInt fontMetricsInt = i4Var.getStatusTextView().getPaint().getFontMetricsInt();
                             spannableStringBuilder = new SpannableStringBuilder();
                             ArrayList arrayList3 = usersSelectActivity.getMessagesController().Q0;
                             int size4 = arrayList3.size();
@@ -286,15 +286,15 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
                             y10 = true;
                             spannableStringBuilder3 = spannableStringBuilder4;
                             if (y10) {
-                                h4Var.setAlpha(0.5f);
+                                i4Var.setAlpha(0.5f);
                             } else {
-                                h4Var.setAlpha(1.0f);
+                                i4Var.setAlpha(1.0f);
                             }
-                            h4Var.d(obj, charSequence, spannableStringBuilder3);
-                            org.telegram.ui.ActionBar.u6.X(h4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
+                            i4Var.d(obj, charSequence, spannableStringBuilder3);
+                            org.telegram.ui.ActionBar.u6.X(i4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
                             if (j3 == j10) {
-                                h4Var.c(usersSelectActivity.P.h(j3) >= 0, false);
-                                h4Var.setCheckBoxEnabled(true);
+                                i4Var.c(usersSelectActivity.P.h(j3) >= 0, false);
+                                i4Var.setCheckBoxEnabled(true);
                                 return;
                             }
                             return;
@@ -307,8 +307,8 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
                     spannableStringBuilder3 = spannableStringBuilder4;
                     if (y10) {
                     }
-                    h4Var.d(obj, charSequence, spannableStringBuilder3);
-                    org.telegram.ui.ActionBar.u6.X(h4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
+                    i4Var.d(obj, charSequence, spannableStringBuilder3);
+                    org.telegram.ui.ActionBar.u6.X(i4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
                     if (j3 == j10) {
                     }
                 } else if (i7 > size && !TextUtils.isEmpty(K)) {
@@ -348,8 +348,8 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
                 spannableStringBuilder3 = spannableStringBuilder4;
                 if (y10) {
                 }
-                h4Var.d(obj, charSequence, spannableStringBuilder3);
-                org.telegram.ui.ActionBar.u6.X(h4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
+                i4Var.d(obj, charSequence, spannableStringBuilder3);
+                org.telegram.ui.ActionBar.u6.X(i4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
                 if (j3 == j10) {
                 }
             }
@@ -414,9 +414,9 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
                     str2 = "archived";
                     i12 = 128;
                 }
-                h4Var.d(str2, M0, null);
-                h4Var.c((usersSelectActivity.L & i12) == i12, false);
-                h4Var.setCheckBoxEnabled(true);
+                i4Var.d(str2, M0, null);
+                i4Var.c((usersSelectActivity.L & i12) == i12, false);
+                i4Var.setCheckBoxEnabled(true);
                 return;
             }
             obj = this.r.get(i7 - i15);
@@ -435,8 +435,8 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
         spannableStringBuilder3 = spannableStringBuilder4;
         if (y10) {
         }
-        h4Var.d(obj, charSequence, spannableStringBuilder3);
-        org.telegram.ui.ActionBar.u6.X(h4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
+        i4Var.d(obj, charSequence, spannableStringBuilder3);
+        org.telegram.ui.ActionBar.u6.X(i4Var.getStatusTextView(), !z11 ? org.telegram.ui.ActionBar.n6.n6 : org.telegram.ui.ActionBar.n6.y6, null);
         if (j3 == j10) {
         }
     }
@@ -444,6 +444,6 @@ public final class mb1 extends org.telegram.ui.Components.ij0 {
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         Context context = this.c;
-        return new org.telegram.ui.Components.kj0(i7 != 1 ? new org.telegram.ui.Cells.x3(context, null) : new org.telegram.ui.Cells.h4(context, 1, 0, true));
+        return new org.telegram.ui.Components.kj0(i7 != 1 ? new org.telegram.ui.Cells.y3(context, null) : new org.telegram.ui.Cells.i4(context, 1, 0, true));
     }
 }

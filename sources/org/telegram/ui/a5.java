@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a5 implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -529,13 +529,13 @@ public final /* synthetic */ class a5 implements org.telegram.messenger.q10 {
                 }
                 break;
             case 14:
-                r90 r90Var = (r90) this.b;
+                s90 s90Var = (s90) this.b;
                 TL_aicompose.Tones tones = (TL_aicompose.Tones) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                r90Var.c();
+                s90Var.c();
                 if (tones instanceof TL_aicompose.TL_tones) {
                     TL_aicompose.TL_tones tL_tones = (TL_aicompose.TL_tones) tones;
-                    org.telegram.messenger.mp.u1(r90Var.b).f4(tL_tones.users, false);
+                    org.telegram.messenger.mp.u1(s90Var.b).f4(tL_tones.users, false);
                     org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
                     if (T != null && !tL_tones.tones.isEmpty()) {
                         new org.telegram.ui.Components.v(T.getContext(), tL_tones.tones.get(0), T.getResourceProvider()).show();
@@ -543,48 +543,48 @@ public final /* synthetic */ class a5 implements org.telegram.messenger.q10 {
                     }
                 } else if (tL_error2 != null) {
                     if ("AICOMPOSE_TONE_SLUG_INVALID".equalsIgnoreCase(tL_error2.text)) {
-                        org.telegram.messenger.f3.n(null, 2131754974, r90.d(), R.raw.error, 36);
+                        org.telegram.messenger.f3.n(null, 2131754974, s90.d(), R.raw.error, 36);
                         break;
                     } else {
-                        r90.d().g0(tL_error2, false);
+                        s90.d().g0(tL_error2, false);
                         break;
                     }
                 }
                 break;
             case 15:
-                oc0 oc0Var = (oc0) this.b;
+                pc0 pc0Var = (pc0) this.b;
                 TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                de0 de0Var = oc0Var.Q;
-                oc0Var.J = false;
+                ee0 ee0Var = pc0Var.Q;
+                pc0Var.J = false;
                 if (auth_authorization instanceof TLRPC.TL_auth_authorization) {
-                    oc0Var.n();
-                    de0Var.N1(false, true);
-                    oc0Var.postDelayed(new n60(18, oc0Var, auth_authorization), 150L);
+                    pc0Var.n();
+                    ee0Var.N1(false, true);
+                    pc0Var.postDelayed(new o60(18, pc0Var, auth_authorization), 150L);
                     break;
                 } else {
-                    de0Var.C1(false, true);
+                    ee0Var.C1(false, true);
                     if (tL_error3.text.contains("PHONE_NUMBER_INVALID")) {
-                        de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748987, "InvalidPhoneNumber"));
+                        ee0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748987, "InvalidPhoneNumber"));
                         break;
                     } else if (!tL_error3.text.contains("PHONE_CODE_EMPTY") && !tL_error3.text.contains("PHONE_CODE_INVALID")) {
                         if (tL_error3.text.contains("PHONE_CODE_EXPIRED")) {
-                            oc0Var.c(true);
-                            de0Var.M1(0, true, null, true);
-                            de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131752010, "CodeExpired"));
+                            pc0Var.c(true);
+                            ee0Var.M1(0, true, null, true);
+                            ee0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131752010, "CodeExpired"));
                             break;
                         } else if (tL_error3.text.contains("FIRSTNAME_INVALID")) {
-                            de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748990, "InvalidFirstName"));
+                            ee0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748990, "InvalidFirstName"));
                             break;
                         } else if (tL_error3.text.contains("LASTNAME_INVALID")) {
-                            de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748988, "InvalidLastName"));
+                            ee0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748988, "InvalidLastName"));
                             break;
                         } else {
-                            de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), tL_error3.text);
+                            ee0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), tL_error3.text);
                             break;
                         }
                     } else {
-                        de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748991, "InvalidCode"));
+                        ee0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748991, "InvalidCode"));
                         break;
                     }
                 }
@@ -624,13 +624,13 @@ public final /* synthetic */ class a5 implements org.telegram.messenger.q10 {
                 arrayList11.add(org.telegram.ui.Components.l41.B(2, null));
                 if (is0Var.n) {
                     i5.c.s(2131746682, null, arrayList11);
-                    int[] a10 = org.telegram.ui.Cells.t7.a(new int[]{0, 10, 50, 100, org.telegram.messenger.ks.e3, org.telegram.messenger.ks.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) is0Var.getMessagesController().L6);
+                    int[] a10 = org.telegram.ui.Cells.u7.a(new int[]{0, 10, 50, 100, org.telegram.messenger.ks.e3, org.telegram.messenger.ks.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) is0Var.getMessagesController().L6);
                     l60 l60Var = new l60(i7);
-                    org.telegram.ui.Cells.s7 s7Var = new org.telegram.ui.Cells.s7();
-                    s7Var.c = a10;
-                    s7Var.d = 20;
-                    s7Var.e = l60Var;
-                    is0Var.b.d((int) Utilities.k(is0Var.r, 10000L, 0L), s7Var, new r3(is0Var, 21));
+                    org.telegram.ui.Cells.t7 t7Var = new org.telegram.ui.Cells.t7();
+                    t7Var.c = a10;
+                    t7Var.d = 20;
+                    t7Var.e = l60Var;
+                    is0Var.b.d((int) Utilities.k(is0Var.r, 10000L, 0L), t7Var, new r3(is0Var, 21));
                     arrayList11.add(org.telegram.ui.Components.l41.j(3, is0Var.b));
                     arrayList11.add(org.telegram.ui.Components.l41.B(4, is0Var.r > 0 ? is0Var.b0() : null));
                     TLRPC.Chat O03 = is0Var.getMessagesController().O0(Long.valueOf(is0Var.a));
@@ -680,18 +680,18 @@ public final /* synthetic */ class a5 implements org.telegram.messenger.q10 {
                         Context context2 = py0Var.getContext();
                         int i28 = org.telegram.ui.ActionBar.n6.L6;
                         int i29 = qy0.w1;
-                        org.telegram.ui.Cells.n4 n4Var2 = new org.telegram.ui.Cells.n4(context2, i28, 21, 0, 0, false, false, qy0Var.J0);
+                        org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(context2, i28, 21, 0, 0, false, false, qy0Var.J0);
                         TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption2 = py0Var.b;
                         if (tL_channels_sponsoredMessageReportResultChooseOption2 != null) {
-                            n4Var2.setText(tL_channels_sponsoredMessageReportResultChooseOption2.title);
+                            o4Var.setText(tL_channels_sponsoredMessageReportResultChooseOption2.title);
                         } else {
                             TLRPC.TL_reportResultChooseOption tL_reportResultChooseOption = py0Var.c;
                             if (tL_reportResultChooseOption != null) {
-                                n4Var2.setText(tL_reportResultChooseOption.title);
+                                o4Var.setText(tL_reportResultChooseOption.title);
                             }
                         }
-                        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, n4Var2, qy0Var.J0);
-                        org.telegram.ui.Components.l41 k10 = org.telegram.ui.Components.l41.k(n4Var2);
+                        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, o4Var, qy0Var.J0);
+                        org.telegram.ui.Components.l41 k10 = org.telegram.ui.Components.l41.k(o4Var);
                         k10.d = -2;
                         arrayList12.add(k10);
                         measuredHeight += 40;

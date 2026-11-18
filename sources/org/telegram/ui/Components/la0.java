@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class la0 implements oj0 {
     public final /* synthetic */ oa0 a;
@@ -28,8 +28,8 @@ public final class la0 implements oj0 {
         } else {
             oa0Var.r.g.put(e12, z11);
         }
-        if (view instanceof org.telegram.ui.Cells.q1) {
-            ((org.telegram.ui.Cells.q1) view).n3(z11, z11, true);
+        if (view instanceof org.telegram.ui.Cells.r1) {
+            ((org.telegram.ui.Cells.r1) view).n3(z11, z11, true);
         }
         oa0Var.l(true);
     }

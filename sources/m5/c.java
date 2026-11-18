@@ -41,14 +41,14 @@ import n5.t;
 import n5.v;
 import n5.w;
 import n5.y;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import p5.f;
 import pa.d;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class c implements f {
-    public final b5 a;
+    public final c5 a;
     public final ConnectivityManager b;
     public final Context c;
     public final URL d;
@@ -89,7 +89,7 @@ public final class c implements f {
         dVar.b(b0.class, fVar);
         dVar.b(p.class, fVar);
         dVar.d = true;
-        this.a = new b5(dVar);
+        this.a = new c5(dVar);
         this.c = context;
         this.b = (ConnectivityManager) context.getSystemService("connectivity");
         this.d = b(a.c);

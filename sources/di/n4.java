@@ -46,7 +46,7 @@ import org.telegram.ui.oy0;
 import org.telegram.ui.w61;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class n4 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -338,7 +338,7 @@ public final class n4 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Cells.q1 cell;
+        org.telegram.ui.Cells.r1 cell;
         ImageReceiver photoImage;
         switch (this.a) {
             case 0:
@@ -579,16 +579,16 @@ public final class n4 extends FrameLayout {
                     View childAt = p0Var.getChildAt(i14);
                     int left2 = childAt.getLeft();
                     int right = childAt.getRight();
-                    if (childAt instanceof org.telegram.ui.Cells.q1) {
-                        org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                        left2 = childAt.getLeft() + q1Var.getBoundsLeft();
+                    if (childAt instanceof org.telegram.ui.Cells.r1) {
+                        org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt;
+                        left2 = childAt.getLeft() + r1Var.getBoundsLeft();
                         left = childAt.getLeft();
-                        boundsRight = q1Var.getBoundsRight();
-                    } else if (childAt instanceof org.telegram.ui.Cells.u0) {
-                        org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) childAt;
-                        left2 = childAt.getLeft() + u0Var.getBoundsLeft();
+                        boundsRight = r1Var.getBoundsRight();
+                    } else if (childAt instanceof org.telegram.ui.Cells.v0) {
+                        org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) childAt;
+                        left2 = childAt.getLeft() + v0Var.getBoundsLeft();
                         left = childAt.getLeft();
-                        boundsRight = u0Var.getBoundsRight();
+                        boundsRight = v0Var.getBoundsRight();
                     } else {
                         measuredWidth = Math.min(left2, measuredWidth);
                         i13 = Math.max(right, i13);
@@ -681,16 +681,16 @@ public final class n4 extends FrameLayout {
                     View childAt2 = p0Var.getChildAt(i14);
                     int left2 = childAt2.getLeft();
                     int right = childAt2.getRight();
-                    if (childAt2 instanceof org.telegram.ui.Cells.q1) {
-                        org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt2;
-                        left2 = childAt2.getLeft() + q1Var.getBoundsLeft();
+                    if (childAt2 instanceof org.telegram.ui.Cells.r1) {
+                        org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt2;
+                        left2 = childAt2.getLeft() + r1Var.getBoundsLeft();
                         left = childAt2.getLeft();
-                        boundsRight = q1Var.getBoundsRight();
-                    } else if (childAt2 instanceof org.telegram.ui.Cells.u0) {
-                        org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) childAt2;
-                        left2 = childAt2.getLeft() + u0Var.getBoundsLeft();
+                        boundsRight = r1Var.getBoundsRight();
+                    } else if (childAt2 instanceof org.telegram.ui.Cells.v0) {
+                        org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) childAt2;
+                        left2 = childAt2.getLeft() + v0Var.getBoundsLeft();
                         left = childAt2.getLeft();
-                        boundsRight = u0Var.getBoundsRight();
+                        boundsRight = v0Var.getBoundsRight();
                     } else {
                         measuredWidth = Math.min(left2, measuredWidth);
                         i13 = Math.max(right, i13);

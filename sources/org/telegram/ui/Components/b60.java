@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b60 extends bk0 {
     public final /* synthetic */ j60 c;
@@ -66,21 +66,21 @@ public final class b60 extends bk0 {
         if (i10 != 3) {
             return;
         }
-        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+        org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) view;
         TLObject E = E(i7);
-        Object object = h4Var.getObject();
+        Object object = i4Var.getObject();
         long j3 = object instanceof TLRPC.User ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
         j60 j60Var = this.c;
-        h4Var.e(E, null, null, i7 != j60Var.U1);
+        i4Var.e(E, null, null, i7 != j60Var.U1);
         long j10 = E instanceof TLRPC.User ? ((TLRPC.User) E).id : E instanceof TLRPC.Chat ? -((TLRPC.Chat) E).id : 0L;
         if (j10 != 0) {
             a0.h hVar = j60Var.O1;
             if (hVar == null || hVar.h(j10) < 0) {
-                h4Var.c(j60Var.a2.h(j10) >= 0, j3 == j10);
-                h4Var.setCheckBoxEnabled(true);
+                i4Var.c(j60Var.a2.h(j10) >= 0, j3 == j10);
+                i4Var.setCheckBoxEnabled(true);
             } else {
-                h4Var.c(true, false);
-                h4Var.setCheckBoxEnabled(false);
+                i4Var.c(true, false);
+                i4Var.setCheckBoxEnabled(false);
             }
         }
     }
@@ -93,16 +93,16 @@ public final class b60 extends bk0 {
             j60 j60Var = this.c;
             int i10 = 0;
             if (i7 == 3) {
-                view = new org.telegram.ui.Cells.h4(context, 1, 0, j60Var.h2 != null);
+                view = new org.telegram.ui.Cells.i4(context, 1, 0, j60Var.h2 != null);
             } else if (i7 != 4) {
                 View view2 = null;
                 boolean z10 = false;
                 if (i7 != 5) {
-                    org.telegram.ui.Cells.x4 x4Var = new org.telegram.ui.Cells.x4(context);
-                    x4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.gd.M0(2131743153, null), true);
+                    org.telegram.ui.Cells.y4 y4Var = new org.telegram.ui.Cells.y4(context);
+                    y4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.gd.M0(2131743153, null), true);
                     int i11 = org.telegram.ui.ActionBar.n6.n5;
-                    x4Var.a(i11, i11);
-                    view = x4Var;
+                    y4Var.a(i11, i11);
+                    view = y4Var;
                 } else {
                     a60 a60Var = new a60(context, view2, i10, z10 ? 1 : 0, 0);
                     a60Var.setLayoutParams(new v4.q0(-1, -1));

@@ -6,13 +6,13 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import r0.i0;
 import s0.c;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
-public final class a extends b5 {
+public final class a extends c5 {
     public final /* synthetic */ b b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,12 +21,12 @@ public final class a extends b5 {
         this.b = bVar;
     }
 
-    @Override // org.telegram.ui.Cells.b5
+    @Override // org.telegram.ui.Cells.c5
     public final c t(int i7) {
         return new c(AccessibilityNodeInfo.obtain(this.b.j(i7).a));
     }
 
-    @Override // org.telegram.ui.Cells.b5
+    @Override // org.telegram.ui.Cells.c5
     public final c w(int i7) {
         b bVar = this.b;
         int i10 = i7 == 2 ? bVar.k : bVar.l;
@@ -36,7 +36,7 @@ public final class a extends b5 {
         return t(i10);
     }
 
-    @Override // org.telegram.ui.Cells.b5
+    @Override // org.telegram.ui.Cells.c5
     public final boolean z(int i7, int i10, Bundle bundle) {
         int i11;
         int i12;

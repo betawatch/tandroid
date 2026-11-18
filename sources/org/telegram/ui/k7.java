@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class k7 extends f7 {
     public final ArrayList n;
@@ -40,7 +40,7 @@ public final class k7 extends f7 {
     public final void t(v4.f1 f1Var, int i7) {
         View view = f1Var.a;
         j7 j7Var = (j7) view;
-        org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) j7Var.b.getChildAt(0);
+        org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) j7Var.b.getChildAt(0);
         ArrayList arrayList = this.e;
         ei.b bVar = ((l7) arrayList.get(i7)).d;
         boolean z10 = bVar == view.getTag();
@@ -54,11 +54,11 @@ public final class k7 extends f7 {
         Pattern pattern = Utilities.a;
         int lastIndexOf = name.lastIndexOf(46);
         String substring = lastIndexOf != -1 ? name.substring(lastIndexOf + 1) : null;
-        h7Var.d(M0, s5, substring != null ? substring.toUpperCase() : null, null, 0, z11);
+        i7Var.d(M0, s5, substring != null ? substring.toUpperCase() : null, null, 0, z11);
         if (!z10) {
-            h7Var.setPhoto(file.getPath());
+            i7Var.setPhoto(file.getPath());
         }
-        h7Var.getImageView().setRoundRadius(org.telegram.messenger.g0.L(bVar.h == 5 ? 20.0f : 4.0f));
+        i7Var.getImageView().setRoundRadius(org.telegram.messenger.g0.L(bVar.h == 5 ? 20.0f : 4.0f));
         j7Var.d = z11;
         j7Var.c.setText(org.telegram.messenger.g0.i0(bVar.c, false, false));
         j7Var.a.a(this.r.h.j.contains(bVar), z10);
@@ -68,7 +68,7 @@ public final class k7 extends f7 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         j7 j7Var = new j7(this, viewGroup.getContext(), 0);
         j7Var.e = 2;
-        j7Var.b.addView(new org.telegram.ui.Cells.h7(3, viewGroup.getContext(), null));
+        j7Var.b.addView(new org.telegram.ui.Cells.i7(3, viewGroup.getContext(), null));
         return new org.telegram.ui.Components.kj0(j7Var);
     }
 }

@@ -21,11 +21,12 @@ import e2.c1;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
+import org.telegram.messenger.ks;
 import org.telegram.ui.LaunchActivity;
 import p4.r;
 import p4.x;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class p {
     public final l2.i a;
@@ -81,7 +82,7 @@ public final class p {
         int a02 = lVar.a0();
         if (J > 0 && a02 > 0) {
             float f10 = J / a02;
-            Rational rational = f10 < 0.45f ? new Rational(45, 100) : f10 > 2.35f ? new Rational(235, 100) : new Rational(J, a02);
+            Rational rational = f10 < 0.45f ? new Rational(45, 100) : f10 > 2.35f ? new Rational(ks.L3, 100) : new Rational(J, a02);
             builder.setAspectRatio(rational);
             sb2.append(rational);
         }

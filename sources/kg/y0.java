@@ -9,9 +9,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.l41;
-import org.telegram.ui.pa0;
+import org.telegram.ui.qa0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements v10, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -68,21 +68,21 @@ public final /* synthetic */ class y0 implements v10, org.telegram.ui.ActionBar.
             d1Var.a.g3.O(true);
             return;
         }
-        pa0 pa0Var = new pa0(8);
+        qa0 qa0Var = new qa0(8);
         if (d1Var.x != null) {
             TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
             tL_channelLocation.address = d1Var.y;
             tL_channelLocation.geo_point = d1Var.x;
-            pa0Var.I0 = tL_channelLocation;
+            qa0Var.I0 = tL_channelLocation;
         }
-        pa0Var.M0 = new ab.g(23, d1Var, pa0Var);
+        qa0Var.M0 = new ab.g(23, d1Var, qa0Var);
         if (d1Var.x != null || TextUtils.isEmpty(d1Var.y)) {
-            d1Var.presentFragment(pa0Var);
+            d1Var.presentFragment(qa0Var);
             return;
         }
         org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, d1Var.getParentActivity(), null);
         u1Var.j0 = false;
         u1Var.r(200L);
-        Utilities.g.c(new w0(d1Var, pa0Var, u1Var));
+        Utilities.g.c(new w0(d1Var, qa0Var, u1Var));
     }
 }

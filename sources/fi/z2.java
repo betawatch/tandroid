@@ -6,7 +6,7 @@ import hi.eb;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -86,21 +86,21 @@ public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 3:
                 pi.j jVar = (pi.j) this.b;
-                org.telegram.ui.Cells.x1 x1Var = (org.telegram.ui.Cells.x1) this.c;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.d;
+                org.telegram.ui.Cells.y1 y1Var = (org.telegram.ui.Cells.y1) this.c;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.d;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (jVar.l) {
-                    x1Var.h0 = (-jVar.s) * floatValue2;
-                    x1Var.i0 = (-jVar.t) * floatValue2;
-                    x1Var.k0 = (-jVar.u) * floatValue2;
-                    x1Var.j0 = (-jVar.v) * floatValue2;
+                    y1Var.h0 = (-jVar.s) * floatValue2;
+                    y1Var.i0 = (-jVar.t) * floatValue2;
+                    y1Var.k0 = (-jVar.u) * floatValue2;
+                    y1Var.j0 = (-jVar.v) * floatValue2;
                 } else {
-                    x1Var.h0 = ((-jVar.s) * floatValue2) - q1Var.getAnimationOffsetX();
-                    x1Var.i0 = ((-jVar.t) * floatValue2) - q1Var.getAnimationOffsetX();
-                    x1Var.k0 = ((-jVar.u) * floatValue2) - q1Var.getTranslationY();
-                    x1Var.j0 = ((-jVar.v) * floatValue2) - q1Var.getTranslationY();
+                    y1Var.h0 = ((-jVar.s) * floatValue2) - r1Var.getAnimationOffsetX();
+                    y1Var.i0 = ((-jVar.t) * floatValue2) - r1Var.getAnimationOffsetX();
+                    y1Var.k0 = ((-jVar.u) * floatValue2) - r1Var.getTranslationY();
+                    y1Var.j0 = ((-jVar.v) * floatValue2) - r1Var.getTranslationY();
                 }
-                q1Var.invalidate();
+                r1Var.invalidate();
                 break;
             default:
                 tg.g0 g0Var = (tg.g0) this.b;

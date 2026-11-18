@@ -27,10 +27,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class df0 extends org.telegram.ui.ActionBar.x2 {
-    public static final org.telegram.ui.Cells.o8 M1 = new org.telegram.ui.Cells.o8("placeholderAlpha", 9);
+    public static final org.telegram.ui.Cells.p8 M1 = new org.telegram.ui.Cells.p8("placeholderAlpha", 9);
     public final ArrayList A1;
     public final Paint B1;
     public LinearGradient C1;
@@ -447,8 +447,8 @@ public final class df0 extends org.telegram.ui.ActionBar.x2 {
         xe0 xe0Var = this.m1;
         arrayList.add(new org.telegram.ui.ActionBar.w6(xe0Var, 0, new Class[]{View.class}, (String[]) null, (Drawable[]) null, w6Var, i7));
         arrayList.add(new org.telegram.ui.ActionBar.w6(xe0Var, 0, new Class[]{View.class}, (String[]) null, (Drawable[]) null, w6Var, org.telegram.ui.ActionBar.n6.i5));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(xe0Var, 0, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.q6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(xe0Var, 0, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.N6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(xe0Var, 0, new Class[]{org.telegram.ui.Cells.n8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.q6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(xe0Var, 0, new Class[]{org.telegram.ui.Cells.n8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.N6));
         return arrayList;
     }
 

@@ -9,13 +9,13 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vk0 extends Drawable {
     public int a = org.telegram.messenger.ks.e4;
     public final /* synthetic */ f80 b;
     public final /* synthetic */ int[] c;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 d;
+    public final /* synthetic */ org.telegram.ui.Cells.r1 d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ Bitmap f;
     public final /* synthetic */ RectF g;
@@ -23,10 +23,10 @@ public final class vk0 extends Drawable {
     public final /* synthetic */ Paint i;
     public final /* synthetic */ StaticLayout j;
 
-    public vk0(f80 f80Var, int[] iArr, org.telegram.ui.Cells.q1 q1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
+    public vk0(f80 f80Var, int[] iArr, org.telegram.ui.Cells.r1 r1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
         this.b = f80Var;
         this.c = iArr;
-        this.d = q1Var;
+        this.d = r1Var;
         this.e = iArr2;
         this.f = bitmap;
         this.g = rectF;
@@ -50,23 +50,23 @@ public final class vk0 extends Drawable {
         int[] iArr = this.c;
         canvas.translate(iArr[0], iArr[1]);
         f80 f80Var = this.b;
-        org.telegram.ui.Cells.q1 q1Var = this.d;
-        if (q1Var == null || !q1Var.L0()) {
+        org.telegram.ui.Cells.r1 r1Var = this.d;
+        if (r1Var == null || !r1Var.L0()) {
             canvas.drawPath(f80Var, this.i);
         } else {
-            org.telegram.ui.ActionBar.v4 v4Var = q1Var.L6;
+            org.telegram.ui.ActionBar.v4 v4Var = r1Var.L6;
             if (v4Var == null || v4Var.c == null) {
                 canvas.translate(-iArr[0], -iArr[1]);
                 int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], q1Var.getPaddingTop() + iArr2[1]);
-                q1Var.M0(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - q1Var.getPaddingTop());
+                canvas.translate(iArr2[0], r1Var.getPaddingTop() + iArr2[1]);
+                r1Var.M0(canvas, true, false);
+                canvas.translate(-iArr2[0], (-iArr2[1]) - r1Var.getPaddingTop());
                 canvas.translate(iArr[0], iArr[1]);
             } else {
                 canvas.save();
-                q1Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -q1Var.L6.r);
-                canvas.drawPaint(q1Var.L6.c);
+                r1Var.setBackgroundTopY(true);
+                canvas.translate(0.0f, -r1Var.L6.r);
+                canvas.drawPaint(r1Var.L6.c);
                 canvas.restore();
             }
             Bitmap bitmap = this.f;

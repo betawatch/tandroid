@@ -19,7 +19,7 @@ import android.widget.ScrollView;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class tm0 extends ScrollView implements eh.a {
     public boolean E;
@@ -416,7 +416,7 @@ public class tm0 extends ScrollView implements eh.a {
                 Object obj = arrayList.get(i7);
                 i7++;
                 View view3 = (View) obj;
-                if (Objects.equals(view3.getTag(), -33024) || (view3 instanceof org.telegram.ui.Cells.z8) || (view3 instanceof org.telegram.ui.Cells.y6) || (view3 instanceof org.telegram.ui.g00)) {
+                if (Objects.equals(view3.getTag(), -33024) || (view3 instanceof org.telegram.ui.Cells.a9) || (view3 instanceof org.telegram.ui.Cells.z6) || (view3 instanceof org.telegram.ui.g00)) {
                     b(view, view2);
                 } else {
                     if (view != null && Math.abs(view2.getAlpha() - view3.getAlpha()) > 0.1f) {

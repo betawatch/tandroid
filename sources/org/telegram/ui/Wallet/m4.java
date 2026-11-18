@@ -37,7 +37,7 @@ import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.vy0;
 import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class m4 {
     public float A;
@@ -65,7 +65,7 @@ public final class m4 {
     public final Paint X;
     public final mc Y;
     public r1.g Z;
-    public final org.telegram.ui.Cells.u0 a;
+    public final org.telegram.ui.Cells.v0 a;
     public float a0;
     public final org.telegram.ui.ActionBar.i6 b;
     public r1.g b0;
@@ -118,7 +118,7 @@ public final class m4 {
     public int x = -1;
     public float C = 1.0f;
 
-    public m4(org.telegram.ui.Cells.u0 u0Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public m4(org.telegram.ui.Cells.v0 v0Var, org.telegram.ui.ActionBar.i6 i6Var) {
         Paint paint = new Paint(1);
         this.L = paint;
         Paint paint2 = new Paint(1);
@@ -135,30 +135,30 @@ public final class m4 {
         new Paint(1);
         new Paint(1);
         this.x0 = new h4();
-        this.a = u0Var;
+        this.a = v0Var;
         this.b = i6Var;
-        this.i = u0Var.getResources().getDrawable(R.drawable.wallet_action_card_gradient).mutate();
-        Context context = u0Var.getContext();
+        this.i = v0Var.getResources().getDrawable(R.drawable.wallet_action_card_gradient).mutate();
+        Context context = v0Var.getContext();
         if (y6.H == null) {
             y6.H = new y6(context.getApplicationContext());
         }
         this.k = y6.H;
         mh0 mh0Var = new mh0(R.raw.wallet_diamond_white, org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(42.0f), false, null);
         this.l = mh0Var;
-        mh0Var.R(u0Var);
+        mh0Var.R(v0Var);
         mh0Var.K(0);
-        u0Var.addOnAttachStateChangeListener(new org.telegram.ui.Components.ea(2, this, u0Var));
+        v0Var.addOnAttachStateChangeListener(new org.telegram.ui.Components.ea(2, this, v0Var));
         paint2.setColor(-10033409);
         Paint.Style style = Paint.Style.STROKE;
         paint2.setStyle(style);
         paint2.setStrokeWidth(org.telegram.messenger.g0.N(1.0f));
         int i7 = 5;
-        m mVar = new m(u0Var, i7);
+        m mVar = new m(v0Var, i7);
         lr lrVar = lr.h;
         this.Q = new org.telegram.ui.Components.c6(1.0f, mVar, 0L, 180L, lrVar);
-        this.K = new org.telegram.ui.Components.c6(new m(u0Var, i7), 320L, lrVar, 0);
-        this.J = new org.telegram.ui.Components.c6(new m(u0Var, i7), 320L, lrVar, 0);
-        j4 j4Var = new j4(u0Var, u0Var);
+        this.K = new org.telegram.ui.Components.c6(new m(v0Var, i7), 320L, lrVar, 0);
+        this.J = new org.telegram.ui.Components.c6(new m(v0Var, i7), 320L, lrVar, 0);
+        j4 j4Var = new j4(v0Var, v0Var);
         this.I = j4Var;
         j4Var.y = -1;
         bi.f3.d(path, 1.0f, false);
@@ -168,10 +168,10 @@ public final class m4 {
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         paint3.setShader(new LinearGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), new int[]{16777215, org.telegram.ui.ActionBar.n6.r1(0.35f, 16777215), 16777215}, new float[]{0.0f, 0.5f, 1.0f}, tileMode));
         paint.setShader(new LinearGradient(-org.telegram.messenger.g0.L(10.0f), 0.0f, org.telegram.messenger.g0.L(10.0f), 0.0f, new int[]{16777215, -2130706433, 16777215}, new float[]{0.0f, 0.5f, 1.0f}, tileMode));
-        mc mcVar = new mc(u0Var);
+        mc mcVar = new mc(v0Var);
         this.Y = mcVar;
         mcVar.f = new i4(this, 0);
-        this.w0 = new org.telegram.ui.Components.c6(1.0f, new m(u0Var, i7), 0L, 400L, lrVar);
+        this.w0 = new org.telegram.ui.Components.c6(1.0f, new m(v0Var, i7), 0L, 400L, lrVar);
     }
 
     public static int h() {
@@ -193,9 +193,9 @@ public final class m4 {
     }
 
     public final void b() {
-        org.telegram.ui.Cells.u0 u0Var = this.a;
-        if (u0Var.isShown()) {
-            org.telegram.messenger.g0.a4(u0Var);
+        org.telegram.ui.Cells.v0 v0Var = this.a;
+        if (v0Var.isShown()) {
+            org.telegram.messenger.g0.a4(v0Var);
         }
         r1.g gVar = this.Z;
         if (gVar != null) {
@@ -268,7 +268,7 @@ public final class m4 {
         rectF.set(L2, L2, org.telegram.messenger.g0.L(206.0f) - L2, org.telegram.messenger.g0.L(140.0f) - L2);
         Canvas.EdgeType edgeType = Canvas.EdgeType.AA;
         boolean quickReject = canvas.quickReject(rectF, edgeType);
-        org.telegram.ui.Cells.u0 u0Var = this.a;
+        org.telegram.ui.Cells.v0 v0Var = this.a;
         y6 y6Var = this.k;
         if (quickReject) {
             f10 = 4.0f;
@@ -276,9 +276,9 @@ public final class m4 {
             Handler handler = y6Var.d;
             f10 = 4.0f;
             Sensor sensor = y6Var.b;
-            if (sensor != null && u0Var.isAttachedToWindow() && u0Var.isShown() && u0Var.getWindowVisibility() == 0) {
+            if (sensor != null && v0Var.isAttachedToWindow() && v0Var.isShown() && v0Var.getWindowVisibility() == 0) {
                 f11 = 206.0f;
-                y6Var.e.put(u0Var, Long.valueOf(SystemClock.uptimeMillis()));
+                y6Var.e.put(v0Var, Long.valueOf(SystemClock.uptimeMillis()));
                 if (!y6Var.r) {
                     y6Var.s = false;
                     boolean registerListener = y6Var.a.registerListener(y6Var, sensor, 1, handler);
@@ -331,7 +331,7 @@ public final class m4 {
                     canvas.translate(rect.exactCenterX(), rect.exactCenterY());
                     faVar.c(canvas);
                     canvas.restore();
-                    u0Var.postInvalidateOnAnimation();
+                    v0Var.postInvalidateOnAnimation();
                 }
                 p();
                 if (this.m != null) {
@@ -462,7 +462,7 @@ public final class m4 {
                             if (this.M) {
                                 this.M = false;
                                 this.N = elapsedRealtime + 500;
-                                u0Var.postInvalidateDelayed(500L);
+                                v0Var.postInvalidateDelayed(500L);
                             }
                             long j10 = this.N;
                             if (j10 != j3 && elapsedRealtime >= j10) {
@@ -481,7 +481,7 @@ public final class m4 {
                                     canvas.drawRect(f20, -org.telegram.messenger.g0.L(f14), L11, org.telegram.messenger.g0.L(f14), this.L);
                                     canvas2 = canvas;
                                     canvas2.restore();
-                                    u0Var.postInvalidateOnAnimation();
+                                    v0Var.postInvalidateOnAnimation();
                                 }
                             }
                         }
@@ -505,7 +505,7 @@ public final class m4 {
                         canvas3.drawLine(N, N2, org.telegram.messenger.g0.N(2.5f) + N, N2, paint2);
                         canvas2 = canvas3;
                         canvas2.restore();
-                        u0Var.postInvalidateOnAnimation();
+                        v0Var.postInvalidateOnAnimation();
                     }
                     if (this.q0 != null) {
                         int w02 = org.telegram.ui.ActionBar.n6.i1(i6Var) ? org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fa, i6Var) : -1;
@@ -589,7 +589,7 @@ public final class m4 {
                     canvas32.drawLine(N3, N22, org.telegram.messenger.g0.N(2.5f) + N3, N22, paint22);
                     canvas2 = canvas32;
                     canvas2.restore();
-                    u0Var.postInvalidateOnAnimation();
+                    v0Var.postInvalidateOnAnimation();
                 }
                 if (this.q0 != null) {
                 }
@@ -754,9 +754,9 @@ public final class m4 {
 
     public final void j() {
         this.x = -1;
-        org.telegram.ui.Cells.u0 u0Var = this.a;
-        if (u0Var.getParent() != null) {
-            u0Var.getParent().requestDisallowInterceptTouchEvent(false);
+        org.telegram.ui.Cells.v0 v0Var = this.a;
+        if (v0Var.getParent() != null) {
+            v0Var.getParent().requestDisallowInterceptTouchEvent(false);
         }
         float IEEEremainder = (float) Math.IEEEremainder(this.A - g(), 6.283185307179586d);
         float IEEEremainder2 = (float) Math.IEEEremainder(this.B - (this.k.F * 0.14f), 6.283185307179586d);
@@ -774,9 +774,9 @@ public final class m4 {
         i(false);
         this.Q.e(true, 1.0f);
         if (this.x != -1) {
-            org.telegram.ui.Cells.u0 u0Var = this.a;
-            if (u0Var.getParent() != null) {
-                u0Var.getParent().requestDisallowInterceptTouchEvent(false);
+            org.telegram.ui.Cells.v0 v0Var = this.a;
+            if (v0Var.getParent() != null) {
+                v0Var.getParent().requestDisallowInterceptTouchEvent(false);
             }
         }
         this.x = -1;
@@ -812,15 +812,15 @@ public final class m4 {
             this.b0 = null;
         }
         this.c0 = 0.0f;
-        org.telegram.ui.Cells.u0 u0Var = this.a;
-        u0Var.invalidate();
-        if (u0Var.getParent() instanceof View) {
-            ((View) u0Var.getParent()).invalidate();
+        org.telegram.ui.Cells.v0 v0Var = this.a;
+        v0Var.invalidate();
+        if (v0Var.getParent() instanceof View) {
+            ((View) v0Var.getParent()).invalidate();
         }
     }
 
     public final void m(boolean z10, TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer, String str, int i7, boolean z11, boolean z12) {
-        org.telegram.ui.Cells.u0 u0Var = this.a;
+        org.telegram.ui.Cells.v0 v0Var = this.a;
         if (z11) {
             f();
             this.M = false;
@@ -833,9 +833,9 @@ public final class m4 {
                 this.Z = null;
             }
             this.a0 = 1.0f;
-            u0Var.invalidate();
-            if (u0Var.getParent() instanceof View) {
-                ((View) u0Var.getParent()).invalidate();
+            v0Var.invalidate();
+            if (v0Var.getParent() instanceof View) {
+                ((View) v0Var.getParent()).invalidate();
             }
             l();
             this.R = 0.0f;
@@ -865,7 +865,7 @@ public final class m4 {
             g();
             this.t = 18.0f;
             this.u.f();
-            u0Var.invalidate();
+            v0Var.invalidate();
         }
         if (z15) {
             if (!this.h0) {
@@ -892,12 +892,12 @@ public final class m4 {
                 k4Var2.b = -1L;
                 k4Var2.c = -1L;
             }
-            u0Var.invalidate();
+            v0Var.invalidate();
         } else {
             k4 k4Var3 = this.d0;
             if (k4Var3 != null && this.e0 == 0 && !k4Var3.d() && !this.d0.c()) {
                 this.d0.a();
-                u0Var.invalidate();
+                v0Var.invalidate();
             }
         }
         int w02 = z14 ? org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.q7, this.b) : z10 ? -15352320 : -11814402;
@@ -911,7 +911,7 @@ public final class m4 {
             this.T = this.V;
             this.U = w02;
             this.J.e(true, 0.0f);
-            u0Var.invalidate();
+            v0Var.invalidate();
         }
         String M0 = z14 ? gd.M0(2131742721, null) : z10 ? gd.M0(2131742719, null) : gd.M0(2131742720, null);
         j4 j4Var = this.I;
@@ -984,7 +984,7 @@ public final class m4 {
         dz0Var.a |= 256;
         spannableStringBuilder2.setSpan(new ez0(dz0Var, 0), 0, spannableStringBuilder2.length(), 33);
         this.q0.q(spannableStringBuilder2);
-        xh.f.c(u0Var, this.q0.b, stack, arrayList);
+        xh.f.c(v0Var, this.q0.b, stack, arrayList);
         n(this.e);
     }
 

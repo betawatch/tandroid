@@ -18,7 +18,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class f20 extends FrameLayout implements org.telegram.messenger.fs, VoIPService.StateListener {
     public float E;
@@ -113,7 +113,7 @@ public final class f20 extends FrameLayout implements org.telegram.messenger.fs,
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.P4) {
+        if (i7 == org.telegram.messenger.ks.Q4) {
             setAmplitude(((Float) objArr[0]).floatValue() * 4000.0f);
         } else if (i7 == org.telegram.messenger.ks.w2) {
             a();
@@ -124,7 +124,7 @@ public final class f20 extends FrameLayout implements org.telegram.messenger.fs,
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         setAmplitude(0.0d);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.P4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.Q4);
         org.telegram.messenger.ks.f(this.F).c(this, org.telegram.messenger.ks.w2);
         boolean z10 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
         if (VoIPService.getSharedInstance() != null) {
@@ -166,7 +166,7 @@ public final class f20 extends FrameLayout implements org.telegram.messenger.fs,
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.P4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.Q4);
         org.telegram.messenger.ks.f(this.F).n(this, org.telegram.messenger.ks.w2);
         if (VoIPService.getSharedInstance() != null) {
             VoIPService.getSharedInstance().unregisterStateListener(this);

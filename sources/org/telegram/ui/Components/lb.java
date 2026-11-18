@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public static final r1.e IN_OUT_OFFSET_Y = new hb(0);
-    public static final Property<lb, Float> IN_OUT_OFFSET_Y2 = new org.telegram.ui.Cells.o8("offsetY", 8);
+    public static final Property<lb, Float> IN_OUT_OFFSET_Y2 = new org.telegram.ui.Cells.p8("offsetY", 8);
     Drawable background;
     private Drawable backgroundBeforeGlass;
     private int backgroundColor;

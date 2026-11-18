@@ -15,9 +15,9 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.xg0;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class wu extends zt {
     public final dv X;
@@ -55,7 +55,7 @@ public final class wu extends zt {
     }
 
     @Override // org.telegram.messenger.zt
-    public final org.telegram.ui.Cells.t9[] L() {
+    public final org.telegram.ui.Cells.u9[] L() {
         return this.Y;
     }
 
@@ -119,7 +119,7 @@ public final class wu extends zt {
         int color = textPaint.getColor();
         textPaint.setColor(-1);
         textPaint.linkColor = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Yc : org.telegram.ui.ActionBar.n6.Xc, evVar.D);
-        xg0.b(canvas, dvVar.b, i7, f10, new o(5, this, this.W));
+        yg0.b(canvas, dvVar.b, i7, f10, new o(5, this, this.W));
         canvas.restore();
         textPaint.setColor(color);
         j0();
@@ -159,7 +159,7 @@ public final class wu extends zt {
         }
     }
 
-    @Override // org.telegram.messenger.zt, org.telegram.ui.vg0
+    @Override // org.telegram.messenger.zt, org.telegram.ui.wg0
     public final Layout a() {
         return this.X.b;
     }

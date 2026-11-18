@@ -10,7 +10,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class d5 extends View implements org.telegram.ui.ActionBar.c6 {
     public final q5 a;
@@ -108,7 +108,7 @@ public final class d5 extends View implements org.telegram.ui.ActionBar.c6 {
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
         imageReceiver.J0(org.telegram.messenger.g0.L(30.0f));
-        imageReceiver.w0(org.telegram.ui.Cells.s6.a(60, "fragment"));
+        imageReceiver.w0(org.telegram.ui.Cells.t6.a(60, "fragment"));
         paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.E6, false));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);

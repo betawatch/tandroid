@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ll0 implements oj0 {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class ll0 implements oj0 {
                 if (E != null) {
                     if (!ql0Var.J.V1()) {
                         if (view instanceof nl0) {
-                            org.telegram.ui.Cells.h7 h7Var = ((nl0) view).a;
-                            org.telegram.messenger.fj message = h7Var.getMessage();
+                            org.telegram.ui.Cells.i7 i7Var = ((nl0) view).a;
+                            org.telegram.messenger.fj message = i7Var.getMessage();
                             TLRPC.Document F0 = message.F0();
-                            if (h7Var.H) {
+                            if (i7Var.H) {
                                 if (message.h4() || org.telegram.messenger.fj.R4(message.k)) {
                                     MediaController.B().S(message);
                                     break;
@@ -81,19 +81,19 @@ public final /* synthetic */ class ll0 implements oj0 {
                                         org.telegram.messenger.g0.s2(message, ql0Var.G, h2Var);
                                     }
                                 }
-                            } else if (h7Var.G) {
+                            } else if (i7Var.G) {
                                 org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.j10.t0).a).f(F0);
-                                h7Var.f(true);
+                                i7Var.f(true);
                             } else {
                                 E.P = true;
                                 org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.j10.t0).a).W(F0, E, 0, 0);
-                                h7Var.f(true);
+                                i7Var.f(true);
                                 org.telegram.messenger.a6.q(this.b).y();
                             }
                             ql0Var.d(true);
                         }
-                        if (view instanceof org.telegram.ui.Cells.g7) {
-                            ((org.telegram.ui.Cells.g7) view).a();
+                        if (view instanceof org.telegram.ui.Cells.h7) {
+                            ((org.telegram.ui.Cells.h7) view).a();
                             break;
                         }
                     } else {

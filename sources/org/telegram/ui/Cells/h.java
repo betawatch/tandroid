@@ -22,7 +22,7 @@ import org.telegram.ui.a81;
 import org.telegram.ui.co;
 import org.telegram.ui.kt0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -44,23 +44,23 @@ public final class h extends ClickableSpan {
                 jVar.d((ClickableSpan) this.b, jVar.a, 0.0f);
                 break;
             case 1:
-                u0 u0Var = (u0) this.c;
-                if (u0Var.g1 != null) {
-                    u0Var.e0((CharacterStyle) this.b);
+                v0 v0Var = (v0) this.c;
+                if (v0Var.g1 != null) {
+                    v0Var.d0((CharacterStyle) this.b);
                     break;
                 }
                 break;
             case 2:
                 CharacterStyle characterStyle = (CharacterStyle) this.b;
-                if (!(characterStyle instanceof z0)) {
-                    q1 q1Var = ((a1) this.c).a;
-                    l1 l1Var = q1Var.Sa;
-                    if (l1Var != null) {
-                        l1Var.T0(q1Var, characterStyle, false);
+                if (!(characterStyle instanceof a1)) {
+                    r1 r1Var = ((b1) this.c).a;
+                    m1 m1Var = r1Var.Sa;
+                    if (m1Var != null) {
+                        m1Var.T0(r1Var, characterStyle, false);
                         break;
                     }
                 } else {
-                    ((z0) characterStyle).onClick(view);
+                    ((a1) characterStyle).onClick(view);
                     break;
                 }
                 break;
@@ -77,7 +77,7 @@ public final class h extends ClickableSpan {
                 }
                 break;
             case 4:
-                vf.c.t(((b2) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                vf.c.t(((c2) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
                 vf.c.t(((co) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));

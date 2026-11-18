@@ -15,13 +15,13 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import hi.j9;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.y9;
+import org.telegram.ui.Cells.z9;
 import org.telegram.ui.k71;
 import p4.o0;
 import tg.x1;
 import ug.u1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class e extends GLSurfaceView implements Choreographer.FrameCallback {
     public static final /* synthetic */ int L = 0;
@@ -60,7 +60,7 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
         this.a = new f(context, 1, 4);
         setRenderer(new d(this));
         setRenderMode(0);
-        this.b = new GestureDetector(context, new y9(1, this));
+        this.b = new GestureDetector(context, new z9(1, this));
     }
 
     public static void a(e eVar, int i7) {

@@ -5,7 +5,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rr implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class rr implements org.telegram.messenger.q10 {
                             o4.L(i13 > 0);
                             o4.u = yrVar.f1();
                             o4.f = yrVar.u2;
-                            o4.E = new bi.f5(yrVar, i13, z41Var, 12);
+                            o4.E = new bi.e5(yrVar, i13, z41Var, 12);
                             arrayList.add(o4);
                             if (!yrVar.u2) {
                                 l41 z12 = l41.z(6, org.telegram.messenger.gd.M0(2131745412, null));

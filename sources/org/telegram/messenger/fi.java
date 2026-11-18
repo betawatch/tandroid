@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fi implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class fi implements Runnable {
                 ArrayList arrayList2 = ((ri) ((androidx.activity.g) obj2).c).B0;
                 arrayList2.clear();
                 arrayList2.addAll((ArrayList) obj);
-                ks.e().k(ks.W4, new Object[0]);
+                ks.e().k(ks.X4, new Object[0]);
                 break;
             case 4:
                 fj fjVar = (fj) obj2;
@@ -80,11 +80,11 @@ public final /* synthetic */ class fi implements Runnable {
                 break;
             case 9:
                 TL_update.TL_updateUserTyping tL_updateUserTyping = (TL_update.TL_updateUserTyping) obj;
-                ((mp) obj2).getNotificationCenter().k(ks.V4, Long.valueOf(tL_updateUserTyping.user_id), tL_updateUserTyping.action);
+                ((mp) obj2).getNotificationCenter().k(ks.W4, Long.valueOf(tL_updateUserTyping.user_id), tL_updateUserTyping.action);
                 break;
             case 10:
                 TL_update.TL_updateChatUserTyping tL_updateChatUserTyping = (TL_update.TL_updateChatUserTyping) obj;
-                ((mp) obj2).getNotificationCenter().k(ks.V4, Long.valueOf(-tL_updateChatUserTyping.chat_id), tL_updateChatUserTyping.action);
+                ((mp) obj2).getNotificationCenter().k(ks.W4, Long.valueOf(-tL_updateChatUserTyping.chat_id), tL_updateChatUserTyping.action);
                 break;
             case 11:
                 mp mpVar2 = (mp) obj2;
@@ -225,7 +225,7 @@ public final /* synthetic */ class fi implements Runnable {
                 if (tLObject instanceof TL_account.TL_savedMusicIds) {
                     fpVar.b.addAll(((TL_account.TL_savedMusicIds) tLObject).ids);
                 }
-                ks.f(fpVar.a).k(ks.W3, new Object[0]);
+                ks.f(fpVar.a).k(ks.X3, new Object[0]);
                 break;
             case 28:
                 ((a4) obj2).a((ArrayList) obj);

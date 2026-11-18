@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.g71;
 import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class n5 extends g71 {
     public boolean W;
@@ -188,14 +188,14 @@ public final class n5 extends g71 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.d0).c(this.a0, ks.d4);
+        ks.f(this.d0).c(this.a0, ks.e4);
         H();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.d0).n(this.a0, ks.d4);
+        ks.f(this.d0).n(this.a0, ks.e4);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

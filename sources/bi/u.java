@@ -17,7 +17,7 @@ import org.telegram.ui.Components.mt;
 import org.telegram.ui.f11;
 import org.telegram.ui.j01;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class u extends mt {
     public final /* synthetic */ int e2;
@@ -78,7 +78,7 @@ public final class u extends mt {
         switch (this.e2) {
             case 1:
                 InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-                if (((org.telegram.ui.Cells.a6) this.f2).s) {
+                if (((org.telegram.ui.Cells.b6) this.f2).s) {
                     editorInfo.imeOptions &= -1073741825;
                 }
                 return onCreateInputConnection;
@@ -97,7 +97,7 @@ public final class u extends mt {
         switch (this.e2) {
             case 1:
                 super.onDraw(canvas);
-                ((org.telegram.ui.Cells.a6) this.f2).getClass();
+                ((org.telegram.ui.Cells.b6) this.f2).getClass();
                 break;
             default:
                 super.onDraw(canvas);
@@ -110,7 +110,7 @@ public final class u extends mt {
         switch (this.e2) {
             case 1:
                 super.onFocusChanged(z10, i7, rect);
-                ((org.telegram.ui.Cells.a6) this.f2).j(z10);
+                ((org.telegram.ui.Cells.b6) this.f2).j(z10);
                 break;
             case 2:
                 if (z10) {
@@ -159,7 +159,7 @@ public final class u extends mt {
                     if (!TextUtils.isEmpty(sb2)) {
                         arrayList.add(sb2);
                     }
-                    if (((org.telegram.ui.Cells.a6) this.f2).m(arrayList)) {
+                    if (((org.telegram.ui.Cells.b6) this.f2).m(arrayList)) {
                     }
                 }
                 break;
@@ -173,7 +173,7 @@ public final class u extends mt {
             case 1:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((org.telegram.ui.Cells.a6) this.f2).l(this);
+                        ((org.telegram.ui.Cells.b6) this.f2).l(this);
                     }
                     break;
                 }
@@ -194,7 +194,7 @@ public final class u extends mt {
         switch (this.e2) {
             case 1:
                 ActionMode startActionMode = super.startActionMode(callback, i7);
-                ((org.telegram.ui.Cells.a6) this.f2).h(this, startActionMode);
+                ((org.telegram.ui.Cells.b6) this.f2).h(this, startActionMode);
                 return startActionMode;
             default:
                 return super.startActionMode(callback, i7);
@@ -213,7 +213,7 @@ public final class u extends mt {
         switch (this.e2) {
             case 1:
                 ActionMode startActionMode = super.startActionMode(callback);
-                ((org.telegram.ui.Cells.a6) this.f2).h(this, startActionMode);
+                ((org.telegram.ui.Cells.b6) this.f2).h(this, startActionMode);
                 return startActionMode;
             default:
                 return super.startActionMode(callback);

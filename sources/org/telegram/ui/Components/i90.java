@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i90 extends org.telegram.ui.ActionBar.h2 implements zs0, pg.b, org.telegram.messenger.fs {
     public boolean E;
@@ -26,7 +26,7 @@ public final class i90 extends org.telegram.ui.ActionBar.h2 implements zs0, pg.b
     public org.telegram.ui.ActionBar.z0 H;
     public org.telegram.ui.ActionBar.z0 I;
     public org.telegram.ui.ActionBar.z0 J;
-    public org.telegram.ui.ne0 K;
+    public org.telegram.ui.oe0 K;
     public final qh.b[] L;
     public int M;
     public FrameLayout N;
@@ -746,9 +746,9 @@ public final class i90 extends org.telegram.ui.ActionBar.h2 implements zs0, pg.b
         int i13 = this.a;
         qh.b[] bVarArr = this.L;
         if (i13 == 1) {
-            org.telegram.ui.ne0 ne0Var = new org.telegram.ui.ne0(context, getResourceProvider());
-            this.K = ne0Var;
-            ne0Var.setClipChildren(false);
+            org.telegram.ui.oe0 oe0Var = new org.telegram.ui.oe0(context, getResourceProvider());
+            this.K = oe0Var;
+            oe0Var.setClipChildren(false);
             this.K.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f));
             bVarArr[0] = qh.b.c(context, getResourceProvider(), qh.a.R, 2131746456);
             bVarArr[1] = qh.b.c(context, getResourceProvider(), qh.a.S, 2131746432);
@@ -930,8 +930,8 @@ public final class i90 extends org.telegram.ui.ActionBar.h2 implements zs0, pg.b
         this.navigationBarFadeView = view3;
         view3.setBackground(aVar.b(view3));
         View view4 = this.navigationBarFadeView;
-        org.telegram.ui.ne0 ne0Var2 = this.K;
-        a3Var.addView(view4, ne0Var2 != null ? a3Var.indexOfChild(ne0Var2) : a3Var.getChildCount(), c8.ma.e(-1, 0, 80));
+        org.telegram.ui.oe0 oe0Var2 = this.K;
+        a3Var.addView(view4, oe0Var2 != null ? a3Var.indexOfChild(oe0Var2) : a3Var.getChildCount(), c8.ma.e(-1, 0, 80));
         org.telegram.ui.ActionBar.a5 a5Var = this.simpleActionBar;
         org.telegram.ui.ActionBar.i6 resourceProvider = getResourceProvider();
         aVar.m = a3Var;
@@ -948,10 +948,10 @@ public final class i90 extends org.telegram.ui.ActionBar.h2 implements zs0, pg.b
         g0();
         if (this.a == 1) {
             r13 = this.T != 9 ? 0 : 1;
-            org.telegram.ui.ne0 ne0Var3 = this.K;
-            if (ne0Var3 != null && this.M != r13) {
+            org.telegram.ui.oe0 oe0Var3 = this.K;
+            if (oe0Var3 != null && this.M != r13) {
                 this.M = r13;
-                ne0Var3.r(bVarArr[r13], false);
+                oe0Var3.r(bVarArr[r13], false);
             }
         }
         return a3Var;
@@ -1212,7 +1212,7 @@ public final class i90 extends org.telegram.ui.ActionBar.h2 implements zs0, pg.b
         int i7 = this.a;
         this.T = getArguments().getInt("start_from", i7 == 2 ? 9 : i7 == 1 ? 8 : 0);
         getNotificationCenter().c(this, org.telegram.messenger.ks.E0);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.h5);
+        getNotificationCenter().c(this, org.telegram.messenger.ks.i5);
         getNotificationCenter().c(this, org.telegram.messenger.ks.b3);
         if (org.telegram.messenger.n5.E(this.e) && this.f == 0) {
             TLRPC.User c22 = getMessagesController().c2(Long.valueOf(this.e));
@@ -1232,7 +1232,7 @@ public final class i90 extends org.telegram.ui.ActionBar.h2 implements zs0, pg.b
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         getNotificationCenter().n(this, org.telegram.messenger.ks.E0);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.h5);
+        getNotificationCenter().n(this, org.telegram.messenger.ks.i5);
         getNotificationCenter().n(this, org.telegram.messenger.ks.b3);
         di.p6 p6Var = this.R;
         if (p6Var != null) {

@@ -13,7 +13,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.j91;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements x10 {
     public final /* synthetic */ int a = 1;
@@ -51,9 +51,9 @@ public final /* synthetic */ class w3 implements x10 {
                 lc lcVar = (lc) obj2;
                 String str = (String) obj;
                 if (str != null) {
-                    f4.f(j3);
+                    e4.g(j3);
                     rVar.run();
-                    v4.q(context, this.b, i6Var, lcVar, str, null);
+                    u4.q(context, this.b, i6Var, lcVar, str, null);
                     break;
                 }
                 break;

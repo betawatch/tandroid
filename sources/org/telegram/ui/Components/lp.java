@@ -35,7 +35,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class lp extends org.telegram.ui.ActionBar.x2 implements org.telegram.messenger.fs {
     public static final /* synthetic */ int g2 = 0;
@@ -870,7 +870,7 @@ public final class lp extends org.telegram.ui.ActionBar.x2 implements org.telegr
                 float measuredHeight = (xcVar.getMeasuredHeight() / 2.0f) + r3[1];
                 float width = bitmap.getWidth();
                 float height = bitmap.getHeight();
-                org.telegram.ui.Cells.g1 g1Var = g01.x;
+                org.telegram.ui.Cells.h1 h1Var = g01.x;
                 float max = Math.max(measuredWidth, width - measuredWidth);
                 float max2 = Math.max(measuredHeight, height - measuredHeight);
                 float sqrt = ((float) Math.sqrt((max2 * max2) + (max * max))) / 0.6f;
@@ -908,7 +908,7 @@ public final class lp extends org.telegram.ui.ActionBar.x2 implements org.telegr
         float measuredHeight2 = (xcVar2.getMeasuredHeight() / 2.0f) + r3[1];
         float width2 = bitmap.getWidth();
         float height2 = bitmap.getHeight();
-        org.telegram.ui.Cells.g1 g1Var2 = g01.x;
+        org.telegram.ui.Cells.h1 h1Var2 = g01.x;
         float max3 = Math.max(measuredWidth2, width2 - measuredWidth2);
         float max22 = Math.max(measuredHeight2, height2 - measuredHeight2);
         float sqrt2 = ((float) Math.sqrt((max22 * max22) + (max3 * max3))) / 0.6f;
@@ -940,7 +940,7 @@ public final class lp extends org.telegram.ui.ActionBar.x2 implements org.telegr
         }
         this.c2 = true;
         try {
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, m6Var, Boolean.FALSE, null, -1);
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, m6Var, Boolean.FALSE, null, -1);
         } finally {
             this.c2 = false;
         }
@@ -1119,14 +1119,14 @@ public final class lp extends org.telegram.ui.ActionBar.x2 implements org.telegr
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             org.telegram.messenger.ks.f(this.a).d(new uo(this, 0));
         }
     }
 
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         super.dismiss();
         this.v1.getClass();
         boolean z10 = this.I1;
@@ -1187,7 +1187,7 @@ public final class lp extends org.telegram.ui.ActionBar.x2 implements org.telegr
         f10.m(false);
         f10.l(true);
         f10.l(false);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
         this.I1 = false;
         int i7 = 7;
         if (!f10.f.c || (arrayList = f10.b) == null || arrayList.isEmpty()) {

@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import bi.e6;
-import bi.i8;
+import bi.d6;
+import bi.h8;
 import c8.ma;
 import di.b1;
 import org.telegram.messenger.g0;
@@ -21,7 +21,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import v4.u0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b extends o51 {
     public final int O1;
@@ -59,12 +59,12 @@ public final class b extends o51 {
         this.o1.r1();
         b1 b1Var = this.o1;
         j90Var.p = b1Var;
-        b1Var.setOnItemClickListener(new i8(j90Var, 24));
+        b1Var.setOnItemClickListener(new h8(j90Var, 24));
         u0 onScrollListener = b1Var.getOnScrollListener();
         if (onScrollListener == null) {
             b1Var.setOnScrollListener(j90Var.D);
         } else {
-            b1Var.setOnScrollListener(new e6(11, j90Var, onScrollListener));
+            b1Var.setOnScrollListener(new d6(11, j90Var, onScrollListener));
         }
         int indexOfChild = ((ViewGroup) this.o1.getParent()).indexOfChild(this.o1);
         wz b10 = j90Var.b();

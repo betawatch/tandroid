@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
-public final class ut extends View implements org.telegram.ui.Cells.h9 {
+public final class ut extends View implements org.telegram.ui.Cells.i9 {
     public boolean E;
     public xr F;
     public final int a;
@@ -25,7 +25,7 @@ public final class ut extends View implements org.telegram.ui.Cells.h9 {
     public int n;
     public int r;
     public boolean s;
-    public org.telegram.ui.Cells.i9 w;
+    public org.telegram.ui.Cells.j9 w;
     public int x;
     public int y;
 
@@ -39,13 +39,13 @@ public final class ut extends View implements org.telegram.ui.Cells.h9 {
         ks.i(this);
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         if (this.e != null) {
             int i7 = this.f;
             int i10 = this.h;
             for (int i11 = 0; i11 < this.e.n.size(); i11++) {
-                arrayList.add(new oi.a5((org.telegram.ui.Cells.t9) this.e.n.get(i11), i7, i10, 3));
+                arrayList.add(new oi.a5((org.telegram.ui.Cells.u9) this.e.n.get(i11), i7, i10, 3));
             }
         }
     }
@@ -98,16 +98,16 @@ public final class ut extends View implements org.telegram.ui.Cells.h9 {
             canvas.restore();
         }
         canvas.restore();
-        org.telegram.ui.Cells.i9 i9Var = this.w;
-        if (i9Var == null || !i9Var.x()) {
+        org.telegram.ui.Cells.j9 j9Var = this.w;
+        if (j9Var == null || !j9Var.x()) {
             return;
         }
         int i7 = this.f;
         int i10 = this.h;
         for (int i11 = 0; i11 < this.e.n.size(); i11++) {
-            org.telegram.ui.Cells.t9 t9Var = (org.telegram.ui.Cells.t9) this.e.n.get(i11);
+            org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) this.e.n.get(i11);
             canvas.save();
-            canvas.translate(t9Var.getX() + i7, t9Var.getY() + i10);
+            canvas.translate(u9Var.getX() + i7, u9Var.getY() + i10);
             this.w.Z(canvas, this, i11);
             canvas.restore();
         }
@@ -241,8 +241,8 @@ public final class ut extends View implements org.telegram.ui.Cells.h9 {
         }
     }
 
-    public void setTextSelectionHelper(org.telegram.ui.Cells.i9 i9Var) {
-        this.w = i9Var;
+    public void setTextSelectionHelper(org.telegram.ui.Cells.j9 j9Var) {
+        this.w = j9Var;
     }
 
     public void setTranslationLoading(boolean z10) {

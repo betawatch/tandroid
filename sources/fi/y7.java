@@ -14,9 +14,9 @@ import org.telegram.ui.Components.kp0;
 import org.telegram.ui.Components.yr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p50;
-import org.telegram.ui.wf0;
+import org.telegram.ui.xf0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final /* synthetic */ class y7 implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ y7(int i7, wf0 wf0Var, org.telegram.ui.ActionBar.h2 h2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+    public /* synthetic */ y7(int i7, xf0 xf0Var, org.telegram.ui.ActionBar.h2 h2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
         this.a = 7;
         this.b = i7;
-        this.c = wf0Var;
+        this.c = xf0Var;
         this.d = h2Var;
         this.e = tL_payments_assignPlayMarketTransaction;
     }
@@ -90,7 +90,7 @@ public final /* synthetic */ class y7 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ai.g1((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.u1) obj, 20), 2L);
                 break;
             case 7:
-                wf0 wf0Var = (wf0) obj3;
+                xf0 xf0Var = (xf0) obj3;
                 org.telegram.ui.ActionBar.h2 h2Var2 = (org.telegram.ui.ActionBar.h2) obj2;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
                 if (!(tLObject instanceof TLRPC.Updates)) {
@@ -100,7 +100,7 @@ public final /* synthetic */ class y7 implements RequestDelegate {
                     }
                 } else {
                     mp.u1(i11).V3((TLRPC.Updates) tLObject, false);
-                    org.telegram.messenger.g0.g3(wf0Var);
+                    org.telegram.messenger.g0.g3(xf0Var);
                     break;
                 }
                 break;

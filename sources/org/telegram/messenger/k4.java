@@ -4,9 +4,9 @@ import android.app.Activity;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ih0;
+import org.telegram.ui.jh0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k4 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class k4 implements Runnable {
                     if (z10 || z11 || z12) {
                         int i10 = 1;
                         cxVar.B0 = true;
-                        if (!z10 || !ih0.K0(activity)) {
+                        if (!z10 || !jh0.K0(activity)) {
                             if (!z11 || !cxVar.W1 || !cxVar.getUserConfig().V || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
                                 if (!z12 || !activity.shouldShowRequestPermissionRationale("android.permission.WRITE_EXTERNAL_STORAGE")) {
                                     cxVar.u3(true);

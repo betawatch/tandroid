@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Spannable;
-import bi.d5;
+import bi.c5;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import org.json.JSONObject;
@@ -19,7 +19,7 @@ import org.telegram.ui.Wallet.z2;
 import org.telegram.utils.twidget.d1;
 import org.telegram.utils.twidget.p1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -107,14 +107,14 @@ public final /* synthetic */ class p implements Runnable {
                         w2 w2Var = new w2(new boolean[]{false}, i0Var);
                         org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i10);
                         boolean[] zArr = {false};
-                        d5 d5Var = new d5(zArr, context, i10, user, jSONObject, resourceProvider, w2Var);
+                        c5 c5Var = new c5(zArr, context, i10, user, jSONObject, resourceProvider, w2Var);
                         if (D.N()) {
-                            d5Var.run();
+                            c5Var.run();
                             return;
                         }
-                        z2.a.add(d5Var);
-                        D.x0(d5Var);
-                        org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.p(d5Var, zArr, w2Var, 8), 10000L);
+                        z2.a.add(c5Var);
+                        D.x0(c5Var);
+                        org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.p(c5Var, zArr, w2Var, 8), 10000L);
                         return;
                     }
                 }
@@ -153,7 +153,7 @@ public final /* synthetic */ class p implements Runnable {
                                     }
                                 }
                                 if (z10) {
-                                    ks.e().k(ks.k4, new Object[0]);
+                                    ks.e().k(ks.l4, new Object[0]);
                                 }
                                 return;
                             }

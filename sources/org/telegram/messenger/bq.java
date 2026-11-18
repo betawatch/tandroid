@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bq implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -59,7 +59,7 @@ public final /* synthetic */ class bq implements Runnable {
                 this.b.a2(this.c, this.d, (Integer) obj, this.e, this.f, 0, 0);
                 return;
             default:
-                final org.telegram.ui.Cells.e6 e6Var = (org.telegram.ui.Cells.e6) obj;
+                final org.telegram.ui.Cells.f6 f6Var = (org.telegram.ui.Cells.f6) obj;
                 long j10 = this.d;
                 final ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
@@ -164,10 +164,10 @@ public final /* synthetic */ class bq implements Runnable {
                     sQLiteCursor4.dispose();
                     final int i13 = this.f;
                     final int i14 = i7;
-                    g0.g3(new Runnable() { // from class: org.telegram.ui.Cells.c6
+                    g0.g3(new Runnable() { // from class: org.telegram.ui.Cells.d6
                         @Override // java.lang.Runnable
                         public final void run() {
-                            e6.b(e6.this, i13, arrayList, j11, i14, trVar);
+                            f6.b(f6.this, i13, arrayList, j11, i14, trVar);
                         }
                     });
                     return;
@@ -186,8 +186,8 @@ public final /* synthetic */ class bq implements Runnable {
         this.f = i10;
     }
 
-    public /* synthetic */ bq(org.telegram.ui.Cells.e6 e6Var, int i7, tr trVar, long j3, long j10, int i10) {
-        this.h = e6Var;
+    public /* synthetic */ bq(org.telegram.ui.Cells.f6 f6Var, int i7, tr trVar, long j3, long j10, int i10) {
+        this.h = f6Var;
         this.e = i7;
         this.b = trVar;
         this.c = j3;

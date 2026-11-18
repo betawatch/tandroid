@@ -25,7 +25,7 @@ import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.mq;
 import org.telegram.ui.r11;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class y1 extends v4.i0 {
     public final TLRPC.TL_inputStickerSetShortName F;
@@ -428,17 +428,17 @@ public final class y1 extends v4.i0 {
                 }
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i11);
                 String str = (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? "" : stickerSet.title;
-                org.telegram.ui.Cells.j8 j8Var = (org.telegram.ui.Cells.j8) view;
+                org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) view;
                 if (this.J == null) {
-                    j8Var.a(0, str);
+                    k8Var.a(0, str);
                     return;
                 }
                 int indexOf = str.toLowerCase().indexOf(this.J.toLowerCase());
                 if (indexOf < 0) {
-                    j8Var.a(0, str);
+                    k8Var.a(0, str);
                     return;
                 } else {
-                    j8Var.b(str, 0, null, indexOf, this.J.length());
+                    k8Var.b(str, 0, null, indexOf, this.J.length());
                     return;
                 }
             }
@@ -526,15 +526,15 @@ public final class y1 extends v4.i0 {
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View j8Var;
+        View k8Var;
         z1 z1Var = this.O;
         j2 j2Var = z1Var.s;
         if (i7 == 0) {
-            j8Var = new View(z1Var.getContext());
+            k8Var = new View(z1Var.getContext());
         } else if (i7 == 1) {
             Context context = z1Var.getContext();
             int i10 = j2.C1;
-            j8Var = new org.telegram.ui.Cells.j8(context, true, false, j2Var.J0, false);
+            k8Var = new org.telegram.ui.Cells.k8(context, true, false, j2Var.J0, false);
         } else if (i7 == 3) {
             Context context2 = z1Var.getContext();
             boolean z10 = z1Var.a == 0;
@@ -548,14 +548,14 @@ public final class y1 extends v4.i0 {
             textView.setTextColor(-8553090);
             textView.setText(gd.M0(z10 ? 2131748021 : 2131747957, null));
             w1Var.addView(textView, c8.ma.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
-            j8Var = w1Var;
+            k8Var = w1Var;
         } else if (i7 == 4) {
             yb ybVar = new yb(j2Var, z1Var.getContext());
             ybVar.f = new e1(j2Var, 2);
-            j8Var = ybVar;
+            k8Var = ybVar;
         } else {
-            j8Var = new n1(z1Var.getContext(), z1Var.b);
+            k8Var = new n1(z1Var.getContext(), z1Var.b);
         }
-        return new kj0(j8Var);
+        return new kj0(k8Var);
     }
 }

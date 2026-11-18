@@ -24,7 +24,7 @@ import org.telegram.ui.cn;
 import org.telegram.ui.cx;
 import org.telegram.ui.dn;
 import org.telegram.ui.et;
-import org.telegram.ui.hh0;
+import org.telegram.ui.ih0;
 import org.telegram.ui.j40;
 import org.telegram.ui.kw;
 import org.telegram.ui.nj;
@@ -40,7 +40,7 @@ import org.telegram.ui.u91;
 import org.telegram.ui.xv;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i4 extends y61 {
     public final /* synthetic */ int a;
@@ -280,7 +280,7 @@ public final class i4 extends y61 {
                 c00Var2.b.j(new t91(1));
                 return c00Var2;
             case 8:
-                return new hh0((Context) this.b, 15);
+                return new ih0((Context) this.b, 15);
             case 9:
                 org.telegram.ui.Wallet.n6 n6Var = (org.telegram.ui.Wallet.n6) this.c;
                 e51[] e51VarArr = n6Var.u0;
@@ -295,24 +295,24 @@ public final class i4 extends y61 {
                 org.telegram.ui.Wallet.o4 o4Var = new org.telegram.ui.Wallet.o4(n6Var);
                 org.telegram.ui.Wallet.o4 o4Var2 = new org.telegram.ui.Wallet.o4(n6Var);
                 i6Var = ((org.telegram.ui.ActionBar.h2) n6Var).resourceProvider;
-                bi.g7 g7Var = new bi.g7(context2, i11, i12, false, tVar, o4Var, o4Var2, i6Var, i7 == 1 ? 3 : -1, 1);
-                e51VarArr[i7] = g7Var;
+                bi.f7 f7Var = new bi.f7(context2, i11, i12, false, tVar, o4Var, o4Var2, i6Var, i7 == 1 ? 3 : -1, 1);
+                e51VarArr[i7] = f7Var;
                 n6Var.e1(i7);
                 qVar = ((org.telegram.ui.ActionBar.h2) n6Var).glassEngine;
-                qVar.b(g7Var);
-                g7Var.setFocusableInTouchMode(false);
-                g7Var.setClipChildren(false);
-                g7Var.setClipToPadding(false);
+                qVar.b(f7Var);
+                f7Var.setFocusableInTouchMode(false);
+                f7Var.setClipChildren(false);
+                f7Var.setClipToPadding(false);
                 if (i7 == 0) {
-                    g7Var.r1();
+                    f7Var.r1();
                 } else {
-                    g7Var.setSelectorType(9);
-                    g7Var.setSelectorDrawableColor(0);
+                    f7Var.setSelectorType(9);
+                    f7Var.setSelectorDrawableColor(0);
                 }
-                g7Var.g3.r = false;
-                g7Var.j(new q31(this, i7));
-                e51VarArr[i7] = g7Var;
-                return g7Var;
+                f7Var.g3.r = false;
+                f7Var.j(new q31(this, i7));
+                e51VarArr[i7] = f7Var;
+                return f7Var;
             default:
                 return i7 == 0 ? ((wg.a0) this.b).b : ((wg.w0) this.c).b;
         }

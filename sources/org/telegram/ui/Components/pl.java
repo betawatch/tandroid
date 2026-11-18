@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pl implements q0.a {
     public final /* synthetic */ int a;
@@ -27,13 +27,13 @@ public final /* synthetic */ class pl implements q0.a {
                 ArrayList arrayList = (ArrayList) obj2;
                 View view = (View) obj;
                 boolean z12 = ChatAttachAlertPhotoLayout.r1;
-                if (view instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
-                    org.telegram.messenger.ef photoEntry = r5Var.getPhotoEntry();
+                if (view instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+                    org.telegram.messenger.ef photoEntry = s5Var.getPhotoEntry();
                     if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z11) {
                         z10 = true;
                     }
-                    r5Var.setHasSpoiler(z10);
+                    s5Var.setHasSpoiler(z10);
                     break;
                 }
                 break;
@@ -41,13 +41,13 @@ public final /* synthetic */ class pl implements q0.a {
                 ArrayList arrayList2 = (ArrayList) obj2;
                 View view2 = (View) obj;
                 boolean z13 = ChatAttachAlertPhotoLayout.r1;
-                if (view2 instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var2 = (org.telegram.ui.Cells.r5) view2;
-                    org.telegram.messenger.ef photoEntry2 = r5Var2.getPhotoEntry();
+                if (view2 instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var2 = (org.telegram.ui.Cells.s5) view2;
+                    org.telegram.messenger.ef photoEntry2 = s5Var2.getPhotoEntry();
                     if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z11) {
                         z10 = true;
                     }
-                    r5Var2.setHighQuality(z10);
+                    s5Var2.setHighQuality(z10);
                     break;
                 }
                 break;

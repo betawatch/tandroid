@@ -20,7 +20,7 @@ import org.telegram.ui.y91;
 import tg.c2;
 import tg.m2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -154,8 +154,8 @@ public final /* synthetic */ class z0 implements Runnable {
                 return;
             case 16:
                 sh.c cVar = (sh.c) ((bi.u) this.b).f2;
-                org.telegram.ui.Cells.q1 q1Var = cVar.n;
-                if (q1Var == null || q1Var.getDelegate() == null) {
+                org.telegram.ui.Cells.r1 r1Var = cVar.n;
+                if (r1Var == null || r1Var.getDelegate() == null) {
                     return;
                 }
                 cVar.n.getDelegate().F1(cVar.n, false);

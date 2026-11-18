@@ -11,9 +11,9 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.j10;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i extends View {
     public final HashMap a;
@@ -29,8 +29,8 @@ public final class i extends View {
         this.d = j10.t0;
     }
 
-    public static String b(q1 q1Var) {
-        fj messageObject = q1Var.getMessageObject();
+    public static String b(r1 r1Var) {
+        fj messageObject = r1Var.getMessageObject();
         if (messageObject == null) {
             return null;
         }

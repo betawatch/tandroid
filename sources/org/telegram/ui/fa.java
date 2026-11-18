@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fa implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
 
     @Override // android.widget.TextView.OnEditorActionListener
     public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         switch (this.a) {
             case 0:
                 ga gaVar = (ga) this.b;
@@ -35,8 +35,8 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
                 bn bnVar = (bn) this.b;
                 if (i7 == 6) {
                     sh.c cVar = bnVar.kd;
-                    if (cVar != null && (q1Var = cVar.n) != null) {
-                        bnVar.Wa(q1Var);
+                    if (cVar != null && (r1Var = cVar.n) != null) {
+                        bnVar.Wa(r1Var);
                         return true;
                     }
                 } else {
@@ -66,28 +66,28 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
             case 4:
                 return i7 == 6 && ((z40) this.b).t0();
             case 5:
-                wb0 wb0Var = (wb0) this.b;
+                xb0 xb0Var = (xb0) this.b;
                 if (i7 == 5) {
-                    wb0Var.h(null);
+                    xb0Var.h(null);
                     return true;
                 }
-                wb0Var.getClass();
+                xb0Var.getClass();
                 return false;
             case 6:
-                dc0 dc0Var = (dc0) this.b;
+                ec0 ec0Var = (ec0) this.b;
                 if (i7 == 5) {
-                    dc0Var.h(null);
+                    ec0Var.h(null);
                     return true;
                 }
-                dc0Var.getClass();
+                ec0Var.getClass();
                 return false;
             case 7:
-                rc0 rc0Var = (rc0) this.b;
+                sc0 sc0Var = (sc0) this.b;
                 if (i7 == 5) {
-                    rc0Var.h(null);
+                    sc0Var.h(null);
                     return true;
                 }
-                rc0Var.getClass();
+                sc0Var.getClass();
                 return false;
             case 8:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;

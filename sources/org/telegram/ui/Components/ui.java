@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ui implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class ui implements org.telegram.messenger.y10 {
                 c11.t = true;
                 c11.m = org.telegram.ui.ActionBar.n6.hf;
                 imageReceiver.s0(org.telegram.messenger.fc.p(org.telegram.messenger.h20.b(fVar.b.geo, org.telegram.messenger.ks.X4, org.telegram.messenger.ks.y2, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, new cq(c11), null, 0);
-                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.l8(imageReceiver, c10 == true ? 1 : 0));
+                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.m8(imageReceiver, c10 == true ? 1 : 0));
                 imageReceiver.J0(org.telegram.messenger.g0.L(14.0f));
                 return new sc(4, imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
             case 2:

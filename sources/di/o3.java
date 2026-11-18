@@ -46,7 +46,7 @@ import org.telegram.ui.vs;
 import org.telegram.ui.ws;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o3 implements Runnable {
     public final /* synthetic */ int a;
@@ -130,7 +130,7 @@ public final /* synthetic */ class o3 implements Runnable {
                                     int i12 = f6Var.a;
                                     String str3 = M1.slug;
                                     if (!TextUtils.isEmpty(str3)) {
-                                        org.telegram.messenger.g0.h3(new bi.n4(i12, 0, str3, true), bi.v4.b[0]);
+                                        org.telegram.messenger.g0.h3(new bi.n4(i12, 0, str3, true), bi.u4.b[0]);
                                     }
                                     org.telegram.messenger.g0.g3(new aa.r((Object) new ai.o(8), (Object) M1.getDocument(), (Object) gd.M0(2131750085, null), 23));
                                 }
@@ -263,7 +263,7 @@ public final /* synthetic */ class o3 implements Runnable {
                 }
                 break;
             case 4:
-                bn.X0((bn) this.c, (org.telegram.ui.Cells.q1) this.d, this.b, (String) this.e, (TLRPC.User[]) this.f, (CharacterStyle) this.h);
+                bn.X0((bn) this.c, (org.telegram.ui.Cells.r1) this.d, this.b, (String) this.e, (TLRPC.User[]) this.f, (CharacterStyle) this.h);
                 break;
             case 5:
                 bn bnVar = (bn) this.c;
@@ -514,10 +514,10 @@ public final /* synthetic */ class o3 implements Runnable {
         this.h = tL_webPage;
     }
 
-    public /* synthetic */ o3(bn bnVar, org.telegram.ui.Cells.q1 q1Var, boolean z10, String str, TLRPC.User[] userArr, CharacterStyle characterStyle) {
+    public /* synthetic */ o3(bn bnVar, org.telegram.ui.Cells.r1 r1Var, boolean z10, String str, TLRPC.User[] userArr, CharacterStyle characterStyle) {
         this.a = 4;
         this.c = bnVar;
-        this.d = q1Var;
+        this.d = r1Var;
         this.b = z10;
         this.e = str;
         this.f = userArr;

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class hv implements e50, org.telegram.ui.Components.kg, org.telegram.ui.Components.z4, org.telegram.ui.Components.nm0, org.telegram.ui.Components.rj0, hi.ka, org.telegram.ui.Components.b10 {
     public final /* synthetic */ cx a;
@@ -22,8 +22,8 @@ public final class hv implements e50, org.telegram.ui.Components.kg, org.telegra
     }
 
     @Override // org.telegram.ui.Components.nm0
-    public void F(org.telegram.ui.Cells.t2 t2Var) {
-        this.a.b5(t2Var);
+    public void F(org.telegram.ui.Cells.u2 u2Var) {
+        this.a.b5(u2Var);
     }
 
     @Override // org.telegram.ui.Components.kg
@@ -133,12 +133,12 @@ public final class hv implements e50, org.telegram.ui.Components.kg, org.telegra
 
     @Override // org.telegram.ui.Components.rj0
     public boolean f(float f10, float f11, int i7, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.g6;
+        boolean z10 = view instanceof org.telegram.ui.Cells.h6;
         cx cxVar = this.a;
         if (z10) {
-            org.telegram.ui.Cells.g6 g6Var = (org.telegram.ui.Cells.g6) view;
-            if (g6Var.o0) {
-                cxVar.h5(g6Var.getDialogId(), view);
+            org.telegram.ui.Cells.h6 h6Var = (org.telegram.ui.Cells.h6) view;
+            if (h6Var.o0) {
+                cxVar.h5(h6Var.getDialogId(), view);
                 return true;
             }
         }

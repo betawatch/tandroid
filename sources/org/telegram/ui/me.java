@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final /* synthetic */ class me implements org.telegram.messenger.x10 {
                 break;
             case 5:
                 View view = (View) obj;
-                if (!(view instanceof org.telegram.ui.Cells.q1)) {
-                    if (!(view instanceof org.telegram.ui.Cells.u0)) {
-                        if (!(view instanceof org.telegram.ui.Cells.z1)) {
+                if (!(view instanceof org.telegram.ui.Cells.r1)) {
+                    if (!(view instanceof org.telegram.ui.Cells.v0)) {
+                        if (!(view instanceof org.telegram.ui.Cells.a2)) {
                             if (!(view instanceof org.telegram.ui.Cells.a0)) {
                                 if (view instanceof org.telegram.ui.Cells.g0) {
                                     view.invalidate();
@@ -58,43 +58,43 @@ public final /* synthetic */ class me implements org.telegram.messenger.x10 {
                                 break;
                             }
                         } else {
-                            ((org.telegram.ui.Cells.z1) view).getTextView().setTranslationX(bnVar.n9() / 2.0f);
+                            ((org.telegram.ui.Cells.a2) view).getTextView().setTranslationX(bnVar.n9() / 2.0f);
                             break;
                         }
                     } else {
-                        org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) view;
-                        u0Var.f0 = bnVar.Q9();
-                        u0Var.j0 = bnVar.ba();
+                        org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
+                        v0Var.f0 = bnVar.Q9();
+                        v0Var.j0 = bnVar.ba();
                         bnVar.aa();
                         bnVar.m9();
                         int n92 = bnVar.n9();
-                        if (u0Var.k0 != n92) {
-                            u0Var.k0 = n92;
-                            u0Var.invalidate();
+                        if (v0Var.k0 != n92) {
+                            v0Var.k0 = n92;
+                            v0Var.invalidate();
                             break;
                         }
                     }
                 } else {
-                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-                    q1Var.W6 = bnVar.Q9();
-                    q1Var.X6 = bnVar.ba();
+                    org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) view;
+                    r1Var.W6 = bnVar.Q9();
+                    r1Var.X6 = bnVar.ba();
                     boolean aa2 = bnVar.aa();
-                    if (q1Var.Y6 != aa2) {
-                        q1Var.Y6 = aa2;
+                    if (r1Var.Y6 != aa2) {
+                        r1Var.Y6 = aa2;
                         bnVar.A0.getClass();
                         int R = RecyclerView.R(view);
-                        q1Var.F6 = true;
-                        q1Var.forceLayout();
+                        r1Var.F6 = true;
+                        r1Var.forceLayout();
                         if (R >= 0) {
                             bnVar.D0.g(R);
                         }
                     }
-                    q1Var.Z6 = bnVar.m9();
+                    r1Var.Z6 = bnVar.m9();
                     int n93 = bnVar.n9();
-                    if (q1Var.a7 != n93) {
-                        q1Var.a7 = n93;
-                        q1Var.b4();
-                        q1Var.invalidate();
+                    if (r1Var.a7 != n93) {
+                        r1Var.a7 = n93;
+                        r1Var.b4();
+                        r1Var.invalidate();
                         break;
                     }
                 }

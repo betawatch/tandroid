@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.k80;
 import org.telegram.ui.Components.kq;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class za extends LinearLayout {
     public final /* synthetic */ int a;
@@ -136,11 +136,11 @@ public final class za extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public za(org.telegram.ui.Cells.c2 c2Var, Context context, int i7) {
+    public za(org.telegram.ui.Cells.d2 d2Var, Context context, int i7) {
         super(context);
         this.a = 4;
         int i10 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.i6 i6Var = c2Var.b;
+        org.telegram.ui.ActionBar.i6 i6Var = d2Var.b;
         org.telegram.ui.ActionBar.n6.w0(i10, i6Var);
         if (i7 != 0) {
             ImageView imageView = new ImageView(context);

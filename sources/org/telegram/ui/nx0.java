@@ -10,10 +10,10 @@ import android.widget.TextView;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class nx0 extends FrameLayout implements org.telegram.messenger.fs {
-    public final bi.n5 a;
+    public final bi.m5 a;
     public final org.telegram.ui.Components.f71 b;
     public final fi.d6 c;
     public final mx0 d;
@@ -32,15 +32,15 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
         Objects.requireNonNull(d6Var);
         this.w = new ru0(d6Var, 8);
         final org.telegram.ui.Components.hq0 hq0Var = (org.telegram.ui.Components.hq0) this;
-        bi.n5 n5Var = new bi.n5(hq0Var, context, gq0Var, 2);
-        this.a = n5Var;
-        n5Var.setAllowDisallowInterceptTouch(true);
+        bi.m5 m5Var = new bi.m5(hq0Var, context, gq0Var, 2);
+        this.a = m5Var;
+        m5Var.setAllowDisallowInterceptTouch(true);
         mx0 mx0Var = new mx0(hq0Var);
         this.d = mx0Var;
         mx0Var.a = d6Var.a();
-        n5Var.setAdapter(mx0Var);
-        n5Var.setTranslationY(org.telegram.messenger.g0.L(42.0f));
-        org.telegram.ui.Components.f71 i7 = n5Var.i(10, true);
+        m5Var.setAdapter(mx0Var);
+        m5Var.setTranslationY(org.telegram.messenger.g0.L(42.0f));
+        org.telegram.ui.Components.f71 i7 = m5Var.i(10, true);
         this.b = i7;
         i7.h(org.telegram.ui.ActionBar.n6.xi, org.telegram.ui.ActionBar.n6.G6, org.telegram.ui.ActionBar.n6.vi, org.telegram.ui.ActionBar.n6.yi, org.telegram.ui.ActionBar.n6.s8);
         i7.r = 12;
@@ -74,7 +74,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                             storiesController = gt0Var.getStoriesController();
                             if (storiesController.i(gt0Var.m1)) {
                                 org.telegram.ui.Components.y60 I = org.telegram.ui.Components.y60.I(h2Var, view);
-                                I.X(new bi.p5(gq0Var2));
+                                I.X(new bi.o5(gq0Var2));
                                 final int i12 = 0;
                                 I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.M0(2131744563, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
                                     @Override // java.lang.Runnable
@@ -101,7 +101,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                         }
                                     }
                                 }, false);
-                                gt0Var.B(new org.telegram.ui.Cells.b5(I), h2Var, gt0Var.m1, intValue);
+                                gt0Var.B(new org.telegram.ui.Cells.c5(I), h2Var, gt0Var.m1, intValue);
                                 final int i13 = 1;
                                 I.c(R.drawable.msg_edit, org.telegram.messenger.gd.M0(2131744558, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
                                     @Override // java.lang.Runnable
@@ -221,7 +221,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                             storiesController = gt0Var.getStoriesController();
                             if (storiesController.i(gt0Var.m1)) {
                                 org.telegram.ui.Components.y60 I = org.telegram.ui.Components.y60.I(h2Var, view);
-                                I.X(new bi.p5(gq0Var2));
+                                I.X(new bi.o5(gq0Var2));
                                 final int i12 = 0;
                                 I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.M0(2131744563, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
                                     @Override // java.lang.Runnable
@@ -248,7 +248,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                         }
                                     }
                                 }, false);
-                                gt0Var.B(new org.telegram.ui.Cells.b5(I), h2Var, gt0Var.m1, intValue);
+                                gt0Var.B(new org.telegram.ui.Cells.c5(I), h2Var, gt0Var.m1, intValue);
                                 final int i13 = 1;
                                 I.c(R.drawable.msg_edit, org.telegram.messenger.gd.M0(2131744558, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
                                     @Override // java.lang.Runnable
@@ -469,7 +469,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
             if (T instanceof ProfileActivity) {
                 ProfileActivity profileActivity = (ProfileActivity) T;
                 profileActivity.X4(false);
-                org.telegram.messenger.g0.g3(new m90(profileActivity, 28));
+                org.telegram.messenger.g0.g3(new n90(profileActivity, 28));
             }
         }
         if (z10) {

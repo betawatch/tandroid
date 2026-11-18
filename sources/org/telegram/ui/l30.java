@@ -27,7 +27,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l30 extends org.telegram.ui.Components.au0 {
     public boolean g0;
@@ -59,13 +59,13 @@ public final class l30 extends org.telegram.ui.Components.au0 {
         float f11;
         Canvas canvas2;
         Canvas canvas3;
-        org.telegram.ui.Cells.f4 f4Var;
+        org.telegram.ui.Cells.g4 g4Var;
         float f12;
         float y10;
         float x10;
         float[] fArr;
         Path path;
-        org.telegram.ui.Cells.f4 f4Var2;
+        org.telegram.ui.Cells.g4 g4Var2;
         ArrayList arrayList;
         org.telegram.ui.Components.voip.r rVar;
         boolean z10;
@@ -124,9 +124,9 @@ public final class l30 extends org.telegram.ui.Components.au0 {
         }
         for (int i10 = 0; i10 < n30Var.getChildCount(); i10++) {
             View childAt = n30Var.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.f4) {
+            if (childAt instanceof org.telegram.ui.Cells.g4) {
                 z11 = true;
-                ((org.telegram.ui.Cells.f4) childAt).setDrawAvatar(true);
+                ((org.telegram.ui.Cells.g4) childAt).setDrawAvatar(true);
             } else {
                 z11 = true;
             }
@@ -160,11 +160,11 @@ public final class l30 extends org.telegram.ui.Components.au0 {
                         }
                     }
                     i7 = i12;
-                    if (childAt2 instanceof org.telegram.ui.Cells.f4) {
+                    if (childAt2 instanceof org.telegram.ui.Cells.g4) {
                         n30Var.getClass();
                         if (RecyclerView.R(childAt2) >= 0) {
-                            org.telegram.ui.Cells.f4 f4Var3 = (org.telegram.ui.Cells.f4) childAt2;
-                            hashMap.put(f4Var3.getParticipant(), f4Var3);
+                            org.telegram.ui.Cells.g4 g4Var3 = (org.telegram.ui.Cells.g4) childAt2;
+                            hashMap.put(g4Var3.getParticipant(), g4Var3);
                         }
                     }
                 } else {
@@ -196,7 +196,7 @@ public final class l30 extends org.telegram.ui.Components.au0 {
                         float y11 = ((n30Var.getY() + r14.getTop()) - b20Var.getTop()) + r14.getAvatarImageView().getTop() + (r14.getAvatarImageView().getMeasuredHeight() >> 1);
                         float x12 = x10Var.getX() + r10Var.getLeft() + (r10Var.getMeasuredWidth() >> 1);
                         float y12 = x10Var.getY() + r10Var.getTop() + (r10Var.getMeasuredHeight() >> 1);
-                        ((org.telegram.ui.Cells.f4) view3).setDrawAvatar(false);
+                        ((org.telegram.ui.Cells.g4) view3).setDrawAvatar(false);
                         f13 = y11;
                         f14 = x12;
                         f15 = y12;
@@ -409,15 +409,15 @@ public final class l30 extends org.telegram.ui.Components.au0 {
                             canvas2.translate(childAt3.getX() + n30Var.getLeft(), childAt3.getY() + n30Var.getY());
                             float alpha = f40Var.V4.getAlpha() / 100.0f;
                             rectF.set(0.0f, 0.0f, childAt3.getMeasuredWidth(), (int) (((f40Var.W4.getClipHeight() - f40Var.W4.getMeasuredHeight()) * (1.0f - org.telegram.ui.Components.lr.g.getInterpolation(1.0f - alpha))) + f40Var.W4.getMeasuredHeight()));
-                            org.telegram.ui.Cells.f4 f4Var4 = f40Var.W4;
+                            org.telegram.ui.Cells.g4 g4Var4 = f40Var.W4;
                             paint.getColor();
-                            org.telegram.ui.ActionBar.n5[] n5VarArr = f4Var4.d;
+                            org.telegram.ui.ActionBar.n5[] n5VarArr = g4Var4.d;
                             if (TextUtils.isEmpty(n5VarArr[4].getText())) {
                                 alpha = 0.0f;
                             }
                             n5VarArr[4].setFullAlpha(alpha);
                             n5VarArr[4].h(0, 0);
-                            f4Var4.invalidate();
+                            g4Var4.invalidate();
                             canvas2.drawRoundRect(rectF, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), paint);
                             childAt3.draw(canvas2);
                             canvas2.restore();
@@ -444,21 +444,21 @@ public final class l30 extends org.telegram.ui.Components.au0 {
                 int i16 = 0;
                 while (true) {
                     if (i16 >= childCount2) {
-                        f4Var = null;
+                        g4Var = null;
                         break;
                     }
                     View childAt4 = n30Var.getChildAt(i16);
-                    f4Var = f40Var.W4;
-                    if (childAt4 == f4Var) {
+                    g4Var = f40Var.W4;
+                    if (childAt4 == g4Var) {
                         break;
                     } else {
                         i16++;
                     }
                 }
             } else {
-                f4Var = f40Var.W4;
+                g4Var = f40Var.W4;
             }
-            if (f4Var != null && y15 < y16) {
+            if (g4Var != null && y15 < y16) {
                 canvas3.save();
                 if (f40Var.Z4 == null) {
                     f12 = 255.0f;
@@ -467,8 +467,8 @@ public final class l30 extends org.telegram.ui.Components.au0 {
                     f12 = 255.0f;
                 }
                 if (f40Var.a5) {
-                    y10 = ((1.0f - f40Var.c4) * (f4Var.getY() + n30Var.getY())) + (f40Var.c4 * (e20Var.getMeasuredWidth() + e20Var.getTop()));
-                    x10 = ((1.0f - f40Var.c4) * (f4Var.getX() + n30Var.getLeft())) + (f40Var.c4 * e20Var.getLeft());
+                    y10 = ((1.0f - f40Var.c4) * (g4Var.getY() + n30Var.getY())) + (f40Var.c4 * (e20Var.getMeasuredWidth() + e20Var.getTop()));
+                    x10 = ((1.0f - f40Var.c4) * (g4Var.getX() + n30Var.getLeft())) + (f40Var.c4 * e20Var.getLeft());
                 } else {
                     y10 = e20Var.getMeasuredWidth() + e20Var.getTop();
                     x10 = e20Var.getLeft();
@@ -478,18 +478,18 @@ public final class l30 extends org.telegram.ui.Components.au0 {
                 if (f40Var.a5) {
                     fArr = fArr2;
                     path = path2;
-                    f4Var2 = f4Var;
+                    g4Var2 = g4Var;
                     canvas3.save();
                 } else {
                     fArr = fArr2;
-                    f4Var2 = f4Var;
+                    g4Var2 = g4Var;
                     path = path2;
-                    canvas3.saveLayerAlpha(0.0f, 0.0f, f4Var.getMeasuredWidth(), f4Var.getClipHeight(), (int) (f40Var.c4 * f12), 31);
+                    canvas3.saveLayerAlpha(0.0f, 0.0f, g4Var.getMeasuredWidth(), g4Var.getClipHeight(), (int) (f40Var.c4 * f12), 31);
                 }
-                float clipHeight = (int) (((f4Var2.getClipHeight() - f4Var2.getMeasuredHeight()) * (1.0f - org.telegram.ui.Components.lr.g.getInterpolation(1.0f - f40Var.c4))) + f4Var2.getMeasuredHeight());
-                rectF.set(0.0f, 0.0f, f4Var2.getMeasuredWidth(), clipHeight);
-                org.telegram.ui.Cells.f4 f4Var5 = f4Var2;
-                f4Var5.setProgressToAvatarPreview(f40Var.a5 ? f40Var.c4 : 1.0f);
+                float clipHeight = (int) (((g4Var2.getClipHeight() - g4Var2.getMeasuredHeight()) * (1.0f - org.telegram.ui.Components.lr.g.getInterpolation(1.0f - f40Var.c4))) + g4Var2.getMeasuredHeight());
+                rectF.set(0.0f, 0.0f, g4Var2.getMeasuredWidth(), clipHeight);
+                org.telegram.ui.Cells.g4 g4Var5 = g4Var2;
+                g4Var5.setProgressToAvatarPreview(f40Var.a5 ? f40Var.c4 : 1.0f);
                 for (int i17 = 0; i17 < 4; i17++) {
                     fArr[i17] = (1.0f - f40Var.c4) * org.telegram.messenger.g0.L(13.0f);
                     fArr[i17 + 4] = org.telegram.messenger.g0.L(13.0f);
@@ -498,7 +498,7 @@ public final class l30 extends org.telegram.ui.Components.au0 {
                 path.addRoundRect(rectF, fArr, Path.Direction.CW);
                 path.close();
                 canvas3.drawPath(path, paint);
-                f4Var5.draw(canvas3);
+                g4Var5.draw(canvas3);
                 canvas3.restore();
                 canvas3.restore();
                 if (f40Var.d4 != null) {

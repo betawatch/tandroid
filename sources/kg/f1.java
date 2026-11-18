@@ -23,15 +23,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Cells.i5;
-import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Cells.j5;
+import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class f1 extends h2 implements fs {
     public e51 a;
@@ -113,7 +113,7 @@ public final class f1 extends h2 implements fs {
     public static /* synthetic */ void b0(f1 f1Var, View view, String str) {
         z1 b10 = z1.b(f1Var.currentAccount);
         f1Var.n = str;
-        ((m8) view).w(b10.d(str, false), true);
+        ((n8) view).w(b10.d(str, false), true);
         f1Var.d0(true);
     }
 
@@ -261,8 +261,8 @@ public final class f1 extends h2 implements fs {
             this.f[i10].remove(e1Var);
         }
         View B1 = this.a.B1(i10);
-        if (B1 instanceof i5) {
-            ((i5) B1).setValue(f0(this.f[i10]));
+        if (B1 instanceof j5) {
+            ((j5) B1).setValue(f0(this.f[i10]));
         } else {
             this.a.g3.O(true);
         }

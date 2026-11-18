@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class pw0 extends View implements org.telegram.messenger.fs {
     public int E;
@@ -139,7 +139,7 @@ public abstract class pw0 extends View implements org.telegram.messenger.fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             invalidate();
         }
     }
@@ -151,7 +151,7 @@ public abstract class pw0 extends View implements org.telegram.messenger.fs {
         if (imageReceiver != null) {
             imageReceiver.P();
         }
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
     }
 
     @Override // android.view.View
@@ -161,7 +161,7 @@ public abstract class pw0 extends View implements org.telegram.messenger.fs {
         if (imageReceiver != null) {
             imageReceiver.R();
         }
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
     }
 
     @Override // android.view.View

@@ -22,7 +22,7 @@ import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.za0;
 import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class w4 extends bk0 {
     public final ArrayList c = new ArrayList();
@@ -137,7 +137,7 @@ public final class w4 extends bk0 {
             return;
         }
         r4 r4Var = (r4) arrayList.get(i7);
-        org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) f1Var.a;
+        org.telegram.ui.Cells.n6 n6Var = (org.telegram.ui.Cells.n6) f1Var.a;
         TL_stories.StoryView storyView = r4Var.b;
         TL_stories.StoryReaction storyReaction = r4Var.c;
         if (storyView != null) {
@@ -181,7 +181,7 @@ public final class w4 extends bk0 {
                 TLRPC.User user2 = user;
                 i12 = 11;
                 i11 = 12;
-                m6Var.c(user2, null, null, z10, 0L, storyView.story, false, true, remove);
+                n6Var.c(user2, null, null, z10, 0L, storyView.story, false, true, remove);
             } else {
                 TLRPC.User user3 = user;
                 i11 = 12;
@@ -189,14 +189,14 @@ public final class w4 extends bk0 {
                 if (storyView instanceof TL_stories.TL_storyViewPublicForward) {
                     long j11 = storyView.message != null ? r10.date : j10;
                     h5 h5Var = a5Var.E;
-                    m6Var.c(user3, null, null, z10, j11, h5Var == null ? null : h5Var.a, true, true, remove);
+                    n6Var.c(user3, null, null, z10, j11, h5Var == null ? null : h5Var.a, true, true, remove);
                 } else {
-                    m6Var.c(user3, null, z10 ? null : storyView.reaction, z10, storyView.date, null, false, true, remove);
+                    n6Var.c(user3, null, z10 ? null : storyView.reaction, z10, storyView.date, null, false, true, remove);
                 }
             }
             int i14 = i7 < arrayList.size() + (-1) ? ((r4) arrayList.get(i7 + 1)).a : -1;
-            m6Var.a = i14 == 1 || i14 == i12 || i14 == i11;
-            m6Var.a(false, a5Var.d(storyView) ? 1.0f : 0.5f);
+            n6Var.a = i14 == 1 || i14 == i12 || i14 == i11;
+            n6Var.a(false, a5Var.d(storyView) ? 1.0f : 0.5f);
             return;
         }
         TLRPC.User user4 = user;
@@ -206,15 +206,15 @@ public final class w4 extends bk0 {
                 TLRPC.Reaction reaction2 = tL_storyReaction.reaction;
                 boolean z11 = (reaction2 == null || (str = ch.p0.d(reaction2).f) == null || !str.equals("❤")) ? false : true;
                 i10 = 12;
-                m6Var.c(user4, O0, z11 ? null : tL_storyReaction.reaction, z11, tL_storyReaction.date, null, false, true, remove);
+                n6Var.c(user4, O0, z11 ? null : tL_storyReaction.reaction, z11, tL_storyReaction.date, null, false, true, remove);
             } else {
                 i10 = 12;
                 if (storyReaction instanceof TL_stories.TL_storyReactionPublicRepost) {
-                    m6Var.c(user4, O0, null, false, 0L, ((TL_stories.TL_storyReactionPublicRepost) storyReaction).story, false, true, remove);
+                    n6Var.c(user4, O0, null, false, 0L, ((TL_stories.TL_storyReactionPublicRepost) storyReaction).story, false, true, remove);
                 } else if (storyReaction instanceof TL_stories.TL_storyReactionPublicForward) {
                     long j12 = storyReaction.message != null ? r7.date : 0L;
                     h5 h5Var2 = a5Var.E;
-                    m6Var.c(user4, O0, null, false, j12, h5Var2 == null ? null : h5Var2.a, true, true, remove);
+                    n6Var.c(user4, O0, null, false, j12, h5Var2 == null ? null : h5Var2.a, true, true, remove);
                 }
             }
             boolean z12 = true;
@@ -222,8 +222,8 @@ public final class w4 extends bk0 {
             if (i15 != 1 && i15 != 11 && i15 != i10) {
                 z12 = false;
             }
-            m6Var.a = z12;
-            m6Var.a(false, 1.0f);
+            n6Var.a = z12;
+            n6Var.a(false, 1.0f);
         }
     }
 
@@ -241,7 +241,7 @@ public final class w4 extends bk0 {
                 view = new t4(this, a5Var.getContext(), i13);
                 break;
             case 1:
-                za0 za0Var = org.telegram.ui.Cells.m6.I;
+                za0 za0Var = org.telegram.ui.Cells.n6.I;
                 view = new u4(i10, a5Var.getContext(), bVar, this);
                 break;
             case 2:
@@ -250,7 +250,7 @@ public final class w4 extends bk0 {
                 view = new t4(this, a5Var.getContext(), i12);
                 break;
             case 3:
-                view = new org.telegram.ui.Cells.v3(a5Var.getContext(), 70);
+                view = new org.telegram.ui.Cells.w3(a5Var.getContext(), 70);
                 break;
             case 4:
                 wz wzVar = new wz(a5Var.getContext(), bVar);

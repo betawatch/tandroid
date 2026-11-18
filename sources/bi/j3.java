@@ -35,6 +35,7 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.cy0;
@@ -50,7 +51,7 @@ import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j3 extends sa implements fs {
     public static final /* synthetic */ int F2 = 0;
@@ -196,7 +197,7 @@ public final class j3 extends sa implements fs {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         z41 z41Var;
-        if (i7 == ks.l5) {
+        if (i7 == ks.m5) {
             h1();
             return;
         }
@@ -266,7 +267,7 @@ public final class j3 extends sa implements fs {
     public final void dismiss() {
         super.dismiss();
         int i7 = this.T1;
-        ks.f(i7).n(this, ks.l5);
+        ks.f(i7).n(this, ks.m5);
         ks.f(i7).n(this, ks.H3);
         ks.f(i7).n(this, ks.E0);
         ks.f(i7).n(this, ks.K3);
@@ -345,7 +346,7 @@ public final class j3 extends sa implements fs {
                 Object obj2 = arrayList4.get(i14);
                 i14++;
                 TL_stars.StarGift starGift2 = ((TL_stars.SavedStarGift) obj2).gift;
-                if ((starGift2 instanceof TL_stars.TL_starGiftUnique) && !v4.m(starGift2)) {
+                if ((starGift2 instanceof TL_stars.TL_starGiftUnique) && !u4.m(starGift2)) {
                     z11 = true;
                     break;
                 }
@@ -430,7 +431,7 @@ public final class j3 extends sa implements fs {
                 i18++;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj3;
                 TL_stars.StarGift starGift3 = savedStarGift.gift;
-                if ((starGift3 instanceof TL_stars.TL_starGiftUnique) && !v4.m(starGift3)) {
+                if ((starGift3 instanceof TL_stars.TL_starGiftUnique) && !u4.m(starGift3)) {
                     arrayList3.add(savedStarGift.gift);
                 }
             }
@@ -618,7 +619,7 @@ public final class j3 extends sa implements fs {
         di.x8.y(i7, false).T();
         q9 q9Var = new q9(context);
         q9Var.setImportantForAccessibility(2);
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        b9 b9Var = new b9((org.telegram.ui.ActionBar.i6) null);
         if (j3 > 0) {
             i10 = 2;
             TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
@@ -790,7 +791,7 @@ public final class j3 extends sa implements fs {
                                         }
                                         arrayList = arrayList2;
                                     }
-                                    if (savedStarGift == null || v4.m(savedStarGift.gift)) {
+                                    if (savedStarGift == null || u4.m(savedStarGift.gift)) {
                                         return;
                                     }
                                     v2 v2Var = new v2(j3Var, j3Var.getContext(), i21, j10.i(i21).e(), j3Var.J0);
@@ -907,7 +908,7 @@ public final class j3 extends sa implements fs {
                 if (org.telegram.messenger.v1.a(i7).c(j3)) {
                     g1(true);
                 }
-                ks.f(i7).c(this, ks.l5);
+                ks.f(i7).c(this, ks.m5);
                 ks.f(i7).c(this, ks.H3);
                 ks.f(i7).c(this, ks.E0);
                 ks.f(i7).c(this, ks.K3);
@@ -959,16 +960,16 @@ public final class j3 extends sa implements fs {
                 int i22 = this.u0;
                 org.telegram.messenger.g0.z3(a5Var2, i22, 0, i22, 0);
                 this.v2.setBackground(null);
-                j7 j7Var = new j7(i7, context, this.J0);
-                fh.g c11 = cVar.c(j7Var, null, false);
+                i7 i7Var = new i7(i7, context, this.J0);
+                fh.g c11 = cVar.c(i7Var, null, false);
                 c11.p(c8.i0.m(this.J0));
                 c11.r(org.telegram.messenger.g0.L(23.0f));
                 c11.q(org.telegram.messenger.g0.L(6.0f));
-                j7Var.setBackground(c11);
-                ra.a(j7Var);
-                j7Var.setOnClickListener(new ah.d(j7Var, 7));
-                j7Var.setOnWidthChanged(new c2(this, 0));
-                this.v2.addView(j7Var, ma.e(-2, 58, 5));
+                i7Var.setBackground(c11);
+                ra.a(i7Var);
+                i7Var.setOnClickListener(new ah.d(i7Var, 7));
+                i7Var.setOnWidthChanged(new c2(this, 0));
+                this.v2.addView(i7Var, ma.e(-2, 58, 5));
                 qVar.i(this.b);
                 this.U1.O(false);
             }
@@ -1036,7 +1037,7 @@ public final class j3 extends sa implements fs {
                                 }
                                 arrayList = arrayList2;
                             }
-                            if (savedStarGift == null || v4.m(savedStarGift.gift)) {
+                            if (savedStarGift == null || u4.m(savedStarGift.gift)) {
                                 return;
                             }
                             v2 v2Var = new v2(j3Var, j3Var.getContext(), i212, j10.i(i212).e(), j3Var.J0);
@@ -1152,7 +1153,7 @@ public final class j3 extends sa implements fs {
         c1();
         if (org.telegram.messenger.v1.a(i7).c(j3)) {
         }
-        ks.f(i7).c(this, ks.l5);
+        ks.f(i7).c(this, ks.m5);
         ks.f(i7).c(this, ks.H3);
         ks.f(i7).c(this, ks.E0);
         ks.f(i7).c(this, ks.K3);
@@ -1204,16 +1205,16 @@ public final class j3 extends sa implements fs {
         int i222 = this.u0;
         org.telegram.messenger.g0.z3(a5Var22, i222, 0, i222, 0);
         this.v2.setBackground(null);
-        j7 j7Var2 = new j7(i7, context, this.J0);
-        fh.g c112 = cVar2.c(j7Var2, null, false);
+        i7 i7Var2 = new i7(i7, context, this.J0);
+        fh.g c112 = cVar2.c(i7Var2, null, false);
         c112.p(c8.i0.m(this.J0));
         c112.r(org.telegram.messenger.g0.L(23.0f));
         c112.q(org.telegram.messenger.g0.L(6.0f));
-        j7Var2.setBackground(c112);
-        ra.a(j7Var2);
-        j7Var2.setOnClickListener(new ah.d(j7Var2, 7));
-        j7Var2.setOnWidthChanged(new c2(this, 0));
-        this.v2.addView(j7Var2, ma.e(-2, 58, 5));
+        i7Var2.setBackground(c112);
+        ra.a(i7Var2);
+        i7Var2.setOnClickListener(new ah.d(i7Var2, 7));
+        i7Var2.setOnWidthChanged(new c2(this, 0));
+        this.v2.addView(i7Var2, ma.e(-2, 58, 5));
         qVar2.i(this.b);
         this.U1.O(false);
     }

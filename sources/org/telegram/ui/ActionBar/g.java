@@ -8,9 +8,9 @@ import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.r8;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.y8;
-import org.telegram.ui.de0;
+import org.telegram.ui.ee0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                de0 de0Var = (de0) this.d;
-                AnimatorSet[] animatorSetArr = de0Var.L;
+                ee0 ee0Var = (ee0) this.d;
+                AnimatorSet[] animatorSetArr = ee0Var.L;
                 boolean z10 = this.b;
                 if (animatorSetArr[!z10 ? 1 : 0] != null && animatorSetArr[!z10 ? 1 : 0].equals(animator)) {
-                    de0Var.L[!z10 ? 1 : 0] = null;
+                    ee0Var.L[!z10 ? 1 : 0] = null;
                     break;
                 }
                 break;
@@ -120,14 +120,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                de0 de0Var = (de0) this.d;
-                AnimatorSet[] animatorSetArr = de0Var.L;
+                ee0 ee0Var = (ee0) this.d;
+                AnimatorSet[] animatorSetArr = ee0Var.L;
                 boolean z12 = this.b;
-                if (animatorSetArr[!z12 ? 1 : 0] != null && animatorSetArr[!z12 ? 1 : 0].equals(animator) && !this.c && z12 && de0Var.N.getAlpha() != 1.0f) {
-                    de0Var.N.setAlpha(1.0f);
-                    de0Var.N.setScaleX(1.0f);
-                    de0Var.N.setScaleY(1.0f);
-                    de0Var.N.setVisibility(0);
+                if (animatorSetArr[!z12 ? 1 : 0] != null && animatorSetArr[!z12 ? 1 : 0].equals(animator) && !this.c && z12 && ee0Var.N.getAlpha() != 1.0f) {
+                    ee0Var.N.setAlpha(1.0f);
+                    ee0Var.N.setScaleX(1.0f);
+                    ee0Var.N.setScaleY(1.0f);
+                    ee0Var.N.setVisibility(0);
                     break;
                 }
                 break;

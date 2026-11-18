@@ -20,14 +20,14 @@ import java.lang.reflect.Field;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.s9;
+import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public class x7 extends NestedScrollView implements x60 {
-    public final s9 a0;
+    public final t9 a0;
     public final r1.g b0;
     public final w7 c0;
     public boolean d0;
@@ -64,9 +64,9 @@ public class x7 extends NestedScrollView implements x60 {
         ks.i(this);
         w7 w7Var = new w7(this, getContext());
         this.c0 = w7Var;
-        s9 s9Var = new s9(w7Var, i6Var);
-        this.a0 = s9Var;
-        s9Var.h0 = false;
+        t9 t9Var = new t9(w7Var, i6Var);
+        this.a0 = t9Var;
+        t9Var.h0 = false;
         frameLayout.addView(w7Var, -1, -2);
         addView(frameLayout, new ViewGroup.LayoutParams(-1, -2));
         paint.setColor(-16777216);

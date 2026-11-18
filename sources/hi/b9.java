@@ -24,7 +24,7 @@ import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.cz;
 import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, b81, u51, w7, b7 {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, 
         if (d7Var == null || (ffVar = d7Var.a1) == null) {
             return;
         }
-        czVar.d(new org.telegram.ui.Cells.b5(ffVar));
+        czVar.d(new org.telegram.ui.Cells.c5(ffVar));
     }
 
     @Override // org.telegram.ui.Components.b81

@@ -14,14 +14,14 @@ import org.telegram.messenger.o10;
 import org.telegram.messenger.ob;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.pj;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,14 +75,14 @@ public final /* synthetic */ class p3 implements Runnable {
         switch (i11) {
             case 0:
                 o3 o3Var = (o3) obj;
-                f4.e((Context) obj4, this.b, this.c, (TLRPC.TL_messageActionStarGiftOnchainOffer) obj3, (org.telegram.ui.ActionBar.i6) obj2, o3Var.k(), new k3(o3Var, 3));
+                e4.f((Context) obj4, this.b, this.c, (TLRPC.TL_messageActionStarGiftOnchainOffer) obj3, (org.telegram.ui.ActionBar.i6) obj2, o3Var.k(), new k3(o3Var, 3));
                 break;
             case 1:
                 oi.e1 e1Var = (oi.e1) obj3;
-                i9 i9Var = (i9) obj2;
+                j9 j9Var = (j9) obj2;
                 oi.g0 g0Var = (oi.g0) obj;
                 oi.h0 h0Var = (oi.h0) ((ji.j) obj4).c;
-                if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && i9Var.j0(g0Var.a1(), 0, i12, i13)) {
+                if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && j9Var.j0(g0Var.a1(), 0, i12, i13)) {
                     h0Var.d = true;
                     e1Var.setSelection(i13);
                     h0Var.d = false;
@@ -113,7 +113,7 @@ public final /* synthetic */ class p3 implements Runnable {
                 String lowerCase = ((String) obj3).trim().toLowerCase();
                 if (lowerCase.length() == 0) {
                     pjVar.h = -1;
-                    org.telegram.messenger.g0.g3(new u4(pjVar, pjVar.h, new ArrayList(), new ArrayList(), 20));
+                    org.telegram.messenger.g0.g3(new t4(pjVar, pjVar.h, new ArrayList(), new ArrayList(), 20));
                     break;
                 } else {
                     String S0 = gd.E0().S0(lowerCase, true, false);
@@ -239,7 +239,7 @@ public final /* synthetic */ class p3 implements Runnable {
                             }
                         }
                     }
-                    org.telegram.messenger.g0.g3(new u4(pjVar4, this.c, arrayList3, arrayList4, 20));
+                    org.telegram.messenger.g0.g3(new t4(pjVar4, this.c, arrayList3, arrayList4, 20));
                     break;
                 }
                 break;
@@ -312,11 +312,11 @@ public final /* synthetic */ class p3 implements Runnable {
         }
     }
 
-    public /* synthetic */ p3(ji.j jVar, oi.e1 e1Var, int i7, i9 i9Var, oi.g0 g0Var, int i10) {
+    public /* synthetic */ p3(ji.j jVar, oi.e1 e1Var, int i7, j9 j9Var, oi.g0 g0Var, int i10) {
         this.d = jVar;
         this.e = e1Var;
         this.b = i7;
-        this.f = i9Var;
+        this.f = j9Var;
         this.h = g0Var;
         this.c = i10;
     }

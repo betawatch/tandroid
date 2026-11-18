@@ -30,9 +30,9 @@ import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.sf0;
 import org.telegram.ui.Components.wk0;
-import org.telegram.ui.hh0;
+import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class w3 extends Dialog {
     public static final /* synthetic */ int X = 0;
@@ -65,7 +65,7 @@ public final class w3 extends Dialog {
     public final v3 n;
     public final x6 r;
     public final r8 s;
-    public final hh0 w;
+    public final ih0 w;
     public final TextView x;
     public final Paint y;
 
@@ -180,13 +180,13 @@ public final class w3 extends Dialog {
         this.G = cVar;
         cVar.h = new jh.k(u3Var);
         cVar.i = u3Var;
-        hh0 hh0Var = new hh0(getContext());
-        this.w = hh0Var;
-        fh.g c10 = cVar.c(hh0Var, new gh.b(org.telegram.ui.ActionBar.n6.d6, h2Var.getResourceProvider()), false);
+        ih0 ih0Var = new ih0(getContext());
+        this.w = ih0Var;
+        fh.g c10 = cVar.c(ih0Var, new gh.b(org.telegram.ui.ActionBar.n6.d6, h2Var.getResourceProvider()), false);
         c10.q(org.telegram.messenger.g0.L(8.0f));
         c10.r(org.telegram.messenger.g0.L(22.0f));
-        hh0Var.setBackground(c10);
-        c8.ra.b(hh0Var, 0.02f, 1.2f);
+        ih0Var.setBackground(c10);
+        c8.ra.b(ih0Var, 0.02f, 1.2f);
         hi.d dVar = new hi.d(getContext(), h2Var.getResourceProvider(), true);
         dVar.setUseWrapContent(true);
         dVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
@@ -203,9 +203,9 @@ public final class w3 extends Dialog {
             dVar.i(M0, false, true);
         }
         dVar.setStateListAnimator(null);
-        hh0Var.addView(dVar, c8.ma.e(-2, -1, 17));
-        hh0Var.setContentDescription(M0);
-        hh0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.s3
+        ih0Var.addView(dVar, c8.ma.e(-2, -1, 17));
+        ih0Var.setContentDescription(M0);
+        ih0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.s3
             public final /* synthetic */ w3 b;
 
             {
@@ -254,9 +254,9 @@ public final class w3 extends Dialog {
                 }
             }
         });
-        hh0Var.setAlpha(0.0f);
-        hh0Var.setVisibility(c() ? 0 : 8);
-        u3Var.addView(hh0Var, c8.ma.e(-2, 60, 81));
+        ih0Var.setAlpha(0.0f);
+        ih0Var.setVisibility(c() ? 0 : 8);
+        u3Var.addView(ih0Var, c8.ma.e(-2, 60, 81));
         TextView textView = new TextView(getContext());
         this.x = textView;
         textView.setTextSize(14.0f);
@@ -408,14 +408,14 @@ public final class w3 extends Dialog {
         this.b.setEjectProgress(interpolation);
         this.n.setAlpha(this.J);
         this.s.setAlpha(interpolation2);
-        hh0 hh0Var = this.w;
-        hh0Var.setAlpha(interpolation2);
+        ih0 ih0Var = this.w;
+        ih0Var.setAlpha(interpolation2);
         TextView textView = this.x;
         textView.setAlpha(interpolation2);
         textView.setTranslationY((-org.telegram.messenger.g0.L(8.0f)) * f23);
-        hh0Var.setTranslationY(org.telegram.messenger.g0.L(16.0f) * f23);
-        hh0Var.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, interpolation2));
-        hh0Var.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, interpolation2));
+        ih0Var.setTranslationY(org.telegram.messenger.g0.L(16.0f) * f23);
+        ih0Var.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, interpolation2));
+        ih0Var.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, interpolation2));
         this.h.invalidate();
     }
 

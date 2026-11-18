@@ -36,9 +36,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.y60;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class u5 implements xa, i6.a, com.google.android.gms.common.api.internal.q, ib.b, jg.y1, m.e2, l.w, m.k, ce.c, o0.a, org.telegram.ui.Components.z4, oi.g0, oi.q3, oi.d1, org.telegram.messenger.va, org.telegram.messenger.pa, vy, gh.a {
     public final /* synthetic */ int a;
@@ -245,15 +245,15 @@ public final class u5 implements xa, i6.a, com.google.android.gms.common.api.int
     public void O(int i7, int i10, boolean z10) {
         ((oi.o) this.b).M(z10, i7, i10, 0L, false);
         oi.o oVar = (oi.o) this.b;
-        eg0 eg0Var = oVar.P;
-        if (eg0Var != null) {
-            eg0Var.i();
+        fg0 fg0Var = oVar.P;
+        if (fg0Var != null) {
+            fg0Var.i();
             oVar.P = null;
         }
     }
 
     @Override // oi.g0
-    public org.telegram.ui.Cells.i9 P0() {
+    public org.telegram.ui.Cells.j9 P0() {
         switch (this.a) {
             case 19:
                 oi.n3 n3Var = ((oi.v0) this.b).T;
@@ -406,7 +406,7 @@ public final class u5 implements xa, i6.a, com.google.android.gms.common.api.int
     }
 
     @Override // oi.g0
-    public org.telegram.ui.Cells.h9 a1() {
+    public org.telegram.ui.Cells.i9 a1() {
         switch (this.a) {
             case 19:
                 return (oi.v0) this.b;
@@ -1002,7 +1002,7 @@ public final class u5 implements xa, i6.a, com.google.android.gms.common.api.int
     @Override // oi.d1
     public void r1(oi.e1 e1Var, int i7, int i10) {
         oi.a3 a3Var;
-        org.telegram.ui.Cells.i9 textSelectionHelper;
+        org.telegram.ui.Cells.j9 textSelectionHelper;
         oi.l5 l5Var = (oi.l5) this.b;
         if (l5Var.H || i7 == i10 || (a3Var = l5Var.F) == null || (textSelectionHelper = a3Var.a.getTextSelectionHelper()) == null) {
             return;

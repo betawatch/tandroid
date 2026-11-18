@@ -24,8 +24,9 @@ import org.telegram.ui.Components.gc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
+import org.telegram.ui.m60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,9 +56,11 @@ public final /* synthetic */ class q3 implements Runnable {
         switch (i7) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                f4.i(j3, 60000L);
-                f4.b.put(f4.a(i10, j3), Long.valueOf(SystemClock.elapsedRealtime() + 600000));
-                gc Q = f4.g().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131749570, (String) obj));
+                e4.b.add(Long.valueOf(j3));
+                e4.j(j3, 60000L);
+                e4.d.put(e4.a(i10, j3), Long.valueOf(SystemClock.elapsedRealtime() + 600000));
+                e4.c();
+                gc Q = e4.h().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131749570, (String) obj));
                 Q.t = true;
                 Q.j();
                 return;
@@ -171,7 +174,7 @@ public final /* synthetic */ class q3 implements Runnable {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 long j10 = this.c;
                 tonconnectgetpending.session_id = Long.valueOf(j10);
-                l2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.w1(l2Var, (t3) obj, j10, this.b, 0));
+                l2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.w1(l2Var, (m60) obj, j10, this.b, 0));
                 return;
             default:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.i6) obj);
@@ -192,11 +195,11 @@ public final /* synthetic */ class q3 implements Runnable {
         this.e = serializable;
     }
 
-    public /* synthetic */ q3(org.telegram.ui.Wallet.l2 l2Var, long j3, t3 t3Var, int i7) {
+    public /* synthetic */ q3(org.telegram.ui.Wallet.l2 l2Var, long j3, m60 m60Var, int i7) {
         this.a = 7;
         this.d = l2Var;
         this.c = j3;
-        this.e = t3Var;
+        this.e = m60Var;
         this.b = i7;
     }
 }

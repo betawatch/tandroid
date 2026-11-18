@@ -12,7 +12,7 @@ import y8.g;
 import y8.q;
 import y8.v;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class MaskedWallet extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MaskedWallet> CREATOR = new v(4);

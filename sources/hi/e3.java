@@ -41,7 +41,7 @@ import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.oj0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class e3 extends FrameLayout implements fs {
     public static final ue k0 = new ue(-1, null, null);
@@ -600,7 +600,7 @@ public abstract class e3 extends FrameLayout implements fs {
         y2 y2Var = this.f;
         int i12 = 0;
         if (i7 != i11) {
-            if (i7 == ks.A5) {
+            if (i7 == ks.B5) {
                 ArrayList arrayList = this.c0;
                 arrayList.clear();
                 if (!this.M) {
@@ -869,7 +869,7 @@ public abstract class e3 extends FrameLayout implements fs {
             if (this.U != z10) {
                 this.U = z10;
                 linearLayout.setVisibility(0);
-                linearLayout.animate().alpha(isEmpty ? 0.0f : 1.0f).translationY(isEmpty ? org.telegram.messenger.g0.L(32.0f) : 0.0f).setInterpolator(lr.h).setDuration(320L).setListener(new bi.e7(10, this, z10)).start();
+                linearLayout.animate().alpha(isEmpty ? 0.0f : 1.0f).translationY(isEmpty ? org.telegram.messenger.g0.L(32.0f) : 0.0f).setInterpolator(lr.h).setDuration(320L).setListener(new bi.d7(10, this, z10)).start();
             }
         }
     }
@@ -877,7 +877,7 @@ public abstract class e3 extends FrameLayout implements fs {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         ks.e().c(this, ks.r2);
-        ks.f(this.a).c(this, ks.A5);
+        ks.f(this.a).c(this, ks.B5);
         super.onAttachedToWindow();
     }
 
@@ -885,7 +885,7 @@ public abstract class e3 extends FrameLayout implements fs {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ks.e().n(this, ks.r2);
-        ks.f(this.a).n(this, ks.A5);
+        ks.f(this.a).n(this, ks.B5);
         a3.f0.clear();
         a3.g0.evictAll();
         int i7 = 0;

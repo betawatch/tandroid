@@ -1,45 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ua0 implements OnSuccessListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ de0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLRPC.auth_SentCode d;
-    public final /* synthetic */ Bundle e;
-    public final /* synthetic */ boolean f;
+public final /* synthetic */ class ua0 implements org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ee0 b;
 
-    public /* synthetic */ ua0(de0 de0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
-        this.b = de0Var;
-        this.e = bundle;
-        this.d = auth_sentcode;
-        this.c = str;
-        this.f = z10;
+    public /* synthetic */ ua0(ee0 ee0Var, int i7) {
+        this.a = i7;
+        this.b = ee0Var;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                de0.a0(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                ee0 ee0Var = this.b;
+                ee0Var.b[ee0Var.a].d();
+                ee0Var.C1(true, true);
                 break;
             default:
-                de0.c0(this.b, this.c, this.d, this.e, this.f, (p8.d) obj);
+                ee0 ee0Var2 = this.b;
+                ee0Var2.m0 = true;
+                if (ee0Var2.a != 0) {
+                    ee0Var2.M1(0, true, null, true);
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ ua0(de0 de0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
-        this.b = de0Var;
-        this.c = str;
-        this.d = auth_sentcode;
-        this.e = bundle;
-        this.f = z10;
     }
 }

@@ -4,7 +4,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ik implements Runnable {
     public final /* synthetic */ int a;
@@ -34,22 +34,22 @@ public final /* synthetic */ class ik implements Runnable {
         mp mpVar = this.b;
         switch (i7) {
             case 0:
-                ks.f(mpVar.currentAccount).k(ks.G5, Long.valueOf(j3));
+                ks.f(mpVar.currentAccount).k(ks.H5, Long.valueOf(j3));
                 return;
             case 1:
-                ks.f(mpVar.currentAccount).k(ks.G5, Long.valueOf(j3));
+                ks.f(mpVar.currentAccount).k(ks.H5, Long.valueOf(j3));
                 return;
             case 2:
-                ks.f(mpVar.currentAccount).k(ks.G5, Long.valueOf(j3));
+                ks.f(mpVar.currentAccount).k(ks.H5, Long.valueOf(j3));
                 return;
             case 3:
-                ks.f(mpVar.currentAccount).k(ks.G5, Long.valueOf(j3));
+                ks.f(mpVar.currentAccount).k(ks.H5, Long.valueOf(j3));
                 return;
             case 4:
-                ks.f(mpVar.currentAccount).k(ks.G5, Long.valueOf(j3));
+                ks.f(mpVar.currentAccount).k(ks.H5, Long.valueOf(j3));
                 return;
             case 5:
-                ks.f(mpVar.currentAccount).k(ks.G5, Long.valueOf(j3));
+                ks.f(mpVar.currentAccount).k(ks.H5, Long.valueOf(j3));
                 return;
             case 6:
                 mpVar.b3(0, j3, true);
@@ -115,7 +115,7 @@ public final /* synthetic */ class ik implements Runnable {
                 mpVar.n.remove(Long.valueOf(j3));
                 return;
             case 13:
-                mpVar.getNotificationCenter().k(ks.Z3, Long.valueOf(j3));
+                mpVar.getNotificationCenter().k(ks.a4, Long.valueOf(j3));
                 return;
             case 14:
                 mpVar.b3(0, j3, true);
@@ -124,7 +124,7 @@ public final /* synthetic */ class ik implements Runnable {
                 g0.g3(new ik(mpVar, j3, 5));
                 return;
             case 16:
-                mpVar.getNotificationCenter().k(ks.Z4, Long.valueOf(j3), 0L);
+                mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(j3), 0L);
                 return;
             case 17:
                 g0.g3(new ik(mpVar, j3, 8));

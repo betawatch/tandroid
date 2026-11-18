@@ -5,7 +5,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class TLParseException extends RuntimeException {
     private TLParseException(String str) {
@@ -26,6 +26,6 @@ public class TLParseException extends RuntimeException {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$doThrowOrLog$0(TLParseException tLParseException) {
-        ks.e().k(ks.O5, tLParseException);
+        ks.e().k(ks.P5, tLParseException);
     }
 }

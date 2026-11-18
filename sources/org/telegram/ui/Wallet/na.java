@@ -40,7 +40,7 @@ import org.telegram.ui.Components.pp0;
 import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class na extends b51 {
     public String E;
@@ -77,12 +77,12 @@ public final class na extends b51 {
     public final la J = new fs() { // from class: org.telegram.ui.Wallet.la
         @Override // org.telegram.messenger.fs
         public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
-            bi.d6 d6Var;
+            bi.c6 c6Var;
             na naVar = na.this;
-            if (naVar.r || (d6Var = naVar.a) == null) {
+            if (naVar.r || (c6Var = naVar.a) == null) {
                 return;
             }
-            d6Var.g3.O(true);
+            c6Var.g3.O(true);
         }
     };
     public boolean R = true;
@@ -387,9 +387,9 @@ public final class na extends b51 {
         int i7 = 0;
         this.a.setPadding(0, 0, 0, org.telegram.messenger.g0.L(68.0f));
         this.a.setClipToPadding(false);
-        bi.d6 d6Var = this.a;
-        d6Var.g3.r = false;
-        d6Var.j(new org.telegram.ui.Components.oa(this, 26));
+        bi.c6 c6Var = this.a;
+        c6Var.g3.r = false;
+        c6Var.j(new org.telegram.ui.Components.oa(this, 26));
         w01 w01Var = new w01(5, context, this);
         this.U = (ClipboardManager) context.getSystemService("clipboard");
         ah.i iVar = new ah.i(context);
@@ -498,9 +498,9 @@ public final class na extends b51 {
         ArrayList arrayList = this.w;
         arrayList.clear();
         if (TextUtils.isEmpty(str) || this.y != null || this.E != null) {
-            bi.d6 d6Var = this.a;
-            if (d6Var != null) {
-                d6Var.g3.O(true);
+            bi.c6 c6Var = this.a;
+            if (c6Var != null) {
+                c6Var.g3.O(true);
                 return;
             }
             return;
@@ -537,9 +537,9 @@ public final class na extends b51 {
                 }
             }
         }
-        bi.d6 d6Var2 = this.a;
-        if (d6Var2 != null) {
-            d6Var2.g3.O(true);
+        bi.c6 c6Var2 = this.a;
+        if (c6Var2 != null) {
+            c6Var2.g3.O(true);
         }
     }
 
@@ -590,9 +590,9 @@ public final class na extends b51 {
 
     public final void o0() {
         int max = Math.max(0, this.c0 - this.b0);
-        bi.d6 d6Var = this.a;
-        if (d6Var != null) {
-            d6Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(68.0f) + this.b0 + max);
+        bi.c6 c6Var = this.a;
+        if (c6Var != null) {
+            c6Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(68.0f) + this.b0 + max);
             this.a.setClipToPadding(false);
         }
         FrameLayout frameLayout = this.W;

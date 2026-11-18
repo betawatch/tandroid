@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sn0 implements r1.d {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class sn0 implements r1.d {
     public final void a(r1.g gVar, float f10, float f11) {
         switch (this.a) {
             case 0:
-                ((yo0) this.c).R0((org.telegram.ui.Cells.d7) this.d, this.b, f10 / 1000.0f);
+                ((yo0) this.c).R0((org.telegram.ui.Cells.e7) this.d, this.b, f10 / 1000.0f);
                 break;
             default:
                 ((ho0) this.c).d.R0(this.d, this.b, f10 / 1000.0f);

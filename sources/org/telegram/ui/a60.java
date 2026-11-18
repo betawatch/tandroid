@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class a60 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs, View.OnClickListener, te.b, rh.c {
     public final HashMap E;
@@ -47,7 +47,7 @@ public final class a60 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     }
 
     public static void Z(a60 a60Var, View view, int i7) {
-        org.telegram.ui.Cells.q4 q4Var;
+        org.telegram.ui.Cells.r4 r4Var;
         org.telegram.messenger.f5 contact;
         if (i7 == 0 && !a60Var.y) {
             try {
@@ -62,7 +62,7 @@ public final class a60 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 return;
             }
         }
-        if ((view instanceof org.telegram.ui.Cells.q4) && (contact = (q4Var = (org.telegram.ui.Cells.q4) view).getContact()) != null) {
+        if ((view instanceof org.telegram.ui.Cells.r4) && (contact = (r4Var = (org.telegram.ui.Cells.r4) view).getContact()) != null) {
             org.telegram.ui.Components.m20 m20Var = (org.telegram.ui.Components.m20) a60Var.E.get(contact.b);
             if (m20Var != null) {
                 a60Var.f.a(m20Var);
@@ -94,7 +94,7 @@ public final class a60 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             }
             a60Var.b.e(!a60Var.F.isEmpty(), true);
             boolean z10 = m20Var == null;
-            org.telegram.ui.Components.mp mpVar = q4Var.e;
+            org.telegram.ui.Components.mp mpVar = r4Var.e;
             if (mpVar != null) {
                 mpVar.a(z10, true);
             }
@@ -306,10 +306,10 @@ public final class a60 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 33554432, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.l7));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 33554432, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.m7));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 33554432, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.n7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 4, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ri));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 4, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 4, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.k7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 262148, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"statusTextView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.n6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 4, new Class[]{org.telegram.ui.Cells.r4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ri));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 4, new Class[]{org.telegram.ui.Cells.r4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 4, new Class[]{org.telegram.ui.Cells.r4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.k7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.h, 262148, new Class[]{org.telegram.ui.Cells.r4.class}, new String[]{"statusTextView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.n6));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.f, 0, new Class[]{org.telegram.ui.Components.m20.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ti));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.f, 0, new Class[]{org.telegram.ui.Components.m20.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ui));
         return arrayList;
@@ -331,7 +331,7 @@ public final class a60 extends org.telegram.ui.ActionBar.h2 implements org.teleg
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.Cells.q4 q4Var;
+        org.telegram.ui.Cells.r4 r4Var;
         org.telegram.messenger.f5 contact;
         org.telegram.ui.Components.m20 m20Var = (org.telegram.ui.Components.m20) view;
         if (!m20Var.E) {
@@ -349,9 +349,9 @@ public final class a60 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         int childCount = this.h.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = this.h.getChildAt(i7);
-            if ((childAt instanceof org.telegram.ui.Cells.q4) && (contact = (q4Var = (org.telegram.ui.Cells.q4) childAt).getContact()) != null) {
+            if ((childAt instanceof org.telegram.ui.Cells.r4) && (contact = (r4Var = (org.telegram.ui.Cells.r4) childAt).getContact()) != null) {
                 boolean containsKey = this.E.containsKey(contact.b);
-                org.telegram.ui.Components.mp mpVar = q4Var.e;
+                org.telegram.ui.Components.mp mpVar = r4Var.e;
                 if (mpVar != null) {
                     mpVar.a(containsKey, true);
                 }

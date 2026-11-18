@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,11 +39,11 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                 break;
             case 1:
                 TL_stars.TL_starGiftUnique M1 = f6Var.M1();
-                if (bi.v4.u(M1)) {
+                if (bi.u4.u(M1)) {
                     if (!f6Var.t1()) {
-                        bi.v4.q(f6Var.getContext(), f6Var.a, f6Var.J0, f6Var.k(), "STARGIFT_ONCHAIN_SALE_DISABLED", Boolean.valueOf(M1.fixed_sale));
+                        bi.u4.q(f6Var.getContext(), f6Var.a, f6Var.J0, f6Var.k(), "STARGIFT_ONCHAIN_SALE_DISABLED", Boolean.valueOf(M1.fixed_sale));
                         break;
-                    } else if (!bi.v4.m(M1)) {
+                    } else if (!bi.u4.m(M1)) {
                         f6Var.f2();
                         break;
                     } else {

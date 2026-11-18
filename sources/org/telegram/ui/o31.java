@@ -31,9 +31,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs, org.telegram.ui.Components.t30, ke0, te.b {
+public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs, org.telegram.ui.Components.t30, le0, te.b {
     public k0 E;
     public h31 F;
     public org.telegram.ui.Components.b9 G;
@@ -71,7 +71,7 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     public boolean g0;
     public org.telegram.ui.Components.u30 h;
     public AnimatorSet n;
-    public org.telegram.ui.Cells.b4 r;
+    public org.telegram.ui.Cells.c4 r;
     public TLRPC.FileLocation s;
     public TLRPC.FileLocation w;
     public FrameLayout x;
@@ -88,7 +88,7 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             return true;
         }
         int i7 = 0;
-        if (l41Var.H(org.telegram.ui.Cells.t6.class)) {
+        if (l41Var.H(org.telegram.ui.Cells.u6.class)) {
             Object obj2 = l41Var.H;
             String str = obj2 instanceof vw0 ? ((vw0) obj2).h : obj2 instanceof org.telegram.messenger.yo ? ((org.telegram.messenger.yo) obj2).c : null;
             if (!TextUtils.isEmpty(str)) {
@@ -254,8 +254,8 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                     i12++;
                     int i13 = i11 + 1;
                     CharSequence charSequence = (CharSequence) g31Var.n.get(i11);
-                    int i14 = org.telegram.ui.Cells.t6.b;
-                    org.telegram.ui.Components.l41 K = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.t6.class);
+                    int i14 = org.telegram.ui.Cells.u6.b;
+                    org.telegram.ui.Components.l41 K = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.u6.class);
                     K.m = charSequence;
                     K.H = (vw0) obj;
                     arrayList.add(K);
@@ -272,8 +272,8 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                     i10++;
                     int i15 = i11 + 1;
                     CharSequence charSequence2 = (CharSequence) g31Var.n.get(i11);
-                    int i16 = org.telegram.ui.Cells.t6.b;
-                    org.telegram.ui.Components.l41 K2 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.t6.class);
+                    int i16 = org.telegram.ui.Cells.u6.b;
+                    org.telegram.ui.Components.l41 K2 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.u6.class);
                     K2.m = charSequence2;
                     K2.H = (org.telegram.messenger.yo) obj2;
                     arrayList.add(K2);
@@ -291,16 +291,16 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                     if (obj3 instanceof vw0) {
                         vw0 vw0Var = (vw0) obj3;
                         String str = vw0Var.a;
-                        int i18 = org.telegram.ui.Cells.t6.b;
-                        org.telegram.ui.Components.l41 K3 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.t6.class);
+                        int i18 = org.telegram.ui.Cells.u6.b;
+                        org.telegram.ui.Components.l41 K3 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.u6.class);
                         K3.m = str;
                         K3.H = vw0Var;
                         arrayList.add(K3);
                     } else if (obj3 instanceof org.telegram.messenger.yo) {
                         org.telegram.messenger.yo yoVar = (org.telegram.messenger.yo) obj3;
                         String str2 = yoVar.a;
-                        int i19 = org.telegram.ui.Cells.t6.b;
-                        org.telegram.ui.Components.l41 K4 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.t6.class);
+                        int i19 = org.telegram.ui.Cells.u6.b;
+                        org.telegram.ui.Components.l41 K4 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.u6.class);
                         K4.m = str2;
                         K4.H = yoVar;
                         arrayList.add(K4);
@@ -317,8 +317,8 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 i10++;
                 org.telegram.messenger.yo yoVar2 = (org.telegram.messenger.yo) obj4;
                 String str3 = yoVar2.a;
-                int i20 = org.telegram.ui.Cells.t6.b;
-                org.telegram.ui.Components.l41 K5 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.t6.class);
+                int i20 = org.telegram.ui.Cells.u6.b;
+                org.telegram.ui.Components.l41 K5 = org.telegram.ui.Components.l41.K(org.telegram.ui.Cells.u6.class);
                 K5.m = str3;
                 K5.H = yoVar2;
                 arrayList.add(K5);
@@ -368,9 +368,9 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(o31Var.currentAccount);
             int i25 = org.telegram.ui.ActionBar.n6.I.q() ? R.drawable.settings_wallet_dark : R.drawable.settings_wallet;
             CharSequence M0 = org.telegram.messenger.gd.M0(2131742956, null);
-            int i26 = org.telegram.ui.Cells.m8.W;
+            int i26 = org.telegram.ui.Cells.n8.W;
             if (ConnectionsManager.getInstance(org.telegram.messenger.j10.t0).getCurrentTime() - 1790679020 <= 2419200) {
-                M0 = org.telegram.ui.Cells.m8.b(M0);
+                M0 = org.telegram.ui.Cells.n8.b(M0);
             }
             arrayList.add(k31.i(25, 0, 0, i25, M0, null, D.A() > 0 ? org.telegram.ui.Wallet.u0.t(D.A(), false) : null));
             arrayList.add(org.telegram.ui.Components.l41.C(null));
@@ -389,9 +389,9 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             org.telegram.ui.Wallet.u0 D2 = org.telegram.ui.Wallet.u0.D(o31Var.currentAccount);
             int i27 = org.telegram.ui.ActionBar.n6.I.q() ? R.drawable.settings_wallet_dark : R.drawable.settings_wallet;
             CharSequence M02 = org.telegram.messenger.gd.M0(2131742956, null);
-            int i28 = org.telegram.ui.Cells.m8.W;
+            int i28 = org.telegram.ui.Cells.n8.W;
             if (ConnectionsManager.getInstance(org.telegram.messenger.j10.t0).getCurrentTime() - 1790679020 <= 2419200) {
-                M02 = org.telegram.ui.Cells.m8.b(M02);
+                M02 = org.telegram.ui.Cells.n8.b(M02);
             }
             arrayList.add(k31.i(25, 0, 0, i27, M02, null, D2.A() > 0 ? org.telegram.ui.Wallet.u0.t(D2.A(), false) : null));
             arrayList.add(org.telegram.ui.Components.l41.C(null));
@@ -469,7 +469,7 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             return;
         }
         int i11 = 0;
-        if (l41Var.H(org.telegram.ui.Cells.t6.class)) {
+        if (l41Var.H(org.telegram.ui.Cells.u6.class)) {
             Object obj2 = l41Var.H;
             if (obj2 instanceof vw0) {
                 vw0 vw0Var = (vw0) obj2;
@@ -509,7 +509,7 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 o31Var.k0(new SessionsActivity(0));
                 break;
             case 9:
-                o31Var.k0(new y90());
+                o31Var.k0(new z90());
                 break;
             case 10:
                 o31Var.k0(new LanguageSelectActivity());
@@ -572,7 +572,7 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         }
     }
 
-    @Override // org.telegram.ui.ke0
+    @Override // org.telegram.ui.le0
     public final ui.f B() {
         ri.a baseSimpleGlass = getBaseSimpleGlass();
         baseSimpleGlass.getClass();
@@ -591,20 +591,20 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
 
     @Override // org.telegram.ui.Components.t30
     public final void I(float f10) {
-        org.telegram.ui.Cells.b4 b4Var = this.r;
-        if (b4Var == null) {
+        org.telegram.ui.Cells.c4 c4Var = this.r;
+        if (c4Var == null) {
             return;
         }
-        b4Var.setProgress(f10);
+        c4Var.setProgress(f10);
     }
 
     @Override // org.telegram.ui.Components.t30
     public final void Q(boolean z10, boolean z11) {
-        org.telegram.ui.Cells.b4 b4Var = this.r;
-        if (b4Var == null) {
+        org.telegram.ui.Cells.c4 c4Var = this.r;
+        if (c4Var == null) {
             return;
         }
-        b4Var.setProgress(0.0f);
+        c4Var.setProgress(0.0f);
     }
 
     @Override // org.telegram.ui.Components.t30
@@ -676,9 +676,9 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         this.H = q9Var;
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(90.0f));
         this.y.addView(this.H, c8.ma.c(-1.0f, -1));
-        org.telegram.ui.Cells.b4 b4Var = new org.telegram.ui.Cells.b4(this, context);
-        this.r = b4Var;
-        b4Var.setSize(org.telegram.messenger.g0.L(26.0f));
+        org.telegram.ui.Cells.c4 c4Var = new org.telegram.ui.Cells.c4(this, context);
+        this.r = c4Var;
+        c4Var.setSize(org.telegram.messenger.g0.L(26.0f));
         this.r.setProgressColor(-1);
         this.r.setNoProgress(false);
         this.y.addView(this.r, c8.ma.c(-1.0f, -1));
@@ -830,7 +830,7 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         }
     }
 
-    @Override // org.telegram.ui.ke0
+    @Override // org.telegram.ui.le0
     public final ui.f k() {
         ri.a baseSimpleGlass = getBaseSimpleGlass();
         baseSimpleGlass.getClass();
@@ -929,9 +929,9 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         this.n = animatorSet2;
         if (z10) {
             this.r.setVisibility(0);
-            this.n.playTogether(ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Cells.b4, Float>) View.ALPHA, 1.0f));
+            this.n.playTogether(ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Cells.c4, Float>) View.ALPHA, 1.0f));
         } else {
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Cells.b4, Float>) View.ALPHA, 0.0f));
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Cells.c4, Float>) View.ALPHA, 0.0f));
         }
         this.n.setDuration(180L);
         this.n.addListener(new c30(10, this, z10));
@@ -1126,7 +1126,7 @@ public final class o31 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         return true;
     }
 
-    @Override // org.telegram.ui.ke0
+    @Override // org.telegram.ui.le0
     public final void v() {
         this.c.y0(0);
     }

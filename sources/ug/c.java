@@ -14,12 +14,12 @@ import org.telegram.messenger.mp;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.v3;
+import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.bk0;
-import org.telegram.ui.hh0;
+import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c extends bk0 {
     public final i6 c;
@@ -90,11 +90,11 @@ public final class c extends bk0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.hh0] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.ih0] */
     /* JADX WARN: Type inference failed for: r1v7, types: [ug.e] */
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        v3 v3Var;
+        w3 w3Var;
         Context context = viewGroup.getContext();
         i6 i6Var = this.c;
         if (i7 != 1) {
@@ -104,12 +104,12 @@ public final class c extends bk0 {
                 LimitPreviewView limitPreviewView = eVar.c;
                 limitPreviewView.setParentViewForGradien(bVar);
                 limitPreviewView.setStaticGradinet(this.h);
-                v3Var = eVar;
+                w3Var = eVar;
             } else {
-                v3Var = new v3(context, 16);
+                w3Var = new w3(context, 16);
             }
         } else if (this.s) {
-            ?? hh0Var = new hh0(context, 20);
+            ?? ih0Var = new ih0(context, 20);
             LinearLayout g10 = f3.g(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(ia.e.c(context.getDrawable(R.drawable.other_2x_large), (b1) ia.e.d().b));
@@ -121,11 +121,11 @@ public final class c extends bk0 {
             u6.U(textView, n6.G6, i6Var);
             textView.setTypeface(org.telegram.messenger.g0.o());
             g10.addView(textView, ma.e(-2, -2, 16));
-            hh0Var.addView(g10, ma.e(-2, -2, 17));
-            v3Var = hh0Var;
+            ih0Var.addView(g10, ma.e(-2, -2, 17));
+            w3Var = ih0Var;
         } else {
-            v3Var = new v3(context, 64);
+            w3Var = new w3(context, 64);
         }
-        return i5.c.q(v3Var, v3Var, -1, -2);
+        return i5.c.q(w3Var, w3Var, -1, -2);
     }
 }

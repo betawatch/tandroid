@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class y21 extends org.telegram.ui.ActionBar.x2 implements org.telegram.messenger.fs {
     public static final String[] S1 = {"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36"};
@@ -37,8 +37,8 @@ public abstract class y21 extends org.telegram.ui.ActionBar.x2 implements org.te
     public boolean G1;
     public final k21 H1;
     public final x21 I1;
-    public final org.telegram.ui.Cells.i9 J1;
-    public final org.telegram.ui.Cells.u9 K1;
+    public final org.telegram.ui.Cells.j9 J1;
+    public final org.telegram.ui.Cells.v9 K1;
     public final View L1;
     public final TextView M1;
     public org.telegram.ui.ActionBar.h2 N1;
@@ -143,17 +143,17 @@ public abstract class y21 extends org.telegram.ui.ActionBar.x2 implements org.te
         m21Var.o(new LinearInterpolator());
         k21Var.setItemAnimator(m21Var);
         this.b.addView(k21Var, c8.ma.e(-1, -2, 80));
-        org.telegram.ui.Cells.i9 i9Var = new org.telegram.ui.Cells.i9();
-        this.J1 = i9Var;
-        i9Var.S(k21Var);
-        i9Var.z0 = c0Var;
-        org.telegram.ui.Cells.u9 n10 = i9Var.n(context);
+        org.telegram.ui.Cells.j9 j9Var = new org.telegram.ui.Cells.j9();
+        this.J1 = j9Var;
+        j9Var.S(k21Var);
+        j9Var.z0 = c0Var;
+        org.telegram.ui.Cells.v9 n10 = j9Var.n(context);
         this.K1 = n10;
         org.telegram.messenger.g0.E2(n10);
         this.b.addView(n10, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
         org.telegram.messenger.ut utVar3 = this.t1;
         if (utVar3 != null) {
-            utVar3.setTextSelectionHelper(i9Var);
+            utVar3.setTextSelectionHelper(j9Var);
         }
         w21 w21Var = new w21(this, context);
         this.x1 = w21Var;
@@ -591,7 +591,7 @@ public abstract class y21 extends org.telegram.ui.ActionBar.x2 implements org.te
             tL_messages_summarizeText.peer = inputPeer;
             tL_messages_summarizeText.id = i7;
             tL_messages_summarizeText.to_lang = org.telegram.messenger.z00.D(str);
-            this.m1 = Integer.valueOf(ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_summarizeText, new d3.b(1), new bi.m6(21, this, tL_textWithEntities)));
+            this.m1 = Integer.valueOf(ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_summarizeText, new d3.b(1), new bi.l6(21, this, tL_textWithEntities)));
             return;
         }
         TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
@@ -626,7 +626,7 @@ public abstract class y21 extends org.telegram.ui.ActionBar.x2 implements org.te
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             this.y1.invalidate();
             this.A1.invalidate();
         }
@@ -635,9 +635,9 @@ public abstract class y21 extends org.telegram.ui.ActionBar.x2 implements org.te
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public void dismiss() {
         super.dismiss();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.L5);
         org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.K5);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.J5);
     }
 
     @Override // org.telegram.ui.ActionBar.x2
@@ -679,8 +679,8 @@ public abstract class y21 extends org.telegram.ui.ActionBar.x2 implements org.te
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
     public final void show() {
         super.show();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.L5);
         org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.K5);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.J5);
     }
 }

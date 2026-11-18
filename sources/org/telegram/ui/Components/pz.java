@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class pz extends FrameLayout {
     public static final /* synthetic */ int H0 = 0;
@@ -90,7 +90,7 @@ public abstract class pz extends FrameLayout {
     public float x;
     public float x0;
     public AnimatorSet y;
-    public final org.telegram.ui.Cells.f2 y0;
+    public final org.telegram.ui.Cells.g2 y0;
     public di.n4 z0;
 
     public pz(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
@@ -125,7 +125,7 @@ public abstract class pz extends FrameLayout {
         this.o0 = new SparseIntArray(5);
         this.p0 = new SparseIntArray(5);
         this.w0 = new gk(this, 6);
-        this.y0 = new org.telegram.ui.Cells.f2(3, this);
+        this.y0 = new org.telegram.ui.Cells.g2(3, this);
         this.G0 = new Path();
         this.a = i6Var;
         textPaint2.setTextSize(org.telegram.messenger.g0.N(11.0f));

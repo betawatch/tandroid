@@ -35,7 +35,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.ri;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class v6 extends org.telegram.ui.Components.sa implements fs, org.telegram.messenger.y5, te.b {
     public boolean A2;
@@ -576,7 +576,7 @@ public final class v6 extends org.telegram.ui.Components.sa implements fs, org.t
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.V3) {
+        if (i7 == ks.W3) {
             this.l2.O(true);
         }
     }
@@ -638,8 +638,8 @@ public final class v6 extends org.telegram.ui.Components.sa implements fs, org.t
                     Object obj2 = arrayList3.get(i12);
                     i12++;
                     di.ta taVar = new di.ta(this, i10);
-                    int i14 = org.telegram.ui.Cells.f7.b;
-                    l41 K = l41.K(org.telegram.ui.Cells.f7.class);
+                    int i14 = org.telegram.ui.Cells.g7.b;
+                    l41 K = l41.K(org.telegram.ui.Cells.g7.class);
                     K.H = (fj) obj2;
                     K.I = taVar;
                     arrayList.add(K);
@@ -802,13 +802,13 @@ public final class v6 extends org.telegram.ui.Components.sa implements fs, org.t
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.a).c(this, ks.V3);
+        ks.f(this.a).c(this, ks.W3);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.a).n(this, ks.V3);
+        ks.f(this.a).n(this, ks.W3);
     }
 
     @Override // org.telegram.ui.ActionBar.x2

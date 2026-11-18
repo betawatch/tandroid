@@ -16,14 +16,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.hn0;
 import org.telegram.ui.uv;
 import org.telegram.ui.vp0;
 import y7.f7;
 import z7.qa;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.api.internal.q, b3.r {
     public final /* synthetic */ int a;
@@ -69,9 +69,9 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
     public ArrayList b() {
         ?? arrayList;
         ArrayList arrayList2 = new ArrayList();
-        b5 b5Var = (b5) this.c;
+        c5 c5Var = (c5) this.c;
         Context context = (Context) this.b;
-        Class cls = (Class) b5Var.a;
+        Class cls = (Class) c5Var.a;
         Bundle bundle = null;
         try {
             PackageManager packageManager = context.getPackageManager();

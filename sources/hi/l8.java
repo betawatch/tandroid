@@ -32,10 +32,10 @@ import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.m20;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class l8 extends FrameLayout implements View.OnClickListener, fs {
-    public final org.telegram.ui.Cells.x3 E;
+    public final org.telegram.ui.Cells.y3 E;
     public final y7 F;
     public boolean G;
     public org.telegram.ui.ActionBar.u1 H;
@@ -81,8 +81,8 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
         this.M = new ArrayList();
         this.S = -1;
         int i7 = q8.Y1;
-        org.telegram.ui.Cells.x3 x3Var = new org.telegram.ui.Cells.x3(context, q8Var.J0);
-        this.E = x3Var;
+        org.telegram.ui.Cells.y3 y3Var = new org.telegram.ui.Cells.y3(context, q8Var.J0);
+        this.E = y3Var;
         e8 e8Var = new e8(this, context, q8Var.J0, new b8(this, 4));
         this.y = e8Var;
         int i10 = org.telegram.ui.ActionBar.n6.h5;
@@ -118,7 +118,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
         g8Var.m = false;
         ck0Var.setItemAnimator(g8Var);
         frameLayout.addView(e8Var, c8.ma.e(-1, -2, 55));
-        frameLayout.addView(x3Var, c8.ma.e(-1, 32, 55));
+        frameLayout.addView(y3Var, c8.ma.e(-1, 32, 55));
         addView(y7Var, c8.ma.e(-1, -2, 55));
         j8 j8Var = new j8(this, context);
         this.r = j8Var;
@@ -599,7 +599,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
         arrayList6.addAll(arrayList7);
         arrayList7.clear();
         int i12 = this.a;
-        org.telegram.ui.Cells.x3 x3Var = this.E;
+        org.telegram.ui.Cells.y3 y3Var = this.E;
         if (i12 != 0) {
             y7 y7Var = this.F;
             if (i12 == 1) {
@@ -612,7 +612,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
                 arrayList7.add(z7.e());
                 arrayList7.add(z7.f());
                 L2 = org.telegram.messenger.g0.L(32.0f) + org.telegram.messenger.g0.L(56.0f) + 0.0f + org.telegram.messenger.g0.L(150.0f);
-                x3Var.setText(gd.M0(2131744339, null));
+                y3Var.setText(gd.M0(2131744339, null));
                 i(z10);
                 this.G = true;
             } else if (i12 == 2) {
@@ -625,7 +625,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
                 arrayList7.add(z7.e());
                 arrayList7.add(z7.f());
                 L2 = org.telegram.messenger.g0.L(32.0f) + org.telegram.messenger.g0.L(56.0f) + 0.0f + org.telegram.messenger.g0.L(150.0f);
-                x3Var.setText(gd.M0(2131744334, null));
+                y3Var.setText(gd.M0(2131744334, null));
                 i(z10);
                 this.G = true;
             } else if (i12 == 3) {
@@ -638,7 +638,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
                 arrayList7.add(z7.e());
                 arrayList7.add(z7.f());
                 L2 = org.telegram.messenger.g0.L(32.0f) + org.telegram.messenger.g0.L(56.0f) + 0.0f + org.telegram.messenger.g0.L(150.0f);
-                x3Var.setText(gd.M0(2131744332, null));
+                y3Var.setText(gd.M0(2131744332, null));
                 i(z10);
                 this.G = true;
             } else if (i12 == 5) {
@@ -651,7 +651,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
                 arrayList7.add(z7.e());
                 arrayList7.add(z7.f());
                 L2 = org.telegram.messenger.g0.L(32.0f) + org.telegram.messenger.g0.L(56.0f) + 0.0f + org.telegram.messenger.g0.L(150.0f);
-                x3Var.setText(gd.M0(2131744343, null));
+                y3Var.setText(gd.M0(2131744343, null));
                 i(z10);
                 this.G = true;
             } else if (i12 == 6) {
@@ -664,7 +664,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
                 arrayList7.add(z7.e());
                 arrayList7.add(z7.f());
                 L2 = org.telegram.messenger.g0.L(32.0f) + org.telegram.messenger.g0.L(56.0f) + 0.0f + org.telegram.messenger.g0.L(150.0f);
-                x3Var.setText(gd.M0(2131744341, null));
+                y3Var.setText(gd.M0(2131744341, null));
                 i(z10);
                 this.G = true;
             } else if (i12 == 4) {
@@ -677,7 +677,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
                 arrayList7.add(z7.e());
                 arrayList7.add(z7.f());
                 L = org.telegram.messenger.g0.L(56.0f) + 0.0f + org.telegram.messenger.g0.L(150.0f) + org.telegram.messenger.g0.L(32.0f);
-                x3Var.setText(gd.M0(2131744336, null));
+                y3Var.setText(gd.M0(2131744336, null));
                 i(z10);
                 this.G = true;
                 boolean isEmpty = TextUtils.isEmpty(this.J);
@@ -887,7 +887,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
             this.e.invalidate();
         }
         this.G = false;
-        x3Var.setVisibility(8);
+        y3Var.setVisibility(8);
         int i26 = q8.Y1;
         ArrayList arrayList13 = mp.u1(q8Var.a).R1().T;
         z7 z7Var4 = new z7(-1, false);
@@ -1263,22 +1263,22 @@ public final class l8 extends FrameLayout implements View.OnClickListener, fs {
     }
 
     public final void i(boolean z10) {
-        org.telegram.ui.Cells.x3 x3Var = this.E;
-        if (x3Var == null) {
+        org.telegram.ui.Cells.y3 y3Var = this.E;
+        if (y3Var == null) {
             return;
         }
         if (q8.S0(this.c, this.d).size() > 0) {
-            x3Var.a(gd.M0(2131743393, null), new a8(this, 2));
+            y3Var.a(gd.M0(2131743393, null), new a8(this, 2));
             return;
         }
         if (z10) {
-            x3Var.setRightText(null);
+            y3Var.setRightText(null);
             return;
         }
-        org.telegram.ui.Cells.w3 w3Var = x3Var.b;
-        w3Var.c(null, false, true);
-        w3Var.setOnClickListener(null);
-        w3Var.setVisibility(0);
+        org.telegram.ui.Cells.x3 x3Var = y3Var.b;
+        x3Var.c(null, false, true);
+        x3Var.setOnClickListener(null);
+        x3Var.setVisibility(0);
     }
 
     public final void j(boolean z10) {

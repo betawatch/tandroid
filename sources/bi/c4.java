@@ -2,154 +2,141 @@ package bi;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import java.util.HashSet;
 import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.cy0;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.n31;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c4 implements q10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class c4 implements x10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ TLObject f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ c4(long j3, TL_stars.TL_starGiftUnique tL_starGiftUnique, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, String str, di.k1 k1Var) {
-        this.a = 1;
-        this.b = j3;
-        this.f = tL_starGiftUnique;
-        this.c = context;
-        this.d = i7;
-        this.e = i6Var;
-        this.g = str;
-        this.h = k1Var;
+    public /* synthetic */ c4(Context context, int i7, TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer, TL_stars.TL_payments_starGiftOnchainOfferTx tL_payments_starGiftOnchainOfferTx, org.telegram.ui.Wallet.p0 p0Var, org.telegram.ui.ActionBar.i6 i6Var, lc lcVar) {
+        this.b = context;
+        this.c = i7;
+        this.e = tL_messageActionStarGiftOnchainOffer;
+        this.f = tL_payments_starGiftOnchainOfferTx;
+        this.g = p0Var;
+        this.d = i6Var;
+        this.h = lcVar;
     }
 
-    @Override // org.telegram.messenger.q10
-    public final void a(Object obj, Object obj2) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        long j3;
+        String a02;
         int i7 = this.a;
-        Object obj3 = this.h;
-        Object obj4 = this.g;
-        Object obj5 = this.f;
+        Object obj2 = this.h;
+        Object obj3 = this.g;
+        TLObject tLObject = this.f;
+        Object obj4 = this.e;
+        int i10 = 1;
         switch (i7) {
             case 0:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj5;
-                lc lcVar = (lc) obj4;
-                TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer = (TLRPC.TL_messageActionStarGiftOnchainOffer) obj3;
-                TL_stars.TL_payments_starGiftOnchainOfferTx tL_payments_starGiftOnchainOfferTx = (TL_stars.TL_payments_starGiftOnchainOfferTx) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                long j3 = this.b;
-                Context context = this.c;
-                int i10 = this.d;
-                org.telegram.ui.ActionBar.i6 i6Var = this.e;
-                if (tL_payments_starGiftOnchainOfferTx != null && tL_payments_starGiftOnchainOfferTx.message != null) {
-                    org.telegram.ui.Wallet.p0 o4 = f4.o(context, i6Var, lcVar, i10, tL_payments_starGiftOnchainOfferTx);
-                    if (o4 != null) {
-                        d4 d4Var = new d4(u1Var, context, i10, tL_messageActionStarGiftOnchainOffer, tL_payments_starGiftOnchainOfferTx, o4, i6Var, lcVar);
-                        int i11 = o3.x2;
-                        boolean[] zArr = new boolean[1];
-                        aa.r rVar = new aa.r(zArr, new Runnable[]{org.telegram.ui.Wallet.u0.D(i10).l(o4, new h0(zArr, rVar, d4Var, 1))}, d4Var, 8);
-                        org.telegram.messenger.g0.h3(rVar, 5000L);
-                        break;
-                    } else {
-                        u1Var.dismiss();
-                        f4.f(j3);
-                        break;
-                    }
-                } else {
-                    u1Var.dismiss();
-                    f4.f(j3);
-                    v4.r(context, i10, i6Var, lcVar, tL_error, null);
-                    break;
+                final TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer = (TLRPC.TL_messageActionStarGiftOnchainOffer) obj4;
+                TL_stars.TL_payments_starGiftOnchainOfferTx tL_payments_starGiftOnchainOfferTx = (TL_stars.TL_payments_starGiftOnchainOfferTx) tLObject;
+                final org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) obj3;
+                final lc lcVar = (lc) obj2;
+                final long longValue = ((Long) obj).longValue();
+                long j10 = tL_payments_starGiftOnchainOfferTx.fine;
+                if (j10 <= 0) {
+                    j10 = 0;
                 }
-                break;
-            case 1:
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj5;
-                String str = (String) obj4;
-                di.k1 k1Var = (di.k1) obj3;
-                org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) obj;
-                Boolean bool = (Boolean) obj2;
-                TL_wallet.walletOnchainGiftActionChangePrice walletonchaingiftactionchangeprice = new TL_wallet.walletOnchainGiftActionChangePrice();
-                long j10 = this.b;
-                walletonchaingiftactionchangeprice.new_price = j10;
-                p0Var.h = walletonchaingiftactionchangeprice;
-                p0Var.i = tL_starGiftUnique;
-                int i12 = this.d;
-                Context context2 = this.c;
-                org.telegram.ui.ActionBar.i6 i6Var2 = this.e;
-                o3 o3Var = new o3(i12, context2, tL_starGiftUnique, i6Var2);
-                o3Var.k1(org.telegram.messenger.g0.W2(gd.a0(null, null, bool.booleanValue() ? 2131749528 : 2131749530, str, v4.k(j10))), gd.M0(bool.booleanValue() ? 2131749529 : 2131749516, null));
-                String M0 = gd.M0(2131749535, null);
-                SpannableStringBuilder l10 = v4.l(j10);
-                cy0 cy0Var = o3Var.Z1;
-                cy0Var.e(M0, l10, null, null);
-                v4.c(o3Var, j10, v4.f(tL_starGiftUnique), i6Var2);
-                cy0Var.e(gd.M0(2131749540, null), v4.i(p0Var.b), null, null);
-                v4.b(o3Var, tL_starGiftUnique);
-                String M02 = gd.M0(bool.booleanValue() ? 2131749524 : 2131749527, null);
-                k80 k80Var = o3Var.a2;
-                k80Var.setText(M02);
-                k80Var.setVisibility(TextUtils.isEmpty(M02) ? 8 : 0);
-                o3Var.d2.i(gd.M0(2131749531, null), false, true);
-                o3Var.q2 = 2131749615;
-                o3Var.j1(p0Var);
-                o3Var.i1(new l4(k1Var, tL_starGiftUnique, bool, str, i12, j10), new j(tL_starGiftUnique, bool, str, 2), new h4(context2, i12, i6Var2, o3Var, bool, 2));
-                o3Var.show();
+                long max = Math.max(0L, tL_messageActionStarGiftOnchainOffer.amount - j10);
+                if (j10 > 0) {
+                    j3 = 0;
+                    a02 = gd.a0(null, null, 2131749550, u4.k(j10), u4.k(max));
+                } else {
+                    j3 = 0;
+                    a02 = gd.a0(null, null, 2131749548, u4.k(max));
+                }
+                SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(a02);
+                String a03 = j10 > 0 ? gd.a0(null, null, 2131749549, u4.k(j10)) : gd.M0(2131749552, null);
+                TL_wallet.walletOnchainGiftActionOfferCancel walletonchaingiftactionoffercancel = new TL_wallet.walletOnchainGiftActionOfferCancel();
+                walletonchaingiftactionoffercancel.offer_address = tL_messageActionStarGiftOnchainOffer.offer_address;
+                int i11 = walletonchaingiftactionoffercancel.flags;
+                walletonchaingiftactionoffercancel.flags = i11 | 2;
+                walletonchaingiftactionoffercancel.price = tL_messageActionStarGiftOnchainOffer.amount;
+                walletonchaingiftactionoffercancel.refund_amount = max;
+                long j11 = tL_payments_starGiftOnchainOfferTx.fine;
+                if (j11 > j3) {
+                    walletonchaingiftactionoffercancel.flags = i11 | 6;
+                    walletonchaingiftactionoffercancel.fine = j11;
+                }
+                TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
+                p0Var.h = walletonchaingiftactionoffercancel;
+                p0Var.i = starGift;
+                final long j12 = tL_messageActionStarGiftOnchainOffer.offer_id;
+                final boolean[] zArr = new boolean[1];
+                e4.j(j12, Long.MAX_VALUE);
+                final Context context = this.b;
+                final org.telegram.ui.ActionBar.i6 i6Var = this.d;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, i6Var);
+                u3 u3Var = new u3(zArr, j12, 0);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.setOnDismissListener(u3Var);
+                u1Var.S = gd.M0(2131749546, null);
+                u1Var.U = W2;
+                alertDialog$Builder.h(gd.M0(2131752578, null), null);
+                final int i12 = this.c;
+                alertDialog$Builder.k(a03, new org.telegram.ui.ActionBar.r1() { // from class: bi.v3
+                    @Override // org.telegram.ui.ActionBar.r1
+                    public final void h(org.telegram.ui.ActionBar.u1 u1Var2, int i13) {
+                        org.telegram.ui.Wallet.p0 p0Var2 = p0Var;
+                        long j13 = p0Var2.b + longValue;
+                        Context context2 = context;
+                        int i14 = i12;
+                        org.telegram.ui.ActionBar.i6 i6Var2 = i6Var;
+                        if (o3.e1(context2, i14, i6Var2, j13, 2131749615)) {
+                            vf.b h = u1Var2.h(i13, true, true);
+                            h.d();
+                            aa.r rVar = new aa.r(new boolean[1], h, u1Var2, 9);
+                            zArr[0] = true;
+                            HashSet hashSet = e4.b;
+                            long j14 = j12;
+                            hashSet.add(Long.valueOf(j14));
+                            e4.j(j14, 300000L);
+                            org.telegram.ui.Wallet.u0.D(i14).o0(p0Var2, new w3(j14, rVar, context2, i14, i6Var2, lcVar), new x3(rVar, j14, tL_messageActionStarGiftOnchainOffer), new y3(j14, rVar));
+                        }
+                    }
+                });
+                alertDialog$Builder.p();
                 break;
             default:
-                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) obj5;
-                String str2 = (String) obj4;
-                di.k1 k1Var2 = (di.k1) obj3;
-                org.telegram.ui.Wallet.p0 p0Var2 = (org.telegram.ui.Wallet.p0) obj;
-                Boolean bool2 = (Boolean) obj2;
-                TL_wallet.walletOnchainGiftActionChangePrice walletonchaingiftactionchangeprice2 = new TL_wallet.walletOnchainGiftActionChangePrice();
-                long j11 = tL_starGiftUnique2.getResellAmount(cg.b.b).b;
-                if (j11 > 0) {
-                    walletonchaingiftactionchangeprice2.flags |= 1;
-                    walletonchaingiftactionchangeprice2.old_price = j11;
-                }
-                long j12 = this.b;
-                walletonchaingiftactionchangeprice2.new_price = j12;
-                p0Var2.h = walletonchaingiftactionchangeprice2;
-                p0Var2.i = tL_starGiftUnique2;
-                int i13 = this.d;
-                Context context3 = this.c;
-                org.telegram.ui.ActionBar.i6 i6Var3 = this.e;
-                o3 o3Var2 = new o3(i13, context3, tL_starGiftUnique2, i6Var3);
-                o3Var2.k1(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749652, str2, v4.k(j12))), gd.M0(2131750248, null));
-                String M03 = gd.M0(2131749535, null);
-                SpannableStringBuilder l11 = v4.l(j12);
-                cy0 cy0Var2 = o3Var2.Z1;
-                cy0Var2.e(M03, l11, null, null);
-                v4.c(o3Var2, j12, v4.f(tL_starGiftUnique2), i6Var3);
-                cy0Var2.e(gd.M0(2131749540, null), v4.i(p0Var2.b), null, null);
-                o3Var2.d2.i(gd.M0(2131750248, null), false, true);
-                o3Var2.q2 = 2131749615;
-                o3Var2.j1(p0Var2);
-                o3Var2.i1(new e0(k1Var2, tL_starGiftUnique2, str2, i13, j12), new x3(tL_starGiftUnique2, str2, j12, 1), new h4(context3, i13, i6Var3, o3Var2, bool2, 3));
-                o3Var2.show();
+                String str = (String) obj;
+                org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, this.b, null);
+                u1Var2.r(200L);
+                TLRPC.TL_messages_checkUrlAuthMatchCode tL_messages_checkUrlAuthMatchCode = new TLRPC.TL_messages_checkUrlAuthMatchCode();
+                ((String[]) obj4)[0] = str;
+                tL_messages_checkUrlAuthMatchCode.match_code = str;
+                tL_messages_checkUrlAuthMatchCode.url = ((TLRPC.TL_messages_requestUrlAuth) tLObject).url;
+                ConnectionsManager.getInstance(this.c).sendRequestTyped(tL_messages_checkUrlAuthMatchCode, new d3.b(i10), new di.e2(u1Var2, (n31) obj3, (String) obj2, this.d, 2));
                 break;
         }
     }
 
-    public /* synthetic */ c4(Object obj, long j3, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.f = obj;
-        this.b = j3;
-        this.c = context;
-        this.d = i7;
-        this.e = i6Var;
-        this.g = obj2;
-        this.h = obj3;
+    public /* synthetic */ c4(Context context, String[] strArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, int i7, n31 n31Var, String str, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.b = context;
+        this.e = strArr;
+        this.f = tL_messages_requestUrlAuth;
+        this.c = i7;
+        this.g = n31Var;
+        this.h = str;
+        this.d = i6Var;
     }
 }

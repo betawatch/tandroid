@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x7 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final class x7 extends org.telegram.ui.ActionBar.j {
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                         qcVar.p0 = ofFloat;
                         ofFloat.addUpdateListener(new hi.ca(qcVar, 1));
-                        qcVar.p0.addListener(new org.telegram.ui.Cells.x9(qcVar, 4));
+                        qcVar.p0.addListener(new org.telegram.ui.Cells.y9(qcVar, 4));
                         qcVar.p0.setDuration(400L);
                         qcVar.p0.setInterpolator(org.telegram.ui.Components.xs.e);
                         qcVar.p0.start();

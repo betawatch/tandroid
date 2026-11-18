@@ -80,7 +80,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Cells.s9;
+import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.au0;
 import org.telegram.ui.Components.de;
 import org.telegram.ui.Components.et;
@@ -107,7 +107,7 @@ import org.telegram.ui.nx;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class z3 extends au0 implements fs {
     public org.telegram.ui.Components.m6 A0;
@@ -623,14 +623,14 @@ public abstract class z3 extends au0 implements fs {
         int L7 = org.telegram.messenger.g0.L(20.0f);
         int o14 = i0.a.o(-1, 100);
         t2Var.setBackground(org.telegram.ui.ActionBar.n6.k0(L7, L7, L7, L7, 0, o14, o14));
-        s9 s9Var = g3Var.a0;
-        View n10 = s9Var.n(context);
+        t9 t9Var = g3Var.a0;
+        View n10 = t9Var.n(context);
         if (n10 != null) {
             org.telegram.messenger.g0.E2(n10);
             addView(n10);
         }
-        s9Var.D = new b2(this, 0);
-        s9Var.S(this);
+        t9Var.D = new b2(this, 0);
+        t9Var.S(this);
     }
 
     public static void T0(o6 o6Var, ImageReceiver imageReceiver, String str) {
@@ -792,7 +792,7 @@ public abstract class z3 extends au0 implements fs {
             return;
         }
         if (z3Var.t3 != null && z3Var.u3 != null) {
-            ug.l0.x1(new bi.z8(z3Var, 2), z3Var.t3, z3Var.u3, z3Var.l1, true);
+            ug.l0.x1(new bi.y8(z3Var, 2), z3Var.t3, z3Var.u3, z3Var.l1, true);
             return;
         }
         f9 f9Var = z3Var.t0;
@@ -3598,10 +3598,10 @@ public abstract class z3 extends au0 implements fs {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c1 c1Var;
-        int i11 = ks.x5;
+        int i11 = ks.y5;
         f9 f9Var = this.t0;
         boolean z10 = false;
-        if (i7 == i11 || (i7 == ks.z5 && f9Var.O0 == objArr[0])) {
+        if (i7 == i11 || (i7 == ks.A5 && f9Var.O0 == objArr[0])) {
             s3 s3Var = this.A1;
             if (s3Var == null || !((w8) s3Var).d.H0) {
                 if (this.u1) {
@@ -3654,11 +3654,11 @@ public abstract class z3 extends au0 implements fs {
             d1(false);
             return;
         }
-        if (i7 == ks.k4) {
+        if (i7 == ks.l4) {
             this.u0.c0.invalidate();
             return;
         }
-        if (i7 == ks.F5) {
+        if (i7 == ks.G5) {
             p0(true);
             return;
         }
@@ -3667,12 +3667,12 @@ public abstract class z3 extends au0 implements fs {
             if (o4 == null || !o4.a(this.m2, 1) || this.A1 == null) {
                 return;
             }
-            bi.z8 z8Var = new bi.z8(this, 2);
+            bi.y8 y8Var = new bi.y8(this, 2);
             Context W = org.telegram.messenger.g0.W(getContext());
             if (W == null) {
                 W = LaunchActivity.H1;
             }
-            ((w8) this.A1).h(new ug.l0(o4.b(), this.m2, W, z8Var, null));
+            ((w8) this.A1).h(new ug.l0(o4.b(), this.m2, W, y8Var, null));
             return;
         }
         if (i7 == ks.k3) {
@@ -4943,14 +4943,14 @@ public abstract class z3 extends au0 implements fs {
             if (i7 >= arrayList.size()) {
                 ks.f(this.m2).c(this, ks.T);
                 ks.f(this.m2).c(this, ks.G2);
-                ks.f(this.m2).c(this, ks.x5);
+                ks.f(this.m2).c(this, ks.y5);
                 ks.f(this.m2).c(this, ks.o3);
-                ks.f(this.m2).c(this, ks.z5);
-                ks.f(this.m2).c(this, ks.F5);
+                ks.f(this.m2).c(this, ks.A5);
+                ks.f(this.m2).c(this, ks.G5);
                 ks.f(this.m2).c(this, ks.d3);
                 ks.f(this.m2).c(this, ks.k3);
                 ks.f(this.m2).c(this, ks.F);
-                ks.e().c(this, ks.k4);
+                ks.e().c(this, ks.l4);
                 return;
             }
             ((ch.g0) arrayList.get(i7)).b(true);
@@ -4987,14 +4987,14 @@ public abstract class z3 extends au0 implements fs {
             if (i7 >= arrayList.size()) {
                 ks.f(this.m2).n(this, ks.T);
                 ks.f(this.m2).n(this, ks.G2);
-                ks.f(this.m2).n(this, ks.x5);
+                ks.f(this.m2).n(this, ks.y5);
                 ks.f(this.m2).n(this, ks.o3);
-                ks.f(this.m2).n(this, ks.z5);
-                ks.f(this.m2).n(this, ks.F5);
+                ks.f(this.m2).n(this, ks.A5);
+                ks.f(this.m2).n(this, ks.G5);
                 ks.f(this.m2).n(this, ks.d3);
                 ks.f(this.m2).n(this, ks.k3);
                 ks.f(this.m2).n(this, ks.F);
-                ks.e().n(this, ks.k4);
+                ks.e().n(this, ks.l4);
                 return;
             }
             ((ch.g0) arrayList.get(i7)).b(false);

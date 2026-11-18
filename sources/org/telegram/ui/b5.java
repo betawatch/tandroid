@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class b5 extends FrameLayout implements org.telegram.messenger.fs {
     public static final /* synthetic */ int G = 0;
@@ -236,7 +236,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.f
         this.n = animatorSet2;
         animatorSet2.setDuration(z10 ? 190L : 150L);
         this.n.playTogether(ofFloat, ofFloat2);
-        this.n.addListener(new bi.e7(21, this, z10));
+        this.n.addListener(new bi.d7(21, this, z10));
         this.n.start();
     }
 

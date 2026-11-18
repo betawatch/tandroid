@@ -6,10 +6,10 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public final org.telegram.ui.Cells.g6 a;
+    public final org.telegram.ui.Cells.h6 a;
     public final org.telegram.ui.Components.ng0 b;
     public TLRPC.Chat c;
 
@@ -19,15 +19,15 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.c
         org.telegram.ui.Components.ng0 ng0Var = new org.telegram.ui.Components.ng0(context);
         this.b = ng0Var;
         int ceil = (int) Math.ceil(ng0Var.getPaint().measureText(M0));
-        org.telegram.ui.Cells.g6 g6Var = new org.telegram.ui.Cells.g6(context, null);
-        this.a = g6Var;
-        g6Var.N0 = true;
-        g6Var.F0 = true;
-        g6Var.setPadding(org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(44.0f) + ceil : 0, 0, org.telegram.messenger.gd.a0 ? 0 : org.telegram.messenger.g0.L(44.0f) + ceil, 0);
+        org.telegram.ui.Cells.h6 h6Var = new org.telegram.ui.Cells.h6(context, null);
+        this.a = h6Var;
+        h6Var.N0 = true;
+        h6Var.F0 = true;
+        h6Var.setPadding(org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(44.0f) + ceil : 0, 0, org.telegram.messenger.gd.a0 ? 0 : org.telegram.messenger.g0.L(44.0f) + ceil, 0);
         int i7 = -org.telegram.messenger.g0.L(4.0f);
-        g6Var.c0 = 0;
-        g6Var.d0 = i7;
-        addView(g6Var, c8.ma.c(-1.0f, -1));
+        h6Var.c0 = 0;
+        h6Var.d0 = i7;
+        addView(h6Var, c8.ma.c(-1.0f, -1));
         ng0Var.setText(M0);
         ng0Var.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.u6.U(ng0Var, org.telegram.ui.ActionBar.n6.Ji, null);

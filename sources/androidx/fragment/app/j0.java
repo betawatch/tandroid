@@ -26,9 +26,9 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public final c0 A;
@@ -1581,9 +1581,9 @@ public abstract class j0 {
         if (uVar8 == null || sVar != 0) {
             return;
         }
-        md0 md0Var = uVar8.e.c;
-        ((CopyOnWriteArrayList) md0Var.c).add(this.u);
-        ((Runnable) md0Var.b).run();
+        nd0 nd0Var = uVar8.e.c;
+        ((CopyOnWriteArrayList) nd0Var.c).add(this.u);
+        ((Runnable) nd0Var.b).run();
     }
 
     public final void b0(s sVar, androidx.lifecycle.n nVar) {
@@ -1920,14 +1920,14 @@ public abstract class j0 {
         }
         u uVar6 = this.w;
         if ((uVar6 != null) && this.y == null) {
-            md0 md0Var = uVar6.e.c;
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) md0Var.c;
+            nd0 nd0Var = uVar6.e.c;
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) nd0Var.c;
             b0 b0Var = this.u;
             copyOnWriteArrayList.remove(b0Var);
-            if (((HashMap) md0Var.d).remove(b0Var) != null) {
+            if (((HashMap) nd0Var.d).remove(b0Var) != null) {
                 throw new ClassCastException();
             }
-            ((Runnable) md0Var.b).run();
+            ((Runnable) nd0Var.b).run();
         }
         this.w = null;
         this.x = null;

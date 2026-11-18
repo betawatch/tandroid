@@ -47,10 +47,10 @@ import org.telegram.ui.bn;
 import org.telegram.ui.cx;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.wp;
-import org.telegram.ui.x60;
+import org.telegram.ui.y60;
 import org.telegram.ui.zc1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -395,7 +395,7 @@ public final /* synthetic */ class i implements Runnable {
                             bundle.putBoolean("allowChannels", arrayList4.contains("channels"));
                             bundle.putBoolean("allowBots", arrayList4.contains("bots"));
                             cxVar = new cx(bundle);
-                            cxVar.E2 = new x60(launchActivity, user, str10, i14);
+                            cxVar.E2 = new y60(launchActivity, user, str10, i14);
                         }
                         if (tL_attachMenuBot.inactive) {
                             u6 u6Var = new u6(launchActivity);

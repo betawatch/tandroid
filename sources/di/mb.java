@@ -8,7 +8,7 @@ import org.telegram.messenger.ks;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class mb extends FrameLayout implements fs {
     public final e51 a;
@@ -56,7 +56,7 @@ public final class mb extends FrameLayout implements fs {
                 e51Var.g3.O(true);
             }
         } else {
-            if (i7 != ks.c4 || this.n == null || TextUtils.equals(this.r, org.telegram.ui.Wallet.u0.D(this.c).y())) {
+            if (i7 != ks.d4 || this.n == null || TextUtils.equals(this.r, org.telegram.ui.Wallet.u0.D(this.c).y())) {
                 return;
             }
             e51Var.g3.O(true);
@@ -73,7 +73,7 @@ public final class mb extends FrameLayout implements fs {
         } else {
             ks.f(i7).c(this, ks.B3);
             if (this.e) {
-                ks.f(i7).c(this, ks.c4);
+                ks.f(i7).c(this, ks.d4);
             }
         }
         this.a.g3.O(false);
@@ -90,7 +90,7 @@ public final class mb extends FrameLayout implements fs {
         }
         ks.f(i7).n(this, ks.B3);
         if (this.e) {
-            ks.f(i7).n(this, ks.c4);
+            ks.f(i7).n(this, ks.d4);
         }
     }
 }

@@ -14,10 +14,11 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.au;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Cells.h4;
-import org.telegram.ui.Cells.m7;
-import org.telegram.ui.Cells.o7;
-import org.telegram.ui.Cells.r5;
+import org.telegram.ui.Cells.i4;
+import org.telegram.ui.Cells.n7;
+import org.telegram.ui.Cells.p7;
+import org.telegram.ui.Cells.s5;
+import org.telegram.ui.Cells.u5;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.ng0;
@@ -30,7 +31,7 @@ import org.telegram.ui.t4;
 import org.telegram.ui.t5;
 import org.telegram.ui.t9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class n3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -50,10 +51,10 @@ public final class n3 extends AnimatorListenerAdapter {
                 actionBarOverlayLayout.w = false;
                 break;
             case 28:
-                m7 m7Var = (m7) this.b;
-                AnimatorSet animatorSet = m7Var.h;
+                n7 n7Var = (n7) this.b;
+                AnimatorSet animatorSet = n7Var.h;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    m7Var.h = null;
+                    n7Var.h = null;
                     break;
                 }
                 break;
@@ -230,37 +231,37 @@ public final class n3 extends AnimatorListenerAdapter {
                 ((org.telegram.ui.Cells.d0) this.b).x = null;
                 break;
             case 24:
-                ((h4) this.b).H = null;
+                ((i4) this.b).H = null;
                 break;
             case 25:
-                r5 r5Var = (r5) this.b;
-                if (animator.equals(r5Var.n)) {
-                    r5Var.n = null;
+                s5 s5Var = (s5) this.b;
+                if (animator.equals(s5Var.n)) {
+                    s5Var.n = null;
                     break;
                 }
                 break;
             case 26:
                 j6.o oVar = (j6.o) this.b;
-                if (animator.equals(((org.telegram.ui.Cells.t5) oVar.b).d)) {
-                    ((org.telegram.ui.Cells.t5) oVar.b).d = null;
+                if (animator.equals(((u5) oVar.b).d)) {
+                    ((u5) oVar.b).d = null;
                     break;
                 }
                 break;
             case 27:
-                org.telegram.messenger.g0.h3(((org.telegram.ui.Cells.t5) this.b).e, 1000L);
+                org.telegram.messenger.g0.h3(((u5) this.b).e, 1000L);
                 break;
             case 28:
-                m7 m7Var = (m7) this.b;
-                AnimatorSet animatorSet = m7Var.h;
+                n7 n7Var = (n7) this.b;
+                AnimatorSet animatorSet = n7Var.h;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    m7Var.h = null;
+                    n7Var.h = null;
                     break;
                 }
                 break;
             case 29:
-                o7 o7Var = (o7) this.b;
-                o7Var.n.P0 = true;
-                o7Var.invalidate();
+                p7 p7Var = (p7) this.b;
+                p7Var.n.P0 = true;
+                p7Var.invalidate();
                 break;
         }
     }

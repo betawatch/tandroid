@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class om extends ViewGroup {
     public long E;
@@ -37,7 +37,7 @@ public final class om extends ViewGroup {
     public final lm O;
     public int P;
     public final /* synthetic */ pm Q;
-    public final org.telegram.ui.Cells.u0 a;
+    public final org.telegram.ui.Cells.v0 a;
     public final ArrayList b;
     public final HashMap c;
     public HashMap d;
@@ -72,10 +72,10 @@ public final class om extends ViewGroup {
         this.P = 0;
         new HashMap();
         setWillNotDraw(false);
-        org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0(context, pmVar.n, true);
-        this.a = u0Var;
-        u0Var.setCustomText(org.telegram.messenger.gd.M0(2131753958, null));
-        addView(u0Var);
+        org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0(context, pmVar.n, true);
+        this.a = v0Var;
+        v0Var.setCustomText(org.telegram.messenger.gd.M0(2131753958, null));
+        addView(v0Var);
     }
 
     public final void a() {
@@ -223,11 +223,11 @@ public final class om extends ViewGroup {
         for (int i10 = 0; i10 < size; i10++) {
             i7 = (int) (((nm) arrayList.get(i10)).b() + i7);
         }
-        org.telegram.ui.Cells.u0 u0Var = this.a;
-        if (u0Var.getMeasuredHeight() <= 0) {
-            u0Var.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.q.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
+        org.telegram.ui.Cells.v0 v0Var = this.a;
+        if (v0Var.getMeasuredHeight() <= 0) {
+            v0Var.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.q.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
         }
-        return u0Var.getMeasuredHeight() + i7;
+        return v0Var.getMeasuredHeight() + i7;
     }
 
     public final void f(nm nmVar, org.telegram.messenger.ef efVar, int i7) {
@@ -314,7 +314,7 @@ public final class om extends ViewGroup {
             int i7 = 0;
             while (i7 < childCount) {
                 View childAt = xlVar.getChildAt(i7);
-                if (childAt instanceof org.telegram.ui.Cells.r5) {
+                if (childAt instanceof org.telegram.ui.Cells.s5) {
                     int R = RecyclerView.R(childAt);
                     boolean z13 = hmVar.f;
                     boolean z14 = hmVar.d;
@@ -324,20 +324,20 @@ public final class om extends ViewGroup {
                     if (z14 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
                         R--;
                     }
-                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
                     if (siVar.O2 != 0 || siVar.C1) {
-                        r5Var.getCheckBox().setVisibility(8);
+                        s5Var.getCheckBox().setVisibility(8);
                     }
                     org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(R);
                     if (e02 != null) {
                         int i10 = e02.C;
-                        r5Var.d(e02, hashMap2.size() > 1, z14 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0, R == hmVar.b() - 1, siVar.d2);
+                        s5Var.d(e02, hashMap2.size() > 1, z14 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0, R == hmVar.b() - 1, siVar.d2);
                         if ((siVar.a2 instanceof org.telegram.ui.bn) && siVar.R3) {
                             z11 = false;
-                            r5Var.b(arrayList2.indexOf(Integer.valueOf(i10)), hashMap2.containsKey(Integer.valueOf(i10)), false);
+                            s5Var.b(arrayList2.indexOf(Integer.valueOf(i10)), hashMap2.containsKey(Integer.valueOf(i10)), false);
                         } else {
                             z11 = false;
-                            r5Var.b(-1, hashMap2.containsKey(Integer.valueOf(i10)), false);
+                            s5Var.b(-1, hashMap2.containsKey(Integer.valueOf(i10)), false);
                         }
                     } else {
                         z11 = false;
@@ -514,13 +514,13 @@ public final class om extends ViewGroup {
             size = i7;
             arrayList2 = arrayList;
         }
-        org.telegram.ui.Cells.u0 u0Var = this.a;
-        u0Var.l0(f13, u0Var.getMeasuredHeight());
-        if (u0Var.T()) {
-            u0Var.G(canvas, true);
-            u0Var.L(canvas, true);
+        org.telegram.ui.Cells.v0 v0Var = this.a;
+        v0Var.k0(f13, v0Var.getMeasuredHeight());
+        if (v0Var.R()) {
+            v0Var.F(canvas, true);
+            v0Var.J(canvas, true);
         }
-        u0Var.draw(canvas);
+        v0Var.draw(canvas);
         canvas.restore();
         if (pmVar.K != null) {
             canvas.save();
@@ -536,8 +536,8 @@ public final class om extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        org.telegram.ui.Cells.u0 u0Var = this.a;
-        u0Var.layout(0, 0, u0Var.getMeasuredWidth(), u0Var.getMeasuredHeight());
+        org.telegram.ui.Cells.v0 v0Var = this.a;
+        v0Var.layout(0, 0, v0Var.getMeasuredWidth(), v0Var.getMeasuredHeight());
     }
 
     @Override // android.view.View
@@ -828,7 +828,7 @@ public final class om extends ViewGroup {
                                         i(pmVar.Q, false);
                                         int i24 = this.P + 1;
                                         this.P = i24;
-                                        pmVar.x.k(0L, 82, efVar, null, null, new bi.u4(this, nmVar5, efVar, indexOf2, 21));
+                                        pmVar.x.k(0L, 82, efVar, null, null, new bi.t4(this, nmVar5, efVar, indexOf2, 21));
                                         postDelayed(new org.telegram.ui.ii(this, i24, 10), 4000L);
                                     }
                                     ValueAnimator valueAnimator2 = pmVar.M;

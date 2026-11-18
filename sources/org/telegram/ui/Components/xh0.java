@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xh0 extends v4.i0 {
     public final /* synthetic */ int c;
@@ -37,13 +37,13 @@ public final class xh0 extends v4.i0 {
     @Override // v4.i0
     public final void t(v4.f1 f1Var, int i7) {
         if (f1Var.f == 0) {
-            ((org.telegram.ui.Cells.m6) f1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i7));
+            ((org.telegram.ui.Cells.n6) f1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i7));
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        FrameLayout m6Var;
+        FrameLayout n6Var;
         if (i7 != 0) {
             ei0 ei0Var = this.h;
             y90 y90Var = ei0Var.K;
@@ -53,14 +53,14 @@ public final class xh0 extends v4.i0 {
                 ((ViewGroup) ei0Var.K.getParent()).removeView(ei0Var.K);
             }
             Context context = this.d;
-            m6Var = new FrameLayout(context);
+            n6Var = new FrameLayout(context);
             View view = new View(context);
             org.telegram.ui.ActionBar.u6.i(view, org.telegram.ui.ActionBar.u6.K(0.06f, org.telegram.ui.ActionBar.n6.E8), this.e);
-            m6Var.addView(view, c8.ma.c(8.0f, -1));
-            m6Var.addView(ei0Var.K, c8.ma.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
+            n6Var.addView(view, c8.ma.c(8.0f, -1));
+            n6Var.addView(ei0Var.K, c8.ma.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
         } else {
-            m6Var = new org.telegram.ui.Cells.m6(0, this.c, this.d, this.e, true, this.f);
+            n6Var = new org.telegram.ui.Cells.n6(0, this.c, this.d, this.e, true, this.f);
         }
-        return new kj0(m6Var);
+        return new kj0(n6Var);
     }
 }

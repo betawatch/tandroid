@@ -12,13 +12,13 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h71 extends View {
     public ObjectAnimator E;
     public final View F;
     public int[] G;
-    public final org.telegram.ui.Cells.f2 H;
+    public final org.telegram.ui.Cells.g2 H;
     public final Paint I;
     public float J;
     public final org.telegram.ui.ActionBar.i6 a;
@@ -38,7 +38,7 @@ public final class h71 extends View {
     public h71(Context context, boolean z10, View view, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.G = new int[4];
-        this.H = new org.telegram.ui.Cells.f2(this);
+        this.H = new org.telegram.ui.Cells.g2(this);
         this.I = new Paint(1);
         this.a = i6Var;
         this.r = new RectF();

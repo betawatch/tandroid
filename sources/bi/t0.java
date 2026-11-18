@@ -25,6 +25,7 @@ import org.telegram.messenger.u9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.k80;
@@ -32,7 +33,7 @@ import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.js0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class t0 extends sa implements t9 {
     public static final /* synthetic */ int c2 = 0;
@@ -52,7 +53,7 @@ public final class t0 extends sa implements t9 {
     /* JADX WARN: Type inference failed for: r12v27 */
     public t0(Context context, org.telegram.ui.ActionBar.i6 i6Var, long j3, TL_stars.StarGift starGift, ArrayList arrayList, Runnable runnable, boolean z10) {
         super(context, null, false, false, 1, i6Var);
-        org.telegram.ui.Components.b9 b9Var;
+        b9 b9Var;
         TLRPC.Chat chat;
         ?? r12;
         Context context2;
@@ -99,15 +100,15 @@ public final class t0 extends sa implements t9 {
         n0Var.addView(q9Var, ma.d(90, 90.0f, 49, 0.0f, 42.0f, 0.0f, 0.0f));
         if (j3 == 0) {
             TLRPC.User c22 = mp.u1(this.a).c2(Long.valueOf(j10.i(this.a).e()));
-            b9Var = new org.telegram.ui.Components.b9(0, c22);
+            b9Var = new b9(0, c22);
             chat = c22;
         } else if (j3 > 0) {
             TLRPC.User c23 = mp.u1(this.a).c2(Long.valueOf(j3));
-            b9Var = new org.telegram.ui.Components.b9(0, c23);
+            b9Var = new b9(0, c23);
             chat = c23;
         } else {
             TLRPC.Chat O0 = mp.u1(this.a).O0(Long.valueOf(-j3));
-            b9Var = new org.telegram.ui.Components.b9(O0);
+            b9Var = new b9(O0);
             chat = O0;
         }
         q9Var.f(chat, b9Var);

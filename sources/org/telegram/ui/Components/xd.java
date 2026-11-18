@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xd implements z4, org.telegram.messenger.nc {
     public final /* synthetic */ String a;
@@ -38,19 +38,19 @@ public final /* synthetic */ class xd implements z4, org.telegram.messenger.nc {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         String[] strArr = (String[]) this.d;
         boolean[] zArr = (boolean[]) this.e;
-        bi.d5 d5Var = (bi.d5) this.f;
+        bi.c5 c5Var = (bi.c5) this.f;
         RectF rectF = ProfileActivity.Z6;
         strArr[0] = str;
         zArr[0] = str != null && (!str.equals(this.a) || str.equals("und")) && ((this.b && !org.telegram.ui.sy0.d0().contains(str)) || ((chat = profileActivity.F2) != null && ((chat.has_link || org.telegram.messenger.v3.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
-        d5Var.run();
+        c5Var.run();
     }
 
-    public /* synthetic */ xd(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, bi.d5 d5Var) {
+    public /* synthetic */ xd(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, bi.c5 c5Var) {
         this.c = profileActivity;
         this.d = strArr;
         this.e = zArr;
         this.a = str;
         this.b = z10;
-        this.f = d5Var;
+        this.f = c5Var;
     }
 }

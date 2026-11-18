@@ -15,9 +15,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, org.telegram.ui.Cells.v5, org.telegram.ui.ActionBar.r1, org.telegram.ui.ActionBar.g1, r0.m, org.telegram.messenger.r10, org.telegram.ui.Cells.z4, org.telegram.messenger.mc, RequestTimeDelegate, org.telegram.ui.ActionBar.g2, org.telegram.ui.Components.qj0, lg.e, jg.y1 {
+public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, org.telegram.ui.Cells.w5, org.telegram.ui.ActionBar.r1, org.telegram.ui.ActionBar.g1, r0.m, org.telegram.messenger.r10, org.telegram.ui.Cells.a5, org.telegram.messenger.mc, RequestTimeDelegate, org.telegram.ui.ActionBar.g2, org.telegram.ui.Components.qj0, lg.e, jg.y1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -55,37 +55,37 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                 }
                 break;
             default:
-                le0 le0Var = (le0) ((qb1) this.b);
+                me0 me0Var = (me0) ((qb1) this.b);
                 i0.b I02 = org.telegram.messenger.g0.I0(l1Var, false);
                 int i10 = I02.a;
-                le0Var.N = i10;
+                me0Var.N = i10;
                 int i11 = I02.c;
-                le0Var.O = i11;
-                le0Var.M = I02.d;
-                boolean a10 = le0Var.E.a();
+                me0Var.O = i11;
+                me0Var.M = I02.d;
+                boolean a10 = me0Var.E.a();
                 int L2 = a10 ? org.telegram.messenger.g0.L(44.0f) : 0;
-                le0Var.E.setPadding(0, 0, 0, le0Var.M);
-                int L3 = org.telegram.messenger.g0.L(72.0f) + le0Var.M + L2;
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) le0Var.I.getLayoutParams();
+                me0Var.E.setPadding(0, 0, 0, me0Var.M);
+                int L3 = org.telegram.messenger.g0.L(72.0f) + me0Var.M + L2;
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) me0Var.I.getLayoutParams();
                 if (marginLayoutParams.height != L3) {
                     marginLayoutParams.height = L3;
-                    le0Var.I.setLayoutParams(marginLayoutParams);
+                    me0Var.I.setLayoutParams(marginLayoutParams);
                 }
-                int i12 = a10 ? le0Var.M + L2 : 0;
-                ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) le0Var.c.getLayoutParams();
+                int i12 = a10 ? me0Var.M + L2 : 0;
+                ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) me0Var.c.getLayoutParams();
                 if (marginLayoutParams2.bottomMargin != i12 || marginLayoutParams2.leftMargin != i10 || marginLayoutParams2.rightMargin != i11) {
                     marginLayoutParams2.leftMargin = i10;
                     marginLayoutParams2.rightMargin = i11;
                     marginLayoutParams2.bottomMargin = i12;
-                    le0Var.c.setLayoutParams(marginLayoutParams2);
+                    me0Var.c.setLayoutParams(marginLayoutParams2);
                 }
-                le0Var.F.setPadding(i10, 0, i11, le0Var.M);
+                me0Var.F.setPadding(i10, 0, i11, me0Var.M);
                 if (a10) {
-                    l1Var = l1Var.a.m(0, 0, 0, le0Var.M);
+                    l1Var = l1Var.a.m(0, 0, 0, me0Var.M);
                 }
-                le0Var.o0();
-                le0Var.n0();
-                SparseArray sparseArray = le0Var.a;
+                me0Var.o0();
+                me0Var.n0();
+                SparseArray sparseArray = me0Var.a;
                 int size = sparseArray.size();
                 for (int i13 = 0; i13 < size; i13++) {
                     ob1 ob1Var = (ob1) sparseArray.valueAt(i13);
@@ -110,13 +110,13 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         }
     }
 
-    @Override // org.telegram.ui.Cells.z4
-    public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
+    @Override // org.telegram.ui.Cells.a5
+    public boolean b(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
         rt0 rt0Var = (rt0) this.b;
         if (!z10) {
             return true;
         }
-        rt0Var.d.Z((Long) a5Var.getTag(), a5Var);
+        rt0Var.d.Z((Long) b5Var.getTag(), b5Var);
         return true;
     }
 
@@ -215,9 +215,9 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                 if (org.telegram.messenger.bz.B1 == null) {
                     proxyListActivity.d = false;
                 }
-                org.telegram.messenger.ks.e().n(proxyListActivity, org.telegram.messenger.ks.C4);
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.C4, new Object[0]);
-                org.telegram.messenger.ks.e().c(proxyListActivity, org.telegram.messenger.ks.C4);
+                org.telegram.messenger.ks.e().n(proxyListActivity, org.telegram.messenger.ks.D4);
+                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.D4, new Object[0]);
+                org.telegram.messenger.ks.e().c(proxyListActivity, org.telegram.messenger.ks.D4);
                 proxyListActivity.h0(true);
                 l4 l4Var = proxyListActivity.a;
                 if (l4Var != null) {
@@ -281,7 +281,7 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                 org.telegram.ui.ActionBar.n6.l0(m6Var, x71Var.w, true);
                 org.telegram.ui.ActionBar.n6.p();
                 org.telegram.ui.ActionBar.n6.t1(false, false);
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, m6Var, Boolean.valueOf(x71Var.h0), null, -1);
+                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, m6Var, Boolean.valueOf(x71Var.h0), null, -1);
                 x71Var.finishFragment();
                 break;
             default:
@@ -337,10 +337,10 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
 
     @Override // org.telegram.messenger.mc
     public void q(Exception exc) {
-        bi.d5 d5Var = (bi.d5) this.b;
+        bi.c5 c5Var = (bi.c5) this.b;
         RectF rectF = ProfileActivity.Z6;
         org.telegram.messenger.a8.e("mlkit: failed to detect language in selection", exc);
-        d5Var.run();
+        c5Var.run();
     }
 
     @Override // jg.y1

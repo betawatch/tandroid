@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g91 extends org.telegram.ui.Components.au0 {
     public boolean g0;
@@ -218,10 +218,10 @@ public final class g91 extends org.telegram.ui.Components.au0 {
         int size = View.MeasureSpec.getSize(i7);
         int size2 = View.MeasureSpec.getSize(i10);
         y91 y91Var = this.i0;
-        hh0 hh0Var = y91Var.p0;
-        if (hh0Var != null) {
+        ih0 ih0Var = y91Var.p0;
+        if (ih0Var != null) {
             this.g0 = true;
-            ViewGroup.LayoutParams layoutParams = hh0Var.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = ih0Var.getLayoutParams();
             int L = org.telegram.messenger.g0.L(51.0f);
             int i12 = y91Var.h1;
             layoutParams.height = L + i12;

@@ -5,7 +5,7 @@ import android.view.TextureView;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.tr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,8 +50,8 @@ public final /* synthetic */ class c0 implements Runnable {
             case 1:
                 oi.s3 s3Var = (oi.s3) this.e;
                 KeyEvent.Callback D4 = s3Var.D4(this.b);
-                if (D4 instanceof org.telegram.ui.Cells.h9) {
-                    s3Var.v3.b0(this.c, this.d, (org.telegram.ui.Cells.h9) D4);
+                if (D4 instanceof org.telegram.ui.Cells.i9) {
+                    s3Var.v3.b0(this.c, this.d, (org.telegram.ui.Cells.i9) D4);
                     return;
                 }
                 return;

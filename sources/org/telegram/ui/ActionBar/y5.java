@@ -12,7 +12,7 @@ import org.telegram.messenger.bz;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.xi;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class y5 extends Drawable {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class y5 extends Drawable {
 
     public void e() {
         xi xiVar;
-        org.telegram.ui.Cells.w1 w1Var;
+        org.telegram.ui.Cells.x1 x1Var;
         Rect bounds = getBounds();
         float f10 = bounds.left;
         float f11 = bounds.top;
@@ -73,8 +73,8 @@ public final class y5 extends Drawable {
         rectF.set(f10, f11, f12, f13);
         Path path = (Path) this.e;
         path.rewind();
-        org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.f;
-        int[] iArr = q1Var.L2;
+        org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.f;
+        int[] iArr = r1Var.L2;
         int i7 = this.d;
         int i10 = iArr[i7];
         if (i10 == 3 || i10 == 4) {
@@ -86,32 +86,32 @@ public final class y5 extends Drawable {
             path.addRoundRect(rectF, L, L, Path.Direction.CW);
             return;
         }
-        fj fjVar = q1Var.Q5;
+        fj fjVar = r1Var.Q5;
         boolean z10 = fjVar != null && fjVar.P3();
         for (int i11 = 0; i11 < 4; i11++) {
-            if (!q1Var.E2) {
+            if (!r1Var.E2) {
                 if (i11 == (z10 ? 3 : 2)) {
-                    float[] fArr = org.telegram.ui.Cells.q1.wd;
+                    float[] fArr = org.telegram.ui.Cells.r1.wd;
                     int i12 = i11 * 2;
                     float L2 = org.telegram.messenger.g0.L(bz.Y0);
                     fArr[i12 + 1] = L2;
                     fArr[i12] = L2;
-                } else if (((q1Var.C6 && q1Var.M == null) || q1Var.G) && (i11 == 2 || i11 == 3)) {
-                    float[] fArr2 = org.telegram.ui.Cells.q1.wd;
+                } else if (((r1Var.C6 && r1Var.M == null) || r1Var.G) && (i11 == 2 || i11 == 3)) {
+                    float[] fArr2 = org.telegram.ui.Cells.r1.wd;
                     int i13 = i11 * 2;
                     int i14 = i13 + 1;
-                    float L3 = org.telegram.messenger.g0.L(q1Var.G ? Math.min(5, bz.Y0) : bz.Y0);
+                    float L3 = org.telegram.messenger.g0.L(r1Var.G ? Math.min(5, bz.Y0) : bz.Y0);
                     fArr2[i14] = L3;
                     fArr2[i13] = L3;
                 }
             }
-            float[] fArr3 = org.telegram.ui.Cells.q1.wd;
+            float[] fArr3 = org.telegram.ui.Cells.r1.wd;
             int i15 = i11 * 2;
             fArr3[i15 + 1] = 0.0f;
             fArr3[i15] = 0.0f;
         }
-        if (z10 || q1Var.K || (xiVar = q1Var.M) != null || (xiVar != null && ((w1Var = q1Var.x2) == null || !w1Var.b))) {
-            path.addRoundRect(rectF, org.telegram.ui.Cells.q1.wd, Path.Direction.CW);
+        if (z10 || r1Var.K || (xiVar = r1Var.M) != null || (xiVar != null && ((x1Var = r1Var.x2) == null || !x1Var.b))) {
+            path.addRoundRect(rectF, org.telegram.ui.Cells.r1.wd, Path.Direction.CW);
         } else {
             path.moveTo(rectF.left + org.telegram.messenger.g0.L(6.0f), rectF.top);
             path.lineTo(rectF.left + org.telegram.messenger.g0.L(6.0f), (rectF.bottom - org.telegram.messenger.g0.L(6.0f)) - org.telegram.messenger.g0.L(5.0f));
@@ -119,7 +119,7 @@ public final class y5 extends Drawable {
             rectF2.set(rectF.left + org.telegram.messenger.g0.L(-7.0f), rectF.bottom - org.telegram.messenger.g0.L(23.0f), rectF.left + org.telegram.messenger.g0.L(6.0f), rectF.bottom);
             path.arcTo(rectF2, 0.0f, 83.0f, false);
             float f14 = rectF.right;
-            float[] fArr4 = org.telegram.ui.Cells.q1.wd;
+            float[] fArr4 = org.telegram.ui.Cells.r1.wd;
             float f15 = f14 - (fArr4[4] * 2.0f);
             float f16 = rectF.bottom;
             rectF2.set(f15, f16 - (fArr4[5] * 2.0f), f14, f16);
@@ -147,9 +147,9 @@ public final class y5 extends Drawable {
         int i7 = this.a;
     }
 
-    public y5(org.telegram.ui.Cells.q1 q1Var, int i7) {
+    public y5(org.telegram.ui.Cells.r1 r1Var, int i7) {
         this.a = 1;
-        this.f = q1Var;
+        this.f = r1Var;
         this.d = i7;
         Paint paint = new Paint(1);
         this.b = paint;

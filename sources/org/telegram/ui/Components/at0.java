@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class at0 extends ij0 {
     public final Context c;
@@ -96,8 +96,8 @@ public class at0 extends ij0 {
             int i7 = 0;
             for (int i10 = 0; i10 < ck0Var.getChildCount(); i10++) {
                 View childAt = ck0Var.getChildAt(i10);
-                if (childAt instanceof org.telegram.ui.Cells.o7) {
-                    i7 = ((org.telegram.ui.Cells.o7) childAt).getMessageId();
+                if (childAt instanceof org.telegram.ui.Cells.p7) {
+                    i7 = ((org.telegram.ui.Cells.p7) childAt).getMessageId();
                 }
                 if (i7 != 0) {
                     break;
@@ -219,23 +219,23 @@ public class at0 extends ij0 {
             ArrayList c10 = vs0VarArr[0].c();
             int d = i7 - vs0VarArr[0].d();
             View view = f1Var.a;
-            if (view instanceof org.telegram.ui.Cells.o7) {
-                org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
-                int messageId = o7Var.getMessageId();
+            if (view instanceof org.telegram.ui.Cells.p7) {
+                org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
+                int messageId = p7Var.getMessageId();
                 int i10 = this == gt0Var.K ? iArr[0] : gt0.x(gt0Var, this) != -1 ? iArr[1] : gt0Var.t1;
                 if (d < 0 || d >= c10.size()) {
-                    o7Var.k(null, i10, false);
-                    o7Var.i(false, false);
+                    p7Var.k(null, i10, false);
+                    p7Var.i(false, false);
                     return;
                 }
                 org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) c10.get(d);
                 boolean z10 = fjVar.e1() == messageId;
                 if (gt0Var.F1) {
-                    o7Var.i(gt0Var.c1[(org.telegram.messenger.fj.B0(fjVar.k) > gt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar.k) == gt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar.e1()) >= 0, z10);
+                    p7Var.i(gt0Var.c1[(org.telegram.messenger.fj.B0(fjVar.k) > gt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar.k) == gt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar.e1()) >= 0, z10);
                 } else {
-                    o7Var.i(false, z10);
+                    p7Var.i(false, z10);
                 }
-                o7Var.k(fjVar, i10, false);
+                p7Var.k(fjVar, i10, false);
             }
         }
     }
@@ -253,15 +253,15 @@ public class at0 extends ij0 {
         if (this.e == null) {
             this.e = new m.o3(viewGroup.getContext(), i6Var);
         }
-        org.telegram.ui.Cells.o7 o7Var = new org.telegram.ui.Cells.o7(context, this.e, gt0Var.y1.getCurrentAccount());
+        org.telegram.ui.Cells.p7 p7Var = new org.telegram.ui.Cells.p7(context, this.e, gt0Var.y1.getCurrentAccount());
         if (i7 == 19) {
-            o7Var.x0 = true;
+            p7Var.x0 = true;
         }
-        o7Var.setGradientView(gt0Var.E);
+        p7Var.setGradientView(gt0Var.E);
         if (gt0.x(gt0Var, this) != -1) {
-            o7Var.e0 = true;
+            p7Var.e0 = true;
         }
-        o7Var.setLayoutParams(new v4.q0(-1, -2));
-        return new kj0(o7Var);
+        p7Var.setLayoutParams(new v4.q0(-1, -2));
+        return new kj0(p7Var);
     }
 }

@@ -17,9 +17,9 @@ import org.telegram.messenger.tz;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hh0;
+import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements x10 {
     public final /* synthetic */ int a;
@@ -65,8 +65,8 @@ public final /* synthetic */ class o1 implements x10 {
                                 o1Var.a(null);
                                 break;
                             } else {
-                                final hh0 hh0Var = new hh0(context, 16);
-                                ((ViewGroup) rootView).addView(hh0Var);
+                                final ih0 ih0Var = new ih0(context, 16);
+                                ((ViewGroup) rootView).addView(ih0Var);
                                 final WebView webView = new WebView(context);
                                 WebSettings settings = webView.getSettings();
                                 settings.setAllowContentAccess(false);
@@ -80,12 +80,12 @@ public final /* synthetic */ class o1 implements x10 {
                                 settings.setAllowUniversalAccessFromFileURLs(false);
                                 webView.setWebViewClient(new q1(v1Var, inputStream));
                                 webView.setWebChromeClient(new r1());
-                                hh0Var.addView(webView, ma.c(-1.0f, -1));
+                                ih0Var.addView(webView, ma.c(-1.0f, -1));
                                 final boolean[] zArr2 = {false};
                                 webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
                                     @JavascriptInterface
                                     public void done(String str2) {
-                                        org.telegram.messenger.g0.g3(new x(zArr2, webView, hh0Var, str2, o1Var, 6));
+                                        org.telegram.messenger.g0.g3(new x(zArr2, webView, ih0Var, str2, o1Var, 6));
                                     }
                                 }, "Instant");
                                 webView.loadUrl(str);

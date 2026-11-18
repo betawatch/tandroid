@@ -15,11 +15,11 @@ import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.vy0;
-import org.telegram.ui.vg0;
+import org.telegram.ui.wg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
-public final class cj implements vg0 {
+public final class cj implements wg0 {
     public float E;
     public fj F;
     public int G;
@@ -138,7 +138,7 @@ public final class cj implements vg0 {
         }
     }
 
-    @Override // org.telegram.ui.vg0
+    @Override // org.telegram.ui.wg0
     public final Layout a() {
         return this.e;
     }
@@ -147,10 +147,10 @@ public final class cj implements vg0 {
         return g0.L(this.V ? 28.0f : 15.0f);
     }
 
-    public final float d(org.telegram.ui.Cells.x1 x1Var) {
+    public final float d(org.telegram.ui.Cells.y1 y1Var) {
         boolean f10;
-        if (x1Var.f3) {
-            HashSet hashSet = x1Var.e3;
+        if (y1Var.f3) {
+            HashSet hashSet = y1Var.e3;
             f10 = true;
             if (hashSet != null && hashSet.contains(Integer.valueOf(this.c))) {
                 f10 = false;
@@ -158,10 +158,10 @@ public final class cj implements vg0 {
         } else {
             f10 = f();
         }
-        return g0.T1(f10 ? 1.0f : 0.0f, f() ? 1.0f : 0.0f, x1Var.L1);
+        return g0.T1(f10 ? 1.0f : 0.0f, f() ? 1.0f : 0.0f, y1Var.L1);
     }
 
-    @Override // org.telegram.ui.vg0
+    @Override // org.telegram.ui.wg0
     public final View e() {
         return null;
     }
@@ -213,11 +213,11 @@ public final class cj implements vg0 {
         }
     }
 
-    public final int j(org.telegram.ui.Cells.x1 x1Var) {
+    public final int j(org.telegram.ui.Cells.y1 y1Var) {
         if (!this.K) {
             return this.w;
         }
-        return g0.W1(d(x1Var), this.w, this.G);
+        return g0.W1(d(y1Var), this.w, this.G);
     }
 
     public final boolean k(float f10, float f11, float f12) {
@@ -286,14 +286,14 @@ public final class cj implements vg0 {
         return i7;
     }
 
-    public final float p(ArrayList arrayList, org.telegram.ui.Cells.x1 x1Var) {
+    public final float p(ArrayList arrayList, org.telegram.ui.Cells.y1 y1Var) {
         cj cjVar;
         if (arrayList == null) {
             return 0.0f;
         }
         int i7 = 0;
         for (int i10 = 0; i10 < arrayList.size() && (cjVar = (cj) arrayList.get(i10)) != this; i10++) {
-            i7 += cjVar.j(x1Var) + cjVar.f + cjVar.h;
+            i7 += cjVar.j(y1Var) + cjVar.f + cjVar.h;
         }
         return i7;
     }

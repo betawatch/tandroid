@@ -26,7 +26,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.qh0;
 import org.telegram.ui.Components.vi0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class t8 extends au0 {
     public float g0;
@@ -456,7 +456,7 @@ public final class t8 extends au0 {
                                     canvas.save();
                                 }
                                 canvas.translate(f9Var.L, f9Var.M);
-                                ((org.telegram.ui.Cells.t2) f9Var.N).G(canvas);
+                                ((org.telegram.ui.Cells.u2) f9Var.N).G(canvas);
                                 canvas.restore();
                             }
                         }
@@ -759,11 +759,11 @@ public final class t8 extends au0 {
             org.telegram.messenger.g0.Z2(h2Var.getParentActivity(), h2Var.getClassGuid());
         }
         setTag(R.id.bulletin_delegate_tag, new s8(this));
-        ks.f(f9Var.h).c(f9Var, ks.z5);
-        ks.f(f9Var.h).c(f9Var, ks.x5);
+        ks.f(f9Var.h).c(f9Var, ks.A5);
+        ks.f(f9Var.h).c(f9Var, ks.y5);
         ks.f(f9Var.h).c(f9Var, ks.d1);
         ks.f(f9Var.h).c(f9Var, ks.c1);
-        ks.f(f9Var.h).c(f9Var, ks.y5);
+        ks.f(f9Var.h).c(f9Var, ks.z5);
     }
 
     @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
@@ -771,11 +771,11 @@ public final class t8 extends au0 {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
         f9 f9Var = this.s0;
-        ks.f(f9Var.h).n(f9Var, ks.z5);
-        ks.f(f9Var.h).n(f9Var, ks.x5);
+        ks.f(f9Var.h).n(f9Var, ks.A5);
+        ks.f(f9Var.h).n(f9Var, ks.y5);
         ks.f(f9Var.h).n(f9Var, ks.d1);
         ks.f(f9Var.h).n(f9Var, ks.c1);
-        ks.f(f9Var.h).n(f9Var, ks.y5);
+        ks.f(f9Var.h).n(f9Var, ks.z5);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:129:0x0188  */

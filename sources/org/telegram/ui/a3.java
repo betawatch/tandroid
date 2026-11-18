@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -142,13 +142,13 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 f40.Q0(f40Var2);
                 break;
             case 15:
-                ((pa0) obj).glassEngine.g();
+                ((qa0) obj).glassEngine.g();
                 break;
             case 16:
-                gh0 gh0Var = (gh0) obj;
-                gh0Var.getClass();
-                gh0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                gh0Var.invalidate();
+                hh0 hh0Var = (hh0) obj;
+                hh0Var.getClass();
+                hh0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                hh0Var.invalidate();
                 break;
             case 17:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) obj;

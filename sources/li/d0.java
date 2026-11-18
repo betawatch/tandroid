@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import bi.e5;
+import bi.d5;
 import bi.i3;
 import bi.q1;
 import c8.ma;
@@ -36,8 +36,8 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.p2;
-import org.telegram.ui.Cells.t2;
+import org.telegram.ui.Cells.q2;
+import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.e51;
@@ -48,9 +48,9 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.bn;
 import org.telegram.ui.c00;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class d0 extends x2 implements fs, te.b, p2 {
+public final class d0 extends x2 implements fs, te.b, q2 {
     public static final /* synthetic */ int Q1 = 0;
     public final c00 A1;
     public final e51 B1;
@@ -261,7 +261,7 @@ public final class d0 extends x2 implements fs, te.b, p2 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.p2
+    @Override // org.telegram.ui.Cells.q2
     public final boolean m() {
         return true;
     }
@@ -287,13 +287,13 @@ public final class d0 extends x2 implements fs, te.b, p2 {
         this.o1.A(0);
     }
 
-    @Override // org.telegram.ui.Cells.p2
-    public final void r(t2 t2Var) {
+    @Override // org.telegram.ui.Cells.q2
+    public final void r(u2 u2Var) {
         TLRPC.TL_forumTopic f10;
-        if (t2Var.getMessage() == null || (f10 = mp.u1(this.a).t7.f(-t2Var.getDialogId(), fj.b2(this.a, t2Var.getMessage().k, true, false))) == null) {
+        if (u2Var.getMessage() == null || (f10 = mp.u1(this.a).t7.f(-u2Var.getDialogId(), fj.b2(this.a, u2Var.getMessage().k, true, false))) == null) {
             return;
         }
-        qg.c.n(this.u1, -t2Var.getDialogId(), f10, 0);
+        qg.c.n(this.u1, -u2Var.getDialogId(), f10, 0);
     }
 
     @Override // org.telegram.ui.ActionBar.x2
@@ -315,17 +315,17 @@ public final class d0 extends x2 implements fs, te.b, p2 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.p2
-    public final void u(t2 t2Var) {
-        if (mp.u1(this.a).R1().K(t2Var.getDialogId())) {
+    @Override // org.telegram.ui.Cells.q2
+    public final void u(u2 u2Var) {
+        if (mp.u1(this.a).R1().K(u2Var.getDialogId())) {
             h2 h2Var = this.u1;
             h2Var.getOrCreateStoryViewer().getClass();
-            h2Var.getOrCreateStoryViewer().J(h2Var.getContext(), t2Var.getDialogId(), y6.a((ck0) t2Var.getParent()));
+            h2Var.getOrCreateStoryViewer().J(h2Var.getContext(), u2Var.getDialogId(), y6.a((ck0) u2Var.getParent()));
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(h2 h2Var, long j3, ArrayList arrayList, e5 e5Var) {
+    public d0(h2 h2Var, long j3, ArrayList arrayList, d5 d5Var) {
         super(h2Var.getContext(), h2Var.getResourceProvider(), true, true);
         int i7 = 1;
         lr lrVar = lr.h;
@@ -345,7 +345,7 @@ public final class d0 extends x2 implements fs, te.b, p2 {
         int i12 = 0;
         this.I1 = arrayList != null;
         this.L1 = arrayList;
-        this.J1 = e5Var;
+        this.J1 = d5Var;
         Context context = h2Var.getContext();
         ks.f(this.a).c(this, ks.T);
         ks.f(this.a).c(this, ks.r);
@@ -429,16 +429,16 @@ public final class d0 extends x2 implements fs, te.b, p2 {
         r0.a0.i(viewGroup, uVar);
     }
 
-    @Override // org.telegram.ui.Cells.p2
+    @Override // org.telegram.ui.Cells.q2
     public final void q() {
     }
 
-    @Override // org.telegram.ui.Cells.p2
-    public final void l(t2 t2Var) {
+    @Override // org.telegram.ui.Cells.q2
+    public final void l(u2 u2Var) {
     }
 
-    @Override // org.telegram.ui.Cells.p2
-    public final void w(t2 t2Var) {
+    @Override // org.telegram.ui.Cells.q2
+    public final void w(u2 u2Var) {
     }
 
     @Override // te.b

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class qz {
     public static volatile qz p;
@@ -72,7 +72,7 @@ public final class qz {
         a0Var.u(new PlaybackStateCompat(0, 0L, 0L, 1.0f, r3, 0, null, elapsedRealtime, arrayList, -1L, null));
         f();
         a0Var.x(bz.N0 ? 1 : 0);
-        ks.e().b(new j5(this, 1), ks.e4);
+        ks.e().b(new j5(this, 1), ks.f4);
     }
 
     public static qz a(MusicBrowserService musicBrowserService) {

@@ -6,9 +6,9 @@ import c8.bc;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new t0(4);
@@ -65,22 +65,22 @@ public final class i extends l {
     }
 
     public final String toString() {
-        md0 md0Var = new md0(getClass().getSimpleName(), 10);
+        nd0 nd0Var = new nd0(getClass().getSimpleName(), 10);
         q7.k0 k0Var = q7.m0.d;
         byte[] p10 = this.a.p();
-        md0Var.L(k0Var.c(p10.length, p10), "keyHandle");
+        nd0Var.L(k0Var.c(p10.length, p10), "keyHandle");
         byte[] p11 = this.b.p();
-        md0Var.L(k0Var.c(p11.length, p11), "clientDataJSON");
+        nd0Var.L(k0Var.c(p11.length, p11), "clientDataJSON");
         byte[] p12 = this.c.p();
-        md0Var.L(k0Var.c(p12.length, p12), "authenticatorData");
+        nd0Var.L(k0Var.c(p12.length, p12), "authenticatorData");
         byte[] p13 = this.d.p();
-        md0Var.L(k0Var.c(p13.length, p13), "signature");
+        nd0Var.L(k0Var.c(p13.length, p13), "signature");
         q7.s0 s0Var = this.e;
         byte[] p14 = s0Var == null ? null : s0Var.p();
         if (p14 != null) {
-            md0Var.L(k0Var.c(p14.length, p14), "userHandle");
+            nd0Var.L(k0Var.c(p14.length, p14), "userHandle");
         }
-        return md0Var.toString();
+        return nd0Var.toString();
     }
 
     @Override // android.os.Parcelable

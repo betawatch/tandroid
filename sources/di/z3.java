@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.yo0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class z3 extends yo0 {
     public final /* synthetic */ f6 V2;
@@ -68,7 +68,7 @@ public final class z3 extends yo0 {
         if (launchActivity == null) {
             return;
         }
-        hi.ma b10 = view instanceof org.telegram.ui.Cells.d7 ? hi.oa.b((org.telegram.ui.Cells.d7) view) : null;
+        hi.ma b10 = view instanceof org.telegram.ui.Cells.e7 ? hi.oa.b((org.telegram.ui.Cells.e7) view) : null;
         ArrayList arrayList = new ArrayList();
         final f6 f6Var = this.V2;
         fj fjVar = f6Var.D2;
@@ -112,8 +112,8 @@ public final class z3 extends yo0 {
                     }
                 } else {
                     View view2 = view;
-                    if ((view2 instanceof org.telegram.ui.Cells.d7) && view2.isAttachedToWindow()) {
-                        maVar = hi.oa.b((org.telegram.ui.Cells.d7) view2);
+                    if ((view2 instanceof org.telegram.ui.Cells.e7) && view2.isAttachedToWindow()) {
+                        maVar = hi.oa.b((org.telegram.ui.Cells.e7) view2);
                     }
                     taVar.X(maVar);
                 }

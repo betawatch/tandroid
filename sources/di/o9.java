@@ -23,9 +23,9 @@ import org.telegram.ui.Components.mv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.n60;
+import org.telegram.ui.o60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o9 implements x10 {
     public final /* synthetic */ int a;
@@ -58,14 +58,14 @@ public final /* synthetic */ class o9 implements x10 {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ncVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.oc.b(gd.M0(2131744984, null), new bi.u4(this.b, context, i6Var, savedStarGift, 3), i6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.oc.b(gd.M0(2131744984, null), new bi.t4(this.b, context, i6Var, savedStarGift, 3), i6Var, null));
                     ncVar.setText(spannableStringBuilder);
                     break;
                 }
                 break;
             case 1:
                 org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj3;
-                bi.t4 t4Var = (bi.t4) obj2;
+                bi.s4 s4Var = (bi.s4) obj2;
                 ((ai.v1) obj4).a(Boolean.FALSE);
                 if (((Boolean) obj).booleanValue()) {
                     if (LaunchActivity.T() != h2Var || j10.t0 != i11) {
@@ -74,7 +74,7 @@ public final /* synthetic */ class o9 implements x10 {
                         Q.j();
                         break;
                     } else {
-                        t4Var.run();
+                        s4Var.run();
                         break;
                     }
                 } else {
@@ -143,12 +143,12 @@ public final /* synthetic */ class o9 implements x10 {
                 break;
             case 5:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                n60 n60Var = (n60) obj3;
+                o60 o60Var = (o60) obj3;
                 Long l10 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 String str2 = LaunchActivity.C1;
                 try {
-                    n60Var.run();
+                    o60Var.run();
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
@@ -205,10 +205,10 @@ public final /* synthetic */ class o9 implements x10 {
         this.e = obj3;
     }
 
-    public /* synthetic */ o9(LaunchActivity launchActivity, n60 n60Var, Long l10, int i7) {
+    public /* synthetic */ o9(LaunchActivity launchActivity, o60 o60Var, Long l10, int i7) {
         this.a = 5;
         this.c = launchActivity;
-        this.d = n60Var;
+        this.d = o60Var;
         this.e = l10;
         this.b = i7;
     }

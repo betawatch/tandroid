@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.d71;
 import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.f71;
@@ -44,13 +44,13 @@ import org.telegram.ui.Components.kc;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a80;
+import org.telegram.ui.b80;
 import org.telegram.ui.bn;
 import org.telegram.ui.gc;
 import org.telegram.ui.hc;
 import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u2 implements x10 {
     public final /* synthetic */ int a;
@@ -247,20 +247,20 @@ public final /* synthetic */ class u2 implements x10 {
                 bn bnVar = (bn) this.c;
                 boolean z15 = this.b;
                 View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Cells.q1) {
-                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view2;
-                    if (q1Var.W6 && q1Var.Y6) {
+                if (view2 instanceof org.telegram.ui.Cells.r1) {
+                    org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) view2;
+                    if (r1Var.W6 && r1Var.Y6) {
                         z10 = true;
                     }
                     if (z10 != z15 && bnVar.aa()) {
-                        q1Var.W6 = z15;
-                        q1Var.Y6 = bnVar.aa();
-                        q1Var.F6 = true;
-                        q1Var.forceLayout();
+                        r1Var.W6 = z15;
+                        r1Var.Y6 = bnVar.aa();
+                        r1Var.F6 = true;
+                        r1Var.forceLayout();
                         break;
                     }
-                } else if (view2 instanceof org.telegram.ui.Cells.u0) {
-                    ((org.telegram.ui.Cells.u0) view2).f0 = z15;
+                } else if (view2 instanceof org.telegram.ui.Cells.v0) {
+                    ((org.telegram.ui.Cells.v0) view2).f0 = z15;
                     break;
                 }
                 break;
@@ -279,7 +279,7 @@ public final /* synthetic */ class u2 implements x10 {
                 View view4 = (View) this.c;
                 boolean z17 = this.b;
                 if (((Boolean) obj).booleanValue()) {
-                    ((r8) view4).setChecked(!z17);
+                    ((s8) view4).setChecked(!z17);
                     break;
                 }
                 break;
@@ -293,7 +293,7 @@ public final /* synthetic */ class u2 implements x10 {
                 }
                 break;
             case 10:
-                org.telegram.messenger.g0.g3(new a80((org.telegram.ui.web.k) this.c, (String) obj, this.b, 14));
+                org.telegram.messenger.g0.g3(new b80((org.telegram.ui.web.k) this.c, (String) obj, this.b, 14));
                 break;
             default:
                 org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) this.c;

@@ -16,13 +16,13 @@ import android.text.StaticLayout;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.bz;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.an;
 import org.telegram.ui.Components.eb0;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.o80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b1 {
     public static float i;
@@ -36,12 +36,12 @@ public final class b1 {
     public Object g;
     public Object h;
 
-    public b1(q1 q1Var) {
+    public b1(r1 r1Var) {
         this.f = new Path();
         this.c = new Rect();
         this.g = new RectF();
-        this.b = q1Var;
-        this.d = new mc(q1Var, 0.8f, 1.4f);
+        this.b = r1Var;
+        this.d = new mc(r1Var, 0.8f, 1.4f);
     }
 
     public void a(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
@@ -210,7 +210,7 @@ public final class b1 {
         canvas.save();
         ((o80) this.h).draw(canvas);
         canvas.restore();
-        ((q1) this.b).invalidate();
+        ((r1) this.b).invalidate();
     }
 
     public void c(StaticLayout[] staticLayoutArr, boolean z10) {
@@ -284,7 +284,7 @@ public final class b1 {
             } else {
                 n6.H1(yVar, i7, true);
             }
-            ((org.telegram.ui.Cells.y) this.e).setCallback((q1) this.b);
+            ((org.telegram.ui.Cells.y) this.e).setCallback((r1) this.b);
             this.a = i7;
         }
     }
@@ -302,7 +302,7 @@ public final class b1 {
         if (yVar2 != null) {
             yVar2.setState(z10 ? new int[]{R.attr.state_enabled, R.attr.state_pressed} : new int[0]);
         }
-        ((q1) this.b).invalidate();
+        ((r1) this.b).invalidate();
     }
 
     public b1(int i7) {

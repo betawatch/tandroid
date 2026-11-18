@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -189,10 +189,10 @@ public final /* synthetic */ class b0 implements Runnable {
                 return;
             case 7:
                 fl flVar = (fl) this.b;
-                org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) this.d;
+                org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) this.d;
                 int i21 = this.c;
                 flVar.getClass();
-                org.telegram.messenger.fj messageObject = u0Var.getMessageObject();
+                org.telegram.messenger.fj messageObject = v0Var.getMessageObject();
                 kl klVar = flVar.a;
                 klVar.R.l(i21, messageObject.e1(), true, org.telegram.messenger.fj.B0(messageObject.k) == klVar.R.d7 ? 1 : 0, true, 0);
                 return;
@@ -205,8 +205,8 @@ public final /* synthetic */ class b0 implements Runnable {
                 View view = (View) this.d;
                 rnVar.W = 0;
                 rnVar.V = i22;
-                if (view instanceof org.telegram.ui.Cells.m8) {
-                    rnVar.Z((org.telegram.ui.Cells.m8) view, true);
+                if (view instanceof org.telegram.ui.Cells.n8) {
+                    rnVar.Z((org.telegram.ui.Cells.n8) view, true);
                     return;
                 } else {
                     rnVar.r.g(rnVar.J0);
@@ -734,7 +734,7 @@ public final /* synthetic */ class b0 implements Runnable {
             case 24:
                 org.telegram.ui.Components.iu0 iu0Var = (org.telegram.ui.Components.iu0) this.b;
                 int i47 = this.c;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.d;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.d;
                 iu0Var.Z0 = false;
                 if (!iu0Var.W0 && iu0Var.X0) {
                     iu0Var.C(true);
@@ -742,7 +742,7 @@ public final /* synthetic */ class b0 implements Runnable {
                 }
                 iu0Var.n0 = iu0Var.g1[0];
                 iu0Var.l();
-                org.telegram.messenger.a6.q(i47).v(q1Var);
+                org.telegram.messenger.a6.q(i47).v(r1Var);
                 iu0Var.I();
                 iu0Var.x();
                 return;

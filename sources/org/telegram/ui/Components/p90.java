@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class p90 extends org.telegram.ui.oq0 {
     public final /* synthetic */ t90 a;
@@ -28,10 +28,10 @@ public final class p90 extends org.telegram.ui.oq0 {
                 Object obj = t90Var.Q.get(i7);
                 for (int i10 = 0; i10 < childCount; i10++) {
                     View childAt = t90Var.getListView().getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.h2) {
-                        org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) childAt;
-                        if (h2Var.getResult() == obj) {
-                            imageReceiver = h2Var.getPhotoImage();
+                    if (childAt instanceof org.telegram.ui.Cells.i2) {
+                        org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) childAt;
+                        if (i2Var.getResult() == obj) {
+                            imageReceiver = i2Var.getPhotoImage();
                             if (imageReceiver == null) {
                                 int[] iArr = new int[2];
                                 childAt.getLocationInWindow(iArr);

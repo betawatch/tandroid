@@ -1,17 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class fi implements org.telegram.messenger.fs {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bi.u4 b;
+    public final /* synthetic */ bi.t4 b;
     public final /* synthetic */ bn c;
     public final /* synthetic */ bn d;
 
-    public fi(bn bnVar, int i7, bi.u4 u4Var, bn bnVar2) {
+    public fi(bn bnVar, int i7, bi.t4 t4Var, bn bnVar2) {
         this.d = bnVar;
         this.a = i7;
-        this.b = u4Var;
+        this.b = t4Var;
         this.c = bnVar2;
     }
 

@@ -11,7 +11,7 @@ import org.telegram.messenger.s10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q1 implements s10 {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class q1 implements s10 {
                 ArrayList arrayList = (ArrayList) obj;
                 q10 q10Var = (q10) obj2;
                 Runnable runnable = (Runnable) obj3;
-                bi.f8 f8Var = f6Var.S2;
-                if (f8Var != null) {
-                    f8Var.b();
+                bi.e8 e8Var = f6Var.S2;
+                if (e8Var != null) {
+                    e8Var.b();
                     f6Var.S2 = null;
                 }
                 TL_stars.craftStarGift craftstargift = new TL_stars.craftStarGift();

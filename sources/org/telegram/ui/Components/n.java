@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements oj0 {
     public final /* synthetic */ int a;
@@ -269,17 +269,17 @@ public final /* synthetic */ class n implements oj0 {
                 ck0 ck0Var2 = crVar.o1;
                 if (i7 > 3) {
                     crVar.Z1 = (TLRPC.Peer) crVar.U1.get(i7 - 4);
-                    if (view instanceof org.telegram.ui.Cells.h4) {
+                    if (view instanceof org.telegram.ui.Cells.i4) {
                         z10 = true;
-                        ((org.telegram.ui.Cells.h4) view).c(true, true);
+                        ((org.telegram.ui.Cells.i4) view).c(true, true);
                     } else {
                         z10 = true;
                     }
                     int i27 = 0;
                     while (i27 < ck0Var2.getChildCount()) {
                         View childAt = ck0Var2.getChildAt(i27);
-                        if (childAt != view && (childAt instanceof org.telegram.ui.Cells.h4)) {
-                            ((org.telegram.ui.Cells.h4) childAt).c(false, z10);
+                        if (childAt != view && (childAt instanceof org.telegram.ui.Cells.i4)) {
+                            ((org.telegram.ui.Cells.i4) childAt).c(false, z10);
                         }
                         i27++;
                         z10 = true;
@@ -388,13 +388,13 @@ public final /* synthetic */ class n implements oj0 {
                 org.telegram.ui.ActionBar.h2 h2Var2 = g00Var.s1;
                 ArrayList arrayList6 = g00Var.c2;
                 ArrayList arrayList7 = g00Var.e2;
-                if ((view instanceof org.telegram.ui.Cells.h4) && (i14 = (i7 - 1) - g00Var.n2) >= 0 && i14 < arrayList6.size()) {
+                if ((view instanceof org.telegram.ui.Cells.i4) && (i14 = (i7 - 1) - g00Var.n2) >= 0 && i14 < arrayList6.size()) {
                     long o4 = org.telegram.messenger.n5.o((TLRPC.Peer) arrayList6.get(i14));
                     if (!arrayList7.contains(Long.valueOf(o4))) {
                         z11 = false;
                         z12 = true;
                         arrayList7.add(Long.valueOf(o4));
-                        ((org.telegram.ui.Cells.h4) view).c(true, true);
+                        ((org.telegram.ui.Cells.i4) view).c(true, true);
                     } else if (g00Var.d2.contains(Long.valueOf(o4))) {
                         int i33 = -g00Var.y2;
                         g00Var.y2 = i33;
@@ -422,7 +422,7 @@ public final /* synthetic */ class n implements oj0 {
                         arrayList7.remove(Long.valueOf(o4));
                         z11 = false;
                         z12 = true;
-                        ((org.telegram.ui.Cells.h4) view).c(false, true);
+                        ((org.telegram.ui.Cells.i4) view).c(false, true);
                     }
                     g00Var.i1(z12);
                     g00Var.j1();
@@ -436,10 +436,10 @@ public final /* synthetic */ class n implements oj0 {
                     s20Var.b2.a.n1(true);
                     s20Var.dismiss();
                     break;
-                } else if (view instanceof org.telegram.ui.Cells.a5) {
-                    org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
-                    if (!s20Var.a2.contains(Long.valueOf(a5Var.getUserId()))) {
-                        s20Var.b2.a.q1(a5Var.getUserId(), true);
+                } else if (view instanceof org.telegram.ui.Cells.b5) {
+                    org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) view;
+                    if (!s20Var.a2.contains(Long.valueOf(b5Var.getUserId()))) {
+                        s20Var.b2.a.q1(b5Var.getUserId(), true);
                         break;
                     }
                 }
@@ -468,7 +468,7 @@ public final /* synthetic */ class n implements oj0 {
                 }
                 break;
             case 12:
-                org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
+                org.telegram.ui.Cells.p4 p4Var = (org.telegram.ui.Cells.p4) view;
                 yo0 yo0Var = ((vo0) obj).L;
                 TLRPC.TL_topPeer tL_topPeer = (TLRPC.TL_topPeer) org.telegram.messenger.ri.d0(yo0Var.a).j1.get(i7);
                 TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
@@ -486,15 +486,15 @@ public final /* synthetic */ class n implements oj0 {
                     }
                     j3 = -j11;
                 }
-                if (o4Var.F) {
-                    yo0Var.Z0(j3, o4Var);
+                if (p4Var.F) {
+                    yo0Var.Z0(j3, p4Var);
                     break;
                 } else {
                     tL_dialog.id = j3;
                     yo0Var.V0(null, tL_dialog);
                     boolean z15 = yo0Var.Q1.h(j3) >= 0;
-                    if (o4Var.x) {
-                        o4Var.w.a(z15, true);
+                    if (p4Var.x) {
+                        p4Var.w.a(z15, true);
                         break;
                     }
                 }

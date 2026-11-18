@@ -33,8 +33,8 @@ import o2.h;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.b5;
-import org.telegram.ui.md0;
+import org.telegram.ui.Cells.c5;
+import org.telegram.ui.nd0;
 import p2.e;
 import pb.b;
 import q2.m;
@@ -46,7 +46,7 @@ import s2.t;
 import sg.h0;
 import x2.f0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
     public static int k0;
@@ -490,7 +490,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
             }
         }
         if (z10 && i7 == 3 && !c0() && this.X) {
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.J4, this);
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.K4, this);
         }
         if (!this.H && i7 == 3) {
             this.H = true;
@@ -811,7 +811,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ks.J4 || ((f61) objArr[0]) == this || !d0() || this.E) {
+        if (i7 != org.telegram.messenger.ks.K4 || ((f61) objArr[0]) == this || !d0() || this.E) {
             return;
         }
         g0();
@@ -939,10 +939,10 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
             if (str.equals("hls")) {
                 if (this.Z == null) {
                     this.Z = new x2.f0(extendedDefaultDataSourceFactory) { // from class: androidx.media3.exoplayer.hls.HlsMediaSource$Factory
-                        public final b5 a;
+                        public final c5 a;
                         public c b;
                         public a c;
-                        public final md0 i = new md0(7);
+                        public final nd0 i = new nd0(7);
                         public final b f = new b(24);
                         public final f1 g = d.K;
                         public final qb.a j = new qb.a(4);
@@ -954,7 +954,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
                         public boolean d = true;
 
                         {
-                            this.a = new b5(extendedDefaultDataSourceFactory);
+                            this.a = new c5(extendedDefaultDataSourceFactory);
                         }
 
                         @Override // x2.f0
@@ -1000,9 +1000,9 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
                             }
                             m s5 = this.i.s(l0Var2);
                             this.g.getClass();
-                            b5 b5Var = this.a;
+                            c5 c5Var = this.a;
                             qb.a aVar2 = this.j;
-                            return new k(l0Var2, b5Var, cVar2, this.h, s5, aVar2, new d(b5Var, aVar2, tVar), this.m, this.k, this.l);
+                            return new k(l0Var2, c5Var, cVar2, this.h, s5, aVar2, new d(c5Var, aVar2, tVar), this.m, this.k, this.l);
                         }
                     };
                 }
@@ -1013,7 +1013,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
                     this.Y = new x2.f0(extendedDefaultDataSourceFactory) { // from class: androidx.media3.exoplayer.dash.DashMediaSource$Factory
                         public final xa a;
                         public final g b;
-                        public final md0 c;
+                        public final nd0 c;
                         public final a d;
                         public final qb.a e;
                         public final long f;
@@ -1023,7 +1023,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
                             xa xaVar = new xa(extendedDefaultDataSourceFactory);
                             this.a = xaVar;
                             this.b = extendedDefaultDataSourceFactory;
-                            this.c = new md0(7);
+                            this.c = new nd0(7);
                             this.e = new qb.a(4);
                             this.f = 30000L;
                             this.g = 5000000L;
@@ -1079,7 +1079,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
         } else {
             synchronized (obj) {
                 try {
-                    o4 = !d0Var3.equals(null) ? org.telegram.ui.md0.o(d0Var3) : null;
+                    o4 = !d0Var3.equals(null) ? org.telegram.ui.nd0.o(d0Var3) : null;
                     o4.getClass();
                 } catch (Throwable th2) {
                     throw th2;
@@ -1233,7 +1233,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
             this.e = null;
         }
         if (this.X) {
-            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.J4);
+            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.K4);
         }
     }
 
@@ -1636,7 +1636,7 @@ public class f61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
         this.M = 1;
         this.X = z10;
         if (z10) {
-            org.telegram.messenger.ks.e().b(this, org.telegram.messenger.ks.J4);
+            org.telegram.messenger.ks.e().b(this, org.telegram.messenger.ks.K4);
         }
     }
 

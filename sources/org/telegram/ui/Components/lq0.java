@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class lq0 extends ws0 {
     public float v3;
@@ -213,8 +213,8 @@ public final class lq0 extends ws0 {
             arrayList.clear();
             for (int i10 = 0; i10 < getChildCount(); i10++) {
                 View childAt = getChildAt(i10);
-                if (childAt instanceof org.telegram.ui.Cells.q1) {
-                    arrayList.add(((org.telegram.ui.Cells.q1) childAt).getMessageObject());
+                if (childAt instanceof org.telegram.ui.Cells.r1) {
+                    arrayList.add(((org.telegram.ui.Cells.r1) childAt).getMessageObject());
                 }
             }
             org.telegram.messenger.mp.u1(ps0Var.d).l(arrayList, ps0Var.s.m1);
@@ -264,11 +264,11 @@ public final class lq0 extends ws0 {
     }
 
     @Override // org.telegram.ui.Components.ws0
-    public final void z1(org.telegram.ui.Cells.o7 o7Var) {
-        int messageId = o7Var.getMessageId();
+    public final void z1(org.telegram.ui.Cells.p7 p7Var) {
+        int messageId = p7Var.getMessageId();
         iq0 iq0Var = this.x3;
-        if (messageId != iq0Var.J || !o7Var.c.I()) {
-            o7Var.setHighlightProgress(0.0f);
+        if (messageId != iq0Var.J || !p7Var.c.I()) {
+            p7Var.setHighlightProgress(0.0f);
             return;
         }
         if (!iq0Var.K) {
@@ -276,6 +276,6 @@ public final class lq0 extends ws0 {
             iq0Var.K = true;
         }
         float f10 = iq0Var.L;
-        o7Var.setHighlightProgress(f10 < 0.3f ? f10 / 0.3f : f10 > 0.7f ? (1.0f - f10) / 0.3f : 1.0f);
+        p7Var.setHighlightProgress(f10 < 0.3f ? f10 / 0.3f : f10 > 0.7f ? (1.0f - f10) / 0.3f : 1.0f);
     }
 }

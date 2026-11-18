@@ -5,7 +5,7 @@ import android.text.style.URLSpan;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o00 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
@@ -30,10 +30,10 @@ public final /* synthetic */ class o00 implements org.telegram.messenger.y10 {
                     break;
                 }
             case 1:
-                ld0 ld0Var = (ld0) obj2;
+                md0 md0Var = (md0) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    org.telegram.messenger.g0.g3(new hd0(ld0Var, 3));
+                    org.telegram.messenger.g0.g3(new id0(md0Var, 3));
                     break;
                 } else {
                     break;

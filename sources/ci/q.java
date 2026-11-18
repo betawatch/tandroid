@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.c2;
+import org.telegram.ui.Cells.d2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
@@ -72,15 +72,15 @@ import org.telegram.ui.f60;
 import org.telegram.ui.g30;
 import org.telegram.ui.hk0;
 import org.telegram.ui.ij0;
-import org.telegram.ui.ke0;
 import org.telegram.ui.le0;
+import org.telegram.ui.me0;
 import org.telegram.ui.mm0;
 import org.telegram.ui.pb1;
 import org.telegram.ui.qm0;
 import org.telegram.ui.qx;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -196,7 +196,7 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 boolean[] zArr = (boolean[]) obj;
                 boolean z12 = !zArr[i12];
                 zArr[i12] = z12;
-                ((c2) view).c(z12, true);
+                ((d2) view).c(z12, true);
                 break;
             case 13:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
@@ -544,7 +544,7 @@ public final /* synthetic */ class q implements View.OnClickListener {
                                 httpGetFileTask.cancel(false);
                             }
                             e10.j = false;
-                            ks.e().k(ks.S4, new Object[0]);
+                            ks.e().k(ks.T4, new Object[0]);
                         }
                     }
                     l51Var.updateAppUpdateViews(i12, true);
@@ -612,20 +612,20 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 }
                 break;
             case 27:
-                le0 le0Var = (le0) obj;
-                ValueAnimator valueAnimator = le0Var.c.T;
+                me0 me0Var = (me0) obj;
+                ValueAnimator valueAnimator = me0Var.c.T;
                 if (valueAnimator == null || !valueAnimator.isRunning()) {
-                    pb1 pb1Var = le0Var.c;
+                    pb1 pb1Var = me0Var.c;
                     if (!pb1Var.I) {
                         if (pb1Var.getCurrentPosition() == i12) {
-                            Object c02 = le0Var.c0();
-                            if (c02 instanceof ke0) {
-                                ((ke0) c02).v();
+                            Object c02 = me0Var.c0();
+                            if (c02 instanceof le0) {
+                                ((le0) c02).v();
                                 break;
                             }
                         } else {
-                            le0Var.s0(i12, true);
-                            le0Var.c.A(i12);
+                            me0Var.s0(i12, true);
+                            me0Var.c.A(i12);
                             break;
                         }
                     }

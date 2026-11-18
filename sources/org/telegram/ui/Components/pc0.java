@@ -27,7 +27,7 @@ import java.util.LinkedList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class pc0 extends FrameLayout implements org.telegram.messenger.fs {
     public static final int[] j0 = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
@@ -1432,7 +1432,7 @@ public class pc0 extends FrameLayout implements org.telegram.messenger.fs {
         }
     }
 
-    public final void m(boolean z10, int i7, int i10, org.telegram.ui.n60 n60Var) {
+    public final void m(boolean z10, int i7, int i10, org.telegram.ui.o60 o60Var) {
         View currentFocus;
         boolean z11;
         int i11;
@@ -1548,7 +1548,7 @@ public class pc0 extends FrameLayout implements org.telegram.messenger.fs {
         hi.y7.a(y7Var, false);
         if (z10) {
             setAlpha(0.0f);
-            getViewTreeObserver().addOnGlobalLayoutListener(new jc0(this, i7, i10, n60Var));
+            getViewTreeObserver().addOnGlobalLayoutListener(new jc0(this, i7, i10, o60Var));
             requestLayout();
         } else {
             setAlpha(1.0f);
@@ -1559,8 +1559,8 @@ public class pc0 extends FrameLayout implements org.telegram.messenger.fs {
             ph0Var.setScaleY(1.0f);
             ph0Var.i();
             ph0Var.getAnimatedDrawable().N(38, false, false);
-            if (n60Var != null) {
-                n60Var.run();
+            if (o60Var != null) {
+                o60Var.run();
             }
         }
         setOnTouchListener(new gi.a(20));

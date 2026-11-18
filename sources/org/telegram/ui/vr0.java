@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vr0 implements View.OnClickListener {
-    public final /* synthetic */ mf0 a;
+    public final /* synthetic */ nf0 a;
     public final /* synthetic */ bn b;
     public final /* synthetic */ org.telegram.ui.Components.ck0 c;
     public final /* synthetic */ LinearLayout d;
@@ -18,9 +18,9 @@ public final class vr0 implements View.OnClickListener {
     public final /* synthetic */ org.telegram.ui.Components.y60 f;
     public final /* synthetic */ as0 h;
 
-    public vr0(as0 as0Var, mf0 mf0Var, bn bnVar, org.telegram.ui.Components.ck0 ck0Var, LinearLayout linearLayout, org.telegram.ui.Components.y60 y60Var, org.telegram.ui.Components.y60 y60Var2) {
+    public vr0(as0 as0Var, nf0 nf0Var, bn bnVar, org.telegram.ui.Components.ck0 ck0Var, LinearLayout linearLayout, org.telegram.ui.Components.y60 y60Var, org.telegram.ui.Components.y60 y60Var2) {
         this.h = as0Var;
-        this.a = mf0Var;
+        this.a = nf0Var;
         this.b = bnVar;
         this.c = ck0Var;
         this.d = linearLayout;
@@ -30,9 +30,9 @@ public final class vr0 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        mf0 mf0Var = this.a;
-        ArrayList arrayList = mf0Var.b;
-        ArrayList arrayList2 = mf0Var.c;
+        nf0 nf0Var = this.a;
+        ArrayList arrayList = nf0Var.b;
+        ArrayList arrayList2 = nf0Var.c;
         if (arrayList2.isEmpty()) {
             return;
         }

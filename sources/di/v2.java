@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v2 implements x10 {
     public final /* synthetic */ f6 a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class v2 implements x10 {
                     y10.O(j10);
                     String str2 = tL_starGiftUnique.slug;
                     if (!TextUtils.isEmpty(str2)) {
-                        org.telegram.messenger.g0.h3(new bi.n4(i13, 0, str2, false), bi.v4.b[0]);
+                        org.telegram.messenger.g0.h3(new bi.n4(i13, 0, str2, false), bi.u4.b[0]);
                     }
                     org.telegram.messenger.g0.g3(new aa.r((Object) new g3(j10, i12), (Object) document2, (Object) gd.M0(2131750086, null), 23));
                 }

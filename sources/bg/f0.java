@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Cells.c2;
+import org.telegram.ui.Cells.d2;
 import org.telegram.ui.Components.t30;
 import org.telegram.ui.Components.wk0;
 import org.telegram.ui.Components.z4;
@@ -37,7 +37,7 @@ import org.telegram.ui.rv0;
 import org.telegram.ui.wq0;
 import p4.o0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements t30, f1, b7, oa1, z4, r1, w5.b, v9.g {
     public final /* synthetic */ int a;
@@ -192,11 +192,11 @@ public final /* synthetic */ class f0 implements t30, f1, b7, oa1, z4, r1, w5.b,
         switch (this.a) {
             case 5:
                 t3 t3Var = (t3) this.c;
-                c2[] c2VarArr = (c2[]) this.d;
+                d2[] d2VarArr = (d2[]) this.d;
                 Runnable runnable = (Runnable) this.e;
                 boolean z10 = false;
-                c2 c2Var = c2VarArr[0];
-                if (c2Var != null && c2Var.b()) {
+                d2 d2Var = d2VarArr[0];
+                if (d2Var != null && d2Var.b()) {
                     z10 = true;
                 }
                 f40.C1(t3Var, z10, this.b, runnable);

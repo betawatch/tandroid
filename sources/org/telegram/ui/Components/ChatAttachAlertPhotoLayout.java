@@ -48,7 +48,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messenger.fs {
     public static boolean r1;
@@ -174,7 +174,7 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
         this.f1 = z10;
         this.n = z11;
         org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.r2);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.n4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.o4);
         org.telegram.ui.ActionBar.n2 n2Var = siVar.c;
         si siVar2 = this.b;
         final int i12 = 0;
@@ -327,7 +327,7 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
         xlVar.setLayoutManager(gVar);
         xlVar.setOnItemClickListener(new ab.j(this, z11, i6Var, 7));
         xlVar.setOnItemLongClickListener(new ml(this, 2));
-        gk0 gk0Var = new gk0(new org.telegram.ui.Cells.b5(this));
+        gk0 gk0Var = new gk0(new org.telegram.ui.Cells.c5(this));
         this.J = gk0Var;
         xlVar.F.add(gk0Var);
         setBlur3Capture(xlVar);
@@ -642,15 +642,15 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
         xlVar2.setOnItemClickListener(new bi.a(i10));
     }
 
-    public static org.telegram.ui.Cells.r5 P(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7) {
+    public static org.telegram.ui.Cells.s5 P(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7) {
         xl xlVar = chatAttachAlertPhotoLayout.F;
         int childCount = xlVar.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = xlVar.getChildAt(i10);
-            if (childAt.getTop() < xlVar.getMeasuredHeight() - chatAttachAlertPhotoLayout.b.a1() && (childAt instanceof org.telegram.ui.Cells.r5)) {
-                org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                if (r5Var.getImageView().getTag() != null && ((Integer) r5Var.getImageView().getTag()).intValue() == i7) {
-                    return r5Var;
+            if (childAt.getTop() < xlVar.getMeasuredHeight() - chatAttachAlertPhotoLayout.b.a1() && (childAt instanceof org.telegram.ui.Cells.s5)) {
+                org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                if (s5Var.getImageView().getTag() != null && ((Integer) s5Var.getImageView().getTag()).intValue() == i7) {
+                    return s5Var;
                 }
             }
         }
@@ -794,8 +794,8 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
                     break;
                 }
                 View childAt = xlVar.getChildAt(i7);
-                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
+                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
                     int R = RecyclerView.R(childAt);
                     if (hmVar.f && R > this.N0) {
                         R--;
@@ -804,12 +804,12 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
                         R--;
                     }
                     org.telegram.messenger.ef e02 = e0(R);
-                    r5Var.setHasSpoiler(e02 != null && e02.M);
-                    r5Var.setHighQuality(e02 != null && e02.c());
+                    s5Var.setHasSpoiler(e02 != null && e02.M);
+                    s5Var.setHighQuality(e02 != null && e02.c());
                     if ((h2Var2 instanceof org.telegram.ui.bn) && siVar.R3) {
-                        r5Var.b(e02 != null ? arrayList.indexOf(Integer.valueOf(e02.C)) : -1, e02 != null && hashMap.containsKey(Integer.valueOf(e02.C)), true);
+                        s5Var.b(e02 != null ? arrayList.indexOf(Integer.valueOf(e02.C)) : -1, e02 != null && hashMap.containsKey(Integer.valueOf(e02.C)), true);
                     } else {
-                        r5Var.b(-1, e02 != null && hashMap.containsKey(Integer.valueOf(e02.C)), true);
+                        s5Var.b(-1, e02 != null && hashMap.containsKey(Integer.valueOf(e02.C)), true);
                     }
                 }
                 i7++;
@@ -818,8 +818,8 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
             int childCount2 = xlVar2.getChildCount();
             for (int i10 = 0; i10 < childCount2; i10++) {
                 View childAt2 = xlVar2.getChildAt(i10);
-                if (childAt2 instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var2 = (org.telegram.ui.Cells.r5) childAt2;
+                if (childAt2 instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var2 = (org.telegram.ui.Cells.s5) childAt2;
                     int R2 = RecyclerView.R(childAt2);
                     if (hmVar.f && R2 > this.N0) {
                         R2--;
@@ -828,12 +828,12 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
                         R2--;
                     }
                     org.telegram.messenger.ef e03 = e0(R2);
-                    r5Var2.setHasSpoiler(e03 != null && e03.M);
-                    r5Var2.setHighQuality(e03 != null && e03.c());
+                    s5Var2.setHasSpoiler(e03 != null && e03.M);
+                    s5Var2.setHighQuality(e03 != null && e03.c());
                     if ((h2Var2 instanceof org.telegram.ui.bn) && siVar.R3) {
-                        r5Var2.b(e03 != null ? arrayList.indexOf(Integer.valueOf(e03.C)) : -1, e03 != null && hashMap.containsKey(Integer.valueOf(e03.C)), true);
+                        s5Var2.b(e03 != null ? arrayList.indexOf(Integer.valueOf(e03.C)) : -1, e03 != null && hashMap.containsKey(Integer.valueOf(e03.C)), true);
                     } else {
-                        r5Var2.b(-1, e03 != null && hashMap.containsKey(Integer.valueOf(e03.C)), true);
+                        s5Var2.b(-1, e03 != null && hashMap.containsKey(Integer.valueOf(e03.C)), true);
                     }
                 }
             }
@@ -1556,7 +1556,7 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
                     break;
                 }
                 View childAt = xlVar.getChildAt(i10);
-                if (!(childAt instanceof org.telegram.ui.Cells.l5)) {
+                if (!(childAt instanceof org.telegram.ui.Cells.m5)) {
                     i10++;
                 } else if (childAt.isAttachedToWindow()) {
                     float y10 = getY() + xlVar.getY() + childAt.getY();
@@ -1878,7 +1878,7 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         si siVar;
         if (i7 != org.telegram.messenger.ks.r2) {
-            if (i7 == org.telegram.messenger.ks.n4) {
+            if (i7 == org.telegram.messenger.ks.o4) {
                 X(false);
                 return;
             }
@@ -2666,7 +2666,7 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
 
     @Override // org.telegram.ui.Components.ki
     public final void p() {
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.n4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.o4);
         org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.r2);
     }
 
@@ -2746,11 +2746,11 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
             public final void accept(Object obj) {
                 View view = (View) obj;
                 boolean z11 = ChatAttachAlertPhotoLayout.r1;
-                if (view instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
-                    if (r5Var.getPhotoEntry() == efVar) {
-                        r5Var.c(z10, Float.valueOf(250.0f));
-                        r5Var.f(ChatAttachAlertPhotoLayout.this.getStarsPrice(), ChatAttachAlertPhotoLayout.t1.size() > 1);
+                if (view instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+                    if (s5Var.getPhotoEntry() == efVar) {
+                        s5Var.c(z10, Float.valueOf(250.0f));
+                        s5Var.f(ChatAttachAlertPhotoLayout.this.getStarsPrice(), ChatAttachAlertPhotoLayout.t1.size() > 1);
                     }
                 }
             }
@@ -2851,11 +2851,11 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
             int childCount = xlVar.getChildCount();
             for (int i7 = 0; i7 < childCount; i7++) {
                 View childAt = xlVar.getChildAt(i7);
-                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
+                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
                     float f12 = 1.0f + f11;
-                    r5Var.getCheckBox().setScaleX(f12);
-                    r5Var.getCheckBox().setScaleY(f12);
+                    s5Var.getCheckBox().setScaleX(f12);
+                    s5Var.getCheckBox().setScaleY(f12);
                 }
             }
         }
@@ -2899,7 +2899,7 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
             if (i7 >= childCount) {
                 break;
             }
-            if (xlVar.getChildAt(i7) instanceof org.telegram.ui.Cells.l5) {
+            if (xlVar.getChildAt(i7) instanceof org.telegram.ui.Cells.m5) {
                 q0();
                 break;
             } else {
@@ -3414,8 +3414,8 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
         if (xlVar != null) {
             for (int i7 = 0; i7 < xlVar.getChildCount(); i7++) {
                 View childAt = xlVar.getChildAt(i7);
-                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                    ((org.telegram.ui.Cells.r5) childAt).a.invalidate();
+                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                    ((org.telegram.ui.Cells.s5) childAt).a.invalidate();
                 }
             }
         }
@@ -3443,11 +3443,11 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
                     break;
                 }
                 View childAt = xlVar.getChildAt(i7);
-                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                    org.telegram.messenger.ef e02 = e0(((Integer) r5Var.getTag()).intValue());
+                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                    org.telegram.messenger.ef e02 = e0(((Integer) s5Var.getTag()).intValue());
                     if (e02 != null) {
-                        r5Var.setNum(arrayList.indexOf(Integer.valueOf(e02.C)));
+                        s5Var.setNum(arrayList.indexOf(Integer.valueOf(e02.C)));
                     }
                 }
                 i7++;
@@ -3456,11 +3456,11 @@ public class ChatAttachAlertPhotoLayout extends ki implements org.telegram.messe
             int childCount2 = xlVar2.getChildCount();
             for (int i10 = 0; i10 < childCount2; i10++) {
                 View childAt2 = xlVar2.getChildAt(i10);
-                if (childAt2 instanceof org.telegram.ui.Cells.r5) {
-                    org.telegram.ui.Cells.r5 r5Var2 = (org.telegram.ui.Cells.r5) childAt2;
-                    org.telegram.messenger.ef e03 = e0(((Integer) r5Var2.getTag()).intValue());
+                if (childAt2 instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var2 = (org.telegram.ui.Cells.s5) childAt2;
+                    org.telegram.messenger.ef e03 = e0(((Integer) s5Var2.getTag()).intValue());
                     if (e03 != null) {
-                        r5Var2.setNum(arrayList.indexOf(Integer.valueOf(e03.C)));
+                        s5Var2.setNum(arrayList.indexOf(Integer.valueOf(e03.C)));
                     }
                 }
             }

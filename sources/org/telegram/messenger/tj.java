@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.rv0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class tj implements Runnable {
                     sb2.append("_");
                     ec.D().S(Utilities.a(file.getAbsolutePath()) + "@100_100", a8.p0.n(w10.location.local_id, "@100_100", sb2), fc.c(w10, wallPaper.document));
                 }
-                ks.e().k(ks.h4, wallPaper.slug);
+                ks.e().k(ks.i4, wallPaper.slug);
                 ArrayList arrayList2 = mpVar.U2.s;
                 if (arrayList2 == null || e6Var.n == 0) {
                     return;

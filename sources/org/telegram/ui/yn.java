@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yn implements Runnable {
     public final /* synthetic */ int a;
@@ -310,7 +310,7 @@ public final /* synthetic */ class yn implements Runnable {
                             return;
                         }
                         if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoUnknown) {
-                            org.telegram.messenger.g0.g3(new hf0(vj0Var2, 7));
+                            org.telegram.messenger.g0.g3(new if0(vj0Var2, 7));
                             return;
                         }
                         bArr = new byte[0];
@@ -377,7 +377,7 @@ public final /* synthetic */ class yn implements Runnable {
                 }
                 byte[] bArr12 = hk0Var3.d1;
                 if (bArr12 == null || bArr12.length == 0) {
-                    Utilities.e.c(new lc0(vj0Var3, vj0Var3.b, vj0Var3.d, 14));
+                    Utilities.e.c(new mc0(vj0Var3, vj0Var3.b, vj0Var3.d, 14));
                     return;
                 } else {
                     vj0Var3.b();

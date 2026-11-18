@@ -45,7 +45,7 @@ import org.telegram.ui.Components.zb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.f61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class t0 extends FrameLayout implements fs {
     public boolean E;
@@ -75,7 +75,7 @@ public abstract class t0 extends FrameLayout implements fs {
     public ec c0;
     public final v4.c0 d;
     public zb d0;
-    public final bi.e8 e;
+    public final bi.d8 e;
     public final a0 e0;
     public final f61 f;
     public ValueAnimator f0;
@@ -116,7 +116,7 @@ public abstract class t0 extends FrameLayout implements fs {
         v4.c0 c0Var = new v4.c0(1, true);
         this.d = c0Var;
         b1Var.setLayoutManager(c0Var);
-        bi.e8 e8Var = new bi.e8(a2Var, b1Var, context, i10, new q10() { // from class: fi.e0
+        bi.d8 d8Var = new bi.d8(a2Var, b1Var, context, i10, new q10() { // from class: fi.e0
             @Override // org.telegram.messenger.q10
             public final void a(Object obj, Object obj2) {
                 int i12 = i11;
@@ -154,9 +154,9 @@ public abstract class t0 extends FrameLayout implements fs {
                 }
             }
         }, new b(), 2);
-        this.e = e8Var;
-        b1Var.setAdapter(e8Var);
-        e8Var.r = false;
+        this.e = d8Var;
+        b1Var.setAdapter(d8Var);
+        d8Var.r = false;
         b1Var.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(7.5f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(7.5f));
         b1Var.setClipToPadding(false);
         addView(b1Var, ma.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 34.0f));

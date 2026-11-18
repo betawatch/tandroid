@@ -9,12 +9,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class bf0 extends FrameLayout {
     public final w5 a;
     public final TextView b;
-    public final org.telegram.ui.Cells.a2 c;
+    public final org.telegram.ui.Cells.b2 c;
     public final /* synthetic */ df0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -36,16 +36,16 @@ public abstract class bf0 extends FrameLayout {
         textView.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.u6.U(textView, i7, null);
         textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 16);
-        org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(this, getContext(), 1);
-        this.c = a2Var;
-        a2Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        org.telegram.ui.ActionBar.u6.Y(a2Var, i7, null);
-        a2Var.setGravity(org.telegram.messenger.gd.a0 ? 3 : 5);
-        a2Var.setOnClickListener(new h70(this, 7));
+        org.telegram.ui.Cells.b2 b2Var = new org.telegram.ui.Cells.b2(this, getContext(), 1);
+        this.c = b2Var;
+        b2Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        org.telegram.ui.ActionBar.u6.Y(b2Var, i7, null);
+        b2Var.setGravity(org.telegram.messenger.gd.a0 ? 3 : 5);
+        b2Var.setOnClickListener(new h70(this, 7));
         boolean z10 = org.telegram.messenger.gd.a0;
         addView(w5Var, c8.ma.d(-2, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 16, 0.0f, z10 ? 16 : 0, 0.0f));
         addView(textView, c8.ma.d(-2, -1.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(a2Var, c8.ma.d(-2, -1.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(b2Var, c8.ma.d(-2, -1.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
     public final void a(String str, ArrayList arrayList, int i7, int i10, int i11, boolean z10) {
@@ -64,20 +64,20 @@ public abstract class bf0 extends FrameLayout {
         SpannableStringBuilder spannableStringBuilder2 = org.telegram.messenger.gd.a0 ? new SpannableStringBuilder(com.google.android.gms.internal.vision.e2.i(i7, "% – ")) : new SpannableStringBuilder(i5.c.j(i7, " – ", "%"));
         spannableStringBuilder2.setSpan(new i41(org.telegram.messenger.g0.o()), 3, format.length() + 3, 33);
         this.b.setText(spannableStringBuilder2);
-        org.telegram.ui.Cells.a2 a2Var = this.c;
+        org.telegram.ui.Cells.b2 b2Var = this.c;
         if (i11 == 0) {
             if (this.d.t1.quiz) {
-                a2Var.c(org.telegram.messenger.gd.G(i10, "Answer", new Object[0]), z10, true);
+                b2Var.c(org.telegram.messenger.gd.G(i10, "Answer", new Object[0]), z10, true);
                 return;
             } else {
-                a2Var.c(org.telegram.messenger.gd.G(i10, "Vote", new Object[0]), z10, true);
+                b2Var.c(org.telegram.messenger.gd.G(i10, "Vote", new Object[0]), z10, true);
                 return;
             }
         }
         if (i11 == 1) {
-            a2Var.c(org.telegram.messenger.gd.M0(2131746978, null), z10, true);
+            b2Var.c(org.telegram.messenger.gd.M0(2131746978, null), z10, true);
         } else {
-            a2Var.c(org.telegram.messenger.gd.M0(2131746982, null), z10, true);
+            b2Var.c(org.telegram.messenger.gd.M0(2131746982, null), z10, true);
         }
     }
 
@@ -101,9 +101,9 @@ public abstract class bf0 extends FrameLayout {
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_30);
         TextView textView = this.b;
         measureChildWithMargins(textView, i7, 0, makeMeasureSpec, 0);
-        org.telegram.ui.Cells.a2 a2Var = this.c;
-        measureChildWithMargins(a2Var, i7, 0, makeMeasureSpec, 0);
-        measureChildWithMargins(this.a, i7, org.telegram.messenger.g0.L(32.0f) + a2Var.getMeasuredWidth() + textView.getMeasuredWidth(), makeMeasureSpec, 0);
+        org.telegram.ui.Cells.b2 b2Var = this.c;
+        measureChildWithMargins(b2Var, i7, 0, makeMeasureSpec, 0);
+        measureChildWithMargins(this.a, i7, org.telegram.messenger.g0.L(32.0f) + b2Var.getMeasuredWidth() + textView.getMeasuredWidth(), makeMeasureSpec, 0);
         setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(32.0f));
     }
 }

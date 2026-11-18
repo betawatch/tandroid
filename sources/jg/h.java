@@ -12,12 +12,12 @@ import org.telegram.messenger.ks;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.d3;
+import org.telegram.ui.Cells.e3;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class h extends d3 {
+public final class h extends e3 {
     public final /* synthetic */ m f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -40,7 +40,7 @@ public final class h extends d3 {
         x4Var.setPadding(org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
         q9 q9Var = new q9(context);
         this.b = q9Var;
-        q9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
+        q9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.d3
             public final /* synthetic */ jg.h b;
 
             {
@@ -82,7 +82,7 @@ public final class h extends d3 {
         u6.U(textView3, n6.Ji, null);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f));
-        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
+        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.d3
             public final /* synthetic */ jg.h b;
 
             {

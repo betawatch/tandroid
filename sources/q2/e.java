@@ -21,12 +21,12 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.hn;
 import p4.o0;
 import p4.r0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class e implements m {
     public final Set E;
@@ -165,7 +165,7 @@ public final class e implements m {
                     sVar = new w7.s(21);
                 }
                 this.G = sVar;
-                sVar.a(new b5(this));
+                sVar.a(new c5(this));
                 return;
             } catch (UnsupportedSchemeException e10) {
                 throw new x(e10);

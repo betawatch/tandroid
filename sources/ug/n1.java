@@ -3,7 +3,7 @@ package ug;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import bi.i8;
+import bi.h8;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class n1 extends ck0 implements fs, o0 {
     public final ArrayList f3;
@@ -54,7 +54,7 @@ public abstract class n1 extends ck0 implements fs, o0 {
         setAdapter(new k1(v0Var));
         setClipChildren(false);
         setOnScrollListener(new j1(v0Var, 0));
-        setOnItemClickListener(new i8(v0Var, 23));
+        setOnItemClickListener(new h8(v0Var, 23));
         ri.d0(i7).r1();
         arrayList.clear();
         arrayList.addAll(ri.d0(i7).C0);
@@ -72,7 +72,7 @@ public abstract class n1 extends ck0 implements fs, o0 {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.n5) {
+        if (i7 == ks.o5) {
             ArrayList arrayList = this.f3;
             arrayList.clear();
             arrayList.addAll(ri.d0(this.j3).C0);
@@ -130,14 +130,14 @@ public abstract class n1 extends ck0 implements fs, o0 {
     @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.j3).c(this, ks.n5);
+        ks.f(this.j3).c(this, ks.o5);
         A1();
     }
 
     @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.j3).n(this, ks.n5);
+        ks.f(this.j3).n(this, ks.o5);
     }
 
     @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View

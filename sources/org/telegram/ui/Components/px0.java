@@ -8,7 +8,7 @@ import android.text.Layout;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class px0 {
     public rx0 a;
@@ -45,7 +45,7 @@ public final class px0 {
         int i7;
         int i10;
         int i11;
-        org.telegram.ui.Cells.i9 i9Var;
+        org.telegram.ui.Cells.j9 j9Var;
         Canvas canvas2 = canvas;
         if (this.c == null) {
             return;
@@ -121,8 +121,8 @@ public final class px0 {
         if (z10 && this.b != null) {
             canvas2.save();
             canvas2.translate(b(), c());
-            if (this.r >= 0 && (i9Var = wx0Var.a) != null) {
-                i9Var.Z(canvas2, (org.telegram.ui.Cells.h9) wx0Var.getParent().getParent(), this.r);
+            if (this.r >= 0 && (j9Var = wx0Var.a) != null) {
+                j9Var.Z(canvas2, (org.telegram.ui.Cells.i9) wx0Var.getParent().getParent(), this.r);
             }
             this.b.d(canvas2, view);
             canvas2.restore();

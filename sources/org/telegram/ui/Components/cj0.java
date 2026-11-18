@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class cj0 implements View.OnLayoutChangeListener {
     public final /* synthetic */ v4.i0 a;
@@ -56,16 +56,16 @@ public final class cj0 implements View.OnLayoutChangeListener {
             if (childAt.getBottom() > i19) {
                 i19 = childAt.getBottom();
             }
-            if (childAt instanceof org.telegram.ui.Cells.p4) {
-                ((org.telegram.ui.Cells.p4) childAt).c(true, false);
+            if (childAt instanceof org.telegram.ui.Cells.q4) {
+                ((org.telegram.ui.Cells.q4) childAt).c(true, false);
             }
             v4.i0 i0Var = this.a;
             if (i0Var != null && (i0Var.b || l5Var.c)) {
                 ck0Var.getClass();
                 long c10 = i0Var.c(RecyclerView.R(childAt));
                 if (hashMap.containsKey(Long.valueOf(c10)) && (view2 = (View) hashMap.get(Long.valueOf(c10))) != 0) {
-                    if (view2 instanceof org.telegram.ui.Cells.p4) {
-                        ((org.telegram.ui.Cells.p4) view2).c(false, false);
+                    if (view2 instanceof org.telegram.ui.Cells.q4) {
+                        ((org.telegram.ui.Cells.q4) view2).c(false, false);
                     }
                     arrayList.remove(view2);
                     c8.oa oaVar = (c8.oa) l5Var.r;
@@ -102,8 +102,8 @@ public final class cj0 implements View.OnLayoutChangeListener {
                 ck0Var.addView(view3);
                 ((v4.c0) l5Var.f).M(view3);
             }
-            if (view3 instanceof org.telegram.ui.Cells.p4) {
-                ((org.telegram.ui.Cells.p4) view3).c(true, true);
+            if (view3 instanceof org.telegram.ui.Cells.q4) {
+                ((org.telegram.ui.Cells.q4) view3).c(true, true);
             }
         }
         int i24 = i23 == Integer.MAX_VALUE ? 0 : i23;

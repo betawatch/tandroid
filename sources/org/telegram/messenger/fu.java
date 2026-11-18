@@ -12,7 +12,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class fu extends zt {
     public final TL_iv.pageBlockDetails X;
@@ -83,7 +83,7 @@ public final class fu extends zt {
     }
 
     @Override // org.telegram.messenger.zt
-    public final org.telegram.ui.Cells.t9[] L() {
+    public final org.telegram.ui.Cells.u9[] L() {
         return this.Z;
     }
 
@@ -212,12 +212,12 @@ public final class fu extends zt {
         if (view != null) {
             view.invalidate();
         }
-        org.telegram.ui.Cells.q1 q1Var = evVar.E;
-        org.telegram.ui.Cells.l1 l1Var = evVar.F;
-        if (q1Var == null || l1Var == null) {
+        org.telegram.ui.Cells.r1 r1Var = evVar.E;
+        org.telegram.ui.Cells.m1 m1Var = evVar.F;
+        if (r1Var == null || m1Var == null) {
             return;
         }
-        l1Var.B1(q1Var, true, true);
+        m1Var.B1(r1Var, true, true);
     }
 
     @Override // org.telegram.messenger.zt

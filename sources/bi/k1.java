@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.eq0;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class k1 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new aa.r((eq0) this.b, tL_error, (org.telegram.ui.ActionBar.h2) this.c, 10));
                 break;
             case 2:
-                org.telegram.messenger.g0.g3(new aa.r((v7) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 13));
+                org.telegram.messenger.g0.g3(new aa.r((u7) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 13));
                 break;
             case 3:
                 org.telegram.messenger.g0.g3(new aa.r((di.t) this.b, tLObject, (Context) this.c, 17));

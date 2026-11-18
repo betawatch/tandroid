@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.n10;
-import org.telegram.ui.Cells.j8;
+import org.telegram.ui.Cells.k8;
 import org.telegram.ui.Components.av;
 import org.telegram.ui.Components.bv;
 import org.telegram.ui.Components.ck0;
@@ -15,10 +15,10 @@ import org.telegram.ui.Components.jx;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.ry;
 import org.telegram.ui.fm0;
-import org.telegram.ui.mf0;
-import org.telegram.ui.ug0;
+import org.telegram.ui.nf0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i0 extends v4.o0 {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final class i0 extends v4.o0 {
             case 4:
                 ry ryVar = (ry) this.b;
                 ex exVar = ryVar.Q;
-                if (!(view instanceof j8)) {
+                if (!(view instanceof k8)) {
                     if (!(view instanceof ck0) && !(view instanceof jx)) {
                         if (view instanceof q9) {
                             rect.bottom = org.telegram.messenger.g0.L(12.0f);
@@ -109,7 +109,7 @@ public final class i0 extends v4.o0 {
                 }
                 break;
             case 6:
-                if (RecyclerView.R(view) == ((mf0) this.b).c.size() - 1) {
+                if (RecyclerView.R(view) == ((nf0) this.b).c.size() - 1) {
                     rect.bottom = org.telegram.messenger.g0.L(4.0f);
                     break;
                 }
@@ -117,9 +117,9 @@ public final class i0 extends v4.o0 {
             case 7:
                 super.e(rect, view, recyclerView, c1Var);
                 int R = RecyclerView.R(view);
-                ug0 ug0Var = (ug0) this.b;
-                if (R == ug0Var.Y1.size()) {
-                    rect.bottom = ug0Var.h2;
+                vg0 vg0Var = (vg0) this.b;
+                if (R == vg0Var.Y1.size()) {
+                    rect.bottom = vg0Var.h2;
                     break;
                 }
                 break;

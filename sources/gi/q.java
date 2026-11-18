@@ -8,8 +8,7 @@ import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import bi.e7;
-import bi.n5;
+import bi.m5;
 import c8.ma;
 import di.c7;
 import di.i4;
@@ -37,7 +36,7 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.o7;
+import org.telegram.ui.Cells.p7;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.dq0;
 import org.telegram.ui.Components.f71;
@@ -45,7 +44,7 @@ import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class q extends FrameLayout implements c6, fs {
     public static LongSparseArray F;
@@ -58,7 +57,7 @@ public abstract class q extends FrameLayout implements c6, fs {
     public final z5 e;
     public final ArrayList f;
     public final ArrayList h;
-    public final n5 n;
+    public final m5 n;
     public final f71 r;
     public Boolean s;
     public int w;
@@ -98,12 +97,12 @@ public abstract class q extends FrameLayout implements c6, fs {
         }
         this.e = z5Var;
         dq0 dq0Var = (dq0) this;
-        n5 n5Var = new n5(dq0Var, context);
-        this.n = n5Var;
-        n5Var.setAllowDisallowInterceptTouch(true);
-        n5Var.setAdapter(new i4(1, context, dq0Var));
-        addView(n5Var, ma.e(-1, -1, ks.E1));
-        f71 i7 = n5Var.i(9, true);
+        m5 m5Var = new m5(dq0Var, context);
+        this.n = m5Var;
+        m5Var.setAllowDisallowInterceptTouch(true);
+        m5Var.setAdapter(new i4(1, context, dq0Var));
+        addView(m5Var, ma.e(-1, -1, ks.E1));
+        f71 i7 = m5Var.i(9, true);
         this.r = i7;
         i7.r = 12;
         i7.setPreTabClick(new c7(dq0Var, 13));
@@ -186,13 +185,13 @@ public abstract class q extends FrameLayout implements c6, fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ks.z5;
-        n5 n5Var = this.n;
+        int i11 = ks.A5;
+        m5 m5Var = this.n;
         int i12 = 0;
         if (i7 != i11) {
-            if (i7 == ks.x5) {
+            if (i7 == ks.y5) {
                 i(true);
-                View[] viewPages = n5Var.getViewPages();
+                View[] viewPages = m5Var.getViewPages();
                 int length = viewPages.length;
                 while (i12 < length) {
                     View view = viewPages[i12];
@@ -209,7 +208,7 @@ public abstract class q extends FrameLayout implements c6, fs {
         z5 z5Var = this.e;
         if (obj == z5Var) {
             i(true);
-            View[] viewPages2 = n5Var.getViewPages();
+            View[] viewPages2 = m5Var.getViewPages();
             int length2 = viewPages2.length;
             while (i12 < length2) {
                 View view2 = viewPages2[i12];
@@ -224,7 +223,7 @@ public abstract class q extends FrameLayout implements c6, fs {
             return;
         }
         if (this.f.indexOf(obj) >= 0) {
-            View[] viewPages3 = n5Var.getViewPages();
+            View[] viewPages3 = m5Var.getViewPages();
             for (View view3 : viewPages3) {
                 if (view3 instanceof m) {
                     m mVar2 = (m) view3;
@@ -300,9 +299,9 @@ public abstract class q extends FrameLayout implements c6, fs {
     public String getCurrentLang() {
         View view;
         z5 z5Var;
-        n5 n5Var = this.n;
-        View[] viewPages = n5Var.getViewPages();
-        if (Math.abs(n5Var.getCurrentPosition() - n5Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
+        m5 m5Var = this.n;
+        View[] viewPages = m5Var.getViewPages();
+        if (Math.abs(m5Var.getCurrentPosition() - m5Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
             view = viewPages[0];
         }
         if (!(view instanceof m) || (z5Var = ((m) view).a) == null) {
@@ -414,8 +413,8 @@ public abstract class q extends FrameLayout implements c6, fs {
             }
             arrayList3.add(z5Var);
         }
-        n5 n5Var = this.n;
-        n5Var.j(true);
+        m5 m5Var = this.n;
+        m5Var.j(true);
         SpannableString spannableString = new SpannableString(i5.c.k(2131746516, null, new StringBuilder("+ ")));
         lq lqVar = new lq(R.drawable.msg_filled_plus, 0);
         lqVar.I = 0.9f;
@@ -436,13 +435,13 @@ public abstract class q extends FrameLayout implements c6, fs {
             if (!z10) {
                 this.x = z11 ? 1.0f : 0.0f;
                 f71Var.setTranslationY(g0.L(z11 ? 0.0f : -42.0f));
-                n5Var.setTranslationY(g0.L(z11 ? 42.0f : 0.0f));
+                m5Var.setTranslationY(g0.L(z11 ? 42.0f : 0.0f));
                 return;
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z11 ? 1.0f : 0.0f);
             this.y = ofFloat;
             ofFloat.addUpdateListener(new ah.g(this, 25));
-            this.y.addListener(new e7(5, this, z11));
+            this.y.addListener(new bi.d7(5, this, z11));
             this.y.setDuration(320L);
             this.y.setInterpolator(lr.h);
             this.y.start();
@@ -456,9 +455,9 @@ public abstract class q extends FrameLayout implements c6, fs {
             e eVar = mVar.f;
             for (int i7 = 0; i7 < eVar.getChildCount(); i7++) {
                 View childAt = eVar.getChildAt(i7);
-                if (childAt instanceof o7) {
-                    o7 o7Var = (o7) childAt;
-                    o7Var.i(mVar.a0.c(o7Var.getMessageObject()), true);
+                if (childAt instanceof p7) {
+                    p7 p7Var = (p7) childAt;
+                    p7Var.i(mVar.a0.c(p7Var.getMessageObject()), true);
                 }
             }
         }
@@ -481,8 +480,8 @@ public abstract class q extends FrameLayout implements c6, fs {
             longSparseArray2 = longSparseArray4;
         }
         longSparseArray2.put(this.d, this);
-        ks.f(i7).c(this, ks.z5);
-        ks.f(i7).c(this, ks.x5);
+        ks.f(i7).c(this, ks.A5);
+        ks.f(i7).c(this, ks.y5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -497,8 +496,8 @@ public abstract class q extends FrameLayout implements c6, fs {
         if (longSparseArray2 != null) {
             longSparseArray2.remove(this.d);
         }
-        ks.f(i7).n(this, ks.z5);
-        ks.f(i7).n(this, ks.x5);
+        ks.f(i7).n(this, ks.A5);
+        ks.f(i7).n(this, ks.y5);
     }
 
     public void setVisibleHeight(int i7) {

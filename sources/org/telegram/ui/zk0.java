@@ -9,7 +9,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class zk0 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final class zk0 extends WebViewClient {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ml0Var.getParentActivity(), ml0Var.Z0);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.S = org.telegram.messenger.gd.M0(2131752093, null);
-                        u1Var.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new hf0(this, 10));
+                        u1Var.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new if0(this, 10));
                         alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
                         alertDialog$Builder.p();
                         break;
@@ -72,7 +72,7 @@ public final class zk0 extends WebViewClient {
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, ml0Var.getParentActivity(), ml0Var.Z0);
                         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                         u1Var2.S = org.telegram.messenger.gd.M0(2131752093, null);
-                        u1Var2.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new hf0(this, 12));
+                        u1Var2.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new if0(this, 12));
                         alertDialog$Builder2.k(org.telegram.messenger.gd.M0(2131747638, null), null);
                         alertDialog$Builder2.p();
                         break;

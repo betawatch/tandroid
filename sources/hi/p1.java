@@ -20,7 +20,7 @@ import org.telegram.ui.j00;
 import org.telegram.ui.kx;
 import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                 q1 q1Var = u1Var.f;
                 j2 j2Var = u1Var.r;
                 int i18 = j2.C1;
-                return p10.r(motionEvent, b1Var, (bi.i8) obj, q1Var, j2Var.J0);
+                return p10.r(motionEvent, b1Var, (bi.h8) obj, q1Var, j2Var.J0);
             case 1:
                 org.telegram.ui.Components.f8 f8Var = (org.telegram.ui.Components.f8) obj2;
                 org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) obj;
@@ -77,13 +77,13 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                 return r10;
             case 4:
                 hx hxVar = (hx) obj2;
-                org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) obj;
+                org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) obj;
                 hxVar.getClass();
                 if (motionEvent.getAction() != 0) {
                     return false;
                 }
                 kx kxVar = hxVar.f;
-                kxVar.c.t(kxVar.b.T(h4Var));
+                kxVar.c.t(kxVar.b.T(i4Var));
                 return false;
             case 5:
                 j00 j00Var = (j00) obj2;

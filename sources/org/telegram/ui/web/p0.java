@@ -14,7 +14,7 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
-import bi.s5;
+import bi.r5;
 import c8.ma;
 import hi.t6;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ import org.telegram.ui.g4;
 import org.telegram.ui.k3;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class p0 extends WebChromeClient {
     public org.telegram.ui.ActionBar.u1 a;
@@ -232,7 +232,7 @@ public final class p0 extends WebChromeClient {
         alertDialog$Builder.k(gd.M0(2131747638, null), new rm(zArr, jsPromptResult, mtVar, 8));
         alertDialog$Builder.j(new di.u1(15, zArr, jsPromptResult));
         u1Var.P = new t6(mtVar, 21);
-        mtVar.setOnEditorActionListener(new s5(zArr, jsPromptResult, mtVar, alertDialog$Builder.p(), 1));
+        mtVar.setOnEditorActionListener(new r5(zArr, jsPromptResult, mtVar, alertDialog$Builder.p(), 1));
         org.telegram.messenger.g0.g3(new oi.a2(mtVar, 27));
         return true;
     }

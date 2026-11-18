@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class f5 extends ReplacementSpan {
     public final Paint a;
@@ -27,11 +27,11 @@ public final class f5 extends ReplacementSpan {
         this(18.0f, i7, view);
     }
 
-    public static void a(CharSequence charSequence, org.telegram.ui.Cells.r8 r8Var) {
+    public static void a(CharSequence charSequence, org.telegram.ui.Cells.s8 s8Var) {
         if (charSequence != null && (charSequence instanceof Spannable)) {
             Spannable spannable = (Spannable) charSequence;
             for (f5 f5Var : (f5[]) spannable.getSpans(0, spannable.length(), f5.class)) {
-                f5Var.d(r8Var);
+                f5Var.d(s8Var);
             }
         }
     }

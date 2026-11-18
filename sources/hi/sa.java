@@ -19,7 +19,7 @@ import org.telegram.ui.Components.of;
 import org.telegram.ui.Components.ry;
 import org.telegram.ui.Components.vi0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class sa extends au0 {
     public final of g0;
@@ -195,12 +195,12 @@ public final class sa extends au0 {
                                         taVar.G.e.h(canvas, null);
                                         taVar.G.e.J0(i11);
                                     } else {
-                                        org.telegram.ui.Cells.c7 c7Var = oaVar.d;
-                                        if (c7Var != null) {
-                                            c7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
-                                            org.telegram.ui.Cells.c7 c7Var2 = taVar.G.d;
-                                            c7Var2.g = (int) com.google.android.gms.internal.vision.e2.D(i10, 255.0f, i10, i10);
-                                            c7Var2.draw(canvas);
+                                        org.telegram.ui.Cells.d7 d7Var = oaVar.d;
+                                        if (d7Var != null) {
+                                            d7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
+                                            org.telegram.ui.Cells.d7 d7Var2 = taVar.G.d;
+                                            d7Var2.g = (int) com.google.android.gms.internal.vision.e2.D(i10, 255.0f, i10, i10);
+                                            d7Var2.draw(canvas);
                                         }
                                     }
                                     taVar.G.getClass();

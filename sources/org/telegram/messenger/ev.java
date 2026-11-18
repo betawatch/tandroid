@@ -43,18 +43,18 @@ import org.telegram.ui.Components.s41;
 import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.wx0;
 import org.telegram.ui.Components.wy0;
-import org.telegram.ui.vg0;
-import org.telegram.ui.xg0;
+import org.telegram.ui.wg0;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class ev {
     public int A;
     public final int B;
     public int C;
     public org.telegram.ui.ActionBar.i6 D;
-    public org.telegram.ui.Cells.q1 E;
-    public org.telegram.ui.Cells.l1 F;
+    public org.telegram.ui.Cells.r1 E;
+    public org.telegram.ui.Cells.m1 F;
     public org.telegram.ui.Components.mc G;
     public Paint H;
     public vy0 I;
@@ -91,7 +91,7 @@ public final class ev {
     public final ArrayList o;
     public final ArrayList p;
     public Object q;
-    public xg0 r;
+    public yg0 r;
     public boolean s;
     public float t;
     public boolean u;
@@ -666,8 +666,8 @@ public final class ev {
     }
 
     public final boolean B() {
-        org.telegram.ui.Cells.q1 q1Var = this.E;
-        return q1Var != null && q1Var.Ua > 0;
+        org.telegram.ui.Cells.r1 r1Var = this.E;
+        return r1Var != null && r1Var.Ua > 0;
     }
 
     public final boolean C() {
@@ -679,8 +679,8 @@ public final class ev {
                 if (i7 >= arrayList.size()) {
                     break;
                 }
-                org.telegram.ui.Cells.t9 t9Var = (org.telegram.ui.Cells.t9) arrayList.get(i7);
-                if ((t9Var instanceof dv) && (t5Var = ((dv) t9Var).F) != null && !t5Var.a.isEmpty()) {
+                org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) arrayList.get(i7);
+                if ((u9Var instanceof dv) && (t5Var = ((dv) u9Var).F) != null && !t5Var.a.isEmpty()) {
                     return true;
                 }
                 i7++;
@@ -700,22 +700,22 @@ public final class ev {
     }
 
     public final boolean F() {
-        xg0 xg0Var = this.r;
-        return xg0Var == null || !xg0Var.h;
+        yg0 yg0Var = this.r;
+        return yg0Var == null || !yg0Var.h;
     }
 
     public final boolean G() {
-        org.telegram.ui.Cells.q1 q1Var = this.E;
-        return q1Var != null && q1Var.L2();
+        org.telegram.ui.Cells.r1 r1Var = this.E;
+        return r1Var != null && r1Var.L2();
     }
 
     public final boolean H() {
-        org.telegram.ui.Cells.t9[] L;
+        org.telegram.ui.Cells.u9[] L;
         zt ztVar = this.W;
         if (ztVar != null && (L = ztVar.L()) != null) {
-            for (org.telegram.ui.Cells.t9 t9Var : L) {
-                if (t9Var instanceof dv) {
-                    dv dvVar = (dv) t9Var;
+            for (org.telegram.ui.Cells.u9 u9Var : L) {
+                if (u9Var instanceof dv) {
+                    dv dvVar = (dv) u9Var;
                     if (dvVar.N != null || dvVar.R != null) {
                         return true;
                     }
@@ -992,17 +992,17 @@ public final class ev {
             Rect rect2 = ztVar2.b;
             ztVar2.Z(rect2.left, rect2.top + i14, i15);
             if (S) {
-                org.telegram.ui.Cells.t9[] L = ztVar2.L();
+                org.telegram.ui.Cells.u9[] L = ztVar2.L();
                 if (L != null) {
-                    for (org.telegram.ui.Cells.t9 t9Var : L) {
-                        if (t9Var != null && t9Var.a() != null) {
+                    for (org.telegram.ui.Cells.u9 u9Var : L) {
+                        if (u9Var != null && u9Var.a() != null) {
                             if (sb2.length() > 0) {
                                 sb2.append('\n');
                             }
                             arrayList3.add(Integer.valueOf(sb2.length()));
                             arrayList4.add(Integer.valueOf(i15));
-                            arrayList2.add(t9Var);
-                            CharSequence text = t9Var.a().getText();
+                            arrayList2.add(u9Var);
+                            CharSequence text = u9Var.a().getText();
                             if (text != null) {
                                 sb2.append(text);
                             }
@@ -1040,9 +1040,9 @@ public final class ev {
         }
     }
 
-    public final void T(org.telegram.ui.Cells.q1 q1Var, org.telegram.ui.Cells.l1 l1Var) {
-        this.E = q1Var;
-        this.F = l1Var;
+    public final void T(org.telegram.ui.Cells.r1 r1Var, org.telegram.ui.Cells.m1 m1Var) {
+        this.E = r1Var;
+        this.F = m1Var;
     }
 
     public final void U(CharacterStyle characterStyle, final SpannableStringBuilder spannableStringBuilder, int i7, int i10) {
@@ -1083,15 +1083,15 @@ public final class ev {
         }
     }
 
-    public final void W(xg0 xg0Var) {
-        this.r = xg0Var;
+    public final void W(yg0 yg0Var) {
+        this.r = yg0Var;
         int i7 = 0;
         while (true) {
             ArrayList arrayList = this.g;
             if (i7 >= arrayList.size()) {
                 return;
             }
-            ((zt) arrayList.get(i7)).L = xg0Var;
+            ((zt) arrayList.get(i7)).L = yg0Var;
             arrayList.get(i7);
             ((zt) arrayList.get(i7)).getClass();
             i7++;
@@ -1148,8 +1148,8 @@ public final class ev {
             if (i10 >= arrayList.size()) {
                 return;
             }
-            org.telegram.ui.Cells.t9 t9Var = (org.telegram.ui.Cells.t9) arrayList.get(i10);
-            if ((t9Var instanceof dv) && (view = (dvVar = (dv) t9Var).T) != null) {
+            org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) arrayList.get(i10);
+            if ((u9Var instanceof dv) && (view = (dvVar = (dv) u9Var).T) != null) {
                 org.telegram.ui.Components.x5.release(view, dvVar.F);
                 dvVar.F = null;
                 dvVar.F = org.telegram.ui.Components.x5.update(i7, dvVar.T, dvVar.a.v && !dvVar.w, (org.telegram.ui.Components.t5) null, dvVar.b);
@@ -1237,10 +1237,10 @@ public final class ev {
         }
     }
 
-    public final void g(Canvas canvas, int i7, int i10, org.telegram.ui.Cells.x1 x1Var) {
+    public final void g(Canvas canvas, int i7, int i10, org.telegram.ui.Cells.y1 y1Var) {
         float f10;
         float f11;
-        org.telegram.ui.Cells.l1 l1Var;
+        org.telegram.ui.Cells.m1 m1Var;
         S(i7, i10);
         this.w.linkColor = org.telegram.ui.ActionBar.n6.w0(E() ? org.telegram.ui.ActionBar.n6.Yc : org.telegram.ui.ActionBar.n6.Xc, this.D);
         boolean z10 = this.d;
@@ -1248,17 +1248,17 @@ public final class ev {
         if (z10) {
             canvas.saveLayerAlpha(-i7, 0.0f, this.C + i10, min, ks.e4, 31);
         }
-        org.telegram.ui.Cells.q1 q1Var = this.E;
-        boolean z11 = q1Var != null && q1Var.sc > 0;
+        org.telegram.ui.Cells.r1 r1Var = this.E;
+        boolean z11 = r1Var != null && r1Var.sc > 0;
         if (z11) {
-            float f12 = q1Var.qc - q1Var.u0;
-            f11 = q1Var.sc + f12;
+            float f12 = r1Var.qc - r1Var.u0;
+            f11 = r1Var.sc + f12;
             f10 = f12;
         } else {
             f10 = 0.0f;
             f11 = 0.0f;
         }
-        h(canvas, x1Var, z11, f10, f11);
+        h(canvas, y1Var, z11, f10, f11);
         if (z10) {
             RectF rectF = g0.P;
             rectF.set(-i7, min - g0.L(32.0f), this.C + i10, min);
@@ -1291,8 +1291,8 @@ public final class ev {
             float f15 = L2 / 2.0f;
             RectF rectF2 = this.K;
             rectF2.set(f14 - f15, L3, f14 + f15, L + L3);
-            org.telegram.ui.Cells.q1 q1Var2 = this.E;
-            boolean z12 = (q1Var2 == null || (l1Var = this.F) == null || !l1Var.z1(q1Var2, 7)) ? false : true;
+            org.telegram.ui.Cells.r1 r1Var2 = this.E;
+            boolean z12 = (r1Var2 == null || (m1Var = this.F) == null || !m1Var.z1(r1Var2, 7)) ? false : true;
             o80 o80Var = this.J;
             if (o80Var != null && !z12 && !o80Var.c() && !this.J.d()) {
                 this.J.a();
@@ -1336,7 +1336,7 @@ public final class ev {
         }
     }
 
-    public final void h(Canvas canvas, org.telegram.ui.Cells.x1 x1Var, boolean z10, float f10, float f11) {
+    public final void h(Canvas canvas, org.telegram.ui.Cells.y1 y1Var, boolean z10, float f10, float f11) {
         View view;
         float f12;
         float f13;
@@ -1357,11 +1357,11 @@ public final class ev {
             while (i12 < size) {
                 int i13 = i12 + 1;
                 vt vtVar = (vt) arrayList.get(i12);
-                int r10 = r(vtVar.a, x1Var);
+                int r10 = r(vtVar.a, y1Var);
                 int i14 = vtVar.b;
                 ArrayList arrayList2 = this.g;
                 float f18 = 4.0f;
-                if (i14 < 0 || i14 >= arrayList2.size() || x1Var == null || !(this.s || this.u)) {
+                if (i14 < 0 || i14 >= arrayList2.size() || y1Var == null || !(this.s || this.u)) {
                     int i15 = i11;
                     int i16 = i15;
                     while (true) {
@@ -1374,7 +1374,7 @@ public final class ev {
                         float f19 = f18;
                         Rect rect = ztVar.b;
                         if (S) {
-                            int I = ((x1Var == null || !(this.s || this.u)) ? ztVar.I() : g0.W1(Math.max(0.0f, Math.min(f17, x1Var.L1)), ztVar.Q, ztVar.O)) + i16;
+                            int I = ((y1Var == null || !(this.s || this.u)) ? ztVar.I() : g0.W1(Math.max(0.0f, Math.min(f17, y1Var.L1)), ztVar.Q, ztVar.O)) + i16;
                             if (i15 != i14 || rect.bottom <= g0.L(f19)) {
                                 f15 = f19;
                                 i16 = I;
@@ -1396,7 +1396,7 @@ public final class ev {
                         f17 = 1.0f;
                     }
                 } else {
-                    float max = Math.max(f16, Math.min(f17, x1Var.L1));
+                    float max = Math.max(f16, Math.min(f17, y1Var.L1));
                     zt ztVar2 = (zt) arrayList2.get(i14);
                     int d = i5.c.d(4.0f, ztVar2.b.bottom, i11);
                     float f20 = (ztVar2.P + ztVar2.Q) - (ztVar2.S ? d : i11);
@@ -1446,8 +1446,8 @@ public final class ev {
                 dv dvVar = ouVar.Y;
                 int max2 = Math.max(r11, dvVar != null ? dvVar.r() : 0);
                 if (max2 > 0) {
-                    boolean z11 = x1Var != null && (this.s || this.u);
-                    float max3 = z11 ? Math.max(0.0f, Math.min(1.0f, x1Var.L1)) : 1.0f;
+                    boolean z11 = y1Var != null && (this.s || this.u);
+                    float max3 = z11 ? Math.max(0.0f, Math.min(1.0f, y1Var.L1)) : 1.0f;
                     float T1 = z11 ? g0.T1(ouVar.S ? 1.0f : 0.0f, ouVar.R ? 1.0f : 0.0f, max3) : ouVar.R ? 1.0f : 0.0f;
                     if (T1 > 0.0f) {
                         float f23 = ((this.C + this.T) - this.S) / 2.0f;
@@ -1510,12 +1510,12 @@ public final class ev {
         } else {
             this.V = 0.0f;
         }
-        if (x1Var == null || !(this.s || this.u)) {
+        if (y1Var == null || !(this.s || this.u)) {
             f12 = 1.0f;
             f13 = 1.0f;
         } else {
             f12 = 1.0f;
-            f13 = Math.max(0.0f, Math.min(1.0f, x1Var.L1));
+            f13 = Math.max(0.0f, Math.min(1.0f, y1Var.L1));
         }
         this.t = f13;
         if (f13 >= f12) {
@@ -2258,7 +2258,7 @@ public final class ev {
                         spannableStringBuilder.setSpan(new wy0(null, textmath.bitmap, textmath.w, textmath.h, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, this.D), textmath.depth), length2, length3, 33);
                         String str3 = textmath.source;
                         if (str3 != null && !str3.isEmpty()) {
-                            spannableStringBuilder.setSpan(new org.telegram.ui.Cells.o9(textmath.source), length2, length3, 33);
+                            spannableStringBuilder.setSpan(new org.telegram.ui.Cells.p9(textmath.source), length2, length3, 33);
                         }
                     }
                 } else if (richText instanceof TL_iv.textCustomEmoji) {
@@ -2376,15 +2376,15 @@ public final class ev {
             ((zt) arrayList.get(i7)).p(arrayList2);
         }
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((vg0) arrayList2.get(i10)).getClass();
+            ((wg0) arrayList2.get(i10)).getClass();
         }
         return arrayList2;
     }
 
-    public final int r(int i7, org.telegram.ui.Cells.x1 x1Var) {
+    public final int r(int i7, org.telegram.ui.Cells.y1 y1Var) {
         ArrayList arrayList = this.g;
-        if (i7 >= 0 && i7 < arrayList.size() && x1Var != null && (this.s || this.u)) {
-            float max = Math.max(0.0f, Math.min(1.0f, x1Var.L1));
+        if (i7 >= 0 && i7 < arrayList.size() && y1Var != null && (this.s || this.u)) {
+            float max = Math.max(0.0f, Math.min(1.0f, y1Var.L1));
             zt ztVar = (zt) arrayList.get(i7);
             return Math.round(g0.T1(ztVar.P, ztVar.N, max));
         }
@@ -2396,7 +2396,7 @@ public final class ev {
                 return i10;
             }
             if (S) {
-                i10 = ((x1Var == null || !(this.s || this.u)) ? ztVar2.I() : g0.W1(Math.max(0.0f, Math.min(1.0f, x1Var.L1)), ztVar2.Q, ztVar2.O)) + i10;
+                i10 = ((y1Var == null || !(this.s || this.u)) ? ztVar2.I() : g0.W1(Math.max(0.0f, Math.min(1.0f, y1Var.L1)), ztVar2.Q, ztVar2.O)) + i10;
             }
         }
         return this.A;
@@ -2480,7 +2480,7 @@ public final class ev {
         int i13 = 0;
         int i14 = -1;
         while (i13 < arrayList.size()) {
-            Layout a10 = ((org.telegram.ui.Cells.t9) arrayList.get(i13)).a();
+            Layout a10 = ((org.telegram.ui.Cells.u9) arrayList.get(i13)).a();
             if (a10 == null || a10.getText() == null) {
                 i11 = min;
             } else {

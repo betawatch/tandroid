@@ -54,7 +54,6 @@ import h2.l0;
 import h2.x;
 import hi.c7;
 import hi.d7;
-import hi.r1;
 import hi.s8;
 import hi.t5;
 import hi.v5;
@@ -108,10 +107,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.v0;
 import org.telegram.ui.ActionBar.z0;
-import org.telegram.ui.Cells.b5;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.c5;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.z;
+import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.cz;
 import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.f61;
@@ -128,7 +127,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.bn0;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class m implements d61, ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, ap, ui0, bn0 {
     public final /* synthetic */ int a;
@@ -438,7 +437,7 @@ public final class m implements d61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         j8.c cVar2 = new j8.c(arrayList, false, false);
         cVar.getClass();
         com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
-        b10.c = new b5(cVar2);
+        b10.c = new c5(cVar2);
         b10.a = 2426;
         cVar.e(0, b10.a()).addOnCompleteListener(new w9(aVar, 1));
     }
@@ -484,8 +483,8 @@ public final class m implements d61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         bn bnVar = (bn) this.d;
         z J8 = bnVar.J8(((fj) this.b).e1(), true);
         float f13 = 0.0f;
-        if (J8 instanceof q1) {
-            q0 q0Var2 = ((q1) J8).O;
+        if (J8 instanceof r1) {
+            q0 q0Var2 = ((r1) J8).O;
             n0 k11 = q0Var2.k(p0Var);
             if (k11 == null) {
                 f12 = 0.0f;
@@ -496,7 +495,7 @@ public final class m implements d61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                 f11 = q0Var2.c + k11.x;
                 i7 = k11.A;
             }
-        } else if (!(J8 instanceof u0) || (k10 = (q0Var = ((u0) J8).F0).k(p0Var)) == null) {
+        } else if (!(J8 instanceof org.telegram.ui.Cells.v0) || (k10 = (q0Var = ((org.telegram.ui.Cells.v0) J8).F0).k(p0Var)) == null) {
             f10 = 0.0f;
             bnVar.Eb(J8, (fj) this.b, (vi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
         } else {
@@ -989,7 +988,7 @@ public final class m implements d61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                 yyVar.h = efVar.x;
             }
         }
-        org.telegram.ui.Components.b5.X(siVar.H3, siVar.Y0() + arrayList2.size(), siVar.c1(), new l2(i7, 2, kkVar, arrayList2, z11));
+        b5.X(siVar.H3, siVar.Y0() + arrayList2.size(), siVar.c1(), new l2(i7, 2, kkVar, arrayList2, z11));
     }
 
     public Typeface w(int i7, int i10, j0 j0Var) {
@@ -1143,7 +1142,7 @@ public final class m implements d61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
             v51 v51Var = w5Var.n;
             if (v51Var != null) {
                 if (v5Var == null || !v5Var.g) {
-                    v51Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new r1(6, this, d7Var)).start();
+                    v51Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new hi.r1(6, this, d7Var)).start();
                     return;
                 }
                 return;

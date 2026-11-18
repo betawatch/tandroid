@@ -1,69 +1,84 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.o31;
+import org.telegram.ui.zu0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class c4 extends org.telegram.ui.ActionBar.n5 {
-    public float N0;
-    public final /* synthetic */ int O0;
-    public final /* synthetic */ f4 P0;
+public final class c4 extends RadialProgressView {
+    public final /* synthetic */ int O = 0;
+    public final Paint P;
+    public final /* synthetic */ Object Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c4(f4 f4Var, Context context, int i7) {
-        super(context);
-        this.P0 = f4Var;
-        this.O0 = i7;
+    public c4(g4 g4Var, Context context) {
+        super(context, null);
+        this.Q = g4Var;
+        Paint paint = new Paint(1);
+        this.P = paint;
+        paint.setColor(1426063360);
     }
 
-    @Override // android.view.View
-    public final float getAlpha() {
-        return this.N0;
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        this.N0 = f10;
-        f4 f4Var = this.P0;
-        if (this.O0 != 4) {
-            super.setAlpha((1.0f - f4Var.d[4].getFullAlpha()) * f10);
-            return;
-        }
-        float fullAlpha = f4Var.d[4].getFullAlpha();
-        if (f4Var.c()) {
-            float f11 = f4Var.f0;
-            if (f11 > 0.0f) {
-                super.setAlpha(1.0f - f11);
-                return;
-            }
-        }
-        if (fullAlpha > 0.0f) {
-            super.setAlpha(Math.max(f10, fullAlpha));
-        } else {
-            super.setAlpha(f10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n5
-    public final void setFullAlpha(float f10) {
-        super.setFullAlpha(f10);
-        int i7 = 0;
-        while (true) {
-            org.telegram.ui.ActionBar.n5[] n5VarArr = this.P0.d;
-            if (i7 >= n5VarArr.length) {
-                return;
-            }
-            org.telegram.ui.ActionBar.n5 n5Var = n5VarArr[i7];
-            n5Var.setAlpha(n5Var.getAlpha());
-            i7++;
+    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.O) {
+            case 0:
+                g4 g4Var = (g4) this.Q;
+                org.telegram.ui.Components.q9 q9Var = g4Var.b;
+                if (q9Var.getImageReceiver().L() && q9Var.getAlpha() > 0.0f) {
+                    int alpha = (int) (q9Var.getAlpha() * q9Var.getImageReceiver().i1 * 85.0f);
+                    Paint paint = this.P;
+                    paint.setAlpha(alpha);
+                    canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint);
+                }
+                g4Var.y.setProgressColor(i0.a.o(-1, (int) (q9Var.getAlpha() * q9Var.getImageReceiver().i1 * 255.0f)));
+                super.onDraw(canvas);
+                break;
+            case 1:
+                ProfileActivity profileActivity = (ProfileActivity) this.Q;
+                zu0 zu0Var = profileActivity.f0;
+                if (zu0Var != null && zu0Var.getImageReceiver().L()) {
+                    int i7 = (int) (profileActivity.f0.getImageReceiver().i1 * 85.0f);
+                    Paint paint2 = this.P;
+                    paint2.setAlpha(i7);
+                    canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint2);
+                }
+                super.onDraw(canvas);
+                break;
+            default:
+                o31 o31Var = (o31) this.Q;
+                org.telegram.ui.Components.q9 q9Var2 = o31Var.H;
+                if (q9Var2 != null && q9Var2.getImageReceiver().L()) {
+                    int i10 = (int) (o31Var.H.getImageReceiver().i1 * 85.0f);
+                    Paint paint3 = this.P;
+                    paint3.setAlpha(i10);
+                    canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint3);
+                }
+                super.onDraw(canvas);
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (this.O0 == 4 && getFullAlpha() > 0.0f) {
-            f10 = 0.0f;
-        }
-        super.setTranslationY(f10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c4(o31 o31Var, Context context) {
+        super(context, null);
+        this.Q = o31Var;
+        Paint paint = new Paint(1);
+        this.P = paint;
+        paint.setColor(1426063360);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c4(ProfileActivity profileActivity, Context context) {
+        super(context, null);
+        this.Q = profileActivity;
+        Paint paint = new Paint(1);
+        this.P = paint;
+        paint.setColor(1426063360);
     }
 }

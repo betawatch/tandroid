@@ -7,22 +7,23 @@ import android.widget.TextView;
 import fi.a8;
 import hi.i5;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.j9;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.k9;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.v9;
 import org.telegram.ui.Components.bn0;
 import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.r8;
 import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.Components.y8;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.Components.z40;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 import org.telegram.ui.rz0;
 import org.telegram.ui.tz0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -74,35 +75,35 @@ public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateList
                 i5Var.b.invalidate();
                 break;
             case 3:
-                q1 q1Var = (q1) this.c;
-                q1Var.sb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q1Var.invalidate();
-                if (this.b && q1Var.getParent() != null) {
-                    ((View) q1Var.getParent()).invalidate();
+                r1 r1Var = (r1) this.c;
+                r1Var.sb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r1Var.invalidate();
+                if (this.b && r1Var.getParent() != null) {
+                    ((View) r1Var.getParent()).invalidate();
                     break;
                 }
                 break;
             case 4:
-                j9 j9Var = (j9) this.c;
-                j9Var.getClass();
-                j9Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u9 u9Var = j9Var.C;
-                if (u9Var != null) {
-                    u9Var.invalidate();
+                k9 k9Var = (k9) this.c;
+                k9Var.getClass();
+                k9Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v9 v9Var = k9Var.C;
+                if (v9Var != null) {
+                    v9Var.invalidate();
                 }
-                q9 q9Var = j9Var.W;
-                if (q9Var != null && ((q1) q9Var).getCurrentMessagesGroup() == null && this.b) {
-                    ((q1) j9Var.W).setSelectedBackgroundProgress(1.0f - j9Var.U);
+                r9 r9Var = k9Var.W;
+                if (r9Var != null && ((r1) r9Var).getCurrentMessagesGroup() == null && this.b) {
+                    ((r1) k9Var.W).setSelectedBackgroundProgress(1.0f - k9Var.U);
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.Components.q9 q9Var2 = (org.telegram.ui.Components.q9) this.c;
+                q9 q9Var = (q9) this.c;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q9Var2.setScaleX(floatValue2);
-                q9Var2.setScaleY(floatValue2);
+                q9Var.setScaleX(floatValue2);
+                q9Var.setScaleY(floatValue2);
                 if (!this.b) {
-                    q9Var2.setAlpha(valueAnimator.getAnimatedFraction());
+                    q9Var.setAlpha(valueAnimator.getAnimatedFraction());
                     break;
                 }
                 break;
@@ -148,16 +149,16 @@ public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 10:
-                eg0 eg0Var = (eg0) this.c;
+                fg0 fg0Var = (fg0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                eg0Var.E = floatValue4;
-                eg0Var.H.setAlpha(floatValue4);
-                eg0Var.K.setAlpha(eg0Var.E);
-                if (!this.b && (viewGroup = eg0Var.Z) != null) {
-                    viewGroup.setAlpha(eg0Var.E);
+                fg0Var.E = floatValue4;
+                fg0Var.H.setAlpha(floatValue4);
+                fg0Var.K.setAlpha(fg0Var.E);
+                if (!this.b && (viewGroup = fg0Var.Z) != null) {
+                    viewGroup.setAlpha(fg0Var.E);
                 }
-                eg0Var.F.invalidate();
-                eg0Var.G.invalidate();
+                fg0Var.F.invalidate();
+                fg0Var.G.invalidate();
                 break;
             case 11:
                 tz0 tz0Var = (tz0) this.c;
@@ -175,9 +176,9 @@ public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateList
                 if (!tz0Var.T && (rz0Var = tz0Var.O) != null && rz0Var.getSeekBarWaveform() != null) {
                     bn0 seekBarWaveform = tz0Var.O.getSeekBarWaveform();
                     seekBarWaveform.L = (this.b ? lr.g : lr.i).getInterpolation(Utilities.i(tz0Var.s * 1.25f, 1.0f, 0.0f));
-                    q1 q1Var2 = seekBarWaveform.n;
-                    if (q1Var2 != null) {
-                        q1Var2.invalidate();
+                    r1 r1Var2 = seekBarWaveform.n;
+                    if (r1Var2 != null) {
+                        r1Var2.invalidate();
                         break;
                     }
                 }

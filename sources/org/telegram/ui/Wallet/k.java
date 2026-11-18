@@ -4,9 +4,9 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.k80;
-import org.telegram.ui.t60;
+import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements x10 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class k implements x10 {
             case 2:
                 String str2 = (String) obj;
                 l2.m("approve session", str2);
-                ((t60) obj2).a(str2);
+                ((u60) obj2).a(str2);
                 break;
             case 3:
                 org.telegram.messenger.g0.g3(new c5(7, (r8) obj2, (TLRPC.UserFull) obj));

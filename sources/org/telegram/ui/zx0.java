@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                 if (G != null) {
                     Object obj2 = G.H;
                     if ((obj2 instanceof TLRPC.User) || (obj2 instanceof TLRPC.Chat)) {
-                        ((org.telegram.ui.Cells.g6) view).w(true, true);
+                        ((org.telegram.ui.Cells.h6) view).w(true, true);
                         b21Var.W1 = (TLObject) G.H;
                         b21Var.g1(true);
                         b21Var.e2.O(true);
@@ -64,9 +64,9 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                 int i13 = h41Var.J;
                 if (i7 >= i13 && i7 <= h41Var.K) {
                     z41 z41Var = (z41) c51Var.z0.get(i7 - i13);
-                    ng0 ng0Var = new ng0(c51Var.b, z41Var.b, true);
-                    ng0Var.f0 = z41Var;
-                    c51Var.presentFragment(ng0Var);
+                    og0 og0Var = new og0(c51Var.b, z41Var.b, true);
+                    og0Var.f0 = z41Var;
+                    c51Var.presentFragment(og0Var);
                     break;
                 } else {
                     int i14 = h41Var.V;
@@ -132,15 +132,15 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                 p81 p81Var = (p81) obj;
                 int i20 = p81Var.I;
                 HashSet hashSet = p81Var.x;
-                if (view instanceof org.telegram.ui.Cells.h4) {
-                    org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
-                    TLRPC.Chat chat = (TLRPC.Chat) h4Var.getObject();
+                if (view instanceof org.telegram.ui.Cells.i4) {
+                    org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) view;
+                    TLRPC.Chat chat = (TLRPC.Chat) i4Var.getObject();
                     if (hashSet.contains(Long.valueOf(chat.id))) {
                         hashSet.remove(Long.valueOf(chat.id));
-                        h4Var.c(false, true);
+                        i4Var.c(false, true);
                     } else {
                         hashSet.add(Long.valueOf(chat.id));
-                        h4Var.c(true, true);
+                        i4Var.c(true, true);
                     }
                     if (hashSet.isEmpty() && p81Var.w != -1 && p81Var.n.getVisibility() == 0) {
                         p81Var.w = -1;
@@ -189,14 +189,14 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                 break;
             case 10:
                 y91 y91Var = ((u91) obj).w0;
-                if (!(view instanceof org.telegram.ui.Cells.ka)) {
+                if (!(view instanceof org.telegram.ui.Cells.la)) {
                     if (view instanceof v91) {
                         v91 v91Var = (v91) view;
                         qg.c.n(y91Var, y91Var.a, v91Var.O, v91Var.getMessageId());
                         break;
                     }
                 } else {
-                    qg.c.n(y91Var, y91Var.a, ((org.telegram.ui.Cells.ka) view).getTopic(), 0);
+                    qg.c.n(y91Var, y91Var.a, ((org.telegram.ui.Cells.la) view).getTopic(), 0);
                     break;
                 }
                 break;

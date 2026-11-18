@@ -18,14 +18,14 @@ import org.telegram.messenger.n5;
 import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.b9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
-    public final q1 b;
+    public final r1 b;
     public final ImageReceiver c;
     public final long d;
     public b e;
@@ -54,8 +54,8 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver2 = new ImageReceiver(hVar.a);
         this.c = imageReceiver2;
         this.a = hVar;
-        q1 q1Var = hVar.E;
-        this.b = q1Var;
+        r1 r1Var = hVar.E;
+        this.b = r1Var;
         this.d = j3;
         b9Var.p = 1.0f;
         if (n5.E(j3)) {
@@ -69,7 +69,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
                 imageReceiver.r0(null, null, null, null, b9Var, 0L, null, c22, 0);
                 imageReceiver.J0(g0.L(g.a / 2.0f));
                 imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
-                Paint a22 = q1Var.a2("paintChatActionText");
+                Paint a22 = r1Var.a2("paintChatActionText");
                 if (str2 != null || a22 == null) {
                 }
                 int L = g0.q.x - g0.L(48);
@@ -90,7 +90,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         str2 = str;
         imageReceiver.J0(g0.L(g.a / 2.0f));
         imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
-        Paint a222 = q1Var.a2("paintChatActionText");
+        Paint a222 = r1Var.a2("paintChatActionText");
         if (str2 != null) {
         }
     }

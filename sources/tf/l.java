@@ -9,10 +9,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.ks;
 import org.telegram.ui.Components.hn;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import sg.h0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class l extends rf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -88,7 +88,7 @@ public final class l extends rf.a {
         byte b10;
         byte b11;
         byte b12;
-        md0 md0Var;
+        nd0 nd0Var;
         Logger logger;
         uf.a aVar;
         int i7;
@@ -168,7 +168,7 @@ public final class l extends rf.a {
                 }
                 if (Q >= 4 || !hVar.d) {
                     logger = logger2;
-                    md0Var = new md0(mVar, i12, (i13 - i12) - hVar.c, hVar);
+                    nd0Var = new nd0(mVar, i12, (i13 - i12) - hVar.c, hVar);
                 } else {
                     int i14 = i13 - i12;
                     byte[] bArr2 = new byte[i14];
@@ -190,18 +190,18 @@ public final class l extends rf.a {
                         }
                         z10 = b13 == -1;
                     }
-                    md0Var = new md0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
+                    nd0Var = new nd0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
                     logger = logger2;
                 }
-                hn hnVar2 = (hn) md0Var.d;
-                uf.a aVar2 = (uf.a) md0Var.b;
+                hn hnVar2 = (hn) nd0Var.d;
+                uf.a aVar2 = (uf.a) nd0Var.b;
                 while (true) {
                     try {
                         if (aVar2.e() <= 10) {
                             aVar = aVar2;
                             break;
                         }
-                        f fVar = new f(md0Var);
+                        f fVar = new f(nd0Var);
                         String str6 = fVar.a;
                         int i18 = fVar.c;
                         aVar = aVar2;

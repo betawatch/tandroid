@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class p6 {
     public static final Comparator X = Comparator$-CC.comparingInt(new bg.d(8));
@@ -597,7 +597,7 @@ public final class p6 {
                 tL_stories_readStories.peer = mp.u1(i10).l1(o4);
                 tL_stories_readStories.max_id = storyItem.id;
                 ConnectionsManager.getInstance(i10).sendRequest(tL_stories_readStories, null);
-                ks.f(i10).k(ks.H5, new Object[0]);
+                ks.f(i10).k(ks.I5, new Object[0]);
                 return true;
             }
         }
@@ -1088,7 +1088,7 @@ public final class p6 {
     public final void i0(TL_stories.TL_storiesStealthMode tL_storiesStealthMode) {
         this.B = tL_storiesStealthMode;
         int i7 = this.a;
-        ks.f(i7).k(ks.F5, new Object[0]);
+        ks.f(i7).k(ks.G5, new Object[0]);
         SharedPreferences.Editor edit = mp.u1(i7).h7.edit();
         if (tL_storiesStealthMode == null) {
             edit.remove("stories_stealth_mode").apply();
@@ -1177,7 +1177,7 @@ public final class p6 {
             i10++;
         }
         if (z10) {
-            ks.f(i7).k(ks.x5, new Object[0]);
+            ks.f(i7).k(ks.y5, new Object[0]);
         }
     }
 
@@ -1220,7 +1220,7 @@ public final class p6 {
             }
         }
         int i11 = this.a;
-        ks.f(i11).k(ks.x5, new Object[0]);
+        ks.f(i11).k(ks.y5, new Object[0]);
         mp.u1(i11).D();
         if (z11) {
             if (j3 >= 0) {
@@ -1659,7 +1659,7 @@ public final class p6 {
         ArrayList<Integer> arrayList2 = tL_stories_deleteStories.id;
         c7 c7Var = this.k;
         c7Var.b.a.c(new bi.m2(c7Var, arrayList2, j3, 9));
-        ks.f(i7).k(ks.x5, new Object[0]);
+        ks.f(i7).k(ks.y5, new Object[0]);
     }
 
     public final void s0(long j3, TL_stories.StoryItem storyItem, boolean z10) {

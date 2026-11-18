@@ -37,7 +37,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class t9 extends org.telegram.ui.ActionBar.h2 {
     public r1.g E;
@@ -514,7 +514,7 @@ public class t9 extends org.telegram.ui.ActionBar.h2 {
         PointF[] pointFArr;
         bc.d dVar;
         ?? r52;
-        md0 md0Var;
+        nd0 nd0Var;
         PointF[] pointFArr2;
         PointF[] pointFArr3;
         h6.m mVar3 = null;
@@ -526,17 +526,17 @@ public class t9 extends org.telegram.ui.ActionBar.h2 {
             int i14 = 0;
             if (nVar != null && nVar.b.k()) {
                 if (bitmap != null) {
-                    md0Var = new md0(18);
+                    nd0Var = new nd0(18);
                     int width = bitmap.getWidth();
                     int height = bitmap.getHeight();
-                    md0Var.d = bitmap;
-                    b7.d dVar2 = (b7.d) md0Var.b;
+                    nd0Var.d = bitmap;
+                    b7.d dVar2 = (b7.d) nd0Var.b;
                     dVar2.a = width;
                     dVar2.b = height;
                     i12 = bitmap.getWidth();
                     i13 = bitmap.getHeight();
                 } else {
-                    md0Var = new md0(18);
+                    nd0Var = new nd0(18);
                     ByteBuffer wrap = ByteBuffer.wrap(null);
                     int width2 = size.getWidth();
                     int height2 = size.getHeight();
@@ -546,14 +546,14 @@ public class t9 extends org.telegram.ui.ActionBar.h2 {
                     if (wrap.capacity() < width2 * height2) {
                         throw new IllegalArgumentException("Invalid image data size.");
                     }
-                    md0Var.c = wrap;
-                    b7.d dVar3 = (b7.d) md0Var.b;
+                    nd0Var.c = wrap;
+                    b7.d dVar3 = (b7.d) nd0Var.b;
                     dVar3.a = width2;
                     dVar3.b = height2;
                     i12 = size.getWidth();
                     i13 = size.getWidth();
                 }
-                SparseArray e12 = this.W.e1(md0Var);
+                SparseArray e12 = this.W.e1(nd0Var);
                 if (e12.size() > 0) {
                     u8.m mVar4 = (u8.m) e12.valueAt(0);
                     str = mVar4.b;
@@ -585,16 +585,16 @@ public class t9 extends org.telegram.ui.ActionBar.h2 {
                     if (bitmap != null) {
                         Bitmap e02 = e0(bitmap);
                         bitmap.recycle();
-                        md0 md0Var2 = new md0(18);
+                        nd0 nd0Var2 = new nd0(18);
                         int width3 = e02.getWidth();
                         int height3 = e02.getHeight();
-                        md0Var2.d = e02;
-                        b7.d dVar4 = (b7.d) md0Var2.b;
+                        nd0Var2.d = e02;
+                        b7.d dVar4 = (b7.d) nd0Var2.b;
                         dVar4.a = width3;
                         dVar4.b = height3;
                         i12 = e02.getWidth();
                         i13 = e02.getHeight();
-                        SparseArray e13 = this.W.e1(md0Var2);
+                        SparseArray e13 = this.W.e1(nd0Var2);
                         if (e13.size() > 0) {
                             u8.m mVar5 = (u8.m) e13.valueAt(0);
                             str = mVar5.b;
@@ -622,16 +622,16 @@ public class t9 extends org.telegram.ui.ActionBar.h2 {
                         } else {
                             Bitmap g02 = g0(e02);
                             e02.recycle();
-                            md0 md0Var3 = new md0(18);
+                            nd0 nd0Var3 = new nd0(18);
                             int width4 = g02.getWidth();
                             int height4 = g02.getHeight();
-                            md0Var3.d = g02;
-                            b7.d dVar5 = (b7.d) md0Var3.b;
+                            nd0Var3.d = g02;
+                            b7.d dVar5 = (b7.d) nd0Var3.b;
                             dVar5.a = width4;
                             dVar5.b = height4;
                             int width5 = e02.getWidth();
                             int height5 = e02.getHeight();
-                            SparseArray e14 = this.W.e1(md0Var3);
+                            SparseArray e14 = this.W.e1(nd0Var3);
                             if (e14.size() > 0) {
                                 u8.m mVar6 = (u8.m) e14.valueAt(0);
                                 String str2 = mVar6.b;

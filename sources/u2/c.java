@@ -13,11 +13,11 @@ import android.view.Surface;
 import h2.l0;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.web.z0;
 import p4.o0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -188,10 +188,10 @@ public final class c implements l {
     }
 
     @Override // u2.l
-    public final boolean i(b5 b5Var) {
+    public final boolean i(c5 c5Var) {
         f fVar = this.b;
         synchronized (fVar.a) {
-            fVar.o = b5Var;
+            fVar.o = c5Var;
         }
         return true;
     }

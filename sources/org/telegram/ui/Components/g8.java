@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegram.messenger.fs, org.telegram.messenger.y5 {
     public static g8 T2;
@@ -67,7 +67,7 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
     public final boolean L1;
     public float L2;
     public final v70 M1;
-    public final org.telegram.ui.Cells.f2 M2;
+    public final org.telegram.ui.Cells.g2 M2;
     public final z7 N1;
     public ValueAnimator N2;
     public final org.telegram.ui.ActionBar.n5 O1;
@@ -145,7 +145,7 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
         this.H2 = -1.0f;
         int i10 = 28;
         this.I2 = new j6.o(this, i10);
-        this.M2 = new org.telegram.ui.Cells.f2(this);
+        this.M2 = new org.telegram.ui.Cells.g2(this);
         this.r = true;
         O();
         org.telegram.messenger.fj fjVar = MediaController.B().v0;
@@ -164,8 +164,8 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
         org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.X1);
         org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.K0);
         org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.L0);
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.W3);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.L4);
+        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.X3);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.M4);
         u7 u7Var = new u7(this, activity);
         this.b = u7Var;
         final int i11 = 0;
@@ -314,7 +314,7 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
                             y60 H = y60.H(g8Var.c, g8Var.J0, view4, true);
                             y60 K0 = g8Var.K0(H, fjVar2);
                             if (!g8Var.P0()) {
-                                H.l(R.drawable.msg_stories_save, org.telegram.messenger.gd.M0(2131753914, null), new bi.v5(H, K0, 8), !g8Var.t2);
+                                H.l(R.drawable.msg_stories_save, org.telegram.messenger.gd.M0(2131753914, null), new bi.u5(H, K0, 8), !g8Var.t2);
                                 if (!g8Var.t2 && H.z() != null) {
                                     H.z().setRightIcon(R.drawable.msg_arrowright);
                                 }
@@ -435,7 +435,7 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
                             y60 H = y60.H(g8Var.c, g8Var.J0, view4, true);
                             y60 K0 = g8Var.K0(H, fjVar2);
                             if (!g8Var.P0()) {
-                                H.l(R.drawable.msg_stories_save, org.telegram.messenger.gd.M0(2131753914, null), new bi.v5(H, K0, 8), !g8Var.t2);
+                                H.l(R.drawable.msg_stories_save, org.telegram.messenger.gd.M0(2131753914, null), new bi.u5(H, K0, 8), !g8Var.t2);
                                 if (!g8Var.t2 && H.z() != null) {
                                     H.z().setRightIcon(R.drawable.msg_arrowright);
                                 }
@@ -641,11 +641,11 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
             v0(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.a7, i6Var));
             this.n1.setAlpha(1.0f);
             this.m1.setAlpha(0.0f);
-            org.telegram.ui.Cells.f2 f2Var = this.M2;
+            org.telegram.ui.Cells.g2 g2Var = this.M2;
             v7 v7Var2 = this.n1;
             Float valueOf = Float.valueOf(0.0f);
-            f2Var.getClass();
-            f2Var.a(v7Var2, valueOf);
+            g2Var.getClass();
+            g2Var.a(v7Var2, valueOf);
         }
         boolean z11 = this.r2.size() > 1;
         f8Var.h = z11;
@@ -1304,7 +1304,7 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
             H.l(R.drawable.msg_shareout, org.telegram.messenger.gd.M0(2131745264, null), new d7(this, H, fjVar, i7), !this.t2);
             H.c(R.drawable.msg_delete, org.telegram.messenger.gd.M0(2131751587, null), new d7(this, fjVar, H, 2), true);
         } else {
-            H.l(R.drawable.msg_stories_save, org.telegram.messenger.gd.M0(2131753914, null), new bi.v5(H, K0(H, fjVar), 7), !this.t2);
+            H.l(R.drawable.msg_stories_save, org.telegram.messenger.gd.M0(2131753914, null), new bi.u5(H, K0(H, fjVar), 7), !this.t2);
             if (!this.t2 && H.z() != null) {
                 H.z().setRightIcon(R.drawable.msg_arrowright);
             }
@@ -1549,7 +1549,7 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
             c1(fjVar2, false);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.L4) {
+        if (i7 == org.telegram.messenger.ks.M4) {
             b1(true);
             return;
         }
@@ -1589,7 +1589,7 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
             return;
         }
         if (i7 != org.telegram.messenger.ks.X1) {
-            if (i7 == org.telegram.messenger.ks.W3) {
+            if (i7 == org.telegram.messenger.ks.X3) {
                 g1(false);
                 return;
             }
@@ -1625,8 +1625,8 @@ public final class g8 extends org.telegram.ui.ActionBar.x2 implements org.telegr
         org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.X1);
         org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.K0);
         org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.L0);
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.W3);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.L4);
+        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.X3);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.M4);
         org.telegram.messenger.a6.q(this.a).v(this);
         if (T2 == this) {
             T2 = null;

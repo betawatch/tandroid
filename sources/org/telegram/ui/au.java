@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Paint;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class au extends org.telegram.ui.Components.sa {
     public final zt T1;
@@ -12,7 +12,7 @@ public final class au extends org.telegram.ui.Components.sa {
     public final k8.a V1;
     public l6 W1;
     public final org.telegram.ui.Components.ow0[] X1;
-    public final org.telegram.ui.Cells.c2[] Y1;
+    public final org.telegram.ui.Cells.d2[] Y1;
     public final LinearLayout Z1;
     public final i6 a2;
     public final long b2;
@@ -33,7 +33,7 @@ public final class au extends org.telegram.ui.Components.sa {
         String str2 = null;
         int i10 = 8;
         this.X1 = new org.telegram.ui.Components.ow0[8];
-        this.Y1 = new org.telegram.ui.Cells.c2[8];
+        this.Y1 = new org.telegram.ui.Cells.d2[8];
         this.V1 = aVar;
         this.U1 = r6Var;
         this.c2 = cVar;
@@ -52,7 +52,7 @@ public final class au extends org.telegram.ui.Components.sa {
         this.T1 = ztVar;
         linearLayout.addView(ztVar, c8.ma.t(-2, -2, 1, 0, 16, 0, 16));
         int i11 = 0;
-        org.telegram.ui.Cells.c2 c2Var = null;
+        org.telegram.ui.Cells.d2 d2Var = null;
         while (i11 < i10) {
             if (i11 == 0) {
                 M0 = org.telegram.messenger.gd.M0(2131748571, str2);
@@ -105,24 +105,24 @@ public final class au extends org.telegram.ui.Components.sa {
                 ow0Var2.a = j3;
                 ow0Var2.b = i12;
                 parentActivity = activity;
-                org.telegram.ui.Cells.c2 c2Var2 = new org.telegram.ui.Cells.c2(parentActivity, 4, 21, false, null);
-                c2Var2.setTag(Integer.valueOf(i11));
-                c2Var2.setBackgroundDrawable(org.telegram.ui.ActionBar.n6.N0(false));
-                this.Z1.addView(c2Var2, c8.ma.o(-1, 50));
-                c2Var2.e(str3, org.telegram.messenger.g0.i0(j3, false, false), true, true, false);
-                if (c2Var2.getTextView() != null) {
-                    org.telegram.ui.ActionBar.u6.U(c2Var2.getTextView(), org.telegram.ui.ActionBar.n6.j5, null);
+                org.telegram.ui.Cells.d2 d2Var2 = new org.telegram.ui.Cells.d2(parentActivity, 4, 21, false, null);
+                d2Var2.setTag(Integer.valueOf(i11));
+                d2Var2.setBackgroundDrawable(org.telegram.ui.ActionBar.n6.N0(false));
+                this.Z1.addView(d2Var2, c8.ma.o(-1, 50));
+                d2Var2.e(str3, org.telegram.messenger.g0.i0(j3, false, false), true, true, false);
+                if (d2Var2.getTextView() != null) {
+                    org.telegram.ui.ActionBar.u6.U(d2Var2.getTextView(), org.telegram.ui.ActionBar.n6.j5, null);
                 } else {
-                    c2Var2.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.j5, false));
+                    d2Var2.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.j5, false));
                 }
                 int i13 = org.telegram.ui.ActionBar.n6.k7;
-                org.telegram.ui.Components.mp mpVar = c2Var2.r;
+                org.telegram.ui.Components.mp mpVar = d2Var2.r;
                 if (mpVar != null) {
                     mpVar.b(i12, i12, i13);
                 }
-                c2Var2.setOnClickListener(new org.telegram.ui.Components.c31(11, this, cVar));
-                this.Y1[i11] = c2Var2;
-                c2Var = c2Var2;
+                d2Var2.setOnClickListener(new org.telegram.ui.Components.c31(11, this, cVar));
+                this.Y1[i11] = d2Var2;
+                d2Var = d2Var2;
                 str = null;
             } else {
                 parentActivity = activity;
@@ -135,8 +135,8 @@ public final class au extends org.telegram.ui.Components.sa {
             i10 = 8;
             r62 = 1;
         }
-        if (c2Var != null) {
-            c2Var.setNeedDivider(false);
+        if (d2Var != null) {
+            d2Var.setNeedDivider(false);
         }
         zt ztVar2 = this.T1;
         org.telegram.ui.Components.ow0[] ow0VarArr2 = this.X1;

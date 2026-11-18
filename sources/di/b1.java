@@ -49,7 +49,7 @@ import org.telegram.ui.ns;
 import org.telegram.ui.rq;
 import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b1 extends ck0 {
     public final /* synthetic */ int f3;
@@ -237,15 +237,15 @@ public final class b1 extends ck0 {
                 boolean z11 = false;
                 for (int i12 = 0; i12 < getChildCount(); i12++) {
                     View childAt2 = getChildAt(i12);
-                    if (childAt2 instanceof org.telegram.ui.Cells.q1) {
-                        ((org.telegram.ui.Cells.q1) childAt2).A3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
+                    if (childAt2 instanceof org.telegram.ui.Cells.r1) {
+                        ((org.telegram.ui.Cells.r1) childAt2).A3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
                     }
                 }
                 int childCount = getChildCount();
                 aj ajVar2 = null;
                 for (int i13 = 0; i13 < childCount; i13++) {
                     View childAt3 = getChildAt(i13);
-                    if ((childAt3 instanceof org.telegram.ui.Cells.q1) && ((currentMessagesGroup2 = ((org.telegram.ui.Cells.q1) childAt3).getCurrentMessagesGroup()) == null || currentMessagesGroup2 != ajVar2)) {
+                    if ((childAt3 instanceof org.telegram.ui.Cells.r1) && ((currentMessagesGroup2 = ((org.telegram.ui.Cells.r1) childAt3).getCurrentMessagesGroup()) == null || currentMessagesGroup2 != ajVar2)) {
                         ajVar2 = currentMessagesGroup2;
                     }
                 }
@@ -263,11 +263,11 @@ public final class b1 extends ck0 {
                             boolean z12 = true;
                             if (i16 < childCount) {
                                 View childAt4 = b1Var4.getChildAt(i16);
-                                if (childAt4 instanceof org.telegram.ui.Cells.q1) {
-                                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt4;
-                                    if (childAt4.getY() <= b1Var4.getHeight() && childAt4.getY() + childAt4.getHeight() >= 0.0f && (currentMessagesGroup = q1Var.getCurrentMessagesGroup()) != null) {
+                                if (childAt4 instanceof org.telegram.ui.Cells.r1) {
+                                    org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt4;
+                                    if (childAt4.getY() <= b1Var4.getHeight() && childAt4.getY() + childAt4.getHeight() >= 0.0f && (currentMessagesGroup = r1Var.getCurrentMessagesGroup()) != null) {
                                         zi ziVar = currentMessagesGroup.m;
-                                        if ((i14 != 0 || currentMessagesGroup.d.size() != 1) && ((i14 != 1 || ziVar.i) && ((i14 != 0 || !q1Var.getMessageObject().Z) && ((i14 != 1 || q1Var.getMessageObject().Z) && ((i14 != i15 || q1Var.za) && (i14 == i15 || !q1Var.za)))))) {
+                                        if ((i14 != 0 || currentMessagesGroup.d.size() != 1) && ((i14 != 1 || ziVar.i) && ((i14 != 0 || !r1Var.getMessageObject().Z) && ((i14 != 1 || r1Var.getMessageObject().Z) && ((i14 != i15 || r1Var.za) && (i14 == i15 || !r1Var.za)))))) {
                                             if (!arrayList2.contains(currentMessagesGroup)) {
                                                 ziVar.a = r12;
                                                 ziVar.b = r12;
@@ -275,24 +275,24 @@ public final class b1 extends ck0 {
                                                 ziVar.d = r12;
                                                 ziVar.l = r12;
                                                 ziVar.k = r12;
-                                                ziVar.m = q1Var;
+                                                ziVar.m = r1Var;
                                                 arrayList2.add(currentMessagesGroup);
                                             }
-                                            ziVar.k = q1Var.L2();
-                                            ziVar.l = q1Var.K2();
-                                            int backgroundDrawableLeft = q1Var.getBackgroundDrawableLeft() + q1Var.getLeft();
-                                            int backgroundDrawableRight = q1Var.getBackgroundDrawableRight() + q1Var.getLeft();
-                                            int backgroundDrawableTop = q1Var.getBackgroundDrawableTop() + q1Var.getPaddingTop() + q1Var.getTop();
-                                            int backgroundDrawableBottom = q1Var.getBackgroundDrawableBottom() + q1Var.getPaddingTop() + q1Var.getTop();
-                                            if ((q1Var.getCurrentPosition().l & 4) == 0) {
+                                            ziVar.k = r1Var.L2();
+                                            ziVar.l = r1Var.K2();
+                                            int backgroundDrawableLeft = r1Var.getBackgroundDrawableLeft() + r1Var.getLeft();
+                                            int backgroundDrawableRight = r1Var.getBackgroundDrawableRight() + r1Var.getLeft();
+                                            int backgroundDrawableTop = r1Var.getBackgroundDrawableTop() + r1Var.getPaddingTop() + r1Var.getTop();
+                                            int backgroundDrawableBottom = r1Var.getBackgroundDrawableBottom() + r1Var.getPaddingTop() + r1Var.getTop();
+                                            if ((r1Var.getCurrentPosition().l & 4) == 0) {
                                                 backgroundDrawableTop -= org.telegram.messenger.g0.L(10.0f);
                                             }
-                                            if ((q1Var.getCurrentPosition().l & 8) == 0) {
+                                            if ((r1Var.getCurrentPosition().l & 8) == 0) {
                                                 backgroundDrawableBottom = org.telegram.messenger.g0.L(10.0f) + backgroundDrawableBottom;
                                             }
                                             int i17 = backgroundDrawableBottom;
-                                            if (q1Var.za) {
-                                                ziVar.m = q1Var;
+                                            if (r1Var.za) {
+                                                ziVar.m = r1Var;
                                             }
                                             int i18 = ziVar.b;
                                             if (i18 == 0 || backgroundDrawableTop < i18) {
@@ -370,11 +370,11 @@ public final class b1 extends ck0 {
                                             canvas.restore();
                                             for (int i23 = 0; i23 < childCount; i23++) {
                                                 View childAt5 = b1Var2.getChildAt(i23);
-                                                if (childAt5 instanceof org.telegram.ui.Cells.q1) {
-                                                    org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) childAt5;
-                                                    if (q1Var2.getCurrentMessagesGroup() == ajVar4) {
-                                                        int left = q1Var2.getLeft();
-                                                        int top = q1Var2.getTop();
+                                                if (childAt5 instanceof org.telegram.ui.Cells.r1) {
+                                                    org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) childAt5;
+                                                    if (r1Var2.getCurrentMessagesGroup() == ajVar4) {
+                                                        int left = r1Var2.getLeft();
+                                                        int top = r1Var2.getTop();
                                                         childAt5.setPivotX(((f12 - f10) / 2.0f) + (f10 - left));
                                                         childAt5.setPivotY(((f15 - f14) / 2.0f) + (f14 - top));
                                                     }
@@ -495,7 +495,7 @@ public final class b1 extends ck0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         ImageReceiver avatarImage;
         boolean z10;
         int y10;
@@ -503,36 +503,36 @@ public final class b1 extends ck0 {
         switch (this.f3) {
             case 9:
                 org.telegram.ui.lb lbVar = (org.telegram.ui.lb) this.g3;
-                if (view instanceof org.telegram.ui.Cells.y1) {
+                if (view instanceof org.telegram.ui.Cells.z1) {
                     canvas.save();
                     canvas.translate(view.getX(), view.getY());
-                    ((org.telegram.ui.Cells.y1) view).a(canvas);
+                    ((org.telegram.ui.Cells.z1) view).a(canvas);
                     canvas.restore();
                 }
                 boolean drawChild = super.drawChild(canvas, view, j3);
-                if ((view instanceof org.telegram.ui.Cells.q1) && (avatarImage = (q1Var = (org.telegram.ui.Cells.q1) view).getAvatarImage()) != null) {
-                    if (!q1Var.getMessageObject().Z) {
+                if ((view instanceof org.telegram.ui.Cells.r1) && (avatarImage = (r1Var = (org.telegram.ui.Cells.r1) view).getAvatarImage()) != null) {
+                    if (!r1Var.getMessageObject().Z) {
                         lbVar.w.getClass();
-                        if (RecyclerView.R(q1Var) != -1) {
+                        if (RecyclerView.R(r1Var) != -1) {
                             z10 = true;
-                            if (!q1Var.getMessageObject().Z) {
+                            if (!r1Var.getMessageObject().Z) {
                                 avatarImage.O0(false, false);
                                 break;
                             } else {
                                 int y11 = (int) view.getY();
-                                if (q1Var.m() && (b10 = lbVar.w.T(view).b()) >= 0) {
+                                if (r1Var.m() && (b10 = lbVar.w.T(view).b()) >= 0) {
                                     if (lbVar.w.K(b10 + 1) != null) {
                                         avatarImage.O0(false, false);
                                         break;
                                     }
                                 }
-                                float checkBoxTranslation = q1Var.getCheckBoxTranslation() + q1Var.getSlidingOffsetX();
-                                int layoutHeight = q1Var.getLayoutHeight() + ((int) view.getY());
+                                float checkBoxTranslation = r1Var.getCheckBoxTranslation() + r1Var.getSlidingOffsetX();
+                                int layoutHeight = r1Var.getLayoutHeight() + ((int) view.getY());
                                 int measuredHeight = lbVar.w.getMeasuredHeight() - lbVar.w.getPaddingBottom();
                                 if (layoutHeight > measuredHeight) {
                                     layoutHeight = measuredHeight;
                                 }
-                                if (q1Var.j() && (r13 = lbVar.w.T(view).b()) >= 0) {
+                                if (r1Var.j() && (r13 = lbVar.w.T(view).b()) >= 0) {
                                     int i7 = 0;
                                     while (i7 < 20) {
                                         i7++;
@@ -541,9 +541,9 @@ public final class b1 extends ck0 {
                                         if (K != null) {
                                             View view2 = K.a;
                                             int top = view2.getTop();
-                                            if (view2 instanceof org.telegram.ui.Cells.q1) {
-                                                q1Var = (org.telegram.ui.Cells.q1) view2;
-                                                if (q1Var.j()) {
+                                            if (view2 instanceof org.telegram.ui.Cells.r1) {
+                                                r1Var = (org.telegram.ui.Cells.r1) view2;
+                                                if (r1Var.j()) {
                                                     y11 = top;
                                                 }
                                             }
@@ -554,22 +554,22 @@ public final class b1 extends ck0 {
                                 if (layoutHeight - org.telegram.messenger.g0.L(48.0f) < y11) {
                                     layoutHeight = org.telegram.messenger.g0.L(48.0f) + y11;
                                 }
-                                if (!q1Var.m() && layoutHeight > (y10 = (int) (q1Var.getY() + q1Var.getMeasuredHeight()))) {
+                                if (!r1Var.m() && layoutHeight > (y10 = (int) (r1Var.getY() + r1Var.getMeasuredHeight()))) {
                                     layoutHeight = y10;
                                 }
                                 canvas.save();
                                 if (checkBoxTranslation != 0.0f) {
                                     canvas.translate(checkBoxTranslation, 0.0f);
                                 }
-                                if (q1Var.getCurrentMessagesGroup() != null && q1Var.getCurrentMessagesGroup().m.j) {
-                                    layoutHeight = (int) (layoutHeight - q1Var.getTranslationY());
+                                if (r1Var.getCurrentMessagesGroup() != null && r1Var.getCurrentMessagesGroup().m.j) {
+                                    layoutHeight = (int) (layoutHeight - r1Var.getTranslationY());
                                 }
                                 if (z10) {
                                     avatarImage.M0 = layoutHeight - org.telegram.messenger.g0.L(44.0f);
                                 }
-                                if (q1Var.b()) {
-                                    avatarImage.setAlpha(q1Var.getAlpha());
-                                    canvas.scale(q1Var.getScaleX(), q1Var.getScaleY(), q1Var.getPivotX() + q1Var.getX(), q1Var.getY() + (q1Var.getHeight() >> 1));
+                                if (r1Var.b()) {
+                                    avatarImage.setAlpha(r1Var.getAlpha());
+                                    canvas.scale(r1Var.getScaleX(), r1Var.getScaleY(), r1Var.getPivotX() + r1Var.getX(), r1Var.getY() + (r1Var.getHeight() >> 1));
                                 } else {
                                     avatarImage.setAlpha(1.0f);
                                 }
@@ -583,38 +583,38 @@ public final class b1 extends ck0 {
                         }
                     }
                     z10 = false;
-                    if (!q1Var.getMessageObject().Z) {
+                    if (!r1Var.getMessageObject().Z) {
                     }
                 }
                 break;
             case 21:
-                if (!(view instanceof org.telegram.ui.Cells.q1)) {
+                if (!(view instanceof org.telegram.ui.Cells.r1)) {
                     break;
                 } else {
-                    org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) view;
+                    org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) view;
                     boolean drawChild2 = super.drawChild(canvas, view, j3);
-                    q1Var2.S0(canvas);
+                    r1Var2.S0(canvas);
                     canvas.save();
-                    canvas.translate(q1Var2.getX(), q1Var2.getY());
+                    canvas.translate(r1Var2.getX(), r1Var2.getY());
                     canvas.save();
-                    canvas.scale(q1Var2.getScaleX(), q1Var2.getScaleY(), q1Var2.getPivotX(), q1Var2.getPivotY());
-                    q1Var2.c1(canvas, true);
-                    q1Var2.V2(true);
-                    q1Var2.g1(canvas);
-                    if (q1Var2.getCurrentMessagesGroup() == null || ((q1Var2.getCurrentPosition() != null && (((q1Var2.getCurrentPosition().l & q1Var2.B()) != 0 && (q1Var2.getCurrentPosition().l & 1) != 0) || (q1Var2.getCurrentMessagesGroup() != null && q1Var2.getCurrentMessagesGroup().i))) || q1Var2.getTransitionParams().x0)) {
-                        q1Var2.Q0(q1Var2.getAlpha(), canvas, false);
-                        q1Var2.o1(canvas, q1Var2.getAlpha(), null);
-                        q1Var2.V0(canvas, q1Var2.getAlpha());
+                    canvas.scale(r1Var2.getScaleX(), r1Var2.getScaleY(), r1Var2.getPivotX(), r1Var2.getPivotY());
+                    r1Var2.c1(canvas, true);
+                    r1Var2.V2(true);
+                    r1Var2.g1(canvas);
+                    if (r1Var2.getCurrentMessagesGroup() == null || ((r1Var2.getCurrentPosition() != null && (((r1Var2.getCurrentPosition().l & r1Var2.B()) != 0 && (r1Var2.getCurrentPosition().l & 1) != 0) || (r1Var2.getCurrentMessagesGroup() != null && r1Var2.getCurrentMessagesGroup().i))) || r1Var2.getTransitionParams().x0)) {
+                        r1Var2.Q0(r1Var2.getAlpha(), canvas, false);
+                        r1Var2.o1(canvas, r1Var2.getAlpha(), null);
+                        r1Var2.V0(canvas, r1Var2.getAlpha());
                     }
-                    if (q1Var2.getCurrentMessagesGroup() != null || q1Var2.getTransitionParams().x0) {
-                        q1Var2.h1(canvas, q1Var2.getAlpha());
+                    if (r1Var2.getCurrentMessagesGroup() != null || r1Var2.getTransitionParams().x0) {
+                        r1Var2.h1(canvas, r1Var2.getAlpha());
                     }
-                    if ((q1Var2.getCurrentPosition() != null && q1Var2.getCurrentPosition().h) || q1Var2.getTransitionParams().x0) {
-                        q1Var2.y1(q1Var2.getAlpha(), canvas, true);
+                    if ((r1Var2.getCurrentPosition() != null && r1Var2.getCurrentPosition().h) || r1Var2.getTransitionParams().x0) {
+                        r1Var2.y1(r1Var2.getAlpha(), canvas, true);
                     }
-                    q1Var2.j1(canvas);
+                    r1Var2.j1(canvas);
                     canvas.restore();
-                    q1Var2.getTransitionParams().d();
+                    r1Var2.getTransitionParams().d();
                     canvas.restore();
                     break;
                 }
@@ -628,7 +628,7 @@ public final class b1 extends ck0 {
             case 27:
                 iw0 iw0Var = (iw0) this.g3;
                 a8.b8 b8Var = iw0Var.g2;
-                if (!(view instanceof org.telegram.ui.Cells.z7) || !iw0Var.M1) {
+                if (!(view instanceof org.telegram.ui.Cells.a8) || !iw0Var.M1) {
                     break;
                 } else {
                     int b12 = iw0Var.n1.T(view).b();
@@ -728,7 +728,7 @@ public final class b1 extends ck0 {
                 super.onAttachedToWindow();
                 jg.l1 l1Var = ((bn) this.g3).b4;
                 if (l1Var != null) {
-                    ks.f(l1Var.r).c(l1Var, ks.z5);
+                    ks.f(l1Var.r).c(l1Var, ks.A5);
                     break;
                 }
                 break;
@@ -746,7 +746,7 @@ public final class b1 extends ck0 {
                 jg.l1 l1Var = ((bn) this.g3).b4;
                 if (l1Var != null) {
                     org.telegram.messenger.g0.r(l1Var.F);
-                    ks.f(l1Var.r).n(l1Var, ks.z5);
+                    ks.f(l1Var.r).n(l1Var, ks.A5);
                     break;
                 }
                 break;

@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class ao extends FrameLayout implements te.b, org.telegram.messenger.fs, org.telegram.ui.ActionBar.c6 {
     public org.telegram.ui.ActionBar.k A0;
@@ -591,7 +591,7 @@ public class ao extends FrameLayout implements te.b, org.telegram.messenger.fs, 
             }
             return;
         }
-        if (i7 != org.telegram.messenger.ks.k4) {
+        if (i7 != org.telegram.messenger.ks.l4) {
             if (i7 == org.telegram.messenger.ks.i3) {
                 n(true);
             }
@@ -1393,7 +1393,7 @@ public class ao extends FrameLayout implements te.b, org.telegram.messenger.fs, 
         if (bnVar != null) {
             int i7 = this.K;
             org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.T1);
-            org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+            org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
             if (bnVar.g4 == 3) {
                 org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.i3);
             }
@@ -1417,7 +1417,7 @@ public class ao extends FrameLayout implements te.b, org.telegram.messenger.fs, 
         if (bnVar != null) {
             int i7 = this.K;
             org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.T1);
-            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
             if (bnVar.g4 == 3) {
                 org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.i3);
             }

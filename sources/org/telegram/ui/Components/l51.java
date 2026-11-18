@@ -7,12 +7,12 @@ import java.io.File;
 import org.telegram.messenger.ApplicationLoaderImpl;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l51 extends IUpdateLayout {
     public FrameLayout a;
     public RadialProgress2 b;
-    public org.telegram.ui.Cells.a2 c;
+    public org.telegram.ui.Cells.b2 c;
     public final Activity d;
     public final ViewGroup e;
 
@@ -36,9 +36,9 @@ public final class l51 extends IUpdateLayout {
         this.a.setBackground(org.telegram.ui.ActionBar.n6.h0(1090519039, 2, -1));
         viewGroup.addView(this.a, c8.ma.e(-1, 44, 83));
         this.a.setOnClickListener(new ci.q(this, i7, 21));
-        org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(this, activity);
-        this.c = a2Var;
-        a2Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        org.telegram.ui.Cells.b2 b2Var = new org.telegram.ui.Cells.b2(this, activity);
+        this.c = b2Var;
+        b2Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
         this.c.setTypeface(org.telegram.messenger.g0.o());
         this.c.setTextColor(-1);
         this.c.setGravity(17);

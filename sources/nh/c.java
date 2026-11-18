@@ -35,7 +35,7 @@ import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.i41;
 import org.telegram.ui.Components.lr;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.voip.n;
 import org.telegram.ui.i20;
 import xh.l;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c extends ViewGroup implements ue.a, fs, te.b {
     public static final Rect M = new Rect();
@@ -58,7 +58,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
     public final RectF L;
     public final te.a a;
     public final te.a b;
-    public final l9 c;
+    public final m9 c;
     public final ImageReceiver d;
     public final Paint e;
     public final Paint f;
@@ -75,7 +75,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
         lr lrVar = lr.h;
         this.a = new te.a(0, this, lrVar, 320L, false);
         this.b = new te.a(1, this, lrVar, 320L, false);
-        this.c = new l9(this);
+        this.c = new m9(this);
         Paint paint = new Paint(1);
         this.e = paint;
         Paint paint2 = new Paint(1);
@@ -168,7 +168,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.k4) {
+        if (i7 == ks.l4) {
             invalidate();
         }
     }
@@ -257,7 +257,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
         if (o5Var != null) {
             o5Var.a(this);
         }
-        ks.e().c(this, ks.k4);
+        ks.e().c(this, ks.l4);
         GroupCallMessage groupCallMessage = this.I;
         if (groupCallMessage != null) {
             groupCallMessage.subscribeToStateUpdates(this.E);
@@ -273,7 +273,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
         if (o5Var != null) {
             o5Var.n(this);
         }
-        ks.e().n(this, ks.k4);
+        ks.e().n(this, ks.l4);
         GroupCallMessage groupCallMessage = this.I;
         if (groupCallMessage != null) {
             groupCallMessage.unsubscribeFromStateUpdates(this.E);

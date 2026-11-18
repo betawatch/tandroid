@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class PopupNotificationActivity extends Activity implements org.telegram.messenger.fs {
     public static final /* synthetic */ int c0 = 0;
@@ -186,7 +186,7 @@ public class PopupNotificationActivity extends Activity implements org.telegram.
             return;
         }
         int i11 = 0;
-        if (i7 == org.telegram.messenger.ks.f4) {
+        if (i7 == org.telegram.messenger.ks.g4) {
             if (this.a0) {
                 return;
             }
@@ -276,7 +276,7 @@ public class PopupNotificationActivity extends Activity implements org.telegram.
             }
             return;
         }
-        if (i7 != org.telegram.messenger.ks.k4) {
+        if (i7 != org.telegram.messenger.ks.l4) {
             if (i7 == org.telegram.messenger.ks.O && i10 == this.M) {
                 r();
                 return;
@@ -787,8 +787,8 @@ public class PopupNotificationActivity extends Activity implements org.telegram.
             org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.f2);
             org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.O);
         }
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.f4);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.g4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         ChatActivityEnterView chatActivityEnterView = this.b;
         if (chatActivityEnterView != null) {
             chatActivityEnterView.Y0();
@@ -1304,8 +1304,8 @@ public class PopupNotificationActivity extends Activity implements org.telegram.
             org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.f2);
             org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.O);
         }
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.f4);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.g4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
         this.L = ConnectionsManager.generateClassGuid();
         this.K[0] = new org.telegram.ui.Components.j41(false);
         this.K[1] = new org.telegram.ui.Components.qp(false);

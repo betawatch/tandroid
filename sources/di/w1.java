@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sh;
 import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -206,7 +206,7 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                         arrayList.add(h6Var.y(tL_stories_stories.stories.get(i11)));
                         i11++;
                     }
-                    org.telegram.messenger.g0.g3(new bi.u4(h6Var, arrayList, tL_stories_stories, this.b, 4));
+                    org.telegram.messenger.g0.g3(new bi.t4(h6Var, arrayList, tL_stories_stories, this.b, 4));
                     break;
                 } else {
                     org.telegram.messenger.g0.g3(new fi.e6(h6Var, i13));

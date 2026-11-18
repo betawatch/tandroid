@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
-import org.telegram.ui.Cells.t7;
+import org.telegram.ui.Cells.u7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.gf;
 import org.telegram.ui.Components.if0;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.s9;
 import org.telegram.ui.Wallet.x6;
 import org.telegram.ui.rf;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class t0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -50,19 +50,19 @@ public final class t0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) obj;
-                m6Var.G = f10;
-                m6Var.invalidate();
+                org.telegram.ui.Cells.n6 n6Var = (org.telegram.ui.Cells.n6) obj;
+                n6Var.G = f10;
+                n6Var.invalidate();
                 break;
             case 3:
                 ColorMatrix colorMatrix = new ColorMatrix();
-                t7 t7Var = (t7) obj;
-                t7Var.w = f10;
+                u7 u7Var = (u7) obj;
+                u7Var.w = f10;
                 colorMatrix.setSaturation(f10);
                 if (n6.I.q()) {
-                    org.telegram.messenger.g0.h(colorMatrix, (1.0f - t7Var.w) * (-0.3f));
+                    org.telegram.messenger.g0.h(colorMatrix, (1.0f - u7Var.w) * (-0.3f));
                 }
-                t7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                u7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             case 4:
                 s9 s9Var = (s9) obj;
@@ -131,11 +131,11 @@ public final class t0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.n6 n6Var = (org.telegram.ui.Wallet.n6) obj;
-                if (n6Var.n0 == animator) {
-                    n6Var.n0 = null;
-                    n6Var.R0(f10);
-                    n6Var.s0.j(false);
+                org.telegram.ui.Wallet.n6 n6Var2 = (org.telegram.ui.Wallet.n6) obj;
+                if (n6Var2.n0 == animator) {
+                    n6Var2.n0 = null;
+                    n6Var2.R0(f10);
+                    n6Var2.s0.j(false);
                     break;
                 }
                 break;

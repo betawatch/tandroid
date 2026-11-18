@@ -28,7 +28,7 @@ import org.telegram.ui.Components.o80;
 import org.telegram.ui.Components.sp;
 import org.telegram.ui.nd;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public class d extends FrameLayout implements n80, org.telegram.ui.ActionBar.c6 {
     public int E;
@@ -512,7 +512,7 @@ public class d extends FrameLayout implements n80, org.telegram.ui.ActionBar.c6 
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z10 ? 1.0f : 0.0f);
             this.S = ofFloat;
             ofFloat.addUpdateListener(new b(this, 2));
-            this.S.addListener(new bi.e7(7, this, z10));
+            this.S.addListener(new bi.d7(7, this, z10));
             this.S.setDuration(this.T ? 240L : 320L);
             this.S.setInterpolator(lr.h);
             this.S.start();

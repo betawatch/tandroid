@@ -15,7 +15,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.animation.AnimationUtils;
 import bi.g1;
-import bi.v7;
+import bi.u7;
 import ch.b0;
 import ch.e0;
 import ch.m;
@@ -54,7 +54,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Cells.p4;
+import org.telegram.ui.Cells.q4;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.gc;
@@ -66,7 +66,7 @@ import q4.q;
 import v0.g;
 import v0.n;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -186,7 +186,7 @@ public final /* synthetic */ class c implements Runnable {
                 TLRPC.ReactionCount reactionCount = n0Var.a;
                 z zVar = q0Var.w;
                 if (e2.s(zVar)) {
-                    ((p4) zVar).d(reactionCount, true, 0.0f, 0.0f);
+                    ((q4) zVar).d(reactionCount, true, 0.0f, 0.0f);
                 }
                 n0Var.X.c(false);
                 q0Var.P = null;
@@ -488,7 +488,7 @@ public final /* synthetic */ class c implements Runnable {
                     b0Var5.d = true;
                 }
                 b0Var5.g = false;
-                ks.f(i18).k(ks.N3, Long.valueOf(b0Var5.b));
+                ks.f(i18).k(ks.O3, Long.valueOf(b0Var5.b));
                 return;
             case 25:
                 c0 c0Var = (c0) this.b;
@@ -510,7 +510,7 @@ public final /* synthetic */ class c implements Runnable {
                     c0Var.d = true;
                 }
                 c0Var.h = false;
-                ks.f(i19).k(ks.M3, Long.valueOf(c0Var.b));
+                ks.f(i19).k(ks.N3, Long.valueOf(c0Var.b));
                 return;
             case 26:
                 f6 f6Var = (f6) this.b;
@@ -533,8 +533,8 @@ public final /* synthetic */ class c implements Runnable {
             case 28:
                 p8 p8Var = (p8) this.b;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.c;
-                if (p8Var instanceof v7) {
-                    ((v7) p8Var).n(tL_starGiftUnique);
+                if (p8Var instanceof u7) {
+                    ((u7) p8Var).n(tL_starGiftUnique);
                     return;
                 }
                 return;

@@ -5,7 +5,7 @@ import org.telegram.messenger.fj;
 import org.telegram.messenger.jj;
 import org.telegram.messenger.mp;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Components.ia0;
 import org.telegram.ui.Components.oa0;
 import org.telegram.ui.Components.ua0;
@@ -13,7 +13,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.rm;
 import org.telegram.ui.uk;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class b2 extends ha {
     public final /* synthetic */ int a;
@@ -64,8 +64,8 @@ public final class b2 extends ha {
                         break;
                     } else if (z10) {
                         if (ia0Var.v - ia0Var.u <= mp.u1(ua0Var.x).r4) {
-                            q9 q9Var = ia0Var.W;
-                            fj c10 = oa0Var.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                            r9 r9Var = ia0Var.W;
+                            fj c10 = oa0Var.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                             jj jjVar = ua0Var.d;
                             if (jjVar.d == null) {
                                 int i7 = ia0Var.u;

@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dg implements Runnable {
     public final /* synthetic */ int a;
@@ -420,7 +420,7 @@ public final /* synthetic */ class dg implements Runnable {
                 ooVar2.b = System.currentTimeMillis();
                 ooVar2.c = tL_chatlists_chatlistUpdates;
                 sparseArray.put(i27, ooVar2);
-                mpVar2.getNotificationCenter().k(ks.B5, Integer.valueOf(i27));
+                mpVar2.getNotificationCenter().k(ks.C5, Integer.valueOf(i27));
                 return;
             case 11:
                 ((mp) this.c).getNotificationCenter().k(19, Integer.valueOf(this.b), (TLRPC.TL_messages_getPeerDialogs) this.e, (TLRPC.TL_error) this.d);

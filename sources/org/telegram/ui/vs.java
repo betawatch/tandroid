@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vs implements Runnable {
     public final /* synthetic */ int a;
@@ -47,17 +47,17 @@ public final /* synthetic */ class vs implements Runnable {
                 org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj;
                 xt xtVar = (xt) ((a7.d) obj2).c;
                 xtVar.a();
-                org.telegram.ui.Cells.m8 m8Var = xtVar.e;
+                org.telegram.ui.Cells.n8 n8Var = xtVar.e;
                 xtVar.c();
                 int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q6, false);
                 org.telegram.ui.Components.mh0 mh0Var = xtVar.d;
                 mh0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
                 if (org.telegram.ui.ActionBar.n6.k1()) {
-                    m8Var.p(org.telegram.messenger.gd.M0(2131745271, null), mh0Var, true);
-                    m8Var.x += 2;
+                    n8Var.p(org.telegram.messenger.gd.M0(2131745271, null), mh0Var, true);
+                    n8Var.x += 2;
                 } else {
-                    m8Var.p(org.telegram.messenger.gd.M0(2131745272, null), mh0Var, true);
-                    m8Var.x += 2;
+                    n8Var.p(org.telegram.messenger.gd.M0(2131745272, null), mh0Var, true);
+                    n8Var.x += 2;
                 }
                 org.telegram.ui.ActionBar.n6.M1(h2Var);
                 break;

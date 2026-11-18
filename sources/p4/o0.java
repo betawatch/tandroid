@@ -25,7 +25,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.n80;
@@ -35,7 +35,7 @@ import tg.b2;
 import tg.e2;
 import ug.x1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -294,19 +294,19 @@ public final /* synthetic */ class o0 implements Runnable {
                 c();
                 return;
             case 18:
-                l9 l9Var = (l9) this.b;
+                m9 m9Var = (m9) this.b;
                 View view = (View) this.c;
-                ue.a aVar = (ue.a) l9Var.d;
-                if ((l9Var.a & 2) != 0) {
-                    if (!aVar.Z0(view, l9Var.b, l9Var.c)) {
-                        l9Var.a |= 8;
+                ue.a aVar = (ue.a) m9Var.d;
+                if ((m9Var.a & 2) != 0) {
+                    if (!aVar.Z0(view, m9Var.b, m9Var.c)) {
+                        m9Var.a |= 8;
                         return;
                     }
-                    l9Var.a &= -3;
-                    l9Var.e = null;
+                    m9Var.a &= -3;
+                    m9Var.e = null;
                     view.performHapticFeedback(0);
-                    l9Var.a = (l9Var.a | 4) & (-11);
-                    l9Var.e = null;
+                    m9Var.a = (m9Var.a | 4) & (-11);
+                    m9Var.e = null;
                     return;
                 }
                 return;

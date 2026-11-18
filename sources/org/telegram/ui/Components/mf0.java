@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class mf0 extends FrameLayout {
     public final ai.r2 E;
@@ -62,7 +62,7 @@ public final class mf0 extends FrameLayout {
         this.b = currentAccount;
         e51 e51Var = new e51(context, currentAccount, 0, false, new d(this, 19), new iy(this, 11), null, null);
         this.c = e51Var;
-        e51Var.j(new bi.e6(5, this, cxVar));
+        e51Var.j(new bi.d6(5, this, cxVar));
         addView(e51Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.y = frameLayout;

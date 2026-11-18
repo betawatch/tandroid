@@ -9,13 +9,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xv0;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ff0;
+import org.telegram.ui.gf0;
 import org.telegram.ui.ow;
-import org.telegram.ui.se0;
+import org.telegram.ui.te0;
 import org.telegram.ui.xd;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new yn(this.c, tLObject, this.d, this.b, 8));
                 break;
             case 7:
-                ff0 ff0Var = (ff0) this.c;
+                gf0 gf0Var = (gf0) this.c;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) this.d;
                 if (tL_error == null) {
                     TLRPC.TL_messages_exportedChatInvites tL_messages_exportedChatInvites = (TLRPC.TL_messages_exportedChatInvites) tLObject;
@@ -89,14 +89,14 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                         for (int i11 = 0; i11 < tL_messages_exportedChatInvites.invites.size(); i11++) {
                             if (((TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.get(i11)).link.equals(tL_chatInviteExported2.link)) {
                                 tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.remove(i11);
-                                org.telegram.messenger.g0.g3(new se0(ff0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
+                                org.telegram.messenger.g0.g3(new te0(gf0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
                                 break;
                             }
                         }
                     }
                 }
                 tL_chatInviteExported = null;
-                org.telegram.messenger.g0.g3(new se0(ff0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
+                org.telegram.messenger.g0.g3(new te0(gf0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
             default:
                 org.telegram.messenger.g0.g3(new ai.n(this.c, (TLObject) tL_error, this.b, tLObject, (String) this.d, 14));
                 break;

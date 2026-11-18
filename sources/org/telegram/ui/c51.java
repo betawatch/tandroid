@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c51 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public boolean A0;
@@ -85,7 +85,7 @@ public final class c51 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     public o41 n;
     public te.a n0;
     public final boolean o0;
-    public ne0 p0;
+    public oe0 p0;
     public FrameLayout q0;
     public o41 r;
     public qh.b[] r0;
@@ -847,9 +847,9 @@ public final class c51 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             arrayList.add(qh.b.c(context, c51Var.resourceProvider, qh.a.Q, 2131748215));
         }
         c51Var.r0 = (qh.b[]) arrayList.toArray(new qh.b[0]);
-        ne0 ne0Var = new ne0(context, c51Var.resourceProvider);
-        c51Var.p0 = ne0Var;
-        ne0Var.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f));
+        oe0 oe0Var = new oe0(context, c51Var.resourceProvider);
+        c51Var.p0 = oe0Var;
+        oe0Var.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f));
         c51Var.p0.setMaxWidth(org.telegram.messenger.g0.L(344.0f));
         c51Var.p0.setClipChildren(false);
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -1029,7 +1029,7 @@ public final class c51 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         ArrayList arrayList;
         int i11 = 0;
-        if (i7 == org.telegram.messenger.ks.z5) {
+        if (i7 == org.telegram.messenger.ks.A5) {
             if (((fi.h6) objArr[0]) == this.D0) {
                 m0();
                 r0();
@@ -1315,7 +1315,7 @@ public final class c51 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         if (view instanceof n41) {
             return;
         }
-        if (!(view instanceof org.telegram.ui.Cells.y6) || this.T.b1()) {
+        if (!(view instanceof org.telegram.ui.Cells.z6) || this.T.b1()) {
             if (view instanceof ng.c) {
                 ((ng.c) view).a();
                 return;
@@ -1355,7 +1355,7 @@ public final class c51 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         eVar2.c(org.telegram.messenger.ks.D);
         eVar2.c(org.telegram.messenger.ks.T);
         eVar2.c(org.telegram.messenger.ks.X2);
-        eVar2.c(org.telegram.messenger.ks.z5);
+        eVar2.c(org.telegram.messenger.ks.A5);
         this.G0 = eVar2;
         fi.p6 R1 = getMessagesController().R1();
         long j3 = this.b;

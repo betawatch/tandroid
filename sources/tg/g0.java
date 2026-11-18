@@ -31,7 +31,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.i8;
+import bi.h8;
 import c8.ma;
 import fi.q7;
 import fi.z2;
@@ -78,7 +78,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.bu0;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.lr;
@@ -93,14 +93,14 @@ import org.telegram.ui.Components.wg;
 import org.telegram.ui.Components.x5;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.Components.zt0;
-import org.telegram.ui.hh0;
 import org.telegram.ui.hn0;
+import org.telegram.ui.ih0;
 import org.telegram.ui.jw0;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.telegram.ui.uv;
 import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
     public float A0;
@@ -119,7 +119,7 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
     public boolean G1;
     public final uv H0;
     public float H1;
-    public final hh0 I0;
+    public final ih0 I0;
     public boolean I1;
     public final c0 J0;
     public final c6 J1;
@@ -385,7 +385,7 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
         this.H0 = uvVar;
         uvVar.setVisibility(4);
         addView(uvVar, ma.e(-1, -1, 51));
-        c0 c0Var = new c0(vp0Var, context, new b5(vp0Var));
+        c0 c0Var = new c0(vp0Var, context, new c5(vp0Var));
         this.J0 = c0Var;
         addView(c0Var);
         if (arrayList2 != null && !arrayList2.isEmpty()) {
@@ -468,9 +468,9 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
             }
         }
         this.J0.setVisibility(4);
-        hh0 hh0Var = new hh0(context, 19);
-        this.I0 = hh0Var;
-        addView(hh0Var);
+        ih0 ih0Var = new ih0(context, 19);
+        this.I0 = ih0Var;
+        addView(ih0Var);
         ?? frameLayout = new FrameLayout(context);
         this.L0 = frameLayout;
         frameLayout.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f));
@@ -774,7 +774,7 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
         j1 j1Var = new j1(context);
         this.f1 = j1Var;
         j1Var.setVisibility(8);
-        j1Var.setOnItemClickListener(new i8(vp0Var, 20));
+        j1Var.setOnItemClickListener(new h8(vp0Var, 20));
         e1Var.setTypefaceListView(j1Var);
         w01Var.addView(j1Var, ma.d(-2, -2.0f, 85, 0.0f, 0.0f, 8.0f, 8.0f));
         Paint paint2 = this.l1;
@@ -854,19 +854,19 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
                     bVar.X0();
                     return;
                 }
-                md0 md0Var = new md0(18);
-                b7.d dVar = (b7.d) md0Var.b;
+                nd0 nd0Var = new nd0(18);
+                b7.d dVar = (b7.d) nd0Var.b;
                 int width = bitmap.getWidth();
                 int height = bitmap.getHeight();
-                md0Var.d = bitmap;
+                nd0Var.d = bitmap;
                 dVar.a = width;
                 dVar.b = height;
                 dVar.c = g0Var.getFrameRotation();
-                if (((ByteBuffer) md0Var.c) == null && ((Bitmap) md0Var.d) == null) {
+                if (((ByteBuffer) nd0Var.c) == null && ((Bitmap) nd0Var.d) == null) {
                     throw new IllegalStateException("Missing image data.  Call either setBitmap or setImageData to specify the image");
                 }
                 try {
-                    SparseArray e12 = bVar.e1(md0Var);
+                    SparseArray e12 = bVar.e1(nd0Var);
                     ArrayList arrayList = new ArrayList();
                     vt0 paintingSize = g0Var.getPaintingSize();
                     for (int i7 = 0; i7 < e12.size(); i7++) {
@@ -1287,7 +1287,7 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
         c0 c0Var;
         m2 m2Var;
         String str;
-        if (i7 != ks.E5 || (c0Var = this.J0) == null) {
+        if (i7 != ks.F5 || (c0Var = this.J0) == null) {
             return;
         }
         for (int i11 = 0; i11 < c0Var.getChildCount(); i11++) {
@@ -1312,7 +1312,7 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         we weVar;
         int i7;
-        hh0 hh0Var;
+        ih0 ih0Var;
         c0 c0Var = this.J0;
         if (view == c0Var) {
             float d = this.J1.d(this.G1);
@@ -1328,7 +1328,7 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
                 canvas.drawRect(0.0f, 0.0f, c0Var.getWidth(), c0Var.getHeight(), paint);
                 canvas.drawRect(0.0f, 0.0f, c0Var.getWidth(), c0Var.getHeight(), this.L1);
                 canvas.restore();
-                if ((view != this.G0 || view == this.H0 || ((view == c0Var && c0Var.getClipChildren()) || (view == (hh0Var = this.I0) && hh0Var.getClipChildren()))) && (weVar = this.r0) != null) {
+                if ((view != this.G0 || view == this.H0 || ((view == c0Var && c0Var.getClipChildren()) || (view == (ih0Var = this.I0) && ih0Var.getClipChildren()))) && (weVar = this.r0) != null) {
                     canvas.save();
                     r10 = this.F0 ? 0 : org.telegram.messenger.g0.m;
                     int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + r10;
@@ -1884,13 +1884,13 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
     @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.e().c(this, ks.E5);
+        ks.e().c(this, ks.F5);
     }
 
     @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.e().n(this, ks.E5);
+        ks.e().n(this, ks.F5);
     }
 
     @Override // org.telegram.ui.Components.bu0, org.telegram.ui.Components.au0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -1920,8 +1920,8 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
         if (mz0Var != null) {
             mz0Var.layout(measuredWidth2, measuredHeight2, c0Var.getMeasuredWidth() + measuredWidth2, c0Var.getMeasuredHeight() + measuredHeight2);
         }
-        hh0 hh0Var = this.I0;
-        hh0Var.layout(ceil, additionalTop, hh0Var.getMeasuredWidth() + ceil, hh0Var.getMeasuredHeight() + additionalTop);
+        ih0 ih0Var = this.I0;
+        ih0Var.layout(ceil, additionalTop, ih0Var.getMeasuredWidth() + ceil, ih0Var.getMeasuredHeight() + additionalTop);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -2125,9 +2125,9 @@ public abstract class g0 extends bu0 implements g1, h, c1, zt0, fs {
             s0(h1Var, null);
             return z11;
         }
-        hh0 hh0Var = g0Var.I0;
-        jVar5.n0 = hh0Var;
-        jVar5.l(hh0Var, true);
+        ih0 ih0Var = g0Var.I0;
+        jVar5.n0 = ih0Var;
+        jVar5.l(ih0Var, true);
         g0Var.J0.bringChildToFront(g0Var.C0);
         j jVar6 = g0Var.C0;
         if (!(jVar6 instanceof m2)) {

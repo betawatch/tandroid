@@ -10,9 +10,9 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import org.telegram.ui.Components.of;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -72,9 +72,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        md0 md0Var = eVar.C;
-        if (md0Var != null) {
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) md0Var.b;
+        nd0 nd0Var = eVar.C;
+        if (nd0Var != null) {
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) nd0Var.b;
             if (a0Var != null) {
                 return ((android.support.v4.media.session.u) a0Var.b).c;
             }

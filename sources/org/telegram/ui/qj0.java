@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qj0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ hk0 a;
@@ -93,8 +93,8 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                 hk0Var.K1[hk0Var.J1].h(null);
                 return;
             }
-            hf0 hf0Var = new hf0(this, 6);
-            k8.a aVar = new k8.a(18, this, hf0Var);
+            if0 if0Var = new if0(this, 6);
+            k8.a aVar = new k8.a(18, this, if0Var);
             if (i14 == 4) {
                 if (hk0Var.f) {
                     obj = hk0Var.e1;
@@ -103,7 +103,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                 } else {
                     obj = hk0Var.Z[0].getText().toString();
                 }
-                ((mj0) hk0Var.C1).c(hk0Var.F, obj, null, null, null, null, null, null, null, null, hf0Var, aVar);
+                ((mj0) hk0Var.C1).c(hk0Var.F, obj, null, null, null, null, null, null, null, null, if0Var, aVar);
             } else if (i14 == 3) {
                 if (hk0Var.f) {
                     i13 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
@@ -114,7 +114,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                     }
                     str = hk0Var.Z[1].getText().toString() + hk0Var.Z[2].getText().toString();
                 }
-                ((mj0) hk0Var.C1).c(hk0Var.F, str, null, null, null, null, null, null, null, null, hf0Var, aVar);
+                ((mj0) hk0Var.C1).c(hk0Var.F, str, null, null, null, null, null, null, null, null, if0Var, aVar);
             } else if (i14 == 2) {
                 if (!hk0Var.p1.isEmpty() || hk0.H0(hk0Var)) {
                     return;
@@ -142,7 +142,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                     if (hashMap2 != null) {
                         hashMap2.clear();
                     }
-                    ((mj0) hk0Var.C1).c(hk0Var.F, null, jSONObject != null ? jSONObject.toString() : null, hk0Var.G, null, hk0Var.j1, hk0Var.k1, hk0Var.l1, null, null, hf0Var, aVar);
+                    ((mj0) hk0Var.C1).c(hk0Var.F, null, jSONObject != null ? jSONObject.toString() : null, hk0Var.G, null, hk0Var.j1, hk0Var.k1, hk0Var.l1, null, null, if0Var, aVar);
                 }
                 jSONObject = null;
                 hashMap = hk0Var.x1;
@@ -151,9 +151,9 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                 hashMap2 = hk0Var.y1;
                 if (hashMap2 != null) {
                 }
-                ((mj0) hk0Var.C1).c(hk0Var.F, null, jSONObject != null ? jSONObject.toString() : null, hk0Var.G, null, hk0Var.j1, hk0Var.k1, hk0Var.l1, null, null, hf0Var, aVar);
+                ((mj0) hk0Var.C1).c(hk0Var.F, null, jSONObject != null ? jSONObject.toString() : null, hk0Var.G, null, hk0Var.j1, hk0Var.k1, hk0Var.l1, null, null, if0Var, aVar);
             } else if (i14 == 1) {
-                if (!c(hf0Var, aVar)) {
+                if (!c(if0Var, aVar)) {
                     return;
                 }
             } else if (i14 == 6) {
@@ -163,7 +163,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                 tL_emailVerificationCode.code = hk0Var.Z[0].getText().toString();
                 verifyemail.verification = tL_emailVerificationCode;
                 i10 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
-                int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(verifyemail, new bi.g2(this, hf0Var, aVar, verifyemail, 16));
+                int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(verifyemail, new bi.g2(this, if0Var, aVar, verifyemail, 16));
                 i11 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
                 i12 = ((org.telegram.ui.ActionBar.h2) hk0Var).classGuid;
@@ -189,7 +189,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(hf0 hf0Var, k8.a aVar) {
+    public final boolean c(if0 if0Var, k8.a aVar) {
         ?? r19;
         int i7;
         char c10;
@@ -248,7 +248,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                             z10 = r15;
                             i12 = i14;
                             i11 = i13;
-                            alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131751343, null), new org.telegram.ui.Components.b1(this, S0, S02, S03, hf0Var, aVar, 1));
+                            alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131751343, null), new org.telegram.ui.Components.b1(this, S0, S02, S03, if0Var, aVar, 1));
                             alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131751324, null), new ai.s1(this, i12, 18));
                             hk0Var.showDialog(u1Var);
                         }
@@ -443,7 +443,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
             if (linearLayout != null && linearLayout.getVisibility() == 0) {
                 yvVar = hk0Var.n1;
             }
-            ((mj0) yj0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, yvVar2, arrayList3, yvVar3, yvVar, hf0Var, aVar);
+            ((mj0) yj0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, yvVar2, arrayList3, yvVar3, yvVar, if0Var, aVar);
             return true;
         }
         jSONObject2 = null;
@@ -467,7 +467,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
         if (linearLayout != null) {
             yvVar = hk0Var.n1;
         }
-        ((mj0) yj0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, yvVar22, arrayList32, yvVar32, yvVar, hf0Var, aVar);
+        ((mj0) yj0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, yvVar22, arrayList32, yvVar32, yvVar, if0Var, aVar);
         return true;
     }
 }

@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class gv extends v4.c0 {
     public boolean I;
@@ -55,7 +55,7 @@ public final class gv extends v4.c0 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M.U, 0.0f);
             this.K = ofFloat;
             ofFloat.addUpdateListener(new ch.w(21, this, bxVar));
-            this.K.addListener(new org.telegram.ui.Cells.x9(this, 25));
+            this.K.addListener(new org.telegram.ui.Cells.y9(this, 25));
             this.K.setDuration(200L);
             this.K.setInterpolator(org.telegram.ui.Components.lr.f);
             this.K.start();
@@ -312,9 +312,9 @@ public final class gv extends v4.c0 {
                                                 if (valueAnimator != null) {
                                                     valueAnimator.cancel();
                                                 }
-                                                org.telegram.ui.Cells.t2 t2Var = jvVar3.H;
-                                                if (t2Var != null) {
-                                                    t2Var.removeCallbacks(jvVar3.d0);
+                                                org.telegram.ui.Cells.u2 u2Var = jvVar3.H;
+                                                if (u2Var != null) {
+                                                    u2Var.removeCallbacks(jvVar3.d0);
                                                 }
                                                 jvVar3.x = 0.0f;
                                                 jvVar3.y = false;

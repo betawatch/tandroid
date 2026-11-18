@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class PollVotesAlert$UserCell extends LinearLayout implements org.telegram.ui.ActionBar.c6 {
     public ArrayList E;
@@ -152,7 +152,7 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
                 }
                 int i7 = org.telegram.ui.ActionBar.n6.z9;
                 df0 df0Var = this.F;
-                org.telegram.ui.Cells.o8 o8Var = df0.M1;
+                org.telegram.ui.Cells.p8 p8Var = df0.M1;
                 m5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.n6.w0(i7, df0Var.J0)));
                 org.telegram.ui.ActionBar.n5 n5Var = this.b;
                 if (n5Var != null) {

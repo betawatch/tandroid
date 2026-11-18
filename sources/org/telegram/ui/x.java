@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -328,7 +328,7 @@ public final /* synthetic */ class x implements org.telegram.messenger.x10 {
             case 6:
                 mm mmVar2 = (mm) this.b;
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.d;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.d;
                 TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
                 u1Var.c(200L);
                 bn bnVar4 = mmVar2.a;
@@ -339,12 +339,12 @@ public final /* synthetic */ class x implements org.telegram.messenger.x10 {
                 if (z10) {
                     zArr[0] = true;
                 } else if (contentsettings != null && contentsettings.sensitive_can_change) {
-                    org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, bnVar4.getParentActivity(), bnVar4.getResourceProvider());
-                    c2Var.setBackground(org.telegram.ui.ActionBar.n6.N0(false));
-                    c2Var.e(org.telegram.messenger.gd.M0(2131748290, null), "", zArr[0], false, false);
-                    c2Var.setPadding(org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
-                    frameLayout.addView(c2Var, c8.ma.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-                    c2Var.setOnClickListener(new k8(i11, zArr));
+                    org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, bnVar4.getParentActivity(), bnVar4.getResourceProvider());
+                    d2Var.setBackground(org.telegram.ui.ActionBar.n6.N0(false));
+                    d2Var.e(org.telegram.messenger.gd.M0(2131748290, null), "", zArr[0], false, false);
+                    d2Var.setPadding(org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
+                    frameLayout.addView(d2Var, c8.ma.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+                    d2Var.setOnClickListener(new k8(i11, zArr));
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar4.getParentActivity(), bnVar4.getResourceProvider());
                 alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(2131748281, null);
@@ -353,7 +353,7 @@ public final /* synthetic */ class x implements org.telegram.messenger.x10 {
                 alertDialog$Builder.a.H = 9;
                 alertDialog$Builder.h(org.telegram.messenger.gd.M0(objArr != false ? 2131748282 : 2131752578, null), null);
                 if (objArr == false) {
-                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131748289, null), new zl(mmVar2, q1Var, zArr, z10, contentsettings));
+                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131748289, null), new zl(mmVar2, r1Var, zArr, z10, contentsettings));
                 }
                 bnVar4.showDialog(alertDialog$Builder.a);
                 break;
@@ -397,15 +397,15 @@ public final /* synthetic */ class x implements org.telegram.messenger.x10 {
                 }
                 break;
             case 10:
-                r90 r90Var = (r90) this.b;
+                s90 s90Var = (s90) this.b;
                 TLRPC.User[] userArr = (TLRPC.User[]) this.c;
                 org.telegram.ui.Components.n20 n20Var = (org.telegram.ui.Components.n20) this.d;
                 Long l13 = (Long) obj;
-                TLRPC.User c22 = l13 == null ? null : org.telegram.messenger.mp.u1(r90Var.b).c2(l13);
+                TLRPC.User c22 = l13 == null ? null : org.telegram.messenger.mp.u1(s90Var.b).c2(l13);
                 userArr[0] = c22;
                 if (c22 == null) {
-                    r90Var.c();
-                    org.telegram.messenger.f3.o(null, 2131747942, r90.d(), null);
+                    s90Var.c();
+                    org.telegram.messenger.f3.o(null, 2131747942, s90.d(), null);
                     break;
                 } else {
                     n20Var.run();

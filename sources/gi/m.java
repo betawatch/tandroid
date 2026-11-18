@@ -11,8 +11,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import bi.d0;
-import bi.e7;
-import bi.i8;
+import bi.d7;
+import bi.h8;
 import bi.s;
 import c8.ma;
 import di.c7;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.y21;
 import org.telegram.ui.d61;
 import v4.z;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class m extends FrameLayout {
     public static final /* synthetic */ int b0 = 0;
@@ -106,7 +106,7 @@ public final class m extends FrameLayout {
         eVar.setLayoutManager(c51Var);
         addView(eVar, ma.c(-1.0f, -1));
         eVar.i(new f(this, i7));
-        eVar.setOnItemClickListener(new i8(this, 7));
+        eVar.setOnItemClickListener(new h8(this, 7));
         eVar.setOnItemLongClickListener(new c7(this, 14));
         as0 as0Var = new as0(context, null);
         this.r = as0Var;
@@ -189,7 +189,7 @@ public final class m extends FrameLayout {
                 boolean z10 = f10 > 0.2f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z10 ? 1.0f : 0.0f);
                 ofFloat.addUpdateListener(new d4(this, i7));
-                ofFloat.addListener(new e7(6, this, z10));
+                ofFloat.addListener(new d7(6, this, z10));
                 ofFloat.setInterpolator(lr.f);
                 ofFloat.setDuration(200L);
                 ofFloat.start();

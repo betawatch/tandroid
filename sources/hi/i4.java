@@ -2,7 +2,7 @@ package hi;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i4 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class i4 implements Runnable {
                 }
                 break;
             case 1:
-                new ug.z0((org.telegram.ui.ActionBar.h2) new bi.z8(this.b, 5), 14, true).show();
+                new ug.z0((org.telegram.ui.ActionBar.h2) new bi.y8(this.b, 5), 14, true).show();
                 break;
             case 2:
                 this.b.w0(false);

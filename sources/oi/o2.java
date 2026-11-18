@@ -34,7 +34,7 @@ import org.telegram.ui.Components.iu0;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.cn0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o2 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -457,7 +457,7 @@ public final /* synthetic */ class o2 implements Runnable {
                 iu0 iu0Var = (iu0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 fj fjVar = (fj) this.f;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.h;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.h;
                 RLottieNative[] rLottieNativeArr = iu0Var.g1;
                 RLottieNative[] rLottieNativeArr2 = iu0Var.j1;
                 int[] iArr = iu0Var.e;
@@ -475,7 +475,7 @@ public final /* synthetic */ class o2 implements Runnable {
                             org.telegram.messenger.g0.g3(new gu0(iu0Var, 1));
                             return;
                         } else {
-                            org.telegram.messenger.g0.g3(new org.telegram.messenger.voip.l0(iu0Var, this.c, i24, q1Var));
+                            org.telegram.messenger.g0.g3(new org.telegram.messenger.voip.l0(iu0Var, this.c, i24, r1Var));
                             return;
                         }
                     }
@@ -504,7 +504,7 @@ public final /* synthetic */ class o2 implements Runnable {
                                     iu0Var.h1[i23 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                org.telegram.messenger.g0.g3(new hu0(document, i24, fjVar, q1Var, tL_messages_stickerSet, 0));
+                                org.telegram.messenger.g0.g3(new hu0(document, i24, fjVar, r1Var, tL_messages_stickerSet, 0));
                                 z12 = true;
                             }
                         }
@@ -709,12 +709,12 @@ public final /* synthetic */ class o2 implements Runnable {
         this.h = aVar;
     }
 
-    public /* synthetic */ o2(iu0 iu0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i7, fj fjVar, org.telegram.ui.Cells.q1 q1Var, boolean z10) {
+    public /* synthetic */ o2(iu0 iu0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i7, fj fjVar, org.telegram.ui.Cells.r1 r1Var, boolean z10) {
         this.d = iu0Var;
         this.e = tL_messages_stickerSet;
         this.b = i7;
         this.f = fjVar;
-        this.h = q1Var;
+        this.h = r1Var;
         this.c = z10;
     }
 

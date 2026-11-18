@@ -30,7 +30,7 @@ import org.telegram.ui.Components.h8;
 import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.sv0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a2 implements Runnable {
     public final /* synthetic */ int a;
@@ -53,9 +53,9 @@ public final /* synthetic */ class a2 implements Runnable {
                 TLParseException.lambda$doThrowOrLog$0((TLParseException) this.b);
                 break;
             case 2:
-                bi.u4 u4Var = (bi.u4) this.b;
+                bi.t4 t4Var = (bi.t4) this.b;
                 Drawable drawable = ActionBarLayout.w1;
-                org.telegram.messenger.g0.g3(u4Var);
+                org.telegram.messenger.g0.g3(t4Var);
                 break;
             case 3:
                 ((org.telegram.ui.ActionBar.q0) this.b).setSelectedForDelete(false);
@@ -169,7 +169,7 @@ public final /* synthetic */ class a2 implements Runnable {
                     n6.j(drawable2);
                     n6.h(drawable2);
                 }
-                ks.e().k(ks.B4, new Object[0]);
+                ks.e().k(ks.C4, new Object[0]);
                 break;
             case 16:
                 h8 h8Var = (h8) n6.e5.remove((fj) this.b);

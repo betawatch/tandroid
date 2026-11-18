@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vo extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public ro E;
@@ -369,8 +369,8 @@ public final class vo extends org.telegram.ui.ActionBar.h2 implements org.telegr
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         f6 f6Var = new f6(2, this);
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.a5.class}, new String[]{"statusColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.y6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.a5.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.b5.class}, new String[]{"statusColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.y6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.b5.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
         return arrayList;
     }
 
@@ -392,13 +392,13 @@ public final class vo extends org.telegram.ui.ActionBar.h2 implements org.telegr
                 int childCount = i7 == 0 ? this.b.getChildCount() : i7 == 1 ? this.b.getHiddenChildCount() : i7 == 2 ? this.b.getCachedChildCount() : this.b.getAttachedScrapChildCount();
                 for (int i10 = 0; i10 < childCount; i10++) {
                     View childAt = i7 == 0 ? this.b.getChildAt(i10) : i7 == 1 ? this.b.V(i10) : i7 == 2 ? this.b.P(i10) : this.b.O(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.a5) {
-                        org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) childAt;
-                        a5Var.P = true;
-                        a5Var.I = x02;
-                        a5Var.J = x03;
+                    if (childAt instanceof org.telegram.ui.Cells.b5) {
+                        org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) childAt;
+                        b5Var.P = true;
+                        b5Var.I = x02;
+                        b5Var.J = x03;
                         if (i7 != 0) {
-                            ((org.telegram.ui.Cells.a5) childAt).d(0);
+                            ((org.telegram.ui.Cells.b5) childAt).d(0);
                         }
                     }
                 }

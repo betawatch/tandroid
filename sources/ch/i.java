@@ -6,10 +6,10 @@ import android.view.KeyEvent;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.x5;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements x10 {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class i implements x10 {
 
     @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
-        r8 r8Var;
+        s8 s8Var;
         switch (this.a) {
             case 0:
                 p pVar = this.b;
@@ -44,8 +44,8 @@ public final /* synthetic */ class i implements x10 {
                             pVar2.I.remove(Long.valueOf(x5Var.documentId));
                             pVar2.J.remove(Long.valueOf(x5Var.documentId));
                             pVar2.b.A(Long.valueOf(x5Var.documentId));
-                            if (x5Var.documentId == -1 && (r8Var = pVar2.r) != null) {
-                                r8Var.setChecked(false);
+                            if (x5Var.documentId == -1 && (s8Var = pVar2.r) != null) {
+                                s8Var.setChecked(false);
                                 pVar2.h.setMaxLength(pVar2.O);
                             }
                             if (bool.booleanValue()) {

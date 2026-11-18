@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vm implements oj0 {
     public final /* synthetic */ int a = 1;
@@ -83,8 +83,8 @@ public final /* synthetic */ class vm implements oj0 {
                     rnVar.U();
                     break;
                 } else {
-                    boolean z14 = view instanceof org.telegram.ui.Cells.r8;
-                    if (z14 || (view instanceof org.telegram.ui.Cells.y5)) {
+                    boolean z14 = view instanceof org.telegram.ui.Cells.s8;
+                    if (z14 || (view instanceof org.telegram.ui.Cells.z5)) {
                         boolean z15 = rnVar.d0;
                         in inVar = rnVar.y;
                         if (inVar != null) {
@@ -110,8 +110,8 @@ public final /* synthetic */ class vm implements oj0 {
                                             v4.f1 K = rnVar2.s.K(i18);
                                             if (K != null) {
                                                 View view2 = K.a;
-                                                if (view2 instanceof org.telegram.ui.Cells.y5) {
-                                                    ((org.telegram.ui.Cells.y5) view2).setDivider(z11);
+                                                if (view2 instanceof org.telegram.ui.Cells.z5) {
+                                                    ((org.telegram.ui.Cells.z5) view2).setDivider(z11);
                                                 }
                                             }
                                             l4Var2.g(w0Var.b);
@@ -166,8 +166,8 @@ public final /* synthetic */ class vm implements oj0 {
                                             v4.f1 K2 = f61Var.K(rnVar.I0);
                                             if (K2 != null) {
                                                 View view3 = K2.a;
-                                                if (view3 instanceof org.telegram.ui.Cells.y5) {
-                                                    ((org.telegram.ui.Cells.y5) view3).setDivider(z10);
+                                                if (view3 instanceof org.telegram.ui.Cells.z5) {
+                                                    ((org.telegram.ui.Cells.z5) view3).setDivider(z10);
                                                 }
                                             }
                                             f61Var.setItemAnimator(fnVar);
@@ -183,8 +183,8 @@ public final /* synthetic */ class vm implements oj0 {
                                         v4.f1 K3 = f61Var.K(rnVar.I0);
                                         if (K3 != null) {
                                             View view4 = K3.a;
-                                            if (view4 instanceof org.telegram.ui.Cells.y5) {
-                                                ((org.telegram.ui.Cells.y5) view4).setDivider(false);
+                                            if (view4 instanceof org.telegram.ui.Cells.z5) {
+                                                ((org.telegram.ui.Cells.z5) view4).setDivider(false);
                                             }
                                         }
                                     }
@@ -222,7 +222,7 @@ public final /* synthetic */ class vm implements oj0 {
                                     for (int i24 = 0; i24 < childCount; i24++) {
                                         v4.f1 T = f61Var.T(f61Var.getChildAt(i24));
                                         if (T.f == 5) {
-                                            ((org.telegram.ui.Cells.a6) T.a).a.a(rnVar.c0, z10);
+                                            ((org.telegram.ui.Cells.b6) T.a).a.a(rnVar.c0, z10);
                                         }
                                     }
                                     z11 = z18;
@@ -248,7 +248,7 @@ public final /* synthetic */ class vm implements oj0 {
                                             if (i26 >= 0) {
                                                 v4.f1 K4 = f61Var.K(i26);
                                                 if (K4 != null) {
-                                                    ((org.telegram.ui.Cells.y5) K4.a).setChecked(false);
+                                                    ((org.telegram.ui.Cells.z5) K4.a).setChecked(false);
                                                 } else {
                                                     l4Var.g(rnVar.E0);
                                                 }
@@ -282,22 +282,22 @@ public final /* synthetic */ class vm implements oj0 {
                             v4.f1 K5 = f61Var.K(i29);
                             if (K5 != null) {
                                 View view5 = K5.a;
-                                if (view5 instanceof org.telegram.ui.Cells.a6) {
-                                    org.telegram.ui.Cells.a6 a6Var = (org.telegram.ui.Cells.a6) view5;
-                                    a6Var.n(rnVar.d0, z10);
-                                    a6Var.r.a(zArr[i29 - rnVar.u0], z15);
-                                    if (a6Var.getTop() > org.telegram.messenger.g0.L(40.0f) && i7 == rnVar.H0 && !rnVar.e0) {
+                                if (view5 instanceof org.telegram.ui.Cells.b6) {
+                                    org.telegram.ui.Cells.b6 b6Var = (org.telegram.ui.Cells.b6) view5;
+                                    b6Var.n(rnVar.d0, z10);
+                                    b6Var.r.a(zArr[i29 - rnVar.u0], z15);
+                                    if (b6Var.getTop() > org.telegram.messenger.g0.L(40.0f) && i7 == rnVar.H0 && !rnVar.e0) {
                                         j30Var.setText(org.telegram.messenger.gd.M0(2131746962, null));
-                                        j30Var.c(a6Var.getCheckBox());
+                                        j30Var.c(b6Var.getCheckBox());
                                         rnVar.e0 = z10;
                                     }
                                 }
                             }
                         }
                         if (z14) {
-                            ((org.telegram.ui.Cells.r8) view).setChecked(z11);
-                        } else if (view instanceof org.telegram.ui.Cells.y5) {
-                            ((org.telegram.ui.Cells.y5) view).setChecked(z11);
+                            ((org.telegram.ui.Cells.s8) view).setChecked(z11);
+                        } else if (view instanceof org.telegram.ui.Cells.z5) {
+                            ((org.telegram.ui.Cells.z5) view).setChecked(z11);
                         }
                         rnVar.Y();
                         break;

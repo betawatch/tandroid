@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class k implements DialogInterface.OnDismissListene
                 }
                 break;
             case 1:
-                q6 q6Var = (q6) this.c;
-                r5 r5Var = (r5) this.d;
+                p6 p6Var = (p6) this.c;
+                q5 q5Var = (q5) this.d;
                 Activity activity2 = (Activity) this.b;
-                org.telegram.messenger.g0.v1(r5Var);
-                org.telegram.messenger.g0.Z2(activity2, q6Var.a.getClassGuid());
+                org.telegram.messenger.g0.v1(q5Var);
+                org.telegram.messenger.g0.Z2(activity2, p6Var.a.getClassGuid());
                 break;
             case 2:
                 ki.s0 s0Var = (ki.s0) this.c;

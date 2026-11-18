@@ -18,8 +18,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.e5;
-import bi.j5;
+import bi.d5;
+import bi.i5;
 import bi.x0;
 import c8.l9;
 import c8.ma;
@@ -126,7 +126,7 @@ import org.telegram.ui.w0;
 import org.telegram.ui.wn;
 import org.telegram.ui.wp;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
@@ -254,19 +254,19 @@ public final /* synthetic */ class i implements Runnable {
         sb0Var.setMaxValue(365);
         sb0Var.setWrapSelectorWheel(false);
         sb0Var.setFormatter(new cr(28));
-        j5 j5Var = new j5(n22, sb0Var, f4Var, g4Var, textView2);
-        sb0Var.setOnValueChangedListener(j5Var);
+        i5 i5Var = new i5(n22, sb0Var, f4Var, g4Var, textView2);
+        sb0Var.setOnValueChangedListener(i5Var);
         f4Var.setMinValue(0);
         f4Var.setMaxValue(23);
         linearLayout.addView(f4Var, ma.l(0.2f, 0, ks.t4));
         f4Var.setFormatter(new cr(29));
-        f4Var.setOnValueChangedListener(j5Var);
+        f4Var.setOnValueChangedListener(i5Var);
         g4Var.setMinValue(0);
         g4Var.setMaxValue(59);
         g4Var.setValue(0);
         g4Var.setFormatter(new k2(0));
         linearLayout.addView(g4Var, ma.l(0.3f, 0, ks.t4));
-        g4Var.setOnValueChangedListener(j5Var);
+        g4Var.setOnValueChangedListener(i5Var);
         if (j3 <= 0 || j3 == 2147483646) {
             meVar = meVar2;
             frameLayout = frameLayout2;
@@ -443,7 +443,7 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 break;
             case 4:
-                ((e5) this.c).a(n6.T0((File) this.b, (String) this.d, (String[]) this.e));
+                ((d5) this.c).a(n6.T0((File) this.b, (String) this.d, (String[]) this.e));
                 break;
             case 5:
                 p6 p6Var = (p6) this.c;
@@ -1186,7 +1186,7 @@ public final /* synthetic */ class i implements Runnable {
                         }
                     }
                     if (g00Var.V1 instanceof TL_chatlists.TL_chatlists_chatlistInvite) {
-                        h2Var2.getMessagesController().i3(true, new e5(g00Var, x10Var, i12, i11));
+                        h2Var2.getMessagesController().i3(true, new d5(g00Var, x10Var, i12, i11));
                         break;
                     } else {
                         if (g00Var.W1 != null) {

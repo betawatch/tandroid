@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -82,7 +82,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 String str = (String) obj;
                 CharacterStyle characterStyle = (CharacterStyle) obj4;
                 fj fjVar = (fj) obj2;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj3;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj3;
                 if (!str.startsWith("video?")) {
                     if (z11 && !z10) {
                         bnVar.getParentActivity();
@@ -90,11 +90,11 @@ public final /* synthetic */ class z1 implements Runnable {
                         break;
                     } else {
                         bnVar.ma(fjVar, false, false);
-                        bnVar.Ca(characterStyle, str, false, q1Var, fjVar);
+                        bnVar.Ca(characterStyle, str, false, r1Var, fjVar);
                         break;
                     }
                 } else {
-                    bnVar.l8(characterStyle, false, fjVar, q1Var);
+                    bnVar.l8(characterStyle, false, fjVar, r1Var);
                     break;
                 }
             default:
@@ -118,12 +118,12 @@ public final /* synthetic */ class z1 implements Runnable {
         }
     }
 
-    public /* synthetic */ z1(bn bnVar, String str, CharacterStyle characterStyle, fj fjVar, org.telegram.ui.Cells.q1 q1Var, boolean z10, boolean z11) {
+    public /* synthetic */ z1(bn bnVar, String str, CharacterStyle characterStyle, fj fjVar, org.telegram.ui.Cells.r1 r1Var, boolean z10, boolean z11) {
         this.d = bnVar;
         this.e = str;
         this.f = characterStyle;
         this.h = fjVar;
-        this.n = q1Var;
+        this.n = r1Var;
         this.b = z10;
         this.c = z11;
     }

@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.nu0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rq implements Runnable {
     public final /* synthetic */ int a;
@@ -761,7 +761,7 @@ public final /* synthetic */ class rq implements Runnable {
                 j10Var.getClass();
                 if (tLObject != null) {
                     j10Var.q0 = ((TLRPC.TL_defaultHistoryTTL) tLObject).period / 60;
-                    j10Var.getNotificationCenter().k(ks.u5, new Object[0]);
+                    j10Var.getNotificationCenter().k(ks.v5, new Object[0]);
                     j10Var.r0 = false;
                     j10Var.s0 = System.currentTimeMillis();
                     return;

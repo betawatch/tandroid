@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.d6;
+import bi.c6;
 import c8.ma;
 import di.t9;
 import hi.f9;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.z41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class v extends b51 implements fs {
     public static org.telegram.ui.ActionBar.u1 e;
@@ -388,8 +388,8 @@ public final class v extends b51 implements fs {
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         z41 z41Var;
         if (i7 == ks.J1 || i7 == ks.k0) {
-            d6 d6Var = this.a;
-            if (d6Var == null || (z41Var = d6Var.g3) == null) {
+            c6 c6Var = this.a;
+            if (c6Var == null || (z41Var = c6Var.g3) == null) {
                 return;
             }
             z41Var.O(true);

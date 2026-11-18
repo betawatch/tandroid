@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.i10;
 import org.telegram.ui.Components.j10;
 import org.telegram.ui.Components.k10;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.of;
 import org.telegram.ui.PhotoViewer;
 import s4.o0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class q extends Handler {
     public final /* synthetic */ int a;
@@ -362,10 +362,10 @@ public final class q extends Handler {
                     return;
                 }
                 h3Var.c = false;
-                b5 b5Var = (b5) h3Var.f;
-                if (b5Var != null) {
+                c5 c5Var = (c5) h3Var.f;
+                if (c5Var != null) {
                     ca.i iVar = (ca.i) h3Var.n;
-                    s4.e eVar = (s4.e) b5Var.a;
+                    s4.e eVar = (s4.e) c5Var.a;
                     s4.u d = eVar.d(h3Var);
                     if (d != null) {
                         eVar.m(d, iVar);

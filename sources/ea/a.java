@@ -101,13 +101,13 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import pa.d;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class a {
-    public static final b5 a;
+    public static final c5 a;
 
     static {
         d dVar = new d();
@@ -196,7 +196,7 @@ public final class a {
         dVar.b(w1.class, fVar);
         dVar.b(j0.class, fVar);
         dVar.d = true;
-        a = new b5(dVar);
+        a = new c5(dVar);
     }
 
     public static c1 a(JsonReader jsonReader) {

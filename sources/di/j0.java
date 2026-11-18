@@ -24,7 +24,7 @@ import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.hq0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j0 implements q10 {
     public final /* synthetic */ int a;
@@ -128,7 +128,7 @@ public final /* synthetic */ class j0 implements q10 {
                         org.telegram.ui.Components.lc.b0(h2Var2).Q(R.raw.info, 36, "").j();
                         break;
                     } else {
-                        h2Var2.showDialog(new li.d0(h2Var2, 0L, arrayList, new bi.e5(h2Var2, chat, i11, 2)));
+                        h2Var2.showDialog(new li.d0(h2Var2, 0L, arrayList, new bi.d5(h2Var2, chat, i11, 2)));
                         break;
                     }
                 }
@@ -141,7 +141,7 @@ public final /* synthetic */ class j0 implements q10 {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 int i14 = this.b;
                 if (tL_error3 != null) {
-                    org.telegram.messenger.g0.g3(new bi.u4(a1Var2, i14, tL_error3, tL_channels_joinChannel, 14));
+                    org.telegram.messenger.g0.g3(new bi.t4(a1Var2, i14, tL_error3, tL_channels_joinChannel, 14));
                     break;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {

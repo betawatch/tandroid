@@ -43,7 +43,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.k2;
-import org.telegram.ui.Cells.f5;
+import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.f2;
 import org.telegram.ui.Components.fg0;
@@ -56,7 +56,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.qk;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -330,7 +330,7 @@ public final /* synthetic */ class r implements Runnable {
                             arrayList5.add(bVar2);
                         }
                         edit.apply();
-                        ks.f(cVar.c).k(ks.g5, new Object[0]);
+                        ks.f(cVar.c).k(ks.h5, new Object[0]);
                         SharedPreferences.Editor edit2 = cVar.d().edit();
                         long j3 = tL_savedRingtones.hash;
                         yf.c.g = j3;
@@ -369,13 +369,13 @@ public final /* synthetic */ class r implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
                 int i16 = eVar.a;
                 if (tL_error.text.equals("RINGTONE_DURATION_TOO_LONG")) {
-                    ks.e().k(ks.R4, 4, gd.a0("TooLongError", null, 2131743806, new Object[0]), gd.a0("ErrorRingtoneDurationTooLong", null, 2131751093, Integer.valueOf(mp.u1(i16).n4)));
+                    ks.e().k(ks.S4, 4, gd.a0("TooLongError", null, 2131743806, new Object[0]), gd.a0("ErrorRingtoneDurationTooLong", null, 2131751093, Integer.valueOf(mp.u1(i16).n4)));
                     return;
                 } else if (tL_error.text.equals("RINGTONE_SIZE_TOO_BIG")) {
-                    ks.e().k(ks.R4, 4, gd.a0("TooLargeError", null, 2131743807, new Object[0]), gd.a0("ErrorRingtoneSizeTooBig", null, 2131751091, Integer.valueOf(mp.u1(i16).o4 / 1024)));
+                    ks.e().k(ks.S4, 4, gd.a0("TooLargeError", null, 2131743807, new Object[0]), gd.a0("ErrorRingtoneSizeTooBig", null, 2131751091, Integer.valueOf(mp.u1(i16).o4 / 1024)));
                     return;
                 } else {
-                    ks.e().k(ks.R4, 4, gd.a0("InvalidFormatError", null, 2131748989, new Object[0]), gd.M0(2131751092, null));
+                    ks.e().k(ks.S4, 4, gd.a0("InvalidFormatError", null, 2131748989, new Object[0]), gd.M0(2131751092, null));
                     return;
                 }
             case 17:
@@ -392,10 +392,10 @@ public final /* synthetic */ class r implements Runnable {
                 return;
             case 20:
                 zh.l lVar2 = (zh.l) this.b;
-                f5 f5Var = (f5) this.c;
+                g5 g5Var = (g5) this.c;
                 int i17 = lVar2.k;
                 h2 h2Var = lVar2.g;
-                TLRPC.TL_chatInviteImporter importer = f5Var.getImporter();
+                TLRPC.TL_chatInviteImporter importer = g5Var.getImporter();
                 lVar2.r = importer;
                 LongSparseArray longSparseArray = lVar2.d;
                 TLRPC.User user = (TLRPC.User) longSparseArray.get(importer.user_id);
@@ -416,10 +416,10 @@ public final /* synthetic */ class r implements Runnable {
                     return;
                 }
                 if (lVar2.s == null) {
-                    zh.k kVar = new zh.k(lVar2, h2Var.getParentActivity(), (ck0) f5Var.getParent(), h2Var.getResourceProvider(), lVar2.a);
+                    zh.k kVar = new zh.k(lVar2, h2Var.getParentActivity(), (ck0) g5Var.getParent(), h2Var.getResourceProvider(), lVar2.a);
                     lVar2.s = kVar;
                     TLRPC.TL_chatInviteImporter tL_chatInviteImporter = lVar2.r;
-                    q9 avatarImageView = f5Var.getAvatarImageView();
+                    q9 avatarImageView = g5Var.getAvatarImageView();
                     TextView textView = kVar.e;
                     fg0 fg0Var = kVar.h;
                     kVar.r = tL_chatInviteImporter;

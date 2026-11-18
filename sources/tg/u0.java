@@ -30,7 +30,7 @@ import org.telegram.ui.Components.ca;
 import org.telegram.ui.Components.ga0;
 import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class u0 extends j {
     public int A0;
@@ -216,14 +216,14 @@ public abstract class u0 extends j {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public org.telegram.ui.Cells.q1 getCell() {
+    public org.telegram.ui.Cells.r1 getCell() {
         p0 p0Var = this.s0;
         if (p0Var == null) {
             return null;
         }
         for (int i7 = 0; i7 < p0Var.getChildCount(); i7++) {
-            if (p0Var.getChildAt(i7) instanceof org.telegram.ui.Cells.q1) {
-                return (org.telegram.ui.Cells.q1) p0Var.getChildAt(i7);
+            if (p0Var.getChildAt(i7) instanceof org.telegram.ui.Cells.r1) {
+                return (org.telegram.ui.Cells.r1) p0Var.getChildAt(i7);
             }
         }
         return null;
@@ -311,38 +311,38 @@ public abstract class u0 extends j {
                 return org.telegram.messenger.g0.L(bz.Y0);
             }
             View childAt = p0Var.getChildAt(i7);
-            boolean z10 = childAt instanceof org.telegram.ui.Cells.q1;
+            boolean z10 = childAt instanceof org.telegram.ui.Cells.r1;
             n4 n4Var = this.r0;
             if (z10) {
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                if (q1Var.getMessageObject() == null || !q1Var.getMessageObject().h4() || q1Var.getPhotoImage() == null) {
-                    float x10 = childAt.getX() + n4Var.getX() + q1Var.getBackgroundDrawableLeft() + org.telegram.messenger.g0.L(1.0f);
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt;
+                if (r1Var.getMessageObject() == null || !r1Var.getMessageObject().h4() || r1Var.getPhotoImage() == null) {
+                    float x10 = childAt.getX() + n4Var.getX() + r1Var.getBackgroundDrawableLeft() + org.telegram.messenger.g0.L(1.0f);
                     if (this.u0 == null) {
                         x10 += org.telegram.messenger.g0.L(8.0f);
                     }
-                    float x11 = ((childAt.getX() + n4Var.getX()) + q1Var.getBackgroundDrawableRight()) - org.telegram.messenger.g0.L(1.66f);
-                    float L = org.telegram.messenger.g0.L(2.0f) + childAt.getY() + n4Var.getY() + q1Var.getBackgroundDrawableTop();
-                    y10 = ((childAt.getY() + n4Var.getY()) + q1Var.getBackgroundDrawableBottom()) - org.telegram.messenger.g0.L(1.0f);
+                    float x11 = ((childAt.getX() + n4Var.getX()) + r1Var.getBackgroundDrawableRight()) - org.telegram.messenger.g0.L(1.66f);
+                    float L = org.telegram.messenger.g0.L(2.0f) + childAt.getY() + n4Var.getY() + r1Var.getBackgroundDrawableTop();
+                    y10 = ((childAt.getY() + n4Var.getY()) + r1Var.getBackgroundDrawableBottom()) - org.telegram.messenger.g0.L(1.0f);
                     f10 = x10;
                     f11 = x11;
                     f12 = L;
                 } else {
-                    f10 = q1Var.getX() + n4Var.getX() + q1Var.getPhotoImage().L0;
-                    f11 = q1Var.getPhotoImage().y() + q1Var.getX() + n4Var.getX();
-                    f12 = q1Var.getY() + n4Var.getY() + q1Var.getPhotoImage().M0;
-                    y10 = q1Var.getPhotoImage().A() + q1Var.getY() + n4Var.getY();
+                    f10 = r1Var.getX() + n4Var.getX() + r1Var.getPhotoImage().L0;
+                    f11 = r1Var.getPhotoImage().y() + r1Var.getX() + n4Var.getX();
+                    f12 = r1Var.getY() + n4Var.getY() + r1Var.getPhotoImage().M0;
+                    y10 = r1Var.getPhotoImage().A() + r1Var.getY() + n4Var.getY();
                 }
                 f13 = Math.min(Math.min(f13, f10), f11);
                 f16 = Math.max(Math.max(f16, f10), f11);
                 f15 = Math.min(Math.min(f15, f12), y10);
                 f14 = Math.max(Math.max(f14, f12), y10);
-            } else if (childAt instanceof org.telegram.ui.Cells.u0) {
-                org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) childAt;
-                if (u0Var.U()) {
-                    float x12 = u0Var.getX() + n4Var.getX() + u0Var.getBoundsLeft();
-                    float x13 = u0Var.getX() + n4Var.getX() + u0Var.getBoundsRight();
-                    float y11 = u0Var.getY() + n4Var.getY();
-                    float y12 = u0Var.getY() + n4Var.getY() + u0Var.getMeasuredHeight();
+            } else if (childAt instanceof org.telegram.ui.Cells.v0) {
+                org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) childAt;
+                if (v0Var.S()) {
+                    float x12 = v0Var.getX() + n4Var.getX() + v0Var.getBoundsLeft();
+                    float x13 = v0Var.getX() + n4Var.getX() + v0Var.getBoundsRight();
+                    float y11 = v0Var.getY() + n4Var.getY();
+                    float y12 = v0Var.getY() + n4Var.getY() + v0Var.getMeasuredHeight();
                     f13 = Math.min(Math.min(f13, x12), x13);
                     f16 = Math.max(Math.max(f16, x12), x13);
                     f15 = Math.min(Math.min(f15, y11), y12);

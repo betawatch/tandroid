@@ -22,13 +22,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.t9;
+import org.telegram.ui.Cells.j9;
+import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class l5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
+public final class l5 extends x implements org.telegram.ui.ActionBar.c6, i9 {
     public boolean E;
     public a3 F;
     public d6 G;
@@ -112,7 +112,7 @@ public final class l5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
             return;
         }
         a3 a3Var = this.F;
-        i9 textSelectionHelper = a3Var != null ? a3Var.a.getTextSelectionHelper() : null;
+        j9 textSelectionHelper = a3Var != null ? a3Var.a.getTextSelectionHelper() : null;
         if (textSelectionHelper == null) {
             return;
         }
@@ -120,9 +120,9 @@ public final class l5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
         arrayList.clear();
         k(arrayList);
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            t9 t9Var = (t9) arrayList.get(i7);
+            u9 u9Var = (u9) arrayList.get(i7);
             canvas.save();
-            canvas.translate(t9Var.getX(), t9Var.getY());
+            canvas.translate(u9Var.getX(), u9Var.getY());
             textSelectionHelper.Z(canvas, this, i7);
             canvas.restore();
         }
@@ -266,7 +266,7 @@ public final class l5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
         }
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.q9
+    @Override // android.view.View, org.telegram.ui.Cells.r9
     public final void invalidate() {
         super.invalidate();
         n5 n5Var = this.w;
@@ -360,7 +360,7 @@ public final class l5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         e1 e1Var;
         Layout layout;

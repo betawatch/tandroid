@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -56,15 +56,15 @@ public final /* synthetic */ class z3 implements ValueAnimator.AnimatorUpdateLis
                         e7Var.b.setTranslationY(r7.getHeight() * interpolation);
                     }
                     if (e7Var.p != null && !rectF2.isEmpty()) {
-                        org.telegram.ui.Cells.u0 K8 = e7Var.e.K8(e7Var.f);
-                        org.telegram.ui.Cells.u0 u0Var = e7Var.p;
-                        if (K8 != u0Var) {
-                            u0Var.J0.i(false);
+                        org.telegram.ui.Cells.v0 K8 = e7Var.e.K8(e7Var.f);
+                        org.telegram.ui.Cells.v0 v0Var = e7Var.p;
+                        if (K8 != v0Var) {
+                            v0Var.J0.i(false);
                             e7Var.p = K8;
                         }
-                        org.telegram.ui.Cells.u0 u0Var2 = e7Var.p;
-                        if (u0Var2 != null && !e7Var.s) {
-                            u0Var2.J0.i(true);
+                        org.telegram.ui.Cells.v0 v0Var2 = e7Var.p;
+                        if (v0Var2 != null && !e7Var.s) {
+                            v0Var2.J0.i(true);
                             l4 l4Var = e7Var.p.J0.m;
                             if (l4Var != null && l4Var.isAttachedToWindow()) {
                                 rectF2.set(e7Var.c(l4Var));

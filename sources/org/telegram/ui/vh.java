@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vh implements org.telegram.ui.Components.rj0 {
     public final /* synthetic */ bn a;
@@ -30,24 +30,24 @@ public final class vh implements org.telegram.ui.Components.rj0 {
             z10 = ((org.telegram.ui.ActionBar.h2) bnVar).inPreviewMode;
             if (!z10 && !bnVar.mb) {
                 bnVar.R4 = true;
-                if (view instanceof org.telegram.ui.Cells.u0) {
-                    org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) view;
-                    org.telegram.messenger.fj messageObject = u0Var.getMessageObject();
+                if (view instanceof org.telegram.ui.Cells.v0) {
+                    org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
+                    org.telegram.messenger.fj messageObject = v0Var.getMessageObject();
                     if (messageObject != null) {
-                        if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && u0Var.getMessageObject().D != 21 && !u0Var.getMessageObject().X4() && u0Var.getMessageObject().D != 30) {
+                        if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && v0Var.getMessageObject().D != 21 && !v0Var.getMessageObject().X4() && v0Var.getMessageObject().D != 30) {
                             z11 = false;
                             kVar = ((org.telegram.ui.ActionBar.h2) bnVar).actionBar;
                             if (!kVar.y() || (bnVar.Y9() && !z11)) {
                                 view2 = view;
-                                bn.k2(bnVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).E2(f10) : false, f10, f11);
+                                bn.k2(bnVar, view2, view2 instanceof org.telegram.ui.Cells.r1 ? !((org.telegram.ui.Cells.r1) view2).E2(f10) : false, f10, f11);
                                 z12 = true;
                             } else {
                                 view2 = view;
                                 z12 = bnVar.Y7(view2, false, true, f10, f11, true, true, false);
                             }
-                            if (view2 instanceof org.telegram.ui.Cells.q1) {
-                                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view2;
-                                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().D != 27) {
+                            if (view2 instanceof org.telegram.ui.Cells.r1) {
+                                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) view2;
+                                if (r1Var.getMessageObject() != null && r1Var.getMessageObject().D != 27) {
                                     bn.l2(bnVar, i7);
                                     return true;
                                 }
@@ -61,9 +61,9 @@ public final class vh implements org.telegram.ui.Components.rj0 {
                 if (kVar.y()) {
                 }
                 view2 = view;
-                bn.k2(bnVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).E2(f10) : false, f10, f11);
+                bn.k2(bnVar, view2, view2 instanceof org.telegram.ui.Cells.r1 ? !((org.telegram.ui.Cells.r1) view2).E2(f10) : false, f10, f11);
                 z12 = true;
-                if (view2 instanceof org.telegram.ui.Cells.q1) {
+                if (view2 instanceof org.telegram.ui.Cells.r1) {
                 }
                 return z12;
             }

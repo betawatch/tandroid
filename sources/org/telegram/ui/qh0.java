@@ -1,38 +1,63 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qh0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rh0 b;
-    public final /* synthetic */ String c;
+public final class qh0 extends rg.a {
+    public int c;
+    public int d;
+    public CharSequence e;
+    public CharSequence f;
+    public uh0 g;
+    public int h;
+    public boolean i;
 
-    public /* synthetic */ qh0(rh0 rh0Var, String str, int i7) {
-        this.a = i7;
-        this.b = rh0Var;
-        this.c = str;
+    public static qh0 b(int i7, String str, boolean z10) {
+        qh0 qh0Var = new qh0(1, true);
+        qh0Var.c = i7;
+        qh0Var.e = str;
+        qh0Var.i = z10;
+        return qh0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                rh0 rh0Var = this.b;
-                String str = this.c;
-                rh0Var.getClass();
-                org.telegram.messenger.g0.g3(new qh0(rh0Var, str, 1));
-                break;
-            default:
-                rh0 rh0Var2 = this.b;
-                String str2 = this.c;
-                jg.z1 z1Var = rh0Var2.h;
-                int i7 = rh0Var2.n.s;
-                z1Var.g(str2, true, (i7 == 1 || i7 == 3) ? false : true, true, false, 0L, false, 0, 0);
-                Utilities.g.c(new lc0(rh0Var2, str2, new ArrayList(rh0Var2.n.x), 10));
-                break;
+    public static qh0 c(int i7, String str, String str2) {
+        qh0 qh0Var = new qh0(5, true);
+        qh0Var.c = i7;
+        qh0Var.e = str;
+        qh0Var.f = str2;
+        return qh0Var;
+    }
+
+    public static qh0 d(int i7, String str) {
+        qh0 qh0Var = new qh0(4, true);
+        qh0Var.c = i7;
+        qh0Var.e = str;
+        return qh0Var;
+    }
+
+    @Override // rg.a
+    public final boolean a(rg.a aVar) {
+        if (this == aVar) {
+            return true;
         }
+        if (qh0.class != aVar.getClass()) {
+            return false;
+        }
+        qh0 qh0Var = (qh0) aVar;
+        return this.c == qh0Var.c && this.d == qh0Var.d && this.h == qh0Var.h && this.i == qh0Var.i && Objects.equals(this.e, qh0Var.e) && Objects.equals(this.f, qh0Var.f) && this.g == qh0Var.g;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && qh0.class == obj.getClass()) {
+            qh0 qh0Var = (qh0) obj;
+            if (this.c == qh0Var.c && this.h == qh0Var.h && ((this.a == 8 || (this.d == qh0Var.d && Objects.equals(this.e, qh0Var.e) && (this.a == 6 || Objects.equals(this.f, qh0Var.f)))) && this.g == qh0Var.g)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

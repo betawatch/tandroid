@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0, org.telegram.ui.Components.ci0, org.telegram.ui.Components.z4, org.telegram.messenger.nc, u4, org.telegram.ui.ActionBar.r1, org.telegram.messenger.or, org.telegram.ui.Components.pj0, ww, oa1, org.telegram.ui.Components.voip.c3, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -134,14 +134,14 @@ public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0,
         switch (this.a) {
             case 6:
                 mm mmVar = (mm) this.b;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.c;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.c;
                 TLRPC.User user = (TLRPC.User) this.d;
                 int ordinal = c5Var.ordinal();
                 if (ordinal == 0) {
                     mmVar.o(user, false);
                     break;
                 } else if (ordinal == 3) {
-                    mmVar.k(q1Var, user);
+                    mmVar.k(r1Var, user);
                     break;
                 } else if (ordinal == 4) {
                     mmVar.d(user);
@@ -154,7 +154,7 @@ public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0,
             default:
                 mm mmVar2 = (mm) this.b;
                 TLRPC.Chat chat = (TLRPC.Chat) this.c;
-                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) this.d;
+                org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) this.d;
                 int ordinal2 = c5Var.ordinal();
                 if (ordinal2 == 0) {
                     mmVar2.n(chat);
@@ -168,7 +168,7 @@ public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0,
                         break;
                     }
                 } else {
-                    mmVar2.j(q1Var2, chat, 0, false);
+                    mmVar2.j(r1Var2, chat, 0, false);
                     break;
                 }
                 break;
@@ -182,7 +182,7 @@ public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0,
         if (org.telegram.messenger.fj.B1(message.peer_id) != ml0Var.m0.id || !(message.action instanceof TLRPC.TL_messageActionPaymentSent)) {
             return false;
         }
-        org.telegram.messenger.g0.g3(new jg0(ml0Var, s4Var, activity, message, 2));
+        org.telegram.messenger.g0.g3(new kg0(ml0Var, s4Var, activity, message, 2));
         return true;
     }
 
@@ -414,7 +414,7 @@ public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0,
         j3.Q(i12);
         yc1.c = j3;
         j3.show();
-        g11.setOnClickListener(new bi.f5(g11, i10, j3, 23));
+        g11.setOnClickListener(new bi.e5(g11, i10, j3, 23));
     }
 
     @Override // org.telegram.messenger.or
@@ -522,7 +522,7 @@ public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0,
         e7 e7Var = (e7) ck0Var.getAdapter();
         final l7 l7Var = (l7) e7Var.e.get(i7);
         final int i10 = 1;
-        if (!(view instanceof j7) && !(view instanceof org.telegram.ui.Cells.o7)) {
+        if (!(view instanceof j7) && !(view instanceof org.telegram.ui.Cells.p7)) {
             h7 h7Var = s7Var.G;
             if (h7Var != null) {
                 h7Var.m(l7Var.c, l7Var.d, true);
@@ -530,12 +530,12 @@ public final /* synthetic */ class z6 implements org.telegram.ui.Components.rj0,
             return true;
         }
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(s7Var.getContext(), null);
-        if (view instanceof org.telegram.ui.Cells.o7) {
+        if (view instanceof org.telegram.ui.Cells.p7) {
             org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_view_file, org.telegram.messenger.gd.M0(2131752637, null), false, null).setOnClickListener(new fi.d0(c7Var, l7Var, e7Var, ck0Var, view, 5));
             str = null;
         } else {
             final int i11 = 0;
-            if (((j7) view).b.getChildAt(0) instanceof org.telegram.ui.Cells.g7) {
+            if (((j7) view).b.getChildAt(0) instanceof org.telegram.ui.Cells.h7) {
                 str = null;
                 org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_played, org.telegram.messenger.gd.M0(2131747027, null), false, null).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.a7
                     @Override // android.view.View.OnClickListener

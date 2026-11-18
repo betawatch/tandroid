@@ -20,7 +20,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -85,44 +85,44 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 new t0(this.c, (org.telegram.ui.ActionBar.i6) obj, this.b, (TL_stars.StarGift) obj3, (ArrayList) obj2, null, true).show();
                 break;
             default:
-                final a9 a9Var = (a9) obj3;
+                final z8 z8Var = (z8) obj3;
                 Runnable runnable2 = (Runnable) obj2;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-                int i11 = a9Var.U1;
-                u8 u8Var = a9Var.p2;
-                hi.d dVar = a9Var.k2;
+                int i11 = z8Var.U1;
+                t8 t8Var = z8Var.p2;
+                hi.d dVar = z8Var.k2;
                 if (!dVar.R) {
                     int i12 = 5;
-                    if (a9Var.Z1 != null) {
-                        y yVar2 = new y(context, a9Var.J0, new x(j3, a9Var.m2, a9Var.e1()), a9Var.Z1);
+                    if (z8Var.Z1 != null) {
+                        y yVar2 = new y(context, z8Var.J0, new x(j3, z8Var.m2, z8Var.e1()), z8Var.Z1);
                         yVar2.show();
                         yVar2.j2 = runnable2;
-                        org.telegram.messenger.g0.v1(u8Var);
-                        a9Var.dismiss();
-                        if (!a9Var.t2) {
-                            org.telegram.messenger.g0.h3(new o8(a9Var, i12), 500L);
+                        org.telegram.messenger.g0.v1(t8Var);
+                        z8Var.dismiss();
+                        if (!z8Var.t2) {
+                            org.telegram.messenger.g0.h3(new n8(z8Var, i12), 500L);
                             break;
                         }
                     } else {
                         dVar.setLoading(true);
-                        org.telegram.ui.Cells.f3 f3Var = u8Var.b;
-                        if (f3Var.getEmojiPadding() > 0) {
-                            f3Var.k(true);
-                        } else if (f3Var.w) {
-                            f3Var.d();
+                        org.telegram.ui.Cells.g3 g3Var = t8Var.b;
+                        if (g3Var.getEmojiPadding() > 0) {
+                            g3Var.k(true);
+                        } else if (g3Var.w) {
+                            g3Var.d();
                         }
                         final int i13 = 0;
                         if (starGift != null) {
-                            di.x8.y(i11, false).i(a9Var.Y1, a9Var.m2, a9Var.n2, a9Var.V1, a9Var.e1(), new m8(a9Var, i10));
+                            di.x8.y(i11, false).i(z8Var.Y1, z8Var.m2, z8Var.n2, z8Var.V1, z8Var.e1(), new l8(z8Var, i10));
                             break;
                         } else {
-                            ug.j jVar = a9Var.a2;
-                            final TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(a9Var.V1));
+                            ug.j jVar = z8Var.a2;
+                            final TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(z8Var.V1));
                             if (c22 == null) {
                                 dVar.setLoading(false);
                                 break;
                             } else {
-                                if (a9Var.o2) {
+                                if (z8Var.o2) {
                                     TLObject tLObject2 = jVar.c;
                                     TLObject tLObject3 = jVar.d;
                                     if (tLObject2 != null || tLObject3 != null) {
@@ -134,45 +134,45 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                                         if (!(tLObject instanceof TLRPC.TL_premiumGiftCodeOption)) {
                                             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) tLObject;
                                             if (!"XTR".equalsIgnoreCase(tL_premiumGiftCodeOption.currency)) {
-                                                wg.s.k(new ArrayList(Arrays.asList(c22)), tL_premiumGiftCodeOption, null, a9Var.e1(), new z8(a9Var, 0), new ai.v1(i12, a9Var, c22), new ai.g0(a9Var, 5));
+                                                wg.s.k(new ArrayList(Arrays.asList(c22)), tL_premiumGiftCodeOption, null, z8Var.e1(), new y8(z8Var, 0), new ai.v1(i12, z8Var, c22), new ai.g0(z8Var, 5));
                                                 break;
                                             } else {
-                                                di.x8.y(i11, false).g(a9Var.V1, tL_premiumGiftCodeOption, a9Var.e1(), new q10() { // from class: bi.n8
+                                                di.x8.y(i11, false).g(z8Var.V1, tL_premiumGiftCodeOption, z8Var.e1(), new q10() { // from class: bi.m8
                                                     @Override // org.telegram.messenger.q10
                                                     public final void a(Object obj4, Object obj5) {
                                                         int i14 = i10;
                                                         TLRPC.User user = c22;
-                                                        a9 a9Var2 = a9Var;
+                                                        z8 z8Var2 = z8Var;
                                                         Boolean bool = (Boolean) obj4;
                                                         String str = (String) obj5;
                                                         switch (i14) {
                                                             case 0:
                                                                 if (bool.booleanValue()) {
-                                                                    Runnable runnable3 = a9Var2.c2;
+                                                                    Runnable runnable3 = z8Var2.c2;
                                                                     if (runnable3 != null) {
                                                                         runnable3.run();
                                                                     }
-                                                                    org.telegram.messenger.g0.v1(a9Var2.p2);
-                                                                    a9Var2.dismiss();
-                                                                    org.telegram.messenger.g0.h3(new q8(1, user), 250L);
+                                                                    org.telegram.messenger.g0.v1(z8Var2.p2);
+                                                                    z8Var2.dismiss();
+                                                                    org.telegram.messenger.g0.h3(new p8(1, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new lc(a9Var2.F, a9Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
+                                                                    new lc(z8Var2.F, z8Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
                                                                 }
-                                                                a9Var2.k2.setLoading(false);
+                                                                z8Var2.k2.setLoading(false);
                                                                 break;
                                                             default:
                                                                 if (bool.booleanValue()) {
-                                                                    Runnable runnable4 = a9Var2.c2;
+                                                                    Runnable runnable4 = z8Var2.c2;
                                                                     if (runnable4 != null) {
                                                                         runnable4.run();
                                                                     }
-                                                                    org.telegram.messenger.g0.v1(a9Var2.p2);
-                                                                    a9Var2.dismiss();
-                                                                    org.telegram.messenger.g0.h3(new q8(2, user), 250L);
+                                                                    org.telegram.messenger.g0.v1(z8Var2.p2);
+                                                                    z8Var2.dismiss();
+                                                                    org.telegram.messenger.g0.h3(new p8(2, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new lc(a9Var2.F, a9Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
+                                                                    new lc(z8Var2.F, z8Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
                                                                 }
-                                                                a9Var2.k2.setLoading(false);
+                                                                z8Var2.k2.setLoading(false);
                                                                 break;
                                                         }
                                                     }
@@ -188,10 +188,10 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                                                         tL_inputStorePaymentGiftPremium.user_id = mp.u1(i11).s1(c22);
                                                         tL_inputStorePaymentGiftPremium.currency = jVar.h.a().c;
                                                         tL_inputStorePaymentGiftPremium.amount = (long) (Math.pow(10.0d, org.telegram.messenger.r1.i().h(tL_inputStorePaymentGiftPremium.currency)) * (r5.b / Math.pow(10.0d, 6.0d)));
-                                                        org.telegram.messenger.r1.i().d(jVar.a.store_product, new p8(a9Var, i13));
+                                                        org.telegram.messenger.r1.i().d(jVar.a.store_product, new o8(z8Var, i13));
                                                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                                                         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentGiftPremium;
-                                                        ConnectionsManager.getInstance(i11).sendRequest(tL_payments_canPurchaseStore, new m1(a9Var, tL_inputStorePaymentGiftPremium, tL_payments_canPurchaseStore, i10));
+                                                        ConnectionsManager.getInstance(i11).sendRequest(tL_payments_canPurchaseStore, new m1(z8Var, tL_inputStorePaymentGiftPremium, tL_payments_canPurchaseStore, i10));
                                                         break;
                                                     }
                                                 } else {
@@ -200,53 +200,53 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                                                         Uri parse = Uri.parse(tL_premiumGiftOption.bot_url);
                                                         if (parse.getHost().equals("t.me")) {
                                                             if (parse.getPath().startsWith("/$") || parse.getPath().startsWith("/invoice/")) {
-                                                                launchActivity.Y0 = new o8(a9Var, i13);
+                                                                launchActivity.Y0 = new n8(z8Var, i13);
                                                             } else {
                                                                 launchActivity.X0 = true;
                                                             }
                                                         }
                                                         vf.c.t(launchActivity, jVar.a.bot_url);
-                                                        a9Var.dismiss();
+                                                        z8Var.dismiss();
                                                         break;
                                                     }
                                                 }
                                             } else {
-                                                di.x8.y(i11, false).g(a9Var.V1, tL_premiumGiftOption, a9Var.e1(), new q10() { // from class: bi.n8
+                                                di.x8.y(i11, false).g(z8Var.V1, tL_premiumGiftOption, z8Var.e1(), new q10() { // from class: bi.m8
                                                     @Override // org.telegram.messenger.q10
                                                     public final void a(Object obj4, Object obj5) {
                                                         int i14 = i13;
                                                         TLRPC.User user = c22;
-                                                        a9 a9Var2 = a9Var;
+                                                        z8 z8Var2 = z8Var;
                                                         Boolean bool = (Boolean) obj4;
                                                         String str = (String) obj5;
                                                         switch (i14) {
                                                             case 0:
                                                                 if (bool.booleanValue()) {
-                                                                    Runnable runnable3 = a9Var2.c2;
+                                                                    Runnable runnable3 = z8Var2.c2;
                                                                     if (runnable3 != null) {
                                                                         runnable3.run();
                                                                     }
-                                                                    org.telegram.messenger.g0.v1(a9Var2.p2);
-                                                                    a9Var2.dismiss();
-                                                                    org.telegram.messenger.g0.h3(new q8(1, user), 250L);
+                                                                    org.telegram.messenger.g0.v1(z8Var2.p2);
+                                                                    z8Var2.dismiss();
+                                                                    org.telegram.messenger.g0.h3(new p8(1, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new lc(a9Var2.F, a9Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
+                                                                    new lc(z8Var2.F, z8Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
                                                                 }
-                                                                a9Var2.k2.setLoading(false);
+                                                                z8Var2.k2.setLoading(false);
                                                                 break;
                                                             default:
                                                                 if (bool.booleanValue()) {
-                                                                    Runnable runnable4 = a9Var2.c2;
+                                                                    Runnable runnable4 = z8Var2.c2;
                                                                     if (runnable4 != null) {
                                                                         runnable4.run();
                                                                     }
-                                                                    org.telegram.messenger.g0.v1(a9Var2.p2);
-                                                                    a9Var2.dismiss();
-                                                                    org.telegram.messenger.g0.h3(new q8(2, user), 250L);
+                                                                    org.telegram.messenger.g0.v1(z8Var2.p2);
+                                                                    z8Var2.dismiss();
+                                                                    org.telegram.messenger.g0.h3(new p8(2, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new lc(a9Var2.F, a9Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
+                                                                    new lc(z8Var2.F, z8Var2.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
                                                                 }
-                                                                a9Var2.k2.setLoading(false);
+                                                                z8Var2.k2.setLoading(false);
                                                                 break;
                                                         }
                                                     }
@@ -271,9 +271,9 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ a0(a9 a9Var, long j3, Context context, Runnable runnable, TL_stars.StarGift starGift) {
+    public /* synthetic */ a0(z8 z8Var, long j3, Context context, Runnable runnable, TL_stars.StarGift starGift) {
         this.a = 3;
-        this.f = a9Var;
+        this.f = z8Var;
         this.b = j3;
         this.c = context;
         this.e = runnable;

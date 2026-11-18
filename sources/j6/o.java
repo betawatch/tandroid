@@ -70,9 +70,9 @@ import org.telegram.ui.ActionBar.j2;
 import org.telegram.ui.ActionBar.k4;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.k7;
-import org.telegram.ui.Cells.r7;
-import org.telegram.ui.Cells.t5;
+import org.telegram.ui.Cells.l7;
+import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.g8;
@@ -84,7 +84,7 @@ import org.telegram.ui.Components.p7;
 import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -370,7 +370,7 @@ public final /* synthetic */ class o implements Runnable {
             case 8:
                 a6 a6Var = (a6) this.b;
                 a6Var.J.clear();
-                a6Var.getNotificationCenter().k(ks.d5, new Object[0]);
+                a6Var.getNotificationCenter().k(ks.e5, new Object[0]);
                 return;
             case 9:
                 MediaController mediaController = (MediaController) this.b;
@@ -751,41 +751,41 @@ public final /* synthetic */ class o implements Runnable {
                 zVar.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             case 23:
-                t5 t5Var = (t5) this.b;
-                TextView textView = t5Var.b;
+                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) this.b;
+                TextView textView = u5Var.b;
                 textView.setTag(null);
                 AnimatorSet animatorSet = new AnimatorSet();
-                t5Var.d = animatorSet;
+                u5Var.d = animatorSet;
                 Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(t5Var.a, (Property<TextView, Float>) property, 1.0f));
-                t5Var.d.setDuration(250L);
-                t5Var.d.setInterpolator(new DecelerateInterpolator());
-                t5Var.d.addListener(new n3(this, 26));
-                t5Var.d.start();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 1.0f));
+                u5Var.d.setDuration(250L);
+                u5Var.d.setInterpolator(new DecelerateInterpolator());
+                u5Var.d.addListener(new n3(this, 26));
+                u5Var.d.start();
                 return;
             case 24:
-                org.telegram.ui.Cells.q6 q6Var = (org.telegram.ui.Cells.q6) this.b;
-                q6Var.a();
-                RectF rectF = q6Var.r;
-                q6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                g0.h3(q6Var.E, 1000L);
+                r6 r6Var = (r6) this.b;
+                r6Var.a();
+                RectF rectF = r6Var.r;
+                r6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
+                g0.h3(r6Var.E, 1000L);
                 return;
             case 25:
-                k7 k7Var = (k7) this.b;
-                if (k7Var.b == null) {
-                    k7Var.b = new androidx.emoji2.text.j(k7Var, i10);
+                l7 l7Var = (l7) this.b;
+                if (l7Var.b == null) {
+                    l7Var.b = new androidx.emoji2.text.j(l7Var, i10);
                 }
-                androidx.emoji2.text.j jVar3 = k7Var.b;
-                int i25 = k7Var.c + 1;
-                k7Var.c = i25;
+                androidx.emoji2.text.j jVar3 = l7Var.b;
+                int i25 = l7Var.c + 1;
+                l7Var.c = i25;
                 jVar3.b = i25;
-                k7Var.postDelayed(jVar3, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
+                l7Var.postDelayed(jVar3, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             case 26:
-                r7 r7Var = (r7) this.b;
-                RectF rectF2 = r7Var.s;
-                r7Var.invalidate(((int) rectF2.left) - 5, ((int) rectF2.top) - 5, ((int) rectF2.right) + 5, ((int) rectF2.bottom) + 5);
-                g0.h3(r7Var.G, 1000L);
+                s7 s7Var = (s7) this.b;
+                RectF rectF2 = s7Var.s;
+                s7Var.invalidate(((int) rectF2.left) - 5, ((int) rectF2.top) - 5, ((int) rectF2.right) + 5, ((int) rectF2.bottom) + 5);
+                g0.h3(s7Var.G, 1000L);
                 return;
             case 27:
                 p7 p7Var = (p7) this.b;

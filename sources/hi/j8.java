@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.widget.LinearLayout;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class j8 extends LinearLayout {
     public float a;
@@ -48,7 +48,7 @@ public final class j8 extends LinearLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b, z10 ? getMeasuredHeight() : 0.0f);
         this.c = ofFloat;
         ofFloat.addUpdateListener(new i8(this, r1));
-        this.c.addListener(new bi.e7(13, this, z10));
+        this.c.addListener(new bi.d7(13, this, z10));
         this.c.setDuration(320L);
         this.c.setInterpolator(lr.h);
         this.c.start();

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class v extends sa implements org.telegram.messenger.fs {
     public final TL_aicompose.AiComposeTone T1;
@@ -171,7 +171,7 @@ public final class v extends sa implements org.telegram.messenger.fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.a4) {
+        if (i7 == org.telegram.messenger.ks.b4) {
             this.b2.setText(org.telegram.messenger.gd.M0(e1() ? 2131754980 : 2131755005, null));
         }
     }
@@ -179,7 +179,7 @@ public final class v extends sa implements org.telegram.messenger.fs {
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
         super.dismiss();
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.a4);
+        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.b4);
     }
 
     public final boolean e1() {
@@ -220,6 +220,6 @@ public final class v extends sa implements org.telegram.messenger.fs {
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
     public final void show() {
         super.show();
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.a4);
+        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.b4);
     }
 }

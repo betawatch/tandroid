@@ -34,9 +34,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.p4;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.q4;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.d9;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.m6;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.pl;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class q0 {
     public static int W;
@@ -349,8 +349,8 @@ public final class q0 {
         org.telegram.ui.Cells.z zVar = this.w;
         if (e2.s(zVar)) {
             y10 -= zVar.getPaddingTop();
-            if (zVar instanceof u0) {
-                x10 -= ((u0) zVar).k0 / 2.0f;
+            if (zVar instanceof v0) {
+                x10 -= ((v0) zVar).k0 / 2.0f;
             }
         }
         float f10 = x10 - this.b;
@@ -406,7 +406,7 @@ public final class q0 {
                 TLRPC.ReactionCount reactionCount = this.P.a;
                 float x11 = motionEvent.getX();
                 if (e2.s(zVar)) {
-                    ((p4) zVar).d(reactionCount, false, x11, y10);
+                    ((q4) zVar).d(reactionCount, false, x11, y10);
                 }
             }
             this.Q = false;
@@ -577,7 +577,7 @@ public final class q0 {
                 rectF.set(n0Var.s);
                 float L = org.telegram.messenger.g0.L(140.0f);
                 float L2 = org.telegram.messenger.g0.L(14.0f);
-                float i11 = Utilities.i(rectF.left - org.telegram.messenger.g0.L(12.0f), ((this.w instanceof q1 ? ((q1) r8).getParentWidth() : org.telegram.messenger.g0.q.x) - L) - org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+                float i11 = Utilities.i(rectF.left - org.telegram.messenger.g0.L(12.0f), ((this.w instanceof r1 ? ((r1) r8).getParentWidth() : org.telegram.messenger.g0.q.x) - L) - org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
                 float f10 = rectF.top - L2;
                 float f11 = i7;
                 float f12 = f10 + f11;

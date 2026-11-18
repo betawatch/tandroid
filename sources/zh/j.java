@@ -16,10 +16,10 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Cells.y9;
+import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.fg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j extends ViewGroup {
     public final GestureDetector a;
@@ -32,7 +32,7 @@ public final class j extends ViewGroup {
     public j(k kVar, Context context) {
         super(context);
         this.e = kVar;
-        this.a = new GestureDetector(getContext(), new y9(2, this));
+        this.a = new GestureDetector(getContext(), new z9(2, this));
         this.b = new Path();
         this.c = new RectF();
         this.d = true;

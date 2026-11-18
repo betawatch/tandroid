@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class o30 implements org.telegram.ui.Components.t30 {
     public float a;
@@ -37,15 +37,15 @@ public final class o30 implements org.telegram.ui.Components.t30 {
         }
         for (int i7 = 0; i7 < n30Var.getChildCount(); i7++) {
             View childAt = n30Var.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.f4) {
-                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) childAt;
-                if (f4Var.c()) {
-                    org.telegram.ui.Cells.b4 b4Var = f4Var.y;
-                    b4Var.setProgress(f10);
+            if (childAt instanceof org.telegram.ui.Cells.g4) {
+                org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) childAt;
+                if (g4Var.c()) {
+                    org.telegram.ui.Cells.c4 c4Var = g4Var.y;
+                    c4Var.setProgress(f10);
                     if (f10 < 1.0f) {
-                        org.telegram.messenger.g0.X3(b4Var, true, 1.0f, true, true);
+                        org.telegram.messenger.g0.X3(c4Var, true, 1.0f, true, true);
                     } else {
-                        org.telegram.messenger.g0.X3(b4Var, false, 1.0f, true, true);
+                        org.telegram.messenger.g0.X3(c4Var, false, 1.0f, true, true);
                     }
                 }
             }

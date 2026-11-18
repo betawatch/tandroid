@@ -34,7 +34,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.w01;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public class x6 extends FrameLayout implements fs {
     public static Typeface k0;
@@ -197,7 +197,7 @@ public class x6 extends FrameLayout implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.c4) {
+        if (i7 == ks.d4) {
             Object obj = objArr[0];
             u0 u0Var = this.a0;
             if (obj == u0Var) {
@@ -516,7 +516,7 @@ public class x6 extends FrameLayout implements fs {
             }
         }
         if (this.a0 != null) {
-            ks.f(this.W).c(this, ks.c4);
+            ks.f(this.W).c(this, ks.d4);
         }
     }
 
@@ -528,7 +528,7 @@ public class x6 extends FrameLayout implements fs {
         }
         super.onDetachedFromWindow();
         if (this.a0 != null) {
-            ks.f(this.W).n(this, ks.c4);
+            ks.f(this.W).n(this, ks.d4);
         }
     }
 

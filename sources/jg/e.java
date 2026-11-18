@@ -22,21 +22,21 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.e3;
-import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Cells.q4;
-import org.telegram.ui.Cells.qa;
-import org.telegram.ui.Cells.s4;
-import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Cells.y6;
+import org.telegram.ui.Cells.f3;
+import org.telegram.ui.Cells.n8;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Cells.r4;
+import org.telegram.ui.Cells.ra;
+import org.telegram.ui.Cells.t4;
+import org.telegram.ui.Cells.y3;
+import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class e extends xj0 {
     public ArrayList E;
@@ -315,45 +315,45 @@ public abstract class e extends xj0 {
         ArrayList arrayList = i11 == 2 ? r10.k0 : r10.i0;
         View view2 = view;
         if (view == null) {
-            s4 s4Var = new s4(this.s);
-            s4Var.setLayoutParams(new ViewGroup.LayoutParams(org.telegram.messenger.g0.L(76.0f), org.telegram.messenger.g0.L(64.0f)));
-            TextView textView = new TextView(s4Var.getContext());
-            s4Var.a = textView;
+            t4 t4Var = new t4(this.s);
+            t4Var.setLayoutParams(new ViewGroup.LayoutParams(org.telegram.messenger.g0.L(76.0f), org.telegram.messenger.g0.L(64.0f)));
+            TextView textView = new TextView(t4Var.getContext());
+            t4Var.a = textView;
             i5.c.x(textView, 1, 22.0f);
             u6.U(textView, n6.B6, null);
             textView.setGravity(17);
-            s4Var.addView(textView, ma.d(-1, -1.0f, ks.E1, 12.0f, 0.0f, 0.0f, 0.0f));
-            this.O.add(s4Var);
-            view2 = s4Var;
+            t4Var.addView(textView, ma.d(-1, -1.0f, ks.E1, 12.0f, 0.0f, 0.0f, 0.0f));
+            this.O.add(t4Var);
+            view2 = t4Var;
         }
-        s4 s4Var2 = (s4) view2;
+        t4 t4Var2 = (t4) view2;
         float f10 = this.N;
         if (f10 > 0.0f) {
-            s4Var2.setLetterTextSize(f10);
+            t4Var2.setLetterTextSize(f10);
         }
-        s4Var2.setLetterProgress(this.M);
+        t4Var2.setLetterProgress(this.M);
         if (this.G == 2 || this.I || this.J) {
-            s4Var2.setLetter("");
+            t4Var2.setLetter("");
             return view2;
         }
         if (i11 != 0 && !this.F) {
             if (i7 < arrayList.size()) {
-                s4Var2.setLetter((String) arrayList.get(i7));
+                t4Var2.setLetter((String) arrayList.get(i7));
                 return view2;
             }
-            s4Var2.setLetter("");
+            t4Var2.setLetter("");
             return view2;
         }
         if (i7 == 0) {
-            s4Var2.setLetter("");
+            t4Var2.setLetter("");
             return view2;
         }
         int i12 = i7 - 1;
         if (i12 < arrayList.size()) {
-            s4Var2.setLetter((String) arrayList.get(i12));
+            t4Var2.setLetter((String) arrayList.get(i12));
             return view2;
         }
-        s4Var2.setLetter("");
+        t4Var2.setLetter("");
         return view2;
     }
 
@@ -411,12 +411,12 @@ public abstract class e extends xj0 {
         boolean z10 = this.F;
         int i13 = this.r;
         if (i11 == 0) {
-            qa qaVar = (qa) view;
-            qaVar.U.a = false;
+            ra raVar = (ra) view;
+            raVar.U.a = false;
             if (this.G != 2 && !this.I) {
                 i12 = 58;
             }
-            qaVar.b(i12, 1);
+            raVar.b(i12, 1);
             if (this.G == 2) {
                 arrayList = this.E;
             } else {
@@ -425,22 +425,22 @@ public abstract class e extends xj0 {
                 arrayList = (ArrayList) (i14 == 2 ? r10.j0 : r10.h0).get((i14 == 2 ? i5.r(i13).k0 : i5.r(i13).i0).get(i7 - ((i14 == 0 || z10) ? 1 : 0)));
             }
             TLRPC.User c22 = mp.u1(i13).c2(Long.valueOf(((TLRPC.TL_contact) arrayList.get(i10)).user_id));
-            qaVar.d(c22, null, null, false);
-            qaVar.c(this.y.h(c22.id) >= 0, false);
+            raVar.d(c22, null, null, false);
+            raVar.c(this.y.h(c22.id) >= 0, false);
             return;
         }
         if (i11 != 1) {
             if (i11 == 2) {
-                x3 x3Var = (x3) view;
+                y3 y3Var = (y3) view;
                 int i15 = this.G;
                 if (i15 == 0) {
-                    x3Var.setText(gd.M0(2131751769, null));
+                    y3Var.setText(gd.M0(2131751769, null));
                     return;
                 } else if (i15 == 1) {
-                    x3Var.setText(gd.M0(2131745089, null));
+                    y3Var.setText(gd.M0(2131745089, null));
                     return;
                 } else {
-                    x3Var.setText(gd.M0(2131745090, null));
+                    y3Var.setText(gd.M0(2131745090, null));
                     return;
                 }
             }
@@ -452,57 +452,57 @@ public abstract class e extends xj0 {
                 if (i11 != 8) {
                     return;
                 }
-                q4 q4Var = (q4) view;
+                r4 r4Var = (r4) view;
                 int i16 = i10 - 2;
                 if (i16 < 0 || i16 >= i5.r(i13).b0.size()) {
                     return;
                 }
-                q4Var.a((f5) i5.r(i13).b0.get(i16), null);
+                r4Var.a((f5) i5.r(i13).b0.get(i16), null);
                 return;
             }
-            n4 n4Var = (n4) view;
+            o4 o4Var = (o4) view;
             if (this.L && i10 == 1 && i7 == 1) {
-                n4Var.setText(gd.M0(2131748959, null));
+                o4Var.setText(gd.M0(2131748959, null));
                 return;
             } else if (this.G == 1) {
-                n4Var.setText(gd.M0(2131745089, null));
+                o4Var.setText(gd.M0(2131745089, null));
                 return;
             } else {
-                n4Var.setText(gd.M0(2131745090, null));
+                o4Var.setText(gd.M0(2131745090, null));
                 return;
             }
         }
-        m8 m8Var = (m8) view;
+        n8 n8Var = (n8) view;
         boolean z11 = this.x;
         if (z11 || !z10) {
             int i17 = n6.G6;
-            m8Var.g(i17, i17);
+            n8Var.g(i17, i17);
         } else {
             int i18 = n6.Zl;
-            m8Var.g(i18, i18);
+            n8Var.g(i18, i18);
         }
         if (i7 != 0) {
             f5 f5Var = (f5) i5.r(i13).b0.get(i10);
             String str = f5Var.i;
             if (str == null || f5Var.j == null) {
                 if (str == null || f5Var.j != null) {
-                    m8Var.k(f5Var.j, false);
+                    n8Var.k(f5Var.j, false);
                     return;
                 } else {
-                    m8Var.k(str, false);
+                    n8Var.k(str, false);
                     return;
                 }
             }
-            m8Var.k(f5Var.i + " " + f5Var.j, false);
+            n8Var.k(f5Var.i + " " + f5Var.j, false);
             return;
         }
         if (z11) {
             if (i10 == 0) {
-                m8Var.r(gd.M0(2131748959, null), "", false, R.drawable.settings_invite, -14899731, -15431455, false);
+                n8Var.r(gd.M0(2131748959, null), "", false, R.drawable.settings_invite, -14899731, -15431455, false);
                 return;
             } else {
                 if (i10 == 1) {
-                    m8Var.r(gd.M0(2131746174, null), "", false, R.drawable.settings_calls, -11154873, -14175180, false);
+                    n8Var.r(gd.M0(2131746174, null), "", false, R.drawable.settings_calls, -11154873, -14175180, false);
                     return;
                 }
                 return;
@@ -510,17 +510,17 @@ public abstract class e extends xj0 {
         }
         if (z10) {
             if (this.H) {
-                m8Var.o(R.drawable.msg_link2, gd.M0(2131752391, null), false);
+                n8Var.o(R.drawable.msg_link2, gd.M0(2131752391, null), false);
                 return;
             } else {
-                m8Var.o(R.drawable.msg_link2, gd.M0(2131748918, null), false);
+                n8Var.o(R.drawable.msg_link2, gd.M0(2131748918, null), false);
                 return;
             }
         }
         if (i10 == 0) {
-            m8Var.r(gd.M0(2131748081, null), "", false, R.drawable.settings_group, -14899731, -15431455, false);
+            n8Var.r(gd.M0(2131748081, null), "", false, R.drawable.settings_group, -14899731, -15431455, false);
         } else if (i10 == 1) {
-            m8Var.r(gd.M0(2131748094, null), "", false, R.drawable.settings_channel, -11154873, -14175180, false);
+            n8Var.r(gd.M0(2131748094, null), "", false, R.drawable.settings_channel, -11154873, -14175180, false);
         }
     }
 
@@ -570,13 +570,13 @@ public abstract class e extends xj0 {
         View view2;
         Context context = this.s;
         if (i7 == 0) {
-            qa qaVar = new qa(context, 58, 1, false);
-            qaVar.setCallCellStyle(58);
-            view = qaVar;
+            ra raVar = new ra(context, 58, 1, false);
+            raVar.setCallCellStyle(58);
+            view = raVar;
         } else if (i7 == 1) {
-            view = new m8(context);
+            view = new n8(context);
         } else if (i7 == 2) {
-            view = new x3(context, null);
+            view = new y3(context, null);
         } else if (i7 != 3) {
             if (i7 == 4) {
                 FrameLayout k0Var = new ai.k0(this, context, viewGroup, 8);
@@ -585,11 +585,11 @@ public abstract class e extends xj0 {
                 k0Var.setTag(-33024);
                 view2 = k0Var;
             } else if (i7 == 7) {
-                view = new n4(this.s, n6.L6, 21, 14, 5, false, false, null);
+                view = new o4(this.s, n6.L6, 21, 14, 5, false, false, null);
             } else if (i7 == 8) {
-                view = new q4(context, false);
+                view = new r4(context, false);
             } else if (i7 != 9) {
-                view = new y6(context, (org.telegram.ui.Cells.c0) null);
+                view = new z6(context, (org.telegram.ui.Cells.c0) null);
             } else {
                 View jnVar = new jn(context, 2);
                 jnVar.setId(9);
@@ -598,9 +598,9 @@ public abstract class e extends xj0 {
             }
             view = view2;
         } else {
-            View e3Var = new e3(context, null);
-            e3Var.setPadding(org.telegram.messenger.g0.L(gd.a0 ? 28.0f : 72.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(gd.a0 ? 72.0f : 28.0f), org.telegram.messenger.g0.L(8.0f));
-            view = e3Var;
+            View f3Var = new f3(context, null);
+            f3Var.setPadding(org.telegram.messenger.g0.L(gd.a0 ? 28.0f : 72.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(gd.a0 ? 72.0f : 28.0f), org.telegram.messenger.g0.L(8.0f));
+            view = f3Var;
         }
         return new kj0(view);
     }

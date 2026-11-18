@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class at implements org.telegram.ui.Components.pj0, org.telegram.ui.ActionBar.r1, ww, org.telegram.ui.Components.it0, org.telegram.ui.Components.qj0, org.telegram.messenger.jc, OnCompleteListener {
     public final /* synthetic */ int a;
@@ -52,10 +52,10 @@ public final /* synthetic */ class at implements org.telegram.ui.Components.pj0,
         int i7 = pdVar.h.K1;
         iArr[0] = i7;
         launchActivity.O0(i7);
-        pa0 pa0Var = new pa0(2);
-        pa0Var.G0(pdVar.h);
-        pa0Var.M0 = new ai.d0(iArr, org.telegram.messenger.fj.B0(pdVar.h.k), 10);
-        launchActivity.t0(pa0Var);
+        qa0 qa0Var = new qa0(2);
+        qa0Var.G0(pdVar.h);
+        qa0Var.M0 = new ai.d0(iArr, org.telegram.messenger.fj.B0(pdVar.h.k), 10);
+        launchActivity.t0(qa0Var);
     }
 
     @Override // org.telegram.ui.Components.pj0
@@ -73,27 +73,27 @@ public final /* synthetic */ class at implements org.telegram.ui.Components.pj0,
 
     @Override // org.telegram.ui.Components.qj0
     public boolean c(int i7, View view) {
-        pa0 pa0Var = (pa0) this.b;
+        qa0 qa0Var = (qa0) this.b;
         Context context = (Context) this.c;
-        if (pa0Var.N0 == 2) {
-            Object I = pa0Var.Q.I(i7);
-            if (I instanceof la0) {
+        if (qa0Var.N0 == 2) {
+            Object I = qa0Var.Q.I(i7);
+            if (I instanceof ma0) {
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(context, null);
-                org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(0, pa0Var.getParentActivity(), pa0Var.getResourceProvider(), true, true);
+                org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(0, qa0Var.getParentActivity(), qa0Var.getResourceProvider(), true, true);
                 z0Var.setMinimumWidth(org.telegram.messenger.g0.L(200.0f));
                 z0Var.j(org.telegram.messenger.gd.M0(2131750457, null), R.drawable.filled_directions, null);
-                z0Var.setOnClickListener(new org.telegram.ui.Components.c31(27, pa0Var, (la0) I));
+                z0Var.setOnClickListener(new org.telegram.ui.Components.c31(27, qa0Var, (ma0) I));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var);
-                ka0 ka0Var = new ka0(pa0Var, actionBarPopupWindow$ActionBarPopupWindowLayout);
-                pa0Var.P0 = ka0Var;
-                ka0Var.setOutsideTouchable(true);
-                pa0Var.P0.setClippingEnabled(true);
-                pa0Var.P0.setInputMethodMode(2);
-                pa0Var.P0.setSoftInputMode(0);
+                la0 la0Var = new la0(qa0Var, actionBarPopupWindow$ActionBarPopupWindowLayout);
+                qa0Var.P0 = la0Var;
+                la0Var.setOutsideTouchable(true);
+                qa0Var.P0.setClippingEnabled(true);
+                qa0Var.P0.setInputMethodMode(2);
+                qa0Var.P0.setSoftInputMode(0);
                 int[] iArr = new int[2];
                 view.getLocationInWindow(iArr);
-                pa0Var.P0.showAtLocation(view, 48, 0, iArr[1] - org.telegram.messenger.g0.L(52.0f));
-                pa0Var.P0.b();
+                qa0Var.P0.showAtLocation(view, 48, 0, iArr[1] - org.telegram.messenger.g0.L(52.0f));
+                qa0Var.P0.b();
                 return true;
             }
         }
@@ -239,15 +239,15 @@ public final /* synthetic */ class at implements org.telegram.ui.Components.pj0,
             case 10:
                 z40 z40Var2 = (z40) obj2;
                 z40Var2.getClass();
-                org.telegram.ui.Cells.c2 c2Var = ((org.telegram.ui.Cells.c2[]) obj)[0];
-                z40Var2.r0((c2Var == null || !c2Var.b()) ? 0 : 100);
+                org.telegram.ui.Cells.d2 d2Var = ((org.telegram.ui.Cells.d2[]) obj)[0];
+                z40Var2.r0((d2Var == null || !d2Var.b()) ? 0 : 100);
                 break;
             case 12:
                 LanguageSelectActivity.c0((LanguageSelectActivity) obj2, (org.telegram.messenger.cd) obj);
                 break;
             case 13:
                 String str = LaunchActivity.C1;
-                ((LaunchActivity) obj2).t0((de0) obj);
+                ((LaunchActivity) obj2).t0((ee0) obj);
                 break;
             case 14:
                 LaunchActivity launchActivity = (LaunchActivity) obj2;
@@ -256,33 +256,33 @@ public final /* synthetic */ class at implements org.telegram.ui.Components.pj0,
                 launchActivity.y0(true);
                 break;
             case 22:
-                ((tb0) obj2).H.G1((TLRPC.TL_auth_authorization) ((TLObject) obj), false);
+                ((ub0) obj2).H.G1((TLRPC.TL_auth_authorization) ((TLObject) obj), false);
                 break;
             case 23:
-                wb0 wb0Var = (wb0) obj2;
-                wb0Var.getClass();
+                xb0 xb0Var = (xb0) obj2;
+                xb0Var.getClass();
                 Bundle bundle = new Bundle();
                 bundle.putString("email_unconfirmed_pattern", ((TLRPC.TL_auth_passwordRecovery) obj).email_pattern);
-                bundle.putString("password", wb0Var.r);
-                bundle.putString("requestPhone", wb0Var.s);
-                bundle.putString("phoneHash", wb0Var.w);
-                bundle.putString("phoneCode", wb0Var.x);
-                wb0Var.E.M1(7, true, bundle, false);
+                bundle.putString("password", xb0Var.r);
+                bundle.putString("requestPhone", xb0Var.s);
+                bundle.putString("phoneHash", xb0Var.w);
+                bundle.putString("phoneCode", xb0Var.x);
+                xb0Var.E.M1(7, true, bundle, false);
                 break;
             case 25:
-                gd0.n((gd0) obj2, (Context) obj);
+                hd0.n((hd0) obj2, (Context) obj);
                 break;
             case 26:
-                ce0 ce0Var = (ce0) obj2;
+                de0 de0Var = (de0) obj2;
                 ((boolean[]) obj)[0] = true;
-                if (ce0Var.o()) {
+                if (de0Var.o()) {
                     d3.b bVar = new d3.b(i13);
                     CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-                    ce0Var.b0 = cancellationTokenSource;
-                    Context context = ce0Var.getContext();
-                    i10 = ((org.telegram.ui.ActionBar.h2) ce0Var.h0).currentAccount;
+                    de0Var.b0 = cancellationTokenSource;
+                    Context context = de0Var.getContext();
+                    i10 = ((org.telegram.ui.ActionBar.h2) de0Var.h0).currentAccount;
                     CancellationToken token = cancellationTokenSource.getToken();
-                    n60 n60Var = new n60(27, ce0Var, cancellationTokenSource);
+                    o60 o60Var = new o60(27, de0Var, cancellationTokenSource);
                     TaskCompletionSource taskCompletionSource = new TaskCompletionSource(token);
                     kotlin.jvm.internal.j.e(context, "context");
                     int i16 = 4;
@@ -302,11 +302,11 @@ public final /* synthetic */ class at implements org.telegram.ui.Components.pj0,
                         i16 = 4;
                     }
                     tL_auth_initFirebasePnvLogin.except_ids = arrayList2;
-                    runnableArr[0] = new org.telegram.messenger.e9(i10, ConnectionsManager.getInstance(i10).sendRequestTyped(tL_auth_initFirebasePnvLogin, new d3.b(i13), new bi.j4(token, taskCompletionSource, runnableArr, nVar, context, n60Var, i10), 8), 0);
+                    runnableArr[0] = new org.telegram.messenger.e9(i10, ConnectionsManager.getInstance(i10).sendRequestTyped(tL_auth_initFirebasePnvLogin, new d3.b(i13), new bi.i4(token, taskCompletionSource, runnableArr, nVar, context, o60Var, i10), 8), 0);
                     if (token.isCancellationRequested()) {
                         runnableArr[0].run();
                     }
-                    taskCompletionSource.getTask().addOnCompleteListener(bVar, new at(27, ce0Var, cancellationTokenSource)).addOnSuccessListener(bVar, new xd0(ce0Var)).addOnFailureListener(bVar, new xd0(ce0Var));
+                    taskCompletionSource.getTask().addOnCompleteListener(bVar, new at(27, de0Var, cancellationTokenSource)).addOnSuccessListener(bVar, new yd0(de0Var)).addOnFailureListener(bVar, new yd0(de0Var));
                     break;
                 }
                 break;
@@ -316,45 +316,45 @@ public final /* synthetic */ class at implements org.telegram.ui.Components.pj0,
     @Override // org.telegram.messenger.jc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap n02;
-        pa0 pa0Var = (pa0) this.b;
-        la0 la0Var = (la0) this.c;
-        if (!z10 || z11 || la0Var.e == null || (n02 = pa0Var.n0(la0Var)) == null) {
+        qa0 qa0Var = (qa0) this.b;
+        ma0 ma0Var = (ma0) this.c;
+        if (!z10 || z11 || ma0Var.e == null || (n02 = qa0Var.n0(ma0Var)) == null) {
             return;
         }
-        la0Var.e.a.a(c8.r9.a(n02));
+        ma0Var.e.a.a(c8.r9.a(n02));
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task task) {
         switch (this.a) {
             case 21:
-                ob0 ob0Var = (ob0) this.b;
+                pb0 pb0Var = (pb0) this.b;
                 b9.k0 k0Var = (b9.k0) this.c;
-                de0 de0Var = ob0Var.a0;
-                if (de0Var.getParentActivity() != null) {
-                    de0Var.getParentActivity().startActivityForResult(k0Var.f(), org.telegram.messenger.ks.e3);
+                ee0 ee0Var = pb0Var.a0;
+                if (ee0Var.getParentActivity() != null) {
+                    ee0Var.getParentActivity().startActivityForResult(k0Var.f(), org.telegram.messenger.ks.e3);
                     break;
                 }
                 break;
             case 24:
-                rc0 rc0Var = (rc0) this.b;
+                sc0 sc0Var = (sc0) this.b;
                 b9.k0 k0Var2 = (b9.k0) this.c;
-                de0 de0Var2 = rc0Var.F;
-                if (de0Var2.getParentActivity() != null && !de0Var2.getParentActivity().isFinishing()) {
-                    de0Var2.getParentActivity().startActivityForResult(k0Var2.f(), org.telegram.messenger.ks.e3);
+                ee0 ee0Var2 = sc0Var.F;
+                if (ee0Var2.getParentActivity() != null && !ee0Var2.getParentActivity().isFinishing()) {
+                    ee0Var2.getParentActivity().startActivityForResult(k0Var2.f(), org.telegram.messenger.ks.e3);
                     break;
                 }
                 break;
             default:
-                ce0 ce0Var = (ce0) this.b;
+                de0 de0Var = (de0) this.b;
                 CancellationTokenSource cancellationTokenSource = (CancellationTokenSource) this.c;
-                org.telegram.ui.ActionBar.u1 u1Var = ce0Var.c0;
+                org.telegram.ui.ActionBar.u1 u1Var = de0Var.c0;
                 if (u1Var != null) {
                     u1Var.dismiss();
-                    ce0Var.c0 = null;
+                    de0Var.c0 = null;
                 }
-                if (ce0Var.b0 == cancellationTokenSource) {
-                    ce0Var.b0 = null;
+                if (de0Var.b0 == cancellationTokenSource) {
+                    de0Var.b0 = null;
                     break;
                 }
                 break;

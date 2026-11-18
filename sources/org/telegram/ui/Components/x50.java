@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x50 extends org.telegram.ui.ActionBar.x2 {
     public static final /* synthetic */ int i2 = 0;
@@ -422,16 +422,16 @@ public final class x50 extends org.telegram.ui.ActionBar.x2 {
     }
 
     public static void O0(View view) {
-        if (view instanceof org.telegram.ui.Cells.n4) {
-            ((org.telegram.ui.Cells.n4) view).getTextView().setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.L6, false));
+        if (view instanceof org.telegram.ui.Cells.o4) {
+            ((org.telegram.ui.Cells.o4) view).getTextView().setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.L6, false));
             return;
         }
         if (view instanceof e80) {
             ((e80) view).f();
-        } else if (view instanceof org.telegram.ui.Cells.z8) {
-            org.telegram.ui.ActionBar.u6.U(((org.telegram.ui.Cells.z8) view).getTextView(), org.telegram.ui.ActionBar.n6.B6, null);
-        } else if (view instanceof org.telegram.ui.Cells.qa) {
-            ((org.telegram.ui.Cells.qa) view).i(0);
+        } else if (view instanceof org.telegram.ui.Cells.a9) {
+            org.telegram.ui.ActionBar.u6.U(((org.telegram.ui.Cells.a9) view).getTextView(), org.telegram.ui.ActionBar.n6.B6, null);
+        } else if (view instanceof org.telegram.ui.Cells.ra) {
+            ((org.telegram.ui.Cells.ra) view).i(0);
         }
     }
 

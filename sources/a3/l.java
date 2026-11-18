@@ -9,7 +9,7 @@ import android.text.Layout;
 import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
-import bi.g8;
+import bi.f8;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import e2.m1;
@@ -33,9 +33,9 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.n6;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, r1, w10, i9, u9.d {
     public final /* synthetic */ int a;
@@ -112,11 +112,11 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
             case 10:
                 bb.e eVar = (bb.e) obj;
                 eVar.getClass();
-                md0 md0Var = ab.x.a;
-                md0Var.getClass();
+                nd0 nd0Var = ab.x.a;
+                nd0Var.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    md0Var.q(eVar, byteArrayOutputStream);
+                    nd0Var.q(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
@@ -374,7 +374,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
 
     @Override // org.telegram.messenger.i9
     public Object m(Object obj) {
-        int i7 = g8.g2;
+        int i7 = f8.g2;
         return 0;
     }
 

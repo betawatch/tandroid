@@ -19,7 +19,7 @@ import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.o80;
 import org.telegram.ui.Components.p41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class au {
     public static final Paint C;
@@ -61,7 +61,7 @@ public final class au {
 
     /* JADX WARN: Code restructure failed: missing block: B:88:0x00f6, code lost:
     
-        if (org.telegram.ui.r90.q(((org.telegram.tgnet.tl.TL_keyboard.TL_inlineButtonTypeUrl) r21).url) != false) goto L43;
+        if (org.telegram.ui.s90.q(((org.telegram.tgnet.tl.TL_keyboard.TL_inlineButtonTypeUrl) r21).url) != false) goto L43;
      */
     /* JADX WARN: Removed duplicated region for block: B:102:0x00a6  */
     /* JADX WARN: Removed duplicated region for block: B:103:0x0087  */
@@ -443,9 +443,9 @@ public final class au {
     }
 
     public final void b(Canvas canvas) {
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         TL_keyboard.PageButton pageButton = this.c;
-        boolean z10 = (pageButton == null || (q1Var = this.p.E) == null || !q1Var.P0(pageButton)) ? false : true;
+        boolean z10 = (pageButton == null || (r1Var = this.p.E) == null || !r1Var.P0(pageButton)) ? false : true;
         boolean z11 = this.y;
         Runnable runnable = this.t;
         if (z11 != z10) {

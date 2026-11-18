@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class rz extends v4.u0 {
     public final /* synthetic */ c00 a;
@@ -39,10 +39,10 @@ public final class rz extends v4.u0 {
         }
         if (c00Var.d != c00Var.V) {
             View pinnedHeader = c00Var.b.getPinnedHeader();
-            if (pinnedHeader instanceof org.telegram.ui.Cells.x3) {
-                org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) pinnedHeader;
-                CharSequence text = x3Var.getText();
-                if (!TextUtils.isEmpty(text) && x3Var.getAlpha() > 0.0f) {
+            if (pinnedHeader instanceof org.telegram.ui.Cells.y3) {
+                org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) pinnedHeader;
+                CharSequence text = y3Var.getText();
+                if (!TextUtils.isEmpty(text) && y3Var.getAlpha() > 0.0f) {
                     String charSequence = text.toString();
                     if (!TextUtils.equals(uzVar.c, charSequence)) {
                         uzVar.c = charSequence;
@@ -71,9 +71,9 @@ public final class rz extends v4.u0 {
             return;
         }
         View view = K.a;
-        if (view instanceof org.telegram.ui.Cells.p7) {
-            org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
-            org.telegram.messenger.fj fjVar = p7Var.e <= 0 ? null : p7Var.b[0];
+        if (view instanceof org.telegram.ui.Cells.q7) {
+            org.telegram.ui.Cells.q7 q7Var = (org.telegram.ui.Cells.q7) view;
+            org.telegram.messenger.fj fjVar = q7Var.e <= 0 ? null : q7Var.b[0];
             if (fjVar != null) {
                 int i11 = fjVar.k.date;
                 uzVar.getClass();

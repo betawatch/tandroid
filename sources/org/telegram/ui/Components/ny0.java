@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ny0 extends LinearLayout {
     public float E;
@@ -24,7 +24,7 @@ public final class ny0 extends LinearLayout {
     public final os0 d;
     public final b9 e;
     public final q9 f;
-    public final org.telegram.ui.Cells.a6 h;
+    public final org.telegram.ui.Cells.b6 h;
     public final n6 n;
     public org.telegram.messenger.fj r;
     public boolean s;
@@ -50,16 +50,16 @@ public final class ny0 extends LinearLayout {
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
         v8Var.addView(q9Var, c8.ma.d(42, 42.0f, 83, 8.0f, 0.0f, 0.0f, 12.0f));
         addView(v8Var, c8.ma.r(-1, -2, 7));
-        org.telegram.ui.Cells.a6 a6Var = new org.telegram.ui.Cells.a6(context, 0, null, i6Var);
-        this.h = a6Var;
-        EditTextBoldCursor textView = a6Var.getTextView();
+        org.telegram.ui.Cells.b6 b6Var = new org.telegram.ui.Cells.b6(context, 0, null, i6Var);
+        this.h = b6Var;
+        EditTextBoldCursor textView = b6Var.getTextView();
         textView.setEnabled(true);
         textView.setSingleLine(true);
         textView.setImeOptions(6);
-        a6Var.setTextRight(org.telegram.messenger.ks.z1);
+        b6Var.setTextRight(org.telegram.messenger.ks.z1);
         ImageView e10 = org.telegram.messenger.n10.e(context, R.drawable.menu_delete_old);
         org.telegram.ui.ActionBar.u6.s(e10, org.telegram.ui.ActionBar.n6.y6, i6Var, PorterDuff.Mode.SRC_IN);
-        a6Var.addView(e10, c8.ma.d(24, 24.0f, 21, 0.0f, 0.0f, 20.0f, 0.0f));
+        b6Var.addView(e10, c8.ma.d(24, 24.0f, 21, 0.0f, 0.0f, 20.0f, 0.0f));
         c8.ra.a(e10);
         e10.setOnClickListener(new h(textView, 1));
         n6 n6Var = new n6(context, false, true, false);
@@ -71,9 +71,9 @@ public final class ny0 extends LinearLayout {
         n6Var.setGravity(17);
         n6Var.setAllowCancel(true);
         n6Var.setScaleProperty(0.6f);
-        a6Var.addView(n6Var, c8.ma.d(56, 50.0f, org.telegram.messenger.ks.C1, 0.0f, 0.0f, 44.0f, 0.0f));
+        b6Var.addView(n6Var, c8.ma.d(56, 50.0f, org.telegram.messenger.ks.C1, 0.0f, 0.0f, 44.0f, 0.0f));
         textView.addTextChangedListener(new ah.j(this, 27));
-        addView(a6Var, c8.ma.r(-1, -2, 7));
+        addView(b6Var, c8.ma.r(-1, -2, 7));
         os0Var.setDelegate(new k8.a(16, this, textView));
     }
 
@@ -251,9 +251,9 @@ public final class ny0 extends LinearLayout {
             }
         });
         g10.addView(ny0Var, c8.ma.s(-1, -2, 7, 12.0f, 12.0f, 12.0f, 1.66f));
-        org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(22, context, i6Var);
-        z8Var.setText(org.telegram.messenger.o10.C(user) ? org.telegram.messenger.gd.M0(2131748437, null) : org.telegram.messenger.gd.a0(null, null, 2131748436, org.telegram.messenger.o10.q(user)));
-        g10.addView(z8Var, c8.ma.t(-1, -2, 7, 0, 0, 0, 0));
+        org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(22, context, i6Var);
+        a9Var.setText(org.telegram.messenger.o10.C(user) ? org.telegram.messenger.gd.M0(2131748437, null) : org.telegram.messenger.gd.a0(null, null, 2131748436, org.telegram.messenger.o10.q(user)));
+        g10.addView(a9Var, c8.ma.t(-1, -2, 7, 0, 0, 0, 0));
         g10.addView(g11, c8.ma.t(-1, 48, 7, 14, 19, 14, 12));
         j10.Q0 = true;
         j10.w0(org.telegram.ui.ActionBar.n6.a7);

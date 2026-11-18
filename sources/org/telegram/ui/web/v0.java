@@ -33,7 +33,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import bi.g2;
-import bi.z8;
+import bi.m6;
+import bi.y8;
 import c8.ma;
 import c8.va;
 import fi.f7;
@@ -95,8 +96,9 @@ import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.s4;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.b5;
-import org.telegram.ui.Cells.n4;
+import org.telegram.ui.Cells.a9;
+import org.telegram.ui.Cells.c5;
+import org.telegram.ui.Cells.o4;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.kp0;
 import org.telegram.ui.Components.lc;
@@ -105,14 +107,13 @@ import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.sv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Wallet.c5;
-import org.telegram.ui.jg0;
 import org.telegram.ui.k71;
+import org.telegram.ui.kg0;
 import org.telegram.ui.l60;
 import org.telegram.ui.p9;
 import org.telegram.ui.t9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class v0 extends FrameLayout implements fs, c6 {
     public static boolean R0 = true;
@@ -424,7 +425,7 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
         if (s0Var == null) {
             return;
         }
-        ks.f(i7).d(new jg0(s0Var, f7Var, str, jSONObject, 27));
+        ks.f(i7).d(new kg0(s0Var, f7Var, str, jSONObject, 27));
     }
 
     public final boolean D() {
@@ -1425,7 +1426,7 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
                             if (v0Var.a0.checkSelfPermission("android.permission.CAMERA") == 0) {
                                 Activity activity = v0Var.a0;
                                 if (activity != null) {
-                                    v0Var.h0 = t9.j0(activity, 3, new b5(v0Var));
+                                    v0Var.h0 = t9.j0(activity, 3, new c5(v0Var));
                                     return;
                                 }
                                 break;
@@ -1709,7 +1710,7 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
                             return;
                         }
                         if (!mp.u1(this.N).i5()) {
-                            new ug.z0((h2) new z8(this), 14, true).show();
+                            new ug.z0((h2) new y8(this), 14, true).show();
                             return;
                         }
                         org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(this.a0);
@@ -2053,7 +2054,7 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
                         v(f7Var);
                         return;
                     }
-                    final Runnable[] runnableArr = {new c5(17, this, f7Var)};
+                    final Runnable[] runnableArr = {new org.telegram.ui.Wallet.c5(17, this, f7Var)};
                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), i6Var);
                     if (TextUtils.isEmpty(str12)) {
                         alertDialog$Builder3.l(gd.L0(2131753139));
@@ -2582,15 +2583,15 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
                     org.telegram.messenger.f3.q(null, null, 2131752980, new Object[]{n5.H(null, null, c22)}, b11);
                     b11.setGravity(17);
                     g10.addView(b11, ma.t(-1, -2, 7, 32, 0, 32, 19));
-                    org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context2, resourceProvider);
+                    a9 a9Var = new a9(context2, resourceProvider);
                     ColorDrawable colorDrawable = new ColorDrawable(-1);
-                    z8Var.setBackground(new mq(colorDrawable, n6.X0(context2, R.drawable.greydivider, n6.w0(n6.b7, resourceProvider))));
-                    u6.x(z8Var, colorDrawable, n6.a7, resourceProvider, PorterDuff.Mode.SRC_IN);
-                    z8Var.setFixedSize(12);
-                    g10.addView(z8Var, ma.t(-1, 12, 7, 0, 0, 0, 0));
-                    n4 n4Var = new n4(context2, resourceProvider);
-                    n4Var.setText(gd.M0(2131752981, null));
-                    g10.addView(n4Var, ma.t(-1, -2, 7, 0, 0, 0, 0));
+                    a9Var.setBackground(new mq(colorDrawable, n6.X0(context2, R.drawable.greydivider, n6.w0(n6.b7, resourceProvider))));
+                    u6.x(a9Var, colorDrawable, n6.a7, resourceProvider, PorterDuff.Mode.SRC_IN);
+                    a9Var.setFixedSize(12);
+                    g10.addView(a9Var, ma.t(-1, 12, 7, 0, 0, 0, 0));
+                    o4 o4Var = new o4(context2, resourceProvider);
+                    o4Var.setText(gd.M0(2131752981, null));
+                    g10.addView(o4Var, ma.t(-1, -2, 7, 0, 0, 0, 0));
                     hi.d dVar = new hi.d(context2, resourceProvider, true);
                     ArrayList arrayList = new ArrayList();
                     int i10 = 0;
@@ -2605,7 +2606,7 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
                         j1Var.setBackground(h02);
                         u6.j(j1Var, h02, null, M, resourceProvider);
                         LinearLayout linearLayout = g10;
-                        j1Var.setOnClickListener(new bi.n6(strArr, k1Var, arrayList, dVar, 3));
+                        j1Var.setOnClickListener(new m6(strArr, k1Var, arrayList, dVar, 3));
                         linearLayout.addView(j1Var, ma.o(-1, 56));
                         arrayList.add(j1Var);
                         i10++;
@@ -2623,7 +2624,7 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
                     linearLayout2.addView(dVar, ma.t(-1, 48, 7, 8, 8, 8, 4));
                     j3.O = linearLayout2;
                     j3.Q(n6.h5);
-                    dVar.setOnClickListener(new bi.n6(zArr2, vVar3, strArr, j3, 4));
+                    dVar.setOnClickListener(new m6(zArr2, vVar3, strArr, j3, 4));
                     j3.setOnDismissListener(new di.u1(5, zArr2, vVar3));
                     j3.show();
                 } catch (Exception e10) {
@@ -2960,7 +2961,7 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         sv0 sv0Var;
         Uri[] uriArr;
-        if (i7 == ks.p4) {
+        if (i7 == ks.q4) {
             s0 s0Var = this.a;
             if (s0Var != null) {
                 s0Var.setBackgroundColor(j(n6.d6));
@@ -2982,8 +2983,8 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
             z();
             return;
         }
-        if (i7 != ks.e5) {
-            if (i7 == ks.f5) {
+        if (i7 != ks.f5) {
+            if (i7 == ks.g5) {
                 int intValue = ((Integer) objArr[0]).intValue();
                 if (intValue != 4000 || (sv0Var = this.W) == null) {
                     return;
@@ -3264,9 +3265,9 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         g("attached");
-        ks.e().c(this, ks.p4);
-        ks.e().c(this, ks.e5);
+        ks.e().c(this, ks.q4);
         ks.e().c(this, ks.f5);
+        ks.e().c(this, ks.g5);
         setTag(R.id.bulletin_delegate_tag, new bi.e1(this, 11));
     }
 
@@ -3274,9 +3275,9 @@ public abstract class v0 extends FrameLayout implements fs, c6 {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         g("detached");
-        ks.e().n(this, ks.p4);
-        ks.e().n(this, ks.e5);
+        ks.e().n(this, ks.q4);
         ks.e().n(this, ks.f5);
+        ks.e().n(this, ks.g5);
         setTag(R.id.bulletin_delegate_tag, null);
     }
 

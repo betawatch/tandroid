@@ -36,14 +36,14 @@ import o5.i;
 import o5.l;
 import o5.n;
 import org.json.JSONObject;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.telegram.ui.wc1;
 import p1.g;
 import p5.f;
 import tg.z1;
 import w7.s;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -248,11 +248,11 @@ public final class c {
                     e0Var.a = "GDT_CLIENT_METRICS";
                     l5.c cVar5 = new l5.c("proto");
                     aVar3.getClass();
-                    md0 md0Var = n.a;
-                    md0Var.getClass();
+                    nd0 nd0Var = n.a;
+                    nd0Var.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        md0Var.q(aVar3, byteArrayOutputStream);
+                        nd0Var.q(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
                     e0Var.c = new l(cVar5, byteArrayOutputStream.toByteArray());
@@ -430,7 +430,7 @@ public final class c {
             i11 = aVar2.a;
             if (i11 != i10) {
                 gVar.f(new f0(this, iterable, iVar, j3, 7));
-                ((md0) this.d).H(iVar, i7 + 1, true);
+                ((nd0) this.d).H(iVar, i7 + 1, true);
                 return;
             }
             cVar2 = this;

@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l50 extends org.telegram.ui.Components.bk0 {
     public final Context c;
@@ -52,27 +52,27 @@ public final class l50 extends org.telegram.ui.Components.bk0 {
         int i11 = f1Var.f;
         View view = f1Var.a;
         if (i11 == 0) {
-            org.telegram.ui.Cells.g8 g8Var = (org.telegram.ui.Cells.g8) view;
+            org.telegram.ui.Cells.h8 h8Var = (org.telegram.ui.Cells.h8) view;
             if (i7 == n50Var.K) {
-                g8Var.b(false, false);
-                g8Var.d(n50Var.r, false, false);
-                g8Var.setDeleteAction(new j40(this, 2));
+                h8Var.b(false, false);
+                h8Var.d(n50Var.r, false, false);
+                h8Var.setDeleteAction(new j40(this, 2));
                 return;
             }
             i10 = ((org.telegram.ui.ActionBar.h2) n50Var).currentAccount;
             ArrayList u02 = org.telegram.messenger.ri.d0(i10).u0(n50Var.h0());
             int i12 = i7 - n50Var.F;
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) u02.get(i12);
-            g8Var.d((TLRPC.TL_messages_stickerSet) u02.get(i12), i12 != u02.size() - 1, false);
-            g8Var.setDeleteAction(null);
+            h8Var.d((TLRPC.TL_messages_stickerSet) u02.get(i12), i12 != u02.size() - 1, false);
+            h8Var.setDeleteAction(null);
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = n50Var.r;
-            g8Var.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : n50Var.g0(n50Var.w) != null ? n50Var.g0(n50Var.w).id : 0L), false);
+            h8Var.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : n50Var.g0(n50Var.w) != null ? n50Var.g0(n50Var.w).id : 0L), false);
             return;
         }
         if (i11 == 1) {
             if (i7 != n50Var.y) {
                 if (i7 == n50Var.L) {
-                    ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.gd.M0(2131754427, null));
+                    ((org.telegram.ui.Cells.a9) view).setText(org.telegram.messenger.gd.M0(2131754427, null));
                     return;
                 }
                 return;
@@ -80,26 +80,26 @@ public final class l50 extends org.telegram.ui.Components.bk0 {
             String M0 = org.telegram.messenger.gd.M0(z10 ? 2131752118 : 2131752103, null);
             int indexOf = M0.indexOf("@stickers");
             if (indexOf == -1) {
-                ((org.telegram.ui.Cells.z8) view).setText(M0);
+                ((org.telegram.ui.Cells.a9) view).setText(M0);
                 return;
             }
             try {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
                 spannableStringBuilder.setSpan(new org.telegram.ui.Components.o4(this, 3), indexOf, indexOf + 9, 18);
-                ((org.telegram.ui.Cells.z8) view).setText(spannableStringBuilder);
+                ((org.telegram.ui.Cells.a9) view).setText(spannableStringBuilder);
                 return;
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
-                ((org.telegram.ui.Cells.z8) view).setText(M0);
+                ((org.telegram.ui.Cells.a9) view).setText(M0);
                 return;
             }
         }
         if (i11 == 4) {
             if (i7 == n50Var.I) {
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.gd.M0(2131754432, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.M0(2131754432, null));
                 return;
             } else {
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.gd.M0(z10 ? 2131752119 : 2131752104, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.M0(z10 ? 2131752119 : 2131752104, null));
                 return;
             }
         }
@@ -129,15 +129,15 @@ public final class l50 extends org.telegram.ui.Components.bk0 {
         FrameLayout frameLayout;
         Context context = this.c;
         if (i7 == 0) {
-            FrameLayout g8Var = new org.telegram.ui.Cells.g8(context, 3);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, g8Var, null);
-            frameLayout = g8Var;
+            FrameLayout h8Var = new org.telegram.ui.Cells.h8(context, 3);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, h8Var, null);
+            frameLayout = h8Var;
         } else if (i7 == 1) {
-            frameLayout = new org.telegram.ui.Cells.z8(context);
+            frameLayout = new org.telegram.ui.Cells.a9(context);
         } else if (i7 != 5) {
-            FrameLayout n4Var = new org.telegram.ui.Cells.n4(context);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, n4Var, null);
-            frameLayout = n4Var;
+            FrameLayout o4Var = new org.telegram.ui.Cells.o4(context);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, o4Var, null);
+            frameLayout = o4Var;
         } else {
             n50 n50Var = this.d;
             k50 k50Var = new k50(n50Var, context);

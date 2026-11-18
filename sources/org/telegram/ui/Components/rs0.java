@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class rs0 extends bk0 {
     public final Context c;
@@ -42,9 +42,9 @@ public final class rs0 extends bk0 {
     public final void E(View view) {
         ArrayList arrayList;
         org.telegram.messenger.ov ovVar;
-        if (view instanceof org.telegram.ui.Cells.t2) {
-            org.telegram.ui.Cells.t2 t2Var = (org.telegram.ui.Cells.t2) view;
-            long dialogId = t2Var.getDialogId();
+        if (view instanceof org.telegram.ui.Cells.u2) {
+            org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) view;
+            long dialogId = u2Var.getDialogId();
             int i7 = 0;
             while (true) {
                 arrayList = this.f;
@@ -114,7 +114,7 @@ public final class rs0 extends bk0 {
             if (r0Var4 != null) {
                 r0Var4.setVisibility(z10 ? 0 : 8);
             }
-            t2Var.c0(hashSet.contains(Long.valueOf(ovVar.a)), true);
+            u2Var.c0(hashSet.contains(Long.valueOf(ovVar.a)), true);
         }
     }
 
@@ -154,14 +154,14 @@ public final class rs0 extends bk0 {
     @Override // v4.i0
     public final void t(v4.f1 f1Var, int i7) {
         View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.t2) {
-            org.telegram.ui.Cells.t2 t2Var = (org.telegram.ui.Cells.t2) view;
+        if (view instanceof org.telegram.ui.Cells.u2) {
+            org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) view;
             ArrayList arrayList = this.f;
             org.telegram.messenger.ov ovVar = (org.telegram.messenger.ov) arrayList.get(i7);
-            t2Var.d0(ovVar.a, ovVar.d, ovVar.c(), false, false);
-            t2Var.t0 = true;
-            t2Var.c0(this.x.contains(Long.valueOf(ovVar.a)), false);
-            t2Var.t2 = i7 + 1 < arrayList.size();
+            u2Var.d0(ovVar.a, ovVar.d, ovVar.c(), false, false);
+            u2Var.t0 = true;
+            u2Var.c0(this.x.contains(Long.valueOf(ovVar.a)), false);
+            u2Var.t2 = i7 + 1 < arrayList.size();
         }
     }
 

@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Cells.w3;
+import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.kv0;
@@ -32,7 +32,7 @@ import v4.q0;
 import wg.r;
 import wg.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h extends rg.b {
     public final i6 d;
@@ -40,7 +40,7 @@ public final class h extends rg.b {
     public ck0 f;
     public ArrayList n;
     public boolean s;
-    public x3 w;
+    public y3 w;
     public final boolean x;
     public boolean y;
     public final HashMap r = new HashMap();
@@ -195,9 +195,9 @@ public final class h extends rg.b {
         }
         if (i11 != 8) {
             if (i11 == 9) {
-                m8 m8Var = (m8) view;
-                m8Var.g(n6.v6, n6.u6);
-                m8Var.o(gVar.i, gVar.f, false);
+                n8 n8Var = (n8) view;
+                n8Var.g(n6.v6, n6.u6);
+                n8Var.o(gVar.i, gVar.f, false);
                 return;
             } else {
                 if (i11 == 10) {
@@ -212,25 +212,25 @@ public final class h extends rg.b {
                 return;
             }
         }
-        x3 x3Var = (x3) view;
-        if (TextUtils.equals(x3Var.getText(), gVar.f)) {
+        y3 y3Var = (y3) view;
+        if (TextUtils.equals(y3Var.getText(), gVar.f)) {
             String str2 = gVar.g;
             if (str2 == null) {
                 str2 = "";
             }
-            x3Var.a(str2, gVar.l);
+            y3Var.a(str2, gVar.l);
         } else {
-            x3Var.setText(j6.p(gVar.f, x3Var.getTextView(), null));
+            y3Var.setText(j6.p(gVar.f, y3Var.getTextView(), null));
             if (!TextUtils.isEmpty(gVar.g)) {
                 String str3 = gVar.g;
                 a0 a0Var = gVar.l;
-                w3 w3Var = x3Var.b;
-                w3Var.c(str3, false, true);
-                w3Var.setOnClickListener(a0Var);
-                w3Var.setVisibility(0);
+                x3 x3Var = y3Var.b;
+                x3Var.c(str3, false, true);
+                x3Var.setOnClickListener(a0Var);
+                x3Var.setVisibility(0);
             }
         }
-        this.w = x3Var;
+        this.w = y3Var;
     }
 
     @Override // v4.i0
@@ -270,18 +270,18 @@ public final class h extends rg.b {
                         rVar = cVar;
                     }
                 } else if (i7 == 8) {
-                    x3 x3Var = new x3(context, i6Var);
-                    x3Var.setTag(-33024);
-                    rVar = x3Var;
+                    y3 y3Var = new y3(context, i6Var);
+                    y3Var.setTag(-33024);
+                    rVar = y3Var;
                     if (z10) {
-                        x3Var.setBackground(null);
-                        rVar = x3Var;
+                        y3Var.setBackground(null);
+                        rVar = y3Var;
                     }
                 } else if (i7 == 9) {
-                    m8 m8Var = new m8(context, i6Var);
-                    m8Var.n = 16;
-                    m8Var.x = 19;
-                    rVar = m8Var;
+                    n8 n8Var = new n8(context, i6Var);
+                    n8Var.n = 16;
+                    n8Var.x = 19;
+                    rVar = n8Var;
                 } else {
                     rVar = i7 == 10 ? new FrameLayout(context) : new View(context);
                 }

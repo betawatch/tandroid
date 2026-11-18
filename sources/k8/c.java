@@ -19,10 +19,10 @@ import org.telegram.messenger.j1;
 import org.telegram.messenger.o;
 import org.telegram.ui.Components.dl;
 import org.telegram.ui.Components.yk;
-import org.telegram.ui.z90;
+import org.telegram.ui.aa0;
 import v7.i;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final /* synthetic */ int b = 1;
@@ -122,7 +122,7 @@ public final class c extends q {
                 break;
             case 5:
                 if (i7 == 1) {
-                    ((z90) ((j1) this.c).b).run();
+                    ((aa0) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }

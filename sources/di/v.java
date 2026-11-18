@@ -3,9 +3,9 @@ package di;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mf0;
+import org.telegram.ui.nf0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class v implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new bi.l4(tLObject, this.b, (hi.d) this.d, (org.telegram.ui.ActionBar.x2) this.e, this.c, tL_error));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new bi.l4((mf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 7));
+                org.telegram.messenger.g0.g3(new bi.l4((nf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 7));
                 break;
         }
     }
@@ -61,9 +61,9 @@ public final /* synthetic */ class v implements RequestDelegate {
         this.c = j3;
     }
 
-    public /* synthetic */ v(mf0 mf0Var, long j3, int i7, TLRPC.Chat chat) {
+    public /* synthetic */ v(nf0 nf0Var, long j3, int i7, TLRPC.Chat chat) {
         this.a = 4;
-        this.d = mf0Var;
+        this.d = nf0Var;
         this.c = j3;
         this.b = i7;
         this.e = chat;

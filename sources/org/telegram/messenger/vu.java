@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class vu extends zt {
     public final dv X;
@@ -54,7 +54,7 @@ public abstract class vu extends zt {
     }
 
     @Override // org.telegram.messenger.zt
-    public final org.telegram.ui.Cells.t9[] L() {
+    public final org.telegram.ui.Cells.u9[] L() {
         return this.Z;
     }
 
@@ -130,7 +130,7 @@ public abstract class vu extends zt {
         }
     }
 
-    @Override // org.telegram.messenger.zt, org.telegram.ui.vg0
+    @Override // org.telegram.messenger.zt, org.telegram.ui.wg0
     public final Layout a() {
         return this.X.b;
     }

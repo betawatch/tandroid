@@ -46,7 +46,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Components.dq0;
 import org.telegram.ui.Components.ej0;
 import org.telegram.ui.Components.l41;
@@ -63,7 +63,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.ll0;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj0, r10, pj0, fi.x6, fi.z8, xh.j, r0.m, h9.h1, org.telegram.ui.ActionBar.r1, ej0, sg.j1, CameraController.VideoTakeCallback, ot0, f3.g {
     public final /* synthetic */ int a;
@@ -1555,10 +1555,10 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                 return false;
             case 14:
                 dq0 dq0Var = ((gi.m) obj).a0;
-                if (dq0Var.H.F1 || !(view instanceof org.telegram.ui.Cells.o7)) {
+                if (dq0Var.H.F1 || !(view instanceof org.telegram.ui.Cells.p7)) {
                     return false;
                 }
-                fj messageObject = ((org.telegram.ui.Cells.o7) view).getMessageObject();
+                fj messageObject = ((org.telegram.ui.Cells.p7) view).getMessageObject();
                 if (dq0Var.c(messageObject)) {
                     dq0Var.g(messageObject);
                 } else {
@@ -1611,11 +1611,11 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
 
     @Override // org.telegram.ui.ll0
     public void d(int i7) {
-        bi.c8 c8Var = (bi.c8) this.b;
+        bi.b8 b8Var = (bi.b8) this.b;
         if (i7 == 1) {
-            c8Var.a(Boolean.TRUE, null);
+            b8Var.a(Boolean.TRUE, null);
         } else if (i7 != 3) {
-            c8Var.a(Boolean.FALSE, null);
+            b8Var.a(Boolean.FALSE, null);
         }
     }
 
@@ -1889,7 +1889,7 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                 if (i15 == -1) {
                     boolean z10 = !f1Var.d;
                     f1Var.d = z10;
-                    ((org.telegram.ui.Cells.r8) view).setChecked(z10);
+                    ((org.telegram.ui.Cells.s8) view).setChecked(z10);
                     f1Var.a.g3.O(true);
                     f1Var.d0(true);
                     break;
@@ -1934,14 +1934,14 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                         break;
                     } else {
                         if (f1Var.f[l41Var3.d].isEmpty()) {
-                            ((org.telegram.ui.Cells.i5) view).setChecked(true);
+                            ((org.telegram.ui.Cells.j5) view).setChecked(true);
                             f1Var.f[l41Var3.d].add(new kg.e1(0, 1439));
                             f1Var.c0(l41Var3.d);
                         } else {
                             f1Var.f[l41Var3.d].clear();
-                            ((org.telegram.ui.Cells.i5) view).setChecked(false);
+                            ((org.telegram.ui.Cells.j5) view).setChecked(false);
                         }
-                        ((org.telegram.ui.Cells.i5) view).setValue(kg.f1.f0(f1Var.f[l41Var3.d]));
+                        ((org.telegram.ui.Cells.j5) view).setValue(kg.f1.f0(f1Var.f[l41Var3.d]));
                         f1Var.d0(true);
                         break;
                     }
@@ -1961,12 +1961,12 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                     if (h1Var2.r) {
                         arrayList3.add(new kg.e1(0, 1439));
                     }
-                    org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view2;
+                    org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view2;
                     boolean z11 = h1Var2.r;
                     l41Var4.e = z11;
-                    r8Var.setChecked(z11);
+                    s8Var.setChecked(z11);
                     boolean z12 = h1Var2.r;
-                    r8Var.b(org.telegram.ui.ActionBar.n6.x0(null, z12 ? org.telegram.ui.ActionBar.n6.f6 : org.telegram.ui.ActionBar.n6.e6, false), z12);
+                    s8Var.b(org.telegram.ui.ActionBar.n6.x0(null, z12 ? org.telegram.ui.ActionBar.n6.f6 : org.telegram.ui.ActionBar.n6.e6, false), z12);
                     h1Var2.n.g3.O(true);
                     kg.j0 j0Var = h1Var2.f;
                     if (j0Var != null) {
@@ -2013,10 +2013,10 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                                     case 0:
                                         h1 h1Var3 = h1Var2;
                                         boolean a02 = h1Var3.a0();
-                                        m8 m8Var = (m8) view2;
+                                        n8 n8Var = (n8) view2;
                                         int intValue = num.intValue();
                                         e1Var2.a = intValue;
-                                        m8Var.w(e1.a(intValue), true);
+                                        n8Var.w(e1.a(intValue), true);
                                         if (a02 != h1Var3.a0()) {
                                             h1Var3.n.g3.O(true);
                                         }
@@ -2029,10 +2029,10 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                                     default:
                                         h1 h1Var4 = h1Var2;
                                         boolean a03 = h1Var4.a0();
-                                        m8 m8Var2 = (m8) view2;
+                                        n8 n8Var2 = (n8) view2;
                                         int intValue2 = num.intValue();
                                         e1Var2.b = intValue2;
-                                        m8Var2.w(e1.a(intValue2), true);
+                                        n8Var2.w(e1.a(intValue2), true);
                                         if (a03 != h1Var4.a0()) {
                                             h1Var4.n.g3.O(true);
                                         }
@@ -2062,10 +2062,10 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                                     case 0:
                                         h1 h1Var3 = h1Var2;
                                         boolean a02 = h1Var3.a0();
-                                        m8 m8Var = (m8) view2;
+                                        n8 n8Var = (n8) view2;
                                         int intValue = num.intValue();
                                         e1Var2.a = intValue;
-                                        m8Var.w(e1.a(intValue), true);
+                                        n8Var.w(e1.a(intValue), true);
                                         if (a02 != h1Var3.a0()) {
                                             h1Var3.n.g3.O(true);
                                         }
@@ -2078,10 +2078,10 @@ public final /* synthetic */ class c7 implements ll0, v10, OnSuccessListener, qj
                                     default:
                                         h1 h1Var4 = h1Var2;
                                         boolean a03 = h1Var4.a0();
-                                        m8 m8Var2 = (m8) view2;
+                                        n8 n8Var2 = (n8) view2;
                                         int intValue2 = num.intValue();
                                         e1Var2.b = intValue2;
-                                        m8Var2.w(e1.a(intValue2), true);
+                                        n8Var2.w(e1.a(intValue2), true);
                                         if (a03 != h1Var4.a0()) {
                                             h1Var4.n.g3.O(true);
                                         }

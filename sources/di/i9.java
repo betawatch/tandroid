@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -161,7 +161,7 @@ public final /* synthetic */ class i9 implements Runnable {
             case 4:
                 tr trVar = (tr) obj3;
                 String str = (String) obj2;
-                bi.y4 y4Var = (bi.y4) obj;
+                bi.x4 x4Var = (bi.x4) obj;
                 long currentTimeMillis = System.currentTimeMillis();
                 try {
                     try {
@@ -214,7 +214,7 @@ public final /* synthetic */ class i9 implements Runnable {
                             if (sQLitePreparedStatement != null) {
                                 sQLitePreparedStatement.dispose();
                             }
-                            org.telegram.messenger.g0.g3(new nd(y4Var, j10, i14));
+                            org.telegram.messenger.g0.g3(new nd(x4Var, j10, i14));
                             return;
                         } catch (Throwable th3) {
                             th = th3;
@@ -236,7 +236,7 @@ public final /* synthetic */ class i9 implements Runnable {
                         }
                         if (sQLitePreparedStatement != null) {
                         }
-                        org.telegram.messenger.g0.g3(new nd(y4Var, j10, i14));
+                        org.telegram.messenger.g0.g3(new nd(x4Var, j10, i14));
                         return;
                     }
                 } catch (Throwable th4) {
@@ -260,7 +260,7 @@ public final /* synthetic */ class i9 implements Runnable {
                     }
                     if (sQLitePreparedStatement != null) {
                     }
-                    org.telegram.messenger.g0.g3(new nd(y4Var, j10, i14));
+                    org.telegram.messenger.g0.g3(new nd(x4Var, j10, i14));
                     return;
                 } catch (Throwable th5) {
                     th = th5;
@@ -272,7 +272,7 @@ public final /* synthetic */ class i9 implements Runnable {
                     }
                     throw th;
                 }
-                org.telegram.messenger.g0.g3(new nd(y4Var, j10, i14));
+                org.telegram.messenger.g0.g3(new nd(x4Var, j10, i14));
                 return;
             case 5:
                 tr trVar2 = (tr) obj3;
@@ -436,13 +436,13 @@ public final /* synthetic */ class i9 implements Runnable {
         this.h = str2;
     }
 
-    public /* synthetic */ i9(tr trVar, long j3, String str, long j10, int i7, bi.y4 y4Var) {
+    public /* synthetic */ i9(tr trVar, long j3, String str, long j10, int i7, bi.x4 x4Var) {
         this.e = trVar;
         this.c = j3;
         this.f = str;
         this.d = j10;
         this.b = i7;
-        this.h = y4Var;
+        this.h = x4Var;
     }
 
     public /* synthetic */ i9(y60 y60Var, int i7, long j3, long j10, bn bnVar, org.telegram.ui.ActionBar.i6 i6Var) {

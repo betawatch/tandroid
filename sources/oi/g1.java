@@ -11,9 +11,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.ry;
 import org.telegram.ui.Components.wg;
 import org.telegram.ui.Components.y60;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -222,9 +222,9 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
                 break;
             case 10:
                 z1Var.w0();
-                eg0 eg0Var = z1Var.P0;
-                if (eg0Var != null) {
-                    eg0Var.h(true);
+                fg0 fg0Var = z1Var.P0;
+                if (fg0Var != null) {
+                    fg0Var.h(true);
                     z1Var.P0 = null;
                     break;
                 }

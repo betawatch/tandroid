@@ -8,19 +8,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class rh implements View.OnClickListener {
-    public final /* synthetic */ mf0 a;
+    public final /* synthetic */ nf0 a;
     public final /* synthetic */ org.telegram.ui.Components.ck0 b;
     public final /* synthetic */ LinearLayout c;
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ bn f;
 
-    public rh(bn bnVar, mf0 mf0Var, org.telegram.ui.Components.ck0 ck0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+    public rh(bn bnVar, nf0 nf0Var, org.telegram.ui.Components.ck0 ck0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
         this.f = bnVar;
-        this.a = mf0Var;
+        this.a = nf0Var;
         this.b = ck0Var;
         this.c = linearLayout;
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -29,9 +29,9 @@ public final class rh implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        mf0 mf0Var = this.a;
-        ArrayList arrayList = mf0Var.b;
-        ArrayList arrayList2 = mf0Var.c;
+        nf0 nf0Var = this.a;
+        ArrayList arrayList = nf0Var.b;
+        ArrayList arrayList2 = nf0Var.c;
         bn bnVar = this.f;
         if (bnVar.g9 == null || arrayList2.isEmpty()) {
             return;

@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class iu extends zt implements y5 {
     public final TLRPC.Document X;
@@ -148,8 +148,8 @@ public final class iu extends zt implements y5 {
 
     @Override // org.telegram.messenger.zt
     public final void W(Canvas canvas) {
-        org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.ui.Cells.l1 l1Var;
+        org.telegram.ui.Cells.r1 r1Var;
+        org.telegram.ui.Cells.m1 m1Var;
         Drawable drawable;
         TLRPC.Document document = this.X;
         if (document == null) {
@@ -185,7 +185,7 @@ public final class iu extends zt implements y5 {
         this.e0.draw(canvas);
         canvas.restore();
         RectF rectF = this.j0;
-        if (document == null || (q1Var = evVar.E) == null || (l1Var = evVar.F) == null || !l1Var.d0(q1Var)) {
+        if (document == null || (r1Var = evVar.E) == null || (m1Var = evVar.F) == null || !m1Var.d0(r1Var)) {
             rectF.setEmpty();
         } else {
             if (evVar.E()) {
@@ -213,8 +213,8 @@ public final class iu extends zt implements y5 {
     */
     public final boolean Y(MotionEvent motionEvent) {
         boolean z10;
-        org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.ui.Cells.l1 l1Var;
+        org.telegram.ui.Cells.r1 r1Var;
+        org.telegram.ui.Cells.m1 m1Var;
         float x10 = motionEvent.getX();
         ev evVar = this.a;
         int i7 = evVar.S;
@@ -236,7 +236,7 @@ public final class iu extends zt implements y5 {
             if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
                 boolean z12 = motionEvent.getActionMasked() == 1 && contains;
                 this.n0 = false;
-                if (z12 && document != null && document != null && (q1Var = evVar.E) != null && (l1Var = evVar.F) != null && l1Var.d0(q1Var)) {
+                if (z12 && document != null && document != null && (r1Var = evVar.E) != null && (m1Var = evVar.F) != null && m1Var.d0(r1Var)) {
                     View view = this.W;
                     if (view != null) {
                         view.playSoundEffect(0);

@@ -29,12 +29,12 @@ import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.vb0;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.co;
-import org.telegram.ui.dc0;
+import org.telegram.ui.ec0;
 import org.telegram.ui.hv;
 import org.telegram.ui.jo;
 import org.telegram.ui.lz;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i extends EditTextBoldCursor {
     public final /* synthetic */ int M1;
@@ -218,7 +218,7 @@ public final class i extends EditTextBoldCursor {
         switch (this.M1) {
             case 9:
                 if (i7 == 16908322 || i7 == 16908337) {
-                    ((dc0) this.N1).E = true;
+                    ((ec0) this.N1).E = true;
                     postDelayed(new lz(this, 24), 1000L);
                 }
                 break;

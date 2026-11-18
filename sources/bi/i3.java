@@ -44,7 +44,7 @@ import org.telegram.ui.Components.zu0;
 import org.telegram.ui.dq0;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i3 extends View {
     public final /* synthetic */ int a;
@@ -230,9 +230,9 @@ public final class i3 extends View {
                 checkBoxBase.a(canvas);
                 break;
             case 13:
-                org.telegram.ui.Cells.t2 t2Var = (org.telegram.ui.Cells.t2) this.b;
-                t2Var.o4.setBounds(0, 0, getWidth(), getHeight());
-                t2Var.o4.draw(canvas);
+                org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) this.b;
+                u2Var.o4.setBounds(0, 0, getWidth(), getHeight());
+                u2Var.o4.draw(canvas);
                 break;
             case 18:
                 if (((cr) this.b).V1) {

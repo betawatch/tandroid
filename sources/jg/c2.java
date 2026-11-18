@@ -25,15 +25,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.j8;
-import org.telegram.ui.Cells.m3;
-import org.telegram.ui.Cells.u3;
-import org.telegram.ui.Cells.z7;
+import org.telegram.ui.Cells.a8;
+import org.telegram.ui.Cells.k8;
+import org.telegram.ui.Cells.n3;
+import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c2 extends bk0 {
     public int E;
@@ -79,9 +79,9 @@ public final class c2 extends bk0 {
         return false;
     }
 
-    public final void E(u3 u3Var, int i7, boolean z10) {
+    public final void E(v3 v3Var, int i7, boolean z10) {
         boolean z11;
-        u3 u3Var2;
+        v3 v3Var2;
         boolean z12;
         int i10 = this.c;
         ri d02 = ri.d0(i10);
@@ -108,15 +108,15 @@ public final class c2 extends bk0 {
         }
         int A1 = TextUtils.isEmpty(this.S) ? -1 : org.telegram.messenger.g0.A1(stickerSetCovered.set.title, this.S);
         if (A1 >= 0) {
-            u3Var2 = u3Var;
+            v3Var2 = v3Var;
             z12 = z10;
-            u3Var2.c(stickerSetCovered, z13, z12, A1, this.S.length(), z11);
+            v3Var2.c(stickerSetCovered, z13, z12, A1, this.S.length(), z11);
         } else {
-            u3Var2 = u3Var;
+            v3Var2 = v3Var;
             z12 = z10;
-            u3Var2.c(stickerSetCovered, z13, z12, 0, 0, z11);
+            v3Var2.c(stickerSetCovered, z13, z12, 0, 0, z11);
             if (!TextUtils.isEmpty(this.S) && org.telegram.messenger.g0.A1(stickerSetCovered.set.short_name, this.S) == 0) {
-                u3Var2.d(this.S.length(), stickerSetCovered.set.short_name);
+                v3Var2.d(this.S.length(), stickerSetCovered.set.short_name);
             }
         }
         if (z13) {
@@ -129,16 +129,16 @@ public final class c2 extends bk0 {
         LongSparseArray longSparseArray2 = this.n;
         boolean z15 = longSparseArray2.indexOfKey(j10) >= 0;
         if (z14 || z15) {
-            if (z14 && u3Var2.r) {
+            if (z14 && v3Var2.r) {
                 longSparseArray.remove(stickerSetCovered.set.id);
                 z14 = false;
-            } else if (z15 && !u3Var2.r) {
+            } else if (z15 && !v3Var2.r) {
                 longSparseArray2.remove(stickerSetCovered.set.id);
             }
         }
-        u3Var2.b(!z11 && z14, z12);
+        v3Var2.b(!z11 && z14, z12);
         d02.s1(stickerSetCovered);
-        u3Var2.setNeedDivider(i7 > 0);
+        v3Var2.setNeedDivider(i7 > 0);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0039, code lost:
@@ -235,7 +235,7 @@ public final class c2 extends bk0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void F(TLRPC.StickerSetCovered stickerSetCovered, u3 u3Var) {
+    public final void F(TLRPC.StickerSetCovered stickerSetCovered, v3 v3Var) {
         int i7 = 0;
         while (true) {
             TLRPC.StickerSetCovered[] stickerSetCoveredArr = this.f;
@@ -456,45 +456,45 @@ public final class c2 extends bk0 {
         View view = f1Var.a;
         SparseArray sparseArray = this.s;
         if (i10 == 0) {
-            ((z7) view).d((TLRPC.Document) sparseArray.get(i7), null, this.w.get(i7), (String) this.y.get(i7), false, false);
+            ((a8) view).d((TLRPC.Document) sparseArray.get(i7), null, this.w.get(i7), (String) this.y.get(i7), false, false);
             return;
         }
         if (i10 == 1) {
-            ((m3) view).setHeight(0);
+            ((n3) view).setHeight(0);
             return;
         }
         if (i10 != 2) {
             if (i10 != 3) {
                 return;
             }
-            E((u3) view, i7, false);
+            E((v3) view, i7, false);
             return;
         }
-        j8 j8Var = (j8) view;
+        k8 k8Var = (k8) view;
         Object obj = sparseArray.get(i7);
         if (obj instanceof TLRPC.TL_messages_stickerSet) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
             if (!TextUtils.isEmpty(this.S) && this.H.containsKey(tL_messages_stickerSet)) {
                 TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                 if (stickerSet != null) {
-                    j8Var.a(0, stickerSet.title);
+                    k8Var.a(0, stickerSet.title);
                 }
-                j8Var.c(this.S.length(), tL_messages_stickerSet.set.short_name);
+                k8Var.c(this.S.length(), tL_messages_stickerSet.set.short_name);
                 return;
             }
             Integer num = (Integer) this.I.get(tL_messages_stickerSet);
             TLRPC.StickerSet stickerSet2 = tL_messages_stickerSet.set;
             if (stickerSet2 != null && num != null) {
-                j8Var.b(stickerSet2.title, 0, null, num.intValue(), !TextUtils.isEmpty(this.S) ? this.S.length() : 0);
+                k8Var.b(stickerSet2.title, 0, null, num.intValue(), !TextUtils.isEmpty(this.S) ? this.S.length() : 0);
             }
-            j8Var.c(0, null);
+            k8Var.c(0, null);
         }
     }
 
     @Override // v4.i0
     public final void v(v4.f1 f1Var, int i7, List list) {
         if (list.contains(0) && f1Var.f == 3) {
-            E((u3) f1Var.a, i7, true);
+            E((v3) f1Var.a, i7, true);
         } else {
             t(f1Var, i7);
         }
@@ -513,13 +513,13 @@ public final class c2 extends bk0 {
             b2Var.getImageView().E0(3);
             frameLayout = b2Var;
         } else if (i7 == 1) {
-            frameLayout = new m3(context);
+            frameLayout = new n3(context);
         } else if (i7 == 2) {
-            frameLayout = new j8(this.d, false, true, this.U, false);
+            frameLayout = new k8(this.d, false, true, this.U, false);
         } else if (i7 == 3) {
-            u3 u3Var = new u3(17, this.d, this.U, true, true);
-            u3Var.setAddOnClickListener(new hi.o0(this, 7));
-            frameLayout = u3Var;
+            v3 v3Var = new v3(17, this.d, this.U, true, true);
+            v3Var.setAddOnClickListener(new hi.o0(this, 7));
+            frameLayout = v3Var;
         } else if (i7 != 4) {
             frameLayout = null;
             if (i7 == 5) {

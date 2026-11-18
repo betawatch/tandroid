@@ -46,12 +46,12 @@ import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.kp0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.rm;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.telegram.ui.wc1;
 import org.telegram.ui.zl;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class xa implements f3.i, m9.t {
     public final /* synthetic */ int a;
@@ -385,11 +385,11 @@ public class xa implements f3.i, m9.t {
                 try {
                     y7.g9.b();
                     y7.m6 m6Var = new y7.m6(eVar);
-                    md0 md0Var = new md0(26);
-                    g9Var.a(md0Var);
-                    HashMap hashMap3 = new HashMap((HashMap) md0Var.b);
-                    HashMap hashMap4 = new HashMap((HashMap) md0Var.c);
-                    y7.i iVar = (y7.i) md0Var.d;
+                    nd0 nd0Var = new nd0(26);
+                    g9Var.a(nd0Var);
+                    HashMap hashMap3 = new HashMap((HashMap) nd0Var.b);
+                    HashMap hashMap4 = new HashMap((HashMap) nd0Var.c);
+                    y7.i iVar = (y7.i) nd0Var.d;
                     ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
                     try {
                         jVar = new y7.j(byteArrayOutputStream2, hashMap3, hashMap4, iVar);

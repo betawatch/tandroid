@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class zz extends bk0 {
     public final /* synthetic */ g00 c;
@@ -89,23 +89,23 @@ public final class zz extends bk0 {
                 }
                 return;
             }
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-            z8Var.setForeground(org.telegram.ui.ActionBar.n6.Y0(g00Var.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.n6.b7));
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+            a9Var.setForeground(org.telegram.ui.ActionBar.n6.Y0(g00Var.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.n6.b7));
             if (i7 == g00Var.t2 || i7 == g00Var.l2 || arrayList2 == null || arrayList2.isEmpty()) {
-                z8Var.setFixedSize(12);
-                z8Var.setText("");
+                a9Var.setFixedSize(12);
+                a9Var.setText("");
                 return;
             }
-            z8Var.setFixedSize(0);
+            a9Var.setFixedSize(0);
             if (g00Var.X1) {
-                z8Var.setText(org.telegram.messenger.gd.M0(2131750638, null));
+                a9Var.setText(org.telegram.messenger.gd.M0(2131750638, null));
                 return;
             } else {
-                z8Var.setText(org.telegram.messenger.gd.M0(2131750639, null));
+                a9Var.setText(org.telegram.messenger.gd.M0(2131750639, null));
                 return;
             }
         }
-        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+        org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) view;
         int i11 = g00Var.n2;
         if (i7 < i11 || i7 > g00Var.o2) {
             int i12 = g00Var.r2;
@@ -134,14 +134,14 @@ public final class zz extends bk0 {
                 chat2 = chat;
                 if (chat2 instanceof TLRPC.Chat) {
                 }
-                h4Var.setTag(Long.valueOf(j3));
-                checkBoxBase = h4Var.getCheckBox().getCheckBoxBase();
+                i4Var.setTag(Long.valueOf(j3));
+                checkBoxBase = i4Var.getCheckBox().getCheckBoxBase();
                 if (g00Var.d2.contains(Long.valueOf(j3))) {
                 }
                 if (checkBoxBase.h != f10) {
                 }
-                h4Var.c(g00Var.e2.contains(Long.valueOf(j3)), false);
-                h4Var.d(chat2, str, str2);
+                i4Var.c(g00Var.e2.contains(Long.valueOf(j3)), false);
+                i4Var.d(chat2, str, str2);
             }
             j3 = peer.user_id;
             TLRPC.User c22 = h2Var.getMessagesController().c2(Long.valueOf(peer.user_id));
@@ -159,15 +159,15 @@ public final class zz extends bk0 {
                 str2 = chat4.participants_count != 0 ? org.telegram.messenger.v3.V(chat4) ? org.telegram.messenger.gd.H(',', "Subscribers", chat4.participants_count) : org.telegram.messenger.gd.H(',', "Members", chat4.participants_count) : org.telegram.messenger.v3.V(chat4) ? org.telegram.messenger.gd.M0(2131752307, null) : org.telegram.messenger.gd.M0(2131748446, null);
                 str = str3;
             }
-            h4Var.setTag(Long.valueOf(j3));
-            checkBoxBase = h4Var.getCheckBox().getCheckBoxBase();
+            i4Var.setTag(Long.valueOf(j3));
+            checkBoxBase = i4Var.getCheckBox().getCheckBoxBase();
             f10 = g00Var.d2.contains(Long.valueOf(j3)) ? 0.5f : 1.0f;
             if (checkBoxBase.h != f10) {
                 checkBoxBase.h = f10;
                 checkBoxBase.b();
             }
-            h4Var.c(g00Var.e2.contains(Long.valueOf(j3)), false);
-            h4Var.d(chat2, str, str2);
+            i4Var.c(g00Var.e2.contains(Long.valueOf(j3)), false);
+            i4Var.d(chat2, str, str2);
         }
         j3 = 0;
         chat = null;
@@ -176,20 +176,20 @@ public final class zz extends bk0 {
         chat2 = chat;
         if (chat2 instanceof TLRPC.Chat) {
         }
-        h4Var.setTag(Long.valueOf(j3));
-        checkBoxBase = h4Var.getCheckBox().getCheckBoxBase();
+        i4Var.setTag(Long.valueOf(j3));
+        checkBoxBase = i4Var.getCheckBox().getCheckBoxBase();
         if (g00Var.d2.contains(Long.valueOf(j3))) {
         }
         if (checkBoxBase.h != f10) {
         }
-        h4Var.c(g00Var.e2.contains(Long.valueOf(j3)), false);
-        h4Var.d(chat2, str, str2);
+        i4Var.c(g00Var.e2.contains(Long.valueOf(j3)), false);
+        i4Var.d(chat2, str, str2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v3, types: [android.view.View, org.telegram.ui.Cells.h4] */
+    /* JADX WARN: Type inference failed for: r10v3, types: [android.view.View, org.telegram.ui.Cells.i4] */
     /* JADX WARN: Type inference failed for: r9v3, types: [android.view.View, org.telegram.ui.Components.d00] */
-    /* JADX WARN: Type inference failed for: r9v6, types: [android.view.View, org.telegram.ui.Cells.z8] */
+    /* JADX WARN: Type inference failed for: r9v6, types: [android.view.View, org.telegram.ui.Cells.a9] */
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         f00 f00Var;
@@ -201,13 +201,13 @@ public final class zz extends bk0 {
         } else {
             f00Var = null;
             if (i7 == 1) {
-                ?? z8Var = new org.telegram.ui.Cells.z8(g00Var.getContext());
-                org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, z8Var, null);
-                f00Var2 = z8Var;
+                ?? a9Var = new org.telegram.ui.Cells.a9(g00Var.getContext());
+                org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, a9Var, null);
+                f00Var2 = a9Var;
             } else if (i7 == 2) {
-                ?? h4Var = new org.telegram.ui.Cells.h4(g00Var.getContext(), 1, 0, false);
-                org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, h4Var, null);
-                f00Var = h4Var;
+                ?? i4Var = new org.telegram.ui.Cells.i4(g00Var.getContext(), 1, 0, false);
+                org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, i4Var, null);
+                f00Var = i4Var;
             } else if (i7 == 3) {
                 ?? d00Var = new d00(g00Var.getContext());
                 org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, d00Var, null);

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qz extends org.telegram.ui.ActionBar.x2 implements org.telegram.messenger.fs {
     public static final /* synthetic */ int x1 = 0;
@@ -42,9 +42,9 @@ public final class qz extends org.telegram.ui.ActionBar.x2 implements org.telegr
             i7++;
         }
         Activity parentActivity = cxVar.getParentActivity();
-        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(this, parentActivity);
-        this.b = w0Var;
-        w0Var.setWillNotDraw(false);
+        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(this, parentActivity);
+        this.b = x0Var;
+        x0Var.setWillNotDraw(false);
         ViewGroup viewGroup = this.b;
         int i10 = this.u0;
         viewGroup.setPadding(i10, 0, i10, 0);
@@ -86,7 +86,7 @@ public final class qz extends org.telegram.ui.ActionBar.x2 implements org.telegr
         textView.setText(org.telegram.messenger.gd.M0(2131750782, null));
         textView.setTypeface(org.telegram.messenger.g0.o());
         this.b.addView(textView, c8.ma.d(-1, 50.0f, 51, 0.0f, 0.0f, 40.0f, 0.0f));
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
     }
 
     public static void J0(qz qzVar) {
@@ -175,7 +175,7 @@ public final class qz extends org.telegram.ui.ActionBar.x2 implements org.telegr
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             org.telegram.messenger.g0.d0(this.n1, new fi.e(13));
         }
     }
@@ -183,7 +183,7 @@ public final class qz extends org.telegram.ui.ActionBar.x2 implements org.telegr
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
         super.dismiss();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
     }
 
     @Override // org.telegram.ui.ActionBar.x2

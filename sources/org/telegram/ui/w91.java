@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import java.util.HashSet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class w91 extends org.telegram.ui.Components.ba {
     public static final /* synthetic */ int o3 = 0;
@@ -32,7 +32,7 @@ public abstract class w91 extends org.telegram.ui.Components.ba {
         this.i3 = org.telegram.messenger.g0.L(200.0f);
     }
 
-    public final void B1(boolean z10, org.telegram.ui.Cells.t2 t2Var) {
+    public final void B1(boolean z10, org.telegram.ui.Cells.u2 u2Var) {
         int i7;
         y91 y91Var = this.n3;
         y91Var.F = z10;
@@ -44,11 +44,11 @@ public abstract class w91 extends org.telegram.ui.Components.ba {
             if (jvVar != null) {
                 jvVar.X = i7 != 0;
             }
-            if (t2Var != null) {
-                t2Var.b0();
-                t2Var.invalidate();
+            if (u2Var != null) {
+                u2Var.b0();
+                u2Var.invalidate();
             }
-        } else if (t2Var != null) {
+        } else if (u2Var != null) {
             y91Var.G.h1(1, 0);
             i7 = y91Var.F ? 0 : 2;
             y91Var.E = i7;
@@ -65,7 +65,7 @@ public abstract class w91 extends org.telegram.ui.Components.ba {
 
     @Override // org.telegram.ui.Components.ck0
     public final boolean F0(View view) {
-        return !(view instanceof org.telegram.ui.Cells.n4) || view.isClickable();
+        return !(view instanceof org.telegram.ui.Cells.o4) || view.isClickable();
     }
 
     @Override // android.view.ViewGroup
@@ -215,7 +215,7 @@ public abstract class w91 extends org.telegram.ui.Components.ba {
                                     jvVar.a(true);
                                 }
                             }
-                            ((org.telegram.ui.Cells.t2) m10).h0();
+                            ((org.telegram.ui.Cells.u2) m10).h0();
                             y91Var.E = 1;
                         }
                         float f10 = this.m3;

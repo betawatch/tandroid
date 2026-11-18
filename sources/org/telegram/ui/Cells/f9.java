@@ -1,223 +1,74 @@
 package org.telegram.ui.Cells;
 
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.view.ActionMode;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
 import android.view.Menu;
-import android.view.MenuItem;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.y21;
-import org.telegram.ui.sy0;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.TextView;
+import org.telegram.messenger.mc;
+import org.telegram.messenger.nc;
+import org.telegram.ui.Components.rd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class f9 implements ActionMode.Callback {
-    public final /* synthetic */ int a;
-    public Object b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class f9 implements nc, mc, rd0 {
+    public final /* synthetic */ Object a;
+    public final /* synthetic */ Object b;
 
-    public f9(mt mtVar, ActionMode.Callback callback) {
-        this.a = 1;
-        this.c = mtVar;
-        this.b = callback;
+    public /* synthetic */ f9(Object obj, Object obj2) {
+        this.a = obj;
+        this.b = obj2;
     }
 
-    public void b(Menu menu) {
-        gd.E0().y.getLanguage();
-        MenuItem findItem = menu.findItem(3);
-        if (findItem == null) {
+    @Override // org.telegram.messenger.nc
+    public void a(String str) {
+        g9 g9Var = (g9) this.a;
+        Menu menu = (Menu) this.b;
+        g9Var.b = str;
+        g9Var.b(menu);
+    }
+
+    @Override // org.telegram.ui.Components.rd0
+    public void j(int i7, int i10) {
+        u5 u5Var = (u5) this.a;
+        rd0 rd0Var = (rd0) this.b;
+        j6.o oVar = u5Var.e;
+        TextView textView = u5Var.b;
+        rd0Var.j(i7, i10);
+        if (i10 > 0) {
+            textView.setText("+" + i10);
+        } else {
+            textView.setText("" + i10);
+        }
+        if (textView.getTag() != null) {
+            org.telegram.messenger.g0.r(oVar);
+            org.telegram.messenger.g0.h3(oVar, 1000L);
             return;
         }
-        findItem.setVisible((((v9) this.c).k0 == null || ((String) this.b) == null || sy0.d0().contains((String) this.b)) ? false : true);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        CharSequence s5;
-        int i7 = this.a;
-        Object obj = this.c;
-        switch (i7) {
-            case 0:
-                v9 v9Var = (v9) obj;
-                f fVar = v9Var.m0;
-                if (v9Var.x()) {
-                    int itemId = menuItem.getItemId();
-                    if (itemId == 16908321) {
-                        if (v9Var.x() && v9Var.b()) {
-                            if (!v9Var.C()) {
-                                CharSequence r10 = v9Var.r();
-                                if (r10 != null) {
-                                    org.telegram.messenger.g0.g(r10);
-                                }
-                            }
-                            v9Var.u();
-                            v9Var.f(true);
-                            c8.ha haVar = v9Var.D;
-                            if (haVar != null) {
-                                haVar.b();
-                            }
-                        }
-                    } else if (itemId == 16908319) {
-                        if (!v9Var.J() && (s5 = v9Var.s(v9Var.W, false)) != null) {
-                            v9Var.u = 0;
-                            v9Var.v = s5.length();
-                            v9Var.u();
-                            v9Var.w();
-                            org.telegram.messenger.g0.r(fVar);
-                            org.telegram.messenger.g0.g3(fVar);
-                        }
-                    } else if (itemId == 3) {
-                        if (v9Var.k0 != null) {
-                            String language = gd.E0().y.getLanguage();
-                            org.telegram.ui.s sVar = v9Var.k0;
-                            CharSequence r11 = v9Var.r();
-                            String str = (String) this.b;
-                            f fVar2 = new f(this, 10);
-                            org.telegram.ui.g4 g4Var = sVar.a;
-                            y21.W0(g4Var.M, g4Var.N, str, language, r11, null, fVar2);
-                        }
-                        v9Var.u();
-                    } else if (itemId == R.id.menu_quote) {
-                        if (v9Var.x()) {
-                            q9 q9Var = v9Var.W;
-                            fj messageObject = q9Var instanceof q1 ? ((q1) q9Var).getMessageObject() : null;
-                            if (messageObject != null && v9Var.r() != null) {
-                                v9Var.I(v9Var.u, v9Var.v, messageObject);
-                                v9Var.f(true);
-                            }
-                        }
-                        v9Var.u();
-                    } else if (itemId == 16908320) {
-                        v9Var.D();
-                        v9Var.u();
-                    } else if (itemId == 16908322) {
-                        v9Var.H();
-                        v9Var.u();
-                    } else {
-                        v9Var.f(false);
-                    }
-                }
-                return true;
-            default:
-                if (((mt) obj).H(menuItem.getItemId())) {
-                    actionMode.finish();
-                    return true;
-                }
-                try {
-                    return ((ActionMode.Callback) this.b).onActionItemClicked(actionMode, menuItem);
-                } catch (Exception unused) {
-                    return true;
-                }
+        AnimatorSet animatorSet = u5Var.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
         }
+        textView.setTag(1);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        u5Var.d = animatorSet2;
+        Property property = View.ALPHA;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 0.0f));
+        u5Var.d.setDuration(250L);
+        u5Var.d.setInterpolator(new DecelerateInterpolator());
+        u5Var.d.addListener(new ki.n3(u5Var, 27));
+        u5Var.d.start();
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-            case 0:
-                menu.add(0, android.R.id.copy, 0, android.R.string.copy);
-                menu.add(0, R.id.menu_quote, 1, gd.M0(2131746245, null));
-                menu.add(0, 3, 2, gd.M0(2131743719, null));
-                menu.add(0, android.R.id.cut, 3, android.R.string.cut);
-                menu.add(0, android.R.id.paste, 4, android.R.string.paste);
-                menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);
-                return true;
-            default:
-                ((mt) this.c).F();
-                return ((ActionMode.Callback) this.b).onCreateActionMode(actionMode, menu);
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                ((mt) this.c).E();
-                ((ActionMode.Callback) this.b).onDestroyActionMode(actionMode);
-                break;
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        Context context;
-        ClipboardManager clipboardManager;
-        boolean z10;
-        v9 v9Var;
-        q9 q9Var;
-        switch (this.a) {
-            case 0:
-                MenuItem findItem = menu.findItem(R.id.menu_quote);
-                if (findItem != null) {
-                    findItem.setVisible(((v9) this.c).e());
-                }
-                MenuItem findItem2 = menu.findItem(android.R.id.copy);
-                if (findItem2 != null) {
-                    findItem2.setVisible(((v9) this.c).b());
-                }
-                MenuItem findItem3 = menu.findItem(android.R.id.selectAll);
-                if (findItem3 != null && (q9Var = (v9Var = (v9) this.c).W) != null) {
-                    CharSequence s5 = v9Var.s(q9Var, false);
-                    if (!((v9) this.c).b()) {
-                        findItem3.setVisible(false);
-                    } else if (((v9) this.c).j()) {
-                        findItem3.setVisible(true);
-                    } else {
-                        v9 v9Var2 = (v9) this.c;
-                        if (v9Var2.Z || (v9Var2.u <= 0 && v9Var2.v >= s5.length() - 1)) {
-                            findItem3.setVisible(false);
-                        } else {
-                            findItem3.setVisible(true);
-                        }
-                    }
-                }
-                MenuItem findItem4 = menu.findItem(android.R.id.cut);
-                if (findItem4 != null) {
-                    findItem4.setVisible(((v9) this.c) instanceof oi.g3);
-                }
-                MenuItem findItem5 = menu.findItem(android.R.id.paste);
-                if (findItem5 != null) {
-                    v9 v9Var3 = (v9) this.c;
-                    if (v9Var3 instanceof oi.g3) {
-                        try {
-                            u9 u9Var = v9Var3.C;
-                            context = u9Var != null ? u9Var.getContext() : org.telegram.messenger.t0.b;
-                        } catch (Exception unused) {
-                        }
-                        if (context != null && (clipboardManager = (ClipboardManager) context.getSystemService("clipboard")) != null) {
-                            if (clipboardManager.hasPrimaryClip()) {
-                                z10 = true;
-                                findItem5.setVisible(z10);
-                            }
-                        }
-                    }
-                    z10 = false;
-                    findItem5.setVisible(z10);
-                }
-                v9 v9Var4 = (v9) this.c;
-                if (v9Var4.k0 == null || v9Var4.r() == null) {
-                    this.b = null;
-                    b(menu);
-                } else {
-                    org.telegram.messenger.c6.d(((v9) this.c).r().toString(), new e9(this, menu), new e9(this, menu), false);
-                }
-                return true;
-            default:
-                return ((ActionMode.Callback) this.b).onPrepareActionMode(actionMode, menu);
-        }
-    }
-
-    public f9(v9 v9Var) {
-        this.a = 0;
-        this.c = v9Var;
-        this.b = null;
-    }
-
-    private final void a(ActionMode actionMode) {
+    @Override // org.telegram.messenger.mc
+    public void q(Exception exc) {
+        g9 g9Var = (g9) this.a;
+        Menu menu = (Menu) this.b;
+        org.telegram.messenger.a8.d("mlkit: failed to detect language in selection");
+        org.telegram.messenger.a8.g(exc, true);
+        g9Var.b = null;
+        g9Var.b(menu);
     }
 }

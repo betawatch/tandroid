@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mh0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class ec {
     public static Bitmap M;
@@ -1409,7 +1409,7 @@ public final class ec {
                             i10 = w10.h;
                             i7 = w10.w;
                         }
-                        PointF Q1 = org.telegram.ui.Cells.q1.Q1(i7, i10, 0, 0);
+                        PointF Q1 = org.telegram.ui.Cells.r1.Q1(i7, i10, 0, 0);
                         Locale locale = Locale.US;
                         String s5 = fc.s(message, message, photoSize);
                         float f10 = Q1.x;
@@ -1439,7 +1439,7 @@ public final class ec {
             tL_photoSize_layer127.size = t6.size;
             tL_photoSize_layer127.type = t6.type;
             if (J2.exists() && message.grouped_id == 0) {
-                PointF Q12 = org.telegram.ui.Cells.q1.Q1(t6.w, t6.h, 0, 0);
+                PointF Q12 = org.telegram.ui.Cells.r1.Q1(t6.w, t6.h, 0, 0);
                 Locale locale2 = Locale.US;
                 TLRPC.FileLocation fileLocation = t6.location;
                 long j3 = fileLocation.volume_id;
@@ -2389,7 +2389,7 @@ public final class ec {
                     arrayList = new ArrayList(arrayList3);
                 }
             }
-            int i10 = ks.o4;
+            int i10 = ks.p4;
             if (arrayList != null) {
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                     String str3 = (String) arrayList.get(i11);

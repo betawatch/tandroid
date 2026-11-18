@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.w81;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -305,10 +305,10 @@ public final /* synthetic */ class y7 implements View.OnClickListener {
                 break;
             case 13:
                 jy jyVar = (jy) obj2;
-                org.telegram.ui.Cells.j8 j8Var = (org.telegram.ui.Cells.j8) obj;
+                org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) obj;
                 ry ryVar = jyVar.w;
                 aw awVar = ryVar.E0;
-                if (awVar.indexOfChild(j8Var) != -1 && (T = awVar.T(j8Var)) != null) {
+                if (awVar.indexOfChild(k8Var) != -1 && (T = awVar.T(k8Var)) != null) {
                     if (T.b() == ryVar.g1) {
                         if (ryVar.i1 != null) {
                             rx rxVar = ryVar.u1;
@@ -425,7 +425,7 @@ public final /* synthetic */ class y7 implements View.OnClickListener {
                 break;
             case 18:
                 ((y60) obj2).v();
-                ((org.telegram.ui.f80) obj).run();
+                ((org.telegram.ui.g80) obj).run();
                 break;
             case 19:
                 y60 y60Var2 = (y60) obj2;
@@ -524,22 +524,22 @@ public final /* synthetic */ class y7 implements View.OnClickListener {
                 org.telegram.ui.at atVar = (org.telegram.ui.at) obj;
                 if (ug0Var.K.getTag() == null) {
                     int max = (int) Math.max(1.0f, ug0Var.getValue());
-                    org.telegram.ui.pa0 pa0Var = (org.telegram.ui.pa0) atVar.b;
+                    org.telegram.ui.qa0 qa0Var = (org.telegram.ui.qa0) atVar.b;
                     TLRPC.User user = (TLRPC.User) atVar.c;
-                    if (pa0Var.getLocationController().h(pa0Var.m0) == null) {
-                        AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(pa0Var.getParentActivity());
+                    if (qa0Var.getLocationController().h(qa0Var.m0) == null) {
+                        AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(qa0Var.getParentActivity());
                         String M02 = org.telegram.messenger.gd.M0(2131745258, null);
                         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder3.a;
                         u1Var2.S = M02;
                         u1Var2.U = org.telegram.messenger.gd.M0(2131745259, null);
-                        alertDialog$Builder3.k(org.telegram.messenger.gd.M0(2131745260, null), new ai.r1(pa0Var, user, max, i11));
+                        alertDialog$Builder3.k(org.telegram.messenger.gd.M0(2131745260, null), new ai.r1(qa0Var, user, max, i11));
                         alertDialog$Builder3.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-                        pa0Var.showDialog(u1Var2);
+                        qa0Var.showDialog(u1Var2);
                     } else {
-                        pa0Var.O.M = true;
-                        pa0Var.c.setImageResource(R.drawable.msg_location_alert2);
-                        pa0Var.w0().k(0L, 24, Integer.valueOf(max), user, null, null);
-                        pa0Var.getLocationController().o(max, pa0Var.m0, true);
+                        qa0Var.O.M = true;
+                        qa0Var.c.setImageResource(R.drawable.msg_location_alert2);
+                        qa0Var.w0().k(0L, 24, Integer.valueOf(max), user, null, null);
+                        qa0Var.getLocationController().o(max, qa0Var.m0, true);
                         z10 = true;
                     }
                     if (z10) {
@@ -575,7 +575,7 @@ public final /* synthetic */ class y7 implements View.OnClickListener {
                 break;
             case 26:
                 org.telegram.ui.ns.p().u(((ew0) obj2).r.h2);
-                org.telegram.ui.ns.p().x((org.telegram.ui.Cells.z7) obj);
+                org.telegram.ui.ns.p().x((org.telegram.ui.Cells.a8) obj);
                 break;
             case 27:
                 org.telegram.messenger.g0.g((CharSequence) obj2);

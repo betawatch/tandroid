@@ -17,9 +17,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ks;
 import org.telegram.ui.Components.ga;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class r0 extends org.telegram.ui.Cells.q1 {
+public final class r0 extends org.telegram.ui.Cells.r1 {
     public final float[] Ad;
     public final Path Bd;
     public final Paint Cd;
@@ -42,7 +42,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         this.Ed = new RectF();
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public final Paint a2(String str) {
         if ("paintChatActionBackground".equals(str)) {
             this.Fd.h.w0 = true;
@@ -54,7 +54,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         return super.a2(str);
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public final boolean l1(Canvas canvas) {
         v5 v5Var;
         float[] fArr;
@@ -111,7 +111,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         s0 s0Var = this.Fd;
@@ -127,7 +127,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         canvas2.restore();
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         return false;
     }

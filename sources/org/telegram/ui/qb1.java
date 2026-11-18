@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class qb1 extends org.telegram.ui.ActionBar.h2 {
     public final SparseArray a;
@@ -42,7 +42,7 @@ public abstract class qb1 extends org.telegram.ui.ActionBar.h2 {
                     boolean z10 = this.f;
                     float f10 = z10 ? this.e : 0.0f;
                     boolean z11 = this.h;
-                    if (ob1Var.g <= 0.0f && m10 > 0.0f && z10 && (h2Var instanceof ke0)) {
+                    if (ob1Var.g <= 0.0f && m10 > 0.0f && z10 && (h2Var instanceof le0)) {
                     }
                     ob1Var.g = m10;
                     float f11 = ob1Var.f;
@@ -158,7 +158,7 @@ public abstract class qb1 extends org.telegram.ui.ActionBar.h2 {
     @Override // org.telegram.ui.ActionBar.h2
     public View createView(Context context) {
         this.hasOwnBackground = true;
-        this.b = new k0(14, context, (le0) this);
+        this.b = new k0(14, context, (me0) this);
         pb1 pb1Var = new pb1(this, context);
         this.c = pb1Var;
         if (this.d == -1) {

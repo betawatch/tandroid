@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Stories.recorder.StoryUploadingService;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class o6 implements fs {
     public long E;
@@ -206,12 +206,12 @@ public final class o6 implements fs {
             }
             this.M = null;
         }
-        ks.f(i7).k(ks.x5, new Object[0]);
+        ks.f(i7).k(ks.y5, new Object[0]);
         if (d7Var != null && !d7Var.h && !this.d) {
             d7Var.i(false);
             this.d = true;
         }
-        ks.e().k(ks.D5, this.e);
+        ks.e().k(ks.E5, this.e);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:66:0x0164, code lost:
@@ -552,7 +552,7 @@ public final class o6 implements fs {
             return;
         }
         int i12 = ks.b2;
-        int i13 = ks.C5;
+        int i13 = ks.D5;
         if (i7 == i12) {
             if (objArr[0] == this.F) {
                 String str = (String) objArr[1];
@@ -608,7 +608,7 @@ public final class o6 implements fs {
             if (str5 == null || !str4.equals(str5)) {
                 return;
             }
-            ks.e().k(ks.R4, 1, gd.M0(2131744217, null));
+            ks.e().k(ks.S4, 1, gd.M0(2131744217, null));
             b();
             return;
         }

@@ -17,12 +17,12 @@ import org.telegram.messenger.ri;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.s9;
-import org.telegram.ui.Cells.v9;
+import org.telegram.ui.Cells.t9;
+import org.telegram.ui.Cells.w9;
 import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -242,19 +242,19 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
             case 10:
                 g3 g3Var = z3Var.u0;
                 boolean z13 = g3Var.w0;
-                s9 s9Var = g3Var.a0;
+                t9 t9Var = g3Var.a0;
                 if (!z13) {
                     z3Var.R2 = true;
                     g3Var.E(false);
                     break;
-                } else if (!s9Var.x()) {
+                } else if (!t9Var.x()) {
                     g3Var.D();
                     break;
-                } else if (s9Var.x() && Math.abs(g3Var.h0 - g3Var.j0) < org.telegram.messenger.g0.e && Math.abs(g3Var.i0 - g3Var.k0) < org.telegram.messenger.g0.e) {
-                    v9 v9Var = s9Var.n(g3Var.getContext()).r;
-                    v9Var.l();
-                    if (!v9Var.i && v9Var.e) {
-                        v9Var.f(false);
+                } else if (t9Var.x() && Math.abs(g3Var.h0 - g3Var.j0) < org.telegram.messenger.g0.e && Math.abs(g3Var.i0 - g3Var.k0) < org.telegram.messenger.g0.e) {
+                    w9 w9Var = t9Var.n(g3Var.getContext()).r;
+                    w9Var.l();
+                    if (!w9Var.i && w9Var.e) {
+                        w9Var.f(false);
                         break;
                     }
                 }

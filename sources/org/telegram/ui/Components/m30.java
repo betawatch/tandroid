@@ -11,7 +11,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class m30 extends HorizontalScrollView {
     public static final RectF w = new RectF();
@@ -128,7 +128,7 @@ public final class m30 extends HorizontalScrollView {
             CharSequence charSequence = (CharSequence) arrayList.get(i7);
             bi.i3 i3Var = new bi.i3(getContext(), 19);
             i3Var.setDrawingCacheEnabled(false);
-            i3Var.setOnClickListener(new bi.f5(this, i7, nrVar, 13));
+            i3Var.setOnClickListener(new bi.e5(this, i7, nrVar, 13));
             i3Var.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(5.0f));
             LinearLayout.LayoutParams o4 = c8.ma.o(-2, -2);
             if (i7 < arrayList.size() - 1) {

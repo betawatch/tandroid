@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class i5 extends c1 {
     public static Locale o0;
@@ -2218,7 +2218,7 @@ public final class i5 extends c1 {
             fi.c7 c7Var = R1.k;
             c7Var.b.a.c(new bi.y3(c7Var, j3, 7));
             mp.u1(i10).D();
-            ks.f(i10).k(ks.x5, new Object[0]);
+            ks.f(i10).k(ks.y5, new Object[0]);
             TLRPC.InputUser s12 = getMessagesController().s1(user);
             user.contact = false;
             arrayList2.add(Long.valueOf(user.id));

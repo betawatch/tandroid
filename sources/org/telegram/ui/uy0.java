@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class uy0 extends org.telegram.ui.Components.sa {
     public final LinearLayout T1;
@@ -61,7 +61,7 @@ public final class uy0 extends org.telegram.ui.Components.sa {
             imageView.setBackground(h02);
             org.telegram.ui.ActionBar.u6.j(imageView, h02, null, M2, null);
             i6Var2 = i6Var;
-            imageView.setOnClickListener(new bi.n6(this, x10Var, i6Var, imageView, 16));
+            imageView.setOnClickListener(new bi.m6(this, x10Var, i6Var, imageView, 16));
             frameLayout.addView(imageView, c8.ma.d(24, 24.0f, 53, 12.0f, 14.0f, 14.0f, 12.0f));
         } else {
             i6Var2 = i6Var;
@@ -80,11 +80,11 @@ public final class uy0 extends org.telegram.ui.Components.sa {
         f10.setTextSize(1, 14.0f);
         f10.setGravity(1);
         linearLayout.addView(f10, c8.ma.t(-2, -2, 1, 22, 8, 22, 0));
-        linearLayout.addView(new hh0(this, context, R.drawable.menu_privacy, org.telegram.messenger.gd.M0(z10 ? 2131745845 : 2131745846, null), org.telegram.messenger.gd.M0(z10 ? 2131745847 : 2131745848, null)), c8.ma.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
-        linearLayout.addView(new hh0(this, context, R.drawable.menu_feature_split, org.telegram.messenger.gd.M0(z10 ? 2131745841 : 2131745842, null), org.telegram.messenger.gd.M0(z10 ? 2131745843 : 2131745844, null)), c8.ma.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
+        linearLayout.addView(new ih0(this, context, R.drawable.menu_privacy, org.telegram.messenger.gd.M0(z10 ? 2131745845 : 2131745846, null), org.telegram.messenger.gd.M0(z10 ? 2131745847 : 2131745848, null)), c8.ma.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
+        linearLayout.addView(new ih0(this, context, R.drawable.menu_feature_split, org.telegram.messenger.gd.M0(z10 ? 2131745841 : 2131745842, null), org.telegram.messenger.gd.M0(z10 ? 2131745843 : 2131745844, null)), c8.ma.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
         String a02 = org.telegram.messenger.gd.a0(null, null, z10 ? 2131745839 : 2131745840, Integer.valueOf(org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).C4));
         int i14 = org.telegram.ui.ActionBar.n6.Xc;
-        linearLayout.addView(new hh0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.gd.M0(2131745838, null), org.telegram.messenger.g0.R2(a02, i14, 0, new Runnable(this) { // from class: org.telegram.ui.ty0
+        linearLayout.addView(new ih0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.gd.M0(2131745838, null), org.telegram.messenger.g0.R2(a02, i14, 0, new Runnable(this) { // from class: org.telegram.ui.ty0
             public final /* synthetic */ uy0 b;
 
             {

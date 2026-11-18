@@ -21,14 +21,14 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class p31 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final int a;
     public final long b;
     public final org.telegram.ui.bn c;
     public final org.telegram.ui.ActionBar.i6 d;
-    public final org.telegram.ui.Cells.w3 e;
+    public final org.telegram.ui.Cells.x3 e;
     public final Drawable f;
     public final SpannableString h;
     public final ImageView n;
@@ -49,18 +49,18 @@ public abstract class p31 extends FrameLayout implements org.telegram.ui.ActionB
         this.b = a10;
         this.c = bnVar;
         this.d = i6Var;
-        org.telegram.ui.Cells.w3 w3Var = new org.telegram.ui.Cells.w3(context, z10, z10, false, 2);
-        this.e = w3Var;
-        w3Var.b(0.3f, 450L, lr.h);
-        w3Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        w3Var.setTypeface(org.telegram.messenger.g0.o());
-        w3Var.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
-        w3Var.setGravity(1);
-        w3Var.setIgnoreRTL(!org.telegram.messenger.gd.a0);
-        w3Var.n = false;
+        org.telegram.ui.Cells.x3 x3Var = new org.telegram.ui.Cells.x3(context, z10, z10, false, 2);
+        this.e = x3Var;
+        x3Var.b(0.3f, 450L, lr.h);
+        x3Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        x3Var.setTypeface(org.telegram.messenger.g0.o());
+        x3Var.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        x3Var.setGravity(1);
+        x3Var.setIgnoreRTL(!org.telegram.messenger.gd.a0);
+        x3Var.n = false;
         final org.telegram.ui.ck ckVar = (org.telegram.ui.ck) this;
-        w3Var.setOnClickListener(new h70(ckVar, 21));
-        addView(w3Var, c8.ma.d(-1, -1.0f, 3, 0.0f, 0.0f, 34.0f, 0.0f));
+        x3Var.setOnClickListener(new h70(ckVar, 21));
+        addView(x3Var, c8.ma.d(-1, -1.0f, 3, 0.0f, 0.0f, 34.0f, 0.0f));
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_translate).mutate();
         this.f = mutate;
         mutate.setBounds(0, org.telegram.messenger.g0.L(-6.0f), org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(14.0f));
@@ -121,7 +121,7 @@ public abstract class p31 extends FrameLayout implements org.telegram.ui.ActionB
                 ArrayList o4 = org.telegram.messenger.z00.o(m10);
                 ArrayList n10 = org.telegram.messenger.z00.n();
                 linearLayout2.addView(new org.telegram.ui.ActionBar.e1(ckVar2.getContext(), i6Var2), c8.ma.o(-1, 8));
-                z0Var.setOnClickListener(new bi.f5(new n31(ckVar2, new boolean[1], m10, linearLayout2, o4, str, z00Var, h1Var, n10), actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 16));
+                z0Var.setOnClickListener(new bi.e5(new n31(ckVar2, new boolean[1], m10, linearLayout2, o4, str, z00Var, h1Var, n10), actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 16));
                 if (org.telegram.messenger.j10.i(i11).q() && P0 != null) {
                     org.telegram.ui.ActionBar.z0 z0Var3 = new org.telegram.ui.ActionBar.z0(0, ckVar2.getContext(), ckVar2.d, false, false);
                     String a02 = zArr[0] ? org.telegram.messenger.gd.a0(null, null, 2131751346, P0) : org.telegram.messenger.gd.a0(null, null, 2131751345, P0);
@@ -246,13 +246,13 @@ public abstract class p31 extends FrameLayout implements org.telegram.ui.ActionB
         TLRPC.Chat O0 = u12.O0(Long.valueOf(-j3));
         boolean B = z00Var.B(j3);
         SpannableString spannableString = this.h;
-        org.telegram.ui.Cells.w3 w3Var = this.e;
+        org.telegram.ui.Cells.x3 x3Var = this.e;
         if (B) {
             String P0 = y21.P0((String) z00Var.e.get(Long.valueOf(j3)), null, null);
             if (TextUtils.isEmpty(P0)) {
-                w3Var.setText(TextUtils.concat(spannableString, " ", org.telegram.messenger.gd.M0(2131745139, null)));
+                x3Var.setText(TextUtils.concat(spannableString, " ", org.telegram.messenger.gd.M0(2131745139, null)));
             } else {
-                w3Var.setText(TextUtils.concat(spannableString, " ", org.telegram.messenger.gd.a0(null, null, 2131745138, P0)));
+                x3Var.setText(TextUtils.concat(spannableString, " ", org.telegram.messenger.gd.a0(null, null, 2131745138, P0)));
             }
         } else {
             String m10 = z00Var.m(j3);
@@ -261,7 +261,7 @@ public abstract class p31 extends FrameLayout implements org.telegram.ui.ActionB
             }
             boolean[] zArr = this.r;
             String P02 = y21.P0(m10, zArr, null);
-            w3Var.setText(TextUtils.concat(spannableString, " ", zArr[0] ? org.telegram.messenger.gd.a0(null, null, 2131743715, P02) : org.telegram.messenger.gd.a0(null, null, 2131743714, P02)));
+            x3Var.setText(TextUtils.concat(spannableString, " ", zArr[0] ? org.telegram.messenger.gd.a0(null, null, 2131743715, P02) : org.telegram.messenger.gd.a0(null, null, 2131743714, P02)));
         }
         this.n.setImageResource((org.telegram.messenger.j10.i(i7).q() || (O0 != null && O0.autotranslation)) ? R.drawable.msg_mini_customize : R.drawable.msg_close);
     }
@@ -287,12 +287,12 @@ public abstract class p31 extends FrameLayout implements org.telegram.ui.ActionB
         this.w = w03;
         this.x = w04;
         int w05 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
-        org.telegram.ui.Cells.w3 w3Var = this.e;
-        w3Var.setTextColor(w05);
+        org.telegram.ui.Cells.x3 x3Var = this.e;
+        x3Var.setTextColor(w05);
         int w06 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var) & 436207615;
         float L = org.telegram.messenger.g0.L(15.0f);
         int L2 = org.telegram.messenger.g0.L(3.0f);
-        w3Var.setBackground(org.telegram.ui.ActionBar.n6.Y(L, w06, L2, L2, L2, L2));
+        x3Var.setBackground(org.telegram.ui.ActionBar.n6.Y(L, w06, L2, L2, L2, L2));
         org.telegram.ui.Cells.y O = org.telegram.ui.ActionBar.n6.O(org.telegram.ui.ActionBar.n6.w0(i10, i6Var), 0, 0);
         ImageView imageView = this.n;
         imageView.setBackground(O);

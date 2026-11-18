@@ -85,23 +85,23 @@ import org.telegram.ui.bn;
 import org.telegram.ui.dc;
 import org.telegram.ui.ek;
 import org.telegram.ui.f61;
-import org.telegram.ui.ff0;
+import org.telegram.ui.gf0;
 import org.telegram.ui.hc;
-import org.telegram.ui.j90;
+import org.telegram.ui.k90;
 import org.telegram.ui.kx;
-import org.telegram.ui.mb0;
-import org.telegram.ui.mf0;
+import org.telegram.ui.nb0;
+import org.telegram.ui.nf0;
 import org.telegram.ui.np;
 import org.telegram.ui.qc;
-import org.telegram.ui.re0;
-import org.telegram.ui.xh0;
+import org.telegram.ui.se0;
 import org.telegram.ui.xt;
 import org.telegram.ui.y00;
+import org.telegram.ui.yh0;
 import org.telegram.ui.z40;
 import org.telegram.ui.zc1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements oj0 {
     public final /* synthetic */ int a;
@@ -218,66 +218,66 @@ public final /* synthetic */ class g4 implements oj0 {
     }
 
     private final void b(int i7, View view) {
-        ff0 ff0Var = (ff0) this.b;
+        gf0 gf0Var = (gf0) this.b;
         Context context = (Context) this.c;
-        HashMap hashMap = ff0Var.l0;
-        if (i7 == ff0Var.R) {
-            TLRPC.User user = (TLRPC.User) hashMap.get(Long.valueOf(ff0Var.e.admin_id));
+        HashMap hashMap = gf0Var.l0;
+        if (i7 == gf0Var.R) {
+            TLRPC.User user = (TLRPC.User) hashMap.get(Long.valueOf(gf0Var.e.admin_id));
             if (user != null) {
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", user.id);
                 mp.u1(j10.t0).e4(user, false, false);
-                ff0Var.presentFragment(new ProfileActivity(bundle, null));
+                gf0Var.presentFragment(new ProfileActivity(bundle, null));
                 return;
             }
             return;
         }
-        if (i7 == ff0Var.y) {
-            j90 j90Var = new j90(0, ff0Var.n);
-            j90Var.T = ff0Var.t0;
-            ff0Var.presentFragment(j90Var);
+        if (i7 == gf0Var.y) {
+            k90 k90Var = new k90(0, gf0Var.n);
+            k90Var.T = gf0Var.t0;
+            gf0Var.presentFragment(k90Var);
             return;
         }
-        int i10 = ff0Var.E;
-        if (i7 >= i10 && i7 < ff0Var.F) {
-            x50 x50Var = new x50(context, (TLRPC.TL_chatInviteExported) ff0Var.j0.get(i7 - i10), ff0Var.d, hashMap, ff0Var, ff0Var.n, false, ff0Var.h);
-            ff0Var.m0 = x50Var;
-            x50Var.f2 = ff0Var.q0;
+        int i10 = gf0Var.E;
+        if (i7 >= i10 && i7 < gf0Var.F) {
+            x50 x50Var = new x50(context, (TLRPC.TL_chatInviteExported) gf0Var.j0.get(i7 - i10), gf0Var.d, hashMap, gf0Var, gf0Var.n, false, gf0Var.h);
+            gf0Var.m0 = x50Var;
+            x50Var.f2 = gf0Var.q0;
             x50Var.show();
             return;
         }
-        int i11 = ff0Var.I;
-        if (i7 >= i11 && i7 < ff0Var.J) {
-            x50 x50Var2 = new x50(context, (TLRPC.TL_chatInviteExported) ff0Var.k0.get(i7 - i11), ff0Var.d, hashMap, ff0Var, ff0Var.n, false, ff0Var.h);
-            ff0Var.m0 = x50Var2;
+        int i11 = gf0Var.I;
+        if (i7 >= i11 && i7 < gf0Var.J) {
+            x50 x50Var2 = new x50(context, (TLRPC.TL_chatInviteExported) gf0Var.k0.get(i7 - i11), gf0Var.d, hashMap, gf0Var, gf0Var.n, false, gf0Var.h);
+            gf0Var.m0 = x50Var2;
             x50Var2.show();
             return;
         }
-        if (i7 == ff0Var.O) {
-            if (ff0Var.d0) {
+        if (i7 == gf0Var.O) {
+            if (gf0Var.d0) {
                 return;
             }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ff0Var.getParentActivity());
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gf0Var.getParentActivity());
             String M0 = gd.M0(2131751564, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.S = M0;
             u1Var.U = gd.M0(2131751565, null);
-            alertDialog$Builder.k(gd.M0(2131751587, null), new re0(ff0Var));
+            alertDialog$Builder.k(gd.M0(2131751587, null), new se0(gf0Var));
             alertDialog$Builder.h(gd.M0(2131752578, null), null);
-            ff0Var.showDialog(u1Var);
+            gf0Var.showDialog(u1Var);
             return;
         }
-        int i12 = ff0Var.V;
-        if (i7 < i12 || i7 >= ff0Var.W) {
+        int i12 = gf0Var.V;
+        if (i7 < i12 || i7 >= gf0Var.W) {
             return;
         }
-        TLRPC.TL_chatAdminWithInvites tL_chatAdminWithInvites = (TLRPC.TL_chatAdminWithInvites) ff0Var.n0.get(i7 - i12);
+        TLRPC.TL_chatAdminWithInvites tL_chatAdminWithInvites = (TLRPC.TL_chatAdminWithInvites) gf0Var.n0.get(i7 - i12);
         if (hashMap.containsKey(Long.valueOf(tL_chatAdminWithInvites.admin_id))) {
-            ff0Var.getMessagesController().e4((TLRPC.User) hashMap.get(Long.valueOf(tL_chatAdminWithInvites.admin_id)), false, false);
+            gf0Var.getMessagesController().e4((TLRPC.User) hashMap.get(Long.valueOf(tL_chatAdminWithInvites.admin_id)), false, false);
         }
-        ff0 ff0Var2 = new ff0(ff0Var.n, tL_chatAdminWithInvites.invites_count, tL_chatAdminWithInvites.admin_id);
-        ff0Var2.m0(ff0Var.d, null);
-        ff0Var.presentFragment(ff0Var2);
+        gf0 gf0Var2 = new gf0(gf0Var.n, tL_chatAdminWithInvites.invites_count, tL_chatAdminWithInvites.admin_id);
+        gf0Var2.m0(gf0Var.d, null);
+        gf0Var.presentFragment(gf0Var2);
     }
 
     private final void d(int i7, View view) {
@@ -459,7 +459,7 @@ public final /* synthetic */ class g4 implements oj0 {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(currentTimeMillis);
         int i17 = calendar.get(1);
-        mb0 mb0Var = new mb0(context, 5);
+        nb0 nb0Var = new nb0(context, 5);
         long j10 = mp.u1(j10.t0).p0 * 1000;
         Calendar calendar2 = Calendar.getInstance();
         calendar2.setTimeInMillis(j10);
@@ -506,15 +506,15 @@ public final /* synthetic */ class g4 implements oj0 {
         } else {
             e4Var = e4Var2;
         }
-        mb0Var.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
-        mb0Var.setGravity(17);
-        mb0Var.setTextColor(y4Var.g);
-        mb0Var.setTextSize(1, 14.0f);
-        mb0Var.setTypeface(org.telegram.messenger.g0.o());
-        mb0Var.setBackground(org.telegram.ui.ActionBar.b6.e(y4Var.h, 8.0f));
-        mb0Var.setText(gd.M0(2131753541, "BoostingConfirm"));
-        e4Var.addView(mb0Var, ma.t(-1, 48, 83, 16, 15, 16, 16));
-        mb0Var.setOnClickListener(new org.telegram.ui.Components.v1(calendar, sb0Var, fVar, gVar, uVar, w4Var));
+        nb0Var.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
+        nb0Var.setGravity(17);
+        nb0Var.setTextColor(y4Var.g);
+        nb0Var.setTextSize(1, 14.0f);
+        nb0Var.setTypeface(org.telegram.messenger.g0.o());
+        nb0Var.setBackground(org.telegram.ui.ActionBar.b6.e(y4Var.h, 8.0f));
+        nb0Var.setText(gd.M0(2131753541, "BoostingConfirm"));
+        e4Var.addView(nb0Var, ma.t(-1, 48, 83, 16, 15, 16, 16));
+        nb0Var.setOnClickListener(new org.telegram.ui.Components.v1(calendar, sb0Var, fVar, gVar, uVar, w4Var));
         org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) w4Var.b;
         x2Var.O = e4Var;
         x2Var.show();
@@ -684,7 +684,7 @@ public final /* synthetic */ class g4 implements oj0 {
             case 6:
                 bn bnVar = (bn) obj2;
                 bnVar.getClass();
-                TLObject tLObject = (TLObject) ((mf0) obj).c.get(i7);
+                TLObject tLObject = (TLObject) ((nf0) obj).c.get(i7);
                 if (tLObject != null) {
                     bnVar.P7(true);
                     Bundle bundle2 = new Bundle();
@@ -959,14 +959,14 @@ public final /* synthetic */ class g4 implements oj0 {
                 ArrayList arrayList4 = g70Var.t1;
                 if (!g70Var.B1 && arrayList4.get(i7) != g70Var.x1) {
                     g70Var.x1 = (TLRPC.Peer) arrayList4.get(i7);
-                    boolean z12 = view instanceof org.telegram.ui.Cells.h4;
+                    boolean z12 = view instanceof org.telegram.ui.Cells.i4;
                     if (z12) {
                         z10 = true;
-                        ((org.telegram.ui.Cells.h4) view).c(true, true);
+                        ((org.telegram.ui.Cells.i4) view).c(true, true);
                     } else {
                         z10 = true;
-                        if (view instanceof org.telegram.ui.Cells.d7) {
-                            ((org.telegram.ui.Cells.d7) view).b(true, true);
+                        if (view instanceof org.telegram.ui.Cells.e7) {
+                            ((org.telegram.ui.Cells.e7) view).b(true, true);
                             view.invalidate();
                         }
                     }
@@ -975,9 +975,9 @@ public final /* synthetic */ class g4 implements oj0 {
                         View childAt = c70Var.getChildAt(i23);
                         if (childAt != view) {
                             if (z12) {
-                                ((org.telegram.ui.Cells.h4) childAt).c(false, z10);
-                            } else if (view instanceof org.telegram.ui.Cells.d7) {
-                                ((org.telegram.ui.Cells.d7) childAt).b(false, z10);
+                                ((org.telegram.ui.Cells.i4) childAt).c(false, z10);
+                            } else if (view instanceof org.telegram.ui.Cells.e7) {
+                                ((org.telegram.ui.Cells.e7) childAt).b(false, z10);
                             }
                         }
                     }
@@ -1014,8 +1014,8 @@ public final /* synthetic */ class g4 implements oj0 {
                             break;
                         } else {
                             if (J instanceof TLRPC.TL_document) {
-                                if (view instanceof org.telegram.ui.Cells.x7) {
-                                    ((org.telegram.ui.Cells.x7) view).getSendAnimationData();
+                                if (view instanceof org.telegram.ui.Cells.y7) {
+                                    ((org.telegram.ui.Cells.y7) view).getSendAnimationData();
                                 }
                                 TLRPC.TL_document tL_document = (TLRPC.TL_document) J;
                                 q90Var2.Y(tL_document, fj.U(tL_document), t90Var.getAdapter().L(i24));
@@ -1096,7 +1096,7 @@ public final /* synthetic */ class g4 implements oj0 {
                 if (org.telegram.messenger.g0.E1((Context) obj)) {
                     ArrayList arrayList6 = df0Var.A1;
                     if (arrayList6 == null || arrayList6.isEmpty()) {
-                        if (view instanceof org.telegram.ui.Cells.m8) {
+                        if (view instanceof org.telegram.ui.Cells.n8) {
                             int S2 = ze0Var.S(i7) - 1;
                             int Q3 = ze0Var.Q(i7) - 1;
                             if (Q3 > 0 && S2 >= 0) {
@@ -1226,7 +1226,7 @@ public final /* synthetic */ class g4 implements oj0 {
                 b(i7, view);
                 break;
             case 20:
-                xh0.Z((xh0) obj2, (Context) obj, view, i7);
+                yh0.Z((yh0) obj2, (Context) obj, view, i7);
                 break;
             case 21:
                 PrivacySettingsActivity.a0((PrivacySettingsActivity) obj2, (Context) obj, view, i7);

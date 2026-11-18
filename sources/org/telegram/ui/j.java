@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j extends rg.b {
     public final /* synthetic */ k d;
@@ -53,30 +53,30 @@ public final class j extends rg.b {
         int i12 = f1Var.f;
         View view = f1Var.a;
         if (i12 == 0) {
-            ((org.telegram.ui.Cells.n4) view).setText(iVar.c);
+            ((org.telegram.ui.Cells.o4) view).setText(iVar.c);
             return;
         }
         if (i12 == 2) {
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
             if (TextUtils.isEmpty(iVar.c)) {
-                z8Var.setFixedSize(12);
-                z8Var.setText(null);
+                a9Var.setFixedSize(12);
+                a9Var.setText(null);
                 return;
             } else {
-                z8Var.setFixedSize(0);
-                z8Var.setText(iVar.c);
+                a9Var.setFixedSize(0);
+                a9Var.setText(iVar.c);
                 return;
             }
         }
         if (i12 == 1) {
-            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+            org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
             int i13 = iVar.d;
             if (i13 == 1) {
                 z10 = kVar.d.keep_archived_unmuted;
-                r8Var.setCheckBoxIcon(0);
+                s8Var.setCheckBoxIcon(0);
             } else if (i13 == 4) {
                 z10 = kVar.d.keep_archived_folders;
-                r8Var.setCheckBoxIcon(0);
+                s8Var.setCheckBoxIcon(0);
             } else {
                 if (i13 != 7) {
                     return;
@@ -85,16 +85,16 @@ public final class j extends rg.b {
                 if (!kVar.getUserConfig().q() && !kVar.getMessagesController().b4) {
                     i11 = R.drawable.permission_locked;
                 }
-                r8Var.setCheckBoxIcon(i11);
+                s8Var.setCheckBoxIcon(i11);
                 z10 = z12;
             }
-            r8Var.f(iVar.c, z10, z11);
+            s8Var.f(iVar.c, z10, z11);
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         k kVar = this.d;
-        return new org.telegram.ui.Components.kj0(i7 == 0 ? new org.telegram.ui.Cells.n4(kVar.getParentActivity()) : i7 == 1 ? new org.telegram.ui.Cells.r8(kVar.getParentActivity()) : new org.telegram.ui.Cells.z8(kVar.getParentActivity()));
+        return new org.telegram.ui.Components.kj0(i7 == 0 ? new org.telegram.ui.Cells.o4(kVar.getParentActivity()) : i7 == 1 ? new org.telegram.ui.Cells.s8(kVar.getParentActivity()) : new org.telegram.ui.Cells.a9(kVar.getParentActivity()));
     }
 }

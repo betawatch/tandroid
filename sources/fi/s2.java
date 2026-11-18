@@ -10,7 +10,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class s2 extends ImageReceiver {
     public final /* synthetic */ int K1;
@@ -29,15 +29,15 @@ public final class s2 extends ImageReceiver {
         switch (this.K1) {
             case 2:
                 super.L0(iArr);
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.L1;
-                int[] iArr2 = q1Var.T0;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.L1;
+                int[] iArr2 = r1Var.T0;
                 iArr2[0] = iArr[0];
                 iArr2[1] = iArr[1];
                 int L = org.telegram.messenger.g0.L(6.0f);
                 iArr2[3] = L;
                 iArr2[2] = L;
-                org.telegram.ui.Cells.w1 w1Var = q1Var.x2;
-                if (w1Var != null && (fVar = w1Var.m) != null) {
+                org.telegram.ui.Cells.x1 x1Var = r1Var.x2;
+                if (x1Var != null && (fVar = x1Var.m) != null) {
                     fVar.b.L0(iArr2);
                     break;
                 }

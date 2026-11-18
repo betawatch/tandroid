@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ay extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class ay extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 5:
-                ((oc0) this.b).s = null;
+                ((pc0) this.b).s = null;
                 break;
             case 11:
                 ((PhotoViewer) ((org.telegram.ui.Components.h60) this.b).c).B2 = null;
@@ -78,25 +78,25 @@ public final class ay extends AnimatorListenerAdapter {
                 z50Var.b = false;
                 break;
             case 4:
-                pa0 pa0Var = (pa0) obj;
-                pa0Var.E = false;
-                pa0Var.y0();
+                qa0 qa0Var = (qa0) obj;
+                qa0Var.E = false;
+                qa0Var.y0();
                 break;
             case 5:
-                oc0 oc0Var = (oc0) obj;
-                if (oc0Var.s != null && oc0Var.n != null) {
-                    oc0Var.r.setVisibility(4);
-                    oc0Var.s = null;
+                pc0 pc0Var = (pc0) obj;
+                if (pc0Var.s != null && pc0Var.n != null) {
+                    pc0Var.r.setVisibility(4);
+                    pc0Var.s = null;
                     break;
                 }
                 break;
             case 6:
-                ((ng0) obj).U.setVisibility(8);
+                ((og0) obj).U.setVisibility(8);
                 break;
             case 7:
-                gh0 gh0Var = (gh0) obj;
-                gh0Var.f = 1.0f;
-                gh0Var.invalidate();
+                hh0 hh0Var = (hh0) obj;
+                hh0Var.f = 1.0f;
+                hh0Var.invalidate();
                 break;
             case 8:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
@@ -142,9 +142,9 @@ public final class ay extends AnimatorListenerAdapter {
             case 11:
                 PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.h60) obj).c;
                 if (photoViewer.B2 != null) {
-                    hf0 hf0Var = new hf0(this, 21);
-                    photoViewer.I2 = hf0Var;
-                    org.telegram.messenger.g0.h3(hf0Var, 860L);
+                    if0 if0Var = new if0(this, 21);
+                    photoViewer.I2 = if0Var;
+                    org.telegram.messenger.g0.h3(if0Var, 860L);
                     break;
                 }
                 break;
@@ -212,7 +212,7 @@ public final class ay extends AnimatorListenerAdapter {
                 photoViewer4.U1.l0 = 1.0f;
                 break;
             case 17:
-                org.telegram.messenger.g0.g3(new hf0(this, 23));
+                org.telegram.messenger.g0.g3(new if0(this, 23));
                 break;
             case 18:
                 op0 op0Var = (op0) obj;

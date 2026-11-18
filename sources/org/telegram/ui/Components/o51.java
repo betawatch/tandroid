@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class o51 extends org.telegram.ui.ActionBar.x2 {
     public int A1;
@@ -49,7 +49,7 @@ public abstract class o51 extends org.telegram.ui.ActionBar.x2 {
     public float z1;
 
     static {
-        new org.telegram.ui.Cells.o8("colorProgress", 10);
+        new org.telegram.ui.Cells.p8("colorProgress", 10);
     }
 
     public o51(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
@@ -197,10 +197,10 @@ public abstract class o51 extends org.telegram.ui.ActionBar.x2 {
         int childCount = b1Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = b1Var.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.z3) {
-                ((org.telegram.ui.Cells.z3) childAt).a(S0, S0);
-            } else if (childAt instanceof org.telegram.ui.Cells.f4) {
-                ((org.telegram.ui.Cells.f4) childAt).f(this.s1.getTag() != null ? this.K1 : this.L1, S02);
+            if (childAt instanceof org.telegram.ui.Cells.a4) {
+                ((org.telegram.ui.Cells.a4) childAt).a(S0, S0);
+            } else if (childAt instanceof org.telegram.ui.Cells.g4) {
+                ((org.telegram.ui.Cells.g4) childAt).f(this.s1.getTag() != null ? this.K1 : this.L1, S02);
             }
         }
         this.b.invalidate();

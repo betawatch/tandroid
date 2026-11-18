@@ -1,33 +1,31 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class p3 extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class p3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ r3 a;
 
-    static {
-        k41.h(new p3());
+    public p3(r3 r3Var) {
+        this.a = r3Var;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        q3 q3Var = (q3) view;
-        q3Var.a((TLRPC.StickerSetCovered) l41Var.H, z10, l41Var.u, false);
-        q3Var.f.a(l41Var.u, false);
-        q3Var.setAddOnClickListener(l41Var.E);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new q3(context, i6Var);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        r3 r3Var = this.a;
+        if (r3Var.x) {
+            r3Var.f.setVisibility(4);
+            r3Var.h.setVisibility(4);
+            r3Var.n.setVisibility(0);
+        } else {
+            if (r3Var.w) {
+                r3Var.f.setVisibility(4);
+            } else {
+                r3Var.h.setVisibility(4);
+            }
+            r3Var.n.setVisibility(8);
+        }
     }
 }

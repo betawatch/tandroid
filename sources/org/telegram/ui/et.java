@@ -10,7 +10,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class et extends org.telegram.ui.Components.ck0 {
     public final /* synthetic */ int f3;
@@ -82,17 +82,17 @@ public final class et extends org.telegram.ui.Components.ck0 {
                 }
                 break;
             case 5:
-                pa0 pa0Var = (pa0) this.g3;
-                RectF rectF = pa0Var.a0;
-                if (pa0Var.Z != null) {
+                qa0 qa0Var = (qa0) this.g3;
+                RectF rectF = qa0Var.a0;
+                if (qa0Var.Z != null) {
                     int L = org.telegram.messenger.g0.L(12.0f);
-                    pa0Var.Z.setBounds(-L, pa0Var.b0 - L, getWidth() + L, getHeight() + L);
-                    pa0Var.Z.draw(canvas);
-                    int i10 = pa0Var.N0;
+                    qa0Var.Z.setBounds(-L, qa0Var.b0 - L, getWidth() + L, getHeight() + L);
+                    qa0Var.Z.draw(canvas);
+                    int i10 = qa0Var.N0;
                     if (i10 == 0 || i10 == 1) {
                         int L2 = org.telegram.messenger.g0.L(36.0f);
-                        rectF.set((getWidth() - L2) / 2.0f, org.telegram.messenger.g0.L(10.0f) + pa0Var.b0, (getWidth() + L2) / 2.0f, org.telegram.messenger.g0.L(4.0f) + r4);
-                        org.telegram.ui.ActionBar.n6.t0.setColor(pa0Var.getThemedColor(org.telegram.ui.ActionBar.n6.zj));
+                        rectF.set((getWidth() - L2) / 2.0f, org.telegram.messenger.g0.L(10.0f) + qa0Var.b0, (getWidth() + L2) / 2.0f, org.telegram.messenger.g0.L(4.0f) + r4);
+                        org.telegram.ui.ActionBar.n6.t0.setColor(qa0Var.getThemedColor(org.telegram.ui.ActionBar.n6.zj));
                         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.n6.t0);
                     }
                 }
@@ -136,7 +136,7 @@ public final class et extends org.telegram.ui.Components.ck0 {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 5:
-                if (motionEvent.getActionMasked() != 0 || motionEvent.getY() >= ((pa0) this.g3).b0) {
+                if (motionEvent.getActionMasked() != 0 || motionEvent.getY() >= ((qa0) this.g3).b0) {
                     break;
                 }
                 break;

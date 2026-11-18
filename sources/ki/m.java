@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import bi.m6;
 import c8.ma;
 import c8.ra;
 import org.telegram.messenger.beta.R;
@@ -32,7 +33,7 @@ import org.telegram.ui.Components.q9;
 import org.telegram.ui.af;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class m extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -211,7 +212,7 @@ public final class m extends FrameLayout {
                     }
                 });
                 textView2.setOnClickListener(new hi.o0(afVar, 10));
-                setOnClickListener(new bi.n6(this, bnVar, fjVar, str2, 2));
+                setOnClickListener(new m6(this, bnVar, fjVar, str2, 2));
                 imageView.setOnClickListener(new hi.o0(afVar2, 11));
             }
             TLRPC.PhotoSize w13 = w7.w(photo2.sizes, 48, true, null, true);
@@ -258,7 +259,7 @@ public final class m extends FrameLayout {
             }
         });
         textView22.setOnClickListener(new hi.o0(afVar, 10));
-        setOnClickListener(new bi.n6(this, bnVar, fjVar, str2, 2));
+        setOnClickListener(new m6(this, bnVar, fjVar, str2, 2));
         imageView.setOnClickListener(new hi.o0(afVar2, 11));
     }
 }

@@ -5,8 +5,8 @@ import ai.x2;
 import android.view.View;
 import android.widget.TextView;
 import bi.a2;
-import bi.j7;
-import bi.m7;
+import bi.i7;
+import bi.l7;
 import bi.t0;
 import bi.x0;
 import ch.b0;
@@ -40,7 +40,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import ug.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 7:
-                if (((j7) this.b).n > 0 && (Q = LaunchActivity.Q()) != null) {
+                if (((i7) this.b).n > 0 && (Q = LaunchActivity.Q()) != null) {
                     f2 f2Var = new f2();
                     f2Var.a = true;
                     Q.showAsSheet(new pb(), f2Var);
@@ -100,7 +100,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 8:
-                ((m7) this.b).performClick();
+                ((l7) this.b).performClick();
                 break;
             case 9:
                 b0 b0Var = (b0) this.b;

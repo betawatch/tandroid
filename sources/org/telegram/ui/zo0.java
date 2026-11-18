@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class zo0 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,8 +87,8 @@ public final class zo0 implements Runnable {
                         if (photoViewer7.B8 || photoViewer7.R7.getVisibility() != 0) {
                             PhotoViewer photoViewer8 = this.b;
                             if (photoViewer8.a3 == 0.0f) {
-                                org.telegram.ui.Cells.j1 j1Var = photoViewer8.a4;
-                                if (j1Var.rewindCount == 0 || (!j1Var.rewindByBackSeek && !photoViewer8.c4.rewindByBackSeek)) {
+                                org.telegram.ui.Cells.k1 k1Var = photoViewer8.a4;
+                                if (k1Var.rewindCount == 0 || (!k1Var.rewindByBackSeek && !photoViewer8.c4.rewindByBackSeek)) {
                                     photoViewer8.q3.h(false, k12);
                                 }
                             }

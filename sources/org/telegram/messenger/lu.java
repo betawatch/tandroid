@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class lu extends zt implements y5 {
     public static Paint p0;
@@ -136,11 +136,11 @@ public abstract class lu extends zt implements y5 {
             }
         }
         ev evVar = this.a;
-        org.telegram.ui.Cells.l1 l1Var = evVar.F;
-        if (l1Var == null) {
+        org.telegram.ui.Cells.m1 m1Var = evVar.F;
+        if (m1Var == null) {
             return false;
         }
-        l1Var.p2(evVar.E, n0());
+        m1Var.p2(evVar.E, n0());
         return true;
     }
 
@@ -282,7 +282,7 @@ public abstract class lu extends zt implements y5 {
     */
     public final boolean Y(MotionEvent motionEvent) {
         boolean z10;
-        org.telegram.ui.Cells.l1 l1Var;
+        org.telegram.ui.Cells.m1 m1Var;
         int actionMasked = motionEvent.getActionMasked();
         float x10 = motionEvent.getX();
         Rect rect = this.b;
@@ -340,9 +340,9 @@ public abstract class lu extends zt implements y5 {
                                             return true;
                                         }
                                     }
-                                    org.telegram.ui.Cells.l1 l1Var2 = evVar.F;
-                                    if (l1Var2 != null) {
-                                        l1Var2.p2(evVar.E, n0());
+                                    org.telegram.ui.Cells.m1 m1Var2 = evVar.F;
+                                    if (m1Var2 != null) {
+                                        m1Var2.p2(evVar.E, n0());
                                         return true;
                                     }
                                 }
@@ -400,8 +400,8 @@ public abstract class lu extends zt implements y5 {
                                 view6.invalidate();
                                 return true;
                             }
-                        } else if (i12 == 3 && (l1Var = evVar.F) != null) {
-                            l1Var.p2(evVar.E, n0());
+                        } else if (i12 == 3 && (m1Var = evVar.F) != null) {
+                            m1Var.p2(evVar.E, n0());
                             return true;
                         }
                     }

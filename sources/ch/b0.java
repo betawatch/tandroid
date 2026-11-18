@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.OvershootInterpolator;
-import bi.e7;
+import bi.d7;
 import c8.ma;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ import org.telegram.ui.m01;
 import org.telegram.ui.p01;
 import org.telegram.ui.t01;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int[] A;
@@ -363,7 +363,7 @@ public final class b0 {
         if (!z10) {
             i();
         }
-        this.x.addListener(new e7(1, this, z10));
+        this.x.addListener(new d7(1, this, z10));
         if (i7 == 4) {
             this.x.setDuration(420L);
             this.x.setInterpolator(lr.h);

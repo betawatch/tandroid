@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class am0 extends org.telegram.ui.Cells.aa {
+public final class am0 extends org.telegram.ui.Cells.ba {
     public final /* synthetic */ int I = 1;
 
     public /* synthetic */ am0(Context context, org.telegram.ui.ActionBar.s4 s4Var, int i7) {
@@ -30,7 +30,7 @@ public final class am0 extends org.telegram.ui.Cells.aa {
         }
     }
 
-    @Override // org.telegram.ui.Cells.aa, android.view.ViewGroup
+    @Override // org.telegram.ui.Cells.ba, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.I) {
             case 1:

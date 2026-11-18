@@ -38,7 +38,7 @@ import org.telegram.ui.Components.y60;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class mc extends org.telegram.ui.ActionBar.x2 implements fs {
     public long A1;
@@ -551,12 +551,12 @@ public final class mc extends org.telegram.ui.ActionBar.x2 implements fs {
         fj fjVar2 = this.G1;
         if (fjVar2 != null && (view2 = this.Q1.fragmentView) != null && view2.isAttachedToWindow()) {
             View view3 = this.R1;
-            if (view3 instanceof org.telegram.ui.Cells.q1) {
-                q0Var2 = ((org.telegram.ui.Cells.q1) view3).O;
+            if (view3 instanceof org.telegram.ui.Cells.r1) {
+                q0Var2 = ((org.telegram.ui.Cells.r1) view3).O;
                 q0Var2.getClass();
                 n0Var2 = q0Var2.l("stars");
-            } else if (view3 instanceof org.telegram.ui.Cells.u0) {
-                q0Var2 = ((org.telegram.ui.Cells.u0) view3).F0;
+            } else if (view3 instanceof org.telegram.ui.Cells.v0) {
+                q0Var2 = ((org.telegram.ui.Cells.v0) view3).F0;
                 q0Var2.getClass();
                 n0Var2 = q0Var2.l("stars");
             } else {
@@ -592,8 +592,8 @@ public final class mc extends org.telegram.ui.ActionBar.x2 implements fs {
                 if (view3 == null) {
                     return;
                 }
-                if (view3 instanceof org.telegram.ui.Cells.q1) {
-                    q0Var2 = ((org.telegram.ui.Cells.q1) view3).O;
+                if (view3 instanceof org.telegram.ui.Cells.r1) {
+                    q0Var2 = ((org.telegram.ui.Cells.r1) view3).O;
                     q0Var2.getClass();
                     n0Var2 = q0Var2.l("stars");
                 }
@@ -835,7 +835,7 @@ public final class mc extends org.telegram.ui.ActionBar.x2 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.O3) {
+        if (i7 == ks.P3) {
             M0(true);
         }
     }
@@ -876,13 +876,13 @@ public final class mc extends org.telegram.ui.ActionBar.x2 implements fs {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.n1).c(this, ks.O3);
+        ks.f(this.n1).c(this, ks.P3);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.n1).n(this, ks.O3);
+        ks.f(this.n1).n(this, ks.P3);
     }
 
     @Override // org.telegram.ui.ActionBar.x2

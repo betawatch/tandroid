@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class fr0 implements hl0 {
     public final /* synthetic */ gt0 a;
@@ -28,7 +28,7 @@ public final class fr0 implements hl0 {
             }
             a10 = org.telegram.messenger.g0.L(56.0f);
         } else {
-            a10 = org.telegram.ui.Cells.p7.a(1);
+            a10 = org.telegram.ui.Cells.q7.a(1);
         }
         if ((bs0VarArr[0].F == 0 ? (r5.x.L0() / r0.p1[0]) * a10 : r5.x.L0() * a10) < bs0VarArr[0].h.getMeasuredHeight() * 1.2f) {
             bs0VarArr[0].h.y0(0);

@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class x8 extends FrameLayout {
     public float E;
@@ -71,7 +71,7 @@ public abstract class x8 extends FrameLayout {
         }
         this.h = u8Var;
         this.n = z10;
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.t4, new Object[0]);
+        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
         invalidate();
     }
 
@@ -236,7 +236,7 @@ public abstract class x8 extends FrameLayout {
             }
             t3Var.a.P0(false);
         }
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.t4, new Object[0]);
+        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
         invalidate();
     }
 }

@@ -23,7 +23,8 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.t2;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.h01;
 import org.telegram.ui.ax;
@@ -34,7 +35,7 @@ import org.telegram.ui.fl;
 import org.telegram.ui.kl;
 import org.telegram.ui.mm;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -193,15 +194,15 @@ public final /* synthetic */ class x implements Runnable {
             case 11:
                 fl flVar = (fl) obj2;
                 flVar.getClass();
-                fj messageObject = ((org.telegram.ui.Cells.u0) obj).getMessageObject();
+                fj messageObject = ((org.telegram.ui.Cells.v0) obj).getMessageObject();
                 kl klVar = flVar.a;
                 klVar.R.Bb(this.b, messageObject.e1(), true, fj.B0(messageObject.k) == klVar.R.d7 ? 1 : 0, true, 0, Integer.valueOf(i14), null, null);
                 break;
             case 12:
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj;
+                r1 r1Var = (r1) obj;
                 bn bnVar = ((mm) obj2).a;
                 if (bnVar.P1 != null) {
-                    q1Var.getLocationInWindow(new int[2]);
+                    r1Var.getLocationInWindow(new int[2]);
                     bnVar.P1.setTranslationY(org.telegram.ui.Cells.c0.i(520.0f, r2[1] - r3.getTop(), i13));
                     bnVar.P1.p(0.0f, (-org.telegram.messenger.g0.L(16.0f)) + r2[0] + i14);
                     bnVar.P1.x();
@@ -275,14 +276,14 @@ public final /* synthetic */ class x implements Runnable {
                                 v4.f1 K = bxVar.a.K(0);
                                 if (K != null) {
                                     View view = K.a;
-                                    if (view instanceof t2) {
-                                        t2 t2Var = (t2) view;
-                                        if (t2Var.b2.n == 2) {
-                                            t2Var.c2 = true;
-                                            t2Var.d2 = 0.0f;
+                                    if (view instanceof u2) {
+                                        u2 u2Var = (u2) view;
+                                        if (u2Var.b2.n == 2) {
+                                            u2Var.c2 = true;
+                                            u2Var.d2 = 0.0f;
                                             n6.u1.T(true, 0.0f);
                                             n6.u1.start();
-                                            t2Var.invalidate();
+                                            u2Var.invalidate();
                                         }
                                     }
                                 }

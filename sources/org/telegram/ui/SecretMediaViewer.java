@@ -45,7 +45,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer w1;
@@ -160,7 +160,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
     public boolean j0 = true;
     public final PhotoBackgroundDrawable k0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public class PhotoBackgroundDrawable extends ColorDrawable {
         public tr0 a;
         public int b;
@@ -1194,7 +1194,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         animatorArr[6] = ofFloat6;
         animatorSet.playTogether(animatorArr);
         this.l0 = 3;
-        this.n0 = new lc0(this, heVar, fjVar, 29);
+        this.n0 = new mc0(this, heVar, fjVar, 29);
         this.J0.setDuration(250L);
         this.J0.addListener(new lz0(this, 0));
         this.m0 = System.currentTimeMillis();

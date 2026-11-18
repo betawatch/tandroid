@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l7 implements Runnable {
     public final /* synthetic */ int a;
@@ -455,9 +455,9 @@ public final /* synthetic */ class l7 implements Runnable {
                     TLRPC.Document F02 = ((fj) arrayList.get(i16)).F0();
                     if (F02 == null || (F0 != null && F02.id == F0.id)) {
                         arrayList.remove(i16);
-                        a6Var.getNotificationCenter().k(ks.d5, new Object[0]);
+                        a6Var.getNotificationCenter().k(ks.e5, new Object[0]);
                         if (i15 == 0) {
-                            ks.e().k(ks.R4, 1, gd.a0("MessageNotFound", null, 2131748360, new Object[0]));
+                            ks.e().k(ks.S4, 1, gd.a0("MessageNotFound", null, 2131748360, new Object[0]));
                             return;
                         } else {
                             if (i15 == -1) {

@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.a6;
+import org.telegram.ui.Cells.b6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ny0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -78,12 +78,12 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 break;
             default:
                 ny0 ny0Var = (ny0) this.r;
-                a6 a6Var = ny0Var.h;
+                b6 b6Var = ny0Var.h;
                 final mp mpVar = (mp) this.s;
                 String[] strArr = (String[]) this.w;
                 final hi.d dVar2 = this.b;
                 if (!dVar2.R) {
-                    EditTextBoldCursor textView = a6Var.getTextView();
+                    EditTextBoldCursor textView = b6Var.getTextView();
                     if (textView.getText().toString().trim().length() > 16) {
                         float f10 = -ny0Var.E;
                         ny0Var.E = f10;
@@ -92,7 +92,7 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                         break;
                     } else {
                         dVar2.setLoading(true);
-                        org.telegram.messenger.g0.v1(a6Var);
+                        org.telegram.messenger.g0.v1(b6Var);
                         final TLRPC.TL_messages_editChatParticipantRank tL_messages_editChatParticipantRank = new TLRPC.TL_messages_editChatParticipantRank();
                         final long j11 = this.c;
                         tL_messages_editChatParticipantRank.peer = mpVar.l1(j11);

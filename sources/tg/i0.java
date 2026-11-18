@@ -31,7 +31,7 @@ import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class i0 extends View {
     public final Drawable E;
@@ -465,7 +465,7 @@ public class i0 extends View {
                 textPaint.setTextSize(f13 * 14.0f);
                 float f21 = f13 * 40.0f;
                 int i14 = 3 - i11;
-                this.P = org.telegram.ui.Cells.q1.I1(webPage.description, textPaint, (int) Math.ceil(Math.max(1.0f, f15 - f21)), (int) Math.ceil(Math.max(1.0f, f15 - ((40 + ((this.S && this.T) ? 60 : 0)) * f13))), i14, 4);
+                this.P = org.telegram.ui.Cells.r1.I1(webPage.description, textPaint, (int) Math.ceil(Math.max(1.0f, f15 - f21)), (int) Math.ceil(Math.max(1.0f, f15 - ((40 + ((this.S && this.T) ? 60 : 0)) * f13))), i14, 4);
                 this.Q = 0.0f;
                 this.R = Float.MAX_VALUE;
                 int i15 = 0;

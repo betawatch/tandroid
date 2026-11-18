@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class rs extends org.telegram.ui.Components.xj0 {
     public final Context r;
@@ -133,13 +133,13 @@ public final class rs extends org.telegram.ui.Components.xj0 {
     public final void W(int i7, int i10, v4.f1 f1Var) {
         if (f1Var.f == 0) {
             ps psVar = (ps) ((ArrayList) this.s.get(this.w.get(i7))).get(i10);
-            org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) f1Var.a;
+            org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) f1Var.a;
             String str = null;
-            CharSequence m10 = org.telegram.messenger.j6.m(ts.a0(psVar), w9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
+            CharSequence m10 = org.telegram.messenger.j6.m(ts.a0(psVar), x9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
             if (this.x.h) {
                 str = "+" + psVar.c;
             }
-            w9Var.c(m10, str, false, false);
+            x9Var.c(m10, str, false, false);
         }
     }
 
@@ -163,7 +163,7 @@ public final class rs extends org.telegram.ui.Components.xj0 {
         View Z;
         Context context = this.r;
         if (i7 != 0) {
-            Z = new org.telegram.ui.Cells.e3(context, null);
+            Z = new org.telegram.ui.Cells.f3(context, null);
             Z.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(8.0f));
         } else {
             Z = ts.Z(context);

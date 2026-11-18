@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oj implements Runnable {
     public final /* synthetic */ int a;
@@ -35,11 +35,11 @@ public final /* synthetic */ class oj implements Runnable {
                 mpVar.getNotificationCenter().k(90, chat);
                 break;
             case 4:
-                mpVar.getNotificationCenter().k(ks.t5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
+                mpVar.getNotificationCenter().k(ks.u5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
                 break;
             default:
                 mpVar.f5(null);
-                mpVar.getNotificationCenter().k(ks.V5, Long.valueOf(chat.id), Boolean.valueOf(chat.collapsed_in_dialogs));
+                mpVar.getNotificationCenter().k(ks.W5, Long.valueOf(chat.id), Boolean.valueOf(chat.collapsed_in_dialogs));
                 mpVar.getNotificationCenter().k(3, new Object[0]);
                 break;
         }

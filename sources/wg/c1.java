@@ -4,15 +4,15 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.rj0;
-import org.telegram.ui.rg0;
+import org.telegram.ui.sg0;
 import org.telegram.ui.v00;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements pj0, rj0 {
     public final /* synthetic */ d1 a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class c1 implements pj0, rj0 {
     public void f(float f10, float f11, int i7, View view) {
         d1 d1Var = this.a;
         ah.a aVar = d1Var.Z1;
-        rg0 rg0Var = d1Var.V1;
+        sg0 sg0Var = d1Var.V1;
         HashSet hashSet = d1Var.c2;
-        if (view instanceof m8) {
+        if (view instanceof n8) {
             v00 v00Var = d1Var.s2;
             if (v00Var != null) {
                 v00Var.run();
@@ -89,7 +89,7 @@ public final /* synthetic */ class c1 implements pj0, rj0 {
                 }
             }
             d1Var.e1();
-            rg0Var.b(true, hashSet, new x0(d1Var, 2), null);
+            sg0Var.b(true, hashSet, new x0(d1Var, 2), null);
             d1Var.m1(true, true);
             d1Var.f1();
         }

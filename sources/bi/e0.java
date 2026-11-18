@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e0(ai.v1 v1Var, int i7, long j3, org.telegram.ui.ActionBar.h2 h2Var, t4 t4Var) {
+    public /* synthetic */ e0(ai.v1 v1Var, int i7, long j3, org.telegram.ui.ActionBar.h2 h2Var, s4 s4Var) {
         this.a = 6;
         this.d = v1Var;
         this.c = i7;
         this.b = j3;
         this.e = h2Var;
-        this.f = t4Var;
+        this.f = s4Var;
     }
 
     @Override // java.lang.Runnable
@@ -46,7 +46,7 @@ public final /* synthetic */ class e0 implements Runnable {
         TL_stories.StoryItem storyItem = null;
         switch (this.a) {
             case 0:
-                new a9((Context) this.d, this.c, ((q9) this.e).d, null, this.b, (Runnable) this.f, false, false).show();
+                new z8((Context) this.d, this.c, ((q9) this.e).d, null, this.b, (Runnable) this.f, false, false).show();
                 break;
             case 1:
                 c1.c cVar = (c1.c) this.d;
@@ -55,7 +55,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 String str = (String) this.f;
                 int i10 = this.c;
                 cVar.run();
-                v4.s(tL_starGiftUnique, j3 != 0 ? gd.a0(null, null, 2131749656, str, org.telegram.messenger.n5.s(i10, j3)) : gd.a0(null, null, 2131749657, str));
+                u4.s(tL_starGiftUnique, j3 != 0 ? gd.a0(null, null, 2131749656, str, org.telegram.messenger.n5.s(i10, j3)) : gd.a0(null, null, 2131749657, str));
                 break;
             case 2:
                 di.k1 k1Var = (di.k1) this.d;
@@ -64,10 +64,10 @@ public final /* synthetic */ class e0 implements Runnable {
                 int i11 = this.c;
                 long j10 = this.b;
                 k1Var.run();
-                v4.s(tL_starGiftUnique2, gd.a0(null, null, 2131749651, str2));
+                u4.s(tL_starGiftUnique2, gd.a0(null, null, 2131749651, str2));
                 String str3 = tL_starGiftUnique2.slug;
                 if (!TextUtils.isEmpty(str3)) {
-                    org.telegram.messenger.g0.h3(new k4(i11, 0, j10, str3, true), v4.a[0]);
+                    org.telegram.messenger.g0.h3(new k4(i11, 0, j10, str3, true), u4.a[0]);
                     break;
                 }
                 break;
@@ -157,29 +157,29 @@ public final /* synthetic */ class e0 implements Runnable {
                 int i17 = this.c;
                 long j14 = this.b;
                 org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.e;
-                t4 t4Var = (t4) this.f;
+                s4 s4Var = (s4) this.f;
                 v1Var.a(Boolean.TRUE);
                 lc.Y().Q(R.raw.contact_check, 36, gd.M0(2131749333, null)).j();
-                ii.n.a(i17, j14, 180000 + System.currentTimeMillis(), 0, new o9(v1Var, h2Var, i17, t4Var, 1));
+                ii.n.a(i17, j14, 180000 + System.currentTimeMillis(), 0, new o9(v1Var, h2Var, i17, s4Var, 1));
                 break;
             case 7:
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.d;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
                 int i18 = this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.f;
                 long j15 = this.b;
                 if (user == null) {
                     if (chat == null) {
-                        q1Var.l7[i18].k(j15, "", "", null);
+                        r1Var.l7[i18].k(j15, "", "", null);
                         break;
                     } else {
-                        q1Var.l7[i18].q(chat);
-                        q1Var.k7[i18].i0(chat, q1Var.l7[i18], null);
+                        r1Var.l7[i18].q(chat);
+                        r1Var.k7[i18].i0(chat, r1Var.l7[i18], null);
                         break;
                     }
                 } else {
-                    q1Var.l7[i18].r(user);
-                    q1Var.k7[i18].i0(user, q1Var.l7[i18], null);
+                    r1Var.l7[i18].r(user);
+                    r1Var.k7[i18].i0(user, r1Var.l7[i18], null);
                     break;
                 }
             default:

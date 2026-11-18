@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.y60;
@@ -40,7 +40,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements org.telegram.ui.ActionBar.r1, v10, h2.o, i2.u, kt, oi.k0, ww, m5, Vector.TLDeserializer {
     public final /* synthetic */ int a;
@@ -99,10 +99,10 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.r1, v1
             try {
                 GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(outputStream);
                 try {
-                    b5 b5Var = cVar.a;
+                    c5 c5Var = cVar.a;
                     n5.m mVar2 = (n5.m) mVar.c;
                     BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(gZIPOutputStream));
-                    pa.d dVar = (pa.d) b5Var.a;
+                    pa.d dVar = (pa.d) c5Var.a;
                     pa.e eVar = new pa.e(bufferedWriter, dVar.a, dVar.b, dVar.c, dVar.d);
                     eVar.h(mVar2);
                     eVar.j();

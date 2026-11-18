@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h41 extends FrameLayout implements org.telegram.messenger.fs {
     public v4.u0 E;
@@ -197,10 +197,10 @@ public final class h41 extends FrameLayout implements org.telegram.messenger.fs 
         int childCount = x31Var.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = x31Var.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.j8) {
-                org.telegram.ui.Cells.j8 j8Var = (org.telegram.ui.Cells.j8) childAt;
-                j8Var.d();
-                j8Var.e();
+            if (childAt instanceof org.telegram.ui.Cells.k8) {
+                org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) childAt;
+                k8Var.d();
+                k8Var.e();
             }
         }
     }

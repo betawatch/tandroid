@@ -44,11 +44,11 @@ import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.bn;
 import org.telegram.ui.g30;
 import org.telegram.ui.k30;
-import org.telegram.ui.md0;
-import org.telegram.ui.pa0;
+import org.telegram.ui.nd0;
+import org.telegram.ui.qa0;
 import org.telegram.ui.sg;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r1 implements org.telegram.ui.ActionBar.r1, oi, h2.o, NativeInstance.PayloadCallback, t10, p4.l0, h2.j, w5.b {
     public final /* synthetic */ int a;
@@ -227,7 +227,7 @@ public final /* synthetic */ class r1 implements org.telegram.ui.ActionBar.r1, o
     @Override // w5.b
     public Object g() {
         ia.c cVar = (ia.c) this.c;
-        ((md0) cVar.d).H((o5.i) this.d, this.b + 1, false);
+        ((nd0) cVar.d).H((o5.i) this.d, this.b + 1, false);
         return null;
     }
 
@@ -321,14 +321,14 @@ public final /* synthetic */ class r1 implements org.telegram.ui.ActionBar.r1, o
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.e0;
                 if (!arrayList.isEmpty() && org.telegram.messenger.g0.J1((org.telegram.ui.ActionBar.h2) i5.c.h(1, arrayList))) {
-                    pa0 pa0Var = new pa0(0);
-                    pa0Var.M0 = new s1(hashMap, this.b, 14);
-                    launchActivity.t0(pa0Var);
+                    qa0 qa0Var = new qa0(0);
+                    qa0Var.M0 = new s1(hashMap, this.b, 14);
+                    launchActivity.t0(qa0Var);
                     break;
                 }
                 break;
             case 13:
-                ((pa0) this.c).I0(900, this.b, (TLRPC.User) this.d);
+                ((qa0) this.c).I0(900, this.b, (TLRPC.User) this.d);
                 break;
             case 14:
                 PasscodeActivity.Z((PasscodeActivity) this.c, (sb0) this.d, this.b);

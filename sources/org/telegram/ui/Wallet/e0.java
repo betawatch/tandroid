@@ -17,11 +17,12 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
+import org.telegram.ui.m60;
 import org.telegram.ui.p51;
-import org.telegram.ui.t60;
-import org.telegram.ui.t80;
+import org.telegram.ui.u60;
+import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements q10 {
     public final /* synthetic */ int a;
@@ -91,17 +92,17 @@ public final /* synthetic */ class e0 implements q10 {
                 break;
             case 3:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.b;
-                t60 t60Var = (t60) this.c;
+                u60 u60Var = (u60) this.c;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
                 String str4 = (String) obj2;
                 if (str4 == null) {
                     inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
                 }
-                t60Var.a(str4);
+                u60Var.a(str4);
                 break;
             case 4:
                 ((r0) this.b).close();
-                ((bi.t3) this.c).a((h2) obj, (String) obj2);
+                ((m60) this.c).a((h2) obj, (String) obj2);
                 break;
             case 5:
                 ((r0) this.b).close();
@@ -155,7 +156,7 @@ public final /* synthetic */ class e0 implements q10 {
                 a0Var.m2.a.setLoading(false);
                 if (a0Var.getContext() != null) {
                     org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
-                    t80 t80Var = LaunchActivity.H1.w0;
+                    u80 u80Var = LaunchActivity.H1.w0;
                     if (T != null) {
                         if (!bool.booleanValue()) {
                             if (str6 != null) {
@@ -168,8 +169,8 @@ public final /* synthetic */ class e0 implements q10 {
                             bn ua2 = bn.ua(-a0Var.X1.id);
                             T.presentFragment(ua2);
                             T.whenFullyVisible(new wg.r(1, ua2, tL_starsGiveawayOption));
-                            if (t80Var != null) {
-                                t80Var.c(true);
+                            if (u80Var != null) {
+                                u80Var.c(true);
                                 break;
                             }
                         }

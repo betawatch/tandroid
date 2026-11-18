@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class e00 extends c1 {
     public static final int[] w = new int[5];
@@ -766,7 +766,7 @@ public final class e00 extends c1 {
         if (z11) {
             y(j3, false);
         }
-        getNotificationCenter().k(ks.s5, Long.valueOf(j3), Boolean.TRUE);
+        getNotificationCenter().k(ks.t5, Long.valueOf(j3), Boolean.TRUE);
         if ((i7 == 0 || (i7 == 0 && !z10)) && z10 && ((ArrayList) hVar7.f(j3)).isEmpty()) {
             g0.g3(new vz(this, j3, 1));
         }
@@ -824,7 +824,7 @@ public final class e00 extends c1 {
                 Collections.sort(arrayList, new dl(20));
             }
             if (z10) {
-                getNotificationCenter().k(ks.s5, Long.valueOf(j3), Boolean.TRUE);
+                getNotificationCenter().k(ks.t5, Long.valueOf(j3), Boolean.TRUE);
             }
         }
     }

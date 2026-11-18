@@ -10,9 +10,9 @@ import android.os.SystemClock;
 import android.view.WindowManager;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ca0;
+import org.telegram.ui.da0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class m implements SensorEventListener {
     public float E;
@@ -20,7 +20,7 @@ public final class m implements SensorEventListener {
     public float G;
     public boolean H;
     public long I;
-    public final ca0 a;
+    public final da0 a;
     public SensorManager b;
     public Sensor c;
     public Sensor d;
@@ -34,8 +34,8 @@ public final class m implements SensorEventListener {
     public boolean x;
     public float y;
 
-    public m(ca0 ca0Var) {
-        this.a = ca0Var;
+    public m(da0 da0Var) {
+        this.a = da0Var;
     }
 
     public final void a(Location location) {

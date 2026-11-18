@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xr0 implements jg.y1, org.telegram.ui.Cells.z4 {
+public final /* synthetic */ class xr0 implements jg.y1, org.telegram.ui.Cells.a5 {
     public final /* synthetic */ zr0 a;
 
     public /* synthetic */ xr0(zr0 zr0Var) {
@@ -18,9 +18,9 @@ public final /* synthetic */ class xr0 implements jg.y1, org.telegram.ui.Cells.z
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.z4
-    public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
-        int intValue = ((Integer) a5Var.getTag()).intValue();
+    @Override // org.telegram.ui.Cells.a5
+    public boolean b(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        int intValue = ((Integer) b5Var.getTag()).intValue();
         zr0 zr0Var = this.a;
         TLObject E = zr0Var.E(intValue);
         if (!(E instanceof TLRPC.ChannelParticipant)) {
@@ -32,7 +32,7 @@ public final /* synthetic */ class xr0 implements jg.y1, org.telegram.ui.Cells.z
         tL_chatChannelParticipant.user_id = org.telegram.messenger.fj.B1(channelParticipant.peer);
         tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
         tL_chatChannelParticipant.date = channelParticipant.date;
-        return zr0Var.s.G1.h(tL_chatChannelParticipant, true, !z10, a5Var);
+        return zr0Var.s.G1.h(tL_chatChannelParticipant, true, !z10, b5Var);
     }
 
     @Override // jg.y1

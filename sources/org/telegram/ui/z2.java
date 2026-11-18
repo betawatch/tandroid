@@ -11,9 +11,9 @@ import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class z2 implements org.telegram.ui.Cells.t9, vg0, org.telegram.ui.Components.ox0 {
+public final class z2 implements org.telegram.ui.Cells.u9, wg0, org.telegram.ui.Components.ox0 {
     public SpannableStringBuilder E;
     public int F = -1;
     public int G = -1;
@@ -41,7 +41,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, vg0, org.telegram.ui.
         this.a = p50Var;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final Layout a() {
         return this.d;
     }
@@ -51,7 +51,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, vg0, org.telegram.ui.
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final /* synthetic */ Rect c() {
         return null;
     }
@@ -116,7 +116,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, vg0, org.telegram.ui.
         this.c = false;
     }
 
-    @Override // org.telegram.ui.vg0
+    @Override // org.telegram.ui.wg0
     public final View e() {
         View view = this.M;
         return view != null ? view : this.b;
@@ -136,27 +136,27 @@ public final class z2 implements org.telegram.ui.Cells.t9, vg0, org.telegram.ui.
         this.x = i7;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final CharSequence getPrefix() {
         return this.y;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getRow() {
         return this.x;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final CharSequence getText() {
         return this.d.getText();
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getX() {
         return this.s;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getY() {
         return this.w;
     }

@@ -8,13 +8,13 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class du extends zt {
     public final dv X;
     public final dv Y;
     public final boolean Z;
-    public final org.telegram.ui.Cells.t9[] a0;
+    public final org.telegram.ui.Cells.u9[] a0;
 
     public du(ev evVar, Rect rect, int i7, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
         super(evVar, rect, i7);
@@ -30,7 +30,7 @@ public final class du extends zt {
         if (dvVar2 != null) {
             arrayList.add(dvVar2);
         }
-        this.a0 = (org.telegram.ui.Cells.t9[]) arrayList.toArray(new org.telegram.ui.Cells.t9[0]);
+        this.a0 = (org.telegram.ui.Cells.u9[]) arrayList.toArray(new org.telegram.ui.Cells.u9[0]);
     }
 
     @Override // org.telegram.messenger.zt
@@ -78,7 +78,7 @@ public final class du extends zt {
     }
 
     @Override // org.telegram.messenger.zt
-    public final org.telegram.ui.Cells.t9[] L() {
+    public final org.telegram.ui.Cells.u9[] L() {
         return this.a0;
     }
 

@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class is0 implements org.telegram.ui.ls {
     public final /* synthetic */ TLRPC.TL_messageMediaPoll a;
     public final /* synthetic */ TLRPC.PollAnswer b;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 c;
+    public final /* synthetic */ org.telegram.ui.Cells.r1 c;
     public final /* synthetic */ ns0 d;
 
-    public is0(ns0 ns0Var, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.PollAnswer pollAnswer, org.telegram.ui.Cells.q1 q1Var) {
+    public is0(ns0 ns0Var, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.PollAnswer pollAnswer, org.telegram.ui.Cells.r1 r1Var) {
         this.d = ns0Var;
         this.a = tL_messageMediaPoll;
         this.b = pollAnswer;
-        this.c = q1Var;
+        this.c = r1Var;
     }
 
     @Override // org.telegram.ui.ls

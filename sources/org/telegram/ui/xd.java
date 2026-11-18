@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xd extends org.telegram.ui.Components.qt0 implements org.telegram.ui.ActionBar.c6 {
     public static xd u1;
@@ -265,7 +265,7 @@ public final class xd extends org.telegram.ui.Components.qt0 implements org.tele
         ndVar.setEnabled(false);
         ndVar.i(org.telegram.messenger.gd.G(0, "MonetizationStarsWithdraw", new Object[0]), false, true);
         ndVar.setVisibility(0);
-        ndVar.setOnClickListener(new bi.f5(this, i7, c51Var, 6));
+        ndVar.setOnClickListener(new bi.e5(this, i7, c51Var, 6));
         hi.d dVar2 = new hi.d(activity, i6Var, true);
         dVar2.setRoundRadius(24);
         this.K0 = dVar2;

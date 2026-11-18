@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class g81 extends org.telegram.ui.Cells.q1 {
+public final class g81 extends org.telegram.ui.Cells.r1 {
     public final Paint Ad;
     public final /* synthetic */ int Bd;
     public final /* synthetic */ int Cd;
@@ -27,14 +27,14 @@ public final class g81 extends org.telegram.ui.Cells.q1 {
         this.Ad = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public final void j1(Canvas canvas) {
         this.S4 = 0;
         this.T4 = this.Q4.size() - 1;
         super.j1(canvas);
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         int c22 = c2(this.Bd);
@@ -54,12 +54,12 @@ public final class g81 extends org.telegram.ui.Cells.q1 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final void onMeasure(int i7, int i10) {
         setMeasuredDimension(this.Cd, this.Dd);
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // org.telegram.ui.Cells.r1, android.view.View
     public final void setPressed(boolean z10) {
     }
 }

@@ -26,7 +26,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class j01 extends FrameLayout implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.c6 {
     public ValueAnimator E;
@@ -164,7 +164,7 @@ public class j01 extends FrameLayout implements org.telegram.messenger.fs, org.t
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             invalidate();
         }
     }
@@ -553,7 +553,7 @@ public class j01 extends FrameLayout implements org.telegram.messenger.fs, org.t
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
         this.P = true;
         org.telegram.ui.en enVar = this.O;
         if (enVar != null) {
@@ -565,7 +565,7 @@ public class j01 extends FrameLayout implements org.telegram.messenger.fs, org.t
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         this.P = false;
         org.telegram.ui.en enVar = this.O;
         if (enVar != null) {

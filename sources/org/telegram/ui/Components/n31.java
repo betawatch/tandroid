@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.n31;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n31 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -197,7 +197,7 @@ public final /* synthetic */ class n31 implements Runnable {
                     x2Var.show();
                     break;
                 } else {
-                    org.telegram.ui.Wallet.e3 D = org.telegram.ui.Wallet.l2.D(context, iArr[0], null, tL_urlAuthResultRequest, i6Var, new org.telegram.ui.t60(x2VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, x2Var, m0Var, 2), new org.telegram.ui.ve0(6, x2VarArr, zArr2));
+                    org.telegram.ui.Wallet.e3 D = org.telegram.ui.Wallet.l2.D(context, iArr[0], null, tL_urlAuthResultRequest, i6Var, new org.telegram.ui.u60(x2VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, x2Var, m0Var, 2), new org.telegram.ui.we0(6, x2VarArr, zArr2));
                     x2VarArr[0] = D;
                     org.telegram.ui.gi0.a = D;
                     break;

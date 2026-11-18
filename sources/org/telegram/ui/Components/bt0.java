@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class bt0 extends fi.o9 {
     public final /* synthetic */ dt0 h;
@@ -38,7 +38,7 @@ public final class bt0 extends fi.o9 {
         if (lq0Var != null) {
             for (int i10 = 0; i10 < lq0Var.getChildCount(); i10++) {
                 View childAt = lq0Var.getChildAt(i10);
-                if ((childAt instanceof org.telegram.ui.Cells.o7) && (messageObject = ((org.telegram.ui.Cells.o7) childAt).getMessageObject()) != null && messageObject.x4()) {
+                if ((childAt instanceof org.telegram.ui.Cells.p7) && (messageObject = ((org.telegram.ui.Cells.p7) childAt).getMessageObject()) != null && messageObject.x4()) {
                     arrayList.add(Integer.valueOf(messageObject.l.id));
                 }
             }

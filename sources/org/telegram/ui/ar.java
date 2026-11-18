@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ar implements TextWatcher {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class ar implements TextWatcher {
                 }
                 break;
             case 1:
-                ce0 ce0Var = (ce0) this.d;
-                ae0 ae0Var = ce0Var.b;
-                if (!ce0Var.M) {
-                    int selectionStart = ae0Var.getSelectionStart();
-                    String obj2 = ae0Var.getText().toString();
+                de0 de0Var = (de0) this.d;
+                be0 be0Var = de0Var.b;
+                if (!de0Var.M) {
+                    int selectionStart = be0Var.getSelectionStart();
+                    String obj2 = be0Var.getText().toString();
                     if (this.b == 3) {
                         obj2 = obj2.substring(0, this.c) + obj2.substring(this.c + 1);
                         selectionStart--;
@@ -88,8 +88,8 @@ public final class ar implements TextWatcher {
                         }
                         i23 = i24;
                     }
-                    ce0Var.M = true;
-                    String hintText = ae0Var.getHintText();
+                    de0Var.M = true;
+                    String hintText = be0Var.getHintText();
                     if (hintText != null) {
                         int i25 = 0;
                         while (true) {
@@ -114,19 +114,19 @@ public final class ar implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb2);
                     if (selectionStart >= 0) {
-                        ae0Var.setSelection(Math.min(selectionStart, ae0Var.length()));
+                        be0Var.setSelection(Math.min(selectionStart, be0Var.length()));
                     }
-                    ae0Var.invalidate();
-                    ce0Var.q();
-                    ce0Var.M = false;
+                    be0Var.invalidate();
+                    de0Var.q();
+                    de0Var.M = false;
                     break;
                 }
                 break;
             case 2:
-                eh0 eh0Var = (eh0) this.d;
-                if (!eh0Var.z1) {
-                    int selectionStart2 = eh0Var.K1.getSelectionStart();
-                    String obj3 = eh0Var.K1.getText().toString();
+                fh0 fh0Var = (fh0) this.d;
+                if (!fh0Var.z1) {
+                    int selectionStart2 = fh0Var.K1.getSelectionStart();
+                    String obj3 = fh0Var.K1.getText().toString();
                     if (this.b == 3) {
                         obj3 = obj3.substring(0, this.c) + obj3.substring(this.c + 1);
                         selectionStart2--;
@@ -141,8 +141,8 @@ public final class ar implements TextWatcher {
                         }
                         i26 = i27;
                     }
-                    eh0Var.z1 = true;
-                    String hintText2 = eh0Var.K1.getHintText();
+                    fh0Var.z1 = true;
+                    String hintText2 = fh0Var.K1.getHintText();
                     if (hintText2 != null) {
                         int i28 = 0;
                         while (true) {
@@ -167,12 +167,12 @@ public final class ar implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb3);
                     if (selectionStart2 >= 0) {
-                        dh0 dh0Var = eh0Var.K1;
-                        dh0Var.setSelection(Math.min(selectionStart2, dh0Var.length()));
+                        eh0 eh0Var = fh0Var.K1;
+                        eh0Var.setSelection(Math.min(selectionStart2, eh0Var.length()));
                     }
-                    eh0Var.K1.invalidate();
-                    eh0Var.z1 = false;
-                    eh0.J0(eh0Var);
+                    fh0Var.K1.invalidate();
+                    fh0Var.z1 = false;
+                    fh0.J0(fh0Var);
                     break;
                 }
                 break;

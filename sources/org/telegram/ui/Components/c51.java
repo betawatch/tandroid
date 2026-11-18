@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c51 extends uy {
     public final /* synthetic */ int X;
@@ -85,7 +85,7 @@ public final class c51 extends uy {
         switch (this.X) {
             case 2:
                 super.z0(c1Var, iArr);
-                iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.p7.a(1) * 2);
+                iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.q7.a(1) * 2);
                 break;
             default:
                 super.z0(c1Var, iArr);

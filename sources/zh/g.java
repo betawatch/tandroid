@@ -13,13 +13,13 @@ import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.n5;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.f5;
+import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.kj0;
 import v4.f1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g extends bk0 {
     public final /* synthetic */ l c;
@@ -91,20 +91,20 @@ public final class g extends bk0 {
             }
             return;
         }
-        f5 f5Var = (f5) view;
+        g5 g5Var = (g5) view;
         int i11 = i7 - (!lVar.B ? 1 : 0);
         LongSparseArray longSparseArray = lVar.d;
         TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i11);
         boolean z10 = i11 != arrayList.size() - 1 || lVar.x;
-        n5 n5Var = f5Var.d;
-        f5Var.e = tL_chatInviteImporter;
-        f5Var.f = z10;
-        f5Var.setWillNotDraw(!z10);
+        n5 n5Var = g5Var.d;
+        g5Var.e = tL_chatInviteImporter;
+        g5Var.f = z10;
+        g5Var.setWillNotDraw(!z10);
         TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
-        b9 b9Var = f5Var.a;
+        b9 b9Var = g5Var.a;
         b9Var.r(user);
-        f5Var.b.f(user, b9Var);
-        f5Var.c.l(o10.q(user), false);
+        g5Var.b.f(user, b9Var);
+        g5Var.c.l(o10.q(user), false);
         String s5 = gd.s(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
             n5Var.l(gd.M0(2131748877, null), false);
@@ -137,7 +137,7 @@ public final class g extends bk0 {
         } else if (i7 == 3) {
             view = new View(viewGroup.getContext());
         } else if (i7 != 4) {
-            view = new f5(viewGroup.getContext(), lVar, z10);
+            view = new g5(viewGroup.getContext(), lVar, z10);
         } else {
             h2 h2Var = lVar.g;
             r2 r2Var = new r2(3, h2Var.getParentActivity(), h2Var.getResourceProvider());

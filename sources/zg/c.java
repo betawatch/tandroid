@@ -37,7 +37,7 @@ import org.telegram.messenger.t0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.f80;
@@ -47,7 +47,7 @@ import org.telegram.ui.Components.wu0;
 import ug.z;
 import wg.s;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -70,7 +70,7 @@ public final class c {
     public o0 U;
     public ImageReceiver[] a;
     public b9[] b;
-    public final q1 c;
+    public final r1 c;
     public ImageReceiver d;
     public mh0 e;
     public CharSequence[] f;
@@ -98,8 +98,8 @@ public final class c {
     public boolean P = false;
     public boolean Q = false;
 
-    public c(q1 q1Var) {
-        this.c = q1Var;
+    public c(r1 r1Var) {
+        this.c = r1Var;
     }
 
     public final boolean a(MotionEvent motionEvent) {
@@ -108,9 +108,9 @@ public final class c {
         fj fjVar = this.M;
         if (fjVar != null && fjVar.w3()) {
             o0 o0Var = this.U;
-            q1 q1Var = this.c;
+            r1 r1Var = this.c;
             if (o0Var == null) {
-                this.U = new o0(q1Var);
+                this.U = new o0(r1Var);
             }
             int action = motionEvent.getAction();
             int x10 = (int) motionEvent.getX();
@@ -121,7 +121,7 @@ public final class c {
                 if (clickableSpanArr.length != 0) {
                     if (action == 1) {
                         this.U.f(true);
-                        clickableSpanArr[0].onClick(q1Var);
+                        clickableSpanArr[0].onClick(r1Var);
                         return true;
                     }
                     l80 l80Var = new l80(clickableSpanArr[0], null, x10, y10, 0);
@@ -138,7 +138,7 @@ public final class c {
                     }
                 }
                 this.U.f(true);
-                q1Var.invalidate();
+                r1Var.invalidate();
             }
             if (action == 0) {
                 int i10 = 0;
@@ -160,10 +160,10 @@ public final class c {
                 }
             } else if (action == 1) {
                 if (this.P) {
-                    if (q1Var.getDelegate() != null) {
-                        q1Var.getDelegate().K1(q1Var, this.O);
+                    if (r1Var.getDelegate() != null) {
+                        r1Var.getDelegate().K1(r1Var, this.O);
                     }
-                    q1Var.playSoundEffect(0);
+                    r1Var.playSoundEffect(0);
                     c(false);
                     this.P = false;
                 }
@@ -197,14 +197,14 @@ public final class c {
             return;
         }
         y yVar = this.L;
-        q1 q1Var = this.c;
+        r1 r1Var = this.c;
         gc gcVar = null;
         if (yVar == null) {
             int x02 = n6.x0(null, n6.i6, false);
             this.K = x02;
             y a02 = n6.a0(x02, 12, 12);
             this.L = a02;
-            a02.setCallback(q1Var);
+            a02.setCallback(r1Var);
         }
         this.y.setColor(n6.o2.getColor());
         this.z.setColor(n6.x0(null, n6.q5, false));
@@ -351,13 +351,13 @@ public final class c {
                 n6.H1(yVar2, r12, true);
             }
             this.L.setBounds(this.j[this.O]);
-            this.L.setCallback(q1Var);
+            this.L.setCallback(r1Var);
         }
         o0 o0Var = this.U;
         if (o0Var == null || !o0Var.h(canvas)) {
             return;
         }
-        q1Var.invalidate();
+        r1Var.invalidate();
     }
 
     public final void c(boolean z10) {
@@ -369,14 +369,14 @@ public final class c {
         if (o0Var != null) {
             o0Var.f(true);
         }
-        q1 q1Var = this.c;
+        r1 r1Var = this.c;
         if (!z10) {
             this.L.setState(StateSet.NOTHING);
-            q1Var.invalidate();
+            r1Var.invalidate();
         } else {
             this.L.setCallback(new a5.b(this, 10));
             this.L.setState(this.J);
-            q1Var.invalidate();
+            r1Var.invalidate();
         }
     }
 

@@ -1,124 +1,270 @@
 package bi;
 
-import android.content.Context;
-import hi.m9;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.cj;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.ma;
+import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.eq0;
-import org.telegram.ui.Components.si;
-import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.j90;
+import org.telegram.ui.Components.mf0;
+import org.telegram.ui.Components.wz;
+import org.telegram.ui.bn;
+import org.telegram.ui.cx;
+import org.telegram.ui.du;
+import org.telegram.ui.eu;
+import org.telegram.ui.fn0;
+import org.telegram.ui.gf0;
+import org.telegram.ui.qr;
+import org.telegram.ui.rd;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class d6 extends e51 {
-    public final /* synthetic */ int n3 = 0;
-    public final /* synthetic */ Object o3;
+public final class d6 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6(b51 b51Var, b51 b51Var2, org.telegram.ui.Components.d dVar, a51 a51Var, a51 a51Var2) {
-        super(b51Var2, dVar, a51Var, a51Var2);
-        this.o3 = b51Var;
+    public /* synthetic */ d6(int i7, Object obj, Object obj2) {
+        this.a = i7;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // org.telegram.ui.Components.ck0
-    public boolean E0(float f10) {
-        switch (this.n3) {
+    @Override // v4.u0
+    public void a(RecyclerView recyclerView, int i7) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.a) {
             case 2:
-                si siVar = ((cj) this.o3).b;
-                return f10 >= ((float) ((org.telegram.messenger.g0.L(30.0f) + siVar.Z3[0]) + (!siVar.b2 ? org.telegram.messenger.g0.m : 0)));
-            default:
-                return super.E0(f10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.e51
-    public void F1() {
-        switch (this.n3) {
-            case 2:
-                cj cjVar = (cj) this.o3;
-                cjVar.b.N1(cjVar, 0);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.e51
-    public void K1() {
-        switch (this.n3) {
-            case 1:
-                org.telegram.messenger.g0.d0(((m9) this.o3).b, new ai.g0(this, 27));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ck0
-    public Integer V0(int i7) {
-        switch (this.n3) {
-            case 1:
-                return 0;
-            default:
-                return super.V0(i7);
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void l0(int i7) {
-        org.telegram.ui.web.i iVar;
-        switch (this.n3) {
-            case 4:
-                if (!canScrollVertically(1) && (iVar = ((org.telegram.ui.web.k) this.o3).E) != null && iVar.h) {
-                    iVar.d();
+                if (i7 == 0) {
+                    ((oi.s3) this.c).v3.V();
                     break;
                 }
                 break;
+            case 7:
+                eu euVar = (eu) this.c;
+                du[] duVarArr = euVar.f;
+                ((v4.u0) this.b).a(recyclerView, i7);
+                if (i7 != 1) {
+                    kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+                    int i10 = (int) (-kVar.getTranslationY());
+                    int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                    if (i10 != 0 && i10 != currentActionBarHeight) {
+                        if (i10 >= currentActionBarHeight / 2) {
+                            int i11 = currentActionBarHeight - i10;
+                            duVarArr[0].d.w0(0, i11, null);
+                            di.b1 b1Var = duVarArr[0].e;
+                            if (b1Var != null) {
+                                b1Var.w0(0, i11, null);
+                                break;
+                            }
+                        } else {
+                            int i12 = -i10;
+                            duVarArr[0].d.w0(0, i12, null);
+                            di.b1 b1Var2 = duVarArr[0].e;
+                            if (b1Var2 != null) {
+                                b1Var2.w0(0, i12, null);
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            case 9:
+                fn0 fn0Var = (fn0) this.c;
+                org.telegram.ui.ActionBar.z4[] z4VarArr = fn0Var.n;
+                ((v4.u0) this.b).a(recyclerView, i7);
+                if (i7 != 1) {
+                    kVar2 = ((org.telegram.ui.ActionBar.h2) fn0Var).actionBar;
+                    int i13 = (int) (-kVar2.getTranslationY());
+                    int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                    if (i13 != 0 && i13 != currentActionBarHeight2) {
+                        if (i13 >= currentActionBarHeight2 / 2) {
+                            ((ck0) z4VarArr[0].f).w0(0, currentActionBarHeight2 - i13, null);
+                            break;
+                        } else {
+                            ((ck0) z4VarArr[0].f).w0(0, -i13, null);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 11:
+                ((v4.u0) this.b).a(recyclerView, i7);
+                ((j90) this.c).D.getClass();
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        switch (this.n3) {
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        View F;
+        int i11;
+        int i12;
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.a) {
             case 0:
-                super.onLayout(z10, i7, i10, i11, i12);
-                ((eq0) this.o3).p();
+                j6 j6Var = (j6) this.c;
+                c6 c6Var = j6Var.f;
+                if (j6Var.isAttachedToWindow()) {
+                    if (c6Var.canScrollVertically(1)) {
+                        for (int i13 = 0; i13 < c6Var.getChildCount(); i13++) {
+                            if (!(c6Var.getChildAt(i13) instanceof wz)) {
+                            }
+                        }
+                    }
+                    j6Var.e.a();
+                }
+                ((eq0) this.b).p();
                 break;
             case 1:
-            default:
-                super.onLayout(z10, i7, i10, i11, i12);
+                ci.r rVar = (ci.r) this.b;
+                float translationY = rVar.getTranslationY();
+                float f10 = ((ci.j0) this.c).e0;
+                if (translationY != f10) {
+                    rVar.setTranslationY(f10);
+                    rVar.invalidate();
+                    break;
+                }
                 break;
             case 2:
-                super.onLayout(z10, i7, i10, i11, i12);
-                cj cjVar = (cj) this.o3;
-                cjVar.b.N1(cjVar, 0);
+                oi.s3 s3Var = (oi.s3) this.c;
+                ((oi.q3) this.b).b0(i10);
+                s3Var.v3.G();
+                oi.e1 e1Var = s3Var.T3;
+                if (e1Var != null && (F = s3Var.F(e1Var)) != null) {
+                    if (F.getBottom() <= 0 || F.getTop() >= s3Var.getHeight()) {
+                        s3Var.T3 = null;
+                        e1Var.clearFocus();
+                        org.telegram.messenger.g0.v1(s3Var);
+                        break;
+                    }
+                }
                 break;
             case 3:
-                super.onLayout(z10, i7, i10, i11, i12);
-                ((b51) this.o3).c = -1;
+                e51 e51Var = ((rd) this.c).a;
+                if (e51Var.canScrollVertically(1)) {
+                    for (int i14 = 0; i14 < e51Var.getChildCount(); i14++) {
+                        if (!(e51Var.getChildAt(i14) instanceof wz)) {
+                        }
+                    }
+                    break;
+                }
+                ((ai.w0) this.b).run();
+                break;
+            case 4:
+                bn bnVar = (bn) this.c;
+                if (recyclerView.getScrollState() == 1) {
+                    org.telegram.messenger.g0.v1(bnVar.m1);
+                }
+                int N0 = ((v4.c0) this.b).N0();
+                if ((N0 == -1 ? 0 : N0) > 0 && N0 > bnVar.b4.h - 5) {
+                    if (bnVar.g4 != 7) {
+                        bnVar.getMediaDataController().R0();
+                        break;
+                    } else if (!bnVar.Y6 && !bnVar.U6[0]) {
+                        bnVar.Y6 = true;
+                        bnVar.z6.add(Integer.valueOf(bnVar.n6));
+                        i11 = ((org.telegram.ui.ActionBar.h2) bnVar).currentAccount;
+                        ma a10 = ma.a(i11);
+                        String str = bnVar.J3;
+                        i12 = ((org.telegram.ui.ActionBar.h2) bnVar).classGuid;
+                        int i15 = bnVar.d4;
+                        int i16 = bnVar.n6;
+                        bnVar.n6 = i16 + 1;
+                        a10.e(i12, i15, i16, str);
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                cx cxVar = (cx) this.b;
+                mf0 mf0Var = (mf0) this.c;
+                e51 e51Var2 = mf0Var.c;
+                if (!(TextUtils.isEmpty(mf0Var.x) ? mf0Var.e : mf0Var.n).isEmpty()) {
+                    if (e51Var2.canScrollVertically(1)) {
+                        for (int i17 = 0; i17 < e51Var2.getChildCount(); i17++) {
+                            if (!(e51Var2.getChildAt(i17) instanceof wz)) {
+                            }
+                        }
+                    }
+                    mf0Var.a(false);
+                }
+                if (e51Var2.J1 && !mf0Var.R && cxVar.getParentActivity() != null) {
+                    org.telegram.messenger.g0.v1(cxVar.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            case 6:
+                if (((qr) this.c).X.J1) {
+                    org.telegram.messenger.g0.v1((FrameLayout) this.b);
+                    break;
+                }
+                break;
+            case 7:
+                ((v4.u0) this.b).b(recyclerView, i7, i10);
+                eu euVar = (eu) this.c;
+                du duVar = euVar.f[0];
+                if (recyclerView == duVar.d || recyclerView == duVar.e) {
+                    kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+                    float translationY2 = kVar.getTranslationY();
+                    float f11 = translationY2 - i10;
+                    if (f11 < (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())) {
+                        f11 = -org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                    } else if (f11 > 0.0f) {
+                        f11 = 0.0f;
+                    }
+                    if (f11 != translationY2) {
+                        eu.o0(euVar, f11);
+                        break;
+                    }
+                }
+                break;
+            case 8:
+                gf0 gf0Var = (gf0) this.c;
+                if (gf0Var.c0 && !gf0Var.X) {
+                    if (gf0Var.Y - ((jg.b0) this.b).N0() < 10) {
+                        gf0Var.j0(true);
+                        break;
+                    }
+                }
+                break;
+            case 9:
+                ((v4.u0) this.b).b(recyclerView, i7, i10);
+                fn0 fn0Var = (fn0) this.c;
+                if (recyclerView == ((ck0) fn0Var.n[0].f)) {
+                    kVar2 = ((org.telegram.ui.ActionBar.h2) fn0Var).actionBar;
+                    float translationY3 = kVar2.getTranslationY();
+                    float f12 = translationY3 - i10;
+                    if (f12 < (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())) {
+                        f12 = -org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                    } else if (f12 > 0.0f) {
+                        f12 = 0.0f;
+                    }
+                    if (f12 != translationY3) {
+                        fn0.l0(fn0Var, f12);
+                        break;
+                    }
+                }
+                break;
+            case 10:
+                sh.o oVar = (sh.o) this.c;
+                sh.n nVar = (sh.n) this.b;
+                if (!nVar.h && !nVar.i) {
+                    if ((oVar.c.g3.E.size() - 1) - oVar.c.f3.M0() < 5) {
+                        nVar.a();
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((v4.u0) this.b).b(recyclerView, i7, i10);
+                ((j90) this.c).D.b(recyclerView, i7, i10);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6(m9 m9Var, Context context, int i7, hi.s3 s3Var, di.c7 c7Var, fi.b bVar) {
-        super(context, i7, 0, false, s3Var, c7Var, null, bVar, -1, 0);
-        this.o3 = m9Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6(org.telegram.ui.web.k kVar, Context context, int i7, org.telegram.ui.web.b bVar, org.telegram.ui.web.a aVar, hi.d5 d5Var) {
-        super(context, i7, 0, false, bVar, aVar, null, d5Var);
-        this.o3 = kVar;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6(cj cjVar, Context context, int i7, org.telegram.ui.Components.d dVar, wi wiVar, wi wiVar2, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i7, 0, false, dVar, wiVar, wiVar2, i6Var);
-        this.o3 = cjVar;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6(Context context, int i7, b bVar, b6 b6Var, b6 b6Var2, org.telegram.ui.ActionBar.i6 i6Var, eq0 eq0Var) {
-        super(context, i7, 0, false, bVar, b6Var, b6Var2, i6Var, 3, 1);
-        this.o3 = eq0Var;
     }
 }

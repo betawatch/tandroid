@@ -2,9 +2,9 @@ package oi;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class f5 implements d1 {
     public final /* synthetic */ o5 a;
@@ -73,7 +73,7 @@ public final class f5 implements d1 {
     @Override // oi.d1
     public final void r1(final e1 e1Var, final int i7, final int i10) {
         a3 a3Var;
-        final i9 textSelectionHelper;
+        final j9 textSelectionHelper;
         final int l10;
         l5 l5Var = this.b;
         if (l5Var.H || i7 == i10 || (a3Var = l5Var.F) == null || (textSelectionHelper = a3Var.a.getTextSelectionHelper()) == null) {

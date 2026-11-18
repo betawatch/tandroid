@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -199,27 +199,27 @@ public final class m4 implements Runnable {
                 }
                 break;
             case 11:
-                pc0 pc0Var = (pc0) this.b;
-                if (pc0Var.h == this) {
-                    pc0Var.n();
-                    org.telegram.messenger.g0.h3(pc0Var.h, 1000L);
+                qc0 qc0Var = (qc0) this.b;
+                if (qc0Var.h == this) {
+                    qc0Var.n();
+                    org.telegram.messenger.g0.h3(qc0Var.h, 1000L);
                     break;
                 }
                 break;
             case 12:
-                ((ng0) this.b).U.animate().alpha(1.0f).setDuration(230L);
+                ((og0) this.b).U.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 13:
-                ug0 ug0Var = (ug0) this.b;
-                String str = ug0Var.f2;
+                vg0 vg0Var = (vg0) this.b;
+                String str = vg0Var.f2;
                 if (str != null) {
-                    if (ug0Var.i2 >= 0) {
-                        ConnectionsManager.getInstance(ug0Var.a).cancelRequest(ug0Var.i2, true);
-                        ug0Var.i2 = -1;
+                    if (vg0Var.i2 >= 0) {
+                        ConnectionsManager.getInstance(vg0Var.a).cancelRequest(vg0Var.i2, true);
+                        vg0Var.i2 = -1;
                     }
-                    Boolean bool = ug0Var.n2;
+                    Boolean bool = vg0Var.n2;
                     boolean z10 = bool != null && bool.booleanValue();
-                    org.telegram.ui.Components.ph phVar = new org.telegram.ui.Components.ph(18, ug0Var, str);
+                    org.telegram.ui.Components.ph phVar = new org.telegram.ui.Components.ph(18, vg0Var, str);
                     int i10 = org.telegram.messenger.j10.t0;
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = org.telegram.messenger.i5.r(i10).f0;
@@ -266,9 +266,9 @@ public final class m4 implements Runnable {
             case 14:
                 pr0 pr0Var = (pr0) this.b;
                 m4 m4Var = pr0Var.z0;
-                org.telegram.ui.Cells.a6 a6Var = pr0Var.c0;
-                if (a6Var != null) {
-                    EditTextBoldCursor editField = a6Var.getEditField();
+                org.telegram.ui.Cells.b6 b6Var = pr0Var.c0;
+                if (b6Var != null) {
+                    EditTextBoldCursor editField = b6Var.getEditField();
                     if (!pr0Var.V && editField != null && pr0Var.U && !pr0Var.Z && !org.telegram.messenger.g0.D && !org.telegram.messenger.g0.E && org.telegram.messenger.g0.Q1()) {
                         editField.requestFocus();
                         org.telegram.messenger.g0.I3(editField);

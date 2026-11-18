@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ea extends org.telegram.ui.Components.bk0 {
     public final /* synthetic */ la c;
@@ -62,11 +62,11 @@ public final class ea extends org.telegram.ui.Components.bk0 {
         int i10 = f1Var.f;
         View view = f1Var.a;
         if (i10 == 0) {
-            ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.gd.M0(i7 == 0 ? j3 != 0 ? 2131752974 : 2131745303 : 2131743405, null));
+            ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.M0(i7 == 0 ? j3 != 0 ? 2131752974 : 2131745303 : 2131743405, null));
             return;
         }
         if (i10 == 2) {
-            ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.gd.M0(j3 != 0 ? 2131752926 : 2131743404, null));
+            ((org.telegram.ui.Cells.a9) view).setText(org.telegram.messenger.gd.M0(j3 != 0 ? 2131752926 : 2131743404, null));
             return;
         }
         if (i10 == 3) {
@@ -94,7 +94,7 @@ public final class ea extends org.telegram.ui.Components.bk0 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         la laVar = this.c;
         if (i7 == 0) {
-            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.n4(laVar.getParentActivity()));
+            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.o4(laVar.getParentActivity()));
         }
         if (i7 == 1) {
             ka kaVar = new ka(laVar, laVar.getParentActivity());
@@ -102,7 +102,7 @@ public final class ea extends org.telegram.ui.Components.bk0 {
             return new org.telegram.ui.Components.kj0(kaVar);
         }
         if (i7 == 2) {
-            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.z8(laVar.getParentActivity()));
+            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.a9(laVar.getParentActivity()));
         }
         if (i7 == 3) {
             return new org.telegram.ui.Components.kj0(new ga(laVar, laVar.getParentActivity()));

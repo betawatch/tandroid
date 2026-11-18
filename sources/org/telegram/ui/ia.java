@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final org.telegram.ui.Components.c6 E;
@@ -215,7 +215,7 @@ public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBa
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z10 ? 1.0f : 0.0f);
             this.s = ofFloat;
             ofFloat.addUpdateListener(new ha(this, i7));
-            this.s.addListener(new bi.e7(27, this, z10));
+            this.s.addListener(new bi.d7(27, this, z10));
             this.s.setInterpolator(org.telegram.ui.Components.lr.g);
             this.s.setDuration(200L);
             this.s.start();

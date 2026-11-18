@@ -72,7 +72,7 @@ import org.telegram.ui.Components.s41;
 import org.telegram.ui.Components.wb0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class ri extends c1 {
     public static final Pattern U1 = Pattern.compile("\\*\\*(.+?)\\*\\*");
@@ -2002,7 +2002,7 @@ public final class ri extends c1 {
             }
         }
         edit.apply();
-        getNotificationCenter().k(ks.W5, Long.valueOf(j3));
+        getNotificationCenter().k(ks.X5, Long.valueOf(j3));
     }
 
     public final boolean I(long j3) {
@@ -5125,7 +5125,7 @@ public final class ri extends c1 {
                 runnable.run();
             }
         } else {
-            getMessagesStorage().a.c(new bi.t4(this, tz.d(tzVar, "loadReplyMessagesForMessages: storageQueue.postRunnable"), hVar6, new AtomicInteger(2), runnable, i10, tzVar, hVar4, hVar5, z10, j3));
+            getMessagesStorage().a.c(new bi.s4(this, tz.d(tzVar, "loadReplyMessagesForMessages: storageQueue.postRunnable"), hVar6, new AtomicInteger(2), runnable, i10, tzVar, hVar4, hVar5, z10, j3));
         }
     }
 
@@ -5139,7 +5139,7 @@ public final class ri extends c1 {
         }
         long j3 = document.size;
         long j10 = mp.u1(this.currentAccount).o4;
-        int i10 = ks.R4;
+        int i10 = ks.S4;
         if (j3 > j10) {
             ks.e().k(i10, 4, gd.a0("TooLargeError", null, 2131743807, new Object[0]), gd.a0("ErrorRingtoneSizeTooBig", null, 2131751091, Integer.valueOf(mp.u1(j10.t0).o4 / 1024)));
             return false;
@@ -6089,7 +6089,7 @@ public final class ri extends c1 {
                         arrayListArr[i7].add(0, document);
                     }
                 }
-                int i15 = ks.R4;
+                int i15 = ks.S4;
                 if (i7 == 2) {
                     if (z10) {
                         ks.e().k(i15, 0, document, 4);
@@ -6693,7 +6693,7 @@ public final class ri extends c1 {
             }
         }
         if (z11) {
-            ks.f(cVar.c).k(ks.g5, new Object[0]);
+            ks.f(cVar.c).k(ks.h5, new Object[0]);
         }
     }
 

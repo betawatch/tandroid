@@ -32,14 +32,14 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.yy;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.le0;
+import org.telegram.ui.me0;
 import org.telegram.ui.mp0;
 import org.telegram.ui.qi0;
 import org.telegram.ui.xo0;
 import v4.e0;
 import v4.i0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class i implements l, e0, d61, a0 {
     public final /* synthetic */ int a;
@@ -428,9 +428,9 @@ public class i implements l, e0, d61, a0 {
         }
     }
 
-    public i(le0 le0Var, boolean z10) {
+    public i(me0 me0Var, boolean z10) {
         this.a = 5;
-        this.c = le0Var;
+        this.c = me0Var;
         this.b = z10;
     }
 

@@ -38,7 +38,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class bb1 extends org.telegram.ui.ActionBar.h2 {
     public hi.m5 E;
@@ -80,12 +80,12 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
     public sa1 h0;
     public final Runnable i0;
     public final Runnable j0;
-    public k90 k0;
+    public l90 k0;
     public EditTextBoldCursor n;
     public EditTextBoldCursor r;
     public org.telegram.ui.Components.xb0 s;
     public org.telegram.ui.Components.xb0 w;
-    public lb0 x;
+    public mb0 x;
     public ab1 y;
 
     public bb1(int i7, int i10, TL_account.Password password) {
@@ -208,9 +208,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
         twoStepVerificationActivity.Y = bb1Var.H;
         bb1Var.presentFragment(twoStepVerificationActivity, true);
         org.telegram.messenger.ks.f(bb1Var.currentAccount).k(org.telegram.messenger.ks.q0, bb1Var.V);
-        k90 k90Var = bb1Var.k0;
-        if (k90Var != null) {
-            org.telegram.messenger.g0.g3(k90Var);
+        l90 l90Var = bb1Var.k0;
+        if (l90Var != null) {
+            org.telegram.messenger.g0.g3(l90Var);
             bb1Var.k0 = null;
         }
     }
@@ -234,9 +234,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
         twoStepVerificationActivity.Y = bb1Var.H;
         bb1Var.presentFragment(twoStepVerificationActivity, true);
         org.telegram.messenger.ks.f(bb1Var.currentAccount).k(org.telegram.messenger.ks.q0, bb1Var.V);
-        k90 k90Var = bb1Var.k0;
-        if (k90Var != null) {
-            org.telegram.messenger.g0.g3(k90Var);
+        l90 l90Var = bb1Var.k0;
+        if (l90Var != null) {
+            org.telegram.messenger.g0.g3(l90Var);
             bb1Var.k0 = null;
         }
     }
@@ -458,9 +458,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
             twoStepVerificationActivity.Y = bb1Var.H;
             bb1Var.presentFragment(twoStepVerificationActivity, true);
             org.telegram.messenger.ks.f(bb1Var.currentAccount).k(org.telegram.messenger.ks.r0, new Object[0]);
-            k90 k90Var = bb1Var.k0;
-            if (k90Var != null) {
-                org.telegram.messenger.g0.g3(k90Var);
+            l90 l90Var = bb1Var.k0;
+            if (l90Var != null) {
+                org.telegram.messenger.g0.g3(l90Var);
                 bb1Var.k0 = null;
             }
         }
@@ -694,17 +694,17 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                         twoStepVerificationActivity.A0(this.V, this.W, this.X, this.Y);
                         twoStepVerificationActivity.Y = this.H;
                         presentFragment(twoStepVerificationActivity, true);
-                        k90 k90Var = this.k0;
-                        if (k90Var != null) {
-                            org.telegram.messenger.g0.g3(k90Var);
+                        l90 l90Var = this.k0;
+                        if (l90Var != null) {
+                            org.telegram.messenger.g0.g3(l90Var);
                             this.k0 = null;
                             break;
                         }
                     } else {
                         Bundle k10 = a8.p0.k("afterSignup", true);
-                        le0 le0Var = new le0();
-                        le0Var.r0(k10);
-                        presentFragment(le0Var, true);
+                        me0 me0Var = new me0();
+                        me0Var.r0(k10);
+                        presentFragment(me0Var, true);
                         break;
                     }
                 } else {
@@ -1024,9 +1024,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                             twoStepVerificationActivity.K = false;
                             twoStepVerificationActivity.Y = bb1Var.H;
                             bb1Var.presentFragment(twoStepVerificationActivity, true);
-                            k90 k90Var = bb1Var.k0;
-                            if (k90Var != null) {
-                                org.telegram.messenger.g0.g3(k90Var);
+                            l90 l90Var = bb1Var.k0;
+                            if (l90Var != null) {
+                                org.telegram.messenger.g0.g3(l90Var);
                                 bb1Var.k0 = null;
                                 break;
                             }
@@ -1159,9 +1159,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                             twoStepVerificationActivity.K = false;
                             twoStepVerificationActivity.Y = bb1Var.H;
                             bb1Var.presentFragment(twoStepVerificationActivity, true);
-                            k90 k90Var = bb1Var.k0;
-                            if (k90Var != null) {
-                                org.telegram.messenger.g0.g3(k90Var);
+                            l90 l90Var = bb1Var.k0;
+                            if (l90Var != null) {
+                                org.telegram.messenger.g0.g3(l90Var);
                                 bb1Var.k0 = null;
                                 break;
                             }
@@ -1312,9 +1312,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                             twoStepVerificationActivity.K = false;
                             twoStepVerificationActivity.Y = bb1Var.H;
                             bb1Var.presentFragment(twoStepVerificationActivity, true);
-                            k90 k90Var = bb1Var.k0;
-                            if (k90Var != null) {
-                                org.telegram.messenger.g0.g3(k90Var);
+                            l90 l90Var = bb1Var.k0;
+                            if (l90Var != null) {
+                                org.telegram.messenger.g0.g3(l90Var);
                                 bb1Var.k0 = null;
                                 break;
                             }
@@ -1440,9 +1440,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                             twoStepVerificationActivity.K = false;
                             twoStepVerificationActivity.Y = bb1Var.H;
                             bb1Var.presentFragment(twoStepVerificationActivity, true);
-                            k90 k90Var = bb1Var.k0;
-                            if (k90Var != null) {
-                                org.telegram.messenger.g0.g3(k90Var);
+                            l90 l90Var = bb1Var.k0;
+                            if (l90Var != null) {
+                                org.telegram.messenger.g0.g3(l90Var);
                                 bb1Var.k0 = null;
                                 break;
                             }
@@ -1692,9 +1692,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                                     twoStepVerificationActivity.K = false;
                                     twoStepVerificationActivity.Y = bb1Var.H;
                                     bb1Var.presentFragment(twoStepVerificationActivity, true);
-                                    k90 k90Var = bb1Var.k0;
-                                    if (k90Var != null) {
-                                        org.telegram.messenger.g0.g3(k90Var);
+                                    l90 l90Var = bb1Var.k0;
+                                    if (l90Var != null) {
+                                        org.telegram.messenger.g0.g3(l90Var);
                                         bb1Var.k0 = null;
                                         break;
                                     }
@@ -1835,10 +1835,10 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                 this.f0 = prVar;
                 prVar.setVisibility(8);
                 li0Var.addView(this.f0);
-                lb0 lb0Var = new lb0(3, context, this);
-                this.x = lb0Var;
+                mb0 mb0Var = new mb0(3, context, this);
+                this.x = mb0Var;
                 final int i23 = 1;
-                lb0Var.b(6, 1);
+                mb0Var.b(6, 1);
                 er[] erVarArr = this.x.f;
                 int length = erVarArr.length;
                 int i24 = 0;
@@ -1968,9 +1968,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                                         twoStepVerificationActivity.K = false;
                                         twoStepVerificationActivity.Y = bb1Var.H;
                                         bb1Var.presentFragment(twoStepVerificationActivity, true);
-                                        k90 k90Var = bb1Var.k0;
-                                        if (k90Var != null) {
-                                            org.telegram.messenger.g0.g3(k90Var);
+                                        l90 l90Var = bb1Var.k0;
+                                        if (l90Var != null) {
+                                            org.telegram.messenger.g0.g3(l90Var);
                                             bb1Var.k0 = null;
                                             break;
                                         }
@@ -2269,9 +2269,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
                                     twoStepVerificationActivity.K = false;
                                     twoStepVerificationActivity.Y = bb1Var.H;
                                     bb1Var.presentFragment(twoStepVerificationActivity, true);
-                                    k90 k90Var = bb1Var.k0;
-                                    if (k90Var != null) {
-                                        org.telegram.messenger.g0.g3(k90Var);
+                                    l90 l90Var = bb1Var.k0;
+                                    if (l90Var != null) {
+                                        org.telegram.messenger.g0.g3(l90Var);
                                         bb1Var.k0 = null;
                                         break;
                                     }
@@ -2535,8 +2535,8 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
             if (this.n != null && !A0()) {
                 org.telegram.messenger.g0.h3(new sa1(this, 2), 200L);
             }
-            lb0 lb0Var = this.x;
-            if (lb0Var == null || lb0Var.getVisibility() != 0) {
+            mb0 mb0Var = this.x;
+            if (mb0Var == null || mb0Var.getVisibility() != 0) {
                 return;
             }
             org.telegram.messenger.g0.h3(new sa1(this, 3), 200L);
@@ -2546,10 +2546,10 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
     public final void z0(Runnable runnable) {
         int i7 = 0;
         while (true) {
-            lb0 lb0Var = this.x;
-            er[] erVarArr = lb0Var.f;
+            mb0 mb0Var = this.x;
+            er[] erVarArr = mb0Var.f;
             if (i7 >= erVarArr.length) {
-                lb0Var.postDelayed(new b31(18, this, runnable), (erVarArr.length * 75) + 350);
+                mb0Var.postDelayed(new b31(18, this, runnable), (erVarArr.length * 75) + 350);
                 return;
             } else {
                 er erVar = erVarArr[i7];
@@ -2563,9 +2563,9 @@ public class bb1 extends org.telegram.ui.ActionBar.h2 {
     public final void finishFragment() {
         if (this.H >= 0 && this.parentLayout.getFragmentStack().size() == 1) {
             Bundle k10 = a8.p0.k("afterSignup", true);
-            le0 le0Var = new le0();
-            le0Var.r0(k10);
-            presentFragment(le0Var, true);
+            me0 me0Var = new me0();
+            me0Var.r0(k10);
+            presentFragment(me0Var, true);
             return;
         }
         super.finishFragment();

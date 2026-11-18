@@ -41,8 +41,8 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.j9;
+import org.telegram.ui.Cells.v9;
 import org.telegram.ui.Components.kg;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.lc;
@@ -54,11 +54,11 @@ import org.telegram.ui.Components.sh;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.bn;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 import org.telegram.ui.rj;
 import org.telegram.ui.rm;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class o extends ki implements fs {
     public static final int[] R = {1, 2, 16, 8, 256, 4, TLObject.FLAG_14, 32768};
@@ -73,7 +73,7 @@ public final class o extends ki implements fs {
     public boolean M;
     public int N;
     public boolean O;
-    public eg0 P;
+    public fg0 P;
     public final d Q;
     public final int n;
     public final s3 r;
@@ -242,19 +242,19 @@ public final class o extends ki implements fs {
         final boolean[] zArr = {false};
         final boolean[] zArr2 = {false};
         j7 j7Var = new j7(strArr, horizontalScrollView, g11, zArr2, new e7(strArr, 26), imageView, i6Var, new int[]{6}, 2);
-        final org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, gd.M0(2131754006, null), true, false, -1, i6Var);
-        org.telegram.ui.Cells.i3 i3Var = k3Var.d;
-        i3Var.setImeOptions(6);
-        i3Var.setMaxLines(5);
+        final org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, gd.M0(2131754006, null), true, false, -1, i6Var);
+        org.telegram.ui.Cells.j3 j3Var = l3Var.d;
+        j3Var.setImeOptions(6);
+        j3Var.setMaxLines(5);
         int L2 = org.telegram.messenger.g0.L(24.0f);
         int i10 = n6.d6;
         ShapeDrawable d03 = n6.d0(L2, n6.w0(i10, i6Var));
         q6 M = u6.M(i10);
-        k3Var.setBackground(d03);
-        u6.j(k3Var, d03, M, null, i6Var);
-        k3Var.setText(strArr[0]);
-        i3Var.addTextChangedListener(new bi.v(strArr, j7Var, false, 9));
-        g10.addView(k3Var, ma.t(-1, -2, 55, 12, 8, 12, 0));
+        l3Var.setBackground(d03);
+        u6.j(l3Var, d03, M, null, i6Var);
+        l3Var.setText(strArr[0]);
+        j3Var.addTextChangedListener(new bi.v(strArr, j7Var, false, 9));
+        g10.addView(l3Var, ma.t(-1, -2, 55, 12, 8, 12, 0));
         g11.setText(gd.M0(2131751343, null));
         g10.addView(g11, ma.t(-1, 48, 55, 12, 12, 12, 12));
         j7Var.run();
@@ -262,9 +262,9 @@ public final class o extends ki implements fs {
         j3.I0 = new DialogInterface.OnDismissListener() { // from class: oi.j
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                org.telegram.ui.Cells.i3 i3Var2 = org.telegram.ui.Cells.k3.this.d;
-                i3Var2.clearFocus();
-                org.telegram.messenger.g0.v1(i3Var2);
+                org.telegram.ui.Cells.j3 j3Var2 = org.telegram.ui.Cells.l3.this.d;
+                j3Var2.clearFocus();
+                org.telegram.messenger.g0.v1(j3Var2);
                 boolean[] zArr3 = zArr;
                 if (zArr3[0] || zArr2[0]) {
                     return;
@@ -282,7 +282,7 @@ public final class o extends ki implements fs {
         j3.w0(i11);
         j3.Q(i11);
         g11.setOnClickListener(new fi.d0(g11, zArr, x10Var, strArr, j3, 4));
-        org.telegram.messenger.g0.h3(new kg.j0(k3Var, 25), 200L);
+        org.telegram.messenger.g0.h3(new kg.j0(l3Var, 25), 200L);
     }
 
     private int getEmojiPanelHeight() {
@@ -634,7 +634,7 @@ public final class o extends ki implements fs {
         boolean z11;
         int i10;
         s3 s3Var = this.r;
-        i9 textSelectionHelper = s3Var.getTextSelectionHelper();
+        j9 textSelectionHelper = s3Var.getTextSelectionHelper();
         x3 x3Var = this.s;
         if (x3Var == null || textSelectionHelper == null || !textSelectionHelper.x()) {
             return;
@@ -644,7 +644,7 @@ public final class o extends ki implements fs {
         boolean O3 = s3Var.O3();
         int[] iArr = R;
         if (O3) {
-            i9 textSelectionHelper2 = s3Var.getTextSelectionHelper();
+            j9 textSelectionHelper2 = s3Var.getTextSelectionHelper();
             int i11 = textSelectionHelper2.p0;
             int i12 = textSelectionHelper2.q0;
             int i13 = textSelectionHelper2.t0;
@@ -665,7 +665,7 @@ public final class o extends ki implements fs {
             return;
         }
         if (s3Var.z3()) {
-            i9 textSelectionHelper3 = s3Var.getTextSelectionHelper();
+            j9 textSelectionHelper3 = s3Var.getTextSelectionHelper();
             e1 v22 = s3Var.v2(textSelectionHelper3.p0);
             int i19 = textSelectionHelper3.r0;
             int i20 = textSelectionHelper3.u0;
@@ -770,7 +770,7 @@ public final class o extends ki implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.h5) {
+        if (i7 == ks.i5) {
             d0();
         }
     }
@@ -795,15 +795,15 @@ public final class o extends ki implements fs {
         ry ryVar;
         s3 s3Var = this.r;
         g3 g3Var = s3Var.v3;
-        u9 u9Var = s3Var.w3;
-        if (g3Var.x() && u9Var.onTouchEvent(motionEvent)) {
+        v9 v9Var = s3Var.w3;
+        if (g3Var.x() && v9Var.onTouchEvent(motionEvent)) {
             return true;
         }
         int height = (((!this.E || (ryVar = this.x) == null) ? getHeight() - this.F : (int) ryVar.getY()) - org.telegram.messenger.g0.L(60.0f)) - this.L;
         if (motionEvent.getAction() == 0 && this.y && motionEvent.getY() < height) {
             W(false);
         }
-        if ((motionEvent.getAction() != 0 || (motionEvent.getY() > org.telegram.messenger.g0.L(60.0f) && motionEvent.getY() < height)) && u9Var.b(motionEvent)) {
+        if ((motionEvent.getAction() != 0 || (motionEvent.getY() > org.telegram.messenger.g0.L(60.0f) && motionEvent.getY() < height)) && v9Var.b(motionEvent)) {
             motionEvent.setAction(3);
         }
         if (motionEvent.getY() >= height || !s3Var.l3(motionEvent)) {
@@ -831,7 +831,7 @@ public final class o extends ki implements fs {
             return;
         }
         s3 s3Var = this.r;
-        i9 textSelectionHelper = s3Var.getTextSelectionHelper();
+        j9 textSelectionHelper = s3Var.getTextSelectionHelper();
         if (textSelectionHelper == null || !textSelectionHelper.x()) {
             T2 = s3Var.T2();
         } else {
@@ -969,7 +969,7 @@ public final class o extends ki implements fs {
         return (this.r.getPaddingTop() - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
     }
 
-    public i9 getTextSelectionHelper() {
+    public j9 getTextSelectionHelper() {
         return this.r.getTextSelectionHelper();
     }
 
@@ -1012,21 +1012,21 @@ public final class o extends ki implements fs {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.n).c(this, ks.h5);
+        ks.f(this.n).c(this, ks.i5);
         d0();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.n).n(this, ks.h5);
+        ks.f(this.n).n(this, ks.i5);
     }
 
     @Override // org.telegram.ui.Components.ki
     public final void p() {
-        eg0 eg0Var = this.P;
-        if (eg0Var != null) {
-            eg0Var.i();
+        fg0 fg0Var = this.P;
+        if (fg0Var != null) {
+            fg0Var.i();
             this.P = null;
         }
         ga.d dVar = this.w;

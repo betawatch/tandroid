@@ -16,12 +16,12 @@ import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n5;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.qa;
+import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Components.b9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class b extends qa {
+public final class b extends ra {
     public final TextView c0;
     public final FrameLayout d0;
     public Drawable e0;
@@ -61,7 +61,7 @@ public final class b extends qa {
         return this.g0;
     }
 
-    @Override // org.telegram.ui.Cells.qa, android.view.View
+    @Override // org.telegram.ui.Cells.ra, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.T) {
             canvas.drawLine(gd.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, n6.k0);

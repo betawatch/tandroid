@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -96,29 +96,29 @@ public final /* synthetic */ class l implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new vs(23, (n50) obj, tL_error));
                 break;
             case 11:
-                org.telegram.messenger.g0.g3(new n60(10, (r90) obj, tLObject2));
+                org.telegram.messenger.g0.g3(new o60(10, (s90) obj, tLObject2));
                 break;
             case 12:
-                org.telegram.messenger.g0.g3(new n60(20, (pc0) obj, tL_error));
+                org.telegram.messenger.g0.g3(new o60(20, (qc0) obj, tL_error));
                 break;
             case 13:
-                org.telegram.messenger.g0.g3(new lc0((gd0) obj, tL_error, tLObject2, i13));
+                org.telegram.messenger.g0.g3(new mc0((hd0) obj, tL_error, tLObject2, i13));
                 break;
             case 14:
-                org.telegram.messenger.g0.g3(new lc0((ld0) obj, tLObject2, tL_error, 4));
+                org.telegram.messenger.g0.g3(new mc0((md0) obj, tLObject2, tL_error, 4));
                 break;
             case 15:
-                org.telegram.messenger.g0.g3(new hf0((NotificationsSettingsActivity) obj, 2));
+                org.telegram.messenger.g0.g3(new if0((NotificationsSettingsActivity) obj, 2));
                 break;
             case 16:
                 ck0 ck0Var = (ck0) obj;
                 if (tL_error != null && tL_error.text != null) {
-                    org.telegram.messenger.g0.g3(new ve0(i10, ck0Var, tL_error));
+                    org.telegram.messenger.g0.g3(new we0(i10, ck0Var, tL_error));
                     break;
                 }
                 break;
             case 17:
-                org.telegram.messenger.g0.g3(new lc0((PremiumPreviewFragment) obj, tL_error, tLObject2, 24));
+                org.telegram.messenger.g0.g3(new mc0((PremiumPreviewFragment) obj, tL_error, tLObject2, 24));
                 break;
             case 18:
                 org.telegram.messenger.g0.g3(new tr0(1, (PrivacyControlActivity) obj, tLObject2));

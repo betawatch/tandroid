@@ -19,11 +19,11 @@ import org.telegram.ui.bn;
 import org.telegram.ui.cn0;
 import org.telegram.ui.d61;
 import org.telegram.ui.dn0;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 import org.telegram.ui.fn0;
-import org.telegram.ui.j90;
+import org.telegram.ui.k90;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        eg0 eg0Var;
+        fg0 fg0Var;
         int i7 = this.a;
         int i10 = 2;
         boolean z10 = this.b;
@@ -104,8 +104,8 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
             case 3:
                 d61 d61Var = (d61) obj;
                 for (int i12 = 0; i12 < 2; i12++) {
-                    org.telegram.ui.Cells.w0 w0Var = ((org.telegram.ui.Cells.w0[]) d61Var.b)[i12];
-                    ((org.telegram.ui.Cells.v0) w0Var.d).a(w0Var == view, true);
+                    org.telegram.ui.Cells.x0 x0Var = ((org.telegram.ui.Cells.x0[]) d61Var.b)[i12];
+                    ((org.telegram.ui.Cells.w0) x0Var.d).a(x0Var == view, true);
                 }
                 bz.p1 = z10;
                 SharedPreferences.Editor edit2 = mp.g1().edit();
@@ -118,8 +118,8 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
                 td tdVar = chatActivityEnterView.d6;
                 chatActivityEnterView.N0 = System.currentTimeMillis();
                 boolean r12 = chatActivityEnterView.r1();
-                if (!z10 && (eg0Var = chatActivityEnterView.M0) != null) {
-                    eg0Var.h(!r12);
+                if (!z10 && (fg0Var = chatActivityEnterView.M0) != null) {
+                    fg0Var.h(!r12);
                     chatActivityEnterView.M0 = null;
                     break;
                 } else {
@@ -159,30 +159,30 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
                     break;
                 }
             default:
-                j90 j90Var = (j90) obj;
+                k90 k90Var = (k90) obj;
                 if (!z10) {
-                    org.telegram.ui.Cells.r8 r8Var = j90Var.n;
-                    if (r8Var == null || !r8Var.e.h) {
-                        org.telegram.ui.Cells.r8 r8Var2 = (org.telegram.ui.Cells.r8) view;
-                        boolean z14 = r8Var2.e.h;
-                        r8Var2.setChecked(!z14);
-                        j90Var.e0(z14);
-                        org.telegram.ui.Cells.r8 r8Var3 = j90Var.n;
-                        if (r8Var3 != null) {
-                            if (r8Var2.e.h) {
-                                r8Var3.setChecked(false);
-                                j90Var.n.setCheckBoxIcon(R.drawable.permission_locked);
-                                j90Var.r.setVisibility(8);
+                    org.telegram.ui.Cells.s8 s8Var = k90Var.n;
+                    if (s8Var == null || !s8Var.e.h) {
+                        org.telegram.ui.Cells.s8 s8Var2 = (org.telegram.ui.Cells.s8) view;
+                        boolean z14 = s8Var2.e.h;
+                        s8Var2.setChecked(!z14);
+                        k90Var.e0(z14);
+                        org.telegram.ui.Cells.s8 s8Var3 = k90Var.n;
+                        if (s8Var3 != null) {
+                            if (s8Var2.e.h) {
+                                s8Var3.setChecked(false);
+                                k90Var.n.setCheckBoxIcon(R.drawable.permission_locked);
+                                k90Var.r.setVisibility(8);
                                 break;
-                            } else if (j90Var.e == null) {
-                                r8Var3.setCheckBoxIcon(0);
+                            } else if (k90Var.e == null) {
+                                s8Var3.setCheckBoxIcon(0);
                                 break;
                             }
                         }
                     } else {
-                        int i14 = -j90Var.N;
-                        j90Var.N = i14;
-                        org.telegram.messenger.g0.E3(i14, r8Var, null);
+                        int i14 = -k90Var.N;
+                        k90Var.N = i14;
+                        org.telegram.messenger.g0.E3(i14, s8Var, null);
                         break;
                     }
                 }

@@ -11,10 +11,10 @@ import android.view.PixelCopy;
 import android.view.Surface;
 import android.view.SurfaceView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class u80 {
-    public final org.telegram.ui.z90 a;
+    public final org.telegram.ui.aa0 a;
     public SurfaceView d;
     public Bitmap e;
     public Bitmap f;
@@ -37,8 +37,8 @@ public final class u80 {
     public final mo n = new mo(this, 25);
 
     /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Components.s80] */
-    public u80(org.telegram.ui.z90 z90Var) {
-        this.a = z90Var;
+    public u80(org.telegram.ui.aa0 aa0Var) {
+        this.a = aa0Var;
     }
 
     public final void a() {

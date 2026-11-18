@@ -15,10 +15,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -61,7 +61,7 @@ public final class v {
         return null;
     }
 
-    public final b5 b(v vVar) {
+    public final c5 b(v vVar) {
         if (vVar == null) {
             throw new NullPointerException("route must not be null");
         }
@@ -70,7 +70,7 @@ public final class v {
         if (fVar == null || !fVar.containsKey(str)) {
             return null;
         }
-        return new b5((o) this.w.get(str));
+        return new c5((o) this.w.get(str));
     }
 
     public final h3 c() {

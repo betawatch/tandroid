@@ -43,12 +43,12 @@ import org.telegram.ui.Wallet.c5;
 import org.telegram.ui.Wallet.i9;
 import org.telegram.ui.Wallet.m6;
 import org.telegram.ui.c30;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
 import org.telegram.ui.t3;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class j1 extends FrameLayout {
     public final g1 A0;
@@ -281,7 +281,7 @@ public abstract class j1 extends FrameLayout {
                                     G.c(R.drawable.msg_settings_old, gd.M0(2131745300, null), (Runnable) taVar.a(4), false);
                                 }
                             }
-                            G.p = new cd0(l0Var2);
+                            G.p = new dd0(l0Var2);
                             G.a0();
                             break;
                         }
@@ -487,7 +487,7 @@ public abstract class j1 extends FrameLayout {
                                     G.c(R.drawable.msg_settings_old, gd.M0(2131745300, null), (Runnable) taVar.a(4), false);
                                 }
                             }
-                            G.p = new cd0(l0Var2);
+                            G.p = new dd0(l0Var2);
                             G.a0();
                             break;
                         }

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements Runnable {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class td implements Runnable {
                 chatActivityEnterView.P(true);
                 break;
             case 2:
-                org.telegram.ui.eg0 eg0Var = chatActivityEnterView.M0;
-                if (eg0Var != null) {
-                    eg0Var.h(false);
+                org.telegram.ui.fg0 fg0Var = chatActivityEnterView.M0;
+                if (fg0Var != null) {
+                    fg0Var.h(false);
                     chatActivityEnterView.M0 = null;
                 }
                 org.telegram.messenger.g0.h3(new dd(chatActivityEnterView, 5), 600L);
@@ -47,9 +47,9 @@ public final /* synthetic */ class td implements Runnable {
                 int i10 = ChatActivityEnterView.n7;
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
                 chatActivityEnterView2.s1(true, 2147483646, 0, 0L, true);
-                org.telegram.ui.eg0 eg0Var2 = chatActivityEnterView2.M0;
-                if (eg0Var2 != null) {
-                    eg0Var2.h(false);
+                org.telegram.ui.fg0 fg0Var2 = chatActivityEnterView2.M0;
+                if (fg0Var2 != null) {
+                    fg0Var2.h(false);
                     chatActivityEnterView2.M0 = null;
                     break;
                 }
@@ -106,9 +106,9 @@ public final /* synthetic */ class td implements Runnable {
                 }
                 break;
             case 12:
-                org.telegram.ui.eg0 eg0Var3 = chatActivityEnterView.M0;
-                if (eg0Var3 != null) {
-                    eg0Var3.h(chatActivityEnterView.c6);
+                org.telegram.ui.fg0 fg0Var3 = chatActivityEnterView.M0;
+                if (fg0Var3 != null) {
+                    fg0Var3.h(chatActivityEnterView.c6);
                     chatActivityEnterView.M0 = null;
                     break;
                 }

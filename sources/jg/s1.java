@@ -18,16 +18,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.g6;
-import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Cells.h6;
+import org.telegram.ui.Cells.n8;
+import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.i00;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class s1 extends bk0 {
     public boolean E;
@@ -154,15 +154,15 @@ public abstract class s1 extends bk0 {
         View view = f1Var.a;
         if (i10 != 0) {
             if (i10 == 1) {
-                x3 x3Var = (x3) view;
+                y3 y3Var = (y3) view;
                 if (i7 == this.K) {
-                    x3Var.setText(gd.M0(2131748915, null));
+                    y3Var.setText(gd.M0(2131748915, null));
                     return;
                 } else if (E(i7) == null) {
-                    x3Var.setText(gd.M0(2131749360, null));
+                    y3Var.setText(gd.M0(2131749360, null));
                     return;
                 } else {
-                    x3Var.setText(gd.M0(2131747090, null));
+                    y3Var.setText(gd.M0(2131747090, null));
                     return;
                 }
             }
@@ -171,13 +171,13 @@ public abstract class s1 extends bk0 {
                     return;
                 }
                 f5 f5Var = (f5) E(i7);
-                ((g6) view).x(f5Var, null, i5.m(0, f5Var.i, f5Var.j), n10.h(new StringBuilder("+"), (String) f5Var.g.get(0), pf.b.c()), false, false);
+                ((h6) view).x(f5Var, null, i5.m(0, f5Var.i, f5Var.j), n10.h(new StringBuilder("+"), (String) f5Var.g.get(0), pf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i7);
-            m8 m8Var = (m8) view;
-            m8Var.g(-1, n6.o6);
-            m8Var.k(gd.a0(null, null, 2131754450, pf.b.c().b("+" + str2)), false);
+            n8 n8Var = (n8) view;
+            n8Var.g(-1, n6.o6);
+            n8Var.k(gd.a0(null, null, 2131754450, pf.b.c().b("+" + str2)), false);
             return;
         }
         TLObject tLObject = (TLObject) E(i7);
@@ -210,12 +210,12 @@ public abstract class s1 extends bk0 {
                 if (charSequence != null && str != null && str.length() > 0 && charSequence.toString().startsWith("@".concat(str))) {
                     charSequence2 = charSequence;
                     charSequence = null;
-                    g6 g6Var = (g6) view;
+                    h6 h6Var = (h6) view;
                     if (z10) {
                         charSequence = gd.M0(2131745706, null);
                     }
-                    g6Var.x(tLObject, null, charSequence, charSequence2, false, z10);
-                    g6Var.w(this.h.h(j3) >= 0, false);
+                    h6Var.x(tLObject, null, charSequence, charSequence2, false, z10);
+                    h6Var.w(this.h.h(j3) >= 0, false);
                 }
                 str = null;
             } else if (i7 <= this.d.size() || str == null) {
@@ -246,11 +246,11 @@ public abstract class s1 extends bk0 {
                 charSequence = null;
             }
             charSequence2 = str;
-            g6 g6Var2 = (g6) view;
+            h6 h6Var2 = (h6) view;
             if (z10) {
             }
-            g6Var2.x(tLObject, null, charSequence, charSequence2, false, z10);
-            g6Var2.w(this.h.h(j3) >= 0, false);
+            h6Var2.x(tLObject, null, charSequence, charSequence2, false, z10);
+            h6Var2.w(this.h.h(j3) >= 0, false);
         }
     }
 
@@ -259,26 +259,26 @@ public abstract class s1 extends bk0 {
         View view;
         Context context = this.c;
         if (i7 == 0) {
-            g6 g6Var = new g6(context, null);
-            g6Var.N0 = true;
-            g6Var.F0 = true;
-            view = g6Var;
+            h6 h6Var = new h6(context, null);
+            h6Var.N0 = true;
+            h6Var.F0 = true;
+            view = h6Var;
         } else if (i7 == 1) {
-            x3 x3Var = new x3(26, context, null);
-            x3Var.setNoBackground(true);
-            view = x3Var;
+            y3 y3Var = new y3(26, context, null);
+            y3Var.setNoBackground(true);
+            view = y3Var;
         } else if (i7 == 3) {
-            g6 g6Var2 = new g6(context, null);
-            g6Var2.N0 = true;
-            g6Var2.F0 = true;
-            view = g6Var2;
+            h6 h6Var2 = new h6(context, null);
+            h6Var2.N0 = true;
+            h6Var2.F0 = true;
+            view = h6Var2;
         } else if (i7 == 4) {
             View jnVar = new jn(context, 5);
             jnVar.setId(9);
             jnVar.setTag(-33024);
             view = jnVar;
         } else if (i7 != 5) {
-            view = new m8(16, context, false);
+            view = new n8(16, context, false);
         } else {
             wz wzVar = new wz(context, null);
             wzVar.setIsSingleCell(true);

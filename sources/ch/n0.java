@@ -32,8 +32,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.v4;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.d9;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class n0 {
     public int A;
@@ -316,7 +316,7 @@ public abstract class n0 {
             } else {
                 this.I = n6.w0(l() ? n6.Jc : n6.tk, i6Var2);
                 this.J = n6.w0(l() ? n6.xk : n6.wk, i6Var2);
-                if (view2 instanceof u0) {
+                if (view2 instanceof v0) {
                     this.L = n6.w0(n6.zk, i6Var2);
                     this.K = n6.w0(n6.yk, i6Var2);
                 } else {
@@ -337,7 +337,7 @@ public abstract class n0 {
             this.L = n6.w0(n6.Zc, i6Var2);
             this.K = 0;
         }
-        if (!z14 && (view2 instanceof q1) && ((q1) view2).w2()) {
+        if (!z14 && (view2 instanceof r1) && ((r1) view2).w2()) {
             if (this.o) {
                 this.I = n6.w0(n6.jb, i6Var2);
                 this.J = n6.w0(n6.kb, i6Var2);
@@ -453,7 +453,7 @@ public abstract class n0 {
         }
         if (z10 && j() < f26) {
             View view3 = view;
-            if ((view3 instanceof q1) && (M1 = ((q1) view3).M1(false)) != null && !this.R) {
+            if ((view3 instanceof r1) && (M1 = ((r1) view3).M1(false)) != null && !this.R) {
                 canvas.drawRoundRect(rectF, f27, f27, M1.c);
             }
         }

@@ -8,7 +8,7 @@ import android.text.TextWatcher;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import androidx.appcompat.widget.SearchView;
-import bi.b5;
+import bi.a5;
 import di.b1;
 import di.e0;
 import di.p6;
@@ -38,7 +38,6 @@ import org.telegram.messenger.q10;
 import org.telegram.messenger.q5;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a5;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.Components.bb0;
 import org.telegram.ui.Components.bk0;
@@ -66,7 +65,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yw0;
 import v4.i0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j implements TextWatcher {
     public final /* synthetic */ int a;
@@ -117,14 +116,14 @@ public final class j implements TextWatcher {
                 }
                 break;
             case 2:
-                b5 b5Var = (b5) this.b;
+                a5 a5Var = (a5) this.b;
                 String obj3 = editable != null ? editable.toString() : "";
                 int indexOf3 = obj3.indexOf(46);
-                if (b5Var.x1 || indexOf3 < 0 || (obj3.length() - indexOf3) - 1 <= 2) {
+                if (a5Var.x1 || indexOf3 < 0 || (obj3.length() - indexOf3) - 1 <= 2) {
                     r5 = (obj3.isEmpty() || ".".equals(obj3)) ? 1 : 0;
                     cg.a i11 = r5 == 0 ? cg.a.i(obj3, cg.b.b) : null;
                     if (r5 != 0 || i11 != null) {
-                        b5Var.J0(r5 == 0 ? i11.b : 0L);
+                        a5Var.J0(r5 == 0 ? i11.b : 0L);
                         break;
                     } else {
                         editable.delete(obj3.length() - 1, obj3.length());
@@ -633,7 +632,7 @@ public final class j implements TextWatcher {
                 }
                 break;
             case 16:
-                a5 a5Var = (a5) this.b;
+                org.telegram.ui.ActionBar.a5 a5Var = (org.telegram.ui.ActionBar.a5) this.b;
                 a5Var.m();
                 searchListener = a5Var.getSearchListener();
                 if (searchListener != null) {

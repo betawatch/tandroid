@@ -14,8 +14,8 @@ import android.webkit.CookieManager;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
-import bi.d6;
-import bi.f5;
+import bi.c6;
+import bi.e5;
 import c8.cb;
 import c8.ma;
 import fi.c2;
@@ -44,8 +44,8 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.j6;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.k6;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.a5;
 import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.b51;
@@ -57,7 +57,7 @@ import org.telegram.ui.Wallet.c5;
 import org.telegram.ui.cr;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class n1 extends b51 implements fs {
     public c2 e;
@@ -248,7 +248,7 @@ public final class n1 extends b51 implements fs {
         int i7 = l41Var.d;
         if (i7 == 12) {
             bz.J();
-            ((r8) view).setChecked(bz.v0);
+            ((s8) view).setChecked(bz.v0);
             return;
         }
         final int i10 = 1;
@@ -257,7 +257,7 @@ public final class n1 extends b51 implements fs {
             SharedPreferences.Editor edit = mp.g1().edit();
             edit.putBoolean("onlyLocalInstantView", bz.w0);
             edit.apply();
-            ((r8) view).setChecked(bz.w0);
+            ((s8) view).setChecked(bz.w0);
             return;
         }
         if (i7 == 17) {
@@ -267,7 +267,7 @@ public final class n1 extends b51 implements fs {
             if (tL_webBrowserSettings != null) {
                 messagesController.G5(tL_webBrowserSettings.open_external_browser, z10);
             }
-            ((r8) view).setChecked(z10);
+            ((s8) view).setChecked(z10);
             this.a.g3.O(true);
             return;
         }
@@ -280,9 +280,9 @@ public final class n1 extends b51 implements fs {
                 messagesController2.G5(!tL_webBrowserSettings2.open_external_browser, tL_webBrowserSettings2.display_close_button);
             }
             boolean S2 = getMessagesController().S2();
-            r8 r8Var = (r8) view;
-            r8Var.setChecked(S2);
-            r8Var.b(n6.x0(null, S2 ? n6.f6 : n6.e6, false), S2);
+            s8 s8Var = (s8) view;
+            s8Var.setChecked(S2);
+            s8Var.b(n6.x0(null, S2 ? n6.f6 : n6.e6, false), S2);
             this.a.g3.O(true);
             return;
         }
@@ -780,17 +780,17 @@ public final class n1 extends b51 implements fs {
             int i16 = 0;
             while (i16 < size2) {
                 charSequenceArr[i16] = ((e1) b10.get(i16)).a;
-                j6 j6Var = new j6(getParentActivity(), null);
-                j6Var.setPadding(org.telegram.messenger.g0.L(4.0f), r62, org.telegram.messenger.g0.L(4.0f), r62);
-                j6Var.a(n6.x0(null, n6.g7, r62), n6.x0(null, n6.E5, r62));
-                j6Var.b(charSequenceArr[i16], i16 == bz.p0 ? true : r62);
+                k6 k6Var = new k6(getParentActivity(), null);
+                k6Var.setPadding(org.telegram.messenger.g0.L(4.0f), r62, org.telegram.messenger.g0.L(4.0f), r62);
+                k6Var.a(n6.x0(null, n6.g7, r62), n6.x0(null, n6.E5, r62));
+                k6Var.b(charSequenceArr[i16], i16 == bz.p0 ? true : r62);
                 int i17 = n6.i6;
                 org.telegram.ui.Cells.y h02 = n6.h0(n6.x0(null, i17, r62), 2, -1);
                 q6 M = u6.M(i17);
-                j6Var.setBackground(h02);
-                u6.j(j6Var, h02, null, M, null);
-                linearLayout.addView(j6Var);
-                j6Var.setOnClickListener(new f5(i16, view, atomicReference));
+                k6Var.setBackground(h02);
+                u6.j(k6Var, h02, null, M, null);
+                linearLayout.addView(k6Var);
+                k6Var.setOnClickListener(new e5(i16, view, atomicReference));
                 i16++;
                 r62 = 0;
             }
@@ -882,19 +882,19 @@ public final class n1 extends b51 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        d6 d6Var;
-        if (i7 != ks.T5 || (d6Var = this.a) == null) {
+        c6 c6Var;
+        if (i7 != ks.U5 || (c6Var = this.a) == null) {
             return;
         }
-        d6Var.g3.O(true);
+        c6Var.g3.O(true);
     }
 
     public final void f0() {
         z41 z41Var;
         if (cb.a(new t6(this, 24)) != null) {
             this.r = r0.size();
-            d6 d6Var = this.a;
-            if (d6Var != null && (z41Var = d6Var.g3) != null && d6Var.H) {
+            c6 c6Var = this.a;
+            if (c6Var != null && (z41Var = c6Var.g3) != null && c6Var.H) {
                 z41Var.O(true);
             }
         }
@@ -914,14 +914,14 @@ public final class n1 extends b51 implements fs {
     @Override // org.telegram.ui.ActionBar.h2
     public final boolean onFragmentCreate() {
         f0();
-        getNotificationCenter().c(this, ks.T5);
+        getNotificationCenter().c(this, ks.U5);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, ks.T5);
+        getNotificationCenter().n(this, ks.U5);
     }
 
     @Override // org.telegram.ui.ActionBar.h2
@@ -945,9 +945,9 @@ public final class n1 extends b51 implements fs {
                 if (drawable2 != null) {
                     drawable2.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.MULTIPLY));
                 }
-                d6 d6Var = this.a;
-                if (d6Var != null) {
-                    d6Var.g1();
+                c6 c6Var = this.a;
+                if (c6Var != null) {
+                    c6Var.g1();
                 }
             }
         } catch (Exception e10) {

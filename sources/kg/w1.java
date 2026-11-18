@@ -1,7 +1,7 @@
 package kg;
 
 import android.text.TextUtils;
-import bi.u4;
+import bi.t4;
 import di.i2;
 import fi.k5;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class w1 {
     public static volatile w1[] g = new w1[4];
@@ -266,7 +266,7 @@ public final class w1 {
 
     public final boolean j(final TLRPC.Update update, String str, int i7) {
         if (update instanceof TL_update.TL_updateQuickReplyMessage) {
-            b(new u4(this, ((TL_update.TL_updateQuickReplyMessage) update).message, str, i7, 8));
+            b(new t4(this, ((TL_update.TL_updateQuickReplyMessage) update).message, str, i7, 8));
             return true;
         }
         if (update instanceof TL_update.TL_updateQuickReplies) {

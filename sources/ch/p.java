@@ -38,11 +38,11 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.s4;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.s7;
+import org.telegram.ui.Cells.a9;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Cells.z8;
+import org.telegram.ui.Cells.u7;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.k80;
@@ -53,7 +53,7 @@ import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.x5;
 import org.telegram.ui.r01;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class p extends h2 implements fs {
     public final Paint E;
@@ -84,11 +84,11 @@ public final class p extends h2 implements fs {
     public final h b0;
     public a3 c;
     public f d;
-    public r8 e;
-    public z8 f;
+    public s8 e;
+    public a9 f;
     public m h;
-    public t7 n;
-    public r8 r;
+    public u7 n;
+    public s8 r;
     public t0 s;
     public FrameLayout w;
     public ImageView x;
@@ -166,11 +166,11 @@ public final class p extends h2 implements fs {
         ai.k0 k0Var = new ai.k0(this, context);
         k0Var.setFocusableInTouchMode(true);
         k0Var.requestFocus();
-        r8 r8Var = new r8(context);
-        this.e = r8Var;
-        r8Var.setHeight(56);
-        r8 r8Var2 = this.e;
-        u6.h(r8Var2.e.h ? n6.f6 : n6.e6, r8Var2, null);
+        s8 s8Var = new s8(context);
+        this.e = s8Var;
+        s8Var.setHeight(56);
+        s8 s8Var2 = this.e;
+        u6.h(s8Var2.e.h ? n6.f6 : n6.e6, s8Var2, null);
         this.e.setTypeface(org.telegram.messenger.g0.o());
         this.e.d(n6.g6, n6.O6, n6.P6, n6.Q6, n6.R6);
         final int i11 = 0;
@@ -183,11 +183,11 @@ public final class p extends h2 implements fs {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                r8 r8Var3;
+                s8 s8Var3;
                 switch (i11) {
                     case 0:
                         p pVar = this.b;
-                        if (pVar.e.e.h && (r8Var3 = pVar.r) != null && r8Var3.e.h) {
+                        if (pVar.e.e.h && (s8Var3 = pVar.r) != null && s8Var3.e.h) {
                             pVar.k0();
                         }
                         boolean z11 = pVar.e.e.h;
@@ -208,8 +208,8 @@ public final class p extends h2 implements fs {
                                     break;
                                 }
                             }
-                            r8 r8Var4 = pVar2.r;
-                            Boolean valueOf = (r8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(r8Var4.e.h);
+                            s8 s8Var4 = pVar2.r;
+                            Boolean valueOf = (s8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(s8Var4.e.h);
                             pVar2.s.setLoading(true);
                             pVar2.N = pVar2.Z;
                             mp messagesController = pVar2.getMessagesController();
@@ -225,34 +225,34 @@ public final class p extends h2 implements fs {
                 }
             }
         });
-        z8 z8Var = new z8(12, context, this.resourceProvider);
-        this.f = z8Var;
-        k80 textView = z8Var.getTextView();
+        a9 a9Var = new a9(12, context, this.resourceProvider);
+        this.f = a9Var;
+        k80 textView = a9Var.getTextView();
         int i12 = n6.B6;
         u6.U(textView, i12, null);
         this.f.setTopPadding(12);
         this.f.setBottomPadding(16);
         this.f.setText(gd.M0(2131746214, null));
-        n4 n4Var = new n4(context);
-        n4Var.setText(gd.M0(2131753757, null));
-        u6.h(n6.d6, n4Var, null);
-        n4Var.setTextSize(15.0f);
-        n4Var.setTopMargin(14);
-        b0(n4Var, false);
+        o4 o4Var = new o4(context);
+        o4Var.setText(gd.M0(2131753757, null));
+        u6.h(n6.d6, o4Var, null);
+        o4Var.setTextSize(15.0f);
+        o4Var.setTopMargin(14);
+        b0(o4Var, false);
         i6 resourceProvider = getResourceProvider();
         int i13 = this.O;
         m mVar = new m(this, context, resourceProvider, i13);
         this.h = mVar;
         mVar.setOnFocused(new h(this, i10));
         b0(this.h, false);
-        z8 z8Var2 = new z8(12, context, this.resourceProvider);
-        u6.U(z8Var2.getTextView(), i12, null);
-        z8Var2.setText(org.telegram.messenger.g0.R2(gd.M0(2131746211, null), n6.Xc, 0, new h(this, 4), getResourceProvider()));
-        b0(z8Var2, true);
-        n4 n4Var2 = new n4(context, this.resourceProvider);
-        n4Var2.setText(gd.M0(2131748475, null));
-        b0(n4Var2, false);
-        this.n = new t7(context, this.resourceProvider);
+        a9 a9Var2 = new a9(12, context, this.resourceProvider);
+        u6.U(a9Var2.getTextView(), i12, null);
+        a9Var2.setText(org.telegram.messenger.g0.R2(gd.M0(2131746211, null), n6.Xc, 0, new h(this, 4), getResourceProvider()));
+        b0(a9Var2, true);
+        o4 o4Var2 = new o4(context, this.resourceProvider);
+        o4Var2.setText(gd.M0(2131748475, null));
+        b0(o4Var2, false);
+        this.n = new u7(context, this.resourceProvider);
         TLRPC.ChatFull chatFull = this.S;
         if (!(chatFull instanceof TLRPC.TL_chatFull) ? (chatFull.flags2 & TLObject.FLAG_13) != 0 : (chatFull.flags & TLObject.FLAG_20) != 0) {
             int i14 = getMessagesController().N5;
@@ -263,24 +263,24 @@ public final class p extends h2 implements fs {
             this.V = i15;
             this.U = i15;
         }
-        t7 t7Var = this.n;
+        u7 u7Var = this.n;
         int i16 = this.V;
         int i17 = getMessagesController().N5;
-        s7 s7Var = new s7();
-        s7Var.a = 1;
-        s7Var.b = i17;
-        s7Var.e = new ed(22);
-        t7Var.d(i16, s7Var, new i(this, i10));
+        t7 t7Var = new t7();
+        t7Var.a = 1;
+        t7Var.b = i17;
+        t7Var.e = new ed(22);
+        u7Var.d(i16, t7Var, new i(this, i10));
         b0(this.n, false);
-        z8 z8Var3 = new z8(12, context, this.resourceProvider);
-        z8Var3.setTopPadding(12);
-        z8Var3.setBottomPadding(16);
-        z8Var3.setText(gd.M0(2131748474, null));
-        b0(z8Var3, true);
+        a9 a9Var3 = new a9(12, context, this.resourceProvider);
+        a9Var3.setTopPadding(12);
+        a9Var3.setBottomPadding(16);
+        a9Var3.setText(gd.M0(2131748474, null));
+        b0(a9Var3, true);
         if (chatFull.paid_media_allowed) {
-            r8 r8Var3 = new r8(context);
-            this.r = r8Var3;
-            r8Var3.f(gd.M0(2131752400, null), false, false);
+            s8 s8Var3 = new s8(context);
+            this.r = s8Var3;
+            s8Var3.f(gd.M0(2131752400, null), false, false);
             b0(this.r, false);
             final int i18 = 1;
             this.r.setOnClickListener(new View.OnClickListener(this) { // from class: ch.j
@@ -292,11 +292,11 @@ public final class p extends h2 implements fs {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    r8 r8Var32;
+                    s8 s8Var32;
                     switch (i18) {
                         case 0:
                             p pVar = this.b;
-                            if (pVar.e.e.h && (r8Var32 = pVar.r) != null && r8Var32.e.h) {
+                            if (pVar.e.e.h && (s8Var32 = pVar.r) != null && s8Var32.e.h) {
                                 pVar.k0();
                             }
                             boolean z11 = pVar.e.e.h;
@@ -317,8 +317,8 @@ public final class p extends h2 implements fs {
                                         break;
                                     }
                                 }
-                                r8 r8Var4 = pVar2.r;
-                                Boolean valueOf = (r8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(r8Var4.e.h);
+                                s8 s8Var4 = pVar2.r;
+                                Boolean valueOf = (s8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(s8Var4.e.h);
                                 pVar2.s.setLoading(true);
                                 pVar2.N = pVar2.Z;
                                 mp messagesController = pVar2.getMessagesController();
@@ -334,14 +334,14 @@ public final class p extends h2 implements fs {
                     }
                 }
             });
-            z8 z8Var4 = new z8(12, context, this.resourceProvider);
-            u6.U(z8Var4.getTextView(), i12, null);
-            z8Var4.setTopPadding(12);
-            z8Var4.setBottomPadding(70);
-            z8Var4.setText(org.telegram.messenger.g0.b4(gd.M0(2131752399, null), new h(this, 5)));
-            b0(z8Var4, true);
+            a9 a9Var4 = new a9(12, context, this.resourceProvider);
+            u6.U(a9Var4.getTextView(), i12, null);
+            a9Var4.setTopPadding(12);
+            a9Var4.setBottomPadding(70);
+            a9Var4.setText(org.telegram.messenger.g0.b4(gd.M0(2131752399, null), new h(this, 5)));
+            b0(a9Var4, true);
         } else {
-            z8Var3.setBottomPadding(70);
+            a9Var3.setBottomPadding(70);
         }
         this.w = new FrameLayout(context);
         ImageView imageView = new ImageView(context);
@@ -371,11 +371,11 @@ public final class p extends h2 implements fs {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                r8 r8Var32;
+                s8 s8Var32;
                 switch (i19) {
                     case 0:
                         p pVar = this.b;
-                        if (pVar.e.e.h && (r8Var32 = pVar.r) != null && r8Var32.e.h) {
+                        if (pVar.e.e.h && (s8Var32 = pVar.r) != null && s8Var32.e.h) {
                             pVar.k0();
                         }
                         boolean z11 = pVar.e.e.h;
@@ -396,8 +396,8 @@ public final class p extends h2 implements fs {
                                     break;
                                 }
                             }
-                            r8 r8Var4 = pVar2.r;
-                            Boolean valueOf = (r8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(r8Var4.e.h);
+                            s8 s8Var4 = pVar2.r;
+                            Boolean valueOf = (s8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(s8Var4.e.h);
                             pVar2.s.setLoading(true);
                             pVar2.N = pVar2.Z;
                             mp messagesController = pVar2.getMessagesController();
@@ -837,13 +837,13 @@ public final class p extends h2 implements fs {
     }
 
     public final void k0() {
-        r8 r8Var = this.r;
-        boolean z10 = r8Var.e.h;
+        s8 s8Var = this.r;
+        boolean z10 = s8Var.e.h;
         int i7 = this.O;
         LinkedHashMap linkedHashMap = this.I;
         ArrayList arrayList = this.J;
         if (z10) {
-            r8Var.setChecked(false);
+            s8Var.setChecked(false);
             arrayList.remove((Object) (-1L));
             x5 x5Var = (x5) linkedHashMap.remove(-1L);
             if (x5Var != null) {
@@ -855,7 +855,7 @@ public final class p extends h2 implements fs {
             this.h.setMaxLength(i7);
             i0(this.Z, this.a, true);
         } else {
-            r8Var.setChecked(true);
+            s8Var.setChecked(true);
             try {
                 this.h.setMaxLength(i7 + 1);
                 SpannableString spannableString = new SpannableString("b");
@@ -940,7 +940,7 @@ public final class p extends h2 implements fs {
         }
         if (this.S != null) {
             getMessagesController().I0().a(-j3, new i(this, i7));
-            getNotificationCenter().c(this, ks.X4);
+            getNotificationCenter().c(this, ks.Y4);
             this.L.addAll(getMediaDataController().n);
             ks.e().k(ks.j1, 512);
             getNotificationCenter().c(this, ks.y1);
@@ -956,7 +956,7 @@ public final class p extends h2 implements fs {
         if (this.Z == 2 && (this.V != this.U || (this.N != 2 && !this.M && !this.a))) {
             getMessagesController().R4(this.T, this.Z, h0(false), this.V, null, null, null);
         }
-        getNotificationCenter().n(this, ks.X4);
+        getNotificationCenter().n(this, ks.Y4);
         getNotificationCenter().n(this, ks.y1);
     }
 
@@ -993,12 +993,12 @@ public final class p extends h2 implements fs {
     public final void onThemeColorsChanged() {
         try {
             super.onThemeColorsChanged();
-            r8 r8Var = this.e;
-            if (r8Var == null || !(r8Var.getBackground() instanceof ColorDrawable)) {
+            s8 s8Var = this.e;
+            if (s8Var == null || !(s8Var.getBackground() instanceof ColorDrawable)) {
                 return;
             }
-            r8 r8Var2 = this.e;
-            r8Var2.setBackgroundColor(n6.x0(null, r8Var2.e.h ? n6.f6 : n6.e6, false));
+            s8 s8Var2 = this.e;
+            s8Var2.setBackgroundColor(n6.x0(null, s8Var2.e.h ? n6.f6 : n6.e6, false));
         } catch (Exception e10) {
             a8.g(e10, true);
         }

@@ -17,10 +17,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import r0.f1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class d implements b3.k {
     public static final f1 K = new f1(16);
@@ -29,7 +29,7 @@ public final class d implements b3.k {
     public Uri G;
     public m H;
     public boolean I;
-    public final b5 a;
+    public final c5 a;
     public final t b;
     public final qb.a c;
     public xa f;
@@ -44,8 +44,8 @@ public final class d implements b3.k {
     public final HashMap d = new HashMap();
     public long J = -9223372036854775807L;
 
-    public d(b5 b5Var, qb.a aVar, t tVar) {
-        this.a = b5Var;
+    public d(c5 c5Var, qb.a aVar, t tVar) {
+        this.a = c5Var;
         this.b = tVar;
         this.c = aVar;
     }

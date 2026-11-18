@@ -5,11 +5,11 @@ import ai.f0;
 import di.i2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.ui.f80;
+import org.telegram.ui.g80;
 import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -105,7 +105,7 @@ public final /* synthetic */ class b implements Runnable {
                     jVar.a((h) eVar.b, length);
                     jVar.i.post(new f0(eVar, eVar.a, j3, 5));
                 } else {
-                    ((j) eVar.c).i.post(new f80(eVar, eVar.a, exc3, 4));
+                    ((j) eVar.c).i.post(new g80(eVar, eVar.a, exc3, 4));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();

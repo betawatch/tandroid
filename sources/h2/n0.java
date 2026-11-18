@@ -12,12 +12,12 @@ import org.telegram.messenger.w7;
 import org.telegram.messenger.x10;
 import org.telegram.messenger.y8;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.e2;
-import org.telegram.ui.Cells.h2;
+import org.telegram.ui.Cells.f2;
+import org.telegram.ui.Cells.i2;
 import org.telegram.ui.Wallet.u0;
 import org.telegram.ui.Wallet.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,18 +86,18 @@ public final /* synthetic */ class n0 implements Runnable {
                 ((CameraController) this.d).lambda$stopVideoRecording$17(this.e, this.b, this.c);
                 break;
             case 3:
-                e2 e2Var = (e2) this.d;
+                f2 f2Var = (f2) this.d;
                 String str2 = (String) this.e;
                 boolean z14 = this.b;
                 boolean z15 = this.c;
-                h2 h2Var = e2Var.b;
-                h2Var.f0 = false;
-                h2Var.g0 = str2;
+                i2 i2Var = f2Var.b;
+                i2Var.f0 = false;
+                i2Var.g0 = str2;
                 if (str2 == null) {
-                    h2Var.g0 = "";
+                    i2Var.g0 = "";
                 }
-                h2Var.h0 = z14;
-                h2Var.f(z15, true);
+                i2Var.h0 = z14;
+                i2Var.f(z15, true);
                 break;
             default:
                 u0 u0Var = (u0) this.d;
@@ -125,9 +125,9 @@ public final /* synthetic */ class n0 implements Runnable {
         this.c = z11;
     }
 
-    public /* synthetic */ n0(e2 e2Var, String str, File file, boolean z10, boolean z11) {
+    public /* synthetic */ n0(f2 f2Var, String str, File file, boolean z10, boolean z11) {
         this.a = 3;
-        this.d = e2Var;
+        this.d = f2Var;
         this.e = str;
         this.b = z10;
         this.c = z11;

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class g71 extends FrameLayout {
     public static final bq0 V = new bq0(1);
@@ -455,7 +455,7 @@ public class g71 extends FrameLayout {
         w61 w61Var = new w61(this, getContext(), z10, i7, this.a);
         this.N = w61Var;
         w61Var.r = D();
-        this.N.setDelegate(new org.telegram.ui.Cells.b5(this));
+        this.N.setDelegate(new org.telegram.ui.Cells.c5(this));
         j(false);
         return this.N;
     }

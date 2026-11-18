@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mo0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class mo0 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new jg0((ro0) this.b, tLObject, (org.telegram.messenger.j10) this.c, (TLRPC.Photo) this.d, 7));
+                org.telegram.messenger.g0.g3(new kg0((ro0) this.b, tLObject, (org.telegram.messenger.j10) this.c, (TLRPC.Photo) this.d, 7));
                 break;
             case 1:
                 org.telegram.messenger.g0.g3(new wn(this.b, tLObject, this.c, this.d, tL_error, 29));
                 break;
             case 2:
-                org.telegram.messenger.g0.g3(new jg0((PrivacySettingsActivity) this.b, (org.telegram.ui.ActionBar.u1) this.c, tLObject, (TL_account.setAccountTTL) this.d, 10));
+                org.telegram.messenger.g0.g3(new kg0((PrivacySettingsActivity) this.b, (org.telegram.ui.ActionBar.u1) this.c, tLObject, (TL_account.setAccountTTL) this.d, 10));
                 break;
             case 3:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
@@ -60,16 +60,16 @@ public final /* synthetic */ class mo0 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new wt0(profileActivity3, tLObject, str, user, tL_error, 2));
                 break;
             case 6:
-                org.telegram.messenger.g0.g3(new jg0((rv0) this.b, tLObject, (org.telegram.messenger.j10) this.c, (TLRPC.Photo) this.d, 16));
+                org.telegram.messenger.g0.g3(new kg0((rv0) this.b, tLObject, (org.telegram.messenger.j10) this.c, (TLRPC.Photo) this.d, 16));
                 break;
             case 7:
                 org.telegram.messenger.g0.g3(new wt0((b21) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.c, (TLRPC.User) this.d));
                 break;
             case 8:
-                org.telegram.messenger.g0.g3(new jg0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.u1) this.c, tL_error, (TLRPC.TL_authorization) this.d, 19));
+                org.telegram.messenger.g0.g3(new kg0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.u1) this.c, tL_error, (TLRPC.TL_authorization) this.d, 19));
                 break;
             case 9:
-                org.telegram.messenger.g0.g3(new jg0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.u1) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 18));
+                org.telegram.messenger.g0.g3(new kg0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.u1) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 18));
                 break;
             case 10:
                 n41 n41Var = (n41) this.b;
@@ -92,10 +92,10 @@ public final /* synthetic */ class mo0 implements RequestDelegate {
                 } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
                     Toast.makeText(n41Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
                 }
-                org.telegram.messenger.g0.g3(new jg0(n41Var, bVar, str2, b51Var, 22));
+                org.telegram.messenger.g0.g3(new kg0(n41Var, bVar, str2, b51Var, 22));
                 break;
             case 11:
-                org.telegram.messenger.g0.g3(new jg0((s81) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.u1) this.d, 24));
+                org.telegram.messenger.g0.g3(new kg0((s81) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.u1) this.d, 24));
                 break;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
@@ -105,7 +105,7 @@ public final /* synthetic */ class mo0 implements RequestDelegate {
                     org.telegram.messenger.g0.g3(new b31(16, twoStepVerificationActivity, tL_error));
                     break;
                 } else {
-                    Utilities.e.c(new jg0(twoStepVerificationActivity, bArr, tLObject, bArr2, 25));
+                    Utilities.e.c(new kg0(twoStepVerificationActivity, bArr, tLObject, bArr2, 25));
                     break;
                 }
         }

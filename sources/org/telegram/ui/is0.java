@@ -11,11 +11,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class is0 extends org.telegram.ui.ActionBar.h2 {
     public final long a;
-    public org.telegram.ui.Cells.t7 b;
+    public org.telegram.ui.Cells.u7 b;
     public org.telegram.ui.Components.e80 c;
     public org.telegram.ui.Components.e51 d;
     public org.telegram.ui.ActionBar.d5 e;
@@ -92,10 +92,10 @@ public final class is0 extends org.telegram.ui.ActionBar.h2 {
         this.fragmentView = frameLayout;
         org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, frameLayout, null);
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Cells.t7 t7Var = new org.telegram.ui.Cells.t7(context, this.resourceProvider);
-        this.b = t7Var;
+        org.telegram.ui.Cells.u7 u7Var = new org.telegram.ui.Cells.u7(context, this.resourceProvider);
+        this.b = u7Var;
         int i7 = org.telegram.ui.ActionBar.n6.d6;
-        org.telegram.ui.ActionBar.u6.h(i7, t7Var, getResourceProvider());
+        org.telegram.ui.ActionBar.u6.h(i7, u7Var, getResourceProvider());
         org.telegram.ui.Components.e80 e80Var = new org.telegram.ui.Components.e80(context, this, null, true, true);
         this.c = e80Var;
         e80Var.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), 0);

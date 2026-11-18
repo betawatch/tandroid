@@ -6,20 +6,20 @@ import java.util.List;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.pa0;
+import org.telegram.ui.qa0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ d1 b;
-    public final /* synthetic */ pa0 c;
+    public final /* synthetic */ qa0 c;
     public final /* synthetic */ org.telegram.ui.ActionBar.u1 d;
 
-    public /* synthetic */ w0(d1 d1Var, org.telegram.ui.ActionBar.u1 u1Var, pa0 pa0Var) {
+    public /* synthetic */ w0(d1 d1Var, org.telegram.ui.ActionBar.u1 u1Var, qa0 qa0Var) {
         this.b = d1Var;
         this.d = u1Var;
-        this.c = pa0Var;
+        this.c = qa0Var;
     }
 
     @Override // java.lang.Runnable
@@ -33,7 +33,7 @@ public final /* synthetic */ class w0 implements Runnable {
                 break;
             default:
                 d1 d1Var2 = this.b;
-                pa0 pa0Var = this.c;
+                qa0 qa0Var = this.c;
                 try {
                     List<Address> fromLocationName = new Geocoder(d1Var2.getParentActivity(), gd.E0().y).getFromLocationName(d1Var2.y, 1);
                     if (!fromLocationName.isEmpty()) {
@@ -44,19 +44,19 @@ public final /* synthetic */ class w0 implements Runnable {
                         tL_channelLocation.geo_point = tL_geoPoint;
                         tL_geoPoint.lat = address.getLatitude();
                         tL_channelLocation.geo_point._long = address.getLongitude();
-                        pa0Var.I0 = tL_channelLocation;
+                        qa0Var.I0 = tL_channelLocation;
                     }
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
-                org.telegram.messenger.g0.g3(new w0(d1Var2, this.d, pa0Var));
+                org.telegram.messenger.g0.g3(new w0(d1Var2, this.d, qa0Var));
                 break;
         }
     }
 
-    public /* synthetic */ w0(d1 d1Var, pa0 pa0Var, org.telegram.ui.ActionBar.u1 u1Var) {
+    public /* synthetic */ w0(d1 d1Var, qa0 qa0Var, org.telegram.ui.ActionBar.u1 u1Var) {
         this.b = d1Var;
-        this.c = pa0Var;
+        this.c = qa0Var;
         this.d = u1Var;
     }
 }

@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class nv0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class nv0 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         int i7;
-        org.telegram.ui.Cells.b4 b4Var;
+        org.telegram.ui.Cells.c4 c4Var;
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.c;
@@ -61,9 +61,9 @@ public final class nv0 extends AnimatorListenerAdapter {
                 break;
             default:
                 ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.g0 != null && (b4Var = profileActivity2.h0) != null) {
+                if (profileActivity2.g0 != null && (c4Var = profileActivity2.h0) != null) {
                     if (!this.b) {
-                        b4Var.setVisibility(4);
+                        c4Var.setVisibility(4);
                     }
                     profileActivity2.g0 = null;
                     break;

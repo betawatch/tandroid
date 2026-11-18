@@ -1,14 +1,14 @@
 package ai;
 
 import android.text.TextUtils;
-import bi.m6;
+import bi.l6;
 import di.f6;
 import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements q10 {
     public final /* synthetic */ int a = 0;
@@ -54,7 +54,7 @@ public final /* synthetic */ class e implements q10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (stargiftdepositpayload != null) {
                     di.o2 o2Var = new di.o2(f6Var, new boolean[1], u1Var, a2Var, this.b, stargiftdepositpayload);
-                    c1.c cVar = new c1.c(29, new Runnable[]{org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new m6(1, cVar, o2Var))}, o2Var);
+                    c1.c cVar = new c1.c(29, new Runnable[]{org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new l6(1, cVar, o2Var))}, o2Var);
                     org.telegram.messenger.g0.h3(cVar, 5000L);
                     break;
                 } else {

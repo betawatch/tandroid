@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class fn0 extends org.telegram.ui.ActionBar.h2 {
     public static final org.telegram.ui.Components.bq0 E = new org.telegram.ui.Components.bq0(4);
@@ -182,7 +182,7 @@ public final class fn0 extends org.telegram.ui.ActionBar.h2 {
             org.telegram.ui.ActionBar.z4 z4Var7 = z4VarArr[i14];
             z4Var7.addView((org.telegram.ui.ActionBar.k) z4Var7.e, c8.ma.c(-2.0f, -1));
             ((org.telegram.ui.ActionBar.k) z4VarArr[i14].e).setVisibility(8);
-            ((org.telegram.ui.Components.ck0) z4VarArr[i14].f).setOnScrollListener(new bi.e6(9, this, ((org.telegram.ui.Components.ck0) z4VarArr[i14].f).getOnScrollListener()));
+            ((org.telegram.ui.Components.ck0) z4VarArr[i14].f).setOnScrollListener(new bi.d6(9, this, ((org.telegram.ui.Components.ck0) z4VarArr[i14].f).getOnScrollListener()));
             i14++;
             f10 = f11;
         }

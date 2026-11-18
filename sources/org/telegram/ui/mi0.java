@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class mi0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class mi0 extends org.telegram.ui.ActionBar.j {
                 if (i7 != -1) {
                     if (i7 == 1) {
                         passcodeActivity.E = passcodeActivity.E != 0 ? 0 : 1;
-                        org.telegram.messenger.g0.h3(new ve0(8, this, (org.telegram.ui.ActionBar.z0) obj), 150L);
+                        org.telegram.messenger.g0.h3(new we0(8, this, (org.telegram.ui.ActionBar.z0) obj), 150L);
                         passcodeActivity.h.setText("");
                         er[] erVarArr = passcodeActivity.n.f;
                         int length = erVarArr.length;

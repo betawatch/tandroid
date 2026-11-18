@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class is extends z41 {
     public final int Q;
@@ -121,7 +121,7 @@ public class is extends z41 {
                     tL_contacts_search.limit = 30;
                     tL_contacts_search.bots = true;
                     tL_contacts_search.q = this.h0;
-                    ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_search, new d3.b(1), new bi.m6(19, this, tL_contacts_search));
+                    ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_search, new d3.b(1), new bi.l6(19, this, tL_contacts_search));
                     return;
                 }
                 return;

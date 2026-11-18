@@ -1,22 +1,82 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Rect;
+import android.graphics.Canvas;
 import android.text.Layout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public interface t9 {
-    Layout a();
+public class t9 extends w9 {
+    public final s9 p0;
 
-    Rect c();
+    public t9(fi.w7 w7Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.p0 = w7Var;
+        this.g0 = i6Var;
+    }
 
-    CharSequence getPrefix();
+    @Override // org.telegram.ui.Cells.w9
+    public final /* bridge */ /* synthetic */ void L(r9 r9Var, r9 r9Var2) {
+    }
 
-    int getRow();
+    public final void W(Canvas canvas) {
+        Layout staticTextLayout = this.p0.getStaticTextLayout();
+        int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.De, this.g0);
+        this.o.setColor(w02);
+        this.p.setColor(w02);
+        h(canvas, staticTextLayout, this.u, this.v, true, true, 0.0f);
+    }
 
-    CharSequence getText();
+    @Override // org.telegram.ui.Cells.w9
+    public final void i(int i7, m9 m9Var, boolean z10) {
+        m9Var.d = this.p0.getStaticTextLayout();
+        m9Var.b = 0.0f;
+        m9Var.c = 0.0f;
+        m9Var.a = 0;
+    }
 
-    int getX();
+    @Override // org.telegram.ui.Cells.w9
+    public final int k(int i7, int i10, int i11, int i12, r9 r9Var, boolean z10) {
+        s9 s9Var = (s9) r9Var;
+        if (i10 < 0) {
+            i10 = 1;
+        }
+        Layout staticTextLayout = s9Var.getStaticTextLayout();
+        if (i10 > staticTextLayout.getLineBottom(staticTextLayout.getLineCount() - 1) + 0.0f) {
+            i10 = (int) ((staticTextLayout.getLineBottom(staticTextLayout.getLineCount() - 1) + 0.0f) - 1.0f);
+        }
+        m9 m9Var = this.a0;
+        Layout layout = (Layout) m9Var.d;
+        if (layout != null) {
+            int i13 = (int) (i7 - m9Var.c);
+            int i14 = 0;
+            while (true) {
+                if (i14 >= layout.getLineCount()) {
+                    i14 = -1;
+                    break;
+                }
+                if (i10 > layout.getLineTop(i14) + i12 && i10 < layout.getLineBottom(i14) + i12) {
+                    break;
+                }
+                i14++;
+            }
+            if (i14 >= 0) {
+                try {
+                    return m9Var.a + layout.getOffsetForHorizontal(i14, i13);
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                }
+            }
+        }
+        return -1;
+    }
 
-    int getY();
+    @Override // org.telegram.ui.Cells.w9
+    public final int m() {
+        Layout staticTextLayout = this.p0.getStaticTextLayout();
+        return staticTextLayout.getLineBottom(0) - staticTextLayout.getLineTop(0);
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final CharSequence s(r9 r9Var, boolean z10) {
+        return ((s9) r9Var).getText();
+    }
 }

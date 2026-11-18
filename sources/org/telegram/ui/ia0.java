@@ -1,58 +1,49 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class ia0 implements org.telegram.ui.Components.vr0 {
-    public final /* synthetic */ pa0 a;
+public final class ia0 extends jg.r0 {
+    public boolean e0;
+    public final /* synthetic */ qa0 f0;
 
-    public ia0(pa0 pa0Var) {
-        this.a = pa0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ia0(qa0 qa0Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, boolean z11) {
+        super(context, i7, j3, false, i6Var, false, z10, z11);
+        this.f0 = qa0Var;
+        this.e0 = true;
     }
 
-    @Override // org.telegram.ui.Components.vr0
-    public final void W() {
-        pa0 pa0Var = this.a;
-        ja0 ja0Var = pa0Var.R0;
-        int m0 = ja0Var == null ? 0 : ja0Var.m0(8);
-        pa0Var.S0.setText(org.telegram.messenger.gd.G(m0, "LocationStories", new Object[0]));
-        ha0 ha0Var = pa0Var.Q;
-        boolean z10 = m0 > 0;
-        if (ha0Var.a0 != z10) {
-            ha0Var.a0 = z10;
-            ha0Var.f();
-            pa0Var.R.w0(0, org.telegram.messenger.g0.L(200.0f), null);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final boolean Y() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final org.telegram.ui.Components.ck0 f() {
-        return this.a.R;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final boolean t() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
+    @Override // jg.r0
     public final void J() {
+        this.f0.B0(null);
+    }
+
+    @Override // jg.r0
+    public final void N(ArrayList arrayList) {
+        int i7;
+        qa0 qa0Var = this.f0;
+        org.telegram.messenger.fj fjVar = qa0Var.J0;
+        if (fjVar != null && fjVar.C3()) {
+            if (arrayList != null) {
+                i7 = 0;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    ma0 ma0Var = (ma0) arrayList.get(i10);
+                    if (ma0Var != null && !org.telegram.messenger.o10.C(ma0Var.c)) {
+                        i7++;
+                    }
+                }
+            } else {
+                i7 = 0;
+            }
+            if (this.e0 && i7 == 1) {
+                qa0Var.q0 = ((ma0) arrayList.get(0)).a;
+            }
+            this.e0 = false;
+            qa0Var.W.setVisibility(i7 != 1 ? 8 : 0);
+        }
+        super.N(arrayList);
     }
 }

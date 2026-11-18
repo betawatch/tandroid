@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class r2 extends HorizontalScrollView {
     public final /* synthetic */ p50 a;
@@ -43,11 +43,11 @@ public final class r2 extends HorizontalScrollView {
             p50Var.f = null;
         }
         this.b.a();
-        org.telegram.ui.Cells.i9 i9Var = ((g4) p50Var).Q0;
-        if (i9Var == null || !i9Var.x()) {
+        org.telegram.ui.Cells.j9 j9Var = ((g4) p50Var).Q0;
+        if (j9Var == null || !j9Var.x()) {
             return;
         }
-        i9Var.w();
+        j9Var.w();
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View

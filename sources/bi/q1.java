@@ -16,7 +16,7 @@ import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class q1 extends v4.u0 {
     public final /* synthetic */ int a;
@@ -176,21 +176,21 @@ public final class q1 extends v4.u0 {
                 }
                 break;
             case 1:
-                h8 h8Var = (h8) obj;
-                for (int i19 = 0; i19 < h8Var.f.getChildCount(); i19++) {
-                    if (h8Var.f.getChildAt(i19) instanceof wz) {
-                        h8Var.d.l(false);
+                g8 g8Var = (g8) obj;
+                for (int i19 = 0; i19 < g8Var.f.getChildCount(); i19++) {
+                    if (g8Var.f.getChildAt(i19) instanceof wz) {
+                        g8Var.d.l(false);
                         break;
                     }
                 }
                 break;
             case 2:
-                ((g8) obj).e1();
+                ((f8) obj).e1();
                 break;
             case 3:
-                l8 l8Var = (l8) obj;
-                if (l8Var.f1()) {
-                    l8Var.U1.a();
+                k8 k8Var = (k8) obj;
+                if (k8Var.f1()) {
+                    k8Var.U1.a();
                     break;
                 }
                 break;
@@ -448,13 +448,13 @@ public final class q1 extends v4.u0 {
                 ((org.telegram.ui.Components.m0) obj).D1();
                 break;
             case 29:
-                org.telegram.ui.Components.g8 g8Var = (org.telegram.ui.Components.g8) obj;
-                v4.c0 c0Var = g8Var.t1;
-                org.telegram.ui.Components.g8.J0(g8Var);
-                g8Var.a1();
-                if (!g8Var.q1) {
+                org.telegram.ui.Components.g8 g8Var2 = (org.telegram.ui.Components.g8) obj;
+                v4.c0 c0Var = g8Var2.t1;
+                org.telegram.ui.Components.g8.J0(g8Var2);
+                g8Var2.a1();
+                if (!g8Var2.q1) {
                     int L0 = c0Var.L0();
-                    if (g8Var.p2) {
+                    if (g8Var2.p2) {
                         L0 = Math.max(0, L0 - 1);
                     }
                     int abs = L0 != -1 ? Math.abs(c0Var.N0() - L0) + 1 : 0;

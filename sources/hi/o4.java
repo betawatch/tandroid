@@ -16,9 +16,9 @@ import org.telegram.ui.Components.sg;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.bn;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -109,14 +109,14 @@ public final /* synthetic */ class o4 implements View.OnLongClickListener {
                         if (!c32.isEmpty()) {
                             org.telegram.ui.ActionBar.h2 h2Var = siVar.a2;
                             bn bnVar = h2Var instanceof bn ? (bn) h2Var : null;
-                            eg0 eg0Var = oVar.P;
-                            if (eg0Var != null) {
-                                eg0Var.h(false);
+                            fg0 fg0Var = oVar.P;
+                            if (fg0Var != null) {
+                                fg0Var.h(false);
                                 oVar.P = null;
                             }
-                            eg0 eg0Var2 = new eg0(oVar.getContext(), i6Var2);
-                            oVar.P = eg0Var2;
-                            eg0Var2.setOnDismissListener(new di.t9(oVar, 7));
+                            fg0 fg0Var2 = new fg0(oVar.getContext(), i6Var2);
+                            oVar.P = fg0Var2;
+                            fg0Var2.setOnDismissListener(new di.t9(oVar, 7));
                             long c12 = siVar.c1();
                             fj fjVar = bnVar != null ? bnVar.F5 : null;
                             TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -152,10 +152,10 @@ public final /* synthetic */ class o4 implements View.OnLongClickListener {
                             if (s5 != null) {
                                 i6Var = i6Var2;
                                 s5.setBackground(new oi.y1(org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(22.0f), org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fi, i6Var))));
-                                eg0 eg0Var3 = oVar.P;
+                                fg0 fg0Var3 = oVar.P;
                                 int L = org.telegram.messenger.g0.L(44.0f);
-                                eg0Var3.p0 = true;
-                                eg0Var3.Y = L;
+                                fg0Var3.p0 = true;
+                                fg0Var3.Y = L;
                             } else {
                                 i6Var = i6Var2;
                             }

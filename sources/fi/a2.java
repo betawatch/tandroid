@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class a2 extends t0 {
     public final /* synthetic */ f9 i0;
@@ -78,7 +78,7 @@ public final class a2 extends t0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(b1Var.getAlpha(), z10 ? 0.0f : 1.0f);
                 this.f0 = ofFloat;
                 ofFloat.addUpdateListener(new ah.g(this, 15));
-                this.f0.addListener(new bi.e7(3, this, z10));
+                this.f0.addListener(new bi.d7(3, this, z10));
                 this.f0.setDuration(420L);
                 this.f0.setInterpolator(lr.h);
                 this.f0.start();

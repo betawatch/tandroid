@@ -14,16 +14,16 @@ import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Components.h40;
 import org.telegram.ui.Components.v40;
-import org.telegram.ui.hh0;
+import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class e {
     public static HashMap n;
     public final double a;
     public final double b;
     public final int c;
-    public final hh0 d;
+    public final ih0 d;
     public final v40 e;
     public d f;
     public final int g;
@@ -34,19 +34,19 @@ public final class e {
     public int l = 0;
     public final c m = new c(this, 0);
 
-    public e(int i7, hh0 hh0Var, int i10, int i11) {
+    public e(int i7, ih0 ih0Var, int i10, int i11) {
         double d = 1.0d / ((int) g0.r);
         this.a = d;
         this.b = d * 4.0d;
         this.c = i7;
         this.g = i10;
         this.h = i11;
-        this.d = hh0Var;
-        v40 v40Var = new v40(2, hh0Var.getContext(), this);
+        this.d = ih0Var;
+        v40 v40Var = new v40(2, ih0Var.getContext(), this);
         this.e = v40Var;
         v40Var.setSurfaceTextureListener(new h40(this, 4));
         v40Var.setOpaque(false);
-        hh0Var.addView(v40Var);
+        ih0Var.addView(v40Var);
     }
 
     public static e d(int i7, View view, ViewGroup viewGroup) {
@@ -75,9 +75,9 @@ public final class e {
             }
             HashMap hashMap = n;
             Integer valueOf = Integer.valueOf(i7);
-            hh0 hh0Var = new hh0(viewGroup.getContext(), 22);
-            viewGroup.addView(hh0Var);
-            e eVar2 = new e(i7, hh0Var, min, min);
+            ih0 ih0Var = new ih0(viewGroup.getContext(), 22);
+            viewGroup.addView(ih0Var);
+            e eVar2 = new e(i7, ih0Var, min, min);
             hashMap.put(valueOf, eVar2);
             eVar = eVar2;
         }

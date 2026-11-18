@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class mr0 extends org.telegram.ui.Cells.a6 {
+public final class mr0 extends org.telegram.ui.Cells.b6 {
     public final /* synthetic */ nr0 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -20,7 +20,7 @@ public final class mr0 extends org.telegram.ui.Cells.a6 {
         this.G = nr0Var;
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final boolean f() {
         pr0 pr0Var = this.G.d;
         f61 f61Var = pr0Var.c;
@@ -36,12 +36,12 @@ public final class mr0 extends org.telegram.ui.Cells.a6 {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.a6
-    public final boolean g(org.telegram.ui.Cells.a6 a6Var) {
+    @Override // org.telegram.ui.Cells.b6
+    public final boolean g(org.telegram.ui.Cells.b6 b6Var) {
         int b10;
         pr0 pr0Var = this.G.d;
         f61 f61Var = pr0Var.c;
-        View F = f61Var.F(a6Var);
+        View F = f61Var.F(b6Var);
         v4.f1 T = F == null ? null : f61Var.T(F);
         if (T == null || (b10 = T.b()) == -1) {
             return false;
@@ -49,7 +49,7 @@ public final class mr0 extends org.telegram.ui.Cells.a6 {
         return pr0Var.x[b10 - pr0Var.o0];
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final void h(bi.u uVar, ActionMode actionMode) {
         if (uVar.isFocused() && uVar.hasSelection()) {
             Menu menu = actionMode.getMenu();
@@ -60,8 +60,8 @@ public final class mr0 extends org.telegram.ui.Cells.a6 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.a6
-    public final void i(org.telegram.ui.Cells.a6 a6Var, boolean z10) {
+    @Override // org.telegram.ui.Cells.b6
+    public final void i(org.telegram.ui.Cells.b6 b6Var, boolean z10) {
         int b10;
         pr0 pr0Var = this.G.d;
         pr0Var.c.getChildCount();
@@ -71,15 +71,15 @@ public final class mr0 extends org.telegram.ui.Cells.a6 {
                 v4.f1 K = pr0Var.c.K(i7);
                 if (K != null) {
                     View view = K.a;
-                    if (view instanceof org.telegram.ui.Cells.a6) {
-                        ((org.telegram.ui.Cells.a6) view).r.a(false, true);
+                    if (view instanceof org.telegram.ui.Cells.b6) {
+                        ((org.telegram.ui.Cells.b6) view).r.a(false, true);
                     }
                 }
             }
         }
-        super.i(a6Var, z10);
+        super.i(b6Var, z10);
         f61 f61Var = pr0Var.c;
-        View F = f61Var.F(a6Var);
+        View F = f61Var.F(b6Var);
         v4.f1 T = F == null ? null : f61Var.T(F);
         if (T != null && (b10 = T.b()) != -1) {
             pr0Var.x[b10 - pr0Var.o0] = z10;
@@ -87,17 +87,17 @@ public final class mr0 extends org.telegram.ui.Cells.a6 {
         pr0Var.n0();
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final void j(boolean z10) {
         pr0.i0(this.G.d, this, z10);
     }
 
-    @Override // org.telegram.ui.Cells.a6
-    public final void k(org.telegram.ui.Cells.a6 a6Var) {
-        pr0.j0(this.G.d, a6Var);
+    @Override // org.telegram.ui.Cells.b6
+    public final void k(org.telegram.ui.Cells.b6 b6Var) {
+        pr0.j0(this.G.d, b6Var);
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final boolean m(ArrayList arrayList) {
         pr0 pr0Var = this.G.d;
         if (!arrayList.isEmpty()) {
@@ -125,7 +125,7 @@ public final class mr0 extends org.telegram.ui.Cells.a6 {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final boolean p() {
         return this.G.d.M;
     }

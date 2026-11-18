@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g50 extends org.telegram.ui.Components.bk0 {
     public final Context c;
@@ -52,16 +52,16 @@ public final class g50 extends org.telegram.ui.Components.bk0 {
         View view = f1Var.a;
         h50 h50Var = this.d;
         if (i10 == 0) {
-            org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) view;
+            org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) view;
             if (i7 == h50Var.n) {
-                w9Var.b(org.telegram.messenger.gd.M0(2131751751, null), true);
+                x9Var.b(org.telegram.messenger.gd.M0(2131751751, null), true);
                 return;
             } else if (i7 == h50Var.s) {
-                w9Var.b(org.telegram.messenger.gd.M0(2131745263, null), false);
+                x9Var.b(org.telegram.messenger.gd.M0(2131745263, null), false);
                 return;
             } else {
                 if (i7 == h50Var.r) {
-                    w9Var.b(org.telegram.messenger.gd.M0(2131745828, null), true);
+                    x9Var.b(org.telegram.messenger.gd.M0(2131745828, null), true);
                     return;
                 }
                 return;
@@ -71,23 +71,23 @@ public final class g50 extends org.telegram.ui.Components.bk0 {
             if (i10 != 2) {
                 return;
             }
-            org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) view;
+            org.telegram.ui.Cells.l8 l8Var = (org.telegram.ui.Cells.l8) view;
             TLRPC.TL_chatInviteExported tL_chatInviteExported = h50Var.f;
-            k8Var.a.setText(tL_chatInviteExported != null ? tL_chatInviteExported.link : "error");
-            k8Var.setWillNotDraw(true);
+            l8Var.a.setText(tL_chatInviteExported != null ? tL_chatInviteExported.link : "error");
+            l8Var.setWillNotDraw(true);
             return;
         }
-        org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+        org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
         if (i7 == h50Var.w) {
-            z8Var.setText("");
+            a9Var.setText("");
             return;
         }
         if (i7 == h50Var.h) {
             TLRPC.Chat O0 = h50Var.getMessagesController().O0(Long.valueOf(h50Var.d));
             if (!org.telegram.messenger.v3.T(O0) || O0.megagroup) {
-                z8Var.setText(org.telegram.messenger.gd.M0(2131748719, null));
+                a9Var.setText(org.telegram.messenger.gd.M0(2131748719, null));
             } else {
-                z8Var.setText(org.telegram.messenger.gd.M0(2131752375, null));
+                a9Var.setText(org.telegram.messenger.gd.M0(2131752375, null));
             }
         }
     }
@@ -97,21 +97,21 @@ public final class g50 extends org.telegram.ui.Components.bk0 {
         FrameLayout frameLayout;
         Context context = this.c;
         if (i7 == 0) {
-            FrameLayout w9Var = new org.telegram.ui.Cells.w9(context);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, w9Var, null);
-            frameLayout = w9Var;
+            FrameLayout x9Var = new org.telegram.ui.Cells.x9(context);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, x9Var, null);
+            frameLayout = x9Var;
         } else if (i7 != 1) {
-            org.telegram.ui.Cells.k8 k8Var = new org.telegram.ui.Cells.k8(context);
+            org.telegram.ui.Cells.l8 l8Var = new org.telegram.ui.Cells.l8(context);
             TextView textView = new TextView(context);
-            k8Var.a = textView;
+            l8Var.a = textView;
             org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
             textView.setTextSize(1, 16.0f);
             textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 16);
-            k8Var.addView(textView, c8.ma.d(-1, -2.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, k8Var, null);
-            frameLayout = k8Var;
+            l8Var.addView(textView, c8.ma.d(-1, -2.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, l8Var, null);
+            frameLayout = l8Var;
         } else {
-            frameLayout = new org.telegram.ui.Cells.z8(context);
+            frameLayout = new org.telegram.ui.Cells.a9(context);
         }
         return new org.telegram.ui.Components.kj0(frameLayout);
     }

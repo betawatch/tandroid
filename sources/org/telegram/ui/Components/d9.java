@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class d9 {
     public float A;
@@ -120,10 +120,10 @@ public final class d9 {
                     if (i10 == i11) {
                         c9 c9Var3 = c9VarArr2[i10];
                         c9Var3.i = -1;
-                        org.telegram.ui.Cells.e4 e4Var = c9Var3.b;
+                        org.telegram.ui.Cells.f4 f4Var = c9Var3.b;
                         c9 c9Var4 = c9VarArr[i10];
                         c9Var3.b = c9Var4.b;
-                        c9Var4.b = e4Var;
+                        c9Var4.b = f4Var;
                     } else {
                         c9 c9Var5 = c9VarArr2[i10];
                         c9Var5.i = 2;
@@ -560,9 +560,9 @@ public final class d9 {
                                                     c9Var = c9VarArr4[i11];
                                                     if (c9Var.b == null) {
                                                         if (this.k == 5) {
-                                                            c9Var.b = new org.telegram.ui.Cells.e4(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(16.0f));
+                                                            c9Var.b = new org.telegram.ui.Cells.f4(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(16.0f));
                                                         } else {
-                                                            c9Var.b = new org.telegram.ui.Cells.e4(org.telegram.messenger.g0.L(17.0f), org.telegram.messenger.g0.L(21.0f));
+                                                            c9Var.b = new org.telegram.ui.Cells.f4(org.telegram.messenger.g0.L(17.0f), org.telegram.messenger.g0.L(21.0f));
                                                         }
                                                     }
                                                     if (this.k == 5) {
@@ -622,7 +622,7 @@ public final class d9 {
                                                     canvas2.drawCircle(imageReceiver3.r(), imageReceiver3.s(), org.telegram.messenger.g0.L(17.0f), paint2);
                                                     c9 c9Var3 = c9VarArr8[i37];
                                                     if (c9Var3.b == null) {
-                                                        c9Var3.b = new org.telegram.ui.Cells.e4(org.telegram.messenger.g0.L(17.0f), org.telegram.messenger.g0.L(21.0f));
+                                                        c9Var3.b = new org.telegram.ui.Cells.f4(org.telegram.messenger.g0.L(17.0f), org.telegram.messenger.g0.L(21.0f));
                                                     }
                                                     if (this.k == 10) {
                                                         c9VarArr8[i37].b.d(i0.a.o(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.hh, false), (int) (f30 * 76.5f)));

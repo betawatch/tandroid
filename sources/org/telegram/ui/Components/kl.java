@@ -33,7 +33,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class kl extends ki implements org.telegram.ui.ActionBar.c6, org.telegram.messenger.fs {
     public static final /* synthetic */ int G0 = 0;
@@ -130,8 +130,8 @@ public final class kl extends ki implements org.telegram.ui.ActionBar.c6, org.te
         } else {
             this.p0 = 1;
         }
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.x4);
         org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.y4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.z4);
         this.e0 = false;
         this.d0 = false;
         this.f0 = false;
@@ -961,7 +961,7 @@ public final class kl extends ki implements org.telegram.ui.ActionBar.c6, org.te
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = org.telegram.messenger.ks.x4;
+        int i11 = org.telegram.messenger.ks.y4;
         jg.r0 r0Var = this.L;
         if (i7 == i11) {
             this.U = false;
@@ -978,7 +978,7 @@ public final class kl extends ki implements org.telegram.ui.ActionBar.c6, org.te
                     org.telegram.messenger.a8.g(e10, true);
                 }
             }
-        } else if (i7 == org.telegram.messenger.ks.y4) {
+        } else if (i7 == org.telegram.messenger.ks.z4) {
             this.U = true;
             this.T = false;
             if (r0Var != null) {
@@ -1122,7 +1122,7 @@ public final class kl extends ki implements org.telegram.ui.ActionBar.c6, org.te
                 if (extractMetadata != null) {
                     Matcher matcher = Pattern.compile("([+\\-][0-9.]+)([+\\-][0-9.]+)").matcher(extractMetadata);
                     if (matcher.find() && matcher.groupCount() == 2) {
-                        org.telegram.messenger.g0.g3(new org.telegram.ui.Cells.q7(this, Double.parseDouble(matcher.group(1)), Double.parseDouble(matcher.group(2)), 2));
+                        org.telegram.messenger.g0.g3(new org.telegram.ui.Cells.r7(this, Double.parseDouble(matcher.group(1)), Double.parseDouble(matcher.group(2)), 2));
                         return;
                     }
                 }
@@ -1211,11 +1211,11 @@ public final class kl extends ki implements org.telegram.ui.ActionBar.c6, org.te
         arrayList.add(new org.telegram.ui.ActionBar.w6((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.jj));
         arrayList.add(new org.telegram.ui.ActionBar.w6((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.kj));
         arrayList.add(new org.telegram.ui.ActionBar.w6((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.pj));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393216, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.ej));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393216, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.hj));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393248, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.dj));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393248, new Class[]{org.telegram.ui.Cells.q6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.gj));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 196608, new Class[]{org.telegram.ui.Cells.w4.class}, new String[]{"frameLayout"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Hi));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393216, new Class[]{org.telegram.ui.Cells.r6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.ej));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393216, new Class[]{org.telegram.ui.Cells.r6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.hj));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393248, new Class[]{org.telegram.ui.Cells.r6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.dj));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 393248, new Class[]{org.telegram.ui.Cells.r6.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.gj));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(b1Var, 196608, new Class[]{org.telegram.ui.Cells.x4.class}, new String[]{"frameLayout"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Hi));
         return arrayList;
     }
 
@@ -1337,8 +1337,8 @@ public final class kl extends ki implements org.telegram.ui.ActionBar.c6, org.te
 
     @Override // org.telegram.ui.Components.ki
     public final void p() {
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.x4);
         org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.y4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.z4);
         this.y = true;
         bi.a3 a3Var = this.K;
         if (a3Var != null) {

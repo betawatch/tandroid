@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -733,7 +733,7 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
             }
             if (y21Var.P1) {
                 y21Var.dismiss();
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.R4, 1, org.telegram.messenger.gd.M0(bool.booleanValue() ? 2131743710 : 2131743709, null));
+                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.S4, 1, org.telegram.messenger.gd.M0(bool.booleanValue() ? 2131743710 : 2131743709, null));
                 return;
             }
             org.telegram.messenger.f3.o(null, bool.booleanValue() ? 2131743710 : 2131743709, new lc((FrameLayout) y21Var.b, y21Var.J0), null);
@@ -1087,17 +1087,17 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
                 }
                 break;
             case 4:
-                bi.m6 m6Var = (bi.m6) obj3;
+                bi.l6 l6Var = (bi.l6) obj3;
                 TLRPC.TL_composedMessageWithAI tL_composedMessageWithAI = (TLRPC.TL_composedMessageWithAI) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error == null && tL_composedMessageWithAI != null && (tL_textWithEntities = tL_composedMessageWithAI.result_text) != null) {
-                    m6Var.a(org.telegram.messenger.fj.h0(tL_textWithEntities, false), null);
+                    l6Var.a(org.telegram.messenger.fj.h0(tL_textWithEntities, false), null);
                     break;
                 } else {
                     if (tL_error == null) {
                         tL_error = new TLRPC.TL_error();
                     }
-                    m6Var.a(null, tL_error);
+                    l6Var.a(null, tL_error);
                     break;
                 }
             case 5:
@@ -1120,7 +1120,7 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
                     for (int i20 = 0; i20 < cjVar.I.size(); i20++) {
                         org.telegram.messenger.ve veVar2 = (org.telegram.messenger.ve) cjVar.I.get(i20);
                         veVar2.e.K5(null, true);
-                        l41 i21 = org.telegram.ui.Cells.f7.i(veVar2, new ui(cjVar, i15));
+                        l41 i21 = org.telegram.ui.Cells.g7.i(veVar2, new ui(cjVar, i15));
                         i21.L(hashSet.contains(veVar2));
                         i21.d = -1;
                         arrayList6.add(i21);
@@ -1163,7 +1163,7 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
                         arrayList6.add(l41.t(45, org.telegram.messenger.gd.M0(2131753902, null)));
                         for (int i23 = 0; i23 < arrayList8.size(); i23++) {
                             org.telegram.messenger.ve veVar3 = (org.telegram.messenger.ve) arrayList8.get(i23);
-                            l41 i24 = org.telegram.ui.Cells.f7.i(veVar3, new ui(cjVar, 0));
+                            l41 i24 = org.telegram.ui.Cells.g7.i(veVar3, new ui(cjVar, 0));
                             i24.L(hashSet.contains(veVar3));
                             arrayList6.add(i24);
                         }
@@ -1188,7 +1188,7 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
                         for (int i25 = 0; i25 < arrayList9.size(); i25++) {
                             org.telegram.messenger.ve veVar4 = (org.telegram.messenger.ve) arrayList9.get(i25);
                             veVar4.e.K5(cjVar.E, true);
-                            l41 i26 = org.telegram.ui.Cells.f7.i(veVar4, new ui(cjVar, 0));
+                            l41 i26 = org.telegram.ui.Cells.g7.i(veVar4, new ui(cjVar, 0));
                             i26.L(hashSet.contains(veVar4));
                             arrayList6.add(i26);
                         }
@@ -1235,7 +1235,7 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
                                         z34 = true;
                                     }
                                     veVar5.e.K5(cjVar.E, true);
-                                    l41 i28 = org.telegram.ui.Cells.f7.i(veVar5, new ui(cjVar, 0));
+                                    l41 i28 = org.telegram.ui.Cells.g7.i(veVar5, new ui(cjVar, 0));
                                     i28.L(hashSet.contains(veVar5));
                                     i28.d = 10;
                                     arrayList6.add(i28);
@@ -1259,7 +1259,7 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
                         for (int i29 = 0; i29 < arrayList9.size(); i29++) {
                             org.telegram.messenger.ve veVar6 = (org.telegram.messenger.ve) arrayList9.get(i29);
                             veVar6.e.K5(cjVar.E, true);
-                            l41 i30 = org.telegram.ui.Cells.f7.i(veVar6, new ui(cjVar, 0));
+                            l41 i30 = org.telegram.ui.Cells.g7.i(veVar6, new ui(cjVar, 0));
                             i30.L(hashSet.contains(veVar6));
                             arrayList6.add(i30);
                         }
@@ -1285,7 +1285,7 @@ public final /* synthetic */ class d implements org.telegram.messenger.q10 {
                         for (int i31 = 0; i31 < size3; i31++) {
                             org.telegram.messenger.ve veVar7 = (org.telegram.messenger.ve) arrayList7.get(i31);
                             veVar7.e.K5(cjVar.E, true);
-                            l41 i32 = org.telegram.ui.Cells.f7.i(veVar7, new ui(cjVar, 0));
+                            l41 i32 = org.telegram.ui.Cells.g7.i(veVar7, new ui(cjVar, 0));
                             i32.L(hashSet.contains(veVar7));
                             arrayList6.add(i32);
                         }

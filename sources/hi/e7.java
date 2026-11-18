@@ -23,7 +23,7 @@ import org.telegram.ui.Components.y60;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e7 implements q10 {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class e7 implements q10 {
                 km0 km0Var = (km0) ((jg.h0) this.b);
                 cx cxVar = km0Var.J0;
                 org.telegram.messenger.g0.v1(cxVar.getParentActivity().getCurrentFocus());
-                y60 J = y60.J(cxVar, (org.telegram.ui.Cells.g6) obj);
+                y60 J = y60.J(cxVar, (org.telegram.ui.Cells.h6) obj);
                 if (TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info) && TextUtils.isEmpty(tL_sponsoredPeer.additional_info)) {
                     z10 = false;
                     str = null;
@@ -192,9 +192,9 @@ public final /* synthetic */ class e7 implements q10 {
                     }
                     str = null;
                     String M0 = gd.M0(2131745013, null);
-                    bi.v5 v5Var = new bi.v5(J, K2, i13);
+                    bi.u5 u5Var = new bi.u5(J, K2, i13);
                     z10 = false;
-                    J.c(R.drawable.msg_channel, M0, v5Var, false);
+                    J.c(R.drawable.msg_channel, M0, u5Var, false);
                 }
                 J.c(R.drawable.msg_info, gd.M0(2131754943, str), new n20(km0Var, cxVar, km0Var.K0, J, 5), z10);
                 J.c(R.drawable.msg_block2, gd.M0(2131746039, str), new n20(km0Var, cxVar, tL_sponsoredPeer, J, 6), z10);
@@ -217,8 +217,8 @@ public final /* synthetic */ class e7 implements q10 {
                 org.telegram.messenger.g0.r(nVar.e);
                 nVar.n.setSticker(nVar.E);
                 nVar.j0(true);
-                bi.d6 d6Var = nVar.a;
-                if (d6Var != null && (z41Var = d6Var.g3) != null) {
+                bi.c6 c6Var = nVar.a;
+                if (c6Var != null && (z41Var = c6Var.g3) != null) {
                     z41Var.O(true);
                     break;
                 }

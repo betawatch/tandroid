@@ -33,7 +33,7 @@ import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.z41;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class h1 extends sa {
     public final int T1;
@@ -300,14 +300,14 @@ public final class h1 extends sa {
             e12 = e1(i10, j3, botInlineResult, null, null, webPage);
         }
         g1 g1Var = e12;
-        org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0(context, i6Var, false);
-        u0Var.setDelegate(new b1());
-        u0Var.setCustomText(gd.M0(2131752968, null));
+        org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0(context, i6Var, false);
+        v0Var.setDelegate(new b1());
+        v0Var.setCustomText(gd.M0(2131752968, null));
         c1 c1Var = new c1(context, i10);
         c1Var.setDelegate(new d1());
         c1Var.y3(g1Var, null, false, false, false, false);
         LinearLayout g10 = org.telegram.messenger.f3.g(context, r11);
-        g10.addView(u0Var, ma.o(-1, -2));
+        g10.addView(v0Var, ma.o(-1, -2));
         g10.addView(c1Var, ma.o(-1, -2));
         e1 e1Var = new e1(context, null);
         this.W1 = e1Var;

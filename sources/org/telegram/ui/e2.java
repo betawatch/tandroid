@@ -15,9 +15,9 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c3 {
+public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
     public final e4 b;
     public z2 c;
@@ -52,11 +52,11 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
         c2Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.b2
             @Override // android.view.View.OnScrollChangeListener
             public final void onScrollChange(View view, int i7, int i10, int i11, int i12) {
-                org.telegram.ui.Cells.i9 i9Var = ((g4) p50.this).Q0;
-                if (i9Var == null || !i9Var.x()) {
+                org.telegram.ui.Cells.j9 j9Var = ((g4) p50.this).Q0;
+                if (j9Var == null || !j9Var.x()) {
                     return;
                 }
-                i9Var.w();
+                j9Var.w();
             }
         });
         setWillNotDraw(false);
@@ -155,13 +155,13 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
         return org.telegram.messenger.n10.a(this);
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.q9
+    @Override // android.view.View, org.telegram.ui.Cells.r9
     public final void invalidate() {
         this.e.invalidate();
         super.invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {

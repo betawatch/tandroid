@@ -1,34 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class qg0 extends ah.e {
-    public final /* synthetic */ int n;
+public final /* synthetic */ class qg0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qg0(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var);
-        this.n = i7;
+    public /* synthetic */ qg0(vg0 vg0Var, int i7) {
+        this.a = i7;
+        this.b = vg0Var;
     }
 
-    @Override // ah.e
-    public final int getHeaderHeight() {
-        switch (this.n) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                if (getResources().getConfiguration().orientation != 2) {
-                    break;
-                } else {
+                vg0 vg0Var = this.b;
+                ug0 ug0Var = vg0Var.m2;
+                HashSet hashSet = vg0Var.Z1;
+                if (hashSet.size() != 0 && ug0Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    for (TLRPC.User user : vg0Var.e2.values()) {
+                        if (hashSet.contains(Long.valueOf(user.id))) {
+                            arrayList.add(Long.valueOf(user.id));
+                        }
+                    }
+                    ug0Var.a(arrayList);
+                    vg0Var.dismiss();
                     break;
                 }
+                break;
             default:
-                if (getResources().getConfiguration().orientation != 2) {
-                    break;
-                } else {
-                    break;
-                }
+                vg0 vg0Var2 = this.b;
+                vg0Var2.Z1.clear();
+                vg0Var2.U1.d.b(true);
+                vg0Var2.h1(true, false);
+                break;
         }
-        return org.telegram.messenger.g0.L(54.0f);
     }
 }

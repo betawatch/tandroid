@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ck extends bk0 {
     public final /* synthetic */ int c;
@@ -118,68 +118,68 @@ public final class ck extends bk0 {
                 int i11 = f1Var.f;
                 View view = f1Var.a;
                 if (i11 == 0) {
-                    org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
+                    org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
                     if (!kkVar.d0) {
-                        n4Var.setText(org.telegram.messenger.gd.M0(2131746173, null));
+                        o4Var.setText(org.telegram.messenger.gd.M0(2131746173, null));
                         break;
                     } else {
-                        n4Var.setText(org.telegram.messenger.gd.M0(2131746172, null));
+                        o4Var.setText(org.telegram.messenger.gd.M0(2131746172, null));
                         break;
                     }
                 } else if (i11 == 1) {
                     dk E = E(i7);
-                    org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) view;
+                    org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
                     int i12 = E.a;
                     if (i12 != 0) {
-                        h7Var.d(E.b, E.c, null, null, i12, i7 != this.e.size() - 1);
+                        i7Var.d(E.b, E.c, null, null, i12, i7 != this.e.size() - 1);
                     } else {
-                        h7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
+                        i7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
                     }
                     File file = E.f;
                     if (file == null) {
-                        h7Var.b(false, !kkVar.V);
+                        i7Var.b(false, !kkVar.V);
                         break;
                     } else {
-                        h7Var.b(kkVar.S.containsKey(file.toString()), !kkVar.V);
+                        i7Var.b(kkVar.S.containsKey(file.toString()), !kkVar.V);
                         break;
                     }
                 }
                 break;
             default:
                 org.telegram.ui.ps psVar = (org.telegram.ui.ps) this.e.get(i7);
-                org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) f1Var.a;
-                CharSequence m10 = org.telegram.messenger.j6.m(org.telegram.ui.ts.a0(psVar), w9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
+                org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) f1Var.a;
+                CharSequence m10 = org.telegram.messenger.j6.m(org.telegram.ui.ts.a0(psVar), x9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
                 if (((org.telegram.ui.ts) obj).h) {
                     str = "+" + psVar.c;
                 }
-                w9Var.c(m10, str, false, false);
+                x9Var.c(m10, str, false, false);
                 break;
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View n4Var;
+        View o4Var;
         View view;
         switch (this.c) {
             case 0:
                 org.telegram.ui.ActionBar.i6 i6Var = ((kk) this.n).a;
                 Context context = this.d;
                 if (i7 == 0) {
-                    n4Var = new org.telegram.ui.Cells.n4(context, i6Var);
+                    o4Var = new org.telegram.ui.Cells.o4(context, i6Var);
                 } else {
                     if (i7 != 1) {
                         if (i7 != 2) {
                             view = new View(context);
                             view.setTag(-33024);
                         } else {
-                            view = new org.telegram.ui.Cells.y6(context, (org.telegram.ui.Cells.c0) null);
+                            view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c0) null);
                         }
                         return new kj0(view);
                     }
-                    n4Var = new org.telegram.ui.Cells.h7(1, context, i6Var);
+                    o4Var = new org.telegram.ui.Cells.i7(1, context, i6Var);
                 }
-                view = n4Var;
+                view = o4Var;
                 return new kj0(view);
             default:
                 return new kj0(org.telegram.ui.ts.Z(this.d));

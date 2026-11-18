@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class wm0 extends oq0 {
     public final /* synthetic */ cn0 a;
@@ -18,7 +18,7 @@ public final class wm0 extends oq0 {
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         cn0 cn0Var = this.a;
-        org.telegram.ui.Cells.r5 a02 = cn0.a0(cn0Var, i7);
+        org.telegram.ui.Cells.s5 a02 = cn0.a0(cn0Var, i7);
         if (a02 == null) {
             return null;
         }
@@ -43,8 +43,8 @@ public final class wm0 extends oq0 {
         int childCount = cn0Var.L.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = cn0Var.L.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.r5) {
-                ((org.telegram.ui.Cells.r5) childAt).g(true);
+            if (childAt instanceof org.telegram.ui.Cells.s5) {
+                ((org.telegram.ui.Cells.s5) childAt).g(true);
             }
         }
     }
@@ -79,7 +79,7 @@ public final class wm0 extends oq0 {
     public final void X(int i7) {
         cn0 cn0Var = this.a;
         org.telegram.messenger.ue ueVar = cn0Var.K;
-        org.telegram.ui.Cells.r5 a02 = cn0.a0(cn0Var, i7);
+        org.telegram.ui.Cells.s5 a02 = cn0.a0(cn0Var, i7);
         if (a02 != null) {
             if (ueVar == null) {
                 a02.e((org.telegram.messenger.hf) cn0Var.f.get(i7));
@@ -115,12 +115,12 @@ public final class wm0 extends oq0 {
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = cn0Var.L.getChildAt(i10);
             if (childAt.getTag() != null) {
-                org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
+                org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
                 int intValue = ((Integer) childAt.getTag()).intValue();
                 org.telegram.messenger.ue ueVar = cn0Var.K;
                 if (ueVar == null ? !(intValue < 0 || intValue >= cn0Var.f.size()) : !(intValue < 0 || intValue >= ueVar.e.size())) {
                     if (intValue == i7) {
-                        r5Var.g(true);
+                        s5Var.g(true);
                         return;
                     }
                 }
@@ -135,7 +135,7 @@ public final class wm0 extends oq0 {
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final org.telegram.messenger.hc j(int i7) {
-        org.telegram.ui.Cells.r5 a02 = cn0.a0(this.a, i7);
+        org.telegram.ui.Cells.s5 a02 = cn0.a0(this.a, i7);
         if (a02 != null) {
             return a02.getImageView().getImageReceiver().p();
         }
@@ -185,7 +185,7 @@ public final class wm0 extends oq0 {
             }
             View childAt = cn0Var.L.getChildAt(i10);
             if (((Integer) childAt.getTag()).intValue() == i7) {
-                ((org.telegram.ui.Cells.r5) childAt).b(cn0Var.e ? d02 : -1, z10, false);
+                ((org.telegram.ui.Cells.s5) childAt).b(cn0Var.e ? d02 : -1, z10, false);
             } else {
                 i10++;
             }

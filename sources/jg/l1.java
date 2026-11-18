@@ -16,12 +16,12 @@ import org.telegram.messenger.ri;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.t2;
+import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l1 extends bk0 implements fs {
     public b6 E;
@@ -75,7 +75,7 @@ public final class l1 extends bk0 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.z5 && objArr[0] == this.E) {
+        if (i7 == ks.A5 && objArr[0] == this.E) {
             f();
         }
     }
@@ -136,13 +136,13 @@ public final class l1 extends bk0 implements fs {
             }
             return;
         }
-        t2 t2Var = (t2) view;
-        t2Var.t2 = true;
+        u2 u2Var = (u2) view;
+        u2Var.t2 = true;
         fj fjVar = (fj) E(i7);
         long B0 = fj.B0(fjVar.k);
         int i13 = fjVar.k.date;
         if (this.x) {
-            t2Var.s0 = true;
+            u2Var.s0 = true;
             long P1 = fjVar.P1();
             TLRPC.Message message = fjVar.k;
             TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
@@ -165,13 +165,13 @@ public final class l1 extends bk0 implements fs {
             z10 = true;
             i10 = i13;
         }
-        t2Var.d0(B0, fjVar, i10, z10, false);
-        t2Var.setDialogCellDelegate(new i1(this));
+        u2Var.d0(B0, fjVar, i10, z10, false);
+        u2Var.setDialogCellDelegate(new i1(this));
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View t2Var;
+        View u2Var;
         View view;
         if (i7 != 0) {
             i6 i6Var = this.s;
@@ -182,14 +182,14 @@ public final class l1 extends bk0 implements fs {
                 wzVar.setViewType(7);
                 view = wzVar;
             } else if (i7 != 2) {
-                t2Var = null;
+                u2Var = null;
             } else {
                 view = new k1(context, i6Var);
             }
-            t2Var = view;
+            u2Var = view;
         } else {
-            t2Var = new t2(null, this.c, true, this.r, this.s);
+            u2Var = new u2(null, this.c, true, this.r, this.s);
         }
-        return i5.c.q(t2Var, t2Var, -1, -2);
+        return i5.c.q(u2Var, u2Var, -1, -2);
     }
 }

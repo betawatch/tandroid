@@ -13,15 +13,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import bi.b8;
+import bi.a8;
+import bi.e8;
 import bi.f8;
 import bi.g2;
-import bi.g8;
+import bi.j6;
 import bi.k1;
-import bi.k6;
 import bi.m1;
-import bi.p6;
-import bi.r5;
+import bi.o6;
+import bi.q5;
 import bi.y3;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,7 +38,6 @@ import fi.x0;
 import fi.x3;
 import fi.z3;
 import hi.c8;
-import hi.e8;
 import hi.l8;
 import hi.o8;
 import hi.q8;
@@ -59,7 +58,6 @@ import jg.h1;
 import kg.d1;
 import ki.i3;
 import oi.e1;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.f3;
@@ -83,7 +81,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Components.eq0;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.l41;
@@ -93,16 +91,16 @@ import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ha0;
-import org.telegram.ui.ma0;
+import org.telegram.ui.ia0;
+import org.telegram.ui.na0;
 import org.telegram.ui.oa1;
-import org.telegram.ui.pa0;
+import org.telegram.ui.qa0;
 import org.telegram.ui.s01;
 import org.telegram.ui.ul0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements OnCompleteListener, Continuation, r1, m4, v10, pj0, OnFailureListener, u9.d, s01, CameraView.CameraViewDelegate, jh.i, oa1, w7, t10, ma0, qj0, h2.p, h2.o, oi.k0 {
+public final /* synthetic */ class g implements OnCompleteListener, Continuation, r1, m4, v10, pj0, OnFailureListener, u9.d, s01, CameraView.CameraViewDelegate, jh.i, oa1, w7, t10, na0, qj0, h2.p, h2.o, oi.k0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -115,12 +113,12 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
 
     @Override // di.m4
     public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
-        k6 k6Var = (k6) this.b;
+        j6 j6Var = (j6) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        eq0 eq0Var = k6Var.a;
-        k6Var.e.l.remove(savedStarGift);
-        k6Var.f(true);
-        int i7 = k6Var.b;
+        eq0 eq0Var = j6Var.a;
+        j6Var.e.l.remove(savedStarGift);
+        j6Var.f(true);
+        int i7 = j6Var.b;
         if (j3 == j10.i(i7).e()) {
             lc b02 = lc.b0(eq0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
@@ -201,17 +199,17 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
     
         if (r1 == null) goto L15;
      */
-    @Override // org.telegram.ui.ma0
+    @Override // org.telegram.ui.na0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
         d1 d1Var = (d1) this.b;
-        pa0 pa0Var = (pa0) this.c;
+        qa0 qa0Var = (qa0) this.c;
         d1Var.x = messageMedia.geo;
         String str = null;
         if (TextUtils.isEmpty(d1Var.y)) {
-            ha0 ha0Var = pa0Var.Q;
+            ia0 ia0Var = qa0Var.Q;
         }
     }
 
@@ -318,16 +316,16 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         Object obj2 = this.b;
         switch (i10) {
             case 6:
-                g8 g8Var = (g8) obj2;
-                f8 f8Var = (f8) obj;
-                l41 G = g8Var.e2.G(i7 - 1);
+                f8 f8Var = (f8) obj2;
+                e8 e8Var = (e8) obj;
+                l41 G = f8Var.e2.G(i7 - 1);
                 if (G != null) {
                     Object obj3 = G.H;
                     if (obj3 instanceof TL_stars.StarGift) {
                         TL_stars.StarGift starGift = (TL_stars.StarGift) obj3;
                         boolean z10 = G.s;
-                        if (!TextUtils.isEmpty(starGift.gift_address) && g8Var.d2 && !((org.telegram.messenger.h0) mp.u1(g8Var.a).A7.x.b).c) {
-                            alertDialog$Builder = new AlertDialog$Builder(0, g8Var.getContext(), g8Var.J0);
+                        if (!TextUtils.isEmpty(starGift.gift_address) && f8Var.d2 && !((org.telegram.messenger.h0) mp.u1(f8Var.a).A7.x.b).c) {
+                            alertDialog$Builder = new AlertDialog$Builder(0, f8Var.getContext(), f8Var.J0);
                             r42 = 0;
                             String M0 = gd.M0(2131749776, null);
                             u1 u1Var = alertDialog$Builder.a;
@@ -335,7 +333,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                             u1Var.U = gd.M0(2131749777, null);
                         } else if (!z10 || !(starGift instanceof TL_stars.TL_starGiftUnique)) {
                             if (!z10) {
-                                ArrayList arrayList2 = f8Var.b.l;
+                                ArrayList arrayList2 = e8Var.b.l;
                                 int size = arrayList2.size();
                                 int i11 = 0;
                                 while (true) {
@@ -350,8 +348,8 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                         savedStarGift = null;
                                     }
                                 }
-                                if (savedStarGift != null && savedStarGift.can_craft_at > 0 && savedStarGift.can_craft_at > ConnectionsManager.getInstance(g8Var.a).getCurrentTime()) {
-                                    alertDialog$Builder = new AlertDialog$Builder(g8Var.getContext());
+                                if (savedStarGift != null && savedStarGift.can_craft_at > 0 && savedStarGift.can_craft_at > ConnectionsManager.getInstance(f8Var.a).getCurrentTime()) {
+                                    alertDialog$Builder = new AlertDialog$Builder(f8Var.getContext());
                                     r42 = 0;
                                     String M02 = gd.M0(2131749739, null);
                                     u1 u1Var2 = alertDialog$Builder.a;
@@ -359,16 +357,16 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                     u1Var2.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749740, gd.x(savedStarGift.can_craft_at, true)));
                                 }
                             }
-                            g8Var.b2.a(starGift);
-                            g8Var.dismiss();
+                            f8Var.b2.a(starGift);
+                            f8Var.dismiss();
                             break;
                         } else {
                             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) G.H;
-                            u1 u1Var3 = new u1(3, g8Var.getContext(), null);
+                            u1 u1Var3 = new u1(3, f8Var.getContext(), null);
                             u1Var3.r(400L);
-                            long e10 = j10.i(g8Var.a).e();
+                            long e10 = j10.i(f8Var.a).e();
                             cg.b bVar = tL_starGiftUnique.resale_ton_only ? cg.b.b : cg.b.a;
-                            x8.x(g8Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new b8(g8Var, u1Var3, bVar, tL_starGiftUnique, e10));
+                            x8.x(f8Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new a8(f8Var, u1Var3, bVar, tL_starGiftUnique, e10));
                             break;
                         }
                         f3.m(r42, 2131747638, alertDialog$Builder, r42);
@@ -381,7 +379,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 Context context = (Context) obj;
                 ArrayList arrayList3 = l8Var.M;
                 a0.h hVar = l8Var.b;
-                e8 e8Var = l8Var.y;
+                hi.e8 e8Var2 = l8Var.y;
                 ArrayList arrayList4 = l8Var.c;
                 HashMap hashMap = l8Var.d;
                 q8 q8Var = l8Var.a0;
@@ -435,20 +433,20 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                     }
                                 }
                             }
-                        } else if (view instanceof m8) {
-                            m8 m8Var = (m8) view;
-                            m8Var.setChecked(!m8Var.d());
-                            z7Var.k = m8Var.d();
+                        } else if (view instanceof n8) {
+                            n8 n8Var = (n8) view;
+                            n8Var.setChecked(!n8Var.d());
+                            z7Var.k = n8Var.d();
                             int i16 = z7Var.c;
                             if (i16 != 0) {
                                 if (i16 != 1) {
                                     if (i16 == 2) {
-                                        q8Var.w1 = m8Var.d();
+                                        q8Var.w1 = n8Var.d();
                                         l8Var.h(true);
                                         break;
                                     }
                                 } else {
-                                    boolean d = m8Var.d();
+                                    boolean d = n8Var.d();
                                     q8Var.y1 = d;
                                     boolean z11 = q8Var.n1 instanceof TLRPC.TL_inputPeerChannel;
                                     if (d) {
@@ -464,7 +462,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                     break;
                                 }
                             } else {
-                                boolean d2 = m8Var.d();
+                                boolean d2 = n8Var.d();
                                 q8Var.x1 = d2;
                                 r10 = q8Var.I1 == 4 ? 1 : 0;
                                 if (!d2) {
@@ -490,7 +488,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                             arrayList4.clear();
                                             hashMap.clear();
                                             q8Var.I1 = z7Var.i;
-                                            e8Var.d.a();
+                                            e8Var2.d.a();
                                         } else {
                                             TLRPC.Chat chat = z7Var.h;
                                             if (chat != null) {
@@ -537,7 +535,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                                         l8Var.e(j3, P0.participants);
                                                     }
                                                     if (!TextUtils.isEmpty(l8Var.J)) {
-                                                        e8Var.setText("");
+                                                        e8Var2.setText("");
                                                         l8Var.J = null;
                                                         l8Var.h(false);
                                                     }
@@ -572,7 +570,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                                         }
                                                         hashSet.add(Long.valueOf(j10));
                                                         if (!TextUtils.isEmpty(l8Var.J)) {
-                                                            e8Var.setText("");
+                                                            e8Var2.setText("");
                                                             l8Var.J = null;
                                                             l8Var.h(false);
                                                         }
@@ -586,7 +584,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                         }
                                         l8Var.g(true);
                                         l8Var.f(true);
-                                        e8Var.M = true;
+                                        e8Var2.M = true;
                                         break;
                                     } else {
                                         if (q8Var.I1 == 4) {
@@ -653,19 +651,19 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                     break;
                 } catch (Throwable th2) {
                     org.telegram.messenger.g0.D3(uVar);
-                    a8.g(th2, true);
+                    org.telegram.messenger.a8.g(th2, true);
                     return;
                 }
             case 3:
-                r5 r5Var = (r5) this.b;
+                q5 q5Var = (q5) this.b;
                 x10 x10Var = (x10) this.c;
-                String obj = r5Var.getText().toString();
+                String obj = q5Var.getText().toString();
                 if (obj.length() > 0 && obj.length() <= 12) {
                     x10Var.a(obj);
                     u1Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.D3(r5Var);
+                    org.telegram.messenger.g0.D3(q5Var);
                     break;
                 }
                 break;
@@ -767,23 +765,23 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
 
     @Override // org.telegram.messenger.v10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        p6 p6Var = (p6) this.b;
+        o6 o6Var = (o6) this.b;
         hi.d dVar = (hi.d) this.c;
         View view = (View) obj2;
         long j3 = ((TL_stars.SavedStarGift) ((l41) obj).H).gift.id;
-        if (p6Var.m1 == j3) {
-            p6Var.m1 = 0L;
+        if (o6Var.m1 == j3) {
+            o6Var.m1 = 0L;
         } else {
-            p6Var.m1 = j3;
+            o6Var.m1 = j3;
         }
-        dVar.setEnabled(p6Var.m1 != 0);
+        dVar.setEnabled(o6Var.m1 != 0);
         if (view.getParent() instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view.getParent();
             for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
                 View childAt = viewGroup.getChildAt(i7);
                 if (childAt instanceof ul0) {
                     ul0 ul0Var = (ul0) childAt;
-                    ul0Var.b(p6Var.m1 == ul0Var.getGiftId(), true);
+                    ul0Var.b(o6Var.m1 == ul0Var.getGiftId(), true);
                 }
             }
         }
@@ -798,7 +796,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         kg.i iVar = nVar.n;
         nVar.y = document;
         iVar.setSticker(document);
-        ((m8) view).setValueSticker(document);
+        ((n8) view).setValueSticker(document);
         nVar.j0(true);
     }
 

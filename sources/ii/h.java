@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import bi.k1;
 import bi.l4;
 import bi.r3;
-import bi.t4;
+import bi.s4;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.g21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements r1 {
     public final /* synthetic */ int a = 0;
@@ -31,12 +31,12 @@ public final /* synthetic */ class h implements r1 {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ h(long j3, v1 v1Var, int i7, long j10, t4 t4Var) {
+    public /* synthetic */ h(long j3, v1 v1Var, int i7, long j10, s4 s4Var) {
         this.c = j3;
         this.e = v1Var;
         this.b = i7;
         this.d = j10;
-        this.f = t4Var;
+        this.f = s4Var;
     }
 
     public void a(String str, int[] iArr, boolean z10) {
@@ -73,11 +73,11 @@ public final /* synthetic */ class h implements r1 {
         switch (this.a) {
             case 0:
                 v1 v1Var = (v1) this.e;
-                t4 t4Var = (t4) this.f;
+                s4 s4Var = (s4) this.f;
                 h2 T = LaunchActivity.T();
                 if (T != null) {
                     TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                    j jVar = new j(T, this.c, twoStepVerificationActivity, v1Var, this.b, this.d, t4Var);
+                    j jVar = new j(T, this.c, twoStepVerificationActivity, v1Var, this.b, this.d, s4Var);
                     twoStepVerificationActivity.a0 = 1;
                     twoStepVerificationActivity.c0 = jVar;
                     twoStepVerificationActivity.x0(new b(T, twoStepVerificationActivity, 1));

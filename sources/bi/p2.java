@@ -20,7 +20,7 @@ import org.telegram.ui.Components.k80;
 import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class p2 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -258,7 +258,7 @@ public final class p2 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p2(Context context, s6 s6Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public p2(Context context, r6 r6Var, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.a = 1;
         LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
@@ -292,7 +292,7 @@ public final class p2 extends FrameLayout {
         textView2.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         ra.a(textView2);
         g10.addView(textView2, ma.t(-2, 27, 17, 32, 0, 32, 12));
-        textView2.setOnClickListener(s6Var);
+        textView2.setOnClickListener(r6Var);
     }
 
     private final void a(boolean z10, int i7, int i10, int i11, int i12) {

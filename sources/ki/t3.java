@@ -28,7 +28,7 @@ import org.telegram.ui.Components.si;
 import org.telegram.ui.bn;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class t3 extends ki implements fs {
     public int E;
@@ -178,7 +178,7 @@ public final class t3 extends ki implements fs {
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         l2 l2Var = this.n;
         if (i7 != ks.z1) {
-            if (i7 == ks.p4) {
+            if (i7 == ks.q4) {
                 l2Var.n.b(n6.w0(n6.h5, this.a), ks.j2);
                 return;
             }
@@ -266,7 +266,7 @@ public final class t3 extends ki implements fs {
     @Override // org.telegram.ui.Components.ki
     public final void p() {
         ks.f(this.G).n(this, ks.z1);
-        ks.e().n(this, ks.p4);
+        ks.e().n(this, ks.q4);
         org.telegram.ui.ActionBar.z t6 = this.b.V2.t();
         org.telegram.ui.ActionBar.r0 r0Var = this.L;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = r0Var.b;

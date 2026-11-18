@@ -4,7 +4,7 @@ import android.view.View;
 import java.io.Serializable;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h51 implements org.telegram.messenger.v10, org.telegram.messenger.w10 {
     public final /* synthetic */ StickersActivity a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class h51 implements org.telegram.messenger.v10, or
         boolean z10;
         StickersActivity stickersActivity = this.a;
         if (stickersActivity.x.isEmpty() && (l41Var.H instanceof TLRPC.TL_messages_stickerSet)) {
-            stickersActivity.s0((org.telegram.ui.Cells.g8) view);
+            stickersActivity.s0((org.telegram.ui.Cells.h8) view);
             z10 = true;
         } else {
             z10 = false;

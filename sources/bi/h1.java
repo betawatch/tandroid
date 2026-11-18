@@ -24,16 +24,17 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h1 extends Drawable {
     public NinePatchDrawable a;
     public NinePatchDrawable b;
     public final TextPaint c;
     public final ImageReceiver d;
-    public final org.telegram.ui.Components.b9 e;
+    public final b9 e;
     public final int f;
     public final int g;
     public final float h;
@@ -56,7 +57,7 @@ public final class h1 extends Drawable {
         this.c = textPaint;
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.d = imageReceiver;
-        this.e = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.e = new b9((org.telegram.ui.ActionBar.i6) null);
         int L = org.telegram.messenger.g0.L(10.66f);
         this.f = L * 2;
         this.g = org.telegram.messenger.g0.L(4.0f);
@@ -155,7 +156,7 @@ public final class h1 extends Drawable {
         boolean z10 = tLObject != null;
         this.l = z10;
         if (z10) {
-            org.telegram.ui.Components.b9 b9Var = this.e;
+            b9 b9Var = this.e;
             b9Var.l(tLObject);
             boolean z11 = tLObject instanceof TLRPC.User;
             ImageReceiver imageReceiver = this.d;

@@ -23,12 +23,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs, org.telegram.ui.Components.t30 {
-    public org.telegram.ui.Cells.m8 E;
+    public org.telegram.ui.Cells.n8 E;
     public or F;
-    public org.telegram.ui.Cells.m8 G;
+    public org.telegram.ui.Cells.n8 G;
     public org.telegram.messenger.uo H;
     public long I;
     public boolean J;
@@ -50,9 +50,9 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
     public boolean Z;
     public org.telegram.ui.ActionBar.d5 a;
     public org.telegram.messenger.fj a0;
-    public org.telegram.ui.Cells.k3 b;
-    public org.telegram.ui.Cells.k3 c;
-    public org.telegram.ui.Cells.k3 d;
+    public org.telegram.ui.Cells.l3 b;
+    public org.telegram.ui.Cells.l3 c;
+    public org.telegram.ui.Cells.l3 d;
     public org.telegram.ui.Components.q9 e;
     public TextView f;
     public TextView h;
@@ -61,7 +61,7 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
     public RadialProgressView s;
     public hi.m5 w;
     public AnimatorSet x;
-    public org.telegram.ui.Cells.m8 y;
+    public org.telegram.ui.Cells.n8 y;
 
     public qr(Bundle bundle) {
         super(bundle);
@@ -404,9 +404,9 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
         TextView textView4 = this.h;
         boolean z11 = org.telegram.messenger.gd.a0;
         frameLayout4.addView(textView4, c8.ma.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 94.0f, 49.66f, z11 ? 94.0f : 0.0f, 0.0f));
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.gd.M0(2131750678, null), false, false, -1, this.r);
-        this.b = k3Var;
-        k3Var.d.setImeOptions(5);
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.M0(2131750678, null), false, false, -1, this.r);
+        this.b = l3Var;
+        l3Var.d.setImeOptions(5);
         org.telegram.ui.ActionBar.u6.h(i10, this.b, i6Var);
         this.b.setDivider(true);
         this.b.d.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.kr
@@ -425,8 +425,8 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
                         }
                         qr qrVar = this.b;
                         qrVar.c.d.requestFocus();
-                        org.telegram.ui.Cells.i3 i3Var = qrVar.c.d;
-                        i3Var.setSelection(i3Var.length());
+                        org.telegram.ui.Cells.j3 j3Var = qrVar.c.d;
+                        j3Var.setSelection(j3Var.length());
                         return true;
                     case 1:
                         qr qrVar2 = this.b;
@@ -453,9 +453,9 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
         });
         this.b.d.setOnFocusChangeListener(new nr());
         this.b.setText(this.N);
-        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.gd.M0(2131748840, null), false, false, -1, this.r);
-        this.c = k3Var2;
-        k3Var2.d.setImeOptions(5);
+        org.telegram.ui.Cells.l3 l3Var2 = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.M0(2131748840, null), false, false, -1, this.r);
+        this.c = l3Var2;
+        l3Var2.d.setImeOptions(5);
         org.telegram.ui.ActionBar.u6.h(i10, this.c, i6Var);
         this.c.d.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.kr
             public final /* synthetic */ qr b;
@@ -473,8 +473,8 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
                         }
                         qr qrVar = this.b;
                         qrVar.c.d.requestFocus();
-                        org.telegram.ui.Cells.i3 i3Var = qrVar.c.d;
-                        i3Var.setSelection(i3Var.length());
+                        org.telegram.ui.Cells.j3 j3Var = qrVar.c.d;
+                        j3Var.setSelection(j3Var.length());
                         return true;
                     case 1:
                         qr qrVar2 = this.b;
@@ -500,9 +500,9 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
             }
         });
         this.c.setText(this.O);
-        org.telegram.ui.Cells.k3 k3Var3 = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.gd.M0(2131754393, null), true, true, ((org.telegram.messenger.j0) getMessagesController().A7.D.b).c, this.r);
-        this.d = k3Var3;
-        org.telegram.ui.ActionBar.u6.G(k3Var3.d, org.telegram.ui.ActionBar.n6.Xc, i6Var);
+        org.telegram.ui.Cells.l3 l3Var3 = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.M0(2131754393, null), true, true, ((org.telegram.messenger.j0) getMessagesController().A7.D.b).c, this.r);
+        this.d = l3Var3;
+        org.telegram.ui.ActionBar.u6.G(l3Var3.d, org.telegram.ui.ActionBar.n6.Xc, i6Var);
         int i13 = 6;
         this.d.d.setImeOptions(6);
         org.telegram.ui.ActionBar.u6.h(i10, this.d, i6Var);
@@ -523,8 +523,8 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
                         }
                         qr qrVar = this.b;
                         qrVar.c.d.requestFocus();
-                        org.telegram.ui.Cells.i3 i3Var = qrVar.c.d;
-                        i3Var.setSelection(i3Var.length());
+                        org.telegram.ui.Cells.j3 j3Var = qrVar.c.d;
+                        j3Var.setSelection(j3Var.length());
                         return true;
                     case 1:
                         qr qrVar2 = this.b;
@@ -551,14 +551,14 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
         });
         if (!this.J) {
             final TLRPC.User c22 = getMessagesController().c2(Long.valueOf(this.I));
-            org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(context, i6Var);
-            this.y = m8Var;
-            m8Var.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.a0(null, null, 2131744163, c22.first_name), true);
+            org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context, i6Var);
+            this.y = n8Var;
+            n8Var.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.a0(null, null, 2131744163, c22.first_name), true);
             this.y.setBackground(org.telegram.ui.ActionBar.n6.M0(i6Var, true));
-            org.telegram.ui.Cells.m8 m8Var2 = this.y;
+            org.telegram.ui.Cells.n8 n8Var2 = this.y;
             int i15 = org.telegram.ui.ActionBar.n6.v6;
             int i16 = org.telegram.ui.ActionBar.n6.u6;
-            m8Var2.g(i15, i16);
+            n8Var2.g(i15, i16);
             final org.telegram.ui.Components.mh0 mh0Var = new org.telegram.ui.Components.mh0(R.raw.photo_suggest_icon, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
             this.y.e.setTranslationX(-org.telegram.messenger.g0.L(8.0f));
             this.y.e.setAnimation(mh0Var);
@@ -667,9 +667,9 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
                     }
                 }
             });
-            org.telegram.ui.Cells.m8 m8Var3 = new org.telegram.ui.Cells.m8(context, i6Var);
-            this.E = m8Var3;
-            m8Var3.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.a0(null, null, 2131743442, c22.first_name), false);
+            org.telegram.ui.Cells.n8 n8Var3 = new org.telegram.ui.Cells.n8(context, i6Var);
+            this.E = n8Var3;
+            n8Var3.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.a0(null, null, 2131743442, c22.first_name), false);
             this.E.setBackground(org.telegram.ui.ActionBar.n6.M0(i6Var, true));
             this.E.g(i15, i16);
             final org.telegram.ui.Components.mh0 mh0Var2 = new org.telegram.ui.Components.mh0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
@@ -792,9 +792,9 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
             this.F.setBackground(org.telegram.ui.ActionBar.n6.M0(i6Var, true));
             this.F.g(i15, i16);
             this.F.setOnClickListener(new y(this, context, c22, i11));
-            org.telegram.ui.Cells.m8 m8Var4 = new org.telegram.ui.Cells.m8(context, i6Var);
-            this.G = m8Var4;
-            m8Var4.o(R.drawable.menu_birthday, org.telegram.messenger.gd.a0(null, null, 2131743441, new Object[0]), false);
+            org.telegram.ui.Cells.n8 n8Var4 = new org.telegram.ui.Cells.n8(context, i6Var);
+            this.G = n8Var4;
+            n8Var4.o(R.drawable.menu_birthday, org.telegram.messenger.gd.a0(null, null, 2131743441, new Object[0]), false);
             this.G.setBackground(org.telegram.ui.ActionBar.n6.M0(i6Var, true));
             this.G.g(i15, i16);
             this.G.setNeedDivider(true);
@@ -814,7 +814,7 @@ public final class qr extends org.telegram.ui.ActionBar.h2 implements org.telegr
         this.X = e51Var;
         e51Var.r1();
         this.X.setSectionsDrawBackground(true);
-        this.X.setOnScrollListener(new bi.e6(i13, this, frameLayout));
+        this.X.setOnScrollListener(new bi.d6(i13, this, frameLayout));
         frameLayout.addView(this.X, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
         if (this.J && this.L) {
             this.Y = true;

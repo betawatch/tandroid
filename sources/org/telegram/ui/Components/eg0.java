@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class eg0 extends up {
     public final ArrayList c = new ArrayList();
@@ -134,7 +134,7 @@ public final class eg0 extends up {
                 cg0Var.c.q((q51) arrayList5.get(i11), fcVar, null, (org.telegram.messenger.fc) arrayList3.get(i11), (org.telegram.messenger.fc) arrayList4.get(i11), (fcVar2 == null || !(fcVar2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), "avatar_" + fg0Var.F0);
                 if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
                 }
-                cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.b5(this);
+                cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
                 cg0Var.c.getImageReceiver().l1 = (byte) 2;
                 ag0 ag0Var2 = cg0Var.c;
                 int i12 = fg0Var.n1;
@@ -146,7 +146,7 @@ public final class eg0 extends up {
             z10 = false;
             if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
             }
-            cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.b5(this);
+            cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
             cg0Var.c.getImageReceiver().l1 = (byte) 2;
             ag0 ag0Var22 = cg0Var.c;
             int i122 = fg0Var.n1;
@@ -184,7 +184,7 @@ public final class eg0 extends up {
                         fg0Var.postInvalidateOnAnimation();
                     }
                 }
-                cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.b5(this);
+                cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
                 cg0Var.c.getImageReceiver().l1 = (byte) 2;
                 ag0 ag0Var222 = cg0Var.c;
                 int i1222 = fg0Var.n1;
@@ -228,7 +228,7 @@ public final class eg0 extends up {
                     z10 = z11;
                     if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
                     }
-                    cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.b5(this);
+                    cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
                     cg0Var.c.getImageReceiver().l1 = (byte) 2;
                     ag0 ag0Var2222 = cg0Var.c;
                     int i12222 = fg0Var.n1;
@@ -255,7 +255,7 @@ public final class eg0 extends up {
             z10 = z11;
             if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
             }
-            cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.b5(this);
+            cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
             cg0Var.c.getImageReceiver().l1 = (byte) 2;
             ag0 ag0Var22222 = cg0Var.c;
             int i122222 = fg0Var.n1;
@@ -269,7 +269,7 @@ public final class eg0 extends up {
         z10 = false;
         if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
         }
-        cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.b5(this);
+        cg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
         cg0Var.c.getImageReceiver().l1 = (byte) 2;
         ag0 ag0Var222222 = cg0Var.c;
         int i1222222 = fg0Var.n1;

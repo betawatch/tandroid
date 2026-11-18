@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class k extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public org.telegram.ui.Components.ck0 a;
@@ -118,11 +118,11 @@ public final class k extends org.telegram.ui.ActionBar.h2 implements org.telegra
                     if (R < arrayList.size()) {
                         int i12 = ((i) arrayList.get(R)).d;
                         if (i12 == 1) {
-                            ((org.telegram.ui.Cells.r8) childAt).setChecked(this.d.keep_archived_unmuted);
+                            ((org.telegram.ui.Cells.s8) childAt).setChecked(this.d.keep_archived_unmuted);
                         } else if (i12 == 4) {
-                            ((org.telegram.ui.Cells.r8) childAt).setChecked(this.d.keep_archived_folders);
+                            ((org.telegram.ui.Cells.s8) childAt).setChecked(this.d.keep_archived_folders);
                         } else if (i12 == 7) {
-                            ((org.telegram.ui.Cells.r8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
+                            ((org.telegram.ui.Cells.s8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
                         }
                     }
                 }

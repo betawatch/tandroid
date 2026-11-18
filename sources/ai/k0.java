@@ -52,7 +52,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.v9;
 import org.telegram.ui.Components.bb0;
 import org.telegram.ui.Components.dc0;
 import org.telegram.ui.Components.e9;
@@ -68,6 +68,7 @@ import org.telegram.ui.Components.wk0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.a5;
+import org.telegram.ui.aa0;
 import org.telegram.ui.as;
 import org.telegram.ui.b11;
 import org.telegram.ui.b20;
@@ -85,9 +86,8 @@ import org.telegram.ui.v50;
 import org.telegram.ui.w01;
 import org.telegram.ui.wp0;
 import org.telegram.ui.x01;
-import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class k0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -159,12 +159,12 @@ public final class k0 extends FrameLayout {
             case 13:
                 RectF rectF = (RectF) this.b;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) this.c;
-                int measuredWidth = x0Var.getMeasuredWidth();
-                int i11 = x0Var.e;
-                float x10 = x0Var.getX();
-                float f13 = x0Var.d;
-                i6 i6Var2 = x0Var.c;
+                org.telegram.ui.Cells.y0 y0Var = (org.telegram.ui.Cells.y0) this.c;
+                int measuredWidth = y0Var.getMeasuredWidth();
+                int i11 = y0Var.e;
+                float x10 = y0Var.getX();
+                float f13 = y0Var.d;
+                i6 i6Var2 = y0Var.c;
                 if (i6Var2 != null) {
                     i6Var2.e(x10, f13, measuredWidth, i11);
                 } else {
@@ -407,7 +407,7 @@ public final class k0 extends FrameLayout {
                 return zaVar != null ? zaVar.b(motionEvent, new ga(this, 0)) : super.dispatchTouchEvent(motionEvent);
             case 10:
                 g4 g4Var = (g4) this.c;
-                u9 n10 = g4Var.R0.n(getContext());
+                v9 n10 = g4Var.R0.n(getContext());
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
                 LinearLayout linearLayout = (LinearLayout) this.b;
                 obtain.offsetLocation(-linearLayout.getX(), -linearLayout.getY());
@@ -884,9 +884,9 @@ public final class k0 extends FrameLayout {
         switch (this.a) {
             case 9:
                 super.onLayout(z10, i7, i10, i11, i12);
-                z90 z90Var = (z90) ((r7) this.c).e;
-                if (z90Var != null) {
-                    z90Var.run();
+                aa0 aa0Var = (aa0) ((r7) this.c).e;
+                if (aa0Var != null) {
+                    aa0Var.run();
                     break;
                 }
                 break;
@@ -1364,10 +1364,10 @@ public final class k0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(org.telegram.ui.Cells.x0 x0Var, Context context) {
+    public k0(org.telegram.ui.Cells.y0 y0Var, Context context) {
         super(context);
         this.a = 13;
-        this.c = x0Var;
+        this.c = y0Var;
         this.b = new RectF();
     }
 

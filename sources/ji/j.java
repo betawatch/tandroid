@@ -74,8 +74,9 @@ import org.telegram.messenger.xs;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Cells.h4;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.d2;
+import org.telegram.ui.Cells.i4;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.f61;
@@ -100,14 +101,14 @@ import org.telegram.ui.i8;
 import org.telegram.ui.j4;
 import org.telegram.ui.jx0;
 import org.telegram.ui.kx;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.telegram.ui.r6;
 import org.telegram.ui.tr0;
 import org.telegram.ui.zt;
 import org.xml.sax.Attributes;
 import q4.t;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class j implements a2, c4.m, a0, Continuation, com.google.android.gms.common.api.internal.q, d1, xm0, lr, oo, xa, h7, rj0, d61, h2.d, q5.b, te.b {
     public final /* synthetic */ int a;
@@ -669,7 +670,7 @@ public final class j implements a2, c4.m, a0, Continuation, com.google.android.g
         Rect rect = (Rect) this.b;
         kx kxVar = (kx) this.c;
         int i10 = 0;
-        if (kxVar.getParentActivity() != null && (view instanceof h4)) {
+        if (kxVar.getParentActivity() != null && (view instanceof i4)) {
             ((ImageView) view.getTag(R.id.object_tag)).getHitRect(rect);
             if (!rect.contains((int) f10, (int) f11)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kxVar.getParentActivity());
@@ -702,7 +703,7 @@ public final class j implements a2, c4.m, a0, Continuation, com.google.android.g
 
     @Override // fd.a
     public Object get() {
-        return new p5.e((Context) ((e.a) this.b).a, (md0) ((of) this.c).get());
+        return new p5.e((Context) ((e.a) this.b).a, (nd0) ((of) this.c).get());
     }
 
     @Override // org.telegram.ui.Components.xm0
@@ -738,41 +739,41 @@ public final class j implements a2, c4.m, a0, Continuation, com.google.android.g
             auVar.a2.e();
             ei.c cVar = auVar.c2;
             ow0[] ow0VarArr = auVar.X1;
-            org.telegram.ui.Cells.c2[] c2VarArr = auVar.Y1;
-            org.telegram.ui.Cells.c2 c2Var = c2VarArr[0];
-            if (c2Var != null) {
+            d2[] d2VarArr = auVar.Y1;
+            d2 d2Var = d2VarArr[0];
+            if (d2Var != null) {
                 ow0 ow0Var = ow0VarArr[0];
                 boolean z11 = cVar.m;
                 ow0Var.c = z11;
-                c2Var.c(z11, true);
+                d2Var.c(z11, true);
             }
-            org.telegram.ui.Cells.c2 c2Var2 = c2VarArr[1];
-            if (c2Var2 != null) {
+            d2 d2Var2 = d2VarArr[1];
+            if (d2Var2 != null) {
                 ow0 ow0Var2 = ow0VarArr[1];
                 boolean z12 = cVar.n;
                 ow0Var2.c = z12;
-                c2Var2.c(z12, true);
+                d2Var2.c(z12, true);
             }
-            org.telegram.ui.Cells.c2 c2Var3 = c2VarArr[2];
-            if (c2Var3 != null) {
+            d2 d2Var3 = d2VarArr[2];
+            if (d2Var3 != null) {
                 ow0 ow0Var3 = ow0VarArr[2];
                 boolean z13 = cVar.o;
                 ow0Var3.c = z13;
-                c2Var3.c(z13, true);
+                d2Var3.c(z13, true);
             }
-            org.telegram.ui.Cells.c2 c2Var4 = c2VarArr[3];
-            if (c2Var4 != null) {
+            d2 d2Var4 = d2VarArr[3];
+            if (d2Var4 != null) {
                 ow0 ow0Var4 = ow0VarArr[3];
                 boolean z14 = cVar.p;
                 ow0Var4.c = z14;
-                c2Var4.c(z14, true);
+                d2Var4.c(z14, true);
             }
-            org.telegram.ui.Cells.c2 c2Var5 = c2VarArr[4];
-            if (c2Var5 != null) {
+            d2 d2Var5 = d2VarArr[4];
+            if (d2Var5 != null) {
                 ow0 ow0Var5 = ow0VarArr[4];
                 boolean z15 = cVar.q;
                 ow0Var5.c = z15;
-                c2Var5.c(z15, true);
+                d2Var5.c(z15, true);
             }
             auVar.W1.a(ztVar.d(), true);
             ztVar.c(true);
@@ -876,7 +877,7 @@ public final class j implements a2, c4.m, a0, Continuation, com.google.android.g
 
     @Override // oi.d1
     public void r1(e1 e1Var, int i7, int i10) {
-        i9 P0;
+        j9 P0;
         g0 g0Var = (g0) this.b;
         if (((h0) this.c).d || i7 == i10 || (P0 = g0Var.P0()) == null) {
             return;

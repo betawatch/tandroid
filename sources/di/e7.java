@@ -1,14 +1,14 @@
 package di;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bi.c8 b;
+    public final /* synthetic */ bi.b8 b;
 
-    public /* synthetic */ e7(bi.c8 c8Var, int i7) {
+    public /* synthetic */ e7(bi.b8 b8Var, int i7) {
         this.a = i7;
-        this.b = c8Var;
+        this.b = b8Var;
     }
 
     @Override // java.lang.Runnable

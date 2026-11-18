@@ -41,14 +41,14 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class r4 extends x implements org.telegram.ui.ActionBar.c6, h9, i0 {
+public final class r4 extends x implements org.telegram.ui.ActionBar.c6, i9, i0 {
     public static Paint n0;
     public final ArrayList E;
     public final ArrayList F;
@@ -434,7 +434,7 @@ public final class r4 extends x implements org.telegram.ui.ActionBar.c6, h9, i0 
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         this.w.e(arrayList);
     }
@@ -539,7 +539,7 @@ public final class r4 extends x implements org.telegram.ui.ActionBar.c6, h9, i0 
         ui.f fVar;
         ImageView imageView;
         ImageView imageView2;
-        i9 textSelectionHelper;
+        j9 textSelectionHelper;
         float f10;
         float f11;
         float f12;

@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qq0 extends org.telegram.ui.Components.bu0 {
     public final Paint k0;
@@ -73,18 +73,18 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer = this.o0;
-        org.telegram.ui.Cells.u9 n10 = photoViewer.R.n(getContext());
-        org.telegram.ui.Cells.v9 v9Var = n10.r;
+        org.telegram.ui.Cells.v9 n10 = photoViewer.R.n(getContext());
+        org.telegram.ui.Cells.w9 w9Var = n10.r;
         if (motionEvent.getAction() == 0) {
             n10.h = motionEvent.getX();
             n10.n = motionEvent.getY();
-            v9Var.e = v9Var.x();
-        } else if (v9Var.e && Math.abs(motionEvent.getX() - n10.h) < org.telegram.messenger.g0.e && Math.abs(motionEvent.getY() - n10.n) < org.telegram.messenger.g0.e && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1)) {
+            w9Var.e = w9Var.x();
+        } else if (w9Var.e && Math.abs(motionEvent.getX() - n10.h) < org.telegram.messenger.g0.e && Math.abs(motionEvent.getY() - n10.n) < org.telegram.messenger.g0.e && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1)) {
             motionEvent.getX();
             motionEvent.getY();
-            org.telegram.ui.Cells.v9 v9Var2 = n10.r;
-            if (!v9Var2.i && v9Var2.e) {
-                v9Var2.f(false);
+            org.telegram.ui.Cells.w9 w9Var2 = n10.r;
+            if (!w9Var2.i && w9Var2.e) {
+                w9Var2.f(false);
             }
         }
         if (!photoViewer.R.x()) {

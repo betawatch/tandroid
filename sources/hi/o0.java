@@ -21,9 +21,9 @@ import org.telegram.ui.Components.qd;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.af;
 import org.telegram.ui.bc1;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -79,15 +79,15 @@ public final /* synthetic */ class o0 implements View.OnClickListener {
             case 7:
                 jg.c2 c2Var = (jg.c2) obj;
                 LongSparseArray longSparseArray = c2Var.n;
-                org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view.getParent();
-                TLRPC.StickerSetCovered stickerSet = u3Var.getStickerSet();
+                org.telegram.ui.Cells.v3 v3Var = (org.telegram.ui.Cells.v3) view.getParent();
+                TLRPC.StickerSetCovered stickerSet = v3Var.getStickerSet();
                 if (stickerSet != null && c2Var.h.indexOfKey(stickerSet.set.id) < 0 && longSparseArray.indexOfKey(stickerSet.set.id) < 0) {
-                    if (!u3Var.r) {
-                        c2Var.F(stickerSet, u3Var);
+                    if (!v3Var.r) {
+                        c2Var.F(stickerSet, v3Var);
                         break;
                     } else {
                         longSparseArray.put(stickerSet.set.id, stickerSet);
-                        c2Var.e.a.h(u3Var.getStickerSet());
+                        c2Var.e.a.h(v3Var.getStickerSet());
                         break;
                     }
                 }
@@ -175,9 +175,9 @@ public final /* synthetic */ class o0 implements View.OnClickListener {
             case 18:
                 oi.o oVar = (oi.o) obj;
                 oVar.M(true, 0, 0, 0L, false);
-                eg0 eg0Var = oVar.P;
-                if (eg0Var != null) {
-                    eg0Var.h(true);
+                fg0 fg0Var = oVar.P;
+                if (fg0Var != null) {
+                    fg0Var.h(true);
                     oVar.P = null;
                     break;
                 }

@@ -6,9 +6,9 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class v91 extends org.telegram.ui.Cells.t2 {
+public final class v91 extends org.telegram.ui.Cells.u2 {
     public boolean b5;
     public int c5;
     public TLRPC.TL_forumTopic d5;
@@ -35,7 +35,7 @@ public final class v91 extends org.telegram.ui.Cells.t2 {
         this.o1 = true;
     }
 
-    @Override // org.telegram.ui.Cells.t2
+    @Override // org.telegram.ui.Cells.u2
     public final boolean K() {
         return this.i5;
     }
@@ -77,7 +77,7 @@ public final class v91 extends org.telegram.ui.Cells.t2 {
         this.l5.start();
     }
 
-    @Override // org.telegram.ui.Cells.t2, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Cells.u2, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.g5 = true;
@@ -87,7 +87,7 @@ public final class v91 extends org.telegram.ui.Cells.t2 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.t2, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Cells.u2, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.g5 = false;
@@ -97,7 +97,7 @@ public final class v91 extends org.telegram.ui.Cells.t2 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.t2, android.view.View
+    @Override // org.telegram.ui.Cells.u2, android.view.View
     public final void onDraw(Canvas canvas) {
         org.telegram.ui.Components.xg0 xg0Var;
         hi.z2 z2Var;
@@ -224,7 +224,7 @@ public final class v91 extends org.telegram.ui.Cells.t2 {
         x();
     }
 
-    @Override // org.telegram.ui.Cells.t2, org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.Cells.u2, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         super.updateColors();
         try {
@@ -236,7 +236,7 @@ public final class v91 extends org.telegram.ui.Cells.t2 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.t2
+    @Override // org.telegram.ui.Cells.u2
     public final void x() {
         super.x();
         n0();

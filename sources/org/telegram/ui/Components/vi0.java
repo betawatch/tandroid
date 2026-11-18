@@ -32,10 +32,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class vi0 extends FrameLayout implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.c6 {
-    public static final org.telegram.ui.Cells.g1 m1 = new org.telegram.ui.Cells.g1(Float.class, "transitionProgress", 2);
+    public static final org.telegram.ui.Cells.h1 m1 = new org.telegram.ui.Cells.h1(Float.class, "transitionProgress", 2);
     public final ti0 A0;
     public boolean B0;
     public float C0;
@@ -350,7 +350,7 @@ public class vi0 extends FrameLayout implements org.telegram.messenger.fs, org.t
             r(false);
             return;
         }
-        if (i7 != org.telegram.messenger.ks.k4) {
+        if (i7 != org.telegram.messenger.ks.l4) {
             if (i7 == org.telegram.messenger.ks.w3) {
                 p(this.I, null, true);
             }
@@ -1426,7 +1426,7 @@ public class vi0 extends FrameLayout implements org.telegram.messenger.fs, org.t
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
         org.telegram.messenger.ks.f(this.K).c(this, org.telegram.messenger.ks.T);
         if (this.N0 == 5) {
             org.telegram.messenger.ks.f(this.K).c(this, org.telegram.messenger.ks.w3);
@@ -1436,7 +1436,7 @@ public class vi0 extends FrameLayout implements org.telegram.messenger.fs, org.t
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         org.telegram.messenger.ks.f(this.K).n(this, org.telegram.messenger.ks.T);
         if (this.N0 == 5) {
             org.telegram.messenger.ks.f(this.K).n(this, org.telegram.messenger.ks.w3);
@@ -1653,12 +1653,12 @@ public class vi0 extends FrameLayout implements org.telegram.messenger.fs, org.t
         setAlpha(1.0f);
         this.M0.d();
         boolean j3 = org.telegram.messenger.bz.j();
-        org.telegram.ui.Cells.g1 g1Var = m1;
+        org.telegram.ui.Cells.h1 h1Var = m1;
         if (j3) {
-            duration = ObjectAnimator.ofFloat(this, g1Var, 0.0f, 1.0f).setDuration(250L);
+            duration = ObjectAnimator.ofFloat(this, h1Var, 0.0f, 1.0f).setDuration(250L);
             duration.setInterpolator(new OvershootInterpolator(0.5f));
         } else {
-            duration = ObjectAnimator.ofFloat(this, g1Var, 0.0f, 1.0f).setDuration(250L);
+            duration = ObjectAnimator.ofFloat(this, h1Var, 0.0f, 1.0f).setDuration(250L);
             duration.setInterpolator(new OvershootInterpolator(0.5f));
         }
         duration.addListener(new ii0(this, 0));

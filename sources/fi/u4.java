@@ -3,9 +3,9 @@ package fi;
 import android.content.Context;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class u4 extends org.telegram.ui.Cells.m6 {
+public final class u4 extends org.telegram.ui.Cells.n6 {
     public final /* synthetic */ w4 M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class u4 extends org.telegram.ui.Cells.m6 {
         this.M = w4Var;
     }
 
-    @Override // org.telegram.ui.Cells.m6
+    @Override // org.telegram.ui.Cells.n6
     public final void b(long j3) {
         org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
         if (Q == null) {

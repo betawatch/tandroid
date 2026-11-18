@@ -10,17 +10,17 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.d2;
-import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Cells.y6;
-import org.telegram.ui.Cells.z8;
+import org.telegram.ui.Cells.a9;
+import org.telegram.ui.Cells.e2;
+import org.telegram.ui.Cells.y3;
+import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.Wallet.na;
 import org.telegram.ui.g00;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements y10 {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class y implements y10 {
                 return gd.G(((Integer) obj).intValue(), "Minutes", new Object[0]);
             case 7:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof z8) || (view instanceof y6) || (view instanceof g00) || (view instanceof x3) || (view instanceof d2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof a9) || (view instanceof z6) || (view instanceof g00) || (view instanceof y3) || (view instanceof e2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 8:
                 return Boolean.valueOf(z41.K(((Integer) obj).intValue()));
             case 9:

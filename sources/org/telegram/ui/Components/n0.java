@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class n0 implements View.OnClickListener {
             case 1:
                 AtomicBoolean atomicBoolean = (AtomicBoolean) obj;
                 atomicBoolean.set(!atomicBoolean.get());
-                ((org.telegram.ui.Cells.c2) view).c(atomicBoolean.get(), true);
+                ((org.telegram.ui.Cells.d2) view).c(atomicBoolean.get(), true);
                 break;
             case 2:
                 ((y8) obj).k0();
@@ -185,20 +185,20 @@ public final /* synthetic */ class n0 implements View.OnClickListener {
             case 15:
                 my myVar = (my) obj;
                 myVar.getClass();
-                org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view.getParent();
-                TLRPC.StickerSetCovered stickerSet = u3Var.getStickerSet();
+                org.telegram.ui.Cells.v3 v3Var = (org.telegram.ui.Cells.v3) view.getParent();
+                TLRPC.StickerSetCovered stickerSet = v3Var.getStickerSet();
                 ry ryVar2 = myVar.R;
                 LongSparseArray longSparseArray = ryVar2.z1;
                 LongSparseArray longSparseArray2 = ryVar2.A1;
                 if (longSparseArray.indexOfKey(stickerSet.set.id) < 0 && longSparseArray2.indexOfKey(stickerSet.set.id) < 0) {
-                    if (u3Var.r) {
+                    if (v3Var.r) {
                         longSparseArray2.put(stickerSet.set.id, stickerSet);
-                        ryVar2.u1.h(u3Var.getStickerSet());
+                        ryVar2.u1.h(v3Var.getStickerSet());
                         break;
                     } else {
-                        u3Var.b(true, true);
+                        v3Var.b(true, true);
                         ryVar2.z1.put(stickerSet.set.id, stickerSet);
-                        ryVar2.u1.r(u3Var.getStickerSet());
+                        ryVar2.u1.r(v3Var.getStickerSet());
                         break;
                     }
                 }
@@ -429,7 +429,7 @@ public final /* synthetic */ class n0 implements View.OnClickListener {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(k1Var.e, z12 ? 1.0f : 0.0f);
                 k1Var.f = ofFloat;
                 ofFloat.addUpdateListener(new fi.d4(k1Var, i12));
-                k1Var.f.addListener(new bi.e7(15, k1Var, z12));
+                k1Var.f.addListener(new bi.d7(15, k1Var, z12));
                 k1Var.f.setDuration(320L);
                 k1Var.f.setInterpolator(lr.h);
                 k1Var.f.start();

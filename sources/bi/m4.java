@@ -12,7 +12,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.gf;
 import org.telegram.ui.Components.kg;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -53,13 +53,13 @@ public final /* synthetic */ class m4 implements Runnable {
                         tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift;
                         z10 = this.c;
                         j3 = this.b;
-                        if ((tL_starGiftUnique == null && v4.m(tL_starGiftUnique) == z10 && (!z10 || j3 == 0 || tL_starGiftUnique.getResellAmount(cg.b.b).b == j3)) || (i7 = this.e + 1) >= 8) {
+                        if ((tL_starGiftUnique == null && u4.m(tL_starGiftUnique) == z10 && (!z10 || j3 == 0 || tL_starGiftUnique.getResellAmount(cg.b.b).b == j3)) || (i7 = this.e + 1) >= 8) {
                             if (tL_starGiftUnique != null) {
                                 org.telegram.ui.Wallet.u0.D(i10).B().i(tL_starGiftUnique);
                                 di.x8.y(i10, false).a0(tL_starGiftUnique);
-                                ArrayList arrayList = h8.U;
+                                ArrayList arrayList = g8.U;
                                 if (!TextUtils.isEmpty(tL_starGiftUnique.slug)) {
-                                    boolean m10 = v4.m(tL_starGiftUnique);
+                                    boolean m10 = u4.m(tL_starGiftUnique);
                                     ArrayList arrayList2 = new ArrayList(arrayList);
                                     int size = arrayList2.size();
                                     int i11 = 0;
@@ -67,27 +67,27 @@ public final /* synthetic */ class m4 implements Runnable {
                                         Object obj = arrayList2.get(i11);
                                         i11++;
                                         WeakReference weakReference = (WeakReference) obj;
-                                        v7 v7Var = (v7) weakReference.get();
-                                        if (v7Var == null) {
+                                        u7 u7Var = (u7) weakReference.get();
+                                        if (u7Var == null) {
                                             arrayList.remove(weakReference);
                                         } else {
-                                            ArrayList arrayList3 = v7Var.d;
-                                            if (v7Var.a == i10 && v7Var.b == tL_starGiftUnique.gift_id) {
+                                            ArrayList arrayList3 = u7Var.d;
+                                            if (u7Var.a == i10 && u7Var.b == tL_starGiftUnique.gift_id) {
                                                 int i12 = 0;
                                                 while (true) {
                                                     if (i12 < arrayList3.size()) {
                                                         TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) arrayList3.get(i12);
                                                         if (!tL_starGiftUnique.slug.equals(tL_starGiftUnique2.slug)) {
                                                             i12++;
-                                                        } else if (v4.m(tL_starGiftUnique2)) {
+                                                        } else if (u4.m(tL_starGiftUnique2)) {
                                                             if (m10) {
                                                                 arrayList3.set(i12, tL_starGiftUnique);
-                                                                x10 x10Var = v7Var.c;
+                                                                x10 x10Var = u7Var.c;
                                                                 if (x10Var != null) {
                                                                     x10Var.a(Boolean.FALSE);
                                                                 }
                                                             } else {
-                                                                v7Var.n(tL_starGiftUnique2);
+                                                                u7Var.n(tL_starGiftUnique2);
                                                             }
                                                         }
                                                     }
@@ -99,7 +99,7 @@ public final /* synthetic */ class m4 implements Runnable {
                                 }
                             }
                         } else {
-                            org.telegram.messenger.g0.h3(new k4(i10, i7, j3, str, z10), v4.a[i7]);
+                            org.telegram.messenger.g0.h3(new k4(i10, i7, j3, str, z10), u4.a[i7]);
                             break;
                         }
                     }
@@ -109,7 +109,7 @@ public final /* synthetic */ class m4 implements Runnable {
                 j3 = this.b;
                 if (tL_starGiftUnique == null) {
                 }
-                org.telegram.messenger.g0.h3(new k4(i10, i7, j3, str, z10), v4.a[i7]);
+                org.telegram.messenger.g0.h3(new k4(i10, i7, j3, str, z10), u4.a[i7]);
                 break;
             case 1:
                 ((tr) this.f).Q0(this.d, this.e, this.b, (ArrayList) this.h, this.c);

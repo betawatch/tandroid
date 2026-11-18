@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.w81;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class z11 extends FrameLayout implements org.telegram.messenger.fs, te.b, org.telegram.ui.ActionBar.c6 {
     public static final /* synthetic */ int m0 = 0;
@@ -1451,7 +1451,7 @@ public final class z11 extends FrameLayout implements org.telegram.messenger.fs,
         }
         this.g0 = z10;
         int i7 = org.telegram.messenger.ks.r;
-        int i10 = org.telegram.messenger.ks.s5;
+        int i10 = org.telegram.messenger.ks.t5;
         long j3 = this.f;
         int i11 = this.e;
         if (!z10) {
@@ -1522,7 +1522,7 @@ public final class z11 extends FrameLayout implements org.telegram.messenger.fs,
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = org.telegram.messenger.ks.s5;
+        int i11 = org.telegram.messenger.ks.t5;
         long j3 = this.f;
         if (i7 == i11) {
             if (((Long) objArr[0]).longValue() != (-j3)) {
@@ -1843,7 +1843,7 @@ public final class z11 extends FrameLayout implements org.telegram.messenger.fs,
             final int currentAccount = bnVar.getCurrentAccount();
             final org.telegram.ui.ActionBar.i6 resourceProvider = bnVar.getResourceProvider();
             final long j13 = z11Var.f;
-            bi.i4 i4Var = new bi.i4(J, currentAccount, j13, j12, bnVar, resourceProvider);
+            bi.h4 h4Var = new bi.h4(J, currentAccount, j13, j12, bnVar, resourceProvider);
             final y60 K = J.K();
             K.c(R.drawable.msg_arrow_back, org.telegram.messenger.gd.M0(2131753754, null), new org.telegram.ui.hq0(J, 27), false);
             K.c(R.drawable.msg_tone_on, org.telegram.messenger.gd.M0(2131745080, null), new Runnable() { // from class: org.telegram.ui.Components.ho
@@ -1866,7 +1866,7 @@ public final class z11 extends FrameLayout implements org.telegram.messenger.fs,
                 }
             }, false);
             final org.telegram.ui.ActionBar.z0 z14 = K.z();
-            K.c(R.drawable.msg_mute_period, org.telegram.messenger.gd.M0(2131748116, null), new bi.u4(J, resourceProvider, currentAccount, i4Var, 22), false);
+            K.c(R.drawable.msg_mute_period, org.telegram.messenger.gd.M0(2131748116, null), new bi.t4(J, resourceProvider, currentAccount, h4Var, 22), false);
             K.c(R.drawable.msg_customize, org.telegram.messenger.gd.M0(2131747724, null), new io(J, j13, j12, bnVar, resourceProvider), false);
             K.c(0, "", new di.i9(J, currentAccount, j13, j12, bnVar, resourceProvider), false);
             final org.telegram.ui.ActionBar.z0 z15 = K.z();

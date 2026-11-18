@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class n5 extends rg.b {
     public final /* synthetic */ t5 d;
@@ -92,18 +92,18 @@ public final class n5 extends rg.b {
             return;
         }
         if (i12 == 6) {
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-            z8Var.setText(((s5) arrayList.get(i7)).c);
-            z8Var.setTextColor(org.telegram.ui.ActionBar.n6.r1(0.875f, -1));
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+            a9Var.setText(((s5) arrayList.get(i7)).c);
+            a9Var.setTextColor(org.telegram.ui.ActionBar.n6.r1(0.875f, -1));
             return;
         }
         if (i12 == 9) {
-            org.telegram.ui.Cells.x4 x4Var = (org.telegram.ui.Cells.x4) view;
+            org.telegram.ui.Cells.y4 y4Var = (org.telegram.ui.Cells.y4) view;
             if (t5Var.e0 == 0) {
-                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(t5Var.a0, "BoostingShowMoreBoosts", new Object[0]), false);
+                y4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(t5Var.a0, "BoostingShowMoreBoosts", new Object[0]), false);
                 return;
             } else {
-                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(t5Var.c0, "BoostingShowMoreGifts", new Object[0]), false);
+                y4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(t5Var.c0, "BoostingShowMoreGifts", new Object[0]), false);
                 return;
             }
         }
@@ -142,7 +142,7 @@ public final class n5 extends rg.b {
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View y6Var;
+        View z6Var;
         View view;
         org.telegram.ui.ActionBar.i6 i6Var;
         org.telegram.ui.ActionBar.i6 i6Var2;
@@ -159,8 +159,8 @@ public final class n5 extends rg.b {
                 view = cVar;
                 return i5.c.q(view, view, -1, -2);
             case 2:
-                y6Var = new org.telegram.ui.Cells.y6(viewGroup.getContext(), 0, 0);
-                view = y6Var;
+                z6Var = new org.telegram.ui.Cells.z6(viewGroup.getContext(), 0, 0);
+                view = z6Var;
                 return i5.c.q(view, view, -1, -2);
             case 3:
                 org.telegram.ui.Components.e80 e80Var = new org.telegram.ui.Components.e80(t5Var.getParentActivity(), t5Var, null, false, false);
@@ -180,11 +180,11 @@ public final class n5 extends rg.b {
             case 6:
                 Context context = viewGroup.getContext();
                 i6Var = ((org.telegram.ui.ActionBar.h2) t5Var).resourceProvider;
-                y6Var = new org.telegram.ui.Cells.z8(20, context, i6Var);
-                view = y6Var;
+                z6Var = new org.telegram.ui.Cells.a9(20, context, i6Var);
+                view = z6Var;
                 return i5.c.q(view, view, -1, -2);
             case 7:
-                view = new org.telegram.ui.Cells.v3(t5Var.getParentActivity(), 8);
+                view = new org.telegram.ui.Cells.w3(t5Var.getParentActivity(), 8);
                 return i5.c.q(view, view, -1, -2);
             case 8:
                 bi.p2 p2Var = new bi.p2(t5Var.getParentActivity(), 9);
@@ -201,12 +201,12 @@ public final class n5 extends rg.b {
                 view = m5Var;
                 return i5.c.q(view, view, -1, -2);
             case 10:
-                org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(t5Var.getParentActivity());
-                m8Var.o(R.drawable.msg_gift_premium, org.telegram.messenger.gd.a0(null, null, 2131753510, new Object[0]), false);
-                m8Var.s = 64;
+                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(t5Var.getParentActivity());
+                n8Var.o(R.drawable.msg_gift_premium, org.telegram.messenger.gd.a0(null, null, 2131753510, new Object[0]), false);
+                n8Var.s = 64;
                 int i11 = org.telegram.ui.ActionBar.n6.q6;
-                m8Var.g(i11, i11);
-                view = m8Var;
+                n8Var.g(i11, i11);
+                view = n8Var;
                 return i5.c.q(view, view, -1, -2);
             case 11:
                 view = new bh.c(t5Var.getParentActivity());

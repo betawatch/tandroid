@@ -15,7 +15,7 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.v91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class xg0 {
     public ValueAnimator A;
@@ -25,7 +25,7 @@ public abstract class xg0 {
     public boolean E;
     public boolean F;
     public boolean G;
-    public org.telegram.ui.Cells.t2 H;
+    public org.telegram.ui.Cells.u2 H;
     public ck0 I;
     public float J;
     public float K;
@@ -148,9 +148,9 @@ public abstract class xg0 {
         if (valueAnimator2 != null) {
             valueAnimator2.cancel();
         }
-        org.telegram.ui.Cells.t2 t2Var = this.H;
-        if (t2Var != null) {
-            t2Var.removeCallbacks(this.d0);
+        org.telegram.ui.Cells.u2 u2Var = this.H;
+        if (u2Var != null) {
+            u2Var.removeCallbacks(this.d0);
         }
         ValueAnimator valueAnimator3 = this.t;
         if (valueAnimator3 != null) {
@@ -171,7 +171,7 @@ public abstract class xg0 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public final void c(Canvas canvas, boolean z10) {
-        org.telegram.ui.Cells.t2 t2Var;
+        org.telegram.ui.Cells.u2 u2Var;
         int i7;
         int i10;
         int i11;
@@ -188,10 +188,10 @@ public abstract class xg0 {
         int i17;
         float f13;
         float f14;
-        if (!this.X || this.Y || (t2Var = this.H) == null || this.I == null) {
+        if (!this.X || this.Y || (u2Var = this.H) == null || this.I == null) {
             return;
         }
-        boolean z12 = t2Var instanceof v91;
+        boolean z12 = u2Var instanceof v91;
         int L = org.telegram.messenger.g0.L(z12 ? 15.0f : 28.0f);
         int L2 = org.telegram.messenger.g0.L(8.0f);
         int L3 = org.telegram.messenger.g0.L(9.0f);
@@ -454,9 +454,9 @@ public abstract class xg0 {
         if (this.J > 0.0f && !this.y) {
             if (Math.abs(this.a) >= this.Z * 0.5f) {
                 this.e0 = true;
-                org.telegram.ui.Cells.t2 t2Var2 = this.H;
+                org.telegram.ui.Cells.u2 u2Var2 = this.H;
                 gk gkVar = this.d0;
-                t2Var2.removeCallbacks(gkVar);
+                u2Var2.removeCallbacks(gkVar);
                 this.H.postDelayed(gkVar, 200L);
             } else if (!this.e0) {
                 this.x = 1.0f;
@@ -558,9 +558,9 @@ public abstract class xg0 {
     public final void f(float f10) {
         if (this.J != f10) {
             this.J = f10;
-            org.telegram.ui.Cells.t2 t2Var = this.H;
-            if (t2Var != null) {
-                t2Var.invalidate();
+            org.telegram.ui.Cells.u2 u2Var = this.H;
+            if (u2Var != null) {
+                u2Var.invalidate();
             }
         }
     }

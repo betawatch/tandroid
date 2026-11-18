@@ -28,11 +28,11 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.hc;
 import org.telegram.messenger.q5;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.be0;
 import org.telegram.ui.rk;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -278,18 +278,18 @@ public final class c {
                 int d = descriptor.d(name);
                 i10 = -3;
                 if (d == -3 && o0Var3.c) {
-                    b5 b5Var = json.c;
+                    c5 c5Var = json.c;
                     b1.f fVar = new b1.f(2, descriptor, json);
-                    b5Var.getClass();
-                    b5Var.getClass();
+                    c5Var.getClass();
+                    c5Var.getClass();
                     kotlin.jvm.internal.j.e(descriptor, "descriptor");
-                    Map map = (Map) ((ConcurrentHashMap) b5Var.a).get(descriptor);
+                    Map map = (Map) ((ConcurrentHashMap) c5Var.a).get(descriptor);
                     qe.g gVar = qe.f.a;
                     Object obj = map != null ? map.get(gVar) : null;
                     Object obj2 = obj != null ? obj : null;
                     if (obj2 == null) {
                         obj2 = fVar.invoke();
-                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) b5Var.a;
+                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) c5Var.a;
                         Object obj3 = concurrentHashMap.get(descriptor);
                         Object obj4 = obj3;
                         if (obj3 == null) {

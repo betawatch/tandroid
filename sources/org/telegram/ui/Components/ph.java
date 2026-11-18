@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ph implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -234,7 +234,7 @@ public final /* synthetic */ class ph implements org.telegram.messenger.x10 {
                 org.telegram.ui.cx cxVar = (org.telegram.ui.cx) obj3;
                 Activity activity = (Activity) obj2;
                 if (!((Boolean) obj).booleanValue()) {
-                    cxVar.showDialog(new org.telegram.ui.ih0(activity, !c8.na.a(), new org.telegram.ui.su(activity, 0)));
+                    cxVar.showDialog(new org.telegram.ui.jh0(activity, !c8.na.a(), new org.telegram.ui.su(activity, 0)));
                     break;
                 }
                 break;
@@ -278,39 +278,39 @@ public final /* synthetic */ class ph implements org.telegram.messenger.x10 {
                 q30Var.d.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
                 break;
             case 17:
-                org.telegram.ui.r90 r90Var = (org.telegram.ui.r90) obj3;
+                org.telegram.ui.s90 s90Var = (org.telegram.ui.s90) obj3;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj2;
                 TLRPC.User user = (TLRPC.User) obj;
-                r90Var.c();
+                s90Var.c();
                 if (user != null) {
                     long j13 = userArr[0].id;
                     Bundle bundle2 = new Bundle();
                     bundle2.putLong("user_id", user.id);
-                    r90Var.u(new org.telegram.ui.q90(bundle2, user, userArr, j13), false);
+                    s90Var.u(new org.telegram.ui.r90(bundle2, user, userArr, j13), false);
                     break;
                 }
                 break;
             case 18:
-                org.telegram.ui.ug0 ug0Var = (org.telegram.ui.ug0) obj3;
+                org.telegram.ui.vg0 vg0Var = (org.telegram.ui.vg0) obj3;
                 String str = (String) obj2;
                 List<TLRPC.User> list = (List) obj;
                 HashSet hashSet = new HashSet();
-                ArrayList arrayList5 = ug0Var.b2;
+                ArrayList arrayList5 = vg0Var.b2;
                 arrayList5.clear();
                 if (list != null) {
                     for (TLRPC.User user2 : list) {
-                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && ug0Var.e1(user2)) {
+                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && vg0Var.e1(user2)) {
                             arrayList5.add(user2);
                             hashSet.add(Long.valueOf(user2.id));
                         }
                     }
                 }
-                Boolean bool2 = ug0Var.n2;
+                Boolean bool2 = vg0Var.n2;
                 if (bool2 == null || !bool2.booleanValue()) {
-                    ug0Var.h1(true, true);
+                    vg0Var.h1(true, true);
                     break;
                 } else {
-                    ph phVar = new ph(19, ug0Var, hashSet);
+                    ph phVar = new ph(19, vg0Var, hashSet);
                     org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0);
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(org.telegram.messenger.j10.t0);
                     if (str == null || str.isEmpty()) {
@@ -321,42 +321,42 @@ public final /* synthetic */ class ph implements org.telegram.messenger.x10 {
                         tL_contacts_search.limit = 50;
                         i13 = connectionsManager.sendRequest(tL_contacts_search, new org.telegram.ui.e31(11, u12, phVar));
                     }
-                    ug0Var.i2 = i13;
+                    vg0Var.i2 = i13;
                     break;
                 }
                 break;
             case 19:
-                org.telegram.ui.ug0 ug0Var2 = (org.telegram.ui.ug0) obj3;
+                org.telegram.ui.vg0 vg0Var2 = (org.telegram.ui.vg0) obj3;
                 HashSet hashSet2 = (HashSet) obj2;
                 List<TLRPC.User> list2 = (List) obj;
                 if (list2 != null) {
                     for (TLRPC.User user3 : list2) {
-                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && ug0Var2.e1(user3)) {
-                            ug0Var2.b2.add(user3);
+                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && vg0Var2.e1(user3)) {
+                            vg0Var2.b2.add(user3);
                             hashSet2.add(Long.valueOf(user3.id));
                         }
                     }
                 }
-                ug0Var2.h1(true, true);
+                vg0Var2.h1(true, true);
                 break;
             case 20:
-                org.telegram.ui.eh0 eh0Var = (org.telegram.ui.eh0) obj3;
+                org.telegram.ui.fh0 fh0Var = (org.telegram.ui.fh0) obj3;
                 String str2 = (String) obj2;
                 TLRPC.User user4 = (TLRPC.User) obj;
                 if (user4 == null) {
-                    eh0Var.L1.setImageDrawable(null);
-                    eh0Var.u1.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131748086, null), new org.telegram.ui.ve0(i12, eh0Var, str2)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
+                    fh0Var.L1.setImageDrawable(null);
+                    fh0Var.u1.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131748086, null), new org.telegram.ui.we0(i12, fh0Var, str2)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
                 } else {
-                    Drawable mutate = eh0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
-                    org.telegram.ui.ActionBar.u6.x(eh0Var.L1, mutate, org.telegram.ui.ActionBar.n6.v6, eh0Var.J0, PorterDuff.Mode.SRC_IN);
-                    eh0Var.L1.setImageDrawable(mutate);
+                    Drawable mutate = fh0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
+                    org.telegram.ui.ActionBar.u6.x(fh0Var.L1, mutate, org.telegram.ui.ActionBar.n6.v6, fh0Var.J0, PorterDuff.Mode.SRC_IN);
+                    fh0Var.L1.setImageDrawable(mutate);
                     if (user4.contact) {
-                        eh0Var.u1.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131748087, null), new org.telegram.ui.ve0(i11, eh0Var, user4)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
+                        fh0Var.u1.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131748087, null), new org.telegram.ui.we0(i11, fh0Var, user4)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
                     } else {
-                        eh0Var.u1.setText(org.telegram.messenger.gd.M0(2131748085, null));
+                        fh0Var.u1.setText(org.telegram.messenger.gd.M0(2131748085, null));
                     }
                 }
-                eh0Var.P0(false);
+                fh0Var.P0(false);
                 break;
             case 21:
                 ArrayList arrayList6 = (ArrayList) obj3;

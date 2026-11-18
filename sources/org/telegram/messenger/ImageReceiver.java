@@ -30,7 +30,7 @@ import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.ub0;
 import org.telegram.ui.Components.zi0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class ImageReceiver implements fs, org.telegram.ui.Components.u5 {
     public static final PorterDuffColorFilter H1;
@@ -443,7 +443,7 @@ public class ImageReceiver implements fs, org.telegram.ui.Components.u5 {
                     this.E1 = null;
                 }
                 xi.e eVar2 = (xi.e) new js(ks.e(), this).b;
-                eVar2.c(ks.o4);
+                eVar2.c(ks.p4);
                 eVar2.c(i7);
                 eVar2.c(ks.k1);
                 this.E1 = eVar2;
@@ -877,7 +877,7 @@ public class ImageReceiver implements fs, org.telegram.ui.Components.u5 {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11;
-        if (i7 == ks.o4) {
+        if (i7 == ks.p4) {
             String str = (String) objArr[0];
             String str2 = this.i0;
             if (str2 != null && str2.equals(str)) {

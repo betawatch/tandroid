@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -56,8 +56,8 @@ public final /* synthetic */ class m implements View.OnLongClickListener {
                     if (ajVar == null || (ajVar.c && !ajVar.i)) {
                         int i10 = fjVar.D;
                         if (i10 == 1 || i10 == 3 || i10 == 8) {
-                            org.telegram.ui.eg0 eg0Var = new org.telegram.ui.eg0(chatActivityEnterView.getContext(), i6Var2);
-                            eg0Var.h0 = true;
+                            org.telegram.ui.fg0 fg0Var = new org.telegram.ui.fg0(chatActivityEnterView.getContext(), i6Var2);
+                            fg0Var.h0 = true;
                             ArrayList arrayList = new ArrayList();
                             if (ajVar != null) {
                                 ArrayList arrayList2 = ajVar.d;
@@ -69,16 +69,16 @@ public final /* synthetic */ class m implements View.OnLongClickListener {
                             } else {
                                 arrayList.add(chatActivityEnterView.u0(fjVar, true));
                             }
-                            eg0Var.r(arrayList);
+                            fg0Var.r(arrayList);
                             y60 G2 = y60.G(chatActivityEnterView.a2, i6Var2, chatActivityEnterView.t2);
                             ta0 ta0Var = new ta0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.gd.M0(2131752549, null), R.raw.position_above, org.telegram.messenger.gd.M0(2131752548, null), chatActivityEnterView.K4);
                             ta0Var.a(!chatActivityEnterView.M6, false);
-                            ta0Var.setOnClickListener(new bi.n6(chatActivityEnterView, arrayList, ta0Var, eg0Var, 11));
+                            ta0Var.setOnClickListener(new bi.m6(chatActivityEnterView, arrayList, ta0Var, fg0Var, 11));
                             G2.q(ta0Var);
                             G2.Z();
-                            eg0Var.q(G2);
-                            eg0Var.s(chatActivityEnterView.t2, false, new bi.n6(chatActivityEnterView, ajVar, fjVar, eg0Var, 12));
-                            eg0Var.show();
+                            fg0Var.q(G2);
+                            fg0Var.s(chatActivityEnterView.t2, false, new bi.m6(chatActivityEnterView, ajVar, fjVar, fg0Var, 12));
+                            fg0Var.show();
                             break;
                         }
                     }

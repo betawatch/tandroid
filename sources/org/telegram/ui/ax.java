@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ax extends v4.w {
     public v4.f1 d;
@@ -35,12 +35,12 @@ public final class ax extends v4.w {
     @Override // v4.w
     public final long d(RecyclerView recyclerView, int i7, float f10, float f11) {
         cx cxVar;
-        org.telegram.ui.Cells.t2 t2Var;
+        org.telegram.ui.Cells.u2 u2Var;
         if (i7 == 4) {
             return 200L;
         }
-        if (i7 == 8 && (t2Var = (cxVar = this.h).Z0) != null) {
-            org.telegram.messenger.g0.h3(new sg(1, t2Var), this.g.y.e);
+        if (i7 == 8 && (u2Var = (cxVar = this.h).Z0) != null) {
+            org.telegram.messenger.g0.h3(new sg(1, u2Var), this.g.y.e);
             cxVar.Z0 = null;
         }
         return super.d(recyclerView, i7, f10, f11);
@@ -94,24 +94,24 @@ public final class ax extends v4.w {
             if (!cxVar.H3.c() && cxVar.a3 == 0) {
                 if (this.e && this.f) {
                     View view = f1Var.a;
-                    if (view instanceof org.telegram.ui.Cells.t2) {
-                        ((org.telegram.ui.Cells.t2) view).x = true;
+                    if (view instanceof org.telegram.ui.Cells.u2) {
+                        ((org.telegram.ui.Cells.u2) view).x = true;
                     }
                     this.e = false;
                     return 0;
                 }
                 if (!cxVar.n2 && bxVar.p() && cxVar.Y0 == null) {
                     View view2 = f1Var.a;
-                    if (view2 instanceof org.telegram.ui.Cells.t2) {
-                        org.telegram.ui.Cells.t2 t2Var = (org.telegram.ui.Cells.t2) view2;
-                        long dialogId = t2Var.getDialogId();
+                    if (view2 instanceof org.telegram.ui.Cells.u2) {
+                        org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) view2;
+                        long dialogId = u2Var.getDialogId();
                         kVar = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
                         if (kVar.z(null)) {
                             TLRPC.Dialog dialog2 = (TLRPC.Dialog) cxVar.getMessagesController().R.f(dialogId);
                             if (cxVar.a1 && dialog2 != null && cxVar.v4(dialog2) && !org.telegram.messenger.n5.D(dialogId) && !cxVar.y4(bxVar)) {
-                                org.telegram.ui.Cells.t2 t2Var2 = (org.telegram.ui.Cells.t2) f1Var.a;
-                                cxVar.Z0 = t2Var2;
-                                org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, t2Var2, cxVar.getResourceProvider());
+                                org.telegram.ui.Cells.u2 u2Var2 = (org.telegram.ui.Cells.u2) f1Var.a;
+                                cxVar.Z0 = u2Var2;
+                                org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, u2Var2, cxVar.getResourceProvider());
                                 this.f = false;
                                 return v4.w.l(3, 0);
                             }
@@ -154,8 +154,8 @@ public final class ax extends v4.w {
                                             z10 = false;
                                         }
                                         this.f = false;
-                                        this.e = !(z10 || org.telegram.messenger.n5.D(t2Var.getDialogId())) || (org.telegram.messenger.bz.q1 && org.telegram.messenger.n5.D(t2Var.getDialogId()));
-                                        t2Var.setSliding(true);
+                                        this.e = !(z10 || org.telegram.messenger.n5.D(u2Var.getDialogId())) || (org.telegram.messenger.bz.q1 && org.telegram.messenger.n5.D(u2Var.getDialogId()));
+                                        u2Var.setSliding(true);
                                         return v4.w.l(0, 4);
                                     }
                                 }
@@ -165,8 +165,8 @@ public final class ax extends v4.w {
                                     z10 = false;
                                 }
                                 this.f = false;
-                                this.e = !(z10 || org.telegram.messenger.n5.D(t2Var.getDialogId())) || (org.telegram.messenger.bz.q1 && org.telegram.messenger.n5.D(t2Var.getDialogId()));
-                                t2Var.setSliding(true);
+                                this.e = !(z10 || org.telegram.messenger.n5.D(u2Var.getDialogId())) || (org.telegram.messenger.bz.q1 && org.telegram.messenger.n5.D(u2Var.getDialogId()));
+                                u2Var.setSliding(true);
                                 return v4.w.l(0, 4);
                             }
                         }
@@ -198,8 +198,8 @@ public final class ax extends v4.w {
         cx cxVar = this.h;
         ArrayList arrayList = cxVar.c1;
         View view = f1Var2.a;
-        if (view instanceof org.telegram.ui.Cells.t2) {
-            long dialogId = ((org.telegram.ui.Cells.t2) view).getDialogId();
+        if (view instanceof org.telegram.ui.Cells.u2) {
+            long dialogId = ((org.telegram.ui.Cells.u2) view).getDialogId();
             TLRPC.Dialog dialog = (TLRPC.Dialog) cxVar.getMessagesController().R.f(dialogId);
             if (dialog != null && cxVar.v4(dialog) && !org.telegram.messenger.n5.D(dialogId)) {
                 int b10 = f1Var.b();
@@ -258,8 +258,8 @@ public final class ax extends v4.w {
         this.d = f1Var;
         if (f1Var != null) {
             View view = f1Var.a;
-            if (view instanceof org.telegram.ui.Cells.t2) {
-                ((org.telegram.ui.Cells.t2) view).x = false;
+            if (view instanceof org.telegram.ui.Cells.u2) {
+                ((org.telegram.ui.Cells.u2) view).x = false;
             }
         }
     }
@@ -272,14 +272,14 @@ public final class ax extends v4.w {
             cxVar.Y0 = null;
             return;
         }
-        org.telegram.ui.Cells.t2 t2Var = (org.telegram.ui.Cells.t2) f1Var.a;
-        long dialogId = t2Var.getDialogId();
+        org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) f1Var.a;
+        long dialogId = u2Var.getDialogId();
         boolean D = org.telegram.messenger.n5.D(dialogId);
         bx bxVar = this.g;
         if (D) {
             yw ywVar = bxVar.a;
             int i10 = yw.C3;
-            ywVar.C1(false, t2Var);
+            ywVar.C1(false, u2Var);
             return;
         }
         TLRPC.Dialog dialog = (TLRPC.Dialog) cxVar.getMessagesController().R.f(dialogId);
@@ -302,7 +302,7 @@ public final class ax extends v4.w {
             cxVar.K4(arrayList2, org.telegram.messenger.ks.w1, true, false, null);
             return;
         }
-        cxVar.Y0 = t2Var;
+        cxVar.Y0 = u2Var;
         l2.x xVar = new l2.x(this, dialog, bxVar.d.b(), f1Var.b(), 13);
         cxVar.U4(true, true);
         if (Utilities.b.nextInt(1000) != 1) {

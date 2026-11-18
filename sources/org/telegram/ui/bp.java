@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class bp extends v4.i0 {
     public final /* synthetic */ Context c;
@@ -42,7 +42,7 @@ public final class bp extends v4.i0 {
         cp cpVar = this.d;
         if (d != 0) {
             if (d == 1) {
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.gd.M0(2131747629, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.M0(2131747629, null));
                 return;
             } else {
                 if (d != 2) {
@@ -55,15 +55,15 @@ public final class bp extends v4.i0 {
                 return;
             }
         }
-        org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-        org.telegram.ui.ActionBar.u6.U(z8Var.getTextView(), org.telegram.ui.ActionBar.n6.B6, null);
+        org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+        org.telegram.ui.ActionBar.u6.U(a9Var.getTextView(), org.telegram.ui.ActionBar.n6.B6, null);
         int i11 = cpVar.s;
         if (i11 == 1) {
-            z8Var.setText(org.telegram.messenger.gd.M0(2131751136, null));
+            a9Var.setText(org.telegram.messenger.gd.M0(2131751136, null));
         } else if (i11 == 0) {
-            z8Var.setText(org.telegram.messenger.gd.M0(2131751148, null));
+            a9Var.setText(org.telegram.messenger.gd.M0(2131751148, null));
         } else if (i11 == 2) {
-            z8Var.setText(org.telegram.messenger.gd.M0(2131751418, null));
+            a9Var.setText(org.telegram.messenger.gd.M0(2131751418, null));
         }
     }
 
@@ -71,10 +71,10 @@ public final class bp extends v4.i0 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         Context context = this.c;
         if (i7 == 0) {
-            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.z8(context));
+            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.a9(context));
         }
         if (i7 == 1) {
-            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.n4(context, 23));
+            return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.o4(context, 23));
         }
         if (i7 != 3) {
             return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.x(context, false, false));

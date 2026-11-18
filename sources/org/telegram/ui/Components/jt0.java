@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jt0 extends org.telegram.ui.ActionBar.x2 implements org.telegram.messenger.fs {
     public final di.b1 m1;
@@ -30,7 +30,7 @@ public final class jt0 extends org.telegram.ui.ActionBar.x2 implements org.teleg
         super(1, context, i6Var, false);
         final int i7 = 1;
         final int i10 = 0;
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.F4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.G4);
         this.s1 = it0Var;
         O();
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -202,7 +202,7 @@ public final class jt0 extends org.telegram.ui.ActionBar.x2 implements org.teleg
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.F4) {
+        if (i7 == org.telegram.messenger.ks.G4) {
             if (org.telegram.messenger.qd.g() == 0) {
                 dismiss();
             } else {
@@ -214,7 +214,7 @@ public final class jt0 extends org.telegram.ui.ActionBar.x2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
         super.dismiss();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.F4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.G4);
     }
 
     @Override // org.telegram.ui.ActionBar.x2

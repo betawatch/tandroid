@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class f50 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs, org.telegram.ui.Components.t30 {
     public TLRPC.FileLocation E;
@@ -482,8 +482,8 @@ public final class f50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             int childCount = this.b.getChildCount();
             for (int i12 = 0; i12 < childCount; i12++) {
                 View childAt = this.b.getChildAt(i12);
-                if (childAt instanceof org.telegram.ui.Cells.h4) {
-                    ((org.telegram.ui.Cells.h4) childAt).f(intValue);
+                if (childAt instanceof org.telegram.ui.Cells.i4) {
+                    ((org.telegram.ui.Cells.i4) childAt).f(intValue);
                 }
             }
             return;
@@ -603,7 +603,7 @@ public final class f50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.c, 16777216, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Pi));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.c, 32, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.k6));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.c, 65568, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.l6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ri));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ri));
         return arrayList;
     }
 

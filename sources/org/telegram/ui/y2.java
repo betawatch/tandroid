@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class y2 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         ArticleViewer$WindowView articleViewer$WindowView;
-        org.telegram.ui.Cells.i9 i9Var;
+        org.telegram.ui.Cells.j9 j9Var;
         int i7 = this.a;
         g4 g4Var = this.b;
         int i10 = 0;
@@ -46,10 +46,10 @@ public final class y2 implements Runnable {
                     } else {
                         View view2 = g4Var.f;
                         if (view2 != null && g4Var.Q0.f0(view2)) {
-                            if (g4Var.f.getTag() == null || g4Var.f.getTag() != "bottomSheet" || (i9Var = g4Var.R0) == null) {
+                            if (g4Var.f.getTag() == null || g4Var.f.getTag() != "bottomSheet" || (j9Var = g4Var.R0) == null) {
                                 g4Var.Q0.l0();
                             } else {
-                                i9Var.l0();
+                                j9Var.l0();
                             }
                             if (g4Var.Q0.x()) {
                                 try {

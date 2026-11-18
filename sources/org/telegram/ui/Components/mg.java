@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mg implements Runnable {
     public final /* synthetic */ int a;
@@ -233,15 +233,15 @@ public final /* synthetic */ class mg implements Runnable {
                 vf.c.t(context, "https://t.me/BotFather?start=deletebot");
                 break;
             case 21:
-                org.telegram.ui.Cells.k3 k3Var = (org.telegram.ui.Cells.k3) this.b;
+                org.telegram.ui.Cells.l3 l3Var = (org.telegram.ui.Cells.l3) this.b;
                 TreeSet treeSet = (TreeSet) this.c;
-                String charSequence = k3Var.getText().toString();
+                String charSequence = l3Var.getText().toString();
                 if (!zq.a(charSequence, "bot") && zq.c(charSequence, treeSet) == null) {
                     str = "bot";
                 }
-                org.telegram.ui.Cells.i3 i3Var = k3Var.d;
-                i3Var.setRightText(str);
-                i3Var.setPadding(0, org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(TextUtils.isEmpty(str) ? 21.0f : 63.0f), org.telegram.messenger.g0.L(15.0f));
+                org.telegram.ui.Cells.j3 j3Var = l3Var.d;
+                j3Var.setRightText(str);
+                j3Var.setPadding(0, org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(TextUtils.isEmpty(str) ? 21.0f : 63.0f), org.telegram.messenger.g0.L(15.0f));
                 break;
             case 22:
                 hr hrVar = (hr) this.b;

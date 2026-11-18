@@ -6,9 +6,9 @@ import android.view.Choreographer;
 import java.util.ArrayList;
 import org.telegram.ui.Components.gz0;
 import org.telegram.ui.Components.h6;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class g {
     public static final b o = new b(1);
@@ -181,10 +181,10 @@ public final class g {
         ArrayList arrayList = aVar.b;
         if (arrayList.size() == 0) {
             if (aVar.d == null) {
-                aVar.d = new md0(aVar.c);
+                aVar.d = new nd0(aVar.c);
             }
-            md0 md0Var = aVar.d;
-            ((Choreographer) md0Var.c).postFrameCallback((gz0) md0Var.d);
+            nd0 nd0Var = aVar.d;
+            ((Choreographer) nd0Var.c).postFrameCallback((gz0) nd0Var.d);
         }
         if (arrayList.contains(this)) {
             return;

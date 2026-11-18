@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class an0 implements org.telegram.ui.Cells.q5 {
+public final class an0 implements org.telegram.ui.Cells.r5 {
     public final /* synthetic */ l4 a;
 
     public an0(l4 l4Var) {
@@ -24,10 +24,10 @@ public final class an0 implements org.telegram.ui.Cells.q5 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.q5
-    public final void e(org.telegram.ui.Cells.r5 r5Var) {
+    @Override // org.telegram.ui.Cells.r5
+    public final void e(org.telegram.ui.Cells.s5 s5Var) {
         boolean z10;
-        int intValue = ((Integer) r5Var.getTag()).intValue();
+        int intValue = ((Integer) s5Var.getTag()).intValue();
         cn0 cn0Var = (cn0) this.a.e;
         org.telegram.messenger.ue ueVar = cn0Var.K;
         int i7 = -1;
@@ -42,7 +42,7 @@ public final class an0 implements org.telegram.ui.Cells.q5 {
             if (cn0Var.e && !containsKey) {
                 i7 = cn0Var.c.size();
             }
-            r5Var.b(i7, z10, true);
+            s5Var.b(i7, z10, true);
             cn0Var.d0(intValue, efVar);
         } else {
             org.telegram.messenger.g0.v1(cn0Var.getParentActivity().getCurrentFocus());
@@ -56,7 +56,7 @@ public final class an0 implements org.telegram.ui.Cells.q5 {
             if (cn0Var.e && !containsKey2) {
                 i7 = cn0Var.c.size();
             }
-            r5Var.b(i7, z10, true);
+            s5Var.b(i7, z10, true);
             cn0Var.d0(intValue, hfVar);
         }
         cn0Var.n0(z10 ? 1 : 2);

@@ -9,18 +9,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.qa;
-import org.telegram.ui.Cells.ta;
+import org.telegram.ui.Cells.ra;
+import org.telegram.ui.Cells.ua;
 import org.telegram.ui.Components.hv;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.ad;
 import org.telegram.ui.f50;
-import org.telegram.ui.oc0;
+import org.telegram.ui.pc0;
 import org.telegram.ui.rc1;
 import org.telegram.ui.rn;
 import org.telegram.ui.sc1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class t3 extends q9 {
     public final /* synthetic */ int H;
@@ -69,45 +69,45 @@ public final class t3 extends q9 {
                 super.onDraw(canvas);
                 break;
             case 2:
-                org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) this.I;
-                t3 t3Var = h7Var.b;
+                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) this.I;
+                t3 t3Var = i7Var.b;
                 float f10 = t3Var.getImageReceiver().I() ? 1.0f - t3Var.getImageReceiver().i1 : 1.0f;
-                h7Var.d.setAlpha(f10);
-                h7Var.a.setAlpha(f10);
+                i7Var.d.setAlpha(f10);
+                i7Var.a.setAlpha(f10);
                 super.onDraw(canvas);
                 break;
             case 3:
-                qa qaVar = (qa) this.I;
-                org.telegram.ui.Cells.k6 k6Var = qaVar.U;
-                if (!qaVar.G) {
+                ra raVar = (ra) this.I;
+                org.telegram.ui.Cells.l6 l6Var = raVar.U;
+                if (!raVar.G) {
                     super.onDraw(canvas);
                     break;
                 } else {
-                    k6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                    i7.h(qaVar.V, canvas, this.a, k6Var);
+                    l6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                    i7.h(raVar.V, canvas, this.a, l6Var);
                     break;
                 }
             case 4:
                 super.onDraw(canvas);
-                ta taVar = (ta) this.I;
-                Object obj = taVar.h;
+                ua uaVar = (ua) this.I;
+                Object obj = uaVar.h;
                 if ((obj instanceof rc1) || (obj instanceof sc1)) {
-                    canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, taVar.s.n);
+                    canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, uaVar.s.n);
                     canvas2 = canvas;
-                    canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), taVar.s.n);
-                    canvas2.drawLine(getMeasuredWidth() - 1, 0.0f, getMeasuredWidth() - 1, getMeasuredHeight(), taVar.s.n);
-                    canvas2.drawLine(1.0f, getMeasuredHeight() - 1, getMeasuredWidth() - 1, getMeasuredHeight() - 1, taVar.s.n);
+                    canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), uaVar.s.n);
+                    canvas2.drawLine(getMeasuredWidth() - 1, 0.0f, getMeasuredWidth() - 1, getMeasuredHeight(), uaVar.s.n);
+                    canvas2.drawLine(1.0f, getMeasuredHeight() - 1, getMeasuredWidth() - 1, getMeasuredHeight() - 1, uaVar.s.n);
                 } else {
                     canvas2 = canvas;
                 }
-                if (taVar.e) {
-                    taVar.s.r.setColor(org.telegram.ui.ActionBar.n6.c0);
+                if (uaVar.e) {
+                    uaVar.s.r.setColor(org.telegram.ui.ActionBar.n6.c0);
                     int measuredWidth = getMeasuredWidth() / 2;
                     int measuredHeight = getMeasuredHeight() / 2;
-                    canvas2.drawCircle(measuredWidth, measuredHeight, org.telegram.messenger.g0.L(20.0f), taVar.s.r);
-                    Drawable drawable = taVar.s.w;
-                    drawable.setBounds(org.telegram.ui.Cells.c0.C(2, measuredWidth, drawable), org.telegram.ui.Cells.c0.A(2, measuredHeight, taVar.s.w), org.telegram.ui.Cells.c0.y(2, measuredWidth, taVar.s.w), org.telegram.ui.Cells.c0.j(2, measuredHeight, taVar.s.w));
-                    taVar.s.w.draw(canvas2);
+                    canvas2.drawCircle(measuredWidth, measuredHeight, org.telegram.messenger.g0.L(20.0f), uaVar.s.r);
+                    Drawable drawable = uaVar.s.w;
+                    drawable.setBounds(org.telegram.ui.Cells.c0.C(2, measuredWidth, drawable), org.telegram.ui.Cells.c0.A(2, measuredHeight, uaVar.s.w), org.telegram.ui.Cells.c0.y(2, measuredWidth, uaVar.s.w), org.telegram.ui.Cells.c0.j(2, measuredHeight, uaVar.s.w));
+                    uaVar.s.w.draw(canvas2);
                     break;
                 }
                 break;
@@ -145,7 +145,7 @@ public final class t3 extends q9 {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.H) {
             case 3:
-                if (!((qa) this.I).U.a(this, motionEvent)) {
+                if (!((ra) this.I).U.a(this, motionEvent)) {
                     break;
                 }
                 break;
@@ -207,7 +207,7 @@ public final class t3 extends q9 {
                 super.invalidate();
                 break;
             case 10:
-                hi.m5 m5Var4 = ((oc0) this.I).h;
+                hi.m5 m5Var4 = ((pc0) this.I).h;
                 if (m5Var4 != null) {
                     m5Var4.invalidate();
                 }
@@ -254,7 +254,7 @@ public final class t3 extends q9 {
                 super.invalidate(i7, i10, i11, i12);
                 break;
             case 10:
-                hi.m5 m5Var4 = ((oc0) this.I).h;
+                hi.m5 m5Var4 = ((pc0) this.I).h;
                 if (m5Var4 != null) {
                     m5Var4.invalidate();
                 }

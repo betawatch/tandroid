@@ -25,19 +25,19 @@ import org.telegram.ui.ActionBar.n5;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.w1;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.x1;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.a10;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.ri;
 import org.telegram.ui.Wallet.i9;
 import org.telegram.ui.af;
-import org.telegram.ui.bd0;
 import org.telegram.ui.bn;
-import org.telegram.ui.hh0;
+import org.telegram.ui.cd0;
+import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener, c6 {
     public final int[] E;
@@ -53,11 +53,11 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
     public final FrameLayout.LayoutParams e;
     public final n5 f;
     public d h;
-    public q1 n;
+    public r1 n;
     public int r;
     public af s;
-    public final hh0 w;
-    public final hh0 x;
+    public final ih0 w;
+    public final ih0 x;
     public final int y;
 
     public c(Activity activity, i6 i6Var, bn bnVar) {
@@ -100,7 +100,7 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         q6 M2 = u6.M(i10);
         riVar.setBackground(h03);
         u6.j(riVar, h03, null, M2, i6Var);
-        riVar.setOnClickListener(new bd0(28, this, bnVar));
+        riVar.setOnClickListener(new cd0(28, this, bnVar));
         ra.a(riVar);
         n5 n5Var = new n5(getContext());
         this.f = n5Var;
@@ -108,16 +108,16 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         n5Var.setGravity(17);
         n5Var.setTranslationY(g0.L(44.0f));
         n5Var.setVisibility(8);
-        hh0 hh0Var = new hh0(activity, 18);
-        this.x = hh0Var;
-        addView(hh0Var, layoutParams);
-        hh0 hh0Var2 = new hh0(activity, 17);
-        this.w = hh0Var2;
-        hh0Var.addView(hh0Var2, ma.c(-2.0f, -1));
-        hh0Var2.addView(n5Var, ma.e(54, 24, 53));
-        hh0Var2.addView(u2Var, ma.e(44, 44, 51));
-        hh0Var2.addView(riVar, ma.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        hh0Var2.addView(uVar, ma.d(-1, -2.0f, ks.E1, 39.0f, 0.0f, 47.0f, 0.0f));
+        ih0 ih0Var = new ih0(activity, 18);
+        this.x = ih0Var;
+        addView(ih0Var, layoutParams);
+        ih0 ih0Var2 = new ih0(activity, 17);
+        this.w = ih0Var2;
+        ih0Var.addView(ih0Var2, ma.c(-2.0f, -1));
+        ih0Var2.addView(n5Var, ma.e(54, 24, 53));
+        ih0Var2.addView(u2Var, ma.e(44, 44, 51));
+        ih0Var2.addView(riVar, ma.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
+        ih0Var2.addView(uVar, ma.d(-1, -2.0f, ks.E1, 39.0f, 0.0f, 47.0f, 0.0f));
         uVar.setPadding(g0.L(5.0f), g0.L(11.0f), g0.L(5.0f), g0.L(11.0f));
     }
 
@@ -159,18 +159,18 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
-        w1 w1Var;
+        x1 x1Var;
         uh.a aVar;
-        q1 q1Var = this.n;
-        if (q1Var != null) {
-            int e12 = q1Var.getMessageObject().e1();
-            if (this.n.isAttachedToWindow() && this.r == e12 && (w1Var = this.n.x2) != null && (aVar = w1Var.l) != null && w1Var.s) {
+        r1 r1Var = this.n;
+        if (r1Var != null) {
+            int e12 = r1Var.getMessageObject().e1();
+            if (this.n.isAttachedToWindow() && this.r == e12 && (x1Var = this.n.x2) != null && (aVar = x1Var.l) != null && x1Var.s) {
                 Rect bounds = aVar.getBounds();
                 Rect rect = this.F;
                 rect.set(bounds);
-                q1 q1Var2 = this.n;
+                r1 r1Var2 = this.n;
                 int[] iArr = this.E;
-                q1Var2.getLocationInWindow(iArr);
+                r1Var2.getLocationInWindow(iArr);
                 int i7 = iArr[0];
                 int i10 = iArr[1];
                 getLocationInWindow(iArr);
@@ -178,13 +178,13 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
                 int width = rect.width();
                 FrameLayout.LayoutParams layoutParams = this.e;
                 int i11 = layoutParams.width;
-                hh0 hh0Var = this.x;
+                ih0 ih0Var = this.x;
                 if (i11 != width) {
                     layoutParams.width = width;
-                    hh0Var.setLayoutParams(layoutParams);
+                    ih0Var.setLayoutParams(layoutParams);
                 }
-                hh0Var.setTranslationX(rect.left);
-                hh0Var.setTranslationY(g0.L(0.66f) + rect.top);
+                ih0Var.setTranslationX(rect.left);
+                ih0Var.setTranslationY(g0.L(0.66f) + rect.top);
                 return true;
             }
             af afVar = this.s;
@@ -200,9 +200,9 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         this.w.setAlpha(f10);
     }
 
-    public void setCellToWatch(q1 q1Var) {
-        this.n = q1Var;
-        this.r = q1Var.getMessageObject().e1();
+    public void setCellToWatch(r1 r1Var) {
+        this.n = r1Var;
+        this.r = r1Var.getMessageObject().e1();
     }
 
     public void setColor(int i7) {

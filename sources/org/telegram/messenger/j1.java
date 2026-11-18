@@ -15,7 +15,7 @@ import org.telegram.tgnet.WriteToSocketDelegate;
 import org.telegram.ui.Components.um0;
 import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, hi.b7, jc, RequestTimeDelegate, um0, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;

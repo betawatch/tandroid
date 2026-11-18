@@ -13,9 +13,9 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Pair;
 import android.widget.TextView;
+import bi.i5;
 import bi.j3;
-import bi.j5;
-import bi.u4;
+import bi.t4;
 import di.x8;
 import hi.ta;
 import java.io.Serializable;
@@ -75,17 +75,17 @@ import org.telegram.ui.f40;
 import org.telegram.ui.g4;
 import org.telegram.ui.hi;
 import org.telegram.ui.hm;
-import org.telegram.ui.ld0;
-import org.telegram.ui.le0;
+import org.telegram.ui.md0;
+import org.telegram.ui.me0;
 import org.telegram.ui.mm;
 import org.telegram.ui.mw;
-import org.telegram.ui.n60;
+import org.telegram.ui.o60;
 import org.telegram.ui.on0;
 import org.telegram.ui.p3;
-import org.telegram.ui.r90;
+import org.telegram.ui.s90;
 import org.telegram.ui.wl;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ int a;
@@ -217,7 +217,7 @@ public final /* synthetic */ class g1 implements Runnable {
         iu0 iu0Var = (iu0) this.c;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
         fj fjVar = (fj) this.e;
-        org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.f;
+        org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.f;
         int[] iArr = iu0Var.e;
         RLottieNative[] rLottieNativeArr = iu0Var.g1;
         if (iu0Var.X0) {
@@ -250,7 +250,7 @@ public final /* synthetic */ class g1 implements Runnable {
                     w7.G(j10.t0);
                     String y22 = org.telegram.messenger.g0.y2(w7.J(document, null, true, true), 0);
                     if (TextUtils.isEmpty(y22)) {
-                        org.telegram.messenger.g0.g3(new hu0(document, i7, fjVar, q1Var, tL_messages_stickerSet, 1));
+                        org.telegram.messenger.g0.g3(new hu0(document, i7, fjVar, r1Var, tL_messages_stickerSet, 1));
                         z10 = true;
                     } else {
                         rLottieNativeArr[i11] = RLottieNative.b(y22, iArr, null, null);
@@ -263,7 +263,7 @@ public final /* synthetic */ class g1 implements Runnable {
         if (z10) {
             org.telegram.messenger.g0.g3(new gu0(iu0Var, 3));
         } else {
-            org.telegram.messenger.g0.g3(new org.telegram.ui.b0(iu0Var, i7, q1Var, 24));
+            org.telegram.messenger.g0.g3(new org.telegram.ui.b0(iu0Var, i7, r1Var, 24));
         }
     }
 
@@ -342,7 +342,7 @@ public final /* synthetic */ class g1 implements Runnable {
             }
             cx cxVar = new cx(k10);
             cxVar.E2 = launchActivity;
-            ((ActionBarLayout) launchActivity.M()).V(cxVar, !org.telegram.messenger.g0.Q1() ? launchActivity.p0.getFragmentStack().size() <= 1 || !(launchActivity.p0.getFragmentStack().get(launchActivity.p0.getFragmentStack().size() - 1) instanceof le0) : launchActivity.q0.getFragmentStack().isEmpty() || !(launchActivity.q0.getFragmentStack().get(launchActivity.q0.getFragmentStack().size() - 1) instanceof le0), false);
+            ((ActionBarLayout) launchActivity.M()).V(cxVar, !org.telegram.messenger.g0.Q1() ? launchActivity.p0.getFragmentStack().size() <= 1 || !(launchActivity.p0.getFragmentStack().get(launchActivity.p0.getFragmentStack().size() - 1) instanceof me0) : launchActivity.q0.getFragmentStack().isEmpty() || !(launchActivity.q0.getFragmentStack().get(launchActivity.q0.getFragmentStack().size() - 1) instanceof me0), false);
         }
         try {
             u1Var.dismiss();
@@ -353,7 +353,7 @@ public final /* synthetic */ class g1 implements Runnable {
 
     private final void i() {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
-        n60 n60Var = (n60) this.d;
+        o60 o60Var = (o60) this.d;
         TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
         TLRPC.Updates updates = (TLRPC.Updates) this.f;
         ArrayList arrayList = launchActivity.e0;
@@ -361,7 +361,7 @@ public final /* synthetic */ class g1 implements Runnable {
             return;
         }
         try {
-            n60Var.run();
+            o60Var.run();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -406,7 +406,7 @@ public final /* synthetic */ class g1 implements Runnable {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         TLObject tLObject = (TLObject) this.d;
         String str = (String) this.e;
-        n60 n60Var = (n60) this.f;
+        o60 o60Var = (o60) this.f;
         org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) i5.c.h(1, launchActivity.e0);
         try {
             if (tLObject instanceof TL_chatlists.chatlist_ChatlistInvite) {
@@ -473,14 +473,14 @@ public final /* synthetic */ class g1 implements Runnable {
                     }
                     g00Var.g1();
                     h2Var.showDialog(g00Var);
-                    n60Var.run();
+                    o60Var.run();
                     return;
                 }
                 b02 = lc.b0(h2Var);
             } else {
                 b02 = lc.b0(h2Var);
             }
-            n60Var.run();
+            o60Var.run();
             return;
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -490,11 +490,11 @@ public final /* synthetic */ class g1 implements Runnable {
     }
 
     private final void k() {
-        ((r90) this.c).v((String) this.d, this.b + 1, (String) this.e, (String) this.f);
+        ((s90) this.c).v((String) this.d, this.b + 1, (String) this.e, (String) this.f);
     }
 
     private final void l() {
-        ld0 ld0Var = (ld0) this.c;
+        md0 md0Var = (md0) this.c;
         String str = (String) this.d;
         String str2 = (String) this.e;
         String str3 = (String) this.f;
@@ -504,7 +504,7 @@ public final /* synthetic */ class g1 implements Runnable {
         aVar.b = str;
         arrayList.add(aVar.a());
         a8.b("LoginBilling querying \"" + str + "\" product");
-        org.telegram.messenger.r1.i().o(arrayList, new j5(ld0Var, str, str2, str3, this.b));
+        org.telegram.messenger.r1.i().o(arrayList, new i5(md0Var, str, str2, str3, this.b));
     }
 
     private final void m() {
@@ -858,7 +858,7 @@ public final /* synthetic */ class g1 implements Runnable {
                                                     if (!z13) {
                                                         arrayList.add(tL_messageMediaVenue);
                                                         if (arrayList.size() >= i10) {
-                                                            org.telegram.messenger.g0.g3(new u4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
+                                                            org.telegram.messenger.g0.g3(new t4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
                                                             break;
                                                         }
                                                     }
@@ -912,7 +912,7 @@ public final /* synthetic */ class g1 implements Runnable {
                                                 }
                                                 arrayList.add(tL_messageMediaVenue2);
                                                 if (arrayList.size() >= i10) {
-                                                    org.telegram.messenger.g0.g3(new u4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
+                                                    org.telegram.messenger.g0.g3(new t4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
                                                 }
                                             }
                                         }
@@ -939,7 +939,7 @@ public final /* synthetic */ class g1 implements Runnable {
                                                 }
                                                 arrayList.add(tL_messageMediaVenue3);
                                                 if (arrayList.size() >= i10) {
-                                                    org.telegram.messenger.g0.g3(new u4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
+                                                    org.telegram.messenger.g0.g3(new t4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
                                                 }
                                             }
                                         } else {
@@ -1025,7 +1025,7 @@ public final /* synthetic */ class g1 implements Runnable {
                 cVar = cVar2;
                 i7 = i22;
                 str2 = str7;
-                org.telegram.messenger.g0.g3(new u4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
+                org.telegram.messenger.g0.g3(new t4((Object) cVar, i7, str2, (Serializable) arrayList, 5));
                 break;
             case 4:
                 final jg.h0 h0Var = (jg.h0) this.c;
@@ -1204,7 +1204,7 @@ public final /* synthetic */ class g1 implements Runnable {
                     TLRPC.User f11 = j10.i(i33).f();
                     if (f11 != null) {
                         f11.emoji_status = updateemojistatus.emoji_status;
-                        ks.f(i33).k(ks.o5, f11);
+                        ks.f(i33).k(ks.p5, f11);
                         mp.u1(i33).v5(f11.id, f11.emoji_status);
                     }
                     if (!zArr[0]) {
@@ -1284,7 +1284,7 @@ public final /* synthetic */ class g1 implements Runnable {
                     g4Var2 = g4Var3;
                     i18 = i16;
                 }
-                org.telegram.messenger.g0.g3(new u4(g4Var2, i34, arrayList10, str9, 15));
+                org.telegram.messenger.g0.g3(new t4(g4Var2, i34, arrayList10, str9, 15));
                 break;
             case 11:
                 a();

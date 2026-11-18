@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
     public final /* synthetic */ int a;
@@ -117,14 +117,14 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                         TLRPC.GlobalPrivacySettings globalPrivacySettings = kVar.d;
                         boolean z13 = !globalPrivacySettings.keep_archived_unmuted;
                         globalPrivacySettings.keep_archived_unmuted = z13;
-                        ((org.telegram.ui.Cells.r8) view).setChecked(z13);
+                        ((org.telegram.ui.Cells.s8) view).setChecked(z13);
                         kVar.c = true;
                         break;
                     } else if (i15 == 4) {
                         TLRPC.GlobalPrivacySettings globalPrivacySettings2 = kVar.d;
                         boolean z14 = !globalPrivacySettings2.keep_archived_folders;
                         globalPrivacySettings2.keep_archived_folders = z14;
-                        ((org.telegram.ui.Cells.r8) view).setChecked(z14);
+                        ((org.telegram.ui.Cells.s8) view).setChecked(z14);
                         kVar.c = true;
                         break;
                     } else if (i15 == 7) {
@@ -145,7 +145,7 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                             TLRPC.GlobalPrivacySettings globalPrivacySettings3 = kVar.d;
                             boolean z15 = !globalPrivacySettings3.archive_and_mute_new_noncontact_peers;
                             globalPrivacySettings3.archive_and_mute_new_noncontact_peers = z15;
-                            ((org.telegram.ui.Cells.r8) view).setChecked(z15);
+                            ((org.telegram.ui.Cells.s8) view).setChecked(z15);
                             kVar.c = true;
                             break;
                         }
@@ -332,7 +332,7 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                 ArrayList arrayList5 = mtVar.k3;
                 pt ptVar = mtVar.w3;
                 if (!(view instanceof ft) || i7 < 0 || i7 >= arrayList5.size()) {
-                    if (view instanceof org.telegram.ui.Cells.m8) {
+                    if (view instanceof org.telegram.ui.Cells.n8) {
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(ptVar.getParentActivity());
                         alertDialog$Builder2.a.S = org.telegram.messenger.gd.M0(2131745894, null);
                         alertDialog$Builder2.a.U = org.telegram.messenger.gd.M0(2131745895, null);
@@ -374,8 +374,8 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                     } else {
                         int i19 = czVar.a;
                         if (i19 == 1) {
-                            org.telegram.ui.Cells.qa qaVar = (org.telegram.ui.Cells.qa) view;
-                            kzVar.B0(czVar, qaVar.getName(), qaVar.getCurrentObject(), czVar.g);
+                            org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) view;
+                            kzVar.B0(czVar, raVar.getName(), raVar.getCurrentObject(), czVar.g);
                             break;
                         } else if (i19 == 7) {
                             vs vsVar = new vs(12, kzVar, czVar);
@@ -474,20 +474,20 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                 break;
             case 12:
                 c00 c00Var = (c00) this.b;
-                if (view instanceof org.telegram.ui.Cells.h7) {
+                if (view instanceof org.telegram.ui.Cells.i7) {
+                    c00Var.f(i7, view, ((org.telegram.ui.Cells.i7) view).getMessage(), 0);
+                    break;
+                } else if (view instanceof org.telegram.ui.Cells.l7) {
+                    c00Var.f(i7, view, ((org.telegram.ui.Cells.l7) view).getMessage(), 0);
+                    break;
+                } else if (view instanceof org.telegram.ui.Cells.h7) {
                     c00Var.f(i7, view, ((org.telegram.ui.Cells.h7) view).getMessage(), 0);
                     break;
-                } else if (view instanceof org.telegram.ui.Cells.k7) {
-                    c00Var.f(i7, view, ((org.telegram.ui.Cells.k7) view).getMessage(), 0);
+                } else if (view instanceof org.telegram.ui.Cells.i2) {
+                    c00Var.f(i7, view, ((org.telegram.ui.Cells.i2) view).getMessageObject(), 0);
                     break;
-                } else if (view instanceof org.telegram.ui.Cells.g7) {
-                    c00Var.f(i7, view, ((org.telegram.ui.Cells.g7) view).getMessage(), 0);
-                    break;
-                } else if (view instanceof org.telegram.ui.Cells.h2) {
-                    c00Var.f(i7, view, ((org.telegram.ui.Cells.h2) view).getMessageObject(), 0);
-                    break;
-                } else if (view instanceof org.telegram.ui.Cells.t2) {
-                    c00Var.f(i7, view, ((org.telegram.ui.Cells.t2) view).getMessage(), 0);
+                } else if (view instanceof org.telegram.ui.Cells.u2) {
+                    c00Var.f(i7, view, ((org.telegram.ui.Cells.u2) view).getMessage(), 0);
                     break;
                 }
                 break;
@@ -539,13 +539,13 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                 LanguageSelectActivity.Z((LanguageSelectActivity) this.b, view, i7);
                 break;
             case 17:
-                ((eg0) this.b).onBackPressed();
+                ((fg0) this.b).onBackPressed();
                 break;
             case 18:
-                ng0 ng0Var = (ng0) this.b;
-                int i26 = ng0Var.J;
-                if (i7 >= i26 && i7 < ng0Var.K) {
-                    org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) ng0Var.y.get(i7 - i26);
+                og0 og0Var = (og0) this.b;
+                int i26 = og0Var.J;
+                if (i7 >= i26 && i7 < og0Var.K) {
+                    org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) og0Var.y.get(i7 - i26);
                     if (!fjVar.x4()) {
                         long B0 = org.telegram.messenger.fj.B0(fjVar.k);
                         Bundle bundle3 = new Bundle();
@@ -556,12 +556,12 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                         }
                         bundle3.putInt("message_id", fjVar.e1());
                         bundle3.putBoolean("need_remove_previous_same_chat_activity", false);
-                        if (ng0Var.getMessagesController().E(bundle3, ng0Var, null, null)) {
-                            ng0Var.presentFragment(new bn(bundle3));
+                        if (og0Var.getMessagesController().E(bundle3, og0Var, null, null)) {
+                            og0Var.presentFragment(new bn(bundle3));
                             break;
                         }
-                    } else if (!ng0Var.g0(fjVar)) {
-                        ng0Var.getOrCreateStoryViewer().L(ng0Var.getParentActivity(), fjVar.l, fi.y6.a(ng0Var.f));
+                    } else if (!og0Var.g0(fjVar)) {
+                        og0Var.getOrCreateStoryViewer().L(og0Var.getParentActivity(), fjVar.l, fi.y6.a(og0Var.f));
                         break;
                     }
                 }
@@ -672,8 +672,8 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                 if (i7 == pr0Var.p0) {
                     pr0Var.k0();
                     break;
-                } else if (view instanceof org.telegram.ui.Cells.r8) {
-                    org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+                } else if (view instanceof org.telegram.ui.Cells.s8) {
+                    org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
                     boolean z19 = pr0Var.M;
                     org.telegram.ui.Components.yw0 yw0Var = pr0Var.R;
                     if (yw0Var != null) {
@@ -682,7 +682,7 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                     if (pr0Var.J) {
                         int i29 = -pr0Var.P;
                         pr0Var.P = i29;
-                        org.telegram.messenger.g0.E3(i29, r8Var, null);
+                        org.telegram.messenger.g0.E3(i29, s8Var, null);
                         org.telegram.messenger.q2.E.a();
                         break;
                     } else {
@@ -715,7 +715,7 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                                         pr0Var.w0();
                                         v4.f1 K = pr0Var.c.K(pr0Var.u0);
                                         if (K != null) {
-                                            ((org.telegram.ui.Cells.r8) K.a).setChecked(false);
+                                            ((org.telegram.ui.Cells.s8) K.a).setChecked(false);
                                         } else {
                                             pr0Var.b.g(pr0Var.u0);
                                         }
@@ -735,7 +735,7 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                                         pr0Var.L = false;
                                         v4.f1 K2 = pr0Var.c.K(pr0Var.t0);
                                         if (K2 != null) {
-                                            ((org.telegram.ui.Cells.r8) K2.a).setChecked(false);
+                                            ((org.telegram.ui.Cells.s8) K2.a).setChecked(false);
                                         } else {
                                             pr0Var.b.g(pr0Var.t0);
                                         }
@@ -765,18 +765,18 @@ public final /* synthetic */ class h implements org.telegram.ui.Components.oj0 {
                             v4.f1 K3 = pr0Var.c.K(i35);
                             if (K3 != null) {
                                 View view2 = K3.a;
-                                if (view2 instanceof org.telegram.ui.Cells.a6) {
-                                    org.telegram.ui.Cells.a6 a6Var = (org.telegram.ui.Cells.a6) view2;
-                                    a6Var.n(pr0Var.M, true);
-                                    a6Var.r.a(zArr[i35 - pr0Var.o0], z19);
-                                    if (a6Var.getTop() > org.telegram.messenger.g0.L(40.0f) && i7 == pr0Var.u0 && !pr0Var.N) {
-                                        pr0Var.h.c(a6Var.getCheckBox());
+                                if (view2 instanceof org.telegram.ui.Cells.b6) {
+                                    org.telegram.ui.Cells.b6 b6Var = (org.telegram.ui.Cells.b6) view2;
+                                    b6Var.n(pr0Var.M, true);
+                                    b6Var.r.a(zArr[i35 - pr0Var.o0], z19);
+                                    if (b6Var.getTop() > org.telegram.messenger.g0.L(40.0f) && i7 == pr0Var.u0 && !pr0Var.N) {
+                                        pr0Var.h.c(b6Var.getCheckBox());
                                         pr0Var.N = true;
                                     }
                                 }
                             }
                         }
-                        r8Var.setChecked(z10);
+                        s8Var.setChecked(z10);
                         pr0Var.n0();
                         break;
                     }

@@ -9,7 +9,7 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.i8;
+import bi.h8;
 import c8.ma;
 import hi.e7;
 import org.telegram.messenger.a8;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l0 extends sa {
     public static final int g2 = -1;
@@ -103,7 +103,7 @@ public final class l0 extends sa {
         int i11 = this.u0;
         ck0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(72.0f));
         this.o1.r1();
-        this.o1.setOnItemClickListener(new i8(this, 16));
+        this.o1.setOnItemClickListener(new h8(this, 16));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.X1 = frameLayout;
         frameLayout.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f));

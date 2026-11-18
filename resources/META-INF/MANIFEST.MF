@@ -3,7 +3,7 @@ Built-By: Signflinger
 Created-By: Android Gradle 8.13.2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: tzv2FYSbCNFuzmqvkqU0IvgdVlS37PhY8R0QYAb6Yns=
+SHA-256-Digest: Y00o/QpPMRB3Sfdm4qmWT5q7kaSnesgAbHRjDmZntv8=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: TRO9kvhqCxQVBiuO1XZVwHOMz73weGwdcw2Yiyf9RAA=
@@ -201,11 +201,17 @@ SHA-256-Digest: Sqv9Vee5C/fLqmdO8JITpOw3Teg5QEh2WAU/2kxOfTw=
 Name: assets/WidgetSandbox/WidgetJS/sandbox-bundle.js
 SHA-256-Digest: Blfu3CDnxMltBgnBkGg4tKnHtX2yuXGF4W5JmqYIOEk=
 
+Name: assets/WidgetSandbox/WidgetJS/sandbox-bundle.qbc
+SHA-256-Digest: prO1KI/9De2YD2t5WiPPFuCJ01ABUDcwbMWkBsgI6Ow=
+
 Name: assets/WidgetSandbox/WidgetJS/validator-bundle.js
 SHA-256-Digest: fc074X/pPR5aAuTNz58jfFCs+QYeO0hPverH/Uaz7EI=
 
+Name: assets/WidgetSandbox/WidgetJS/validator-bundle.qbc
+SHA-256-Digest: t3f6Z0el3boeTJLCb4eewG82C3QkPgF4GKKdYmTERU8=
+
 Name: assets/WidgetSandbox/manifest.txt
-SHA-256-Digest: +3HMkmOaU27spI05IqsOlnqxZOgCQKjG4AuUIegTvPg=
+SHA-256-Digest: 1+gKf6hXkjx+fVYAB0DKsst+lKE5ubAFAisW/qPUEuY=
 
 Name: assets/arctic.attheme
 SHA-256-Digest: N9Y1nTYQyuRC54BYkoAtL3Q9EjeHKDW9vaelaP2w8gU=
@@ -226,10 +232,10 @@ Name: assets/day.attheme
 SHA-256-Digest: iJcTtt/cA0lO2c8nJ3/qkEvJMZOXLxtWmnkHMxiYvPw=
 
 Name: assets/dexopt/baseline.prof
-SHA-256-Digest: 17j3nZ4hwKC9UE25omURPMaDpWmiKKrF/eHo9c6wJwQ=
+SHA-256-Digest: ANG5Cv3xQUM9w0D11EeLish6xCD28bQAVTWZR4ZxVxU=
 
 Name: assets/dexopt/baseline.profm
-SHA-256-Digest: kbfD7P5AFB40xEBmneITIbQpB0iLpfb24XnEPZshimA=
+SHA-256-Digest: tRNGSrdMViMLONW2A1i9AEcSgg4FoFJtM/5gtVZuAHM=
 
 Name: assets/emoji.pack
 SHA-256-Digest: xCAP2LDvvyJnKXwITyP49JDQOhxV12yH6i+EQyh2llI=
@@ -803,16 +809,16 @@ Name: car-app-api.level
 SHA-256-Digest: EBWbryYrQ6ktldtZ2uH3LGRRJzAWYeCjzk44spWpfFg=
 
 Name: classes.dex
-SHA-256-Digest: uR+cmQP4KBOkDvde4icSEVuY6XUFdCZm3Pu5QqouzD4=
+SHA-256-Digest: b8JRZJo3b7ekEF0f+dpj0V0mASqtRyr5e0EpdgFb5Ec=
 
 Name: classes2.dex
 SHA-256-Digest: sXQO9h4xawAzzIEJPY9Kgnzma7Bc9NS6S9z48dqqDVk=
 
 Name: classes3.dex
-SHA-256-Digest: R9mN7mKCvA88xpnh6FFyemECIjBPA1PthEfeKM+mPnc=
+SHA-256-Digest: 6XB1aUa1LgHMs6U/J6mNTLpZaYIYIDLTPhNehOvmqEY=
 
 Name: classes4.dex
-SHA-256-Digest: 1pFunIEusq5uHf9CyX8Y/H3KrxrhuknGicNNw07fJ/w=
+SHA-256-Digest: c6W3QvnyKczm4BwgiX5uap4QQA13/jcSMzYvFS+xh4k=
 
 Name: client_analytics.proto
 SHA-256-Digest: DHZzJ3Z3KyYFKFWPm2daSVKcrXhcQhyhG0hxebgWJhA=
@@ -902,10 +908,10 @@ Name: lib/arm64-v8a/liblanguage_id_l2c_jni.so
 SHA-256-Digest: uT5lpIIA30Xbv8guF1YK5omxtGKrTs3OX9LAk4AuGpQ=
 
 Name: lib/arm64-v8a/libtmessages.49.so
-SHA-256-Digest: d/gSPUiFZGcA29J0z08kM2BHxCE+gwSodXHbrRsER+0=
+SHA-256-Digest: KmUMR7Kw6v3FgN8Bc/Er16l/xjlxdbPrSPGq5jaD4cU=
 
 Name: lib/arm64-v8a/libtwidget.so
-SHA-256-Digest: 3X440ZcRbjQgdXNHVgvvTLrVaV+DzTlmavX09q2zpjY=
+SHA-256-Digest: 3LkrJ4G59lQuYTrXEjM2kRl0l0SgBClEjqC5sr6abtw=
 
 Name: lib/armeabi-v7a/libdatastore_shared_counter.so
 SHA-256-Digest: cWxdjSysjKDt9l2o8TnHiGtyasedVCoU7euUmUum09w=
@@ -914,10 +920,10 @@ Name: lib/armeabi-v7a/liblanguage_id_l2c_jni.so
 SHA-256-Digest: j44kxjqsegNaodVgozdNX1IFOVBnzdYmAdiZcNX97/E=
 
 Name: lib/armeabi-v7a/libtmessages.49.so
-SHA-256-Digest: VPY7R+mCU6WP5akMae0GEvfuPP5LVBeOrKqi568Z9Bk=
+SHA-256-Digest: 7dDvFnj7DGrNBAovq69MPwr1Kjpc3e0LhPZodtUQHik=
 
 Name: lib/armeabi-v7a/libtwidget.so
-SHA-256-Digest: 3EAwkz5wgFz1hI45KjqTjjdIpzXOcWcNu25vdoFhEG8=
+SHA-256-Digest: n/NslJtj3jazNDrkkVKfNiZZkTWwm27RU90qbvK6jB8=
 
 Name: lib/x86/libdatastore_shared_counter.so
 SHA-256-Digest: zUoWSeLINQcDFG+Upu4r9MPIyfFyFZ+AW2GkoqvfBlk=
@@ -926,10 +932,10 @@ Name: lib/x86/liblanguage_id_l2c_jni.so
 SHA-256-Digest: qAeifCg3sqi9ut1U8cXYt2XHgTFo1A+U75ai2uFE4Ws=
 
 Name: lib/x86/libtmessages.49.so
-SHA-256-Digest: 8c1SJw+DpnEVaKMr8+HeCCqZY0ztLNrOYGAQJ3FAF+8=
+SHA-256-Digest: wAOyu0U/8XdexpveTSgn/jQUbuE3CFMLQmnBFN2xr3A=
 
 Name: lib/x86/libtwidget.so
-SHA-256-Digest: yLyDYU/Zn5vHwmcElhHH0VGKYp33hZizCix5GGmW704=
+SHA-256-Digest: +5l9n2UAIVyE0+m7rLKbFdr/MJAi5zFgf7K4ao2O0qU=
 
 Name: lib/x86_64/libdatastore_shared_counter.so
 SHA-256-Digest: +2ySCJiMSa6UlDvDI2+nY7pYRyLgRPpOqaEtKUECcQU=
@@ -938,10 +944,10 @@ Name: lib/x86_64/liblanguage_id_l2c_jni.so
 SHA-256-Digest: mtvZSIjLfEfmsLlKIUUZnL47nk7qSOr8mvR6bD0PTUo=
 
 Name: lib/x86_64/libtmessages.49.so
-SHA-256-Digest: Q9Ugkwg8UBcXmtJMrNpnOBU9S+6xsKYM3nLlUQkGVng=
+SHA-256-Digest: dnXRhDTWmhQWtjgNr2vqzy9m338tiok43nhanQfGgK4=
 
 Name: lib/x86_64/libtwidget.so
-SHA-256-Digest: jb9t/3ICHwv5AUmskINMXaBSDHnxDA7+07oAXJrHyoM=
+SHA-256-Digest: BlLO2Dx0qSe5RlyRC76lVQ4GgEGFUE2GVZAkhonhMUI=
 
 Name: messaging_event.proto
 SHA-256-Digest: CxNKn/4hQW/iJfN09E9uyli0dRn+rkyQuC4lZ36NVs4=
@@ -22106,7 +22112,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: xqWCaouE8r0YBVgJc0Xzan/HN/Oq7BrXyFux9BXwV7A=
 
 Name: resources.arsc
-SHA-256-Digest: pnBMFFqCoY0rwj2OJUCoqKhXbAsflqH4yaZ1v47pPPk=
+SHA-256-Digest: +znhZqiXMdfv3v8oKsv/XQwxkf7ZpQDT8iO18twKIYg=
 
 Name: version.txt
 SHA-256-Digest: cZQJx0x+5QAGq9BLLED2ycADi2VSsLq3f+qG6DWbzDg=

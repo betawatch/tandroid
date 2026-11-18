@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class aa1 implements ix0 {
     public final /* synthetic */ TLRPC.TL_forumTopic a;
@@ -22,6 +22,6 @@ public final class aa1 implements ix0 {
     }
 
     @Override // org.telegram.ui.ix0
-    public final void k(th0 th0Var) {
+    public final void k(uh0 uh0Var) {
     }
 }

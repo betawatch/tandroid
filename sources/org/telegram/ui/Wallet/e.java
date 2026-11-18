@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements q10 {
     public final /* synthetic */ int a;
@@ -110,8 +110,8 @@ public final /* synthetic */ class e implements q10 {
                 if (password != null) {
                     n6Var.V0 = true;
                     n6Var.W0 = password.has_password;
-                    bi.d6 d6Var = n6Var.a;
-                    if (d6Var != null && (z41Var = d6Var.g3) != null) {
+                    bi.c6 c6Var = n6Var.a;
+                    if (c6Var != null && (z41Var = c6Var.g3) != null) {
                         z41Var.O(true);
                         break;
                     }

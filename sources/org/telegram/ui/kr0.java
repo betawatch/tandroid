@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.ActionMode;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class kr0 extends org.telegram.ui.Cells.a6 {
+public final class kr0 extends org.telegram.ui.Cells.b6 {
     public final /* synthetic */ nr0 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,17 +15,17 @@ public final class kr0 extends org.telegram.ui.Cells.a6 {
         this.G = nr0Var;
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final void j(boolean z10) {
         pr0.i0(this.G.d, this, z10);
     }
 
-    @Override // org.telegram.ui.Cells.a6
-    public final void k(org.telegram.ui.Cells.a6 a6Var) {
-        pr0.j0(this.G.d, a6Var);
+    @Override // org.telegram.ui.Cells.b6
+    public final void k(org.telegram.ui.Cells.b6 b6Var) {
+        pr0.j0(this.G.d, b6Var);
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final boolean m(ArrayList arrayList) {
         pr0 pr0Var = this.G.d;
         if (arrayList.isEmpty()) {
@@ -49,7 +49,7 @@ public final class kr0 extends org.telegram.ui.Cells.a6 {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.a6
+    @Override // org.telegram.ui.Cells.b6
     public final void h(bi.u uVar, ActionMode actionMode) {
     }
 }

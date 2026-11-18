@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gp0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class gp0 implements View.OnClickListener {
                 int closestTab = gt0Var.getClosestTab();
                 y60 I = y60.I(gt0Var.y1, view);
                 I.J = false;
-                if (gt0Var.b0(closestTab, new org.telegram.ui.Cells.b5(I))) {
+                if (gt0Var.b0(closestTab, new org.telegram.ui.Cells.c5(I))) {
                     if (closestTab == 13 || closestTab == 11) {
                         I.b0(0.0f, -org.telegram.messenger.g0.L(52.0f));
                     } else {
@@ -64,8 +64,8 @@ public final /* synthetic */ class gp0 implements View.OnClickListener {
                             lq0 lq0Var = g02.h;
                             for (int i7 = 0; i7 < lq0Var.getChildCount(); i7++) {
                                 View childAt = lq0Var.getChildAt(i7);
-                                if (childAt instanceof org.telegram.ui.Cells.o7) {
-                                    ((org.telegram.ui.Cells.o7) childAt).l(false, true);
+                                if (childAt instanceof org.telegram.ui.Cells.p7) {
+                                    ((org.telegram.ui.Cells.p7) childAt).l(false, true);
                                 }
                             }
                             et0 et0Var = x12.c;

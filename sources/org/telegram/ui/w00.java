@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w00 implements org.telegram.ui.Components.qj0, r0.m, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.f1, org.telegram.ui.ActionBar.m0 {
     public final /* synthetic */ int a;
@@ -86,9 +86,9 @@ public final /* synthetic */ class w00 implements org.telegram.ui.Components.qj0
                     if (view instanceof org.telegram.ui.Components.voip.r) {
                         return f40Var2.M1(view);
                     }
-                    if (view instanceof org.telegram.ui.Cells.f4) {
+                    if (view instanceof org.telegram.ui.Cells.g4) {
                         f40Var2.P1();
-                        org.telegram.ui.Components.ph0 ph0Var = ((org.telegram.ui.Cells.f4) view).f;
+                        org.telegram.ui.Components.ph0 ph0Var = ((org.telegram.ui.Cells.g4) view).f;
                         if (ph0Var.isEnabled()) {
                             ph0Var.callOnClick();
                             return true;
@@ -133,8 +133,8 @@ public final /* synthetic */ class w00 implements org.telegram.ui.Components.qj0
                     int indexOf = (f40Var.n2 ? f40Var.y2 : f40Var.V2.g).indexOf(groupCallParticipant);
                     if (indexOf >= 0 && (K = f40Var.L1.K(indexOf + f40Var.K1.d)) != null) {
                         View view = K.a;
-                        if (view instanceof org.telegram.ui.Cells.f4) {
-                            ((org.telegram.ui.Cells.f4) view).setAmplitude(fArr[i7] * 15.0f);
+                        if (view instanceof org.telegram.ui.Cells.g4) {
+                            ((org.telegram.ui.Cells.g4) view).setAmplitude(fArr[i7] * 15.0f);
                             if (view == f40Var.W4 && !f40Var.k4) {
                                 f40Var.b.invalidate();
                             }

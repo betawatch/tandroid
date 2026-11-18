@@ -35,8 +35,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.ck0;
@@ -47,12 +47,12 @@ import org.telegram.ui.e31;
 import tg.z1;
 import ug.j1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class w0 extends sa {
     public final hi.d T1;
     public final v0 U1;
-    public final x3 V1;
+    public final y3 V1;
     public final ah.e W1;
     public final Paint X1;
     public final ArrayList Y1;
@@ -109,7 +109,7 @@ public final class w0 extends sa {
         int i7 = n6.h5;
         u6.h(i7, v0Var, this.J0);
         v0Var.setOnSearchTextChange(new t0(this, 0));
-        this.V1 = new x3(getContext(), this.J0);
+        this.V1 = new y3(getContext(), this.J0);
         p1();
         ViewGroup viewGroup2 = this.b;
         int i10 = this.u0;
@@ -471,8 +471,8 @@ public final class w0 extends sa {
             arrayList2.add(gVar);
         }
         xg.g gVar2 = new xg.g(10, false);
-        x3 x3Var = this.V1;
-        gVar2.p = x3Var;
+        y3 y3Var = this.V1;
+        gVar2.p = y3Var;
         arrayList2.add(gVar2);
         int i10 = this.n2;
         HashSet hashSet = this.a2;
@@ -537,14 +537,14 @@ public final class w0 extends sa {
         gVar6.k = max;
         arrayList2.add(gVar6);
         if (hashSet.size() > 0 && this.n2 != 3) {
-            x3Var.a(gd.M0(2131743393, null), new s0(this, i13));
+            y3Var.a(gd.M0(2131743393, null), new s0(this, i13));
         } else if (z10) {
-            x3Var.setRightText(null);
+            y3Var.setRightText(null);
         } else {
-            w3 w3Var = x3Var.b;
-            w3Var.c(null, false, true);
-            w3Var.setOnClickListener(null);
-            w3Var.setVisibility(0);
+            x3 x3Var = y3Var.b;
+            x3Var.c(null, false, true);
+            x3Var.setOnClickListener(null);
+            x3Var.setVisibility(0);
         }
         if (!z11 || (hVar = this.k2) == null) {
             return;
@@ -589,20 +589,20 @@ public final class w0 extends sa {
     public final void p1() {
         String H;
         int i7 = this.n2;
-        x3 x3Var = this.V1;
+        y3 y3Var = this.V1;
         if (i7 == 1) {
             TLRPC.Chat chat = this.m2;
             H = gd.H(',', v3.V(chat) ? "Subscribers" : "Members", Math.max(0, this.k2.F(chat) - 1));
-            x3Var.setLayerHeight(32);
+            y3Var.setLayerHeight(32);
         } else if (i7 == 2) {
             H = gd.G((int) s.f(), "BoostingSelectUpToGroupChannelPlural", new Object[0]);
-            x3Var.setLayerHeight(32);
+            y3Var.setLayerHeight(32);
         } else if (i7 != 3) {
             H = "";
         } else {
             H = gd.G((int) mp.u1(j10.t0).q0, "BoostingSelectUpToCountriesPlural", new Object[0]);
-            x3Var.setLayerHeight(1);
+            y3Var.setLayerHeight(1);
         }
-        x3Var.setText(H);
+        y3Var.setText(H);
     }
 }

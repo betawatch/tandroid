@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dk implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -46,7 +46,7 @@ public final /* synthetic */ class dk implements Runnable {
                 long j13 = this.e;
                 e00Var.B(0, j12, j13, false);
                 mpVar.getMessagesStorage().h2(0, j12, j13, false);
-                mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j12), Long.valueOf(j13), 0, this.c);
+                mpVar.getNotificationCenter().k(ks.c5, Long.valueOf(j12), Long.valueOf(j13), 0, this.c);
                 break;
         }
     }

@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class tv0 extends org.telegram.ui.Components.au0 implements r0.l {
     public final e2.r0 g0;
@@ -412,7 +412,7 @@ public final class tv0 extends org.telegram.ui.Components.au0 implements r0.l {
             org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
             Object[] objArr = new Object[1];
             objArr[c10] = Boolean.TRUE;
-            e10.k(org.telegram.messenger.ks.t4, objArr);
+            e10.k(org.telegram.messenger.ks.u4, objArr);
             if (profileActivity.T0 != null) {
                 if (profileActivity.w4()) {
                     profileActivity.T0.u(21);

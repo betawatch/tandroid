@@ -63,14 +63,14 @@ import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.z10;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
-import org.telegram.ui.de0;
-import org.telegram.ui.le0;
+import org.telegram.ui.ee0;
+import org.telegram.ui.me0;
 import org.telegram.ui.ox;
-import org.telegram.ui.s60;
+import org.telegram.ui.t60;
 import org.telegram.ui.wm;
 import org.telegram.ui.zm;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements s4, pg.b {
     public static Drawable w1;
@@ -103,7 +103,7 @@ public class ActionBarLayout extends FrameLayout implements s4, pg.b {
     public final AccelerateDecelerateInterpolator O;
     public int O0;
     public float P;
-    public s60 P0;
+    public t60 P0;
     public boolean Q;
     public p4 Q0;
     public boolean R;
@@ -1655,9 +1655,9 @@ public class ActionBarLayout extends FrameLayout implements s4, pg.b {
             this.r0 = null;
         }
         int size = r4Var.e ? 1 : this.V0.size();
-        bi.u4 u4Var = new bi.u4(this, size, r4Var, runnable, 12);
+        bi.t4 t4Var = new bi.t4(this, size, r4Var, runnable, 12);
         if (size < 1 || !r4Var.f || !r4Var.g) {
-            u4Var.run();
+            t4Var.run();
             return;
         }
         if (r4Var.m == null) {
@@ -1670,12 +1670,12 @@ public class ActionBarLayout extends FrameLayout implements s4, pg.b {
         }
         if (runnable == null) {
             n6.u(r4Var.a, true, r4Var.c);
-            u4Var.run();
+            t4Var.run();
             return;
         }
         m6 m6Var3 = r4Var.a;
         boolean z10 = r4Var.c;
-        oi.a2 a2Var = new oi.a2(u4Var, 2);
+        oi.a2 a2Var = new oi.a2(t4Var, 2);
         int i10 = n6.a;
         if (m6Var3 == null) {
             a2Var.run();
@@ -1723,12 +1723,12 @@ public class ActionBarLayout extends FrameLayout implements s4, pg.b {
         try {
             int i11 = n6.wm + 1;
             n6.wm = i11;
-            bi.e5 e5Var = new bi.e5(i11, a2Var, c0Var);
+            bi.d5 d5Var = new bi.d5(i11, a2Var, c0Var);
             String str = m6Var.d;
             if (str != null) {
-                Utilities.i.c(new org.telegram.messenger.camera.i(e5Var, obj, str, obj, 4));
+                Utilities.i.c(new org.telegram.messenger.camera.i(d5Var, obj, str, obj, 4));
             } else {
-                Utilities.i.c(new org.telegram.messenger.camera.i(e5Var, new File(m6Var.b), obj, strArr, 4));
+                Utilities.i.c(new org.telegram.messenger.camera.i(d5Var, new File(m6Var.b), obj, strArr, 4));
             }
         } catch (Exception e11) {
             e = e11;
@@ -1884,7 +1884,7 @@ public class ActionBarLayout extends FrameLayout implements s4, pg.b {
 
     public h2 getLastFragmentIncludeMainTabs() {
         h2 lastFragment = getLastFragment();
-        return lastFragment instanceof le0 ? ((le0) lastFragment).c0() : lastFragment;
+        return lastFragment instanceof me0 ? ((me0) lastFragment).c0() : lastFragment;
     }
 
     @Override // org.telegram.ui.ActionBar.s4
@@ -2865,7 +2865,7 @@ public class ActionBarLayout extends FrameLayout implements s4, pg.b {
         }
         for (int size = getFragmentStack().size() - 1; size >= 0; size--) {
             h2 h2Var = (h2) getFragmentStack().get(size);
-            if (h2Var != null && !h2Var.isFinishing() && !h2Var.isRemovingFromStack() && de0.class.isInstance(h2Var)) {
+            if (h2Var != null && !h2Var.isFinishing() && !h2Var.isRemovingFromStack() && ee0.class.isInstance(h2Var)) {
                 return h2Var;
             }
         }

@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements org.telegram.ui.Components.um0, ki.r3, kb1, r0.m, org.telegram.ui.ActionBar.r1, ug.s, org.telegram.ui.Components.nc0, org.telegram.ui.Components.pj0, org.telegram.ui.Components.ot0, org.telegram.ui.Components.du0, fi.a9, org.telegram.ui.Components.ej0, CameraView.CameraViewDelegate, org.telegram.messenger.v10, org.telegram.messenger.mc, org.telegram.ui.Components.bi0, org.telegram.messenger.lr, org.telegram.ui.Cells.e0, gx {
     public final /* synthetic */ int a;
@@ -368,7 +368,7 @@ public final /* synthetic */ class w0 implements org.telegram.ui.Components.um0,
                     if (i10 == 2) {
                         boolean z10 = !qrVar.Y;
                         qrVar.Y = z10;
-                        ((org.telegram.ui.Cells.r8) view).setChecked(z10);
+                        ((org.telegram.ui.Cells.s8) view).setChecked(z10);
                         break;
                     }
                 } else {

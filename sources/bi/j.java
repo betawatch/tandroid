@@ -28,7 +28,7 @@ import org.telegram.ui.Components.rn;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements x10 {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class j implements x10 {
                 }
                 break;
             case 2:
-                v4.s((TL_stars.TL_starGiftUnique) obj4, gd.a0(null, null, !((Boolean) obj).booleanValue() ? 2131749620 : ((Boolean) obj3).booleanValue() ? 2131749617 : 2131749618, (String) obj2));
+                u4.s((TL_stars.TL_starGiftUnique) obj4, gd.a0(null, null, !((Boolean) obj).booleanValue() ? 2131749620 : ((Boolean) obj3).booleanValue() ? 2131749617 : 2131749618, (String) obj2));
                 break;
             case 3:
                 di.f6 f6Var = (di.f6) obj4;

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z31 implements org.telegram.ui.Components.qj0, te.b {
     public final /* synthetic */ c51 a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class z31 implements org.telegram.ui.Components.qj0
                             case 0:
                                 c51 c51Var2 = c51Var;
                                 c51Var2.getClass();
-                                c51Var2.presentFragment(new ng0(fjVar));
+                                c51Var2.presentFragment(new og0(fjVar));
                                 break;
                             default:
                                 c51 c51Var3 = c51Var;
@@ -74,7 +74,7 @@ public final /* synthetic */ class z31 implements org.telegram.ui.Components.qj0
                             case 0:
                                 c51 c51Var2 = c51Var;
                                 c51Var2.getClass();
-                                c51Var2.presentFragment(new ng0(fjVar));
+                                c51Var2.presentFragment(new og0(fjVar));
                                 break;
                             default:
                                 c51 c51Var3 = c51Var;

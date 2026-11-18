@@ -3,7 +3,7 @@ package org.telegram.ui;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ix extends v4.w {
     public boolean d;
@@ -44,8 +44,8 @@ public final class ix extends v4.w {
             arrayList.set(i10, (Long) arrayList.get(i11));
             arrayList.set(i11, l10);
             hxVar.j(b10, b11);
-            ((org.telegram.ui.Cells.h4) f1Var.a).setDrawDivider(b11 != kxVar.r - 1);
-            ((org.telegram.ui.Cells.h4) f1Var2.a).setDrawDivider(b10 != kxVar.r - 1);
+            ((org.telegram.ui.Cells.i4) f1Var.a).setDrawDivider(b11 != kxVar.r - 1);
+            ((org.telegram.ui.Cells.i4) f1Var2.a).setDrawDivider(b10 != kxVar.r - 1);
             this.d = true;
         }
         return true;

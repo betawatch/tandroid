@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ld0 extends org.telegram.ui.ActionBar.x2 {
     public static final /* synthetic */ int J1 = 0;
@@ -35,7 +35,7 @@ public final class ld0 extends org.telegram.ui.ActionBar.x2 {
     public final ArrayList G1;
     public final ArrayList H1;
     public final TLRPC.TL_userContact_old2 I1;
-    public final org.telegram.ui.Cells.b5 m1;
+    public final org.telegram.ui.Cells.c5 m1;
     public final ed0 n1;
     public final LinearLayout o1;
     public final fd0 p1;
@@ -194,7 +194,7 @@ public final class ld0 extends org.telegram.ui.ActionBar.x2 {
                 this.b = dd0Var;
                 this.v0 = false;
                 this.w0 = false;
-                this.m1 = new org.telegram.ui.Cells.b5(this);
+                this.m1 = new org.telegram.ui.Cells.c5(this);
                 ed0 ed0Var = new ed0(this, parentActivity);
                 this.n1 = ed0Var;
                 ed0Var.setClipToPadding(false);
@@ -211,7 +211,7 @@ public final class ld0 extends org.telegram.ui.ActionBar.x2 {
                     this.o1.addView(u10, c8.ma.o(-1, -2));
                     if ((i10 >= this.A1 && i10 < this.B1) || (i10 >= this.C1 && i10 < this.D1)) {
                         u10.setBackgroundDrawable(org.telegram.ui.ActionBar.n6.N0(false));
-                        u10.setOnClickListener(new bi.f5(this, i10, u10, 14));
+                        u10.setOnClickListener(new bi.e5(this, i10, u10, 14));
                         u10.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.cd0
                             @Override // android.view.View.OnLongClickListener
                             public final boolean onLongClick(View view) {
@@ -332,7 +332,7 @@ public final class ld0 extends org.telegram.ui.ActionBar.x2 {
         this.b = dd0Var2;
         this.v0 = false;
         this.w0 = false;
-        this.m1 = new org.telegram.ui.Cells.b5(this);
+        this.m1 = new org.telegram.ui.Cells.c5(this);
         ed0 ed0Var2 = new ed0(this, parentActivity2);
         this.n1 = ed0Var2;
         ed0Var2.setClipToPadding(false);

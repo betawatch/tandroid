@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qa extends bk0 {
     public final /* synthetic */ int c;
@@ -77,10 +77,10 @@ public final class qa extends bk0 {
                 }
                 break;
             default:
-                org.telegram.ui.Cells.ua uaVar = (org.telegram.ui.Cells.ua) f1Var.a;
-                uaVar.d(1, false, false);
-                uaVar.setSize(((fj) this.f).r);
-                uaVar.e(1, ((ArrayList) this.e).get(i7), null, 0);
+                org.telegram.ui.Cells.va vaVar = (org.telegram.ui.Cells.va) f1Var.a;
+                vaVar.d(1, false, false);
+                vaVar.setSize(((fj) this.f).r);
+                vaVar.e(1, ((ArrayList) this.e).get(i7), null, 0);
                 break;
         }
     }

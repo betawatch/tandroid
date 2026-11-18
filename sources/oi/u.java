@@ -32,7 +32,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class u extends sa {
     public final int T1;
@@ -42,7 +42,7 @@ public final class u extends sa {
     public final FrameLayout X1;
     public final ut Y1;
     public final FrameLayout Z1;
-    public final org.telegram.ui.Cells.k3 a2;
+    public final org.telegram.ui.Cells.l3 a2;
     public final hi.d b2;
     public boolean c2;
     public int d2;
@@ -87,11 +87,11 @@ public final class u extends sa {
                         break;
                     default:
                         u uVar = this.b;
-                        org.telegram.ui.Cells.k3 k3Var = uVar.a2;
+                        org.telegram.ui.Cells.l3 l3Var = uVar.a2;
                         if (!uVar.c2) {
                             TL_iv.RichMessage richMessage = uVar.e2;
                             if (richMessage == null) {
-                                String trim = k3Var.d.getText().toString().trim();
+                                String trim = l3Var.d.getText().toString().trim();
                                 if (!TextUtils.isEmpty(trim)) {
                                     uVar.c2 = true;
                                     uVar.b2.setLoading(true);
@@ -100,7 +100,7 @@ public final class u extends sa {
                                     inputaicomposetonesingleuse.custom_prompt = trim;
                                     tL_messages_composeRichMessageWithAI.tone = inputaicomposetonesingleuse;
                                     uVar.d2 = ConnectionsManager.getInstance(uVar.T1).sendRequest(tL_messages_composeRichMessageWithAI, new ai.e1(uVar, 23));
-                                    org.telegram.messenger.g0.v1(k3Var.d);
+                                    org.telegram.messenger.g0.v1(l3Var.d);
                                     break;
                                 }
                             } else {
@@ -132,17 +132,17 @@ public final class u extends sa {
         frameLayout2.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), 0);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.Z1 = frameLayout3;
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, gd.M0(2131754056, null), true, false, ((org.telegram.messenger.j0) mp.u1(i7).A7.W.b).c, i6Var);
-        this.a2 = k3Var;
-        org.telegram.ui.Cells.i3 i3Var = k3Var.d;
-        i3Var.setImeOptions(6);
-        i3Var.setMaxLines(5);
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, gd.M0(2131754056, null), true, false, ((org.telegram.messenger.j0) mp.u1(i7).A7.W.b).c, i6Var);
+        this.a2 = l3Var;
+        org.telegram.ui.Cells.j3 j3Var = l3Var.d;
+        j3Var.setImeOptions(6);
+        j3Var.setMaxLines(5);
         ShapeDrawable d03 = n6.d0(org.telegram.messenger.g0.L(20.0f), n6.w0(i14, i6Var));
         q6 M2 = u6.M(i14);
-        k3Var.setBackground(d03);
-        u6.j(k3Var, d03, M2, null, i6Var);
-        i3Var.addTextChangedListener(new t(this));
-        frameLayout3.addView(k3Var, ma.c(-2.0f, -1));
+        l3Var.setBackground(d03);
+        u6.j(l3Var, d03, M2, null, i6Var);
+        j3Var.addTextChangedListener(new t(this));
+        frameLayout3.addView(l3Var, ma.c(-2.0f, -1));
         frameLayout3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         hi.d g10 = n10.g(24, context, i6Var, true);
         this.b2 = g10;
@@ -162,11 +162,11 @@ public final class u extends sa {
                         break;
                     default:
                         u uVar = this.b;
-                        org.telegram.ui.Cells.k3 k3Var2 = uVar.a2;
+                        org.telegram.ui.Cells.l3 l3Var2 = uVar.a2;
                         if (!uVar.c2) {
                             TL_iv.RichMessage richMessage = uVar.e2;
                             if (richMessage == null) {
-                                String trim = k3Var2.d.getText().toString().trim();
+                                String trim = l3Var2.d.getText().toString().trim();
                                 if (!TextUtils.isEmpty(trim)) {
                                     uVar.c2 = true;
                                     uVar.b2.setLoading(true);
@@ -175,7 +175,7 @@ public final class u extends sa {
                                     inputaicomposetonesingleuse.custom_prompt = trim;
                                     tL_messages_composeRichMessageWithAI.tone = inputaicomposetonesingleuse;
                                     uVar.d2 = ConnectionsManager.getInstance(uVar.T1).sendRequest(tL_messages_composeRichMessageWithAI, new ai.e1(uVar, 23));
-                                    org.telegram.messenger.g0.v1(k3Var2.d);
+                                    org.telegram.messenger.g0.v1(l3Var2.d);
                                     break;
                                 }
                             } else {

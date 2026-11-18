@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class dd0 extends FrameLayout {
     public final RectF a;
@@ -92,10 +92,10 @@ public final class dd0 extends FrameLayout {
         ((FrameLayout.LayoutParams) ld0Var.q1.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
         this.b = true;
         int L = org.telegram.messenger.g0.L(80.0f);
-        org.telegram.ui.Cells.b5 b5Var = ld0Var.m1;
-        int i12 = ((ld0) b5Var.a).z1;
+        org.telegram.ui.Cells.c5 c5Var = ld0Var.m1;
+        int i12 = ((ld0) c5Var.a).z1;
         for (int i13 = 0; i13 < i12; i13++) {
-            ViewGroup u10 = b5Var.u(this.c, i13);
+            ViewGroup u10 = c5Var.u(this.c, i13);
             u10.measure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
             L += u10.getMeasuredHeight();
         }

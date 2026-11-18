@@ -25,7 +25,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jx extends FrameLayout {
     public org.telegram.ui.Components.o9 a;
@@ -50,9 +50,9 @@ public final class jx extends FrameLayout {
         setPadding(0, org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f));
         LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
         addView(g10, c8.ma.e(-2, -2, 17));
-        org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0(context);
-        u0Var.setCustomText(org.telegram.messenger.gd.M0(2131742611, null));
-        g10.addView(u0Var, c8.ma.t(-2, -2, 17, 0, 0, 0, 4));
+        org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0(context);
+        v0Var.setCustomText(org.telegram.messenger.gd.M0(2131742611, null));
+        g10.addView(v0Var, c8.ma.t(-2, -2, 17, 0, 0, 0, 4));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setBackgroundResource(R.drawable.widget_bg);

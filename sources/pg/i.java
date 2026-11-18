@@ -33,10 +33,10 @@ import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.mq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements fs {
     public ck0 E;
@@ -67,11 +67,11 @@ public final class i extends FrameLayout implements fs {
     private List<a> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new cd0(20)));
+        arrayList.add(new a("Draw action bar shadow", new dd0(20)));
         arrayList.add(new a("Show blur settings", new d(this, 0)));
         arrayList.add(new a(gd.M0(2131751636, null)));
         arrayList.add(new a(gd.M0(bz.J0 ? 2131751627 : 2131751619, null), new d(this, 1)));
-        arrayList.add(new a(n6.I.q() ? "Switch to day theme" : "Switch to dark theme", new cd0(21)));
+        arrayList.add(new a(n6.I.q() ? "Switch to day theme" : "Switch to dark theme", new dd0(21)));
         arrayList.add(new a(gd.M0(2131751602, null), new d(this, 2)));
         return arrayList;
     }
@@ -178,7 +178,7 @@ public final class i extends FrameLayout implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.p4) {
+        if (i7 == ks.q4) {
             d();
             this.E.getAdapter().f();
         }
@@ -215,7 +215,7 @@ public final class i extends FrameLayout implements fs {
         hVar2.a(0.75f);
         gVar2.m = hVar2;
         this.d = gVar2;
-        ks.e().c(this, ks.p4);
+        ks.e().c(this, ks.q4);
     }
 
     @Override // android.view.View
@@ -236,7 +236,7 @@ public final class i extends FrameLayout implements fs {
         super.onDetachedFromWindow();
         this.c.d();
         this.d.d();
-        ks.e().n(this, ks.p4);
+        ks.e().n(this, ks.q4);
     }
 
     @Override // android.view.View

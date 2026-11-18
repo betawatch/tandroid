@@ -1,63 +1,57 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextUtils;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import android.util.Property;
+import android.view.View;
+import org.telegram.ui.Components.g01;
+import org.telegram.ui.Components.vi0;
+import org.telegram.ui.cr0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class h1 implements Runnable {
+public final class h1 extends Property {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q1 b;
 
-    public /* synthetic */ h1(q1 q1Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h1(Class cls, String str, int i7) {
+        super(cls, str);
         this.a = i7;
-        this.b = q1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z22;
+    @Override // android.util.Property
+    public final Object get(Object obj) {
         switch (this.a) {
             case 0:
-                l1 l1Var = this.b.Sa;
-                if (l1Var != null) {
-                    l1Var.v();
-                    break;
-                }
+                return Float.valueOf(((r1) obj).kd);
+            case 1:
+                return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
+            case 2:
+                return Float.valueOf(((vi0) obj).w);
+            case 3:
+                return Float.valueOf(((g01) obj).h);
+            default:
+                return Float.valueOf(((cr0) obj).a);
+        }
+    }
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                ((r1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
+                break;
+            case 1:
+                ((View) obj).setTranslationY(((Integer) obj2).intValue());
+                break;
+            case 2:
+                ((vi0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                break;
+            case 3:
+                g01 g01Var = (g01) obj;
+                g01Var.h = ((Float) obj2).floatValue();
+                g01Var.invalidate();
                 break;
             default:
-                q1 q1Var = this.b;
-                h1 h1Var = q1Var.wb;
-                fj fjVar = q1Var.Q5;
-                if (fjVar != null && (z22 = q1Var.z2(fjVar)) != q1Var.h3) {
-                    q1Var.h3 = z22;
-                    if (z22) {
-                        fj fjVar2 = q1Var.Q5;
-                        q1Var.Q5 = null;
-                        q1Var.y3(fjVar2, q1Var.L, q1Var.G, q1Var.F, q1Var.H, false);
-                    } else {
-                        org.telegram.messenger.g0.h3(h1Var, 1000L);
-                        q1Var.fb = true;
-                        int L = q1Var.b7 - org.telegram.messenger.g0.L(91.0f);
-                        q1Var.e3 = new StaticLayout(TextUtils.ellipsize(gd.M0(2131753964, null), org.telegram.ui.ActionBar.n6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.n6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    }
-                }
-                if (!q1Var.h3) {
-                    RectF rectF = q1Var.c4;
-                    q1Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                    if (q1Var.fb) {
-                        org.telegram.messenger.g0.h3(h1Var, 1000L);
-                        break;
-                    }
-                } else {
-                    q1Var.invalidate();
-                    q1Var.fb = false;
-                    break;
-                }
+                ((cr0) obj).b(((Float) obj2).floatValue());
                 break;
         }
     }

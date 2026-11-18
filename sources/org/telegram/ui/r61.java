@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class r61 extends org.telegram.ui.Components.ck0 {
     public boolean f3;
@@ -31,13 +31,13 @@ public final class r61 extends org.telegram.ui.Components.ck0 {
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         v4.f1 T;
         boolean drawChild = super.drawChild(canvas, view, j3);
-        if (view instanceof org.telegram.ui.Cells.q1) {
-            org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-            q1Var.getMessageObject();
-            ImageReceiver avatarImage = q1Var.getAvatarImage();
+        if (view instanceof org.telegram.ui.Cells.r1) {
+            org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) view;
+            r1Var.getMessageObject();
+            ImageReceiver avatarImage = r1Var.getAvatarImage();
             if (avatarImage != null) {
                 int top = view.getTop();
-                boolean K2 = q1Var.K2();
+                boolean K2 = r1Var.K2();
                 x71 x71Var = this.h3;
                 if (K2 && (T = x71Var.w0.T(view)) != null) {
                     if (x71Var.w0.K(T.b() - 1) != null) {
@@ -46,13 +46,13 @@ public final class r61 extends org.telegram.ui.Components.ck0 {
                         return drawChild;
                     }
                 }
-                float translationX = q1Var.getTranslationX();
-                int layoutHeight = q1Var.getLayoutHeight() + view.getTop();
+                float translationX = r1Var.getTranslationX();
+                int layoutHeight = r1Var.getLayoutHeight() + view.getTop();
                 int measuredHeight = x71Var.w0.getMeasuredHeight() - x71Var.w0.getPaddingBottom();
                 if (layoutHeight > measuredHeight) {
                     layoutHeight = measuredHeight;
                 }
-                if (q1Var.L2() && (r12 = x71Var.w0.T(view)) != null) {
+                if (r1Var.L2() && (r12 = x71Var.w0.T(view)) != null) {
                     int i7 = 0;
                     while (i7 < 20) {
                         i7++;
@@ -65,7 +65,7 @@ public final class r61 extends org.telegram.ui.Components.ck0 {
                         if (layoutHeight - org.telegram.messenger.g0.L(48.0f) < view2.getBottom()) {
                             translationX = Math.min(view2.getTranslationX(), translationX);
                         }
-                        if (!(view2 instanceof org.telegram.ui.Cells.q1) || !((org.telegram.ui.Cells.q1) view2).L2()) {
+                        if (!(view2 instanceof org.telegram.ui.Cells.r1) || !((org.telegram.ui.Cells.r1) view2).L2()) {
                             top = top2;
                             break;
                         }
@@ -91,7 +91,7 @@ public final class r61 extends org.telegram.ui.Components.ck0 {
 
     @Override // org.telegram.ui.Components.ck0
     public final void j1(View view, float f10, float f11, boolean z10) {
-        if (z10 && (view instanceof org.telegram.ui.Cells.q1) && !((org.telegram.ui.Cells.q1) view).E2(f10)) {
+        if (z10 && (view instanceof org.telegram.ui.Cells.r1) && !((org.telegram.ui.Cells.r1) view).E2(f10)) {
             return;
         }
         super.j1(view, f10, f11, z10);

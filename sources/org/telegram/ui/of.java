@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class of implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -761,7 +761,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                         if (siVar4.F3 == null && z12 && bnVar4 != null && org.telegram.messenger.v3.V(bnVar4.e) && (chatFull = bnVar4.r8) != null && chatFull.paid_media_allowed) {
                             G.c(R.drawable.menu_feature_paid, org.telegram.messenger.gd.M0(2131747537, r62), r62, false);
                             org.telegram.ui.ActionBar.z0 z22 = G.z();
-                            z22.setOnClickListener(new bi.n6(siVar4, context, z22, i6Var, 13));
+                            z22.setOnClickListener(new bi.m6(siVar4, context, z22, i6Var, 13));
                             long starsPrice = chatAttachAlertPhotoLayout.getStarsPrice();
                             if (starsPrice > 0) {
                                 z22.setText(org.telegram.messenger.gd.M0(2131747535, r62));

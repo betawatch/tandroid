@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mq implements org.telegram.ui.Cells.z4, org.telegram.ui.Components.du0 {
+public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.du0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ nq b;
 
@@ -11,10 +11,10 @@ public final /* synthetic */ class mq implements org.telegram.ui.Cells.z4, org.t
         this.b = nqVar;
     }
 
-    @Override // org.telegram.ui.Cells.z4
-    public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
+    @Override // org.telegram.ui.Cells.a5
+    public boolean b(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
         rq rqVar = this.b.d;
-        return rqVar.m0(rqVar.a.E(((Integer) a5Var.getTag()).intValue()), !z10, a5Var);
+        return rqVar.m0(rqVar.a.E(((Integer) b5Var.getTag()).intValue()), !z10, b5Var);
     }
 
     @Override // org.telegram.ui.Components.du0

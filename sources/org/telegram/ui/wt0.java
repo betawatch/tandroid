@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wt0 implements Runnable {
     public final /* synthetic */ int a;
@@ -92,10 +92,10 @@ public final /* synthetic */ class wt0 implements Runnable {
                 String f11 = org.telegram.messenger.r1.i().f(tL_collectibleInfo.amount, tL_collectibleInfo.currency);
                 int i11 = 9;
                 org.telegram.ui.Components.gc w10 = new org.telegram.ui.Components.lc(kv0Var.x1, profileActivity2.A0).w(R.drawable.filled_username, org.telegram.messenger.g0.b4(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0(null, null, 2131750503, str2, format, f10, TextUtils.isEmpty(f11) ? "" : a8.p0.p("(", f11, ")"))), new tr0(i11, profileActivity2, tL_collectibleInfo)));
-                bd0 bd0Var = new bd0(i11, profileActivity2, tL_collectibleInfo);
+                cd0 cd0Var = new cd0(i11, profileActivity2, tL_collectibleInfo);
                 org.telegram.ui.Components.lb lbVar = w10.e;
                 if (lbVar != null) {
-                    lbVar.setOnClickListener(bd0Var);
+                    lbVar.setOnClickListener(cd0Var);
                 }
                 w10.k(false);
                 return;
@@ -242,7 +242,7 @@ public final /* synthetic */ class wt0 implements Runnable {
                 ((WalletEngine2) obj5).lambda$prepareSend$52((org.telegram.messenger.s10) obj4, (TL_wallet.sendTransfer) obj3, (String) obj2, (String) obj);
                 return;
             case 13:
-                ((p4.g) obj4).run().b(new jg0((ab.c0) obj5, (AtomicBoolean) obj3, (p4.h) obj2, (AtomicBoolean) obj, 28), m9.r.a);
+                ((p4.g) obj4).run().b(new kg0((ab.c0) obj5, (AtomicBoolean) obj3, (p4.h) obj2, (AtomicBoolean) obj, 28), m9.r.a);
                 return;
             case 14:
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj5;

@@ -31,9 +31,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public final CopyOnWriteArrayList E;
@@ -43,7 +43,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public boolean I;
     public boolean J;
     public final b0 b;
-    public final md0 c;
+    public final nd0 c;
     public final androidx.lifecycle.v d;
     public final n e;
     public t0 f;
@@ -58,7 +58,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public l() {
         b0 b0Var = new b0();
         this.b = b0Var;
-        this.c = new md0(new a3.f(this, 9));
+        this.c = new nd0(new a3.f(this, 9));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         n nVar = new n(this);

@@ -15,7 +15,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.c6 {
     public int E;
@@ -23,8 +23,8 @@ public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.
     public v4.c0 b;
     public final org.telegram.ui.Components.jp c;
     public final org.telegram.ui.Components.mh0 d;
-    public final org.telegram.ui.Cells.m8 e;
-    public final org.telegram.ui.Cells.m8 f;
+    public final org.telegram.ui.Cells.n8 e;
+    public final org.telegram.ui.Cells.n8 f;
     public int h;
     public final int n;
     public int r;
@@ -79,28 +79,28 @@ public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.
             mh0Var.h = true;
             mh0Var.a0 = true;
             mh0Var.o();
-            org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(context);
-            this.e = m8Var;
+            org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context);
+            this.e = n8Var;
             int i11 = org.telegram.ui.ActionBar.n6.i6;
             org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.x0(null, i11, false), 2, -1);
             org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i11);
-            m8Var.setBackground(h02);
-            org.telegram.ui.ActionBar.u6.j(m8Var, h02, null, M, null);
-            addView(m8Var, c8.ma.c(-2.0f, -1));
-            org.telegram.ui.Cells.m8 m8Var2 = new org.telegram.ui.Cells.m8(context);
-            this.f = m8Var2;
-            m8Var2.o(R.drawable.msg_colors, org.telegram.messenger.gd.M0(2131745296, null), false);
-            addView(m8Var2, c8.ma.c(-2.0f, -1));
-            m8Var.setOnClickListener(new a7.d(i10, this, h2Var));
+            n8Var.setBackground(h02);
+            org.telegram.ui.ActionBar.u6.j(n8Var, h02, null, M, null);
+            addView(n8Var, c8.ma.c(-2.0f, -1));
+            org.telegram.ui.Cells.n8 n8Var2 = new org.telegram.ui.Cells.n8(context);
+            this.f = n8Var2;
+            n8Var2.o(R.drawable.msg_colors, org.telegram.messenger.gd.M0(2131745296, null), false);
+            addView(n8Var2, c8.ma.c(-2.0f, -1));
+            n8Var.setOnClickListener(new a7.d(i10, this, h2Var));
             mh0Var.h = true;
-            m8Var2.setOnClickListener(new a(h2Var, 18));
+            n8Var2.setOnClickListener(new a(h2Var, 18));
             if (org.telegram.ui.ActionBar.n6.k1()) {
-                m8Var.p(org.telegram.messenger.gd.M0(2131745271, null), mh0Var, true);
-                m8Var.x += 2;
+                n8Var.p(org.telegram.messenger.gd.M0(2131745271, null), mh0Var, true);
+                n8Var.x += 2;
             } else {
                 mh0Var.M(mh0Var.e[0] - 1);
-                m8Var.p(org.telegram.messenger.gd.M0(2131745272, null), mh0Var, true);
-                m8Var.x += 2;
+                n8Var.p(org.telegram.messenger.gd.M0(2131745272, null), mh0Var, true);
+                n8Var.x += 2;
             }
         }
         if (!org.telegram.messenger.ri.d0(h2Var.getCurrentAccount()).B0.isEmpty()) {
@@ -334,9 +334,9 @@ public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.
             if (mh0Var2 != null) {
                 mh0Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q6, false), PorterDuff.Mode.SRC_IN));
             }
-            org.telegram.ui.Cells.m8 m8Var = this.e;
-            if (m8Var != null) {
-                org.telegram.ui.ActionBar.n6.H1(m8Var.getBackground(), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.i6, false), true);
+            org.telegram.ui.Cells.n8 n8Var = this.e;
+            if (n8Var != null) {
+                org.telegram.ui.ActionBar.n6.H1(n8Var.getBackground(), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.i6, false), true);
                 this.e.g(-1, org.telegram.ui.ActionBar.n6.q6);
             }
             if (this.f != null) {
@@ -350,15 +350,15 @@ public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.
                         yVar.setColor(ColorStateList.valueOf(x03));
                     }
                 } else {
-                    org.telegram.ui.Cells.m8 m8Var2 = this.f;
+                    org.telegram.ui.Cells.n8 n8Var2 = this.f;
                     org.telegram.ui.Cells.y i02 = org.telegram.ui.ActionBar.n6.i0(x02, x03);
                     this.y = i02;
-                    m8Var2.setBackground(i02);
+                    n8Var2.setBackground(i02);
                     this.E = x03;
                 }
-                org.telegram.ui.Cells.m8 m8Var3 = this.f;
+                org.telegram.ui.Cells.n8 n8Var3 = this.f;
                 int i10 = org.telegram.ui.ActionBar.n6.q6;
-                m8Var3.g(i10, i10);
+                n8Var3.g(i10, i10);
             }
         }
     }

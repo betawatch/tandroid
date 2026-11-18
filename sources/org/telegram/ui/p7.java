@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class p7 extends f7 {
     public final /* synthetic */ s7 n;
@@ -18,7 +18,7 @@ public final class p7 extends f7 {
     @Override // v4.i0
     public final void t(v4.f1 f1Var, int i7) {
         j7 j7Var = (j7) f1Var.a;
-        org.telegram.ui.Cells.g7 g7Var = (org.telegram.ui.Cells.g7) j7Var.b.getChildAt(0);
+        org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) j7Var.b.getChildAt(0);
         ei.b bVar = ((l7) this.e.get(i7)).d;
         boolean z10 = bVar == j7Var.getTag();
         boolean z11 = i7 != this.e.size() - 1;
@@ -73,15 +73,15 @@ public final class p7 extends f7 {
             bVar.f = fjVar;
             fjVar.z0 = true;
         }
-        g7Var.f(bVar.f, z11);
+        h7Var.f(bVar.f, z11);
         boolean z12 = bVar.e.a;
         boolean z13 = !z12;
         if (!z10) {
-            g7Var.h0 = !z12 ? 1.0f : 0.0f;
+            h7Var.h0 = !z12 ? 1.0f : 0.0f;
         }
-        if (g7Var.g0 != z13) {
-            g7Var.g0 = z13;
-            g7Var.invalidate();
+        if (h7Var.g0 != z13) {
+            h7Var.g0 = z13;
+            h7Var.invalidate();
         }
         j7Var.d = z11;
         j7Var.c.setText(org.telegram.messenger.g0.i0(bVar.c, false, false));

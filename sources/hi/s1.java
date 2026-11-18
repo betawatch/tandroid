@@ -16,7 +16,7 @@ import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.mc;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class s1 extends bk0 {
     public String e;
@@ -184,52 +184,52 @@ public final class s1 extends bk0 {
             return;
         }
         if (i10 == 2) {
-            org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) view;
+            org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) view;
             Object F = F(i7);
             if (!(F instanceof TLRPC.Document)) {
                 if (F instanceof TLRPC.BotInlineResult) {
-                    h2Var.e((TLRPC.BotInlineResult) F, this.f, true, false, false, true);
+                    i2Var.e((TLRPC.BotInlineResult) F, this.f, true, false, false, true);
                 }
             } else {
                 TLRPC.Document document = (TLRPC.Document) F;
-                h2Var.getClass();
-                h2Var.d(0, "gif" + document, document);
+                i2Var.getClass();
+                i2Var.d(0, "gif" + document, document);
             }
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.j8] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.k8] */
     /* JADX WARN: Type inference failed for: r9v12, types: [android.view.View] */
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        org.telegram.ui.Cells.h2 h2Var;
+        org.telegram.ui.Cells.i2 i2Var;
         u1 u1Var = this.s;
         if (i7 == 0) {
-            h2Var = new View(u1Var.getContext());
+            i2Var = new View(u1Var.getContext());
         } else if (i7 == 1) {
             Context context = u1Var.getContext();
             j2 j2Var = u1Var.r;
             int i10 = j2.C1;
-            ?? j8Var = new org.telegram.ui.Cells.j8(context, false, false, j2Var.J0, false);
-            j8Var.a(0, gd.M0(2131750823, null));
+            ?? k8Var = new org.telegram.ui.Cells.k8(context, false, false, j2Var.J0, false);
+            k8Var.a(0, gd.M0(2131750823, null));
             v4.q0 q0Var = new v4.q0(-1, -2);
             ((ViewGroup.MarginLayoutParams) q0Var).topMargin = org.telegram.messenger.g0.L(2.5f);
             ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin = org.telegram.messenger.g0.L(5.5f);
-            j8Var.setLayoutParams(q0Var);
-            h2Var = j8Var;
+            k8Var.setLayoutParams(q0Var);
+            i2Var = k8Var;
         } else {
-            org.telegram.ui.Cells.h2 h2Var2 = new org.telegram.ui.Cells.h2(u1Var.getContext());
-            h2Var2.getPhotoImage().E0(7);
-            if (h2Var2.e0 == null) {
-                mc mcVar = new mc(h2Var2, 1.0f, 3.0f);
+            org.telegram.ui.Cells.i2 i2Var2 = new org.telegram.ui.Cells.i2(u1Var.getContext());
+            i2Var2.getPhotoImage().E0(7);
+            if (i2Var2.e0 == null) {
+                mc mcVar = new mc(i2Var2, 1.0f, 3.0f);
                 mcVar.e = 120L;
-                h2Var2.e0 = mcVar;
+                i2Var2.e0 = mcVar;
             }
-            h2Var2.setIsKeyboard(true);
-            h2Var2.setCanPreviewGif(true);
-            h2Var = h2Var2;
+            i2Var2.setIsKeyboard(true);
+            i2Var2.setCanPreviewGif(true);
+            i2Var = i2Var2;
         }
-        return new kj0(h2Var);
+        return new kj0(i2Var);
     }
 }

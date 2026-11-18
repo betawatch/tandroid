@@ -1,6 +1,6 @@
 package bi;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y7 implements Runnable {
     public final /* synthetic */ int a;
@@ -15,37 +15,12 @@ public final /* synthetic */ class y7 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                v7 v7Var = this.b.c;
-                if (!v7Var.j.isEmpty()) {
-                    v7Var.j.clear();
-                    v7Var.m();
-                    break;
-                }
-                break;
-            case 1:
-                v7 v7Var2 = this.b.c;
-                if (!v7Var2.k.isEmpty()) {
-                    v7Var2.k.clear();
-                    v7Var2.m();
-                    break;
-                }
-                break;
-            case 2:
-                v7 v7Var3 = this.b.c;
-                if (!v7Var3.l.isEmpty()) {
-                    v7Var3.l.clear();
-                    v7Var3.m();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.c.p(u7.a);
-                break;
-            case 4:
-                this.b.c.p(u7.b);
+                this.b.e1();
                 break;
             default:
-                this.b.c.p(u7.c);
+                f8 f8Var = this.b;
+                f8Var.e2.O(true);
+                org.telegram.messenger.g0.h3(new y7(f8Var, 0), 150L);
                 break;
         }
     }

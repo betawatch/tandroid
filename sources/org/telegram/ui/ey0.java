@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ey0 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public org.telegram.ui.Components.ck0 a;
@@ -114,9 +114,9 @@ public final class ey0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         if (i10 != this.currentAccount) {
             return;
         }
-        if (i7 == org.telegram.messenger.ks.X4) {
+        if (i7 == org.telegram.messenger.ks.Y4) {
             this.b.f();
-        } else if (i7 == org.telegram.messenger.ks.h5) {
+        } else if (i7 == org.telegram.messenger.ks.i5) {
             h0();
             this.b.f();
         }
@@ -161,8 +161,8 @@ public final class ey0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         org.telegram.messenger.ks notificationCenter = getNotificationCenter();
         notificationCenter.getClass();
         xi.e eVar2 = new xi.e(notificationCenter, this);
-        eVar2.c(org.telegram.messenger.ks.X4);
-        eVar2.c(org.telegram.messenger.ks.h5);
+        eVar2.c(org.telegram.messenger.ks.Y4);
+        eVar2.c(org.telegram.messenger.ks.i5);
         this.h = eVar2;
         return super.onFragmentCreate();
     }

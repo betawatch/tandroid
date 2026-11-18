@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uj0 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class uj0 implements Runnable {
                     TL_account.Password password2 = (TL_account.Password) tLObject3;
                     vj0Var3.e.K = password2;
                     TwoStepVerificationActivity.r0(password2);
-                    Utilities.e.c(new lc0(vj0Var3, vj0Var3.b, vj0Var3.d, 14));
+                    Utilities.e.c(new mc0(vj0Var3, vj0Var3.b, vj0Var3.d, 14));
                     break;
                 }
                 break;

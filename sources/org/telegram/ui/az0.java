@@ -7,7 +7,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class az0 implements org.telegram.ui.Components.pj0, org.telegram.ui.Components.rj0, ww {
     public final /* synthetic */ SaveToGallerySettingsActivity a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class az0 implements org.telegram.ui.Components.pj0
         c11.d(org.telegram.ui.ActionBar.n6.x0(null, i10, false), org.telegram.ui.ActionBar.n6.x0(null, i10, false));
         org.telegram.ui.ActionBar.h1 N = org.telegram.ui.Components.b5.N(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f10, f11);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setParentWindow(N);
-        c10.setOnClickListener(new bi.f5(saveToGallerySettingsActivity, N, i7, 20));
+        c10.setOnClickListener(new bi.e5(saveToGallerySettingsActivity, N, i7, 20));
         c11.setOnClickListener(new y(saveToGallerySettingsActivity, N, kvVar, 15));
         return true;
     }

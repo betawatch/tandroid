@@ -89,7 +89,7 @@ import org.telegram.ui.qy0;
 import org.telegram.ui.ua;
 import org.telegram.ui.yj0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h2 implements Runnable {
     public final /* synthetic */ int a;
@@ -508,7 +508,7 @@ public final /* synthetic */ class h2 implements Runnable {
                         g6Var.a(0);
                         h6Var.y = null;
                     }
-                    ks.f(i18).k(ks.z5, h6Var);
+                    ks.f(i18).k(ks.A5, h6Var);
                     break;
                 }
             case 9:
@@ -654,12 +654,12 @@ public final /* synthetic */ class h2 implements Runnable {
             case 13:
                 bn bnVar = (bn) this.d;
                 vf.b bVar = (vf.b) this.e;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.f;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.f;
                 String str6 = (String) this.h;
                 TLObject tLObject9 = (TLObject) this.b;
                 CharacterStyle characterStyle = (CharacterStyle) this.c;
                 bVar.b();
-                y60 J = y60.J(bnVar, q1Var);
+                y60 J = y60.J(bnVar, r1Var);
                 wk0 wk0Var = new wk0(bnVar.getParentActivity(), bnVar.Ba);
                 J.p = new fe(wk0Var, i14);
                 J.c(R.drawable.msg_copy, gd.M0(2131751755, null), new je(bnVar, wk0Var, str6, 2), false);
@@ -680,7 +680,7 @@ public final /* synthetic */ class h2 implements Runnable {
                     }
                 }
                 wk0Var.e(J);
-                wk0Var.f(q1Var, characterStyle, null, false);
+                wk0Var.f(r1Var, characterStyle, null, false);
                 bnVar.showDialog(wk0Var);
                 break;
             case 14:
@@ -1186,11 +1186,11 @@ public final /* synthetic */ class h2 implements Runnable {
         this.h = runnable;
     }
 
-    public /* synthetic */ h2(bn bnVar, vf.b bVar, org.telegram.ui.Cells.q1 q1Var, String str, TLObject tLObject, CharacterStyle characterStyle) {
+    public /* synthetic */ h2(bn bnVar, vf.b bVar, org.telegram.ui.Cells.r1 r1Var, String str, TLObject tLObject, CharacterStyle characterStyle) {
         this.a = 13;
         this.d = bnVar;
         this.e = bVar;
-        this.f = q1Var;
+        this.f = r1Var;
         this.h = str;
         this.b = tLObject;
         this.c = characterStyle;

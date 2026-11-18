@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class p9 extends GradientDrawable {
     public final int[] a;
@@ -240,8 +240,8 @@ public final class p9 extends GradientDrawable {
         }
     }
 
-    public final k9 f(org.telegram.ui.Cells.b5 b5Var, c8.ia iaVar, long j3) {
-        f50[] f50VarArr = (f50[]) b5Var.a;
+    public final k9 f(org.telegram.ui.Cells.c5 c5Var, c8.ia iaVar, long j3) {
+        f50[] f50VarArr = (f50[]) c5Var.a;
         if (!this.g) {
             ArrayList arrayList = new ArrayList(f50VarArr.length);
             for (f50 f50Var : f50VarArr) {

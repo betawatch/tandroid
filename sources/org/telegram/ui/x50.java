@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x50 extends org.telegram.ui.Components.bk0 {
     public final Context c;
@@ -25,8 +25,8 @@ public final class x50 extends org.telegram.ui.Components.bk0 {
     @Override // v4.i0
     public final void A(v4.f1 f1Var) {
         View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.q4) {
-            ((org.telegram.ui.Cells.q4) view).a.getImageReceiver().c();
+        if (view instanceof org.telegram.ui.Cells.r4) {
+            ((org.telegram.ui.Cells.r4) view).a.getImageReceiver().c();
         }
     }
 
@@ -87,7 +87,7 @@ public final class x50 extends org.telegram.ui.Components.bk0 {
         org.telegram.messenger.f5 f5Var;
         CharSequence charSequence;
         if (f1Var.f == 0) {
-            org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) f1Var.a;
+            org.telegram.ui.Cells.r4 r4Var = (org.telegram.ui.Cells.r4) f1Var.a;
             boolean z10 = this.h;
             a60 a60Var = this.n;
             if (z10) {
@@ -97,9 +97,9 @@ public final class x50 extends org.telegram.ui.Components.bk0 {
                 f5Var = (org.telegram.messenger.f5) a60Var.w.get(i7 - 2);
                 charSequence = null;
             }
-            q4Var.a(f5Var, charSequence);
+            r4Var.a(f5Var, charSequence);
             boolean containsKey = a60Var.E.containsKey(f5Var.b);
-            org.telegram.ui.Components.mp mpVar = q4Var.e;
+            org.telegram.ui.Components.mp mpVar = r4Var.e;
             if (mpVar != null) {
                 mpVar.a(containsKey, false);
             }
@@ -111,13 +111,13 @@ public final class x50 extends org.telegram.ui.Components.bk0 {
         View view;
         Context context = this.c;
         if (i7 == 1) {
-            org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(context);
+            org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context);
             int i10 = org.telegram.ui.ActionBar.n6.G6;
-            m8Var.g(i10, i10);
-            m8Var.u(org.telegram.messenger.gd.M0(2131745232, null), "", false, R.drawable.msg_shareout, false);
-            view = m8Var;
+            n8Var.g(i10, i10);
+            n8Var.u(org.telegram.messenger.gd.M0(2131745232, null), "", false, R.drawable.msg_shareout, false);
+            view = n8Var;
         } else {
-            view = i7 == 2 ? new org.telegram.ui.Cells.y6(context, (org.telegram.ui.Cells.c0) null) : new org.telegram.ui.Cells.q4(context, true);
+            view = i7 == 2 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c0) null) : new org.telegram.ui.Cells.r4(context, true);
         }
         return new org.telegram.ui.Components.kj0(view);
     }

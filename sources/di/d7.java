@@ -3,7 +3,7 @@ package di;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d7 implements q0.a {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class d7 implements q0.a {
         switch (this.a) {
             case 0:
                 f5.f fVar = (f5.f) this.b;
-                bi.c8 c8Var = (bi.c8) this.c;
+                bi.b8 b8Var = (bi.b8) this.c;
                 int i7 = fVar.a;
                 boolean z10 = i7 == 0;
-                org.telegram.messenger.g0.g3(new p6(c8Var, z10, z10 ? null : org.telegram.messenger.r1.j(i7), 2));
+                org.telegram.messenger.g0.g3(new p6(b8Var, z10, z10 ? null : org.telegram.messenger.r1.j(i7), 2));
                 break;
             case 1:
                 f5.f fVar2 = (f5.f) this.b;

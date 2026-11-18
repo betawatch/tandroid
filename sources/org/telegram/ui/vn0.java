@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vn0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class vn0 implements View.OnClickListener {
                                 }, false);
                             }
                             if (photoViewer.T4.b1) {
-                                H.c(R.drawable.msg_info, org.telegram.messenger.gd.M0(2131754943, null), new ve0(18, photoViewer, bVar), false);
+                                H.c(R.drawable.msg_info, org.telegram.messenger.gd.M0(2131754943, null), new we0(18, photoViewer, bVar), false);
                                 if ((photoViewer.m4 instanceof bn) && !org.telegram.messenger.mp.u1(i14).K3()) {
                                     H.k();
                                     final int i16 = 1;
@@ -226,7 +226,7 @@ public final /* synthetic */ class vn0 implements View.OnClickListener {
                                 org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i17);
                                 textView.setBackground(a02);
                                 org.telegram.ui.ActionBar.u6.j(textView, a02, null, M, bVar);
-                                textView.setOnClickListener(new bd0(i15, photoViewer, H));
+                                textView.setOnClickListener(new cd0(i15, photoViewer, H));
                                 textView.setOnLongClickListener(new fi.z1(4, photoViewer, bVar));
                                 arrayList.add(textView);
                                 if (photoViewer.T4.W0 != null) {
@@ -316,7 +316,7 @@ public final /* synthetic */ class vn0 implements View.OnClickListener {
                                     }
                                     K.r(view2, c8.ma.o(i10, -2));
                                 }
-                                H.c(R.drawable.msg_channel, org.telegram.messenger.gd.M0(2131745013, null), new bi.v5(H, K, 11), false);
+                                H.c(R.drawable.msg_channel, org.telegram.messenger.gd.M0(2131745013, null), new bi.u5(H, K, 11), false);
                                 if (!org.telegram.messenger.j10.i(i14).q()) {
                                     H.c(R.drawable.msg_block2, org.telegram.messenger.gd.M0(2131749131, null), new Runnable() { // from class: org.telegram.ui.mn0
                                         @Override // java.lang.Runnable
@@ -379,7 +379,7 @@ public final /* synthetic */ class vn0 implements View.OnClickListener {
                         }
                         while (i7 < arrayList.size()) {
                         }
-                        H.c(R.drawable.msg_channel, org.telegram.messenger.gd.M0(2131745013, null), new bi.v5(H, K, 11), false);
+                        H.c(R.drawable.msg_channel, org.telegram.messenger.gd.M0(2131745013, null), new bi.u5(H, K, 11), false);
                         if (!org.telegram.messenger.j10.i(i14).q()) {
                         }
                         if (photoViewer.T4.b1) {

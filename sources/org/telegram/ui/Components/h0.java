@@ -13,14 +13,14 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h0 extends sa {
     public final FrameLayout T1;
     public final FrameLayout U1;
     public final q9 V1;
-    public final org.telegram.ui.Cells.k3 W1;
-    public final org.telegram.ui.Cells.k3 X1;
+    public final org.telegram.ui.Cells.l3 W1;
+    public final org.telegram.ui.Cells.l3 X1;
     public final FrameLayout Y1;
     public final mp Z1;
     public final FrameLayout a2;
@@ -110,14 +110,14 @@ public final class h0 extends sa {
                 }
             }
         });
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.gd.M0(2131754965, null), false, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.V.b).c, i6Var);
-        this.W1 = k3Var;
-        k3Var.d.addTextChangedListener(new d0(this, 0));
-        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.gd.M0(2131754972, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c, i6Var);
-        this.X1 = k3Var2;
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.M0(2131754965, null), false, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.V.b).c, i6Var);
+        this.W1 = l3Var;
+        l3Var.d.addTextChangedListener(new d0(this, 0));
+        org.telegram.ui.Cells.l3 l3Var2 = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.M0(2131754972, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c, i6Var);
+        this.X1 = l3Var2;
         final int i13 = 2;
-        k3Var2.setShowLimitWhenNear(Math.max(100, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c / 2));
-        k3Var2.d.addTextChangedListener(new d0(this, 1));
+        l3Var2.setShowLimitWhenNear(Math.max(100, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c / 2));
+        l3Var2.d.addTextChangedListener(new d0(this, 1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f));
         linearLayout.setClipToPadding(false);

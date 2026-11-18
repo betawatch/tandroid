@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b7 implements org.telegram.ui.Components.oj0 {
     public final /* synthetic */ org.telegram.ui.Components.ck0 a;
@@ -19,7 +19,7 @@ public final class b7 implements org.telegram.ui.Components.oj0 {
         org.telegram.ui.Components.ck0 ck0Var = this.a;
         e7 e7Var = (e7) ck0Var.getAdapter();
         l7 l7Var = (l7) e7Var.e.get(i7);
-        if (view instanceof org.telegram.ui.Cells.o7) {
+        if (view instanceof org.telegram.ui.Cells.p7) {
             s7.a(s7Var, l7Var, (n7) e7Var, ck0Var);
             return;
         }

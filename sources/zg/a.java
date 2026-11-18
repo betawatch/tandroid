@@ -41,14 +41,14 @@ import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.wu0;
 import ug.z;
 import wg.s;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -75,7 +75,7 @@ public final class a {
     public boolean U;
     public ImageReceiver[] a;
     public b9[] b;
-    public final q1 c;
+    public final r1 c;
     public ImageReceiver d;
     public CharSequence[] e;
     public TLRPC.Chat[] f;
@@ -111,8 +111,8 @@ public final class a {
         hashMap.put(24, "5⃣");
     }
 
-    public a(q1 q1Var) {
-        this.c = q1Var;
+    public a(r1 r1Var) {
+        this.c = r1Var;
     }
 
     public final boolean a(MotionEvent motionEvent) {
@@ -140,11 +140,11 @@ public final class a {
                 }
             } else if (motionEvent.getAction() == 1) {
                 if (this.W) {
-                    q1 q1Var = this.c;
-                    if (q1Var.getDelegate() != null) {
-                        q1Var.getDelegate().K1(q1Var, this.V);
+                    r1 r1Var = this.c;
+                    if (r1Var.getDelegate() != null) {
+                        r1Var.getDelegate().K1(r1Var, this.V);
                     }
-                    q1Var.playSoundEffect(0);
+                    r1Var.playSoundEffect(0);
                     c(false);
                     this.W = false;
                 }
@@ -178,14 +178,14 @@ public final class a {
             return;
         }
         y yVar = this.S;
-        q1 q1Var = this.c;
+        r1 r1Var = this.c;
         int i12 = 0;
         if (yVar == null) {
             int x02 = n6.x0(null, n6.i6, false);
             this.R = x02;
             y a02 = n6.a0(x02, 12, 12);
             this.S = a02;
-            a02.setCallback(q1Var);
+            a02.setCallback(r1Var);
         }
         this.E.setColor(n6.o2.getColor());
         this.F.setColor(n6.r1(0.45f, n6.o2.getColor()));
@@ -356,7 +356,7 @@ public final class a {
                 n6.H1(yVar2, r12, true);
             }
             this.S.setBounds(this.i[this.V]);
-            this.S.setCallback(q1Var);
+            this.S.setCallback(r1Var);
         }
     }
 
@@ -366,14 +366,14 @@ public final class a {
         if (fjVar == null || !fjVar.u3() || (yVar = this.S) == null) {
             return;
         }
-        q1 q1Var = this.c;
+        r1 r1Var = this.c;
         if (!z10) {
             yVar.setState(StateSet.NOTHING);
-            q1Var.invalidate();
+            r1Var.invalidate();
         } else {
             yVar.setCallback(new a5.b(this, 9));
             this.S.setState(this.Q);
-            q1Var.invalidate();
+            r1Var.invalidate();
         }
     }
 

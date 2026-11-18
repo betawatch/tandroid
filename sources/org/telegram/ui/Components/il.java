@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class il extends jg.s0 {
     public final /* synthetic */ int E = 0;
@@ -34,14 +34,14 @@ public final class il extends jg.s0 {
                 super.f();
                 break;
             default:
-                org.telegram.ui.pa0 pa0Var = (org.telegram.ui.pa0) fsVar;
-                org.telegram.ui.ActionBar.h5 h5Var = pa0Var.r;
+                org.telegram.ui.qa0 qa0Var = (org.telegram.ui.qa0) fsVar;
+                org.telegram.ui.ActionBar.h5 h5Var = qa0Var.r;
                 if (h5Var != null) {
-                    h5Var.setShowSearchProgress(pa0Var.T.w);
+                    h5Var.setShowSearchProgress(qa0Var.T.w);
                 }
-                TextView textView2 = pa0Var.n;
+                TextView textView2 = qa0Var.n;
                 if (textView2 != null) {
-                    textView2.setText(org.telegram.messenger.gd.a0(null, null, 2131747973, pa0Var.T.h));
+                    textView2.setText(org.telegram.messenger.gd.a0(null, null, 2131747973, qa0Var.T.h));
                 }
                 super.f();
                 break;
@@ -49,8 +49,8 @@ public final class il extends jg.s0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public il(org.telegram.ui.pa0 pa0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+    public il(org.telegram.ui.qa0 qa0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
         super(context, i6Var, false, z10);
-        this.F = pa0Var;
+        this.F = qa0Var;
     }
 }

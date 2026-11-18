@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class oz0 implements Runnable {
                             float f10 = tz0Var.b0;
                             seekBarWaveform.J = true;
                             seekBarWaveform.K = f10;
-                            org.telegram.ui.Cells.q1 q1Var = seekBarWaveform.n;
-                            if (q1Var != null) {
-                                q1Var.invalidate();
+                            org.telegram.ui.Cells.r1 r1Var = seekBarWaveform.n;
+                            if (r1Var != null) {
+                                r1Var.invalidate();
                             }
                         }
                     }
@@ -53,9 +53,9 @@ public final /* synthetic */ class oz0 implements Runnable {
                 tz0 tz0Var2 = this.b;
                 if (tz0Var2.d == null) {
                     org.telegram.messenger.g0.g3(new oz0(tz0Var2, 2));
-                    org.telegram.ui.Cells.q1 q1Var2 = tz0Var2.P;
-                    if (q1Var2 != null) {
-                        q1Var2.setVisibility(0);
+                    org.telegram.ui.Cells.r1 r1Var2 = tz0Var2.P;
+                    if (r1Var2 != null) {
+                        r1Var2.setVisibility(0);
                         tz0Var2.P.invalidate();
                     }
                 }

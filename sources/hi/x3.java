@@ -20,7 +20,7 @@ import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class x3 extends FrameLayout {
     public final RectF E;
@@ -34,7 +34,7 @@ public abstract class x3 extends FrameLayout {
     public final Path M;
     public boolean N;
     public final org.telegram.ui.Components.ga a;
-    public final bi.d6 b;
+    public final bi.c6 b;
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
@@ -78,7 +78,7 @@ public abstract class x3 extends FrameLayout {
         this.a = new org.telegram.ui.Components.ga(caVar, this, 0, !m9Var.P.s0.c());
         setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(44.0f));
         final int i7 = 0;
-        bi.d6 d6Var = new bi.d6(m9Var, context, j10.t0, (s3) new q10() { // from class: hi.s3
+        bi.c6 c6Var = new bi.c6(m9Var, context, j10.t0, (s3) new q10() { // from class: hi.s3
             @Override // org.telegram.messenger.q10
             public final void a(Object obj, Object obj2) {
                 int i10 = i7;
@@ -124,15 +124,15 @@ public abstract class x3 extends FrameLayout {
                 }
             }
         }, new di.c7(m9Var, 19), bVar);
-        this.b = d6Var;
-        d6Var.g3.r = false;
-        d6Var.setClipToPadding(false);
-        d6Var.setClipChildren(false);
-        d6Var.setPadding(org.telegram.messenger.g0.L(2.0f), 0, org.telegram.messenger.g0.L(2.0f), 0);
-        addView(d6Var, c8.ma.e(-2, 120, 85));
-        d6Var.z1(true);
+        this.b = c6Var;
+        c6Var.g3.r = false;
+        c6Var.setClipToPadding(false);
+        c6Var.setClipChildren(false);
+        c6Var.setPadding(org.telegram.messenger.g0.L(2.0f), 0, org.telegram.messenger.g0.L(2.0f), 0);
+        addView(c6Var, c8.ma.e(-2, 120, 85));
+        c6Var.z1(true);
         final int i10 = 1;
-        d6Var.E1(new q10() { // from class: hi.s3
+        c6Var.E1(new q10() { // from class: hi.s3
             @Override // org.telegram.messenger.q10
             public final void a(Object obj, Object obj2) {
                 int i102 = i10;
@@ -248,16 +248,16 @@ public abstract class x3 extends FrameLayout {
             return;
         }
         this.N = z10;
-        bi.d6 d6Var = this.b;
-        d6Var.animate().cancel();
+        bi.c6 c6Var = this.b;
+        c6Var.animate().cancel();
         if (z11) {
-            d6Var.setVisibility(0);
-            n10.o(d6Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new bi.e7(11, this, z10)).setUpdateListener(new k3(this, 1)), lr.h, 360L);
+            c6Var.setVisibility(0);
+            n10.o(c6Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new bi.d7(11, this, z10)).setUpdateListener(new k3(this, 1)), lr.h, 360L);
         } else {
-            d6Var.setVisibility(z10 ? 0 : 8);
-            d6Var.setAlpha(z10 ? 1.0f : 0.0f);
-            d6Var.setScaleX(z10 ? 1.0f : 0.65f);
-            d6Var.setScaleY(z10 ? 1.0f : 0.65f);
+            c6Var.setVisibility(z10 ? 0 : 8);
+            c6Var.setAlpha(z10 ? 1.0f : 0.0f);
+            c6Var.setScaleX(z10 ? 1.0f : 0.65f);
+            c6Var.setScaleY(z10 ? 1.0f : 0.65f);
             invalidate();
         }
         if (z10 && this.J) {
@@ -287,14 +287,14 @@ public abstract class x3 extends FrameLayout {
         paint.setAlpha(ks.e4);
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) - org.telegram.messenger.g0.L(0.9f), paint);
         vy0 vy0Var = this.x;
-        bi.d6 d6Var = this.b;
+        bi.c6 c6Var = this.b;
         if (vy0Var != null) {
-            vy0Var.c(rectF.centerX() - (this.x.c / 2.0f), rectF.centerY() - org.telegram.messenger.g0.L(0.6f), 1.0f - d6Var.getAlpha(), -1, canvas);
+            vy0Var.c(rectF.centerX() - (this.x.c / 2.0f), rectF.centerY() - org.telegram.messenger.g0.L(0.6f), 1.0f - c6Var.getAlpha(), -1, canvas);
         }
-        if (d6Var.getAlpha() > 0.0f) {
+        if (c6Var.getAlpha() > 0.0f) {
             canvas.save();
             canvas.translate(rectF.centerX(), rectF.centerY());
-            paint.setAlpha((int) (d6Var.getAlpha() * 255.0f));
+            paint.setAlpha((int) (c6Var.getAlpha() * 255.0f));
             canvas.drawPath(this.y, paint);
             canvas.restore();
         }
@@ -353,18 +353,18 @@ public abstract class x3 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        bi.d6 d6Var = this.b;
-        if (view != d6Var) {
+        bi.c6 c6Var = this.b;
+        if (view != c6Var) {
             return super.drawChild(canvas, view, j3);
         }
-        float x10 = d6Var.getX();
-        float y10 = d6Var.getY();
-        float x11 = d6Var.getX() + d6Var.getWidth();
-        float y11 = d6Var.getY() + d6Var.getHeight();
+        float x10 = c6Var.getX();
+        float y10 = c6Var.getY();
+        float x11 = c6Var.getX() + c6Var.getWidth();
+        float y11 = c6Var.getY() + c6Var.getHeight();
         RectF rectF = this.E;
         rectF.set(x10, y10, x11, y11);
-        org.telegram.messenger.g0.i3(rectF, d6Var.getScaleX(), d6Var.getPivotX() + d6Var.getX(), d6Var.getPivotY() + d6Var.getY());
-        a(canvas, rectF, org.telegram.messenger.g0.L(10.0f), d6Var.getAlpha());
+        org.telegram.messenger.g0.i3(rectF, c6Var.getScaleX(), c6Var.getPivotX() + c6Var.getX(), c6Var.getPivotY() + c6Var.getY());
+        a(canvas, rectF, org.telegram.messenger.g0.L(10.0f), c6Var.getAlpha());
         Path path = this.M;
         path.rewind();
         path.addRoundRect(rectF, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), Path.Direction.CW);
@@ -378,9 +378,9 @@ public abstract class x3 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         super.onLayout(z10, i7, i10, i11, i12);
-        bi.d6 d6Var = this.b;
-        d6Var.setPivotX(d6Var.getWidth() - org.telegram.messenger.g0.L(15.0f));
-        d6Var.setPivotY(d6Var.getHeight());
+        bi.c6 c6Var = this.b;
+        c6Var.setPivotX(c6Var.getWidth() - org.telegram.messenger.g0.L(15.0f));
+        c6Var.setPivotY(c6Var.getHeight());
     }
 
     @Override // android.widget.FrameLayout, android.view.View

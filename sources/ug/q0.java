@@ -11,9 +11,9 @@ import org.telegram.messenger.a8;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.lr;
-import org.telegram.ui.y80;
+import org.telegram.ui.z80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class q0 extends FrameLayout implements o0 {
     public final i6 a;
@@ -27,9 +27,9 @@ public final class q0 extends FrameLayout implements o0 {
         super(context);
         this.b = new ArrayList();
         this.a = i6Var;
-        for (y80 y80Var : y80.values()) {
-            if (y80Var.e) {
-                this.b.add(y80Var);
+        for (z80 z80Var : z80.values()) {
+            if (z80Var.e) {
+                this.b.add(z80Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -47,7 +47,7 @@ public final class q0 extends FrameLayout implements o0 {
     }
 
     public final p0 a(Context context, int i7) {
-        y80 y80Var = (y80) this.b.get(i7);
+        z80 z80Var = (z80) this.b.get(i7);
         p0 p0Var = new p0(context);
         t1 t1Var = new t1(20);
         p0Var.e = t1Var;
@@ -67,8 +67,8 @@ public final class q0 extends FrameLayout implements o0 {
         t1Var.c();
         paint.setColor(-1);
         p0Var.setLayoutParams(ma.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        p0Var.setForeground(y80Var.c);
-        p0Var.setBackgroundResource(y80Var.b);
+        p0Var.setForeground(z80Var.c);
+        p0Var.setBackgroundResource(z80Var.b);
         p0Var.setPadding(org.telegram.messenger.g0.L(8.0f));
         p0Var.setBackgroundOuterPadding(org.telegram.messenger.g0.L(32.0f));
         addView(p0Var);

@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class r01 extends org.telegram.ui.Components.bk0 {
     public final /* synthetic */ r11 c;
@@ -322,7 +322,7 @@ public final class r01 extends org.telegram.ui.Components.bk0 {
             String str2 = fxVar.b.title;
             boolean z14 = (fxVar.e || org.telegram.messenger.j10.i(i14).q()) ? false : true;
             boolean z15 = fxVar.f;
-            bi.f5 f5Var = new bi.f5(this, fxVar, i22, 21);
+            bi.e5 e5Var = new bi.e5(this, fxVar, i22, 21);
             ug.s0 s0Var = v01Var.c;
             FrameLayout frameLayout = v01Var.a;
             v01Var.d = str2;
@@ -332,14 +332,14 @@ public final class r01 extends org.telegram.ui.Components.bk0 {
                 r92 = 0;
                 s0Var.setVisibility(0);
                 r12 = 0;
-                s0Var.b(org.telegram.messenger.gd.a0("UnlockPremiumEmojiPack", null, 2131743625, str2), f5Var, false);
+                s0Var.b(org.telegram.messenger.gd.a0("UnlockPremiumEmojiPack", null, 2131743625, str2), e5Var, false);
             } else {
                 i11 = 8;
                 r92 = 0;
                 r12 = 0;
                 s0Var.setVisibility(8);
                 frameLayout.setVisibility(0);
-                frameLayout.setOnClickListener(f5Var);
+                frameLayout.setOnClickListener(e5Var);
             }
             if (z15) {
                 a02 = org.telegram.messenger.gd.M0(2131754360, r12);
@@ -579,13 +579,13 @@ public final class r01 extends org.telegram.ui.Components.bk0 {
             view = w01Var;
         } else if (i7 == 5) {
             v01 v01Var = new v01(r11Var.getContext());
-            org.telegram.ui.Cells.w3 w3Var = new org.telegram.ui.Cells.w3(v01Var.getContext(), false, false, false, 4);
-            v01Var.b = w3Var;
-            w3Var.b(0.3f, 250L, org.telegram.ui.Components.lr.h);
-            w3Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-            w3Var.setTypeface(org.telegram.messenger.g0.o());
-            org.telegram.ui.ActionBar.u6.Y(w3Var, org.telegram.ui.ActionBar.n6.Ji, i6Var);
-            w3Var.setGravity(17);
+            org.telegram.ui.Cells.x3 x3Var = new org.telegram.ui.Cells.x3(v01Var.getContext(), false, false, false, 4);
+            v01Var.b = x3Var;
+            x3Var.b(0.3f, 250L, org.telegram.ui.Components.lr.h);
+            x3Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+            x3Var.setTypeface(org.telegram.messenger.g0.o());
+            org.telegram.ui.ActionBar.u6.Y(x3Var, org.telegram.ui.ActionBar.n6.Ji, i6Var);
+            x3Var.setGravity(17);
             FrameLayout frameLayout = new FrameLayout(v01Var.getContext());
             v01Var.a = frameLayout;
             int i11 = org.telegram.ui.ActionBar.n6.Fi;
@@ -594,7 +594,7 @@ public final class r01 extends org.telegram.ui.Components.bk0 {
             org.telegram.ui.ActionBar.q6 e11 = org.telegram.ui.ActionBar.u6.e(i11);
             frameLayout.setBackground(e10);
             org.telegram.ui.ActionBar.u6.j(frameLayout, e10, M, e11, i6Var);
-            frameLayout.addView(w3Var, c8.ma.e(-1, -2, 17));
+            frameLayout.addView(x3Var, c8.ma.e(-1, -2, 17));
             v01Var.addView(frameLayout, c8.ma.c(-1.0f, -1));
             ug.s0 s0Var = new ug.s0(v01Var.getContext(), i6Var, false);
             v01Var.c = s0Var;
@@ -602,22 +602,22 @@ public final class r01 extends org.telegram.ui.Components.bk0 {
             v01Var.addView(s0Var, c8.ma.c(-1.0f, -1));
             view = v01Var;
         } else if (i7 == 6) {
-            mb0 mb0Var = new mb0(r11Var.getContext(), 4);
-            mb0Var.setTextSize(1, 13.0f);
+            nb0 nb0Var = new nb0(r11Var.getContext(), 4);
+            nb0Var.setTextSize(1, 13.0f);
             if (i10 == 3) {
-                mb0Var.setText(org.telegram.messenger.gd.M0(2131745453, null));
+                nb0Var.setText(org.telegram.messenger.gd.M0(2131745453, null));
             } else if (i10 == 0 || i10 == 12 || i10 == 9 || i10 == 10) {
-                mb0Var.setText(org.telegram.messenger.gd.M0(2131751165, null));
+                nb0Var.setText(org.telegram.messenger.gd.M0(2131751165, null));
             } else {
-                mb0Var.setText(org.telegram.messenger.gd.M0(2131746185, null));
+                nb0Var.setText(org.telegram.messenger.gd.M0(2131746185, null));
             }
-            mb0Var.setGravity(17);
-            org.telegram.ui.ActionBar.u6.U(mb0Var, org.telegram.ui.ActionBar.n6.y6, i6Var);
-            view = mb0Var;
+            nb0Var.setGravity(17);
+            org.telegram.ui.ActionBar.u6.U(nb0Var, org.telegram.ui.ActionBar.n6.y6, i6Var);
+            view = nb0Var;
         } else if (i7 == 7) {
-            View v3Var = new org.telegram.ui.Cells.v3(r11Var.getContext(), 52);
-            v3Var.setTag("searchbox");
-            view = v3Var;
+            View w3Var = new org.telegram.ui.Cells.w3(r11Var.getContext(), 52);
+            w3Var.setTag("searchbox");
+            view = w3Var;
         } else {
             view = new b11(r11Var, r11Var.getContext());
         }

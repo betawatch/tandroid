@@ -20,17 +20,17 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.hn;
 import s2.w;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class h {
     public final c a;
     public final j2.h b;
     public final j2.h c;
-    public final b5 d;
+    public final c5 d;
     public final w[] e;
     public final u[] f;
     public final s2.d g;
@@ -47,20 +47,20 @@ public final class h {
     public byte[] m = l0.b;
     public long s = -9223372036854775807L;
 
-    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, b5 b5Var, c0 c0Var, b5 b5Var2, List list, m2.i iVar) {
+    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, c5 c5Var, c0 c0Var, c5 c5Var2, List list, m2.i iVar) {
         this.a = cVar;
         this.g = dVar;
         this.e = wVarArr;
         this.f = uVarArr;
-        this.d = b5Var2;
+        this.d = c5Var2;
         this.i = list;
         this.k = iVar;
-        j2.h createDataSource = ((j2.g) b5Var.a).createDataSource();
+        j2.h createDataSource = ((j2.g) c5Var.a).createDataSource();
         this.b = createDataSource;
         if (c0Var != null) {
             createDataSource.addTransferListener(c0Var);
         }
-        this.c = ((j2.g) b5Var.a).createDataSource();
+        this.c = ((j2.g) c5Var.a).createDataSource();
         this.h = new m1("", uVarArr);
         ArrayList arrayList = new ArrayList();
         for (int i7 = 0; i7 < wVarArr.length; i7++) {

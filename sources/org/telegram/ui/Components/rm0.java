@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class rm0 extends g71 implements org.telegram.ui.b00, org.telegram.messenger.fs, eh.a {
     public static final /* synthetic */ int b1 = 0;
@@ -794,24 +794,24 @@ public abstract class rm0 extends g71 implements org.telegram.ui.b00, org.telegr
                 this.H0.setVisibility(z10 ? 0 : 8);
             }
         }
+        if (view instanceof org.telegram.ui.Cells.i7) {
+            ((org.telegram.ui.Cells.i7) view).b(hashMap.containsKey(vzVar), true);
+            return;
+        }
+        if (view instanceof org.telegram.ui.Cells.q7) {
+            ((org.telegram.ui.Cells.q7) view).b(i7, hashMap.containsKey(vzVar), true);
+            return;
+        }
+        if (view instanceof org.telegram.ui.Cells.l7) {
+            ((org.telegram.ui.Cells.l7) view).f(hashMap.containsKey(vzVar), true);
+            return;
+        }
         if (view instanceof org.telegram.ui.Cells.h7) {
-            ((org.telegram.ui.Cells.h7) view).b(hashMap.containsKey(vzVar), true);
-            return;
-        }
-        if (view instanceof org.telegram.ui.Cells.p7) {
-            ((org.telegram.ui.Cells.p7) view).b(i7, hashMap.containsKey(vzVar), true);
-            return;
-        }
-        if (view instanceof org.telegram.ui.Cells.k7) {
-            ((org.telegram.ui.Cells.k7) view).f(hashMap.containsKey(vzVar), true);
-            return;
-        }
-        if (view instanceof org.telegram.ui.Cells.g7) {
-            ((org.telegram.ui.Cells.g7) view).e(hashMap.containsKey(vzVar), true);
-        } else if (view instanceof org.telegram.ui.Cells.h2) {
-            ((org.telegram.ui.Cells.h2) view).c(hashMap.containsKey(vzVar), true);
-        } else if (view instanceof org.telegram.ui.Cells.t2) {
-            ((org.telegram.ui.Cells.t2) view).c0(hashMap.containsKey(vzVar), true);
+            ((org.telegram.ui.Cells.h7) view).e(hashMap.containsKey(vzVar), true);
+        } else if (view instanceof org.telegram.ui.Cells.i2) {
+            ((org.telegram.ui.Cells.i2) view).c(hashMap.containsKey(vzVar), true);
+        } else if (view instanceof org.telegram.ui.Cells.u2) {
+            ((org.telegram.ui.Cells.u2) view).c0(hashMap.containsKey(vzVar), true);
         }
     }
 
@@ -883,7 +883,7 @@ public abstract class rm0 extends g71 implements org.telegram.ui.b00, org.telegr
                 this.r0.O(true);
                 return;
             }
-            if (i7 == org.telegram.messenger.ks.z5) {
+            if (i7 == org.telegram.messenger.ks.A5) {
                 Object obj = objArr[0];
                 im0 im0Var = this.y0;
                 if (obj == im0Var.T) {
@@ -945,7 +945,7 @@ public abstract class rm0 extends g71 implements org.telegram.ui.b00, org.telegr
         eVar2.c(org.telegram.messenger.ks.y1);
         eVar2.c(org.telegram.messenger.ks.s);
         eVar2.c(org.telegram.messenger.ks.V0);
-        eVar2.c(org.telegram.messenger.ks.z5);
+        eVar2.c(org.telegram.messenger.ks.A5);
         this.Z0 = eVar2;
         this.h0 = true;
         mm0 mm0Var = this.m0;

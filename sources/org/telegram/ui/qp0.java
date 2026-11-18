@@ -12,7 +12,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final class qp0 extends AnimatorListenerAdapter {
         } else if (i7 == 4) {
             photoViewer.P1 = true;
             photoViewer.f0.invalidate();
-            photoViewer.f0.post(new ve0(25, this, photoViewer.O1));
+            photoViewer.f0.post(new we0(25, this, photoViewer.O1));
             photoViewer.O1 = null;
             photoViewer.v5.m(false, true);
             photoViewer.w5.m(false, true);

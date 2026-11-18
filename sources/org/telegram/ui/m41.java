@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final Window a;
@@ -26,7 +26,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
     public final ng.c d;
     public final RadialProgressView e;
     public final TextView f;
-    public final hh0 h;
+    public final ih0 h;
     public final ArrayList n;
     public o41 r;
     public final int s;
@@ -42,7 +42,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         }
         this.s = i7;
         LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
-        this.h = new hh0(context, 10);
+        this.h = new ih0(context, 10);
         ng.c cVar = new ng.c(getContext(), i6Var);
         this.d = cVar;
         cVar.d.setOnTouchListener(new org.telegram.ui.Components.jj0());
@@ -320,7 +320,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         this.r = o41Var;
         boolean z12 = o41Var.l;
         ArrayList arrayList2 = this.n;
-        hh0 hh0Var = this.h;
+        ih0 ih0Var = this.h;
         RadialProgressView radialProgressView = this.e;
         int i7 = 8;
         TextView textView = this.f;
@@ -335,7 +335,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
                 }
                 textView.setVisibility(0);
             }
-            hh0Var.removeAllViews();
+            ih0Var.removeAllViews();
             arrayList2.clear();
             gVar.D(null);
             return;
@@ -369,7 +369,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         ng.e eVar3 = gVar2.u0;
         eVar3.setEnabled(eVar3.G);
         int size = arrayList.size();
-        hh0Var.removeAllViews();
+        ih0Var.removeAllViews();
         arrayList2.clear();
         if (size > 1) {
             for (int i10 = 0; i10 < size; i10++) {
@@ -381,7 +381,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
                 vzVar.setText(str3);
                 vzVar.a(fVar.n, false);
                 vzVar.setOnTouchListener(new org.telegram.ui.Components.jj0());
-                vzVar.setOnClickListener(new bd0(17, l41Var, fVar));
+                vzVar.setOnClickListener(new cd0(17, l41Var, fVar));
                 vzVar.setOnLongClickListener(new fi.z1(7, l41Var, fVar));
             }
         }

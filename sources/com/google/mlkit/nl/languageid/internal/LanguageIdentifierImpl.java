@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import n6.c;
 import org.telegram.messenger.ks;
 import org.telegram.ui.Components.hn;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import pb.g;
 import pb.j;
 import pb.n;
@@ -41,7 +41,7 @@ import y7.k6;
 import y7.k7;
 import y7.l6;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final d9 a;
@@ -130,11 +130,11 @@ public class LanguageIdentifierImpl implements b {
             hashMap.put(l6Var, Long.valueOf(elapsedRealtime2));
             f7 f7Var = new f7();
             f7Var.b = k();
-            md0 md0Var = new md0(29, false);
-            md0Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            md0Var.d = Boolean.valueOf(z10);
-            md0Var.c = k6Var;
-            f7Var.a = new d6(md0Var);
+            nd0 nd0Var = new nd0(29, false);
+            nd0Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
+            nd0Var.d = Boolean.valueOf(z10);
+            nd0Var.c = k6Var;
+            f7Var.a = new d6(nd0Var);
             if (i7Var != null) {
                 f7Var.c = i7Var;
             }

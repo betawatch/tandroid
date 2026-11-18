@@ -17,10 +17,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g extends org.telegram.ui.ActionBar.h2 {
-    public k90 E;
+    public l90 E;
     public final int[] F;
     public int G;
     public boolean H;
@@ -244,9 +244,9 @@ public final class g extends org.telegram.ui.ActionBar.h2 {
                                 }
                             } else if (i22 == 6) {
                                 gVar.presentFragment(new PasscodeActivity(1), true);
-                                k90 k90Var = gVar.E;
-                                if (k90Var != null) {
-                                    org.telegram.messenger.g0.g3(k90Var);
+                                l90 l90Var = gVar.E;
+                                if (l90Var != null) {
+                                    org.telegram.messenger.g0.g3(l90Var);
                                     gVar.E = null;
                                     break;
                                 }
@@ -325,9 +325,9 @@ public final class g extends org.telegram.ui.ActionBar.h2 {
                                     }
                                 } else if (i222 == 6) {
                                     gVar.presentFragment(new PasscodeActivity(1), true);
-                                    k90 k90Var = gVar.E;
-                                    if (k90Var != null) {
-                                        org.telegram.messenger.g0.g3(k90Var);
+                                    l90 l90Var = gVar.E;
+                                    if (l90Var != null) {
+                                        org.telegram.messenger.g0.g3(l90Var);
                                         gVar.E = null;
                                         break;
                                     }
@@ -402,9 +402,9 @@ public final class g extends org.telegram.ui.ActionBar.h2 {
                                     }
                                 } else if (i222 == 6) {
                                     gVar.presentFragment(new PasscodeActivity(1), true);
-                                    k90 k90Var = gVar.E;
-                                    if (k90Var != null) {
-                                        org.telegram.messenger.g0.g3(k90Var);
+                                    l90 l90Var = gVar.E;
+                                    if (l90Var != null) {
+                                        org.telegram.messenger.g0.g3(l90Var);
                                         gVar.E = null;
                                         break;
                                     }
@@ -487,9 +487,9 @@ public final class g extends org.telegram.ui.ActionBar.h2 {
                                     }
                                 } else if (i222 == 6) {
                                     gVar.presentFragment(new PasscodeActivity(1), true);
-                                    k90 k90Var = gVar.E;
-                                    if (k90Var != null) {
-                                        org.telegram.messenger.g0.g3(k90Var);
+                                    l90 l90Var = gVar.E;
+                                    if (l90Var != null) {
+                                        org.telegram.messenger.g0.g3(l90Var);
                                         gVar.E = null;
                                         break;
                                     }
@@ -533,7 +533,7 @@ public final class g extends org.telegram.ui.ActionBar.h2 {
     }
 
     public final void e0(Runnable runnable) {
-        this.E = (k90) runnable;
+        this.E = (l90) runnable;
     }
 
     public final void f0(at atVar) {

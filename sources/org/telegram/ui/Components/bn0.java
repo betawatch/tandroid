@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class bn0 {
     public static Paint N;
@@ -40,10 +40,10 @@ public final class bn0 {
     public int h;
     public int i;
     public int j;
-    public org.telegram.ui.Cells.q1 k;
+    public org.telegram.ui.Cells.r1 k;
     public byte[] l;
     public org.telegram.messenger.fj m;
-    public org.telegram.ui.Cells.q1 n;
+    public org.telegram.ui.Cells.r1 n;
     public boolean o;
     public int p;
     public int q;
@@ -126,7 +126,7 @@ public final class bn0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(Canvas canvas, org.telegram.ui.Cells.q1 q1Var) {
+    public final void c(Canvas canvas, org.telegram.ui.Cells.r1 r1Var) {
         int i7;
         float f10;
         float f11;
@@ -155,7 +155,7 @@ public final class bn0 {
             if (f15 > 1.0f) {
                 this.t = 1.0f;
             } else {
-                q1Var.invalidate();
+                r1Var.invalidate();
             }
         }
         float e10 = this.v.e(false, 1.0f);
@@ -171,8 +171,8 @@ public final class bn0 {
         } else {
             path2.reset();
         }
-        org.telegram.ui.Cells.q1 q1Var2 = this.k;
-        boolean z10 = (q1Var2 == null || (fjVar = q1Var2.Q5) == null || !fjVar.S4()) ? false : true;
+        org.telegram.ui.Cells.r1 r1Var2 = this.k;
+        boolean z10 = (r1Var2 == null || (fjVar = r1Var2.Q5) == null || !fjVar.S4()) ? false : true;
         float[] fArr3 = this.H;
         if (fArr3 == null || (fArr2 = this.I) == null) {
             f10 = N2;
@@ -401,9 +401,9 @@ public final class bn0 {
             canvas.translate(pow, 0.0f);
             canvas.drawRect(-pow, 0.0f, (this.g + 5) - pow, this.h, this.C);
             canvas.restore();
-            org.telegram.ui.Cells.q1 q1Var = this.n;
-            if (q1Var != null) {
-                q1Var.invalidate();
+            org.telegram.ui.Cells.r1 r1Var = this.n;
+            if (r1Var != null) {
+                r1Var.invalidate();
             }
         }
     }

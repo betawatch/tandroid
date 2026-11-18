@@ -12,9 +12,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class h1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
+public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final di.b1 a;
     public final e1 b;
     public z2 c;
@@ -48,7 +48,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {

@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rm implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class rm implements Runnable {
                     mpVar.getClass();
                     runnable.run();
                 }
-                mpVar.getNotificationCenter().k(ks.Z4, Long.valueOf(j3), 0L);
+                mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(j3), 0L);
                 break;
             case 1:
                 mpVar.b3(0, j3, true);

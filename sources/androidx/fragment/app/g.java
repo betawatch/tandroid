@@ -11,14 +11,14 @@ import android.widget.TextView;
 import hi.ta;
 import java.util.ArrayList;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.bn0;
 import org.telegram.ui.Components.fu0;
 import org.telegram.ui.Components.wk0;
 import org.telegram.ui.as0;
 import org.telegram.ui.bn;
-import org.telegram.ui.de0;
 import org.telegram.ui.e20;
+import org.telegram.ui.ee0;
 import org.telegram.ui.f40;
 import org.telegram.ui.i81;
 import org.telegram.ui.rn;
@@ -27,7 +27,7 @@ import org.telegram.ui.t3;
 import org.telegram.ui.tz0;
 import tg.k2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -119,9 +119,9 @@ public final class g extends AnimatorListenerAdapter {
                     bitmap.recycle();
                     bnVar.R8 = null;
                 }
-                q1 q1Var = (q1) this.c;
-                if (q1Var != null) {
-                    q1Var.invalidate();
+                r1 r1Var = (r1) this.c;
+                if (r1Var != null) {
+                    r1Var.invalidate();
                 }
                 bnVar.Ub(null);
                 bnVar.c9 = null;
@@ -208,9 +208,9 @@ public final class g extends AnimatorListenerAdapter {
                 return;
             case 11:
                 fu0 fu0Var = (fu0) this.c;
-                de0 de0Var = (de0) this.d;
-                if (de0Var.K == 0 && this.b) {
-                    de0Var.N1(true, true);
+                ee0 ee0Var = (ee0) this.d;
+                if (ee0Var.K == 0 && this.b) {
+                    ee0Var.N1(true, true);
                 }
                 fu0Var.setVisibility(8);
                 fu0Var.g();
@@ -244,9 +244,9 @@ public final class g extends AnimatorListenerAdapter {
                 if (!tz0Var.T && (rz0Var = tz0Var.O) != null && rz0Var.getSeekBarWaveform() != null) {
                     bn0 seekBarWaveform = tz0Var.O.getSeekBarWaveform();
                     seekBarWaveform.L = tz0Var.s;
-                    q1 q1Var2 = seekBarWaveform.n;
-                    if (q1Var2 != null) {
-                        q1Var2.invalidate();
+                    r1 r1Var2 = seekBarWaveform.n;
+                    if (r1Var2 != null) {
+                        r1Var2.invalidate();
                     }
                 }
                 Runnable runnable4 = (Runnable) this.c;

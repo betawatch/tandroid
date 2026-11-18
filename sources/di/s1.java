@@ -13,10 +13,10 @@ import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.l90;
+import org.telegram.ui.m90;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements q10 {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class s1 implements q10 {
 
     @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
-        l90 l90Var;
+        m90 m90Var;
         TL_wallet.tonConnectSession tonconnectsession;
         switch (this.a) {
             case 0:
@@ -54,7 +54,7 @@ public final /* synthetic */ class s1 implements q10 {
                     if (stargiftdepositpayload != null) {
                         stargiftdepositpayloadArr[0] = stargiftdepositpayload;
                         if (org.telegram.ui.Wallet.u0.D(f6Var.a).A() >= stargiftdepositpayload.amount) {
-                            runnableArr[0] = org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new bi.m6(2, textView, jArr));
+                            runnableArr[0] = org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new bi.l6(2, textView, jArr));
                             break;
                         } else {
                             textView.setVisibility(8);
@@ -68,7 +68,7 @@ public final /* synthetic */ class s1 implements q10 {
                 break;
             case 1:
                 org.telegram.ui.Wallet.l2 l2Var = (org.telegram.ui.Wallet.l2) this.b;
-                l90 l90Var2 = (l90) this.c;
+                m90 m90Var2 = (m90) this.c;
                 String str = (String) this.d;
                 String str2 = (String) this.e;
                 String str3 = (String) this.f;
@@ -77,7 +77,7 @@ public final /* synthetic */ class s1 implements q10 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 l2Var.getClass();
                 if (tL_error != null || tonconnectsession2 == null) {
-                    l90Var2.a(null, org.telegram.ui.Wallet.l2.z(tL_error, "createSession"));
+                    m90Var2.a(null, org.telegram.ui.Wallet.l2.z(tL_error, "createSession"));
                     break;
                 } else {
                     ArrayList arrayList = l2Var.d;
@@ -88,17 +88,17 @@ public final /* synthetic */ class s1 implements q10 {
                             Object obj3 = arrayList.get(i7);
                             i7++;
                             tonconnectsession = (TL_wallet.tonConnectSession) obj3;
-                            l90Var = l90Var2;
+                            m90Var = m90Var2;
                             if (tonconnectsession.id != tonconnectsession2.id || (tonconnectsession.manifest == null && tonconnectsession.manifest_error == null && !tonconnectsession.closed && !tonconnectsession.closing)) {
-                                l90Var2 = l90Var;
+                                m90Var2 = m90Var;
                             }
                         } else {
-                            l90Var = l90Var2;
+                            m90Var = m90Var2;
                             tonconnectsession = tonconnectsession2;
                         }
                     }
                     l2Var.p(tonconnectsession);
-                    l90Var.a(new org.telegram.ui.Wallet.g2(tonconnectsession, str, str2, str3, str4), null);
+                    m90Var.a(new org.telegram.ui.Wallet.g2(tonconnectsession, str, str2, str3, str4), null);
                 }
                 break;
             case 2:

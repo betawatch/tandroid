@@ -34,9 +34,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.de0;
+import org.telegram.ui.ee0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yf implements Runnable {
     public final /* synthetic */ int a;
@@ -198,7 +198,7 @@ public final /* synthetic */ class yf implements Runnable {
         arrayList.add(pdVar2);
         qdVar.K.k(pdVar2, pdVar2.a);
         qd.q();
-        ks.e().k(ks.F4, new Object[0]);
+        ks.e().k(ks.G4, new Object[0]);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:325:0x06c7, code lost:
@@ -268,7 +268,7 @@ public final /* synthetic */ class yf implements Runnable {
                 riVar.D0 = false;
                 arrayList.clear();
                 arrayList.addAll(((TLRPC.TL_messages_stickers) tLObject).stickers);
-                ks.f(riVar.currentAccount).k(ks.n5, new Object[0]);
+                ks.f(riVar.currentAccount).k(ks.o5, new Object[0]);
                 return;
             case 1:
                 org.telegram.ui.Components.b5.c0(((mp) this.c).currentAccount, (TLRPC.TL_error) this.b, null, (TLRPC.TL_channels_inviteToChannel) this.d, Boolean.TRUE);
@@ -412,7 +412,7 @@ public final /* synthetic */ class yf implements Runnable {
                         h1Var.e = System.currentTimeMillis();
                         h1Var.f();
                         if (h1Var.b != i17) {
-                            ks.e().k(ks.S4, new Object[0]);
+                            ks.e().k(ks.T4, new Object[0]);
                         }
                         g0.r(h1Var.i);
                         e1 e1Var = h1Var.i;
@@ -501,15 +501,15 @@ public final /* synthetic */ class yf implements Runnable {
                 c cVar = (c) this.c;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) this.b;
                 TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode = (TL_update.TL_updateSentPhoneCode) this.d;
-                de0 de0Var = (de0) LaunchActivity.L();
-                if (de0Var == null) {
-                    de0Var = new de0(cVar.a);
+                ee0 ee0Var = (ee0) LaunchActivity.L();
+                if (ee0Var == null) {
+                    ee0Var = new ee0(cVar.a);
                     org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
                     if (T != null) {
-                        T.presentFragment(de0Var);
+                        T.presentFragment(ee0Var);
                     }
                 }
-                de0Var.I1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
+                ee0Var.I1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
                 return;
             case 10:
                 v1 v1Var = (v1) this.c;

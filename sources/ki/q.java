@@ -7,8 +7,8 @@ import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
 import android.text.TextUtils;
 import android.util.Pair;
-import bi.m6;
-import bi.u4;
+import bi.l6;
+import bi.t4;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
 import java.security.SecureRandom;
@@ -35,7 +35,7 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class q {
     public static final WeakHashMap k = new WeakHashMap();
@@ -49,7 +49,7 @@ public final class q {
     public String g;
     public String h;
     public d6.i i;
-    public m6 j;
+    public l6 j;
 
     public q(Context context, int i7, long j3) {
         this.a = context;
@@ -110,7 +110,7 @@ public final class q {
         if (arrayList.isEmpty()) {
             x10Var.a(new ArrayList());
         } else {
-            tr.a0(i7).a.c(new u4(i7, arrayList, hashMap, x10Var, 9));
+            tr.a0(i7).a.c(new t4(i7, arrayList, hashMap, x10Var, 9));
         }
     }
 
@@ -279,7 +279,7 @@ public final class q {
                     }
                 }
             }
-            this.j = new m6(11, s10Var, (i10 == null || Build.VERSION.SDK_INT >= 30) ? null : i10);
+            this.j = new l6(11, s10Var, (i10 == null || Build.VERSION.SDK_INT >= 30) ? null : i10);
             if (i10 == null || (i7 = Build.VERSION.SDK_INT) >= 30) {
                 this.i.g(b10, null);
                 return;

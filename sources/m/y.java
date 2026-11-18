@@ -22,9 +22,9 @@ import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import c8.tb;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -39,7 +39,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((ji.j) ((b5) this.c).a).getClass();
+        ((ji.j) ((c5) this.c).a).getClass();
         if (keyListener instanceof t1.e) {
             return keyListener;
         }
@@ -92,12 +92,12 @@ public class y {
     }
 
     public t1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        b5 b5Var = (b5) this.c;
+        c5 c5Var = (c5) this.c;
         if (inputConnection == null) {
-            b5Var.getClass();
+            c5Var.getClass();
             inputConnection = null;
         } else {
-            ji.j jVar = (ji.j) b5Var.a;
+            ji.j jVar = (ji.j) c5Var.a;
             jVar.getClass();
             if (!(inputConnection instanceof t1.b)) {
                 inputConnection = new t1.b((EditText) jVar.b, inputConnection, editorInfo);
@@ -107,7 +107,7 @@ public class y {
     }
 
     public void d(boolean z10) {
-        t1.i iVar = (t1.i) ((ji.j) ((b5) this.c).a).c;
+        t1.i iVar = (t1.i) ((ji.j) ((c5) this.c).a).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a10 = androidx.emoji2.text.l.a();
@@ -178,6 +178,6 @@ public class y {
 
     public y(EditText editText) {
         this.b = editText;
-        this.c = new b5(editText);
+        this.c = new c5(editText);
     }
 }

@@ -56,7 +56,7 @@ import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class hc1 implements VoIPService.StateListener, org.telegram.messenger.fs {
     public static hc1 m1;
@@ -174,11 +174,11 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
         sharedState.isOutgoing();
         this.q0 = -1;
         this.p0 = sharedState.getCallState();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.Q4);
-        org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.O4);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.R4);
+        org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.P4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
         org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.E2);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.I5);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.J5);
     }
 
     public static void a(hc1 hc1Var) {
@@ -210,7 +210,7 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
                     return;
                 }
                 if (iArr.length > 0 && iArr[0] == 0) {
-                    hc1Var.i(new cd0(7));
+                    hc1Var.i(new dd0(7));
                 } else if (!hc1Var.b.shouldShowRequestPermissionRationale("android.permission.RECORD_AUDIO")) {
                     if (VoIPService.getSharedState() != null) {
                         VoIPService.getSharedState().declineIncomingCall();
@@ -309,7 +309,7 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
         cc1Var.addView(y2Var, c8.ma.c(220.0f, -1));
         cc1Var.addView(hc1Var3.d0);
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
-        new org.telegram.ui.Components.p9(orientation, new int[]{-14994098, -14328963}).f(org.telegram.ui.Cells.b5.y(0.5f, 1), new f71(hc1Var3, 1), 0L);
+        new org.telegram.ui.Components.p9(orientation, new int[]{-14994098, -14328963}).f(org.telegram.ui.Cells.c5.y(0.5f, 1), new f71(hc1Var3, 1), 0L);
         org.telegram.ui.Components.voip.q1 q1Var = new org.telegram.ui.Components.voip.q1(activity);
         hc1Var3.Z = q1Var;
         q1Var.setDelegate(new sb1(hc1Var3, 2));
@@ -553,7 +553,7 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
         hc1Var3.L.setOnClickListener(new ub1(hc1Var3, 5));
         int i19 = 6;
         hc1Var3.I.setOnClickListener(new ub1(hc1Var3, i19));
-        hc1Var3.J.setOnClickListener(new bd0(19, hc1Var3, activity));
+        hc1Var3.J.setOnClickListener(new cd0(19, hc1Var3, activity));
         if (hc1Var3.u0.b) {
             hc1Var3.I.setVisibility(8);
             hc1Var3.J.setVisibility(8);
@@ -763,11 +763,11 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
         if (VoIPService.getSharedInstance() != null) {
             VoIPService.getSharedInstance().unregisterStateListener(this);
         }
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.Q4);
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.O4);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.R4);
+        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.P4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.E2);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.I5);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.J5);
         wg.d1 d1Var = this.N;
         if (d1Var != null) {
             d1Var.dismiss();
@@ -847,7 +847,7 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.O4) {
+        if (i7 == org.telegram.messenger.ks.P4) {
             if (this.p0 != 17 || VoIPService.getSharedInstance() == null) {
                 return;
             }
@@ -858,7 +858,7 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
             VoIPService.getSharedInstance().registerStateListener(this);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             v(true);
             return;
         }
@@ -866,11 +866,11 @@ public final class hc1 implements VoIPService.StateListener, org.telegram.messen
             this.u0.b();
             return;
         }
-        if (i7 == org.telegram.messenger.ks.Q4) {
+        if (i7 == org.telegram.messenger.ks.R4) {
             this.E.setAmplitude(((Float) objArr[0]).floatValue() * 15.0f);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.I5) {
+        if (i7 == org.telegram.messenger.ks.J5) {
             boolean booleanValue = ((Boolean) objArr[0]).booleanValue();
             this.g0 = booleanValue;
             if (booleanValue) {

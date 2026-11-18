@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class gj extends v4.u0 {
     public boolean b;
@@ -20,9 +20,9 @@ public final class gj extends v4.u0 {
     public final void a(RecyclerView recyclerView, int i7) {
         bn bnVar = this.d;
         if (i7 == 0) {
-            org.telegram.ui.Cells.q1 q1Var = bnVar.E2;
-            if (q1Var != null) {
-                bn.q2(bnVar, q1Var, -1, bnVar.F2, bnVar.G2);
+            org.telegram.ui.Cells.r1 r1Var = bnVar.E2;
+            if (r1Var != null) {
+                bn.q2(bnVar, r1Var, -1, bnVar.F2, bnVar.G2);
                 bnVar.E2 = null;
             }
             bnVar.y3 = false;
@@ -93,10 +93,10 @@ public final class gj extends v4.u0 {
                         break;
                     }
                     View m10 = bnVar.C0.m(N0);
-                    if (m10 instanceof org.telegram.ui.Cells.q1) {
-                        fjVar = ((org.telegram.ui.Cells.q1) m10).getMessageObject();
-                    } else if (m10 instanceof org.telegram.ui.Cells.u0) {
-                        fjVar = ((org.telegram.ui.Cells.u0) m10).getMessageObject();
+                    if (m10 instanceof org.telegram.ui.Cells.r1) {
+                        fjVar = ((org.telegram.ui.Cells.r1) m10).getMessageObject();
+                    } else if (m10 instanceof org.telegram.ui.Cells.v0) {
+                        fjVar = ((org.telegram.ui.Cells.v0) m10).getMessageObject();
                     }
                     if (fjVar != null && bnVar.b5 == fjVar.e1()) {
                         z10 = true;
@@ -227,7 +227,7 @@ public final class gj extends v4.u0 {
                 break;
             }
             View childAt = aVar.a.getChildAt(i13);
-            if (childAt instanceof org.telegram.ui.Cells.q1 ? aVar.a(((org.telegram.ui.Cells.q1) childAt).getMessageObject()) : childAt instanceof org.telegram.ui.Cells.u0 ? aVar.a(((org.telegram.ui.Cells.u0) childAt).getMessageObject()) : false) {
+            if (childAt instanceof org.telegram.ui.Cells.r1 ? aVar.a(((org.telegram.ui.Cells.r1) childAt).getMessageObject()) : childAt instanceof org.telegram.ui.Cells.v0 ? aVar.a(((org.telegram.ui.Cells.v0) childAt).getMessageObject()) : false) {
                 break;
             } else {
                 i13++;

@@ -20,7 +20,7 @@ import org.telegram.ui.vs;
 import org.telegram.ui.xt;
 import s4.v;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final class d implements View.OnClickListener {
                         ((xt) this.c).e.getImageView().getLocationInWindow(iArr);
                         int i7 = iArr[0];
                         int i10 = iArr[1];
-                        ks.e().k(ks.v4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new vs(2, this, (h2) this.b));
+                        ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new vs(2, this, (h2) this.b));
                         break;
                     }
                     str = string;
@@ -104,7 +104,7 @@ public final class d implements View.OnClickListener {
                     ((xt) this.c).e.getImageView().getLocationInWindow(iArr2);
                     int i72 = iArr2[0];
                     int i102 = iArr2[1];
-                    ks.e().k(ks.v4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new vs(2, this, (h2) this.b));
+                    ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new vs(2, this, (h2) this.b));
                 }
                 break;
         }

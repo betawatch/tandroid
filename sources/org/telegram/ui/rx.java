@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class rx extends org.telegram.ui.ActionBar.h2 {
     public long a;
@@ -14,7 +14,7 @@ public final class rx extends org.telegram.ui.ActionBar.h2 {
     public boolean c;
     public boolean d;
     public boolean e;
-    public bi.g7 f;
+    public bi.f7 f;
     public fi.b0 h;
 
     @Override // org.telegram.ui.ActionBar.h2
@@ -24,9 +24,9 @@ public final class rx extends org.telegram.ui.ActionBar.h2 {
         this.simpleActionBar.setActionBarMenuOnItemClick(new dv(this, 2));
         this.simpleActionBar.setTitle(org.telegram.messenger.gd.M0(2131743744, null));
         FrameLayout frameLayout = new FrameLayout(context);
-        bi.g7 g7Var = new bi.g7(this, new a5(this, 13), new zr(this, 9), null, 7);
-        this.f = g7Var;
-        g7Var.r1();
+        bi.f7 f7Var = new bi.f7(this, new a5(this, 13), new zr(this, 9), null, 7);
+        this.f = f7Var;
+        f7Var.r1();
         this.f.setSectionsDrawBackground(true);
         frameLayout.addView(this.f, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
         this.fragmentView = frameLayout;

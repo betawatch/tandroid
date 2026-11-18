@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.ht;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class n implements k, u2.k {
     public final Context a;
@@ -138,7 +138,7 @@ public final class n implements k, u2.k {
         je.b bVar = new je.b(mVar);
         d3.b bVar2 = new d3.b(3);
         kotlin.jvm.internal.j.e(context, "context");
-        v0.i x10 = b5.x(new b5(this.a), eVar);
+        v0.i x10 = c5.x(new c5(this.a), eVar);
         if (x10 == null) {
             bVar.a(new w0.c(1, "createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
         } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
@@ -153,7 +153,7 @@ public final class n implements k, u2.k {
 
     public void d(Context context, v0.m mVar, CancellationSignal cancellationSignal, Executor executor, v0.g gVar) {
         kotlin.jvm.internal.j.e(executor, "executor");
-        v0.i x10 = b5.x(new b5(context), mVar);
+        v0.i x10 = c5.x(new c5(context), mVar);
         if (x10 == null) {
             gVar.a(new w0.h(1, "getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
         } else {

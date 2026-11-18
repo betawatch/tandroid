@@ -14,7 +14,7 @@ import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public final org.telegram.ui.Components.m6 a;
@@ -28,7 +28,7 @@ public final class l extends FrameLayout {
         super(context);
         Paint paint = new Paint(1);
         this.b = paint;
-        this.c = new bg.r(new da(this, 1));
+        this.c = new bg.r(new ea(this, 1));
         this.e = i7;
         this.d = i5.c.g(context, R.drawable.filled_gift_sell_24);
         org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, false, false);

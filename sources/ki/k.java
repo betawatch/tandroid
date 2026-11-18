@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.e8;
-import bi.i8;
+import bi.d8;
+import bi.h8;
 import c8.ma;
 import di.xb;
 import hi.e7;
@@ -28,8 +28,8 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.s4;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.da;
-import org.telegram.ui.Cells.s7;
+import org.telegram.ui.Cells.ea;
+import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Components.cy0;
 import org.telegram.ui.Components.k80;
 import org.telegram.ui.Components.l41;
@@ -40,7 +40,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.s00;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class k extends s00 implements fs {
     public final long S;
@@ -53,7 +53,7 @@ public final class k extends s00 implements fs {
     public TL_payments.starRefProgram a0;
     public TL_payments.starRefProgram b0;
     public boolean e0;
-    public e8 f0;
+    public d8 f0;
     public final d Y = new d(this, 0);
     public String[] c0 = null;
     public final List d0 = Arrays.asList(1, 3, 6, 12, 24, 36, 0);
@@ -131,11 +131,11 @@ public final class k extends s00 implements fs {
     }
 
     public static void D0(k kVar, int i7) {
-        e8 e8Var = kVar.f0;
-        if (e8Var == null) {
+        d8 d8Var = kVar.f0;
+        if (d8Var == null) {
             return;
         }
-        int i10 = e8Var.G(i7).d;
+        int i10 = d8Var.G(i7).d;
         if (i10 != 4) {
             if (i10 == 2) {
                 kVar.presentFragment(new e4(kVar.S));
@@ -253,11 +253,11 @@ public final class k extends s00 implements fs {
         l41 l41Var2 = new l41(15);
         l41Var2.A = i10;
         l41Var2.D = aVar;
-        s7 s7Var = new s7();
-        s7Var.a = i7;
-        s7Var.b = i11;
-        s7Var.e = new da(yVar, 7);
-        l41Var2.H = s7Var;
+        t7 t7Var = new t7();
+        t7Var.a = i7;
+        t7Var.b = i11;
+        t7Var.e = new ea(yVar, 7);
+        l41Var2.H = t7Var;
         l41Var2.C = -1L;
         l41Var2.C = this.a0 == null ? -1 : r4.commission_permille;
         arrayList.add(l41Var2);
@@ -332,9 +332,9 @@ public final class k extends s00 implements fs {
         dVar.run();
         this.X.setText(org.telegram.messenger.g0.T2(gd.M0((this.Z || this.b0.end_date != 0) ? 2131754326 : 2131754313, null), new d(this, 2)));
         L0();
-        e8 e8Var = this.f0;
-        if (e8Var != null) {
-            e8Var.O(z10);
+        d8 d8Var = this.f0;
+        if (d8Var != null) {
+            d8Var.O(z10);
         }
     }
 
@@ -386,7 +386,7 @@ public final class k extends s00 implements fs {
         K0(false);
         ((FrameLayout) this.fragmentView).addView(this.V, ma.e(-1, -2, 87));
         this.c.setPadding(0, 0, 0, org.telegram.messenger.g0.L(84.0f));
-        this.c.setOnItemClickListener(new i8(this, 17));
+        this.c.setOnItemClickListener(new h8(this, 17));
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
@@ -403,9 +403,9 @@ public final class k extends s00 implements fs {
 
     @Override // org.telegram.ui.s00
     public final v4.i0 k0() {
-        e8 e8Var = new e8(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new e7(this, 16), getResourceProvider(), 4);
-        this.f0 = e8Var;
-        return e8Var;
+        d8 d8Var = new d8(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new e7(this, 16), getResourceProvider(), 4);
+        this.f0 = d8Var;
+        return d8Var;
     }
 
     @Override // org.telegram.ui.s00

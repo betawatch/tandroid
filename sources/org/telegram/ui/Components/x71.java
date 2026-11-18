@@ -5,7 +5,7 @@ import android.graphics.Path;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x71 implements z71 {
     public final View a;
@@ -18,8 +18,8 @@ public final class x71 implements z71 {
     public int n;
     public boolean r;
 
-    public x71(org.telegram.ui.Cells.h2 h2Var, int i7, TLRPC.BotInlineResult botInlineResult, org.telegram.ui.ActionBar.i6 i6Var) {
-        this.a = h2Var;
+    public x71(org.telegram.ui.Cells.i2 i2Var, int i7, TLRPC.BotInlineResult botInlineResult, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.a = i2Var;
         this.d = i6Var;
         String v = org.telegram.utils.twidget.n0.v(i7, botInlineResult);
         this.b = v;

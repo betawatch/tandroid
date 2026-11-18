@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.t80;
+import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s6 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -55,7 +55,7 @@ public final /* synthetic */ class s6 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: di.g7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        t80 t80Var;
+                        u80 u80Var;
                         x8 x8Var2 = x8.this;
                         TLObject tLObject2 = tLObject;
                         q10 q10Var2 = q10Var;
@@ -103,8 +103,8 @@ public final /* synthetic */ class s6 implements RequestDelegate {
                             b02.I(R.raw.stars_send, gd.M0(2131744759, null), org.telegram.messenger.g0.W2(gd.G((int) j10, "StarsSubscriptionCompletedText", str3))).j();
                         }
                         LaunchActivity launchActivity = LaunchActivity.H1;
-                        if (launchActivity != null && (t80Var = launchActivity.w0) != null) {
-                            t80Var.c(true);
+                        if (launchActivity != null && (u80Var = launchActivity.w0) != null) {
+                            u80Var.c(true);
                         }
                         x8Var2.R(true);
                         x8Var2.Q();

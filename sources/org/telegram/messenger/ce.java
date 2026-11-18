@@ -31,7 +31,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.hk0;
 import org.telegram.ui.xs0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ce implements Runnable {
     public final /* synthetic */ int a;
@@ -376,7 +376,7 @@ public final /* synthetic */ class ce implements Runnable {
                     ArrayList arrayList2 = arrayList;
                     ai.l0 l0Var = new ai.l0(context, charSequence, C0, z12);
                     l0Var.setBackground(org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.r1(0.08f, C0), 2, -1));
-                    l0Var.setOnClickListener(new bi.f5((Object) x0Var, gVar, i15, 10));
+                    l0Var.setOnClickListener(new bi.e5((Object) x0Var, gVar, i15, 10));
                     linearLayout.addView(l0Var, new LinearLayout.LayoutParams(-1, g0.L(44.0f)));
                     i15++;
                     arrayList = arrayList2;

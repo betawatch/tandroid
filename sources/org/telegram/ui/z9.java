@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -237,7 +237,7 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new wn(obj3, (Object) tL_error, (Object) tLObject, obj, (String) obj2, 16));
                 break;
             case 19:
-                org.telegram.messenger.g0.g3(new up((pa0) obj3, (org.telegram.ui.ActionBar.u1[]) obj2, (TLRPC.TL_messageMediaVenue) obj, 25));
+                org.telegram.messenger.g0.g3(new up((qa0) obj3, (org.telegram.ui.ActionBar.u1[]) obj2, (TLRPC.TL_messageMediaVenue) obj, 25));
                 break;
             case 20:
                 org.telegram.messenger.g0.g3(new wn((org.telegram.ui.Components.fu0) obj3, tLObject, (Bundle) obj2, tL_error, (TLObject) obj, 18));
@@ -252,7 +252,7 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new wn(obj3, tLObject, obj2, obj, tL_error, 21));
                 break;
             case 24:
-                ng0 ng0Var = (ng0) obj3;
+                og0 og0Var = (og0) obj3;
                 String str6 = (String) obj2;
                 TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = (TL_stats.TL_loadAsyncGraph) obj;
                 if (tLObject instanceof TL_stats.TL_statsGraph) {
@@ -262,27 +262,27 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                         e10.printStackTrace();
                     }
                 } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                    org.telegram.messenger.g0.g3(new ve0(i11, ng0Var, (TL_stats.TL_statsGraphError) tLObject));
+                    org.telegram.messenger.g0.g3(new we0(i11, og0Var, (TL_stats.TL_statsGraphError) tLObject));
                 }
-                org.telegram.messenger.g0.g3(new wn((Object) ng0Var, tL_error, (Object) bVar, (Serializable) str6, (TLObject) tL_loadAsyncGraph, 22));
+                org.telegram.messenger.g0.g3(new wn((Object) og0Var, tL_error, (Object) bVar, (Serializable) str6, (TLObject) tL_loadAsyncGraph, 22));
                 break;
             case 25:
-                kg0 kg0Var = (kg0) obj3;
+                lg0 lg0Var = (lg0) obj3;
                 String str7 = (String) obj2;
                 b51 b51Var = (b51) obj;
                 if (tLObject instanceof TL_stats.TL_statsGraph) {
                     try {
-                        bVar = c51.h0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), kg0Var.r.i, false);
+                        bVar = c51.h0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), lg0Var.r.i, false);
                     } catch (JSONException e11) {
                         e11.printStackTrace();
                     }
                 } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                    Toast.makeText(kg0Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
+                    Toast.makeText(lg0Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
                 }
-                org.telegram.messenger.g0.g3(new jg0(kg0Var, bVar, str7, b51Var, 0));
+                org.telegram.messenger.g0.g3(new kg0(lg0Var, bVar, str7, b51Var, 0));
                 break;
             case 26:
-                org.telegram.messenger.g0.g3(new wn((eh0) obj3, (TLRPC.TL_contacts_importedContacts) tLObject, (TLRPC.TL_inputPhoneContact) obj2, tL_error, (TLRPC.TL_contacts_importContacts) obj));
+                org.telegram.messenger.g0.g3(new wn((fh0) obj3, (TLRPC.TL_contacts_importedContacts) tLObject, (TLRPC.TL_inputPhoneContact) obj2, tL_error, (TLRPC.TL_contacts_importContacts) obj));
                 break;
             case 27:
                 org.telegram.messenger.g0.g3(new wn(obj3, tL_error, obj2, (Object) tLObject, obj, 25));
@@ -292,13 +292,13 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                 break;
             default:
                 ml0 ml0Var = (ml0) obj3;
-                ve0 ve0Var = (ve0) obj2;
+                we0 we0Var = (we0) obj2;
                 TLObject tLObject2 = (TLObject) obj;
                 if (!(tLObject instanceof TLRPC.TL_payments_validatedRequestedInfo)) {
                     org.telegram.messenger.g0.g3(new qk0(ml0Var, tL_error, tLObject2, 2));
                     break;
                 } else {
-                    org.telegram.messenger.g0.g3(new lc0(ml0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject, ve0Var, 18));
+                    org.telegram.messenger.g0.g3(new mc0(ml0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject, we0Var, 18));
                     break;
                 }
         }

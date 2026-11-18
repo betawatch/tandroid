@@ -31,12 +31,12 @@ import org.telegram.ui.Components.mz0;
 import org.telegram.ui.Components.vl;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.c01;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 import org.telegram.ui.hn0;
-import org.telegram.ui.lc0;
+import org.telegram.ui.mc0;
 import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class lb implements x10 {
     public final /* synthetic */ int a;
@@ -292,14 +292,14 @@ public final /* synthetic */ class lb implements x10 {
                                 photoViewer.p5.W = true;
                                 Utilities.i.c(new un0(photoViewer, b10, 3));
                                 hn0 hn0Var = new hn0(photoViewer, 14);
-                                lc0 lc0Var = new lc0(photoViewer, b10, hn0Var, 19);
-                                cd0 cd0Var = new cd0(3);
+                                mc0 mc0Var = new mc0(photoViewer, b10, hn0Var, 19);
+                                dd0 dd0Var = new dd0(3);
                                 kz0 kz0Var = thanosEffect.a;
                                 if (kz0Var != null) {
-                                    kz0Var.c(matrix3, bitmap2, lc0Var, cd0Var);
+                                    kz0Var.c(matrix3, bitmap2, mc0Var, dd0Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new lz0(matrix3, bitmap2, lc0Var, cd0Var));
+                                    thanosEffect.c.add(new lz0(matrix3, bitmap2, mc0Var, dd0Var));
                                 }
                                 org.telegram.messenger.g0.h3(hn0Var, 1200L);
                             }

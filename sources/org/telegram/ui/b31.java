@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b31 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,14 +50,14 @@ public final /* synthetic */ class b31 implements Runnable {
                 new u31(h2Var.getContext(), h2Var.getCurrentAccount(), h2Var.getResourceProvider(), (li.d) obj).show();
                 break;
             case 3:
-                ((StickersActivity) obj2).s0((org.telegram.ui.Cells.g8) obj);
+                ((StickersActivity) obj2).s0((org.telegram.ui.Cells.h8) obj);
                 break;
             case 4:
                 ThemeActivity themeActivity = (ThemeActivity) obj2;
                 View view = (View) obj;
                 themeActivity.getMessagesController().Q4(true);
-                if (view instanceof org.telegram.ui.Cells.r8) {
-                    ((org.telegram.ui.Cells.r8) view).setChecked(themeActivity.getMessagesController().e5());
+                if (view instanceof org.telegram.ui.Cells.s8) {
+                    ((org.telegram.ui.Cells.s8) view).setChecked(themeActivity.getMessagesController().e5());
                     break;
                 }
                 break;
@@ -73,8 +73,8 @@ public final /* synthetic */ class b31 implements Runnable {
                 org.telegram.ui.Components.ck0 ck0Var = themeActivity2.b;
                 if (ck0Var != null && (kj0Var = (org.telegram.ui.Components.kj0) ck0Var.K(themeActivity2.Z)) != null) {
                     View view2 = kj0Var.a;
-                    if (view2 instanceof org.telegram.ui.Cells.w9) {
-                        ((org.telegram.ui.Cells.w9) view2).c(org.telegram.messenger.gd.M0(2131753779, "AutoNightUpdateLocation"), org.telegram.ui.ActionBar.n6.w, false, false);
+                    if (view2 instanceof org.telegram.ui.Cells.x9) {
+                        ((org.telegram.ui.Cells.x9) view2).c(org.telegram.messenger.gd.M0(2131753779, "AutoNightUpdateLocation"), org.telegram.ui.ActionBar.n6.w, false, false);
                         break;
                     }
                 }
@@ -219,7 +219,7 @@ public final /* synthetic */ class b31 implements Runnable {
             case 22:
                 org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) obj2;
                 org.telegram.ui.Wallet.u0.P("enable backup: ready! getting secret phrase...");
-                u0Var.F(false, true, false, new bi.m6(28, u0Var, (org.telegram.ui.Wallet.v8) obj));
+                u0Var.F(false, true, false, new bi.l6(28, u0Var, (org.telegram.ui.Wallet.v8) obj));
                 break;
             case 23:
                 org.telegram.messenger.mp.u1(((org.telegram.ui.Wallet.u0) obj2).a).V3((TLRPC.Updates) obj, false);

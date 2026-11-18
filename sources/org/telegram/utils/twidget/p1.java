@@ -18,10 +18,10 @@ import org.telegram.messenger.mp;
 import org.telegram.ui.Components.pp0;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class p1 {
-    public static boolean f0;
+    public static boolean e0;
     public volatile boolean A;
     public volatile boolean B;
     public volatile long C;
@@ -53,7 +53,6 @@ public final class p1 {
     public long c0;
     public final j1 d0;
     public final Context e;
-    public boolean e0;
     public final String f;
     public final int g;
     public final String h;
@@ -158,10 +157,10 @@ public final class p1 {
                 a8.g(e10, true);
             }
         }
-        if (f0 || r0Var == null) {
+        if (e0 || r0Var == null) {
             return;
         }
-        f0 = true;
+        e0 = true;
         r0Var.d.add(new m1(context));
     }
 

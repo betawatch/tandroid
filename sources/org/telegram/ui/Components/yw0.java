@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class yw0 extends FrameLayout implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.c6 {
     public boolean E;
@@ -133,7 +133,7 @@ public class yw0 extends FrameLayout implements org.telegram.messenger.fs, org.t
             e();
             return;
         }
-        if (i7 != org.telegram.messenger.ks.k4 || this.e == null) {
+        if (i7 != org.telegram.messenger.ks.l4 || this.e == null) {
             return;
         }
         for (int i11 = 0; i11 < this.e.getChildCount(); i11++) {
@@ -204,14 +204,14 @@ public class yw0 extends FrameLayout implements org.telegram.messenger.fs, org.t
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
         org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.L2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.L2);
     }
 

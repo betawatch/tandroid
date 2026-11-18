@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.tr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class b1 {
     public final int a;
@@ -64,7 +64,7 @@ public final class b1 {
         sb3.append(")");
         org.telegram.messenger.a8.b(sb3.toString());
         a02.a.c(new y0(a02, a1Var, 1));
-        ks.f(i7).k(ks.A5, new Object[0]);
+        ks.f(i7).k(ks.B5, new Object[0]);
     }
 
     public final void b(d7 d7Var) {
@@ -123,7 +123,7 @@ public final class b1 {
         int i10 = this.a;
         tr a02 = tr.a0(i10);
         a02.a.c(new z0(a02, arrayList2, 0));
-        ks.f(i10).k(ks.A5, new Object[0]);
+        ks.f(i10).k(ks.B5, new Object[0]);
     }
 
     public final void d(d7 d7Var) {
@@ -140,7 +140,7 @@ public final class b1 {
         int i7 = this.a;
         tr a02 = tr.a0(i7);
         a02.a.c(new y0(a02, a1Var, 0));
-        ks.f(i7).k(ks.A5, new Object[0]);
+        ks.f(i7).k(ks.B5, new Object[0]);
     }
 
     public final void e(d7 d7Var) {

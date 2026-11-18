@@ -31,7 +31,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class ck0 extends RecyclerView implements eh.a {
     public static int[] Z2;
@@ -211,7 +211,7 @@ public class ck0 extends RecyclerView implements eh.a {
         while (i7 < 2) {
             for (int i10 = childCount - 1; i10 >= 0; i10--) {
                 View childAt = getChildAt(i10);
-                if ((!(childAt instanceof org.telegram.ui.Cells.q1) && !(childAt instanceof org.telegram.ui.Cells.u0)) || childAt.getVisibility() != 4) {
+                if ((!(childAt instanceof org.telegram.ui.Cells.r1) && !(childAt instanceof org.telegram.ui.Cells.v0)) || childAt.getVisibility() != 4) {
                     float translationX = i7 == 0 ? childAt.getTranslationX() : 0.0f;
                     float translationY = i7 == 0 ? childAt.getTranslationY() : 0.0f;
                     if (f10 >= childAt.getLeft() + translationX && f10 <= childAt.getRight() + translationX && f11 >= childAt.getTop() + translationY && f11 <= childAt.getBottom() + translationY) {

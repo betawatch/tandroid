@@ -20,7 +20,7 @@ import org.telegram.ui.NotificationsSettingsActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -73,7 +73,7 @@ public final /* synthetic */ class p4 implements Runnable {
                 } else {
                     int i13 = i10 + 1;
                     if (i13 < 8) {
-                        org.telegram.messenger.g0.h3(new n4(i11, i13, str, z10), v4.b[i13]);
+                        org.telegram.messenger.g0.h3(new n4(i11, i13, str, z10), u4.b[i13]);
                         break;
                     }
                 }
@@ -125,7 +125,7 @@ public final /* synthetic */ class p4 implements Runnable {
                 break;
             default:
                 NotificationsSettingsActivity notificationsSettingsActivity = (NotificationsSettingsActivity) obj2;
-                org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) obj;
+                org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) obj;
                 if (i11 == 3) {
                     SharedPreferences.Editor edit = notificationsSettingsActivity.getNotificationsSettings().edit();
                     if (z10) {
@@ -150,7 +150,7 @@ public final /* synthetic */ class p4 implements Runnable {
                 } else {
                     notificationsSettingsActivity.getNotificationsController().U(i11, !z10 ? 0 : ConnectionsManager.DEFAULT_DATACENTER_ID);
                 }
-                i5Var.e.b(0, !z10, true);
+                j5Var.e.b(0, !z10, true);
                 notificationsSettingsActivity.c.g(i10);
                 break;
         }
@@ -180,11 +180,11 @@ public final /* synthetic */ class p4 implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ p4(NotificationsSettingsActivity notificationsSettingsActivity, int i7, boolean z10, org.telegram.ui.Cells.i5 i5Var, int i10) {
+    public /* synthetic */ p4(NotificationsSettingsActivity notificationsSettingsActivity, int i7, boolean z10, org.telegram.ui.Cells.j5 j5Var, int i10) {
         this.e = notificationsSettingsActivity;
         this.b = i7;
         this.d = z10;
-        this.f = i5Var;
+        this.f = j5Var;
         this.c = i10;
     }
 }

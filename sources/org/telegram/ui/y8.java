@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class y8 implements org.telegram.ui.Components.fb {
     public final /* synthetic */ int a;
@@ -114,15 +114,15 @@ public final class y8 implements org.telegram.ui.Components.fb {
                 cx cxVar = (cx) this.b;
                 return cxVar.a3 != 0 ? org.telegram.messenger.g0.L(60.0f) + cxVar.k4 : cxVar.w3();
             case 5:
-                i11 = ((le0) this.b).M;
+                i11 = ((me0) this.b).M;
                 i10 = org.telegram.messenger.g0.L(64.0f);
                 break;
             case 6:
                 PhotoViewer photoViewer = ((qq0) this.b).o0;
                 int i12 = 0;
                 if (!photoViewer.R4) {
-                    hh0 hh0Var = photoViewer.j0;
-                    if (hh0Var != null && hh0Var.getVisibility() == 0) {
+                    ih0 ih0Var = photoViewer.j0;
+                    if (ih0Var != null && ih0Var.getVisibility() == 0) {
                         i12 = (int) ((photoViewer.j0.getAlpha() * photoViewer.j0.getHeight()) + 0);
                     }
                     org.telegram.ui.Components.w20 w20Var = photoViewer.m1;
@@ -167,8 +167,8 @@ public final class y8 implements org.telegram.ui.Components.fb {
                 return org.telegram.messenger.g0.W1(Math.min(1.0f, r02), L, Math.max(L, i13));
             default:
                 y91 y91Var = (y91) this.b;
-                hh0 hh0Var2 = y91Var.p0;
-                if (hh0Var2 == null || hh0Var2.getVisibility() != 0) {
+                ih0 ih0Var2 = y91Var.p0;
+                if (ih0Var2 == null || ih0Var2.getVisibility() != 0) {
                     return 0;
                 }
                 return y91Var.p0.getMeasuredHeight();

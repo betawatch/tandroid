@@ -3,7 +3,7 @@ package wg;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
-import bi.z8;
+import bi.y8;
 import di.i4;
 import java.util.HashSet;
 import org.telegram.messenger.gd;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.x2;
 import org.telegram.ui.Components.gc;
 import tg.z1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l extends x2 {
     public static l p1;
@@ -58,8 +58,8 @@ public final class l extends x2 {
             return;
         }
         boolean z10 = i6Var instanceof fi.b;
-        h2 z8Var = z10 ? new z8(h2Var) : h2Var;
-        l lVar = new l(h2Var.getParentActivity(), new a0(z8Var, j3, prepaidGiveaway), new w0(z8Var, j3), z8Var.getResourceProvider(), z10);
+        h2 y8Var = z10 ? new y8(h2Var) : h2Var;
+        l lVar = new l(h2Var.getParentActivity(), new a0(y8Var, j3, prepaidGiveaway), new w0(y8Var, j3), y8Var.getResourceProvider(), z10);
         lVar.show();
         p1 = lVar;
     }

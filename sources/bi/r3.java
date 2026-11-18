@@ -14,7 +14,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cx;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements x10 {
     public final /* synthetic */ int a = 0;
@@ -45,12 +45,13 @@ public final /* synthetic */ class r3 implements x10 {
                 String str2 = (String) obj3;
                 TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer = (TLRPC.TL_messageActionStarGiftOnchainOffer) obj2;
                 if (!((Boolean) obj).booleanValue()) {
-                    f4.f(j3);
-                    f4.b.remove(f4.a(i10, j3));
-                    f4.r(2131749571, tL_messageActionStarGiftOnchainOffer.gift);
+                    e4.g(j3);
+                    e4.d.remove(e4.a(i10, j3));
+                    e4.c();
+                    e4.t(2131749571, tL_messageActionStarGiftOnchainOffer.gift);
                     break;
                 } else {
-                    gc G = f4.g().G(R.raw.contact_check, 3, gd.a0(null, null, 2131749611, str2));
+                    gc G = e4.h().G(R.raw.contact_check, 3, gd.a0(null, null, 2131749611, str2));
                     G.t = true;
                     G.j();
                     break;

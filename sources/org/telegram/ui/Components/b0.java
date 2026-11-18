@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, pj0, pb0, qb0, te.d, org.telegram.messenger.jc, z4, r0.m, wh.a, t0.e, qj0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.p5, fi.b9, org.telegram.ui.ActionBar.m0, org.telegram.ui.ActionBar.f1, org.telegram.messenger.v10 {
+public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, pj0, pb0, qb0, te.d, org.telegram.messenger.jc, z4, r0.m, wh.a, t0.e, qj0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, fi.b9, org.telegram.ui.ActionBar.m0, org.telegram.ui.ActionBar.f1, org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -158,15 +158,15 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
             if (i10 == 41) {
                 if (org.telegram.messenger.gd.a0) {
                 }
-                org.telegram.ui.Cells.c2 c2Var = (org.telegram.ui.Cells.c2) view;
+                org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) view;
                 if (!z10) {
-                    c2Var.c(!c2Var.b(), true);
+                    d2Var.c(!d2Var.b(), true);
                 }
                 switch (G.d) {
                     case 2:
                         if (!z10) {
                             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = o0Var.U1;
-                            boolean b10 = c2Var.b();
+                            boolean b10 = d2Var.b();
                             tL_channelAdminLogEventsFilter.edit_rank = b10;
                             tL_channelAdminLogEventsFilter.leave = b10;
                             tL_channelAdminLogEventsFilter.join = b10;
@@ -175,7 +175,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
                             tL_channelAdminLogEventsFilter.promote = b10;
                             if (o0Var.X1) {
                                 TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = o0Var.U1;
-                                boolean b11 = c2Var.b();
+                                boolean b11 = d2Var.b();
                                 tL_channelAdminLogEventsFilter2.unban = b11;
                                 tL_channelAdminLogEventsFilter2.unkick = b11;
                                 tL_channelAdminLogEventsFilter2.ban = b11;
@@ -189,13 +189,13 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
                         break;
                     case 3:
                         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter3 = o0Var.U1;
-                        boolean b12 = c2Var.b();
+                        boolean b12 = d2Var.b();
                         tL_channelAdminLogEventsFilter3.demote = b12;
                         tL_channelAdminLogEventsFilter3.promote = b12;
                         break;
                     case 4:
                         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter4 = o0Var.U1;
-                        boolean b13 = c2Var.b();
+                        boolean b13 = d2Var.b();
                         tL_channelAdminLogEventsFilter4.unban = b13;
                         tL_channelAdminLogEventsFilter4.unkick = b13;
                         tL_channelAdminLogEventsFilter4.ban = b13;
@@ -203,20 +203,20 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
                         break;
                     case 5:
                         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter5 = o0Var.U1;
-                        boolean b14 = c2Var.b();
+                        boolean b14 = d2Var.b();
                         tL_channelAdminLogEventsFilter5.join = b14;
                         tL_channelAdminLogEventsFilter5.invite = b14;
                         break;
                     case 6:
-                        o0Var.U1.leave = c2Var.b();
+                        o0Var.U1.leave = d2Var.b();
                         break;
                     case 7:
-                        o0Var.U1.edit_rank = c2Var.b();
+                        o0Var.U1.edit_rank = d2Var.b();
                         break;
                     case 8:
                         if (!z10) {
                             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter6 = o0Var.U1;
-                            boolean b15 = c2Var.b();
+                            boolean b15 = d2Var.b();
                             tL_channelAdminLogEventsFilter6.group_call = b15;
                             tL_channelAdminLogEventsFilter6.invites = b15;
                             tL_channelAdminLogEventsFilter6.settings = b15;
@@ -228,20 +228,20 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
                         }
                     case 9:
                         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter7 = o0Var.U1;
-                        boolean b16 = c2Var.b();
+                        boolean b16 = d2Var.b();
                         tL_channelAdminLogEventsFilter7.settings = b16;
                         tL_channelAdminLogEventsFilter7.info = b16;
                         break;
                     case 10:
-                        o0Var.U1.invites = c2Var.b();
+                        o0Var.U1.invites = d2Var.b();
                         break;
                     case 11:
-                        o0Var.U1.group_call = c2Var.b();
+                        o0Var.U1.group_call = d2Var.b();
                         break;
                     case 12:
                         if (!z10) {
                             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter8 = o0Var.U1;
-                            boolean b17 = c2Var.b();
+                            boolean b17 = d2Var.b();
                             tL_channelAdminLogEventsFilter8.pinned = b17;
                             tL_channelAdminLogEventsFilter8.edit = b17;
                             tL_channelAdminLogEventsFilter8.delete = b17;
@@ -251,20 +251,20 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
                             break;
                         }
                     case 13:
-                        o0Var.U1.delete = c2Var.b();
+                        o0Var.U1.delete = d2Var.b();
                         break;
                     case 14:
-                        o0Var.U1.edit = c2Var.b();
+                        o0Var.U1.edit = d2Var.b();
                         break;
                     case 15:
-                        o0Var.U1.pinned = c2Var.b();
+                        o0Var.U1.pinned = d2Var.b();
                         break;
                     case 16:
                         if (o0Var.W1 == null) {
                             o0Var.W1 = new a0.h();
                         }
                         o0Var.W1.b();
-                        if (c2Var.b() && (arrayList = o0Var.V1) != null) {
+                        if (d2Var.b() && (arrayList = o0Var.V1) != null) {
                             int size = arrayList.size();
                             int i11 = 0;
                             while (i11 < size) {
@@ -280,7 +280,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
                 o0Var.T1.O(true);
             }
             z10 = false;
-            org.telegram.ui.Cells.c2 c2Var2 = (org.telegram.ui.Cells.c2) view;
+            org.telegram.ui.Cells.d2 d2Var2 = (org.telegram.ui.Cells.d2) view;
             if (!z10) {
             }
             switch (G.d) {
@@ -289,7 +289,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
         }
         int i12 = G.d;
         if (i12 < 0) {
-            org.telegram.ui.Cells.c2 c2Var3 = (org.telegram.ui.Cells.c2) view;
+            org.telegram.ui.Cells.d2 d2Var3 = (org.telegram.ui.Cells.d2) view;
             int i13 = (-i12) - 1;
             if (i13 < 0 || i13 >= o0Var.V1.size()) {
                 return;
@@ -301,10 +301,10 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
             }
             if (o0Var.W1.d(o10)) {
                 o0Var.W1.l(o10);
-                c2Var3.c(false, true);
+                d2Var3.c(false, true);
             } else {
                 o0Var.W1.k(c22, o10);
-                c2Var3.c(true, true);
+                d2Var3.c(true, true);
             }
             o0Var.T1.O(true);
         }
@@ -433,13 +433,13 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
 
     @Override // fi.b9
     public boolean k(long j3, int i7, int i10, int i11, fi.c9 c9Var) {
-        wn wnVar = (wn) ((org.telegram.ui.Cells.k6) this.b).T;
+        wn wnVar = (wn) ((org.telegram.ui.Cells.l6) this.b).T;
         ImageReceiver imageReceiver = wnVar.a;
         c9Var.c = imageReceiver;
         c9Var.l = imageReceiver;
-        org.telegram.ui.Cells.k6 k6Var = wnVar.H;
-        c9Var.m = k6Var;
-        boolean z10 = k6Var.w;
+        org.telegram.ui.Cells.l6 l6Var = wnVar.H;
+        c9Var.m = l6Var;
+        boolean z10 = l6Var.w;
         wn wnVar2 = wnVar.L.e;
         c9Var.a = wnVar2;
         c9Var.k = wnVar2.getAlpha();
@@ -563,12 +563,12 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.r1, p
 
     @Override // org.telegram.ui.Components.qb0
     public void n(sb0 sb0Var, int i7) {
-        org.telegram.ui.Cells.w3 w3Var = (org.telegram.ui.Cells.w3) this.b;
+        org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) this.b;
         try {
             if (i7 == 0) {
-                w3Var.setText(org.telegram.messenger.gd.M0(2131751423, null));
+                x3Var.setText(org.telegram.messenger.gd.M0(2131751423, null));
             } else {
-                w3Var.setText(org.telegram.messenger.gd.M0(2131745345, null));
+                x3Var.setText(org.telegram.messenger.gd.M0(2131745345, null));
             }
         } catch (Exception unused) {
         }

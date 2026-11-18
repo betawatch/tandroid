@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.car.app.IOnDoneCallback;
 import bi.c3;
-import bi.h8;
-import bi.k6;
-import bi.p6;
-import bi.v7;
+import bi.g8;
+import bi.j6;
+import bi.o6;
+import bi.u7;
 import c8.ma;
 import di.b5;
 import di.f6;
@@ -29,6 +29,7 @@ import fi.h6;
 import fi.i6;
 import fi.l3;
 import fi.n3;
+import fi.p6;
 import fi.r3;
 import fi.w3;
 import fi.y3;
@@ -101,7 +102,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.qm0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -468,29 +469,29 @@ public final /* synthetic */ class s implements Runnable {
                 androidx.car.app.utils.g.f(iOnDoneCallback, str3, new IllegalStateException("Lifecycle is not at least created when dispatching " + aVar));
                 return;
             case 2:
-                final k6 k6Var = (k6) this.b;
+                final j6 j6Var = (j6) this.b;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 c3 c3Var = (c3) this.d;
                 final View view = (View) this.e;
-                eq0 eq0Var = k6Var.a;
+                eq0 eq0Var = j6Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
                     c3Var.i(savedStarGift, true, false);
                     TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                    savestargift.stargift = k6Var.e.h(savedStarGift);
+                    savestargift.stargift = j6Var.e.h(savedStarGift);
                     savestargift.unsave = savedStarGift.unsaved;
-                    ConnectionsManager.getInstance(k6Var.b).sendRequest(savestargift, null, 64);
+                    ConnectionsManager.getInstance(j6Var.b).sendRequest(savestargift, null, 64);
                 }
                 boolean z12 = savedStarGift.pinned_to_top;
                 final boolean z13 = !z12;
-                if (k6Var.e.q(savedStarGift, z13, false)) {
-                    new p6(k6Var.getContext(), eq0Var.c, savedStarGift, k6Var.c, new p10() { // from class: bi.a6
+                if (j6Var.e.q(savedStarGift, z13, false)) {
+                    new o6(j6Var.getContext(), eq0Var.c, savedStarGift, j6Var.c, new p10() { // from class: bi.z5
                         @Override // org.telegram.messenger.p10
                         public final Object run() {
                             ((c3) view).d(z13, true);
-                            k6 k6Var2 = k6.this;
-                            k6Var2.f.v0(0);
-                            return lc.b0(k6Var2.a.a);
+                            j6 j6Var2 = j6.this;
+                            j6Var2.f.v0(0);
+                            return lc.b0(j6Var2.a.a);
                         }
                     }).show();
                     return;
@@ -501,28 +502,28 @@ public final /* synthetic */ class s implements Runnable {
                     lc.b0(eq0Var.a).I(R.raw.ic_pin, gd.M0(2131750060, null), gd.M0(2131750061, null)).j();
                 }
                 ((c3) view).d(z13, true);
-                k6Var.f.v0(0);
+                j6Var.f.v0(0);
                 return;
             case 3:
-                h8 h8Var = (h8) this.b;
+                g8 g8Var = (g8) this.b;
                 y60 y60Var = (y60) this.c;
                 mp mpVar = (mp) this.d;
                 org.telegram.ui.ActionBar.z0[] z0VarArr = (org.telegram.ui.ActionBar.z0[]) this.e;
-                h8Var.getClass();
+                g8Var.getClass();
                 y60Var.q0 = true;
-                v7 v7Var = h8Var.d;
-                mpVar.a(v7Var.k(), true);
+                u7 u7Var = g8Var.d;
+                mpVar.a(u7Var.k(), true);
                 org.telegram.ui.ActionBar.z0 z0Var = z0VarArr[1];
                 if (z0Var != null) {
-                    z0Var.setChecked(v7Var.r);
+                    z0Var.setChecked(u7Var.r);
                 }
                 org.telegram.ui.ActionBar.z0 z0Var2 = z0VarArr[2];
                 if (z0Var2 != null) {
-                    z0Var2.setChecked(v7Var.s);
+                    z0Var2.setChecked(u7Var.s);
                 }
                 org.telegram.ui.ActionBar.z0 z0Var3 = z0VarArr[3];
                 if (z0Var3 != null) {
-                    z0Var3.setChecked(v7Var.t);
+                    z0Var3.setChecked(u7Var.t);
                     return;
                 }
                 return;
@@ -932,7 +933,7 @@ public final /* synthetic */ class s implements Runnable {
                 long j11 = h6Var2.d;
                 sb2.append(j11);
                 sb2.append("} saveCache {");
-                sb2.append(fi.p6.a(arrayList5));
+                sb2.append(p6.a(arrayList5));
                 p5.c.s("}", sb2);
                 try {
                     sQLiteDatabase = trVar.b;

@@ -17,11 +17,11 @@ import android.widget.TextView;
 import androidx.car.app.IOnDoneCallback;
 import bi.a2;
 import bi.c3;
-import bi.d4;
-import bi.k6;
-import bi.v4;
-import bi.v7;
-import bi.w5;
+import bi.c4;
+import bi.j6;
+import bi.u4;
+import bi.u7;
+import bi.v5;
 import ci.j0;
 import ci.o0;
 import ci.w0;
@@ -63,7 +63,7 @@ import org.telegram.ui.Components.zx0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -234,7 +234,7 @@ public final /* synthetic */ class r implements Runnable {
             case 8:
                 boolean[] zArr2 = (boolean[]) this.b;
                 Runnable[] runnableArr = (Runnable[]) this.c;
-                d4 d4Var = (d4) this.d;
+                c4 c4Var = (c4) this.d;
                 if (zArr2[0]) {
                     return;
                 }
@@ -243,7 +243,7 @@ public final /* synthetic */ class r implements Runnable {
                 if (runnable != null) {
                     runnable.run();
                 }
-                d4Var.a(0L);
+                c4Var.a(0L);
                 return;
             case 9:
                 boolean[] zArr3 = (boolean[]) this.b;
@@ -267,58 +267,58 @@ public final /* synthetic */ class r implements Runnable {
                 }
                 return;
             case 11:
-                k6 k6Var = (k6) this.b;
+                j6 j6Var = (j6) this.b;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 y60 y60Var = (y60) this.d;
-                eq0 eq0Var2 = k6Var.a;
-                eq0Var2.e.k(k6Var.e.d, savedStarGift);
+                eq0 eq0Var2 = j6Var.a;
+                eq0Var2.e.k(j6Var.e.d, savedStarGift);
                 y60Var.v();
                 eq0Var2.o();
-                TL_stars.TL_starGiftCollection c10 = eq0Var2.e.c(k6Var.e.d);
+                TL_stars.TL_starGiftCollection c10 = eq0Var2.e.c(j6Var.e.d);
                 if (c10 != null) {
                     lc.b0(eq0Var2.a).R(savedStarGift.gift.getDocument(), g0.W2(gd.a0(null, null, 2131750021, f6.F1(savedStarGift.gift), c10.title))).j();
                     return;
                 }
                 return;
             case 12:
-                k6 k6Var2 = (k6) this.b;
+                j6 j6Var2 = (j6) this.b;
                 TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) this.c;
                 c3 c3Var = (c3) this.d;
-                if (k6Var2.d || !savedStarGift2.pinned_to_top || savedStarGift2.unsaved) {
+                if (j6Var2.d || !savedStarGift2.pinned_to_top || savedStarGift2.unsaved) {
                     z10 = true;
                 } else {
                     z10 = true;
                     c3Var.d(false, true);
-                    k6Var2.e.q(savedStarGift2, false, false);
+                    j6Var2.e.q(savedStarGift2, false, false);
                 }
                 savedStarGift2.unsaved ^= z10;
-                c3Var.i(savedStarGift2, z10, k6Var2.d);
-                k6Var2.a.e.m(savedStarGift2, savedStarGift2.unsaved);
+                c3Var.i(savedStarGift2, z10, j6Var2.d);
+                j6Var2.a.e.m(savedStarGift2, savedStarGift2.unsaved);
                 TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                savestargift.stargift = k6Var2.e.h(savedStarGift2);
+                savestargift.stargift = j6Var2.e.h(savedStarGift2);
                 savestargift.unsave = savedStarGift2.unsaved;
-                ConnectionsManager.getInstance(k6Var2.b).sendRequest(savestargift, null);
+                ConnectionsManager.getInstance(j6Var2.b).sendRequest(savestargift, null);
                 return;
             case 13:
-                v7 v7Var = (v7) this.b;
+                u7 u7Var = (u7) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
                 TL_stars.getResaleStarGifts getresalestargifts = (TL_stars.getResaleStarGifts) this.d;
-                HashMap hashMap = v7Var.m;
-                HashMap hashMap2 = v7Var.o;
-                HashMap hashMap3 = v7Var.n;
-                ArrayList arrayList = v7Var.h;
-                ArrayList arrayList2 = v7Var.g;
-                ArrayList arrayList3 = v7Var.f;
-                int i12 = v7Var.a;
-                ArrayList arrayList4 = v7Var.d;
-                v7Var.A = -1;
+                HashMap hashMap = u7Var.m;
+                HashMap hashMap2 = u7Var.o;
+                HashMap hashMap3 = u7Var.n;
+                ArrayList arrayList = u7Var.h;
+                ArrayList arrayList2 = u7Var.g;
+                ArrayList arrayList3 = u7Var.f;
+                int i12 = u7Var.a;
+                ArrayList arrayList4 = u7Var.d;
+                u7Var.A = -1;
                 if (tLObject2 instanceof TL_stars.resaleStarGifts) {
                     TL_stars.resaleStarGifts resalestargifts = (TL_stars.resaleStarGifts) tLObject2;
                     mp.u1(i12).f4(resalestargifts.users, false);
                     mp.u1(i12).Z3(resalestargifts.chats, false);
                     if (TextUtils.isEmpty(getresalestargifts.offset)) {
                         arrayList4.clear();
-                        v7Var.u = 0;
+                        u7Var.u = 0;
                         z11 = true;
                     } else {
                         z11 = false;
@@ -334,8 +334,8 @@ public final /* synthetic */ class r implements Runnable {
                         ArrayList<TL_stars.StarGift> arrayList6 = arrayList5;
                         if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
                             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift2;
-                            if (f6.P1(i12, tL_starGiftUnique) || ((v7Var.w || v7Var.x) && v4.m(tL_starGiftUnique))) {
-                                v7Var.u++;
+                            if (f6.P1(i12, tL_starGiftUnique) || ((u7Var.w || u7Var.x) && u4.m(tL_starGiftUnique))) {
+                                u7Var.u++;
                             } else {
                                 arrayList4.add(tL_starGiftUnique);
                             }
@@ -344,10 +344,10 @@ public final /* synthetic */ class r implements Runnable {
                         z11 = z17;
                     }
                     boolean z18 = z11;
-                    v7Var.e = Math.max(arrayList4.size(), resalestargifts.count - v7Var.u);
-                    v7Var.z = arrayList4.size() >= v7Var.e || TextUtils.isEmpty(resalestargifts.next_offset);
-                    v7Var.q = resalestargifts.next_offset;
-                    v7Var.y = false;
+                    u7Var.e = Math.max(arrayList4.size(), resalestargifts.count - u7Var.u);
+                    u7Var.z = arrayList4.size() >= u7Var.e || TextUtils.isEmpty(resalestargifts.next_offset);
+                    u7Var.q = resalestargifts.next_offset;
+                    u7Var.y = false;
                     ArrayList<TL_stars.StarGiftAttribute> arrayList7 = resalestargifts.attributes;
                     if (arrayList7 != null && !arrayList7.isEmpty()) {
                         arrayList3.clear();
@@ -356,7 +356,7 @@ public final /* synthetic */ class r implements Runnable {
                         arrayList3.addAll(x8.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
                         arrayList2.addAll(x8.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
                         arrayList.addAll(x8.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
-                        v7Var.i = resalestargifts.attributes_hash;
+                        u7Var.i = resalestargifts.attributes_hash;
                     }
                     if (!resalestargifts.counters.isEmpty() || TextUtils.isEmpty(getresalestargifts.offset)) {
                         hashMap3.clear();
@@ -379,7 +379,7 @@ public final /* synthetic */ class r implements Runnable {
                             }
                         }
                     }
-                    x10 x10Var = v7Var.c;
+                    x10 x10Var = u7Var.c;
                     if (x10Var != null) {
                         x10Var.a(Boolean.valueOf(z18));
                         return;
@@ -551,9 +551,9 @@ public final /* synthetic */ class r implements Runnable {
                 tL_starGiftUnique2.resale_ton_only = false;
                 tL_starGiftUnique2.resell_amount = null;
                 f6Var3.b2.setResellPrice(cg.a.j(0L, cg.b.a));
-                w5 w5Var = f6Var3.j3;
-                if (w5Var != null) {
-                    w5Var.run();
+                v5 v5Var = f6Var3.j3;
+                if (v5Var != null) {
+                    v5Var.run();
                 }
                 f6Var3.k().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131750013, f6Var3.E1())).j();
                 return;

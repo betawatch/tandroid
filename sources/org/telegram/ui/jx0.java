@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public int E;
@@ -107,7 +107,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", jx0Var.f);
                 bundle.putLong("topic_id", jx0Var.h);
-                jx0Var.presentFragment(new xh0(bundle, i6Var));
+                jx0Var.presentFragment(new yh0(bundle, i6Var));
                 return;
             }
             final int i11 = 1;
@@ -189,10 +189,10 @@ public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             }
             final int i12 = 3;
             if (i7 == jx0Var.F) {
-                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-                boolean z10 = !r8Var.e.h;
+                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+                boolean z10 = !s8Var.e.h;
                 jx0Var.r = z10;
-                r8Var.setChecked(z10);
+                s8Var.setChecked(z10);
                 int childCount = jx0Var.b.getChildCount();
                 ArrayList arrayList = new ArrayList();
                 while (i10 < childCount) {
@@ -202,17 +202,17 @@ public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                     int b10 = kj0Var.b();
                     if (b10 != jx0Var.F && b10 != jx0Var.Y) {
                         if (i13 == 0) {
-                            ((org.telegram.ui.Cells.n4) view2).a(arrayList, jx0Var.r);
+                            ((org.telegram.ui.Cells.o4) view2).a(arrayList, jx0Var.r);
                         } else if (i13 == 1) {
-                            ((org.telegram.ui.Cells.w9) view2).a(arrayList, jx0Var.r);
+                            ((org.telegram.ui.Cells.x9) view2).a(arrayList, jx0Var.r);
                         } else if (i13 == 2) {
-                            ((org.telegram.ui.Cells.z8) view2).c(arrayList, jx0Var.r);
+                            ((org.telegram.ui.Cells.a9) view2).c(arrayList, jx0Var.r);
                         } else if (i13 == 3) {
-                            ((org.telegram.ui.Cells.t8) view2).a(arrayList, jx0Var.r);
+                            ((org.telegram.ui.Cells.u8) view2).a(arrayList, jx0Var.r);
                         } else if (i13 == 4) {
-                            ((org.telegram.ui.Cells.i6) view2).b(arrayList, jx0Var.r);
+                            ((org.telegram.ui.Cells.j6) view2).b(arrayList, jx0Var.r);
                         } else if (i13 == 7 && b10 == jx0Var.G) {
-                            ((org.telegram.ui.Cells.r8) view2).e(arrayList, jx0Var.r);
+                            ((org.telegram.ui.Cells.s8) view2).e(arrayList, jx0Var.r);
                         }
                     }
                     i10++;
@@ -233,10 +233,10 @@ public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 return;
             }
             if (i7 == jx0Var.G) {
-                org.telegram.ui.Cells.r8 r8Var2 = (org.telegram.ui.Cells.r8) view;
-                Switch r32 = r8Var2.e;
+                org.telegram.ui.Cells.s8 s8Var2 = (org.telegram.ui.Cells.s8) view;
+                Switch r32 = s8Var2.e;
                 org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putBoolean(p5.c.k("content_preview_", str), !r32.h).apply();
-                r8Var2.setChecked(!r32.h);
+                s8Var2.setChecked(!r32.h);
                 return;
             }
             if (i7 == jx0Var.T) {
@@ -389,29 +389,29 @@ public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                 }
                 if (i7 == jx0Var.N) {
                     org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putInt("popup_" + str, 1).apply();
-                    ((org.telegram.ui.Cells.i6) view).a(true, true);
+                    ((org.telegram.ui.Cells.j6) view).a(true, true);
                     View findViewWithTag = jx0Var.b.findViewWithTag(2);
                     if (findViewWithTag != null) {
-                        ((org.telegram.ui.Cells.i6) findViewWithTag).a(false, true);
+                        ((org.telegram.ui.Cells.j6) findViewWithTag).a(false, true);
                         return;
                     }
                     return;
                 }
                 if (i7 == jx0Var.O) {
                     org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putInt("popup_" + str, 2).apply();
-                    ((org.telegram.ui.Cells.i6) view).a(true, true);
+                    ((org.telegram.ui.Cells.j6) view).a(true, true);
                     View findViewWithTag2 = jx0Var.b.findViewWithTag(1);
                     if (findViewWithTag2 != null) {
-                        ((org.telegram.ui.Cells.i6) findViewWithTag2).a(false, true);
+                        ((org.telegram.ui.Cells.j6) findViewWithTag2).a(false, true);
                         return;
                     }
                     return;
                 }
                 if (i7 == jx0Var.Q) {
-                    org.telegram.ui.Cells.r8 r8Var3 = (org.telegram.ui.Cells.r8) view;
-                    boolean z11 = r8Var3.e.h;
+                    org.telegram.ui.Cells.s8 s8Var3 = (org.telegram.ui.Cells.s8) view;
+                    boolean z11 = s8Var3.e.h;
                     boolean z12 = !z11;
-                    r8Var3.setChecked(z12);
+                    s8Var3.setChecked(z12);
                     SharedPreferences.Editor edit = org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit();
                     if (!jx0Var.b0 || z11) {
                         edit.putBoolean("stories_" + str, z12);
@@ -530,7 +530,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
             cr crVar = new cr(11);
             m4Var.setOnValueChangedListener(crVar);
             n4Var.setOnValueChangedListener(crVar);
-            xbVar.setOnClickListener(new bi.n6(m4Var, n4Var, ex0Var, w4Var, 8));
+            xbVar.setOnClickListener(new bi.m6(m4Var, n4Var, ex0Var, w4Var, 8));
             org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) w4Var.b;
             x2Var.O = v3Var;
             x2Var.show();
@@ -652,10 +652,10 @@ public final class jx0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         f6 f6Var = new f6(19, this);
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.M6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.N6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.pa.class}, new String[]{"statusColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.y6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.pa.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.s8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.M6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.s8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.N6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.qa.class}, new String[]{"statusColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.y6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.qa.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
         return arrayList;
     }
 

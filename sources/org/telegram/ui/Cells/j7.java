@@ -1,14 +1,31 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.fj;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public interface j7 {
-    void a(String str, boolean z10);
+public final /* synthetic */ class j7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l7 b;
 
-    boolean b();
+    public /* synthetic */ j7(l7 l7Var, int i7) {
+        this.a = i7;
+        this.b = l7Var;
+    }
 
-    void c(TLRPC.WebPage webPage, fj fjVar);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                l7 l7Var = this.b;
+                l7Var.post(new j7(l7Var, 1));
+                break;
+            default:
+                l7 l7Var2 = this.b;
+                l7Var2.c0.N0 = true;
+                l7Var2.I.clear();
+                l7Var2.J.clear();
+                l7Var2.K.clear();
+                l7Var2.invalidate();
+                break;
+        }
+    }
 }

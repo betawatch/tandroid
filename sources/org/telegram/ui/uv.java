@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class uv extends View {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final class uv extends View {
         Object obj = this.b;
         switch (i7) {
             case 3:
-                canvas.drawColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.e7, ((ug0) obj).J0));
+                canvas.drawColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.e7, ((vg0) obj).J0));
                 break;
             case 4:
                 qm0 qm0Var = (qm0) obj;

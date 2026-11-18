@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pq implements Runnable {
     public final /* synthetic */ int a;
@@ -731,22 +731,22 @@ public final /* synthetic */ class pq implements Runnable {
                 tr trVar3 = this.b;
                 if (trVar3.R) {
                     trVar3.R = false;
-                    ks.f(trVar3.currentAccount).k(ks.U4, Boolean.FALSE);
+                    ks.f(trVar3.currentAccount).k(ks.V4, Boolean.FALSE);
                     return;
                 }
                 return;
             case 3:
-                ks.f(this.b.currentAccount).k(ks.c5, new Object[0]);
+                ks.f(this.b.currentAccount).k(ks.d5, new Object[0]);
                 return;
             case 4:
                 tr trVar4 = this.b;
                 trVar4.R = true;
-                ks.f(trVar4.currentAccount).k(ks.U4, Boolean.TRUE);
+                ks.f(trVar4.currentAccount).k(ks.V4, Boolean.TRUE);
                 return;
             case 5:
                 tr trVar5 = this.b;
                 trVar5.R = false;
-                ks.f(trVar5.currentAccount).k(ks.U4, Boolean.FALSE);
+                ks.f(trVar5.currentAccount).k(ks.V4, Boolean.FALSE);
                 return;
             case 6:
                 try {
@@ -790,9 +790,9 @@ public final /* synthetic */ class pq implements Runnable {
                     }
                 }
                 edit.apply();
-                trVar7.getNotificationCenter().k(ks.N4, new Object[0]);
+                trVar7.getNotificationCenter().k(ks.O4, new Object[0]);
                 trVar7.getMediaDataController().H0(false, true, null);
-                trVar7.getNotificationCenter().k(ks.v5, new Object[0]);
+                trVar7.getNotificationCenter().k(ks.w5, new Object[0]);
                 trVar7.getMessagesController().R1().q();
                 return;
             case 11:
@@ -909,8 +909,8 @@ public final /* synthetic */ class pq implements Runnable {
                 }
             case 20:
                 tr trVar14 = this.b;
-                trVar14.getNotificationCenter().k(ks.v5, new Object[0]);
-                trVar14.getNotificationCenter().k(ks.N4, new Object[0]);
+                trVar14.getNotificationCenter().k(ks.w5, new Object[0]);
+                trVar14.getNotificationCenter().k(ks.O4, new Object[0]);
                 trVar14.getMessagesController().I1().a();
                 return;
             case 21:
@@ -951,7 +951,7 @@ public final /* synthetic */ class pq implements Runnable {
                 sQLiteCursor.dispose();
                 return;
             case 24:
-                this.b.getNotificationCenter().k(ks.v5, new Object[0]);
+                this.b.getNotificationCenter().k(ks.w5, new Object[0]);
                 return;
             case 25:
                 tr trVar16 = this.b;

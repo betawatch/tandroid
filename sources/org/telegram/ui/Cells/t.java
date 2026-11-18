@@ -9,9 +9,9 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ck0;
-import org.telegram.ui.y80;
+import org.telegram.ui.z80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class t extends ck0 implements fs {
     public ArrayList f3;
@@ -20,7 +20,7 @@ public final class t extends ck0 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.j5) {
+        if (i7 == ks.k5) {
             z1();
         }
     }
@@ -28,13 +28,13 @@ public final class t extends ck0 implements fs {
     @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.e().c(this, ks.j5);
+        ks.e().c(this, ks.k5);
     }
 
     @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.e().n(this, ks.j5);
+        ks.e().n(this, ks.k5);
     }
 
     @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -51,11 +51,11 @@ public final class t extends ck0 implements fs {
     public final void z1() {
         ArrayList arrayList = this.f3;
         arrayList.clear();
-        arrayList.addAll(Arrays.asList(y80.values()));
+        arrayList.addAll(Arrays.asList(z80.values()));
         if (mp.u1(this.h3).K3()) {
             int i7 = 0;
             while (i7 < arrayList.size()) {
-                if (((y80) arrayList.get(i7)).e) {
+                if (((z80) arrayList.get(i7)).e) {
                     arrayList.remove(i7);
                     i7--;
                 }
@@ -65,7 +65,7 @@ public final class t extends ck0 implements fs {
         getAdapter().f();
         a0();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (ya.a((y80) arrayList.get(i10))) {
+            if (ya.a((z80) arrayList.get(i10))) {
                 this.g3.h1(i10, org.telegram.messenger.g0.L(16.0f));
                 return;
             }

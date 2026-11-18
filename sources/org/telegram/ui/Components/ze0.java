@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ze0 extends xj0 {
     public final Context r;
@@ -152,7 +152,7 @@ public final class ze0 extends xj0 {
                 return;
             }
             cf0 cf0Var = (cf0) arrayList.get(i7 - 1);
-            ((org.telegram.ui.Cells.m8) view).o(R.drawable.arrow_more, org.telegram.messenger.gd.G(cf0Var.a - cf0Var.b(), "ShowVotes", new Object[0]), false);
+            ((org.telegram.ui.Cells.n8) view).o(R.drawable.arrow_more, org.telegram.messenger.gd.G(cf0Var.a - cf0Var.b(), "ShowVotes", new Object[0]), false);
             return;
         }
         bf0 bf0Var = (bf0) view;
@@ -200,11 +200,11 @@ public final class ze0 extends xj0 {
                 view = view2;
             }
         } else if (i7 != 2) {
-            org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(23, context, true);
-            m8Var.setOffsetFromImage(65);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, m8Var, df0Var.J0);
-            m8Var.g(org.telegram.ui.ActionBar.n6.N6, org.telegram.ui.ActionBar.n6.q6);
-            view = m8Var;
+            org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(23, context, true);
+            n8Var.setOffsetFromImage(65);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, n8Var, df0Var.J0);
+            n8Var.g(org.telegram.ui.ActionBar.n6.N6, org.telegram.ui.ActionBar.n6.q6);
+            view = n8Var;
         } else {
             View ye0Var = new ye0(this, context);
             ye0Var.setTag(-33024);
@@ -287,7 +287,7 @@ public final class ze0 extends xj0 {
                 TLRPC.Chat chat4 = pollVotesAlert$UserCell.n;
                 int i10 = org.telegram.ui.ActionBar.n6.z9;
                 df0 df0Var2 = pollVotesAlert$UserCell.F;
-                org.telegram.ui.Cells.o8 o8Var = df0.M1;
+                org.telegram.ui.Cells.p8 p8Var = df0.M1;
                 n5Var.i(xu0Var.b(user3, chat4, org.telegram.ui.ActionBar.n6.w0(i10, df0Var2.J0), z10));
                 TLRPC.Chat chat5 = pollVotesAlert$UserCell.n;
                 if (chat5 != null) {

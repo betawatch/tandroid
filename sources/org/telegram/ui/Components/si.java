@@ -51,7 +51,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.r2, te.b {
     public static final /* synthetic */ int I4 = 0;
@@ -468,8 +468,8 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
             t3Var3.J = o3Var;
             t3Var3.addView(o3Var, c8.ma.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 84.0f));
             int i11 = 5;
-            l2Var.setWebViewProgressListener(new bi.p8(t3Var3, i11));
-            org.telegram.messenger.ks.e().c(t3Var3, org.telegram.messenger.ks.p4);
+            l2Var.setWebViewProgressListener(new bi.o8(t3Var3, i11));
+            org.telegram.messenger.ks.e().c(t3Var3, org.telegram.messenger.ks.q4);
             longSparseArray.put(j3, t3Var3);
             ((ki.t3) longSparseArray.get(j3)).setDelegate(new yh(this, t3Var3, str, j3));
             org.telegram.ui.bn bnVar = (org.telegram.ui.bn) h2Var;
@@ -1918,8 +1918,8 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ks.T0 && i7 != org.telegram.messenger.ks.Y4 && i7 != org.telegram.messenger.ks.F1) {
-            if (i7 == org.telegram.messenger.ks.h5) {
+        if (i7 != org.telegram.messenger.ks.T0 && i7 != org.telegram.messenger.ks.Z4 && i7 != org.telegram.messenger.ks.F1) {
+            if (i7 == org.telegram.messenger.ks.i5) {
                 this.F1 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).J0();
             }
         } else {
@@ -2632,8 +2632,8 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
         }
         int i10 = this.H3;
         org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.T0);
-        org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.Y4);
-        org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.h5);
+        org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.Z4);
+        org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.i5);
         org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.F1);
         this.Q1 = true;
         vh vhVar = this.C2;
@@ -3478,8 +3478,8 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
         this.G = true;
         this.z0 = this;
         org.telegram.messenger.ks.f(i10).c(this, org.telegram.messenger.ks.T0);
-        org.telegram.messenger.ks.f(i10).c(this, org.telegram.messenger.ks.Y4);
-        org.telegram.messenger.ks.f(i10).c(this, org.telegram.messenger.ks.h5);
+        org.telegram.messenger.ks.f(i10).c(this, org.telegram.messenger.ks.Z4);
+        org.telegram.messenger.ks.f(i10).c(this, org.telegram.messenger.ks.i5);
         org.telegram.messenger.ks.f(i10).c(this, org.telegram.messenger.ks.F1);
         arrayList.add(rect);
         fi fiVar = new fi(this, context);
@@ -3587,10 +3587,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i15 = 0; i15 < chatAttachAlertPhotoLayout.F.getChildCount(); i15++) {
                                                 View childAt = chatAttachAlertPhotoLayout.F.getChildAt(i15);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -3716,10 +3716,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -3838,10 +3838,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -4110,10 +4110,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -4224,10 +4224,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -4460,10 +4460,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout2.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout2.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -4590,10 +4590,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout2.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout2.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -4919,10 +4919,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout2.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout2.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }
@@ -5191,10 +5191,10 @@ public class si extends org.telegram.ui.ActionBar.x2 implements org.telegram.mes
                                             efVar.O = Boolean.valueOf(V);
                                             for (int i152 = 0; i152 < chatAttachAlertPhotoLayout2.F.getChildCount(); i152++) {
                                                 View childAt = chatAttachAlertPhotoLayout2.F.getChildAt(i152);
-                                                if (childAt instanceof org.telegram.ui.Cells.r5) {
-                                                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                                                    if (r5Var.getPhotoEntry() == efVar) {
-                                                        r5Var.getImageView().invalidate();
+                                                if (childAt instanceof org.telegram.ui.Cells.s5) {
+                                                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                                                    if (s5Var.getPhotoEntry() == efVar) {
+                                                        s5Var.getImageView().invalidate();
                                                     }
                                                 }
                                             }

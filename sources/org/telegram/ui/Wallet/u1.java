@@ -2,9 +2,9 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.x10;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.t60;
+import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements x10 {
     public final /* synthetic */ int a = 1;
@@ -42,7 +42,7 @@ public final /* synthetic */ class u1 implements x10 {
                 d3 d3Var = this.d;
                 org.telegram.ui.ActionBar.i6 i6Var = this.e;
                 h2 h2Var = this.f;
-                l2Var.f(h2Var, booleanValue, new t60(dVar, dVar2, d3Var, i6Var, pVar, h2Var, 3));
+                l2Var.f(h2Var, booleanValue, new u60(dVar, dVar2, d3Var, i6Var, pVar, h2Var, 3));
                 break;
             default:
                 boolean[] zArr = (boolean[]) this.g;

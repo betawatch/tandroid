@@ -28,7 +28,7 @@ import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g1 extends org.telegram.ui.ActionBar.x2 {
     public int A1;
@@ -38,7 +38,7 @@ public final class g1 extends org.telegram.ui.ActionBar.x2 {
     public final long E1;
     public f1 F1;
     public boolean G1;
-    public final b9 m1;
+    public final a9 m1;
     public final jh.l n1;
     public final ui.g o1;
     public final dh.c p1;
@@ -86,12 +86,12 @@ public final class g1 extends org.telegram.ui.ActionBar.x2 {
         Drawable e10 = hi.w5.e(null, this.a, j3, org.telegram.ui.ActionBar.n6.I.q());
         this.y1 = e10;
         a1Var.U(e10);
-        b9 b9Var = new b9(this.a, context, i6Var);
-        this.m1 = b9Var;
-        b9Var.a(tL_starGiftUnique, j10.i(this.a).e(), null, gd.M0(2131749728, null), false);
-        b9Var.setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
-        b9Var.setLayoutBackground(new org.telegram.ui.ActionBar.y5(b9Var, this.b, org.telegram.messenger.g0.L(18.0f), K0("paintChatActionBackground")));
-        a1Var.addView(b9Var, ma.e(-2, -2, 48));
+        a9 a9Var = new a9(this.a, context, i6Var);
+        this.m1 = a9Var;
+        a9Var.a(tL_starGiftUnique, j10.i(this.a).e(), null, gd.M0(2131749728, null), false);
+        a9Var.setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
+        a9Var.setLayoutBackground(new org.telegram.ui.ActionBar.y5(a9Var, this.b, org.telegram.messenger.g0.L(18.0f), K0("paintChatActionBackground")));
+        a1Var.addView(a9Var, ma.e(-2, -2, 48));
         jh.f fVar = new jh.f(context);
         this.q1 = fVar;
         fVar.setClipChildren(false);
@@ -214,8 +214,8 @@ public final class g1 extends org.telegram.ui.ActionBar.x2 {
         mpVar.b(i12, i12, org.telegram.ui.ActionBar.n6.k7);
         mpVar.setDrawUnchecked(true);
         mpVar.a(!this.B1, false);
-        b9Var.getLayout().V = new y0(this, i7);
-        b9Var.getLayout().U = new y0(this, i13);
+        a9Var.getLayout().V = new y0(this, i7);
+        a9Var.getLayout().U = new y0(this, i13);
         mpVar.setDrawBackgroundAsArc(10);
         frameLayout.addView(mpVar, ma.d(18, 18.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setBackground(new org.telegram.ui.ActionBar.y5(frameLayout, this.b, org.telegram.messenger.g0.L(16.0f), K0("paintChatActionBackground")));
@@ -319,11 +319,11 @@ public final class g1 extends org.telegram.ui.ActionBar.x2 {
         float L = org.telegram.messenger.g0.L(36.0f) + i7;
         float inputBubbleHeight = this.q1.getInputBubbleHeight() + hVar.d() + org.telegram.messenger.g0.L(9.0f);
         int height = this.b.getHeight();
-        b9 b9Var = this.m1;
+        a9 a9Var = this.m1;
         FrameLayout frameLayout = this.t1;
-        b9Var.setTranslationY(Math.min(((L - (org.telegram.messenger.g0.L(46.0f) + inputBubbleHeight)) / 2.0f) + ((height - b9Var.getHeight()) / 2.0f), ((((this.b.getHeight() - inputBubbleHeight) - org.telegram.messenger.g0.L(14.0f)) - frameLayout.getHeight()) - org.telegram.messenger.g0.L(10.0f)) - b9Var.getHeight()));
-        b9Var.invalidate();
-        float y10 = b9Var.getY() - org.telegram.messenger.g0.L(33.0f);
+        a9Var.setTranslationY(Math.min(((L - (org.telegram.messenger.g0.L(46.0f) + inputBubbleHeight)) / 2.0f) + ((height - a9Var.getHeight()) / 2.0f), ((((this.b.getHeight() - inputBubbleHeight) - org.telegram.messenger.g0.L(14.0f)) - frameLayout.getHeight()) - org.telegram.messenger.g0.L(10.0f)) - a9Var.getHeight()));
+        a9Var.invalidate();
+        float y10 = a9Var.getY() - org.telegram.messenger.g0.L(33.0f);
         TextView textView = this.v1;
         textView.setTranslationY(y10);
         textView.invalidate();

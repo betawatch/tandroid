@@ -8,7 +8,7 @@ import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.ph0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class g4 implements ValueAnimator.AnimatorUpdateLis
                 l5Var.D0.invalidate();
                 break;
             case 1:
-                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) obj;
-                f4Var.getClass();
+                org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) obj;
+                g4Var.getClass();
                 int S0 = org.telegram.messenger.g0.S0(valueAnimator.getAnimatedFraction(), 1.0f, i11, i10);
-                ph0 ph0Var = f4Var.f;
+                ph0 ph0Var = g4Var.f;
                 ph0Var.setColorFilter(new PorterDuffColorFilter(S0, PorterDuff.Mode.SRC_IN));
                 org.telegram.ui.ActionBar.n6.H1(ph0Var.getDrawable(), S0 & 620756991, true);
                 break;

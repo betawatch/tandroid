@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.e51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class j6 extends v4.s0 {
     public RecyclerView a;
-    public bi.d6 c;
+    public bi.c6 c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -66,14 +66,14 @@ public final class j6 extends v4.s0 {
         return false;
     }
 
-    public final void b(bi.d6 d6Var) {
-        bi.d6 d6Var2 = this.c;
-        if (d6Var2 != null) {
-            d6Var2.removeCallbacks(this.i);
+    public final void b(bi.c6 c6Var) {
+        bi.c6 c6Var2 = this.c;
+        if (c6Var2 != null) {
+            c6Var2.removeCallbacks(this.i);
         }
-        this.c = d6Var;
+        this.c = c6Var;
         RecyclerView recyclerView = this.a;
-        if (recyclerView == d6Var) {
+        if (recyclerView == c6Var) {
             return;
         }
         hi.f8 f8Var = this.b;
@@ -84,9 +84,9 @@ public final class j6 extends v4.s0 {
             }
             this.a.setOnFlingListener(null);
         }
-        this.a = d6Var;
-        if (d6Var != null) {
-            if (d6Var.getOnFlingListener() != null) {
+        this.a = c6Var;
+        if (c6Var != null) {
+            if (c6Var.getOnFlingListener() != null) {
                 throw new IllegalStateException("An instance of OnFlingListener already set.");
             }
             this.a.j(f8Var);
@@ -100,15 +100,15 @@ public final class j6 extends v4.s0 {
         this.e = false;
         this.f = false;
         this.d = false;
-        bi.d6 d6Var = this.c;
-        if (d6Var != null) {
-            d6Var.removeCallbacks(this.i);
+        bi.c6 c6Var = this.c;
+        if (c6Var != null) {
+            c6Var.removeCallbacks(this.i);
         }
     }
 
     public final View d(v4.p0 p0Var) {
-        bi.d6 d6Var;
-        if (this.e || (d6Var = this.c) == null || d6Var.getScrollState() != 0) {
+        bi.c6 c6Var;
+        if (this.e || (c6Var = this.c) == null || c6Var.getScrollState() != 0) {
             return null;
         }
         n6 n6Var = this.j;

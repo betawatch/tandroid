@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vo0 extends bk0 {
     public int H;
@@ -38,7 +38,7 @@ public final class vo0 extends bk0 {
         this.c = context;
         to0 to0Var = new to0(false);
         this.e = to0Var;
-        to0Var.a = new org.telegram.ui.Cells.b5(this);
+        to0Var.a = new org.telegram.ui.Cells.c5(this);
     }
 
     @Override // org.telegram.ui.Components.bk0
@@ -206,15 +206,15 @@ public final class vo0 extends bk0 {
                 j10 = j3;
             }
             TLObject tLObject3 = tLObject2;
-            if (view instanceof org.telegram.ui.Cells.g6) {
-                org.telegram.ui.Cells.g6 g6Var = (org.telegram.ui.Cells.g6) view;
-                g6Var.x(tLObject3, null, str2, null, false, false);
-                g6Var.N = i11 < b() + (-2);
+            if (view instanceof org.telegram.ui.Cells.h6) {
+                org.telegram.ui.Cells.h6 h6Var = (org.telegram.ui.Cells.h6) view;
+                h6Var.x(tLObject3, null, str2, null, false, false);
+                h6Var.N = i11 < b() + (-2);
                 return;
             } else {
                 String str4 = str2;
-                if (view instanceof org.telegram.ui.Cells.d7) {
-                    ((org.telegram.ui.Cells.d7) view).c(j10, hVar.h(j10) >= 0, str4);
+                if (view instanceof org.telegram.ui.Cells.e7) {
+                    ((org.telegram.ui.Cells.e7) view).c(j10, hVar.h(j10) >= 0, str4);
                     return;
                 }
                 return;
@@ -259,14 +259,14 @@ public final class vo0 extends bk0 {
             }
             tL_encryptedChat = tL_encryptedChat2;
         }
-        if (view instanceof org.telegram.ui.Cells.g6) {
-            org.telegram.ui.Cells.g6 g6Var2 = (org.telegram.ui.Cells.g6) view;
-            g6Var2.x(tLObject, tL_encryptedChat, charSequence, null, false, false);
-            g6Var2.N = i7 < b() + (-2);
+        if (view instanceof org.telegram.ui.Cells.h6) {
+            org.telegram.ui.Cells.h6 h6Var2 = (org.telegram.ui.Cells.h6) view;
+            h6Var2.x(tLObject, tL_encryptedChat, charSequence, null, false, false);
+            h6Var2.N = i7 < b() + (-2);
         } else {
             CharSequence charSequence2 = charSequence;
-            if (view instanceof org.telegram.ui.Cells.d7) {
-                ((org.telegram.ui.Cells.d7) view).c(j11, hVar.h(j11) >= 0, charSequence2);
+            if (view instanceof org.telegram.ui.Cells.e7) {
+                ((org.telegram.ui.Cells.e7) view).c(j11, hVar.h(j11) >= 0, charSequence2);
             }
         }
     }
@@ -277,10 +277,10 @@ public final class vo0 extends bk0 {
         yo0 yo0Var = this.L;
         Context context = this.c;
         if (i7 == 0) {
-            org.telegram.ui.Cells.g6 g6Var = new org.telegram.ui.Cells.g6(context, yo0Var.J0);
-            g6Var.F0 = true;
-            g6Var.m0 = true;
-            view = g6Var;
+            org.telegram.ui.Cells.h6 h6Var = new org.telegram.ui.Cells.h6(context, yo0Var.J0);
+            h6Var.F0 = true;
+            h6Var.m0 = true;
+            view = h6Var;
         } else if (i7 == 2) {
             org.telegram.ui.f61 f61Var = new org.telegram.ui.f61(6, context, yo0Var.J0);
             f61Var.setItemAnimator(null);
@@ -294,11 +294,11 @@ public final class vo0 extends bk0 {
             f61Var.setOnItemClickListener(new n(this, 12));
             view = f61Var;
         } else if (i7 == 3) {
-            org.telegram.ui.Cells.x3 x3Var = new org.telegram.ui.Cells.x3(context, yo0Var.J0);
-            x3Var.setTextColor(org.telegram.ui.ActionBar.n6.f7);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.e7, x3Var, yo0Var.J0);
-            x3Var.setText(org.telegram.messenger.gd.M0(2131746175, null));
-            view = x3Var;
+            org.telegram.ui.Cells.y3 y3Var = new org.telegram.ui.Cells.y3(context, yo0Var.J0);
+            y3Var.setTextColor(org.telegram.ui.ActionBar.n6.f7);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.e7, y3Var, yo0Var.J0);
+            y3Var.setText(org.telegram.messenger.gd.M0(2131746175, null));
+            view = y3Var;
         } else if (i7 == 4) {
             view = new bi.i3(24, context, this);
         } else if (i7 != 5) {
@@ -306,9 +306,9 @@ public final class vo0 extends bk0 {
             view2.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L((!yo0Var.d2 || yo0Var.k2[1] == null) ? 56.0f : 109.0f)));
             view = view2;
         } else {
-            View d7Var = new org.telegram.ui.Cells.d7(0, context, yo0Var.J0);
-            d7Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(100.0f)));
-            view = d7Var;
+            View e7Var = new org.telegram.ui.Cells.e7(0, context, yo0Var.J0);
+            e7Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(100.0f)));
+            view = e7Var;
         }
         return new kj0(view);
     }

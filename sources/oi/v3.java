@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.y60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                     H.T = true;
                     y60 K = H.K();
                     boolean z10 = (mp.u1(i13).B4() || j10.i(i13).q()) ? false : true;
-                    K.c(R.drawable.ic_ab_back, gd.M0(2131753754, null), new bi.c6(H, 7), false);
+                    K.c(R.drawable.ic_ab_back, gd.M0(2131753754, null), new bi.b6(H, 7), false);
                     K.k();
                     oVar.U(K, T2, new TL_iv.pageBlockHeading1(), R.drawable.iv_h1, gd.M0(2131754028, null), bz.W0 + 2, H);
                     oVar.U(K, T2, new TL_iv.pageBlockHeading2(), R.drawable.iv_h2, gd.M0(2131754027, null), bz.W0 + 1, H);
@@ -67,7 +67,7 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                     boolean z11 = T2 != null && s3.F3(T2.b);
                     x1 x1Var = new x1(oVar.getContext(), R.drawable.iv_h1);
                     x1Var.a(z10);
-                    H.j(z11, 0, x1Var, gd.M0(2131754029, null), new bi.v5(H, K, 2));
+                    H.j(z11, 0, x1Var, gd.M0(2131754029, null), new bi.u5(H, K, 2));
                     H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockParagraph), R.drawable.iv_text, null, gd.M0(2131753986, null), new f(oVar, T2, 5));
                     H.j(T2 != null && (T2.b instanceof TL_iv.pageBlockBlockquote), R.drawable.iv_quote, null, gd.M0(2131753994, null), new f(oVar, T2, 6));
                     boolean z12 = T2 != null && (T2.b instanceof TL_iv.pageBlockPullquote);

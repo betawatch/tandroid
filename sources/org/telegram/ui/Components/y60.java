@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class y60 {
     public ViewGroup A;
@@ -123,7 +123,7 @@ public final class y60 {
         }
         if ((((h2Var instanceof ProfileActivity) && ((ProfileActivity) h2Var).J0) || (((h2Var instanceof org.telegram.ui.cx) && ((org.telegram.ui.cx) h2Var).X) || (((h2Var instanceof ContactsActivity) && ((ContactsActivity) h2Var).H) || ((h2Var instanceof org.telegram.ui.o31) && ((org.telegram.ui.o31) h2Var).O)))) && (parentLayout = h2Var.getParentLayout()) != null) {
             org.telegram.ui.ActionBar.h2 safeLastFragment = parentLayout.getSafeLastFragment();
-            if (safeLastFragment instanceof org.telegram.ui.le0) {
+            if (safeLastFragment instanceof org.telegram.ui.me0) {
                 h2Var = safeLastFragment;
             }
         }
@@ -222,11 +222,11 @@ public final class y60 {
     public static void f(y60 y60Var, fi.d6 d6Var, final HashSet hashSet, boolean z10, Runnable runnable, final org.telegram.messenger.x10 x10Var) {
         ArrayList<TLRPC.PhotoSize> arrayList;
         Context context = y60Var.e;
-        bi.h6 h6Var = new bi.h6(context, 1);
+        bi.g6 g6Var = new bi.g6(context, 1);
         LinearLayout linearLayout = new LinearLayout(context);
-        h6Var.addView(linearLayout);
+        g6Var.addView(linearLayout);
         linearLayout.setOrientation(1);
-        y60Var.r(h6Var, c8.ma.o(-1, -2));
+        y60Var.r(g6Var, c8.ma.o(-1, -2));
         float f10 = 0.12f;
         float f11 = 18.0f;
         if (z10 && runnable != null) {

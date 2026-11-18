@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class uc1 extends org.telegram.ui.Components.bk0 {
     public org.telegram.ui.Wallet.c5 E;
@@ -156,19 +156,19 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
             if (i10 != 2) {
                 return;
             }
-            ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.gd.M0(2131745620, null));
+            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.M0(2131745620, null));
             return;
         }
-        org.telegram.ui.Cells.ua uaVar = (org.telegram.ui.Cells.ua) view;
+        org.telegram.ui.Cells.va vaVar = (org.telegram.ui.Cells.va) view;
         WallpapersListActivity wallpapersListActivity = this.F;
         int i11 = i7 * wallpapersListActivity.O;
         ArrayList arrayList = this.d;
         int ceil = (int) Math.ceil(arrayList.size() / wallpapersListActivity.O);
         int i12 = wallpapersListActivity.O;
-        uaVar.d(i12, i11 == 0, i11 / i12 == ceil - 1);
+        vaVar.d(i12, i11 == 0, i11 / i12 == ceil - 1);
         for (int i13 = 0; i13 < wallpapersListActivity.O; i13++) {
             int i14 = i11 + i13;
-            uaVar.e(wallpapersListActivity.r, i14 < arrayList.size() ? arrayList.get(i14) : null, "", i13);
+            vaVar.e(wallpapersListActivity.r, i14 < arrayList.size() ? arrayList.get(i14) : null, "", i13);
         }
     }
 
@@ -194,7 +194,7 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
                 f61Var.setOnItemClickListener(new zx0(this, 13));
                 frameLayout = f61Var;
             } else if (i7 == 2) {
-                frameLayout = new org.telegram.ui.Cells.x3(context, null);
+                frameLayout = new org.telegram.ui.Cells.y3(context, null);
             }
             ejVar = frameLayout;
         } else {

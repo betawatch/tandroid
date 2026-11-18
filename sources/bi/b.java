@@ -50,7 +50,7 @@ import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.x20;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements q10 {
     public final /* synthetic */ int a;
@@ -798,7 +798,7 @@ public final /* synthetic */ class b implements q10 {
                     if (j11 > 0) {
                         o3Var.g2 = j11;
                         z10 = false;
-                        textView.setText(gd.a0(null, null, 2131749616, v4.k(j11)));
+                        textView.setText(gd.a0(null, null, 2131749616, u4.k(j11)));
                         if (!o3Var.l2) {
                             o3Var.l2 = z10;
                             org.telegram.messenger.g0.r(o3Var.m2);
@@ -819,20 +819,20 @@ public final /* synthetic */ class b implements q10 {
                 }
                 break;
             case 8:
-                k6 k6Var = (k6) obj3;
+                j6 j6Var = (j6) obj3;
                 ArrayList arrayList13 = (ArrayList) obj;
-                org.telegram.ui.ActionBar.i6 i6Var = k6Var.c;
-                eq0 eq0Var = k6Var.a;
-                di.o8 o8Var = k6Var.e;
+                org.telegram.ui.ActionBar.i6 i6Var = j6Var.c;
+                eq0 eq0Var = j6Var.a;
+                di.o8 o8Var = j6Var.e;
                 if (o8Var != null) {
                     if ((!o8Var.e || o8Var.g != 783) && o8Var.l.size() <= 0) {
-                        di.o8 o8Var2 = k6Var.e;
+                        di.o8 o8Var2 = j6Var.e;
                         if (o8Var2.j && !o8Var2.i) {
                         }
                     }
-                    di.o8 o8Var3 = k6Var.e;
+                    di.o8 o8Var3 = j6Var.e;
                     int max = Math.max(1, (o8Var3 == null || (i14 = o8Var3.n) == 0) ? 3 : Math.min(3, i14));
-                    di.o8 o8Var4 = k6Var.e;
+                    di.o8 o8Var4 = j6Var.e;
                     if (o8Var4 != null) {
                         ArrayList arrayList14 = o8Var4.l;
                         int size6 = arrayList14.size();
@@ -842,7 +842,7 @@ public final /* synthetic */ class b implements q10 {
                             Object obj8 = arrayList14.get(i38);
                             i38++;
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj8;
-                            boolean z13 = k6Var.d;
+                            boolean z13 = j6Var.d;
                             int i39 = b3.b;
                             l41 K6 = l41.K(b3.class);
                             K6.v = 1;
@@ -851,14 +851,14 @@ public final /* synthetic */ class b implements q10 {
                             K6.r = true;
                             K6.f = false;
                             K6.s = z13;
-                            K6.h = k6Var.h && (k6Var.e != eq0Var.d || savedStarGift.pinned_to_top);
+                            K6.h = j6Var.h && (j6Var.e != eq0Var.d || savedStarGift.pinned_to_top);
                             arrayList13.add(K6);
                             i37--;
                             if (i37 == 0) {
                                 i37 = 3;
                             }
                         }
-                        di.o8 o8Var5 = k6Var.e;
+                        di.o8 o8Var5 = j6Var.e;
                         if (o8Var5.i || !o8Var5.j) {
                             int i40 = 0;
                             while (true) {
@@ -871,15 +871,15 @@ public final /* synthetic */ class b implements q10 {
                             }
                         }
                     }
-                    if (eq0Var.d == k6Var.e) {
+                    if (eq0Var.d == j6Var.e) {
                         arrayList13.add(l41.D(org.telegram.messenger.g0.L(20.0f)));
-                        if (eq0Var.c == j10.i(k6Var.b).e()) {
+                        if (eq0Var.c == j10.i(j6Var.b).e()) {
                             int i41 = org.telegram.ui.ActionBar.n6.z6;
                             int w03 = org.telegram.ui.ActionBar.n6.w0(i41, i6Var);
                             String M04 = gd.M0(2131746476, null);
                             int L2 = org.telegram.messenger.g0.L(24.0f);
-                            int i42 = l6.b;
-                            l41 K7 = l41.K(l6.class);
+                            int i42 = k6.b;
+                            l41 K7 = l41.K(k6.class);
                             K7.m = M04;
                             K7.A = 17;
                             K7.C = w03;
@@ -896,10 +896,10 @@ public final /* synthetic */ class b implements q10 {
                         arrayList13.add(l41.D(org.telegram.messenger.g0.L(82.0f)));
                     }
                     if (!arrayList13.isEmpty()) {
-                        arrayList13.add(0, l41.D(org.telegram.messenger.g0.L(k6Var.I ? 42.0f : 12.0f)));
+                        arrayList13.add(0, l41.D(org.telegram.messenger.g0.L(j6Var.I ? 42.0f : 12.0f)));
                     }
-                    if (k6Var.f.getSpanCount() != max) {
-                        org.telegram.messenger.g0.g3(new l5(k6Var, max, 1));
+                    if (j6Var.f.getSpanCount() != max) {
+                        org.telegram.messenger.g0.g3(new k5(j6Var, max, 1));
                     }
                     eq0Var.p();
                     eq0Var.post(new a3.f(eq0Var, 27));
@@ -907,10 +907,10 @@ public final /* synthetic */ class b implements q10 {
                 }
                 break;
             case 9:
-                h8 h8Var = (h8) obj3;
+                g8 g8Var = (g8) obj3;
                 ArrayList arrayList15 = (ArrayList) obj;
-                v7 v7Var = h8Var.d;
-                ArrayList arrayList16 = v7Var.d;
+                u7 u7Var = g8Var.d;
+                ArrayList arrayList16 = u7Var.d;
                 int size7 = arrayList16.size();
                 int i43 = 0;
                 while (i43 < size7) {
@@ -918,7 +918,7 @@ public final /* synthetic */ class b implements q10 {
                     i43++;
                     arrayList15.add(b3.i(0, (TL_stars.TL_starGiftUnique) obj9, false, false, false, true, false));
                 }
-                if (v7Var.y || !v7Var.z) {
+                if (u7Var.y || !u7Var.z) {
                     l41 q11 = l41.q(-1, 34);
                     q11.v = 1;
                     arrayList15.add(q11);
@@ -928,7 +928,7 @@ public final /* synthetic */ class b implements q10 {
                     l41 q13 = l41.q(-3, 34);
                     q13.v = 1;
                     arrayList15.add(q13);
-                    if (v7Var.d.isEmpty()) {
+                    if (u7Var.d.isEmpty()) {
                         l41 q14 = l41.q(-4, 34);
                         q14.v = 1;
                         arrayList15.add(q14);
@@ -967,17 +967,17 @@ public final /* synthetic */ class b implements q10 {
                         arrayList15.add(q25);
                     }
                 }
-                h8Var.j0(arrayList15.isEmpty() && !v7Var.y);
+                g8Var.j0(arrayList15.isEmpty() && !u7Var.y);
                 break;
             case 10:
-                g8 g8Var = (g8) obj3;
+                f8 f8Var = (f8) obj3;
                 ArrayList arrayList17 = (ArrayList) obj;
-                f8 f8Var = g8Var.U1;
-                if (f8Var != null) {
-                    di.o8 o8Var6 = f8Var.b;
-                    v7 v7Var2 = f8Var.c;
-                    if (o8Var6 != null && v7Var2 != null) {
-                        int currentTime = ConnectionsManager.getInstance(g8Var.a).getCurrentTime();
+                e8 e8Var = f8Var.U1;
+                if (e8Var != null) {
+                    di.o8 o8Var6 = e8Var.b;
+                    u7 u7Var2 = e8Var.c;
+                    if (o8Var6 != null && u7Var2 != null) {
+                        int currentTime = ConnectionsManager.getInstance(f8Var.a).getCurrentTime();
                         arrayList17.add(l41.t(-1, gd.M0(2131749754, null)));
                         ArrayList arrayList18 = o8Var6.l;
                         int size8 = arrayList18.size();
@@ -990,7 +990,7 @@ public final /* synthetic */ class b implements q10 {
                             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj10;
                             boolean z15 = r5;
                             int i46 = currentTime;
-                            if (g8Var.c2.contains(Long.valueOf(savedStarGift2.gift.id)) || v4.m(savedStarGift2.gift)) {
+                            if (f8Var.c2.contains(Long.valueOf(savedStarGift2.gift.id)) || u4.m(savedStarGift2.gift)) {
                                 currentTime = i46;
                                 r5 = z15;
                             } else {
@@ -1019,18 +1019,18 @@ public final /* synthetic */ class b implements q10 {
                         } else if (z14) {
                             arrayList17.add(l41.g(gd.M0(2131749753, null)));
                         }
-                        if (v7Var2.e > 0 || g8Var.f2) {
-                            g8Var.f2 = true;
+                        if (u7Var2.e > 0 || f8Var.f2) {
+                            f8Var.f2 = true;
                             String M05 = gd.M0(2131749756, null);
                             l41 l41Var = new l41(42);
                             l41Var.d = -2;
                             l41Var.p = M05;
                             arrayList17.add(l41Var);
-                            HorizontalScrollView horizontalScrollView = g8Var.V1;
+                            HorizontalScrollView horizontalScrollView = f8Var.V1;
                             if (horizontalScrollView != null) {
                                 arrayList17.add(l41.j(-3, horizontalScrollView));
                             }
-                            ArrayList arrayList19 = v7Var2.d;
+                            ArrayList arrayList19 = u7Var2.d;
                             int size9 = arrayList19.size();
                             int i51 = 0;
                             while (i51 < size9) {
@@ -1038,7 +1038,7 @@ public final /* synthetic */ class b implements q10 {
                                 i51++;
                                 arrayList17.add(b3.i(0, (TL_stars.TL_starGiftUnique) obj11, false, true, false, true, true));
                             }
-                            if (v7Var2.y || !v7Var2.z) {
+                            if (u7Var2.y || !u7Var2.z) {
                                 l41 q27 = l41.q(10, 35);
                                 q27.v = 1;
                                 arrayList17.add(q27);
@@ -1064,9 +1064,9 @@ public final /* synthetic */ class b implements q10 {
                 }
                 break;
             case 11:
-                l8 l8Var = (l8) obj3;
+                k8 k8Var = (k8) obj3;
                 ArrayList arrayList20 = (ArrayList) obj;
-                di.o8 o8Var7 = l8Var.U1;
+                di.o8 o8Var7 = k8Var.U1;
                 if (o8Var7 != null) {
                     ArrayList arrayList21 = o8Var7.l;
                     arrayList20.add(l41.D(org.telegram.messenger.g0.L(16.0f)));
@@ -1106,7 +1106,7 @@ public final /* synthetic */ class b implements q10 {
                             Object obj12 = arrayList21.get(i52);
                             i52++;
                             TL_stars.SavedStarGift savedStarGift3 = (TL_stars.SavedStarGift) obj12;
-                            if (!savedStarGift3.collection_id.contains(Integer.valueOf(l8Var.T1))) {
+                            if (!savedStarGift3.collection_id.contains(Integer.valueOf(k8Var.T1))) {
                                 int i54 = b3.b;
                                 l41 K8 = l41.K(b3.class);
                                 K8.v = 1;
@@ -1115,7 +1115,7 @@ public final /* synthetic */ class b implements q10 {
                                 K8.r = true;
                                 K8.f = true;
                                 K8.s = z11;
-                                HashSet hashSet2 = l8Var.V1;
+                                HashSet hashSet2 = k8Var.V1;
                                 int i55 = savedStarGift3.msg_id;
                                 int i56 = i17;
                                 ArrayList arrayList22 = arrayList21;
@@ -1152,9 +1152,9 @@ public final /* synthetic */ class b implements q10 {
                 ch.p pVar = (ch.p) obj3;
                 ArrayList arrayList23 = (ArrayList) obj;
                 ArrayList arrayList24 = pVar.G;
-                org.telegram.ui.Cells.r8 r8Var = pVar.e;
-                if (r8Var != null && pVar.f != null) {
-                    arrayList23.add(l41.j(1, r8Var));
+                org.telegram.ui.Cells.s8 s8Var = pVar.e;
+                if (s8Var != null && pVar.f != null) {
+                    arrayList23.add(l41.j(1, s8Var));
                     arrayList23.add(l41.l(2, pVar.f));
                     int i59 = pVar.Z;
                     if (i59 == 1 || i59 == 0 || pVar.a) {

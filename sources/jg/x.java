@@ -10,7 +10,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.SparseArray;
-import bi.d5;
+import bi.c5;
 import com.google.android.gms.internal.vision.e2;
 import java.io.File;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ import org.telegram.messenger.xs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class x implements Runnable {
         ue ueVar5;
         Exception e10;
         int i7;
-        d5 d5Var;
+        c5 c5Var;
         int i10;
         Cursor query;
         Cursor cursor2;
@@ -255,12 +255,12 @@ public final /* synthetic */ class x implements Runnable {
                     Integer num2 = num;
                     while (i7 < arrayList.size()) {
                     }
-                    d5Var = MediaController.e2;
-                    if (d5Var != null) {
+                    c5Var = MediaController.e2;
+                    if (c5Var != null) {
                     }
-                    d5 d5Var2 = new d5(i25, arrayList, arrayList2, num2, ueVar10, ueVar3, ueVar9);
-                    MediaController.e2 = d5Var2;
-                    org.telegram.messenger.g0.h3(d5Var2, 0);
+                    c5 c5Var2 = new c5(i25, arrayList, arrayList2, num2, ueVar10, ueVar3, ueVar9);
+                    MediaController.e2 = c5Var2;
+                    org.telegram.messenger.g0.h3(c5Var2, 0);
                     return;
                 }
                 try {
@@ -355,12 +355,12 @@ public final /* synthetic */ class x implements Runnable {
                                                     Integer num22 = num;
                                                     while (i7 < arrayList.size()) {
                                                     }
-                                                    d5Var = MediaController.e2;
-                                                    if (d5Var != null) {
+                                                    c5Var = MediaController.e2;
+                                                    if (c5Var != null) {
                                                     }
-                                                    d5 d5Var22 = new d5(i25, arrayList, arrayList2, num22, ueVar102, ueVar3, ueVar92);
-                                                    MediaController.e2 = d5Var22;
-                                                    org.telegram.messenger.g0.h3(d5Var22, 0);
+                                                    c5 c5Var22 = new c5(i25, arrayList, arrayList2, num22, ueVar102, ueVar3, ueVar92);
+                                                    MediaController.e2 = c5Var22;
+                                                    org.telegram.messenger.g0.h3(c5Var22, 0);
                                                     return;
                                                 } finally {
                                                 }
@@ -399,12 +399,12 @@ public final /* synthetic */ class x implements Runnable {
                                             Integer num222 = num;
                                             while (i7 < arrayList.size()) {
                                             }
-                                            d5Var = MediaController.e2;
-                                            if (d5Var != null) {
+                                            c5Var = MediaController.e2;
+                                            if (c5Var != null) {
                                             }
-                                            d5 d5Var222 = new d5(i25, arrayList, arrayList2, num222, ueVar1022, ueVar3, ueVar922);
-                                            MediaController.e2 = d5Var222;
-                                            org.telegram.messenger.g0.h3(d5Var222, 0);
+                                            c5 c5Var222 = new c5(i25, arrayList, arrayList2, num222, ueVar1022, ueVar3, ueVar922);
+                                            MediaController.e2 = c5Var222;
+                                            org.telegram.messenger.g0.h3(c5Var222, 0);
                                             return;
                                         }
                                     } catch (Throwable th7) {
@@ -442,12 +442,12 @@ public final /* synthetic */ class x implements Runnable {
                                         Integer num2222 = num;
                                         while (i7 < arrayList.size()) {
                                         }
-                                        d5Var = MediaController.e2;
-                                        if (d5Var != null) {
+                                        c5Var = MediaController.e2;
+                                        if (c5Var != null) {
                                         }
-                                        d5 d5Var2222 = new d5(i25, arrayList, arrayList2, num2222, ueVar10222, ueVar3, ueVar9222);
-                                        MediaController.e2 = d5Var2222;
-                                        org.telegram.messenger.g0.h3(d5Var2222, 0);
+                                        c5 c5Var2222 = new c5(i25, arrayList, arrayList2, num2222, ueVar10222, ueVar3, ueVar9222);
+                                        MediaController.e2 = c5Var2222;
+                                        org.telegram.messenger.g0.h3(c5Var2222, 0);
                                         return;
                                     }
                                 } catch (Throwable th8) {
@@ -521,12 +521,12 @@ public final /* synthetic */ class x implements Runnable {
                                                     Integer num22222 = num;
                                                     while (i7 < arrayList.size()) {
                                                     }
-                                                    d5Var = MediaController.e2;
-                                                    if (d5Var != null) {
+                                                    c5Var = MediaController.e2;
+                                                    if (c5Var != null) {
                                                     }
-                                                    d5 d5Var22222 = new d5(i25, arrayList, arrayList2, num22222, ueVar102222, ueVar3, ueVar92222);
-                                                    MediaController.e2 = d5Var22222;
-                                                    org.telegram.messenger.g0.h3(d5Var22222, 0);
+                                                    c5 c5Var22222 = new c5(i25, arrayList, arrayList2, num22222, ueVar102222, ueVar3, ueVar92222);
+                                                    MediaController.e2 = c5Var22222;
+                                                    org.telegram.messenger.g0.h3(c5Var22222, 0);
                                                     return;
                                                 }
                                                 try {
@@ -558,12 +558,12 @@ public final /* synthetic */ class x implements Runnable {
                                                     Integer num222222 = num;
                                                     while (i7 < arrayList.size()) {
                                                     }
-                                                    d5Var = MediaController.e2;
-                                                    if (d5Var != null) {
+                                                    c5Var = MediaController.e2;
+                                                    if (c5Var != null) {
                                                     }
-                                                    d5 d5Var222222 = new d5(i25, arrayList, arrayList2, num222222, ueVar1022222, ueVar3, ueVar922222);
-                                                    MediaController.e2 = d5Var222222;
-                                                    org.telegram.messenger.g0.h3(d5Var222222, 0);
+                                                    c5 c5Var222222 = new c5(i25, arrayList, arrayList2, num222222, ueVar1022222, ueVar3, ueVar922222);
+                                                    MediaController.e2 = c5Var222222;
+                                                    org.telegram.messenger.g0.h3(c5Var222222, 0);
                                                     return;
                                                 }
                                             } else {
@@ -607,12 +607,12 @@ public final /* synthetic */ class x implements Runnable {
                                                     Integer num2222222 = num;
                                                     while (i7 < arrayList.size()) {
                                                     }
-                                                    d5Var = MediaController.e2;
-                                                    if (d5Var != null) {
+                                                    c5Var = MediaController.e2;
+                                                    if (c5Var != null) {
                                                     }
-                                                    d5 d5Var2222222 = new d5(i25, arrayList, arrayList2, num2222222, ueVar10222222, ueVar3, ueVar9222222);
-                                                    MediaController.e2 = d5Var2222222;
-                                                    org.telegram.messenger.g0.h3(d5Var2222222, 0);
+                                                    c5 c5Var2222222 = new c5(i25, arrayList, arrayList2, num2222222, ueVar10222222, ueVar3, ueVar9222222);
+                                                    MediaController.e2 = c5Var2222222;
+                                                    org.telegram.messenger.g0.h3(c5Var2222222, 0);
                                                     return;
                                                 }
                                                 try {
@@ -643,12 +643,12 @@ public final /* synthetic */ class x implements Runnable {
                                                     Integer num22222222 = num;
                                                     while (i7 < arrayList.size()) {
                                                     }
-                                                    d5Var = MediaController.e2;
-                                                    if (d5Var != null) {
+                                                    c5Var = MediaController.e2;
+                                                    if (c5Var != null) {
                                                     }
-                                                    d5 d5Var22222222 = new d5(i25, arrayList, arrayList2, num22222222, ueVar102222222, ueVar3, ueVar92222222);
-                                                    MediaController.e2 = d5Var22222222;
-                                                    org.telegram.messenger.g0.h3(d5Var22222222, 0);
+                                                    c5 c5Var22222222 = new c5(i25, arrayList, arrayList2, num22222222, ueVar102222222, ueVar3, ueVar92222222);
+                                                    MediaController.e2 = c5Var22222222;
+                                                    org.telegram.messenger.g0.h3(c5Var22222222, 0);
                                                     return;
                                                 }
                                             } else {
@@ -705,12 +705,12 @@ public final /* synthetic */ class x implements Runnable {
                                                                         Integer num222222222 = num;
                                                                         while (i7 < arrayList.size()) {
                                                                         }
-                                                                        d5Var = MediaController.e2;
-                                                                        if (d5Var != null) {
+                                                                        c5Var = MediaController.e2;
+                                                                        if (c5Var != null) {
                                                                         }
-                                                                        d5 d5Var222222222 = new d5(i25, arrayList, arrayList2, num222222222, ueVar1022222222, ueVar3, ueVar922222222);
-                                                                        MediaController.e2 = d5Var222222222;
-                                                                        org.telegram.messenger.g0.h3(d5Var222222222, 0);
+                                                                        c5 c5Var222222222 = new c5(i25, arrayList, arrayList2, num222222222, ueVar1022222222, ueVar3, ueVar922222222);
+                                                                        MediaController.e2 = c5Var222222222;
+                                                                        org.telegram.messenger.g0.h3(c5Var222222222, 0);
                                                                         return;
                                                                     }
                                                                 } else {
@@ -739,12 +739,12 @@ public final /* synthetic */ class x implements Runnable {
                                                                 Integer num2222222222 = num;
                                                                 while (i7 < arrayList.size()) {
                                                                 }
-                                                                d5Var = MediaController.e2;
-                                                                if (d5Var != null) {
+                                                                c5Var = MediaController.e2;
+                                                                if (c5Var != null) {
                                                                 }
-                                                                d5 d5Var2222222222 = new d5(i25, arrayList, arrayList2, num2222222222, ueVar10222222222, ueVar3, ueVar9222222222);
-                                                                MediaController.e2 = d5Var2222222222;
-                                                                org.telegram.messenger.g0.h3(d5Var2222222222, 0);
+                                                                c5 c5Var2222222222 = new c5(i25, arrayList, arrayList2, num2222222222, ueVar10222222222, ueVar3, ueVar9222222222);
+                                                                MediaController.e2 = c5Var2222222222;
+                                                                org.telegram.messenger.g0.h3(c5Var2222222222, 0);
                                                                 return;
                                                             }
                                                         }
@@ -842,12 +842,12 @@ public final /* synthetic */ class x implements Runnable {
                                 Integer num22222222222 = num;
                                 while (i7 < arrayList.size()) {
                                 }
-                                d5Var = MediaController.e2;
-                                if (d5Var != null) {
+                                c5Var = MediaController.e2;
+                                if (c5Var != null) {
                                 }
-                                d5 d5Var22222222222 = new d5(i25, arrayList, arrayList2, num22222222222, ueVar102222222222, ueVar3, ueVar92222222222);
-                                MediaController.e2 = d5Var22222222222;
-                                org.telegram.messenger.g0.h3(d5Var22222222222, 0);
+                                c5 c5Var22222222222 = new c5(i25, arrayList, arrayList2, num22222222222, ueVar102222222222, ueVar3, ueVar92222222222);
+                                MediaController.e2 = c5Var22222222222;
+                                org.telegram.messenger.g0.h3(c5Var22222222222, 0);
                                 return;
                             }
                         } else {
@@ -911,12 +911,12 @@ public final /* synthetic */ class x implements Runnable {
                         Integer num222222222222 = num;
                         while (i7 < arrayList.size()) {
                         }
-                        d5Var = MediaController.e2;
-                        if (d5Var != null) {
+                        c5Var = MediaController.e2;
+                        if (c5Var != null) {
                         }
-                        d5 d5Var222222222222 = new d5(i25, arrayList, arrayList2, num222222222222, ueVar1022222222222, ueVar3, ueVar922222222222);
-                        MediaController.e2 = d5Var222222222222;
-                        org.telegram.messenger.g0.h3(d5Var222222222222, 0);
+                        c5 c5Var222222222222 = new c5(i25, arrayList, arrayList2, num222222222222, ueVar1022222222222, ueVar3, ueVar922222222222);
+                        MediaController.e2 = c5Var222222222222;
+                        org.telegram.messenger.g0.h3(c5Var222222222222, 0);
                         return;
                     }
                     Context context3222222222222 = org.telegram.messenger.t0.b;
@@ -945,12 +945,12 @@ public final /* synthetic */ class x implements Runnable {
                                 Integer num2222222222222 = num;
                                 while (i7 < arrayList.size()) {
                                 }
-                                d5Var = MediaController.e2;
-                                if (d5Var != null) {
+                                c5Var = MediaController.e2;
+                                if (c5Var != null) {
                                 }
-                                d5 d5Var2222222222222 = new d5(i25, arrayList, arrayList2, num2222222222222, ueVar10222222222222, ueVar3, ueVar9222222222222);
-                                MediaController.e2 = d5Var2222222222222;
-                                org.telegram.messenger.g0.h3(d5Var2222222222222, 0);
+                                c5 c5Var2222222222222 = new c5(i25, arrayList, arrayList2, num2222222222222, ueVar10222222222222, ueVar3, ueVar9222222222222);
+                                MediaController.e2 = c5Var2222222222222;
+                                org.telegram.messenger.g0.h3(c5Var2222222222222, 0);
                                 return;
                             } finally {
                             }
@@ -965,12 +965,12 @@ public final /* synthetic */ class x implements Runnable {
                             Integer num22222222222222 = num;
                             while (i7 < arrayList.size()) {
                             }
-                            d5Var = MediaController.e2;
-                            if (d5Var != null) {
+                            c5Var = MediaController.e2;
+                            if (c5Var != null) {
                             }
-                            d5 d5Var22222222222222 = new d5(i25, arrayList, arrayList2, num22222222222222, ueVar102222222222222, ueVar3, ueVar92222222222222);
-                            MediaController.e2 = d5Var22222222222222;
-                            org.telegram.messenger.g0.h3(d5Var22222222222222, 0);
+                            c5 c5Var22222222222222 = new c5(i25, arrayList, arrayList2, num22222222222222, ueVar102222222222222, ueVar3, ueVar92222222222222);
+                            MediaController.e2 = c5Var22222222222222;
+                            org.telegram.messenger.g0.h3(c5Var22222222222222, 0);
                             return;
                         }
                         try {
@@ -1023,12 +1023,12 @@ public final /* synthetic */ class x implements Runnable {
                                                     Integer num222222222222222 = num;
                                                     while (i7 < arrayList.size()) {
                                                     }
-                                                    d5Var = MediaController.e2;
-                                                    if (d5Var != null) {
+                                                    c5Var = MediaController.e2;
+                                                    if (c5Var != null) {
                                                     }
-                                                    d5 d5Var222222222222222 = new d5(i25, arrayList, arrayList2, num222222222222222, ueVar1022222222222222, ueVar3, ueVar922222222222222);
-                                                    MediaController.e2 = d5Var222222222222222;
-                                                    org.telegram.messenger.g0.h3(d5Var222222222222222, 0);
+                                                    c5 c5Var222222222222222 = new c5(i25, arrayList, arrayList2, num222222222222222, ueVar1022222222222222, ueVar3, ueVar922222222222222);
+                                                    MediaController.e2 = c5Var222222222222222;
+                                                    org.telegram.messenger.g0.h3(c5Var222222222222222, 0);
                                                     return;
                                                 }
                                             } catch (Throwable th23) {
@@ -1044,12 +1044,12 @@ public final /* synthetic */ class x implements Runnable {
                                                 Integer num2222222222222222 = num;
                                                 while (i7 < arrayList.size()) {
                                                 }
-                                                d5Var = MediaController.e2;
-                                                if (d5Var != null) {
+                                                c5Var = MediaController.e2;
+                                                if (c5Var != null) {
                                                 }
-                                                d5 d5Var2222222222222222 = new d5(i25, arrayList, arrayList2, num2222222222222222, ueVar10222222222222222, ueVar3, ueVar9222222222222222);
-                                                MediaController.e2 = d5Var2222222222222222;
-                                                org.telegram.messenger.g0.h3(d5Var2222222222222222, 0);
+                                                c5 c5Var2222222222222222 = new c5(i25, arrayList, arrayList2, num2222222222222222, ueVar10222222222222222, ueVar3, ueVar9222222222222222);
+                                                MediaController.e2 = c5Var2222222222222222;
+                                                org.telegram.messenger.g0.h3(c5Var2222222222222222, 0);
                                                 return;
                                             }
                                         } else {
@@ -1080,12 +1080,12 @@ public final /* synthetic */ class x implements Runnable {
                                                         Integer num22222222222222222 = num;
                                                         while (i7 < arrayList.size()) {
                                                         }
-                                                        d5Var = MediaController.e2;
-                                                        if (d5Var != null) {
+                                                        c5Var = MediaController.e2;
+                                                        if (c5Var != null) {
                                                         }
-                                                        d5 d5Var22222222222222222 = new d5(i25, arrayList, arrayList2, num22222222222222222, ueVar102222222222222222, ueVar3, ueVar92222222222222222);
-                                                        MediaController.e2 = d5Var22222222222222222;
-                                                        org.telegram.messenger.g0.h3(d5Var22222222222222222, 0);
+                                                        c5 c5Var22222222222222222 = new c5(i25, arrayList, arrayList2, num22222222222222222, ueVar102222222222222222, ueVar3, ueVar92222222222222222);
+                                                        MediaController.e2 = c5Var22222222222222222;
+                                                        org.telegram.messenger.g0.h3(c5Var22222222222222222, 0);
                                                         return;
                                                     }
                                                 }
@@ -1094,12 +1094,12 @@ public final /* synthetic */ class x implements Runnable {
                                                 Integer num222222222222222222 = num;
                                                 while (i7 < arrayList.size()) {
                                                 }
-                                                d5Var = MediaController.e2;
-                                                if (d5Var != null) {
+                                                c5Var = MediaController.e2;
+                                                if (c5Var != null) {
                                                 }
-                                                d5 d5Var222222222222222222 = new d5(i25, arrayList, arrayList2, num222222222222222222, ueVar1022222222222222222, ueVar3, ueVar922222222222222222);
-                                                MediaController.e2 = d5Var222222222222222222;
-                                                org.telegram.messenger.g0.h3(d5Var222222222222222222, 0);
+                                                c5 c5Var222222222222222222 = new c5(i25, arrayList, arrayList2, num222222222222222222, ueVar1022222222222222222, ueVar3, ueVar922222222222222222);
+                                                MediaController.e2 = c5Var222222222222222222;
+                                                org.telegram.messenger.g0.h3(c5Var222222222222222222, 0);
                                                 return;
                                             }
                                         } else {
@@ -1148,12 +1148,12 @@ public final /* synthetic */ class x implements Runnable {
                                     Integer num2222222222222222222 = num;
                                     while (i7 < arrayList.size()) {
                                     }
-                                    d5Var = MediaController.e2;
-                                    if (d5Var != null) {
+                                    c5Var = MediaController.e2;
+                                    if (c5Var != null) {
                                     }
-                                    d5 d5Var2222222222222222222 = new d5(i25, arrayList, arrayList2, num2222222222222222222, ueVar10222222222222222222, ueVar3, ueVar9222222222222222222);
-                                    MediaController.e2 = d5Var2222222222222222222;
-                                    org.telegram.messenger.g0.h3(d5Var2222222222222222222, 0);
+                                    c5 c5Var2222222222222222222 = new c5(i25, arrayList, arrayList2, num2222222222222222222, ueVar10222222222222222222, ueVar3, ueVar9222222222222222222);
+                                    MediaController.e2 = c5Var2222222222222222222;
+                                    org.telegram.messenger.g0.h3(c5Var2222222222222222222, 0);
                                     return;
                                 }
                             }
@@ -1170,12 +1170,12 @@ public final /* synthetic */ class x implements Runnable {
                             Integer num22222222222222222222 = num;
                             while (i7 < arrayList.size()) {
                             }
-                            d5Var = MediaController.e2;
-                            if (d5Var != null) {
+                            c5Var = MediaController.e2;
+                            if (c5Var != null) {
                             }
-                            d5 d5Var22222222222222222222 = new d5(i25, arrayList, arrayList2, num22222222222222222222, ueVar102222222222222222222, ueVar3, ueVar92222222222222222222);
-                            MediaController.e2 = d5Var22222222222222222222;
-                            org.telegram.messenger.g0.h3(d5Var22222222222222222222, 0);
+                            c5 c5Var22222222222222222222 = new c5(i25, arrayList, arrayList2, num22222222222222222222, ueVar102222222222222222222, ueVar3, ueVar92222222222222222222);
+                            MediaController.e2 = c5Var22222222222222222222;
+                            org.telegram.messenger.g0.h3(c5Var22222222222222222222, 0);
                             return;
                         }
                         ue ueVar922222222222222222222 = ueVar5;
@@ -1184,13 +1184,13 @@ public final /* synthetic */ class x implements Runnable {
                         for (i7 = 0; i7 < arrayList.size(); i7++) {
                             Collections.sort(((ue) arrayList.get(i7)).e, new w(16));
                         }
-                        d5Var = MediaController.e2;
-                        if (d5Var != null) {
-                            org.telegram.messenger.g0.r(d5Var);
+                        c5Var = MediaController.e2;
+                        if (c5Var != null) {
+                            org.telegram.messenger.g0.r(c5Var);
                         }
-                        d5 d5Var222222222222222222222 = new d5(i25, arrayList, arrayList2, num222222222222222222222, ueVar1022222222222222222222, ueVar3, ueVar922222222222222222222);
-                        MediaController.e2 = d5Var222222222222222222222;
-                        org.telegram.messenger.g0.h3(d5Var222222222222222222222, 0);
+                        c5 c5Var222222222222222222222 = new c5(i25, arrayList, arrayList2, num222222222222222222222, ueVar1022222222222222222222, ueVar3, ueVar922222222222222222222);
+                        MediaController.e2 = c5Var222222222222222222222;
+                        org.telegram.messenger.g0.h3(c5Var222222222222222222222, 0);
                         return;
                     }
                     if (i10 >= 33) {
@@ -1217,12 +1217,12 @@ public final /* synthetic */ class x implements Runnable {
                     Integer num2222222222222222222222 = num;
                     while (i7 < arrayList.size()) {
                     }
-                    d5Var = MediaController.e2;
-                    if (d5Var != null) {
+                    c5Var = MediaController.e2;
+                    if (c5Var != null) {
                     }
-                    d5 d5Var2222222222222222222222 = new d5(i25, arrayList, arrayList2, num2222222222222222222222, ueVar10222222222222222222222, ueVar3, ueVar9222222222222222222222);
-                    MediaController.e2 = d5Var2222222222222222222222;
-                    org.telegram.messenger.g0.h3(d5Var2222222222222222222222, 0);
+                    c5 c5Var2222222222222222222222 = new c5(i25, arrayList, arrayList2, num2222222222222222222222, ueVar10222222222222222222222, ueVar3, ueVar9222222222222222222222);
+                    MediaController.e2 = c5Var2222222222222222222222;
+                    org.telegram.messenger.g0.h3(c5Var2222222222222222222222, 0);
                     return;
                 }
                 if (i15 >= 33 || (context.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0 && context.checkSelfPermission("android.permission.READ_MEDIA_VIDEO") != 0 && context.checkSelfPermission("android.permission.READ_MEDIA_AUDIO") != 0)) {
@@ -1257,12 +1257,12 @@ public final /* synthetic */ class x implements Runnable {
                     Integer num22222222222222222222222 = num;
                     while (i7 < arrayList.size()) {
                     }
-                    d5Var = MediaController.e2;
-                    if (d5Var != null) {
+                    c5Var = MediaController.e2;
+                    if (c5Var != null) {
                     }
-                    d5 d5Var22222222222222222222222 = new d5(i25, arrayList, arrayList2, num22222222222222222222222, ueVar102222222222222222222222, ueVar3, ueVar92222222222222222222222);
-                    MediaController.e2 = d5Var22222222222222222222222;
-                    org.telegram.messenger.g0.h3(d5Var22222222222222222222222, 0);
+                    c5 c5Var22222222222222222222222 = new c5(i25, arrayList, arrayList2, num22222222222222222222222, ueVar102222222222222222222222, ueVar3, ueVar92222222222222222222222);
+                    MediaController.e2 = c5Var22222222222222222222222;
+                    org.telegram.messenger.g0.h3(c5Var22222222222222222222222, 0);
                     return;
                 }
                 query2 = MediaStore.Images.Media.query(context.getContentResolver(), MediaStore.Images.Media.EXTERNAL_CONTENT_URI, MediaController.W1, null, null, (i15 <= 28 ? "date_modified" : "datetaken").concat(" DESC"));
@@ -1284,12 +1284,12 @@ public final /* synthetic */ class x implements Runnable {
                 Integer num222222222222222222222222 = num;
                 while (i7 < arrayList.size()) {
                 }
-                d5Var = MediaController.e2;
-                if (d5Var != null) {
+                c5Var = MediaController.e2;
+                if (c5Var != null) {
                 }
-                d5 d5Var222222222222222222222222 = new d5(i25, arrayList, arrayList2, num222222222222222222222222, ueVar1022222222222222222222222, ueVar3, ueVar922222222222222222222222);
-                MediaController.e2 = d5Var222222222222222222222222;
-                org.telegram.messenger.g0.h3(d5Var222222222222222222222222, 0);
+                c5 c5Var222222222222222222222222 = new c5(i25, arrayList, arrayList2, num222222222222222222222222, ueVar1022222222222222222222222, ueVar3, ueVar922222222222222222222222);
+                MediaController.e2 = c5Var222222222222222222222222;
+                org.telegram.messenger.g0.h3(c5Var222222222222222222222222, 0);
                 return;
             case 3:
                 int i36 = this.b;

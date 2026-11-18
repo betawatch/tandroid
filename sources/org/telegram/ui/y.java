@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -103,22 +103,22 @@ public final /* synthetic */ class y implements View.OnClickListener {
             case 7:
                 mm mmVar = (mm) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj;
                 org.telegram.ui.ActionBar.h2 h2Var = mmVar.a;
                 h2Var.finishPreviewFragment();
                 chat.left = false;
-                if (q1Var != null && q1Var.w != null) {
-                    h2Var.getNotificationCenter().k(203, Long.valueOf(q1Var.w.e));
+                if (r1Var != null && r1Var.w != null) {
+                    h2Var.getNotificationCenter().k(203, Long.valueOf(r1Var.w.e));
                 }
                 h2Var.getMessagesController().n(chat.id, h2Var.getUserConfig().f(), null, h2Var, new xl(mmVar, chat, 3));
                 break;
             case 8:
                 rn rnVar = (rn) obj3;
-                org.telegram.ui.Cells.h6[] h6VarArr = (org.telegram.ui.Cells.h6[]) obj2;
+                org.telegram.ui.Cells.i6[] i6VarArr = (org.telegram.ui.Cells.i6[]) obj2;
                 hi.w4 w4Var = (hi.w4) obj;
                 Integer num = (Integer) view.getTag();
-                h6VarArr[0].a(num.intValue() == 0);
-                h6VarArr[1].a(num.intValue() == 1);
+                i6VarArr[0].a(num.intValue() == 0);
+                i6VarArr[1].a(num.intValue() == 1);
                 rnVar.K0 = num.intValue() == 1;
                 ((org.telegram.ui.ActionBar.x2) w4Var.b).y0.run();
                 rnVar.u0(true, true);
@@ -181,16 +181,16 @@ public final /* synthetic */ class y implements View.OnClickListener {
                 org.telegram.ui.Components.b5.L((Context) obj2, org.telegram.messenger.gd.M0(2131745891, null), org.telegram.messenger.gd.a0(null, null, 2131745892, user.first_name), org.telegram.messenger.gd.M0(2131745923, null), new ir(qrVar, user, i10), qrVar.r).p();
                 break;
             case 11:
-                le0 le0Var = (le0) obj3;
+                me0 me0Var = (me0) obj3;
                 ((org.telegram.ui.Components.y60) obj2).v();
                 int i14 = ((org.telegram.messenger.ro) obj).a;
-                if (le0Var.c.getCurrentPosition() != 0 || (cxVar = le0Var.K) == null) {
-                    if (le0Var.K == null) {
-                        le0Var.r0(null);
+                if (me0Var.c.getCurrentPosition() != 0 || (cxVar = me0Var.K) == null) {
+                    if (me0Var.K == null) {
+                        me0Var.r0(null);
                     }
-                    le0Var.J = Integer.valueOf(i14);
-                    le0Var.s0(0, true);
-                    le0Var.c.A(0);
+                    me0Var.J = Integer.valueOf(i14);
+                    me0Var.s0(0, true);
+                    me0Var.c.A(0);
                     break;
                 } else {
                     cxVar.Q4(i14);

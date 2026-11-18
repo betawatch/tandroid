@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ScrollView;
-import bi.i4;
+import bi.h4;
 import di.ga;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +35,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -215,13 +215,13 @@ public final /* synthetic */ class q implements Runnable {
                 ooVar.B(i18);
                 break;
             case 13:
-                i4 i4Var = (i4) this.d;
+                h4 h4Var = (h4) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
                     SharedPreferences sharedPreferences2 = mp.u1(this.c).g7;
                     sharedPreferences2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                i4Var.a(Integer.valueOf(i19));
+                h4Var.a(Integer.valueOf(i19));
                 break;
             case 14:
                 oa0 oa0Var = (oa0) ((di.b1) this.d).g3;

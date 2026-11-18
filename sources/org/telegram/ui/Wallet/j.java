@@ -22,12 +22,12 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.bd0;
+import org.telegram.ui.cd0;
 import org.telegram.ui.ne;
 import org.telegram.ui.p51;
 import org.telegram.ui.wt0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements q10 {
     public final /* synthetic */ int a;
@@ -339,20 +339,20 @@ public final /* synthetic */ class j implements q10 {
                 if (l10 != null) {
                     Activity parentActivity = d9Var.getParentActivity();
                     if (parentActivity != null) {
-                        final org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, parentActivity, d9Var.getResourceProvider());
+                        final org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, parentActivity, d9Var.getResourceProvider());
                         int i14 = org.telegram.ui.ActionBar.n6.i6;
                         org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(d9Var.getThemedColor(i14), 7, org.telegram.messenger.g0.L(12.0f));
                         org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i14);
                         org.telegram.ui.ActionBar.i6 resourceProvider = d9Var.getResourceProvider();
-                        c2Var.setBackground(h02);
-                        org.telegram.ui.ActionBar.u6.j(c2Var, h02, null, M, resourceProvider);
-                        c2Var.e(gd.M0(2131742711, null), "", false, false, false);
-                        c2Var.setMultiline(true);
-                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
+                        d2Var.setBackground(h02);
+                        org.telegram.ui.ActionBar.u6.j(d2Var, h02, null, M, resourceProvider);
+                        d2Var.e(gd.M0(2131742711, null), "", false, false, false);
+                        d2Var.setMultiline(true);
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var.getCheckBoxView().getLayoutParams();
                         layoutParams.topMargin = 0;
                         layoutParams.gravity = (gd.a0 ? 5 : 3) | 16;
-                        c2Var.getCheckBoxView().setLayoutParams(layoutParams);
-                        c2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
+                        d2Var.getCheckBoxView().setLayoutParams(layoutParams);
+                        d2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
                         TextView textView = new TextView(parentActivity);
                         textView.setTextSize(1, 14.0f);
                         org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, d9Var.getResourceProvider());
@@ -367,9 +367,9 @@ public final /* synthetic */ class j implements q10 {
                         textView.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f));
                         textView.setText(l10.longValue() > 0 ? gd.V(null, null, 2131742709, u0.s(l10.longValue(), false), u0Var8.r(l10.longValue(), true)) : gd.M0(2131742710, null));
                         textView.setVisibility(8);
-                        c2Var.setOnClickListener(new bd0(24, c2Var, textView));
+                        d2Var.setOnClickListener(new cd0(24, d2Var, textView));
                         LinearLayout f10 = org.telegram.messenger.f3.f(parentActivity, 1);
-                        f10.addView(c2Var, c8.ma.t(-1, -2, 83, 8, 0, 8, 0));
+                        f10.addView(d2Var, c8.ma.t(-1, -2, 83, 8, 0, 8, 0));
                         f10.addView(textView, c8.ma.k(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, d9Var.getResourceProvider());
                         String M0 = gd.M0(2131742893, null);
@@ -383,10 +383,10 @@ public final /* synthetic */ class j implements q10 {
                         alertDialog$Builder.k(gd.M0(2131742898, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.Wallet.a9
                             @Override // org.telegram.ui.ActionBar.r1
                             public final void h(org.telegram.ui.ActionBar.u1 u1Var2, int i16) {
-                                org.telegram.ui.Cells.c2 c2Var2 = c2Var;
-                                if (c2Var2.isEnabled()) {
-                                    boolean b11 = c2Var2.b();
-                                    c2Var2.setEnabled(false);
+                                org.telegram.ui.Cells.d2 d2Var2 = d2Var;
+                                if (d2Var2.isEnabled()) {
+                                    boolean b11 = d2Var2.b();
+                                    d2Var2.setEnabled(false);
                                     vf.b h = u1Var2.h(i16, true, true);
                                     h.d();
                                     d9 d9Var2 = d9.this;
@@ -400,7 +400,7 @@ public final /* synthetic */ class j implements q10 {
                                     if (A >= l11.longValue()) {
                                         y8 y8Var = new y8(d9Var2, h, u0Var9, 1);
                                         u0.P("prepare disable backup");
-                                        u0Var9.F(true, false, false, new bi.m6(29, u0Var9, y8Var));
+                                        u0Var9.F(true, false, false, new bi.l6(29, u0Var9, y8Var));
                                         return;
                                     }
                                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, d9Var2.getParentActivity(), d9Var2.getResourceProvider());

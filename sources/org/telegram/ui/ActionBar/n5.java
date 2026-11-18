@@ -33,7 +33,7 @@ import org.telegram.ui.Components.wu0;
 import org.telegram.ui.Components.yu0;
 import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class n5 extends View implements Drawable.Callback {
     public final Stack A0;
@@ -265,9 +265,9 @@ public class n5 extends View implements Drawable.Callback {
                         this.G = indexOf;
                         if (indexOf >= 0) {
                             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(charSequence2);
-                            org.telegram.ui.Cells.r2 r2Var = new org.telegram.ui.Cells.r2(this.E.getIntrinsicWidth());
+                            org.telegram.ui.Cells.s2 s2Var = new org.telegram.ui.Cells.s2(this.E.getIntrinsicWidth());
                             int i14 = this.G;
-                            valueOf.setSpan(r2Var, i14, this.F.length() + i14, 0);
+                            valueOf.setSpan(s2Var, i14, this.F.length() + i14, 0);
                             charSequence3 = valueOf;
                         } else {
                             i10 = (i10 - this.E.getIntrinsicWidth()) - this.J;

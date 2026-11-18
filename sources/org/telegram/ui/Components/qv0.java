@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qv0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -130,7 +130,7 @@ public final /* synthetic */ class qv0 implements View.OnClickListener {
                         for (int i15 = 0; i15 < n50Var.d.getChildCount(); i15++) {
                             View childAt = n50Var.d.getChildAt(i15);
                             if (n50Var.d.T(childAt).b() == n50Var.F + i14) {
-                                ((org.telegram.ui.Cells.g8) childAt).b(false, true);
+                                ((org.telegram.ui.Cells.h8) childAt).b(false, true);
                             }
                         }
                     }
@@ -141,7 +141,7 @@ public final /* synthetic */ class qv0 implements View.OnClickListener {
                         for (int i16 = 0; i16 < n50Var.d.getChildCount(); i16++) {
                             View childAt2 = n50Var.d.getChildAt(i16);
                             if (n50Var.d.T(childAt2).b() == n50Var.F + n50Var.n) {
-                                ((org.telegram.ui.Cells.g8) childAt2).b(true, true);
+                                ((org.telegram.ui.Cells.h8) childAt2).b(true, true);
                             }
                         }
                     }

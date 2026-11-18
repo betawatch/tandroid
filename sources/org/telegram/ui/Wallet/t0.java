@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class t0 {
     public boolean h;
@@ -166,7 +166,7 @@ public final class t0 {
 
     public final void i() {
         u0 u0Var = this.m;
-        ks.f(u0Var.a).k(ks.d4, this, u0Var);
+        ks.f(u0Var.a).k(ks.e4, this, u0Var);
     }
 
     public final void k() {

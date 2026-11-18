@@ -10,14 +10,14 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class w0 implements e0, f3.q, b3.k, b3.n, b1 {
     public static final Map j0;
     public static final e2.u k0;
-    public final md0 E;
+    public final nd0 E;
     public final h2.i F;
     public final p0 G;
     public final p0 H;
@@ -72,7 +72,7 @@ public final class w0 implements e0, f3.q, b3.k, b3.n, b1 {
         k0 = new e2.u(tVar);
     }
 
-    public w0(Uri uri, j2.h hVar, md0 md0Var, q2.m mVar, q2.j jVar, qb.a aVar, xa xaVar, y0 y0Var, h6.m mVar2, String str, int i7, e2.u uVar, long j3, c3.a aVar2) {
+    public w0(Uri uri, j2.h hVar, nd0 nd0Var, q2.m mVar, q2.j jVar, qb.a aVar, xa xaVar, y0 y0Var, h6.m mVar2, String str, int i7, e2.u uVar, long j3, c3.a aVar2) {
         this.a = uri;
         this.b = hVar;
         this.c = mVar;
@@ -85,7 +85,7 @@ public final class w0 implements e0, f3.q, b3.k, b3.n, b1 {
         this.s = i7;
         this.w = uVar;
         this.y = aVar2 != null ? new b3.p(aVar2) : new b3.p("ProgressiveMediaPeriod");
-        this.E = md0Var;
+        this.E = nd0Var;
         this.x = j3;
         this.F = new h2.i();
         this.G = new p0(this, 1);
@@ -298,13 +298,13 @@ public final class w0 implements e0, f3.q, b3.k, b3.n, b1 {
                 c1Var.g = null;
             }
         }
-        md0 md0Var = this.E;
-        f3.o oVar = (f3.o) md0Var.c;
+        nd0 nd0Var = this.E;
+        f3.o oVar = (f3.o) nd0Var.c;
         if (oVar != null) {
             oVar.release();
-            md0Var.c = null;
+            nd0Var.c = null;
         }
-        md0Var.d = null;
+        nd0Var.d = null;
     }
 
     @Override // f3.q

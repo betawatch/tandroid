@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.e8;
+import bi.d8;
 import c8.ma;
 import c8.ra;
 import di.pb;
@@ -52,14 +52,14 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.s00;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class i3 extends s00 implements fs {
     public final long S;
     public FrameLayout T;
     public vg.m U;
     public jn V;
-    public e8 W;
+    public d8 W;
 
     public i3(long j3) {
         this.S = j3;
@@ -90,11 +90,11 @@ public final class i3 extends s00 implements fs {
     }
 
     public static /* synthetic */ void C0(i3 i3Var, Context context, int i7) {
-        e8 e8Var = i3Var.W;
-        if (e8Var == null) {
+        d8 d8Var = i3Var.W;
+        if (d8Var == null) {
             return;
         }
-        Object obj = e8Var.G(i7).H;
+        Object obj = d8Var.G(i7).H;
         if (obj instanceof TL_payments.starRefProgram) {
             J0(context, i3Var.currentAccount, (TL_payments.starRefProgram) obj, i3Var.S, i3Var.resourceProvider, false);
         } else if (obj instanceof TL_payments.connectedBotStarRef) {
@@ -127,7 +127,7 @@ public final class i3 extends s00 implements fs {
                     }
                 }
             }
-            ks.f(i7).k(ks.N3, Long.valueOf(d.b));
+            ks.f(i7).k(ks.O3, Long.valueOf(d.b));
             d.a();
             di.c0 e10 = di.e0.g(i3Var.currentAccount).e(j3);
             e10.c = 0;
@@ -143,9 +143,9 @@ public final class i3 extends s00 implements fs {
     }
 
     public static boolean E0(i3 i3Var, Context context, View view, int i7) {
-        e8 e8Var = i3Var.W;
-        if (e8Var != null) {
-            Object obj = e8Var.G(i7).H;
+        d8 d8Var = i3Var.W;
+        if (d8Var != null) {
+            Object obj = d8Var.G(i7).H;
             if (obj instanceof TL_payments.connectedBotStarRef) {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
                 TLRPC.User c22 = mp.u1(i3Var.currentAccount).c2(Long.valueOf(connectedbotstarref.bot_id));
@@ -964,20 +964,20 @@ public final class i3 extends s00 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        e8 e8Var;
-        int i11 = ks.N3;
+        d8 d8Var;
+        int i11 = ks.O3;
         long j3 = this.S;
         if (i7 != i11) {
-            if (i7 == ks.M3 && ((Long) objArr[0]).longValue() == j3 && (e8Var = this.W) != null) {
-                e8Var.O(true);
+            if (i7 == ks.N3 && ((Long) objArr[0]).longValue() == j3 && (d8Var = this.W) != null) {
+                d8Var.O(true);
                 return;
             }
             return;
         }
         if (((Long) objArr[0]).longValue() == j3) {
-            e8 e8Var2 = this.W;
-            if (e8Var2 != null) {
-                e8Var2.O(true);
+            d8 d8Var2 = this.W;
+            if (d8Var2 != null) {
+                d8Var2.O(true);
             }
             di.e0.g(this.currentAccount).d(j3).a();
         }
@@ -985,9 +985,9 @@ public final class i3 extends s00 implements fs {
 
     @Override // org.telegram.ui.s00
     public final v4.i0 k0() {
-        e8 e8Var = new e8(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new e7(this, 21), getResourceProvider(), 5);
-        this.W = e8Var;
-        return e8Var;
+        d8 d8Var = new d8(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new e7(this, 21), getResourceProvider(), 5);
+        this.W = d8Var;
+        return d8Var;
     }
 
     @Override // org.telegram.ui.s00
@@ -999,16 +999,16 @@ public final class i3 extends s00 implements fs {
 
     @Override // org.telegram.ui.ActionBar.h2
     public final boolean onFragmentCreate() {
+        ks.f(this.currentAccount).c(this, ks.O3);
         ks.f(this.currentAccount).c(this, ks.N3);
-        ks.f(this.currentAccount).c(this, ks.M3);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
+        ks.f(this.currentAccount).n(this, ks.O3);
         ks.f(this.currentAccount).n(this, ks.N3);
-        ks.f(this.currentAccount).n(this, ks.M3);
     }
 
     @Override // org.telegram.ui.s00, org.telegram.ui.ActionBar.h2

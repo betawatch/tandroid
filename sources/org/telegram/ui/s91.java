@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class s91 extends org.telegram.ui.Components.bk0 {
     public final /* synthetic */ u91 c;
@@ -48,18 +48,18 @@ public final class s91 extends org.telegram.ui.Components.bk0 {
         u91 u91Var = this.c;
         y91 y91Var = u91Var.w0;
         if (d(i7) == 1) {
-            org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
+            org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i7 == u91Var.h0) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131743759, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131743759, null));
             }
             if (i7 == u91Var.k0) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131745561, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131745561, null));
             }
         }
         if (d(i7) == 2) {
-            org.telegram.ui.Cells.ka kaVar = (org.telegram.ui.Cells.ka) view;
-            kaVar.setTopic((TLRPC.TL_forumTopic) u91Var.f0.get(i7 - u91Var.i0));
-            kaVar.d = i7 != u91Var.j0 - 1;
+            org.telegram.ui.Cells.la laVar = (org.telegram.ui.Cells.la) view;
+            laVar.setTopic((TLRPC.TL_forumTopic) u91Var.f0.get(i7 - u91Var.i0));
+            laVar.d = i7 != u91Var.j0 - 1;
         }
         if (d(i7) == 3) {
             org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) u91Var.g0.get(i7 - u91Var.l0);
@@ -81,16 +81,16 @@ public final class s91 extends org.telegram.ui.Components.bk0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.t2, org.telegram.ui.v91] */
+    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.u2, org.telegram.ui.v91] */
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         FrameLayout frameLayout;
         boolean z10;
         y91 y91Var = this.c.w0;
         if (i7 == 1) {
-            frameLayout = new org.telegram.ui.Cells.x3(viewGroup.getContext(), null);
+            frameLayout = new org.telegram.ui.Cells.y3(viewGroup.getContext(), null);
         } else if (i7 == 2) {
-            frameLayout = new org.telegram.ui.Cells.ka(viewGroup.getContext());
+            frameLayout = new org.telegram.ui.Cells.la(viewGroup.getContext());
         } else {
             if (i7 != 3) {
                 throw new RuntimeException("unsupported view type");

@@ -1,7 +1,7 @@
 package jg;
 
 import android.graphics.RectF;
-import bi.u4;
+import bi.t4;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.voip.VoIPService;
@@ -17,7 +17,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c9;
 import org.telegram.ui.cu0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class u implements RequestDelegate {
             case 0:
                 h0 h0Var = (h0) obj2;
                 h0Var.getClass();
-                org.telegram.messenger.g0.g3(new u4(h0Var, this.b, tLObject, (String) obj, 7));
+                org.telegram.messenger.g0.g3(new t4(h0Var, this.b, tLObject, (String) obj, 7));
                 break;
             case 1:
                 ((VoIPService) obj2).lambda$startConferenceGroupCall$34(i10, (String) obj, tLObject, tL_error);
@@ -51,19 +51,19 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) obj2).lambda$editCallMember$90(i10, (Runnable) obj, tLObject, tL_error);
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new u4((c9) obj2, tLObject, this.b, (TLRPC.User) obj, 16));
+                org.telegram.messenger.g0.g3(new t4((c9) obj2, tLObject, this.b, (TLRPC.User) obj, 16));
                 break;
             case 4:
                 org.telegram.messenger.g0.g3(new ai.g1(tLObject, this.b, (HashSet) obj2, tL_error, (h2) obj, 11));
                 break;
             case 5:
-                org.telegram.messenger.g0.g3(new u4((h2) obj2, tLObject, this.b, (x10) obj, 24));
+                org.telegram.messenger.g0.g3(new t4((h2) obj2, tLObject, this.b, (x10) obj, 24));
                 break;
             case 6:
-                org.telegram.messenger.g0.g3(new u4((f30) obj2, this.b, tLObject, (String) obj, 26));
+                org.telegram.messenger.g0.g3(new t4((f30) obj2, this.b, tLObject, (String) obj, 26));
                 break;
             case 7:
-                org.telegram.messenger.g0.g3(new u4((cp0) obj2, this.b, tLObject, (String) obj, 28));
+                org.telegram.messenger.g0.g3(new t4((cp0) obj2, this.b, tLObject, (String) obj, 28));
                 break;
             case 8:
                 RectF rectF = ProfileActivity.Z6;

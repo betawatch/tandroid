@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class nx implements org.telegram.messenger.fs {
     public static final HashSet M = new HashSet();
@@ -64,8 +64,8 @@ public class nx implements org.telegram.messenger.fs {
         this.b = i7;
     }
 
-    public static boolean a(org.telegram.ui.Cells.q1 q1Var, float f10, int i7) {
-        float s5 = q1Var.getPhotoImage().s() + q1Var.getY();
+    public static boolean a(org.telegram.ui.Cells.r1 r1Var, float f10, int i7) {
+        float s5 = r1Var.getPhotoImage().s() + r1Var.getY();
         return s5 > f10 && s5 < ((float) i7);
     }
 
@@ -452,7 +452,7 @@ public class nx implements org.telegram.messenger.fs {
             }
             return;
         }
-        int i11 = org.telegram.messenger.ks.V4;
+        int i11 = org.telegram.messenger.ks.W4;
         long j3 = this.J;
         if (i7 != i11) {
             if (i7 == org.telegram.messenger.ks.r && (G1 = org.telegram.messenger.mp.u1(this.b).G1(j3, this.K)) != null && G1.intValue() == 5) {
@@ -509,14 +509,14 @@ public class nx implements org.telegram.messenger.fs {
                         break;
                     }
                     View childAt = this.I.getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.q1) {
-                        org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                        fjVar = q1Var.getMessageObject();
-                        imageReceiver = q1Var.getPhotoImage();
-                    } else if (childAt instanceof org.telegram.ui.Cells.u0) {
-                        org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) childAt;
-                        fjVar = u0Var.getMessageObject();
-                        imageReceiver = u0Var.getPhotoImage();
+                    if (childAt instanceof org.telegram.ui.Cells.r1) {
+                        org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt;
+                        fjVar = r1Var.getMessageObject();
+                        imageReceiver = r1Var.getPhotoImage();
+                    } else if (childAt instanceof org.telegram.ui.Cells.v0) {
+                        org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) childAt;
+                        fjVar = v0Var.getMessageObject();
+                        imageReceiver = v0Var.getPhotoImage();
                     } else {
                         imageReceiver = null;
                         fjVar = null;
@@ -533,15 +533,15 @@ public class nx implements org.telegram.messenger.fs {
                         mxVar.d = f13;
                         f11 = 2.0f;
                         mxVar.e = imageReceiver.O0;
-                        if (mxVar.i && (childAt instanceof org.telegram.ui.Cells.q1)) {
-                            org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) childAt;
+                        if (mxVar.i && (childAt instanceof org.telegram.ui.Cells.r1)) {
+                            org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) childAt;
                             float f14 = (f() * org.telegram.messenger.g0.p) / 1.3f;
                             float f15 = f14 / 3.0f;
                             mxVar.d = f15;
                             mxVar.e = f15;
                             float f16 = f14 / 2.0f;
-                            mxVar.a = Utilities.i((q1Var2.getTimeX() + x10) - f16, org.telegram.messenger.g0.q.x - f14, 0.0f);
-                            mxVar.b = (q1Var2.getTimeY() + y10) - f16;
+                            mxVar.a = Utilities.i((r1Var2.getTimeX() + x10) - f16, org.telegram.messenger.g0.q.x - f14, 0.0f);
+                            mxVar.b = (r1Var2.getTimeY() + y10) - f16;
                         } else if (mxVar.h) {
                             mxVar.a = x10 + imageReceiver.L0;
                             mxVar.b = y10 + imageReceiver.M0;
@@ -656,7 +656,7 @@ public class nx implements org.telegram.messenger.fs {
         this.n = true;
         b();
         org.telegram.messenger.ks.f(this.b).c(this, org.telegram.messenger.ks.y0);
-        org.telegram.messenger.ks.f(this.b).c(this, org.telegram.messenger.ks.V4);
+        org.telegram.messenger.ks.f(this.b).c(this, org.telegram.messenger.ks.W4);
         org.telegram.messenger.ks.f(this.b).c(this, org.telegram.messenger.ks.r);
         int i7 = 0;
         while (true) {
@@ -676,7 +676,7 @@ public class nx implements org.telegram.messenger.fs {
         int i7 = 0;
         this.n = false;
         org.telegram.messenger.ks.f(this.b).n(this, org.telegram.messenger.ks.y0);
-        org.telegram.messenger.ks.f(this.b).n(this, org.telegram.messenger.ks.V4);
+        org.telegram.messenger.ks.f(this.b).n(this, org.telegram.messenger.ks.W4);
         org.telegram.messenger.ks.f(this.b).n(this, org.telegram.messenger.ks.r);
         while (true) {
             ArrayList arrayList = this.G;
@@ -692,26 +692,26 @@ public class nx implements org.telegram.messenger.fs {
         }
     }
 
-    public final void k(org.telegram.ui.Cells.q1 q1Var, bn bnVar, boolean z10) {
-        if (bnVar.z() || q1Var.getMessageObject() == null || q1Var.getMessageObject().e1() < 0) {
+    public final void k(org.telegram.ui.Cells.r1 r1Var, bn bnVar, boolean z10) {
+        if (bnVar.z() || r1Var.getMessageObject() == null || r1Var.getMessageObject().e1() < 0) {
             return;
         }
-        if (q1Var.getMessageObject().W3() || bnVar.f != null) {
+        if (r1Var.getMessageObject().W3() || bnVar.f != null) {
             boolean z11 = false;
-            boolean n10 = n(q1Var, -1, z10, false);
+            boolean n10 = n(r1Var, -1, z10, false);
             if (z10 && n10) {
-                String V1 = q1Var.getMessageObject().V1();
-                if (!org.telegram.messenger.k6.a(V1) && !"🍑".equals(V1) && !"⚰".equals(V1) && !q1Var.getMessageObject().W3() && !q1Var.getMessageObject().F2()) {
+                String V1 = r1Var.getMessageObject().V1();
+                if (!org.telegram.messenger.k6.a(V1) && !"🍑".equals(V1) && !"⚰".equals(V1) && !r1Var.getMessageObject().W3() && !r1Var.getMessageObject().F2()) {
                     try {
-                        q1Var.performHapticFeedback(3);
+                        r1Var.performHapticFeedback(3);
                     } catch (Exception unused) {
                     }
                 }
             }
-            if (q1Var.getMessageObject().W3() || q1Var.getEffect() != null || (!z10 && q1Var.getMessageObject().o != null)) {
-                q1Var.getMessageObject().R = false;
-                q1Var.getMessageObject().k.premiumEffectWasPlayed = true;
-                bnVar.getMessagesStorage().X1(this.J, q1Var.getMessageObject().k);
+            if (r1Var.getMessageObject().W3() || r1Var.getEffect() != null || (!z10 && r1Var.getMessageObject().o != null)) {
+                r1Var.getMessageObject().R = false;
+                r1Var.getMessageObject().k.premiumEffectWasPlayed = true;
+                bnVar.getMessagesStorage().X1(this.J, r1Var.getMessageObject().k);
                 return;
             }
             Integer G1 = org.telegram.messenger.mp.u1(this.b).G1(this.J, this.K);
@@ -720,7 +720,7 @@ public class nx implements org.telegram.messenger.fs {
                 if ((gcVar == null || !gcVar.l) && org.telegram.messenger.bz.d1 > 0 && org.telegram.messenger.j10.i(this.b).e() != bnVar.f.id) {
                     org.telegram.messenger.bz.d1--;
                     org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("emojiInteractionsHintCount", org.telegram.messenger.bz.d1).apply();
-                    org.telegram.ui.Components.mv0 mv0Var = new org.telegram.ui.Components.mv0(bnVar.getParentActivity(), null, 1, -1, q1Var.getMessageObject().F2() ? q1Var.getMessageObject().F0() : org.telegram.messenger.ri.d0(this.b).V(q1Var.getMessageObject().V1()), bnVar.getResourceProvider());
+                    org.telegram.ui.Components.mv0 mv0Var = new org.telegram.ui.Components.mv0(bnVar.getParentActivity(), null, 1, -1, r1Var.getMessageObject().F2() ? r1Var.getMessageObject().F0() : org.telegram.messenger.ri.d0(this.b).V(r1Var.getMessageObject().V1()), bnVar.getResourceProvider());
                     mv0Var.c.setVisibility(8);
                     mv0Var.b.setText(org.telegram.messenger.j6.m(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("EmojiInteractionTapHint", null, 2131751166, bnVar.f.first_name)), mv0Var.b.getPaint().getFontMetricsInt(), false, null, 0));
                     mv0Var.b.setTypeface(null);
@@ -748,9 +748,9 @@ public class nx implements org.telegram.messenger.fs {
         }
     }
 
-    public final void m(org.telegram.ui.Cells.q1 q1Var) {
+    public final void m(org.telegram.ui.Cells.r1 r1Var) {
         ArrayList arrayList;
-        org.telegram.messenger.fj messageObject = q1Var.getMessageObject();
+        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
         if (messageObject.W3()) {
             return;
         }
@@ -768,25 +768,25 @@ public class nx implements org.telegram.messenger.fs {
         }
     }
 
-    public final boolean n(org.telegram.ui.Cells.q1 q1Var, int i7, boolean z10, boolean z11) {
-        if (q1Var == null || this.G.size() > 12) {
+    public final boolean n(org.telegram.ui.Cells.r1 r1Var, int i7, boolean z10, boolean z11) {
+        if (r1Var == null || this.G.size() > 12) {
             return false;
         }
-        org.telegram.messenger.fj messageObject = q1Var.getMessageObject();
-        if (q1Var.getEffect() == null && !q1Var.getPhotoImage().L()) {
+        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
+        if (r1Var.getEffect() == null && !r1Var.getPhotoImage().L()) {
             return false;
         }
         String V1 = messageObject.V1();
         if (V1 == null) {
             V1 = messageObject.k.message;
         }
-        if (q1Var.getEffect() == null && V1 == null) {
+        if (r1Var.getEffect() == null && V1 == null) {
             return false;
         }
-        float f10 = q1Var.getPhotoImage().O0;
-        float f11 = q1Var.getPhotoImage().N0;
-        if (q1Var.getEffect() != null || (f10 > 0.0f && f11 > 0.0f)) {
-            return d(p(V1), q1Var.getMessageObject().e1(), q1Var.getMessageObject().F0(), messageObject, i7, z10, z11, f11, f10, q1Var.getMessageObject().P3());
+        float f10 = r1Var.getPhotoImage().O0;
+        float f11 = r1Var.getPhotoImage().N0;
+        if (r1Var.getEffect() != null || (f10 > 0.0f && f11 > 0.0f)) {
+            return d(p(V1), r1Var.getMessageObject().e1(), r1Var.getMessageObject().F0(), messageObject, i7, z10, z11, f11, f10, r1Var.getMessageObject().P3());
         }
         return false;
     }

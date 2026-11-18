@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
             case 1:
                 bn bnVar2 = (bn) this.b;
                 vf.b bVar2 = (vf.b) this.c;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.d;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.d;
                 String str4 = (String) this.e;
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 TLObject tLObject = (TLObject) obj;
@@ -97,7 +97,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                     i12 = 0;
                     j3 = 0;
                 }
-                org.telegram.ui.Components.y60 J = org.telegram.ui.Components.y60.J(bnVar2, q1Var);
+                org.telegram.ui.Components.y60 J = org.telegram.ui.Components.y60.J(bnVar2, r1Var);
                 org.telegram.ui.Components.wk0 wk0Var = new org.telegram.ui.Components.wk0(bnVar2.getParentActivity(), bnVar2.Ba);
                 J.p = new fe(wk0Var, r9);
                 int i13 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
@@ -127,14 +127,14 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                     J.p(13, org.telegram.messenger.g0.L(200.0f), org.telegram.messenger.gd.M0(2131747941, null));
                 }
                 wk0Var.e(J);
-                wk0Var.f(q1Var, characterStyle, charSequence, false);
+                wk0Var.f(r1Var, characterStyle, charSequence, false);
                 bnVar2.showDialog(wk0Var);
                 break;
             case 2:
                 bn bnVar3 = (bn) this.b;
                 hi hiVar = (hi) this.d;
                 int[] iArr = (int[]) this.c;
-                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) this.e;
+                org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) this.e;
                 org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) this.f;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
                 if (bnVar3.ec == hiVar) {
@@ -158,8 +158,8 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                             message.rich_message = richMessage;
                             fjVar.y2 = null;
                             mm mmVar = bnVar3.Wc;
-                            if (mmVar != null && q1Var2 != null) {
-                                mmVar.f(q1Var2, true, false, true);
+                            if (mmVar != null && r1Var2 != null) {
+                                mmVar.f(r1Var2, true, false, true);
                                 break;
                             }
                         }
@@ -311,11 +311,11 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
         }
     }
 
-    public /* synthetic */ ne(bn bnVar, gi giVar, org.telegram.ui.Cells.q1 q1Var, String str, CharacterStyle characterStyle) {
+    public /* synthetic */ ne(bn bnVar, gi giVar, org.telegram.ui.Cells.r1 r1Var, String str, CharacterStyle characterStyle) {
         this.a = 1;
         this.b = bnVar;
         this.c = giVar;
-        this.d = q1Var;
+        this.d = r1Var;
         this.e = str;
         this.f = characterStyle;
     }

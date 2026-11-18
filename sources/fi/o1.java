@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.r1, lh.a {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.r1, l
                         ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new n5(p6Var, 4));
                         c7 c7Var = p6Var.k;
                         c7Var.b.a.c(new z6(c7Var, j10, storyItem2.id, 1));
-                        ks.f(i12).k(ks.x5, new Object[0]);
+                        ks.f(i12).k(ks.y5, new Object[0]);
                         mp.u1(i12).D();
                         p6Var.n0(j10, Arrays.asList(storyItem2));
                     }

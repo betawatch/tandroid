@@ -24,7 +24,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.mh0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z4 implements Runnable {
     public final /* synthetic */ int a;
@@ -261,7 +261,7 @@ public final /* synthetic */ class z4 implements Runnable {
             case 8:
                 w7 w7Var2 = (w7) this.b;
                 w7Var2.getDownloadController().I.removeAll((ArrayList) this.c);
-                w7Var2.getNotificationCenter().k(ks.d5, new Object[0]);
+                w7Var2.getNotificationCenter().k(ks.e5, new Object[0]);
                 return;
             case 9:
                 i7 i7Var3 = (i7) ((w7) this.b).w.get(w7.r("mp4", (TLRPC.FileLocation) this.c));

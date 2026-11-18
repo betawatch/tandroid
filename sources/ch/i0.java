@@ -11,15 +11,15 @@ import org.telegram.messenger.bz;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.fj;
 import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.ti0;
 import org.telegram.ui.bj;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
     public final /* synthetic */ h2 a;
@@ -168,10 +168,10 @@ public final class i0 extends FrameLayout {
                 int childCount = bjVar.getChildCount();
                 for (int i12 = 0; i12 < childCount; i12++) {
                     view = bnVar2.A0.getChildAt(i12);
-                    if (view instanceof q1) {
-                        messageObject = ((q1) view).getMessageObject();
-                    } else if (view instanceof u0) {
-                        messageObject = ((u0) view).getMessageObject();
+                    if (view instanceof r1) {
+                        messageObject = ((r1) view).getMessageObject();
+                    } else if (view instanceof v0) {
+                        messageObject = ((v0) view).getMessageObject();
                     } else {
                         continue;
                     }
@@ -192,18 +192,18 @@ public final class i0 extends FrameLayout {
             int[] iArr = l0Var3.j;
             f11 = iArr[0];
             f12 = iArr[1];
-            if (view instanceof q1) {
-                q1 q1Var = (q1) view;
+            if (view instanceof r1) {
+                r1 r1Var = (r1) view;
                 f10 = 0.10666667f;
-                n0Var = q1Var.O.k(l0Var3.p);
-                if (q1Var.K && !q1Var.H3()) {
+                n0Var = r1Var.O.k(l0Var3.p);
+                if (r1Var.K && !r1Var.H3()) {
                     f12 += org.telegram.messenger.g0.L(2.0f);
                 }
-                paddingTop = q1Var.getPaddingTop();
+                paddingTop = r1Var.getPaddingTop();
             } else {
                 f10 = 0.10666667f;
-                if (view instanceof u0) {
-                    n0Var = ((u0) view).F0.k(l0Var3.p);
+                if (view instanceof v0) {
+                    n0Var = ((v0) view).F0.k(l0Var3.p);
                     paddingTop = view.getPaddingTop();
                 } else {
                     if (view instanceof nh.c) {
@@ -483,10 +483,10 @@ public final class i0 extends FrameLayout {
                     int i17 = this.h;
                     if (i17 == 0 || i17 == 2) {
                         View view2 = this.b;
-                        if (view2 instanceof q1) {
-                            ((q1) view2).O.b(l0Var10.p);
-                        } else if (view2 instanceof u0) {
-                            ((u0) view2).F0.b(l0Var10.p);
+                        if (view2 instanceof r1) {
+                            ((r1) view2).O.b(l0Var10.p);
+                        } else if (view2 instanceof v0) {
+                            ((v0) view2).F0.b(l0Var10.p);
                         }
                     }
                     this.y.h = 1.0f;
@@ -499,7 +499,7 @@ public final class i0 extends FrameLayout {
                     if (view3 != null) {
                         view3.invalidate();
                         View view4 = this.b;
-                        if ((view4 instanceof q1) && ((q1) view4).getCurrentMessagesGroup() != null && this.b.getParent() != null) {
+                        if ((view4 instanceof r1) && ((r1) view4).getCurrentMessagesGroup() != null && this.b.getParent() != null) {
                             ((View) this.b.getParent()).invalidate();
                         }
                     }

@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jx extends FrameLayout implements org.telegram.ui.ActionBar.c6, org.telegram.messenger.fs {
     public Paint E;
@@ -254,7 +254,7 @@ public final class jx extends FrameLayout implements org.telegram.ui.ActionBar.c
             if (this.s != null && (q03 = org.telegram.messenger.ri.d0(i11).q0(this.s.id)) != null && q03.set != null) {
                 org.telegram.ui.ActionBar.h2 h2Var = ryVar.Z1;
                 if (h2Var == null) {
-                    h2Var = new bi.z8(this, 8);
+                    h2Var = new bi.y8(this, 8);
                 }
                 bv.K0(h2Var, q03, true, null, new mo(this, 15));
                 this.s = null;
@@ -264,7 +264,7 @@ public final class jx extends FrameLayout implements org.telegram.ui.ActionBar.c
             }
             org.telegram.ui.ActionBar.h2 h2Var2 = ryVar.Z1;
             if (h2Var2 == null) {
-                h2Var2 = new bi.z8(this, 8);
+                h2Var2 = new bi.y8(this, 8);
             }
             org.telegram.ui.ActionBar.h2 h2Var3 = h2Var2;
             dw dwVar = new dw(i12, this, q02);

@@ -5,7 +5,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a7 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class a7 implements Runnable {
                         gpVar.e();
                     }
                     if (!g8Var.q2.c.isEmpty()) {
-                        org.telegram.messenger.ks.f(g8Var.a).k(org.telegram.messenger.ks.V3, g8Var.q2);
+                        org.telegram.messenger.ks.f(g8Var.a).k(org.telegram.messenger.ks.W3, g8Var.q2);
                         break;
                     } else {
                         MediaController.B().o();

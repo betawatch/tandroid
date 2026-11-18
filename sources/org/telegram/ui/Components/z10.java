@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class z10 implements org.telegram.messenger.fs {
     public static z10 f0 = null;
@@ -402,7 +402,7 @@ public final class z10 implements org.telegram.messenger.fs {
                 f0.a.setAlpha(0.0f);
                 f0.a.animate().alpha(0.7f).scaleY(1.0f).scaleX(1.0f).setDuration(350L).setInterpolator(new OvershootInterpolator()).start();
                 org.telegram.messenger.ks.f(f0.h).b(f0, org.telegram.messenger.ks.w2);
-                org.telegram.messenger.ks.e().b(f0, org.telegram.messenger.ks.Q4);
+                org.telegram.messenger.ks.e().b(f0, org.telegram.messenger.ks.R4);
                 org.telegram.messenger.ks.e().b(f0, org.telegram.messenger.ks.D2);
                 org.telegram.ui.Components.voip.e0.k();
             }
@@ -441,7 +441,7 @@ public final class z10 implements org.telegram.messenger.fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.w2 || i7 == org.telegram.messenger.ks.Q4) {
+        if (i7 == org.telegram.messenger.ks.w2 || i7 == org.telegram.messenger.ks.R4) {
             h(true);
         } else if (i7 == org.telegram.messenger.ks.D2) {
             k(org.telegram.messenger.t0.b);
@@ -450,7 +450,7 @@ public final class z10 implements org.telegram.messenger.fs {
 
     public final void e() {
         org.telegram.messenger.ks.f(this.h).n(this, org.telegram.messenger.ks.w2);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.Q4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.R4);
         org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.F2);
         org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.D2);
     }

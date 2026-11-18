@@ -35,9 +35,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x1 extends FrameLayout implements o0, fs {
     public static final float[] V = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -53,7 +53,7 @@ public final class x1 extends FrameLayout implements o0, fs {
     public float N;
     public final t1 O;
     public final r1 P;
-    public org.telegram.ui.Cells.s0 Q;
+    public org.telegram.ui.Cells.t0 Q;
     public final n0 R;
     public final TLRPC.Document S;
     public int T;
@@ -193,12 +193,12 @@ public final class x1 extends FrameLayout implements o0, fs {
                         r1Var.c.setColor(o4);
                     }
                 } else if (i10 == 13) {
-                    org.telegram.ui.Cells.s0 s0Var = new org.telegram.ui.Cells.s0();
-                    this.Q = s0Var;
-                    ArrayList arrayList2 = s0Var.c;
+                    org.telegram.ui.Cells.t0 t0Var = new org.telegram.ui.Cells.t0();
+                    this.Q = t0Var;
+                    ArrayList arrayList2 = t0Var.c;
                     if (arrayList2.isEmpty()) {
-                        for (int i17 = 0; i17 < s0Var.d; i17++) {
-                            arrayList2.add(new k(s0Var));
+                        for (int i17 = 0; i17 < t0Var.d; i17++) {
+                            arrayList2.add(new k(t0Var));
                         }
                     }
                 } else {
@@ -635,18 +635,18 @@ public final class x1 extends FrameLayout implements o0, fs {
                         }
                         canvas.drawLines(r1Var.d, paint2);
                     } else {
-                        org.telegram.ui.Cells.s0 s0Var = this.Q;
-                        if (s0Var != null) {
-                            ArrayList arrayList4 = s0Var.c;
+                        org.telegram.ui.Cells.t0 t0Var = this.Q;
+                        if (t0Var != null) {
+                            ArrayList arrayList4 = t0Var.c;
                             System.currentTimeMillis();
                             int i31 = 0;
                             while (i31 < arrayList4.size()) {
                                 k kVar = (k) arrayList4.get(i31);
-                                org.telegram.ui.Cells.s0 s0Var2 = kVar.m;
-                                Paint paint3 = (Paint) s0Var2.i;
+                                org.telegram.ui.Cells.t0 t0Var2 = kVar.m;
+                                Paint paint3 = (Paint) t0Var2.i;
                                 float f28 = kVar.l;
                                 if (f28 != 1.0f) {
-                                    float f29 = (s0Var2.e / kVar.j) + f28;
+                                    float f29 = (t0Var2.e / kVar.j) + f28;
                                     kVar.l = f29;
                                     if (f29 > 1.0f) {
                                         kVar.l = 1.0f;
@@ -655,7 +655,7 @@ public final class x1 extends FrameLayout implements o0, fs {
                                 if (kVar.f != null) {
                                     canvas.save();
                                     float pow2 = 1.0f - (((float) Math.pow(kVar.l - 0.5f, 2.0d)) * 4.0f);
-                                    float B = e2.B(pow2, 0.4f, 0.7f, kVar.k / s0Var2.b);
+                                    float B = e2.B(pow2, 0.4f, 0.7f, kVar.k / t0Var2.b);
                                     float f30 = f19;
                                     n10.k(kVar.i, f30, kVar.c, kVar.b - (kVar.h / f19), canvas);
                                     canvas.scale(B, B, kVar.h / f30, kVar.i / f30);
@@ -789,9 +789,9 @@ public final class x1 extends FrameLayout implements o0, fs {
         this.y = false;
         c();
         ks.f(this.s).n(this, ks.Y1);
-        org.telegram.ui.Cells.s0 s0Var = this.Q;
-        if (s0Var != null) {
-            HashMap hashMap = (HashMap) s0Var.f;
+        org.telegram.ui.Cells.t0 t0Var = this.Q;
+        if (t0Var != null) {
+            HashMap hashMap = (HashMap) t0Var.f;
             Iterator it = hashMap.values().iterator();
             while (it.hasNext()) {
                 ((Bitmap) it.next()).recycle();
@@ -802,7 +802,7 @@ public final class x1 extends FrameLayout implements o0, fs {
         hi.d0 d0Var = this.I;
         if (d0Var != null) {
             this.U = d0Var.getCurrentPosition();
-            this.I.release(new cd0(27));
+            this.I.release(new dd0(27));
             this.I = null;
         }
     }
@@ -858,9 +858,9 @@ public final class x1 extends FrameLayout implements o0, fs {
                     ((q1) arrayList.get(i14)).a(currentTimeMillis, true);
                 }
             }
-            org.telegram.ui.Cells.s0 s0Var = this.Q;
-            if (s0Var != null) {
-                ((RectF) s0Var.g).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            org.telegram.ui.Cells.t0 t0Var = this.Q;
+            if (t0Var != null) {
+                ((RectF) t0Var.g).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 ((RectF) this.Q.h).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 ((RectF) this.Q.g).inset(org.telegram.messenger.g0.L(0.0f), getMeasuredHeight() * 0.1f);
                 ArrayList arrayList2 = this.Q.c;
@@ -945,7 +945,7 @@ public final class x1 extends FrameLayout implements o0, fs {
             hi.d0 d0Var = this.I;
             if (d0Var != null) {
                 this.U = d0Var.getCurrentPosition();
-                this.I.release(new cd0(27));
+                this.I.release(new dd0(27));
                 this.I = null;
             }
             imageReceiver.Q0();

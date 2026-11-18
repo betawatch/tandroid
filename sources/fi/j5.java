@@ -24,11 +24,11 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.f40;
 import org.telegram.ui.h30;
 import org.telegram.ui.lb;
-import org.telegram.ui.lh0;
+import org.telegram.ui.mh0;
 import org.telegram.ui.sv;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class j5 implements View.OnClickListener {
             case 2:
                 int[] iArr = (int[]) obj3;
                 AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) obj2;
-                lh0 lh0Var = (lh0) obj;
+                mh0 mh0Var = (mh0) obj;
                 iArr[0] = ((Integer) view.getTag()).intValue();
                 SharedPreferences.Editor edit = mp.u1(j10.t0).g7.edit();
                 if (i11 == 1) {
@@ -130,7 +130,7 @@ public final /* synthetic */ class j5 implements View.OnClickListener {
                 }
                 edit.commit();
                 alertDialog$Builder.a.M0.run();
-                lh0Var.run();
+                mh0Var.run();
                 break;
             case 3:
                 f40 f40Var = (f40) obj3;

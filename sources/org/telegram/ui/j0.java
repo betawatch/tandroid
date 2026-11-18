@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j0 extends vf.b {
     public final /* synthetic */ int d = 0;
@@ -78,14 +78,14 @@ public final class j0 extends vf.b {
                 bn bnVar = mmVar.a;
                 bnVar.bc = 0;
                 bnVar.cc = null;
-                ((org.telegram.ui.Cells.q1) this.f).invalidate();
+                ((org.telegram.ui.Cells.r1) this.f).invalidate();
                 break;
         }
     }
 
-    public j0(mm mmVar, org.telegram.messenger.fj fjVar, org.telegram.ui.Cells.q1 q1Var) {
+    public j0(mm mmVar, org.telegram.messenger.fj fjVar, org.telegram.ui.Cells.r1 r1Var) {
         this.g = mmVar;
         this.e = fjVar;
-        this.f = q1Var;
+        this.f = r1Var;
     }
 }

@@ -35,7 +35,7 @@ import org.telegram.ui.Components.z41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class y extends sa implements t9 {
     public static final /* synthetic */ int w2 = 0;
@@ -48,7 +48,7 @@ public final class y extends sa implements t9 {
     public final ai.k0 Z1;
     public final ai.k0 a2;
     public final ai.k0 b2;
-    public final org.telegram.ui.Cells.n4 c2;
+    public final org.telegram.ui.Cells.o4 c2;
     public final org.telegram.ui.Components.n6 d2;
     public final w e2;
     public final w[] f2;
@@ -205,17 +205,17 @@ public final class y extends sa implements t9 {
             i7 = 2;
         }
         int i19 = org.telegram.ui.ActionBar.n6.L6;
-        org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context, i19, 21, 0, 0, false, true, i6Var);
-        this.c2 = n4Var;
-        linearLayout.addView(n4Var, ma.k(0.0f, 5.0f, 0.0f, 0.0f, -1, -2));
+        org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(context, i19, 21, 0, 0, false, true, i6Var);
+        this.c2 = o4Var;
+        linearLayout.addView(o4Var, ma.k(0.0f, 5.0f, 0.0f, 0.0f, -1, -2));
         org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, false, false, false);
         this.d2 = n6Var;
         n6Var.setTextSize(org.telegram.messenger.g0.L(12.5f));
         n6Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         n6Var.setSizeableBackground(org.telegram.ui.ActionBar.n6.b0(0, 0, 9, 9));
         n6Var.setHideBackgroundIfEmpty(true);
-        n4Var.setOnWidthUpdateListener(new a3.f(this, 18));
-        n4Var.addView(n6Var, ma.d(-1, 17.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
+        o4Var.setOnWidthUpdateListener(new a3.f(this, 18));
+        o4Var.addView(n6Var, ma.d(-1, 17.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
         w wVar = new w(context, i6Var);
         this.e2 = wVar;
         org.telegram.ui.Components.n6 n6Var2 = wVar.b;
@@ -223,9 +223,9 @@ public final class y extends sa implements t9 {
         n6Var2.setTextColor(org.telegram.ui.ActionBar.n6.w0(i19, this.J0));
         wVar.c(c22);
         linearLayout.addView(wVar, ma.k(0.0f, 0.0f, 0.0f, -7.0f, -1, -2));
-        org.telegram.ui.Cells.n4 n4Var2 = new org.telegram.ui.Cells.n4(context, i19, 21, 15, 0, false, false, i6Var);
-        n4Var2.setText(gd.M0(2131750304, null));
-        linearLayout.addView(n4Var2, ma.o(-1, -2));
+        org.telegram.ui.Cells.o4 o4Var2 = new org.telegram.ui.Cells.o4(context, i19, 21, 15, 0, false, false, i6Var);
+        o4Var2.setText(gd.M0(2131750304, null));
+        linearLayout.addView(o4Var2, ma.o(-1, -2));
         int i20 = 0;
         while (true) {
             w[] wVarArr = this.f2;
@@ -460,25 +460,25 @@ public final class y extends sa implements t9 {
         int d = this.h2.d();
         long value = this.Y1.getValue();
         long j3 = this.h2.e.bid_amount;
-        org.telegram.ui.Cells.n4 n4Var = this.c2;
+        org.telegram.ui.Cells.o4 o4Var = this.c2;
         boolean z12 = false;
         if (value <= j3) {
             z11 = true;
             if (d == 2) {
-                n4Var.c(gd.M0(2131750353, null), z10);
+                o4Var.c(gd.M0(2131750353, null), z10);
             } else if (d == 3) {
-                n4Var.c(gd.M0(2131750353, null), z10);
+                o4Var.c(gd.M0(2131750353, null), z10);
             } else if (d == 1) {
-                n4Var.c(gd.M0(2131750352, null), z10);
+                o4Var.c(gd.M0(2131750352, null), z10);
                 z11 = false;
                 z12 = true;
             } else {
-                n4Var.c(gd.M0(2131750355, null), z10);
+                o4Var.c(gd.M0(2131750355, null), z10);
             }
             this.p2.a(z12, z10);
             this.q2.a(z11, z10);
         }
-        n4Var.c(gd.M0(2131750355, null), z10);
+        o4Var.c(gd.M0(2131750355, null), z10);
         z11 = false;
         this.p2.a(z12, z10);
         this.q2.a(z11, z10);

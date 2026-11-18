@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xf implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class xf implements org.telegram.messenger.q10 {
                 break;
             case 1:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                n60 n60Var = (n60) obj3;
+                o60 o60Var = (o60) obj3;
                 TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 String str = LaunchActivity.C1;
@@ -46,11 +46,11 @@ public final /* synthetic */ class xf implements org.telegram.messenger.q10 {
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        org.telegram.messenger.g0.g3(new n60(i11, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
+                        org.telegram.messenger.g0.g3(new o60(i11, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
                     }
                     updates = null;
                 }
-                org.telegram.messenger.g0.g3(new ai.g1(launchActivity, n60Var, tL_error, updates, this.b, 21));
+                org.telegram.messenger.g0.g3(new ai.g1(launchActivity, o60Var, tL_error, updates, this.b, 21));
                 break;
             case 2:
                 PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
@@ -114,10 +114,10 @@ public final /* synthetic */ class xf implements org.telegram.messenger.q10 {
         }
     }
 
-    public /* synthetic */ xf(LaunchActivity launchActivity, n60 n60Var, int i7) {
+    public /* synthetic */ xf(LaunchActivity launchActivity, o60 o60Var, int i7) {
         this.a = 1;
         this.c = launchActivity;
-        this.d = n60Var;
+        this.d = o60Var;
         this.b = i7;
     }
 }

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.i8;
+import bi.h8;
 import c8.ma;
 import di.x8;
 import di.za;
@@ -31,7 +31,7 @@ import org.telegram.ui.Wallet.m7;
 import org.telegram.ui.bn;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class s extends sa implements fs {
     public final cg.a T1;
@@ -57,7 +57,7 @@ public final class s extends sa implements fs {
         ck0 ck0Var = this.o1;
         int i10 = this.u0;
         ck0Var.setPadding(i10, 0, i10, 0);
-        this.o1.setOnItemClickListener(new i8(this, 13));
+        this.o1.setOnItemClickListener(new h8(this, 13));
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;

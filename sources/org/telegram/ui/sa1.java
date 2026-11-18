@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sa1 implements Runnable {
     public final /* synthetic */ int a;
@@ -53,8 +53,8 @@ public final /* synthetic */ class sa1 implements Runnable {
                 break;
             case 3:
                 bb1 bb1Var3 = this.b;
-                lb0 lb0Var = bb1Var3.x;
-                if (lb0Var != null && lb0Var.getVisibility() == 0) {
+                mb0 mb0Var = bb1Var3.x;
+                if (mb0Var != null && mb0Var.getVisibility() == 0) {
                     bb1Var3.x.f[0].requestFocus();
                     break;
                 }

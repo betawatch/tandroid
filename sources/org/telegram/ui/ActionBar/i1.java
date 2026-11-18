@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.x9;
+import org.telegram.ui.Cells.aa;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.bu;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.z10;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.w7;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class i1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -168,15 +168,15 @@ public final class i1 implements ViewTreeObserver.OnPreDrawListener {
                 }
                 break;
             case 1:
-                z9 z9Var = (z9) ((y9) obj).b;
-                z9Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                z9Var.getTransitionParams().e();
-                z9Var.getTransitionParams().a();
-                z9Var.getTransitionParams().h = true;
-                z9Var.getTransitionParams().L1 = 0.0f;
+                aa aaVar = (aa) ((z9) obj).b;
+                aaVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                aaVar.getTransitionParams().e();
+                aaVar.getTransitionParams().a();
+                aaVar.getTransitionParams().h = true;
+                aaVar.getTransitionParams().L1 = 0.0f;
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat3.addUpdateListener(new org.telegram.ui.Cells.r(this, 8));
-                ofFloat3.addListener(new x9(this, 0));
+                ofFloat3.addListener(new y9(this, 0));
                 ofFloat3.start();
                 break;
             case 2:

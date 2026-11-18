@@ -46,7 +46,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class FragmentContextView extends FrameLayout implements org.telegram.messenger.fs, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener, org.telegram.ui.ActionBar.c6 {
     public static final float[] X0 = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
@@ -1717,7 +1717,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         VoIPService sharedInstance;
         TLRPC.GroupCallParticipant groupCallParticipant;
-        if (i7 == org.telegram.messenger.ks.F4) {
+        if (i7 == org.telegram.messenger.ks.G4) {
             d(false);
             return;
         }
@@ -1725,7 +1725,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
             e(false);
             return;
         }
-        int i11 = org.telegram.messenger.ks.H4;
+        int i11 = org.telegram.messenger.ks.I4;
         zg zgVar = this.n;
         if (i7 == i11) {
             if (zgVar != null) {
@@ -1793,11 +1793,11 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
             c(false);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.L4) {
+        if (i7 == org.telegram.messenger.ks.M4) {
             q(true);
             return;
         }
-        int i16 = org.telegram.messenger.ks.P4;
+        int i16 = org.telegram.messenger.ks.Q4;
         wc wcVar = this.a;
         if (i7 == i16) {
             if (VoIPService.getSharedInstance() == null || VoIPService.getSharedInstance().isMicMute()) {
@@ -1812,7 +1812,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
             }
             return;
         }
-        if (i7 != org.telegram.messenger.ks.Q4) {
+        if (i7 != org.telegram.messenger.ks.R4) {
             if (i7 == org.telegram.messenger.ks.e2 && this.V == 0) {
                 invalidate();
                 return;
@@ -2628,10 +2628,10 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
             if (h2Var.getParentActivity() instanceof LaunchActivity) {
                 LaunchActivity launchActivity = (LaunchActivity) h2Var.getParentActivity();
                 launchActivity.O0(pdVar.h.K1);
-                org.telegram.ui.pa0 pa0Var = new org.telegram.ui.pa0(2);
-                pa0Var.G0(pdVar.h);
-                pa0Var.M0 = new ai.d0(pdVar, org.telegram.messenger.fj.B0(pdVar.h.k), 5);
-                launchActivity.t0(pa0Var);
+                org.telegram.ui.qa0 qa0Var = new org.telegram.ui.qa0(2);
+                qa0Var.G0(pdVar.h);
+                qa0Var.M0 = new ai.d0(pdVar, org.telegram.messenger.fj.B0(pdVar.h.k), 5);
+                launchActivity.t0(qa0Var);
             }
         }
     }
@@ -2794,8 +2794,8 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
         m();
         if (this.p0) {
             xi.e eVar = new xi.e(org.telegram.messenger.ks.e(), this);
-            eVar.c(org.telegram.messenger.ks.F4);
-            eVar.c(org.telegram.messenger.ks.H4);
+            eVar.c(org.telegram.messenger.ks.G4);
+            eVar.c(org.telegram.messenger.ks.I4);
             this.M0 = eVar;
             d(true);
         } else {
@@ -2813,11 +2813,11 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
                 GroupCallMessagesController.getInstance(i7).subscribeToCallMessages(0L, this);
             }
             xi.e eVar3 = new xi.e(org.telegram.messenger.ks.e(), this);
-            eVar3.c(org.telegram.messenger.ks.L4);
+            eVar3.c(org.telegram.messenger.ks.M4);
             eVar3.c(org.telegram.messenger.ks.v2);
             eVar3.c(org.telegram.messenger.ks.D2);
+            eVar3.c(org.telegram.messenger.ks.R4);
             eVar3.c(org.telegram.messenger.ks.Q4);
-            eVar3.c(org.telegram.messenger.ks.P4);
             eVar3.c(org.telegram.messenger.ks.F2);
             this.M0 = eVar3;
             if (fi.c1.X != null) {

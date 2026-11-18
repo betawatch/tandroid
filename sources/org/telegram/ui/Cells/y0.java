@@ -1,36 +1,64 @@
 package org.telegram.ui.Cells;
 
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import java.util.Comparator;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y0 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Spanned b;
+public final class y0 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final ai.k0 a;
+    public final RadialProgressView b;
+    public final org.telegram.ui.ActionBar.i6 c;
+    public float d;
+    public int e;
 
-    public /* synthetic */ y0(Spanned spanned, int i7) {
-        this.a = i7;
-        this.b = spanned;
+    public y0(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.c = i6Var;
+        ai.k0 k0Var = new ai.k0(this, context);
+        this.a = k0Var;
+        k0Var.setWillNotDraw(false);
+        addView(k0Var, c8.ma.e(36, 36, 17));
+        RadialProgressView radialProgressView = new RadialProgressView(context, i6Var);
+        this.b = radialProgressView;
+        radialProgressView.setSize(org.telegram.messenger.g0.L(28.0f));
+        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.i1(i6Var) ? org.telegram.ui.ActionBar.n6.Ka : org.telegram.ui.ActionBar.n6.Zc, i6Var));
+        k0Var.addView(radialProgressView, c8.ma.e(32, 32, 17));
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int spanStart;
-        int spanStart2;
-        switch (this.a) {
-            case 0:
-                Spanned spanned = this.b;
-                spanStart = spanned.getSpanStart((qi.g) obj2);
-                spanStart2 = spanned.getSpanStart((qi.g) obj);
-                break;
-            default:
-                SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) this.b;
-                spanStart = spannableStringBuilder.getSpanStart((o9) obj2);
-                spanStart2 = spannableStringBuilder.getSpanStart((o9) obj);
-                break;
+    public final void a(float f10, int i7) {
+        if (this.d != f10) {
+            invalidate();
         }
-        return spanStart - spanStart2;
+        this.d = f10;
+        this.e = i7;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
+    }
+
+    public void setProgressVisible(boolean z10) {
+        this.a.setVisibility(z10 ? 0 : 4);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        org.telegram.ui.ActionBar.i6 i6Var = this.c;
+        try {
+            this.b.setProgressColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.i1(i6Var) ? org.telegram.ui.ActionBar.n6.Ka : org.telegram.ui.ActionBar.n6.Zc, i6Var));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

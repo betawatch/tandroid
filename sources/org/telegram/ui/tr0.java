@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,10 +87,10 @@ public final /* synthetic */ class tr0 implements Runnable {
                 break;
             case 4:
                 PrivacySettingsActivity privacySettingsActivity2 = (PrivacySettingsActivity) this.b;
-                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) this.c;
+                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) this.c;
                 boolean z12 = !privacySettingsActivity2.W;
                 privacySettingsActivity2.W = z12;
-                r8Var.setChecked(z12);
+                s8Var.setChecked(z12);
                 break;
             case 5:
                 ((st0) this.b).getMessagesController().r5(null, ((Long) this.c).longValue());
@@ -172,7 +172,7 @@ public final /* synthetic */ class tr0 implements Runnable {
                 View view = (View) this.c;
                 RectF rectF7 = ProfileActivity.Z6;
                 profileActivity7.getClass();
-                ((org.telegram.ui.Cells.m8) view).setChecked(profileActivity7.t2.g());
+                ((org.telegram.ui.Cells.n8) view).setChecked(profileActivity7.t2.g());
                 break;
             case 13:
                 ProfileActivity profileActivity8 = (ProfileActivity) this.b;

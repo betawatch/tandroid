@@ -13,17 +13,17 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.x10;
 import org.telegram.messenger.zy;
-import org.telegram.ui.Cells.na;
+import org.telegram.ui.Cells.oa;
 import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 import org.telegram.ui.qc;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements x10 {
     public final /* synthetic */ int a;
@@ -74,21 +74,21 @@ public final /* synthetic */ class e implements x10 {
                 int i10 = org.telegram.ui.ActionBar.e3.r;
                 break;
             case 8:
-                int i11 = na.n;
+                int i11 = oa.n;
                 break;
             case 9:
                 qc.f1((View) obj);
                 break;
             case 10:
                 View view4 = (View) obj;
-                if ((view4 instanceof org.telegram.ui.Cells.q1) && (messageObject = ((org.telegram.ui.Cells.q1) view4).getMessageObject()) != null) {
+                if ((view4 instanceof org.telegram.ui.Cells.r1) && (messageObject = ((org.telegram.ui.Cells.r1) view4).getMessageObject()) != null) {
                     messageObject.M1 = true;
                     break;
                 }
                 break;
             case 11:
                 View view5 = (View) obj;
-                if ((view5 instanceof org.telegram.ui.Cells.q1) && (messageObject2 = ((org.telegram.ui.Cells.q1) view5).getMessageObject()) != null) {
+                if ((view5 instanceof org.telegram.ui.Cells.r1) && (messageObject2 = ((org.telegram.ui.Cells.r1) view5).getMessageObject()) != null) {
                     messageObject2.M1 = true;
                     messageObject2.H = true;
                     break;
@@ -108,10 +108,10 @@ public final /* synthetic */ class e implements x10 {
                 }
             case 14:
                 View view7 = (View) obj;
-                if (view7 instanceof org.telegram.ui.Cells.g5) {
-                    org.telegram.ui.Cells.g5 g5Var = (org.telegram.ui.Cells.g5) view7;
-                    g5Var.b.invalidate();
-                    g5Var.c.invalidate();
+                if (view7 instanceof org.telegram.ui.Cells.h5) {
+                    org.telegram.ui.Cells.h5 h5Var = (org.telegram.ui.Cells.h5) view7;
+                    h5Var.b.invalidate();
+                    h5Var.c.invalidate();
                     break;
                 } else if (view7 instanceof kg.s1) {
                     ((kg.s1) view7).c.invalidate();
@@ -122,15 +122,15 @@ public final /* synthetic */ class e implements x10 {
                 }
             case 15:
                 View view8 = (View) obj;
-                if (view8 instanceof org.telegram.ui.Cells.z7) {
-                    ((org.telegram.ui.Cells.z7) view8).a(true);
+                if (view8 instanceof org.telegram.ui.Cells.a8) {
+                    ((org.telegram.ui.Cells.a8) view8).a(true);
                     break;
                 }
                 break;
             case 16:
                 View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.Cells.z7) {
-                    ((org.telegram.ui.Cells.z7) view9).c(true);
+                if (view9 instanceof org.telegram.ui.Cells.a8) {
+                    ((org.telegram.ui.Cells.a8) view9).c(true);
                     break;
                 }
                 break;
@@ -155,7 +155,7 @@ public final /* synthetic */ class e implements x10 {
                         break;
                     }
                 } else {
-                    org.telegram.messenger.g0.g3(new cd0(i7));
+                    org.telegram.messenger.g0.g3(new dd0(i7));
                     break;
                 }
                 break;

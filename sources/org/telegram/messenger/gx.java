@@ -15,7 +15,7 @@ import org.telegram.ui.hy0;
 import org.telegram.ui.p40;
 import org.telegram.ui.xs0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gx implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,13 +47,13 @@ public final /* synthetic */ class gx implements RequestDelegate {
         Object obj5 = this.d;
         switch (i7) {
             case 0:
-                g0.g3(new bi.d5((zy) obj5, tLObject, (TLRPC.InputFile) obj4, (TLRPC.InputMedia) obj3, (ly) obj2, this.b, (String) obj, 3));
+                g0.g3(new bi.c5((zy) obj5, tLObject, (TLRPC.InputFile) obj4, (TLRPC.InputMedia) obj3, (ly) obj2, this.b, (String) obj, 3));
                 break;
             case 1:
-                g0.g3(new bi.d5((org.telegram.ui.g4) obj5, this.b, (vf.b) obj4, tLObject, (String) obj, (org.telegram.ui.f0) obj3, (TLRPC.TL_messages_getWebPage) obj2));
+                g0.g3(new bi.c5((org.telegram.ui.g4) obj5, this.b, (vf.b) obj4, tLObject, (String) obj, (org.telegram.ui.f0) obj3, (TLRPC.TL_messages_getWebPage) obj2));
                 break;
             case 2:
-                g0.g3(new bi.d5(tLObject, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.i6) obj2, (p40) obj));
+                g0.g3(new bi.c5(tLObject, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.i6) obj2, (p40) obj));
                 break;
             case 3:
                 boolean[] zArr = (boolean[]) obj5;
@@ -73,7 +73,7 @@ public final /* synthetic */ class gx implements RequestDelegate {
             case 4:
                 String str = (String) obj;
                 String str2 = LaunchActivity.C1;
-                g0.g3(new bi.d5((LaunchActivity) obj5, tLObject, this.b, (org.telegram.ui.cx) obj4, (org.telegram.ui.ActionBar.h2) obj3, (TLRPC.User) obj2, str));
+                g0.g3(new bi.c5((LaunchActivity) obj5, tLObject, this.b, (org.telegram.ui.cx) obj4, (org.telegram.ui.ActionBar.h2) obj3, (TLRPC.User) obj2, str));
                 break;
             case 5:
                 g0.g3(new ce(tLObject, (org.telegram.ui.ActionBar.h2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (xs0) obj3, (com.google.android.gms.internal.clearcut.y0) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj, 3));

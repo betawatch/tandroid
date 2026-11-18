@@ -27,15 +27,15 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.i41;
 import org.telegram.ui.Components.vm0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class w extends x implements org.telegram.ui.ActionBar.c6, h9, i0, fs, org.telegram.messenger.y5 {
+public final class w extends x implements org.telegram.ui.ActionBar.c6, i9, i0, fs, org.telegram.messenger.y5 {
     public final int E;
     public int F;
     public final int G;
@@ -276,7 +276,7 @@ public final class w extends x implements org.telegram.ui.ActionBar.c6, h9, i0, 
         return (aVar == null || (rVar = aVar.g) == null || !rVar.b()) ? false : true;
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         this.V.e(arrayList);
     }
@@ -398,7 +398,7 @@ public final class w extends x implements org.telegram.ui.ActionBar.c6, h9, i0, 
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        i9 textSelectionHelper;
+        j9 textSelectionHelper;
         if (getDisplayDocument() == null) {
             return;
         }

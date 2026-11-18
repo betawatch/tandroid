@@ -4,7 +4,7 @@ import ah.h;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import bi.i8;
+import bi.h8;
 import c8.ma;
 import di.p6;
 import hi.d;
@@ -19,7 +19,6 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.g6;
 import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.bk0;
@@ -28,7 +27,7 @@ import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.z41;
 import v4.q0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class a extends sa {
     public z41 T1;
@@ -45,10 +44,10 @@ public final class a extends sa {
     */
     public a(Context context, TLRPC.Chat chat, long j3, x10 x10Var) {
         super(context, (i6) null, false);
-        g6 g6Var;
+        h6 h6Var;
         int i7;
         int i10;
-        g6 g6Var2;
+        h6 h6Var2;
         TLRPC.User c22 = mp.u1(this.a).c2(Long.valueOf(j3));
         TLRPC.Chat O0 = mp.u1(this.a).O0(Long.valueOf(-j3));
         this.X1 = o10.u(c22);
@@ -61,26 +60,26 @@ public final class a extends sa {
         this.V1 = frameLayout;
         frameLayout.setPadding(0, g0.L(3.0f), 0, g0.L(3.0f));
         frameLayout.setLayoutParams(new q0(-1, -2));
-        g6 g6Var3 = new g6(context, null);
+        h6 h6Var3 = new h6(context, null);
         if (O0 != null) {
-            g6Var = g6Var3;
+            h6Var = h6Var3;
             i7 = -1;
-            g6Var.x(O0, null, O0.title, gd.H(' ', "Members", O0.participants_count), false, false);
+            h6Var.x(O0, null, O0.title, gd.H(' ', "Members", O0.participants_count), false, false);
         } else {
-            g6Var = g6Var3;
+            h6Var = h6Var3;
             i7 = -1;
             if (c22 != null) {
                 i10 = -1;
-                g6Var2 = g6Var;
-                g6Var2.x(c22, null, n5.m(c22), gd.M0(2131753154, null), false, false);
-                frameLayout.addView(g6Var2, ma.c(-2.0f, i10));
+                h6Var2 = h6Var;
+                h6Var2.x(c22, null, n5.m(c22), gd.M0(2131753154, null), false, false);
+                frameLayout.addView(h6Var2, ma.c(-2.0f, i10));
                 ck0 ck0Var = this.o1;
                 int i11 = this.u0;
                 ck0Var.setPadding(i11, 0, i11, g0.L(64.0f) + g0.n);
                 this.o1.r1();
                 this.o1.setClipToPadding(false);
                 int i12 = 18;
-                this.o1.setOnItemClickListener(new i8(this, i12));
+                this.o1.setOnItemClickListener(new h8(this, i12));
                 d dVar = new d(context, this.J0, true);
                 if (chat == null) {
                     dVar.setText(gd.M0(v3.w(27, chat) ? 2131751963 : 2131751960, null));
@@ -94,15 +93,15 @@ public final class a extends sa {
             }
         }
         i10 = i7;
-        g6Var2 = g6Var;
-        frameLayout.addView(g6Var2, ma.c(-2.0f, i10));
+        h6Var2 = h6Var;
+        frameLayout.addView(h6Var2, ma.c(-2.0f, i10));
         ck0 ck0Var2 = this.o1;
         int i112 = this.u0;
         ck0Var2.setPadding(i112, 0, i112, g0.L(64.0f) + g0.n);
         this.o1.r1();
         this.o1.setClipToPadding(false);
         int i122 = 18;
-        this.o1.setOnItemClickListener(new i8(this, i122));
+        this.o1.setOnItemClickListener(new h8(this, i122));
         d dVar2 = new d(context, this.J0, true);
         if (chat == null) {
         }
@@ -143,15 +142,15 @@ public final class a extends sa {
         int i7 = this.Y1 + 1;
         ck0 ck0Var = this.o1;
         View T0 = ck0Var.T0(i7);
-        if (T0 instanceof h6) {
-            ((h6) T0).a(!z10);
+        if (T0 instanceof org.telegram.ui.Cells.i6) {
+            ((org.telegram.ui.Cells.i6) T0).a(!z10);
             z11 = false;
         } else {
             z11 = true;
         }
         View T02 = ck0Var.T0(this.Y1 + 2);
-        if (T02 instanceof h6) {
-            ((h6) T02).a(z10);
+        if (T02 instanceof org.telegram.ui.Cells.i6) {
+            ((org.telegram.ui.Cells.i6) T02).a(z10);
         } else {
             z11 = true;
         }

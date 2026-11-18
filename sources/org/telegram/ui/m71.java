@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class m71 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ x71 a;
@@ -58,10 +58,10 @@ public final class m71 extends org.telegram.ui.ActionBar.j {
                 k6Var.m = 4294967296L;
             }
             x71Var.b1();
-            org.telegram.messenger.ks.e().n(x71Var, org.telegram.messenger.ks.g4);
+            org.telegram.messenger.ks.e().n(x71Var, org.telegram.messenger.ks.h4);
             org.telegram.ui.ActionBar.n6.z1(x71Var.g0, true, false, false, true, false);
             org.telegram.ui.ActionBar.n6.p();
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, x71Var.g0, Boolean.valueOf(x71Var.h0), null, -1);
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, x71Var.g0, Boolean.valueOf(x71Var.h0), null, -1);
             x71Var.finishFragment();
             return;
         }

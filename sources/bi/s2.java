@@ -16,11 +16,11 @@ import org.telegram.ui.Components.z41;
 import org.telegram.ui.bn;
 import org.telegram.ui.cn0;
 import org.telegram.ui.d21;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 import org.telegram.ui.fm0;
 import org.telegram.ui.kl;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class s2 extends g.p {
     public final /* synthetic */ int c;
@@ -55,15 +55,15 @@ public final class s2 extends g.p {
                 l41 G = z41Var.G(i7 - 1);
                 return (G == null || (i10 = G.v) == -1) ? uyVar.J : i10;
             case 1:
-                l41 G2 = ((g8) this.d).e2.G(i7 - 1);
+                l41 G2 = ((f8) this.d).e2.G(i7 - 1);
                 if (G2 == null || (i11 = G2.v) == -1) {
                     return 3;
                 }
                 return i11;
             case 2:
-                l8 l8Var = (l8) this.d;
-                uy uyVar2 = l8Var.W1;
-                z41 z41Var2 = l8Var.c2;
+                k8 k8Var = (k8) this.d;
+                uy uyVar2 = k8Var.W1;
+                z41 z41Var2 = k8Var.c2;
                 if (z41Var2 == null) {
                     return uyVar2.J;
                 }
@@ -150,9 +150,9 @@ public final class s2 extends g.p {
                 }
                 return iw0Var.o1.d;
             case 14:
-                eg0 eg0Var = (eg0) this.d;
-                fj fjVar4 = (fj) eg0Var.N.get((r1.size() - 1) - i7);
-                aj l10 = eg0Var.l(fjVar4);
+                fg0 fg0Var = (fg0) this.d;
+                fj fjVar4 = (fj) fg0Var.N.get((r1.size() - 1) - i7);
+                aj l10 = fg0Var.l(fjVar4);
                 if (l10 != null) {
                     return l10.d(fjVar4).i;
                 }

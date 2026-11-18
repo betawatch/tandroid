@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class kr0 implements org.telegram.ui.Cells.j7 {
+public final class kr0 implements org.telegram.ui.Cells.k7 {
     public final /* synthetic */ gt0 a;
 
     public kr0(gt0 gt0Var) {
         this.a = gt0Var;
     }
 
-    @Override // org.telegram.ui.Cells.j7
+    @Override // org.telegram.ui.Cells.k7
     public final void a(String str, boolean z10) {
         gt0 gt0Var = this.a;
         org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
@@ -29,12 +29,12 @@ public final class kr0 implements org.telegram.ui.Cells.j7 {
         h2Var.showDialog(j3);
     }
 
-    @Override // org.telegram.ui.Cells.j7
+    @Override // org.telegram.ui.Cells.k7
     public final boolean b() {
         return !this.a.F1;
     }
 
-    @Override // org.telegram.ui.Cells.j7
+    @Override // org.telegram.ui.Cells.k7
     public final void c(TLRPC.WebPage webPage, org.telegram.messenger.fj fjVar) {
         gt0 gt0Var = this.a;
         gu.O0(gt0Var.y1, fjVar, gt0Var.u1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);

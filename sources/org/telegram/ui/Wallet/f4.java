@@ -50,7 +50,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.k71;
 import org.telegram.ui.l60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class f4 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final Path E;
@@ -687,7 +687,7 @@ public final class f4 extends FrameLayout implements org.telegram.ui.ActionBar.c
                         q9Var2.setImageDrawable(mqVar);
                     }
                     TL_wallet.nftItem nftitem3 = wallettransaction.nft;
-                    String h = z21 ? bi.v4.h(nftitem3.gift) : nftitem3.name;
+                    String h = z21 ? bi.u4.h(nftitem3.gift) : nftitem3.name;
                     TextView textView4 = this.W;
                     textView4.setText(h);
                     textView4.setTypeface(this.g0 ? Typeface.DEFAULT : org.telegram.messenger.g0.o());

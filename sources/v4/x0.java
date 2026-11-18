@@ -15,9 +15,9 @@ import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.of;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class x0 {
     public int a;
@@ -374,9 +374,9 @@ public final class x0 {
                 }
             } else {
                 f1 U2 = RecyclerView.U(view);
-                md0 md0Var = recyclerView.e;
-                va vaVar = (va) md0Var.c;
-                int indexOfChild = ((RecyclerView) ((of) md0Var.b).b).indexOfChild(view);
+                nd0 nd0Var = recyclerView.e;
+                va vaVar = (va) nd0Var.c;
+                int indexOfChild = ((RecyclerView) ((of) nd0Var.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
@@ -384,10 +384,10 @@ public final class x0 {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
                 vaVar.C(indexOfChild);
-                md0Var.K(view);
-                md0 md0Var2 = recyclerView.e;
-                va vaVar2 = (va) md0Var2.c;
-                int indexOfChild2 = ((RecyclerView) ((of) md0Var2.b).b).indexOfChild(view);
+                nd0Var.K(view);
+                nd0 nd0Var2 = recyclerView.e;
+                va vaVar2 = (va) nd0Var2.c;
+                int indexOfChild2 = ((RecyclerView) ((of) nd0Var2.b).b).indexOfChild(view);
                 int D = (indexOfChild2 == -1 || vaVar2.G(indexOfChild2)) ? -1 : indexOfChild2 - vaVar2.D(indexOfChild2);
                 if (D == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());

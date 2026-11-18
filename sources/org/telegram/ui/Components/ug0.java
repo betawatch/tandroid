@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ug0 extends FrameLayout {
     public static final /* synthetic */ int S = 0;
@@ -24,7 +24,7 @@ public final class ug0 extends FrameLayout {
     public lr G;
     public sb0 H;
     public sb0 I;
-    public org.telegram.ui.ca0 J;
+    public org.telegram.ui.da0 J;
     public sg0 K;
     public TextView L;
     public boolean M;
@@ -32,7 +32,7 @@ public final class ug0 extends FrameLayout {
     public int O;
     public boolean P;
     public rg0 Q;
-    public org.telegram.ui.z90 R;
+    public org.telegram.ui.aa0 R;
     public VelocityTracker a;
     public int b;
     public int c;
@@ -173,26 +173,26 @@ public final class ug0 extends FrameLayout {
         float value = getValue();
         String y10 = org.telegram.messenger.gd.y(value, 2, Boolean.valueOf(this.P));
         int i7 = (int) value;
-        org.telegram.ui.pa0 pa0Var = this.J.b;
-        ArrayList arrayList = pa0Var.o0;
-        k8.a aVar = pa0Var.L;
+        org.telegram.ui.qa0 qa0Var = this.J.b;
+        ArrayList arrayList = qa0Var.o0;
+        k8.a aVar = qa0Var.L;
         if (aVar != null) {
             aVar.e1(i7);
             if (z10) {
                 hi.u5 u5Var = (hi.u5) ((pb.b) org.telegram.messenger.t0.k()).onCreateLatLngBoundsBuilder();
-                u5Var.q(new org.telegram.messenger.ab(pa0Var.z0.getLatitude(), pa0Var.z0.getLongitude()));
+                u5Var.q(new org.telegram.messenger.ab(qa0Var.z0.getLatitude(), qa0Var.z0.getLongitude()));
                 try {
                     int max = Math.max(i7, org.telegram.messenger.ks.Z3);
                     org.telegram.messenger.ab a10 = u5Var.j().a();
                     double d = max;
-                    org.telegram.messenger.ab z02 = org.telegram.ui.pa0.z0(a10, d, d);
+                    org.telegram.messenger.ab z02 = org.telegram.ui.qa0.z0(a10, d, d);
                     double d2 = -max;
-                    u5Var.q(org.telegram.ui.pa0.z0(a10, d2, d2));
+                    u5Var.q(org.telegram.ui.qa0.z0(a10, d2, d2));
                     u5Var.q(z02);
                     org.telegram.messenger.ba j3 = u5Var.j();
                     try {
-                        pa0Var.F.n(org.telegram.messenger.g0.L(70.0f), 0, org.telegram.messenger.g0.L(70.0f), ((int) ((pa0Var.O.getCustomView().getMeasuredHeight() - org.telegram.messenger.g0.L(40.0f)) + pa0Var.P.getTranslationY())) + pa0Var.h0 + pa0Var.c0);
-                        pa0Var.F.c(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngBounds(j3, 0));
+                        qa0Var.F.n(org.telegram.messenger.g0.L(70.0f), 0, org.telegram.messenger.g0.L(70.0f), ((int) ((qa0Var.O.getCustomView().getMeasuredHeight() - org.telegram.messenger.g0.L(40.0f)) + qa0Var.P.getTranslationY())) + qa0Var.h0 + qa0Var.c0);
+                        qa0Var.F.c(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngBounds(j3, 0));
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);
                     }
@@ -200,16 +200,16 @@ public final class ug0 extends FrameLayout {
                 }
             }
         }
-        if (!org.telegram.messenger.n5.z(pa0Var.m0)) {
+        if (!org.telegram.messenger.n5.z(qa0Var.m0)) {
             int size = arrayList.size();
             for (int i10 = 0; i10 < size; i10++) {
-                org.telegram.ui.la0 la0Var = (org.telegram.ui.la0) arrayList.get(i10);
-                if (la0Var.b != null && !org.telegram.messenger.o10.C(la0Var.c)) {
-                    TLRPC.GeoPoint geoPoint = la0Var.b.media.geo;
+                org.telegram.ui.ma0 ma0Var = (org.telegram.ui.ma0) arrayList.get(i10);
+                if (ma0Var.b != null && !org.telegram.messenger.o10.C(ma0Var.c)) {
+                    TLRPC.GeoPoint geoPoint = ma0Var.b.media.geo;
                     Location location = new Location("network");
                     location.setLatitude(geoPoint.lat);
                     location.setLongitude(geoPoint._long);
-                    if (pa0Var.z0.distanceTo(location) > i7) {
+                    if (qa0Var.z0.distanceTo(location) > i7) {
                     }
                 }
             }

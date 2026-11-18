@@ -79,17 +79,17 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.b31;
 import org.telegram.ui.bb1;
-import org.telegram.ui.bd0;
+import org.telegram.ui.cd0;
 import org.telegram.ui.d61;
 import org.telegram.ui.hq0;
 import org.telegram.ui.jw0;
 import org.telegram.ui.k71;
-import org.telegram.ui.oa0;
 import org.telegram.ui.p51;
-import org.telegram.ui.r90;
+import org.telegram.ui.pa0;
+import org.telegram.ui.s90;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class n6 extends b51 implements fs {
     public static Typeface Y0;
@@ -158,12 +158,12 @@ public final class n6 extends b51 implements fs {
     public final p4 x = new zs() { // from class: org.telegram.ui.Wallet.p4
         @Override // org.telegram.ui.Components.zs
         public final void a(int i7, boolean z10) {
-            bi.d6 d6Var;
+            bi.c6 c6Var;
             n6 n6Var = n6.this;
             gk gkVar = n6Var.w;
-            if ((i7 == 1 || i7 == 3) && (d6Var = n6Var.a) != null) {
+            if ((i7 == 1 || i7 == 3) && (c6Var = n6Var.a) != null) {
                 n6Var.s = z10;
-                d6Var.removeCallbacks(gkVar);
+                c6Var.removeCallbacks(gkVar);
                 gkVar.run();
             }
         }
@@ -669,7 +669,7 @@ public final class n6 extends b51 implements fs {
             int i7 = n6Var.currentAccount;
             mp.u1(i7).f2().a(j12, null, new ai.y1(i7, new v4(n6Var, 4), 8));
         } else {
-            if ((n6Var.getParentActivity() instanceof LaunchActivity) && new r90((LaunchActivity) n6Var.getParentActivity(), n6Var.currentAccount, null, false).g(i12)) {
+            if ((n6Var.getParentActivity() instanceof LaunchActivity) && new s90((LaunchActivity) n6Var.getParentActivity(), n6Var.currentAccount, null, false).g(i12)) {
                 return;
             }
             org.telegram.messenger.g0.g3(new q4(n6Var, 9));
@@ -1331,7 +1331,7 @@ public final class n6 extends b51 implements fs {
                                     e3VarArr2 = e3VarArr;
                                     if (runnable != null) {
                                         g11.setText(gd.M0(2131742802, null));
-                                        g11.setOnClickListener(new bd0(23, runnable, e3VarArr2));
+                                        g11.setOnClickListener(new cd0(23, runnable, e3VarArr2));
                                     } else {
                                         final int i22 = 0;
                                         g11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.a5
@@ -1610,14 +1610,14 @@ public final class n6 extends b51 implements fs {
             return false;
         }
         ViewParent parent = this.o0.getParent();
-        bi.d6 d6Var = this.a;
-        return parent == d6Var.f3.m(d6Var.g3.E.size() - 1);
+        bi.c6 c6Var = this.a;
+        return parent == c6Var.f3.m(c6Var.g3.E.size() - 1);
     }
 
     public final boolean D0() {
         View m10;
-        bi.d6 d6Var = this.a;
-        return d6Var != null && (m10 = d6Var.f3.m(this.h)) != null && this.B0 < 0.5f && m10.getBottom() > this.a.getPaddingTop();
+        bi.c6 c6Var = this.a;
+        return c6Var != null && (m10 = c6Var.f3.m(this.h)) != null && this.B0 < 0.5f && m10.getBottom() > this.a.getPaddingTop();
     }
 
     public final boolean E0() {
@@ -1782,7 +1782,7 @@ public final class n6 extends b51 implements fs {
             linearLayout.addView(dVar, c8.ma.o(-1, 48));
             l5Var.O = scrollView;
             l5Var.U0 = false;
-            linearLayout2.getChildAt(0).setOnClickListener(new bd0(22, l5Var, nftitem));
+            linearLayout2.getChildAt(0).setOnClickListener(new cd0(22, l5Var, nftitem));
             linearLayout2.getChildAt(1).setOnClickListener(new o3(parentActivity, 1));
             dVar.setOnClickListener(new o3(l5Var, 2));
             l5Var.show();
@@ -1880,9 +1880,9 @@ public final class n6 extends b51 implements fs {
 
     public final void U0() {
         this.s = false;
-        bi.d6 d6Var = this.a;
-        if (d6Var != null) {
-            d6Var.E2.b.remove(this.x);
+        bi.c6 c6Var = this.a;
+        if (c6Var != null) {
+            c6Var.E2.b.remove(this.x);
             this.a.removeCallbacks(this.w);
         }
         b6 b6Var = this.e;
@@ -2303,11 +2303,11 @@ public final class n6 extends b51 implements fs {
     }
 
     public final void b1() {
-        bi.d6 d6Var = this.a;
-        if (d6Var == null || this.e == null) {
+        bi.c6 c6Var = this.a;
+        if (c6Var == null || this.e == null) {
             return;
         }
-        float b10 = d6Var.E2.b(1);
+        float b10 = c6Var.E2.b(1);
         this.e.setAdditionalTilt(Math.max(0.0f, (this.A0 * 10.0f) + ((((float) Math.sqrt(Utilities.l(this.A0))) * 90.0f) - 10.0f)) + Math.min(10.0f, this.a.E2.b(3) * 40.0f) + (-Math.min(10.0f, b10 * 40.0f)));
         this.e.setUseGyroscope(1.0f - ((float) Math.pow(this.A0, 0.33000001311302185d)));
     }
@@ -2324,11 +2324,11 @@ public final class n6 extends b51 implements fs {
 
     public final void c1(boolean z10) {
         boolean S0 = S0();
-        bi.d6 d6Var = this.a;
+        bi.c6 c6Var = this.a;
         e51[] e51VarArr = this.u0;
-        if (d6Var != null && this.r0 != S0) {
+        if (c6Var != null && this.r0 != S0) {
             this.r0 = S0;
-            d6Var.C0();
+            c6Var.C0();
             for (e51 e51Var : e51VarArr) {
                 if (e51Var != null) {
                     e51Var.C0();
@@ -2395,10 +2395,10 @@ public final class n6 extends b51 implements fs {
         }
         this.k0 = null;
         View createView = super.createView(context);
-        oa0 oa0Var = new oa0(this, context);
-        oa0Var.addView(createView, c8.ma.c(-1.0f, -1));
-        this.fragmentView = oa0Var;
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, oa0Var, getResourceProvider());
+        pa0 pa0Var = new pa0(this, context);
+        pa0Var.addView(createView, c8.ma.c(-1.0f, -1));
+        this.fragmentView = pa0Var;
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, pa0Var, getResourceProvider());
         this.simpleActionBar.setClipChildren(false);
         this.simpleActionBar.setClipToPadding(false);
         org.telegram.ui.ActionBar.g5 t6 = this.simpleActionBar.t();
@@ -2591,7 +2591,7 @@ public final class n6 extends b51 implements fs {
         c6Var.setClipChildren(false);
         this.n.setClipToPadding(false);
         this.n.addView(this.e, c8.ma.c(-2.0f, -1));
-        oa0Var.addView(this.n, c8.ma.c(-1.0f, -1));
+        pa0Var.addView(this.n, c8.ma.c(-1.0f, -1));
         this.a.setClipChildren(false);
         this.a.setClipToPadding(false);
         this.v0 = this.e.getBalanceLayout();
@@ -2679,9 +2679,9 @@ public final class n6 extends b51 implements fs {
         a1(this.e.getStickerStyle());
         this.G0 = u0.D(this.currentAccount).H();
         this.a.setDescendantFocusability(131072);
-        r8 r8Var2 = new r8(this, this.e, new k8.a(20, this, oa0Var), null);
+        r8 r8Var2 = new r8(this, this.e, new k8.a(20, this, pa0Var), null);
         this.k0 = r8Var2;
-        oa0Var.addView(r8Var2, c8.ma.c(-1.0f, -1));
+        pa0Var.addView(r8Var2, c8.ma.c(-1.0f, -1));
         this.l0 = "";
         this.o0 = new k5(this, context, i7);
         int i19 = 9;
@@ -2743,12 +2743,12 @@ public final class n6 extends b51 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        bi.d6 d6Var;
+        bi.c6 c6Var;
         z41 z41Var;
         if (i10 != this.currentAccount) {
             return;
         }
-        if (i7 == ks.c4 && this.w0 != null) {
+        if (i7 == ks.d4 && this.w0 != null) {
             W0();
             Iterator it = this.T0.iterator();
             while (it.hasNext()) {
@@ -2766,8 +2766,8 @@ public final class n6 extends b51 implements fs {
                 if (obj instanceof TL_account.Password) {
                     this.V0 = true;
                     this.W0 = ((TL_account.Password) obj).has_password;
-                    bi.d6 d6Var2 = this.a;
-                    if (d6Var2 == null || (z41Var = d6Var2.g3) == null) {
+                    bi.c6 c6Var2 = this.a;
+                    if (c6Var2 == null || (z41Var = c6Var2.g3) == null) {
                         return;
                     }
                     z41Var.O(true);
@@ -2777,12 +2777,12 @@ public final class n6 extends b51 implements fs {
             getConnectionsManager().sendRequestTyped(new TL_account.getPassword(), new d3.b(1), new e(this, 7));
             return;
         }
-        if (i7 != ks.d4 || objArr.length <= 0) {
+        if (i7 != ks.e4 || objArr.length <= 0) {
             return;
         }
         Object obj2 = objArr[0];
         t0 t0Var = this.G0;
-        if (obj2 != t0Var || (d6Var = this.a) == null || d6Var.g3 == null) {
+        if (obj2 != t0Var || (c6Var = this.a) == null || c6Var.g3 == null) {
             return;
         }
         if (t0Var.b.isEmpty()) {
@@ -2799,10 +2799,10 @@ public final class n6 extends b51 implements fs {
         if (e51Var == null) {
             return;
         }
-        bi.d6 d6Var = this.a;
-        int paddingTop = (d6Var != null ? d6Var.getPaddingTop() : 0) + this.p0 + (i7 == 1 ? org.telegram.messenger.g0.L(4.0f) : 0);
-        bi.d6 d6Var2 = this.a;
-        int paddingBottom = (d6Var2 != null ? d6Var2.getPaddingBottom() : 0) + (i7 == 1 ? org.telegram.messenger.g0.L(12.0f) : 0);
+        bi.c6 c6Var = this.a;
+        int paddingTop = (c6Var != null ? c6Var.getPaddingTop() : 0) + this.p0 + (i7 == 1 ? org.telegram.messenger.g0.L(4.0f) : 0);
+        bi.c6 c6Var2 = this.a;
+        int paddingBottom = (c6Var2 != null ? c6Var2.getPaddingBottom() : 0) + (i7 == 1 ? org.telegram.messenger.g0.L(12.0f) : 0);
         if (e51Var.getPaddingTop() == paddingTop && e51Var.getPaddingBottom() == paddingBottom) {
             return;
         }
@@ -2941,9 +2941,9 @@ public final class n6 extends b51 implements fs {
         if (j6Var != null) {
             j6Var.c();
         }
-        bi.d6 d6Var = this.a;
-        if (d6Var != null) {
-            d6Var.C0();
+        bi.c6 c6Var = this.a;
+        if (c6Var != null) {
+            c6Var.C0();
         }
         e51 B0 = B0();
         if (B0 != null) {
@@ -2958,9 +2958,9 @@ public final class n6 extends b51 implements fs {
         if (p6.k0.compareAndSet(false, true)) {
             p6.l0.postRunnable(new d5(context, 2));
         }
-        getNotificationCenter().c(this, ks.c4);
-        getNotificationCenter().c(this, ks.A3);
         getNotificationCenter().c(this, ks.d4);
+        getNotificationCenter().c(this, ks.A3);
+        getNotificationCenter().c(this, ks.e4);
         getNotificationCenter().c(this, ks.q0);
         u0 D = u0.D(this.currentAccount);
         l0 B = D.B();
@@ -3022,9 +3022,9 @@ public final class n6 extends b51 implements fs {
         if (j6Var != null) {
             j6Var.b(null);
         }
-        getNotificationCenter().n(this, ks.c4);
-        getNotificationCenter().n(this, ks.A3);
         getNotificationCenter().n(this, ks.d4);
+        getNotificationCenter().n(this, ks.A3);
+        getNotificationCenter().n(this, ks.e4);
         getNotificationCenter().n(this, ks.q0);
         org.telegram.messenger.g0.E2(this.F);
         t0 t0Var = this.G0;
@@ -3167,8 +3167,8 @@ public final class n6 extends b51 implements fs {
             public final void d(Canvas canvas, RectF rectF) {
                 Canvas canvas2;
                 n6 n6Var = n6.this;
-                bi.d6 d6Var = n6Var.a;
-                ih.d.a(d6Var, canvas, rectF, d6Var, (ViewGroup) n6Var.fragmentView);
+                bi.c6 c6Var = n6Var.a;
+                ih.d.a(c6Var, canvas, rectF, c6Var, (ViewGroup) n6Var.fragmentView);
                 b6 b6Var = n6Var.e;
                 if (b6Var == null || n6Var.n == null || b6Var.getVisibility() != 0 || n6Var.e.getAlpha() <= 0.0f) {
                     return;

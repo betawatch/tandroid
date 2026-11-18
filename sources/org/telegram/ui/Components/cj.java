@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class cj extends ki implements org.telegram.messenger.fs, te.b {
     public String E;
@@ -63,7 +63,7 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
     public boolean n0;
     public final FrameLayout r;
     public final oi s;
-    public final bi.d6 w;
+    public final bi.c6 w;
     public final ri x;
     public final cs y;
 
@@ -98,14 +98,14 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
             public final void run() {
                 switch (i12) {
                     case 0:
-                        bi.d6 d6Var = this.b.w;
+                        bi.c6 c6Var = this.b.w;
                         int i13 = -1;
-                        boolean canScrollVertically = d6Var.canScrollVertically(-1);
+                        boolean canScrollVertically = c6Var.canScrollVertically(-1);
                         int i14 = -1;
                         int i15 = 0;
                         while (true) {
-                            if (i15 < d6Var.getChildCount()) {
-                                View childAt = d6Var.getChildAt(i15);
+                            if (i15 < c6Var.getChildCount()) {
+                                View childAt = c6Var.getChildAt(i15);
                                 int R = RecyclerView.R(childAt);
                                 int top = childAt.getTop();
                                 if (R >= 0) {
@@ -118,13 +118,13 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
                                 }
                             }
                         }
-                        d6Var.g3.O(true);
+                        c6Var.g3.O(true);
                         if (!canScrollVertically) {
-                            d6Var.f3.h1(0, 0);
+                            c6Var.f3.h1(0, 0);
                             return;
                         } else {
                             if (i13 >= 0) {
-                                d6Var.f3.h1(i13, i14 - d6Var.getPaddingTop());
+                                c6Var.f3.h1(i13, i14 - c6Var.getPaddingTop());
                                 return;
                             }
                             return;
@@ -237,14 +237,14 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
             public final void run() {
                 switch (i7) {
                     case 0:
-                        bi.d6 d6Var = this.b.w;
+                        bi.c6 c6Var = this.b.w;
                         int i13 = -1;
-                        boolean canScrollVertically = d6Var.canScrollVertically(-1);
+                        boolean canScrollVertically = c6Var.canScrollVertically(-1);
                         int i14 = -1;
                         int i15 = 0;
                         while (true) {
-                            if (i15 < d6Var.getChildCount()) {
-                                View childAt = d6Var.getChildAt(i15);
+                            if (i15 < c6Var.getChildCount()) {
+                                View childAt = c6Var.getChildAt(i15);
                                 int R = RecyclerView.R(childAt);
                                 int top = childAt.getTop();
                                 if (R >= 0) {
@@ -257,13 +257,13 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
                                 }
                             }
                         }
-                        d6Var.g3.O(true);
+                        c6Var.g3.O(true);
                         if (!canScrollVertically) {
-                            d6Var.f3.h1(0, 0);
+                            c6Var.f3.h1(0, 0);
                             return;
                         } else {
                             if (i13 >= 0) {
-                                d6Var.f3.h1(i13, i14 - d6Var.getPaddingTop());
+                                c6Var.f3.h1(i13, i14 - c6Var.getPaddingTop());
                                 return;
                             }
                             return;
@@ -376,14 +376,14 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
             public final void run() {
                 switch (i10) {
                     case 0:
-                        bi.d6 d6Var = this.b.w;
+                        bi.c6 c6Var = this.b.w;
                         int i13 = -1;
-                        boolean canScrollVertically = d6Var.canScrollVertically(-1);
+                        boolean canScrollVertically = c6Var.canScrollVertically(-1);
                         int i14 = -1;
                         int i15 = 0;
                         while (true) {
-                            if (i15 < d6Var.getChildCount()) {
-                                View childAt = d6Var.getChildAt(i15);
+                            if (i15 < c6Var.getChildCount()) {
+                                View childAt = c6Var.getChildAt(i15);
                                 int R = RecyclerView.R(childAt);
                                 int top = childAt.getTop();
                                 if (R >= 0) {
@@ -396,13 +396,13 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
                                 }
                             }
                         }
-                        d6Var.g3.O(true);
+                        c6Var.g3.O(true);
                         if (!canScrollVertically) {
-                            d6Var.f3.h1(0, 0);
+                            c6Var.f3.h1(0, 0);
                             return;
                         } else {
                             if (i13 >= 0) {
-                                d6Var.f3.h1(i13, i14 - d6Var.getPaddingTop());
+                                c6Var.f3.h1(i13, i14 - c6Var.getPaddingTop());
                                 return;
                             }
                             return;
@@ -507,7 +507,7 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
         org.telegram.messenger.ks.f(this.b.H3).c(this, org.telegram.messenger.ks.f2);
         org.telegram.messenger.ks.f(this.b.H3).c(this, org.telegram.messenger.ks.h2);
         org.telegram.messenger.ks.f(this.b.H3).c(this, org.telegram.messenger.ks.g2);
-        org.telegram.messenger.ks.f(this.b.H3).c(this, org.telegram.messenger.ks.V3);
+        org.telegram.messenger.ks.f(this.b.H3).c(this, org.telegram.messenger.ks.W3);
         this.H = true;
         final int i13 = 4;
         Utilities.e.c(new Runnable(this) { // from class: org.telegram.ui.Components.ti
@@ -521,14 +521,14 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
             public final void run() {
                 switch (i13) {
                     case 0:
-                        bi.d6 d6Var = this.b.w;
+                        bi.c6 c6Var = this.b.w;
                         int i132 = -1;
-                        boolean canScrollVertically = d6Var.canScrollVertically(-1);
+                        boolean canScrollVertically = c6Var.canScrollVertically(-1);
                         int i14 = -1;
                         int i15 = 0;
                         while (true) {
-                            if (i15 < d6Var.getChildCount()) {
-                                View childAt = d6Var.getChildAt(i15);
+                            if (i15 < c6Var.getChildCount()) {
+                                View childAt = c6Var.getChildAt(i15);
                                 int R = RecyclerView.R(childAt);
                                 int top = childAt.getTop();
                                 if (R >= 0) {
@@ -541,13 +541,13 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
                                 }
                             }
                         }
-                        d6Var.g3.O(true);
+                        c6Var.g3.O(true);
                         if (!canScrollVertically) {
-                            d6Var.f3.h1(0, 0);
+                            c6Var.f3.h1(0, 0);
                             return;
                         } else {
                             if (i132 >= 0) {
-                                d6Var.f3.h1(i132, i14 - d6Var.getPaddingTop());
+                                c6Var.f3.h1(i132, i14 - c6Var.getPaddingTop());
                                 return;
                             }
                             return;
@@ -676,14 +676,14 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
             public final void run() {
                 switch (i11) {
                     case 0:
-                        bi.d6 d6Var = this.b.w;
+                        bi.c6 c6Var = this.b.w;
                         int i132 = -1;
-                        boolean canScrollVertically = d6Var.canScrollVertically(-1);
+                        boolean canScrollVertically = c6Var.canScrollVertically(-1);
                         int i14 = -1;
                         int i15 = 0;
                         while (true) {
-                            if (i15 < d6Var.getChildCount()) {
-                                View childAt = d6Var.getChildAt(i15);
+                            if (i15 < c6Var.getChildCount()) {
+                                View childAt = c6Var.getChildAt(i15);
                                 int R = RecyclerView.R(childAt);
                                 int top = childAt.getTop();
                                 if (R >= 0) {
@@ -696,13 +696,13 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
                                 }
                             }
                         }
-                        d6Var.g3.O(true);
+                        c6Var.g3.O(true);
                         if (!canScrollVertically) {
-                            d6Var.f3.h1(0, 0);
+                            c6Var.f3.h1(0, 0);
                             return;
                         } else {
                             if (i132 >= 0) {
-                                d6Var.f3.h1(i132, i14 - d6Var.getPaddingTop());
+                                c6Var.f3.h1(i132, i14 - c6Var.getPaddingTop());
                                 return;
                             }
                             return;
@@ -817,22 +817,22 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
         FrameLayout.LayoutParams d2 = c8.ma.d(-1, -2.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d2).topMargin = org.telegram.messenger.f3.C(27.0f, org.telegram.messenger.g0.m, ((ViewGroup.MarginLayoutParams) d2).topMargin);
         viewGroup.addView(csVar, d2);
-        bi.d6 d6Var = new bi.d6(this, context, siVar.H3, new d(this, 6), new wi(this), new wi(this), i6Var);
-        this.w = d6Var;
-        d6Var.g3.r = false;
-        d6Var.r1();
-        setBlur3Capture(d6Var);
-        this.d = d6Var;
+        bi.c6 c6Var = new bi.c6(this, context, siVar.H3, new d(this, 6), new wi(this), new wi(this), i6Var);
+        this.w = c6Var;
+        c6Var.g3.r = false;
+        c6Var.r1();
+        setBlur3Capture(c6Var);
+        this.d = c6Var;
         this.h = true;
         this.f = true;
-        d6Var.setClipToPadding(false);
-        d6Var.setHorizontalScrollBarEnabled(false);
-        d6Var.setVerticalScrollBarEnabled(false);
-        addView(d6Var, c8.ma.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.ActionBar.u6.l(d6Var, 21, org.telegram.ui.ActionBar.n6.A5, i6Var);
-        d6Var.setOnScrollListener(new oa(this, i7));
+        c6Var.setClipToPadding(false);
+        c6Var.setHorizontalScrollBarEnabled(false);
+        c6Var.setVerticalScrollBarEnabled(false);
+        addView(c6Var, c8.ma.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.ActionBar.u6.l(c6Var, 21, org.telegram.ui.ActionBar.n6.A5, i6Var);
+        c6Var.setOnScrollListener(new oa(this, i7));
         addView(viewGroup, c8.ma.e(-1, org.telegram.messenger.ks.e3, 51));
-        d6Var.g3.O(false);
+        c6Var.g3.O(false);
         Q();
         int i14 = this.b.H3;
         this.K = new org.telegram.messenger.gp(i14, org.telegram.messenger.j10.i(i14).e());
@@ -862,9 +862,9 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
     public final void I(ki kiVar) {
         S();
         this.K.b();
-        bi.d6 d6Var = this.w;
-        d6Var.f3.h1(0, 0);
-        d6Var.g3.O(false);
+        bi.c6 c6Var = this.w;
+        c6Var.f3.h1(0, 0);
+        c6Var.g3.O(false);
     }
 
     @Override // org.telegram.ui.Components.ki
@@ -930,9 +930,9 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
             T();
             return;
         }
-        if (view instanceof org.telegram.ui.Cells.g7) {
-            org.telegram.ui.Cells.g7 g7Var = (org.telegram.ui.Cells.g7) view;
-            org.telegram.messenger.ve veVar = (org.telegram.messenger.ve) g7Var.getTag();
+        if (view instanceof org.telegram.ui.Cells.h7) {
+            org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) view;
+            org.telegram.messenger.ve veVar = (org.telegram.messenger.ve) h7Var.getTag();
             si siVar = this.b;
             siVar.getClass();
             int i7 = 1;
@@ -946,7 +946,7 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
                 if (hashSet.contains(veVar)) {
                     hashSet.remove(veVar);
                     l41Var.e = false;
-                    g7Var.e(false, true);
+                    h7Var.e(false, true);
                     i7 = 2;
                 } else {
                     if (this.F >= 0) {
@@ -965,7 +965,7 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
                     }
                     l41Var.e = true;
                     hashSet.add(veVar);
-                    g7Var.e(true, true);
+                    h7Var.e(true, true);
                 }
             }
             siVar.L1(i7);
@@ -1096,36 +1096,36 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11 = org.telegram.messenger.ks.g2;
         int i12 = org.telegram.messenger.ks.h2;
-        bi.d6 d6Var = this.w;
+        bi.c6 c6Var = this.w;
         int i13 = org.telegram.messenger.ks.f2;
         if (i7 != i13 && i7 != i12 && i7 != i11) {
-            if (i7 == org.telegram.messenger.ks.V3 && objArr[0] == this.K && d6Var != null) {
-                d6Var.g3.O(true);
+            if (i7 == org.telegram.messenger.ks.W3 && objArr[0] == this.K && c6Var != null) {
+                c6Var.g3.O(true);
                 return;
             }
             return;
         }
         if (i7 == i13 || i7 == i11) {
-            int childCount = d6Var.getChildCount();
+            int childCount = c6Var.getChildCount();
             for (int i14 = 0; i14 < childCount; i14++) {
-                View childAt = d6Var.getChildAt(i14);
-                if (childAt instanceof org.telegram.ui.Cells.g7) {
-                    org.telegram.ui.Cells.g7 g7Var = (org.telegram.ui.Cells.g7) childAt;
-                    if (g7Var.getMessage() != null) {
-                        g7Var.g(false, true);
+                View childAt = c6Var.getChildAt(i14);
+                if (childAt instanceof org.telegram.ui.Cells.h7) {
+                    org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) childAt;
+                    if (h7Var.getMessage() != null) {
+                        h7Var.g(false, true);
                     }
                 }
             }
             return;
         }
         if (i7 == i12 && ((org.telegram.messenger.fj) objArr[0]).T == 0) {
-            int childCount2 = d6Var.getChildCount();
+            int childCount2 = c6Var.getChildCount();
             for (int i15 = 0; i15 < childCount2; i15++) {
-                View childAt2 = d6Var.getChildAt(i15);
-                if (childAt2 instanceof org.telegram.ui.Cells.g7) {
-                    org.telegram.ui.Cells.g7 g7Var2 = (org.telegram.ui.Cells.g7) childAt2;
-                    if (g7Var2.getMessage() != null) {
-                        g7Var2.g(false, true);
+                View childAt2 = c6Var.getChildAt(i15);
+                if (childAt2 instanceof org.telegram.ui.Cells.h7) {
+                    org.telegram.ui.Cells.h7 h7Var2 = (org.telegram.ui.Cells.h7) childAt2;
+                    if (h7Var2.getMessage() != null) {
+                        h7Var2.g(false, true);
                     }
                 }
             }
@@ -1134,12 +1134,12 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
 
     @Override // org.telegram.ui.Components.ki
     public int getCurrentItemTop() {
-        bi.d6 d6Var = this.w;
-        if (d6Var.getChildCount() > 0) {
+        bi.c6 c6Var = this.w;
+        if (c6Var.getChildCount() > 0) {
             boolean z10 = false;
             int i7 = Integer.MAX_VALUE;
-            for (int i10 = 0; i10 < d6Var.getChildCount(); i10++) {
-                View childAt = d6Var.getChildAt(i10);
+            for (int i10 = 0; i10 < c6Var.getChildCount(); i10++) {
+                View childAt = c6Var.getChildAt(i10);
                 int R = RecyclerView.R(childAt);
                 if (R == 0) {
                     z10 = true;
@@ -1193,14 +1193,14 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
     public ArrayList<org.telegram.ui.ActionBar.w6> getThemeDescriptions() {
         ArrayList<org.telegram.ui.ActionBar.w6> arrayList = new ArrayList<>();
         int i7 = org.telegram.ui.ActionBar.n6.A5;
-        bi.d6 d6Var = this.w;
-        arrayList.add(new org.telegram.ui.ActionBar.w6(d6Var, 32768, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(d6Var, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(d6Var, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.n6.k0, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.d7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(d6Var, TLObject.FLAG_13, new Class[]{org.telegram.ui.Cells.g7.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(d6Var, TLObject.FLAG_14, new Class[]{org.telegram.ui.Cells.g7.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.k7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(d6Var, 4, new Class[]{org.telegram.ui.Cells.g7.class}, org.telegram.ui.ActionBar.n6.f3, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.G6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(d6Var, 4, new Class[]{org.telegram.ui.Cells.g7.class}, org.telegram.ui.ActionBar.n6.g3, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.z6));
+        bi.c6 c6Var = this.w;
+        arrayList.add(new org.telegram.ui.ActionBar.w6(c6Var, 32768, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(c6Var, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(c6Var, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.n6.k0, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.d7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(c6Var, TLObject.FLAG_13, new Class[]{org.telegram.ui.Cells.h7.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(c6Var, TLObject.FLAG_14, new Class[]{org.telegram.ui.Cells.h7.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.k7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(c6Var, 4, new Class[]{org.telegram.ui.Cells.h7.class}, org.telegram.ui.ActionBar.n6.f3, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.G6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(c6Var, 4, new Class[]{org.telegram.ui.Cells.h7.class}, org.telegram.ui.ActionBar.n6.g3, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.z6));
         return arrayList;
     }
 
@@ -1212,7 +1212,7 @@ public final class cj extends ki implements org.telegram.messenger.fs, te.b {
         int i7 = siVar.H3;
         org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.h2);
         org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.g2);
-        org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.V3);
+        org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.W3);
     }
 
     @Override // org.telegram.ui.Components.ki

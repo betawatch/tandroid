@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class m0 extends sa implements org.telegram.messenger.fs {
     public final LinearLayout A2;
@@ -85,7 +85,7 @@ public final class m0 extends sa implements org.telegram.messenger.fs {
     public final l0 v2;
     public final ImageView w2;
     public final FrameLayout x2;
-    public final org.telegram.ui.Cells.k3 y2;
+    public final org.telegram.ui.Cells.l3 y2;
     public hi.m3 z2;
 
     public m0(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
@@ -134,20 +134,20 @@ public final class m0 extends sa implements org.telegram.messenger.fs {
         frameLayout.addView(l0Var, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 12.0f, 0.0f, 12.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.x2 = frameLayout2;
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.gd.M0(2131754056, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c, i6Var);
-        this.y2 = k3Var;
-        org.telegram.ui.Cells.i3 i3Var = k3Var.d;
-        i3Var.setImeOptions(6);
-        i3Var.setMaxLines(5);
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.M0(2131754056, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c, i6Var);
+        this.y2 = l3Var;
+        org.telegram.ui.Cells.j3 j3Var = l3Var.d;
+        j3Var.setImeOptions(6);
+        j3Var.setMaxLines(5);
         ShapeDrawable d03 = org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(20.0f), org.telegram.ui.ActionBar.n6.w0(i11, i6Var));
         org.telegram.ui.ActionBar.q6 M2 = org.telegram.ui.ActionBar.u6.M(i11);
-        k3Var.setBackground(d03);
-        org.telegram.ui.ActionBar.u6.j(k3Var, d03, M2, null, i6Var);
-        i3Var.addTextChangedListener(new o(this));
-        frameLayout2.addView(k3Var, c8.ma.c(-2.0f, -1));
+        l3Var.setBackground(d03);
+        org.telegram.ui.ActionBar.u6.j(l3Var, d03, M2, null, i6Var);
+        j3Var.addTextChangedListener(new o(this));
+        frameLayout2.addView(l3Var, c8.ma.c(-2.0f, -1));
         int i13 = 0;
         frameLayout2.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
-        i3Var.setPadding(org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(53.0f), org.telegram.messenger.g0.L(15.0f));
+        j3Var.setPadding(org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(53.0f), org.telegram.messenger.g0.L(15.0f));
         l0 l0Var2 = new l0(context, this.a, 0, true, i6Var);
         this.v2 = l0Var2;
         l0Var2.setDivider(true);
@@ -227,7 +227,7 @@ public final class m0 extends sa implements org.telegram.messenger.fs {
         this.o1.setOnScrollListener(new bi.q1(this, i12));
         this.P2.O(false);
         org.telegram.messenger.g0.g3(new a(this, i13));
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.a4);
+        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.b4);
     }
 
     public static void e1(m0 m0Var, View view) {
@@ -589,13 +589,13 @@ public final class m0 extends sa implements org.telegram.messenger.fs {
 
     public final void C1() {
         String str = this.G2;
-        org.telegram.ui.Cells.k3 k3Var = this.y2;
-        boolean equals = TextUtils.equals(str, k3Var.d.getText().toString());
+        org.telegram.ui.Cells.l3 l3Var = this.y2;
+        boolean equals = TextUtils.equals(str, l3Var.d.getText().toString());
         boolean z10 = !equals;
         if (this.F2 == z10) {
             return;
         }
-        ViewPropertyAnimator animate = k3Var.d.animate();
+        ViewPropertyAnimator animate = l3Var.d.animate();
         this.F2 = z10;
         org.telegram.messenger.n10.n(animate, !equals ? 1.0f : 0.5f, 320L);
         this.P2.O(true);
@@ -683,14 +683,14 @@ public final class m0 extends sa implements org.telegram.messenger.fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.a4) {
+        if (i7 == org.telegram.messenger.ks.b4) {
             E1();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.a4);
+        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.b4);
         org.telegram.messenger.e eVar = this.s2;
         if (eVar != null) {
             eVar.d = false;

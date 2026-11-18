@@ -14,12 +14,12 @@ import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class l7 extends org.telegram.ui.Components.sa implements fs {
     public di.f0 T1;
-    public final org.telegram.ui.Cells.k3 U1;
-    public final org.telegram.ui.Cells.k3 V1;
+    public final org.telegram.ui.Cells.l3 U1;
+    public final org.telegram.ui.Cells.l3 V1;
     public final FrameLayout W1;
     public final d X1;
     public boolean Y1;
@@ -44,18 +44,18 @@ public final class l7 extends org.telegram.ui.Components.sa implements fs {
         Z0();
         this.D1 = org.telegram.messenger.g0.L(4.0f);
         this.E1 = org.telegram.messenger.g0.L(-15.0f);
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, gd.M0(2131744397, null), true, false, -1, d5Var);
-        this.U1 = k3Var;
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, gd.M0(2131744397, null), true, false, -1, d5Var);
+        this.U1 = l3Var;
         int i7 = 1;
         g7 g7Var = new g7(this, i7);
-        org.telegram.ui.Cells.i3 i3Var = k3Var.d;
-        i3Var.setImeOptions(6);
+        org.telegram.ui.Cells.j3 j3Var = l3Var.d;
+        j3Var.setImeOptions(6);
         int i10 = 2;
-        i3Var.setOnEditorActionListener(new m.r2(g7Var, i10));
-        i3Var.setHandlesColor(-12476440);
-        i3Var.setCursorColor(-11230757);
-        i3Var.setText("https://");
-        i3Var.setSelection(8);
+        j3Var.setOnEditorActionListener(new m.r2(g7Var, i10));
+        j3Var.setHandlesColor(-12476440);
+        j3Var.setCursorColor(-11230757);
+        j3Var.setText("https://");
+        j3Var.setSelection(8);
         TextView textView = new TextView(getContext());
         textView.setTextSize(1, 12.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -74,24 +74,24 @@ public final class l7 extends org.telegram.ui.Components.sa implements fs {
         textView.setBackground(k02);
         org.telegram.ui.ActionBar.u6.j(textView, k02, K, K2, d5Var);
         c8.ra.b(textView, 0.1f, 1.5f);
-        k3Var.addView(textView, c8.ma.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
+        l3Var.addView(textView, c8.ma.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
         r1 r1Var = new r1(14, this, textView);
         textView.setOnClickListener(new ai.v2(23, this, r1Var));
         r1Var.run();
-        i3Var.addTextChangedListener(new bi.v(7, this, r1Var));
-        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, gd.M0(2131744401, null), true, false, -1, d5Var);
-        this.V1 = k3Var2;
+        j3Var.addTextChangedListener(new bi.v(7, this, r1Var));
+        org.telegram.ui.Cells.l3 l3Var2 = new org.telegram.ui.Cells.l3(context, gd.M0(2131744401, null), true, false, -1, d5Var);
+        this.V1 = l3Var2;
         g7 g7Var2 = new g7(this, i7);
-        org.telegram.ui.Cells.i3 i3Var2 = k3Var2.d;
-        i3Var2.setImeOptions(6);
-        i3Var2.setOnEditorActionListener(new m.r2(g7Var2, i10));
+        org.telegram.ui.Cells.j3 j3Var2 = l3Var2.d;
+        j3Var2.setImeOptions(6);
+        j3Var2.setOnEditorActionListener(new m.r2(g7Var2, i10));
         FrameLayout frameLayout = new FrameLayout(context);
         this.W1 = frameLayout;
         d dVar = new d(context, d5Var, true);
         this.X1 = dVar;
         dVar.i(gd.M0(2131744410, null), false, true);
         dVar.setOnClickListener(new f7(this, 1));
-        dVar.setEnabled(g1(k3Var.getText().toString()));
+        dVar.setEnabled(g1(l3Var.getText().toString()));
         frameLayout.addView(dVar, c8.ma.d(-1, 48.0f, ks.E1, 10.0f, 10.0f, 10.0f, 10.0f));
         this.v1 = 0.2f;
         this.J1 = true;

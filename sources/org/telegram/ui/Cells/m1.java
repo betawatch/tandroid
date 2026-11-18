@@ -1,95 +1,211 @@
 package org.telegram.ui.Cells;
 
 import android.graphics.RectF;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import org.telegram.messenger.ImageReceiver;
+import android.text.style.CharacterStyle;
+import java.util.ArrayList;
+import org.telegram.messenger.cj;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.i10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.o80;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class m1 {
-    public final boolean a;
-    public final ImageReceiver b;
-    public final org.telegram.ui.Components.b9 c;
-    public final RectF d;
-    public final mc e;
-    public StaticLayout f;
-    public StaticLayout g;
-    public StaticLayout h;
-    public boolean i;
-    public int j;
-    public y k;
-    public int l;
-    public o80 m;
-    public boolean n;
-    public final float[] o;
+public interface m1 {
+    void A0();
 
-    public m1(q1 q1Var, boolean z10) {
-        ImageReceiver imageReceiver = new ImageReceiver(q1Var);
-        this.b = imageReceiver;
-        this.c = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
-        this.d = new RectF();
-        this.e = new mc(q1Var);
-        this.o = new float[8];
-        this.a = z10;
-        imageReceiver.J0(org.telegram.messenger.g0.L(16.0f) / 2);
-        if (q1Var.O0) {
-            imageReceiver.P();
-        }
-    }
+    void B(r1 r1Var);
 
-    public final void a(String str, TLObject tLObject, CharSequence charSequence, TextPaint textPaint, CharSequence charSequence2, int i7) {
-        TLRPC.ChatPhoto chatPhoto;
-        TLRPC.UserProfilePhoto userProfilePhoto;
-        int L = i7 - org.telegram.messenger.g0.L(22.0f);
-        this.j = org.telegram.messenger.g0.L(16.0f);
-        StaticLayout X2 = q1.X2(str, q1.xd, L);
-        this.f = X2;
-        if (X2 != null) {
-            int L2 = org.telegram.messenger.g0.L(4.0f) + q1.L1(X2);
-            L -= L2;
-            this.j = org.telegram.messenger.f3.C(6.0f, L2, this.j);
-        }
-        int i10 = 0;
-        boolean z10 = tLObject != null && (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || (chatPhoto = ((TLRPC.Chat) tLObject).photo) == null || chatPhoto.photo_small == null : (userProfilePhoto = ((TLRPC.User) tLObject).photo) == null || userProfilePhoto.photo_small == null);
-        this.i = z10;
-        ImageReceiver imageReceiver = this.b;
-        if (z10) {
-            org.telegram.ui.Components.b9 b9Var = this.c;
-            b9Var.p(tLObject);
-            imageReceiver.i0(tLObject, b9Var, null);
-            L -= org.telegram.messenger.g0.L(21.0f);
-            this.j = org.telegram.messenger.f3.C(21.0f, this.f == null ? org.telegram.messenger.g0.L(6.0f) : 0, this.j);
-        } else {
-            imageReceiver.f();
-        }
-        SpannableStringBuilder N3 = q1.N3(charSequence2);
-        int i11 = i7 / 2;
-        StaticLayout X22 = q1.X2(charSequence, textPaint, L - (N3 != null ? org.telegram.messenger.g0.L(4.0f) + (N3 == null ? 0 : Math.min(i11, (int) Math.ceil(q1.yd.measureText(N3, 0, N3.length())))) : 0));
-        this.g = X22;
-        if (X22 != null) {
-            int L3 = org.telegram.messenger.g0.L(4.0f) + q1.L1(X22);
-            L -= L3;
-            this.j = ((this.f != null || this.i) ? 0 : org.telegram.messenger.g0.L(6.0f)) + L3 + this.j;
-        }
-        StaticLayout X23 = L > org.telegram.messenger.g0.L(24.0f) ? q1.X2(N3, q1.yd, Math.min(i11, L)) : null;
-        this.h = X23;
-        if (X23 == null) {
-            if (this.g == null && this.f == null) {
-                return;
-            }
-            this.j -= org.telegram.messenger.g0.L(4.0f);
-            return;
-        }
-        int i12 = this.j;
-        if (this.f == null && !this.i && this.g == null) {
-            i10 = org.telegram.messenger.g0.L(6.0f);
-        }
-        this.j = q1.L1(this.h) + i10 + i12;
-    }
+    void B0(r1 r1Var, TLObject tLObject, boolean z10);
+
+    void B1(r1 r1Var, boolean z10, boolean z11);
+
+    void C0(r1 r1Var, float f10, float f11);
+
+    void C1(r1 r1Var);
+
+    void E(r1 r1Var);
+
+    void F0(r1 r1Var);
+
+    void F1(r1 r1Var, boolean z10);
+
+    void H0(r1 r1Var, boolean z10, boolean z11);
+
+    boolean H1(r1 r1Var, TLRPC.Chat chat);
+
+    void I(r1 r1Var, org.telegram.messenger.p2 p2Var);
+
+    void I0(r1 r1Var);
+
+    void I1(r1 r1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto);
+
+    boolean J1();
+
+    void K(r1 r1Var);
+
+    void K1(r1 r1Var, int i7);
+
+    void L(cj cjVar);
+
+    boolean L0(long j3);
+
+    void L1(r1 r1Var);
+
+    void N(r1 r1Var, TLRPC.Document document, RectF rectF);
+
+    void N0(r1 r1Var);
+
+    void O0(r1 r1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton);
+
+    void O1(fj fjVar);
+
+    void P(r1 r1Var);
+
+    void Q1(r1 r1Var, TLRPC.WebPage webPage, String str, boolean z10);
+
+    void R(fj fjVar);
+
+    CharacterStyle R1(r1 r1Var);
+
+    boolean S(r1 r1Var, TLRPC.TodoItem todoItem, boolean z10);
+
+    void S1(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10);
+
+    boolean T();
+
+    void T0(r1 r1Var, CharacterStyle characterStyle, boolean z10);
+
+    boolean T1(r1 r1Var, fj fjVar);
+
+    boolean U(r1 r1Var);
+
+    void U1();
+
+    boolean V0(r1 r1Var, boolean z10);
+
+    boolean W();
+
+    void W0(r1 r1Var);
+
+    void X(r1 r1Var, TLRPC.Chat chat, int i7, float f10, float f11, boolean z10);
+
+    void X0(r1 r1Var);
+
+    void X1(r1 r1Var, TLRPC.MessageExtendedMedia messageExtendedMedia);
+
+    void Y(r1 r1Var);
+
+    void Y1(r1 r1Var, TLRPC.User user, TLRPC.Document document, String str);
+
+    int Z();
+
+    boolean Z1(r1 r1Var, TLRPC.PollAnswer pollAnswer);
+
+    void a2(r1 r1Var, i10 i10Var);
+
+    boolean b();
+
+    void c();
+
+    jh.a c0();
+
+    fr0 c2();
+
+    boolean d0(r1 r1Var);
+
+    boolean e0(r1 r1Var, TLRPC.User user);
+
+    void e2(String str, String str2);
+
+    boolean f1(fj fjVar);
+
+    boolean f2(long j3);
+
+    void g2(r1 r1Var, int i7, float f10, float f11, boolean z10);
+
+    boolean h();
+
+    void h0(int i7);
+
+    boolean h2(r1 r1Var, TLRPC.TodoItem todoItem);
+
+    String i(r1 r1Var);
+
+    boolean i0();
+
+    void i1();
+
+    void j0(r1 r1Var, float f10, float f11);
+
+    void j2(r1 r1Var);
+
+    int k0(r1 r1Var);
+
+    void k1(r1 r1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto);
+
+    void l(r1 r1Var, ArrayList arrayList, int i7, int i10, int i11);
+
+    void l0(r1 r1Var);
+
+    void l2(r1 r1Var, long j3);
+
+    void m();
+
+    boolean n0();
+
+    void o0(String str);
+
+    void p(r1 r1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i7);
+
+    boolean p0(org.telegram.ui.Components.x5 x5Var);
+
+    void p1(r1 r1Var, int i7);
+
+    boolean p2(r1 r1Var, TL_iv.PageBlock pageBlock);
+
+    void q(r1 r1Var);
+
+    void q0(r1 r1Var, float f10, float f11);
+
+    void q2(r1 r1Var);
+
+    void s(r1 r1Var);
+
+    void s2();
+
+    void t1(r1 r1Var, float f10, float f11);
+
+    void t2(r1 r1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f10, float f11);
+
+    void u0(r1 r1Var, TLRPC.User user, float f10, float f11);
+
+    void v();
+
+    boolean v2(int i7);
+
+    void w(r1 r1Var);
+
+    void w0(r1 r1Var, float f10, float f11, boolean z10);
+
+    boolean x1();
+
+    void x2();
+
+    void y(r1 r1Var);
+
+    boolean y0(fj fjVar);
+
+    void y2(r1 r1Var, int i7, int i10);
+
+    String z(long j3);
+
+    void z0(r1 r1Var);
+
+    boolean z1(r1 r1Var, int i7);
+
+    k9 z2();
 }

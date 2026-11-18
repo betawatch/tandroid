@@ -22,7 +22,7 @@ import org.telegram.ui.Components.nx;
 import org.telegram.ui.wn;
 import org.telegram.ui.wt0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class m1 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new ai.b((a2) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 1));
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new ai.b((a9) this.b, tLObject, (TLRPC.TL_inputStorePaymentGiftPremium) this.c, tL_error, (TLRPC.TL_payments_canPurchaseStore) this.d, 2));
+                org.telegram.messenger.g0.g3(new ai.b((z8) this.b, tLObject, (TLRPC.TL_inputStorePaymentGiftPremium) this.c, tL_error, (TLRPC.TL_payments_canPurchaseStore) this.d, 2));
                 break;
             case 2:
                 di.f6 f6Var = (di.f6) this.b;
@@ -107,7 +107,7 @@ public final /* synthetic */ class m1 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new ai.b((di.x8) this.b, tL_error, (org.telegram.ui.Wallet.e0) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 10));
                 break;
             case 7:
-                org.telegram.messenger.g0.g3(new ai.b((di.x8) this.b, tL_error, (c8) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 4));
+                org.telegram.messenger.g0.g3(new ai.b((di.x8) this.b, tL_error, (b8) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 4));
                 break;
             case 8:
                 org.telegram.messenger.g0.g3(new ai.s((fi.r3) this.b, tLObject, (TL_stories.StoryItem) this.c, (x10) this.d, 15));

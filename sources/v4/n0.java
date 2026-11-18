@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.of;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class n0 {
     public jh.g a;
@@ -62,15 +62,15 @@ public abstract class n0 {
             }
             x0 x0Var = recyclerView.b;
             recyclerView.z0();
-            md0 md0Var = recyclerView.e;
-            va vaVar = (va) md0Var.c;
-            of ofVar = (of) md0Var.b;
+            nd0 nd0Var = recyclerView.e;
+            va vaVar = (va) nd0Var.c;
+            of ofVar = (of) nd0Var.b;
             int indexOfChild = ((RecyclerView) ofVar.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                md0Var.K(view);
+                nd0Var.K(view);
             } else if (vaVar.G(indexOfChild)) {
                 vaVar.I(indexOfChild);
-                md0Var.K(view);
+                nd0Var.K(view);
                 ofVar.x0(indexOfChild);
             } else {
                 z10 = false;

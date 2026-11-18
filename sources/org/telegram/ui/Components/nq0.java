@@ -6,7 +6,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class nq0 extends org.telegram.ui.oq0 {
     public final /* synthetic */ gt0 a;
@@ -73,17 +73,17 @@ public final class nq0 extends org.telegram.ui.oq0 {
                             i17 = R;
                         }
                         int[] iArr = new int[2];
-                        if (childAt instanceof org.telegram.ui.Cells.o7) {
-                            org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) childAt;
-                            linkImageView = o7Var.c;
-                            org.telegram.messenger.fj messageObject = o7Var.getMessageObject();
+                        if (childAt instanceof org.telegram.ui.Cells.p7) {
+                            org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) childAt;
+                            linkImageView = p7Var.c;
+                            org.telegram.messenger.fj messageObject = p7Var.getMessageObject();
                             if (messageObject != null) {
                                 i10 = i12;
                                 int e12 = messageObject.e1();
                                 boolean z15 = z14;
                                 z12 = z15;
                                 if (e12 == fjVar.e1()) {
-                                    o7Var.getLocationInWindow(iArr);
+                                    p7Var.getLocationInWindow(iArr);
                                     iArr[i10] = Math.round(linkImageView.L0) + iArr[i10];
                                     iArr[z15 ? 1 : 0] = Math.round(linkImageView.M0) + iArr[z15 ? 1 : 0];
                                     z13 = z15;
@@ -109,7 +109,7 @@ public final class nq0 extends org.telegram.ui.oq0 {
                                         }
                                         if (PhotoViewer.L1(fjVar) && (pinnedHeader = lq0Var.getPinnedHeader()) != null) {
                                             int height = (zq0Var == null || zq0Var.getVisibility() != 0) ? 0 : zq0Var.getHeight() - org.telegram.messenger.g0.L(2.5f);
-                                            boolean z16 = childAt instanceof org.telegram.ui.Cells.h7;
+                                            boolean z16 = childAt instanceof org.telegram.ui.Cells.i7;
                                             if (z16) {
                                                 height += org.telegram.messenger.g0.L(8.0f);
                                             }
@@ -138,11 +138,11 @@ public final class nq0 extends org.telegram.ui.oq0 {
                         } else {
                             i10 = i12;
                             boolean z17 = z14;
-                            if (childAt instanceof org.telegram.ui.Cells.h7) {
-                                org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) childAt;
+                            if (childAt instanceof org.telegram.ui.Cells.i7) {
+                                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) childAt;
                                 z12 = z17;
-                                if (h7Var.getMessage().e1() == fjVar.e1()) {
-                                    q9 imageView = h7Var.getImageView();
+                                if (i7Var.getMessage().e1() == fjVar.e1()) {
+                                    q9 imageView = i7Var.getImageView();
                                     photoImage = imageView.getImageReceiver();
                                     imageView.getLocationInWindow(iArr);
                                     linkImageView = photoImage;
@@ -151,30 +151,30 @@ public final class nq0 extends org.telegram.ui.oq0 {
                                 linkImageView = imageReceiver;
                                 z13 = z12;
                             } else {
-                                if (childAt instanceof org.telegram.ui.Cells.h2) {
-                                    org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) childAt;
-                                    org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) h2Var.getParentObject();
+                                if (childAt instanceof org.telegram.ui.Cells.i2) {
+                                    org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) childAt;
+                                    org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) i2Var.getParentObject();
                                     z12 = z17;
                                     if (fjVar2 != null) {
                                         z12 = z17;
                                         if (fjVar2.e1() == fjVar.e1()) {
-                                            photoImage = h2Var.getPhotoImage();
-                                            h2Var.getLocationInWindow(iArr);
+                                            photoImage = i2Var.getPhotoImage();
+                                            i2Var.getLocationInWindow(iArr);
                                             linkImageView = photoImage;
                                             z13 = z17;
                                         }
                                     }
                                 } else {
                                     z12 = z17;
-                                    if (childAt instanceof org.telegram.ui.Cells.k7) {
-                                        org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) childAt;
-                                        org.telegram.messenger.fj message = k7Var.getMessage();
+                                    if (childAt instanceof org.telegram.ui.Cells.l7) {
+                                        org.telegram.ui.Cells.l7 l7Var = (org.telegram.ui.Cells.l7) childAt;
+                                        org.telegram.messenger.fj message = l7Var.getMessage();
                                         z12 = z17;
                                         if (message != null) {
                                             z12 = z17;
                                             if (message.e1() == fjVar.e1()) {
-                                                linkImageView = k7Var.getLinkImageView();
-                                                k7Var.getLocationInWindow(iArr);
+                                                linkImageView = l7Var.getLinkImageView();
+                                                l7Var.getLocationInWindow(iArr);
                                                 z13 = z17;
                                             }
                                         }

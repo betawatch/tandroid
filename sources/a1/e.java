@@ -24,7 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import bi.c3;
-import bi.k6;
+import bi.j6;
 import bi.v2;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -57,7 +57,7 @@ import org.telegram.ui.LaunchActivity;
 import v0.n;
 import w0.h;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -536,9 +536,9 @@ public final /* synthetic */ class e implements Runnable {
                 eq0Var.h(tL_starGiftCollection.title, new v1(i11, eq0Var, tL_starGiftCollection));
                 return;
             case 27:
-                k6 k6Var = (k6) this.b;
+                j6 j6Var = (j6) this.b;
                 g0.g((String) this.c);
-                lc.b0(k6Var.a.a).k(false).j();
+                lc.b0(j6Var.a.a).k(false).j();
                 return;
             case 28:
                 ((c1.f) this.b).f().a(((r) this.c).a);

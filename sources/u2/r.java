@@ -33,11 +33,11 @@ import l2.i0;
 import n2.v0;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import p4.o0;
 import x2.g0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class r extends l2.b {
     public static final byte[] Z0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -832,7 +832,7 @@ public abstract class r extends l2.b {
             Trace.beginSection("createCodec:" + str);
             l F = this.K.F(T);
             this.e0 = F;
-            this.t0 = F.i(new b5(this));
+            this.t0 = F.i(new c5(this));
             Trace.endSection();
             this.h.getClass();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();

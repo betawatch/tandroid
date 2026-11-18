@@ -12,11 +12,11 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class lt0 extends FrameLayout {
     public org.telegram.ui.Components.o9 a;
-    public final org.telegram.ui.Cells.q1 b;
+    public final org.telegram.ui.Cells.r1 b;
     public Drawable c;
     public final Drawable d;
     public final org.telegram.messenger.fj e;
@@ -62,13 +62,13 @@ public final class lt0 extends FrameLayout {
         fjVar.T = 1L;
         fjVar.S1 = false;
         i13 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity).currentAccount;
-        org.telegram.ui.Cells.q1 q1Var = new org.telegram.ui.Cells.q1(context, i13);
-        this.b = q1Var;
-        q1Var.setDelegate(new sa.d(19));
-        q1Var.f6 = false;
-        q1Var.setFullyDraw(true);
-        q1Var.y3(fjVar, null, false, false, false, false);
-        addView(q1Var, c8.ma.o(-1, -2));
+        org.telegram.ui.Cells.r1 r1Var = new org.telegram.ui.Cells.r1(context, i13);
+        this.b = r1Var;
+        r1Var.setDelegate(new sa.d(19));
+        r1Var.f6 = false;
+        r1Var.setFullyDraw(true);
+        r1Var.y3(fjVar, null, false, false, false, false);
+        addView(r1Var, c8.ma.o(-1, -2));
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -21,17 +21,17 @@ import org.telegram.ui.Components.ox0;
 import org.telegram.ui.Components.px0;
 import org.telegram.ui.Components.vx0;
 import org.telegram.ui.Components.wx0;
-import org.telegram.ui.vg0;
-import org.telegram.ui.xg0;
+import org.telegram.ui.wg0;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class su extends zt implements vx0 {
     public final j6.o A0;
     public final TL_iv.pageBlockTable X;
     public final wx0 Y;
     public final ArrayList Z;
-    public final org.telegram.ui.Cells.t9[] a0;
+    public final org.telegram.ui.Cells.u9[] a0;
     public final dv b0;
     public final int c0;
     public final ArrayList d0;
@@ -152,7 +152,7 @@ public final class su extends zt implements vx0 {
             arrayList.add(dvVar3);
         }
         arrayList.addAll(this.Z);
-        this.a0 = (org.telegram.ui.Cells.t9[]) arrayList.toArray(new org.telegram.ui.Cells.t9[0]);
+        this.a0 = (org.telegram.ui.Cells.u9[]) arrayList.toArray(new org.telegram.ui.Cells.u9[0]);
     }
 
     @Override // org.telegram.messenger.zt
@@ -173,7 +173,7 @@ public final class su extends zt implements vx0 {
     }
 
     @Override // org.telegram.messenger.zt
-    public final org.telegram.ui.Cells.t9[] L() {
+    public final org.telegram.ui.Cells.u9[] L() {
         return this.a0;
     }
 
@@ -619,11 +619,11 @@ public final class su extends zt implements vx0 {
         wx0 wx0Var;
         int i10;
         int i11;
-        xg0 xg0Var = this.L;
-        if (xg0Var != null && xg0Var.h) {
+        yg0 yg0Var = this.L;
+        if (yg0Var != null && yg0Var.h) {
             ArrayList arrayList = this.d0;
-            if (!arrayList.isEmpty() && xg0Var.d((vg0) arrayList.get(0)) >= 0) {
-                float c10 = xg0Var.c((vg0) arrayList.get(0));
+            if (!arrayList.isEmpty() && yg0Var.d((wg0) arrayList.get(0)) >= 0) {
+                float c10 = yg0Var.c((wg0) arrayList.get(0));
                 float f11 = 0.0f;
                 if (c10 <= 0.0f) {
                     return;
@@ -662,21 +662,21 @@ public final class su extends zt implements vx0 {
                     int i15 = i14;
                     if (ruVar == null) {
                         d.a(canvas, this.W, true);
-                    } else if (xg0Var.i(ruVar)) {
-                        if (xg0Var.g(ruVar)) {
+                    } else if (yg0Var.i(ruVar)) {
+                        if (yg0Var.g(ruVar)) {
                             d.a(canvas, this.W, false);
                             if (d.b instanceof dv) {
                                 canvas.save();
                                 f10 = f11;
                                 canvas.translate(d.b(), d.c());
-                                ((dv) d.b).m(canvas, xg0Var.g(ruVar) ? xg0Var.e : -1, xg0Var.g(ruVar) ? xg0Var.f : f10);
+                                ((dv) d.b).m(canvas, yg0Var.g(ruVar) ? yg0Var.e : -1, yg0Var.g(ruVar) ? yg0Var.f : f10);
                                 canvas.restore();
                             } else {
                                 f10 = f11;
                             }
                         } else {
                             f10 = f11;
-                            float c11 = xg0Var.c(ruVar);
+                            float c11 = yg0Var.c(ruVar);
                             if (c11 >= 1.0f) {
                                 d.a(canvas, this.W, true);
                             } else {

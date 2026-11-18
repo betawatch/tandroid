@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class mk0 {
     public int A;
@@ -371,7 +371,7 @@ public final class mk0 {
         }
         if (this.v != 0 && this.t == null && (view = this.D) != null) {
             this.t = new m5(org.telegram.messenger.g0.L(20.0f), 13, view, false);
-            if (!(view instanceof org.telegram.ui.Cells.q1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.q1) view).O0) {
+            if (!(view instanceof org.telegram.ui.Cells.r1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.r1) view).O0) {
                 this.t.a();
             }
         }
@@ -761,7 +761,7 @@ public final class mk0 {
         View view = this.D;
         if (j3 != 0 && this.t == null && view != null) {
             this.t = new m5(org.telegram.messenger.g0.L(20.0f), 13, view, false);
-            if (!(view instanceof org.telegram.ui.Cells.q1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.q1) view).O0) {
+            if (!(view instanceof org.telegram.ui.Cells.r1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.r1) view).O0) {
                 this.t.a();
             }
         }
@@ -772,7 +772,7 @@ public final class mk0 {
         this.C = this.y;
         if (this.w != 0 && this.u == null && view != null) {
             this.u = new m5(org.telegram.messenger.g0.L(20.0f), 13, view, false);
-            if (!(view instanceof org.telegram.ui.Cells.q1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.q1) view).O0) {
+            if (!(view instanceof org.telegram.ui.Cells.r1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.r1) view).O0) {
                 this.u.a();
             }
         }
@@ -848,7 +848,7 @@ public final class mk0 {
         this.x = org.telegram.ui.ActionBar.n6.r1(0.1f, org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
         if (this.v != 0 && this.t == null && (view = this.D) != null) {
             this.t = new m5(org.telegram.messenger.g0.L(20.0f), 13, view, false);
-            if (!(view instanceof org.telegram.ui.Cells.q1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.q1) view).O0) {
+            if (!(view instanceof org.telegram.ui.Cells.r1) ? view.isAttachedToWindow() : ((org.telegram.ui.Cells.r1) view).O0) {
                 this.t.a();
             }
         }

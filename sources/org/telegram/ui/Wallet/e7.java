@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class e7 {
     public final ViewGroup a;
@@ -30,7 +30,7 @@ public final class e7 {
     public final AnimatorSet m;
     public final RectF n;
     public final RectF o;
-    public org.telegram.ui.Cells.u0 p;
+    public org.telegram.ui.Cells.v0 p;
     public final c7 q;
     public float r;
     public boolean s;
@@ -72,12 +72,12 @@ public final class e7 {
                         if (!e7Var.v && !e7Var.u) {
                             e7Var.e();
                             e7Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.u0 K8 = e7Var.e.K8(e7Var.f);
+                            org.telegram.ui.Cells.v0 K8 = e7Var.e.K8(e7Var.f);
                             if (K8 != null && K8.getWidth() > 0) {
-                                org.telegram.ui.Cells.u0 u0Var = e7Var.p;
-                                if (u0Var != K8) {
-                                    if (u0Var != null) {
-                                        u0Var.J0.i(false);
+                                org.telegram.ui.Cells.v0 v0Var = e7Var.p;
+                                if (v0Var != K8) {
+                                    if (v0Var != null) {
+                                        v0Var.J0.i(false);
                                     }
                                     e7Var.p = K8;
                                 }
@@ -167,12 +167,12 @@ public final class e7 {
                         if (!e7Var.v && !e7Var.u) {
                             e7Var.e();
                             e7Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.u0 K8 = e7Var.e.K8(e7Var.f);
+                            org.telegram.ui.Cells.v0 K8 = e7Var.e.K8(e7Var.f);
                             if (K8 != null && K8.getWidth() > 0) {
-                                org.telegram.ui.Cells.u0 u0Var = e7Var.p;
-                                if (u0Var != K8) {
-                                    if (u0Var != null) {
-                                        u0Var.J0.i(false);
+                                org.telegram.ui.Cells.v0 v0Var = e7Var.p;
+                                if (v0Var != K8) {
+                                    if (v0Var != null) {
+                                        v0Var.J0.i(false);
                                     }
                                     e7Var.p = K8;
                                 }
@@ -245,12 +245,12 @@ public final class e7 {
                         if (!e7Var.v && !e7Var.u) {
                             e7Var.e();
                             e7Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.u0 K8 = e7Var.e.K8(e7Var.f);
+                            org.telegram.ui.Cells.v0 K8 = e7Var.e.K8(e7Var.f);
                             if (K8 != null && K8.getWidth() > 0) {
-                                org.telegram.ui.Cells.u0 u0Var = e7Var.p;
-                                if (u0Var != K8) {
-                                    if (u0Var != null) {
-                                        u0Var.J0.i(false);
+                                org.telegram.ui.Cells.v0 v0Var = e7Var.p;
+                                if (v0Var != K8) {
+                                    if (v0Var != null) {
+                                        v0Var.J0.i(false);
                                     }
                                     e7Var.p = K8;
                                 }
@@ -312,9 +312,9 @@ public final class e7 {
         b7Var.removeCallbacks(a7Var);
         m7 m7Var = this.i;
         m7Var.l(null);
-        org.telegram.ui.Cells.u0 u0Var = this.p;
-        if (u0Var != null) {
-            u0Var.J0.i(false);
+        org.telegram.ui.Cells.v0 v0Var = this.p;
+        if (v0Var != null) {
+            v0Var.J0.i(false);
             if (z10 && this.r >= 1.0f) {
                 RectF rectF = this.o;
                 if (!rectF.isEmpty() && this.p.isAttachedToWindow() && u0.Q(this.p.getMessageObject(), this.f)) {

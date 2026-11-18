@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
 import java.util.zip.ZipFile;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public class WidgetEngineService extends Service {
     public static volatile String b;
@@ -27,7 +27,7 @@ public class WidgetEngineService extends Service {
     public static volatile boolean e;
     public final a0 a = new a0(this);
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public static final class Forked extends WidgetEngineService {
     }
 
@@ -89,7 +89,7 @@ public class WidgetEngineService extends Service {
     }
 
     public static void c(String str) {
-        long uptimeMillis = SystemClock.uptimeMillis();
+        SystemClock.uptimeMillis();
         if (!WidgetSandboxNative.available()) {
             throw new IllegalStateException("libtwidget is missing");
         }
@@ -104,11 +104,17 @@ public class WidgetEngineService extends Service {
                 } catch (Throwable unused) {
                 }
             }
-            Log.i("WidgetEngine", "app zygote: library and bundles in " + (SystemClock.uptimeMillis() - uptimeMillis) + " ms");
         } finally {
         }
     }
 
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+     */
     public static synchronized String d(q qVar) {
         String[] strArr;
         int i7;
@@ -120,74 +126,104 @@ public class WidgetEngineService extends Service {
                     return str;
                 }
                 try {
-                    InputStream b10 = qVar2.b("manifest.txt");
                     try {
-                        String a10 = i1.a(b10);
-                        b10.close();
-                        String[] split = a10.split("\n");
-                        int length = split.length;
-                        byte[] bArr = null;
-                        byte[] bArr2 = null;
-                        byte[] bArr3 = null;
-                        int i10 = 0;
-                        while (i10 < length) {
-                            String str2 = split[i10];
-                            if (str2.isEmpty()) {
-                                strArr = split;
-                                i7 = length;
-                            } else {
-                                String[] split2 = str2.split(" ", 2);
-                                byte[] a11 = a(qVar2, split2[1]);
-                                StringBuilder sb2 = new StringBuilder();
-                                byte[] digest = MessageDigest.getInstance("SHA-256").digest(a11);
-                                int length2 = digest.length;
-                                int i11 = 0;
-                                while (i11 < length2) {
-                                    sb2.append(String.format("%02x", Integer.valueOf(digest[i11] & 255)));
-                                    i11++;
-                                    split = split;
-                                    length = length;
-                                }
-                                strArr = split;
-                                i7 = length;
-                                if (!split2[0].equals(sb2.toString())) {
-                                    throw new IllegalStateException("Bundle checksum mismatch: " + split2[1]);
-                                }
-                                String str3 = split2[1];
-                                int hashCode = str3.hashCode();
-                                if (hashCode != -1818708305) {
-                                    if (hashCode != -1529025109) {
-                                        if (hashCode == -754904710 && str3.equals("validator-bundle.js")) {
-                                            bArr2 = a11;
-                                        }
-                                    } else if (str3.equals("renderer-bundle.js")) {
-                                        bArr3 = a11;
+                        InputStream b10 = qVar2.b("manifest.txt");
+                        try {
+                            String a10 = i1.a(b10);
+                            b10.close();
+                            String[] split = a10.split("\n");
+                            int length = split.length;
+                            byte[] bArr = null;
+                            byte[] bArr2 = null;
+                            byte[] bArr3 = null;
+                            byte[] bArr4 = null;
+                            byte[] bArr5 = null;
+                            int i10 = 0;
+                            while (i10 < length) {
+                                String str2 = split[i10];
+                                if (!str2.isEmpty()) {
+                                    String[] split2 = str2.split(" ", 2);
+                                    byte[] a11 = a(qVar2, split2[1]);
+                                    StringBuilder sb2 = new StringBuilder();
+                                    byte[] digest = MessageDigest.getInstance("SHA-256").digest(a11);
+                                    int length2 = digest.length;
+                                    int i11 = 0;
+                                    while (i11 < length2) {
+                                        int i12 = i11;
+                                        sb2.append(String.format("%02x", Integer.valueOf(digest[i12] & 255)));
+                                        i11 = i12 + 1;
+                                        split = split;
+                                        length = length;
                                     }
-                                } else if (str3.equals("sandbox-bundle.js")) {
-                                    bArr = a11;
+                                    strArr = split;
+                                    i7 = length;
+                                    if (!split2[0].equals(sb2.toString())) {
+                                        throw new IllegalStateException("Bundle checksum mismatch: " + split2[1]);
+                                    }
+                                    String str3 = split2[1];
+                                    switch (str3.hashCode()) {
+                                        case -1927203231:
+                                            if (str3.equals("validator-bundle.qbc")) {
+                                                bArr5 = a11;
+                                                break;
+                                            } else {
+                                                break;
+                                            }
+                                        case -1818708305:
+                                            if (str3.equals("sandbox-bundle.js")) {
+                                                bArr = a11;
+                                                break;
+                                            } else {
+                                                break;
+                                            }
+                                        case -1529025109:
+                                            if (str3.equals("renderer-bundle.js")) {
+                                                bArr3 = a11;
+                                                break;
+                                            } else {
+                                                break;
+                                            }
+                                        case -754904710:
+                                            if (str3.equals("validator-bundle.js")) {
+                                                bArr2 = a11;
+                                                break;
+                                            } else {
+                                                break;
+                                            }
+                                        case -545376308:
+                                            if (str3.equals("sandbox-bundle.qbc")) {
+                                                bArr4 = a11;
+                                                break;
+                                            } else {
+                                                break;
+                                            }
+                                    }
+                                } else {
+                                    strArr = split;
+                                    i7 = length;
                                 }
+                                i10++;
+                                qVar2 = qVar;
+                                split = strArr;
+                                length = i7;
                             }
-                            i10++;
-                            qVar2 = qVar;
-                            split = strArr;
-                            length = i7;
+                            if (bArr == null || bArr2 == null) {
+                                throw new IllegalStateException("Widget bundles are missing");
+                            }
+                            byte[] digest2 = MessageDigest.getInstance("SHA-256").digest(a10.getBytes(StandardCharsets.UTF_8));
+                            StringBuilder sb3 = new StringBuilder("assets:");
+                            for (int i13 = 0; i13 < 12; i13++) {
+                                sb3.append(String.format("%02x", Integer.valueOf(digest2[i13] & 255)));
+                            }
+                            WidgetSandboxNative.registerResources(sb3.toString().getBytes(StandardCharsets.UTF_8), bArr, bArr2, bArr3, bArr4, bArr5);
+                            String sb4 = sb3.toString();
+                            c = sb4;
+                            return sb4;
+                        } finally {
                         }
-                        if (bArr == null || bArr2 == null) {
-                            throw new IllegalStateException("Widget bundles are missing");
-                        }
-                        byte[] digest2 = MessageDigest.getInstance("SHA-256").digest(a10.getBytes(StandardCharsets.UTF_8));
-                        StringBuilder sb3 = new StringBuilder("assets:");
-                        for (int i12 = 0; i12 < 12; i12++) {
-                            sb3.append(String.format("%02x", Integer.valueOf(digest2[i12] & 255)));
-                        }
-                        WidgetSandboxNative.registerResources(sb3.toString().getBytes(StandardCharsets.UTF_8), bArr, bArr2, bArr3);
-                        String sb4 = sb3.toString();
-                        c = sb4;
-                        return sb4;
-                    } finally {
+                    } catch (RuntimeException e10) {
+                        throw e10;
                     }
-                } catch (RuntimeException e10) {
-                    throw e10;
                 } catch (Exception e11) {
                     throw new IllegalStateException("Widget bundles: " + e11);
                 }
@@ -197,7 +233,7 @@ public class WidgetEngineService extends Service {
         }
     }
 
-    private static native int installSeccomp(boolean z10);
+    private static native int installSeccomp(boolean z10, boolean z11);
 
     @Override // android.app.Service
     public final IBinder onBind(Intent intent) {
@@ -207,22 +243,13 @@ public class WidgetEngineService extends Service {
     @Override // android.app.Service
     public final void onCreate() {
         super.onCreate();
-        long uptimeMillis = SystemClock.uptimeMillis();
+        SystemClock.uptimeMillis();
         if (!WidgetSandboxNative.available()) {
             throw new IllegalStateException("libtwidget is missing");
         }
-        long uptimeMillis2 = SystemClock.uptimeMillis() - uptimeMillis;
-        int installSeccomp = installSeccomp(true);
+        SystemClock.uptimeMillis();
+        int installSeccomp = installSeccomp(true, false);
         if (installSeccomp == 0) {
-            StringBuilder sb2 = new StringBuilder("engine up: ");
-            sb2.append(Build.VERSION.SDK_INT >= 24 ? uptimeMillis - Process.getStartUptimeMillis() : -1L);
-            sb2.append(" ms from fork to onCreate, library ");
-            sb2.append(uptimeMillis2);
-            sb2.append(" ms, seccomp ");
-            sb2.append((SystemClock.uptimeMillis() - uptimeMillis) - uptimeMillis2);
-            sb2.append(" ms");
-            sb2.append(c != null ? ", bundles from the app zygote" : "");
-            Log.i("WidgetEngine", sb2.toString());
             return;
         }
         if (installSeccomp == OsConstants.ENOSYS || installSeccomp == OsConstants.EINVAL) {

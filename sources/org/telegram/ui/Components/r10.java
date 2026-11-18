@@ -16,7 +16,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class r10 extends FrameLayout implements org.telegram.ui.ActionBar.c6, org.telegram.ui.Components.voip.m0 {
     public int E;
@@ -25,7 +25,7 @@ public final class r10 extends FrameLayout implements org.telegram.ui.ActionBar.
     public float H;
     public boolean I;
     public org.telegram.ui.Components.voip.n0 J;
-    public final org.telegram.ui.Cells.e4 K;
+    public final org.telegram.ui.Cells.f4 K;
     public boolean L;
     public int M;
     public int N;
@@ -59,7 +59,7 @@ public final class r10 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.s = 1.0f;
         TextPaint textPaint = new TextPaint(1);
         this.F = textPaint;
-        this.K = new org.telegram.ui.Cells.e4(org.telegram.messenger.g0.L(26.0f), org.telegram.messenger.g0.L(29.0f));
+        this.K = new org.telegram.ui.Cells.f4(org.telegram.messenger.g0.L(26.0f), org.telegram.messenger.g0.L(29.0f));
         b9Var.u((int) (org.telegram.messenger.g0.L(18.0f) / 1.15f));
         q9 q9Var = new q9(context);
         this.d = q9Var;
@@ -193,13 +193,13 @@ public final class r10 extends FrameLayout implements org.telegram.ui.ActionBar.
         q9 q9Var = this.d;
         float x10 = q9Var.getX() + (q9Var.getMeasuredWidth() / 2);
         float y10 = q9Var.getY() + (q9Var.getMeasuredHeight() / 2);
-        org.telegram.ui.Cells.e4 e4Var = this.K;
-        e4Var.f();
-        e4Var.a(canvas, x10, y10, this);
+        org.telegram.ui.Cells.f4 f4Var = this.K;
+        f4Var.f();
+        f4Var.a(canvas, x10, y10, this);
         float f10 = this.s;
         float L = (f10 * 1.0f) + ((1.0f - f10) * (org.telegram.messenger.g0.L(46.0f) / org.telegram.messenger.g0.L(40.0f)));
-        q9Var.setScaleX(e4Var.b() * L);
-        q9Var.setScaleY(e4Var.b() * L);
+        q9Var.setScaleX(f4Var.b() * L);
+        q9Var.setScaleY(f4Var.b() * L);
         super.dispatchDraw(canvas);
     }
 
@@ -379,12 +379,12 @@ public final class r10 extends FrameLayout implements org.telegram.ui.ActionBar.
         n0Var2.c(false);
         f(false);
         boolean z10 = this.J.e;
-        org.telegram.ui.Cells.e4 e4Var = this.K;
-        e4Var.e(this, z10);
+        org.telegram.ui.Cells.f4 f4Var = this.K;
+        f4Var.e(this, z10);
         if (this.J.e) {
             return;
         }
-        e4Var.c(0.0d);
+        f4Var.c(0.0d);
     }
 
     @Override // android.view.ViewGroup, android.view.View

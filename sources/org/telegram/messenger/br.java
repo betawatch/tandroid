@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class br implements Runnable {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class br implements Runnable {
                     e00Var.d.put(j12, 1);
                     e00Var.getUserConfig().k().edit().putBoolean("topics_end_reached_" + j12, true).apply();
                 }
-                e00Var.getNotificationCenter().k(ks.s5, Long.valueOf(j12), Boolean.FALSE);
+                e00Var.getNotificationCenter().k(ks.t5, Long.valueOf(j12), Boolean.FALSE);
                 return;
             case 6:
                 e00 e00Var2 = (e00) this.b;
@@ -189,7 +189,7 @@ public final /* synthetic */ class br implements Runnable {
                     }
                     e00Var2.f.k(arrayList2, j13);
                     e00Var2.h.put(j13, System.currentTimeMillis());
-                    e00Var2.getNotificationCenter().k(ks.s5, Long.valueOf(j13), Boolean.FALSE);
+                    e00Var2.getNotificationCenter().k(ks.t5, Long.valueOf(j13), Boolean.FALSE);
                     return;
                 }
                 return;

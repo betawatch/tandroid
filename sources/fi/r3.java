@@ -38,7 +38,7 @@ import org.telegram.ui.Components.y60;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.uq;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class r3 extends k.a {
     public boolean c;
@@ -189,7 +189,7 @@ public final class r3 extends k.a {
             } else {
                 HashSet hashSet = storyItem2.albums != null ? new HashSet(storyItem2.albums) : new HashSet();
                 y60 y60Var = new y60(actionBarPopupWindow$ActionBarPopupWindowLayout2, i6Var);
-                y60Var.c(R.drawable.ic_ab_back, gd.M0(2131753754, null), new bi.d7(actionBarPopupWindow$ActionBarPopupWindowLayout2, 1), false);
+                y60Var.c(R.drawable.ic_ab_back, gd.M0(2131753754, null), new bi.c7(actionBarPopupWindow$ActionBarPopupWindowLayout2, 1), false);
                 y60Var.k();
                 x3Var = x3Var2;
                 context = context2;
@@ -1122,6 +1122,6 @@ public final class r3 extends k.a {
         if (P0 == null || !P0.can_view_stats) {
             return;
         }
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_stats, gd.M0(2131743305, null), false, this.d).setOnClickListener(new bi.n6(this, storyItem, this.e, O0, 1));
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_stats, gd.M0(2131743305, null), false, this.d).setOnClickListener(new bi.m6(this, storyItem, this.e, O0, 1));
     }
 }

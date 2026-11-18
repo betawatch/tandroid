@@ -4,7 +4,7 @@ import android.graphics.Point;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.telegram.ui.Components.oo0, org.telegram.ui.Components.xm0, org.telegram.ui.Components.nm0 {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
     }
 
     @Override // org.telegram.ui.Components.nm0
-    public void F(org.telegram.ui.Cells.t2 t2Var) {
+    public void F(org.telegram.ui.Cells.u2 u2Var) {
         y91 y91Var = ((u91) this.b).w0;
         HashSet hashSet = y91.s1;
-        y91Var.Q0(t2Var);
+        y91Var.Q0(u2Var);
     }
 
     @Override // r0.m

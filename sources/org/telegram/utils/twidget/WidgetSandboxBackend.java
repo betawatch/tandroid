@@ -28,18 +28,16 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
-import org.telegram.messenger.s2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.Components.az;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements g1, h {
     private static final int MAX_CANVAS_WORDS = 2097152;
@@ -1186,10 +1184,13 @@ final class WidgetSandboxBackend implements g1, h {
     }
 
     public void signal(final int i7, byte[] bArr) {
+        boolean optBoolean;
         JSONObject jSONObject;
         String str;
         boolean z10;
         boolean z11;
+        boolean z12;
+        boolean z13;
         boolean isEmpty;
         final String text = text(bArr);
         if (jsonSignal(i7)) {
@@ -1233,23 +1234,22 @@ final class WidgetSandboxBackend implements g1, h {
             if (p1Var.A) {
                 return;
             }
-            boolean z12 = false;
             if (i7 == 12 || i7 == 19) {
                 JSONObject jSONObject3 = new JSONObject(text);
                 long j3 = jSONObject3.getLong("id");
                 if (i7 == 19) {
                     str = null;
                     jSONObject = jSONObject3.getJSONObject("call");
+                    optBoolean = false;
                 } else {
                     String string = jSONObject3.getString("data");
-                    z12 = jSONObject3.optBoolean("wallet");
+                    optBoolean = jSONObject3.optBoolean("wallet");
                     jSONObject = null;
                     str = string;
                 }
-                boolean z13 = z12;
                 e0 e0Var = p1Var.d;
-                if (i7 == 19 ? e0Var.e(jSONObject.toString(), p1Var.L) : e0Var.d(str, z13, p1Var.L)) {
-                    p1Var.a.post(new org.telegram.messenger.voip.p(p1Var, i7, j3, jSONObject, str, z13));
+                if (i7 == 19 ? e0Var.e(jSONObject.toString(), p1Var.L) : e0Var.d(str, optBoolean, p1Var.L)) {
+                    p1Var.a.post(new org.telegram.messenger.voip.p(p1Var, i7, j3, jSONObject, str, optBoolean));
                     return;
                 }
                 long j10 = p1Var.v;
@@ -1261,10 +1261,7 @@ final class WidgetSandboxBackend implements g1, h {
             }
             if (i7 == 13 || i7 == 14) {
                 if (i7 == 13) {
-                    if (text != null && text.length() <= 256) {
-                        z12 = true;
-                    }
-                    if (!z12 || !p1Var.d.c(p1Var.L)) {
+                    if (!(text != null && text.length() <= 256) || !p1Var.d.c(p1Var.L)) {
                         return;
                     }
                 }
@@ -1313,12 +1310,12 @@ final class WidgetSandboxBackend implements g1, h {
                 p1Var.a.post(new g0(i11, p1Var, text));
                 return;
             }
-            int i12 = 7;
             if (i7 == 18) {
                 JSONObject jSONObject4 = new JSONObject(text);
                 p1Var.S = new float[]{(float) jSONObject4.optDouble("receive"), (float) jSONObject4.optDouble("animate"), (float) jSONObject4.optDouble("paint"), (float) jSONObject4.optDouble("serialize"), 0.0f, 0.0f, (float) jSONObject4.optDouble("ticks"), (float) jSONObject4.optDouble("framesSent"), (float) jSONObject4.optDouble("opsLatency"), (float) jSONObject4.optDouble("validate", -1.0d), (float) jSONObject4.optDouble("hop", -1.0d)};
                 return;
             }
+            int i12 = 7;
             if (i7 != 16 && i7 != 17 && i7 != 9) {
                 if (i7 == 3) {
                     JSONObject jSONObject5 = new JSONObject(text);
@@ -1329,12 +1326,6 @@ final class WidgetSandboxBackend implements g1, h {
                     JSONObject jSONObject6 = new JSONObject(text);
                     if (jSONObject6.optBoolean("loaded")) {
                         p1Var.B = true;
-                    }
-                    if (!p1Var.e0 && jSONObject6.has("engine")) {
-                        p1Var.e0 = true;
-                        if (s2.a) {
-                            a8.b("widget engine: " + jSONObject6.optString("engine") + ", " + jSONObject6.optString("boot"));
-                        }
                     }
                     p1Var.G = "bottom".equals(jSONObject6.optString("resizeAnchor"));
                     if (jSONObject6.optBoolean("rendered") && !p1Var.E) {
@@ -1387,7 +1378,11 @@ final class WidgetSandboxBackend implements g1, h {
                                     loop1: while (true) {
                                         if (i14 < length) {
                                             String str2 = split[i14];
-                                            if (str2.isEmpty() || str2.length() > 63 || str2.charAt(0) == '-' || str2.charAt(str2.length() - 1) == '-') {
+                                            if (str2.isEmpty() || str2.length() > 63) {
+                                                break;
+                                            }
+                                            z10 = false;
+                                            if (str2.charAt(0) == '-' || str2.charAt(str2.length() - 1) == '-') {
                                                 break;
                                             }
                                             for (int i15 = 0; i15 < str2.length(); i15++) {
@@ -1398,32 +1393,38 @@ final class WidgetSandboxBackend implements g1, h {
                                             }
                                             i14++;
                                         } else {
+                                            z10 = false;
                                             String[] strArr = e0.m;
                                             boolean z14 = false;
                                             for (int i16 = 0; i16 < 3; i16++) {
                                                 String str3 = strArr[i16];
                                                 if (!substring.equals(str3)) {
                                                     if (!substring.endsWith("." + str3)) {
-                                                        z11 = false;
-                                                        z14 |= z11;
+                                                        z13 = false;
+                                                        z14 |= z13;
                                                     }
                                                 }
-                                                z11 = true;
-                                                z14 |= z11;
+                                                z13 = true;
+                                                z14 |= z13;
                                             }
                                             if (z14 == equals && p1Var.d.c(p1Var.L)) {
-                                                z12 = true;
+                                                z11 = true;
                                             }
                                         }
                                     }
                                 }
+                                z10 = false;
+                                z11 = z10;
+                                z12 = z11;
                             }
                         }
-                        z10 = z12;
+                        z10 = false;
+                        z11 = z10;
+                        z12 = z11;
                     } else {
-                        z10 = "haptic".equals(optString2) ? p1Var.d.a(p1Var.L) : "ready".equals(optString2);
+                        z12 = "haptic".equals(optString2) ? p1Var.d.a(p1Var.L) : "ready".equals(optString2);
                     }
-                    if (z10) {
+                    if (z12) {
                         p1Var.a.post(new g0(i12, p1Var, jSONObject7));
                     }
                 }

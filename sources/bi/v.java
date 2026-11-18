@@ -25,7 +25,7 @@ import org.telegram.ui.nr0;
 import org.telegram.ui.pr0;
 import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class v implements TextWatcher {
     public final /* synthetic */ int a;
@@ -57,32 +57,32 @@ public final class v implements TextWatcher {
                 }
             case 1:
                 ((String[]) this.b)[0] = editable.toString();
-                ((g7) obj).g3.O(true);
+                ((f7) obj).g3.O(true);
                 break;
             case 2:
                 ((String[]) this.b)[0] = editable.toString();
-                ((g7) obj).g3.O(true);
+                ((f7) obj).g3.O(true);
                 break;
             case 3:
                 ((String[]) this.b)[0] = editable.toString();
-                ((g7) obj).g3.O(true);
+                ((f7) obj).g3.O(true);
                 break;
             case 4:
                 ((String[]) this.b)[0] = editable.toString();
-                ((g7) obj).g3.O(true);
+                ((f7) obj).g3.O(true);
                 break;
             case 5:
                 ((String[]) this.b)[0] = editable.toString();
-                ((g7) obj).g3.O(true);
+                ((f7) obj).g3.O(true);
                 break;
             case 6:
                 ((String[]) this.b)[0] = editable.toString();
-                ((g7) obj).g3.O(true);
+                ((f7) obj).g3.O(true);
                 break;
             case 7:
                 ((hi.r1) this.b).run();
                 hi.l7 l7Var = (hi.l7) obj;
-                org.telegram.ui.Cells.k3 k3Var = l7Var.U1;
+                org.telegram.ui.Cells.l3 l3Var = l7Var.U1;
                 if (!l7Var.Y1) {
                     if (!l7Var.Z1 || editable == null) {
                         hi.l7.e1(l7Var, editable != null ? editable.toString() : null);
@@ -90,9 +90,9 @@ public final class v implements TextWatcher {
                     } else {
                         String substring = editable.toString().substring(8);
                         l7Var.Y1 = true;
-                        k3Var.d.setText(substring);
-                        org.telegram.ui.Cells.i3 i3Var = k3Var.d;
-                        i3Var.setSelection(0, i3Var.getText().length());
+                        l3Var.d.setText(substring);
+                        org.telegram.ui.Cells.j3 j3Var = l3Var.d;
+                        j3Var.setSelection(0, j3Var.getText().length());
                         l7Var.Y1 = false;
                         l7Var.Z1 = false;
                         hi.l7.e1(l7Var, substring);

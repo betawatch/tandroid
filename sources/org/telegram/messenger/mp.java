@@ -82,12 +82,12 @@ import org.telegram.ui.Components.g70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.lc0;
-import org.telegram.ui.le0;
-import org.telegram.ui.o80;
+import org.telegram.ui.mc0;
+import org.telegram.ui.me0;
+import org.telegram.ui.p80;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class mp extends c1 implements fs {
     public static volatile long G8;
@@ -2428,7 +2428,7 @@ public final class mp extends c1 implements fs {
             }
         }
         ks.f(this.currentAccount).k(ks.r, 0);
-        ks.f(this.currentAccount).k(ks.Y3, Long.valueOf(j3), Long.valueOf(j10), str2);
+        ks.f(this.currentAccount).k(ks.Z3, Long.valueOf(j3), Long.valueOf(j10), str2);
         tr a02 = tr.a0(this.currentAccount);
         a02.a.c(new lq(a02, -j3, j10, str2, 0));
     }
@@ -3755,7 +3755,7 @@ public final class mp extends c1 implements fs {
                     i7 = 1;
                 }
                 org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
-                boolean z12 = !(Q instanceof org.telegram.ui.cx) || (Q instanceof le0);
+                boolean z12 = !(Q instanceof org.telegram.ui.cx) || (Q instanceof me0);
                 if (H1 == null) {
                     d5(H1, h2Var);
                     return;
@@ -9527,7 +9527,7 @@ public final class mp extends c1 implements fs {
                                     c23.id = tL_updateUserEmojiStatus.user_id;
                                     c23.emoji_status = tL_updateUserEmojiStatus.emoji_status;
                                     if (o10.C(c23)) {
-                                        mpVar.getNotificationCenter().k(ks.o5, c23);
+                                        mpVar.getNotificationCenter().k(ks.p5, c23);
                                     }
                                 }
                                 TLRPC.TL_user tL_user2 = new TLRPC.TL_user();
@@ -12507,7 +12507,7 @@ public final class mp extends c1 implements fs {
                 } else {
                     chat2.flags &= -1073741825;
                 }
-                getNotificationCenter().k(ks.t5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
+                getNotificationCenter().k(ks.u5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
             }
         }
         if (chat2 != null && chat2.forum != chat.forum) {
@@ -13802,7 +13802,7 @@ public final class mp extends c1 implements fs {
         int i7 = this.currentAccount;
         long j3 = tL_webBrowserSettings.hash;
         this.F8.g(i7, null, tL_webBrowserSettings);
-        getNotificationCenter().k(ks.T5, new Object[0]);
+        getNotificationCenter().k(ks.U5, new Object[0]);
     }
 
     public final int d(int i7, int i10, long j3) {
@@ -14135,7 +14135,7 @@ public final class mp extends c1 implements fs {
         SparseArray sparseArray = mpVar.V;
         if (i7 != i19) {
             if (i7 != ks.l0) {
-                if (i7 == ks.h5) {
+                if (i7 == ks.i5) {
                     mpVar.X2(false);
                     mpVar.getContactsController().J(true);
                     if ((!mpVar.s6 || mpVar.getUserConfig().q()) && !mpVar.getUserConfig().q()) {
@@ -15539,7 +15539,7 @@ public final class mp extends c1 implements fs {
         messagesStorage.a.c(new d4(messagesStorage, j3, new bn(iArr, i9Var), 29));
     }
 
-    public final t3 i1(long j3, boolean z10, o80 o80Var) {
+    public final t3 i1(long j3, boolean z10, p80 p80Var) {
         TLRPC.InputGroupCall inputGroupCall;
         TLRPC.ChatFull P0 = P0(j3);
         if (P0 == null || (inputGroupCall = P0.call) == null) {
@@ -15555,7 +15555,7 @@ public final class mp extends c1 implements fs {
                     TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
                     getgroupcall.call = P0.call;
                     getgroupcall.limit = 20;
-                    getConnectionsManager().sendRequest(getgroupcall, new go(this, j3, o80Var, 5));
+                    getConnectionsManager().sendRequest(getgroupcall, new go(this, j3, p80Var, 5));
                 }
             }
         }
@@ -15565,9 +15565,9 @@ public final class mp extends c1 implements fs {
         return null;
     }
 
-    public final void i3(boolean z10, bi.e5 e5Var) {
-        if (e5Var != null) {
-            this.N7 = e5Var;
+    public final void i3(boolean z10, bi.d5 d5Var) {
+        if (d5Var != null) {
+            this.N7 = d5Var;
         }
         if (getUserConfig().p()) {
             if (z10 || !getUserConfig().Q) {
@@ -16318,7 +16318,7 @@ public final class mp extends c1 implements fs {
         tL_channels_toggleForum.tabs = z11;
         tL_channels_toggleForum.sidebar = z12;
         getConnectionsManager().sendRequest(tL_channels_toggleForum, new mj(this, 16), 64);
-        getNotificationCenter().k(ks.t5, Long.valueOf(j3), Boolean.valueOf(z10), Boolean.valueOf(z11), Boolean.valueOf(z12));
+        getNotificationCenter().k(ks.u5, Long.valueOf(j3), Boolean.valueOf(z10), Boolean.valueOf(z11), Boolean.valueOf(z12));
     }
 
     public final void n(long j3, TLRPC.User user, String str, org.telegram.ui.ActionBar.h2 h2Var, Runnable runnable) {
@@ -16341,7 +16341,7 @@ public final class mp extends c1 implements fs {
 
     public final void n2(int i7) {
         this.d0.remove(i7);
-        getNotificationCenter().k(ks.B5, Integer.valueOf(i7));
+        getNotificationCenter().k(ks.C5, Integer.valueOf(i7));
     }
 
     public final void n3(TLRPC.User user, boolean z10, int i7) {
@@ -16399,7 +16399,7 @@ public final class mp extends c1 implements fs {
         getConnectionsManager().sendRequest(tL_channels_togglePreHistoryHidden, new mj(this, 12), 64);
     }
 
-    public final void o(TLRPC.Chat chat, org.telegram.ui.ActionBar.h2 h2Var, ArrayList arrayList, int i7, q0.a aVar, q0.a aVar2, lc0 lc0Var) {
+    public final void o(TLRPC.Chat chat, org.telegram.ui.ActionBar.h2 h2Var, ArrayList arrayList, int i7, q0.a aVar, q0.a aVar2, mc0 mc0Var) {
         int size = arrayList.size();
         int[] iArr = {0};
         TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
@@ -16408,7 +16408,7 @@ public final class mp extends c1 implements fs {
         long j3 = chat2.id;
         for (int i10 = 0; i10 < size; i10++) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i10);
-            m(j3, user, i7, null, h2Var, false, new fi(25, aVar, user), new o(4, aVar2, user), new gk(this, tL_messages_invitedUsers, iArr, size, chat2, lc0Var));
+            m(j3, user, i7, null, h2Var, false, new fi(25, aVar, user), new o(4, aVar2, user), new gk(this, tL_messages_invitedUsers, iArr, size, chat2, mc0Var));
             e4(user, false, false);
             chat2 = chat;
         }
@@ -21289,7 +21289,7 @@ public final class mp extends c1 implements fs {
                             this.n7.clear();
                             this.n7.addAll(hashSet7);
                             edit.putStringSet("directPaymentsCurrency", hashSet7);
-                            ks.e().k(ks.l5, new Object[0]);
+                            ks.e().k(ks.m5, new Object[0]);
                             z16 = true;
                             tL_jsonObject4 = tL_jsonObject6;
                             z18 = z26;
@@ -23925,7 +23925,7 @@ public final class mp extends c1 implements fs {
             O0.collapsed_in_dialogs = z10;
             X3(O0, true);
             f5(null);
-            getNotificationCenter().k(ks.V5, Long.valueOf(j3), Boolean.valueOf(z10));
+            getNotificationCenter().k(ks.W5, Long.valueOf(j3), Boolean.valueOf(z10));
             getNotificationCenter().k(ks.s, new Object[0]);
         }
         getConnectionsManager().sendRequestTypedAndProcessUpdates(tL_communities_toggleCommunityCollapsedInDialogs, new d3.b(i10), new jh.b(i7));
@@ -24268,7 +24268,7 @@ public final class mp extends c1 implements fs {
             tL_channels_updateEmojiStatus = updateemojistatus;
             if (f10 != null) {
                 f10.emoji_status = r02;
-                getNotificationCenter().k(ks.o5, f10);
+                getNotificationCenter().k(ks.p5, f10);
                 tL_channels_updateEmojiStatus = updateemojistatus;
             }
         } else {

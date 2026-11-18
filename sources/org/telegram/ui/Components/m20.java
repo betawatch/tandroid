@@ -20,7 +20,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class m20 extends View implements org.telegram.ui.ActionBar.c6 {
     public static final TextPaint N = new TextPaint(1);
@@ -498,10 +498,10 @@ public final class m20 extends View implements org.telegram.ui.ActionBar.c6 {
             this.x = -staticLayout.getLineLeft(0);
         }
         if (z12 && str.equals((String) obj)) {
-            imageReceiver.w0(org.telegram.ui.Cells.h4.b(getContext(), true));
+            imageReceiver.w0(org.telegram.ui.Cells.i4.b(getContext(), true));
         } else if (z12 && "miniapps".equals((String) obj)) {
             getContext();
-            imageReceiver.w0(org.telegram.ui.Cells.h4.a(true));
+            imageReceiver.w0(org.telegram.ui.Cells.i4.a(true));
         } else {
             imageReceiver.p0(fcVar, "50_50", b9Var, 0L, null, obj2, 1);
         }

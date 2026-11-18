@@ -44,7 +44,7 @@ import org.telegram.ui.Components.tc;
 import org.telegram.ui.cx;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class q extends FrameLayout implements fs, te.b {
     public Paint A0;
@@ -181,7 +181,7 @@ public abstract class q extends FrameLayout implements fs, te.b {
         v4.c0 c0Var = new v4.c0(0, false);
         this.T = c0Var;
         iVar.setLayoutManager(c0Var);
-        iVar.setOnItemClickListener(new bi.i8(tvVar, 6));
+        iVar.setOnItemClickListener(new bi.h8(tvVar, 6));
         iVar.setOnItemLongClickListener(new di.c7(tvVar, 4));
         iVar.setAdapter(mVar);
         addView(iVar, ma.d(-1, -2.0f, 0, 0.0f, 4.0f, 0.0f, 0.0f));
@@ -365,7 +365,7 @@ public abstract class q extends FrameLayout implements fs, te.b {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.x5 && this.m0) {
+        if (i7 == ks.y5 && this.m0) {
             p(getVisibility() == 0, false);
             org.telegram.messenger.g0.g3(new d(this, 2));
         }
@@ -1123,7 +1123,7 @@ public abstract class q extends FrameLayout implements fs, te.b {
             this.G0.setDuration(100L);
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.L0 = animatorSet2;
-            animatorSet2.addListener(new bi.e7(i11, this, z11));
+            animatorSet2.addListener(new bi.d7(i11, this, z11));
             ArrayList arrayList = new ArrayList();
             arrayList.add(this.D0);
             arrayList.add(this.G0);
@@ -1307,7 +1307,7 @@ public abstract class q extends FrameLayout implements fs, te.b {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         p(false, false);
-        ks.f(this.f).c(this, ks.x5);
+        ks.f(this.f).c(this, ks.y5);
         ab.q qVar = this.M0;
         qVar.a = true;
         AnimatorSet animatorSet = (AnimatorSet) qVar.c;
@@ -1320,7 +1320,7 @@ public abstract class q extends FrameLayout implements fs, te.b {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.f).n(this, ks.x5);
+        ks.f(this.f).n(this, ks.y5);
         ab.q qVar = this.M0;
         qVar.a = false;
         ((AnimatorSet) qVar.c).cancel();

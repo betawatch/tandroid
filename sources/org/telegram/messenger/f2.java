@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class f2 extends c1 {
     public static volatile f2[] f = new f2[4];
@@ -311,7 +311,7 @@ public final class f2 extends c1 {
                             tL_forumTopic.title_missing = true;
                             f2Var.getMessagesController().t7.q(j13, tL_forumTopic, true);
                             f2Var.f(i14, j13);
-                            f2Var.getNotificationCenter().k(ks.L5, new d2(j13, i14));
+                            f2Var.getNotificationCenter().k(ks.M5, new d2(j13, i14));
                         }
                     });
                     return false;
@@ -351,7 +351,7 @@ public final class f2 extends c1 {
         if (a2Var == null) {
             return;
         }
-        getNotificationCenter().k(ks.N5, new b2(j3, a2Var.b, j11));
+        getNotificationCenter().k(ks.O5, new b2(j3, a2Var.b, j11));
     }
 
     public final void f(int i7, long j3) {
@@ -381,7 +381,7 @@ public final class f2 extends c1 {
             if (a2Var.e) {
                 long j13 = j12;
                 j10 = j3;
-                getNotificationCenter().k(ks.N5, new b2(j10, a2Var.b, j13));
+                getNotificationCenter().k(ks.O5, new b2(j10, a2Var.b, j13));
                 this.a.y(j10, j13, a2Var.a);
                 j11 = j13;
                 i10--;

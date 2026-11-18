@@ -1,53 +1,82 @@
 package org.telegram.ui.Cells;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.wn;
-import org.telegram.ui.LaunchActivity;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class k6 extends fi.e7 {
-    public final /* synthetic */ int S = 0;
-    public final /* synthetic */ View T;
+public final class k6 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final RadioButton c;
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(qa qaVar) {
-        super(null, false);
-        this.T = qaVar;
+    public k6(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.d = 50;
+        RadioButton radioButton = new RadioButton(context);
+        this.c = radioButton;
+        radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
+        org.telegram.ui.ActionBar.u6.O(radioButton, org.telegram.ui.ActionBar.n6.D5, org.telegram.ui.ActionBar.n6.E5, i6Var);
+        boolean z10 = gd.a0;
+        addView(radioButton, c8.ma.d(22, 22.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 18, 14.0f, z10 ? 18 : 0, 0.0f));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, i6Var);
+        n10.q(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setGravity((gd.a0 ? 5 : 3) | 16);
+        boolean z11 = gd.a0;
+        addView(textView, c8.ma.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 51, 13.0f, z11 ? 51 : 21, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.y6, i6Var);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity((gd.a0 ? 5 : 3) | 16);
+        textView2.setVisibility(8);
+        boolean z12 = gd.a0;
+        addView(textView2, c8.ma.d(-2, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 21 : 51, 37.0f, z12 ? 51 : 21, 0.0f));
     }
 
-    @Override // fi.e7
-    public final void f(long j3) {
-        switch (this.S) {
-            case 0:
-                ((m6) this.T).b(j3);
-                break;
-            case 1:
-                qa qaVar = (qa) this.T;
-                org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
-                if (Q != null) {
-                    Q.getOrCreateStoryViewer().getClass();
-                    Q.getOrCreateStoryViewer().J(qaVar.getContext(), j3, fi.y6.a((ck0) qaVar.getParent()));
-                    break;
-                }
-                break;
-            default:
-                wn wnVar = (wn) this.T;
-                wnVar.I.getOrCreateStoryViewer().J(wnVar.getContext(), j3, new org.telegram.ui.Components.b0(this, 24));
-                break;
+    public final void a(int i7, int i10) {
+        this.c.b(i7, i10);
+    }
+
+    public final void b(CharSequence charSequence, boolean z10) {
+        this.a.setText(charSequence);
+        this.b.setVisibility(8);
+        this.c.a(z10, false);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.c.f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11;
+        TextView textView = this.b;
+        if (textView.getVisibility() == 0) {
+            textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(72.0f), TLObject.FLAG_30), i10);
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(m6 m6Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(i6Var, false);
-        this.T = m6Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(wn wnVar) {
-        super(null, true);
-        this.T = wnVar;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30);
+        int L = org.telegram.messenger.g0.L(this.d);
+        if (textView.getVisibility() == 0) {
+            i11 = textView.getMeasuredHeight() + org.telegram.messenger.g0.L(4.0f);
+        } else {
+            i11 = 0;
+        }
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(L + i11, TLObject.FLAG_30));
     }
 }

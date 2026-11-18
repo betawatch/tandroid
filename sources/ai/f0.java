@@ -1,13 +1,13 @@
 package ai;
 
-import bi.d6;
+import bi.c6;
 import java.util.HashMap;
 import org.telegram.messenger.ep;
 import org.telegram.messenger.mp;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,8 +67,8 @@ public final /* synthetic */ class f0 implements Runnable {
                 long j14 = this.c;
                 n1Var.h = j13;
                 n1Var.n = j14;
-                d6 d6Var = n1Var.a;
-                if (d6Var != null && (z41Var = d6Var.g3) != null && d6Var.H) {
+                c6 c6Var = n1Var.a;
+                if (c6Var != null && (z41Var = c6Var.g3) != null && c6Var.H) {
                     z41Var.O(true);
                     break;
                 }

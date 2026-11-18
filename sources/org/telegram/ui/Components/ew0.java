@@ -13,7 +13,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ew0 extends bk0 {
     public final Context c;
@@ -141,17 +141,17 @@ public final class ew0 extends bk0 {
         ArrayList arrayList = iw0Var.R1;
         if (arrayList == null) {
             if (iw0Var.S1 != null) {
-                ((org.telegram.ui.Cells.z7) view).setSticker((org.telegram.messenger.sy) iw0Var.T1.get(i7));
+                ((org.telegram.ui.Cells.a8) view).setSticker((org.telegram.messenger.sy) iw0Var.T1.get(i7));
                 return;
             }
             if (f1Var.f != 3) {
-                org.telegram.ui.Cells.z7 z7Var = (org.telegram.ui.Cells.z7) view;
+                org.telegram.ui.Cells.a8 a8Var = (org.telegram.ui.Cells.a8) view;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = iw0Var.N1;
                 if (tL_messages_stickerSet == null) {
                     return;
                 }
-                z7Var.d(tL_messages_stickerSet.documents.get(i7), null, iw0Var.N1, null, iw0Var.c2, iw0Var.M1);
-                z7Var.K.setOnClickListener(new y7(26, this, z7Var));
+                a8Var.d(tL_messages_stickerSet.documents.get(i7), null, iw0Var.N1, null, iw0Var.c2, iw0Var.M1);
+                a8Var.K.setOnClickListener(new y7(26, this, a8Var));
                 return;
             }
             return;
@@ -159,14 +159,14 @@ public final class ew0 extends bk0 {
         int i10 = f1Var.f;
         SparseArray sparseArray = this.e;
         if (i10 == 0) {
-            ((org.telegram.ui.Cells.z7) view).d((TLRPC.Document) sparseArray.get(i7), null, this.f.get(i7), null, false, false);
+            ((org.telegram.ui.Cells.a8) view).d((TLRPC.Document) sparseArray.get(i7), null, this.f.get(i7), null, false, false);
         } else if (i10 == 1) {
-            ((org.telegram.ui.Cells.m3) view).setHeight(org.telegram.messenger.g0.L(82.0f));
+            ((org.telegram.ui.Cells.n3) view).setHeight(org.telegram.messenger.g0.L(82.0f));
         } else {
             if (i10 != 2) {
                 return;
             }
-            ((org.telegram.ui.Cells.u3) view).c((TLRPC.StickerSetCovered) arrayList.get(((Integer) sparseArray.get(i7)).intValue()), false, false, 0, 0, false);
+            ((org.telegram.ui.Cells.v3) view).c((TLRPC.StickerSetCovered) arrayList.get(((Integer) sparseArray.get(i7)).intValue()), false, false, 0, 0, false);
         }
     }
 
@@ -178,9 +178,9 @@ public final class ew0 extends bk0 {
         Context context = this.c;
         if (i7 != 0) {
             if (i7 == 1) {
-                frameLayout2 = new org.telegram.ui.Cells.m3(context);
+                frameLayout2 = new org.telegram.ui.Cells.n3(context);
             } else if (i7 == 2) {
-                frameLayout2 = new org.telegram.ui.Cells.u3(8, this.c, iw0Var.J0, true, false);
+                frameLayout2 = new org.telegram.ui.Cells.v3(8, this.c, iw0Var.J0, true, false);
             } else if (i7 != 3) {
                 frameLayout2 = null;
             } else {

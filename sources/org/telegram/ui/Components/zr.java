@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class zr {
     public int a;
@@ -15,7 +15,7 @@ public final class zr {
     public int f;
     public int g;
 
-    public static zr b(org.telegram.ui.Cells.t2 t2Var, org.telegram.messenger.ro roVar) {
+    public static zr b(org.telegram.ui.Cells.u2 u2Var, org.telegram.messenger.ro roVar) {
         zr zrVar = new zr();
         zrVar.a = roVar.a;
         zrVar.b = roVar.m;
@@ -25,7 +25,7 @@ public final class zr {
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
         vy0 vy0Var = new vy0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o());
-        vy0Var.r(t2Var);
+        vy0Var.r(u2Var);
         zrVar.c = vy0Var;
         zrVar.c.q(org.telegram.messenger.fj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, vy0Var.a.getFontMetricsInt(), false, null, 0), roVar.c, zrVar.c.a.getFontMetricsInt(), false));
         zrVar.c.o(26);

@@ -30,8 +30,8 @@ import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.c2;
-import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Cells.d2;
+import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.e51;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class t0 extends h2 {
     public static final int V = -1;
@@ -197,7 +197,7 @@ public final class t0 extends h2 {
             if (i7 == Y) {
                 boolean z10 = !t0Var.Q;
                 t0Var.Q = z10;
-                ((q8) view).setChecked(z10);
+                ((r8) view).setChecked(z10);
                 t0Var.c.g3.O(true);
                 return;
             }
@@ -211,7 +211,7 @@ public final class t0 extends h2 {
                 TL_account.TL_businessBotRights tL_businessBotRights = t0Var.K;
                 boolean z11 = !tL_businessBotRights.reply;
                 tL_businessBotRights.reply = z11;
-                ((c2) view).c(z11, true);
+                ((d2) view).c(z11, true);
                 t0Var.c.g3.O(true);
                 t0Var.d0(true);
                 return;
@@ -220,7 +220,7 @@ public final class t0 extends h2 {
                 TL_account.TL_businessBotRights tL_businessBotRights2 = t0Var.K;
                 boolean z12 = !tL_businessBotRights2.read_messages;
                 tL_businessBotRights2.read_messages = z12;
-                ((c2) view).c(z12, true);
+                ((d2) view).c(z12, true);
                 t0Var.c.g3.O(true);
                 t0Var.d0(true);
                 return;
@@ -229,7 +229,7 @@ public final class t0 extends h2 {
                 TL_account.TL_businessBotRights tL_businessBotRights3 = t0Var.K;
                 boolean z13 = !tL_businessBotRights3.delete_sent_messages;
                 tL_businessBotRights3.delete_sent_messages = z13;
-                ((c2) view).c(z13, true);
+                ((d2) view).c(z13, true);
                 t0Var.c.g3.O(true);
                 t0Var.d0(true);
                 return;
@@ -238,7 +238,7 @@ public final class t0 extends h2 {
                 TL_account.TL_businessBotRights tL_businessBotRights4 = t0Var.K;
                 boolean z14 = !tL_businessBotRights4.delete_received_messages;
                 tL_businessBotRights4.delete_received_messages = z14;
-                ((c2) view).c(z14, true);
+                ((d2) view).c(z14, true);
                 t0Var.c.g3.O(true);
                 t0Var.d0(true);
                 return;
@@ -246,7 +246,7 @@ public final class t0 extends h2 {
             if (i7 == e0) {
                 boolean z15 = !t0Var.R;
                 t0Var.R = z15;
-                ((q8) view).setChecked(z15);
+                ((r8) view).setChecked(z15);
                 t0Var.c.g3.O(true);
                 return;
             }
@@ -254,7 +254,7 @@ public final class t0 extends h2 {
                 TL_account.TL_businessBotRights tL_businessBotRights5 = t0Var.K;
                 boolean z16 = !tL_businessBotRights5.edit_name;
                 tL_businessBotRights5.edit_name = z16;
-                ((c2) view).c(z16, true);
+                ((d2) view).c(z16, true);
                 t0Var.c.g3.O(true);
                 t0Var.d0(true);
                 return;
@@ -263,7 +263,7 @@ public final class t0 extends h2 {
                 TL_account.TL_businessBotRights tL_businessBotRights6 = t0Var.K;
                 boolean z17 = !tL_businessBotRights6.edit_bio;
                 tL_businessBotRights6.edit_bio = z17;
-                ((c2) view).c(z17, true);
+                ((d2) view).c(z17, true);
                 t0Var.c.g3.O(true);
                 t0Var.d0(true);
                 return;
@@ -272,7 +272,7 @@ public final class t0 extends h2 {
                 TL_account.TL_businessBotRights tL_businessBotRights7 = t0Var.K;
                 boolean z18 = !tL_businessBotRights7.edit_profile_photo;
                 tL_businessBotRights7.edit_profile_photo = z18;
-                ((c2) view).c(z18, true);
+                ((d2) view).c(z18, true);
                 t0Var.c.g3.O(true);
                 t0Var.d0(true);
                 return;
@@ -292,66 +292,66 @@ public final class t0 extends h2 {
                             case 0:
                                 t0 t0Var2 = this.b;
                                 t0Var2.getClass();
-                                c2 c2Var = (c2) view;
+                                d2 d2Var = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights8 = t0Var2.K;
                                 boolean z19 = !tL_businessBotRights8.view_gifts;
                                 tL_businessBotRights8.view_gifts = z19;
-                                c2Var.c(z19, true);
+                                d2Var.c(z19, true);
                                 t0Var2.c.g3.O(true);
                                 t0Var2.d0(true);
                                 break;
                             case 1:
                                 t0 t0Var3 = this.b;
                                 t0Var3.getClass();
-                                c2 c2Var2 = (c2) view;
+                                d2 d2Var2 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights9 = t0Var3.K;
                                 boolean z20 = !tL_businessBotRights9.sell_gifts;
                                 tL_businessBotRights9.sell_gifts = z20;
-                                c2Var2.c(z20, true);
+                                d2Var2.c(z20, true);
                                 t0Var3.c.g3.O(true);
                                 t0Var3.d0(true);
                                 break;
                             case 2:
                                 t0 t0Var4 = this.b;
                                 t0Var4.getClass();
-                                c2 c2Var3 = (c2) view;
+                                d2 d2Var3 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights10 = t0Var4.K;
                                 boolean z21 = !tL_businessBotRights10.change_gift_settings;
                                 tL_businessBotRights10.change_gift_settings = z21;
-                                c2Var3.c(z21, true);
+                                d2Var3.c(z21, true);
                                 t0Var4.c.g3.O(true);
                                 t0Var4.d0(true);
                                 break;
                             case 3:
                                 t0 t0Var5 = this.b;
                                 t0Var5.getClass();
-                                c2 c2Var4 = (c2) view;
+                                d2 d2Var4 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights11 = t0Var5.K;
                                 boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
-                                c2Var4.c(z22, true);
+                                d2Var4.c(z22, true);
                                 t0Var5.c.g3.O(true);
                                 t0Var5.d0(true);
                                 break;
                             case 4:
                                 t0 t0Var6 = this.b;
                                 t0Var6.getClass();
-                                c2 c2Var5 = (c2) view;
+                                d2 d2Var5 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights12 = t0Var6.K;
                                 boolean z23 = !tL_businessBotRights12.transfer_stars;
                                 tL_businessBotRights12.transfer_stars = z23;
-                                c2Var5.c(z23, true);
+                                d2Var5.c(z23, true);
                                 t0Var6.c.g3.O(true);
                                 t0Var6.d0(true);
                                 break;
                             default:
                                 t0 t0Var7 = this.b;
                                 t0Var7.getClass();
-                                c2 c2Var6 = (c2) view;
+                                d2 d2Var6 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights13 = t0Var7.K;
                                 boolean z24 = !tL_businessBotRights13.edit_username;
                                 tL_businessBotRights13.edit_username = z24;
-                                c2Var6.c(z24, true);
+                                d2Var6.c(z24, true);
                                 t0Var7.c.g3.O(true);
                                 t0Var7.d0(true);
                                 break;
@@ -363,7 +363,7 @@ public final class t0 extends h2 {
             if (i7 == j0) {
                 boolean z19 = !t0Var.S;
                 t0Var.S = z19;
-                ((q8) view).setChecked(z19);
+                ((r8) view).setChecked(z19);
                 t0Var.c.g3.O(true);
                 return;
             }
@@ -381,66 +381,66 @@ public final class t0 extends h2 {
                             case 0:
                                 t0 t0Var2 = this.b;
                                 t0Var2.getClass();
-                                c2 c2Var = (c2) view;
+                                d2 d2Var = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights8 = t0Var2.K;
                                 boolean z192 = !tL_businessBotRights8.view_gifts;
                                 tL_businessBotRights8.view_gifts = z192;
-                                c2Var.c(z192, true);
+                                d2Var.c(z192, true);
                                 t0Var2.c.g3.O(true);
                                 t0Var2.d0(true);
                                 break;
                             case 1:
                                 t0 t0Var3 = this.b;
                                 t0Var3.getClass();
-                                c2 c2Var2 = (c2) view;
+                                d2 d2Var2 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights9 = t0Var3.K;
                                 boolean z20 = !tL_businessBotRights9.sell_gifts;
                                 tL_businessBotRights9.sell_gifts = z20;
-                                c2Var2.c(z20, true);
+                                d2Var2.c(z20, true);
                                 t0Var3.c.g3.O(true);
                                 t0Var3.d0(true);
                                 break;
                             case 2:
                                 t0 t0Var4 = this.b;
                                 t0Var4.getClass();
-                                c2 c2Var3 = (c2) view;
+                                d2 d2Var3 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights10 = t0Var4.K;
                                 boolean z21 = !tL_businessBotRights10.change_gift_settings;
                                 tL_businessBotRights10.change_gift_settings = z21;
-                                c2Var3.c(z21, true);
+                                d2Var3.c(z21, true);
                                 t0Var4.c.g3.O(true);
                                 t0Var4.d0(true);
                                 break;
                             case 3:
                                 t0 t0Var5 = this.b;
                                 t0Var5.getClass();
-                                c2 c2Var4 = (c2) view;
+                                d2 d2Var4 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights11 = t0Var5.K;
                                 boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
-                                c2Var4.c(z22, true);
+                                d2Var4.c(z22, true);
                                 t0Var5.c.g3.O(true);
                                 t0Var5.d0(true);
                                 break;
                             case 4:
                                 t0 t0Var6 = this.b;
                                 t0Var6.getClass();
-                                c2 c2Var5 = (c2) view;
+                                d2 d2Var5 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights12 = t0Var6.K;
                                 boolean z23 = !tL_businessBotRights12.transfer_stars;
                                 tL_businessBotRights12.transfer_stars = z23;
-                                c2Var5.c(z23, true);
+                                d2Var5.c(z23, true);
                                 t0Var6.c.g3.O(true);
                                 t0Var6.d0(true);
                                 break;
                             default:
                                 t0 t0Var7 = this.b;
                                 t0Var7.getClass();
-                                c2 c2Var6 = (c2) view;
+                                d2 d2Var6 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights13 = t0Var7.K;
                                 boolean z24 = !tL_businessBotRights13.edit_username;
                                 tL_businessBotRights13.edit_username = z24;
-                                c2Var6.c(z24, true);
+                                d2Var6.c(z24, true);
                                 t0Var7.c.g3.O(true);
                                 t0Var7.d0(true);
                                 break;
@@ -463,66 +463,66 @@ public final class t0 extends h2 {
                             case 0:
                                 t0 t0Var2 = this.b;
                                 t0Var2.getClass();
-                                c2 c2Var = (c2) view;
+                                d2 d2Var = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights8 = t0Var2.K;
                                 boolean z192 = !tL_businessBotRights8.view_gifts;
                                 tL_businessBotRights8.view_gifts = z192;
-                                c2Var.c(z192, true);
+                                d2Var.c(z192, true);
                                 t0Var2.c.g3.O(true);
                                 t0Var2.d0(true);
                                 break;
                             case 1:
                                 t0 t0Var3 = this.b;
                                 t0Var3.getClass();
-                                c2 c2Var2 = (c2) view;
+                                d2 d2Var2 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights9 = t0Var3.K;
                                 boolean z20 = !tL_businessBotRights9.sell_gifts;
                                 tL_businessBotRights9.sell_gifts = z20;
-                                c2Var2.c(z20, true);
+                                d2Var2.c(z20, true);
                                 t0Var3.c.g3.O(true);
                                 t0Var3.d0(true);
                                 break;
                             case 2:
                                 t0 t0Var4 = this.b;
                                 t0Var4.getClass();
-                                c2 c2Var3 = (c2) view;
+                                d2 d2Var3 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights10 = t0Var4.K;
                                 boolean z21 = !tL_businessBotRights10.change_gift_settings;
                                 tL_businessBotRights10.change_gift_settings = z21;
-                                c2Var3.c(z21, true);
+                                d2Var3.c(z21, true);
                                 t0Var4.c.g3.O(true);
                                 t0Var4.d0(true);
                                 break;
                             case 3:
                                 t0 t0Var5 = this.b;
                                 t0Var5.getClass();
-                                c2 c2Var4 = (c2) view;
+                                d2 d2Var4 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights11 = t0Var5.K;
                                 boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
-                                c2Var4.c(z22, true);
+                                d2Var4.c(z22, true);
                                 t0Var5.c.g3.O(true);
                                 t0Var5.d0(true);
                                 break;
                             case 4:
                                 t0 t0Var6 = this.b;
                                 t0Var6.getClass();
-                                c2 c2Var5 = (c2) view;
+                                d2 d2Var5 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights12 = t0Var6.K;
                                 boolean z23 = !tL_businessBotRights12.transfer_stars;
                                 tL_businessBotRights12.transfer_stars = z23;
-                                c2Var5.c(z23, true);
+                                d2Var5.c(z23, true);
                                 t0Var6.c.g3.O(true);
                                 t0Var6.d0(true);
                                 break;
                             default:
                                 t0 t0Var7 = this.b;
                                 t0Var7.getClass();
-                                c2 c2Var6 = (c2) view;
+                                d2 d2Var6 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights13 = t0Var7.K;
                                 boolean z24 = !tL_businessBotRights13.edit_username;
                                 tL_businessBotRights13.edit_username = z24;
-                                c2Var6.c(z24, true);
+                                d2Var6.c(z24, true);
                                 t0Var7.c.g3.O(true);
                                 t0Var7.d0(true);
                                 break;
@@ -546,66 +546,66 @@ public final class t0 extends h2 {
                             case 0:
                                 t0 t0Var2 = this.b;
                                 t0Var2.getClass();
-                                c2 c2Var = (c2) view;
+                                d2 d2Var = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights8 = t0Var2.K;
                                 boolean z192 = !tL_businessBotRights8.view_gifts;
                                 tL_businessBotRights8.view_gifts = z192;
-                                c2Var.c(z192, true);
+                                d2Var.c(z192, true);
                                 t0Var2.c.g3.O(true);
                                 t0Var2.d0(true);
                                 break;
                             case 1:
                                 t0 t0Var3 = this.b;
                                 t0Var3.getClass();
-                                c2 c2Var2 = (c2) view;
+                                d2 d2Var2 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights9 = t0Var3.K;
                                 boolean z20 = !tL_businessBotRights9.sell_gifts;
                                 tL_businessBotRights9.sell_gifts = z20;
-                                c2Var2.c(z20, true);
+                                d2Var2.c(z20, true);
                                 t0Var3.c.g3.O(true);
                                 t0Var3.d0(true);
                                 break;
                             case 2:
                                 t0 t0Var4 = this.b;
                                 t0Var4.getClass();
-                                c2 c2Var3 = (c2) view;
+                                d2 d2Var3 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights10 = t0Var4.K;
                                 boolean z21 = !tL_businessBotRights10.change_gift_settings;
                                 tL_businessBotRights10.change_gift_settings = z21;
-                                c2Var3.c(z21, true);
+                                d2Var3.c(z21, true);
                                 t0Var4.c.g3.O(true);
                                 t0Var4.d0(true);
                                 break;
                             case 3:
                                 t0 t0Var5 = this.b;
                                 t0Var5.getClass();
-                                c2 c2Var4 = (c2) view;
+                                d2 d2Var4 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights11 = t0Var5.K;
                                 boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
-                                c2Var4.c(z22, true);
+                                d2Var4.c(z22, true);
                                 t0Var5.c.g3.O(true);
                                 t0Var5.d0(true);
                                 break;
                             case 4:
                                 t0 t0Var6 = this.b;
                                 t0Var6.getClass();
-                                c2 c2Var5 = (c2) view;
+                                d2 d2Var5 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights12 = t0Var6.K;
                                 boolean z23 = !tL_businessBotRights12.transfer_stars;
                                 tL_businessBotRights12.transfer_stars = z23;
-                                c2Var5.c(z23, true);
+                                d2Var5.c(z23, true);
                                 t0Var6.c.g3.O(true);
                                 t0Var6.d0(true);
                                 break;
                             default:
                                 t0 t0Var7 = this.b;
                                 t0Var7.getClass();
-                                c2 c2Var6 = (c2) view;
+                                d2 d2Var6 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights13 = t0Var7.K;
                                 boolean z24 = !tL_businessBotRights13.edit_username;
                                 tL_businessBotRights13.edit_username = z24;
-                                c2Var6.c(z24, true);
+                                d2Var6.c(z24, true);
                                 t0Var7.c.g3.O(true);
                                 t0Var7.d0(true);
                                 break;
@@ -629,66 +629,66 @@ public final class t0 extends h2 {
                             case 0:
                                 t0 t0Var2 = this.b;
                                 t0Var2.getClass();
-                                c2 c2Var = (c2) view;
+                                d2 d2Var = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights8 = t0Var2.K;
                                 boolean z192 = !tL_businessBotRights8.view_gifts;
                                 tL_businessBotRights8.view_gifts = z192;
-                                c2Var.c(z192, true);
+                                d2Var.c(z192, true);
                                 t0Var2.c.g3.O(true);
                                 t0Var2.d0(true);
                                 break;
                             case 1:
                                 t0 t0Var3 = this.b;
                                 t0Var3.getClass();
-                                c2 c2Var2 = (c2) view;
+                                d2 d2Var2 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights9 = t0Var3.K;
                                 boolean z20 = !tL_businessBotRights9.sell_gifts;
                                 tL_businessBotRights9.sell_gifts = z20;
-                                c2Var2.c(z20, true);
+                                d2Var2.c(z20, true);
                                 t0Var3.c.g3.O(true);
                                 t0Var3.d0(true);
                                 break;
                             case 2:
                                 t0 t0Var4 = this.b;
                                 t0Var4.getClass();
-                                c2 c2Var3 = (c2) view;
+                                d2 d2Var3 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights10 = t0Var4.K;
                                 boolean z21 = !tL_businessBotRights10.change_gift_settings;
                                 tL_businessBotRights10.change_gift_settings = z21;
-                                c2Var3.c(z21, true);
+                                d2Var3.c(z21, true);
                                 t0Var4.c.g3.O(true);
                                 t0Var4.d0(true);
                                 break;
                             case 3:
                                 t0 t0Var5 = this.b;
                                 t0Var5.getClass();
-                                c2 c2Var4 = (c2) view;
+                                d2 d2Var4 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights11 = t0Var5.K;
                                 boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
-                                c2Var4.c(z22, true);
+                                d2Var4.c(z22, true);
                                 t0Var5.c.g3.O(true);
                                 t0Var5.d0(true);
                                 break;
                             case 4:
                                 t0 t0Var6 = this.b;
                                 t0Var6.getClass();
-                                c2 c2Var5 = (c2) view;
+                                d2 d2Var5 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights12 = t0Var6.K;
                                 boolean z23 = !tL_businessBotRights12.transfer_stars;
                                 tL_businessBotRights12.transfer_stars = z23;
-                                c2Var5.c(z23, true);
+                                d2Var5.c(z23, true);
                                 t0Var6.c.g3.O(true);
                                 t0Var6.d0(true);
                                 break;
                             default:
                                 t0 t0Var7 = this.b;
                                 t0Var7.getClass();
-                                c2 c2Var6 = (c2) view;
+                                d2 d2Var6 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights13 = t0Var7.K;
                                 boolean z24 = !tL_businessBotRights13.edit_username;
                                 tL_businessBotRights13.edit_username = z24;
-                                c2Var6.c(z24, true);
+                                d2Var6.c(z24, true);
                                 t0Var7.c.g3.O(true);
                                 t0Var7.d0(true);
                                 break;
@@ -710,66 +710,66 @@ public final class t0 extends h2 {
                             case 0:
                                 t0 t0Var2 = this.b;
                                 t0Var2.getClass();
-                                c2 c2Var = (c2) view;
+                                d2 d2Var = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights8 = t0Var2.K;
                                 boolean z192 = !tL_businessBotRights8.view_gifts;
                                 tL_businessBotRights8.view_gifts = z192;
-                                c2Var.c(z192, true);
+                                d2Var.c(z192, true);
                                 t0Var2.c.g3.O(true);
                                 t0Var2.d0(true);
                                 break;
                             case 1:
                                 t0 t0Var3 = this.b;
                                 t0Var3.getClass();
-                                c2 c2Var2 = (c2) view;
+                                d2 d2Var2 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights9 = t0Var3.K;
                                 boolean z20 = !tL_businessBotRights9.sell_gifts;
                                 tL_businessBotRights9.sell_gifts = z20;
-                                c2Var2.c(z20, true);
+                                d2Var2.c(z20, true);
                                 t0Var3.c.g3.O(true);
                                 t0Var3.d0(true);
                                 break;
                             case 2:
                                 t0 t0Var4 = this.b;
                                 t0Var4.getClass();
-                                c2 c2Var3 = (c2) view;
+                                d2 d2Var3 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights10 = t0Var4.K;
                                 boolean z21 = !tL_businessBotRights10.change_gift_settings;
                                 tL_businessBotRights10.change_gift_settings = z21;
-                                c2Var3.c(z21, true);
+                                d2Var3.c(z21, true);
                                 t0Var4.c.g3.O(true);
                                 t0Var4.d0(true);
                                 break;
                             case 3:
                                 t0 t0Var5 = this.b;
                                 t0Var5.getClass();
-                                c2 c2Var4 = (c2) view;
+                                d2 d2Var4 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights11 = t0Var5.K;
                                 boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
-                                c2Var4.c(z22, true);
+                                d2Var4.c(z22, true);
                                 t0Var5.c.g3.O(true);
                                 t0Var5.d0(true);
                                 break;
                             case 4:
                                 t0 t0Var6 = this.b;
                                 t0Var6.getClass();
-                                c2 c2Var5 = (c2) view;
+                                d2 d2Var5 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights12 = t0Var6.K;
                                 boolean z23 = !tL_businessBotRights12.transfer_stars;
                                 tL_businessBotRights12.transfer_stars = z23;
-                                c2Var5.c(z23, true);
+                                d2Var5.c(z23, true);
                                 t0Var6.c.g3.O(true);
                                 t0Var6.d0(true);
                                 break;
                             default:
                                 t0 t0Var7 = this.b;
                                 t0Var7.getClass();
-                                c2 c2Var6 = (c2) view;
+                                d2 d2Var6 = (d2) view;
                                 TL_account.TL_businessBotRights tL_businessBotRights13 = t0Var7.K;
                                 boolean z24 = !tL_businessBotRights13.edit_username;
                                 tL_businessBotRights13.edit_username = z24;
-                                c2Var6.c(z24, true);
+                                d2Var6.c(z24, true);
                                 t0Var7.c.g3.O(true);
                                 t0Var7.d0(true);
                                 break;

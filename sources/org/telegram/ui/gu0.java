@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gu0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final /* synthetic */ class gu0 implements org.telegram.messenger.x10 {
             case 0:
                 View view = (View) obj;
                 RectF rectF = ProfileActivity.Z6;
-                if (view instanceof org.telegram.ui.Cells.x8) {
-                    org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
-                    x8Var.a.setLoading(profileActivity.o5);
-                    x8Var.b.setLoading(profileActivity.o5);
+                if (view instanceof org.telegram.ui.Cells.y8) {
+                    org.telegram.ui.Cells.y8 y8Var = (org.telegram.ui.Cells.y8) view;
+                    y8Var.a.setLoading(profileActivity.o5);
+                    y8Var.b.setLoading(profileActivity.o5);
                     break;
                 }
                 break;
@@ -45,16 +45,16 @@ public final /* synthetic */ class gu0 implements org.telegram.messenger.x10 {
             default:
                 View view2 = (View) obj;
                 RectF rectF3 = ProfileActivity.Z6;
-                if (view2 instanceof org.telegram.ui.Cells.n4) {
-                    ((org.telegram.ui.Cells.n4) view2).setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.L6, profileActivity.A0));
-                } else if (view2 instanceof org.telegram.ui.Cells.x8) {
-                    ((org.telegram.ui.Cells.x8) view2).updateColors();
-                } else if (view2 instanceof org.telegram.ui.Cells.m8) {
-                    ((org.telegram.ui.Cells.m8) view2).updateColors();
+                if (view2 instanceof org.telegram.ui.Cells.o4) {
+                    ((org.telegram.ui.Cells.o4) view2).setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.L6, profileActivity.A0));
+                } else if (view2 instanceof org.telegram.ui.Cells.y8) {
+                    ((org.telegram.ui.Cells.y8) view2).updateColors();
+                } else if (view2 instanceof org.telegram.ui.Cells.n8) {
+                    ((org.telegram.ui.Cells.n8) view2).updateColors();
                 } else if (view2 instanceof org.telegram.ui.Cells.j) {
                     ((org.telegram.ui.Cells.j) view2).updateColors();
-                } else if (view2 instanceof org.telegram.ui.Cells.i5) {
-                    ((org.telegram.ui.Cells.i5) view2).getCheckBox().invalidate();
+                } else if (view2 instanceof org.telegram.ui.Cells.j5) {
+                    ((org.telegram.ui.Cells.j5) view2).getCheckBox().invalidate();
                 } else if (view2 instanceof kg.i1) {
                     kg.i1 i1Var = (kg.i1) view2;
                     org.telegram.ui.Components.bq bqVar = i1Var.r;
@@ -71,8 +71,8 @@ public final /* synthetic */ class gu0 implements org.telegram.messenger.x10 {
                     int w04 = org.telegram.ui.ActionBar.n6.w0(i10, i6Var);
                     i1Var.a(w04);
                     bqVar.setTextColor(w04);
-                } else if (view2 instanceof org.telegram.ui.Cells.f6) {
-                    ((org.telegram.ui.Cells.f6) view2).updateColors();
+                } else if (view2 instanceof org.telegram.ui.Cells.g6) {
+                    ((org.telegram.ui.Cells.g6) view2).updateColors();
                 }
                 lw0 lw0Var = profileActivity.d;
                 profileActivity.a.getClass();

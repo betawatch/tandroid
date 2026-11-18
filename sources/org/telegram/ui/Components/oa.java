@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class oa extends v4.u0 {
     public final /* synthetic */ int a;
@@ -257,9 +257,9 @@ public final class oa extends v4.u0 {
                 in inVar = rnVar.y;
                 if (inVar != null && inVar.s) {
                     ww0 delegate = inVar.getDelegate();
-                    if (delegate instanceof org.telegram.ui.Cells.a6) {
+                    if (delegate instanceof org.telegram.ui.Cells.b6) {
                         org.telegram.ui.f61 f61Var = rnVar.s;
-                        View F = f61Var.F((org.telegram.ui.Cells.a6) delegate);
+                        View F = f61Var.F((org.telegram.ui.Cells.b6) delegate);
                         v4.f1 T = F == null ? null : f61Var.T(F);
                         if (T != null) {
                             View view = T.a;
@@ -335,8 +335,8 @@ public final class oa extends v4.u0 {
                 di.b1 b1Var = oa0Var.f;
                 for (int i11 = 0; i11 < b1Var.getChildCount(); i11++) {
                     View childAt = b1Var.getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.q1) {
-                        ((org.telegram.ui.Cells.q1) childAt).A3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
+                    if (childAt instanceof org.telegram.ui.Cells.r1) {
+                        ((org.telegram.ui.Cells.r1) childAt).A3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
                     }
                 }
                 ia0 ia0Var = oa0Var.e;

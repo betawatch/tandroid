@@ -2,13 +2,13 @@ package kg;
 
 import android.content.Context;
 import android.text.Editable;
-import bi.d6;
+import bi.c6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.k3;
+import org.telegram.ui.Cells.l3;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class l extends k3 {
+public final class l extends l3 {
     public final /* synthetic */ int F;
     public final /* synthetic */ n G;
 
@@ -27,27 +27,27 @@ public final class l extends k3 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.k3
+    @Override // org.telegram.ui.Cells.l3
     public final void a(boolean z10) {
-        d6 d6Var;
-        d6 d6Var2;
+        c6 c6Var;
+        c6 c6Var2;
         switch (this.F) {
             case 0:
-                if (z10 && (d6Var = this.G.a) != null) {
-                    d6Var.y0(2);
+                if (z10 && (c6Var = this.G.a) != null) {
+                    c6Var.y0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (d6Var2 = this.G.a) != null) {
-                    d6Var2.y0(3);
+                if (z10 && (c6Var2 = this.G.a) != null) {
+                    c6Var2.y0(3);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Cells.k3
+    @Override // org.telegram.ui.Cells.l3
     public final void b(Editable editable) {
         switch (this.F) {
             case 0:

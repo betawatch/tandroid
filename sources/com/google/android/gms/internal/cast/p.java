@@ -7,9 +7,9 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final j6.b j = new j6.b("MediaRouterProxy", null);
@@ -47,13 +47,13 @@ public final class p extends g {
         s4.x.b();
         s4.e c10 = s4.x.c();
         c10.D = a0Var;
-        md0 md0Var = a0Var != null ? new md0(c10, a0Var) : null;
-        md0 md0Var2 = c10.C;
-        if (md0Var2 != null) {
-            md0Var2.n();
+        nd0 nd0Var = a0Var != null ? new nd0(c10, a0Var) : null;
+        nd0 nd0Var2 = c10.C;
+        if (nd0Var2 != null) {
+            nd0Var2.n();
         }
-        c10.C = md0Var;
-        if (md0Var != null) {
+        c10.C = nd0Var;
+        if (nd0Var != null) {
             c10.l();
         }
     }

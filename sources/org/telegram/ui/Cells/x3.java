@@ -1,138 +1,110 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import android.widget.Button;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class x3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public static final /* synthetic */ int h = 0;
-    public final org.telegram.ui.Components.w5 a;
-    public final w3 b;
-    public final FrameLayout.LayoutParams c;
-    public final org.telegram.ui.ActionBar.i6 d;
-    public int e;
-    public boolean f;
+public final class x3 extends org.telegram.ui.Components.n6 {
+    public final /* synthetic */ int s;
 
-    public x3(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        this(16, context, i6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ x3(Context context, boolean z10, boolean z11, boolean z12, int i7) {
+        super(context, z10, z11, z12);
+        this.s = i7;
     }
 
-    public final void a(CharSequence charSequence, View.OnClickListener onClickListener) {
-        w3 w3Var = this.b;
-        w3Var.c(charSequence, true, true);
-        w3Var.setOnClickListener(onClickListener);
-        w3Var.setVisibility(0);
+    @Override // android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.s) {
+            case 0:
+                return Button.class.getName();
+            case 1:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
     }
 
-    public final void b(CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
-        this.a.setText(charSequence);
-        w3 w3Var = this.b;
-        w3Var.c(charSequence2, false, true);
-        w3Var.setOnClickListener(onClickListener);
-        w3Var.setVisibility(0);
+    @Override // android.view.View
+    public int getBaseline() {
+        switch (this.s) {
+            case 5:
+                return Math.round((getHeight() - getDrawable().e) / 2.0f) - getPaint().getFontMetricsInt().ascent;
+            default:
+                return super.getBaseline();
+        }
     }
 
-    public CharSequence getText() {
-        return this.a.getText();
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.s) {
+            case 4:
+                if (!ch.f0.b(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
     }
 
-    public TextView getTextView() {
-        return this.a;
+    @Override // org.telegram.ui.Components.n6, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.s) {
+            case 2:
+                canvas.save();
+                canvas.translate(org.telegram.messenger.g0.L(17.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.e), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.n6, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.s) {
+            case 3:
+                super.onMeasure(i7, i10);
+                setPivotX(getMeasuredWidth());
+                break;
+            case 4:
+            default:
+                super.onMeasure(i7, i10);
+                break;
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.q.x, TLObject.FLAG_31), i10);
+                setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i7), getMeasuredHeight());
+                break;
+        }
     }
 
-    public void setLayerHeight(int i7) {
-        this.e = i7;
-        requestLayout();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ x3(Context context, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        super(context, z10, z11, z12, z13, z14);
+        this.s = 5;
     }
 
-    public void setNoBackground(boolean z10) {
-        this.f = z10;
-        updateColors();
-    }
-
-    public void setRightText(CharSequence charSequence) {
-        w3 w3Var = this.b;
-        w3Var.c(charSequence, true, true);
-        w3Var.setVisibility(0);
-    }
-
-    public void setRightTextMargin(int i7) {
-        float f10 = i7;
-        int L = org.telegram.messenger.g0.L(f10);
-        FrameLayout.LayoutParams layoutParams = this.c;
-        layoutParams.leftMargin = L;
-        layoutParams.rightMargin = org.telegram.messenger.g0.L(f10);
-        this.b.setLayoutParams(layoutParams);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
-        w3 w3Var = this.b;
-        w3Var.setVisibility(8);
-        w3Var.setOnClickListener(null);
-    }
-
-    public void setTextColor(int i7) {
-        org.telegram.ui.Components.w5 w5Var = this.a;
-        org.telegram.ui.ActionBar.i6 i6Var = this.d;
-        org.telegram.ui.ActionBar.u6.U(w5Var, i7, i6Var);
-        org.telegram.ui.ActionBar.u6.Y(this.b, i7, i6Var);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        boolean z10 = this.f;
-        org.telegram.ui.ActionBar.i6 i6Var = this.d;
-        setBackgroundColor(z10 ? 0 : org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.e7, i6Var));
-        int i7 = org.telegram.ui.ActionBar.n6.f7;
-        this.a.setTextColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
-        this.b.setTextColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
-    }
-
-    public x3(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context);
-        this.e = 32;
-        this.d = i6Var;
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.e7, this, i6Var);
-        org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(getContext());
-        this.a = w5Var;
-        boolean z10 = true;
-        w5Var.setTextSize(1, 14.0f);
-        w5Var.setTypeface(org.telegram.messenger.g0.o());
-        int i10 = org.telegram.ui.ActionBar.n6.f7;
-        org.telegram.ui.ActionBar.u6.U(w5Var, i10, i6Var);
-        w5Var.setGravity((gd.a0 ? 5 : 3) | 16);
-        float f10 = i7;
-        addView(w5Var, c8.ma.d(-1, -1.0f, (gd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
-        w3 w3Var = new w3(getContext(), z10, z10, z10, 0);
-        this.b = w3Var;
-        w3Var.setPadding(org.telegram.messenger.g0.L(2.0f), 0, org.telegram.messenger.g0.L(2.0f), 0);
-        w3Var.b(0.9f, 420L, lr.h);
-        w3Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        org.telegram.ui.ActionBar.u6.Y(w3Var, i10, i6Var);
-        w3Var.setGravity(gd.a0 ? 3 : 5);
-        FrameLayout.LayoutParams d = c8.ma.d(-2, -1.0f, (gd.a0 ? 3 : 5) | 48, f10, 0.0f, f10, 0.0f);
-        this.c = d;
-        addView(w3Var, d);
-        WeakHashMap weakHashMap = r0.i0.a;
-        new r0.v(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.view.View
+    public void invalidate(int i7, int i10, int i11, int i12) {
+        switch (this.s) {
+            case 4:
+                if (!ch.f0.b(this)) {
+                    super.invalidate(i7, i10, i11, i12);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i7, i10, i11, i12);
+                break;
+        }
     }
 }

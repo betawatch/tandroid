@@ -14,7 +14,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.g81;
 import org.telegram.ui.i81;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -111,18 +111,18 @@ public final /* synthetic */ class pp0 implements Runnable {
                 kyVar.e0(kyVar.P, this.b);
                 break;
             case 9:
-                org.telegram.ui.pa0 pa0Var = (org.telegram.ui.pa0) this.c;
+                org.telegram.ui.qa0 qa0Var = (org.telegram.ui.qa0) this.c;
                 if (!this.b) {
-                    pa0Var.b.setVisibility(8);
+                    qa0Var.b.setVisibility(8);
                     break;
                 } else {
-                    pa0Var.getClass();
+                    qa0Var.getClass();
                     break;
                 }
             case 10:
-                org.telegram.ui.de0 de0Var = (org.telegram.ui.de0) this.c;
+                org.telegram.ui.ee0 ee0Var = (org.telegram.ui.ee0) this.c;
                 if (!this.b) {
-                    de0Var.X.setVisibility(8);
+                    ee0Var.X.setVisibility(8);
                     break;
                 }
                 break;
@@ -152,14 +152,14 @@ public final /* synthetic */ class pp0 implements Runnable {
                 i81 i81Var = (i81) this.c;
                 boolean z14 = this.b;
                 org.telegram.messenger.g0.g3(new org.telegram.ui.b81(i81Var, c10 == true ? 1 : 0));
-                org.telegram.ui.Cells.q1 q1Var = i81Var.L;
-                if (q1Var != null) {
-                    q1Var.setVisibility(0);
+                org.telegram.ui.Cells.r1 r1Var = i81Var.L;
+                if (r1Var != null) {
+                    r1Var.setVisibility(0);
                     if (!z14) {
-                        org.telegram.ui.Cells.q1 q1Var2 = i81Var.L;
-                        int c22 = q1Var2.c2(i81Var.P);
+                        org.telegram.ui.Cells.r1 r1Var2 = i81Var.L;
+                        int c22 = r1Var2.c2(i81Var.P);
                         g81 g81Var = i81Var.J;
-                        CheckBoxBase[] checkBoxBaseArr2 = q1Var2.f7;
+                        CheckBoxBase[] checkBoxBaseArr2 = r1Var2.f7;
                         if (checkBoxBaseArr2 != null && c22 >= 0 && c22 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[c22]) != null && g81Var != null && (checkBoxBaseArr = g81Var.f7) != null && c22 >= 0 && c22 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[c22]) != null) {
                             ObjectAnimator objectAnimator = checkBoxBase.p;
                             if (objectAnimator != null) {
@@ -170,9 +170,9 @@ public final /* synthetic */ class pp0 implements Runnable {
                             checkBoxBase.f(-1, checkBoxBase2.q, true);
                         }
                     }
-                    org.telegram.ui.Cells.q1 q1Var3 = i81Var.L;
-                    q1Var3.c6 = -1;
-                    q1Var3.invalidate();
+                    org.telegram.ui.Cells.r1 r1Var3 = i81Var.L;
+                    r1Var3.c6 = -1;
+                    r1Var3.invalidate();
                 }
                 org.telegram.ui.ul ulVar = i81Var.d0;
                 if (ulVar != null) {

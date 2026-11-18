@@ -9,12 +9,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h61 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public final org.telegram.ui.Cells.aa a;
+    public final org.telegram.ui.Cells.ba a;
     public final org.telegram.ui.Components.ym0 b;
-    public final org.telegram.ui.Cells.r8 c;
+    public final org.telegram.ui.Cells.s8 c;
     public final int d;
     public final int e;
     public final TextPaint f;
@@ -41,16 +41,16 @@ public final class h61 extends FrameLayout implements org.telegram.ui.ActionBar.
         ym0Var.setImportantForAccessibility(2);
         addView(ym0Var, c8.ma.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
         boolean z10 = org.telegram.messenger.s2.a;
-        org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(context);
-        this.c = r8Var;
-        r8Var.setBackground(org.telegram.ui.ActionBar.n6.N0(false));
-        r8Var.f(org.telegram.messenger.gd.M0(2131751821, null), org.telegram.messenger.bz.H0, false);
-        r8Var.setOnClickListener(new oy0(this, 7));
+        org.telegram.ui.Cells.s8 s8Var = new org.telegram.ui.Cells.s8(context);
+        this.c = s8Var;
+        s8Var.setBackground(org.telegram.ui.ActionBar.n6.N0(false));
+        s8Var.f(org.telegram.messenger.gd.M0(2131751821, null), org.telegram.messenger.bz.H0, false);
+        s8Var.setOnClickListener(new oy0(this, 7));
         s4Var = ((org.telegram.ui.ActionBar.h2) themeActivity).parentLayout;
-        org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(context, s4Var, 0);
-        this.a = aaVar;
-        aaVar.setImportantForAccessibility(4);
-        addView(aaVar, c8.ma.d(-1, -2.0f, 51, 0.0f, 53, 0.0f, 0.0f));
+        org.telegram.ui.Cells.ba baVar = new org.telegram.ui.Cells.ba(context, s4Var, 0);
+        this.a = baVar;
+        baVar.setImportantForAccessibility(4);
+        addView(baVar, c8.ma.d(-1, -2.0f, 51, 0.0f, 53, 0.0f, 0.0f));
     }
 
     @Override // org.telegram.ui.ActionBar.c6

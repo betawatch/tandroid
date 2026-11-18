@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ho0 implements org.telegram.messenger.fs {
     public final /* synthetic */ TLRPC.Dialog a;
@@ -39,7 +39,7 @@ public final class ho0 implements org.telegram.messenger.fs {
                 wo0Var.f();
             }
             if (wo0Var.f != null) {
-                org.telegram.messenger.ks.f(yo0Var.a).n(this, org.telegram.messenger.ks.s5);
+                org.telegram.messenger.ks.f(yo0Var.a).n(this, org.telegram.messenger.ks.t5);
             }
             if (z10) {
                 ck0Var.setVisibility(0);

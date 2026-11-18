@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class hb implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ View a;
@@ -33,24 +33,24 @@ public final class hb implements ViewTreeObserver.OnPreDrawListener {
             measuredHeight2 = i7 + measuredHeight;
         }
         View view2 = this.b.a;
-        if (view2 instanceof org.telegram.ui.Cells.q1) {
+        if (view2 instanceof org.telegram.ui.Cells.r1) {
             int heightWithKeyboard = (lbVar.Y.getHeightWithKeyboard() - org.telegram.messenger.g0.L(48.0f)) - lbVar.w.getTop();
             float y10 = view.getY();
             kVar3 = ((org.telegram.ui.ActionBar.h2) lbVar).actionBar;
-            ((org.telegram.ui.Cells.q1) view).C3(i7, measuredHeight2 - i7, heightWithKeyboard, 0.0f, (y10 + kVar3.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getMeasuredWidth(), lbVar.Y.getBackgroundSizeY(), 0, 0, 0);
+            ((org.telegram.ui.Cells.r1) view).C3(i7, measuredHeight2 - i7, heightWithKeyboard, 0.0f, (y10 + kVar3.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getMeasuredWidth(), lbVar.Y.getBackgroundSizeY(), 0, 0, 0);
             return true;
         }
-        if (!(view2 instanceof org.telegram.ui.Cells.u0)) {
+        if (!(view2 instanceof org.telegram.ui.Cells.v0)) {
             return true;
         }
         kVar = ((org.telegram.ui.ActionBar.h2) lbVar).actionBar;
         if (kVar == null || lbVar.Y == null) {
             return true;
         }
-        org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) view;
+        org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
         float y11 = view.getY();
         kVar2 = ((org.telegram.ui.ActionBar.h2) lbVar).actionBar;
-        u0Var.l0((y11 + kVar2.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getBackgroundSizeY());
+        v0Var.k0((y11 + kVar2.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getBackgroundSizeY());
         return true;
     }
 }

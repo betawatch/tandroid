@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class m0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -121,13 +121,13 @@ public final class m0 implements TextWatcher {
                     }
                     bz bzVar = kzVar.K;
                     if (bzVar != null) {
-                        org.telegram.ui.Cells.w3 w3Var = bzVar.r;
+                        org.telegram.ui.Cells.x3 x3Var = bzVar.r;
                         if (kz.q0(kzVar.x)) {
                             str = org.telegram.messenger.gd.M0(kzVar.y ? 2131750724 : 2131750723, null);
                         } else {
                             str = null;
                         }
-                        w3Var.setText(str);
+                        x3Var.setText(str);
                     }
                     if (kzVar.s && TextUtils.isEmpty(kzVar.x)) {
                         a5Var3 = ((org.telegram.ui.ActionBar.h2) kzVar).simpleActionBar;
@@ -178,19 +178,19 @@ public final class m0 implements TextWatcher {
             case 11:
                 break;
             case 12:
-                ce0 ce0Var = (ce0) obj2;
-                HashMap hashMap = ce0Var.I;
-                ArrayList arrayList = ce0Var.H;
-                ae0 ae0Var = ce0Var.a;
-                ae0 ae0Var2 = ce0Var.b;
-                if (!ce0Var.L) {
-                    ce0Var.L = true;
-                    String d = pf.b.d(ae0Var.getText().toString(), false);
-                    ae0Var.setText(d);
+                de0 de0Var = (de0) obj2;
+                HashMap hashMap = de0Var.I;
+                ArrayList arrayList = de0Var.H;
+                be0 be0Var = de0Var.a;
+                be0 be0Var2 = de0Var.b;
+                if (!de0Var.L) {
+                    de0Var.L = true;
+                    String d = pf.b.d(be0Var.getText().toString(), false);
+                    be0Var.setText(d);
                     if (d.length() == 0) {
-                        ce0Var.setCountryButtonText(null);
-                        ae0Var2.setHintText((String) null);
-                        ce0Var.F = 1;
+                        de0Var.setCountryButtonText(null);
+                        be0Var2.setHintText((String) null);
+                        de0Var.F = 1;
                         z11 = false;
                     } else {
                         if (d.length() > 4) {
@@ -221,8 +221,8 @@ public final class m0 implements TextWatcher {
                                         psVar2 = (ps) list.get(i14);
                                     }
                                     if (psVar2 != null) {
-                                        str2 = d.substring(i12) + ae0Var2.getText().toString();
-                                        ae0Var.setText(substring);
+                                        str2 = d.substring(i12) + be0Var2.getText().toString();
+                                        be0Var.setText(substring);
                                         d = substring;
                                         z10 = true;
                                     } else {
@@ -236,9 +236,9 @@ public final class m0 implements TextWatcher {
                                 }
                             }
                             if (!z10) {
-                                str2 = d.substring(1) + ae0Var2.getText().toString();
+                                str2 = d.substring(1) + be0Var2.getText().toString();
                                 d = d.substring(0, 1);
-                                ae0Var.setText(d);
+                                be0Var.setText(d);
                             }
                         } else {
                             str2 = null;
@@ -265,9 +265,9 @@ public final class m0 implements TextWatcher {
                             }
                         }
                         if (i17 == 1 && psVar5 != null && str2 == null) {
-                            str2 = d.substring(psVar5.c.length()) + ae0Var2.getText().toString();
+                            str2 = d.substring(psVar5.c.length()) + be0Var2.getText().toString();
                             d = psVar5.c;
-                            ae0Var.setText(d);
+                            be0Var.setText(d);
                         }
                         List list2 = (List) hashMap.get(d);
                         if (list2 == null) {
@@ -293,22 +293,22 @@ public final class m0 implements TextWatcher {
                             i10 = 0;
                             psVar = (ps) list2.get(0);
                             if (psVar == null) {
-                                ce0Var.K = true;
-                                ce0Var.G = psVar;
-                                ce0Var.u(d, psVar);
-                                ce0Var.F = i10;
+                                de0Var.K = true;
+                                de0Var.G = psVar;
+                                de0Var.u(d, psVar);
+                                de0Var.F = i10;
                             } else {
-                                ce0Var.setCountryButtonText(null);
-                                ae0Var2.setHintText((String) null);
-                                ce0Var.F = 2;
+                                de0Var.setCountryButtonText(null);
+                                be0Var2.setHintText((String) null);
+                                de0Var.F = 2;
                             }
                             if (!z10) {
-                                ae0Var.setSelection(ae0Var.getText().length());
+                                be0Var.setSelection(be0Var.getText().length());
                             }
                             if (str2 != null) {
-                                ae0Var2.requestFocus();
-                                ae0Var2.setText(str2);
-                                ae0Var2.setSelection(ae0Var2.length());
+                                be0Var2.requestFocus();
+                                be0Var2.setText(str2);
+                                be0Var2.setSelection(be0Var2.length());
                             }
                             z11 = false;
                         }
@@ -321,21 +321,21 @@ public final class m0 implements TextWatcher {
                         }
                         z11 = false;
                     }
-                    ce0Var.L = z11;
+                    de0Var.L = z11;
                     break;
                 }
                 break;
             case 13:
-                eh0 eh0Var = (eh0) obj2;
-                HashMap hashMap2 = eh0Var.w1;
-                ArrayList arrayList2 = eh0Var.v1;
-                if (!eh0Var.y1) {
-                    eh0Var.y1 = true;
-                    String d2 = pf.b.d(eh0Var.I1.getText().toString(), false);
-                    eh0Var.I1.setText(d2);
+                fh0 fh0Var = (fh0) obj2;
+                HashMap hashMap2 = fh0Var.w1;
+                ArrayList arrayList2 = fh0Var.v1;
+                if (!fh0Var.y1) {
+                    fh0Var.y1 = true;
+                    String d2 = pf.b.d(fh0Var.I1.getText().toString(), false);
+                    fh0Var.I1.setText(d2);
                     if (d2.length() == 0) {
-                        eh0Var.M0(null);
-                        eh0Var.K1.setHintText((String) null);
+                        fh0Var.M0(null);
+                        fh0Var.K1.setHintText((String) null);
                     } else {
                         if (d2.length() > 4) {
                             while (true) {
@@ -365,8 +365,8 @@ public final class m0 implements TextWatcher {
                                         obj = (ps) list3.get(0);
                                     }
                                     if (obj != null) {
-                                        str3 = d2.substring(i12) + eh0Var.K1.getText().toString();
-                                        eh0Var.I1.setText(substring2);
+                                        str3 = d2.substring(i12) + fh0Var.K1.getText().toString();
+                                        fh0Var.I1.setText(substring2);
                                         d2 = substring2;
                                         z12 = true;
                                     } else {
@@ -379,10 +379,10 @@ public final class m0 implements TextWatcher {
                                 }
                             }
                             if (!z12) {
-                                str3 = d2.substring(1) + eh0Var.K1.getText().toString();
-                                dh0 dh0Var = eh0Var.I1;
+                                str3 = d2.substring(1) + fh0Var.K1.getText().toString();
+                                eh0 eh0Var = fh0Var.I1;
                                 d2 = d2.substring(0, 1);
-                                dh0Var.setText(d2);
+                                eh0Var.setText(d2);
                             }
                         } else {
                             z12 = false;
@@ -404,10 +404,10 @@ public final class m0 implements TextWatcher {
                             }
                         }
                         if (i22 == 1 && psVar9 != null && str3 == null) {
-                            str3 = d2.substring(psVar9.c.length()) + eh0Var.K1.getText().toString();
-                            dh0 dh0Var2 = eh0Var.I1;
+                            str3 = d2.substring(psVar9.c.length()) + fh0Var.K1.getText().toString();
+                            eh0 eh0Var2 = fh0Var.I1;
                             String str5 = psVar9.c;
-                            dh0Var2.setText(str5);
+                            eh0Var2.setText(str5);
                             d2 = str5;
                         }
                         List list4 = (List) hashMap2.get(d2);
@@ -434,25 +434,25 @@ public final class m0 implements TextWatcher {
                             psVar3 = (ps) list4.get(0);
                         }
                         if (psVar3 != null) {
-                            eh0Var.A1 = true;
-                            eh0Var.N0(d2, psVar3);
+                            fh0Var.A1 = true;
+                            fh0Var.N0(d2, psVar3);
                         } else {
-                            eh0Var.M0(null);
-                            eh0Var.K1.setHintText((String) null);
+                            fh0Var.M0(null);
+                            fh0Var.K1.setHintText((String) null);
                         }
                         if (!z12) {
-                            dh0 dh0Var3 = eh0Var.I1;
-                            dh0Var3.setSelection(dh0Var3.getText().length());
+                            eh0 eh0Var3 = fh0Var.I1;
+                            eh0Var3.setSelection(eh0Var3.getText().length());
                         }
                         if (str3 != null && str3.length() != 0) {
-                            eh0Var.K1.requestFocus();
-                            eh0Var.K1.setText(str3);
-                            dh0 dh0Var4 = eh0Var.K1;
-                            dh0Var4.setSelection(dh0Var4.length());
+                            fh0Var.K1.requestFocus();
+                            fh0Var.K1.setText(str3);
+                            eh0 eh0Var4 = fh0Var.K1;
+                            eh0Var4.setSelection(eh0Var4.length());
                         }
                     }
-                    eh0Var.y1 = false;
-                    eh0.J0(eh0Var);
+                    fh0Var.y1 = false;
+                    fh0.J0(fh0Var);
                     break;
                 }
                 break;
@@ -596,29 +596,29 @@ public final class m0 implements TextWatcher {
                 zqVar.m();
                 break;
             case 9:
-                ob0 ob0Var = (ob0) obj;
-                hb0 hb0Var = ob0Var.T;
-                if (ob0Var.S) {
-                    ob0Var.removeCallbacks(hb0Var);
-                    hb0Var.run();
+                pb0 pb0Var = (pb0) obj;
+                ib0 ib0Var = pb0Var.T;
+                if (pb0Var.S) {
+                    pb0Var.removeCallbacks(ib0Var);
+                    ib0Var.run();
                     break;
                 }
                 break;
             case 10:
-                gc0 gc0Var = (gc0) obj;
-                ec0 ec0Var = gc0Var.y;
-                if (gc0Var.x) {
-                    gc0Var.removeCallbacks(ec0Var);
-                    ec0Var.run();
+                hc0 hc0Var = (hc0) obj;
+                fc0 fc0Var = hc0Var.y;
+                if (hc0Var.x) {
+                    hc0Var.removeCallbacks(fc0Var);
+                    fc0Var.run();
                     break;
                 }
                 break;
             case 11:
-                gd0 gd0Var = (gd0) obj;
-                sc0 sc0Var = gd0Var.u0;
-                if (gd0Var.t0) {
-                    gd0Var.removeCallbacks(sc0Var);
-                    sc0Var.run();
+                hd0 hd0Var = (hd0) obj;
+                tc0 tc0Var = hd0Var.u0;
+                if (hd0Var.t0) {
+                    hd0Var.removeCallbacks(tc0Var);
+                    tc0Var.run();
                     break;
                 }
                 break;

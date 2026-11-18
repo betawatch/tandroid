@@ -8,7 +8,7 @@ import android.view.TextureView;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram.ui.Components.c50, ll, pm0 {
     public final /* synthetic */ bn a;
@@ -29,10 +29,10 @@ public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram
             bnVar.L8 = null;
         }
         for (int i7 = 0; i7 < bnVar.A0.getChildCount(); i7++) {
-            if (bnVar.A0.getChildAt(i7) instanceof org.telegram.ui.Cells.q1) {
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) bnVar.A0.getChildAt(i7);
-                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().e1() == fjVar.e1()) {
-                    q1Var.getPhotoImage().O0(false, true);
+            if (bnVar.A0.getChildAt(i7) instanceof org.telegram.ui.Cells.r1) {
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) bnVar.A0.getChildAt(i7);
+                if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == fjVar.e1()) {
+                    r1Var.getPhotoImage().O0(false, true);
                 }
             }
         }
@@ -45,10 +45,10 @@ public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram
         }
         if (MediaController.B().I(fjVar)) {
             for (int i7 = 0; i7 < this.a.A0.getChildCount(); i7++) {
-                if (this.a.A0.getChildAt(i7) instanceof org.telegram.ui.Cells.q1) {
-                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.a.A0.getChildAt(i7);
-                    if (q1Var.getMessageObject() != null && q1Var.getMessageObject().e1() == fjVar.e1()) {
-                        org.telegram.ui.Components.b6 m10 = q1Var.getPhotoImage().m();
+                if (this.a.A0.getChildAt(i7) instanceof org.telegram.ui.Cells.r1) {
+                    org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.a.A0.getChildAt(i7);
+                    if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == fjVar.e1()) {
+                        org.telegram.ui.Components.b6 m10 = r1Var.getPhotoImage().m();
                         if (m10.c0) {
                             m10.stop();
                         }
@@ -58,8 +58,8 @@ public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram
                                 zj zjVar = this.a.Ta;
                                 int width = m11.getWidth();
                                 int height = m11.getHeight();
-                                org.telegram.ui.Cells.u5 u5Var = zjVar.d;
-                                Bitmap bitmap = u5Var == null ? null : ((TextureView) u5Var.d).getBitmap(width, height);
+                                org.telegram.ui.Cells.v5 v5Var = zjVar.d;
+                                Bitmap bitmap = v5Var == null ? null : ((TextureView) v5Var.d).getBitmap(width, height);
                                 new Canvas(m11).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
                                 bitmap.recycle();
                             } catch (Throwable th2) {

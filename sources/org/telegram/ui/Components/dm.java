@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class dm extends org.telegram.ui.oq0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
@@ -67,12 +67,12 @@ public abstract class dm extends org.telegram.ui.oq0 {
                             break;
                         }
                         View childAt = xlVar2.getChildAt(i10);
-                        if (!(childAt instanceof org.telegram.ui.Cells.r5) || ((Integer) childAt.getTag()).intValue() != i7) {
+                        if (!(childAt instanceof org.telegram.ui.Cells.s5) || ((Integer) childAt.getTag()).intValue() != i7) {
                             i10++;
                         } else if ((siVar.a2 instanceof org.telegram.ui.bn) && siVar.R3) {
-                            ((org.telegram.ui.Cells.r5) childAt).b(T, z10, false);
+                            ((org.telegram.ui.Cells.s5) childAt).b(T, z10, false);
                         } else {
-                            ((org.telegram.ui.Cells.r5) childAt).b(-1, z10, false);
+                            ((org.telegram.ui.Cells.s5) childAt).b(-1, z10, false);
                         }
                     }
                     int childCount2 = xlVar.getChildCount();
@@ -82,12 +82,12 @@ public abstract class dm extends org.telegram.ui.oq0 {
                             break;
                         }
                         View childAt2 = xlVar.getChildAt(i11);
-                        if (!(childAt2 instanceof org.telegram.ui.Cells.r5) || ((Integer) childAt2.getTag()).intValue() != i7) {
+                        if (!(childAt2 instanceof org.telegram.ui.Cells.s5) || ((Integer) childAt2.getTag()).intValue() != i7) {
                             i11++;
                         } else if ((siVar.a2 instanceof org.telegram.ui.bn) && siVar.R3) {
-                            ((org.telegram.ui.Cells.r5) childAt2).b(T, z10, false);
+                            ((org.telegram.ui.Cells.s5) childAt2).b(T, z10, false);
                         } else {
-                            ((org.telegram.ui.Cells.r5) childAt2).b(-1, z10, false);
+                            ((org.telegram.ui.Cells.s5) childAt2).b(-1, z10, false);
                         }
                     }
                     siVar.L1(z10 ? 1 : 2);

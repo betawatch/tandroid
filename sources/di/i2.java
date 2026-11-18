@@ -54,13 +54,13 @@ import org.telegram.ui.bx;
 import org.telegram.ui.cx;
 import org.telegram.ui.f40;
 import org.telegram.ui.kz;
-import org.telegram.ui.o80;
 import org.telegram.ui.p80;
+import org.telegram.ui.q80;
 import org.telegram.ui.up;
-import org.telegram.ui.v60;
-import org.telegram.ui.ve0;
+import org.telegram.ui.w60;
+import org.telegram.ui.we0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements Runnable {
     public final /* synthetic */ int a;
@@ -100,8 +100,8 @@ public final /* synthetic */ class i2 implements Runnable {
     }
 
     private final void b() {
-        p80 p80Var = (p80) this.b;
-        LaunchActivity launchActivity = p80Var.h;
+        q80 q80Var = (q80) this.b;
+        LaunchActivity launchActivity = q80Var.h;
         String str = (String) this.d;
         org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.e;
         if (str != null) {
@@ -119,7 +119,7 @@ public final /* synthetic */ class i2 implements Runnable {
             TLRPC.ChatFull P0 = mp.u1(i7).P0(j10);
             if (P0 != null) {
                 if (P0.call != null) {
-                    mp.u1(i7).i1(j10, true, new o80(p80Var, a10, j3, h2Var, 0));
+                    mp.u1(i7).i1(j10, true, new p80(q80Var, a10, j3, h2Var, 0));
                 } else if (h2Var.getParentActivity() != null) {
                     org.telegram.messenger.f3.n(null, 2131748960, org.telegram.ui.Components.lc.b0(h2Var), R.raw.linkbroken, 36);
                 }
@@ -136,7 +136,7 @@ public final /* synthetic */ class i2 implements Runnable {
         bi.e2 e2Var = new bi.e2(photoViewer, str, efVar, j3, 7);
         if (photoViewer.E2) {
             Bitmap createBitmap = Bitmap.createBitmap(photoViewer.D2.getWidth(), photoViewer.D2.getHeight(), Bitmap.Config.ARGB_8888);
-            org.telegram.messenger.g0.A0(photoViewer.D2, createBitmap, new ve0(20, e2Var, createBitmap));
+            org.telegram.messenger.g0.A0(photoViewer.D2, createBitmap, new we0(20, e2Var, createBitmap));
             return;
         }
         TextureView textureView = photoViewer.C2;
@@ -549,11 +549,11 @@ public final /* synthetic */ class i2 implements Runnable {
                 if (z10) {
                     if (tL_updateStory2.story instanceof TL_stories.TL_storyItemDeleted) {
                         i10 = 0;
-                        ks.f(i11).k(ks.y5, Long.valueOf(j14), Integer.valueOf(tL_updateStory2.story.id));
+                        ks.f(i11).k(ks.z5, Long.valueOf(j14), Integer.valueOf(tL_updateStory2.story.id));
                     } else {
                         i10 = 0;
                     }
-                    ks.f(i11).k(ks.x5, new Object[i10]);
+                    ks.f(i11).k(ks.y5, new Object[i10]);
                 }
                 mp.u1(i11).D();
                 return;
@@ -561,7 +561,7 @@ public final /* synthetic */ class i2 implements Runnable {
                 fi.w5 w5Var = (fi.w5) this.b;
                 TLObject tLObject2 = (TLObject) this.d;
                 long j15 = this.c;
-                v60 v60Var = (v60) this.e;
+                w60 w60Var = (w60) this.e;
                 fi.p6 p6Var2 = w5Var.c;
                 int i14 = p6Var2.a;
                 if (tLObject2 != null) {
@@ -575,14 +575,14 @@ public final /* synthetic */ class i2 implements Runnable {
                                 a0.h hVar3 = p6Var2.E;
                                 obj = (TL_stories.StoryItem) peerStories3.stories.get(i15);
                                 hVar3.k(obj, j15);
-                                v60Var.a(obj);
+                                w60Var.a(obj);
                                 return;
                             }
                         }
                     }
                 }
                 obj = null;
-                v60Var.a(obj);
+                w60Var.a(obj);
                 return;
             case 9:
                 fi.x5 x5Var = (fi.x5) this.b;

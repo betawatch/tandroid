@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ap0 implements Runnable {
     public final /* synthetic */ int a;
@@ -262,9 +262,9 @@ public final /* synthetic */ class ap0 implements Runnable {
                 ArrayList arrayList7 = ((jz0) obj).a;
                 for (int i15 = 0; i15 < arrayList7.size(); i15++) {
                     ((View) arrayList7.get(i15)).setVisibility(8);
-                    if (arrayList7.get(i15) instanceof org.telegram.ui.Cells.q1) {
-                        ((org.telegram.ui.Cells.q1) arrayList7.get(i15)).l3(false, false);
-                        ((org.telegram.ui.Cells.q1) arrayList7.get(i15)).n3(false, false, false);
+                    if (arrayList7.get(i15) instanceof org.telegram.ui.Cells.r1) {
+                        ((org.telegram.ui.Cells.r1) arrayList7.get(i15)).l3(false, false);
+                        ((org.telegram.ui.Cells.r1) arrayList7.get(i15)).n3(false, false, false);
                     }
                 }
                 break;

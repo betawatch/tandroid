@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -236,9 +236,9 @@ public final /* synthetic */ class o1 implements Runnable {
             case 19:
                 bn bnVar4 = (bn) obj3;
                 ((org.telegram.ui.Components.y60) obj).v();
-                eh0 eh0Var = new eh0(bnVar4.getParentActivity(), bnVar4);
-                eh0Var.O0((String) obj2, false);
-                eh0Var.show();
+                fh0 fh0Var = new fh0(bnVar4.getParentActivity(), bnVar4);
+                fh0Var.O0((String) obj2, false);
+                fh0Var.show();
                 return;
             case 20:
                 bn.o1((bn) obj3, (cg.a) obj2, (Runnable) obj);
@@ -269,14 +269,14 @@ public final /* synthetic */ class o1 implements Runnable {
                 fjVar.q = false;
                 return;
             case 24:
-                ((mm) obj3).k((org.telegram.ui.Cells.q1) obj2, (TLRPC.User) obj);
+                ((mm) obj3).k((org.telegram.ui.Cells.r1) obj2, (TLRPC.User) obj);
                 return;
             case 25:
-                ((mm) obj3).j((org.telegram.ui.Cells.q1) obj2, (TLRPC.Chat) obj, 0, false);
+                ((mm) obj3).j((org.telegram.ui.Cells.r1) obj2, (TLRPC.Chat) obj, 0, false);
                 return;
             case 26:
                 final mm mmVar = (mm) obj3;
-                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) obj2;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj2;
                 final TLRPC.Document document = (TLRPC.Document) obj;
                 bn bnVar6 = mmVar.a;
                 if (bnVar6.getParentActivity() == null || document == null) {
@@ -286,7 +286,7 @@ public final /* synthetic */ class o1 implements Runnable {
                     bnVar6.getParentActivity().requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 4);
                     return;
                 }
-                org.telegram.messenger.fj messageObject = q1Var2 == null ? null : q1Var2.getMessageObject();
+                org.telegram.messenger.fj messageObject = r1Var == null ? null : r1Var.getMessageObject();
                 if (messageObject == null || messageObject.k == null) {
                     return;
                 }

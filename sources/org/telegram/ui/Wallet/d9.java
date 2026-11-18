@@ -28,7 +28,7 @@ import org.telegram.ui.Components.z41;
 import org.telegram.ui.aj0;
 import org.telegram.ui.b31;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class d9 extends b51 implements fs {
     public final ArrayList e = new ArrayList();
@@ -412,11 +412,11 @@ public final class d9 extends b51 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        bi.d6 d6Var;
-        if (i7 != ks.c4 || (d6Var = this.a) == null) {
+        bi.c6 c6Var;
+        if (i7 != ks.d4 || (c6Var = this.a) == null) {
             return;
         }
-        d6Var.g3.O(true);
+        c6Var.g3.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.h2
@@ -426,13 +426,13 @@ public final class d9 extends b51 implements fs {
 
     @Override // org.telegram.ui.ActionBar.h2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ks.c4);
+        getNotificationCenter().c(this, ks.d4);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ks.c4);
+        getNotificationCenter().n(this, ks.d4);
         this.f = true;
         ArrayList arrayList = this.e;
         int size = arrayList.size();

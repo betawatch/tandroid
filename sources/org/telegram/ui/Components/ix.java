@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ix implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class ix implements View.OnClickListener {
                         if (o02 != null && o02.set != null) {
                             org.telegram.ui.ActionBar.h2 h2Var = ryVar2.Z1;
                             if (h2Var == null) {
-                                h2Var = new bi.z8(jxVar, 8);
+                                h2Var = new bi.y8(jxVar, 8);
                             }
                             bv.K0(h2Var, o02, true, null, new mo(jxVar, 15));
                             break;
@@ -139,7 +139,7 @@ public final /* synthetic */ class ix implements View.OnClickListener {
                         if (o03 != null && o03.set != null) {
                             org.telegram.ui.ActionBar.h2 h2Var2 = ryVar3.Z1;
                             if (h2Var2 == null) {
-                                h2Var2 = new bi.z8(jxVar, 8);
+                                h2Var2 = new bi.y8(jxVar, 8);
                             }
                             org.telegram.ui.ActionBar.h2 h2Var3 = h2Var2;
                             dw dwVar = new dw(1, jxVar, o03);

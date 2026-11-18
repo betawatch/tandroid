@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
 import ch.q0;
-import e2.v0;
 import e2.y0;
 import gb.w0;
 import h9.t0;
@@ -34,9 +33,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.u2;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.dw;
 import org.telegram.ui.Components.ui0;
 import org.telegram.ui.Components.vi0;
@@ -55,9 +54,8 @@ import p4.g1;
 import p4.k1;
 import p4.l1;
 import ug.z0;
-import x2.r1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class c0 implements ib.b, ui0, ly0 {
     public static c0 f;
@@ -435,11 +433,11 @@ public final class c0 implements ib.b, ui0, ly0 {
             int size = arrayList.size() - i10;
             zr zrVar2 = (zr) this.e;
             if (zrVar2 == null || zrVar2.a != size) {
-                t2 t2Var = (t2) this.b;
+                u2 u2Var = (u2) this.b;
                 zr zrVar3 = new zr();
                 zrVar3.a = size;
                 vy0 vy0Var = new vy0(i5.c.i(size, "+"), 10.0f, org.telegram.messenger.g0.o());
-                vy0Var.r(t2Var);
+                vy0Var.r(u2Var);
                 zrVar3.c = vy0Var;
                 int L2 = org.telegram.messenger.g0.L(9.32f);
                 vy0 vy0Var2 = zrVar3.c;
@@ -487,8 +485,8 @@ public final class c0 implements ib.b, ui0, ly0 {
                 bn bnVar = (bn) this.b;
                 org.telegram.ui.Cells.z J8 = bnVar.J8(((fj) this.c).e1(), true);
                 float f16 = 0.0f;
-                if (J8 instanceof q1) {
-                    q0 q0Var3 = ((q1) J8).O;
+                if (J8 instanceof r1) {
+                    q0 q0Var3 = ((r1) J8).O;
                     ch.n0 k12 = q0Var3.k(p0Var);
                     if (k12 == null) {
                         f12 = 0.0f;
@@ -501,7 +499,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                         f11 = q0Var3.c + k12.x;
                         i7 = k12.A;
                     }
-                } else if (!(J8 instanceof u0) || (k10 = (q0Var = ((u0) J8).F0).k(p0Var)) == null) {
+                } else if (!(J8 instanceof v0) || (k10 = (q0Var = ((v0) J8).F0).k(p0Var)) == null) {
                     f10 = 0.0f;
                     bnVar.Eb(J8, (fj) this.c, (vi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                     ((as0) this.e).c(false);
@@ -519,8 +517,8 @@ public final class c0 implements ib.b, ui0, ly0 {
                 bn bnVar2 = (bn) this.b;
                 org.telegram.ui.Cells.z J82 = bnVar2.J8(((fj) this.c).e1(), true);
                 float f17 = 0.0f;
-                if (J82 instanceof q1) {
-                    q0 q0Var4 = ((q1) J82).O;
+                if (J82 instanceof r1) {
+                    q0 q0Var4 = ((r1) J82).O;
                     ch.n0 k13 = q0Var4.k(p0Var);
                     if (k13 == null) {
                         f15 = 0.0f;
@@ -533,7 +531,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                         f14 = q0Var4.c + k13.x;
                         i10 = k13.A;
                     }
-                } else if (!(J82 instanceof u0) || (k11 = (q0Var2 = ((u0) J82).F0).k(p0Var)) == null) {
+                } else if (!(J82 instanceof v0) || (k11 = (q0Var2 = ((v0) J82).F0).k(p0Var)) == null) {
                     f13 = 0.0f;
                     bnVar2.Eb(J82, (fj) this.c, (vi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                     ((i81) this.e).c(false);
@@ -672,7 +670,7 @@ public final class c0 implements ib.b, ui0, ly0 {
         return vVar;
     }
 
-    public v0 t(p4.v vVar) {
+    public e2.v0 t(p4.v vVar) {
         synchronized (this.b) {
             try {
                 return ((p4.h) ((a0.f) this.d).get(vVar)) != null ? null : null;
@@ -750,12 +748,12 @@ public final class c0 implements ib.b, ui0, ly0 {
         this.d = obj4;
     }
 
-    public c0(t2 t2Var) {
+    public c0(u2 u2Var) {
         this.a = 9;
         this.c = new ArrayList();
         this.d = new ArrayList();
         this.e = null;
-        this.b = t2Var;
+        this.b = u2Var;
     }
 
     public c0(p4.d0 d0Var) {
@@ -889,7 +887,7 @@ public final class c0 implements ib.b, ui0, ly0 {
         this.d = hd.f.l(list);
     }
 
-    public c0(r1 r1Var, boolean[] zArr) {
+    public c0(x2.r1 r1Var, boolean[] zArr) {
         this.a = 15;
         this.b = r1Var;
         this.c = zArr;

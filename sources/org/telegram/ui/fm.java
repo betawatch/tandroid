@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class fm extends vf.b {
     public final /* synthetic */ int d;
@@ -54,7 +54,7 @@ public final class fm extends vf.b {
                 break;
             default:
                 if (!z10) {
-                    org.telegram.messenger.g0.h3(new ci(1, this, (org.telegram.ui.Cells.u0) this.e), 250L);
+                    org.telegram.messenger.g0.h3(new ci(1, this, (org.telegram.ui.Cells.v0) this.e), 250L);
                     break;
                 }
                 break;
@@ -67,73 +67,73 @@ public final class fm extends vf.b {
             case 0:
                 mm mmVar = (mm) this.f;
                 bn bnVar = mmVar.a;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.e;
-                bnVar.ac = q1Var.getMessageObject().e1();
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.e;
+                bnVar.ac = r1Var.getMessageObject().e1();
                 bn bnVar2 = mmVar.a;
                 bnVar2.bc = 2;
                 bnVar2.cc = null;
-                q1Var.invalidate();
+                r1Var.invalidate();
                 break;
             case 1:
                 mm mmVar2 = (mm) this.f;
                 bn bnVar3 = mmVar2.a;
-                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) this.e;
-                bnVar3.ac = q1Var2.getMessageObject().e1();
+                org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) this.e;
+                bnVar3.ac = r1Var2.getMessageObject().e1();
                 bn bnVar4 = mmVar2.a;
                 bnVar4.bc = 2;
                 bnVar4.cc = null;
-                q1Var2.invalidate();
+                r1Var2.invalidate();
                 break;
             case 2:
                 mm mmVar3 = (mm) this.f;
                 bn bnVar5 = mmVar3.a;
-                org.telegram.ui.Cells.q1 q1Var3 = (org.telegram.ui.Cells.q1) this.e;
-                bnVar5.ac = q1Var3.getMessageObject().e1();
+                org.telegram.ui.Cells.r1 r1Var3 = (org.telegram.ui.Cells.r1) this.e;
+                bnVar5.ac = r1Var3.getMessageObject().e1();
                 bn bnVar6 = mmVar3.a;
                 bnVar6.bc = 2;
                 bnVar6.cc = null;
-                q1Var3.invalidate();
+                r1Var3.invalidate();
                 break;
             case 3:
                 mm mmVar4 = (mm) this.f;
                 bn bnVar7 = mmVar4.a;
-                org.telegram.ui.Cells.q1 q1Var4 = (org.telegram.ui.Cells.q1) this.e;
-                bnVar7.ac = q1Var4.getMessageObject().e1();
+                org.telegram.ui.Cells.r1 r1Var4 = (org.telegram.ui.Cells.r1) this.e;
+                bnVar7.ac = r1Var4.getMessageObject().e1();
                 bn bnVar8 = mmVar4.a;
                 bnVar8.bc = 2;
                 bnVar8.cc = null;
-                q1Var4.invalidate();
+                r1Var4.invalidate();
                 break;
             case 4:
                 mm mmVar5 = (mm) this.f;
                 bn bnVar9 = mmVar5.a;
-                org.telegram.ui.Cells.q1 q1Var5 = (org.telegram.ui.Cells.q1) this.e;
-                bnVar9.ac = q1Var5.getMessageObject().e1();
+                org.telegram.ui.Cells.r1 r1Var5 = (org.telegram.ui.Cells.r1) this.e;
+                bnVar9.ac = r1Var5.getMessageObject().e1();
                 bn bnVar10 = mmVar5.a;
                 bnVar10.bc = 2;
                 bnVar10.cc = null;
-                q1Var5.invalidate();
+                r1Var5.invalidate();
                 break;
             case 5:
                 mm mmVar6 = (mm) this.f;
                 bn bnVar11 = mmVar6.a;
-                org.telegram.ui.Cells.q1 q1Var6 = (org.telegram.ui.Cells.q1) this.e;
-                bnVar11.ac = q1Var6.getMessageObject().e1();
+                org.telegram.ui.Cells.r1 r1Var6 = (org.telegram.ui.Cells.r1) this.e;
+                bnVar11.ac = r1Var6.getMessageObject().e1();
                 bn bnVar12 = mmVar6.a;
                 bnVar12.bc = 2;
                 bnVar12.cc = null;
-                q1Var6.invalidate();
+                r1Var6.invalidate();
                 break;
             default:
                 fl flVar = (fl) this.f;
                 bn bnVar13 = flVar.a.R;
-                org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) this.e;
-                bnVar13.ac = u0Var.getMessageObject().e1();
+                org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) this.e;
+                bnVar13.ac = v0Var.getMessageObject().e1();
                 bn bnVar14 = flVar.a.R;
                 bnVar14.bc = 4;
                 bnVar14.cc = null;
-                u0Var.getMessageObject().r = true;
-                u0Var.invalidate();
+                v0Var.getMessageObject().r = true;
+                v0Var.invalidate();
                 break;
         }
     }

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c30 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public boolean E;
@@ -223,7 +223,7 @@ public final class c30 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         org.telegram.ui.nj njVar;
-        if (i7 != org.telegram.messenger.ks.z5) {
+        if (i7 != org.telegram.messenger.ks.A5) {
             if (i7 != org.telegram.messenger.ks.I0 || (njVar = this.f) == null || njVar.a == null || ((Integer) objArr[0]).intValue() != this.f.a.getClassGuid()) {
                 return;
             }
@@ -259,7 +259,7 @@ public final class c30 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         ArrayList arrayList = getMessagesController().R1().I;
         fi.b6 b6Var = this.d;
         arrayList.add(b6Var);
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.z5);
+        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.A5);
         org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.I0);
         b6Var.p(18, true);
         return super.onFragmentCreate();
@@ -268,7 +268,7 @@ public final class c30 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         getMessagesController().R1().I.remove(this.d);
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.z5);
+        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.A5);
         org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.I0);
         super.onFragmentDestroy();
     }

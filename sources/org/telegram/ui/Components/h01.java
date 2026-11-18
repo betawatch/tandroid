@@ -31,7 +31,7 @@ import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.i81;
 import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h01 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,14 +73,14 @@ public final /* synthetic */ class h01 implements Runnable {
                 break;
             case 1:
                 org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) this.c;
-                org.telegram.ui.Cells.l1 l1Var = (org.telegram.ui.Cells.l1) this.d;
+                org.telegram.ui.Cells.m1 m1Var = (org.telegram.ui.Cells.m1) this.d;
                 int i13 = this.b;
                 HashMap hashMap = g21.P;
                 if (hashMap != null) {
                     hashMap.remove(Integer.valueOf(g21.p(fjVar)));
                 }
-                if (l1Var != null) {
-                    l1Var.h0(3);
+                if (m1Var != null) {
+                    m1Var.h0(3);
                 }
                 org.telegram.messenger.ks.f(i13).k(org.telegram.messenger.ks.A1, fjVar);
                 org.telegram.messenger.ks.f(i13).k(org.telegram.messenger.ks.E1, new Object[0]);
@@ -196,7 +196,7 @@ public final /* synthetic */ class h01 implements Runnable {
                             boolean z11 = org.telegram.messenger.s2.a;
                             org.telegram.messenger.t0.a.getClass();
                         }
-                        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.S4, new Object[0]);
+                        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.T4, new Object[0]);
                         break;
                     }
                 }
@@ -253,7 +253,7 @@ public final /* synthetic */ class h01 implements Runnable {
                             jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                             String string = jSONObject2.getString("token");
                             if (ml0Var.L0 == null && ml0Var.N0 == null) {
-                                org.telegram.ui.md0 a10 = c8.bd.a(string);
+                                org.telegram.ui.nd0 a10 = c8.bd.a(string);
                                 ml0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a10.b, (String) a10.d);
                                 uc.a aVar = (uc.a) a10.c;
                                 ml0Var.y0 = aVar.a() + " *" + aVar.b();
@@ -299,7 +299,7 @@ public final /* synthetic */ class h01 implements Runnable {
                     break;
                 } catch (Throwable th2) {
                     org.telegram.messenger.a8.g(th2, true);
-                    org.telegram.messenger.g0.g3(new org.telegram.ui.hf0(pq0Var, 26));
+                    org.telegram.messenger.g0.g3(new org.telegram.ui.if0(pq0Var, 26));
                     return;
                 }
             case 10:

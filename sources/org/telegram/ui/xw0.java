@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xw0 extends Drawable implements org.telegram.ui.ActionBar.m5 {
     public final org.telegram.ui.Components.m6 a;
@@ -15,7 +15,7 @@ public final class xw0 extends Drawable implements org.telegram.ui.ActionBar.m5 
     public float d;
     public float e;
     public final org.telegram.ui.Cells.k0 f;
-    public org.telegram.ui.Cells.u0 h;
+    public org.telegram.ui.Cells.v0 h;
 
     public xw0(String str) {
         Paint paint = new Paint(1);

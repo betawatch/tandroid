@@ -35,7 +35,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.t60;
 import org.telegram.ui.Components.v60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class a5 extends FrameLayout implements te.b, fs, c6, u4, v60 {
     public CharSequence E;
@@ -300,7 +300,7 @@ public class a5 extends FrameLayout implements te.b, fs, c6, u4, v60 {
         this.U.a(true, y());
         l();
         this.b.b(true, y());
-        ks.e().k(ks.t4, new Object[0]);
+        ks.e().k(ks.u4, new Object[0]);
     }
 
     public final void K() {
@@ -376,7 +376,7 @@ public class a5 extends FrameLayout implements te.b, fs, c6, u4, v60 {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.p4) {
+        if (i7 == ks.q4) {
             updateColors();
         }
     }
@@ -778,7 +778,7 @@ public class a5 extends FrameLayout implements te.b, fs, c6, u4, v60 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.d0 = true;
-        ks.e().c(this, ks.p4);
+        ks.e().c(this, ks.q4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -786,7 +786,7 @@ public class a5 extends FrameLayout implements te.b, fs, c6, u4, v60 {
         super.onDetachedFromWindow();
         this.d0 = false;
         this.c0 = false;
-        ks.e().n(this, ks.p4);
+        ks.e().n(this, ks.q4);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -1349,7 +1349,7 @@ public class a5 extends FrameLayout implements te.b, fs, c6, u4, v60 {
         this.U.a(false, y());
         l();
         this.b.b(false, y());
-        ks.e().k(ks.t4, new Object[0]);
+        ks.e().k(ks.u4, new Object[0]);
     }
 
     public final boolean x() {

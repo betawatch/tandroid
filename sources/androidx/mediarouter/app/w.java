@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.k4;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.e80;
 import org.telegram.ui.Components.ep;
 import org.telegram.ui.Components.j60;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.vo;
 import org.telegram.ui.bn;
 import v4.f1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final class w implements View.OnClickListener {
                 if (!(c10.e instanceof s4.p)) {
                     throw new IllegalStateException("There is no currently selected dynamic group route.");
                 }
-                b5 b10 = c10.d.b(vVar);
+                c5 b10 = c10.d.b(vVar);
                 if (b10 == null || (oVar = (s4.o) b10.a) == null || !oVar.e) {
                     Log.w("GlobalMediaRouter", "Ignoring attempt to transfer to a non-transferable route.");
                 } else {
@@ -121,7 +121,7 @@ public final class w implements View.OnClickListener {
                     if (!(c11.e instanceof s4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    b5 b11 = c11.d.b(vVar2);
+                    c5 b11 = c11.d.b(vVar2);
                     if (!DesugarCollections.unmodifiableList(c11.d.v).contains(vVar2) || b11 == null || ((oVar2 = (s4.o) b11.a) != null && !oVar2.c)) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + vVar2);
                     } else if (DesugarCollections.unmodifiableList(c11.d.v).size() <= 1) {
@@ -141,7 +141,7 @@ public final class w implements View.OnClickListener {
                     if (!(c12.e instanceof s4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    b5 b12 = c12.d.b(vVar3);
+                    c5 b12 = c12.d.b(vVar3);
                     if (DesugarCollections.unmodifiableList(c12.d.v).contains(vVar3) || b12 == null || (oVar3 = (s4.o) b12.a) == null || !oVar3.d) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + vVar3);
                     } else {

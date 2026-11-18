@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ky extends org.telegram.ui.ActionBar.h2 {
     public boolean E;
@@ -84,14 +84,14 @@ public final class ky extends org.telegram.ui.ActionBar.h2 {
         String str;
         ky kyVar2;
         ArrayList arrayList = kyVar.e;
-        if (kyVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.h4)) {
+        if (kyVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.i4)) {
             Long l10 = (Long) kyVar.h.get(i7 - kyVar.M);
             long longValue = l10.longValue();
             if (arrayList.contains(l10)) {
                 arrayList.remove(l10);
                 kyVar.G = true;
                 kyVar.c0();
-                ((org.telegram.ui.Cells.h4) view).c(false, true);
+                ((org.telegram.ui.Cells.i4) view).c(false, true);
                 kyVar2 = kyVar;
             } else {
                 if (!kyVar.f.contains(l10)) {
@@ -126,7 +126,7 @@ public final class ky extends org.telegram.ui.ActionBar.h2 {
                 arrayList.add(l10);
                 kyVar2.G = true;
                 kyVar2.c0();
-                ((org.telegram.ui.Cells.h4) view).c(true, true);
+                ((org.telegram.ui.Cells.i4) view).c(true, true);
             }
             kyVar2.d0();
             kyVar2.k0(true);
@@ -336,10 +336,10 @@ public final class ky extends org.telegram.ui.ActionBar.h2 {
         l0();
         for (int i7 = 0; i7 < this.a.getChildCount(); i7++) {
             View childAt = this.a.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.h4) {
+            if (childAt instanceof org.telegram.ui.Cells.i4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
-                    ((org.telegram.ui.Cells.h4) childAt).c(arrayList.contains((Long) tag), true);
+                    ((org.telegram.ui.Cells.i4) childAt).c(arrayList.contains((Long) tag), true);
                 }
             }
         }

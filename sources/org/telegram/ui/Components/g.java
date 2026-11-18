@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -46,10 +46,10 @@ public final /* synthetic */ class g implements TextView.OnEditorActionListener 
                 }
                 break;
             case 3:
-                org.telegram.ui.Cells.i3 i3Var = ((org.telegram.ui.Cells.k3) this.b).d;
+                org.telegram.ui.Cells.j3 j3Var = ((org.telegram.ui.Cells.l3) this.b).d;
                 if (i7 == 5) {
-                    i3Var.requestFocus();
-                    i3Var.setSelection(i3Var.length());
+                    j3Var.requestFocus();
+                    j3Var.setSelection(j3Var.length());
                     break;
                 }
                 break;

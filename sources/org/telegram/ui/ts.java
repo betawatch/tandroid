@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ts extends org.telegram.ui.ActionBar.h2 {
     public org.telegram.ui.Components.ck0 a;
@@ -33,13 +33,13 @@ public final class ts extends org.telegram.ui.ActionBar.h2 {
         this.h = z10;
     }
 
-    public static org.telegram.ui.Cells.w9 Z(Context context) {
-        org.telegram.ui.Cells.w9 w9Var = new org.telegram.ui.Cells.w9(context);
-        w9Var.setPadding(org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? 16.0f : 12.0f), 0, org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? 12.0f : 16.0f), 0);
+    public static org.telegram.ui.Cells.x9 Z(Context context) {
+        org.telegram.ui.Cells.x9 x9Var = new org.telegram.ui.Cells.x9(context);
+        x9Var.setPadding(org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? 16.0f : 12.0f), 0, org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? 12.0f : 16.0f), 0);
         e5 e5Var = new e5();
-        e5Var.b = new os(0, w9Var);
-        w9Var.addOnAttachStateChangeListener(e5Var);
-        return w9Var;
+        e5Var.b = new os(0, x9Var);
+        x9Var.addOnAttachStateChangeListener(e5Var);
+        return x9Var;
     }
 
     public static SpannableStringBuilder a0(ps psVar) {

@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y1;
-import org.telegram.ui.Cells.g6;
+import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class g extends h2 implements fs {
     public ui.c a;
@@ -141,13 +141,13 @@ public final class g extends h2 implements fs {
             TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
             long j3 = chatFull.id;
             View B1 = this.f.B1((int) (j3 ^ (j3 >>> 32)));
-            if (!(B1 instanceof g6)) {
+            if (!(B1 instanceof h6)) {
                 this.f.g3.O(false);
                 return;
             }
-            g6 g6Var = (g6) B1;
+            h6 h6Var = (h6) B1;
             ArrayList<TL_communities.CommunityPeer> arrayList = chatFull.linked_peers;
-            g6Var.setSubLabel(gd.G(arrayList != null ? arrayList.size() : 0, "Chats", new Object[0]));
+            h6Var.setSubLabel(gd.G(arrayList != null ? arrayList.size() : 0, "Chats", new Object[0]));
         }
     }
 

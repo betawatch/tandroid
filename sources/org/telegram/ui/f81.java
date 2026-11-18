@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class f81 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class f81 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         switch (this.a) {
             case 0:
                 i81 i81Var = this.b;
@@ -39,9 +39,9 @@ public final class f81 extends FrameLayout {
                     canvas2 = canvas;
                     canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), i81Var.w);
                 }
-                if (i81Var.O && (q1Var = i81Var.L) != null) {
-                    q1Var.c6 = i81Var.P;
-                    q1Var.invalidate();
+                if (i81Var.O && (r1Var = i81Var.L) != null) {
+                    r1Var.c6 = i81Var.P;
+                    r1Var.invalidate();
                     i81Var.O = false;
                 }
                 super.dispatchDraw(canvas2);

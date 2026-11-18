@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.v5;
+import bi.u5;
 import c8.ma;
 import fi.h0;
 import j$.util.Objects;
@@ -65,7 +65,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qy0;
 import ug.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
@@ -95,7 +95,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -226,7 +226,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -240,7 +240,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -549,7 +549,7 @@ public class VideoAds {
             q6 M = u6.M(i13);
             textView.setBackground(a02);
             u6.j(textView, a02, null, M, h0Var);
-            textView.setOnClickListener(new bi.n6(this, y60Var, tL_sponsoredMessage, context2, 5));
+            textView.setOnClickListener(new bi.m6(this, y60Var, tL_sponsoredMessage, context2, 5));
             textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.messenger.video.h
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view2) {
@@ -636,7 +636,7 @@ public class VideoAds {
             }
             K.r(view2, ma.o(i7, -2));
         }
-        y60Var.c(R.drawable.msg_channel, gd.M0(2131745013, null), new v5(y60Var, K, 4), false);
+        y60Var.c(R.drawable.msg_channel, gd.M0(2131745013, null), new u5(y60Var, K, 4), false);
         if (!j10.i(this.currentAccount).q()) {
             final int i102 = 1;
             y60Var.c(R.drawable.msg_block2, gd.M0(2131749131, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
@@ -1031,7 +1031,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public static class AdLayout extends eb {
         public final ImageView buttonView;
         public final q9 imageView;
@@ -1100,7 +1100,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

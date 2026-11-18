@@ -6,7 +6,7 @@ import android.os.Build;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g3 extends v4.u0 {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final class g3 extends v4.u0 {
                 break;
             case 21:
                 if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(((ug0) this.b).U1.getEditText());
+                    org.telegram.messenger.g0.v1(((vg0) this.b).U1.getEditText());
                     break;
                 }
                 break;
@@ -200,7 +200,7 @@ public final class g3 extends v4.u0 {
     public void b(RecyclerView recyclerView, int i7, int i10) {
         org.telegram.ui.ActionBar.a5 a5Var;
         fz fzVar;
-        org.telegram.ui.Cells.f3 f3Var;
+        org.telegram.ui.Cells.g3 g3Var;
         org.telegram.ui.ActionBar.k kVar;
         dh.g gVar;
         org.telegram.ui.Components.j30 j30Var;
@@ -279,7 +279,7 @@ public final class g3 extends v4.u0 {
                     lbVar.S = animatorSet2;
                     animatorSet2.setDuration(150L);
                     lbVar.S.playTogether(ObjectAnimator.ofFloat(lbVar.N, "alpha", 1.0f));
-                    lbVar.S.addListener(new org.telegram.ui.Cells.x9(this, i12));
+                    lbVar.S.addListener(new org.telegram.ui.Cells.y9(this, i12));
                     lbVar.S.start();
                 }
                 lbVar.T0(true);
@@ -300,12 +300,12 @@ public final class g3 extends v4.u0 {
                 break;
             case 11:
                 kz kzVar = (kz) obj;
-                if (kzVar.a.J1 && (fzVar = kzVar.L) != null && (f3Var = fzVar.b) != null) {
-                    if (!f3Var.e) {
-                        f3Var.d();
+                if (kzVar.a.J1 && (fzVar = kzVar.L) != null && (g3Var = fzVar.b) != null) {
+                    if (!g3Var.e) {
+                        g3Var.d();
                         break;
                     } else {
-                        f3Var.k(true);
+                        g3Var.k(true);
                         break;
                     }
                 }
@@ -349,15 +349,15 @@ public final class g3 extends v4.u0 {
                 }
                 break;
             case 19:
-                ((eg0) obj).K.invalidate();
+                ((fg0) obj).K.invalidate();
                 break;
             case 20:
-                ng0 ng0Var = (ng0) obj;
-                int L02 = ng0Var.h.L0();
-                int abs = L02 != -1 ? Math.abs(ng0Var.h.N0() - L02) + 1 : 0;
+                og0 og0Var = (og0) obj;
+                int L02 = og0Var.h.L0();
+                int abs = L02 != -1 ? Math.abs(og0Var.h.N0() - L02) + 1 : 0;
                 int b10 = recyclerView.getAdapter().b();
-                if (abs > 0 && !ng0Var.W && !ng0Var.F && !ng0Var.y.isEmpty() && L02 + abs >= b10 - 5 && ng0Var.E) {
-                    ng0Var.h0();
+                if (abs > 0 && !og0Var.W && !og0Var.F && !og0Var.y.isEmpty() && L02 + abs >= b10 - 5 && og0Var.E) {
+                    og0Var.h0();
                     break;
                 }
                 break;
@@ -380,12 +380,12 @@ public final class g3 extends v4.u0 {
                 org.telegram.ui.Components.yw0 yw0Var = pr0Var.R;
                 if (yw0Var != null && yw0Var.s) {
                     org.telegram.ui.Components.ww0 delegate = yw0Var.getDelegate();
-                    if (!(delegate instanceof org.telegram.ui.Cells.a6)) {
+                    if (!(delegate instanceof org.telegram.ui.Cells.b6)) {
                         pr0Var.R.f();
                         break;
                     } else {
                         f61 f61Var = pr0Var.c;
-                        View F = f61Var.F((org.telegram.ui.Cells.a6) delegate);
+                        View F = f61Var.F((org.telegram.ui.Cells.b6) delegate);
                         v4.f1 T = F == null ? null : f61Var.T(F);
                         if (T == null) {
                             pr0Var.R.f();

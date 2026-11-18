@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0, org.telegram.ui.Components.pj0, org.telegram.ui.Components.qj0, tz, org.telegram.ui.ActionBar.r1, ri.m, r0.m, ri.n, org.telegram.ui.Components.ej0 {
     public final /* synthetic */ int a;
@@ -160,10 +160,10 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
                 cx cxVar3 = this.b;
                 Object I = cxVar3.D0.e0.I(i7);
                 if (!(I instanceof TLRPC.TL_sponsoredPeer)) {
-                    if (view instanceof org.telegram.ui.Cells.g6) {
-                        org.telegram.ui.Cells.g6 g6Var = (org.telegram.ui.Cells.g6) view;
-                        if (g6Var.o0) {
-                            cxVar3.h5(g6Var.getDialogId(), view);
+                    if (view instanceof org.telegram.ui.Cells.h6) {
+                        org.telegram.ui.Cells.h6 h6Var = (org.telegram.ui.Cells.h6) view;
+                        if (h6Var.o0) {
+                            cxVar3.h5(h6Var.getDialogId(), view);
                             break;
                         }
                     }

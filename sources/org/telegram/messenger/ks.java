@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class ks {
     public static final int A = 11;
@@ -91,7 +91,7 @@ public final class ks {
     public static final int L0 = 74;
     public static final int L1 = 127;
     public static final int L2 = 181;
-    public static final int L3 = 236;
+    public static final int L3 = 235;
     public static final int L4 = 288;
     public static final int L5 = 340;
     public static final int M = 23;
@@ -177,27 +177,28 @@ public final class ks {
     public static final int X2 = 193;
     public static final int X3 = 248;
     public static final int X4 = 300;
-    public static boolean X5 = false;
+    public static final int X5 = 352;
     public static final int Y = 35;
     public static final int Y0 = 87;
     public static final int Y1 = 142;
     public static final int Y2 = 194;
     public static final int Y3 = 249;
     public static final int Y4 = 301;
-    public static volatile ks[] Y5 = new ks[4];
+    public static boolean Y5 = false;
     public static final int Z = 36;
     public static final int Z0 = 88;
     public static final int Z1 = 143;
     public static final int Z2 = 195;
     public static final int Z3 = 250;
     public static final int Z4 = 302;
-    public static volatile ks Z5 = null;
+    public static volatile ks[] Z5 = new ks[4];
     public static final int a0 = 37;
     public static final int a1 = 89;
     public static final int a2 = 144;
     public static final int a3 = 196;
     public static final int a4 = 251;
     public static final int a5 = 303;
+    public static volatile ks a6 = null;
     public static final int b0 = 38;
     public static final int b1 = 90;
     public static final int b2 = 145;
@@ -381,16 +382,16 @@ public final class ks {
 
     public static ks e() {
         ks ksVar;
-        ks ksVar2 = Z5;
+        ks ksVar2 = a6;
         if (ksVar2 != null) {
             return ksVar2;
         }
         synchronized (ks.class) {
             try {
-                ksVar = Z5;
+                ksVar = a6;
                 if (ksVar == null) {
                     ksVar = new ks(-1);
-                    Z5 = ksVar;
+                    a6 = ksVar;
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -401,15 +402,15 @@ public final class ks {
 
     public static ks f(int i7) {
         ks ksVar;
-        ks ksVar2 = Y5[i7];
+        ks ksVar2 = Z5[i7];
         if (ksVar2 != null) {
             return ksVar2;
         }
         synchronized (ks.class) {
             try {
-                ksVar = Y5[i7];
+                ksVar = Z5[i7];
                 if (ksVar == null) {
-                    ks[] ksVarArr = Y5;
+                    ks[] ksVarArr = Z5;
                     ks ksVar3 = new ks(i7);
                     ksVarArr[i7] = ksVar3;
                     ksVar = ksVar3;
@@ -422,11 +423,11 @@ public final class ks {
     }
 
     public static void i(View view) {
-        e().h(view, k4, new a4(view, 2));
+        e().h(view, l4, new a4(view, 2));
     }
 
     public final void a(js jsVar) {
-        b(jsVar, f5);
+        b(jsVar, g5);
     }
 
     public final void b(fs fsVar, int i7) {
@@ -447,7 +448,7 @@ public final class ks {
         ArrayList arrayList3 = (ArrayList) this.a.get(i7);
         if (arrayList3 == null) {
             SparseArray sparseArray = this.a;
-            if (i7 == o4 || i7 == j1 || i7 == k1) {
+            if (i7 == p4 || i7 == j1 || i7 == k1) {
                 hs hsVar = new hs();
                 hsVar.a = new HashSet();
                 arrayList = hsVar;
@@ -479,10 +480,10 @@ public final class ks {
         }
         arrayList3.add(fsVar);
         boolean z11 = s2.a;
-        if (X5 || arrayList3.size() <= 1000) {
+        if (Y5 || arrayList3.size() <= 1000) {
             return;
         }
-        X5 = true;
+        Y5 = true;
         a8.g(new RuntimeException(i5.c.i(i7, "Total observers more than 1000, need check for memory leak. ")), true);
     }
 
@@ -560,7 +561,7 @@ public final class ks {
         int i10;
         int i11 = j1;
         int i12 = k1;
-        boolean z10 = i7 == i12 || i7 == i11 || i7 == o4 || i7 == t || i7 == l4 || i7 == t4 || i7 == L;
+        boolean z10 = i7 == i12 || i7 == i11 || i7 == p4 || i7 == t || i7 == m4 || i7 == u4 || i7 == L;
         ArrayList arrayList = null;
         if (!z10) {
             SparseArray sparseArray = this.n;

@@ -54,10 +54,10 @@ import org.telegram.ui.bn;
 import org.telegram.ui.c51;
 import org.telegram.ui.cx;
 import org.telegram.ui.f40;
-import org.telegram.ui.q90;
+import org.telegram.ui.r90;
 import org.telegram.ui.sh;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y3 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,9 +82,10 @@ public final /* synthetic */ class y3 implements Runnable {
         Object obj = this.c;
         switch (i7) {
             case 0:
-                f4.i(j3, 60000L);
+                e4.b.add(Long.valueOf(j3));
+                e4.j(j3, 60000L);
                 ((aa.r) obj).run();
-                gc Q = f4.g().Q(R.raw.contact_check, 36, gd.M0(2131749547, null));
+                gc Q = e4.h().Q(R.raw.contact_check, 36, gd.M0(2131749547, null));
                 Q.t = true;
                 Q.j();
                 break;
@@ -283,30 +284,30 @@ public final /* synthetic */ class y3 implements Runnable {
                             org.telegram.ui.ActionBar.u6.F(a1Var, org.telegram.ui.ActionBar.n6.k6, org.telegram.ui.ActionBar.n6.l6, org.telegram.ui.ActionBar.n6.p7, i6Var2);
                             a1Var.setBackground(null);
                             a1Var.setPadding(0, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(10.0f));
-                            org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, context2, i6Var2);
+                            org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, context2, i6Var2);
                             int i15 = org.telegram.ui.ActionBar.n6.i6;
                             org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i15, i6Var2), 7, org.telegram.messenger.g0.L(12.0f));
                             org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i15);
-                            c2Var.setBackground(h02);
-                            org.telegram.ui.ActionBar.u6.j(c2Var, h02, null, M, i6Var2);
-                            c2Var.e(gd.M0(2131742838, null), "", !xkVar.u0 || xkVar.getPublicKey() == null, false, false);
-                            c2Var.setMultiline(true);
-                            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
+                            d2Var.setBackground(h02);
+                            org.telegram.ui.ActionBar.u6.j(d2Var, h02, null, M, i6Var2);
+                            d2Var.e(gd.M0(2131742838, null), "", !xkVar.u0 || xkVar.getPublicKey() == null, false, false);
+                            d2Var.setMultiline(true);
+                            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var.getCheckBoxView().getLayoutParams();
                             layoutParams.topMargin = 0;
                             layoutParams.gravity = (gd.a0 ? 5 : 3) | 16;
-                            c2Var.getCheckBoxView().setLayoutParams(layoutParams);
-                            c2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
-                            c2Var.setEnabled(xkVar.getPublicKey() != null);
-                            c2Var.setOnClickListener(new org.telegram.ui.Components.i1(c2Var, 1));
+                            d2Var.getCheckBoxView().setLayoutParams(layoutParams);
+                            d2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
+                            d2Var.setEnabled(xkVar.getPublicKey() != null);
+                            d2Var.setOnClickListener(new org.telegram.ui.Components.i1(d2Var, 1));
                             LinearLayout linearLayout = new LinearLayout(context2);
                             linearLayout.setOrientation(1);
                             linearLayout.addView(a1Var, ma.k(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
-                            linearLayout.addView(c2Var, ma.t(-1, -2, 83, 8, 0, 8, 0));
+                            linearLayout.addView(d2Var, ma.t(-1, -2, 83, 8, 0, 8, 0));
                             u1Var.H = 6;
                             alertDialog$Builder.o(linearLayout);
                             u1Var.a = org.telegram.messenger.g0.L(292.0f);
                             alertDialog$Builder.h(gd.M0(2131752578, null), new org.telegram.ui.Components.k2(19));
-                            alertDialog$Builder.k(gd.M0(2131754484, null), new a3.h(xkVar, a1Var, c2Var, 27));
+                            alertDialog$Builder.k(gd.M0(2131754484, null), new a3.h(xkVar, a1Var, d2Var, 27));
                             xkVar.U0 = u1Var;
                             u1Var.k0 = false;
                             u1Var.setOnShowListener(new org.telegram.ui.Components.o2(a1Var, i12));
@@ -368,9 +369,9 @@ public final /* synthetic */ class y3 implements Runnable {
                 ((f40) obj).q1(j3, false);
                 break;
             case 28:
-                q90 q90Var = (q90) obj;
-                q90Var.getClass();
-                q90Var.presentFragment(bn.ua(j3));
+                r90 r90Var = (r90) obj;
+                r90Var.getClass();
+                r90Var.presentFragment(bn.ua(j3));
                 break;
             default:
                 bn bnVar = ((sh) obj).f;

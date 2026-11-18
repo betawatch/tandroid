@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class as0 extends Dialog {
     public float E;
@@ -29,7 +29,7 @@ public final class as0 extends Dialog {
     public boolean J;
     public yr0 K;
     public zr0 L;
-    public org.telegram.ui.Cells.q1 M;
+    public org.telegram.ui.Cells.r1 M;
     public float N;
     public float O;
     public boolean P;
@@ -210,7 +210,7 @@ public final class as0 extends Dialog {
     }
 
     public final void c(boolean z10) {
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         org.telegram.ui.Components.vi0 vi0Var;
         if (z10 && (vi0Var = this.R) != null && vi0Var.getReactionsWindow() != null && !this.R.getReactionsWindow().q) {
             this.R.e();
@@ -225,16 +225,16 @@ public final class as0 extends Dialog {
         i1Var.g();
         boolean z11 = i1Var.getCurrentPosition() == 1;
         if (z10 && z11) {
-            org.telegram.ui.Cells.q1 q1Var2 = this.M;
-            if (q1Var2 != null) {
-                q1Var2.setVisibility(4);
+            org.telegram.ui.Cells.r1 r1Var2 = this.M;
+            if (r1Var2 != null) {
+                r1Var2.setVisibility(4);
                 this.M.invalidate();
             }
-        } else if (!z10 && (q1Var = this.M) != null) {
-            q1Var.setVisibility(0);
-            org.telegram.ui.Cells.q1 q1Var3 = this.M;
-            q1Var3.d6 = null;
-            q1Var3.invalidate();
+        } else if (!z10 && (r1Var = this.M) != null) {
+            r1Var.setVisibility(0);
+            org.telegram.ui.Cells.r1 r1Var3 = this.M;
+            r1Var3.d6 = null;
+            r1Var3.invalidate();
         }
         this.e0 = !z10;
         d();
@@ -250,10 +250,10 @@ public final class as0 extends Dialog {
         if (wr0Var.getWidth() <= 0) {
             return;
         }
-        org.telegram.ui.Cells.q1 q1Var = this.M;
-        if (q1Var != null) {
+        org.telegram.ui.Cells.r1 r1Var = this.M;
+        if (r1Var != null) {
             int[] iArr = new int[2];
-            q1Var.getLocationOnScreen(iArr);
+            r1Var.getLocationOnScreen(iArr);
             int i7 = iArr[0];
             i0.b bVar = this.r;
             this.X = i7 - bVar.a;

@@ -11,10 +11,11 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class w extends LinearLayout implements fs {
     public final q9 a;
@@ -81,7 +82,7 @@ public final class w extends LinearLayout implements fs {
     }
 
     public final void c(TLRPC.User user) {
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        b9 b9Var = new b9((org.telegram.ui.ActionBar.i6) null);
         b9Var.r(user);
         q9 q9Var = this.a;
         q9Var.f(user, b9Var);
@@ -105,13 +106,13 @@ public final class w extends LinearLayout implements fs {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.e().c(this, ks.k4);
+        ks.e().c(this, ks.l4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.e().n(this, ks.k4);
+        ks.e().n(this, ks.l4);
     }
 
     @Override // android.widget.LinearLayout, android.view.View

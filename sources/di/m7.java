@@ -23,17 +23,17 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.b21;
 import org.telegram.ui.bn;
-import org.telegram.ui.hd0;
-import org.telegram.ui.lc0;
-import org.telegram.ui.ld0;
+import org.telegram.ui.id0;
 import org.telegram.ui.lj0;
 import org.telegram.ui.lz;
+import org.telegram.ui.mc0;
+import org.telegram.ui.md0;
 import org.telegram.ui.mj0;
 import org.telegram.ui.mm;
 import org.telegram.ui.ne;
 import org.telegram.ui.wj0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class m7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new bi.h2(tLObject, obj4, obj3, obj2, obj5, obj, 11));
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new bi.h2((bn) obj4, (vf.b) obj3, (org.telegram.ui.Cells.q1) obj2, (String) obj5, tLObject, (CharacterStyle) obj));
+                org.telegram.messenger.g0.g3(new bi.h2((bn) obj4, (vf.b) obj3, (org.telegram.ui.Cells.r1) obj2, (String) obj5, tLObject, (CharacterStyle) obj));
                 break;
             case 4:
                 org.telegram.messenger.g0.g3(new m6((bn) obj4, tL_error, (TLObject) obj3, tLObject, (ne) obj2, (String) obj5, (vf.b) obj));
@@ -90,7 +90,7 @@ public final /* synthetic */ class m7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new m6((LaunchActivity) obj4, (org.telegram.ui.ActionBar.u1) obj3, tL_error, (String) obj2, (Bundle) obj5, tLObject, (TL_account.sendConfirmPhoneCode) obj, 7));
                 break;
             case 9:
-                ld0 ld0Var = (ld0) obj4;
+                md0 md0Var = (md0) obj4;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj3;
                 Purchase purchase = (Purchase) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj5;
@@ -108,11 +108,11 @@ public final /* synthetic */ class m7 implements RequestDelegate {
                     while (i10 < size) {
                         Object obj6 = B0.get(i10);
                         i10++;
-                        org.telegram.messenger.g0.g3(new lc0(ld0Var, tL_inputStorePaymentAuthCode, (TL_update.TL_updateSentPhoneCode) obj6, 5));
+                        org.telegram.messenger.g0.g3(new mc0(md0Var, tL_inputStorePaymentAuthCode, (TL_update.TL_updateSentPhoneCode) obj6, 5));
                     }
-                    ld0Var.w.getMessagesController().V3(updates, false);
+                    md0Var.w.getMessagesController().V3(updates, false);
                     org.telegram.messenger.r1.i().e(purchase, tL_payments_canPurchaseStore.purpose, null);
-                    org.telegram.messenger.g0.g3(new hd0(ld0Var, 4));
+                    org.telegram.messenger.g0.g3(new id0(md0Var, 4));
                     break;
                 }
                 break;

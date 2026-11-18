@@ -1,15 +1,12 @@
 package ai;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
 import android.util.Log;
-import java.util.ArrayList;
-import org.telegram.messenger.q10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,56 +36,26 @@ public final /* synthetic */ class o1 implements Runnable {
                 this.b.f(null);
                 break;
             case 3:
-                final c2 c2Var3 = this.b;
+                c2 c2Var3 = this.b;
                 if (!c2Var3.j && !c2Var3.i && c2Var3.T && !c2Var3.S) {
                     String n10 = c2Var3.g.n();
                     if (c2Var3.R < n10.length()) {
-                        final int i7 = c2Var3.R;
-                        final String substring = n10.substring(i7);
+                        int i7 = c2Var3.R;
+                        String substring = n10.substring(i7);
                         String trim = substring.trim();
                         if (trim.split("\\s+").length >= 2) {
                             int indexOf = substring.indexOf(trim);
-                            final String substring2 = substring.substring(0, indexOf);
-                            final String substring3 = substring.substring(trim.length() + indexOf);
+                            String substring2 = substring.substring(0, indexOf);
+                            String substring3 = substring.substring(trim.length() + indexOf);
                             TLRPC.TL_messages_composeMessageWithAI tL_messages_composeMessageWithAI = new TLRPC.TL_messages_composeMessageWithAI();
                             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
                             tL_messages_composeMessageWithAI.text = tL_textWithEntities;
                             tL_textWithEntities.text = trim;
                             tL_messages_composeMessageWithAI.tone = TL_aicompose.InputAiComposeTone.fromDefault("voice");
                             c2Var3.S = true;
-                            final long elapsedRealtime = SystemClock.elapsedRealtime();
+                            long elapsedRealtime = SystemClock.elapsedRealtime();
                             Log.d("Dictation", "clean (voice) " + trim.length() + " chars from " + i7 + ": " + i2.c(trim));
-                            c2Var3.U = ConnectionsManager.getInstance(c2Var3.b).sendRequestTyped(tL_messages_composeMessageWithAI, new d3.b(1), new q10() { // from class: ai.q1
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    TLRPC.TL_textWithEntities tL_textWithEntities2;
-                                    TLRPC.TL_composedMessageWithAI tL_composedMessageWithAI = (TLRPC.TL_composedMessageWithAI) obj;
-                                    TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                                    c2 c2Var4 = c2.this;
-                                    c2Var4.S = false;
-                                    c2Var4.U = -1;
-                                    if (c2Var4.j) {
-                                        return;
-                                    }
-                                    if (tL_composedMessageWithAI == null || (tL_textWithEntities2 = tL_composedMessageWithAI.result_text) == null || TextUtils.isEmpty(tL_textWithEntities2.text)) {
-                                        p5.c.t(new StringBuilder("clean failed: "), tL_error != null ? tL_error.text : null, "Dictation");
-                                        return;
-                                    }
-                                    Log.d("Dictation", "clean done in " + (SystemClock.elapsedRealtime() - elapsedRealtime) + " ms: " + i2.c(tL_composedMessageWithAI.result_text.text));
-                                    String n11 = c2Var4.g.n();
-                                    String str = substring;
-                                    int i10 = i7;
-                                    if (n11.startsWith(str, i10)) {
-                                        ArrayList arrayList = c2Var4.Q;
-                                        StringBuilder m10 = com.google.android.gms.internal.vision.e2.m(substring2);
-                                        m10.append(tL_composedMessageWithAI.result_text.text.trim());
-                                        m10.append(substring3);
-                                        arrayList.add(new z1(i10, str, m10.toString()));
-                                        c2Var4.R = str.length() + i10;
-                                        c2Var4.e();
-                                    }
-                                }
-                            });
+                            c2Var3.U = ConnectionsManager.getInstance(c2Var3.b).sendRequestTyped(tL_messages_composeMessageWithAI, new d3.b(1), new q1(c2Var3, elapsedRealtime, substring, i7, substring2, substring3));
                             break;
                         }
                     }

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k9 implements Runnable {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class k9 implements Runnable {
                 sb sbVar = (sb) obj2;
                 sbVar.d = (TL_stories.TL_premium_boostsStatus) obj;
                 sbVar.I.animate().cancel();
-                sbVar.I.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new org.telegram.ui.Cells.x9(sbVar, i11));
+                sbVar.I.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new org.telegram.ui.Cells.y9(sbVar, i11));
                 sbVar.d(true);
                 sbVar.c(null);
                 break;
@@ -290,10 +290,10 @@ public final /* synthetic */ class k9 implements Runnable {
                 break;
             case 18:
                 bn bnVar3 = (bn) obj2;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj;
-                q1Var.getLocationInWindow(new int[2]);
-                bnVar3.O1.setTranslationY(q1Var.getTimeY() + ((r1[1] - r2.getTop()) - org.telegram.messenger.g0.L(120.0f)));
-                bnVar3.O1.p(0.0f, ((((-org.telegram.messenger.g0.L(16.0f)) + r1[0]) + q1Var.C9) + q1Var.A9) - (q1Var.D9 / 2.0f));
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj;
+                r1Var.getLocationInWindow(new int[2]);
+                bnVar3.O1.setTranslationY(r1Var.getTimeY() + ((r1[1] - r2.getTop()) - org.telegram.messenger.g0.L(120.0f)));
+                bnVar3.O1.p(0.0f, ((((-org.telegram.messenger.g0.L(16.0f)) + r1[0]) + r1Var.C9) + r1Var.A9) - (r1Var.D9 / 2.0f));
                 bnVar3.O1.x();
                 break;
             case 19:

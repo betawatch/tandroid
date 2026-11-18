@@ -3,11 +3,11 @@ package oi;
 import android.graphics.Rect;
 import android.text.Layout;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.t9;
+import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class h5 implements t9 {
+public final class h5 implements u9 {
     public final /* synthetic */ Layout a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
@@ -22,37 +22,37 @@ public final class h5 implements t9 {
         this.e = pagetablecell;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final Layout a() {
         return this.a;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final /* synthetic */ Rect c() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final /* synthetic */ CharSequence getPrefix() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getRow() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final CharSequence getText() {
         return d6.h(this.e);
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getX() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getY() {
         return this.c;
     }

@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q4 implements q10 {
     public final /* synthetic */ ai.v1 a;
@@ -57,14 +57,14 @@ public final /* synthetic */ class q4 implements q10 {
             return;
         }
         long longValue2 = l10.longValue();
-        t4 t4Var = new t4(context, i7, this.g, this.h, this.i, this.j, i6Var, v1Var, this.k, this.l, this.m);
+        s4 s4Var = new s4(context, i7, this.g, this.h, this.i, this.j, i6Var, v1Var, this.k, this.l, this.m);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, i6Var);
         String M0 = gd.M0(2131749331, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.S = M0;
         u1Var.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749332, gd.a0(null, null, 2131749619, org.telegram.ui.Wallet.u0.t(longValue2, false))));
         alertDialog$Builder.h(gd.M0(2131752578, null), null);
-        alertDialog$Builder.k(gd.M0(2131746550, null), new ii.h(longValue2, v1Var, i7, j3, t4Var));
+        alertDialog$Builder.k(gd.M0(2131746550, null), new ii.h(longValue2, v1Var, i7, j3, s4Var));
         alertDialog$Builder.p();
     }
 }

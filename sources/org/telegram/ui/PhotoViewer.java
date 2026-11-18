@@ -128,7 +128,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.Components.j10, org.telegram.ui.Components.i10, te.b {
     public static Drawable[] Z8;
@@ -293,7 +293,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
     public int P4;
     public final boolean[] P5;
     public boolean P6;
-    public org.telegram.ui.Cells.w0 P7;
+    public org.telegram.ui.Cells.x0 P7;
     public wi.n P8;
     public boolean Q;
     public di.n4 Q0;
@@ -346,7 +346,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
     public AnimatorSet U7;
     public boolean U8;
     public int V;
-    public org.telegram.ui.Cells.w0 V0;
+    public org.telegram.ui.Cells.x0 V0;
     public ap0 V1;
     public boolean V2;
     public int V3;
@@ -399,7 +399,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
     public ImageView a1;
     public FrameLayout a2;
     public float a3;
-    public final org.telegram.ui.Cells.j1 a4;
+    public final org.telegram.ui.Cells.k1 a4;
     public org.telegram.messenger.fc a5;
     public float a6;
     public final ArrayList a7;
@@ -429,7 +429,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
     public ImageView d1;
     public int d2;
     public long d3;
-    public final org.telegram.ui.Cells.f2 d4;
+    public final org.telegram.ui.Cells.g2 d4;
     public wq0 d5;
     public float d6;
     public final ArrayList d7;
@@ -482,7 +482,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
     public float i6;
     public yq0 i7;
     public float i8;
-    public hh0 j0;
+    public ih0 j0;
     public ArrayList j1;
     public boolean j2;
     public String j3;
@@ -642,13 +642,13 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
     public final float[] z7;
     public boolean z8;
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public class BackgroundDrawable extends ColorDrawable {
         public static final /* synthetic */ int g = 0;
         public final RectF a;
         public final RectF b;
         public final Paint c;
-        public ve0 d;
+        public we0 d;
         public boolean e;
 
         public BackgroundDrawable() {
@@ -700,7 +700,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
 
         @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
         public final void draw(Canvas canvas) {
-            ve0 ve0Var;
+            we0 we0Var;
             wq0 wq0Var;
             Drawable[] drawableArr = PhotoViewer.Z8;
             PhotoViewer photoViewer = PhotoViewer.this;
@@ -738,10 +738,10 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                     }
                 }
             }
-            if (getAlpha() == 0 || (ve0Var = this.d) == null) {
+            if (getAlpha() == 0 || (we0Var = this.d) == null) {
                 return;
             }
-            org.telegram.messenger.g0.g3(ve0Var);
+            org.telegram.messenger.g0.g3(we0Var);
             this.d = null;
         }
 
@@ -762,7 +762,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         }
     }
 
-    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
     public static class CounterView extends View {
         public StaticLayout a;
         public final TextPaint b;
@@ -894,7 +894,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         if (Build.VERSION.SDK_INT >= 24) {
             e9 = new go0();
         } else {
-            e9 = new org.telegram.ui.Cells.g1(Float.class, "progress", 4);
+            e9 = new org.telegram.ui.Cells.h1(Float.class, "progress", 4);
         }
         f9 = null;
         g9 = null;
@@ -936,11 +936,11 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         this.K3 = true;
         this.V3 = -1;
         this.X3 = -10;
-        this.a4 = new org.telegram.ui.Cells.j1(this, i10);
+        this.a4 = new org.telegram.ui.Cells.k1(this, i10);
         VideoFramesRewinder videoFramesRewinder = new VideoFramesRewinder();
         this.b4 = videoFramesRewinder;
         this.c4 = new ip0(this, videoFramesRewinder);
-        this.d4 = new org.telegram.ui.Cells.f2(this);
+        this.d4 = new org.telegram.ui.Cells.g2(this);
         this.h4 = new zo0(this, i10);
         this.i4 = new zo0(this, 2);
         this.j4 = new t50(this, i10);
@@ -1509,7 +1509,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         int i13;
         int i14;
         up0 up0Var;
-        org.telegram.ui.Cells.j1 j1Var = photoViewer.a4;
+        org.telegram.ui.Cells.k1 k1Var = photoViewer.a4;
         ip0 ip0Var = photoViewer.c4;
         Rect rect = photoViewer.k7;
         hn0 hn0Var = photoViewer.F7;
@@ -1542,10 +1542,10 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
             return true;
         }
         if (photoViewer.n4 == 0 && photoViewer.n6 == 0) {
-            if (j1Var.rewindCount > 0) {
+            if (k1Var.rewindCount > 0) {
                 z10 = true;
                 if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                    j1Var.cancelRewind();
+                    k1Var.cancelRewind();
                     return false;
                 }
             } else {
@@ -2113,7 +2113,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         fp0 fp0Var = new fp0(photoViewer, photoViewer.E, photoViewer.l4, arrayList, str, valueOf, qq0Var, z10);
         fp0Var.A0(false);
         fp0Var.getWindow().setSoftInputMode(48);
-        org.telegram.messenger.g0.h3(new ve0(19, photoViewer, fp0Var), 250L);
+        org.telegram.messenger.g0.h3(new we0(19, photoViewer, fp0Var), 250L);
         fp0Var.show();
     }
 
@@ -5302,7 +5302,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                 }
                 ViewPropertyAnimator duration = view.animate().alpha(f11).setDuration(100L);
                 int i7 = 5;
-                duration.setUpdateListener(new gn0(this, i7)).setInterpolator(new LinearInterpolator()).withEndAction(new a80(this, z10, view, i7)).start();
+                duration.setUpdateListener(new gn0(this, i7)).setInterpolator(new LinearInterpolator()).withEndAction(new b80(this, z10, view, i7)).start();
             }
         }
     }
@@ -5776,9 +5776,9 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         H2(false, true);
         this.p0.setPopupItemsSelectorColor(268435455);
         this.p0.setSubMenuDelegate(new so0(this));
-        hh0 hh0Var = new hh0(this.F, 1);
-        this.j0 = hh0Var;
-        hh0Var.setBackgroundColor(2130706432);
+        ih0 ih0Var = new ih0(this.F, 1);
+        this.j0 = ih0Var;
+        ih0Var.setBackgroundColor(2130706432);
         this.f0.addView(this.j0, c8.ma.e(-1, 48, 83));
         View view = new View(this.F);
         this.k0 = view;
@@ -5806,7 +5806,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         this.R = new vo0(new fi.b());
         mq0 mq0Var = new mq0(this.f0.getContext());
         this.R1 = mq0Var;
-        mq0Var.setFactory(new zd0(this, 2));
+        mq0Var.setFactory(new ae0(this, 2));
         this.R1.setVisibility(4);
         w2(true);
         for (int i16 = 0; i16 < 3; i16++) {
@@ -5829,9 +5829,9 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         this.Q7.setBackgroundResource(R.drawable.circle_big);
         this.Q7.setVisibility(4);
         this.f0.addView(this.Q7, c8.ma.e(54, 54, 17));
-        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(this.E, 3);
-        this.P7 = w0Var;
-        w0Var.setBackgroundColor(2130706432);
+        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(this.E, 3);
+        this.P7 = x0Var;
+        x0Var.setBackgroundColor(2130706432);
         this.P7.b();
         this.P7.setTranslationY(org.telegram.messenger.g0.L(120.0f));
         ((TextView) this.P7.b).setText(org.telegram.messenger.gd.M0(2131751343, "Done").toUpperCase());
@@ -5846,7 +5846,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         x51Var.c(new so0(this));
         qq0 qq0Var2 = this.f0;
         Objects.requireNonNull(qq0Var2);
-        this.B1 = new org.telegram.ui.Components.cn0(new hf0(qq0Var2, 17), false);
+        this.B1 = new org.telegram.ui.Components.cn0(new if0(qq0Var2, 17), false);
         xq0 xq0Var = new xq0(this.E, this);
         this.O7 = xq0Var;
         xq0Var.setTranslationY(org.telegram.messenger.g0.L(120.0f));
@@ -6139,7 +6139,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         this.k1.a(Math.min(this.e8, this.f8), this.k8 && this.Z7 > 1, this.r);
         this.k1.setContentDescription(org.telegram.messenger.gd.M0(2131754735, "AccDescrVideoQuality"));
         this.I0.addView(this.k1, c8.ma.o(48, 48));
-        this.k1.setOnClickListener(new bd0(6, this, parentActivity));
+        this.k1.setOnClickListener(new cd0(6, this, parentActivity));
         ImageView imageView5 = new ImageView(this.E);
         this.d1 = imageView5;
         imageView5.setScaleType(scaleType);
@@ -6148,9 +6148,9 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         this.I0.addView(this.d1, c8.ma.o(48, 48));
         this.d1.setOnClickListener(new in0(this, 26));
         this.d1.setContentDescription(org.telegram.messenger.gd.M0(2131754811, "AccDescrPhotoAdjust"));
-        org.telegram.ui.Cells.w0 w0Var2 = new org.telegram.ui.Cells.w0(this.F, 3);
-        this.V0 = w0Var2;
-        w0Var2.setBackgroundColor(-872415232);
+        org.telegram.ui.Cells.x0 x0Var2 = new org.telegram.ui.Cells.x0(this.F, 3);
+        this.V0 = x0Var2;
+        x0Var2.setBackgroundColor(-872415232);
         this.V0.b();
         this.V0.setVisibility(8);
         this.f0.addView(this.V0, c8.ma.e(-1, 48, 83));
@@ -6240,7 +6240,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         vo0 vo0Var = this.R;
         vo0Var.j0 = true;
         vo0Var.h0 = false;
-        org.telegram.ui.Cells.u9 n10 = vo0Var.n(this.h0.getContext());
+        org.telegram.ui.Cells.v9 n10 = vo0Var.n(this.h0.getContext());
         if (n10 != null) {
             org.telegram.messenger.g0.E2(n10);
             this.f0.addView(n10);
@@ -11448,7 +11448,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
             AnimatorSet animatorSet3 = this.U7;
             xq0 xq0Var = this.O7;
             Property property3 = View.TRANSLATION_Y;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(xq0Var, (Property<xq0, Float>) property3, 0.0f, org.telegram.messenger.g0.L(166.0f)), ObjectAnimator.ofFloat(this.P7, (Property<org.telegram.ui.Cells.w0, Float>) property3, 0.0f, org.telegram.messenger.g0.L(166.0f)), ObjectAnimator.ofFloat(this.k0, (Property<View, Float>) View.ALPHA, 1.0f, this.S4 ? 0.0f : 1.0f));
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(xq0Var, (Property<xq0, Float>) property3, 0.0f, org.telegram.messenger.g0.L(166.0f)), ObjectAnimator.ofFloat(this.P7, (Property<org.telegram.ui.Cells.x0, Float>) property3, 0.0f, org.telegram.messenger.g0.L(166.0f)), ObjectAnimator.ofFloat(this.k0, (Property<View, Float>) View.ALPHA, 1.0f, this.S4 ? 0.0f : 1.0f));
         }
         this.U7.addListener(new op0(this, z10, i7));
         this.U7.setDuration(200L);
@@ -12884,7 +12884,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                         i20 = this.u4;
                         int i33 = 1;
                         if (i20 != 1) {
-                            arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<org.telegram.ui.Cells.w0, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(48.0f)));
+                            arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<org.telegram.ui.Cells.x0, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(48.0f)));
                             arrayList.add(ObjectAnimator.ofFloat(this, org.telegram.ui.Components.q6.g, 0.0f, 1.0f));
                             arrayList.add(ObjectAnimator.ofFloat(this.D1, (Property<org.telegram.ui.Components.qd0, Float>) View.ALPHA, 0.0f));
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -12914,7 +12914,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                                     vp0Var2.G0.h();
                                     vp0Var2.J0.setVisibility(8);
                                     vp0Var2.I0.setVisibility(8);
-                                    vp0Var2.q0.postRunnable(new cd0(23));
+                                    vp0Var2.q0.postRunnable(new dd0(23));
                                     arrayList.add(ofFloat2);
                                     arrayList.add(ofFloat3);
                                     arrayList.add(ObjectAnimator.ofFloat(this, org.telegram.ui.Components.q6.g, 0.0f, 1.0f));
@@ -13478,7 +13478,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                         this.C7 = null;
                     }
                     xi.e eVar2 = (xi.e) new org.telegram.messenger.js(org.telegram.messenger.ks.f(this.U), this).b;
-                    eVar2.f(org.telegram.messenger.ks.k4);
+                    eVar2.f(org.telegram.messenger.ks.l4);
                     eVar2.c(org.telegram.messenger.ks.Z1);
                     eVar2.c(org.telegram.messenger.ks.Y1);
                     eVar2.c(org.telegram.messenger.ks.u3);
@@ -13680,7 +13680,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                     if (eVar != null) {
                     }
                     xi.e eVar22 = (xi.e) new org.telegram.messenger.js(org.telegram.messenger.ks.f(this.U), this).b;
-                    eVar22.f(org.telegram.messenger.ks.k4);
+                    eVar22.f(org.telegram.messenger.ks.l4);
                     eVar22.c(org.telegram.messenger.ks.Z1);
                     eVar22.c(org.telegram.messenger.ks.Y1);
                     eVar22.c(org.telegram.messenger.ks.u3);
@@ -13756,7 +13756,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                 if (eVar != null) {
                 }
                 xi.e eVar222 = (xi.e) new org.telegram.messenger.js(org.telegram.messenger.ks.f(this.U), this).b;
-                eVar222.f(org.telegram.messenger.ks.k4);
+                eVar222.f(org.telegram.messenger.ks.l4);
                 eVar222.c(org.telegram.messenger.ks.Z1);
                 eVar222.c(org.telegram.messenger.ks.Y1);
                 eVar222.c(org.telegram.messenger.ks.u3);
@@ -14276,7 +14276,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
             }
             return;
         }
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             mq0 mq0Var = this.R1;
             if (mq0Var != null) {
                 mq0Var.getCurrentView().invalidate();
@@ -15759,7 +15759,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                         try {
                             if (this.E2) {
                                 Bitmap createBitmap = Bitmap.createBitmap(m11);
-                                org.telegram.messenger.g0.A0(this.D2, createBitmap, new ve0(22, m10, createBitmap));
+                                org.telegram.messenger.g0.A0(this.D2, createBitmap, new we0(22, m10, createBitmap));
                             } else {
                                 Bitmap bitmap = this.C2.getBitmap(m11.getWidth(), m11.getHeight());
                                 new Canvas(m11).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
@@ -15812,10 +15812,10 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                 SurfaceView surfaceView = this.D2;
                 animatorSet = animatorSet2;
                 c10 = 4;
-                jg0 jg0Var = new jg0(this, c11, zArr, do0Var2, 6);
+                kg0 kg0Var = new kg0(this, c11, zArr, do0Var2, 6);
                 do0Var = do0Var2;
-                org.telegram.messenger.g0.A0(surfaceView, c11, jg0Var);
-                org.telegram.messenger.g0.h3(new lc0(this, zArr, do0Var, 21), 600L);
+                org.telegram.messenger.g0.A0(surfaceView, c11, kg0Var);
+                org.telegram.messenger.g0.h3(new mc0(this, zArr, do0Var, 21), 600L);
                 z10 = true;
                 do0 do0Var3 = do0Var;
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.eo0
@@ -16432,7 +16432,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         wp0 wp0Var;
         float f11;
         int i10;
-        hh0 hh0Var;
+        ih0 ih0Var;
         sq0 sq0Var2;
         View view;
         Property property;
@@ -16592,11 +16592,11 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                         } else {
                             arrayList.add(ObjectAnimator.ofFloat(imageViewArr[0], (Property<ImageView, Float>) View.TRANSLATION_Y, z10 ? 0.0f : N));
                         }
-                        hh0Var = this.j0;
-                        if (hh0Var != null) {
-                            arrayList.add(ObjectAnimator.ofFloat(hh0Var, (Property<hh0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
+                        ih0Var = this.j0;
+                        if (ih0Var != null) {
+                            arrayList.add(ObjectAnimator.ofFloat(ih0Var, (Property<ih0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
                             if (gq0Var.d) {
-                                arrayList.add(ObjectAnimator.ofFloat(this.j0, (Property<hh0, Float>) View.TRANSLATION_Y, z10 ? 0.0f : N));
+                                arrayList.add(ObjectAnimator.ofFloat(this.j0, (Property<ih0, Float>) View.TRANSLATION_Y, z10 ? 0.0f : N));
                             } else {
                                 this.j0.setTranslationY(0.0f);
                             }
@@ -16677,8 +16677,8 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                 }
                 if (gq0Var.d) {
                 }
-                hh0Var = this.j0;
-                if (hh0Var != null) {
+                ih0Var = this.j0;
+                if (ih0Var != null) {
                 }
                 sq0Var2 = this.O;
                 if (sq0Var2 != null) {
@@ -18685,13 +18685,13 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
         if (imageView5 != null && imageView5.getColorFilter() != null) {
             this.b1.setColorFilter(porterDuffColorFilter);
         }
-        org.telegram.ui.Cells.w0 w0Var = this.V0;
-        if (w0Var != null) {
-            ((TextView) w0Var.b).setTextColor(w12);
+        org.telegram.ui.Cells.x0 x0Var = this.V0;
+        if (x0Var != null) {
+            ((TextView) x0Var.b).setTextColor(w12);
         }
-        org.telegram.ui.Cells.w0 w0Var2 = this.P7;
-        if (w0Var2 != null) {
-            ((TextView) w0Var2.b).setTextColor(w12);
+        org.telegram.ui.Cells.x0 x0Var2 = this.P7;
+        if (x0Var2 != null) {
+            ((TextView) x0Var2.b).setTextColor(w12);
         }
         vp0 vp0Var = this.M1;
         if (vp0Var != null) {
@@ -18735,8 +18735,8 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
             int childCount = br0Var.getChildCount();
             for (int i10 = 0; i10 < childCount; i10++) {
                 View childAt = this.p1.getChildAt(i10);
-                if (childAt instanceof org.telegram.ui.Cells.x5) {
-                    ((org.telegram.ui.Cells.x5) childAt).c.b(org.telegram.ui.ActionBar.n6.W9, org.telegram.ui.ActionBar.n6.X9, org.telegram.ui.ActionBar.n6.V9);
+                if (childAt instanceof org.telegram.ui.Cells.y5) {
+                    ((org.telegram.ui.Cells.y5) childAt).c.b(org.telegram.ui.ActionBar.n6.W9, org.telegram.ui.ActionBar.n6.X9, org.telegram.ui.ActionBar.n6.V9);
                 }
             }
         }
@@ -20864,7 +20864,7 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                 vp0Var.G0.h();
                 vp0Var.J0.setVisibility(8);
                 vp0Var.I0.setVisibility(8);
-                vp0Var.q0.postRunnable(new cd0(23));
+                vp0Var.q0.postRunnable(new dd0(23));
                 this.f0.removeView(this.M1.getView());
                 this.M1 = null;
                 this.i7 = null;
@@ -20873,11 +20873,11 @@ public class PhotoViewer implements org.telegram.messenger.fs, org.telegram.ui.C
                 qq0 qq0Var = this.f0;
                 if (qq0Var != null) {
                     qq0Var.invalidate();
-                    this.f0.post(new ve0(21, this, this.O1));
+                    this.f0.post(new we0(21, this, this.O1));
                 } else {
                     up0 up0Var = this.O1;
                     up0Var.e.h();
-                    up0Var.c.postRunnable(new cd0(24));
+                    up0Var.c.postRunnable(new dd0(24));
                 }
                 this.O1 = null;
             }

@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -30,15 +30,15 @@ public final /* synthetic */ class mb implements Runnable {
                 org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(str);
                 if (k0Var != null && k0Var.t != null) {
                     if (!org.telegram.utils.twidget.n0.g.contains(k0Var)) {
-                        k0Var.E = i10;
-                        k0Var.F = z10;
+                        k0Var.K = i10;
+                        k0Var.L = z10;
                         ArrayList arrayList = org.telegram.utils.twidget.n0.f;
                         arrayList.remove(k0Var);
                         arrayList.add(k0Var);
                         org.telegram.utils.twidget.n0.p();
                         break;
                     } else {
-                        k0Var.E = i10;
+                        k0Var.K = i10;
                         k0Var.t.l(i10);
                         break;
                     }

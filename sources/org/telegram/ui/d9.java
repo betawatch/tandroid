@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class d9 extends org.telegram.ui.Components.k41 {
     public static final /* synthetic */ int b = 0;
@@ -40,7 +40,7 @@ public final class d9 extends org.telegram.ui.Components.k41 {
         View.OnClickListener onClickListener = l41Var.E;
         int i12 = e9Var.a;
         org.telegram.ui.Components.e9 e9Var2 = e9Var.b;
-        org.telegram.ui.Cells.g6 g6Var = e9Var.d;
+        org.telegram.ui.Cells.h6 h6Var = e9Var.d;
         ImageView imageView = e9Var.c;
         boolean z13 = f9Var.e;
         ArrayList arrayList = f9Var.c;
@@ -67,7 +67,7 @@ public final class d9 extends org.telegram.ui.Components.k41 {
                     Drawable mutate = e9Var.getContext().getResources().getDrawable(R.drawable.mini_call_in_16).mutate();
                     i11 = 0;
                     mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
-                    org.telegram.ui.ActionBar.u6.x(g6Var, mutate, org.telegram.ui.ActionBar.n6.A6, null, PorterDuff.Mode.MULTIPLY);
+                    org.telegram.ui.ActionBar.u6.x(h6Var, mutate, org.telegram.ui.ActionBar.n6.A6, null, PorterDuff.Mode.MULTIPLY);
                     e9Var.h = mutate;
                 } else {
                     i11 = 0;
@@ -92,7 +92,7 @@ public final class d9 extends org.telegram.ui.Components.k41 {
                 i10 = 0;
                 mutate4.setBounds(0, 0, mutate4.getIntrinsicWidth(), mutate4.getIntrinsicHeight());
                 obj = null;
-                org.telegram.ui.ActionBar.u6.x(g6Var, mutate4, org.telegram.ui.ActionBar.n6.A6, null, PorterDuff.Mode.MULTIPLY);
+                org.telegram.ui.ActionBar.u6.x(h6Var, mutate4, org.telegram.ui.ActionBar.n6.A6, null, PorterDuff.Mode.MULTIPLY);
                 e9Var.f = mutate4;
             } else {
                 i10 = 0;
@@ -117,15 +117,15 @@ public final class d9 extends org.telegram.ui.Components.k41 {
             }
             ArrayList arrayList3 = new ArrayList(arrayList2);
             arrayList3.add(org.telegram.messenger.j10.i(i12).f());
-            g6Var.setAllowEmojiStatus(r12);
-            org.telegram.ui.Cells.g6 g6Var2 = e9Var.d;
+            h6Var.setAllowEmojiStatus(r12);
+            org.telegram.ui.Cells.h6 h6Var2 = e9Var.d;
             if (!arrayList2.isEmpty()) {
                 obj = arrayList2.get(r12);
             }
-            g6Var2.x(obj, null, sb2.toString(), spannableString, false, false);
+            h6Var2.x(obj, null, sb2.toString(), spannableString, false, false);
             e9Var2.setVisibility(r12);
-            g6Var.r.f();
-            g6Var.f = true;
+            h6Var.r.f();
+            h6Var.f = true;
             int min = Math.min(3, arrayList3.size());
             for (int i15 = 0; i15 < min; i15++) {
                 e9Var2.b(i15, i12, (TLObject) arrayList3.get(i15));
@@ -135,14 +135,14 @@ public final class d9 extends org.telegram.ui.Components.k41 {
         } else {
             SpannableString spannableString2 = spannableString;
             z12 = false;
-            g6Var.setAllowEmojiStatus(true);
-            org.telegram.ui.Cells.g6 g6Var3 = e9Var.d;
+            h6Var.setAllowEmojiStatus(true);
+            org.telegram.ui.Cells.h6 h6Var3 = e9Var.d;
             if (!arrayList2.isEmpty()) {
                 obj = arrayList2.get(0);
             }
-            g6Var3.x(obj, null, null, spannableString2, false, false);
+            h6Var3.x(obj, null, null, spannableString2, false, false);
             e9Var2.setVisibility(8);
-            g6Var.f = false;
+            h6Var.f = false;
         }
         imageView.setTag(f9Var);
         imageView.setOnClickListener(onClickListener);

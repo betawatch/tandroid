@@ -52,7 +52,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.hs0;
 import org.telegram.ui.l60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class da extends b51 implements fs {
     public LinearLayout E;
@@ -290,9 +290,9 @@ public final class da extends b51 implements fs {
         if (walletuseraddress != null && walletuseraddress.user_id != 0) {
             daVar.f = mp.u1(daVar.currentAccount).c2(Long.valueOf(walletuseraddress.user_id));
         }
-        bi.d6 d6Var = daVar.a;
-        if (d6Var != null) {
-            d6Var.g3.O(true);
+        bi.c6 c6Var = daVar.a;
+        if (c6Var != null) {
+            c6Var.g3.O(true);
         }
         daVar.C0();
         g9 g9Var = daVar.w;
@@ -946,7 +946,7 @@ public final class da extends b51 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.c4) {
+        if (i7 == ks.d4) {
             D0();
             C0();
         }
@@ -1060,7 +1060,7 @@ public final class da extends b51 implements fs {
 
     @Override // org.telegram.ui.ActionBar.h2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ks.c4);
+        getNotificationCenter().c(this, ks.d4);
         return super.onFragmentCreate();
     }
 
@@ -1101,7 +1101,7 @@ public final class da extends b51 implements fs {
         if (editTextBoldCursor != null) {
             editTextBoldCursor.removeCallbacks(this.K);
         }
-        getNotificationCenter().n(this, ks.c4);
+        getNotificationCenter().n(this, ks.d4);
         super.onFragmentDestroy();
     }
 
@@ -1290,32 +1290,32 @@ public final class da extends b51 implements fs {
         org.telegram.ui.ActionBar.u6.F(a1Var, org.telegram.ui.ActionBar.n6.k6, org.telegram.ui.ActionBar.n6.l6, org.telegram.ui.ActionBar.n6.p7, getResourceProvider());
         a1Var.setBackground(null);
         a1Var.setPadding(0, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(10.0f));
-        org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, parentActivity, getResourceProvider());
+        org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, parentActivity, getResourceProvider());
         int i10 = org.telegram.ui.ActionBar.n6.i6;
         org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i10, this.resourceProvider), 7, org.telegram.messenger.g0.L(12.0f));
         org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i10);
         org.telegram.ui.ActionBar.i6 i6Var = this.resourceProvider;
-        c2Var.setBackground(h02);
-        org.telegram.ui.ActionBar.u6.j(c2Var, h02, null, M, i6Var);
-        c2Var.e(gd.M0(2131742838, null), "", !this.i0 || r0() == null, false, false);
-        c2Var.setMultiline(true);
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
+        d2Var.setBackground(h02);
+        org.telegram.ui.ActionBar.u6.j(d2Var, h02, null, M, i6Var);
+        d2Var.e(gd.M0(2131742838, null), "", !this.i0 || r0() == null, false, false);
+        d2Var.setMultiline(true);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var.getCheckBoxView().getLayoutParams();
         layoutParams.topMargin = 0;
         layoutParams.gravity = (gd.a0 ? 5 : 3) | 16;
-        c2Var.getCheckBoxView().setLayoutParams(layoutParams);
-        c2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
-        c2Var.setEnabled(r0() != null);
-        c2Var.setOnClickListener(new o3(c2Var, i7));
+        d2Var.getCheckBoxView().setLayoutParams(layoutParams);
+        d2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
+        d2Var.setEnabled(r0() != null);
+        d2Var.setOnClickListener(new o3(d2Var, i7));
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         linearLayout.setOrientation(1);
         linearLayout.addView(a1Var, c8.ma.k(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
-        linearLayout.addView(c2Var, c8.ma.t(-1, -2, 83, 8, 0, 8, 0));
+        linearLayout.addView(d2Var, c8.ma.t(-1, -2, 83, 8, 0, 8, 0));
         u1Var.H = 6;
         w1Var.o(linearLayout);
         u1Var.a = org.telegram.messenger.g0.L(292.0f);
         w1Var.h(gd.M0(2131752578, null), new l60(20));
         int i11 = 2;
-        w1Var.k(gd.M0(2131754484, null), new x8(this, a1Var, c2Var, i11));
+        w1Var.k(gd.M0(2131754484, null), new x8(this, a1Var, d2Var, i11));
         u1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Wallet.q9
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
@@ -1335,7 +1335,7 @@ public final class da extends b51 implements fs {
         if (!(d instanceof TextView) || TextUtils.isEmpty(this.h0)) {
             return;
         }
-        a1Var.addTextChangedListener(new bi.t5(a1Var, (TextView) d));
+        a1Var.addTextChangedListener(new bi.s5(a1Var, (TextView) d));
     }
 
     public final void w0() {

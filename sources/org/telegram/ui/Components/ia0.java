@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class ia0 extends org.telegram.ui.Cells.j9 {
+public final class ia0 extends org.telegram.ui.Cells.k9 {
     public final /* synthetic */ oa0 w0;
 
     public ia0(oa0 oa0Var) {
@@ -12,7 +12,7 @@ public final class ia0 extends org.telegram.ui.Cells.j9 {
         this.g0 = oa0Var.d0.G;
     }
 
-    @Override // org.telegram.ui.Cells.v9
+    @Override // org.telegram.ui.Cells.w9
     public final void I(int i7, int i10, org.telegram.messenger.fj fjVar) {
         org.telegram.ui.rm rmVar;
         org.telegram.messenger.fj fjVar2;
@@ -35,7 +35,7 @@ public final class ia0 extends org.telegram.ui.Cells.j9 {
         ua0Var.a(true);
     }
 
-    @Override // org.telegram.ui.Cells.v9
+    @Override // org.telegram.ui.Cells.w9
     public final boolean b() {
         org.telegram.messenger.fj c10;
         TLRPC.Message message;
@@ -47,7 +47,7 @@ public final class ia0 extends org.telegram.ui.Cells.j9 {
         return jjVar == null || !jjVar.s;
     }
 
-    @Override // org.telegram.ui.Cells.v9
+    @Override // org.telegram.ui.Cells.w9
     public final boolean e() {
         org.telegram.messenger.fj c10;
         TLRPC.Message message;
@@ -59,12 +59,12 @@ public final class ia0 extends org.telegram.ui.Cells.j9 {
         return i7 != 0 || (c10 = oa0Var.c(null)) == null || (message = c10.k) == null || message.rich_message == null || org.telegram.messenger.iv.c(oa0Var.c(null));
     }
 
-    @Override // org.telegram.ui.Cells.v9
+    @Override // org.telegram.ui.Cells.w9
     public final org.telegram.ui.ActionBar.i6 q() {
         return this.g0;
     }
 
-    @Override // org.telegram.ui.Cells.j9, org.telegram.ui.Cells.v9
+    @Override // org.telegram.ui.Cells.k9, org.telegram.ui.Cells.w9
     public final void w() {
         super.w();
         di.b1 b1Var = this.w0.f;
@@ -73,7 +73,7 @@ public final class ia0 extends org.telegram.ui.Cells.j9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.v9
+    @Override // org.telegram.ui.Cells.w9
     public final boolean z(org.telegram.messenger.fj fjVar) {
         oa0 oa0Var = this.w0;
         return oa0Var.a == 0 && !oa0Var.d0.d.i && x();

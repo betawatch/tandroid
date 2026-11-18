@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class n30 extends org.telegram.ui.Components.ck0 {
     public final LongSparseIntArray f3;
@@ -53,14 +53,14 @@ public final class n30 extends org.telegram.ui.Components.ck0 {
                 } else {
                     if (i11 == 1) {
                         View view = G.a;
-                        if (view instanceof org.telegram.ui.Cells.f4) {
-                            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
+                        if (view instanceof org.telegram.ui.Cells.g4) {
+                            org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
                             z10 = z11;
-                            f40Var.A4.append(f4Var.getPeerId(), 1);
-                            if (longSparseIntArray.get(f4Var.getPeerId(), 0) == 0) {
+                            f40Var.A4.append(g4Var.getPeerId(), 1);
+                            if (longSparseIntArray.get(g4Var.getPeerId(), 0) == 0) {
                                 z12 = true;
                             } else {
-                                longSparseIntArray.delete(f4Var.getPeerId());
+                                longSparseIntArray.delete(g4Var.getPeerId());
                             }
                             if (z10) {
                                 f14 = Math.max(f14, childAt.getY() + childAt.getMeasuredHeight());

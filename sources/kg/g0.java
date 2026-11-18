@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import bi.i8;
+import bi.h8;
 import c8.ma;
 import hi.t6;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.ri;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.ty;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g0 extends ki implements c6, fs, te.b {
     public final e0 E;
@@ -74,7 +74,7 @@ public final class g0 extends ki implements c6, fs, te.b {
         this.d = b1Var;
         this.h = true;
         this.f = true;
-        ks.e().h(b1Var, ks.k4, new t6(this, 8));
+        ks.e().h(b1Var, ks.l4, new t6(this, 8));
         b1Var.setClipToPadding(false);
         getContext();
         c0 c0Var = new c0(this, org.telegram.messenger.g0.L(9.0f), b1Var, 0);
@@ -89,7 +89,7 @@ public final class g0 extends ki implements c6, fs, te.b {
         this.y = d0Var;
         b1Var.setAdapter(d0Var);
         u6.l(b1Var, 21, n6.A5, i6Var);
-        b1Var.setOnItemClickListener(new i8(this, 15));
+        b1Var.setOnItemClickListener(new h8(this, 15));
         b1Var.setOnScrollListener(new bi.q1(this, 19));
         FrameLayout.LayoutParams e10 = ma.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e10).height += org.telegram.messenger.g0.m;

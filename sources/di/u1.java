@@ -23,7 +23,7 @@ import org.telegram.ui.hc1;
 import org.telegram.ui.nl0;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -60,9 +60,9 @@ public final /* synthetic */ class u1 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 2:
-                bi.m8 m8Var = (bi.m8) obj;
+                bi.l8 l8Var = (bi.l8) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    m8Var.a(Boolean.FALSE, null);
+                    l8Var.a(Boolean.FALSE, null);
                     break;
                 }
                 break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class u1 implements DialogInterface.OnDismissListen
                     edit.putBoolean("proxy_enabled", false);
                     edit.commit();
                     ConnectionsManager.setProxySettings(false, null);
-                    ks.e().k(ks.C4, new Object[0]);
+                    ks.e().k(ks.D4, new Object[0]);
                     launchActivity.E0 = null;
                 }
                 launchActivity.D0.remove(u1Var);

@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -62,8 +62,8 @@ public final /* synthetic */ class ld implements TextView.OnEditorActionListener
                             v4.f1 K = f61Var.K(b10 + 1);
                             if (K != null) {
                                 View view = K.a;
-                                if (view instanceof org.telegram.ui.Cells.a6) {
-                                    ((org.telegram.ui.Cells.a6) view).getTextView().requestFocus();
+                                if (view instanceof org.telegram.ui.Cells.b6) {
+                                    ((org.telegram.ui.Cells.b6) view).getTextView().requestFocus();
                                     break;
                                 }
                             }
@@ -93,8 +93,8 @@ public final /* synthetic */ class ld implements TextView.OnEditorActionListener
                             v4.f1 K2 = pr0Var.c.K(b11 + 1);
                             if (K2 != null) {
                                 View view2 = K2.a;
-                                if (view2 instanceof org.telegram.ui.Cells.a6) {
-                                    ((org.telegram.ui.Cells.a6) view2).getTextView().requestFocus();
+                                if (view2 instanceof org.telegram.ui.Cells.b6) {
+                                    ((org.telegram.ui.Cells.b6) view2).getTextView().requestFocus();
                                     break;
                                 }
                             }

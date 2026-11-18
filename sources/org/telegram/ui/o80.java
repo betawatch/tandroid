@@ -2,40 +2,24 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p80 b;
-    public final /* synthetic */ org.telegram.messenger.c c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 e;
+public final class o80 implements kp {
+    public final /* synthetic */ cx a;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ o80(p80 p80Var, org.telegram.messenger.c cVar, long j3, org.telegram.ui.ActionBar.h2 h2Var, int i7) {
-        this.a = i7;
-        this.b = p80Var;
-        this.c = cVar;
-        this.d = j3;
-        this.e = h2Var;
+    public o80(cx cxVar, int i7) {
+        this.a = cxVar;
+        this.b = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.g3(new o80(this.b, this.c, this.d, this.e, 1));
-                break;
-            default:
-                org.telegram.messenger.c cVar = this.c;
-                int i7 = cVar.a;
-                org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
-                long j3 = this.d;
-                long j10 = -j3;
-                org.telegram.messenger.t3 i12 = u12.i1(j10, false, null);
-                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(j10));
-                org.telegram.messenger.mp.u1(i7).l1(j3);
-                org.telegram.ui.Components.voip.b2.l(O0, null, false, Boolean.valueOf(i12 == null || !i12.b.rtmp_stream), this.b.h, this.e, cVar);
-                break;
-        }
+    @Override // org.telegram.ui.kp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        this.a.removeSelfFromStack();
+        org.telegram.messenger.ks.f(this.b).k(org.telegram.messenger.ks.t, new Object[0]);
+    }
+
+    @Override // org.telegram.ui.kp
+    public final void a(TLRPC.User user) {
     }
 }

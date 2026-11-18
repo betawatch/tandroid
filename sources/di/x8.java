@@ -54,10 +54,10 @@ import org.telegram.ui.Components.k80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
-import org.telegram.ui.t80;
+import org.telegram.ui.u80;
 import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x8 {
     public static volatile x8[][] S = (x8[][]) Array.newInstance((Class<?>) x8.class, 2, 4);
@@ -1144,7 +1144,7 @@ public final class x8 {
                     public final void run() {
                         boolean z10;
                         LaunchActivity launchActivity;
-                        t80 t80Var;
+                        u80 u80Var;
                         TLRPC.Message message2;
                         x8 x8Var2 = x8.this;
                         TLObject tLObject2 = tLObject;
@@ -1219,8 +1219,8 @@ public final class x8 {
                                 z10 = true;
                                 Y.I(R.raw.stars_send, gd.M0(2131744817, null), org.telegram.messenger.g0.W2(gd.G((int) j14, "StarsPurchaseCompletedInfo", str7, str6))).j();
                                 launchActivity = LaunchActivity.H1;
-                                if (launchActivity != null && (t80Var = launchActivity.w0) != null) {
-                                    t80Var.c(z10);
+                                if (launchActivity != null && (u80Var = launchActivity.w0) != null) {
+                                    u80Var.c(z10);
                                 }
                                 if ((inputInvoice3 instanceof TLRPC.TL_inputInvoiceStars) || !(((TLRPC.TL_inputInvoiceStars) inputInvoice3).purpose instanceof TLRPC.TL_inputStorePaymentStarsGift)) {
                                     x8Var2.R(true);
@@ -1239,7 +1239,7 @@ public final class x8 {
                         z10 = true;
                         launchActivity = LaunchActivity.H1;
                         if (launchActivity != null) {
-                            t80Var.c(z10);
+                            u80Var.c(z10);
                         }
                         if (inputInvoice3 instanceof TLRPC.TL_inputInvoiceStars) {
                         }
@@ -1262,7 +1262,7 @@ public final class x8 {
             if (((ArrayList) hVar.f(j3)) != null) {
                 e00Var.getMessagesStorage().C1(e00Var.getConnectionsManager().getCurrentTime(), -j3, (List) hVar.f(j3), true);
             }
-            ks.f(i7).k(ks.P3, Long.valueOf(j10));
+            ks.f(i7).k(ks.Q3, Long.valueOf(j10));
         }
     }
 
@@ -1843,7 +1843,7 @@ public final class x8 {
                                     org.telegram.messenger.g0.g3(new Runnable() { // from class: di.u7
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            t80 t80Var;
+                                            u80 u80Var;
                                             x8 x8Var4 = x8.this;
                                             TLObject tLObject8 = tLObject6;
                                             TLRPC.TL_error tL_error4 = tL_error3;
@@ -1889,10 +1889,10 @@ public final class x8 {
                                             }
                                             mp.u1(x8Var4.a).h7.edit().putBoolean("show_gift_for_" + j16, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j16, true).apply();
                                             LaunchActivity launchActivity = LaunchActivity.H1;
-                                            if (launchActivity == null || (t80Var = launchActivity.w0) == null) {
+                                            if (launchActivity == null || (u80Var = launchActivity.w0) == null) {
                                                 return;
                                             }
-                                            t80Var.c(true);
+                                            u80Var.c(true);
                                         }
                                     });
                                 }
@@ -1979,7 +1979,7 @@ public final class x8 {
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: di.q7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        t80 t80Var;
+                        u80 u80Var;
                         final x8 x8Var2 = x8.this;
                         TLObject tLObject2 = tLObject;
                         TLRPC.TL_error tL_error2 = tL_error;
@@ -2040,10 +2040,10 @@ public final class x8 {
                         }
                         mp.u1(x8Var2.a).h7.edit().putBoolean("show_gift_for_" + j15, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j15, true).apply();
                         LaunchActivity launchActivity = LaunchActivity.H1;
-                        if (launchActivity == null || (t80Var = launchActivity.w0) == null) {
+                        if (launchActivity == null || (u80Var = launchActivity.w0) == null) {
                             return;
                         }
-                        t80Var.c(true);
+                        u80Var.c(true);
                     }
                 });
             }
@@ -2156,7 +2156,7 @@ public final class x8 {
         }
     }
 
-    public final void i(final TL_stars.StarGift starGift, final boolean z10, final boolean z11, final long j3, final TLRPC.TL_textWithEntities tL_textWithEntities, final bi.m8 m8Var) {
+    public final void i(final TL_stars.StarGift starGift, final boolean z10, final boolean z11, final long j3, final TLRPC.TL_textWithEntities tL_textWithEntities, final bi.l8 l8Var) {
         Context context = LaunchActivity.H1;
         if (context == null) {
             context = org.telegram.messenger.t0.b;
@@ -2172,12 +2172,12 @@ public final class x8 {
                 public final void run() {
                     x8 x8Var = x8.this;
                     boolean z12 = x8Var.e;
-                    bi.m8 m8Var2 = m8Var;
+                    bi.l8 l8Var2 = l8Var;
                     if (z12) {
-                        x8Var.i(starGift, z10, z11, j3, tL_textWithEntities, m8Var2);
+                        x8Var.i(starGift, z10, z11, j3, tL_textWithEntities, l8Var2);
                     } else {
                         x8.e("NO_BALANCE");
-                        m8Var2.a(Boolean.FALSE, null);
+                        l8Var2.a(Boolean.FALSE, null);
                     }
                 }
             });
@@ -2206,7 +2206,7 @@ public final class x8 {
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
                 final x8 x8Var = x8.this;
-                final bi.m8 m8Var2 = m8Var;
+                final bi.l8 l8Var2 = l8Var;
                 final TLRPC.TL_inputInvoiceStarGift tL_inputInvoiceStarGift2 = tL_inputInvoiceStarGift;
                 final Context context3 = context2;
                 final org.telegram.ui.ActionBar.i6 i6Var = I;
@@ -2221,11 +2221,11 @@ public final class x8 {
                     public final void run() {
                         TLObject tLObject2 = tLObject;
                         boolean z14 = tLObject2 instanceof TLRPC.TL_payments_paymentFormStarGift;
-                        final bi.m8 m8Var3 = m8Var2;
+                        final bi.l8 l8Var3 = l8Var2;
                         if (!z14) {
                             TLRPC.TL_error tL_error2 = tL_error;
                             x8.e(tL_error2 == null ? "NO_PAYMENT_FORM" : tL_error2.text);
-                            m8Var3.a(Boolean.FALSE, null);
+                            l8Var3.a(Boolean.FALSE, null);
                             return;
                         }
                         TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) tLObject2;
@@ -2255,7 +2255,7 @@ public final class x8 {
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(final TLObject tLObject3, final TLRPC.TL_error tL_error3) {
                                 final x8 x8Var3 = x8.this;
-                                final bi.m8 m8Var4 = m8Var3;
+                                final bi.l8 l8Var4 = l8Var3;
                                 final Context context5 = context4;
                                 final org.telegram.ui.ActionBar.i6 i6Var3 = i6Var2;
                                 final long j13 = j11;
@@ -2274,12 +2274,12 @@ public final class x8 {
                                     public final void run() {
                                         String str4;
                                         SpannableStringBuilder spannableStringBuilder;
-                                        t80 t80Var;
+                                        u80 u80Var;
                                         ?? r52;
                                         x8 x8Var4 = x8.this;
                                         TLObject tLObject4 = tLObject3;
                                         TLRPC.TL_error tL_error4 = tL_error3;
-                                        bi.m8 m8Var5 = m8Var4;
+                                        bi.l8 l8Var5 = l8Var4;
                                         Context context6 = context5;
                                         org.telegram.ui.ActionBar.i6 i6Var4 = i6Var3;
                                         long j15 = j13;
@@ -2294,25 +2294,25 @@ public final class x8 {
                                         if (!(tLObject4 instanceof TLRPC.TL_payments_paymentResult)) {
                                             if (tL_error4 != null && "BALANCE_TOO_LOW".equals(tL_error4.text)) {
                                                 if (mp.u1(x8Var4.a).m7) {
-                                                    m8Var5.a(Boolean.FALSE, null);
+                                                    l8Var5.a(Boolean.FALSE, null);
                                                     x8.c0(context6, i6Var4);
                                                     return;
                                                 } else {
                                                     boolean[] zArr = {false};
-                                                    fb fbVar = new fb(context6, i6Var4, j15, 6, str5, new r7(x8Var4, zArr, starGift5, z19, z20, j16, tL_textWithEntities5, m8Var5), 0L);
-                                                    fbVar.setOnDismissListener(new u1(m8Var5, zArr, 2));
+                                                    fb fbVar = new fb(context6, i6Var4, j15, 6, str5, new r7(x8Var4, zArr, starGift5, z19, z20, j16, tL_textWithEntities5, l8Var5), 0L);
+                                                    fbVar.setOnDismissListener(new u1(l8Var5, zArr, 2));
                                                     fbVar.show();
                                                     return;
                                                 }
                                             }
                                             if (tL_error4 != null && "STARGIFT_USAGE_LIMITED".equals(tL_error4.text)) {
-                                                m8Var5.a(Boolean.FALSE, "STARGIFT_USAGE_LIMITED");
+                                                l8Var5.a(Boolean.FALSE, "STARGIFT_USAGE_LIMITED");
                                                 return;
                                             } else if (tL_error4 != null && "STARGIFT_USER_USAGE_LIMITED".equals(tL_error4.text)) {
-                                                m8Var5.a(Boolean.FALSE, "STARGIFT_USER_USAGE_LIMITED");
+                                                l8Var5.a(Boolean.FALSE, "STARGIFT_USER_USAGE_LIMITED");
                                                 return;
                                             } else {
-                                                m8Var5.a(Boolean.FALSE, null);
+                                                l8Var5.a(Boolean.FALSE, null);
                                                 Y.Q(R.raw.error, 36, gd.a0(null, null, 2131743641, tL_error4 != null ? tL_error4.text : "FAILED_SEND_STARS")).j();
                                                 return;
                                             }
@@ -2324,7 +2324,7 @@ public final class x8 {
                                         x8Var4.T();
                                         x8Var4.O(j16);
                                         x8Var4.R(true);
-                                        m8Var5.a(Boolean.TRUE, null);
+                                        l8Var5.a(Boolean.TRUE, null);
                                         org.telegram.messenger.t1 b10 = org.telegram.messenger.v1.a(x8Var4.a).b();
                                         if (b10 != null && b10.a(j16)) {
                                             mp.u1(x8Var4.a).h7.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j16, false).apply();
@@ -2396,10 +2396,10 @@ public final class x8 {
                                         }
                                         mp.u1(x8Var4.a).h7.edit().putBoolean("show_gift_for_" + j16, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j16, true).apply();
                                         LaunchActivity launchActivity = LaunchActivity.H1;
-                                        if (launchActivity == null || (t80Var = launchActivity.w0) == null) {
+                                        if (launchActivity == null || (u80Var = launchActivity.w0) == null) {
                                             return;
                                         }
-                                        t80Var.c(true);
+                                        u80Var.c(true);
                                     }
                                 });
                             }

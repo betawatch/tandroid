@@ -21,10 +21,10 @@ import org.telegram.ui.cx;
 import org.telegram.ui.f40;
 import org.telegram.ui.np;
 import org.telegram.ui.qv0;
-import org.telegram.ui.r90;
 import org.telegram.ui.rv0;
+import org.telegram.ui.s90;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -222,15 +222,15 @@ public final /* synthetic */ class m implements Runnable {
                     return;
                 }
             case 6:
-                r90 r90Var = (r90) obj4;
+                s90 s90Var = (s90) obj4;
                 TLObject tLObject3 = (TLObject) obj2;
                 String str3 = (String) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj3;
-                int i12 = r90Var.b;
-                r90Var.c();
+                int i12 = s90Var.b;
+                s90Var.c();
                 if (!(tLObject3 instanceof TLRPC.TL_contacts_resolvedPeer)) {
                     if (tL_error3 != null) {
-                        r90.d().g0(tL_error3, false);
+                        s90.d().g0(tL_error3, false);
                         return;
                     }
                     return;
@@ -245,7 +245,7 @@ public final /* synthetic */ class m implements Runnable {
                     daVar.h0 = str3;
                     daVar.i0 = z10;
                     daVar.g0 = true;
-                    r90Var.u(daVar, false);
+                    s90Var.u(daVar, false);
                     return;
                 }
                 return;
@@ -304,8 +304,8 @@ public final /* synthetic */ class m implements Runnable {
         this.h = invitetogroupcall;
     }
 
-    public /* synthetic */ m(r90 r90Var, TLObject tLObject, long j3, String str, boolean z10, TLRPC.TL_error tL_error) {
-        this.d = r90Var;
+    public /* synthetic */ m(s90 s90Var, TLObject tLObject, long j3, String str, boolean z10, TLRPC.TL_error tL_error) {
+        this.d = s90Var;
         this.f = tLObject;
         this.b = j3;
         this.h = str;

@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class g5 extends androidx.fragment.app.v {
     public int P = -1;
@@ -74,8 +74,8 @@ public abstract class g5 extends androidx.fragment.app.v {
                 return false;
             }
             if (i7 != 18 && i7 != 19 && i7 != 20 && i7 != 22) {
-                int i11 = org.telegram.messenger.ks.y4;
-                int i12 = org.telegram.messenger.ks.x4;
+                int i11 = org.telegram.messenger.ks.z4;
+                int i12 = org.telegram.messenger.ks.y4;
                 if (i7 == 2) {
                     org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
                     if (z10) {

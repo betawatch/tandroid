@@ -13,7 +13,7 @@ import org.telegram.messenger.mp;
 import org.telegram.ui.Components.k80;
 import org.telegram.ui.Components.lq;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b extends LinearLayout implements fs {
     public final int a;
@@ -95,7 +95,7 @@ public final class b extends LinearLayout implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.A3 || (i7 == ks.c4 && this.h)) {
+        if (i7 == ks.A3 || (i7 == ks.d4 && this.h)) {
             b();
         }
     }
@@ -112,7 +112,7 @@ public final class b extends LinearLayout implements fs {
         int i7 = this.a;
         ks.f(i7).c(this, ks.A3);
         ks.f(i7).c(this, ks.E3);
-        ks.f(i7).c(this, ks.c4);
+        ks.f(i7).c(this, ks.d4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -121,7 +121,7 @@ public final class b extends LinearLayout implements fs {
         int i7 = this.a;
         ks.f(i7).n(this, ks.A3);
         ks.f(i7).n(this, ks.E3);
-        ks.f(i7).n(this, ks.c4);
+        ks.f(i7).n(this, ks.d4);
     }
 
     public b(Context context, int i7, cg.b bVar, org.telegram.ui.ActionBar.i6 i6Var) {

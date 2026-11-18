@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class fm0 extends FrameLayout {
     public static final /* synthetic */ int r0 = 0;
@@ -24,7 +24,7 @@ public final class fm0 extends FrameLayout {
     public boolean H;
     public boolean I;
     public TL_stars.TL_starGiftUnique J;
-    public bi.v7 K;
+    public bi.u7 K;
     public TL_stars.StarGift L;
     public final ArrayList M;
     public final HashMap N;
@@ -468,10 +468,10 @@ public final class fm0 extends FrameLayout {
         org.telegram.messenger.fj messageObject;
         am0 am0Var = this.w;
         if (am0Var != null) {
-            org.telegram.ui.Cells.q1[] cells = am0Var.getCells();
+            org.telegram.ui.Cells.r1[] cells = am0Var.getCells();
             for (int i7 = 0; i7 < cells.length; i7++) {
-                org.telegram.ui.Cells.q1 q1Var = cells[i7];
-                if (q1Var != null && (messageObject = q1Var.getMessageObject()) != null) {
+                org.telegram.ui.Cells.r1 r1Var = cells[i7];
+                if (r1Var != null && (messageObject = r1Var.getMessageObject()) != null) {
                     messageObject.w1 = true;
                     im0 im0Var = this.f;
                     if (im0Var != null) {
@@ -641,8 +641,8 @@ public final class fm0 extends FrameLayout {
                 this.g0 = size2;
                 int i21 = this.l0;
                 this.d0 = i21;
-                bi.v7 v7Var = this.K;
-                if (v7Var.y || !v7Var.z) {
+                bi.u7 u7Var = this.K;
+                if (u7Var.y || !u7Var.z) {
                     this.e0 = i21;
                     int i22 = 3 - (size2 % 3);
                     if (size2 <= 0) {

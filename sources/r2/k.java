@@ -17,15 +17,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import x2.e0;
 import x2.j1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class k extends x2.a {
     public final c h;
-    public final b5 i;
+    public final c5 i;
     public final nb.a j;
     public final q2.m k;
     public final qb.a l;
@@ -41,10 +41,10 @@ public final class k extends x2.a {
         m0.a("media3.exoplayer.hls");
     }
 
-    public k(l0 l0Var, b5 b5Var, c cVar, nb.a aVar, q2.m mVar, qb.a aVar2, s2.d dVar, long j3, boolean z10, int i7) {
+    public k(l0 l0Var, c5 c5Var, c cVar, nb.a aVar, q2.m mVar, qb.a aVar2, s2.d dVar, long j3, boolean z10, int i7) {
         this.s = l0Var;
         this.q = l0Var.c;
-        this.i = b5Var;
+        this.i = c5Var;
         this.h = cVar;
         this.j = aVar;
         this.k = mVar;

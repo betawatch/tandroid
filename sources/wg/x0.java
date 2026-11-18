@@ -3,9 +3,9 @@ package wg;
 import java.util.ArrayList;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ri;
-import org.telegram.ui.rg0;
+import org.telegram.ui.sg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class x0 implements Runnable {
                 d1Var.m1(true, false);
                 break;
             case 3:
-                rg0 rg0Var = d1Var.V1;
-                rg0Var.b.r(gd.M0(2131745641, null), true);
+                sg0 sg0Var = d1Var.V1;
+                sg0Var.b.r(gd.M0(2131745641, null), true);
                 break;
             case 4:
-                rg0 rg0Var2 = d1Var.V1;
-                rg0Var2.b.r(gd.M0(2131749478, null), true);
+                sg0 sg0Var2 = d1Var.V1;
+                sg0Var2.b.r(gd.M0(2131749478, null), true);
                 break;
             case 5:
                 d1Var.e1();

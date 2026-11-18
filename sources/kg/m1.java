@@ -19,7 +19,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.r1, ww {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.r1, w
             u1Var.S = M0;
             u1Var.U = org.telegram.messenger.g0.W2(gd.a0("AddMembersAlertNamesText", null, 2131754397, o10.q(user), O0 == null ? "" : O0.title));
             alertDialog$Builder.h(gd.M0(2131752578, null), null);
-            alertDialog$Builder.k(gd.M0(2131754461, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.f70
+            alertDialog$Builder.k(gd.M0(2131754461, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.g70
                 @Override // org.telegram.ui.ActionBar.r1
                 public final void h(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
                     String str4 = LaunchActivity.C1;
@@ -109,11 +109,11 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.r1, w
             });
             alertDialog$Builder.p();
         } else {
-            mp.u1(i11).K(O0, user, new zo() { // from class: org.telegram.ui.e70
+            mp.u1(i11).K(O0, user, new zo() { // from class: org.telegram.ui.f70
                 @Override // org.telegram.messenger.zo
                 public final void a(boolean z12, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str4) {
                     String str5 = LaunchActivity.C1;
-                    org.telegram.messenger.g0.g3(new bi.t4(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i11, O0, cxVar2, user, j3, str4));
+                    org.telegram.messenger.g0.g3(new bi.s4(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i11, O0, cxVar2, user, j3, str4));
                 }
             });
         }

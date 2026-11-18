@@ -24,8 +24,8 @@ import org.telegram.ui.ActionBar.h1;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.r1;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.ti0;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.vi0;
 import org.telegram.ui.b11;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class l0 {
     public static l0 B;
@@ -137,13 +137,13 @@ public final class l0 {
         TLRPC.TL_messageReactions tL_messageReactions;
         this.t = null;
         this.z = z10;
-        boolean z12 = view instanceof q1;
+        boolean z12 = view instanceof r1;
         if (z12) {
-            fjVar = ((q1) view).getMessageObject();
+            fjVar = ((r1) view).getMessageObject();
             this.n = fjVar.e1();
             this.o = fjVar.c1();
-        } else if (view instanceof u0) {
-            fjVar = ((u0) view).getMessageObject();
+        } else if (view instanceof v0) {
+            fjVar = ((v0) view).getMessageObject();
             this.n = fjVar.e1();
             this.o = 0L;
         } else {
@@ -154,7 +154,7 @@ public final class l0 {
         this.p = p0Var;
         this.a = i10;
         this.v = view;
-        n0 k10 = z12 ? ((q1) view).O.k(p0Var) : view instanceof u0 ? ((u0) view).F0.k(p0Var) : null;
+        n0 k10 = z12 ? ((r1) view).O.k(p0Var) : view instanceof v0 ? ((v0) view).F0.k(p0Var) : null;
         if (z10 && i10 == 2) {
             view3 = view2;
             n0Var = k10;
@@ -316,7 +316,7 @@ public final class l0 {
                         ((View) view4.getParent()).getLocationInWindow(this.j);
                         int[] iArr = this.j;
                         f15 = iArr[0] + f10;
-                        f16 = iArr[i23] + f11 + (view4 instanceof q1 ? ((q1) view4).W : 0);
+                        f16 = iArr[i23] + f11 + (view4 instanceof r1 ? ((r1) view4).W : 0);
                     } else {
                         f12 = 0.0f;
                         f13 = f10;
@@ -669,7 +669,7 @@ public final class l0 {
                 ((FrameLayout) h2Var.getParentActivity().getWindow().getDecorView()).addView(l0Var.i);
             }
             view.invalidate();
-            if (!(view instanceof q1) || ((q1) view).getCurrentMessagesGroup() == null || view.getParent() == null) {
+            if (!(view instanceof r1) || ((r1) view).getCurrentMessagesGroup() == null || view.getParent() == null) {
                 return;
             }
             ((View) view.getParent()).invalidate();
@@ -696,10 +696,10 @@ public final class l0 {
         l0 l0Var2 = C;
         if (l0Var2 != null) {
             View view = l0Var2.v;
-            if (view instanceof q1) {
-                ((q1) view).O.b(l0Var2.p);
-            } else if (view instanceof u0) {
-                ((u0) view).F0.b(l0Var2.p);
+            if (view instanceof r1) {
+                ((r1) view).O.b(l0Var2.p);
+            } else if (view instanceof v0) {
+                ((v0) view).F0.b(l0Var2.p);
             }
         }
     }

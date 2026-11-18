@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 final class PredefinedCommands {
     static {
@@ -241,8 +241,8 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("approxcoloncolon", new PredefMacroInfo(ks.I3, 0));
         MacroInfo.Commands.put("coloncolon", new PredefMacroInfo(ks.J3, 0));
         MacroInfo.Commands.put("equalscolon", new PredefMacroInfo(234, 0));
-        MacroInfo.Commands.put("equalscoloncolon", new PredefMacroInfo(235, 0));
-        MacroInfo.Commands.put("colonminus", new PredefMacroInfo(ks.L3, 0));
+        MacroInfo.Commands.put("equalscoloncolon", new PredefMacroInfo(ks.L3, 0));
+        MacroInfo.Commands.put("colonminus", new PredefMacroInfo(236, 0));
         MacroInfo.Commands.put("coloncolonminus", new PredefMacroInfo(ks.M3, 0));
         MacroInfo.Commands.put("colonequals", new PredefMacroInfo(ks.N3, 0));
         MacroInfo.Commands.put("coloncolonequals", new PredefMacroInfo(ks.O3, 0));

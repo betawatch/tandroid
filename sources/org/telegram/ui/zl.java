@@ -6,7 +6,7 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.r1, h2.j {
     public final /* synthetic */ int a = 2;
@@ -44,7 +44,7 @@ public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.r1, h
                 mm mmVar = (mm) obj4;
                 TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
                 bn bnVar = mmVar.a;
-                li.d dVar = new li.d(22, mmVar, (org.telegram.ui.Cells.q1) obj3);
+                li.d dVar = new li.d(22, mmVar, (org.telegram.ui.Cells.r1) obj3);
                 if (!((boolean[]) obj2)[0]) {
                     dVar.a(Boolean.FALSE);
                     break;
@@ -84,9 +84,9 @@ public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.r1, h
         }
     }
 
-    public /* synthetic */ zl(mm mmVar, org.telegram.ui.Cells.q1 q1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
+    public /* synthetic */ zl(mm mmVar, org.telegram.ui.Cells.r1 r1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
         this.c = mmVar;
-        this.d = q1Var;
+        this.d = r1Var;
         this.e = zArr;
         this.b = z10;
         this.f = contentsettings;

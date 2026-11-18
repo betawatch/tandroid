@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.y21;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -162,14 +162,14 @@ public final /* synthetic */ class k implements Runnable {
                         arrayList5 = arrayList2;
                         if (tL_error2 == null || !"TO_LANG_INVALID".equals(tL_error2.text)) {
                             if (tL_error2 != null && "QUOTA_EXCEEDED".equals(tL_error2.text)) {
-                                ks.e().k(ks.R4, 1, gd.M0(2131743710, null));
+                                ks.e().k(ks.S4, 1, gd.M0(2131743710, null));
                             }
                             for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                                 ((u10) arrayList3.get(i12)).a(Boolean.valueOf(z15), (Integer) arrayList5.get(i12), null, v00Var.e);
                             }
                         } else {
                             z00Var.K(j12, false);
-                            ks.e().k(ks.R4, 1, gd.M0(2131743709, null));
+                            ks.e().k(ks.S4, 1, gd.M0(2131743709, null));
                         }
                         synchronized (z00Var) {
                             for (int i13 = 0; i13 < arrayList5.size(); i13++) {

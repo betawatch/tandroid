@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cy0;
 import org.telegram.ui.Components.m30;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h5 {
     public final TL_stars.TL_starGiftUnique a;
@@ -102,7 +102,7 @@ public final class h5 {
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, i6Var);
         alertDialog$Builder.o(g5Var);
-        alertDialog$Builder.k("_", new bi.j5(this, i7, context, i6Var, q10Var));
+        alertDialog$Builder.k("_", new bi.i5(this, i7, context, i6Var, q10Var));
         alertDialog$Builder.h(gd.M0(2131752578, null), null);
         this.h = alertDialog$Builder.a;
     }

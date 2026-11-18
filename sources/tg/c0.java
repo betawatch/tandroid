@@ -3,10 +3,10 @@ package tg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c0 extends d {
     public final Paint h;
@@ -16,8 +16,8 @@ public final class c0 extends d {
     public final /* synthetic */ vp0 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(vp0 vp0Var, Context context, b5 b5Var) {
-        super(context, b5Var);
+    public c0(vp0 vp0Var, Context context, c5 c5Var) {
+        super(context, c5Var);
         this.w = vp0Var;
         Paint paint = new Paint();
         this.h = paint;

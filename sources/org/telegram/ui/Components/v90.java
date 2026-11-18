@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class v90 extends Drawable {
     public Paint a;
@@ -23,7 +23,7 @@ public final class v90 extends Drawable {
     public float j;
     public float k;
     public long l;
-    public org.telegram.ui.Cells.q1 m;
+    public org.telegram.ui.Cells.r1 m;
 
     public final void a() {
         Rect bounds = getBounds();
@@ -51,7 +51,7 @@ public final class v90 extends Drawable {
     */
     public final void draw(Canvas canvas) {
         float f10;
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         Paint paint = this.a;
         float f11 = this.d;
         if (f11 == 1.0f) {
@@ -106,11 +106,11 @@ public final class v90 extends Drawable {
                 this.k = -1.0f;
                 this.f = false;
             }
-            q1Var = this.m;
-            if (q1Var == null) {
-                q1Var.invalidate();
-                if (q1Var.getParent() != null) {
-                    ((ViewGroup) q1Var.getParent()).invalidate();
+            r1Var = this.m;
+            if (r1Var == null) {
+                r1Var.invalidate();
+                if (r1Var.getParent() != null) {
+                    ((ViewGroup) r1Var.getParent()).invalidate();
                     return;
                 }
                 return;
@@ -127,8 +127,8 @@ public final class v90 extends Drawable {
             this.k = -1.0f;
             this.f = false;
         }
-        q1Var = this.m;
-        if (q1Var == null) {
+        r1Var = this.m;
+        if (r1Var == null) {
         }
     }
 

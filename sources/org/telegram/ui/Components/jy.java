@@ -18,7 +18,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jy extends bk0 {
     public final Context c;
@@ -337,21 +337,21 @@ public final class jy extends bk0 {
         SparseArray sparseArray = this.h;
         if (i11 == 0) {
             TLRPC.Document document = (TLRPC.Document) sparseArray.get(i7);
-            org.telegram.ui.Cells.z7 z7Var = (org.telegram.ui.Cells.z7) view;
-            z7Var.d(document, null, this.n.get(i7), null, false, false);
-            z7Var.setRecent(ryVar.k1.contains(document));
+            org.telegram.ui.Cells.a8 a8Var = (org.telegram.ui.Cells.a8) view;
+            a8Var.d(document, null, this.n.get(i7), null, false, false);
+            a8Var.setRecent(ryVar.k1.contains(document));
             return;
         }
         ArrayList<TLRPC.Document> arrayList = null;
         if (i11 == 1) {
-            org.telegram.ui.Cells.m3 m3Var = (org.telegram.ui.Cells.m3) view;
+            org.telegram.ui.Cells.n3 n3Var = (org.telegram.ui.Cells.n3) view;
             if (i7 != this.s) {
-                m3Var.setHeight(org.telegram.messenger.g0.L(82.0f));
+                n3Var.setHeight(org.telegram.messenger.g0.L(82.0f));
                 return;
             }
             int i12 = this.r.get(i7 - 1, TLObject.FLAG_31);
             if (i12 == Integer.MIN_VALUE) {
-                m3Var.setHeight(1);
+                n3Var.setHeight(1);
                 return;
             }
             Object obj = this.e.get(i12);
@@ -361,36 +361,36 @@ public final class jy extends bk0 {
                 arrayList = "recent".equals(obj) ? ryVar.k1 : ryVar.l1;
             }
             if (arrayList == null) {
-                m3Var.setHeight(1);
+                n3Var.setHeight(1);
                 return;
             } else if (arrayList.isEmpty()) {
-                m3Var.setHeight(org.telegram.messenger.g0.L(8.0f));
+                n3Var.setHeight(org.telegram.messenger.g0.L(8.0f));
                 return;
             } else {
                 int B = org.telegram.messenger.n10.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), ryVar.h.getHeight());
-                m3Var.setHeight(B > 0 ? B : 1);
+                n3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
         }
         final int i13 = 0;
         if (i11 != 2) {
             if (i11 == 3) {
-                ((org.telegram.ui.Cells.h8) view).setIsLast(i7 == this.s - 1);
+                ((org.telegram.ui.Cells.i8) view).setIsLast(i7 == this.s - 1);
                 return;
             } else {
                 if (i11 != 5) {
                     return;
                 }
-                ((org.telegram.ui.Cells.j8) view).b(org.telegram.messenger.gd.M0(org.telegram.messenger.ri.d0(i10).s0 ? 2131750821 : 2131750822, null), R.drawable.msg_close, org.telegram.messenger.gd.M0(2131754898, null), 0, 0);
+                ((org.telegram.ui.Cells.k8) view).b(org.telegram.messenger.gd.M0(org.telegram.messenger.ri.d0(i10).s0 ? 2131750821 : 2131750822, null), R.drawable.msg_close, org.telegram.messenger.gd.M0(2131754898, null), 0, 0);
                 return;
             }
         }
-        org.telegram.ui.Cells.j8 j8Var = (org.telegram.ui.Cells.j8) view;
-        j8Var.setHeaderOnClick(null);
+        org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) view;
+        k8Var.setHeaderOnClick(null);
         if (i7 == ryVar.g1) {
             int i14 = (ryVar.h1 && ryVar.i1 == null) ? 0 : ryVar.i1 != null ? R.drawable.msg_mini_customize : R.drawable.msg_close;
             TLRPC.Chat O0 = ryVar.K1 != null ? org.telegram.messenger.mp.u1(i10).O0(Long.valueOf(ryVar.K1.id)) : null;
-            j8Var.a(i14, org.telegram.messenger.gd.a0("CurrentGroupStickers", null, 2131751683, O0 != null ? O0.title : "Group Stickers"));
+            k8Var.a(i14, org.telegram.messenger.gd.a0("CurrentGroupStickers", null, 2131751683, O0 != null ? O0.title : "Group Stickers"));
             return;
         }
         Object obj2 = sparseArray.get(i7);
@@ -398,9 +398,9 @@ public final class jy extends bk0 {
             final TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
             TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
             if (stickerSet != null) {
-                j8Var.a(0, stickerSet.title);
+                k8Var.a(0, stickerSet.title);
                 if (tL_messages_stickerSet.set.creator && !ryVar.T2) {
-                    j8Var.setEdit(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hy
+                    k8Var.setEdit(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hy
                         public final /* synthetic */ jy b;
 
                         {
@@ -420,7 +420,7 @@ public final class jy extends bk0 {
                         }
                     });
                 }
-                j8Var.setHeaderOnClick(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hy
+                k8Var.setHeaderOnClick(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hy
                     public final /* synthetic */ jy b;
 
                     {
@@ -444,11 +444,11 @@ public final class jy extends bk0 {
             return;
         }
         if (obj2 == ryVar.k1) {
-            j8Var.b(org.telegram.messenger.gd.M0(2131746169, null), R.drawable.msg_close, org.telegram.messenger.gd.M0(2131752052, null), 0, 0);
+            k8Var.b(org.telegram.messenger.gd.M0(2131746169, null), R.drawable.msg_close, org.telegram.messenger.gd.M0(2131752052, null), 0, 0);
         } else if (obj2 == ryVar.l1) {
-            j8Var.a(0, org.telegram.messenger.gd.M0(2131750830, null));
+            k8Var.a(0, org.telegram.messenger.gd.M0(2131750830, null));
         } else if (obj2 == ryVar.m1) {
-            j8Var.a(0, org.telegram.messenger.gd.M0(2131746754, null));
+            k8Var.a(0, org.telegram.messenger.gd.M0(2131746754, null));
         }
     }
 
@@ -467,29 +467,29 @@ public final class jy extends bk0 {
                 view = new jg.b2(z11 ? 1 : 0, context, i6Var, z10 ? 1 : 0);
                 break;
             case 1:
-                view = new org.telegram.ui.Cells.m3(context);
+                view = new org.telegram.ui.Cells.n3(context);
                 break;
             case 2:
-                org.telegram.ui.Cells.j8 j8Var = new org.telegram.ui.Cells.j8(this.c, false, false, ryVar.a2, ryVar.j2);
-                j8Var.setOnIconClickListener(new y7(13, this, j8Var));
-                view = j8Var;
+                org.telegram.ui.Cells.k8 k8Var = new org.telegram.ui.Cells.k8(this.c, false, false, ryVar.a2, ryVar.j2);
+                k8Var.setOnIconClickListener(new y7(13, this, k8Var));
+                view = k8Var;
                 break;
             case 3:
-                org.telegram.ui.Cells.h8 h8Var = new org.telegram.ui.Cells.h8(context);
-                h8Var.setOrientation(1);
+                org.telegram.ui.Cells.i8 i8Var = new org.telegram.ui.Cells.i8(context);
+                i8Var.setOrientation(1);
                 TextView textView = new TextView(context);
                 org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.Of, null);
                 i5.c.r(14.0f, 1, 2131749204, textView, null);
-                h8Var.addView(textView, c8.ma.t(-1, -2, 51, 17, 4, 17, 0));
+                i8Var.addView(textView, c8.ma.t(-1, -2, 51, 17, 4, 17, 0));
                 TextView textView2 = new TextView(context);
-                h8Var.a = textView2;
+                i8Var.a = textView2;
                 textView2.setPadding(org.telegram.messenger.g0.L(17.0f), 0, org.telegram.messenger.g0.L(17.0f), 0);
                 textView2.setGravity(17);
                 org.telegram.messenger.f3.l(textView2, org.telegram.ui.ActionBar.n6.Ji, null, 1, 14.0f);
                 textView2.setBackground(org.telegram.ui.ActionBar.b6.f(org.telegram.ui.ActionBar.n6.Fi, 4.0f));
                 textView2.setText(org.telegram.messenger.gd.M0(2131752105, null).toUpperCase());
-                h8Var.addView(textView2, c8.ma.t(-2, 28, 51, 17, 10, 14, 8));
-                h8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.gy
+                i8Var.addView(textView2, c8.ma.t(-2, 28, 51, 17, 10, 14, 8));
+                i8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.gy
                     public final /* synthetic */ jy b;
 
                     {
@@ -530,8 +530,8 @@ public final class jy extends bk0 {
                         }
                     }
                 });
-                h8Var.setLayoutParams(new v4.q0(-1, -2));
-                view = h8Var;
+                i8Var.setLayoutParams(new v4.q0(-1, -2));
+                view = i8Var;
                 break;
             case 4:
                 View view2 = new View(context);
@@ -539,8 +539,8 @@ public final class jy extends bk0 {
                 view = view2;
                 break;
             case 5:
-                org.telegram.ui.Cells.j8 j8Var2 = new org.telegram.ui.Cells.j8(this.c, false, false, ryVar.a2, ryVar.j2);
-                j8Var2.setOnIconClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.gy
+                org.telegram.ui.Cells.k8 k8Var2 = new org.telegram.ui.Cells.k8(this.c, false, false, ryVar.a2, ryVar.j2);
+                k8Var2.setOnIconClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.gy
                     public final /* synthetic */ jy b;
 
                     {
@@ -581,7 +581,7 @@ public final class jy extends bk0 {
                         }
                     }
                 });
-                view = j8Var2;
+                view = k8Var2;
                 break;
             case 6:
                 py pyVar = new py(ryVar, false);

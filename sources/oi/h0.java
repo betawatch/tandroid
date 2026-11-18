@@ -13,9 +13,9 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class h0 {
     public final e1 a;
@@ -87,7 +87,7 @@ public final class h0 {
 
     public final void c(Canvas canvas) {
         g0 g0Var = this.c;
-        i9 P0 = g0Var.P0();
+        j9 P0 = g0Var.P0();
         if (P0 != null) {
             if (this.a.getLayout() == null) {
                 return;

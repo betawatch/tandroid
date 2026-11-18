@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class v71 extends org.telegram.ui.Components.bk0 {
     public final Context c;
@@ -45,10 +45,10 @@ public final class v71 extends org.telegram.ui.Components.bk0 {
     @Override // v4.i0
     public final void t(v4.f1 f1Var, int i7) {
         BlendMode blendMode;
-        org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) f1Var.a;
+        org.telegram.ui.Cells.k5 k5Var = (org.telegram.ui.Cells.k5) f1Var.a;
         x71 x71Var = this.d;
-        j5Var.setPattern((TLRPC.TL_wallPaper) x71Var.W0.get(i7));
-        j5Var.getImageReceiver().p1 = new PorterDuffColorFilter(x71Var.l1, x71Var.u1);
+        k5Var.setPattern((TLRPC.TL_wallPaper) x71Var.W0.get(i7));
+        k5Var.getImageReceiver().p1 = new PorterDuffColorFilter(x71Var.l1, x71Var.u1);
         if (Build.VERSION.SDK_INT >= 29) {
             int i10 = 0;
             if (x71Var.b == 1) {
@@ -62,7 +62,7 @@ public final class v71 extends org.telegram.ui.Components.bk0 {
                 i10 = x71Var.e1;
             }
             if (i10 == 0 || x71Var.n1 < 0.0f) {
-                j5Var.getImageReceiver().Z(null);
+                k5Var.getImageReceiver().Z(null);
                 return;
             }
             ImageReceiver imageReceiver = x71Var.z0.getImageReceiver();
@@ -75,20 +75,20 @@ public final class v71 extends org.telegram.ui.Components.bk0 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         int i10 = this.d.J1;
         u71 u71Var = new u71(this);
-        org.telegram.ui.Cells.j5 j5Var = new org.telegram.ui.Cells.j5(this.c);
-        j5Var.H = new RectF();
+        org.telegram.ui.Cells.k5 k5Var = new org.telegram.ui.Cells.k5(this.c);
+        k5Var.H = new RectF();
         int i11 = org.telegram.messenger.j10.t0;
-        j5Var.K = i11;
-        j5Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
-        j5Var.V = i10;
-        j5Var.U = u71Var;
-        RadialProgress2 radialProgress2 = new RadialProgress2(j5Var, null);
-        j5Var.I = radialProgress2;
+        k5Var.K = i11;
+        k5Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+        k5Var.V = i10;
+        k5Var.U = u71Var;
+        RadialProgress2 radialProgress2 = new RadialProgress2(k5Var, null);
+        k5Var.I = radialProgress2;
         radialProgress2.r(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(70.0f), org.telegram.messenger.g0.L(70.0f));
-        j5Var.R = new Paint(3);
-        j5Var.T = org.telegram.messenger.a6.q(i11).k();
-        j5Var.setOutlineProvider(new bg.q0(8));
-        j5Var.setClipToOutline(true);
-        return new org.telegram.ui.Components.kj0(j5Var);
+        k5Var.R = new Paint(3);
+        k5Var.T = org.telegram.messenger.a6.q(i11).k();
+        k5Var.setOutlineProvider(new bg.q0(8));
+        k5Var.setClipToOutline(true);
+        return new org.telegram.ui.Components.kj0(k5Var);
     }
 }

@@ -28,7 +28,7 @@ import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.yj;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -131,7 +131,7 @@ public final /* synthetic */ class y2 implements Runnable {
                     arrayList2.addAll(connectedstarrefbots.connected_bots);
                     d.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= d.c;
                     d.h = false;
-                    ks.f(i12).k(ks.N3, Long.valueOf(d.b));
+                    ks.f(i12).k(ks.O3, Long.valueOf(d.b));
                     d.a();
                     x2Var.dismiss();
                     int i13 = 0;
@@ -158,7 +158,7 @@ public final /* synthetic */ class y2 implements Runnable {
                                 if (((TL_payments.starRefProgram) arrayList3.get(i14)).bot_id == j11) {
                                     arrayList3.remove(i14);
                                     e10.c--;
-                                    ks.f(e10.a).k(ks.M3, Long.valueOf(e10.b));
+                                    ks.f(e10.a).k(ks.N3, Long.valueOf(e10.b));
                                 } else {
                                     i14++;
                                 }

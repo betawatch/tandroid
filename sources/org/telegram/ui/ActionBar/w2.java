@@ -17,7 +17,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class w2 extends Drawable {
     public final /* synthetic */ int a;
@@ -55,8 +55,8 @@ public final class w2 extends Drawable {
                 break;
             case 1:
                 Paint paint2 = (Paint) this.b;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.c;
-                int w10 = n6.w(n6.w0(n6.ra, q1Var.Qb), n6.r1(0.5f, n6.w0(n6.y6, q1Var.Qb)));
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.c;
+                int w10 = n6.w(n6.w0(n6.ra, r1Var.Qb), n6.r1(0.5f, n6.w0(n6.y6, r1Var.Qb)));
                 int[] iArr = (int[]) this.d;
                 if (w10 != iArr[0]) {
                     int alpha = paint2.getAlpha();
@@ -232,9 +232,9 @@ public final class w2 extends Drawable {
         paint.setColor(-16777216);
     }
 
-    public w2(org.telegram.ui.Cells.q1 q1Var, int[] iArr, Paint paint) {
+    public w2(org.telegram.ui.Cells.r1 r1Var, int[] iArr, Paint paint) {
         this.a = 1;
-        this.c = q1Var;
+        this.c = r1Var;
         this.d = iArr;
         this.b = paint;
     }

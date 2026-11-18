@@ -10,7 +10,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class j9 implements Runnable {
                         messagesStorage.a.c(new np(1, j11, j12, messagesStorage));
                         e00Var.s(-j11, j12);
                     }
-                    ks.f(e00Var.currentAccount).k(ks.s5, Long.valueOf(-j11), Boolean.TRUE);
+                    ks.f(e00Var.currentAccount).k(ks.t5, Long.valueOf(-j11), Boolean.TRUE);
                     return;
                 }
                 return;

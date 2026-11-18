@@ -18,7 +18,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.i41;
 import org.telegram.ui.Components.vm0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class xt extends zt implements y5, fs {
     public final fj X;
@@ -354,9 +354,9 @@ public final class xt extends zt implements y5, fs {
 
     public final boolean i0() {
         ev evVar;
-        org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.ui.Cells.l1 l1Var;
-        return (this.Y == null || (q1Var = (evVar = this.a).E) == null || (l1Var = evVar.F) == null || !l1Var.d0(q1Var)) ? false : true;
+        org.telegram.ui.Cells.r1 r1Var;
+        org.telegram.ui.Cells.m1 m1Var;
+        return (this.Y == null || (r1Var = (evVar = this.a).E) == null || (m1Var = evVar.F) == null || !m1Var.d0(r1Var)) ? false : true;
     }
 
     public final int j0() {

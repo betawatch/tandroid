@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h70 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,13 +60,13 @@ public final /* synthetic */ class h70 implements View.OnClickListener {
             case 5:
                 org.telegram.ui.l4 l4Var = (org.telegram.ui.l4) obj;
                 l4Var.getClass();
-                org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-                int intValue = ((Integer) s5Var.getTag()).intValue();
+                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+                int intValue = ((Integer) t5Var.getTag()).intValue();
                 de0 de0Var = (de0) l4Var.e;
                 if (intValue == de0Var.E) {
-                    de0Var.O = s5Var.getCurrentColor();
+                    de0Var.O = t5Var.getCurrentColor();
                 } else {
-                    de0Var.P = s5Var.getCurrentColor();
+                    de0Var.P = t5Var.getCurrentColor();
                 }
                 cz czVar = de0Var.m0;
                 if (czVar != null) {
@@ -129,7 +129,7 @@ public final /* synthetic */ class h70 implements View.OnClickListener {
                                     o6Var2.dismiss();
                                     org.telegram.messenger.a6 q10 = org.telegram.messenger.a6.q(o6Var2.a);
                                     q10.I.clear();
-                                    q10.getNotificationCenter().k(org.telegram.messenger.ks.d5, new Object[0]);
+                                    q10.getNotificationCenter().k(org.telegram.messenger.ks.e5, new Object[0]);
                                     q10.getMessagesStorage().a.c(new org.telegram.messenger.x5(q10, 2));
                                     break;
                             }
@@ -206,7 +206,7 @@ public final /* synthetic */ class h70 implements View.OnClickListener {
                                     o6Var2.dismiss();
                                     org.telegram.messenger.a6 q10 = org.telegram.messenger.a6.q(o6Var2.a);
                                     q10.I.clear();
-                                    q10.getNotificationCenter().k(org.telegram.messenger.ks.d5, new Object[0]);
+                                    q10.getNotificationCenter().k(org.telegram.messenger.ks.e5, new Object[0]);
                                     q10.getMessagesStorage().a.c(new org.telegram.messenger.x5(q10, 2));
                                     break;
                             }

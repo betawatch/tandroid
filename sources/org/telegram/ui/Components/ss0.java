@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ss0 extends bk0 {
     public int F;
@@ -257,20 +257,20 @@ public final class ss0 extends bk0 {
             return;
         }
         View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.t2) {
-            org.telegram.ui.Cells.t2 t2Var = (org.telegram.ui.Cells.t2) view;
-            t2Var.t2 = i7 + 1 < b();
+        if (view instanceof org.telegram.ui.Cells.u2) {
+            org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) view;
+            u2Var.t2 = i7 + 1 < b();
             ArrayList arrayList = this.e;
             if (i7 < arrayList.size()) {
                 org.telegram.messenger.ov ovVar = (org.telegram.messenger.ov) arrayList.get(i7);
-                t2Var.d0(ovVar.a, ovVar.d, ovVar.c(), false, false);
+                u2Var.d0(ovVar.a, ovVar.d, ovVar.c(), false, false);
                 return;
             }
             int size = i7 - arrayList.size();
             ArrayList arrayList2 = this.f;
             if (size < arrayList2.size()) {
                 org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList2.get(size);
-                t2Var.d0(fjVar.P1(), fjVar, fjVar.k.date, false, false);
+                u2Var.d0(fjVar.P1(), fjVar, fjVar.k.date, false, false);
             }
         }
     }

@@ -4,10 +4,10 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class b51 extends org.telegram.ui.ActionBar.h2 {
-    public bi.d6 a;
+    public bi.c6 a;
     public kg.o1 b;
     public int c;
     public int d;
@@ -43,9 +43,9 @@ public abstract class b51 extends org.telegram.ui.ActionBar.h2 {
         if (!useSimpleActionBar()) {
             org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, this.b, null);
         }
-        bi.d6 d6Var = new bi.d6(this, this, new d(this, 23), new a51(this), new a51(this));
-        this.a = d6Var;
-        this.b.addView(d6Var, c8.ma.c(-1.0f, -1));
+        bi.c6 c6Var = new bi.c6(this, this, new d(this, 23), new a51(this), new a51(this));
+        this.a = c6Var;
+        this.b.addView(c6Var, c8.ma.c(-1.0f, -1));
         kg.o1 o1Var = this.b;
         this.fragmentView = o1Var;
         return o1Var;

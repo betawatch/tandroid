@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import l2.r0;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.hn;
 import org.telegram.ui.Components.of;
 import org.telegram.ui.web.z0;
@@ -41,7 +41,7 @@ import x2.b1;
 import x2.f1;
 import x2.r1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class p implements b3.k, b3.n, f1, f3.q, b1 {
     public static final Set q0 = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(1, 2, 5)));
@@ -754,7 +754,7 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
                                                             int o4 = hVar2.r.o();
                                                             Object r10 = hVar2.r.r();
                                                             boolean z25 = hVar2.l;
-                                                            b5 b5Var = hVar2.d;
+                                                            c5 c5Var = hVar2.d;
                                                             if (g12 != null) {
                                                                 hnVar.getClass();
                                                                 cVar = cVar4;
@@ -845,7 +845,7 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
                                                             int i11 = f11.c;
                                                             boolean z30 = !z23;
                                                             boolean z31 = kVar.w;
-                                                            SparseArray sparseArray = (SparseArray) b5Var.a;
+                                                            SparseArray sparseArray = (SparseArray) c5Var.a;
                                                             k0Var = (k0) sparseArray.get(i10);
                                                             if (k0Var == null) {
                                                                 k0Var = new k0(9223372036854775806L);
@@ -865,7 +865,7 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
                                                 int o42 = hVar2.r.o();
                                                 Object r102 = hVar2.r.r();
                                                 boolean z252 = hVar2.l;
-                                                b5 b5Var2 = hVar2.d;
+                                                c5 c5Var2 = hVar2.d;
                                                 if (g12 != null) {
                                                 }
                                                 if (g10 != null) {
@@ -901,7 +901,7 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
                                                 int i112 = f11.c;
                                                 boolean z302 = !z23;
                                                 boolean z312 = kVar.w;
-                                                SparseArray sparseArray2 = (SparseArray) b5Var2.a;
+                                                SparseArray sparseArray2 = (SparseArray) c5Var2.a;
                                                 k0Var = (k0) sparseArray2.get(i102);
                                                 if (k0Var == null) {
                                                 }

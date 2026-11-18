@@ -82,9 +82,9 @@ import org.telegram.ui.Wallet.e0;
 import org.telegram.ui.b21;
 import org.telegram.ui.bn;
 import org.telegram.ui.cx;
-import org.telegram.ui.de0;
-import org.telegram.ui.eh0;
+import org.telegram.ui.ee0;
 import org.telegram.ui.f40;
+import org.telegram.ui.fh0;
 import org.telegram.ui.g4;
 import org.telegram.ui.ls;
 import org.telegram.ui.p20;
@@ -95,7 +95,7 @@ import org.telegram.ui.ww;
 import org.telegram.ui.y81;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, p, q1, ww, r1, z4, qb0, oi, or, r10 {
     public final /* synthetic */ int a;
@@ -347,29 +347,29 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, ww, r1
             case 15:
                 String str = (String) obj;
                 String str2 = LaunchActivity.C1;
-                eh0 eh0Var = new eh0((LaunchActivity) obj4, (org.telegram.ui.ActionBar.h2) obj3);
-                eh0Var.O0((String) obj2, false);
+                fh0 fh0Var = new fh0((LaunchActivity) obj4, (org.telegram.ui.ActionBar.h2) obj3);
+                fh0Var.O0((String) obj2, false);
                 if (str != null) {
                     String[] split = str.split(" ", 2);
                     String str3 = split[0];
                     String str4 = split.length > 1 ? split[1] : null;
-                    vb0 vb0Var = eh0Var.n1;
+                    vb0 vb0Var = fh0Var.n1;
                     if (vb0Var != null) {
                         vb0Var.getEditText().setText(str3);
                     } else {
-                        eh0Var.E1 = str3;
+                        fh0Var.E1 = str3;
                     }
-                    vb0 vb0Var2 = eh0Var.o1;
+                    vb0 vb0Var2 = fh0Var.o1;
                     if (vb0Var2 != null) {
                         vb0Var2.getEditText().setText(str4);
                     } else {
-                        eh0Var.F1 = str4;
+                        fh0Var.F1 = str4;
                     }
                 }
-                eh0Var.show();
+                fh0Var.show();
                 break;
             case 16:
-                de0.Z((de0) obj4, (String) obj3, (String) obj2, (String) obj);
+                ee0.Z((ee0) obj4, (String) obj3, (String) obj2, (String) obj);
                 break;
             case 17:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj4;
@@ -477,8 +477,8 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, ww, r1
                         g0.r(t2Var.v0);
                         t2Var.E.h();
                         ks.f(t2Var.I).n(t2Var, ks.z1);
-                        ks.e().n(t2Var, ks.p4);
-                        ks.f(t2Var.I).n(t2Var, ks.L3);
+                        ks.e().n(t2Var, ks.q4);
+                        ks.f(t2Var.I).n(t2Var, ks.M3);
                         if (!t2Var.R0) {
                             super/*android.app.Dialog*/.dismiss();
                             t2Var.R0 = true;

@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -153,7 +153,7 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                     if (T != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         T.presentFragment(passkeysActivity);
-                        org.telegram.messenger.g0.h3(new ve0(9, passkeysActivity, passkey), 150L);
+                        org.telegram.messenger.g0.h3(new we0(9, passkeysActivity, passkey), 150L);
                         break;
                     }
                 }

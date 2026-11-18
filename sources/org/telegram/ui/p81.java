@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class p81 extends org.telegram.ui.ActionBar.h2 {
     public ValueAnimator E;
@@ -39,12 +39,12 @@ public final class p81 extends org.telegram.ui.ActionBar.h2 {
     public o81 e;
     public final ArrayList f;
     public final ArrayList h;
-    public hh0 n;
+    public ih0 n;
     public org.telegram.ui.Components.ty r;
     public FrameLayout s;
     public int w;
     public final HashSet x;
-    public org.telegram.ui.Cells.ia y;
+    public org.telegram.ui.Cells.ja y;
 
     public p81(int i7) {
         super(null);
@@ -88,7 +88,7 @@ public final class p81 extends org.telegram.ui.ActionBar.h2 {
                 }
                 for (i7 = 0; i7 < this.a.getChildCount(); i7++) {
                     View childAt = this.a.getChildAt(i7);
-                    if ((childAt instanceof org.telegram.ui.Cells.y6) && (childAt.getBackground() instanceof org.telegram.ui.Components.mq)) {
+                    if ((childAt instanceof org.telegram.ui.Cells.z6) && (childAt.getBackground() instanceof org.telegram.ui.Components.mq)) {
                         org.telegram.ui.ActionBar.n6.B1(childAt.getBackground(), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.a7, false), false);
                         Drawable drawable = ((org.telegram.ui.Components.mq) childAt.getBackground()).b;
                         if (drawable != null) {
@@ -195,9 +195,9 @@ public final class p81 extends org.telegram.ui.ActionBar.h2 {
         View view = this.fragmentView;
         int i7 = org.telegram.ui.ActionBar.n6.d6;
         org.telegram.ui.ActionBar.u6.h(i7, view, null);
-        hh0 hh0Var = new hh0(context, 13);
-        this.n = hh0Var;
-        hh0Var.setWillNotDraw(false);
+        ih0 ih0Var = new ih0(context, 13);
+        this.n = ih0Var;
+        ih0Var.setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.Ji, null);
@@ -220,17 +220,17 @@ public final class p81 extends org.telegram.ui.ActionBar.h2 {
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.actionBar, TLObject.FLAG_27, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.C8));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.actionBar, 67108864, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.D8));
         int i7 = org.telegram.ui.ActionBar.n6.Ri;
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
         int i10 = org.telegram.ui.ActionBar.n6.i7;
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i10));
         int i11 = org.telegram.ui.ActionBar.n6.j7;
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i11));
         int i12 = org.telegram.ui.ActionBar.n6.k7;
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i12));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i12));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.r, 4, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.c7));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.c, 0, (Class[]) null, (Paint) null, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.Fi));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.c, 0, (Class[]) null, (Paint) null, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.Hi));

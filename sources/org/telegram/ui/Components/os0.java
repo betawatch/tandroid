@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class os0 extends org.telegram.ui.Cells.q1 {
+public final class os0 extends org.telegram.ui.Cells.r1 {
     public final /* synthetic */ int zd = 1;
 
     public /* synthetic */ os0(Context context, int i7) {
         super(context, i7);
     }
 
-    @Override // org.telegram.ui.Cells.q1
+    @Override // org.telegram.ui.Cells.r1
     public int getParentWidth() {
         int i7;
         int L;

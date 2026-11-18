@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ri extends View {
     public final /* synthetic */ int a = 0;
@@ -21,24 +21,24 @@ public final class ri extends View {
     public ri(ViewGroup viewGroup, int i7) {
         super(viewGroup.getContext());
         this.c = new ArrayList();
-        this.e = new org.telegram.ui.hf0(this, 0);
+        this.e = new org.telegram.ui.if0(this, 0);
         this.d = viewGroup;
         this.b = i7;
     }
 
     public void a() {
-        org.telegram.ui.hf0 hf0Var = (org.telegram.ui.hf0) this.e;
+        org.telegram.ui.if0 if0Var = (org.telegram.ui.if0) this.e;
         ArrayList arrayList = (ArrayList) this.c;
         boolean isEmpty = arrayList.isEmpty();
         int i7 = this.b;
         if (isEmpty && getVisibility() != 8) {
-            org.telegram.messenger.ks.f(i7).e.remove(hf0Var);
-            org.telegram.messenger.ks.f(i7).d(hf0Var);
+            org.telegram.messenger.ks.f(i7).e.remove(if0Var);
+            org.telegram.messenger.ks.f(i7).d(if0Var);
         } else {
             if (arrayList.isEmpty() || getVisibility() == 0) {
                 return;
             }
-            org.telegram.messenger.ks.f(i7).e.remove(hf0Var);
+            org.telegram.messenger.ks.f(i7).e.remove(if0Var);
             setVisibility(0);
         }
     }
@@ -108,7 +108,7 @@ public final class ri extends View {
                 ArrayList arrayList = (ArrayList) this.c;
                 if (!arrayList.isEmpty()) {
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        ((org.telegram.ui.if0) arrayList.get(i10)).a(canvas);
+                        ((org.telegram.ui.jf0) arrayList.get(i10)).a(canvas);
                     }
                     break;
                 }

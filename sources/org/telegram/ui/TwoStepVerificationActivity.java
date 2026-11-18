@@ -29,7 +29,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public ScrollView E;
@@ -291,7 +291,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.h2 im
                     byte[] bArr3 = ((TLRPC.TL_securePasswordKdfAlgoSHA512) securePasswordKdfAlgo).salt;
                     s5 = Utilities.s(bArr3, bArr, bArr3);
                 }
-                org.telegram.messenger.g0.g3(new a80(twoStepVerificationActivity, z10, bArr2, 10));
+                org.telegram.messenger.g0.g3(new b80(twoStepVerificationActivity, z10, bArr2, 10));
             }
             s5 = Utilities.m(bArr, ((TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) securePasswordKdfAlgo).salt);
             twoStepVerificationActivity.M = passwordsettings.secure_settings.secure_secret_id;
@@ -323,7 +323,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.h2 im
             twoStepVerificationActivity.M = 0L;
         }
         z10 = true;
-        org.telegram.messenger.g0.g3(new a80(twoStepVerificationActivity, z10, bArr2, 10));
+        org.telegram.messenger.g0.g3(new b80(twoStepVerificationActivity, z10, bArr2, 10));
     }
 
     public static void k0(TwoStepVerificationActivity twoStepVerificationActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
@@ -1063,9 +1063,9 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.h2 im
             return;
         }
         Bundle k10 = a8.p0.k("afterSignup", true);
-        le0 le0Var = new le0();
-        le0Var.r0(k10);
-        presentFragment(le0Var, true);
+        me0 me0Var = new me0();
+        me0Var.r0(k10);
+        presentFragment(me0Var, true);
     }
 
     @Override // org.telegram.ui.ActionBar.h2

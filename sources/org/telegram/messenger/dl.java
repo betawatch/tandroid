@@ -9,7 +9,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dl implements Comparator {
     public final /* synthetic */ int a;
@@ -283,12 +283,12 @@ public final /* synthetic */ class dl implements Comparator {
             case 27:
                 return Long.compare(((org.telegram.ui.t6) obj2).g, ((org.telegram.ui.t6) obj).g);
             case 28:
-                org.telegram.ui.Cells.p1 p1Var = (org.telegram.ui.Cells.p1) obj;
-                org.telegram.ui.Cells.p1 p1Var2 = (org.telegram.ui.Cells.p1) obj2;
-                float f10 = p1Var.e;
-                float f11 = p1Var2.e;
+                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj;
+                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) obj2;
+                float f10 = q1Var.e;
+                float f11 = q1Var2.e;
                 if (f10 <= f11) {
-                    if (f10 < f11 || (i13 = p1Var.d) > (i14 = p1Var2.d)) {
+                    if (f10 < f11 || (i13 = q1Var.d) > (i14 = q1Var2.d)) {
                         return 1;
                     }
                     if (i13 >= i14) {

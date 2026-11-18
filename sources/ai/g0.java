@@ -12,12 +12,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.a9;
-import bi.d6;
-import bi.f4;
-import bi.f8;
+import bi.c6;
+import bi.e4;
+import bi.e8;
 import bi.h3;
-import bi.z7;
+import bi.y7;
+import bi.z8;
 import di.k4;
 import di.x8;
 import fi.a5;
@@ -55,7 +55,7 @@ import org.telegram.ui.Components.ue0;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements x10 {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class g0 implements x10 {
             case 2:
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.b;
                 if (!((Boolean) obj).booleanValue()) {
-                    f4.r(2131749596, tL_starGiftUnique);
+                    e4.t(2131749596, tL_starGiftUnique);
                     break;
                 }
                 break;
@@ -107,16 +107,16 @@ public final /* synthetic */ class g0 implements x10 {
                 ((hi.d) this.b).setLoading(((Boolean) obj).booleanValue());
                 break;
             case 4:
-                f8 f8Var = (f8) this.b;
+                e8 e8Var = (e8) this.b;
                 ((Boolean) obj).getClass();
-                z7 z7Var = f8Var.d;
-                if (z7Var != null) {
-                    z7Var.run();
+                y7 y7Var = e8Var.d;
+                if (y7Var != null) {
+                    y7Var.run();
                     break;
                 }
                 break;
             case 5:
-                wg.h.j(((a9) this.b).getContext(), (TLRPC.TL_error) obj);
+                wg.h.j(((z8) this.b).getContext(), (TLRPC.TL_error) obj);
                 break;
             case 6:
                 ci.s sVar = (ci.s) this.b;
@@ -338,11 +338,11 @@ public final /* synthetic */ class g0 implements x10 {
             case 26:
                 x3 x3Var = (x3) this.b;
                 View view2 = (View) obj;
-                d6 d6Var = x3Var.b;
+                c6 c6Var = x3Var.b;
                 if (view2 instanceof w3) {
-                    d6Var.getClass();
+                    c6Var.getClass();
                     int R = RecyclerView.R(view2);
-                    l41 G = d6Var.g3.G(R);
+                    l41 G = c6Var.g3.G(R);
                     if (G != null) {
                         w3 w3Var = (w3) view2;
                         w3Var.setPosition(x3Var.b(R));
@@ -358,10 +358,10 @@ public final /* synthetic */ class g0 implements x10 {
                 }
                 break;
             case 27:
-                d6 d6Var2 = (d6) this.b;
+                c6 c6Var2 = (c6) this.b;
                 View view3 = (View) obj;
                 if (view3 instanceof w3) {
-                    m9 m9Var = (m9) d6Var2.o3;
+                    m9 m9Var = (m9) c6Var2.o3;
                     m9Var.b.getClass();
                     ((w3) view3).setPosition(m9Var.b(RecyclerView.R(view3)));
                     view3.setPressed(false);

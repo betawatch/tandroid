@@ -5,14 +5,14 @@ import android.view.View;
 import java.io.Serializable;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.v10;
-import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.n8;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -101,17 +101,17 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
                             case 0:
                                 c cVar2 = cVar;
                                 cVar2.getClass();
-                                m8 m8Var = (m8) view;
+                                n8 n8Var = (n8) view;
                                 cVar2.F = i12;
-                                m8Var.w(gd.Q(i12), true);
+                                n8Var.w(gd.Q(i12), true);
                                 cVar2.a0(true);
                                 break;
                             default:
                                 c cVar3 = cVar;
                                 cVar3.getClass();
-                                m8 m8Var2 = (m8) view;
+                                n8 n8Var2 = (n8) view;
                                 cVar3.G = i12;
-                                m8Var2.w(gd.Q(i12), true);
+                                n8Var2.w(gd.Q(i12), true);
                                 cVar3.a0(true);
                                 break;
                         }
@@ -127,17 +127,17 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
                             case 0:
                                 c cVar2 = cVar;
                                 cVar2.getClass();
-                                m8 m8Var = (m8) view;
+                                n8 n8Var = (n8) view;
                                 cVar2.F = i12;
-                                m8Var.w(gd.Q(i12), true);
+                                n8Var.w(gd.Q(i12), true);
                                 cVar2.a0(true);
                                 break;
                             default:
                                 c cVar3 = cVar;
                                 cVar3.getClass();
-                                m8 m8Var2 = (m8) view;
+                                n8 n8Var2 = (n8) view;
                                 cVar3.G = i12;
-                                m8Var2.w(gd.Q(i12), true);
+                                n8Var2.w(gd.Q(i12), true);
                                 cVar3.a0(true);
                                 break;
                         }
@@ -146,7 +146,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
             } else if (i7 == 10) {
                 boolean z10 = !cVar.w;
                 cVar.w = z10;
-                ((r8) view).setChecked(z10);
+                ((s8) view).setChecked(z10);
                 cVar.a0(true);
             }
         }

@@ -17,14 +17,14 @@ import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.uy0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.dk0;
-import org.telegram.ui.gd0;
-import org.telegram.ui.hf0;
+import org.telegram.ui.hd0;
+import org.telegram.ui.if0;
 import org.telegram.ui.io;
 import org.telegram.ui.la;
 import org.telegram.ui.m21;
 import org.telegram.ui.ml0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -106,10 +106,10 @@ public final /* synthetic */ class k5 implements RequestDelegate {
                 int i15 = uy0.e;
                 break;
             case 23:
-                int i16 = gd0.w0;
+                int i16 = hd0.w0;
                 break;
             case 24:
-                org.telegram.messenger.g0.g3(new hf0(tLObject, 5));
+                org.telegram.messenger.g0.g3(new if0(tLObject, 5));
                 break;
             case 25:
                 int i17 = dk0.S;

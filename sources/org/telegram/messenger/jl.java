@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jl implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class jl implements Runnable {
                 if (tL_webBrowserSettings != null) {
                     mp mpVar = this.b;
                     mpVar.E8 = tL_webBrowserSettings;
-                    mpVar.getNotificationCenter().k(ks.T5, new Object[0]);
+                    mpVar.getNotificationCenter().k(ks.U5, new Object[0]);
                     break;
                 }
                 break;
@@ -33,7 +33,7 @@ public final /* synthetic */ class jl implements Runnable {
                 TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = this.c;
                 if (tL_webBrowserSettings2 != null) {
                     mpVar2.E8 = tL_webBrowserSettings2;
-                    mpVar2.getNotificationCenter().k(ks.T5, new Object[0]);
+                    mpVar2.getNotificationCenter().k(ks.U5, new Object[0]);
                 }
                 g0.r(rjVar);
                 g0.h3(rjVar, 3600010L);

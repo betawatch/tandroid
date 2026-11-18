@@ -19,8 +19,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.e5;
 import org.telegram.ui.Cells.f5;
+import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.kv0;
 import org.telegram.ui.Components.pp0;
@@ -28,9 +28,9 @@ import org.telegram.ui.Components.wz;
 import ug.j1;
 import wg.r;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public abstract class l implements e5 {
+public abstract class l implements f5 {
     public final boolean a;
     public boolean b;
     public final h2 g;
@@ -321,11 +321,11 @@ public abstract class l implements e5 {
     }
 
     public final void h(View view) {
-        if (view instanceof f5) {
+        if (view instanceof g5) {
             if (this.y) {
                 g0.v1(this.g.getParentActivity().getCurrentFocus());
             }
-            g0.h3(new r(20, this, (f5) view), this.y ? 100L : 0L);
+            g0.h3(new r(20, this, (g5) view), this.y ? 100L : 0L);
         }
     }
 

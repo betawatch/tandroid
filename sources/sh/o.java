@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.e6;
+import bi.d6;
 import c8.ma;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.x10;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class o extends FrameLayout {
     public final g9 a;
@@ -49,7 +49,7 @@ public final class o extends FrameLayout {
         j jVar2 = new j(h2Var, new i(nVar, 0), i10);
         this.c = jVar2;
         jVar2.g3.r = false;
-        jVar2.j(new e6(10, this, nVar));
+        jVar2.j(new d6(10, this, nVar));
         return this.c;
     }
 

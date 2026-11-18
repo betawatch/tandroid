@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import l2.p1;
 import l2.r0;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.of;
 import p4.o0;
 import r0.f1;
@@ -36,7 +36,7 @@ import x2.d1;
 import x2.e0;
 import x2.r1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class j implements e0, u {
     public final int E;
@@ -52,7 +52,7 @@ public final class j implements e0, u {
     public final long O;
     public final c a;
     public final s2.d b;
-    public final b5 c;
+    public final c5 c;
     public final c0 d;
     public final q2.m e;
     public final q2.j f;
@@ -60,14 +60,14 @@ public final class j implements e0, u {
     public final xa n;
     public final h6.m r;
     public final IdentityHashMap s;
-    public final b5 w;
+    public final c5 w;
     public final nb.a x;
     public final boolean y;
 
-    public j(c cVar, s2.d dVar, b5 b5Var, c0 c0Var, q2.m mVar, q2.j jVar, qb.a aVar, xa xaVar, h6.m mVar2, nb.a aVar2, boolean z10, int i7, m2.i iVar) {
+    public j(c cVar, s2.d dVar, c5 c5Var, c0 c0Var, q2.m mVar, q2.j jVar, qb.a aVar, xa xaVar, h6.m mVar2, nb.a aVar2, boolean z10, int i7, m2.i iVar) {
         this.a = cVar;
         this.b = dVar;
-        this.c = b5Var;
+        this.c = c5Var;
         this.d = c0Var;
         this.e = mVar;
         this.f = jVar;
@@ -83,7 +83,7 @@ public final class j implements e0, u {
         t1 t1Var = t1.e;
         this.N = new x2.n(t1Var, t1Var);
         this.s = new IdentityHashMap();
-        this.w = new b5(17);
+        this.w = new c5(17);
         this.K = new p[0];
         this.L = new p[0];
         this.O = Long.MIN_VALUE;

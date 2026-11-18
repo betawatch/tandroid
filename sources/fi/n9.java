@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.qa;
+import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class n9 {
     public static final n9[] f = new n9[4];
@@ -31,7 +31,7 @@ public final class n9 {
         arrayList.clear();
         for (int i7 = 0; i7 < ck0Var.getChildCount(); i7++) {
             View childAt = ck0Var.getChildAt(i7);
-            long dialogId = childAt instanceof org.telegram.ui.Cells.t2 ? ((org.telegram.ui.Cells.t2) childAt).getDialogId() : childAt instanceof qa ? ((qa) childAt).getDialogId() : 0L;
+            long dialogId = childAt instanceof org.telegram.ui.Cells.u2 ? ((org.telegram.ui.Cells.u2) childAt).getDialogId() : childAt instanceof ra ? ((ra) childAt).getDialogId() : 0L;
             int i10 = this.a;
             LongSparseLongArray longSparseLongArray = this.b;
             if (dialogId > 0) {

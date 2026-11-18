@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ol implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class ol implements Runnable {
                     int B = mpVar.getMessagesController().t7.B(i10, j10, j3, true);
                     if (B >= 0) {
                         mpVar.getMessagesStorage().h2(B, j10, j3, true);
-                        mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j10), Long.valueOf(j3), Integer.valueOf(B), arrayList);
+                        mpVar.getNotificationCenter().k(ks.c5, Long.valueOf(j10), Long.valueOf(j3), Integer.valueOf(B), arrayList);
                         break;
                     }
                 } else {
@@ -48,7 +48,7 @@ public final /* synthetic */ class ol implements Runnable {
                             dialog.unread_poll_votes_count = 0;
                         }
                         mpVar.getMessagesStorage().h2(dialog.unread_poll_votes_count, j10, 0L, false);
-                        mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j10), Long.valueOf(j3), Integer.valueOf(dialog.unread_poll_votes_count), arrayList);
+                        mpVar.getNotificationCenter().k(ks.c5, Long.valueOf(j10), Long.valueOf(j3), Integer.valueOf(dialog.unread_poll_votes_count), arrayList);
                         break;
                     } else {
                         mpVar.getMessagesStorage().Q1(j10, i10, true, false);
@@ -65,7 +65,7 @@ public final /* synthetic */ class ol implements Runnable {
                     if (C >= 0) {
                         mpVar.getMessagesStorage().i2(C, j12, j11, true);
                         if (mpVar.y2(j12) || mpVar.E2(j12) || j12 > 0) {
-                            mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(j12), Long.valueOf(j11), Integer.valueOf(C), arrayList);
+                            mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j12), Long.valueOf(j11), Integer.valueOf(C), arrayList);
                             break;
                         }
                     }
@@ -79,7 +79,7 @@ public final /* synthetic */ class ol implements Runnable {
                         }
                         mpVar.getMessagesStorage().i2(dialog2.unread_reactions_count, j12, 0L, false);
                         if (mpVar.y2(j12) || mpVar.E2(j12) || j12 > 0) {
-                            mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(j12), Long.valueOf(j11), Integer.valueOf(dialog2.unread_reactions_count), arrayList);
+                            mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j12), Long.valueOf(j11), Integer.valueOf(dialog2.unread_reactions_count), arrayList);
                             break;
                         }
                     } else {
@@ -98,7 +98,7 @@ public final /* synthetic */ class ol implements Runnable {
                     tr messagesStorage = mpVar.getMessagesStorage();
                     long j14 = this.d;
                     messagesStorage.i2(i14, j13, j14, false);
-                    mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(j13), Long.valueOf(j14), Integer.valueOf(i14), arrayList);
+                    mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j13), Long.valueOf(j14), Integer.valueOf(i14), arrayList);
                     break;
                 } else {
                     mpVar.getMessagesStorage().Q1(j13, i14, false, true);
@@ -111,7 +111,7 @@ public final /* synthetic */ class ol implements Runnable {
                 long j16 = this.d;
                 e00Var.C(i15, j15, j16, false);
                 mpVar.getMessagesStorage().i2(i15, j15, j16, false);
-                mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(j15), Long.valueOf(j16), Integer.valueOf(i15), arrayList);
+                mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j15), Long.valueOf(j16), Integer.valueOf(i15), arrayList);
                 break;
             case 4:
                 a0.h hVar2 = mpVar.R;
@@ -123,7 +123,7 @@ public final /* synthetic */ class ol implements Runnable {
                     tr messagesStorage2 = mpVar.getMessagesStorage();
                     long j18 = this.d;
                     messagesStorage2.h2(i16, j17, j18, false);
-                    mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j17), Long.valueOf(j18), Integer.valueOf(i16), arrayList);
+                    mpVar.getNotificationCenter().k(ks.c5, Long.valueOf(j17), Long.valueOf(j18), Integer.valueOf(i16), arrayList);
                     break;
                 } else {
                     mpVar.getMessagesStorage().Q1(j17, i16, false, false);
@@ -136,7 +136,7 @@ public final /* synthetic */ class ol implements Runnable {
                 long j20 = this.d;
                 e00Var2.B(i17, j19, j20, false);
                 mpVar.getMessagesStorage().h2(i17, j19, j20, false);
-                mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j19), Long.valueOf(j20), Integer.valueOf(i17), arrayList);
+                mpVar.getNotificationCenter().k(ks.c5, Long.valueOf(j19), Long.valueOf(j20), Integer.valueOf(i17), arrayList);
                 break;
             default:
                 e00 e00Var3 = mpVar.getMessagesController().t7;
@@ -145,7 +145,7 @@ public final /* synthetic */ class ol implements Runnable {
                 long j22 = this.d;
                 e00Var3.C(i18, j21, j22, false);
                 mpVar.getMessagesStorage().i2(i18, j21, j22, false);
-                mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(j21), Long.valueOf(j22), Integer.valueOf(i18), arrayList);
+                mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(j21), Long.valueOf(j22), Integer.valueOf(i18), arrayList);
                 break;
         }
     }

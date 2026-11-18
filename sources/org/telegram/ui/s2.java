@@ -14,9 +14,9 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class s2 extends FrameLayout implements org.telegram.ui.Components.vx0, org.telegram.ui.Cells.h9 {
+public final class s2 extends FrameLayout implements org.telegram.ui.Components.vx0, org.telegram.ui.Cells.i9 {
     public final p50 a;
     public final e4 b;
     public final r2 c;
@@ -131,13 +131,13 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         return g4.x1;
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.q9
+    @Override // android.view.View, org.telegram.ui.Cells.r9
     public final void invalidate() {
         super.invalidate();
         this.e.invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.d;
         if (z2Var != null) {

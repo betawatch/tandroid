@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class s3 extends org.telegram.ui.Components.au0 implements org.telegram.ui.ActionBar.e2, org.telegram.ui.ActionBar.l3 {
     public final Paint g0;
@@ -183,9 +183,9 @@ public final class s3 extends org.telegram.ui.Components.au0 implements org.tele
             }
         }
         if (f10 != 0.0f || f11 != 0.0f) {
-            org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
-            org.telegram.messenger.g0.r(i9Var.f0);
-            i9Var.z = false;
+            org.telegram.ui.Cells.j9 j9Var = g4Var.Q0;
+            org.telegram.messenger.g0.r(j9Var.f0);
+            j9Var.z = false;
         }
         this.q0 = true;
         return onNestedPreFling;
@@ -207,9 +207,9 @@ public final class s3 extends org.telegram.ui.Components.au0 implements org.tele
         if (i7 == 0 && i10 == 0) {
             return;
         }
-        org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
-        org.telegram.messenger.g0.r(i9Var.f0);
-        i9Var.z = false;
+        org.telegram.ui.Cells.j9 j9Var = g4Var.Q0;
+        org.telegram.messenger.g0.r(j9Var.f0);
+        j9Var.z = false;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent

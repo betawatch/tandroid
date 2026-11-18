@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class in0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -325,7 +325,7 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                             tg.e2 e2Var2 = photoViewer15.p5;
                             hi.lb lbVar = new hi.lb(photoViewer15, z11, xeVar, i11);
                             e2Var2.getClass();
-                            e2Var2.setOnClickListener(new bd0(29, e2Var2, lbVar));
+                            e2Var2.setOnClickListener(new cd0(29, e2Var2, lbVar));
                             TextView textView = e2Var2.N;
                             textView.setText(org.telegram.messenger.gd.M0(2131745480, null));
                             textView.animate().cancel();

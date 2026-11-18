@@ -7,7 +7,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class sl extends oq0 {
     public final ArrayList a;
@@ -24,7 +24,7 @@ public final class sl extends oq0 {
         char c10;
         char c11;
         ImageReceiver imageReceiver;
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         org.telegram.messenger.fj messageObject;
         org.telegram.messenger.ev evVar;
         TL_iv.PageBlock pageBlock;
@@ -43,9 +43,9 @@ public final class sl extends oq0 {
         int i10 = 0;
         while (i10 < childCount) {
             View childAt = bnVar.A0.getChildAt(i10);
-            boolean z12 = childAt instanceof org.telegram.ui.Cells.q1;
+            boolean z12 = childAt instanceof org.telegram.ui.Cells.r1;
             int[] iArr = slVar.b;
-            if (!z12 || (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) == null || (evVar = messageObject.y2) == null) {
+            if (!z12 || (messageObject = (r1Var = (org.telegram.ui.Cells.r1) childAt).getMessageObject()) == null || (evVar = messageObject.y2) == null) {
                 c10 = 0;
                 c11 = 1;
                 imageReceiver = null;
@@ -131,8 +131,8 @@ public final class sl extends oq0 {
                 }
                 if (imageReceiver != null) {
                     childAt.getLocationInWindow(iArr);
-                    iArr[c10] = q1Var.getTextX() + iArr2[c10] + iArr[c10];
-                    iArr[c11] = q1Var.getTextY() + iArr2[c11] + iArr[c11];
+                    iArr[c10] = r1Var.getTextX() + iArr2[c10] + iArr[c10];
+                    iArr[c11] = r1Var.getTextY() + iArr2[c11] + iArr[c11];
                 }
             }
             if (imageReceiver != null) {

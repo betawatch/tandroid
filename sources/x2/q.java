@@ -8,11 +8,11 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.telegram.ui.wc1;
 import tg.z1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final p a;
@@ -220,7 +220,7 @@ public final class q implements f0 {
                         wc1 wc1Var = new wc1(26, this, uVar);
                         wf.b bVar = this.b;
                         z1 z1Var = new z1(wc1Var, 15);
-                        md0 md0Var = new md0(7);
+                        nd0 nd0Var = new nd0(7);
                         qb.a aVar = new qb.a(4);
                         if (this.c.H(uVar)) {
                             e2.t a12 = uVar.a();
@@ -243,7 +243,7 @@ public final class q implements f0 {
                         e2.g0 g0Var4 = parse != null ? new e2.g0(parse, null, c0Var4.a != null ? new e2.d0(c0Var4) : uri, null, list3, null, t1Var, -9223372036854775807L) : uri;
                         e2.l0 l0Var3 = new e2.l0("", new e2.b0(zVar2), g0Var4, new e2.f0(e0Var), e2.o0.L, h0Var3);
                         g0Var4.getClass();
-                        aVarArr[i10] = new y0(l0Var3, bVar, z1Var, md0Var.s(l0Var3), aVar, TLObject.FLAG_20, uVar2);
+                        aVarArr[i10] = new y0(l0Var3, bVar, z1Var, nd0Var.s(l0Var3), aVar, TLObject.FLAG_20, uVar2);
                     } else {
                         wf.b bVar2 = this.b;
                         bVar2.getClass();

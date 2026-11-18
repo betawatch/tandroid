@@ -7,7 +7,7 @@ import di.n4;
 import java.util.HashSet;
 import java.util.regex.Pattern;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.z2;
+import org.telegram.ui.Cells.a3;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.b5;
@@ -26,12 +26,12 @@ import org.telegram.ui.Components.ty;
 import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.yo0;
 import org.telegram.ui.bn;
-import org.telegram.ui.eh0;
+import org.telegram.ui.fh0;
 import org.telegram.ui.g4;
 import org.telegram.ui.la;
 import org.telegram.ui.lb;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class a implements View.OnTouchListener {
                 int i11 = n4.f;
                 break;
             case 5:
-                int i12 = z2.x;
+                int i12 = a3.x;
                 break;
             case 6:
                 Paint paint = la.I;
@@ -130,7 +130,7 @@ public final /* synthetic */ class a implements View.OnTouchListener {
                 int i27 = UndoView.j0;
                 break;
             default:
-                int i28 = eh0.Z1;
+                int i28 = fh0.Z1;
                 break;
         }
         return true;

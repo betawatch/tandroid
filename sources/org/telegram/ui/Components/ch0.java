@@ -12,10 +12,10 @@ import android.view.ViewParent;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ch0 extends Path {
-    public final org.telegram.ui.Cells.q1 a;
+    public final org.telegram.ui.Cells.r1 a;
     public final int b;
     public final int c;
     public final int d;
@@ -33,11 +33,11 @@ public final class ch0 extends Path {
     public final float p;
     public bh0 q;
     public final int r;
-    public final org.telegram.ui.Cells.t9 s;
+    public final org.telegram.ui.Cells.u9 s;
     public final int t;
     public final ArrayList u;
 
-    public ch0(final org.telegram.ui.Cells.q1 q1Var, int i7, int i10) {
+    public ch0(final org.telegram.ui.Cells.r1 r1Var, int i7, int i10) {
         Paint paint = new Paint(1);
         this.i = paint;
         this.j = new pq();
@@ -45,29 +45,29 @@ public final class ch0 extends Path {
         this.m = new ArrayList();
         this.t = 1;
         this.u = new ArrayList();
-        this.a = q1Var;
+        this.a = r1Var;
         final int i11 = 0;
         this.k = new c6(0.0f, new Runnable() { // from class: org.telegram.ui.Components.ah0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i11) {
                     case 0:
-                        org.telegram.ui.Cells.q1 q1Var2 = q1Var;
-                        if (q1Var2 != null) {
-                            q1Var2.invalidate();
+                        org.telegram.ui.Cells.r1 r1Var2 = r1Var;
+                        if (r1Var2 != null) {
+                            r1Var2.invalidate();
                         }
-                        if (q1Var2.getParent() instanceof View) {
-                            ((View) q1Var2.getParent()).invalidate();
+                        if (r1Var2.getParent() instanceof View) {
+                            ((View) r1Var2.getParent()).invalidate();
                             break;
                         }
                         break;
                     default:
-                        org.telegram.ui.Cells.q1 q1Var3 = q1Var;
-                        if (q1Var3 != null) {
-                            q1Var3.invalidate();
+                        org.telegram.ui.Cells.r1 r1Var3 = r1Var;
+                        if (r1Var3 != null) {
+                            r1Var3.invalidate();
                         }
-                        if (q1Var3.getParent() instanceof View) {
-                            ((View) q1Var3.getParent()).invalidate();
+                        if (r1Var3.getParent() instanceof View) {
+                            ((View) r1Var3.getParent()).invalidate();
                             break;
                         }
                         break;
@@ -109,11 +109,11 @@ public final class ch0 extends Path {
         bh0Var.c = f18;
         bh0Var.d = f13 + f17;
         bh0Var.i = this.r;
-        org.telegram.ui.Cells.t9 t9Var = this.s;
-        bh0Var.j = t9Var;
-        if (t9Var != null) {
-            bh0Var.k = t9Var.getX();
-            bh0Var.l = t9Var.getY();
+        org.telegram.ui.Cells.u9 u9Var = this.s;
+        bh0Var.j = u9Var;
+        if (u9Var != null) {
+            bh0Var.k = u9Var.getX();
+            bh0Var.l = u9Var.getY();
         }
         bh0 bh0Var2 = this.q;
         if (bh0Var2 != null) {
@@ -138,7 +138,7 @@ public final class ch0 extends Path {
         canvas.save();
         boolean z10 = this.f;
         pq pqVar = this.j;
-        org.telegram.ui.Cells.q1 q1Var = this.a;
+        org.telegram.ui.Cells.r1 r1Var = this.a;
         Paint paint = this.i;
         if (z10) {
             int W1 = org.telegram.messenger.g0.W1(e10, org.telegram.messenger.g0.L(4.0f), 0);
@@ -147,9 +147,9 @@ public final class ch0 extends Path {
                 paint.setPathEffect(new CornerPathEffect(W1));
             }
             pqVar.rewind();
-            int W12 = q1Var.W1(this.g);
+            int W12 = r1Var.W1(this.g);
             RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(q1Var.getBackgroundDrawableLeft(), q1Var.V1(W12), q1Var.getBackgroundDrawableRight(), q1Var.U1(W12));
+            rectF.set(r1Var.getBackgroundDrawableLeft(), r1Var.V1(W12), r1Var.getBackgroundDrawableRight(), r1Var.U1(W12));
             org.telegram.messenger.g0.Y1(rect2, rectF, e10, rectF);
             pqVar.addRect(rectF, Path.Direction.CW);
             pqVar.a();
@@ -160,9 +160,9 @@ public final class ch0 extends Path {
                 paint.setPathEffect(new CornerPathEffect(W13));
             }
             pqVar.rewind();
-            int c22 = q1Var.c2(-this.c);
+            int c22 = r1Var.c2(-this.c);
             RectF rectF2 = org.telegram.messenger.g0.P;
-            rectF2.set(q1Var.getBackgroundDrawableLeft(), q1Var.V1(c22), q1Var.getBackgroundDrawableRight(), q1Var.U1(c22));
+            rectF2.set(r1Var.getBackgroundDrawableLeft(), r1Var.V1(c22), r1Var.getBackgroundDrawableRight(), r1Var.U1(c22));
             org.telegram.messenger.g0.Y1(rect2, rectF2, e10, rectF2);
             pqVar.addRect(rectF2, Path.Direction.CW);
             pqVar.a();
@@ -271,7 +271,7 @@ public final class ch0 extends Path {
         }
     }
 
-    public ch0(final org.telegram.ui.Cells.q1 q1Var, int i7, byte[] bArr) {
+    public ch0(final org.telegram.ui.Cells.r1 r1Var, int i7, byte[] bArr) {
         Paint paint = new Paint(1);
         this.i = paint;
         this.j = new pq();
@@ -279,29 +279,29 @@ public final class ch0 extends Path {
         this.m = new ArrayList();
         this.t = 1;
         this.u = new ArrayList();
-        this.a = q1Var;
+        this.a = r1Var;
         final int i10 = 1;
         this.k = new c6(0.0f, new Runnable() { // from class: org.telegram.ui.Components.ah0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i10) {
                     case 0:
-                        org.telegram.ui.Cells.q1 q1Var2 = q1Var;
-                        if (q1Var2 != null) {
-                            q1Var2.invalidate();
+                        org.telegram.ui.Cells.r1 r1Var2 = r1Var;
+                        if (r1Var2 != null) {
+                            r1Var2.invalidate();
                         }
-                        if (q1Var2.getParent() instanceof View) {
-                            ((View) q1Var2.getParent()).invalidate();
+                        if (r1Var2.getParent() instanceof View) {
+                            ((View) r1Var2.getParent()).invalidate();
                             break;
                         }
                         break;
                     default:
-                        org.telegram.ui.Cells.q1 q1Var3 = q1Var;
-                        if (q1Var3 != null) {
-                            q1Var3.invalidate();
+                        org.telegram.ui.Cells.r1 r1Var3 = r1Var;
+                        if (r1Var3 != null) {
+                            r1Var3.invalidate();
                         }
-                        if (q1Var3.getParent() instanceof View) {
-                            ((View) q1Var3.getParent()).invalidate();
+                        if (r1Var3.getParent() instanceof View) {
+                            ((View) r1Var3.getParent()).invalidate();
                             break;
                         }
                         break;
@@ -319,7 +319,7 @@ public final class ch0 extends Path {
         paint.setPathEffect(new CornerPathEffect(L));
     }
 
-    public ch0(final org.telegram.ui.Cells.q1 q1Var, final ViewParent viewParent, int i7, ArrayList arrayList, int i10, int i11, float f10) {
+    public ch0(final org.telegram.ui.Cells.r1 r1Var, final ViewParent viewParent, int i7, ArrayList arrayList, int i10, int i11, float f10) {
         int i12;
         Paint paint = new Paint(1);
         this.i = paint;
@@ -335,7 +335,7 @@ public final class ch0 extends Path {
             public final void run() {
                 switch (i13) {
                     case 0:
-                        q1Var.invalidate();
+                        r1Var.invalidate();
                         Object obj = viewParent;
                         if (obj instanceof View) {
                             ((View) obj).invalidate();
@@ -343,7 +343,7 @@ public final class ch0 extends Path {
                         }
                         break;
                     default:
-                        q1Var.invalidate();
+                        r1Var.invalidate();
                         Object obj2 = viewParent;
                         if (obj2 instanceof View) {
                             ((View) obj2).invalidate();
@@ -392,7 +392,7 @@ public final class ch0 extends Path {
         d();
     }
 
-    public ch0(final org.telegram.ui.Cells.q1 q1Var, final ViewParent viewParent, int i7, org.telegram.messenger.ev evVar, int i10, int i11) {
+    public ch0(final org.telegram.ui.Cells.r1 r1Var, final ViewParent viewParent, int i7, org.telegram.messenger.ev evVar, int i10, int i11) {
         Paint paint = new Paint(1);
         this.i = paint;
         this.j = new pq();
@@ -407,7 +407,7 @@ public final class ch0 extends Path {
             public final void run() {
                 switch (i12) {
                     case 0:
-                        q1Var.invalidate();
+                        r1Var.invalidate();
                         Object obj = viewParent;
                         if (obj instanceof View) {
                             ((View) obj).invalidate();
@@ -415,7 +415,7 @@ public final class ch0 extends Path {
                         }
                         break;
                     default:
-                        q1Var.invalidate();
+                        r1Var.invalidate();
                         Object obj2 = viewParent;
                         if (obj2 instanceof View) {
                             ((View) obj2).invalidate();
@@ -439,17 +439,17 @@ public final class ch0 extends Path {
         paint.setPathEffect(new CornerPathEffect(L));
         this.p = -3.4028235E38f;
         for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            org.telegram.ui.Cells.t9 t9Var = (org.telegram.ui.Cells.t9) arrayList.get(i13);
-            Layout a10 = t9Var == null ? null : t9Var.a();
+            org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) arrayList.get(i13);
+            Layout a10 = u9Var == null ? null : u9Var.a();
             if (a10 != null && a10.getText() != null) {
                 int intValue = ((Integer) evVar.o.get(i13)).intValue();
                 int length = a10.getText().length();
                 int j3 = Utilities.j(i10 - intValue, length, 0);
                 int j10 = Utilities.j(i11 - intValue, length, 0);
                 if (j3 < j10) {
-                    this.n = t9Var.getX();
-                    this.o = t9Var.getY();
-                    this.s = t9Var;
+                    this.n = u9Var.getX();
+                    this.o = u9Var.getY();
+                    this.s = u9Var;
                     this.q = null;
                     int size = this.l.size();
                     if (org.telegram.messenger.g0.L1(a10.getText())) {

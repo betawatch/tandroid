@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ns extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 1;
@@ -53,8 +53,8 @@ public final class ns extends AnimatorListenerAdapter {
                 rsVar2.v.remove(f1Var2);
                 rsVar2.A();
                 View view = f1Var2.a;
-                if (view instanceof org.telegram.ui.Cells.t2) {
-                    ((org.telegram.ui.Cells.t2) view).setMoving(false);
+                if (view instanceof org.telegram.ui.Cells.u2) {
+                    ((org.telegram.ui.Cells.u2) view).setMoving(false);
                     break;
                 }
                 break;

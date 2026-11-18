@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.e61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class a6 extends c1 implements fs {
     public static volatile a6[] U = new a6[4];
@@ -829,7 +829,7 @@ public final class a6 extends c1 implements fs {
         }
         sparseArray.remove(i7);
         if (sparseArray.size() == 0) {
-            getNotificationCenter().k(ks.d5, new Object[0]);
+            getNotificationCenter().k(ks.e5, new Object[0]);
         }
     }
 
@@ -863,7 +863,7 @@ public final class a6 extends c1 implements fs {
             w7.G(this.currentAccount).W(((fj) arrayList.get(i7)).F0(), arrayList.get(i7), 0, 0);
             w7.G(this.currentAccount).f(((fj) arrayList.get(i7)).F0());
         }
-        getNotificationCenter().k(ks.d5, new Object[0]);
+        getNotificationCenter().k(ks.e5, new Object[0]);
         getMessagesStorage().a.c(new w3(3, this, arrayList));
     }
 

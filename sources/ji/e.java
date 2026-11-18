@@ -57,7 +57,7 @@ import org.telegram.ui.Components.pf;
 import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class e extends View {
     public static int s3;
@@ -775,7 +775,7 @@ public final class e extends View {
             gVar.draw(canvas);
             return;
         }
-        int i7 = (int) ((this.M ? ks.u3 : 235) * f10);
+        int i7 = (int) ((this.M ? ks.u3 : ks.L3) * f10);
         Paint paint = this.r;
         paint.setAlpha(i7);
         canvas.drawRoundRect(rectF, height, height, paint);
@@ -1109,7 +1109,7 @@ public final class e extends View {
             this.J.setAlpha((int) (min2 * 255.0f));
             this.J.draw(canvas);
         } else {
-            int i10 = this.M ? ks.u3 : 235;
+            int i10 = this.M ? ks.u3 : ks.L3;
             Paint paint = this.r;
             paint.setAlpha((int) (i10 * min2));
             canvas.drawRoundRect(rectF3, height, height, paint);
@@ -1196,7 +1196,7 @@ public final class e extends View {
             this.h2.setAlpha((int) (255.0f * f12));
             this.h2.draw(canvas);
         } else {
-            int i7 = this.M ? ks.u3 : 235;
+            int i7 = this.M ? ks.u3 : ks.L3;
             Paint paint = this.r;
             paint.setAlpha((int) (i7 * f12));
             float f13 = L / 2.0f;

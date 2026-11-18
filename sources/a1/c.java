@@ -55,7 +55,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.Dictation.DictationAsr;
@@ -66,7 +66,7 @@ import r0.l1;
 import r0.m;
 import ri.n;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, i1, q, r1, m, n, j, i, com.google.android.gms.common.api.internal.q, v10, z4, te.b, ll0 {
     public final /* synthetic */ int a;
@@ -80,8 +80,8 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     @Override // te.b
     public void H(int i7, float f10, float f11, te.c cVar) {
         View view = ((h6) this.b).b;
-        if (view instanceof u0) {
-            ((u0) view).X();
+        if (view instanceof v0) {
+            ((v0) view).U();
         } else {
             view.invalidate();
         }

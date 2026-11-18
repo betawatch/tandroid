@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class tz0 extends Dialog {
     public TextView E;
@@ -39,7 +39,7 @@ public final class tz0 extends Dialog {
     public org.telegram.ui.ActionBar.i6 M;
     public org.telegram.messenger.fj N;
     public rz0 O;
-    public org.telegram.ui.Cells.q1 P;
+    public org.telegram.ui.Cells.r1 P;
     public TextureView Q;
     public boolean R;
     public final RectF S;
@@ -134,10 +134,10 @@ public final class tz0 extends Dialog {
         if (k0Var.getWidth() <= 0) {
             return;
         }
-        org.telegram.ui.Cells.q1 q1Var = this.P;
-        if (q1Var != null) {
+        org.telegram.ui.Cells.r1 r1Var = this.P;
+        if (r1Var != null) {
             int[] iArr = new int[2];
-            q1Var.getLocationOnScreen(iArr);
+            r1Var.getLocationOnScreen(iArr);
             float f10 = iArr[0] - this.e.a;
             int width = k0Var.getWidth();
             i0.b bVar = this.e;
@@ -189,9 +189,9 @@ public final class tz0 extends Dialog {
         if (!this.T && (rz0Var = this.O) != null && rz0Var.getSeekBarWaveform() != null) {
             org.telegram.ui.Components.bn0 seekBarWaveform = this.O.getSeekBarWaveform();
             seekBarWaveform.L = this.s;
-            org.telegram.ui.Cells.q1 q1Var = seekBarWaveform.n;
-            if (q1Var != null) {
-                q1Var.invalidate();
+            org.telegram.ui.Cells.r1 r1Var = seekBarWaveform.n;
+            if (r1Var != null) {
+                r1Var.invalidate();
             }
         }
         this.I = false;
@@ -201,9 +201,9 @@ public final class tz0 extends Dialog {
         k0Var.invalidate();
         bi.m2 m2Var = this.Z;
         if (m2Var != null) {
-            org.telegram.ui.Cells.q1 q1Var2 = this.P;
-            if (q1Var2 != null) {
-                q1Var2.ob = true;
+            org.telegram.ui.Cells.r1 r1Var2 = this.P;
+            if (r1Var2 != null) {
+                r1Var2.ob = true;
             }
             org.telegram.messenger.g0.g3(m2Var);
             this.Z = null;
@@ -322,11 +322,11 @@ public final class tz0 extends Dialog {
     public final void show() {
         if (org.telegram.messenger.g0.M1(getContext())) {
             super.show();
-            org.telegram.ui.Cells.q1 q1Var = this.P;
-            if (q1Var != null) {
-                q1Var.setVisibility(4);
+            org.telegram.ui.Cells.r1 r1Var = this.P;
+            if (r1Var != null) {
+                r1Var.setVisibility(4);
             }
-            org.telegram.messenger.g0.l2(new org.telegram.ui.Components.ph(28, this, q1Var), 14.0f);
+            org.telegram.messenger.g0.l2(new org.telegram.ui.Components.ph(28, this, r1Var), 14.0f);
             this.X = true;
             c(true, null);
             he heVar = this.Y;

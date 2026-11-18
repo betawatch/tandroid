@@ -4,7 +4,7 @@ import android.content.Intent;
 import java.util.ArrayList;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ns implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class ns implements Runnable {
                 for (int i7 = 0; i7 < size; i7++) {
                     xsVar2.w.remove(arrayList.get(i7));
                 }
-                ks.e().k(256, new Object[0]);
+                ks.e().k(ks.g4, new Object[0]);
                 break;
             case 2:
                 xs xsVar3 = this.b;
@@ -46,7 +46,7 @@ public final /* synthetic */ class ns implements Runnable {
                 for (int i10 = 0; i10 < size2; i10++) {
                     xsVar3.w.remove(arrayList2.get(i10));
                 }
-                ks.e().k(256, new Object[0]);
+                ks.e().k(ks.g4, new Object[0]);
                 break;
             case 3:
                 xs xsVar4 = this.b;
@@ -55,7 +55,7 @@ public final /* synthetic */ class ns implements Runnable {
                 for (int i11 = 0; i11 < size3; i11++) {
                     xsVar4.w.remove(arrayList3.get(i11));
                 }
-                ks.e().k(256, new Object[0]);
+                ks.e().k(ks.g4, new Object[0]);
                 break;
             default:
                 xs xsVar5 = this.b;
@@ -64,7 +64,7 @@ public final /* synthetic */ class ns implements Runnable {
                 for (int i12 = 0; i12 < size4; i12++) {
                     xsVar5.w.remove(arrayList4.get(i12));
                 }
-                ks.e().k(256, new Object[0]);
+                ks.e().k(ks.g4, new Object[0]);
                 break;
         }
     }

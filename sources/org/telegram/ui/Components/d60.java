@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class d60 extends bk0 {
     public ArrayList c = new ArrayList();
@@ -82,7 +82,7 @@ public final class d60 extends bk0 {
         View view = f1Var.a;
         CharSequence charSequence2 = null;
         if (i10 == 0) {
-            ((org.telegram.ui.Cells.g4) view).setText(org.telegram.messenger.gd.M0(2131749360, null));
+            ((org.telegram.ui.Cells.h4) view).setText(org.telegram.messenger.gd.M0(2131749360, null));
             return;
         }
         if (i10 != 1) {
@@ -92,7 +92,7 @@ public final class d60 extends bk0 {
             view.requestLayout();
             return;
         }
-        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+        org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) view;
         int size = this.c.size();
         jg.z1 z1Var = this.e;
         ArrayList arrayList = z1Var.e;
@@ -133,30 +133,30 @@ public final class d60 extends bk0 {
                     charSequence = K;
                 }
             }
-            Object object = h4Var.getObject();
+            Object object = i4Var.getObject();
             long j10 = !(object instanceof TLRPC.User) ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
-            h4Var.d(tLObject, charSequence2, charSequence);
+            i4Var.d(tLObject, charSequence2, charSequence);
             j3 = !(tLObject instanceof TLRPC.User) ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.Chat ? -((TLRPC.Chat) tLObject).id : 0L;
             if (j3 == 0) {
                 j60 j60Var = this.n;
                 a0.h hVar = j60Var.O1;
                 if (hVar == null || hVar.h(j3) < 0) {
-                    h4Var.c(j60Var.a2.h(j3) >= 0, j10 == j3);
-                    h4Var.setCheckBoxEnabled(true);
+                    i4Var.c(j60Var.a2.h(j3) >= 0, j10 == j3);
+                    i4Var.setCheckBoxEnabled(true);
                     return;
                 } else {
-                    h4Var.c(true, j10 == j3);
-                    h4Var.setCheckBoxEnabled(false);
+                    i4Var.c(true, j10 == j3);
+                    i4Var.setCheckBoxEnabled(false);
                     return;
                 }
             }
             return;
         }
         charSequence = null;
-        Object object2 = h4Var.getObject();
+        Object object2 = i4Var.getObject();
         if (!(object2 instanceof TLRPC.User)) {
         }
-        h4Var.d(tLObject, charSequence2, charSequence);
+        i4Var.d(tLObject, charSequence2, charSequence);
         if (!(tLObject instanceof TLRPC.User)) {
         }
         if (j3 == 0) {
@@ -168,22 +168,22 @@ public final class d60 extends bk0 {
         View view;
         Context context = viewGroup.getContext();
         if (i7 == 1) {
-            view = new org.telegram.ui.Cells.h4(context, 1, 0, false);
+            view = new org.telegram.ui.Cells.i4(context, 1, 0, false);
         } else if (i7 == 2) {
             view = new bi.i3(21, context, this);
         } else if (i7 != 4) {
-            org.telegram.ui.Cells.g4 g4Var = new org.telegram.ui.Cells.g4(context);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.e7, g4Var, null);
-            Drawable drawable = g4Var.getResources().getDrawable(R.drawable.shadowdown);
-            g4Var.a = drawable;
-            org.telegram.ui.ActionBar.u6.x(g4Var, drawable, org.telegram.ui.ActionBar.n6.Qi, null, PorterDuff.Mode.MULTIPLY);
-            TextView textView = new TextView(g4Var.getContext());
-            g4Var.b = textView;
+            org.telegram.ui.Cells.h4 h4Var = new org.telegram.ui.Cells.h4(context);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.e7, h4Var, null);
+            Drawable drawable = h4Var.getResources().getDrawable(R.drawable.shadowdown);
+            h4Var.a = drawable;
+            org.telegram.ui.ActionBar.u6.x(h4Var, drawable, org.telegram.ui.ActionBar.n6.Qi, null, PorterDuff.Mode.MULTIPLY);
+            TextView textView = new TextView(h4Var.getContext());
+            h4Var.b = textView;
             i5.c.x(textView, 1, 14.0f);
             org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.Ri, null);
             textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 16);
-            g4Var.addView(textView, c8.ma.d(-1, -1.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
-            view = g4Var;
+            h4Var.addView(textView, c8.ma.d(-1, -1.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+            view = h4Var;
         } else {
             view = new View(context);
         }

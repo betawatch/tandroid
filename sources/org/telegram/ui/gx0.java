@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class gx0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ String a;
@@ -67,15 +67,15 @@ public final class gx0 extends org.telegram.ui.ActionBar.j {
             i14 = ((org.telegram.ui.ActionBar.h2) jx0Var).currentAccount;
             org.telegram.messenger.xs.t(i14).c0(jx0Var.f, jx0Var.h, true);
             if (jx0Var.s != null) {
-                th0 th0Var = new th0();
-                th0Var.d = j10;
-                th0Var.b = true;
+                uh0 uh0Var = new uh0();
+                uh0Var.d = j10;
+                uh0Var.b = true;
                 int c10 = org.telegram.messenger.f3.c("notify2_", str, sharedPreferences, 0);
-                th0Var.c = c10;
+                uh0Var.c = c10;
                 if (c10 != 0) {
-                    th0Var.a = org.telegram.messenger.f3.c("notifyuntil_", str, sharedPreferences, 0);
+                    uh0Var.a = org.telegram.messenger.f3.c("notifyuntil_", str, sharedPreferences, 0);
                 }
-                jx0Var.s.k(th0Var);
+                jx0Var.s.k(uh0Var);
             }
         }
         jx0Var.finishFragment();

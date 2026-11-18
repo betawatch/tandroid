@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ay0 extends org.telegram.ui.Components.bk0 {
     public final /* synthetic */ Context c;
@@ -68,14 +68,14 @@ public final class ay0 extends org.telegram.ui.Components.bk0 {
         Context context = this.c;
         if (i7 == 0) {
             s4Var = ((org.telegram.ui.ActionBar.h2) ey0Var).parentLayout;
-            org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(context, s4Var, 2);
-            aaVar.setImportantForAccessibility(4);
-            aaVar.x = ey0Var;
-            view = aaVar;
+            org.telegram.ui.Cells.ba baVar = new org.telegram.ui.Cells.ba(context, s4Var, 2);
+            baVar.setImportantForAccessibility(4);
+            baVar.x = ey0Var;
+            view = baVar;
         } else if (i7 == 2) {
-            org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context);
-            z8Var.setText(org.telegram.messenger.gd.M0(2131751341, null));
-            view = z8Var;
+            org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(context);
+            a9Var.setText(org.telegram.messenger.gd.M0(2131751341, null));
+            view = a9Var;
         } else if (i7 == 3) {
             dy0 dy0Var = new dy0(ey0Var, context);
             dy0Var.a(false);

@@ -6,7 +6,7 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.q10;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class u5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ fi.r a;
@@ -35,8 +35,8 @@ public final class u5 implements View.OnAttachStateChangeListener {
         fs fsVar = this.c;
         if (fsVar != null) {
             int i7 = this.d;
-            ks.f(i7).c(fsVar, ks.c4);
             ks.f(i7).c(fsVar, ks.d4);
+            ks.f(i7).c(fsVar, ks.e4);
         }
         q10 q10Var = this.e;
         if (q10Var != null) {
@@ -49,8 +49,8 @@ public final class u5 implements View.OnAttachStateChangeListener {
         fs fsVar = this.c;
         if (fsVar != null) {
             int i7 = this.d;
-            ks.f(i7).n(fsVar, ks.c4);
             ks.f(i7).n(fsVar, ks.d4);
+            ks.f(i7).n(fsVar, ks.e4);
         }
     }
 }

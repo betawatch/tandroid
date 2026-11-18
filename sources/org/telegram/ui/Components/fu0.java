@@ -3,15 +3,15 @@ package org.telegram.ui.Components;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class fu0 extends LinearLayout {
     public boolean a() {
-        return this instanceof org.telegram.ui.ob0;
+        return this instanceof org.telegram.ui.pb0;
     }
 
     public boolean b() {
-        return this instanceof org.telegram.ui.ob0;
+        return this instanceof org.telegram.ui.pb0;
     }
 
     public boolean c(boolean z10) {

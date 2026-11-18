@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ka extends FrameLayout {
     public final org.telegram.ui.Components.k80 a;
-    public final org.telegram.ui.Cells.b2 b;
+    public final org.telegram.ui.Cells.c2 b;
     public Integer c;
     public ValueAnimator d;
     public final /* synthetic */ la e;
@@ -35,17 +35,17 @@ public final class ka extends FrameLayout {
         int i11 = org.telegram.ui.ActionBar.n6.K6;
         org.telegram.ui.ActionBar.u6.C(k80Var, i11, null);
         k80Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
-        org.telegram.ui.Cells.b2 b2Var = new org.telegram.ui.Cells.b2(2, activity, this);
-        laVar.H = b2Var;
-        this.b = b2Var;
-        b2Var.setTextSize(1, 15.0f);
-        org.telegram.ui.ActionBar.u6.U(b2Var, i7, null);
-        b2Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
-        org.telegram.ui.ActionBar.u6.G(b2Var, i10, null);
-        org.telegram.ui.ActionBar.u6.C(b2Var, i11, null);
-        b2Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
+        org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(2, activity, this);
+        laVar.H = c2Var;
+        this.b = c2Var;
+        c2Var.setTextSize(1, 15.0f);
+        org.telegram.ui.ActionBar.u6.U(c2Var, i7, null);
+        c2Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        org.telegram.ui.ActionBar.u6.G(c2Var, i10, null);
+        org.telegram.ui.ActionBar.u6.C(c2Var, i11, null);
+        c2Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
         addView(k80Var, c8.ma.e(-1, -2, 48));
-        addView(b2Var, c8.ma.e(-1, -2, 48));
+        addView(c2Var, c8.ma.e(-1, -2, 48));
         if (laVar.y == 0) {
             k80Var.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0(2131743423, null)));
             return;
@@ -64,9 +64,9 @@ public final class ka extends FrameLayout {
 
     public static void a(final ka kaVar) {
         org.telegram.ui.Components.k80 k80Var = kaVar.a;
-        org.telegram.ui.Cells.b2 b2Var = kaVar.b;
-        if (b2Var.getVisibility() == 0) {
-            b2Var.measure(View.MeasureSpec.makeMeasureSpec((kaVar.getMeasuredWidth() - kaVar.getPaddingLeft()) - kaVar.getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
+        org.telegram.ui.Cells.c2 c2Var = kaVar.b;
+        if (c2Var.getVisibility() == 0) {
+            c2Var.measure(View.MeasureSpec.makeMeasureSpec((kaVar.getMeasuredWidth() - kaVar.getPaddingLeft()) - kaVar.getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
         }
         ValueAnimator valueAnimator = kaVar.d;
         if (valueAnimator != null) {
@@ -74,9 +74,9 @@ public final class ka extends FrameLayout {
         }
         Integer num = kaVar.c;
         final int measuredHeight = num == null ? kaVar.getMeasuredHeight() : num.intValue();
-        final int height = k80Var.getHeight() + org.telegram.messenger.g0.L(27.0f) + ((b2Var.getVisibility() != 0 || TextUtils.isEmpty(b2Var.getText())) ? 0 : org.telegram.messenger.g0.L(8.0f) + b2Var.getMeasuredHeight());
+        final int height = k80Var.getHeight() + org.telegram.messenger.g0.L(27.0f) + ((c2Var.getVisibility() != 0 || TextUtils.isEmpty(c2Var.getText())) ? 0 : org.telegram.messenger.g0.L(8.0f) + c2Var.getMeasuredHeight());
         final float translationY = k80Var.getTranslationY();
-        final float L = (b2Var.getVisibility() != 0 || TextUtils.isEmpty(b2Var.getText())) ? 0.0f : org.telegram.messenger.g0.L(8.0f) + b2Var.getMeasuredHeight();
+        final float L = (c2Var.getVisibility() != 0 || TextUtils.isEmpty(c2Var.getText())) ? 0.0f : org.telegram.messenger.g0.L(8.0f) + c2Var.getMeasuredHeight();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         kaVar.d = ofFloat;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ja

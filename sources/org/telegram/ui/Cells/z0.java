@@ -1,26 +1,36 @@
 package org.telegram.ui.Cells;
 
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class z0 extends ClickableSpan {
-    public final TLRPC.User a;
-    public final /* synthetic */ a1 b;
+public final /* synthetic */ class z0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Spanned b;
 
-    public z0(a1 a1Var, TLRPC.User user) {
-        this.b = a1Var;
-        this.a = user;
+    public /* synthetic */ z0(Spanned spanned, int i7) {
+        this.a = i7;
+        this.b = spanned;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        q1 q1Var = this.b.a;
-        l1 l1Var = q1Var.Sa;
-        if (l1Var != null) {
-            l1Var.u0(q1Var, this.a, 0.0f, 0.0f);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int spanStart;
+        int spanStart2;
+        switch (this.a) {
+            case 0:
+                Spanned spanned = this.b;
+                spanStart = spanned.getSpanStart((qi.g) obj2);
+                spanStart2 = spanned.getSpanStart((qi.g) obj);
+                break;
+            default:
+                SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) this.b;
+                spanStart = spannableStringBuilder.getSpanStart((p9) obj2);
+                spanStart2 = spannableStringBuilder.getSpanStart((p9) obj);
+                break;
         }
+        return spanStart - spanStart2;
     }
 }

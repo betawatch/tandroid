@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j00 extends rg.b {
     public final Context d;
@@ -83,20 +83,20 @@ public final class j00 extends rg.b {
         int i12 = f1Var.f;
         View view = f1Var.a;
         if (i12 == 0) {
-            ((org.telegram.ui.Cells.n4) view).setText(h00Var.c);
+            ((org.telegram.ui.Cells.o4) view).setText(h00Var.c);
             return;
         }
         if (i12 != 2) {
             if (i12 == 3) {
-                org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+                org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
                 if (TextUtils.isEmpty(h00Var.c)) {
-                    z8Var.setText(null);
-                    z8Var.setFixedSize(12);
+                    a9Var.setText(null);
+                    a9Var.setFixedSize(12);
                 } else {
-                    z8Var.setFixedSize(0);
-                    z8Var.setText(h00Var.c);
+                    a9Var.setFixedSize(0);
+                    a9Var.setText(h00Var.c);
                 }
-                z8Var.setBottomPadding(z11 ? 32 : 17);
+                a9Var.setBottomPadding(z11 ? 32 : 17);
                 return;
             }
             if (i12 != 4) {
@@ -104,9 +104,9 @@ public final class j00 extends rg.b {
                     if (i12 != 6) {
                         return;
                     }
-                    org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-                    r8Var.f(h00Var.c, filtersSetupActivity.getMessagesController().D7, z10);
-                    r8Var.setCheckBoxIcon(filtersSetupActivity.getUserConfig().q() ? 0 : R.drawable.permission_locked);
+                    org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+                    s8Var.f(h00Var.c, filtersSetupActivity.getMessagesController().D7, z10);
+                    s8Var.setCheckBoxIcon(filtersSetupActivity.getUserConfig().q() ? 0 : R.drawable.permission_locked);
                     return;
                 }
                 k00 k00Var = (k00) view;
@@ -297,7 +297,7 @@ public final class j00 extends rg.b {
                     f00Var.setOnOptionsClick(new a(this, 27));
                     frameLayout = f00Var;
                 } else if (i7 == 3) {
-                    frameLayout = new org.telegram.ui.Cells.z8(context);
+                    frameLayout = new org.telegram.ui.Cells.a9(context);
                 } else if (i7 == 4) {
                     l00 l00Var = new l00(context);
                     org.telegram.ui.ActionBar.n5 n5Var = new org.telegram.ui.ActionBar.n5(context);
@@ -349,7 +349,7 @@ public final class j00 extends rg.b {
                     k00Var.setAddOnClickListener(new org.telegram.ui.Components.c31(i10, this, k00Var));
                     frameLayout = k00Var;
                 } else {
-                    frameLayout = new org.telegram.ui.Cells.r8(context);
+                    frameLayout = new org.telegram.ui.Cells.s8(context);
                 }
             } else {
                 SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0(null, null, 2131751704, new Object[0]));
@@ -371,7 +371,7 @@ public final class j00 extends rg.b {
                 frameLayout = g00Var;
             }
         } else {
-            frameLayout = new org.telegram.ui.Cells.n4(context);
+            frameLayout = new org.telegram.ui.Cells.o4(context);
         }
         return new org.telegram.ui.Components.kj0(frameLayout);
     }

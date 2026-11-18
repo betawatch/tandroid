@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ea implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final class ea implements View.OnAttachStateChangeListener {
                 break;
             default:
                 org.telegram.ui.Wallet.m4 m4Var = (org.telegram.ui.Wallet.m4) this.c;
-                org.telegram.ui.Cells.u0 u0Var = m4Var.a;
+                org.telegram.ui.Cells.v0 v0Var = m4Var.a;
                 m4Var.f();
                 m4Var.M = false;
                 m4Var.N = 0L;
@@ -88,19 +88,19 @@ public final class ea implements View.OnAttachStateChangeListener {
                     m4Var.Z = null;
                 }
                 m4Var.a0 = 1.0f;
-                u0Var.invalidate();
-                if (u0Var.getParent() instanceof View) {
-                    ((View) u0Var.getParent()).invalidate();
+                v0Var.invalidate();
+                if (v0Var.getParent() instanceof View) {
+                    ((View) v0Var.getParent()).invalidate();
                 }
                 m4Var.l();
                 org.telegram.ui.Wallet.y6 y6Var = m4Var.k;
-                org.telegram.ui.Cells.u0 u0Var2 = (org.telegram.ui.Cells.u0) this.b;
+                org.telegram.ui.Cells.v0 v0Var2 = (org.telegram.ui.Cells.v0) this.b;
                 WeakHashMap weakHashMap = y6Var.e;
-                weakHashMap.remove(u0Var2);
+                weakHashMap.remove(v0Var2);
                 if (weakHashMap.isEmpty()) {
                     y6Var.a();
                 }
-                u0Var.isAttachedToWindow();
+                v0Var.isAttachedToWindow();
                 int i7 = m4Var.v0;
                 if (-1 != i7) {
                     if (i7 >= 0) {

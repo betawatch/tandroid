@@ -26,7 +26,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.kw;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t6 implements x10 {
     public final /* synthetic */ int a;
@@ -345,17 +345,17 @@ public final /* synthetic */ class t6 implements x10 {
             case 23:
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.b;
                 x0Var.f = (ArrayList) obj;
-                bi.d6 d6Var = x0Var.a;
-                if (d6Var.H) {
-                    d6Var.g3.O(true);
+                bi.c6 c6Var = x0Var.a;
+                if (c6Var.H) {
+                    c6Var.g3.O(true);
                     break;
                 }
                 break;
             case 24:
                 org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) this.b;
                 n1Var.r = ((ArrayList) obj).size();
-                bi.d6 d6Var2 = n1Var.a;
-                if (d6Var2 != null && (z41Var3 = d6Var2.g3) != null && d6Var2.H) {
+                bi.c6 c6Var2 = n1Var.a;
+                if (c6Var2 != null && (z41Var3 = c6Var2.g3) != null && c6Var2.H) {
                     z41Var3.O(true);
                     break;
                 }

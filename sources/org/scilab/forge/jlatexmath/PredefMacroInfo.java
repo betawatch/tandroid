@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 class PredefMacroInfo extends MacroInfo {
     private int id;
@@ -440,9 +440,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.coloncolon_macro(teXParser, strArr);
                 case 234:
                     return PredefMacros.equalscolon_macro(teXParser, strArr);
-                case 235:
+                case ks.L3 /* 235 */:
                     return PredefMacros.equalscoloncolon_macro(teXParser, strArr);
-                case ks.L3 /* 236 */:
+                case 236:
                     return PredefMacros.colonminus_macro(teXParser, strArr);
                 case ks.M3 /* 237 */:
                     return PredefMacros.coloncolonminus_macro(teXParser, strArr);

@@ -1,19 +1,80 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fj;
+
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class t0 {
-    public boolean a;
-    public boolean b;
-    public float c = 1.0f;
-    public final /* synthetic */ u0 d;
+    public TextPaint a;
+    public float b;
+    public final ArrayList c;
+    public int d;
+    public float e;
+    public Object f;
+    public final Object g;
+    public Object h;
+    public final Object i;
 
-    public t0(u0 u0Var) {
-        this.d = u0Var;
+    public t0() {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        this.b = 1.0f;
+        this.f = new HashMap();
+        this.g = new RectF();
+        this.h = new RectF();
+        Paint paint = new Paint();
+        this.i = paint;
+        this.c = new ArrayList();
+        this.e = 1000.0f / org.telegram.messenger.g0.r;
+        this.d = 25;
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        textPaint.setColor(-1);
+        int o4 = bz.o();
+        if (o4 == 0) {
+            this.b = 0.25f;
+        } else if (o4 != 1) {
+            this.b = 0.75f;
+        } else {
+            this.b = 0.5f;
+        }
+        textPaint.setTextSize(org.telegram.messenger.g0.L(this.b * 24.0f));
+        paint.setColor(-1);
     }
 
-    public final void a() {
-        this.a = true;
-        this.d.F0.q();
+    public void a(CharSequence charSequence, TextPaint textPaint, int i7) {
+        v0 v0Var;
+        this.a = textPaint;
+        this.d = i7;
+        StaticLayout staticLayout = new StaticLayout(charSequence, textPaint, i7, Layout.Alignment.ALIGN_CENTER, 1.1f, 0.0f, false);
+        this.f = staticLayout;
+        v0 v0Var2 = (v0) this.i;
+        fj fjVar = v0Var2.Q0;
+        ArrayList arrayList = this.c;
+        if (fjVar == null || !fjVar.N0) {
+            v0Var = v0Var2;
+            xh.f.b(v0Var, staticLayout, -1, i7, null, arrayList);
+        } else {
+            if (arrayList != null) {
+                arrayList.clear();
+            }
+            v0Var = v0Var2;
+        }
+        this.h = org.telegram.ui.Components.x5.update(0, (View) v0Var, false, (org.telegram.ui.Components.t5) this.h, (StaticLayout) this.f);
+    }
+
+    public t0(v0 v0Var) {
+        this.i = v0Var;
+        this.c = new ArrayList();
+        this.g = new AtomicReference();
     }
 }

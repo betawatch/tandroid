@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.w71;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -484,11 +484,11 @@ public final /* synthetic */ class x0 implements Runnable {
                 c cVar = (c) this.c;
                 try {
                     if (i43 == 1) {
-                        ks.e().k(ks.R4, 1, gd.M0(2131743596, null));
+                        ks.e().k(ks.S4, 1, gd.M0(2131743596, null));
                     } else if (i43 != 2) {
                         return;
                     } else {
-                        ks.f(cVar.a).k(ks.k5, 6);
+                        ks.f(cVar.a).k(ks.l5, 6);
                     }
                     return;
                 } catch (Exception e21) {

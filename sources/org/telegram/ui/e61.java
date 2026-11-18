@@ -6,9 +6,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class e61 extends org.telegram.ui.Cells.ha {
+public final class e61 extends org.telegram.ui.Cells.ia {
     public final /* synthetic */ int r3 = 1;
     public final /* synthetic */ Object s3;
 
@@ -18,7 +18,7 @@ public final class e61 extends org.telegram.ui.Cells.ha {
         this.s3 = w4Var;
     }
 
-    @Override // org.telegram.ui.Cells.ha
+    @Override // org.telegram.ui.Cells.ia
     public void C1(org.telegram.ui.ActionBar.m6 m6Var) {
         char c10;
         String str;
@@ -84,7 +84,7 @@ public final class e61 extends org.telegram.ui.Cells.ha {
         }
     }
 
-    @Override // org.telegram.ui.Cells.ha
+    @Override // org.telegram.ui.Cells.ia
     public final void D1() {
         switch (this.r3) {
             case 0:

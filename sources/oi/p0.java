@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class p0 extends FrameLayout implements org.telegram.ui.ActionBar.c6, h9 {
+public final class p0 extends FrameLayout implements org.telegram.ui.ActionBar.c6, i9 {
     public final i6 a;
     public final bi.i3 b;
     public final AnimatedArrowDrawable c;
@@ -65,7 +65,7 @@ public final class p0 extends FrameLayout implements org.telegram.ui.ActionBar.c
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         b3 b3Var = this.h;
-        i9 textSelectionHelper = b3Var != null ? b3Var.a.getTextSelectionHelper() : null;
+        j9 textSelectionHelper = b3Var != null ? b3Var.a.getTextSelectionHelper() : null;
         if (textSelectionHelper != null) {
             if (this.d.getLayout() != null) {
                 canvas.save();
@@ -85,7 +85,7 @@ public final class p0 extends FrameLayout implements org.telegram.ui.ActionBar.c
         return this.f;
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         e1 e1Var = this.d;
         Layout layout = e1Var.getLayout();

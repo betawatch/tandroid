@@ -11,7 +11,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vx extends bk0 {
     public dw F;
@@ -375,15 +375,15 @@ public final class vx extends bk0 {
         if (f1Var.f != 0) {
             return;
         }
-        org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) f1Var.a;
+        org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) f1Var.a;
         int i10 = this.K;
         if (i10 >= 0 && i7 >= i10) {
-            h2Var.e((TLRPC.BotInlineResult) this.y.get(i7 - i10), this.n, true, false, false, true);
+            i2Var.e((TLRPC.BotInlineResult) this.y.get(i7 - i10), this.n, true, false, false, true);
             return;
         }
         TLRPC.Document document = (TLRPC.Document) this.M.j1.get(i7);
-        h2Var.getClass();
-        h2Var.d(0, "gif" + document, document);
+        i2Var.getClass();
+        i2Var.d(0, "gif" + document, document);
     }
 
     @Override // v4.i0
@@ -401,19 +401,19 @@ public final class vx extends bk0 {
                 view3.setLayoutParams(q0Var);
                 view = view3;
             } else {
-                org.telegram.ui.Cells.j8 j8Var = new org.telegram.ui.Cells.j8(this.c, false, false, ryVar.a2, ryVar.j2);
-                j8Var.a(0, org.telegram.messenger.gd.M0(2131750823, null));
+                org.telegram.ui.Cells.k8 k8Var = new org.telegram.ui.Cells.k8(this.c, false, false, ryVar.a2, ryVar.j2);
+                k8Var.a(0, org.telegram.messenger.gd.M0(2131750823, null));
                 v4.q0 q0Var2 = new v4.q0(-1, -2);
                 ((ViewGroup.MarginLayoutParams) q0Var2).topMargin = org.telegram.messenger.g0.L(2.5f);
                 ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin = org.telegram.messenger.g0.L(5.5f);
-                j8Var.setLayoutParams(q0Var2);
-                view = j8Var;
+                k8Var.setLayoutParams(q0Var2);
+                view = k8Var;
             }
         } else {
-            org.telegram.ui.Cells.h2 h2Var = new org.telegram.ui.Cells.h2(this.c);
-            h2Var.setIsKeyboard(true);
-            h2Var.setCanPreviewGif(true);
-            view = h2Var;
+            org.telegram.ui.Cells.i2 i2Var = new org.telegram.ui.Cells.i2(this.c);
+            i2Var.setIsKeyboard(true);
+            i2Var.setCanPreviewGif(true);
+            view = i2Var;
         }
         return new kj0(view);
     }

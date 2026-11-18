@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -175,10 +175,10 @@ public final /* synthetic */ class hn0 implements Runnable {
                 ksVar.n(e21Var, org.telegram.messenger.ks.Z1);
                 break;
             case 14:
-                org.telegram.ui.Cells.l1 l1Var = (org.telegram.ui.Cells.l1) this.b;
+                org.telegram.ui.Cells.m1 m1Var = (org.telegram.ui.Cells.m1) this.b;
                 TLRPC.TL_messages_transcribedAudio tL_messages_transcribedAudio = (TLRPC.TL_messages_transcribedAudio) this.c;
-                if (l1Var != null) {
-                    l1Var.h0(tL_messages_transcribedAudio.trial_remains_num > 0 ? 1 : 2);
+                if (m1Var != null) {
+                    m1Var.h0(tL_messages_transcribedAudio.trial_remains_num > 0 ? 1 : 2);
                     break;
                 }
                 break;
@@ -201,7 +201,7 @@ public final /* synthetic */ class hn0 implements Runnable {
                 }
                 if (y21Var.P1) {
                     y21Var.dismiss();
-                    org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.R4, 1, org.telegram.messenger.gd.M0(2131743709, null));
+                    org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.S4, 1, org.telegram.messenger.gd.M0(2131743709, null));
                     break;
                 } else {
                     org.telegram.messenger.f3.o(null, 2131743709, new lc((FrameLayout) y21Var.b, y21Var.J0), null);
@@ -232,7 +232,7 @@ public final /* synthetic */ class hn0 implements Runnable {
                     break;
                 }
             case 19:
-                ((l41) this.b).E.onClick((org.telegram.ui.Cells.q8) this.c);
+                ((l41) this.b).E.onClick((org.telegram.ui.Cells.r8) this.c);
                 break;
             case 20:
                 f61 f61Var = (f61) this.b;

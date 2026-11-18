@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.bb0;
 import org.telegram.ui.Components.di0;
 import org.telegram.ui.Components.ej0;
@@ -62,7 +62,7 @@ import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 import org.telegram.ui.zm;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements kt, f4, org.telegram.ui.Cells.u, pj0, org.telegram.ui.ActionBar.r1, ww, org.telegram.ui.u4, org.telegram.ui.Components.z4, xo, mc, ej0, di0, lr, ResultCallback, or, oa1 {
     public final /* synthetic */ int a;
@@ -180,9 +180,9 @@ public final /* synthetic */ class e0 implements kt, f4, org.telegram.ui.Cells.u
         org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.b;
         org.telegram.ui.k3 k3Var = (org.telegram.ui.k3) this.c;
         if (g4Var.L == null || i7 - 1 >= 0) {
-            i9 i9Var = g4Var.Q0;
-            if (i9Var != null) {
-                if (i9Var.x()) {
+            j9 j9Var = g4Var.Q0;
+            if (j9Var != null) {
+                if (j9Var.x()) {
                     g4Var.Q0.f(false);
                     return;
                 }
@@ -549,7 +549,7 @@ public final /* synthetic */ class e0 implements kt, f4, org.telegram.ui.Cells.u
         return true;
     }
 
-    public /* synthetic */ e0(db dbVar, org.telegram.ui.Cells.q1 q1Var, TLRPC.User user) {
+    public /* synthetic */ e0(db dbVar, org.telegram.ui.Cells.r1 r1Var, TLRPC.User user) {
         this.a = 8;
         this.b = dbVar;
         this.c = user;

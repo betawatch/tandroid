@@ -16,7 +16,7 @@ import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class e4 extends org.telegram.ui.ActionBar.h2 implements fs {
     public final long a;
@@ -80,7 +80,7 @@ public final class e4 extends org.telegram.ui.ActionBar.h2 implements fs {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         e51 e51Var;
-        if (i7 == ks.M3 && ((Long) objArr[0]).longValue() == this.a && (e51Var = this.c) != null && (e51Var.getAdapter() instanceof z41)) {
+        if (i7 == ks.N3 && ((Long) objArr[0]).longValue() == this.a && (e51Var = this.c) != null && (e51Var.getAdapter() instanceof z41)) {
             ((z41) this.c.getAdapter()).O(true);
         }
     }
@@ -101,13 +101,13 @@ public final class e4 extends org.telegram.ui.ActionBar.h2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.h2
     public final boolean onFragmentCreate() {
-        ks.f(this.currentAccount).c(this, ks.M3);
+        ks.f(this.currentAccount).c(this, ks.N3);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
-        ks.f(this.currentAccount).n(this, ks.M3);
+        ks.f(this.currentAccount).n(this, ks.N3);
         super.onFragmentDestroy();
     }
 }

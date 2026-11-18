@@ -82,7 +82,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.b5;
@@ -96,7 +96,7 @@ import org.telegram.ui.pl;
 import org.telegram.ui.q5;
 import org.telegram.ui.zm;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
@@ -338,14 +338,14 @@ public final /* synthetic */ class c0 implements Runnable {
             case 5:
                 h0 h0Var = (h0) this.c;
                 boolean z16 = this.b;
-                x3 x3Var = (x3) this.d;
+                y3 y3Var = (y3) this.d;
                 jg.e0 e0Var2 = (jg.e0) this.e;
                 if (z16) {
                     return;
                 }
                 h0Var.c = e0Var2;
-                x3Var.setRightText(h0Var.H(e0Var2));
-                x3Var.setRightTextMargin(6);
+                y3Var.setRightText(h0Var.H(e0Var2));
+                y3Var.setRightTextMargin(6);
                 h0Var.J.clear();
                 h0Var.d = true;
                 h0Var.f();
@@ -460,7 +460,7 @@ public final /* synthetic */ class c0 implements Runnable {
                 notificationCenter.k(2, 1);
                 i5Var.getNotificationCenter().k(25, new Object[0]);
                 if (z22) {
-                    ks.e().k(ks.R4, 1, gd.a0("DeletedFromYourContacts", null, 2131751455, str2));
+                    ks.e().k(ks.S4, 1, gd.a0("DeletedFromYourContacts", null, 2131751455, str2));
                     return;
                 }
                 return;
@@ -700,7 +700,7 @@ public final /* synthetic */ class c0 implements Runnable {
                 Object[] objArr2 = new Object[2];
                 objArr2[0] = Long.valueOf(poVar.b);
                 objArr2[c11] = poVar;
-                f11.k(ks.Q3, objArr2);
+                f11.k(ks.R3, objArr2);
                 return;
             case 21:
                 ((tr) this.c).n1((List) this.d, (List) this.e, this.b);

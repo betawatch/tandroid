@@ -5,18 +5,19 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import bi.b5;
-import bi.e5;
+import bi.a5;
+import bi.d5;
+import bi.e8;
 import bi.f8;
 import bi.g8;
-import bi.h8;
-import bi.j7;
+import bi.i7;
+import bi.i8;
 import bi.j8;
 import bi.k8;
-import bi.l8;
 import bi.o3;
 import bi.p3;
-import bi.y7;
+import bi.x7;
+import di.b5;
 import di.f6;
 import di.o8;
 import di.pb;
@@ -50,8 +51,8 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.i3;
-import org.telegram.ui.Cells.k3;
+import org.telegram.ui.Cells.j3;
+import org.telegram.ui.Cells.l3;
 import org.telegram.ui.Components.bv;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
@@ -61,7 +62,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -257,45 +258,45 @@ public final /* synthetic */ class v2 implements View.OnClickListener {
                 }
                 break;
             case 5:
-                b5 b5Var = (b5) obj2;
+                a5 a5Var = (a5) obj2;
                 x10 x10Var = (x10) obj;
-                hi.d dVar = b5Var.r1;
+                hi.d dVar = a5Var.r1;
                 if (dVar.e0 && !dVar.R) {
-                    org.telegram.messenger.g0.v1(b5Var.o1);
-                    x10Var.a(Long.valueOf(b5Var.t1));
+                    org.telegram.messenger.g0.v1(a5Var.o1);
+                    x10Var.a(Long.valueOf(a5Var.t1));
                     break;
                 }
                 break;
             case 6:
-                h8 h8Var = (h8) obj2;
-                h8Var.getClass();
-                if (((j7) obj).n > 0) {
-                    h8Var.presentFragment(new pb());
+                g8 g8Var = (g8) obj2;
+                g8Var.getClass();
+                if (((i7) obj).n > 0) {
+                    g8Var.presentFragment(new pb());
                     break;
                 }
                 break;
             case 7:
-                g8 g8Var = (g8) obj2;
-                f8 f8Var = (f8) obj;
-                y60 G2 = y60.G(g8Var.c, g8Var.J0, g8Var.W1);
-                G2.c(R.drawable.menu_sort_value, gd.M0(2131745944, null), new y7(f8Var, 3), false);
-                G2.c(R.drawable.menu_sort_date, gd.M0(2131745948, null), new y7(f8Var, 4), false);
-                G2.c(R.drawable.menu_sort_number, gd.M0(2131745946, null), new y7(f8Var, 5), false);
+                f8 f8Var = (f8) obj2;
+                e8 e8Var = (e8) obj;
+                y60 G2 = y60.G(f8Var.c, f8Var.J0, f8Var.W1);
+                G2.c(R.drawable.menu_sort_value, gd.M0(2131745944, null), new x7(e8Var, 3), false);
+                G2.c(R.drawable.menu_sort_date, gd.M0(2131745948, null), new x7(e8Var, 4), false);
+                G2.c(R.drawable.menu_sort_number, gd.M0(2131745946, null), new x7(e8Var, 5), false);
                 G2.t = false;
                 G2.b0 = true;
                 G2.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
                 G2.a0();
                 break;
             case 8:
-                l8 l8Var = (l8) obj2;
-                e5 e5Var = (e5) obj;
-                HashSet hashSet = l8Var.V1;
+                k8 k8Var = (k8) obj2;
+                d5 d5Var = (d5) obj;
+                HashSet hashSet = k8Var.V1;
                 if (!hashSet.isEmpty()) {
                     ArrayList arrayList = new ArrayList();
                     Iterator it = hashSet.iterator();
                     while (it.hasNext()) {
                         long longValue = ((Long) it.next()).longValue();
-                        ArrayList arrayList2 = l8Var.U1.l;
+                        ArrayList arrayList2 = k8Var.U1.l;
                         int size = arrayList2.size();
                         int i11 = 0;
                         while (true) {
@@ -314,15 +315,15 @@ public final /* synthetic */ class v2 implements View.OnClickListener {
                             arrayList.add(savedStarGift);
                         }
                     }
-                    e5Var.a(arrayList);
-                    l8Var.dismiss();
+                    d5Var.a(arrayList);
+                    k8Var.dismiss();
                     break;
                 }
                 break;
             case 9:
-                o8 o8Var = ((k8) obj2).c.U1;
+                o8 o8Var = ((j8) obj2).c.U1;
                 o8Var.e = !o8Var.e;
-                ((j8) obj).run();
+                ((i8) obj).run();
                 o8Var.k(true);
                 break;
             case 10:
@@ -389,7 +390,7 @@ public final /* synthetic */ class v2 implements View.OnClickListener {
                 f6 f6Var = (f6) obj2;
                 boolean z10 = !f6Var.w3;
                 f6Var.w3 = z10;
-                ((org.telegram.ui.Cells.c2) obj).c(z10, true);
+                ((org.telegram.ui.Cells.d2) obj).c(z10, true);
                 break;
             case 15:
                 vf.c.v(((f6) obj2).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj).fragment_listed_url, false);
@@ -398,10 +399,10 @@ public final /* synthetic */ class v2 implements View.OnClickListener {
                 ((f6) obj2).B2((CharSequence) obj);
                 break;
             case 17:
-                di.b5 b5Var2 = (di.b5) obj2;
+                b5 b5Var = (b5) obj2;
                 i6 i6Var = (i6) obj;
-                if (b5Var2.F.getAlpha() >= 1.0f && !b5Var2.i0 && !b5Var2.k0 && b5Var2.e0 != null) {
-                    new di.h1(b5Var2.getContext(), i6Var, b5Var2.a0, b5Var2.d0, b5Var2.e0, true).show();
+                if (b5Var.F.getAlpha() >= 1.0f && !b5Var.i0 && !b5Var.k0 && b5Var.e0 != null) {
+                    new di.h1(b5Var.getContext(), i6Var, b5Var.a0, b5Var.d0, b5Var.e0, true).show();
                     break;
                 }
                 break;
@@ -456,16 +457,16 @@ public final /* synthetic */ class v2 implements View.OnClickListener {
             case 23:
                 l7 l7Var = (l7) obj2;
                 hi.r1 r1Var = (hi.r1) obj;
-                k3 k3Var = l7Var.U1;
+                l3 l3Var = l7Var.U1;
                 try {
                     charSequence = ((ClipboardManager) l7Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(l7Var.getContext());
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
                 if (charSequence != null) {
-                    k3Var.d.setText(charSequence.toString());
-                    i3 i3Var = k3Var.d;
-                    i3Var.setSelection(0, i3Var.getText().length());
+                    l3Var.d.setText(charSequence.toString());
+                    j3 j3Var = l3Var.d;
+                    j3Var.setSelection(0, j3Var.getText().length());
                 }
                 r1Var.run();
                 break;

@@ -58,11 +58,11 @@ import org.telegram.messenger.x10;
 import org.telegram.messenger.ya;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.h9;
+import org.telegram.ui.Cells.a9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.s7;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Cells.z8;
+import org.telegram.ui.Cells.u7;
 import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.eh;
 import org.telegram.ui.Components.f61;
@@ -77,7 +77,7 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.common.api.internal.q, qi, c4.m, li.j0, l.i, n2.v, o0.a, b3.k, um0, z4, oi.g0, ya, ue.a, xm0 {
     public final /* synthetic */ int a;
@@ -221,13 +221,13 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
     @Override // ue.a
     public void M(float f10, float f11) {
         ev evVar;
-        org.telegram.ui.Cells.l1 l1Var;
+        org.telegram.ui.Cells.m1 m1Var;
         bu buVar = (bu) this.b;
         au auVar = buVar.b0;
-        if (auVar == null || (l1Var = (evVar = buVar.a).F) == null) {
+        if (auVar == null || (m1Var = (evVar = buVar.a).F) == null) {
             return;
         }
-        l1Var.k1(evVar.E, auVar.c);
+        m1Var.k1(evVar.E, auVar.c);
     }
 
     @Override // n2.v
@@ -255,7 +255,7 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
     }
 
     @Override // oi.g0
-    public i9 P0() {
+    public j9 P0() {
         l3 l3Var = ((r4) this.b).O;
         if (l3Var != null) {
             return l3Var.a.getTextSelectionHelper();
@@ -327,11 +327,11 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
             return false;
         }
         ev evVar = buVar.a;
-        org.telegram.ui.Cells.l1 l1Var = evVar.F;
-        if (l1Var == null) {
+        org.telegram.ui.Cells.m1 m1Var = evVar.F;
+        if (m1Var == null) {
             return true;
         }
-        l1Var.I1(evVar.E, auVar.c);
+        m1Var.I1(evVar.E, auVar.c);
         return true;
     }
 
@@ -347,7 +347,7 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
     }
 
     @Override // oi.g0
-    public h9 a1() {
+    public i9 a1() {
         return (r4) this.b;
     }
 
@@ -513,23 +513,23 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
             case 26:
                 return " ";
             case 27:
-                t7 t7Var = (t7) this.b;
+                u7 u7Var = (u7) this.b;
                 try {
                     StringBuilder sb2 = new StringBuilder();
-                    if (!TextUtils.isEmpty(t7Var.s)) {
-                        sb2.append(t7Var.s);
+                    if (!TextUtils.isEmpty(u7Var.s)) {
+                        sb2.append(u7Var.s);
                     }
-                    s7 s7Var = t7Var.r;
-                    if (s7Var != null && (r10Var = s7Var.e) != null) {
-                        CharSequence charSequence = (CharSequence) r10Var.g(0, Integer.valueOf(t7Var.f));
+                    t7 t7Var = u7Var.r;
+                    if (t7Var != null && (r10Var = t7Var.e) != null) {
+                        CharSequence charSequence = (CharSequence) r10Var.g(0, Integer.valueOf(u7Var.f));
                         if (!TextUtils.isEmpty(charSequence)) {
                             if (sb2.length() > 0) {
                                 sb2.append(", ");
                             }
                             sb2.append(charSequence);
                         }
-                        CharSequence charSequence2 = (CharSequence) t7Var.r.e.g(-1, Integer.valueOf(t7Var.r.b()));
-                        CharSequence charSequence3 = (CharSequence) t7Var.r.e.g(1, Integer.valueOf(t7Var.r.a()));
+                        CharSequence charSequence2 = (CharSequence) u7Var.r.e.g(-1, Integer.valueOf(u7Var.r.b()));
+                        CharSequence charSequence3 = (CharSequence) u7Var.r.e.g(1, Integer.valueOf(u7Var.r.a()));
                         if (!TextUtils.isEmpty(charSequence2) && !TextUtils.isEmpty(charSequence3)) {
                             if (sb2.length() > 0) {
                                 sb2.append(", ");
@@ -545,7 +545,7 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
                     return null;
                 } catch (Throwable th2) {
                     a8.g(th2, true);
-                    return t7Var.s;
+                    return u7Var.s;
                 }
             default:
                 StringBuilder sb3 = new StringBuilder();
@@ -691,39 +691,39 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
                     ThemeActivity themeActivity = c61Var.f.e;
                     kj0 kj0Var = (kj0) themeActivity.b.K(themeActivity.g0);
                     if (kj0Var != null) {
-                        ((z8) kj0Var.a).setText(gd.a0("AutoNightBrightnessInfo", null, 2131753792, Integer.valueOf((int) (n6.q * 100.0f))));
+                        ((a9) kj0Var.a).setText(gd.a0("AutoNightBrightnessInfo", null, 2131753792, Integer.valueOf((int) (n6.q * 100.0f))));
                     }
                     n6.F(true);
                     break;
                 }
                 break;
             case 27:
-                t7 t7Var = (t7) this.b;
-                s7 s7Var = t7Var.r;
-                if (s7Var != null && t7Var.n != null) {
-                    if (s7Var.c != null) {
+                u7 u7Var = (u7) this.b;
+                t7 t7Var = u7Var.r;
+                if (t7Var != null && u7Var.n != null) {
+                    if (t7Var.c != null) {
                         double length = f10 * (r3.length - 1);
-                        int j3 = Utilities.j((int) Math.floor(length), t7Var.r.c.length - 1, 0);
-                        int j10 = Utilities.j((int) Math.ceil(length), t7Var.r.c.length - 1, 0);
-                        int[] iArr = t7Var.r.c;
-                        round = Math.round(org.telegram.messenger.g0.W1(Math.round(((float) (length - Math.floor(length))) * t7Var.r.d) / t7Var.r.d, iArr[j3], iArr[j10]));
+                        int j3 = Utilities.j((int) Math.floor(length), u7Var.r.c.length - 1, 0);
+                        int j10 = Utilities.j((int) Math.ceil(length), u7Var.r.c.length - 1, 0);
+                        int[] iArr = u7Var.r.c;
+                        round = Math.round(org.telegram.messenger.g0.W1(Math.round(((float) (length - Math.floor(length))) * u7Var.r.d) / u7Var.r.d, iArr[j3], iArr[j10]));
                     } else {
-                        round = Math.round(((t7Var.r.a() - t7Var.r.b()) * f10) + s7Var.b());
+                        round = Math.round(((u7Var.r.a() - u7Var.r.b()) * f10) + t7Var.b());
                     }
-                    int i11 = t7Var.h;
+                    int i11 = u7Var.h;
                     if (i11 != Integer.MIN_VALUE) {
                         round = Math.max(round, i11);
                     }
-                    int i12 = t7Var.f;
+                    int i12 = u7Var.f;
                     if (i12 != round) {
-                        if (t7Var.c(i12) != t7Var.c(round)) {
-                            org.telegram.messenger.g0.a4(t7Var.e);
+                        if (u7Var.c(i12) != u7Var.c(round)) {
+                            org.telegram.messenger.g0.a4(u7Var.e);
                         }
-                        t7Var.f = round;
-                        t7Var.e(round, true);
-                        x10 x10Var = t7Var.n;
+                        u7Var.f = round;
+                        u7Var.e(round, true);
+                        x10 x10Var = u7Var.n;
                         if (x10Var != null) {
-                            x10Var.a(Integer.valueOf(t7Var.f));
+                            x10Var.a(Integer.valueOf(u7Var.f));
                             break;
                         }
                     }
@@ -804,14 +804,14 @@ public final class g1 implements h1, og.n, tg.c, d61, com.google.android.gms.com
             case 26:
                 return 0;
             case 27:
-                s7 s7Var = ((t7) this.b).r;
-                if (s7Var == null) {
+                t7 t7Var = ((u7) this.b).r;
+                if (t7Var == null) {
                     return 0;
                 }
-                if (s7Var.c == null) {
-                    return s7Var.a() - s7Var.b();
+                if (t7Var.c == null) {
+                    return t7Var.a() - t7Var.b();
                 }
-                return s7Var.d * (r1.length - 1);
+                return t7Var.d * (r1.length - 1);
             default:
                 return 0;
         }

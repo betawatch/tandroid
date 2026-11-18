@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zd implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class zd implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         rj rjVar;
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         org.telegram.messenger.fj messageObject;
         int i7 = this.a;
         int i10 = 5;
@@ -115,10 +115,10 @@ public final /* synthetic */ class zd implements Runnable {
                 int childCount = bnVar.A0.getChildCount();
                 for (int i11 = 0; i11 < childCount; i11++) {
                     View childAt = bnVar.A0.getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.q1) {
-                        org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) childAt;
-                        if (q1Var2.getMessageObject().D == 4) {
-                            q1Var2.H1();
+                    if (childAt instanceof org.telegram.ui.Cells.r1) {
+                        org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) childAt;
+                        if (r1Var2.getMessageObject().D == 4) {
+                            r1Var2.H1();
                         }
                     }
                 }
@@ -209,11 +209,11 @@ public final /* synthetic */ class zd implements Runnable {
                         int childCount2 = bnVar.A0.getChildCount();
                         for (int i13 = 0; i13 < childCount2; i13++) {
                             View childAt2 = bnVar.A0.getChildAt(i13);
-                            if ((childAt2 instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt2).getMessageObject()) != null && messageObject.P3() && messageObject.q4()) {
+                            if ((childAt2 instanceof org.telegram.ui.Cells.r1) && (messageObject = (r1Var = (org.telegram.ui.Cells.r1) childAt2).getMessageObject()) != null && messageObject.P3() && messageObject.q4()) {
                                 org.telegram.ui.Components.pp ppVar3 = bnVar.K2;
                                 int[] iArr = (int[]) ppVar3.Z0;
                                 if (ppVar3.getParent() instanceof View) {
-                                    q1Var.getLocationInWindow(iArr);
+                                    r1Var.getLocationInWindow(iArr);
                                     int i14 = iArr[0];
                                     int i15 = iArr[1];
                                     ((View) ppVar3.getParent()).getLocationInWindow(iArr);
@@ -223,7 +223,7 @@ public final /* synthetic */ class zd implements Runnable {
                                             mh0Var.N(0, false, false);
                                             mh0Var.start();
                                         }
-                                        ppVar3.y(org.telegram.messenger.g0.L(5.0f) + q1Var.getChecksX() + (i14 - iArr[0]), f10 + q1Var.getChecksY() + org.telegram.messenger.g0.L(6.0f), true);
+                                        ppVar3.y(org.telegram.messenger.g0.L(5.0f) + r1Var.getChecksX() + (i14 - iArr[0]), f10 + r1Var.getChecksY() + org.telegram.messenger.g0.L(6.0f), true);
                                         bnVar.getMessagesController().s4(0L, "NEWCOMER_TICKS");
                                         break;
                                     }

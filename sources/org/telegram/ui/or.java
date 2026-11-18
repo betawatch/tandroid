@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class or extends org.telegram.ui.Cells.m8 {
+public final class or extends org.telegram.ui.Cells.n8 {
     public final /* synthetic */ int a0 = 1;
     public final /* synthetic */ Object b0;
 
@@ -18,7 +18,7 @@ public final class or extends org.telegram.ui.Cells.m8 {
         this.b0 = qrVar;
     }
 
-    @Override // org.telegram.ui.Cells.m8
+    @Override // org.telegram.ui.Cells.n8
     public int e(int i7) {
         switch (this.a0) {
             case 2:
@@ -30,7 +30,7 @@ public final class or extends org.telegram.ui.Cells.m8 {
         return i7;
     }
 
-    @Override // org.telegram.ui.Cells.m8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Cells.n8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         switch (this.a0) {
             case 0:
@@ -57,7 +57,7 @@ public final class or extends org.telegram.ui.Cells.m8 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.m8, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Cells.n8, android.widget.FrameLayout, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.a0) {
             case 0:

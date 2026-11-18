@@ -3,10 +3,10 @@ package v4;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.h60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -31,11 +31,11 @@ public final /* synthetic */ class e implements ValueAnimator.AnimatorUpdateList
                 h60Var.getClass();
                 drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 View view = ((ug.i1) h60Var.c).w2;
-                if (!(view instanceof q1)) {
+                if (!(view instanceof r1)) {
                     view.invalidate();
                     break;
                 } else {
-                    ((q1) view).q2();
+                    ((r1) view).q2();
                     break;
                 }
         }

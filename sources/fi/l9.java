@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class l9 extends ReplacementSpan {
     public View a;
@@ -52,8 +52,8 @@ public final class l9 extends ReplacementSpan {
         return spannableStringBuilder == null ? str : spannableStringBuilder;
     }
 
-    public final void b(org.telegram.ui.Cells.u0 u0Var) {
-        this.a = u0Var;
+    public final void b(org.telegram.ui.Cells.v0 v0Var) {
+        this.a = v0Var;
         this.n = false;
     }
 

@@ -38,18 +38,18 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.t9;
+import org.telegram.ui.Cells.j9;
+import org.telegram.ui.Cells.u9;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.eh0;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.m6;
 import org.telegram.ui.Components.mk0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class z5 extends FrameLayout implements org.telegram.ui.ActionBar.c6, h9 {
+public final class z5 extends FrameLayout implements org.telegram.ui.ActionBar.c6, i9 {
     public static final /* synthetic */ int b0 = 0;
     public w5 E;
     public boolean F;
@@ -1038,15 +1038,15 @@ public final class z5 extends FrameLayout implements org.telegram.ui.ActionBar.c
             }
         }
         w5 w5Var = this.E;
-        i9 textSelectionHelper = w5Var != null ? ((c3) w5Var).a.getTextSelectionHelper() : null;
+        j9 textSelectionHelper = w5Var != null ? ((c3) w5Var).a.getTextSelectionHelper() : null;
         if (textSelectionHelper != null) {
             ArrayList arrayList = this.r;
             arrayList.clear();
             k(arrayList);
             for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                t9 t9Var = (t9) arrayList.get(i15);
+                u9 u9Var = (u9) arrayList.get(i15);
                 canvas2.save();
-                canvas2.translate(t9Var.getX(), t9Var.getY());
+                canvas2.translate(u9Var.getX(), u9Var.getY());
                 textSelectionHelper.Z(canvas2, this, i15);
                 canvas2.restore();
             }
@@ -1378,7 +1378,7 @@ public final class z5 extends FrameLayout implements org.telegram.ui.ActionBar.c
         e1Var.setSelection(e1Var.length());
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         Layout layout;
         e1 e1Var = this.f;

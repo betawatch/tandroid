@@ -12,11 +12,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.e51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h1 extends h2 {
     public final CharSequence a;
@@ -111,7 +111,7 @@ public final class h1 extends h2 {
             if (this.n != null) {
                 for (int i7 = 0; i7 < this.n.getChildCount(); i7++) {
                     View childAt = this.n.getChildAt(i7);
-                    if ((childAt instanceof r8) && ((r8) childAt).b == -1) {
+                    if ((childAt instanceof s8) && ((s8) childAt).b == -1) {
                         u6.h(this.r ? n6.f6 : n6.e6, childAt, null);
                     }
                 }

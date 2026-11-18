@@ -50,10 +50,10 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.i41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class u0 {
     public static volatile u0[] R = new u0[4];
@@ -1043,7 +1043,7 @@ public final class u0 {
     }
 
     public final void T() {
-        ks.f(this.a).k(ks.c4, this);
+        ks.f(this.a).k(ks.d4, this);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(22:215|216|(4:218|219|220|(6:222|(2:224|(1:226))|227|95|(2:97|98)(8:99|(1:101)(4:181|(2:183|(1:207)(7:189|(1:193)|194|(1:205)(1:200)|201|202|(1:204)))|210|211)|(1:103)|104|(3:106|(1:108)(1:167)|(6:110|(3:112|(1:114)|115)|116|(1:118)|119|120)(13:121|(3:123|(2:125|(3:132|133|134)(1:141))|144)|145|(1:147)|148|(1:150)(1:166)|151|(1:165)(1:155)|156|(1:158)|(1:162)|163|164))(1:180)|169|(2:171|(1:(2:173|(2:175|176)(1:177))(2:178|179)))(0)|(0)(0))|84))(1:417)|228|229|230|231|232|233|234|235|(3:237|(7:241|(3:246|(2:248|249)(2:250|(2:255|(2:257|258)(1:259)))|245)|243|244|245|238|239)|260)(1:406)|261|(1:403)(1:278)|(1:402)(4:282|283|284|(5:286|(5:(1:300)(1:396)|301|(2:303|(1:305))(1:395)|306|(1:308)(29:309|310|311|312|313|314|(2:319|(3:321|322|323)(2:328|329))|330|(1:332)(1:391)|333|(1:335)(3:388|389|390)|(1:337)(1:387)|338|(2:382|383)(1:(1:381)(1:343))|344|(1:348)|(1:350)(1:380)|351|(3:355|(3:358|(2:360|361)(1:377)|356)|378)|379|362|(1:364)(1:376)|365|(2:374|375)(2:369|370)|371|(3:373|(0)(0)|84)|327|(0)(0)|84))|95|(0)(0)|84))|397|(0)|(0)(0)|301|(0)(0)|306|(0)(0)) */
@@ -2401,7 +2401,7 @@ public final class u0 {
         } catch (Exception e10) {
             o("emulateDepositNFT: invalid payload", e10);
             org.telegram.messenger.g0.g3(new w(q10Var, e10, 1));
-            return new cd0(8);
+            return new dd0(8);
         }
     }
 
@@ -2423,7 +2423,7 @@ public final class u0 {
         }
         performapirequest.payload = jSONObject.toString();
         int i10 = this.a;
-        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(i7), new bi.m6(this, str, x10Var), mp.u1(i10).Q3, 0);
+        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(i7), new bi.l6(this, str, x10Var), mp.u1(i10).Q3, 0);
     }
 
     public final Runnable l(p0 p0Var, q10 q10Var) {
@@ -2434,7 +2434,7 @@ public final class u0 {
         } catch (Exception e10) {
             o("emulatePreparedMessage: invalid message", e10);
             org.telegram.messenger.g0.g3(new w(q10Var, e10, 0));
-            return new cd0(8);
+            return new dd0(8);
         }
     }
 

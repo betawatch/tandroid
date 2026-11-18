@@ -46,14 +46,14 @@ import org.telegram.ui.f61;
 import org.telegram.ui.hq0;
 import org.telegram.ui.ii;
 import org.telegram.ui.js;
-import org.telegram.ui.ld0;
 import org.telegram.ui.ls;
+import org.telegram.ui.md0;
 import org.telegram.ui.ns;
 import org.telegram.ui.sy0;
 import org.telegram.ui.x71;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -93,12 +93,12 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
         int i10 = 1;
         switch (this.a) {
             case 0:
-                org.telegram.ui.Cells.c2 c2Var = (org.telegram.ui.Cells.c2) this.b;
-                org.telegram.ui.Cells.c2 c2Var2 = (org.telegram.ui.Cells.c2) this.c;
-                org.telegram.ui.Cells.c2 c2Var3 = (org.telegram.ui.Cells.c2) this.d;
+                org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) this.b;
+                org.telegram.ui.Cells.d2 d2Var2 = (org.telegram.ui.Cells.d2) this.c;
+                org.telegram.ui.Cells.d2 d2Var3 = (org.telegram.ui.Cells.d2) this.d;
                 b0 b0Var = (b0) this.e;
                 org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) this.f;
-                b0Var.a(Boolean.valueOf(c2Var.b()), Boolean.valueOf(c2Var2.b()), Boolean.valueOf(c2Var3.b()));
+                b0Var.a(Boolean.valueOf(d2Var.b()), Boolean.valueOf(d2Var2.b()), Boolean.valueOf(d2Var3.b()));
                 x2Var.dismiss();
                 break;
             case 1:
@@ -488,17 +488,17 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 }
                 break;
             case 14:
-                ld0 ld0Var = (ld0) this.b;
+                md0 md0Var = (md0) this.b;
                 f5.m mVar = (f5.m) this.c;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) this.d;
                 String str7 = (String) this.e;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) this.f;
-                hi.d dVar2 = ld0Var.b;
+                hi.d dVar2 = md0Var.b;
                 if (!dVar2.R) {
                     dVar2.setLoading(true);
-                    org.telegram.ui.r3 r3Var7 = new org.telegram.ui.r3(ld0Var, 12);
+                    org.telegram.ui.r3 r3Var7 = new org.telegram.ui.r3(md0Var, 12);
                     org.telegram.messenger.a8.b("LoginBilling, querying done purchases...");
-                    org.telegram.messenger.r1.i().p("inapp", new di.l6(ld0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new n20(ld0Var, mVar, r3Var7, tL_inputStorePaymentAuthCode, 28)));
+                    org.telegram.messenger.r1.i().p("inapp", new di.l6(md0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new n20(md0Var, mVar, r3Var7, tL_inputStorePaymentAuthCode, 28)));
                     break;
                 }
                 break;

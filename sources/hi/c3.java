@@ -7,14 +7,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.xc0;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.a80;
+import org.telegram.ui.b80;
 import org.telegram.ui.cn0;
 import org.telegram.ui.mm;
 import org.telegram.ui.mn;
 import org.telegram.ui.rn;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class c3 implements RequestDelegate {
             case 10:
                 cn0 cn0Var = (cn0) this.c;
                 if (tLObject != null) {
-                    org.telegram.messenger.g0.g3(new a80(cn0Var, tLObject, this.b, 4));
+                    org.telegram.messenger.g0.g3(new b80(cn0Var, tLObject, this.b, 4));
                     break;
                 }
                 break;
@@ -95,7 +95,7 @@ public final /* synthetic */ class c3 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new yn(this.c, (Object) tL_error, (Object) tLObject, this.b, 14));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new a80((WallpapersListActivity) this.c, tLObject, this.b, 13));
+                org.telegram.messenger.g0.g3(new b80((WallpapersListActivity) this.c, tLObject, this.b, 13));
                 break;
         }
     }

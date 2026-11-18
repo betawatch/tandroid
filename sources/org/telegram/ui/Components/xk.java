@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xk extends ki implements org.telegram.messenger.fs {
     public float A0;
@@ -142,7 +142,7 @@ public final class xk extends ki implements org.telegram.messenger.fs {
         r0Var.setBackground(h02);
         org.telegram.ui.ActionBar.u6.j(r0Var, h02, null, M, i6Var);
         int i12 = 11;
-        r0Var.setOnClickListener(new bi.f5(this, i6Var, i7, i12));
+        r0Var.setOnClickListener(new bi.e5(this, i6Var, i7, i12));
         org.telegram.ui.Wallet.g9 g9Var = new org.telegram.ui.Wallet.g9(context, new mg(i12, this, user), new mg(12, this, i6Var), i6Var);
         this.w = g9Var;
         g9Var.a(this.H, user);
@@ -531,7 +531,7 @@ public final class xk extends ki implements org.telegram.messenger.fs {
         frameLayout5.addView(g10, c8.ma.e(-1, 48, 87));
         frameLayout.addView(frameLayout4, c8.ma.d(-1, 92.0f, 87, 0.0f, 0.0f, 0.0f, 70.0f));
         o0(false, false);
-        org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.c4);
+        org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.d4);
         j0();
         this.J = true;
         org.telegram.ui.Wallet.u0.D(i7).j0(user, new qk(this, 0));
@@ -1096,7 +1096,7 @@ public final class xk extends ki implements org.telegram.messenger.fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.c4) {
+        if (i7 == org.telegram.messenger.ks.d4) {
             boolean z10 = this.i0;
             i0();
             if (z10 != this.i0) {
@@ -1587,7 +1587,7 @@ public final class xk extends ki implements org.telegram.messenger.fs {
             mVar.run();
             this.j0 = null;
         }
-        org.telegram.messenger.ks.f(this.n).n(this, org.telegram.messenger.ks.c4);
+        org.telegram.messenger.ks.f(this.n).n(this, org.telegram.messenger.ks.d4);
         this.b.V2.t().removeView(this.x);
         org.telegram.messenger.g0.v1(this.T);
     }

@@ -9,7 +9,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class j10 extends c1 {
     public static int t0;
@@ -173,8 +173,8 @@ public final class j10 extends c1 {
                         case 0:
                             j10 j10Var = this.b;
                             j10Var.getMessagesController().y5(user2.premium);
-                            ks.f(j10Var.currentAccount).k(ks.h5, new Object[0]);
-                            ks.e().k(ks.j5, new Object[0]);
+                            ks.f(j10Var.currentAccount).k(ks.i5, new Object[0]);
+                            ks.e().k(ks.k5, new Object[0]);
                             j10Var.getMediaDataController().U0(false);
                             j10Var.getMediaDataController().V0(false, null);
                             fi.p6 R1 = j10Var.getMessagesController().R1();
@@ -184,7 +184,7 @@ public final class j10 extends c1 {
                         default:
                             j10 j10Var2 = this.b;
                             j10Var2.getMessagesController().y5(user2.premium);
-                            ks.f(j10Var2.currentAccount).k(ks.h5, new Object[0]);
+                            ks.f(j10Var2.currentAccount).k(ks.i5, new Object[0]);
                             j10Var2.getMediaDataController().U0(true);
                             break;
                     }
@@ -205,8 +205,8 @@ public final class j10 extends c1 {
                         case 0:
                             j10 j10Var = this.b;
                             j10Var.getMessagesController().y5(user2.premium);
-                            ks.f(j10Var.currentAccount).k(ks.h5, new Object[0]);
-                            ks.e().k(ks.j5, new Object[0]);
+                            ks.f(j10Var.currentAccount).k(ks.i5, new Object[0]);
+                            ks.e().k(ks.k5, new Object[0]);
                             j10Var.getMediaDataController().U0(false);
                             j10Var.getMediaDataController().V0(false, null);
                             fi.p6 R1 = j10Var.getMessagesController().R1();
@@ -216,7 +216,7 @@ public final class j10 extends c1 {
                         default:
                             j10 j10Var2 = this.b;
                             j10Var2.getMessagesController().y5(user2.premium);
-                            ks.f(j10Var2.currentAccount).k(ks.h5, new Object[0]);
+                            ks.f(j10Var2.currentAccount).k(ks.i5, new Object[0]);
                             j10Var2.getMediaDataController().U0(true);
                             break;
                     }

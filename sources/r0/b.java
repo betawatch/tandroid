@@ -12,9 +12,9 @@ import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class b {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
@@ -25,10 +25,10 @@ public class b {
         this(c);
     }
 
-    public b5 a(View view) {
+    public c5 a(View view) {
         AccessibilityNodeProvider accessibilityNodeProvider = this.a.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
-            return new b5(accessibilityNodeProvider);
+            return new c5(accessibilityNodeProvider);
         }
         return null;
     }

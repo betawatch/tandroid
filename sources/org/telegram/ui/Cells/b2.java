@@ -2,136 +2,136 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.widget.TextView;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.i00;
-import org.telegram.ui.Components.i41;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.ad;
+import android.graphics.drawable.ShapeDrawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.bf0;
+import org.telegram.ui.Components.df0;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.x90;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class b2 extends k80 {
-    public final /* synthetic */ int M;
-    public final /* synthetic */ Object N;
+public final class b2 extends org.telegram.ui.Components.n6 {
+    public final /* synthetic */ int s;
+    public Object w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b2(int i7, Context context, Object obj) {
-        super(context, null);
-        this.M = i7;
-        this.N = obj;
+    public /* synthetic */ b2(Context context, boolean z10, boolean z11, boolean z12) {
+        super(context, z10, z11, z12);
+        this.s = 3;
     }
 
-    @Override // org.telegram.ui.Components.k80
-    public int a() {
-        switch (this.M) {
-            case 4:
-                return ((UndoView) this.N).a;
-            default:
-                return super.a();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.k80
-    public int c() {
-        switch (this.M) {
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.s) {
             case 1:
-                Integer num = ((z8) this.N).d;
-                if (num == null) {
-                    break;
-                } else {
+                super.invalidate();
+                bf0 bf0Var = (bf0) this.w;
+                df0 df0Var = bf0Var.d;
+                if (bf0Var == df0Var.m1.getPinnedHeader()) {
+                    df0Var.m1.invalidate();
                     break;
                 }
+                break;
+            default:
+                super.invalidate();
+                break;
         }
-        return super.c();
     }
 
-    @Override // org.telegram.ui.Components.k80, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.n6, android.view.View
     public void onDraw(Canvas canvas) {
-        switch (this.M) {
+        int r12;
+        switch (this.s) {
             case 0:
                 super.onDraw(canvas);
-                ((c2) this.N).f();
-                break;
-            case 1:
-                z8 z8Var = (z8) this.N;
-                z8Var.b();
-                super.onDraw(canvas);
-                z8Var.a();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v0, types: [android.widget.TextView, java.lang.Object, org.telegram.ui.Cells.b2, org.telegram.ui.Components.k80] */
-    /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v2, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v4, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r8v5, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v7, types: [android.text.SpannableStringBuilder] */
-    @Override // org.telegram.ui.Components.k80, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.M) {
-            case 0:
-                super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                ((d2) this.w).f();
                 break;
             case 1:
             default:
-                super.setText(charSequence, bufferType);
+                super.onDraw(canvas);
                 break;
             case 2:
-                if (charSequence != 0) {
-                    charSequence = org.telegram.messenger.g0.W2(charSequence.toString());
-                    int indexOf = charSequence.toString().indexOf(10);
-                    if (indexOf >= 0) {
-                        charSequence.replace(indexOf, indexOf + 1, " ");
-                        charSequence.setSpan(new i00(org.telegram.ui.ActionBar.n6.p7, ((org.telegram.ui.ka) this.N).e.getResourceProvider()), 0, indexOf, 33);
-                    }
-                    i41[] i41VarArr = (i41[]) charSequence.getSpans(0, charSequence.length(), i41.class);
-                    for (int i7 = 0; i7 < i41VarArr.length; i7++) {
-                        charSequence.setSpan(new hi.ia(this, 2), charSequence.getSpanStart(i41VarArr[i7]), charSequence.getSpanEnd(i41VarArr[i7]), 33);
-                        charSequence.removeSpan(i41VarArr[i7]);
-                    }
-                }
-                super.setText(charSequence, bufferType);
+                canvas.save();
+                canvas.translate(org.telegram.messenger.g0.L(15.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(11.0f));
+                ((l51) this.w).b.draw(canvas);
+                canvas.restore();
                 break;
             case 3:
-                ad adVar = (ad) this.N;
-                if (charSequence != 0) {
-                    charSequence = org.telegram.messenger.g0.W2(charSequence.toString());
-                    int indexOf2 = charSequence.toString().indexOf(10);
-                    if (indexOf2 >= 0) {
-                        charSequence.replace(indexOf2, indexOf2 + 1, " ");
-                        charSequence.setSpan(new i00(org.telegram.ui.ActionBar.n6.p7, adVar.getResourceProvider()), 0, indexOf2, 33);
-                    }
-                    i41[] i41VarArr2 = (i41[]) charSequence.getSpans(0, charSequence.length(), i41.class);
-                    EditTextBoldCursor editTextBoldCursor = adVar.y;
-                    String obj = (editTextBoldCursor == null || editTextBoldCursor.getText() == null) ? "" : adVar.y.getText().toString();
-                    for (int i10 = 0; i10 < i41VarArr2.length; i10++) {
-                        charSequence.setSpan(new h(4, (Object) this, obj), charSequence.getSpanStart(i41VarArr2[i10]), charSequence.getSpanEnd(i41VarArr2[i10]), 33);
-                        charSequence.removeSpan(i41VarArr2[i10]);
-                    }
+                ShapeDrawable shapeDrawable = (ShapeDrawable) this.w;
+                if (shapeDrawable != null && shapeDrawable.getPaint().getColor() != (r12 = org.telegram.ui.ActionBar.n6.r1(0.15f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.L6, false)))) {
+                    shapeDrawable.getPaint().setColor(r12);
                 }
-                super.setText(charSequence, bufferType);
+                shapeDrawable.setBounds(0, 0, (int) (getDrawable().c() + getPaddingLeft() + getPaddingRight()), getMeasuredHeight());
+                shapeDrawable.draw(canvas);
+                super.onDraw(canvas);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b2(z8 z8Var, Context context, n2.o0 o0Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, o0Var, i6Var);
-        this.M = 1;
-        this.N = z8Var;
+    @Override // org.telegram.ui.Components.n6, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.s) {
+            case 4:
+                x90 x90Var = (x90) this.w;
+                int size = View.MeasureSpec.getSize(i7);
+                if (size <= 0) {
+                    size = org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(20.0f);
+                }
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - x90Var.d.getPaint().measureText(x90Var.d.getText().toString())) - x90Var.f.getPaint().measureText(x90Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(24.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean post(Runnable runnable) {
+        switch (this.s) {
+            case 1:
+                df0 df0Var = ((bf0) this.w).d;
+                p8 p8Var = df0.M1;
+                return df0Var.b.post(runnable);
+            default:
+                return super.post(runnable);
+        }
+    }
+
+    @Override // android.view.View
+    public boolean postDelayed(Runnable runnable, long j3) {
+        switch (this.s) {
+            case 1:
+                df0 df0Var = ((bf0) this.w).d;
+                p8 p8Var = df0.M1;
+                return df0Var.b.postDelayed(runnable, j3);
+            default:
+                return super.postDelayed(runnable, j3);
+        }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b2(UndoView undoView, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var);
-        this.M = 4;
-        this.N = undoView;
+    public /* synthetic */ b2(FrameLayout frameLayout, Context context, int i7) {
+        super(context, false, false, false);
+        this.s = i7;
+        this.w = frameLayout;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(l51 l51Var, Context context) {
+        super(context, true, true, true);
+        this.s = 2;
+        this.w = l51Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(x90 x90Var, Context context) {
+        super(context, false, true, true);
+        this.s = 4;
+        this.w = x90Var;
     }
 }

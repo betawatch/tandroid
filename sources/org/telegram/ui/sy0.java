@@ -20,7 +20,7 @@ import java.util.Set;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class sy0 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public static boolean s;
@@ -43,7 +43,7 @@ public final class sy0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     public static void Z(sy0 sy0Var, View view, int i7) {
         org.telegram.messenger.s00 s00Var;
         ArrayList arrayList;
-        if (sy0Var.getParentActivity() == null || sy0Var.parentLayout == null || !(view instanceof org.telegram.ui.Cells.s8)) {
+        if (sy0Var.getParentActivity() == null || sy0Var.parentLayout == null || !(view instanceof org.telegram.ui.Cells.t8)) {
             return;
         }
         int i10 = 0;
@@ -409,7 +409,7 @@ public final class sy0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ks.A4 || this.a == null) {
+        if (i7 != org.telegram.messenger.ks.B4 || this.a == null) {
             return;
         }
         c0();
@@ -437,7 +437,7 @@ public final class sy0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.c7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.r4.class}, new String[]{"checkImage"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Di));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.s4.class}, new String[]{"checkImage"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Di));
         return arrayList;
     }
 
@@ -452,14 +452,14 @@ public final class sy0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         this.r = d0();
         c0();
         org.telegram.messenger.gd.E0().V0(this.currentAccount, true);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.A4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.B4);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.A4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.B4);
     }
 
     @Override // org.telegram.ui.ActionBar.h2

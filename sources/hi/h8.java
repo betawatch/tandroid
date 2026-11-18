@@ -15,7 +15,7 @@ import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.kv0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class h8 extends rg.b {
     public final Context d;
@@ -158,28 +158,28 @@ public final class h8 extends rg.b {
             }
         }
         if (i12 == 6) {
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
             if (z7Var.e == null) {
-                z8Var.setFixedSize(12);
-                z8Var.setText(null);
+                a9Var.setFixedSize(12);
+                a9Var.setText(null);
                 return;
             } else {
-                z8Var.setFixedSize(0);
-                z8Var.setText(z7Var.e);
+                a9Var.setFixedSize(0);
+                a9Var.setText(z7Var.e);
                 return;
             }
         }
         if (i12 == 7) {
             int i16 = z7Var.c;
             if (i16 == 0) {
-                ((org.telegram.ui.Cells.m8) view).l(z7Var.e, q8Var.x1, z11);
+                ((org.telegram.ui.Cells.n8) view).l(z7Var.e, q8Var.x1, z11);
                 return;
             } else if (i16 == 1) {
-                ((org.telegram.ui.Cells.m8) view).l(z7Var.e, q8Var.y1, z11);
+                ((org.telegram.ui.Cells.n8) view).l(z7Var.e, q8Var.y1, z11);
                 return;
             } else {
                 if (i16 == 2) {
-                    ((org.telegram.ui.Cells.m8) view).l(z7Var.e, q8Var.w1, z11);
+                    ((org.telegram.ui.Cells.n8) view).l(z7Var.e, q8Var.w1, z11);
                     return;
                 }
                 return;
@@ -188,57 +188,57 @@ public final class h8 extends rg.b {
         if (i12 == 9) {
             Drawable drawable = z7Var.d;
             if (drawable != null) {
-                ((org.telegram.ui.Cells.m8) view).v(z7Var.e, drawable, z11);
+                ((org.telegram.ui.Cells.n8) view).v(z7Var.e, drawable, z11);
                 return;
             } else {
-                ((org.telegram.ui.Cells.m8) view).q(z7Var.e, z7Var.f, false, z11);
+                ((org.telegram.ui.Cells.n8) view).q(z7Var.e, z7Var.f, false, z11);
                 return;
             }
         }
         if (i12 == 8) {
-            ((org.telegram.ui.Cells.n4) view).setText(z7Var.e);
+            ((org.telegram.ui.Cells.o4) view).setText(z7Var.e);
             return;
         }
         if (i12 == 10) {
             int i17 = q8.Y1;
             int i18 = (int) mp.u1(q8Var.a).L6;
-            int[] a10 = org.telegram.ui.Cells.t7.a(new int[]{0, 1, 10, 50, 100, ks.e3, ks.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, i18);
+            int[] a10 = org.telegram.ui.Cells.u7.a(new int[]{0, 1, 10, 50, 100, ks.e3, ks.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, i18);
             int j3 = Utilities.j(q8Var.C1, i18, 0);
             g0.e eVar = new g0.e(29);
-            org.telegram.ui.Cells.s7 s7Var = new org.telegram.ui.Cells.s7();
-            s7Var.c = a10;
-            s7Var.d = 20;
-            s7Var.e = eVar;
-            ((org.telegram.ui.Cells.t7) view).d(j3, s7Var, new t6(this, i15));
+            org.telegram.ui.Cells.t7 t7Var = new org.telegram.ui.Cells.t7();
+            t7Var.c = a10;
+            t7Var.d = 20;
+            t7Var.e = eVar;
+            ((org.telegram.ui.Cells.u7) view).d(j3, t7Var, new t6(this, i15));
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View t7Var;
-        org.telegram.ui.Cells.m8 m8Var;
+        View u7Var;
+        org.telegram.ui.Cells.n8 n8Var;
         View view;
         Context context = this.d;
         if (i7 == -1) {
-            t7Var = new k8(context);
+            u7Var = new k8(context);
         } else if (i7 == 0) {
-            t7Var = new View(context);
-            t7Var.setTag(35);
+            u7Var = new View(context);
+            u7Var.setTag(35);
         } else if (i7 == 1) {
-            t7Var = new View(context);
-            t7Var.setTag(34);
+            u7Var = new View(context);
+            u7Var.setTag(34);
         } else {
             org.telegram.ui.ActionBar.i6 i6Var = this.e;
             if (i7 == 3) {
-                t7Var = new p8(context, i6Var);
+                u7Var = new p8(context, i6Var);
             } else {
                 if (i7 == 4) {
                     view = new x7(context, i6Var, true);
                 } else if (i7 == 11) {
-                    t7Var = new x7(context, i6Var, false);
+                    u7Var = new x7(context, i6Var, false);
                 } else if (i7 == 8) {
-                    t7Var = new org.telegram.ui.Cells.n4(context, i6Var);
-                    org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, t7Var, i6Var);
+                    u7Var = new org.telegram.ui.Cells.o4(context, i6Var);
+                    org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, u7Var, i6Var);
                 } else if (i7 == 5) {
                     kv0 kv0Var = new kv0(context, null, 1, i6Var);
                     kv0Var.d.setText(gd.M0(2131747975, null));
@@ -246,23 +246,23 @@ public final class h8 extends rg.b {
                     kv0Var.a.setTranslationY(org.telegram.messenger.g0.L(24.0f));
                     view = kv0Var;
                 } else if (i7 == 6) {
-                    t7Var = new org.telegram.ui.Cells.z8(context, i6Var);
-                    t7Var.setBackgroundColor(-15921907);
+                    u7Var = new org.telegram.ui.Cells.a9(context, i6Var);
+                    u7Var.setBackgroundColor(-15921907);
                 } else {
                     if (i7 == 7) {
-                        m8Var = new org.telegram.ui.Cells.m8(23, this.d, this.e, true, true);
+                        n8Var = new org.telegram.ui.Cells.n8(23, this.d, this.e, true, true);
                     } else if (i7 == 9) {
-                        m8Var = new org.telegram.ui.Cells.m8(23, this.d, this.e, true, false);
+                        n8Var = new org.telegram.ui.Cells.n8(23, this.d, this.e, true, false);
                     } else if (i7 == 10) {
-                        t7Var = new org.telegram.ui.Cells.t7(context, i6Var);
+                        u7Var = new org.telegram.ui.Cells.u7(context, i6Var);
                     } else {
                         view = new jn(context, 1);
                     }
-                    t7Var = m8Var;
+                    u7Var = n8Var;
                 }
-                t7Var = view;
+                u7Var = view;
             }
         }
-        return new kj0(t7Var);
+        return new kj0(u7Var);
     }
 }

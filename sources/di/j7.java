@@ -21,11 +21,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.n31;
 import org.telegram.ui.UserInfoActivity;
-import org.telegram.ui.l90;
+import org.telegram.ui.m90;
 import org.telegram.ui.p51;
-import org.telegram.ui.r90;
+import org.telegram.ui.s90;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,22 +85,22 @@ public final /* synthetic */ class j7 implements Runnable {
                 TLObject tLObject2 = (TLObject) this.b;
                 f5.m mVar2 = (f5.m) this.c;
                 f5.f fVar2 = (f5.f) this.d;
-                bi.c8 c8Var = (bi.c8) this.n;
+                bi.b8 b8Var = (bi.b8) this.n;
                 Activity activity2 = (Activity) this.e;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) this.r;
                 List list2 = (List) this.f;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
                 if (!(tLObject2 instanceof TLRPC.TL_boolTrue)) {
                     if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
-                        c8Var.a(Boolean.FALSE, tL_error2 != null ? tL_error2.text : "SERVER_ERROR");
+                        b8Var.a(Boolean.FALSE, tL_error2 != null ? tL_error2.text : "SERVER_ERROR");
                         break;
                     } else {
-                        c8Var.a(Boolean.FALSE, "PURCHASE_FORBIDDEN");
+                        b8Var.a(Boolean.FALSE, "PURCHASE_FORBIDDEN");
                         break;
                     }
                 } else {
-                    org.telegram.messenger.r1.i().d(mVar2.c, new d7(0, fVar2, c8Var));
-                    org.telegram.messenger.r1.i().h = new e7(c8Var, 2);
+                    org.telegram.messenger.r1.i().d(mVar2.c, new d7(0, fVar2, b8Var));
+                    org.telegram.messenger.r1.i().h = new e7(b8Var, 2);
                     org.telegram.messenger.r1 i10 = org.telegram.messenger.r1.i();
                     org.telegram.messenger.c a11 = org.telegram.messenger.c.a(j10.t0);
                     wf.b bVar2 = new wf.b(17, false);
@@ -144,7 +144,7 @@ public final /* synthetic */ class j7 implements Runnable {
                 xs.l0.c(new fn(notificationsController, arrayList, hVar, arrayList2, values, 14));
                 break;
             case 4:
-                r90 r90Var = (r90) this.b;
+                s90 s90Var = (s90) this.b;
                 org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) this.c;
                 String str3 = (String) this.d;
                 String str4 = (String) this.n;
@@ -153,12 +153,12 @@ public final /* synthetic */ class j7 implements Runnable {
                 String str7 = (String) this.f;
                 String str8 = (String) this.h;
                 org.telegram.ui.Wallet.l2 l2Var = u0Var.g;
-                l90 l90Var = new l90(r90Var, str8, 1);
+                m90 m90Var = new m90(s90Var, str8, 1);
                 l2Var.getClass();
                 TL_wallet.tonConnectCreateSession tonconnectcreatesession = new TL_wallet.tonConnectCreateSession();
                 tonconnectcreatesession.dapp_client_id = str3;
                 tonconnectcreatesession.manifest_url = str4;
-                l2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new s1(l2Var, l90Var, str5, str4, str6, str7, 1));
+                l2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new s1(l2Var, m90Var, str5, str4, str6, str7, 1));
                 break;
             case 5:
                 UserInfoActivity.d0((UserInfoActivity) this.c, (TLRPC.TL_error) this.h, (TLObject) this.b, (TL_account.TL_birthday) this.d, (TLRPC.UserFull) this.n, (TLObject) this.e, (int[]) this.r, (ArrayList) this.f);

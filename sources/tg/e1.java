@@ -21,7 +21,7 @@ import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.ph0;
 import org.telegram.ui.Components.yg;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class e1 extends FrameLayout implements fs {
     public static final List x = Arrays.asList(new b1(0, 1, 20, 0), new b1(0, 2, 20, 40), new b1(1, 0, 0, 20), new b1(1, 2, 60, 40), new b1(2, 0, 40, 20), new b1(2, 1, 40, 60));
@@ -299,7 +299,7 @@ public final class e1 extends FrameLayout implements fs {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         String str;
-        if (i7 != ks.E5 || (str = this.w) == null) {
+        if (i7 != ks.F5 || (str = this.w) == null) {
             return;
         }
         setTypeface(str);
@@ -335,13 +335,13 @@ public final class e1 extends FrameLayout implements fs {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.e().c(this, ks.E5);
+        ks.e().c(this, ks.F5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.e().n(this, ks.E5);
+        ks.e().n(this, ks.F5);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

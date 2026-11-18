@@ -7,16 +7,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b50 implements org.telegram.ui.Components.pj0, ma0 {
+public final /* synthetic */ class b50 implements org.telegram.ui.Components.pj0, na0 {
     public final /* synthetic */ f50 a;
 
     public /* synthetic */ b50(f50 f50Var) {
         this.a = f50Var;
     }
 
-    @Override // org.telegram.ui.ma0
+    @Override // org.telegram.ui.na0
     public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
         f50 f50Var = this.a;
         Location location = f50Var.V;
@@ -32,18 +32,18 @@ public final /* synthetic */ class b50 implements org.telegram.ui.Components.pj0
 
     @Override // org.telegram.ui.Components.pj0
     public void f(float f10, float f11, int i7, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.w9;
+        boolean z10 = view instanceof org.telegram.ui.Cells.x9;
         f50 f50Var = this.a;
         if (z10) {
             if (!org.telegram.messenger.g0.J1(f50Var)) {
                 return;
             }
-            pa0 pa0Var = new pa0(4);
-            pa0Var.m0 = 0L;
-            pa0Var.M0 = new b50(f50Var);
-            f50Var.presentFragment(pa0Var);
+            qa0 qa0Var = new qa0(4);
+            qa0Var.m0 = 0L;
+            qa0Var.M0 = new b50(f50Var);
+            f50Var.presentFragment(qa0Var);
         }
-        if (!(view instanceof org.telegram.ui.Cells.m8) || f50Var.Q == 5) {
+        if (!(view instanceof org.telegram.ui.Cells.n8) || f50Var.Q == 5) {
             return;
         }
         org.telegram.ui.ActionBar.h1 h1Var = f50Var.x;

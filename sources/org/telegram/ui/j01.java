@@ -14,7 +14,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j01 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public ShapeDrawable E;
@@ -525,14 +525,14 @@ public final class j01 extends FrameLayout implements org.telegram.ui.ActionBar.
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         r11 r11Var = this.H;
-        hh0 hh0Var = r11Var.h0;
+        ih0 ih0Var = r11Var.h0;
         j01 j01Var = r11Var.g0;
         s01 s01Var = r11Var.V;
         if (s01Var != null) {
             int measuredWidth = getMeasuredWidth();
             int measuredHeight = getMeasuredHeight();
-            float x10 = hh0Var.getX() + j01Var.getX();
-            float y10 = hh0Var.getY() + j01Var.getY();
+            float x10 = ih0Var.getX() + j01Var.getX();
+            float y10 = ih0Var.getY() + j01Var.getY();
             ab.g gVar = (ab.g) s01Var;
             ch.b0 b0Var = (ch.b0) gVar.b;
             ch.a0 a0Var = b0Var.a;

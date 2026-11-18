@@ -5,9 +5,9 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class co extends org.telegram.ui.Cells.z8 {
+public final class co extends org.telegram.ui.Cells.a9 {
     public final /* synthetic */ jo E;
     public ValueAnimator x;
     public int y;
@@ -59,11 +59,11 @@ public final class co extends org.telegram.ui.Cells.z8 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.Object, org.telegram.ui.Cells.z8, org.telegram.ui.co] */
+    /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.Object, org.telegram.ui.Cells.a9, org.telegram.ui.co] */
     /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r8v3, types: [android.text.SpannableStringBuilder] */
-    @Override // org.telegram.ui.Cells.z8
+    @Override // org.telegram.ui.Cells.a9
     public final void setText(CharSequence charSequence) {
         org.telegram.ui.ActionBar.i6 i6Var;
         if (charSequence != 0) {

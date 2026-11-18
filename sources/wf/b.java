@@ -94,10 +94,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import s4.z;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, j2.g, n, ja.a {
     public static volatile b d;
@@ -366,7 +366,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     }
 
     public boolean M() {
-        return ((a) ((md0) this.b).d) != null;
+        return ((a) ((nd0) this.b).d) != null;
     }
 
     public void N(boolean z10, boolean z11, float f10) {
@@ -427,8 +427,8 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
         y3 y3Var2;
         int i7;
         Log.d("CAST_CONTROLLER", "set current media");
-        md0 md0Var = (md0) this.b;
-        y3 y3Var3 = (y3) md0Var.c;
+        nd0 nd0Var = (nd0) this.b;
+        y3 y3Var3 = (y3) nd0Var.c;
         if (f.u()) {
             if (y3Var3 == null && y3Var == null) {
                 return;
@@ -445,23 +445,23 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
                 }
             }
         }
-        if (((a) md0Var.d) != null && y3Var != null) {
-            md0Var.j(y3Var);
+        if (((a) nd0Var.d) != null && y3Var != null) {
+            nd0Var.j(y3Var);
         }
-        if (((a) md0Var.d) != null && (y3Var2 = (y3) md0Var.c) != null) {
-            md0Var.F(y3Var2);
+        if (((a) nd0Var.d) != null && (y3Var2 = (y3) nd0Var.c) != null) {
+            nd0Var.F(y3Var2);
         }
-        if (y3Var != null && y3Var.a.size() > 0 && !y3Var.j(0).a.startsWith("audio/") && (dVar = (d) md0Var.b) != null) {
+        if (y3Var != null && y3Var.a.size() > 0 && !y3Var.j(0).a.startsWith("audio/") && (dVar = (d) nd0Var.b) != null) {
             dVar.l(null, null);
         }
-        a aVar = (a) md0Var.d;
+        a aVar = (a) nd0Var.d;
         if (aVar != null && y3Var != null) {
             aVar.d = y3Var;
             aVar.g = 0;
             aVar.h = 0;
             aVar.p();
         }
-        md0Var.c = y3Var;
+        nd0Var.c = y3Var;
     }
 
     public void R(f5.m mVar) {
@@ -476,7 +476,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     }
 
     public void S(g6.c cVar) {
-        md0 md0Var = (md0) this.b;
+        nd0 nd0Var = (nd0) this.b;
         if (cVar == null) {
             return;
         }
@@ -486,9 +486,9 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
         if (TextUtils.isEmpty(a10) || hVar == null) {
             return;
         }
-        a aVar = (a) md0Var.d;
+        a aVar = (a) nd0Var.d;
         if (aVar == null || !TextUtils.equals(aVar.c.a(), a10)) {
-            md0Var.I(new a(cVar, (g6.g) this.c, hVar));
+            nd0Var.I(new a(cVar, (g6.g) this.c, hVar));
             q6.m.e("Must be called from the main thread.");
             CastDevice castDevice = cVar.k;
             String str = castDevice != null ? castDevice.d : null;
@@ -794,7 +794,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     @Override // g6.h
     public void k(g6.f fVar, int i7) {
         Log.d("CAST_SESSION", "onSessionEnded " + ((g6.c) fVar).a() + " " + i7);
-        ((md0) this.b).I(null);
+        ((nd0) this.b).I(null);
     }
 
     @Override // g6.h
@@ -1241,7 +1241,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
                 } catch (RemoteException e10) {
                     g6.g.c.a(e10, "Unable to call %s on %s.", "addCastStateListener", g6.y.class.getSimpleName());
                 }
-                this.b = new md0(23, z10);
+                this.b = new nd0(23, z10);
                 g6.g b10 = c10.b();
                 this.c = b10;
                 b10.a(this);

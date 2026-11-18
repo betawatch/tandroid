@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nd implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class nd implements Runnable {
                 }
                 break;
             case 1:
-                ((bi.y4) obj).a(Long.valueOf(j3));
+                ((bi.x4) obj).a(Long.valueOf(j3));
                 break;
             default:
                 az azVar = (az) obj;
@@ -64,7 +64,7 @@ public final /* synthetic */ class nd implements Runnable {
                     azVar.b = j3;
                     azVar.d = true;
                 }
-                ks.e().k(ks.D4, azVar);
+                ks.e().k(ks.E4, azVar);
                 break;
         }
     }

@@ -37,7 +37,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mh0;
 import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class z5 extends FrameLayout {
     public float A0;
@@ -906,7 +906,7 @@ public class z5 extends FrameLayout {
                 textView.setStateListAnimator(null);
             } else if (starGift.resell_amount != null && !f6.P1(j10.t0, starGift)) {
                 this.O = true;
-                boolean m10 = bi.v4.m(starGift);
+                boolean m10 = bi.u4.m(starGift);
                 cg.b bVar = cg.b.b;
                 if (m10 && starGift.fixed_sale) {
                     resellAmount = starGift.getResellAmount(bVar);

@@ -1,84 +1,110 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import org.telegram.messenger.bp;
-import org.telegram.messenger.cp;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.ui.Components.lr;
+import android.view.View;
+import android.view.animation.PathInterpolator;
+import org.telegram.messenger.ri;
+import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class z9 extends q1 {
-    public final org.telegram.ui.Components.f5 Ad;
-    public final org.telegram.ui.Components.f5 Bd;
-    public final /* synthetic */ int Cd;
-    public final /* synthetic */ aa Dd;
-    public final GestureDetector zd;
+public final class z9 extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z9(aa aaVar, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, Context context2, int i10) {
-        super(context, i7, false, null, i6Var);
-        this.Dd = aaVar;
-        this.Cd = i10;
-        this.zd = new GestureDetector(context2, new y9(0, this));
-        lr lrVar = lr.g;
-        this.Ad = new org.telegram.ui.Components.f5(this, 180L, lrVar, 0);
-        this.Bd = new org.telegram.ui.Components.f5(this, 180L, lrVar, 0);
+    public /* synthetic */ z9(int i7, View view) {
+        this.a = i7;
+        this.b = view;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int w02;
-        int w03;
-        fj messageObject = getMessageObject();
-        org.telegram.ui.Components.f5 f5Var = this.Bd;
-        org.telegram.ui.Components.f5 f5Var2 = this.Ad;
-        org.telegram.ui.Components.b9 b9Var = this.B7;
-        if (messageObject == null || getMessageObject().e1 < 0) {
-            f5Var2.a(b9Var.b(), false);
-            f5Var.a(b9Var.c(), false);
-        } else {
-            int i7 = getMessageObject().e1;
-            if (i7 >= 14) {
-                cp cpVar = mp.u1(j10.t0).t4;
-                bp d = cpVar != null ? cpVar.d(i7) : null;
-                if (d != null) {
-                    int f10 = d.f();
-                    w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.p8[org.telegram.ui.Components.b9.f(f10)], this.Qb);
-                    w03 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.q8[org.telegram.ui.Components.b9.f(f10)], this.Qb);
-                } else {
-                    long j3 = i7;
-                    w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.p8[org.telegram.ui.Components.b9.e(j3)], this.Qb);
-                    w03 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.q8[org.telegram.ui.Components.b9.e(j3)], this.Qb);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public boolean onDoubleTap(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                aa aaVar = (aa) this.b;
+                int i7 = aaVar.a6;
+                boolean z10 = false;
+                if (aaVar.Cd == 2 && ri.d0(i7).S() != null) {
+                    boolean H5 = aaVar.getMessageObject().H5(ch.p0.b(ri.d0(i7).S()), false);
+                    aaVar.y3(aaVar.getMessageObject(), null, false, false, false, false);
+                    aaVar.requestLayout();
+                    ch.l0.b(false);
+                    z10 = true;
+                    if (H5) {
+                        ba baVar = aaVar.Dd;
+                        ch.l0.d(baVar.x, null, baVar.n[1], null, motionEvent.getX(), motionEvent.getY(), ch.p0.b(ri.d0(i7).S()), aaVar.a6, 0);
+                        ch.l0.f();
+                    }
+                    aaVar.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.i1(this, 1));
                 }
-            } else {
-                long j10 = i7;
-                w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.p8[org.telegram.ui.Components.b9.e(j10)], this.Qb);
-                w03 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.q8[org.telegram.ui.Components.b9.e(j10)], this.Qb);
-            }
-            b9Var.i(f5Var2.a(w02, false), f5Var.a(w03, false));
+                return z10;
+            default:
+                return super.onDoubleTap(motionEvent);
         }
-        if (getAvatarImage() != null && getAvatarImage().O0 != 0.0f) {
-            getAvatarImage().y0(getAvatarImage().L0, (getMeasuredHeight() - getAvatarImage().O0) - org.telegram.messenger.g0.L(4.0f), getAvatarImage().N0, getAvatarImage().O0);
-            getAvatarImage().J0((int) (getAvatarImage().O0 / 2.0f));
-            getAvatarImage().h(canvas, null);
-        } else if (this.Cd == 2) {
-            invalidate();
-        }
-        super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.Dd.a()) {
-            return super.onTouchEvent(motionEvent);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public boolean onDown(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                vg.e eVar = (vg.e) this.b;
+                eVar.n = true;
+                eVar.b();
+                return true;
+            case 2:
+                return true;
+            default:
+                return super.onDown(motionEvent);
         }
-        this.zd.onTouchEvent(motionEvent);
-        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        switch (this.a) {
+            case 1:
+                vg.f fVar = ((vg.e) this.b).a;
+                fVar.d -= f10 * 0.5f;
+                fVar.i -= f11 * 0.05f;
+                return true;
+            default:
+                return super.onScroll(motionEvent, motionEvent2, f10, f11);
+        }
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        int i7 = this.a;
+        View view = this.b;
+        switch (i7) {
+            case 1:
+                vg.e eVar = (vg.e) view;
+                vg.f fVar = eVar.a;
+                if (Math.abs(fVar.d) <= 10.0f) {
+                    float max = Math.max(1.0f, eVar.getWidth() / 2.0f);
+                    float x10 = ((max - motionEvent.getX()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
+                    float y10 = ((max - motionEvent.getY()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
+                    eVar.b();
+                    float f10 = fVar.d;
+                    float f11 = fVar.i;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    eVar.d = ofFloat;
+                    ofFloat.setDuration(220L);
+                    eVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
+                    eVar.d.addUpdateListener(new hi.h6(this, f10, x10, f11, y10, 2));
+                    eVar.d.addListener(new k71(this, 21));
+                    eVar.d.start();
+                    break;
+                }
+                break;
+            case 2:
+                zh.j jVar = (zh.j) view;
+                if (!jVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (jVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= jVar.e.f.getRight() || jVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= jVar.e.f.getBottom())) {
+                    jVar.e.e(false);
+                }
+                break;
+        }
+        return super.onSingleTapUp(motionEvent);
     }
 }

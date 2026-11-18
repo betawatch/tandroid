@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l61 implements org.telegram.messenger.jc, org.telegram.ui.Components.pj0, org.telegram.ui.Components.i71, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -23,13 +23,13 @@ public final /* synthetic */ class l61 implements org.telegram.messenger.jc, org
 
     @Override // org.telegram.ui.Components.pj0
     public void f(float f10, float f11, int i7, View view) {
-        if (view instanceof org.telegram.ui.Cells.q1) {
-            org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-            boolean E2 = q1Var.E2(f10);
+        if (view instanceof org.telegram.ui.Cells.r1) {
+            org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) view;
+            boolean E2 = r1Var.E2(f10);
             x71 x71Var = this.b;
             if (!E2) {
                 x71Var.d1(2, true);
-            } else if (q1Var.getMessageObject().P3()) {
+            } else if (r1Var.getMessageObject().P3()) {
                 x71Var.d1(3, true);
             } else {
                 x71Var.d1(1, true);

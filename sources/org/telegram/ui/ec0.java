@@ -1,65 +1,1376 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ec0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gc0 b;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.Timer;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ ec0(gc0 gc0Var, int i7) {
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* loaded from: classes3.dex */
+public final class ec0 extends org.telegram.ui.Components.fu0 {
+    public boolean E;
+    public int F;
+    public int G;
+    public String H;
+    public String I;
+    public String J;
+    public String K;
+    public String L;
+    public Bundle M;
+    public boolean N;
+    public Timer O;
+    public final Object P;
+    public int Q;
+    public double R;
+    public boolean S;
+    public Bundle T;
+    public TLRPC.TL_auth_sentCode U;
+    public final cc0 V;
+    public final cc0 W;
+    public final int a;
+    public float a0;
+    public final org.telegram.ui.Components.xb0 b;
+    public final /* synthetic */ ee0 b0;
+    public final ah.i c;
+    public final eb0 d;
+    public final TextView e;
+    public final TextView f;
+    public final org.telegram.ui.Components.ph0 h;
+    public final TextView n;
+    public final TextView r;
+    public final TextView s;
+    public final fd0 w;
+    public boolean x;
+    public boolean y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0141  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02d8  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x032f  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0333  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x02dc  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0072  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ec0(ee0 ee0Var, Context context, int i7) {
+        super(context);
+        boolean z10;
+        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.i6 i6Var2;
+        org.telegram.ui.ActionBar.i6 i6Var3;
+        this.b0 = ee0Var;
+        final int i10 = 1;
+        this.x = true;
+        final int i11 = 0;
+        this.y = false;
+        this.E = false;
+        this.P = new Object();
+        this.Q = 60000;
+        this.V = new cc0(this, 1);
+        this.W = new cc0(this, 2);
+        this.a0 = -3.0f;
         this.a = i7;
-        this.b = gc0Var;
+        boolean z11 = i7 != 16;
+        setOrientation(1);
+        org.telegram.ui.Components.ph0 ph0Var = new org.telegram.ui.Components.ph0(context);
+        this.h = ph0Var;
+        ph0Var.setScaleType(ImageView.ScaleType.CENTER);
+        ph0Var.f(R.raw.bubble, 95, 95, null);
+        if (!org.telegram.messenger.g0.O1()) {
+            Point point = org.telegram.messenger.g0.q;
+            if (point.x <= point.y || org.telegram.messenger.g0.Q1()) {
+                z10 = false;
+                ph0Var.setVisibility(!z10 ? 8 : 0);
+                addView(ph0Var, c8.ma.t(95, 95, 1, 0, 10, 0, 5));
+                TextView textView = new TextView(context);
+                this.n = textView;
+                textView.setTextSize(1, 18.0f);
+                textView.setTypeface(org.telegram.messenger.g0.o());
+                textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+                textView.setGravity(49);
+                textView.setText(org.telegram.messenger.gd.M0(z11 ? 2131745755 : 2131745763, null));
+                addView(textView, c8.ma.t(-2, -2, 1, 8, !z10 ? 25 : 0, 8, 0));
+                TextView textView2 = new TextView(context);
+                this.r = textView2;
+                textView2.setTextSize(1, 14.0f);
+                textView2.setGravity(1);
+                textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+                addView(textView2, c8.ma.t(-2, -2, 1, 8, 5, 8, 16));
+                org.telegram.ui.Components.xb0 xb0Var = new org.telegram.ui.Components.xb0(context, null);
+                this.b = xb0Var;
+                xb0Var.setText(org.telegram.messenger.gd.M0(z11 ? 2131745762 : 2131745770, null));
+                ah.i iVar = new ah.i(9, context, this);
+                this.c = iVar;
+                iVar.setSingleLine();
+                iVar.setLines(1);
+                iVar.setCursorSize(org.telegram.messenger.g0.L(20.0f));
+                iVar.setCursorWidth(1.5f);
+                iVar.setImeOptions(268435461);
+                iVar.setTextSize(1, 18.0f);
+                iVar.setMaxLines(1);
+                iVar.setBackground(null);
+                iVar.setHint(org.telegram.messenger.gd.M0(z11 ? 2131745758 : 2131745766, null));
+                iVar.addTextChangedListener(new org.telegram.ui.Cells.k3(this));
+                iVar.setEllipsizeByGradient(true);
+                iVar.setInputType(1);
+                iVar.setTypeface(Typeface.DEFAULT);
+                int i12 = 5;
+                iVar.setGravity(!org.telegram.messenger.gd.a0 ? 5 : 3);
+                iVar.setOnFocusChangeListener(new ed(this, i12));
+                TextView textView3 = new TextView(context);
+                this.s = textView3;
+                textView3.setTextSize(1, 12.0f);
+                textView3.setTypeface(org.telegram.messenger.g0.o());
+                textView3.setText(org.telegram.messenger.gd.M0(2131747242, null));
+                textView3.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
+                textView3.setGravity(17);
+                int i13 = org.telegram.ui.ActionBar.n6.o6;
+                i6Var = ((org.telegram.ui.ActionBar.h2) ee0Var).resourceProvider;
+                int w02 = org.telegram.ui.ActionBar.n6.w0(i13, i6Var);
+                i6Var2 = ((org.telegram.ui.ActionBar.h2) ee0Var).resourceProvider;
+                org.telegram.ui.ActionBar.u6.U(textView3, i13, i6Var2);
+                int L = org.telegram.messenger.g0.L(6.0f);
+                int r12 = org.telegram.ui.ActionBar.n6.r1(0.12f, w02);
+                int r13 = org.telegram.ui.ActionBar.n6.r1(0.15f, w02);
+                org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.n6.k0(L, L, L, L, r12, r13, r13);
+                org.telegram.ui.ActionBar.q6 K = org.telegram.ui.ActionBar.u6.K(0.12f, i13);
+                org.telegram.ui.ActionBar.q6 K2 = org.telegram.ui.ActionBar.u6.K(0.15f, i13);
+                i6Var3 = ((org.telegram.ui.ActionBar.h2) ee0Var).resourceProvider;
+                textView3.setBackground(k02);
+                org.telegram.ui.ActionBar.u6.j(textView3, k02, K, K2, i6Var3);
+                c8.ra.b(textView3, 0.1f, 1.5f);
+                iVar.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(13.34f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(13.34f));
+                textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.dc0
+                    public final /* synthetic */ ec0 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        int i14;
+                        int i15;
+                        TLRPC.TL_auth_sentCode tL_auth_sentCode;
+                        int i16 = i11;
+                        CharSequence charSequence = null;
+                        final int i17 = 0;
+                        final ec0 ec0Var = this.b;
+                        final int i18 = 1;
+                        switch (i16) {
+                            case 0:
+                                ah.i iVar2 = ec0Var.c;
+                                try {
+                                    charSequence = ((ClipboardManager) ec0Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ec0Var.getContext());
+                                } catch (Exception e10) {
+                                    org.telegram.messenger.a8.g(e10, true);
+                                }
+                                if (charSequence != null) {
+                                    Editable text = iVar2.getText();
+                                    ec0Var.E = true;
+                                    if (text != null) {
+                                        int max = Math.max(0, iVar2.getSelectionStart());
+                                        text.replace(max, Math.max(max, iVar2.getSelectionEnd()), charSequence);
+                                    }
+                                }
+                                ec0Var.p(true);
+                                break;
+                            case 1:
+                                ec0Var.c(true);
+                                break;
+                            default:
+                                ee0 ee0Var2 = ec0Var.b0;
+                                fd0 fd0Var = ec0Var.w;
+                                if (ec0Var.Q <= 0 || ec0Var.O == null) {
+                                    Bundle bundle = ec0Var.T;
+                                    if (bundle != null && (tL_auth_sentCode = ec0Var.U) != null) {
+                                        ee0Var2.y1(bundle, tL_auth_sentCode, true);
+                                        break;
+                                    } else {
+                                        int i19 = ec0Var.F;
+                                        if (i19 != 4 && i19 != 2 && i19 != 11 && i19 != 15) {
+                                            if (i19 == 3) {
+                                                org.telegram.messenger.g0.C3(false);
+                                                if (!ec0Var.S && !ec0Var.N && !ee0Var2.r0) {
+                                                    ec0Var.N = true;
+                                                    fd0Var.invalidate();
+                                                    org.telegram.ui.ActionBar.u6.U(fd0Var, org.telegram.ui.ActionBar.n6.I6, null);
+                                                    final Bundle bundle2 = new Bundle();
+                                                    bundle2.putString("phone", ec0Var.K);
+                                                    bundle2.putString("ephone", ec0Var.J);
+                                                    bundle2.putString("phoneFormated", ec0Var.H);
+                                                    ec0Var.S = true;
+                                                    TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                                    tL_auth_resendCode.phone_number = ec0Var.H;
+                                                    tL_auth_resendCode.phone_code_hash = ec0Var.I;
+                                                    i15 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                                    ee0Var2.F1(ConnectionsManager.getInstance(i15).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                        @Override // org.telegram.tgnet.RequestDelegate
+                                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                            switch (i18) {
+                                                                case 0:
+                                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle2, tL_error));
+                                                                    break;
+                                                                default:
+                                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle2, tLObject));
+                                                                    break;
+                                                            }
+                                                        }
+                                                    }, 10), true);
+                                                    break;
+                                                }
+                                            }
+                                        } else {
+                                            ec0Var.N = true;
+                                            fd0Var.invalidate();
+                                            org.telegram.ui.ActionBar.u6.U(fd0Var, org.telegram.ui.ActionBar.n6.I6, null);
+                                            fd0Var.setTextSize(1, 15.0f);
+                                            int i20 = ec0Var.F;
+                                            if (i20 == 4 || i20 == 11) {
+                                                fd0Var.setText(org.telegram.messenger.gd.M0(2131752586, null));
+                                            } else {
+                                                fd0Var.setText(org.telegram.messenger.gd.M0(2131745382, null));
+                                            }
+                                            final Bundle bundle3 = new Bundle();
+                                            bundle3.putString("phone", ec0Var.K);
+                                            bundle3.putString("ephone", ec0Var.J);
+                                            bundle3.putString("phoneFormated", ec0Var.H);
+                                            bundle3.putInt("prevType", ec0Var.a);
+                                            TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
+                                            tL_auth_resendCode2.phone_number = ec0Var.H;
+                                            tL_auth_resendCode2.phone_code_hash = ec0Var.I;
+                                            i14 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                            ConnectionsManager.getInstance(i14).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                @Override // org.telegram.tgnet.RequestDelegate
+                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                    switch (i17) {
+                                                        case 0:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle3, tL_error));
+                                                            break;
+                                                        default:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle3, tLObject));
+                                                            break;
+                                                    }
+                                                }
+                                            }, 10);
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                xb0Var.addView(iVar, c8.ma.d(-1, -2.0f, org.telegram.messenger.ks.E1, 0.0f, 0.0f, 0.0f, 0.0f));
+                xb0Var.e(iVar);
+                xb0Var.addView(textView3, c8.ma.d(-2, 26.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
+                LinearLayout linearLayout = new LinearLayout(context);
+                linearLayout.setOrientation(1);
+                linearLayout.addView(xb0Var, c8.ma.r(-1, -2, 1));
+                addView(linearLayout, c8.ma.t(-1, -2, 1, 16, 3, 16, 0));
+                iVar.setOnEditorActionListener(new fa(this, 6));
+                FrameLayout frameLayout = new FrameLayout(context);
+                linearLayout.addView(frameLayout, c8.ma.o(-1, -2));
+                eb0 eb0Var = new eb0(ee0Var, context);
+                this.d = eb0Var;
+                int i14 = org.telegram.ui.ActionBar.n6.I6;
+                org.telegram.ui.ActionBar.u6.G(eb0Var, i14, null);
+                org.telegram.ui.ActionBar.u6.U(eb0Var, i14, ee0Var.getResourceProvider());
+                eb0Var.setTextSize(1, 14.0f);
+                eb0Var.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+                eb0Var.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(16.0f));
+                eb0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.dc0
+                    public final /* synthetic */ ec0 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        int i142;
+                        int i15;
+                        TLRPC.TL_auth_sentCode tL_auth_sentCode;
+                        int i16 = i10;
+                        CharSequence charSequence = null;
+                        final int i17 = 0;
+                        final ec0 ec0Var = this.b;
+                        final int i18 = 1;
+                        switch (i16) {
+                            case 0:
+                                ah.i iVar2 = ec0Var.c;
+                                try {
+                                    charSequence = ((ClipboardManager) ec0Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ec0Var.getContext());
+                                } catch (Exception e10) {
+                                    org.telegram.messenger.a8.g(e10, true);
+                                }
+                                if (charSequence != null) {
+                                    Editable text = iVar2.getText();
+                                    ec0Var.E = true;
+                                    if (text != null) {
+                                        int max = Math.max(0, iVar2.getSelectionStart());
+                                        text.replace(max, Math.max(max, iVar2.getSelectionEnd()), charSequence);
+                                    }
+                                }
+                                ec0Var.p(true);
+                                break;
+                            case 1:
+                                ec0Var.c(true);
+                                break;
+                            default:
+                                ee0 ee0Var2 = ec0Var.b0;
+                                fd0 fd0Var = ec0Var.w;
+                                if (ec0Var.Q <= 0 || ec0Var.O == null) {
+                                    Bundle bundle = ec0Var.T;
+                                    if (bundle != null && (tL_auth_sentCode = ec0Var.U) != null) {
+                                        ee0Var2.y1(bundle, tL_auth_sentCode, true);
+                                        break;
+                                    } else {
+                                        int i19 = ec0Var.F;
+                                        if (i19 != 4 && i19 != 2 && i19 != 11 && i19 != 15) {
+                                            if (i19 == 3) {
+                                                org.telegram.messenger.g0.C3(false);
+                                                if (!ec0Var.S && !ec0Var.N && !ee0Var2.r0) {
+                                                    ec0Var.N = true;
+                                                    fd0Var.invalidate();
+                                                    org.telegram.ui.ActionBar.u6.U(fd0Var, org.telegram.ui.ActionBar.n6.I6, null);
+                                                    final Bundle bundle2 = new Bundle();
+                                                    bundle2.putString("phone", ec0Var.K);
+                                                    bundle2.putString("ephone", ec0Var.J);
+                                                    bundle2.putString("phoneFormated", ec0Var.H);
+                                                    ec0Var.S = true;
+                                                    TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                                    tL_auth_resendCode.phone_number = ec0Var.H;
+                                                    tL_auth_resendCode.phone_code_hash = ec0Var.I;
+                                                    i15 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                                    ee0Var2.F1(ConnectionsManager.getInstance(i15).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                        @Override // org.telegram.tgnet.RequestDelegate
+                                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                            switch (i18) {
+                                                                case 0:
+                                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle2, tL_error));
+                                                                    break;
+                                                                default:
+                                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle2, tLObject));
+                                                                    break;
+                                                            }
+                                                        }
+                                                    }, 10), true);
+                                                    break;
+                                                }
+                                            }
+                                        } else {
+                                            ec0Var.N = true;
+                                            fd0Var.invalidate();
+                                            org.telegram.ui.ActionBar.u6.U(fd0Var, org.telegram.ui.ActionBar.n6.I6, null);
+                                            fd0Var.setTextSize(1, 15.0f);
+                                            int i20 = ec0Var.F;
+                                            if (i20 == 4 || i20 == 11) {
+                                                fd0Var.setText(org.telegram.messenger.gd.M0(2131752586, null));
+                                            } else {
+                                                fd0Var.setText(org.telegram.messenger.gd.M0(2131745382, null));
+                                            }
+                                            final Bundle bundle3 = new Bundle();
+                                            bundle3.putString("phone", ec0Var.K);
+                                            bundle3.putString("ephone", ec0Var.J);
+                                            bundle3.putString("phoneFormated", ec0Var.H);
+                                            bundle3.putInt("prevType", ec0Var.a);
+                                            TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
+                                            tL_auth_resendCode2.phone_number = ec0Var.H;
+                                            tL_auth_resendCode2.phone_code_hash = ec0Var.I;
+                                            i142 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                            ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                @Override // org.telegram.tgnet.RequestDelegate
+                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                    switch (i17) {
+                                                        case 0:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle3, tL_error));
+                                                            break;
+                                                        default:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle3, tLObject));
+                                                            break;
+                                                    }
+                                                }
+                                            }, 10);
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                addView(eb0Var, c8.ma.t(-2, -2, 1, 0, 18, 0, 0));
+                eb0Var.setVisibility(8);
+                TextView textView4 = new TextView(context);
+                this.e = textView4;
+                textView4.setPivotX(0.0f);
+                textView4.setPivotY(0.0f);
+                textView4.setText(org.telegram.messenger.gd.M0(z11 ? 2131745759 : 2131745767, null));
+                org.telegram.ui.ActionBar.u6.U(textView4, org.telegram.ui.ActionBar.n6.p7, ee0Var.getResourceProvider());
+                textView4.setTextSize(1, 13.0f);
+                frameLayout.addView(textView4, c8.ma.d(-1, -2.0f, org.telegram.messenger.ks.E1, 16.0f, 8.0f, 16.0f, 8.0f));
+                textView4.setAlpha(0.0f);
+                textView4.setScaleX(0.8f);
+                textView4.setScaleY(0.8f);
+                textView4.setTranslationY(-org.telegram.messenger.g0.L(4.0f));
+                TextView textView5 = new TextView(context);
+                this.f = textView5;
+                textView5.setPivotX(0.0f);
+                textView5.setPivotY(0.0f);
+                textView5.setText(org.telegram.messenger.gd.M0(z11 ? 2131745757 : 2131745765, null));
+                org.telegram.ui.ActionBar.u6.U(textView5, org.telegram.ui.ActionBar.n6.y6, ee0Var.getResourceProvider());
+                textView5.setTextSize(1, 13.0f);
+                frameLayout.addView(textView5, c8.ma.d(-1, -2.0f, org.telegram.messenger.ks.E1, 16.0f, 8.0f, 16.0f, 8.0f));
+                fd0 fd0Var = new fd0(this, context);
+                this.w = fd0Var;
+                org.telegram.ui.ActionBar.u6.G(fd0Var, i14, null);
+                fd0Var.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+                fd0Var.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(16.0f));
+                fd0Var.setTextSize(1, 15.0f);
+                fd0Var.setGravity(19);
+                final int i15 = 2;
+                fd0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.dc0
+                    public final /* synthetic */ ec0 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        int i142;
+                        int i152;
+                        TLRPC.TL_auth_sentCode tL_auth_sentCode;
+                        int i16 = i15;
+                        CharSequence charSequence = null;
+                        final int i17 = 0;
+                        final ec0 ec0Var = this.b;
+                        final int i18 = 1;
+                        switch (i16) {
+                            case 0:
+                                ah.i iVar2 = ec0Var.c;
+                                try {
+                                    charSequence = ((ClipboardManager) ec0Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ec0Var.getContext());
+                                } catch (Exception e10) {
+                                    org.telegram.messenger.a8.g(e10, true);
+                                }
+                                if (charSequence != null) {
+                                    Editable text = iVar2.getText();
+                                    ec0Var.E = true;
+                                    if (text != null) {
+                                        int max = Math.max(0, iVar2.getSelectionStart());
+                                        text.replace(max, Math.max(max, iVar2.getSelectionEnd()), charSequence);
+                                    }
+                                }
+                                ec0Var.p(true);
+                                break;
+                            case 1:
+                                ec0Var.c(true);
+                                break;
+                            default:
+                                ee0 ee0Var2 = ec0Var.b0;
+                                fd0 fd0Var2 = ec0Var.w;
+                                if (ec0Var.Q <= 0 || ec0Var.O == null) {
+                                    Bundle bundle = ec0Var.T;
+                                    if (bundle != null && (tL_auth_sentCode = ec0Var.U) != null) {
+                                        ee0Var2.y1(bundle, tL_auth_sentCode, true);
+                                        break;
+                                    } else {
+                                        int i19 = ec0Var.F;
+                                        if (i19 != 4 && i19 != 2 && i19 != 11 && i19 != 15) {
+                                            if (i19 == 3) {
+                                                org.telegram.messenger.g0.C3(false);
+                                                if (!ec0Var.S && !ec0Var.N && !ee0Var2.r0) {
+                                                    ec0Var.N = true;
+                                                    fd0Var2.invalidate();
+                                                    org.telegram.ui.ActionBar.u6.U(fd0Var2, org.telegram.ui.ActionBar.n6.I6, null);
+                                                    final Bundle bundle2 = new Bundle();
+                                                    bundle2.putString("phone", ec0Var.K);
+                                                    bundle2.putString("ephone", ec0Var.J);
+                                                    bundle2.putString("phoneFormated", ec0Var.H);
+                                                    ec0Var.S = true;
+                                                    TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                                    tL_auth_resendCode.phone_number = ec0Var.H;
+                                                    tL_auth_resendCode.phone_code_hash = ec0Var.I;
+                                                    i152 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                                    ee0Var2.F1(ConnectionsManager.getInstance(i152).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                        @Override // org.telegram.tgnet.RequestDelegate
+                                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                            switch (i18) {
+                                                                case 0:
+                                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle2, tL_error));
+                                                                    break;
+                                                                default:
+                                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle2, tLObject));
+                                                                    break;
+                                                            }
+                                                        }
+                                                    }, 10), true);
+                                                    break;
+                                                }
+                                            }
+                                        } else {
+                                            ec0Var.N = true;
+                                            fd0Var2.invalidate();
+                                            org.telegram.ui.ActionBar.u6.U(fd0Var2, org.telegram.ui.ActionBar.n6.I6, null);
+                                            fd0Var2.setTextSize(1, 15.0f);
+                                            int i20 = ec0Var.F;
+                                            if (i20 == 4 || i20 == 11) {
+                                                fd0Var2.setText(org.telegram.messenger.gd.M0(2131752586, null));
+                                            } else {
+                                                fd0Var2.setText(org.telegram.messenger.gd.M0(2131745382, null));
+                                            }
+                                            final Bundle bundle3 = new Bundle();
+                                            bundle3.putString("phone", ec0Var.K);
+                                            bundle3.putString("ephone", ec0Var.J);
+                                            bundle3.putString("phoneFormated", ec0Var.H);
+                                            bundle3.putInt("prevType", ec0Var.a);
+                                            TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
+                                            tL_auth_resendCode2.phone_number = ec0Var.H;
+                                            tL_auth_resendCode2.phone_code_hash = ec0Var.I;
+                                            i142 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                            ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                @Override // org.telegram.tgnet.RequestDelegate
+                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                    switch (i17) {
+                                                        case 0:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle3, tL_error));
+                                                            break;
+                                                        default:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle3, tLObject));
+                                                            break;
+                                                    }
+                                                }
+                                            }, 10);
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                FrameLayout frameLayout2 = new FrameLayout(context);
+                frameLayout2.addView(fd0Var, c8.ma.d(-1, 56.0f, 80, 6.0f, 0.0f, 60.0f, 28.0f));
+                addView(frameLayout2, c8.ma.r(-1, -1, 80));
+                h6.m.i(fd0Var);
+            }
+        }
+        z10 = true;
+        ph0Var.setVisibility(!z10 ? 8 : 0);
+        addView(ph0Var, c8.ma.t(95, 95, 1, 0, 10, 0, 5));
+        TextView textView6 = new TextView(context);
+        this.n = textView6;
+        textView6.setTextSize(1, 18.0f);
+        textView6.setTypeface(org.telegram.messenger.g0.o());
+        textView6.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        textView6.setGravity(49);
+        textView6.setText(org.telegram.messenger.gd.M0(z11 ? 2131745755 : 2131745763, null));
+        addView(textView6, c8.ma.t(-2, -2, 1, 8, !z10 ? 25 : 0, 8, 0));
+        TextView textView22 = new TextView(context);
+        this.r = textView22;
+        textView22.setTextSize(1, 14.0f);
+        textView22.setGravity(1);
+        textView22.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        addView(textView22, c8.ma.t(-2, -2, 1, 8, 5, 8, 16));
+        org.telegram.ui.Components.xb0 xb0Var2 = new org.telegram.ui.Components.xb0(context, null);
+        this.b = xb0Var2;
+        xb0Var2.setText(org.telegram.messenger.gd.M0(z11 ? 2131745762 : 2131745770, null));
+        ah.i iVar2 = new ah.i(9, context, this);
+        this.c = iVar2;
+        iVar2.setSingleLine();
+        iVar2.setLines(1);
+        iVar2.setCursorSize(org.telegram.messenger.g0.L(20.0f));
+        iVar2.setCursorWidth(1.5f);
+        iVar2.setImeOptions(268435461);
+        iVar2.setTextSize(1, 18.0f);
+        iVar2.setMaxLines(1);
+        iVar2.setBackground(null);
+        iVar2.setHint(org.telegram.messenger.gd.M0(z11 ? 2131745758 : 2131745766, null));
+        iVar2.addTextChangedListener(new org.telegram.ui.Cells.k3(this));
+        iVar2.setEllipsizeByGradient(true);
+        iVar2.setInputType(1);
+        iVar2.setTypeface(Typeface.DEFAULT);
+        int i122 = 5;
+        iVar2.setGravity(!org.telegram.messenger.gd.a0 ? 5 : 3);
+        iVar2.setOnFocusChangeListener(new ed(this, i122));
+        TextView textView32 = new TextView(context);
+        this.s = textView32;
+        textView32.setTextSize(1, 12.0f);
+        textView32.setTypeface(org.telegram.messenger.g0.o());
+        textView32.setText(org.telegram.messenger.gd.M0(2131747242, null));
+        textView32.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
+        textView32.setGravity(17);
+        int i132 = org.telegram.ui.ActionBar.n6.o6;
+        i6Var = ((org.telegram.ui.ActionBar.h2) ee0Var).resourceProvider;
+        int w022 = org.telegram.ui.ActionBar.n6.w0(i132, i6Var);
+        i6Var2 = ((org.telegram.ui.ActionBar.h2) ee0Var).resourceProvider;
+        org.telegram.ui.ActionBar.u6.U(textView32, i132, i6Var2);
+        int L2 = org.telegram.messenger.g0.L(6.0f);
+        int r122 = org.telegram.ui.ActionBar.n6.r1(0.12f, w022);
+        int r132 = org.telegram.ui.ActionBar.n6.r1(0.15f, w022);
+        org.telegram.ui.Cells.y k022 = org.telegram.ui.ActionBar.n6.k0(L2, L2, L2, L2, r122, r132, r132);
+        org.telegram.ui.ActionBar.q6 K3 = org.telegram.ui.ActionBar.u6.K(0.12f, i132);
+        org.telegram.ui.ActionBar.q6 K22 = org.telegram.ui.ActionBar.u6.K(0.15f, i132);
+        i6Var3 = ((org.telegram.ui.ActionBar.h2) ee0Var).resourceProvider;
+        textView32.setBackground(k022);
+        org.telegram.ui.ActionBar.u6.j(textView32, k022, K3, K22, i6Var3);
+        c8.ra.b(textView32, 0.1f, 1.5f);
+        iVar2.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(13.34f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(13.34f));
+        textView32.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.dc0
+            public final /* synthetic */ ec0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i142;
+                int i152;
+                TLRPC.TL_auth_sentCode tL_auth_sentCode;
+                int i16 = i11;
+                CharSequence charSequence = null;
+                final int i17 = 0;
+                final ec0 ec0Var = this.b;
+                final int i18 = 1;
+                switch (i16) {
+                    case 0:
+                        ah.i iVar22 = ec0Var.c;
+                        try {
+                            charSequence = ((ClipboardManager) ec0Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ec0Var.getContext());
+                        } catch (Exception e10) {
+                            org.telegram.messenger.a8.g(e10, true);
+                        }
+                        if (charSequence != null) {
+                            Editable text = iVar22.getText();
+                            ec0Var.E = true;
+                            if (text != null) {
+                                int max = Math.max(0, iVar22.getSelectionStart());
+                                text.replace(max, Math.max(max, iVar22.getSelectionEnd()), charSequence);
+                            }
+                        }
+                        ec0Var.p(true);
+                        break;
+                    case 1:
+                        ec0Var.c(true);
+                        break;
+                    default:
+                        ee0 ee0Var2 = ec0Var.b0;
+                        fd0 fd0Var2 = ec0Var.w;
+                        if (ec0Var.Q <= 0 || ec0Var.O == null) {
+                            Bundle bundle = ec0Var.T;
+                            if (bundle != null && (tL_auth_sentCode = ec0Var.U) != null) {
+                                ee0Var2.y1(bundle, tL_auth_sentCode, true);
+                                break;
+                            } else {
+                                int i19 = ec0Var.F;
+                                if (i19 != 4 && i19 != 2 && i19 != 11 && i19 != 15) {
+                                    if (i19 == 3) {
+                                        org.telegram.messenger.g0.C3(false);
+                                        if (!ec0Var.S && !ec0Var.N && !ee0Var2.r0) {
+                                            ec0Var.N = true;
+                                            fd0Var2.invalidate();
+                                            org.telegram.ui.ActionBar.u6.U(fd0Var2, org.telegram.ui.ActionBar.n6.I6, null);
+                                            final Bundle bundle2 = new Bundle();
+                                            bundle2.putString("phone", ec0Var.K);
+                                            bundle2.putString("ephone", ec0Var.J);
+                                            bundle2.putString("phoneFormated", ec0Var.H);
+                                            ec0Var.S = true;
+                                            TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                            tL_auth_resendCode.phone_number = ec0Var.H;
+                                            tL_auth_resendCode.phone_code_hash = ec0Var.I;
+                                            i152 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                            ee0Var2.F1(ConnectionsManager.getInstance(i152).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                @Override // org.telegram.tgnet.RequestDelegate
+                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                    switch (i18) {
+                                                        case 0:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle2, tL_error));
+                                                            break;
+                                                        default:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle2, tLObject));
+                                                            break;
+                                                    }
+                                                }
+                                            }, 10), true);
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    ec0Var.N = true;
+                                    fd0Var2.invalidate();
+                                    org.telegram.ui.ActionBar.u6.U(fd0Var2, org.telegram.ui.ActionBar.n6.I6, null);
+                                    fd0Var2.setTextSize(1, 15.0f);
+                                    int i20 = ec0Var.F;
+                                    if (i20 == 4 || i20 == 11) {
+                                        fd0Var2.setText(org.telegram.messenger.gd.M0(2131752586, null));
+                                    } else {
+                                        fd0Var2.setText(org.telegram.messenger.gd.M0(2131745382, null));
+                                    }
+                                    final Bundle bundle3 = new Bundle();
+                                    bundle3.putString("phone", ec0Var.K);
+                                    bundle3.putString("ephone", ec0Var.J);
+                                    bundle3.putString("phoneFormated", ec0Var.H);
+                                    bundle3.putInt("prevType", ec0Var.a);
+                                    TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
+                                    tL_auth_resendCode2.phone_number = ec0Var.H;
+                                    tL_auth_resendCode2.phone_code_hash = ec0Var.I;
+                                    i142 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                    ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                        @Override // org.telegram.tgnet.RequestDelegate
+                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                            switch (i17) {
+                                                case 0:
+                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle3, tL_error));
+                                                    break;
+                                                default:
+                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle3, tLObject));
+                                                    break;
+                                            }
+                                        }
+                                    }, 10);
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        xb0Var2.addView(iVar2, c8.ma.d(-1, -2.0f, org.telegram.messenger.ks.E1, 0.0f, 0.0f, 0.0f, 0.0f));
+        xb0Var2.e(iVar2);
+        xb0Var2.addView(textView32, c8.ma.d(-2, 26.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        linearLayout2.addView(xb0Var2, c8.ma.r(-1, -2, 1));
+        addView(linearLayout2, c8.ma.t(-1, -2, 1, 16, 3, 16, 0));
+        iVar2.setOnEditorActionListener(new fa(this, 6));
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        linearLayout2.addView(frameLayout3, c8.ma.o(-1, -2));
+        eb0 eb0Var2 = new eb0(ee0Var, context);
+        this.d = eb0Var2;
+        int i142 = org.telegram.ui.ActionBar.n6.I6;
+        org.telegram.ui.ActionBar.u6.G(eb0Var2, i142, null);
+        org.telegram.ui.ActionBar.u6.U(eb0Var2, i142, ee0Var.getResourceProvider());
+        eb0Var2.setTextSize(1, 14.0f);
+        eb0Var2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        eb0Var2.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(16.0f));
+        eb0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.dc0
+            public final /* synthetic */ ec0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i1422;
+                int i152;
+                TLRPC.TL_auth_sentCode tL_auth_sentCode;
+                int i16 = i10;
+                CharSequence charSequence = null;
+                final int i17 = 0;
+                final ec0 ec0Var = this.b;
+                final int i18 = 1;
+                switch (i16) {
+                    case 0:
+                        ah.i iVar22 = ec0Var.c;
+                        try {
+                            charSequence = ((ClipboardManager) ec0Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ec0Var.getContext());
+                        } catch (Exception e10) {
+                            org.telegram.messenger.a8.g(e10, true);
+                        }
+                        if (charSequence != null) {
+                            Editable text = iVar22.getText();
+                            ec0Var.E = true;
+                            if (text != null) {
+                                int max = Math.max(0, iVar22.getSelectionStart());
+                                text.replace(max, Math.max(max, iVar22.getSelectionEnd()), charSequence);
+                            }
+                        }
+                        ec0Var.p(true);
+                        break;
+                    case 1:
+                        ec0Var.c(true);
+                        break;
+                    default:
+                        ee0 ee0Var2 = ec0Var.b0;
+                        fd0 fd0Var2 = ec0Var.w;
+                        if (ec0Var.Q <= 0 || ec0Var.O == null) {
+                            Bundle bundle = ec0Var.T;
+                            if (bundle != null && (tL_auth_sentCode = ec0Var.U) != null) {
+                                ee0Var2.y1(bundle, tL_auth_sentCode, true);
+                                break;
+                            } else {
+                                int i19 = ec0Var.F;
+                                if (i19 != 4 && i19 != 2 && i19 != 11 && i19 != 15) {
+                                    if (i19 == 3) {
+                                        org.telegram.messenger.g0.C3(false);
+                                        if (!ec0Var.S && !ec0Var.N && !ee0Var2.r0) {
+                                            ec0Var.N = true;
+                                            fd0Var2.invalidate();
+                                            org.telegram.ui.ActionBar.u6.U(fd0Var2, org.telegram.ui.ActionBar.n6.I6, null);
+                                            final Bundle bundle2 = new Bundle();
+                                            bundle2.putString("phone", ec0Var.K);
+                                            bundle2.putString("ephone", ec0Var.J);
+                                            bundle2.putString("phoneFormated", ec0Var.H);
+                                            ec0Var.S = true;
+                                            TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                            tL_auth_resendCode.phone_number = ec0Var.H;
+                                            tL_auth_resendCode.phone_code_hash = ec0Var.I;
+                                            i152 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                            ee0Var2.F1(ConnectionsManager.getInstance(i152).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                @Override // org.telegram.tgnet.RequestDelegate
+                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                    switch (i18) {
+                                                        case 0:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle2, tL_error));
+                                                            break;
+                                                        default:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle2, tLObject));
+                                                            break;
+                                                    }
+                                                }
+                                            }, 10), true);
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    ec0Var.N = true;
+                                    fd0Var2.invalidate();
+                                    org.telegram.ui.ActionBar.u6.U(fd0Var2, org.telegram.ui.ActionBar.n6.I6, null);
+                                    fd0Var2.setTextSize(1, 15.0f);
+                                    int i20 = ec0Var.F;
+                                    if (i20 == 4 || i20 == 11) {
+                                        fd0Var2.setText(org.telegram.messenger.gd.M0(2131752586, null));
+                                    } else {
+                                        fd0Var2.setText(org.telegram.messenger.gd.M0(2131745382, null));
+                                    }
+                                    final Bundle bundle3 = new Bundle();
+                                    bundle3.putString("phone", ec0Var.K);
+                                    bundle3.putString("ephone", ec0Var.J);
+                                    bundle3.putString("phoneFormated", ec0Var.H);
+                                    bundle3.putInt("prevType", ec0Var.a);
+                                    TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
+                                    tL_auth_resendCode2.phone_number = ec0Var.H;
+                                    tL_auth_resendCode2.phone_code_hash = ec0Var.I;
+                                    i1422 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                    ConnectionsManager.getInstance(i1422).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                        @Override // org.telegram.tgnet.RequestDelegate
+                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                            switch (i17) {
+                                                case 0:
+                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle3, tL_error));
+                                                    break;
+                                                default:
+                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle3, tLObject));
+                                                    break;
+                                            }
+                                        }
+                                    }, 10);
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        addView(eb0Var2, c8.ma.t(-2, -2, 1, 0, 18, 0, 0));
+        eb0Var2.setVisibility(8);
+        TextView textView42 = new TextView(context);
+        this.e = textView42;
+        textView42.setPivotX(0.0f);
+        textView42.setPivotY(0.0f);
+        textView42.setText(org.telegram.messenger.gd.M0(z11 ? 2131745759 : 2131745767, null));
+        org.telegram.ui.ActionBar.u6.U(textView42, org.telegram.ui.ActionBar.n6.p7, ee0Var.getResourceProvider());
+        textView42.setTextSize(1, 13.0f);
+        frameLayout3.addView(textView42, c8.ma.d(-1, -2.0f, org.telegram.messenger.ks.E1, 16.0f, 8.0f, 16.0f, 8.0f));
+        textView42.setAlpha(0.0f);
+        textView42.setScaleX(0.8f);
+        textView42.setScaleY(0.8f);
+        textView42.setTranslationY(-org.telegram.messenger.g0.L(4.0f));
+        TextView textView52 = new TextView(context);
+        this.f = textView52;
+        textView52.setPivotX(0.0f);
+        textView52.setPivotY(0.0f);
+        textView52.setText(org.telegram.messenger.gd.M0(z11 ? 2131745757 : 2131745765, null));
+        org.telegram.ui.ActionBar.u6.U(textView52, org.telegram.ui.ActionBar.n6.y6, ee0Var.getResourceProvider());
+        textView52.setTextSize(1, 13.0f);
+        frameLayout3.addView(textView52, c8.ma.d(-1, -2.0f, org.telegram.messenger.ks.E1, 16.0f, 8.0f, 16.0f, 8.0f));
+        fd0 fd0Var2 = new fd0(this, context);
+        this.w = fd0Var2;
+        org.telegram.ui.ActionBar.u6.G(fd0Var2, i142, null);
+        fd0Var2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        fd0Var2.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(16.0f));
+        fd0Var2.setTextSize(1, 15.0f);
+        fd0Var2.setGravity(19);
+        final int i152 = 2;
+        fd0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.dc0
+            public final /* synthetic */ ec0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i1422;
+                int i1522;
+                TLRPC.TL_auth_sentCode tL_auth_sentCode;
+                int i16 = i152;
+                CharSequence charSequence = null;
+                final int i17 = 0;
+                final ec0 ec0Var = this.b;
+                final int i18 = 1;
+                switch (i16) {
+                    case 0:
+                        ah.i iVar22 = ec0Var.c;
+                        try {
+                            charSequence = ((ClipboardManager) ec0Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ec0Var.getContext());
+                        } catch (Exception e10) {
+                            org.telegram.messenger.a8.g(e10, true);
+                        }
+                        if (charSequence != null) {
+                            Editable text = iVar22.getText();
+                            ec0Var.E = true;
+                            if (text != null) {
+                                int max = Math.max(0, iVar22.getSelectionStart());
+                                text.replace(max, Math.max(max, iVar22.getSelectionEnd()), charSequence);
+                            }
+                        }
+                        ec0Var.p(true);
+                        break;
+                    case 1:
+                        ec0Var.c(true);
+                        break;
+                    default:
+                        ee0 ee0Var2 = ec0Var.b0;
+                        fd0 fd0Var22 = ec0Var.w;
+                        if (ec0Var.Q <= 0 || ec0Var.O == null) {
+                            Bundle bundle = ec0Var.T;
+                            if (bundle != null && (tL_auth_sentCode = ec0Var.U) != null) {
+                                ee0Var2.y1(bundle, tL_auth_sentCode, true);
+                                break;
+                            } else {
+                                int i19 = ec0Var.F;
+                                if (i19 != 4 && i19 != 2 && i19 != 11 && i19 != 15) {
+                                    if (i19 == 3) {
+                                        org.telegram.messenger.g0.C3(false);
+                                        if (!ec0Var.S && !ec0Var.N && !ee0Var2.r0) {
+                                            ec0Var.N = true;
+                                            fd0Var22.invalidate();
+                                            org.telegram.ui.ActionBar.u6.U(fd0Var22, org.telegram.ui.ActionBar.n6.I6, null);
+                                            final Bundle bundle2 = new Bundle();
+                                            bundle2.putString("phone", ec0Var.K);
+                                            bundle2.putString("ephone", ec0Var.J);
+                                            bundle2.putString("phoneFormated", ec0Var.H);
+                                            ec0Var.S = true;
+                                            TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
+                                            tL_auth_resendCode.phone_number = ec0Var.H;
+                                            tL_auth_resendCode.phone_code_hash = ec0Var.I;
+                                            i1522 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                            ee0Var2.F1(ConnectionsManager.getInstance(i1522).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                                @Override // org.telegram.tgnet.RequestDelegate
+                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                    switch (i18) {
+                                                        case 0:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle2, tL_error));
+                                                            break;
+                                                        default:
+                                                            org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle2, tLObject));
+                                                            break;
+                                                    }
+                                                }
+                                            }, 10), true);
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    ec0Var.N = true;
+                                    fd0Var22.invalidate();
+                                    org.telegram.ui.ActionBar.u6.U(fd0Var22, org.telegram.ui.ActionBar.n6.I6, null);
+                                    fd0Var22.setTextSize(1, 15.0f);
+                                    int i20 = ec0Var.F;
+                                    if (i20 == 4 || i20 == 11) {
+                                        fd0Var22.setText(org.telegram.messenger.gd.M0(2131752586, null));
+                                    } else {
+                                        fd0Var22.setText(org.telegram.messenger.gd.M0(2131745382, null));
+                                    }
+                                    final Bundle bundle3 = new Bundle();
+                                    bundle3.putString("phone", ec0Var.K);
+                                    bundle3.putString("ephone", ec0Var.J);
+                                    bundle3.putString("phoneFormated", ec0Var.H);
+                                    bundle3.putInt("prevType", ec0Var.a);
+                                    TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
+                                    tL_auth_resendCode2.phone_number = ec0Var.H;
+                                    tL_auth_resendCode2.phone_code_hash = ec0Var.I;
+                                    i1422 = ((org.telegram.ui.ActionBar.h2) ee0Var2).currentAccount;
+                                    ConnectionsManager.getInstance(i1422).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zb0
+                                        @Override // org.telegram.tgnet.RequestDelegate
+                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                            switch (i17) {
+                                                case 0:
+                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tLObject, bundle3, tL_error));
+                                                    break;
+                                                default:
+                                                    org.telegram.messenger.g0.g3(new bc0(ec0Var, tL_error, bundle3, tLObject));
+                                                    break;
+                                            }
+                                        }
+                                    }, 10);
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        FrameLayout frameLayout22 = new FrameLayout(context);
+        frameLayout22.addView(fd0Var2, c8.ma.d(-1, 56.0f, 80, 6.0f, 0.0f, 60.0f, 28.0f));
+        addView(frameLayout22, c8.ma.r(-1, -1, 80));
+        h6.m.i(fd0Var2);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                gc0 gc0Var = this.b;
-                org.telegram.ui.Components.ph0 ph0Var = gc0Var.e;
-                ph0Var.getAnimatedDrawable().N(0, false, false);
-                ph0Var.d();
-                lb0 lb0Var = gc0Var.a;
-                if (lb0Var != null) {
-                    lb0Var.f[0].requestFocus();
-                    break;
-                }
-                break;
-            case 1:
-                gc0 gc0Var2 = this.b;
-                int i7 = 0;
-                gc0Var2.x = false;
-                while (true) {
-                    er[] erVarArr = gc0Var2.a.f;
-                    if (i7 >= erVarArr.length) {
-                        break;
-                    } else {
-                        erVarArr[i7].A(0.0f);
-                        i7++;
-                    }
-                }
-            case 2:
-                gc0 gc0Var3 = this.b;
-                gc0Var3.postDelayed(new ec0(gc0Var3, 3), 150L);
-                ec0 ec0Var = gc0Var3.y;
-                gc0Var3.removeCallbacks(ec0Var);
-                gc0Var3.postDelayed(ec0Var, 3000L);
-                gc0Var3.x = true;
-                break;
-            default:
-                lb0 lb0Var2 = this.b.a;
-                int i10 = 0;
-                lb0Var2.e = false;
-                lb0Var2.f[0].requestFocus();
-                while (true) {
-                    er[] erVarArr2 = lb0Var2.f;
-                    if (i10 >= erVarArr2.length) {
-                        break;
-                    } else {
-                        erVarArr2[i10].A(0.0f);
-                        i10++;
-                    }
-                }
+    public static String s(String str) {
+        int length = str.length();
+        int i7 = 0;
+        while (i7 < length && str.charAt(i7) <= ' ') {
+            i7++;
         }
+        return (i7 > 0 || length < str.length()) ? str.substring(i7, length) : str;
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final boolean c(boolean z10) {
+        ee0 ee0Var = this.b0;
+        ee0Var.C1(true, true);
+        int i7 = this.G;
+        if (i7 != 0) {
+            ee0Var.M1(i7, true, null, true);
+            return false;
+        }
+        this.M = null;
+        this.S = false;
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void d() {
+        this.S = false;
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void g() {
+        org.telegram.messenger.g0.r(this.V);
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public String getHeaderName() {
+        return org.telegram.messenger.gd.M0(2131748074, "NewPassword");
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void h(String str) {
+        if (this.S) {
+            return;
+        }
+        String obj = this.c.getText().toString();
+        if (obj.length() == 0) {
+            r(false);
+            return;
+        }
+        if (!o(obj)) {
+            r(true);
+            return;
+        }
+        this.S = true;
+        TLRPC.TL_auth_signIn tL_auth_signIn = new TLRPC.TL_auth_signIn();
+        tL_auth_signIn.phone_number = this.H;
+        tL_auth_signIn.phone_code = obj;
+        tL_auth_signIn.phone_code_hash = this.I;
+        tL_auth_signIn.flags |= 1;
+        ee0 ee0Var = this.b0;
+        ee0Var.F1(ee0Var.getConnectionsManager().sendRequest(tL_auth_signIn, new yb0(this, tL_auth_signIn, 0), 10), true);
+        ee0Var.N1(true, true);
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void i() {
+        p(true);
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void j() {
+        org.telegram.messenger.g0.h3(new cc0(this, 3), ee0.A0);
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void k(Bundle bundle) {
+        Bundle bundle2 = bundle.getBundle("recoveryview_word" + this.a);
+        this.M = bundle2;
+        if (bundle2 != null) {
+            m(bundle2, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void l(Bundle bundle) {
+        if (this.M != null) {
+            bundle.putBundle("recoveryview_word" + this.a, this.M);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void m(Bundle bundle, boolean z10) {
+        fd0 fd0Var = this.w;
+        if (bundle == null) {
+            if (this.T == null || this.U == null) {
+                return;
+            }
+            org.telegram.ui.ActionBar.u6.U(fd0Var, org.telegram.ui.ActionBar.n6.I6, null);
+            int i7 = this.F;
+            fd0Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.M0(i7 == 17 ? 2131745855 : i7 == 16 ? 2131745853 : i7 == 3 ? 2131745852 : 2131745854, null), true, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+            return;
+        }
+        ah.i iVar = this.c;
+        iVar.setText("");
+        this.M = bundle;
+        this.L = null;
+        this.F = bundle.getInt("nextType");
+        this.G = bundle.getInt("prevType", 0);
+        this.J = bundle.getString("ephone");
+        if (this.M.containsKey("beginning")) {
+            this.L = this.M.getString("beginning");
+        }
+        this.H = bundle.getString("phoneFormated");
+        this.I = bundle.getString("phoneHash");
+        this.K = this.M.getString("phone");
+        this.Q = bundle.getInt("timeout");
+        int i10 = this.G;
+        eb0 eb0Var = this.d;
+        if (i10 == 17) {
+            eb0Var.setVisibility(0);
+            eb0Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.M0(2131753752, null), true, org.telegram.messenger.g0.L(-1.0f), org.telegram.messenger.g0.L(1.0f)));
+        } else if (i10 == 16) {
+            eb0Var.setVisibility(0);
+            eb0Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.M0(2131753751, null), true, org.telegram.messenger.g0.L(-1.0f), org.telegram.messenger.g0.L(1.0f)));
+        } else if (i10 == 1 || i10 == 2 || i10 == 4 || i10 == 3 || i10 == 15) {
+            eb0Var.setVisibility(0);
+            eb0Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.M0(2131753753, null), true, org.telegram.messenger.g0.L(-1.0f), org.telegram.messenger.g0.L(1.0f)));
+        } else {
+            eb0Var.setVisibility(8);
+        }
+        this.T = null;
+        this.U = null;
+        this.S = false;
+        this.N = false;
+        ee0 ee0Var = this.b0;
+        ee0Var.r0 = false;
+        fd0Var.invalidate();
+        boolean z11 = this.a != 16;
+        String str = "+" + pf.b.c().b(pf.b.d(this.K, false));
+        String str2 = this.L;
+        TextView textView = this.r;
+        if (str2 == null) {
+            org.telegram.messenger.f3.q(null, null, !z11 ? 2131745756 : 2131745764, new Object[]{str}, textView);
+        } else {
+            org.telegram.messenger.f3.q(null, null, !z11 ? 2131745760 : 2131745768, new Object[]{str, str2}, textView);
+        }
+        ee0.b1(ee0Var, iVar);
+        iVar.requestFocus();
+        org.telegram.ui.Components.ph0 ph0Var = this.h;
+        if (ph0Var.getAnimatedDrawable() != null) {
+            ph0Var.getAnimatedDrawable().N(0, false, false);
+        }
+        org.telegram.messenger.g0.h3(new lz(ph0Var, 23), 500L);
+        p(false);
+        n(false);
+        this.R = System.currentTimeMillis();
+        int i11 = org.telegram.ui.ActionBar.n6.y6;
+        org.telegram.ui.ActionBar.u6.U(fd0Var, i11, null);
+        int i12 = this.F;
+        if (i12 != 2 && i12 != 4 && i12 != 3) {
+            fd0Var.setVisibility(8);
+            return;
+        }
+        if (this.O != null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.u6.U(fd0Var, i11, null);
+        fd0Var.setTag(R.id.color_key_tag, Integer.valueOf(i11));
+        Timer timer = new Timer();
+        this.O = timer;
+        timer.schedule(new h6.r(this, 3), 0L, 1000L);
+    }
+
+    public final void n(boolean z10) {
+        this.y = z10;
+        float f10 = 0.0f;
+        float f11 = z10 ? 1.0f : 0.0f;
+        this.b.a(f11);
+        float f12 = (f11 * 0.1f) + 0.9f;
+        ViewPropertyAnimator translationY = this.e.animate().scaleX(f12).scaleY(f12).alpha(f11).translationY((1.0f - f11) * org.telegram.messenger.g0.L(-5.0f));
+        org.telegram.ui.Components.lr lrVar = org.telegram.ui.Components.lr.h;
+        org.telegram.messenger.n10.o(translationY, lrVar, 290L);
+        if (this.x && !this.y) {
+            f10 = 1.0f;
+        }
+        float f13 = (0.1f * f10) + 0.9f;
+        this.f.animate().scaleX(f13).scaleY(f13).alpha(f10).translationY((1.0f - f10) * org.telegram.messenger.g0.L(this.y ? 5.0f : -5.0f)).setInterpolator(lrVar).setDuration(290L).start();
+    }
+
+    public final boolean o(String str) {
+        if (this.L == null) {
+            return true;
+        }
+        String lowerCase = s(str).toLowerCase();
+        String lowerCase2 = this.L.toLowerCase();
+        int min = Math.min(lowerCase.length(), lowerCase2.length());
+        if (min <= 0) {
+            return true;
+        }
+        return TextUtils.equals(lowerCase.substring(0, min), lowerCase2.substring(0, min));
+    }
+
+    public final void p(boolean z10) {
+        cc0 cc0Var = this.V;
+        org.telegram.messenger.g0.r(cc0Var);
+        ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
+        boolean z11 = TextUtils.isEmpty(this.c.getText()) && clipboardManager != null && clipboardManager.hasPrimaryClip();
+        if (this.x != z11) {
+            this.x = z11;
+            float f10 = 0.9f;
+            TextView textView = this.s;
+            TextView textView2 = this.f;
+            float f11 = 0.0f;
+            if (z10) {
+                ViewPropertyAnimator scaleY = textView.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.7f).scaleY(z11 ? 1.0f : 0.7f);
+                org.telegram.ui.Components.lr lrVar = org.telegram.ui.Components.lr.h;
+                scaleY.setInterpolator(lrVar).setDuration(300L).start();
+                ViewPropertyAnimator scaleX = textView2.animate().scaleX((!this.x || this.y) ? 0.9f : 1.0f);
+                if (this.x && !this.y) {
+                    f10 = 1.0f;
+                }
+                ViewPropertyAnimator alpha = scaleX.scaleY(f10).alpha((!this.x || this.y) ? 0.0f : 1.0f);
+                if (!this.x || this.y) {
+                    f11 = org.telegram.messenger.g0.L(this.y ? 5.0f : -5.0f);
+                }
+                alpha.translationY(f11).setInterpolator(lrVar).setDuration(300L).start();
+            } else {
+                textView.setAlpha(z11 ? 1.0f : 0.0f);
+                textView.setScaleX(z11 ? 1.0f : 0.7f);
+                textView.setScaleY(z11 ? 1.0f : 0.7f);
+                textView2.setScaleX((!this.x || this.y) ? 0.9f : 1.0f);
+                if (this.x && !this.y) {
+                    f10 = 1.0f;
+                }
+                textView2.setScaleY(f10);
+                textView2.setAlpha((!this.x || this.y) ? 0.0f : 1.0f);
+                if (!this.x || this.y) {
+                    f11 = org.telegram.messenger.g0.L(this.y ? 5.0f : -5.0f);
+                }
+                textView2.setTranslationY(f11);
+            }
+        }
+        org.telegram.messenger.g0.h3(cc0Var, 5000L);
+    }
+
+    public final void q() {
+        fd0 fd0Var = this.w;
+        int i7 = org.telegram.ui.ActionBar.n6.y6;
+        org.telegram.ui.ActionBar.u6.U(fd0Var, i7, null);
+        this.w.setTag(R.id.color_key_tag, Integer.valueOf(i7));
+        try {
+            synchronized (this.P) {
+                try {
+                    Timer timer = this.O;
+                    if (timer != null) {
+                        timer.cancel();
+                        this.O = null;
+                    }
+                } finally {
+                }
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    public final void r(boolean z10) {
+        ah.i iVar = this.c;
+        if (this.b0.getParentActivity() == null) {
+            return;
+        }
+        try {
+            iVar.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
+        boolean z11 = this.a != 16;
+        TextView textView = this.e;
+        if (z10) {
+            textView.setText(org.telegram.messenger.gd.M0(!z11 ? 2131745761 : 2131745769, null));
+        } else if (TextUtils.isEmpty(iVar.getText())) {
+            textView.setText("");
+        } else {
+            textView.setText(org.telegram.messenger.gd.M0(!z11 ? 2131745759 : 2131745767, null));
+        }
+        if (!this.y && !this.E) {
+            org.telegram.messenger.g0.E3(this.a0, iVar, null);
+            org.telegram.messenger.g0.E3(this.a0, textView, null);
+        }
+        cc0 cc0Var = this.W;
+        org.telegram.messenger.g0.r(cc0Var);
+        n(true);
+        org.telegram.messenger.g0.h3(cc0Var, 10000L);
+        this.a0 = -this.a0;
+    }
+
+    @Override // org.telegram.ui.Components.fu0
+    public final void updateColors() {
+        int i7 = org.telegram.ui.ActionBar.n6.G6;
+        ee0 ee0Var = this.b0;
+        this.n.setTextColor(ee0Var.getThemedColor(i7));
+        this.r.setTextColor(ee0Var.getThemedColor(org.telegram.ui.ActionBar.n6.D6));
+        int themedColor = ee0Var.getThemedColor(i7);
+        ah.i iVar = this.c;
+        iVar.setTextColor(themedColor);
+        iVar.setCursorColor(ee0Var.getThemedColor(org.telegram.ui.ActionBar.n6.l6));
+        iVar.setHintTextColor(ee0Var.getThemedColor(org.telegram.ui.ActionBar.n6.H6));
+        this.b.f();
     }
 }

@@ -29,22 +29,22 @@ import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.o8;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.p8;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.ob;
 import tg.z1;
 import ug.z;
 import wg.r;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF c0 = new RectF();
     public static final Rect d0 = new Rect();
     public static final int[] e0 = new int[2];
-    public static final o8 f0 = new o8("openFactor", 11);
-    public static final o8 g0 = new o8("openFactor", 12);
-    public final q1 E;
+    public static final p8 f0 = new p8("openFactor", 11);
+    public static final p8 g0 = new p8("openFactor", 12);
+    public final r1 E;
     public final fj F;
     public float G;
     public Bitmap J;
@@ -82,11 +82,11 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(560L);
     public final ObjectAnimator b0 = ObjectAnimator.ofFloat(this, g0, 1.0f).setDuration(240L);
 
-    public h(i iVar, q1 q1Var, ArrayList arrayList, r rVar) {
+    public h(i iVar, r1 r1Var, ArrayList arrayList, r rVar) {
         this.b = rVar;
         this.a = iVar;
-        this.E = q1Var;
-        this.F = q1Var.getMessageObject();
+        this.E = r1Var;
+        this.F = r1Var.getMessageObject();
         int i7 = 5;
         this.x = new d[Math.min(5, arrayList.size())];
         int i10 = 0;
@@ -96,7 +96,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 this.c.setStyle(Paint.Style.FILL);
                 Drawable mutate = iVar.getContext().getDrawable(R.drawable.reactions_bubble_shadow).mutate();
                 this.y = mutate;
-                q1Var.setHideSideButtonByQuickShare(true);
+                r1Var.setHideSideButtonByQuickShare(true);
                 iVar.performHapticFeedback(3, 1);
                 int w02 = n6.w0(n6.G8, this.E.getResourcesProvider());
                 mutate.setColorFilter(new PorterDuffColorFilter(n6.x0(null, n6.Ke, false), PorterDuff.Mode.MULTIPLY));
@@ -235,11 +235,11 @@ public final class h extends Drawable implements Animator.AnimatorListener {
         i iVar2 = hVar.a;
         float f13 = 0.0f;
         int i14 = 0;
-        q1 q1Var = hVar.E;
+        r1 r1Var = hVar.E;
         int i15 = 1;
         if (!z11) {
             int[] iArr = e0;
-            q1Var.getLocationInWindow(iArr);
+            r1Var.getLocationInWindow(iArr);
             int i16 = iArr[0];
             int i17 = iArr[1];
             iVar2.getLocationInWindow(iArr);
@@ -248,8 +248,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
             hVar.V = i16 - i18;
             hVar.W = i17 - i19;
             float L = g0.L(16.0f);
-            float sideButtonStartX = q1Var.getSideButtonStartX() + hVar.V + L;
-            float sideButtonStartY = q1Var.getSideButtonStartY() + hVar.W + L;
+            float sideButtonStartX = r1Var.getSideButtonStartX() + hVar.V + L;
+            float sideButtonStartY = r1Var.getSideButtonStartY() + hVar.W + L;
             float f14 = sideButtonStartX - L;
             float f15 = sideButtonStartY - L;
             float f16 = sideButtonStartX + L;
@@ -324,8 +324,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                     int i25 = g.a;
                                     float f27 = 8;
                                     rectF3.set(f24, f25, dVar2.h.getWidth() + f24 + (g0.L(f27) * 2), g0.L(21.0f) + f25);
-                                    q1 q1Var2 = dVar2.b;
-                                    boolean h22 = q1Var2.h2();
+                                    r1 r1Var2 = dVar2.b;
+                                    boolean h22 = r1Var2.h2();
                                     Paint paint = dVar2.g;
                                     if (paint != null) {
                                         int alpha = paint.getAlpha();
@@ -336,8 +336,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                     } else {
                                         Point point = g0.q;
                                         f23 = 21.0f;
-                                        q1Var2.y(0.0f, 0.0f, point.x, point.y);
-                                        Paint a22 = q1Var2.a2("paintChatActionBackground");
+                                        r1Var2.y(0.0f, 0.0f, point.x, point.y);
+                                        Paint a22 = r1Var2.a2("paintChatActionBackground");
                                         int alpha2 = a22.getAlpha();
                                         a22.setAlpha((int) ((h22 ? alpha2 : 229.5f) * f26));
                                         canvas2.drawRoundRect(rectF3, L4, L4, a22);
@@ -409,8 +409,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
             canvas.save();
             canvas.translate(rectF4.left, rectF4.top);
             canvas.rotate(interpolation4, g0.L(16.0f), g0.L(16.0f));
-            canvas.translate(-q1Var.getSideButtonStartX(), -q1Var.getSideButtonStartY());
-            q1Var.v1(canvas, true);
+            canvas.translate(-r1Var.getSideButtonStartX(), -r1Var.getSideButtonStartY());
+            r1Var.v1(canvas, true);
             canvas.restore();
         }
         if (!hVar.R || hVar.N) {
@@ -495,8 +495,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                                 int i252 = g.a;
                                                 float f272 = 8;
                                                 rectF32.set(f242, f252, dVar22.h.getWidth() + f242 + (g0.L(f272) * 2), g0.L(21.0f) + f252);
-                                                q1 q1Var2 = dVar22.b;
-                                                boolean h22 = q1Var2.h2();
+                                                r1 r1Var2 = dVar22.b;
+                                                boolean h22 = r1Var2.h2();
                                                 Paint paint2 = dVar22.g;
                                                 if (paint2 != null) {
                                                     int alpha = paint2.getAlpha();
@@ -507,8 +507,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                                 } else {
                                                     Point point = g0.q;
                                                     f232 = 21.0f;
-                                                    q1Var2.y(0.0f, 0.0f, point.x, point.y);
-                                                    Paint a22 = q1Var2.a2("paintChatActionBackground");
+                                                    r1Var2.y(0.0f, 0.0f, point.x, point.y);
+                                                    Paint a22 = r1Var2.a2("paintChatActionBackground");
                                                     int alpha2 = a22.getAlpha();
                                                     a22.setAlpha((int) ((h22 ? alpha2 : 229.5f) * f262));
                                                     canvas2.drawRoundRect(rectF32, L42, L42, a22);

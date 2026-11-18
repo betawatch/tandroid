@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p20 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class p20 implements Runnable {
                     arrayList = new ArrayList(r20Var2.x.R1.participants.participants);
                 }
                 if (arrayList != null) {
-                    Utilities.g.c(new bi.u4(r20Var2, str2, i10, arrayList));
+                    Utilities.g.c(new bi.t4(r20Var2, str2, i10, arrayList));
                 } else {
                     r20Var2.h = false;
                 }

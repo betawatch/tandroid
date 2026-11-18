@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x20 extends sa {
     public final /* synthetic */ int T1 = 0;
@@ -205,9 +205,9 @@ public final class x20 extends sa {
         f10.setTextSize(1, 14.0f);
         f10.setGravity(1);
         linearLayout.addView(f10, c8.ma.t(-2, -2, 1, 22, 8, 22, 0));
-        linearLayout.addView(new org.telegram.ui.hh0(this, context, R.drawable.menu_privacy, org.telegram.messenger.gd.M0(2131745638, null), org.telegram.messenger.gd.M0(2131745639, null)), c8.ma.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
+        linearLayout.addView(new org.telegram.ui.ih0(this, context, R.drawable.menu_privacy, org.telegram.messenger.gd.M0(2131745638, null), org.telegram.messenger.gd.M0(2131745639, null)), c8.ma.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
         boolean q10 = org.telegram.messenger.j10.i(this.a).q();
-        linearLayout.addView(new org.telegram.ui.hh0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.gd.M0(2131745635, null), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(q10 ? 2131745636 : 2131745637, null), new org.telegram.ui.a80(this, q10, dwVar, 9)), true)), c8.ma.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
+        linearLayout.addView(new org.telegram.ui.ih0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.gd.M0(2131745635, null), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(q10 ? 2131745636 : 2131745637, null), new org.telegram.ui.b80(this, q10, dwVar, 9)), true)), c8.ma.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
         View view = new View(getContext());
         org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d7, view, i6Var);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, 1);

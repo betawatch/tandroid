@@ -12,7 +12,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class s50 extends bk0 {
     public final /* synthetic */ x50 c;
@@ -114,26 +114,26 @@ public final class s50 extends bk0 {
         int i12 = f1Var.f;
         View view = f1Var.a;
         if (i12 == 0) {
-            org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
+            org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i7 == x50Var.r1) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131748726, null));
-                x3Var.setRightText(null);
+                y3Var.setText(org.telegram.messenger.gd.M0(2131748726, null));
+                y3Var.setRightText(null);
                 return;
             }
             if (i7 == x50Var.p1) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131748701, null));
-                x3Var.setRightText(null);
+                y3Var.setText(org.telegram.messenger.gd.M0(2131748701, null));
+                y3Var.setRightText(null);
                 return;
             }
             if (i7 != x50Var.w1) {
                 if (i7 == x50Var.z1) {
-                    x3Var.setText(org.telegram.messenger.gd.G(tL_chatInviteExported.subscription_expired, "PeopleSubscriptionExpired", new Object[0]));
-                    x3Var.setRightText(null);
+                    y3Var.setText(org.telegram.messenger.gd.G(tL_chatInviteExported.subscription_expired, "PeopleSubscriptionExpired", new Object[0]));
+                    y3Var.setRightText(null);
                     return;
                 } else {
                     if (i7 == x50Var.I1) {
-                        x3Var.setText(org.telegram.messenger.gd.G(tL_chatInviteExported.requested, "JoinRequests", new Object[0]));
-                        x3Var.setRightText(null);
+                        y3Var.setText(org.telegram.messenger.gd.G(tL_chatInviteExported.requested, "JoinRequests", new Object[0]));
+                        y3Var.setRightText(null);
                         return;
                     }
                     return;
@@ -141,15 +141,15 @@ public final class s50 extends bk0 {
             }
             int i13 = tL_chatInviteExported.usage;
             if (i13 > 0) {
-                x3Var.setText(org.telegram.messenger.gd.G(i13, "PeopleJoined", new Object[0]));
+                y3Var.setText(org.telegram.messenger.gd.G(i13, "PeopleJoined", new Object[0]));
             } else {
-                x3Var.setText(org.telegram.messenger.gd.M0(tL_chatInviteExported.subscription_pricing != null ? 2131747993 : 2131747995, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(tL_chatInviteExported.subscription_pricing != null ? 2131747993 : 2131747995, null));
             }
             if (tL_chatInviteExported.expired || tL_chatInviteExported.revoked || (i10 = tL_chatInviteExported.usage_limit) <= 0 || (i11 = tL_chatInviteExported.usage) <= 0) {
-                x3Var.setRightText(null);
+                y3Var.setRightText(null);
                 return;
             } else {
-                x3Var.setRightText(org.telegram.messenger.gd.G(i10 - i11, "PeopleJoinedRemaining", new Object[0]));
+                y3Var.setRightText(org.telegram.messenger.gd.G(i10 - i11, "PeopleJoinedRemaining", new Object[0]));
                 return;
             }
         }
@@ -440,9 +440,9 @@ public final class s50 extends bk0 {
                 break;
             case 2:
                 int i10 = org.telegram.ui.ActionBar.n6.a7;
-                View y6Var = new org.telegram.ui.Cells.y6(context, org.telegram.ui.ActionBar.n6.x0(null, i10, false), 0);
-                org.telegram.ui.ActionBar.u6.h(i10, y6Var, null);
-                view = y6Var;
+                View z6Var = new org.telegram.ui.Cells.z6(context, org.telegram.ui.ActionBar.n6.x0(null, i10, false), 0);
+                org.telegram.ui.ActionBar.u6.h(i10, z6Var, null);
+                view = z6Var;
                 view2 = view;
                 break;
             case 3:
@@ -467,7 +467,7 @@ public final class s50 extends bk0 {
                 view2 = new jn(context, 11);
                 break;
             case 7:
-                view2 = new org.telegram.ui.Cells.y6(context, (org.telegram.ui.Cells.c0) null);
+                view2 = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c0) null);
                 break;
             case 8:
                 t50 t50Var = new t50(context);
@@ -483,7 +483,7 @@ public final class s50 extends bk0 {
                 view2 = new u50(x50Var, context);
                 break;
             default:
-                view2 = new org.telegram.ui.Cells.x3(context, x50Var.J0);
+                view2 = new org.telegram.ui.Cells.y3(context, x50Var.J0);
                 break;
         }
         return i5.c.q(view2, view2, -1, -2);

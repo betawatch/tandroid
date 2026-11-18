@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ut implements rx {
     public final /* synthetic */ wt a;
@@ -118,7 +118,7 @@ public final class ut implements rx {
     public final void q() {
         org.telegram.ui.ActionBar.h2 h2Var = this.a.h;
         if (h2Var == null) {
-            new ug.z0((org.telegram.ui.ActionBar.h2) new bi.z8(this, 6), 11, false).show();
+            new ug.z0((org.telegram.ui.ActionBar.h2) new bi.y8(this, 6), 11, false).show();
         } else {
             h2Var.showDialog(new ug.z0(h2Var, 11, false));
         }

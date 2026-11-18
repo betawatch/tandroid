@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ps0 extends bk0 {
     public final Context c;
@@ -98,9 +98,9 @@ public final class ps0 extends bk0 {
             int i10 = f1Var.f;
             View view = f1Var.a;
             if (i10 == 0) {
-                ((org.telegram.ui.Cells.q1) view).y3(fjVar, null, false, false, false, false);
+                ((org.telegram.ui.Cells.r1) view).y3(fjVar, null, false, false, false, false);
             } else {
-                ((org.telegram.ui.Cells.u0) view).setMessageObject(fjVar);
+                ((org.telegram.ui.Cells.v0) view).setMessageObject(fjVar);
             }
         }
     }
@@ -108,7 +108,7 @@ public final class ps0 extends bk0 {
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         if (i7 != 0) {
-            return new kj0(new org.telegram.ui.Cells.u0(this.c, this.e, false));
+            return new kj0(new org.telegram.ui.Cells.v0(this.c, this.e, false));
         }
         org.telegram.ui.ActionBar.i6 i6Var = this.e;
         os0 os0Var = new os0(this.c, this.d, false, null, i6Var);

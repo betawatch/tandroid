@@ -22,7 +22,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.vf;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o2 implements x10 {
     public final /* synthetic */ int a = 0;
@@ -73,7 +73,7 @@ public final /* synthetic */ class o2 implements x10 {
                         if (l10.longValue() > 0) {
                             spannableStringBuilder.append((CharSequence) "\n\n").append(gd.V(null, null, 2131742833, org.telegram.ui.Wallet.u0.x(l10.longValue(), false)));
                         }
-                        f6Var.k2(j3, 0L, spannableStringBuilder, false, new bi.b8(f6Var, j3, stargiftdepositpayload, l10, a2Var));
+                        f6Var.k2(j3, 0L, spannableStringBuilder, false, new bi.a8(f6Var, j3, stargiftdepositpayload, l10, a2Var));
                         break;
                     }
                 }
@@ -107,14 +107,14 @@ public final /* synthetic */ class o2 implements x10 {
                 boolean z12 = (contentsettings == null || !contentsettings.sensitive_can_change) && z11;
                 if (!z11) {
                     if (contentsettings != null && contentsettings.sensitive_can_change) {
-                        org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, parentActivity, resourceProvider);
-                        c2Var.setBackground(org.telegram.ui.ActionBar.n6.N0(false));
-                        c2Var.e(gd.M0(2131748290, null), "", zArr2[0], false, false);
+                        org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, parentActivity, resourceProvider);
+                        d2Var.setBackground(org.telegram.ui.ActionBar.n6.N0(false));
+                        d2Var.e(gd.M0(2131748290, null), "", zArr2[0], false, false);
                         z10 = z11;
-                        c2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, gd.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
-                        frameLayout.addView(c2Var, c8.ma.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+                        d2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, gd.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
+                        frameLayout.addView(d2Var, c8.ma.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                         i7 = 1;
-                        c2Var.setOnClickListener(new org.telegram.messenger.a9(zArr2, 1));
+                        d2Var.setOnClickListener(new org.telegram.messenger.a9(zArr2, 1));
                         final boolean[] zArr3 = new boolean[i7];
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, parentActivity, resourceProvider);
                         alertDialog$Builder2.a.S = gd.M0(2131748285, null);

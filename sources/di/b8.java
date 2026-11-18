@@ -6,7 +6,7 @@ import org.telegram.messenger.tr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,7 +46,7 @@ public final /* synthetic */ class b8 implements Runnable {
                         mp.u1(i10).g7.edit().putLong(a8.p0.o(j10, "dialog_bar_paying_"), 0L).apply();
                         mp.u1(i10).g3(mp.u1(i10).c2(Long.valueOf(j10)), mp.u1(i10).O0(Long.valueOf(-j10)), true);
                         org.telegram.messenger.i5.r(i10).D(true);
-                        ks.f(i10).k(ks.P3, Long.valueOf(j10));
+                        ks.f(i10).k(ks.Q3, Long.valueOf(j10));
                         break;
                     } else {
                         x8Var.Z(-j3, j10, this.c);

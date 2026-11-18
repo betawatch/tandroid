@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jr0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -43,8 +43,8 @@ public final class jr0 implements ViewTreeObserver.OnPreDrawListener {
                     b1Var.getClass();
                     int R = RecyclerView.R(childAt);
                     if (R >= i10) {
-                        if (R == 1 && b1Var.getAdapter() == o51Var.p1 && (childAt instanceof org.telegram.ui.Cells.x3)) {
-                            childAt = ((org.telegram.ui.Cells.x3) childAt).getTextView();
+                        if (R == 1 && b1Var.getAdapter() == o51Var.p1 && (childAt instanceof org.telegram.ui.Cells.y3)) {
+                            childAt = ((org.telegram.ui.Cells.y3) childAt).getTextView();
                         }
                         childAt.setAlpha(0.0f);
                         int min = (int) ((Math.min(b1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / b1Var.getMeasuredHeight()) * 100.0f);

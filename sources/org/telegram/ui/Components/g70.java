@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g70 extends org.telegram.ui.ActionBar.x2 {
     public static ArrayList D1;
@@ -32,7 +32,7 @@ public final class g70 extends org.telegram.ui.ActionBar.x2 {
     public Drawable m1;
     public boolean n1;
     public int o1;
-    public org.telegram.ui.Cells.w0 p1;
+    public org.telegram.ui.Cells.x0 p1;
     public c70 q1;
     public TextView r1;
     public TextView s1;
@@ -305,21 +305,21 @@ public final class g70 extends org.telegram.ui.ActionBar.x2 {
         if (i7 == 0) {
             viewGroup.addView(g70Var.q1, c8.ma.t(g70Var.t1.size() < 5 ? -2 : -1, 95, 49, 0, 6, 0, 0));
         }
-        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(g70Var, context, false);
-        g70Var.p1 = w0Var;
-        ((View) w0Var.d).setOnClickListener(new y7(20, g70Var, e70Var));
+        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(g70Var, context, false);
+        g70Var.p1 = x0Var;
+        ((View) x0Var.d).setOnClickListener(new y7(20, g70Var, e70Var));
         if (g70Var.w1 == 0) {
-            viewGroup.addView(w0Var, c8.ma.t(-1, 50, 51, 0, 0, 0, 0));
-            org.telegram.ui.Cells.w0 w0Var2 = new org.telegram.ui.Cells.w0(g70Var, context, true);
+            viewGroup.addView(x0Var, c8.ma.t(-1, 50, 51, 0, 0, 0, 0));
+            org.telegram.ui.Cells.x0 x0Var2 = new org.telegram.ui.Cells.x0(g70Var, context, true);
             if (org.telegram.messenger.v3.W(O0)) {
-                w0Var2.a(org.telegram.messenger.gd.M0(2131743225, null), false);
+                x0Var2.a(org.telegram.messenger.gd.M0(2131743225, null), false);
             } else {
-                w0Var2.a(org.telegram.messenger.gd.M0(2131743104, null), false);
+                x0Var2.a(org.telegram.messenger.gd.M0(2131743104, null), false);
             }
-            ((View) w0Var2.d).setOnClickListener(new n0(g70Var, 29));
-            viewGroup.addView(w0Var2, c8.ma.t(-1, 50, 51, 0, 0, 0, 0));
+            ((View) x0Var2.d).setOnClickListener(new n0(g70Var, 29));
+            viewGroup.addView(x0Var2, c8.ma.t(-1, 50, 51, 0, 0, 0, 0));
         } else {
-            viewGroup.addView(w0Var, c8.ma.d(-1, 50.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
+            viewGroup.addView(x0Var, c8.ma.d(-1, 50.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         g70Var.N0(O0, false);
         if (h2Var == null) {
@@ -344,22 +344,22 @@ public final class g70 extends org.telegram.ui.ActionBar.x2 {
     }
 
     public final void N0(TLRPC.Chat chat, boolean z10) {
-        org.telegram.ui.Cells.w0 w0Var = this.p1;
+        org.telegram.ui.Cells.x0 x0Var = this.p1;
         if (this.w1 == 0) {
             if (org.telegram.messenger.v3.W(chat)) {
-                w0Var.a(org.telegram.messenger.gd.a0("VoipChannelStartVoiceChat", null, 2131743218, new Object[0]), z10);
+                x0Var.a(org.telegram.messenger.gd.a0("VoipChannelStartVoiceChat", null, 2131743218, new Object[0]), z10);
                 return;
             } else {
-                w0Var.a(org.telegram.messenger.gd.a0("VoipGroupStartVoiceChat", null, 2131743087, new Object[0]), z10);
+                x0Var.a(org.telegram.messenger.gd.a0("VoipGroupStartVoiceChat", null, 2131743087, new Object[0]), z10);
                 return;
             }
         }
         long B1 = org.telegram.messenger.fj.B1(this.x1);
         if (org.telegram.messenger.n5.E(B1)) {
-            w0Var.a(org.telegram.messenger.gd.a0("VoipGroupContinueAs", null, 2131743154, org.telegram.messenger.o10.k(org.telegram.messenger.mp.u1(this.a).c2(Long.valueOf(B1)), true)), z10);
+            x0Var.a(org.telegram.messenger.gd.a0("VoipGroupContinueAs", null, 2131743154, org.telegram.messenger.o10.k(org.telegram.messenger.mp.u1(this.a).c2(Long.valueOf(B1)), true)), z10);
         } else {
             TLRPC.Chat O0 = org.telegram.messenger.mp.u1(this.a).O0(Long.valueOf(-B1));
-            w0Var.a(org.telegram.messenger.gd.a0("VoipGroupContinueAs", null, 2131743154, O0 != null ? O0.title : ""), z10);
+            x0Var.a(org.telegram.messenger.gd.a0("VoipGroupContinueAs", null, 2131743154, O0 != null ? O0.title : ""), z10);
         }
     }
 

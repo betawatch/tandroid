@@ -1,63 +1,23 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class ph0 extends rg.a {
-    public int c;
-    public int d;
-    public CharSequence e;
-    public CharSequence f;
-    public th0 g;
-    public int h;
-    public boolean i;
+public final class ph0 extends org.telegram.ui.Cells.n8 {
+    public ImageView a0;
 
-    public static ph0 b(int i7, String str, boolean z10) {
-        ph0 ph0Var = new ph0(1, true);
-        ph0Var.c = i7;
-        ph0Var.e = str;
-        ph0Var.i = z10;
-        return ph0Var;
+    @Override // org.telegram.ui.Cells.n8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        int L = org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(17.0f) : (i11 - i7) - org.telegram.messenger.g0.L(41.0f);
+        int z11 = org.telegram.messenger.n10.z(24.0f, i12 - i10, 2);
+        this.a0.layout(L, z11, org.telegram.messenger.g0.L(24.0f) + L, org.telegram.messenger.g0.L(24.0f) + z11);
     }
 
-    public static ph0 c(int i7, String str, String str2) {
-        ph0 ph0Var = new ph0(5, true);
-        ph0Var.c = i7;
-        ph0Var.e = str;
-        ph0Var.f = str2;
-        return ph0Var;
-    }
-
-    public static ph0 d(int i7, String str) {
-        ph0 ph0Var = new ph0(4, true);
-        ph0Var.c = i7;
-        ph0Var.e = str;
-        return ph0Var;
-    }
-
-    @Override // rg.a
-    public final boolean a(rg.a aVar) {
-        if (this == aVar) {
-            return true;
-        }
-        if (ph0.class != aVar.getClass()) {
-            return false;
-        }
-        ph0 ph0Var = (ph0) aVar;
-        return this.c == ph0Var.c && this.d == ph0Var.d && this.h == ph0Var.h && this.i == ph0Var.i && Objects.equals(this.e, ph0Var.e) && Objects.equals(this.f, ph0Var.f) && this.g == ph0Var.g;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && ph0.class == obj.getClass()) {
-            ph0 ph0Var = (ph0) obj;
-            if (this.c == ph0Var.c && this.h == ph0Var.h && ((this.a == 8 || (this.d == ph0Var.d && Objects.equals(this.e, ph0Var.e) && (this.a == 6 || Objects.equals(this.f, ph0Var.f)))) && this.g == ph0Var.g)) {
-                return true;
-            }
-        }
-        return false;
+    @Override // org.telegram.ui.Cells.n8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        this.a0.measure(i7, i10);
     }
 }

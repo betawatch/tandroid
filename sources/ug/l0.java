@@ -8,7 +8,7 @@ import android.transition.TransitionSet;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.i8;
+import bi.h8;
 import c8.l9;
 import c8.ma;
 import c8.ra;
@@ -67,7 +67,7 @@ import org.telegram.ui.rn;
 import org.telegram.ui.uv;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class l0 extends sa implements fs {
     public static final /* synthetic */ int S2 = 0;
@@ -98,7 +98,7 @@ public class l0 extends sa implements fs {
     public k0 Z1;
     public boolean a2;
     public boolean b2;
-    public org.telegram.ui.Cells.q1 c2;
+    public org.telegram.ui.Cells.r1 c2;
     public final int d2;
     public final ArrayList e2;
     public boolean f2;
@@ -881,7 +881,7 @@ public class l0 extends sa implements fs {
         ck0Var.setPadding(0, 0, 0, L);
         ck0Var.setClipToPadding(false);
         ck0Var.setClipChildren(false);
-        ck0Var.setOnItemClickListener(new i8(this, i12));
+        ck0Var.setOnItemClickListener(new h8(this, i12));
         ck0Var.setOnItemLongClickListener(new w(this, i11));
         this.A2.w.setOnClickListener(new a0(i10, this, context));
         this.A2.h.setOnClickListener(new t(this, 3));

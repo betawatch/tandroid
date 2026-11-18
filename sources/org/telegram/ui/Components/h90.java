@@ -5,7 +5,7 @@ import android.content.Context;
 import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h90 extends gt0 {
     public final /* synthetic */ i90 x2;
@@ -74,10 +74,10 @@ public final class h90 extends gt0 {
             return;
         }
         int i7 = Math.round(f10 - 8.0f) > 0 ? 1 : 0;
-        org.telegram.ui.ne0 ne0Var = i90Var.K;
-        if (ne0Var != null && i90Var.M != i7) {
+        org.telegram.ui.oe0 oe0Var = i90Var.K;
+        if (oe0Var != null && i90Var.M != i7) {
             i90Var.M = i7;
-            ne0Var.r(i90Var.L[i7], true);
+            oe0Var.r(i90Var.L[i7], true);
         }
         i90Var.h0(true);
     }

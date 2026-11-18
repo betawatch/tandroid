@@ -7,9 +7,9 @@ import android.os.Parcel;
 import android.os.SystemClock;
 import android.util.Log;
 import java.nio.charset.StandardCharsets;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class a0 extends Binder implements b {
     public static final /* synthetic */ int b = 0;
@@ -58,14 +58,13 @@ public final class a0 extends Binder implements b {
         if (WidgetEngineService.e) {
             return;
         }
-        long uptimeMillis = SystemClock.uptimeMillis();
+        SystemClock.uptimeMillis();
         try {
             String d = WidgetEngineService.d(new q(this.a.getAssets(), 3));
-            long uptimeMillis2 = SystemClock.uptimeMillis() - uptimeMillis;
+            SystemClock.uptimeMillis();
             WidgetEngineBackend.warmFonts(this.a.getResources().getDisplayMetrics().density);
-            long uptimeMillis3 = (SystemClock.uptimeMillis() - uptimeMillis) - uptimeMillis2;
+            SystemClock.uptimeMillis();
             WidgetSandboxNative.prepare(d.getBytes(StandardCharsets.UTF_8));
-            Log.i("WidgetEngine", "warm: bundles in " + uptimeMillis2 + " ms, fonts in " + uptimeMillis3 + " ms, the validator in " + (((SystemClock.uptimeMillis() - uptimeMillis) - uptimeMillis2) - uptimeMillis3) + " ms");
         } catch (RuntimeException e10) {
             Log.e("WidgetEngine", "warmup failed", e10);
         }
@@ -191,9 +190,9 @@ public final class a0 extends Binder implements b {
         if (WidgetEngineService.e) {
             throw new IllegalStateException("Widget engine: no seccomp filter on this device");
         }
-        long uptimeMillis = SystemClock.uptimeMillis();
+        SystemClock.uptimeMillis();
         String d = WidgetEngineService.d(new q(this.a.getAssets(), 3));
-        long uptimeMillis2 = SystemClock.uptimeMillis() - uptimeMillis;
+        SystemClock.uptimeMillis();
         long create = WidgetSandboxNative.create(d.getBytes(StandardCharsets.UTF_8), bArr, bArr2, f10, f11, i7, bArr3, bArr4, bArr5, bArr6, z10, new WidgetEngineBackend(dVar, f11));
         Object obj = l.a;
         synchronized (obj) {
@@ -201,7 +200,7 @@ public final class a0 extends Binder implements b {
                 l.b++;
                 if (!l.c) {
                     l.c = true;
-                    Thread thread = new Thread(new cd0(17), "widget-engine-memory");
+                    Thread thread = new Thread(new dd0(17), "widget-engine-memory");
                     thread.setDaemon(true);
                     thread.start();
                 }
@@ -210,7 +209,6 @@ public final class a0 extends Binder implements b {
                 throw th2;
             }
         }
-        Log.i("WidgetEngine", "session in " + (SystemClock.uptimeMillis() - uptimeMillis) + " ms (bundles " + uptimeMillis2 + " ms)");
         return create;
     }
 

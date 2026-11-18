@@ -1,173 +1,209 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.text.Editable;
+import android.text.Spannable;
 import android.text.TextUtils;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lr;
+import android.text.TextWatcher;
+import android.text.style.CharacterStyle;
+import android.text.style.ParagraphStyle;
+import android.text.style.SuggestionSpan;
+import android.util.Pair;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ec0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public boolean E;
-    public final org.telegram.ui.ActionBar.i6 a;
-    public int b;
-    public boolean c;
-    public final i3 d;
-    public final int e;
-    public boolean f;
-    public int h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-    public final org.telegram.ui.Components.f5 w;
-    public int x;
-    public final org.telegram.ui.Components.m6 y;
+public final class k3 implements TextWatcher {
+    public final /* synthetic */ int a = 2;
+    public boolean b;
+    public int c;
+    public Object d;
 
-    public k3(Context context, String str, boolean z10, boolean z11, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context);
-        this.h = -1;
-        this.w = new org.telegram.ui.Components.f5(this);
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true);
-        this.y = m6Var;
-        m6Var.n(0.2f, 160L, lr.h);
-        m6Var.w(org.telegram.messenger.g0.L(15.33f));
-        m6Var.b = 5;
-        this.e = i7;
-        i3 i3Var = new i3(this, context, i6Var, i7, i6Var, z11);
-        this.d = i3Var;
-        m6Var.setCallback(i3Var);
-        i3Var.setTextSize(1, 17.0f);
-        org.telegram.ui.ActionBar.u6.D(i3Var, org.telegram.ui.ActionBar.n6.H6, i6Var);
-        int i10 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.U(i3Var, i10, i6Var);
-        i3Var.setBackground(null);
-        if (z10) {
-            i3Var.setMaxLines(5);
-            i3Var.setSingleLine(false);
-        } else {
-            i3Var.setMaxLines(1);
-            i3Var.setSingleLine(true);
-        }
-        i3Var.setPadding(org.telegram.messenger.g0.L(21.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L((i7 > 0 ? 42 : 0) + 21), org.telegram.messenger.g0.L(15.0f));
-        i3Var.setGravity((gd.a0 ? 5 : 3) | 48);
-        i3Var.setInputType((z10 ? 131072 : 0) | 573441);
-        i3Var.setRawInputType((z10 ? 131072 : 0) | 573441);
-        i3Var.setHint(str);
-        this.a = i6Var;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(i10, i6Var);
-        this.b = w02;
-        i3Var.setCursorColor(w02);
-        i3Var.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-        i3Var.setCursorWidth(1.5f);
-        i3Var.addTextChangedListener(new j3(this, i7, z10));
-        i3Var.setOnFocusChangeListener(new hi.u6(this, 3));
-        addView(i3Var, c8.ma.e(-1, -1, 48));
-        c();
+    public /* synthetic */ k3() {
     }
 
-    public final void c() {
-        int i7;
-        if (this.d == null) {
-            return;
-        }
-        this.x = this.e - getText().length();
-        String str = "";
-        if ((!TextUtils.isEmpty(getText()) || this.f) && ((!this.n || (this.s && !this.r)) && ((i7 = this.h) == -1 || this.x <= i7))) {
-            str = "" + this.x;
-        }
-        this.y.t(str, true, true);
-    }
-
-    public CharSequence getText() {
-        return this.d.getText();
-    }
-
-    public TLRPC.TL_textWithEntities getTextWithEntities() {
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        CharSequence[] charSequenceArr = {getText()};
-        tL_textWithEntities.entities = ri.d0(j10.t0).Y(charSequenceArr, true, true);
-        tL_textWithEntities.text = charSequenceArr[0].toString();
-        return tL_textWithEntities;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.E) {
-            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                int i7 = this.c;
+                l3 l3Var = (l3) this.d;
+                j3 j3Var = l3Var.d;
+                if (!l3Var.c) {
+                    if (i7 > 0 && editable != null && editable.length() > i7) {
+                        l3Var.c = true;
+                        j3Var.setText(editable.subSequence(0, i7));
+                        j3Var.setSelection(j3Var.length());
+                        l3Var.c = false;
+                    }
+                    l3Var.b(editable);
+                }
+                if (!this.b) {
+                    while (true) {
+                        int indexOf = editable.toString().indexOf("\n");
+                        if (indexOf < 0) {
+                            break;
+                        } else {
+                            editable.delete(indexOf, indexOf + 1);
+                        }
+                    }
+                }
+                break;
+            case 1:
+                org.telegram.ui.Components.a5 a5Var = (org.telegram.ui.Components.a5) this.d;
+                if (!this.b) {
+                    int length = editable.length();
+                    int i10 = this.c;
+                    if (length > i10) {
+                        this.b = true;
+                        editable.delete(i10, editable.length());
+                        org.telegram.messenger.g0.D3(a5Var);
+                        try {
+                            a5Var.performHapticFeedback(3, 2);
+                        } catch (Exception unused) {
+                        }
+                        this.b = false;
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                break;
+            default:
+                ec0 ec0Var = (ec0) this.d;
+                ah.i iVar = ec0Var.c;
+                if (!this.b) {
+                    ec0Var.p(true);
+                    org.telegram.messenger.g0.r(ec0Var.W);
+                    ec0Var.n(false);
+                    if (TextUtils.isEmpty(editable)) {
+                        ec0Var.E = false;
+                    }
+                    if (!ec0Var.o(editable.toString())) {
+                        ec0Var.r(true);
+                        this.b = true;
+                        boolean z10 = iVar.getSelectionEnd() >= iVar.getText().length();
+                        if (!ec0Var.E) {
+                            String str = ec0Var.L;
+                            iVar.setText(str.substring(0, Utilities.j(this.c, str.length(), 0)));
+                            if (z10) {
+                                iVar.setSelection(iVar.getText().length());
+                            }
+                        }
+                        this.b = false;
+                        break;
+                    }
+                }
+                break;
         }
     }
 
-    public void setDivider(boolean z10) {
-        this.E = z10;
-        setWillNotDraw(!z10);
-    }
-
-    public void setShowLimitOnFocus(boolean z10) {
-        this.n = z10;
-    }
-
-    public void setShowLimitWhenEmpty(boolean z10) {
-        this.f = z10;
-        if (z10) {
-            c();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                l3 l3Var = (l3) this.d;
+                if (!l3Var.c) {
+                    l3Var.r = false;
+                    break;
+                }
+                break;
+            case 1:
+                break;
+            case 2:
+                if (!this.b) {
+                    HashMap hashMap = new HashMap();
+                    boolean z10 = charSequence instanceof Spannable;
+                    if (z10) {
+                        Spannable spannable = (Spannable) charSequence;
+                        CharacterStyle[] characterStyleArr = (CharacterStyle[]) spannable.getSpans(0, spannable.length(), CharacterStyle.class);
+                        ParagraphStyle[] paragraphStyleArr = (ParagraphStyle[]) spannable.getSpans(0, spannable.length(), ParagraphStyle.class);
+                        if (characterStyleArr != null && characterStyleArr.length > 0) {
+                            for (CharacterStyle characterStyle : characterStyleArr) {
+                                if (characterStyle != null && !(characterStyle instanceof SuggestionSpan)) {
+                                    hashMap.put(characterStyle, new Pair(Integer.valueOf(spannable.getSpanStart(characterStyle)), Integer.valueOf(spannable.getSpanEnd(characterStyle))));
+                                }
+                            }
+                        }
+                        if (paragraphStyleArr != null && paragraphStyleArr.length > 0) {
+                            for (ParagraphStyle paragraphStyle : paragraphStyleArr) {
+                                if (paragraphStyle != null && !(paragraphStyle instanceof SuggestionSpan)) {
+                                    hashMap.put(paragraphStyle, new Pair(Integer.valueOf(spannable.getSpanStart(paragraphStyle)), Integer.valueOf(spannable.getSpanEnd(paragraphStyle))));
+                                }
+                            }
+                        }
+                    }
+                    this.d = hashMap;
+                    this.c = z10 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
+                    break;
+                }
+                break;
+            default:
+                if (!this.b && charSequence != null && ((ec0) this.d).L != null) {
+                    this.c = ec0.s(charSequence.toString()).length();
+                    break;
+                }
+                break;
         }
     }
 
-    public void setShowLimitWhenNear(int i7) {
-        this.h = i7;
-        c();
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.c = true;
-        i3 i3Var = this.d;
-        i3Var.setText(charSequence);
-        i3Var.setSelection(i3Var.getText().length());
-        this.c = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        i3 i3Var = this.d;
-        if (i3Var == null) {
-            return;
-        }
-        try {
-            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, this.a);
-            if (w02 != this.b) {
-                this.b = w02;
-                i3Var.setCursorColor(w02);
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
+            case 2:
+                if (!this.b) {
+                    boolean z10 = charSequence instanceof Spannable;
+                    int length = z10 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
+                    HashMap hashMap = (HashMap) this.d;
+                    if (hashMap != null) {
+                        if ((length > 0 || this.c > 0) && i7 == 0 && i10 == i11) {
+                            this.b = true;
+                            if (z10) {
+                                Spannable spannable = (Spannable) charSequence;
+                                for (Map.Entry entry : hashMap.entrySet()) {
+                                    if (spannable.getSpanStart(entry.getKey()) == -1) {
+                                        spannable.setSpan(entry.getKey(), ((Integer) ((Pair) entry.getValue()).first).intValue(), ((Integer) ((Pair) entry.getValue()).second).intValue(), 33);
+                                    }
+                                }
+                            }
+                            this.b = false;
+                            break;
+                        }
+                    }
+                }
+                break;
         }
     }
 
-    public void setText(TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.c = true;
-        CharSequence h02 = fj.h0(tL_textWithEntities, false);
-        i3 i3Var = this.d;
-        i3Var.setText(h02);
-        i3Var.setSelection(i3Var.getText().length());
-        this.c = false;
+    public k3(l3 l3Var, int i7, boolean z10) {
+        this.d = l3Var;
+        this.c = i7;
+        this.b = z10;
     }
 
-    public void a(boolean z10) {
+    public k3(int i7, org.telegram.ui.Components.a5 a5Var) {
+        this.c = i7;
+        this.d = a5Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public k3(ec0 ec0Var) {
+        this.d = ec0Var;
     }
 
-    public void b(Editable editable) {
+    private final void a(Editable editable) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

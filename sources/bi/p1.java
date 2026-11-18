@@ -23,9 +23,9 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.ta0;
 import org.telegram.ui.Components.y60;
-import org.telegram.ui.y80;
+import org.telegram.ui.z80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p1 implements oj0 {
     public final /* synthetic */ int a;
@@ -167,7 +167,7 @@ public final /* synthetic */ class p1 implements oj0 {
                 hi.v6 v6Var = (hi.v6) obj3;
                 x10 x10Var = (x10) obj2;
                 org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj;
-                if (!(view instanceof org.telegram.ui.Cells.g7)) {
+                if (!(view instanceof org.telegram.ui.Cells.h7)) {
                     l41 G4 = v6Var.l2.G(i7 - 1);
                     if (G4 != null && G4.d == 1) {
                         new hi.v6(v6Var.getContext(), true, v6Var, x10Var, i6Var).show();
@@ -183,7 +183,7 @@ public final /* synthetic */ class p1 implements oj0 {
                         break;
                     }
                 } else {
-                    fj message = ((org.telegram.ui.Cells.g7) view).getMessage();
+                    fj message = ((org.telegram.ui.Cells.h7) view).getMessage();
                     if (message != null) {
                         org.telegram.messenger.a6.q(v6Var.a).v(v6Var);
                         if (v6Var.c2 != null) {
@@ -214,15 +214,15 @@ public final /* synthetic */ class p1 implements oj0 {
                 hi.l7 l7Var = (hi.l7) obj3;
                 Context context = (Context) obj2;
                 hi.w5 w5Var = (hi.w5) obj;
-                org.telegram.ui.Cells.k3 k3Var = l7Var.V1;
-                org.telegram.ui.Cells.k3 k3Var2 = l7Var.U1;
+                org.telegram.ui.Cells.l3 l3Var = l7Var.V1;
+                org.telegram.ui.Cells.l3 l3Var2 = l7Var.U1;
                 l41 G5 = l7Var.T1.G(i7 - 1);
                 if (G5 != null) {
                     if (G5.H(hi.j7.class) && (webPage = l7Var.c2) != null && !hi.l7.h1(webPage)) {
                         tg.k2 k2Var = new tg.k2(context, l7Var.a);
                         tg.h0 h0Var = new tg.h0();
-                        h0Var.c = k3Var2.d.getText().toString();
-                        h0Var.b = l7Var.i2 ? k3Var.d.getText().toString() : null;
+                        h0Var.c = l3Var2.d.getText().toString();
+                        h0Var.b = l7Var.i2 ? l3Var.d.getText().toString() : null;
                         TLRPC.WebPage webPage2 = l7Var.c2;
                         h0Var.d = webPage2;
                         h0Var.e = l7Var.k2;
@@ -239,16 +239,16 @@ public final /* synthetic */ class p1 implements oj0 {
                         k2Var.e.setImageDrawable(new hi.l3(w5Var, 9));
                         k2Var.show();
                         break;
-                    } else if (G5.d == 2 && (view instanceof org.telegram.ui.Cells.r8)) {
+                    } else if (G5.d == 2 && (view instanceof org.telegram.ui.Cells.s8)) {
                         boolean z11 = !l7Var.i2;
                         l7Var.i2 = z11;
-                        ((org.telegram.ui.Cells.r8) view).setChecked(z11);
+                        ((org.telegram.ui.Cells.s8) view).setChecked(z11);
                         l7Var.T1.O(true);
                         if (l7Var.i2) {
-                            k3Var.requestFocus();
+                            l3Var.requestFocus();
                             break;
                         } else {
-                            k3Var2.requestFocus();
+                            l3Var2.requestFocus();
                             break;
                         }
                     }
@@ -259,15 +259,15 @@ public final /* synthetic */ class p1 implements oj0 {
                 org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj2;
                 Context context2 = (Context) obj;
                 org.telegram.ui.Cells.s sVar = (org.telegram.ui.Cells.s) view;
-                y80 y80Var = (y80) tVar.f3.get(i7);
-                if (y80Var.e && !j10.o()) {
+                z80 z80Var = (z80) tVar.f3.get(i7);
+                if (z80Var.e && !j10.o()) {
                     h2Var.showDialog(new ug.z0(h2Var, 10, true));
                     break;
-                } else if (!ya.a(y80Var)) {
+                } else if (!ya.a(z80Var)) {
                     org.telegram.ui.Cells.p pVar = new org.telegram.ui.Cells.p(context2);
                     pVar.a = i7;
                     tVar.g3.w0(pVar);
-                    ya.b(y80Var);
+                    ya.b(z80Var);
                     int i17 = org.telegram.ui.Cells.s.h;
                     sVar.b(true, true);
                     for (int i18 = 0; i18 < tVar.getChildCount(); i18++) {
@@ -276,7 +276,7 @@ public final /* synthetic */ class p1 implements oj0 {
                             sVar2.b(false, true);
                         }
                     }
-                    ks.e().k(ks.R4, 5, y80Var);
+                    ks.e().k(ks.S4, 5, z80Var);
                     break;
                 }
                 break;

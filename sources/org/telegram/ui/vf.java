@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vf implements Runnable {
     public final /* synthetic */ int a;
@@ -109,16 +109,16 @@ public final /* synthetic */ class vf implements Runnable {
                     int i15 = TLObject.FLAG_31;
                     for (int i16 = 0; i16 < bnVar.A0.getChildCount(); i16++) {
                         View childAt = bnVar.A0.getChildAt(i16);
-                        if (childAt instanceof org.telegram.ui.Cells.q1) {
-                            org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                            if (q1Var.getCurrentMessagesGroup() != null) {
-                                for (int i17 = 0; i17 < q1Var.getCurrentMessagesGroup().d.size(); i17++) {
-                                    int e12 = ((org.telegram.messenger.fj) q1Var.getCurrentMessagesGroup().d.get(i17)).e1();
+                        if (childAt instanceof org.telegram.ui.Cells.r1) {
+                            org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt;
+                            if (r1Var.getCurrentMessagesGroup() != null) {
+                                for (int i17 = 0; i17 < r1Var.getCurrentMessagesGroup().d.size(); i17++) {
+                                    int e12 = ((org.telegram.messenger.fj) r1Var.getCurrentMessagesGroup().d.get(i17)).e1();
                                     i14 = Math.min(i14, e12);
                                     i15 = Math.max(i15, e12);
                                 }
-                            } else if (q1Var.getMessageObject() != null) {
-                                int e13 = q1Var.getMessageObject().e1();
+                            } else if (r1Var.getMessageObject() != null) {
+                                int e13 = r1Var.getMessageObject().e1();
                                 i14 = Math.min(i14, e13);
                                 i15 = Math.max(i15, e13);
                             }

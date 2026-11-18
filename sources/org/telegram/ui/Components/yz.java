@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yz implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a = 1;
@@ -35,7 +35,7 @@ public final /* synthetic */ class yz implements org.telegram.messenger.x10 {
                 org.telegram.ui.ActionBar.h2 h2Var = null;
                 for (int size = fragmentStack.size() - 1; size >= 0; size--) {
                     h2Var = (org.telegram.ui.ActionBar.h2) fragmentStack.get(size);
-                    if (!(h2Var instanceof org.telegram.ui.cx) && !(h2Var instanceof org.telegram.ui.le0)) {
+                    if (!(h2Var instanceof org.telegram.ui.cx) && !(h2Var instanceof org.telegram.ui.me0)) {
                         if (z11) {
                             h2Var.finishFragment();
                             z11 = false;
@@ -44,7 +44,7 @@ public final /* synthetic */ class yz implements org.telegram.messenger.x10 {
                         }
                     }
                     org.telegram.ui.ActionBar.h2 h2Var2 = h2Var;
-                    org.telegram.ui.ActionBar.h2 h2Var3 = !(h2Var2 instanceof org.telegram.ui.le0) ? ((org.telegram.ui.le0) h2Var2).K : h2Var2;
+                    org.telegram.ui.ActionBar.h2 h2Var3 = !(h2Var2 instanceof org.telegram.ui.me0) ? ((org.telegram.ui.me0) h2Var2).K : h2Var2;
                     z10 = h2Var3 instanceof org.telegram.ui.cx;
                     ph phVar = this.c;
                     if (z10) {
@@ -58,7 +58,7 @@ public final /* synthetic */ class yz implements org.telegram.messenger.x10 {
                     }
                 }
                 org.telegram.ui.ActionBar.h2 h2Var22 = h2Var;
-                if (!(h2Var22 instanceof org.telegram.ui.le0)) {
+                if (!(h2Var22 instanceof org.telegram.ui.me0)) {
                 }
                 z10 = h2Var3 instanceof org.telegram.ui.cx;
                 ph phVar2 = this.c;

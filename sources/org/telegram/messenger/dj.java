@@ -15,7 +15,7 @@ import org.telegram.ui.Components.gh0;
 import org.telegram.ui.Components.hh0;
 import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class dj {
     public final CharSequence a;
@@ -889,7 +889,7 @@ public final class dj {
         }
     }
 
-    public final int c(org.telegram.ui.Cells.x1 x1Var) {
+    public final int c(org.telegram.ui.Cells.y1 y1Var) {
         int i7 = 0;
         int i10 = 0;
         while (true) {
@@ -897,7 +897,7 @@ public final class dj {
             if (i7 >= arrayList.size()) {
                 return i10;
             }
-            i10 += ((cj) arrayList.get(i7)).j(x1Var) + ((cj) arrayList.get(i7)).f + ((cj) arrayList.get(i7)).h;
+            i10 += ((cj) arrayList.get(i7)).j(y1Var) + ((cj) arrayList.get(i7)).f + ((cj) arrayList.get(i7)).h;
             i7++;
         }
     }

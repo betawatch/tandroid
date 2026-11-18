@@ -45,21 +45,21 @@ import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.qg0;
 import org.telegram.ui.rg0;
 import org.telegram.ui.sg0;
+import org.telegram.ui.tg0;
 import org.telegram.ui.uv;
 import org.telegram.ui.v00;
 import ug.j1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class d1 extends sa implements fs {
     public final int T1;
-    public final sg0 U1;
-    public final rg0 V1;
+    public final tg0 U1;
+    public final sg0 V1;
     public final uv W1;
-    public final qg0 X1;
+    public final rg0 X1;
     public final mp Y1;
     public final ah.a Z1;
     public final ArrayList a2;
@@ -115,27 +115,27 @@ public final class d1 extends sa implements fs {
         if (hVar != null) {
             hVar.y = true;
         }
-        qg0 qg0Var = new qg0(i12, getContext(), h0Var);
-        this.X1 = qg0Var;
-        qg0Var.setOnCloseClickListener(new x0(this, 10));
-        qg0Var.setText(P0());
-        qg0Var.setCloseImageVisible(false);
-        qg0Var.f.c(false, 0.0f);
+        rg0 rg0Var = new rg0(i12, getContext(), h0Var);
+        this.X1 = rg0Var;
+        rg0Var.setOnCloseClickListener(new x0(this, 10));
+        rg0Var.setText(P0());
+        rg0Var.setCloseImageVisible(false);
+        rg0Var.f.c(false, 0.0f);
         this.p2 = new op(this, 3);
-        rg0 rg0Var = new rg0(this, getContext(), h0Var, i12);
-        this.V1 = rg0Var;
-        u6.h(i11, rg0Var, h0Var);
-        rg0Var.setOnSearchTextChange(new y0(this, i12));
+        sg0 sg0Var = new sg0(this, getContext(), h0Var, i12);
+        this.V1 = sg0Var;
+        u6.h(i11, sg0Var, h0Var);
+        sg0Var.setOnSearchTextChange(new y0(this, i12));
         hashSet.isEmpty();
-        rg0Var.b.r(gd.M0(2131745641, null), false);
+        sg0Var.b.r(gd.M0(2131745641, null), false);
         uv uvVar = new uv(15, getContext(), this);
         this.W1 = uvVar;
         ViewGroup viewGroup = this.b;
         int i13 = this.u0;
-        viewGroup.addView(qg0Var, 0, ma.f(-2.0f, -1, 55, i13, 0, i13, 0));
+        viewGroup.addView(rg0Var, 0, ma.f(-2.0f, -1, 55, i13, 0, i13, 0));
         ViewGroup viewGroup2 = this.b;
         int i14 = this.u0;
-        viewGroup2.addView(rg0Var, ma.f(-2.0f, -1, 55, i14, 0, i14, 0));
+        viewGroup2.addView(sg0Var, ma.f(-2.0f, -1, 55, i14, 0, i14, 0));
         ViewGroup viewGroup3 = this.b;
         int i15 = this.u0;
         viewGroup3.addView(uvVar, ma.f(1.0f, -1, 55, i15, 0, i15, 0));
@@ -229,11 +229,11 @@ public final class d1 extends sa implements fs {
         });
         aVar.addView(linearLayout, ma.t(-2, -2, 17, 0, 0, 0, 8));
         final int i17 = 1;
-        sg0 sg0Var = new sg0(this, getContext(), h0Var, i17);
-        this.U1 = sg0Var;
+        tg0 tg0Var = new tg0(this, getContext(), h0Var, i17);
+        this.U1 = tg0Var;
         aVar.setAlpha(0.0f);
         aVar.setVisibility(8);
-        sg0Var.setOnClickListener(new View.OnClickListener(this) { // from class: wg.b1
+        tg0Var.setOnClickListener(new View.OnClickListener(this) { // from class: wg.b1
             public final /* synthetic */ d1 b;
 
             {
@@ -294,7 +294,7 @@ public final class d1 extends sa implements fs {
                 }
             }
         });
-        aVar.addView(sg0Var, ma.r(-1, 48, 87));
+        aVar.addView(tg0Var, ma.r(-1, 48, 87));
         ViewGroup viewGroup4 = this.b;
         int i18 = this.u0;
         viewGroup4.addView(aVar, ma.f(-2.0f, -1, 87, i18, 0, i18, 0));
@@ -318,10 +318,10 @@ public final class d1 extends sa implements fs {
         kVar.m = false;
         this.o1.setItemAnimator(kVar);
         this.o1.i(new ai.i0(this, 10));
-        rg0Var.setText("");
-        rg0Var.d.b(false);
-        rg0Var.b(false, hashSet, new x0(this, 11), null);
-        qg0Var.setText(P0());
+        sg0Var.setText("");
+        sg0Var.d.b(false);
+        sg0Var.b(false, hashSet, new x0(this, 11), null);
+        rg0Var.setText(P0());
         na naVar = this.p1;
         if (naVar != null) {
             naVar.setTitle(P0());
@@ -365,14 +365,14 @@ public final class d1 extends sa implements fs {
     @Override // org.telegram.ui.Components.sa
     public final void S0(Canvas canvas, int i7) {
         float max = Math.max(i7, org.telegram.messenger.g0.m - org.telegram.messenger.g0.L(8.0f)) + org.telegram.messenger.g0.L(8.0f);
-        qg0 qg0Var = this.X1;
-        qg0Var.setTranslationY(max);
-        float translationY = qg0Var.getTranslationY() + qg0Var.getMeasuredHeight();
-        rg0 rg0Var = this.V1;
-        rg0Var.setTranslationY(translationY);
-        float translationY2 = rg0Var.getTranslationY() + rg0Var.getMeasuredHeight();
+        rg0 rg0Var = this.X1;
+        rg0Var.setTranslationY(max);
+        float translationY = rg0Var.getTranslationY() + rg0Var.getMeasuredHeight();
+        sg0 sg0Var = this.V1;
+        sg0Var.setTranslationY(translationY);
+        float translationY2 = sg0Var.getTranslationY() + sg0Var.getMeasuredHeight();
         this.W1.setTranslationY(translationY2);
-        this.o1.setTranslationY((r2.getMeasuredHeight() + (rg0Var.getMeasuredHeight() + qg0Var.getMeasuredHeight())) - org.telegram.messenger.g0.L(8.0f));
+        this.o1.setTranslationY((r2.getMeasuredHeight() + (sg0Var.getMeasuredHeight() + rg0Var.getMeasuredHeight())) - org.telegram.messenger.g0.L(8.0f));
     }
 
     @Override // org.telegram.ui.ActionBar.x2
@@ -547,8 +547,8 @@ public final class d1 extends sa implements fs {
     }
 
     public final void k1(boolean z10) {
-        sg0 sg0Var = this.U1;
-        sg0Var.setShowZero(false);
+        tg0 tg0Var = this.U1;
+        tg0Var.setShowZero(false);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         int i7 = this.T1;
         HashSet hashSet = this.c2;
@@ -563,9 +563,9 @@ public final class d1 extends sa implements fs {
             spannableStringBuilder.append((CharSequence) "d").setSpan(this.p2, 0, 1, 33);
             spannableStringBuilder.append((CharSequence) gd.M0(2131749502, "GiftPremiumChooseRecipientsBtn"));
         }
-        sg0Var.c(hashSet.size(), true);
-        sg0Var.i(spannableStringBuilder, z10, false);
-        sg0Var.setEnabled(hashSet.size() > 0);
+        tg0Var.c(hashSet.size(), true);
+        tg0Var.i(spannableStringBuilder, z10, false);
+        tg0Var.setEnabled(hashSet.size() > 0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:91:0x01e7  */

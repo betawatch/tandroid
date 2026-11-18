@@ -47,9 +47,9 @@ import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.ph0;
 import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xt;
-import org.telegram.ui.o60;
+import org.telegram.ui.p60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class u1 extends Dialog implements Drawable.Callback, fs {
     public static final /* synthetic */ int k1 = 0;
@@ -146,7 +146,7 @@ public class u1 extends Dialog implements Drawable.Callback, fs {
     public m1 w;
     public TextView w0;
     public LinearLayout x;
-    public o60 x0;
+    public p60 x0;
     public p1 y;
     public final int[] y0;
     public boolean z0;
@@ -219,7 +219,7 @@ public class u1 extends Dialog implements Drawable.Callback, fs {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         xt xtVar;
-        if (i7 != ks.k4 || (xtVar = this.n) == null) {
+        if (i7 != ks.l4 || (xtVar = this.n) == null) {
             return;
         }
         xtVar.invalidate();
@@ -238,7 +238,7 @@ public class u1 extends Dialog implements Drawable.Callback, fs {
             return;
         }
         this.i1 = true;
-        ks.e().n(this, ks.k4);
+        ks.e().n(this, ks.l4);
         DialogInterface.OnDismissListener onDismissListener = this.O;
         if (onDismissListener != null) {
             onDismissListener.onDismiss(this);
@@ -900,9 +900,9 @@ public class u1 extends Dialog implements Drawable.Callback, fs {
     @Override // android.app.Dialog
     public final void onBackPressed() {
         super.onBackPressed();
-        o60 o60Var = this.x0;
-        if (o60Var != null) {
-            o60Var.h(this, -2);
+        p60 p60Var = this.x0;
+        if (p60Var != null) {
+            p60Var.h(this, -2);
         }
     }
 
@@ -910,7 +910,7 @@ public class u1 extends Dialog implements Drawable.Callback, fs {
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         g(true);
-        ks.e().c(this, ks.k4);
+        ks.e().c(this, ks.l4);
     }
 
     public final void p(int i7) {

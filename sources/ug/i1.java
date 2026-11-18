@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.z8;
+import bi.y8;
 import c8.ma;
 import di.bc;
 import di.l4;
@@ -55,7 +55,7 @@ import org.telegram.ui.d61;
 import org.telegram.ui.js0;
 import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class i1 extends sa implements fs {
     public boolean A2;
@@ -178,7 +178,7 @@ public class i1 extends sa implements fs {
         float[] fArr = {this.r2, this.s2};
         this.w2.getMatrix().mapPoints(fArr);
         View view4 = this.w2;
-        Drawable rightDrawable = view4 instanceof n5 ? ((n5) view4).getRightDrawable() : view4 instanceof org.telegram.ui.Cells.q1 ? ((org.telegram.ui.Cells.q1) view4).qa : null;
+        Drawable rightDrawable = view4 instanceof n5 ? ((n5) view4).getRightDrawable() : view4 instanceof org.telegram.ui.Cells.r1 ? ((org.telegram.ui.Cells.r1) view4).qa : null;
         if (rightDrawable == null) {
             canvas.restore();
             return;
@@ -326,12 +326,12 @@ public class i1 extends sa implements fs {
                         ArrayList arrayList = new ArrayList();
                         i1 i1Var = i1.this;
                         arrayList.add(i1Var.y2);
-                        z8 z8Var = new z8(i1Var, 12);
+                        y8 y8Var = new y8(i1Var, 12);
                         h2 h2Var = i1Var.p2;
                         if (h2Var != null) {
-                            z8Var.setParentFragment(h2Var);
+                            y8Var.setParentFragment(h2Var);
                         }
-                        new g1(i1Var, z8Var, i1Var.getContext(), i1Var.J0, arrayList).show();
+                        new g1(i1Var, y8Var, i1Var.getContext(), i1Var.J0, arrayList).show();
                     }
                 });
                 if (document != null) {
@@ -437,10 +437,10 @@ public class i1 extends sa implements fs {
         View view = this.w2;
         if (view instanceof n5) {
             drawable = ((n5) view).getRightDrawable();
-        } else if (view instanceof org.telegram.ui.Cells.q1) {
-            org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-            m5 m5Var = q1Var.qa;
-            q1Var.q2();
+        } else if (view instanceof org.telegram.ui.Cells.r1) {
+            org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) view;
+            m5 m5Var = r1Var.qa;
+            r1Var.q2();
             drawable = m5Var;
         } else {
             drawable = null;
@@ -449,8 +449,8 @@ public class i1 extends sa implements fs {
             drawable.setAlpha(0);
         }
         View view2 = this.w2;
-        if (view2 instanceof org.telegram.ui.Cells.q1) {
-            ((org.telegram.ui.Cells.q1) view2).q2();
+        if (view2 instanceof org.telegram.ui.Cells.r1) {
+            ((org.telegram.ui.Cells.r1) view2).q2();
         } else {
             view2.invalidate();
         }

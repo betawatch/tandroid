@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class sr0 extends bk0 {
     public final Context c;
@@ -77,41 +77,41 @@ public final class sr0 extends bk0 {
 
     @Override // v4.i0
     public final void t(v4.f1 f1Var, int i7) {
-        org.telegram.ui.Cells.g6 g6Var;
+        org.telegram.ui.Cells.h6 h6Var;
         int i10 = f1Var.f;
         View view = f1Var.a;
         if (i10 == 17) {
-            if (!(view instanceof org.telegram.ui.Cells.g6)) {
+            if (!(view instanceof org.telegram.ui.Cells.h6)) {
                 return;
             } else {
-                g6Var = (org.telegram.ui.Cells.g6) view;
+                h6Var = (org.telegram.ui.Cells.h6) view;
             }
         } else if (i10 != 18) {
-            g6Var = null;
+            h6Var = null;
         } else if (!(view instanceof es0)) {
             return;
         } else {
-            g6Var = ((es0) view).b;
+            h6Var = ((es0) view).b;
         }
-        org.telegram.ui.Cells.g6 g6Var2 = g6Var;
-        if (g6Var2 != null) {
+        org.telegram.ui.Cells.h6 h6Var2 = h6Var;
+        if (h6Var2 != null) {
             ArrayList arrayList = this.d;
-            g6Var2.x(arrayList.get(i7), null, null, null, false, false);
-            g6Var2.N = i7 != arrayList.size() - 1;
+            h6Var2.x(arrayList.get(i7), null, null, null, false, false);
+            h6Var2.N = i7 != arrayList.size() - 1;
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View g6Var;
+        View h6Var;
         gt0 gt0Var = this.f;
         if (i7 == 18) {
             org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
-            g6Var = new es0(h2Var == null ? org.telegram.messenger.j10.t0 : h2Var.getCurrentAccount(), this.c, gt0Var.m1 > 0, gt0Var.I1, new ap0(this, 3));
+            h6Var = new es0(h2Var == null ? org.telegram.messenger.j10.t0 : h2Var.getCurrentAccount(), this.c, gt0Var.m1 > 0, gt0Var.I1, new ap0(this, 3));
         } else {
-            g6Var = new org.telegram.ui.Cells.g6(this.c, gt0Var.I1);
+            h6Var = new org.telegram.ui.Cells.h6(this.c, gt0Var.I1);
         }
-        g6Var.setLayoutParams(new v4.q0(-1, -2));
-        return new kj0(g6Var);
+        h6Var.setLayoutParams(new v4.q0(-1, -2));
+        return new kj0(h6Var);
     }
 }

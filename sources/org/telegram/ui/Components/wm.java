@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class wm implements rx {
     public final /* synthetic */ rn a;
@@ -62,8 +62,8 @@ public final class wm implements rx {
     @Override // org.telegram.ui.Components.rx
     public final boolean k() {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.a6 a6Var = this.a.h1;
-        if (a6Var == null || (editField = a6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.b6 b6Var = this.a.h1;
+        if (b6Var == null || (editField = b6Var.getEditField()) == null) {
             return false;
         }
         editField.dispatchKeyEvent(new KeyEvent(0, 67));
@@ -73,8 +73,8 @@ public final class wm implements rx {
     @Override // org.telegram.ui.Components.rx
     public final void l(String str) {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.a6 a6Var = this.a.h1;
-        if (a6Var == null || (editField = a6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.b6 b6Var = this.a.h1;
+        if (b6Var == null || (editField = b6Var.getEditField()) == null) {
             return;
         }
         int selectionEnd = editField.getSelectionEnd();
@@ -112,8 +112,8 @@ public final class wm implements rx {
     @Override // org.telegram.ui.Components.rx
     public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.a6 a6Var = this.a.h1;
-        if (a6Var == null || (editField = a6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.b6 b6Var = this.a.h1;
+        if (b6Var == null || (editField = b6Var.getEditField()) == null) {
             return;
         }
         int selectionEnd = editField.getSelectionEnd();

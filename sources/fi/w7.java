@@ -29,15 +29,15 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
+import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.hn;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.wu0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class w7 extends View implements r9 {
+public final class w7 extends View implements s9 {
     public final boolean E;
     public int F;
     public int G;
@@ -201,7 +201,7 @@ public final class w7 extends View implements r9 {
         s7 s7Var;
         boolean z14;
         x7 x7Var = this.K;
-        s9 s9Var = x7Var.a0;
+        t9 t9Var = x7Var.a0;
         if (motionEvent.getAction() == 0) {
             x7Var.h0 = motionEvent.getX();
             x7Var.i0 = motionEvent.getY();
@@ -297,32 +297,32 @@ public final class w7 extends View implements r9 {
                 if (z10 && (x7Var.w0 || (v7Var2 = v7VarArr[0]) == null || v7Var2.g == null)) {
                     float f12 = this.F;
                     float f13 = this.G + i7;
-                    Rect rect = s9Var.B;
-                    r9 r9Var = s9Var.p0;
-                    staticTextLayout = r9Var.getStaticTextLayout();
+                    Rect rect = t9Var.B;
+                    s9 s9Var = t9Var.p0;
+                    staticTextLayout = s9Var.getStaticTextLayout();
                     if (staticTextLayout != null) {
                         rect.setEmpty();
-                        s9Var.X = null;
+                        t9Var.X = null;
                     } else {
-                        s9Var.X = r9Var;
+                        t9Var.X = s9Var;
                         int i13 = (int) f12;
-                        s9Var.c = i13;
+                        t9Var.c = i13;
                         int i14 = (int) f13;
-                        s9Var.d = i14;
-                        org.telegram.ui.Cells.l9 l9Var = s9Var.a0;
-                        l9Var.d = staticTextLayout;
-                        l9Var.c = f12;
-                        l9Var.b = f13;
-                        l9Var.a = 0;
+                        t9Var.d = i14;
+                        org.telegram.ui.Cells.m9 m9Var = t9Var.a0;
+                        m9Var.d = staticTextLayout;
+                        m9Var.c = f12;
+                        m9Var.b = f13;
+                        m9Var.a = 0;
                         rect.set(i13, i14, (int) (f12 + staticTextLayout.getWidth()), (int) (f13 + staticTextLayout.getHeight()));
                     }
-                    s9Var.M(motionEvent);
+                    t9Var.M(motionEvent);
                 }
-                if (s9Var.x() && z10 && this.E) {
+                if (t9Var.x() && z10 && this.E) {
                     z13 = false;
                     if (((GestureDetector) ((hn) v7VarArr[0].k.d).b).onTouchEvent(motionEvent)) {
                         getParent().requestDisallowInterceptTouchEvent(true);
-                        s9Var.f(false);
+                        t9Var.f(false);
                         return true;
                     }
                     z12 = true;
@@ -361,14 +361,14 @@ public final class w7 extends View implements r9 {
         if (z10) {
             float f122 = this.F;
             float f132 = this.G + i7;
-            Rect rect2 = s9Var.B;
-            r9 r9Var2 = s9Var.p0;
-            staticTextLayout = r9Var2.getStaticTextLayout();
+            Rect rect2 = t9Var.B;
+            s9 s9Var2 = t9Var.p0;
+            staticTextLayout = s9Var2.getStaticTextLayout();
             if (staticTextLayout != null) {
             }
-            s9Var.M(motionEvent);
+            t9Var.M(motionEvent);
         }
-        if (s9Var.x()) {
+        if (t9Var.x()) {
         }
         z12 = true;
         z13 = false;
@@ -388,12 +388,12 @@ public final class w7 extends View implements r9 {
         return this.c;
     }
 
-    @Override // org.telegram.ui.Cells.r9
+    @Override // org.telegram.ui.Cells.s9
     public Layout getStaticTextLayout() {
         return this.r[0].e;
     }
 
-    @Override // org.telegram.ui.Cells.r9
+    @Override // org.telegram.ui.Cells.s9
     public CharSequence getText() {
         return this.r[0].n;
     }

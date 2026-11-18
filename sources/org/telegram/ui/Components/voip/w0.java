@@ -20,7 +20,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.x9;
+import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.c31;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.mh0;
@@ -30,7 +30,7 @@ import org.telegram.ui.w20;
 import org.telegram.ui.x7;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout implements VoIPService.StateListener {
     public final boolean E;
@@ -189,7 +189,7 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
         } else if (sharedInstance != null) {
             sharedInstance.setVideoState(false, 0);
         }
-        animate().alpha(0.0f).translationX(org.telegram.messenger.g0.L(32.0f)).setDuration(150L).setListener(new x9(this, 13));
+        animate().alpha(0.0f).translationX(org.telegram.messenger.g0.L(32.0f)).setDuration(150L).setListener(new y9(this, 13));
         invalidate();
     }
 

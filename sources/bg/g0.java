@@ -4,7 +4,7 @@ import a8.xa;
 import android.text.StaticLayout;
 import android.text.TextUtils;
 import android.view.View;
-import bi.u4;
+import bi.t4;
 import com.google.android.gms.internal.clearcut.y0;
 import fi.y7;
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ import org.telegram.ui.wq0;
 import org.telegram.ui.xs0;
 import ug.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements t30, r1, k6, qj0, lr, f5.n, c3, q1, h2.j {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class g0 implements t30, r1, k6, qj0, lr, f5.n, c3,
                 zl0 zl0Var = (zl0) arrayList.get(i7);
                 y60 I = y60.I(h2Var, view);
                 I.i = 3;
-                I.c(R.drawable.menu_tag_rename, gd.M0(TextUtils.isEmpty(zl0Var.c) ? 2131745686 : 2131745674, null), new u4(cm0Var, i10, zl0Var, i6Var, 27), false);
+                I.c(R.drawable.menu_tag_rename, gd.M0(TextUtils.isEmpty(zl0Var.c) ? 2131745686 : 2131745674, null), new t4(cm0Var, i10, zl0Var, i6Var, 27), false);
                 I.a0();
                 return true;
             }

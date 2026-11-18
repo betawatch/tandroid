@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.util.Property;
 import android.view.View;
 import bi.a3;
-import bi.e7;
+import bi.d7;
 import bi.r1;
 import c8.ma;
 import c8.ra;
@@ -39,7 +39,6 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y1;
-import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.b9;
@@ -56,7 +55,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.rq;
 import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class p extends h2 implements t30, fs, te.b {
     public RadialProgressView E;
@@ -374,13 +373,13 @@ public final class p extends h2 implements t30, fs, te.b {
         if (this.n == z10) {
             return;
         }
-        h6 h6Var = (h6) this.e.B1(ks.h2);
-        if (h6Var != null) {
-            h6Var.a(!z10);
+        org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) this.e.B1(ks.h2);
+        if (i6Var != null) {
+            i6Var.a(!z10);
         }
-        h6 h6Var2 = (h6) this.e.B1(ks.g2);
-        if (h6Var2 != null) {
-            h6Var2.a(z10);
+        org.telegram.ui.Cells.i6 i6Var2 = (org.telegram.ui.Cells.i6) this.e.B1(ks.g2);
+        if (i6Var2 != null) {
+            i6Var2.a(z10);
         }
         this.n = z10;
         d0();
@@ -424,7 +423,7 @@ public final class p extends h2 implements t30, fs, te.b {
             animatorSet2.playTogether(ObjectAnimator.ofFloat(radialProgressView2, (Property<RadialProgressView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.w, (Property<m5, Float>) property2, 0.0f));
         }
         this.y.setDuration(180L);
-        this.y.addListener(new e7(17, this, z10));
+        this.y.addListener(new d7(17, this, z10));
         this.y.start();
     }
 

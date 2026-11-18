@@ -1,156 +1,136 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.ColorMatrixColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.ui.Components.b81;
-import org.telegram.ui.Components.c81;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.qd0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bn;
+import android.text.TextUtils;
+import java.io.File;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.fj;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class f2 extends org.telegram.ui.Components.p6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class f2 implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ i2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f2(int i7, FrameLayout frameLayout) {
-        super("animationValue", 0);
-        this.b = i7;
-        this.c = frameLayout;
+    public f2(i2 i2Var, boolean z10) {
+        this.b = i2Var;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.p6
-    public final void c(Object obj, float f10) {
-        switch (this.b) {
-            case 0:
-                h2 h2Var = (h2) this.c;
-                h2Var.i0 = f10;
-                h2Var.invalidate();
-                break;
-            case 1:
-                bn.nd = f10;
-                bn bnVar = (bn) this.c;
-                bnVar.j7.setSaturation(f10);
-                bnVar.i7.setColorFilter(new ColorMatrixColorFilter(bnVar.j7));
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) obj;
-                org.telegram.ui.Components.g8 g8Var = (org.telegram.ui.Components.g8) this.c;
-                g8Var.L2 = f10;
-                org.telegram.ui.ActionBar.n5 titleTextView = kVar.getTitleTextView();
-                ImageView backButton = kVar.getBackButton();
-                float f11 = 1.0f - f10;
-                titleTextView.setTranslationX(org.telegram.messenger.g0.L(-52.0f) * f11);
-                backButton.setTranslationX(org.telegram.messenger.g0.L(-52.0f) * f11);
-                org.telegram.ui.ActionBar.r0 r0Var = g8Var.f2;
-                if (r0Var != null && r0Var.getSearchContainer() != null) {
-                    r0Var.getSearchContainer().setClipChildren(false);
-                    r0Var.getSearchContainer().setClipToPadding(false);
-                    r0Var.getSearchContainer().setPadding(0, 0, org.telegram.messenger.g0.L(org.telegram.messenger.g0.Q1() ? 74.0f : 66.0f), 0);
-                    r0Var.getSearchContainer().setTranslationX((org.telegram.messenger.g0.L(-52.0f) * f11) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.Q1() ? 74.0f : 66.0f));
-                    if (r0Var.getSearchClearButton() != null) {
-                        r0Var.getSearchClearButton().setTranslationX(org.telegram.messenger.g0.L(52.0f) * f11);
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00fc  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        File file;
+        File file2;
+        String str;
+        String r10;
+        File I;
+        TLRPC.Document document;
+        i2 i2Var = this.b;
+        int i7 = i2Var.d;
+        int i10 = i2Var.Q;
+        String str2 = null;
+        if (i10 == 5 || i10 == 3) {
+            TLRPC.Document document2 = i2Var.M;
+            if (document2 != null) {
+                str2 = org.telegram.messenger.w7.r(null, document2);
+                org.telegram.messenger.w7.G(i7);
+                file = org.telegram.messenger.w7.I(i2Var.M);
+            } else {
+                if (i2Var.K.content instanceof TLRPC.TL_webDocument) {
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append(Utilities.a(i2Var.K.content.url));
+                    sb2.append(".");
+                    sb2.append(ec.B(i2Var.K.content.url, i2Var.Q == 5 ? "mp3" : "ogg"));
+                    str2 = sb2.toString();
+                    file = new File(org.telegram.messenger.w7.z(4), str2);
+                }
+                str = null;
+                file2 = null;
+            }
+            file2 = file;
+            str = str2;
+        } else {
+            if (i2Var.R) {
+                TLRPC.BotInlineResult botInlineResult = i2Var.K;
+                if (botInlineResult != null) {
+                    TLRPC.Document document3 = botInlineResult.document;
+                    if (document3 instanceof TLRPC.TL_document) {
+                        r10 = org.telegram.messenger.w7.r(null, document3);
+                        org.telegram.messenger.w7.G(i7);
+                        I = org.telegram.messenger.w7.I(i2Var.K.document);
+                    } else {
+                        TLRPC.Photo photo = botInlineResult.photo;
+                        if (photo instanceof TLRPC.TL_photo) {
+                            TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), true, null, false);
+                            i2Var.P = w10;
+                            r10 = org.telegram.messenger.w7.r(null, w10);
+                            org.telegram.messenger.w7.G(i7);
+                            I = org.telegram.messenger.w7.I(i2Var.P);
+                        } else if (botInlineResult.content instanceof TLRPC.TL_webDocument) {
+                            StringBuilder sb3 = new StringBuilder();
+                            sb3.append(Utilities.a(i2Var.K.content.url));
+                            sb3.append(".");
+                            TLRPC.WebDocument webDocument = i2Var.K.content;
+                            sb3.append(ec.B(webDocument.url, org.telegram.messenger.w7.H(webDocument.mime_type)));
+                            r10 = sb3.toString();
+                            I = new File(org.telegram.messenger.w7.z(4), r10);
+                            if (i2Var.Q == 2) {
+                                TLRPC.WebDocument webDocument2 = i2Var.K.thumb;
+                                if ((webDocument2 instanceof TLRPC.TL_webDocument) && "video/mp4".equals(webDocument2.mime_type)) {
+                                    r10 = null;
+                                }
+                            }
+                        } else {
+                            if (botInlineResult.thumb instanceof TLRPC.TL_webDocument) {
+                                StringBuilder sb4 = new StringBuilder();
+                                sb4.append(Utilities.a(i2Var.K.thumb.url));
+                                sb4.append(".");
+                                TLRPC.WebDocument webDocument3 = i2Var.K.thumb;
+                                sb4.append(ec.B(webDocument3.url, org.telegram.messenger.w7.H(webDocument3.mime_type)));
+                                r10 = sb4.toString();
+                                I = new File(org.telegram.messenger.w7.z(4), r10);
+                            }
+                            I = null;
+                            r10 = null;
+                        }
                     }
+                    document = i2Var.M;
+                    if (document == null && i2Var.Q == 2 && fj.J0(document) != null) {
+                        file2 = I;
+                        str = str2;
+                    } else {
+                        file2 = I;
+                        str = r10;
+                    }
+                } else {
+                    TLRPC.Document document4 = i2Var.M;
+                    if (document4 != null) {
+                        r10 = org.telegram.messenger.w7.r(null, document4);
+                        org.telegram.messenger.w7.G(i7);
+                        I = org.telegram.messenger.w7.I(i2Var.M);
+                        document = i2Var.M;
+                        if (document == null) {
+                        }
+                        file2 = I;
+                        str = r10;
+                    }
+                    I = null;
+                    r10 = null;
+                    document = i2Var.M;
+                    if (document == null) {
+                    }
+                    file2 = I;
+                    str = r10;
                 }
-                backButton.setScaleX(org.telegram.messenger.g0.T1(0.6f, 1.0f, f10));
-                backButton.setScaleY(org.telegram.messenger.g0.T1(0.6f, 1.0f, f10));
-                backButton.setAlpha(org.telegram.messenger.g0.T1(0.0f, 1.0f, f10));
-                g8Var.b.invalidate();
-                break;
-            case 3:
-                pz pzVar = (pz) this.c;
-                pzVar.x0 = f10;
-                int i7 = pzVar.V;
-                org.telegram.ui.ActionBar.i6 i6Var = pzVar.a;
-                pzVar.U.setColor(i0.a.f(f10, org.telegram.ui.ActionBar.n6.w0(i7, i6Var), org.telegram.ui.ActionBar.n6.w0(pzVar.d0, i6Var)));
-                di.b1 b1Var = pzVar.G;
-                b1Var.g1();
-                b1Var.invalidate();
-                ((pz) obj).invalidate();
-                break;
-            case 4:
-                h71 h71Var = (h71) this.c;
-                h71Var.y = f10;
-                h71Var.invalidate();
-                break;
-            case 5:
-                c81 c81Var = (c81) this.c;
-                c81Var.F = f10;
-                b81 b81Var = c81Var.M;
-                if (b81Var != null) {
-                    b81Var.b(f10);
-                }
-                c81Var.invalidate();
-                break;
-            default:
-                ((View) obj).setAlpha(f10);
-                qd0 qd0Var = ((PhotoViewer) this.c).D1;
-                if (qd0Var != null) {
-                    qd0Var.setVideoThumbFlashAlpha(f10);
-                    break;
-                }
-                break;
+            }
+            str = null;
+            file2 = null;
         }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(((h2) this.c).i0);
-            case 1:
-                return Float.valueOf(bn.nd);
-            case 2:
-                return Float.valueOf(((org.telegram.ui.Components.g8) this.c).L2);
-            case 3:
-                return Float.valueOf(((pz) this.c).x0);
-            case 4:
-                return Float.valueOf(((h71) this.c).y);
-            case 5:
-                return Float.valueOf(((c81) this.c).F);
-            default:
-                return Float.valueOf(((View) obj).getAlpha());
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(h71 h71Var) {
-        super("progress", 0);
-        this.b = 4;
-        this.c = h71Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(c81 c81Var) {
-        super("clipProgress", 0);
-        this.b = 5;
-        this.c = c81Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(PhotoViewer photoViewer) {
-        super("flashViewAlpha", 0);
-        this.b = 6;
-        this.c = photoViewer;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(bn bnVar) {
-        super("", 0);
-        this.b = 1;
-        this.c = bnVar;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(org.telegram.ui.Components.g8 g8Var) {
-        super("actionBarSlide", 0);
-        this.b = 2;
-        this.c = g8Var;
+        org.telegram.messenger.g0.g3(new h2.n0(this, str, file2, !TextUtils.isEmpty(str) && file2.exists(), this.a));
     }
 }

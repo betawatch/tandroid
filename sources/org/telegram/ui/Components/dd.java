@@ -9,7 +9,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dd implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class dd implements Runnable {
                         zVar.setOpened(false);
                         break;
                     }
-                } else if (!org.telegram.ui.r90.q(chatActivityEnterView.k0)) {
+                } else if (!org.telegram.ui.s90.q(chatActivityEnterView.k0)) {
                     TLRPC.User c22 = org.telegram.messenger.mp.u1(chatActivityEnterView.R).c2(Long.valueOf(chatActivityEnterView.E3));
                     String H1 = org.telegram.messenger.mp.u1(chatActivityEnterView.R).H1(c22 != null ? c22.restriction_reason : null);
                     if (!TextUtils.isEmpty(H1)) {

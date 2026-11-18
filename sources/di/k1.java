@@ -31,7 +31,7 @@ import org.telegram.ui.Components.uz;
 import org.telegram.ui.Components.x20;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
@@ -164,7 +164,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 break;
             case 3:
                 f6Var.getClass();
-                new ug.z0((org.telegram.ui.ActionBar.h2) new bi.z8(f6Var, 1), 12, false).show();
+                new ug.z0((org.telegram.ui.ActionBar.h2) new bi.y8(f6Var, 1), 12, false).show();
                 break;
             case 4:
                 f6Var.dismiss();
@@ -267,9 +267,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 f6.e1(f6Var);
                 break;
             case 9:
-                bi.w5 w5Var = f6Var.j3;
-                if (w5Var != null) {
-                    w5Var.run();
+                bi.v5 v5Var = f6Var.j3;
+                if (v5Var != null) {
+                    v5Var.run();
                 }
                 f6Var.dismiss();
                 break;
@@ -277,9 +277,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 f6.f1(f6Var);
                 break;
             case 11:
-                bi.w5 w5Var2 = f6Var.j3;
-                if (w5Var2 != null) {
-                    w5Var2.run();
+                bi.v5 v5Var2 = f6Var.j3;
+                if (v5Var2 != null) {
+                    v5Var2.run();
                 }
                 f6Var.dismiss();
                 break;
@@ -302,9 +302,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 f6.p2(new ProfileActivity(bundle, null));
                 break;
             case 13:
-                bi.w5 w5Var3 = f6Var.j3;
-                if (w5Var3 != null) {
-                    w5Var3.run();
+                bi.v5 v5Var3 = f6Var.j3;
+                if (v5Var3 != null) {
+                    v5Var3.run();
                 }
                 f6Var.dismiss();
                 break;
@@ -466,7 +466,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 TL_stars.SavedStarGift savedStarGift4 = f6Var.B2;
                 boolean z13 = savedStarGift4.pinned_to_top;
                 if (((o8) f6Var.C2).q(savedStarGift4, !z13, false)) {
-                    new bi.p6(f6Var.getContext(), f6Var.T1, f6Var.B2, f6Var.J0, new a2(f6Var, i15)).show();
+                    new bi.o6(f6Var.getContext(), f6Var.T1, f6Var.B2, f6Var.J0, new a2(f6Var, i15)).show();
                     break;
                 } else if (z13) {
                     org.telegram.messenger.f3.n(null, 2131749864, f6Var.k(), R.raw.ic_unpin, 36);
@@ -546,7 +546,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 break;
             case 28:
                 TL_stars.TL_starGiftUnique M1 = f6Var.M1();
-                new bi.a5(f6Var.a, org.telegram.messenger.n5.o(M1.owner_id), f6Var.getContext(), new k1(f6Var, 4), M1, f6Var.J0).show();
+                new bi.z4(f6Var.a, org.telegram.messenger.n5.o(M1.owner_id), f6Var.getContext(), new k1(f6Var, 4), M1, f6Var.J0).show();
                 break;
             default:
                 TL_stars.TL_starGiftUnique M12 = f6Var.M1();

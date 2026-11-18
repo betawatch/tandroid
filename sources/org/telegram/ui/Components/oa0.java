@@ -21,7 +21,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class oa0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.z0 E;
@@ -49,7 +49,7 @@ public final class oa0 extends FrameLayout {
     public int b0;
     public final ca0 c;
     public boolean c0;
-    public final org.telegram.ui.Cells.u9 d;
+    public final org.telegram.ui.Cells.v9 d;
     public final /* synthetic */ ua0 d0;
     public final ia0 e;
     public final di.b1 f;
@@ -84,7 +84,7 @@ public final class oa0 extends FrameLayout {
         ta0 ta0Var2;
         oa0 oa0Var2;
         int i10;
-        org.telegram.ui.Cells.u9 n10;
+        org.telegram.ui.Cells.v9 n10;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         org.telegram.messenger.jj jjVar2;
         ?? r13;
@@ -209,8 +209,8 @@ public final class oa0 extends FrameLayout {
                                         ua0 ua0Var2 = oa0Var4.d0;
                                         if (oa0Var4.c(null) != null) {
                                             if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                                org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                                org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                                org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                                org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                                 org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                                 int i16 = ia0Var2.u;
                                                 jjVar5.e = i16;
@@ -248,8 +248,8 @@ public final class oa0 extends FrameLayout {
                                                     jjVar6.f = min;
                                                     jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                     View d = oa0Var5.d();
-                                                    if (d instanceof org.telegram.ui.Cells.q1) {
-                                                        ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                    if (d instanceof org.telegram.ui.Cells.r1) {
+                                                        ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                     }
                                                     if (!z14) {
                                                         oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -259,8 +259,8 @@ public final class oa0 extends FrameLayout {
                                                 } else {
                                                     jjVar6.e = ia0Var3.u;
                                                     jjVar6.f = ia0Var3.v;
-                                                    org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                    jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                    org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                    jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                     ua0Var3.b();
                                                     ua0Var3.a(true);
                                                     break;
@@ -414,8 +414,8 @@ public final class oa0 extends FrameLayout {
                                         ua0 ua0Var2 = oa0Var4.d0;
                                         if (oa0Var4.c(null) != null) {
                                             if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                                org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                                org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                                org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                                org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                                 org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                                 int i16 = ia0Var2.u;
                                                 jjVar5.e = i16;
@@ -453,8 +453,8 @@ public final class oa0 extends FrameLayout {
                                                     jjVar6.f = min;
                                                     jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                     View d = oa0Var5.d();
-                                                    if (d instanceof org.telegram.ui.Cells.q1) {
-                                                        ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                    if (d instanceof org.telegram.ui.Cells.r1) {
+                                                        ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                     }
                                                     if (!z142) {
                                                         oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -464,8 +464,8 @@ public final class oa0 extends FrameLayout {
                                                 } else {
                                                     jjVar6.e = ia0Var3.u;
                                                     jjVar6.f = ia0Var3.v;
-                                                    org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                    jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                    org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                    jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                     ua0Var3.b();
                                                     ua0Var3.a(true);
                                                     break;
@@ -631,8 +631,8 @@ public final class oa0 extends FrameLayout {
                                     ua0 ua0Var2 = oa0Var4.d0;
                                     if (oa0Var4.c(null) != null) {
                                         if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                            org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                            org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                            org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                            org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                             org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                             int i162 = ia0Var2.u;
                                             jjVar5.e = i162;
@@ -670,8 +670,8 @@ public final class oa0 extends FrameLayout {
                                                 jjVar6.f = min;
                                                 jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                 View d = oa0Var5.d();
-                                                if (d instanceof org.telegram.ui.Cells.q1) {
-                                                    ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                if (d instanceof org.telegram.ui.Cells.r1) {
+                                                    ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                 }
                                                 if (!z142) {
                                                     oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -681,8 +681,8 @@ public final class oa0 extends FrameLayout {
                                             } else {
                                                 jjVar6.e = ia0Var3.u;
                                                 jjVar6.f = ia0Var3.v;
-                                                org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                 ua0Var3.b();
                                                 ua0Var3.a(true);
                                                 break;
@@ -843,8 +843,8 @@ public final class oa0 extends FrameLayout {
                                     ua0 ua0Var2 = oa0Var4.d0;
                                     if (oa0Var4.c(null) != null) {
                                         if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                            org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                            org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                            org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                            org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                             org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                             int i162 = ia0Var2.u;
                                             jjVar5.e = i162;
@@ -882,8 +882,8 @@ public final class oa0 extends FrameLayout {
                                                 jjVar6.f = min;
                                                 jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                 View d = oa0Var5.d();
-                                                if (d instanceof org.telegram.ui.Cells.q1) {
-                                                    ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                if (d instanceof org.telegram.ui.Cells.r1) {
+                                                    ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                 }
                                                 if (!z142) {
                                                     oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -893,8 +893,8 @@ public final class oa0 extends FrameLayout {
                                             } else {
                                                 jjVar6.e = ia0Var3.u;
                                                 jjVar6.f = ia0Var3.v;
-                                                org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                 ua0Var3.b();
                                                 ua0Var3.a(true);
                                                 break;
@@ -1043,8 +1043,8 @@ public final class oa0 extends FrameLayout {
                                     ua0 ua0Var2 = oa0Var4.d0;
                                     if (oa0Var4.c(null) != null) {
                                         if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                            org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                            org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                            org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                            org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                             org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                             int i162 = ia0Var2.u;
                                             jjVar5.e = i162;
@@ -1082,8 +1082,8 @@ public final class oa0 extends FrameLayout {
                                                 jjVar6.f = min;
                                                 jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                 View d = oa0Var5.d();
-                                                if (d instanceof org.telegram.ui.Cells.q1) {
-                                                    ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                if (d instanceof org.telegram.ui.Cells.r1) {
+                                                    ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                 }
                                                 if (!z142) {
                                                     oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -1093,8 +1093,8 @@ public final class oa0 extends FrameLayout {
                                             } else {
                                                 jjVar6.e = ia0Var3.u;
                                                 jjVar6.f = ia0Var3.v;
-                                                org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                 ua0Var3.b();
                                                 ua0Var3.a(true);
                                                 break;
@@ -1253,8 +1253,8 @@ public final class oa0 extends FrameLayout {
                                 ua0 ua0Var2 = oa0Var4.d0;
                                 if (oa0Var4.c(null) != null) {
                                     if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                        org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                        org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                        org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                        org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                         org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                         int i162 = ia0Var2.u;
                                         jjVar5.e = i162;
@@ -1292,8 +1292,8 @@ public final class oa0 extends FrameLayout {
                                             jjVar6.f = min;
                                             jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                             View d = oa0Var5.d();
-                                            if (d instanceof org.telegram.ui.Cells.q1) {
-                                                ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                            if (d instanceof org.telegram.ui.Cells.r1) {
+                                                ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                             }
                                             if (!z142) {
                                                 oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -1303,8 +1303,8 @@ public final class oa0 extends FrameLayout {
                                         } else {
                                             jjVar6.e = ia0Var3.u;
                                             jjVar6.f = ia0Var3.v;
-                                            org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                            jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                            org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                            jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                             ua0Var3.b();
                                             ua0Var3.a(true);
                                             break;
@@ -1456,8 +1456,8 @@ public final class oa0 extends FrameLayout {
                                 ua0 ua0Var2 = oa0Var4.d0;
                                 if (oa0Var4.c(null) != null) {
                                     if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                        org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                        org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                        org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                        org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                         org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                         int i162 = ia0Var2.u;
                                         jjVar5.e = i162;
@@ -1495,8 +1495,8 @@ public final class oa0 extends FrameLayout {
                                             jjVar6.f = min;
                                             jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                             View d = oa0Var5.d();
-                                            if (d instanceof org.telegram.ui.Cells.q1) {
-                                                ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                            if (d instanceof org.telegram.ui.Cells.r1) {
+                                                ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                             }
                                             if (!z142) {
                                                 oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -1506,8 +1506,8 @@ public final class oa0 extends FrameLayout {
                                         } else {
                                             jjVar6.e = ia0Var3.u;
                                             jjVar6.f = ia0Var3.v;
-                                            org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                            jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                            org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                            jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                             ua0Var3.b();
                                             ua0Var3.a(true);
                                             break;
@@ -1716,8 +1716,8 @@ public final class oa0 extends FrameLayout {
                                     ua0 ua0Var2 = oa0Var4.d0;
                                     if (oa0Var4.c(null) != null) {
                                         if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                            org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                            org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                            org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                            org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                             org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                             int i162 = ia0Var2.u;
                                             jjVar5.e = i162;
@@ -1755,8 +1755,8 @@ public final class oa0 extends FrameLayout {
                                                 jjVar6.f = min;
                                                 jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                 View d = oa0Var5.d();
-                                                if (d instanceof org.telegram.ui.Cells.q1) {
-                                                    ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                if (d instanceof org.telegram.ui.Cells.r1) {
+                                                    ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                 }
                                                 if (!z142) {
                                                     oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -1766,8 +1766,8 @@ public final class oa0 extends FrameLayout {
                                             } else {
                                                 jjVar6.e = ia0Var3.u;
                                                 jjVar6.f = ia0Var3.v;
-                                                org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                 ua0Var3.b();
                                                 ua0Var3.a(true);
                                                 break;
@@ -1919,8 +1919,8 @@ public final class oa0 extends FrameLayout {
                                     ua0 ua0Var2 = oa0Var4.d0;
                                     if (oa0Var4.c(null) != null) {
                                         if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                            org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                            org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                            org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                            org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                             org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                             int i162 = ia0Var2.u;
                                             jjVar5.e = i162;
@@ -1958,8 +1958,8 @@ public final class oa0 extends FrameLayout {
                                                 jjVar6.f = min;
                                                 jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                 View d = oa0Var5.d();
-                                                if (d instanceof org.telegram.ui.Cells.q1) {
-                                                    ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                if (d instanceof org.telegram.ui.Cells.r1) {
+                                                    ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                 }
                                                 if (!z142) {
                                                     oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -1969,8 +1969,8 @@ public final class oa0 extends FrameLayout {
                                             } else {
                                                 jjVar6.e = ia0Var3.u;
                                                 jjVar6.f = ia0Var3.v;
-                                                org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                 ua0Var3.b();
                                                 ua0Var3.a(true);
                                                 break;
@@ -2117,8 +2117,8 @@ public final class oa0 extends FrameLayout {
                                     ua0 ua0Var2 = oa0Var4.d0;
                                     if (oa0Var4.c(null) != null) {
                                         if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                            org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                            org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                            org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                            org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                             org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                             int i162 = ia0Var2.u;
                                             jjVar5.e = i162;
@@ -2156,8 +2156,8 @@ public final class oa0 extends FrameLayout {
                                                 jjVar6.f = min;
                                                 jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                 View d = oa0Var5.d();
-                                                if (d instanceof org.telegram.ui.Cells.q1) {
-                                                    ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                if (d instanceof org.telegram.ui.Cells.r1) {
+                                                    ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                 }
                                                 if (!z142) {
                                                     oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -2167,8 +2167,8 @@ public final class oa0 extends FrameLayout {
                                             } else {
                                                 jjVar6.e = ia0Var3.u;
                                                 jjVar6.f = ia0Var3.v;
-                                                org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                 ua0Var3.b();
                                                 ua0Var3.a(true);
                                                 break;
@@ -2313,8 +2313,8 @@ public final class oa0 extends FrameLayout {
                                     ua0 ua0Var2 = oa0Var4.d0;
                                     if (oa0Var4.c(null) != null) {
                                         if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                            org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                            org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                            org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                            org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                             org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                             int i162 = ia0Var2.u;
                                             jjVar5.e = i162;
@@ -2352,8 +2352,8 @@ public final class oa0 extends FrameLayout {
                                                 jjVar6.f = min;
                                                 jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                                 View d = oa0Var5.d();
-                                                if (d instanceof org.telegram.ui.Cells.q1) {
-                                                    ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                                if (d instanceof org.telegram.ui.Cells.r1) {
+                                                    ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                                 }
                                                 if (!z142) {
                                                     oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -2363,8 +2363,8 @@ public final class oa0 extends FrameLayout {
                                             } else {
                                                 jjVar6.e = ia0Var3.u;
                                                 jjVar6.f = ia0Var3.v;
-                                                org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                                org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                                jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                                 ua0Var3.b();
                                                 ua0Var3.a(true);
                                                 break;
@@ -2546,8 +2546,8 @@ public final class oa0 extends FrameLayout {
                             ua0 ua0Var2 = oa0Var4.d0;
                             if (oa0Var4.c(null) != null) {
                                 if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                    org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                    org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                    org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                    org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                     org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                     int i162 = ia0Var2.u;
                                     jjVar5.e = i162;
@@ -2585,8 +2585,8 @@ public final class oa0 extends FrameLayout {
                                         jjVar6.f = min;
                                         jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                         View d = oa0Var5.d();
-                                        if (d instanceof org.telegram.ui.Cells.q1) {
-                                            ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                        if (d instanceof org.telegram.ui.Cells.r1) {
+                                            ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                         }
                                         if (!z142) {
                                             oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -2596,8 +2596,8 @@ public final class oa0 extends FrameLayout {
                                     } else {
                                         jjVar6.e = ia0Var3.u;
                                         jjVar6.f = ia0Var3.v;
-                                        org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                        jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                        org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                        jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                         ua0Var3.b();
                                         ua0Var3.a(true);
                                         break;
@@ -2750,8 +2750,8 @@ public final class oa0 extends FrameLayout {
                             ua0 ua0Var2 = oa0Var4.d0;
                             if (oa0Var4.c(null) != null) {
                                 if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                    org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                    org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                    org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                    org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                     org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                     int i162 = ia0Var2.u;
                                     jjVar5.e = i162;
@@ -2789,8 +2789,8 @@ public final class oa0 extends FrameLayout {
                                         jjVar6.f = min;
                                         jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                         View d = oa0Var5.d();
-                                        if (d instanceof org.telegram.ui.Cells.q1) {
-                                            ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                        if (d instanceof org.telegram.ui.Cells.r1) {
+                                            ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                         }
                                         if (!z142) {
                                             oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -2800,8 +2800,8 @@ public final class oa0 extends FrameLayout {
                                     } else {
                                         jjVar6.e = ia0Var3.u;
                                         jjVar6.f = ia0Var3.v;
-                                        org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                        jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                        org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                        jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                         ua0Var3.b();
                                         ua0Var3.a(true);
                                         break;
@@ -2952,8 +2952,8 @@ public final class oa0 extends FrameLayout {
                             ua0 ua0Var2 = oa0Var4.d0;
                             if (oa0Var4.c(null) != null) {
                                 if (ia0Var2.v - ia0Var2.u <= org.telegram.messenger.mp.u1(ua0Var2.x).r4) {
-                                    org.telegram.ui.Cells.q9 q9Var = ia0Var2.W;
-                                    org.telegram.messenger.fj c12 = oa0Var4.c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+                                    org.telegram.ui.Cells.r9 r9Var = ia0Var2.W;
+                                    org.telegram.messenger.fj c12 = oa0Var4.c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
                                     org.telegram.messenger.jj jjVar5 = ua0Var2.d;
                                     int i162 = ia0Var2.u;
                                     jjVar5.e = i162;
@@ -2991,8 +2991,8 @@ public final class oa0 extends FrameLayout {
                                         jjVar6.f = min;
                                         jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, min, c13);
                                         View d = oa0Var5.d();
-                                        if (d instanceof org.telegram.ui.Cells.q1) {
-                                            ia0Var3.a0((org.telegram.ui.Cells.q1) d, jjVar6.e, jjVar6.f);
+                                        if (d instanceof org.telegram.ui.Cells.r1) {
+                                            ia0Var3.a0((org.telegram.ui.Cells.r1) d, jjVar6.e, jjVar6.f);
                                         }
                                         if (!z142) {
                                             oa0Var5.s.getSwipeBack().e(oa0Var5.J);
@@ -3002,8 +3002,8 @@ public final class oa0 extends FrameLayout {
                                     } else {
                                         jjVar6.e = ia0Var3.u;
                                         jjVar6.f = ia0Var3.v;
-                                        org.telegram.ui.Cells.q9 q9Var2 = ia0Var3.W;
-                                        jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null));
+                                        org.telegram.ui.Cells.r9 r9Var2 = ia0Var3.W;
+                                        jjVar6.d = org.telegram.ui.rm.b(jjVar6.e, jjVar6.f, oa0Var5.c(r9Var2 != null ? ((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() : null));
                                         ua0Var3.b();
                                         ua0Var3.a(true);
                                         break;
@@ -3124,7 +3124,7 @@ public final class oa0 extends FrameLayout {
             ta0 ta0Var9 = ta0Var2;
             boolean z15 = z10;
             oa0 oa0Var4 = this;
-            ta0Var8.setOnClickListener(new bi.u5(this, z15, context, ta0Var9, ta0Var8, 1));
+            ta0Var8.setOnClickListener(new bi.t5(this, z15, context, ta0Var9, ta0Var8, 1));
             oa0Var = oa0Var4;
             if (ta0Var9 != null) {
                 ta0Var9.setOnClickListener(new qt(oa0Var4, ta0Var9, ta0Var8, 3));
@@ -3157,17 +3157,17 @@ public final class oa0 extends FrameLayout {
         return null;
     }
 
-    public static void b(oa0 oa0Var, org.telegram.ui.Cells.q1 q1Var) {
+    public static void b(oa0 oa0Var, org.telegram.ui.Cells.r1 r1Var) {
         URLSpan uRLSpan;
         TLRPC.WebPage webPage;
         if (oa0Var.a == 2) {
             org.telegram.messenger.jj jjVar = oa0Var.d0.d;
             if (!jjVar.n && (uRLSpan = jjVar.w) != null && (webPage = jjVar.v) != null && !(webPage instanceof TLRPC.TL_webPagePending)) {
-                q1Var.s3(uRLSpan);
+                r1Var.s3(uRLSpan);
                 return;
             }
         }
-        q1Var.s3(null);
+        r1Var.s3(null);
     }
 
     public final org.telegram.messenger.fj c(org.telegram.messenger.fj fjVar) {
@@ -3211,8 +3211,8 @@ public final class oa0 extends FrameLayout {
                     break;
                 }
                 View childAt = b1Var.getChildAt(i7);
-                org.telegram.ui.Cells.p4 p4Var = (org.telegram.ui.Cells.p4) childAt;
-                if (p4Var.getMessageObject() != null && (p4Var.getMessageObject() == c10 || p4Var.getMessageObject().e1() == c10.e1())) {
+                org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) childAt;
+                if (q4Var.getMessageObject() != null && (q4Var.getMessageObject() == c10 || q4Var.getMessageObject().e1() == c10.e1())) {
                     break;
                 }
                 i7++;
@@ -3221,12 +3221,12 @@ public final class oa0 extends FrameLayout {
         return null;
     }
 
-    public final boolean e(org.telegram.ui.Cells.q1 q1Var) {
+    public final boolean e(org.telegram.ui.Cells.r1 r1Var) {
         org.telegram.messenger.fj c10;
-        if (q1Var == null || q1Var.getMessageObject() == null || (c10 = c(null)) == null) {
+        if (r1Var == null || r1Var.getMessageObject() == null || (c10 = c(null)) == null) {
             return false;
         }
-        return q1Var.getMessageObject() == c10 || q1Var.getMessageObject().e1() == c10.e1();
+        return r1Var.getMessageObject() == c10 || r1Var.getMessageObject().e1() == c10.e1();
     }
 
     public final void f(float f10, int i7) {
@@ -3246,9 +3246,9 @@ public final class oa0 extends FrameLayout {
             actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY((f10 + v8Var.getMeasuredHeight()) - org.telegram.messenger.g0.L(2.0f));
         }
         float x10 = v8Var.getX();
-        org.telegram.ui.Cells.u9 u9Var = this.d;
-        u9Var.setTranslationX(x10);
-        u9Var.setTranslationY(v8Var.getY());
+        org.telegram.ui.Cells.v9 v9Var = this.d;
+        v9Var.setTranslationX(x10);
+        v9Var.setTranslationY(v8Var.getY());
     }
 
     public final void g() {
@@ -3455,8 +3455,8 @@ public final class oa0 extends FrameLayout {
             if (ia0Var.v - ia0Var.u > org.telegram.messenger.mp.u1(ua0Var.x).r4) {
                 return;
             }
-            org.telegram.ui.Cells.q9 q9Var = ia0Var.W;
-            org.telegram.messenger.fj c10 = c(q9Var != null ? ((org.telegram.ui.Cells.q1) q9Var).getMessageObject() : null);
+            org.telegram.ui.Cells.r9 r9Var = ia0Var.W;
+            org.telegram.messenger.fj c10 = c(r9Var != null ? ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() : null);
             if (jjVar.d != null && ia0Var.x()) {
                 jjVar.e = ia0Var.u;
                 jjVar.f = ia0Var.v;

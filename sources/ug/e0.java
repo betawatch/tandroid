@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
+import di.n4;
 import hi.ia;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -28,9 +29,9 @@ import org.telegram.ui.ActionBar.n5;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.h4;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Cells.y6;
+import org.telegram.ui.Cells.i4;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.i41;
 import org.telegram.ui.Components.jn;
@@ -39,7 +40,7 @@ import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class e0 extends bk0 {
     public final /* synthetic */ l0 c;
@@ -114,35 +115,35 @@ public final class e0 extends bk0 {
         }
         if (i11 != 9) {
             if (i11 == 3) {
-                n4 n4Var = (n4) view;
+                o4 o4Var = (o4) view;
                 if (i10 != 11 && i10 != 34) {
                     if (i10 == 2) {
-                        n4Var.setText(gd.M0(2131742533, null));
+                        o4Var.setText(gd.M0(2131742533, null));
                         return;
                     } else {
-                        n4Var.setText(gd.M0(2131748841, null));
+                        o4Var.setText(gd.M0(2131748841, null));
                         return;
                     }
                 }
                 if (l0Var.U1) {
-                    n4Var.setText(gd.M0(2131752391, null));
+                    o4Var.setText(gd.M0(2131752391, null));
                     return;
                 } else if (l0Var.x2.size() == 1) {
-                    n4Var.setText(gd.M0(2131752388, null));
+                    o4Var.setText(gd.M0(2131752388, null));
                     return;
                 } else {
-                    n4Var.setText(gd.M0(2131752387, null));
+                    o4Var.setText(gd.M0(2131752387, null));
                     return;
                 }
             }
             if (i11 != 4) {
                 return;
             }
-            h4 h4Var = (h4) view;
+            i4 i4Var = (i4) view;
             if (i10 == 5) {
                 TLRPC.Chat chat2 = (TLRPC.Chat) l0Var.v2.get(i7 - l0Var.k2);
-                h4Var.e(chat2, chat2.title, (String) l0Var.w2.get(i7 - l0Var.k2), ((float) i7) != ((float) l0Var.l2) - 1.0f);
-                h4Var.c(hashSet.contains(chat2), false);
+                i4Var.e(chat2, chat2.title, (String) l0Var.w2.get(i7 - l0Var.k2), ((float) i7) != ((float) l0Var.l2) - 1.0f);
+                i4Var.c(hashSet.contains(chat2), false);
                 return;
             } else {
                 if (i10 == 11 || i10 == 34) {
@@ -150,11 +151,11 @@ public final class e0 extends bk0 {
                     ArrayList arrayList = l0Var.y2;
                     boolean z10 = arrayList != null && arrayList.contains(Long.valueOf(user.id));
                     TL_account.requirementToContactPremium requirementtocontactpremium = z10 ? new TL_account.requirementToContactPremium() : null;
-                    h4Var.S = true;
-                    h4Var.R = requirementtocontactpremium;
-                    h4Var.g();
-                    h4Var.e(user, i5.m(0, user.first_name, user.last_name), z10 ? gd.M0(2131748934, null) : gd.d0(l0Var.a, user, null, null), ((float) i7) != ((float) l0Var.l2) - 1.0f);
-                    h4Var.c(hashSet.contains(user), false);
+                    i4Var.S = true;
+                    i4Var.R = requirementtocontactpremium;
+                    i4Var.g();
+                    i4Var.e(user, i5.m(0, user.first_name, user.last_name), z10 ? gd.M0(2131748934, null) : gd.d0(l0Var.a, user, null, null), ((float) i7) != ((float) l0Var.l2) - 1.0f);
+                    i4Var.c(hashSet.contains(user), false);
                     return;
                 }
                 return;
@@ -167,7 +168,7 @@ public final class e0 extends bk0 {
         }
         h0 h0Var = (h0) view;
         g0 g0Var = (g0) l0Var.q2.get(i12);
-        di.n4 n4Var2 = h0Var.c;
+        n4 n4Var = h0Var.c;
         ImageView imageView = h0Var.a;
         n5 n5Var = h0Var.b;
         if (g0Var instanceof f0) {
@@ -175,7 +176,7 @@ public final class e0 extends bk0 {
             h0Var.e = null;
             imageView.setVisibility(8);
             n5Var.setVisibility(8);
-            n4Var2.setVisibility(0);
+            n4Var.setVisibility(0);
             n5 n5Var2 = h0Var.d;
             f0 f0Var = h0Var.f;
             n5Var2.l(gd.G(f0Var.g, f0Var.h ? "BoostLevelUnlocks" : "BoostLevel", new Object[0]), false);
@@ -228,7 +229,7 @@ public final class e0 extends bk0 {
                     n5Var.l(str, false);
                 }
             }
-            n4Var2.setVisibility(8);
+            n4Var.setVisibility(8);
         }
     }
 
@@ -245,20 +246,20 @@ public final class e0 extends bk0 {
                 break;
             case 2:
                 int i12 = n6.a7;
-                View y6Var = new y6(context, n6.w0(i12, l0Var.J0), 0);
-                u6.h(i12, y6Var, l0Var.J0);
-                view = y6Var;
+                View z6Var = new z6(context, n6.w0(i12, l0Var.J0), 0);
+                u6.h(i12, z6Var, l0Var.J0);
+                view = z6Var;
                 break;
             case 3:
-                View n4Var = new n4(context);
-                n4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(8.0f));
-                view = n4Var;
+                View o4Var = new o4(context);
+                o4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(8.0f));
+                view = o4Var;
                 break;
             case 4:
-                View h4Var = new h4(1, 0, context, l0Var.J0, false, false);
+                View i4Var = new i4(1, 0, context, l0Var.J0, false, false);
                 int i13 = l0Var.u0;
-                h4Var.setPadding(i13, 0, i13, 0);
-                view = h4Var;
+                i4Var.setPadding(i13, 0, i13, 0);
+                view = i4Var;
                 break;
             case 5:
                 wz wzVar = new wz(context, null);

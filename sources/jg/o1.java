@@ -25,14 +25,14 @@ import org.telegram.messenger.ri;
 import org.telegram.messenger.tr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.Wallet.p6;
 import org.telegram.ui.Wallet.q6;
 import org.telegram.ui.Wallet.s6;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -200,9 +200,9 @@ public final /* synthetic */ class o1 implements Runnable {
                 break;
             case 2:
                 oi.e1 e1Var = (oi.e1) obj2;
-                i9 i9Var = (i9) obj;
+                j9 j9Var = (j9) obj;
                 oi.p0 p0Var = ((oi.m0) obj3).a;
-                if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && i9Var.j0(p0Var, 0, i12, i13)) {
+                if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && j9Var.j0(p0Var, 0, i12, i13)) {
                     p0Var.n = true;
                     e1Var.setSelection(i13);
                     p0Var.n = false;
@@ -211,15 +211,15 @@ public final /* synthetic */ class o1 implements Runnable {
                 break;
             case 3:
                 oi.e1 e1Var2 = (oi.e1) obj2;
-                i9 i9Var2 = (i9) obj;
+                j9 j9Var2 = (j9) obj;
                 d5 d5Var = (d5) ((w4) obj3).b;
                 if (e1Var2.length() >= i13 && e1Var2.getSelectionStart() != e1Var2.getSelectionEnd()) {
-                    if (i9Var2.x()) {
+                    if (j9Var2.x()) {
                         d5Var.x = true;
                         e1Var2.setSelection(i13);
                         d5Var.x = false;
                         break;
-                    } else if (i9Var2.j0(d5Var, 0, i12, i13)) {
+                    } else if (j9Var2.j0(d5Var, 0, i12, i13)) {
                         d5Var.x = true;
                         e1Var2.setSelection(i13);
                         d5Var.x = false;
@@ -229,9 +229,9 @@ public final /* synthetic */ class o1 implements Runnable {
                 break;
             case 4:
                 oi.e1 e1Var3 = (oi.e1) obj2;
-                i9 i9Var3 = (i9) obj;
+                j9 j9Var3 = (j9) obj;
                 l5 l5Var = (l5) ((u5) obj3).b;
-                if (e1Var3.length() >= i13 && e1Var3.getSelectionStart() != e1Var3.getSelectionEnd() && i9Var3.j0(l5Var, 0, i12, i13)) {
+                if (e1Var3.length() >= i13 && e1Var3.getSelectionStart() != e1Var3.getSelectionEnd() && j9Var3.j0(l5Var, 0, i12, i13)) {
                     l5Var.H = true;
                     e1Var3.setSelection(i13);
                     l5Var.H = false;
@@ -240,15 +240,15 @@ public final /* synthetic */ class o1 implements Runnable {
                 break;
             case 5:
                 oi.e1 e1Var4 = (oi.e1) obj2;
-                i9 i9Var4 = (i9) obj;
+                j9 j9Var4 = (j9) obj;
                 z5 z5Var = ((t5) obj3).a;
                 if (e1Var4.length() >= i13 && e1Var4.getSelectionStart() != e1Var4.getSelectionEnd()) {
-                    if (i9Var4.x()) {
+                    if (j9Var4.x()) {
                         z5Var.G = true;
                         e1Var4.setSelection(i13);
                         z5Var.G = false;
                         break;
-                    } else if (i9Var4.j0(z5Var, 0, i12, i13)) {
+                    } else if (j9Var4.j0(z5Var, 0, i12, i13)) {
                         z5Var.G = true;
                         e1Var4.setSelection(i13);
                         z5Var.G = false;
@@ -258,15 +258,15 @@ public final /* synthetic */ class o1 implements Runnable {
                 break;
             case 6:
                 oi.e1 e1Var5 = (oi.e1) obj2;
-                i9 i9Var5 = (i9) obj;
+                j9 j9Var5 = (j9) obj;
                 z5 z5Var2 = ((oi.u5) obj3).a;
                 if (e1Var5.length() >= i13 && e1Var5.getSelectionStart() != e1Var5.getSelectionEnd()) {
-                    if (i9Var5.x()) {
+                    if (j9Var5.x()) {
                         z5Var2.n = true;
                         e1Var5.setSelection(i13);
                         z5Var2.n = false;
                         break;
-                    } else if (i9Var5.j0(z5Var2, 1, i12, i13)) {
+                    } else if (j9Var5.j0(z5Var2, 1, i12, i13)) {
                         z5Var2.n = true;
                         e1Var5.setSelection(i13);
                         z5Var2.n = false;
@@ -329,7 +329,7 @@ public final /* synthetic */ class o1 implements Runnable {
                 bnVar.ac = i13;
                 bnVar.bc = i12;
                 bnVar.cc = (CharacterStyle) obj2;
-                ((org.telegram.ui.Cells.q1) obj).invalidate();
+                ((org.telegram.ui.Cells.r1) obj).invalidate();
                 break;
             default:
                 q6 q6Var = (q6) obj;
@@ -356,13 +356,13 @@ public final /* synthetic */ class o1 implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ o1(bn bnVar, int i7, int i10, CharacterStyle characterStyle, org.telegram.ui.Cells.q1 q1Var) {
+    public /* synthetic */ o1(bn bnVar, int i7, int i10, CharacterStyle characterStyle, org.telegram.ui.Cells.r1 r1Var) {
         this.a = 9;
         this.d = bnVar;
         this.b = i7;
         this.c = i10;
         this.e = characterStyle;
-        this.f = q1Var;
+        this.f = r1Var;
     }
 
     public /* synthetic */ o1(s6 s6Var, Context context, int i7, int i10, q6 q6Var) {

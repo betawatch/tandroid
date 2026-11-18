@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aj0 implements org.telegram.ui.ActionBar.r1, ss, org.telegram.ui.Components.z4, org.telegram.messenger.i9, org.telegram.messenger.oi, org.telegram.ui.Components.pj0, org.telegram.ui.Components.qj0, or0, org.telegram.messenger.lr, ix0 {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class aj0 implements org.telegram.ui.ActionBar.r1, 
                         if (i10 == 1) {
                             if (k6Var2.r == null) {
                                 themeActivity2.getMessagesController().H4(k6Var2.b, k6Var2);
-                                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, k6Var2.b, k6Var2);
+                                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, k6Var2.b, k6Var2);
                                 return;
                             }
                             String str = "https://" + themeActivity2.getMessagesController().X2 + "/addtheme/" + k6Var2.r.slug;
@@ -395,10 +395,10 @@ public final /* synthetic */ class aj0 implements org.telegram.ui.ActionBar.r1, 
                 tL_payments_clearSavedInfo.info = zArr2[0];
                 privacySettingsActivity.getUserConfig().y = null;
                 privacySettingsActivity.getUserConfig().v(false);
-                privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new e00(22, privacySettingsActivity, (org.telegram.ui.Cells.r8) obj));
+                privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new e00(22, privacySettingsActivity, (org.telegram.ui.Cells.s8) obj));
                 break;
             case 13:
-                ProfileActivity.p0((ProfileActivity) obj2, (org.telegram.ui.Cells.c2[]) obj);
+                ProfileActivity.p0((ProfileActivity) obj2, (org.telegram.ui.Cells.d2[]) obj);
                 break;
             case 14:
                 rv0 rv0Var = (rv0) obj2;
@@ -465,7 +465,7 @@ public final /* synthetic */ class aj0 implements org.telegram.ui.ActionBar.r1, 
                     s4Var = ((org.telegram.ui.ActionBar.h2) g61Var.e).parentLayout;
                     ((ActionBarLayout) s4Var).X(true, true);
                 }
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.q4, new Object[0]);
+                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.r4, new Object[0]);
                 break;
             case 25:
                 bb1.b0((bb1) obj2, (byte[]) obj);
@@ -504,7 +504,7 @@ public final /* synthetic */ class aj0 implements org.telegram.ui.ActionBar.r1, 
     }
 
     @Override // org.telegram.ui.ix0
-    public void k(th0 th0Var) {
+    public void k(uh0 uh0Var) {
         ba1 ba1Var = (ba1) this.b;
         TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.c;
         ea1 ea1Var = ba1Var.a;

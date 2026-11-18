@@ -59,7 +59,7 @@ import org.telegram.ui.Components.y9;
 import org.telegram.ui.Components.yw0;
 import org.telegram.ui.Components.z10;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class a3 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -398,55 +398,55 @@ public final class a3 extends FrameLayout {
         float f10;
         switch (this.a) {
             case 12:
-                org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) this.b;
-                org.telegram.ui.Cells.n5 n5Var = r5Var.a;
-                if (r5Var.O == null || view != n5Var) {
+                org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) this.b;
+                org.telegram.ui.Cells.o5 o5Var = s5Var.a;
+                if (s5Var.O == null || view != o5Var) {
                     return super.drawChild(canvas, view, j3);
                 }
                 boolean drawChild = super.drawChild(canvas, view, j3);
-                if (!r5Var.P) {
+                if (!s5Var.P) {
                     return drawChild;
                 }
-                Rect rect = org.telegram.ui.Cells.r5.c0;
-                r5Var.O.c(canvas, r5Var.b, n5Var.getMeasuredWidth(), n5Var.getMeasuredHeight(), 1.0f, false);
-                ef efVar = r5Var.I;
-                if (efVar == null || efVar.N <= 0 || n5Var.E == null) {
+                Rect rect = org.telegram.ui.Cells.s5.c0;
+                s5Var.O.c(canvas, s5Var.b, o5Var.getMeasuredWidth(), o5Var.getMeasuredHeight(), 1.0f, false);
+                ef efVar = s5Var.I;
+                if (efVar == null || efVar.N <= 0 || o5Var.E == null) {
                     return drawChild;
                 }
-                Path path = n5Var.F;
+                Path path = o5Var.F;
                 if (path == null) {
-                    n5Var.F = new Path();
+                    o5Var.F = new Path();
                 } else {
                     path.rewind();
                 }
-                int i10 = n5Var.c;
-                if (i10 == -1 || (i7 = n5Var.d) == -1) {
-                    measuredWidth = n5Var.getMeasuredWidth();
-                    measuredHeight = n5Var.getMeasuredHeight();
+                int i10 = o5Var.c;
+                if (i10 == -1 || (i7 = o5Var.d) == -1) {
+                    measuredWidth = o5Var.getMeasuredWidth();
+                    measuredHeight = o5Var.getMeasuredHeight();
                 } else {
                     measuredWidth = i10;
                     measuredHeight = i7;
                 }
-                float L = n5Var.E.c + org.telegram.messenger.g0.L(18.0f);
+                float L = o5Var.E.c + org.telegram.messenger.g0.L(18.0f);
                 float L2 = org.telegram.messenger.g0.L(28.0f);
                 float f11 = (measuredWidth - L) / 2.0f;
                 float f12 = measuredHeight / 2.0f;
                 RectF rectF = org.telegram.messenger.g0.P;
                 float f13 = L2 / 2.0f;
                 rectF.set(f11, f12 - f13, L + f11, f12 + f13);
-                n5Var.F.addRoundRect(rectF, f13, f13, Path.Direction.CW);
+                o5Var.F.addRoundRect(rectF, f13, f13, Path.Direction.CW);
                 canvas.save();
-                canvas.clipPath(n5Var.F);
-                ImageReceiver imageReceiver = n5Var.b;
-                if (imageReceiver != null && n5Var.s) {
-                    imageReceiver.p1 = n5Var.G;
+                canvas.clipPath(o5Var.F);
+                ImageReceiver imageReceiver = o5Var.b;
+                if (imageReceiver != null && o5Var.s) {
+                    imageReceiver.p1 = o5Var.G;
                     float alpha = imageReceiver.getAlpha();
-                    n5Var.b.setAlpha(1.0f);
-                    n5Var.b.h(canvas, null);
-                    n5Var.b.setAlpha(alpha);
-                    n5Var.b.p1 = null;
+                    o5Var.b.setAlpha(1.0f);
+                    o5Var.b.h(canvas, null);
+                    o5Var.b.setAlpha(alpha);
+                    o5Var.b.p1 = null;
                 }
-                n5Var.E.c(f11 + org.telegram.messenger.g0.L(9.0f), f12, 1.0f, -1, canvas);
+                o5Var.E.c(f11 + org.telegram.messenger.g0.L(9.0f), f12, 1.0f, -1, canvas);
                 canvas.restore();
                 return drawChild;
             case 15:

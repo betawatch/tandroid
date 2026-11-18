@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class c30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final class c30 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         xc xcVar;
-        org.telegram.ui.Cells.b4 b4Var;
+        org.telegram.ui.Cells.c4 c4Var;
         float f10;
         int i7 = this.a;
         boolean z10 = this.b;
@@ -78,13 +78,13 @@ public final class c30 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                de0 de0Var = (de0) obj;
+                ee0 ee0Var = (ee0) obj;
                 if (!z10) {
-                    de0Var.W.setVisibility(4);
+                    ee0Var.W.setVisibility(4);
                 }
-                AnimatorSet animatorSet = de0Var.M;
+                AnimatorSet animatorSet = ee0Var.M;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    de0Var.M = null;
+                    ee0Var.M = null;
                     break;
                 }
                 break;
@@ -156,9 +156,9 @@ public final class c30 extends AnimatorListenerAdapter {
                 break;
             case 10:
                 o31 o31Var = (o31) obj;
-                if (o31Var.n != null && (b4Var = o31Var.r) != null) {
+                if (o31Var.n != null && (c4Var = o31Var.r) != null) {
                     if (!z10) {
-                        b4Var.setVisibility(4);
+                        c4Var.setVisibility(4);
                     }
                     o31Var.n = null;
                     break;
@@ -255,7 +255,7 @@ public final class c30 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 2:
                 if (this.b) {
-                    ((de0) this.c).W.setVisibility(0);
+                    ((ee0) this.c).W.setVisibility(0);
                     break;
                 }
                 break;

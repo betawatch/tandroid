@@ -8,9 +8,9 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class p0 {
     public final hi.w4 A;
@@ -217,7 +217,7 @@ public final class p0 {
         boolean b14 = b(editor, tL_jsonObject, "wallet_available", tL_jsonBool3) | b13;
         if (((h0) this.u0.b).c) {
             ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.n0.a;
-            g0.g3(new cd0(18));
+            g0.g3(new dd0(18));
         }
         return b14;
     }

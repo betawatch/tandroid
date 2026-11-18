@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ja implements jg.f0, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ na a;
@@ -34,9 +34,9 @@ public final /* synthetic */ class ja implements jg.f0, org.telegram.ui.ActionBa
                 arrayList2.add((TLRPC.User) g0Var.a);
             }
         }
-        bi.d6 d6Var = naVar.a;
-        if (d6Var != null) {
-            d6Var.g3.O(true);
+        bi.c6 c6Var = naVar.a;
+        if (c6Var != null) {
+            c6Var.g3.O(true);
         }
     }
 

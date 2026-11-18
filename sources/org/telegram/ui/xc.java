@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xc extends org.telegram.ui.Components.ph0 {
     public final /* synthetic */ int r;
@@ -34,7 +34,7 @@ public final class xc extends org.telegram.ui.Components.ph0 {
                 break;
             case 4:
                 super.invalidate(i7, i10, i11, i12);
-                ((oc0) this.s).h.invalidate();
+                ((pc0) this.s).h.invalidate();
                 break;
         }
     }
@@ -78,7 +78,7 @@ public final class xc extends org.telegram.ui.Components.ph0 {
                 break;
             case 4:
                 super.invalidate();
-                ((oc0) this.s).h.invalidate();
+                ((pc0) this.s).h.invalidate();
                 break;
         }
     }

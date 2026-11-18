@@ -50,7 +50,7 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.s4;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.PollVotesAlert$UserCell;
 import org.telegram.ui.Components.cf0;
@@ -78,7 +78,7 @@ import org.telegram.ui.p40;
 import org.telegram.ui.p50;
 import org.telegram.ui.qr;
 import org.telegram.ui.wc1;
-import org.telegram.ui.wf0;
+import org.telegram.ui.xf0;
 import org.telegram.ui.xs0;
 import p4.e1;
 import p4.i1;
@@ -86,7 +86,7 @@ import p4.k1;
 import p4.o1;
 import v4.f1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -381,7 +381,7 @@ public final /* synthetic */ class m0 implements Runnable {
                 ArrayList arrayList4 = (ArrayList) obj3;
                 ji.g gVar = (ji.g) obj2;
                 ChatActivityEnterView chatActivityEnterView = ((pf) obj5).a;
-                ne0 a82 = chatActivityEnterView.D3.a8(nVar, (b5) obj);
+                ne0 a82 = chatActivityEnterView.D3.a8(nVar, (c5) obj);
                 if (a82 == null) {
                     org.telegram.messenger.g0.E2(nVar);
                     break;
@@ -506,7 +506,7 @@ public final /* synthetic */ class m0 implements Runnable {
                 y0 y0Var = (y0) obj3;
                 xs0 xs0Var = (xs0) obj2;
                 if (((f5.f) obj5).a == 0) {
-                    wf0 wf0Var = new wf0(c11 == true ? 1 : 0, h2Var3);
+                    xf0 xf0Var = new xf0(c11 == true ? 1 : 0, h2Var3);
                     int i22 = this.c;
                     if (list != null && !list.isEmpty() && !j10.i(i22).q()) {
                         for (Purchase purchase : list) {
@@ -521,12 +521,12 @@ public final /* synthetic */ class m0 implements Runnable {
                                     tL_inputStorePaymentPremiumSubscription.upgrade = true;
                                 }
                                 tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentPremiumSubscription;
-                                ConnectionsManager.getInstance(i22).sendRequest(tL_payments_assignPlayMarketTransaction, new y7(i22, wf0Var, h2Var3, tL_payments_assignPlayMarketTransaction), 66);
+                                ConnectionsManager.getInstance(i22).sendRequest(tL_payments_assignPlayMarketTransaction, new y7(i22, xf0Var, h2Var3, tL_payments_assignPlayMarketTransaction), 66);
                                 break;
                             }
                         }
                     }
-                    r1.i().d("telegram_premium", new f3(wf0Var, 5));
+                    r1.i().d("telegram_premium", new f3(xf0Var, 5));
                     TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                     TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription2 = new TLRPC.TL_inputStorePaymentPremiumSubscription();
                     if (y0Var != null) {

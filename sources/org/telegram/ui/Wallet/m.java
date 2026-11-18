@@ -3,7 +3,7 @@ package org.telegram.ui.Wallet;
 import android.view.View;
 import org.telegram.ui.Components.e51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class m implements Runnable {
                 ((d3) this.b).dismiss();
                 return;
             case 5:
-                ((org.telegram.ui.Cells.u0) this.b).invalidate();
+                ((org.telegram.ui.Cells.v0) this.b).invalidate();
                 return;
             case 6:
                 ((org.telegram.ui.ActionBar.k5) this.b).a(true);
@@ -76,8 +76,8 @@ public final /* synthetic */ class m implements Runnable {
                 return;
             case 8:
                 j6 j6Var = (j6) this.b;
-                bi.d6 d6Var = j6Var.c;
-                if (d6Var == null || d6Var.getScrollState() != 0) {
+                bi.c6 c6Var = j6Var.c;
+                if (c6Var == null || c6Var.getScrollState() != 0) {
                     return;
                 }
                 e51 B0 = j6Var.j.B0();
@@ -133,7 +133,7 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 return;
             case 13:
-                ((org.telegram.ui.Cells.w3) this.b).requestLayout();
+                ((org.telegram.ui.Cells.x3) this.b).requestLayout();
                 return;
             default:
                 ((va) this.b).Z();

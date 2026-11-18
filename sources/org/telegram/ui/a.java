@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -186,7 +186,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ContactsActivity.b0((ContactsActivity) obj);
                 break;
             case 16:
-                ((org.telegram.ui.Cells.r8[]) obj)[0].setChecked(!r12.e.h);
+                ((org.telegram.ui.Cells.s8[]) obj)[0].setChecked(!r12.e.h);
                 break;
             case 17:
                 ((org.telegram.ui.ActionBar.x2) ((hi.w4) obj).b).y0.run();

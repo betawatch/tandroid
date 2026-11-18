@@ -5,10 +5,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class zc1 {
-    public org.telegram.ui.Cells.c2 a;
+    public org.telegram.ui.Cells.d2 a;
     public org.telegram.ui.ActionBar.u1 b;
     public TextView c;
 
@@ -24,9 +24,9 @@ public final class zc1 {
         org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, null);
         textView.setTextSize(1, 14.0f);
         g10.addView(textView, c8.ma.t(-1, -2, 0, 24, 0, 24, 0));
-        org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, context, null);
-        zc1Var.a = c2Var;
-        c2Var.getTextView().getLayoutParams().width = -1;
+        org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, context, null);
+        zc1Var.a = d2Var;
+        d2Var.getTextView().getLayoutParams().width = -1;
         zc1Var.a.getTextView().setTextSize(1, 14.0f);
         g10.addView(zc1Var.a, c8.ma.t(-1, 48, 3, 8, 0, 8, 0));
         boolean[] zArr = new boolean[1];

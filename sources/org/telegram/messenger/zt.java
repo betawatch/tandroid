@@ -21,19 +21,19 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.vg0;
-import org.telegram.ui.xg0;
+import org.telegram.ui.wg0;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
-public abstract class zt implements vg0 {
+public abstract class zt implements wg0 {
     public boolean E;
     public int F;
     public int G;
     public TLObject H;
     public boolean J;
     public org.telegram.ui.Components.mc K;
-    public xg0 L;
+    public yg0 L;
     public fu M;
     public float N;
     public int O;
@@ -71,17 +71,17 @@ public abstract class zt implements vg0 {
             return charSequence;
         }
         Spanned spanned = (Spanned) charSequence;
-        org.telegram.ui.Cells.o9[] o9VarArr = (org.telegram.ui.Cells.o9[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Cells.o9.class);
-        if (o9VarArr == null || o9VarArr.length == 0) {
+        org.telegram.ui.Cells.p9[] p9VarArr = (org.telegram.ui.Cells.p9[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Cells.p9.class);
+        if (p9VarArr == null || p9VarArr.length == 0) {
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-        Arrays.sort(o9VarArr, new yt(spanned, 0));
-        for (org.telegram.ui.Cells.o9 o9Var : o9VarArr) {
-            int spanStart = spanned.getSpanStart(o9Var);
-            int spanEnd = spanned.getSpanEnd(o9Var);
+        Arrays.sort(p9VarArr, new yt(spanned, 0));
+        for (org.telegram.ui.Cells.p9 p9Var : p9VarArr) {
+            int spanStart = spanned.getSpanStart(p9Var);
+            int spanEnd = spanned.getSpanEnd(p9Var);
             if (spanStart >= 0 && spanEnd >= 0 && spanStart <= spanEnd && spanEnd <= spannableStringBuilder.length()) {
-                CharSequence charSequence2 = o9Var.a;
+                CharSequence charSequence2 = p9Var.a;
                 if (charSequence2 == null) {
                     charSequence2 = "";
                 }
@@ -163,7 +163,7 @@ public abstract class zt implements vg0 {
         return rect.left + this.c + rect.right;
     }
 
-    public org.telegram.ui.Cells.t9[] L() {
+    public org.telegram.ui.Cells.u9[] L() {
         return null;
     }
 
@@ -225,13 +225,13 @@ public abstract class zt implements vg0 {
         this.T = i7;
         this.U = i10;
         this.V = i11;
-        org.telegram.ui.Cells.t9[] L = L();
+        org.telegram.ui.Cells.u9[] L = L();
         if (L == null) {
             return;
         }
-        for (org.telegram.ui.Cells.t9 t9Var : L) {
-            if (t9Var instanceof dv) {
-                dv dvVar = (dv) t9Var;
+        for (org.telegram.ui.Cells.u9 u9Var : L) {
+            if (u9Var instanceof dv) {
+                dv dvVar = (dv) u9Var;
                 dvVar.c = i7 - dvVar.f;
                 dvVar.d = i10;
                 dvVar.e = i11;
@@ -239,7 +239,7 @@ public abstract class zt implements vg0 {
         }
     }
 
-    @Override // org.telegram.ui.vg0
+    @Override // org.telegram.ui.wg0
     public Layout a() {
         return null;
     }
@@ -312,7 +312,7 @@ public abstract class zt implements vg0 {
         this.S = this.R;
     }
 
-    @Override // org.telegram.ui.vg0
+    @Override // org.telegram.ui.wg0
     public final View e() {
         return null;
     }
@@ -455,9 +455,9 @@ public abstract class zt implements vg0 {
 
     public final boolean n() {
         ev evVar;
-        org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.ui.Cells.l1 l1Var;
-        return (this.r == null || this.H == null || (q1Var = (evVar = this.a).E) == null || (l1Var = evVar.F) == null || !l1Var.U(q1Var)) ? false : true;
+        org.telegram.ui.Cells.r1 r1Var;
+        org.telegram.ui.Cells.m1 m1Var;
+        return (this.r == null || this.H == null || (r1Var = (evVar = this.a).E) == null || (m1Var = evVar.F) == null || !m1Var.U(r1Var)) ? false : true;
     }
 
     public void p(ArrayList arrayList) {
@@ -530,13 +530,13 @@ public abstract class zt implements vg0 {
     public boolean s(Canvas canvas, ColorFilter colorFilter) {
         dv dvVar;
         org.telegram.ui.Components.t5 t5Var;
-        org.telegram.ui.Cells.t9[] L = L();
+        org.telegram.ui.Cells.u9[] L = L();
         if (L == null) {
             return false;
         }
         boolean z10 = false;
-        for (org.telegram.ui.Cells.t9 t9Var : L) {
-            if ((t9Var instanceof dv) && (t5Var = (dvVar = (dv) t9Var).F) != null && !t5Var.a.isEmpty()) {
+        for (org.telegram.ui.Cells.u9 u9Var : L) {
+            if ((u9Var instanceof dv) && (t5Var = (dvVar = (dv) u9Var).F) != null && !t5Var.a.isEmpty()) {
                 canvas.save();
                 canvas.translate(dvVar.c, dvVar.d - this.N);
                 org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, dvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
@@ -548,16 +548,16 @@ public abstract class zt implements vg0 {
     }
 
     public void t(Canvas canvas) {
-        xg0 xg0Var = this.L;
-        if (xg0Var != null && xg0Var.h && xg0Var.d(this) >= 0) {
-            if (!xg0Var.i(this)) {
+        yg0 yg0Var = this.L;
+        if (yg0Var != null && yg0Var.h && yg0Var.d(this) >= 0) {
+            if (!yg0Var.i(this)) {
                 return;
             }
-            if (xg0Var.g(this)) {
-                r(canvas, xg0Var.g(this) ? xg0Var.e : -1, xg0Var.g(this) ? xg0Var.f : 0.0f);
+            if (yg0Var.g(this)) {
+                r(canvas, yg0Var.g(this) ? yg0Var.e : -1, yg0Var.g(this) ? yg0Var.f : 0.0f);
                 return;
             }
-            float c10 = xg0Var.c(this);
+            float c10 = yg0Var.c(this);
             if (c10 <= 0.0f) {
                 return;
             }
@@ -573,11 +573,11 @@ public abstract class zt implements vg0 {
     }
 
     public boolean u(CharacterStyle characterStyle, int i7, qt qtVar) {
-        org.telegram.ui.Cells.t9[] L = L();
+        org.telegram.ui.Cells.u9[] L = L();
         if (L != null) {
-            for (org.telegram.ui.Cells.t9 t9Var : L) {
-                if (t9Var instanceof dv) {
-                    if (((dv) t9Var).o(characterStyle, qtVar)) {
+            for (org.telegram.ui.Cells.u9 u9Var : L) {
+                if (u9Var instanceof dv) {
+                    if (((dv) u9Var).o(characterStyle, qtVar)) {
                         Rect rect = this.b;
                         qtVar.e = rect.left - r4.f;
                         qtVar.f = i7 + rect.top;

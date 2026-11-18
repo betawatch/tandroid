@@ -33,15 +33,15 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.r0;
 import org.telegram.messenger.t0;
 import org.telegram.ui.Components.j00;
-import org.telegram.ui.md0;
 import org.telegram.ui.n1;
+import org.telegram.ui.nd0;
 import org.telegram.ui.web.p1;
 import tg.z1;
 import v4.p;
 import wg.q;
 import wg.r;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class i implements j00 {
     public static i A;
@@ -72,11 +72,11 @@ public final class i implements j00 {
     public final HashMap m = new HashMap();
     public final ArrayDeque n = new ArrayDeque();
 
-    public i(md0 md0Var, String str, byte[] bArr) {
-        this.b = (String) md0Var.c;
-        String str2 = (String) md0Var.d;
+    public i(nd0 nd0Var, String str, byte[] bArr) {
+        this.b = (String) nd0Var.c;
+        String str2 = (String) nd0Var.d;
         this.c = str2;
-        String str3 = (String) md0Var.b;
+        String str3 = (String) nd0Var.b;
         String p10 = str3.isEmpty() ? "/" : p0.p("/", str3, "/");
         this.d = p10;
         this.e = str;
@@ -215,7 +215,7 @@ public final class i implements j00 {
         return null;
     }
 
-    public static md0 k(String str) {
+    public static nd0 k(String str) {
         if (str == null) {
             return null;
         }
@@ -238,7 +238,7 @@ public final class i implements j00 {
                 }
             }
         }
-        return new md0(l10, substring);
+        return new nd0(l10, substring);
     }
 
     public static String l(String str) {
@@ -266,7 +266,7 @@ public final class i implements j00 {
 
     public static int o(String str, String str2) {
         boolean z10;
-        md0 k10 = k(str);
+        nd0 k10 = k(str);
         byte[] f10 = f(str2);
         if (k10 != null && f10 != null) {
             try {

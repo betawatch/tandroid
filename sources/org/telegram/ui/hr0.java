@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class hr0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ pr0 a;
@@ -120,10 +120,10 @@ public final class hr0 extends org.telegram.ui.ActionBar.j {
                         v4.f1 K = pr0Var.c.K(i23);
                         if (K != null) {
                             View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.a6) {
-                                org.telegram.ui.Cells.a6 a6Var = (org.telegram.ui.Cells.a6) view;
-                                if (a6Var.getTop() > org.telegram.messenger.g0.L(40.0f)) {
-                                    pr0Var.h.c(a6Var.getCheckBox());
+                            if (view instanceof org.telegram.ui.Cells.b6) {
+                                org.telegram.ui.Cells.b6 b6Var = (org.telegram.ui.Cells.b6) view;
+                                if (b6Var.getTop() > org.telegram.messenger.g0.L(40.0f)) {
+                                    pr0Var.h.c(b6Var.getCheckBox());
                                     return;
                                 }
                             } else {

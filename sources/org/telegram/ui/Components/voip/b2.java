@@ -45,7 +45,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.c31;
@@ -55,7 +55,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.f40;
 import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class b2 {
     public static long a;
@@ -390,10 +390,10 @@ public abstract class b2 {
         textView.setText("Please only change these settings if you know exactly what they do.");
         u6.U(textView, n6.j5, null);
         f10.addView(textView, ma.k(16.0f, 8.0f, 16.0f, 8.0f, -1, -2));
-        final r8 r8Var = new r8(activity);
+        final s8 s8Var = new s8(activity);
         final int i10 = 0;
-        r8Var.f("Force TCP", g12.getBoolean("dbg_force_tcp_in_calls", false), false);
-        r8Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.x1
+        s8Var.f("Force TCP", g12.getBoolean("dbg_force_tcp_in_calls", false), false);
+        s8Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.x1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i10) {
@@ -404,7 +404,7 @@ public abstract class b2 {
                         boolean z11 = !z10;
                         edit.putBoolean("dbg_force_tcp_in_calls", z11);
                         edit.commit();
-                        r8Var.setChecked(z11);
+                        s8Var.setChecked(z11);
                         break;
                     case 1:
                         SharedPreferences sharedPreferences2 = g12;
@@ -413,7 +413,7 @@ public abstract class b2 {
                         boolean z13 = !z12;
                         edit2.putBoolean("dbg_dump_call_stats", z13);
                         edit2.commit();
-                        r8Var.setChecked(z13);
+                        s8Var.setChecked(z13);
                         break;
                     default:
                         SharedPreferences sharedPreferences3 = g12;
@@ -422,16 +422,16 @@ public abstract class b2 {
                         boolean z15 = !z14;
                         edit3.putBoolean("dbg_force_connection_service", z15);
                         edit3.commit();
-                        r8Var.setChecked(z15);
+                        s8Var.setChecked(z15);
                         break;
                 }
             }
         });
-        f10.addView(r8Var);
+        f10.addView(s8Var);
         if (org.telegram.messenger.s2.a) {
-            final r8 r8Var2 = new r8(activity);
-            r8Var2.f("Dump detailed stats", g12.getBoolean("dbg_dump_call_stats", false), false);
-            r8Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.x1
+            final s8 s8Var2 = new s8(activity);
+            s8Var2.f("Dump detailed stats", g12.getBoolean("dbg_dump_call_stats", false), false);
+            s8Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.x1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     switch (i7) {
@@ -442,7 +442,7 @@ public abstract class b2 {
                             boolean z11 = !z10;
                             edit.putBoolean("dbg_force_tcp_in_calls", z11);
                             edit.commit();
-                            r8Var2.setChecked(z11);
+                            s8Var2.setChecked(z11);
                             break;
                         case 1:
                             SharedPreferences sharedPreferences2 = g12;
@@ -451,7 +451,7 @@ public abstract class b2 {
                             boolean z13 = !z12;
                             edit2.putBoolean("dbg_dump_call_stats", z13);
                             edit2.commit();
-                            r8Var2.setChecked(z13);
+                            s8Var2.setChecked(z13);
                             break;
                         default:
                             SharedPreferences sharedPreferences3 = g12;
@@ -460,18 +460,18 @@ public abstract class b2 {
                             boolean z15 = !z14;
                             edit3.putBoolean("dbg_force_connection_service", z15);
                             edit3.commit();
-                            r8Var2.setChecked(z15);
+                            s8Var2.setChecked(z15);
                             break;
                     }
                 }
             });
-            f10.addView(r8Var2);
+            f10.addView(s8Var2);
         }
         if (Build.VERSION.SDK_INT >= 26) {
-            final r8 r8Var3 = new r8(activity);
-            r8Var3.f("Enable ConnectionService", g12.getBoolean("dbg_force_connection_service", false), false);
+            final s8 s8Var3 = new s8(activity);
+            s8Var3.f("Enable ConnectionService", g12.getBoolean("dbg_force_connection_service", false), false);
             final int i11 = 2;
-            r8Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.x1
+            s8Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.x1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     switch (i11) {
@@ -482,7 +482,7 @@ public abstract class b2 {
                             boolean z11 = !z10;
                             edit.putBoolean("dbg_force_tcp_in_calls", z11);
                             edit.commit();
-                            r8Var3.setChecked(z11);
+                            s8Var3.setChecked(z11);
                             break;
                         case 1:
                             SharedPreferences sharedPreferences2 = g12;
@@ -491,7 +491,7 @@ public abstract class b2 {
                             boolean z13 = !z12;
                             edit2.putBoolean("dbg_dump_call_stats", z13);
                             edit2.commit();
-                            r8Var3.setChecked(z13);
+                            s8Var3.setChecked(z13);
                             break;
                         default:
                             SharedPreferences sharedPreferences3 = g12;
@@ -500,12 +500,12 @@ public abstract class b2 {
                             boolean z15 = !z14;
                             edit3.putBoolean("dbg_force_connection_service", z15);
                             edit3.commit();
-                            r8Var3.setChecked(z15);
+                            s8Var3.setChecked(z15);
                             break;
                     }
                 }
             });
-            f10.addView(r8Var3);
+            f10.addView(s8Var3);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
         alertDialog$Builder.a.S = gd.M0(2131751634, null);
@@ -575,9 +575,9 @@ public abstract class b2 {
         int i11 = 0;
         while (i11 < 9) {
             if (strArr[i11] != null) {
-                org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(context, i10);
-                c2Var.setClipToPadding(false);
-                c2Var.setTag(strArr[i11]);
+                org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(context, i10);
+                d2Var.setClipToPadding(false);
+                d2Var.setTag(strArr[i11]);
                 switch (i11) {
                     case 0:
                         M0 = gd.M0(2131746221, null);
@@ -619,10 +619,10 @@ public abstract class b2 {
                         str = null;
                         break;
                 }
-                c2Var.e(str, null, false, false, false);
-                c2Var.setOnClickListener(oVar);
-                c2Var.setTag(strArr[i11]);
-                linearLayout.addView(c2Var);
+                d2Var.e(str, null, false, false, false);
+                d2Var.setOnClickListener(oVar);
+                d2Var.setTag(strArr[i11]);
+                linearLayout.addView(d2Var);
             }
             i11++;
             i10 = 1;
@@ -641,19 +641,19 @@ public abstract class b2 {
         editTextBoldCursor.setVisibility(8);
         g10.addView(editTextBoldCursor, ma.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
         final boolean[] zArr = {true};
-        final org.telegram.ui.Cells.c2 c2Var2 = new org.telegram.ui.Cells.c2(context, 1);
-        c31 c31Var = new c31(7, zArr, c2Var2);
-        c2Var2.e(gd.M0(2131752593, null), null, true, false, false);
-        c2Var2.setClipToPadding(false);
-        c2Var2.setOnClickListener(c31Var);
-        g10.addView(c2Var2, ma.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
+        final org.telegram.ui.Cells.d2 d2Var2 = new org.telegram.ui.Cells.d2(context, 1);
+        c31 c31Var = new c31(7, zArr, d2Var2);
+        d2Var2.e(gd.M0(2131752593, null), null, true, false, false);
+        d2Var2.setClipToPadding(false);
+        d2Var2.setOnClickListener(c31Var);
+        g10.addView(d2Var2, ma.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         n10.r(textView2, n6.r5, null, null, 2131752592);
         textView2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         textView2.setOnClickListener(c31Var);
         g10.addView(textView2);
-        c2Var2.setVisibility(8);
+        d2Var2.setVisibility(8);
         textView2.setVisibility(8);
         if (!file4.exists()) {
             zArr[0] = false;
@@ -693,7 +693,7 @@ public abstract class b2 {
                         u1Var2.setTitle(gd.M0(2131752594, null));
                         editTextBoldCursor2.setVisibility(0);
                         if (file5.exists()) {
-                            c2Var2.setVisibility(0);
+                            d2Var2.setVisibility(0);
                             textView2.setVisibility(0);
                         }
                         linearLayout2.setVisibility(0);
@@ -706,9 +706,9 @@ public abstract class b2 {
                 setcallrating.rating = u9Var2.getRating();
                 ArrayList arrayList = new ArrayList();
                 for (int i13 = 0; i13 < linearLayout2.getChildCount(); i13++) {
-                    org.telegram.ui.Cells.c2 c2Var3 = (org.telegram.ui.Cells.c2) linearLayout2.getChildAt(i13);
-                    if (c2Var3.b()) {
-                        arrayList.add("#" + c2Var3.getTag());
+                    org.telegram.ui.Cells.d2 d2Var3 = (org.telegram.ui.Cells.d2) linearLayout2.getChildAt(i13);
+                    if (d2Var3.b()) {
+                        arrayList.add("#" + d2Var3.getTag());
                     }
                 }
                 if (setcallrating.rating < 5) {

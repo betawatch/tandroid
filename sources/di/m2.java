@@ -31,7 +31,7 @@ import org.telegram.ui.gg;
 import org.telegram.ui.hq0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m2 implements x10 {
     public final /* synthetic */ int a;
@@ -88,13 +88,13 @@ public final /* synthetic */ class m2 implements x10 {
                 break;
             case 2:
                 final bn bnVar = (bn) obj6;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj5;
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj5;
                 String str = (String) obj4;
                 TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) obj2;
                 CharacterStyle characterStyle = (CharacterStyle) obj3;
                 final TLRPC.User user = (TLRPC.User) obj;
                 final TLRPC.UserFull d2 = user != null ? bnVar.getMessagesController().d2(user.id) : null;
-                y60 J = y60.J(bnVar, q1Var);
+                y60 J = y60.J(bnVar, r1Var);
                 wk0 wk0Var = new wk0(bnVar.getParentActivity(), bnVar.Ba);
                 J.p = new fe(wk0Var, i10);
                 org.telegram.ui.x xVar = new org.telegram.ui.x(bnVar, user, str, 3);
@@ -104,7 +104,7 @@ public final /* synthetic */ class m2 implements x10 {
                 K.c(R.drawable.msg_addbot, gd.M0(2131751706, null), new org.telegram.ui.o1(bnVar, J, str), false);
                 K.c(R.drawable.menu_contact_existing, gd.M0(2131754373, null), new hq0(xVar, 28), false);
                 if (tL_contact == null && (user == null || !bnVar.getContactsController().g0.containsKey(Long.valueOf(user.id)))) {
-                    J.c(R.drawable.msg_contact_add, gd.M0(2131754375, null), new bi.v5(J, K, 5), false);
+                    J.c(R.drawable.msg_contact_add, gd.M0(2131754375, null), new bi.u5(J, K, 5), false);
                     J.k();
                 }
                 if (user == null) {
@@ -220,9 +220,9 @@ public final /* synthetic */ class m2 implements x10 {
                     }
                     SpannableString spannableString = new SpannableString(trim);
                     spannableString.setSpan(characterStyle, r15, spannableString.length(), 33);
-                    wk0Var.f(q1Var, characterStyle, spannableString, r15);
+                    wk0Var.f(r1Var, characterStyle, spannableString, r15);
                 } else {
-                    wk0Var.f(q1Var, characterStyle, null, false);
+                    wk0Var.f(r1Var, characterStyle, null, false);
                 }
                 bnVar.showDialog(wk0Var);
                 break;

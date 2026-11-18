@@ -5,7 +5,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f6 implements org.telegram.ui.ActionBar.v6 {
     public final /* synthetic */ int a;
@@ -76,13 +76,13 @@ public final /* synthetic */ class f6 implements org.telegram.ui.ActionBar.v6 {
                 ((v50) h2Var).a0(true);
                 break;
             case 11:
-                ((de0) h2Var).Q1();
+                ((ee0) h2Var).Q1();
                 break;
             case 12:
-                ((ff0) h2Var).g0();
+                ((gf0) h2Var).g0();
                 break;
             case 13:
-                ((ng0) h2Var).f0();
+                ((og0) h2Var).f0();
                 break;
             case 14:
                 ((NotificationsCustomSettingsActivity) h2Var).getClass();

@@ -7,10 +7,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.k70;
 import org.telegram.ui.Components.p70;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.r90;
+import org.telegram.ui.s90;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -43,7 +43,7 @@ public final /* synthetic */ class l implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new yn(p70Var, tL_error, this.c, tL_messages_importChatInvite, 5));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new m((r90) this.d, tLObject, this.b, (String) this.e, this.c, tL_error));
+                org.telegram.messenger.g0.g3(new m((s90) this.d, tLObject, this.b, (String) this.e, this.c, tL_error));
                 break;
         }
     }
@@ -55,8 +55,8 @@ public final /* synthetic */ class l implements RequestDelegate {
         this.e = tL_messages_importChatInvite;
     }
 
-    public /* synthetic */ l(r90 r90Var, long j3, String str, boolean z10) {
-        this.d = r90Var;
+    public /* synthetic */ l(s90 s90Var, long j3, String str, boolean z10) {
+        this.d = s90Var;
         this.b = j3;
         this.e = str;
         this.c = z10;

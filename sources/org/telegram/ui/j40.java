@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j40 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -82,51 +82,51 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                 arrayList.clear();
                 return;
             case 5:
-                j90 j90Var = (j90) this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(j90Var.getParentActivity());
+                k90 k90Var = (k90) this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k90Var.getParentActivity());
                 alertDialog$Builder.a.U = org.telegram.messenger.gd.M0(2131745831, null);
                 alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(2131745828, null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131745829, null), new z80(j90Var, 1 == true ? 1 : 0));
+                alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131745829, null), new a90(k90Var, 1 == true ? 1 : 0));
                 alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-                j90Var.showDialog(alertDialog$Builder.a);
+                k90Var.showDialog(alertDialog$Builder.a);
                 return;
             case 6:
-                final gc0 gc0Var = (gc0) this.b;
-                de0 de0Var = gc0Var.E;
-                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(de0Var.getParentActivity());
+                final hc0 hc0Var = (hc0) this.b;
+                ee0 ee0Var = hc0Var.E;
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(ee0Var.getParentActivity());
                 alertDialog$Builder2.a.S = org.telegram.messenger.gd.M0(2131745876, "RestorePasswordNoEmailTitle");
                 alertDialog$Builder2.a.U = org.telegram.messenger.gd.M0(2131745880, "RestoreEmailTroubleText");
-                alertDialog$Builder2.k(org.telegram.messenger.gd.M0(2131747638, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.fc0
+                alertDialog$Builder2.k(org.telegram.messenger.gd.M0(2131747638, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.gc0
                     @Override // org.telegram.ui.ActionBar.r1
                     public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i12) {
                         switch (r2) {
                             case 0:
-                                gc0Var.E.M1(6, true, new Bundle(), true);
+                                hc0Var.E.M1(6, true, new Bundle(), true);
                                 break;
                             default:
-                                gc0 gc0Var2 = gc0Var;
-                                de0.t0(gc0Var2.E, gc0Var2.r, gc0Var2.s, gc0Var2.w);
+                                hc0 hc0Var2 = hc0Var;
+                                ee0.t0(hc0Var2.E, hc0Var2.r, hc0Var2.s, hc0Var2.w);
                                 break;
                         }
                     }
                 });
                 String M0 = org.telegram.messenger.gd.M0(2131745922, null);
                 final char c10 = 1 == true ? 1 : 0;
-                alertDialog$Builder2.h(M0, new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.fc0
+                alertDialog$Builder2.h(M0, new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.gc0
                     @Override // org.telegram.ui.ActionBar.r1
                     public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i12) {
                         switch (c10) {
                             case 0:
-                                gc0Var.E.M1(6, true, new Bundle(), true);
+                                hc0Var.E.M1(6, true, new Bundle(), true);
                                 break;
                             default:
-                                gc0 gc0Var2 = gc0Var;
-                                de0.t0(gc0Var2.E, gc0Var2.r, gc0Var2.s, gc0Var2.w);
+                                hc0 hc0Var2 = hc0Var;
+                                ee0.t0(hc0Var2.E, hc0Var2.r, hc0Var2.s, hc0Var2.w);
                                 break;
                         }
                     }
                 });
-                Dialog showDialog = de0Var.showDialog(alertDialog$Builder2.a);
+                Dialog showDialog = ee0Var.showDialog(alertDialog$Builder2.a);
                 if (showDialog != null) {
                     showDialog.setCanceledOnTouchOutside(false);
                     showDialog.setCancelable(false);
@@ -134,22 +134,22 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                 }
                 return;
             case 7:
-                pc0 pc0Var = (pc0) this.b;
-                de0 de0Var2 = pc0Var.H;
-                if (de0Var2.W.getTag() != null) {
+                qc0 qc0Var = (qc0) this.b;
+                ee0 ee0Var2 = qc0Var.H;
+                if (ee0Var2.W.getTag() != null) {
                     return;
                 }
-                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(de0Var2.getParentActivity());
+                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(ee0Var2.getParentActivity());
                 alertDialog$Builder3.a.S = org.telegram.messenger.gd.M0(2131745904, "ResetMyAccountWarning");
                 alertDialog$Builder3.a.U = org.telegram.messenger.gd.M0(2131745902, "ResetMyAccountWarningText");
-                alertDialog$Builder3.k(org.telegram.messenger.gd.M0(2131745903, "ResetMyAccountWarningReset"), new zr(pc0Var, 21));
+                alertDialog$Builder3.k(org.telegram.messenger.gd.M0(2131745903, "ResetMyAccountWarningReset"), new zr(qc0Var, 21));
                 alertDialog$Builder3.h(org.telegram.messenger.gd.M0(2131752578, "Cancel"), null);
-                de0Var2.showDialog(alertDialog$Builder3.a);
+                ee0Var2.showDialog(alertDialog$Builder3.a);
                 return;
             case 8:
-                rc0 rc0Var = (rc0) this.b;
-                org.telegram.messenger.ks.e().b(new x4(rc0Var, i11), org.telegram.messenger.ks.e5);
-                Context context = rc0Var.getContext();
+                sc0 sc0Var = (sc0) this.b;
+                org.telegram.messenger.ks.e().b(new x4(sc0Var, i11), org.telegram.messenger.ks.f5);
+                Context context = sc0Var.getContext();
                 HashSet hashSet = new HashSet();
                 HashMap hashMap = new HashMap();
                 String str = org.telegram.messenger.s2.h;
@@ -163,41 +163,41 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                 }
                 hashSet.add(GoogleSignInOptions.y);
                 b9.k0 a10 = a8.v7.a(context, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
-                a10.g().addOnCompleteListener(new at(24, rc0Var, a10));
+                a10.g().addOnCompleteListener(new at(24, sc0Var, a10));
                 return;
             case 9:
-                ((qd0) this.b).a();
+                ((rd0) this.b).a();
                 return;
             case 10:
-                final cf0 cf0Var = (cf0) this.b;
-                ff0 ff0Var = cf0Var.L;
-                if (cf0Var.n == null) {
+                final df0 df0Var = (df0) this.b;
+                gf0 gf0Var = df0Var.L;
+                if (df0Var.n == null) {
                     return;
                 }
-                View view2 = ff0Var.fragmentView;
+                View view2 = gf0Var.fragmentView;
                 if (view2 instanceof ViewGroup) {
-                    org.telegram.ui.Components.y60 G = org.telegram.ui.Components.y60.G((ViewGroup) view2, null, cf0Var);
-                    if (cf0Var.n.revoked) {
-                        G.c(R.drawable.msg_delete, org.telegram.messenger.gd.M0(2131751587, null), new Runnable() { // from class: org.telegram.ui.ze0
+                    org.telegram.ui.Components.y60 G = org.telegram.ui.Components.y60.G((ViewGroup) view2, null, df0Var);
+                    if (df0Var.n.revoked) {
+                        G.c(R.drawable.msg_delete, org.telegram.messenger.gd.M0(2131751587, null), new Runnable() { // from class: org.telegram.ui.af0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
                                 switch (r2) {
                                     case 0:
-                                        final cf0 cf0Var2 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
-                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
+                                        final df0 df0Var2 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = df0Var2.n;
+                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(df0Var2.L.getParentActivity());
                                         alertDialog$Builder4.a.S = org.telegram.messenger.gd.M0(2131751523, null);
                                         alertDialog$Builder4.a.U = org.telegram.messenger.gd.M0(2131751522, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i13) {
                                                 switch (i12) {
                                                     case 0:
-                                                        cf0Var2.L.k0(tL_chatInviteExported);
+                                                        df0Var2.L.k0(tL_chatInviteExported);
                                                         break;
                                                     default:
-                                                        cf0Var2.L.h0(tL_chatInviteExported);
+                                                        df0Var2.L.h0(tL_chatInviteExported);
                                                         break;
                                                 }
                                             }
@@ -205,11 +205,11 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         i5.c.y(null, 2131752578, alertDialog$Builder4, null);
                                         break;
                                     case 1:
-                                        cf0 cf0Var3 = cf0Var;
+                                        df0 df0Var3 = df0Var;
                                         try {
-                                            if (cf0Var3.n.link != null) {
-                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", cf0Var3.n.link));
-                                                org.telegram.ui.Components.lc.j(cf0Var3.L).j();
+                                            if (df0Var3.n.link != null) {
+                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", df0Var3.n.link));
+                                                org.telegram.ui.Components.lc.j(df0Var3.L).j();
                                                 break;
                                             } else {
                                                 break;
@@ -219,13 +219,13 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 2:
-                                        cf0 cf0Var4 = cf0Var;
-                                        ff0 ff0Var2 = cf0Var4.L;
+                                        df0 df0Var4 = df0Var;
+                                        gf0 gf0Var2 = df0Var4.L;
                                         try {
-                                            if (cf0Var4.n.link != null) {
-                                                Context context2 = cf0Var4.getContext();
-                                                String str2 = cf0Var4.n.link;
-                                                ff0Var2.showDialog(new bf0(cf0Var4, context2, str2, str2, ff0Var2.getResourceProvider()));
+                                            if (df0Var4.n.link != null) {
+                                                Context context2 = df0Var4.getContext();
+                                                String str2 = df0Var4.n.link;
+                                                gf0Var2.showDialog(new cf0(df0Var4, context2, str2, str2, gf0Var2.getResourceProvider()));
                                                 break;
                                             } else {
                                                 break;
@@ -235,30 +235,30 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 3:
-                                        cf0 cf0Var5 = cf0Var;
-                                        ff0 ff0Var3 = cf0Var5.L;
-                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = cf0Var5.n;
-                                        j90 j90Var2 = new j90(1, ff0Var3.n);
-                                        j90Var2.T = ff0Var3.t0;
-                                        j90Var2.d0(tL_chatInviteExported2);
-                                        ff0Var3.presentFragment(j90Var2);
+                                        df0 df0Var5 = df0Var;
+                                        gf0 gf0Var3 = df0Var5.L;
+                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = df0Var5.n;
+                                        k90 k90Var2 = new k90(1, gf0Var3.n);
+                                        k90Var2.T = gf0Var3.t0;
+                                        k90Var2.d0(tL_chatInviteExported2);
+                                        gf0Var3.presentFragment(k90Var2);
                                         break;
                                     default:
-                                        final cf0 cf0Var6 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
-                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
+                                        final df0 df0Var6 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = df0Var6.n;
+                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(df0Var6.L.getParentActivity());
                                         alertDialog$Builder5.a.U = org.telegram.messenger.gd.M0(2131745831, null);
                                         alertDialog$Builder5.a.S = org.telegram.messenger.gd.M0(2131745828, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i13) {
                                                     case 0:
-                                                        cf0Var6.L.k0(tL_chatInviteExported3);
+                                                        df0Var6.L.k0(tL_chatInviteExported3);
                                                         break;
                                                     default:
-                                                        cf0Var6.L.h0(tL_chatInviteExported3);
+                                                        df0Var6.L.h0(tL_chatInviteExported3);
                                                         break;
                                                 }
                                             }
@@ -271,26 +271,26 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                     } else {
                         String M02 = org.telegram.messenger.gd.M0(2131751751, null);
                         final char c11 = 1 == true ? 1 : 0;
-                        G.c(R.drawable.msg_copy, M02, new Runnable() { // from class: org.telegram.ui.ze0
+                        G.c(R.drawable.msg_copy, M02, new Runnable() { // from class: org.telegram.ui.af0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
                                 switch (c11) {
                                     case 0:
-                                        final cf0 cf0Var2 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
-                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
+                                        final df0 df0Var2 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = df0Var2.n;
+                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(df0Var2.L.getParentActivity());
                                         alertDialog$Builder4.a.S = org.telegram.messenger.gd.M0(2131751523, null);
                                         alertDialog$Builder4.a.U = org.telegram.messenger.gd.M0(2131751522, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i12) {
                                                     case 0:
-                                                        cf0Var2.L.k0(tL_chatInviteExported);
+                                                        df0Var2.L.k0(tL_chatInviteExported);
                                                         break;
                                                     default:
-                                                        cf0Var2.L.h0(tL_chatInviteExported);
+                                                        df0Var2.L.h0(tL_chatInviteExported);
                                                         break;
                                                 }
                                             }
@@ -298,11 +298,11 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         i5.c.y(null, 2131752578, alertDialog$Builder4, null);
                                         break;
                                     case 1:
-                                        cf0 cf0Var3 = cf0Var;
+                                        df0 df0Var3 = df0Var;
                                         try {
-                                            if (cf0Var3.n.link != null) {
-                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", cf0Var3.n.link));
-                                                org.telegram.ui.Components.lc.j(cf0Var3.L).j();
+                                            if (df0Var3.n.link != null) {
+                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", df0Var3.n.link));
+                                                org.telegram.ui.Components.lc.j(df0Var3.L).j();
                                                 break;
                                             } else {
                                                 break;
@@ -312,13 +312,13 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 2:
-                                        cf0 cf0Var4 = cf0Var;
-                                        ff0 ff0Var2 = cf0Var4.L;
+                                        df0 df0Var4 = df0Var;
+                                        gf0 gf0Var2 = df0Var4.L;
                                         try {
-                                            if (cf0Var4.n.link != null) {
-                                                Context context2 = cf0Var4.getContext();
-                                                String str2 = cf0Var4.n.link;
-                                                ff0Var2.showDialog(new bf0(cf0Var4, context2, str2, str2, ff0Var2.getResourceProvider()));
+                                            if (df0Var4.n.link != null) {
+                                                Context context2 = df0Var4.getContext();
+                                                String str2 = df0Var4.n.link;
+                                                gf0Var2.showDialog(new cf0(df0Var4, context2, str2, str2, gf0Var2.getResourceProvider()));
                                                 break;
                                             } else {
                                                 break;
@@ -328,30 +328,30 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 3:
-                                        cf0 cf0Var5 = cf0Var;
-                                        ff0 ff0Var3 = cf0Var5.L;
-                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = cf0Var5.n;
-                                        j90 j90Var2 = new j90(1, ff0Var3.n);
-                                        j90Var2.T = ff0Var3.t0;
-                                        j90Var2.d0(tL_chatInviteExported2);
-                                        ff0Var3.presentFragment(j90Var2);
+                                        df0 df0Var5 = df0Var;
+                                        gf0 gf0Var3 = df0Var5.L;
+                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = df0Var5.n;
+                                        k90 k90Var2 = new k90(1, gf0Var3.n);
+                                        k90Var2.T = gf0Var3.t0;
+                                        k90Var2.d0(tL_chatInviteExported2);
+                                        gf0Var3.presentFragment(k90Var2);
                                         break;
                                     default:
-                                        final cf0 cf0Var6 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
-                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
+                                        final df0 df0Var6 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = df0Var6.n;
+                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(df0Var6.L.getParentActivity());
                                         alertDialog$Builder5.a.U = org.telegram.messenger.gd.M0(2131745831, null);
                                         alertDialog$Builder5.a.S = org.telegram.messenger.gd.M0(2131745828, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i13) {
                                                     case 0:
-                                                        cf0Var6.L.k0(tL_chatInviteExported3);
+                                                        df0Var6.L.k0(tL_chatInviteExported3);
                                                         break;
                                                     default:
-                                                        cf0Var6.L.h0(tL_chatInviteExported3);
+                                                        df0Var6.L.h0(tL_chatInviteExported3);
                                                         break;
                                                 }
                                             }
@@ -361,26 +361,26 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                 }
                             }
                         }, false);
-                        G.c(R.drawable.msg_share, org.telegram.messenger.gd.M0(2131745263, null), new Runnable() { // from class: org.telegram.ui.ze0
+                        G.c(R.drawable.msg_share, org.telegram.messenger.gd.M0(2131745263, null), new Runnable() { // from class: org.telegram.ui.af0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
                                 switch (i11) {
                                     case 0:
-                                        final cf0 cf0Var2 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
-                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
+                                        final df0 df0Var2 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = df0Var2.n;
+                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(df0Var2.L.getParentActivity());
                                         alertDialog$Builder4.a.S = org.telegram.messenger.gd.M0(2131751523, null);
                                         alertDialog$Builder4.a.U = org.telegram.messenger.gd.M0(2131751522, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i12) {
                                                     case 0:
-                                                        cf0Var2.L.k0(tL_chatInviteExported);
+                                                        df0Var2.L.k0(tL_chatInviteExported);
                                                         break;
                                                     default:
-                                                        cf0Var2.L.h0(tL_chatInviteExported);
+                                                        df0Var2.L.h0(tL_chatInviteExported);
                                                         break;
                                                 }
                                             }
@@ -388,11 +388,11 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         i5.c.y(null, 2131752578, alertDialog$Builder4, null);
                                         break;
                                     case 1:
-                                        cf0 cf0Var3 = cf0Var;
+                                        df0 df0Var3 = df0Var;
                                         try {
-                                            if (cf0Var3.n.link != null) {
-                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", cf0Var3.n.link));
-                                                org.telegram.ui.Components.lc.j(cf0Var3.L).j();
+                                            if (df0Var3.n.link != null) {
+                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", df0Var3.n.link));
+                                                org.telegram.ui.Components.lc.j(df0Var3.L).j();
                                                 break;
                                             } else {
                                                 break;
@@ -402,13 +402,13 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 2:
-                                        cf0 cf0Var4 = cf0Var;
-                                        ff0 ff0Var2 = cf0Var4.L;
+                                        df0 df0Var4 = df0Var;
+                                        gf0 gf0Var2 = df0Var4.L;
                                         try {
-                                            if (cf0Var4.n.link != null) {
-                                                Context context2 = cf0Var4.getContext();
-                                                String str2 = cf0Var4.n.link;
-                                                ff0Var2.showDialog(new bf0(cf0Var4, context2, str2, str2, ff0Var2.getResourceProvider()));
+                                            if (df0Var4.n.link != null) {
+                                                Context context2 = df0Var4.getContext();
+                                                String str2 = df0Var4.n.link;
+                                                gf0Var2.showDialog(new cf0(df0Var4, context2, str2, str2, gf0Var2.getResourceProvider()));
                                                 break;
                                             } else {
                                                 break;
@@ -418,30 +418,30 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 3:
-                                        cf0 cf0Var5 = cf0Var;
-                                        ff0 ff0Var3 = cf0Var5.L;
-                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = cf0Var5.n;
-                                        j90 j90Var2 = new j90(1, ff0Var3.n);
-                                        j90Var2.T = ff0Var3.t0;
-                                        j90Var2.d0(tL_chatInviteExported2);
-                                        ff0Var3.presentFragment(j90Var2);
+                                        df0 df0Var5 = df0Var;
+                                        gf0 gf0Var3 = df0Var5.L;
+                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = df0Var5.n;
+                                        k90 k90Var2 = new k90(1, gf0Var3.n);
+                                        k90Var2.T = gf0Var3.t0;
+                                        k90Var2.d0(tL_chatInviteExported2);
+                                        gf0Var3.presentFragment(k90Var2);
                                         break;
                                     default:
-                                        final cf0 cf0Var6 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
-                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
+                                        final df0 df0Var6 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = df0Var6.n;
+                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(df0Var6.L.getParentActivity());
                                         alertDialog$Builder5.a.U = org.telegram.messenger.gd.M0(2131745831, null);
                                         alertDialog$Builder5.a.S = org.telegram.messenger.gd.M0(2131745828, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i13) {
                                                     case 0:
-                                                        cf0Var6.L.k0(tL_chatInviteExported3);
+                                                        df0Var6.L.k0(tL_chatInviteExported3);
                                                         break;
                                                     default:
-                                                        cf0Var6.L.h0(tL_chatInviteExported3);
+                                                        df0Var6.L.h0(tL_chatInviteExported3);
                                                         break;
                                                 }
                                             }
@@ -451,26 +451,26 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                 }
                             }
                         }, false);
-                        G.l(R.drawable.msg_edit, org.telegram.messenger.gd.M0(2131751266, null), new Runnable() { // from class: org.telegram.ui.ze0
+                        G.l(R.drawable.msg_edit, org.telegram.messenger.gd.M0(2131751266, null), new Runnable() { // from class: org.telegram.ui.af0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
                                 switch (i10) {
                                     case 0:
-                                        final cf0 cf0Var2 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
-                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
+                                        final df0 df0Var2 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = df0Var2.n;
+                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(df0Var2.L.getParentActivity());
                                         alertDialog$Builder4.a.S = org.telegram.messenger.gd.M0(2131751523, null);
                                         alertDialog$Builder4.a.U = org.telegram.messenger.gd.M0(2131751522, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i12) {
                                                     case 0:
-                                                        cf0Var2.L.k0(tL_chatInviteExported);
+                                                        df0Var2.L.k0(tL_chatInviteExported);
                                                         break;
                                                     default:
-                                                        cf0Var2.L.h0(tL_chatInviteExported);
+                                                        df0Var2.L.h0(tL_chatInviteExported);
                                                         break;
                                                 }
                                             }
@@ -478,11 +478,11 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         i5.c.y(null, 2131752578, alertDialog$Builder4, null);
                                         break;
                                     case 1:
-                                        cf0 cf0Var3 = cf0Var;
+                                        df0 df0Var3 = df0Var;
                                         try {
-                                            if (cf0Var3.n.link != null) {
-                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", cf0Var3.n.link));
-                                                org.telegram.ui.Components.lc.j(cf0Var3.L).j();
+                                            if (df0Var3.n.link != null) {
+                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", df0Var3.n.link));
+                                                org.telegram.ui.Components.lc.j(df0Var3.L).j();
                                                 break;
                                             } else {
                                                 break;
@@ -492,13 +492,13 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 2:
-                                        cf0 cf0Var4 = cf0Var;
-                                        ff0 ff0Var2 = cf0Var4.L;
+                                        df0 df0Var4 = df0Var;
+                                        gf0 gf0Var2 = df0Var4.L;
                                         try {
-                                            if (cf0Var4.n.link != null) {
-                                                Context context2 = cf0Var4.getContext();
-                                                String str2 = cf0Var4.n.link;
-                                                ff0Var2.showDialog(new bf0(cf0Var4, context2, str2, str2, ff0Var2.getResourceProvider()));
+                                            if (df0Var4.n.link != null) {
+                                                Context context2 = df0Var4.getContext();
+                                                String str2 = df0Var4.n.link;
+                                                gf0Var2.showDialog(new cf0(df0Var4, context2, str2, str2, gf0Var2.getResourceProvider()));
                                                 break;
                                             } else {
                                                 break;
@@ -508,30 +508,30 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 3:
-                                        cf0 cf0Var5 = cf0Var;
-                                        ff0 ff0Var3 = cf0Var5.L;
-                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = cf0Var5.n;
-                                        j90 j90Var2 = new j90(1, ff0Var3.n);
-                                        j90Var2.T = ff0Var3.t0;
-                                        j90Var2.d0(tL_chatInviteExported2);
-                                        ff0Var3.presentFragment(j90Var2);
+                                        df0 df0Var5 = df0Var;
+                                        gf0 gf0Var3 = df0Var5.L;
+                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = df0Var5.n;
+                                        k90 k90Var2 = new k90(1, gf0Var3.n);
+                                        k90Var2.T = gf0Var3.t0;
+                                        k90Var2.d0(tL_chatInviteExported2);
+                                        gf0Var3.presentFragment(k90Var2);
                                         break;
                                     default:
-                                        final cf0 cf0Var6 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
-                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
+                                        final df0 df0Var6 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = df0Var6.n;
+                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(df0Var6.L.getParentActivity());
                                         alertDialog$Builder5.a.U = org.telegram.messenger.gd.M0(2131745831, null);
                                         alertDialog$Builder5.a.S = org.telegram.messenger.gd.M0(2131745828, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i13) {
                                                     case 0:
-                                                        cf0Var6.L.k0(tL_chatInviteExported3);
+                                                        df0Var6.L.k0(tL_chatInviteExported3);
                                                         break;
                                                     default:
-                                                        cf0Var6.L.h0(tL_chatInviteExported3);
+                                                        df0Var6.L.h0(tL_chatInviteExported3);
                                                         break;
                                                 }
                                             }
@@ -540,27 +540,27 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         break;
                                 }
                             }
-                        }, !cf0Var.n.permanent && ff0Var.q0);
-                        G.m(R.drawable.msg_delete, new Runnable() { // from class: org.telegram.ui.ze0
+                        }, !df0Var.n.permanent && gf0Var.q0);
+                        G.m(R.drawable.msg_delete, new Runnable() { // from class: org.telegram.ui.af0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
                                 switch (i7) {
                                     case 0:
-                                        final cf0 cf0Var2 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
-                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
+                                        final df0 df0Var2 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported = df0Var2.n;
+                                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(df0Var2.L.getParentActivity());
                                         alertDialog$Builder4.a.S = org.telegram.messenger.gd.M0(2131751523, null);
                                         alertDialog$Builder4.a.U = org.telegram.messenger.gd.M0(2131751522, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i12) {
                                                     case 0:
-                                                        cf0Var2.L.k0(tL_chatInviteExported);
+                                                        df0Var2.L.k0(tL_chatInviteExported);
                                                         break;
                                                     default:
-                                                        cf0Var2.L.h0(tL_chatInviteExported);
+                                                        df0Var2.L.h0(tL_chatInviteExported);
                                                         break;
                                                 }
                                             }
@@ -568,11 +568,11 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         i5.c.y(null, 2131752578, alertDialog$Builder4, null);
                                         break;
                                     case 1:
-                                        cf0 cf0Var3 = cf0Var;
+                                        df0 df0Var3 = df0Var;
                                         try {
-                                            if (cf0Var3.n.link != null) {
-                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", cf0Var3.n.link));
-                                                org.telegram.ui.Components.lc.j(cf0Var3.L).j();
+                                            if (df0Var3.n.link != null) {
+                                                ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", df0Var3.n.link));
+                                                org.telegram.ui.Components.lc.j(df0Var3.L).j();
                                                 break;
                                             } else {
                                                 break;
@@ -582,13 +582,13 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 2:
-                                        cf0 cf0Var4 = cf0Var;
-                                        ff0 ff0Var2 = cf0Var4.L;
+                                        df0 df0Var4 = df0Var;
+                                        gf0 gf0Var2 = df0Var4.L;
                                         try {
-                                            if (cf0Var4.n.link != null) {
-                                                Context context2 = cf0Var4.getContext();
-                                                String str2 = cf0Var4.n.link;
-                                                ff0Var2.showDialog(new bf0(cf0Var4, context2, str2, str2, ff0Var2.getResourceProvider()));
+                                            if (df0Var4.n.link != null) {
+                                                Context context2 = df0Var4.getContext();
+                                                String str2 = df0Var4.n.link;
+                                                gf0Var2.showDialog(new cf0(df0Var4, context2, str2, str2, gf0Var2.getResourceProvider()));
                                                 break;
                                             } else {
                                                 break;
@@ -598,30 +598,30 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                             return;
                                         }
                                     case 3:
-                                        cf0 cf0Var5 = cf0Var;
-                                        ff0 ff0Var3 = cf0Var5.L;
-                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = cf0Var5.n;
-                                        j90 j90Var2 = new j90(1, ff0Var3.n);
-                                        j90Var2.T = ff0Var3.t0;
-                                        j90Var2.d0(tL_chatInviteExported2);
-                                        ff0Var3.presentFragment(j90Var2);
+                                        df0 df0Var5 = df0Var;
+                                        gf0 gf0Var3 = df0Var5.L;
+                                        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = df0Var5.n;
+                                        k90 k90Var2 = new k90(1, gf0Var3.n);
+                                        k90Var2.T = gf0Var3.t0;
+                                        k90Var2.d0(tL_chatInviteExported2);
+                                        gf0Var3.presentFragment(k90Var2);
                                         break;
                                     default:
-                                        final cf0 cf0Var6 = cf0Var;
-                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
-                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
+                                        final df0 df0Var6 = df0Var;
+                                        final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = df0Var6.n;
+                                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(df0Var6.L.getParentActivity());
                                         alertDialog$Builder5.a.U = org.telegram.messenger.gd.M0(2131745831, null);
                                         alertDialog$Builder5.a.S = org.telegram.messenger.gd.M0(2131745828, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.gd.M0(2131745829, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.bf0
                                             @Override // org.telegram.ui.ActionBar.r1
                                             public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i132) {
                                                 switch (i13) {
                                                     case 0:
-                                                        cf0Var6.L.k0(tL_chatInviteExported3);
+                                                        df0Var6.L.k0(tL_chatInviteExported3);
                                                         break;
                                                     default:
-                                                        cf0Var6.L.h0(tL_chatInviteExported3);
+                                                        df0Var6.L.h0(tL_chatInviteExported3);
                                                         break;
                                                 }
                                             }
@@ -630,33 +630,33 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         break;
                                 }
                             }
-                        }, org.telegram.messenger.gd.M0(2131745828, null), ff0Var.q0, true);
+                        }, org.telegram.messenger.gd.M0(2131745828, null), gf0Var.q0, true);
                     }
-                    G.X(ff0Var.b.U0(cf0Var, false));
+                    G.X(gf0Var.b.U0(df0Var, false));
                     G.a0();
                     return;
                 }
                 return;
             case 11:
-                ng0 ng0Var = (ng0) this.b;
-                long j3 = ng0Var.b;
-                if (ng0Var.n.x4()) {
+                og0 og0Var = (og0) this.b;
+                long j3 = og0Var.b;
+                if (og0Var.n.x4()) {
                     return;
                 }
-                if (ng0Var.getParentLayout().getFragmentStack().size() > 1) {
-                    org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) ng0Var.getParentLayout().getFragmentStack().get(ng0Var.getParentLayout().getFragmentStack().size() - 2);
+                if (og0Var.getParentLayout().getFragmentStack().size() > 1) {
+                    org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) og0Var.getParentLayout().getFragmentStack().get(og0Var.getParentLayout().getFragmentStack().size() - 2);
                     if ((h2Var instanceof bn) && ((bn) h2Var).e.id == j3) {
-                        ng0Var.finishFragment();
+                        og0Var.finishFragment();
                         return;
                     }
                 }
                 Bundle j10 = a8.p0.j(j3, "chat_id");
-                j10.putInt("message_id", ng0Var.c);
+                j10.putInt("message_id", og0Var.c);
                 j10.putBoolean("need_remove_previous_same_chat_activity", false);
-                ng0Var.presentFragment(new bn(j10));
+                og0Var.presentFragment(new bn(j10));
                 return;
             case 12:
-                ((org.telegram.ui.Cells.r8) this.b).setChecked(!r1.e.h);
+                ((org.telegram.ui.Cells.s8) this.b).setChecked(!r1.e.h);
                 return;
             case 13:
                 Context context2 = (Context) this.b;
@@ -785,8 +785,8 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                     return;
                 }
                 view.setTag(1);
-                org.telegram.ui.Cells.a6 a6Var = (org.telegram.ui.Cells.a6) view.getParent();
-                v4.f1 G2 = pr0Var.c.G(a6Var);
+                org.telegram.ui.Cells.b6 b6Var = (org.telegram.ui.Cells.b6) view.getParent();
+                v4.f1 G2 = pr0Var.c.G(b6Var);
                 if (G2 == null || (b10 = G2.b()) == -1) {
                     return;
                 }
@@ -794,7 +794,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                 if (pr0Var.J && i14 < pr0Var.y) {
                     int i15 = -pr0Var.P;
                     pr0Var.P = i15;
-                    org.telegram.messenger.g0.E3(i15, a6Var, null);
+                    org.telegram.messenger.g0.E3(i15, b6Var, null);
                     org.telegram.messenger.q2.E.a();
                     return;
                 }
@@ -818,11 +818,11 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                     pr0Var.b.i((pr0Var.o0 + charSequenceArr.length) - 1);
                 }
                 v4.f1 K = pr0Var.c.K(b10 - 1);
-                EditTextBoldCursor textView = a6Var.getTextView();
+                EditTextBoldCursor textView = b6Var.getTextView();
                 if (K != null) {
                     View view3 = K.a;
-                    if (view3 instanceof org.telegram.ui.Cells.a6) {
-                        ((org.telegram.ui.Cells.a6) view3).getTextView().requestFocus();
+                    if (view3 instanceof org.telegram.ui.Cells.b6) {
+                        ((org.telegram.ui.Cells.b6) view3).getTextView().requestFocus();
                         textView.clearFocus();
                         pr0Var.n0();
                         pr0Var.w0();
@@ -882,21 +882,21 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
             case 27:
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) this.b;
                 privacySettingsActivity.getClass();
-                org.telegram.ui.Cells.c2 c2Var = (org.telegram.ui.Cells.c2) view;
-                int intValue = ((Integer) c2Var.getTag()).intValue();
+                org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) view;
+                int intValue = ((Integer) d2Var.getTag()).intValue();
                 boolean[] zArr2 = privacySettingsActivity.a0;
                 boolean z10 = !zArr2[intValue];
                 zArr2[intValue] = z10;
-                c2Var.c(z10, true);
+                d2Var.c(z10, true);
                 return;
             case 28:
                 rx0 rx0Var = (rx0) this.b;
                 ProxyListActivity proxyListActivity = rx0Var.s;
                 org.telegram.messenger.az azVar = rx0Var.d;
                 yx0 yx0Var = new yx0(null);
-                yx0Var.e = new org.telegram.ui.Cells.y6[3];
-                yx0Var.f = new org.telegram.ui.Cells.z8[2];
-                yx0Var.s = new org.telegram.ui.Cells.i6[3];
+                yx0Var.e = new org.telegram.ui.Cells.z6[3];
+                yx0Var.f = new org.telegram.ui.Cells.a9[2];
+                yx0Var.s = new org.telegram.ui.Cells.j6[3];
                 yx0Var.E = 1.0f;
                 yx0Var.F = new float[2];
                 yx0Var.G = true;

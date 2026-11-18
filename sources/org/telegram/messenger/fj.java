@@ -75,7 +75,7 @@ import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.w71;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class fj {
     public static Pattern m3;
@@ -4750,7 +4750,7 @@ public class fj {
                             } else if ((messageAction instanceof TLRPC.TL_messageActionSetChatTheme) && (((TLRPC.TL_messageActionSetChatTheme) messageAction).theme instanceof TLRPC.TL_chatThemeUniqueGift)) {
                                 this.D = 31;
                                 this.U = 1;
-                            } else if (bi.f4.l(message)) {
+                            } else if (bi.e4.o(message)) {
                                 this.D = 10;
                                 this.U = 1;
                             } else {
@@ -5858,13 +5858,13 @@ public class fj {
         return false;
     }
 
-    public final int W5(org.telegram.ui.Cells.x1 x1Var) {
+    public final int W5(org.telegram.ui.Cells.y1 y1Var) {
         if (this.B2 == null) {
             return 0;
         }
         int i7 = 0;
         for (int i10 = 0; i10 < this.B2.size(); i10++) {
-            i7 += ((cj) this.B2.get(i10)).j(x1Var) + ((cj) this.B2.get(i10)).f + ((cj) this.B2.get(i10)).h;
+            i7 += ((cj) this.B2.get(i10)).j(y1Var) + ((cj) this.B2.get(i10)).f + ((cj) this.B2.get(i10)).h;
         }
         return i7;
     }
@@ -7619,7 +7619,7 @@ public class fj {
                                                                     this.v = s0(i35, n5.m(d2(abstractMap, hVar, n5.o(this.k.saved_peer_id))));
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionStarGiftOnchainOffer) {
                                                                     TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer = (TLRPC.TL_messageActionStarGiftOnchainOffer) messageAction6;
-                                                                    this.v = bi.f4.l(message5) ? bi.f4.p(tL_messageActionStarGiftOnchainOffer) : bi.f4.s(tL_messageActionStarGiftOnchainOffer);
+                                                                    this.v = bi.e4.o(message5) ? bi.e4.r(tL_messageActionStarGiftOnchainOffer) : bi.e4.u(tL_messageActionStarGiftOnchainOffer);
                                                                 } else {
                                                                     boolean z23 = messageAction6 instanceof TLRPC.TL_messageActionStarGiftPurchaseOffer;
                                                                     cg.b bVar2 = cg.b.a;

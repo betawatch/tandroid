@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class lc {
     public final org.telegram.ui.ActionBar.h2 a;
@@ -46,13 +46,13 @@ public final class lc {
         return z(h2Var, z10 ? 3 : 4, 0, i6Var);
     }
 
-    public static gc B(org.telegram.ui.ActionBar.h2 h2Var, boolean z10, bi.u4 u4Var, org.telegram.ui.he heVar, org.telegram.ui.ActionBar.i6 i6Var) {
+    public static gc B(org.telegram.ui.ActionBar.h2 h2Var, boolean z10, bi.t4 t4Var, org.telegram.ui.he heVar, org.telegram.ui.ActionBar.i6 i6Var) {
         ob obVar = new ob(h2Var.getParentActivity(), i6Var);
         obVar.c(z10 ? R.raw.ic_pin : R.raw.ic_unpin, 28, 28, "Pin", "Line");
         obVar.b.setText(org.telegram.messenger.gd.M0(z10 ? 2131748352 : 2131748274, z10 ? "MessagePinnedHint" : "MessageUnpinnedHint"));
         if (!z10) {
             ec ecVar = new ec(h2Var.getParentActivity(), i6Var, true);
-            ecVar.b = u4Var;
+            ecVar.b = t4Var;
             ecVar.c = heVar;
             obVar.setButton(ecVar);
         }
@@ -841,7 +841,7 @@ public final class lc {
                 p80Var.b = ((nb) lbVar).d;
             }
         }
-        org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).n0(inputStickerSet, null, false, false, new bi.y4(i7, b10, currentTimeMillis));
+        org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).n0(inputStickerSet, null, false, false, new bi.x4(i7, b10, currentTimeMillis));
         return b10;
     }
 

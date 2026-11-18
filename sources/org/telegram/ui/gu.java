@@ -7,7 +7,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gu implements Runnable {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class gu implements Runnable {
                             r0Var.getLocationInWindow(iArr);
                             int i11 = iArr[0];
                             int i12 = iArr[1];
-                            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), null, null, null, Boolean.TRUE);
+                            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), null, null, null, Boolean.TRUE);
                         }
                         org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(cxVar5);
                         gu guVar = new gu(cxVar5, 20);

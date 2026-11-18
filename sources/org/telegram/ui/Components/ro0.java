@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ro0 extends bk0 {
     public final Context c;
@@ -111,7 +111,7 @@ public final class ro0 extends bk0 {
         if (f1Var.f != 0) {
             return;
         }
-        org.telegram.ui.Cells.d7 d7Var = (org.telegram.ui.Cells.d7) f1Var.a;
+        org.telegram.ui.Cells.e7 e7Var = (org.telegram.ui.Cells.e7) f1Var.a;
         int i10 = i7 - 1;
         if (i10 >= 0) {
             ArrayList arrayList = this.d;
@@ -121,9 +121,9 @@ public final class ro0 extends bk0 {
                     return;
                 }
                 yo0 yo0Var = this.f;
-                d7Var.d((TLRPC.TL_forumTopic) yo0Var.R1.get(dialog), org.telegram.messenger.mp.u1(yo0Var.a).E2(dialog.id), false);
+                e7Var.d((TLRPC.TL_forumTopic) yo0Var.R1.get(dialog), org.telegram.messenger.mp.u1(yo0Var.a).E2(dialog.id), false);
                 long j3 = dialog.id;
-                d7Var.c(j3, yo0Var.Q1.h(j3) >= 0, null);
+                e7Var.c(j3, yo0Var.Q1.h(j3) >= 0, null);
                 return;
             }
         }

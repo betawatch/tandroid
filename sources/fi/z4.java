@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class z4 {
     public int a;
@@ -249,7 +249,7 @@ public final class z4 {
                                                         z12 = z11;
                                                     }
                                                     if (z12) {
-                                                        ks.f(i12).k(ks.x5, new Object[0]);
+                                                        ks.f(i12).k(ks.y5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error2 = tL_error;
@@ -313,7 +313,7 @@ public final class z4 {
                                                     boolean z13 = i22 != i23;
                                                     z4Var3.a = i23;
                                                     if (z13) {
-                                                        ks.f(i20).k(ks.x5, new Object[0]);
+                                                        ks.f(i20).k(ks.y5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error3 = tL_error;
@@ -421,7 +421,7 @@ public final class z4 {
                                                         z12 = z11;
                                                     }
                                                     if (z12) {
-                                                        ks.f(i122).k(ks.x5, new Object[0]);
+                                                        ks.f(i122).k(ks.y5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error2 = tL_error;
@@ -485,7 +485,7 @@ public final class z4 {
                                                     boolean z13 = i22 != i23;
                                                     z4Var3.a = i23;
                                                     if (z13) {
-                                                        ks.f(i20).k(ks.x5, new Object[0]);
+                                                        ks.f(i20).k(ks.y5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error3 = tL_error;
@@ -635,7 +635,7 @@ public final class z4 {
                                                     z12 = z11;
                                                 }
                                                 if (z12) {
-                                                    ks.f(i122).k(ks.x5, new Object[0]);
+                                                    ks.f(i122).k(ks.y5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
@@ -699,7 +699,7 @@ public final class z4 {
                                                 boolean z13 = i22 != i23;
                                                 z4Var3.a = i23;
                                                 if (z13) {
-                                                    ks.f(i20).k(ks.x5, new Object[0]);
+                                                    ks.f(i20).k(ks.y5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
@@ -807,7 +807,7 @@ public final class z4 {
                                                     z12 = z11;
                                                 }
                                                 if (z12) {
-                                                    ks.f(i122).k(ks.x5, new Object[0]);
+                                                    ks.f(i122).k(ks.y5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
@@ -871,7 +871,7 @@ public final class z4 {
                                                 boolean z13 = i22 != i23;
                                                 z4Var3.a = i23;
                                                 if (z13) {
-                                                    ks.f(i20).k(ks.x5, new Object[0]);
+                                                    ks.f(i20).k(ks.y5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;

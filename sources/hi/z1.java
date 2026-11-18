@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.ri;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class z1 extends v1 {
     public final o1 b;
@@ -36,7 +36,7 @@ public final class z1 extends v1 {
         o1Var.setClipToPadding(true);
         o1Var.setVerticalScrollBarEnabled(false);
         tVar.O = new bi.s2(this, 6);
-        o1Var.setOnItemClickListener(new bi.i8(this, 10));
+        o1Var.setOnItemClickListener(new bi.h8(this, 10));
         o1Var.setOnScrollListener(new bi.q1(this, 15));
         v4.k kVar = new v4.k();
         kVar.c = 220L;

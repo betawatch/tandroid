@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class zz0 extends bk0 {
     public Context c;
@@ -35,25 +35,25 @@ public final class zz0 extends bk0 {
         if (f1Var.f == 0) {
             org.telegram.ui.ActionBar.w6 w6Var = (org.telegram.ui.ActionBar.w6) ((ArrayList) this.d.get(i7 - 1)).get(0);
             int c10 = w6Var.e == org.telegram.ui.ActionBar.n6.Ee ? 0 : w6Var.c();
-            org.telegram.ui.Cells.u8 u8Var = (org.telegram.ui.Cells.u8) f1Var.a;
-            u8Var.a.setText(org.telegram.ui.ActionBar.w4.c(w6Var.e));
-            u8Var.b = c10;
-            u8Var.setWillNotDraw(c10 == 0);
-            u8Var.invalidate();
+            org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) f1Var.a;
+            v8Var.a.setText(org.telegram.ui.ActionBar.w4.c(w6Var.e));
+            v8Var.b = c10;
+            v8Var.setWillNotDraw(c10 == 0);
+            v8Var.invalidate();
         }
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View u8Var;
+        View v8Var;
         Context context = this.c;
         if (i7 != 0) {
-            u8Var = new View(context);
-            u8Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
+            v8Var = new View(context);
+            v8Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
         } else {
-            u8Var = new org.telegram.ui.Cells.u8(context);
-            u8Var.setLayoutParams(new v4.q0(-1, -2));
+            v8Var = new org.telegram.ui.Cells.v8(context);
+            v8Var.setLayoutParams(new v4.q0(-1, -2));
         }
-        return new kj0(u8Var);
+        return new kj0(v8Var);
     }
 }

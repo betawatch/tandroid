@@ -14,15 +14,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.z7;
+import org.telegram.ui.Cells.a8;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements te.b, c6 {
     public ShapeDrawable a;
     public final i6 b;
-    public final z7 c;
+    public final a8 c;
     public final TextView d;
     public final te.a e;
 
@@ -30,9 +30,9 @@ public final class b extends FrameLayout implements te.b, c6 {
         super(context);
         this.e = new te.a(0, this, lr.h, 380L, false);
         this.b = i6Var;
-        z7 z7Var = new z7(context, i6Var, false);
-        this.c = z7Var;
-        addView(z7Var, ma.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        a8 a8Var = new a8(context, i6Var, false);
+        this.c = a8Var;
+        addView(a8Var, ma.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 10.0f);

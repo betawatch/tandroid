@@ -64,10 +64,10 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.f61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public class MediaController implements AudioManager.OnAudioFocusChangeListener, fs, SensorEventListener {
     public static final String[] W1;
@@ -78,7 +78,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public static ue b2;
     public static ArrayList c2;
     public static ArrayList d2;
-    public static bi.d5 e2;
+    public static bi.c5 e2;
     public static volatile MediaController f2;
     public static long g2;
     public static boolean h2;
@@ -3166,7 +3166,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             }
             return;
         }
-        if (i7 == ks.J4) {
+        if (i7 == ks.K4) {
             f61 f61Var = (f61) objArr[0];
             if (this.F0 == f61Var || this.j0 == f61Var) {
                 return;
@@ -3178,7 +3178,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             R(fjVar11, true);
             return;
         }
-        if (i7 == ks.V3 && (gpVar = this.R0) != null && objArr[0] == gpVar) {
+        if (i7 == ks.W3 && (gpVar = this.R0) != null && objArr[0] == gpVar) {
             int size2 = gpVar.c.size() - arrayList4.size();
             arrayList4.clear();
             arrayList4.addAll(this.R0.c);
@@ -3557,7 +3557,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             }
         }
         mp.g1().edit().putFloat(z10 ? "musicPlaybackSpeed" : "playbackSpeed", f10).putFloat(z10 ? "fastMusicPlaybackSpeed" : "fastPlaybackSpeed", z10 ? this.t0 : this.s0).commit();
-        ks.e().k(ks.L4, new Object[0]);
+        ks.e().k(ks.M4, new Object[0]);
         if (this.U1) {
             return;
         }
@@ -4595,7 +4595,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     */
     public final oi.y3 z() {
         FileOutputStream fileOutputStream;
-        md0 md0Var;
+        nd0 nd0Var;
         wf.d dVar;
         fj fjVar = this.v0;
         FileOutputStream fileOutputStream2 = null;
@@ -4673,14 +4673,14 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                             file2 = null;
                                             this.E0.q = file2;
                                             if (file2 != null) {
-                                                md0Var = (md0) wf.b.J().b;
-                                                dVar = (wf.d) md0Var.b;
+                                                nd0Var = (nd0) wf.b.J().b;
+                                                dVar = (wf.d) nd0Var.b;
                                                 if (dVar != null) {
                                                 }
                                                 str = "/file" + Utilities.c.nextLong();
-                                                if (((wf.d) md0Var.b) == null) {
+                                                if (((wf.d) nd0Var.b) == null) {
                                                 }
-                                                ((wf.d) md0Var.b).l(file2, str);
+                                                ((wf.d) nd0Var.b).l(file2, str);
                                                 lVar.a.add(new p6.a(Uri.parse(wf.d.j(wf.d.i(), str)), 0, 0));
                                             }
                                             v4.x0 x0Var = new v4.x0(parse, t12, "/player_" + this.v0.e1());
@@ -4713,13 +4713,13 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                 this.E0.q = file2;
                             }
                             if (file2 != null && file2.exists()) {
-                                md0Var = (md0) wf.b.J().b;
-                                dVar = (wf.d) md0Var.b;
+                                nd0Var = (nd0) wf.b.J().b;
+                                dVar = (wf.d) nd0Var.b;
                                 if (dVar != null) {
                                     Pair pair = dVar.i;
                                     if ((pair == null ? null : (File) pair.second) != null) {
                                         if (TextUtils.equals((pair == null ? null : (File) pair.second).getAbsolutePath(), file2.getAbsolutePath())) {
-                                            Pair pair2 = ((wf.d) md0Var.b).i;
+                                            Pair pair2 = ((wf.d) nd0Var.b).i;
                                             if (pair2 != null) {
                                                 str = (String) pair2.first;
                                             }
@@ -4728,10 +4728,10 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                     }
                                 }
                                 str = "/file" + Utilities.c.nextLong();
-                                if (((wf.d) md0Var.b) == null) {
-                                    md0Var.b = new wf.d();
+                                if (((wf.d) nd0Var.b) == null) {
+                                    nd0Var.b = new wf.d();
                                 }
-                                ((wf.d) md0Var.b).l(file2, str);
+                                ((wf.d) nd0Var.b).l(file2, str);
                                 lVar.a.add(new p6.a(Uri.parse(wf.d.j(wf.d.i(), str)), 0, 0));
                             }
                         }

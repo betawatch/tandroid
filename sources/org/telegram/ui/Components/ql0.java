@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ql0 extends FrameLayout implements org.telegram.messenger.fs {
     public int E;
@@ -211,7 +211,7 @@ public final class ql0 extends FrameLayout implements org.telegram.messenger.fs 
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.d5) {
+        if (i7 == org.telegram.messenger.ks.e5) {
             if (getVisibility() == 0) {
                 org.telegram.messenger.a6.q(this.d).J.clear();
             }
@@ -249,17 +249,17 @@ public final class ql0 extends FrameLayout implements org.telegram.messenger.fs 
             View childAt = b1Var.getChildAt(i16);
             int R = RecyclerView.R(childAt);
             if (R >= 0 && (T = b1Var.T(childAt)) != null && !T.r()) {
-                if (childAt instanceof org.telegram.ui.Cells.x3) {
+                if (childAt instanceof org.telegram.ui.Cells.y3) {
                     l4Var.t(T, R);
                 } else if (childAt instanceof nl0) {
-                    org.telegram.ui.Cells.h7 h7Var = ((nl0) childAt).a;
-                    h7Var.f(true);
-                    int e12 = h7Var.getMessage().e1();
-                    long B0 = org.telegram.messenger.fj.B0(h7Var.getMessage().k);
+                    org.telegram.ui.Cells.i7 i7Var = ((nl0) childAt).a;
+                    i7Var.f(true);
+                    int e12 = i7Var.getMessage().e1();
+                    long B0 = org.telegram.messenger.fj.B0(i7Var.getMessage().k);
                     org.telegram.ui.vz vzVar = this.K;
                     vzVar.a = B0;
                     vzVar.b = e12;
-                    h7Var.b(this.J.r0(vzVar), true);
+                    i7Var.b(this.J.r0(vzVar), true);
                 }
             }
             i16++;
@@ -336,7 +336,7 @@ public final class ql0 extends FrameLayout implements org.telegram.messenger.fs 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.f(this.d).c(this, org.telegram.messenger.ks.d5);
+        org.telegram.messenger.ks.f(this.d).c(this, org.telegram.messenger.ks.e5);
         org.telegram.messenger.ks.f(this.d).c(this, org.telegram.messenger.ks.v3);
         if (getVisibility() == 0) {
             org.telegram.messenger.a6.q(this.d).J.clear();
@@ -352,7 +352,7 @@ public final class ql0 extends FrameLayout implements org.telegram.messenger.fs 
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         int i7 = this.d;
-        org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.d5);
+        org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.e5);
         org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.v3);
     }
 

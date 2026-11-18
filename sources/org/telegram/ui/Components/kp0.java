@@ -35,7 +35,7 @@ import org.telegram.ui.i81;
 import org.telegram.ui.o81;
 import org.telegram.ui.p81;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class kp0 implements Runnable {
                 }
                 runnable.run();
             } catch (w5.a unused) {
-                ((org.telegram.ui.md0) cVar.d).H(iVar, i7 + 1, false);
+                ((org.telegram.ui.nd0) cVar.d).H(iVar, i7 + 1, false);
                 runnable.run();
             }
         } catch (Throwable th2) {
@@ -175,7 +175,7 @@ public final /* synthetic */ class kp0 implements Runnable {
                 HashSet hashSet = new HashSet();
                 ArrayList arrayList5 = new ArrayList();
                 int i15 = yw0Var.a;
-                org.telegram.messenger.ri.d0(i15).W(strArr, str2, true, new bi.j5(yw0Var, i14, str2, hashSet, arrayList5, 3), org.telegram.messenger.bz.F && org.telegram.messenger.j10.i(i15).q());
+                org.telegram.messenger.ri.d0(i15).W(strArr, str2, true, new bi.i5(yw0Var, i14, str2, hashSet, arrayList5, 3), org.telegram.messenger.bz.F && org.telegram.messenger.j10.i(i15).q());
                 return;
             case 4:
                 yw0 yw0Var2 = (yw0) this.b;
@@ -266,28 +266,28 @@ public final /* synthetic */ class kp0 implements Runnable {
                 r11.v(org.telegram.messenger.g0.W(ck0Var.getContext()));
                 r11.i = false;
                 View view = r11.h;
-                if (view instanceof org.telegram.ui.Cells.z7) {
-                    org.telegram.ui.Cells.z7 z7Var = (org.telegram.ui.Cells.z7) view;
-                    TLRPC.Document sticker = z7Var.getSticker();
-                    org.telegram.messenger.sy stickerPath = z7Var.getStickerPath();
-                    String V = org.telegram.messenger.fj.V(z7Var.getSticker(), null, Integer.valueOf(r11.r));
+                if (view instanceof org.telegram.ui.Cells.a8) {
+                    org.telegram.ui.Cells.a8 a8Var = (org.telegram.ui.Cells.a8) view;
+                    TLRPC.Document sticker = a8Var.getSticker();
+                    org.telegram.messenger.sy stickerPath = a8Var.getStickerPath();
+                    String V = org.telegram.messenger.fj.V(a8Var.getSticker(), null, Integer.valueOf(r11.r));
                     org.telegram.ui.ls lsVar = r11.l;
-                    r11.s(sticker, stickerPath, V, lsVar != null ? lsVar.G(false) : null, null, i19, z7Var.E, z7Var.getParentObject(), r11.c0, 0);
-                    z7Var.setScaled(true);
-                } else if (view instanceof org.telegram.ui.Cells.x7) {
-                    org.telegram.ui.Cells.x7 x7Var = (org.telegram.ui.Cells.x7) view;
-                    TLRPC.Document sticker2 = x7Var.getSticker();
+                    r11.s(sticker, stickerPath, V, lsVar != null ? lsVar.G(false) : null, null, i19, a8Var.E, a8Var.getParentObject(), r11.c0, 0);
+                    a8Var.setScaled(true);
+                } else if (view instanceof org.telegram.ui.Cells.y7) {
+                    org.telegram.ui.Cells.y7 y7Var = (org.telegram.ui.Cells.y7) view;
+                    TLRPC.Document sticker2 = y7Var.getSticker();
                     org.telegram.ui.ls lsVar2 = r11.l;
-                    r11.s(sticker2, null, null, lsVar2 != null ? lsVar2.G(false) : null, null, i19, false, x7Var.getParentObject(), i6Var, 0);
-                    x7Var.setScaled(true);
-                    r11.i = x7Var.h;
-                } else if (view instanceof org.telegram.ui.Cells.h2) {
-                    org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) view;
-                    TLRPC.Document document2 = h2Var.getDocument();
+                    r11.s(sticker2, null, null, lsVar2 != null ? lsVar2.G(false) : null, null, i19, false, y7Var.getParentObject(), i6Var, 0);
+                    y7Var.setScaled(true);
+                    r11.i = y7Var.h;
+                } else if (view instanceof org.telegram.ui.Cells.i2) {
+                    org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) view;
+                    TLRPC.Document document2 = i2Var.getDocument();
                     org.telegram.ui.ls lsVar3 = r11.l;
-                    r11.s(document2, null, null, lsVar3 != null ? lsVar3.G(true) : null, h2Var.getBotInlineResult(), i19, false, h2Var.getBotInlineResult() != null ? h2Var.getInlineBot() : h2Var.getParentObject(), i6Var, 0);
+                    r11.s(document2, null, null, lsVar3 != null ? lsVar3.G(true) : null, i2Var.getBotInlineResult(), i19, false, i2Var.getBotInlineResult() != null ? i2Var.getInlineBot() : i2Var.getParentObject(), i6Var, 0);
                     if (i19 != 1 || r11.m) {
-                        h2Var.setScaled(true);
+                        i2Var.setScaled(true);
                     }
                 } else if (view instanceof uu) {
                     TLRPC.Document document3 = ((uu) view).getDocument();
@@ -363,11 +363,11 @@ public final /* synthetic */ class kp0 implements Runnable {
                 }
                 return;
             case 10:
-                org.telegram.ui.r90 r90Var = (org.telegram.ui.r90) this.b;
+                org.telegram.ui.s90 s90Var = (org.telegram.ui.s90) this.b;
                 NotificationsSettingsActivity notificationsSettingsActivity = (NotificationsSettingsActivity) this.d;
                 int i22 = this.c;
                 String str6 = (String) this.e;
-                r90Var.c();
+                s90Var.c();
                 if (i22 == 1) {
                     arrayList = notificationsSettingsActivity.d;
                 } else {
@@ -384,50 +384,50 @@ public final /* synthetic */ class kp0 implements Runnable {
                         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = new NotificationsCustomSettingsActivity(i22, arrayList3, arrayList2, false);
                         notificationsCustomSettingsActivity.H = true;
                         notificationsCustomSettingsActivity.q0(false);
-                        r90Var.u(notificationsCustomSettingsActivity, false);
+                        s90Var.u(notificationsCustomSettingsActivity, false);
                         if ("show".equalsIgnoreCase(str6)) {
-                            r90Var.x("showRow");
+                            s90Var.x("showRow");
                         }
                         if ("new".equalsIgnoreCase(str6)) {
-                            r90Var.x("newRow");
+                            s90Var.x("newRow");
                         }
                         if ("important".equalsIgnoreCase(str6)) {
-                            r90Var.x("importantRow");
+                            s90Var.x("importantRow");
                         }
                         if ("messages".equalsIgnoreCase(str6)) {
-                            r90Var.x("messagesRow");
+                            s90Var.x("messagesRow");
                         }
                         if ("stories".equalsIgnoreCase(str6)) {
-                            r90Var.x("storiesRow");
+                            s90Var.x("storiesRow");
                         }
                         if ("preview".equalsIgnoreCase(str6)) {
-                            r90Var.x("previewRow");
+                            s90Var.x("previewRow");
                         }
                         if ("show-sender".equalsIgnoreCase(str6)) {
-                            r90Var.x("showSenderRow");
+                            s90Var.x("showSenderRow");
                         }
                         if ("sound".equalsIgnoreCase(str6)) {
-                            r90Var.x("soundRow");
+                            s90Var.x("soundRow");
                         }
                         if ("add-exception".equalsIgnoreCase(str6)) {
-                            r90Var.x("addExceptionRow");
+                            s90Var.x("addExceptionRow");
                         }
                         if ("delete-exceptions".equalsIgnoreCase(str6)) {
-                            r90Var.x("deleteExceptionsRow");
+                            s90Var.x("deleteExceptionsRow");
                         }
                         if ("light-color".equalsIgnoreCase(str6)) {
-                            r90Var.x("lightColorRow");
+                            s90Var.x("lightColorRow");
                         }
                         if ("vibrate".equalsIgnoreCase(str6)) {
-                            r90Var.x("vibrateRow");
+                            s90Var.x("vibrateRow");
                         }
                         if ("popup".equalsIgnoreCase(str6)) {
-                            r90Var.x("popupRow");
+                            s90Var.x("popupRow");
                         }
                         if ("priority".equalsIgnoreCase(str6)) {
                             return;
                         }
-                        r90Var.x("priorityRow");
+                        s90Var.x("priorityRow");
                         return;
                     }
                     arrayList = notificationsSettingsActivity.e;
@@ -437,7 +437,7 @@ public final /* synthetic */ class kp0 implements Runnable {
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity2 = new NotificationsCustomSettingsActivity(i22, arrayList3, arrayList2, false);
                 notificationsCustomSettingsActivity2.H = true;
                 notificationsCustomSettingsActivity2.q0(false);
-                r90Var.u(notificationsCustomSettingsActivity2, false);
+                s90Var.u(notificationsCustomSettingsActivity2, false);
                 if ("show".equalsIgnoreCase(str6)) {
                 }
                 if ("new".equalsIgnoreCase(str6)) {
@@ -473,15 +473,15 @@ public final /* synthetic */ class kp0 implements Runnable {
                 int i23 = this.c;
                 ArrayList arrayList9 = notificationsCustomSettingsActivity3.J;
                 int[] iArr = notificationsCustomSettingsActivity3.E;
-                if (!(view2 instanceof org.telegram.ui.Cells.w9)) {
+                if (!(view2 instanceof org.telegram.ui.Cells.x9)) {
                     notificationsCustomSettingsActivity3.q0(true);
                     return;
                 }
                 String M0 = org.telegram.messenger.gd.M0(iArr[Utilities.j(notificationsCustomSettingsActivity3.getNotificationsSettings().getInt(str7, 0), iArr.length - 1, 0)], null);
                 if (i23 >= 0 && i23 < arrayList9.size()) {
-                    ((org.telegram.ui.ph0) arrayList9.get(i23)).f = M0;
+                    ((org.telegram.ui.qh0) arrayList9.get(i23)).f = M0;
                 }
-                ((org.telegram.ui.Cells.w9) view2).c(org.telegram.messenger.gd.M0(2131743377, "Vibrate"), M0, true, true);
+                ((org.telegram.ui.Cells.x9) view2).c(org.telegram.messenger.gd.M0(2131743377, "Vibrate"), M0, true, true);
                 return;
             case 12:
                 boolean[] zArr = (boolean[]) this.b;
@@ -536,21 +536,21 @@ public final /* synthetic */ class kp0 implements Runnable {
                         cVar.b = false;
                         bVar = cVar.a();
                         if (bVar.c.k()) {
-                            org.telegram.ui.md0 md0Var = new org.telegram.ui.md0(18);
+                            org.telegram.ui.nd0 nd0Var = new org.telegram.ui.nd0(18);
                             Bitmap bitmap2 = hcVar.c;
                             int width = bitmap2.getWidth();
                             int height = bitmap2.getHeight();
-                            md0Var.d = bitmap2;
-                            b7.d dVar = (b7.d) md0Var.b;
+                            nd0Var.d = bitmap2;
+                            b7.d dVar = (b7.d) nd0Var.b;
                             dVar.a = width;
                             dVar.b = height;
                             dVar.c = i26;
-                            org.telegram.messenger.g0.g3(new org.telegram.ui.a80(photoViewer, str9, bVar.e1(md0Var).size() != 0, 6));
+                            org.telegram.messenger.g0.g3(new org.telegram.ui.b80(photoViewer, str9, bVar.e1(nd0Var).size() != 0, 6));
                         } else {
                             if (org.telegram.messenger.s2.a) {
                                 org.telegram.messenger.a8.d("face detection is not operational");
                             }
-                            org.telegram.messenger.g0.g3(new org.telegram.ui.lc0(photoViewer, hcVar, str9, i11));
+                            org.telegram.messenger.g0.g3(new org.telegram.ui.mc0(photoViewer, hcVar, str9, i11));
                         }
                     } catch (Throwable th2) {
                         if (0 != 0) {

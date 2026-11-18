@@ -4,7 +4,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class cl0 implements kl0 {
     public final /* synthetic */ Runnable a;
@@ -24,21 +24,21 @@ public final class cl0 implements kl0 {
         ml0Var.V0 = z10;
         ml0Var.y0 = str2;
         ml0Var.K0 = tL_inputPaymentCredentialsGooglePay;
-        org.telegram.ui.Cells.y8[] y8VarArr = ml0Var.Z;
-        org.telegram.ui.Cells.y8 y8Var = y8VarArr[0];
-        if (y8Var != null) {
-            y8Var.setVisibility(0);
-            org.telegram.ui.Cells.y8 y8Var2 = y8VarArr[0];
+        org.telegram.ui.Cells.z8[] z8VarArr = ml0Var.Z;
+        org.telegram.ui.Cells.z8 z8Var = z8VarArr[0];
+        if (z8Var != null) {
+            z8Var.setVisibility(0);
+            org.telegram.ui.Cells.z8 z8Var2 = z8VarArr[0];
             String str4 = ml0Var.y0;
             if (str4 == null || str4.length() <= 1) {
                 str3 = ml0Var.y0;
             } else {
                 str3 = ml0Var.y0.substring(0, 1).toUpperCase() + ml0Var.y0.substring(1);
             }
-            y8Var2.b(R.drawable.msg_payment_card, str3, org.telegram.messenger.gd.M0(2131747221, null), true);
-            org.telegram.ui.Cells.y8 y8Var3 = y8VarArr[1];
-            if (y8Var3 != null) {
-                y8Var3.setVisibility(0);
+            z8Var2.b(R.drawable.msg_payment_card, str3, org.telegram.messenger.gd.M0(2131747221, null), true);
+            org.telegram.ui.Cells.z8 z8Var3 = z8VarArr[1];
+            if (z8Var3 != null) {
+                z8Var3.setVisibility(0);
             }
         }
         Runnable runnable = this.a;

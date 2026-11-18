@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class yy extends rg.b {
     public final /* synthetic */ zy d;
@@ -82,14 +82,14 @@ public final class yy extends rg.b {
             return;
         }
         if (i11 == 6 || i11 == 3) {
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
             if (i11 == 6) {
-                z8Var.setFixedSize(0);
-                z8Var.setText(czVar.d);
+                a9Var.setFixedSize(0);
+                a9Var.setText(czVar.d);
                 return;
             } else {
-                z8Var.setFixedSize(12);
-                z8Var.setText("");
+                a9Var.setFixedSize(12);
+                a9Var.setText("");
                 return;
             }
         }
@@ -105,20 +105,20 @@ public final class yy extends rg.b {
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View z8Var;
+        View a9Var;
         zy zyVar = this.d;
         if (i7 == 8) {
-            z8Var = new vy(zyVar.getContext());
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, z8Var, null);
+            a9Var = new vy(zyVar.getContext());
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, a9Var, null);
         } else if (i7 == 7) {
-            z8Var = new xy(this, zyVar.getContext(), zyVar.a, zyVar.U1.a);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, z8Var, null);
+            a9Var = new xy(this, zyVar.getContext(), zyVar.a, zyVar.U1.a);
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, a9Var, null);
         } else if (i7 == 6 || i7 == 3) {
-            z8Var = new org.telegram.ui.Cells.z8(zyVar.getContext());
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, z8Var, null);
+            a9Var = new org.telegram.ui.Cells.a9(zyVar.getContext());
+            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, a9Var, null);
         } else {
-            z8Var = new k0(zyVar, zyVar.getContext());
+            a9Var = new k0(zyVar, zyVar.getContext());
         }
-        return new org.telegram.ui.Components.kj0(z8Var);
+        return new org.telegram.ui.Components.kj0(a9Var);
     }
 }

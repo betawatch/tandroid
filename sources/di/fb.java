@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class fb extends org.telegram.ui.Components.sa implements fs {
     public final long T1;
@@ -54,7 +54,7 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
         ck0 ck0Var = this.o1;
         int i10 = this.u0;
         ck0Var.setPadding(i10, 0, i10, 0);
-        this.o1.setOnItemClickListener(new bi.i8(this, 4));
+        this.o1.setOnItemClickListener(new bi.h8(this, 4));
         this.o1.r1();
         v4.k kVar = new v4.k();
         kVar.m = false;

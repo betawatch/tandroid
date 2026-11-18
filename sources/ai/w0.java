@@ -9,8 +9,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.StateSet;
 import android.widget.FrameLayout;
-import bi.a5;
-import bi.f4;
+import bi.e4;
+import bi.z4;
 import di.x8;
 import fi.a6;
 import fi.p6;
@@ -35,7 +35,7 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.s4;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.dd;
 import org.telegram.ui.Components.gc;
@@ -53,7 +53,7 @@ import org.telegram.ui.sd;
 import org.telegram.ui.td;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,12 +86,12 @@ public final /* synthetic */ class w0 implements Runnable {
                 ((s4) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 2:
-                gc t6 = f4.g().t(gd.a0(null, null, i13, (String) obj), null);
+                gc t6 = e4.h().t(gd.a0(null, null, i13, (String) obj), null);
                 t6.t = true;
                 t6.j();
                 break;
             case 3:
-                ((a5) obj).L0(i13);
+                ((z4) obj).L0(i13);
                 break;
             case 4:
                 ch.f fVar = (ch.f) obj;
@@ -128,7 +128,7 @@ public final /* synthetic */ class w0 implements Runnable {
                 ArrayList arrayList2 = p6Var.h;
                 p6Var.v(arrayList2);
                 Collections.sort(arrayList2, s4Var);
-                ks.f(i13).k(ks.x5, new Object[0]);
+                ks.f(i13).k(ks.y5, new Object[0]);
                 break;
             case 9:
                 ((hi.p) obj).a(Integer.valueOf(i13));
@@ -269,7 +269,7 @@ public final /* synthetic */ class w0 implements Runnable {
                                     layoutParams2.topMargin = (int) (rectF3.top + pVar3.getTop());
                                     nVar2.setAlpha(0.0f);
                                     chatActivityEnterView4.a2.addView(nVar2, layoutParams2);
-                                    nVar2.post(new bg.m0(pfVar5, nVar2, new b5(pVar3), arrayList3, i17, gVar2, 9));
+                                    nVar2.post(new bg.m0(pfVar5, nVar2, new c5(pVar3), arrayList3, i17, gVar2, 9));
                                     break;
                                 }
                             }
@@ -339,30 +339,30 @@ public final /* synthetic */ class w0 implements Runnable {
                 ((p4) ((org.telegram.ui.f) obj).b).a0(i13, true);
                 break;
             case 23:
-                org.telegram.ui.Cells.q1 q1Var = ((org.telegram.ui.Cells.f1) obj).a;
-                int i19 = q1Var.N5;
+                org.telegram.ui.Cells.r1 r1Var = ((org.telegram.ui.Cells.g1) obj).a;
+                int i19 = r1Var.N5;
                 if (i13 == i19) {
-                    org.telegram.ui.Cells.d0 d0Var2 = (org.telegram.ui.Cells.d0) q1Var.I5.get(i19);
+                    org.telegram.ui.Cells.d0 d0Var2 = (org.telegram.ui.Cells.d0) r1Var.I5.get(i19);
                     if (d0Var2 != null) {
                         org.telegram.ui.Cells.y yVar = d0Var2.s;
                         if (yVar != null) {
                             yVar.setState(StateSet.NOTHING);
                         }
                         d0Var2.b(false);
-                        if (!q1Var.Q5.r1) {
+                        if (!r1Var.Q5.r1) {
                             if (d0Var2.j != null) {
-                                q1Var.n();
+                                r1Var.n();
                             } else if (d0Var2.i != null) {
-                                q1Var.n();
-                                org.telegram.ui.Cells.l1 l1Var = q1Var.Sa;
-                                if (l1Var != null) {
-                                    l1Var.I1(q1Var, d0Var2.i);
+                                r1Var.n();
+                                org.telegram.ui.Cells.m1 m1Var = r1Var.Sa;
+                                if (m1Var != null) {
+                                    m1Var.I1(r1Var, d0Var2.i);
                                 }
                             }
                         }
                     }
-                    q1Var.N5 = -1;
-                    q1Var.q2();
+                    r1Var.N5 = -1;
+                    r1Var.q2();
                     break;
                 }
                 break;

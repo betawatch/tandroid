@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class rd extends FrameLayout {
     public final org.telegram.ui.Components.e51 a;
@@ -31,7 +31,7 @@ public final class rd extends FrameLayout {
         e51Var.setCaptureSectionsDecoratorAllowed(true);
         e51Var.setOverScrollMode(0);
         addView(e51Var, c8.ma.c(-1.0f, -1));
-        e51Var.setOnScrollListener(new bi.e6(3, this, w0Var));
+        e51Var.setOnScrollListener(new bi.d6(3, this, w0Var));
         ri.q qVar = tdVar.x.e1;
         if (qVar != null) {
             qVar.b(e51Var);

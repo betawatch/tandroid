@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.aj;
 import org.telegram.messenger.fj;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.dg0;
 import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class x extends v4.i0 {
     public final /* synthetic */ int c;
@@ -32,7 +32,7 @@ public final class x extends v4.i0 {
             case 0:
                 return u.a().size();
             default:
-                return ((eg0) this.f).N.size();
+                return ((fg0) this.f).N.size();
         }
     }
 
@@ -48,22 +48,22 @@ public final class x extends v4.i0 {
                 yVar.s = i7;
                 break;
             default:
-                eg0 eg0Var = (eg0) this.f;
-                ArrayList arrayList = eg0Var.N;
+                fg0 fg0Var = (fg0) this.f;
+                ArrayList arrayList = fg0Var.N;
                 fj fjVar = (fj) arrayList.get((b() - 1) - i7);
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) f1Var.a;
-                aj l10 = eg0Var.l(fjVar);
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) f1Var.a;
+                aj l10 = fg0Var.l(fjVar);
                 int i10 = 0;
-                q1Var.setInvalidatesParent(l10 != null);
-                q1Var.y3(fjVar, l10, false, false, false, false);
-                if (!eg0Var.P.i() && arrayList.size() >= 10) {
+                r1Var.setInvalidatesParent(l10 != null);
+                r1Var.y3(fjVar, l10, false, false, false, false);
+                if (!fg0Var.P.i() && arrayList.size() >= 10) {
                     i10 = arrayList.size() % 10;
                 }
                 if (i7 == i10 && !fjVar.n5()) {
-                    eg0Var.Q = q1Var;
+                    fg0Var.Q = r1Var;
                     Point point = org.telegram.messenger.g0.q;
-                    q1Var.A3(point.x, point.y);
-                    eg0Var.R = fjVar.e1();
+                    r1Var.A3(point.x, point.y);
+                    fg0Var.R = fjVar.e1();
                     break;
                 }
                 break;
@@ -79,10 +79,10 @@ public final class x extends v4.i0 {
                 yVar.setBackground(org.telegram.ui.ActionBar.n6.h0(553648127, 1, -1));
                 return new kj0(yVar);
             default:
-                eg0 eg0Var = (eg0) this.f;
-                dg0 dg0Var = new dg0(eg0Var, this.d, eg0Var.c, (org.telegram.ui.ActionBar.i6) this.e);
-                dg0Var.setDelegate(new nb.a(19));
-                return new kj0(dg0Var);
+                fg0 fg0Var = (fg0) this.f;
+                eg0 eg0Var = new eg0(fg0Var, this.d, fg0Var.c, (org.telegram.ui.ActionBar.i6) this.e);
+                eg0Var.setDelegate(new nb.a(19));
+                return new kj0(eg0Var);
         }
     }
 

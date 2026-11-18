@@ -8,7 +8,7 @@ import android.os.Build;
 import android.text.Editable;
 import android.view.View;
 import android.view.ViewGroup;
-import bi.t5;
+import bi.s5;
 import c8.ma;
 import java.util.Iterator;
 import org.telegram.messenger.g6;
@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.x5;
 import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class m2 extends j {
     public boolean A0;
@@ -73,7 +73,7 @@ public final class m2 extends j {
         setSwatch(h1Var);
         setType(i10);
         k();
-        l2Var.addTextChangedListener(new t5(3, this));
+        l2Var.addTextChangedListener(new s5(3, this));
     }
 
     @Override // tg.j

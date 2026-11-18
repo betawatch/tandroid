@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class o81 extends org.telegram.ui.Components.bk0 {
     public final ArrayList c = new ArrayList();
@@ -32,13 +32,13 @@ public final class o81 extends org.telegram.ui.Components.bk0 {
         ArrayList arrayList = this.c;
         TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i7);
         String str = (String) this.d.get(i7);
-        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) f1Var.a;
-        h4Var.e(chat, chat.title, str, i7 != arrayList.size() - 1);
-        h4Var.c(this.h.x.contains(Long.valueOf(chat.id)), false);
+        org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) f1Var.a;
+        i4Var.e(chat, chat.title, str, i7 != arrayList.size() - 1);
+        i4Var.c(this.h.x.contains(Long.valueOf(chat.id)), false);
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.h4(viewGroup.getContext(), 1, 0, false));
+        return new org.telegram.ui.Components.kj0(new org.telegram.ui.Cells.i4(viewGroup.getContext(), 1, 0, false));
     }
 }

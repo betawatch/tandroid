@@ -51,7 +51,7 @@ import org.telegram.ui.rq;
 import org.telegram.ui.uq0;
 import org.telegram.ui.yo0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a;
@@ -328,7 +328,7 @@ public final /* synthetic */ class k2 implements Runnable {
                 CharSequence charSequence = (CharSequence) this.c;
                 long j14 = this.b;
                 String str6 = (String) this.f;
-                org.telegram.messenger.g0.h3(new m5(profileActivity, i11), 200L);
+                org.telegram.messenger.g0.h3(new l5(profileActivity, i11), 200L);
                 lc b02 = lc.b0(profileActivity);
                 TLRPC.Document document3 = starGift2.sticker;
                 String M0 = gd.M0(2131744874, null);

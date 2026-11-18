@@ -55,9 +55,9 @@ import org.telegram.ui.ActionBar.s4;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.lr;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b0 extends FrameLayout {
     public static final lr A0 = new lr(0.05d, 0.7d, 0.1d, 1.0d);
@@ -234,14 +234,14 @@ public final class b0 extends FrameLayout {
         int height = bitmap.getHeight();
         int i10 = 0;
         if (nVar != null && nVar.b.k()) {
-            md0 md0Var = new md0(18);
+            nd0 nd0Var = new nd0(18);
             int width2 = bitmap.getWidth();
             int height2 = bitmap.getHeight();
-            md0Var.d = bitmap;
-            b7.d dVar = (b7.d) md0Var.b;
+            nd0Var.d = bitmap;
+            b7.d dVar = (b7.d) nd0Var.b;
             dVar.a = width2;
             dVar.b = height2;
-            SparseArray e12 = nVar.e1(md0Var);
+            SparseArray e12 = nVar.e1(nd0Var);
             for (int i11 = 0; i11 < e12.size(); i11++) {
                 u8.m mVar = (u8.m) e12.valueAt(i11);
                 String str = mVar.b;

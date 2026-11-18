@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class xc0 extends org.telegram.ui.ActionBar.x2 {
     public final TextView m1;
@@ -150,9 +150,9 @@ public final class xc0 extends org.telegram.ui.ActionBar.x2 {
     }
 
     public static void K0(xc0 xc0Var, TLRPC.ChatFull chatFull, org.telegram.ui.z40 z40Var) {
-        org.telegram.ui.ff0 ff0Var = new org.telegram.ui.ff0(chatFull.id, 0, 0L);
-        ff0Var.m0(chatFull, chatFull.exported_invite);
-        z40Var.presentFragment(ff0Var);
+        org.telegram.ui.gf0 gf0Var = new org.telegram.ui.gf0(chatFull.id, 0, 0L);
+        gf0Var.m0(chatFull, chatFull.exported_invite);
+        z40Var.presentFragment(gf0Var);
         super.dismiss();
     }
 

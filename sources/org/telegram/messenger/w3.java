@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w3 implements Runnable {
     public final /* synthetic */ int a;
@@ -547,7 +547,7 @@ public final /* synthetic */ class w3 implements Runnable {
                 }
                 Iterator it2 = hashSet.iterator();
                 while (it2.hasNext()) {
-                    ks.f(e00Var.currentAccount).k(ks.s5, (Long) it2.next(), Boolean.TRUE);
+                    ks.f(e00Var.currentAccount).k(ks.t5, (Long) it2.next(), Boolean.TRUE);
                 }
                 return;
             case 13:
@@ -638,7 +638,7 @@ public final /* synthetic */ class w3 implements Runnable {
                 File file = (File) obj;
                 if (file == null) {
                     h1Var.j = false;
-                    ks.e().k(ks.S4, new Object[0]);
+                    ks.e().k(ks.T4, new Object[0]);
                     return;
                 }
                 if (!TextUtils.isEmpty(h1Var.d)) {
@@ -652,7 +652,7 @@ public final /* synthetic */ class w3 implements Runnable {
                 h1Var.f();
                 h1Var.k = 1.0f;
                 h1Var.j = false;
-                ks.e().k(ks.S4, new Object[0]);
+                ks.e().k(ks.T4, new Object[0]);
                 return;
             case 16:
                 v1 v1Var = (v1) obj2;
@@ -672,7 +672,7 @@ public final /* synthetic */ class w3 implements Runnable {
                     u1Var2.serializeToStream(serializedData);
                     edit4.putString("bday_contacts", Utilities.f(serializedData.toByteArray()));
                     edit4.apply();
-                    ks.f(i25).k(ks.i5, new Object[0]);
+                    ks.f(i25).k(ks.j5, new Object[0]);
                     v1Var.e = false;
                     return;
                 }

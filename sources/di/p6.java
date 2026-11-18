@@ -55,7 +55,7 @@ import org.telegram.ui.ro;
 import org.telegram.ui.tw;
 import org.telegram.ui.vo;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 ((org.telegram.ui.Wallet.e0) obj2).a(Boolean.valueOf(z10), (String) obj);
                 return;
             case 2:
-                ((bi.c8) obj2).a(Boolean.valueOf(z10), (String) obj);
+                ((bi.b8) obj2).a(Boolean.valueOf(z10), (String) obj);
                 return;
             case 3:
                 tr trVar = (tr) obj2;

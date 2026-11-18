@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs, View.OnClickListener {
     public int E;
@@ -67,9 +67,9 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
         long j3;
         org.telegram.ui.Components.mp mpVar;
         a0.h hVar = usersSelectActivity.P;
-        if (view instanceof org.telegram.ui.Cells.h4) {
-            org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
-            Object object = h4Var.getObject();
+        if (view instanceof org.telegram.ui.Cells.i4) {
+            org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) view;
+            Object object = i4Var.getObject();
             boolean z10 = object instanceof String;
             if (z10) {
                 j3 = -9223372036854775807L;
@@ -85,8 +85,8 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
                         j3 = Long.MIN_VALUE;
                         i10 = 4;
                     }
-                    mpVar = h4Var.d;
-                    if (mpVar == null ? mpVar.a.q : h4Var.I) {
+                    mpVar = i4Var.d;
+                    if (mpVar == null ? mpVar.a.q : i4Var.I) {
                         usersSelectActivity.L |= i10;
                     } else {
                         usersSelectActivity.L &= ~i10;
@@ -125,8 +125,8 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
                         i10 = 128;
                         j3 = -9223372036854775801L;
                     }
-                    mpVar = h4Var.d;
-                    if (mpVar == null ? mpVar.a.q : h4Var.I) {
+                    mpVar = i4Var.d;
+                    if (mpVar == null ? mpVar.a.q : i4Var.I) {
                     }
                 }
             } else if (object instanceof TLRPC.User) {
@@ -164,7 +164,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
             if (usersSelectActivity.O || usersSelectActivity.N) {
                 org.telegram.messenger.g0.I3(usersSelectActivity.c);
             } else {
-                h4Var.c(!z11, true);
+                i4Var.c(!z11, true);
             }
             if (usersSelectActivity.c.length() > 0) {
                 usersSelectActivity.c.setText((CharSequence) null);
@@ -214,9 +214,9 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
         int childCount = this.d.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = this.d.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.h4) {
-                org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) childAt;
-                Object object = h4Var.getObject();
+            if (childAt instanceof org.telegram.ui.Cells.i4) {
+                org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) childAt;
+                Object object = i4Var.getObject();
                 if (object instanceof String) {
                     String str = (String) object;
                     j3 = -9223372036854775800L;
@@ -286,8 +286,8 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
                     j3 = object instanceof TLRPC.User ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
                 }
                 if (j3 != 0) {
-                    h4Var.c(this.P.h(j3) >= 0, true);
-                    h4Var.setCheckBoxEnabled(true);
+                    i4Var.c(this.P.h(j3) >= 0, true);
+                    i4Var.setCheckBoxEnabled(true);
                 }
             }
         }
@@ -621,8 +621,8 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
             }
             for (int i12 = 0; i12 < childCount; i12++) {
                 View childAt = this.d.getChildAt(i12);
-                if (childAt instanceof org.telegram.ui.Cells.h4) {
-                    ((org.telegram.ui.Cells.h4) childAt).f(intValue);
+                if (childAt instanceof org.telegram.ui.Cells.i4) {
+                    ((org.telegram.ui.Cells.i4) childAt).f(intValue);
                 }
             }
         }
@@ -642,10 +642,10 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.h2 implements
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.f, 4, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.c7));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.f, 2048, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.h6));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.c, TLObject.FLAG_23, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Oi));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ri));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.j7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.h4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.k7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ri));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.i7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.j7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.d, 4, new Class[]{org.telegram.ui.Cells.i4.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.k7));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Components.m20.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ti));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Components.m20.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ui));
         return arrayList;

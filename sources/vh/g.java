@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.a10;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.c10;
@@ -50,7 +50,7 @@ import ug.j1;
 import ug.z;
 import v4.k;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g extends sa implements te.b {
     public static final /* synthetic */ int n2 = 0;
@@ -65,7 +65,7 @@ public final class g extends sa implements te.b {
     public final j b2;
     public final n4 c2;
     public final g10 d2;
-    public final x3 e2;
+    public final y3 e2;
     public final HashMap f2;
     public hn g2;
     public int h2;
@@ -131,12 +131,12 @@ public final class g extends sa implements te.b {
         n4Var.setPadding(i11, 0, i11, 0);
         n4Var.addView(c10Var, ma.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
         n4Var.addView(g10Var, ma.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
-        x3 x3Var = new x3(18, context, i6Var);
-        this.e2 = x3Var;
-        x3Var.setTranslationY(g0.L(48.0f));
+        y3 y3Var = new y3(18, context, i6Var);
+        this.e2 = y3Var;
+        y3Var.setTranslationY(g0.L(48.0f));
         int i12 = 2;
-        x3Var.b(gd.M0(2131745615, null), gd.M0(2131751446, null), new a(this, i12));
-        n4Var.addView(x3Var, ma.e(-1, 32, 48));
+        y3Var.b(gd.M0(2131745615, null), gd.M0(2131751446, null), new a(this, i12));
+        n4Var.addView(y3Var, ma.e(-1, 32, 48));
         this.b.addView(n4Var, ma.e(-1, ks.t3, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(g0.L(10.0f) + this.u0, g0.L(10.0f), g0.L(10.0f) + this.u0, g0.L(10.0f) + g0.n);

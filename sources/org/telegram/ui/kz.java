@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class kz extends org.telegram.ui.ActionBar.h2 {
     public int E;
@@ -138,12 +138,12 @@ public final class kz extends org.telegram.ui.ActionBar.h2 {
         kzVar.y = !kzVar.y;
         bz bzVar = kzVar.K;
         if (bzVar != null) {
-            org.telegram.ui.Cells.w3 w3Var = bzVar.r;
+            org.telegram.ui.Cells.x3 x3Var = bzVar.r;
             String str = null;
             if (q0(kzVar.x)) {
                 str = org.telegram.messenger.gd.M0(kzVar.y ? 2131750724 : 2131750723, null);
             }
-            w3Var.setText(str);
+            x3Var.setText(str);
         }
         org.telegram.ui.Components.o5.r(kzVar.currentAccount, kzVar.y);
         kzVar.o0(true);
@@ -977,13 +977,13 @@ public final class kz extends org.telegram.ui.ActionBar.h2 {
                 int childCount = i7 == 0 ? this.a.getChildCount() : i7 == 1 ? this.a.getHiddenChildCount() : i7 == 2 ? this.a.getCachedChildCount() : this.a.getAttachedScrapChildCount();
                 for (int i10 = 0; i10 < childCount; i10++) {
                     View childAt = i7 == 0 ? this.a.getChildAt(i10) : i7 == 1 ? this.a.V(i10) : i7 == 2 ? this.a.P(i10) : this.a.O(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.qa) {
-                        org.telegram.ui.Cells.qa qaVar = (org.telegram.ui.Cells.qa) childAt;
-                        qaVar.b0 = true;
-                        qaVar.R = x02;
-                        qaVar.S = x03;
+                    if (childAt instanceof org.telegram.ui.Cells.ra) {
+                        org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) childAt;
+                        raVar.b0 = true;
+                        raVar.R = x02;
+                        raVar.S = x03;
                         if (i7 != 0) {
-                            ((org.telegram.ui.Cells.qa) childAt).i(0);
+                            ((org.telegram.ui.Cells.ra) childAt).i(0);
                         }
                     }
                 }
@@ -1093,11 +1093,11 @@ public final class kz extends org.telegram.ui.ActionBar.h2 {
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         f6 f6Var = new f6(8, this);
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 16, new Class[]{org.telegram.ui.Cells.n4.class, org.telegram.ui.Cells.m8.class, org.telegram.ui.Cells.qa.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.d6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 262144, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.p7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 262144, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.q6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 262144, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"ImageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.N6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 0, new Class[]{org.telegram.ui.Cells.qa.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 16, new Class[]{org.telegram.ui.Cells.o4.class, org.telegram.ui.Cells.n8.class, org.telegram.ui.Cells.ra.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 262144, new Class[]{org.telegram.ui.Cells.n8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.p7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 262144, new Class[]{org.telegram.ui.Cells.n8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.q6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 262144, new Class[]{org.telegram.ui.Cells.n8.class}, new String[]{"ImageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.N6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.a, 0, new Class[]{org.telegram.ui.Cells.ra.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
         return arrayList;
     }
 
@@ -1170,15 +1170,15 @@ public final class kz extends org.telegram.ui.ActionBar.h2 {
 
     @Override // org.telegram.ui.ActionBar.h2
     public final boolean onBackPressed(boolean z10) {
-        org.telegram.ui.Cells.f3 f3Var;
+        org.telegram.ui.Cells.g3 g3Var;
         fz fzVar = this.L;
-        if (fzVar == null || (f3Var = fzVar.b) == null || !f3Var.e) {
+        if (fzVar == null || (g3Var = fzVar.b) == null || !g3Var.e) {
             return n0(z10);
         }
         if (!z10) {
             return false;
         }
-        f3Var.k(true);
+        g3Var.k(true);
         return false;
     }
 
@@ -1218,14 +1218,14 @@ public final class kz extends org.telegram.ui.ActionBar.h2 {
 
     @Override // org.telegram.ui.ActionBar.h2
     public final void onThemeColorsChanged() {
-        org.telegram.ui.Cells.f3 f3Var;
+        org.telegram.ui.Cells.g3 g3Var;
         int themedColor;
         try {
             super.onThemeColorsChanged();
             D0();
             try {
                 fz fzVar = this.L;
-                if (fzVar != null && (f3Var = fzVar.b) != null && f3Var.getEditText() != null && (themedColor = getThemedColor(org.telegram.ui.ActionBar.n6.Fi)) != this.V) {
+                if (fzVar != null && (g3Var = fzVar.b) != null && g3Var.getEditText() != null && (themedColor = getThemedColor(org.telegram.ui.ActionBar.n6.Fi)) != this.V) {
                     this.V = themedColor;
                     this.L.b.getEditText().setEmojiColor(Integer.valueOf(themedColor));
                 }

@@ -1,82 +1,164 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.util.Property;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import java.util.ArrayList;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.mp;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class t8 extends FrameLayout {
-    public static Paint d;
-    public static final int[] e = {-1031100, -29183, -12769, -8792480, -12521994, -12140801, -2984711, -45162, -4473925};
-    public static final int[] f = {-65536, -29183, -256, -16711936, -16711681, -16776961, -2984711, -65281, -1};
     public final TextView a;
-    public boolean b;
-    public int c;
+    public final TextView b;
+    public final mp c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public float h;
+    public float n;
 
-    public t8(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    static {
+        new p8("animationProgress", 1);
+    }
+
+    public t8(Context context) {
         super(context);
-        if (d == null) {
-            d = new Paint(1);
-        }
+        this.f = 50;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
         n10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((gd.a0 ? 5 : 3) | 16);
-        addView(textView, c8.ma.d(-1, -1.0f, (gd.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        boolean z10 = gd.a0;
+        addView(textView, c8.ma.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.z6, null);
+        textView2.setTextSize(1, 13.0f);
+        textView2.setGravity(gd.a0 ? 5 : 3);
+        textView2.setLines(1);
+        textView2.setMaxLines(1);
+        textView2.setSingleLine(true);
+        textView2.setPadding(0, 0, 0, 0);
+        textView2.setEllipsize(truncateAt);
+        boolean z11 = gd.a0;
+        addView(textView2, c8.ma.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f));
+        mp mpVar = new mp(21, context, null);
+        this.c = mpVar;
+        mpVar.setDrawUnchecked(true);
+        mpVar.setDrawBackgroundAsArc(10);
+        mpVar.setDuration(100L);
+        mpVar.b(org.telegram.ui.ActionBar.n6.h7, org.telegram.ui.ActionBar.n6.j7, org.telegram.ui.ActionBar.n6.k7);
+        addView(mpVar, c8.ma.d(20, 20.0f, (gd.a0 ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        setClipChildren(false);
     }
 
-    public final void a(ArrayList arrayList, boolean z10) {
-        setEnabled(z10);
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setAnimationProgress(float f10) {
+        this.h = f10;
+        Math.max(this.n, getMeasuredWidth() - this.n);
+        org.telegram.messenger.g0.L(40.0f);
+        getMeasuredHeight();
+    }
+
+    public final void b(String str, String str2, boolean z10, boolean z11) {
         TextView textView = this.a;
-        if (arrayList == null) {
-            textView.setAlpha(z10 ? 1.0f : 0.5f);
-            setAlpha(z10 ? 1.0f : 0.5f);
+        textView.setText(str);
+        TextView textView2 = this.b;
+        textView2.setText(str2);
+        this.d = z11;
+        textView2.setVisibility(0);
+        this.e = z10;
+        if (z10) {
+            textView2.setLines(0);
+            textView2.setMaxLines(0);
+            textView2.setSingleLine(false);
+            textView2.setEllipsize(null);
+            textView2.setPadding(0, 0, 0, org.telegram.messenger.g0.L(11.0f));
         } else {
-            float[] fArr = {z10 ? 1.0f : 0.5f};
-            Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr));
-            arrayList.add(ObjectAnimator.ofFloat(this, (Property<t8, Float>) property, z10 ? 1.0f : 0.5f));
+            textView2.setLines(1);
+            textView2.setMaxLines(1);
+            textView2.setSingleLine(true);
+            textView2.setEllipsize(TextUtils.TruncateAt.END);
+            textView2.setPadding(0, 0, 0, 0);
         }
-    }
-
-    public final void b(int i7, String str, boolean z10) {
-        this.a.setText(str);
-        this.b = z10;
-        this.c = i7;
-        setWillNotDraw(!z10 && i7 == 0);
-        invalidate();
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
+        layoutParams.height = -2;
+        layoutParams.topMargin = org.telegram.messenger.g0.L(10.0f);
+        textView.setLayoutParams(layoutParams);
+        setWillNotDraw(!z11);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.b) {
-            canvas2 = canvas;
-            canvas2.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
-        } else {
-            canvas2 = canvas;
+        if (this.d) {
+            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
         }
-        int i7 = this.c;
-        if (i7 != 0) {
-            d.setColor(i7);
-            canvas2.drawCircle(gd.a0 ? org.telegram.messenger.g0.L(33.0f) : getMeasuredWidth() - org.telegram.messenger.g0.L(33.0f), getMeasuredHeight() / 2, org.telegram.messenger.g0.L(10.0f), d);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.checkbox");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.c.a.q);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.a.getText());
+        TextView textView = this.b;
+        if (textView != null) {
+            sb2.append("\n");
+            sb2.append(textView.getText());
         }
+        accessibilityNodeInfo.setText(sb2);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f) + (this.b ? 1 : 0), TLObject.FLAG_30));
+        if (this.e) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+        } else {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.b.getVisibility() == 0 ? 64.0f : this.f) + (this.d ? 1 : 0), TLObject.FLAG_30));
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.n = motionEvent.getX();
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i7) {
+        clearAnimation();
+        super.setBackgroundColor(i7);
+    }
+
+    public void setChecked(boolean z10) {
+        this.c.a(z10, true);
+    }
+
+    public void setHeight(int i7) {
+        this.f = i7;
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        super.setPressed(z10);
+    }
+
+    public void setTypeface(Typeface typeface) {
+        this.a.setTypeface(typeface);
     }
 }

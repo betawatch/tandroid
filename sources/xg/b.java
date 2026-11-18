@@ -29,9 +29,9 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n5;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Cells.y6;
+import org.telegram.ui.Cells.n8;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.lr;
@@ -48,7 +48,7 @@ import yg.w;
 import yg.x;
 import yg.y;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class b extends rg.b {
     public final i6 d;
@@ -165,7 +165,7 @@ public final class b extends rg.b {
                 dVar.setDivider(true);
                 u6.Z(dVar, dVar.getContext(), R.drawable.greydivider_bottom, n6.b7);
             } else if (i11 == 3) {
-                u3Var.k(m8.b(gd.M0(2131753255, null)));
+                u3Var.k(n8.b(gd.M0(2131753255, null)));
                 dVar.setSubtitle(gd.M0(2131753165, null));
                 u6.X(n5Var, n6.r5, i6Var);
                 b9Var.g(26);
@@ -192,7 +192,7 @@ public final class b extends rg.b {
             return;
         }
         if (i10 == 6) {
-            ((n4) view).setText(aVar.c);
+            ((o4) view).setText(aVar.c);
             return;
         }
         if (i10 == 7) {
@@ -360,17 +360,17 @@ public final class b extends rg.b {
                 break;
             case 4:
                 int i10 = n6.a7;
-                View y6Var = new y6(context, n6.w0(i10, i6Var), 0);
-                u6.h(i10, y6Var, i6Var);
-                view = y6Var;
+                View z6Var = new z6(context, n6.w0(i10, i6Var), 0);
+                u6.h(i10, z6Var, i6Var);
+                view = z6Var;
                 break;
             case 5:
                 view = new v(context, i6Var);
                 break;
             case 6:
-                View n4Var = new n4(context, n6.L6, 21, 15, 3, false, false, this.d);
-                u6.h(n6.h5, n4Var, i6Var);
-                view = n4Var;
+                View o4Var = new o4(context, n6.L6, 21, 15, 3, false, false, this.d);
+                u6.h(n6.h5, o4Var, i6Var);
+                view = o4Var;
                 break;
             case 7:
                 view = new d0(context, i6Var);

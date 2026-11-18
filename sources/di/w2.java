@@ -35,7 +35,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -138,8 +138,8 @@ public final /* synthetic */ class w2 implements Runnable {
                 }
                 k6Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
                 org.telegram.ui.Cells.z zVar2 = k6Var.b;
-                if (zVar2 instanceof org.telegram.ui.Cells.q1) {
-                    messageObject = ((org.telegram.ui.Cells.q1) zVar2).getPrimaryMessageObject();
+                if (zVar2 instanceof org.telegram.ui.Cells.r1) {
+                    messageObject = ((org.telegram.ui.Cells.r1) zVar2).getPrimaryMessageObject();
                     if (messageObject == null) {
                         return;
                     }
@@ -149,7 +149,7 @@ public final /* synthetic */ class w2 implements Runnable {
                     }
                     arrayList = null;
                 } else {
-                    if (!(zVar2 instanceof org.telegram.ui.Cells.u0) || (messageObject = ((org.telegram.ui.Cells.u0) zVar2).getMessageObject()) == null) {
+                    if (!(zVar2 instanceof org.telegram.ui.Cells.v0) || (messageObject = ((org.telegram.ui.Cells.v0) zVar2).getMessageObject()) == null) {
                         return;
                     }
                     TLRPC.Message message2 = messageObject.k;
@@ -285,28 +285,28 @@ public final /* synthetic */ class w2 implements Runnable {
                     textView.setTypeface(org.telegram.messenger.g0.o());
                     textView.setText(gd.M0(2131751485, null));
                     g10.addView(textView, c8.ma.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-                    org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context2, h0Var);
-                    n4Var.setText(gd.M0(2131751582, null));
-                    g10.addView(n4Var, c8.ma.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
-                    final org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(context2, 4, 21, true, h0Var);
-                    org.telegram.ui.Components.mp checkBoxRound = c2Var.getCheckBoxRound();
+                    org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(context2, h0Var);
+                    o4Var.setText(gd.M0(2131751582, null));
+                    g10.addView(o4Var, c8.ma.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
+                    final org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(context2, 4, 21, true, h0Var);
+                    org.telegram.ui.Components.mp checkBoxRound = d2Var.getCheckBoxRound();
                     int i16 = org.telegram.ui.ActionBar.n6.V6;
                     int i17 = org.telegram.ui.ActionBar.n6.g7;
                     int i18 = org.telegram.ui.ActionBar.n6.k7;
                     checkBoxRound.b(i16, i17, i18);
-                    c2Var.e(gd.M0(2131751491, null), null, false, true, false);
-                    c2Var.setOnClickListener(new View.OnClickListener() { // from class: fi.c0
+                    d2Var.e(gd.M0(2131751491, null), null, false, true, false);
+                    d2Var.setOnClickListener(new View.OnClickListener() { // from class: fi.c0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (i12) {
                                 case 0:
-                                    c2Var.c(!r3.b(), true);
+                                    d2Var.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    c2Var.c(!r3.b(), true);
+                                    d2Var.c(!r3.b(), true);
                                     break;
                                 default:
-                                    c2Var.c(!r3.b(), true);
+                                    d2Var.c(!r3.b(), true);
                                     break;
                             }
                         }
@@ -314,67 +314,67 @@ public final /* synthetic */ class w2 implements Runnable {
                     int i19 = org.telegram.ui.ActionBar.n6.i6;
                     org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i19, h0Var), 2, -1);
                     org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i19);
-                    c2Var.setBackground(h02);
-                    org.telegram.ui.ActionBar.u6.j(c2Var, h02, null, M, h0Var);
-                    g10.addView(c2Var, c8.ma.o(-1, -2));
-                    final org.telegram.ui.Cells.c2 c2Var2 = new org.telegram.ui.Cells.c2(context2, 4, 21, true, h0Var);
-                    c2Var2.getCheckBoxRound().b(i16, i17, i18);
-                    c2Var2.e(gd.a0(null, null, 2131751576, org.telegram.messenger.n5.l(j10.t0, j10)), null, false, true, false);
+                    d2Var.setBackground(h02);
+                    org.telegram.ui.ActionBar.u6.j(d2Var, h02, null, M, h0Var);
+                    g10.addView(d2Var, c8.ma.o(-1, -2));
+                    final org.telegram.ui.Cells.d2 d2Var2 = new org.telegram.ui.Cells.d2(context2, 4, 21, true, h0Var);
+                    d2Var2.getCheckBoxRound().b(i16, i17, i18);
+                    d2Var2.e(gd.a0(null, null, 2131751576, org.telegram.messenger.n5.l(j10.t0, j10)), null, false, true, false);
                     final int i20 = 1;
-                    c2Var2.setOnClickListener(new View.OnClickListener() { // from class: fi.c0
+                    d2Var2.setOnClickListener(new View.OnClickListener() { // from class: fi.c0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (i20) {
                                 case 0:
-                                    c2Var2.c(!r3.b(), true);
+                                    d2Var2.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    c2Var2.c(!r3.b(), true);
+                                    d2Var2.c(!r3.b(), true);
                                     break;
                                 default:
-                                    c2Var2.c(!r3.b(), true);
+                                    d2Var2.c(!r3.b(), true);
                                     break;
                             }
                         }
                     });
                     org.telegram.ui.Cells.y h03 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i19, h0Var), 2, -1);
                     org.telegram.ui.ActionBar.q6 M2 = org.telegram.ui.ActionBar.u6.M(i19);
-                    c2Var2.setBackground(h03);
-                    org.telegram.ui.ActionBar.u6.j(c2Var2, h03, null, M2, h0Var);
-                    g10.addView(c2Var2, c8.ma.o(-1, -2));
-                    final org.telegram.ui.Cells.c2 c2Var3 = new org.telegram.ui.Cells.c2(context2, 4, 21, true, h0Var);
-                    c2Var3.getCheckBoxRound().b(i16, i17, i18);
-                    c2Var3.e(gd.a0(null, null, 2131751557, org.telegram.messenger.n5.l(j10.t0, j10)), null, false, false, false);
+                    d2Var2.setBackground(h03);
+                    org.telegram.ui.ActionBar.u6.j(d2Var2, h03, null, M2, h0Var);
+                    g10.addView(d2Var2, c8.ma.o(-1, -2));
+                    final org.telegram.ui.Cells.d2 d2Var3 = new org.telegram.ui.Cells.d2(context2, 4, 21, true, h0Var);
+                    d2Var3.getCheckBoxRound().b(i16, i17, i18);
+                    d2Var3.e(gd.a0(null, null, 2131751557, org.telegram.messenger.n5.l(j10.t0, j10)), null, false, false, false);
                     final int i21 = 2;
-                    c2Var3.setOnClickListener(new View.OnClickListener() { // from class: fi.c0
+                    d2Var3.setOnClickListener(new View.OnClickListener() { // from class: fi.c0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (i21) {
                                 case 0:
-                                    c2Var3.c(!r3.b(), true);
+                                    d2Var3.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    c2Var3.c(!r3.b(), true);
+                                    d2Var3.c(!r3.b(), true);
                                     break;
                                 default:
-                                    c2Var3.c(!r3.b(), true);
+                                    d2Var3.c(!r3.b(), true);
                                     break;
                             }
                         }
                     });
                     org.telegram.ui.Cells.y h04 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i19, h0Var), 2, -1);
                     org.telegram.ui.ActionBar.q6 M3 = org.telegram.ui.ActionBar.u6.M(i19);
-                    c2Var3.setBackground(h04);
-                    org.telegram.ui.ActionBar.u6.j(c2Var3, h04, null, M3, h0Var);
-                    g10.addView(c2Var3, c8.ma.o(-1, -2));
-                    org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context2, h0Var);
-                    z8Var.setBackgroundColor(-16777216);
-                    z8Var.setFixedSize(12);
-                    g10.addView(z8Var, c8.ma.o(-1, -2));
+                    d2Var3.setBackground(h04);
+                    org.telegram.ui.ActionBar.u6.j(d2Var3, h04, null, M3, h0Var);
+                    g10.addView(d2Var3, c8.ma.o(-1, -2));
+                    org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(context2, h0Var);
+                    a9Var.setBackgroundColor(-16777216);
+                    a9Var.setFixedSize(12);
+                    g10.addView(a9Var, c8.ma.o(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context2);
                     hi.d dVar2 = new hi.d(context2, h0Var, true);
                     dVar2.i(gd.M0(2131751502, null), false, true);
-                    dVar2.setOnClickListener(new fi.d0(c2Var, c2Var2, c2Var3, b0Var, x2Var, 0));
+                    dVar2.setOnClickListener(new fi.d0(d2Var, d2Var2, d2Var3, b0Var, x2Var, 0));
                     frameLayout.addView(dVar2, c8.ma.d(-1, 48.0f, ks.E1, 16.0f, 16.0f, 16.0f, 16.0f));
                     g10.addView(frameLayout, c8.ma.o(-1, -2));
                     x2Var.O = g10;

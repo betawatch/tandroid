@@ -33,7 +33,7 @@ import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class f11 extends FrameLayout implements org.telegram.messenger.fs {
     public static final /* synthetic */ int r0 = 0;
@@ -609,7 +609,7 @@ public final class f11 extends FrameLayout implements org.telegram.messenger.fs 
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.s5) {
+        if (i7 == org.telegram.messenger.ks.t5) {
             if (((Long) objArr[0]).longValue() == (-this.b)) {
                 n();
             }
@@ -622,7 +622,7 @@ public final class f11 extends FrameLayout implements org.telegram.messenger.fs 
                 if (this.d) {
                     n();
                 }
-            } else if (i7 == org.telegram.messenger.ks.k4) {
+            } else if (i7 == org.telegram.messenger.ks.l4) {
                 org.telegram.messenger.g0.d0(this.r, new pg.c(0));
             }
         }
@@ -957,10 +957,10 @@ public final class f11 extends FrameLayout implements org.telegram.messenger.fs 
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i7 = this.a;
-        org.telegram.messenger.ks.f(i7).b(this, org.telegram.messenger.ks.s5);
+        org.telegram.messenger.ks.f(i7).b(this, org.telegram.messenger.ks.t5);
         org.telegram.messenger.ks.f(i7).b(this, org.telegram.messenger.ks.r);
         org.telegram.messenger.ks.f(i7).b(this, org.telegram.messenger.ks.i3);
-        org.telegram.messenger.ks.e().b(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().b(this, org.telegram.messenger.ks.l4);
         if (h()) {
             org.telegram.messenger.e00 e00Var = org.telegram.messenger.mp.u1(i7).t7;
             long j3 = -this.b;
@@ -981,10 +981,10 @@ public final class f11 extends FrameLayout implements org.telegram.messenger.fs 
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         int i7 = this.a;
-        org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.s5);
+        org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.t5);
         org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.r);
         org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.i3);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         d();
         ValueAnimator valueAnimator = this.K;
         if (valueAnimator != null) {

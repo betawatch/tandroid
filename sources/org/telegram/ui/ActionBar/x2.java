@@ -30,7 +30,7 @@ import android.view.WindowManager;
 import android.view.animation.Interpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
-import bi.c7;
+import bi.b7;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class x2 extends Dialog implements d2 {
     public static final /* synthetic */ int l1 = 0;
@@ -345,7 +345,7 @@ public class x2 extends Dialog implements d2 {
                 if (!z11) {
                     l5Var.d = z10;
                 }
-                y60Var.p = new c7(k5Var2, 1);
+                y60Var.p = new b7(k5Var2, 1);
                 k5Var2.d(l5Var, null, (ActionBarPopupWindow$ActionBarPopupWindowLayout) y60Var.A);
                 return;
             }

@@ -6,21 +6,21 @@ import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class oa {
     public float b;
-    public org.telegram.ui.Cells.c7 d;
+    public org.telegram.ui.Cells.d7 d;
     public ImageReceiver e;
     public fi.c3 f;
     public int a = 0;
     public final RectF c = new RectF();
 
-    public static ma b(org.telegram.ui.Cells.d7 d7Var) {
-        if (d7Var == null) {
+    public static ma b(org.telegram.ui.Cells.e7 e7Var) {
+        if (e7Var == null) {
             return null;
         }
-        org.telegram.ui.Components.q9 imageView = d7Var.getImageView();
+        org.telegram.ui.Components.q9 imageView = e7Var.getImageView();
         ma maVar = new ma(imageView, 2);
         int[] iArr = new int[2];
         imageView.getLocationOnScreen(iArr);
@@ -31,7 +31,7 @@ public abstract class oa {
         float height = imageView.getHeight() + iArr[1];
         RectF rectF = maVar.c;
         rectF.set(f10, f11, width, height);
-        maVar.d = new org.telegram.ui.Cells.c7(imageView.getContext(), null, false, R.drawable.large_repost_story, d7Var.E);
+        maVar.d = new org.telegram.ui.Cells.d7(imageView.getContext(), null, false, R.drawable.large_repost_story, e7Var.E);
         maVar.b = Math.max(rectF.width(), rectF.height()) / 2.0f;
         return maVar;
     }

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class hm extends ij0 {
     public final Context c;
@@ -124,14 +124,14 @@ public final class hm extends ij0 {
 
     public final kj0 L() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        org.telegram.ui.Cells.r5 r5Var = new org.telegram.ui.Cells.r5(this.c, chatAttachAlertPhotoLayout.a);
+        org.telegram.ui.Cells.s5 s5Var = new org.telegram.ui.Cells.s5(this.c, chatAttachAlertPhotoLayout.a);
         if (this == chatAttachAlertPhotoLayout.H) {
-            r5Var.setOutlineProvider(new fh.a(this, 3));
-            r5Var.setClipToOutline(true);
+            s5Var.setOutlineProvider(new fh.a(this, 3));
+            s5Var.setClipToOutline(true);
         }
-        r5Var.setFastScrollDelegate(new b0(this, 21));
-        r5Var.setDelegate(new g2(11, this, r5Var));
-        return new kj0(r5Var);
+        s5Var.setFastScrollDelegate(new b0(this, 21));
+        s5Var.setDelegate(new g2(11, this, s5Var));
+        return new kj0(s5Var);
     }
 
     public final org.telegram.messenger.ef M(int i7) {
@@ -240,7 +240,7 @@ public final class hm extends ij0 {
         boolean z10 = this.d;
         if (i10 != 0) {
             if (i10 == 1) {
-                ((org.telegram.ui.Cells.l5) view).setItemSize(chatAttachAlertPhotoLayout.L0);
+                ((org.telegram.ui.Cells.m5) view).setItemSize(chatAttachAlertPhotoLayout.L0);
                 return;
             }
             if (i10 != 3) {
@@ -250,9 +250,9 @@ public final class hm extends ij0 {
                 ((h10) view).setUseAnEmojiVisible(chatAttachAlertPhotoLayout.h1);
                 return;
             } else {
-                org.telegram.ui.Cells.m5 m5Var = (org.telegram.ui.Cells.m5) view;
-                m5Var.setItemSize(chatAttachAlertPhotoLayout.L0);
-                m5Var.setType((z10 && chatAttachAlertPhotoLayout.P0 && i7 == 0) ? 0 : 1);
+                org.telegram.ui.Cells.n5 n5Var = (org.telegram.ui.Cells.n5) view;
+                n5Var.setItemSize(chatAttachAlertPhotoLayout.L0);
+                n5Var.setType((z10 && chatAttachAlertPhotoLayout.P0 && i7 == 0) ? 0 : 1);
                 return;
             }
         }
@@ -265,16 +265,16 @@ public final class hm extends ij0 {
         if (chatAttachAlertPhotoLayout.h1) {
             i7--;
         }
-        org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
+        org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
         if (this == chatAttachAlertPhotoLayout.H) {
-            r5Var.setItemSize(chatAttachAlertPhotoLayout.L0);
+            s5Var.setItemSize(chatAttachAlertPhotoLayout.L0);
         } else {
-            r5Var.setIsVertical(chatAttachAlertPhotoLayout.s.o == 1);
+            s5Var.setIsVertical(chatAttachAlertPhotoLayout.s.o == 1);
         }
         if (siVar.O2 != 0 || siVar.R2 || siVar.C1) {
-            r5Var.getCheckBox().setVisibility(8);
+            s5Var.getCheckBox().setVisibility(8);
         } else {
-            r5Var.getCheckBox().setVisibility(0);
+            s5Var.getCheckBox().setVisibility(0);
         }
         org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(i7);
         if (e02 == null) {
@@ -282,21 +282,21 @@ public final class hm extends ij0 {
         }
         int i11 = e02.C;
         HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
-        r5Var.d(e02, hashMap.size() > 1, z10 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0, i7 == b() - 1, siVar != null && siVar.d2);
+        s5Var.d(e02, hashMap.size() > 1, z10 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0, i7 == b() - 1, siVar != null && siVar.d2);
         if ((siVar.a2 instanceof org.telegram.ui.bn) && siVar.R3) {
-            r5Var.b(ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(i11)), hashMap.containsKey(Integer.valueOf(i11)), false);
+            s5Var.b(ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(i11)), hashMap.containsKey(Integer.valueOf(i11)), false);
         } else {
-            r5Var.b(-1, hashMap.containsKey(Integer.valueOf(i11)), false);
+            s5Var.b(-1, hashMap.containsKey(Integer.valueOf(i11)), false);
         }
         if (!chatAttachAlertPhotoLayout.x0 && e02.b) {
-            r5Var.setAlpha(0.3f);
+            s5Var.setAlpha(0.3f);
         } else if (chatAttachAlertPhotoLayout.y0 || e02.b) {
-            r5Var.setAlpha(1.0f);
+            s5Var.setAlpha(1.0f);
         } else {
-            r5Var.setAlpha(0.3f);
+            s5Var.setAlpha(0.3f);
         }
-        r5Var.getImageView().setTag(Integer.valueOf(i7));
-        r5Var.setTag(Integer.valueOf(i7));
+        s5Var.getImageView().setTag(Integer.valueOf(i7));
+        s5Var.setTag(Integer.valueOf(i7));
     }
 
     @Override // v4.i0
@@ -315,10 +315,10 @@ public final class hm extends ij0 {
         }
         Context context = this.c;
         if (i7 == 1) {
-            org.telegram.ui.Cells.l5 l5Var = new org.telegram.ui.Cells.l5(context);
-            l5Var.setFocusable(true);
-            l5Var.a = org.telegram.messenger.g0.L(0.0f);
-            return new kj0(l5Var);
+            org.telegram.ui.Cells.m5 m5Var = new org.telegram.ui.Cells.m5(context);
+            m5Var.setFocusable(true);
+            m5Var.a = org.telegram.messenger.g0.L(0.0f);
+            return new kj0(m5Var);
         }
         if (i7 == 2) {
             return new kj0(new bi.i3(15, context, this));
@@ -356,33 +356,33 @@ public final class hm extends ij0 {
             frameLayout.addView(dVar, c8.ma.d(-2, 44.0f, 81, 10.0f, 0.0f, 10.0f, 12.0f));
             return new kj0(frameLayout);
         }
-        org.telegram.ui.Cells.m5 m5Var = new org.telegram.ui.Cells.m5(context);
+        org.telegram.ui.Cells.n5 n5Var = new org.telegram.ui.Cells.n5(context);
         ImageView imageView = new ImageView(context);
-        m5Var.a = imageView;
+        n5Var.a = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         int i12 = org.telegram.ui.ActionBar.n6.aa;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.u6.s(imageView, i12, i6Var, mode);
-        m5Var.addView(imageView, c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+        n5Var.addView(imageView, c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
         ImageView imageView2 = new ImageView(context);
-        m5Var.b = imageView2;
+        n5Var.b = imageView2;
         imageView2.setScaleType(scaleType);
         org.telegram.ui.ActionBar.u6.s(imageView2, org.telegram.ui.ActionBar.n6.ba, i6Var, mode);
-        m5Var.addView(imageView2, c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+        n5Var.addView(imageView2, c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
         TextView textView = new TextView(context);
-        m5Var.c = textView;
+        n5Var.c = textView;
         org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.ca, i6Var);
         textView.setTextSize(1, 12.0f);
         textView.setGravity(17);
-        m5Var.addView(textView, c8.ma.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
-        m5Var.d = org.telegram.messenger.g0.L(80.0f);
-        return new kj0(m5Var);
+        n5Var.addView(textView, c8.ma.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
+        n5Var.d = org.telegram.messenger.g0.L(80.0f);
+        return new kj0(n5Var);
     }
 
     @Override // v4.i0
     public final void y(v4.f1 f1Var) {
-        if (f1Var.a instanceof org.telegram.ui.Cells.l5) {
+        if (f1Var.a instanceof org.telegram.ui.Cells.m5) {
             this.w.R.i();
         }
     }

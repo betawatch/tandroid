@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class BubbleActivity extends g5 implements org.telegram.ui.ActionBar.p4 {
     public static BubbleActivity b0;
@@ -105,7 +105,7 @@ public class BubbleActivity extends g5 implements org.telegram.ui.ActionBar.p4 {
         org.telegram.messenger.t0.w();
         requestWindowFeature(1);
         setTheme(R.style.Theme_TMessages);
-        getWindow().setBackgroundDrawable(new org.telegram.ui.Cells.r6(1));
+        getWindow().setBackgroundDrawable(new org.telegram.ui.Cells.s6(1));
         if (!org.telegram.messenger.bz.s.isEmpty() && !org.telegram.messenger.bz.A) {
             try {
                 getWindow().setFlags(TLObject.FLAG_13, TLObject.FLAG_13);
@@ -138,7 +138,7 @@ public class BubbleActivity extends g5 implements org.telegram.ui.ActionBar.p4 {
         org.telegram.ui.Components.pc0 pc0Var = new org.telegram.ui.Components.pc0(this);
         this.S = pc0Var;
         this.U.addView(pc0Var, c8.ma.c(-1.0f, -1));
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.m4, this);
+        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.n4, this);
         this.T.a0();
         x(getIntent(), false, bundle != null, false, org.telegram.messenger.j10.t0);
         b0 = this;

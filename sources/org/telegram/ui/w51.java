@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class w51 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ThemeActivity a;
@@ -32,7 +32,7 @@ public final class w51 extends org.telegram.ui.ActionBar.j {
             org.telegram.ui.ActionBar.k6 k10 = org.telegram.ui.ActionBar.n6.D0().k(false);
             if (k10.r == null) {
                 this.a.getMessagesController().H4(k10.b, k10);
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, k10.b, k10);
+                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, k10.b, k10);
                 return;
             }
             String str = "https://" + this.a.getMessagesController().X2 + "/addtheme/" + k10.r.slug;
@@ -84,7 +84,7 @@ public final class w51 extends org.telegram.ui.ActionBar.j {
                 this.a.s.getIconView().getLocationInWindow(iArr);
                 int i10 = iArr[0];
                 int i11 = iArr[1];
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), this.a.s.getIconView());
+                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), this.a.s.getIconView());
                 this.a.F0(true);
                 org.telegram.ui.ActionBar.n6.M1(this.a);
             }
@@ -96,7 +96,7 @@ public final class w51 extends org.telegram.ui.ActionBar.j {
             this.a.s.getIconView().getLocationInWindow(iArr2);
             int i102 = iArr2[0];
             int i112 = iArr2[1];
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(equals2), this.a.s.getIconView());
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(equals2), this.a.s.getIconView());
             this.a.F0(true);
             org.telegram.ui.ActionBar.n6.M1(this.a);
         }

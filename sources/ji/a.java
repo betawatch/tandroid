@@ -22,9 +22,9 @@ import org.telegram.ui.Components.re;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.bn;
 import org.telegram.ui.ci;
-import org.telegram.ui.eg0;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -66,9 +66,9 @@ public final /* synthetic */ class a implements Runnable {
                         bn bnVar = chatActivityEnterView.D3;
                         re reVar = chatActivityEnterView.K0;
                         if (reVar != null && reVar.getWidth() > 0) {
-                            eg0 eg0Var = chatActivityEnterView.M0;
-                            if (eg0Var != null) {
-                                eg0Var.h(false);
+                            fg0 fg0Var = chatActivityEnterView.M0;
+                            if (fg0Var != null) {
+                                fg0Var.h(false);
                             }
                             g0.r(chatActivityEnterView.d6);
                             lf lfVar = new lf(chatActivityEnterView, chatActivityEnterView.getContext(), i6Var, eVar3);
@@ -77,13 +77,13 @@ public final /* synthetic */ class a implements Runnable {
                             androidx.activity.n nVar = eVar3 != null ? new androidx.activity.n(eVar3) : null;
                             boolean[] zArr = new boolean[1];
                             if (nVar != null) {
-                                eg0 eg0Var2 = chatActivityEnterView.M0;
+                                fg0 fg0Var2 = chatActivityEnterView.M0;
                                 ab.q qVar = new ab.q();
                                 qVar.c = zArr;
                                 qVar.d = nVar;
                                 qVar.b = new float[4];
-                                eg0Var2.m0 = qVar;
-                                eg0Var2.n0 = nVar;
+                                fg0Var2.m0 = qVar;
+                                fg0Var2.n0 = nVar;
                             }
                             TLRPC.TL_message tL_message = new TLRPC.TL_message();
                             tL_message.out = true;

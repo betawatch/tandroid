@@ -29,9 +29,9 @@ import org.telegram.ui.Components.xe0;
 import org.telegram.ui.Components.ze0;
 import org.telegram.ui.cx;
 import org.telegram.ui.j01;
-import org.telegram.ui.le0;
+import org.telegram.ui.me0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class q3 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -81,7 +81,7 @@ public final class q3 extends FrameLayout {
                 if (this.b) {
                     paint2.setStyle(Paint.Style.STROKE);
                     paint2.setStrokeWidth(org.telegram.messenger.g0.L(1.33f));
-                    paint2.setColor(((le0) obj).getThemedColor(org.telegram.ui.ActionBar.n6.Fi));
+                    paint2.setColor(((me0) obj).getThemedColor(org.telegram.ui.ActionBar.n6.Fi));
                     canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, org.telegram.messenger.g0.L(16.0f), paint2);
                 }
                 super.dispatchDraw(canvas);
@@ -323,9 +323,9 @@ public final class q3 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q3(le0 le0Var, Activity activity, boolean z10) {
+    public q3(me0 me0Var, Activity activity, boolean z10) {
         super(activity);
-        this.d = le0Var;
+        this.d = me0Var;
         this.b = z10;
         this.c = new Paint(1);
     }

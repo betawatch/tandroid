@@ -28,7 +28,7 @@ import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements x10 {
     public final /* synthetic */ int a = 1;
@@ -525,18 +525,18 @@ public final /* synthetic */ class r implements x10 {
                     boolean z16 = c10.a == 9;
                     if (j11 > 0) {
                         r15 = 0;
-                        r92.e(gd.M0(z16 ? 2131749537 : 2131749535, null), bi.v4.i(j11), null, null);
+                        r92.e(gd.M0(z16 ? 2131749537 : 2131749535, null), bi.u4.i(j11), null, null);
                     } else {
                         r15 = 0;
                     }
                     if (z16 && c10.i > 0) {
-                        r92.e(gd.M0(2131749536, r15), bi.v4.j(c10.i), r15, r15);
+                        r92.e(gd.M0(2131749536, r15), bi.u4.j(c10.i), r15, r15);
                     }
                     if (i18 > 0) {
                         r92.e(gd.M0(2131749539, r15), gd.Q(i18), r15, r15);
                     }
                     if (c10.k) {
-                        r92.e(gd.M0(2131749541, r15), bi.v4.i(c10.h), r15, r15);
+                        r92.e(gd.M0(2131749541, r15), bi.u4.i(c10.h), r15, r15);
                     }
                     if (str4 != null) {
                         String M04 = gd.M0(c10.m, r15);

@@ -20,11 +20,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.cx;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -209,11 +209,11 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                 }
                 break;
             default:
-                ld0 ld0Var = (ld0) this.d;
+                md0 md0Var = (md0) this.d;
                 String str = (String) this.e;
                 String str2 = (String) this.f;
                 String str3 = (String) this.h;
-                hi.d dVar = ld0Var.b;
+                hi.d dVar = md0Var.b;
                 if (!dVar.R) {
                     dVar.setLoading(true);
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
@@ -236,7 +236,7 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                         tL_dataJSON.data = u10.toString();
                         tL_payments_getPaymentForm.flags |= 1;
                     }
-                    ld0Var.w.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new org.telegram.ui.z9(ld0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
+                    md0Var.w.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new org.telegram.ui.z9(md0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
                     break;
                 }
                 break;
@@ -252,8 +252,8 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
         this.h = qVar;
     }
 
-    public /* synthetic */ q0(ld0 ld0Var, String str, long j3, String str2, String str3, int i7) {
-        this.d = ld0Var;
+    public /* synthetic */ q0(md0 md0Var, String str, long j3, String str2, String str3, int i7) {
+        this.d = md0Var;
         this.e = str;
         this.c = j3;
         this.f = str2;

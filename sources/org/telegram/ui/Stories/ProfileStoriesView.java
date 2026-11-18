@@ -59,7 +59,7 @@ import org.telegram.ui.Components.qh0;
 import org.telegram.ui.cv0;
 import org.telegram.ui.wv0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements fs {
     public static final /* synthetic */ int t0 = 0;
@@ -324,7 +324,7 @@ public class ProfileStoriesView extends View implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.x5) {
+        if (i7 == ks.y5) {
             f(true, true);
         }
     }
@@ -1251,7 +1251,7 @@ public class ProfileStoriesView extends View implements fs {
         while (true) {
             ArrayList arrayList = this.x;
             if (i7 >= arrayList.size()) {
-                ks.f(this.c).c(this, ks.x5);
+                ks.f(this.c).c(this, ks.y5);
                 return;
             } else {
                 ((b4) arrayList.get(i7)).b.P();
@@ -1268,7 +1268,7 @@ public class ProfileStoriesView extends View implements fs {
         while (true) {
             ArrayList arrayList = this.x;
             if (i7 >= arrayList.size()) {
-                ks.f(this.c).n(this, ks.x5);
+                ks.f(this.c).n(this, ks.y5);
                 return;
             } else {
                 ((b4) arrayList.get(i7)).b.R();

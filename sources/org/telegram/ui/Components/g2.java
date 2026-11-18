@@ -28,9 +28,9 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g2 implements org.telegram.ui.ActionBar.r1, z4, org.telegram.messenger.za, org.telegram.ui.Cells.q5, org.telegram.messenger.jc, zi, org.telegram.ui.ActionBar.g1, qj0, org.telegram.messenger.lr, pj0, rj0 {
+public final /* synthetic */ class g2 implements org.telegram.ui.ActionBar.r1, z4, org.telegram.messenger.za, org.telegram.ui.Cells.r5, org.telegram.messenger.jc, zi, org.telegram.ui.ActionBar.g1, qj0, org.telegram.messenger.lr, pj0, rj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -75,11 +75,11 @@ public final /* synthetic */ class g2 implements org.telegram.ui.ActionBar.r1, z
                 } else {
                     rnVar.W = i7;
                     rnVar.V = 0;
-                    if (!(view instanceof org.telegram.ui.Cells.m8)) {
+                    if (!(view instanceof org.telegram.ui.Cells.n8)) {
                         rnVar.r.g(rnVar.J0);
                         break;
                     } else {
-                        rnVar.Z((org.telegram.ui.Cells.m8) view, true);
+                        rnVar.Z((org.telegram.ui.Cells.n8) view, true);
                         break;
                     }
                 }
@@ -215,11 +215,11 @@ public final /* synthetic */ class g2 implements org.telegram.ui.ActionBar.r1, z
         h2Var.getMessagesController().Z4(false);
     }
 
-    @Override // org.telegram.ui.Cells.q5
-    public void e(org.telegram.ui.Cells.r5 r5Var) {
+    @Override // org.telegram.ui.Cells.r5
+    public void e(org.telegram.ui.Cells.s5 s5Var) {
         TLRPC.Chat chat;
         hm hmVar = (hm) this.b;
-        org.telegram.ui.Cells.r5 r5Var2 = (org.telegram.ui.Cells.r5) this.c;
+        org.telegram.ui.Cells.s5 s5Var2 = (org.telegram.ui.Cells.s5) this.c;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = hmVar.w;
         boolean z10 = chatAttachAlertPhotoLayout.w0;
         si siVar = chatAttachAlertPhotoLayout.b;
@@ -229,8 +229,8 @@ public final /* synthetic */ class g2 implements org.telegram.ui.ActionBar.r1, z
             if (i7 != 0 || siVar.C1) {
                 return;
             }
-            int intValue = ((Integer) r5Var.getTag()).intValue();
-            org.telegram.messenger.ef photoEntry = r5Var.getPhotoEntry();
+            int intValue = ((Integer) s5Var.getTag()).intValue();
+            org.telegram.messenger.ef photoEntry = s5Var.getPhotoEntry();
             if (chatAttachAlertPhotoLayout.a0(photoEntry)) {
                 return;
             }
@@ -254,9 +254,9 @@ public final /* synthetic */ class g2 implements org.telegram.ui.ActionBar.r1, z
             }
             int size = !containsKey ? ChatAttachAlertPhotoLayout.u1.size() : -1;
             if ((h2Var instanceof org.telegram.ui.bn) && siVar.R3) {
-                r5Var.b(size, z11, true);
+                s5Var.b(size, z11, true);
             } else {
-                r5Var.b(-1, z11, true);
+                s5Var.b(-1, z11, true);
             }
             chatAttachAlertPhotoLayout.T(photoEntry, intValue);
             hm hmVar2 = chatAttachAlertPhotoLayout.w;
@@ -273,9 +273,9 @@ public final /* synthetic */ class g2 implements org.telegram.ui.ActionBar.r1, z
                 hmVar2.g(intValue);
             }
             siVar.L1(containsKey ? 2 : 1);
-            r5Var2.setHasSpoiler(photoEntry.M);
-            r5Var2.setHighQuality(photoEntry.c());
-            r5Var2.f(photoEntry.N, hashMap.size() > 1);
+            s5Var2.setHasSpoiler(photoEntry.M);
+            s5Var2.setHighQuality(photoEntry.c());
+            s5Var2.f(photoEntry.N, hashMap.size() > 1);
         }
     }
 

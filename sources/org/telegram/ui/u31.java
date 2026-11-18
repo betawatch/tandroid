@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class u31 extends org.telegram.ui.Components.sa {
     public static final /* synthetic */ int Z1 = 0;
@@ -172,7 +172,7 @@ public final class u31 extends org.telegram.ui.Components.sa {
                 org.telegram.ui.ActionBar.u6.j(textView2, d02, K, null, i6Var2);
                 textView2.setText(di.pb.R0(di.pb.P0(l10.longValue()) + " 💎", 0.75f));
                 c8.ra.a(textView2);
-                textView2.setOnClickListener(new bd0(15, editTextBoldCursor, l10));
+                textView2.setOnClickListener(new cd0(15, editTextBoldCursor, l10));
                 return textView2;
             }
         };
@@ -211,7 +211,7 @@ public final class u31 extends org.telegram.ui.Components.sa {
                             }
                             if (TextUtils.isEmpty(text) || parseDouble >= org.telegram.messenger.mp.u1(i14).c7 / 1.0E9d) {
                                 if (di.x8.y(i14, true).f.toDouble() < parseDouble) {
-                                    new ii.s(context, i6Var, cg.a.j((long) (parseDouble * 1.0E9d), cg.b.b), true, new cd0(5));
+                                    new ii.s(context, i6Var, cg.a.j((long) (parseDouble * 1.0E9d), cg.b.b), true, new dd0(5));
                                     return;
                                 } else {
                                     dVar.a(Long.valueOf((long) (parseDouble * 1.0E9d)));

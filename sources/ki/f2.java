@@ -9,6 +9,7 @@ import oi.r4;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.qu;
+import org.telegram.ui.Cells.g4;
 import org.telegram.ui.Components.ag0;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.fj0;
@@ -18,7 +19,7 @@ import org.telegram.ui.Components.m6;
 import org.telegram.ui.Components.y40;
 import org.telegram.ui.yp;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class f2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -128,11 +129,11 @@ public final class f2 extends AnimatorListenerAdapter {
                 ks.e().k(99, 512);
                 break;
             case 6:
-                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) obj;
-                if (!f4Var.c()) {
-                    f4Var.b(i10);
+                g4 g4Var = (g4) obj;
+                if (!g4Var.c()) {
+                    g4Var.b(i10);
                 }
-                f4Var.e0 = null;
+                g4Var.e0 = null;
                 break;
             case 7:
                 ((m6) obj).u(i10);

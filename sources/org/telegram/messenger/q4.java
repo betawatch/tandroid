@@ -9,10 +9,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.i70;
-import org.telegram.ui.n60;
+import org.telegram.ui.j70;
+import org.telegram.ui.o60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q4 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -131,7 +131,7 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                 break;
             default:
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
-                n60 n60Var = (n60) this.e;
+                o60 o60Var = (o60) this.e;
                 boolean z17 = this.b;
                 Long l10 = (Long) this.f;
                 vf.b bVar = (vf.b) this.g;
@@ -143,14 +143,14 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                 int i14 = this.c;
                 Bundle bundle = (Bundle) this.m;
                 String str = LaunchActivity.C1;
-                g0.g3(new i70(launchActivity, n60Var, tLObject, z17, l10, bVar, l11, num, num2, bArr, h2Var, i14, bundle));
+                g0.g3(new j70(launchActivity, o60Var, tLObject, z17, l10, bVar, l11, num, num2, bArr, h2Var, i14, bundle));
                 break;
         }
     }
 
-    public /* synthetic */ q4(LaunchActivity launchActivity, n60 n60Var, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.h2 h2Var, int i7, Bundle bundle) {
+    public /* synthetic */ q4(LaunchActivity launchActivity, o60 o60Var, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.h2 h2Var, int i7, Bundle bundle) {
         this.d = launchActivity;
-        this.e = n60Var;
+        this.e = o60Var;
         this.b = z10;
         this.f = l10;
         this.g = bVar;

@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ex extends View implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.c6 {
     public boolean E;
@@ -128,7 +128,7 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.d5) {
+        if (i7 == org.telegram.messenger.ks.e5) {
             a();
             b();
         }
@@ -138,7 +138,7 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         a();
-        org.telegram.messenger.ks.f(this.c).c(this, org.telegram.messenger.ks.d5);
+        org.telegram.messenger.ks.f(this.c).c(this, org.telegram.messenger.ks.e5);
         this.n.P();
         this.r.P();
     }
@@ -153,7 +153,7 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
             int i10 = this.c;
             if (i7 >= size) {
                 arrayList.clear();
-                org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.d5);
+                org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.e5);
                 this.n.R();
                 this.r.R();
                 return;

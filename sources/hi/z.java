@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.x10;
 import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class z extends FrameLayout {
     public final w a;
@@ -25,7 +25,7 @@ public final class z extends FrameLayout {
         wVar.setClipToPadding(false);
         wVar.setVisibility(8);
         wVar.setWillNotDraw(false);
-        wVar.setOnItemClickListener(new bi.i8(this, 8));
+        wVar.setOnItemClickListener(new bi.h8(this, 8));
         addView(wVar, c8.ma.c(56.0f, -1));
     }
 
@@ -49,7 +49,7 @@ public final class z extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
         this.f = ofFloat;
         ofFloat.addUpdateListener(new ah.g(this, 27));
-        this.f.addListener(new bi.e7(9, this, z10));
+        this.f.addListener(new bi.d7(9, this, z10));
         this.f.setInterpolator(lr.h);
         this.f.setDuration(340L);
         this.f.start();

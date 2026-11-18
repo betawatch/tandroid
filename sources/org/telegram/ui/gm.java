@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class gm extends org.telegram.ui.Components.yo0 {
     public final /* synthetic */ org.telegram.messenger.fj V2;
@@ -54,7 +54,7 @@ public final class gm extends org.telegram.ui.Components.yo0 {
     @Override // org.telegram.ui.Components.yo0
     public final void T0(final View view) {
         bn bnVar = this.W2.a;
-        hi.ma b10 = view instanceof org.telegram.ui.Cells.d7 ? hi.oa.b((org.telegram.ui.Cells.d7) view) : null;
+        hi.ma b10 = view instanceof org.telegram.ui.Cells.e7 ? hi.oa.b((org.telegram.ui.Cells.e7) view) : null;
         ArrayList arrayList = new ArrayList();
         org.telegram.messenger.fj fjVar = this.V2;
         org.telegram.messenger.aj ajVar = fjVar.c1() != 0 ? (org.telegram.messenger.aj) bnVar.P6.f(fjVar.c1()) : null;
@@ -79,8 +79,8 @@ public final class gm extends org.telegram.ui.Components.yo0 {
                     taVar.X(null);
                 } else {
                     View view2 = view;
-                    if ((view2 instanceof org.telegram.ui.Cells.d7) && view2.isAttachedToWindow()) {
-                        maVar = hi.oa.b((org.telegram.ui.Cells.d7) view2);
+                    if ((view2 instanceof org.telegram.ui.Cells.e7) && view2.isAttachedToWindow()) {
+                        maVar = hi.oa.b((org.telegram.ui.Cells.e7) view2);
                     }
                     taVar.X(maVar);
                 }

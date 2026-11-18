@@ -19,9 +19,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.if0;
 import org.telegram.ui.Components.k80;
-import org.telegram.ui.jg0;
+import org.telegram.ui.kg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class pe implements kf, m9.t, p4.u {
     public long a;
@@ -134,7 +134,7 @@ public final class pe implements kf, m9.t, p4.u {
                 }
             }
         });
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i7 == 1 ? gd.M0(2131753861, null) : gd.M0(2131753862, null), false, i6Var).setOnClickListener(new bi.n6(this, context, i7, i6Var, k8Var));
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i7 == 1 ? gd.M0(2131753861, null) : gd.M0(2131753862, null), false, i6Var).setOnClickListener(new bi.m6(this, context, i7, i6Var, k8Var));
         org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, gd.M0(2131753860, null), false, i6Var);
         this.c = c10;
         final int i14 = 3;
@@ -483,18 +483,18 @@ public final class pe implements kf, m9.t, p4.u {
             arrayList.add(l1Var.m(i10, k1Var, 0L).c);
         }
         ArrayList arrayList2 = new ArrayList();
-        jg0 jg0Var = new jg0(this, new AtomicInteger(0), arrayList, arrayList2, 29);
+        kg0 kg0Var = new kg0(this, new AtomicInteger(0), arrayList, arrayList2, 29);
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             byte[] bArr = ((e2.l0) arrayList.get(i11)).d.k;
             if (bArr == null) {
                 arrayList2.add(null);
-                jg0Var.run();
+                kg0Var.run();
             } else {
                 m9.y t02 = d0Var.m.t0(bArr);
                 arrayList2.add(t02);
                 Handler handler = d0Var.l;
                 Objects.requireNonNull(handler);
-                t02.b(jg0Var, new l2.d0(handler, 1));
+                t02.b(kg0Var, new l2.d0(handler, 1));
             }
         }
     }

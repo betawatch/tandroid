@@ -49,8 +49,9 @@ import org.telegram.ui.ActionBar.d3;
 import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Cells.fa;
-import org.telegram.ui.Cells.ha;
+import org.telegram.ui.Cells.c5;
+import org.telegram.ui.Cells.ga;
+import org.telegram.ui.Cells.ia;
 import org.telegram.ui.Components.b5;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
@@ -59,7 +60,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -382,22 +383,22 @@ public final /* synthetic */ class i0 implements Runnable {
                 w7.G(m6Var2.F).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
                 return;
             case 26:
-                org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) this.b;
-                n6.K0(u0Var.getContext(), u0Var.I, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.n0) this.d, u0Var.h1);
+                org.telegram.ui.Cells.v0 v0Var2 = (org.telegram.ui.Cells.v0) this.b;
+                n6.K0(v0Var2.getContext(), v0Var2.I, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.n0) this.d, v0Var2.h1);
                 return;
             case 27:
-                org.telegram.ui.Cells.u0 u0Var2 = (org.telegram.ui.Cells.u0) this.b;
-                u0Var2.g1.b0(u0Var2, (TLRPC.TL_premiumGiftOption) this.c, (String) this.d);
+                org.telegram.ui.Cells.v0 v0Var3 = (org.telegram.ui.Cells.v0) this.b;
+                v0Var3.g1.b0(v0Var3, (TLRPC.TL_premiumGiftOption) this.c, (String) this.d);
                 return;
             case 28:
-                ha haVar = (ha) this.b;
+                ia iaVar = (ia) this.b;
                 m6 m6Var3 = (m6) this.c;
                 m6Var3.f = !m6Var3.d((File) this.d, m6Var3.c);
-                org.telegram.messenger.g0.g3(new fa(9, haVar, m6Var3));
+                org.telegram.messenger.g0.g3(new ga(8, iaVar, m6Var3));
                 return;
             default:
                 org.telegram.ui.Components.m0 m0Var = (org.telegram.ui.Components.m0) this.b;
-                b5.J((Context) this.c, m0Var.h2, new org.telegram.ui.Cells.b5(m0Var), (i6) this.d);
+                b5.J((Context) this.c, m0Var.h2, new c5(m0Var), (i6) this.d);
                 return;
         }
     }

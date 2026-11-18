@@ -10,13 +10,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 import bi.h0;
+import bi.j6;
 import bi.k1;
-import bi.k6;
 import bi.m0;
-import bi.q6;
+import bi.p6;
 import bi.y;
-import bi.z5;
-import bi.z8;
+import bi.y5;
+import bi.y8;
 import di.d7;
 import di.e8;
 import di.gb;
@@ -43,6 +43,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import kg.l0;
 import oi.j0;
+import oi.z5;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.bz;
@@ -70,7 +71,6 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.x2;
 import org.telegram.ui.ActionBar.z0;
 import org.telegram.ui.Cells.w;
-import org.telegram.ui.Cells.x8;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.b5;
@@ -95,7 +95,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.jw0;
 import sg.k0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -163,12 +163,12 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 }
                 break;
             case 5:
-                k6 k6Var = (k6) obj3;
+                j6 j6Var = (j6) obj3;
                 ((y60) obj2).v();
-                eq0 eq0Var = k6Var.a;
-                z5 z5Var = new z5(k6Var, (TL_stars.SavedStarGift) obj, z10 ? 1 : 0);
-                HashMap hashMap = q6.V;
-                eq0Var.h(null, z5Var);
+                eq0 eq0Var = j6Var.a;
+                y5 y5Var = new y5(j6Var, (TL_stars.SavedStarGift) obj, z10 ? 1 : 0);
+                HashMap hashMap = p6.V;
+                eq0Var.h(null, y5Var);
                 break;
             case 6:
                 Context context = (Context) obj2;
@@ -336,9 +336,9 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 break;
             case 12:
                 k4 k4Var = (k4) obj3;
-                z8 z8Var = new z8(k4Var, i12);
+                y8 y8Var = new y8(k4Var, i12);
                 a5 a5Var = k4Var.b;
-                new bv(z8Var, a5Var.getContext(), a5Var.s, (ArrayList) obj2).show();
+                new bv(y8Var, a5Var.getContext(), a5Var.s, (ArrayList) obj2).show();
                 ((y60) obj).v();
                 break;
             case 13:
@@ -455,7 +455,7 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 break;
             case 19:
                 ((ga.d) obj3).c();
-                ((oi.z5) obj2).D((j0) obj);
+                ((z5) obj2).D((j0) obj);
                 break;
             case 20:
                 v vVar = (v) obj3;
@@ -581,7 +581,7 @@ public final /* synthetic */ class h implements View.OnClickListener {
             case 28:
                 Context context3 = (Context) obj2;
                 ((gr) obj3).getClass();
-                g0.g(((x8) obj).a.getText().toString());
+                g0.g(((org.telegram.ui.Cells.y8) obj).a.getText().toString());
                 if (g0.G3()) {
                     Toast.makeText(context3, gd.M0(2131743959, null), 0).show();
                     break;

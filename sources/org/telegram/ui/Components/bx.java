@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class bx extends bk0 {
     public int E;
@@ -545,26 +545,26 @@ public final class bx extends bk0 {
         if (i13 != 0) {
             SparseIntArray sparseIntArray = this.r;
             if (i13 == 1) {
-                org.telegram.ui.Cells.j8 j8Var = (org.telegram.ui.Cells.j8) view;
-                j8Var.getClass();
+                org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) view;
+                k8Var.getClass();
                 int i14 = sparseIntArray.get(i11);
                 if (i11 == this.c) {
-                    j8Var.b(org.telegram.messenger.gd.M0(2131750824, null), R.drawable.msg_close, org.telegram.messenger.gd.M0(2131754899, null), 0, 0);
+                    k8Var.b(org.telegram.messenger.gd.M0(2131750824, null), R.drawable.msg_close, org.telegram.messenger.gd.M0(2131754899, null), 0, 0);
                     return;
                 }
                 if (i11 == this.f) {
-                    j8Var.a(0, org.telegram.messenger.gd.M0(2131746166, null));
+                    k8Var.a(0, org.telegram.messenger.gd.M0(2131746166, null));
                     return;
                 } else {
                     if (i14 < strArr.length) {
-                        j8Var.a(0, strArr[i14]);
+                        k8Var.a(0, strArr[i14]);
                         return;
                     }
                     try {
-                        j8Var.a(0, ((fx) arrayList.get(i14 - strArr.length)).b.title);
+                        k8Var.a(0, ((fx) arrayList.get(i14 - strArr.length)).b.title);
                         return;
                     } catch (Exception unused) {
-                        j8Var.a(0, "");
+                        k8Var.a(0, "");
                         return;
                     }
                 }
@@ -725,9 +725,9 @@ public final class bx extends bk0 {
         if (i7 == 0) {
             view = new zx(ryVar.getContext());
         } else if (i7 == 1) {
-            org.telegram.ui.Cells.j8 j8Var = new org.telegram.ui.Cells.j8(ryVar.getContext(), true, false, ryVar.a2, ryVar.j2);
-            j8Var.setOnIconClickListener(new n0(this, 14));
-            view = j8Var;
+            org.telegram.ui.Cells.k8 k8Var = new org.telegram.ui.Cells.k8(ryVar.getContext(), true, false, ryVar.a2, ryVar.j2);
+            k8Var.setOnIconClickListener(new n0(this, 14));
+            view = k8Var;
         } else if (i7 == 3) {
             view = new gx(ryVar, ryVar.getContext());
         } else if (i7 == 4) {

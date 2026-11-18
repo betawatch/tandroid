@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xn implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -56,14 +56,14 @@ public final /* synthetic */ class xn implements View.OnClickListener {
                 }
                 break;
             case 3:
-                ff0 ff0Var = new ff0(joVar.a0, 0, 0L);
-                ff0Var.m0(joVar.Z, joVar.m0);
-                joVar.presentFragment(ff0Var);
+                gf0 gf0Var = new gf0(joVar.a0, 0, 0L);
+                gf0Var.m0(joVar.Z, joVar.m0);
+                joVar.presentFragment(gf0Var);
                 break;
             default:
                 boolean z10 = !joVar.c0;
                 joVar.c0 = z10;
-                ((org.telegram.ui.Cells.r8) view).setChecked(z10);
+                ((org.telegram.ui.Cells.s8) view).setChecked(z10);
                 break;
         }
     }

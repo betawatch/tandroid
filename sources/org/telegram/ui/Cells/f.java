@@ -9,7 +9,7 @@ import org.telegram.ui.Components.o80;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -39,56 +39,56 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 2:
-                l1 l1Var = ((y1) this.b).e;
-                if (l1Var != null) {
-                    l1Var.m();
+                m1 m1Var = ((z1) this.b).e;
+                if (m1Var != null) {
+                    m1Var.m();
                     break;
                 }
                 break;
             case 3:
-                ((d2) this.b).a();
+                ((e2) this.b).a();
                 break;
             case 4:
-                org.telegram.messenger.g0.v1(((bi.u8) this.b).b.getEditText());
+                org.telegram.messenger.g0.v1(((bi.t8) this.b).b.getEditText());
                 break;
             case 5:
-                org.telegram.messenger.g0.v1(((k3) this.b).d);
+                org.telegram.messenger.g0.v1(((l3) this.b).d);
                 break;
             case 6:
-                ((r5) this.b).a.invalidate();
+                ((s5) this.b).a.invalidate();
                 break;
             case 7:
-                g6 g6Var = (g6) this.b;
-                if (!(g6Var.getParent() instanceof ck0)) {
-                    g6Var.callOnClick();
+                h6 h6Var = (h6) this.b;
+                if (!(h6Var.getParent() instanceof ck0)) {
+                    h6Var.callOnClick();
                     break;
                 } else {
-                    ((ck0) g6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(g6Var), g6Var);
+                    ((ck0) h6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(h6Var), h6Var);
                     break;
                 }
             case 8:
-                ((o7) this.b).h();
+                ((p7) this.b).h();
                 break;
             case 9:
-                v9 v9Var = (v9) this.b;
-                v9Var.C.invalidate();
-                v9Var.T();
+                w9 w9Var = (w9) this.b;
+                w9Var.C.invalidate();
+                w9Var.T();
                 break;
             case 10:
-                ((v9) ((f9) this.b).c).T();
+                ((w9) ((g9) this.b).c).T();
                 break;
             case 11:
-                aa aaVar = (aa) this.b;
-                aaVar.y = -1;
+                ba baVar = (ba) this.b;
+                baVar.y = -1;
                 int i7 = 0;
                 while (true) {
-                    q1[] q1VarArr = aaVar.n;
-                    if (i7 >= q1VarArr.length) {
+                    r1[] r1VarArr = baVar.n;
+                    if (i7 >= r1VarArr.length) {
                         break;
                     } else {
-                        q1 q1Var = q1VarArr[i7];
-                        if (q1Var != null) {
-                            q1Var.invalidate();
+                        r1 r1Var = r1VarArr[i7];
+                        if (r1Var != null) {
+                            r1Var.invalidate();
                         }
                         i7++;
                     }

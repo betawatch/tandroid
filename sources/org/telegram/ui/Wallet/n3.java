@@ -20,9 +20,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.a80;
+import org.telegram.ui.b80;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class n3 {
     public static void a(final int i7, final y10 y10Var, final q10 q10Var, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final s10 s10Var, final boolean z10, final boolean z11, final m.b3 b3Var) {
@@ -264,7 +264,7 @@ public abstract class n3 {
                                         g3 g3Var = new g3(i12, y10Var4, q10Var4, m3Var, s10Var4, z17, z18, b3Var4, 1);
                                         m3Var.a0 = 1;
                                         m3Var.c0 = g3Var;
-                                        m3Var.x0(new a80(b3Var4, z17, m3Var, 12));
+                                        m3Var.x0(new b80(b3Var4, z17, m3Var, 12));
                                         twoStepVerificationActivity4 = m3Var;
                                     } else {
                                         q10Var4 = q10Var5;

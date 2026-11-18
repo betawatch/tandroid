@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Path;
 import android.view.View;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t60 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class t60 implements org.telegram.messenger.x10 {
                 ((u60) this.d).y.addPath((Path) obj, this.b, this.c);
                 break;
             default:
-                ((org.telegram.ui.Cells.o7) this.d).n(this.b, this.c);
+                ((org.telegram.ui.Cells.p7) this.d).n(this.b, this.c);
                 break;
         }
     }

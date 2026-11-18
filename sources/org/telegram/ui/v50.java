@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public boolean E;
@@ -268,7 +268,7 @@ public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                         v50 v50Var = this.b;
                         if (!v50Var.E) {
                             v50Var.E = true;
-                            v50Var.presentFragment(new de0(), true);
+                            v50Var.presentFragment(new ee0(), true);
                             v50Var.N = true;
                             break;
                         }
@@ -280,7 +280,7 @@ public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                             org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, view.getContext(), null);
                             u1Var.j0 = false;
                             u1Var.r(1000L);
-                            org.telegram.messenger.ks.e().b(new org.telegram.messenger.js(v50Var2, u1Var, 1), org.telegram.messenger.ks.z4);
+                            org.telegram.messenger.ks.e().b(new org.telegram.messenger.js(v50Var2, u1Var, 1), org.telegram.messenger.ks.A4);
                             org.telegram.messenger.gd.E0().d(v50Var2.M, true, false, v50Var2.c);
                             break;
                         }
@@ -310,7 +310,7 @@ public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                         v50 v50Var = this.b;
                         if (!v50Var.E) {
                             v50Var.E = true;
-                            v50Var.presentFragment(new de0(), true);
+                            v50Var.presentFragment(new ee0(), true);
                             v50Var.N = true;
                             break;
                         }
@@ -322,7 +322,7 @@ public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                             org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, view.getContext(), null);
                             u1Var.j0 = false;
                             u1Var.r(1000L);
-                            org.telegram.messenger.ks.e().b(new org.telegram.messenger.js(v50Var2, u1Var, 1), org.telegram.messenger.ks.z4);
+                            org.telegram.messenger.ks.e().b(new org.telegram.messenger.js(v50Var2, u1Var, 1), org.telegram.messenger.ks.A4);
                             org.telegram.messenger.gd.E0().d(v50Var2.M, true, false, v50Var2.c);
                             break;
                         }
@@ -333,7 +333,7 @@ public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         float f10 = 4;
         this.s.addView(frameLayout, c8.ma.d(64, 64.0f, 53, 0.0f, f10, f10, 0.0f));
         this.fragmentView = scrollView;
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.A4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.B4);
         int i11 = this.c;
         org.telegram.messenger.ks.f(i11).c(this, org.telegram.messenger.ks.J2);
         ConnectionsManager.getInstance(i11).updateDcSettings();
@@ -346,7 +346,7 @@ public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.A4 || i7 == org.telegram.messenger.ks.J2) {
+        if (i7 == org.telegram.messenger.ks.B4 || i7 == org.telegram.messenger.ks.J2) {
             Z();
         }
     }
@@ -389,7 +389,7 @@ public final class v50 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         super.onFragmentDestroy();
         this.N = true;
         org.telegram.messenger.g0.r(this.Q);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.A4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.B4);
         org.telegram.messenger.ks.f(this.c).n(this, org.telegram.messenger.ks.J2);
         org.telegram.messenger.mp.g1().edit().putLong("intro_crashed_time", 0L).apply();
     }

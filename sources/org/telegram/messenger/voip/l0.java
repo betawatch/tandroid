@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.h01;
 import org.telegram.ui.Components.is;
 import org.telegram.ui.Components.iu0;
@@ -34,9 +34,9 @@ import org.telegram.ui.f40;
 import org.telegram.ui.hk0;
 import org.telegram.ui.mj0;
 import org.telegram.ui.sk;
-import org.telegram.ui.ve0;
+import org.telegram.ui.we0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -136,7 +136,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 iu0 iu0Var = (iu0) this.d;
                 boolean z16 = this.c;
                 int i18 = this.b;
-                q1 q1Var = (q1) this.e;
+                r1 r1Var = (r1) this.e;
                 if (z16 && iu0Var.R == null && iu0Var.S == null && iu0Var.Q == null) {
                     iu0Var.K = 2;
                     iu0Var.Y0 = true;
@@ -144,7 +144,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 iu0Var.W0 = false;
                 if (iu0Var.Z0 || !iu0Var.X0) {
                     iu0Var.V0 = iu0Var.j1[0];
-                    a6.q(i18).v(q1Var);
+                    a6.q(i18).v(r1Var);
                     iu0Var.I();
                     iu0Var.x();
                     break;
@@ -253,7 +253,7 @@ public final /* synthetic */ class l0 implements Runnable {
                                 urVar = j3;
                                 if (urVar != null) {
                                     try {
-                                        org.telegram.messenger.g0.g3(new ve0(10, hk0Var, urVar));
+                                        org.telegram.messenger.g0.g3(new we0(10, hk0Var, urVar));
                                         z19 = true;
                                     } catch (Throwable th2) {
                                         th = th2;
@@ -300,12 +300,12 @@ public final /* synthetic */ class l0 implements Runnable {
         this.b = i7;
     }
 
-    public /* synthetic */ l0(iu0 iu0Var, boolean z10, int i7, q1 q1Var) {
+    public /* synthetic */ l0(iu0 iu0Var, boolean z10, int i7, r1 r1Var) {
         this.a = 5;
         this.d = iu0Var;
         this.c = z10;
         this.b = i7;
-        this.e = q1Var;
+        this.e = r1Var;
     }
 
     public /* synthetic */ l0(z41 z41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i10) {

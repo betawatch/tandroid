@@ -80,7 +80,7 @@ import org.telegram.ui.rn;
 import org.telegram.ui.s00;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class pb extends s00 implements fs {
     public static DecimalFormat w0;
@@ -112,7 +112,7 @@ public final class pb extends s00 implements fs {
     public hi.d s0;
     public boolean t0;
     public boolean u0;
-    public bi.e8 v0;
+    public bi.d8 v0;
     public int b0 = -1;
     public final ca.r g0 = new ca.r(this, 24);
 
@@ -179,8 +179,8 @@ public final class pb extends s00 implements fs {
         final int i13;
         ?? r52;
         org.telegram.ui.ActionBar.h2 T;
-        bi.e8 e8Var = pbVar.v0;
-        if (e8Var == null || (G = e8Var.G(i7)) == null) {
+        bi.d8 d8Var = pbVar.v0;
+        if (d8Var == null || (G = d8Var.G(i7)) == null) {
             return;
         }
         int i14 = G.d;
@@ -210,7 +210,7 @@ public final class pb extends s00 implements fs {
         int i15 = 4;
         if (G.H(bb.class)) {
             if (G.H instanceof TL_stars.TL_starsTopupOption) {
-                x8.y(pbVar.currentAccount, false).f(pbVar.getParentActivity(), (TL_stars.TL_starsTopupOption) G.H, new bi.m6(i15, pbVar, G), null);
+                x8.y(pbVar.currentAccount, false).f(pbVar.getParentActivity(), (TL_stars.TL_starsTopupOption) G.H, new bi.l6(i15, pbVar, G), null);
                 return;
             }
             return;
@@ -1625,7 +1625,7 @@ public final class pb extends s00 implements fs {
                 kaVar.addView(q9Var, c8.ma.t(ks.q2, ks.q2, 17, 0, 20, 0, 0));
                 if (!TextUtils.isEmpty(tL_starGiftUnique.slug)) {
                     c8.ra.a(q9Var);
-                    q9Var.setOnClickListener(new bi.f5(context, i7, tL_starGiftUnique, 2));
+                    q9Var.setOnClickListener(new bi.e5(context, i7, tL_starGiftUnique, 2));
                 }
                 TextView b10 = c8.va.b(context, 20.0f, 0, true, null);
                 b10.setTextColor(-1);
@@ -2551,7 +2551,7 @@ public final class pb extends s00 implements fs {
             g1(q9Var2, q9Var2.getImageReceiver(), starsTransaction.premium_gift_months);
             g10.addView(q9Var2, c8.ma.t(ks.q2, ks.q2, 17, 0, -8, 0, 10));
         } else if (starsTransaction.posts_search) {
-            mq a11 = org.telegram.ui.Cells.s6.a(100, "search");
+            mq a11 = org.telegram.ui.Cells.t6.a(100, "search");
             int L3 = org.telegram.messenger.g0.L(40.0f);
             int L4 = org.telegram.messenger.g0.L(40.0f);
             a11.e = L3;
@@ -2627,7 +2627,7 @@ public final class pb extends s00 implements fs {
                         str = "";
                         z12 = z21;
                         z14 = z18;
-                        mq a12 = org.telegram.ui.Cells.s6.a(100, starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAppStore ? "ios" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerPlayMarket ? "android" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerPremiumBot ? "premiumbot" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerFragment ? "fragment" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAds ? "ads" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAPI ? "api" : "?");
+                        mq a12 = org.telegram.ui.Cells.t6.a(100, starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAppStore ? "ios" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerPlayMarket ? "android" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerPremiumBot ? "premiumbot" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerFragment ? "fragment" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAds ? "ads" : starsTransactionPeer4 instanceof TL_stars.TL_starsTransactionPeerAPI ? "api" : "?");
                         int L5 = org.telegram.messenger.g0.L(40.0f);
                         int L6 = org.telegram.messenger.g0.L(40.0f);
                         a12.e = L5;
@@ -3156,7 +3156,7 @@ public final class pb extends s00 implements fs {
         kVar.o(lrVar);
         kVar.n(350L);
         this.c.setItemAnimator(kVar);
-        this.c.setOnItemClickListener(new bi.i8(this, i10));
+        this.c.setOnItemClickListener(new bi.h8(this, i10));
         uz uzVar = new uz(getParentActivity());
         this.i0 = uzVar;
         this.s.addView(uzVar, c8.ma.c(-1.0f, -1));
@@ -3310,9 +3310,9 @@ public final class pb extends s00 implements fs {
         });
         this.j0.addView(this.s0, c8.ma.d(-1, 48.0f, 17, 20.0f, 8.0f, 20.0f, 0.0f));
         p1();
-        bi.e8 e8Var = this.v0;
-        if (e8Var != null) {
-            e8Var.O(false);
+        bi.d8 d8Var = this.v0;
+        if (d8Var != null) {
+            d8Var.O(false);
         }
         e0.g(this.currentAccount).r(getUserConfig().e());
         TLRPC.TL_payments_starsRevenueStats h = e0.g(this.currentAccount).h(getUserConfig().e(), false);
@@ -3330,9 +3330,9 @@ public final class pb extends s00 implements fs {
         }
         if (i7 == i11) {
             u0();
-            bi.e8 e8Var = this.v0;
-            if (e8Var != null) {
-                e8Var.O(true);
+            bi.d8 d8Var = this.v0;
+            if (d8Var != null) {
+                d8Var.O(true);
             }
             h0();
             return;
@@ -3342,9 +3342,9 @@ public final class pb extends s00 implements fs {
             if (this.t0 != y10.M(0)) {
                 this.t0 = y10.M(0);
                 u0();
-                bi.e8 e8Var2 = this.v0;
-                if (e8Var2 != null) {
-                    e8Var2.O(false);
+                bi.d8 d8Var2 = this.v0;
+                if (d8Var2 != null) {
+                    d8Var2.O(false);
                 }
                 h0();
                 return;
@@ -3352,9 +3352,9 @@ public final class pb extends s00 implements fs {
             return;
         }
         if (i7 == i12) {
-            bi.e8 e8Var3 = this.v0;
-            if (e8Var3 != null) {
-                e8Var3.O(true);
+            bi.d8 d8Var3 = this.v0;
+            if (d8Var3 != null) {
+                d8Var3.O(true);
                 return;
             }
             return;
@@ -3398,10 +3398,10 @@ public final class pb extends s00 implements fs {
 
     @Override // org.telegram.ui.s00
     public final v4.i0 k0() {
-        bi.e8 e8Var = new bi.e8(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new bi.b(this, 18), getResourceProvider(), 1);
-        this.v0 = e8Var;
-        e8Var.r = false;
-        return e8Var;
+        bi.d8 d8Var = new bi.d8(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new bi.b(this, 18), getResourceProvider(), 1);
+        this.v0 = d8Var;
+        d8Var.r = false;
+        return d8Var;
     }
 
     @Override // org.telegram.ui.s00

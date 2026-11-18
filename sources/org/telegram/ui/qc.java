@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class qc extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public TLRPC.EmojiStatus E;
@@ -359,8 +359,8 @@ public class qc extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
             ((ec) view).updateColors();
             return;
         }
-        if (view instanceof org.telegram.ui.Cells.m8) {
-            ((org.telegram.ui.Cells.m8) view).updateColors();
+        if (view instanceof org.telegram.ui.Cells.n8) {
+            ((org.telegram.ui.Cells.n8) view).updateColors();
         } else if (view instanceof hc) {
             ((hc) view).updateColors();
         } else if (view instanceof oc) {
@@ -1242,12 +1242,12 @@ public class qc extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
         View F02 = F0(this.U);
         View F03 = F0(this.V);
         View F04 = F0(this.X);
-        if (F0 instanceof org.telegram.ui.Cells.aa) {
-            org.telegram.ui.Cells.aa aaVar = (org.telegram.ui.Cells.aa) F0;
-            org.telegram.ui.Cells.q1[] cells = aaVar.getCells();
+        if (F0 instanceof org.telegram.ui.Cells.ba) {
+            org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) F0;
+            org.telegram.ui.Cells.r1[] cells = baVar.getCells();
             for (int i7 = 0; i7 < cells.length; i7++) {
-                org.telegram.ui.Cells.q1 q1Var = cells[i7];
-                if (q1Var != null && (messageObject = q1Var.getMessageObject()) != null) {
+                org.telegram.ui.Cells.r1 r1Var = cells[i7];
+                if (r1Var != null && (messageObject = r1Var.getMessageObject()) != null) {
                     messageObject.e1 = this.f;
                     messageObject.f1 = this.n;
                     cells[i7].setAvatar(messageObject);
@@ -1256,7 +1256,7 @@ public class qc extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
             }
             Drawable f10 = hi.w5.f(this.I, this.currentAccount, this.G, this.K);
             this.I = f10;
-            aaVar.setOverrideBackground(f10);
+            baVar.setOverrideBackground(f10);
         }
         if (F02 instanceof im0) {
             ((im0) F02).a(this.f, z10);
@@ -1457,10 +1457,10 @@ public class qc extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
             this.z0.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d7, this.resourceProvider));
             this.I = hi.w5.f(this.I, this.currentAccount, this.G, this.K);
             F0 = F0(this.T);
-            if (F0 instanceof org.telegram.ui.Cells.aa) {
+            if (F0 instanceof org.telegram.ui.Cells.ba) {
                 return;
             }
-            ((org.telegram.ui.Cells.aa) F0).setOverrideBackground(this.I);
+            ((org.telegram.ui.Cells.ba) F0).setOverrideBackground(this.I);
             return;
         }
         str = string;
@@ -1482,7 +1482,7 @@ public class qc extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
         this.z0.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d7, this.resourceProvider));
         this.I = hi.w5.f(this.I, this.currentAccount, this.G, this.K);
         F0 = F0(this.T);
-        if (F0 instanceof org.telegram.ui.Cells.aa) {
+        if (F0 instanceof org.telegram.ui.Cells.ba) {
         }
     }
 

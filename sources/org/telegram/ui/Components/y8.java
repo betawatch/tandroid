@@ -21,7 +21,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class y8 extends org.telegram.ui.ActionBar.h2 {
     public static final int[][] d0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -583,7 +583,7 @@ public final class y8 extends org.telegram.ui.ActionBar.h2 {
         this.H = ValueAnimator.ofFloat(this.F, z10 ? 1.0f : 0.0f);
         if (z11) {
             this.a.x = this.F;
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.t4, new Object[0]);
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
         }
         this.H.addUpdateListener(new ch.v(6, this, z11));
         this.H.addListener(new org.telegram.ui.ActionBar.g(this, z10, z11, i7));

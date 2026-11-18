@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                                     arrayList2.add(starGift4);
                                 }
                             }
-                            b5Var2.f0.a(arrayList2, new bi.m6(3, b5Var2, arrayList2), new ca.r(b5Var2, 18));
+                            b5Var2.f0.a(arrayList2, new bi.l6(3, b5Var2, arrayList2), new ca.r(b5Var2, 18));
                             break;
                         } else {
                             org.telegram.messenger.g0.F3(linearLayout);

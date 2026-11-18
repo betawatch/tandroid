@@ -24,7 +24,7 @@ import org.telegram.ui.Components.gt0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b9 implements Runnable {
     public final /* synthetic */ int a;
@@ -649,7 +649,7 @@ public final /* synthetic */ class b9 implements Runnable {
                 if (y10 != null && i10 > y10.max_read_id) {
                     y10.max_read_id = i10;
                     Collections.sort(p6Var.g, p6Var.J);
-                    ks.f(p6Var.a).k(ks.x5, new Object[0]);
+                    ks.f(p6Var.a).k(ks.y5, new Object[0]);
                     break;
                 }
                 break;
@@ -704,7 +704,7 @@ public final /* synthetic */ class b9 implements Runnable {
                 }
                 break;
             case 7:
-                k8.a aVar = ((org.telegram.ui.Cells.q1) obj).Xb;
+                k8.a aVar = ((org.telegram.ui.Cells.r1) obj).Xb;
                 if (aVar != null) {
                     if (i10 > 0) {
                         i10 = ((SparseIntArray) aVar.c).get(i10, 0);

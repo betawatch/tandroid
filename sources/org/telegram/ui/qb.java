@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qb extends rg.b {
     public int d = -1;
@@ -91,16 +91,16 @@ public final class qb extends rg.b {
             return;
         }
         if (i12 == 6) {
-            ((org.telegram.ui.Cells.z8) view).setText(((rb) arrayList.get(i7)).c);
+            ((org.telegram.ui.Cells.a9) view).setText(((rb) arrayList.get(i7)).c);
             return;
         }
         if (i12 == 9) {
-            org.telegram.ui.Cells.x4 x4Var = (org.telegram.ui.Cells.x4) view;
+            org.telegram.ui.Cells.y4 y4Var = (org.telegram.ui.Cells.y4) view;
             if (sbVar.E == 0) {
-                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(sbVar.s, "BoostingShowMoreBoosts", new Object[0]), false);
+                y4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(sbVar.s, "BoostingShowMoreBoosts", new Object[0]), false);
                 return;
             } else {
-                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(sbVar.x, "BoostingShowMoreGifts", new Object[0]), false);
+                y4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.gd.G(sbVar.x, "BoostingShowMoreGifts", new Object[0]), false);
                 return;
             }
         }
@@ -160,9 +160,9 @@ public final class qb extends rg.b {
             case 2:
                 Context context = viewGroup.getContext();
                 int i11 = org.telegram.ui.ActionBar.n6.a7;
-                View y6Var = new org.telegram.ui.Cells.y6(context, org.telegram.ui.ActionBar.n6.x0(null, i11, false), 0);
-                org.telegram.ui.ActionBar.u6.h(i11, y6Var, null);
-                view = y6Var;
+                View z6Var = new org.telegram.ui.Cells.z6(context, org.telegram.ui.ActionBar.n6.x0(null, i11, false), 0);
+                org.telegram.ui.ActionBar.u6.h(i11, z6Var, null);
+                view = z6Var;
                 break;
             case 3:
                 org.telegram.ui.Components.e80 e80Var = new org.telegram.ui.Components.e80(sbVar.getContext(), sbVar.c, null, false, false);
@@ -185,10 +185,10 @@ public final class qb extends rg.b {
                 view = new bh.b(sbVar.getContext());
                 break;
             case 6:
-                view = new org.telegram.ui.Cells.z8(20, viewGroup.getContext(), i6Var);
+                view = new org.telegram.ui.Cells.a9(20, viewGroup.getContext(), i6Var);
                 break;
             case 7:
-                view = new org.telegram.ui.Cells.v3(sbVar.getContext(), 8);
+                view = new org.telegram.ui.Cells.w3(sbVar.getContext(), 8);
                 break;
             case 8:
                 bi.p2 p2Var = new bi.p2(sbVar.getContext(), 10);
@@ -205,12 +205,12 @@ public final class qb extends rg.b {
                 view = m5Var;
                 break;
             case 10:
-                org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(sbVar.getContext());
-                m8Var.o(R.drawable.msg_gift_premium, org.telegram.messenger.gd.a0("BoostingGetBoostsViaGifts", null, 2131753510, new Object[0]), false);
-                m8Var.s = 64;
+                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(sbVar.getContext());
+                n8Var.o(R.drawable.msg_gift_premium, org.telegram.messenger.gd.a0("BoostingGetBoostsViaGifts", null, 2131753510, new Object[0]), false);
+                n8Var.s = 64;
                 int i12 = org.telegram.ui.ActionBar.n6.q6;
-                m8Var.g(i12, i12);
-                view = m8Var;
+                n8Var.g(i12, i12);
+                view = n8Var;
                 break;
             case 11:
                 view = new bh.c(sbVar.getContext());

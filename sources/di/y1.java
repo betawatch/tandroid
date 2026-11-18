@@ -6,18 +6,18 @@ import j$.util.Objects;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f6 b;
-    public final /* synthetic */ bi.b5[] c;
+    public final /* synthetic */ bi.a5[] c;
     public final /* synthetic */ TL_stars.TL_starGiftUnique d;
 
-    public /* synthetic */ y1(f6 f6Var, bi.b5[] b5VarArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i7) {
+    public /* synthetic */ y1(f6 f6Var, bi.a5[] a5VarArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i7) {
         this.a = i7;
         this.b = f6Var;
-        this.c = b5VarArr;
+        this.c = a5VarArr;
         this.d = tL_starGiftUnique;
     }
 
@@ -42,7 +42,7 @@ public final /* synthetic */ class y1 implements x10 {
                     TL_stars.updateStarGiftOnchainPrice updatestargiftonchainprice = new TL_stars.updateStarGiftOnchainPrice();
                     updatestargiftonchainprice.slug = tL_starGiftUnique.slug;
                     updatestargiftonchainprice.amount = longValue;
-                    bi.v4.o(context, i7, updatestargiftonchainprice, tL_starGiftUnique.onchain_sale ? Boolean.valueOf(tL_starGiftUnique.fixed_sale) : null, i6Var, g0Var, k10, new bi.c4(longValue, tL_starGiftUnique, context, i7, i6Var, bi.v4.h(tL_starGiftUnique), k1Var));
+                    bi.u4.o(context, i7, updatestargiftonchainprice, tL_starGiftUnique.onchain_sale ? Boolean.valueOf(tL_starGiftUnique.fixed_sale) : null, i6Var, g0Var, k10, new bi.j4(longValue, tL_starGiftUnique, context, i7, i6Var, bi.u4.h(tL_starGiftUnique), k1Var));
                     break;
                 }
                 break;
@@ -63,7 +63,7 @@ public final /* synthetic */ class y1 implements x10 {
                     TL_stars.updateStarGiftOnchainPrice updatestargiftonchainprice2 = new TL_stars.updateStarGiftOnchainPrice();
                     updatestargiftonchainprice2.slug = tL_starGiftUnique2.slug;
                     updatestargiftonchainprice2.amount = longValue2;
-                    bi.v4.o(context2, i10, updatestargiftonchainprice2, Boolean.TRUE, i6Var2, g0Var2, k11, new bi.c4(tL_starGiftUnique2, longValue2, context2, i10, i6Var2, bi.v4.h(tL_starGiftUnique2), k1Var2, 2));
+                    bi.u4.o(context2, i10, updatestargiftonchainprice2, Boolean.TRUE, i6Var2, g0Var2, k11, new bi.j4(tL_starGiftUnique2, longValue2, context2, i10, i6Var2, bi.u4.h(tL_starGiftUnique2), k1Var2));
                     break;
                 }
                 break;

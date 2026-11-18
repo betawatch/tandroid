@@ -28,7 +28,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public final ui.c E;
@@ -127,7 +127,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     public static void Z(lm0 lm0Var, boolean[] zArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, nl0 nl0Var, di.f5 f5Var, vf.b bVar) {
         zArr[0] = true;
         bVar.d();
-        di.x8.x(lm0Var.currentAccount, f5Var.a).h(f5Var.b, tL_starGiftUnique, j3, null, true, new bi.m6(25, bVar, nl0Var));
+        di.x8.x(lm0Var.currentAccount, f5Var.a).h(f5Var.b, tL_starGiftUnique, j3, null, true, new bi.l6(25, bVar, nl0Var));
     }
 
     public static void a0(lm0 lm0Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, nl0 nl0Var, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
@@ -342,7 +342,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         nl0 nl0Var = new nl0(this, 1);
         long e10 = org.telegram.messenger.j10.i(this.currentAccount).e();
         cg.b bVar = tL_starGiftUnique.resale_ton_only ? cg.b.b : cg.b.a;
-        di.x8.x(this.currentAccount, bVar).H(tL_starGiftUnique, e10, null, true, new bi.b8(this, bVar, tL_starGiftUnique, e10, nl0Var));
+        di.x8.x(this.currentAccount, bVar).H(tL_starGiftUnique, e10, null, true, new bi.a8(this, bVar, tL_starGiftUnique, e10, nl0Var));
     }
 
     public final void E0() {
@@ -580,7 +580,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                         lm0Var2.a0.setInterpolator(org.telegram.ui.Components.xs.e);
                         lm0Var2.a0.start();
                         frameLayout2.addView(lm0Var2.Y, new ViewGroup.LayoutParams(-1, -1));
-                        org.telegram.messenger.g0.g3(new hf0(lm0Var2, 13));
+                        org.telegram.messenger.g0.g3(new if0(lm0Var2, 13));
                         break;
                     default:
                         lm0Var.D0();
@@ -702,7 +702,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                         lm0Var2.a0.setInterpolator(org.telegram.ui.Components.xs.e);
                         lm0Var2.a0.start();
                         frameLayout22.addView(lm0Var2.Y, new ViewGroup.LayoutParams(-1, -1));
-                        org.telegram.messenger.g0.g3(new hf0(lm0Var2, 13));
+                        org.telegram.messenger.g0.g3(new if0(lm0Var2, 13));
                         break;
                     default:
                         lm0Var.D0();
@@ -784,7 +784,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
                         lm0Var2.a0.setInterpolator(org.telegram.ui.Components.xs.e);
                         lm0Var2.a0.start();
                         frameLayout22.addView(lm0Var2.Y, new ViewGroup.LayoutParams(-1, -1));
-                        org.telegram.messenger.g0.g3(new hf0(lm0Var2, 13));
+                        org.telegram.messenger.g0.g3(new if0(lm0Var2, 13));
                         break;
                     default:
                         lm0Var.D0();
@@ -813,7 +813,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
         if (i10 != this.currentAccount) {
             return;
         }
-        if (i7 == org.telegram.messenger.ks.h5) {
+        if (i7 == org.telegram.messenger.ks.i5) {
             this.h.f(true);
             this.n.f(true);
         } else if (i7 == org.telegram.messenger.ks.I3) {
@@ -887,7 +887,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
 
     @Override // org.telegram.ui.ActionBar.h2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, org.telegram.messenger.ks.h5);
+        getNotificationCenter().c(this, org.telegram.messenger.ks.i5);
         getNotificationCenter().c(this, org.telegram.messenger.ks.I3);
         getNotificationCenter().c(this, org.telegram.messenger.ks.H3);
         setBulletinDelegate(new bi.t(12));
@@ -901,7 +901,7 @@ public final class lm0 extends org.telegram.ui.ActionBar.h2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, org.telegram.messenger.ks.h5);
+        getNotificationCenter().n(this, org.telegram.messenger.ks.i5);
         getNotificationCenter().n(this, org.telegram.messenger.ks.I3);
         getNotificationCenter().n(this, org.telegram.messenger.ks.H3);
     }

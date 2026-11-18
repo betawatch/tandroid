@@ -4,13 +4,13 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.Random;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class h8 {
     public float f;
     public boolean g;
     public final Paint h;
-    public org.telegram.ui.Cells.q1 i;
+    public org.telegram.ui.Cells.r1 i;
     public int p;
     public int q;
     public float r;
@@ -164,8 +164,8 @@ public final class h8 {
         }
     }
 
-    public final void d(org.telegram.ui.Cells.q1 q1Var) {
-        this.i = q1Var;
+    public final void d(org.telegram.ui.Cells.r1 r1Var) {
+        this.i = r1Var;
     }
 
     public final void e(boolean z10, float[] fArr) {

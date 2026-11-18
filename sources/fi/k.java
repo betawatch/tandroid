@@ -11,7 +11,7 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.xi;
 import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class k extends v4.o0 {
     public final /* synthetic */ int a;
@@ -22,13 +22,13 @@ public final class k extends v4.o0 {
 
     @Override // v4.o0
     public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
-        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.r1 r1Var;
         aj currentMessagesGroup;
-        org.telegram.ui.Cells.q1 q1Var2;
+        org.telegram.ui.Cells.r1 r1Var2;
         aj currentMessagesGroup2;
-        org.telegram.ui.Cells.q1 q1Var3;
+        org.telegram.ui.Cells.r1 r1Var3;
         aj currentMessagesGroup3;
-        org.telegram.ui.Cells.q1 q1Var4;
+        org.telegram.ui.Cells.r1 r1Var4;
         aj currentMessagesGroup4;
         switch (this.a) {
             case 0:
@@ -78,13 +78,13 @@ public final class k extends v4.o0 {
             case 5:
                 int i7 = 0;
                 rect.bottom = 0;
-                if ((view instanceof org.telegram.ui.Cells.q1) && (currentMessagesGroup = (q1Var = (org.telegram.ui.Cells.q1) view).getCurrentMessagesGroup()) != null) {
+                if ((view instanceof org.telegram.ui.Cells.r1) && (currentMessagesGroup = (r1Var = (org.telegram.ui.Cells.r1) view).getCurrentMessagesGroup()) != null) {
                     ArrayList arrayList = currentMessagesGroup.e;
-                    xi currentPosition = q1Var.getCurrentPosition();
+                    xi currentPosition = r1Var.getCurrentPosition();
                     if (currentPosition != null && currentPosition.m != null) {
                         Point point = org.telegram.messenger.g0.q;
                         float max = Math.max(point.x, point.y) * 0.5f;
-                        int extraInsetHeight = q1Var.getExtraInsetHeight();
+                        int extraInsetHeight = r1Var.getExtraInsetHeight();
                         int i10 = 0;
                         while (true) {
                             if (i10 >= currentPosition.m.length) {
@@ -121,13 +121,13 @@ public final class k extends v4.o0 {
             case 8:
                 int i11 = 0;
                 rect.bottom = 0;
-                if ((view instanceof org.telegram.ui.Cells.q1) && (currentMessagesGroup2 = (q1Var2 = (org.telegram.ui.Cells.q1) view).getCurrentMessagesGroup()) != null) {
+                if ((view instanceof org.telegram.ui.Cells.r1) && (currentMessagesGroup2 = (r1Var2 = (org.telegram.ui.Cells.r1) view).getCurrentMessagesGroup()) != null) {
                     ArrayList arrayList2 = currentMessagesGroup2.e;
-                    xi currentPosition2 = q1Var2.getCurrentPosition();
+                    xi currentPosition2 = r1Var2.getCurrentPosition();
                     if (currentPosition2 != null && currentPosition2.m != null) {
                         Point point2 = org.telegram.messenger.g0.q;
                         float max2 = Math.max(point2.x, point2.y) * 0.5f;
-                        int extraInsetHeight2 = q1Var2.getExtraInsetHeight();
+                        int extraInsetHeight2 = r1Var2.getExtraInsetHeight();
                         int i12 = 0;
                         while (true) {
                             if (i12 >= currentPosition2.m.length) {
@@ -206,13 +206,13 @@ public final class k extends v4.o0 {
             case 13:
                 int i13 = 0;
                 rect.bottom = 0;
-                if ((view instanceof org.telegram.ui.Cells.q1) && (currentMessagesGroup3 = (q1Var3 = (org.telegram.ui.Cells.q1) view).getCurrentMessagesGroup()) != null) {
+                if ((view instanceof org.telegram.ui.Cells.r1) && (currentMessagesGroup3 = (r1Var3 = (org.telegram.ui.Cells.r1) view).getCurrentMessagesGroup()) != null) {
                     ArrayList arrayList3 = currentMessagesGroup3.e;
-                    xi currentPosition3 = q1Var3.getCurrentPosition();
+                    xi currentPosition3 = r1Var3.getCurrentPosition();
                     if (currentPosition3 != null && currentPosition3.m != null) {
                         Point point3 = org.telegram.messenger.g0.q;
                         float max3 = Math.max(point3.x, point3.y) * 0.5f;
-                        int extraInsetHeight3 = q1Var3.getExtraInsetHeight();
+                        int extraInsetHeight3 = r1Var3.getExtraInsetHeight();
                         int i14 = 0;
                         while (true) {
                             if (i14 >= currentPosition3.m.length) {
@@ -257,13 +257,13 @@ public final class k extends v4.o0 {
             default:
                 int i15 = 0;
                 rect.bottom = 0;
-                if ((view instanceof org.telegram.ui.Cells.q1) && (currentMessagesGroup4 = (q1Var4 = (org.telegram.ui.Cells.q1) view).getCurrentMessagesGroup()) != null) {
+                if ((view instanceof org.telegram.ui.Cells.r1) && (currentMessagesGroup4 = (r1Var4 = (org.telegram.ui.Cells.r1) view).getCurrentMessagesGroup()) != null) {
                     ArrayList arrayList4 = currentMessagesGroup4.e;
-                    xi currentPosition4 = q1Var4.getCurrentPosition();
+                    xi currentPosition4 = r1Var4.getCurrentPosition();
                     if (currentPosition4 != null && currentPosition4.m != null) {
                         Point point4 = org.telegram.messenger.g0.q;
                         float max4 = Math.max(point4.x, point4.y) * 0.5f;
-                        int extraInsetHeight4 = q1Var4.getExtraInsetHeight();
+                        int extraInsetHeight4 = r1Var4.getExtraInsetHeight();
                         int i16 = 0;
                         while (true) {
                             if (i16 >= currentPosition4.m.length) {
@@ -305,7 +305,7 @@ public final class k extends v4.o0 {
                 while (i10 < i7) {
                     View childAt = recyclerView.getChildAt(i10);
                     View childAt2 = i10 < childCount + (-2) ? recyclerView.getChildAt(i10 + 1) : null;
-                    if (RecyclerView.R(childAt) >= 0 && !(childAt instanceof org.telegram.ui.Cells.x3) && !(childAt2 instanceof org.telegram.ui.Cells.x3)) {
+                    if (RecyclerView.R(childAt) >= 0 && !(childAt instanceof org.telegram.ui.Cells.y3) && !(childAt2 instanceof org.telegram.ui.Cells.y3)) {
                         float bottom = childAt.getBottom();
                         canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), bottom, width - (gd.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), bottom, org.telegram.ui.ActionBar.n6.k0);
                     }

@@ -29,8 +29,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.e5;
-import bi.j5;
+import bi.d5;
+import bi.i5;
 import c8.ma;
 import c8.ne;
 import com.google.mlkit.vision.label.internal.ImageLabelerImpl;
@@ -63,17 +63,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mz0;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 import org.telegram.ui.e31;
 import org.telegram.ui.jw0;
 import org.telegram.ui.on0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements fs {
     public static final /* synthetic */ int s0 = 0;
@@ -193,7 +193,7 @@ public final class e2 extends FrameLayout implements fs {
         m1Var.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         m1Var.b(0.33f, 10.0f);
         m1Var.setBrushWeight(this.G);
-        m1Var.setValueOverride(new b5(this));
+        m1Var.setValueOverride(new c5(this));
         m1Var.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         m1Var.setAlpha(0.0f);
         addView(m1Var, ma.c(-1.0f, -1));
@@ -496,7 +496,7 @@ public final class e2 extends FrameLayout implements fs {
         if (c2Var.m != null) {
             h();
             c2Var.m.a(c2Var.b, c2Var.e.document);
-            org.telegram.messenger.g0.h3(new cd0(25), 250L);
+            org.telegram.messenger.g0.h3(new dd0(25), 250L);
             return;
         }
         final int i11 = 0;
@@ -2774,7 +2774,7 @@ public final class e2 extends FrameLayout implements fs {
         this.J = bitmap;
         this.K = i7;
         this.d0 = null;
-        e5 e5Var = new e5(this, i7, on0Var, 6);
+        d5 d5Var = new d5(this, i7, on0Var, 6);
         this.y = true;
         ia.a aVar = new ia.a();
         aVar.b = true;
@@ -2792,11 +2792,11 @@ public final class e2 extends FrameLayout implements fs {
             d2Var.b = (bitmap2.getWidth() - d2Var.d) / 2;
             d2Var.c = (bitmap2.getHeight() - d2Var.e) / 2;
             arrayList.add(d2Var);
-            e5Var.a(arrayList);
+            d5Var.a(arrayList);
             return;
         }
         ub.a a11 = ub.a.a(i7, bitmap);
-        a10.h(a11).addOnSuccessListener(new z1(e5Var, 0)).addOnFailureListener(new j5(this, bitmap, i7, on0Var, e5Var, 6));
+        a10.h(a11).addOnSuccessListener(new z1(d5Var, 0)).addOnFailureListener(new i5(this, bitmap, i7, on0Var, d5Var, 6));
         if (this.d0 == null) {
             xb.a aVar2 = xb.a.b;
             q6.m.i(aVar2, "options cannot be null");

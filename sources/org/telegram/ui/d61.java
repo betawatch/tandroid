@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class d61 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -334,11 +334,11 @@ public final class d61 extends LinearLayout {
                 super.invalidate();
                 int i7 = 0;
                 while (true) {
-                    org.telegram.ui.Cells.w0[] w0VarArr = (org.telegram.ui.Cells.w0[]) this.b;
-                    if (i7 >= w0VarArr.length) {
+                    org.telegram.ui.Cells.x0[] x0VarArr = (org.telegram.ui.Cells.x0[]) this.b;
+                    if (i7 >= x0VarArr.length) {
                         break;
                     } else {
-                        w0VarArr[i7].invalidate();
+                        x0VarArr[i7].invalidate();
                         i7++;
                     }
                 }
@@ -820,16 +820,16 @@ public final class d61 extends LinearLayout {
             }
         });
         c14.setSelectorColor(268435455);
-        View hh0Var = new hh0(contextThemeWrapper, 8);
-        hh0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
-        hh0Var.setBackgroundColor(-15198184);
-        addView(hh0Var);
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) hh0Var.getLayoutParams();
+        View ih0Var = new ih0(contextThemeWrapper, 8);
+        ih0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
+        ih0Var.setBackgroundColor(-15198184);
+        addView(ih0Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ih0Var.getLayoutParams();
         if (org.telegram.messenger.gd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
         layoutParams.height = org.telegram.messenger.g0.L(8.0f);
-        hh0Var.setLayoutParams(layoutParams);
+        ih0Var.setLayoutParams(layoutParams);
     }
 }

@@ -34,7 +34,7 @@ import org.telegram.ui.Components.kk0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.wy;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class a5 extends FrameLayout implements org.telegram.ui.ActionBar.c6, fs {
     public h5 E;
@@ -219,7 +219,7 @@ public abstract class a5 extends FrameLayout implements org.telegram.ui.ActionBa
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int R;
         int i11 = 0;
-        if (i7 == ks.x5) {
+        if (i7 == ks.y5) {
             if (this.E.b != null) {
                 int i12 = this.w;
                 TL_stories.PeerStories y10 = mp.u1(i12).i0.y(j10.i(i12).n);
@@ -251,10 +251,10 @@ public abstract class a5 extends FrameLayout implements org.telegram.ui.ActionBa
                 return;
             }
             View childAt = h4Var.getChildAt(i11);
-            if ((childAt instanceof org.telegram.ui.Cells.m6) && (R = RecyclerView.R(childAt)) >= 0) {
+            if ((childAt instanceof org.telegram.ui.Cells.n6) && (R = RecyclerView.R(childAt)) >= 0) {
                 w4 w4Var = this.x;
                 if (R < w4Var.c.size()) {
-                    ((org.telegram.ui.Cells.m6) childAt).a(true, d(((r4) w4Var.c.get(R)).b) ? 1.0f : 0.5f);
+                    ((org.telegram.ui.Cells.n6) childAt).a(true, d(((r4) w4Var.c.get(R)).b) ? 1.0f : 0.5f);
                 }
             }
             i11++;
@@ -564,7 +564,7 @@ public abstract class a5 extends FrameLayout implements org.telegram.ui.ActionBa
         }
         this.x.E();
         int i7 = this.w;
-        ks.f(i7).c(this, ks.x5);
+        ks.f(i7).c(this, ks.y5);
         ks.f(i7).c(this, ks.c3);
         setTag(R.id.bulletin_delegate_tag, new bi.e1(this, 3));
     }
@@ -578,7 +578,7 @@ public abstract class a5 extends FrameLayout implements org.telegram.ui.ActionBa
             z4Var.r.remove(this);
         }
         int i7 = this.w;
-        ks.f(i7).n(this, ks.x5);
+        ks.f(i7).n(this, ks.y5);
         ks.f(i7).n(this, ks.c3);
         setTag(R.id.bulletin_delegate_tag, null);
     }

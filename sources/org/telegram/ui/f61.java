@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewParent;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class f61 extends org.telegram.ui.Components.ck0 {
     public final /* synthetic */ int f3;
@@ -118,13 +118,13 @@ public final class f61 extends org.telegram.ui.Components.ck0 {
     public void r0(View view, View view2) {
         switch (this.f3) {
             case 5:
-                if (view instanceof org.telegram.ui.Cells.a6) {
+                if (view instanceof org.telegram.ui.Cells.b6) {
                     super.r0(view, view2);
                     break;
                 }
                 break;
             case 12:
-                if (view instanceof org.telegram.ui.Cells.a6) {
+                if (view instanceof org.telegram.ui.Cells.b6) {
                     super.r0(view, view2);
                     break;
                 }

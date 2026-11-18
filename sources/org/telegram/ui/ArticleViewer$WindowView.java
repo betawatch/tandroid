@@ -24,7 +24,7 @@ import java.util.Map;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public int E;
@@ -153,8 +153,8 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                     velocityTracker3.recycle();
                     this.s = null;
                 }
-                org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
-                if (i9Var != null && !i9Var.x()) {
+                org.telegram.ui.Cells.j9 j9Var = g4Var.Q0;
+                if (j9Var != null && !j9Var.x()) {
                     g4Var.Q0.f(false);
                 }
             }
@@ -283,7 +283,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
             motionEvent.offsetLocation(-g4Var.h0.getX(), -g4Var.h0.getY());
             return g4Var.S0.g(motionEvent);
         }
-        org.telegram.ui.Cells.u9 n10 = g4Var.Q0.n(getContext());
+        org.telegram.ui.Cells.v9 n10 = g4Var.Q0.n(getContext());
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.offsetLocation(-g4Var.h0.getX(), -g4Var.h0.getY());
         if (!g4Var.Q0.x() || !g4Var.Q0.n(getContext()).onTouchEvent(obtain)) {

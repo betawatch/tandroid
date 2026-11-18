@@ -24,7 +24,6 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.e6;
 import c8.ea;
 import c8.ha;
 import c8.ma;
@@ -66,10 +65,10 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.t9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.v9;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.mk0;
@@ -77,7 +76,7 @@ import org.telegram.ui.Components.y60;
 import org.telegram.ui.Components.z41;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class s3 extends e51 {
     public static final ArrayList A4 = new ArrayList();
@@ -138,7 +137,7 @@ public final class s3 extends e51 {
     public final q2 u4;
     public final g3 v3;
     public final c3 v4;
-    public final u9 w3;
+    public final v9 w3;
     public final h9.g1 w4;
     public int x3;
     public final ArrayList x4;
@@ -191,11 +190,11 @@ public final class s3 extends e51 {
         this.v3 = g3Var;
         g3Var.S(this);
         g3Var.z0 = this.f3;
-        u9 n10 = g3Var.n(context);
+        v9 n10 = g3Var.n(context);
         this.w3 = n10;
         org.telegram.messenger.g0.E2(n10);
         g3Var.D = new i3(this, q3Var);
-        j(new e6(2, this, q3Var));
+        j(new bi.d6(2, this, q3Var));
         this.R3 = new e2(g1Var);
     }
 
@@ -8205,7 +8204,7 @@ public final class s3 extends e51 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:33:0x01d6, code lost:
     
-        r0.w0.put(65536 + r2, org.telegram.ui.Cells.i9.Y(r7));
+        r0.w0.put(65536 + r2, org.telegram.ui.Cells.j9.Y(r7));
         r3.put(r2, java.lang.Math.max(2, r3.get(r2)));
      */
     /* JADX WARN: Code restructure failed: missing block: B:38:0x01f0, code lost:
@@ -8255,11 +8254,11 @@ public final class s3 extends e51 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0237, code lost:
     
-        if ((r10 instanceof org.telegram.ui.Cells.h9) == false) goto L148;
+        if ((r10 instanceof org.telegram.ui.Cells.i9) == false) goto L148;
      */
     /* JADX WARN: Code restructure failed: missing block: B:54:0x0239, code lost:
     
-        r10 = (org.telegram.ui.Cells.h9) r10;
+        r10 = (org.telegram.ui.Cells.i9) r10;
      */
     /* JADX WARN: Code restructure failed: missing block: B:55:0x023f, code lost:
     
@@ -8353,7 +8352,7 @@ public final class s3 extends e51 {
         boolean x10 = g3Var.x();
         SparseIntArray sparseIntArray = g3Var.y0;
         org.telegram.ui.Cells.f fVar = g3Var.m0;
-        h9 h9Var = null;
+        i9 i9Var = null;
         if (x10) {
             int i7 = g3Var.p0;
             if (i7 == g3Var.s0) {
@@ -8380,15 +8379,15 @@ public final class s3 extends e51 {
                         arrayList.clear();
                         l5Var.k(arrayList);
                         if (!arrayList.isEmpty() && arrayList.size() > 0) {
-                            g3Var.a = ((t9) arrayList.get(0)).getX();
-                            g3Var.b = ((t9) arrayList.get(0)).getY();
+                            g3Var.a = ((u9) arrayList.get(0)).getX();
+                            g3Var.b = ((u9) arrayList.get(0)).getY();
                         } else if (!arrayList.isEmpty()) {
-                            g3Var.a = ((t9) arrayList.get(0)).getX();
-                            g3Var.b = ((t9) arrayList.get(0)).getY();
+                            g3Var.a = ((u9) arrayList.get(0)).getX();
+                            g3Var.b = ((u9) arrayList.get(0)).getY();
                         }
-                        u9 u9Var = g3Var.C;
-                        if (u9Var != null) {
-                            u9Var.setVisibility(0);
+                        v9 v9Var = g3Var.C;
+                        if (v9Var != null) {
+                            v9Var.setVisibility(0);
                         }
                         g3Var.U();
                         g3Var.w();
@@ -8437,9 +8436,9 @@ public final class s3 extends e51 {
                     } else {
                         i0Var = (i0) S2;
                     }
-                    if (i0Var instanceof h9) {
+                    if (i0Var instanceof i9) {
                         S2.setSelection(S2.getSelectionEnd());
-                        z11 = g3Var.j0((h9) i0Var, 0, 0, length);
+                        z11 = g3Var.j0((i9) i0Var, 0, 0, length);
                     } else {
                         ViewParent parent2 = S2.getParent();
                         while (true) {
@@ -11200,7 +11199,7 @@ public final class s3 extends e51 {
         return this.w3;
     }
 
-    public i9 getTextSelectionHelper() {
+    public j9 getTextSelectionHelper() {
         return this.v3;
     }
 
@@ -11607,8 +11606,8 @@ public final class s3 extends e51 {
                                             }
                                             if (g3Var.j0(z5Var, 0, max2, length2)) {
                                                 KeyEvent.Callback C12 = C1(aVar2);
-                                                if (C12 instanceof h9) {
-                                                    g3Var.b0(0, 0, (h9) C12);
+                                                if (C12 instanceof i9) {
+                                                    g3Var.b0(0, 0, (i9) C12);
                                                     break;
                                                 } else {
                                                     v0(i25);
@@ -11618,8 +11617,8 @@ public final class s3 extends e51 {
                                             }
                                         } else if (g3Var.j0(z5Var, 0, max2, max2 > 0 ? 0 : 1)) {
                                             KeyEvent.Callback C13 = C1(aVar2);
-                                            if (C13 instanceof h9) {
-                                                g3Var.b0(0, C13 instanceof z5 ? ((z5) C13).getEditText().length() : 0, (h9) C13);
+                                            if (C13 instanceof i9) {
+                                                g3Var.b0(0, C13 instanceof z5 ? ((z5) C13).getEditText().length() : 0, (i9) C13);
                                                 break;
                                             } else {
                                                 v0(i25);
@@ -11976,8 +11975,8 @@ public final class s3 extends e51 {
                                                     v0(i17);
                                                 }
                                                 KeyEvent.Callback D42 = D4(i17);
-                                                if (D42 instanceof h9) {
-                                                    b02 = g3Var.b0(i18, i16, (h9) D42);
+                                                if (D42 instanceof i9) {
+                                                    b02 = g3Var.b0(i18, i16, (i9) D42);
                                                     break;
                                                 } else {
                                                     post(new hi.c0(this, i17, i18, i16, 1));
@@ -12430,9 +12429,9 @@ public final class s3 extends e51 {
                         g3Var.i = false;
                         g3Var.R = false;
                         g3Var.k = false;
-                        u9 u9Var = g3Var.C;
-                        if (u9Var != null) {
-                            u9Var.invalidate();
+                        v9 v9Var = g3Var.C;
+                        if (v9Var != null) {
+                            v9Var.invalidate();
                         }
                         org.telegram.messenger.g0.r(fVar);
                         org.telegram.messenger.g0.g3(fVar);

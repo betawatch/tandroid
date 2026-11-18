@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.gi0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yx implements Runnable {
     public final /* synthetic */ int a;
@@ -397,7 +397,7 @@ public final /* synthetic */ class yx implements Runnable {
                         if (i25 != i26) {
                             dialog2.unread_reactions_count = i26;
                             arrayList2 = arrayList13;
-                            mpVar.getNotificationCenter().k(ks.a5, Long.valueOf(dialog2.id), 0L, Integer.valueOf(dialog2.unread_reactions_count), null);
+                            mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(dialog2.id), 0L, Integer.valueOf(dialog2.unread_reactions_count), null);
                         } else {
                             arrayList2 = arrayList13;
                         }
@@ -405,7 +405,7 @@ public final /* synthetic */ class yx implements Runnable {
                         int i28 = dialog.unread_poll_votes_count;
                         if (i27 != i28) {
                             dialog2.unread_poll_votes_count = i28;
-                            mpVar.getNotificationCenter().k(ks.b5, Long.valueOf(dialog2.id), 0L, Integer.valueOf(dialog2.unread_poll_votes_count), null);
+                            mpVar.getNotificationCenter().k(ks.c5, Long.valueOf(dialog2.id), 0L, Integer.valueOf(dialog2.unread_poll_votes_count), null);
                         }
                         ArrayList arrayList14 = (ArrayList) hVar7.f(j13);
                         for (int i29 = 0; arrayList14 != null && i29 < arrayList14.size(); i29++) {

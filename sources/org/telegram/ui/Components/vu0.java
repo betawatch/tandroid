@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.os.Build;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vu0 {
     public static final int[] T = {-10504961, -13056257, -9445121, -5841665, -11544336, -7362817, -8468225, -3870977};
@@ -440,7 +440,7 @@ public final class vu0 {
         paint2.setStrokeWidth(f36 * 1.9f);
         canvas.drawPoints(fArr3, 0, this.B, paint2);
         paint.setColor(-1);
-        paint.setAlpha(this.M ? 235 : org.telegram.messenger.ks.e4);
+        paint.setAlpha(this.M ? org.telegram.messenger.ks.L3 : org.telegram.messenger.ks.e4);
         paint.setStrokeWidth(Math.max(1.0f, f36 * 0.75f));
         canvas.drawPoints(fArr3, 0, this.B, paint);
         return true;

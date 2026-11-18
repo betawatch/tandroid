@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.text.SpannableStringBuilder;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class yz implements org.telegram.ui.Cells.j7 {
+public final class yz implements org.telegram.ui.Cells.k7 {
     public final /* synthetic */ zz a;
 
     public yz(zz zzVar) {
         this.a = zzVar;
     }
 
-    @Override // org.telegram.ui.Cells.j7
+    @Override // org.telegram.ui.Cells.k7
     public final void a(String str, boolean z10) {
         c00 c00Var = this.a.w;
         if (!z10) {
@@ -30,12 +30,12 @@ public final class yz implements org.telegram.ui.Cells.j7 {
         c00Var.M.showDialog(j3);
     }
 
-    @Override // org.telegram.ui.Cells.j7
+    @Override // org.telegram.ui.Cells.k7
     public final boolean b() {
         return !this.a.w.p0.V1();
     }
 
-    @Override // org.telegram.ui.Cells.j7
+    @Override // org.telegram.ui.Cells.k7
     public final void c(TLRPC.WebPage webPage, org.telegram.messenger.fj fjVar) {
         c00 c00Var = this.a.w;
         SpannableStringBuilder[] spannableStringBuilderArr = c00.t0;

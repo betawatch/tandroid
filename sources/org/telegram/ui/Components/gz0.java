@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.Choreographer;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class gz0 implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class gz0 implements Choreographer.FrameCallback {
                 }
                 break;
             default:
-                r1.a aVar = (r1.a) ((of) ((org.telegram.ui.md0) this.b).b).b;
+                r1.a aVar = (r1.a) ((of) ((org.telegram.ui.nd0) this.b).b).b;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = aVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
@@ -115,10 +115,10 @@ public final class gz0 implements Choreographer.FrameCallback {
                 }
                 if (arrayList.size() > 0) {
                     if (aVar.d == null) {
-                        aVar.d = new org.telegram.ui.md0(aVar.c);
+                        aVar.d = new org.telegram.ui.nd0(aVar.c);
                     }
-                    org.telegram.ui.md0 md0Var = aVar.d;
-                    ((Choreographer) md0Var.c).postFrameCallback((gz0) md0Var.d);
+                    org.telegram.ui.nd0 nd0Var = aVar.d;
+                    ((Choreographer) nd0Var.c).postFrameCallback((gz0) nd0Var.d);
                     break;
                 }
                 break;

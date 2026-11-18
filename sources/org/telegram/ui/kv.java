@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class kv extends jg.m {
     public final /* synthetic */ bx c0;
@@ -80,27 +80,27 @@ public final class kv extends jg.m {
         }
     }
 
-    @Override // jg.m, org.telegram.ui.Cells.p2
-    public final void l(org.telegram.ui.Cells.t2 t2Var) {
+    @Override // jg.m, org.telegram.ui.Cells.q2
+    public final void l(org.telegram.ui.Cells.u2 u2Var) {
         bx bxVar = this.c0;
         bxVar.a.getClass();
-        this.d0.F4(t2Var, RecyclerView.R(t2Var), 0.0f, bxVar.d);
+        this.d0.F4(u2Var, RecyclerView.R(u2Var), 0.0f, bxVar.d);
     }
 
-    @Override // jg.m, org.telegram.ui.Cells.p2
-    public final void r(org.telegram.ui.Cells.t2 t2Var) {
+    @Override // jg.m, org.telegram.ui.Cells.q2
+    public final void r(org.telegram.ui.Cells.u2 u2Var) {
         int i7;
-        if (t2Var.getMessage() != null) {
+        if (u2Var.getMessage() != null) {
             cx cxVar = this.d0;
             org.telegram.messenger.e00 e00Var = cxVar.getMessagesController().t7;
-            long j3 = -t2Var.getDialogId();
+            long j3 = -u2Var.getDialogId();
             i7 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
-            TLRPC.TL_forumTopic f10 = e00Var.f(j3, org.telegram.messenger.fj.b2(i7, t2Var.getMessage().k, true, false));
+            TLRPC.TL_forumTopic f10 = e00Var.f(j3, org.telegram.messenger.fj.b2(i7, u2Var.getMessage().k, true, false));
             if (f10 != null) {
                 if (cxVar.n2) {
-                    cxVar.a4(t2Var.getDialogId(), f10.id, false, null);
+                    cxVar.a4(u2Var.getDialogId(), f10.id, false, null);
                 } else {
-                    qg.c.n(cxVar, -t2Var.getDialogId(), f10, 0);
+                    qg.c.n(cxVar, -u2Var.getDialogId(), f10, 0);
                 }
             }
         }

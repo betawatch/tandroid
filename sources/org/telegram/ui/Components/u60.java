@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class u60 extends View {
     public final int[] E;
@@ -61,7 +61,7 @@ public final class u60 extends View {
             this.f = f10;
         }
         this.h = i0.a.o(0, y60Var.s);
-        if (y60Var.t && (view instanceof org.telegram.ui.Cells.qa) && (y60Var.c instanceof ProfileActivity)) {
+        if (y60Var.t && (view instanceof org.telegram.ui.Cells.ra) && (y60Var.c instanceof ProfileActivity)) {
             this.b = new Paint(3);
             Bitmap createBitmap = Bitmap.createBitmap(rect.width() + view.getWidth(), rect.height() + view.getHeight(), Bitmap.Config.ARGB_8888);
             this.a = createBitmap;
@@ -304,7 +304,7 @@ public final class u60 extends View {
                     path.addRoundRect(rectF3, f35, f35, Path.Direction.CW);
                     canvas2.clipPath(path);
                 }
-                if (!(view instanceof org.telegram.ui.Cells.o7)) {
+                if (!(view instanceof org.telegram.ui.Cells.p7)) {
                     iArr3 = iArr;
                     iArr4 = iArr2;
                     if (!(view instanceof bi.c3) || y60Var.N == 0 || y60Var.O == 0) {
@@ -337,7 +337,7 @@ public final class u60 extends View {
                         canvas2 = canvas;
                     }
                 } else if (view.getAlpha() >= 1.0f) {
-                    ((org.telegram.ui.Cells.o7) view).a(canvas2, f30, f29, this.x);
+                    ((org.telegram.ui.Cells.p7) view).a(canvas2, f30, f29, this.x);
                     u60Var = this;
                     iArr3 = iArr;
                     iArr4 = iArr2;
@@ -347,7 +347,7 @@ public final class u60 extends View {
                     canvas2.saveLayerAlpha(0.0f, 0.0f, f30, f29, (int) (this.x * f10), 31);
                     float T13 = org.telegram.messenger.g0.T1(1.0f, 0.9f, this.x);
                     canvas2.scale(T13, T13, f30 / f16, f29 / f16);
-                    ((org.telegram.ui.Cells.o7) view).a(canvas2, f30, f29, this.x);
+                    ((org.telegram.ui.Cells.p7) view).a(canvas2, f30, f29, this.x);
                     canvas2.restore();
                     u60Var = this;
                 }

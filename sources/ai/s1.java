@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
-import bi.i4;
+import bi.h4;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -56,19 +56,19 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
-import org.telegram.ui.ce0;
 import org.telegram.ui.de0;
+import org.telegram.ui.ee0;
 import org.telegram.ui.hk0;
-import org.telegram.ui.ma0;
-import org.telegram.ui.og0;
-import org.telegram.ui.rg0;
+import org.telegram.ui.na0;
+import org.telegram.ui.pg0;
+import org.telegram.ui.sg0;
 import org.telegram.ui.ti;
-import org.telegram.ui.ug0;
-import org.telegram.ui.y90;
+import org.telegram.ui.vg0;
+import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0, pj0, org.telegram.ui.ActionBar.r1, ma0, lj0, h2.j {
+public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0, pj0, org.telegram.ui.ActionBar.r1, na0, lj0, h2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -86,7 +86,7 @@ public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0,
                 org.telegram.messenger.g0.h3(new jg.q(i7, this.b, (oo) this.c, 12), 16L);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new jg.q(i7, this.b, (i4) this.c, 13), 16L);
+                org.telegram.messenger.g0.h3(new jg.q(i7, this.b, (h4) this.c, 13), 16L);
                 break;
         }
     }
@@ -425,7 +425,7 @@ public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0,
         }
     }
 
-    @Override // org.telegram.ui.ma0
+    @Override // org.telegram.ui.na0
     public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
         HashMap hashMap = (HashMap) this.c;
         String str = LaunchActivity.C1;
@@ -493,9 +493,9 @@ public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0,
                 ContactsActivity.c0((ContactsActivity) obj, i11, view, i7);
                 break;
             default:
-                ug0 ug0Var = (ug0) obj;
-                rg0 rg0Var = ug0Var.U1;
-                HashSet hashSet = ug0Var.Z1;
+                vg0 vg0Var = (vg0) obj;
+                sg0 sg0Var = vg0Var.U1;
+                HashSet hashSet = vg0Var.Z1;
                 if (view instanceof ah.r) {
                     TLRPC.User user = ((ah.r) view).getUser();
                     long j3 = user.id;
@@ -503,23 +503,23 @@ public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0,
                         hashSet.remove(Long.valueOf(j3));
                     } else {
                         hashSet.add(Long.valueOf(j3));
-                        ug0Var.e2.put(Long.valueOf(j3), user);
+                        vg0Var.e2.put(Long.valueOf(j3), user);
                     }
                     if (hashSet.size() != i11 + 1) {
-                        rg0Var.b(true, hashSet, new og0(ug0Var, 2), null);
-                        ug0Var.h1(true, false);
-                        if (!TextUtils.isEmpty(ug0Var.f2)) {
-                            ug0Var.f2 = null;
-                            rg0Var.setText("");
-                            org.telegram.messenger.g0.r(ug0Var.p2);
-                            ug0Var.g1(true, true);
+                        sg0Var.b(true, hashSet, new pg0(vg0Var, 2), null);
+                        vg0Var.h1(true, false);
+                        if (!TextUtils.isEmpty(vg0Var.f2)) {
+                            vg0Var.f2 = null;
+                            sg0Var.setText("");
+                            org.telegram.messenger.g0.r(vg0Var.p2);
+                            vg0Var.g1(true, true);
                             break;
                         }
                     } else {
                         hashSet.remove(Long.valueOf(j3));
-                        String G = gd.G(ug0Var.l2, "BotMultiContactsSelectorLimit", new Object[0]);
-                        org.telegram.ui.ActionBar.n2 n2Var = ug0Var.c;
-                        new lc(n2Var, ug0Var.J0).Q(R.raw.chats_infotip, 36, G).k(true);
+                        String G = gd.G(vg0Var.l2, "BotMultiContactsSelectorLimit", new Object[0]);
+                        org.telegram.ui.ActionBar.n2 n2Var = vg0Var.c;
+                        new lc(n2Var, vg0Var.J0).Q(R.raw.chats_infotip, 36, G).k(true);
                         try {
                             n2Var.performHapticFeedback(3, 2);
                             break;
@@ -565,11 +565,11 @@ public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0,
                 profileActivity.d.s(i11);
                 break;
             case 16:
-                de0 de0Var = ((ce0) obj).h0;
+                ee0 ee0Var = ((de0) obj).h0;
                 if (j10.t0 != i11) {
-                    ((LaunchActivity) de0Var.getParentActivity()).O0(i11);
+                    ((LaunchActivity) ee0Var.getParentActivity()).O0(i11);
                 }
-                de0Var.finishFragment();
+                ee0Var.finishFragment();
                 break;
             case 18:
                 hk0 hk0Var = ((org.telegram.ui.qj0) obj).a;
@@ -665,7 +665,7 @@ public final /* synthetic */ class s1 implements c1, h2.o, lr, ob0, jc, z4, qj0,
 
     @Override // org.telegram.ui.Components.lj0
     public int run() {
-        v4.c0 c0Var = ((y90) this.c).c;
+        v4.c0 c0Var = ((z90) this.c).c;
         int L = org.telegram.messenger.g0.L(60.0f);
         int i7 = this.b;
         c0Var.h1(i7, L);

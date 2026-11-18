@@ -56,10 +56,10 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.c80;
+import org.telegram.ui.d80;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class zy extends c1 implements fs {
     public static final q5 J = new q5("mediaSendQueue");
@@ -160,7 +160,7 @@ public final class zy extends c1 implements fs {
         if (photoSize == null || photoSize.location == null) {
             return null;
         }
-        PointF Q1 = org.telegram.ui.Cells.q1.Q1(photoSize.w, photoSize.h, 0, 0);
+        PointF Q1 = org.telegram.ui.Cells.r1.Q1(photoSize.w, photoSize.h, 0, 0);
         if (bitmapArr != null) {
             try {
                 BitmapFactory.Options options = new BitmapFactory.Options();
@@ -8032,20 +8032,20 @@ public final class zy extends c1 implements fs {
         }
     }
 
-    public final void Q(long j3, Uri uri, ArrayList arrayList, c80 c80Var) {
+    public final void Q(long j3, Uri uri, ArrayList arrayList, d80 d80Var) {
         if (this.E.f(j3) != null) {
-            c80Var.run(0L);
+            d80Var.run(0L);
             return;
         }
         if (n5.z(j3)) {
             long j10 = -j3;
             TLRPC.Chat O0 = getMessagesController().O0(Long.valueOf(j10));
             if (O0 != null && !O0.megagroup) {
-                getMessagesController().T(null, j10, null, new mh(this, uri, arrayList, c80Var), null);
+                getMessagesController().T(null, j10, null, new mh(this, uri, arrayList, d80Var), null);
                 return;
             }
         }
-        new Thread(new hm(this, arrayList, j3, uri, c80Var, 3)).start();
+        new Thread(new hm(this, arrayList, j3, uri, d80Var, 3)).start();
     }
 
     public final void a(TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages, long j3) {

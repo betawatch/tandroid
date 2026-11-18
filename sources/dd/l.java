@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.Map;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class l {
     public static final char[] r;
-    public static final int[] s = {8364, ks.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, ks.J5, ks.X1, 381, ks.Z1, ks.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, ks.K5, ks.n2, 382, 376};
+    public static final int[] s = {8364, ks.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, ks.X5, 8249, ks.J5, ks.X1, 381, ks.Z1, ks.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, ks.K5, ks.n2, 382, 376};
     public final a a;
     public final b b;
     public k d;

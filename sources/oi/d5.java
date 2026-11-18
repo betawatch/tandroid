@@ -11,13 +11,13 @@ import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.t9;
+import org.telegram.ui.Cells.j9;
+import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final class d5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
+public final class d5 extends x implements org.telegram.ui.ActionBar.c6, i9 {
     public final i6 n;
     public final e1 r;
     public b5 s;
@@ -54,15 +54,15 @@ public final class d5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         b5 b5Var = this.s;
-        i9 textSelectionHelper = b5Var != null ? ((z2) b5Var).a.getTextSelectionHelper() : null;
+        j9 textSelectionHelper = b5Var != null ? ((z2) b5Var).a.getTextSelectionHelper() : null;
         if (textSelectionHelper != null) {
             ArrayList arrayList = this.w;
             arrayList.clear();
             k(arrayList);
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                t9 t9Var = (t9) arrayList.get(i7);
+                u9 u9Var = (u9) arrayList.get(i7);
                 canvas.save();
-                canvas.translate(t9Var.getX(), t9Var.getY());
+                canvas.translate(u9Var.getX(), u9Var.getY());
                 textSelectionHelper.Z(canvas, this, i7);
                 canvas.restore();
             }
@@ -90,7 +90,7 @@ public final class d5 extends x implements org.telegram.ui.ActionBar.c6, h9 {
         return this.a;
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.i9
     public final void k(ArrayList arrayList) {
         e1 e1Var = this.r;
         Layout layout = e1Var.getLayout();

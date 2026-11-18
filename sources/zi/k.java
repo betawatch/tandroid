@@ -33,11 +33,11 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.ks;
 import org.telegram.ui.Components.h40;
 import org.telegram.ui.Components.pp0;
-import org.telegram.ui.a80;
+import org.telegram.ui.b80;
 import org.telegram.ui.jw0;
 import y7.f7;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class k {
     public CameraCaptureSession A;
@@ -687,7 +687,7 @@ public final class k {
                             t tVar2 = this.v;
                             Handler handler = tVar2.u;
                             if (tVar2.r0 && handler != null) {
-                                handler.post(new a80(tVar2, z11, surface, 16));
+                                handler.post(new b80(tVar2, z11, surface, 16));
                             }
                         }
                         t tVar3 = this.v;
@@ -1513,7 +1513,7 @@ public final class k {
             b bVar = new b(this, n0Var, j3, 0);
             Handler handler = tVar.u;
             if (tVar.r0 && handler != null) {
-                handler.post(new a80(tVar, z11, bVar, 16));
+                handler.post(new b80(tVar, z11, bVar, 16));
             }
             this.l0 = true;
             this.m0 = true;
@@ -1524,7 +1524,7 @@ public final class k {
             this.j.b("camera switch path: DUAL_ACTIVE, activeId=" + this.y.getId() + ", standbyId=" + this.o0.getId() + ", input=" + (this.n0 ? 1 : 0) + ", elapsedMs=" + z(this.F0));
             this.c.post(new a(this, 2));
             k0 k0Var = this.k;
-            ((u0) k0Var.a).i.post(new a80(k0Var, new h(this.F, this.H, this.I, this.q, this.N, F()), z10, 17));
+            ((u0) k0Var.a).i.post(new b80(k0Var, new h(this.F, this.H, this.I, this.q, this.N, F()), z10, 17));
             return true;
         } catch (CameraAccessException e12) {
             e = e12;

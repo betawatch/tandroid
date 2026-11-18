@@ -5,7 +5,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class jq0 extends uy {
     public final vt0 X;
@@ -78,7 +78,7 @@ public final class jq0 extends uy {
         iq0 iq0Var = this.Y;
         int i7 = iq0Var.F;
         if (i7 == 0 || gt0.z0(i7)) {
-            iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.p7.a(1) * 2);
+            iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.q7.a(1) * 2);
         } else if (iq0Var.F == 1) {
             iArr[1] = Math.max(iArr[1], org.telegram.messenger.g0.L(56.0f) * 2);
         }

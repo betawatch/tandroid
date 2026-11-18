@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class p4 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public o4 a;
@@ -164,49 +164,49 @@ public final class p4 extends org.telegram.ui.ActionBar.h2 implements org.telegr
         linearLayout.setOrientation(1);
         org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, this.f, null);
         sm0Var.addView(this.f, c8.ma.o(-1, -2));
-        org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(getParentActivity());
-        n4Var.setText(org.telegram.messenger.gd.M0(2131748395, null));
-        this.f.addView(n4Var);
-        o4 o4Var = new o4(getParentActivity(), null);
-        this.a = o4Var;
-        o4Var.c(org.telegram.messenger.gd.M0(2131745166, null), false, true);
-        o4 o4Var2 = this.a;
-        o4Var2.e = 0;
-        this.f.addView(o4Var2);
-        o4 o4Var3 = new o4(getParentActivity(), null);
-        this.b = o4Var3;
-        o4Var3.c(org.telegram.messenger.gd.M0(2131753873, null), false, true);
-        o4 o4Var4 = this.b;
-        o4Var4.e = 1440;
-        this.f.addView(o4Var4);
-        o4 o4Var5 = new o4(getParentActivity(), null);
-        this.c = o4Var5;
-        o4Var5.c(org.telegram.messenger.gd.M0(2131753871, null), false, true);
-        o4 o4Var6 = this.c;
-        o4Var6.e = 10080;
-        this.f.addView(o4Var6);
-        o4 o4Var7 = new o4(getParentActivity(), null);
-        this.d = o4Var7;
-        o4Var7.c(org.telegram.messenger.gd.M0(2131753872, null), false, true);
-        o4 o4Var8 = this.d;
-        o4Var8.e = 44640;
-        this.f.addView(o4Var8);
-        o4 o4Var9 = new o4(getParentActivity(), null);
-        this.e = o4Var9;
-        o4Var9.c(org.telegram.messenger.gd.M0(2131745339, null), false, false);
+        org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(getParentActivity());
+        o4Var.setText(org.telegram.messenger.gd.M0(2131748395, null));
+        this.f.addView(o4Var);
+        o4 o4Var2 = new o4(getParentActivity(), null);
+        this.a = o4Var2;
+        o4Var2.c(org.telegram.messenger.gd.M0(2131745166, null), false, true);
+        o4 o4Var3 = this.a;
+        o4Var3.e = 0;
+        this.f.addView(o4Var3);
+        o4 o4Var4 = new o4(getParentActivity(), null);
+        this.b = o4Var4;
+        o4Var4.c(org.telegram.messenger.gd.M0(2131753873, null), false, true);
+        o4 o4Var5 = this.b;
+        o4Var5.e = 1440;
+        this.f.addView(o4Var5);
+        o4 o4Var6 = new o4(getParentActivity(), null);
+        this.c = o4Var6;
+        o4Var6.c(org.telegram.messenger.gd.M0(2131753871, null), false, true);
+        o4 o4Var7 = this.c;
+        o4Var7.e = 10080;
+        this.f.addView(o4Var7);
+        o4 o4Var8 = new o4(getParentActivity(), null);
+        this.d = o4Var8;
+        o4Var8.c(org.telegram.messenger.gd.M0(2131753872, null), false, true);
+        o4 o4Var9 = this.d;
+        o4Var9.e = 44640;
+        this.f.addView(o4Var9);
+        o4 o4Var10 = new o4(getParentActivity(), null);
+        this.e = o4Var10;
+        o4Var10.c(org.telegram.messenger.gd.M0(2131745339, null), false, false);
         this.e.b.setVisibility(8);
         this.f.addView(this.e);
-        o4 o4Var10 = this.a;
+        o4 o4Var11 = this.a;
         ArrayList arrayList = this.h;
-        arrayList.add(o4Var10);
+        arrayList.add(o4Var11);
         arrayList.add(this.b);
         arrayList.add(this.c);
         arrayList.add(this.d);
         arrayList.add(this.e);
         c0();
-        org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(12, context, this.resourceProvider);
-        z8Var.setText(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131749361, null), new m4(this, 0)));
-        sm0Var.addView(z8Var, c8.ma.o(-1, -2));
+        org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(12, context, this.resourceProvider);
+        a9Var.setText(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131749361, null), new m4(this, 0)));
+        sm0Var.addView(a9Var, c8.ma.o(-1, -2));
         a0(this.n, false);
         return this.fragmentView;
     }
@@ -229,14 +229,14 @@ public final class p4 extends org.telegram.ui.ActionBar.h2 implements org.telegr
             this.n = 0;
         }
         getUserConfig().t();
-        getNotificationCenter().c(this, org.telegram.messenger.ks.u5);
+        getNotificationCenter().c(this, org.telegram.messenger.ks.v5);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, org.telegram.messenger.ks.u5);
+        getNotificationCenter().n(this, org.telegram.messenger.ks.v5);
     }
 
     @Override // org.telegram.ui.ActionBar.h2
@@ -255,7 +255,7 @@ public final class p4 extends org.telegram.ui.ActionBar.h2 implements org.telegr
                     tL_messages_setDefaultHistoryTTL.period = ((o4) arrayList.get(i7)).e * 60;
                     getConnectionsManager().sendRequest(tL_messages_setDefaultHistoryTTL, new n4());
                     getUserConfig().q0 = this.n;
-                    org.telegram.messenger.ks.f(this.currentAccount).k(org.telegram.messenger.ks.u5, new Object[0]);
+                    org.telegram.messenger.ks.f(this.currentAccount).k(org.telegram.messenger.ks.v5, new Object[0]);
                     return;
                 }
                 return;

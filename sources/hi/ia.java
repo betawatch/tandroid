@@ -11,9 +11,9 @@ import org.telegram.ui.Components.xk;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.i20;
-import org.telegram.ui.oc0;
+import org.telegram.ui.pc0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class ia extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final class ia extends ClickableSpan {
                 }
                 break;
             case 2:
-                org.telegram.ui.Cells.b2 b2Var = (org.telegram.ui.Cells.b2) this.b;
-                vf.c.t(b2Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.ka) b2Var.N).e.r);
+                org.telegram.ui.Cells.c2 c2Var = (org.telegram.ui.Cells.c2) this.b;
+                vf.c.t(c2Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.ka) c2Var.N).e.r);
                 break;
             case 3:
                 ((org.telegram.ui.lb) this.b).finishFragment();
@@ -61,7 +61,7 @@ public final class ia extends ClickableSpan {
                 ((ActionBarLayout) ((LaunchActivity) this.b).M()).S(new PremiumPreviewFragment(0, "gift"));
                 break;
             case 8:
-                ((oc0) this.b).p(false);
+                ((pc0) this.b).p(false);
                 break;
             case 9:
                 org.telegram.ui.Wallet.da daVar = (org.telegram.ui.Wallet.da) this.b;

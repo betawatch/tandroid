@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                             } else {
                                 bx bxVar = bxVarArr[i11];
                                 if (bxVar.s == 0 && bxVar.getVisibility() == 0) {
-                                    org.telegram.ui.Cells.t2 c42 = cx.c4(cxVar.f0[i11]);
+                                    org.telegram.ui.Cells.u2 c42 = cx.c4(cxVar.f0[i11]);
                                     yw ywVar = cxVar.f0[i11].a;
                                     int i13 = yw.C3;
                                     ywVar.C1(true, c42);
@@ -53,14 +53,14 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                 }
                 break;
             case 2:
-                ce0 ce0Var = (ce0) this.b;
+                de0 de0Var = (de0) this.b;
                 if (i7 != 0) {
-                    ProfileActivity.Y4(ce0Var.h0.getParentActivity(), false);
+                    ProfileActivity.Y4(de0Var.h0.getParentActivity(), false);
                     break;
                 } else {
                     org.telegram.messenger.s2.a = !org.telegram.messenger.s2.a;
                     org.telegram.messenger.t0.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", org.telegram.messenger.s2.a).commit();
-                    org.telegram.ui.Components.lc.b0(ce0Var.h0).Q(R.raw.chats_infotip, 36, org.telegram.messenger.s2.a ? "Logs enabled." : "Logs disabled.").j();
+                    org.telegram.ui.Components.lc.b0(de0Var.h0).Q(R.raw.chats_infotip, 36, org.telegram.messenger.s2.a ? "Logs enabled." : "Logs disabled.").j();
                     if (org.telegram.messenger.s2.a) {
                         i5.c.v(org.telegram.messenger.t0.s, new StringBuilder("app start time = "));
                         try {

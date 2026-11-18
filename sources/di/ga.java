@@ -40,7 +40,7 @@ import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -353,7 +353,7 @@ public final /* synthetic */ class ga implements Runnable {
                         o9Var.e = false;
                         return;
                     }
-                    ks.f(i19).k(ks.x5, new Object[0]);
+                    ks.f(i19).k(ks.y5, new Object[0]);
                 }
                 o9Var.d = 0;
                 if (o9Var.e) {

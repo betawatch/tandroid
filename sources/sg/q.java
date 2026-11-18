@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.x2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.bd0;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class q extends x2 {
     public static final /* synthetic */ int u1 = 0;
@@ -49,7 +49,7 @@ public final class q extends x2 {
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
         imageView.setBackground(n6.h0(1090519039, 1, -1));
-        imageView.setOnClickListener(new bd0(27, this, context));
+        imageView.setOnClickListener(new cd0(27, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));

@@ -6,7 +6,7 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements x10 {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class x0 implements x10 {
                     fi.o6 o6Var = new fi.o6(R1, (d7) obj2);
                     R1.d(o6Var.K, o6Var, R1.b, false);
                 }
-                ks.f(R1.a).k(ks.x5, new Object[0]);
+                ks.f(R1.a).k(ks.y5, new Object[0]);
                 break;
             default:
                 b1 b1Var2 = this.b;
@@ -70,7 +70,7 @@ public final /* synthetic */ class x0 implements x10 {
                 b1Var2.c(arrayList6);
                 b1Var2.d = false;
                 b1Var2.c = true;
-                ks.f(b1Var2.a).k(ks.A5, new Object[0]);
+                ks.f(b1Var2.a).k(ks.B5, new Object[0]);
                 break;
         }
     }

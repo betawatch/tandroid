@@ -31,7 +31,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.b31;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public abstract class z2 {
     public static final ArrayList a = new ArrayList();
@@ -252,7 +252,7 @@ public abstract class z2 {
                 runnableArr[0].run();
             }
         };
-        ks.f(i7).b(fsVar, ks.c4);
+        ks.f(i7).b(fsVar, ks.d4);
         y2Var.h = new jw0(i7, fsVar, 6);
         y2Var.g = v7Var;
         dVar.setOnClickListener(new n2(y2Var, 0));
@@ -363,7 +363,7 @@ public abstract class z2 {
                                                     if (y2Var5.e) {
                                                         return;
                                                     }
-                                                    walletEngine23.prepareTonConnectTransfer(r0Var3, k2Var5, "widget:" + user5.id + ":" + Utilities.b.nextLong(), new bi.s4(i14, u0Var4, d3Var5, y2Var5, str6, bArr5, bArr6, i6Var5));
+                                                    walletEngine23.prepareTonConnectTransfer(r0Var3, k2Var5, "widget:" + user5.id + ":" + Utilities.b.nextLong(), new bi.t3(i14, u0Var4, d3Var5, y2Var5, str6, bArr5, bArr6, i6Var5));
                                                 } finally {
                                                     r0Var3.close();
                                                 }

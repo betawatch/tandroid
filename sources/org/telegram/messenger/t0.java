@@ -24,10 +24,10 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.y80;
+import org.telegram.ui.z80;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class t0 extends Application {
     public static volatile boolean E = true;
@@ -434,12 +434,12 @@ public abstract class t0 extends Application {
             }
             d = new Handler(b.getMainLooper());
             g0.g3(new ai.o(27));
-            y80[] values = y80.values();
+            z80[] values = z80.values();
             int length = values.length;
             int i11 = 0;
             while (true) {
                 if (i11 >= length) {
-                    c8.ya.b(y80.h);
+                    c8.ya.b(z80.h);
                     break;
                 } else if (c8.ya.a(values[i11])) {
                     break;
@@ -451,8 +451,8 @@ public abstract class t0 extends Application {
             for (int i12 = 0; i12 < 4; i12++) {
                 ks.f(i12).b(ktVar, ks.T1);
             }
+            ks.e().b(ktVar, ks.E4);
             ks.e().b(ktVar, ks.D4);
-            ks.e().b(ktVar, ks.C4);
         } catch (UnsatisfiedLinkError unused2) {
             throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + vr.d());
         }

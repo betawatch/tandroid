@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public int A0;
@@ -583,7 +583,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
         TLRPC.TL_chatAdminRights tL_chatAdminRights = npVar.N;
         if (npVar.J || (npVar.x.creator && i10 == 0 && i7 == npVar.f0)) {
             if (i7 == npVar.A0) {
-                if (!(view instanceof org.telegram.ui.Cells.q8) || ((org.telegram.ui.Cells.q8) view).isEnabled()) {
+                if (!(view instanceof org.telegram.ui.Cells.r8) || ((org.telegram.ui.Cells.r8) view).isEnabled()) {
                     npVar.B0 = !npVar.B0;
                     npVar.z0(false);
                     npVar.a.g(npVar.A0);
@@ -599,7 +599,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
             }
             int i11 = npVar.O0;
             if (i7 == i11) {
-                if (!(view instanceof org.telegram.ui.Cells.q8) || ((org.telegram.ui.Cells.q8) view).isEnabled()) {
+                if (!(view instanceof org.telegram.ui.Cells.r8) || ((org.telegram.ui.Cells.r8) view).isEnabled()) {
                     npVar.P0 = !npVar.P0;
                     npVar.z0(false);
                     npVar.a.g(npVar.O0);
@@ -615,7 +615,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
             }
             int i12 = npVar.T0;
             if (i7 == i12) {
-                if (!(view instanceof org.telegram.ui.Cells.q8) || ((org.telegram.ui.Cells.q8) view).isEnabled()) {
+                if (!(view instanceof org.telegram.ui.Cells.r8) || ((org.telegram.ui.Cells.r8) view).isEnabled()) {
                     npVar.U0 = !npVar.U0;
                     npVar.z0(false);
                     npVar.a.g(npVar.T0);
@@ -681,10 +681,10 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                 hi.w4 w4Var = new hi.w4(context, (org.telegram.ui.ActionBar.i6) null);
                 ((org.telegram.ui.ActionBar.x2) w4Var.b).v0 = false;
                 LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
-                org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context, org.telegram.ui.ActionBar.n6.n5, 23, 15, false, null);
-                n4Var.setHeight(47);
-                n4Var.setText(org.telegram.messenger.gd.M0(2131743477, null));
-                g10.addView(n4Var);
+                org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(context, org.telegram.ui.ActionBar.n6.n5, 23, 15, false, null);
+                o4Var.setHeight(47);
+                o4Var.setText(org.telegram.messenger.gd.M0(2131743477, null));
+                g10.addView(o4Var);
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setOrientation(1);
                 int i13 = -1;
@@ -708,8 +708,8 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                 npVar.showDialog(x2Var);
                 return;
             }
-            if (view instanceof org.telegram.ui.Cells.c2) {
-                org.telegram.ui.Cells.c2 c2Var = (org.telegram.ui.Cells.c2) view;
+            if (view instanceof org.telegram.ui.Cells.d2) {
+                org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) view;
                 int i16 = npVar.Q0;
                 if (i7 == i16 || i7 == npVar.R0 || i7 == npVar.S0) {
                     if (i7 == i16) {
@@ -723,7 +723,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                         tL_chatAdminRights.delete_messages = z13;
                     }
                     npVar.a.g(i11);
-                    c2Var.c(z13, true);
+                    d2Var.c(z13, true);
                     return;
                 }
                 int i17 = npVar.V0;
@@ -739,14 +739,14 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                         tL_chatAdminRights.delete_stories = z14;
                     }
                     npVar.a.g(i12);
-                    c2Var.c(z14, true);
+                    d2Var.c(z14, true);
                     return;
                 }
                 if (i10 != 1 || npVar.P == null) {
                     return;
                 }
-                c2Var.b();
-                if (c2Var.r.b != null) {
+                d2Var.b();
+                if (d2Var.r.b != null) {
                     if (i10 != 2) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(npVar.getParentActivity());
                         String M0 = org.telegram.messenger.gd.M0(2131743482, null);
@@ -812,12 +812,12 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                     z15 = false;
                 }
                 npVar.a.g(npVar.A0);
-                c2Var.c(!z15, true);
+                d2Var.c(!z15, true);
                 return;
             }
-            if (view instanceof org.telegram.ui.Cells.q8) {
-                org.telegram.ui.Cells.q8 q8Var = (org.telegram.ui.Cells.q8) view;
-                Switch r12 = q8Var.d;
+            if (view instanceof org.telegram.ui.Cells.r8) {
+                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+                Switch r12 = r8Var.d;
                 if (r12.G != null) {
                     if (i10 != 2) {
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(npVar.getParentActivity());
@@ -831,7 +831,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                     }
                     return;
                 }
-                if (!q8Var.isEnabled()) {
+                if (!r8Var.isEnabled()) {
                     if (i10 == 2 || i10 == 0) {
                         if ((i7 != npVar.Y || tL_chatBannedRights2 == null || tL_chatBannedRights2.change_info) && ((i7 != npVar.i0 || tL_chatBannedRights2 == null || tL_chatBannedRights2.pin_messages) && (i7 != npVar.j0 || tL_chatBannedRights2 == null || tL_chatBannedRights2.edit_rank))) {
                             return;
@@ -848,7 +848,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                     return;
                 }
                 if (i10 != 2 && i7 != npVar.l0) {
-                    q8Var.setChecked(!r12.h);
+                    r8Var.setChecked(!r12.h);
                 }
                 boolean z17 = r12.h;
                 if (i7 == npVar.X) {
@@ -864,7 +864,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                         View childAt = npVar.b.getChildAt(i18);
                         npVar.b.getClass();
                         int R = RecyclerView.R(childAt);
-                        if (childAt instanceof org.telegram.ui.Cells.q8) {
+                        if (childAt instanceof org.telegram.ui.Cells.r8) {
                             boolean z18 = npVar.L;
                             if (z18) {
                                 if (R == npVar.X) {
@@ -930,17 +930,17 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                                     }
                                     z12 = false;
                                 }
-                                org.telegram.ui.Cells.q8 q8Var2 = (org.telegram.ui.Cells.q8) childAt;
-                                q8Var2.setChecked(z11);
-                                q8Var2.b(z12, true);
+                                org.telegram.ui.Cells.r8 r8Var2 = (org.telegram.ui.Cells.r8) childAt;
+                                r8Var2.setChecked(z11);
+                                r8Var2.b(z12, true);
                             } else if ((R != npVar.Y || tL_chatBannedRights2.change_info) && ((R != npVar.i0 || tL_chatBannedRights2.pin_messages) && (R != npVar.j0 || tL_chatBannedRights2.edit_rank))) {
-                                org.telegram.ui.Cells.q8 q8Var3 = (org.telegram.ui.Cells.q8) childAt;
-                                q8Var3.setChecked(false);
-                                q8Var3.b(R == npVar.X, true);
+                                org.telegram.ui.Cells.r8 r8Var3 = (org.telegram.ui.Cells.r8) childAt;
+                                r8Var3.setChecked(false);
+                                r8Var3.b(R == npVar.X, true);
                             } else {
-                                org.telegram.ui.Cells.q8 q8Var4 = (org.telegram.ui.Cells.q8) childAt;
-                                q8Var4.setChecked(true);
-                                q8Var4.b(false, false);
+                                org.telegram.ui.Cells.r8 r8Var4 = (org.telegram.ui.Cells.r8) childAt;
+                                r8Var4.setChecked(true);
+                                r8Var4.b(false, false);
                             }
                         }
                     }
@@ -1066,7 +1066,7 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
                         npVar.a.g(i20);
                     }
                     if (i10 == 2) {
-                        q8Var.setChecked((npVar.L && z17) ? true : z10);
+                        r8Var.setChecked((npVar.L && z17) ? true : z10);
                     }
                     npVar.z0(true);
                 }
@@ -1233,16 +1233,16 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
     }
 
     public static void k0(np npVar, View view) {
-        if (view instanceof org.telegram.ui.Cells.n4) {
-            org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
+        if (view instanceof org.telegram.ui.Cells.o4) {
+            org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
             String str = npVar.T;
             int codePointCount = 16 - (str != null ? str.codePointCount(0, str.length()) : 0);
             if (codePointCount > 4.8f) {
-                n4Var.setText2("");
+                o4Var.setText2("");
                 return;
             }
-            n4Var.setText2(String.format("%d", Integer.valueOf(codePointCount)));
-            org.telegram.ui.ActionBar.n5 textView2 = n4Var.getTextView2();
+            o4Var.setText2(String.format("%d", Integer.valueOf(codePointCount)));
+            org.telegram.ui.ActionBar.n5 textView2 = o4Var.getTextView2();
             int i7 = codePointCount < 0 ? org.telegram.ui.ActionBar.n6.p7 : org.telegram.ui.ActionBar.n6.A6;
             org.telegram.ui.ActionBar.u6.X(textView2, i7, null);
             textView2.setTag(Integer.valueOf(i7));
@@ -1417,12 +1417,12 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         f6 f6Var = new f6(4, this);
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.q8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.U6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.q8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.V6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 262144, new Class[]{org.telegram.ui.Cells.n4.class}, new String[]{"textView2"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.p7));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.pa.class}, new String[]{"statusColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.y6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.pa.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
-        arrayList.add(new org.telegram.ui.ActionBar.w6((View) null, 0, new Class[]{org.telegram.ui.Cells.v2.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.q5));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.U6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.V6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 262144, new Class[]{org.telegram.ui.Cells.o4.class}, new String[]{"textView2"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.p7));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.qa.class}, new String[]{"statusColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.y6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Cells.qa.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, f6Var, org.telegram.ui.ActionBar.n6.n6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6((View) null, 0, new Class[]{org.telegram.ui.Cells.w2.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.q5));
         return arrayList;
     }
 
@@ -1495,8 +1495,8 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
         TLRPC.User user;
         int i7 = this.l0;
         if (i7 >= 0) {
-            org.telegram.ui.Cells.q8 q8Var = (org.telegram.ui.Cells.q8) this.c.m(i7);
-            if (q8Var == null) {
+            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) this.c.m(i7);
+            if (r8Var == null) {
                 this.a.g(this.l0);
                 return;
             }
@@ -1504,11 +1504,11 @@ public class np extends org.telegram.ui.ActionBar.h2 implements org.telegram.mes
             if (chatFull != null && (user = this.w) != null) {
                 if ((this.r ? this.n : chatFull.guard_bot_id) == user.id) {
                     z10 = true;
-                    q8Var.setChecked(z10);
+                    r8Var.setChecked(z10);
                 }
             }
             z10 = false;
-            q8Var.setChecked(z10);
+            r8Var.setChecked(z10);
         }
     }
 

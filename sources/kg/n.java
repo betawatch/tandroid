@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.d6;
+import bi.c6;
 import c8.ma;
 import fi.n2;
 import hi.e7;
@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y5;
-import org.telegram.ui.Cells.i3;
+import org.telegram.ui.Cells.j3;
 import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.co;
@@ -47,7 +47,7 @@ import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class n extends b51 implements fs {
     public String E;
@@ -269,10 +269,10 @@ public final class n extends b51 implements fs {
         lVar3.getClass();
         int i12 = 5;
         org.telegram.ui.Cells.f fVar = new org.telegram.ui.Cells.f(lVar3, i12);
-        i3 i3Var = lVar3.d;
-        i3Var.setImeOptions(6);
+        j3 j3Var = lVar3.d;
+        j3Var.setImeOptions(6);
         int i13 = 2;
-        i3Var.setOnEditorActionListener(new r2(fVar, i13));
+        j3Var.setOnEditorActionListener(new r2(fVar, i13));
         l lVar4 = new l(this, context, gd.M0(2131752711, null), getMessagesController().J5, this.resourceProvider, 1);
         this.w = lVar4;
         lVar4.setShowLimitOnFocus(true);
@@ -281,9 +281,9 @@ public final class n extends b51 implements fs {
         l lVar5 = this.w;
         lVar5.getClass();
         org.telegram.ui.Cells.f fVar2 = new org.telegram.ui.Cells.f(lVar5, i12);
-        i3 i3Var2 = lVar5.d;
-        i3Var2.setImeOptions(6);
-        i3Var2.setOnEditorActionListener(new r2(fVar2, i13));
+        j3 j3Var2 = lVar5.d;
+        j3Var2.setImeOptions(6);
+        j3Var2.setOnEditorActionListener(new r2(fVar2, i13));
         this.n.d("", "");
         super.createView(context);
         this.b.setBackground(null);
@@ -296,9 +296,9 @@ public final class n extends b51 implements fs {
         j0(false);
         this.a.addOnLayoutChangeListener(new m(this, i7));
         this.a.j(new bi.q1(this, 18));
-        d6 d6Var = this.a;
-        d6Var.i3 = true;
-        d6Var.setClipChildren(false);
+        c6 c6Var = this.a;
+        c6Var.i3 = true;
+        c6Var.setClipChildren(false);
         View view = this.fragmentView;
         if (view instanceof ViewGroup) {
             ((ViewGroup) view).setClipChildren(false);
@@ -330,12 +330,12 @@ public final class n extends b51 implements fs {
             return;
         }
         this.f.a(k0(), z10);
-        d6 d6Var = this.a;
-        if (d6Var == null || d6Var.g3 == null || this.L == (!l0())) {
+        c6 c6Var = this.a;
+        if (c6Var == null || c6Var.g3 == null || this.L == (!l0())) {
             return;
         }
-        d6 d6Var2 = this.a;
-        if (d6Var2 != null && d6Var2.getChildCount() > 0) {
+        c6 c6Var2 = this.a;
+        if (c6Var2 != null && c6Var2.getChildCount() > 0) {
             View view = null;
             int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i10 = -1;
@@ -361,8 +361,8 @@ public final class n extends b51 implements fs {
         this.a.g3.O(true);
         int i12 = this.c;
         if (i12 >= 0) {
-            d6 d6Var3 = this.a;
-            d6Var3.f3.h1(i12, this.d - d6Var3.getPaddingTop());
+            c6 c6Var3 = this.a;
+            c6Var3.f3.h1(i12, this.d - c6Var3.getPaddingTop());
         }
     }
 
@@ -507,8 +507,8 @@ public final class n extends b51 implements fs {
             org.telegram.messenger.g0.r(gVar);
             org.telegram.messenger.g0.h3(gVar, 5000L);
         }
-        d6 d6Var = this.a;
-        if (d6Var != null && (z41Var = d6Var.g3) != null) {
+        c6 c6Var = this.a;
+        if (c6Var != null && (z41Var = c6Var.g3) != null) {
             z41Var.O(true);
         }
         this.K = true;

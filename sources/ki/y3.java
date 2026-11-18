@@ -2,12 +2,12 @@ package ki;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import bi.u4;
+import bi.t4;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y3 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
@@ -18,9 +18,9 @@ public final /* synthetic */ class y3 implements DialogInterface.OnDismissListen
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ y3(boolean[] zArr, u4 u4Var, boolean[] zArr2, x10 x10Var, int[] iArr, int i7) {
+    public /* synthetic */ y3(boolean[] zArr, t4 t4Var, boolean[] zArr2, x10 x10Var, int[] iArr, int i7) {
         this.b = zArr;
-        this.e = u4Var;
+        this.e = t4Var;
         this.c = zArr2;
         this.f = x10Var;
         this.h = iArr;
@@ -45,11 +45,11 @@ public final /* synthetic */ class y3 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                u4 u4Var = (u4) this.e;
+                t4 t4Var = (t4) this.e;
                 x10 x10Var = (x10) this.f;
                 int[] iArr = (int[]) this.h;
                 this.b[0] = true;
-                u4Var.run();
+                t4Var.run();
                 boolean[] zArr2 = this.c;
                 if (!zArr2[0]) {
                     zArr2[0] = true;

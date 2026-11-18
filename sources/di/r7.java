@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -24,7 +24,7 @@ public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ TLObject n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ r7(x8 x8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.m8 m8Var) {
+    public /* synthetic */ r7(x8 x8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.l8 l8Var) {
         this.e = x8Var;
         this.f = zArr;
         this.h = starGift;
@@ -32,7 +32,7 @@ public final /* synthetic */ class r7 implements Runnable {
         this.d = z11;
         this.c = j3;
         this.n = tL_textWithEntities;
-        this.r = m8Var;
+        this.r = l8Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0082  */
@@ -56,7 +56,7 @@ public final /* synthetic */ class r7 implements Runnable {
         switch (i11) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                ((x8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.m8) obj);
+                ((x8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.l8) obj);
                 break;
             default:
                 hi.ta taVar = (hi.ta) obj3;

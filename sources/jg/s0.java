@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.v4;
-import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Cells.w4;
+import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class s0 extends c {
     public final Context x;
@@ -56,9 +56,9 @@ public abstract class s0 extends c {
         View view = f1Var.a;
         if (i10 == 0) {
             TLRPC.TL_messageMediaVenue H = H(i7);
-            ((v4) view).a(H, H != null ? 2 : i7, i7 != b() - 1, false);
+            ((w4) view).a(H, H != null ? 2 : i7, i7 != b() - 1, false);
         } else if (i10 == 1) {
-            ((x3) view).setText(gd.M0(2131748560, null));
+            ((y3) view).setText(gd.M0(2131748560, null));
         }
     }
 
@@ -66,6 +66,6 @@ public abstract class s0 extends c {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         i6 i6Var = this.y;
         Context context = this.x;
-        return new kj0(i7 == 0 ? new v4(context, i6Var) : new x3(context, i6Var));
+        return new kj0(i7 == 0 ? new w4(context, i6Var) : new y3(context, i6Var));
     }
 }

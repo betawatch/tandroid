@@ -32,6 +32,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.lq;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mh0;
@@ -42,7 +43,7 @@ import org.telegram.ui.Components.rn0;
 import org.telegram.ui.Components.u60;
 import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public static final int[] w0 = {-2781403, -3635939};
@@ -78,7 +79,7 @@ public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final d3 f;
     public TL_stars.SavedStarGift f0;
     public boolean g0;
-    public final org.telegram.ui.Components.b9 h;
+    public final b9 h;
     public boolean h0;
     public boolean i0;
     public boolean j0;
@@ -176,7 +177,7 @@ public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
         textView3.setTextColor(org.telegram.ui.ActionBar.n6.I.q() ? -1333971 : -2722014);
         textView3.setVisibility(8);
         frameLayout.addView(textView3, ma.d(-2, -2.0f, 49, 0.0f, 161.0f, 0.0f, 8.0f));
-        this.h = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.h = new b9((org.telegram.ui.ActionBar.i6) null);
         q9 q9Var2 = new q9(context);
         this.n = q9Var2;
         q9Var2.setRoundRadius(org.telegram.messenger.g0.L(20.0f));
@@ -576,7 +577,7 @@ public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
                 } else if (z13) {
                     textView3.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
                     int w13 = org.telegram.ui.ActionBar.n6.w(stargiftattributebackdrop.center_color | (-16777216), org.telegram.ui.ActionBar.n6.r1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
-                    if (v4.m(starGift)) {
+                    if (u4.m(starGift)) {
                         cg.b bVar = cg.b.b;
                         lq[] lqVarArr = new lq[1];
                         i7 = 0;
@@ -782,7 +783,7 @@ public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
             q9Var2.setImageDrawable(a10);
         } else {
             long o4 = org.telegram.messenger.n5.o(savedStarGift.from_id);
-            org.telegram.ui.Components.b9 b9Var = this.h;
+            b9 b9Var = this.h;
             if (o4 > 0) {
                 TLRPC.User c22 = org.telegram.messenger.mp.u1(i14).c2(Long.valueOf(o4));
                 if (c22 != null) {
@@ -808,7 +809,7 @@ public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
         TextView textView = this.M;
         if (stargiftattributebackdrop != null) {
             TL_stars.StarGift starGift = savedStarGift.gift;
-            if (starGift.resell_amount != null && (!v4.m(starGift) || ((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(i14).A7.p0.b).c)) {
+            if (starGift.resell_amount != null && (!u4.m(starGift) || ((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(i14).A7.p0.b).c)) {
                 textView.setVisibility(0);
                 FrameLayout.LayoutParams layoutParams2 = this.F;
                 layoutParams2.topMargin = 0;
@@ -816,7 +817,7 @@ public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
                 textView.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
                 textView.setTextSize(1, 12.0f);
                 lq[] lqVarArr = new lq[1];
-                boolean m10 = v4.m(savedStarGift.gift);
+                boolean m10 = u4.m(savedStarGift.gift);
                 cg.b bVar = cg.b.b;
                 if (m10) {
                     TL_stars.StarGift starGift2 = savedStarGift.gift;
@@ -996,7 +997,7 @@ public class c3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
             }
             d3Var.setVisibility(0);
             TL_stars.StarGift starGift2 = this.f0.gift;
-            if (starGift2.resell_amount == null || (v4.m(starGift2) && !((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(i7).A7.p0.b).c)) {
+            if (starGift2.resell_amount == null || (u4.m(starGift2) && !((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(i7).A7.p0.b).c)) {
                 setRibbonColorKey(org.telegram.ui.ActionBar.n6.Cj);
                 d3Var.setStrokeColor(0);
                 this.p0 = false;

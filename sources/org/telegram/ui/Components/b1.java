@@ -4,7 +4,7 @@ import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.q1 {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.ActionBar.r1, o
                 org.telegram.ui.bn bnVar = (org.telegram.ui.bn) this.d;
                 TLRPC.Chat chat = (TLRPC.Chat) this.e;
                 org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) this.f;
-                org.telegram.ui.Cells.c2[] c2VarArr = (org.telegram.ui.Cells.c2[]) this.h;
+                org.telegram.ui.Cells.d2[] d2VarArr = (org.telegram.ui.Cells.d2[]) this.h;
                 if (user != null) {
                     org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(cVar.a);
                     a02.a.c(new org.telegram.messenger.np(3, bnVar.a(), user.id, a02));
@@ -78,7 +78,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.ActionBar.r1, o
                 tL_contacts_blockFromReplies.msg_id = fjVar.e1();
                 tL_contacts_blockFromReplies.delete_message = true;
                 tL_contacts_blockFromReplies.delete_history = true;
-                if (c2VarArr[0].b()) {
+                if (d2VarArr[0].b()) {
                     tL_contacts_blockFromReplies.report_spam = true;
                     if (bnVar.getParentActivity() != null) {
                         bnVar.h8();
@@ -95,25 +95,25 @@ public final /* synthetic */ class b1 implements org.telegram.ui.ActionBar.r1, o
                 String str = (String) this.c;
                 String str2 = (String) this.d;
                 String str3 = (String) this.e;
-                org.telegram.ui.hf0 hf0Var = (org.telegram.ui.hf0) this.f;
+                org.telegram.ui.if0 if0Var = (org.telegram.ui.if0) this.f;
                 k8.a aVar = (k8.a) this.h;
                 org.telegram.ui.hk0 hk0Var = qj0Var.a;
                 hk0Var.Z[0].setText(str);
                 hk0Var.Z[1].setText(str2);
                 hk0Var.Z[2].setText(str3);
                 hk0Var.R1(true, true);
-                qj0Var.c(hf0Var, aVar);
+                qj0Var.c(if0Var, aVar);
                 break;
         }
     }
 
-    public /* synthetic */ b1(TLRPC.User user, org.telegram.messenger.c cVar, org.telegram.ui.bn bnVar, TLRPC.Chat chat, org.telegram.messenger.fj fjVar, org.telegram.ui.Cells.c2[] c2VarArr, org.telegram.ui.ActionBar.i6 i6Var) {
+    public /* synthetic */ b1(TLRPC.User user, org.telegram.messenger.c cVar, org.telegram.ui.bn bnVar, TLRPC.Chat chat, org.telegram.messenger.fj fjVar, org.telegram.ui.Cells.d2[] d2VarArr, org.telegram.ui.ActionBar.i6 i6Var) {
         this.a = 0;
         this.b = user;
         this.c = cVar;
         this.d = bnVar;
         this.e = chat;
         this.f = fjVar;
-        this.h = c2VarArr;
+        this.h = d2VarArr;
     }
 }

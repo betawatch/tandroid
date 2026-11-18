@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class pt extends org.telegram.ui.ActionBar.h2 {
     public static final int[][] r = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -115,7 +115,7 @@ public final class pt extends org.telegram.ui.ActionBar.h2 {
     public final void onTransitionAnimationProgress(boolean z10, float f10) {
         if (f10 > 0.5f && !this.f) {
             this.f = true;
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.t4, new Object[0]);
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
         }
         super.onTransitionAnimationProgress(z10, f10);
     }

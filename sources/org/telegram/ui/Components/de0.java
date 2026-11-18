@@ -26,7 +26,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class de0 extends FrameLayout implements ez, hi.pa {
     public final ImageView A0;
@@ -793,7 +793,7 @@ public final class de0 extends FrameLayout implements ez, hi.pa {
             }
             cz czVar2 = this.m0;
             if (czVar2 != null) {
-                czVar2.d(new org.telegram.ui.Cells.b5(ffVar));
+                czVar2.d(new org.telegram.ui.Cells.c5(ffVar));
             }
         }
     }
@@ -1246,8 +1246,8 @@ public final class de0 extends FrameLayout implements ez, hi.pa {
                 break;
             }
             View childAt = thVar.getChildAt(i7);
-            if ((childAt instanceof org.telegram.ui.Cells.t5) && RecyclerView.R(childAt) == this.b) {
-                ((org.telegram.ui.Cells.t5) childAt).a(org.telegram.messenger.gd.M0(2131751115, null), 0, this.H);
+            if ((childAt instanceof org.telegram.ui.Cells.u5) && RecyclerView.R(childAt) == this.b) {
+                ((org.telegram.ui.Cells.u5) childAt).a(org.telegram.messenger.gd.M0(2131751115, null), 0, this.H);
                 break;
             }
             i7++;

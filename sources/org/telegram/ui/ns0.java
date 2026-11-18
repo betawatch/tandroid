@@ -5,18 +5,18 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ns0 extends r11 {
-    public final /* synthetic */ bi.m6 f2;
+    public final /* synthetic */ bi.l6 f2;
     public final /* synthetic */ i11[] g2;
     public final /* synthetic */ PremiumPreviewFragment h2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ns0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.i6 i6Var, int i10, bi.m6 m6Var, i11[] i11VarArr) {
+    public ns0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.i6 i6Var, int i10, bi.l6 l6Var, i11[] i11VarArr) {
         super(premiumPreviewFragment2, activity, true, num, i7, true, i6Var, i10);
         this.h2 = premiumPreviewFragment;
-        this.f2 = m6Var;
+        this.f2 = l6Var;
         this.g2 = i11VarArr;
     }
 

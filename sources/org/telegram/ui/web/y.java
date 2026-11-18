@@ -10,13 +10,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.cx;
-import org.telegram.ui.tg0;
+import org.telegram.ui.ug0;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y implements tg0, ww {
+public final /* synthetic */ class y implements ug0, ww {
     public final /* synthetic */ v0 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -41,7 +41,7 @@ public final /* synthetic */ class y implements tg0, ww {
         return false;
     }
 
-    @Override // org.telegram.ui.tg0
+    @Override // org.telegram.ui.ug0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;

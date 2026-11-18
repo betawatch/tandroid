@@ -15,7 +15,7 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -159,7 +159,7 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
                         ee0Var.h = null;
                     }
                     photoViewer4.q5.b.setLoading(true);
-                    Utilities.e.c(new jg0((org.telegram.messenger.fs) photoViewer4, (Object) efVar, photoViewer4.g7.get(photoViewer4.P4), PhotoViewer.v1(), 4));
+                    Utilities.e.c(new kg0((org.telegram.messenger.fs) photoViewer4, (Object) efVar, photoViewer4.g7.get(photoViewer4.P4), PhotoViewer.v1(), 4));
                     break;
                 }
                 break;

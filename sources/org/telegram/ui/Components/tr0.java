@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class tr0 extends bk0 {
     public final Context c;
@@ -56,8 +56,8 @@ public final class tr0 extends bk0 {
         gt0 gt0Var = this.f;
         org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
         View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.qa) {
-            org.telegram.ui.Cells.qa qaVar = (org.telegram.ui.Cells.qa) view;
+        if (view instanceof org.telegram.ui.Cells.ra) {
+            org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) view;
             TLRPC.ChatParticipant chatParticipant = !this.e.isEmpty() ? this.d.participants.participants.get(((Integer) this.e.get(i7)).intValue()) : this.d.participants.participants.get(i7);
             if (chatParticipant != null) {
                 if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
@@ -113,8 +113,8 @@ public final class tr0 extends bk0 {
                     }
                 }
                 TLRPC.User c22 = h2Var.getMessagesController().c2(Long.valueOf(chatParticipant.user_id));
-                qaVar.a(str, z10, z11, org.telegram.messenger.o10.C(c22) && org.telegram.messenger.v3.h(h2Var.getMessagesController().O0(Long.valueOf(-gt0Var.m1))), new n50(this, c22, str, z10, z11, z12, 1));
-                qaVar.d(c22, null, null, i7 != this.d.participants.participants.size() - 1);
+                raVar.a(str, z10, z11, org.telegram.messenger.o10.C(c22) && org.telegram.messenger.v3.h(h2Var.getMessagesController().O0(Long.valueOf(-gt0Var.m1))), new n50(this, c22, str, z10, z11, z12, 1));
+                raVar.d(c22, null, null, i7 != this.d.participants.participants.size() - 1);
             }
         }
     }
@@ -123,9 +123,9 @@ public final class tr0 extends bk0 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         gt0 gt0Var = this.f;
         if (i7 != 20) {
-            org.telegram.ui.Cells.qa qaVar = new org.telegram.ui.Cells.qa(9, 0, this.c, gt0Var.I1, true, false);
-            qaVar.setLayoutParams(new v4.q0(-1, -2));
-            return new kj0(qaVar);
+            org.telegram.ui.Cells.ra raVar = new org.telegram.ui.Cells.ra(9, 0, this.c, gt0Var.I1, true, false);
+            raVar.setLayoutParams(new v4.q0(-1, -2));
+            return new kj0(raVar);
         }
         x3 X = gt0.X(7, gt0Var.m1, this.c, gt0Var.I1);
         X.setLayoutParams(new v4.q0(-1, -1));

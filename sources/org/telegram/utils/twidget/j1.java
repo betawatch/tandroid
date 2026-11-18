@@ -7,11 +7,12 @@ import java.util.Map;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
+import org.telegram.messenger.s2;
 import org.telegram.ui.Components.a81;
 import org.telegram.ui.Components.z71;
-import org.telegram.ui.cd0;
+import org.telegram.ui.dd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,14 +23,23 @@ public final /* synthetic */ class j1 implements Runnable {
         this.b = p1Var;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:48:0x013c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private final void a() {
         n1 n1Var;
         JSONObject jSONObject;
         d1 d1Var;
+        d1 d1Var2;
         a81 a81Var;
         p1 p1Var;
+        String str;
+        String optString;
         k0 h;
         int i7;
+        int i10;
+        int i11;
         p1 p1Var2 = this.b;
         synchronized (p1Var2.s) {
             n1Var = p1Var2.O;
@@ -45,7 +55,7 @@ public final /* synthetic */ class j1 implements Runnable {
             }
             return;
         }
-        if (n1Var != null && (i7 = p1Var2.M) != 0 && Math.abs(n1Var.d - i7) > 1) {
+        if (n1Var != null && (i11 = p1Var2.M) != 0 && Math.abs(n1Var.d - i11) > 1) {
             n1Var.a.b();
             p1Var2.K = false;
             n1Var = null;
@@ -53,33 +63,96 @@ public final /* synthetic */ class j1 implements Runnable {
         if (n1Var != null) {
             p1Var2.N = n1Var;
             p1Var2.K = false;
-            d1 d1Var2 = p1Var2.R;
-            if (d1Var2 != null) {
-                d1Var2.g(p1Var2);
+            d1 d1Var3 = p1Var2.R;
+            if (d1Var3 != null) {
+                d1Var3.g(p1Var2);
             }
         }
         if (jSONObject == null || (d1Var = p1Var2.R) == null) {
             return;
         }
+        String str2 = d1Var.a;
         if (d1Var.e != null) {
-            String optString = jSONObject.optString("dead");
-            if (!TextUtils.isEmpty(optString) && (h = n0.h(d1Var)) != null) {
-                int i10 = h.C;
-                int i11 = d1Var.q;
-                if (i10 != i11) {
-                    h.C = i11;
-                    h.B++;
-                    h.D = true;
-                    a8.b("widget " + d1Var.a + " stopped (" + h.B + "): " + optString);
-                    n0.a(h);
-                    n0.b();
+            k0 h7 = n0.h(d1Var);
+            if (!s2.a || h7 == null) {
+                d1Var2 = d1Var;
+            } else {
+                int optInt = jSONObject.optInt("throttled");
+                double optDouble = jSONObject.optDouble("jsMs", 0.0d);
+                double optDouble2 = jSONObject.optDouble("validatorMs", 0.0d);
+                double optDouble3 = jSONObject.optDouble("queryMs", 0.0d);
+                long elapsedRealtime = SystemClock.elapsedRealtime();
+                int i12 = h7.D;
+                int i13 = d1Var.q;
+                if (i12 != i13 || optInt < h7.E) {
+                    h7.D = i13;
+                    h7.E = 0;
+                    d1Var2 = d1Var;
+                    h7.H = 0.0d;
+                    h7.G = 0.0d;
+                    h7.F = 0.0d;
+                    h7.I = elapsedRealtime;
+                } else {
+                    d1Var2 = d1Var;
+                }
+                if (optInt <= h7.E) {
+                    str = str2;
+                } else if (elapsedRealtime - h7.I >= 5000) {
+                    StringBuilder u10 = a8.p0.u("widget ", str2, " held by the CPU quota: ");
+                    u10.append(optInt - h7.E);
+                    u10.append(" tasks deferred in ");
+                    str = str2;
+                    u10.append(elapsedRealtime - h7.I);
+                    u10.append(" ms (JavaScript ");
+                    u10.append(Math.round(optDouble - h7.F));
+                    u10.append(" ms, validator ");
+                    u10.append(Math.round(optDouble2 - h7.G));
+                    u10.append(" ms, layout queries ");
+                    u10.append(Math.round(optDouble3 - h7.H));
+                    u10.append(" ms; ");
+                    u10.append(optInt);
+                    u10.append(" deferred in all); last: ");
+                    u10.append(jSONObject.optString("throttle"));
+                    a8.b(u10.toString());
+                    h7.E = optInt;
+                }
+                h7.F = optDouble;
+                h7.G = optDouble2;
+                h7.H = optDouble3;
+                h7.I = elapsedRealtime;
+                optString = jSONObject.optString("dead");
+                if (!TextUtils.isEmpty(optString) && (h = n0.h(d1Var2)) != null) {
+                    i7 = h.C;
+                    i10 = d1Var2.q;
+                    if (i7 != i10) {
+                        h.C = i10;
+                        h.B++;
+                        h.J = true;
+                        StringBuilder u11 = a8.p0.u("widget ", str, " stopped (");
+                        u11.append(h.B);
+                        u11.append("): ");
+                        u11.append(optString);
+                        a8.b(u11.toString());
+                        n0.a(h);
+                        n0.b();
+                    }
                 }
             }
-        }
-        if (jSONObject.optBoolean("loaded") && d1Var.g != null && (p1Var = d1Var.f) != null) {
-            d1Var.g(p1Var);
+            str = str2;
+            optString = jSONObject.optString("dead");
+            if (!TextUtils.isEmpty(optString)) {
+                i7 = h.C;
+                i10 = d1Var2.q;
+                if (i7 != i10) {
+                }
+            }
         } else {
-            if (!d1Var.e() || (a81Var = d1Var.h) == null) {
+            d1Var2 = d1Var;
+        }
+        if (jSONObject.optBoolean("loaded") && d1Var2.g != null && (p1Var = d1Var2.f) != null) {
+            d1Var2.g(p1Var);
+        } else {
+            if (!d1Var2.e() || (a81Var = d1Var2.h) == null) {
                 return;
             }
             z71 z71Var = a81Var.a;
@@ -195,9 +268,9 @@ public final /* synthetic */ class j1 implements Runnable {
                         }
                         if ("local".equals(str2)) {
                             n0.d.put(a10, h);
-                            cd0 cd0Var = n0.e;
-                            org.telegram.messenger.g0.r(cd0Var);
-                            org.telegram.messenger.g0.h3(cd0Var, 1000L);
+                            dd0 dd0Var = n0.e;
+                            org.telegram.messenger.g0.r(dd0Var);
+                            org.telegram.messenger.g0.h3(dd0Var, 1000L);
                         }
                     }
                 }

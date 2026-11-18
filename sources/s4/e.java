@@ -31,19 +31,19 @@ import l2.q1;
 import oi.y3;
 import org.telegram.messenger.ks;
 import org.telegram.ui.ActionBar.l5;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.hn;
 import org.telegram.ui.Components.of;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
     public n A;
     public int B;
-    public md0 C;
+    public nd0 C;
     public android.support.v4.media.session.a0 D;
     public final hn E;
     public final qe.h c;
@@ -53,7 +53,7 @@ public final class e {
     public l5 g;
     public final Context h;
     public final h2.s n;
-    public final b5 o;
+    public final c5 o;
     public final boolean p;
     public final boolean q;
     public k r;
@@ -93,7 +93,7 @@ public final class e {
         sVar.c = 0;
         sVar.d = 3;
         this.n = sVar;
-        this.o = new b5(this);
+        this.o = new c5(this);
         this.E = new hn(this, 14);
         this.h = context;
         this.p = ((ActivityManager) context.getSystemService("activity")).isLowRamDevice();
@@ -590,9 +590,9 @@ public final class e {
     public final void l() {
         v vVar = this.d;
         if (vVar == null) {
-            md0 md0Var = this.C;
-            if (md0Var != null) {
-                md0Var.n();
+            nd0 nd0Var = this.C;
+            if (nd0Var != null) {
+                nd0Var.n();
                 return;
             }
             return;
@@ -613,36 +613,36 @@ public final class e {
             ((d) arrayList.get(0)).getClass();
             throw null;
         }
-        md0 md0Var2 = this.C;
-        if (md0Var2 != null) {
+        nd0 nd0Var2 = this.C;
+        if (nd0Var2 != null) {
             v vVar2 = this.d;
             v vVar3 = this.v;
             if (vVar3 == null) {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (vVar2 == vVar3 || vVar2 == this.w) {
-                md0Var2.n();
+                nd0Var2.n();
                 return;
             }
             int i10 = sVar.c == 1 ? 2 : 0;
             int i11 = sVar.b;
             int i12 = sVar.a;
             String str = (String) sVar.e;
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) md0Var2.b;
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) nd0Var2.b;
             if (a0Var != null) {
-                androidx.emoji2.text.q qVar = (androidx.emoji2.text.q) md0Var2.c;
+                androidx.emoji2.text.q qVar = (androidx.emoji2.text.q) nd0Var2.c;
                 if (qVar != null && i10 == 0 && i11 == 0) {
                     qVar.c = i12;
                     b2.g.a(qVar.c(), i12);
                     return;
                 }
                 androidx.emoji2.text.q qVar2 = new androidx.emoji2.text.q();
-                qVar2.f = md0Var2;
+                qVar2.f = nd0Var2;
                 qVar2.a = i10;
                 qVar2.b = i11;
                 qVar2.c = i12;
                 qVar2.d = str;
-                md0Var2.c = qVar2;
+                nd0Var2.c = qVar2;
                 ((android.support.v4.media.session.u) a0Var.b).a.setPlaybackToRemote(qVar2.c());
             }
         }

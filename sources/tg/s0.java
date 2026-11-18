@@ -14,7 +14,7 @@ import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.ca;
 import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class s0 extends bk0 {
     public final /* synthetic */ Context c;
@@ -54,14 +54,14 @@ public final class s0 extends bk0 {
         ArrayList arrayList = b5Var.t0;
         fj fjVar = (fj) arrayList.get((arrayList.size() - 1) - i7);
         View view = f1Var.a;
-        if (!(view instanceof org.telegram.ui.Cells.q1)) {
-            if (view instanceof org.telegram.ui.Cells.u0) {
-                ((org.telegram.ui.Cells.u0) view).setMessageObject(fjVar);
+        if (!(view instanceof org.telegram.ui.Cells.r1)) {
+            if (view instanceof org.telegram.ui.Cells.v0) {
+                ((org.telegram.ui.Cells.v0) view).setMessageObject(fjVar);
                 return;
             }
             return;
         }
-        org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
+        org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) view;
         aj ajVar = b5Var.u0;
         if (ajVar == null || (d = ajVar.d(fjVar)) == null) {
             z10 = false;
@@ -69,7 +69,7 @@ public final class s0 extends bk0 {
             z10 = d.c != 0;
         }
         aj ajVar2 = b5Var.u0;
-        q1Var.y3(fjVar, ajVar2, ajVar2 != null, z10, false, false);
+        r1Var.y3(fjVar, ajVar2, ajVar2 != null, z10, false, false);
     }
 
     @Override // v4.i0

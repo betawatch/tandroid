@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qq extends org.telegram.ui.Components.bk0 {
     public final /* synthetic */ rq E;
@@ -37,8 +37,8 @@ public final class qq extends org.telegram.ui.Components.bk0 {
     @Override // v4.i0
     public final void A(v4.f1 f1Var) {
         View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.a5) {
-            ((org.telegram.ui.Cells.a5) view).a();
+        if (view instanceof org.telegram.ui.Cells.b5) {
+            ((org.telegram.ui.Cells.b5) view).a();
         }
     }
 
@@ -193,14 +193,14 @@ public final class qq extends org.telegram.ui.Components.bk0 {
             if (i12 != 1) {
                 return;
             }
-            org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
+            org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i11 != this.w) {
                 if (i11 == this.y) {
-                    x3Var.setText(org.telegram.messenger.gd.M0(2131749360, null));
+                    y3Var.setText(org.telegram.messenger.gd.M0(2131749360, null));
                     return;
                 } else {
                     if (i11 == this.x) {
-                        x3Var.setText(org.telegram.messenger.gd.M0(2131751769, null));
+                        y3Var.setText(org.telegram.messenger.gd.M0(2131751769, null));
                         return;
                     }
                     return;
@@ -208,17 +208,17 @@ public final class qq extends org.telegram.ui.Components.bk0 {
             }
             int i13 = rqVar.O;
             if (i13 == 0) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131752440, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131752440, null));
                 return;
             }
             if (i13 == 3) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131752297, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131752297, null));
                 return;
             } else if (rqVar.s) {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131752278, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131752278, null));
                 return;
             } else {
-                x3Var.setText(org.telegram.messenger.gd.M0(2131752366, null));
+                y3Var.setText(org.telegram.messenger.gd.M0(2131752366, null));
                 return;
             }
         }
@@ -308,9 +308,9 @@ public final class qq extends org.telegram.ui.Components.bk0 {
                                                 spannableStringBuilder.setSpan(new org.telegram.ui.Components.i00(org.telegram.ui.ActionBar.n6.q6, null), A1, str.length() + A1, 33);
                                             }
                                         }
-                                        org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
-                                        a5Var.setTag(Integer.valueOf(i11));
-                                        a5Var.c(tLObject, spannableStringBuilder, str3, false);
+                                        org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) view;
+                                        b5Var.setTag(Integer.valueOf(i11));
+                                        b5Var.c(tLObject, spannableStringBuilder, str3, false);
                                     }
                                 }
                                 str4 = null;
@@ -331,9 +331,9 @@ public final class qq extends org.telegram.ui.Components.bk0 {
                                     if (A1 != -1) {
                                     }
                                 }
-                                org.telegram.ui.Cells.a5 a5Var2 = (org.telegram.ui.Cells.a5) view;
-                                a5Var2.setTag(Integer.valueOf(i11));
-                                a5Var2.c(tLObject, spannableStringBuilder, str3, false);
+                                org.telegram.ui.Cells.b5 b5Var2 = (org.telegram.ui.Cells.b5) view;
+                                b5Var2.setTag(Integer.valueOf(i11));
+                                b5Var2.c(tLObject, spannableStringBuilder, str3, false);
                             }
                             i11 -= i10;
                         }
@@ -345,9 +345,9 @@ public final class qq extends org.telegram.ui.Components.bk0 {
                         }
                         if (str != null) {
                         }
-                        org.telegram.ui.Cells.a5 a5Var22 = (org.telegram.ui.Cells.a5) view;
-                        a5Var22.setTag(Integer.valueOf(i11));
-                        a5Var22.c(tLObject, spannableStringBuilder, str3, false);
+                        org.telegram.ui.Cells.b5 b5Var22 = (org.telegram.ui.Cells.b5) view;
+                        b5Var22.setTag(Integer.valueOf(i11));
+                        b5Var22.c(tLObject, spannableStringBuilder, str3, false);
                     }
                     i11 -= i14;
                 }
@@ -366,9 +366,9 @@ public final class qq extends org.telegram.ui.Components.bk0 {
                 }
                 if (str != null) {
                 }
-                org.telegram.ui.Cells.a5 a5Var222 = (org.telegram.ui.Cells.a5) view;
-                a5Var222.setTag(Integer.valueOf(i11));
-                a5Var222.c(tLObject, spannableStringBuilder, str3, false);
+                org.telegram.ui.Cells.b5 b5Var222 = (org.telegram.ui.Cells.b5) view;
+                b5Var222.setTag(Integer.valueOf(i11));
+                b5Var222.c(tLObject, spannableStringBuilder, str3, false);
             }
             if (!(E instanceof TLRPC.ChatParticipant)) {
                 return;
@@ -394,9 +394,9 @@ public final class qq extends org.telegram.ui.Components.bk0 {
         }
         if (str != null) {
         }
-        org.telegram.ui.Cells.a5 a5Var2222 = (org.telegram.ui.Cells.a5) view;
-        a5Var2222.setTag(Integer.valueOf(i11));
-        a5Var2222.c(tLObject, spannableStringBuilder, str3, false);
+        org.telegram.ui.Cells.b5 b5Var2222 = (org.telegram.ui.Cells.b5) view;
+        b5Var2222.setTag(Integer.valueOf(i11));
+        b5Var2222.c(tLObject, spannableStringBuilder, str3, false);
     }
 
     @Override // v4.i0
@@ -406,13 +406,13 @@ public final class qq extends org.telegram.ui.Components.bk0 {
         rq rqVar = this.E;
         if (i7 != 0) {
             i6Var = ((org.telegram.ui.ActionBar.h2) rqVar).resourceProvider;
-            view = new org.telegram.ui.Cells.x3(26, this.c, i6Var);
+            view = new org.telegram.ui.Cells.y3(26, this.c, i6Var);
             view.setBackground(null);
         } else {
-            org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(this.c, 2, 2, rqVar.e1 == 0, null);
-            a5Var.H = true;
-            a5Var.setDelegate(new pq(this));
-            view = a5Var;
+            org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(this.c, 2, 2, rqVar.e1 == 0, null);
+            b5Var.H = true;
+            b5Var.setDelegate(new pq(this));
+            view = b5Var;
         }
         return new org.telegram.ui.Components.kj0(view);
     }

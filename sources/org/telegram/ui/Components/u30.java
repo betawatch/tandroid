@@ -24,7 +24,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class u30 implements org.telegram.messenger.fs, org.telegram.ui.sm0 {
     public org.telegram.messenger.fj E;
@@ -503,7 +503,7 @@ public final class u30 implements org.telegram.messenger.fs, org.telegram.ui.sm0
         }
         org.telegram.ui.qm0 qm0Var = new org.telegram.ui.qm0(this.R ? 3 : 1, false, false, null);
         qm0Var.y = this.K;
-        qm0Var.W = new org.telegram.ui.Cells.b5(this);
+        qm0Var.W = new org.telegram.ui.Cells.c5(this);
         this.a.presentFragment(qm0Var);
     }
 

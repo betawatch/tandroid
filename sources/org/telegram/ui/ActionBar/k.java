@@ -54,7 +54,7 @@ import org.telegram.ui.Components.tm0;
 import org.telegram.ui.Components.wn;
 import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements te.b, c6, u4 {
     public boolean A0;
@@ -786,7 +786,7 @@ public class k extends FrameLayout implements te.b, c6, u4 {
             i10 = this.y;
         }
         if (i10 == 0 || this.Q0) {
-            ks.e().k(ks.t4, new Object[0]);
+            ks.e().k(ks.u4, new Object[0]);
         } else if (i0.a.h(i10) < 0.699999988079071d) {
             org.telegram.messenger.g0.o3((Activity) getContext(), false);
         } else {
@@ -1529,7 +1529,7 @@ public class k extends FrameLayout implements te.b, c6, u4 {
                 i7 = this.y;
             }
             if (i7 == 0 || this.Q0) {
-                ks.e().k(ks.t4, new Object[0]);
+                ks.e().k(ks.u4, new Object[0]);
             } else if (i0.a.h(i7) < 0.699999988079071d) {
                 org.telegram.messenger.g0.o3((Activity) getContext(), false);
             } else {
@@ -1550,7 +1550,7 @@ public class k extends FrameLayout implements te.b, c6, u4 {
         if (this.K) {
             int i7 = this.y;
             if (i7 == 0 || this.x == 0 || this.Q0) {
-                ks.e().k(ks.t4, new Object[0]);
+                ks.e().k(ks.u4, new Object[0]);
             } else if (i0.a.h(i7) < 0.699999988079071d) {
                 org.telegram.messenger.g0.o3((Activity) getContext(), false);
             } else {
@@ -2508,7 +2508,7 @@ public class k extends FrameLayout implements te.b, c6, u4 {
         }
         int i12 = this.y;
         if (i12 == 0 || this.Q0) {
-            ks.e().k(ks.t4, new Object[0]);
+            ks.e().k(ks.u4, new Object[0]);
         } else if (i0.a.h(i12) < 0.699999988079071d) {
             org.telegram.messenger.g0.o3((Activity) getContext(), false);
         } else {

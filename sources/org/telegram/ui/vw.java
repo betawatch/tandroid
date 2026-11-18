@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class vw extends org.telegram.ui.Components.au0 {
     public final Paint g0;
@@ -27,7 +27,7 @@ public final class vw extends org.telegram.ui.Components.au0 {
     public VelocityTracker k0;
     public final Rect l0;
     public boolean m0;
-    public final org.telegram.ui.Cells.l9 n0;
+    public final org.telegram.ui.Cells.m9 n0;
     public final /* synthetic */ cx o0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -36,7 +36,7 @@ public final class vw extends org.telegram.ui.Components.au0 {
         this.o0 = cxVar;
         this.g0 = new Paint(1);
         this.l0 = new Rect();
-        this.n0 = new org.telegram.ui.Cells.l9(new f(this, 14));
+        this.n0 = new org.telegram.ui.Cells.m9(new f(this, 14));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0030, code lost:
@@ -966,7 +966,7 @@ public final class vw extends org.telegram.ui.Components.au0 {
                                 float f12 = measuredWidth2 / 2;
                                 float I = (org.telegram.messenger.g0.I(Math.min(1.0f, (measuredWidth * 1.0f) / measuredWidth2)) * f12) + f12;
                                 cxVar.i3.setDuration(Math.max(org.telegram.messenger.ks.g2, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(I / r6) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
-                                cxVar.i3.addListener(new org.telegram.ui.Cells.x9(this, 27));
+                                cxVar.i3.addListener(new org.telegram.ui.Cells.y9(this, 27));
                                 cxVar.i3.start();
                                 cxVar.j3 = true;
                                 cxVar.o3 = false;

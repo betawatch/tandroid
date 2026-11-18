@@ -45,7 +45,7 @@ import org.telegram.ui.Components.mt;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class f9 implements fs, org.telegram.ui.ActionBar.d2 {
     public static boolean A1;
@@ -608,7 +608,7 @@ public final class f9 implements fs, org.telegram.ui.ActionBar.d2 {
             if (y10.stories.isEmpty() && !R1.L(j3)) {
                 R1.g.remove(y10);
                 R1.h.remove(y10);
-                ks.f(i7).k(ks.x5, new Object[0]);
+                ks.f(i7).k(ks.y5, new Object[0]);
             }
         }
         M(context, null, arrayList, 0, null, null, b9Var, false);
@@ -975,7 +975,7 @@ public final class f9 implements fs, org.telegram.ui.ActionBar.d2 {
                         int[] iArr = new int[2];
                         view.getLocationOnScreen(iArr);
                         View view2 = c9Var.a;
-                        if (view2 instanceof org.telegram.ui.Cells.q1) {
+                        if (view2 instanceof org.telegram.ui.Cells.r1) {
                             iArr[1] = view2.getPaddingTop() + iArr[1];
                         }
                         float f10 = iArr[0];
@@ -1113,7 +1113,7 @@ public final class f9 implements fs, org.telegram.ui.ActionBar.d2 {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11 = 0;
-        if (i7 == ks.z5) {
+        if (i7 == ks.A5) {
             if (this.O0 == ((h6) objArr[0])) {
                 z();
                 v8 v8Var = this.o0;
@@ -1138,7 +1138,7 @@ public final class f9 implements fs, org.telegram.ui.ActionBar.d2 {
             }
             return;
         }
-        if (i7 == ks.x5) {
+        if (i7 == ks.y5) {
             b9 b9Var = this.u0;
             if (b9Var instanceof y6) {
                 y6 y6Var = (y6) b9Var;
@@ -1173,7 +1173,7 @@ public final class f9 implements fs, org.telegram.ui.ActionBar.d2 {
         }
         int i14 = ks.c1;
         if (i7 != i14 && i7 != ks.d1) {
-            if (i7 == ks.y5) {
+            if (i7 == ks.z5) {
                 long longValue = ((Long) objArr[0]).longValue();
                 int intValue = ((Integer) objArr[1]).intValue();
                 TL_stories.StoryItem storyItem = this.T0;
@@ -1321,7 +1321,7 @@ public final class f9 implements fs, org.telegram.ui.ActionBar.d2 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f0, z10 ? this.x.c : 0.0f);
             this.v1 = ofFloat;
             ofFloat.addUpdateListener(new n8(this, 3));
-            this.v1.addListener(new bi.e7(4, this, z10));
+            this.v1.addListener(new bi.d7(4, this, z10));
             if (z10) {
                 this.v1.setDuration(350L);
                 this.v1.setInterpolator(lr.h);

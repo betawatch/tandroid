@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qy0 extends org.telegram.ui.ActionBar.x2 {
     public static final /* synthetic */ int w1 = 0;
@@ -133,7 +133,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.x2 {
                                     ((py0) view2).a(1);
                                 }
                             }
-                            qy0Var.v1 = new md0(zArr2, x10Var2, lcVar, 1);
+                            qy0Var.v1 = new nd0(zArr2, x10Var2, lcVar, 1);
                             qy0Var.n(new di.f8(2, x10Var2, zArr2));
                             qy0Var.show();
                         }
@@ -174,7 +174,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.x2 {
                             ((py0) view2).a(1);
                         }
                     }
-                    qy0Var.v1 = new md0(zArr2, x10Var2, lcVar, 1);
+                    qy0Var.v1 = new nd0(zArr2, x10Var2, lcVar, 1);
                     qy0Var.n(new di.f8(2, x10Var2, zArr2));
                     qy0Var.show();
                 }

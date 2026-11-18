@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.fs;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class u1 extends v1 implements fs {
     public final di.b1 b;
@@ -36,9 +36,9 @@ public final class u1 extends v1 implements fs {
         b1Var.i(new ai.i0(this, 1));
         b1Var.setClipToPadding(true);
         b1Var.setVerticalScrollBarEnabled(false);
-        bi.i8 i8Var = new bi.i8(this, 9);
-        b1Var.setOnTouchListener(new p1(0, this, i8Var));
-        b1Var.setOnItemClickListener(i8Var);
+        bi.h8 h8Var = new bi.h8(this, 9);
+        b1Var.setOnTouchListener(new p1(0, this, h8Var));
+        b1Var.setOnItemClickListener(h8Var);
         b1Var.setOnScrollListener(new bi.q1(this, 14));
         addView(b1Var, c8.ma.d(-1, -1.0f, ks.E1, 0.0f, 58.0f, 0.0f, 40.0f));
         int i7 = j2.C1;

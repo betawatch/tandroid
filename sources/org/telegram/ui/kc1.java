@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final class kc1 implements if0 {
-    public final org.telegram.ui.Cells.q1 a;
+public final class kc1 implements jf0 {
+    public final org.telegram.ui.Cells.r1 a;
     public final org.telegram.ui.Components.ck0 b;
     public final float c;
     public float d;
@@ -32,12 +32,12 @@ public final class kc1 implements if0 {
     public float k;
     public float l;
 
-    public kc1(org.telegram.ui.Cells.q1 q1Var, rj rjVar, org.telegram.ui.Components.ck0 ck0Var, org.telegram.ui.Components.ri riVar, org.telegram.ui.ActionBar.i6 i6Var) {
+    public kc1(org.telegram.ui.Cells.r1 r1Var, rj rjVar, org.telegram.ui.Components.ck0 ck0Var, org.telegram.ui.Components.ri riVar, org.telegram.ui.ActionBar.i6 i6Var) {
         this.j = i6Var;
-        this.a = q1Var;
+        this.a = r1Var;
         this.i = riVar;
         this.b = ck0Var;
-        q1Var.setEnterTransitionInProgress(true);
+        r1Var.setEnterTransitionInProgress(true);
         ChatActivityEnterView.RecordCircle recordCircle = rjVar.getRecordCircle();
         this.g = recordCircle;
         if (recordCircle != null) {
@@ -49,7 +49,7 @@ public final class kc1 implements if0 {
         Paint paint = new Paint(1);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         paint.setShader(new LinearGradient(0.0f, org.telegram.messenger.g0.L(12.0f), 0.0f, 0.0f, 0, -16777216, Shader.TileMode.CLAMP));
-        this.h = q1Var.getMessageObject().m1;
+        this.h = r1Var.getMessageObject().m1;
         ((ArrayList) riVar.c).add(this);
         riVar.a();
         ((ViewGroup) riVar.d).invalidate();
@@ -58,18 +58,18 @@ public final class kc1 implements if0 {
         ofFloat.addUpdateListener(new ch.w(24, this, riVar));
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.setDuration(220L);
-        ofFloat.addListener(new jc1(this, q1Var, riVar));
-        if (q1Var.getSeekBarWaveform() != null) {
-            org.telegram.ui.Components.bn0 seekBarWaveform = q1Var.getSeekBarWaveform();
+        ofFloat.addListener(new jc1(this, r1Var, riVar));
+        if (r1Var.getSeekBarWaveform() != null) {
+            org.telegram.ui.Components.bn0 seekBarWaveform = r1Var.getSeekBarWaveform();
             seekBarWaveform.v.e(true, 0.0f);
-            org.telegram.ui.Cells.q1 q1Var2 = seekBarWaveform.n;
-            if (q1Var2 != null) {
-                q1Var2.invalidate();
+            org.telegram.ui.Cells.r1 r1Var2 = seekBarWaveform.n;
+            if (r1Var2 != null) {
+                r1Var2.invalidate();
             }
         }
     }
 
-    @Override // org.telegram.ui.if0
+    @Override // org.telegram.ui.jf0
     public final void a(final Canvas canvas) {
         float y10;
         float x10;
@@ -80,16 +80,16 @@ public final class kc1 implements if0 {
         org.telegram.ui.Components.ri riVar = this.i;
         float x11 = recordCircle == null ? 0.0f : (recordCircle.getX() + recordCircle.K) - riVar.getX();
         final float y11 = recordCircle != null ? (recordCircle.getY() + recordCircle.L) - riVar.getY() : 0.0f;
-        org.telegram.ui.Cells.q1 q1Var = this.a;
-        int i7 = q1Var.getMessageObject().m1;
+        org.telegram.ui.Cells.r1 r1Var = this.a;
+        int i7 = r1Var.getMessageObject().m1;
         int i10 = this.h;
         org.telegram.ui.Components.ck0 ck0Var = this.b;
         if (i7 != i10) {
             x10 = this.k;
             y10 = this.l;
         } else {
-            y10 = (ck0Var.getY() + (q1Var.getY() + q1Var.getRadialProgress().a.centerY())) - riVar.getY();
-            x10 = (ck0Var.getX() + (q1Var.getX() + q1Var.getRadialProgress().a.centerX())) - riVar.getX();
+            y10 = (ck0Var.getY() + (r1Var.getY() + r1Var.getRadialProgress().a.centerY())) - riVar.getY();
+            x10 = (ck0Var.getX() + (r1Var.getX() + r1Var.getRadialProgress().a.centerX())) - riVar.getX();
         }
         this.k = x10;
         this.l = y10;
@@ -98,7 +98,7 @@ public final class kc1 implements if0 {
         final float f13 = (x10 * interpolation2) + ((1.0f - interpolation2) * x11);
         float f14 = 1.0f - interpolation;
         final float f15 = (y10 * interpolation) + (y11 * f14);
-        float height = q1Var.getRadialProgress().a.height() / 2.0f;
+        float height = r1Var.getRadialProgress().a.height() / 2.0f;
         float f16 = (height * interpolation) + (this.c * f14);
         ck0Var.getY();
         riVar.getY();
@@ -106,7 +106,7 @@ public final class kc1 implements if0 {
         if (riVar.getMeasuredHeight() > 0) {
             riVar.getMeasuredHeight();
         }
-        int i11 = q1Var.getRadialProgress().p;
+        int i11 = r1Var.getRadialProgress().p;
         int i12 = org.telegram.ui.ActionBar.n6.Uf;
         org.telegram.ui.ActionBar.i6 i6Var = this.j;
         float f17 = f12;
@@ -143,13 +143,13 @@ public final class kc1 implements if0 {
         canvas.save();
         final float f24 = f16 / height;
         canvas.scale(f24, f24, f13, f15);
-        final float centerX = f13 - q1Var.getRadialProgress().a.centerX();
-        final float centerY = f15 - q1Var.getRadialProgress().a.centerY();
+        final float centerX = f13 - r1Var.getRadialProgress().a.centerX();
+        final float centerY = f15 - r1Var.getRadialProgress().a.centerY();
         canvas.translate(centerX, centerY);
-        q1Var.getRadialProgress().E = interpolation;
-        q1Var.getRadialProgress().B = false;
+        r1Var.getRadialProgress().E = interpolation;
+        r1Var.getRadialProgress().B = false;
         final float f25 = f10;
-        q1Var.C1(canvas, interpolation, new Runnable() { // from class: org.telegram.ui.ic1
+        r1Var.C1(canvas, interpolation, new Runnable() { // from class: org.telegram.ui.ic1
             @Override // java.lang.Runnable
             public final void run() {
                 Canvas canvas2;
@@ -212,8 +212,8 @@ public final class kc1 implements if0 {
                 canvas3.translate(f27, f28);
             }
         });
-        q1Var.getRadialProgress().B = true;
-        q1Var.getRadialProgress().E = 1.0f;
+        r1Var.getRadialProgress().B = true;
+        r1Var.getRadialProgress().E = 1.0f;
         canvas.restore();
     }
 }

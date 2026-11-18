@@ -9,11 +9,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class tw0 {
     public final int a;
-    public final org.telegram.ui.Cells.u0 b;
+    public final org.telegram.ui.Cells.v0 b;
     public final org.telegram.ui.ActionBar.i6 c;
     public final mh0 d;
     public TL_account.TL_birthday e;
@@ -26,31 +26,31 @@ public final class tw0 {
     public final Paint l = new Paint(1);
     public final mc m;
 
-    public tw0(int i7, org.telegram.ui.Cells.u0 u0Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public tw0(int i7, org.telegram.ui.Cells.v0 v0Var, org.telegram.ui.ActionBar.i6 i6Var) {
         this.a = i7;
-        this.b = u0Var;
+        this.b = v0Var;
         this.c = i6Var;
         mh0 mh0Var = new mh0(R.raw.cake, org.telegram.messenger.g0.L(66.0f), org.telegram.messenger.g0.L(66.0f), true, null);
         this.d = mh0Var;
         mh0Var.H(false);
-        this.m = new mc(u0Var);
+        this.m = new mc(v0Var);
     }
 
     public final void a(Canvas canvas) {
         int L = org.telegram.messenger.g0.L(66.0f);
-        org.telegram.ui.Cells.u0 u0Var = this.b;
-        int width = (u0Var.getWidth() - L) / 2;
+        org.telegram.ui.Cells.v0 v0Var = this.b;
+        int width = (v0Var.getWidth() - L) / 2;
         int L2 = org.telegram.messenger.g0.L(13.0f) + L;
         mh0 mh0Var = this.d;
         mh0Var.setBounds(width, org.telegram.messenger.g0.L(13.0f), width + L, L2);
         mh0Var.draw(canvas);
-        this.f.c((u0Var.getWidth() - this.f.k()) / 2.0f, org.telegram.messenger.g0.L(19.0f) + L, 1.0f, -1, canvas);
+        this.f.c((v0Var.getWidth() - this.f.k()) / 2.0f, org.telegram.messenger.g0.L(19.0f) + L, 1.0f, -1, canvas);
         int i7 = (int) (this.f.i() + org.telegram.messenger.g0.L(19.0f) + L + org.telegram.messenger.g0.L(17.0f));
         int i10 = 0;
         for (int i11 = 0; i11 < this.g.length; i11++) {
             i10 = (int) (Math.max(this.g[i11].k(), this.h[i11].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f) + i10);
         }
-        int width2 = (u0Var.getWidth() - i10) / 2;
+        int width2 = (v0Var.getWidth() - i10) / 2;
         int i12 = 0;
         while (i12 < this.g.length) {
             float max = Math.max(this.g[i12].k(), this.h[i12].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f);
@@ -71,7 +71,7 @@ public final class tw0 {
             float L4 = org.telegram.messenger.g0.L(30.0f);
             float f12 = L3;
             RectF rectF = this.k;
-            rectF.set((u0Var.getWidth() - k10) / 2.0f, f12, (u0Var.getWidth() + k10) / 2.0f, f12 + L4);
+            rectF.set((v0Var.getWidth() - k10) / 2.0f, f12, (v0Var.getWidth() + k10) / 2.0f, f12 + L4);
             float a10 = this.m.a(0.1f);
             canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
             float f13 = L4 / 2.0f;

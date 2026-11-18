@@ -15,7 +15,7 @@ import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.Components.y90;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class k4 implements qj0 {
     public final /* synthetic */ f9 a;
@@ -36,8 +36,8 @@ public final class k4 implements qj0 {
         a5 a5Var = this.b;
         b bVar = a5Var.s;
         int i10 = a5Var.w;
-        if (view instanceof org.telegram.ui.Cells.m6) {
-            final org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) view;
+        if (view instanceof org.telegram.ui.Cells.n6) {
+            final org.telegram.ui.Cells.n6 n6Var = (org.telegram.ui.Cells.n6) view;
             f9 f9Var = this.a;
             if (f9Var.w != null && (storyView = ((r4) a5Var.x.c.get(i7)).b) != null && (c22 = (u12 = mp.u1(i10)).c2(Long.valueOf(storyView.user_id))) != null) {
                 boolean z11 = u12.H0.indexOfKey(c22.id) >= 0;
@@ -72,7 +72,7 @@ public final class k4 implements qj0 {
                     public final void run() {
                         int i12 = i11;
                         TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.m6 m6Var2 = m6Var;
+                        org.telegram.ui.Cells.n6 n6Var2 = n6Var;
                         String str3 = str2;
                         TLRPC.User user = c22;
                         mp mpVar = u12;
@@ -82,13 +82,13 @@ public final class k4 implements qj0 {
                                 mpVar.R1().m0(user.id, true, true);
                                 a5 a5Var2 = k4Var.b;
                                 new lc(a5Var2, a5Var2.s).Q(R.raw.ic_ban, 36, gd.a0(null, null, 2131744428, str3)).j();
-                                m6Var2.a(true, a5Var2.d(storyView2) ? 1.0f : 0.5f);
+                                n6Var2.a(true, a5Var2.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                             default:
                                 mpVar.R1().m0(user.id, false, true);
                                 a5 a5Var3 = k4Var.b;
                                 new lc(a5Var3, a5Var3.s).Q(R.raw.contact_check, 36, gd.a0(null, null, 2131744226, str3)).j();
-                                m6Var2.a(true, a5Var3.d(storyView2) ? 1.0f : 0.5f);
+                                n6Var2.a(true, a5Var3.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
@@ -107,7 +107,7 @@ public final class k4 implements qj0 {
                     public final void run() {
                         int i122 = i12;
                         TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.m6 m6Var2 = m6Var;
+                        org.telegram.ui.Cells.n6 n6Var2 = n6Var;
                         String str3 = str2;
                         TLRPC.User user = c22;
                         mp mpVar = u12;
@@ -117,13 +117,13 @@ public final class k4 implements qj0 {
                                 mpVar.R1().m0(user.id, true, true);
                                 a5 a5Var2 = k4Var.b;
                                 new lc(a5Var2, a5Var2.s).Q(R.raw.ic_ban, 36, gd.a0(null, null, 2131744428, str3)).j();
-                                m6Var2.a(true, a5Var2.d(storyView2) ? 1.0f : 0.5f);
+                                n6Var2.a(true, a5Var2.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                             default:
                                 mpVar.R1().m0(user.id, false, true);
                                 a5 a5Var3 = k4Var.b;
                                 new lc(a5Var3, a5Var3.s).Q(R.raw.contact_check, 36, gd.a0(null, null, 2131744226, str3)).j();
-                                m6Var2.a(true, a5Var3.d(storyView2) ? 1.0f : 0.5f);
+                                n6Var2.a(true, a5Var3.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
@@ -145,7 +145,7 @@ public final class k4 implements qj0 {
                                 u12.w(c22.id);
                                 a5 a5Var2 = this.b.b;
                                 new lc(a5Var2, a5Var2.s).e(true).j();
-                                m6Var.a(true, a5Var2.d(storyView) ? 1.0f : 0.5f);
+                                n6Var.a(true, a5Var2.d(storyView) ? 1.0f : 0.5f);
                                 break;
                             default:
                                 mp mpVar = u12;
@@ -155,7 +155,7 @@ public final class k4 implements qj0 {
                                 mpVar.r5(null, user.id);
                                 a5 a5Var3 = this.b.b;
                                 new lc(a5Var3, a5Var3.s).e(false).j();
-                                m6Var.a(true, a5Var3.d(storyView) ? 1.0f : 0.5f);
+                                n6Var.a(true, a5Var3.d(storyView) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
@@ -175,7 +175,7 @@ public final class k4 implements qj0 {
                                 u12.w(c22.id);
                                 a5 a5Var2 = this.b.b;
                                 new lc(a5Var2, a5Var2.s).e(true).j();
-                                m6Var.a(true, a5Var2.d(storyView) ? 1.0f : 0.5f);
+                                n6Var.a(true, a5Var2.d(storyView) ? 1.0f : 0.5f);
                                 break;
                             default:
                                 mp mpVar = u12;
@@ -185,12 +185,12 @@ public final class k4 implements qj0 {
                                 mpVar.r5(null, user.id);
                                 a5 a5Var3 = this.b.b;
                                 new lc(a5Var3, a5Var3.s).e(false).j();
-                                m6Var.a(true, a5Var3.d(storyView) ? 1.0f : 0.5f);
+                                n6Var.a(true, a5Var3.d(storyView) ? 1.0f : 0.5f);
                                 break;
                         }
                     }
                 }, (z12 || !z11 || C) ? false : true);
-                G.m(R.drawable.msg_user_remove, new ai.b(this, c22, str2, m6Var, storyView, 14), gd.M0(2131744452, null), z12 && !C, true);
+                G.m(R.drawable.msg_user_remove, new ai.b(this, c22, str2, n6Var, storyView, 14), gd.M0(2131744452, null), z12 && !C, true);
                 TLRPC.Reaction reaction = storyView.reaction;
                 if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.o5.g(i10).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
                     z10 = false;

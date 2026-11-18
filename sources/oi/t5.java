@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.a8;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class t5 implements d1 {
     public final /* synthetic */ z5 a;
@@ -138,7 +138,7 @@ public final class t5 implements d1 {
     @Override // oi.d1
     public final void r1(e1 e1Var, int i7, int i10) {
         w5 w5Var;
-        i9 textSelectionHelper;
+        j9 textSelectionHelper;
         z5 z5Var = this.a;
         if (z5Var.G || i7 == i10 || (w5Var = z5Var.E) == null || (textSelectionHelper = ((c3) w5Var).a.getTextSelectionHelper()) == null) {
             return;

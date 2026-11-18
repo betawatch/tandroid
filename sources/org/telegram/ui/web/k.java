@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.d6;
+import bi.c6;
 import c8.ma;
 import c8.ra;
 import com.google.android.gms.internal.vision.e2;
@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final i E;
@@ -63,7 +63,7 @@ public final class k extends FrameLayout {
     public final TextView r;
     public final TextView s;
     public final jn w;
-    public final d6 x;
+    public final c6 x;
     public final ArrayList y;
 
     public k(Activity activity) {
@@ -77,12 +77,12 @@ public final class k extends FrameLayout {
         a aVar = new a(this);
         d5 d5Var = new d5(2, null);
         this.a = d5Var;
-        d6 d6Var = new d6(this, activity, i10, bVar, aVar, d5Var);
-        this.x = d6Var;
-        d6Var.g3.r = false;
-        d6Var.setOverScrollMode(2);
-        d6Var.setPadding(0, 0, 0, 0);
-        addView(d6Var, ma.e(-1, -1, ks.E1));
+        c6 c6Var = new c6(this, activity, i10, bVar, aVar, d5Var);
+        this.x = c6Var;
+        c6Var.g3.r = false;
+        c6Var.setOverScrollMode(2);
+        c6Var.setPadding(0, 0, 0, 0);
+        addView(c6Var, ma.e(-1, -1, ks.E1));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
@@ -328,10 +328,10 @@ public final class k extends FrameLayout {
         boolean z10 = !arrayList.isEmpty();
         if (TextUtils.isEmpty(str)) {
             arrayList.clear();
-            d6 d6Var = this.x;
-            d6Var.g3.O(true);
+            c6 c6Var = this.x;
+            c6Var.g3.O(true);
             if (z10 != (!arrayList.isEmpty())) {
-                d6Var.f3.h1(0, 0);
+                c6Var.f3.h1(0, 0);
                 return;
             }
             return;

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class uo extends org.telegram.ui.Components.bk0 {
     public final Context c;
@@ -37,8 +37,8 @@ public final class uo extends org.telegram.ui.Components.bk0 {
     @Override // v4.i0
     public final void A(v4.f1 f1Var) {
         View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.a5) {
-            ((org.telegram.ui.Cells.a5) view).a();
+        if (view instanceof org.telegram.ui.Cells.b5) {
+            ((org.telegram.ui.Cells.b5) view).a();
         }
     }
 
@@ -86,15 +86,15 @@ public final class uo extends org.telegram.ui.Components.bk0 {
                 charSequence = null;
             }
         }
-        org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) f1Var.a;
-        a5Var.setTag(Integer.valueOf(i7));
-        a5Var.c(chat, charSequence, charSequence2, false);
+        org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) f1Var.a;
+        b5Var.setTag(Integer.valueOf(i7));
+        b5Var.c(chat, charSequence, charSequence2, false);
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(this.c, 6, 2, false, null);
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, a5Var, null);
-        return new org.telegram.ui.Components.kj0(a5Var);
+        org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(this.c, 6, 2, false, null);
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, b5Var, null);
+        return new org.telegram.ui.Components.kj0(b5Var);
     }
 }

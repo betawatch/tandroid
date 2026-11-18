@@ -16,7 +16,7 @@ import org.telegram.messenger.BringAppForegroundService;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class so0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.Components.w51, org.telegram.ui.Components.g61, org.telegram.ui.Components.pd0, wi.l {
     public final /* synthetic */ PhotoViewer a;
@@ -537,9 +537,9 @@ public final class so0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.
         photoViewer.G2.g0();
         photoViewer.S7.setProgress(photoViewer.w8);
         photoViewer.n0();
-        hf0 hf0Var = new hf0(this, 22);
-        photoViewer.I2 = hf0Var;
-        org.telegram.messenger.g0.h3(hf0Var, 860L);
+        if0 if0Var = new if0(this, 22);
+        photoViewer.I2 = if0Var;
+        org.telegram.messenger.g0.h3(if0Var, 860L);
     }
 
     @Override // wi.l

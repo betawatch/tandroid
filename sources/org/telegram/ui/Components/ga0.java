@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class ga0 extends v4.u {
     public final /* synthetic */ int S;
@@ -48,9 +48,9 @@ public final class ga0 extends v4.u {
                 }
                 break;
             case 1:
-                org.telegram.ui.eg0 eg0Var = (org.telegram.ui.eg0) this.T;
-                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) eg0Var.N.get((B() - 1) - i7);
-                org.telegram.messenger.aj l10 = eg0Var.l(fjVar2);
+                org.telegram.ui.fg0 fg0Var = (org.telegram.ui.fg0) this.T;
+                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) fg0Var.N.get((B() - 1) - i7);
+                org.telegram.messenger.aj l10 = fg0Var.l(fjVar2);
                 if (l10 != null) {
                     ArrayList arrayList2 = l10.e;
                     org.telegram.messenger.xi d10 = l10.d(fjVar2);
@@ -98,13 +98,13 @@ public final class ga0 extends v4.u {
             case 0:
                 return false;
             case 1:
-                if (view instanceof org.telegram.ui.Cells.q1) {
-                    return !((org.telegram.ui.Cells.q1) view).getMessageObject().P3();
+                if (view instanceof org.telegram.ui.Cells.r1) {
+                    return !((org.telegram.ui.Cells.r1) view).getMessageObject().P3();
                 }
                 return false;
             default:
-                if (view instanceof org.telegram.ui.Cells.q1) {
-                    return !((org.telegram.ui.Cells.q1) view).getMessageObject().P3();
+                if (view instanceof org.telegram.ui.Cells.r1) {
+                    return !((org.telegram.ui.Cells.r1) view).getMessageObject().P3();
                 }
                 return false;
         }

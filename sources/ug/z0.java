@@ -42,7 +42,7 @@ import org.telegram.ui.ws0;
 import org.telegram.ui.xs0;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class z0 extends x2 implements fs {
     public static final /* synthetic */ int J1 = 0;
@@ -182,11 +182,11 @@ public final class z0 extends x2 implements fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.l5 || i7 == ks.i5) {
+        if (i7 == ks.m5 || i7 == ks.j5) {
             K0();
             return;
         }
-        if (i7 == ks.h5) {
+        if (i7 == ks.i5) {
             boolean q10 = j10.i(this.a).q();
             s0 s0Var = this.n1;
             if (q10) {
@@ -201,9 +201,9 @@ public final class z0 extends x2 implements fs {
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
         super.dismiss();
-        ks.e().n(this, ks.l5);
+        ks.e().n(this, ks.m5);
+        ks.f(this.a).n(this, ks.j5);
         ks.f(this.a).n(this, ks.i5);
-        ks.f(this.a).n(this, ks.h5);
         ks.e().k(ks.k1, 16);
     }
 
@@ -231,9 +231,9 @@ public final class z0 extends x2 implements fs {
     @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        ks.e().c(this, ks.l5);
+        ks.e().c(this, ks.m5);
+        ks.f(this.a).c(this, ks.j5);
         ks.f(this.a).c(this, ks.i5);
-        ks.f(this.a).c(this, ks.h5);
         v7 v7Var = new v7(7, getContext(), this);
         this.I1 = v7Var;
         u6.h(n6.h5, v7Var, this.J0);

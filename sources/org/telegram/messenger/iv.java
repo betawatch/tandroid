@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class iv {
     public final ArrayList a;
@@ -269,7 +269,7 @@ public final class iv {
         IdentityHashMap identityHashMap = new IdentityHashMap();
         int i12 = 0;
         while (i12 < arrayList2.size()) {
-            CharSequence l10 = l((org.telegram.ui.Cells.t9) arrayList2.get(i12));
+            CharSequence l10 = l((org.telegram.ui.Cells.u9) arrayList2.get(i12));
             if (l10 instanceof Spanned) {
                 Spanned spanned = (Spanned) l10;
                 int intValue = ((Integer) evVar.o.get(i12)).intValue();
@@ -504,8 +504,8 @@ public final class iv {
         return null;
     }
 
-    public static CharSequence l(org.telegram.ui.Cells.t9 t9Var) {
-        Layout a10 = t9Var == null ? null : t9Var.a();
+    public static CharSequence l(org.telegram.ui.Cells.u9 u9Var) {
+        Layout a10 = u9Var == null ? null : u9Var.a();
         if (a10 == null) {
             return null;
         }
@@ -561,7 +561,7 @@ public final class iv {
                     break;
                 }
                 int intValue = ((Integer) arrayList2.get(i12)).intValue();
-                CharSequence l10 = l((org.telegram.ui.Cells.t9) arrayList.get(i12));
+                CharSequence l10 = l((org.telegram.ui.Cells.u9) arrayList.get(i12));
                 int length = (l10 != null ? 0 : l10.length()) + intValue;
                 if (z10) {
                     if (intValue < i7) {
@@ -579,7 +579,7 @@ public final class iv {
                     break;
                 }
                 int intValue2 = ((Integer) arrayList2.get(i12)).intValue();
-                CharSequence l102 = l((org.telegram.ui.Cells.t9) arrayList.get(i12));
+                CharSequence l102 = l((org.telegram.ui.Cells.u9) arrayList.get(i12));
                 int length2 = (l102 != null ? 0 : l102.length()) + intValue2;
                 if (z10) {
                 }
@@ -594,7 +594,7 @@ public final class iv {
                 return null;
             }
             int intValue3 = ((Integer) arrayList2.get(i12)).intValue();
-            CharSequence l11 = l((org.telegram.ui.Cells.t9) arrayList.get(i12));
+            CharSequence l11 = l((org.telegram.ui.Cells.u9) arrayList.get(i12));
             if (l11 instanceof Spanned) {
                 spanned = (Spanned) l11;
                 max = z11 ? Math.max(i11, Math.min(l11.length(), i7 - intValue3)) : z10 ? i11 : l11.length();

@@ -95,7 +95,7 @@ import org.telegram.ui.Components.wd0;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class ta implements fs {
     public static ta G2;
@@ -2812,7 +2812,7 @@ public final class ta implements fs {
     public final void d() {
         ks.e().b(this, ks.r2);
         int i7 = this.c;
-        ks.f(i7).b(this, ks.A5);
+        ks.f(i7).b(this, ks.B5);
         ks.f(i7).b(this, ks.d3);
     }
 
@@ -2890,7 +2890,7 @@ public final class ta implements fs {
             }
             return;
         }
-        if (i7 == ks.A5) {
+        if (i7 == ks.B5) {
             e6 e6Var2 = this.P0;
             if (e6Var2 == null || this.W1) {
                 return;
@@ -3291,7 +3291,7 @@ public final class ta implements fs {
             c81Var.setVisibility(0);
         }
         this.g2.playTogether(ObjectAnimator.ofFloat(c81Var, (Property<c81, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
-        this.g2.addListener(new bi.e7(14, this, z10));
+        this.g2.addListener(new bi.d7(14, this, z10));
         this.g2.start();
         if (z10) {
             s8 s8Var2 = new s8(this, 26);
@@ -3493,7 +3493,7 @@ public final class ta implements fs {
                     tg.p0 p0Var = p02.s0;
                     if (p0Var.getChildCount() == 1 && i10 > 0 && i11 > 0) {
                         int i12 = 0;
-                        if ((p0Var.getChildAt(0) instanceof org.telegram.ui.Cells.q1) && (photoImage = ((org.telegram.ui.Cells.q1) p0Var.getChildAt(0)).getPhotoImage()) != null) {
+                        if ((p0Var.getChildAt(0) instanceof org.telegram.ui.Cells.r1) && (photoImage = ((org.telegram.ui.Cells.r1) p0Var.getChildAt(0)).getPhotoImage()) != null) {
                             float f11 = photoImage.N0;
                             if (((int) f11) > 0) {
                                 float f12 = photoImage.O0;
@@ -4357,7 +4357,7 @@ public final class ta implements fs {
                 }
                 ks.e().n(this, ks.r2);
                 int i10 = this.c;
-                ks.f(i10).n(this, ks.A5);
+                ks.f(i10).n(this, ks.B5);
                 ks.f(i10).n(this, ks.d3);
                 return;
             }

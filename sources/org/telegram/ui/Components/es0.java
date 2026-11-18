@@ -10,24 +10,24 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class es0 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final org.telegram.ui.ActionBar.i6 a;
-    public final org.telegram.ui.Cells.g6 b;
+    public final org.telegram.ui.Cells.h6 b;
     public final View c;
 
     public es0(int i7, Context context, boolean z10, org.telegram.ui.ActionBar.i6 i6Var, ap0 ap0Var) {
         super(context);
         this.a = i6Var;
-        org.telegram.ui.Cells.g6 g6Var = new org.telegram.ui.Cells.g6(context, i6Var);
-        this.b = g6Var;
+        org.telegram.ui.Cells.h6 h6Var = new org.telegram.ui.Cells.h6(context, i6Var);
+        this.b = h6Var;
         int i10 = org.telegram.ui.ActionBar.n6.i6;
         org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i10, i6Var), 2, -1);
         org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i10);
-        g6Var.setBackground(h02);
-        org.telegram.ui.ActionBar.u6.j(g6Var, h02, null, M, i6Var);
-        addView(g6Var, c8.ma.c(-2.0f, -1));
+        h6Var.setBackground(h02);
+        org.telegram.ui.ActionBar.u6.j(h6Var, h02, null, M, i6Var);
+        addView(h6Var, c8.ma.c(-2.0f, -1));
         View view = new View(context);
         this.c = view;
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;

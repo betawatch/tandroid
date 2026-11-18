@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class of implements me0, q90, wi.l, r0.m, fs0, ue.a, jg.y1, q5.b, x2.e1, com.google.android.gms.common.api.internal.q, tg.l1, sg.t0, u4.c, com.google.android.gms.common.api.internal.n, v4.e0, v4.k1 {
     public final /* synthetic */ int a;
@@ -395,7 +395,7 @@ public final class of implements me0, q90, wi.l, r0.m, fs0, ue.a, jg.y1, q5.b, x
     public Object get() {
         switch (this.a) {
             case 9:
-                return new org.telegram.ui.md0((Context) ((e.a) this.b).a, new qb.a(28), new pb.b(28), 5);
+                return new org.telegram.ui.nd0((Context) ((e.a) this.b).a, new qb.a(28), new pb.b(28), 5);
             default:
                 return new v5.i(Integer.valueOf(v5.i.d).intValue(), (Context) ((fd.a) this.b).get(), "com.google.android.datatransport.events");
         }
@@ -1514,7 +1514,7 @@ public final class of implements me0, q90, wi.l, r0.m, fs0, ue.a, jg.y1, q5.b, x
         if (Build.VERSION.SDK_INT >= 25) {
             this.b = new t0.g(uri, clipDescription, uri2);
         } else {
-            this.b = new org.telegram.ui.md0(uri, clipDescription, uri2, 16);
+            this.b = new org.telegram.ui.nd0(uri, clipDescription, uri2, 16);
         }
     }
 

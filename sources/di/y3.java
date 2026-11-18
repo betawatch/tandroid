@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y3 implements x10 {
     public final /* synthetic */ int a = 1;
@@ -154,22 +154,22 @@ public final /* synthetic */ class y3 implements x10 {
                         f6Var.n1(linearLayout2, R.drawable.menu_gift, 14, i19, gd.M0(2131742932, null), false);
                         linearLayout.addView(linearLayout2, c8.ma.t(-2, -2, 1, 0, 7, 0, 3));
                         f6Var.w3 = true;
-                        org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, f6Var.getContext(), f6Var.J0);
+                        org.telegram.ui.Cells.d2 d2Var = new org.telegram.ui.Cells.d2(1, f6Var.getContext(), f6Var.J0);
                         int i20 = org.telegram.ui.ActionBar.n6.i6;
                         org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i20, f6Var.J0), 7, org.telegram.messenger.g0.L(12.0f));
                         org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i20);
                         org.telegram.ui.ActionBar.i6 i6Var2 = f6Var.J0;
-                        c2Var.setBackground(h02);
-                        org.telegram.ui.ActionBar.u6.j(c2Var, h02, null, M, i6Var2);
-                        c2Var.setMultiline(true);
-                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
+                        d2Var.setBackground(h02);
+                        org.telegram.ui.ActionBar.u6.j(d2Var, h02, null, M, i6Var2);
+                        d2Var.setMultiline(true);
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var.getCheckBoxView().getLayoutParams();
                         layoutParams.topMargin = 0;
                         layoutParams.gravity = 16 | (gd.a0 ? 5 : i7);
-                        c2Var.getCheckBoxView().setLayoutParams(layoutParams);
-                        c2Var.e(gd.M0(2131750122, null), "", true, false, false);
-                        c2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
-                        c2Var.setOnClickListener(new ai.v2(14, f6Var, c2Var));
-                        linearLayout.addView(c2Var, c8.ma.k(8.0f, 4.0f, 8.0f, 0.0f, -1, -2));
+                        d2Var.getCheckBoxView().setLayoutParams(layoutParams);
+                        d2Var.e(gd.M0(2131750122, null), "", true, false, false);
+                        d2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
+                        d2Var.setOnClickListener(new ai.v2(14, f6Var, d2Var));
+                        linearLayout.addView(d2Var, c8.ma.k(8.0f, 4.0f, 8.0f, 0.0f, -1, -2));
                         alertDialog$Builder3.o(linearLayout);
                         u1Var2.H = 20;
                         final int i21 = 0;

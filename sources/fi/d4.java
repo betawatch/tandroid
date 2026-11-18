@@ -10,7 +10,7 @@ import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.w61;
 import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class d4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -79,9 +79,9 @@ public final class d4 implements ValueAnimator.AnimatorUpdateListener {
                 mediaController.n0();
                 break;
             case 7:
-                org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) this.b;
-                o7Var.C0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o7Var.invalidate();
+                org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) this.b;
+                p7Var.C0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p7Var.invalidate();
                 break;
             case 8:
                 ((q9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());

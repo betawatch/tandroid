@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jn0 implements org.telegram.ui.Components.u51 {
     public final /* synthetic */ int a;
@@ -20,11 +20,11 @@ public final /* synthetic */ class jn0 implements org.telegram.ui.Components.u51
         switch (i7) {
             case 0:
                 Drawable[] drawableArr = PhotoViewer.Z8;
-                czVar.d(new org.telegram.ui.Cells.b5(ffVar));
+                czVar.d(new org.telegram.ui.Cells.c5(ffVar));
                 break;
             default:
                 Drawable[] drawableArr2 = PhotoViewer.Z8;
-                czVar.d(new org.telegram.ui.Cells.b5(ffVar));
+                czVar.d(new org.telegram.ui.Cells.c5(ffVar));
                 break;
         }
     }

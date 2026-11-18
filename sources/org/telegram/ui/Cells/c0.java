@@ -20,7 +20,7 @@ import org.telegram.ui.Components.qt0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c0 {
     public static int A(int i7, int i10, Drawable drawable) {
@@ -146,7 +146,7 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static void r(int i7, String str, ArrayList arrayList) {
-        arrayList.add(new p6(i7, str));
+        arrayList.add(new q6(i7, str));
     }
 
     public static void s(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num) {

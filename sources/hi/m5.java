@@ -28,7 +28,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.dy;
 import org.telegram.ui.f50;
 import org.telegram.ui.iy;
-import org.telegram.ui.oc0;
+import org.telegram.ui.pc0;
 import org.telegram.ui.qr;
 import org.telegram.ui.r11;
 import org.telegram.ui.rn;
@@ -36,7 +36,7 @@ import org.telegram.ui.x71;
 import org.telegram.ui.yc;
 import org.telegram.ui.zm;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class m5 extends View implements te.b {
     public final /* synthetic */ int a;
@@ -443,9 +443,9 @@ public final class m5 extends View implements te.b {
                 break;
             case 14:
                 Paint paint10 = (Paint) this.b;
-                oc0 oc0Var = (oc0) this.c;
-                yc ycVar = oc0Var.r;
-                fi.t3 t3Var3 = oc0Var.e;
+                pc0 pc0Var = (pc0) this.c;
+                yc ycVar = pc0Var.r;
+                fi.t3 t3Var3 = pc0Var.e;
                 if (t3Var3 != null && ycVar.getVisibility() == 0) {
                     paint10.setAlpha((int) (ycVar.getAlpha() * t3Var3.getImageReceiver().i1 * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint10);

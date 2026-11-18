@@ -20,14 +20,14 @@ import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class y1 extends h2 implements fs {
     public e51 a;
@@ -51,7 +51,7 @@ public final class y1 extends h2 implements fs {
                     v1Var.a(str);
                 }
             }
-            ((r8) view).setChecked(y1Var.h);
+            ((s8) view).setChecked(y1Var.h);
             y1Var.a.g3.O(true);
             return;
         }

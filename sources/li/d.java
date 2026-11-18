@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.m6;
+import bi.l6;
 import c8.ma;
 import java.io.File;
 import java.net.URLEncoder;
@@ -59,8 +59,8 @@ import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.x2;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.b5;
@@ -98,7 +98,7 @@ import org.telegram.ui.web.x0;
 import org.telegram.ui.xd;
 import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements x10 {
     public final /* synthetic */ int a;
@@ -331,7 +331,7 @@ public final /* synthetic */ class d implements x10 {
                                                 wVar.run();
                                                 break;
                                             } else {
-                                                b5.l0(activity, null, str, true, new m6(12, xVar, wVar));
+                                                b5.l0(activity, null, str, true, new l6(12, xVar, wVar));
                                                 break;
                                             }
                                         }
@@ -351,13 +351,13 @@ public final /* synthetic */ class d implements x10 {
                                         LinearLayout linearLayout = new LinearLayout(g4Var.M);
                                         linearLayout.setPadding(0, 0, 0, org.telegram.messenger.g0.L(4.0f));
                                         linearLayout.setOrientation(1);
-                                        n4 n4Var = new n4(g4Var.M, (i6) null);
-                                        n4Var.setText(gd.M0(2131750593, null));
-                                        linearLayout.addView(n4Var, ma.t(-2, -2, 51, 3, 1, 3, 0));
+                                        o4 o4Var = new o4(g4Var.M, (i6) null);
+                                        o4Var.setText(gd.M0(2131750593, null));
+                                        linearLayout.addView(o4Var, ma.t(-2, -2, 51, 3, 1, 3, 0));
                                         linearLayout.addView(new c4(g4Var, g4Var.M), ma.t(-1, -2, 51, 3, 0, 3, 0));
-                                        n4 n4Var2 = new n4(g4Var.M, (i6) null);
-                                        n4Var2.setText(gd.M0(2131750588, null));
-                                        linearLayout.addView(n4Var2, ma.t(-2, -2, 51, 3, 4, 3, 2));
+                                        o4 o4Var2 = new o4(g4Var.M, (i6) null);
+                                        o4Var2.setText(gd.M0(2131750588, null));
+                                        linearLayout.addView(o4Var2, ma.t(-2, -2, 51, 3, 4, 3, 2));
                                         int i19 = 0;
                                         while (i19 < i13) {
                                             Activity activity3 = g4Var.M;
@@ -602,25 +602,25 @@ public final /* synthetic */ class d implements x10 {
                 }
                 break;
             case 22:
-                q1 q1Var = (q1) obj2;
+                r1 r1Var = (r1) obj2;
                 bn bnVar8 = ((mm) obj3).a;
                 if (((Boolean) obj).booleanValue()) {
                     while (i14 < bnVar8.A0.getChildCount()) {
                         View childAt = bnVar8.A0.getChildAt(i14);
-                        if (childAt instanceof q1) {
-                            q1 q1Var2 = (q1) childAt;
-                            if (q1Var2.getMessageObject() != null && q1Var2.getMessageObject().p4()) {
-                                q1Var2.J3();
+                        if (childAt instanceof r1) {
+                            r1 r1Var2 = (r1) childAt;
+                            if (r1Var2.getMessageObject() != null && r1Var2.getMessageObject().p4()) {
+                                r1Var2.J3();
                             }
                         }
                         i14++;
                     }
                     break;
                 } else {
-                    if (q1Var.getMessageObject() != null) {
-                        q1Var.getMessageObject().t2 = Boolean.FALSE;
+                    if (r1Var.getMessageObject() != null) {
+                        r1Var.getMessageObject().t2 = Boolean.FALSE;
                     }
-                    q1Var.J3();
+                    r1Var.J3();
                     break;
                 }
                 break;

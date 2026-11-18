@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class dt0 extends at0 {
     public final ArrayList E;
@@ -153,13 +153,13 @@ public class dt0 extends at0 {
     public final void t(v4.f1 f1Var, int i7) {
         if (this.s != null && f1Var.f == 19) {
             View view = f1Var.a;
-            if (view instanceof org.telegram.ui.Cells.o7) {
-                org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
-                o7Var.e0 = true;
+            if (view instanceof org.telegram.ui.Cells.p7) {
+                org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
+                p7Var.e0 = true;
                 ArrayList arrayList = this.r;
                 if (i7 >= 0 && i7 < arrayList.size()) {
                     fi.o6 o6Var = (fi.o6) arrayList.get(i7);
-                    o7Var.g0 = false;
+                    p7Var.g0 = false;
                     if (o6Var.L == null) {
                         TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
                         long j3 = o6Var.a;
@@ -171,31 +171,31 @@ public class dt0 extends at0 {
                         o6Var.L = ct0Var;
                         ct0Var.m = o6Var;
                     }
-                    o7Var.k(o6Var.L, O(), false);
-                    o7Var.e0 = true;
-                    o7Var.setReorder(false);
-                    o7Var.i(false, false);
+                    p7Var.k(o6Var.L, O(), false);
+                    p7Var.e0 = true;
+                    p7Var.setReorder(false);
+                    p7Var.i(false, false);
                     return;
                 }
                 int size = i7 - arrayList.size();
                 if (size < 0 || size >= this.s.i.size()) {
-                    o7Var.g0 = false;
-                    o7Var.k(null, O(), false);
-                    o7Var.e0 = true;
+                    p7Var.g0 = false;
+                    p7Var.k(null, O(), false);
+                    p7Var.e0 = true;
                     return;
                 }
                 org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) this.s.i.get(size);
-                o7Var.g0 = fjVar != null && this.s.m(fjVar.e1());
+                p7Var.g0 = fjVar != null && this.s.m(fjVar.e1());
                 gt0 gt0Var = this.G;
-                o7Var.setReorder(gt0Var.B0() || o7Var.g0);
-                o7Var.h = gt0Var.G0();
-                o7Var.k(fjVar, O(), false);
+                p7Var.setReorder(gt0Var.B0() || p7Var.g0);
+                p7Var.h = gt0Var.G0();
+                p7Var.k(fjVar, O(), false);
                 if (!gt0Var.F1 || fjVar == null) {
-                    o7Var.i(false, false);
+                    p7Var.i(false, false);
                 } else {
-                    o7Var.i(gt0Var.c1[(org.telegram.messenger.fj.B0(fjVar.k) > gt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar.k) == gt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar.e1()) >= 0, true);
+                    p7Var.i(gt0Var.c1[(org.telegram.messenger.fj.B0(fjVar.k) > gt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar.k) == gt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar.e1()) >= 0, true);
                 }
-                o7Var.l(this.y, false);
+                p7Var.l(this.y, false);
             }
         }
     }
@@ -204,8 +204,8 @@ public class dt0 extends at0 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         v4.f1 x10 = super.x(viewGroup, i7);
         View view = x10.a;
-        if (view instanceof org.telegram.ui.Cells.o7) {
-            ((org.telegram.ui.Cells.o7) view).e0 = true;
+        if (view instanceof org.telegram.ui.Cells.p7) {
+            ((org.telegram.ui.Cells.p7) view).e0 = true;
         }
         return x10;
     }

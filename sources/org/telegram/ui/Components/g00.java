@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class g00 extends sa {
     public static final /* synthetic */ int B2 = 0;
@@ -211,10 +211,10 @@ public final class g00 extends sa {
                 return;
             }
             View childAt = ck0Var.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.h4) {
+            if (childAt instanceof org.telegram.ui.Cells.i4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
-                    ((org.telegram.ui.Cells.h4) childAt).c(arrayList2.contains((Long) tag), true);
+                    ((org.telegram.ui.Cells.i4) childAt).c(arrayList2.contains((Long) tag), true);
                 }
             }
             i7++;

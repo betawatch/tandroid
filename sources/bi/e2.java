@@ -25,7 +25,7 @@ import org.telegram.ui.hn0;
 import org.telegram.ui.rn;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements x10 {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class e2 implements x10 {
             case 1:
                 di.f6 f6Var = (di.f6) obj4;
                 f6Var.g2.setLoading(false);
-                ug.l0 l0Var = new ug.l0(26, f6Var.a, f6Var.getContext(), new z8(f6Var, i10), f6Var.J0);
+                ug.l0 l0Var = new ug.l0(26, f6Var.a, f6Var.getContext(), new y8(f6Var, i10), f6Var.J0);
                 l0Var.B1((org.telegram.messenger.g3) obj);
                 l0Var.A1((TL_stories.TL_premium_boostsStatus) obj3, true);
                 l0Var.C1(j3);

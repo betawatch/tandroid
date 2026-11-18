@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class j90 extends zh.l {
     public final /* synthetic */ int E = 1;
     public final /* synthetic */ Object F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j90(bi.z8 z8Var, bi.z8 z8Var2, FrameLayout frameLayout, long j3) {
-        super(z8Var2, frameLayout, j3, true);
-        this.F = z8Var;
+    public j90(bi.y8 y8Var, bi.y8 y8Var2, FrameLayout frameLayout, long j3) {
+        super(y8Var2, frameLayout, j3, true);
+        this.F = y8Var;
     }
 
     @Override // zh.l
@@ -39,7 +39,7 @@ public final class j90 extends zh.l {
                     super.f(str, z10, z11);
                     break;
                 } else {
-                    kVar = ((org.telegram.ui.ActionBar.h2) ((bi.z8) this.F)).actionBar;
+                    kVar = ((org.telegram.ui.ActionBar.h2) ((bi.y8) this.F)).actionBar;
                     kVar.setSearchFieldText("");
                     break;
                 }

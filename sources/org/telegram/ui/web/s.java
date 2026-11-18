@@ -17,9 +17,9 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ug0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements q10 {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class s implements q10 {
     @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
         int i7;
-        ug0 ug0Var;
+        vg0 vg0Var;
         int i10 = this.a;
         String str = this.d;
         f7 f7Var = this.c;
@@ -69,21 +69,21 @@ public final /* synthetic */ class s implements q10 {
                             Boolean bool = tL_requestPeerTypeUser.bot;
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             y yVar = new y(v0Var2, zArr, str2, tL_buttonTypeRequestPeer, f7Var2);
-                            ug0 ug0Var2 = ug0.q2;
+                            vg0 vg0Var2 = vg0.q2;
                             h2 Q = LaunchActivity.Q();
                             if (Q == null) {
-                                ug0Var = null;
+                                vg0Var = null;
                             } else {
-                                ug0Var = ug0.q2;
-                                if (ug0Var == null) {
-                                    ug0 ug0Var3 = new ug0(Q, i7, bool, bool2, yVar);
-                                    ug0Var3.show();
-                                    ug0.q2 = ug0Var3;
-                                    ug0Var = ug0Var3;
+                                vg0Var = vg0.q2;
+                                if (vg0Var == null) {
+                                    vg0 vg0Var3 = new vg0(Q, i7, bool, bool2, yVar);
+                                    vg0Var3.show();
+                                    vg0.q2 = vg0Var3;
+                                    vg0Var = vg0Var3;
                                 }
                             }
-                            if (ug0Var != null) {
-                                ug0Var.setOnDismissListener(new n6(v0Var2, zArr, f7Var2, str2));
+                            if (vg0Var != null) {
+                                vg0Var.setOnDismissListener(new n6(v0Var2, zArr, f7Var2, str2));
                                 break;
                             }
                         } else {

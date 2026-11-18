@@ -25,10 +25,11 @@ import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.e7;
-import bi.p8;
-import bi.v5;
+import bi.d7;
+import bi.o8;
+import bi.u5;
 import c8.ma;
+import hi.e7;
 import hi.f9;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -72,7 +73,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.hq0;
 import org.telegram.ui.t51;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3 {
     public static final HashSet b1 = new HashSet();
@@ -260,7 +261,7 @@ public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3
         r2 r2Var = new r2(context, i6Var);
         this.F = r2Var;
         s2Var.addView(r2Var, ma.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
-        l2Var.setWebViewProgressListener(new p8(this, i12));
+        l2Var.setWebViewProgressListener(new o8(this, i12));
         k2Var.addView(l2Var, ma.c(-1.0f, -1));
         k2Var.setScrollListener(new t1(this, 7));
         k2Var.setScrollEndListener(new t1(this, 8));
@@ -566,7 +567,7 @@ public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.S0, z10 ? 1.0f : 0.0f);
         this.T0 = ofFloat;
-        ofFloat.addListener(new e7(16, this, z10));
+        ofFloat.addListener(new d7(16, this, z10));
         this.T0.addUpdateListener(new s1(this, 0));
         this.T0.setInterpolator(lr.h);
         this.T0.setDuration(220L);
@@ -886,8 +887,8 @@ public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3
             }
             return;
         }
-        if (i7 != ks.p4) {
-            if (i7 == ks.L3) {
+        if (i7 != ks.q4) {
+            if (i7 == ks.M3) {
                 G();
             }
         } else {
@@ -969,8 +970,8 @@ public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3
         E(false);
         org.telegram.messenger.g0.r(this.v0);
         ks.f(this.I).n(this, ks.z1);
-        ks.f(this.I).n(this, ks.L3);
-        ks.e().n(this, ks.p4);
+        ks.f(this.I).n(this, ks.M3);
+        ks.e().n(this, ks.q4);
         if (z10 && ((launchActivity = LaunchActivity.H1) == null || launchActivity.x0 == null)) {
             z10 = false;
         }
@@ -1066,8 +1067,8 @@ public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3
         if (i7 >= 26) {
             org.telegram.messenger.g0.m3(this, i0.a.h(this.T) >= 0.7210000157356262d);
         }
-        ks.e().c(this, ks.p4);
-        ks.f(this.I).c(this, ks.L3);
+        ks.e().c(this, ks.q4);
+        ks.f(this.I).c(this, ks.M3);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
@@ -1352,7 +1353,7 @@ public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3
             i7 = -1;
             G();
             K.V = org.telegram.messenger.g0.L(180.0f);
-            H.c(R.drawable.menu_download_round, gd.M0(2131753092, null), new v5(H, K, 1), false);
+            H.c(R.drawable.menu_download_round, gd.M0(2131753092, null), new u5(H, K, 1), false);
             H.k();
         }
         H.l(R.drawable.msg_bot, gd.M0(2131752901, null), new t1(this, 9), this.M0 == null && !q10);
@@ -1668,7 +1669,7 @@ public final class t2 extends Dialog implements fs, org.telegram.ui.ActionBar.k3
                     tL_messages_requestChatJoinWebView.theme_params = tL_dataJSON6;
                     tL_dataJSON6.data = u10.toString();
                 }
-                ConnectionsManager.getInstance(this.I).sendRequestTyped(tL_messages_requestChatJoinWebView, new d3.b(1), new hi.e7(this, 20), 66);
+                ConnectionsManager.getInstance(this.I).sendRequestTyped(tL_messages_requestChatJoinWebView, new d3.b(1), new e7(this, 20), 66);
                 break;
             case 6:
                 if (!this.G0) {

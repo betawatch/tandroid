@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class kt implements fs {
     public static final kt c;
@@ -39,8 +39,8 @@ public final class kt implements fs {
                     azVar.a.i(edit);
                     edit.apply();
                     bz.B1 = azVar;
-                    ks.e().k(ks.C4, new Object[0]);
-                    ks.e().k(ks.E4, new Object[0]);
+                    ks.e().k(ks.D4, new Object[0]);
+                    ks.e().k(ks.F4, new Object[0]);
                     ConnectionsManager.setProxySettings(true, bz.B1.a);
                     return;
                 }
@@ -51,7 +51,7 @@ public final class kt implements fs {
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         xr xrVar = this.b;
-        if (i7 == ks.D4) {
+        if (i7 == ks.E4) {
             int i11 = bz.a;
             if (mp.g1().getBoolean("proxy_enabled", false) && bz.B1 != null && bz.a1 && bz.z1.size() > 1 && this.a) {
                 a();
@@ -59,7 +59,7 @@ public final class kt implements fs {
             }
             return;
         }
-        if (i7 == ks.C4) {
+        if (i7 == ks.D4) {
             g0.r(xrVar);
             return;
         }

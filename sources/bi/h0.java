@@ -23,7 +23,7 @@ import org.telegram.ui.Components.oc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h0 implements q10 {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class h0 implements q10 {
             case 1:
                 boolean[] zArr = (boolean[]) obj5;
                 aa.r rVar = (aa.r) obj4;
-                d4 d4Var = (d4) obj3;
+                c4 c4Var = (c4) obj3;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 if (!zArr[0]) {
                     zArr[0] = true;
@@ -107,20 +107,20 @@ public final /* synthetic */ class h0 implements q10 {
                             j3 = j10;
                         }
                     }
-                    d4Var.a(Long.valueOf(j3));
+                    c4Var.a(Long.valueOf(j3));
                     break;
                 }
                 break;
             case 2:
-                g8 g8Var = (g8) obj5;
+                f8 f8Var = (f8) obj5;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
                 ((vf.b) obj4).b();
                 if (((Boolean) obj).booleanValue()) {
-                    di.c2 c2Var = g8Var.b2;
+                    di.c2 c2Var = f8Var.b2;
                     if (c2Var != null) {
                         c2Var.a(tL_starGiftUnique);
                     }
-                    g8Var.dismiss();
+                    f8Var.dismiss();
                     break;
                 }
                 break;

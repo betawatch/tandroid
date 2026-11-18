@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.util.SparseArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rs implements Runnable {
     public final /* synthetic */ int a;
@@ -23,27 +23,27 @@ public final /* synthetic */ class rs implements Runnable {
         xs xsVar = this.b;
         switch (i7) {
             case 0:
-                ks.e().k(ks.I4, Integer.valueOf(xsVar.currentAccount));
+                ks.e().k(ks.J4, Integer.valueOf(xsVar.currentAccount));
                 xsVar.getNotificationCenter().k(ks.d2, Integer.valueOf(i10));
                 break;
             case 1:
-                ks.e().k(ks.I4, Integer.valueOf(xsVar.currentAccount));
+                ks.e().k(ks.J4, Integer.valueOf(xsVar.currentAccount));
                 xsVar.getNotificationCenter().k(ks.d2, Integer.valueOf(i10));
                 break;
             case 2:
-                ks.e().k(ks.I4, Integer.valueOf(xsVar.currentAccount));
+                ks.e().k(ks.J4, Integer.valueOf(xsVar.currentAccount));
                 xsVar.getNotificationCenter().k(ks.d2, Integer.valueOf(i10));
                 break;
             case 3:
-                ks.e().k(ks.I4, Integer.valueOf(xsVar.currentAccount));
+                ks.e().k(ks.J4, Integer.valueOf(xsVar.currentAccount));
                 xsVar.getNotificationCenter().k(ks.d2, Integer.valueOf(i10));
                 break;
             case 4:
                 if (xsVar.J == 0) {
                     xsVar.w.clear();
-                    ks.e().k(256, new Object[0]);
+                    ks.e().k(ks.g4, new Object[0]);
                 }
-                ks.e().k(ks.I4, Integer.valueOf(xsVar.currentAccount));
+                ks.e().k(ks.J4, Integer.valueOf(xsVar.currentAccount));
                 xsVar.getNotificationCenter().k(ks.d2, Integer.valueOf(i10));
                 break;
             case 5:

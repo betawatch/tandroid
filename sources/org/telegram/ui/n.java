@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class n extends org.telegram.ui.Components.bk0 {
     public final Context c;
@@ -48,16 +48,16 @@ public final class n extends org.telegram.ui.Components.bk0 {
         ArrayList arrayList = oVar.h;
         if (d(i7) != 0) {
             if (d(i7) == 2) {
-                org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
+                org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
                 if (i7 == oVar.x) {
-                    z8Var.setTopPadding(17);
-                    z8Var.setBottomPadding(10);
-                    z8Var.setText(org.telegram.messenger.gd.M0(oVar.I == 5 ? 2131754133 : 2131754122, null));
+                    a9Var.setTopPadding(17);
+                    a9Var.setBottomPadding(10);
+                    a9Var.setText(org.telegram.messenger.gd.M0(oVar.I == 5 ? 2131754133 : 2131754122, null));
                     return;
                 } else {
-                    z8Var.setTopPadding(10);
-                    z8Var.setBottomPadding(17);
-                    z8Var.setText(null);
+                    a9Var.setTopPadding(10);
+                    a9Var.setBottomPadding(17);
+                    a9Var.setText(null);
                     return;
                 }
             }
@@ -94,9 +94,9 @@ public final class n extends org.telegram.ui.Components.bk0 {
             org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, vVar, null);
             view = vVar;
         } else if (i7 == 1) {
-            view = new org.telegram.ui.Cells.t4(context);
+            view = new org.telegram.ui.Cells.u4(context);
         } else if (i7 == 2) {
-            view = new org.telegram.ui.Cells.z8(context);
+            view = new org.telegram.ui.Cells.a9(context);
         }
         view.setLayoutParams(new v4.q0(-1, -2));
         return new org.telegram.ui.Components.kj0(view);

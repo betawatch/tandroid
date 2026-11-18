@@ -3,9 +3,9 @@ package oi;
 import android.text.Editable;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final class m0 implements d1 {
     public final /* synthetic */ p0 a;
@@ -77,7 +77,7 @@ public final class m0 implements d1 {
     @Override // oi.d1
     public final void r1(e1 e1Var, int i7, int i10) {
         b3 b3Var;
-        i9 textSelectionHelper;
+        j9 textSelectionHelper;
         p0 p0Var = this.a;
         if (p0Var.n || i7 == i10 || (b3Var = p0Var.h) == null || (textSelectionHelper = b3Var.a.getTextSelectionHelper()) == null) {
             return;

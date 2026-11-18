@@ -2,7 +2,7 @@ package hi;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -51,10 +51,10 @@ public final /* synthetic */ class h6 implements ValueAnimator.AnimatorUpdateLis
                 jVar.a.a(f13, f15, false);
                 break;
             default:
-                org.telegram.ui.Cells.y9 y9Var = (org.telegram.ui.Cells.y9) this.f;
-                y9Var.getClass();
+                org.telegram.ui.Cells.z9 z9Var = (org.telegram.ui.Cells.z9) this.f;
+                z9Var.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vg.f fVar = ((vg.e) y9Var.b).a;
+                vg.f fVar = ((vg.e) z9Var.b).a;
                 float f17 = this.c;
                 float f18 = this.b;
                 fVar.d = com.google.android.gms.internal.vision.e2.z(f17, f18, floatValue3, f18);

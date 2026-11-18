@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class gk implements Runnable {
     public final /* synthetic */ int a;
@@ -68,9 +68,9 @@ public final class gk implements Runnable {
             case 2:
                 rn rnVar = (rn) obj;
                 gk gkVar = rnVar.V0;
-                org.telegram.ui.Cells.a6 a6Var = rnVar.h1;
-                if (a6Var != null) {
-                    EditTextBoldCursor editField = a6Var.getEditField();
+                org.telegram.ui.Cells.b6 b6Var = rnVar.h1;
+                if (b6Var != null) {
+                    EditTextBoldCursor editField = b6Var.getEditField();
                     if (!rnVar.I && editField != null && rnVar.H && !rnVar.f1 && !org.telegram.messenger.g0.D && !org.telegram.messenger.g0.E && org.telegram.messenger.g0.Q1()) {
                         editField.requestFocus();
                         org.telegram.messenger.g0.I3(editField);

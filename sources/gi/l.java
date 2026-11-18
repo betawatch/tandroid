@@ -16,14 +16,14 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.o7;
+import org.telegram.ui.Cells.p7;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.dq0;
 import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.kj0;
 import v4.f1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public class l extends ij0 {
     public final Context c;
@@ -165,14 +165,14 @@ public class l extends ij0 {
             return;
         }
         View view = f1Var.a;
-        if (view instanceof o7) {
-            o7 o7Var = (o7) view;
-            o7Var.e0 = true;
+        if (view instanceof p7) {
+            p7 p7Var = (p7) view;
+            p7Var.e0 = true;
             m mVar = this.s;
             ArrayList arrayList = this.d;
             if (i7 >= 0 && i7 < arrayList.size()) {
                 o6 o6Var = (o6) arrayList.get(i7);
-                o7Var.g0 = false;
+                p7Var.g0 = false;
                 if (o6Var.L == null) {
                     TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
                     long j3 = o6Var.a;
@@ -184,28 +184,28 @@ public class l extends ij0 {
                     o6Var.L = kVar;
                     kVar.m = o6Var;
                 }
-                o7Var.k(o6Var.L, this == this.f ? mVar.e : mVar.d, false);
-                o7Var.e0 = true;
-                o7Var.setReorder(false);
-                o7Var.i(false, false);
+                p7Var.k(o6Var.L, this == this.f ? mVar.e : mVar.d, false);
+                p7Var.e0 = true;
+                p7Var.setReorder(false);
+                p7Var.i(false, false);
                 return;
             }
             int size = i7 - arrayList.size();
             if (size < 0 || size >= this.e.i.size()) {
-                o7Var.g0 = false;
-                o7Var.k(null, this == this.f ? mVar.e : mVar.d, false);
-                o7Var.e0 = true;
+                p7Var.g0 = false;
+                p7Var.k(null, this == this.f ? mVar.e : mVar.d, false);
+                p7Var.e0 = true;
                 return;
             }
             fj fjVar = (fj) this.e.i.get(size);
-            o7Var.g0 = fjVar != null && this.e.m(fjVar.e1());
-            o7Var.setReorder(true);
-            o7Var.k(fjVar, this == this.f ? mVar.e : mVar.d, false);
+            p7Var.g0 = fjVar != null && this.e.m(fjVar.e1());
+            p7Var.setReorder(true);
+            p7Var.k(fjVar, this == this.f ? mVar.e : mVar.d, false);
             dq0 dq0Var = mVar.a0;
             if (!dq0Var.H.F1 || fjVar == null) {
-                o7Var.i(false, false);
+                p7Var.i(false, false);
             } else {
-                o7Var.i(dq0Var.c(fjVar), true);
+                p7Var.i(dq0Var.c(fjVar), true);
             }
         }
     }
@@ -216,11 +216,11 @@ public class l extends ij0 {
         if (this.h == null) {
             this.h = new o3(viewGroup.getContext(), dq0Var.c);
         }
-        o7 o7Var = new o7(this.c, this.h, dq0Var.b);
-        o7Var.x0 = true;
-        o7Var.setGradientView(null);
-        o7Var.e0 = true;
-        return new kj0(o7Var);
+        p7 p7Var = new p7(this.c, this.h, dq0Var.b);
+        p7Var.x0 = true;
+        p7Var.setGradientView(null);
+        p7Var.e0 = true;
+        return new kj0(p7Var);
     }
 
     @Override // org.telegram.ui.Components.ij0

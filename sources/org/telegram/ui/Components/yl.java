@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class yl extends dm {
     public final /* synthetic */ boolean b;
@@ -35,10 +35,10 @@ public final class yl extends dm {
         int childCount = xlVar.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = xlVar.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.r5) {
-                org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) childAt;
-                r5Var.a.getImageReceiver().O0(true, true);
-                r5Var.g(true);
+            if (childAt instanceof org.telegram.ui.Cells.s5) {
+                org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) childAt;
+                s5Var.a.getImageReceiver().O0(true, true);
+                s5Var.g(true);
             }
         }
     }

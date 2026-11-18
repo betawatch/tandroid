@@ -2,7 +2,7 @@ package c8;
 
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public enum fb implements u {
     b(0),
@@ -64,7 +64,7 @@ public enum fb implements u {
     w0(ks.O5),
     x0(ks.P5),
     y0(ks.W5),
-    z0(352),
+    z0(ks.X5),
     A0(353),
     B0(354),
     C0(31),

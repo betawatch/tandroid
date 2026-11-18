@@ -29,7 +29,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class iw0 extends org.telegram.ui.ActionBar.x2 implements org.telegram.messenger.fs {
     public static final /* synthetic */ int r2 = 0;
@@ -502,7 +502,7 @@ public class iw0 extends org.telegram.ui.ActionBar.x2 implements org.telegram.me
         this.z1 = view3;
         org.telegram.ui.ActionBar.u6.h(i10, view3, this.J0);
         this.x1.addView(this.z1, layoutParams3);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
         if (this.S1 != null) {
             org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.U1);
             org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.V1);
@@ -603,7 +603,7 @@ public class iw0 extends org.telegram.ui.ActionBar.x2 implements org.telegram.me
         arrayList.add(new org.telegram.ui.ActionBar.w6(viewGroup, 0, (Class[]) null, (Paint) null, drawableArr, (org.telegram.ui.ActionBar.v6) null, i7));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.zj));
         if (this.o1.r.R1 != null) {
-            org.telegram.ui.Cells.u3.a(arrayList, w6Var);
+            org.telegram.ui.Cells.v3.a(arrayList, w6Var);
         }
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.s1, 65568, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Ej));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.u1, 32, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
@@ -922,7 +922,7 @@ public class iw0 extends org.telegram.ui.ActionBar.x2 implements org.telegram.me
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.k4) {
+        if (i7 == org.telegram.messenger.ks.l4) {
             di.b1 b1Var = this.n1;
             if (b1Var != null) {
                 int childCount = b1Var.getChildCount();
@@ -990,7 +990,7 @@ public class iw0 extends org.telegram.ui.ActionBar.x2 implements org.telegram.me
             ConnectionsManager.getInstance(this.a).cancelRequest(this.a2, true);
             this.a2 = 0;
         }
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
         if (this.S1 != null) {
             ArrayList arrayList = this.T1;
             if (arrayList != null) {

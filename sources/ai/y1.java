@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.d6;
+import bi.c6;
 import c8.ma;
 import c8.ra;
 import fi.a6;
@@ -36,8 +36,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.a3;
-import org.telegram.ui.Cells.na;
+import org.telegram.ui.Cells.b3;
+import org.telegram.ui.Cells.oa;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.cz;
 import org.telegram.ui.Components.de0;
@@ -48,9 +48,10 @@ import org.telegram.ui.Components.ph0;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.Wallet.na;
 import org.telegram.ui.m40;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements x10 {
     public final /* synthetic */ int a;
@@ -87,11 +88,11 @@ public final /* synthetic */ class y1 implements x10 {
             case 1:
                 x3 x3Var = (x3) obj2;
                 View view = (View) obj;
-                d6 d6Var = x3Var.b;
+                c6 c6Var = x3Var.b;
                 if (view instanceof w3) {
-                    d6Var.getClass();
+                    c6Var.getClass();
                     int R = RecyclerView.R(view);
-                    l41 G = d6Var.g3.G(R);
+                    l41 G = c6Var.g3.G(R);
                     if (G != null) {
                         w3 w3Var = (w3) view;
                         w3Var.setPosition(x3Var.b(R));
@@ -164,16 +165,16 @@ public final /* synthetic */ class y1 implements x10 {
                 }
                 break;
             case 5:
-                na naVar = (na) obj2;
+                oa oaVar = (oa) obj2;
                 ArrayList arrayList2 = (ArrayList) obj;
-                naVar.getClass();
+                oaVar.getClass();
                 if (LaunchActivity.E1) {
                     if (arrayList2 == null || arrayList2.size() == 0) {
-                        f3.o(null, 2131743642, new lc(cb.a(naVar.getContext()), null), null);
+                        f3.o(null, 2131743642, new lc(cb.a(oaVar.getContext()), null), null);
                     } else {
-                        LinearLayout linearLayout = new LinearLayout(naVar.getContext());
+                        LinearLayout linearLayout = new LinearLayout(oaVar.getContext());
                         linearLayout.setOrientation(1);
-                        ph0 ph0Var = new ph0(naVar.getContext());
+                        ph0 ph0Var = new ph0(oaVar.getContext());
                         ph0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         ph0Var.f(R.raw.ic_ban, 50, 50, null);
                         ph0Var.d();
@@ -185,23 +186,23 @@ public final /* synthetic */ class y1 implements x10 {
                         ph0Var.setBackground(L2);
                         u6.j(ph0Var, L2, M, null, null);
                         linearLayout.addView(ph0Var, ma.t(80, 80, 17, 0, 14, 0, 0));
-                        TextView textView = new TextView(naVar.getContext());
+                        TextView textView = new TextView(oaVar.getContext());
                         textView.setTypeface(org.telegram.messenger.g0.o());
                         textView.setTextSize(1, 20.0f);
                         textView.setGravity(17);
                         textView.setText(gd.G(arrayList2.size(), "UnconfirmedAuthDeniedTitle", new Object[0]));
                         u6.U(textView, n6.j5, null);
                         linearLayout.addView(textView, ma.k(28.0f, 14.0f, 28.0f, 0.0f, -1, -2));
-                        TextView textView2 = new TextView(naVar.getContext());
+                        TextView textView2 = new TextView(oaVar.getContext());
                         textView2.setTextSize(1, 14.0f);
                         textView2.setGravity(17);
                         if (arrayList2.size() == 1) {
-                            textView2.setText(gd.a0(null, null, 2131743668, na.a((f10) arrayList2.get(0))));
+                            textView2.setText(gd.a0(null, null, 2131743668, oa.a((f10) arrayList2.get(0))));
                         } else {
                             String str = "\n";
                             for (int i21 = 0; i21 < Math.min(arrayList2.size(), 10); i21++) {
                                 StringBuilder n10 = p5.c.n(str, "• ");
-                                n10.append(na.a((f10) arrayList2.get(i21)));
+                                n10.append(oa.a((f10) arrayList2.get(i21)));
                                 n10.append("\n");
                                 str = n10.toString();
                             }
@@ -209,7 +210,7 @@ public final /* synthetic */ class y1 implements x10 {
                         }
                         u6.U(textView2, n6.j5, null);
                         linearLayout.addView(textView2, ma.k(40.0f, 9.0f, 40.0f, 0.0f, -1, -2));
-                        FrameLayout frameLayout = new FrameLayout(naVar.getContext());
+                        FrameLayout frameLayout = new FrameLayout(oaVar.getContext());
                         frameLayout.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(10.0f));
                         int L3 = org.telegram.messenger.g0.L(12.0f);
                         int i22 = n6.q7;
@@ -217,19 +218,19 @@ public final /* synthetic */ class y1 implements x10 {
                         q6 K = u6.K(n6.I.q() ? 0.2f : 0.15f, i22);
                         frameLayout.setBackground(d02);
                         u6.j(frameLayout, d02, K, null, null);
-                        TextView textView3 = new TextView(naVar.getContext());
+                        TextView textView3 = new TextView(oaVar.getContext());
                         textView3.setTypeface(org.telegram.messenger.g0.o());
                         textView3.setTextSize(1, 14.0f);
                         textView3.setGravity(17);
                         n10.r(textView3, i22, null, null, 2131743664);
                         frameLayout.addView(textView3, ma.e(-1, -1, ks.E1));
                         linearLayout.addView(frameLayout, ma.k(14.0f, 19.0f, 14.0f, 0.0f, -1, -2));
-                        hi.d dVar = new hi.d(naVar.getContext(), null, true);
+                        hi.d dVar = new hi.d(oaVar.getContext(), null, true);
                         dVar.setRoundRadius(24);
                         ra.b(dVar, 0.02f, 1.5f);
                         dVar.i(gd.M0(2131749356, null), false, true);
                         linearLayout.addView(dVar, ma.k(14.0f, 20.0f, 14.0f, 4.0f, -1, 48));
-                        org.telegram.ui.ActionBar.x2 j3 = f3.j(1, naVar.getContext(), null, false);
+                        org.telegram.ui.ActionBar.x2 j3 = f3.j(1, oaVar.getContext(), null, false);
                         j3.O = linearLayout;
                         j3.show();
                         j3.c0 = false;
@@ -243,10 +244,10 @@ public final /* synthetic */ class y1 implements x10 {
                         a6 a6Var = new a6(28, dVar, fVar);
                         dVar.K = a6Var;
                         org.telegram.messenger.g0.h3(a6Var, 1000L);
-                        dVar.setOnClickListener(new a3(dVar, j3, i12));
+                        dVar.setOnClickListener(new b3(dVar, j3, i12));
                     }
                 }
-                naVar.e.a(false, true);
+                oaVar.e.a(false, true);
                 mp.u1(i13).W1().a();
                 break;
             case 6:
@@ -272,18 +273,18 @@ public final /* synthetic */ class y1 implements x10 {
                 x10Var.a(user);
                 break;
             default:
-                org.telegram.ui.Wallet.na naVar2 = (org.telegram.ui.Wallet.na) obj2;
+                na naVar = (na) obj2;
                 String str2 = (String) obj;
-                if (!naVar2.r && i13 == naVar2.K) {
-                    naVar2.F = 0;
-                    naVar2.M = false;
+                if (!naVar.r && i13 == naVar.K) {
+                    naVar.F = 0;
+                    naVar.M = false;
                     String userFriendlyAddress = WalletEngine2.isValidRecipientAddress(str2) ? WalletEngine2.toUserFriendlyAddress(str2) : null;
-                    naVar2.y = userFriendlyAddress;
-                    hi.d dVar2 = naVar2.a0;
+                    naVar.y = userFriendlyAddress;
+                    hi.d dVar2 = naVar.a0;
                     if (dVar2 != null) {
                         dVar2.setEnabled(userFriendlyAddress != null);
                     }
-                    naVar2.a.g3.O(true);
+                    naVar.a.g3.O(true);
                     break;
                 }
                 break;

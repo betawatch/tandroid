@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class tq0 implements rj0 {
     public final /* synthetic */ iq0 a;
@@ -44,7 +44,7 @@ public final class tq0 implements rj0 {
             if (iq0Var.h.getAdapter() != gt0Var.V) {
                 if (!gt0Var.F1 || iq0Var.F == 11) {
                     int i12 = iq0Var.F;
-                    if (i12 == 7 && (view2 instanceof org.telegram.ui.Cells.qa)) {
+                    if (i12 == 7 && (view2 instanceof org.telegram.ui.Cells.ra)) {
                         if (tr0Var.e.isEmpty()) {
                             i10 = i7;
                         } else if (i7 < tr0Var.e.size()) {
@@ -67,20 +67,20 @@ public final class tq0 implements rj0 {
                             return gt0Var.U0(chatParticipant, true, view2);
                         }
                     } else {
-                        if (i12 == 1 && (view2 instanceof org.telegram.ui.Cells.h7)) {
+                        if (i12 == 1 && (view2 instanceof org.telegram.ui.Cells.i7)) {
+                            return gt0Var.T0(((org.telegram.ui.Cells.i7) view2).getMessage(), view2, 0, true);
+                        }
+                        if (i12 == 3 && (view2 instanceof org.telegram.ui.Cells.l7)) {
+                            return gt0Var.T0(((org.telegram.ui.Cells.l7) view2).getMessage(), view2, 0, true);
+                        }
+                        if ((i12 == 2 || i12 == 4) && (view2 instanceof org.telegram.ui.Cells.h7)) {
                             return gt0Var.T0(((org.telegram.ui.Cells.h7) view2).getMessage(), view2, 0, true);
                         }
-                        if (i12 == 3 && (view2 instanceof org.telegram.ui.Cells.k7)) {
-                            return gt0Var.T0(((org.telegram.ui.Cells.k7) view2).getMessage(), view2, 0, true);
+                        if (i12 == 5 && (view2 instanceof org.telegram.ui.Cells.i2)) {
+                            return gt0Var.T0((org.telegram.messenger.fj) ((org.telegram.ui.Cells.i2) view2).getParentObject(), view2, 0, true);
                         }
-                        if ((i12 == 2 || i12 == 4) && (view2 instanceof org.telegram.ui.Cells.g7)) {
-                            return gt0Var.T0(((org.telegram.ui.Cells.g7) view2).getMessage(), view2, 0, true);
-                        }
-                        if (i12 == 5 && (view2 instanceof org.telegram.ui.Cells.h2)) {
-                            return gt0Var.T0((org.telegram.messenger.fj) ((org.telegram.ui.Cells.h2) view2).getParentObject(), view2, 0, true);
-                        }
-                        if ((i12 == 0 || (gt0.z0(i12) && gt0Var.H())) && (view2 instanceof org.telegram.ui.Cells.o7)) {
-                            org.telegram.messenger.fj messageObject = ((org.telegram.ui.Cells.o7) view2).getMessageObject();
+                        if ((i12 == 0 || (gt0.z0(i12) && gt0Var.H())) && (view2 instanceof org.telegram.ui.Cells.p7)) {
+                            org.telegram.messenger.fj messageObject = ((org.telegram.ui.Cells.p7) view2).getMessageObject();
                             if (messageObject != null) {
                                 return gt0Var.T0(messageObject, view2, iq0Var.F, true);
                             }
@@ -139,7 +139,7 @@ public final class tq0 implements rj0 {
                                         org.telegram.ui.ActionBar.z0 z0Var2 = new org.telegram.ui.ActionBar.z0(gt0Var2.getContext(), false, false);
                                         z0Var2.j(org.telegram.messenger.gd.M0(2131746467, null), R.drawable.msg_addbot, null);
                                         z0Var2.setMinimumWidth(org.telegram.messenger.ks.q2);
-                                        z0Var2.setOnClickListener(new bi.f5(sr0Var, (TLRPC.Chat) tLObject, i7, 15));
+                                        z0Var2.setOnClickListener(new bi.e5(sr0Var, (TLRPC.Chat) tLObject, i7, 15));
                                         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var2);
                                         h2Var.presentFragmentAsPreviewWithMenu(bnVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
                                         return z10;

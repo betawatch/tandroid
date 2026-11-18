@@ -13,7 +13,7 @@ import org.telegram.messenger.n10;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.xb0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class u0 extends org.telegram.ui.ActionBar.x2 {
     public int A1;
@@ -23,7 +23,7 @@ public final class u0 extends org.telegram.ui.ActionBar.x2 {
     public final org.telegram.ui.Components.n6 p1;
     public final hi.d q1;
     public final org.telegram.ui.Components.n6 r1;
-    public final org.telegram.ui.Cells.s8 s1;
+    public final org.telegram.ui.Cells.t8 s1;
     public final ImageView t1;
     public final ImageView u1;
     public final cg.a v1;
@@ -103,12 +103,12 @@ public final class u0 extends org.telegram.ui.ActionBar.x2 {
         org.telegram.ui.ActionBar.u6.U(textView, i11, null);
         textView.setTextSize(1, 13.0f);
         linearLayout2.addView(textView, c8.ma.t(-1, -2, 55, 33, 4, 33, 0));
-        org.telegram.ui.Cells.s8 s8Var = new org.telegram.ui.Cells.s8(context);
-        this.s1 = s8Var;
-        s8Var.c.setLayoutParams(c8.ma.d(20, 20.0f, (gd.a0 ? 5 : 3) | 48, 22.0f, 22.0f, 22.0f, 0.0f));
-        s8Var.b(gd.M0(2131745933, null), gd.M0(2131745934, null), true, false);
-        s8Var.setOnClickListener(new ah.d(this, 14));
-        linearLayout2.addView(s8Var, c8.ma.t(-1, -2, 55, 0, 16, 0, 16));
+        org.telegram.ui.Cells.t8 t8Var = new org.telegram.ui.Cells.t8(context);
+        this.s1 = t8Var;
+        t8Var.c.setLayoutParams(c8.ma.d(20, 20.0f, (gd.a0 ? 5 : 3) | 48, 22.0f, 22.0f, 22.0f, 0.0f));
+        t8Var.b(gd.M0(2131745933, null), gd.M0(2131745934, null), true, false);
+        t8Var.setOnClickListener(new ah.d(this, 14));
+        linearLayout2.addView(t8Var, c8.ma.t(-1, -2, 55, 0, 16, 0, 16));
         LinearLayout linearLayout3 = new LinearLayout(context);
         linearLayout3.setOrientation(1);
         linearLayout.addView(linearLayout3, c8.ma.r(-1, -2, 80));

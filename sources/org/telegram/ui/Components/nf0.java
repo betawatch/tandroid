@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public class nf0 extends AccessibilityNodeProvider {
     public final /* synthetic */ int a = 1;
     public final Object b;
 
-    public nf0(org.telegram.ui.Cells.b5 b5Var) {
-        this.b = b5Var;
+    public nf0(org.telegram.ui.Cells.c5 c5Var) {
+        this.b = c5Var;
     }
 
     @Override // android.view.accessibility.AccessibilityNodeProvider
@@ -74,7 +74,7 @@ public class nf0 extends AccessibilityNodeProvider {
                 }
                 return null;
             default:
-                s0.c t6 = ((org.telegram.ui.Cells.b5) this.b).t(i7);
+                s0.c t6 = ((org.telegram.ui.Cells.c5) this.b).t(i7);
                 if (t6 == null) {
                     return null;
                 }
@@ -86,7 +86,7 @@ public class nf0 extends AccessibilityNodeProvider {
     public List findAccessibilityNodeInfosByText(String str, int i7) {
         switch (this.a) {
             case 1:
-                ((org.telegram.ui.Cells.b5) this.b).getClass();
+                ((org.telegram.ui.Cells.c5) this.b).getClass();
                 return null;
             default:
                 return super.findAccessibilityNodeInfosByText(str, i7);
@@ -97,7 +97,7 @@ public class nf0 extends AccessibilityNodeProvider {
     public AccessibilityNodeInfo findFocus(int i7) {
         switch (this.a) {
             case 1:
-                s0.c w10 = ((org.telegram.ui.Cells.b5) this.b).w(i7);
+                s0.c w10 = ((org.telegram.ui.Cells.c5) this.b).w(i7);
                 if (w10 == null) {
                     return null;
                 }
@@ -147,7 +147,7 @@ public class nf0 extends AccessibilityNodeProvider {
                 }
                 return false;
             default:
-                return ((org.telegram.ui.Cells.b5) this.b).z(i7, i10, bundle);
+                return ((org.telegram.ui.Cells.c5) this.b).z(i7, i10, bundle);
         }
     }
 

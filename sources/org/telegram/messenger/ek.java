@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ek implements Runnable {
     public final /* synthetic */ int a;
@@ -363,7 +363,7 @@ public final /* synthetic */ class ek implements Runnable {
                 fjVar.S1 = false;
                 a2Var.h = fjVar;
                 g0.h3(a2Var.f, b10.getAppGlobalConfig().A.n2(TimeUnit.MILLISECONDS));
-                b10.getNotificationCenter().k(ks.M5, new c2(j15, j16, a2Var.h));
+                b10.getNotificationCenter().k(ks.N5, new c2(j15, j16, a2Var.h));
                 return;
             case 1:
                 TLRPC.TL_sendMessageRichMessageDraftAction tL_sendMessageRichMessageDraftAction = (TLRPC.TL_sendMessageRichMessageDraftAction) obj;
@@ -483,7 +483,7 @@ public final /* synthetic */ class ek implements Runnable {
                 fjVar2.S1 = false;
                 a2Var2.h = fjVar2;
                 g0.h3(a2Var2.f, b11.getAppGlobalConfig().A.n2(TimeUnit.MILLISECONDS));
-                b11.getNotificationCenter().k(ks.M5, new c2(j11, j12, a2Var2.h));
+                b11.getNotificationCenter().k(ks.N5, new c2(j11, j12, a2Var2.h));
                 return;
             case 2:
                 ri riVar = (ri) obj2;

@@ -7,9 +7,9 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.TextureView;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x5 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,14 +52,14 @@ public final /* synthetic */ class x5 implements Runnable {
                         if (bitmap2 != null && (nVar = (u8.n) a6Var.a.get()) != null && nVar.b.k()) {
                             int width2 = bitmap2.getWidth();
                             int height2 = bitmap2.getHeight();
-                            md0 md0Var = new md0(18);
+                            nd0 nd0Var = new nd0(18);
                             int width3 = bitmap2.getWidth();
                             int height3 = bitmap2.getHeight();
-                            md0Var.d = bitmap2;
-                            b7.d dVar = (b7.d) md0Var.b;
+                            nd0Var.d = bitmap2;
+                            b7.d dVar = (b7.d) nd0Var.b;
                             dVar.a = width3;
                             dVar.b = height3;
-                            SparseArray e12 = nVar.e1(md0Var);
+                            SparseArray e12 = nVar.e1(nd0Var);
                             for (int i10 = 0; i10 < e12.size(); i10++) {
                                 u8.m mVar = (u8.m) e12.valueAt(i10);
                                 String str2 = mVar.b;

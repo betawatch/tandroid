@@ -1,47 +1,143 @@
 package bi;
 
-import android.content.Context;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
+import java.util.Iterator;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.x10;
+import org.telegram.messenger.xs;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.y60;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h4 implements x10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
-    public final /* synthetic */ o3 e;
-    public final /* synthetic */ Boolean f;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ h4(Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, o3 o3Var, Boolean bool, int i10) {
-        this.a = i10;
-        this.b = context;
-        this.c = i7;
-        this.d = i6Var;
-        this.e = o3Var;
-        this.f = bool;
+    public /* synthetic */ h4(TL_stars.TL_starGiftUnique tL_starGiftUnique, String str, c1.c cVar, int i7, long j3, long j10) {
+        this.e = tL_starGiftUnique;
+        this.f = str;
+        this.g = cVar;
+        this.b = i7;
+        this.c = j3;
+        this.d = j10;
     }
 
     @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
-        switch (this.a) {
+        int i7 = this.a;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        int i10 = this.b;
+        Object obj4 = this.e;
+        switch (i7) {
             case 0:
-                lc k10 = this.e.k();
-                v4.q(this.b, this.c, this.d, k10, (String) obj, this.f);
-                break;
-            case 1:
-                lc k11 = this.e.k();
-                v4.q(this.b, this.c, this.d, k11, (String) obj, this.f);
-                break;
-            case 2:
-                lc k12 = this.e.k();
-                v4.q(this.b, this.c, this.d, k12, (String) obj, this.f);
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj4;
+                String str = (String) obj3;
+                c1.c cVar = (c1.c) obj2;
+                if (((Boolean) obj).booleanValue()) {
+                    cVar.run();
+                    di.x8 y10 = di.x8.y(i10, false);
+                    String str2 = tL_starGiftUnique.slug;
+                    LongSparseArray longSparseArray = y10.L;
+                    LongSparseArray longSparseArray2 = y10.K;
+                    if (!TextUtils.isEmpty(str2)) {
+                        ArrayList arrayList = new ArrayList();
+                        for (int i11 = 0; i11 < longSparseArray.size(); i11++) {
+                            if (((di.o8) longSparseArray.valueAt(i11)).j(str2)) {
+                                arrayList.add(Long.valueOf(longSparseArray.keyAt(i11)));
+                            }
+                        }
+                        for (int i12 = 0; i12 < longSparseArray2.size(); i12++) {
+                            di.m8 m8Var = (di.m8) longSparseArray2.valueAt(i12);
+                            di.o8 o8Var = m8Var.g;
+                            boolean z10 = o8Var != null && o8Var.j(str2);
+                            Iterator it = m8Var.h.values().iterator();
+                            while (it.hasNext()) {
+                                z10 = z10 || ((di.o8) it.next()).j(str2);
+                            }
+                            if (z10 && !arrayList.contains(Long.valueOf(longSparseArray2.keyAt(i12)))) {
+                                arrayList.add(Long.valueOf(longSparseArray2.keyAt(i12)));
+                            }
+                        }
+                        for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                            y10.O(((Long) arrayList.get(i13)).longValue());
+                        }
+                    }
+                    long j3 = this.c;
+                    if (j3 != 0) {
+                        di.x8.y(i10, false).O(j3);
+                        u4.s(tL_starGiftUnique, gd.a0(null, null, 2131749662, str, org.telegram.messenger.n5.s(i10, j3)));
+                        break;
+                    } else {
+                        di.x8.y(i10, false).O(this.d);
+                        org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i10);
+                        String str3 = tL_starGiftUnique.gift_address;
+                        org.telegram.ui.Wallet.h hVar = D.B;
+                        org.telegram.messenger.g0.r(hVar);
+                        D.y = str3;
+                        D.z = null;
+                        D.A = 0;
+                        D.B().e();
+                        D.H().g();
+                        D.K();
+                        int i14 = D.A;
+                        long[] jArr = org.telegram.ui.Wallet.u0.S;
+                        if (i14 < 7) {
+                            D.A = i14 + 1;
+                            org.telegram.messenger.g0.h3(hVar, jArr[i14]);
+                        }
+                        u4.s(tL_starGiftUnique, gd.a0(null, null, 2131749663, str));
+                        break;
+                    }
+                } else {
+                    u4.s(tL_starGiftUnique, gd.a0(null, null, 2131749620, str));
+                    break;
+                }
                 break;
             default:
-                lc k13 = this.e.k();
-                v4.q(this.b, this.c, this.d, k13, (String) obj, this.f);
+                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj3;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
+                Integer num = (Integer) obj;
+                ((y60) obj4).v();
+                int intValue = num.intValue();
+                long j10 = this.c;
+                long j11 = this.d;
+                if (intValue == 0) {
+                    if (mp.u1(i10).u2(j10, j11, null)) {
+                        xs.t(i10).G(j10, j11, false);
+                    }
+                    if (lc.a(h2Var)) {
+                        lc.z(h2Var, 4, num.intValue(), i6Var).j();
+                        break;
+                    }
+                } else {
+                    xs.t(i10).H(j10, num.intValue(), j11);
+                    if (lc.a(h2Var)) {
+                        lc.z(h2Var, 5, num.intValue(), i6Var).j();
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ h4(y60 y60Var, int i7, long j3, long j10, bn bnVar, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.e = y60Var;
+        this.b = i7;
+        this.c = j3;
+        this.d = j10;
+        this.f = bnVar;
+        this.g = i6Var;
     }
 }

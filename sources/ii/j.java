@@ -2,6 +2,7 @@ package ii;
 
 import ai.v1;
 import bi.e0;
+import bi.s4;
 import di.xb;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h2;
@@ -13,7 +14,7 @@ import org.telegram.ui.Components.u4;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.oa1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements oa1, qb0 {
     public final /* synthetic */ long a;
@@ -38,7 +39,7 @@ public final /* synthetic */ class j implements oa1, qb0 {
     public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         h2 h2Var = (h2) this.d;
         TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.e;
-        e0 e0Var = new e0((v1) this.f, this.c, this.b, h2Var, (bi.t4) this.h);
+        e0 e0Var = new e0((v1) this.f, this.c, this.b, h2Var, (s4) this.h);
         int currentAccount = h2Var.getCurrentAccount();
         boolean[] zArr = n.a;
         if (zArr[currentAccount]) {
@@ -53,13 +54,13 @@ public final /* synthetic */ class j implements oa1, qb0 {
         b5.g((xb) this.d, null, this.a, this.b, this.c, (sb0) this.e, (t4) this.f, (u4) this.h);
     }
 
-    public /* synthetic */ j(h2 h2Var, long j3, TwoStepVerificationActivity twoStepVerificationActivity, v1 v1Var, int i7, long j10, bi.t4 t4Var) {
+    public /* synthetic */ j(h2 h2Var, long j3, TwoStepVerificationActivity twoStepVerificationActivity, v1 v1Var, int i7, long j10, s4 s4Var) {
         this.d = h2Var;
         this.a = j3;
         this.e = twoStepVerificationActivity;
         this.f = v1Var;
         this.c = i7;
         this.b = j10;
-        this.h = t4Var;
+        this.h = s4Var;
     }
 }

@@ -6,10 +6,10 @@ import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class wn extends q9 {
-    public final org.telegram.ui.Cells.k6 H;
+    public final org.telegram.ui.Cells.l6 H;
     public final /* synthetic */ org.telegram.ui.ActionBar.h2 I;
     public final /* synthetic */ boolean J;
     public final /* synthetic */ org.telegram.ui.ActionBar.i6 K;
@@ -22,7 +22,7 @@ public final class wn extends q9 {
         this.I = h2Var;
         this.J = z10;
         this.K = i6Var;
-        this.H = new org.telegram.ui.Cells.k6(this);
+        this.H = new org.telegram.ui.Cells.l6(this);
     }
 
     @Override // org.telegram.ui.Components.q9, android.view.View
@@ -33,14 +33,14 @@ public final class wn extends q9 {
             super.onDraw(canvas);
             return;
         }
-        org.telegram.ui.Cells.k6 k6Var = this.H;
-        k6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        k6Var.a = true;
-        k6Var.v = true;
-        k6Var.J = this.K;
+        org.telegram.ui.Cells.l6 l6Var = this.H;
+        l6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        l6Var.a = true;
+        l6Var.v = true;
+        l6Var.J = this.K;
         Integer num = aoVar.c;
         if (num != null) {
-            k6Var.z = num.intValue();
+            l6Var.z = num.intValue();
         }
         org.telegram.ui.bn bnVar = aoVar.H;
         if (bnVar != null) {
@@ -49,7 +49,7 @@ public final class wn extends q9 {
             org.telegram.ui.ActionBar.h2 h2Var = this.I;
             j3 = h2Var instanceof y91 ? -((y91) h2Var).a : 0L;
         }
-        fi.i7.h(j3, canvas, this.a, k6Var);
+        fi.i7.h(j3, canvas, this.a, l6Var);
     }
 
     @Override // android.view.View

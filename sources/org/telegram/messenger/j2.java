@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j2 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class j2 implements Runnable {
             case 1:
                 break;
             case 2:
-                ks.e().k(ks.k4, new Object[0]);
+                ks.e().k(ks.l4, new Object[0]);
                 return;
             case 3:
                 KeepAliveJob.a();
@@ -81,10 +81,10 @@ public final /* synthetic */ class j2 implements Runnable {
                 pc.d(false);
                 return;
             case 7:
-                ks.e().k(ks.z4, new Object[0]);
+                ks.e().k(ks.A4, new Object[0]);
                 return;
             case 8:
-                ks.e().k(ks.G4, new Object[0]);
+                ks.e().k(ks.H4, new Object[0]);
                 return;
             case 9:
                 int i12 = LocationSharingService.d;
@@ -109,7 +109,7 @@ public final /* synthetic */ class j2 implements Runnable {
                 org.telegram.ui.ActionBar.n6.F(false);
                 return;
             case 13:
-                ks.e().k(256, new Object[0]);
+                ks.e().k(ks.g4, new Object[0]);
                 return;
             case 14:
                 bz.y();
@@ -177,7 +177,7 @@ public final /* synthetic */ class j2 implements Runnable {
             case 22:
                 ks e11 = ks.e();
                 Boolean bool = Boolean.TRUE;
-                e11.k(ks.p4, Boolean.FALSE, bool, bool);
+                e11.k(ks.q4, Boolean.FALSE, bool, bool);
                 return;
             case 23:
                 org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();

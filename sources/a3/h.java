@@ -86,8 +86,8 @@ import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.x2;
 import org.telegram.ui.Cells.c0;
-import org.telegram.ui.Cells.c2;
-import org.telegram.ui.Cells.o7;
+import org.telegram.ui.Cells.d2;
+import org.telegram.ui.Cells.p7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a4;
@@ -112,7 +112,7 @@ import org.telegram.ui.u7;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements p, SuccessContinuation, i1, androidx.car.app.utils.b, Continuation, ww, rr, a9, OnFailureListener, oi, r1, ll0, jl, m0, qb0, z4 {
     public final /* synthetic */ int a;
@@ -570,12 +570,12 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
             default:
                 xk xkVar = (xk) this.c;
                 a1 a1Var = (a1) this.b;
-                c2 c2Var = (c2) this.d;
+                d2 d2Var = (d2) this.d;
                 TextView textView = xkVar.V;
                 if (a1Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
                     String trim3 = a1Var.getText().toString().trim();
                     xkVar.t0 = TextUtils.isEmpty(trim3) ? null : trim3;
-                    xkVar.u0 = !c2Var.b();
+                    xkVar.u0 = !d2Var.b();
                     if (TextUtils.isEmpty(xkVar.t0)) {
                         textView.setVisibility(8);
                     } else {
@@ -597,15 +597,15 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
 
     @Override // fi.a9
     public void m(Canvas canvas, RectF rectF, float f10) {
-        o7 o7Var = (o7) this.c;
+        p7 p7Var = (p7) this.c;
         hj0 hj0Var = (hj0) this.b;
         int[] iArr = (int[]) this.d;
-        o7Var.c(canvas, rectF, f10);
-        o7Var.f(canvas, rectF, f10);
-        if (o7Var.h) {
-            o7Var.b(canvas, rectF, f10);
+        p7Var.c(canvas, rectF, f10);
+        p7Var.f(canvas, rectF, f10);
+        if (p7Var.h) {
+            p7Var.b(canvas, rectF, f10);
         } else {
-            o7Var.e(canvas, rectF, f10);
+            p7Var.e(canvas, rectF, f10);
         }
         if (hj0Var != null && hj0Var.b0 && hj0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f10 * 255.0f), 31);

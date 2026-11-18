@@ -35,7 +35,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.bn;
 import org.telegram.ui.m40;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class k0 extends LinearLayout {
     public TextView a;
@@ -455,9 +455,9 @@ public final class k0 extends LinearLayout {
         } else if (i18 == 32) {
             str = l0Var.m1(true);
         } else if (i18 == 19) {
-            org.telegram.ui.Cells.q1 q1Var = l0Var.c2;
-            if (q1Var != null) {
-                int i20 = q1Var.getMessageObject().k.from_boosts_applied;
+            org.telegram.ui.Cells.r1 r1Var = l0Var.c2;
+            if (r1Var != null) {
+                int i20 = r1Var.getMessageObject().k.from_boosts_applied;
                 TLRPC.Chat o12 = l0Var.o1();
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) gd.G(i20, "GroupBoostedByUserWithTimes", o10.k(l0Var.c2.getCurrentUser(), true)));

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class aq extends org.telegram.ui.ActionBar.x2 {
     public final Drawable m1;
@@ -101,9 +101,9 @@ public final class aq extends org.telegram.ui.ActionBar.x2 {
         frameLayout.setBackgroundDrawable(mqVar);
         arrayList.add(mqVar);
         xpVar.addView(frameLayout, c8.ma.o(-1, -2));
-        org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(activity, null);
-        z8Var.setText(org.telegram.messenger.gd.M0(2131753850, null));
-        frameLayout.addView(z8Var);
+        org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(activity, null);
+        a9Var.setText(org.telegram.messenger.gd.M0(2131753850, null));
+        frameLayout.addView(a9Var);
         zp zpVar = new zp(activity);
         this.p1 = zpVar;
         org.telegram.ui.ActionBar.u6.h(i10, zpVar, null);

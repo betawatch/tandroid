@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class wu0 implements org.telegram.ui.Components.qj0 {
     public int a = 0;
@@ -178,7 +178,7 @@ public final class wu0 implements org.telegram.ui.Components.qj0 {
         if (i7 == 12) {
             org.telegram.messenger.bz.j1 = null;
             org.telegram.messenger.bz.y();
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.S4, new Object[0]);
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.T4, new Object[0]);
             return;
         }
         if (i7 == 13) {

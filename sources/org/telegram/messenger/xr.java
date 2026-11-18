@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.rv0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xr implements Runnable {
     public final /* synthetic */ int a;
@@ -116,9 +116,9 @@ public final /* synthetic */ class xr implements Runnable {
                 }
                 return;
             case 7:
-                org.telegram.ui.Cells.l1 l1Var = ((ev) this.b).F;
-                if (l1Var != null) {
-                    l1Var.m();
+                org.telegram.ui.Cells.m1 m1Var = ((ev) this.b).F;
+                if (m1Var != null) {
+                    m1Var.m();
                     return;
                 }
                 return;
@@ -155,13 +155,13 @@ public final /* synthetic */ class xr implements Runnable {
                 }
                 cu cuVar = dvVar.R;
                 ev evVar2 = dvVar.a;
-                org.telegram.ui.Cells.q1 q1Var = evVar2.E;
-                org.telegram.ui.Cells.l1 l1Var2 = evVar2.F;
+                org.telegram.ui.Cells.r1 r1Var = evVar2.E;
+                org.telegram.ui.Cells.m1 m1Var2 = evVar2.F;
                 TL_iv.textButton textbutton = cuVar.b;
-                if (q1Var == null || l1Var2 == null) {
+                if (r1Var == null || m1Var2 == null) {
                     return;
                 }
-                l1Var2.I1(q1Var, textbutton);
+                m1Var2.I1(r1Var, textbutton);
                 return;
             case 9:
                 xv xvVar = (xv) this.b;

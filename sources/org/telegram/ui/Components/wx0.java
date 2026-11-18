@@ -14,7 +14,7 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class wx0 extends View {
     public static final ix0 T = new ix0(0);
@@ -36,7 +36,7 @@ public final class wx0 extends View {
     public final ArrayList Q;
     public boolean R;
     public final ux0 S;
-    public final org.telegram.ui.Cells.i9 a;
+    public final org.telegram.ui.Cells.j9 a;
     public int b;
     public final mx0 c;
     public final mx0 d;
@@ -50,7 +50,7 @@ public final class wx0 extends View {
     public int x;
     public boolean y;
 
-    public wx0(Context context, vx0 vx0Var, org.telegram.ui.Cells.i9 i9Var) {
+    public wx0(Context context, vx0 vx0Var, org.telegram.ui.Cells.j9 j9Var) {
         super(context);
         this.c = new mx0(this, true);
         this.d = new mx0(this, false);
@@ -70,7 +70,7 @@ public final class wx0 extends View {
         this.N = new RectF();
         this.O = new float[8];
         this.Q = new ArrayList();
-        this.a = i9Var;
+        this.a = j9Var;
         setRowCount(TLObject.FLAG_31);
         setColumnCount(TLObject.FLAG_31);
         setOrientation(0);

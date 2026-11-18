@@ -17,7 +17,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
-import bi.e5;
+import bi.d5;
 import c8.ic;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -52,17 +52,17 @@ import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Components.io;
 import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.rm;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.md0;
+import org.telegram.ui.nd0;
 import org.telegram.ui.qx0;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements OnSuccessListener, jc, w5.b, u9.d, org.telegram.ui.ActionBar.r1, pj0, wh.a, ua.a, d5.a {
     public final /* synthetic */ int a;
@@ -418,7 +418,7 @@ public final /* synthetic */ class z1 implements OnSuccessListener, jc, w5.b, u9
         LinkedHashMap linkedHashMap = w0Var.h2;
         wg.v0 v0Var = w0Var.U1;
         HashSet hashSet = w0Var.a2;
-        if (view instanceof m8) {
+        if (view instanceof n8) {
             linkedHashMap.clear();
             w0Var.j1(true);
         } else if (view instanceof ah.r) {
@@ -557,7 +557,7 @@ public final /* synthetic */ class z1 implements OnSuccessListener, jc, w5.b, u9
                 ab.c0 c0Var = (ab.c0) obj;
                 Iterator it = ((Iterable) ((v5.g) ((v5.d) c0Var.c)).c(new ug.x(7))).iterator();
                 while (it.hasNext()) {
-                    ((md0) c0Var.d).H((o5.i) it.next(), 1, false);
+                    ((nd0) c0Var.d).H((o5.i) it.next(), 1, false);
                 }
                 return null;
         }
@@ -652,7 +652,7 @@ public final /* synthetic */ class z1 implements OnSuccessListener, jc, w5.b, u9
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                e5 e5Var = (e5) obj2;
+                d5 d5Var = (d5) obj2;
                 zb.b bVar = (zb.b) obj;
                 ArrayList arrayList = new ArrayList();
                 for (int i10 = 0; i10 < bVar.a.size(); i10++) {
@@ -665,7 +665,7 @@ public final /* synthetic */ class z1 implements OnSuccessListener, jc, w5.b, u9
                     d2Var.e = aVar.c;
                     arrayList.add(d2Var);
                 }
-                e5Var.a(arrayList);
+                d5Var.a(arrayList);
                 break;
             default:
                 e2 e2Var = (e2) obj2;

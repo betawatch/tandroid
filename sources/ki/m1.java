@@ -49,7 +49,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements ww, org.telegram.ui.ActionBar.r1, ResultCallback, qi.m {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class m1 implements ww, org.telegram.ui.ActionBar.r
                 tL_messages_toggleBotInAttachMenu.enabled = false;
                 ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new c2(i11, i12), 66);
                 ((TLRPC.TL_attachMenuBot) obj2).show_in_side_menu = false;
-                ks.f(i11).k(ks.Y4, new Object[0]);
+                ks.f(i11).k(ks.Z4, new Object[0]);
                 ri.d0(i11).n2(ri.f2, j3);
                 if (runnable != null) {
                     runnable.run();
@@ -139,7 +139,7 @@ public final /* synthetic */ class m1 implements ww, org.telegram.ui.ActionBar.r
                             O0.title = obj3;
                             ks.f(i11).k(2, 16);
                             mp.u1(i11).C(j10, obj3, null);
-                            ks.e().k(ks.R4, 3, Long.valueOf(j3));
+                            ks.e().k(ks.S4, 3, Long.valueOf(j3));
                         }
                     } else {
                         TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(j3));
@@ -172,7 +172,7 @@ public final /* synthetic */ class m1 implements ww, org.telegram.ui.ActionBar.r
                             ks.f(i11).k(46, new Object[0]);
                             ks.f(i11).k(2, 1);
                             ConnectionsManager.getInstance(i11).sendRequest(updateprofile, new k5(18));
-                            ks.e().k(ks.R4, 3, Long.valueOf(j3));
+                            ks.e().k(ks.S4, 3, Long.valueOf(j3));
                         }
                     }
                     u1Var.dismiss();
@@ -337,7 +337,7 @@ public final /* synthetic */ class m1 implements ww, org.telegram.ui.ActionBar.r
         xb0Var.e(editTextBoldCursor);
         xb0Var.addView(editTextBoldCursor, ma.d(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
         f10.addView(xb0Var, ma.o(-1, -2));
-        editTextBoldCursor.addTextChangedListener(new org.telegram.ui.Cells.j3());
+        editTextBoldCursor.addTextChangedListener(new org.telegram.ui.Cells.k3());
         editTextBoldCursor.addTextChangedListener(new o1(editTextBoldCursor, i16, xb0Var));
         TLRPC.TL_textWithEntities tL_textWithEntities = botVerifierSettings.custom_description;
         if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {

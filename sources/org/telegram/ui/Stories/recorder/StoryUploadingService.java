@@ -15,7 +15,7 @@ import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.xs;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes4.dex */
 public class StoryUploadingService extends Service implements fs {
     public q a;
@@ -24,14 +24,14 @@ public class StoryUploadingService extends Service implements fs {
     public int d = -1;
 
     public StoryUploadingService() {
-        ks.e().b(this, ks.D5);
+        ks.e().b(this, ks.E5);
     }
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         String str;
-        if (i7 != ks.C5) {
-            if (i7 == ks.D5 && (str = this.b) != null && str.equals((String) objArr[0])) {
+        if (i7 != ks.D5) {
+            if (i7 == ks.E5 && (str = this.b) != null && str.equals((String) objArr[0])) {
                 stopSelf();
                 return;
             }
@@ -69,8 +69,8 @@ public class StoryUploadingService extends Service implements fs {
         } catch (Exception unused) {
         }
         new i0(t0.b).b(33, null);
-        ks.e().n(this, ks.D5);
-        ks.f(this.d).n(this, ks.C5);
+        ks.e().n(this, ks.E5);
+        ks.f(this.d).n(this, ks.D5);
         if (s2.a) {
             a8.b("upload story destroy");
         }
@@ -78,7 +78,7 @@ public class StoryUploadingService extends Service implements fs {
 
     @Override // android.app.Service
     public final int onStartCommand(Intent intent, int i7, int i10) {
-        int i11 = ks.C5;
+        int i11 = ks.D5;
         this.b = intent.getStringExtra("path");
         int i12 = this.d;
         int intExtra = intent.getIntExtra("currentAccount", j10.t0);

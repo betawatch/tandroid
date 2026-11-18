@@ -6,7 +6,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.xt0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class z extends ViewGroup implements xt0 {
     public boolean a;
@@ -62,7 +62,7 @@ public abstract class z extends ViewGroup implements xt0 {
         return false;
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.q9
+    @Override // android.view.View, org.telegram.ui.Cells.r9
     public void invalidate() {
         Runnable runnable = this.e;
         if (runnable != null) {

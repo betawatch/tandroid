@@ -15,7 +15,7 @@ import org.telegram.ui.Components.hn;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public abstract class sb {
     public static pg.i a;
@@ -58,7 +58,7 @@ public abstract class sb {
             iVar2.E = ck0Var;
             ck0Var.setLayoutManager(new v4.c0());
             ck0Var.setAdapter(new org.telegram.ui.l4(iVar2, launchActivity));
-            ck0Var.setOnItemClickListener(new bi.i8(iVar2, 19));
+            ck0Var.setOnItemClickListener(new bi.h8(iVar2, 19));
             linearLayout.addView(ck0Var, ma.l(1.0f, -1, 0));
             iVar2.addView(linearLayout, ma.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();

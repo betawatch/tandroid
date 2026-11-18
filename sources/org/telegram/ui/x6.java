@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
     public static volatile boolean i0 = false;
@@ -178,7 +178,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
         char c15 = 5;
         int i14 = (zArr[0] ? 2 : 0) + (zArr[1] ? 2 : 0) + (zArr[2] ? 2 : 0) + (zArr[3] ? 2 : 0) + (zArr[4] ? 1 : 0) + (zArr[5] ? 2 : 0) + (zArr[6] ? 1 : 0) + (zArr[7] ? 1 : 0) + (zArr[8] ? 1 : 0) + (zArr[9] ? 1 : 0);
         long currentTimeMillis = System.currentTimeMillis();
-        bi.e5 e5Var = new bi.e5(m6Var, iArr, i14, 4);
+        bi.d5 d5Var = new bi.d5(m6Var, iArr, i14, 4);
         bi.q3 q3Var2 = new bi.q3(i14, 4, currentTimeMillis, m6Var, iArr);
         long j10 = 0;
         boolean z14 = true;
@@ -249,14 +249,14 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
                                     j3 = org.telegram.messenger.w7.j(i10);
                                 }
                                 if (j3 != null) {
-                                    n0(j3.getAbsolutePath(), r12, null, e5Var);
+                                    n0(j3.getAbsolutePath(), r12, null, d5Var);
                                 }
                                 iArr[0] = iArr[0] + 1;
                                 q3Var2.run();
                                 if (i10 == 100) {
                                     File j11 = org.telegram.messenger.w7.j(4);
                                     if (j11 != null) {
-                                        n0(j11.getAbsolutePath(), 3, null, e5Var);
+                                        n0(j11.getAbsolutePath(), 3, null, d5Var);
                                     }
                                     iArr[0] = iArr[0] + 1;
                                     q3Var2.run();
@@ -265,7 +265,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
                                     File j12 = org.telegram.messenger.w7.j(i10 == 0 ? 100 : 101);
                                     i11 = 101;
                                     if (j12 != null) {
-                                        n0(j12.getAbsolutePath(), r12, null, e5Var);
+                                        n0(j12.getAbsolutePath(), r12, null, d5Var);
                                     }
                                     c11 = 0;
                                     iArr[0] = iArr[0] + 1;
@@ -277,7 +277,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
                                 if (i10 == 3) {
                                     File j13 = org.telegram.messenger.w7.j(5);
                                     if (j13 != null) {
-                                        n0(j13.getAbsolutePath(), r12, null, e5Var);
+                                        n0(j13.getAbsolutePath(), r12, null, d5Var);
                                     }
                                     iArr[c11] = iArr[c11] + 1;
                                     q3Var2.run();
@@ -948,7 +948,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.N4) {
+        if (i7 == org.telegram.messenger.ks.O4) {
             try {
                 org.telegram.ui.ActionBar.u1 u1Var = this.c;
                 if (u1Var != null) {
@@ -974,7 +974,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
     public final ArrayList getThemeDescriptions() {
         f6 f6Var = new f6(0, this);
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 16, new Class[]{org.telegram.ui.Cells.w9.class, org.telegram.ui.Components.eu0.class, org.telegram.ui.Components.rw0.class, org.telegram.ui.Cells.n4.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 16, new Class[]{org.telegram.ui.Cells.x9.class, org.telegram.ui.Components.eu0.class, org.telegram.ui.Components.rw0.class, org.telegram.ui.Cells.o4.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Components.rw0.class}, new String[]{"paintFill"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, org.telegram.ui.ActionBar.n6.Kj));
         int i7 = org.telegram.ui.ActionBar.n6.y6;
         arrayList.add(new org.telegram.ui.ActionBar.w6(this.b, 0, new Class[]{org.telegram.ui.Components.rw0.class}, new String[]{"calculationgTextView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.v6) null, i7));
@@ -1170,7 +1170,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
         i0 = false;
-        getNotificationCenter().c(this, org.telegram.messenger.ks.N4);
+        getNotificationCenter().c(this, org.telegram.messenger.ks.O4);
         this.e = org.telegram.messenger.tr.a0(this.currentAccount).S();
         Utilities.e.c(new b6(this, 2));
         this.b0 = System.currentTimeMillis();
@@ -1182,7 +1182,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
     @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, org.telegram.messenger.ks.N4);
+        getNotificationCenter().n(this, org.telegram.messenger.ks.O4);
         try {
             org.telegram.ui.ActionBar.u1 u1Var = this.c;
             if (u1Var != null) {
@@ -1250,7 +1250,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
     public final void onTransitionAnimationProgress(boolean z10, float f10) {
         if (f10 > 0.5f && !this.h0) {
             this.h0 = true;
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.t4, new Object[0]);
+            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
         }
         super.onTransitionAnimationProgress(z10, f10);
     }
@@ -1428,7 +1428,7 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
         }
         for (int i16 = 0; i16 < this.b.getChildCount(); i16++) {
             View childAt = this.b.getChildAt(i16);
-            if (childAt instanceof org.telegram.ui.Cells.c2) {
+            if (childAt instanceof org.telegram.ui.Cells.d2) {
                 this.b.getClass();
                 int R = RecyclerView.R(childAt);
                 if (R >= 0) {
@@ -1436,9 +1436,9 @@ public final class x6 extends org.telegram.ui.ActionBar.h2 implements org.telegr
                     if (t6Var4.a == 11) {
                         int i17 = t6Var4.f;
                         if (i17 < 0) {
-                            ((org.telegram.ui.Cells.c2) childAt).c(!t02, true);
+                            ((org.telegram.ui.Cells.d2) childAt).c(!t02, true);
                         } else {
-                            ((org.telegram.ui.Cells.c2) childAt).c(zArr[i17], true);
+                            ((org.telegram.ui.Cells.d2) childAt).c(zArr[i17], true);
                         }
                     }
                 }

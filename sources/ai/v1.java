@@ -17,10 +17,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.a9;
 import bi.j3;
-import bi.q8;
-import bi.v4;
+import bi.p8;
+import bi.u4;
+import bi.y8;
 import bi.z8;
 import c8.ma;
 import di.b5;
@@ -40,6 +40,7 @@ import hi.db;
 import hi.l5;
 import hi.l8;
 import hi.o9;
+import hi.q8;
 import hi.qb;
 import hi.r8;
 import hi.rb;
@@ -87,7 +88,7 @@ import org.telegram.ui.Components.y60;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v1 implements x10 {
     public final /* synthetic */ int a;
@@ -240,7 +241,7 @@ public final /* synthetic */ class v1 implements x10 {
                 }
                 break;
             case 3:
-                v4.s((TL_stars.TL_starGiftUnique) obj3, gd.a0(null, null, ((Boolean) obj).booleanValue() ? 2131749510 : 2131749620, (String) obj2));
+                u4.s((TL_stars.TL_starGiftUnique) obj3, gd.a0(null, null, ((Boolean) obj).booleanValue() ? 2131749510 : 2131749620, (String) obj2));
                 break;
             case 4:
                 eq0 eq0Var = (eq0) obj3;
@@ -260,17 +261,17 @@ public final /* synthetic */ class v1 implements x10 {
                 eq0Var.f(true);
                 break;
             case 5:
-                a9 a9Var = (a9) obj3;
+                z8 z8Var = (z8) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
-                long j3 = a9Var.V1;
-                Runnable runnable = a9Var.c2;
+                long j3 = z8Var.V1;
+                Runnable runnable = z8Var.c2;
                 if (runnable != null) {
                     runnable.run();
                 }
-                a9Var.dismiss();
+                z8Var.dismiss();
                 ks.f(j10.t0).k(ks.U2, new Object[0]);
-                org.telegram.messenger.g0.h3(new q8(0, user), 250L);
-                mp.u1(a9Var.U1).h7.edit().putBoolean("show_gift_for_" + j3, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j3, true).apply();
+                org.telegram.messenger.g0.h3(new p8(0, user), 250L);
+                mp.u1(z8Var.U1).h7.edit().putBoolean("show_gift_for_" + j3, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j3, true).apply();
                 break;
             case 6:
                 ci.z0 z0Var = (ci.z0) obj3;
@@ -448,7 +449,7 @@ public final /* synthetic */ class v1 implements x10 {
                 z3 z3Var = (z3) obj3;
                 g3 g3Var = (g3) obj;
                 z3Var.u3 = g3Var;
-                ug.l0.x1(new z8(z3Var, i13), (TL_stories.TL_premium_boostsStatus) obj2, g3Var, z3Var.l1, true);
+                ug.l0.x1(new y8(z3Var, i13), (TL_stories.TL_premium_boostsStatus) obj2, g3Var, z3Var.l1, true);
                 f9 f9Var = z3Var.t0;
                 if (f9Var != null) {
                     f9Var.k1 = false;
@@ -583,7 +584,7 @@ public final /* synthetic */ class v1 implements x10 {
                 l8 l8Var = (l8) obj3;
                 ((y60) obj2).v();
                 l8Var.h(true);
-                hi.q8 q8Var = l8Var.a0;
+                q8 q8Var = l8Var.a0;
                 t8 t8Var = q8Var.S1;
                 if (t8Var != null) {
                     t8Var.a(new HashSet(q8Var.v1));

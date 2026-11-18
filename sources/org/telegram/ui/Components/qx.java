@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class qx extends bk0 {
     public boolean E;
@@ -203,9 +203,9 @@ public final class qx extends bk0 {
             if (i10 != 3) {
                 return;
             }
-            org.telegram.ui.Cells.j8 j8Var = (org.telegram.ui.Cells.j8) view;
+            org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) view;
             if (this.d != 0) {
-                j8Var.a(0, org.telegram.messenger.gd.G(this.f.size(), "EmojiCount", new Object[0]));
+                k8Var.a(0, org.telegram.messenger.gd.G(this.f.size(), "EmojiCount", new Object[0]));
                 return;
             }
             if (!arrayList.isEmpty()) {
@@ -214,10 +214,10 @@ public final class qx extends bk0 {
                 i11 = 2;
             }
             if (i7 == arrayList2.size() + i11) {
-                j8Var.a(0, org.telegram.messenger.gd.M0(2131744640, null));
+                k8Var.a(0, org.telegram.messenger.gd.M0(2131744640, null));
                 return;
             } else {
-                j8Var.a(0, org.telegram.messenger.gd.M0(2131744639, null));
+                k8Var.a(0, org.telegram.messenger.gd.M0(2131744639, null));
                 return;
             }
         }
@@ -302,7 +302,7 @@ public final class qx extends bk0 {
             view2.setLayoutParams(new v4.q0(-1, ryVar.c1));
             view = view2;
         } else if (i7 == 3) {
-            view = new org.telegram.ui.Cells.j8(ryVar.getContext(), true, false, ryVar.a2, ryVar.j2);
+            view = new org.telegram.ui.Cells.k8(ryVar.getContext(), true, false, ryVar.a2, ryVar.j2);
         } else if (i7 == 4) {
             ViewGroup.LayoutParams q0Var = new v4.q0(-1, org.telegram.messenger.g0.L(79.0f));
             View view3 = this.c;

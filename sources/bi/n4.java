@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.bn;
 import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final /* synthetic */ class n4 implements Runnable {
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i7);
                 final int i10 = this.c;
                 final boolean z10 = this.d;
-                connectionsManager.sendRequest(getuniquestargift, new RequestDelegate() { // from class: bi.g4
+                connectionsManager.sendRequest(getuniquestargift, new RequestDelegate() { // from class: bi.f4
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         org.telegram.messenger.g0.g3(new p4(tLObject, i7, z10, i10, str));

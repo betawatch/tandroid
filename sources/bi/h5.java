@@ -1,34 +1,40 @@
 package bi;
 
-import org.telegram.messenger.r10;
-import org.telegram.ui.Components.eq0;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.f71;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h5 implements te.b, r10 {
-    public final /* synthetic */ eq0 a;
+public final /* synthetic */ class h5 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p6 b;
 
-    public /* synthetic */ h5(eq0 eq0Var) {
-        this.a = eq0Var;
+    public /* synthetic */ h5(p6 p6Var, int i7) {
+        this.a = i7;
+        this.b = p6Var;
     }
 
-    @Override // te.b
-    public void H(int i7, float f10, float f11, te.c cVar) {
-        this.a.l();
-    }
-
-    @Override // org.telegram.messenger.r10
-    public Object g(Number number, Object obj) {
-        eq0 eq0Var = this.a;
-        eq0Var.i();
-        if (((Integer) number).intValue() != -1) {
-            return Boolean.FALSE;
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                p6 p6Var = this.b;
+                p6Var.f(true);
+                f71 f71Var = p6Var.n;
+                int i7 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
+                f71Var.e(i7, p6Var.e.f(i7) + 1);
+                org.telegram.ui.ActionBar.h2 h2Var = p6Var.a;
+                if (h2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) h2Var).X4(true);
+                }
+                p6Var.o();
+                break;
+            default:
+                p6 p6Var2 = this.b;
+                p6Var2.e.b((String) obj, new h5(p6Var2, 0));
+                break;
         }
-        eq0Var.h(null, new i5(eq0Var, 1));
-        return Boolean.TRUE;
-    }
-
-    @Override // te.b
-    public /* synthetic */ void D(float f10, int i7) {
     }
 }

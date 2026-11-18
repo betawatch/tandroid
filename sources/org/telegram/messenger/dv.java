@@ -39,12 +39,12 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.o80;
 import org.telegram.ui.Components.ox0;
 import org.telegram.ui.Components.p41;
-import org.telegram.ui.wg0;
 import org.telegram.ui.xg0;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
-public final class dv implements org.telegram.ui.Cells.t9, ox0 {
+public final class dv implements org.telegram.ui.Cells.u9, ox0 {
     public static Paint U;
     public final AtomicReference E;
     public org.telegram.ui.Components.t5 F;
@@ -166,7 +166,7 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
         return dVar;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final Layout a() {
         return this.b;
     }
@@ -176,7 +176,7 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
         return this.s;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final /* synthetic */ Rect c() {
         return null;
     }
@@ -311,17 +311,17 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
         this.e = i7;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final /* synthetic */ CharSequence getPrefix() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getRow() {
         return this.e;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final CharSequence getText() {
         if (a() == null) {
             return null;
@@ -329,12 +329,12 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
         return a().getText();
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getX() {
         return this.c;
     }
 
-    @Override // org.telegram.ui.Cells.t9
+    @Override // org.telegram.ui.Cells.u9
     public final int getY() {
         return this.d;
     }
@@ -480,14 +480,14 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
             }
         }
         CharacterStyle o41Var = ((characterStyle instanceof av) && TLObject.hasFlag(((av) characterStyle).b, 256)) ? new o41(this.b.getText(), this.O, this.P, evVar.E() ? (byte) 1 : (byte) 0, null) : characterStyle;
-        org.telegram.ui.Cells.l1 l1Var = evVar.F;
-        org.telegram.ui.Cells.q1 q1Var = evVar.E;
-        if (l1Var != null && q1Var != null) {
+        org.telegram.ui.Cells.m1 m1Var = evVar.F;
+        org.telegram.ui.Cells.r1 r1Var = evVar.E;
+        if (m1Var != null && r1Var != null) {
             View view4 = this.T;
             if (view4 != null && !z10) {
                 view4.playSoundEffect(0);
             }
-            l1Var.T0(q1Var, o41Var, z10);
+            m1Var.T0(r1Var, o41Var, z10);
             return;
         }
         if (z10 || (view = this.T) == null || !(characterStyle instanceof ClickableSpan)) {
@@ -507,8 +507,8 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
         textPaint.setColor(w02);
         textPaint.linkColor = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Yc : org.telegram.ui.ActionBar.n6.Xc, evVar.D);
         final View view = this.T;
-        xg0.b(canvas, this.b, i7, f10, new wg0() { // from class: org.telegram.messenger.cv
-            @Override // org.telegram.ui.wg0
+        yg0.b(canvas, this.b, i7, f10, new xg0() { // from class: org.telegram.messenger.cv
+            @Override // org.telegram.ui.xg0
             public final void a(Canvas canvas2) {
                 dv dvVar = dv.this;
                 AtomicReference atomicReference = dvVar.E;
@@ -761,11 +761,11 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
                         if (view4 != null) {
                             view4.playSoundEffect(0);
                         }
-                        org.telegram.ui.Cells.q1 q1Var = evVar.E;
-                        org.telegram.ui.Cells.l1 l1Var = evVar.F;
+                        org.telegram.ui.Cells.r1 r1Var = evVar.E;
+                        org.telegram.ui.Cells.m1 m1Var = evVar.F;
                         TL_iv.textButton textbutton = cuVar3.b;
-                        if (q1Var != null && l1Var != null) {
-                            l1Var.k1(q1Var, textbutton);
+                        if (r1Var != null && m1Var != null) {
+                            m1Var.k1(r1Var, textbutton);
                         }
                         z10 = false;
                     }
@@ -809,16 +809,16 @@ public final class dv implements org.telegram.ui.Cells.t9, ox0 {
                     return false;
                 }
                 this.Q = null;
-                org.telegram.ui.Cells.q1 q1Var2 = evVar.E;
-                org.telegram.ui.Cells.l1 l1Var2 = evVar.F;
-                if (q1Var2 == null || l1Var2 == null) {
+                org.telegram.ui.Cells.r1 r1Var2 = evVar.E;
+                org.telegram.ui.Cells.m1 m1Var2 = evVar.F;
+                if (r1Var2 == null || m1Var2 == null) {
                     return true;
                 }
                 View view6 = this.T;
                 if (view6 != null) {
                     view6.playSoundEffect(0);
                 }
-                l1Var2.p0(x5Var);
+                m1Var2.p0(x5Var);
                 return true;
             }
             if (actionMasked == 3) {

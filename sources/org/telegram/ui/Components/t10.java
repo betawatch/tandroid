@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final class t10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -18,10 +18,10 @@ public final class t10 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public t10(org.telegram.ui.l51 l51Var, ri riVar, org.telegram.ui.Cells.q1 q1Var, org.telegram.ui.rj rjVar, org.telegram.ui.bn bnVar) {
+    public t10(org.telegram.ui.l51 l51Var, ri riVar, org.telegram.ui.Cells.r1 r1Var, org.telegram.ui.rj rjVar, org.telegram.ui.bn bnVar) {
         this.f = l51Var;
         this.b = riVar;
-        this.c = q1Var;
+        this.c = r1Var;
         this.d = rjVar;
         this.e = bnVar;
     }
@@ -52,9 +52,9 @@ public final class t10 extends AnimatorListenerAdapter {
                 ((ArrayList) riVar.c).remove(l51Var);
                 riVar.a();
                 ((ViewGroup) riVar.d).invalidate();
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.c;
-                q1Var.setEnterTransitionInProgress(false);
-                q1Var.getTransitionParams().E0.set(q1Var.getBackgroundDrawableLeft(), q1Var.getBackgroundDrawableTop(), q1Var.getBackgroundDrawableRight(), q1Var.getBackgroundDrawableBottom());
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.c;
+                r1Var.setEnterTransitionInProgress(false);
+                r1Var.getTransitionParams().E0.set(r1Var.getBackgroundDrawableLeft(), r1Var.getBackgroundDrawableTop(), r1Var.getBackgroundDrawableRight(), r1Var.getBackgroundDrawableBottom());
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
                 chatActivityEnterView.setTextTransitionIsRunning(false);
                 chatActivityEnterView.getEditField().setAlpha(1.0f);

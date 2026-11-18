@@ -7,8 +7,8 @@ import android.util.Pair;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import bi.a4;
-import bi.v4;
-import bi.x4;
+import bi.u4;
+import bi.w4;
 import c8.ma;
 import di.a5;
 import di.b5;
@@ -16,6 +16,8 @@ import di.m8;
 import di.o9;
 import di.p5;
 import di.s5;
+import di.v4;
+import di.x4;
 import di.x8;
 import di.z4;
 import fi.f9;
@@ -58,7 +60,7 @@ import org.telegram.ui.Components.x5;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,8 +97,8 @@ public final /* synthetic */ class a1 implements Runnable {
                 }
                 break;
             case 2:
-                ((x4) obj2).run();
-                org.telegram.messenger.g0.g3(new a4(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749567, v4.k(((org.telegram.ui.Wallet.p0) obj).b), gd.x(i11, true))), i10));
+                ((w4) obj2).run();
+                org.telegram.messenger.g0.g3(new a4(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749567, u4.k(((org.telegram.ui.Wallet.p0) obj).b), gd.x(i11, true))), i10));
                 break;
             case 3:
                 eq0 eq0Var = (eq0) obj2;
@@ -145,8 +147,8 @@ public final /* synthetic */ class a1 implements Runnable {
                 b5 b5Var = (b5) obj2;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 int[] iArr2 = b5Var.W;
-                di.x4 x4Var = b5Var.f;
-                di.v4 v4Var = b5Var.h;
+                x4 x4Var = b5Var.f;
+                v4 v4Var = b5Var.h;
                 if (starGift == null) {
                     FrameLayout frameLayout = new FrameLayout(b5Var.getContext());
                     ph0 ph0Var = new ph0(b5Var.getContext());

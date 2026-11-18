@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes3.dex */
 public abstract class jb extends org.telegram.ui.Components.au0 {
     public final /* synthetic */ lb g0;
@@ -42,29 +42,29 @@ public abstract class jb extends org.telegram.ui.Components.au0 {
                 z10 = !rectF2.intersect(rectF);
             }
             if (!z10) {
-                if (childAt instanceof org.telegram.ui.Cells.q1) {
+                if (childAt instanceof org.telegram.ui.Cells.r1) {
                     canvas.save();
                     canvas.translate(childAt.getX(), childAt.getY());
-                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                    if (q1Var.L0()) {
+                    org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt;
+                    if (r1Var.L0()) {
                         canvas.save();
-                        canvas.translate(0.0f, q1Var.W);
-                        q1Var.M0(canvas, true, false);
+                        canvas.translate(0.0f, r1Var.W);
+                        r1Var.M0(canvas, true, false);
                         canvas.restore();
                     }
                     canvas.restore();
                     lbVar.w.drawChild(canvas, childAt, uptimeMillis);
-                    if (q1Var.k2()) {
+                    if (r1Var.k2()) {
                         canvas.save();
-                        canvas.translate(q1Var.getX(), q1Var.getY());
-                        q1Var.i1(canvas);
+                        canvas.translate(r1Var.getX(), r1Var.getY());
+                        r1Var.i1(canvas);
                         canvas.restore();
                     }
-                } else if (childAt instanceof org.telegram.ui.Cells.u0) {
+                } else if (childAt instanceof org.telegram.ui.Cells.v0) {
                     lbVar.w.drawChild(canvas, childAt, uptimeMillis);
                     canvas.save();
                     canvas.translate(childAt.getX(), childAt.getY());
-                    ((org.telegram.ui.Cells.u0) childAt).K(canvas);
+                    ((org.telegram.ui.Cells.v0) childAt).I(canvas);
                     canvas.restore();
                 } else {
                     lbVar.w.drawChild(canvas, childAt, uptimeMillis);

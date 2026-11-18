@@ -20,10 +20,10 @@ import java.util.UUID;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Cells.c5;
 import p4.r0;
 
-/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
 /* loaded from: classes.dex */
 public final class t implements q {
     public static final r0 d = new r0(23);
@@ -313,14 +313,14 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final void a(final b5 b5Var) {
+    public final void a(final c5 c5Var) {
         this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: q2.s
             @Override // android.media.MediaDrm.OnEventListener
             public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i7, int i10, byte[] bArr2) {
                 t tVar = t.this;
-                b5 b5Var2 = b5Var;
+                c5 c5Var2 = c5Var;
                 tVar.getClass();
-                android.support.v4.media.session.q qVar = ((e) b5Var2.a).N;
+                android.support.v4.media.session.q qVar = ((e) c5Var2.a).N;
                 qVar.getClass();
                 qVar.obtainMessage(i7, bArr).sendToTarget();
             }
