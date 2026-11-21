@@ -10,11 +10,11 @@ import android.widget.TextView;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class nx0 extends FrameLayout implements org.telegram.messenger.fs {
-    public final bi.m5 a;
-    public final org.telegram.ui.Components.f71 b;
+    public final bi.q5 a;
+    public final org.telegram.ui.Components.i71 b;
     public final fi.d6 c;
     public final mx0 d;
     public int e;
@@ -25,24 +25,24 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
     public final Rect s;
     public final ru0 w;
 
-    public nx0(Context context, fi.d6 d6Var, final org.telegram.ui.Components.gq0 gq0Var) {
+    public nx0(Context context, fi.d6 d6Var, final org.telegram.ui.Components.iq0 iq0Var) {
         super(context);
         this.s = new Rect();
         this.c = d6Var;
         Objects.requireNonNull(d6Var);
         this.w = new ru0(d6Var, 8);
-        final org.telegram.ui.Components.hq0 hq0Var = (org.telegram.ui.Components.hq0) this;
-        bi.m5 m5Var = new bi.m5(hq0Var, context, gq0Var, 2);
-        this.a = m5Var;
-        m5Var.setAllowDisallowInterceptTouch(true);
-        mx0 mx0Var = new mx0(hq0Var);
+        final org.telegram.ui.Components.jq0 jq0Var = (org.telegram.ui.Components.jq0) this;
+        bi.q5 q5Var = new bi.q5(jq0Var, context, iq0Var, 2);
+        this.a = q5Var;
+        q5Var.setAllowDisallowInterceptTouch(true);
+        mx0 mx0Var = new mx0(jq0Var);
         this.d = mx0Var;
         mx0Var.a = d6Var.a();
-        m5Var.setAdapter(mx0Var);
-        m5Var.setTranslationY(org.telegram.messenger.g0.L(42.0f));
-        org.telegram.ui.Components.f71 i7 = m5Var.i(10, true);
+        q5Var.setAdapter(mx0Var);
+        q5Var.setTranslationY(org.telegram.messenger.g0.L(42.0f));
+        org.telegram.ui.Components.i71 i7 = q5Var.i(10, true);
         this.b = i7;
-        i7.h(org.telegram.ui.ActionBar.n6.xi, org.telegram.ui.ActionBar.n6.G6, org.telegram.ui.ActionBar.n6.vi, org.telegram.ui.ActionBar.n6.yi, org.telegram.ui.ActionBar.n6.s8);
+        i7.h(org.telegram.ui.ActionBar.m6.xi, org.telegram.ui.ActionBar.m6.G6, org.telegram.ui.ActionBar.m6.vi, org.telegram.ui.ActionBar.m6.yi, org.telegram.ui.ActionBar.m6.s8);
         i7.r = 12;
         final int i10 = 0;
         i7.setPreTabClick(new org.telegram.messenger.r10() { // from class: org.telegram.ui.kx0
@@ -50,16 +50,16 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
             public final Object g(Number number, Object obj) {
                 fi.p6 storiesController;
                 int i11 = i10;
-                final org.telegram.ui.Components.gq0 gq0Var2 = gq0Var;
-                org.telegram.ui.Components.hq0 hq0Var2 = hq0Var;
+                final org.telegram.ui.Components.iq0 iq0Var2 = iq0Var;
+                org.telegram.ui.Components.jq0 jq0Var2 = jq0Var;
                 Integer num = (Integer) number;
                 switch (i11) {
                     case 0:
-                        if (!hq0Var2.f) {
+                        if (!jq0Var2.f) {
                             if (num.intValue() != -1) {
                                 break;
                             } else {
-                                org.telegram.ui.Components.b5.P(gq0Var2.a, gq0Var2.b, gq0Var2.c, new org.telegram.ui.Components.iy(gq0Var2, 19));
+                                org.telegram.ui.Components.c5.P(iq0Var2.a, iq0Var2.b, iq0Var2.c, new org.telegram.ui.Components.ky(iq0Var2, 19));
                                 break;
                             }
                         } else {
@@ -67,115 +67,115 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                         }
                     default:
                         View view = (View) obj;
-                        if (num.intValue() != -1 && num.intValue() != 0 && !hq0Var2.f) {
+                        if (num.intValue() != -1 && num.intValue() != 0 && !jq0Var2.f) {
                             final int intValue = num.intValue();
-                            org.telegram.ui.Components.gt0 gt0Var = gq0Var2.d;
-                            org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
-                            storiesController = gt0Var.getStoriesController();
-                            if (storiesController.i(gt0Var.m1)) {
-                                org.telegram.ui.Components.y60 I = org.telegram.ui.Components.y60.I(h2Var, view);
-                                I.X(new bi.o5(gq0Var2));
+                            org.telegram.ui.Components.jt0 jt0Var = iq0Var2.d;
+                            org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
+                            storiesController = jt0Var.getStoriesController();
+                            if (storiesController.i(jt0Var.m1)) {
+                                org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(g2Var, view);
+                                I.X(new bi.s5(iq0Var2));
                                 final int i12 = 0;
-                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.M0(2131744563, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.N0(2131744557, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
                                 }, false);
-                                gt0Var.B(new org.telegram.ui.Cells.c5(I), h2Var, gt0Var.m1, intValue);
+                                jt0Var.B(new org.telegram.ui.Cells.c5(I), g2Var, jt0Var.m1, intValue);
                                 final int i13 = 1;
-                                I.c(R.drawable.msg_edit, org.telegram.messenger.gd.M0(2131744558, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.msg_edit, org.telegram.messenger.gd.N0(2131744552, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i14 = 2;
-                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.M0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131744549, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i14) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i15 = 3;
-                                I.c(R.drawable.msg_delete, org.telegram.messenger.gd.M0(2131744561, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i15) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
@@ -197,16 +197,16 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
             public final Object g(Number number, Object obj) {
                 fi.p6 storiesController;
                 int i112 = i11;
-                final org.telegram.ui.Components.gq0 gq0Var2 = gq0Var;
-                org.telegram.ui.Components.hq0 hq0Var2 = hq0Var;
+                final org.telegram.ui.Components.iq0 iq0Var2 = iq0Var;
+                org.telegram.ui.Components.jq0 jq0Var2 = jq0Var;
                 Integer num = (Integer) number;
                 switch (i112) {
                     case 0:
-                        if (!hq0Var2.f) {
+                        if (!jq0Var2.f) {
                             if (num.intValue() != -1) {
                                 break;
                             } else {
-                                org.telegram.ui.Components.b5.P(gq0Var2.a, gq0Var2.b, gq0Var2.c, new org.telegram.ui.Components.iy(gq0Var2, 19));
+                                org.telegram.ui.Components.c5.P(iq0Var2.a, iq0Var2.b, iq0Var2.c, new org.telegram.ui.Components.ky(iq0Var2, 19));
                                 break;
                             }
                         } else {
@@ -214,115 +214,115 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                         }
                     default:
                         View view = (View) obj;
-                        if (num.intValue() != -1 && num.intValue() != 0 && !hq0Var2.f) {
+                        if (num.intValue() != -1 && num.intValue() != 0 && !jq0Var2.f) {
                             final int intValue = num.intValue();
-                            org.telegram.ui.Components.gt0 gt0Var = gq0Var2.d;
-                            org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
-                            storiesController = gt0Var.getStoriesController();
-                            if (storiesController.i(gt0Var.m1)) {
-                                org.telegram.ui.Components.y60 I = org.telegram.ui.Components.y60.I(h2Var, view);
-                                I.X(new bi.o5(gq0Var2));
+                            org.telegram.ui.Components.jt0 jt0Var = iq0Var2.d;
+                            org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
+                            storiesController = jt0Var.getStoriesController();
+                            if (storiesController.i(jt0Var.m1)) {
+                                org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(g2Var, view);
+                                I.X(new bi.s5(iq0Var2));
                                 final int i12 = 0;
-                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.M0(2131744563, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.N0(2131744557, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
                                 }, false);
-                                gt0Var.B(new org.telegram.ui.Cells.c5(I), h2Var, gt0Var.m1, intValue);
+                                jt0Var.B(new org.telegram.ui.Cells.c5(I), g2Var, jt0Var.m1, intValue);
                                 final int i13 = 1;
-                                I.c(R.drawable.msg_edit, org.telegram.messenger.gd.M0(2131744558, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.msg_edit, org.telegram.messenger.gd.N0(2131744552, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i14 = 2;
-                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.M0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131744549, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i14) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
                                 }, false);
                                 final int i15 = 3;
-                                I.c(R.drawable.msg_delete, org.telegram.messenger.gd.M0(2131744561, null), new Runnable() { // from class: org.telegram.ui.Components.fq0
+                                I.c(R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i15) {
                                             case 0:
-                                                gt0 gt0Var2 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var2 = gt0Var2.y1;
-                                                gt0Var2.a1(intValue, gt0Var2.m1, h2Var2);
+                                                jt0 jt0Var2 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var2 = jt0Var2.y1;
+                                                jt0Var2.a1(intValue, jt0Var2.m1, g2Var2);
                                                 break;
                                             case 1:
-                                                gt0 gt0Var3 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = gt0Var3.y1;
-                                                gt0Var3.c1(intValue, gt0Var3.m1, h2Var3);
+                                                jt0 jt0Var3 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var3.y1;
+                                                jt0Var3.c1(intValue, jt0Var3.m1, g2Var3);
                                                 break;
                                             case 2:
-                                                gq0Var2.d.s1(intValue);
+                                                iq0Var2.d.s1(intValue);
                                                 break;
                                             default:
-                                                gt0 gt0Var4 = gq0Var2.d;
-                                                org.telegram.ui.ActionBar.h2 h2Var4 = gt0Var4.y1;
-                                                gt0Var4.b1(intValue, gt0Var4.m1, h2Var4);
+                                                jt0 jt0Var4 = iq0Var2.d;
+                                                org.telegram.ui.ActionBar.g2 g2Var4 = jt0Var4.y1;
+                                                jt0Var4.b1(intValue, jt0Var4.m1, g2Var4);
                                                 break;
                                         }
                                     }
@@ -343,8 +343,8 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
     }
 
     public final void a() {
-        org.telegram.ui.Components.f71 f71Var = this.b;
-        int currentTabId = f71Var != null ? f71Var.getCurrentTabId() : 0;
+        org.telegram.ui.Components.i71 i71Var = this.b;
+        int currentTabId = i71Var != null ? i71Var.getCurrentTabId() : 0;
         fi.d6 d6Var = this.c;
         boolean a10 = d6Var.a();
         mx0 mx0Var = this.d;
@@ -360,10 +360,10 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
             }
             return;
         }
-        if (f71Var == null || currentTabId <= 0 || d6Var.b(currentTabId) != null) {
+        if (i71Var == null || currentTabId <= 0 || d6Var.b(currentTabId) != null) {
             return;
         }
-        f71Var.e(0, 0);
+        i71Var.e(0, 0);
     }
 
     public abstract void b();
@@ -385,7 +385,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z10 ? 1.0f : 0.0f);
             this.h = ofFloat;
             ofFloat.setDuration(480L);
-            this.h.setInterpolator(org.telegram.ui.Components.lr.h);
+            this.h.setInterpolator(org.telegram.ui.Components.nr.h);
             this.h.addUpdateListener(new a3(this, 28));
             this.h.start();
         }
@@ -454,18 +454,18 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
             return;
         }
         this.f = z10;
-        org.telegram.ui.Components.f71 f71Var = this.b;
-        f71Var.setReordering(z10);
+        org.telegram.ui.Components.i71 i71Var = this.b;
+        i71Var.setReordering(z10);
         boolean z11 = this.f;
-        org.telegram.ui.Components.hq0 hq0Var = (org.telegram.ui.Components.hq0) this;
-        org.telegram.ui.Components.gt0 gt0Var = hq0Var.x;
-        TextView textView = gt0Var.t0;
+        org.telegram.ui.Components.jq0 jq0Var = (org.telegram.ui.Components.jq0) this;
+        org.telegram.ui.Components.jt0 jt0Var = jq0Var.x;
+        TextView textView = jt0Var.t0;
         textView.setVisibility(0);
-        textView.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.4f).scaleY(z11 ? 1.0f : 0.4f).withEndAction(new org.telegram.ui.Components.pp0(2, hq0Var, z11)).start();
-        gt0Var.I1(true);
-        gt0Var.W0();
+        textView.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.4f).scaleY(z11 ? 1.0f : 0.4f).withEndAction(new org.telegram.ui.Components.rp0(2, jq0Var, z11)).start();
+        jt0Var.I1(true);
+        jt0Var.W0();
         if (z10) {
-            org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+            org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
             if (T instanceof ProfileActivity) {
                 ProfileActivity profileActivity = (ProfileActivity) T;
                 profileActivity.X4(false);
@@ -479,11 +479,11 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
         fi.d6 d6Var = this.c;
         d6Var.e();
         d6Var.f(false);
-        int currentPosition = f71Var.getCurrentPosition();
+        int currentPosition = i71Var.getCurrentPosition();
         mx0 mx0Var = this.d;
         int f10 = mx0Var.f(currentPosition);
         this.a.j(true);
         int i7 = mx0Var.i(f10);
-        f71Var.f(0.0f, i7, i7);
+        i71Var.f(0.0f, i7, i7);
     }
 }

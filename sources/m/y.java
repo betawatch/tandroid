@@ -24,7 +24,7 @@ import c8.tb;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.telegram.ui.Cells.c5;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -39,7 +39,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((ji.j) ((c5) this.c).a).getClass();
+        ((ji.l) ((c5) this.c).a).getClass();
         if (keyListener instanceof t1.e) {
             return keyListener;
         }
@@ -97,17 +97,17 @@ public class y {
             c5Var.getClass();
             inputConnection = null;
         } else {
-            ji.j jVar = (ji.j) c5Var.a;
-            jVar.getClass();
+            ji.l lVar = (ji.l) c5Var.a;
+            lVar.getClass();
             if (!(inputConnection instanceof t1.b)) {
-                inputConnection = new t1.b((EditText) jVar.b, inputConnection, editorInfo);
+                inputConnection = new t1.b((EditText) lVar.b, inputConnection, editorInfo);
             }
         }
         return (t1.b) inputConnection;
     }
 
     public void d(boolean z10) {
-        t1.i iVar = (t1.i) ((ji.j) ((c5) this.c).a).c;
+        t1.i iVar = (t1.i) ((ji.l) ((c5) this.c).a).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a10 = androidx.emoji2.text.l.a();

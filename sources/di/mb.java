@@ -5,14 +5,14 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import org.telegram.messenger.fs;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.wz;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class mb extends FrameLayout implements fs {
-    public final e51 a;
-    public final org.telegram.ui.ActionBar.i6 b;
+    public final h51 a;
+    public final org.telegram.ui.ActionBar.h6 b;
     public final int c;
     public final int d;
     public final boolean e;
@@ -21,29 +21,29 @@ public final class mb extends FrameLayout implements fs {
     public org.telegram.ui.Wallet.e4 n;
     public String r;
 
-    public mb(Context context, boolean z10, long j3, int i7, int i10, int i11, org.telegram.ui.ActionBar.i6 i6Var) {
+    public mb(Context context, boolean z10, long j3, int i7, int i10, int i11, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.d = i7;
         this.e = z10;
         this.c = i10;
         this.f = j3;
-        this.b = i6Var;
+        this.b = h6Var;
         this.h = new lb(i10, i7, j3, z10);
-        e51 e51Var = new e51(context, i10, i11, true, new bi.b(this, 22), new c7(this, 1), null, i6Var);
-        this.a = e51Var;
-        addView(e51Var, c8.ma.c(-1.0f, -1));
-        e51Var.setOnScrollListener(new bi.q1(this, 11));
+        h51 h51Var = new h51(context, i10, i11, true, new bi.b(this, 22), new v6(this, 2), null, h6Var);
+        this.a = h51Var;
+        addView(h51Var, c8.ma.c(-1.0f, -1));
+        h51Var.setOnScrollListener(new bi.u1(this, 11));
     }
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11 = ks.B3;
-        e51 e51Var = this.a;
+        h51 h51Var = this.a;
         if (i7 == i11) {
-            e51Var.g3.O(true);
-            if (e51Var.canScrollVertically(1)) {
-                for (int i12 = 0; i12 < e51Var.getChildCount(); i12++) {
-                    if (!(e51Var.getChildAt(i12) instanceof wz)) {
+            h51Var.g3.O(true);
+            if (h51Var.canScrollVertically(1)) {
+                for (int i12 = 0; i12 < h51Var.getChildCount(); i12++) {
+                    if (!(h51Var.getChildAt(i12) instanceof yz)) {
                     }
                 }
                 return;
@@ -53,13 +53,13 @@ public final class mb extends FrameLayout implements fs {
         }
         if (i7 == ks.F3) {
             if (((Long) objArr[0]).longValue() == this.f) {
-                e51Var.g3.O(true);
+                h51Var.g3.O(true);
             }
         } else {
             if (i7 != ks.d4 || this.n == null || TextUtils.equals(this.r, org.telegram.ui.Wallet.u0.D(this.c).y())) {
                 return;
             }
-            e51Var.g3.O(true);
+            h51Var.g3.O(true);
         }
     }
 

@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a6 extends c1 implements fs {
     public static volatile a6[] U = new a6[4];
@@ -558,7 +558,7 @@ public final class a6 extends c1 implements fs {
         char c10;
         int e10;
         z5 n10;
-        e61 e61Var;
+        h61 h61Var;
         long p12;
         if (fjVar == null || (message = fjVar.k) == null) {
             return 0;
@@ -617,12 +617,12 @@ public final class a6 extends c1 implements fs {
                 long[] jArr = n10.b;
                 int i10 = iArr[c10];
                 long max = i7 == 2 ? Math.max(524288L, jArr[x(i7)]) : jArr[x(i7)];
-                e61Var = fjVar.g3;
-                if (e61Var != null) {
-                    p12 = e61Var.g.size;
+                h61Var = fjVar.g3;
+                if (h61Var != null) {
+                    p12 = h61Var.g.size;
                 } else {
-                    e61 e61Var2 = fjVar.h3;
-                    p12 = e61Var2 != null ? e61Var2.g.size : fj.p1(fj.n1(message));
+                    h61 h61Var2 = fjVar.h3;
+                    p12 = h61Var2 != null ? h61Var2.g.size : fj.p1(fj.n1(message));
                 }
                 return (L4 || !n10.c || p12 <= max || max <= 2097152) ? ((i7 != 1 || (p12 != 0 && p12 <= max)) && (i7 == 2 || (i10 & i7) != 0)) ? 1 : 0 : (i10 & i7) != 0 ? 2 : 0;
             }
@@ -635,8 +635,8 @@ public final class a6 extends c1 implements fs {
             int i102 = iArr2[c10];
             if (i7 == 2) {
             }
-            e61Var = fjVar.g3;
-            if (e61Var != null) {
+            h61Var = fjVar.g3;
+            if (h61Var != null) {
             }
             if (L4) {
             }
@@ -650,8 +650,8 @@ public final class a6 extends c1 implements fs {
         int i1022 = iArr22[c10];
         if (i7 == 2) {
         }
-        e61Var = fjVar.g3;
-        if (e61Var != null) {
+        h61Var = fjVar.g3;
+        if (h61Var != null) {
         }
         if (L4) {
         }
@@ -1091,7 +1091,7 @@ public final class a6 extends c1 implements fs {
         tL_autoDownloadSettings2.photo_size_max = z12 ? (int) jArr[0] : 0;
         tL_autoDownloadSettings2.video_size_max = z13 ? jArr[1] : 0L;
         tL_autoDownloadSettings2.file_size_max = z14 ? jArr[2] : 0L;
-        getConnectionsManager().sendRequest(saveautodownloadsettings, new fi.k5(9));
+        getConnectionsManager().sendRequest(saveautodownloadsettings, new fi.l5(9));
     }
 
     public final void y() {

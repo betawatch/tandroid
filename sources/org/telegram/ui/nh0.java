@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.SharedPreferences;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class nh0 implements org.telegram.ui.Components.oo {
+public final class nh0 implements org.telegram.ui.Components.qo {
     public final /* synthetic */ long a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ uh0 c;
@@ -24,7 +24,7 @@ public final class nh0 implements org.telegram.ui.Components.oo {
         this.f = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void B(int i7) {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         if (i7 == 0) {
@@ -44,7 +44,7 @@ public final class nh0 implements org.telegram.ui.Components.oo {
     }
 
     public final void a() {
-        org.telegram.ui.ActionBar.a5 a5Var;
+        org.telegram.ui.ActionBar.z4 z4Var;
         int indexOf;
         if (this.d) {
             return;
@@ -65,12 +65,12 @@ public final class nh0 implements org.telegram.ui.Components.oo {
             notificationsCustomSettingsActivity.q0(true);
             notificationsCustomSettingsActivity.d.g(this.e);
         }
-        a5Var = ((org.telegram.ui.ActionBar.h2) notificationsCustomSettingsActivity).simpleActionBar;
-        a5Var.o(true);
+        z4Var = ((org.telegram.ui.ActionBar.g2) notificationsCustomSettingsActivity).simpleActionBar;
+        z4Var.o(true);
     }
 
     public final void b() {
-        org.telegram.ui.ActionBar.a5 a5Var;
+        org.telegram.ui.ActionBar.z4 z4Var;
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         if (notificationsCustomSettingsActivity.getMessagesController().u2(this.a, 0, null) != this.b) {
             a();
@@ -96,11 +96,11 @@ public final class nh0 implements org.telegram.ui.Components.oo {
         } else {
             notificationsCustomSettingsActivity.a.getAdapter().g(this.e);
         }
-        a5Var = ((org.telegram.ui.ActionBar.h2) notificationsCustomSettingsActivity).simpleActionBar;
-        a5Var.o(true);
+        z4Var = ((org.telegram.ui.ActionBar.g2) notificationsCustomSettingsActivity).simpleActionBar;
+        z4Var.o(true);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void s() {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         long j3 = 0;
@@ -109,7 +109,7 @@ public final class nh0 implements org.telegram.ui.Components.oo {
         b();
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void u() {
         long j3 = this.a;
         if (j3 != 0) {
@@ -119,12 +119,12 @@ public final class nh0 implements org.telegram.ui.Components.oo {
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void w() {
         int i7;
         String v = org.telegram.messenger.xs.v(this.a, 0, false);
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
-        i7 = ((org.telegram.ui.ActionBar.h2) notificationsCustomSettingsActivity).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) notificationsCustomSettingsActivity).currentAccount;
         SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i7).g7;
         boolean z10 = sharedPreferences.getBoolean("sound_enabled_" + v, true);
         boolean z11 = !z10;
@@ -134,11 +134,11 @@ public final class nh0 implements org.telegram.ui.Components.oo {
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final /* synthetic */ void dismiss() {
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final /* synthetic */ void p() {
     }
 }

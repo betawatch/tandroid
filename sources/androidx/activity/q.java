@@ -2,10 +2,10 @@ package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
 import fi.f9;
-import hi.ta;
+import hi.sa;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements OnBackInvokedCallback {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class q implements OnBackInvokedCallback {
                 ((g.s) this.b).t();
                 break;
             case 3:
-                ((ta) this.b).L();
+                ((sa) this.b).L();
                 break;
             default:
                 ((Runnable) this.b).run();

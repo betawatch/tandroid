@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class td extends LinearLayout {
     public static final /* synthetic */ int y = 0;
@@ -28,7 +28,7 @@ public final class td extends LinearLayout {
     public final /* synthetic */ xd x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public td(xd xdVar, Context context, int i7, long j3, int i10, cd cdVar, org.telegram.ui.ActionBar.i6 i6Var) {
+    public td(xd xdVar, Context context, int i7, long j3, int i10, cd cdVar, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.x = xdVar;
         this.h = "";
@@ -42,12 +42,12 @@ public final class td extends LinearLayout {
         setOrientation(1);
         setClipChildren(false);
         setClipToPadding(false);
-        qd qdVar = new qd(this, context, i6Var, xdVar);
+        qd qdVar = new qd(this, context, h6Var, xdVar);
         this.b = qdVar;
-        sd sdVar = new sd(this, context, i7, j3, i10, i6Var);
+        sd sdVar = new sd(this, context, i7, j3, i10, h6Var);
         this.c = sdVar;
         qdVar.setAdapter(sdVar);
-        org.telegram.ui.Components.f71 i11 = qdVar.i(-2, true);
+        org.telegram.ui.Components.i71 i11 = qdVar.i(-2, true);
         ri.q qVar = xdVar.e1;
         if (qVar != null) {
             qVar.c(qdVar);
@@ -436,11 +436,11 @@ public final class td extends LinearLayout {
             View view = qdVar.getViewPages()[i7];
             if (view instanceof rd) {
                 rd rdVar = (rd) view;
-                org.telegram.ui.Components.e51 e51Var = rdVar.a;
-                e51Var.g3.O(true);
-                if (e51Var.canScrollVertically(1)) {
-                    for (int i10 = 0; i10 < e51Var.getChildCount(); i10++) {
-                        if (!(e51Var.getChildAt(i10) instanceof org.telegram.ui.Components.wz)) {
+                org.telegram.ui.Components.h51 h51Var = rdVar.a;
+                h51Var.g3.O(true);
+                if (h51Var.canScrollVertically(1)) {
+                    for (int i10 = 0; i10 < h51Var.getChildCount(); i10++) {
+                        if (!(h51Var.getChildAt(i10) instanceof org.telegram.ui.Components.yz)) {
                         }
                     }
                 }
@@ -482,7 +482,7 @@ public final class td extends LinearLayout {
         this.x.p();
     }
 
-    public org.telegram.ui.Components.ck0 getCurrentListView() {
+    public org.telegram.ui.Components.ek0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof rd) {
             return ((rd) currentView).a;

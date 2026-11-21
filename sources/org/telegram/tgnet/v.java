@@ -1,33 +1,31 @@
 package org.telegram.tgnet;
 
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements x10 {
+public final /* synthetic */ class v implements y10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ OutputSerializedData b;
+    public final /* synthetic */ InputSerializedData b;
 
-    public /* synthetic */ v(OutputSerializedData outputSerializedData, int i7) {
+    public /* synthetic */ v(InputSerializedData inputSerializedData, int i7) {
         this.a = i7;
-        this.b = outputSerializedData;
+        this.b = inputSerializedData;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.y10
+    public final Object a(Object obj) {
+        int i7 = this.a;
+        boolean booleanValue = ((Boolean) obj).booleanValue();
+        switch (i7) {
             case 0:
-                this.b.writeInt64(((Long) obj).longValue());
-                break;
+                return Long.valueOf(this.b.readInt64(booleanValue));
             case 1:
-                this.b.writeInt32(((Integer) obj).intValue());
-                break;
+                return Integer.valueOf(this.b.readInt32(booleanValue));
             case 2:
-                this.b.writeByteArray((byte[]) obj);
-                break;
+                return this.b.readString(booleanValue);
             default:
-                this.b.writeString((String) obj);
-                break;
+                return this.b.readByteArray(booleanValue);
         }
     }
 }

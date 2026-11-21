@@ -15,20 +15,24 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.speech.SpeechRecognizer;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.window.OnBackInvokedDispatcher;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.ac1;
 import org.telegram.ui.tb1;
 import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static boolean a;
@@ -74,7 +78,40 @@ public abstract class d {
         }
     }
 
-    public static Paint b(Bitmap bitmap) {
+    public static boolean b(Context context) {
+        if (context != null && DictationAsr.C()) {
+            ArrayList arrayList = new ArrayList();
+            HashMap hashMap = w0.a;
+            LinkedHashMap linkedHashMap = new LinkedHashMap();
+            w0.b(linkedHashMap, context);
+            ArrayList arrayList2 = new ArrayList(linkedHashMap.values());
+            int size = arrayList2.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList2.get(i7);
+                i7++;
+                String language = Locale.forLanguageTag((String) obj).getLanguage();
+                if (!TextUtils.isEmpty(language) && !arrayList.contains(language)) {
+                    arrayList.add(language);
+                }
+            }
+            if (arrayList.size() > 1) {
+                arrayList.remove("en");
+            }
+            int size2 = arrayList.size();
+            int i10 = 0;
+            while (i10 < size2) {
+                Object obj2 = arrayList.get(i10);
+                i10++;
+                if (DictationAsr.J((String) obj2) != null) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static Paint c(Bitmap bitmap) {
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
         if (Build.VERSION.SDK_INT >= 33) {
@@ -86,11 +123,11 @@ public abstract class d {
         return paint;
     }
 
-    public static void c(Canvas canvas, a4.k kVar, int i7, Paint paint) {
+    public static void d(Canvas canvas, a4.k kVar, int i7, Paint paint) {
         canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i7 * 8, (float[]) kVar.c, 0, (float[]) kVar.d, 0, (int[]) kVar.f, 0, (short[]) kVar.e, 0, i7 * 6, paint);
     }
 
-    public static n2.b d(AudioManager audioManager, e2.e eVar, h9.i0 i0Var, List list) {
+    public static n2.b e(AudioManager audioManager, e2.e eVar, h9.i0 i0Var, List list) {
         List<AudioProfile> directProfilesForAttributes = audioManager.getDirectProfilesForAttributes(eVar.b());
         HashMap hashMap = new HashMap();
         hashMap.put(2, new HashSet(c8.k1.a(12)));
@@ -116,7 +153,7 @@ public abstract class d {
         return new n2.b(p10.f(), i0Var, list);
     }
 
-    public static AudioDeviceInfo e(AudioManager audioManager, e2.e eVar) {
+    public static AudioDeviceInfo f(AudioManager audioManager, e2.e eVar) {
         audioManager.getClass();
         List<AudioDeviceInfo> audioDevicesForAttributes = audioManager.getAudioDevicesForAttributes(eVar.b());
         if (audioDevicesForAttributes.isEmpty()) {
@@ -125,15 +162,15 @@ public abstract class d {
         return audioDevicesForAttributes.get(0);
     }
 
-    public static Object f(Bundle bundle) {
+    public static Object g(Bundle bundle) {
         return bundle.getParcelable("RESULT_DATA", Intent.class);
     }
 
-    public static String g(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public static String h(AccessibilityNodeInfo accessibilityNodeInfo) {
         return accessibilityNodeInfo.getUniqueId();
     }
 
-    public static boolean h() {
+    public static boolean i() {
         boolean z10;
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j3 = b;
@@ -149,11 +186,11 @@ public abstract class d {
         return a && c >= 0;
     }
 
-    public static boolean i(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public static boolean j(AccessibilityNodeInfo accessibilityNodeInfo) {
         return accessibilityNodeInfo.isTextSelectable();
     }
 
-    public static wn0 j(ac1 ac1Var, tb1 tb1Var) {
+    public static wn0 k(ac1 ac1Var, tb1 tb1Var) {
         OnBackInvokedDispatcher findOnBackInvokedDispatcher = ac1Var.findOnBackInvokedDispatcher();
         if (findOnBackInvokedDispatcher == null) {
             return null;
@@ -163,11 +200,11 @@ public abstract class d {
         return wn0Var;
     }
 
-    public static void k(ShortcutInfo.Builder builder) {
+    public static void l(ShortcutInfo.Builder builder) {
         builder.setExcludedFromSurfaces(0);
     }
 
-    public static void l(ac1 ac1Var, wn0 wn0Var) {
+    public static void m(ac1 ac1Var, wn0 wn0Var) {
         OnBackInvokedDispatcher findOnBackInvokedDispatcher = ac1Var.findOnBackInvokedDispatcher();
         if (findOnBackInvokedDispatcher != null) {
             findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(wn0Var);

@@ -11,20 +11,20 @@ import org.telegram.messenger.s9;
 import org.telegram.messenger.u9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g extends sa implements s9 {
-    public final l41 T1;
+    public final o41 T1;
     public final LongSparseArray U1;
     public ArrayList V1;
     public boolean W1;
-    public z41 X1;
+    public c51 X1;
     public int Y1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -33,7 +33,7 @@ public final class g extends sa implements s9 {
         int i7 = 0;
         this.U1 = new LongSparseArray();
         this.V1 = new ArrayList();
-        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.a7, false);
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, false);
         this.Y1 = x02;
         v0(x02);
         u9.c(this.a).f.add(this);
@@ -45,7 +45,7 @@ public final class g extends sa implements s9 {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.T1 = l41.j(-1, linearLayout);
+        this.T1 = o41.j(-1, linearLayout);
         this.o1.setPadding(this.u0, org.telegram.messenger.g0.L(9.0f), this.u0, org.telegram.messenger.g0.L(9.0f));
         this.o1.setOverScrollMode(2);
         this.X1.O(false);
@@ -64,11 +64,11 @@ public final class g extends sa implements s9 {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
-        z41 z41Var = new z41(this.o1, getContext(), this.a, 0, true, new b(this, 1), this.J0);
-        this.X1 = z41Var;
-        z41Var.r = false;
-        return z41Var;
+    public final dk0 M0(ek0 ek0Var) {
+        c51 c51Var = new c51(this.o1, getContext(), this.a, 0, true, new b(this, 1), this.J0);
+        this.X1 = c51Var;
+        c51Var.r = false;
+        return c51Var;
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -77,10 +77,10 @@ public final class g extends sa implements s9 {
         if (arrayList == null) {
             return null;
         }
-        return gd.a0(null, null, 2131750402, Integer.valueOf(arrayList.size()));
+        return gd.a0(null, null, 2131750401, Integer.valueOf(arrayList.size()));
     }
 
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         u9.c(this.a).f.remove(this);
         super.dismiss();
@@ -108,11 +108,11 @@ public final class g extends sa implements s9 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void s0() {
         try {
             super.s0();
-            int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.a7, false);
+            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, false);
             if (x02 != this.Y1) {
                 this.Y1 = x02;
                 v0(x02);
@@ -122,7 +122,7 @@ public final class g extends sa implements s9 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void v() {
         this.W1 = true;
     }

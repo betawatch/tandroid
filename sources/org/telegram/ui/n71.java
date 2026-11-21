@@ -8,7 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class n71 extends org.telegram.ui.Components.q9 {
     public Drawable H;
@@ -37,7 +37,7 @@ public final class n71 extends org.telegram.ui.Components.q9 {
         x71 x71Var = this.L;
         if (z10) {
             Drawable drawable = this.H;
-            if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.bb0)) {
+            if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.cb0)) {
                 drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.H.draw(canvas);
             } else if (drawable instanceof BitmapDrawable) {
@@ -90,11 +90,11 @@ public final class n71 extends org.telegram.ui.Components.q9 {
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
         x71 x71Var = this.L;
-        org.telegram.ui.Components.j71 j71Var = x71Var.x1;
+        org.telegram.ui.Components.m71 m71Var = x71Var.x1;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        j71Var.getClass();
-        float a10 = org.telegram.ui.Components.j71.a(measuredWidth, measuredHeight);
+        m71Var.getClass();
+        float a10 = org.telegram.ui.Components.m71.a(measuredWidth, measuredHeight);
         x71Var.A1 = a10;
         if (x71Var.G1) {
             setScaleX(a10);

@@ -1,38 +1,157 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityNodeProvider;
+import android.widget.Button;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public enum pf0 {
-    d(2131746538, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
-    e(2131746492, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24),
-    f(2131746491, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24),
-    h(2131746547, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
-    n(2131746542, R.drawable.gift, R.drawable.input_gift_s),
-    r(2131746536, R.drawable.action_share, R.drawable.msg_share),
-    s(2131746548, R.drawable.filled_profile_call_24, R.drawable.outline_profile_call_24),
-    w(2131746534, R.drawable.filled_profile_video_24, R.drawable.outline_profile_video_24),
-    x(2131746541, R.drawable.filled_profile_member_24, R.drawable.outline_profile_member_24),
-    y(2131746537, R.drawable.report, R.drawable.msg_report),
-    E(2131746540, R.drawable.leave, R.drawable.leave),
-    F(2131746533, R.drawable.live_stream, R.drawable.live_stream),
-    G(2131746539, R.drawable.live_stream, R.drawable.live_stream),
-    H(2131746549, R.drawable.filled_profile_story, R.drawable.outline_profile_story),
-    I(2131746535, R.drawable.filled_profile_stop_24, R.drawable.outline_profile_stop_24),
-    J(2131746544, R.drawable.filled_profile_photo, R.drawable.outline_profile_photo),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF16(2131746543, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
-    K(2131746546, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
-    L(2131745300, R.drawable.filled_profile_settings, R.drawable.outline_profile_settings);
+public class pf0 extends AccessibilityNodeProvider {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
 
-    public final int a;
-    public final int b;
-    public final int c;
+    public pf0(org.telegram.ui.Cells.c5 c5Var) {
+        this.b = c5Var;
+    }
 
-    pf0(int i7, int i10, int i11) {
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i7) {
+        qf0 qf0Var;
+        switch (this.a) {
+            case 0:
+                int[] iArr = {0, 0};
+                tf0 tf0Var = (tf0) this.b;
+                ArrayList arrayList = tf0Var.a;
+                tf0Var.getLocationOnScreen(iArr);
+                if (i7 == -1) {
+                    AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(tf0Var);
+                    tf0Var.onInitializeAccessibilityNodeInfo(obtain);
+                    obtain.setEnabled(true);
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        obtain.addChild(tf0Var, ((qf0) arrayList.get(i10)).a);
+                    }
+                    return obtain;
+                }
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= arrayList.size()) {
+                        qf0Var = null;
+                    } else if (((qf0) arrayList.get(i11)).a == i7) {
+                        qf0Var = (qf0) arrayList.get(i11);
+                    } else {
+                        i11++;
+                    }
+                }
+                if (qf0Var != null) {
+                    RectF rectF = qf0Var.d;
+                    if (!rectF.isEmpty()) {
+                        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
+                        obtain2.setSource(tf0Var, i7);
+                        obtain2.setParent(tf0Var);
+                        obtain2.setPackageName(tf0Var.getContext().getPackageName());
+                        obtain2.addAction(16);
+                        obtain2.addAction(64);
+                        obtain2.setClickable(true);
+                        obtain2.setFocusable(true);
+                        obtain2.setEnabled(true);
+                        obtain2.setVisibleToUser(true);
+                        obtain2.setClassName(Button.class.getName());
+                        obtain2.setText(qf0Var.l.j());
+                        Rect rect = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                        obtain2.setBoundsInParent(rect);
+                        rect.offset(iArr[0], iArr[1]);
+                        obtain2.setBoundsInScreen(rect);
+                        return obtain2;
+                    }
+                }
+                return null;
+            default:
+                s0.c t6 = ((org.telegram.ui.Cells.c5) this.b).t(i7);
+                if (t6 == null) {
+                    return null;
+                }
+                return t6.a;
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public List findAccessibilityNodeInfosByText(String str, int i7) {
+        switch (this.a) {
+            case 1:
+                ((org.telegram.ui.Cells.c5) this.b).getClass();
+                return null;
+            default:
+                return super.findAccessibilityNodeInfosByText(str, i7);
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public AccessibilityNodeInfo findFocus(int i7) {
+        switch (this.a) {
+            case 1:
+                s0.c w10 = ((org.telegram.ui.Cells.c5) this.b).w(i7);
+                if (w10 == null) {
+                    return null;
+                }
+                return w10.a;
+            default:
+                return super.findFocus(i7);
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final boolean performAction(int i7, int i10, Bundle bundle) {
+        qf0 qf0Var;
+        switch (this.a) {
+            case 0:
+                tf0 tf0Var = (tf0) this.b;
+                ArrayList arrayList = tf0Var.a;
+                if (i7 == -1) {
+                    return tf0Var.performAccessibilityAction(i10, bundle);
+                }
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= arrayList.size()) {
+                        qf0Var = null;
+                    } else if (((qf0) arrayList.get(i11)).a == i7) {
+                        qf0Var = (qf0) arrayList.get(i11);
+                    } else {
+                        i11++;
+                    }
+                }
+                if (qf0Var != null) {
+                    if (i10 == 64) {
+                        if (((AccessibilityManager) tf0Var.getContext().getSystemService("accessibility")).isTouchExplorationEnabled()) {
+                            AccessibilityEvent obtain = AccessibilityEvent.obtain(32768);
+                            obtain.setPackageName(tf0Var.getContext().getPackageName());
+                            obtain.setSource(tf0Var, i7);
+                            if (tf0Var.getParent() != null) {
+                                tf0Var.getParent().requestSendAccessibilityEvent(tf0Var, obtain);
+                            }
+                        }
+                    } else if (i10 == 16) {
+                        sf0 sf0Var = tf0Var.y;
+                        if (sf0Var != null) {
+                            ProfileActivity.l0(((org.telegram.ui.tt0) sf0Var).b, i7, 0.0f, 0.0f);
+                        }
+                    }
+                    return true;
+                }
+                return false;
+            default:
+                return ((org.telegram.ui.Cells.c5) this.b).z(i7, i10, bundle);
+        }
+    }
+
+    public pf0(tf0 tf0Var) {
+        this.b = tf0Var;
     }
 }

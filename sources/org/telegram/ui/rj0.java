@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class rj0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -38,11 +38,11 @@ public final class rj0 implements TextWatcher {
                     hk0Var.a1 = true;
                     String d = pf.b.d(hk0Var.Z[1].getText().toString(), false);
                     hk0Var.Z[1].setText(d);
-                    org.telegram.ui.Components.g30 g30Var = (org.telegram.ui.Components.g30) hk0Var.Z[2];
+                    org.telegram.ui.Components.j30 j30Var = (org.telegram.ui.Components.j30) hk0Var.Z[2];
                     if (d.length() == 0) {
-                        g30Var.setHintText((String) null);
-                        g30Var.setHint(org.telegram.messenger.gd.M0(2131747179, null));
-                        hk0Var.Z[0].setText(org.telegram.messenger.gd.M0(2131752123, null));
+                        j30Var.setHintText((String) null);
+                        j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
+                        hk0Var.Z[0].setText(org.telegram.messenger.gd.N0(2131752122, null));
                     } else {
                         int i10 = 4;
                         if (d.length() > 4) {
@@ -75,15 +75,15 @@ public final class rj0 implements TextWatcher {
                         }
                         String str3 = (String) hashMap.get(d);
                         if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
-                            g30Var.setHintText((String) null);
-                            g30Var.setHint(org.telegram.messenger.gd.M0(2131747179, null));
-                            hk0Var.Z[0].setText(org.telegram.messenger.gd.M0(2131742601, null));
+                            j30Var.setHintText((String) null);
+                            j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
+                            hk0Var.Z[0].setText(org.telegram.messenger.gd.N0(2131742595, null));
                         } else {
                             hk0Var.Z[0].setText((CharSequence) arrayList.get(indexOf));
                             String str4 = (String) hk0Var.Y0.get(d);
                             if (str4 != null) {
-                                g30Var.setHintText(str4.replace('X', (char) 8211));
-                                g30Var.setHint((CharSequence) null);
+                                j30Var.setHintText(str4.replace('X', (char) 8211));
+                                j30Var.setHint((CharSequence) null);
                             }
                         }
                         if (!z10) {
@@ -91,9 +91,9 @@ public final class rj0 implements TextWatcher {
                             editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
                         }
                         if (str != null) {
-                            g30Var.requestFocus();
-                            g30Var.setText(str);
-                            g30Var.setSelection(g30Var.length());
+                            j30Var.requestFocus();
+                            j30Var.setText(str);
+                            j30Var.setSelection(j30Var.length());
                         }
                     }
                     hk0Var.a1 = false;

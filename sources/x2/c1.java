@@ -7,9 +7,9 @@ import com.google.android.gms.internal.vision.e2;
 import j$.util.Objects;
 import java.io.EOFException;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.an0;
+import org.telegram.ui.Components.dn0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class c1 implements f3.i0 {
     public boolean B;
@@ -19,7 +19,7 @@ public class c1 implements f3.i0 {
     public boolean G;
     public long H;
     public boolean I;
-    public final an0 a;
+    public final dn0 a;
     public final q2.m d;
     public final q2.j e;
     public Object f;
@@ -51,7 +51,7 @@ public class c1 implements f3.i0 {
     public c1(h6.m mVar, q2.m mVar2, q2.j jVar) {
         this.d = mVar2;
         this.e = jVar;
-        this.a = new an0(mVar);
+        this.a = new dn0(mVar);
     }
 
     public final synchronized boolean A(boolean z10) {
@@ -203,11 +203,11 @@ public class c1 implements f3.i0 {
             boolean z13 = (i7 & 1) != 0;
             if ((i7 & 4) == 0) {
                 if (z13) {
-                    an0 an0Var = this.a;
-                    an0.f((a4.c) an0Var.f, hVar, this.b, (h2.x) an0Var.d);
+                    dn0 dn0Var = this.a;
+                    dn0.f((a4.c) dn0Var.f, hVar, this.b, (h2.x) dn0Var.d);
                 } else {
-                    an0 an0Var2 = this.a;
-                    an0Var2.f = an0.f((a4.c) an0Var2.f, hVar, this.b, (h2.x) an0Var2.d);
+                    dn0 dn0Var2 = this.a;
+                    dn0Var2.f = dn0.f((a4.c) dn0Var2.f, hVar, this.b, (h2.x) dn0Var2.d);
                 }
             }
             if (!z13) {
@@ -218,10 +218,10 @@ public class c1 implements f3.i0 {
     }
 
     public final void G(boolean z10) {
-        an0 an0Var = this.a;
-        a4.c cVar = (a4.c) an0Var.e;
+        dn0 dn0Var = this.a;
+        a4.c cVar = (a4.c) dn0Var.e;
         if (((b3.a) cVar.c) != null) {
-            h6.m mVar = (h6.m) an0Var.c;
+            h6.m mVar = (h6.m) dn0Var.c;
             synchronized (mVar) {
                 ((l2.h) mVar.d).c.b(cVar);
                 a4.c cVar2 = cVar;
@@ -238,16 +238,16 @@ public class c1 implements f3.i0 {
             cVar.c = null;
             cVar.d = null;
         }
-        a4.c cVar3 = (a4.c) an0Var.e;
-        int i7 = an0Var.a;
+        a4.c cVar3 = (a4.c) dn0Var.e;
+        int i7 = dn0Var.a;
         la.p(((b3.a) cVar3.c) == null);
         cVar3.a = 0L;
         cVar3.b = i7;
-        a4.c cVar4 = (a4.c) an0Var.e;
-        an0Var.f = cVar4;
-        an0Var.g = cVar4;
-        an0Var.b = 0L;
-        ((h6.m) an0Var.c).J();
+        a4.c cVar4 = (a4.c) dn0Var.e;
+        dn0Var.f = cVar4;
+        dn0Var.g = cVar4;
+        dn0Var.b = 0L;
+        ((h6.m) dn0Var.c).J();
         this.p = 0;
         this.q = 0;
         this.r = 0;
@@ -275,8 +275,8 @@ public class c1 implements f3.i0 {
 
     public final synchronized void H() {
         this.s = 0;
-        an0 an0Var = this.a;
-        an0Var.f = (a4.c) an0Var.e;
+        dn0 dn0Var = this.a;
+        dn0Var.f = (a4.c) dn0Var.e;
     }
 
     public final synchronized boolean I(int i7) {
@@ -415,21 +415,21 @@ public class c1 implements f3.i0 {
     @Override // f3.i0
     public final void a(h2.x xVar, int i7, int i10) {
         while (true) {
-            an0 an0Var = this.a;
+            dn0 dn0Var = this.a;
             if (i7 <= 0) {
-                an0Var.getClass();
+                dn0Var.getClass();
                 return;
             }
-            int c10 = an0Var.c(i7);
-            a4.c cVar = (a4.c) an0Var.g;
+            int c10 = dn0Var.c(i7);
+            a4.c cVar = (a4.c) dn0Var.g;
             b3.a aVar = (b3.a) cVar.c;
-            xVar.k(((int) (an0Var.b - cVar.a)) + aVar.b, c10, aVar.a);
+            xVar.k(((int) (dn0Var.b - cVar.a)) + aVar.b, c10, aVar.a);
             i7 -= c10;
-            long j3 = an0Var.b + c10;
-            an0Var.b = j3;
-            a4.c cVar2 = (a4.c) an0Var.g;
+            long j3 = dn0Var.b + c10;
+            dn0Var.b = j3;
+            a4.c cVar2 = (a4.c) dn0Var.g;
             if (j3 == cVar2.b) {
-                an0Var.g = (a4.c) cVar2.d;
+                dn0Var.g = (a4.c) cVar2.d;
             }
         }
     }
@@ -506,22 +506,22 @@ public class c1 implements f3.i0 {
 
     @Override // f3.i0
     public final int f(e2.n nVar, int i7, boolean z10) {
-        an0 an0Var = this.a;
-        int c10 = an0Var.c(i7);
-        a4.c cVar = (a4.c) an0Var.g;
+        dn0 dn0Var = this.a;
+        int c10 = dn0Var.c(i7);
+        a4.c cVar = (a4.c) dn0Var.g;
         b3.a aVar = (b3.a) cVar.c;
-        int read = nVar.read(aVar.a, ((int) (an0Var.b - cVar.a)) + aVar.b, c10);
+        int read = nVar.read(aVar.a, ((int) (dn0Var.b - cVar.a)) + aVar.b, c10);
         if (read == -1) {
             if (z10) {
                 return -1;
             }
             throw new EOFException();
         }
-        long j3 = an0Var.b + read;
-        an0Var.b = j3;
-        a4.c cVar2 = (a4.c) an0Var.g;
+        long j3 = dn0Var.b + read;
+        dn0Var.b = j3;
+        a4.c cVar2 = (a4.c) dn0Var.g;
         if (j3 == cVar2.b) {
-            an0Var.g = (a4.c) cVar2.d;
+            dn0Var.g = (a4.c) cVar2.d;
         }
         return read;
     }
@@ -716,7 +716,7 @@ public class c1 implements f3.i0 {
 
     public final void k(long j3, boolean z10) {
         Throwable th2;
-        an0 an0Var = this.a;
+        dn0 dn0Var = this.a;
         synchronized (this) {
             try {
                 try {
@@ -741,10 +741,10 @@ public class c1 implements f3.i0 {
                             if (q10 != -1) {
                                 j10 = j(q10);
                             }
-                            an0Var.b(j10);
+                            dn0Var.b(j10);
                         }
                     }
-                    an0Var.b(j10);
+                    dn0Var.b(j10);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -760,12 +760,12 @@ public class c1 implements f3.i0 {
 
     public final void l() {
         long j3;
-        an0 an0Var = this.a;
+        dn0 dn0Var = this.a;
         synchronized (this) {
             int i7 = this.p;
             j3 = i7 == 0 ? -1L : j(i7);
         }
-        an0Var.b(j3);
+        dn0Var.b(j3);
     }
 
     public final void m(long j3) {
@@ -808,21 +808,21 @@ public class c1 implements f3.i0 {
     }
 
     public final void o(int i7) {
-        an0 an0Var = this.a;
+        dn0 dn0Var = this.a;
         long n10 = n(i7);
-        int i10 = an0Var.a;
-        la.f(n10 <= an0Var.b);
-        an0Var.b = n10;
+        int i10 = dn0Var.a;
+        la.f(n10 <= dn0Var.b);
+        dn0Var.b = n10;
         if (n10 != 0) {
-            a4.c cVar = (a4.c) an0Var.e;
+            a4.c cVar = (a4.c) dn0Var.e;
             if (n10 != cVar.a) {
-                while (an0Var.b > cVar.b) {
+                while (dn0Var.b > cVar.b) {
                     cVar = (a4.c) cVar.d;
                 }
                 a4.c cVar2 = (a4.c) cVar.d;
                 cVar2.getClass();
                 if (((b3.a) cVar2.c) != null) {
-                    h6.m mVar = (h6.m) an0Var.c;
+                    h6.m mVar = (h6.m) dn0Var.c;
                     synchronized (mVar) {
                         ((l2.h) mVar.d).c.b(cVar2);
                         a4.c cVar3 = cVar2;
@@ -841,22 +841,22 @@ public class c1 implements f3.i0 {
                 }
                 a4.c cVar4 = new a4.c(cVar.b, i10);
                 cVar.d = cVar4;
-                if (an0Var.b == cVar.b) {
+                if (dn0Var.b == cVar.b) {
                     cVar = cVar4;
                 }
-                an0Var.g = cVar;
-                if (((a4.c) an0Var.f) == cVar2) {
-                    an0Var.f = cVar4;
+                dn0Var.g = cVar;
+                if (((a4.c) dn0Var.f) == cVar2) {
+                    dn0Var.f = cVar4;
                     return;
                 }
                 return;
             }
         }
-        an0Var.a((a4.c) an0Var.e);
-        a4.c cVar5 = new a4.c(an0Var.b, i10);
-        an0Var.e = cVar5;
-        an0Var.f = cVar5;
-        an0Var.g = cVar5;
+        dn0Var.a((a4.c) dn0Var.e);
+        a4.c cVar5 = new a4.c(dn0Var.b, i10);
+        dn0Var.e = cVar5;
+        dn0Var.f = cVar5;
+        dn0Var.g = cVar5;
     }
 
     public final int p(int i7, int i10, long j3, boolean z10) {

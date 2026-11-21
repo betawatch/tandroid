@@ -2,96 +2,46 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class os extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ v4.f1 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ViewPropertyAnimator f;
-    public final /* synthetic */ v4.h1 h;
+    public final /* synthetic */ org.telegram.ui.Cells.u2 c;
+    public final /* synthetic */ ts d;
 
-    public /* synthetic */ os(v4.h1 h1Var, v4.f1 f1Var, int i7, View view, int i10, ViewPropertyAnimator viewPropertyAnimator, int i11) {
-        this.a = i11;
-        this.h = h1Var;
+    public /* synthetic */ os(ts tsVar, v4.f1 f1Var, org.telegram.ui.Cells.u2 u2Var, int i7) {
+        this.a = i7;
+        this.d = tsVar;
         this.b = f1Var;
-        this.c = i7;
-        this.d = view;
-        this.e = i10;
-        this.f = viewPropertyAnimator;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                int i7 = this.c;
-                View view = this.d;
-                if (i7 != 0) {
-                    view.setTranslationX(0.0f);
-                }
-                if (this.e != 0) {
-                    view.setTranslationY(0.0f);
-                }
-                View view2 = this.b.a;
-                if (!(view2 instanceof org.telegram.ui.Cells.u2)) {
-                    if (view2 instanceof jg.l) {
-                        ((jg.l) view2).a = false;
-                        break;
-                    }
-                } else {
-                    ((org.telegram.ui.Cells.u2) view2).setMoving(false);
-                    break;
-                }
-                break;
-            default:
-                int i10 = this.c;
-                View view3 = this.d;
-                if (i10 != 0) {
-                    view3.setTranslationX(0.0f);
-                }
-                if (this.e != 0) {
-                    view3.setTranslationY(0.0f);
-                    break;
-                }
-                break;
-        }
+        this.c = u2Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.f.setListener(null);
-                rs rsVar = (rs) this.h;
+                animator.removeAllListeners();
+                org.telegram.ui.Cells.u2 u2Var = this.c;
+                u2Var.setClipProgress(0.0f);
+                u2Var.setElevation(0.0f);
+                ts tsVar = this.d;
                 v4.f1 f1Var = this.b;
-                rsVar.v(f1Var);
-                rsVar.w.remove(f1Var);
-                rsVar.A();
-                View view = f1Var.a;
-                if (view instanceof org.telegram.ui.Cells.u2) {
-                    ((org.telegram.ui.Cells.u2) view).setMoving(false);
-                } else if (view instanceof jg.l) {
-                    ((jg.l) view).a = false;
-                }
-                View view2 = this.d;
-                view2.setTranslationX(0.0f);
-                view2.setTranslationY(0.0f);
+                tsVar.d(f1Var);
+                tsVar.x.remove(f1Var);
+                tsVar.A();
                 break;
             default:
-                this.f.setListener(null);
-                v4.k kVar = (v4.k) this.h;
+                animator.removeAllListeners();
+                org.telegram.ui.Cells.u2 u2Var2 = this.c;
+                u2Var2.setClipProgress(0.0f);
+                u2Var2.setElevation(0.0f);
+                ts tsVar2 = this.d;
                 v4.f1 f1Var2 = this.b;
-                kVar.P(f1Var2);
-                kVar.v(f1Var2);
-                kVar.z.remove(f1Var2);
-                kVar.G();
-                kVar.z(f1Var2);
+                tsVar2.d(f1Var2);
+                tsVar2.x.remove(f1Var2);
+                tsVar2.A();
                 break;
         }
     }
@@ -100,10 +50,10 @@ public final class os extends AnimatorListenerAdapter {
     public final void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                ((rs) this.h).getClass();
+                this.d.y();
                 break;
             default:
-                ((v4.k) this.h).getClass();
+                this.d.y();
                 break;
         }
     }

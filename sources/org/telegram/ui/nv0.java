@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class nv0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final class nv0 extends AnimatorListenerAdapter {
                 ProfileActivity.y1(profileActivity, z10);
                 profileActivity.Y.setClickable(true);
                 if (z10) {
-                    org.telegram.ui.ActionBar.h5 h5Var = profileActivity.U0;
-                    if (h5Var.G.getWidth() != 0 && !h5Var.e.isFocused()) {
-                        h5Var.e.requestFocus();
-                        org.telegram.messenger.g0.I3(h5Var.e);
+                    org.telegram.ui.ActionBar.g5 g5Var = profileActivity.U0;
+                    if (g5Var.G.getWidth() != 0 && !g5Var.e.isFocused()) {
+                        g5Var.e.requestFocus();
+                        org.telegram.messenger.g0.I3(g5Var.e);
                     }
                 }
                 profileActivity.B4(true);
@@ -53,7 +53,7 @@ public final class nv0 extends AnimatorListenerAdapter {
                     profileActivity.Y4 = true;
                     profileActivity.W4();
                     Activity parentActivity = profileActivity.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.h2) profileActivity).classGuid;
+                    i7 = ((org.telegram.ui.ActionBar.g2) profileActivity).classGuid;
                     org.telegram.messenger.g0.Z2(parentActivity, i7);
                     profileActivity.P.setPreventMoving(false);
                     break;

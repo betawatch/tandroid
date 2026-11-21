@@ -1,108 +1,64 @@
 package ji;
 
-import ai.c2;
-import ai.z;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import ai.z2;
 import android.util.Log;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.x10;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.w2;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.pf;
+import java.util.Locale;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements x10 {
+public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+    public final /* synthetic */ o b;
 
-    public /* synthetic */ h(m mVar, int i7) {
+    public /* synthetic */ h(o oVar, int i7) {
         this.a = i7;
-        this.b = mVar;
+        this.b = oVar;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
-        p pVar;
-        int C0;
-        int i7 = 0;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                m mVar = this.b;
-                String str = (String) obj;
-                if (mVar.c == 3 && (pVar = mVar.h) != null) {
-                    pVar.setBusy(false);
-                    if (str != null && !str.trim().isEmpty()) {
-                        mVar.n = str;
-                        mVar.h.r(str);
+                o oVar = this.b;
+                if (oVar.c == 2) {
+                    if (oVar.y != 0) {
+                        StringBuilder sb2 = new StringBuilder("self-check ok: chunks=");
+                        sb2.append(oVar.y);
+                        sb2.append(" in=");
+                        sb2.append(oVar.w);
+                        sb2.append("B out=");
+                        sb2.append(oVar.x);
+                        sb2.append("B (ratio ");
+                        sb2.append(oVar.x > 0 ? String.format(Locale.US, "%.2f", Double.valueOf(oVar.w / oVar.x)) : "-");
+                        sb2.append(", expect 3.00 at 48 kHz) source=");
+                        int i7 = oVar.F;
+                        p5.c.t(sb2, i7 == 1 ? "MediaController" : i7 == 2 ? "AudioRecorderV2" : "none", "VoiceLive");
+                        break;
+                    } else {
+                        Log.w("VoiceLive", "SELF-CHECK FAILED: no PCM from the recorder tap 1.5 s after lock (neither MediaController nor AudioCapture fed it)");
                         break;
                     }
                 }
                 break;
-            default:
-                m mVar2 = this.b;
-                if (!mVar2.n.trim().isEmpty()) {
-                    pf pfVar = mVar2.b;
-                    String trim = mVar2.n.trim();
-                    if (!trim.isEmpty() && mVar2.h != null) {
-                        g0.r(mVar2.k0);
-                        g0.r(mVar2.j0);
-                        Drawable drawable = null;
-                        if (vr.k == mVar2) {
-                            vr.k = null;
-                        }
-                        c2 c2Var = mVar2.f;
-                        if (c2Var != null) {
-                            c2Var.c();
-                            mVar2.f = null;
-                        }
-                        z zVar = mVar2.d;
-                        if (zVar != null) {
-                            zVar.d();
-                            mVar2.d = null;
-                        }
-                        mVar2.e = null;
-                        mVar2.c = 3;
-                        Log.d("VoiceLive", "review: voice paused, restyling " + trim.length() + " chars");
-                        mVar2.h.setListening(false);
-                        pfVar.e();
-                        if (mVar2.H == null) {
-                            mVar2.H = trim;
-                        }
-                        boolean z10 = obj instanceof ai.g;
-                        mVar2.h.setStyleLabel(z10 ? ((ai.g) obj).a() : null);
-                        p pVar2 = mVar2.h;
-                        ChatActivityEnterView chatActivityEnterView = pfVar.a;
-                        if (z10) {
-                            ai.g gVar = (ai.g) obj;
-                            long j3 = gVar.b;
-                            if (j3 != 0) {
-                                drawable = o5.m(chatActivityEnterView.R, j3, null, 2);
-                            } else if (gVar.d) {
-                                drawable = new w2(chatActivityEnterView.getContext());
-                                if (n6.I.q()) {
-                                    C0 = -1;
-                                } else {
-                                    int i10 = n6.G6;
-                                    int i11 = ChatActivityEnterView.n7;
-                                    C0 = chatActivityEnterView.C0(i10);
-                                }
-                                drawable.setColorFilter(new PorterDuffColorFilter(C0, PorterDuff.Mode.SRC_IN));
-                            }
-                        }
-                        pVar2.setStyleIcon(drawable);
-                        mVar2.h.setReview(true);
-                        mVar2.h.setBusy(true);
-                        pfVar.f(obj, mVar2.H, new h(mVar2, i7));
-                        g0.h3(mVar2.I, 400L);
-                        break;
-                    }
+            case 1:
+                o oVar2 = this.b;
+                if (oVar2.c == 2) {
+                    oVar2.t();
+                    break;
                 }
+                break;
+            case 2:
+                o oVar3 = this.b;
+                oVar3.s();
+                bn bnVar = oVar3.b.a.F3;
+                if (bnVar != null) {
+                    bnVar.presentFragment(new z2());
+                    break;
+                }
+                break;
+            default:
+                this.b.m("field send preview");
                 break;
         }
     }

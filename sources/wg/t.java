@@ -3,9 +3,9 @@ package wg;
 import android.content.DialogInterface;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
-import ug.i1;
+import ug.h1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -33,8 +33,8 @@ public final /* synthetic */ class t implements Runnable {
                 ks.f(j10.t0).k(ks.X2, a0Var.X1, Boolean.FALSE);
                 break;
             case 3:
-                i1 i1Var = new i1(a0Var.s1, a0Var.a, null, a0Var.J0);
-                i1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
+                h1 h1Var = new h1(a0Var.s1, a0Var.a, null, a0Var.J0);
+                h1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         switch (i10) {
@@ -55,7 +55,7 @@ public final /* synthetic */ class t implements Runnable {
                         }
                     }
                 });
-                i1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
+                h1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
                     @Override // android.content.DialogInterface.OnShowListener
                     public final void onShow(DialogInterface dialogInterface) {
                         switch (i10) {
@@ -76,11 +76,11 @@ public final /* synthetic */ class t implements Runnable {
                         }
                     }
                 });
-                i1Var.show();
+                h1Var.show();
                 break;
             default:
-                i1 i1Var2 = new i1(a0Var.s1, a0Var.a, null, a0Var.J0);
-                i1Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
+                h1 h1Var2 = new h1(a0Var.s1, a0Var.a, null, a0Var.J0);
+                h1Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         switch (i11) {
@@ -101,7 +101,7 @@ public final /* synthetic */ class t implements Runnable {
                         }
                     }
                 });
-                i1Var2.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
+                h1Var2.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
                     @Override // android.content.DialogInterface.OnShowListener
                     public final void onShow(DialogInterface dialogInterface) {
                         switch (i11) {
@@ -122,7 +122,7 @@ public final /* synthetic */ class t implements Runnable {
                         }
                     }
                 });
-                i1Var2.show();
+                h1Var2.show();
                 break;
         }
     }

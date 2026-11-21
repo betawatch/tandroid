@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class lp0 extends org.telegram.ui.Components.f61 {
+public final class lp0 extends org.telegram.ui.Components.i61 {
     public final /* synthetic */ int n0;
     public final /* synthetic */ org.telegram.messenger.fs o0;
 
@@ -11,7 +11,7 @@ public final class lp0 extends org.telegram.ui.Components.f61 {
         this.o0 = fsVar;
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.i61
     public final void g0() {
         switch (this.n0) {
             case 0:
@@ -33,7 +33,7 @@ public final class lp0 extends org.telegram.ui.Components.f61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.i61
     public final void h0() {
         switch (this.n0) {
             case 0:
@@ -53,7 +53,7 @@ public final class lp0 extends org.telegram.ui.Components.f61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f61, e2.a1
+    @Override // org.telegram.ui.Components.i61, e2.a1
     public void onRenderedFirstFrame() {
         e2.w0 j3;
         switch (this.n0) {
@@ -87,7 +87,7 @@ public final class lp0 extends org.telegram.ui.Components.f61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.i61
     public void p0(long j3) {
         switch (this.n0) {
             case 0:
@@ -107,7 +107,7 @@ public final class lp0 extends org.telegram.ui.Components.f61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.i61
     public void u0(boolean z10) {
         switch (this.n0) {
             case 1:
@@ -120,7 +120,7 @@ public final class lp0 extends org.telegram.ui.Components.f61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.i61
     public void v0(float f10) {
         switch (this.n0) {
             case 0:

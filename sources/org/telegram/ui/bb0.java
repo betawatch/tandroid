@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bb0 implements r1.d {
     public final /* synthetic */ int a;
@@ -22,17 +22,17 @@ public final /* synthetic */ class bb0 implements r1.d {
         Object obj = this.b;
         switch (i7) {
             case 0:
-                rd0 rd0Var = ((ee0) obj).c0;
-                if (rd0Var != null) {
-                    int i10 = rd0.G;
-                    View view = rd0Var.c;
-                    ViewGroup viewGroup = rd0Var.b;
-                    PointF pointF = rd0Var.E;
+                qd0 qd0Var = ((de0) obj).c0;
+                if (qd0Var != null) {
+                    int i10 = qd0.G;
+                    View view = qd0Var.c;
+                    ViewGroup viewGroup = qd0Var.b;
+                    PointF pointF = qd0Var.E;
                     jh.k.b(view, viewGroup, pointF);
-                    org.telegram.ui.Components.a10 a10Var = rd0Var.h;
-                    a10Var.setTranslationX(pointF.x);
-                    a10Var.setTranslationY(pointF.y);
-                    rd0Var.requestLayout();
+                    org.telegram.ui.Components.c10 c10Var = qd0Var.h;
+                    c10Var.setTranslationX(pointF.x);
+                    c10Var.setTranslationY(pointF.y);
+                    qd0Var.requestLayout();
                     break;
                 }
                 break;
@@ -55,11 +55,11 @@ public final /* synthetic */ class bb0 implements r1.d {
             case 3:
                 cr0 cr0Var = (cr0) obj;
                 int L = cr0Var.e > cr0Var.f ? org.telegram.messenger.g0.L(48.0f) : 0;
-                org.telegram.ui.Components.h61 h61Var = cr0Var.s.q3;
+                org.telegram.ui.Components.k61 k61Var = cr0Var.s.q3;
                 int measuredHeight = cr0Var.getMeasuredHeight();
-                h61Var.h = (int) (((cr0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - L);
-                h61Var.i = measuredHeight;
-                View view2 = h61Var.v;
+                k61Var.h = (int) (((cr0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - L);
+                k61Var.i = measuredHeight;
+                View view2 = k61Var.v;
                 if (view2 != null) {
                     view2.invalidate();
                     break;
@@ -71,12 +71,12 @@ public final /* synthetic */ class bb0 implements r1.d {
                 yy0Var.invalidate();
                 break;
             default:
-                nz0 nz0Var = (nz0) obj;
-                org.telegram.ui.Components.h61 h61Var2 = nz0Var.r.P;
-                int measuredHeight2 = nz0Var.getMeasuredHeight();
-                h61Var2.h = (int) (((nz0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - 0);
-                h61Var2.i = measuredHeight2;
-                View view3 = h61Var2.v;
+                oz0 oz0Var = (oz0) obj;
+                org.telegram.ui.Components.k61 k61Var2 = oz0Var.r.P;
+                int measuredHeight2 = oz0Var.getMeasuredHeight();
+                k61Var2.h = (int) (((oz0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - 0);
+                k61Var2.i = measuredHeight2;
+                View view3 = k61Var2.v;
                 if (view3 != null) {
                     view3.invalidate();
                     break;

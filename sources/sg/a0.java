@@ -15,9 +15,9 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.ui.dd0;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public static final a0 e;
@@ -28,21 +28,21 @@ public final class a0 {
     public final String a;
     public final String b;
     public final String c;
-    public final ji.j d;
+    public final ji.l d;
 
     static {
         int i7 = 28;
-        a0 a0Var = new a0("roboto", "PhotoEditorTypefaceRoboto", new ji.j(new r0.f1(18), i7));
+        a0 a0Var = new a0("roboto", "PhotoEditorTypefaceRoboto", new ji.l(new r0.f1(18), i7));
         e = a0Var;
-        f = Arrays.asList(a0Var, new a0("italic", "PhotoEditorTypefaceItalic", new ji.j(new r0.f1(19), i7)), new a0("serif", "PhotoEditorTypefaceSerif", new ji.j(new r0.f1(20), i7)), new a0("condensed", "PhotoEditorTypefaceCondensed", new ji.j(new r0.f1(21), i7)), new a0("mono", "PhotoEditorTypefaceMono", new ji.j(new r0.f1(22), i7)), new a0("mw_bold", "PhotoEditorTypefaceMerriweather", new ji.j(new r0.f1(23), i7)));
+        f = Arrays.asList(a0Var, new a0("italic", "PhotoEditorTypefaceItalic", new ji.l(new r0.f1(19), i7)), new a0("serif", "PhotoEditorTypefaceSerif", new ji.l(new r0.f1(20), i7)), new a0("condensed", "PhotoEditorTypefaceCondensed", new ji.l(new r0.f1(21), i7)), new a0("mono", "PhotoEditorTypefaceMono", new ji.l(new r0.f1(22), i7)), new a0("mw_bold", "PhotoEditorTypefaceMerriweather", new ji.l(new r0.f1(23), i7)));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
-    public a0(String str, String str2, ji.j jVar) {
+    public a0(String str, String str2, ji.l lVar) {
         this.a = str;
         this.b = str2;
         this.c = null;
-        this.d = jVar;
+        this.d = lVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:53:0x00dd, code lost:
@@ -202,7 +202,7 @@ public final class a0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.i.c(new dd0(22));
+            Utilities.i.c(new cd0(22));
         }
         return f;
     }
@@ -218,17 +218,17 @@ public final class a0 {
     }
 
     public final Typeface d() {
-        ji.j jVar = this.d;
-        if (((Typeface) jVar.c) == null) {
-            jVar.c = ((y) jVar.b).a();
+        ji.l lVar = this.d;
+        if (((Typeface) lVar.c) == null) {
+            lVar.c = ((y) lVar.b).a();
         }
-        return (Typeface) jVar.c;
+        return (Typeface) lVar.c;
     }
 
     public a0(Font font, String str) {
         this.a = str;
         this.c = str;
         this.b = null;
-        this.d = new ji.j(new org.telegram.ui.ActionBar.p(font, 22), 28);
+        this.d = new ji.l(new org.telegram.tgnet.u(font, 23), 28);
     }
 }

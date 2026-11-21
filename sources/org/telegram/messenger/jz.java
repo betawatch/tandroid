@@ -11,7 +11,7 @@ import java.util.HashMap;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class jz extends DefaultHandler {
     public final HashMap E;
@@ -45,7 +45,7 @@ public final class jz extends DefaultHandler {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(ji.j jVar, Integer num, boolean z10) {
+    public final void a(ji.l lVar, Integer num, boolean z10) {
         Float valueOf;
         Paint paint = this.h;
         Integer num2 = this.s;
@@ -54,7 +54,7 @@ public final class jz extends DefaultHandler {
         } else {
             paint.setColor((num.intValue() & 16777215) | (-16777216));
         }
-        String L = jVar.L("opacity");
+        String L = lVar.L("opacity");
         Float f10 = null;
         if (L != null) {
             try {
@@ -62,7 +62,7 @@ public final class jz extends DefaultHandler {
             } catch (NumberFormatException unused) {
             }
             if (valueOf == null) {
-                String L2 = jVar.L(z10 ? "fill-opacity" : "stroke-opacity");
+                String L2 = lVar.L(z10 ? "fill-opacity" : "stroke-opacity");
                 if (L2 != null) {
                     try {
                         f10 = Float.valueOf(Float.parseFloat(L2));
@@ -86,21 +86,21 @@ public final class jz extends DefaultHandler {
         }
     }
 
-    public final boolean b(ji.j jVar) {
-        if (!"none".equals(jVar.L("display"))) {
-            String L = jVar.L("fill");
+    public final boolean b(ji.l lVar) {
+        if (!"none".equals(lVar.L("display"))) {
+            String L = lVar.L("fill");
             if (L != null && L.startsWith("url(#")) {
                 L.substring(5, L.length() - 1);
                 return false;
             }
-            Integer N = jVar.N("fill");
+            Integer N = lVar.N("fill");
             Paint paint = this.h;
             if (N != null) {
-                a(jVar, N, true);
+                a(lVar, N, true);
                 paint.setStyle(Paint.Style.FILL);
                 return true;
             }
-            if (jVar.L("fill") == null && jVar.L("stroke") == null) {
+            if (lVar.L("fill") == null && lVar.L("stroke") == null) {
                 paint.setStyle(Paint.Style.FILL);
                 Integer num = this.s;
                 if (num != null) {
@@ -122,16 +122,16 @@ public final class jz extends DefaultHandler {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(ji.j jVar) {
+    public final boolean c(ji.l lVar) {
         Integer N;
         Float valueOf;
         String L;
         String L2;
-        if ("none".equals(jVar.L("display")) || (N = jVar.N("stroke")) == null) {
+        if ("none".equals(lVar.L("display")) || (N = lVar.N("stroke")) == null) {
             return false;
         }
-        a(jVar, N, false);
-        String L3 = jVar.L("stroke-width");
+        a(lVar, N, false);
+        String L3 = lVar.L("stroke-width");
         if (L3 != null) {
             try {
                 valueOf = Float.valueOf(Float.parseFloat(L3));
@@ -141,7 +141,7 @@ public final class jz extends DefaultHandler {
             if (valueOf != null) {
                 paint.setStrokeWidth(valueOf.floatValue());
             }
-            L = jVar.L("stroke-linecap");
+            L = lVar.L("stroke-linecap");
             if (!"round".equals(L)) {
                 paint.setStrokeCap(Paint.Cap.ROUND);
             } else if ("square".equals(L)) {
@@ -149,7 +149,7 @@ public final class jz extends DefaultHandler {
             } else if ("butt".equals(L)) {
                 paint.setStrokeCap(Paint.Cap.BUTT);
             }
-            L2 = jVar.L("stroke-linejoin");
+            L2 = lVar.L("stroke-linejoin");
             if (!"miter".equals(L2)) {
                 paint.setStrokeJoin(Paint.Join.MITER);
             } else if ("round".equals(L2)) {
@@ -164,10 +164,10 @@ public final class jz extends DefaultHandler {
         Paint paint2 = this.h;
         if (valueOf != null) {
         }
-        L = jVar.L("stroke-linecap");
+        L = lVar.L("stroke-linecap");
         if (!"round".equals(L)) {
         }
-        L2 = jVar.L("stroke-linejoin");
+        L2 = lVar.L("stroke-linejoin");
         if (!"miter".equals(L2)) {
         }
         paint2.setStyle(Paint.Style.STROKE);
@@ -393,21 +393,21 @@ public final class jz extends DefaultHandler {
                     Float k13 = mz.k("ry", attributes);
                     if (k10 != null && k11 != null && k12 != null && k13 != null) {
                         g(attributes);
-                        ji.j jVar = new ji.j(attributes, hashMap);
+                        ji.l lVar = new ji.l(attributes, hashMap);
                         float floatValue = k10.floatValue() - k12.floatValue();
                         float floatValue2 = k11.floatValue() - k13.floatValue();
                         float floatValue3 = k12.floatValue() + k10.floatValue();
                         float floatValue4 = k13.floatValue() + k11.floatValue();
                         RectF rectF2 = this.n;
                         rectF2.set(floatValue, floatValue2, floatValue3, floatValue4);
-                        if (b(jVar)) {
+                        if (b(lVar)) {
                             if (lzVar != null) {
                                 lz.a(lzVar, new gz(rectF2), paint2);
                             } else {
                                 this.a.drawOval(rectF2, paint2);
                             }
                         }
-                        if (c(jVar)) {
+                        if (c(lVar)) {
                             if (lzVar != null) {
                                 lz.a(lzVar, new gz(rectF2), paint2);
                             } else {
@@ -424,15 +424,15 @@ public final class jz extends DefaultHandler {
                     Float k16 = mz.k("r", attributes);
                     if (k14 != null && k15 != null && k16 != null) {
                         g(attributes);
-                        ji.j jVar2 = new ji.j(attributes, hashMap);
-                        if (b(jVar2)) {
+                        ji.l lVar2 = new ji.l(attributes, hashMap);
+                        if (b(lVar2)) {
                             if (lzVar != null) {
                                 lz.a(lzVar, new dz(k14.floatValue(), k15.floatValue(), k16.floatValue()), paint2);
                             } else {
                                 this.a.drawCircle(k14.floatValue(), k15.floatValue(), k16.floatValue(), paint2);
                             }
                         }
-                        if (c(jVar2)) {
+                        if (c(lVar2)) {
                             if (lzVar != null) {
                                 lz.a(lzVar, new dz(k14.floatValue(), k15.floatValue(), k16.floatValue()), paint2);
                             } else {
@@ -461,7 +461,7 @@ public final class jz extends DefaultHandler {
                         ArrayList arrayList = fzVar.a;
                         if (arrayList.size() > 1) {
                             g(attributes);
-                            ji.j jVar3 = new ji.j(attributes, hashMap);
+                            ji.l lVar3 = new ji.l(attributes, hashMap);
                             path.moveTo(((Float) arrayList.get(0)).floatValue(), ((Float) arrayList.get(1)).floatValue());
                             for (int i10 = 2; i10 < arrayList.size(); i10 += 2) {
                                 path.lineTo(((Float) arrayList.get(i10)).floatValue(), ((Float) arrayList.get(i10 + 1)).floatValue());
@@ -469,14 +469,14 @@ public final class jz extends DefaultHandler {
                             if (str2.equals("polygon")) {
                                 path.close();
                             }
-                            if (b(jVar3)) {
+                            if (b(lVar3)) {
                                 if (lzVar != null) {
                                     lz.a(lzVar, path, paint2);
                                 } else {
                                     this.a.drawPath(path, paint2);
                                 }
                             }
-                            if (c(jVar3)) {
+                            if (c(lVar3)) {
                                 if (lzVar != null) {
                                     lz.a(lzVar, path, paint2);
                                 } else {
@@ -553,7 +553,7 @@ public final class jz extends DefaultHandler {
                     Float k20 = mz.k("x2", attributes);
                     Float k21 = mz.k("y1", attributes);
                     Float k22 = mz.k("y2", attributes);
-                    if (c(new ji.j(attributes, hashMap))) {
+                    if (c(new ji.l(attributes, hashMap))) {
                         g(attributes);
                         if (lzVar != null) {
                             float floatValue5 = k19.floatValue();
@@ -576,15 +576,15 @@ public final class jz extends DefaultHandler {
                 case 7:
                     Path b10 = mz.b(mz.l("d", attributes));
                     g(attributes);
-                    ji.j jVar4 = new ji.j(attributes, hashMap);
-                    if (b(jVar4)) {
+                    ji.l lVar4 = new ji.l(attributes, hashMap);
+                    if (b(lVar4)) {
                         if (lzVar != null) {
                             lz.a(lzVar, b10, paint2);
                         } else {
                             this.a.drawPath(b10, paint2);
                         }
                     }
-                    if (c(jVar4)) {
+                    if (c(lVar4)) {
                         if (lzVar != null) {
                             lz.a(lzVar, b10, paint2);
                         } else {
@@ -606,15 +606,15 @@ public final class jz extends DefaultHandler {
                     Float k26 = mz.k("height", attributes);
                     Float k27 = mz.k("rx", attributes);
                     g(attributes);
-                    ji.j jVar5 = new ji.j(attributes, hashMap);
-                    boolean b11 = b(jVar5);
+                    ji.l lVar5 = new ji.l(attributes, hashMap);
+                    boolean b11 = b(lVar5);
                     RectF rectF3 = this.r;
                     if (b11) {
                         if (lzVar == null) {
                             if (k27 == null) {
                                 this.a.drawRect(k23.floatValue(), valueOf.floatValue(), k25.floatValue() + k23.floatValue(), k26.floatValue() + valueOf.floatValue(), paint2);
                                 paint = paint2;
-                                if (c(jVar5)) {
+                                if (c(lVar5)) {
                                     if (lzVar != null) {
                                         if (k27 != null) {
                                             lz.a(lzVar, new iz(new RectF(k23.floatValue(), valueOf.floatValue(), k25.floatValue() + k23.floatValue(), k26.floatValue() + valueOf.floatValue()), k27.floatValue()), paint);
@@ -641,7 +641,7 @@ public final class jz extends DefaultHandler {
                         }
                     }
                     paint = paint2;
-                    if (c(jVar5)) {
+                    if (c(lVar5)) {
                     }
                     f();
                 case '\t':

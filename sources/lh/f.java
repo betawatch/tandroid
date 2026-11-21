@@ -10,13 +10,13 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class f extends View implements c6 {
+public final class f extends View implements b6 {
     public LinearGradient E;
     public int F;
     public int G;
@@ -33,7 +33,7 @@ public final class f extends View implements c6 {
     public final Paint n;
     public LinearGradient r;
     public LinearGradient s;
-    public i6 w;
+    public h6 w;
     public final Paint x;
     public LinearGradient y;
 
@@ -50,7 +50,7 @@ public final class f extends View implements c6 {
         this.r = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
         hashSet.add(Integer.valueOf(this.f));
     }
@@ -79,9 +79,9 @@ public final class f extends View implements c6 {
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         super.onDraw(canvas);
-        if (n6.i1(this.w)) {
-            int x02 = n6.x0(null, n6.Ca, false);
-            int x03 = n6.x0(null, n6.Da, false);
+        if (m6.i1(this.w)) {
+            int x02 = m6.x0(null, m6.Ca, false);
+            int x03 = m6.x0(null, m6.Da, false);
             int measuredHeight = getMeasuredHeight();
             if (this.y == null || this.G != x02 || this.F != x03 || this.H != this.c || this.I != this.d || this.J != measuredHeight) {
                 this.G = x02;
@@ -189,8 +189,8 @@ public final class f extends View implements c6 {
         }
     }
 
-    public void setResourcesProvider(i6 i6Var) {
-        this.w = i6Var;
+    public void setResourcesProvider(h6 h6Var) {
+        this.w = h6Var;
     }
 
     public void setup(dh.c cVar) {
@@ -202,20 +202,20 @@ public final class f extends View implements c6 {
         if (this.e == null) {
             ui.c cVar = new ui.c();
             this.e = cVar;
-            cVar.a(n6.x0(null, i7, false));
+            cVar.a(m6.x0(null, i7, false));
             ui.c cVar2 = this.e;
             setup(new dh.c(cVar2, cVar2, cVar2));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         int i7;
         ui.c cVar = this.e;
         if (cVar == null || (i7 = this.f) == -1) {
             return;
         }
-        cVar.a(n6.x0(null, i7, false));
+        cVar.a(m6.x0(null, i7, false));
         invalidate();
     }
 }

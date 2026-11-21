@@ -11,14 +11,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class w8 extends View {
     public u8 a;
-    public final c6 b;
+    public final d6 b;
     public boolean c;
     public boolean d;
-    public final p10 e;
+    public final s10 e;
     public Drawable f;
     public Drawable h;
     public boolean n;
@@ -31,10 +31,10 @@ public final class w8 extends View {
     public w8(y8 y8Var, Context context) {
         super(context);
         this.x = y8Var;
-        c6 c6Var = new c6(400L, org.telegram.messenger.g0.H);
-        this.b = c6Var;
-        this.e = new p10();
-        c6Var.a = this;
+        d6 d6Var = new d6(400L, org.telegram.messenger.g0.H);
+        this.b = d6Var;
+        this.e = new s10();
+        d6Var.a = this;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x00b3, code lost:
@@ -49,8 +49,8 @@ public final class w8 extends View {
         Paint paint;
         super.onDraw(canvas);
         float f10 = this.c ? 1.0f : 0.0f;
-        c6 c6Var = this.b;
-        c6Var.e(false, f10);
+        d6 d6Var = this.b;
+        d6Var.e(false, f10);
         float measuredWidth = getMeasuredWidth() / 2.0f;
         float measuredHeight = getMeasuredHeight() / 2.0f;
         u8 u8Var = this.a;
@@ -59,26 +59,26 @@ public final class w8 extends View {
             int i10 = u8Var.d;
             int i11 = u8Var.e;
             int i12 = u8Var.f;
-            p10 p10Var = this.e;
-            p10Var.d(i7, i10, i11, i12);
-            p10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            paint = p10Var.c;
+            s10 s10Var = this.e;
+            s10Var.d(i7, i10, i11, i12);
+            s10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            paint = s10Var.c;
         } else {
             if (this.s == null) {
                 Paint paint2 = new Paint(1);
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.zf, false));
+                paint2.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.zf, false));
             }
             paint = this.s;
         }
-        if (c6Var.c == 0.0f) {
+        if (d6Var.c == 0.0f) {
             canvas.drawCircle(measuredWidth, measuredHeight, org.telegram.messenger.g0.L(15.0f), paint);
         } else {
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
             canvas.drawCircle(measuredWidth, measuredHeight, org.telegram.messenger.g0.N(13.5f), paint);
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(measuredWidth, measuredHeight, com.google.android.gms.internal.vision.e2.z(1.0f, c6Var.c, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f)), paint);
+            canvas.drawCircle(measuredWidth, measuredHeight, com.google.android.gms.internal.vision.e2.z(1.0f, d6Var.c, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f)), paint);
         }
         if (this.w) {
             if (this.h != null) {
@@ -86,9 +86,9 @@ public final class w8 extends View {
             this.h = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
             boolean z10 = this.d && this.a == null;
             this.n = z10;
-            this.h.setColorFilter(new PorterDuffColorFilter(z10 ? org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Bf, false) : -1, PorterDuff.Mode.SRC_IN));
+            this.h.setColorFilter(new PorterDuffColorFilter(z10 ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Bf, false) : -1, PorterDuff.Mode.SRC_IN));
             this.h.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.h.getIntrinsicHeight() / 2.0f)), (int) ((this.h.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.h.getIntrinsicHeight() / 2.0f) + measuredHeight));
-            float T1 = org.telegram.messenger.g0.T1(1.05f, 0.92f, c6Var.c);
+            float T1 = org.telegram.messenger.g0.T1(1.05f, 0.92f, d6Var.c);
             canvas.save();
             canvas.scale(T1, T1, measuredWidth, measuredHeight);
             this.h.draw(canvas);
@@ -100,7 +100,7 @@ public final class w8 extends View {
                 if (this.f == null) {
                     Drawable drawable = getContext().getDrawable(R.drawable.msg_filled_plus);
                     this.f = drawable;
-                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Bf, false), PorterDuff.Mode.MULTIPLY));
+                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Bf, false), PorterDuff.Mode.MULTIPLY));
                 }
                 this.f.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.f.getIntrinsicHeight() / 2.0f)), (int) ((this.f.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.f.getIntrinsicHeight() / 2.0f) + measuredHeight));
                 this.f.draw(canvas);
@@ -111,10 +111,10 @@ public final class w8 extends View {
                 this.r = paint3;
                 paint3.setColor(-1);
             }
-            this.r.setAlpha(Math.round(Utilities.i(c6Var.c, 1.0f, 0.0f) * 255.0f));
+            this.r.setAlpha(Math.round(Utilities.i(d6Var.c, 1.0f, 0.0f) * 255.0f));
             canvas.drawCircle(measuredWidth, measuredHeight, org.telegram.messenger.g0.L(1.5f), this.r);
-            canvas.drawCircle(measuredWidth - (org.telegram.messenger.g0.L(5.0f) * c6Var.c), measuredHeight, org.telegram.messenger.g0.L(1.5f), this.r);
-            canvas.drawCircle((org.telegram.messenger.g0.L(5.0f) * c6Var.c) + measuredWidth, measuredHeight, org.telegram.messenger.g0.L(1.5f), this.r);
+            canvas.drawCircle(measuredWidth - (org.telegram.messenger.g0.L(5.0f) * d6Var.c), measuredHeight, org.telegram.messenger.g0.L(1.5f), this.r);
+            canvas.drawCircle((org.telegram.messenger.g0.L(5.0f) * d6Var.c) + measuredWidth, measuredHeight, org.telegram.messenger.g0.L(1.5f), this.r);
         }
     }
 

@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import c8.bc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public final int a;
@@ -121,12 +121,12 @@ public final class a extends r6.a {
     }
 
     public final String toString() {
-        ji.j jVar = new ji.j(this);
-        jVar.E(d(this.b), "statusCode");
-        jVar.E(this.c, "resolution");
-        jVar.E(this.d, "message");
-        jVar.E(this.e, "clientMethodKey");
-        return jVar.toString();
+        ji.l lVar = new ji.l(this);
+        lVar.E(d(this.b), "statusCode");
+        lVar.E(this.c, "resolution");
+        lVar.E(this.d, "message");
+        lVar.E(this.e, "clientMethodKey");
+        return lVar.toString();
     }
 
     @Override // android.os.Parcelable

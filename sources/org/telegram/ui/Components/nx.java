@@ -1,38 +1,50 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class nx implements View.OnClickListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ hi.w4 b;
-    public final /* synthetic */ androidx.mediarouter.app.w c;
+public final class nx extends c5.a {
+    public final /* synthetic */ ty c;
 
-    public nx(androidx.mediarouter.app.w wVar, boolean[] zArr, hi.w4 w4Var) {
-        this.c = wVar;
-        this.a = zArr;
-        this.b = w4Var;
+    public nx(ty tyVar) {
+        this.c = tyVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        qx qxVar = (qx) this.c.b;
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
+    @Override // c5.a
+    public final void a(c5.l lVar, Object obj) {
+        lVar.removeView((View) obj);
+    }
+
+    @Override // c5.a
+    public final int b() {
+        return this.c.e.size();
+    }
+
+    @Override // c5.a
+    public final CharSequence d(int i7) {
+        if (i7 == 0) {
+            return org.telegram.messenger.gd.N0(2131751184, null);
         }
-        zArr[0] = true;
-        org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, qxVar.G.getContext(), null)};
-        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
-        ry ryVar = qxVar.G;
-        String str = qxVar.x;
-        if (str == null) {
-            str = ryVar.X0[0];
+        if (i7 == 1) {
+            return org.telegram.messenger.gd.N0(2131754879, null);
         }
-        tL_messages_getEmojiURL.lang_code = str;
-        org.telegram.messenger.g0.h3(new org.telegram.ui.b0(this, u1VarArr, ConnectionsManager.getInstance(ryVar.d1).sendRequest(tL_messages_getEmojiURL, new bi.m1(this, u1VarArr, this.b, 16)), 11), 1000L);
+        if (i7 != 2) {
+            return null;
+        }
+        return org.telegram.messenger.gd.N0(2131754755, null);
+    }
+
+    @Override // c5.a
+    public final Object e(c5.l lVar, int i7) {
+        FrameLayout frameLayout = ((py) this.c.e.get(i7)).b;
+        lVar.addView(frameLayout);
+        return frameLayout;
+    }
+
+    @Override // c5.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

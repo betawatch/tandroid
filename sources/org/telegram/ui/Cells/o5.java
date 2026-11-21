@@ -10,10 +10,10 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ef;
-import org.telegram.ui.Components.hm;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.jm;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class o5 extends org.telegram.ui.Components.q9 {
     public final Paint H;
@@ -34,8 +34,8 @@ public final class o5 extends org.telegram.ui.Components.q9 {
         Bitmap bitmap;
         ef efVar;
         Drawable drawable;
-        org.telegram.ui.Components.o5 o5Var = this.e;
-        ImageReceiver imageReceiver = o5Var != null ? o5Var.k : this.a;
+        org.telegram.ui.Components.p5 p5Var = this.e;
+        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : this.a;
         if (imageReceiver == null) {
             return;
         }
@@ -69,7 +69,7 @@ public final class o5 extends org.telegram.ui.Components.q9 {
         }
         float f10 = s5Var.V;
         if (f10 != 1.0f && s5Var.T != null) {
-            int interpolation = (int) (lr.f.getInterpolation(1.0f - f10) * 255.0f);
+            int interpolation = (int) (nr.f.getInterpolation(1.0f - f10) * 255.0f);
             Paint paint = this.H;
             paint.setAlpha(interpolation);
             canvas.drawBitmap(s5Var.T, 0.0f, 0.0f, paint);
@@ -89,7 +89,7 @@ public final class o5 extends org.telegram.ui.Components.q9 {
         }
         if (s5Var.s) {
             q5 q5Var = s5Var.W;
-            if ((q5Var == null || !((hm) ((org.telegram.ui.Components.b0) q5Var).b).s) && (efVar = s5Var.I) != null && efVar.i() && s5Var.I.d()) {
+            if ((q5Var == null || !((jm) ((org.telegram.ui.Components.c0) q5Var).b).s) && (efVar = s5Var.I) != null && efVar.i() && s5Var.I.d()) {
                 if (s5Var.I.j()) {
                     if (this.K == null) {
                         this.K = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();

@@ -1,115 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class do0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yo0 b;
+public final class do0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ap0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ do0(yo0 yo0Var, Context context, int i7) {
-        super(context);
-        this.a = i7;
-        this.b = yo0Var;
+    public /* synthetic */ do0(ap0 ap0Var, int i7) {
+        this.c = i7;
+        this.d = ap0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i7) {
+        switch (this.c) {
             case 0:
-                yo0 yo0Var = this.b;
-                yo0Var.S2.setBounds(0, (int) yo0Var.q2, getMeasuredWidth(), getMeasuredHeight());
-                yo0Var.S2.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, yo0Var.q2, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                yo0 yo0Var = this.b;
-                do0 do0Var = yo0Var.n1;
-                float f10 = yo0Var.r2;
-                if (f10 != 0.0f && f10 != do0Var.getTop() + yo0Var.r2) {
-                    ValueAnimator valueAnimator = yo0Var.s2;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = yo0Var.r2 - (do0Var.getTop() + yo0Var.q2);
-                    yo0Var.q2 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    yo0Var.s2 = ofFloat;
-                    ofFloat.addUpdateListener(new e60(this, 18));
-                    yo0Var.s2.setInterpolator(lr.f);
-                    yo0Var.s2.setDuration(200L);
-                    yo0Var.s2.start();
-                    yo0Var.r2 = 0.0f;
+                if (i7 == 0) {
+                    return this.d.D1.J;
                 }
-                yo0Var.O1[1].setTranslationY((-(do0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))) + yo0Var.q2 + yo0Var.p2 + ((1.0f - getAlpha()) * (do0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
+                return 1;
             case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(org.telegram.messenger.gd.G(this.b.Q1.m(), "AccDescrShareInChats", new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
+                xo0 xo0Var = this.d.I1;
+                return (i7 == xo0Var.x || i7 == xo0Var.y || i7 == xo0Var.E || i7 == xo0Var.G || xo0Var.d(i7) == 0) ? 4 : 1;
             default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f10);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i7);
-                if (i7 != 0) {
-                    this.b.O1[1].setTranslationY(0.0f);
-                    break;
+                if (i7 == 0) {
+                    return this.d.E1.J;
                 }
-                break;
-            default:
-                super.setVisibility(i7);
-                break;
+                return 1;
         }
     }
 }

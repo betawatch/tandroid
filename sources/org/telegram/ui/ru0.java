@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ru0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class ru0 implements Runnable {
                 su0Var.G.getNotificationCenter().j(su0Var.F);
                 break;
             case 1:
-                ProfileActivity profileActivity = (ProfileActivity) ((ai.k0) obj).c;
+                ProfileActivity profileActivity = (ProfileActivity) ((ai.l0) obj).c;
                 if (profileActivity.t5 != 1.0f) {
                     av0 av0Var = profileActivity.o0;
                     while (av0Var.E0.k(i10) != av0Var.getRealCount() - 1) {
@@ -39,7 +39,7 @@ public final /* synthetic */ class ru0 implements Runnable {
             case 2:
                 ProfileActivity profileActivity2 = ((rv0) obj).b;
                 RectF rectF = ProfileActivity.Z6;
-                profileActivity2.getMessagesController().p5(profileActivity2.e1, 0, true, new hi.k9(profileActivity2, true, 2));
+                profileActivity2.getMessagesController().p5(profileActivity2.e1, 0, true, new hi.j9(profileActivity2, true, 2));
                 break;
             case 3:
                 vv0 vv0Var = (vv0) obj;
@@ -71,7 +71,7 @@ public final /* synthetic */ class ru0 implements Runnable {
                         lcVar = org.telegram.ui.Components.lc.b0(LaunchActivity.T());
                     }
                     if (lcVar != null) {
-                        org.telegram.ui.Components.gc I = lcVar.I(R.raw.msg_antispam, org.telegram.messenger.gd.M0(2131746027, null), org.telegram.messenger.gd.M0(2131745990, null));
+                        org.telegram.ui.Components.gc I = lcVar.I(R.raw.msg_antispam, org.telegram.messenger.gd.N0(2131746026, null), org.telegram.messenger.gd.N0(2131745989, null));
                         I.j = 5000;
                         I.j();
                         break;
@@ -88,12 +88,12 @@ public final /* synthetic */ class ru0 implements Runnable {
                 saveToGallerySettingsActivity.e0();
                 break;
             case 12:
-                org.telegram.ui.Components.x20 x20Var = (org.telegram.ui.Components.x20) obj;
-                x20Var.dismiss();
-                vf.c.t(x20Var.getContext(), org.telegram.messenger.gd.M0(2131746423, null));
+                org.telegram.ui.Components.a30 a30Var = (org.telegram.ui.Components.a30) obj;
+                a30Var.dismiss();
+                vf.c.t(a30Var.getContext(), org.telegram.messenger.gd.N0(2131746422, null));
                 break;
             case 13:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.h60) obj).c;
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.h10) obj).c;
                 Runnable runnable = secretMediaViewer.n0;
                 if (runnable != null) {
                     runnable.run();
@@ -102,32 +102,32 @@ public final /* synthetic */ class ru0 implements Runnable {
                 }
                 break;
             case 14:
-                tz0 tz0Var = ((sz0) obj).a;
-                tz0Var.R = true;
-                tz0Var.O.invalidate();
+                uz0 uz0Var = ((tz0) obj).a;
+                uz0Var.R = true;
+                uz0Var.O.invalidate();
                 break;
             case 15:
                 ((org.telegram.messenger.ks) obj).o();
                 break;
             case 16:
-                org.telegram.messenger.g0.T3(((j01) obj).c, true, true);
+                org.telegram.messenger.g0.T3(((k01) obj).c, true, true);
                 break;
             case 17:
-                org.telegram.ui.Components.z41 z41Var = ((b21) obj).e2;
-                if (z41Var != null) {
-                    z41Var.O(true);
+                org.telegram.ui.Components.c51 c51Var = ((c21) obj).e2;
+                if (c51Var != null) {
+                    c51Var.O(true);
                     break;
                 }
                 break;
             case 18:
-                ((u11) obj).a();
+                ((v11) obj).a();
                 break;
             case 19:
                 kg.f.a(((SessionsActivity) obj).currentAccount).b();
                 break;
             case 20:
-                c51 c51Var = (c51) obj;
-                c51Var.n0.a(c51Var.k0.f0, c51Var.l0.isAttachedToWindow());
+                c51 c51Var2 = (c51) obj;
+                c51Var2.n0.a(c51Var2.k0.f0, c51Var2.l0.isAttachedToWindow());
                 break;
             case 21:
                 ((b91) obj).J.r.f();

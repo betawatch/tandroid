@@ -13,7 +13,7 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class u8 extends FrameLayout {
     public static Paint d;
@@ -23,14 +23,14 @@ public final class u8 extends FrameLayout {
     public boolean b;
     public int c;
 
-    public u8(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public u8(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         if (d == null) {
             d = new Paint(1);
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, h6Var);
         n10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((gd.a0 ? 5 : 3) | 16);
@@ -64,7 +64,7 @@ public final class u8 extends FrameLayout {
         Canvas canvas2;
         if (this.b) {
             canvas2 = canvas;
-            canvas2.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+            canvas2.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         } else {
             canvas2 = canvas;
         }

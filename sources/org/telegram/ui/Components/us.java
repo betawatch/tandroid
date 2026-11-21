@@ -1,72 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class us implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vs b;
+public final class us extends ReplacementSpan {
+    public int b;
+    public final Paint a = new Paint(1);
+    public float c = 3.0f;
+    public float d = 3.0f;
 
-    public /* synthetic */ us(vs vsVar, int i7) {
-        this.a = i7;
-        this.b = vsVar;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        int color = paint.getColor();
+        Paint paint2 = this.a;
+        if (color != 0) {
+            paint2.setColor(paint.getColor());
+        }
+        canvas.drawCircle(f10 + (org.telegram.messenger.g0.N(this.c) / 2.0f), ((i13 - i11) / 2) + this.b, org.telegram.messenger.g0.N(this.d) / 2.0f, paint2);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
-        Bitmap bitmap;
-        switch (this.a) {
-            case 0:
-                vs vsVar = this.b;
-                try {
-                    i7 = vsVar.x + 0;
-                    bitmap = vsVar.b;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    vsVar.F = true;
-                }
-                if (bitmap != null) {
-                    if (bitmap.getWidth() == vsVar.y) {
-                        if (vsVar.b.getHeight() != i7) {
-                        }
-                        vsVar.b.eraseColor(0);
-                        vsVar.c.save();
-                        vsVar.c.translate(0.0f, 0);
-                        vsVar.c(vsVar.c);
-                        vsVar.c.restore();
-                        vsVar.b.prepareToDraw();
-                        org.telegram.messenger.g0.g3(vsVar.I);
-                        break;
-                    }
-                }
-                Bitmap bitmap2 = vsVar.b;
-                if (bitmap2 != null) {
-                    bitmap2.recycle();
-                }
-                vsVar.b = Bitmap.createBitmap(vsVar.y, i7, Bitmap.Config.ARGB_8888);
-                vsVar.c = new Canvas(vsVar.b);
-                vsVar.b.eraseColor(0);
-                vsVar.c.save();
-                vsVar.c.translate(0.0f, 0);
-                vsVar.c(vsVar.c);
-                vsVar.c.restore();
-                vsVar.b.prepareToDraw();
-                org.telegram.messenger.g0.g3(vsVar.I);
-            default:
-                vs vsVar2 = this.b;
-                vsVar2.f = false;
-                vsVar2.g();
-                if (!vsVar2.a) {
-                    vsVar2.j();
-                    break;
-                } else if (vsVar2.w == vsVar2.K) {
-                    vsVar2.H = true;
-                    break;
-                }
-                break;
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        return org.telegram.messenger.g0.L(this.c);
     }
 }

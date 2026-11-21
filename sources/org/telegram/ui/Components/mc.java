@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class mc {
     public View a;
@@ -47,10 +47,10 @@ public class mc {
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j, z10 ? 1.0f : 0.0f);
             this.g = ofFloat;
-            ofFloat.addUpdateListener(new w(this, 8));
+            ofFloat.addUpdateListener(new x(this, 8));
             this.g.addListener(new org.telegram.ui.on(2, this, z10));
             if (this.i) {
-                this.g.setInterpolator(lr.f);
+                this.g.setInterpolator(nr.f);
                 this.g.setDuration((long) (this.b * 60.0f));
                 this.g.setStartDelay(0L);
             } else {
@@ -71,10 +71,10 @@ public class mc {
         this.d = f11;
     }
 
-    public mc(hi.j5 j5Var) {
+    public mc(hi.i5 i5Var) {
         this.e = 0L;
         this.h = 1.0f;
-        this.a = j5Var;
+        this.a = i5Var;
         this.b = 1.5f;
         this.c = 1.0f;
         this.d = 2.0f;

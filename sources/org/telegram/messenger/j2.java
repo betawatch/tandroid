@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j2 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class j2 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.ActionBar.h2 Q;
+        org.telegram.ui.ActionBar.g2 Q;
         int i7 = 3;
         int i10 = 0;
         switch (this.a) {
@@ -106,7 +106,7 @@ public final /* synthetic */ class j2 implements Runnable {
                     return;
                 }
             case 12:
-                org.telegram.ui.ActionBar.n6.F(false);
+                org.telegram.ui.ActionBar.m6.F(false);
                 return;
             case 13:
                 ks.e().k(ks.g4, new Object[0]);
@@ -152,12 +152,12 @@ public final /* synthetic */ class j2 implements Runnable {
                 ec.D().i(new j2(17));
                 bz.b = true;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(Q.getParentActivity());
-                alertDialog$Builder.a.S = gd.M0(2131745643, null);
-                alertDialog$Builder.a.T = gd.M0(2131745642, null);
-                alertDialog$Builder.k(gd.M0(2131751344, null), new ed(16));
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.setCanceledOnTouchOutside(false);
-                u1Var.show();
+                alertDialog$Builder.a.S = gd.N0(2131745642, null);
+                alertDialog$Builder.a.T = gd.N0(2131745641, null);
+                alertDialog$Builder.k(gd.N0(2131751343, null), new ed(16));
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.setCanceledOnTouchOutside(false);
+                t1Var.show();
                 return;
             case 17:
                 int i13 = bz.a;
@@ -166,7 +166,7 @@ public final /* synthetic */ class j2 implements Runnable {
                 lz.y = null;
                 return;
             case 19:
-                org.telegram.ui.ActionBar.n6.F(false);
+                org.telegram.ui.ActionBar.m6.F(false);
                 return;
             case 20:
                 int i14 = org.telegram.ui.bn.md;
@@ -180,26 +180,26 @@ public final /* synthetic */ class j2 implements Runnable {
                 e11.k(ks.q4, Boolean.FALSE, bool, bool);
                 return;
             case 23:
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T == null) {
                     return;
                 }
-                org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
-                f2Var.a = true;
-                T.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), f2Var);
+                org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
+                e2Var.a = true;
+                T.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), e2Var);
                 return;
             case 24:
-                Pattern pattern = org.telegram.ui.Components.b5.a;
+                Pattern pattern = org.telegram.ui.Components.c5.a;
                 return;
             case 25:
-                g0.r(org.telegram.ui.Components.o5.w);
+                g0.r(org.telegram.ui.Components.p5.w);
                 try {
-                    if (org.telegram.ui.Components.o5.r != null) {
-                        for (int i15 = 0; i15 < org.telegram.ui.Components.o5.r.size(); i15++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.o5.r.valueAt(i15);
+                    if (org.telegram.ui.Components.p5.r != null) {
+                        for (int i15 = 0; i15 < org.telegram.ui.Components.p5.r.size(); i15++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.p5.r.valueAt(i15);
                             int i16 = 0;
                             while (i16 < longSparseArray.size()) {
-                                if (!((org.telegram.ui.Components.o5) longSparseArray.valueAt(i16)).a) {
+                                if (!((org.telegram.ui.Components.p5) longSparseArray.valueAt(i16)).a) {
                                     longSparseArray.removeAt(i16);
                                     i16--;
                                 }
@@ -214,7 +214,7 @@ public final /* synthetic */ class j2 implements Runnable {
                     return;
                 }
             case 26:
-                org.telegram.ui.Components.g8 g8Var = org.telegram.ui.Components.g8.T2;
+                org.telegram.ui.Components.f8 f8Var = org.telegram.ui.Components.f8.T2;
                 return;
             case 27:
                 pv.h();
@@ -229,7 +229,7 @@ public final /* synthetic */ class j2 implements Runnable {
                 LaunchActivity.H1.startActivity(intent);
                 return;
             default:
-                org.telegram.ui.ActionBar.h2 Q2 = LaunchActivity.Q();
+                org.telegram.ui.ActionBar.g2 Q2 = LaunchActivity.Q();
                 if (Q2 == null) {
                     return;
                 }

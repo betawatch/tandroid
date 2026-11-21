@@ -1,7 +1,7 @@
 package h2;
 
 import a8.la;
-import ai.a1;
+import ai.c1;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class r {
     public final Thread a;
@@ -76,7 +76,7 @@ public final class r {
         if (this.i) {
             la.p(Thread.currentThread() == this.a);
         }
-        this.f.add(new a1(new CopyOnWriteArraySet(this.d), i7, oVar, 13));
+        this.f.add(new c1(new CopyOnWriteArraySet(this.d), i7, oVar, 13));
     }
 
     public final void d() {
@@ -93,7 +93,7 @@ public final class r {
             qVar.d = true;
             if (pVar != null && qVar.c) {
                 qVar.c = false;
-                pVar.g(qVar.a, qVar.b.d());
+                pVar.i(qVar.a, qVar.b.d());
             }
         }
         this.d.clear();

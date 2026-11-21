@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pm implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class pm implements RequestDelegate {
                 break;
             default:
                 e00 e00Var = (e00) this.b;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.d;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
                 ArrayList arrayList = (ArrayList) this.e;
                 e00Var.getClass();
                 if (tL_error != null) {
@@ -58,9 +58,9 @@ public final /* synthetic */ class pm implements RequestDelegate {
                             g0.g3(new di.vb((Object) e00Var, j10, false, 4));
                             break;
                         }
-                    } else if (h2Var != null) {
+                    } else if (g2Var != null) {
                         e00Var.a(j10, arrayList, true);
-                        g0.g3(new w3(14, e00Var, h2Var));
+                        g0.g3(new w3(14, e00Var, g2Var));
                         break;
                     }
                 }
@@ -68,10 +68,10 @@ public final /* synthetic */ class pm implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ pm(e00 e00Var, org.telegram.ui.ActionBar.h2 h2Var, long j3, ArrayList arrayList) {
+    public /* synthetic */ pm(e00 e00Var, org.telegram.ui.ActionBar.g2 g2Var, long j3, ArrayList arrayList) {
         this.a = 2;
         this.b = e00Var;
-        this.d = h2Var;
+        this.d = g2Var;
         this.c = j3;
         this.e = arrayList;
     }

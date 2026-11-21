@@ -1,50 +1,58 @@
 package ki;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class g2 implements ValueAnimator.AnimatorUpdateListener {
+public final class g2 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ float b;
     public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ t2 f;
+    public final /* synthetic */ s2 d;
 
-    public g2(t2 t2Var, boolean z10, float f10, float f11, float f12, float f13) {
-        this.f = t2Var;
+    public g2(s2 s2Var, boolean z10, float f10, float f11) {
+        this.d = s2Var;
         this.a = z10;
         this.b = f10;
         this.c = f11;
-        this.d = f12;
-        this.e = f13;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        t2 t2Var = this.f;
-        l2 l2Var = t2Var.E;
-        q2 q2Var = t2Var.Y;
-        k2 k2Var = t2Var.x;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        t2Var.i0 = floatValue;
-        if (!this.a) {
-            floatValue = 1.0f - floatValue;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        s2 s2Var = this.d;
+        k2 k2Var = s2Var.E;
+        p2 p2Var = s2Var.Y;
+        j2 j2Var = s2Var.x;
+        s2Var.j0 = false;
+        boolean z10 = this.a;
+        if (z10) {
+            j2Var.setForceOffsetY(-org.telegram.messenger.g0.L(24.0f));
+            j2Var.setTopActionBarOffsetY(-org.telegram.messenger.g0.L(24.0f));
+            j2Var.setSwipeOffsetY(0.0f);
+        } else {
+            s2Var.I();
+            s2Var.L();
+            float L = org.telegram.messenger.g0.L(24.0f);
+            float f10 = this.b;
+            j2Var.setForceOffsetY(f10 - L);
+            j2Var.setTopActionBarOffsetY(f10 - org.telegram.messenger.g0.L(24.0f));
+            j2Var.setSwipeOffsetY(0.0f);
         }
-        t2Var.h0 = floatValue;
-        q2Var.setAlpha(1.0f - floatValue);
-        q2Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * t2Var.h0);
-        float f10 = this.b;
-        float f11 = t2Var.i0;
-        float f12 = this.c;
-        k2Var.setTranslationY(org.telegram.messenger.g0.T1(f10, f12, f11));
-        k2Var.setTranslationX(org.telegram.messenger.g0.T1(this.d, 0.0f, t2Var.i0));
-        t2Var.n0.setTranslationX(org.telegram.messenger.g0.T1(this.e, 0.0f, t2Var.i0));
-        t2Var.o0.setAlpha(t2Var.h0);
-        t2Var.f.invalidate();
-        l2Var.setViewPortHeightOffset(k2Var.getTranslationY() - f12);
-        l2Var.n(false, false);
-        t2Var.H();
+        float f11 = z10 ? s2Var.i0 : 1.0f - s2Var.i0;
+        s2Var.h0 = f11;
+        p2Var.setAlpha(1.0f - f11);
+        p2Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * s2Var.h0);
+        s2Var.o0.setAlpha(s2Var.h0);
+        if (z10) {
+            p2Var.setVisibility(8);
+        }
+        j2Var.setSwipeOffsetAnimationDisallowed(false);
+        j2Var.setTranslationX(org.telegram.messenger.g0.T1(this.c, 0.0f, s2Var.i0));
+        s2Var.n0.setTranslationX(0.0f);
+        s2Var.f.invalidate();
+        k2Var.setViewPortHeightOffset(0.0f);
+        k2Var.n(true, true);
+        s2Var.H();
     }
 }

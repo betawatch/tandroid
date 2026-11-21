@@ -1,19 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface p4 {
-    void a(float f10);
+public final class p4 {
+    public final g2 a;
+    public boolean b;
+    public boolean c;
+    public boolean d = true;
+    public boolean e;
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public boolean g;
 
-    void b(ActionBarLayout actionBarLayout, boolean z10);
+    public p4(g2 g2Var) {
+        this.a = g2Var;
+    }
 
-    boolean c(ActionBarLayout actionBarLayout, h2 h2Var);
+    public final void a() {
+        this.c = true;
+    }
 
-    void f(int[] iArr);
-
-    boolean j();
-
-    boolean k(ActionBarLayout actionBarLayout);
-
-    boolean l(ActionBarLayout actionBarLayout, q4 q4Var);
+    public final void b(boolean z10) {
+        this.b = z10;
+    }
 }

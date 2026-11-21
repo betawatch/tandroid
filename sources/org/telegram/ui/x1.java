@@ -11,9 +11,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x1 extends HorizontalScrollView implements org.telegram.ui.ActionBar.c6, c3 {
+public final class x1 extends HorizontalScrollView implements org.telegram.ui.ActionBar.b6, c3 {
     public final p50 a;
     public final FrameLayout b;
     public final ImageView c;
@@ -96,13 +96,13 @@ public final class x1 extends HorizontalScrollView implements org.telegram.ui.Ac
         imageView.setLayoutParams(new FrameLayout.LayoutParams(L2, a10.c));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         ((g4) this.a).getClass();
-        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.v0(org.telegram.ui.ActionBar.n6.G6), PorterDuff.Mode.SRC_IN));
+        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.v0(org.telegram.ui.ActionBar.m6.G6), PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

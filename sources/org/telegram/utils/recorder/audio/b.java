@@ -1,15 +1,15 @@
 package org.telegram.utils.recorder.audio;
 
 import a8.p0;
-import ai.f0;
-import di.i2;
+import ai.g0;
+import di.j2;
 import java.io.File;
 import java.nio.ByteBuffer;
 import org.telegram.ui.g80;
 import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -103,7 +103,7 @@ public final /* synthetic */ class b implements Runnable {
                 if (exc3 == null) {
                     j jVar = (j) eVar.c;
                     jVar.a((h) eVar.b, length);
-                    jVar.i.post(new f0(eVar, eVar.a, j3, 5));
+                    jVar.i.post(new g0(eVar, eVar.a, j3, 5));
                 } else {
                     ((j) eVar.c).i.post(new g80(eVar, eVar.a, exc3, 4));
                 }
@@ -119,7 +119,7 @@ public final /* synthetic */ class b implements Runnable {
                     jVar2.h.a("final waveform extraction failed", th4);
                     bArr = null;
                 }
-                jVar2.i.post(new i2(jVar2, hVar, this.b, bArr, 26));
+                jVar2.i.post(new j2(jVar2, hVar, this.b, bArr, 26));
                 return;
         }
     }

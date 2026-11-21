@@ -1,30 +1,6 @@
 package ki;
 
-import org.telegram.messenger.gd;
-import org.telegram.messenger.o10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lc;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public abstract class i0 {
-    public static void a(org.telegram.ui.ActionBar.h2 h2Var, int i7, TLRPC.User user) {
-        if (h2Var == null || user == null) {
-            return;
-        }
-        String q10 = o10.q(user);
-        if (!user.bot || !user.bot_can_edit) {
-            lc.b0(h2Var).t(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753050, q10)), null).j();
-            return;
-        }
-        String M0 = gd.M0(2131753049, null);
-        String M02 = gd.M0(2131748982, null);
-        ai.y1 y1Var = new ai.y1(i7, user, 4);
-        bi.a2 a2Var = bi.a2.t2;
-        bi.w1 w1Var = new bi.w1();
-        w1Var.a = M0;
-        w1Var.b = M02;
-        w1Var.c = y1Var;
-        bi.a2.k1(h2Var, false, null, w1Var);
-    }
+public interface i0 {
 }

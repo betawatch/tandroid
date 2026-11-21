@@ -5,12 +5,12 @@ import fi.u3;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     @Override // yg.d, yg.c
@@ -23,7 +23,7 @@ public final class e extends d {
     }
 
     public void setGiveaway(TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        u6.X(this.e, n6.r5, this.a);
+        t6.X(this.e, m6.r5, this.a);
         boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
         u3 u3Var = this.d;
         b9 b9Var = this.b;
@@ -33,7 +33,7 @@ public final class e extends d {
             u3Var.k(gd.H(',', "BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
             setSubtitle(gd.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]));
         } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            u3Var.k(gd.M0(2131753326, null));
+            u3Var.k(gd.N0(2131753325, null));
             b9Var.g(16);
             TL_stories.TL_prepaidGiveaway tL_prepaidGiveaway = (TL_stories.TL_prepaidGiveaway) prepaidGiveaway;
             int i7 = tL_prepaidGiveaway.months;

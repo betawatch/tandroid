@@ -26,7 +26,7 @@ import androidx.fragment.app.p;
 import androidx.fragment.app.s;
 import androidx.lifecycle.a0;
 import androidx.lifecycle.t;
-import bi.i3;
+import bi.m3;
 import c4.d;
 import c8.c0;
 import ca.r;
@@ -55,7 +55,8 @@ import gb.u0;
 import h2.x;
 import h9.e1;
 import h9.h1;
-import hi.v9;
+import hi.l0;
+import hi.u9;
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
@@ -75,15 +76,15 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.oo0;
-import org.telegram.ui.Components.ui0;
+import org.telegram.ui.Components.qo0;
+import org.telegram.ui.Components.wi0;
 import org.telegram.ui.dr0;
 import sg.t0;
 import t3.g;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0, g0, d, q, oo0, dr0, OnSuccessListener, ib.b, k, n, t0 {
+public final class c implements a0, androidx.activity.result.b, ce.c, wi0, ci.a0, g0, d, q, qo0, dr0, OnSuccessListener, ib.b, k, n, t0 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -177,14 +178,14 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
         return oVar;
     }
 
-    @Override // org.telegram.ui.Components.oo0
+    @Override // org.telegram.ui.Components.qo0
     public void D0() {
         gc k10 = ((f6) this.b).k().k(false);
         k10.t = true;
         k10.j();
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ boolean E() {
         return false;
     }
@@ -504,9 +505,9 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
 
     @Override // sg.t0
     public void e0() {
-        v9 v9Var = (v9) this.b;
-        v9Var.n0.a.u();
-        v9Var.N0.setViewHidden(false);
+        u9 u9Var = (u9) this.b;
+        u9Var.n0.a.u();
+        u9Var.N0.setViewHidden(false);
     }
 
     @Override // androidx.activity.result.b
@@ -555,7 +556,7 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public void g(View view, p0 p0Var, boolean z10, boolean z11) {
         ch.s sVar = (ch.s) this.b;
         sVar.a.Eb(null, sVar.e, sVar.b, view, 0.0f, 0.0f, p0Var, false, z10, z11, false);
@@ -583,9 +584,9 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
 
     @Override // sg.t0
     public void k() {
-        i3 i3Var = ((v9) this.b).z0;
-        if (i3Var != null) {
-            i3Var.invalidate();
+        m3 m3Var = ((u9) this.b).z0;
+        if (m3Var != null) {
+            m3Var.invalidate();
         }
     }
 
@@ -596,25 +597,25 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
 
     @Override // sg.t0
     public void n() {
-        v9 v9Var = (v9) this.b;
-        if (v9Var.M0) {
-            v9Var.M0 = false;
+        u9 u9Var = (u9) this.b;
+        if (u9Var.M0) {
+            u9Var.M0 = false;
         } else {
-            v9Var.U0.b(1);
-            v9Var.w((sg.h) sg.h.a.get(0));
+            u9Var.U0.b(1);
+            u9Var.w((sg.h) sg.h.a.get(0));
         }
     }
 
     @Override // sg.t0
     public void n0() {
-        v9 v9Var = (v9) this.b;
-        if (v9Var.t0 != null) {
-            v9Var.A0(null, true);
+        u9 u9Var = (u9) this.b;
+        if (u9Var.t0 != null) {
+            u9Var.A0(null, true);
         }
-        v9Var.N0.setViewHidden(true);
+        u9Var.N0.setViewHidden(true);
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ boolean o() {
         return true;
     }
@@ -630,14 +631,14 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ boolean q() {
         return false;
     }
 
     @Override // og.n
     public void r() {
-        ((hi.k0) this.b).d.invalidate();
+        ((l0) this.b).d.invalidate();
     }
 
     @Override // com.google.android.gms.common.api.internal.g0
@@ -726,10 +727,10 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
 
     @Override // sg.t0
     public boolean y() {
-        v9 v9Var = (v9) this.b;
-        boolean z10 = v9Var.t0 == null;
+        u9 u9Var = (u9) this.b;
+        boolean z10 = u9Var.t0 == null;
         if (!z10) {
-            v9Var.A0(null, true);
+            u9Var.A0(null, true);
         }
         return z10;
     }
@@ -808,7 +809,7 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
     public void G() {
     }
 
-    @Override // org.telegram.ui.Components.oo0
+    @Override // org.telegram.ui.Components.qo0
     public /* synthetic */ void Q() {
     }
 
@@ -816,7 +817,7 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
     public void j() {
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ void z() {
     }
 
@@ -846,7 +847,7 @@ public final class c implements a0, androidx.activity.result.b, ce.c, ui0, ci.a0
     public void l(n6.a aVar, e eVar, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ void x(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
     }
 }

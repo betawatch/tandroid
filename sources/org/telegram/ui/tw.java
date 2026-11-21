@@ -5,9 +5,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class tw implements org.telegram.ui.Components.lz {
+public final class tw implements org.telegram.ui.Components.nz {
     public final /* synthetic */ Context a;
     public final /* synthetic */ cx b;
 
@@ -58,30 +58,30 @@ public final class tw implements org.telegram.ui.Components.lz {
         }
     }
 
-    public final void c(org.telegram.ui.Components.mz mzVar, boolean z10) {
+    public final void c(org.telegram.ui.Components.oz ozVar, boolean z10) {
         int i7;
         int i10;
         cx cxVar = this.b;
         int i11 = cxVar.f0[0].h;
-        int i12 = mzVar.a;
+        int i12 = ozVar.a;
         if (i11 == i12) {
             return;
         }
-        if (mzVar.f) {
+        if (ozVar.f) {
             cxVar.A0.l(i12);
-            i10 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
-            cxVar.showDialog(new ug.l0(3, i10, this.a, cxVar, null));
+            i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
+            cxVar.showDialog(new ug.k0(3, i10, this.a, cxVar, null));
             return;
         }
         ArrayList V0 = cxVar.getMessagesController().V0();
-        if (mzVar.e || ((i7 = mzVar.a) >= 0 && i7 < V0.size())) {
+        if (ozVar.e || ((i7 = ozVar.a) >= 0 && i7 < V0.size())) {
             bx bxVar = cxVar.f0[1];
-            bxVar.h = mzVar.a;
+            bxVar.h = ozVar.a;
             bxVar.setVisibility(0);
             cxVar.f0[1].setTranslationX(r0[0].getMeasuredWidth());
             cx.i1(cxVar, false);
             cxVar.l5(true);
-            cxVar.C5(mzVar.a, true);
+            cxVar.C5(ozVar.a, true);
             cxVar.k3 = z10;
         }
     }
@@ -90,20 +90,20 @@ public final class tw implements org.telegram.ui.Components.lz {
         boolean c10 = roVar.c();
         cx cxVar = this.b;
         if (c10) {
-            org.telegram.ui.Components.g00.h1(cxVar, roVar.a, null);
+            org.telegram.ui.Components.i00.h1(cxVar, roVar.a, null);
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cxVar.getParentActivity());
-        String M0 = org.telegram.messenger.gd.M0(2131750779, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = M0;
-        u1Var.U = org.telegram.messenger.gd.M0(2131750778, null);
-        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131751587, null), new at(5, this, roVar));
-        cxVar.showDialog(u1Var);
-        TextView textView = (TextView) u1Var.d(-1);
+        String N0 = org.telegram.messenger.gd.N0(2131750778, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = N0;
+        t1Var.U = org.telegram.messenger.gd.N0(2131750777, null);
+        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new at(5, this, roVar));
+        cxVar.showDialog(t1Var);
+        TextView textView = (TextView) t1Var.d(-1);
         if (textView != null) {
-            org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, cxVar.getResourceProvider());
+            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, cxVar.getResourceProvider());
         }
     }
 }

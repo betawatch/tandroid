@@ -17,7 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class wu extends zt {
     public final dv X;
@@ -84,7 +84,7 @@ public final class wu extends zt {
         if (evVar.F()) {
             canvas.save();
             canvas.translate(-dvVar.f, 0.0f);
-            org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, dvVar.x, 0.0f, 0.0f, 0.0f, 1.0f);
+            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, dvVar.x, 0.0f, 0.0f, 0.0f, 1.0f);
             canvas.restore();
         }
         if (i02 != 0) {
@@ -118,7 +118,7 @@ public final class wu extends zt {
         canvas.translate(i02 - dvVar.f, 0.0f);
         int color = textPaint.getColor();
         textPaint.setColor(-1);
-        textPaint.linkColor = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Yc : org.telegram.ui.ActionBar.n6.Xc, evVar.D);
+        textPaint.linkColor = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.Yc : org.telegram.ui.ActionBar.m6.Xc, evVar.D);
         yg0.b(canvas, dvVar.b, i7, f10, new o(5, this, this.W));
         canvas.restore();
         textPaint.setColor(color);
@@ -176,10 +176,10 @@ public final class wu extends zt {
 
     public final void j0() {
         ev evVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Wc : org.telegram.ui.ActionBar.n6.Vc, evVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.Wc : org.telegram.ui.ActionBar.m6.Vc, evVar.D);
         if (this.a0 == null || this.Z != w02) {
             this.Z = w02;
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{org.telegram.ui.ActionBar.n6.r1(0.7f, w02), org.telegram.ui.ActionBar.n6.r1(0.25f, w02), org.telegram.ui.ActionBar.n6.r1(0.7f, w02)}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.REPEAT);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{org.telegram.ui.ActionBar.m6.r1(0.7f, w02), org.telegram.ui.ActionBar.m6.r1(0.25f, w02), org.telegram.ui.ActionBar.m6.r1(0.7f, w02)}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.REPEAT);
             this.a0 = linearGradient;
             Paint paint = this.c0;
             paint.setShader(linearGradient);

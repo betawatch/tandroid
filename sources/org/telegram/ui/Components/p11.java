@@ -1,36 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class p11 extends Drawable {
-    public Paint a;
-    public RectF b;
+public final class p11 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b21 b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        RectF rectF = this.b;
-        rectF.set(getBounds());
-        rectF.inset(org.telegram.messenger.g0.L(1.0f), (rectF.height() - org.telegram.messenger.g0.L(28.0f)) / 2.0f);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), this.a);
+    public /* synthetic */ p11(b21 b21Var, int i7) {
+        this.a = i7;
+        this.b = b21Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.a.setAlpha(i7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                b21 b21Var = this.b;
+                if (b21Var.l()) {
+                    b21Var.m();
+                    break;
+                }
+                break;
+            default:
+                b21 b21Var2 = this.b;
+                if (b21Var2.l()) {
+                    b21Var2.m();
+                    break;
+                }
+                break;
+        }
     }
 }

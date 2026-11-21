@@ -7,8 +7,8 @@ import android.content.SharedPreferences;
 import android.graphics.Matrix;
 import android.util.Log;
 import c8.l9;
-import fi.p5;
-import hi.t6;
+import fi.q5;
+import hi.s6;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -16,15 +16,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.q2;
 import org.telegram.messenger.s2;
-import org.telegram.ui.Components.kp0;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.wd;
+import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class v {
-    public static final lr B = new lr(0.0d, 0.5d, 0.0d, 1.0d);
+    public static final nr B = new nr(0.0d, 0.5d, 0.0d, 1.0d);
     public h A;
     public final u0 a;
     public boolean b;
@@ -57,7 +57,7 @@ public final class v {
     public v(u0 u0Var) {
         this.a = u0Var;
         Context context = u0Var.getContext();
-        t6 t6Var = new t6(this, 26);
+        s6 s6Var = new s6(this, 26);
         final b1 b1Var = new b1();
         b1Var.b = new ArrayList();
         b1Var.c = new ArrayList();
@@ -272,13 +272,13 @@ public final class v {
                                             sb2.append(x0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
+                                        org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
                                         b1Var3.j.set(false);
                                     }
                                     x0Var = null;
                                     if (s2.a) {
                                     }
-                                    org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
+                                    org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
                                     b1Var3.j.set(false);
                                 }
                             } finally {
@@ -343,7 +343,7 @@ public final class v {
             }
         };
         b1Var.f = context;
-        b1Var.e = t6Var;
+        b1Var.e = s6Var;
         SharedPreferences sharedPreferences = context.getSharedPreferences("shapedetector_conf", 0);
         b1Var.g = sharedPreferences;
         b1Var.h = sharedPreferences.getBoolean("learning", false);
@@ -556,13 +556,13 @@ public final class v {
                                             sb2.append(x0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
+                                        org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
                                         b1Var3.j.set(false);
                                     }
                                     x0Var = null;
                                     if (s2.a) {
                                     }
-                                    org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
+                                    org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
                                     b1Var3.j.set(false);
                                 }
                             } finally {
@@ -654,15 +654,15 @@ public final class v {
             if (z10 && (t0Var = u0Var.a) != null) {
                 t0Var.n0();
             }
-            vt0 vt0Var = u0Var.getPainting().g;
+            yt0 yt0Var = u0Var.getPainting().g;
             m0 m0Var = this.g;
             float a10 = w9.a((float) m0Var.a, (float) m0Var.b, 0.0f, 0.0f);
             m0 m0Var2 = this.g;
-            float max = Math.max(a10, w9.a((float) m0Var2.a, (float) m0Var2.b, vt0Var.a, 0.0f));
+            float max = Math.max(a10, w9.a((float) m0Var2.a, (float) m0Var2.b, yt0Var.a, 0.0f));
             m0 m0Var3 = this.g;
-            float a11 = w9.a((float) m0Var3.a, (float) m0Var3.b, 0.0f, vt0Var.b);
+            float a11 = w9.a((float) m0Var3.a, (float) m0Var3.b, 0.0f, yt0Var.b);
             m0 m0Var4 = this.g;
-            float max2 = Math.max(max, Math.max(a11, w9.a((float) m0Var4.a, (float) m0Var4.b, vt0Var.a, vt0Var.b))) / 0.84f;
+            float max2 = Math.max(max, Math.max(a11, w9.a((float) m0Var4.a, (float) m0Var4.b, yt0Var.a, yt0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -680,7 +680,7 @@ public final class v {
             ofFloat.addUpdateListener(new wd(this, m0Var6, hVar, max2));
             this.x.addListener(new u(this, m0Var6, max2, hVar, z10, o0Var));
             this.x.setDuration(450L);
-            this.x.setInterpolator(lr.h);
+            this.x.setInterpolator(nr.h);
             this.x.start();
             if (z10) {
                 q2.h.a();
@@ -705,7 +705,7 @@ public final class v {
         t tVar = new t(this, j0Var, 0);
         boolean z11 = false;
         if (painting.L == null) {
-            painting.f.f(new p5(painting, j0Var, z10, z11, tVar, 5));
+            painting.f.f(new q5(painting, j0Var, z10, z11, tVar, 5));
         }
         this.f = false;
     }

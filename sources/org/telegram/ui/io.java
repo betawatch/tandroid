@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class io extends org.telegram.ui.Components.ck0 {
+public final class io extends org.telegram.ui.Components.ek0 {
     public static final /* synthetic */ int j3 = 0;
     public final ho f3;
     public boolean g3;
@@ -33,7 +33,7 @@ public final class io extends org.telegram.ui.Components.ck0 {
         new v4.z(new gi.c(this, 2)).h(this);
     }
 
-    @Override // org.telegram.ui.Components.ck0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int R;
@@ -48,7 +48,7 @@ public final class io extends org.telegram.ui.Components.ck0 {
             }
         }
         if (i7 < i10) {
-            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, this.o2);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, this.o2);
             Paint paint = this.h3;
             paint.setColor(w02);
             canvas2 = canvas;
@@ -59,7 +59,7 @@ public final class io extends org.telegram.ui.Components.ck0 {
         super.dispatchDraw(canvas2);
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
     }

@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class r0 extends ViewGroup {
     public int E;
@@ -26,10 +26,10 @@ public final class r0 extends ViewGroup {
     public long c;
     public final ImageReceiver d;
     public final TextView e;
-    public final ai.h2 f;
+    public final ai.j2 f;
     public final Paint h;
-    public final c6 n;
-    public final c6 r;
+    public final d6 n;
+    public final d6 r;
     public final RectF s;
     public final Path w;
     public int x;
@@ -43,9 +43,9 @@ public final class r0 extends ViewGroup {
         this.d = imageReceiver;
         Paint paint = new Paint(1);
         this.h = paint;
-        lr lrVar = lr.h;
-        this.n = new c6(this, 0L, 320L, lrVar);
-        this.r = new c6(this, 0L, 320L, lrVar);
+        nr nrVar = nr.h;
+        this.n = new d6(this, 0L, 320L, nrVar);
+        this.r = new d6(this, 0L, 320L, nrVar);
         this.s = new RectF();
         this.w = new Path();
         this.a = j3;
@@ -55,9 +55,9 @@ public final class r0 extends ViewGroup {
         textView.setTextColor(-1);
         textView.setIncludeFontPadding(false);
         addView(textView);
-        ai.h2 h2Var = new ai.h2(textView);
-        this.f = h2Var;
-        h2Var.c(-9717249, -1, true);
+        ai.j2 j2Var = new ai.j2(textView);
+        this.f = j2Var;
+        j2Var.c(-9717249, -1, true);
         imageReceiver.J0(org.telegram.messenger.g0.L(11.0f));
         paint.setColor(-13946053);
         setWillNotDraw(false);

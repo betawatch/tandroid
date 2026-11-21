@@ -5,25 +5,25 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class li0 extends org.telegram.ui.Components.au0 {
+public final class li0 extends org.telegram.ui.Components.du0 {
     public final /* synthetic */ int g0;
     public final /* synthetic */ FrameLayout h0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 i0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ li0(org.telegram.ui.ActionBar.h2 h2Var, Context context, FrameLayout frameLayout, int i7) {
+    public /* synthetic */ li0(org.telegram.ui.ActionBar.g2 g2Var, Context context, FrameLayout frameLayout, int i7) {
         super(context, null);
         this.g0 = i7;
-        this.i0 = h2Var;
+        this.i0 = g2Var;
         this.h0 = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.au0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         int measuredHeight;
-        org.telegram.ui.ActionBar.a5 a5Var;
+        org.telegram.ui.ActionBar.z4 z4Var;
         int measuredHeight2;
         switch (this.g0) {
             case 0:
@@ -49,8 +49,8 @@ public final class li0 extends org.telegram.ui.Components.au0 {
                     measuredHeight = getMeasuredHeight();
                     frameLayout.layout(0, 0, measuredWidth4, measuredHeight);
                 }
-                a5Var = ((org.telegram.ui.ActionBar.h2) passcodeActivity).simpleActionBar;
-                View view = a5Var != null ? ((org.telegram.ui.ActionBar.h2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.h2) passcodeActivity).actionBar;
+                z4Var = ((org.telegram.ui.ActionBar.g2) passcodeActivity).simpleActionBar;
+                View view = z4Var != null ? ((org.telegram.ui.ActionBar.g2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.g2) passcodeActivity).actionBar;
                 if (view != null && view.getParent() == this) {
                     view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
                 }
@@ -86,7 +86,7 @@ public final class li0 extends org.telegram.ui.Components.au0 {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        org.telegram.ui.ActionBar.a5 a5Var;
+        org.telegram.ui.ActionBar.z4 z4Var;
         switch (this.g0) {
             case 0:
                 int size = View.MeasureSpec.getSize(i7);
@@ -95,8 +95,8 @@ public final class li0 extends org.telegram.ui.Components.au0 {
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.i0;
                 this.h0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((passcodeActivity.w.getVisibility() == 8 || Q() >= org.telegram.messenger.g0.L(20.0f)) ? size2 : size2 - org.telegram.messenger.g0.L(230.0f), TLObject.FLAG_30));
                 passcodeActivity.w.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(230.0f), TLObject.FLAG_30));
-                a5Var = ((org.telegram.ui.ActionBar.h2) passcodeActivity).simpleActionBar;
-                View view = a5Var != null ? ((org.telegram.ui.ActionBar.h2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.h2) passcodeActivity).actionBar;
+                z4Var = ((org.telegram.ui.ActionBar.g2) passcodeActivity).simpleActionBar;
+                View view = z4Var != null ? ((org.telegram.ui.ActionBar.g2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.g2) passcodeActivity).actionBar;
                 if (view != null && view.getParent() == this) {
                     view.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     break;

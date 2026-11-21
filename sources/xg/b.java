@@ -25,19 +25,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Cells.o4;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.q9;
 import ug.z;
 import v4.f1;
+import wg.q;
 import wg.u;
 import yg.d0;
 import yg.i;
@@ -48,11 +50,11 @@ import yg.w;
 import yg.x;
 import yg.y;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b extends rg.b {
-    public final i6 d;
-    public ck0 f;
+    public final h6 d;
+    public ek0 f;
     public u h;
     public u n;
     public r r;
@@ -61,14 +63,14 @@ public final class b extends rg.b {
     public ArrayList e = new ArrayList();
     public final HashMap x = new HashMap();
 
-    public b(i6 i6Var) {
-        this.d = i6Var;
+    public b(h6 h6Var) {
+        this.d = h6Var;
         z zVar = new z(this, 6);
         tr a02 = tr.a0(j10.t0);
-        a02.a.c(new wg.r(0, a02, zVar));
+        a02.a.c(new q(2, a02, zVar));
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(f1 f1Var) {
         int i7 = f1Var.f;
         return i7 == 2 || i7 == 11 || i7 == 8 || i7 == 10 || i7 == 15 || i7 == 12 || i7 == 17 || i7 == 18;
@@ -122,56 +124,56 @@ public final class b extends rg.b {
             TLRPC.User user = (TLRPC.User) aVar.f;
             boolean z10 = aVar.b;
             q9 q9Var = dVar.c;
-            i6 i6Var = dVar.a;
+            h6 h6Var = dVar.a;
             u3 u3Var = dVar.d;
-            n5 n5Var = dVar.e;
+            m5 m5Var = dVar.e;
             b9 b9Var = dVar.b;
             boolean z11 = dVar.s == i11;
             dVar.s = i11;
             if (i11 == 0) {
-                u3Var.k(gd.M0(2131753539, null));
-                dVar.setSubtitle(gd.M0(2131753165, null));
-                u6.X(n5Var, n6.r5, i6Var);
+                u3Var.k(gd.N0(2131753538, null));
+                dVar.setSubtitle(gd.N0(2131753164, null));
+                t6.X(m5Var, m6.r5, h6Var);
                 b9Var.g(16);
                 b9Var.i(-15292942, -15630089);
                 dVar.setDivider(true);
-                u6.Z(dVar, dVar.getContext(), R.drawable.greydivider_bottom, n6.b7);
+                t6.Z(dVar, dVar.getContext(), R.drawable.greydivider_bottom, m6.b7);
             } else if (i11 == 1) {
-                u3Var.k(gd.M0(2131753591, null));
+                u3Var.k(gd.N0(2131753590, null));
                 if (i12 == 1 && user != null) {
-                    dVar.setSubtitle(dVar.e(j6.m(o10.q(user), n5Var.getPaint().getFontMetricsInt(), false, null, 0)));
+                    dVar.setSubtitle(dVar.e(j6.m(o10.q(user), m5Var.getPaint().getFontMetricsInt(), false, null, 0)));
                 } else if (i12 > 0) {
                     dVar.setSubtitle(dVar.e(gd.G(i12, "Recipient", new Object[0])));
                 } else {
-                    dVar.setSubtitle(dVar.e(gd.M0(2131753283, null)));
+                    dVar.setSubtitle(dVar.e(gd.N0(2131753282, null)));
                 }
-                u6.X(n5Var, n6.n5, i6Var);
+                t6.X(m5Var, m6.n5, h6Var);
                 b9Var.g(6);
                 b9Var.i(-3905294, -6923014);
                 dVar.setDivider(false);
-                u6.Z(dVar, dVar.getContext(), R.drawable.greydivider_top, n6.b7);
+                t6.Z(dVar, dVar.getContext(), R.drawable.greydivider_top, m6.b7);
             } else if (i11 == 2) {
-                u3Var.k(gd.M0(2131753330, null));
+                u3Var.k(gd.N0(2131753329, null));
                 if (i12 == 1 && user != null) {
-                    dVar.setSubtitle(dVar.e(j6.m(o10.q(user), n5Var.getPaint().getFontMetricsInt(), false, null, 0)));
+                    dVar.setSubtitle(dVar.e(j6.m(o10.q(user), m5Var.getPaint().getFontMetricsInt(), false, null, 0)));
                 } else if (i12 > 0) {
                     dVar.setSubtitle(dVar.e(gd.G(i12, "Recipient", new Object[0])));
                 } else {
-                    dVar.setSubtitle(dVar.e(gd.M0(2131753165, null)));
+                    dVar.setSubtitle(dVar.e(gd.N0(2131753164, null)));
                 }
-                u6.X(n5Var, n6.n5, i6Var);
+                t6.X(m5Var, m6.n5, h6Var);
                 b9Var.g(25);
                 b9Var.i(-3905294, -6923014);
                 dVar.setDivider(true);
-                u6.Z(dVar, dVar.getContext(), R.drawable.greydivider_bottom, n6.b7);
+                t6.Z(dVar, dVar.getContext(), R.drawable.greydivider_bottom, m6.b7);
             } else if (i11 == 3) {
-                u3Var.k(n8.b(gd.M0(2131753255, null)));
-                dVar.setSubtitle(gd.M0(2131753165, null));
-                u6.X(n5Var, n6.r5, i6Var);
+                u3Var.k(n8.b(gd.N0(2131753254, null)));
+                dVar.setSubtitle(gd.N0(2131753164, null));
+                t6.X(m5Var, m6.r5, h6Var);
                 b9Var.g(26);
                 b9Var.i(-146917, -625593);
                 dVar.setDivider(false);
-                u6.Z(dVar, dVar.getContext(), R.drawable.greydivider_top, n6.b7);
+                t6.Z(dVar, dVar.getContext(), R.drawable.greydivider_top, m6.b7);
             }
             dVar.f.a(z10, z11);
             q9Var.setImageDrawable(b9Var);
@@ -231,25 +233,25 @@ public final class b extends rg.b {
                 uVar.s = i15;
                 boolean V = v3.V(chat2);
                 if (i15 == 0) {
-                    u3Var2.k(gd.a0(null, null, V ? 2131753596 : 2131753597, new Object[0]));
+                    u3Var2.k(gd.a0(null, null, V ? 2131753595 : 2131753596, new Object[0]));
                 } else if (i15 == 1) {
-                    u3Var2.k(gd.a0(null, null, V ? 2131753334 : 2131753335, new Object[0]));
+                    u3Var2.k(gd.a0(null, null, V ? 2131753333 : 2131753334, new Object[0]));
                 }
                 uVar.f.a(z12, false);
                 uVar.setDivider(z13);
-                u6.X(uVar.e, n6.n5, uVar.a);
+                t6.X(uVar.e, m6.n5, uVar.a);
                 if (list2.size() == 0) {
-                    uVar.setSubtitle(uVar.e(gd.M0(2131753520, null)));
+                    uVar.setSubtitle(uVar.e(gd.N0(2131753519, null)));
                     break;
                 } else if (list2.size() <= 3) {
                     if (list2.size() == 1) {
-                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries1", null, 2131753519, ((TLRPC.TL_help_country) list2.get(0)).default_name)));
+                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries1", null, 2131753518, ((TLRPC.TL_help_country) list2.get(0)).default_name)));
                         break;
                     } else if (list2.size() == 2) {
-                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries2", null, 2131753518, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name)));
+                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries2", null, 2131753517, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name)));
                         break;
                     } else {
-                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries3", null, 2131753517, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name, ((TLRPC.TL_help_country) list2.get(2)).default_name)));
+                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries3", null, 2131753516, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name, ((TLRPC.TL_help_country) list2.get(2)).default_name)));
                         break;
                     }
                 } else {
@@ -277,12 +279,12 @@ public final class b extends rg.b {
                 sb2.append(" x ");
                 sb2.append(i17);
                 iVar.setSubtitle(sb2.toString());
-                n5 n5Var2 = iVar.s;
+                m5 m5Var2 = iVar.s;
                 r1 i18 = r1.i();
                 if (i17 <= 0) {
                     j3 = 0;
                 }
-                n5Var2.l(i18.f(j3, charSequence.toString()), false);
+                m5Var2.l(i18.f(j3, charSequence.toString()), false);
                 iVar.setDivider(z14);
                 iVar.f.a(z15, false);
                 break;
@@ -290,10 +292,10 @@ public final class b extends rg.b {
                 x xVar = (x) view;
                 xVar.setText(aVar.c);
                 int i19 = aVar.i;
-                org.telegram.ui.Components.n6 n6Var = xVar.r;
+                o6 o6Var = xVar.r;
                 String G = i19 > 0 ? gd.G(i19, "BoostingBoostsCountTitle", Integer.valueOf(i19)) : "";
-                n6Var.a();
-                n6Var.c(G, true, true);
+                o6Var.a();
+                o6Var.c(G, true, true);
                 break;
             case 14:
                 ((yg.e) view).setGiveaway((TL_stories.PrepaidGiveaway) aVar.f);
@@ -319,21 +321,21 @@ public final class b extends rg.b {
                 long j10 = aVar.h;
                 boolean z18 = aVar.b;
                 TextView textView = wVar.f;
-                org.telegram.ui.Components.n6 n6Var2 = wVar.d;
-                org.telegram.ui.Components.n6 n6Var3 = wVar.e;
+                o6 o6Var2 = wVar.d;
+                o6 o6Var3 = wVar.e;
                 boolean z19 = wVar.r == tL_starsGiveawayOption;
                 wVar.a.a(z18, z19);
                 wVar.r = tL_starsGiveawayOption;
                 if (z19) {
-                    n6Var3.a();
+                    o6Var3.a();
                 }
                 if (tL_starsGiveawayOption == null) {
-                    n6Var2.c(wVar.h, false, true);
-                    n6Var3.c(wVar.n, z19, true);
+                    o6Var2.c(wVar.h, false, true);
+                    o6Var3.c(wVar.n, z19, true);
                     textView.setText("");
                 } else {
-                    n6Var2.c(gd.H(' ', "GiveawayStars", (int) tL_starsGiveawayOption.stars), false, true);
-                    n6Var3.c(gd.H(',', "BoostingStarOptionPerUser", (int) j10), z19, true);
+                    o6Var2.c(gd.H(' ', "GiveawayStars", (int) tL_starsGiveawayOption.stars), false, true);
+                    o6Var3.c(gd.H(',', "BoostingStarOptionPerUser", (int) j10), z19, true);
                     textView.setText(r1.i().f(tL_starsGiveawayOption.amount, tL_starsGiveawayOption.currency));
                 }
                 int i21 = i20 + 1;
@@ -350,82 +352,82 @@ public final class b extends rg.b {
     public final f1 x(ViewGroup viewGroup, int i7) {
         View view;
         Context context = viewGroup.getContext();
-        i6 i6Var = this.d;
+        h6 h6Var = this.d;
         switch (i7) {
             case 2:
-                view = new yg.d(context, i6Var);
+                view = new yg.d(context, h6Var);
                 break;
             case 3:
                 view = new View(context);
                 break;
             case 4:
-                int i10 = n6.a7;
-                View z6Var = new z6(context, n6.w0(i10, i6Var), 0);
-                u6.h(i10, z6Var, i6Var);
+                int i10 = m6.a7;
+                View z6Var = new z6(context, m6.w0(i10, h6Var), 0);
+                t6.h(i10, z6Var, h6Var);
                 view = z6Var;
                 break;
             case 5:
-                view = new v(context, i6Var);
+                view = new v(context, h6Var);
                 break;
             case 6:
-                View o4Var = new o4(context, n6.L6, 21, 15, 3, false, false, this.d);
-                u6.h(n6.h5, o4Var, i6Var);
+                View o4Var = new o4(context, m6.L6, 21, 15, 3, false, false, this.d);
+                t6.h(m6.h5, o4Var, h6Var);
                 view = o4Var;
                 break;
             case 7:
-                view = new d0(context, i6Var);
+                view = new d0(context, h6Var);
                 break;
             case 8:
-                view = new yg.b(context, i6Var);
+                view = new yg.b(context, h6Var);
                 break;
             case 9:
-                view = new yg.g(context, i6Var);
+                view = new yg.g(context, h6Var);
                 break;
             case 10:
-                view = new yg.h(context, i6Var);
+                view = new yg.h(context, h6Var);
                 break;
             case 11:
-                yg.u uVar = new yg.u(context, i6Var);
+                yg.u uVar = new yg.u(context, h6Var);
                 uVar.c.setVisibility(8);
                 view = uVar;
                 break;
             case 12:
-                view = new i(context, i6Var);
+                view = new i(context, h6Var);
                 break;
             case 13:
-                View xVar = new x(context, i6Var);
-                u6.h(n6.h5, xVar, i6Var);
+                View xVar = new x(context, h6Var);
+                t6.h(m6.h5, xVar, h6Var);
                 view = xVar;
                 break;
             case 14:
-                view = new yg.e(context, i6Var);
+                view = new yg.e(context, h6Var);
                 break;
             case 15:
-                y yVar = new y(context, i6Var);
+                y yVar = new y(context, h6Var);
                 yVar.setHeight(50);
                 view = yVar;
                 break;
             case 16:
-                view = new l(context, i6Var);
+                view = new l(context, h6Var);
                 break;
             case 17:
-                view = new w(context, i6Var);
+                view = new w(context, h6Var);
                 break;
             case 18:
                 xa xaVar = new xa(context);
-                String M0 = gd.M0(2131747643, null);
+                String N0 = gd.N0(2131747642, null);
                 boolean z10 = xaVar.c == -1;
                 xaVar.c = -1;
-                org.telegram.ui.Components.n6 n6Var = xaVar.a;
-                n6Var.c(M0, z10, true);
-                int i11 = n6.o6;
-                n6.v0(i11);
-                u6.Y(n6Var, i11, null);
+                o6 o6Var = xaVar.a;
+                o6Var.c(N0, z10, true);
+                int i11 = m6.o6;
+                m6.v0(i11);
+                t6.Y(o6Var, i11, null);
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                 ImageView imageView = xaVar.b;
-                u6.s(imageView, i11, null, mode);
+                t6.s(imageView, i11, null, mode);
                 if (z10) {
-                    imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(lr.h);
+                    imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(nr.h);
                 } else {
                     imageView.setRotation(0.0f);
                 }
@@ -434,7 +436,7 @@ public final class b extends rg.b {
                 view = xaVar;
                 break;
             default:
-                view = new r(context, i6Var);
+                view = new r(context, h6Var);
                 break;
         }
         return i5.c.q(view, view, -1, -2);

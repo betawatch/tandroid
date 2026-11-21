@@ -37,11 +37,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.g3;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.g4;
@@ -50,14 +50,14 @@ import org.telegram.ui.k3;
 import org.telegram.ui.web.s0;
 import org.telegram.ui.x2;
 import sg.h0;
-import tg.x;
+import tg.y;
 import zf.e;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static h0 a;
-    public static x b;
+    public static y b;
     public static ag.a c;
     public static String d;
     public static WeakReference e;
@@ -220,17 +220,17 @@ public abstract class c {
     }
 
     public static h0 e() {
-        x xVar = b;
+        y yVar = b;
         h0 h0Var = null;
-        if (xVar == null) {
+        if (yVar == null) {
             a = null;
         } else if (a == null) {
             pb.b bVar = new pb.b(27);
-            e eVar = (e) xVar.b;
+            e eVar = (e) yVar.b;
             zf.b bVar2 = new zf.b(bVar);
             try {
                 if (((zf.c) eVar).h1(bVar2)) {
-                    h0Var = new h0(14, bVar2, (ComponentName) xVar.c);
+                    h0Var = new h0(14, bVar2, (ComponentName) yVar.c);
                 }
             } catch (RemoteException unused) {
             }
@@ -542,27 +542,27 @@ public abstract class c {
     }
 
     public static void o(String str) {
-        g3 N;
-        f3 f3Var;
+        f3 N;
+        e3 e3Var;
         k3[] k3VarArr;
         k3 k3Var;
         LaunchActivity launchActivity = LaunchActivity.H1;
         if (launchActivity != null && (N = launchActivity.N()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<f3> tabs = N.getTabs();
+                ArrayList<e3> tabs = N.getTabs();
                 for (int i7 = 0; i7 < tabs.size(); i7++) {
-                    f3Var = tabs.get(i7);
-                    g4 g4Var = f3Var.J;
+                    e3Var = tabs.get(i7);
+                    g4 g4Var = e3Var.J;
                     if (g4Var != null && !g4Var.e0.isEmpty()) {
-                        Object h = i5.c.h(1, f3Var.J.e0);
+                        Object h = i5.c.h(1, e3Var.J.e0);
                         if (h instanceof x2) {
                             s0 s0Var = ((x2) h).b;
-                            if (s0Var == null && (k3VarArr = f3Var.J.v0) != null && (k3Var = k3VarArr[0]) != null) {
+                            if (s0Var == null && (k3VarArr = e3Var.J.v0) != null && (k3Var = k3VarArr[0]) != null) {
                                 s0Var = k3Var.getWebView();
                             }
                             if (s0Var != null) {
-                                if (TextUtils.equals(g3.p(s0Var.canGoBack() ? s0Var.getUrl() : s0Var.getOpenURL()), g3.p(str))) {
-                                    N.e(f3Var);
+                                if (TextUtils.equals(f3.p(s0Var.canGoBack() ? s0Var.getUrl() : s0Var.getOpenURL()), f3.p(str))) {
+                                    N.e(e3Var);
                                     break;
                                 }
                             } else {
@@ -574,12 +574,12 @@ public abstract class c {
                     }
                 }
             }
-            f3Var = null;
-            if (f3Var != null) {
+            e3Var = null;
+            if (e3Var != null) {
                 return;
             }
         }
-        h2 T = LaunchActivity.T();
+        g2 T = LaunchActivity.T();
         if (T != null && T.getArticleViewer() != null) {
             T.getArticleViewer().L(null, null, null, str);
             return;
@@ -802,7 +802,7 @@ public abstract class c {
                     Typeface typeface = g0.a;
                     String K02 = uri2 == null ? null : g0.K0(uri2.toString(), false);
                     if (j10.i(j10.t0).f() != null && (i(K02, true, false) || ("telegram.org".equalsIgnoreCase(K02) && (uri2.toString().toLowerCase().contains("telegram.org/faq") || uri2.toString().toLowerCase().contains("telegram.org/privacy") || uri2.toString().toLowerCase().contains("telegram.org/blog"))))) {
-                        u1[] u1VarArr = {new u1(3, context, null)};
+                        t1[] t1VarArr = {new t1(3, context, null)};
                         TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                         getwebpagepreview.message = uri2.toString();
                         str4 = str3;
@@ -810,12 +810,12 @@ public abstract class c {
                         int i10 = 15;
                         bVar2 = bVar;
                         try {
-                            int sendRequest = ConnectionsManager.getInstance(j10.t0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, u1VarArr, i7, uri2, context, z19));
+                            int sendRequest = ConnectionsManager.getInstance(j10.t0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, t1VarArr, i7, uri2, context, z19));
                             if (bVar2 != null) {
                                 bVar2.d();
                                 return;
                             } else {
-                                g0.h3(new jw0(u1VarArr, sendRequest, i10), 1000L);
+                                g0.h3(new jw0(t1VarArr, sendRequest, i10), 1000L);
                                 return;
                             }
                         } catch (Exception unused) {
@@ -881,23 +881,23 @@ public abstract class c {
                         Bundle bundle = new Bundle();
                         bundle.putBinder("android.support.customtabs.extra.SESSION", e10 == null ? null : (zf.b) e10.b);
                         intent3.putExtras(bundle);
-                        String M0 = gd.M0(2131751751, null);
+                        String N0 = gd.N0(2131751750, null);
                         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
                         Bundle bundle2 = new Bundle();
-                        bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", M0);
+                        bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", N0);
                         bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                         arrayList.add(bundle2);
                         z22 = false;
-                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", n6.x0(null, n6.S8, false));
+                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", m6.x0(null, m6.S8, false));
                         intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                         Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
-                        String M02 = gd.M0(2131745264, null);
+                        String N02 = gd.N0(2131745263, null);
                         z21 = false;
                         PendingIntent broadcast2 = PendingIntent.getBroadcast(t0.b, 0, intent2, 33554432);
                         Bundle bundle3 = new Bundle();
                         bundle3.putInt("android.support.customtabs.customaction.ID", 0);
                         bundle3.putParcelable("android.support.customtabs.customaction.ICON", decodeResource);
-                        bundle3.putString("android.support.customtabs.customaction.DESCRIPTION", M02);
+                        bundle3.putString("android.support.customtabs.customaction.DESCRIPTION", N02);
                         bundle3.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast2);
                         intent3.putExtra("android.support.customtabs.extra.ACTION_BUTTON_BUNDLE", bundle3);
                         intent3.putExtra("android.support.customtabs.extra.TINT_ACTION_BUTTON", true);

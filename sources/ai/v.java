@@ -16,7 +16,7 @@ import org.telegram.ui.e4;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -53,24 +53,24 @@ public final /* synthetic */ class v implements Runnable {
                 Runnable runnable = (Runnable) this.n;
                 if (!wVar.l) {
                     wVar.g = iArr;
-                    r1 r1Var = wVar.d;
-                    c2 c2Var = (c2) r1Var.c;
-                    int i11 = r1Var.b;
-                    android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) r1Var.d;
-                    if (!c2Var.j && i11 == c2Var.C) {
-                        String o4 = DictationAsr.o(str, str2, z10);
-                        c2Var.B = o4;
-                        if (!o4.trim().isEmpty()) {
-                            w wVar2 = c2Var.A;
+                    t1 t1Var = wVar.d;
+                    e2 e2Var = (e2) t1Var.c;
+                    int i11 = t1Var.b;
+                    android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) t1Var.d;
+                    if (!e2Var.j && i11 == e2Var.C) {
+                        String q10 = DictationAsr.q(str, str2, z10);
+                        e2Var.B = q10;
+                        if (!q10.trim().isEmpty()) {
+                            w wVar2 = e2Var.A;
                             String str3 = wVar2 != null ? wVar2.n : null;
                             if (str3 == null) {
                                 str3 = a0Var.i();
                             }
-                            c2Var.r(str3);
+                            e2Var.r(str3);
                         }
-                        int length = i10 <= 0 ? str.length() : DictationAsr.o(str, str2.substring(0, i10), z10).length();
-                        if (!c2Var.i) {
-                            c2Var.d.l(length, c2Var.B);
+                        int length = i10 <= 0 ? str.length() : DictationAsr.q(str, str2.substring(0, i10), z10).length();
+                        if (!e2Var.i) {
+                            e2Var.d.l(length, e2Var.B);
                         }
                     }
                     if (runnable != null) {
@@ -160,7 +160,7 @@ public final /* synthetic */ class v implements Runnable {
                 break;
             default:
                 vf.b bVar = (vf.b) this.e;
-                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.f;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.f;
                 TLObject tLObject3 = (TLObject) this.d;
                 int i15 = this.b;
                 Uri uri = (Uri) this.h;
@@ -170,10 +170,10 @@ public final /* synthetic */ class v implements Runnable {
                     bVar.b();
                 } else {
                     try {
-                        u1VarArr[0].dismiss();
+                        t1VarArr[0].dismiss();
                     } catch (Throwable unused) {
                     }
-                    u1VarArr[0] = null;
+                    t1VarArr[0] = null;
                 }
                 if (tLObject3 instanceof TL_account.webPagePreview) {
                     TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject3;
@@ -204,9 +204,9 @@ public final /* synthetic */ class v implements Runnable {
         this.d = str;
     }
 
-    public /* synthetic */ v(vf.b bVar, org.telegram.ui.ActionBar.u1[] u1VarArr, TLObject tLObject, int i7, Uri uri, Context context, boolean z10) {
+    public /* synthetic */ v(vf.b bVar, org.telegram.ui.ActionBar.t1[] t1VarArr, TLObject tLObject, int i7, Uri uri, Context context, boolean z10) {
         this.e = bVar;
-        this.f = u1VarArr;
+        this.f = t1VarArr;
         this.d = tLObject;
         this.b = i7;
         this.h = uri;

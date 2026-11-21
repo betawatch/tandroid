@@ -1,129 +1,62 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import java.util.Arrays;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g01 extends ImageView {
-    public static final org.telegram.ui.Cells.h1 x = new org.telegram.ui.Cells.h1(Float.class, "radius", 3);
-    public final Paint a;
-    public final Matrix b;
-    public RadialGradient c;
-    public boolean d;
-    public float e;
-    public float f;
-    public float h;
-    public ph0 n;
-    public ColorFilter r;
-    public final int[] s;
-    public final int[] w;
+public final class g01 extends FrameLayout {
+    public final ImageView a;
+    public final e01 b;
+    public final /* synthetic */ ThemeEditorView.EditorAlert c;
 
-    public g01(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g01(ThemeEditorView.EditorAlert editorAlert, Context context) {
         super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
-        this.s = new int[2];
-        this.w = new int[2];
-    }
-
-    public static void a(Bitmap bitmap, org.telegram.ui.ActionBar.p3 p3Var, ph0 ph0Var) {
-        Drawable drawable = ph0Var.getDrawable();
-        if (drawable != null && ph0Var.isAttachedToWindow() && bitmap.isMutable()) {
-            int[] iArr = new int[2];
-            RectF rectF = new RectF(drawable.getBounds());
-            ph0Var.getImageMatrix().mapRect(rectF);
-            ph0Var.getLocationInWindow(iArr);
-            rectF.offset(ph0Var.getPaddingLeft() + iArr[0], ph0Var.getPaddingTop() + iArr[1]);
-            if (p3Var != null) {
-                p3Var.getLocationInWindow(iArr);
-                rectF.offset(-iArr[0], -iArr[1]);
-            }
-            int max = Math.max(1, ((int) Math.floor(rectF.left)) - 1);
-            int min = Math.min(bitmap.getWidth(), ((int) Math.ceil(rectF.right)) + 1);
-            int max2 = Math.max(0, ((int) Math.floor(rectF.top)) - 1);
-            int min2 = Math.min(bitmap.getHeight(), ((int) Math.ceil(rectF.bottom)) + 1);
-            if (max >= min || max2 >= min2) {
-                return;
-            }
-            int i7 = min - max;
-            int[] iArr2 = new int[i7];
-            for (int i10 = max2; i10 < min2; i10++) {
-                Arrays.fill(iArr2, bitmap.getPixel(max - 1, i10));
-                bitmap.setPixels(iArr2, 0, i7, max, i10, i7, 1);
-            }
-        }
-    }
-
-    public final void b(float f10, float f11, boolean z10) {
-        this.e = f10;
-        this.f = f11;
-        this.d = z10;
-        RadialGradient radialGradient = this.c;
-        Paint paint = this.a;
-        if (radialGradient == null) {
-            RadialGradient radialGradient2 = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{-16777216, -16777216, 0}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-            this.c = radialGradient2;
-            paint.setShader(radialGradient2);
-        }
-        paint.setXfermode(new PorterDuffXfermode(z10 ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        if (this.h >= 1.0f || this.d) {
-            int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-            super.onDraw(canvas);
-            ph0 ph0Var = this.n;
-            Drawable drawable = ph0Var != null ? ph0Var.getDrawable() : 0;
-            if (drawable != 0 && this.n.isAttachedToWindow()) {
-                this.n.getLocationInWindow(this.s);
-                getLocationInWindow(this.w);
-                ColorFilter colorFilter = drawable.getColorFilter();
-                canvas.save();
-                canvas.translate(this.n.getPaddingLeft() + (r4[0] - r3[0]), this.n.getPaddingTop() + (r4[1] - r3[1]));
-                canvas.concat(this.n.getImageMatrix());
-                drawable.setColorFilter(this.r);
-                drawable.draw(canvas);
-                drawable.setColorFilter(colorFilter);
-                canvas.restore();
-                if ((drawable instanceof Animatable) && ((Animatable) drawable).isRunning()) {
-                    invalidate();
-                }
-            }
-            float f10 = this.h;
-            if (f10 >= 1.0f) {
-                float f11 = f10 / 100.0f;
-                Matrix matrix = this.b;
-                matrix.setScale(f11, f11);
-                matrix.postTranslate(this.e, this.f);
-                this.c.setLocalMatrix(matrix);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a);
-            }
-            canvas.restoreToCount(saveLayer);
-        }
-    }
-
-    public void setRadius(float f10) {
-        this.h = f10;
-        invalidate();
+        this.c = editorAlert;
+        View view = new View(context);
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(18.0f), -854795));
+        addView(view, c8.ma.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
+        addView(imageView, c8.ma.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.a = imageView2;
+        imageView2.setScaleType(scaleType);
+        d01 d01Var = new d01();
+        imageView2.setImageDrawable(d01Var);
+        d01Var.f = org.telegram.messenger.g0.L(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, c8.ma.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
+        imageView2.setOnClickListener(new j70(this, 19));
+        e01 e01Var = new e01(this, context);
+        this.b = e01Var;
+        e01Var.setTextSize(1, 16.0f);
+        e01Var.setHintTextColor(-6774617);
+        e01Var.setTextColor(-14540254);
+        e01Var.setBackgroundDrawable(null);
+        e01Var.setPadding(0, 0, 0, 0);
+        e01Var.setMaxLines(1);
+        e01Var.setLines(1);
+        e01Var.setSingleLine(true);
+        e01Var.setImeOptions(268435459);
+        e01Var.setHint(org.telegram.messenger.gd.N0(2131745640, null));
+        e01Var.setCursorColor(-11491093);
+        e01Var.setCursorSize(org.telegram.messenger.g0.L(20.0f));
+        e01Var.setCursorWidth(1.5f);
+        addView(e01Var, c8.ma.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
+        e01Var.addTextChangedListener(new f01(this));
+        e01Var.setOnEditorActionListener(new h(this, 11));
     }
 }

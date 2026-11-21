@@ -8,7 +8,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.bz;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class x {
     public boolean a;
@@ -28,20 +28,21 @@ public final class x {
         this.g = h2.g0.a;
     }
 
-    public static x c(android.support.v4.media.session.a0 a0Var, o2 o2Var) {
+    public static x c(android.support.v4.media.session.a0 a0Var, q2 q2Var) {
         long nativeSessionNew;
-        long j3 = DictationAsr.j((t) a0Var.b);
-        if (j3 == 0) {
+        t tVar = (t) a0Var.b;
+        long k10 = DictationAsr.k(tVar);
+        if (k10 == 0) {
             return null;
         }
-        x xVar = new x(a0Var, o2Var);
-        String str = (String) a0Var.c;
-        nativeSessionNew = DictationAsr.nativeSessionNew(j3, str, str.split(",")[0], bz.o() == 0 ? 2 : 4);
+        x xVar = new x(a0Var, q2Var);
+        String a10 = tVar.a((String) a0Var.c);
+        nativeSessionNew = DictationAsr.nativeSessionNew(k10, a10, a10.split(",")[0], bz.o() == 0 ? 2 : 4);
         xVar.c = nativeSessionNew;
         if (nativeSessionNew != 0) {
             return xVar;
         }
-        DictationAsr.M((t) a0Var.b);
+        DictationAsr.Q(tVar);
         return null;
     }
 
@@ -55,7 +56,7 @@ public final class x {
         b(nativeSessionFinish);
         DictationAsr.nativeSessionFree(this.c);
         this.c = 0L;
-        DictationAsr.M((t) this.e);
+        DictationAsr.Q((t) this.e);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -71,7 +72,7 @@ public final class x {
         boolean z11;
         boolean z12;
         int i7;
-        o2 o2Var = (o2) this.f;
+        q2 q2Var = (q2) this.f;
         StringBuilder sb2 = (StringBuilder) this.g;
         if (str == null || str.length() <= 2) {
             return;
@@ -109,14 +110,14 @@ public final class x {
                             }
                         } else if (optString.equals("partial")) {
                             StringBuilder sb3 = new StringBuilder();
-                            this.a = DictationAsr.g(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                            DictationAsr.m(sb3, jSONObject.optJSONArray("open"), null);
-                            DictationAsr.m(sb3, jSONObject.optJSONArray("tail"), null);
+                            this.a = DictationAsr.j(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
+                            DictationAsr.n(sb3, jSONObject.optJSONArray("open"), null);
+                            DictationAsr.n(sb3, jSONObject.optJSONArray("tail"), null);
                             this.h = sb3.toString();
                             z11 = true;
                         }
                     } else if (optString.equals("commit")) {
-                        DictationAsr.m(sb2, jSONObject.optJSONArray("words"), null);
+                        DictationAsr.n(sb2, jSONObject.optJSONArray("words"), null);
                         z11 = true;
                     }
                 } catch (Exception e11) {
@@ -135,35 +136,35 @@ public final class x {
             String sb4 = sb2.toString();
             String str2 = (String) this.h;
             boolean z14 = this.a;
-            o2Var.s++;
-            if (o2Var.g > sb4.length()) {
-                o2Var.g = 0;
+            q2Var.s++;
+            if (q2Var.g > sb4.length()) {
+                q2Var.g = 0;
             }
-            o2Var.h = sb4.length();
-            o2Var.i = str2.isEmpty();
-            String trim = sb4.substring(o2Var.g).trim();
+            q2Var.h = sb4.length();
+            q2Var.i = str2.isEmpty();
+            String trim = sb4.substring(q2Var.g).trim();
             if (trim.length() > 180 && str2.isEmpty()) {
-                org.telegram.messenger.g0.g3(new l2(o2Var, o2Var.f, trim, z10, 0));
-                p2 p2Var = o2Var.t;
-                long j3 = p2Var.f;
-                p2Var.f = 1 + j3;
-                o2Var.f = j3;
-                o2Var.g = sb4.length();
-                o2Var.m.reset();
+                org.telegram.messenger.g0.g3(new n2(q2Var, q2Var.f, trim, z10, 0));
+                r2 r2Var = q2Var.t;
+                long j3 = r2Var.f;
+                r2Var.f = 1 + j3;
+                q2Var.f = j3;
+                q2Var.g = sb4.length();
+                q2Var.m.reset();
                 trim = "";
             }
-            String o4 = DictationAsr.o(trim, str2, z14);
-            if (!o4.equals(o2Var.j)) {
-                o2Var.j = o4;
+            String q10 = DictationAsr.q(trim, str2, z14);
+            if (!q10.equals(q2Var.j)) {
+                q2Var.j = q10;
                 boolean z15 = 0;
-                org.telegram.messenger.g0.g3(new l2(o2Var, o2Var.f, o4, z15, 0));
+                org.telegram.messenger.g0.g3(new n2(q2Var, q2Var.f, q10, z15, 0));
                 i7 = z15;
                 this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
                 if (z12 && ((String) this.h).isEmpty() && sb2.length() > 0) {
                     sb2.setLength(i7);
-                    o2Var.b();
-                    o2Var.h = i7;
-                    o2Var.g = i7;
+                    q2Var.b();
+                    q2Var.h = i7;
+                    q2Var.g = i7;
                     return;
                 }
                 return;
@@ -175,11 +176,11 @@ public final class x {
         }
     }
 
-    public x(android.support.v4.media.session.a0 a0Var, o2 o2Var) {
+    public x(android.support.v4.media.session.a0 a0Var, q2 q2Var) {
         this.g = new StringBuilder();
         this.h = "";
         this.d = a0Var;
         this.e = (t) a0Var.b;
-        this.f = o2Var;
+        this.f = q2Var;
     }
 }

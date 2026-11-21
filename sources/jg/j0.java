@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.ui.Components.bs0;
-import org.telegram.ui.Components.gt0;
-import org.telegram.ui.Components.ps;
+import org.telegram.ui.Components.ds0;
+import org.telegram.ui.Components.jt0;
 import org.telegram.ui.Components.rs;
+import org.telegram.ui.Components.ts;
 import org.telegram.ui.Components.voip.k2;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -69,20 +69,20 @@ public final class j0 extends AnimatorListenerAdapter {
             case 1:
                 ((v4.f1) this.b).a.setAlpha(1.0f);
                 ((AnimatorSet) this.d).removeAllListeners();
-                rs rsVar = (rs) this.e;
-                ps psVar = (ps) this.c;
-                rsVar.d(psVar.a);
-                rsVar.y.remove(psVar.a);
-                rsVar.A();
-                rsVar.d(psVar.b);
-                rsVar.y.remove(psVar.b);
-                rsVar.A();
+                ts tsVar = (ts) this.e;
+                rs rsVar = (rs) this.c;
+                tsVar.d(rsVar.a);
+                tsVar.y.remove(rsVar.a);
+                tsVar.A();
+                tsVar.d(rsVar.b);
+                tsVar.y.remove(rsVar.b);
+                tsVar.A();
                 break;
             case 2:
-                ((gt0) this.e).L1 = false;
+                ((jt0) this.e).L1 = false;
                 View view2 = (View) this.d;
                 if (view2.getParent() != null) {
-                    ((bs0) this.b).removeView(view2);
+                    ((ds0) this.b).removeView(view2);
                     ((Bitmap) this.c).recycle();
                     break;
                 }
@@ -113,7 +113,7 @@ public final class j0 extends AnimatorListenerAdapter {
                         k2Var.e(true);
                     } else {
                         textViewArr[1].setText(k2Var.e);
-                        k2Var.a(textViewArr[0], textViewArr[1], new oi.a2(this, 22));
+                        k2Var.a(textViewArr[0], textViewArr[1], new oi.c2(this, 22));
                     }
                     k2Var.e = null;
                     break;
@@ -126,9 +126,9 @@ public final class j0 extends AnimatorListenerAdapter {
                 if (kVar != null) {
                     kVar.setSkipDrawChild(false);
                 }
-                org.telegram.ui.ActionBar.r0 r0Var = (org.telegram.ui.ActionBar.r0) this.c;
-                if (r0Var != null) {
-                    r0Var.setAlpha(1.0f);
+                org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) this.c;
+                if (q0Var != null) {
+                    q0Var.setAlpha(1.0f);
                 }
                 if (profileActivity.fragmentView != null) {
                     profileActivity.f0.setProgressToExpand(0.0f);
@@ -176,12 +176,12 @@ public final class j0 extends AnimatorListenerAdapter {
             case 0:
                 break;
             case 1:
-                rs rsVar = (rs) this.e;
-                ps psVar = (ps) this.c;
-                v4.f1 f1Var = psVar.a;
-                rsVar.getClass();
-                v4.f1 f1Var2 = psVar.b;
-                rsVar.getClass();
+                ts tsVar = (ts) this.e;
+                rs rsVar = (rs) this.c;
+                v4.f1 f1Var = rsVar.a;
+                tsVar.getClass();
+                v4.f1 f1Var2 = rsVar.b;
+                tsVar.getClass();
                 break;
             case 5:
                 ((pi.k) this.e).getClass();
@@ -208,10 +208,10 @@ public final class j0 extends AnimatorListenerAdapter {
         this.c = viewPropertyAnimator;
     }
 
-    public j0(rs rsVar, ps psVar, v4.f1 f1Var, AnimatorSet animatorSet) {
+    public j0(ts tsVar, rs rsVar, v4.f1 f1Var, AnimatorSet animatorSet) {
         this.a = 1;
-        this.e = rsVar;
-        this.c = psVar;
+        this.e = tsVar;
+        this.c = rsVar;
         this.b = f1Var;
         this.d = animatorSet;
     }

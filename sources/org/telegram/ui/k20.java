@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class k20 extends org.telegram.ui.Components.wt {
+public final class k20 extends org.telegram.ui.Components.yt {
     public final /* synthetic */ f40 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k20(f40 f40Var, LaunchActivity launchActivity, l30 l30Var, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(launchActivity, l30Var, h2Var, 5, true, i6Var);
+    public k20(f40 f40Var, LaunchActivity launchActivity, l30 l30Var, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(launchActivity, l30Var, g2Var, 5, true, h6Var);
         this.W = f40Var;
     }
 
@@ -27,10 +27,10 @@ public final class k20 extends org.telegram.ui.Components.wt {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.wt
+    @Override // org.telegram.ui.Components.yt
     public final void f() {
         super.f();
-        org.telegram.ui.Components.ry emojiView = getEmojiView();
+        org.telegram.ui.Components.ty emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.x0 = false;
             emojiView.y2 = false;
@@ -50,7 +50,7 @@ public final class k20 extends org.telegram.ui.Components.wt {
         }
     }
 
-    @Override // org.telegram.ui.Components.wt
+    @Override // org.telegram.ui.Components.yt
     public final void p() {
         rh.h hVar = this.W.B3;
         int max = this.e ? Math.max(0, getEmojiPadding()) : this.O ? Math.max(0, getKeyboardHeight()) : 0;
@@ -61,7 +61,7 @@ public final class k20 extends org.telegram.ui.Components.wt {
         }
     }
 
-    @Override // org.telegram.ui.Components.wt
+    @Override // org.telegram.ui.Components.yt
     public final void y() {
         this.W.b.requestApplyInsets();
     }

@@ -6,15 +6,15 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class or extends org.telegram.ui.Cells.n8 {
     public final /* synthetic */ int a0 = 1;
     public final /* synthetic */ Object b0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public or(qr qrVar, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var);
+    public or(qr qrVar, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
         this.b0 = qrVar;
     }
 
@@ -85,8 +85,8 @@ public final class or extends org.telegram.ui.Cells.n8 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public or(lw0 lw0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(18, context, i6Var, false, false);
+    public or(lw0 lw0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(18, context, h6Var, false, false);
         this.b0 = lw0Var;
     }
 }

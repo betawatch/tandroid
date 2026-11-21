@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class st implements y5 {
     public static ColorMatrixColorFilter V;
@@ -256,8 +256,8 @@ public final class st implements y5 {
     }
 
     public final CharSequence f() {
-        String M0 = gd.M0(this.y ? 2131753931 : 2131753946, null);
-        return (!h() || this.U.b()) ? M0 : TextUtils.concat(M0, ", ", gd.M0(2131745027, null));
+        String N0 = gd.N0(this.y ? 2131753930 : 2131753945, null);
+        return (!h() || this.U.b()) ? N0 : TextUtils.concat(N0, ", ", gd.N0(2131745021, null));
     }
 
     public final boolean g(float f10, float f11) {
@@ -493,7 +493,7 @@ public final class st implements y5 {
             return;
         }
         ImageReceiver imageReceiver = this.c;
-        org.telegram.ui.Components.b6 m10 = imageReceiver.m();
+        org.telegram.ui.Components.c6 m10 = imageReceiver.m();
         boolean z11 = m10 != null && (m10.s() || imageReceiver.M());
         boolean e10 = e();
         boolean z12 = this.E;

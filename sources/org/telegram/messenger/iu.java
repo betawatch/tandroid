@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class iu extends zt implements y5 {
     public final TLRPC.Document X;
@@ -164,14 +164,14 @@ public final class iu extends zt implements y5 {
         boolean z10 = this.k0;
         int i7 = this.g0;
         if (z10 && !this.Z.h(canvas, null)) {
-            int w02 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.zc : org.telegram.ui.ActionBar.n6.xe, evVar.D);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.zc : org.telegram.ui.ActionBar.m6.xe, evVar.D);
             Paint paint = this.a0;
             paint.setColor(w02);
             canvas.drawRoundRect(i7, g0.L(10.0f), g0.L(86.0f) + i7, g0.L(96.0f), g0.L(6.0f), g0.L(6.0f), paint);
         }
         this.Y.draw(canvas);
-        this.b0.setColor(org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.wc : org.telegram.ui.ActionBar.n6.ue, evVar.D));
-        this.c0.setColor(org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.jc : org.telegram.ui.ActionBar.n6.ee, evVar.D));
+        this.b0.setColor(org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.wc : org.telegram.ui.ActionBar.m6.ue, evVar.D));
+        this.c0.setColor(org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.jc : org.telegram.ui.ActionBar.m6.ee, evVar.D));
         int L = z10 ? g0.L(97.0f) + i7 : this.f0 + this.h0 + this.i0;
         int L2 = g0.L(11.0f);
         int L3 = g0.L(2.0f) + this.d0.getHeight() + L2;
@@ -189,13 +189,13 @@ public final class iu extends zt implements y5 {
             rectF.setEmpty();
         } else {
             if (evVar.E()) {
-                org.telegram.ui.ActionBar.i6 i6Var = evVar.D;
-                drawable = i6Var != null ? i6Var.getDrawable("drawableMsgOutMenu") : null;
+                org.telegram.ui.ActionBar.h6 h6Var = evVar.D;
+                drawable = h6Var != null ? h6Var.getDrawable("drawableMsgOutMenu") : null;
                 if (drawable == null) {
-                    drawable = org.telegram.ui.ActionBar.n6.R0("drawableMsgOutMenu");
+                    drawable = org.telegram.ui.ActionBar.m6.R0("drawableMsgOutMenu");
                 }
             } else {
-                drawable = org.telegram.ui.ActionBar.n6.c4;
+                drawable = org.telegram.ui.ActionBar.m6.c4;
             }
             int L4 = (this.o0 + this.b.right) - g0.L(32.0f);
             int L5 = g0.L(7.0f);
@@ -386,11 +386,11 @@ public final class iu extends zt implements y5 {
         RadialProgress2 radialProgress2 = this.Y;
         boolean z11 = this.k0;
         if (z11) {
-            radialProgress2.g(org.telegram.ui.ActionBar.n6.cf, org.telegram.ui.ActionBar.n6.df, org.telegram.ui.ActionBar.n6.ef, org.telegram.ui.ActionBar.n6.ff);
-            radialProgress2.d = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Yd, evVar.D);
+            radialProgress2.g(org.telegram.ui.ActionBar.m6.cf, org.telegram.ui.ActionBar.m6.df, org.telegram.ui.ActionBar.m6.ef, org.telegram.ui.ActionBar.m6.ff);
+            radialProgress2.d = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Yd, evVar.D);
         } else {
-            radialProgress2.g(evVar.E() ? org.telegram.ui.ActionBar.n6.Ec : org.telegram.ui.ActionBar.n6.Ze, evVar.E() ? org.telegram.ui.ActionBar.n6.Fc : org.telegram.ui.ActionBar.n6.af, evVar.E() ? org.telegram.ui.ActionBar.n6.Gb : org.telegram.ui.ActionBar.n6.ld, evVar.E() ? org.telegram.ui.ActionBar.n6.Hb : org.telegram.ui.ActionBar.n6.md);
-            radialProgress2.d = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.uc : org.telegram.ui.ActionBar.n6.se, evVar.D);
+            radialProgress2.g(evVar.E() ? org.telegram.ui.ActionBar.m6.Ec : org.telegram.ui.ActionBar.m6.Ze, evVar.E() ? org.telegram.ui.ActionBar.m6.Fc : org.telegram.ui.ActionBar.m6.af, evVar.E() ? org.telegram.ui.ActionBar.m6.Gb : org.telegram.ui.ActionBar.m6.ld, evVar.E() ? org.telegram.ui.ActionBar.m6.Hb : org.telegram.ui.ActionBar.m6.md);
+            radialProgress2.d = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.uc : org.telegram.ui.ActionBar.m6.se, evVar.D);
         }
         String r10 = w7.r(null, this.X);
         File j02 = j0();

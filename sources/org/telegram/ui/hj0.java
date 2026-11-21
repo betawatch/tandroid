@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class hj0 implements s9, org.telegram.ui.Components.qi {
+public final class hj0 implements s9, org.telegram.ui.Components.si {
     public final /* synthetic */ hk0 a;
 
     public /* synthetic */ hj0(hk0 hk0Var) {
@@ -20,7 +20,7 @@ public final class hj0 implements s9, org.telegram.ui.Components.qi {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public void K0() {
         org.telegram.messenger.g0.v1(this.a.fragmentView.findFocus());
     }
@@ -42,10 +42,10 @@ public final class hj0 implements s9, org.telegram.ui.Components.qi {
         if (i7 != 0) {
             if (i7 == 1) {
                 hk0Var.x = "male";
-                hk0Var.Z[4].setText(org.telegram.messenger.gd.M0(2131747315, null));
+                hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747314, null));
             } else if (i7 == 2) {
                 hk0Var.x = "female";
-                hk0Var.Z[4].setText(org.telegram.messenger.gd.M0(2131747376, null));
+                hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747375, null));
             }
         }
         if (!TextUtils.isEmpty(urVar.m)) {
@@ -71,40 +71,40 @@ public final class hj0 implements s9, org.telegram.ui.Components.qi {
         hk0Var.Z[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i10), Integer.valueOf(urVar.j), Integer.valueOf(urVar.i)));
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ boolean V1() {
         return false;
     }
 
     @Override // org.telegram.ui.s9
-    public /* synthetic */ boolean c1(String str, j9 j9Var) {
+    public /* synthetic */ boolean c1(String str, k9 k9Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qi
-    public void f0(org.telegram.ui.Components.eh ehVar) {
-        ehVar.run();
+    @Override // org.telegram.ui.Components.si
+    public void f0(org.telegram.ui.Components.gh ghVar) {
+        ghVar.run();
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ boolean g0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
-        org.telegram.ui.Components.si siVar;
+        org.telegram.ui.Components.ui uiVar;
         hk0 hk0Var = this.a;
-        if (hk0Var.getParentActivity() == null || (siVar = hk0Var.S0) == null) {
+        if (hk0Var.getParentActivity() == null || (uiVar = hk0Var.S0) == null) {
             return;
         }
         if (i7 != 8 && i7 != 7) {
-            siVar.M(i7);
+            uiVar.M(i7);
             hk0Var.J1(i7);
             return;
         }
         if (i7 != 8) {
-            siVar.a(true);
+            uiVar.a(true);
         }
         HashMap<Object, Object> selectedPhotos = hk0Var.S0.e2.getSelectedPhotos();
         ArrayList<Object> selectedPhotosOrder = hk0Var.S0.e2.getSelectedPhotosOrder();
@@ -131,11 +131,11 @@ public final class hj0 implements s9, org.telegram.ui.Components.qi {
     public /* synthetic */ void J(String str) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void R0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void h1(TLRPC.User user) {
     }
 
@@ -143,11 +143,11 @@ public final class hj0 implements s9, org.telegram.ui.Components.qi {
     public /* synthetic */ void onDismiss() {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void v0() {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
     }
 }

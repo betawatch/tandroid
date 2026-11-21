@@ -20,10 +20,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.qf;
 import r0.f1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class k extends h3 {
     public final f E;
@@ -31,7 +31,7 @@ public final class k extends h3 {
     public ArrayList G;
     public final ArrayMap H;
     public final MediaRouter2 r;
-    public final of s;
+    public final qf s;
     public final ArrayMap w;
     public final MediaRouter2$RouteCallback x;
     public final j y;
@@ -40,7 +40,7 @@ public final class k extends h3 {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public k(Context context, of ofVar) {
+    public k(Context context, qf qfVar) {
         super(context, null);
         this.w = new ArrayMap();
         this.y = new j(this);
@@ -48,7 +48,7 @@ public final class k extends h3 {
         this.G = new ArrayList();
         this.H = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = ofVar;
+        this.s = qfVar;
         this.F = new l2.d0(new Handler(Looper.getMainLooper()), 1);
         if (Build.VERSION.SDK_INT >= 34) {
             this.x = new i(this, 1);

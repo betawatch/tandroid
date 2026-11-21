@@ -1,36 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.ArrayList;
-import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class hp implements ResultCallback {
-    public final /* synthetic */ org.telegram.messenger.f4 a;
-    public final /* synthetic */ lp b;
+public final class hp implements org.telegram.ui.p71 {
+    public final /* synthetic */ np a;
 
-    public hp(lp lpVar, org.telegram.messenger.f4 f4Var) {
-        this.b = lpVar;
-        this.a = f4Var;
+    public hp(np npVar) {
+        this.a = npVar;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        ArrayList e10 = this.a.e(7);
-        lp lpVar = this.b;
-        org.telegram.messenger.ks.f(lpVar.a).d(new mg(18, this, e10));
-        lpVar.V1 = false;
+    @Override // org.telegram.ui.p71
+    public final boolean Y0() {
+        return true;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
+    @Override // org.telegram.ui.p71
+    public final boolean d() {
+        return this.a.H1;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    @Override // org.telegram.ui.p71
+    public final void l1(boolean z10) {
+        np npVar = this.a;
+        org.telegram.ui.bn bnVar = npVar.v1;
+        npVar.H1 = !npVar.H1;
+        if (npVar.G1 != null) {
+            npVar.J1 = true;
+            bnVar.w7 = true;
+            TLRPC.WallPaper wallPaper = npVar.Q0() ? null : npVar.s1.g;
+            org.telegram.ui.ActionBar.s3 s3Var = npVar.G1.a;
+            if (s3Var.a) {
+                npVar.s1.r(null, wallPaper, z10, Boolean.valueOf(npVar.H1), false);
+            } else {
+                npVar.s1.r(s3Var, wallPaper, z10, Boolean.valueOf(npVar.H1), false);
+            }
+            bnVar.w7 = false;
+        }
     }
 }

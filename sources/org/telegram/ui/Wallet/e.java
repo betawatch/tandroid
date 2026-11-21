@@ -9,13 +9,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements q10 {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class e implements q10 {
 
     @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
-        z41 z41Var;
+        c51 c51Var;
         String str;
         switch (this.a) {
             case 0:
@@ -85,7 +85,7 @@ public final /* synthetic */ class e implements q10 {
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(l41.k(((e3) this.b).U1));
+                ((ArrayList) obj).add(o41.k(((e3) this.b).U1));
                 break;
             case 6:
                 w3 w3Var = (w3) this.b;
@@ -110,20 +110,20 @@ public final /* synthetic */ class e implements q10 {
                 if (password != null) {
                     n6Var.V0 = true;
                     n6Var.W0 = password.has_password;
-                    bi.c6 c6Var = n6Var.a;
-                    if (c6Var != null && (z41Var = c6Var.g3) != null) {
-                        z41Var.O(true);
+                    bi.g6 g6Var = n6Var.a;
+                    if (g6Var != null && (c51Var = g6Var.g3) != null) {
+                        c51Var.O(true);
                         break;
                     }
                 }
                 break;
             case 8:
-                w4 w4Var = (w4) this.b;
+                x4 x4Var = (x4) this.b;
                 TL_toncenter.onrampSession onrampsession = (TL_toncenter.onrampSession) obj;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
                 if (onrampsession != null && !TextUtils.isEmpty(onrampsession.url)) {
-                    w4Var.a(null);
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    x4Var.a(null);
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T != null) {
                         vf.c.t(T.getContext(), onrampsession.url);
                         break;
@@ -132,7 +132,7 @@ public final /* synthetic */ class e implements q10 {
                     if (tL_error4 == null || (str = tL_error4.text) == null) {
                         str = "NO_SESSION";
                     }
-                    w4Var.a(str);
+                    x4Var.a(str);
                     break;
                 }
                 break;

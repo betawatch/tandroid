@@ -1,73 +1,81 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.ColorFilter;
 import android.util.SparseIntArray;
-import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class p01 extends u01 {
-    public final /* synthetic */ int n3;
-    public final /* synthetic */ r11 o3;
+public final class p01 extends org.telegram.ui.Components.ov {
+    public final /* synthetic */ int h0;
+    public final /* synthetic */ s11 i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p01(r11 r11Var, Context context, int i7) {
-        super(r11Var, context);
-        this.o3 = r11Var;
-        this.n3 = i7;
+    public p01(s11 s11Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11, int i7, mz0 mz0Var, int i10, int i11) {
+        super(context, h6Var, z10, z11, false, true, i7, mz0Var, i10, false);
+        this.i0 = s11Var;
+        this.h0 = i11;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i7) {
-        if (i7 == 0) {
-            r11 r11Var = this.o3;
-            r11Var.y1 = false;
-            if (r11Var.a == -1 || r11Var.g0.getVisibility() != 0 || r11Var.g0.getTranslationY() <= (-org.telegram.messenger.g0.L(51.0f))) {
-                return;
-            }
-            r11.a(r11Var, r11Var.g0.getTranslationY() > ((float) (-org.telegram.messenger.g0.L(16.0f))) ? 0 : 1, 0);
-        }
+    @Override // org.telegram.ui.Components.ov
+    public final ColorFilter getEmojiColorFilter() {
+        return this.i0.l1;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i7) {
+    @Override // org.telegram.ui.Components.ov
+    public final boolean h(int i7) {
         int i10;
-        r11 r11Var = this.o3;
-        r11Var.h();
-        if (!r11Var.y1) {
-            int I0 = r11Var.s0.I0();
-            ArrayList arrayList = r11Var.E0;
-            SparseIntArray sparseIntArray = r11Var.x0;
-            if (I0 != -1) {
-                if (I0 > ((arrayList.size() <= 40 || r11Var.D0) ? arrayList.size() + (r11Var.O0 ? 1 : 0) : 40) && I0 > r11Var.J0.size()) {
-                    int i11 = 0;
-                    while (true) {
-                        if (i11 >= sparseIntArray.size()) {
-                            break;
-                        }
-                        int keyAt = sparseIntArray.keyAt(i11);
-                        int valueAt = sparseIntArray.valueAt(i11);
-                        org.telegram.ui.Components.fx fxVar = valueAt >= 0 ? (org.telegram.ui.Components.fx) r11Var.N0.get(valueAt) : null;
-                        if (fxVar != null) {
-                            boolean z10 = fxVar.h;
-                            int size = fxVar.c.size();
-                            if (!z10) {
-                                size = Math.min(24, size);
-                            }
-                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.lv lvVar = r11Var.e0;
-                                lvVar.j(((lvVar.F == null || !lvVar.c0) ? 0 : 1) + (lvVar.E != null ? 1 : 0) + valueAt, true);
-                            }
-                        }
-                        i11++;
-                    }
-                } else {
-                    r11Var.e0.j(0, true);
+        h11 h11Var;
+        s11 s11Var = this.i0;
+        SparseIntArray sparseIntArray = s11Var.y0;
+        if (s11Var.y1) {
+            return false;
+        }
+        int i11 = this.h0;
+        if (i11 == 4 && i7 == 0) {
+            s11Var.R = !s11Var.R;
+            s11Var.e0.setVisibility(8);
+            org.telegram.ui.Components.ov ovVar = s11Var.d0[s11Var.R ? 1 : 0];
+            s11Var.e0 = ovVar;
+            ovVar.setVisibility(0);
+            s11Var.e0.y.setDrawable(getContext().getDrawable(s11Var.R ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
+            s11Var.e0.y.setContentDescription(org.telegram.messenger.gd.N0(s11Var.R ? 2131754755 : 2131751184, null));
+            s11Var.B(true, false, false);
+            s11Var.s0.h1(0, 0);
+            return true;
+        }
+        org.telegram.ui.Components.kv kvVar = this.F;
+        int i12 = ((kvVar == null || !this.c0) ? 0 : 1) + 1;
+        if (kvVar != null && this.c0 && i7 == 1) {
+            i10 = s11Var.n;
+        } else {
+            if ((i11 != 4 || i7 != 0) && i7 > 0) {
+                int i13 = i7 - i12;
+                if (sparseIntArray.indexOfKey(i13) >= 0) {
+                    i10 = sparseIntArray.get(i13);
                 }
             }
+            i10 = 0;
         }
-        r11Var.C();
-        org.telegram.messenger.g0.X3(r11Var.f0, r11Var.i0.computeVerticalScrollOffset() != 0 || (i10 = this.n3) == 0 || i10 == 12 || i10 == 10 || i10 == 1 || i10 == 11 || i10 == 6, 1.0f, true, true);
-        r11Var.m();
+        s11.a(s11Var, i10, org.telegram.messenger.g0.L((i11 == 6 ? 7 : 0) - 2));
+        s11Var.e0.j(i7, true);
+        s11Var.i0.K1 = true;
+        s11Var.v(null, true, true);
+        k01 k01Var = s11Var.g0;
+        if (k01Var != null && (h11Var = k01Var.n) != null) {
+            h11Var.I1(null);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ov
+    public final void i(org.telegram.ui.Components.kv kvVar) {
+        ValueAnimator valueAnimator = this.i0.W1;
+        if (valueAnimator == null || valueAnimator.isRunning()) {
+            kvVar.setScaleX(0.0f);
+            kvVar.setScaleY(0.0f);
+        }
     }
 }

@@ -1,7 +1,7 @@
 package a3;
 
 import ab.d0;
-import ai.i1;
+import ai.k1;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,7 +27,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessaging;
 import di.f6;
-import di.i2;
+import di.j2;
 import e2.m1;
 import fi.a9;
 import fi.r3;
@@ -35,10 +35,11 @@ import fi.z3;
 import h9.f0;
 import h9.i0;
 import h9.t1;
+import hi.n8;
 import hi.o1;
-import hi.o8;
-import hi.q8;
+import hi.p8;
 import hi.w4;
+import hi.x1;
 import hi.y1;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -48,20 +49,19 @@ import java.util.Locale;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import jg.h1;
-import kg.a1;
-import ki.o2;
-import ki.t3;
-import oi.b4;
-import oi.e2;
-import oi.j1;
-import oi.p3;
-import oi.s3;
-import oi.z1;
+import kg.z0;
+import ki.n2;
+import ki.s3;
+import oi.b2;
+import oi.c4;
+import oi.g2;
+import oi.l1;
+import oi.q3;
+import oi.t3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.f4;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.h6;
 import org.telegram.messenger.j6;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
@@ -80,30 +80,29 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.m0;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.ActionBar.x2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.l0;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Cells.d2;
 import org.telegram.ui.Cells.p7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a4;
-import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.i4;
+import org.telegram.ui.Components.a5;
+import org.telegram.ui.Components.b4;
+import org.telegram.ui.Components.c5;
 import org.telegram.ui.Components.j4;
-import org.telegram.ui.Components.jl;
-import org.telegram.ui.Components.kl;
-import org.telegram.ui.Components.qb0;
-import org.telegram.ui.Components.rn;
-import org.telegram.ui.Components.sb0;
-import org.telegram.ui.Components.si;
-import org.telegram.ui.Components.xk;
-import org.telegram.ui.Components.yb0;
-import org.telegram.ui.Components.z4;
+import org.telegram.ui.Components.jj0;
+import org.telegram.ui.Components.k4;
+import org.telegram.ui.Components.ll;
+import org.telegram.ui.Components.ml;
+import org.telegram.ui.Components.rb0;
+import org.telegram.ui.Components.tb0;
+import org.telegram.ui.Components.tn;
+import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.zb0;
+import org.telegram.ui.Components.zk;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.bn;
 import org.telegram.ui.cx;
@@ -112,9 +111,9 @@ import org.telegram.ui.u7;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h implements p, SuccessContinuation, i1, androidx.car.app.utils.b, Continuation, ww, rr, a9, OnFailureListener, oi, r1, ll0, jl, m0, qb0, z4 {
+public final /* synthetic */ class h implements p, SuccessContinuation, k1, androidx.car.app.utils.b, Continuation, ww, rr, a9, OnFailureListener, oi, q1, ll0, ll, l0, rb0, a5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -134,18 +133,18 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
         return false;
     }
 
-    @Override // org.telegram.ui.Components.z4
+    @Override // org.telegram.ui.Components.a5
     public void O(int i7, int i10, boolean z10) {
         switch (this.a) {
             case 28:
-                kl klVar = (kl) this.c;
-                klVar.o0.b((TLRPC.TL_messageMediaGeo) this.b, klVar.p0, z10, i7, ((Long) this.d).longValue());
-                klVar.b.a(true);
+                ml mlVar = (ml) this.c;
+                mlVar.o0.b((TLRPC.TL_messageMediaGeo) this.b, mlVar.p0, z10, i7, ((Long) this.d).longValue());
+                mlVar.b.a(true);
                 break;
             default:
-                rn rnVar = (rn) this.c;
-                rnVar.k0.d((TLRPC.TL_messageMediaToDo) this.b, null, null, null, z10, i7, ((Long) this.d).longValue());
-                rnVar.b.a(true);
+                tn tnVar = (tn) this.c;
+                tnVar.k0.d((TLRPC.TL_messageMediaToDo) this.b, null, null, null, z10, i7, ((Long) this.d).longValue());
+                tnVar.b.a(true);
                 break;
         }
     }
@@ -161,23 +160,23 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
     public void a(String str) {
         r3 r3Var = (r3) this.c;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.b;
-        i6 i6Var = (i6) this.d;
+        h6 h6Var = (h6) this.d;
         z3 z3Var = r3Var.x;
-        z3Var.getStoriesController().r(z3Var.l1, str, new bi.j(r3Var, storyItem, i6Var, 8));
+        z3Var.getStoriesController().r(z3Var.l1, str, new bi.j(r3Var, storyItem, h6Var, 8));
     }
 
-    @Override // org.telegram.ui.Components.jl
+    @Override // org.telegram.ui.Components.ll
     public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
         switch (this.a) {
             case 15:
                 oi.o oVar = (oi.o) this.c;
                 oi.a aVar = (oi.a) this.b;
-                si siVar = (si) this.d;
-                s3 s3Var = oVar.r;
+                ui uiVar = (ui) this.d;
+                t3 t3Var = oVar.r;
                 if (messageMedia != null && messageMedia.geo != null) {
-                    e2 e2Var = s3Var.R3;
-                    if (e2Var != null) {
-                        e2Var.d();
+                    g2 g2Var = t3Var.R3;
+                    if (g2Var != null) {
+                        g2Var.d();
                     }
                     TL_iv.pageBlockMap pageblockmap = (TL_iv.pageBlockMap) aVar.b;
                     pageblockmap.geo = messageMedia.geo;
@@ -186,24 +185,24 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                         pageblockmap.w = 600;
                         pageblockmap.h = 400;
                     }
-                    e2 e2Var2 = s3Var.R3;
-                    if (e2Var2 != null) {
-                        e2Var2.h();
+                    g2 g2Var2 = t3Var.R3;
+                    if (g2Var2 != null) {
+                        g2Var2.h();
                     }
                     oVar.a0(true);
-                    siVar.a(true);
-                    s3Var.post(new oi.f(oVar, aVar, 0));
+                    uiVar.a(true);
+                    t3Var.post(new oi.f(oVar, aVar, 0));
                     break;
                 }
                 break;
             default:
-                z1 z1Var = (z1) this.c;
+                b2 b2Var = (b2) this.c;
                 oi.a aVar2 = (oi.a) this.b;
-                si siVar2 = (si) this.d;
+                ui uiVar2 = (ui) this.d;
                 if (messageMedia != null && messageMedia.geo != null) {
-                    e2 e2Var3 = z1Var.Q.R3;
-                    if (e2Var3 != null) {
-                        e2Var3.d();
+                    g2 g2Var3 = b2Var.Q.R3;
+                    if (g2Var3 != null) {
+                        g2Var3.d();
                     }
                     TL_iv.pageBlockMap pageblockmap2 = (TL_iv.pageBlockMap) aVar2.b;
                     pageblockmap2.geo = messageMedia.geo;
@@ -212,19 +211,19 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                         pageblockmap2.w = 600;
                         pageblockmap2.h = 400;
                     }
-                    e2 e2Var4 = z1Var.Q.R3;
-                    if (e2Var4 != null) {
-                        e2Var4.h();
+                    g2 g2Var4 = b2Var.Q.R3;
+                    if (g2Var4 != null) {
+                        g2Var4.h();
                     }
-                    siVar2.a(true);
-                    z1Var.Q.post(new j1(z1Var, aVar2, 9));
+                    uiVar2.a(true);
+                    b2Var.Q.post(new l1(b2Var, aVar2, 9));
                     break;
                 }
                 break;
         }
     }
 
-    @Override // ai.i1
+    @Override // ai.k1
     public void c(long j3, long j10) {
         String str = (String) this.b;
         ai.t tVar = (ai.t) this.c;
@@ -240,12 +239,12 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
             return;
         }
         if (tVar != null) {
-            tVar.i = Math.min(1.0f, j3 / j10);
+            tVar.k = Math.min(1.0f, j3 / j10);
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (elapsedRealtime - jArr[0] > 100) {
             jArr[0] = elapsedRealtime;
-            DictationAsr.n();
+            DictationAsr.p();
         }
     }
 
@@ -286,22 +285,22 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
     public void d(int i7) {
         switch (this.a) {
             case 14:
-                o2 o2Var = (o2) this.c;
-                yb0 yb0Var = (yb0) this.d;
+                n2 n2Var = (n2) this.c;
+                zb0 zb0Var = (zb0) this.d;
                 String str = (String) this.b;
                 if (i7 != 3) {
-                    yb0Var.dismiss();
+                    zb0Var.dismiss();
                 }
-                o2Var.d.E.G(str, c0.D(i7).toLowerCase(Locale.ROOT), false);
+                n2Var.d.E.G(str, c0.D(i7).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                yb0 yb0Var2 = (yb0) this.c;
-                t3 t3Var = (t3) this.d;
+                zb0 zb0Var2 = (zb0) this.c;
+                s3 s3Var = (s3) this.d;
                 String str2 = (String) this.b;
                 if (i7 != 3) {
-                    yb0Var2.dismiss();
+                    zb0Var2.dismiss();
                 }
-                t3Var.getWebViewContainer().G(str2, c0.D(i7).toLowerCase(Locale.ROOT), false);
+                s3Var.getWebViewContainer().G(str2, c0.D(i7).toLowerCase(Locale.ROOT), false);
                 break;
         }
     }
@@ -316,42 +315,42 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
         ArrayList arrayList3;
         ArrayList arrayList4;
         ArrayList arrayList5 = arrayList;
-        y1 y1Var = (y1) this.c;
+        x1 x1Var = (x1) this.c;
         String str2 = (String) this.b;
         ri riVar = (ri) this.d;
-        ArrayList arrayList6 = y1Var.h;
-        SparseIntArray sparseIntArray = y1Var.E;
-        ArrayList arrayList7 = y1Var.n;
-        hi.z1 z1Var = y1Var.O;
-        ArrayList arrayList8 = y1Var.w;
-        HashSet hashSet = y1Var.M;
-        ArrayList arrayList9 = y1Var.s;
-        if (TextUtils.equals(str2, y1Var.I)) {
-            ArrayList j3 = j6.j(y1Var.I, null);
+        ArrayList arrayList6 = x1Var.h;
+        SparseIntArray sparseIntArray = x1Var.E;
+        ArrayList arrayList7 = x1Var.n;
+        y1 y1Var = x1Var.O;
+        ArrayList arrayList8 = x1Var.w;
+        HashSet hashSet = x1Var.M;
+        ArrayList arrayList9 = x1Var.s;
+        if (TextUtils.equals(str2, x1Var.I)) {
+            ArrayList j3 = j6.j(x1Var.I, null);
             int i12 = 0;
             for (int i13 = 0; i13 < j3.size(); i13++) {
                 try {
                     ni niVar = new ni();
-                    niVar.a = ((h6) j3.get(i13)).c.toString();
+                    niVar.a = ((org.telegram.messenger.h6) j3.get(i13)).c.toString();
                     arrayList5.add(niVar);
                 } catch (Exception unused) {
                 }
             }
-            y1Var.y = 0;
+            x1Var.y = 0;
             arrayList9.clear();
             arrayList8.clear();
             sparseIntArray.clear();
             arrayList7.clear();
             int i14 = 1;
-            y1Var.y++;
+            x1Var.y++;
             arrayList9.add(null);
             arrayList8.add(0L);
-            if (z1Var.a == 0) {
+            if (y1Var.a == 0) {
                 hashSet.clear();
                 for (int i15 = 0; i15 < arrayList5.size(); i15++) {
                     ni niVar2 = (ni) arrayList5.get(i15);
                     String str3 = niVar2.a;
-                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) y1Var.d.get(niVar2.a)) != null) {
+                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) x1Var.d.get(niVar2.a)) != null) {
                         hashSet.addAll(arrayList4);
                     }
                 }
@@ -359,7 +358,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                 for (int i16 = 0; i16 < hashSet.size(); i16++) {
                     arrayList9.add(null);
                 }
-                y1Var.y = hashSet.size() + y1Var.y;
+                x1Var.y = hashSet.size() + x1Var.y;
                 i7 = 1;
                 i10 = 0;
             } else {
@@ -377,7 +376,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                             TLRPC.Document document = (TLRPC.Document) arrayList3.get(i19);
                             if (document != null && !arrayList9.contains(document)) {
                                 arrayList9.add(document);
-                                y1Var.y++;
+                                x1Var.y++;
                             }
                         }
                     }
@@ -408,7 +407,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                                 String V = fj.V(arrayList2.get(i22), null, null);
                                 if (V != null && V.contains(niVar4.a)) {
                                     arrayList9.add(arrayList2.get(i22));
-                                    y1Var.y++;
+                                    x1Var.y++;
                                 }
                             }
                         }
@@ -417,7 +416,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                     arrayList5 = arrayList;
                 }
             }
-            String M3 = g0.M3((y1Var.I + "").toLowerCase());
+            String M3 = g0.M3((x1Var.I + "").toLowerCase());
             for (int i23 = i10; i23 < arrayList6.size(); i23++) {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i23);
                 if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
@@ -425,29 +424,29 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                     if (M32.startsWith(M3) || M32.contains(" ".concat(M3))) {
                         int size = arrayList7.size();
                         arrayList7.add(tL_messages_stickerSet);
-                        sparseIntArray.put(y1Var.y, size);
+                        sparseIntArray.put(x1Var.y, size);
                         arrayList9.add(null);
-                        y1Var.y++;
+                        x1Var.y++;
                         arrayList9.addAll(tL_messages_stickerSet.documents);
-                        y1Var.y = tL_messages_stickerSet.documents.size() + y1Var.y;
+                        x1Var.y = tL_messages_stickerSet.documents.size() + x1Var.y;
                     }
                 }
             }
             int i24 = i7;
             boolean z10 = (arrayList8.size() > i24 || arrayList9.size() > i24) ? i10 : i24;
-            y1Var.x = z10;
+            x1Var.x = z10;
             if (z10 != 0) {
-                y1Var.y += i24;
+                x1Var.y += i24;
             }
             if (z10 == 0) {
-                y1Var.L += i24;
+                x1Var.L += i24;
             }
-            y1Var.J = y1Var.I;
-            y1Var.f();
+            x1Var.J = x1Var.I;
+            x1Var.f();
             boolean z11 = i10;
-            o1.z1(z1Var.b, z11 ? 1 : 0, z11 ? 1 : 0);
-            z1Var.f.c(z11);
-            z1Var.e.n(z11);
+            o1.z1(y1Var.b, z11 ? 1 : 0, z11 ? 1 : 0);
+            y1Var.f.c(z11);
+            y1Var.e.n(z11);
         }
     }
 
@@ -463,22 +462,22 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
         return p10.f();
     }
 
-    @Override // org.telegram.ui.ActionBar.m0
+    @Override // org.telegram.ui.ActionBar.l0
     public void g(int i7) {
-        z4 z4Var = (z4) this.c;
+        a5 a5Var = (a5) this.c;
         boolean[] zArr = (boolean[]) this.b;
         w4 w4Var = (w4) this.d;
         if (i7 == 1) {
-            z4Var.O(2147483646, 0, zArr[0]);
-            ((x2) w4Var.b).y0.run();
+            a5Var.O(2147483646, 0, zArr[0]);
+            ((w2) w4Var.b).y0.run();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 11:
-                ((q8) this.c).O0((o8) this.b, (Runnable) this.d, true);
+                ((p8) this.c).O0((n8) this.b, (Runnable) this.d, true);
                 break;
             case 12:
                 h1 h1Var = (h1) this.c;
@@ -510,22 +509,22 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
             case 17:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.b;
-                b4 b4Var = (b4) this.d;
+                c4 c4Var = (c4) this.d;
                 String trim = editTextBoldCursor.getText().toString().trim();
                 String trim2 = editTextBoldCursor2.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim) && !TextUtils.isEmpty(trim2)) {
-                    int i10 = b4Var.a;
-                    p3 p3Var = b4Var.b;
+                    int i10 = c4Var.a;
+                    q3 q3Var = c4Var.b;
                     switch (i10) {
                         case 1:
                             TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = new TL_keyboard.TL_inlineButtonTypeUrl();
                             tL_inlineButtonTypeUrl.url = trim2;
-                            p3Var.a(trim, tL_inlineButtonTypeUrl);
+                            q3Var.a(trim, tL_inlineButtonTypeUrl);
                             break;
                         default:
                             TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy = new TL_keyboard.TL_inlineButtonTypeCopy();
                             tL_inlineButtonTypeCopy.copy_text = trim2;
-                            p3Var.a(trim, tL_inlineButtonTypeCopy);
+                            q3Var.a(trim, tL_inlineButtonTypeCopy);
                             break;
                     }
                 }
@@ -533,30 +532,30 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
             case 18:
                 boolean[] zArr3 = (boolean[]) this.c;
                 x10 x10Var = (x10) this.b;
-                u1[] u1VarArr = (u1[]) this.d;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.d;
                 zArr3[0] = true;
                 x10Var.a(Boolean.FALSE);
-                u1VarArr[0].dismiss();
+                t1VarArr[0].dismiss();
                 break;
             case 22:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
                 fj fjVar = (fj) this.b;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.d;
-                Activity activity2 = chatActivityEnterView.C3;
+                Activity activity2 = chatActivityEnterView.E3;
                 if (activity2.checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == 0) {
                     zy.C(chatActivityEnterView.R).o0(fjVar, keyboardButtonProto);
                     break;
                 } else {
                     activity2.requestPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, 2);
-                    chatActivityEnterView.W3 = fjVar;
-                    chatActivityEnterView.X3 = keyboardButtonProto;
+                    chatActivityEnterView.Y3 = fjVar;
+                    chatActivityEnterView.Z3 = keyboardButtonProto;
                     break;
                 }
             case 25:
-                si siVar = (si) this.c;
+                ui uiVar = (ui) this.c;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = (TLRPC.TL_attachMenuBot) this.b;
                 TLRPC.User user2 = (TLRPC.User) this.d;
-                int i11 = siVar.H3;
+                int i11 = uiVar.H3;
                 if (tL_attachMenuBot == null) {
                     ri.d0(i11).Q1(user2.id);
                     break;
@@ -564,32 +563,32 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                     TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                     tL_messages_toggleBotInAttachMenu.bot = mp.u1(i11).s1(user2);
                     tL_messages_toggleBotInAttachMenu.enabled = false;
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new u7(13, siVar, tL_attachMenuBot), 66);
+                    ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new u7(13, uiVar, tL_attachMenuBot), 66);
                     break;
                 }
             default:
-                xk xkVar = (xk) this.c;
-                a1 a1Var = (a1) this.b;
+                zk zkVar = (zk) this.c;
+                z0 z0Var = (z0) this.b;
                 d2 d2Var = (d2) this.d;
-                TextView textView = xkVar.V;
-                if (a1Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
-                    String trim3 = a1Var.getText().toString().trim();
-                    xkVar.t0 = TextUtils.isEmpty(trim3) ? null : trim3;
-                    xkVar.u0 = !d2Var.b();
-                    if (TextUtils.isEmpty(xkVar.t0)) {
+                TextView textView = zkVar.V;
+                if (z0Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
+                    String trim3 = z0Var.getText().toString().trim();
+                    zkVar.t0 = TextUtils.isEmpty(trim3) ? null : trim3;
+                    zkVar.u0 = !d2Var.b();
+                    if (TextUtils.isEmpty(zkVar.t0)) {
                         textView.setVisibility(8);
                     } else {
-                        textView.setText(xkVar.t0);
+                        textView.setText(zkVar.t0);
                         textView.setVisibility(0);
                     }
-                    xkVar.k0();
-                    u1Var.dismiss();
-                    xkVar.a0();
+                    zkVar.k0();
+                    t1Var.dismiss();
+                    zkVar.a0();
                     break;
                 } else {
-                    int i12 = -xkVar.w0;
-                    xkVar.w0 = i12;
-                    g0.E3(i12, a1Var, null);
+                    int i12 = -zkVar.w0;
+                    zkVar.w0 = i12;
+                    g0.E3(i12, z0Var, null);
                     break;
                 }
         }
@@ -598,7 +597,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
     @Override // fi.a9
     public void m(Canvas canvas, RectF rectF, float f10) {
         p7 p7Var = (p7) this.c;
-        hj0 hj0Var = (hj0) this.b;
+        jj0 jj0Var = (jj0) this.b;
         int[] iArr = (int[]) this.d;
         p7Var.c(canvas, rectF, f10);
         p7Var.f(canvas, rectF, f10);
@@ -607,22 +606,22 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
         } else {
             p7Var.e(canvas, rectF, f10);
         }
-        if (hj0Var != null && hj0Var.b0 && hj0Var.getVisibility() == 0) {
+        if (jj0Var != null && jj0Var.b0 && jj0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f10 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            hj0Var.draw(canvas);
+            jj0Var.draw(canvas);
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.qb0
-    public void n(sb0 sb0Var, int i7) {
+    @Override // org.telegram.ui.Components.rb0
+    public void n(tb0 tb0Var, int i7) {
         switch (this.a) {
             case 20:
-                b5.g(null, null, 0L, 0L, 0, (sb0) this.c, (i4) this.b, (j4) this.d);
+                c5.g(null, null, 0L, 0L, 0, (tb0) this.c, (j4) this.b, (k4) this.d);
                 break;
             default:
-                b5.g(null, null, 0L, 0L, 0, (sb0) this.c, (a4) this.b, (org.telegram.ui.Components.b4) this.d);
+                c5.g(null, null, 0L, 0L, 0, (tb0) this.c, (b4) this.b, (org.telegram.ui.Components.c4) this.d);
                 break;
         }
     }
@@ -683,7 +682,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                         f4.f(f6Var.a).s(j3, new ig.b(null, tL_starGiftUnique.slug), null, true);
                         cxVar2.presentFragment(bn.ua(j3), true);
                     } else {
-                        b5.k0(f6Var.getContext(), f6Var.J0, f6Var.a, tL_starGiftUnique, longValue, new i2(f6Var, j3, tL_starGiftUnique, cxVar2, 1));
+                        c5.k0(f6Var.getContext(), f6Var.J0, f6Var.a, tL_starGiftUnique, longValue, new j2(f6Var, j3, tL_starGiftUnique, cxVar2, 1));
                     }
                     break;
                 }
@@ -692,7 +691,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
                 fj fjVar = (fj) this.b;
                 TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
-                bn bnVar = chatActivityEnterView.D3;
+                bn bnVar = chatActivityEnterView.F3;
                 TLRPC.Message message = fjVar.k;
                 long j10 = message.from_id.user_id;
                 long j11 = message.via_bot_id;
@@ -703,7 +702,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, i1, andr
                 if (c22 != null) {
                     long j12 = ((sr) arrayList.get(0)).a;
                     ri.d0(chatActivityEnterView.R).V1(j12, 0, "@" + o10.o(c22) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
-                    if (j12 == chatActivityEnterView.E3) {
+                    if (j12 == chatActivityEnterView.G3) {
                         cxVar.finishFragment();
                         break;
                     } else if (!n5.C(j12)) {

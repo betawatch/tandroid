@@ -9,18 +9,18 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.j10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class s0 {
     public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, n nVar, Paint.FontMetricsInt fontMetricsInt) {
         TLRPC.Document document = tL_availableReaction.activate_animation;
         long j3 = document.id;
-        x5 e10 = e(document, Long.valueOf(j3), fontMetricsInt);
+        y5 e10 = e(document, Long.valueOf(j3), fontMetricsInt);
         linkedHashMap.put(Long.valueOf(j3), e10);
         arrayList.add(Long.valueOf(j3));
         SpannableString spannableString = new SpannableString(tL_availableReaction.reaction);
@@ -81,28 +81,28 @@ public abstract class s0 {
         return (reaction instanceof TLRPC.TL_reactionCustomEmoji) && (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id;
     }
 
-    public static x5 e(TLRPC.Document document, Long l10, Paint.FontMetricsInt fontMetricsInt) {
-        x5 x5Var;
+    public static y5 e(TLRPC.Document document, Long l10, Paint.FontMetricsInt fontMetricsInt) {
+        y5 y5Var;
         if (document != null) {
-            x5Var = new x5(document.id, 1.0f, fontMetricsInt);
-            x5Var.document = document;
+            y5Var = new y5(document.id, 1.0f, fontMetricsInt);
+            y5Var.document = document;
         } else {
-            x5Var = new x5(l10.longValue(), 1.0f, fontMetricsInt);
+            y5Var = new y5(l10.longValue(), 1.0f, fontMetricsInt);
         }
-        x5Var.cacheType = o5.f();
-        return x5Var;
+        y5Var.cacheType = p5.f();
+        return y5Var;
     }
 
     public static void f(long j3, int i7, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        h2 Q = LaunchActivity.Q();
+        g2 Q = LaunchActivity.Q();
         if (Q == null || tL_premium_boostsStatus == null) {
             return;
         }
-        ug.l0 l0Var = new ug.l0(21, j10.t0, Q.getContext(), Q, Q.getResourceProvider());
-        l0Var.N2 = i7;
-        l0Var.A1(tL_premium_boostsStatus, true);
-        l0Var.C1(j3);
-        l0Var.M2 = new r0(Q, j3);
-        l0Var.show();
+        ug.k0 k0Var = new ug.k0(21, j10.t0, Q.getContext(), Q, Q.getResourceProvider());
+        k0Var.N2 = i7;
+        k0Var.A1(tL_premium_boostsStatus, true);
+        k0Var.C1(j3);
+        k0Var.M2 = new r0(Q, j3);
+        k0Var.show();
     }
 }

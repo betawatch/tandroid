@@ -1,33 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class z31 extends g.p {
-    public final /* synthetic */ h41 c;
+public final class z31 extends tl0 {
+    public final /* synthetic */ k41 f;
 
-    public z31(h41 h41Var) {
-        this.c = h41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z31(k41 k41Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, 14.0f, h6Var);
+        this.f = k41Var;
     }
 
-    @Override // g.p
-    public final int i(int i7) {
-        h41 h41Var = this.c;
-        v4.i0 adapter = h41Var.n.getAdapter();
-        g41 g41Var = h41Var.s;
-        if (adapter == g41Var) {
-            if ((g41Var.d.get(i7) instanceof Integer) || i7 >= g41Var.x) {
-                return g41Var.w;
-            }
-            return 1;
+    @Override // org.telegram.ui.Components.tl0
+    public final void a(String str) {
+        jg.c2 c2Var = this.f.w;
+        jg.a2 a2Var = c2Var.T;
+        int i7 = c2Var.c;
+        if (c2Var.O != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(c2Var.O, true);
+            c2Var.O = 0;
         }
-        jg.c2 c2Var = h41Var.w;
-        SparseArray sparseArray = c2Var.s;
-        if (i7 == c2Var.E || !(sparseArray.get(i7) == null || (sparseArray.get(i7) instanceof TLRPC.Document))) {
-            return c2Var.e.a();
+        if (c2Var.P != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(c2Var.P, true);
+            c2Var.P = 0;
         }
-        return 1;
+        if (TextUtils.isEmpty(str)) {
+            c2Var.S = null;
+            c2Var.G.clear();
+            c2Var.J.clear();
+            c2Var.F.clear();
+            c2Var.e.b(false);
+            c2Var.f();
+        } else {
+            c2Var.S = str.toLowerCase();
+        }
+        org.telegram.messenger.g0.r(a2Var);
+        org.telegram.messenger.g0.h3(a2Var, 300L);
     }
 }

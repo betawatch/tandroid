@@ -5,10 +5,10 @@ import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class p7 extends ph0 {
-    public final /* synthetic */ g8 E;
+public final class p7 extends rh0 {
+    public final /* synthetic */ f8 E;
     public float r;
     public float s;
     public boolean w;
@@ -16,9 +16,9 @@ public final class p7 extends ph0 {
     public final /* synthetic */ float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p7(g8 g8Var, Context context, float f10) {
+    public p7(f8 f8Var, Context context, float f10) {
         super(context);
-        this.E = g8Var;
+        this.E = f8Var;
         this.y = f10;
         this.x = new j6.o(this, 27);
     }
@@ -38,9 +38,9 @@ public final class p7 extends ph0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        g8 g8Var = this.E;
-        p7 p7Var = g8Var.F1;
-        if (g8Var.N1.x || g8Var.B2 == -1) {
+        f8 f8Var = this.E;
+        p7 p7Var = f8Var.F1;
+        if (f8Var.N1.x || f8Var.B2 == -1) {
             return false;
         }
         float rawX = motionEvent.getRawX();
@@ -77,17 +77,17 @@ public final class p7 extends ph0 {
             p7Var.d();
         }
         org.telegram.messenger.g0.r(oVar);
-        if (g8Var.D2 > 0) {
+        if (f8Var.D2 > 0) {
             MediaController.B().m0(true, 1.0f);
             if (MediaController.B().H()) {
-                g8Var.F2 = 0L;
-                g8Var.I2.run();
+                f8Var.F2 = 0L;
+                f8Var.I2.run();
             }
         }
-        g8Var.B2 = 0;
+        f8Var.B2 = 0;
         setPressed(false);
-        g8Var.D2 = 0;
-        g8Var.C2 = -1.0f;
+        f8Var.D2 = 0;
+        f8Var.C2 = -1.0f;
         return true;
     }
 }

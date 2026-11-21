@@ -3,22 +3,22 @@ package li;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import bi.q1;
+import bi.u1;
 import c8.ma;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.o41;
 import v4.f1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public abstract class b0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final lh.f b;
     public final FrameLayout c;
-    public e51 d;
+    public h51 d;
     public boolean e;
     public final /* synthetic */ d0 f;
 
@@ -33,7 +33,7 @@ public abstract class b0 extends FrameLayout {
         addView(frameLayout, ma.e(-1, -1, ks.E1));
         lh.f fVar = new lh.f(getContext());
         this.b = fVar;
-        fVar.setupColorKey(n6.a7);
+        fVar.setupColorKey(m6.a7);
         fVar.setFadeZoneBottom(org.telegram.messenger.g0.L(72.0f) + org.telegram.messenger.g0.n);
         fVar.setFadeHeightBottom(org.telegram.messenger.g0.L(24.0f));
         fVar.setFadeZoneTop(org.telegram.messenger.g0.L(64.0f) + org.telegram.messenger.g0.m);
@@ -42,10 +42,10 @@ public abstract class b0 extends FrameLayout {
     }
 
     public final void a() {
-        this.d.j(new q1(this, 25));
+        this.d.j(new u1(this, 25));
         a0 a0Var = new a0(this);
         a0Var.n(350L);
-        a0Var.o(lr.h);
+        a0Var.o(nr.h);
         a0Var.C = false;
         a0Var.m = false;
         this.d.setItemAnimator(a0Var);
@@ -57,7 +57,7 @@ public abstract class b0 extends FrameLayout {
             View childAt = this.d.getChildAt(i7);
             f1 T = this.d.T(childAt);
             if (T != null) {
-                l41 G = this.d.g3.G(T.b());
+                o41 G = this.d.g3.G(T.b());
                 if (G != null && G.d != 99) {
                     f10 = Math.min(childAt.getY() + this.c.getPaddingTop(), f10);
                 }

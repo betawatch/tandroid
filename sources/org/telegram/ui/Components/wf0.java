@@ -1,129 +1,178 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.messenger.Utilities;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xf0 b;
+public final class wf0 implements ui.a, dh.b, si.a {
+    public final ui.a a;
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint();
+    public RadialGradient d;
+    public int e;
+    public float f;
+    public final /* synthetic */ xf0 h;
 
-    public /* synthetic */ wf0(xf0 xf0Var, int i7) {
-        this.a = i7;
-        this.b = xf0Var;
+    public wf0(xf0 xf0Var, vf0 vf0Var) {
+        this.h = xf0Var;
+        this.a = vf0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
-    
-        if (r3.getHeight() != r5.b.getHeight()) goto L30;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i7;
-        kg0[] kg0VarArr;
-        switch (this.a) {
-            case 0:
-                xf0 xf0Var = this.b;
-                synchronized (xf0Var.b) {
-                    kg0[] kg0VarArr2 = xf0Var.c;
-                    kg0 kg0Var = kg0VarArr2[0];
-                    kg0[] kg0VarArr3 = xf0Var.d;
-                    i7 = 2;
-                    kg0VarArr = new kg0[]{kg0Var, kg0VarArr3[0], kg0VarArr2[1], kg0VarArr3[1], kg0VarArr2[2], kg0VarArr3[2]};
-                }
-                boolean z10 = false;
-                for (int i10 = 0; i10 < 6; i10 += 2) {
-                    kg0 kg0Var2 = kg0VarArr[i10];
-                    kg0 kg0Var3 = kg0VarArr[i10 + 1];
-                    if (kg0Var2 != null && !kg0Var2.c && kg0Var2.f) {
-                        kg0Var2.e = true;
-                        if (kg0Var3 != null) {
-                            Bitmap bitmap = kg0Var3.b;
-                            if (!kg0Var3.d) {
-                                if (bitmap.getWidth() == kg0Var2.b.getWidth()) {
-                                    break;
-                                }
-                            }
-                        }
-                        if (kg0Var3 != null) {
-                            kg0Var3.a();
-                        }
-                        kg0Var3 = new kg0();
-                        Bitmap createBitmap = Bitmap.createBitmap(kg0Var2.b.getWidth(), kg0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
-                        kg0Var3.b = createBitmap;
-                        kg0Var3.a = new Canvas(createBitmap);
-                        synchronized (xf0Var.b) {
-                            kg0[] kg0VarArr4 = xf0Var.d;
-                            int i11 = 0;
-                            while (true) {
-                                kg0[] kg0VarArr5 = xf0Var.c;
-                                if (i11 >= kg0VarArr5.length) {
-                                    i11 = 0;
-                                } else if (kg0VarArr5[i11] != kg0Var2) {
-                                    i11++;
-                                }
-                            }
-                            kg0VarArr4[i11] = kg0Var3;
-                        }
-                        Bitmap bitmap2 = kg0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / org.telegram.messenger.ks.K2));
-                        synchronized (xf0Var.b) {
-                            if (!kg0Var3.d) {
-                                kg0Var3.f = false;
-                                kg0Var3.b.eraseColor(0);
-                            }
-                            kg0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                            kg0Var3.f = true;
-                            Bitmap bitmap3 = kg0Var3.b;
-                            int i12 = 0;
-                            while (true) {
-                                kg0[] kg0VarArr6 = xf0Var.c;
-                                if (i12 >= kg0VarArr6.length) {
-                                    i12 = 0;
-                                } else if (kg0VarArr6[i12] != kg0Var2) {
-                                    i12++;
-                                }
-                            }
-                            xf0Var.b(i12, bitmap3);
-                        }
-                        if (!kg0Var2.d) {
-                            kg0Var2.f = false;
-                            kg0Var2.b.eraseColor(0);
-                        }
-                        kg0Var2.e = false;
-                        if (!kg0Var2.d && kg0Var2.c) {
-                            kg0Var2.d = true;
-                            kg0Var2.b.recycle();
-                        }
-                        z10 = true;
-                    }
-                }
-                if (z10 && xf0Var.e && xf0Var.h != null) {
-                    xf0Var.postInvalidateOnAnimation();
-                }
-                if (xf0Var.e && (xf0Var.G || xf0Var.I)) {
-                    org.telegram.messenger.g0.g3(new wf0(xf0Var, i7));
-                    return;
-                } else {
-                    xf0Var.e = false;
-                    return;
-                }
-            case 1:
-                xf0 xf0Var2 = this.b;
-                xf0Var2.I = true;
-                xf0Var2.postInvalidateOnAnimation();
-                return;
-            default:
-                xf0 xf0Var3 = this.b;
-                xf0Var3.c();
-                lg0.a.postRunnable(xf0Var3.s);
-                return;
+    @Override // si.a
+    public final int a() {
+        return i().a();
+    }
+
+    @Override // dh.b
+    public final fh.g b() {
+        return new fh.g(this, this, this);
+    }
+
+    @Override // si.a
+    public final void d(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
+        float f12;
+        int i10;
+        Canvas canvas2;
+        RectF rectF2;
+        xf0 xf0Var = this.h;
+        ui.a aVar = this.a;
+        float f13 = aVar != null ? xf0Var.l : 0.0f;
+        if (f13 < 1.0f) {
+            ri.c cVar = xf0Var.b;
+            if (cVar == null) {
+                cVar = null;
+            }
+            cVar.d(f10, f11, i7, canvas, rectF);
+            i10 = i7;
+            canvas2 = canvas;
+            rectF2 = rectF;
+            float f14 = 1.0f - xf0Var.k;
+            if (f14 > 0.0f) {
+                canvas2.save();
+                float f15 = 1.0f / i10;
+                canvas2.scale(f15, f15);
+                f12 = f10;
+                canvas2.translate(-f12, -f11);
+                h(canvas2, rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, f14, i10 * 2);
+                canvas2.restore();
+            } else {
+                f12 = f10;
+            }
+        } else {
+            f12 = f10;
+            i10 = i7;
+            canvas2 = canvas;
+            rectF2 = rectF;
         }
+        if (f13 > 0.0f) {
+            if (f13 < 1.0f) {
+                canvas2.saveLayerAlpha(null, (int) (f13 * 255.0f));
+            }
+            (aVar instanceof si.a ? (si.a) aVar : null).d(f12, f11, i10, canvas2, rectF2);
+            if (f13 < 1.0f) {
+                canvas.restore();
+            }
+        }
+    }
+
+    @Override // si.a
+    public final int e() {
+        return i().e();
+    }
+
+    @Override // si.a
+    public final int f() {
+        return i().f();
+    }
+
+    @Override // si.a
+    public final boolean g() {
+        ri.c cVar = this.h.b;
+        if (cVar == null) {
+            cVar = null;
+        }
+        ui.a aVar = this.a;
+        si.a aVar2 = aVar instanceof si.a ? (si.a) aVar : null;
+        if (cVar == null || cVar.e() <= 1) {
+            return false;
+        }
+        return aVar == null || (aVar2 != null && aVar2.g());
+    }
+
+    public final void h(Canvas canvas, float f10, float f11, float f12, float f13, float f14, float f15) {
+        xf0 xf0Var = this.h;
+        boolean z10 = xf0Var.j;
+        Paint paint = this.b;
+        if (!z10) {
+            paint.setShader(null);
+            paint.setColor(org.telegram.ui.ActionBar.m6.r1(f14, xf0Var.i));
+            canvas.drawRect(f10 - f15, f11 - f15, f12 + f15, f13 + f15, paint);
+            return;
+        }
+        float f16 = f12 - f10;
+        float max = Math.max(1.0f, 0.65f * f16);
+        if (this.d == null || this.e != xf0Var.i || this.f != max) {
+            this.e = xf0Var.i;
+            this.f = max;
+            this.d = new RadialGradient(0.0f, 0.0f, max, org.telegram.ui.ActionBar.m6.r1(0.8f, xf0Var.i), xf0Var.i, Shader.TileMode.CLAMP);
+        }
+        canvas.save();
+        canvas.translate((f10 + f12) / 2.0f, (f11 + f13) / 2.0f);
+        paint.setShader(this.d);
+        paint.setColor(-16777216);
+        paint.setAlpha((int) (f14 * 255.0f));
+        canvas.drawRect(((f10 - f12) / 2.0f) - f15, ((f11 - f13) / 2.0f) - f15, (f16 / 2.0f) + f15, com.google.android.gms.internal.vision.e2.A(f13, f11, 2.0f, f15), paint);
+        canvas.restore();
+    }
+
+    public final si.a i() {
+        ri.c cVar = this.h.b;
+        if (cVar == null) {
+            cVar = null;
+        }
+        ui.a aVar = this.a;
+        si.a aVar2 = aVar instanceof si.a ? (si.a) aVar : null;
+        return (aVar2 == null || cVar.e() < aVar2.e()) ? cVar : aVar2;
+    }
+
+    @Override // ui.a
+    public final void o(float f10, float f11, float f12, float f13, Canvas canvas) {
+        ui.a aVar = this.a;
+        xf0 xf0Var = this.h;
+        float f14 = aVar != null ? xf0Var.l : 0.0f;
+        if (f14 < 1.0f) {
+            if (xf0Var.b == null || !canvas.isHardwareAccelerated()) {
+                float f15 = xf0Var.k;
+                if (f15 > 0.0f) {
+                    int r12 = org.telegram.ui.ActionBar.m6.r1(f15 * 0.5f, -16777216);
+                    Paint paint = this.c;
+                    paint.setColor(r12);
+                    canvas.drawRect(f10, f11, f12, f13, paint);
+                }
+            } else {
+                xf0Var.b.o(f10, f11, f12, f13, canvas);
+            }
+            float f16 = 1.0f - xf0Var.k;
+            if (f16 > 0.0f) {
+                h(canvas, f10, f11, f12, f13, f16, 0.0f);
+            }
+        }
+        if (f14 > 0.0f) {
+            if (f14 < 1.0f) {
+                canvas.saveLayerAlpha(f10, f11, f12, f13, (int) (f14 * 255.0f));
+            }
+            this.a.o(f10, f11, f12, f13, canvas);
+            if (f14 < 1.0f) {
+                canvas.restore();
+            }
+        }
+    }
+
+    @Override // dh.b
+    public final /* synthetic */ void c(fh.g gVar) {
     }
 }

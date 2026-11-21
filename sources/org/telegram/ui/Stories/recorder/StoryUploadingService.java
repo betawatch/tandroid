@@ -15,7 +15,7 @@ import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.xs;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class StoryUploadingService extends Service implements fs {
     public q a;
@@ -111,9 +111,9 @@ public class StoryUploadingService extends Service implements fs {
             qVar.F.when = System.currentTimeMillis();
             q qVar2 = this.a;
             qVar2.y = xs.k0;
-            qVar2.g(gd.M0(org.telegram.messenger.beta.R.string.AppName, null));
-            this.a.p(gd.M0(2131744216, null));
-            this.a.f(gd.M0(2131744216, null));
+            qVar2.g(gd.N0(org.telegram.messenger.beta.R.string.AppName, null));
+            this.a.p(gd.N0(2131744210, null));
+            this.a.f(gd.N0(2131744210, null));
         }
         this.c = 0.0f;
         q qVar3 = this.a;

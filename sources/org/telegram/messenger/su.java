@@ -17,19 +17,19 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ox0;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.vx0;
-import org.telegram.ui.Components.wx0;
+import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.xx0;
+import org.telegram.ui.Components.yx0;
 import org.telegram.ui.wg0;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class su extends zt implements vx0 {
+public final class su extends zt implements xx0 {
     public final j6.o A0;
     public final TL_iv.pageBlockTable X;
-    public final wx0 Y;
+    public final yx0 Y;
     public final ArrayList Z;
     public final org.telegram.ui.Cells.u9[] a0;
     public final dv b0;
@@ -68,27 +68,27 @@ public final class su extends zt implements vx0 {
         rect2.top = g0.L(10.0f) + rect2.top;
         this.X = pageblocktable;
         this.e0 = this.c;
-        wx0 wx0Var = new wx0(t0.b, this, null);
-        this.Y = wx0Var;
-        wx0Var.setOrientation(0);
-        wx0Var.setRowOrderPreserved(true);
-        wx0Var.setDrawLines(pageblocktable.bordered);
-        wx0Var.setStriped(pageblocktable.striped);
-        wx0Var.setRtl(evVar.I());
-        wx0Var.setFillWidth(false);
-        wx0Var.setBalancedColumns(true);
+        yx0 yx0Var = new yx0(t0.b, this, null);
+        this.Y = yx0Var;
+        yx0Var.setOrientation(0);
+        yx0Var.setRowOrderPreserved(true);
+        yx0Var.setDrawLines(pageblocktable.bordered);
+        yx0Var.setStriped(pageblocktable.striped);
+        yx0Var.setRtl(evVar.I());
+        yx0Var.setFillWidth(false);
+        yx0Var.setBalancedColumns(true);
         if (pageblocktable.compact) {
             int L = g0.L(5.0f);
             int L2 = g0.L(5.0f);
             int L3 = g0.L(5.0f);
-            if (wx0Var.w != L || wx0Var.r != L2 || wx0Var.s != L3) {
-                wx0Var.w = L;
-                wx0Var.r = L2;
-                wx0Var.s = L3;
-                wx0Var.requestLayout();
+            if (yx0Var.w != L || yx0Var.r != L2 || yx0Var.s != L3) {
+                yx0Var.w = L;
+                yx0Var.r = L2;
+                yx0Var.s = L3;
+                yx0Var.requestLayout();
             }
         }
-        wx0Var.setMinimumCellHeight(g0.L(pageblocktable.compact ? 18.0f : 36.0f));
+        yx0Var.setMinimumCellHeight(g0.L(pageblocktable.compact ? 18.0f : 36.0f));
         if (pageblocktable.rows.isEmpty()) {
             i10 = 0;
         } else {
@@ -139,10 +139,10 @@ public final class su extends zt implements vx0 {
         this.f0 = max;
         this.g0 = max;
         for (int i18 = 0; i18 < this.Y.getChildCount(); i18++) {
-            px0 d = this.Y.d(i18);
-            ox0 ox0Var = d.b;
-            if (ox0Var instanceof dv) {
-                this.Z.add((dv) ox0Var);
+            rx0 d = this.Y.d(i18);
+            qx0 qx0Var = d.b;
+            if (qx0Var instanceof dv) {
+                this.Z.add((dv) qx0Var);
                 this.d0.add(new ru(d));
             }
         }
@@ -238,10 +238,10 @@ public final class su extends zt implements vx0 {
         canvas.saveLayerAlpha(f10, 0.0f, (i10 - rect.left) - rect.right, this.h0, ks.e4, 31);
         canvas.save();
         canvas.translate(-this.j0, 0.0f);
-        wx0 wx0Var = this.Y;
-        int childCount = wx0Var.getChildCount();
+        yx0 yx0Var = this.Y;
+        int childCount = yx0Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            wx0Var.d(i11).a(canvas, this.W, true);
+            yx0Var.d(i11).a(canvas, this.W, true);
         }
         canvas.restore();
         RectF rectF = g0.P;
@@ -259,7 +259,7 @@ public final class su extends zt implements vx0 {
         View view;
         int actionMasked = motionEvent.getActionMasked();
         int i7 = this.i0;
-        px0 px0Var = null;
+        rx0 rx0Var = null;
         if (actionMasked != 0) {
             if (actionMasked != 2) {
                 if (actionMasked == 1 || actionMasked == 3) {
@@ -373,29 +373,29 @@ public final class su extends zt implements vx0 {
             float x11 = motionEvent.getX();
             float f11 = x11 + this.j0;
             float y10 = motionEvent.getY() - i12;
-            wx0 wx0Var = this.Y;
-            int childCount = wx0Var.getChildCount();
+            yx0 yx0Var = this.Y;
+            int childCount = yx0Var.getChildCount();
             int i13 = 0;
             while (true) {
                 if (i13 >= childCount) {
                     break;
                 }
-                px0 d = wx0Var.d(i13);
+                rx0 d = yx0Var.d(i13);
                 if (d.b instanceof dv) {
                     if (f11 >= d.p && f11 < r13 + d.k) {
                         if (y10 >= d.q && y10 < r13 + d.l) {
-                            px0Var = d;
+                            rx0Var = d;
                             break;
                         }
                     }
                 }
                 i13++;
             }
-            if (px0Var != null) {
-                this.r0 = (dv) px0Var.b;
-                this.s0 = px0Var.b() - this.j0;
-                this.t0 = px0Var.c() + i12;
-                this.r0.S.set(px0Var.p - px0Var.b(), px0Var.q - px0Var.c(), (px0Var.p + px0Var.k) - px0Var.b(), (px0Var.q + px0Var.l) - px0Var.c());
+            if (rx0Var != null) {
+                this.r0 = (dv) rx0Var.b;
+                this.s0 = rx0Var.b() - this.j0;
+                this.t0 = rx0Var.c() + i12;
+                this.r0.S.set(rx0Var.p - rx0Var.b(), rx0Var.q - rx0Var.c(), (rx0Var.p + rx0Var.k) - rx0Var.b(), (rx0Var.q + rx0Var.l) - rx0Var.c());
                 motionEvent.offsetLocation(-this.s0, -this.t0);
                 this.u0 = this.r0.t(motionEvent);
                 motionEvent.offsetLocation(this.s0, this.t0);
@@ -415,13 +415,13 @@ public final class su extends zt implements vx0 {
             dvVar.d = i10;
             dvVar.e = i11;
         }
-        wx0 wx0Var = this.Y;
-        int childCount = wx0Var.getChildCount();
+        yx0 yx0Var = this.Y;
+        int childCount = yx0Var.getChildCount();
         for (int i12 = 0; i12 < childCount; i12++) {
-            px0 d = wx0Var.d(i12);
-            ox0 ox0Var = d.b;
-            if (ox0Var instanceof dv) {
-                dv dvVar2 = (dv) ox0Var;
+            rx0 d = yx0Var.d(i12);
+            qx0 qx0Var = d.b;
+            if (qx0Var instanceof dv) {
+                dv dvVar2 = (dv) qx0Var;
                 dvVar2.c = ((d.b() + i7) - this.j0) - dvVar2.n();
                 dvVar2.d = d.c() + this.c0 + i10;
                 dvVar2.e = i11;
@@ -429,8 +429,8 @@ public final class su extends zt implements vx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vx0
-    public final ox0 c(TL_iv.pageTableCell pagetablecell, int i7) {
+    @Override // org.telegram.ui.Components.xx0
+    public final qx0 c(TL_iv.pageTableCell pagetablecell, int i7) {
         if (pagetablecell == null) {
             return null;
         }
@@ -442,19 +442,19 @@ public final class su extends zt implements vx0 {
         return dvVar;
     }
 
-    @Override // org.telegram.ui.Components.vx0
+    @Override // org.telegram.ui.Components.xx0
     public final Paint getHeaderPaint() {
         i0();
         return this.m0;
     }
 
-    @Override // org.telegram.ui.Components.vx0
+    @Override // org.telegram.ui.Components.xx0
     public final Paint getLinePaint() {
         i0();
         return this.k0;
     }
 
-    @Override // org.telegram.ui.Components.vx0
+    @Override // org.telegram.ui.Components.xx0
     public final Paint getStripPaint() {
         i0();
         return this.n0;
@@ -475,10 +475,10 @@ public final class su extends zt implements vx0 {
             this.n0 = new Paint();
         }
         ev evVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.ll : org.telegram.ui.ActionBar.n6.kl, evVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.ll : org.telegram.ui.ActionBar.m6.kl, evVar.D);
         this.k0.setColor(w02);
         this.l0.setColor(w02);
-        this.m0.setColor(org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.jl : org.telegram.ui.ActionBar.n6.il, evVar.D));
+        this.m0.setColor(org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.jl : org.telegram.ui.ActionBar.m6.il, evVar.D));
         this.n0.setColor(167772160);
     }
 
@@ -528,23 +528,23 @@ public final class su extends zt implements vx0 {
         boolean z10;
         boolean z11;
         dv dvVar;
-        org.telegram.ui.Components.t5 t5Var;
-        wx0 wx0Var;
+        org.telegram.ui.Components.u5 u5Var;
+        yx0 yx0Var;
         int i7;
         int i10;
         h6.m mVar;
         int i11;
-        org.telegram.ui.Components.t5 t5Var2;
+        org.telegram.ui.Components.u5 u5Var2;
         canvas.save();
         Rect rect = this.b;
         canvas.translate(rect.left, rect.top);
         dv dvVar2 = this.b0;
-        if (dvVar2 == null || (t5Var2 = dvVar2.F) == null || t5Var2.a.isEmpty()) {
+        if (dvVar2 == null || (u5Var2 = dvVar2.F) == null || u5Var2.a.isEmpty()) {
             z10 = false;
         } else {
             canvas.save();
             canvas.translate(j0(), 0.0f);
-            org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, dvVar2.b, dvVar2.F, 0.0f, dvVar2.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
+            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, dvVar2.b, dvVar2.F, 0.0f, dvVar2.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
             canvas.restore();
             z10 = true;
         }
@@ -557,8 +557,8 @@ public final class su extends zt implements vx0 {
                 z11 = z10;
                 break;
             }
-            org.telegram.ui.Components.t5 t5Var3 = ((dv) arrayList.get(i12)).F;
-            if (t5Var3 == null || t5Var3.a.isEmpty()) {
+            org.telegram.ui.Components.u5 u5Var3 = ((dv) arrayList.get(i12)).F;
+            if (u5Var3 == null || u5Var3.a.isEmpty()) {
                 i12++;
             } else {
                 ev evVar = this.a;
@@ -567,31 +567,31 @@ public final class su extends zt implements vx0 {
                 int saveLayerAlpha = canvas.saveLayerAlpha(-i13, 0.0f, ((evVar.C + evVar.T) - rect.left) - rect.right, this.h0, ks.e4, 31);
                 canvas.save();
                 canvas.translate(-this.j0, 0.0f);
-                wx0 wx0Var2 = this.Y;
-                int childCount = wx0Var2.getChildCount();
+                yx0 yx0Var2 = this.Y;
+                int childCount = yx0Var2.getChildCount();
                 int i14 = 0;
                 while (i14 < childCount) {
-                    ox0 ox0Var = wx0Var2.d(i14).b;
-                    if (!(ox0Var instanceof dv) || (t5Var = (dvVar = (dv) ox0Var).F) == null || t5Var.a.isEmpty()) {
+                    qx0 qx0Var = yx0Var2.d(i14).b;
+                    if (!(qx0Var instanceof dv) || (u5Var = (dvVar = (dv) qx0Var).F) == null || u5Var.a.isEmpty()) {
                         i11 = saveLayerAlpha;
-                        wx0Var = wx0Var2;
+                        yx0Var = yx0Var2;
                         i7 = childCount;
                         i10 = i14;
                         mVar = mVar2;
                     } else {
                         canvas.save();
                         canvas.translate(r6.b(), r6.c());
-                        wx0Var = wx0Var2;
+                        yx0Var = yx0Var2;
                         i7 = childCount;
                         i10 = i14;
                         mVar = mVar2;
                         i11 = saveLayerAlpha;
-                        org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, dvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
+                        org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, dvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
                         canvas.restore();
                     }
                     i14 = i10 + 1;
                     mVar2 = mVar;
-                    wx0Var2 = wx0Var;
+                    yx0Var2 = yx0Var;
                     childCount = i7;
                     saveLayerAlpha = i11;
                 }
@@ -616,7 +616,7 @@ public final class su extends zt implements vx0 {
         ru ruVar;
         float f10;
         int i7;
-        wx0 wx0Var;
+        yx0 yx0Var;
         int i10;
         int i11;
         yg0 yg0Var = this.L;
@@ -646,13 +646,13 @@ public final class su extends zt implements vx0 {
                 int saveLayerAlpha = canvas.saveLayerAlpha(-i12, 0.0f, ((evVar.C + evVar.T) - rect.left) - rect.right, this.h0, (int) (c10 * 255.0f), 31);
                 canvas.save();
                 canvas.translate(-this.j0, 0.0f);
-                wx0 wx0Var2 = this.Y;
-                int childCount = wx0Var2.getChildCount();
+                yx0 yx0Var2 = this.Y;
+                int childCount = yx0Var2.getChildCount();
                 int i13 = 0;
                 int i14 = 0;
                 while (i13 < childCount) {
                     float f13 = f12;
-                    px0 d = wx0Var2.d(i13);
+                    rx0 d = yx0Var2.d(i13);
                     if (i14 >= arrayList.size() || ((ru) arrayList.get(i14)).a != d) {
                         ruVar = null;
                     } else {
@@ -682,7 +682,7 @@ public final class su extends zt implements vx0 {
                             } else {
                                 if (c11 <= f10 || d.b == null) {
                                     i7 = saveLayerAlpha;
-                                    wx0Var = wx0Var2;
+                                    yx0Var = yx0Var2;
                                     i10 = childCount;
                                     i11 = i13;
                                     d.a(canvas, this.W, false);
@@ -690,7 +690,7 @@ public final class su extends zt implements vx0 {
                                     d.a(canvas, this.W, false);
                                     canvas.save();
                                     canvas.translate(d.b(), d.c());
-                                    wx0Var = wx0Var2;
+                                    yx0Var = yx0Var2;
                                     i11 = i13;
                                     i7 = saveLayerAlpha;
                                     i10 = childCount;
@@ -705,11 +705,11 @@ public final class su extends zt implements vx0 {
                                 i14 = i15;
                                 f11 = f10;
                                 childCount = i10;
-                                wx0Var2 = wx0Var;
+                                yx0Var2 = yx0Var;
                             }
                         }
                         i7 = saveLayerAlpha;
-                        wx0Var = wx0Var2;
+                        yx0Var = yx0Var2;
                         i10 = childCount;
                         i11 = i13;
                         i13 = i11 + 1;
@@ -718,11 +718,11 @@ public final class su extends zt implements vx0 {
                         i14 = i15;
                         f11 = f10;
                         childCount = i10;
-                        wx0Var2 = wx0Var;
+                        yx0Var2 = yx0Var;
                     } else {
                         d.a(canvas, this.W, false);
                     }
-                    wx0Var = wx0Var2;
+                    yx0Var = yx0Var2;
                     i10 = childCount;
                     i11 = i13;
                     f10 = f11;
@@ -733,7 +733,7 @@ public final class su extends zt implements vx0 {
                     i14 = i15;
                     f11 = f10;
                     childCount = i10;
-                    wx0Var2 = wx0Var;
+                    yx0Var2 = yx0Var;
                 }
                 float f14 = f11;
                 int i16 = saveLayerAlpha;
@@ -760,12 +760,12 @@ public final class su extends zt implements vx0 {
             qtVar.f = i7 + rect.top;
             return true;
         }
-        wx0 wx0Var = this.Y;
-        int childCount = wx0Var.getChildCount();
+        yx0 yx0Var = this.Y;
+        int childCount = yx0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            ox0 ox0Var = wx0Var.d(i10).b;
-            if (ox0Var instanceof dv) {
-                if (((dv) ox0Var).o(characterStyle, qtVar)) {
+            qx0 qx0Var = yx0Var.d(i10).b;
+            if (qx0Var instanceof dv) {
+                if (((dv) qx0Var).o(characterStyle, qtVar)) {
                     qtVar.e = ((r6.b() + rect.left) - this.j0) - r7.n();
                     qtVar.f = r6.c() + i7 + rect.top + this.c0;
                     return true;
@@ -775,7 +775,7 @@ public final class su extends zt implements vx0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vx0
-    public final /* synthetic */ void g(ox0 ox0Var, int i7) {
+    @Override // org.telegram.ui.Components.xx0
+    public final /* synthetic */ void g(qx0 qx0Var, int i7) {
     }
 }

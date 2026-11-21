@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lx implements Runnable {
     public final /* synthetic */ zy a;
@@ -266,7 +266,7 @@ public final /* synthetic */ class lx implements Runnable {
                                         i18 = i24;
                                     }
                                 } else if (update2 instanceof TL_update.TL_updateQuickReplyMessage) {
-                                    kg.w1.f(zyVar2.currentAccount).j(update2, null, 0);
+                                    kg.v1.f(zyVar2.currentAccount).j(update2, null, 0);
                                     message = ((TL_update.TL_updateQuickReplyMessage) update2).message;
                                 } else if (update2 instanceof TL_update.TL_updateNewEphemeralMessage) {
                                     TL_update.TL_updateNewEphemeralMessage tL_updateNewEphemeralMessage = (TL_update.TL_updateNewEphemeralMessage) update2;
@@ -373,8 +373,8 @@ public final /* synthetic */ class lx implements Runnable {
                     TLRPC.Message message6 = (TLRPC.Message) arrayList13.get(i26);
                     zyVar2.getMessagesStorage().N0(i10 != 0 ? i11 : r52, message6);
                     if (tL_error != null && (str2 = tL_error.text) != null && str2.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                        di.x8.y(zyVar2.currentAccount, r52);
-                        message6.errorAllowedPriceStars = di.x8.o(tL_messages_forwardMessages2);
+                        di.y8.y(zyVar2.currentAccount, r52);
+                        message6.errorAllowedPriceStars = di.y8.o(tL_messages_forwardMessages2);
                         message6.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23)) / tL_messages_forwardMessages2.id.size();
                         zyVar2.getMessagesStorage().X1(fj.B0(message6), message6);
                     }

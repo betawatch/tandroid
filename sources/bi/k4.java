@@ -1,63 +1,47 @@
 package bi;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k4 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
+public final /* synthetic */ class k4 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
+    public final /* synthetic */ s3 e;
+    public final /* synthetic */ Boolean f;
 
-    public /* synthetic */ k4(int i7, int i10, long j3, String str, boolean z10) {
-        this.f = str;
+    public /* synthetic */ k4(Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, s3 s3Var, Boolean bool, int i10) {
+        this.a = i10;
+        this.b = context;
         this.c = i7;
-        this.b = z10;
-        this.e = j3;
-        this.d = i10;
+        this.d = h6Var;
+        this.e = s3Var;
+        this.f = bool;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        Object obj = this.f;
-        switch (i7) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
             case 0:
-                final String str = (String) obj;
-                TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
-                getuniquestargift.slug = str;
-                final int i10 = this.c;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-                final int i11 = this.d;
-                final long j3 = this.e;
-                final boolean z10 = this.b;
-                connectionsManager.sendRequest(getuniquestargift, new RequestDelegate() { // from class: bi.o4
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        org.telegram.messenger.g0.g3(new m4(tLObject, i10, z10, j3, i11, str));
-                    }
-                });
+                lc k10 = this.e.k();
+                y4.q(this.b, this.c, this.d, k10, (String) obj, this.f);
+                break;
+            case 1:
+                lc k11 = this.e.k();
+                y4.q(this.b, this.c, this.d, k11, (String) obj, this.f);
+                break;
+            case 2:
+                lc k12 = this.e.k();
+                y4.q(this.b, this.c, this.d, k12, (String) obj, this.f);
                 break;
             default:
-                int i12 = ChatActivityEnterView.n7;
-                ((ChatActivityEnterView) obj).s1(this.b, this.c, this.d, this.e, false);
+                lc k13 = this.e.k();
+                y4.q(this.b, this.c, this.d, k13, (String) obj, this.f);
                 break;
         }
-    }
-
-    public /* synthetic */ k4(ChatActivityEnterView chatActivityEnterView, boolean z10, int i7, int i10, long j3) {
-        this.f = chatActivityEnterView;
-        this.b = z10;
-        this.c = i7;
-        this.d = i10;
-        this.e = j3;
     }
 }

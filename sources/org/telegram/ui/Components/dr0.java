@@ -1,20 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class dr0 extends ScrollSlidingTextTabStrip {
-    public final /* synthetic */ gt0 q0;
+public final class dr0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dr0(gt0 gt0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var);
-        this.q0 = gt0Var;
+    public /* synthetic */ dr0(ViewGroup viewGroup, Object obj, int i7) {
+        this.c = i7;
+        this.e = viewGroup;
+        this.d = obj;
     }
 
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
-    public final int e(int i7) {
-        return this.q0.h1(i7);
+    @Override // g.p
+    public final int i(int i7) {
+        int i10;
+        int i11;
+        switch (this.c) {
+            case 0:
+                ds0 ds0Var = (ds0) this.d;
+                v4.i0 adapter = ds0Var.n.getAdapter();
+                jt0 jt0Var = (jt0) this.e;
+                dt0 dt0Var = jt0Var.L;
+                if (adapter == dt0Var) {
+                    if (dt0Var.d(i7) == 2) {
+                        return ds0Var.r.J;
+                    }
+                    return 1;
+                }
+                if (jt0.y(jt0Var, adapter) == -1) {
+                    return 1;
+                }
+                ((gt0) adapter).getClass();
+                return 1;
+            case 1:
+                f51 f51Var = (f51) this.d;
+                c51 c51Var = ((h51) this.e).g3;
+                if (c51Var == null) {
+                    return f51Var.J;
+                }
+                o41 G = c51Var.G(i7);
+                return (G == null || (i10 = G.v) == -1) ? f51Var.J : i10;
+            default:
+                f51 f51Var2 = (f51) this.d;
+                c51 c51Var2 = ((h51) this.e).g3;
+                if (c51Var2 == null) {
+                    return f51Var2.J;
+                }
+                o41 G2 = c51Var2.G(i7);
+                return (G2 == null || (i11 = G2.v) == -1) ? f51Var2.J : i11;
+        }
     }
 }

@@ -1,15 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class wf extends org.telegram.messenger.fj {
-    @Override // org.telegram.messenger.fj
-    public final boolean P3() {
-        return true;
+public final class wf extends AnimatorListenerAdapter {
+    public final /* synthetic */ ChatActivityEnterView a;
+
+    public wf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.messenger.fj
-    public final boolean o5() {
-        return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.i1.setAllowDraw(true);
+        chatActivityEnterView.D2.setTransformToSeekbar(1.0f);
+        chatActivityEnterView.W0();
     }
 }

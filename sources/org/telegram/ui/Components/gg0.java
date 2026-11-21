@@ -1,141 +1,331 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import org.telegram.messenger.Utilities;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class gg0 implements ig0 {
-    public Bitmap a;
-    public Canvas b;
-    public final Paint c;
-    public final Paint d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public final /* synthetic */ jg0 i;
+public final class gg0 extends wp {
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public final Context e;
+    public final Paint f;
+    public q9 g;
+    public final /* synthetic */ hg0 h;
 
-    public gg0(jg0 jg0Var) {
-        this.i = jg0Var;
-        Paint paint = new Paint();
-        this.c = paint;
-        Paint paint2 = new Paint();
-        this.d = paint2;
-        paint.setFlags(7);
-        paint.setFilterBitmap(true);
-        paint2.setFlags(7);
-        paint2.setFilterBitmap(true);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
-        paint.setColorFilter(new ColorMatrixColorFilter(new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 60.0f, -7500.0f}));
+    public gg0(hg0 hg0Var, Context context, org.telegram.ui.wv0 wv0Var) {
+        this.h = hg0Var;
+        this.e = context;
+        this.g = wv0Var;
+        Paint paint = new Paint(1);
+        this.f = paint;
+        paint.setColor(-16777216);
     }
 
-    @Override // org.telegram.ui.Components.ig0
-    public final void c(iy iyVar, Canvas canvas) {
-        Canvas canvas2;
-        int i7;
-        int i10;
-        jg0 jg0Var = (jg0) iyVar.b;
-        jg0 jg0Var2 = this.i;
-        Paint paint = jg0Var2.a;
-        Bitmap bitmap = this.a;
-        if (bitmap == null || bitmap.isRecycled()) {
+    @Override // c5.a
+    public final void a(c5.l lVar, Object obj) {
+        eg0 eg0Var = (eg0) obj;
+        View view = eg0Var.b;
+        if (view != null) {
+            lVar.removeView(view);
+        }
+        if (eg0Var.a) {
             return;
         }
-        int a10 = (int) ((1.0f - ((c8.l9.a(jg0Var2.f, 0.2f, 0.3f) - 0.2f) / 0.10000001f)) * 255.0f);
-        float width = (jg0Var2.getWidth() - this.f) / 2.0f;
-        canvas.save();
-        canvas.translate(0.0f, -org.telegram.messenger.g0.L(32.0f));
-        if (a10 != 255) {
-            this.a.eraseColor(0);
-            this.b.save();
-            this.b.scale(this.a.getWidth() / this.g, this.a.getHeight() / this.h);
-            float f10 = -width;
-            this.b.translate(f10, 0.0f);
-            jg0.a(jg0Var, this.b);
-            this.b.restore();
-            this.b.save();
-            this.b.scale(this.a.getWidth() / this.g, this.a.getHeight() / this.h);
-            if (jg0Var2.n != null) {
-                this.b.save();
-                this.b.translate(f10, org.telegram.messenger.g0.L(32.0f));
-                bi.y1 y1Var = jg0Var2.n;
-                if (y1Var.c) {
-                    float min = Math.min(((RectF) y1Var.e).width(), ((RectF) jg0Var2.n.e).height()) / 2.0f;
-                    Canvas canvas3 = this.b;
-                    float centerX = ((RectF) jg0Var2.n.e).centerX();
-                    RectF rectF = (RectF) jg0Var2.n.e;
-                    canvas3.drawCircle(centerX, rectF.bottom - (rectF.width() / 2.0f), min, paint);
-                } else if (y1Var.b) {
-                    this.b.drawPath((Path) y1Var.d, paint);
-                } else {
-                    float max = Math.max(((RectF) y1Var.e).width(), ((RectF) jg0Var2.n.e).height()) / 2.0f;
-                    this.b.drawRoundRect((RectF) jg0Var2.n.e, max, max, paint);
+        cg0 cg0Var = eg0Var.c;
+        if (cg0Var.getImageReceiver().n0 != null) {
+            Drawable t6 = cg0Var.getImageReceiver().t();
+            if (t6 instanceof c6) {
+                ((c6) t6).w(cg0Var);
+            }
+        }
+        cg0Var.setRoundRadius(0);
+        lVar.removeView(cg0Var);
+        cg0Var.getImageReceiver().c();
+    }
+
+    @Override // c5.a
+    public final int b() {
+        return this.c.size();
+    }
+
+    @Override // c5.a
+    public final int c(Object obj) {
+        int indexOf = this.c.indexOf((eg0) obj);
+        if (indexOf == -1) {
+            return -2;
+        }
+        return indexOf;
+    }
+
+    @Override // c5.a
+    public final CharSequence d(int i7) {
+        return (k(i7) + 1) + "/" + this.h.getRealCount();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0269  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01a0  */
+    @Override // c5.a
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object e(c5.l lVar, int i7) {
+        int i10;
+        SparseArray sparseArray;
+        boolean z10;
+        boolean z11;
+        String str;
+        Bitmap n10;
+        eg0 eg0Var = (eg0) this.c.get(i7);
+        int k10 = k(i7);
+        hg0 hg0Var = this.h;
+        boolean z12 = hg0Var.j1;
+        SparseArray sparseArray2 = hg0Var.e1;
+        ArrayList arrayList = hg0Var.c1;
+        ArrayList arrayList2 = hg0Var.b1;
+        ArrayList arrayList3 = hg0Var.Y0;
+        ArrayList arrayList4 = hg0Var.Z0;
+        ArrayList arrayList5 = hg0Var.a1;
+        ArrayList arrayList6 = hg0Var.X0;
+        Context context = this.e;
+        if (z12 && k10 == 0) {
+            eg0Var.a = true;
+            if (eg0Var.b == null) {
+                eg0Var.b = new fg0(context);
+            }
+            if (eg0Var.b.getParent() == null) {
+                lVar.addView(eg0Var.b);
+            }
+            return eg0Var;
+        }
+        eg0Var.a = false;
+        fg0 fg0Var = eg0Var.b;
+        if (fg0Var != null && fg0Var.getParent() != null) {
+            lVar.removeView(eg0Var.b);
+        }
+        if (eg0Var.c == null) {
+            cg0 cg0Var = new cg0(hg0Var, context, i7, this.f);
+            eg0Var.c = cg0Var;
+            this.d.set(i7, cg0Var);
+        }
+        if (eg0Var.c.getParent() == null) {
+            lVar.addView(eg0Var.c);
+        }
+        eg0Var.c.getImageReceiver().x0 = true;
+        int i11 = hg0Var.j1 ? k10 - 1 : k10;
+        if (i11 != 0) {
+            i10 = k10;
+            sparseArray = sparseArray2;
+            if (i11 >= 0 && i11 < arrayList6.size()) {
+                org.telegram.messenger.fc fcVar = (org.telegram.messenger.fc) arrayList6.get(i11);
+                eg0Var.c.M = fcVar != null;
+                z10 = arrayList5.get(i11) == null;
+                org.telegram.messenger.fc fcVar2 = (org.telegram.messenger.fc) arrayList4.get(i11);
+                eg0Var.c.q((t51) arrayList5.get(i11), fcVar, null, (org.telegram.messenger.fc) arrayList3.get(i11), (org.telegram.messenger.fc) arrayList4.get(i11), (fcVar2 == null || !(fcVar2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), "avatar_" + hg0Var.F0);
+                if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
                 }
-                this.b.restore();
+                eg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
+                eg0Var.c.getImageReceiver().l1 = (byte) 2;
+                cg0 cg0Var2 = eg0Var.c;
+                int i12 = hg0Var.n1;
+                int i13 = hg0Var.o1;
+                cg0Var2.t(i12, i12, i13, i13);
+                eg0Var.c.setTag(Integer.valueOf(i10));
+                return eg0Var;
+            }
+            z10 = false;
+            if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
+            }
+            eg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
+            eg0Var.c.getImageReceiver().l1 = (byte) 2;
+            cg0 cg0Var22 = eg0Var.c;
+            int i122 = hg0Var.n1;
+            int i132 = hg0Var.o1;
+            cg0Var22.t(i122, i122, i132, i132);
+            eg0Var.c.setTag(Integer.valueOf(i10));
+            return eg0Var;
+        }
+        q9 q9Var = this.g;
+        Drawable t6 = q9Var == null ? null : q9Var.getImageReceiver().t();
+        if (t6 instanceof c6) {
+            c6 c6Var = (c6) t6;
+            if (c6Var.s()) {
+                eg0Var.c.setImageDrawable(t6);
+                c6Var.f(eg0Var.c);
+                c6Var.S = true;
+                i10 = k10;
+                sparseArray = sparseArray2;
+                z10 = false;
+                if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
+                    SparseArray sparseArray3 = sparseArray;
+                    eg0Var.c.I = (RadialProgress2) sparseArray3.get(i11);
+                    cg0 cg0Var3 = eg0Var.c;
+                    if (cg0Var3.I == null) {
+                        cg0Var3.I = new RadialProgress2(cg0Var3, null);
+                        RadialProgress2 radialProgress2 = eg0Var.c.I;
+                        radialProgress2.E = 0.0f;
+                        radialProgress2.setIcon(10, false, false);
+                        eg0Var.c.I.setColors(1107296256, 1107296256, -1, -1);
+                        sparseArray3.append(i11, eg0Var.c.I);
+                    }
+                    if (hg0Var.h1) {
+                        hg0Var.invalidate();
+                    } else {
+                        hg0Var.postInvalidateOnAnimation();
+                    }
+                }
+                eg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
+                eg0Var.c.getImageReceiver().l1 = (byte) 2;
+                cg0 cg0Var222 = eg0Var.c;
+                int i1222 = hg0Var.n1;
+                int i1322 = hg0Var.o1;
+                cg0Var222.t(i1222, i1222, i1322, i1322);
+                eg0Var.c.setTag(Integer.valueOf(i10));
+                return eg0Var;
+            }
+        }
+        if (i11 >= 0 && i11 < arrayList6.size()) {
+            org.telegram.messenger.fc fcVar3 = (org.telegram.messenger.fc) arrayList6.get(i11);
+            eg0Var.c.M = fcVar3 != null;
+            boolean z13 = arrayList5.get(i11) == null;
+            if (!hg0Var.K0 || fcVar3 == null) {
+                z11 = z13;
             } else {
-                this.b.drawRect(0.0f, 0.0f, this.f, org.telegram.messenger.g0.L(32.0f), paint);
+                z11 = z13;
+                if (fcVar3.p == 2) {
+                    str = "avatar";
+                    org.telegram.messenger.fc fcVar4 = (org.telegram.messenger.fc) arrayList4.get(i11);
+                    q9 q9Var2 = this.g;
+                    i10 = k10;
+                    n10 = (q9Var2 == null && hg0Var.f1) ? q9Var2.getImageReceiver().n() : null;
+                    StringBuilder sb2 = new StringBuilder("avatar_");
+                    sparseArray = sparseArray2;
+                    sb2.append(hg0Var.F0);
+                    String sb3 = sb2.toString();
+                    if (n10 == null && arrayList5.get(i11) == null) {
+                        cg0 cg0Var4 = eg0Var.c;
+                        org.telegram.messenger.fc fcVar5 = (org.telegram.messenger.fc) arrayList6.get(i11);
+                        org.telegram.messenger.fc fcVar6 = (org.telegram.messenger.fc) arrayList3.get(i11);
+                        int intValue = ((Integer) arrayList2.get(i11)).intValue();
+                        cg0Var4.getClass();
+                        cg0Var4.a.u0(fcVar5, str, fcVar6, null, null, null, new BitmapDrawable((Resources) null, n10), intValue, null, sb3, 1);
+                        cg0Var4.d();
+                    } else if (hg0Var.L0 == null) {
+                        eg0Var.c.q((t51) arrayList5.get(i11), (org.telegram.messenger.fc) arrayList6.get(i11), str, (org.telegram.messenger.fc) arrayList3.get(i11), hg0Var.L0, null, ((Integer) arrayList2.get(i11)).intValue(), sb3);
+                    } else {
+                        eg0Var.c.q((t51) arrayList5.get(i11), fcVar3, null, (org.telegram.messenger.fc) arrayList3.get(i11), (org.telegram.messenger.fc) arrayList4.get(i11), (fcVar4 == null || !(fcVar4.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), sb3);
+                    }
+                    z10 = z11;
+                    if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
+                    }
+                    eg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
+                    eg0Var.c.getImageReceiver().l1 = (byte) 2;
+                    cg0 cg0Var2222 = eg0Var.c;
+                    int i12222 = hg0Var.n1;
+                    int i13222 = hg0Var.o1;
+                    cg0Var2222.t(i12222, i12222, i13222, i13222);
+                    eg0Var.c.setTag(Integer.valueOf(i10));
+                    return eg0Var;
+                }
             }
-            this.b.restore();
-            Utilities.stackBlurBitmap(this.a, (int) ((jg0Var2.d * 2.0f) / 6.0f));
-            canvas.save();
-            canvas.translate(width, 0.0f);
-            i7 = 255;
-            canvas2 = canvas;
-            canvas2.saveLayer(0.0f, 0.0f, this.g, this.h, null);
-            canvas2.scale(this.g / this.a.getWidth(), this.h / this.a.getHeight());
-            canvas2.drawBitmap(this.a, 0.0f, 0.0f, this.c);
-            canvas2.drawBitmap(this.a, 0.0f, 0.0f, this.d);
-            canvas2.restore();
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-            i7 = 255;
+            str = null;
+            org.telegram.messenger.fc fcVar42 = (org.telegram.messenger.fc) arrayList4.get(i11);
+            q9 q9Var22 = this.g;
+            i10 = k10;
+            if (q9Var22 == null) {
+            }
+            StringBuilder sb22 = new StringBuilder("avatar_");
+            sparseArray = sparseArray2;
+            sb22.append(hg0Var.F0);
+            String sb32 = sb22.toString();
+            if (n10 == null) {
+            }
+            if (hg0Var.L0 == null) {
+            }
+            z10 = z11;
+            if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
+            }
+            eg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
+            eg0Var.c.getImageReceiver().l1 = (byte) 2;
+            cg0 cg0Var22222 = eg0Var.c;
+            int i122222 = hg0Var.n1;
+            int i132222 = hg0Var.o1;
+            cg0Var22222.t(i122222, i122222, i132222, i132222);
+            eg0Var.c.setTag(Integer.valueOf(i10));
+            return eg0Var;
         }
-        if (a10 != 0) {
-            if (a10 != i7) {
-                i10 = a10;
-                canvas2.saveLayerAlpha(width, 0.0f, width + this.f, this.e, i10);
-            } else {
-                i10 = a10;
-            }
-            jg0.a(jg0Var, canvas2);
-            if (i10 != i7) {
-                canvas2.restore();
-            }
+        i10 = k10;
+        sparseArray = sparseArray2;
+        z10 = false;
+        if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
         }
-        canvas2.restore();
+        eg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
+        eg0Var.c.getImageReceiver().l1 = (byte) 2;
+        cg0 cg0Var222222 = eg0Var.c;
+        int i1222222 = hg0Var.n1;
+        int i1322222 = hg0Var.o1;
+        cg0Var222222.t(i1222222, i1222222, i1322222, i1322222);
+        eg0Var.c.setTag(Integer.valueOf(i10));
+        return eg0Var;
     }
 
-    @Override // org.telegram.ui.Components.ig0
-    public final void d(int i7, int i10) {
-        Bitmap bitmap = this.a;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.a = null;
+    @Override // c5.a
+    public final boolean f(View view, Object obj) {
+        eg0 eg0Var = (eg0) obj;
+        return eg0Var.a ? view == eg0Var.b : view == eg0Var.c;
+    }
+
+    @Override // c5.a
+    public final void g() {
+        ArrayList arrayList;
+        int i7 = 0;
+        while (true) {
+            arrayList = this.d;
+            if (i7 >= arrayList.size()) {
+                break;
+            }
+            if (arrayList.get(i7) != null) {
+                ((q9) arrayList.get(i7)).getImageReceiver().c();
+            }
+            i7++;
         }
-        this.f = Math.min(org.telegram.messenger.g0.L(120.0f), i7);
-        int min = Math.min(org.telegram.messenger.g0.L(220.0f), i10);
-        this.e = min;
-        this.g = this.f;
-        int L = org.telegram.messenger.g0.L(32.0f) + min;
-        this.h = L;
-        this.a = Bitmap.createBitmap((int) (this.g / 6.0f), (int) (L / 6.0f), Bitmap.Config.ARGB_8888);
-        this.b = new Canvas(this.a);
+        ArrayList arrayList2 = this.c;
+        arrayList2.clear();
+        arrayList.clear();
+        hg0 hg0Var = this.h;
+        int size = hg0Var.Y0.size();
+        if (hg0Var.j1) {
+            size++;
+        }
+        org.telegram.messenger.uo uoVar = hg0Var.T0;
+        int j3 = (j() * 2) + Math.max(uoVar == null ? 0 : uoVar.b.size(), size);
+        for (int i10 = 0; i10 < j3; i10++) {
+            arrayList2.add(new eg0());
+            arrayList.add(null);
+        }
+        super.g();
     }
 
-    @Override // org.telegram.ui.Components.ig0
-    public final /* synthetic */ void a(float f10) {
-    }
-
-    @Override // org.telegram.ui.Components.ig0
-    public final /* synthetic */ void b(float f10) {
+    @Override // org.telegram.ui.Components.wp
+    public final int j() {
+        hg0 hg0Var = this.h;
+        int size = hg0Var.Y0.size();
+        if (hg0Var.j1) {
+            size++;
+        }
+        if (size >= 2) {
+            return hg0Var.getOffscreenPageLimit();
+        }
+        return 0;
     }
 }

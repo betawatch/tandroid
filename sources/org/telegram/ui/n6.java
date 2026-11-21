@@ -1,18 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ ai.k0 c;
+    public final /* synthetic */ ai.l0 c;
     public final /* synthetic */ long[] d;
     public final /* synthetic */ o6 e;
 
-    public /* synthetic */ n6(boolean[] zArr, ai.k0 k0Var, long[] jArr, o6 o6Var, int i7) {
+    public /* synthetic */ n6(boolean[] zArr, ai.l0 l0Var, long[] jArr, o6 o6Var, int i7) {
         this.a = i7;
         this.b = zArr;
-        this.c = k0Var;
+        this.c = l0Var;
         this.d = jArr;
         this.e = o6Var;
     }

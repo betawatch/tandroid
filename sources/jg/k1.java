@@ -21,27 +21,27 @@ import org.telegram.messenger.fj;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.d9;
-import org.telegram.ui.Components.i00;
+import org.telegram.ui.Components.k00;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k1 extends FrameLayout {
-    public final i6 a;
+    public final h6 a;
     public final d9 b;
     public final TextView[] c;
     public final TextView[] d;
     public float e;
     public ValueAnimator f;
 
-    public k1(Context context, i6 i6Var) {
+    public k1(Context context, h6 h6Var) {
         super(context);
         this.c = new TextView[2];
         this.d = new TextView[2];
-        this.a = i6Var;
+        this.a = h6Var;
         setWillNotDraw(false);
         d9 d9Var = new d9(this, false);
         this.b = d9Var;
@@ -53,14 +53,14 @@ public final class k1 extends FrameLayout {
         int i7 = 0;
         while (i7 < 2) {
             this.c[i7] = new TextView(context);
-            u6.U(this.c[i7], n6.G6, i6Var);
+            t6.U(this.c[i7], m6.G6, h6Var);
             this.c[i7].setTypeface(org.telegram.messenger.g0.o());
             this.c[i7].setTextSize(1, 14.0f);
             int i10 = 8;
             this.c[i7].setVisibility(i7 == 0 ? 0 : 8);
             addView(this.c[i7], ma.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
             this.d[i7] = new TextView(context);
-            u6.U(this.d[i7], n6.z6, i6Var);
+            t6.U(this.d[i7], m6.z6, h6Var);
             this.d[i7].setTextSize(1, 12.0f);
             TextView textView = this.d[i7];
             if (i7 == 0) {
@@ -71,7 +71,7 @@ public final class k1 extends FrameLayout {
             i7++;
         }
         ImageView e10 = n10.e(context, R.drawable.msg_arrowright);
-        u6.s(e10, n6.P5, i6Var, PorterDuff.Mode.SRC_IN);
+        t6.s(e10, m6.P5, h6Var, PorterDuff.Mode.SRC_IN);
         addView(e10, ma.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
     }
 
@@ -104,7 +104,7 @@ public final class k1 extends FrameLayout {
         } else {
             textViewArr[0].setText(c(gd.K("HashtagStoriesFoundChannel", b6Var.J, ' ', p5.c.k("@", str))));
         }
-        this.d[0].setText(gd.a0(null, null, 2131749156, b6Var.C));
+        this.d[0].setText(gd.a0(null, null, 2131749155, b6Var.C));
         return i10 > 0;
     }
 
@@ -116,20 +116,20 @@ public final class k1 extends FrameLayout {
         } else {
             textViewArr[1].setText(c(gd.K("HashtagMessagesFoundChannel", i7, ' ', p5.c.k("@", str2))));
         }
-        this.d[1].setText(gd.a0(null, null, 2131749165, str));
+        this.d[1].setText(gd.a0(null, null, 2131749164, str));
     }
 
     public final SpannableStringBuilder c(String str) {
-        int i7 = n6.Fi;
-        i6 i6Var = this.a;
-        SpannableStringBuilder Q2 = org.telegram.messenger.g0.Q2(str, i7, i6Var, null, false);
+        int i7 = m6.Fi;
+        h6 h6Var = this.a;
+        SpannableStringBuilder Q2 = org.telegram.messenger.g0.Q2(str, i7, h6Var, null, false);
         try {
             CharacterStyle[] characterStyleArr = (CharacterStyle[]) Q2.getSpans(0, Q2.length(), CharacterStyle.class);
             for (int i10 = 0; i10 < characterStyleArr.length; i10++) {
                 int spanStart = Q2.getSpanStart(characterStyleArr[i10]);
                 int spanEnd = Q2.getSpanEnd(characterStyleArr[i10]);
                 Q2.removeSpan(characterStyleArr[i10]);
-                Q2.setSpan(new i00(n6.Fi, i6Var), spanStart, spanEnd, 0);
+                Q2.setSpan(new k00(m6.Fi, h6Var), spanStart, spanEnd, 0);
             }
             return Q2;
         } catch (Exception e10) {
@@ -149,9 +149,9 @@ public final class k1 extends FrameLayout {
         this.b.g(canvas);
         canvas.restore();
         super.onDraw(canvas);
-        Paint W0 = n6.W0("paintDivider", this.a);
+        Paint W0 = m6.W0("paintDivider", this.a);
         if (W0 == null) {
-            W0 = n6.k0;
+            W0 = m6.k0;
         }
         canvas.drawRect(0.0f, getHeight() - 1, getWidth(), getHeight(), W0);
     }

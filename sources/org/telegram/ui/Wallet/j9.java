@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class j9 extends FrameLayout {
     public boolean E;
@@ -23,9 +23,9 @@ public final class j9 extends FrameLayout {
     public final View a;
     public final EditTextBoldCursor b;
     public final View c;
-    public final org.telegram.ui.ActionBar.i6 d;
-    public final v4 e;
-    public final v4 f;
+    public final org.telegram.ui.ActionBar.h6 d;
+    public final w4 e;
+    public final w4 f;
     public final Paint h;
     public final TextPaint n;
     public final RectF r;
@@ -34,16 +34,16 @@ public final class j9 extends FrameLayout {
     public float x;
     public fh.g y;
 
-    public j9(Context context, View view, org.telegram.ui.ActionBar.i6 i6Var, v4 v4Var, v4 v4Var2, v4 v4Var3) {
+    public j9(Context context, View view, org.telegram.ui.ActionBar.h6 h6Var, w4 w4Var, w4 w4Var2, w4 w4Var3) {
         super(context);
         this.h = new Paint(1);
         this.n = new TextPaint(1);
         this.r = new RectF();
         this.x = 1.0f;
         this.a = view;
-        this.d = i6Var;
-        this.e = v4Var;
-        this.f = v4Var3;
+        this.d = h6Var;
+        this.e = w4Var;
+        this.f = w4Var3;
         int i7 = 0;
         setWillNotDraw(false);
         addView(view, c8.ma.e(-2, 40, 51));
@@ -51,11 +51,11 @@ public final class j9 extends FrameLayout {
         this.b = editTextBoldCursor;
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setTextSize(15.0f);
-        int i10 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.U(editTextBoldCursor, i10, i6Var);
-        org.telegram.ui.ActionBar.u6.D(editTextBoldCursor, org.telegram.ui.ActionBar.n6.H6, i6Var);
-        org.telegram.ui.ActionBar.u6.l(editTextBoldCursor, 30, i10, i6Var);
-        editTextBoldCursor.setHint(gd.M0(2131742768, null));
+        int i10 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(editTextBoldCursor, i10, h6Var);
+        org.telegram.ui.ActionBar.t6.D(editTextBoldCursor, org.telegram.ui.ActionBar.m6.H6, h6Var);
+        org.telegram.ui.ActionBar.t6.l(editTextBoldCursor, 30, i10, h6Var);
+        editTextBoldCursor.setHint(gd.N0(2131742762, null));
         editTextBoldCursor.setBackground(null);
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setGravity(16);
@@ -63,16 +63,16 @@ public final class j9 extends FrameLayout {
         editTextBoldCursor.setVisibility(4);
         editTextBoldCursor.setEnabled(false);
         editTextBoldCursor.setOnEditorActionListener(new h9(this, i7));
-        editTextBoldCursor.addTextChangedListener(new i9(v4Var2, i7));
+        editTextBoldCursor.addTextChangedListener(new i9(w4Var2, i7));
         addView(editTextBoldCursor, c8.ma.d(-1, 40.0f, 48, 40.0f, 0.0f, 44.0f, 0.0f));
         View view2 = new View(context);
         this.c = view2;
-        view2.setContentDescription(gd.M0(2131745641, null));
-        int i11 = org.telegram.ui.ActionBar.n6.i6;
-        Drawable h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i11, i6Var), 1, -1);
-        org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i11);
+        view2.setContentDescription(gd.N0(2131745640, null));
+        int i11 = org.telegram.ui.ActionBar.m6.i6;
+        Drawable h02 = org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i11, h6Var), 1, -1);
+        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i11);
         view2.setBackground(h02);
-        org.telegram.ui.ActionBar.u6.j(view2, h02, null, M, i6Var);
+        org.telegram.ui.ActionBar.t6.j(view2, h02, null, M, h6Var);
         view2.setOnClickListener(new o3(this, 5));
         addView(view2, c8.ma.e(40, 40, 53));
     }
@@ -105,7 +105,7 @@ public final class j9 extends FrameLayout {
         EditTextBoldCursor editTextBoldCursor = this.b;
         editTextBoldCursor.setEnabled(z10);
         editTextBoldCursor.setVisibility(0);
-        this.c.setContentDescription(gd.M0(z10 ? 2131752030 : 2131745641, null));
+        this.c.setContentDescription(gd.N0(z10 ? 2131752029 : 2131745640, null));
         if (!z10) {
             org.telegram.messenger.g0.v1(editTextBoldCursor);
             editTextBoldCursor.clearFocus();
@@ -115,7 +115,7 @@ public final class j9 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
         ofFloat.setDuration(z10 ? 380L : 300L);
-        this.s.setInterpolator(lr.h);
+        this.s.setInterpolator(nr.h);
         this.a.setVisibility(0);
         this.s.addUpdateListener(new z3(this, 7));
         this.s.addListener(new k71(this, 11));
@@ -171,17 +171,17 @@ public final class j9 extends FrameLayout {
         RectF rectF = this.r;
         rectF.set(width2, 0.0f, width3, L2);
         fh.g gVar = this.y;
-        org.telegram.ui.ActionBar.i6 i6Var = this.d;
+        org.telegram.ui.ActionBar.h6 h6Var = this.d;
         Paint paint = this.h;
         if (gVar != null) {
             gVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             this.y.draw(canvas2);
         } else {
             paint.setStyle(Paint.Style.FILL);
-            paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, i6Var));
+            paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, h6Var));
             canvas2.drawRoundRect(rectF, f11, f11, paint);
         }
-        paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, i6Var));
+        paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, h6Var));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(1.9f));
         paint.setStrokeCap(Paint.Cap.ROUND);
@@ -221,7 +221,7 @@ public final class j9 extends FrameLayout {
         TextPaint textPaint = this.n;
         textPaint.setTextSize(L);
         textPaint.setTypeface(org.telegram.messenger.g0.o());
-        int L2 = org.telegram.messenger.g0.L(62.0f) + ((int) Math.ceil(textPaint.measureText(gd.M0(2131742724, null)))) + ((int) Math.ceil(textPaint.measureText(gd.M0(2131742932, null))));
+        int L2 = org.telegram.messenger.g0.L(62.0f) + ((int) Math.ceil(textPaint.measureText(gd.N0(2131742718, null)))) + ((int) Math.ceil(textPaint.measureText(gd.N0(2131742926, null))));
         int size = View.MeasureSpec.getSize(i7);
         int min = Math.min(L2, Math.max(0, size - org.telegram.messenger.g0.L(48.0f)));
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.getLayoutParams();

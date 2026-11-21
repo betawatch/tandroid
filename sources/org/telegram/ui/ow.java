@@ -5,16 +5,16 @@ import android.graphics.Typeface;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ow implements org.telegram.ui.Components.t30 {
+public final class ow implements org.telegram.ui.Components.w30 {
     public final /* synthetic */ cx a;
 
     public ow(cx cxVar) {
         this.a = cxVar;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final void I(float f10) {
         org.telegram.ui.Components.gc gcVar = this.a.i4;
         if (gcVar != null) {
@@ -22,10 +22,10 @@ public final class ow implements org.telegram.ui.Components.t30 {
         }
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final void Q(boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.i6 i6Var;
-        org.telegram.ui.ActionBar.i6 i6Var2;
+        org.telegram.ui.ActionBar.h6 h6Var;
+        org.telegram.ui.ActionBar.h6 h6Var2;
         cx cxVar = this.a;
         org.telegram.ui.Components.gc gcVar = cxVar.i4;
         if (gcVar != null) {
@@ -33,8 +33,8 @@ public final class ow implements org.telegram.ui.Components.t30 {
             cxVar.i4 = null;
         }
         Activity parentActivity = cxVar.getParentActivity();
-        i6Var = ((org.telegram.ui.ActionBar.h2) cxVar).resourceProvider;
-        org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(parentActivity, i6Var);
+        h6Var = ((org.telegram.ui.ActionBar.g2) cxVar).resourceProvider;
+        org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(parentActivity, h6Var);
         org.telegram.ui.Components.wb wbVar = new org.telegram.ui.Components.wb(xbVar, parentActivity);
         xbVar.b = wbVar;
         wbVar.setWillNotDraw(false);
@@ -43,27 +43,27 @@ public final class ow implements org.telegram.ui.Components.t30 {
         xbVar.c = q9Var;
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(14.0f));
         wbVar.addView(q9Var, c8.ma.e(28, 28, 17));
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(parentActivity, false, false, false);
-        xbVar.d = n6Var;
-        n6Var.setTypeface(Typeface.SANS_SERIF);
-        n6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        n6Var.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-        xbVar.addView(n6Var, c8.ma.i(-2.0f, 18.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
-        xbVar.setTextColor(xbVar.getThemedColor(org.telegram.ui.ActionBar.n6.yj));
-        xbVar.setBackground(xbVar.getThemedColor(org.telegram.ui.ActionBar.n6.wj));
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(parentActivity, false, false, false);
+        xbVar.d = o6Var;
+        o6Var.setTypeface(Typeface.SANS_SERIF);
+        o6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        o6Var.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+        xbVar.addView(o6Var, c8.ma.i(-2.0f, 18.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
+        xbVar.setTextColor(xbVar.getThemedColor(org.telegram.ui.ActionBar.m6.yj));
+        xbVar.setBackground(xbVar.getThemedColor(org.telegram.ui.ActionBar.m6.wj));
         if (z10) {
             q9Var.setImageBitmap(cxVar.f4.r);
         } else {
             q9Var.setImageBitmap(PhotoViewer.p1().C4.n());
         }
         Activity parentActivity2 = cxVar.getParentActivity();
-        i6Var2 = ((org.telegram.ui.ActionBar.h2) cxVar).resourceProvider;
-        org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(parentActivity2, i6Var2, true);
-        ecVar.e(org.telegram.messenger.gd.M0(2131743326, null));
+        h6Var2 = ((org.telegram.ui.ActionBar.g2) cxVar).resourceProvider;
+        org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(parentActivity2, h6Var2, true);
+        ecVar.e(org.telegram.messenger.gd.N0(2131743320, null));
         ecVar.b = new bh(this, 23);
         xbVar.setButton(ecVar);
         xbVar.getButton().setVisibility(8);
-        n6Var.c(org.telegram.messenger.gd.M0(z11 ? 2131742534 : 2131742536, null), true, true);
+        o6Var.c(org.telegram.messenger.gd.N0(z11 ? 2131742528 : 2131742530, null), true, true);
         org.telegram.ui.Components.gc b10 = org.telegram.ui.Components.lc.b0(cxVar).b(xbVar, -1);
         cxVar.i4 = b10;
         b10.r = false;
@@ -73,7 +73,7 @@ public final class ow implements org.telegram.ui.Components.t30 {
         gcVar2.j();
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final void V(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, final String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final boolean z10, final TLRPC.VideoSize videoSize) {
         org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.nw
             @Override // java.lang.Runnable
@@ -106,20 +106,20 @@ public final class ow implements org.telegram.ui.Components.t30 {
                         tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize2;
                         tL_photos_uploadProfilePhoto.flags |= 16;
                     }
-                    cxVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new di.n8(owVar, str, z10, 5));
+                    cxVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new di.o8(owVar, str, z10, 5));
                 }
-                kVar = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
-                kVar.t().requestLayout();
+                kVar = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
+                kVar.s().requestLayout();
             }
         });
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final wq0 getCloseIntoObject() {
         cx cxVar = this.a;
         org.telegram.ui.Components.gc gcVar = cxVar.i4;
@@ -144,17 +144,17 @@ public final class ow implements org.telegram.ui.Components.t30 {
         return wq0Var;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final boolean x() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public final /* synthetic */ void U() {
     }
 }

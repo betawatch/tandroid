@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.animation.ValueAnimator;
 import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        z zVar;
+        y yVar;
         switch (this.a) {
             case 0:
                 ru0 ru0Var = this.b.f1;
@@ -42,8 +42,8 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                     kVar.a.s(W1, L, L, W1);
                     kVar.invalidate();
                 }
-                if (kVar.Q0 && (zVar = kVar.F) != null) {
-                    zVar.setTranslationX(-org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), kVar.p0));
+                if (kVar.Q0 && (yVar = kVar.F) != null) {
+                    yVar.setTranslationX(-org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), kVar.p0));
                 }
                 ru0 ru0Var3 = kVar.f1;
                 if (ru0Var3 != null) {

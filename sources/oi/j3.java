@@ -1,60 +1,87 @@
 package oi;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.view.KeyEvent;
+import android.view.View;
+import c8.ha;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class j3 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ s3 e;
+public final class j3 extends ha {
+    public final /* synthetic */ r3 a;
+    public final /* synthetic */ t3 b;
 
-    public j3(s3 s3Var, int i7, int i10, int i11, int i12) {
-        this.e = s3Var;
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
+    public j3(t3 t3Var, r3 r3Var) {
+        this.b = t3Var;
+        this.a = r3Var;
     }
 
-    public final TL_iv.RichMessage a() {
-        s3 s3Var = this.e;
-        ArrayList arrayList = s3Var.t3;
-        int i7 = this.a;
-        a aVar = (a) arrayList.get(i7);
-        ArrayList arrayList2 = s3Var.t3;
-        int i10 = this.b;
-        a aVar2 = (a) arrayList2.get(i10);
-        TL_iv.PageBlock pageBlock = aVar.b;
-        TL_iv.PageBlock pageBlock2 = aVar2.b;
-        int i11 = this.d;
-        TL_iv.PageBlock P1 = s3.P1(s3Var, aVar, this.c, i7 == i10 ? i11 : -1);
-        TL_iv.PageBlock P12 = i7 == i10 ? null : s3.P1(s3Var, aVar2, 0, i11);
-        if (P1 != null) {
-            aVar.b = P1;
+    @Override // c8.ha
+    public final void a(boolean z10) {
+        this.a.G();
+        t3 t3Var = this.b;
+        if (z10) {
+            h3 h3Var = t3Var.v3;
+            t3Var.x3 = h3Var.B0;
+            t3Var.y3 = h3Var.C0;
+            t3Var.z3 = h3Var.D0;
+            t3Var.setEditTextsLocked(true);
+            t3Var.q3();
+            t3Var.Y2();
+            return;
         }
-        if (P12 != null) {
-            aVar2.b = P12;
+        final int i7 = t3Var.x3;
+        final int i10 = t3Var.y3;
+        final int i11 = t3Var.z3;
+        t3Var.x3 = -1;
+        t3Var.y3 = -1;
+        t3Var.z3 = 0;
+        boolean z11 = t3Var.A3;
+        final float f10 = t3Var.B3;
+        final float f11 = t3Var.C3;
+        t3Var.A3 = false;
+        t3Var.setEditTextsLocked(false);
+        t3Var.Y2();
+        if (z11) {
+            t3Var.post(new Runnable() { // from class: oi.i3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    t3 t3Var2 = j3.this.b;
+                    for (int i12 = 0; i12 < t3Var2.getChildCount(); i12++) {
+                        KeyEvent.Callback childAt = t3Var2.getChildAt(i12);
+                        boolean z12 = childAt instanceof a6;
+                        float f12 = f10;
+                        float f13 = f11;
+                        if (z12) {
+                            a6 a6Var = (a6) childAt;
+                            if (t3.k4(a6Var.getEditText(), f12, f13)) {
+                                return;
+                            }
+                            if (a6Var.n() && t3.k4(a6Var.getAuthorEditText(), f12, f13)) {
+                                return;
+                            }
+                        } else if (childAt instanceof j0) {
+                            if (t3.k4(((j0) childAt).getCaptionEditText(), f12, f13)) {
+                                return;
+                            }
+                        } else if ((childAt instanceof q0) && t3.k4(((q0) childAt).getEditText(), f12, f13)) {
+                            return;
+                        }
+                    }
+                    int i13 = i7;
+                    if (i13 >= 0) {
+                        t3.O1(t3Var2, i13, i11, i10);
+                    }
+                }
+            });
+            return;
         }
-        try {
-            ArrayList<TL_iv.PageBlock> b32 = s3Var.b3(i7, i10 + 1, 0, false);
-            ArrayList<TLRPC.Photo> D2 = s3Var.D2(i7, i10);
-            ArrayList<TLRPC.Document> C2 = s3Var.C2(i7, i10);
-            aVar.b = pageBlock;
-            aVar2.b = pageBlock2;
-            TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
-            richMessage.blocks = b32;
-            richMessage.photos = D2;
-            richMessage.documents = C2;
-            return richMessage;
-        } catch (Throwable th2) {
-            aVar.b = pageBlock;
-            aVar2.b = pageBlock2;
-            throw th2;
+        if (i7 >= 0) {
+            t3Var.post(new hi.d0(this, i7, i11, i10, 2));
+            return;
+        }
+        View findFocus = t3Var.findFocus();
+        if (findFocus instanceof f1) {
+            t3Var.post(new y0((f1) findFocus, 2));
         }
     }
 }

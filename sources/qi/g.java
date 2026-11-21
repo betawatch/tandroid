@@ -5,9 +5,9 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class g extends CharacterStyle {
     public final String a;
@@ -27,7 +27,7 @@ public final class g extends CharacterStyle {
         if (this.c) {
             textPaint.setTextSize(g0.L(bz.W0 - this.b));
         }
-        textPaint.setColor(n6.x0(null, n6.Vc, false));
+        textPaint.setColor(m6.x0(null, m6.Vc, false));
         textPaint.setTypeface(Typeface.MONOSPACE);
         textPaint.setUnderlineText(false);
     }

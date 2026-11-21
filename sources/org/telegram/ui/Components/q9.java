@@ -15,17 +15,17 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class q9 extends View {
-    public vy0 E;
+    public xy0 E;
     public Path F;
     public ColorMatrixColorFilter G;
     public ImageReceiver a;
     public ImageReceiver b;
     public int c;
     public int d;
-    public o5 e;
+    public p5 e;
     public ColorFilter f;
     public b9 h;
     public boolean n;
@@ -44,7 +44,7 @@ public class q9 extends View {
         this.a = c10;
         c10.o1 = 0.0f;
         c10.A1 = true;
-        c10.h1 = new b0(this, 13);
+        c10.h1 = new c0(this, 13);
     }
 
     public final void a() {
@@ -84,13 +84,13 @@ public class q9 extends View {
         d();
     }
 
-    public o5 getAnimatedEmojiDrawable() {
+    public p5 getAnimatedEmojiDrawable() {
         return this.e;
     }
 
     public b9 getAvatarDrawable() {
         if (this.h == null) {
-            this.h = new b9((org.telegram.ui.ActionBar.i6) null);
+            this.h = new b9((org.telegram.ui.ActionBar.h6) null);
         }
         return this.h;
     }
@@ -139,9 +139,9 @@ public class q9 extends View {
         if (this.s) {
             this.b.P();
         }
-        o5 o5Var = this.e;
-        if (o5Var != null) {
-            o5Var.a(this);
+        p5 p5Var = this.e;
+        if (p5Var != null) {
+            p5Var.a(this);
         }
     }
 
@@ -155,9 +155,9 @@ public class q9 extends View {
         if (this.s) {
             this.b.R();
         }
-        o5 o5Var = this.e;
-        if (o5Var != null) {
-            o5Var.n(this);
+        p5 p5Var = this.e;
+        if (p5Var != null) {
+            p5Var.n(this);
         }
     }
 
@@ -165,13 +165,13 @@ public class q9 extends View {
     public void onDraw(Canvas canvas) {
         int i7;
         ColorFilter colorFilter;
-        o5 o5Var = this.e;
-        ImageReceiver imageReceiver = o5Var != null ? o5Var.k : this.a;
+        p5 p5Var = this.e;
+        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : this.a;
         if (imageReceiver == null) {
             return;
         }
-        if (o5Var != null && (colorFilter = this.f) != null) {
-            o5Var.setColorFilter(colorFilter);
+        if (p5Var != null && (colorFilter = this.f) != null) {
+            p5Var.setColorFilter(colorFilter);
         }
         int i10 = this.c;
         if (i10 == -1 || (i7 = this.d) == -1) {
@@ -205,9 +205,9 @@ public class q9 extends View {
         n(fcVar, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void q(q51 q51Var, org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, org.telegram.messenger.fc fcVar3, String str2, int i7, String str3) {
-        if (q51Var != null) {
-            this.a.w0(q51Var);
+    public final void q(t51 t51Var, org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, org.telegram.messenger.fc fcVar3, String str2, int i7, String str3) {
+        if (t51Var != null) {
+            this.a.w0(t51Var);
         } else {
             this.a.u0(fcVar, str, fcVar2, null, fcVar3, str2, null, i7, null, str3, 1);
         }
@@ -222,17 +222,17 @@ public class q9 extends View {
         this.a.G0(i7, i10, true);
     }
 
-    public void setAnimatedEmojiDrawable(o5 o5Var) {
-        o5 o5Var2 = this.e;
-        if (o5Var2 == o5Var) {
+    public void setAnimatedEmojiDrawable(p5 p5Var) {
+        p5 p5Var2 = this.e;
+        if (p5Var2 == p5Var) {
             return;
         }
-        if (this.n && o5Var2 != null) {
-            o5Var2.n(this);
+        if (this.n && p5Var2 != null) {
+            p5Var2.n(this);
         }
-        this.e = o5Var;
-        if (this.n && o5Var != null) {
-            o5Var.a(this);
+        this.e = p5Var;
+        if (this.n && p5Var != null) {
+            p5Var.a(this);
         }
         invalidate();
     }
@@ -256,7 +256,7 @@ public class q9 extends View {
             this.E = null;
             return;
         }
-        this.E = new vy0(charSequence, 16.5f, org.telegram.messenger.g0.o());
+        this.E = new xy0(charSequence, 16.5f, org.telegram.messenger.g0.o());
         if (this.G == null) {
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.2f);

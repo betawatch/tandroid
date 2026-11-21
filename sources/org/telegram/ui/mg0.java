@@ -9,9 +9,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class mg0 extends org.telegram.ui.Components.bk0 {
+public final class mg0 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public final /* synthetic */ og0 d;
 
@@ -28,7 +28,7 @@ public final class mg0 extends org.telegram.ui.Components.bk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         if (f1Var.f == 0) {
             return ((org.telegram.ui.Cells.b5) f1Var.a).getCurrentObject() instanceof TLObject;
@@ -65,8 +65,8 @@ public final class mg0 extends org.telegram.ui.Components.bk0 {
         return i7 == og0Var.N ? 7 : 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0266  */
-    /* JADX WARN: Removed duplicated region for block: B:91:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:92:? A[RETURN, SYNTHETIC] */
     @Override // v4.i0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -82,11 +82,11 @@ public final class mg0 extends org.telegram.ui.Components.bk0 {
         int i13;
         int i14 = f1Var.f;
         View view = f1Var.a;
-        int i15 = 2;
         og0 og0Var = this.d;
+        int i15 = 0;
         if (i14 != 0) {
             if (i14 == 1) {
-                org.telegram.ui.ActionBar.u6.Z(view, this.c, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.n6.b7);
+                org.telegram.ui.ActionBar.t6.Z(view, this.c, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.m6.b7);
                 return;
             }
             if (i14 == 2) {
@@ -94,12 +94,12 @@ public final class mg0 extends org.telegram.ui.Components.bk0 {
                 if (i7 == og0Var.P) {
                     o4Var.setTopMargin(9);
                     o4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(8.0f));
-                    o4Var.setText(org.telegram.messenger.gd.a0("StatisticOverview", null, 2131744660, new Object[0]));
+                    o4Var.setText(org.telegram.messenger.gd.a0("StatisticOverview", null, 2131744654, new Object[0]));
                     return;
                 } else {
                     o4Var.setTopMargin(11);
                     o4Var.setPadding(0, 0, 0, 0);
-                    o4Var.setText(org.telegram.messenger.gd.a0("PublicShares", null, 2131746388, new Object[0]));
+                    o4Var.setText(org.telegram.messenger.gd.a0("PublicShares", null, 2131746387, new Object[0]));
                     return;
                 }
             }
@@ -156,17 +156,17 @@ public final class mg0 extends org.telegram.ui.Components.bk0 {
                 i12 = i17;
             }
             textViewArr[0].setText(org.telegram.messenger.g0.o0(i11, 0));
-            textViewArr2[0].setText(org.telegram.messenger.gd.M0(2131744658, null));
+            textViewArr2[0].setText(org.telegram.messenger.gd.N0(2131744652, null));
             textViewArr[c10].setText(org.telegram.messenger.g0.o0(og0Var2.V, 0));
-            textViewArr2[c10].setText(org.telegram.messenger.gd.a0("PublicShares", null, 2131746388, new Object[0]));
+            textViewArr2[c10].setText(org.telegram.messenger.gd.a0("PublicShares", null, 2131746387, new Object[0]));
             textViewArr[2].setText(org.telegram.messenger.g0.o0(i13, 0));
-            textViewArr2[2].setText(org.telegram.messenger.gd.a0("Reactions", null, 2131746192, new Object[0]));
+            textViewArr2[2].setText(org.telegram.messenger.gd.a0("Reactions", null, 2131746191, new Object[0]));
             TLRPC.ChatFull chatFull = og0Var2.a;
             if (chatFull != null && (chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone) && i13 == 0) {
                 ((ViewGroup) textViewArr2[2].getParent()).setVisibility(8);
             }
             textViewArr[3].setText(org.telegram.messenger.g0.o0(Math.max(0, i12 - og0Var2.V), 0));
-            textViewArr2[3].setText(org.telegram.messenger.gd.a0("PrivateShares", null, 2131746551, new Object[0]));
+            textViewArr2[3].setText(org.telegram.messenger.gd.a0("PrivateShares", null, 2131746550, new Object[0]));
             ng0Var.a();
             return;
         }
@@ -179,10 +179,10 @@ public final class mg0 extends org.telegram.ui.Components.bk0 {
         if (fjVar2.x4()) {
             TLObject c22 = org.telegram.messenger.n5.E(B0) ? og0Var.getMessagesController().c2(Long.valueOf(B0)) : og0Var.getMessagesController().O0(Long.valueOf(-B0));
             TL_stories.StoryViews storyViews = storyItem2.views;
-            b5Var.c(c22, null, (storyViews == null || (i10 = storyViews.views_count) == 0) ? org.telegram.messenger.gd.M0(2131747940, null) : org.telegram.messenger.gd.G(i10, "Views", new Object[0]), i7 != og0Var.K + (-1));
-            cd0 cd0Var = new cd0(i15, this, fjVar2);
+            b5Var.c(c22, null, (storyViews == null || (i10 = storyViews.views_count) == 0) ? org.telegram.messenger.gd.N0(2131747939, null) : org.telegram.messenger.gd.G(i10, "Views", new Object[0]), i7 != og0Var.K + (-1));
+            jg0 jg0Var = new jg0(i15, this, fjVar2);
             b5Var.r = storyItem2;
-            b5Var.a.setOnClickListener(cd0Var);
+            b5Var.a.setOnClickListener(jg0Var);
             return;
         }
         b5Var.r = null;

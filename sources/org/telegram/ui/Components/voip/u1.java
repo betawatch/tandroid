@@ -3,13 +3,13 @@ package org.telegram.ui.Components.voip;
 import android.app.Activity;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e70;
+import org.telegram.ui.Components.g70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u1 implements e70, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class u1 implements g70, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ TLRPC.User a;
     public final /* synthetic */ TLRPC.Chat b;
     public final /* synthetic */ String c;
@@ -17,10 +17,10 @@ public final /* synthetic */ class u1 implements e70, org.telegram.ui.ActionBar.
     public final /* synthetic */ boolean e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ Activity h;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 n;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 n;
     public final /* synthetic */ org.telegram.messenger.c r;
 
-    public /* synthetic */ u1(TLRPC.User user, TLRPC.Chat chat, String str, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.messenger.c cVar) {
+    public /* synthetic */ u1(TLRPC.User user, TLRPC.Chat chat, String str, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.messenger.c cVar) {
         this.a = user;
         this.b = chat;
         this.c = str;
@@ -28,11 +28,11 @@ public final /* synthetic */ class u1 implements e70, org.telegram.ui.ActionBar.
         this.e = z11;
         this.f = z12;
         this.h = activity;
-        this.n = h2Var;
+        this.n = g2Var;
         this.r = cVar;
     }
 
-    @Override // org.telegram.ui.Components.e70
+    @Override // org.telegram.ui.Components.g70
     public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
         boolean z13 = this.d;
         Activity activity = this.h;
@@ -46,19 +46,19 @@ public final /* synthetic */ class u1 implements e70, org.telegram.ui.ActionBar.
         TLRPC.User user = this.a;
         boolean z14 = this.e;
         boolean z15 = this.f;
-        org.telegram.ui.ActionBar.h2 h2Var = this.n;
+        org.telegram.ui.ActionBar.g2 g2Var = this.n;
         if (z10 || str == null) {
-            b2.b(user, chat, str, inputPeer, z10, z14, z15, z13, activity, h2Var, cVar, false, true, z12);
+            b2.b(user, chat, str, inputPeer, z10, z14, z15, z13, activity, g2Var, cVar, false, true, z12);
             return;
         }
-        a2 a2Var = new a2(activity, chat, user, chat, str, inputPeer, z14, z15, z13, activity, h2Var, cVar, z12);
-        if (h2Var != null) {
-            h2Var.showDialog(a2Var);
+        a2 a2Var = new a2(activity, chat, user, chat, str, inputPeer, z14, z15, z13, activity, g2Var, cVar, z12);
+        if (g2Var != null) {
+            g2Var.showDialog(a2Var);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         final TLRPC.User user = this.a;
         final TLRPC.Chat chat = this.b;
@@ -67,22 +67,22 @@ public final /* synthetic */ class u1 implements e70, org.telegram.ui.ActionBar.
         final boolean z11 = this.e;
         final boolean z12 = this.f;
         final Activity activity = this.h;
-        final org.telegram.ui.ActionBar.h2 h2Var = this.n;
+        final org.telegram.ui.ActionBar.g2 g2Var = this.n;
         final org.telegram.messenger.c cVar = this.r;
         if (sharedInstance != null) {
             VoIPService.getSharedInstance().hangUp(new Runnable() { // from class: org.telegram.ui.Components.voip.w1
                 @Override // java.lang.Runnable
                 public final void run() {
                     b2.a = 0L;
-                    b2.b(TLRPC.User.this, chat, str, null, false, z10, z11, z12, activity, h2Var, cVar, true, true, false);
+                    b2.b(TLRPC.User.this, chat, str, null, false, z10, z11, z12, activity, g2Var, cVar, true, true, false);
                 }
             });
         } else {
-            b2.b(user, chat, str, null, false, z10, z11, z12, activity, h2Var, cVar, true, true, false);
+            b2.b(user, chat, str, null, false, z10, z11, z12, activity, g2Var, cVar, true, true, false);
         }
     }
 
-    public /* synthetic */ u1(boolean z10, Activity activity, org.telegram.messenger.c cVar, TLRPC.Chat chat, String str, TLRPC.User user, boolean z11, boolean z12, org.telegram.ui.ActionBar.h2 h2Var) {
+    public /* synthetic */ u1(boolean z10, Activity activity, org.telegram.messenger.c cVar, TLRPC.Chat chat, String str, TLRPC.User user, boolean z11, boolean z12, org.telegram.ui.ActionBar.g2 g2Var) {
         this.d = z10;
         this.h = activity;
         this.r = cVar;
@@ -91,6 +91,6 @@ public final /* synthetic */ class u1 implements e70, org.telegram.ui.ActionBar.
         this.a = user;
         this.e = z11;
         this.f = z12;
-        this.n = h2Var;
+        this.n = g2Var;
     }
 }

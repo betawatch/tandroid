@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ar implements TextWatcher {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class ar implements TextWatcher {
                 }
                 break;
             case 1:
-                de0 de0Var = (de0) this.d;
-                be0 be0Var = de0Var.b;
-                if (!de0Var.M) {
-                    int selectionStart = be0Var.getSelectionStart();
-                    String obj2 = be0Var.getText().toString();
+                ce0 ce0Var = (ce0) this.d;
+                ae0 ae0Var = ce0Var.b;
+                if (!ce0Var.M) {
+                    int selectionStart = ae0Var.getSelectionStart();
+                    String obj2 = ae0Var.getText().toString();
                     if (this.b == 3) {
                         obj2 = obj2.substring(0, this.c) + obj2.substring(this.c + 1);
                         selectionStart--;
@@ -88,8 +88,8 @@ public final class ar implements TextWatcher {
                         }
                         i23 = i24;
                     }
-                    de0Var.M = true;
-                    String hintText = be0Var.getHintText();
+                    ce0Var.M = true;
+                    String hintText = ae0Var.getHintText();
                     if (hintText != null) {
                         int i25 = 0;
                         while (true) {
@@ -114,11 +114,11 @@ public final class ar implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb2);
                     if (selectionStart >= 0) {
-                        be0Var.setSelection(Math.min(selectionStart, be0Var.length()));
+                        ae0Var.setSelection(Math.min(selectionStart, ae0Var.length()));
                     }
-                    be0Var.invalidate();
-                    de0Var.q();
-                    de0Var.M = false;
+                    ae0Var.invalidate();
+                    ce0Var.q();
+                    ce0Var.M = false;
                     break;
                 }
                 break;
@@ -179,9 +179,9 @@ public final class ar implements TextWatcher {
             case 3:
                 hk0 hk0Var = (hk0) this.d;
                 if (!hk0Var.b1) {
-                    org.telegram.ui.Components.g30 g30Var = (org.telegram.ui.Components.g30) hk0Var.Z[2];
-                    int selectionStart3 = g30Var.getSelectionStart();
-                    String obj4 = g30Var.getText().toString();
+                    org.telegram.ui.Components.j30 j30Var = (org.telegram.ui.Components.j30) hk0Var.Z[2];
+                    int selectionStart3 = j30Var.getSelectionStart();
+                    String obj4 = j30Var.getText().toString();
                     if (this.b == 3) {
                         obj4 = obj4.substring(0, this.c) + obj4.substring(this.c + 1);
                         selectionStart3--;
@@ -197,7 +197,7 @@ public final class ar implements TextWatcher {
                         i29 = i30;
                     }
                     hk0Var.b1 = true;
-                    String hintText3 = g30Var.getHintText();
+                    String hintText3 = j30Var.getHintText();
                     if (hintText3 != null) {
                         int i31 = 0;
                         while (true) {
@@ -220,11 +220,11 @@ public final class ar implements TextWatcher {
                             }
                         }
                     }
-                    g30Var.setText(sb4);
+                    j30Var.setText(sb4);
                     if (selectionStart3 >= 0) {
-                        g30Var.setSelection(Math.min(selectionStart3, g30Var.length()));
+                        j30Var.setSelection(Math.min(selectionStart3, j30Var.length()));
                     }
-                    g30Var.invalidate();
+                    j30Var.invalidate();
                     hk0Var.b1 = false;
                     break;
                 }
@@ -232,9 +232,9 @@ public final class ar implements TextWatcher {
             default:
                 ml0 ml0Var = (ml0) this.d;
                 if (!ml0Var.o0) {
-                    org.telegram.ui.Components.g30 g30Var2 = (org.telegram.ui.Components.g30) ml0Var.f[9];
-                    int selectionStart4 = g30Var2.getSelectionStart();
-                    String obj5 = g30Var2.getText().toString();
+                    org.telegram.ui.Components.j30 j30Var2 = (org.telegram.ui.Components.j30) ml0Var.f[9];
+                    int selectionStart4 = j30Var2.getSelectionStart();
+                    String obj5 = j30Var2.getText().toString();
                     if (this.b == 3) {
                         obj5 = obj5.substring(0, this.c) + obj5.substring(this.c + 1);
                         selectionStart4--;
@@ -250,7 +250,7 @@ public final class ar implements TextWatcher {
                         i32 = i33;
                     }
                     ml0Var.o0 = true;
-                    String hintText4 = g30Var2.getHintText();
+                    String hintText4 = j30Var2.getHintText();
                     if (hintText4 != null) {
                         int i34 = 0;
                         while (true) {
@@ -273,11 +273,11 @@ public final class ar implements TextWatcher {
                             }
                         }
                     }
-                    g30Var2.setText(sb5);
+                    j30Var2.setText(sb5);
                     if (selectionStart4 >= 0) {
-                        g30Var2.setSelection(Math.min(selectionStart4, g30Var2.length()));
+                        j30Var2.setSelection(Math.min(selectionStart4, j30Var2.length()));
                     }
-                    g30Var2.invalidate();
+                    j30Var2.invalidate();
                     ml0Var.o0 = false;
                     break;
                 }

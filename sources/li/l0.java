@@ -15,14 +15,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.s4;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.bn;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public abstract class l0 {
     public static SpannableStringBuilder a(fj fjVar, String str, String str2, boolean z10, boolean z11) {
@@ -32,20 +32,20 @@ public abstract class l0 {
         boolean z13 = tL_messageActionChangeCommunity.community_id == 0;
         if (z12) {
             if (z13) {
-                return org.telegram.messenger.g0.W2(gd.M0(z11 ? 2131751857 : z10 ? 2131751851 : 2131751845, null));
+                return org.telegram.messenger.g0.W2(gd.N0(z11 ? 2131751856 : z10 ? 2131751850 : 2131751844, null));
             }
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751859 : z10 ? 2131751853 : 2131751847, str));
+            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751858 : z10 ? 2131751852 : 2131751846, str));
         }
         if (fjVar.N3()) {
             if (z13) {
-                return org.telegram.messenger.g0.W2(gd.M0(z11 ? 2131751855 : z10 ? 2131751849 : 2131751843, null));
+                return org.telegram.messenger.g0.W2(gd.N0(z11 ? 2131751854 : z10 ? 2131751848 : 2131751842, null));
             }
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751856 : z10 ? 2131751850 : 2131751844, str));
+            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751855 : z10 ? 2131751849 : 2131751843, str));
         }
         if (z13) {
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751858 : z10 ? 2131751852 : 2131751846, str2));
+            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751857 : z10 ? 2131751851 : 2131751845, str2));
         }
-        return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751860 : z10 ? 2131751854 : 2131751848, str2, str));
+        return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751859 : z10 ? 2131751853 : 2131751847, str2, str));
     }
 
     public static int b(int i7, long j3) {
@@ -109,18 +109,18 @@ public abstract class l0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(int i7, long j3, h2 h2Var) {
-        s4 s4Var;
+    public static void d(int i7, long j3, g2 g2Var) {
+        r4 r4Var;
         bn bnVar;
         int i10;
         List list = null;
         if (org.telegram.messenger.g0.Q1()) {
-            s4Var = null;
+            r4Var = null;
             bnVar = null;
         } else {
-            s4Var = h2Var.getParentLayout();
-            if (s4Var != null) {
-                List fragmentStack = s4Var.getFragmentStack();
+            r4Var = g2Var.getParentLayout();
+            if (r4Var != null) {
+                List fragmentStack = r4Var.getFragmentStack();
                 i10 = fragmentStack.size() - 2;
                 while (true) {
                     if (i10 < 0) {
@@ -128,9 +128,9 @@ public abstract class l0 {
                         i10 = -1;
                         break;
                     }
-                    h2 h2Var2 = (h2) fragmentStack.get(i10);
-                    if (h2Var2 instanceof bn) {
-                        bnVar = (bn) h2Var2;
+                    g2 g2Var2 = (g2) fragmentStack.get(i10);
+                    if (g2Var2 instanceof bn) {
+                        bnVar = (bn) g2Var2;
                         if (bnVar.a() == j3) {
                             break;
                         }
@@ -138,56 +138,56 @@ public abstract class l0 {
                     i10--;
                 }
                 list = fragmentStack;
-                boolean U = v3.U(h2Var.getCurrentAccount(), j3);
+                boolean U = v3.U(g2Var.getCurrentAccount(), j3);
                 if (i10 != -1) {
-                    if (!(h2Var instanceof cx)) {
-                        h2Var.finishFragment();
+                    if (!(g2Var instanceof cx)) {
+                        g2Var.finishFragment();
                     }
                     f(lc.Y(), i7, U);
                     return;
                 }
                 for (int size = list.size() - 2; size > i10; size--) {
-                    ((ActionBarLayout) s4Var).d0((h2) list.get(size), false);
+                    ((ActionBarLayout) r4Var).d0((g2) list.get(size), false);
                 }
-                h2Var.finishFragment();
+                g2Var.finishFragment();
                 org.telegram.messenger.g0.h3(new g0(i7, bnVar, U), 250L);
                 return;
             }
             bnVar = null;
         }
         i10 = -1;
-        boolean U2 = v3.U(h2Var.getCurrentAccount(), j3);
+        boolean U2 = v3.U(g2Var.getCurrentAccount(), j3);
         if (i10 != -1) {
         }
     }
 
-    public static void e(u1[] u1VarArr, h2 h2Var, int i7, TLRPC.Chat chat) {
-        if (u1VarArr[0] != null) {
+    public static void e(t1[] t1VarArr, g2 g2Var, int i7, TLRPC.Chat chat) {
+        if (t1VarArr[0] != null) {
             return;
         }
         mp u12 = mp.u1(i7);
-        di.j0 j0Var = new di.j0(u1VarArr, h2Var, i7, chat);
+        di.j0 j0Var = new di.j0(t1VarArr, g2Var, i7, chat);
         TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
         tL_channels_getAdminedPublicChannels.for_community_peer = true;
         int sendRequestTyped = u12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new d3.b(1), new fl(u12, j0Var, 0));
-        ConnectionsManager.getInstance(i7).bindRequestToGuid(sendRequestTyped, h2Var.getClassGuid());
-        u1 u1Var = new u1(3, h2Var.getContext(), null);
-        u1VarArr[0] = u1Var;
-        u1Var.r(500L);
-        u1VarArr[0].setOnCancelListener(new e0(i7, sendRequestTyped, u1VarArr, 0));
+        ConnectionsManager.getInstance(i7).bindRequestToGuid(sendRequestTyped, g2Var.getClassGuid());
+        t1 t1Var = new t1(3, g2Var.getContext(), null);
+        t1VarArr[0] = t1Var;
+        t1Var.r(500L);
+        t1VarArr[0].setOnCancelListener(new e0(i7, sendRequestTyped, t1VarArr, 0));
     }
 
     public static void f(lc lcVar, int i7, boolean z10) {
-        String M0;
+        String N0;
         int i10 = i7 == 2 ? R.raw.timer_toast : R.raw.contact_check;
         int i11 = i7 == 2 ? 24 : 36;
         if (i7 == 0) {
-            M0 = gd.M0(2131751932, null);
+            N0 = gd.N0(2131751931, null);
         } else if (i7 == 1) {
-            M0 = gd.M0(z10 ? 2131751931 : 2131751930, null);
+            N0 = gd.N0(z10 ? 2131751930 : 2131751929, null);
         } else {
-            M0 = gd.M0(2131751929, null);
+            N0 = gd.N0(2131751928, null);
         }
-        lcVar.G(i10, i11, M0).j();
+        lcVar.G(i10, i11, N0).j();
     }
 }

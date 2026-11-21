@@ -1,13 +1,91 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final class zw0 {
-    public final vy0 a;
-    public final vy0 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.tgnet.TLObject;
 
-    public zw0(vy0 vy0Var, vy0 vy0Var2) {
-        this.a = vy0Var;
-        this.b = vy0Var2;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class zw0 extends View {
+    public String a;
+    public Drawable b;
+    public boolean c;
+    public int d;
+    public final d6 e;
+    public final /* synthetic */ ax0 f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zw0(ax0 ax0Var, Context context) {
+        super(context);
+        this.f = ax0Var;
+        this.d = 0;
+        this.e = new d6(this, 350L, new OvershootInterpolator(5.0f));
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float e10 = ((1.0f - this.e.e(false, isPressed() ? 1.0f : 0.0f)) * 0.2f) + 0.8f;
+        if (this.b != null) {
+            int width = getWidth() / 2;
+            int paddingTop = (getPaddingTop() + (getHeight() - getPaddingBottom())) / 2;
+            this.b.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+            canvas.scale(e10, e10, width, paddingTop);
+            Drawable drawable = this.b;
+            if (drawable instanceof p5) {
+                ((p5) drawable).p(System.currentTimeMillis());
+            }
+            this.b.draw(canvas);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof p5) {
+            ((p5) drawable).a(this);
+        }
+        this.c = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof p5) {
+            ((p5) drawable).n(this);
+        }
+        this.c = false;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L((this.d == 0 ? 0.0f : 6.66f) + 3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L((this.d != 0 ? 0.0f : 6.66f) + 3.0f));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
+    }
+
+    public void setDirection(int i7) {
+        this.d = i7;
+        invalidate();
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        Drawable drawable2 = this.b;
+        if (drawable2 instanceof p5) {
+            ((p5) drawable2).n(this);
+        }
+        this.b = drawable;
+        if ((drawable instanceof p5) && this.c) {
+            ((p5) drawable).a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        super.setPressed(z10);
+        invalidate();
     }
 }

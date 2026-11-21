@@ -13,28 +13,28 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.h01;
+import org.telegram.ui.Components.j01;
 import org.telegram.ui.Components.me;
-import org.telegram.ui.Components.ss0;
+import org.telegram.ui.Components.vs0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sh;
+import org.telegram.ui.th;
 import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ w1(int i7, o9 o9Var) {
+    public /* synthetic */ w1(int i7, p9 p9Var) {
         this.a = 3;
         this.b = i7;
-        this.c = o9Var;
+        this.c = p9Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:127:0x02c1  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0188 A[LOOP:4: B:67:0x0186->B:68:0x0188, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x02c5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0190 A[LOOP:4: B:67:0x018e->B:68:0x0190, LOOP_END] */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -42,14 +42,15 @@ public final /* synthetic */ class w1 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         fj fjVar;
         int size;
-        int i7;
-        int i10 = this.a;
-        int i11 = 0;
-        int i12 = 23;
+        ArrayList arrayList;
+        int i7 = this.a;
+        int i10 = 25;
+        int i11 = 23;
+        int i12 = 0;
         int i13 = 1;
         int i14 = this.b;
         Object obj = this.c;
-        switch (i10) {
+        switch (i7) {
             case 0:
                 f6 f6Var = (f6) obj;
                 if (tLObject instanceof TLRPC.messages_Messages) {
@@ -63,7 +64,7 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                                 fjVar2.L5();
                                 fjVar = fjVar2;
                                 if (fjVar == null) {
-                                    org.telegram.messenger.g0.g3(new aa.r(f6Var, tLObject, fjVar, 19));
+                                    org.telegram.messenger.g0.g3(new aa.r(f6Var, tLObject, fjVar, 20));
                                     break;
                                 }
                             }
@@ -75,7 +76,7 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                 }
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new ai.a1((x8) obj, i14, tLObject, 8));
+                org.telegram.messenger.g0.g3(new ai.c1((y8) obj, i14, tLObject, 8));
                 break;
             case 2:
                 fi.c1 c1Var = (fi.c1) obj;
@@ -93,7 +94,7 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                         i17++;
                         c1Var.w = ((TL_update.TL_updateGroupCall) obj2).call;
                     }
-                    org.telegram.messenger.g0.g3(new w2(i12, c1Var, mp.B0(updates, TL_update.TL_updateGroupCallMessage.class)));
+                    org.telegram.messenger.g0.g3(new f2(i10, c1Var, mp.B0(updates, TL_update.TL_updateGroupCallMessage.class)));
                     mp.u1(i16).V3(updates, false);
                     TLRPC.GroupCall groupCall = c1Var.w;
                     boolean z10 = groupCall != null && groupCall.rtmp_stream;
@@ -104,25 +105,30 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                         Object obj3 = A02.get(i18);
                         i18++;
                         TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TL_update.TL_updateGroupCallParticipants) obj3;
-                        if (tL_updateGroupCallParticipants.call.id == c1Var.g() && !z10) {
-                            int i19 = i11;
+                        if (tL_updateGroupCallParticipants.call.id != c1Var.g() || z10) {
+                            arrayList = A02;
+                        } else {
+                            int i19 = 0;
                             while (true) {
                                 if (i19 < tL_updateGroupCallParticipants.participants.size()) {
+                                    arrayList = A02;
                                     if (org.telegram.messenger.n5.o(tL_updateGroupCallParticipants.participants.get(i19).peer) == c1Var.b) {
                                         c1Var.H = tL_updateGroupCallParticipants.participants.get(i19);
                                     } else {
                                         i19++;
+                                        A02 = arrayList;
                                     }
+                                } else {
+                                    arrayList = A02;
                                 }
                             }
                             if (c1Var.H != null) {
                                 ArrayList A03 = mp.A0(updates, TL_update.TL_updateGroupCallConnection.class);
                                 size = A03.size();
                                 TLRPC.TL_dataJSON tL_dataJSON = null;
-                                i7 = 0;
-                                while (i7 < size) {
-                                    Object obj4 = A03.get(i7);
-                                    i7++;
+                                while (i12 < size) {
+                                    Object obj4 = A03.get(i12);
+                                    i12++;
                                     tL_dataJSON = ((TL_update.TL_updateGroupCallConnection) obj4).params;
                                 }
                                 i5.c.v(inputGroupCall.id, new StringBuilder("[LivePlayer] joined call "));
@@ -173,13 +179,12 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                                 }
                             }
                         }
-                        i11 = 0;
+                        A02 = arrayList;
                     }
                     ArrayList A032 = mp.A0(updates, TL_update.TL_updateGroupCallConnection.class);
                     size = A032.size();
                     TLRPC.TL_dataJSON tL_dataJSON2 = null;
-                    i7 = 0;
-                    while (i7 < size) {
+                    while (i12 < size) {
                     }
                     i5.c.v(inputGroupCall.id, new StringBuilder("[LivePlayer] joined call "));
                     c1Var.y = true;
@@ -195,31 +200,31 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new ai.a1(tLObject, i14, (o9) obj, 11));
+                org.telegram.messenger.g0.g3(new ai.c1(tLObject, i14, (p9) obj, 11));
                 break;
             case 4:
                 fi.h6 h6Var = (fi.h6) obj;
                 if (tLObject instanceof TL_stories.TL_stories_stories) {
-                    ArrayList arrayList = new ArrayList();
+                    ArrayList arrayList2 = new ArrayList();
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                    while (i11 < tL_stories_stories.stories.size()) {
-                        arrayList.add(h6Var.y(tL_stories_stories.stories.get(i11)));
-                        i11++;
+                    while (i12 < tL_stories_stories.stories.size()) {
+                        arrayList2.add(h6Var.y(tL_stories_stories.stories.get(i12)));
+                        i12++;
                     }
-                    org.telegram.messenger.g0.g3(new bi.t4(h6Var, arrayList, tL_stories_stories, this.b, 4));
+                    org.telegram.messenger.g0.g3(new bi.x4(h6Var, arrayList2, tL_stories_stories, this.b, 4));
                     break;
                 } else {
                     org.telegram.messenger.g0.g3(new fi.e6(h6Var, i13));
                     break;
                 }
             case 5:
-                org.telegram.messenger.g0.g3(new ai.a1((ki.t3) obj, tLObject, i14, 22));
+                org.telegram.messenger.g0.g3(new ai.c1((ki.s3) obj, tLObject, i14, 22));
                 break;
             case 6:
                 ((VoIPService) obj).lambda$startScreenCapture$60(i14, tLObject, tL_error);
                 break;
             case 7:
-                org.telegram.messenger.g0.g3(new org.telegram.ui.b0((ss0) obj, tLObject, i14, i12));
+                org.telegram.messenger.g0.g3(new org.telegram.ui.b0((vs0) obj, tLObject, i14, i11));
                 break;
             case 8:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -227,10 +232,10 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                 bz.l1 = System.currentTimeMillis();
                 bz.y();
                 if (tLObject instanceof TLRPC.TL_help_appUpdate) {
-                    org.telegram.messenger.g0.g3(new h01(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i14, 5));
+                    org.telegram.messenger.g0.g3(new j01(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i14, 5));
                     break;
                 } else if (tLObject instanceof TLRPC.TL_help_noAppUpdate) {
-                    org.telegram.messenger.g0.g3(new me(25));
+                    org.telegram.messenger.g0.g3(new me(i10));
                     break;
                 } else if (tL_error != null) {
                     org.telegram.messenger.g0.g3(new me(tL_error, 26));
@@ -238,10 +243,10 @@ public final /* synthetic */ class w1 implements RequestDelegate {
                 }
                 break;
             case 9:
-                org.telegram.messenger.g0.g3(new h01((sh) obj, tLObject, i14, 6));
+                org.telegram.messenger.g0.g3(new j01((th) obj, tLObject, i14, 6));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new h01((uc1) obj, i14, tLObject, i12));
+                org.telegram.messenger.g0.g3(new j01((uc1) obj, i14, tLObject, i11));
                 break;
         }
     }

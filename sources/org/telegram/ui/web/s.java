@@ -2,7 +2,7 @@ package org.telegram.ui.web;
 
 import android.content.Context;
 import android.os.Bundle;
-import bi.i2;
+import bi.m2;
 import di.n6;
 import fi.f7;
 import org.telegram.messenger.a8;
@@ -11,15 +11,15 @@ import org.telegram.messenger.q10;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements q10 {
     public final /* synthetic */ int a;
@@ -46,17 +46,17 @@ public final /* synthetic */ class s implements q10 {
             case 0:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 v0 v0Var2 = this.b;
-                i6 i6Var = v0Var2.e;
+                h6 h6Var = v0Var2.e;
                 TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) cg.c.a((TL_keyboard.KeyboardButton) obj, TL_keyboard.TL_buttonTypeRequestPeer.class);
                 f7 f7Var2 = this.c;
                 String str2 = this.d;
                 if (tL_buttonTypeRequestPeer == null) {
                     if (tL_error == null) {
-                        new lc(v0Var2, i6Var).f0("UNKNOWN_BUTTON", false);
+                        new lc(v0Var2, h6Var).f0("UNKNOWN_BUTTON", false);
                         v0Var2.x(f7Var2, "requested_chat_failed", v0.A(str2, "req_id"));
                         break;
                     } else {
-                        new lc(v0Var2, i6Var).g0(tL_error, false);
+                        new lc(v0Var2, h6Var).g0(tL_error, false);
                         v0Var2.x(f7Var2, "requested_chat_failed", v0.A(str2, "req_id"));
                         break;
                     }
@@ -70,7 +70,7 @@ public final /* synthetic */ class s implements q10 {
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             y yVar = new y(v0Var2, zArr, str2, tL_buttonTypeRequestPeer, f7Var2);
                             vg0 vg0Var2 = vg0.q2;
-                            h2 Q = LaunchActivity.Q();
+                            g2 Q = LaunchActivity.Q();
                             if (Q == null) {
                                 vg0Var = null;
                             } else {
@@ -100,11 +100,11 @@ public final /* synthetic */ class s implements q10 {
                             boolean[] zArr2 = new boolean[1];
                             b0 b0Var = new b0(v0Var2, l10, zArr2, f7Var2);
                             b0Var.E2 = new y(v0Var2, zArr2, str2, tL_buttonTypeRequestPeer, f7Var2);
-                            h2 T = LaunchActivity.T();
+                            g2 T = LaunchActivity.T();
                             if (T != null) {
-                                f2 f2Var = new f2();
-                                f2Var.a = true;
-                                T.showAsSheet(b0Var, f2Var);
+                                e2 e2Var = new e2();
+                                e2Var.a = true;
+                                T.showAsSheet(b0Var, e2Var);
                                 break;
                             }
                         }
@@ -112,9 +112,9 @@ public final /* synthetic */ class s implements q10 {
                         Context context = v0Var2.getContext();
                         int i11 = v0Var2.N;
                         TLRPC.User user = v0Var2.V;
-                        i2 i2Var = new i2(v0Var2, f7Var2, str2, tL_buttonTypeRequestPeer, 15);
-                        i6 i6Var2 = v0Var2.e;
-                        zq.e(context, i11, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, i2Var, i6Var2, new lc(v0Var2, i6Var2));
+                        m2 m2Var = new m2(v0Var2, f7Var2, str2, tL_buttonTypeRequestPeer, 15);
+                        h6 h6Var2 = v0Var2.e;
+                        br.e(context, i11, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, m2Var, h6Var2, new lc(v0Var2, h6Var2));
                         break;
                     }
                 }
@@ -122,14 +122,14 @@ public final /* synthetic */ class s implements q10 {
             case 1:
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                i6 i6Var3 = v0Var.e;
+                h6 h6Var3 = v0Var.e;
                 if (updates == null) {
                     if (tL_error2 == null) {
-                        new lc(v0Var, i6Var3).f0("UNKNOWN_BUTTON", false);
+                        new lc(v0Var, h6Var3).f0("UNKNOWN_BUTTON", false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     } else {
-                        new lc(v0Var, i6Var3).g0(tL_error2, false);
+                        new lc(v0Var, h6Var3).g0(tL_error2, false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     }
@@ -141,14 +141,14 @@ public final /* synthetic */ class s implements q10 {
             default:
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                i6 i6Var4 = v0Var.e;
+                h6 h6Var4 = v0Var.e;
                 if (updates2 == null) {
                     if (tL_error3 == null) {
-                        new lc(v0Var, i6Var4).f0("UNKNOWN_BUTTON", false);
+                        new lc(v0Var, h6Var4).f0("UNKNOWN_BUTTON", false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     } else {
-                        new lc(v0Var, i6Var4).g0(tL_error3, false);
+                        new lc(v0Var, h6Var4).g0(tL_error3, false);
                         v0Var.x(f7Var, "requested_chat_failed", v0.A(str, "req_id"));
                         break;
                     }

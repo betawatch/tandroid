@@ -10,12 +10,13 @@ import android.os.Looper;
 import android.provider.Settings;
 import h9.t1;
 import java.util.List;
+import kg.x1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
-    public final ki.e b;
+    public final x1 b;
     public final Handler c;
     public final c d;
     public final androidx.mediarouter.app.f e;
@@ -26,11 +27,11 @@ public final class e {
     public e2.e j;
     public boolean k;
 
-    public e(Context context, ki.e eVar, e2.e eVar2, AudioDeviceInfo audioDeviceInfo) {
+    public e(Context context, x1 x1Var, e2.e eVar, AudioDeviceInfo audioDeviceInfo) {
         Context applicationContext = context.getApplicationContext();
         this.a = applicationContext;
-        this.b = eVar;
-        this.j = eVar2;
+        this.b = x1Var;
+        this.j = eVar;
         this.i = audioDeviceInfo;
         String str = h2.l0.a;
         Looper myLooper = Looper.myLooper();

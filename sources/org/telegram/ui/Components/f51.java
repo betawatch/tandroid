@@ -1,46 +1,102 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class f51 extends wy {
+    public final /* synthetic */ int X;
+    public final Object Y;
 
-    public /* synthetic */ f51(int i7, View view) {
-        this.a = i7;
-        this.b = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f51(h51 h51Var, int i7, int i10) {
+        super(i7, false);
+        this.X = i10;
+        this.Y = h51Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                g51 g51Var = (g51) this.b;
-                g51Var.getClass();
-                g51Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g51Var.invalidate();
-                break;
-            case 1:
-                m51 m51Var = (m51) this.b;
-                m51Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m51Var.b = floatValue;
-                m51Var.setTranslationY(floatValue);
-                break;
+    @Override // v4.p0
+    public int A() {
+        switch (this.X) {
+            case 2:
+                return 0;
             default:
-                f71 f71Var = (f71) this.b;
-                f71Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f71Var.setAnimationIdicatorProgress(floatValue2);
-                e71 e71Var = f71Var.E;
-                if (e71Var != null) {
-                    e71Var.g(floatValue2);
-                    break;
+                return super.A();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public yt0 D1(int i7) {
+        switch (this.X) {
+            case 2:
+                yt0 yt0Var = (yt0) this.Y;
+                yt0Var.b = 100.0f;
+                yt0Var.a = 100.0f;
+                return yt0Var;
+            default:
+                return super.D1(i7);
+        }
+    }
+
+    @Override // v4.t, v4.p0
+    public void U(v4.x0 x0Var, v4.c1 c1Var, View view, s0.c cVar) {
+        switch (this.X) {
+            case 2:
+                super.U(x0Var, c1Var, view, cVar);
+                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+                qf qfVar = collectionItemInfo != null ? new qf(collectionItemInfo, 15) : null;
+                if (qfVar != null) {
+                    Object obj = qfVar.b;
+                    if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
+                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+                        break;
+                    }
                 }
                 break;
+            default:
+                super.U(x0Var, c1Var, view, cVar);
+                break;
         }
+    }
+
+    @Override // v4.c0
+    public int W0(v4.c1 c1Var) {
+        switch (this.X) {
+            case 0:
+                if (!((h51) this.Y).i3) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!((h51) this.Y).i3) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.W0(c1Var);
+    }
+
+    @Override // v4.c0
+    public void z0(v4.c1 c1Var, int[] iArr) {
+        switch (this.X) {
+            case 2:
+                super.z0(c1Var, iArr);
+                iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.q7.a(1) * 2);
+                break;
+            default:
+                super.z0(c1Var, iArr);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f51() {
+        super(100, false);
+        this.X = 2;
+        this.Y = new yt0();
     }
 }

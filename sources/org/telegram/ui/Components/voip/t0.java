@@ -2,14 +2,14 @@ package org.telegram.ui.Components.voip;
 
 import android.graphics.SurfaceTexture;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.ui.Components.h40;
+import org.telegram.ui.Components.k40;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.GlRectDrawer;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t0 implements VideoSink {
     public final EglRenderer a;
@@ -20,7 +20,7 @@ public final class t0 implements VideoSink {
         EglRenderer eglRenderer = new EglRenderer("pip-egl");
         this.a = eglRenderer;
         eglRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
-        oVar.setSurfaceTextureListener(new h40(this, 3));
+        oVar.setSurfaceTextureListener(new k40(this, 3));
         SurfaceTexture surfaceTexture = oVar.getSurfaceTexture();
         if (surfaceTexture == null || oVar.a == null) {
             return;

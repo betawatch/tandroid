@@ -47,11 +47,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class r8 extends View {
     public static final /* synthetic */ int J1 = 0;
@@ -109,7 +109,7 @@ public final class r8 extends View {
     public float X0;
     public boolean Y0;
     public float Z0;
-    public final org.telegram.ui.ActionBar.h2 a;
+    public final org.telegram.ui.ActionBar.g2 a;
     public final Matrix a0;
     public float a1;
     public final boolean b;
@@ -125,7 +125,7 @@ public final class r8 extends View {
     public final Paint e0;
     public boolean e1;
     public final LinkedHashMap f;
-    public final mh0 f0;
+    public final oh0 f0;
     public boolean f1;
     public boolean g0;
     public int g1;
@@ -168,15 +168,15 @@ public final class r8 extends View {
     public final RectF w1;
     public final Matrix x;
     public float x0;
-    public hi.m3 x1;
+    public hi.l3 x1;
     public final Paint y;
     public float y0;
-    public hi.m3 y1;
+    public hi.l3 y1;
     public float z0;
     public final s1 z1;
 
-    public r8(org.telegram.ui.ActionBar.h2 h2Var, x6 x6Var, k8.a aVar, TL_wallet.card cardVar) {
-        super(h2Var.getContext());
+    public r8(org.telegram.ui.ActionBar.g2 g2Var, x6 x6Var, k8.a aVar, TL_wallet.card cardVar) {
+        super(g2Var.getContext());
         SharedPreferences sharedPreferences;
         this.f = new LinkedHashMap();
         this.h = new ArrayList();
@@ -241,12 +241,12 @@ public final class r8 extends View {
         paint6.setColor(-16777216);
         paint6.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.I1 = new Rect();
-        this.a = h2Var;
+        this.a = g2Var;
         boolean z10 = cardVar != null;
         this.b = z10;
-        mh0 mh0Var = new mh0(R.raw.wallet_gift_trash, org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(42.0f), true, null);
-        this.f0 = mh0Var;
-        mh0Var.R(this);
+        oh0 oh0Var = new oh0(R.raw.wallet_gift_trash, org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(42.0f), true, null);
+        this.f0 = oh0Var;
+        oh0Var.R(this);
         this.c = x6Var;
         this.d = aVar;
         paint3.setShader(linearGradient);
@@ -254,7 +254,7 @@ public final class r8 extends View {
         if (z10) {
             sharedPreferences = null;
         } else {
-            sharedPreferences = getContext().getSharedPreferences("wallet_card_stickers_" + h2Var.getCurrentAccount() + "_" + u0.D(h2Var.getCurrentAccount()).y(), 0);
+            sharedPreferences = getContext().getSharedPreferences("wallet_card_stickers_" + g2Var.getCurrentAccount() + "_" + u0.D(g2Var.getCurrentAccount()).y(), 0);
         }
         this.e = sharedPreferences;
         this.Q0 = z10 ? null : sharedPreferences.getString("style", null);
@@ -282,7 +282,7 @@ public final class r8 extends View {
             d(cardVar);
             return;
         }
-        int currentAccount = h2Var.getCurrentAccount();
+        int currentAccount = g2Var.getCurrentAccount();
         mp u12 = mp.u1(currentAccount);
         long e10 = j10.i(currentAccount).e();
         TLRPC.UserFull d2 = u12.d2(e10);
@@ -440,11 +440,11 @@ public final class r8 extends View {
         return path;
     }
 
-    public static void J(hi.m3 m3Var, float f10, float f11) {
-        o(m3Var, 3);
-        m3Var.p(0.0f, f10 - m3Var.getPaddingLeft());
-        m3Var.setTranslationY(f11 - m3Var.getLayoutParams().height);
-        m3Var.invalidate();
+    public static void J(hi.l3 l3Var, float f10, float f11) {
+        o(l3Var, 3);
+        l3Var.p(0.0f, f10 - l3Var.getPaddingLeft());
+        l3Var.setTranslationY(f11 - l3Var.getLayoutParams().height);
+        l3Var.invalidate();
     }
 
     public static double N(float f10) {
@@ -507,13 +507,13 @@ public final class r8 extends View {
         return Utilities.l(((min * min2) / (rectF2.height() * rectF2.width())) * 4.0f);
     }
 
-    public static void o(hi.m3 m3Var, int i7) {
-        if ((m3Var.getTag() instanceof Integer) && ((Integer) m3Var.getTag()).intValue() == i7) {
+    public static void o(hi.l3 l3Var, int i7) {
+        if ((l3Var.getTag() instanceof Integer) && ((Integer) l3Var.getTag()).intValue() == i7) {
             return;
         }
-        m3Var.setTag(Integer.valueOf(i7));
-        m3Var.a = i7;
-        m3Var.p(1.0f, 0.0f);
+        l3Var.setTag(Integer.valueOf(i7));
+        l3Var.a = i7;
+        l3Var.p(1.0f, 0.0f);
     }
 
     public static float u(float f10, float f11, float f12) {
@@ -537,21 +537,21 @@ public final class r8 extends View {
         return x6Var.g(this, matrix) && matrix.invert(this.s);
     }
 
-    public final hi.m3 B(int i7, boolean z10) {
-        hi.m3 m3Var = new hi.m3(getContext(), 3);
-        m3Var.r(true);
-        m3Var.n(11.0f, 6.0f, z10 ? 15.0f : 11.0f, 7.0f);
-        m3Var.k(z10);
-        m3Var.L = Layout.Alignment.ALIGN_NORMAL;
-        m3Var.s(12.0f);
-        m3Var.d = -1L;
-        String M0 = gd.M0(i7, null);
-        m3Var.h = hi.m3.a(M0, m3Var.getTextPaint());
-        m3Var.v(M0);
-        m3Var.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        m3Var.setTranslationZ(getTranslationZ() + 1.0f);
-        ((ViewGroup) getParent()).addView(m3Var, c8.ma.e(-1, ks.g2, 48));
-        return m3Var;
+    public final hi.l3 B(int i7, boolean z10) {
+        hi.l3 l3Var = new hi.l3(getContext(), 3);
+        l3Var.r(true);
+        l3Var.n(11.0f, 6.0f, z10 ? 15.0f : 11.0f, 7.0f);
+        l3Var.k(z10);
+        l3Var.L = Layout.Alignment.ALIGN_NORMAL;
+        l3Var.s(12.0f);
+        l3Var.d = -1L;
+        String N0 = gd.N0(i7, null);
+        l3Var.h = hi.l3.a(N0, l3Var.getTextPaint());
+        l3Var.v(N0);
+        l3Var.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
+        l3Var.setTranslationZ(getTranslationZ() + 1.0f);
+        ((ViewGroup) getParent()).addView(l3Var, c8.ma.e(-1, ks.g2, 48));
+        return l3Var;
     }
 
     public final boolean C() {
@@ -952,10 +952,10 @@ public final class r8 extends View {
             this.t0 = false;
             return;
         }
-        y60 J = y60.J(this.a, e8Var);
+        a70 J = a70.J(this.a, e8Var);
         J.s = 51;
         if (m(v) || str.equals(this.Q0)) {
-            J.c(R.drawable.msg_colors, gd.M0(str.equals(this.Q0) ? 2131742864 : 2131742870, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
+            J.c(R.drawable.msg_colors, gd.N0(str.equals(this.Q0) ? 2131742858 : 2131742864, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
                 public final /* synthetic */ r8 b;
 
                 {
@@ -977,7 +977,7 @@ public final class r8 extends View {
                 }
             }, false);
         }
-        J.c(R.drawable.msg_sticker, gd.M0(v.b() ? 2131742863 : 2131742871, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
+        J.c(R.drawable.msg_sticker, gd.N0(v.b() ? 2131742857 : 2131742865, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
             public final /* synthetic */ r8 b;
 
             {
@@ -1641,7 +1641,7 @@ public final class r8 extends View {
                     float L = org.telegram.messenger.g0.L(15.0f);
                     Paint paint = this.H;
                     paint.setTextSize(L);
-                    f10 = (getWidth() / 2.0f) - ((paint.measureText(gd.M0(2131746126, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f);
+                    f10 = (getWidth() / 2.0f) - ((paint.measureText(gd.N0(2131746125, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f);
                     f12 = org.telegram.messenger.g0.L(30.0f);
                 }
                 p8Var.b = f10 + f12;
@@ -1935,7 +1935,7 @@ public final class r8 extends View {
                     float L = org.telegram.messenger.g0.L(15.0f);
                     Paint paint = this.H;
                     paint.setTextSize(L);
-                    p8Var4.b = ((getWidth() / 2.0f) - ((paint.measureText(gd.M0(2131746126, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f)) + org.telegram.messenger.g0.L(30.0f);
+                    p8Var4.b = ((getWidth() / 2.0f) - ((paint.measureText(gd.N0(2131746125, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f)) + org.telegram.messenger.g0.L(30.0f);
                     p8Var3.d = 500.0f;
                     p8Var3.e = 0.9f;
                     p8Var3.b = h();

@@ -3,27 +3,27 @@ package wg;
 import android.view.View;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.v3;
-import org.telegram.ui.Components.du0;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.z4;
+import org.telegram.ui.Components.a5;
+import org.telegram.ui.Components.gu0;
+import org.telegram.ui.Components.o6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements z4, du0, yg.f, yg.k {
+public final /* synthetic */ class u implements a5, gu0, yg.f, yg.k {
     public final /* synthetic */ a0 a;
 
     public /* synthetic */ u(a0 a0Var) {
         this.a = a0Var;
     }
 
-    @Override // org.telegram.ui.Components.z4
+    @Override // org.telegram.ui.Components.a5
     public void O(int i7, int i10, boolean z10) {
         a0 a0Var = this.a;
         a0Var.i2 = i7 * 1000;
         a0Var.l1(false, true);
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public void k(int i7) {
         a0 a0Var = this.a;
         int i10 = a0Var.d2;
@@ -44,17 +44,17 @@ public final /* synthetic */ class u implements z4, du0, yg.f, yg.k {
         for (int i12 = 0; i12 < bVar.f.getChildCount(); i12++) {
             View childAt = bVar.f.getChildAt(i12);
             if (childAt instanceof yg.x) {
-                n6 n6Var = ((yg.x) childAt).r;
+                o6 o6Var = ((yg.x) childAt).r;
                 String G = g12 <= 0 ? "" : gd.G(g12, "BoostingBoostsCountTitle", Integer.valueOf(g12));
-                n6Var.a();
-                n6Var.c(G, true, true);
+                o6Var.a();
+                o6Var.c(G, true, true);
             }
             if (childAt instanceof yg.g) {
                 yg.g gVar = (yg.g) childAt;
                 int F = bVar.F(gVar.getChat());
                 boolean V = v3.V(gVar.x);
                 if (gVar.y) {
-                    gVar.setSubtitle(F >= 1 ? gd.G(F, V ? "Subscribers" : "Members", new Object[0]) : gd.M0(V ? 2131751379 : 2131754876, null));
+                    gVar.setSubtitle(F >= 1 ? gd.G(F, V ? "Subscribers" : "Members", new Object[0]) : gd.N0(V ? 2131751378 : 2131754876, null));
                 } else {
                     gVar.setSubtitle(gd.G(g12, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
                 }
@@ -64,7 +64,7 @@ public final /* synthetic */ class u implements z4, du0, yg.f, yg.k {
         bVar.k(bVar.e.size() - 12, 12);
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public /* synthetic */ void o() {
     }
 }

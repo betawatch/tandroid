@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 u7Var.w = floatValue2;
                 colorMatrix.setSaturation(floatValue2);
-                if (org.telegram.ui.ActionBar.n6.I.q()) {
+                if (org.telegram.ui.ActionBar.m6.I.q()) {
                     org.telegram.messenger.g0.h(colorMatrix, (1.0f - u7Var.w) * (-0.3f));
                 }
                 u7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
@@ -79,7 +79,7 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                 w9Var.C.invalidate();
                 break;
             default:
-                z9 z9Var = (z9) ((org.telegram.ui.ActionBar.i1) this.b).b;
+                z9 z9Var = (z9) ((org.telegram.ui.ActionBar.h1) this.b).b;
                 ((aa) z9Var.b).getTransitionParams().L1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 ((aa) z9Var.b).invalidate();
                 break;

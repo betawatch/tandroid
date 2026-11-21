@@ -1,36 +1,35 @@
 package hi;
 
-import android.view.KeyEvent;
-import org.telegram.messenger.t10;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k4 implements org.telegram.ui.ActionBar.f1, t10 {
-    public final /* synthetic */ l5 a;
+public final /* synthetic */ class k4 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ k4(l5 l5Var) {
-        this.a = l5Var;
+    public /* synthetic */ k4(int i7, FrameLayout frameLayout) {
+        this.a = i7;
+        this.b = frameLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.f1
-    public void j(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.h1 h1Var;
-        l5 l5Var = this.a;
-        l5Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (h1Var = l5Var.r1) != null && h1Var.isShowing()) {
-            l5Var.r1.d(true);
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        switch (this.a) {
+            case 0:
+                ((k5) this.b).s1.d();
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.n0 n0Var = ((org.telegram.ui.ActionBar.q0) this.b).R;
+                if (n0Var != null) {
+                    n0Var.j();
+                    break;
+                }
+                break;
+            default:
+                ((tg.h0) this.b).C1.d();
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.t10
-    public void m(Object obj, TLRPC.Document document, Boolean bool) {
-        l5 l5Var = this.a;
-        l5Var.V1 = true;
-        c5 k02 = l5Var.k0(obj, document);
-        if (bool.booleanValue()) {
-            k02.setScale(1.5f);
-        }
-        l5Var.b0(k02);
     }
 }

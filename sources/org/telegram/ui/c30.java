@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -78,13 +78,13 @@ public final class c30 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                ee0 ee0Var = (ee0) obj;
+                de0 de0Var = (de0) obj;
                 if (!z10) {
-                    ee0Var.W.setVisibility(4);
+                    de0Var.W.setVisibility(4);
                 }
-                AnimatorSet animatorSet = ee0Var.M;
+                AnimatorSet animatorSet = de0Var.M;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    ee0Var.M = null;
+                    de0Var.M = null;
                     break;
                 }
                 break;
@@ -112,9 +112,9 @@ public final class c30 extends AnimatorListenerAdapter {
                 ow0 ow0Var = (ow0) obj;
                 ProfileActivity profileActivity = ow0Var.n;
                 if (ow0Var.h) {
-                    org.telegram.ui.ActionBar.h5 h5Var = profileActivity.U0;
-                    if (h5Var != null) {
-                        h5Var.setClickable(false);
+                    org.telegram.ui.ActionBar.g5 g5Var = profileActivity.U0;
+                    if (g5Var != null) {
+                        g5Var.setClickable(false);
                     }
                 } else {
                     ow0Var.setVisibility(8);
@@ -132,27 +132,27 @@ public final class c30 extends AnimatorListenerAdapter {
                     break;
                 }
             case 8:
-                tz0 tz0Var = (tz0) obj;
-                tz0Var.w = z10 ? 1.0f : 0.0f;
-                if (tz0Var.T) {
-                    tz0Var.O.invalidate();
+                uz0 uz0Var = (uz0) obj;
+                uz0Var.w = z10 ? 1.0f : 0.0f;
+                if (uz0Var.T) {
+                    uz0Var.O.invalidate();
                     break;
                 }
                 break;
             case 9:
-                n11 n11Var = (n11) obj;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = n11Var.w;
+                o11 o11Var = (o11) obj;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = o11Var.w;
                 float f11 = z10 ? 1.0f : 0.0f;
-                n11Var.M = f11;
+                o11Var.M = f11;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(f11);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.lr.g.getInterpolation(n11Var.M));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.nr.g.getInterpolation(o11Var.M));
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i10 = 0; i10 < itemsCount; i10++) {
-                    float s5 = org.telegram.messenger.g0.s(n11Var.M, i10, itemsCount, 4.0f);
+                    float s5 = org.telegram.messenger.g0.s(o11Var.M, i10, itemsCount, 4.0f);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i10).setTranslationY((1.0f - s5) * org.telegram.messenger.g0.L(-12.0f));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i10).setAlpha(s5);
                 }
-                n11Var.O = null;
+                o11Var.O = null;
                 break;
             case 10:
                 o31 o31Var = (o31) obj;
@@ -215,13 +215,13 @@ public final class c30 extends AnimatorListenerAdapter {
                 l0Var.invalidate();
                 break;
             case 15:
-                tg.o1 o1Var = (tg.o1) obj;
-                ((sg.i) o1Var).E.s1.d();
+                tg.q1 q1Var = (tg.q1) obj;
+                ((sg.i) q1Var).E.s1.d();
                 if (z10) {
-                    o1Var.x.accept(Integer.valueOf(o1Var.s));
+                    q1Var.x.accept(Integer.valueOf(q1Var.s));
                 }
-                if (o1Var.getParent() != null) {
-                    ((ViewGroup) o1Var.getParent()).removeView(o1Var);
+                if (q1Var.getParent() != null) {
+                    ((ViewGroup) q1Var.getParent()).removeView(q1Var);
                     break;
                 }
                 break;
@@ -238,12 +238,12 @@ public final class c30 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                ug.s0 s0Var = (ug.s0) obj;
-                s0Var.P = z10 ? 1.0f : 0.0f;
-                s0Var.f.invalidate();
-                ug.r0 r0Var = s0Var.h;
-                if (r0Var != null) {
-                    r0Var.invalidate();
+                ug.r0 r0Var = (ug.r0) obj;
+                r0Var.P = z10 ? 1.0f : 0.0f;
+                r0Var.f.invalidate();
+                ug.q0 q0Var = r0Var.h;
+                if (q0Var != null) {
+                    q0Var.invalidate();
                     break;
                 }
                 break;
@@ -255,7 +255,7 @@ public final class c30 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 2:
                 if (this.b) {
-                    ((ee0) this.c).W.setVisibility(0);
+                    ((de0) this.c).W.setVisibility(0);
                     break;
                 }
                 break;
@@ -273,9 +273,9 @@ public final class c30 extends AnimatorListenerAdapter {
             case 6:
                 ow0 ow0Var = (ow0) this.c;
                 ProfileActivity profileActivity = ow0Var.n;
-                org.telegram.ui.ActionBar.h5 h5Var = profileActivity.U0;
-                if (h5Var != null && !this.b) {
-                    h5Var.setClickable(true);
+                org.telegram.ui.ActionBar.g5 g5Var = profileActivity.U0;
+                if (g5Var != null && !this.b) {
+                    g5Var.setClickable(true);
                 }
                 profileActivity.F5(true);
                 ow0Var.setVisibility(0);

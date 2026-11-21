@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class fc {
     public int a;
@@ -501,7 +501,7 @@ public final class fc {
         sb2.append(this.i.id);
         sb2.append("_");
         TLRPC.ThemeSettings themeSettings = ((t5) document).a;
-        sb2.append(org.telegram.ui.ActionBar.n6.r0(themeSettings));
+        sb2.append(org.telegram.ui.ActionBar.m6.r0(themeSettings));
         sb2.append("_");
         sb2.append(themeSettings.accent_color);
         sb2.append("_");

@@ -1,184 +1,333 @@
 package kg;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Space;
-import android.widget.TextView;
-import c8.ma;
-import di.xb;
-import hi.m3;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import c8.gc;
+import hi.t5;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Serializable;
+import java.net.ConnectException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+import ki.d4;
+import oi.a6;
+import oi.b2;
+import oi.b3;
+import oi.c3;
+import oi.c6;
+import oi.e5;
+import oi.g4;
+import oi.m5;
+import oi.n5;
+import oi.t3;
+import org.telegram.messenger.sr;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.ph0;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.c5;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.cx;
+import org.telegram.ui.ww;
+import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x1 extends LinearLayout implements c6 {
-    public final /* synthetic */ int a = 0;
-    public final i6 b;
-    public final TextView c;
-    public final View d;
-    public final TextView e;
+public final /* synthetic */ class x1 implements v10, org.telegram.ui.ActionBar.q1, h2.o, i2.u, mt, oi.l0, ww, n5, Vector.TLDeserializer {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public x1(Activity activity, int i7, long j3, String str, i6 i6Var) {
-        super(activity);
-        setOrientation(1);
-        this.b = i6Var;
-        TextView textView = new TextView(activity);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setTextAlignment(4);
-        textView.setLineSpacing(org.telegram.messenger.g0.L(1.66f), 1.0f);
-        textView.setGravity(17);
-        xb xbVar = new xb(activity, 2);
-        this.d = xbVar;
-        xbVar.setTextAlignment(4);
-        xbVar.setGravity(17);
-        xbVar.setTextSize(1, 12.0f);
-        xbVar.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        xbVar.setGravity(1);
-        ph0 ph0Var = new ph0(activity);
-        ph0Var.setScaleType(ImageView.ScaleType.CENTER);
-        ph0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        xbVar.setMaxWidth(org.telegram.messenger.g0.L(160.0f));
-        int i10 = 22;
-        if (i7 == 9) {
-            ph0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(gd.M0(2131742638, null));
-            xbVar.setText(gd.M0(2131742639, null));
-            xbVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(xbVar.getText(), xbVar.getPaint())));
-        } else if ("hello".equalsIgnoreCase(str)) {
-            ph0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(gd.M0(2131752754, null));
-            xbVar.setText(gd.M0(2131752755, null));
-            xbVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(xbVar.getText(), xbVar.getPaint())));
-        } else if ("away".equalsIgnoreCase(str)) {
-            ph0Var.setImageResource(R.drawable.large_away);
-            textView.setText(gd.M0(2131752822, null));
-            xbVar.setText(gd.M0(2131752823, null));
-            xbVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(xbVar.getText(), xbVar.getPaint())));
-        } else {
-            if (i7 == 5) {
-                ph0Var.setImageResource(R.drawable.large_quickreplies);
-                v1 c10 = w1.f(j10.t0).c(j3);
-                String str2 = c10 == null ? str : c10.b;
-                textView.setText(gd.M0(2131752656, null));
-                xbVar.setMaxWidth(org.telegram.messenger.g0.L(208.0f));
-                xbVar.setTextAlignment(2);
-                xbVar.setGravity(3);
-                xbVar.setText(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131752658, str2)));
-                xbVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, 0, 0);
-                xb xbVar2 = new xb(activity, 2);
-                this.e = xbVar2;
-                xbVar2.setMaxWidth(org.telegram.messenger.g0.L(208.0f));
-                xbVar2.setTextAlignment(2);
-                xbVar2.setGravity(3);
-                xbVar2.setTextSize(1, 13.0f);
-                xbVar2.setText(org.telegram.messenger.g0.W2(gd.M0(2131752657, null)));
-                xbVar2.setPadding(org.telegram.messenger.g0.L(28.0f), 0, 0, 0);
+    public /* synthetic */ x1(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // org.telegram.ui.ww
+    public /* synthetic */ boolean G() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ww
+    public /* synthetic */ boolean P(cx cxVar) {
+        return false;
+    }
+
+    @Override // i2.u
+    public void a(long j3, h2.x xVar) {
+        switch (this.a) {
+            case 15:
+                f3.b.c(j3, xVar, ((m4.c0) this.b).c);
+                break;
+            default:
+                f3.b.d(j3, xVar, ((m4.c0) this.b).c);
+                break;
+        }
+    }
+
+    public m5.b b(h6.m mVar) {
+        m5.c cVar = (m5.c) this.b;
+        URL url = (URL) mVar.b;
+        String c10 = gc.c("CctTransportBackend");
+        if (Log.isLoggable(c10, 4)) {
+            Log.i(c10, String.format("Making request to: %s", url));
+        }
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.setConnectTimeout(30000);
+        httpURLConnection.setReadTimeout(cVar.g);
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setInstanceFollowRedirects(false);
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setRequestProperty("User-Agent", "datatransport/3.3.0 android/");
+        httpURLConnection.setRequestProperty("Content-Encoding", "gzip");
+        httpURLConnection.setRequestProperty("Content-Type", "application/json");
+        httpURLConnection.setRequestProperty("Accept-Encoding", "gzip");
+        String str = (String) mVar.d;
+        if (str != null) {
+            httpURLConnection.setRequestProperty("X-Goog-Api-Key", str);
+        }
+        try {
+            OutputStream outputStream = httpURLConnection.getOutputStream();
+            try {
+                GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(outputStream);
+                try {
+                    c5 c5Var = cVar.a;
+                    n5.m mVar2 = (n5.m) mVar.c;
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(gZIPOutputStream));
+                    pa.d dVar = (pa.d) c5Var.a;
+                    pa.e eVar = new pa.e(bufferedWriter, dVar.a, dVar.b, dVar.c, dVar.d);
+                    eVar.h(mVar2);
+                    eVar.j();
+                    eVar.b.flush();
+                    gZIPOutputStream.close();
+                    if (outputStream != null) {
+                        outputStream.close();
+                    }
+                    int responseCode = httpURLConnection.getResponseCode();
+                    Integer valueOf = Integer.valueOf(responseCode);
+                    String c11 = gc.c("CctTransportBackend");
+                    if (Log.isLoggable(c11, 4)) {
+                        Log.i(c11, String.format("Status Code: %d", valueOf));
+                    }
+                    gc.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
+                    gc.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
+                    if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
+                        return new m5.b(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
+                    }
+                    if (responseCode != 200) {
+                        return new m5.b(responseCode, null, 0L);
+                    }
+                    InputStream inputStream = httpURLConnection.getInputStream();
+                    try {
+                        InputStream gZIPInputStream = "gzip".equals(httpURLConnection.getHeaderField("Content-Encoding")) ? new GZIPInputStream(inputStream) : inputStream;
+                        try {
+                            m5.b bVar = new m5.b(responseCode, null, n5.u.a(new BufferedReader(new InputStreamReader(gZIPInputStream))).a);
+                            if (gZIPInputStream != null) {
+                                gZIPInputStream.close();
+                            }
+                            if (inputStream != null) {
+                                inputStream.close();
+                            }
+                            return bVar;
+                        } finally {
+                        }
+                    } finally {
+                    }
+                } finally {
+                }
+            } finally {
             }
-            i10 = 12;
-        }
-        int i11 = i10;
-        addView(ph0Var, ma.t(78, 78, 49, 20, 17, 20, 9));
-        addView(textView, ma.t(-2, -2, 49, 20, 0, 20, 6));
-        addView(xbVar, ma.t(-2, -2, 49, i11, 0, i11, ((xb) this.e) == null ? 19 : 9));
-        View view = (xb) this.e;
-        if (view != null) {
-            addView(view, ma.t(-2, -2, 49, 12, 0, 12, 19));
-        }
-        updateColors();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void addColorKeys(HashSet hashSet) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                hashSet.add(Integer.valueOf(n6.G6));
-                break;
+        } catch (ConnectException e10) {
+            e = e10;
+            gc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            return new m5.b(500, null, 0L);
+        } catch (UnknownHostException e11) {
+            e = e11;
+            gc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            return new m5.b(500, null, 0L);
+        } catch (IOException e12) {
+            e = e12;
+            gc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            return new m5.b(400, null, 0L);
+        } catch (na.b e13) {
+            e = e13;
+            gc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            return new m5.b(400, null, 0L);
         }
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 1:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
-        }
+    public void c(int i7) {
+        oi.y yVar = (oi.y) this.b;
+        yVar.c = i7;
+        yVar.e(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+        TLRPC.PhotoSize lambda$readParams$0;
+        lambda$readParams$0 = ((TLRPC.TL_stickerSet) this.b).lambda$readParams$0(inputSerializedData, i7, z10);
+        return lambda$readParams$0;
+    }
+
+    @Override // org.telegram.ui.Components.mt
+    public void g() {
         switch (this.a) {
-            case 0:
-                xb xbVar = (xb) this.d;
-                TextView textView = this.c;
-                if (textView != null && xbVar != null) {
-                    int i7 = n6.Zc;
-                    i6 i6Var = this.b;
-                    textView.setTextColor(n6.w0(i7, i6Var));
-                    xbVar.setTextColor(n6.w0(i7, i6Var));
-                    xb xbVar2 = (xb) this.e;
-                    if (xbVar2 != null) {
-                        xbVar2.setTextColor(n6.w0(i7, i6Var));
-                        break;
+            case 20:
+                oi.q0 q0Var = (oi.q0) this.b;
+                oi.f1 f1Var = q0Var.d;
+                oi.a aVar = q0Var.f;
+                if (aVar != null) {
+                    aVar.s = true;
+                    aVar.r = f1Var.q2;
+                }
+                if (aVar != null) {
+                    TL_iv.PageBlock pageBlock = aVar.b;
+                    if (pageBlock instanceof TL_iv.pageBlockDetails) {
+                        ((TL_iv.pageBlockDetails) pageBlock).title = c6.f(f1Var.getText());
                     }
                 }
+                c3 c3Var = q0Var.h;
+                if (c3Var != null && q0Var.f != null) {
+                    t3.S1(c3Var.a);
+                    break;
+                }
+                break;
+            case 25:
+                ((e5) this.b).g();
                 break;
             default:
-                ImageView imageView = (ImageView) this.d;
-                int i10 = n6.G6;
-                i6 i6Var2 = this.b;
-                imageView.setColorFilter(new PorterDuffColorFilter(n6.w0(i10, i6Var2), PorterDuff.Mode.SRC_IN));
-                this.c.setTextColor(n6.w0(i10, i6Var2));
-                this.e.setTextColor(n6.r1(0.75f, n6.w0(i10, i6Var2)));
+                m5 m5Var = (m5) this.b;
+                oi.a aVar2 = m5Var.a;
+                if (aVar2 != null) {
+                    aVar2.s = true;
+                    aVar2.r = m5Var.r.q2;
+                }
+                m5Var.w();
+                b3 b3Var = m5Var.F;
+                if (b3Var != null && m5Var.a != null) {
+                    t3.S1(b3Var.a);
+                    break;
+                }
                 break;
         }
     }
 
-    private final /* synthetic */ void a(HashSet hashSet) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 1:
+                ((ki.d) this.b).run();
+                break;
+            case 2:
+                ki.j jVar = (ki.j) this.b;
+                TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
+                updatestarrefprogram.bot = jVar.getMessagesController().q1(jVar.S);
+                updatestarrefprogram.commission_permille = 0;
+                org.telegram.ui.ActionBar.t1 t1Var2 = new org.telegram.ui.ActionBar.t1(3, jVar.getParentActivity(), null);
+                t1Var2.r(150L);
+                jVar.getConnectionsManager().sendRequest(updatestarrefprogram, new ki.b(jVar, t1Var2, 0));
+                break;
+            default:
+                ((aa.c0) this.b).run();
+                break;
+        }
     }
 
-    public x1(Context context, oi.j0 j0Var, i6 i6Var) {
-        super(context);
-        this.b = i6Var;
-        setOrientation(0);
-        ImageView imageView = new ImageView(context);
-        this.d = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, ma.t(42, 42, 19, 0, 0, 0, 0));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 16.0f);
-        textView2.setGravity(5);
-        addView(textView, ma.t(-2, -2, 19, 8, 0, 0, 0));
-        addView(new Space(context), ma.p(0, -2, 1.0f, ks.E1));
-        addView(textView2, ma.t(-2, -2, 21, 8, 0, 0, 0));
-        imageView.setImageResource(j0Var.a);
-        textView.setText(j0Var.b);
-        textView2.setText((CharSequence) j0Var.c.get(0));
-        updateColors();
+    @Override // h2.o
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 5:
+                ((e2.a1) obj).o((e2.e) this.b);
+                break;
+            case 6:
+                ((e2.a1) obj).E((e2.q1) this.b);
+                break;
+            case 7:
+                ((e2.a1) obj).x((g2.c) this.b);
+                break;
+            case 8:
+                ((e2.a1) obj).p(((l2.z) this.b).a.Q);
+                break;
+            case 9:
+                ((e2.a1) obj).M((e2.q0) this.b);
+                break;
+            case 10:
+            default:
+                ((m2.b) obj).b((x2.c0) this.b);
+                break;
+            case 11:
+                ((m2.b) obj).G((e2.v0) this.b);
+                break;
+            case 12:
+                ((m2.b) obj).onSeekStarted((m2.a) this.b);
+                break;
+            case 13:
+                ((m2.b) obj).z((l2.d) this.b);
+                break;
+        }
+    }
+
+    @Override // oi.l0
+    public a70 j(oi.f1 f1Var) {
+        return a70.I((b2) ((t5) this.b).b, f1Var);
+    }
+
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        switch (this.a) {
+            case 0:
+                y1.Z((y1) this.b, (o41) obj, (View) obj2);
+                break;
+            case 1:
+            case 2:
+            default:
+                View view = (View) obj2;
+                if (((t3[]) this.b)[0] != null && (view instanceof a6)) {
+                    ((a6) view).B();
+                    break;
+                }
+                break;
+            case 3:
+                ki.q.a0((ki.q) this.b, (o41) obj);
+                break;
+            case 4:
+                ((d4) this.b).a0((o41) obj);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ww
+    public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
+        g4 g4Var = (g4) this.b;
+        if (arrayList.isEmpty() || ((sr) arrayList.get(0)).a <= 0) {
+            return false;
+        }
+        g4Var.run(((sr) arrayList.get(0)).a);
+        cxVar.finishFragment();
+        return true;
+    }
+
+    public /* synthetic */ x1(m2.a aVar, Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    public /* synthetic */ x1(m2.a aVar, x2.u uVar, x2.c0 c0Var, IOException iOException, boolean z10) {
+        this.a = 14;
+        this.b = c0Var;
     }
 }

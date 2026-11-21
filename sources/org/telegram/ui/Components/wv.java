@@ -1,36 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class wv extends v4.o0 {
-    public final /* synthetic */ ry a;
+public final class wv implements View.OnFocusChangeListener {
+    public final /* synthetic */ ty a;
 
-    public wv(ry ryVar) {
-        this.a = ryVar;
+    public wv(ty tyVar) {
+        this.a = tyVar;
     }
 
-    @Override // v4.o0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
-        int R = RecyclerView.R(view);
-        ry ryVar = this.a;
-        v4.i0 adapter = ryVar.i0.getAdapter();
-        vx vxVar = ryVar.o0;
-        if (adapter == vxVar && R == vxVar.J) {
-            rect.set(0, 0, 0, 0);
-            return;
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        if (z10) {
+            String[] G0 = org.telegram.messenger.g0.G0();
+            ty tyVar = this.a;
+            tyVar.X0 = G0;
+            org.telegram.messenger.ri.d0(tyVar.d1).O(tyVar.X0, false);
         }
-        if (R == 0) {
-            vxVar.getClass();
-        }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = org.telegram.messenger.g0.L(2.0f);
-        wx wxVar = ryVar.j0;
-        vxVar.getClass();
-        rect.right = wxVar.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
     }
 }

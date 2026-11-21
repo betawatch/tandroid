@@ -12,26 +12,26 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.i2;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.o4;
 import org.telegram.ui.Cells.z6;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.m80;
 import org.telegram.ui.jw0;
 import v4.f1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class m0 extends bk0 {
+public final class m0 extends dk0 {
     public final /* synthetic */ q0 c;
 
     public m0(q0 q0Var) {
         this.c = q0Var;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(f1 f1Var) {
         return f1Var.f == 3;
     }
@@ -73,21 +73,21 @@ public final class m0 extends bk0 {
             o4 o4Var = (o4) view;
             o4Var.setTextSize(15.0f);
             o4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(2.0f));
-            o4Var.setText(gd.M0(2131753293, null));
+            o4Var.setText(gd.N0(2131753292, null));
             return;
         }
         if (i10 == 0) {
             p0 p0Var = (p0) view;
             q0Var.X1 = p0Var;
             TLRPC.Chat chat = q0Var.V1;
-            k80 k80Var = p0Var.e;
+            m80 m80Var = p0Var.e;
             try {
                 SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.G((int) mp.u1(j10.t0).s0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder R2 = org.telegram.messenger.g0.R2(gd.M0(2131753318, "BoostingReassignBoostTextLink"), n6.Xc, 2, new i2(q0Var, i11), null);
+                SpannableStringBuilder R2 = org.telegram.messenger.g0.R2(gd.N0(2131753317, "BoostingReassignBoostTextLink"), m6.Xc, 2, new h2(q0Var, i11), null);
                 int indexOf = TextUtils.indexOf(W2, "%3$s");
                 W2.replace(indexOf, indexOf + 4, (CharSequence) R2);
-                k80Var.setText(W2, TextView.BufferType.EDITABLE);
-                k80Var.post(new jw0(p0Var, indexOf, 16));
+                m80Var.setText(W2, TextView.BufferType.EDITABLE);
+                m80Var.post(new jw0(p0Var, indexOf, 16));
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
@@ -106,9 +106,9 @@ public final class m0 extends bk0 {
         } else if (i7 != 1) {
             view = i7 != 2 ? i7 != 3 ? new View(context) : new ah.r(context, true, false, q0Var.J0, true) : new o4(context, 22);
         } else {
-            int i10 = n6.a7;
-            view = new z6(context, n6.x0(null, i10, false), 0);
-            u6.h(i10, view, null);
+            int i10 = m6.a7;
+            view = new z6(context, m6.x0(null, i10, false), 0);
+            t6.h(i10, view, null);
         }
         return i5.c.q(view, view, -1, -2);
     }

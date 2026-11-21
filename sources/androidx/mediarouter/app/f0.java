@@ -1,11 +1,11 @@
 package androidx.mediarouter.app;
 
 import android.view.animation.Animation;
-import oi.a2;
-import org.telegram.ui.ActionBar.k4;
-import org.telegram.ui.ActionBar.x1;
+import oi.c2;
+import org.telegram.ui.ActionBar.j4;
+import org.telegram.ui.ActionBar.w1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class f0 implements Animation.AnimationListener {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final class f0 implements Animation.AnimationListener {
                 n0Var.o();
                 break;
             case 1:
-                ((x1) this.b).o1.setAlpha(0.0f);
+                ((w1) this.b).o1.setAlpha(0.0f);
                 break;
             default:
-                ((k4) this.b).f.post(new a2(this, 12));
+                ((j4) this.b).f.post(new c2(this, 12));
                 break;
         }
     }
@@ -47,10 +47,10 @@ public final class f0 implements Animation.AnimationListener {
             case 1:
                 break;
             default:
-                k4 k4Var = (k4) this.b;
-                k4Var.i.setEnabled(false);
-                k4Var.g.setVisibility(0);
-                k4Var.h.setVisibility(0);
+                j4 j4Var = (j4) this.b;
+                j4Var.i.setEnabled(false);
+                j4Var.g.setVisibility(0);
+                j4Var.h.setVisibility(0);
                 break;
         }
     }

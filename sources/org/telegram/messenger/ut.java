@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class ut extends View implements org.telegram.ui.Cells.i9 {
     public boolean E;
     public xr F;
     public final int a;
-    public org.telegram.ui.ActionBar.i6 b;
+    public org.telegram.ui.ActionBar.h6 b;
     public fj c;
     public TL_iv.RichMessage d;
     public ev e;
@@ -29,13 +29,13 @@ public final class ut extends View implements org.telegram.ui.Cells.i9 {
     public int x;
     public int y;
 
-    public ut(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public ut(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.x = -1;
         this.y = -1;
         this.E = true;
         this.a = i7;
-        this.b = i6Var;
+        this.b = h6Var;
         ks.i(this);
     }
 
@@ -45,7 +45,7 @@ public final class ut extends View implements org.telegram.ui.Cells.i9 {
             int i7 = this.f;
             int i10 = this.h;
             for (int i11 = 0; i11 < this.e.n.size(); i11++) {
-                arrayList.add(new oi.a5((org.telegram.ui.Cells.u9) this.e.n.get(i11), i7, i10, 3));
+                arrayList.add(new oi.b5((org.telegram.ui.Cells.u9) this.e.n.get(i11), i7, i10, 3));
             }
         }
     }
@@ -83,7 +83,7 @@ public final class ut extends View implements org.telegram.ui.Cells.i9 {
         canvas.translate(this.f, this.h);
         ev evVar = this.e;
         evVar.S(this.f, Math.max(0, (getWidth() - this.e.C) - this.f));
-        evVar.w.linkColor = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Yc : org.telegram.ui.ActionBar.n6.Xc, evVar.D);
+        evVar.w.linkColor = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.Yc : org.telegram.ui.ActionBar.m6.Xc, evVar.D);
         evVar.h(canvas, null, height > 0.0f, 0.0f, height);
         if (this.e.C()) {
             this.e.i(canvas, null);
@@ -233,11 +233,11 @@ public final class ut extends View implements org.telegram.ui.Cells.i9 {
         invalidate();
     }
 
-    public void setResourcesProvider(org.telegram.ui.ActionBar.i6 i6Var) {
-        this.b = i6Var;
+    public void setResourcesProvider(org.telegram.ui.ActionBar.h6 h6Var) {
+        this.b = h6Var;
         ev evVar = this.e;
         if (evVar != null) {
-            evVar.D = i6Var;
+            evVar.D = h6Var;
         }
     }
 

@@ -5,11 +5,11 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.nq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class w6 extends lq {
+public final class w6 extends nq {
     public final /* synthetic */ x6 M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,7 +18,7 @@ public final class w6 extends lq {
         this.M = x6Var;
     }
 
-    @Override // org.telegram.ui.Components.lq, android.text.style.ReplacementSpan
+    @Override // org.telegram.ui.Components.nq, android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
         x6 x6Var = this.M;
         FrameLayout.LayoutParams layoutParams = x6Var.Q;

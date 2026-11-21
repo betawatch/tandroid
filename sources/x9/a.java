@@ -4,10 +4,10 @@ import android.util.Log;
 import da.p1;
 import di.h;
 import java.util.concurrent.atomic.AtomicReference;
-import tg.z1;
+import tg.o1;
 import u9.o;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -16,7 +16,7 @@ public final class a {
 
     public a(o oVar) {
         this.a = oVar;
-        oVar.a(new z1(this, 16));
+        oVar.a(new o1(this, 17));
     }
 
     public final b a(String str) {

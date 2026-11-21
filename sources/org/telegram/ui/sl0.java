@@ -9,35 +9,35 @@ import android.graphics.Typeface;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class sl0 extends View {
     public final Paint E;
     public boolean F;
     public boolean G;
     public int a;
-    public final org.telegram.ui.ActionBar.i6 b;
+    public final org.telegram.ui.ActionBar.h6 b;
     public float c;
     public boolean d;
     public int e;
     public int f;
-    public final org.telegram.ui.Components.f5 h;
-    public final org.telegram.ui.Components.f5 n;
+    public final org.telegram.ui.Components.g5 h;
+    public final org.telegram.ui.Components.g5 n;
     public int r;
     public int s;
     public int w;
     public int x;
     public RadialGradient y;
 
-    public sl0(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public sl0(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.c = 0.0f;
-        org.telegram.ui.Components.lr lrVar = org.telegram.ui.Components.lr.h;
-        this.h = new org.telegram.ui.Components.f5(this, 350L, lrVar);
-        this.n = new org.telegram.ui.Components.f5(this, 350L, lrVar);
+        org.telegram.ui.Components.nr nrVar = org.telegram.ui.Components.nr.h;
+        this.h = new org.telegram.ui.Components.g5(this, 350L, nrVar);
+        this.n = new org.telegram.ui.Components.g5(this, 350L, nrVar);
         this.E = new Paint(1);
-        this.b = i6Var;
-        this.a = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, i6Var);
+        this.b = h6Var;
+        this.a = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, h6Var);
         b(-1, -1, false);
     }
 
@@ -52,14 +52,14 @@ public class sl0 extends View {
 
     public final void c(org.telegram.messenger.bp bpVar, boolean z10) {
         this.d = false;
-        org.telegram.ui.ActionBar.i6 i6Var = this.b;
+        org.telegram.ui.ActionBar.h6 h6Var = this.b;
         if (bpVar == null) {
             this.d = true;
-            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, i6Var);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, h6Var);
             this.f = w02;
             this.e = w02;
         } else {
-            boolean d = i6Var != null ? i6Var.d() : org.telegram.ui.ActionBar.n6.I.q();
+            boolean d = h6Var != null ? h6Var.d() : org.telegram.ui.ActionBar.m6.I.q();
             this.e = bpVar.c(d);
             this.f = bpVar.d(d);
         }
@@ -75,16 +75,16 @@ public class sl0 extends View {
         Canvas canvas2;
         int w02;
         boolean z10 = this.d;
-        org.telegram.ui.Components.f5 f5Var = this.n;
-        org.telegram.ui.Components.f5 f5Var2 = this.h;
-        if (z10 && (this.e != (w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, this.b)) || this.f != w02)) {
+        org.telegram.ui.Components.g5 g5Var = this.n;
+        org.telegram.ui.Components.g5 g5Var2 = this.h;
+        if (z10 && (this.e != (w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, this.b)) || this.f != w02)) {
             this.f = w02;
             this.e = w02;
-            f5Var2.a(w02, true);
-            f5Var.a(w02, true);
+            g5Var2.a(w02, true);
+            g5Var.a(w02, true);
         }
-        int a10 = f5Var2.a(this.e, false);
-        int a11 = f5Var.a(this.f, false);
+        int a10 = g5Var2.a(this.e, false);
+        int a11 = g5Var.a(this.f, false);
         RadialGradient radialGradient = this.y;
         Paint paint = this.E;
         if (radialGradient == null || this.r != a10 || this.s != a11 || this.w != getWidth() || this.x != getHeight()) {
@@ -116,23 +116,23 @@ public class sl0 extends View {
     }
 
     public int getActionBarButtonColor() {
-        int i7 = org.telegram.ui.ActionBar.n6.v8;
-        org.telegram.ui.ActionBar.i6 i6Var = this.b;
-        return i0.a.f(this.c, org.telegram.ui.ActionBar.n6.w0(i7, i6Var), this.d ? org.telegram.ui.ActionBar.n6.w0(i7, i6Var) : -1);
+        int i7 = org.telegram.ui.ActionBar.m6.v8;
+        org.telegram.ui.ActionBar.h6 h6Var = this.b;
+        return i0.a.f(this.c, org.telegram.ui.ActionBar.m6.w0(i7, h6Var), this.d ? org.telegram.ui.ActionBar.m6.w0(i7, h6Var) : -1);
     }
 
     public int getColor() {
-        return i0.a.f(this.c, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, this.b), i0.a.f(0.75f, this.h.c, this.n.c));
+        return i0.a.f(this.c, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, this.b), i0.a.f(0.75f, this.h.c, this.n.c));
     }
 
     public int getTabsViewBackgroundColor() {
-        int i7 = org.telegram.ui.ActionBar.n6.s8;
-        org.telegram.ui.ActionBar.i6 i6Var = this.b;
-        int w02 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.n6.w0(i7, i6Var)) > 0.721f ? org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.v8, i6Var) : org.telegram.ui.ActionBar.n6.b(0.08f, -0.08f, org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
-        org.telegram.ui.Components.f5 f5Var = this.h;
-        int i10 = f5Var.c;
-        org.telegram.ui.Components.f5 f5Var2 = this.n;
-        return i0.a.f(this.c, w02, org.telegram.messenger.g0.B(i0.a.f(0.75f, i10, f5Var2.c)) > 0.721f ? org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.v6, i6Var) : org.telegram.ui.ActionBar.n6.b(0.08f, -0.08f, i0.a.f(0.75f, f5Var.c, f5Var2.c)));
+        int i7 = org.telegram.ui.ActionBar.m6.s8;
+        org.telegram.ui.ActionBar.h6 h6Var = this.b;
+        int w02 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.w0(i7, h6Var)) > 0.721f ? org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.v8, h6Var) : org.telegram.ui.ActionBar.m6.b(0.08f, -0.08f, org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
+        org.telegram.ui.Components.g5 g5Var = this.h;
+        int i10 = g5Var.c;
+        org.telegram.ui.Components.g5 g5Var2 = this.n;
+        return i0.a.f(this.c, w02, org.telegram.messenger.g0.B(i0.a.f(0.75f, i10, g5Var2.c)) > 0.721f ? org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.v6, h6Var) : org.telegram.ui.ActionBar.m6.b(0.08f, -0.08f, i0.a.f(0.75f, g5Var.c, g5Var2.c)));
     }
 
     @Override // android.view.View

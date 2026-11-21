@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.sp;
+import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class v0 extends ImageView {
     public int a;
@@ -21,17 +21,17 @@ public final class v0 extends ImageView {
     public boolean c;
     public boolean d;
     public boolean e;
-    public sp f;
-    public t8 h;
+    public up f;
+    public s8 h;
     public u0 n;
-    public d7 r;
+    public c7 r;
     public s0 s;
     public Uri w;
     public boolean x;
     public boolean y;
 
     public static void a(v0 v0Var) {
-        t8 t8Var = v0Var.h;
+        s8 s8Var = v0Var.h;
         int i7 = Build.VERSION.SDK_INT;
         if ((i7 <= 28 || org.telegram.messenger.s2.b) && v0Var.getContext().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
             Activity W = org.telegram.messenger.g0.W(v0Var.getContext());
@@ -68,25 +68,25 @@ public final class v0 extends ImageView {
             s0Var.a(true);
             v0Var.s = null;
         }
-        if (t8Var != null) {
+        if (s8Var != null) {
             v0Var.e = true;
-            t8Var.a(new p0(v0Var, 0));
+            s8Var.a(new p0(v0Var, 0));
         }
         v0Var.d();
-        if (t8Var == null) {
+        if (s8Var == null) {
             v0Var.b();
         }
     }
 
     public final void b() {
-        d7 d7Var;
-        if (!this.e || (d7Var = this.r) == null) {
+        c7 c7Var;
+        if (!this.e || (c7Var = this.r) == null) {
             return;
         }
         int i7 = 0;
         this.e = false;
         int i10 = 1;
-        if (d7Var.E()) {
+        if (c7Var.E()) {
             this.d = true;
             u0 u0Var = new u0(getContext());
             this.n = u0Var;
@@ -98,7 +98,7 @@ public final class v0 extends ImageView {
             this.d = false;
             File q02 = org.telegram.messenger.g0.q0("png", false);
             if (q02 == null) {
-                this.n.b(R.raw.error, 3500, gd.N0("UnknownError"));
+                this.n.b(R.raw.error, 3500, gd.O0("UnknownError"));
                 this.c = false;
                 d();
                 return;
@@ -144,9 +144,9 @@ public final class v0 extends ImageView {
         }
     }
 
-    public void setEntry(d7 d7Var) {
+    public void setEntry(c7 c7Var) {
         this.w = null;
-        this.r = d7Var;
+        this.r = c7Var;
         s0 s0Var = this.s;
         if (s0Var != null) {
             s0Var.a(true);
@@ -157,7 +157,7 @@ public final class v0 extends ImageView {
             u0Var.a();
             this.n = null;
         }
-        if (d7Var == null) {
+        if (c7Var == null) {
             this.c = false;
             d();
         }

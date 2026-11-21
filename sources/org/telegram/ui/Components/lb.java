@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static final r1.e IN_OUT_OFFSET_Y = new hb(0);
     public static final Property<lb, Float> IN_OUT_OFFSET_Y2 = new org.telegram.ui.Cells.p8("offsetY", 8);
     Drawable background;
@@ -41,7 +41,7 @@ public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBa
     public View.OnClickListener onClickListener;
     private Runnable onGlassBackgroundRemoved;
     private boolean pillStyle;
-    private final org.telegram.ui.ActionBar.i6 resourcesProvider;
+    private final org.telegram.ui.ActionBar.h6 resourcesProvider;
     private Drawable themeBackground;
     public boolean top;
     public boolean transitionRunningEnter;
@@ -49,14 +49,14 @@ public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBa
     private int wideScreenGravity;
     private int wideScreenWidth;
 
-    public lb(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public lb(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.callbacks = new ArrayList();
         this.wideScreenWidth = -2;
         this.wideScreenGravity = 1;
-        this.resourcesProvider = i6Var;
+        this.resourcesProvider = h6Var;
         setMinimumHeight(org.telegram.messenger.g0.L(48.0f));
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.n6.wj));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.m6.wj));
         this.themeBackground = this.background;
         b();
         setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
@@ -140,7 +140,7 @@ public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBa
     }
 
     public boolean canHaveGlassBackground() {
-        return !this.hasCustomBackground && this.glassBackground == null && this.backgroundColor == getThemedColor(org.telegram.ui.ActionBar.n6.wj);
+        return !this.hasCustomBackground && this.glassBackground == null && this.backgroundColor == getThemedColor(org.telegram.ui.ActionBar.m6.wj);
     }
 
     public kb createTransition() {
@@ -155,7 +155,7 @@ public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBa
             return;
         }
         if (this.blurVisibilityDrawable == null) {
-            this.blurVisibilityDrawable = new wh.b(new b0(this, 15));
+            this.blurVisibilityDrawable = new wh.b(new c0(this, 15));
         }
         wh.b bVar = this.blurVisibilityDrawable;
         if (bVar.c == null) {
@@ -257,7 +257,7 @@ public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBa
     }
 
     public int getThemedColor(int i7) {
-        return org.telegram.ui.ActionBar.n6.w0(i7, this.resourcesProvider);
+        return org.telegram.ui.ActionBar.m6.w0(i7, this.resourcesProvider);
     }
 
     public float getTopOffset() {
@@ -393,7 +393,7 @@ public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBa
         try {
             Drawable drawable = this.background;
             if (drawable != null && drawable == this.themeBackground && (drawable instanceof ShapeDrawable)) {
-                ((ShapeDrawable) drawable).getPaint().setColor(getThemedColor(org.telegram.ui.ActionBar.n6.wj));
+                ((ShapeDrawable) drawable).getPaint().setColor(getThemedColor(org.telegram.ui.ActionBar.m6.wj));
                 invalidate();
             }
         } catch (Exception e10) {
@@ -422,7 +422,7 @@ public abstract class lb extends FrameLayout implements org.telegram.ui.ActionBa
         if (this.hasCustomBackground) {
             return;
         }
-        this.background = org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(i10), i7);
+        this.background = org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(i10), i7);
         this.backgroundColor = i7;
     }
 

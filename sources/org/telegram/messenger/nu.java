@@ -21,9 +21,9 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class nu extends zt {
     public final dv X;
@@ -39,7 +39,7 @@ public final class nu extends zt {
     public int h0;
     public final Paint i0;
     public final Path j0;
-    public final vy0 k0;
+    public final xy0 k0;
     public Drawable l0;
     public int m0;
     public boolean n0;
@@ -116,7 +116,7 @@ public final class nu extends zt {
         this.X = dvVar;
         this.Y = new dv[]{dvVar};
         if (!TextUtils.isEmpty(this.q0)) {
-            this.k0 = new vy0(this.q0, Math.max(8, bz.W0 - 4), null);
+            this.k0 = new xy0(this.q0, Math.max(8, bz.W0 - 4), null);
         }
         int L = g0.L(28.0f) + g0.L(14.0f) + (this.k0 != null ? g0.L(12.0f) + ((int) Math.ceil(r4.c)) : 0);
         int D = f3.D(14.0f, 2, Math.max(0, dvVar.h - dvVar.f));
@@ -354,7 +354,7 @@ public final class nu extends zt {
 
     public final void i0(Canvas canvas) {
         ev evVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.pl : org.telegram.ui.ActionBar.n6.ol, evVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.pl : org.telegram.ui.ActionBar.m6.ol, evVar.D);
         Paint paint = this.i0;
         paint.setColor(w02);
         RectF rectF = g0.P;
@@ -365,10 +365,10 @@ public final class nu extends zt {
     public final void j0(Canvas canvas) {
         Canvas canvas2;
         ev evVar = this.a;
-        int r12 = org.telegram.ui.ActionBar.n6.r1(0.5f, org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Wc : org.telegram.ui.ActionBar.n6.Vc, evVar.D));
-        vy0 vy0Var = this.k0;
-        if (vy0Var != null) {
-            vy0Var.p = m0() - g0.L(54.0f);
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.5f, org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.Wc : org.telegram.ui.ActionBar.m6.Vc, evVar.D));
+        xy0 xy0Var = this.k0;
+        if (xy0Var != null) {
+            xy0Var.p = m0() - g0.L(54.0f);
             canvas2 = canvas;
             this.k0.c(g0.L(14.0f), g0.L(17.0f), 1.0f, r12, canvas2);
         } else {

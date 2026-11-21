@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class p0 {
     public static /* synthetic */ void A(Object obj) {
@@ -40,7 +40,7 @@ public abstract /* synthetic */ class p0 {
 
     public static c4.b a(c4.m mVar, byte[] bArr, int i7) {
         h9.f0 p10 = h9.i0.p();
-        mVar.v(bArr, 0, i7, c4.l.c, new a1.c(p10, 17));
+        mVar.v(bArr, 0, i7, c4.l.c, new a1.c(p10, 18));
         return new c4.b(p10.f());
     }
 
@@ -782,13 +782,13 @@ public abstract /* synthetic */ class p0 {
         return hashMap;
     }
 
-    public static na.c y(int i7, ji.j jVar) {
+    public static na.c y(int i7, ji.l lVar) {
         c8.s sVar = new c8.s(i7);
-        if (((HashMap) jVar.c) == null) {
-            jVar.c = new HashMap();
+        if (((HashMap) lVar.c) == null) {
+            lVar.c = new HashMap();
         }
-        ((HashMap) jVar.c).put(c8.w.class, sVar);
-        return new na.c((String) jVar.b, ((HashMap) jVar.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) jVar.c)));
+        ((HashMap) lVar.c).put(c8.w.class, sVar);
+        return new na.c((String) lVar.b, ((HashMap) lVar.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) lVar.c)));
     }
 
     public static void z(int i7, ArrayList arrayList) {

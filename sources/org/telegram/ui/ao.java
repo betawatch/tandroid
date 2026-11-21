@@ -5,14 +5,14 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ao extends org.telegram.ui.Components.tm0 {
+public final class ao extends org.telegram.ui.Components.wm0 {
     public final /* synthetic */ jo O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ao(jo joVar, Context context, org.telegram.ui.Components.sm0 sm0Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, sm0Var, i6Var, false);
+    public ao(jo joVar, Context context, org.telegram.ui.Components.vm0 vm0Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, vm0Var, h6Var, false);
         this.O = joVar;
     }
 

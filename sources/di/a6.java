@@ -6,7 +6,7 @@ import android.graphics.Path;
 import android.view.View;
 import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a6 extends a5.h {
     public final View c;
@@ -15,15 +15,15 @@ public final class a6 extends a5.h {
     public final long f;
     public float h;
 
-    public a6(hi.d dVar, int i7) {
-        super(dVar);
+    public a6(hi.e eVar, int i7) {
+        super(eVar);
         Paint paint = new Paint(1);
         this.d = paint;
         Path path = new Path();
         this.e = path;
         this.f = System.currentTimeMillis();
         this.h = 1.0f;
-        this.c = dVar;
+        this.c = eVar;
         ((Paint) this.b).setColor(-1);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);

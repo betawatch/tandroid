@@ -1,36 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class qq0 implements org.telegram.ui.e50 {
-    public final /* synthetic */ gt0 a;
+public final class qq0 extends v4.o0 {
+    public final /* synthetic */ kq0 a;
 
-    public qq0(gt0 gt0Var) {
-        this.a = gt0Var;
+    public qq0(kq0 kq0Var) {
+        this.a = kq0Var;
     }
 
-    @Override // org.telegram.ui.e50
-    public final void c(org.telegram.ui.f50 f50Var, long j3) {
-        Bundle bundle = new Bundle();
-        bundle.putLong("chat_id", j3);
-        bundle.putBoolean("just_created_chat", true);
-        f50Var.presentFragment(new org.telegram.ui.bn(bundle), true);
-        ur0 ur0Var = this.a.S;
-        org.telegram.ui.ActionBar.h2 h2Var = ur0Var.r.y1;
-        if (ur0Var.n != 0) {
-            h2Var.getConnectionsManager().cancelRequest(ur0Var.n, true);
-            ur0Var.n = 0;
+    @Override // v4.o0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
+        if (!(view instanceof org.telegram.ui.Cells.p7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
         }
-        ur0Var.d.clear();
-        ur0Var.e = false;
-        ur0Var.h = false;
-        ur0Var.E(0L);
-        TLRPC.User c22 = h2Var.getMessagesController().c2(Long.valueOf(ur0Var.F()));
-        if (c22 != null) {
-            h2Var.getMessagesController().c3(c22, h2Var.getClassGuid(), true, null);
-        }
+        org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
+        kq0 kq0Var = this.a;
+        kq0Var.n.getClass();
+        int R = RecyclerView.R(p7Var);
+        int i7 = kq0Var.r.J;
+        p7Var.b0 = R < i7;
+        int i10 = R % i7;
+        p7Var.W = i10 == 0;
+        p7Var.a0 = i10 == i7 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

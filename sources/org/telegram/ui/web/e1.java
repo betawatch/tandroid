@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class e1 {
     public static ArrayList d;
@@ -29,13 +29,13 @@ public final class e1 {
             d = new ArrayList();
             int i7 = 1;
             while (true) {
-                String c10 = c(gd.N0("SearchEngine" + i7 + "Name"));
+                String c10 = c(gd.O0("SearchEngine" + i7 + "Name"));
                 if (c10 == null) {
                     break;
                 }
-                String c11 = c(gd.N0("SearchEngine" + i7 + "SearchURL"));
-                String c12 = c(gd.N0("SearchEngine" + i7 + "AutocompleteURL"));
-                c(gd.N0("SearchEngine" + i7 + "PrivacyPolicyURL"));
+                String c11 = c(gd.O0("SearchEngine" + i7 + "SearchURL"));
+                String c12 = c(gd.O0("SearchEngine" + i7 + "AutocompleteURL"));
+                c(gd.O0("SearchEngine" + i7 + "PrivacyPolicyURL"));
                 d.add(new e1(c10, c11, c12));
                 i7++;
             }

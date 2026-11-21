@@ -10,30 +10,30 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout {
-    public final org.telegram.ui.Components.n6 a;
+    public final org.telegram.ui.Components.o6 a;
     public final View b;
-    public final org.telegram.ui.ActionBar.i6 c;
+    public final org.telegram.ui.ActionBar.h6 c;
 
-    public e2(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public e2(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.c = i6Var;
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, false, false, false);
-        this.a = n6Var;
-        int i7 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.Y(n6Var, i7, i6Var);
-        n6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        this.c = h6Var;
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, false, false);
+        this.a = o6Var;
+        int i7 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.Y(o6Var, i7, h6Var);
+        o6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
         int i10 = 3;
-        n6Var.setGravity(gd.a0 ? 5 : 3);
-        n6Var.setImportantForAccessibility(2);
-        n6Var.setOnWidthUpdatedListener(new f(this, i10));
-        addView(n6Var, c8.ma.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
+        o6Var.setGravity(gd.a0 ? 5 : 3);
+        o6Var.setImportantForAccessibility(2);
+        o6Var.setOnWidthUpdatedListener(new f(this, i10));
+        addView(o6Var, c8.ma.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
         View view = new View(context);
         this.b = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
-        org.telegram.ui.ActionBar.u6.x(this, mutate, i7, i6Var, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.t6.x(this, mutate, i7, h6Var, PorterDuff.Mode.MULTIPLY);
         view.setBackground(mutate);
         addView(view, c8.ma.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
     }
@@ -56,9 +56,9 @@ public final class e2 extends FrameLayout {
     }
 
     public void setColor(int i7) {
-        org.telegram.ui.ActionBar.i6 i6Var = this.c;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
-        org.telegram.ui.ActionBar.u6.Y(this.a, i7, i6Var);
+        org.telegram.ui.ActionBar.h6 h6Var = this.c;
+        int w02 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
+        org.telegram.ui.ActionBar.t6.Y(this.a, i7, h6Var);
         this.b.getBackground().setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
     }
 }

@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g81 extends org.telegram.ui.Cells.r1 {
     public final Paint Ad;
@@ -17,8 +17,8 @@ public final class g81 extends org.telegram.ui.Cells.r1 {
     public final Path zd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g81(i81 i81Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, int i10, int i11, int i12) {
-        super(context, i7, false, null, i6Var);
+    public g81(i81 i81Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, int i11, int i12) {
+        super(context, i7, false, null, h6Var);
         this.Ed = i81Var;
         this.Bd = i10;
         this.Cd = i11;
@@ -47,7 +47,7 @@ public final class g81 extends org.telegram.ui.Cells.r1 {
         path.addRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), Path.Direction.CW);
         Paint paint = this.Ad;
         paint.setColor(0);
-        paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.n6.r1(this.Ed.y * 0.2f, -16777216));
+        paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.m6.r1(this.Ed.y * 0.2f, -16777216));
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
         canvas.clipPath(path);
         d1(canvas);

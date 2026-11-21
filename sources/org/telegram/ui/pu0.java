@@ -5,9 +5,9 @@ import android.view.TextureView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.telegram.ui.Components.k8 {
+public final class pu0 implements org.telegram.ui.ActionBar.n0, dr0, gh.a, org.telegram.ui.Components.j8 {
     public final /* synthetic */ ProfileActivity a;
 
     public /* synthetic */ pu0(ProfileActivity profileActivity) {
@@ -23,7 +23,7 @@ public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.t
     public int A2() {
         ProfileActivity profileActivity = this.a;
         gh.e eVar = profileActivity.M5;
-        return org.telegram.ui.ActionBar.n6.r1(profileActivity.l4(), eVar.a(eVar.e));
+        return org.telegram.ui.ActionBar.m6.r1(profileActivity.l4(), eVar.a(eVar.e));
     }
 
     @Override // gh.a
@@ -39,17 +39,17 @@ public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.t
         if (vv0Var != null && vv0Var.getCurrentListView() != null) {
             profileActivity.O.getCurrentListView().I0(true);
         }
-        profileActivity.d1.setBackgroundColor(i0.a.f(0.1f, profileActivity.f4(profileActivity.Z4.f), org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.a7, profileActivity.A0)));
+        profileActivity.d1.setBackgroundColor(i0.a.f(0.1f, profileActivity.f4(profileActivity.Z4.f), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, profileActivity.A0)));
     }
 
     @Override // org.telegram.ui.dr0
     public void H(org.telegram.messenger.fj fjVar) {
-        org.telegram.ui.Components.xf0 xf0Var = this.a.n0;
-        if (xf0Var == null || !xf0Var.a) {
+        org.telegram.ui.Components.zf0 zf0Var = this.a.n0;
+        if (zf0Var == null || !zf0Var.a) {
             return;
         }
-        xf0Var.L.e(true, 0.0f);
-        xf0Var.invalidate();
+        zf0Var.L.e(true, 0.0f);
+        zf0Var.invalidate();
     }
 
     @Override // gh.a
@@ -57,7 +57,7 @@ public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.t
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.k8
+    @Override // org.telegram.ui.Components.j8
     public void R0(int i7, int i10) {
         RectF rectF = ProfileActivity.Z6;
         ProfileActivity profileActivity = this.a;
@@ -83,7 +83,7 @@ public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.t
     public int W1() {
         ProfileActivity profileActivity = this.a;
         gh.e eVar = profileActivity.M5;
-        return org.telegram.ui.ActionBar.n6.r1(profileActivity.l4(), eVar.a(eVar.b));
+        return org.telegram.ui.ActionBar.m6.r1(profileActivity.l4(), eVar.a(eVar.b));
     }
 
     @Override // gh.a
@@ -96,13 +96,13 @@ public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.t
         return -1.0f;
     }
 
-    @Override // org.telegram.ui.Components.k8
+    @Override // org.telegram.ui.Components.j8
     public void d1() {
         this.a.presentFragment(new p4());
         dismiss();
     }
 
-    @Override // org.telegram.ui.Components.k8
+    @Override // org.telegram.ui.Components.j8
     public void dismiss() {
         this.a.T0.V(null, null);
     }
@@ -112,10 +112,10 @@ public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.t
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.o0
+    @Override // org.telegram.ui.ActionBar.n0
     public void k() {
         RectF rectF = ProfileActivity.Z6;
-        org.telegram.ui.Components.wk0.d(new a5(this.a, 19));
+        org.telegram.ui.Components.yk0.d(new a5(this.a, 19));
     }
 
     @Override // gh.a
@@ -125,7 +125,7 @@ public final class pu0 implements org.telegram.ui.ActionBar.o0, dr0, gh.a, org.t
         return i0.a.f(profileActivity.l4(), 553648127, eVar.a(eVar.c));
     }
 
-    @Override // org.telegram.ui.ActionBar.o0
+    @Override // org.telegram.ui.ActionBar.n0
     public void j() {
     }
 }

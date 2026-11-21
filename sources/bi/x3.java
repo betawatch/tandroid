@@ -1,108 +1,141 @@
 package bi;
 
 import android.content.Context;
+import android.os.SystemClock;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.q10;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.DataSettingsActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bt;
-import org.telegram.ui.cw;
-import org.telegram.ui.cx;
-import org.telegram.ui.ve;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x3 implements x10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class x3 implements q10 {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ x3(aa.r rVar, long j3, TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
-        this.a = 0;
-        this.c = rVar;
-        this.b = j3;
-        this.d = tL_messageActionStarGiftOnchainOffer;
+    public /* synthetic */ x3(int i7, org.telegram.ui.Wallet.u0 u0Var, org.telegram.ui.Wallet.d3 d3Var, org.telegram.ui.Wallet.y2 y2Var, String str, byte[] bArr, byte[] bArr2, org.telegram.ui.ActionBar.h6 h6Var) {
+        this.c = i7;
+        this.f = u0Var;
+        this.b = y2Var;
+        this.e = str;
+        this.d = bArr;
+        this.g = bArr2;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
-        int i7;
-        int i10 = this.a;
-        boolean z10 = true;
-        long j3 = this.b;
-        Object obj2 = this.d;
-        Object obj3 = this.c;
-        switch (i10) {
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        int i7 = this.a;
+        Object obj3 = this.g;
+        Object obj4 = this.d;
+        Object obj5 = this.b;
+        Object obj6 = this.f;
+        switch (i7) {
             case 0:
-                TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer = (TLRPC.TL_messageActionStarGiftOnchainOffer) obj2;
-                ((aa.r) obj3).run();
-                if (!((Boolean) obj).booleanValue()) {
-                    e4.g(j3);
-                    e4.t(2131749551, tL_messageActionStarGiftOnchainOffer.gift);
+                Runnable runnable = (Runnable) obj6;
+                Context context = (Context) obj5;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj4;
+                lc lcVar = (lc) obj3;
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                HashMap hashMap = i4.c;
+                String str = this.e;
+                int i10 = this.c;
+                if (updates == null) {
+                    hashMap.remove(str);
+                    i4.c();
+                    y4.r(context, i10, h6Var, lcVar, tL_error, null);
+                    break;
+                } else {
+                    hashMap.put(str, Long.valueOf(SystemClock.elapsedRealtime() + 60000));
+                    i4.c();
+                    mp.u1(i10).V3(updates, false);
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    gc Q = i4.h().Q(R.raw.contact_check, 36, gd.N0(2131749601, null));
+                    Q.t = true;
+                    Q.j();
                     break;
                 }
-                break;
             case 1:
-                String str = (String) obj2;
-                u4.s((TL_stars.TL_starGiftUnique) obj3, ((Boolean) obj).booleanValue() ? gd.a0(null, null, 2131749543, str, u4.k(j3)) : gd.a0(null, null, 2131749620, str));
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj6;
+                Context context2 = (Context) obj5;
+                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) obj4;
+                di.k1 k1Var = (di.k1) obj3;
+                org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) obj;
+                Boolean bool = (Boolean) obj2;
+                p0Var.h = new TL_wallet.walletOnchainGiftActionDelist();
+                p0Var.i = tL_starGiftUnique;
+                int i11 = this.c;
+                s3 s3Var = new s3(i11, context2, tL_starGiftUnique, h6Var2);
+                String str2 = this.e;
+                s3Var.k1(gd.N0(bool.booleanValue() ? 2131749512 : 2131749513, null), gd.a0(null, null, 2131749869, str2));
+                s3Var.Z1.e(gd.N0(2131749539, null), y4.i(p0Var.b), null, null);
+                s3Var.d2.i(gd.N0(2131750415, null), false, true);
+                s3Var.q2 = 2131749614;
+                s3Var.j1(p0Var);
+                s3Var.i1(new x4(k1Var, tL_starGiftUnique, str2, i11, 0), new ai.x1(3, tL_starGiftUnique, str2), new k4(context2, i11, h6Var2, s3Var, bool, 0));
+                s3Var.show();
                 break;
-            case 2:
-                di.f6 f6Var = (di.f6) obj3;
-                mp mpVar = (mp) obj2;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < mpVar.v5) {
-                    org.telegram.messenger.h3 I0 = mpVar.I0();
-                    long j10 = this.b;
-                    I0.b(j10, tL_premium_boostsStatus, new e2(f6Var, tL_premium_boostsStatus, j10, mpVar, 1));
-                    break;
-                } else {
-                    f6Var.g2.setLoading(false);
-                    f6Var.I2(true);
-                    break;
-                }
-            case 3:
-                DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) obj3;
-                Long l10 = (Long) obj;
-                org.telegram.messenger.g0.r((bt) obj2);
-                if (!dataSettingsActivity.W && System.currentTimeMillis() - j3 <= 120) {
-                    z10 = false;
-                }
-                dataSettingsActivity.W = z10;
-                dataSettingsActivity.Y = l10.longValue();
-                dataSettingsActivity.X = false;
-                if (dataSettingsActivity.a != null && (i7 = dataSettingsActivity.s) >= 0) {
-                    dataSettingsActivity.s0(i7);
-                    break;
-                }
-                break;
-            case 4:
-                Runnable runnable = (Runnable) obj;
-                ((org.telegram.ui.ActionBar.u1) obj2).r(150L);
-                cx cxVar = ((cw) obj3).b;
-                Boolean bool = cxVar.H.bot_participant;
-                if (bool != null && bool.booleanValue()) {
-                    cxVar.getMessagesController().m(this.b, cxVar.getMessagesController().c2(Long.valueOf(cxVar.I)), 0, null, cxVar, false, runnable, new ve(6, runnable), null);
-                    break;
-                } else {
-                    runnable.run();
-                    break;
-                }
             default:
-                ProfileActivity.g0((ProfileActivity) obj3, (Context) obj2, j3, (TL_payments.connectedBotStarRef) obj);
+                org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) obj6;
+                org.telegram.ui.Wallet.y2 y2Var = (org.telegram.ui.Wallet.y2) obj5;
+                byte[] bArr = (byte[]) obj4;
+                byte[] bArr2 = (byte[]) obj3;
+                TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
+                String str3 = (String) obj2;
+                if (!y2Var.e || y2Var.d) {
+                    if (sendtransfer != null) {
+                        int i12 = this.c;
+                        ConnectionsManager.getInstance(i12).sendRequestTyped(sendtransfer, new d3.b(1), new m4(i12, u0Var, this.e, bArr, bArr2, sendtransfer, y2Var));
+                        break;
+                    } else {
+                        if (str3 == null) {
+                            str3 = gd.N0(2131742722, null);
+                        }
+                        lc.c0(str3);
+                        y2Var.d = false;
+                        if (!y2Var.f) {
+                            y2Var.f = true;
+                            y2Var.b.a();
+                        }
+                        if (!y2Var.e) {
+                            y2Var.a.dismiss();
+                            break;
+                        }
+                    }
+                }
                 break;
         }
     }
 
-    public /* synthetic */ x3(Object obj, Object obj2, long j3, int i7) {
-        this.a = i7;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j3;
+    public /* synthetic */ x3(String str, int i7, Runnable runnable, Context context, org.telegram.ui.ActionBar.h6 h6Var, lc lcVar) {
+        this.e = str;
+        this.c = i7;
+        this.f = runnable;
+        this.b = context;
+        this.d = h6Var;
+        this.g = lcVar;
+    }
+
+    public /* synthetic */ x3(TL_stars.TL_starGiftUnique tL_starGiftUnique, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, String str, di.k1 k1Var) {
+        this.f = tL_starGiftUnique;
+        this.b = context;
+        this.c = i7;
+        this.d = h6Var;
+        this.e = str;
+        this.g = k1Var;
     }
 }

@@ -3,14 +3,14 @@ package ch;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j0 extends q9 {
     public boolean H;
-    public o5 I;
+    public p5 I;
     public d J;
     public boolean K;
     public final /* synthetic */ l0 L;
@@ -26,9 +26,9 @@ public final class j0 extends q9 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.K = true;
-        o5 o5Var = this.I;
-        if (o5Var != null) {
-            o5Var.a(this);
+        p5 p5Var = this.I;
+        if (p5Var != null) {
+            p5Var.a(this);
         }
         d dVar = this.J;
         if (dVar != null) {
@@ -40,9 +40,9 @@ public final class j0 extends q9 {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.K = false;
-        o5 o5Var = this.I;
-        if (o5Var != null) {
-            o5Var.n(this);
+        p5 p5Var = this.I;
+        if (p5Var != null) {
+            p5Var.n(this);
         }
         d dVar = this.J;
         if (dVar != null) {
@@ -52,9 +52,9 @@ public final class j0 extends q9 {
 
     @Override // org.telegram.ui.Components.q9, android.view.View
     public final void onDraw(Canvas canvas) {
-        o5 o5Var = this.I;
-        if (o5Var != null) {
-            o5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        p5 p5Var = this.I;
+        if (p5Var != null) {
+            p5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.I.setAlpha(ks.e4);
             this.I.draw(canvas);
             this.H = true;

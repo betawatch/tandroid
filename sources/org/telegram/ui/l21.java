@@ -1,38 +1,26 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l21 implements View.OnClickListener {
-    public final /* synthetic */ w21 a;
+    public final /* synthetic */ org.telegram.ui.Components.vg a;
     public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ SessionsActivity c;
-    public final /* synthetic */ m21 d;
+    public final /* synthetic */ n21 c;
 
-    public l21(m21 m21Var, w21 w21Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
-        this.d = m21Var;
-        this.a = w21Var;
+    public l21(n21 n21Var, org.telegram.ui.Components.vg vgVar, TLRPC.TL_authorization tL_authorization) {
+        this.c = n21Var;
+        this.a = vgVar;
         this.b = tL_authorization;
-        this.c = sessionsActivity;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.n1.getParentActivity());
-        String M0 = org.telegram.messenger.gd.M0(2131743969, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.U = M0;
-        u1Var.S = org.telegram.messenger.gd.M0(2131754071, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131743974, null), new z6(this, this.a, this.b, 21));
-        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-        this.c.showDialog(u1Var);
-        TextView textView = (TextView) u1Var.d(-1);
-        if (textView != null) {
-            org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
-        }
+        ((Switch) this.a.f).c(!r0.h, true);
+        this.b.call_requests_disabled = !((Switch) r4.f).h;
+        n21.K0(this.c);
     }
 }

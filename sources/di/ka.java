@@ -9,22 +9,22 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ka extends LinearLayout {
     public final Path a;
     public final /* synthetic */ Matrix b;
     public final /* synthetic */ RadialGradient c;
     public final /* synthetic */ Paint d;
-    public final /* synthetic */ org.telegram.ui.Components.m5 e;
+    public final /* synthetic */ org.telegram.ui.Components.n5 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ka(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.m5 m5Var) {
+    public ka(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.n5 n5Var) {
         super(context);
         this.b = matrix;
         this.c = radialGradient;
         this.d = paint;
-        this.e = m5Var;
+        this.e = n5Var;
         this.a = new Path();
     }
 

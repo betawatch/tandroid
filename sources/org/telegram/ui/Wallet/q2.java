@@ -6,7 +6,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q2 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class q2 implements DialogInterface.OnDismissListen
                 break;
             case 1:
                 TLRPC.User user = (TLRPC.User) this.b;
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     T.presentFragment(new da(user));
                     break;

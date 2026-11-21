@@ -15,7 +15,7 @@ import f7.i;
 import f7.k;
 import f7.r;
 import f7.u;
-import hi.u5;
+import hi.t5;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
@@ -30,7 +30,7 @@ import v0.n;
 import v0.p;
 import w0.h;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class f extends b1.d {
     public final Context e;
@@ -285,9 +285,9 @@ public final class f extends b1.d {
         a6.e eVar = new a6.e(dVar, aVar, a10.l, false, 0, cVar, bVar2, z11);
         t b10 = com.google.android.gms.common.api.internal.u.b();
         b10.d = new n6.c[]{new n6.c("auth_api_credentials_begin_sign_in", 8L)};
-        b10.c = new u5(a10, eVar, 11);
+        b10.c = new t5(a10, eVar, 11);
         b10.b = false;
         b10.a = 1553;
-        a10.e(0, b10.a()).addOnSuccessListener(new a1.c(new ae.d(2, cancellationSignal, this), 15)).addOnFailureListener(new ab.g(7, this, cancellationSignal));
+        a10.e(0, b10.a()).addOnSuccessListener(new a1.c(new ae.d(2, cancellationSignal, this), 16)).addOnFailureListener(new ab.g(7, this, cancellationSignal));
     }
 }

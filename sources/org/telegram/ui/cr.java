@@ -5,16 +5,16 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cr implements org.telegram.ui.Components.st0, org.telegram.ui.Components.tt0, org.telegram.messenger.mc, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.qb0, org.telegram.ui.Components.ob0 {
+public final /* synthetic */ class cr implements org.telegram.ui.Components.vt0, org.telegram.ui.Components.wt0, org.telegram.messenger.mc, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.rb0, org.telegram.ui.Components.pb0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ cr(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.tt0
+    @Override // org.telegram.ui.Components.wt0
     public void c(Object obj, float f10) {
         er erVar = (er) obj;
         switch (this.a) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class cr implements org.telegram.ui.Components.st0,
         }
     }
 
-    @Override // org.telegram.ui.Components.st0
+    @Override // org.telegram.ui.Components.vt0
     public float get(Object obj) {
         er erVar = (er) obj;
         switch (this.a) {
@@ -68,24 +68,24 @@ public final /* synthetic */ class cr implements org.telegram.ui.Components.st0,
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 10:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
             default:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ob0
+    @Override // org.telegram.ui.Components.pb0
     public String i(int i7) {
         switch (this.a) {
             case 12:
                 if (i7 == 0) {
-                    return org.telegram.messenger.gd.M0(2131748339, null);
+                    return org.telegram.messenger.gd.N0(2131748338, null);
                 }
                 Calendar calendar = Calendar.getInstance();
                 int i10 = calendar.get(1);
@@ -97,7 +97,7 @@ public final /* synthetic */ class cr implements org.telegram.ui.Components.st0,
                 return org.telegram.messenger.gd.E0().A0().format(timeInMillis) + ", " + org.telegram.messenger.gd.E0().w0().format(timeInMillis);
             case 13:
                 if (i7 == 0) {
-                    return org.telegram.messenger.gd.M0(2131748339, null);
+                    return org.telegram.messenger.gd.N0(2131748338, null);
                 }
                 Calendar calendar2 = Calendar.getInstance();
                 int i11 = calendar2.get(1);
@@ -127,7 +127,7 @@ public final /* synthetic */ class cr implements org.telegram.ui.Components.st0,
                 return String.format("%02d", Integer.valueOf(i7));
             case 21:
                 if (i7 == 0) {
-                    return org.telegram.messenger.gd.M0(2131748339, null);
+                    return org.telegram.messenger.gd.N0(2131748338, null);
                 }
                 Calendar calendar4 = Calendar.getInstance();
                 int i13 = calendar4.get(1);
@@ -146,10 +146,10 @@ public final /* synthetic */ class cr implements org.telegram.ui.Components.st0,
             case 26:
                 return org.telegram.messenger.gd.G(i7 + 1, "Minutes", new Object[0]);
             case 27:
-                return org.telegram.messenger.gd.M0(2131747715, null);
+                return org.telegram.messenger.gd.N0(2131747714, null);
             case 28:
                 if (i7 == 0) {
-                    return org.telegram.messenger.gd.M0(2131748339, null);
+                    return org.telegram.messenger.gd.N0(2131748338, null);
                 }
                 Calendar calendar5 = Calendar.getInstance();
                 int i14 = calendar5.get(1);
@@ -162,9 +162,9 @@ public final /* synthetic */ class cr implements org.telegram.ui.Components.st0,
         }
     }
 
-    @Override // org.telegram.ui.Components.qb0
-    public void n(org.telegram.ui.Components.sb0 sb0Var, int i7) {
-        Pattern pattern = org.telegram.ui.Components.b5.a;
+    @Override // org.telegram.ui.Components.rb0
+    public void n(org.telegram.ui.Components.tb0 tb0Var, int i7) {
+        Pattern pattern = org.telegram.ui.Components.c5.a;
     }
 
     @Override // org.telegram.messenger.mc

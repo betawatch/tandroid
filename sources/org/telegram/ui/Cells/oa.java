@@ -13,9 +13,9 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int n = 0;
     public final LinearLayout a;
     public final TextView b;
@@ -36,7 +36,7 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.c
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(gd.M0(2131743654, null));
+        textView.setText(gd.N0(2131743648, null));
         linearLayout.addView(textView, c8.ma.q(-1, -2, 0.0f, 55, 28, 8, 28, 0));
         TextView textView2 = new TextView(activity);
         this.c = textView2;
@@ -53,7 +53,7 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.c
         naVar.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f));
         naVar.setTypeface(org.telegram.messenger.g0.o());
         naVar.setTextSize(1, 14.22f);
-        naVar.setText(gd.M0(2131743673, null));
+        naVar.setText(gd.N0(2131743667, null));
         linearLayout2.addView(naVar, c8.ma.o(-2, 30));
         linearLayout2.addView(new Space(activity), c8.ma.p(-2, 1, 17.0f, 1));
         na naVar2 = new na(activity);
@@ -61,7 +61,7 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.c
         naVar2.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f));
         naVar2.setTypeface(org.telegram.messenger.g0.o());
         naVar2.setTextSize(1, 14.22f);
-        naVar2.setText(gd.M0(2131743663, null));
+        naVar2.setText(gd.N0(2131743657, null));
         linearLayout2.addView(naVar2, c8.ma.o(-2, 30));
         linearLayout2.addView(new Space(activity), c8.ma.p(-2, 1, 17.0f, 1));
         linearLayout.addView(linearLayout2, c8.ma.k(28.0f, 4.0f, 28.0f, 8.0f, -1, -2));
@@ -94,7 +94,7 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.c
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + linearLayout.getMeasuredHeight() + 1, TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         TextView textView;
         na naVar;
@@ -103,29 +103,29 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.c
         if (textView2 == null || (textView = this.c) == null || (naVar = this.d) == null || (naVar2 = this.e) == null) {
             return;
         }
-        textView2.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.G6, false));
-        textView.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.y6, false));
-        int i7 = org.telegram.ui.ActionBar.n6.I6;
-        naVar.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, i7, false));
-        int r12 = org.telegram.ui.ActionBar.n6.r1(org.telegram.ui.ActionBar.n6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.n6.x0(null, i7, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.y6, false));
+        int i7 = org.telegram.ui.ActionBar.m6.I6;
+        naVar.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i7, false));
+        int r12 = org.telegram.ui.ActionBar.m6.r1(org.telegram.ui.ActionBar.m6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.m6.x0(null, i7, false));
         if (naVar.getBackground() == null) {
-            naVar.setBackground(org.telegram.ui.ActionBar.n6.h0(r12, 7, org.telegram.messenger.g0.L(8.0f)));
+            naVar.setBackground(org.telegram.ui.ActionBar.m6.h0(r12, 7, org.telegram.messenger.g0.L(8.0f)));
         } else if (r12 != this.f) {
-            org.telegram.ui.ActionBar.n6.H1(naVar.getBackground(), r12, true);
+            org.telegram.ui.ActionBar.m6.H1(naVar.getBackground(), r12, true);
         }
-        int i10 = org.telegram.ui.ActionBar.n6.q7;
-        naVar2.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, i10, false));
-        int r13 = org.telegram.ui.ActionBar.n6.r1(org.telegram.ui.ActionBar.n6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.n6.x0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.m6.q7;
+        naVar2.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
+        int r13 = org.telegram.ui.ActionBar.m6.r1(org.telegram.ui.ActionBar.m6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.m6.x0(null, i10, false));
         if (naVar2.getBackground() == null) {
-            naVar2.setBackground(org.telegram.ui.ActionBar.n6.h0(r13, 7, org.telegram.messenger.g0.L(8.0f)));
+            naVar2.setBackground(org.telegram.ui.ActionBar.m6.h0(r13, 7, org.telegram.messenger.g0.L(8.0f)));
         } else if (r13 != this.h) {
-            org.telegram.ui.ActionBar.n6.H1(naVar2.getBackground(), r13, true);
+            org.telegram.ui.ActionBar.m6.H1(naVar2.getBackground(), r13, true);
         }
         this.f = r12;
         this.h = r13;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

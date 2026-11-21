@@ -4,7 +4,7 @@ import android.app.Activity;
 import java.lang.ref.WeakReference;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class js implements gs, fs {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class js implements gs, fs {
                 }
             case 1:
                 if (i7 == 277) {
-                    ((org.telegram.ui.ActionBar.u1) this.b).dismiss();
+                    ((org.telegram.ui.ActionBar.t1) this.b).dismiss();
                     ks.e().n(this, i7);
                     g0.h3(new org.telegram.ui.lz(this, 13), 100L);
                     break;

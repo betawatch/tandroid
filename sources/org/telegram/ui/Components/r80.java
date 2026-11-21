@@ -1,69 +1,101 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 import android.view.View;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class r80 extends View implements org.telegram.ui.ActionBar.c6 {
-    public final TextPaint a;
-    public final Paint b;
-    public final String c;
-    public final Rect d;
-    public View e;
+public final class r80 extends ReplacementSpan {
+    public final int a;
+    public View b;
+    public final q80 c;
+    public final int d;
+    public float e;
+    public float f;
+    public float h;
+    public boolean n;
+    public boolean r;
 
-    public r80(Context context) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new Paint(1);
-        this.d = new Rect();
-        this.c = org.telegram.messenger.gd.M0(2131748535, null);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        updateColors();
+    public r80(int i7, View view) {
+        this(view, i7, org.telegram.messenger.g0.L(2.0f), null);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        View view = this.e;
-        Rect rect = this.d;
-        float width = view != null ? ((((getWidth() - rect.width()) - org.telegram.messenger.g0.L(8.0f)) - this.e.getPaddingLeft()) - this.e.getPaddingRight()) / 2.0f : org.telegram.messenger.g0.L(64.0f);
-        Paint paint = this.b;
-        canvas.drawLine((((getWidth() - rect.width()) / 2.0f) - org.telegram.messenger.g0.L(8.0f)) - width, getHeight() / 2.0f, ((getWidth() - rect.width()) / 2.0f) - org.telegram.messenger.g0.L(8.0f), getHeight() / 2.0f, paint);
-        canvas.drawLine(((rect.width() + getWidth()) / 2.0f) + org.telegram.messenger.g0.L(8.0f), getHeight() / 2.0f, ((rect.width() + getWidth()) / 2.0f) + org.telegram.messenger.g0.L(8.0f) + width, getHeight() / 2.0f, paint);
-        canvas.drawText(this.c, (getWidth() - rect.width()) / 2.0f, (rect.height() + getHeight()) / 2.0f, this.a);
+    public final void a(int i7, int i10) {
+        this.r = false;
+        Integer valueOf = Integer.valueOf(i7);
+        q80 q80Var = this.c;
+        q80Var.o = valueOf;
+        q80Var.p = Integer.valueOf(i10);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        View view = this.e;
-        if (view != null) {
-            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(view.getMeasuredWidth()), TLObject.FLAG_30);
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        View view;
+        boolean z10 = this.n;
+        int i14 = this.a;
+        if (z10 && (view = this.b) != null && view.getMeasuredWidth() > 0) {
+            i14 = ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i14;
         }
-        super.onMeasure(i7, i10);
-        String str = this.c;
-        this.a.getTextBounds(str, 0, str.length(), this.d);
+        float f11 = this.f;
+        q80 q80Var = this.c;
+        if (f11 > 0.0f) {
+            float f12 = (i11 + i13) / 2.0f;
+            int i15 = (int) f10;
+            float f13 = f11 / 2.0f;
+            q80Var.setBounds(i15, (int) (f12 - f13), i14 + i15, (int) (f13 + f12));
+        } else {
+            int i16 = (int) f10;
+            float z11 = com.google.android.gms.internal.vision.e2.z(1.0f, this.e, org.telegram.messenger.f3.z(2.0f, i13, i11) / 2.0f, i11);
+            float f14 = this.d;
+            q80Var.setBounds(i16, (int) (z11 + f14), i14 + i16, (int) (((i13 - org.telegram.messenger.g0.L(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.f3.z(2.0f, i13, i11) / 2.0f))) + f14));
+        }
+        if (this.r && paint != null) {
+            int color = paint.getColor();
+            q80Var.f(org.telegram.ui.ActionBar.m6.r1(0.1f, color), org.telegram.ui.ActionBar.m6.r1(0.25f, color));
+        }
+        q80Var.setAlpha((int) ((paint == null ? org.telegram.messenger.ks.e4 : paint.getAlpha()) * this.h));
+        q80Var.draw(canvas);
+        View view2 = this.b;
+        if (view2 != null) {
+            view2.invalidate();
+        }
     }
 
-    public void setMeasureAfter(View view) {
-        this.e = view;
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        View view;
+        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
+        if (fontMetricsInt != null) {
+            fontMetricsInt.ascent = (int) fontMetrics.ascent;
+            fontMetricsInt.bottom = (int) fontMetrics.bottom;
+            fontMetricsInt.descent = (int) fontMetrics.descent;
+            fontMetricsInt.leading = (int) fontMetrics.leading;
+            fontMetricsInt.top = (int) fontMetrics.top;
+        }
+        boolean z10 = this.r;
+        q80 q80Var = this.c;
+        if (z10 || (q80Var.o == null && q80Var.p == null)) {
+            this.r = true;
+            int color = paint.getColor();
+            q80Var.f(org.telegram.ui.ActionBar.m6.r1(0.1f, color), org.telegram.ui.ActionBar.m6.r1(0.25f, color));
+        }
+        boolean z11 = this.n;
+        int i11 = this.a;
+        return (!z11 || (view = this.b) == null || view.getMeasuredWidth() <= 0) ? i11 : ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i11;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        this.a.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.y6, false));
-        this.b.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.zj, false));
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public r80(View view, int i7, int i10, org.telegram.ui.ActionBar.h6 h6Var) {
+        this.e = 1.0f;
+        this.f = -1.0f;
+        this.h = 1.0f;
+        this.n = false;
+        this.b = view;
+        this.a = i7;
+        this.d = i10;
+        q80 q80Var = new q80(h6Var);
+        this.c = q80Var;
+        q80Var.k(4.0f);
     }
 }

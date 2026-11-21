@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c20 {
     public boolean A;
@@ -25,12 +25,12 @@ public final class c20 {
     public Bitmap G;
     public Matrix H;
     public View I;
-    public org.telegram.ui.Components.b6 J;
+    public org.telegram.ui.Components.c6 J;
     public boolean K;
     public Canvas L;
     public TL_stories.MediaArea M;
     public TLRPC.MessageMedia N;
-    public hi.qb O;
+    public hi.pb O;
     public float P;
     public long Q;
     public long R;
@@ -38,7 +38,7 @@ public final class c20 {
     public long T;
     public int U;
     public int V;
-    public tg.h0 W;
+    public tg.i0 W;
     public byte a;
     public byte b;
     public float c;
@@ -259,7 +259,7 @@ public final class c20 {
         String readString = abstractSerializedData.readString(z11);
         this.o = readString;
         sg.a0 a0Var2 = sg.a0.e;
-        tg.h0 h0Var = null;
+        tg.i0 i0Var = null;
         if (readString != null && !TextUtils.isEmpty(readString)) {
             List c10 = sg.a0.c();
             for (int i10 = 0; i10 < c10.size(); i10++) {
@@ -305,11 +305,11 @@ public final class c20 {
             this.M = TL_stories.MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z11), z11);
             int readInt323 = abstractSerializedData.readInt32(z11);
             if (-625858389 != readInt323) {
-                int i11 = tg.h0.j;
+                int i11 = tg.i0.j;
             } else {
-                h0Var = new tg.h0();
+                i0Var = new tg.i0();
             }
-            this.W = (tg.h0) TLObject.TLdeserialize(tg.h0.class, h0Var, abstractSerializedData, readInt323, z11);
+            this.W = (tg.i0) TLObject.TLdeserialize(tg.i0.class, i0Var, abstractSerializedData, readInt323, z11);
             return;
         }
         if (b10 == 4) {
@@ -334,12 +334,12 @@ public final class c20 {
             return;
         }
         if (b10 == 8 && abstractSerializedData.readInt32(z11) == 132805945) {
-            hi.qb qbVar = new hi.qb();
-            qbVar.a = abstractSerializedData.readDouble(false);
-            qbVar.b = abstractSerializedData.readDouble(false);
-            qbVar.c = abstractSerializedData.readString(false);
-            qbVar.d = abstractSerializedData.readFloat(false);
-            this.O = qbVar;
+            hi.pb pbVar = new hi.pb();
+            pbVar.a = abstractSerializedData.readDouble(false);
+            pbVar.b = abstractSerializedData.readDouble(false);
+            pbVar.c = abstractSerializedData.readString(false);
+            pbVar.d = abstractSerializedData.readFloat(false);
+            this.O = pbVar;
         }
     }
 }

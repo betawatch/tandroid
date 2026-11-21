@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class lz extends Drawable {
     public static float v;
@@ -38,7 +38,7 @@ public final class lz extends Drawable {
     public ImageReceiver k;
     public int m;
     public Integer n;
-    public org.telegram.ui.ActionBar.i6 o;
+    public org.telegram.ui.ActionBar.h6 o;
     public float p;
     public static final int[] u = new int[2];
     public static boolean A = pc.e(32);
@@ -231,9 +231,9 @@ public final class lz extends Drawable {
         c(canvas, false, 0, System.currentTimeMillis(), getBounds().left, getBounds().top, getBounds().width(), getBounds().height());
     }
 
-    public final void e(int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+    public final void e(int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         this.m = i7;
-        this.o = i6Var;
+        this.o = h6Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -251,11 +251,11 @@ public final class lz extends Drawable {
     /* JADX WARN: Type inference failed for: r28v7 */
     /* JADX WARN: Type inference failed for: r28v8 */
     /* JADX WARN: Type inference failed for: r28v9 */
-    public final void f(int i7, org.telegram.ui.ActionBar.i6 i6Var, float f10, boolean z10) {
+    public final void f(int i7, org.telegram.ui.ActionBar.h6 h6Var, float f10, boolean z10) {
         BitmapShader bitmapShader;
         Integer num = this.n;
-        int w02 = num == null ? org.telegram.ui.ActionBar.n6.w0(i7, i6Var) : num.intValue();
-        this.o = i6Var;
+        int w02 = num == null ? org.telegram.ui.ActionBar.m6.w0(i7, h6Var) : num.intValue();
+        this.o = h6Var;
         int[] iArr = this.l;
         if (iArr[z10 ? 1 : 0] != w02) {
             this.p = f10;

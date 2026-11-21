@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class o91 extends View {
     public final HashMap a;
@@ -42,7 +42,7 @@ public final class o91 extends View {
                         i11 = size - L3;
                         L = org.telegram.messenger.g0.L(22.0f);
                     }
-                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.n6.B0[0].measureText(str) <= ((float) ((i11 - L) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.n6.I0.measureText("00:00"))))));
+                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.m6.B0[0].measureText(str) <= ((float) ((i11 - L) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.m6.I0.measureText("00:00"))))));
                     hashMap.put(str, bool);
                 }
                 int L4 = org.telegram.messenger.g0.L((!bool.booleanValue() ? 20 : 0) + 64);

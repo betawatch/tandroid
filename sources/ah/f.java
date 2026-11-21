@@ -8,24 +8,24 @@ import c8.ma;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
-    public final i6 a;
+    public final h6 a;
     public final TextView b;
 
-    public f(Context context, i6 i6Var) {
+    public f(Context context, h6 h6Var) {
         super(context);
-        this.a = i6Var;
-        u6.h(n6.e7, this, i6Var);
+        this.a = h6Var;
+        t6.h(m6.e7, this, h6Var);
         TextView textView = new TextView(getContext());
         this.b = textView;
         i5.c.x(textView, 1, 14.0f);
-        u6.U(textView, n6.f7, i6Var);
+        t6.U(textView, m6.f7, h6Var);
         textView.setGravity((gd.a0 ? 5 : 3) | 16);
         addView(textView, ma.d(-1, -1.0f, (gd.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
@@ -40,6 +40,6 @@ public final class f extends FrameLayout {
     }
 
     public void setTextColor(int i7) {
-        u6.U(this.b, i7, this.a);
+        t6.U(this.b, i7, this.a);
     }
 }

@@ -2,11 +2,11 @@ package fi;
 
 import android.animation.ValueAnimator;
 import android.view.View;
-import hi.eb;
+import hi.db;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,19 +43,19 @@ public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                hi.l5 l5Var = (hi.l5) this.b;
+                hi.k5 k5Var = (hi.k5) this.b;
                 View view = (View) this.c;
                 View view2 = (View) this.d;
-                l5Var.K0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l5Var.G0.invalidate();
-                l5Var.D0.invalidate();
-                l5Var.E0.invalidate();
+                k5Var.K0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k5Var.G0.invalidate();
+                k5Var.D0.invalidate();
+                k5Var.E0.invalidate();
                 int i7 = 0;
-                while (i7 < l5Var.G0.getChildCount()) {
-                    l5Var.G0.getChildAt(i7).setAlpha(((i7 == l5Var.J0 ? l5Var.K0 : i7 == l5Var.I0 ? 1.0f - l5Var.K0 : 0.0f) * 0.4f) + 0.6f);
+                while (i7 < k5Var.G0.getChildCount()) {
+                    k5Var.G0.getChildAt(i7).setAlpha(((i7 == k5Var.J0 ? k5Var.K0 : i7 == k5Var.I0 ? 1.0f - k5Var.K0 : 0.0f) * 0.4f) + 0.6f);
                     i7++;
                 }
-                float interpolation = lr.f.getInterpolation(l5Var.K0);
+                float interpolation = nr.f.getInterpolation(k5Var.K0);
                 if (view != null && view2 != null) {
                     float f10 = 1.0f - interpolation;
                     float f11 = (f10 * 0.4f) + 0.6f;
@@ -72,15 +72,15 @@ public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                eb ebVar = (eb) this.b;
+                db dbVar = (db) this.b;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
-                hi.v vVar = (hi.v) this.d;
-                ebVar.getClass();
+                hi.w wVar = (hi.w) this.d;
+                dbVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 Math.abs(floatValue - 0.5f);
                 if (floatValue >= 0.5f && !atomicBoolean.get()) {
                     atomicBoolean.set(true);
-                    ebVar.setDrawable(vVar);
+                    dbVar.setDrawable(wVar);
                     break;
                 }
                 break;
@@ -103,19 +103,19 @@ public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateLis
                 r1Var.invalidate();
                 break;
             default:
-                tg.g0 g0Var = (tg.g0) this.b;
+                tg.h0 h0Var = (tg.h0) this.b;
                 View view3 = (View) this.c;
                 View view4 = (View) this.d;
-                g0Var.S0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g0Var.P0.invalidate();
-                g0Var.M0.invalidate();
-                g0Var.N0.invalidate();
+                h0Var.S0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h0Var.P0.invalidate();
+                h0Var.M0.invalidate();
+                h0Var.N0.invalidate();
                 int i10 = 0;
-                while (i10 < g0Var.P0.getChildCount()) {
-                    g0Var.P0.getChildAt(i10).setAlpha(((i10 == g0Var.R0 ? g0Var.S0 : i10 == g0Var.Q0 ? 1.0f - g0Var.S0 : 0.0f) * 0.4f) + 0.6f);
+                while (i10 < h0Var.P0.getChildCount()) {
+                    h0Var.P0.getChildAt(i10).setAlpha(((i10 == h0Var.R0 ? h0Var.S0 : i10 == h0Var.Q0 ? 1.0f - h0Var.S0 : 0.0f) * 0.4f) + 0.6f);
                     i10++;
                 }
-                float interpolation2 = lr.f.getInterpolation(g0Var.S0);
+                float interpolation2 = nr.f.getInterpolation(h0Var.S0);
                 if (view3 != null && view4 != null) {
                     float f13 = 1.0f - interpolation2;
                     float f14 = (f13 * 0.4f) + 0.6f;

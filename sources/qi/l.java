@@ -2,17 +2,17 @@ package qi;
 
 import com.google.android.gms.internal.play_billing.s0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class l {
-    public final ji.j a;
+    public final ji.l a;
     public final long b;
 
-    public l(n nVar, ji.j jVar) {
+    public l(n nVar, ji.l lVar) {
         long length;
-        this.a = jVar;
+        this.a = lVar;
         long length2 = ((nVar.b.length() + nVar.a.length()) * 2) + 128;
-        s0 s0Var = (s0) jVar.b;
+        s0 s0Var = (s0) lVar.b;
         if (s0Var == null) {
             length = 1024;
         } else {

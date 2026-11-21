@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.fg;
+import org.telegram.ui.Components.ig;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -24,7 +24,7 @@ import org.telegram.ui.qv0;
 import org.telegram.ui.rv0;
 import org.telegram.ui.s90;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -67,15 +67,15 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 return;
             case 1:
-                x8 x8Var = (x8) obj4;
+                y8 y8Var = (y8) obj4;
                 x10 x10Var = (x10) obj3;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj2;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj;
-                if (x8Var.e) {
-                    x8Var.H(starGift, this.b, tL_textWithEntities, this.c, x10Var);
+                if (y8Var.e) {
+                    y8Var.H(starGift, this.b, tL_textWithEntities, this.c, x10Var);
                     return;
                 } else {
-                    x8.e("NO_BALANCE");
+                    y8.e("NO_BALANCE");
                     x10Var.a(null);
                     return;
                 }
@@ -117,7 +117,7 @@ public final /* synthetic */ class m implements Runnable {
                         }
                     }
                 };
-                org.telegram.ui.Components.gc V = new org.telegram.ui.Components.lc(z3Var.N0, z3Var.l0).V(Arrays.asList(tLObject2), !z11 ? org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744523, org.telegram.messenger.i5.m(10, str, null))) : org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744524, org.telegram.messenger.i5.m(10, str, null))), null, aVar);
+                org.telegram.ui.Components.gc V = new org.telegram.ui.Components.lc(z3Var.N0, z3Var.l0).V(Arrays.asList(tLObject2), !z11 ? org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744517, org.telegram.messenger.i5.m(10, str, null))) : org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744518, org.telegram.messenger.i5.m(10, str, null))), null, aVar);
                 V.a = 2;
                 V.k(true);
                 return;
@@ -125,7 +125,7 @@ public final /* synthetic */ class m implements Runnable {
                 fi.p6 p6Var = (fi.p6) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
                 x10 x10Var2 = (x10) obj2;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj;
                 if (tL_error == null) {
                     x10Var2.a(Boolean.TRUE);
                     return;
@@ -138,18 +138,18 @@ public final /* synthetic */ class m implements Runnable {
                     mp u12 = mp.u1(p6Var.a);
                     org.telegram.messenger.h3 I0 = u12.I0();
                     long j11 = this.b;
-                    I0.a(j11, new bi.e2(p6Var, x10Var2, u12, j11));
+                    I0.a(j11, new bi.i2(p6Var, x10Var2, u12, j11));
                     return;
                 }
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
-                    org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                    org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
                     if (z10 && Q != null) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), i6Var);
-                        String M0 = gd.M0(2131748634, null);
-                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                        u1Var.S = M0;
-                        u1Var.U = gd.M0(2131748635, null);
-                        org.telegram.messenger.f3.m(null, 2131747638, alertDialog$Builder, null);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), h6Var);
+                        String N0 = gd.N0(2131748633, null);
+                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                        t1Var.S = N0;
+                        t1Var.U = gd.N0(2131748634, null);
+                        org.telegram.messenger.f3.m(null, 2131747637, alertDialog$Builder, null);
                     }
                     x10Var2.a(Boolean.FALSE);
                     return;
@@ -162,9 +162,9 @@ public final /* synthetic */ class m implements Runnable {
                     x10Var2.a(Boolean.FALSE);
                     return;
                 }
-                org.telegram.ui.ActionBar.h2 Q2 = LaunchActivity.Q();
+                org.telegram.ui.ActionBar.g2 Q2 = LaunchActivity.Q();
                 if (z10 && Q2 != null) {
-                    Q2.showDialog(new ug.z0(Q2, 14, true));
+                    Q2.showDialog(new ug.y0(Q2, 14, true));
                 }
                 x10Var2.a(Boolean.FALSE);
                 return;
@@ -172,7 +172,7 @@ public final /* synthetic */ class m implements Runnable {
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj3;
                 String str2 = (String) obj2;
                 TLRPC.Document document = (TLRPC.Document) obj;
-                ChatActivityEnterView chatActivityEnterView = ((fg) obj4).a;
+                ChatActivityEnterView chatActivityEnterView = ((ig) obj4).a;
                 if (editTextBoldCursor == null) {
                     return;
                 }
@@ -182,43 +182,43 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 try {
                     try {
-                        chatActivityEnterView.G3 = 2;
+                        chatActivityEnterView.I3 = 2;
                         if (str2 == null) {
                             str2 = "😀";
                         }
                         SpannableString spannableString = new SpannableString(str2);
-                        org.telegram.ui.Components.x5 x5Var = document != null ? new org.telegram.ui.Components.x5(document, editTextBoldCursor.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.x5(j3, editTextBoldCursor.getPaint().getFontMetricsInt());
+                        org.telegram.ui.Components.y5 y5Var = document != null ? new org.telegram.ui.Components.y5(document, editTextBoldCursor.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.y5(j3, editTextBoldCursor.getPaint().getFontMetricsInt());
                         if (!z10) {
-                            x5Var.fromEmojiKeyboard = true;
+                            y5Var.fromEmojiKeyboard = true;
                         }
-                        x5Var.cacheType = org.telegram.ui.Components.o5.f();
-                        spannableString.setSpan(x5Var, 0, spannableString.length(), 33);
+                        y5Var.cacheType = org.telegram.ui.Components.p5.f();
+                        spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
                         editTextBoldCursor.setText(editTextBoldCursor.getText().insert(selectionEnd, spannableString));
                         editTextBoldCursor.setSelection(spannableString.length() + selectionEnd, selectionEnd + spannableString.length());
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);
                     }
-                    chatActivityEnterView.G3 = 0;
+                    chatActivityEnterView.I3 = 0;
                     return;
                 } catch (Throwable th2) {
-                    chatActivityEnterView.G3 = 0;
+                    chatActivityEnterView.I3 = 0;
                     throw th2;
                 }
             case 5:
                 f40 f40Var = (f40) obj4;
-                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) obj2;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) obj2;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj3;
                 TL_phone.inviteToGroupCall invitetogroupcall = (TL_phone.inviteToGroupCall) obj;
                 try {
-                    u1VarArr[0].dismiss();
+                    t1VarArr[0].dismiss();
                 } catch (Throwable unused) {
                 }
-                u1VarArr[0] = null;
+                t1VarArr[0] = null;
                 if (z10 && "USER_NOT_PARTICIPANT".equals(tL_error2.text)) {
                     f40Var.D1(null, j3, 3);
                     return;
                 } else {
-                    org.telegram.ui.Components.b5.c0(f40Var.a, tL_error2, (org.telegram.ui.ActionBar.h2) f40Var.d2.M().getFragmentStack().get(f40Var.d2.M().getFragmentStack().size() - 1), invitetogroupcall, new Object[0]);
+                    org.telegram.ui.Components.c5.c0(f40Var.a, tL_error2, (org.telegram.ui.ActionBar.g2) f40Var.d2.M().getFragmentStack().get(f40Var.d2.M().getFragmentStack().size() - 1), invitetogroupcall, new Object[0]);
                     return;
                 }
             case 6:
@@ -259,8 +259,8 @@ public final /* synthetic */ class m implements Runnable {
         }
     }
 
-    public /* synthetic */ m(x8 x8Var, x10 x10Var, TL_stars.StarGift starGift, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
-        this.d = x8Var;
+    public /* synthetic */ m(y8 y8Var, x10 x10Var, TL_stars.StarGift starGift, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
+        this.d = y8Var;
         this.e = x10Var;
         this.f = starGift;
         this.b = j3;
@@ -277,17 +277,17 @@ public final /* synthetic */ class m implements Runnable {
         this.f = tLObject;
     }
 
-    public /* synthetic */ m(fi.p6 p6Var, TLRPC.TL_error tL_error, boolean z10, long j3, x10 x10Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public /* synthetic */ m(fi.p6 p6Var, TLRPC.TL_error tL_error, boolean z10, long j3, x10 x10Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.d = p6Var;
         this.e = tL_error;
         this.c = z10;
         this.b = j3;
         this.f = x10Var;
-        this.h = i6Var;
+        this.h = h6Var;
     }
 
-    public /* synthetic */ m(fg fgVar, EditTextBoldCursor editTextBoldCursor, String str, TLRPC.Document document, long j3, boolean z10) {
-        this.d = fgVar;
+    public /* synthetic */ m(ig igVar, EditTextBoldCursor editTextBoldCursor, String str, TLRPC.Document document, long j3, boolean z10) {
+        this.d = igVar;
         this.e = editTextBoldCursor;
         this.f = str;
         this.h = document;
@@ -295,9 +295,9 @@ public final /* synthetic */ class m implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ m(f40 f40Var, org.telegram.ui.ActionBar.u1[] u1VarArr, boolean z10, TLRPC.TL_error tL_error, long j3, TL_phone.inviteToGroupCall invitetogroupcall) {
+    public /* synthetic */ m(f40 f40Var, org.telegram.ui.ActionBar.t1[] t1VarArr, boolean z10, TLRPC.TL_error tL_error, long j3, TL_phone.inviteToGroupCall invitetogroupcall) {
         this.d = f40Var;
-        this.f = u1VarArr;
+        this.f = t1VarArr;
         this.c = z10;
         this.e = tL_error;
         this.b = j3;

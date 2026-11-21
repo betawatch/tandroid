@@ -10,11 +10,11 @@ import java.util.HashSet;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public n7[] a;
     public fj[] b;
     public int[] c;
@@ -36,11 +36,11 @@ public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.c
     public final void b(int i7, boolean z10, boolean z11) {
         n7 n7Var = this.a[i7];
         FrameLayout frameLayout = n7Var.f;
-        mp mpVar = n7Var.e;
-        if (mpVar.getVisibility() != 0) {
-            mpVar.setVisibility(0);
+        op opVar = n7Var.e;
+        if (opVar.getVisibility() != 0) {
+            opVar.setVisibility(0);
         }
-        mpVar.a(z10, true);
+        opVar.a(z10, true);
         AnimatorSet animatorSet = n7Var.h;
         if (animatorSet != null) {
             animatorSet.cancel();
@@ -50,7 +50,7 @@ public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.c
         n7Var.h = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_X, z10 ? 0.81f : 1.0f), ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_Y, z10 ? 0.81f : 1.0f));
         n7Var.h.setDuration(200L);
-        n7Var.h.addListener(new ki.n3(n7Var, 28));
+        n7Var.h.addListener(new ki.m3(n7Var, 28));
         n7Var.h.start();
     }
 
@@ -142,17 +142,17 @@ public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.c
         this.e = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.n.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Ci, false));
+            this.n.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ci, false));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

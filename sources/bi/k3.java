@@ -1,55 +1,27 @@
 package bi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.graphics.Bitmap;
+import android.graphics.drawable.NinePatchDrawable;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o3 b;
+public final class k3 {
+    public NinePatchDrawable b;
+    public NinePatchDrawable d;
+    public NinePatchDrawable f;
+    public final float[] g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public final Bitmap[] a = new Bitmap[1];
+    public final Bitmap[] c = new Bitmap[1];
+    public final Bitmap[] e = new Bitmap[1];
 
-    public /* synthetic */ k3(o3 o3Var, int i7) {
-        this.a = i7;
-        this.b = o3Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                o3 o3Var = this.b;
-                if (o3Var.l2) {
-                    o3Var.l2 = false;
-                    o3Var.d2.setLoading(false);
-                    o3Var.g1();
-                    break;
-                }
-                break;
-            case 1:
-                o3 o3Var2 = this.b;
-                if (!o3Var2.j2) {
-                    o3Var2.j2 = true;
-                    o3Var2.i2 = false;
-                    o3Var2.h2 = false;
-                    o3Var2.dismiss();
-                    Runnable runnable = o3Var2.r2;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                }
-                if (!o3Var2.k2) {
-                    o3Var2.k2 = true;
-                    ai.a1 a1Var = o3Var2.t2;
-                    if (a1Var != null) {
-                        a1Var.run();
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                this.b.f1();
-                break;
-            default:
-                this.b.dismiss();
-                break;
-        }
+    public k3() {
+        float[] fArr = new float[8];
+        this.g = fArr;
+        Arrays.fill(fArr, org.telegram.messenger.g0.L(11.0f));
     }
 }

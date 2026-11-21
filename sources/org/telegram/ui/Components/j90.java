@@ -1,54 +1,129 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
+import android.app.Activity;
+import android.content.Context;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class j90 extends zh.l {
-    public final /* synthetic */ int E = 1;
-    public final /* synthetic */ Object F;
+public final class j90 extends jt0 {
+    public final /* synthetic */ k90 x2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j90(bi.y8 y8Var, bi.y8 y8Var2, FrameLayout frameLayout, long j3) {
-        super(y8Var2, frameLayout, j3, true);
-        this.F = y8Var;
+    public j90(k90 k90Var, Context context, long j3, bt0 bt0Var, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i7, k90 k90Var2, i90 i90Var, org.telegram.ui.ActionBar.h6 h6Var, dh.c cVar) {
+        super(context, j3, bt0Var, 0, null, chatFull, userFull, i7, 0, k90Var2, i90Var, 0, h6Var, cVar);
+        this.x2 = k90Var;
     }
 
-    @Override // zh.l
-    public final void f(String str, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.k kVar;
-        switch (this.E) {
-            case 0:
-                zh.b bVar = (zh.b) this.F;
-                kv0 kv0Var = bVar.R1;
-                if (!this.e.isEmpty()) {
-                    if (!z11) {
-                        super.f(str, z10, z11);
-                        break;
-                    } else {
-                        bVar.w1.K.setText("");
-                        break;
-                    }
-                } else if (kv0Var.getVisibility() != 4) {
-                    kv0Var.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!z11) {
-                    super.f(str, z10, z11);
-                    break;
-                } else {
-                    kVar = ((org.telegram.ui.ActionBar.h2) ((bi.y8) this.F)).actionBar;
-                    kVar.setSearchFieldText("");
-                    break;
-                }
+    @Override // org.telegram.ui.Components.jt0
+    public final boolean A0() {
+        return this.x2.a == 2;
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final boolean I() {
+        return !this.x2.d0();
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final boolean I0() {
+        return this.x2.d0();
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final void P0(SparseArray sparseArray) {
+        int size = sparseArray.size();
+        k90 k90Var = this.x2;
+        k90Var.w = sparseArray;
+        hi.e eVar = k90Var.O;
+        if (eVar != null) {
+            eVar.setEnabled(size > 0);
+            k90Var.O.c(size, true);
+            if (k90Var.S.getClosestTab() == 8) {
+                k90Var.O.i(org.telegram.messenger.gd.G(size, "ArchiveStories", new Object[0]), true, true);
+            }
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j90(zh.b bVar, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        super(h2Var, n2Var, j3, false);
-        this.F = bVar;
+    @Override // org.telegram.ui.Components.jt0
+    public final void X0(boolean z10) {
+        int i7;
+        k90 k90Var = this.x2;
+        Activity parentActivity = k90Var.getParentActivity();
+        i7 = ((org.telegram.ui.ActionBar.g2) k90Var).classGuid;
+        org.telegram.messenger.g0.B2(parentActivity, i7);
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final boolean Y() {
+        k90 k90Var = this.x2;
+        return k90Var.d0() || k90Var.a == 3;
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final void Y0() {
+        super.Y0();
+        this.x2.g0();
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final void Z0(float f10) {
+        k90 k90Var = this.x2;
+        if (k90Var.a != 1) {
+            return;
+        }
+        int i7 = Math.round(f10 - 8.0f) > 0 ? 1 : 0;
+        org.telegram.ui.oe0 oe0Var = k90Var.K;
+        if (oe0Var != null && k90Var.M != i7) {
+            k90Var.M = i7;
+            oe0Var.r(k90Var.L[i7], true);
+        }
+        k90Var.h0(true);
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final int getInitialTab() {
+        return this.x2.T;
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final String getStoriesHashtag() {
+        return this.x2.h;
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final String getStoriesHashtagUsername() {
+        return this.x2.n;
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final void q1(boolean z10) {
+        if (this.F1 == z10) {
+            return;
+        }
+        super.q1(z10);
+        k90 k90Var = this.x2;
+        if (k90Var.d0()) {
+            if (z10) {
+                v1(null);
+            }
+            this.P1 = z10;
+        }
+        te.a aVar = k90Var.P;
+        if (aVar != null) {
+            aVar.a(z10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final boolean x0() {
+        k90 k90Var = this.x2;
+        return k90Var.a == 0 && k90Var.e == k90Var.getUserConfig().e() && k90Var.f == 0;
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public final boolean y0() {
+        return this.x2.d0();
     }
 }

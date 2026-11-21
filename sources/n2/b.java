@@ -16,7 +16,7 @@ import h9.t1;
 import j$.util.Objects;
 import java.util.List;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b {
     public static final t1 e;
@@ -82,11 +82,11 @@ public final class b {
     public static b b(Context context, Intent intent, e2.e eVar, AudioDeviceInfo audioDeviceInfo, List list) {
         AudioManager d = f2.i.d(context);
         if (audioDeviceInfo == null) {
-            audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? ai.d.e(d, eVar) : null;
+            audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? ai.d.f(d, eVar) : null;
         }
         h9.i0 b10 = audioDeviceInfo != null ? x0.b(audioDeviceInfo) : e;
         if (Build.VERSION.SDK_INT >= 33 && (h2.l0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
-            return ai.d.d(d, eVar, b10, list);
+            return ai.d.e(d, eVar, b10, list);
         }
         for (AudioDeviceInfo audioDeviceInfo2 : audioDeviceInfo == null ? d.getDevices(2) : new AudioDeviceInfo[]{audioDeviceInfo}) {
             if (aa.a(audioDeviceInfo2.getType())) {

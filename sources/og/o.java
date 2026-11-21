@@ -17,8 +17,8 @@ import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import bi.d7;
-import hi.mb;
+import bi.h7;
+import hi.lb;
 import hi.w4;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -32,12 +32,12 @@ import org.telegram.messenger.s2;
 import org.telegram.messenger.w7;
 import org.telegram.messenger.we;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.y51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class o extends FrameLayout implements a {
     public float E;
@@ -55,7 +55,7 @@ public class o extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public v51 d;
+    public y51 d;
     public g e;
     public final RectF f;
     public final RectF h;
@@ -408,7 +408,7 @@ public class o extends FrameLayout implements a {
         float b10 = m.b(this.M) * ((rectF.centerY() - ((((imageView.getHeight() - this.E) + i7) + this.F) / 2.0f)) / cropAreaView.getCropHeight());
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new h(this, f11, fArr, a10, b10, 0));
-        ofFloat.addListener(new d7(18, this, z10));
+        ofFloat.addListener(new h7(18, this, z10));
         AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = cropAreaView.V;
         AnimatorSet animatorSet = cropAreaView.l0;
         if (animatorSet != null) {
@@ -542,9 +542,9 @@ public class o extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        v51 v51Var = this.d;
-        if (v51Var != null) {
-            return v51Var.getVideoHeight();
+        y51 y51Var = this.d;
+        if (y51Var != null) {
+            return y51Var.getVideoHeight();
         }
         Bitmap bitmap = this.x;
         if (bitmap == null) {
@@ -555,9 +555,9 @@ public class o extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        v51 v51Var = this.d;
-        if (v51Var != null) {
-            return v51Var.getVideoWidth();
+        y51 y51Var = this.d;
+        if (y51Var != null) {
+            return y51Var.getVideoWidth();
         }
         Bitmap bitmap = this.x;
         if (bitmap == null) {
@@ -756,8 +756,8 @@ public class o extends FrameLayout implements a {
         String[] strArr = new String[8];
         int i10 = 0;
         Integer[][] numArr = {new Integer[]{3, 2}, new Integer[]{5, 3}, new Integer[]{4, 3}, new Integer[]{5, 4}, new Integer[]{7, 5}, new Integer[]{16, 9}};
-        strArr[0] = gd.M0(2131751686, null);
-        strArr[1] = gd.M0(2131751684, null);
+        strArr[0] = gd.N0(2131751685, null);
+        strArr[1] = gd.N0(2131751683, null);
         int i11 = 2;
         for (int i12 = 0; i12 < 6; i12++) {
             Integer[] numArr2 = numArr[i12];
@@ -770,10 +770,10 @@ public class o extends FrameLayout implements a {
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         alertDialog$Builder.f(strArr, new j(i10, this, numArr));
-        u1 u1Var = alertDialog$Builder.a;
-        u1Var.setCanceledOnTouchOutside(true);
-        u1Var.setOnCancelListener(new mb(this, i7));
-        u1Var.show();
+        t1 t1Var = alertDialog$Builder.a;
+        t1Var.setCanceledOnTouchOutside(true);
+        t1Var.setOnCancelListener(new lb(this, i7));
+        t1Var.show();
     }
 
     @Override // android.view.ViewGroup

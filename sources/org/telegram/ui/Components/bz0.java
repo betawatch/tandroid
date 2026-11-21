@@ -1,54 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bz0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cz0 b;
+public class bz0 extends MetricAffectingSpan {
+    public final TextPaint a;
+    public final String b;
 
-    public /* synthetic */ bz0(cz0 cz0Var, int i7) {
-        this.a = i7;
-        this.b = cz0Var;
+    public bz0(TextPaint textPaint, String str) {
+        this.a = textPaint;
+        this.b = str;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                cz0 cz0Var = this.b;
-                cz0Var.getClass();
-                cz0Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cz0Var.invalidate();
-                break;
-            case 1:
-                cz0 cz0Var2 = this.b;
-                cz0Var2.getClass();
-                cz0Var2.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cz0Var2.invalidate();
-                break;
-            case 2:
-                cz0 cz0Var3 = this.b;
-                cz0Var3.getClass();
-                cz0Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cz0Var3.invalidate();
-                break;
-            case 3:
-                cz0 cz0Var4 = this.b;
-                cz0Var4.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cz0Var4.s = floatValue;
-                cz0Var4.x = (int) ((cz0Var4.h * floatValue) + 0);
-                cz0Var4.invalidate();
-                break;
-            default:
-                cz0 cz0Var5 = this.b;
-                cz0Var5.getClass();
-                cz0Var5.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cz0Var5.y = cz0Var5.r + ((int) Math.ceil((cz0Var5.n - r1) * r5));
-                cz0Var5.invalidate();
-                break;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
+        }
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
         }
     }
 }

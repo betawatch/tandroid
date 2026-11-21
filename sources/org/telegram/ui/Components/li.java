@@ -1,69 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class li extends ni {
-    public TLRPC.User b;
-    public TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ si d;
+public final class li extends org.telegram.ui.oq0 {
+    public final /* synthetic */ org.telegram.messenger.ef a;
+    public final /* synthetic */ ui b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public li(si siVar, Context context) {
-        super(context);
-        this.d = siVar;
-        setWillNotDraw(false);
-        setFocusable(true);
-        setFocusableInTouchMode(true);
-        int i7 = si.I4;
-        org.telegram.ui.ActionBar.i6 i6Var = siVar.J0;
-        qh.b bVar = new qh.b(context);
-        bVar.d = i6Var;
-        bVar.R = true;
-        TextView textView = bVar.a;
-        textView.setTextSize(1, 11.0f);
-        textView.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-        bVar.b.setVisibility(8);
-        bVar.b(false);
-        q9 q9Var = new q9(context);
-        bVar.c = q9Var;
-        bVar.addView(q9Var, c8.ma.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.x = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Tl, i6Var);
-        bVar.s = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Rl, i6Var);
-        bVar.w = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Sl, i6Var);
-        bVar.a();
-        this.a = bVar;
-        bVar.getBackupImageView().a.h1 = new k2(18);
-        addView(this.a, c8.ma.c(-1.0f, -1));
+    public li(ui uiVar, org.telegram.messenger.ef efVar) {
+        this.b = uiVar;
+        this.a = efVar;
     }
 
-    public final void a(boolean z10) {
-        boolean z11 = this.c != null && (-this.b.id) == this.d.U2;
-        this.a.f(z11, z10);
-        mh0 B = this.a.getBackupImageView().getImageReceiver().B();
-        if (!z10) {
-            if (B != null) {
-                B.stop();
-                B.T(false, 0.0f);
-                return;
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void o(int i7, org.telegram.messenger.e20 e20Var, final boolean z10, final int i10, int i11, final boolean z11) {
+        ui uiVar = this.b;
+        uiVar.t4 = true;
+        if (uiVar.X3 == null) {
+            return;
+        }
+        final org.telegram.messenger.ef efVar = this.a;
+        efVar.s = e20Var;
+        c5.X(uiVar.H3, uiVar.Y0() + 1, 0L, new org.telegram.messenger.x10() { // from class: org.telegram.ui.Components.ki
+            @Override // org.telegram.messenger.x10
+            public final void a(Object obj) {
+                ArrayList arrayList = ChatAttachAlertPhotoLayout.u1;
+                arrayList.clear();
+                HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
+                hashMap.clear();
+                arrayList.add(0);
+                hashMap.put(0, efVar);
+                li.this.b.X3.y1(7, true, z10, i10, 0, 0L, false, z11, ((Long) obj).longValue());
             }
-            return;
-        }
-        if (!z11 || B == null) {
-            return;
-        }
-        B.K(0);
-        B.P(-1);
-        B.T(false, 0.0f);
-        B.start();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a(false);
+        });
     }
 }

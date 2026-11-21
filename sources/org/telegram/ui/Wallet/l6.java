@@ -18,10 +18,10 @@ import org.telegram.messenger.bz;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.pc;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class l6 extends FrameLayout {
     public final TextView a;
@@ -40,7 +40,7 @@ public final class l6 extends FrameLayout {
         addView(new d6(context, str), c8.ma.e(-1, -1, 17));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        frameLayout.setBackground(org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(20.0f), -1));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(20.0f), -1));
         frameLayout.setCameraDistance(org.telegram.messenger.g0.L(8000.0f));
         addView(frameLayout, c8.ma.d(ks.p3, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -66,7 +66,7 @@ public final class l6 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setText(gd.M0(2131742914, null));
+        textView.setText(gd.N0(2131742908, null));
         textView.setTextColor(-15556886);
         textView.setTextSize(1, 14.0f);
         textView.setGravity(17);
@@ -74,7 +74,7 @@ public final class l6 extends FrameLayout {
         textView.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
         textView.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         int L = org.telegram.messenger.g0.L(18.0f);
-        textView.setBackground(org.telegram.ui.ActionBar.n6.k0(L, L, L, L, -984578, -1903620, -1903620));
+        textView.setBackground(org.telegram.ui.ActionBar.m6.k0(L, L, L, L, -984578, -1903620, -1903620));
         Drawable g10 = i5.c.g(context, R.drawable.wallet_copy);
         g10.setColorFilter(new PorterDuffColorFilter(-15556886, PorterDuff.Mode.SRC_IN));
         g10.setBounds(0, 0, org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f));
@@ -113,7 +113,7 @@ public final class l6 extends FrameLayout {
         textView2.setMaxLines(4);
         textView2.setLineSpacing(0.0f, 1.0f);
         TextView m10 = org.telegram.ui.Cells.c0.m(this.e, textView2, c8.ma.d(-1, 112.0f, 55, 8.0f, 32.0f, 8.0f, 0.0f), context);
-        m10.setText(gd.M0(2131742962, null));
+        m10.setText(gd.N0(2131742956, null));
         m10.setTextColor(-15556886);
         m10.setTextSize(1, 14.0f);
         m10.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
@@ -125,14 +125,14 @@ public final class l6 extends FrameLayout {
         m10.setCompoundDrawables(mutate, null, null, null);
         TextView m11 = org.telegram.ui.Cells.c0.m(this.e, m10, c8.ma.d(-2, 28.0f, 49, 0.0f, 149.0f, 0.0f, 0.0f), context);
         this.b = m11;
-        m11.setText(gd.M0(2131742755, null));
+        m11.setText(gd.N0(2131742749, null));
         m11.setTextColor(-15556886);
         m11.setTextSize(1, 14.0f);
         m11.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
         m11.setGravity(17);
         m11.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         int L2 = org.telegram.messenger.g0.L(18.0f);
-        m11.setBackground(org.telegram.ui.ActionBar.n6.k0(L2, L2, L2, L2, -984578, -1903620, -1903620));
+        m11.setBackground(org.telegram.ui.ActionBar.m6.k0(L2, L2, L2, L2, -984578, -1903620, -1903620));
         c8.ra.a(m11);
         this.e.addView(m11, c8.ma.d(-2, 28.0f, 49, 0.0f, 202.0f, 0.0f, 0.0f));
         View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.k6
@@ -206,7 +206,7 @@ public final class l6 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(frameLayout.getRotationY(), z10 ? 180.0f : 0.0f);
         this.r = ofFloat;
         ofFloat.setDuration(420L);
-        this.r.setInterpolator(lr.h);
+        this.r.setInterpolator(nr.h);
         this.r.addUpdateListener(new z3(this, i7));
         this.r.addListener(new k71(this, 8));
         this.r.start();

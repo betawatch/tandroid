@@ -10,7 +10,7 @@ import org.telegram.messenger.xs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb implements Runnable {
     public final /* synthetic */ int a;
@@ -52,15 +52,15 @@ public final /* synthetic */ class vb implements Runnable {
                 }
                 break;
             case 1:
-                hi.l8 l8Var = (hi.l8) obj;
-                hi.q8 q8Var = l8Var.a0;
+                hi.k8 k8Var = (hi.k8) obj;
+                hi.p8 p8Var = k8Var.a0;
                 if (z10) {
-                    int i12 = hi.q8.Y1;
-                    mp.u1(q8Var.a).Z2(Long.valueOf(j3), new hi.d8(l8Var, j3, i10), ks.e3);
+                    int i12 = hi.p8.Y1;
+                    mp.u1(p8Var.a).Z2(Long.valueOf(j3), new hi.c8(k8Var, j3, i10), ks.e3);
                     break;
                 } else {
-                    int i13 = hi.q8.Y1;
-                    mp.u1(q8Var.a).b3(0, j3, true);
+                    int i13 = hi.p8.Y1;
+                    mp.u1(p8Var.a).b3(0, j3, true);
                     break;
                 }
             case 2:

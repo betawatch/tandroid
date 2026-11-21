@@ -1,87 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ci implements ak {
-    public final /* synthetic */ si a;
+public final class ci extends ug {
+    public final /* synthetic */ ui y0;
 
-    public ci(si siVar) {
-        this.a = siVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ci(Context context, org.telegram.ui.ActionBar.h6 h6Var, ui uiVar) {
+        super(R.drawable.send_plane_24, context, h6Var, false);
+        this.y0 = uiVar;
     }
 
-    @Override // org.telegram.ui.Components.ak
-    public final void A() {
-        si siVar = this.a;
-        ak akVar = siVar.S1;
-        if (akVar != null) {
-            akVar.A();
-            return;
-        }
-        Object obj = siVar.a2;
-        if (obj instanceof ak) {
-            ((ak) obj).A();
-            return;
-        }
-        if (obj instanceof org.telegram.ui.hk0) {
-            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
-            try {
-                Intent intent = new Intent("android.intent.action.GET_CONTENT");
-                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-                intent.setType("*/*");
-                hk0Var.startActivityForResult(intent, 21);
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
-        }
+    @Override // org.telegram.ui.Components.ug
+    public final boolean b() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.ak
-    public final void T() {
-        this.a.q1(true);
+    @Override // org.telegram.ui.Components.ug
+    public final boolean c() {
+        return !this.y0.S2;
     }
 
-    @Override // org.telegram.ui.Components.ak
-    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
-        si siVar = this.a;
-        ak akVar = siVar.S1;
-        if (akVar != null) {
-            akVar.n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
-            return;
-        }
-        Object obj = siVar.a2;
-        if (obj instanceof ak) {
-            ((ak) obj).n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
-            return;
-        }
-        if (obj instanceof org.telegram.ui.hk0) {
-            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
-            ArrayList arrayList4 = new ArrayList();
-            int size = arrayList.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
-                yyVar.c = (String) arrayList.get(i10);
-                arrayList4.add(yyVar);
-            }
-            hk0Var.K1(arrayList4);
-        }
+    @Override // org.telegram.ui.Components.ug
+    public final boolean d() {
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.ak
-    public final void p(ArrayList arrayList, boolean z10, int i7, long j3) {
-        si siVar = this.a;
-        ak akVar = siVar.S1;
-        if (akVar != null) {
-            akVar.p(arrayList, z10, i7, j3);
-            return;
-        }
-        org.telegram.ui.ActionBar.h2 h2Var = siVar.a2;
-        if (h2Var instanceof org.telegram.ui.bn) {
-            ((org.telegram.ui.bn) h2Var).p(arrayList, z10, i7, j3);
-        } else if (h2Var instanceof org.telegram.ui.hk0) {
-            ((org.telegram.ui.hk0) h2Var).K1(arrayList);
-        }
+    @Override // org.telegram.ui.Components.ug
+    public final int getFillColor() {
+        return org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.S5, this.y0.J0);
     }
 }

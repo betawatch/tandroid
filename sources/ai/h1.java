@@ -1,66 +1,32 @@
 package ai;
 
-import android.os.SystemClock;
-import android.util.Log;
-import java.io.File;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class h1 implements fs {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long[] b;
-    public final /* synthetic */ i1 c;
-    public final /* synthetic */ File[] d;
-    public final /* synthetic */ File e;
-    public final /* synthetic */ CountDownLatch f;
+public final /* synthetic */ class h1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ CountDownLatch b;
 
-    public h1(String str, long[] jArr, i1 i1Var, File[] fileArr, File file, CountDownLatch countDownLatch) {
-        this.a = str;
-        this.b = jArr;
-        this.c = i1Var;
-        this.d = fileArr;
-        this.e = file;
-        this.f = countDownLatch;
+    public /* synthetic */ h1(CountDownLatch countDownLatch, int i7) {
+        this.a = i7;
+        this.b = countDownLatch;
     }
 
-    @Override // org.telegram.messenger.fs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        File file;
-        if (objArr.length != 0) {
-            Object obj = objArr[0];
-            String str = this.a;
-            if (str.equals(obj)) {
-                this.b[0] = SystemClock.elapsedRealtime();
-                if (i7 == ks.X1) {
-                    this.c.c(((Long) objArr[1]).longValue(), ((Long) objArr[2]).longValue());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                try {
+                    this.b.await(20000L, TimeUnit.MILLISECONDS);
+                    break;
+                } catch (InterruptedException unused) {
                     return;
                 }
-                if (i7 == ks.Y1) {
-                    if (objArr.length > 1) {
-                        Object obj2 = objArr[1];
-                        if (obj2 instanceof File) {
-                            file = (File) obj2;
-                            this.d[0] = file;
-                        }
-                    }
-                    file = this.e;
-                    this.d[0] = file;
-                } else {
-                    if (i7 != ks.Z1) {
-                        return;
-                    }
-                    StringBuilder u10 = a8.p0.u("speech models: ", str, " download failed (");
-                    u10.append(objArr.length > 1 ? objArr[1] : "");
-                    u10.append(")");
-                    Log.d("Dictation", u10.toString());
-                    mp.g1().edit().remove("speech_models_checked").apply();
-                }
-                this.f.countDown();
-            }
+            default:
+                this.b.countDown();
+                break;
         }
     }
 }

@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s1 extends View implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
@@ -116,7 +116,7 @@ public final class s1 extends View implements org.telegram.ui.Cells.i9, c3 {
         if (z2Var == null) {
             return;
         }
-        accessibilityNodeInfo.setText(g4.g(2131754865, g4.h(this.a, this.b, z2Var)));
+        accessibilityNodeInfo.setText(g4.g(2131754864, g4.h(this.a, this.b, z2Var)));
     }
 
     @Override // android.view.View
@@ -145,7 +145,7 @@ public final class s1 extends View implements org.telegram.ui.Cells.i9, c3 {
             int L2 = (size - org.telegram.messenger.g0.L(36)) - this.d;
             TL_iv.pageBlockFooter pageblockfooter2 = this.f;
             e4 e4Var = this.b;
-            z2 n10 = g4.n(p50Var2, this, null, richText, L2, 0, pageblockfooter2, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.wu0.a(), 0, this.b);
+            z2 n10 = g4.n(p50Var2, this, null, richText, L2, 0, pageblockfooter2, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.zu0.a(), 0, this.b);
             this.c = n10;
             if (n10 != null) {
                 int height = n10.d.getHeight();

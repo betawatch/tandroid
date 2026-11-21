@@ -18,11 +18,11 @@ import org.telegram.messenger.fc;
 import org.telegram.messenger.hf;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.cb0;
 import org.telegram.ui.u71;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k5 extends org.telegram.ui.Components.q9 implements org.telegram.messenger.y5 {
     public RectF H;
@@ -36,7 +36,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
     public int P;
     public int Q;
     public Paint R;
-    public bb0 S;
+    public cb0 S;
     public int T;
     public u71 U;
     public int V;
@@ -118,7 +118,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
         int i14;
         x71 x71Var3;
         int i15;
-        bb0 bb0Var;
+        cb0 cb0Var;
         BlendMode blendMode;
         RadialProgress2 radialProgress2 = this.I;
         RectF rectF = this.H;
@@ -130,7 +130,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
         if (x71Var4.b == 2) {
             i7 = x71Var4.b1;
         } else {
-            int E0 = org.telegram.ui.ActionBar.n6.E0(org.telegram.ui.ActionBar.n6.Ee);
+            int E0 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.Ee);
             i7 = (int) x71Var4.w.j;
             if (i7 == 0) {
                 i10 = E0;
@@ -138,7 +138,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                 if (x71Var.b != 2) {
                     i11 = x71Var.d1;
                 } else {
-                    int E02 = org.telegram.ui.ActionBar.n6.E0(org.telegram.ui.ActionBar.n6.Fe);
+                    int E02 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.Fe);
                     i11 = (int) x71Var.w.k;
                     if (i11 == 0) {
                         i12 = E02;
@@ -146,7 +146,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                         if (x71Var2.b == 2) {
                             i13 = x71Var2.e1;
                         } else {
-                            int E03 = org.telegram.ui.ActionBar.n6.E0(org.telegram.ui.ActionBar.n6.Ge);
+                            int E03 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.Ge);
                             i13 = (int) x71Var2.w.l;
                             if (i13 == 0) {
                                 i14 = E03;
@@ -154,7 +154,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                                 if (x71Var3.b != 2) {
                                     i15 = x71Var3.f1;
                                 } else {
-                                    int E04 = org.telegram.ui.ActionBar.n6.E0(org.telegram.ui.ActionBar.n6.He);
+                                    int E04 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.He);
                                     i15 = (int) x71Var3.w.m;
                                     if (i15 == 0) {
                                         i15 = E04;
@@ -175,15 +175,15 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                                     this.Q = i16;
                                     if (i14 != 0) {
                                         this.L = null;
-                                        bb0 bb0Var2 = this.S;
-                                        if (bb0Var2 != null) {
-                                            bb0Var2.o(i10, i12, i14, i15, 0, false);
+                                        cb0 cb0Var2 = this.S;
+                                        if (cb0Var2 != null) {
+                                            cb0Var2.o(i10, i12, i14, i15, 0, false);
                                         } else {
                                             int i18 = i10;
-                                            bb0 bb0Var3 = new bb0(true, i18, i12, i14, i15);
+                                            cb0 cb0Var3 = new cb0(true, i18, i12, i14, i15);
                                             i10 = i18;
-                                            this.S = bb0Var3;
-                                            bb0Var3.v(org.telegram.messenger.g0.L(6.0f));
+                                            this.S = cb0Var3;
+                                            cb0Var3.v(org.telegram.messenger.g0.L(6.0f));
                                             this.S.q(this);
                                         }
                                         if (f10 < 0.0f) {
@@ -205,9 +205,9 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                                         this.a.m0(null);
                                     }
                                 }
-                                bb0Var = this.S;
-                                if (bb0Var == null) {
-                                    bb0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                                cb0Var = this.S;
+                                if (cb0Var == null) {
+                                    cb0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                                     this.S.draw(canvas);
                                 } else {
                                     paint.setShader(this.L);
@@ -236,8 +236,8 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                         int i172 = x71Var52.m1;
                         if (i12 != 0) {
                         }
-                        bb0Var = this.S;
-                        if (bb0Var == null) {
+                        cb0Var = this.S;
+                        if (cb0Var == null) {
                         }
                         super.onDraw(canvas);
                         if (radialProgress2.i.q == 4) {
@@ -258,8 +258,8 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                 int i1722 = x71Var522.m1;
                 if (i12 != 0) {
                 }
-                bb0Var = this.S;
-                if (bb0Var == null) {
+                cb0Var = this.S;
+                if (cb0Var == null) {
                 }
                 super.onDraw(canvas);
                 if (radialProgress2.i.q == 4) {
@@ -284,8 +284,8 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
         int i17222 = x71Var5222.m1;
         if (i12 != 0) {
         }
-        bb0Var = this.S;
-        if (bb0Var == null) {
+        cb0Var = this.S;
+        if (cb0Var == null) {
         }
         super.onDraw(canvas);
         if (radialProgress2.i.q == 4) {

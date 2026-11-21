@@ -21,9 +21,9 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.dr;
-import org.telegram.ui.Components.hr;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.fr;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.rj0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.cx;
@@ -31,9 +31,9 @@ import org.telegram.ui.f40;
 import org.telegram.ui.oa1;
 import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.r1, org.telegram.messenger.jc, pj0, zo, w5.b, v5.e, ua.a {
+public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q1, org.telegram.messenger.jc, rj0, zo, w5.b, v5.e, ua.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -82,12 +82,12 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.r
         ((x9.a) bVar.get()).d((String) this.c, this.b, (da.p1) this.d);
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ boolean b1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public void f(float f10, float f11, int i7, View view) {
         ProfileActivity.h0((ProfileActivity) this.c, (Context) this.d, this.b, view, i7, f10, f11);
     }
@@ -104,59 +104,59 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.r
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 1:
                 f6 f6Var = (f6) this.c;
                 TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) this.d;
-                vf.b h = u1Var.h(-1, true, true);
+                vf.b h = t1Var.h(-1, true, true);
                 h.d();
                 TL_stars.deleteStarGift deletestargift = new TL_stars.deleteStarGift();
                 deletestargift.stargift = inputSavedStarGift;
-                ConnectionsManager.getInstance(f6Var.a).sendRequest(deletestargift, new p2(f6Var, h, this.b, 0));
+                ConnectionsManager.getInstance(f6Var.a).sendRequest(deletestargift, new q2(f6Var, h, this.b, 0));
                 break;
             case 2:
-                hi.l8 l8Var = (hi.l8) this.c;
+                hi.k8 k8Var = (hi.k8) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
-                l8Var.d.put(Long.valueOf(this.b), arrayList);
+                k8Var.d.put(Long.valueOf(this.b), arrayList);
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    l8Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
+                    k8Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
                 }
-                l8Var.j(true);
-                l8Var.f(true);
-                l8Var.g(true);
-                u1Var.dismiss();
-                l8Var.y.M = true;
+                k8Var.j(true);
+                k8Var.f(true);
+                k8Var.g(true);
+                t1Var.dismiss();
+                k8Var.y.M = true;
                 break;
             case 3:
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.c;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.c;
                 q10 q10Var = (q10) this.d;
                 TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                bg.f0 f0Var = new bg.f0(h2Var, this.b, twoStepVerificationActivity, q10Var, 3);
+                bg.f0 f0Var = new bg.f0(g2Var, this.b, twoStepVerificationActivity, q10Var, 3);
                 twoStepVerificationActivity.a0 = 1;
                 twoStepVerificationActivity.c0 = f0Var;
-                twoStepVerificationActivity.x0(new ii.b(h2Var, twoStepVerificationActivity, 0));
+                twoStepVerificationActivity.x0(new ii.b(g2Var, twoStepVerificationActivity, 0));
                 break;
             case 4:
             case 5:
             default:
                 f40 f40Var = (f40) this.c;
-                mp.u1(f40Var.o1.a).n(f40Var.m1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.h2) f40Var.d2.M().getFragmentStack().get(f40Var.d2.M().getFragmentStack().size() - 1), new bi.y3(f40Var, this.b, 27));
+                mp.u1(f40Var.o1.a).n(f40Var.m1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.g2) f40Var.d2.M().getFragmentStack().get(f40Var.d2.M().getFragmentStack().size() - 1), new bi.c4(f40Var, this.b, 27));
                 break;
             case 6:
-                hr hrVar = (hr) this.c;
-                hi.d dVar = (hi.d) this.d;
-                if (!dVar.R) {
-                    dVar.setLoading(true);
+                jr jrVar = (jr) this.c;
+                hi.e eVar = (hi.e) this.d;
+                if (!eVar.R) {
+                    eVar.setLoading(true);
                     TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-                    getgroupcallstreamrtmpurl.peer = mp.u1(hrVar.a).l1(this.b);
+                    getgroupcallstreamrtmpurl.peer = mp.u1(jrVar.a).l1(this.b);
                     getgroupcallstreamrtmpurl.revoke = true;
-                    ConnectionsManager.getInstance(hrVar.a).sendRequest(getgroupcallstreamrtmpurl, new dr(hrVar, dVar, 0));
+                    ConnectionsManager.getInstance(jrVar.a).sendRequest(getgroupcallstreamrtmpurl, new fr(jrVar, eVar, 0));
                     break;
                 }
                 break;
@@ -188,7 +188,7 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.r
             if (resultCallback != null) {
                 resultCallback.onComplete(new Pair(Long.valueOf(j3), bitmap));
             }
-            Utilities.e.c(new org.telegram.ui.ActionBar.a2(5, file, bitmap));
+            Utilities.e.c(new org.telegram.ui.ActionBar.z1(5, file, bitmap));
         } else if (resultCallback != null) {
             resultCallback.onComplete(null);
         }
@@ -209,7 +209,7 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.r
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ void s0(View view, float f10, float f11) {
     }
 }

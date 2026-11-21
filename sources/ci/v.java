@@ -10,27 +10,27 @@ import c8.k1;
 import com.google.firebase.pnv.internal.FirebasePhoneNumberVerificationRegistrar;
 import di.f6;
 import di.mb;
-import di.w8;
+import di.x8;
 import e2.f1;
 import e2.m1;
 import e2.n1;
+import e2.r1;
 import h9.t1;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import org.telegram.messenger.fs;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.w10;
-import org.telegram.ui.ActionBar.r1;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.ot0;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.rt0;
 import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements w10, r1, r6, s6, ot0, g9.k, u9.d, NativeInstance.AudioLevelsCallback {
+public final /* synthetic */ class v implements w10, q1, q6, r6, rt0, g9.k, u9.d, NativeInstance.AudioLevelsCallback {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v(int i7) {
@@ -42,7 +42,7 @@ public final /* synthetic */ class v implements w10, r1, r6, s6, ot0, g9.k, u9.d
     }
 
     @Override // org.telegram.messenger.w10
-    public Boolean a(l41 l41Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -245,13 +245,13 @@ public final /* synthetic */ class v implements w10, r1, r6, s6, ot0, g9.k, u9.d
                 intArray.getClass();
                 return new n1(m1Var, k1.a(intArray));
             default:
-                e2.r1 r1Var = (e2.r1) obj;
+                r1 r1Var = (r1) obj;
                 r1Var.getClass();
                 Bundle bundle9 = new Bundle();
-                bundle9.putBundle(e2.r1.f, r1Var.b.c());
-                bundle9.putIntArray(e2.r1.g, r1Var.d);
-                bundle9.putBooleanArray(e2.r1.h, r1Var.e);
-                bundle9.putBoolean(e2.r1.i, r1Var.c);
+                bundle9.putBundle(r1.f, r1Var.b.c());
+                bundle9.putIntArray(r1.g, r1Var.d);
+                bundle9.putBooleanArray(r1.h, r1Var.e);
+                bundle9.putBoolean(r1.i, r1Var.c);
                 return bundle9;
         }
     }
@@ -268,9 +268,9 @@ public final /* synthetic */ class v implements w10, r1, r6, s6, ot0, g9.k, u9.d
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.s6
+    @Override // org.telegram.ui.ActionBar.r6
     public void d(int i7, View view) {
-        ((w8) view).setColor(i7);
+        ((x8) view).setColor(i7);
     }
 
     @Override // u9.d
@@ -280,13 +280,13 @@ public final /* synthetic */ class v implements w10, r1, r6, s6, ot0, g9.k, u9.d
         return components$lambda$0;
     }
 
-    @Override // org.telegram.ui.ActionBar.r6
+    @Override // org.telegram.ui.ActionBar.q6
     public int f(View view) {
-        return ((w8) view).y;
+        return ((x8) view).y;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 2:
                 int i10 = f6.z3;
@@ -295,25 +295,25 @@ public final /* synthetic */ class v implements w10, r1, r6, s6, ot0, g9.k, u9.d
                 f6.p2(new bb1(6, null));
                 break;
             case 26:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
             default:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ot0
+    @Override // org.telegram.ui.Components.rt0
     public /* synthetic */ float j(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.c0.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.ot0
+    @Override // org.telegram.ui.Components.rt0
     public RecyclerView n(View view) {
         return ((mb) view).a;
     }
 
-    @Override // org.telegram.ui.Components.ot0
+    @Override // org.telegram.ui.Components.rt0
     public /* synthetic */ void r(RecyclerView recyclerView) {
         org.telegram.ui.Cells.c0.b(recyclerView);
     }

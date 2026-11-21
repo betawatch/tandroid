@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 import v4.p;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -131,7 +131,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
             case 0:
                 break;
             default:
-                hn m10 = hn.m();
+                jn m10 = jn.m();
                 wi.h hVar = (wi.h) this.b;
                 ((SharedPreferences) m10.b).edit().putFloat("scale_factor", hVar.z).apply();
                 if (!hVar.D.f && !hVar.E.f) {

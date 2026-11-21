@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class fs implements View.OnClickListener {
     public final /* synthetic */ ArrayList a;
@@ -52,7 +52,7 @@ public final class fs implements View.OnClickListener {
             if (lsVar3 == null) {
                 return;
             } else {
-                org.telegram.ui.Components.b5.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
+                org.telegram.ui.Components.c5.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
             org.telegram.messenger.ri.d0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);

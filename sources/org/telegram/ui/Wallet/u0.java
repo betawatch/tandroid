@@ -47,13 +47,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.i41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.dd0;
+import org.telegram.ui.cd0;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class u0 {
     public static volatile u0[] R = new u0[4];
@@ -179,7 +179,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.x8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(j10.i(i14).e());
                         break;
                 }
             }
@@ -256,7 +256,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.x8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(j10.i(i14).e());
                         break;
                 }
             }
@@ -331,7 +331,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.x8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(j10.i(i14).e());
                         break;
                 }
             }
@@ -408,7 +408,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.x8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(j10.i(i14).e());
                         break;
                 }
             }
@@ -454,7 +454,7 @@ public final class u0 {
     }
 
     public static Context C() {
-        org.telegram.ui.ActionBar.h2 T2 = LaunchActivity.T();
+        org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
         return (T2 == null || T2.getContext() == null) ? org.telegram.messenger.t0.b : T2.getContext();
     }
 
@@ -784,15 +784,15 @@ public final class u0 {
 
     public static SpannableStringBuilder q(String str, CharSequence charSequence, int i7) {
         String replace = charSequence.toString().replace((char) 8211, '-');
-        String M0 = gd.M0(i7, null);
+        String N0 = gd.N0(i7, null);
         if (replace.indexOf(46) < 0) {
             try {
                 long parseLong = Long.parseLong(replace);
-                M0 = gd.K0((int) ((parseLong < -2147483647L || parseLong > 2147483647L) ? Math.abs(parseLong % 100) + 100 : Math.abs(parseLong)), str);
+                N0 = gd.K0((int) ((parseLong < -2147483647L || parseLong > 2147483647L) ? Math.abs(parseLong % 100) + 100 : Math.abs(parseLong)), str);
             } catch (NumberFormatException unused) {
             }
         }
-        return org.telegram.messenger.g0.K2(M0, charSequence, "%1$s");
+        return org.telegram.messenger.g0.K2(N0, charSequence, "%1$s");
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:7|(5:9|(2:11|(1:16))|29|30|31)|32|33|34|35|(4:37|(1:39)|40|41)|31) */
@@ -834,7 +834,7 @@ public final class u0 {
     }
 
     public static SpannableStringBuilder s(long j3, boolean z10) {
-        return q("GramCapital", t(j3, z10), 2131749344);
+        return q("GramCapital", t(j3, z10), 2131749343);
     }
 
     public static ArrayList s0(TL_wallet.walletTransaction wallettransaction) {
@@ -922,7 +922,7 @@ public final class u0 {
     }
 
     public static SpannableStringBuilder x(long j3, boolean z10) {
-        return q("Grams", t(j3, z10), 2131749315);
+        return q("Grams", t(j3, z10), 2131749314);
     }
 
     public final long A() {
@@ -2401,7 +2401,7 @@ public final class u0 {
         } catch (Exception e10) {
             o("emulateDepositNFT: invalid payload", e10);
             org.telegram.messenger.g0.g3(new w(q10Var, e10, 1));
-            return new dd0(8);
+            return new cd0(8);
         }
     }
 
@@ -2423,7 +2423,7 @@ public final class u0 {
         }
         performapirequest.payload = jSONObject.toString();
         int i10 = this.a;
-        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(i7), new bi.l6(this, str, x10Var), mp.u1(i10).Q3, 0);
+        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(i7), new bi.p6(this, str, x10Var), mp.u1(i10).Q3, 0);
     }
 
     public final Runnable l(p0 p0Var, q10 q10Var) {
@@ -2434,7 +2434,7 @@ public final class u0 {
         } catch (Exception e10) {
             o("emulatePreparedMessage: invalid message", e10);
             org.telegram.messenger.g0.g3(new w(q10Var, e10, 0));
-            return new dd0(8);
+            return new cd0(8);
         }
     }
 
@@ -2542,7 +2542,7 @@ public final class u0 {
                     return E;
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(E);
-                spannableStringBuilder.setSpan(new i41(org.telegram.messenger.g0.o1("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
+                spannableStringBuilder.setSpan(new l41(org.telegram.messenger.g0.o1("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
                 return spannableStringBuilder;
             }
         }

@@ -9,13 +9,13 @@ import c8.ma;
 import hi.x4;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.e3;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends e3 {
     public final /* synthetic */ m f;
@@ -27,13 +27,13 @@ public final class h extends e3 {
         this.a = j10.t0;
         final int i7 = 1;
         setOrientation(1);
-        u6.h(n6.a7, this, null);
+        t6.h(m6.a7, this, null);
         x4 x4Var = new x4(context, 3);
         x4Var.c = new Path();
         Paint paint = new Paint(1);
         x4Var.b = paint;
         final int i10 = 0;
-        paint.setColor(n6.x0(null, n6.d6, false));
+        paint.setColor(m6.x0(null, m6.d6, false));
         paint.setShadowLayer(org.telegram.messenger.g0.L(1.33f), 0.0f, org.telegram.messenger.g0.L(0.33f), 503316480);
         x4Var.setWillNotDraw(false);
         x4Var.setOrientation(1);
@@ -65,21 +65,21 @@ public final class h extends e3 {
         this.c = textView;
         textView.setGravity(17);
         textView.setTextSize(1, 18.0f);
-        u6.U(textView, n6.G6, null);
+        t6.U(textView, m6.G6, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         x4Var.addView(textView, ma.t(-1, -2, 49, 0, 6, 0, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setGravity(17);
         textView2.setTextSize(1, 14.0f);
-        u6.U(textView2, n6.y6, null);
+        t6.U(textView2, m6.y6, null);
         x4Var.addView(textView2, ma.t(-1, -2, 49, 0, 7, 0, 0));
         TextView textView3 = new TextView(context);
         this.e = textView3;
         textView3.setGravity(17);
-        textView3.setBackground(b6.f(n6.Fi, 8.0f));
+        textView3.setBackground(a6.f(m6.Fi, 8.0f));
         textView3.setTextSize(1, 14.0f);
-        u6.U(textView3, n6.Ji, null);
+        t6.U(textView3, m6.Ji, null);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f));
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.d3

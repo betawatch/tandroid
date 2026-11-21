@@ -9,7 +9,7 @@ import org.telegram.messenger.n10;
 import org.telegram.messenger.ue;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
     public v5[] a;
@@ -35,15 +35,15 @@ public final class x5 extends FrameLayout {
             if (str != null) {
                 q9Var.s(efVar.J, efVar.K, true);
                 if (efVar.b) {
-                    q9Var.h("vthumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.n6.R4);
+                    q9Var.h("vthumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.m6.R4);
                 } else {
-                    q9Var.h("thumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.n6.R4);
+                    q9Var.h("thumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.m6.R4);
                 }
                 ((TextView) v5Var.c).setText(ueVar.c);
                 ((TextView) v5Var.d).setText(String.format("%d", Integer.valueOf(ueVar.e.size())));
             }
         }
-        q9Var.setImageDrawable(org.telegram.ui.ActionBar.n6.R4);
+        q9Var.setImageDrawable(org.telegram.ui.ActionBar.m6.R4);
         ((TextView) v5Var.c).setText(ueVar.c);
         ((TextView) v5Var.d).setText(String.format("%d", Integer.valueOf(ueVar.e.size())));
     }

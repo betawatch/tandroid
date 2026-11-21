@@ -2,20 +2,20 @@ package org.telegram.ui.Components;
 
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ye implements ViewTreeObserver.OnDrawListener {
-    public final /* synthetic */ rt0 a;
-    public final /* synthetic */ nn0 b;
+    public final /* synthetic */ ut0 a;
+    public final /* synthetic */ pn0 b;
 
-    public ye(rt0 rt0Var, nn0 nn0Var) {
-        this.a = rt0Var;
-        this.b = nn0Var;
+    public ye(ut0 ut0Var, pn0 pn0Var) {
+        this.a = ut0Var;
+        this.b = pn0Var;
     }
 
     @Override // android.view.ViewTreeObserver.OnDrawListener
     public final void onDraw() {
-        rt0 rt0Var = this.a;
-        rt0Var.post(new k7(this, rt0Var, this.b, 2));
+        ut0 ut0Var = this.a;
+        ut0Var.post(new g(this, ut0Var, this.b, 3));
     }
 }

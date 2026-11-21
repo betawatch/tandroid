@@ -5,7 +5,7 @@ import java.util.List;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt0 implements org.telegram.messenger.lr, pr {
     public final /* synthetic */ ProfileActivity a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class yt0 implements org.telegram.messenger.lr, pr 
         ProfileActivity profileActivity = this.a;
         if (profileActivity.getParentLayout() != null) {
             List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.h2) p5.c.h(2, fragmentStack)) instanceof bn) {
+            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.g2) p5.c.h(2, fragmentStack)) instanceof bn) {
                 ((ActionBarLayout) profileActivity.getParentLayout()).b0(fragmentStack.size() - 2);
             }
         }

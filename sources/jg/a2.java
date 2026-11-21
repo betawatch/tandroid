@@ -2,7 +2,7 @@ package jg;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
-import bi.g2;
+import bi.k2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,10 +10,10 @@ import org.telegram.messenger.j6;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.fq;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a2 implements Runnable {
     public final /* synthetic */ c2 a;
@@ -64,12 +64,12 @@ public final class a2 implements Runnable {
         HashMap hashMap3 = c2Var.I;
         HashMap hashMap4 = c2Var.J;
         ArrayList arrayList = c2Var.G;
-        v31 v31Var = c2Var.e;
+        y31 y31Var = c2Var.e;
         int i12 = c2Var.c;
         if (TextUtils.isEmpty(c2Var.S)) {
             return;
         }
-        dq progressDrawable = v31Var.b.h.getProgressDrawable();
+        fq progressDrawable = y31Var.b.h.getProgressDrawable();
         progressDrawable.e = true;
         progressDrawable.b = System.currentTimeMillis();
         progressDrawable.invalidateSelf();
@@ -142,11 +142,11 @@ public final class a2 implements Runnable {
         }
         if (hashMap5 != null && !hashMap5.isEmpty() && c2Var.S.length() > 1) {
             String[] G0 = org.telegram.messenger.g0.G0();
-            if (!Arrays.equals(v31Var.a.b(), G0)) {
+            if (!Arrays.equals(y31Var.a.b(), G0)) {
                 ri.d0(i7).O(G0, false);
             }
-            v31Var.a.i(G0);
-            ri.d0(i7).W(v31Var.a.b(), c2Var.S, false, new ai.r1(this, i13, hashMap5, 2), false);
+            y31Var.a.i(G0);
+            ri.d0(i7).W(y31Var.a.b(), c2Var.S, false, new ai.t1(this, i13, hashMap5, 2), false);
         }
         ArrayList u02 = ri.d0(i7).u0(0);
         int size2 = u02.size();
@@ -197,16 +197,16 @@ public final class a2 implements Runnable {
             }
         }
         if (!arrayList.isEmpty() || !hashMap6.isEmpty()) {
-            v31Var.b(true);
+            y31Var.b(true);
         }
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = new TLRPC.TL_messages_searchStickerSets();
         tL_messages_searchStickerSets.q = c2Var.S;
-        c2Var.O = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_searchStickerSets, new bi.k1(19, this, tL_messages_searchStickerSets));
+        c2Var.O = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_searchStickerSets, new bi.o1(19, this, tL_messages_searchStickerSets));
         if (j6.h(c2Var.S)) {
             TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
             tL_messages_getStickers.emoticon = c2Var.S;
             tL_messages_getStickers.hash = 0L;
-            c2Var.P = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getStickers, new g2(this, tL_messages_getStickers, arrayList2, longSparseArray, 9));
+            c2Var.P = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getStickers, new k2(this, tL_messages_getStickers, arrayList2, longSparseArray, 9));
         }
         c2Var.f();
     }

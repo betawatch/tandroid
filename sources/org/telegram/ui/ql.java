@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ql extends org.telegram.ui.Cells.k9 {
     public bn w0;
@@ -30,17 +30,17 @@ public final class ql extends org.telegram.ui.Cells.k9 {
             }
             rj rjVar = this.w0.a0;
             if (rjVar != null && rjVar.getVisibility() == 0) {
-                kVar = ((org.telegram.ui.ActionBar.h2) this.w0).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) this.w0).actionBar;
                 if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.h2) this.w0).actionBar;
-                    if (kVar2.y()) {
+                    kVar2 = ((org.telegram.ui.ActionBar.g2) this.w0).actionBar;
+                    if (kVar2.x()) {
                         this.w0.O7(false);
                     }
                 }
                 this.w0.jc(fjVar, b10);
                 rj rjVar2 = this.w0.a0;
                 if (rjVar2 != null) {
-                    rjVar2.e1();
+                    rjVar2.i1();
                     return;
                 }
                 return;
@@ -128,7 +128,7 @@ public final class ql extends org.telegram.ui.Cells.k9 {
     }
 
     @Override // org.telegram.ui.Cells.w9
-    public final org.telegram.ui.ActionBar.i6 q() {
+    public final org.telegram.ui.ActionBar.h6 q() {
         bn bnVar = this.w0;
         if (bnVar != null) {
             return bnVar.Ba;
@@ -138,6 +138,6 @@ public final class ql extends org.telegram.ui.Cells.k9 {
 
     @Override // org.telegram.ui.Cells.w9
     public final int t(int i7) {
-        return org.telegram.ui.ActionBar.n6.w0(i7, this.w0.Ba);
+        return org.telegram.ui.ActionBar.m6.w0(i7, this.w0.Ba);
     }
 }

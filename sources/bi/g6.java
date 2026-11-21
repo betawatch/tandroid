@@ -1,66 +1,124 @@
 package bi;
 
 import android.content.Context;
-import android.graphics.Rect;
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.tgnet.TLObject;
+import hi.l9;
+import org.telegram.ui.Components.d51;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.ej;
+import org.telegram.ui.Components.gq0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.yi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g6 extends ScrollView {
-    public final /* synthetic */ int a;
+public final class g6 extends h51 {
+    public final /* synthetic */ int n3 = 0;
+    public final /* synthetic */ Object o3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g6(Context context, int i7) {
-        super(context);
-        this.a = i7;
+    public g6(e51 e51Var, e51 e51Var2, org.telegram.ui.Components.d dVar, d51 d51Var, d51 d51Var2) {
+        super(e51Var2, dVar, d51Var, d51Var2);
+        this.o3 = e51Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.ek0
+    public boolean E0(float f10) {
+        switch (this.n3) {
+            case 2:
+                ui uiVar = ((ej) this.o3).b;
+                return f10 >= ((float) ((org.telegram.messenger.g0.L(30.0f) + uiVar.Z3[0]) + (!uiVar.b2 ? org.telegram.messenger.g0.m : 0)));
+            default:
+                return super.E0(f10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public void F1() {
+        switch (this.n3) {
+            case 2:
+                ej ejVar = (ej) this.o3;
+                ejVar.b.N1(ejVar, 0);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public void K1() {
+        switch (this.n3) {
+            case 1:
+                org.telegram.messenger.g0.d0(((l9) this.o3).b, new ai.h0(this, 27));
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public Integer V0(int i7) {
+        switch (this.n3) {
+            case 1:
+                return 0;
+            default:
+                return super.V0(i7);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public void l0(int i7) {
+        org.telegram.ui.web.i iVar;
+        switch (this.n3) {
+            case 4:
+                if (!canScrollVertically(1) && (iVar = ((org.telegram.ui.web.k) this.o3).E) != null && iVar.h) {
+                    iVar.d();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.n3) {
             case 0:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(260.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                super.onLayout(z10, i7, i10, i11, i12);
+                ((gq0) this.o3).p();
                 break;
             case 1:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(260.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
                 break;
             case 2:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i10), Math.min(org.telegram.messenger.g0.q.y * 0.35f, org.telegram.messenger.g0.L(400.0f))), View.MeasureSpec.getMode(i10)));
+                super.onLayout(z10, i7, i10, i11, i12);
+                ej ejVar = (ej) this.o3;
+                ejVar.b.N1(ejVar, 0);
                 break;
             case 3:
-            default:
-                super.onMeasure(i7, i10);
-                break;
-            case 4:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(320.0f)), TLObject.FLAG_31));
-                break;
-            case 5:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(360.0f)), TLObject.FLAG_31));
+                super.onLayout(z10, i7, i10, i11, i12);
+                ((e51) this.o3).c = -1;
                 break;
         }
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i7, Rect rect) {
-        switch (this.a) {
-            case 3:
-                return false;
-            default:
-                return super.onRequestFocusInDescendants(i7, rect);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g6(l9 l9Var, Context context, int i7, hi.r3 r3Var, di.v6 v6Var, fi.b bVar) {
+        super(context, i7, 0, false, r3Var, v6Var, null, bVar, -1, 0);
+        this.o3 = l9Var;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        switch (this.a) {
-            case 3:
-                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                rect.top = org.telegram.messenger.g0.L(20.0f) + rect.top;
-                rect.bottom = org.telegram.messenger.g0.L(50.0f) + rect.bottom;
-                break;
-        }
-        return super.requestChildRectangleOnScreen(view, rect, z10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g6(org.telegram.ui.web.k kVar, Context context, int i7, org.telegram.ui.web.b bVar, org.telegram.ui.web.a aVar, hi.c5 c5Var) {
+        super(context, i7, 0, false, bVar, aVar, null, c5Var);
+        this.o3 = kVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g6(ej ejVar, Context context, int i7, org.telegram.ui.Components.d dVar, yi yiVar, yi yiVar2, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, i7, 0, false, dVar, yiVar, yiVar2, h6Var);
+        this.o3 = ejVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g6(Context context, int i7, b bVar, e6 e6Var, e6 e6Var2, org.telegram.ui.ActionBar.h6 h6Var, gq0 gq0Var) {
+        super(context, i7, 0, false, bVar, e6Var, e6Var2, h6Var, 3, 1);
+        this.o3 = gq0Var;
     }
 }

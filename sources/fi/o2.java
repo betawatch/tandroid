@@ -9,29 +9,29 @@ import org.telegram.messenger.yy;
 import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.eh;
-import org.telegram.ui.Components.qi;
+import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class o2 implements qi {
+public final class o2 implements si {
     public final /* synthetic */ z3 a;
 
     public o2(z3 z3Var) {
         this.a = z3Var;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final void K0() {
         this.a.L1.U();
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ boolean V1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
         org.telegram.messenger.c accountInstance;
         z3 z3Var = this.a;
@@ -47,12 +47,12 @@ public final class o2 implements qi {
         z3Var.i0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.qi
-    public final void f0(eh ehVar) {
-        ks.f(this.a.m2).d(ehVar);
+    @Override // org.telegram.ui.Components.si
+    public final void f0(gh ghVar) {
+        ks.f(this.a.m2).d(ghVar);
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final boolean g0() {
         return this.a.L0();
     }
@@ -65,7 +65,7 @@ public final class o2 implements qi {
     /* JADX WARN: Type inference failed for: r7v1 */
     /* JADX WARN: Type inference failed for: r7v2, types: [int] */
     /* JADX WARN: Type inference failed for: r7v3 */
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
         TL_stories.StoryItem storyItem;
         org.telegram.messenger.c accountInstance;
@@ -155,15 +155,15 @@ public final class o2 implements qi {
         z3Var.i0(j10 <= 0 ? z18 : z19);
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ void v0() {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ void R0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ void h1(TLRPC.User user) {
     }
 }

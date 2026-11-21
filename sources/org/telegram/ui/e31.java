@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e31 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class e31 implements RequestDelegate {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0168  */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -35,7 +35,7 @@ public final /* synthetic */ class e31 implements RequestDelegate {
         long[] jArr;
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new b31(1, (o31) this.b, (TLRPC.TL_attachMenuBot) this.c));
+                org.telegram.messenger.g0.g3(new mz0(3, (o31) this.b, (TLRPC.TL_attachMenuBot) this.c));
                 break;
             case 1:
                 org.telegram.messenger.g0.g3(new kg0((org.telegram.messenger.fs) this.b, (Object) tL_error, (Object) tLObject, (String) this.c, 21));
@@ -88,20 +88,20 @@ public final /* synthetic */ class e31 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new kg0(o41Var, str3, str, p10Var, 23));
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new u21((a81) this.b, (String) this.c, tL_error));
+                org.telegram.messenger.g0.g3(new v21((a81) this.b, (String) this.c, tL_error));
                 break;
             case 4:
                 a81 a81Var = (a81) this.b;
                 TL_account.updateTheme updatetheme = (TL_account.updateTheme) this.c;
                 if (tLObject instanceof TLRPC.TL_theme) {
-                    org.telegram.messenger.g0.g3(new b31(8, a81Var, (TLRPC.TL_theme) tLObject));
+                    org.telegram.messenger.g0.g3(new mz0(10, a81Var, (TLRPC.TL_theme) tLObject));
                     break;
                 } else {
-                    org.telegram.messenger.g0.g3(new u21(a81Var, tL_error, updatetheme, 4));
+                    org.telegram.messenger.g0.g3(new v21(a81Var, tL_error, updatetheme, 4));
                     break;
                 }
             case 5:
-                org.telegram.messenger.g0.g3(new u21((u91) this.b, (String) this.c, tLObject, 8));
+                org.telegram.messenger.g0.g3(new v21((u91) this.b, (String) this.c, tLObject, 8));
                 break;
             case 6:
                 org.telegram.messenger.g0.g3(new kg0((bb1) this.b, tLObject, (String) this.c, tL_error, 26));
@@ -117,17 +117,17 @@ public final /* synthetic */ class e31 implements RequestDelegate {
                     break;
                 }
             case 8:
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Wallet.c5(13, (pc1) this.b, (int[]) this.c));
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Wallet.u4(15, (pc1) this.b, (int[]) this.c));
                 break;
             case 9:
-                org.telegram.messenger.g0.g3(new p4.s0((tg.e2) this.b, tLObject, (tg.c2) this.c, tL_error, 5));
+                org.telegram.messenger.g0.g3(new p4.s0((tg.f2) this.b, tLObject, (tg.d2) this.c, tL_error, 5));
                 break;
             case 10:
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.sv0(tLObject, (org.telegram.messenger.mp) this.b, (wg.u0) this.c, 28));
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.es0(tLObject, (org.telegram.messenger.mp) this.b, (wg.u0) this.c, 29));
                 break;
             default:
                 org.telegram.messenger.mp mpVar = (org.telegram.messenger.mp) this.b;
-                org.telegram.ui.Components.ph phVar = (org.telegram.ui.Components.ph) this.c;
+                org.telegram.ui.Components.rh rhVar = (org.telegram.ui.Components.rh) this.c;
                 if (tLObject instanceof TLRPC.TL_contacts_found) {
                     TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
                     mpVar.f4(tL_contacts_found.users, false);
@@ -138,7 +138,7 @@ public final /* synthetic */ class e31 implements RequestDelegate {
                             arrayList.add(user);
                         }
                     }
-                    org.telegram.messenger.g0.g3(new p4.o0(29, phVar, arrayList));
+                    org.telegram.messenger.g0.g3(new wg.q(1, rhVar, arrayList));
                     break;
                 }
                 break;

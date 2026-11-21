@@ -1,160 +1,188 @@
 package oi;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.FileOutputStream;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import java.util.ArrayList;
-import org.telegram.messenger.ec;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.fc;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.zy;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x4 b;
+public final class v4 {
+    public static ColorMatrixColorFilter f;
+    public final ImageReceiver a;
+    public final ImageReceiver b;
+    public Bitmap c;
+    public final RadialProgress2 d;
+    public r e;
 
-    public /* synthetic */ v4(x4 x4Var, int i7) {
-        this.a = i7;
-        this.b = x4Var;
+    public v4(s4 s4Var, h6 h6Var) {
+        this.a = new ImageReceiver(s4Var);
+        this.b = new ImageReceiver(s4Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(s4Var, h6Var);
+        this.d = radialProgress2;
+        radialProgress2.d = -1;
+        radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
+        radialProgress2.setIcon(3, false, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x0187, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0113, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0115, code lost:
-    
-        r1.recycle();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0153, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x017e, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        Bitmap bitmap;
-        switch (this.a) {
-            case 0:
-                x4 x4Var = this.b;
-                String str = x4Var.b;
-                TLRPC.Document document = x4Var.r;
-                String str2 = null;
-                if (document != null && !TextUtils.isEmpty(str)) {
-                    try {
-                        String str3 = document.mime_type;
-                        String lowerCase = str3 == null ? "" : str3.toLowerCase();
-                        bitmap = lowerCase.startsWith("image/") ? ec.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? zy.r(1, str) : null;
-                        if (bitmap != null) {
-                            try {
-                                ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
-                                int size = arrayList.size();
-                                int i7 = 0;
-                                while (true) {
-                                    if (i7 < size) {
-                                        TLRPC.DocumentAttribute documentAttribute = arrayList.get(i7);
-                                        i7++;
-                                        if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
-                                        }
-                                    } else {
-                                        TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                                        tL_documentAttributeImageSize.w = bitmap.getWidth();
-                                        tL_documentAttributeImageSize.h = bitmap.getHeight();
-                                        document.attributes.add(tL_documentAttributeImageSize);
-                                    }
-                                }
-                                TLRPC.PhotoSize Z = ec.Z(bitmap, 320.0f, 320.0f, 80, false);
-                                if (Z != null) {
-                                    document.thumbs.clear();
-                                    document.thumbs.add(Z);
-                                    document.flags |= 1;
-                                    w7.G(x4Var.a);
-                                    File J = w7.J(Z, null, true, true);
-                                    if (J != null && J.exists()) {
-                                        str2 = J.getAbsolutePath();
-                                    }
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            } catch (Throwable unused) {
-                                if (bitmap != null) {
-                                    break;
-                                }
-                                x4Var.G = str2;
-                                org.telegram.messenger.g0.g3(new v4(x4Var, 2));
-                                return;
-                            }
-                        } else if (bitmap != null) {
-                            break;
-                        }
-                    } catch (Throwable unused2) {
-                        bitmap = null;
-                    }
-                }
-                x4Var.G = str2;
-                org.telegram.messenger.g0.g3(new v4(x4Var, 2));
-                return;
-            case 1:
-                x4 x4Var2 = this.b;
-                String str4 = x4Var2.b;
-                try {
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-                    options.inJustDecodeBounds = true;
-                    BitmapFactory.decodeFile(str4, options);
-                    String str5 = options.outMimeType;
-                    boolean z10 = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
-                    float Z0 = org.telegram.messenger.g0.Z0(false);
-                    Bitmap K = ec.K(str4, null, Z0, Z0, true);
-                    if (K == null) {
-                        K = ec.K(str4, null, 800.0f, 800.0f, true);
-                    }
-                    if (K != null) {
-                        File file = new File(w7.z(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");
-                        try {
-                            FileOutputStream fileOutputStream = new FileOutputStream(file);
-                            try {
-                                boolean compress = K.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
-                                fileOutputStream.close();
-                                if (compress && file.length() > 0) {
-                                    if (z10) {
-                                        long length = new File(str4).length();
-                                        if (length > 0 && file.length() >= length) {
-                                        }
-                                    }
-                                    str4 = file.getAbsolutePath();
-                                }
-                            } finally {
-                            }
-                        } finally {
-                            K.recycle();
+    public final void a() {
+        String sb2;
+        TLRPC.Photo photo;
+        TLRPC.Document document;
+        TLRPC.PhotoSize photoSize;
+        int abs;
+        r rVar = this.e;
+        TLRPC.PhotoSize photoSize2 = null;
+        ImageReceiver imageReceiver = this.a;
+        if (rVar == null) {
+            imageReceiver.w0(null);
+            return;
+        }
+        int i7 = org.telegram.messenger.g0.q.x;
+        String j3 = com.google.android.gms.internal.vision.e2.j(i7, "_", i7);
+        StringBuilder sb3 = new StringBuilder();
+        r rVar2 = this.e;
+        if (rVar2 == null) {
+            sb2 = "null";
+        } else {
+            String str = rVar2.b ? "v" : rVar2.c ? "a" : "p";
+            if (rVar2.e != null) {
+                StringBuilder n10 = p5.c.n(str, ":local:");
+                n10.append(this.e.e);
+                sb2 = n10.toString();
+            } else {
+                long j10 = 0;
+                if (rVar2.b()) {
+                    r rVar3 = this.e;
+                    TLRPC.Document document2 = rVar3.h;
+                    if (document2 != null) {
+                        j10 = document2.id;
+                    } else {
+                        TLRPC.Photo photo2 = rVar3.g;
+                        if (photo2 != null) {
+                            j10 = photo2.id;
                         }
                     }
-                } catch (Throwable unused3) {
                 }
-                org.telegram.messenger.g0.g3(new s2(4, x4Var2, str4));
+                StringBuilder n11 = p5.c.n(str, ":");
+                n11.append(this.e.a);
+                n11.append(":");
+                n11.append(j10);
+                sb2 = n11.toString();
+            }
+        }
+        sb3.append(sb2);
+        sb3.append("@");
+        sb3.append(j3);
+        if (sb3.toString().equals(null)) {
+            return;
+        }
+        this.e.getClass();
+        r rVar4 = this.e;
+        if (!rVar4.b) {
+            if (rVar4.e != null) {
+                imageReceiver.G0(rVar4.l, rVar4.m, true);
+                imageReceiver.q0(fc.g(this.e.e), j3, null, null, null, 0);
                 return;
-            default:
-                x4 x4Var3 = this.b;
-                if (x4Var3.x || x4Var3.y) {
+            } else {
+                if (!rVar4.b() || (photo = this.e.g) == null) {
+                    imageReceiver.w0(null);
                     return;
                 }
-                x4Var3.a(x4Var3.b);
+                TLRPC.PhotoSize w10 = w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), false, null, false);
+                TLRPC.PhotoSize w11 = w7.w(this.e.g.sizes, 100, false, null, false);
+                imageReceiver.G0(0, 0, false);
+                imageReceiver.r0(fc.i(w10, this.e.g), j3, fc.i(w11, this.e.g), j3, null, 0L, null, this.e.g, 0);
                 return;
+            }
         }
+        if (rVar4.e != null) {
+            imageReceiver.G0(0, 0, false);
+            imageReceiver.u0(fc.o(this.e.e), "g", null, j3, null, j3, null, 0L, null, null, 0);
+            return;
+        }
+        if (!rVar4.b() || (document = this.e.h) == null) {
+            imageReceiver.w0(null);
+            return;
+        }
+        ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
+        int Z0 = org.telegram.messenger.g0.Z0(false);
+        if (arrayList == null) {
+            photoSize = null;
+        } else {
+            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            photoSize = null;
+            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                TLRPC.PhotoSize photoSize3 = arrayList.get(i11);
+                if (!(photoSize3 instanceof TLRPC.TL_photoStrippedSize) && !(photoSize3 instanceof TLRPC.TL_photoPathSize) && (abs = Math.abs(Math.max(photoSize3.w, photoSize3.h) - Z0)) < i10) {
+                    photoSize = photoSize3;
+                    i10 = abs;
+                }
+            }
+        }
+        ArrayList<TLRPC.PhotoSize> arrayList2 = this.e.h.thumbs;
+        if (arrayList2 != null) {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= arrayList2.size()) {
+                    break;
+                }
+                if (arrayList2.get(i12) instanceof TLRPC.TL_photoStrippedSize) {
+                    photoSize2 = arrayList2.get(i12);
+                    break;
+                }
+                i12++;
+            }
+        }
+        imageReceiver.G0(0, 0, false);
+        imageReceiver.u0(fc.b(this.e.h), "g", fc.c(photoSize, this.e.h), j3, fc.c(photoSize2, this.e.h), j3, null, 0L, null, this.e.h, 0);
+    }
+
+    public final boolean b() {
+        ImageReceiver imageReceiver;
+        Bitmap n10;
+        if (c() && (n10 = (imageReceiver = this.a).n()) != null && !n10.isRecycled()) {
+            ImageReceiver imageReceiver2 = this.b;
+            if ((imageReceiver2.n() == null || imageReceiver.m() == null) && (n10 != this.c || imageReceiver2.n() == null)) {
+                this.c = n10;
+                imageReceiver2.v0(Utilities.D(n10, false));
+                if (f == null) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    org.telegram.messenger.g0.n2(colorMatrix, 0.9f);
+                    org.telegram.messenger.g0.i(colorMatrix, 0.6f);
+                    f = new ColorMatrixColorFilter(colorMatrix);
+                }
+                imageReceiver2.p1 = f;
+            }
+            if (imageReceiver2.n() != null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final boolean c() {
+        r rVar = this.e;
+        if (rVar != null) {
+            return rVar.e != null || rVar.b();
+        }
+        return false;
+    }
+
+    public final boolean d() {
+        r rVar = this.e;
+        if (rVar == null || rVar.b || rVar.b()) {
+            return false;
+        }
+        int i7 = this.e.l;
+        return i7 == 90 || i7 == 270;
     }
 }

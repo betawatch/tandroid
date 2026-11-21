@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.Process;
 import android.provider.Settings;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class u {
     public static final Object b = new Object();
@@ -27,10 +27,10 @@ public final class u {
                 if (c == null) {
                     Context applicationContext = context.getApplicationContext();
                     u uVar2 = new u();
-                    ji.j jVar = new ji.j(23, false);
-                    jVar.b = applicationContext;
-                    jVar.c = applicationContext.getContentResolver();
-                    uVar2.a = jVar;
+                    ji.l lVar = new ji.l(23, false);
+                    lVar.b = applicationContext;
+                    lVar.c = applicationContext.getContentResolver();
+                    uVar2.a = lVar;
                     c = uVar2;
                 }
                 uVar = c;
@@ -42,9 +42,9 @@ public final class u {
     }
 
     public boolean b(r rVar) {
-        ji.j jVar = (ji.j) this.a;
+        ji.l lVar = (ji.l) this.a;
         t tVar = rVar.a;
-        Context context = (Context) jVar.b;
+        Context context = (Context) lVar.b;
         int i7 = tVar.c;
         String str = tVar.a;
         try {
@@ -57,10 +57,10 @@ public final class u {
                 if (i10 < 28) {
                     i7 = applicationInfo.uid;
                 }
-                if (i7 == 1000 || i7 == Process.myUid() || context.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", tVar.b, tVar.c) == 0 || jVar.P(tVar, "android.permission.STATUS_BAR_SERVICE") || jVar.P(tVar, "android.permission.MEDIA_CONTENT_CONTROL")) {
+                if (i7 == 1000 || i7 == Process.myUid() || context.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", tVar.b, tVar.c) == 0 || lVar.P(tVar, "android.permission.STATUS_BAR_SERVICE") || lVar.P(tVar, "android.permission.MEDIA_CONTENT_CONTROL")) {
                     return true;
                 }
-                String string = Settings.Secure.getString((ContentResolver) jVar.c, "enabled_notification_listeners");
+                String string = Settings.Secure.getString((ContentResolver) lVar.c, "enabled_notification_listeners");
                 if (string != null) {
                     for (String str2 : string.split(":")) {
                         ComponentName unflattenFromString = ComponentName.unflattenFromString(str2);

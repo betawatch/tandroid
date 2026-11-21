@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class xc extends org.telegram.ui.Components.ph0 {
+public final class xc extends org.telegram.ui.Components.rh0 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
@@ -44,11 +44,11 @@ public final class xc extends org.telegram.ui.Components.ph0 {
         switch (this.r) {
             case 1:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                if (!((org.telegram.ui.Components.lp) this.s).H1) {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.gd.M0(2131754750, null));
+                if (!((org.telegram.ui.Components.np) this.s).H1) {
+                    accessibilityNodeInfo.setText(org.telegram.messenger.gd.N0(2131754749, null));
                     break;
                 } else {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.gd.M0(2131754751, null));
+                    accessibilityNodeInfo.setText(org.telegram.messenger.gd.N0(2131754750, null));
                     break;
                 }
             default:
@@ -70,7 +70,7 @@ public final class xc extends org.telegram.ui.Components.ph0 {
                 break;
             case 2:
                 super.invalidate();
-                ((org.telegram.ui.Components.r10) this.s).invalidate();
+                ((org.telegram.ui.Components.u10) this.s).invalidate();
                 break;
             case 3:
                 super.invalidate();

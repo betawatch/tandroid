@@ -9,7 +9,7 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a {
     public final b a;
@@ -135,7 +135,7 @@ public final class a {
             return ordinal != 0 ? ordinal != 1 ? "" : gd.H(' ', "TonCount", (int) a()) : gd.H(' ', "StarsCount", (int) a());
         }
         int ordinal2 = bVar.ordinal();
-        return ordinal2 != 0 ? ordinal2 != 1 ? "" : gd.a0(null, null, 2131743815, b()) : gd.a0(null, null, 2131744878, b());
+        return ordinal2 != 0 ? ordinal2 != 1 ? "" : gd.a0(null, null, 2131743809, b()) : gd.a0(null, null, 2131744872, b());
     }
 
     public final boolean l() {

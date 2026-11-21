@@ -13,11 +13,11 @@ import android.text.TextPaint;
 import bg.t;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a extends c implements te.b {
     public final te.a d;
@@ -28,15 +28,15 @@ public final class a extends c implements te.b {
     public int r;
     public int s;
 
-    public a(Context context, i6 i6Var) {
-        super(i6Var);
-        this.d = new te.a(0, this, lr.h, 320L, false);
+    public a(Context context, h6 h6Var) {
+        super(h6Var);
+        this.d = new te.a(0, this, nr.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = i5.c.g(context, org.telegram.messenger.beta.R.drawable.outline_poll_add_24);
-        this.h = new TextPaint(n6.P2);
-        int w02 = n6.w0(n6.i6, i6Var);
+        this.h = new TextPaint(m6.P2);
+        int w02 = m6.w0(m6.i6, h6Var);
         if (this.b != w02) {
-            n6.H1(this.a, w02, false);
+            m6.H1(this.a, w02, false);
             this.b = w02;
         }
         b();
@@ -102,7 +102,7 @@ public final class a extends c implements te.b {
         int width = rect.width() - g0.L(56.0f);
         if (this.n == null || this.r != width) {
             this.r = width;
-            this.n = new StaticLayout(gd.M0(2131746991, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.n = new StaticLayout(gd.N0(2131746990, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
     }
 

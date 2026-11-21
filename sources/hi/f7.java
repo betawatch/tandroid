@@ -1,26 +1,39 @@
 package hi;
 
-import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f7 implements View.OnClickListener {
+public final /* synthetic */ class f7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l7 b;
+    public final /* synthetic */ k7 b;
 
-    public /* synthetic */ f7(l7 l7Var, int i7) {
+    public /* synthetic */ f7(k7 k7Var, int i7) {
         this.a = i7;
-        this.b = l7Var;
+        this.b = k7Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.f1();
+                TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
+                k7 k7Var = this.b;
+                getwebpagepreview.message = k7Var.U1.d.getText().toString();
+                k7Var.e2 = ConnectionsManager.getInstance(k7Var.a).sendRequest(getwebpagepreview, new ai.g1(k7Var, 12));
+                break;
+            case 1:
+                this.b.i1();
                 break;
             default:
-                this.b.i1();
+                k7 k7Var2 = this.b;
+                org.telegram.ui.Cells.l3 l3Var = k7Var2.U1;
+                if (k7Var2.isShowing()) {
+                    l3Var.d.requestFocus();
+                    org.telegram.messenger.g0.I3(l3Var.d);
+                    break;
+                }
                 break;
         }
     }

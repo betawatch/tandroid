@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class br extends LinearLayout {
     public final Paint a;
@@ -138,7 +138,7 @@ public abstract class br extends LinearLayout {
                     }
                 }
                 float successProgress = erVar.getSuccessProgress();
-                int f10 = i0.a.f(successProgress, i0.a.f(erVar.getErrorProgress(), i0.a.f(erVar.getFocusedProgress(), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.k6, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.l6, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q7, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.i7, false));
+                int f10 = i0.a.f(successProgress, i0.a.f(erVar.getErrorProgress(), i0.a.f(erVar.getFocusedProgress(), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.k6, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.l6, false)), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q7, false)), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.i7, false));
                 Paint paint = this.a;
                 paint.setColor(f10);
                 RectF rectF = org.telegram.messenger.g0.P;

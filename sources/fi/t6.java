@@ -17,9 +17,9 @@ import c8.ma;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class t6 extends FrameLayout {
     public final ArrayList a;
@@ -47,21 +47,21 @@ public final class t6 extends FrameLayout {
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(gd.M0(2131744528, null));
+        textView.setText(gd.N0(2131744522, null));
         textView.setTextSize(1, 20.0f);
         linearLayout.addView(textView, ma.o(-2, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(-1761607681);
-        textView2.setText(gd.M0(2131744525, null));
+        textView2.setText(gd.N0(2131744519, null));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
         linearLayout.addView(textView2, ma.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
         ArrayList arrayList = new ArrayList(4);
         this.a = arrayList;
-        arrayList.add(new s6(context, R.raw.stories_intro_go_forward, gd.M0(2131744532, null), gd.M0(2131744531, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_pause, gd.M0(2131744527, null), gd.M0(2131744526, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_go_back, gd.M0(2131744534, null), gd.M0(2131744533, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_go_to_next, gd.M0(2131744530, null), gd.M0(2131744529, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_forward, gd.N0(2131744526, null), gd.N0(2131744525, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_pause, gd.N0(2131744521, null), gd.N0(2131744520, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_back, gd.N0(2131744528, null), gd.N0(2131744527, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_to_next, gd.N0(2131744524, null), gd.N0(2131744523, null)));
         int measuredWidth = t8Var.getMeasuredWidth() - org.telegram.messenger.g0.L(100.0f);
         int size = arrayList.size();
         int i10 = 0;
@@ -95,7 +95,7 @@ public final class t6 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextColor(-1);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(gd.M0(2131744535, null));
+        textView3.setText(gd.N0(2131744529, null));
         textView3.setTextSize(1, 14.0f);
         linearLayout.addView(textView3, ma.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
         addView(linearLayout, ma.e(-1, -2, 17));
@@ -118,7 +118,7 @@ public final class t6 extends FrameLayout {
         this.b.setDuration(350L);
         this.b.setInterpolator(new AccelerateDecelerateInterpolator());
         this.b.getCurrentPlayTime();
-        this.b.addListener(new ai.j0(this, 16));
+        this.b.addListener(new ai.k0(this, 16));
         this.b.addUpdateListener(new ah.g(this, 23));
         this.b.start();
         org.telegram.messenger.g0.h3(this.e, (((s6) this.a.get(this.d)).c.r() * 2) + 100);
@@ -135,16 +135,16 @@ public final class t6 extends FrameLayout {
         ArrayList arrayList = this.a;
         if (i7 != -1) {
             s6 s6Var = (s6) arrayList.get(i7);
-            mh0 mh0Var = s6Var.c;
-            mh0Var.M(0);
-            mh0Var.stop();
+            oh0 oh0Var = s6Var.c;
+            oh0Var.M(0);
+            oh0Var.stop();
             s6Var.n = 0.0f;
             s6Var.invalidate();
         }
         s6 s6Var2 = (s6) arrayList.get(this.d);
-        mh0 mh0Var2 = s6Var2.c;
-        mh0Var2.M(0);
-        mh0Var2.stop();
+        oh0 oh0Var2 = s6Var2.c;
+        oh0Var2.M(0);
+        oh0Var2.stop();
         s6Var2.n = 0.0f;
         s6Var2.invalidate();
         c();

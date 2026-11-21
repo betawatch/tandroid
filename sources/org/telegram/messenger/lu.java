@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class lu extends zt implements y5 {
     public static Paint p0;
@@ -77,8 +77,8 @@ public abstract class lu extends zt implements y5 {
 
     @Override // org.telegram.messenger.zt
     public final CharSequence E(int i7) {
-        String M0 = gd.M0(q0() ? 2131753931 : 2131753946, null);
-        return (!r0() || this.o0.b()) ? M0 : TextUtils.concat(M0, ", ", gd.M0(2131745027, null));
+        String N0 = gd.N0(q0() ? 2131753930 : 2131753945, null);
+        return (!r0() || this.o0.b()) ? N0 : TextUtils.concat(N0, ", ", gd.N0(2131745021, null));
     }
 
     @Override // org.telegram.messenger.zt
@@ -519,7 +519,7 @@ public abstract class lu extends zt implements y5 {
             return;
         }
         ImageReceiver imageReceiver = this.Y;
-        org.telegram.ui.Components.b6 m10 = imageReceiver.m();
+        org.telegram.ui.Components.c6 m10 = imageReceiver.m();
         boolean z11 = m10 != null && (m10.s() || imageReceiver.M());
         boolean l02 = l0();
         ev evVar = this.a;

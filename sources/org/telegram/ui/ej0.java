@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ej0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -153,13 +153,13 @@ public final class ej0 extends FrameLayout {
                 break;
             default:
                 super.onMeasure(i7, i10);
-                org.telegram.ui.Components.ph0 ph0Var = ((org.telegram.ui.Components.yg0) this.d).r1;
+                org.telegram.ui.Components.rh0 rh0Var = ((org.telegram.ui.Components.ah0) this.d).r1;
                 float measuredHeight = (r0.q1 / 768.0f) * ((kg.k) this.b).getMeasuredHeight();
                 if (this.c != measuredHeight) {
                     this.c = measuredHeight;
-                    ViewGroup.LayoutParams layoutParams = ph0Var.getLayoutParams();
+                    ViewGroup.LayoutParams layoutParams = rh0Var.getLayoutParams();
                     int i14 = (int) measuredHeight;
-                    ph0Var.getLayoutParams().width = i14;
+                    rh0Var.getLayoutParams().width = i14;
                     layoutParams.height = i14;
                     super.onMeasure(i7, i10);
                     break;
@@ -169,10 +169,10 @@ public final class ej0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ej0(org.telegram.ui.Components.yg0 yg0Var, Context context, kg.k kVar) {
+    public ej0(org.telegram.ui.Components.ah0 ah0Var, Context context, kg.k kVar) {
         super(context);
         this.a = 3;
-        this.d = yg0Var;
+        this.d = ah0Var;
         this.b = kVar;
     }
 }

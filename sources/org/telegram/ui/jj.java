@@ -4,14 +4,14 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class jj extends org.telegram.ui.Cells.v0 {
     public final /* synthetic */ bn z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jj(Context context, org.telegram.ui.ActionBar.i6 i6Var, bn bnVar) {
-        super(context, i6Var, false);
+    public jj(Context context, org.telegram.ui.ActionBar.h6 h6Var, bn bnVar) {
+        super(context, h6Var, false);
         this.z2 = bnVar;
     }
 
@@ -39,8 +39,8 @@ public final class jj extends org.telegram.ui.Cells.v0 {
             return false;
         }
         bn bnVar = this.z2;
-        kVar = ((org.telegram.ui.ActionBar.h2) bnVar).actionBar;
-        if (kVar.y() || bnVar.Y9()) {
+        kVar = ((org.telegram.ui.ActionBar.g2) bnVar).actionBar;
+        if (kVar.x() || bnVar.Y9()) {
             return false;
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -53,8 +53,8 @@ public final class jj extends org.telegram.ui.Cells.v0 {
             return false;
         }
         bn bnVar = this.z2;
-        kVar = ((org.telegram.ui.ActionBar.h2) bnVar).actionBar;
-        if (kVar.y() || bnVar.Y9()) {
+        kVar = ((org.telegram.ui.ActionBar.g2) bnVar).actionBar;
+        if (kVar.x() || bnVar.Y9()) {
             return false;
         }
         return super.onTouchEvent(motionEvent);

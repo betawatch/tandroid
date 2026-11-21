@@ -4,7 +4,7 @@ import android.window.BackEvent;
 import android.window.OnBackAnimationCallback;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class w80 implements OnBackAnimationCallback {
     public boolean b;
@@ -75,7 +75,7 @@ public final class w80 implements OnBackAnimationCallback {
         if (org.telegram.messenger.g0.Q1() || (actionBarLayout = this.f.p0) == null || !actionBarLayout.j1) {
             return;
         }
-        float interpolation = org.telegram.ui.Components.lr.l.getInterpolation(max) * org.telegram.messenger.g0.L(56.0f);
+        float interpolation = org.telegram.ui.Components.nr.l.getInterpolation(max) * org.telegram.messenger.g0.L(56.0f);
         actionBarLayout.l1 = max > 0.0f;
         actionBarLayout.s.setTranslationX(interpolation);
         actionBarLayout.setInnerTranslationX(interpolation);

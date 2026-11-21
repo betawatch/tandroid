@@ -2,7 +2,7 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class m3 extends TwoStepVerificationActivity {
     public final /* synthetic */ m.b3 e0;
@@ -11,7 +11,7 @@ public final class m3 extends TwoStepVerificationActivity {
         this.e0 = b3Var;
     }
 
-    @Override // org.telegram.ui.TwoStepVerificationActivity, org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.TwoStepVerificationActivity, org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         m.b3 b3Var = this.e0;
         if ((((Runnable) b3Var.c) != null || ((Runnable) b3Var.d) != null) && !b3Var.b) {

@@ -16,11 +16,11 @@ import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.n10;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.er0;
 import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -61,7 +61,7 @@ public final class v5 extends FrameLayout {
         linearLayout.addView(f10, c8.ma.k(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
         View view = new View(context);
         this.e = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.n6.N0(false));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.N0(false));
         addView(view, c8.ma.c(-1.0f, -1));
     }
 
@@ -221,7 +221,7 @@ public final class v5 extends FrameLayout {
                         }
                     }
                 }
-                float interpolation = lr.f.getInterpolation(fr0Var.P) * fr0Var.A;
+                float interpolation = nr.f.getInterpolation(fr0Var.P) * fr0Var.A;
                 float measuredHeight = getMeasuredHeight();
                 float f13 = 0.0f;
                 if (interpolation == 1.0f || (er0Var = fr0Var.F) == null) {
@@ -256,7 +256,7 @@ public final class v5 extends FrameLayout {
                 x5 x5Var = (x5) this.f;
                 org.telegram.ui.Components.q9 q9Var = this.b;
                 if (!q9Var.getImageReceiver().L() || q9Var.getImageReceiver().i1 != 1.0f) {
-                    x5Var.e.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.X9, false));
+                    x5Var.e.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.X9, false));
                     canvas.drawRect(0.0f, 0.0f, q9Var.getMeasuredWidth(), q9Var.getMeasuredHeight(), x5Var.e);
                     break;
                 }

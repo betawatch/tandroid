@@ -1,104 +1,64 @@
 package ki;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.FrameLayout;
-import c8.ma;
-import hi.e7;
-import hi.f9;
-import hi.t6;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.WeakHashMap;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
-import org.telegram.ui.f5;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class r extends org.telegram.ui.ActionBar.h2 {
-    public e51 a;
-    public final ArrayList b;
-    public final HashMap c;
+public final class r {
+    public final RectF a = new RectF();
+    public final d6 b;
+    public final d6 c;
+    public final d6 d;
+    public final d6 e;
+    public final g5 f;
+    public final g5 g;
+    public final d6 h;
+    public final d6 i;
+    public final mc j;
+    public final Paint k;
+    public final n6 l;
+    public int m;
+    public final org.telegram.ui.Cells.y n;
+    public final up o;
+    public final org.telegram.ui.Components.voip.n p;
 
-    public r() {
-        super(null);
-        this.b = new ArrayList();
-        this.c = new HashMap();
-    }
-
-    public static void Z(r rVar, ArrayList arrayList) {
-        HashMap hashMap = rVar.c;
-        ArrayList arrayList2 = rVar.b;
-        for (int i7 = 0; i7 < arrayList2.size(); i7++) {
-            p pVar = (p) arrayList2.get(i7);
-            SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) hashMap.get(pVar);
-            if (spannableStringBuilder == null) {
-                spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) "a   ");
-                f5 f5Var = new f5(24.0f, rVar.currentAccount, null);
-                f5Var.e(pVar.a);
-                spannableStringBuilder.setSpan(f5Var, 0, 1, 33);
-                spannableStringBuilder.append((CharSequence) o10.q(pVar.a));
-                hashMap.put(pVar, spannableStringBuilder);
-            }
-            l41 i10 = l41.i(i7, spannableStringBuilder);
-            i10.L(!pVar.b);
-            arrayList.add(i10);
-        }
-        arrayList.add(l41.C(gd.M0(2131746668, null)));
-    }
-
-    public static void a0(r rVar, l41 l41Var) {
-        int i7;
-        z41 z41Var;
-        ArrayList arrayList = rVar.b;
-        if (l41Var.a != 4 || (i7 = l41Var.d) < 0 || i7 >= arrayList.size()) {
-            return;
-        }
-        p pVar = (p) arrayList.get(l41Var.d);
-        pVar.b = !pVar.b;
-        Activity parentActivity = rVar.getParentActivity();
-        int i10 = rVar.currentAccount;
-        long j3 = pVar.a.id;
-        boolean z10 = pVar.b;
-        WeakHashMap weakHashMap = q.k;
-        SharedPreferences sharedPreferences = parentActivity.getSharedPreferences("2botbiometry_" + i10, 0);
-        SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putBoolean(j3 + "_disabled", z10);
-        if (!z10 && sharedPreferences.getString(String.valueOf(j3), null) == null) {
-            edit.putString(String.valueOf(j3), "");
-        }
-        edit.apply();
-        e51 e51Var = rVar.a;
-        if (e51Var == null || (z41Var = e51Var.g3) == null) {
-            return;
-        }
-        z41Var.O(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.h2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(gd.M0(2131746670, null));
-        this.actionBar.setActionBarMenuOnItemClick(new bi.r1(this, 15));
-        FrameLayout frameLayout = new FrameLayout(context);
-        u6.h(n6.a7, frameLayout, this.resourceProvider);
-        e51 e51Var = new e51(this, new e7(this, 17), new e(this, 2), new f9(this, 15));
-        this.a = e51Var;
-        frameLayout.addView(e51Var, ma.e(-1, -1, ks.E1));
-        q.d(getParentActivity(), this.currentAccount, new t6(this, 13));
-        this.fragmentView = frameLayout;
-        return frameLayout;
+    public r(t tVar) {
+        nr nrVar = nr.h;
+        this.b = new d6(tVar, 0L, 320L, nrVar);
+        this.c = new d6(tVar, 0L, 320L, nrVar);
+        this.d = new d6(tVar, 0L, 320L, nrVar);
+        this.e = new d6(tVar, 0L, 320L, nrVar);
+        this.f = new g5(tVar, 320L, nrVar, 0);
+        this.g = new g5(tVar, 320L, nrVar, 0);
+        this.h = new d6(tVar, 0L, 320L, nrVar);
+        this.i = new d6(tVar, 0L, 320L, nrVar);
+        this.j = new mc(tVar);
+        this.k = new Paint(1);
+        n6 n6Var = new n6(true, false, true);
+        this.l = n6Var;
+        org.telegram.ui.Cells.y a02 = m6.a0(0, 9, 9);
+        this.n = a02;
+        up upVar = new up(-1);
+        this.o = upVar;
+        org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
+        this.p = nVar;
+        n6Var.b = 17;
+        n6Var.w(org.telegram.messenger.g0.L(14.0f));
+        n6Var.x(org.telegram.messenger.g0.o());
+        n6Var.N = org.telegram.messenger.g0.q.x * 4;
+        n6Var.q(true);
+        n6Var.setCallback(tVar);
+        upVar.setCallback(tVar);
+        a02.setCallback(tVar);
+        nVar.l = true;
+        nVar.m = 2.0f;
     }
 }

@@ -8,26 +8,26 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class i1 {
-    public static FrameLayout a(Activity activity, org.telegram.ui.ActionBar.i6 i6Var, int i7, String str, String str2) {
+    public static FrameLayout a(Activity activity, org.telegram.ui.ActionBar.h6 h6Var, int i7, String str, String str2) {
         FrameLayout frameLayout = new FrameLayout(activity);
         ImageView imageView = new ImageView(activity);
-        int i10 = org.telegram.ui.ActionBar.n6.j5;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.w0(i10, i6Var), PorterDuff.Mode.SRC_IN));
+        int i10 = org.telegram.ui.ActionBar.m6.j5;
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.w0(i10, h6Var), PorterDuff.Mode.SRC_IN));
         imageView.setImageResource(i7);
         frameLayout.addView(imageView, c8.ma.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
         TextView textView = new TextView(activity);
-        textView.setTextColor(org.telegram.ui.ActionBar.n6.w0(i10, i6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(0, org.telegram.messenger.g0.L(14.0f));
         textView.setText(str);
         linearLayout.addView(textView, c8.ma.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
         TextView textView2 = new TextView(activity);
-        textView2.setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.z6, i6Var));
+        textView2.setTextColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.z6, h6Var));
         textView2.setTextSize(0, org.telegram.messenger.g0.L(14.0f));
         textView2.setText(str2);
         linearLayout.addView(textView2, c8.ma.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));

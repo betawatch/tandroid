@@ -5,11 +5,11 @@ import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
-import hi.db;
-import hi.ha;
-import hi.ja;
-import hi.ta;
-import hi.v9;
+import hi.cb;
+import hi.ga;
+import hi.ia;
+import hi.sa;
+import hi.u9;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p51;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements s10 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class b0 implements s10 {
 
     @Override // org.telegram.messenger.s10
     public final void a(Object obj, Object obj2, Object obj3) {
-        v9 v9Var;
+        u9 u9Var;
         String str;
         String str2;
         switch (this.a) {
@@ -112,64 +112,64 @@ public final /* synthetic */ class b0 implements s10 {
                 }
                 return;
             case 1:
-                ja jaVar = (ja) this.b;
-                hi.q qVar = (hi.q) this.c;
+                ia iaVar = (ia) this.b;
+                hi.r rVar = (hi.r) this.c;
                 File file = (File) obj;
                 String str3 = (String) obj2;
                 Long l10 = (Long) obj3;
-                ta taVar = jaVar.S1;
-                ha haVar = taVar.Y0;
-                if (haVar != null) {
-                    haVar.P = false;
-                    haVar.c();
-                    ha haVar2 = taVar.Y0;
-                    haVar2.m(0L);
-                    db dbVar = haVar2.G;
-                    if (dbVar != null) {
-                        dbVar.setProgress(0L);
+                sa saVar = iaVar.S1;
+                ga gaVar = saVar.Y0;
+                if (gaVar != null) {
+                    gaVar.P = false;
+                    gaVar.c();
+                    ga gaVar2 = saVar.Y0;
+                    gaVar2.m(0L);
+                    cb cbVar = gaVar2.G;
+                    if (cbVar != null) {
+                        cbVar.setProgress(0L);
                     }
                 }
-                hi.d7 d7Var = taVar.L1;
-                if (d7Var != null) {
-                    d7Var.o0 = file;
-                    d7Var.p0 = str3;
-                    d7Var.q0 = l10.longValue();
-                    hi.d7 d7Var2 = taVar.L1;
-                    d7Var2.s0 = 0.0f;
-                    d7Var2.t0 = 1.0f;
-                    d7Var2.r0 = 0L;
-                    d7Var2.u0 = 1.0f;
-                    taVar.t();
-                    if (taVar.Y0 == null || (v9Var = taVar.w1) == null) {
-                        qVar.a(false);
+                hi.c7 c7Var = saVar.L1;
+                if (c7Var != null) {
+                    c7Var.o0 = file;
+                    c7Var.p0 = str3;
+                    c7Var.q0 = l10.longValue();
+                    hi.c7 c7Var2 = saVar.L1;
+                    c7Var2.s0 = 0.0f;
+                    c7Var2.t0 = 1.0f;
+                    c7Var2.r0 = 0L;
+                    c7Var2.u0 = 1.0f;
+                    saVar.t();
+                    if (saVar.Y0 == null || (u9Var = saVar.w1) == null) {
+                        rVar.a(false);
                         return;
                     }
-                    tg.r1 j02 = v9Var.j0(taVar.L1.p0, true);
-                    jaVar.setHasRoundVideo(true);
-                    taVar.Y0.s(taVar.L1, j02, true);
-                    org.telegram.messenger.g0.r(qVar.h);
-                    qVar.a.destroy(true, null);
+                    tg.t1 j02 = u9Var.j0(saVar.L1.p0, true);
+                    iaVar.setHasRoundVideo(true);
+                    saVar.Y0.s(saVar.L1, j02, true);
+                    org.telegram.messenger.g0.r(rVar.h);
+                    rVar.a.destroy(true, null);
                     j02.setDraw(false);
-                    qVar.post(new hi.r1(9, qVar, j02));
+                    rVar.post(new hi.c(11, rVar, j02));
                     return;
                 }
                 return;
             case 2:
-                ki.q qVar2 = (ki.q) this.b;
+                ki.p pVar = (ki.p) this.b;
                 q10 q10Var = (q10) this.c;
                 Boolean bool3 = (Boolean) obj;
                 androidx.biometric.u uVar = (androidx.biometric.u) obj2;
                 androidx.biometric.v vVar = (androidx.biometric.v) obj3;
-                qVar2.getClass();
+                pVar.getClass();
                 String str4 = null;
                 if (uVar != null) {
                     try {
                         if (Build.VERSION.SDK_INT >= 30) {
-                            vVar = qVar2.i(true);
+                            vVar = pVar.i(true);
                         }
                         if (vVar != null) {
-                            str4 = !TextUtils.isEmpty(qVar2.g) ? new String(vVar.b.doFinal(Utilities.v(qVar2.g)), StandardCharsets.UTF_8) : qVar2.g;
-                        } else if (!TextUtils.isEmpty(qVar2.g)) {
+                            str4 = !TextUtils.isEmpty(pVar.g) ? new String(vVar.b.doFinal(Utilities.v(pVar.g)), StandardCharsets.UTF_8) : pVar.g;
+                        } else if (!TextUtils.isEmpty(pVar.g)) {
                             throw new RuntimeException("No cryptoObject found");
                         }
                     } catch (Exception e10) {
@@ -218,10 +218,10 @@ public final /* synthetic */ class b0 implements s10 {
                     if (parentActivity == null) {
                         return;
                     }
-                    org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, parentActivity, null);
+                    org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, parentActivity, null);
                     rnVar.O0 = true;
-                    u1Var.r(250L);
-                    rnVar.getMessagesController().T(rnVar.getParentActivity(), rnVar.w0, rnVar, new oi.e0(19, rnVar, u1Var), null);
+                    t1Var.r(250L);
+                    rnVar.getMessagesController().T(rnVar.getParentActivity(), rnVar.w0, rnVar, new oi.f0(19, rnVar, t1Var), null);
                     return;
                 }
                 TLRPC.Chat chat2 = rnVar.x0;
@@ -261,8 +261,8 @@ public final /* synthetic */ class b0 implements s10 {
                     eVar.a(null, "WALLET_SECRET_PARTS_EMPTY");
                     return;
                 }
-                final org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, org.telegram.ui.Wallet.u0.C(), null);
-                u1Var2.r(500L);
+                final org.telegram.ui.ActionBar.t1 t1Var2 = new org.telegram.ui.ActionBar.t1(3, org.telegram.ui.Wallet.u0.C(), null);
+                t1Var2.r(500L);
                 final long key_generate_temporary_private_key = ConferenceCall.key_generate_temporary_private_key();
                 byte[] key_to_public_key = ConferenceCall.key_to_public_key(key_generate_temporary_private_key);
                 final boolean[] zArr = new boolean[arrayList3.size()];
@@ -286,7 +286,7 @@ public final /* synthetic */ class b0 implements s10 {
                             int i14 = intValue;
                             long j10 = key_generate_temporary_private_key;
                             e eVar2 = eVar;
-                            org.telegram.ui.ActionBar.u1 u1Var3 = u1Var2;
+                            org.telegram.ui.ActionBar.t1 t1Var3 = t1Var2;
                             boolean z13 = true;
                             zArr2[i13] = true;
                             encryptedsecretphrasepartArr2[i13] = (TL_wallet.encryptedSecretPhrasePart) obj4;
@@ -299,7 +299,7 @@ public final /* synthetic */ class b0 implements s10 {
                             }
                             if (z13) {
                                 u0.P("getSecretPhrase: received all parts");
-                                j jVar = new j((Object) u0Var2, (Object) u1Var3, (Object) eVar2, 7);
+                                j jVar = new j((Object) u0Var2, (Object) t1Var3, (Object) eVar2, 7);
                                 for (int i16 = 0; i16 < encryptedsecretphrasepartArr2.length; i16++) {
                                     TL_wallet.encryptedSecretPhrasePart encryptedsecretphrasepart = encryptedsecretphrasepartArr2[i16];
                                     if (encryptedsecretphrasepart == null) {
@@ -324,7 +324,7 @@ public final /* synthetic */ class b0 implements s10 {
                                         return;
                                     }
                                 }
-                                Utilities.d.c(new di.i2(u0Var2, encryptedsecretphrasepartArr2, j10, jVar, 23));
+                                Utilities.d.c(new di.j2(u0Var2, encryptedsecretphrasepartArr2, j10, jVar, 23));
                             }
                         }
                     }, intValue, 0);

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t8 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ float a;
@@ -25,7 +25,7 @@ public final class t8 implements ValueAnimator.AnimatorUpdateListener {
         y8 y8Var = this.d;
         y8Var.O = floatValue;
         float T1 = org.telegram.messenger.g0.T1(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.h2) y8Var).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) y8Var).actionBar;
         kVar.getTitleTextView().setAlpha(y8Var.O);
         if (y8Var.G && !this.c) {
             y8Var.n0(false, 1.0f - y8Var.O);
@@ -33,7 +33,7 @@ public final class t8 implements ValueAnimator.AnimatorUpdateListener {
         y8Var.r.setTranslationY(T1);
         y8Var.y.setTranslationY(T1);
         y8Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.h2) y8Var).actionBar;
+        kVar2 = ((org.telegram.ui.ActionBar.g2) y8Var).actionBar;
         kVar2.invalidate();
     }
 }

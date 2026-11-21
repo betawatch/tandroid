@@ -12,13 +12,13 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class pa0 extends org.telegram.ui.Components.au0 implements r0.l {
+public final class pa0 extends org.telegram.ui.Components.du0 implements r0.l {
     public final /* synthetic */ int g0 = 1;
     public final e2.r0 h0;
     public boolean i0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 j0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 j0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public pa0(org.telegram.ui.Wallet.n6 n6Var, Context context) {
@@ -39,21 +39,21 @@ public final class pa0 extends org.telegram.ui.Components.au0 implements r0.l {
     }
 
     /* JADX WARN: Finally extract failed */
-    public int a0(org.telegram.ui.Components.e51 e51Var, int i7) {
+    public int a0(org.telegram.ui.Components.h51 h51Var, int i7) {
         int[] iArr = {0};
         org.telegram.ui.Components.oa oaVar = new org.telegram.ui.Components.oa(iArr, 25);
         this.i0 = true;
-        e51Var.j(oaVar);
+        h51Var.j(oaVar);
         try {
-            e51Var.scrollBy(0, i7);
-            ArrayList arrayList = e51Var.x0;
+            h51Var.scrollBy(0, i7);
+            ArrayList arrayList = h51Var.x0;
             if (arrayList != null) {
                 arrayList.remove(oaVar);
             }
             this.i0 = false;
             return iArr[0];
         } catch (Throwable th2) {
-            ArrayList arrayList2 = e51Var.x0;
+            ArrayList arrayList2 = h51Var.x0;
             if (arrayList2 != null) {
                 arrayList2.remove(oaVar);
             }
@@ -341,9 +341,9 @@ public final class pa0 extends org.telegram.ui.Components.au0 implements r0.l {
                 boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
                 if (motionEvent.getActionMasked() == 1 && (j6Var = n6Var.t0) != null) {
                     org.telegram.ui.Wallet.m mVar = j6Var.i;
-                    bi.c6 c6Var = j6Var.c;
-                    if (c6Var != null) {
-                        c6Var.removeCallbacks(mVar);
+                    bi.g6 g6Var = j6Var.c;
+                    if (g6Var != null) {
+                        g6Var.removeCallbacks(mVar);
                         j6Var.c.post(mVar);
                     }
                 }
@@ -379,9 +379,9 @@ public final class pa0 extends org.telegram.ui.Components.au0 implements r0.l {
                 org.telegram.ui.Wallet.j6 j6Var = ((org.telegram.ui.Wallet.n6) this.j0).t0;
                 if (j6Var != null) {
                     org.telegram.ui.Wallet.m mVar = j6Var.i;
-                    bi.c6 c6Var = j6Var.c;
-                    if (c6Var != null) {
-                        c6Var.removeCallbacks(mVar);
+                    bi.g6 g6Var = j6Var.c;
+                    if (g6Var != null) {
+                        g6Var.removeCallbacks(mVar);
                         j6Var.c.post(mVar);
                         break;
                     }
@@ -393,13 +393,13 @@ public final class pa0 extends org.telegram.ui.Components.au0 implements r0.l {
     @Override // r0.l
     public final void l(View view, int i7, int i10, int i11, int i12, int i13, int[] iArr) {
         ka0 ka0Var;
-        org.telegram.ui.Components.e51 B0;
+        org.telegram.ui.Components.h51 B0;
         switch (this.g0) {
             case 0:
                 qa0 qa0Var = (qa0) this.j0;
                 try {
                     if (view == qa0Var.R && (ka0Var = qa0Var.R0) != null && ka0Var.isAttachedToWindow()) {
-                        org.telegram.ui.Components.ck0 currentListView = qa0Var.R0.getCurrentListView();
+                        org.telegram.ui.Components.ek0 currentListView = qa0Var.R0.getCurrentListView();
                         int top = qa0Var.R0.getTop();
                         if (currentListView != null && top == 0) {
                             iArr[1] = i12;
@@ -456,7 +456,7 @@ public final class pa0 extends org.telegram.ui.Components.au0 implements r0.l {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.au0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         switch (this.g0) {
             case 0:
@@ -553,27 +553,27 @@ public final class pa0 extends org.telegram.ui.Components.au0 implements r0.l {
     */
     public final void s(View view, int i7, int i10, int[] iArr, int i11) {
         ka0 ka0Var;
-        org.telegram.ui.ActionBar.a5 a5Var;
+        org.telegram.ui.ActionBar.z4 z4Var;
         boolean z10;
         int i12;
-        org.telegram.ui.Components.ck0 currentListView;
-        org.telegram.ui.ActionBar.a5 a5Var2;
-        org.telegram.ui.Components.e51 B0;
+        org.telegram.ui.Components.ek0 currentListView;
+        org.telegram.ui.ActionBar.z4 z4Var2;
+        org.telegram.ui.Components.h51 B0;
         org.telegram.ui.Wallet.j6 j6Var;
         switch (this.g0) {
             case 0:
                 qa0 qa0Var = (qa0) this.j0;
                 if (view == qa0Var.R && (ka0Var = qa0Var.R0) != null && ka0Var.isAttachedToWindow()) {
-                    a5Var = ((org.telegram.ui.ActionBar.h2) qa0Var).simpleActionBar;
+                    z4Var = ((org.telegram.ui.ActionBar.g2) qa0Var).simpleActionBar;
                     boolean z11 = false;
-                    if (a5Var != null) {
-                        a5Var2 = ((org.telegram.ui.ActionBar.h2) qa0Var).simpleActionBar;
-                        if (a5Var2.G) {
+                    if (z4Var != null) {
+                        z4Var2 = ((org.telegram.ui.ActionBar.g2) qa0Var).simpleActionBar;
+                        if (z4Var2.G) {
                             z10 = true;
                             int top = qa0Var.R0.getTop();
                             if (i10 < 0) {
                                 if (z10) {
-                                    org.telegram.ui.Components.ck0 currentListView2 = qa0Var.R0.getCurrentListView();
+                                    org.telegram.ui.Components.ek0 currentListView2 = qa0Var.R0.getCurrentListView();
                                     iArr[1] = i10;
                                     if (top > 0) {
                                         iArr[1] = 0;

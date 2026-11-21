@@ -1,38 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class rw extends FrameLayout {
-    public final /* synthetic */ ry a;
+public final class rw extends v4.d0 {
+    public final /* synthetic */ int r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rw(ry ryVar, Context context) {
+    public rw(Context context, int i7) {
         super(context);
-        this.a = ryVar;
+        this.r = i7;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        ry ryVar = this.a;
-        ww wwVar = ryVar.J;
-        sv svVar = ryVar.W;
-        ex exVar = ryVar.Q;
-        if (view != exVar && view != svVar) {
-            return super.drawChild(canvas, view, j3);
-        }
-        canvas.save();
-        float y10 = wwVar.getY() + wwVar.getMeasuredHeight() + 1.0f;
-        if (view == exVar && svVar != null) {
-            y10 = Math.max(y10, svVar.getY() + svVar.getMeasuredHeight() + 1.0f);
-        }
-        canvas.clipRect(0.0f, y10 - (org.telegram.messenger.g0.L(16.0f) * ryVar.b.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+    @Override // v4.d0
+    public final int i(int i7, int i10, int i11, int i12, int i13) {
+        return super.i(i7, i10, i11, i12, i13) + this.r;
+    }
+
+    @Override // v4.d0
+    public final int m(int i7) {
+        return super.m(i7) * 16;
+    }
+
+    @Override // v4.d0
+    public final int p() {
+        return -1;
     }
 }

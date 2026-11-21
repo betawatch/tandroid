@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zt extends org.telegram.ui.Components.pw0 {
+public final class zt extends org.telegram.ui.Components.rw0 {
     public final /* synthetic */ k8.a J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,20 +16,20 @@ public final class zt extends org.telegram.ui.Components.pw0 {
         this.J = aVar;
         this.a = new RectF();
         this.f = 0.0f;
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true);
-        this.r = m6Var;
-        org.telegram.ui.Components.m6 m6Var2 = new org.telegram.ui.Components.m6(false, true, false);
-        this.s = m6Var2;
-        m6Var.setCallback(this);
-        m6Var2.setCallback(this);
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true);
+        this.r = n6Var;
+        org.telegram.ui.Components.n6 n6Var2 = new org.telegram.ui.Components.n6(false, true, false);
+        this.s = n6Var2;
+        n6Var.setCallback(this);
+        n6Var2.setCallback(this);
         this.n = Long.valueOf(j3);
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         b9Var.p = 1.5f;
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.h = imageReceiver;
         imageReceiver.H0(this);
         if (j3 == Long.MAX_VALUE) {
-            this.w = org.telegram.messenger.gd.M0(2131752636, null);
+            this.w = org.telegram.messenger.gd.N0(2131752635, null);
             b9Var.g(14);
             imageReceiver.i0(null, b9Var, null);
         } else {
@@ -39,7 +39,7 @@ public final class zt extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.rw0
     public final void b() {
         k8.a aVar = this.J;
         x6 x6Var = (x6) aVar.c;

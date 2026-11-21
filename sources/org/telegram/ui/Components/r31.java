@@ -1,30 +1,39 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final class r31 implements zt0 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ s31 c;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.beta.R;
 
-    public r31(s31 s31Var) {
-        this.c = s31Var;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class r31 extends ScrollView {
+    public Drawable a;
+    public d6 b;
+    public boolean c;
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float e10 = this.b.e(false, canScrollVertically(-1) ? 1.0f : 0.0f) * 0.5f;
+        if (e10 > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
+            }
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (e10 * 255.0f));
+            this.a.draw(canvas);
+        }
     }
 
-    @Override // org.telegram.ui.Components.zt0
-    public final void L(int i7, boolean z10) {
-        if (this.a == i7 && this.b == z10) {
-            return;
-        }
-        this.a = i7;
-        this.b = z10;
-        if (i7 > org.telegram.messenger.g0.L(20.0f)) {
-            s31 s31Var = this.c;
-            if (s31Var.h0) {
-                return;
-            }
-            s31Var.o0.r0 = false;
-            s31Var.h0 = true;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i7, int i10, int i11, int i12) {
+        super.onNestedScroll(view, i7, i10, i11, i12);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
         }
     }
 }

@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import m9.y;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import org.xmlpull.v1.XmlSerializer;
 import v4.f1;
 import v4.n0;
@@ -24,7 +24,7 @@ import v4.v;
 import v4.z;
 import zd.v0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -212,11 +212,11 @@ public final /* synthetic */ class l implements Runnable {
                 ArrayList arrayList3 = (ArrayList) this.b;
                 shortcutInfoCompatSaverImpl.e(arrayList3);
                 File file = shortcutInfoCompatSaverImpl.f;
-                nd0 nd0Var = new nd0(file);
-                File file2 = (File) nd0Var.c;
+                md0 md0Var = new md0(file);
+                File file2 = (File) md0Var.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    J = nd0Var.J();
+                    J = md0Var.J();
                 } catch (Exception e13) {
                     exc = e13;
                 }
@@ -251,7 +251,7 @@ public final /* synthetic */ class l implements Runnable {
                     } catch (IOException e14) {
                         Log.e("AtomicFile", "Failed to close file output stream", e14);
                     }
-                    nd0.G(file2, file);
+                    md0.G(file2, file);
                     return;
                 } catch (Exception e15) {
                     exc = e15;

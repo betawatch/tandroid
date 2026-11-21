@@ -1,21 +1,23 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class f21 implements View.OnClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ m21 b;
+    public final /* synthetic */ n21 a;
 
-    public f21(m21 m21Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = m21Var;
-        this.a = tL_authorization;
+    public f21(n21 n21Var) {
+        this.a = n21Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        m21.J0(this.b, this.a.country);
+        org.telegram.ui.Components.rh0 rh0Var = this.a.o1;
+        if (rh0Var.b() || rh0Var.getAnimatedDrawable() == null) {
+            return;
+        }
+        rh0Var.getAnimatedDrawable().M(40);
+        rh0Var.d();
     }
 }

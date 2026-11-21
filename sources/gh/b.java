@@ -4,14 +4,14 @@ import android.graphics.Color;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.pc;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class b implements a {
-    public final i6 a;
+    public final h6 a;
     public final int b;
     public final float c;
     public int d;
@@ -21,8 +21,8 @@ public class b implements a {
     public int n;
     public int r;
 
-    public b(int i7, i6 i6Var) {
-        this(i6Var, i7, pc.e(262144) ? 0.85f : 0.76f);
+    public b(int i7, h6 h6Var) {
+        this(h6Var, i7, pc.e(262144) ? 0.85f : 0.76f);
     }
 
     @Override // gh.a
@@ -39,7 +39,7 @@ public class b implements a {
     @Override // gh.a
     public final int D1() {
         if (b()) {
-            return n6.w0(n6.ya, this.a);
+            return m6.w0(m6.ya, this.a);
         }
         return 0;
     }
@@ -47,7 +47,7 @@ public class b implements a {
     @Override // gh.a
     public final int M0() {
         if (b()) {
-            return n6.w0(this.n, this.a);
+            return m6.w0(this.n, this.a);
         }
         return 0;
     }
@@ -55,7 +55,7 @@ public class b implements a {
     @Override // gh.a
     public int U0() {
         a();
-        if (!b() || Color.alpha(n6.w0(this.n, this.a)) == 0) {
+        if (!b() || Color.alpha(m6.w0(this.n, this.a)) == 0) {
             return this.h;
         }
         return 0;
@@ -64,7 +64,7 @@ public class b implements a {
     @Override // gh.a
     public int W1() {
         a();
-        return b() ? n6.w0(n6.xa, this.a) : this.e;
+        return b() ? m6.w0(m6.xa, this.a) : this.e;
     }
 
     @Override // gh.a
@@ -84,22 +84,22 @@ public class b implements a {
     }
 
     public final void a() {
-        if (this.r != u6.b) {
+        if (this.r != t6.b) {
             d();
         }
     }
 
     public final boolean b() {
-        return this.n >= 0 && n6.i1(this.a);
+        return this.n >= 0 && m6.i1(this.a);
     }
 
     public boolean c() {
-        return g0.B(n6.w0(this.b, this.a)) < 0.721f;
+        return g0.B(m6.w0(this.b, this.a)) < 0.721f;
     }
 
     public final void d() {
-        this.r = u6.b;
-        this.d = n6.r1(this.c, n6.w0(this.b, this.a));
+        this.r = t6.b;
+        this.d = m6.r1(this.c, m6.w0(this.b, this.a));
         if (c()) {
             this.f = 687865855;
             this.h = 352321535;
@@ -114,16 +114,16 @@ public class b implements a {
     @Override // gh.a
     public int t0() {
         a();
-        if (!b() || Color.alpha(n6.w0(this.n, this.a)) == 0) {
+        if (!b() || Color.alpha(m6.w0(this.n, this.a)) == 0) {
             return this.f;
         }
         return 0;
     }
 
-    public b(i6 i6Var, int i7, float f10) {
+    public b(h6 h6Var, int i7, float f10) {
         this.n = -1;
-        this.r = u6.b;
-        this.a = i6Var;
+        this.r = t6.b;
+        this.a = h6Var;
         this.b = i7;
         this.c = f10;
         d();

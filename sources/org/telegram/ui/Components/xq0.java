@@ -1,21 +1,60 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class xq0 extends kv0 {
-    public final /* synthetic */ gt0 L;
+public final class xq0 extends yz {
+    public final /* synthetic */ kq0 V;
+    public final /* synthetic */ jt0 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xq0(gt0 gt0Var, Context context, wz wzVar) {
-        super(context, wzVar, 1, null);
-        this.L = gt0Var;
+    public xq0(jt0 jt0Var, Context context, kq0 kq0Var) {
+        super(context, null);
+        this.W = jt0Var;
+        this.V = kq0Var;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final void a() {
-        invalidate();
-        this.L.Q0();
+    @Override // org.telegram.ui.Components.yz
+    public final int getColumnsCount() {
+        return this.W.p1[jt0.z0(this.V.F) ? 1 : 0];
+    }
+
+    @Override // org.telegram.ui.Components.yz
+    public final int getViewType() {
+        setIsSingleCell(false);
+        int i7 = this.V.F;
+        if (i7 == 0 || i7 == 5) {
+            return 2;
+        }
+        if (i7 == 1) {
+            return 3;
+        }
+        if (i7 != 2 && i7 != 4) {
+            if (i7 == 3) {
+                return 5;
+            }
+            if (i7 != 7) {
+                if (i7 == 6) {
+                    if (this.W.L0.getTabsCount() == 1) {
+                        setIsSingleCell(true);
+                        return 1;
+                    }
+                } else if (jt0.z0(i7)) {
+                    return 27;
+                }
+                return 1;
+            }
+        }
+        return 6;
+    }
+
+    @Override // org.telegram.ui.Components.yz, android.view.View
+    public final void onDraw(Canvas canvas) {
+        jt0 jt0Var = this.W;
+        jt0Var.W0.setColor(jt0Var.s0(org.telegram.ui.ActionBar.m6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), jt0Var.W0);
+        super.onDraw(canvas);
     }
 }

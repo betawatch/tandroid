@@ -1,48 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class dg0 extends pi.k {
-    public Runnable W;
+public final class dg0 extends org.telegram.ui.Cells.r1 {
+    public int Ad;
+    public int Bd;
+    public final /* synthetic */ eg0 Cd;
+    public int zd;
 
-    @Override // pi.k, v4.k
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            this.W = null;
-        }
-        cg0 cg0Var = new cg0(this, 0);
-        this.W = cg0Var;
-        org.telegram.messenger.g0.g3(cg0Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dg0(eg0 eg0Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, i7, true, null, h6Var);
+        this.Cd = eg0Var;
+        this.zd = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Ad = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Bd = -1;
     }
 
-    @Override // pi.k
-    public final void W() {
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            this.W = null;
-        }
-        if (org.telegram.messenger.s2.a) {
-            org.telegram.messenger.a8.b("chatItemAnimator disable notifications");
-        }
+    @Override // org.telegram.ui.Cells.r1
+    public final xh.e Y2() {
+        return xh.e.d(1, this, this.Cd.F);
     }
 
-    @Override // pi.k, v4.k, v4.n0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-        }
-        cg0 cg0Var = new cg0(this, 1);
-        this.W = cg0Var;
-        org.telegram.messenger.g0.g3(cg0Var);
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
     }
 
-    @Override // v4.k
-    public final void F() {
+    @Override // org.telegram.ui.Cells.r1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        if (!this.ib.x0 || i10 == 0 || this.zd == Integer.MAX_VALUE || i12 == 0 || this.Ad == Integer.MAX_VALUE) {
+            return;
+        }
+        if (this.Bd == (getMessageObject() == null ? 0 : getMessageObject().e1())) {
+            if (!this.Cd.A0) {
+                setTranslationY(-(i10 - this.zd));
+                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.nr.h).start();
+            }
+            this.zd = getTop();
+            this.Ad = getBottom();
+            this.Bd = getMessageObject() != null ? getMessageObject().e1() : 0;
+        }
     }
 }

@@ -1,44 +1,73 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x21 extends v4.i0 {
-    public Context c;
-    public View d;
-    public int e;
+public final class x21 extends o6 {
+    public final Paint s;
+    public final n2.o0 w;
+    public final /* synthetic */ z21 x;
 
-    public final void D(View view) {
-        if (this.d == view) {
-            return;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x21(z21 z21Var, Context context) {
+        super(context, false, false, false);
+        this.x = z21Var;
+        this.s = new Paint(1);
+        this.w = new n2.o0();
+    }
+
+    @Override // org.telegram.ui.Components.o6, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (org.telegram.messenger.gd.a0) {
+            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+        } else {
+            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
         }
-        this.e++;
-        this.d = view;
-        g(1);
-    }
-
-    @Override // v4.i0
-    public final int b() {
-        return 2;
-    }
-
-    @Override // v4.i0
-    public final int d(int i7) {
-        if (i7 == 0) {
-            return 0;
+        b31 b31Var = this.x.n;
+        int i7 = org.telegram.ui.ActionBar.m6.Gj;
+        String[] strArr = b31.S1;
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.1175f, org.telegram.ui.ActionBar.m6.w0(i7, b31Var.J0));
+        Paint paint = this.s;
+        paint.setColor(r12);
+        canvas.drawRoundRect(org.telegram.messenger.g0.P, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
+        if (this.w.h(canvas)) {
+            invalidate();
         }
-        return this.e;
+        super.onDraw(canvas);
     }
 
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        return i7 == 0 ? new kj0(new jn(this.c, 12)) : new kj0(this.d);
-    }
-
-    @Override // v4.i0
-    public final void t(v4.f1 f1Var, int i7) {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        b31 b31Var = this.x.n;
+        int action = motionEvent.getAction();
+        n2.o0 o0Var = this.w;
+        if (action != 0) {
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (motionEvent.getAction() == 1) {
+                    performClick();
+                }
+                o0Var.f(true);
+                invalidate();
+            }
+            return super.onTouchEvent(motionEvent);
+        }
+        String[] strArr = b31.S1;
+        n80 n80Var = new n80(null, b31Var.J0, motionEvent.getX(), motionEvent.getY(), 0);
+        n80Var.d(org.telegram.ui.ActionBar.m6.r1(0.1175f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Gj, b31Var.J0)));
+        h80 b10 = n80Var.b();
+        if (org.telegram.messenger.gd.a0) {
+            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+        } else {
+            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+        }
+        b10.addRect(org.telegram.messenger.g0.P, Path.Direction.CW);
+        o0Var.b(n80Var, null);
+        invalidate();
+        return true;
     }
 }

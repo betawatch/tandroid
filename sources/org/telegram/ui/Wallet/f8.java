@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public abstract class f8 {
     public static final LruCache a = new LruCache(128);
@@ -119,7 +119,7 @@ public abstract class f8 {
     }
 
     public static float[] f(int i7) {
-        double[] f10 = org.telegram.ui.ActionBar.w4.f(org.telegram.ui.ActionBar.w4.g(org.telegram.ui.ActionBar.w4.e(i7)));
+        double[] f10 = org.telegram.ui.ActionBar.v4.f(org.telegram.ui.ActionBar.v4.g(org.telegram.ui.ActionBar.v4.e(i7)));
         return new float[]{(float) f10[0], (float) f10[1], Double.isNaN(f10[2]) ? 0.0f : (float) Math.toRadians(f10[2])};
     }
 
@@ -274,7 +274,7 @@ public abstract class f8 {
         if (fArr[i10] == 0.0f && fArr[i10 + 1] == 1.0f && fArr[i10 + 2] == 1.0f) {
             return i7;
         }
-        double[] f10 = org.telegram.ui.ActionBar.w4.f(org.telegram.ui.ActionBar.w4.g(org.telegram.ui.ActionBar.w4.e(i7)));
+        double[] f10 = org.telegram.ui.ActionBar.v4.f(org.telegram.ui.ActionBar.v4.g(org.telegram.ui.ActionBar.v4.e(i7)));
         double d10 = f10[0];
         f10[0] = Math.max(d10 < 0.8d ? 0.0d : 0.8d, d10 * fArr[i10 + 2]);
         f10[1] = f10[1] * fArr[i10 + 1];
@@ -296,7 +296,7 @@ public abstract class f8 {
             dArr2[i14] = d11;
             dArr2[i15] = cos;
             dArr2[2] = sin;
-            double[] d14 = org.telegram.ui.ActionBar.w4.d(org.telegram.ui.ActionBar.w4.d, dArr2);
+            double[] d14 = org.telegram.ui.ActionBar.v4.d(org.telegram.ui.ActionBar.v4.d, dArr2);
             int i18 = i14;
             while (i18 < 3) {
                 d14[i18] = Math.pow(d14[i18], 3.0d);
@@ -306,7 +306,7 @@ public abstract class f8 {
             }
             i11 = i14;
             i12 = i15;
-            dArr = org.telegram.ui.ActionBar.w4.d(org.telegram.ui.ActionBar.w4.f, org.telegram.ui.ActionBar.w4.d(org.telegram.ui.ActionBar.w4.b, d14));
+            dArr = org.telegram.ui.ActionBar.v4.d(org.telegram.ui.ActionBar.v4.f, org.telegram.ui.ActionBar.v4.d(org.telegram.ui.ActionBar.v4.b, d14));
             double d15 = dArr[i11];
             if (d15 >= 0.0d) {
                 double d16 = dArr[i12];

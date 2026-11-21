@@ -13,9 +13,9 @@ import j$.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.on;
-import org.telegram.ui.Components.pn;
+import org.telegram.ui.Components.qn;
 import org.telegram.ui.Components.rn;
+import org.telegram.ui.Components.tn;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.f61;
 import org.telegram.ui.kr0;
@@ -25,7 +25,7 @@ import org.telegram.ui.nr0;
 import org.telegram.ui.pr0;
 import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class v implements TextWatcher {
     public final /* synthetic */ int a;
@@ -57,45 +57,45 @@ public final class v implements TextWatcher {
                 }
             case 1:
                 ((String[]) this.b)[0] = editable.toString();
-                ((f7) obj).g3.O(true);
+                ((j7) obj).g3.O(true);
                 break;
             case 2:
                 ((String[]) this.b)[0] = editable.toString();
-                ((f7) obj).g3.O(true);
+                ((j7) obj).g3.O(true);
                 break;
             case 3:
                 ((String[]) this.b)[0] = editable.toString();
-                ((f7) obj).g3.O(true);
+                ((j7) obj).g3.O(true);
                 break;
             case 4:
                 ((String[]) this.b)[0] = editable.toString();
-                ((f7) obj).g3.O(true);
+                ((j7) obj).g3.O(true);
                 break;
             case 5:
                 ((String[]) this.b)[0] = editable.toString();
-                ((f7) obj).g3.O(true);
+                ((j7) obj).g3.O(true);
                 break;
             case 6:
                 ((String[]) this.b)[0] = editable.toString();
-                ((f7) obj).g3.O(true);
+                ((j7) obj).g3.O(true);
                 break;
             case 7:
-                ((hi.r1) this.b).run();
-                hi.l7 l7Var = (hi.l7) obj;
-                org.telegram.ui.Cells.l3 l3Var = l7Var.U1;
-                if (!l7Var.Y1) {
-                    if (!l7Var.Z1 || editable == null) {
-                        hi.l7.e1(l7Var, editable != null ? editable.toString() : null);
+                ((hi.c) this.b).run();
+                hi.k7 k7Var = (hi.k7) obj;
+                org.telegram.ui.Cells.l3 l3Var = k7Var.U1;
+                if (!k7Var.Y1) {
+                    if (!k7Var.Z1 || editable == null) {
+                        hi.k7.e1(k7Var, editable != null ? editable.toString() : null);
                         break;
                     } else {
                         String substring = editable.toString().substring(8);
-                        l7Var.Y1 = true;
+                        k7Var.Y1 = true;
                         l3Var.d.setText(substring);
                         org.telegram.ui.Cells.j3 j3Var = l3Var.d;
                         j3Var.setSelection(0, j3Var.getText().length());
-                        l7Var.Y1 = false;
-                        l7Var.Z1 = false;
-                        hi.l7.e1(l7Var, substring);
+                        k7Var.Y1 = false;
+                        k7Var.Z1 = false;
+                        hi.k7.e1(k7Var, substring);
                         break;
                     }
                 }
@@ -113,58 +113,58 @@ public final class v implements TextWatcher {
                 ((di.j7) obj).run();
                 break;
             case 10:
-                rn rnVar = (rn) ((org.telegram.ui.l4) obj).e;
-                on onVar = (on) this.b;
-                if (onVar.getTag() == null) {
-                    v4.f1 K = rnVar.s.K(rnVar.q0);
-                    if (K != null && rnVar.y != null) {
+                tn tnVar = (tn) ((org.telegram.ui.l4) obj).e;
+                qn qnVar = (qn) this.b;
+                if (qnVar.getTag() == null) {
+                    v4.f1 K = tnVar.s.K(tnVar.q0);
+                    if (K != null && tnVar.y != null) {
                         for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan);
                         }
-                        org.telegram.messenger.j6.l(editable, onVar.getEditField().getPaint().getFontMetricsInt(), false);
-                        rnVar.y.setDirection(1);
-                        rnVar.y.setDelegate(onVar);
-                        rnVar.y.setTranslationY(K.a.getY());
-                        rnVar.y.e();
+                        org.telegram.messenger.j6.l(editable, qnVar.getEditField().getPaint().getFontMetricsInt(), false);
+                        tnVar.y.setDirection(1);
+                        tnVar.y.setDelegate(qnVar);
+                        tnVar.y.setTranslationY(K.a.getY());
+                        tnVar.y.e();
                     }
-                    rnVar.Q = editable;
+                    tnVar.Q = editable;
                     if (K != null) {
-                        rn.Q(rnVar, K.a, rnVar.q0);
+                        tn.Q(tnVar, K.a, tnVar.q0);
                     }
-                    rnVar.Y();
+                    tnVar.Y();
                     break;
                 }
                 break;
             case 11:
-                rn rnVar2 = (rn) ((org.telegram.ui.l4) obj).e;
-                f61 f61Var = rnVar2.s;
-                pn pnVar = (pn) this.b;
-                View F = f61Var.F(pnVar);
+                tn tnVar2 = (tn) ((org.telegram.ui.l4) obj).e;
+                f61 f61Var = tnVar2.s;
+                rn rnVar = (rn) this.b;
+                View F = f61Var.F(rnVar);
                 v4.f1 T = F != null ? f61Var.T(F) : null;
                 if (T != null) {
                     View view = T.a;
                     int b10 = T.b();
-                    int i10 = b10 - rnVar2.u0;
-                    if (i10 >= 0 && i10 < rnVar2.L.length) {
-                        if (rnVar2.y != null) {
+                    int i10 = b10 - tnVar2.u0;
+                    if (i10 >= 0 && i10 < tnVar2.L.length) {
+                        if (tnVar2.y != null) {
                             for (ImageSpan imageSpan2 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                                 editable.removeSpan(imageSpan2);
                             }
-                            org.telegram.messenger.j6.l(editable, pnVar.getEditField().getPaint().getFontMetricsInt(), false);
+                            org.telegram.messenger.j6.l(editable, rnVar.getEditField().getPaint().getFontMetricsInt(), false);
                             float y10 = (view.getY() - org.telegram.messenger.g0.L(166.0f)) + view.getMeasuredHeight();
                             if (y10 > 0.0f) {
-                                rnVar2.y.setDirection(0);
-                                rnVar2.y.setTranslationY(y10);
+                                tnVar2.y.setDirection(0);
+                                tnVar2.y.setTranslationY(y10);
                             } else {
-                                rnVar2.y.setDirection(1);
-                                rnVar2.y.setTranslationY(view.getY());
+                                tnVar2.y.setDirection(1);
+                                tnVar2.y.setTranslationY(view.getY());
                             }
-                            rnVar2.y.setDelegate(pnVar);
-                            rnVar2.y.e();
+                            tnVar2.y.setDelegate(rnVar);
+                            tnVar2.y.e();
                         }
-                        rnVar2.L[i10] = editable;
-                        rn.Q(rnVar2, pnVar, b10);
-                        rnVar2.Y();
+                        tnVar2.L[i10] = editable;
+                        tn.Q(tnVar2, rnVar, b10);
+                        tnVar2.Y();
                         break;
                     }
                 }
@@ -316,13 +316,13 @@ public final class v implements TextWatcher {
         int i12;
         switch (this.a) {
             case 7:
-                hi.l7 l7Var = (hi.l7) this.c;
-                if (!l7Var.Y1) {
+                hi.k7 k7Var = (hi.k7) this.c;
+                if (!k7Var.Y1) {
                     boolean z10 = false;
                     if (charSequence != null && i7 == 8 && charSequence.subSequence(0, i7).toString().equals("https://") && charSequence.length() >= (i12 = i11 + i7) && charSequence.subSequence(i7, i12).toString().startsWith("https://")) {
                         z10 = true;
                     }
-                    l7Var.Z1 = z10;
+                    k7Var.Z1 = z10;
                     break;
                 }
                 break;

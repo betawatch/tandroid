@@ -4,7 +4,7 @@ import java.util.Comparator;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vp implements Comparator {
     public final /* synthetic */ int a;
@@ -60,10 +60,10 @@ public final /* synthetic */ class vp implements Comparator {
                 }
                 break;
             default:
-                org.telegram.ui.Components.s20 s20Var = (org.telegram.ui.Components.s20) this.c;
-                s20Var.getClass();
-                TLRPC.User c24 = org.telegram.messenger.mp.u1(s20Var.a).c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj)).peer)));
-                TLRPC.User c25 = org.telegram.messenger.mp.u1(s20Var.a).c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj2)).peer)));
+                org.telegram.ui.Components.v20 v20Var = (org.telegram.ui.Components.v20) this.c;
+                v20Var.getClass();
+                TLRPC.User c24 = org.telegram.messenger.mp.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj)).peer)));
+                TLRPC.User c25 = org.telegram.messenger.mp.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj2)).peer)));
                 int i12 = this.b;
                 int i13 = (c24 == null || (userStatus4 = c24.status) == null) ? 0 : c24.self ? i12 + 50000 : userStatus4.expires;
                 int i14 = (c25 == null || (userStatus3 = c25.status) == null) ? 0 : c25.self ? i12 + 50000 : userStatus3.expires;

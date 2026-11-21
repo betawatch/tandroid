@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class u7 {
     public final /* synthetic */ Object a;
@@ -126,7 +126,7 @@ public final class u7 {
                 Object obj2 = this.a;
                 int i7 = this.d;
                 obVar.b.u.remove(str);
-                g0.g3(new bi.p3(obVar, file, str, obVar.a, obj2, i7));
+                g0.g3(new bi.t3(obVar, file, str, obVar.a, obj2, i7));
             }
         }
         w7.K.d(new yf(w7Var, i7Var.e1, i7Var, 23), 0L);

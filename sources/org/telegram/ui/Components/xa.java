@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa implements q0.a {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class xa implements q0.a {
                 }
                 break;
             default:
-                qi qiVar = ((si) this.b).X3;
-                if (qiVar != null) {
-                    qiVar.R0(obj);
+                si siVar = ((ui) this.b).X3;
+                if (siVar != null) {
+                    siVar.R0(obj);
                     break;
                 }
                 break;

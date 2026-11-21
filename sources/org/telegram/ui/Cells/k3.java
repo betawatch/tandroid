@@ -13,7 +13,7 @@ import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ec0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k3 implements TextWatcher {
     public final /* synthetic */ int a = 2;
@@ -52,16 +52,16 @@ public final class k3 implements TextWatcher {
                 }
                 break;
             case 1:
-                org.telegram.ui.Components.a5 a5Var = (org.telegram.ui.Components.a5) this.d;
+                org.telegram.ui.Components.b5 b5Var = (org.telegram.ui.Components.b5) this.d;
                 if (!this.b) {
                     int length = editable.length();
                     int i10 = this.c;
                     if (length > i10) {
                         this.b = true;
                         editable.delete(i10, editable.length());
-                        org.telegram.messenger.g0.D3(a5Var);
+                        org.telegram.messenger.g0.D3(b5Var);
                         try {
-                            a5Var.performHapticFeedback(3, 2);
+                            b5Var.performHapticFeedback(3, 2);
                         } catch (Exception unused) {
                         }
                         this.b = false;
@@ -183,9 +183,9 @@ public final class k3 implements TextWatcher {
         this.b = z10;
     }
 
-    public k3(int i7, org.telegram.ui.Components.a5 a5Var) {
+    public k3(int i7, org.telegram.ui.Components.b5 b5Var) {
         this.c = i7;
-        this.d = a5Var;
+        this.d = b5Var;
     }
 
     public k3(ec0 ec0Var) {

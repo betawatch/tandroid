@@ -1,35 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class wk implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ TextView b;
-
-    public wk(kg.a1 a1Var, TextView textView) {
-        this.b = textView;
-        this.a = TextUtils.isEmpty(a1Var.getText());
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean isEmpty = TextUtils.isEmpty(editable);
-        if (isEmpty != this.a) {
-            this.a = isEmpty;
-            this.b.setText(org.telegram.messenger.gd.M0(isEmpty ? 2131746126 : 2131754484, null));
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+public final class wk extends LinearLayout {
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
     }
 }

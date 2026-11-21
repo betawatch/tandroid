@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l0 extends org.telegram.ui.web.j1 {
     public final /* synthetic */ g4 C0;
@@ -67,7 +67,7 @@ public final class l0 extends org.telegram.ui.web.j1 {
                     TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
                     tL_messages_getWebPage.url = t1Var6.d;
                     tL_messages_getWebPage.hash = 0;
-                    t1Var6.k = ConnectionsManager.getInstance(t1Var6.a).sendRequest(tL_messages_getWebPage, new ai.e1(t1Var6, 25));
+                    t1Var6.k = ConnectionsManager.getInstance(t1Var6.a).sendRequest(tL_messages_getWebPage, new ai.g1(t1Var6, 25));
                 }
                 return k3Var.F;
             }
@@ -88,9 +88,9 @@ public final class l0 extends org.telegram.ui.web.j1 {
 
     public final void j(float f10) {
         int f11 = i0.a.f(this.b0, this.x, this.E);
-        org.telegram.ui.ActionBar.y1 y1Var = this.N;
-        y1Var.a(f11);
-        y1Var.b(i0.a.f(this.b0, this.x, this.E));
+        org.telegram.ui.ActionBar.x1 x1Var = this.N;
+        x1Var.a(f11);
+        x1Var.b(i0.a.f(this.b0, this.x, this.E));
         this.M.invalidate();
         g4 g4Var = this.C0;
         org.telegram.ui.web.k kVar = g4Var.j0;
@@ -117,16 +117,16 @@ public final class l0 extends org.telegram.ui.web.j1 {
                 int i11 = org.telegram.messenger.bz.p0;
                 if (i10 != i11) {
                     this.d0 = i11;
-                    qVar.setHint(org.telegram.messenger.gd.a0(null, null, 2131754349, org.telegram.ui.web.e1.a().a));
+                    qVar.setHint(org.telegram.messenger.gd.a0(null, null, 2131754348, org.telegram.ui.web.e1.a().a));
                 }
             }
             qVar.setVisibility(0);
             this.N.c(true, (this.v0 || z10) ? 0.0f : 1.0f);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b0, z10 ? 1.0f : 0.0f);
             this.x0 = ofFloat;
-            ofFloat.addUpdateListener(new hi.k3(this, 24));
+            ofFloat.addUpdateListener(new hi.j3(this, 24));
             this.x0.addListener(new c30(14, this, z10));
-            this.x0.setInterpolator(org.telegram.ui.Components.lr.h);
+            this.x0.setInterpolator(org.telegram.ui.Components.nr.h);
             this.x0.setDuration(360L);
             this.x0.start();
             org.telegram.messenger.g0.r(new org.telegram.ui.web.g1(this, i7));

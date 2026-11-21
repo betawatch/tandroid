@@ -1,73 +1,64 @@
 package tg;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c2 {
-    public String a;
-    public String b;
-    public String c;
-    public CharSequence d;
-    public TLRPC.TL_inputStickerSetItem e;
-    public TLRPC.TL_messageMediaDocument f;
-    public TLRPC.InputFile g;
-    public boolean h;
-    public long i;
-    public TLRPC.StickerSet j;
-    public TLRPC.Document k;
-    public String l;
-    public q10 m;
-    public x10 n;
-    public boolean o;
-    public ArrayList p;
-    public ArrayList q;
-    public fj r;
-    public e20 s;
-    public float t;
-    public float u;
+    public boolean b;
+    public int c;
+    public Bitmap d;
+    public Bitmap e;
+    public Bitmap f;
+    public Bitmap g;
+    public float j;
+    public float k;
+    public int n;
+    public float[] o;
+    public final Paint r;
+    public final Paint s;
+    public final /* synthetic */ f2 t;
+    public final d6 a = new d6(0.0f, (View) null, 0, 320, nr.h);
+    public final RectF h = new RectF();
+    public final RectF i = new RectF();
+    public final Path l = new Path();
+    public final Path m = new Path();
+    public final Paint p = new Paint(1);
+    public final Paint q = new Paint(1);
 
-    public final void a() {
-        ArrayList arrayList = this.q;
-        ArrayList arrayList2 = this.p;
-        int size = arrayList2.size();
-        int i7 = 0;
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
-            try {
-                ((File) obj).delete();
-            } catch (Exception e10) {
-                a8.g(e10, true);
-            }
-        }
-        arrayList2.clear();
-        int size2 = arrayList.size();
-        while (i7 < size2) {
-            Object obj2 = arrayList.get(i7);
-            i7++;
-            try {
-                ((File) obj2).delete();
-            } catch (Exception e11) {
-                a8.g(e11, true);
-            }
-        }
-        arrayList.clear();
+    public c2(f2 f2Var) {
+        this.t = f2Var;
+        new Paint(1);
+        this.r = new Paint(1);
+        this.s = new Paint(1);
     }
 
-    public final float b() {
-        float f10 = this.m == null ? 0.9f : 1.0f;
-        if (this.s == null) {
-            return f10 * this.u;
-        }
-        return com.google.android.gms.internal.vision.e2.B(this.u, 0.5f, this.t * 0.5f, f10);
+    public final Bitmap a() {
+        Bitmap bitmap = this.g;
+        return bitmap != null ? bitmap : this.f;
+    }
+
+    public final Bitmap b() {
+        Bitmap bitmap = this.e;
+        return bitmap != null ? bitmap : this.d;
+    }
+
+    public final Bitmap c() {
+        Bitmap createBitmap = Bitmap.createBitmap(b().getWidth(), b().getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        canvas.drawColor(-16777216);
+        Paint paint = new Paint(3);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        canvas.drawBitmap(b(), 0.0f, 0.0f, paint);
+        return createBitmap;
     }
 }

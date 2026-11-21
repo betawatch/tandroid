@@ -10,27 +10,27 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.x5;
-import org.telegram.ui.r11;
+import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.y5;
+import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class n extends r11 {
+public final class n extends s11 {
     public boolean f2;
     public final /* synthetic */ p g2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(p pVar, p pVar2, Activity activity, i6 i6Var, int i7) {
-        super(pVar2, activity, false, null, 6, false, i6Var, 16, i7);
+    public n(p pVar, p pVar2, Activity activity, h6 h6Var, int i7) {
+        super(pVar2, activity, false, null, 6, false, h6Var, 16, i7);
         this.g2 = pVar;
         this.f2 = true;
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.r11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.s11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         super.onLayout(z10, i7, i10, i11, i12);
         if (this.f2) {
@@ -39,7 +39,7 @@ public final class n extends r11 {
         }
     }
 
-    @Override // org.telegram.ui.r11
+    @Override // org.telegram.ui.s11
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         p pVar = this.g2;
         int i7 = pVar.O;
@@ -47,9 +47,9 @@ public final class n extends r11 {
         LinkedHashMap linkedHashMap = pVar.I;
         if (linkedHashMap.containsKey(l10)) {
             arrayList.remove(l10);
-            x5 x5Var = (x5) linkedHashMap.remove(l10);
-            x5Var.setRemoved(new c1.c(3, this, x5Var));
-            pVar.c0(x5Var);
+            y5 y5Var = (y5) linkedHashMap.remove(l10);
+            y5Var.setRemoved(new c1.a(5, this, y5Var));
+            pVar.c0(y5Var);
             pVar.b.x(l10, true);
             pVar.e0(false);
             return;
@@ -61,8 +61,8 @@ public final class n extends r11 {
         try {
             int editTextSelectionEnd = pVar.h.getEditTextSelectionEnd();
             SpannableString spannableString = new SpannableString("b");
-            x5 e10 = s0.e(document, l10, pVar.h.getFontMetricsInt());
-            e10.cacheType = o5.f();
+            y5 e10 = s0.e(document, l10, pVar.h.getFontMetricsInt());
+            e10.cacheType = p5.f();
             e10.setAdded();
             arrayList.add(l9.b(editTextSelectionEnd, 0, arrayList.size()), l10);
             linkedHashMap.put(l10, e10);

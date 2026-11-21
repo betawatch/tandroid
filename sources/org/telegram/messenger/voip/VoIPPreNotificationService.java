@@ -24,10 +24,10 @@ import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import bi.k1;
+import bi.o1;
 import c8.na;
 import java.util.ArrayList;
-import ki.c2;
+import ki.b2;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c6;
@@ -45,7 +45,7 @@ import org.telegram.ui.VoIPPermissionActivity;
 import org.telegram.ui.hc1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -55,7 +55,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -164,7 +164,7 @@ public class VoIPPreNotificationService {
             receivedcall.peer = tL_inputPhoneCall;
             tL_inputPhoneCall.id = phoneCall.id;
             tL_inputPhoneCall.access_hash = phoneCall.access_hash;
-            ConnectionsManager.getInstance(i7).sendRequest(receivedcall, new k1(26, context, runnable), 2);
+            ConnectionsManager.getInstance(i7).sendRequest(receivedcall, new o1(26, context, runnable), 2);
             return;
         }
         if (s2.a) {
@@ -239,7 +239,7 @@ public class VoIPPreNotificationService {
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
         }
         a8.d("discardCall " + discardcall.reason);
-        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new c2(intExtra, 2), 2);
+        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new b2(intExtra, 2), 2);
         dismiss(context, false);
     }
 
@@ -368,7 +368,7 @@ public class VoIPPreNotificationService {
         TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
         NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
         Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip");
-        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(gd.M0(z10 ? 2131743060 : 2131743063, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
+        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(gd.N0(z10 ? 2131743054 : 2131743057, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
         SharedPreferences h12 = mp.h1();
         int i13 = h12.getInt("calls_notification_channel", 0);
         NotificationChannel notificationChannel = notificationManager.getNotificationChannel("incoming_calls2" + i13);
@@ -385,7 +385,7 @@ public class VoIPPreNotificationService {
                 z11 = false;
                 if (z11) {
                     AudioAttributes build = new AudioAttributes.Builder().setContentType(4).setLegacyStreamType(2).setUsage(2).build();
-                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, gd.M0(2131749011, null), 4);
+                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, gd.N0(2131749010, null), 4);
                     try {
                         notificationChannel4.setSound(null, build);
                         z12 = true;
@@ -393,7 +393,7 @@ public class VoIPPreNotificationService {
                         z12 = true;
                         a8.g(e10, true);
                     }
-                    notificationChannel4.setDescription(gd.M0(2131749010, null));
+                    notificationChannel4.setDescription(gd.N0(2131749009, null));
                     notificationChannel4.enableVibration(false);
                     notificationChannel4.enableLights(false);
                     notificationChannel4.setBypassDnd(z12);
@@ -408,12 +408,12 @@ public class VoIPPreNotificationService {
                 Intent intent = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
                 intent.setAction(context.getPackageName() + ".DECLINE_CALL");
                 intent.putExtra("call_id", j10);
-                String M0 = gd.M0(2131743181, null);
+                String N0 = gd.N0(2131743175, null);
                 i10 = Build.VERSION.SDK_INT;
                 if (i10 >= 24 || i10 >= 31) {
                     i11 = 0;
                 } else {
-                    SpannableString spannableString = new SpannableString(M0);
+                    SpannableString spannableString = new SpannableString(N0);
                     i11 = 0;
                     spannableString.setSpan(new ForegroundColorSpan(-769226), 0, spannableString.length(), 0);
                 }
@@ -421,11 +421,11 @@ public class VoIPPreNotificationService {
                 Intent intent2 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
                 intent2.setAction(context.getPackageName() + ".ANSWER_CALL");
                 intent2.putExtra("call_id", j10);
-                String M02 = gd.M0(2131743267, null);
+                String N02 = gd.N0(2131743261, null);
                 if (i10 >= 24 || i10 >= 31) {
                     i12 = 0;
                 } else {
-                    SpannableString spannableString2 = new SpannableString(M02);
+                    SpannableString spannableString2 = new SpannableString(N02);
                     i12 = 0;
                     spannableString2.setSpan(new ForegroundColorSpan(-16733696), 0, spannableString2.length(), 0);
                 }
@@ -464,7 +464,7 @@ public class VoIPPreNotificationService {
         Intent intent4 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
         intent4.setAction(context.getPackageName() + ".DECLINE_CALL");
         intent4.putExtra("call_id", j10);
-        String M03 = gd.M0(2131743181, null);
+        String N03 = gd.N0(2131743175, null);
         i10 = Build.VERSION.SDK_INT;
         if (i10 >= 24) {
         }
@@ -473,7 +473,7 @@ public class VoIPPreNotificationService {
         Intent intent22 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
         intent22.setAction(context.getPackageName() + ".ANSWER_CALL");
         intent22.putExtra("call_id", j10);
-        String M022 = gd.M0(2131743267, null);
+        String N022 = gd.N0(2131743261, null);
         if (i10 >= 24) {
         }
         i12 = 0;

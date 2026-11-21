@@ -25,25 +25,25 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.s4;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.oq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dd0;
+import org.telegram.ui.cd0;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements fs {
-    public ck0 E;
+    public ek0 E;
     public ArrayList F;
     public int G;
     public y61 a;
-    public mq b;
+    public oq b;
     public r1.g c;
     public r1.g d;
     public SharedPreferences e;
@@ -67,12 +67,12 @@ public final class i extends FrameLayout implements fs {
     private List<a> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new dd0(20)));
+        arrayList.add(new a("Draw action bar shadow", new cd0(20)));
         arrayList.add(new a("Show blur settings", new d(this, 0)));
-        arrayList.add(new a(gd.M0(2131751636, null)));
-        arrayList.add(new a(gd.M0(bz.J0 ? 2131751627 : 2131751619, null), new d(this, 1)));
-        arrayList.add(new a(n6.I.q() ? "Switch to day theme" : "Switch to dark theme", new dd0(21)));
-        arrayList.add(new a(gd.M0(2131751602, null), new d(this, 2)));
+        arrayList.add(new a(gd.N0(2131751635, null)));
+        arrayList.add(new a(gd.N0(bz.J0 ? 2131751626 : 2131751618, null), new d(this, 1)));
+        arrayList.add(new a(m6.I.q() ? "Switch to day theme" : "Switch to dark theme", new cd0(21)));
+        arrayList.add(new a(gd.N0(2131751601, null), new d(this, 2)));
         return arrayList;
     }
 
@@ -87,7 +87,7 @@ public final class i extends FrameLayout implements fs {
             this.x.setVisibility(0);
             arrayList.clear();
             if (getContext() instanceof LaunchActivity) {
-                s4 M = ((LaunchActivity) getContext()).M();
+                r4 M = ((LaunchActivity) getContext()).M();
                 if (M instanceof b) {
                     arrayList.addAll(((b) M).F());
                 }
@@ -159,20 +159,20 @@ public final class i extends FrameLayout implements fs {
     }
 
     public final void d() {
-        y j02 = n6.j0(g0.L(56.0f), n6.x0(null, n6.P9, false), n6.x0(null, n6.Q9, false));
+        y j02 = m6.j0(g0.L(56.0f), m6.x0(null, m6.P9, false), m6.x0(null, m6.Q9, false));
         Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
-        mq mqVar = new mq(mutate, j02, 0, 0);
+        oq oqVar = new oq(mutate, j02, 0, 0);
         int L = g0.L(56.0f);
         int L2 = g0.L(56.0f);
-        mqVar.e = L;
-        mqVar.f = L2;
-        this.b = mqVar;
+        oqVar.e = L;
+        oqVar.f = L2;
+        this.b = oqVar;
         Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
-        u6.x(this, drawable, n6.h5, null, mode);
+        t6.x(this, drawable, m6.h5, null, mode);
         this.x.setBackground(drawable);
-        u6.U(this.y, n6.j5, null);
+        t6.U(this.y, m6.j5, null);
         invalidate();
     }
 

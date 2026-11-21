@@ -17,9 +17,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final Window a;
     public final lg.g b;
     public final lg.g c;
@@ -31,7 +31,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
     public o41 r;
     public final int s;
 
-    public m41(Context context, int i7, lg.f fVar, org.telegram.ui.ActionBar.i6 i6Var) {
+    public m41(Context context, int i7, lg.f fVar, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.n = new ArrayList();
         setWillNotDraw(false);
@@ -43,9 +43,9 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         this.s = i7;
         LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
         this.h = new ih0(context, 10);
-        ng.c cVar = new ng.c(getContext(), i6Var);
+        ng.c cVar = new ng.c(getContext(), h6Var);
         this.d = cVar;
-        cVar.d.setOnTouchListener(new org.telegram.ui.Components.jj0());
+        cVar.d.setOnTouchListener(new org.telegram.ui.Components.lj0());
         final int i10 = 0;
         cVar.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.i41
             public final /* synthetic */ m41 b;
@@ -70,13 +70,13 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
             }
         });
         if (i7 == 1) {
-            this.b = new lg.k(getContext(), i6Var);
-            lg.k kVar = new lg.k(getContext(), i6Var);
+            this.b = new lg.k(getContext(), h6Var);
+            lg.k kVar = new lg.k(getContext(), h6Var);
             this.c = kVar;
             kVar.u0.E = true;
         } else if (i7 == 2) {
-            this.b = new lg.p(getContext(), i6Var);
-            lg.p pVar = new lg.p(getContext(), i6Var);
+            this.b = new lg.p(getContext(), h6Var);
+            lg.p pVar = new lg.p(getContext(), h6Var);
             this.c = pVar;
             pVar.u0.E = true;
         } else if (i7 == 3) {
@@ -137,10 +137,10 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         textView.setTextSize(1, 15.0f);
         frameLayout.addView(textView, c8.ma.d(-2, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         radialProgressView.setVisibility(8);
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.s5, i6Var);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.s5, h6Var);
         this.b.setDateSelectionListener(new qi0(this, 17));
         this.b.u0.d(false, false);
-        this.b.u0.setOnTouchListener(new org.telegram.ui.Components.jj0());
+        this.b.u0.setOnTouchListener(new org.telegram.ui.Components.lj0());
         final int i12 = 1;
         this.b.u0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.i41
             public final /* synthetic */ m41 b;
@@ -287,20 +287,20 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         o41 o41Var = this.r;
         if (o41Var != null && (bVar = o41Var.d) != null && (arrayList = bVar.d) != null && arrayList.size() > 1) {
             for (int i7 = 0; i7 < this.r.d.d.size(); i7++) {
-                int x02 = (((mg.a) this.r.d.d.get(i7)).g < 0 || !org.telegram.ui.ActionBar.n6.f1(((mg.a) this.r.d.d.get(i7)).g)) ? i0.a.h(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false)) < 0.5d ? ((mg.a) this.r.d.d.get(i7)).i : ((mg.a) this.r.d.d.get(i7)).h : org.telegram.ui.ActionBar.n6.x0(null, ((mg.a) this.r.d.d.get(i7)).g, false);
+                int x02 = (((mg.a) this.r.d.d.get(i7)).g < 0 || !org.telegram.ui.ActionBar.m6.f1(((mg.a) this.r.d.d.get(i7)).g)) ? i0.a.h(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false)) < 0.5d ? ((mg.a) this.r.d.d.get(i7)).i : ((mg.a) this.r.d.d.get(i7)).h : org.telegram.ui.ActionBar.m6.x0(null, ((mg.a) this.r.d.d.get(i7)).g, false);
                 ArrayList arrayList2 = this.n;
                 if (i7 < arrayList2.size()) {
-                    org.telegram.ui.Components.vz vzVar = ((l41) arrayList2.get(i7)).a;
-                    vzVar.getClass();
-                    vzVar.r = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false);
-                    vzVar.w = -1;
-                    vzVar.s = x02;
-                    vzVar.invalidate();
+                    org.telegram.ui.Components.xz xzVar = ((l41) arrayList2.get(i7)).a;
+                    xzVar.getClass();
+                    xzVar.r = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false);
+                    xzVar.w = -1;
+                    xzVar.s = x02;
+                    xzVar.invalidate();
                 }
             }
         }
-        this.e.setProgressColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.h6, false));
-        this.f.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.s5, false));
+        this.e.setProgressColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h6, false));
+        this.f.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.s5, false));
     }
 
     public final void e(o41 o41Var, boolean z10) {
@@ -377,12 +377,12 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
                 l41 l41Var = new l41(this, i10);
                 l41Var.b = fVar;
                 String str3 = fVar.a.d;
-                org.telegram.ui.Components.vz vzVar = l41Var.a;
-                vzVar.setText(str3);
-                vzVar.a(fVar.n, false);
-                vzVar.setOnTouchListener(new org.telegram.ui.Components.jj0());
-                vzVar.setOnClickListener(new cd0(17, l41Var, fVar));
-                vzVar.setOnLongClickListener(new fi.z1(7, l41Var, fVar));
+                org.telegram.ui.Components.xz xzVar = l41Var.a;
+                xzVar.setText(str3);
+                xzVar.a(fVar.n, false);
+                xzVar.setOnTouchListener(new org.telegram.ui.Components.lj0());
+                xzVar.setOnClickListener(new jg0(15, l41Var, fVar));
+                xzVar.setOnLongClickListener(new fi.z1(7, l41Var, fVar));
             }
         }
         long j3 = this.r.c;
@@ -573,7 +573,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
             if (this.b != null && this.c != null && this.d != null && this.e != null && this.f != null) {
@@ -584,7 +584,7 @@ public abstract class m41 extends FrameLayout implements org.telegram.ui.ActionB
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

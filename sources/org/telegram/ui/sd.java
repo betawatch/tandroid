@@ -4,47 +4,47 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class sd extends org.telegram.ui.Components.y61 {
+public final class sd extends org.telegram.ui.Components.b71 {
     public final Context a;
     public final int b;
     public final int c;
-    public final org.telegram.ui.ActionBar.i6 d;
+    public final org.telegram.ui.ActionBar.h6 d;
     public final ArrayList e = new ArrayList();
     public final /* synthetic */ td f;
 
-    public sd(td tdVar, Context context, int i7, long j3, int i10, org.telegram.ui.ActionBar.i6 i6Var) {
+    public sd(td tdVar, Context context, int i7, long j3, int i10, org.telegram.ui.ActionBar.h6 h6Var) {
         this.f = tdVar;
         this.a = context;
         this.b = i7;
         this.c = i10;
-        this.d = i6Var;
+        this.d = h6Var;
         i();
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final void b(View view, int i7, int i10) {
         this.f.b.H(view);
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final View d(int i7) {
-        return new rd(this.f, this.a, i7, this.b, this.c, new ai.w0(this, i7, 24), this.d);
+        return new rd(this.f, this.a, i7, this.b, this.c, new ai.y0(this, i7, 24), this.d);
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int e() {
         return this.e.size();
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final CharSequence g(int i7) {
         int h = h(i7);
-        return h != 0 ? h != 1 ? "" : org.telegram.messenger.gd.M0(2131748160, null) : org.telegram.messenger.gd.M0(2131748161, null);
+        return h != 0 ? h != 1 ? "" : org.telegram.messenger.gd.N0(2131748159, null) : org.telegram.messenger.gd.N0(2131748160, null);
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int h(int i7) {
         if (i7 < 0) {
             return 1;
@@ -53,7 +53,7 @@ public final class sd extends org.telegram.ui.Components.y61 {
         if (i7 >= arrayList.size()) {
             return 1;
         }
-        return ((org.telegram.ui.Components.l41) arrayList.get(i7)).A;
+        return ((org.telegram.ui.Components.o41) arrayList.get(i7)).A;
     }
 
     public final void i() {
@@ -61,11 +61,11 @@ public final class sd extends org.telegram.ui.Components.y61 {
         arrayList.clear();
         td tdVar = this.f;
         if (!tdVar.n.isEmpty()) {
-            arrayList.add(org.telegram.ui.Components.l41.D(1));
+            arrayList.add(org.telegram.ui.Components.o41.D(1));
         }
         if (tdVar.r.isEmpty()) {
             return;
         }
-        arrayList.add(org.telegram.ui.Components.l41.D(0));
+        arrayList.add(org.telegram.ui.Components.o41.D(0));
     }
 }

@@ -4,7 +4,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class za1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ bb1 a;
@@ -15,12 +15,12 @@ public final class za1 extends org.telegram.ui.ActionBar.j {
 
     @Override // org.telegram.ui.ActionBar.j
     public final void b(int i7) {
-        org.telegram.ui.ActionBar.s4 s4Var;
+        org.telegram.ui.ActionBar.r4 r4Var;
         bb1 bb1Var = this.a;
         if (i7 == -1) {
             if (bb1Var.H >= 0) {
-                s4Var = ((org.telegram.ui.ActionBar.h2) bb1Var).parentLayout;
-                if (s4Var.getFragmentStack().size() == 1) {
+                r4Var = ((org.telegram.ui.ActionBar.g2) bb1Var).parentLayout;
+                if (r4Var.getFragmentStack().size() == 1) {
                     bb1Var.N0();
                     return;
                 }
@@ -31,18 +31,18 @@ public final class za1 extends org.telegram.ui.ActionBar.j {
         if (i7 == 1) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bb1Var.getParentActivity());
             TL_account.Password password = bb1Var.V;
-            String M0 = (password == null || !password.has_password) ? org.telegram.messenger.gd.M0(2131752567, null) : org.telegram.messenger.gd.M0(2131752575, null);
-            String M02 = org.telegram.messenger.gd.M0(2131752574, null);
-            String M03 = org.telegram.messenger.gd.M0(2131754950, null);
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.U = M0;
-            u1Var.S = M02;
-            alertDialog$Builder.k(M03, new qi0(this, 22));
-            alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-            bb1Var.showDialog(u1Var);
-            TextView textView = (TextView) u1Var.d(-1);
+            String N0 = (password == null || !password.has_password) ? org.telegram.messenger.gd.N0(2131752566, null) : org.telegram.messenger.gd.N0(2131752574, null);
+            String N02 = org.telegram.messenger.gd.N0(2131752573, null);
+            String N03 = org.telegram.messenger.gd.N0(2131754950, null);
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.U = N0;
+            t1Var.S = N02;
+            alertDialog$Builder.k(N03, new qi0(this, 22));
+            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+            bb1Var.showDialog(t1Var);
+            TextView textView = (TextView) t1Var.d(-1);
             if (textView != null) {
-                org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
+                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
             }
         }
     }

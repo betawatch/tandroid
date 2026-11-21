@@ -5,17 +5,17 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wu implements eh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 b;
     public final /* synthetic */ FrameLayout c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ wu(org.telegram.ui.ActionBar.h2 h2Var, FrameLayout frameLayout, Object obj, int i7) {
+    public /* synthetic */ wu(org.telegram.ui.ActionBar.g2 g2Var, FrameLayout frameLayout, Object obj, int i7) {
         this.a = i7;
-        this.b = h2Var;
+        this.b = g2Var;
         this.c = frameLayout;
         this.d = obj;
     }
@@ -89,8 +89,8 @@ public final /* synthetic */ class wu implements eh.a {
                 }
                 sb sbVar = c51Var.j0;
                 if (sbVar != null) {
-                    org.telegram.ui.Components.ck0 ck0Var = sbVar.G;
-                    ih.d.a(ck0Var, canvas, rectF, ck0Var, frameLayout);
+                    org.telegram.ui.Components.ek0 ek0Var = sbVar.G;
+                    ih.d.a(ek0Var, canvas, rectF, ek0Var, frameLayout);
                 }
                 xd xdVar = c51Var.k0;
                 if (xdVar != null && xdVar.getParent() == c51Var.i0 && c51Var.k0.getVisibility() == 0) {

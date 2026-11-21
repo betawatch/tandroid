@@ -17,9 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rv0;
+import org.telegram.ui.Components.uv0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ tj(File file, File file2, boolean[] zArr, x10 x10Var, org.telegram.ui.ActionBar.u1 u1Var, boolean[] zArr2) {
+    public /* synthetic */ tj(File file, File file2, boolean[] zArr, x10 x10Var, org.telegram.ui.ActionBar.t1 t1Var, boolean[] zArr2) {
         this.a = 4;
         this.f = file;
         this.b = file2;
         this.c = zArr;
         this.d = x10Var;
-        this.e = u1Var;
+        this.e = t1Var;
         this.h = zArr2;
     }
 
@@ -52,7 +52,7 @@ public final /* synthetic */ class tj implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        org.telegram.ui.ActionBar.k6 k6Var;
+        org.telegram.ui.ActionBar.j6 j6Var;
         HashMap<String, String> hashMap;
         boolean z10;
         boolean z11;
@@ -79,7 +79,7 @@ public final /* synthetic */ class tj implements Runnable {
                 mp mpVar = (mp) this.b;
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.c;
                 TLRPC.TL_wallPaperSettings tL_wallPaperSettings = (TLRPC.TL_wallPaperSettings) this.d;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
                 File file = (File) this.f;
                 String str = (String) this.h;
                 if (mpVar.T2 == null || mpVar.U2.s == null || wallPaper == null) {
@@ -87,10 +87,10 @@ public final /* synthetic */ class tj implements Runnable {
                 }
                 wallPaper.settings = tL_wallPaperSettings;
                 wallPaper.flags = 4 | wallPaper.flags;
-                e6Var.c = wallPaper.slug;
-                org.telegram.ui.ActionBar.m6 m6Var = e6Var.p;
-                if (m6Var != null && (((k6Var = e6Var.q) != null || m6Var.j0 == e6Var) && (k6Var == null || k6Var.y == e6Var))) {
-                    e6Var.c();
+                d6Var.c = wallPaper.slug;
+                org.telegram.ui.ActionBar.l6 l6Var = d6Var.p;
+                if (l6Var != null && (((j6Var = d6Var.q) != null || l6Var.j0 == d6Var) && (j6Var == null || j6Var.y == d6Var))) {
+                    d6Var.c();
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(wallPaper);
@@ -104,10 +104,10 @@ public final /* synthetic */ class tj implements Runnable {
                 }
                 ks.e().k(ks.i4, wallPaper.slug);
                 ArrayList arrayList2 = mpVar.U2.s;
-                if (arrayList2 == null || e6Var.n == 0) {
+                if (arrayList2 == null || d6Var.n == 0) {
                     return;
                 }
-                arrayList2.add(Integer.valueOf(f4.f(mpVar.currentAccount).u(e6Var.n, str, e6Var, null, null)));
+                arrayList2.add(Integer.valueOf(f4.f(mpVar.currentAccount).u(d6Var.n, str, d6Var, null, null)));
                 return;
             case 1:
                 long j11 = 0;
@@ -161,7 +161,7 @@ public final /* synthetic */ class tj implements Runnable {
                 File file3 = (File) this.b;
                 boolean[] zArr = (boolean[]) this.c;
                 x10 x10Var = (x10) this.d;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.e;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.e;
                 boolean[] zArr2 = (boolean[]) this.h;
                 String[] strArr = MediaController.W1;
                 try {
@@ -214,7 +214,7 @@ public final /* synthetic */ class tj implements Runnable {
                                 r22 = z11;
                                 if (z15) {
                                 }
-                                if (u1Var == null) {
+                                if (t1Var == null) {
                                 }
                             }
                         } catch (Exception e12) {
@@ -225,7 +225,7 @@ public final /* synthetic */ class tj implements Runnable {
                             r22 = z11;
                             if (z15) {
                             }
-                            if (u1Var == null) {
+                            if (t1Var == null) {
                             }
                         }
                     } else {
@@ -262,7 +262,7 @@ public final /* synthetic */ class tj implements Runnable {
                             if (z15) {
                                 g0.g3(new fe(x10Var, uri, r22));
                             }
-                            if (u1Var == null) {
+                            if (t1Var == null) {
                             }
                         }
                     }
@@ -274,21 +274,21 @@ public final /* synthetic */ class tj implements Runnable {
                 if (z15 && x10Var != null) {
                     g0.g3(new fe(x10Var, uri, r22));
                 }
-                if (u1Var == null) {
-                    g0.g3(new be(u1Var, zArr2, 3));
+                if (t1Var == null) {
+                    g0.g3(new be(t1Var, zArr2, 3));
                     return;
                 }
                 return;
             case 5:
                 mp mpVar2 = (mp) this.b;
-                org.telegram.ui.ActionBar.u1 u1Var2 = (org.telegram.ui.ActionBar.u1) this.c;
+                org.telegram.ui.ActionBar.t1 t1Var2 = (org.telegram.ui.ActionBar.t1) this.c;
                 vf.b bVar = (vf.b) this.d;
                 TLObject tLObject = (TLObject) this.e;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.f;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.f;
                 Bundle bundle = (Bundle) this.h;
-                if (u1Var2 != null) {
+                if (t1Var2 != null) {
                     try {
-                        u1Var2.dismiss();
+                        t1Var2.dismiss();
                     } catch (Exception e15) {
                         a8.g(e15, true);
                     }
@@ -300,7 +300,7 @@ public final /* synthetic */ class tj implements Runnable {
                 mpVar2.f4(messages_messages.users, false);
                 mpVar2.Z3(messages_messages.chats, false);
                 mpVar2.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                h2Var.presentFragment(new org.telegram.ui.bn(bundle), true);
+                g2Var.presentFragment(new org.telegram.ui.bn(bundle), true);
                 return;
             case 6:
                 pv pvVar = (pv) this.b;
@@ -314,7 +314,7 @@ public final /* synthetic */ class tj implements Runnable {
                 int i12 = pvVar.a;
                 mp.u1(i12).f4(arrayList8, true);
                 mp.u1(i12).Z3(arrayList9, true);
-                org.telegram.ui.Components.o5.g(i12).d(arrayList10);
+                org.telegram.ui.Components.p5.g(i12).d(arrayList10);
                 for (int i13 = 0; i13 < arrayList11.size(); i13++) {
                     pvVar.j(((Long) arrayList11.get(i13)).longValue());
                 }
@@ -350,7 +350,7 @@ public final /* synthetic */ class tj implements Runnable {
                 int i17 = pvVar2.a;
                 mp.u1(i17).f4(arrayList14, true);
                 mp.u1(i17).Z3(arrayList15, true);
-                org.telegram.ui.Components.o5.g(i17).d(arrayList16);
+                org.telegram.ui.Components.p5.g(i17).d(arrayList16);
                 ArrayList arrayList18 = pvVar2.c;
                 arrayList18.clear();
                 arrayList18.addAll(arrayList17);
@@ -363,14 +363,14 @@ public final /* synthetic */ class tj implements Runnable {
             case 8:
                 xv xvVar = (xv) this.b;
                 Context context = (Context) this.c;
-                org.telegram.ui.ActionBar.u1 u1Var3 = (org.telegram.ui.ActionBar.u1) this.d;
+                org.telegram.ui.ActionBar.t1 t1Var3 = (org.telegram.ui.ActionBar.t1) this.d;
                 TLObject tLObject2 = (TLObject) this.e;
                 byte[] bArr = (byte[]) this.f;
                 TLRPC.User user = (TLRPC.User) this.h;
                 xvVar.n = false;
                 if (!((Activity) context).isFinishing()) {
                     try {
-                        u1Var3.dismiss();
+                        t1Var3.dismiss();
                     } catch (Exception e16) {
                         a8.g(e16, true);
                     }
@@ -401,7 +401,7 @@ public final /* synthetic */ class tj implements Runnable {
                 String str5 = (String) this.c;
                 String str6 = (String) this.d;
                 ArrayList arrayList19 = (ArrayList) this.e;
-                rv0 rv0Var = (rv0) this.f;
+                uv0 uv0Var = (uv0) this.f;
                 uy uyVar = new uy(zyVar2);
                 uyVar.f = str4;
                 uyVar.e = str5;
@@ -425,14 +425,14 @@ public final /* synthetic */ class tj implements Runnable {
                     }
                     j3 = j10;
                     if (i7 == 0) {
-                        g0.g3(new xr(rv0Var, 10));
+                        g0.g3(new xr(uv0Var, 10));
                         return;
                     } else {
                         i7++;
                         j10 = j3;
                     }
                 }
-                g0.g3(new fn(zyVar2, uyVar, hashMap2, str5, rv0Var, 15));
+                g0.g3(new fn(zyVar2, uyVar, hashMap2, str5, uv0Var, 15));
                 return;
             case 10:
                 zy zyVar3 = (zy) this.b;

@@ -7,16 +7,16 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.gd;
 import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.m80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class o6 extends FrameLayout {
     public final n2.o0 a;
-    public final k80 b;
+    public final m80 b;
     public final CheckBoxSquare c;
 
-    public o6(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public o6(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         CheckBoxSquare checkBoxSquare = new CheckBoxSquare(context, null, false);
         this.c = checkBoxSquare;
@@ -27,16 +27,16 @@ public final class o6 extends FrameLayout {
         addView(checkBoxSquare, c8.ma.d(18, 18.0f, (gd.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
         n2.o0 o0Var = new n2.o0(this);
         this.a = o0Var;
-        k80 k80Var = new k80(context, o0Var, i6Var);
-        this.b = k80Var;
-        org.telegram.ui.ActionBar.u6.U(k80Var, org.telegram.ui.ActionBar.n6.G6, i6Var);
-        org.telegram.ui.ActionBar.u6.G(k80Var, org.telegram.ui.ActionBar.n6.J6, i6Var);
-        k80Var.setTextSize(1, 15.0f);
-        k80Var.setMaxLines(2);
-        k80Var.setGravity((gd.a0 ? 5 : 3) | 16);
-        k80Var.setEllipsize(TextUtils.TruncateAt.END);
+        m80 m80Var = new m80(context, o0Var, h6Var);
+        this.b = m80Var;
+        org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.G6, h6Var);
+        org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.J6, h6Var);
+        m80Var.setTextSize(1, 15.0f);
+        m80Var.setMaxLines(2);
+        m80Var.setGravity((gd.a0 ? 5 : 3) | 16);
+        m80Var.setEllipsize(TextUtils.TruncateAt.END);
         boolean z10 = gd.a0;
-        addView(k80Var, c8.ma.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
+        addView(m80Var, c8.ma.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
         setWillNotDraw(false);
     }
 
@@ -54,8 +54,8 @@ public final class o6 extends FrameLayout {
         n2.o0 o0Var = this.a;
         if (o0Var != null) {
             canvas.save();
-            k80 k80Var = this.b;
-            canvas.translate(k80Var.getLeft(), k80Var.getTop());
+            m80 m80Var = this.b;
+            canvas.translate(m80Var.getLeft(), m80Var.getTop());
             if (o0Var.h(canvas)) {
                 invalidate();
             }

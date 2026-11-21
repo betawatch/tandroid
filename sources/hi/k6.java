@@ -1,42 +1,52 @@
 package hi;
 
-import org.telegram.messenger.x10;
+import android.os.Bundle;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.o10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k6 implements x10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o6 b;
+public final class k6 extends m6 {
+    public final /* synthetic */ TLRPC.User b;
 
-    public /* synthetic */ k6(o6 o6Var, int i7) {
-        this.a = i7;
-        this.b = o6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k6(String str, TLRPC.User user) {
+        super(str);
+        this.b = user;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                n6 n6Var = (n6) obj;
-                o6 o6Var = this.b;
-                o6Var.I = null;
-                o6Var.F = n6Var;
-                o6Var.E = n6Var != null;
-                o6Var.a();
-                o6Var.invalidate();
-                s8 s8Var = o6Var.b;
-                if (s8Var != null) {
-                    s8Var.run();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj;
-                n6 n6Var2 = this.b.F;
-                if (n6Var2 != null || h2Var == null) {
-                    n6Var2.c(h2Var);
-                    break;
-                }
+    @Override // hi.m6
+    public final String a() {
+        return gd.N0(2131743303, null);
+    }
+
+    @Override // hi.m6
+    public final String b() {
+        return o10.q(this.b);
+    }
+
+    @Override // hi.m6
+    public final void c(org.telegram.ui.ActionBar.g2 g2Var) {
+        TLRPC.User user = this.b;
+        if (user.id != j10.i(j10.t0).e()) {
+            g2Var.presentFragment(ProfileActivity.D4(user.id));
+            return;
         }
+        Bundle bundle = new Bundle();
+        bundle.putLong("user_id", user.id);
+        bundle.putBoolean("my_profile", true);
+        g2Var.presentFragment(new ProfileActivity(bundle, null));
+    }
+
+    @Override // hi.m6
+    public final void d(ImageReceiver imageReceiver) {
+        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
+        TLRPC.User user = this.b;
+        b9Var.r(user);
+        imageReceiver.i0(user, b9Var, null);
     }
 }

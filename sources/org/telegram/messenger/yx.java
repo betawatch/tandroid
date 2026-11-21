@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.gi0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yx implements Runnable {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class yx implements Runnable {
                 String str = (String) this.h;
                 boolean z13 = this.b;
                 if (tLObject == null) {
-                    org.telegram.ui.Components.b5.n0(bnVar, str, false, z13);
+                    org.telegram.ui.Components.c5.n0(bnVar, str, false, z13);
                     return;
                 }
                 if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class yx implements Runnable {
                     return;
                 } else {
                     if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
-                        org.telegram.ui.Components.b5.n0(bnVar, str, false, z13);
+                        org.telegram.ui.Components.c5.n0(bnVar, str, false, z13);
                         return;
                     }
                     return;

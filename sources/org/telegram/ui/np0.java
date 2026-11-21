@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.media.MediaFormat;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class np0 implements d3.v {
     public final /* synthetic */ PhotoViewer a;
@@ -13,10 +13,10 @@ public final class np0 implements d3.v {
 
     @Override // d3.v
     public final void a(long j3, long j10, e2.u uVar, MediaFormat mediaFormat) {
-        org.telegram.ui.Components.f61 f61Var;
+        org.telegram.ui.Components.i61 i61Var;
         PhotoViewer photoViewer = this.a;
-        if (photoViewer.J4 && (f61Var = photoViewer.G2) != null) {
-            org.telegram.messenger.g0.g3(new we0(24, this, f61Var));
+        if (photoViewer.J4 && (i61Var = photoViewer.G2) != null) {
+            org.telegram.messenger.g0.g3(new fe0(26, this, i61Var));
         }
     }
 }

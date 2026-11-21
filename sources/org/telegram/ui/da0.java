@@ -11,9 +11,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class da0 implements org.telegram.messenger.za, org.telegram.messenger.pa, org.telegram.ui.ActionBar.r1, org.telegram.messenger.bb, jg.b {
+public final /* synthetic */ class da0 implements org.telegram.messenger.za, org.telegram.messenger.pa, org.telegram.ui.ActionBar.q1, org.telegram.messenger.bb, jg.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ qa0 b;
 
@@ -78,8 +78,8 @@ public final /* synthetic */ class da0 implements org.telegram.messenger.za, org
                     if (motionEvent.getAction() == 2) {
                         if (!qa0Var.K0) {
                             ImageView imageView = qa0Var.a;
-                            int i10 = org.telegram.ui.ActionBar.n6.lj;
-                            org.telegram.ui.ActionBar.u6.s(imageView, i10, qa0Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+                            int i10 = org.telegram.ui.ActionBar.m6.lj;
+                            org.telegram.ui.ActionBar.t6.s(imageView, i10, qa0Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
                             qa0Var.a.setTag(Integer.valueOf(i10));
                             qa0Var.K0 = true;
                         }
@@ -127,8 +127,8 @@ public final /* synthetic */ class da0 implements org.telegram.messenger.za, org
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 4:
                 qa0 qa0Var = this.b;

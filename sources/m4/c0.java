@@ -4,8 +4,9 @@ import a8.la;
 import e2.s0;
 import f3.i0;
 import java.util.List;
+import kg.x1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -19,14 +20,14 @@ public final class c0 {
             case 1:
                 this.b = list;
                 this.c = new i0[list.size()];
-                h2.c cVar = new h2.c(new ki.e(this, 15));
+                h2.c cVar = new h2.c(new x1(this, 16));
                 this.d = cVar;
                 cVar.C(3);
                 break;
             default:
                 this.b = list;
                 this.c = new i0[list.size()];
-                this.d = new h2.c(new ki.e(this, 14));
+                this.d = new h2.c(new x1(this, 15));
                 break;
         }
     }

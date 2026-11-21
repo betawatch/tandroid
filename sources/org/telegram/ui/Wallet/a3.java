@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class a3 extends FrameLayout {
-    public final org.telegram.ui.Components.c6 a;
+    public final org.telegram.ui.Components.d6 a;
     public final Paint b;
     public final Path c;
     public float d;
@@ -25,12 +25,12 @@ public final class a3 extends FrameLayout {
     public a3(d3 d3Var, Context context) {
         super(context);
         this.e = d3Var;
-        this.a = new org.telegram.ui.Components.c6(this, 250L, lr.h);
+        this.a = new org.telegram.ui.Components.d6(this, 250L, nr.h);
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new Path();
         setWillNotDraw(false);
-        paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, d3Var.J0));
+        paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, d3Var.J0));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -39,24 +39,24 @@ public final class a3 extends FrameLayout {
         float f10;
         d3 d3Var = this.e;
         Integer num = d3Var.q1;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, d3Var.J0);
+        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, d3Var.J0);
         Paint paint = this.b;
         paint.setColor(intValue);
         View[] viewPages = d3Var.m1.getViewPages();
         this.d = 0.0f;
-        for (ai.k1 k1Var : viewPages) {
-            if (k1Var != 0) {
-                float i7 = Utilities.i(1.0f - Math.abs(k1Var.getTranslationX() / Math.max(1, k1Var.getMeasuredWidth())), 1.0f, 0.0f);
+        for (ai.m0 m0Var : viewPages) {
+            if (m0Var != 0) {
+                float i7 = Utilities.i(1.0f - Math.abs(m0Var.getTranslationX() / Math.max(1, m0Var.getMeasuredWidth())), 1.0f, 0.0f);
                 float f11 = this.d;
-                boolean z10 = k1Var instanceof b3;
+                boolean z10 = m0Var instanceof b3;
                 if (z10) {
-                    c3 c3Var = (c3) ((b3) k1Var);
+                    c3 c3Var = (c3) ((b3) m0Var);
                     f10 = Math.max(0.0f, c3Var.getHeight() - c3Var.a.getMeasuredHeight());
                 } else {
                     f10 = 0.0f;
                 }
                 this.d = (f10 * i7) + f11;
-                if (k1Var.getVisibility() == 0 && z10) {
+                if (m0Var.getVisibility() == 0 && z10) {
                 }
             }
         }

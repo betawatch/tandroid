@@ -21,7 +21,7 @@ import java.util.Set;
 import rd.l;
 import zd.b0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h {
     public static final q1.e b = new q1.e("fire-global");
@@ -93,7 +93,7 @@ public final class h {
     }
 
     public final synchronized void e() {
-        this.a.a(new c1.b(this, c(System.currentTimeMillis())));
+        this.a.a(new c1.c(this, c(System.currentTimeMillis())));
     }
 
     public final synchronized boolean g(long j3) {

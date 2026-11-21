@@ -1,34 +1,79 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g31 extends xh.l {
-    public final h6.m V;
-    public final /* synthetic */ j31 W;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g31(j31 j31Var, Context context) {
-        super(context);
-        this.W = j31Var;
-        this.V = new h6.m(29);
+public final class g31 extends n41 {
+    static {
+        n41.h(new g31());
     }
 
-    @Override // xh.l, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int L = org.telegram.messenger.g0.L(8.0f) + this.W.d.getWidth();
-        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - L, getHeight(), org.telegram.messenger.ks.e4, 31);
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        nu0.a(canvas, getLayout());
-        canvas.restore();
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set((getWidth() - L) - org.telegram.messenger.g0.L(24.0f), 0.0f, getWidth() - L, getHeight());
-        this.V.n(canvas, rectF, 2, 1.0f);
-        canvas.restore();
+    public static o41 i(int i7, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z10, View.OnClickListener onClickListener2, t tVar) {
+        o41 K = o41.K(g31.class);
+        K.d = i7;
+        K.m = charSequence;
+        K.n = charSequence2;
+        K.o = charSequence3;
+        K.E = onClickListener;
+        K.e = z10;
+        K.F = onClickListener2;
+        K.H = tVar;
+        return K;
+    }
+
+    public static o41 j(int i7, String str, String str2, String str3, d31 d31Var) {
+        return i(i7, str, str2, str3, d31Var, false, null, null);
+    }
+
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
+        h31 h31Var = (h31) view;
+        CharSequence charSequence = o41Var.m;
+        CharSequence charSequence2 = o41Var.n;
+        CharSequence charSequence3 = o41Var.o;
+        View.OnClickListener onClickListener = o41Var.E;
+        boolean z11 = o41Var.e;
+        View.OnClickListener onClickListener2 = o41Var.F;
+        Object obj = o41Var.H;
+        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
+        LinearLayout linearLayout = h31Var.r;
+        LinearLayout linearLayout2 = h31Var.h;
+        LinearLayout linearLayout3 = h31Var.b;
+        h31Var.c.setText(charSequence);
+        h31Var.d.setText(charSequence2);
+        h31Var.e.setText(charSequence3);
+        h31Var.f.setVisibility(onClickListener != null ? 0 : 8);
+        linearLayout3.setOnClickListener(onClickListener);
+        linearLayout3.setClickable(onClickListener != null);
+        h31Var.n.a(z11, false);
+        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
+        linearLayout2.setOnClickListener(onClickListener2);
+        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
+        linearLayout.setOnClickListener(new m8(29, h31Var, onClickListener3));
+        h31Var.updateColors();
+    }
+
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c(o41 o41Var, o41 o41Var2) {
+        return TextUtils.equals(o41Var.m, o41Var2.m) && TextUtils.equals(o41Var.n, o41Var2.n) && TextUtils.equals(o41Var.o, o41Var2.o) && o41Var.F == o41Var2.F;
+    }
+
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        return new h31(context, h6Var);
+    }
+
+    @Override // org.telegram.ui.Components.n41
+    public final boolean e(o41 o41Var, o41 o41Var2) {
+        return o41Var.d == o41Var2.d;
+    }
+
+    @Override // org.telegram.ui.Components.n41
+    public final boolean f() {
+        return false;
     }
 }

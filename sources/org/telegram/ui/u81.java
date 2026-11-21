@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class u81 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class u81 extends FrameLayout {
                         this.b = 0.0f;
                     }
                 }
-                ((TextView) this.d).setTranslationX(org.telegram.ui.Components.lr.f.getInterpolation(this.b) * org.telegram.messenger.g0.L(8.0f) * (org.telegram.messenger.gd.a0 ? -1 : 1));
+                ((TextView) this.d).setTranslationX(org.telegram.ui.Components.nr.f.getInterpolation(this.b) * org.telegram.messenger.g0.L(8.0f) * (org.telegram.messenger.gd.a0 ? -1 : 1));
                 invalidate();
                 break;
         }

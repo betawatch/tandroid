@@ -14,9 +14,9 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public abstract class q4 extends View implements org.telegram.ui.Components.bg0 {
+public abstract class q4 extends View implements org.telegram.ui.Components.dg0 {
     public final GradientDrawable[] E;
     public final boolean[] F;
     public final float[] G;
@@ -29,7 +29,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.bg0 
     public int N;
     public float O;
     public int P;
-    public org.telegram.ui.Components.fg0 Q;
+    public org.telegram.ui.Components.hg0 Q;
     public final TextPaint R;
     public float S;
     public int T;
@@ -91,9 +91,9 @@ public abstract class q4 extends View implements org.telegram.ui.Components.bg0 
         paint3.setAlpha(66);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(250L);
-        ofFloat.setInterpolator(org.telegram.ui.Components.lr.j);
+        ofFloat.setInterpolator(org.telegram.ui.Components.nr.j);
         ofFloat.addUpdateListener(new a3(this, i7));
-        ofFloat.addListener(new ki.n3(this, 16));
+        ofFloat.addListener(new ki.m3(this, 16));
         TextPaint textPaint = new TextPaint(1);
         this.R = textPaint;
         textPaint.setColor(-1);
@@ -110,24 +110,24 @@ public abstract class q4 extends View implements org.telegram.ui.Components.bg0 
         return this.U;
     }
 
-    @Override // org.telegram.ui.Components.bg0
+    @Override // org.telegram.ui.Components.dg0
     public final void a() {
         Arrays.fill(this.F, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.bg0
+    @Override // org.telegram.ui.Components.dg0
     public final void b(boolean z10) {
         this.F[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.bg0
+    @Override // org.telegram.ui.Components.dg0
     public final void d() {
         invalidate();
     }
 
-    public org.telegram.ui.Components.fg0 getProfileGalleryView() {
+    public org.telegram.ui.Components.hg0 getProfileGalleryView() {
         return this.Q;
     }
 
@@ -265,7 +265,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.bg0 
                     if (i14 != this.N) {
                         this.I[i14] = 0.75f;
                     } else if (this.b == 3) {
-                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.lr.j.getInterpolation(this.I[i14]), i10, org.telegram.messenger.ks.e4) * this.H));
+                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.nr.j.getInterpolation(this.I[i14]), i10, org.telegram.messenger.ks.e4) * this.H));
                     }
                     canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), i14 != this.N ? paint3 : paint6);
                     i14++;
@@ -454,8 +454,8 @@ public abstract class q4 extends View implements org.telegram.ui.Components.bg0 
         gradientDrawableArr[1].setBounds(i7 - i13, 0, i7, i10);
     }
 
-    public void setProfileGalleryView(org.telegram.ui.Components.fg0 fg0Var) {
-        this.Q = fg0Var;
+    public void setProfileGalleryView(org.telegram.ui.Components.hg0 hg0Var) {
+        this.Q = hg0Var;
     }
 
     public void c() {

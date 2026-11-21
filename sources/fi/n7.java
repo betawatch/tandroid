@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public abstract class n7 extends c5.l {
     public final k7 A0;
@@ -32,7 +32,7 @@ public abstract class n7 extends c5.l {
     public ArrayList y0;
     public int z0;
 
-    public n7(int i7, Context context, f9 f9Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public n7(int i7, Context context, f9 f9Var, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.B0 = new ArrayList();
         this.E0 = true;
@@ -43,12 +43,12 @@ public abstract class n7 extends c5.l {
         this.z0 = i7;
         this.I0 = new w3(context);
         this.O0 = f9Var;
-        k7 k7Var = new k7(wVar, context, f9Var, i6Var);
+        k7 k7Var = new k7(wVar, context, f9Var, h6Var);
         this.A0 = k7Var;
         setAdapter(k7Var);
-        di.c7 c7Var = new di.c7(wVar, 9);
+        di.v6 v6Var = new di.v6(wVar, 10);
         boolean z10 = this.n0 == null;
-        this.n0 = c7Var;
+        this.n0 = v6Var;
         setChildrenDrawingOrderEnabled(true);
         this.p0 = 1;
         this.o0 = 2;

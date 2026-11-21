@@ -5,7 +5,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class ImportingService extends Service implements fs {
     public e0.q a;
@@ -77,17 +77,17 @@ public class ImportingService extends Service implements fs {
             qVar.F.when = System.currentTimeMillis();
             e0.q qVar2 = this.a;
             qVar2.y = xs.k0;
-            qVar2.g(gd.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            qVar2.g(gd.N0(org.telegram.messenger.beta.R.string.AppName, null));
             int i12 = 0;
             while (true) {
                 if (i12 >= 4) {
-                    this.a.p(gd.M0(2131749074, null));
-                    this.a.f(gd.M0(2131749074, null));
+                    this.a.p(gd.N0(2131749073, null));
+                    this.a.f(gd.N0(2131749073, null));
                     break;
                 }
                 if (zy.C(i12).E.m() != 0) {
-                    this.a.p(gd.M0(2131749075, null));
-                    this.a.f(gd.M0(2131749075, null));
+                    this.a.p(gd.N0(2131749074, null));
+                    this.a.f(gd.N0(2131749074, null));
                     break;
                 }
                 i12++;

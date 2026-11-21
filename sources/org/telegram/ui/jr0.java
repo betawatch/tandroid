@@ -9,46 +9,46 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class jr0 implements org.telegram.ui.Components.rx {
+public final class jr0 implements org.telegram.ui.Components.tx {
     public final /* synthetic */ pr0 a;
 
     public jr0(pr0 pr0Var) {
         this.a = pr0Var;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ long a() {
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ boolean b() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ boolean c() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ int f() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final void i(int i7) {
         boolean z10 = i7 != 0;
         pr0 pr0Var = this.a;
@@ -56,12 +56,12 @@ public final class jr0 implements org.telegram.ui.Components.rx {
         pr0Var.e.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ boolean j() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final boolean k() {
         EditTextBoldCursor editField = this.a.c0.getEditField();
         if (editField == null) {
@@ -71,7 +71,7 @@ public final class jr0 implements org.telegram.ui.Components.rx {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final void l(String str) {
         EditTextBoldCursor editField = this.a.c0.getEditField();
         if (editField == null) {
@@ -91,28 +91,28 @@ public final class jr0 implements org.telegram.ui.Components.rx {
         }
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final void n() {
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         pr0 pr0Var = this.a;
         Activity parentActivity = pr0Var.getParentActivity();
-        i6Var = ((org.telegram.ui.ActionBar.h2) pr0Var).resourceProvider;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, i6Var);
-        String M0 = org.telegram.messenger.gd.M0(2131752057, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = M0;
-        u1Var.U = org.telegram.messenger.gd.M0(2131752058, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131752088, null), new qi0(this, 4));
-        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
+        h6Var = ((org.telegram.ui.ActionBar.g2) pr0Var).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, h6Var);
+        String N0 = org.telegram.messenger.gd.N0(2131752056, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = N0;
+        t1Var.U = org.telegram.messenger.gd.N0(2131752057, null);
+        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752087, null), new qi0(this, 4));
+        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
         alertDialog$Builder.p();
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ float p() {
         return 0.0f;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
         pr0 pr0Var = this.a;
         EditTextBoldCursor editField = pr0Var.c0.getEditField();
@@ -125,9 +125,9 @@ public final class jr0 implements org.telegram.ui.Components.rx {
         }
         try {
             SpannableString spannableString = new SpannableString(str);
-            org.telegram.ui.Components.x5 x5Var = document != null ? new org.telegram.ui.Components.x5(document, editField.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.x5(j3, editField.getPaint().getFontMetricsInt());
-            x5Var.cacheType = pr0Var.S.c;
-            spannableString.setSpan(x5Var, 0, spannableString.length(), 33);
+            org.telegram.ui.Components.y5 y5Var = document != null ? new org.telegram.ui.Components.y5(document, editField.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.y5(j3, editField.getPaint().getFontMetricsInt());
+            y5Var.cacheType = pr0Var.S.c;
+            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
             editField.setText(editField.getText().insert(selectionEnd, spannableString));
             int length = selectionEnd + spannableString.length();
             editField.setSelection(length, length);
@@ -136,60 +136,60 @@ public final class jr0 implements org.telegram.ui.Components.rx {
         }
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final boolean z() {
         return this.a.C0;
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
-    @Override // org.telegram.ui.Components.rx
-    public final /* synthetic */ void o(org.telegram.ui.Components.h41 h41Var) {
+    @Override // org.telegram.ui.Components.tx
+    public final /* synthetic */ void o(org.telegram.ui.Components.k41 k41Var) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void s(int i7) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void t(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void y(long j3) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void q() {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void u() {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void w() {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void e(Object obj, Object obj2) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10, int i7) {
     }
 
-    @Override // org.telegram.ui.Components.rx
+    @Override // org.telegram.ui.Components.tx
     public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10) {
     }
 }

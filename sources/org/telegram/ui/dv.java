@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class dv extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                             if (i7 != 200) {
                                 if (i7 == 201) {
                                     cx cxVar4 = new cx(org.telegram.ui.Cells.c0.l(3, "onlySelect", "dialogsType", true));
-                                    cxVar4.E2 = new org.telegram.ui.Components.iy(kwVar, 17);
+                                    cxVar4.E2 = new org.telegram.ui.Components.ky(kwVar, 17);
                                     cxVar3.presentFragment(cxVar4);
                                     break;
                                 }
@@ -83,23 +83,23 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                 break;
                             }
                         } else if (kwVar.K()) {
-                            cxVar3.showDialog(new ug.z0((org.telegram.ui.ActionBar.h2) cxVar3, 2, true));
+                            cxVar3.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) cxVar3, 2, true));
                             break;
                         }
                     } else if (cxVar3 != null && cxVar3.getParentActivity() != null) {
                         ArrayList arrayList2 = new ArrayList(hashMap.values());
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cxVar3.getParentActivity());
                         String G = org.telegram.messenger.gd.G(hashMap.size(), "RemoveDocumentsTitle", new Object[0]);
-                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                        u1Var.S = G;
+                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                        t1Var.S = G;
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(hashMap.size(), "RemoveDocumentsMessage", new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.gd.M0(2131746124, null));
-                        u1Var.U = spannableStringBuilder;
-                        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), new org.telegram.ui.Components.wb0(6));
-                        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131751587, null), new org.telegram.ui.Components.g2(19, kwVar, arrayList2));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(hashMap.size(), "RemoveDocumentsMessage", new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.gd.N0(2131746123, null));
+                        t1Var.U = spannableStringBuilder;
+                        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), new org.telegram.ui.Components.xb0(6));
+                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new org.telegram.ui.Components.h2(19, kwVar, arrayList2));
                         TextView textView = (TextView) alertDialog$Builder.p().d(-1);
                         if (textView != null) {
-                            org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
+                            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
                             break;
                         }
                     }
@@ -108,8 +108,8 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                     if (xvVar == null || !xvVar.c()) {
                         rw rwVar = cxVar2.A0;
                         if (rwVar == null || !rwVar.n) {
-                            kVar = ((org.telegram.ui.ActionBar.h2) cxVar2).actionBar;
-                            if (kVar.y()) {
+                            kVar = ((org.telegram.ui.ActionBar.g2) cxVar2).actionBar;
+                            if (kVar.x()) {
                                 kw kwVar2 = cxVar2.D0;
                                 if (kwVar2 != null && kwVar2.getVisibility() == 0) {
                                     kw kwVar3 = cxVar2.D0;
@@ -130,8 +130,8 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                             break;
                         }
                     } else {
-                        kVar2 = ((org.telegram.ui.ActionBar.h2) cxVar2).actionBar;
-                        if (kVar2.y()) {
+                        kVar2 = ((org.telegram.ui.ActionBar.g2) cxVar2).actionBar;
+                        if (kVar2.x()) {
                             kw kwVar4 = cxVar2.D0;
                             if (kwVar4 != null && kwVar4.getVisibility() == 0) {
                                 kw kwVar5 = cxVar2.D0;
@@ -160,15 +160,15 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                         cxVar2.G4(cxVar2.F1);
                         break;
                     } else if (i7 == 109) {
-                        org.telegram.ui.Components.qz qzVar = new org.telegram.ui.Components.qz(cxVar2, arrayList);
-                        qzVar.u1 = new zr(this, 7);
-                        cxVar2.showDialog(qzVar);
+                        org.telegram.ui.Components.sz szVar = new org.telegram.ui.Components.sz(cxVar2, arrayList);
+                        szVar.u1 = new zr(this, 7);
+                        cxVar2.showDialog(szVar);
                         break;
                     } else if (i7 == 110) {
                         org.telegram.messenger.ro roVar = (org.telegram.messenger.ro) cxVar2.getMessagesController().V0().get(cxVar2.f0[0].h);
-                        ArrayList K0 = org.telegram.ui.Components.qz.K0(cxVar2, roVar, arrayList, false, false);
+                        ArrayList K0 = org.telegram.ui.Components.sz.K0(cxVar2, roVar, arrayList, false, false);
                         if (K0.size() + (roVar != null ? roVar.i.size() : 0) > 100) {
-                            cxVar2.showDialog(org.telegram.ui.Components.b5.K(cxVar2.getParentActivity(), org.telegram.messenger.gd.M0(2131750799, null), org.telegram.messenger.gd.M0(2131750800, null)).a);
+                            cxVar2.showDialog(org.telegram.ui.Components.c5.K(cxVar2.getParentActivity(), org.telegram.messenger.gd.N0(2131750798, null), org.telegram.messenger.gd.N0(2131750799, null)).a);
                             break;
                         } else {
                             if (K0.isEmpty()) {
@@ -234,7 +234,7 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                     org.telegram.messenger.tr messagesStorage = kxVar.getMessagesStorage();
                     messagesStorage.a.c(new org.telegram.messenger.tp(messagesStorage, i16, arrayList4, i13));
                     SharedPreferences.Editor edit = kxVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
-                    i10 = ((org.telegram.ui.ActionBar.h2) kxVar).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.g2) kxVar).currentAccount;
                     edit.putInt("account" + i16, i10);
                     edit.putInt(TeXSymbolParser.TYPE_ATTR + i16, i15);
                     edit.commit();
@@ -373,14 +373,14 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                 }
                                 i11 = k90Var.a;
                                 if (i11 != 0) {
-                                    org.telegram.ui.ActionBar.u1 u1Var2 = k90Var.U;
-                                    if (u1Var2 != null) {
-                                        u1Var2.dismiss();
+                                    org.telegram.ui.ActionBar.t1 t1Var2 = k90Var.U;
+                                    if (t1Var2 != null) {
+                                        t1Var2.dismiss();
                                     }
                                     k90Var.V = true;
-                                    org.telegram.ui.ActionBar.u1 u1Var3 = new org.telegram.ui.ActionBar.u1(3, k90Var.getParentActivity(), null);
-                                    k90Var.U = u1Var3;
-                                    u1Var3.r(500L);
+                                    org.telegram.ui.ActionBar.t1 t1Var3 = new org.telegram.ui.ActionBar.t1(3, k90Var.getParentActivity(), null);
+                                    k90Var.U = t1Var3;
+                                    t1Var3.r(500L);
                                     TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
                                     tL_messages_exportChatInvite.peer = k90Var.getMessagesController().l1(-j11);
                                     tL_messages_exportChatInvite.legacy_revoke_permanent = false;
@@ -430,13 +430,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                 case 0:
                                                                     k90 k90Var3 = k90Var2;
                                                                     k90Var3.V = false;
-                                                                    org.telegram.ui.ActionBar.u1 u1Var4 = k90Var3.U;
-                                                                    if (u1Var4 != null) {
-                                                                        u1Var4.dismiss();
+                                                                    org.telegram.ui.ActionBar.t1 t1Var4 = k90Var3.U;
+                                                                    if (t1Var4 != null) {
+                                                                        t1Var4.dismiss();
                                                                     }
                                                                     TLRPC.TL_error tL_error2 = tL_error;
                                                                     if (tL_error2 != null) {
-                                                                        org.telegram.ui.Components.b5.r0(k90Var3, null, tL_error2.text, null);
+                                                                        org.telegram.ui.Components.c5.r0(k90Var3, null, tL_error2.text, null);
                                                                         break;
                                                                     } else {
                                                                         j90 j90Var = k90Var3.T;
@@ -449,13 +449,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                 default:
                                                                     k90 k90Var4 = k90Var2;
                                                                     k90Var4.V = false;
-                                                                    org.telegram.ui.ActionBar.u1 u1Var5 = k90Var4.U;
-                                                                    if (u1Var5 != null) {
-                                                                        u1Var5.dismiss();
+                                                                    org.telegram.ui.ActionBar.t1 t1Var5 = k90Var4.U;
+                                                                    if (t1Var5 != null) {
+                                                                        t1Var5.dismiss();
                                                                     }
                                                                     TLRPC.TL_error tL_error3 = tL_error;
                                                                     if (tL_error3 != null) {
-                                                                        org.telegram.ui.Components.b5.r0(k90Var4, null, tL_error3.text, null);
+                                                                        org.telegram.ui.Components.c5.r0(k90Var4, null, tL_error3.text, null);
                                                                         break;
                                                                     } else {
                                                                         TLObject tLObject2 = tLObject;
@@ -483,13 +483,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                 case 0:
                                                                     k90 k90Var32 = k90Var3;
                                                                     k90Var32.V = false;
-                                                                    org.telegram.ui.ActionBar.u1 u1Var4 = k90Var32.U;
-                                                                    if (u1Var4 != null) {
-                                                                        u1Var4.dismiss();
+                                                                    org.telegram.ui.ActionBar.t1 t1Var4 = k90Var32.U;
+                                                                    if (t1Var4 != null) {
+                                                                        t1Var4.dismiss();
                                                                     }
                                                                     TLRPC.TL_error tL_error2 = tL_error;
                                                                     if (tL_error2 != null) {
-                                                                        org.telegram.ui.Components.b5.r0(k90Var32, null, tL_error2.text, null);
+                                                                        org.telegram.ui.Components.c5.r0(k90Var32, null, tL_error2.text, null);
                                                                         break;
                                                                     } else {
                                                                         j90 j90Var = k90Var32.T;
@@ -502,13 +502,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                 default:
                                                                     k90 k90Var4 = k90Var3;
                                                                     k90Var4.V = false;
-                                                                    org.telegram.ui.ActionBar.u1 u1Var5 = k90Var4.U;
-                                                                    if (u1Var5 != null) {
-                                                                        u1Var5.dismiss();
+                                                                    org.telegram.ui.ActionBar.t1 t1Var5 = k90Var4.U;
+                                                                    if (t1Var5 != null) {
+                                                                        t1Var5.dismiss();
                                                                     }
                                                                     TLRPC.TL_error tL_error3 = tL_error;
                                                                     if (tL_error3 != null) {
-                                                                        org.telegram.ui.Components.b5.r0(k90Var4, null, tL_error3.text, null);
+                                                                        org.telegram.ui.Components.c5.r0(k90Var4, null, tL_error3.text, null);
                                                                         break;
                                                                     } else {
                                                                         TLObject tLObject2 = tLObject;
@@ -531,9 +531,9 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                     });
                                     break;
                                 } else if (i11 == 1) {
-                                    org.telegram.ui.ActionBar.u1 u1Var4 = k90Var.U;
-                                    if (u1Var4 != null) {
-                                        u1Var4.dismiss();
+                                    org.telegram.ui.ActionBar.t1 t1Var4 = k90Var.U;
+                                    if (t1Var4 != null) {
+                                        t1Var4.dismiss();
                                     }
                                     TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
                                     tL_messages_editExportedChatInvite.link = k90Var.e.link;
@@ -589,9 +589,9 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                             break;
                                         } else {
                                             k90Var.V = true;
-                                            org.telegram.ui.ActionBar.u1 u1Var5 = new org.telegram.ui.ActionBar.u1(3, k90Var.getParentActivity(), null);
-                                            k90Var.U = u1Var5;
-                                            u1Var5.r(500L);
+                                            org.telegram.ui.ActionBar.t1 t1Var5 = new org.telegram.ui.ActionBar.t1(3, k90Var.getParentActivity(), null);
+                                            k90Var.U = t1Var5;
+                                            t1Var5.r(500L);
                                             ConnectionsManager connectionsManager = k90Var.getConnectionsManager();
                                             final boolean z17 = z14 ? 1 : 0;
                                             connectionsManager.sendRequest(tL_messages_editExportedChatInvite, new RequestDelegate() { // from class: org.telegram.ui.b90
@@ -608,13 +608,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                         case 0:
                                                                             k90 k90Var32 = k90Var2;
                                                                             k90Var32.V = false;
-                                                                            org.telegram.ui.ActionBar.u1 u1Var42 = k90Var32.U;
-                                                                            if (u1Var42 != null) {
-                                                                                u1Var42.dismiss();
+                                                                            org.telegram.ui.ActionBar.t1 t1Var42 = k90Var32.U;
+                                                                            if (t1Var42 != null) {
+                                                                                t1Var42.dismiss();
                                                                             }
                                                                             TLRPC.TL_error tL_error2 = tL_error;
                                                                             if (tL_error2 != null) {
-                                                                                org.telegram.ui.Components.b5.r0(k90Var32, null, tL_error2.text, null);
+                                                                                org.telegram.ui.Components.c5.r0(k90Var32, null, tL_error2.text, null);
                                                                                 break;
                                                                             } else {
                                                                                 j90 j90Var = k90Var32.T;
@@ -627,13 +627,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                         default:
                                                                             k90 k90Var4 = k90Var2;
                                                                             k90Var4.V = false;
-                                                                            org.telegram.ui.ActionBar.u1 u1Var52 = k90Var4.U;
-                                                                            if (u1Var52 != null) {
-                                                                                u1Var52.dismiss();
+                                                                            org.telegram.ui.ActionBar.t1 t1Var52 = k90Var4.U;
+                                                                            if (t1Var52 != null) {
+                                                                                t1Var52.dismiss();
                                                                             }
                                                                             TLRPC.TL_error tL_error3 = tL_error;
                                                                             if (tL_error3 != null) {
-                                                                                org.telegram.ui.Components.b5.r0(k90Var4, null, tL_error3.text, null);
+                                                                                org.telegram.ui.Components.c5.r0(k90Var4, null, tL_error3.text, null);
                                                                                 break;
                                                                             } else {
                                                                                 TLObject tLObject2 = tLObject;
@@ -661,13 +661,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                         case 0:
                                                                             k90 k90Var32 = k90Var3;
                                                                             k90Var32.V = false;
-                                                                            org.telegram.ui.ActionBar.u1 u1Var42 = k90Var32.U;
-                                                                            if (u1Var42 != null) {
-                                                                                u1Var42.dismiss();
+                                                                            org.telegram.ui.ActionBar.t1 t1Var42 = k90Var32.U;
+                                                                            if (t1Var42 != null) {
+                                                                                t1Var42.dismiss();
                                                                             }
                                                                             TLRPC.TL_error tL_error2 = tL_error;
                                                                             if (tL_error2 != null) {
-                                                                                org.telegram.ui.Components.b5.r0(k90Var32, null, tL_error2.text, null);
+                                                                                org.telegram.ui.Components.c5.r0(k90Var32, null, tL_error2.text, null);
                                                                                 break;
                                                                             } else {
                                                                                 j90 j90Var = k90Var32.T;
@@ -680,13 +680,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                                                         default:
                                                                             k90 k90Var4 = k90Var3;
                                                                             k90Var4.V = false;
-                                                                            org.telegram.ui.ActionBar.u1 u1Var52 = k90Var4.U;
-                                                                            if (u1Var52 != null) {
-                                                                                u1Var52.dismiss();
+                                                                            org.telegram.ui.ActionBar.t1 t1Var52 = k90Var4.U;
+                                                                            if (t1Var52 != null) {
+                                                                                t1Var52.dismiss();
                                                                             }
                                                                             TLRPC.TL_error tL_error3 = tL_error;
                                                                             if (tL_error3 != null) {
-                                                                                org.telegram.ui.Components.b5.r0(k90Var4, null, tL_error3.text, null);
+                                                                                org.telegram.ui.Components.c5.r0(k90Var4, null, tL_error3.text, null);
                                                                                 break;
                                                                             } else {
                                                                                 TLObject tLObject2 = tLObject;
@@ -744,12 +744,12 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 16:
-                ee0 ee0Var = (ee0) obj2;
+                de0 de0Var = (de0) obj2;
                 if (i7 == 1) {
-                    ee0Var.H1();
+                    de0Var.H1();
                     break;
-                } else if (i7 == -1 && ee0Var.onBackPressed(true)) {
-                    ee0Var.finishFragment();
+                } else if (i7 == -1 && de0Var.onBackPressed(true)) {
+                    de0Var.finishFragment();
                     break;
                 }
                 break;
@@ -761,13 +761,13 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                 break;
             case 18:
                 if (i7 == -1) {
-                    ((gf0) obj2).finishFragment();
+                    ((ff0) obj2).finishFragment();
                     break;
                 }
                 break;
             case 19:
                 if (i7 == -1) {
-                    ((bi.y8) obj2).finishFragment();
+                    ((bi.c9) obj2).finishFragment();
                     break;
                 }
                 break;
@@ -867,7 +867,7 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                         if (bitmap == tm0Var.a) {
                             tm0Var.e = true;
                         }
-                        ((org.telegram.ui.Components.u30) tm0Var.c).r(false, bitmap, null);
+                        ((org.telegram.ui.Components.x30) tm0Var.c).r(false, bitmap, null);
                         tm0Var.f = true;
                     }
                     tm0Var.finishFragment();

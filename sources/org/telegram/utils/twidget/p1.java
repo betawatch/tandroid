@@ -15,10 +15,10 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
-import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.rp0;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class p1 {
     public static boolean e0;
@@ -165,7 +165,7 @@ public final class p1 {
     }
 
     public final void b(boolean z10) {
-        this.a.post(new pp0(17, this, z10));
+        this.a.post(new rp0(17, this, z10));
     }
 
     public final void c(d0 d0Var, o1[] o1VarArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, int i13, v1 v1Var) {
@@ -289,7 +289,7 @@ public final class p1 {
                 String str4 = this.f;
                 String str5 = this.H;
                 float f10 = this.l;
-                j3 = lVar.c(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, gd.M0(2131742609, null), this.L, this.b);
+                j3 = lVar.c(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, gd.N0(2131742603, null), this.L, this.b);
                 try {
                     SystemClock.uptimeMillis();
                     this.a.post(new bi.e0(this, j3, i7, this.H, str));

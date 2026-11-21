@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public static volatile e0[] m = new e0[4];
@@ -118,15 +118,15 @@ public final class e0 {
                 }
             }
         }
-        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, context, null);
+        org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, context, null);
         TL_payments.getConnectedStarRefBot getconnectedstarrefbot = new TL_payments.getConnectedStarRefBot();
         int i10 = this.a;
         getconnectedstarrefbot.peer = mp.u1(i10).l1(j3);
         getconnectedstarrefbot.bot = mp.u1(i10).q1(j10);
-        int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(getconnectedstarrefbot, new y(this, u1Var, j10, x10Var, 0));
-        u1Var.j0 = true;
-        u1Var.setOnCancelListener(new z(this, sendRequest, 0));
-        u1Var.r(200L);
+        int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(getconnectedstarrefbot, new y(this, t1Var, j10, x10Var, 0));
+        t1Var.j0 = true;
+        t1Var.setOnCancelListener(new z(this, sendRequest, 0));
+        t1Var.r(200L);
     }
 
     public final TLRPC.TL_payments_starsRevenueStats h(long j3, boolean z10) {
@@ -136,7 +136,7 @@ public final class e0 {
             return tL_payments_starsRevenueStats;
         }
         TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.n6.I.q();
+        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.m6.I.q();
         int i7 = this.a;
         tL_payments_getStarsRevenueStats.peer = mp.u1(i7).l1(j3);
         ConnectionsManager.getInstance(i7).sendRequest(tL_payments_getStarsRevenueStats, new u(this, j3, 0));
@@ -161,7 +161,7 @@ public final class e0 {
         }
         TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
         tL_payments_getStarsRevenueStats.ton = true;
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.n6.I.q();
+        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.m6.I.q();
         int i7 = this.a;
         tL_payments_getStarsRevenueStats.peer = mp.u1(i7).l1(j3);
         TLRPC.ChatFull P0 = mp.u1(i7).P0(-j3);

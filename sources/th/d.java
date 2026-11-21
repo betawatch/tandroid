@@ -7,9 +7,9 @@ import org.telegram.messenger.fc;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.yy;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d extends sh.d {
+public final class d extends sh.c {
     public final ef b;
     public final yy c;
 
@@ -60,7 +60,7 @@ public final class d extends sh.d {
         }
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void c(Canvas canvas, int i7, int i10) {
         ImageReceiver imageReceiver = this.a;
         imageReceiver.y0(0.0f, 0.0f, i7, i10);

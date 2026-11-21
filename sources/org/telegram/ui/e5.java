@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((f5) this.b).b.P();
                 break;
             case 1:
-                ((org.telegram.ui.Components.m5) this.b).a();
+                ((org.telegram.ui.Components.n5) this.b).a();
                 break;
             case 2:
                 org.telegram.messenger.ks.e().c((os) this.b, org.telegram.messenger.ks.l4);
@@ -24,9 +24,9 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((r50) this.b).b.P();
                 break;
             case 4:
-                org.telegram.ui.Components.m5 m5Var = ((gm0) this.b).i;
-                if (m5Var != null) {
-                    m5Var.a();
+                org.telegram.ui.Components.n5 n5Var = ((gm0) this.b).i;
+                if (n5Var != null) {
+                    n5Var.a();
                     break;
                 }
                 break;
@@ -45,7 +45,7 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((f5) this.b).b.R();
                 break;
             case 1:
-                ((org.telegram.ui.Components.m5) this.b).b();
+                ((org.telegram.ui.Components.n5) this.b).b();
                 break;
             case 2:
                 org.telegram.messenger.ks.e().n((os) this.b, org.telegram.messenger.ks.l4);
@@ -54,9 +54,9 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((r50) this.b).b.R();
                 break;
             case 4:
-                org.telegram.ui.Components.m5 m5Var = ((gm0) this.b).i;
-                if (m5Var != null) {
-                    m5Var.b();
+                org.telegram.ui.Components.n5 n5Var = ((gm0) this.b).i;
+                if (n5Var != null) {
+                    n5Var.b();
                     break;
                 }
                 break;

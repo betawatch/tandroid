@@ -2,11 +2,10 @@ package jg;
 
 import android.os.SystemClock;
 import android.util.Pair;
-import di.ga;
+import di.a8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.c6;
 import org.telegram.messenger.cz;
 import org.telegram.messenger.fj;
@@ -23,7 +22,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -133,7 +132,7 @@ public final /* synthetic */ class r implements RequestDelegate {
                     org.telegram.messenger.g0.g3(tVar);
                     return;
                 } else {
-                    tr.a0(i24).a.c(new ga(h0Var2, hashSet, tVar, 20));
+                    tr.a0(i24).a.c(new a8(h0Var2, hashSet, tVar, 21));
                     return;
                 }
             default:
@@ -143,11 +142,11 @@ public final /* synthetic */ class r implements RequestDelegate {
                 int i26 = this.e;
                 TLObject tLObject2 = this.f;
                 if (h7Var.k) {
-                    a8.d("received chunk but definitely cancelled offset=" + h7Var.e + " size=" + h7Var.c + " token=" + h7Var.a);
+                    org.telegram.messenger.a8.d("received chunk but definitely cancelled offset=" + h7Var.e + " size=" + h7Var.c + " token=" + h7Var.a);
                     return;
                 }
                 if (h7Var.j) {
-                    a8.d("received cancelled chunk after cancelRequests! offset=" + h7Var.e + " size=" + h7Var.c + " token=" + h7Var.a);
+                    org.telegram.messenger.a8.d("received cancelled chunk after cancelRequests! offset=" + h7Var.e + " size=" + h7Var.c + " token=" + h7Var.a);
                 }
                 if (!i7Var.G0.contains(h7Var)) {
                     if (!i7Var.H0.contains(h7Var)) {
@@ -162,7 +161,7 @@ public final /* synthetic */ class r implements RequestDelegate {
                         } else {
                             i10 = 1;
                             if (h7Var2.e == h7Var.e && h7Var2.c == h7Var.c) {
-                                a8.d("received cancelled chunk faster than new one! received=" + h7Var.a + " new=" + h7Var2.a);
+                                org.telegram.messenger.a8.d("received cancelled chunk faster than new one! received=" + h7Var.a + " new=" + h7Var2.a);
                                 if (z10) {
                                     i7Var.G0.remove(i27);
                                     i27--;
@@ -179,7 +178,7 @@ public final /* synthetic */ class r implements RequestDelegate {
                 while (i28 < i7Var.H0.size()) {
                     h7 h7Var3 = (h7) i7Var.H0.get(i28);
                     if (h7Var3 != null && h7Var3 != h7Var && h7Var3.e == h7Var.e && h7Var3.c == h7Var.c) {
-                        a8.d("received new chunk faster than cancelled one! received=" + h7Var.a + " cancelled=" + h7Var3.a);
+                        org.telegram.messenger.a8.d("received new chunk faster than cancelled one! received=" + h7Var.a + " cancelled=" + h7Var3.a);
                         i7Var.H0.remove(i28);
                         i28 += -1;
                     }

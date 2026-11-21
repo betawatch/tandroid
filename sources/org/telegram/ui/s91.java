@@ -5,16 +5,16 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s91 extends org.telegram.ui.Components.bk0 {
+public final class s91 extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ u91 c;
 
     public s91(u91 u91Var) {
         this.c = u91Var;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         int i7 = f1Var.f;
         return i7 == 3 || i7 == 2;
@@ -50,10 +50,10 @@ public final class s91 extends org.telegram.ui.Components.bk0 {
         if (d(i7) == 1) {
             org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i7 == u91Var.h0) {
-                y3Var.setText(org.telegram.messenger.gd.M0(2131743759, null));
+                y3Var.setText(org.telegram.messenger.gd.N0(2131743753, null));
             }
             if (i7 == u91Var.k0) {
-                y3Var.setText(org.telegram.messenger.gd.M0(2131745561, null));
+                y3Var.setText(org.telegram.messenger.gd.N0(2131745560, null));
             }
         }
         if (d(i7) == 2) {
@@ -65,7 +65,7 @@ public final class s91 extends org.telegram.ui.Components.bk0 {
             org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) u91Var.g0.get(i7 - u91Var.l0);
             v91 v91Var = (v91) view;
             v91Var.b5 = i7 != u91Var.m0 - 1;
-            i10 = ((org.telegram.ui.ActionBar.h2) y91Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
             long b22 = org.telegram.messenger.fj.b2(i10, fjVar.k, true, false);
             if (b22 == 0) {
                 b22 = 1;
@@ -96,11 +96,11 @@ public final class s91 extends org.telegram.ui.Components.bk0 {
                 throw new RuntimeException("unsupported view type");
             }
             ?? v91Var = new v91(y91Var, viewGroup.getContext(), true);
-            z10 = ((org.telegram.ui.ActionBar.h2) y91Var).inPreviewMode;
+            z10 = ((org.telegram.ui.ActionBar.g2) y91Var).inPreviewMode;
             v91Var.l0 = z10;
             frameLayout = v91Var;
         }
         frameLayout.setLayoutParams(new v4.q0(-1, -2));
-        return new org.telegram.ui.Components.kj0(frameLayout);
+        return new org.telegram.ui.Components.mj0(frameLayout);
     }
 }

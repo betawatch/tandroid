@@ -11,7 +11,7 @@ import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class y7 extends FrameLayout {
     public org.telegram.ui.Components.q9 a;
@@ -21,10 +21,10 @@ public final class y7 extends FrameLayout {
     public boolean e;
     public float f;
     public boolean h;
-    public ug.c1 n;
+    public ug.b1 n;
     public boolean r;
     public boolean s;
-    public org.telegram.ui.ActionBar.i6 w;
+    public org.telegram.ui.ActionBar.h6 w;
 
     static {
         new AccelerateInterpolator(0.5f);
@@ -104,10 +104,10 @@ public final class y7 extends FrameLayout {
         }
         if (str != null) {
             StringBuilder n10 = p5.c.n(str, " ");
-            n10.append(gd.M0(2131753934, null));
+            n10.append(gd.N0(2131753933, null));
             accessibilityNodeInfo.setText(n10.toString());
         } else {
-            accessibilityNodeInfo.setText(gd.M0(2131753934, null));
+            accessibilityNodeInfo.setText(gd.N0(2131753933, null));
         }
         accessibilityNodeInfo.setEnabled(true);
     }

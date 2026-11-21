@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import java.util.Iterator;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k71 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -124,32 +124,32 @@ public final class k71 extends AnimatorListenerAdapter {
                 break;
             case 17:
                 super.onAnimationEnd(animator);
-                tg.f0 f0Var = (tg.f0) obj;
-                ImageView imageView = f0Var.c;
-                f0Var.c = f0Var.d;
-                f0Var.d = imageView;
+                tg.g0 g0Var = (tg.g0) obj;
+                ImageView imageView = g0Var.c;
+                g0Var.c = g0Var.d;
+                g0Var.d = imageView;
                 imageView.bringToFront();
-                f0Var.d.setVisibility(8);
-                f0Var.h = null;
+                g0Var.d.setVisibility(8);
+                g0Var.h = null;
                 break;
             case 18:
-                tg.h1 h1Var = (tg.h1) obj;
-                if (animator == h1Var.r) {
-                    h1Var.f = h1Var.h;
-                    h1Var.h = -1;
-                    h1Var.r = null;
+                tg.i1 i1Var = (tg.i1) obj;
+                if (animator == i1Var.r) {
+                    i1Var.f = i1Var.h;
+                    i1Var.h = -1;
+                    i1Var.r = null;
                     break;
                 }
                 break;
             case 19:
-                ug.s0 s0Var = (ug.s0) obj;
-                s0Var.s = s0Var.r ? 1.0f : 0.0f;
-                s0Var.e();
+                ug.r0 r0Var = (ug.r0) obj;
+                r0Var.s = r0Var.r ? 1.0f : 0.0f;
+                r0Var.e();
                 break;
             case 20:
-                ug.x1 x1Var = (ug.x1) ((hi.d0) obj).b;
-                x1Var.G = true;
-                x1Var.invalidate();
+                ug.w1 w1Var = (ug.w1) ((hi.e0) obj).b;
+                w1Var.G = true;
+                w1Var.invalidate();
                 break;
             case 21:
                 vg.e eVar = (vg.e) ((org.telegram.ui.Cells.z9) obj).b;

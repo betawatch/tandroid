@@ -1,54 +1,54 @@
 package tg;
 
 import c8.ma;
-import hi.o4;
+import hi.n4;
 import java.util.List;
-import org.telegram.ui.Components.h01;
-import org.telegram.ui.Components.mz0;
+import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.oz0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g0 b;
+    public final /* synthetic */ h0 b;
 
-    public /* synthetic */ n(g0 g0Var, int i7) {
+    public /* synthetic */ n(h0 h0Var, int i7) {
         this.a = i7;
-        this.b = g0Var;
+        this.b = h0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                g0 g0Var = this.b;
-                mz0 mz0Var = g0Var.K0;
-                if (mz0Var != null) {
-                    g0Var.K0 = null;
-                    g0Var.removeView(mz0Var);
+                h0 h0Var = this.b;
+                oz0 oz0Var = h0Var.K0;
+                if (oz0Var != null) {
+                    h0Var.K0 = null;
+                    h0Var.removeView(oz0Var);
                     break;
                 }
                 break;
             case 1:
-                g0 g0Var2 = this.b;
-                if (g0Var2.o0 != null) {
-                    g0Var2.q0.postRunnable(new n(g0Var2, 3), 200L);
+                h0 h0Var2 = this.b;
+                if (h0Var2.o0 != null) {
+                    h0Var2.q0.postRunnable(new n(h0Var2, 3), 200L);
                     break;
                 }
                 break;
             case 2:
-                m1 m1Var = this.b.V0;
-                if (m1Var != null) {
-                    m1Var.invalidate();
+                n1 n1Var = this.b.V0;
+                if (n1Var != null) {
+                    n1Var.invalidate();
                     break;
                 }
                 break;
             case 3:
-                g0.Y(this.b);
+                h0.Y(this.b);
                 break;
             default:
-                g0 g0Var3 = this.b;
-                boolean z10 = sg.k0.e(g0Var3.z1).k;
+                h0 h0Var3 = this.b;
+                boolean z10 = sg.k0.e(h0Var3.z1).k;
                 int i7 = 0;
                 while (true) {
                     List list = sg.g.c;
@@ -58,14 +58,14 @@ public final /* synthetic */ class n implements Runnable {
                         sg.g gVar = (sg.g) list.get(i7);
                         int m10 = z10 ? gVar.m() : gVar.e();
                         String n10 = gVar.n();
-                        h01 h01Var = new h01(g0Var3, gVar, m10, 27);
-                        f0 f0Var = new f0(g0Var3, g0Var3.getContext());
-                        f0Var.setIcon(m10);
-                        f0Var.setText(n10);
-                        f0Var.setSelected(false);
-                        f0Var.setOnClickListener(new sh.b(h01Var, 1));
-                        f0Var.setOnLongClickListener(new o4(g0Var3, 6));
-                        g0Var3.C1.a(f0Var, ma.o(-1, 48));
+                        j01 j01Var = new j01(h0Var3, gVar, m10, 27);
+                        g0 g0Var = new g0(h0Var3, h0Var3.getContext());
+                        g0Var.setIcon(m10);
+                        g0Var.setText(n10);
+                        g0Var.setSelected(false);
+                        g0Var.setOnClickListener(new u(j01Var, 0));
+                        g0Var.setOnLongClickListener(new n4(h0Var3, 6));
+                        h0Var3.C1.a(g0Var, ma.o(-1, 48));
                         i7++;
                     }
                 }

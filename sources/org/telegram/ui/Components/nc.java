@@ -10,16 +10,16 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public class nc extends k80 {
+public class nc extends m80 {
     public final Path M;
     public final RectF N;
     public oc O;
     public oc P;
 
-    public nc(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var);
+    public nc(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
         this.M = new Path();
         this.N = new RectF();
     }
@@ -38,7 +38,7 @@ public class nc extends k80 {
         this.P = null;
     }
 
-    @Override // org.telegram.ui.Components.k80, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.m80, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         Layout layout;
         oc ocVar;

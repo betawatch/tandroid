@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fp implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class fp implements Runnable {
                             String str = user.first_name;
                             org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(bnVar.getParentActivity(), bnVar.Ba);
                             obVar.d(R.raw.ic_admin, "Shield");
-                            org.telegram.messenger.f3.q("UserAddedAsAdminHint", null, 2131743531, new Object[]{str}, obVar.b);
+                            org.telegram.messenger.f3.q("UserAddedAsAdminHint", null, 2131743525, new Object[]{str}, obVar.b);
                             org.telegram.ui.Components.gc.g(bnVar, obVar, 1500).j();
                             break;
                         }
@@ -59,9 +59,9 @@ public final /* synthetic */ class fp implements Runnable {
             default:
                 if (npVar.r) {
                     long j3 = npVar.n;
-                    org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, npVar.getParentActivity(), null)};
-                    npVar.getMessagesController().o5(npVar.s, j3, true, false, true, new zf(u1VarArr, 2), new zf(u1VarArr, 3));
-                    u1VarArr[0].r(300L);
+                    org.telegram.ui.ActionBar.t1[] t1VarArr = {new org.telegram.ui.ActionBar.t1(3, npVar.getParentActivity(), null)};
+                    npVar.getMessagesController().o5(npVar.s, j3, true, false, true, new zf(t1VarArr, 2), new zf(t1VarArr, 3));
+                    t1VarArr[0].r(300L);
                 }
                 kp kpVar2 = npVar.Y0;
                 if (kpVar2 != null) {

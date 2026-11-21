@@ -1,7 +1,7 @@
 package jg;
 
 import android.util.Pair;
-import di.n8;
+import di.o8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -16,9 +16,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.no0;
+import org.telegram.ui.Components.po0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class z1 {
     public y1 a;
@@ -75,7 +75,7 @@ public class z1 {
             z10 = true;
         }
         if (z10) {
-            tr.a0(this.m).a.c(new hi.r1(25, this, this.q));
+            tr.a0(this.m).a.c(new hi.c(27, this, this.q));
         }
     }
 
@@ -116,8 +116,8 @@ public class z1 {
                 if (obj instanceof g0) {
                     obj = ((g0) obj).a;
                 }
-                if (obj instanceof no0) {
-                    obj = ((no0) obj).b;
+                if (obj instanceof po0) {
+                    obj = ((po0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
@@ -226,7 +226,7 @@ public class z1 {
                 tL_channels_getParticipants.offset = 0;
                 tL_channels_getParticipants.channel = mp.u1(i11).j1(j3);
                 z17 = z13;
-                arrayList6.add(new Pair(tL_channels_getParticipants, new n8(this, str, z17, 2)));
+                arrayList6.add(new Pair(tL_channels_getParticipants, new o8(this, str, z17, 2)));
             } else {
                 z17 = z13;
                 this.n = str.toLowerCase();

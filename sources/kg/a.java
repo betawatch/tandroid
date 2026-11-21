@@ -7,14 +7,14 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.v10;
 import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Cells.s8;
-import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z4;
+import org.telegram.ui.Components.a5;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ c b;
 
@@ -23,8 +23,8 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
         this.b = cVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 1:
                 this.b.c0();
@@ -37,14 +37,14 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.messenger.v10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        l41 l41Var = (l41) obj;
+        o41 o41Var = (o41) obj;
         final View view = (View) obj2;
         final c cVar = this.b;
-        if (cVar.c.h(l41Var)) {
+        if (cVar.c.h(o41Var)) {
             return;
         }
-        int i7 = l41Var.d;
-        if (i7 == 2 || l41Var.a == 17) {
+        int i7 = o41Var.d;
+        if (i7 == 2 || o41Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", cVar.getUserConfig().e());
             bundle.putInt("chatMode", 5);
@@ -60,18 +60,18 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
             return;
         }
         if (i7 == 6) {
-            a0 a0Var = cVar.c;
+            b0 b0Var = cVar.c;
             cVar.s = true;
-            a0Var.h = true;
+            b0Var.h = true;
             cVar.b.g3.O(true);
             cVar.a0(true);
             return;
         }
         final int i11 = 0;
         if (i7 == 7) {
-            a0 a0Var2 = cVar.c;
+            b0 b0Var2 = cVar.c;
             cVar.s = false;
-            a0Var2.h = false;
+            b0Var2.h = false;
             cVar.b.g3.O(true);
             cVar.a0(true);
             return;
@@ -94,8 +94,8 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
             cVar.a0(true);
         } else {
             if (i7 == 8) {
-                b5.x(cVar.getParentActivity(), gd.M0(2131752812, null), gd.M0(2131752814, null), cVar.F, new z4() { // from class: kg.b
-                    @Override // org.telegram.ui.Components.z4
+                c5.x(cVar.getParentActivity(), gd.N0(2131752811, null), gd.N0(2131752813, null), cVar.F, new a5() { // from class: kg.b
+                    @Override // org.telegram.ui.Components.a5
                     public final void O(int i12, int i13, boolean z10) {
                         switch (i11) {
                             case 0:
@@ -120,8 +120,8 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.r
                 return;
             }
             if (i7 == 9) {
-                b5.x(cVar.getParentActivity(), gd.M0(2131752815, null), gd.M0(2131752814, null), cVar.G, new z4() { // from class: kg.b
-                    @Override // org.telegram.ui.Components.z4
+                c5.x(cVar.getParentActivity(), gd.N0(2131752814, null), gd.N0(2131752813, null), cVar.G, new a5() { // from class: kg.b
+                    @Override // org.telegram.ui.Components.a5
                     public final void O(int i12, int i13, boolean z10) {
                         switch (i10) {
                             case 0:

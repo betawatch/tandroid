@@ -6,43 +6,43 @@ import org.telegram.messenger.e20;
 import org.telegram.messenger.ef;
 import org.telegram.messenger.zy;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.m40;
+import org.telegram.ui.Components.p40;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class v2 implements m40 {
+public final class v2 implements p40 {
     public final /* synthetic */ z3 a;
 
     public v2(z3 z3Var) {
         this.a = z3Var;
     }
 
-    @Override // org.telegram.ui.Components.m40
+    @Override // org.telegram.ui.Components.p40
     public final long a() {
         return this.a.l1;
     }
 
-    @Override // org.telegram.ui.Components.m40
+    @Override // org.telegram.ui.Components.p40
     public final /* synthetic */ boolean c() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.m40
+    @Override // org.telegram.ui.Components.p40
     public final int getClassGuid() {
         return this.a.j2;
     }
 
-    @Override // org.telegram.ui.Components.m40
+    @Override // org.telegram.ui.Components.p40
     public final View getFragmentView() {
         return this.a;
     }
 
-    @Override // org.telegram.ui.Components.m40
+    @Override // org.telegram.ui.Components.p40
     public final Activity getParentActivity() {
         return org.telegram.messenger.g0.W(this.a.getContext());
     }
 
-    @Override // org.telegram.ui.Components.m40
+    @Override // org.telegram.ui.Components.p40
     public final void u(ef efVar, e20 e20Var, boolean z10, int i7, int i10, boolean z11, long j3) {
         org.telegram.messenger.c accountInstance;
         org.telegram.messenger.c accountInstance2;
@@ -74,7 +74,7 @@ public final class v2 implements m40 {
         z3Var.i0(j3 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.m40
+    @Override // org.telegram.ui.Components.p40
     public final /* synthetic */ boolean z() {
         return false;
     }

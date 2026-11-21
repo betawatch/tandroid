@@ -3,11 +3,11 @@ package org.telegram.ui.Wallet;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.ShapeDrawable;
-import org.telegram.ui.Components.cs;
+import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class x5 extends cs {
+public final class x5 extends es {
     public final ShapeDrawable H;
     public final /* synthetic */ n6 I;
 
@@ -15,15 +15,15 @@ public final class x5 extends cs {
     public x5(n6 n6Var, Context context) {
         super(context);
         this.I = n6Var;
-        this.H = org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(22.0f), n6Var.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
+        this.H = org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(22.0f), n6Var.getThemedColor(org.telegram.ui.ActionBar.m6.d6));
     }
 
-    @Override // org.telegram.ui.Components.cs, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.es, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int ceil = (int) Math.ceil(getMetadata().g.a);
         if (ceil > 0) {
             ShapeDrawable shapeDrawable = this.H;
-            shapeDrawable.getPaint().setColor(this.I.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
+            shapeDrawable.getPaint().setColor(this.I.getThemedColor(org.telegram.ui.ActionBar.m6.d6));
             shapeDrawable.setBounds(0, 0, getWidth(), ceil);
             shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
             shapeDrawable.draw(canvas);

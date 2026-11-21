@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class m50 extends org.telegram.ui.Components.bk0 {
+public final class m50 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
-    public vs f;
+    public ss f;
     public String h;
     public int n;
     public final /* synthetic */ n50 r;
@@ -31,16 +31,16 @@ public final class m50 extends org.telegram.ui.Components.bk0 {
             if (TextUtils.isEmpty(str)) {
                 n50Var.d.setBackground(null);
             } else {
-                org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, n50Var.d, n50Var.getResourceProvider());
+                org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n50Var.d, n50Var.getResourceProvider());
             }
         }
         if (m50Var.n != 0) {
             n50Var.getConnectionsManager().cancelRequest(m50Var.n, true);
             m50Var.n = 0;
         }
-        vs vsVar = m50Var.f;
-        if (vsVar != null) {
-            org.telegram.messenger.g0.r(vsVar);
+        ss ssVar = m50Var.f;
+        if (ssVar != null) {
+            org.telegram.messenger.g0.r(ssVar);
             m50Var.f = null;
         }
         m50Var.h = null;
@@ -61,12 +61,12 @@ public final class m50 extends org.telegram.ui.Components.bk0 {
         } else {
             n50Var.b.e(true, true);
         }
-        vs vsVar2 = new vs(26, m50Var, str);
-        m50Var.f = vsVar2;
-        org.telegram.messenger.g0.h3(vsVar2, 300L);
+        ss ssVar2 = new ss(28, m50Var, str);
+        m50Var.f = ssVar2;
+        org.telegram.messenger.g0.h3(ssVar2, 300L);
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return d(f1Var.b()) == 0;
     }
@@ -109,14 +109,14 @@ public final class m50 extends org.telegram.ui.Components.bk0 {
         String str = this.h;
         String lowerCase = str != null ? str.toLowerCase(Locale.ROOT) : "";
         n50 n50Var = this.r;
-        org.telegram.ui.ActionBar.i6 resourceProvider = n50Var.getResourceProvider();
+        org.telegram.ui.ActionBar.h6 resourceProvider = n50Var.getResourceProvider();
         TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
         String str2 = stickerSet.title;
         Locale locale = Locale.ROOT;
         int indexOf = str2.toLowerCase(locale).indexOf(lowerCase);
         if (indexOf != -1) {
             SpannableString spannableString = new SpannableString(stickerSet.title);
-            spannableString.setSpan(new org.telegram.ui.Components.i00(org.telegram.ui.ActionBar.n6.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
+            spannableString.setSpan(new org.telegram.ui.Components.k00(org.telegram.ui.ActionBar.m6.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
             h8Var.b.setText(spannableString);
         }
         int indexOf2 = stickerSet.short_name.toLowerCase(locale).indexOf(lowerCase);
@@ -126,7 +126,7 @@ public final class m50 extends org.telegram.ui.Components.bk0 {
             StringBuilder m10 = com.google.android.gms.internal.vision.e2.m(str3);
             m10.append(stickerSet.short_name);
             SpannableString spannableString2 = new SpannableString(m10.toString());
-            spannableString2.setSpan(new org.telegram.ui.Components.i00(org.telegram.ui.ActionBar.n6.q6, resourceProvider), length, lowerCase.length() + length, 0);
+            spannableString2.setSpan(new org.telegram.ui.Components.k00(org.telegram.ui.ActionBar.m6.q6, resourceProvider), length, lowerCase.length() + length, 0);
             h8Var.c.setText(spannableString2);
         }
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = n50Var.r;
@@ -138,17 +138,17 @@ public final class m50 extends org.telegram.ui.Components.bk0 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         org.telegram.ui.Cells.h8 h8Var;
         if (i7 != 0) {
-            int i10 = org.telegram.ui.ActionBar.n6.B6;
+            int i10 = org.telegram.ui.ActionBar.m6.B6;
             n50 n50Var = this.r;
             org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(this.c, i10, 21, 0, 0, false, false, n50Var.getResourceProvider());
-            o4Var.setText(org.telegram.messenger.gd.M0(n50Var.O ? 2131752108 : 2131752107, null));
+            o4Var.setText(org.telegram.messenger.gd.N0(n50Var.O ? 2131752107 : 2131752106, null));
             h8Var = o4Var;
         } else {
             org.telegram.ui.Cells.h8 h8Var2 = new org.telegram.ui.Cells.h8(this.c, 3);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, h8Var2, null);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, h8Var2, null);
             h8Var = h8Var2;
         }
         h8Var.setLayoutParams(new v4.q0(-1, -2));
-        return new org.telegram.ui.Components.kj0(h8Var);
+        return new org.telegram.ui.Components.mj0(h8Var);
     }
 }

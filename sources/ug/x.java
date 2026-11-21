@@ -11,13 +11,13 @@ import com.google.firebase.concurrent.ExecutorsRegistrar;
 import com.google.firebase.installations.FirebaseInstallationsRegistrar;
 import java.util.ArrayList;
 import java.util.concurrent.ScheduledExecutorService;
-import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.st0;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.wt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x implements org.telegram.ui.ActionBar.r1, v5.e, u9.d, ua.a, OnFailureListener, j2.g, ob0, st0, tt0, g9.k {
+public final /* synthetic */ class x implements org.telegram.ui.ActionBar.q1, v5.e, u9.d, ua.a, OnFailureListener, j2.g, pb0, vt0, wt0, g9.k {
     public final /* synthetic */ int a;
 
     public /* synthetic */ x(int i7) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.r1, v5
         throw new ClassCastException();
     }
 
-    @Override // org.telegram.ui.Components.tt0
+    @Override // org.telegram.ui.Components.wt0
     public void c(Object obj, float f10) {
         wi.h hVar = (wi.h) obj;
         switch (this.a) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.r1, v5
         }
     }
 
-    @Override // org.telegram.ui.Components.st0
+    @Override // org.telegram.ui.Components.vt0
     public float get(Object obj) {
         wi.h hVar = (wi.h) obj;
         switch (this.a) {
@@ -113,27 +113,27 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.r1, v5
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
             case 1:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
             case 17:
                 break;
             case 20:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
             default:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ob0
+    @Override // org.telegram.ui.Components.pb0
     public String i(int i7) {
         switch (this.a) {
             case 18:
@@ -152,6 +152,6 @@ public final /* synthetic */ class x implements org.telegram.ui.ActionBar.r1, v5
         this.a = 13;
     }
 
-    private final void a(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    private final void a(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
     }
 }

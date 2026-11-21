@@ -4,7 +4,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,12 +27,12 @@ public final /* synthetic */ class b3 implements Runnable {
         f6 f6Var = this.b;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.forward, gd.M0(2131749881, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749882, f6Var.E1(), org.telegram.messenger.n5.t(j3))));
+                org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.forward, gd.N0(2131749880, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749881, f6Var.E1(), org.telegram.messenger.n5.t(j3))));
                 I.t = true;
                 I.j();
                 break;
             default:
-                org.telegram.ui.Components.gc I2 = org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.forward, gd.M0(2131749881, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749882, f6Var.E1(), org.telegram.messenger.n5.t(j3))));
+                org.telegram.ui.Components.gc I2 = org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.forward, gd.N0(2131749880, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749881, f6Var.E1(), org.telegram.messenger.n5.t(j3))));
                 I2.t = true;
                 I2.j();
                 break;

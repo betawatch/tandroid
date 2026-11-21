@@ -7,12 +7,12 @@ import c8.xd;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.pc;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.bt;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.oa;
-import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class q {
     public static r F;
@@ -64,13 +64,13 @@ public final class q {
         this.o.add(gVar);
     }
 
-    public final void b(ck0 ck0Var) {
-        if (ck0Var == null) {
+    public final void b(ek0 ek0Var) {
+        if (ek0Var == null) {
             return;
         }
-        this.n.add(ck0Var);
-        ck0Var.E2.b.add(new zs() { // from class: ri.f
-            @Override // org.telegram.ui.Components.zs
+        this.n.add(ek0Var);
+        ek0Var.E2.b.add(new bt() { // from class: ri.f
+            @Override // org.telegram.ui.Components.bt
             public final void a(int i7, boolean z10) {
                 q qVar = q.this;
                 qVar.h++;
@@ -78,19 +78,19 @@ public final class q {
             }
         });
         j jVar = new j(this);
-        if (ck0Var.Q == null) {
-            ck0Var.Q = new ArrayList();
+        if (ek0Var.Q == null) {
+            ek0Var.Q = new ArrayList();
         }
-        ck0Var.Q.add(jVar);
-        ck0Var.j(new oa(this, 29));
+        ek0Var.Q.add(jVar);
+        ek0Var.j(new oa(this, 29));
     }
 
-    public final void c(g71 g71Var) {
-        if (g71Var == null) {
+    public final void c(j71 j71Var) {
+        if (j71Var == null) {
             return;
         }
         g gVar = new g(this);
-        ArrayList arrayList = g71Var.S;
+        ArrayList arrayList = j71Var.S;
         if (arrayList.contains(gVar)) {
             return;
         }

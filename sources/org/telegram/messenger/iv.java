@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class iv {
     public final ArrayList a;
@@ -84,7 +84,7 @@ public final class iv {
         }
         if (richText instanceof TL_iv.textDiff) {
             TL_iv.textDiff textdiff = (TL_iv.textDiff) richText;
-            b(oi.b6.j(textdiff.text) ? textdiff.old_text : textdiff.text, sb2, arrayList);
+            b(oi.c6.j(textdiff.text) ? textdiff.old_text : textdiff.text, sb2, arrayList);
             return;
         }
         b(richText.text, sb2, arrayList);
@@ -367,7 +367,7 @@ public final class iv {
         } else {
             if (richText instanceof TL_iv.textDiff) {
                 TL_iv.textDiff textdiff = (TL_iv.textDiff) richText;
-                return j(oi.b6.j(textdiff.text) ? textdiff.old_text : textdiff.text, identityHashMap, i7, z10, iArr);
+                return j(oi.c6.j(textdiff.text) ? textdiff.old_text : textdiff.text, identityHashMap, i7, z10, iArr);
             }
             boolean z11 = richText instanceof TL_iv.textPlain;
             if (!z11 && !(richText instanceof TL_iv.textMath) && !(richText instanceof TL_iv.textCustomEmoji) && !(richText instanceof TL_iv.textButton)) {

@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y00 implements org.telegram.ui.Components.ob0 {
+public final /* synthetic */ class y00 implements org.telegram.ui.Components.pb0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Calendar c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class y00 implements org.telegram.ui.Components.ob0
         this.d = i7;
     }
 
-    @Override // org.telegram.ui.Components.ob0
+    @Override // org.telegram.ui.Components.pb0
     public final String i(int i7) {
         int i10 = this.a;
         int i11 = this.d;
@@ -26,7 +26,7 @@ public final /* synthetic */ class y00 implements org.telegram.ui.Components.ob0
         switch (i10) {
             case 0:
                 if (i7 == 0) {
-                    return org.telegram.messenger.gd.M0(2131748339, null);
+                    return org.telegram.messenger.gd.N0(2131748338, null);
                 }
                 long j10 = (i7 * 86400000) + j3;
                 calendar.setTimeInMillis(j10);
@@ -36,7 +36,7 @@ public final /* synthetic */ class y00 implements org.telegram.ui.Components.ob0
                 return org.telegram.messenger.gd.E0().A0().format(j10) + " " + org.telegram.messenger.gd.E0().w0().format(j10);
             default:
                 if (i7 == 0) {
-                    return org.telegram.messenger.gd.M0(2131748339, "MessageScheduleToday");
+                    return org.telegram.messenger.gd.N0(2131748338, "MessageScheduleToday");
                 }
                 long j11 = (i7 * 86400000) + j3;
                 calendar.setTimeInMillis(j11);

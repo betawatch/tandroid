@@ -1,137 +1,87 @@
 package bi;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.ui.ub0;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Components.gq0;
+import org.telegram.ui.Components.iq0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s5 implements TextWatcher {
+public final class s5 extends Drawable {
     public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ View c;
+    public final ShapeDrawable b;
+    public final Rect c;
 
-    public /* synthetic */ s5(int i7, View view) {
-        this.a = i7;
-        this.c = view;
+    public s5(gq0 gq0Var) {
+        this.a = 0;
+        this.b = org.telegram.ui.ActionBar.m6.e0(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), 0);
+        this.c = new Rect();
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int j3;
-        int i7 = this.a;
-        View view = this.c;
-        switch (i7) {
-            case 0:
-                q5 q5Var = (q5) view;
-                if (!this.b && editable.length() > 12) {
-                    this.b = true;
-                    editable.delete(12, editable.length());
-                    org.telegram.messenger.g0.D3(q5Var);
-                    try {
-                        q5Var.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    this.b = false;
-                    break;
-                }
-                break;
-            case 1:
-                ub0 ub0Var = (ub0) view;
-                if (this.b) {
-                    if (ub0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        if (ub0Var.E) {
-                            ub0Var.f.callOnClick();
-                        }
-                        org.telegram.messenger.g0.X3(ub0Var.f, true, 0.1f, true, true);
-                        break;
-                    } else if (ub0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.g0.X3(ub0Var.f, false, 0.1f, true, true);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                boolean isEmpty = TextUtils.isEmpty(editable);
-                if (isEmpty != this.b) {
-                    TextView textView = (TextView) view;
-                    this.b = isEmpty;
-                    textView.setText(gd.M0(isEmpty ? 2131746126 : 2131754484, null));
-                    break;
-                }
-                break;
-            default:
-                tg.m2 m2Var = (tg.m2) view;
-                tg.l2 l2Var = m2Var.r0;
-                if (this.b && m2Var.x0 > 0 && m2Var.y0 > 0 && !m2Var.A0 && l2Var.getLayout() != null) {
-                    float f10 = org.telegram.messenger.g0.q.y / 3.0f;
-                    float height = l2Var.getLayout().getHeight();
-                    if (height > f10 && (j3 = Utilities.j((int) ((f10 / height) * m2Var.getBaseFontSize()), m2Var.y0, m2Var.x0)) != m2Var.getBaseFontSize()) {
-                        m2Var.setBaseFontSize(j3);
-                        Runnable runnable = m2Var.z0;
-                        if (runnable != null) {
-                            runnable.run();
-                        }
-                    }
-                }
-                m2Var.s();
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-            case 1:
-            case 2:
+                Rect bounds = getBounds();
+                Rect rect = this.c;
+                rect.set(bounds);
+                rect.inset(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(8.0f));
+                ShapeDrawable shapeDrawable = this.b;
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
                 break;
             default:
-                this.b = i11 > 3;
+                Rect bounds2 = getBounds();
+                Rect rect2 = this.c;
+                rect2.set(bounds2);
+                rect2.inset(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(8.0f));
+                ShapeDrawable shapeDrawable2 = this.b;
+                shapeDrawable2.setBounds(rect2);
+                shapeDrawable2.draw(canvas);
                 break;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
     }
 
-    public s5(kg.a1 a1Var, TextView textView) {
-        this.a = 2;
-        this.c = textView;
-        this.b = TextUtils.isEmpty(a1Var.getText());
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i7);
+                break;
+            default:
+                this.b.setAlpha(i7);
+                break;
+        }
     }
 
-    public s5(ub0 ub0Var, boolean z10) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i7 = this.a;
+    }
+
+    public s5(iq0 iq0Var) {
         this.a = 1;
-        this.c = ub0Var;
-        this.b = z10;
+        int L = org.telegram.messenger.g0.L(16.0f);
+        int L2 = org.telegram.messenger.g0.L(16.0f);
+        int i7 = org.telegram.ui.ActionBar.m6.d6;
+        org.telegram.ui.ActionBar.h6 h6Var = iq0Var.c;
+        this.b = org.telegram.ui.ActionBar.m6.e0(L, L2, org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.w0(i7, h6Var), org.telegram.ui.ActionBar.m6.r1(0.04f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, h6Var))));
+        this.c = new Rect();
     }
 
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    private final void a(ColorFilter colorFilter) {
     }
 
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void g(int i7, int i10, int i11, CharSequence charSequence) {
+    private final void b(ColorFilter colorFilter) {
     }
 }

@@ -1,46 +1,11 @@
 package ki;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import c8.ma;
-import c8.va;
-import java.util.Date;
-import org.telegram.messenger.gd;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.RadioButton;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class j1 extends FrameLayout {
-    public final String a;
-    public final RadioButton b;
-    public final boolean c;
-
-    public j1(k1 k1Var, boolean z10, Context context) {
-        super(context);
-        this.a = k1Var.a;
-        RadioButton radioButton = new RadioButton(context);
-        this.b = radioButton;
-        radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
-        u6.O(radioButton, n6.D5, n6.E5, null);
-        addView(radioButton, ma.d(22, 22.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
-        TextView b10 = va.b(context, 16.0f, n6.G6, true, null);
-        b10.setText(k1Var.c);
-        addView(b10, ma.t(-1, -2, 7, 62, 9, 8, 0));
-        TextView b11 = va.b(context, 14.0f, n6.y6, false, null);
-        b11.setText(gd.a0(null, null, 2131752982, gd.a0(null, null, 2131742525, gd.T(k1Var.d / 1000), gd.E0().p0().format(new Date(k1Var.d / 1000)))));
-        addView(b11, ma.t(-1, -2, 7, 62, 32, 8, 0));
-        this.c = z10;
-        setWillNotDraw(!z10);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c) {
-            canvas.drawLine(org.telegram.messenger.g0.L(62.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, n6.k0);
-        }
-    }
+public final class j1 {
+    public String a;
+    public long b;
+    public String c;
+    public long d;
+    public long e;
 }

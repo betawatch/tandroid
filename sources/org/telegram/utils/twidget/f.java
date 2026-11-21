@@ -3,9 +3,9 @@ package org.telegram.utils.twidget;
 import android.media.AudioRecordingConfiguration;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements p4.c0, p4.c1, h2.j {
+public final /* synthetic */ class f implements p4.d0, p4.c1, h2.j {
     public final /* synthetic */ int a;
 
     public /* synthetic */ f(int i7) {
@@ -32,7 +32,7 @@ public final /* synthetic */ class f implements p4.c0, p4.c1, h2.j {
         }
     }
 
-    @Override // p4.c0
+    @Override // p4.d0
     public void b(p4.u uVar, int i7) {
         switch (this.a) {
             case 21:
@@ -48,16 +48,16 @@ public final /* synthetic */ class f implements p4.c0, p4.c1, h2.j {
     }
 
     @Override // p4.c1
-    public Object k(p4.d0 d0Var, p4.v vVar, int i7) {
+    public Object k(p4.e0 e0Var, p4.v vVar, int i7) {
         switch (this.a) {
             case 24:
-                d0Var.getClass();
+                e0Var.getClass();
                 throw new ClassCastException();
             case 25:
-                d0Var.getClass();
+                e0Var.getClass();
                 throw new ClassCastException();
             default:
-                return d0Var.n(vVar);
+                return e0Var.n(vVar);
         }
     }
 

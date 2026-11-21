@@ -7,7 +7,7 @@ import android.animation.ObjectAnimator;
 import android.util.Property;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class op0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -103,7 +103,7 @@ public final class op0 extends AnimatorListenerAdapter {
                         AnimatorSet animatorSet2 = photoViewer.U7;
                         di.n4 n4Var = photoViewer.Q0;
                         Property property2 = View.TRANSLATION_Y;
-                        animatorSet2.playTogether(ObjectAnimator.ofFloat(n4Var, (Property<di.n4, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.Q0, (Property<di.n4, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.T0, (Property<oi.u1, Float>) property2, 0.0f));
+                        animatorSet2.playTogether(ObjectAnimator.ofFloat(n4Var, (Property<di.n4, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.Q0, (Property<di.n4, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.T0, (Property<oi.w1, Float>) property2, 0.0f));
                     }
                     photoViewer.U7.addListener(new ay(this, 18));
                     photoViewer.U7.setDuration(200L);

@@ -1,14 +1,14 @@
 package org.telegram.messenger.voip;
 
-import di.ca;
+import di.da;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.is;
+import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ks;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.ms;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,17 +32,17 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$54(this.b, this.c, (String) this.e, tLObject, tL_error);
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new ca((is) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
+                org.telegram.messenger.g0.g3(new da((ks) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new ca((ks) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
+                org.telegram.messenger.g0.g3(new da((ms) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
                 break;
         }
     }
 
-    public /* synthetic */ k0(z41 z41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i10) {
+    public /* synthetic */ k0(c51 c51Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i10) {
         this.a = i10;
-        this.d = z41Var;
+        this.d = c51Var;
         this.b = i7;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

@@ -1,33 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oe0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qe0 b;
+public interface oe0 {
+    void T(boolean z10);
 
-    public /* synthetic */ oe0(qe0 qe0Var, int i7) {
-        this.a = i7;
-        this.b = qe0Var;
-    }
+    void W(RectF rectF);
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                qe0 qe0Var = this.b;
-                qe0Var.getClass();
-                qe0Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qe0Var.invalidate();
-                break;
-            default:
-                qe0 qe0Var2 = this.b;
-                qe0Var2.getClass();
-                qe0Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qe0Var2.invalidate();
-                break;
-        }
-    }
+    ji.r k0();
 }

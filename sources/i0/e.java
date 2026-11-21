@@ -12,9 +12,9 @@ import android.util.Log;
 import androidx.biometric.o;
 import c8.ke;
 import c8.m0;
-import fi.a6;
+import fi.l4;
 import h2.j0;
-import hi.u5;
+import hi.t5;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.lang.reflect.Method;
@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import m9.u;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final m0 a;
@@ -68,7 +68,7 @@ public abstract class e {
         Typeface a10;
         Typeface typeface;
         List unmodifiableList;
-        int i12 = 20;
+        int i12 = 22;
         if (dVar instanceof h0.g) {
             h0.g gVar = (h0.g) dVar;
             String str2 = gVar.e;
@@ -82,15 +82,15 @@ public abstract class e {
             }
             typeface = null;
             if (typeface != null) {
-                new Handler(Looper.getMainLooper()).post(new a6(i12, j0Var, typeface));
+                new Handler(Looper.getMainLooper()).post(new l4(i12, j0Var, typeface));
                 return typeface;
             }
             int i13 = 1;
             boolean z11 = gVar.d == 0;
             int i14 = gVar.c;
             Handler handler = new Handler(Looper.getMainLooper());
-            u5 u5Var = new u5(i13);
-            u5Var.b = j0Var;
+            t5 t5Var = new t5(i13);
+            t5Var.b = j0Var;
             o0.d dVar2 = gVar.b;
             int i15 = 2;
             if (dVar2 != null) {
@@ -111,13 +111,13 @@ public abstract class e {
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
             }
             o oVar = new o(handler, 4);
-            k8.a aVar = new k8.a(u5Var, oVar, z10, 6);
+            k8.a aVar = new k8.a(t5Var, oVar, z10, 6);
             int i17 = 24;
             if (!z11) {
                 String a11 = o0.g.a(i11, unmodifiableList);
                 Typeface typeface2 = (Typeface) o0.g.a.a(a11);
                 if (typeface2 != null) {
-                    oVar.execute(new u(i17, u5Var, typeface2));
+                    oVar.execute(new u(i17, t5Var, typeface2));
                     a10 = typeface2;
                 } else {
                     f5.u uVar = new f5.u(aVar, i15);
@@ -158,7 +158,7 @@ public abstract class e {
                 String a12 = o0.g.a(i11, DesugarCollections.unmodifiableList(arrayList5));
                 Typeface typeface3 = (Typeface) o0.g.a.a(a12);
                 if (typeface3 != null) {
-                    oVar.execute(new u(i17, u5Var, typeface3));
+                    oVar.execute(new u(i17, t5Var, typeface3));
                     a10 = typeface3;
                 } else if (i14 == -1) {
                     Object[] objArr3 = {dVar3};
@@ -183,14 +183,14 @@ public abstract class e {
                             throw new InterruptedException("timeout");
                         }
                     } catch (InterruptedException unused2) {
-                        ((o) aVar.c).execute(new j6.o((u5) aVar.b, -3));
+                        ((o) aVar.c).execute(new j6.o((t5) aVar.b, -3));
                     }
                 }
             }
         } else {
             a10 = a.a(context, (h0.e) dVar, resources, i11);
             if (a10 != null) {
-                new Handler(Looper.getMainLooper()).post(new a6(i12, j0Var, a10));
+                new Handler(Looper.getMainLooper()).post(new l4(i12, j0Var, a10));
             } else {
                 j0Var.b();
             }

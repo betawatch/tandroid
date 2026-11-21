@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c70 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -23,7 +23,7 @@ public final /* synthetic */ class c70 implements Runnable {
     public final /* synthetic */ Object s;
     public final /* synthetic */ Object w;
 
-    public /* synthetic */ c70(LaunchActivity launchActivity, Bundle bundle, byte[] bArr, int i7, Integer num, String str, int i10, long j3, j0 j0Var, org.telegram.ui.ActionBar.h2 h2Var) {
+    public /* synthetic */ c70(LaunchActivity launchActivity, Bundle bundle, byte[] bArr, int i7, Integer num, String str, int i10, long j3, j0 j0Var, org.telegram.ui.ActionBar.g2 g2Var) {
         this.b = launchActivity;
         this.r = bundle;
         this.c = bArr;
@@ -33,7 +33,7 @@ public final /* synthetic */ class c70 implements Runnable {
         this.h = i10;
         this.n = j3;
         this.s = j0Var;
-        this.w = h2Var;
+        this.w = g2Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:35:0x00d0  */
@@ -88,7 +88,7 @@ public final /* synthetic */ class c70 implements Runnable {
             default:
                 final Bundle bundle2 = (Bundle) obj3;
                 final j0 j0Var = (j0) obj2;
-                final org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj;
+                final org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
                 String str2 = LaunchActivity.C1;
                 final LaunchActivity launchActivity3 = this.b;
                 launchActivity3.getClass();
@@ -125,7 +125,7 @@ public final /* synthetic */ class c70 implements Runnable {
                                 final int i15 = i13;
                                 final Integer num3 = num2;
                                 final byte[] bArr2 = bArr;
-                                final org.telegram.ui.ActionBar.h2 h2Var2 = h2Var;
+                                final org.telegram.ui.ActionBar.g2 g2Var2 = g2Var;
                                 final Bundle bundle3 = bundle2;
                                 final bn bnVar2 = bnVar;
                                 final String str5 = str3;
@@ -147,9 +147,9 @@ public final /* synthetic */ class c70 implements Runnable {
                                                 if (chat != null && chat.forum) {
                                                     launchActivity5.l0(-j11, Integer.valueOf(i17), null, num3, bArr2, null, 0, -1);
                                                 }
-                                                org.telegram.ui.ActionBar.h2 h2Var3 = h2Var2;
+                                                org.telegram.ui.ActionBar.g2 g2Var3 = g2Var2;
                                                 Bundle bundle4 = bundle3;
-                                                if (h2Var3 == null || org.telegram.messenger.mp.u1(launchActivity5.P).E(bundle4, h2Var3, null, null)) {
+                                                if (g2Var3 == null || org.telegram.messenger.mp.u1(launchActivity5.P).E(bundle4, g2Var3, null, null)) {
                                                     bn bnVar3 = new bn(bundle4);
                                                     bnVar2.Sb(i17, i16, str5);
                                                     ((ActionBarLayout) launchActivity5.M()).S(bnVar3);
@@ -158,7 +158,7 @@ public final /* synthetic */ class c70 implements Runnable {
                                                 return;
                                             }
                                         }
-                                        launchActivity5.F0(org.telegram.ui.Components.b5.E(launchActivity5, org.telegram.messenger.gd.M0(2131751443, null), org.telegram.messenger.gd.M0(2131748703, null)));
+                                        launchActivity5.F0(org.telegram.ui.Components.c5.E(launchActivity5, org.telegram.messenger.gd.N0(2131751442, null), org.telegram.messenger.gd.N0(2131748702, null)));
                                     }
                                 });
                             }

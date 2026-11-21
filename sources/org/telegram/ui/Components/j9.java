@@ -5,19 +5,19 @@ import android.graphics.Rect;
 import android.graphics.drawable.GradientDrawable;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ p9 b;
     public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ f50 d;
+    public final /* synthetic */ i50 d;
     public final /* synthetic */ int e;
     public final /* synthetic */ c8.ia[] f;
 
-    public /* synthetic */ j9(p9 p9Var, f50 f50Var, Runnable[] runnableArr, int i7, c8.ia[] iaVarArr) {
+    public /* synthetic */ j9(p9 p9Var, i50 i50Var, Runnable[] runnableArr, int i7, c8.ia[] iaVarArr) {
         this.b = p9Var;
-        this.d = f50Var;
+        this.d = i50Var;
         this.c = runnableArr;
         this.e = i7;
         this.f = iaVarArr;
@@ -28,22 +28,22 @@ public final /* synthetic */ class j9 implements Runnable {
         switch (this.a) {
             case 0:
                 p9 p9Var = this.b;
-                f50 f50Var = this.d;
+                i50 i50Var = this.d;
                 Runnable[] runnableArr = this.c;
                 int i7 = this.e;
                 c8.ia[] iaVarArr = this.f;
                 try {
                     GradientDrawable.Orientation orientation = p9Var.getOrientation();
                     int[] iArr = p9Var.a;
-                    int i10 = f50Var.a;
-                    int i11 = f50Var.b;
+                    int i10 = i50Var.a;
+                    int i11 = i50Var.b;
                     Rect e10 = p9.e(orientation, i10, i11);
                     Bitmap createBitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
                     Utilities.drawDitheredGradient(createBitmap, iArr, e10.left, e10.top, e10.right, e10.bottom);
-                    org.telegram.messenger.g0.g3(new bg.m0(p9Var, runnableArr, createBitmap, f50Var, i7, iaVarArr, 8));
+                    org.telegram.messenger.g0.g3(new bg.m0(p9Var, runnableArr, createBitmap, i50Var, i7, iaVarArr, 8));
                     return;
                 } catch (Throwable th2) {
-                    org.telegram.messenger.g0.g3(new j9(p9Var, runnableArr, f50Var, i7, iaVarArr));
+                    org.telegram.messenger.g0.g3(new j9(p9Var, runnableArr, i50Var, i7, iaVarArr));
                     throw th2;
                 }
             default:
@@ -52,10 +52,10 @@ public final /* synthetic */ class j9 implements Runnable {
         }
     }
 
-    public /* synthetic */ j9(p9 p9Var, Runnable[] runnableArr, f50 f50Var, int i7, c8.ia[] iaVarArr) {
+    public /* synthetic */ j9(p9 p9Var, Runnable[] runnableArr, i50 i50Var, int i7, c8.ia[] iaVarArr) {
         this.b = p9Var;
         this.c = runnableArr;
-        this.d = f50Var;
+        this.d = i50Var;
         this.e = i7;
         this.f = iaVarArr;
     }

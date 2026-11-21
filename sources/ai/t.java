@@ -1,37 +1,68 @@
 package ai;
 
 import java.util.ArrayList;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t {
     public final String a;
     public final String[] b;
-    public volatile long c;
-    public volatile long d;
-    public int e;
-    public boolean g;
-    public boolean h;
-    public volatile float i;
-    public final ArrayList f = new ArrayList();
-    public final ArrayList j = new ArrayList();
+    public volatile String[] c;
+    public volatile String[] d;
+    public volatile long e;
+    public volatile long f;
+    public int g;
+    public boolean i;
+    public boolean j;
+    public volatile float k;
+    public final ArrayList h = new ArrayList();
+    public final ArrayList l = new ArrayList();
 
-    public t(String str, String[] strArr, long j3) {
+    public t(String str, String[] strArr, String[] strArr2, long j3) {
         this.a = str;
         this.b = strArr;
-        this.c = j3;
+        this.c = strArr2;
+        this.e = j3;
     }
 
-    public final String a() {
+    public final String a(String str) {
+        StringBuilder sb2 = new StringBuilder();
+        for (String str2 : str.split(",")) {
+            if (sb2.length() > 0) {
+                sb2.append(',');
+            }
+            sb2.append(DictationAsr.d0(this, str2));
+        }
+        return sb2.toString();
+    }
+
+    public final String b() {
         return a8.p0.s(new StringBuilder(), this.a, ".tzf");
     }
 
-    public final boolean b(String str) {
+    public final boolean c(String str) {
         for (String str2 : this.b) {
             if (str2.equals(str)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public final String[] d(String str) {
+        String[] strArr = this.d != null ? this.d : this.c;
+        ArrayList arrayList = new ArrayList();
+        for (String str2 : strArr) {
+            if (DictationAsr.o(str2).equals(str)) {
+                arrayList.add(str2);
+            }
+        }
+        String b10 = DictationAsr.b(arrayList);
+        if (b10 != null) {
+            arrayList.remove(b10);
+            arrayList.add(0, b10);
+        }
+        return (String[]) arrayList.toArray(new String[0]);
     }
 }

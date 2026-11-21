@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import hi.d7;
+import hi.c7;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,7 +19,7 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private x10 doneCallback;
@@ -174,7 +174,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = d7.w(j10.t0, str2);
+                        this.file = c7.w(j10.t0, str2);
                     }
                     try {
                         bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);

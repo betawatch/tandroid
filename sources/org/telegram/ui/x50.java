@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Timer;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x50 extends org.telegram.ui.Components.bk0 {
+public final class x50 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -30,7 +30,7 @@ public final class x50 extends org.telegram.ui.Components.bk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return f1Var.f != 2;
     }
@@ -99,9 +99,9 @@ public final class x50 extends org.telegram.ui.Components.bk0 {
             }
             r4Var.a(f5Var, charSequence);
             boolean containsKey = a60Var.E.containsKey(f5Var.b);
-            org.telegram.ui.Components.mp mpVar = r4Var.e;
-            if (mpVar != null) {
-                mpVar.a(containsKey, false);
+            org.telegram.ui.Components.op opVar = r4Var.e;
+            if (opVar != null) {
+                opVar.a(containsKey, false);
             }
         }
     }
@@ -112,13 +112,13 @@ public final class x50 extends org.telegram.ui.Components.bk0 {
         Context context = this.c;
         if (i7 == 1) {
             org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context);
-            int i10 = org.telegram.ui.ActionBar.n6.G6;
+            int i10 = org.telegram.ui.ActionBar.m6.G6;
             n8Var.g(i10, i10);
-            n8Var.u(org.telegram.messenger.gd.M0(2131745232, null), "", false, R.drawable.msg_shareout, false);
+            n8Var.u(org.telegram.messenger.gd.N0(2131745231, null), "", false, R.drawable.msg_shareout, false);
             view = n8Var;
         } else {
             view = i7 == 2 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c0) null) : new org.telegram.ui.Cells.r4(context, true);
         }
-        return new org.telegram.ui.Components.kj0(view);
+        return new org.telegram.ui.Components.mj0(view);
     }
 }

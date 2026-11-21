@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -36,27 +36,27 @@ public final /* synthetic */ class ld implements TextView.OnEditorActionListener
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
-                ki.m1 m1Var = (ki.m1) this.c;
-                if ((i7 == 6 || keyEvent.getKeyCode() == 66) && u1Var.isShowing()) {
-                    m1Var.h(u1Var, 0);
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.b;
+                ki.l1 l1Var = (ki.l1) this.c;
+                if ((i7 == 6 || keyEvent.getKeyCode() == 66) && t1Var.isShowing()) {
+                    l1Var.h(t1Var, 0);
                     break;
                 }
                 break;
             case 2:
                 l4 l4Var = (l4) this.b;
-                org.telegram.ui.Components.pn pnVar = (org.telegram.ui.Components.pn) this.c;
-                org.telegram.ui.Components.rn rnVar = (org.telegram.ui.Components.rn) l4Var.e;
-                f61 f61Var = rnVar.s;
+                org.telegram.ui.Components.rn rnVar = (org.telegram.ui.Components.rn) this.c;
+                org.telegram.ui.Components.tn tnVar = (org.telegram.ui.Components.tn) l4Var.e;
+                f61 f61Var = tnVar.s;
                 if (i7 == 5) {
-                    View F = f61Var.F(pnVar);
+                    View F = f61Var.F(rnVar);
                     v4.f1 T = F == null ? null : f61Var.T(F);
                     if (T != null && (b10 = T.b()) != -1) {
-                        int i10 = b10 - rnVar.u0;
-                        int i11 = rnVar.N;
+                        int i10 = b10 - tnVar.u0;
+                        int i11 = tnVar.N;
                         int i12 = i11 - 1;
-                        if (i10 == i12 && i11 < rnVar.K) {
-                            rnVar.U();
+                        if (i10 == i12 && i11 < tnVar.K) {
+                            tnVar.U();
                             break;
                         } else if (i10 != i12) {
                             v4.f1 K = f61Var.K(b10 + 1);
@@ -68,7 +68,7 @@ public final /* synthetic */ class ld implements TextView.OnEditorActionListener
                                 }
                             }
                         } else {
-                            org.telegram.messenger.g0.v1(pnVar.getTextView());
+                            org.telegram.messenger.g0.v1(rnVar.getTextView());
                             break;
                         }
                     }

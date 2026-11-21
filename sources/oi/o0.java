@@ -1,58 +1,62 @@
 package oi;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
+import android.graphics.Rect;
+import android.text.Layout;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class o0 extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class o0 implements u9 {
+    public final /* synthetic */ Layout a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ q0 d;
 
-    static {
-        k41.h(new o0());
+    public o0(q0 q0Var, Layout layout, int i7, int i10) {
+        this.d = q0Var;
+        this.a = layout;
+        this.b = i7;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        p0 p0Var = (p0) view;
-        a aVar = (a) l41Var.H;
-        b3 b3Var = (b3) l41Var.I;
-        e1 e1Var = p0Var.d;
-        boolean z11 = p0Var.f != aVar;
-        p0Var.f = aVar;
-        p0Var.h = b3Var;
-        TL_iv.PageBlock pageBlock = aVar.b;
-        if (pageBlock instanceof TL_iv.pageBlockDetails) {
-            TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
-            p0Var.c.a(pageblockdetails.open ? 0.0f : 1.0f);
-            SpannableStringBuilder r10 = b6.r(pageblockdetails.title, null, true);
-            if (!aVar.s) {
-                aVar.s = true;
-                aVar.r = r10.length() == 0 || (b6.q(0, r10.length(), r10) & 1) != 0;
-            }
-            e1Var.setAutoBold(aVar.r);
-            if (z11 || !String.valueOf(e1Var.getText()).equals(b6.l(pageblockdetails.title))) {
-                e1Var.setTextSilently(r10);
-                e1Var.f();
-            }
+    @Override // org.telegram.ui.Cells.u9
+    public final Layout a() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final /* synthetic */ Rect c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final /* synthetic */ CharSequence getPrefix() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int getRow() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final CharSequence getText() {
+        a aVar = this.d.f;
+        if (aVar == null) {
+            return "";
         }
+        TL_iv.PageBlock pageBlock = aVar.b;
+        return pageBlock instanceof TL_iv.pageBlockDetails ? c6.r(((TL_iv.pageBlockDetails) pageBlock).title, null, true) : "";
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
-        return new p0(context, i6Var);
+    @Override // org.telegram.ui.Cells.u9
+    public final int getX() {
+        return this.b;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean f() {
-        return false;
+    @Override // org.telegram.ui.Cells.u9
+    public final int getY() {
+        return this.c;
     }
 }

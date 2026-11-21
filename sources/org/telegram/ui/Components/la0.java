@@ -1,36 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class la0 implements oj0 {
-    public final /* synthetic */ oa0 a;
+public final /* synthetic */ class la0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ma0 b;
 
-    public la0(oa0 oa0Var) {
-        this.a = oa0Var;
+    public /* synthetic */ la0(ma0 ma0Var, int i7) {
+        this.a = i7;
+        this.b = ma0Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final void c(int i7, View view) {
-        oa0 oa0Var = this.a;
-        if (oa0Var.a != 1 || oa0Var.r.f.size() <= 1) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ma0 ma0Var = this.b;
+                if (ma0Var.W != -1) {
+                    org.telegram.messenger.ks.f(ma0Var.Y.d0.x).j(ma0Var.W);
+                    ma0Var.W = -1;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.Y.i();
+                break;
+            default:
+                ma0 ma0Var2 = this.b;
+                if (ma0Var2.W != -1) {
+                    org.telegram.messenger.ks.f(ma0Var2.Y.d0.x).j(ma0Var2.W);
+                    ma0Var2.W = -1;
+                    break;
+                }
+                break;
         }
-        int e12 = ((org.telegram.messenger.fj) oa0Var.r.f.get(i7)).e1();
-        boolean z10 = oa0Var.r.g.get(e12, false);
-        boolean z11 = !z10;
-        if (oa0Var.r.g.size() == 1 && z10) {
-            return;
-        }
-        if (z10) {
-            oa0Var.r.g.delete(e12);
-        } else {
-            oa0Var.r.g.put(e12, z11);
-        }
-        if (view instanceof org.telegram.ui.Cells.r1) {
-            ((org.telegram.ui.Cells.r1) view).n3(z11, z11, true);
-        }
-        oa0Var.l(true);
     }
 }

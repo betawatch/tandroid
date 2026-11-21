@@ -4,10 +4,10 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import fi.a6;
 import fi.h6;
 import fi.o6;
-import fi.z5;
-import hi.d7;
+import hi.c7;
 import java.util.ArrayList;
 import m.o3;
 import org.telegram.messenger.bz;
@@ -17,15 +17,15 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.p7;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.dq0;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.fq0;
 import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.mj0;
 import v4.f1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public class l extends ij0 {
+public class l extends kj0 {
     public final Context c;
     public h6 e;
     public l f;
@@ -41,12 +41,12 @@ public class l extends ij0 {
         M();
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(f1 f1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.kj0
     public final String F(int i7) {
         fj fjVar;
         TL_stories.StoryItem storyItem;
@@ -57,14 +57,14 @@ public class l extends ij0 {
         return gd.e0(storyItem.date, true);
     }
 
-    @Override // org.telegram.ui.Components.ij0
-    public final void G(ck0 ck0Var, float f10, int[] iArr) {
-        int measuredHeight = ck0Var.getChildAt(0).getMeasuredHeight();
+    @Override // org.telegram.ui.Components.kj0
+    public final void G(ek0 ek0Var, float f10, int[] iArr) {
+        int measuredHeight = ek0Var.getChildAt(0).getMeasuredHeight();
         l lVar = this.f;
         m mVar = this.s;
         int i7 = this == lVar ? mVar.e : mVar.d;
         int ceil = (int) (Math.ceil(b() / i7) * measuredHeight);
-        int measuredHeight2 = ck0Var.getMeasuredHeight() - ck0Var.getPaddingTop();
+        int measuredHeight2 = ek0Var.getMeasuredHeight() - ek0Var.getPaddingTop();
         if (measuredHeight == 0) {
             iArr[1] = 0;
             iArr[0] = 0;
@@ -76,13 +76,13 @@ public class l extends ij0 {
     }
 
     public final boolean L(int i7) {
-        dq0 dq0Var = this.s.a0;
+        fq0 fq0Var = this.s.a0;
         h6 h6Var = this.e;
         if (h6Var == null) {
             return false;
         }
-        if (h6Var instanceof z5) {
-            TLRPC.User c22 = mp.u1(dq0Var.b).c2(Long.valueOf(dq0Var.d));
+        if (h6Var instanceof a6) {
+            TLRPC.User c22 = mp.u1(fq0Var.b).c2(Long.valueOf(fq0Var.d));
             return c22 != null && c22.bot && c22.bot_has_main_app && c22.bot_can_edit;
         }
         if (i7 < 0 || i7 >= h6Var.i.size()) {
@@ -131,18 +131,18 @@ public class l extends ij0 {
     @Override // v4.i0
     public void f() {
         h6 h6Var = this.e;
-        boolean z10 = h6Var instanceof z5;
+        boolean z10 = h6Var instanceof a6;
         m mVar = this.s;
         if (z10) {
-            z5 z5Var = (z5) h6Var;
+            a6 a6Var = (a6) h6Var;
             ArrayList arrayList = this.d;
             arrayList.clear();
             ArrayList F = mp.u1(this.e.c).R1().F(mVar.a0.d);
             if (F != null) {
                 for (int i7 = 0; i7 < F.size(); i7++) {
                     o6 o6Var = (o6) F.get(i7);
-                    d7 d7Var = o6Var.c;
-                    if (d7Var != null && !d7Var.g && TextUtils.equals(d7Var.K0, z5Var.E)) {
+                    c7 c7Var = o6Var.c;
+                    if (c7Var != null && !c7Var.g && TextUtils.equals(c7Var.K0, a6Var.E)) {
                         arrayList.add(o6Var);
                     }
                 }
@@ -201,29 +201,29 @@ public class l extends ij0 {
             p7Var.g0 = fjVar != null && this.e.m(fjVar.e1());
             p7Var.setReorder(true);
             p7Var.k(fjVar, this == this.f ? mVar.e : mVar.d, false);
-            dq0 dq0Var = mVar.a0;
-            if (!dq0Var.H.F1 || fjVar == null) {
+            fq0 fq0Var = mVar.a0;
+            if (!fq0Var.H.F1 || fjVar == null) {
                 p7Var.i(false, false);
             } else {
-                p7Var.i(dq0Var.c(fjVar), true);
+                p7Var.i(fq0Var.c(fjVar), true);
             }
         }
     }
 
     @Override // v4.i0
     public final f1 x(ViewGroup viewGroup, int i7) {
-        dq0 dq0Var = this.s.a0;
+        fq0 fq0Var = this.s.a0;
         if (this.h == null) {
-            this.h = new o3(viewGroup.getContext(), dq0Var.c);
+            this.h = new o3(viewGroup.getContext(), fq0Var.c);
         }
-        p7 p7Var = new p7(this.c, this.h, dq0Var.b);
+        p7 p7Var = new p7(this.c, this.h, fq0Var.b);
         p7Var.x0 = true;
         p7Var.setGradientView(null);
         p7Var.e0 = true;
-        return new kj0(p7Var);
+        return new mj0(p7Var);
     }
 
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.kj0
     public final void I() {
     }
 }

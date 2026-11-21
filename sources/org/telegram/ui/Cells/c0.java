@@ -16,11 +16,11 @@ import org.telegram.messenger.fj;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.qt0;
-import org.telegram.ui.Components.wz;
-import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.yz;
+import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c0 {
     public static int A(int i7, int i10, Drawable drawable) {
@@ -66,7 +66,7 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static float c(RecyclerView recyclerView) {
-        int i7 = qt0.m0;
+        int i7 = tt0.m0;
         v4.p0 layoutManager = recyclerView.getLayoutManager();
         if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
             return 0.0f;
@@ -78,8 +78,8 @@ public abstract /* synthetic */ class c0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static void d(x60 x60Var, boolean z10) {
-        ((View) x60Var).setVisibility(z10 ? 4 : 0);
+    public static void d(z60 z60Var, boolean z10) {
+        ((View) z60Var).setVisibility(z10 ? 4 : 0);
     }
 
     public static float e(float f10, float f11, float f12) {
@@ -106,8 +106,8 @@ public abstract /* synthetic */ class c0 {
         return (drawable.getIntrinsicHeight() / i7) + i10;
     }
 
-    public static int k(wz wzVar, int i7) {
-        return wzVar.c(wzVar.getMeasuredWidth()) + i7;
+    public static int k(yz yzVar, int i7) {
+        return yzVar.c(yzVar.getMeasuredWidth()) + i7;
     }
 
     public static Bundle l(int i7, String str, String str2, boolean z10) {
@@ -123,13 +123,13 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static Integer n(int i7, ArrayList arrayList, int i10, ArrayList arrayList2, int i11) {
-        arrayList.add(gd.M0(i7, null));
+        arrayList.add(gd.N0(i7, null));
         arrayList2.add(Integer.valueOf(i10));
         return Integer.valueOf(i11);
     }
 
     public static Integer o(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num, int i10) {
-        arrayList.add(gd.M0(i7, null));
+        arrayList.add(gd.N0(i7, null));
         arrayList2.add(num);
         return Integer.valueOf(i10);
     }
@@ -150,21 +150,21 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static void s(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(gd.M0(i7, null));
+        arrayList.add(gd.N0(i7, null));
         arrayList2.add(num);
     }
 
-    public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.i6 i6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new lc(frameLayout, i6Var).g0(tL_error, z10);
+    public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.h6 h6Var, TLRPC.TL_error tL_error, boolean z10) {
+        new lc(frameLayout, h6Var).g0(tL_error, z10);
     }
 
     public static void u(String str, int i7, StringBuilder sb2, String str2) {
-        sb2.append(gd.M0(i7, str));
+        sb2.append(gd.N0(i7, str));
         sb2.append(str2);
     }
 
     public static void v(String str, int i7, ArrayList arrayList, int i10, ArrayList arrayList2) {
-        arrayList.add(gd.M0(i7, str));
+        arrayList.add(gd.N0(i7, str));
         arrayList2.add(Integer.valueOf(i10));
     }
 

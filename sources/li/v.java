@@ -1,9 +1,9 @@
 package li;
 
 import android.os.Bundle;
-import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.e10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -22,18 +22,18 @@ public final /* synthetic */ class v implements Runnable {
                 d0Var.v1.d.f3.h1(1, d0Var.P1.b);
                 d0Var.m1.a(false, true);
                 d0Var.r0 = true;
-                c10 c10Var = d0Var.y1;
-                org.telegram.messenger.g0.v1(c10Var.r);
-                c10Var.r.clearFocus();
+                e10 e10Var = d0Var.y1;
+                org.telegram.messenger.g0.v1(e10Var.r);
+                e10Var.r.clearFocus();
                 break;
             case 1:
                 d0 d0Var2 = this.b;
                 d0Var2.x1.d.f3.h1(1, d0Var2.P1.b);
                 d0Var2.n1.a(false, true);
                 d0Var2.r0 = true;
-                c10 c10Var2 = d0Var2.z1;
-                org.telegram.messenger.g0.v1(c10Var2.r);
-                c10Var2.r.clearFocus();
+                e10 e10Var2 = d0Var2.z1;
+                org.telegram.messenger.g0.v1(e10Var2.r);
+                e10Var2.r.clearFocus();
                 break;
             default:
                 d0 d0Var3 = this.b;

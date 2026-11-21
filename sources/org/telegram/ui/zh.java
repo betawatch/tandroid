@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zh extends org.telegram.ui.Components.go {
+public final class zh extends org.telegram.ui.Components.io {
     public final /* synthetic */ bn N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zh(bn bnVar, Activity activity, int i7, TLRPC.Document document, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(activity, i7, document, i6Var);
+    public zh(bn bnVar, Activity activity, int i7, TLRPC.Document document, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(activity, i7, document, h6Var);
         this.N = bnVar;
     }
 

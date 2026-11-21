@@ -9,34 +9,34 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c extends yg.c {
-    public final mp s;
+    public final op s;
     public TLRPC.TL_help_country w;
     public final TextPaint x;
     public final a3.f y;
 
-    public c(Context context, i6 i6Var) {
-        super(context, i6Var);
+    public c(Context context, h6 h6Var) {
+        super(context, h6Var);
         TextPaint textPaint = new TextPaint();
         this.x = textPaint;
         this.y = new a3.f(this, 3);
         textPaint.setTextSize(g0.L(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        mp mpVar = new mp(21, context, i6Var);
-        this.s = mpVar;
-        mpVar.b(n6.B5, n6.j7, n6.C5);
-        mpVar.setDrawUnchecked(true);
-        mpVar.setDrawBackgroundAsArc(10);
-        addView(mpVar);
-        mpVar.a(false, false);
-        mpVar.setLayoutParams(ma.d(24, 24.0f, (gd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        op opVar = new op(21, context, h6Var);
+        this.s = opVar;
+        opVar.b(m6.B5, m6.j7, m6.C5);
+        opVar.setDrawUnchecked(true);
+        opVar.setDrawBackgroundAsArc(10);
+        addView(opVar);
+        opVar.a(false, false);
+        opVar.setLayoutParams(ma.d(24, 24.0f, (gd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
     @Override // yg.c
@@ -51,9 +51,9 @@ public final class c extends yg.c {
 
     @Override // yg.c
     public final void c(boolean z10, boolean z11) {
-        mp mpVar = this.s;
-        if (mpVar.getVisibility() == 0) {
-            mpVar.a(z10, z11);
+        op opVar = this.s;
+        if (opVar.getVisibility() == 0) {
+            opVar.a(z10, z11);
         }
     }
 
@@ -78,7 +78,7 @@ public final class c extends yg.c {
             spannableStringBuilder.append((CharSequence) " ");
             spannableStringBuilder.setSpan(new b(34), 0, 1, 0);
         }
-        String i02 = gd.i0(2131750505, tL_help_country.iso2);
+        String i02 = gd.i0(2131750504, tL_help_country.iso2);
         if (TextUtils.isEmpty(i02)) {
             i02 = tL_help_country.default_name;
         }

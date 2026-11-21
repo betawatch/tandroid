@@ -8,12 +8,13 @@ import c8.i0;
 import c8.ma;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.a5;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.ck0;
+import org.telegram.tgnet.u;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.z4;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class a {
     public final q a;
@@ -34,7 +35,7 @@ public final class a {
 
     public a(q qVar, n nVar) {
         this.a = qVar;
-        qVar.a = new org.telegram.ui.ActionBar.p(this, 20);
+        qVar.a = new u(this, 21);
         qVar.d = new ti.b(g0.L(48.0f));
         ui.c cVar = new ui.c();
         this.b = cVar;
@@ -114,7 +115,7 @@ public final class a {
         fVar.J = ks.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = n6.r1(ks.q2 / 255.0f, cVar.b);
+            fVar.I = m6.r1(ks.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -127,7 +128,7 @@ public final class a {
         fVar.L = 210;
         ui.c cVar2 = fVar.H;
         if (cVar2 != null) {
-            fVar.K = n6.r1(210 / 255.0f, cVar2.b);
+            fVar.K = m6.r1(210 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -156,7 +157,7 @@ public final class a {
         fVar.J = ks.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = n6.r1(ks.q2 / 255.0f, cVar.b);
+            fVar.I = m6.r1(ks.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -169,7 +170,7 @@ public final class a {
         fVar.L = 210;
         ui.c cVar2 = fVar.H;
         if (cVar2 != null) {
-            fVar.K = n6.r1(210 / 255.0f, cVar2.b);
+            fVar.K = m6.r1(210 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -180,33 +181,33 @@ public final class a {
         return fVar;
     }
 
-    public final void f(FrameLayout frameLayout, ck0 ck0Var, View view, i6 i6Var) {
+    public final void f(FrameLayout frameLayout, ek0 ek0Var, View view, h6 h6Var) {
         this.m = frameLayout;
-        this.n = ck0Var;
-        ck0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.o = new di.f(9, ck0Var, frameLayout);
-        this.a.b(ck0Var);
-        ck0Var.setClipToPadding(false);
-        g(frameLayout, view, i6Var);
+        this.n = ek0Var;
+        ek0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.o = new di.f(9, ek0Var, frameLayout);
+        this.a.b(ek0Var);
+        ek0Var.setClipToPadding(false);
+        g(frameLayout, view, h6Var);
     }
 
-    public final void g(FrameLayout frameLayout, View view, i6 i6Var) {
+    public final void g(FrameLayout frameLayout, View view, h6 h6Var) {
         if (view == null) {
             return;
         }
         g0.E2(view);
         frameLayout.addView(view, ma.e(-1, -2, 48));
-        boolean z10 = view instanceof a5;
+        boolean z10 = view instanceof z4;
         dh.c cVar = this.c;
         if (z10) {
-            a5 a5Var = (a5) view;
-            a5Var.setExtraHeight(g0.L(6.0f));
-            gh.e m10 = i0.m(i6Var);
-            a5Var.M = cVar;
-            a5Var.N = m10;
-            a5Var.r();
-            a5Var.o0 = this.d;
-            a5Var.p0 = this.e;
+            z4 z4Var = (z4) view;
+            z4Var.setExtraHeight(g0.L(6.0f));
+            gh.e m10 = i0.m(h6Var);
+            z4Var.M = cVar;
+            z4Var.N = m10;
+            z4Var.r();
+            z4Var.o0 = this.d;
+            z4Var.p0 = this.e;
             return;
         }
         if (view instanceof org.telegram.ui.ActionBar.k) {
@@ -215,7 +216,7 @@ public final class a {
             kVar.setCenterTitleAndGlass(true);
             kVar.setExtraHeight(g0.L(6.0f));
             kVar.U0 = true;
-            kVar.Q(cVar, i0.m(i6Var), false);
+            kVar.P(cVar, i0.m(h6Var), false);
         }
     }
 }

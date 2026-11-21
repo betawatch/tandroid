@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class h0 extends org.telegram.ui.ActionBar.w4 {
+public final class h0 extends org.telegram.ui.ActionBar.v4 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
@@ -11,16 +11,16 @@ public final class h0 extends org.telegram.ui.ActionBar.w4 {
         this.s = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.w4, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.ActionBar.v4, org.telegram.ui.ActionBar.q2
     public void v() {
         switch (this.r) {
             case 1:
-                ((org.telegram.ui.Components.yo0) this.s).U1 = true;
+                ((org.telegram.ui.Components.ap0) this.s).U1 = true;
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.w4, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.ActionBar.v4, org.telegram.ui.ActionBar.q2
     public boolean x() {
         boolean z10;
         switch (this.r) {

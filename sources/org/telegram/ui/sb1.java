@@ -5,9 +5,9 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sb1 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.voip.p1, r0.m, org.telegram.ui.Components.voip.c3 {
+public final /* synthetic */ class sb1 implements org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.voip.p1, r0.m, org.telegram.ui.Components.voip.c3 {
     public final /* synthetic */ int a;
     public final /* synthetic */ hc1 b;
 
@@ -57,7 +57,7 @@ public final /* synthetic */ class sb1 implements org.telegram.ui.ActionBar.r1, 
                     boolean isMicMute = sharedInstance.isMicMute();
                     boolean z10 = !isMicMute;
                     if (hc1Var.w0.isTouchExplorationEnabled()) {
-                        d3Var.announceForAccessibility(org.telegram.messenger.gd.M0(!isMicMute ? 2131754729 : 2131754728, null));
+                        d3Var.announceForAccessibility(org.telegram.messenger.gd.N0(!isMicMute ? 2131754728 : 2131754727, null));
                     }
                     sharedInstance.setMicMute(z10, false, true);
                     hc1Var.q0 = hc1Var.p0;
@@ -78,8 +78,8 @@ public final /* synthetic */ class sb1 implements org.telegram.ui.ActionBar.r1, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         this.b.u0.b();
     }
 }

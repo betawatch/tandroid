@@ -5,7 +5,7 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class o9 {
     public static long g;
@@ -63,7 +63,7 @@ public class o9 {
                 if (!tL_stories_getStoriesViews.id.isEmpty()) {
                     int i7 = this.b;
                     tL_stories_getStoriesViews.peer = mp.u1(i7).l1(this.c);
-                    this.d = ConnectionsManager.getInstance(i7).sendRequest(tL_stories_getStoriesViews, new bi.k1(14, this, tL_stories_getStoriesViews));
+                    this.d = ConnectionsManager.getInstance(i7).sendRequest(tL_stories_getStoriesViews, new bi.o1(14, this, tL_stories_getStoriesViews));
                     return;
                 }
             }

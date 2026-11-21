@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class d extends FrameLayout {
     public boolean a;
@@ -25,7 +25,7 @@ public abstract class d extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (this.a && (view instanceof q1)) {
+        if (this.a && (view instanceof s1)) {
             return true;
         }
         return super.drawChild(canvas, view, j3);
@@ -33,7 +33,7 @@ public abstract class d extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final void measureChildWithMargins(View view, int i7, int i10, int i11, int i12) {
-        if (!(view instanceof m2)) {
+        if (!(view instanceof n2)) {
             super.measureChildWithMargins(view, i7, i10, i11, i12);
             return;
         }

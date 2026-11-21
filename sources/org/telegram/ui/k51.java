@@ -8,13 +8,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k51 extends View {
     public ImageReceiver a;
     public ImageReceiver b;
     public View c;
-    public org.telegram.ui.Components.qd0 d;
+    public org.telegram.ui.Components.rd0 d;
     public Path e;
     public Drawable f;
 

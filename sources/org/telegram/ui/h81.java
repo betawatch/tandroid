@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h81 implements org.telegram.ui.Cells.m1 {
     public final /* synthetic */ i81 a;
@@ -152,7 +152,7 @@ public final class h81 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ boolean p0(org.telegram.ui.Components.x5 x5Var) {
+    public final /* synthetic */ boolean p0(org.telegram.ui.Components.y5 y5Var) {
         return false;
     }
 

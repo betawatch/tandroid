@@ -2,22 +2,22 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class rb extends ob implements org.telegram.messenger.fs {
     public final pb d;
     public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.h2 f;
+    public final org.telegram.ui.ActionBar.g2 f;
     public final int h;
     public gc n;
 
-    public rb(int i7, org.telegram.ui.ActionBar.h2 h2Var) {
-        super(h2Var.getContext(), h2Var.getResourceProvider());
-        this.f = h2Var;
+    public rb(int i7, org.telegram.ui.ActionBar.g2 g2Var) {
+        super(g2Var.getContext(), g2Var.getResourceProvider());
+        this.f = g2Var;
         this.h = i7;
         this.b.setLayoutParams(c8.ma.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
         this.a.setLayoutParams(c8.ma.h(56.0f, 48.0f, 8388659));
-        pb pbVar = new pb(this, h2Var, getContext(), h2Var.getCurrentAccount(), h2Var.getResourceProvider());
+        pb pbVar = new pb(this, g2Var, getContext(), g2Var.getCurrentAccount(), g2Var.getResourceProvider());
         this.d = pbVar;
         pbVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(0.0f));
         this.d.setDelegate(new qb(this));
@@ -26,7 +26,7 @@ public final class rb extends ob implements org.telegram.messenger.fs {
         this.d.setClipToPadding(false);
         this.d.setVisibility(0);
         this.d.setBubbleOffset(-org.telegram.messenger.g0.L(80.0f));
-        this.d.setHint(org.telegram.messenger.gd.M0(2131745680, null));
+        this.d.setHint(org.telegram.messenger.gd.N0(2131745679, null));
         addView(this.d, c8.ma.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
         this.d.p(null, null, true);
     }

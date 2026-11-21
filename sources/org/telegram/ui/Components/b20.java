@@ -1,46 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b20 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+public final class b20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ WindowManager c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ View e;
+    public final /* synthetic */ c20 f;
 
-    public /* synthetic */ b20(Context context, int i7) {
-        this.a = i7;
-        this.b = context;
+    public b20(c20 c20Var, a20 a20Var, bi.e3 e3Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.w7 w7Var) {
+        this.f = c20Var;
+        this.a = a20Var;
+        this.b = e3Var;
+        this.c = windowManager;
+        this.d = frameLayout;
+        this.e = w7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        Context context = this.b;
-        switch (i7) {
-            case 0:
-                z10.k(context);
-                break;
-            case 1:
-                vf.c.t(context, org.telegram.messenger.gd.M0(2131744731, null));
-                break;
-            case 2:
-                Activity W = org.telegram.messenger.g0.W(context);
-                if (W instanceof LaunchActivity) {
-                    ((LaunchActivity) W).t0(new PremiumPreviewFragment(0, ug.l0.v1(10)));
-                    break;
-                }
-                break;
-            default:
-                Activity W2 = org.telegram.messenger.g0.W(context);
-                if (W2 instanceof LaunchActivity) {
-                    ((LaunchActivity) W2).t0(new PremiumPreviewFragment(0, ug.l0.v1(9)));
-                    break;
-                }
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.messenger.ks.f(this.f.h).d(new org.telegram.ui.wn(this.a, this.b, this.c, this.d, this.e, 4));
     }
 }

@@ -3,17 +3,17 @@ package org.telegram.messenger;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b0 extends CharacterStyle {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 c;
 
-    public b0(boolean z10, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+    public b0(boolean z10, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         this.a = z10;
         this.b = i7;
-        this.c = i6Var;
+        this.c = h6Var;
     }
 
     @Override // android.text.style.CharacterStyle
@@ -22,6 +22,6 @@ public final class b0 extends CharacterStyle {
         if (this.a) {
             textPaint.setTypeface(g0.o());
         }
-        textPaint.setColor(org.telegram.ui.ActionBar.n6.w0(this.b, this.c));
+        textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(this.b, this.c));
     }
 }

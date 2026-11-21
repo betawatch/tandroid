@@ -6,12 +6,12 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.q40;
 import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k implements eh.a {
     public final ViewGroup c;
@@ -72,7 +72,7 @@ public final class k implements eh.a {
                         Object obj = q40Var.b;
                         switch (i10) {
                             case 0:
-                                ((ck0) obj).drawChild(canvas, childAt, uptimeMillis);
+                                ((ek0) obj).drawChild(canvas, childAt, uptimeMillis);
                                 break;
                             case 1:
                                 ProfileActivity profileActivity = (ProfileActivity) obj;

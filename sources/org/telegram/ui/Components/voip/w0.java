@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
+import hi.o4;
 import java.io.File;
 import java.io.FileOutputStream;
 import org.telegram.messenger.Utilities;
@@ -18,19 +19,19 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.c31;
-import org.telegram.ui.Components.k20;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.ph0;
+import org.telegram.ui.Components.n20;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.rh0;
 import org.telegram.ui.f40;
 import org.telegram.ui.w20;
 import org.telegram.ui.x7;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout implements VoIPService.StateListener {
     public final boolean E;
@@ -38,7 +39,7 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
     public final c5.l b;
     public final gi.j c;
     public final LinearLayout d;
-    public final ph0 e;
+    public final rh0 e;
     public final TextView[] f;
     public final n2 h;
     public int n;
@@ -58,7 +59,7 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
         c5.l lVar = new c5.l(context);
         this.b = lVar;
         org.telegram.messenger.g0.A3(lVar, 2130706432);
-        lVar.setAdapter(new k20(this, i7));
+        lVar.setAdapter(new n20(this, i7));
         lVar.setPageMargin(0);
         lVar.setOffscreenPageLimit(1);
         addView(lVar, ma.c(-1.0f, -1));
@@ -75,9 +76,9 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
         m2Var.setUseCameraRotation(true);
         addView(n2Var, ma.c(-1.0f, -1));
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, null);
-        kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
+        kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
         kVar.setBackgroundColor(0);
-        u6.l(kVar, 1, n6.Yg, null);
+        t6.l(kVar, 1, m6.Yg, null);
         kVar.setOccupyStatusBar(true);
         int i10 = 22;
         kVar.setActionBarMenuOnItemClick(new x7(this, i10));
@@ -87,16 +88,16 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
         jVar.setMinWidth(org.telegram.messenger.g0.L(64.0f));
         jVar.setTag(-1);
         jVar.setTextSize(1, 14.0f);
-        int i11 = n6.eh;
-        u6.U(jVar, i11, null);
+        int i11 = m6.eh;
+        t6.U(jVar, i11, null);
         jVar.setGravity(17);
         jVar.setTypeface(org.telegram.messenger.g0.o());
-        jVar.setText(gd.M0(2131743003, null));
+        jVar.setText(gd.N0(2131742997, null));
         int L = org.telegram.messenger.g0.L(6.0f);
-        int o4 = i0.a.o(n6.x0(null, i11, false), 76);
-        jVar.setForeground(n6.k0(L, L, L, L, 0, o4, o4));
+        int o4 = i0.a.o(m6.x0(null, i11, false), 76);
+        jVar.setForeground(m6.k0(L, L, L, L, 0, o4, o4));
         jVar.setPadding(0, org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f));
-        jVar.setOnClickListener(new hi.o0(this, 26));
+        jVar.setOnClickListener(new o4(this, 25));
         addView(jVar, ma.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
@@ -116,11 +117,11 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
             this.f[i12].setSingleLine(true);
             this.d.addView(this.f[i12], ma.o(-2, -1));
             if (i12 == 0 && this.E) {
-                this.f[i12].setText(gd.M0(2131743022, null));
+                this.f[i12].setText(gd.N0(2131743016, null));
             } else if (i12 == 0 || (i12 == 1 && this.E)) {
-                this.f[i12].setText(gd.M0(2131743168, null));
+                this.f[i12].setText(gd.N0(2131743162, null));
             } else {
-                this.f[i12].setText(gd.M0(2131743256, null));
+                this.f[i12].setText(gd.N0(2131743250, null));
             }
             this.f[i12].setOnClickListener(new ci.q(this, i12, i10));
             i12++;
@@ -136,17 +137,17 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
             sharedInstance.setLocalSink(this.h.d, false);
         }
         this.b.setCurrentItem(this.E ? 1 : 0);
-        ph0 ph0Var = new ph0(context);
-        this.e = ph0Var;
-        ph0Var.setPadding(org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f));
-        ph0Var.setBackground(n6.L(org.telegram.messenger.g0.L(48.0f), i0.a.o(-16777216, 76)));
-        mh0 mh0Var = new mh0(R.raw.voice_mini, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), true, null);
-        ph0Var.setAnimation(mh0Var);
-        ph0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        rh0 rh0Var = new rh0(context);
+        this.e = rh0Var;
+        rh0Var.setPadding(org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f));
+        rh0Var.setBackground(m6.L(org.telegram.messenger.g0.L(48.0f), i0.a.o(-16777216, 76)));
+        oh0 oh0Var = new oh0(R.raw.voice_mini, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), true, null);
+        rh0Var.setAnimation(oh0Var);
+        rh0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.w = true;
-        mh0Var.M(69);
-        ph0Var.setOnClickListener(new c31(6, this, mh0Var));
-        addView(ph0Var, ma.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
+        oh0Var.M(69);
+        rh0Var.setOnClickListener(new q31(4, this, oh0Var));
+        addView(rh0Var, ma.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
     }
 
     public static void a(w0 w0Var) {
@@ -266,7 +267,7 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
     }
 
     public int getBackgroundColor() {
-        return i0.a.o(n6.x0(null, n6.Xg, false), (int) (getAlpha() * 1.0f * 255.0f));
+        return i0.a.o(m6.x0(null, m6.Xg, false), (int) (getAlpha() * 1.0f * 255.0f));
     }
 
     @Override // android.view.View
@@ -335,9 +336,9 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
             marginLayoutParams.leftMargin = L2;
             marginLayoutParams.rightMargin = L2;
         }
-        ph0 ph0Var = this.e;
-        if (ph0Var != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) ph0Var.getLayoutParams();
+        rh0 rh0Var = this.e;
+        if (rh0Var != null) {
+            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) rh0Var.getLayoutParams();
             if (z10) {
                 int L3 = org.telegram.messenger.g0.L(88.0f);
                 marginLayoutParams2.leftMargin = L3;

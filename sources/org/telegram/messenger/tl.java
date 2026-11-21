@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.c01;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tl implements Runnable {
     public final /* synthetic */ int a;
@@ -516,11 +516,11 @@ public final /* synthetic */ class tl implements Runnable {
         z00 z00Var = (z00) this.b;
         fj fjVar = (fj) this.c;
         f3.s sVar = (f3.s) this.d;
-        di.o9 o9Var = (di.o9) this.e;
+        di.p9 p9Var = (di.p9) this.e;
         fjVar.k.originalLanguage = "und";
         z00Var.getMessagesStorage().X1(sVar.a, fjVar.k);
         z00Var.L.remove(sVar);
-        o9Var.a("und");
+        p9Var.a("und");
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x015b  */
@@ -706,16 +706,16 @@ public final /* synthetic */ class tl implements Runnable {
                 return;
             case 1:
                 mp mpVar5 = (mp) this.b;
-                org.telegram.ui.Components.b5.c0(mpVar5.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.h2) this.d, (TLRPC.TL_channels_createChannel) this.e, new Object[0]);
+                org.telegram.ui.Components.c5.c0(mpVar5.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.g2) this.d, (TLRPC.TL_channels_createChannel) this.e, new Object[0]);
                 mpVar5.getNotificationCenter().k(29, new Object[0]);
                 return;
             case 2:
                 mp mpVar6 = (mp) this.b;
-                org.telegram.ui.Components.b5.c0(mpVar6.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.h2) this.d, (TLRPC.TL_messages_createChat) this.e, new Object[0]);
+                org.telegram.ui.Components.c5.c0(mpVar6.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.g2) this.d, (TLRPC.TL_messages_createChat) this.e, new Object[0]);
                 mpVar6.getNotificationCenter().k(29, new Object[0]);
                 return;
             case 3:
-                org.telegram.ui.Components.b5.c0(((mp) this.b).currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.h2) this.d, (TLRPC.TL_messages_editChatAdmin) this.e, Boolean.FALSE);
+                org.telegram.ui.Components.c5.c0(((mp) this.b).currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.g2) this.d, (TLRPC.TL_messages_editChatAdmin) this.e, Boolean.FALSE);
                 return;
             case 4:
                 zy zyVar = (zy) this.b;
@@ -742,10 +742,10 @@ public final /* synthetic */ class tl implements Runnable {
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
-                alertDialog$Builder.a.S = gd.M0(2131746413, null);
-                alertDialog$Builder.a.U = gd.M0(2131746412, null);
-                alertDialog$Builder.k(gd.M0(2131746550, null), new o(1, g12, yfVar));
-                i5.c.y(null, 2131752578, alertDialog$Builder, null);
+                alertDialog$Builder.a.S = gd.N0(2131746412, null);
+                alertDialog$Builder.a.U = gd.N0(2131746411, null);
+                alertDialog$Builder.k(gd.N0(2131746549, null), new o(1, g12, yfVar));
+                i5.c.y(null, 2131752577, alertDialog$Builder, null);
                 return;
             case 6:
                 f8 f8Var = (f8) this.b;
@@ -800,7 +800,7 @@ public final /* synthetic */ class tl implements Runnable {
                 }
                 return;
             case 8:
-                ((r8) this.b).s((String) this.c, (String) this.d, (fi.y5) this.e, null, true, false);
+                ((r8) this.b).s((String) this.c, (String) this.d, (fi.z5) this.e, null, true, false);
                 return;
             case 9:
                 ((ec) this.b).S((String) this.c, (String) this.d, (fc) this.e);
@@ -890,7 +890,7 @@ public final /* synthetic */ class tl implements Runnable {
                 String str3 = (String) this.b;
                 ArrayList arrayList13 = (ArrayList) this.c;
                 ArrayList arrayList14 = (ArrayList) this.d;
-                c01 c01Var = (c01) this.e;
+                d01 d01Var = (d01) this.e;
                 ArrayList arrayList15 = new ArrayList();
                 ArrayList arrayList16 = new ArrayList();
                 String lowerCase = str3.toLowerCase();
@@ -925,7 +925,7 @@ public final /* synthetic */ class tl implements Runnable {
                     }
                 }
                 arrayList15.addAll(arrayList16);
-                c01Var.a(arrayList15);
+                d01Var.a(arrayList15);
                 return;
             case 17:
                 mp mpVar7 = (mp) this.b;

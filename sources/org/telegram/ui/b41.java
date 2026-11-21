@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class b41 extends org.telegram.ui.Components.y61 {
+public final class b41 extends org.telegram.ui.Components.b71 {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ boolean c;
@@ -20,7 +20,7 @@ public final class b41 extends org.telegram.ui.Components.y61 {
         this.d = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final View d(int i7) {
         c51 c51Var = this.e;
         if (c51Var.o0) {
@@ -43,7 +43,7 @@ public final class b41 extends org.telegram.ui.Components.y61 {
         return (this.c && i7 == 0) ? c51Var.k0 : frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int e() {
         if (this.e.o0) {
             return 1;
@@ -51,12 +51,12 @@ public final class b41 extends org.telegram.ui.Components.y61 {
         return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int h(int i7) {
         return i7;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final void b(View view, int i7, int i10) {
     }
 }

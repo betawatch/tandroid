@@ -3,29 +3,29 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class dz0 extends org.telegram.ui.Components.n6 {
+public final class dz0 extends org.telegram.ui.Components.o6 {
     public boolean s;
-    public final org.telegram.ui.Components.c6 w;
+    public final org.telegram.ui.Components.d6 w;
     public final /* synthetic */ SaveToGallerySettingsActivity x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public dz0(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
         super(activity, true, true, false);
         this.x = saveToGallerySettingsActivity;
-        this.w = new org.telegram.ui.Components.c6(this);
+        this.w = new org.telegram.ui.Components.d6(this);
         getDrawable().K = true;
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float f10 = this.s ? 1.0f : 0.0f;
-        org.telegram.ui.Components.c6 c6Var = this.w;
-        c6Var.e(false, f10);
-        int i7 = org.telegram.ui.ActionBar.n6.y6;
+        org.telegram.ui.Components.d6 d6Var = this.w;
+        d6Var.e(false, f10);
+        int i7 = org.telegram.ui.ActionBar.m6.y6;
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.x;
-        setTextColor(i0.a.f(c6Var.c, saveToGallerySettingsActivity.getThemedColor(i7), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.n6.n6)));
+        setTextColor(i0.a.f(d6Var.c, saveToGallerySettingsActivity.getThemedColor(i7), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.m6.n6)));
         super.dispatchDraw(canvas);
     }
 

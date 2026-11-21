@@ -8,20 +8,20 @@ import android.view.MenuItem;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.b31;
+import org.telegram.ui.Components.ot;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g9 implements ActionMode.Callback {
     public final /* synthetic */ int a;
     public Object b;
     public final /* synthetic */ Object c;
 
-    public g9(mt mtVar, ActionMode.Callback callback) {
+    public g9(ot otVar, ActionMode.Callback callback) {
         this.a = 1;
-        this.c = mtVar;
+        this.c = otVar;
         this.b = callback;
     }
 
@@ -77,7 +77,7 @@ public final class g9 implements ActionMode.Callback {
                             String str = (String) this.b;
                             f fVar2 = new f(this, 10);
                             org.telegram.ui.g4 g4Var = sVar.a;
-                            y21.W0(g4Var.M, g4Var.N, str, language, r11, null, fVar2);
+                            b31.W0(g4Var.M, g4Var.N, str, language, r11, null, fVar2);
                         }
                         w9Var.u();
                     } else if (itemId == R.id.menu_quote) {
@@ -102,7 +102,7 @@ public final class g9 implements ActionMode.Callback {
                 }
                 return true;
             default:
-                if (((mt) obj).H(menuItem.getItemId())) {
+                if (((ot) obj).H(menuItem.getItemId())) {
                     actionMode.finish();
                     return true;
                 }
@@ -119,14 +119,14 @@ public final class g9 implements ActionMode.Callback {
         switch (this.a) {
             case 0:
                 menu.add(0, android.R.id.copy, 0, android.R.string.copy);
-                menu.add(0, R.id.menu_quote, 1, gd.M0(2131746245, null));
-                menu.add(0, 3, 2, gd.M0(2131743719, null));
+                menu.add(0, R.id.menu_quote, 1, gd.N0(2131746244, null));
+                menu.add(0, 3, 2, gd.N0(2131743713, null));
                 menu.add(0, android.R.id.cut, 3, android.R.string.cut);
                 menu.add(0, android.R.id.paste, 4, android.R.string.paste);
                 menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);
                 return true;
             default:
-                ((mt) this.c).F();
+                ((ot) this.c).F();
                 return ((ActionMode.Callback) this.b).onCreateActionMode(actionMode, menu);
         }
     }
@@ -137,7 +137,7 @@ public final class g9 implements ActionMode.Callback {
             case 0:
                 break;
             default:
-                ((mt) this.c).E();
+                ((ot) this.c).E();
                 ((ActionMode.Callback) this.b).onDestroyActionMode(actionMode);
                 break;
         }
@@ -178,12 +178,12 @@ public final class g9 implements ActionMode.Callback {
                 }
                 MenuItem findItem4 = menu.findItem(android.R.id.cut);
                 if (findItem4 != null) {
-                    findItem4.setVisible(((w9) this.c) instanceof oi.g3);
+                    findItem4.setVisible(((w9) this.c) instanceof oi.h3);
                 }
                 MenuItem findItem5 = menu.findItem(android.R.id.paste);
                 if (findItem5 != null) {
                     w9 w9Var3 = (w9) this.c;
-                    if (w9Var3 instanceof oi.g3) {
+                    if (w9Var3 instanceof oi.h3) {
                         try {
                             v9 v9Var = w9Var3.C;
                             context = v9Var != null ? v9Var.getContext() : org.telegram.messenger.t0.b;

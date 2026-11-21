@@ -14,7 +14,7 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class ku extends zt {
     public final TL_iv.pageBlockMath X;
@@ -89,7 +89,7 @@ public final class ku extends zt {
             return;
         }
         ev evVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Wc : org.telegram.ui.ActionBar.n6.Vc, evVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.Wc : org.telegram.ui.ActionBar.m6.Vc, evVar.D);
         Paint paint = this.j0;
         paint.setColor(w02);
         int D = f3.D(8.0f, 2, this.a0);

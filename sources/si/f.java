@@ -10,10 +10,10 @@ import android.os.Build;
 import bg.d0;
 import c8.kc;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import ri.r;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class f extends ri.e {
     public g E;
@@ -177,12 +177,12 @@ public final class f extends ri.e {
         this.x = true;
     }
 
-    @Override // ri.e, org.telegram.ui.ActionBar.c6
+    @Override // ri.e, org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         ui.c cVar = this.H;
         if (cVar != null) {
-            this.I = n6.r1(this.J / 255.0f, cVar.b);
-            this.K = n6.r1(this.L / 255.0f, this.H.b);
+            this.I = m6.r1(this.J / 255.0f, cVar.b);
+            this.K = m6.r1(this.L / 255.0f, this.H.b);
         }
         this.w = true;
         this.x = true;

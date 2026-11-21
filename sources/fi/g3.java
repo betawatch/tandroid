@@ -8,7 +8,7 @@ import android.text.style.CharacterStyle;
 import android.text.style.ClickableSpan;
 import android.text.style.URLSpan;
 import android.view.View;
-import di.t9;
+import di.u9;
 import java.net.URLDecoder;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaController;
@@ -23,50 +23,50 @@ import org.telegram.messenger.xy;
 import org.telegram.messenger.zy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c30;
-import org.telegram.ui.Components.dz0;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.f30;
+import org.telegram.ui.Components.fz0;
 import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.o41;
-import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.s41;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class g3 extends x7 {
     public final /* synthetic */ z3 A0;
     public final /* synthetic */ f9 y0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 z0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g3(z3 z3Var, Context context, b bVar, f9 f9Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public g3(z3 z3Var, Context context, b bVar, f9 f9Var, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context, bVar);
         this.A0 = z3Var;
         this.y0 = f9Var;
-        this.z0 = i6Var;
+        this.z0 = h6Var;
     }
 
     @Override // fi.x7
-    public final void F(org.telegram.ui.Components.x5 x5Var) {
-        if (x5Var != null) {
+    public final void F(org.telegram.ui.Components.y5 y5Var) {
+        if (y5Var != null) {
             z3 z3Var = this.A0;
             if (z3Var.A1 == null) {
                 return;
             }
-            TLRPC.Document document = x5Var.document;
+            TLRPC.Document document = y5Var.document;
             if (document == null) {
-                document = org.telegram.ui.Components.o5.e(z3Var.m2, x5Var.documentId);
+                document = org.telegram.ui.Components.p5.e(z3Var.m2, y5Var.documentId);
             }
             if (document == null) {
                 return;
             }
             c3 c3Var = z3Var.M0;
-            org.telegram.ui.ActionBar.i6 i6Var = this.z0;
-            gc h = new lc(c3Var, i6Var).h(document, 2, new bi.j(this, this.y0, i6Var, 6));
+            org.telegram.ui.ActionBar.h6 h6Var = this.z0;
+            gc h = new lc(c3Var, h6Var).h(document, 2, new bi.j(this, this.y0, h6Var, 6));
             if (h == null) {
                 return;
             }
@@ -78,26 +78,26 @@ public final class g3 extends x7 {
     @Override // fi.x7
     public final void G(CharacterStyle characterStyle, View view) {
         f9 f9Var = this.y0;
-        org.telegram.ui.ActionBar.h2 h2Var = f9Var.f;
-        boolean z10 = characterStyle instanceof s41;
+        org.telegram.ui.ActionBar.g2 g2Var = f9Var.f;
+        boolean z10 = characterStyle instanceof v41;
         z3 z3Var = this.A0;
         if (z10) {
-            TLRPC.User c22 = mp.u1(z3Var.m2).c2(Utilities.A(((s41) characterStyle).getURL()));
+            TLRPC.User c22 = mp.u1(z3Var.m2).c2(Utilities.A(((v41) characterStyle).getURL()));
             if (c22 != null) {
-                mp.u1(z3Var.m2).G3(c22, null, h2Var, 0);
+                mp.u1(z3Var.m2).G3(c22, null, g2Var, 0);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof p41)) {
+        if (!(characterStyle instanceof s41)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof r41);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof u41);
                 return;
             }
-            if (characterStyle instanceof o41) {
-                o41 o41Var = (o41) characterStyle;
-                org.telegram.messenger.g0.g(o41Var.a.subSequence(o41Var.b, o41Var.c).toString());
-                n10.t(null, 2131743959, new lc(z3Var.M0, this.z0));
+            if (characterStyle instanceof r41) {
+                r41 r41Var = (r41) characterStyle;
+                org.telegram.messenger.g0.g(r41Var.a.subSequence(r41Var.b, r41Var.c).toString());
+                n10.t(null, 2131743953, new lc(z3Var.M0, this.z0));
                 return;
             } else {
                 if (characterStyle instanceof ClickableSpan) {
@@ -107,16 +107,16 @@ public final class g3 extends x7 {
                 return;
             }
         }
-        String url = ((p41) characterStyle).getURL();
+        String url = ((s41) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
-                f9Var.N(new c30(url, null));
+                f9Var.N(new f30(url, null));
                 return;
             }
             Bundle bundle = new Bundle();
             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             bundle.putString("hashtag", url);
-            f9Var.N(new i90(bundle, null));
+            f9Var.N(new k90(bundle, null));
             return;
         }
         String c10 = vf.c.c(url);
@@ -126,7 +126,7 @@ public final class g3 extends x7 {
         }
         String lowerCase = c10.toLowerCase();
         if (url.startsWith("@")) {
-            mp.u1(z3Var.m2).F3(lowerCase, h2Var, 0, null);
+            mp.u1(z3Var.m2).F3(lowerCase, g2Var, 0, null);
         } else {
             M(0, url, characterStyle, false);
         }
@@ -154,15 +154,15 @@ public final class g3 extends x7 {
         } catch (Exception unused) {
         }
         Context context = getContext();
-        org.telegram.ui.ActionBar.i6 i6Var = this.z0;
-        org.telegram.ui.ActionBar.x2 j3 = org.telegram.messenger.f3.j(1, context, i6Var, false);
+        org.telegram.ui.ActionBar.h6 h6Var = this.z0;
+        org.telegram.ui.ActionBar.w2 j3 = org.telegram.messenger.f3.j(1, context, h6Var, false);
         j3.P = str;
         j3.Q = false;
         j3.R = true;
         z3 z3Var = this.A0;
         x3 x3Var = z3Var.y1;
-        CharSequence[] charSequenceArr = (x3Var == null || x3Var.d()) ? new CharSequence[]{gd.M0(2131747624, null), gd.M0(2131751756, null)} : new CharSequence[]{gd.M0(2131747624, null)};
-        final org.telegram.ui.ActionBar.i6 i6Var2 = this.z0;
+        CharSequence[] charSequenceArr = (x3Var == null || x3Var.d()) ? new CharSequence[]{gd.N0(2131747623, null), gd.N0(2131751755, null)} : new CharSequence[]{gd.N0(2131747623, null)};
+        final org.telegram.ui.ActionBar.h6 h6Var2 = this.z0;
         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: fi.f3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i7) {
@@ -171,14 +171,14 @@ public final class g3 extends x7 {
                     g3Var.G(uRLSpan, view);
                 } else if (i7 == 1) {
                     org.telegram.messenger.g0.g(url);
-                    new lc(g3Var.A0.M0, i6Var2).k(false).j();
+                    new lc(g3Var.A0.M0, h6Var2).k(false).j();
                 }
             }
         };
         j3.M = charSequenceArr;
         j3.L = onClickListener;
-        j3.I0 = new t9(aVar, 3);
-        j3.P(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, i6Var));
+        j3.I0 = new u9(aVar, 3);
+        j3.P(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, h6Var));
         ((w8) z3Var.A1).h(j3);
     }
 
@@ -191,13 +191,13 @@ public final class g3 extends x7 {
         final int i7 = 1;
         z3 z3Var = this.A0;
         f9 f9Var = this.y0;
-        final org.telegram.ui.ActionBar.i6 i6Var = this.z0;
+        final org.telegram.ui.ActionBar.h6 h6Var = this.z0;
         if (document != null) {
-            y60 G = y60.G(f9Var.w, i6Var, z3Var.u0);
+            a70 G = a70.G(f9Var.w, h6Var, z3Var.u0);
             G.i = 3;
             G.b0(-org.telegram.messenger.g0.L(8.0f), 0.0f);
             final int i10 = 0;
-            G.l(R.drawable.msg_saved, gd.M0(2131744487, null), new Runnable(this) { // from class: fi.d3
+            G.l(R.drawable.msg_saved, gd.N0(2131744481, null), new Runnable(this) { // from class: fi.d3
                 public final /* synthetic */ g3 b;
 
                 {
@@ -207,7 +207,7 @@ public final class g3 extends x7 {
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i11 = i10;
-                    org.telegram.ui.ActionBar.i6 i6Var2 = i6Var;
+                    org.telegram.ui.ActionBar.h6 h6Var2 = h6Var;
                     TLRPC.Document document2 = document;
                     g3 g3Var = this.b;
                     switch (i11) {
@@ -218,7 +218,7 @@ public final class g3 extends x7 {
                             long e10 = j10.i(z3Var2.m2).e();
                             x3 x3Var = z3Var2.y1;
                             C.r0(xy.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, x3Var != null ? x3Var.a : null, null, false));
-                            new lc(z3Var2.M0, i6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(gd.M0(2131744486, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
+                            new lc(z3Var2.M0, h6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(gd.N0(2131744480, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
                             break;
                         default:
                             z3 z3Var3 = g3Var.A0;
@@ -234,12 +234,12 @@ public final class g3 extends x7 {
                                 gpVar.e();
                             }
                             ConnectionsManager.getInstance(z3Var3.m2).sendRequest(tL_account_saveMusic, null);
-                            new lc(z3Var3.M0, i6Var2).Q(R.raw.ic_save_to_music, 36, gd.M0(2131744488, null)).k(true);
+                            new lc(z3Var3.M0, h6Var2).Q(R.raw.ic_save_to_music, 36, gd.N0(2131744482, null)).k(true);
                             break;
                     }
                 }
             }, document instanceof TLRPC.TL_document);
-            G.c(R.drawable.msg_tone_add, gd.M0(2131744489, null), new Runnable(this) { // from class: fi.d3
+            G.c(R.drawable.msg_tone_add, gd.N0(2131744483, null), new Runnable(this) { // from class: fi.d3
                 public final /* synthetic */ g3 b;
 
                 {
@@ -249,7 +249,7 @@ public final class g3 extends x7 {
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i11 = i7;
-                    org.telegram.ui.ActionBar.i6 i6Var2 = i6Var;
+                    org.telegram.ui.ActionBar.h6 h6Var2 = h6Var;
                     TLRPC.Document document2 = document;
                     g3 g3Var = this.b;
                     switch (i11) {
@@ -260,7 +260,7 @@ public final class g3 extends x7 {
                             long e10 = j10.i(z3Var2.m2).e();
                             x3 x3Var = z3Var2.y1;
                             C.r0(xy.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, x3Var != null ? x3Var.a : null, null, false));
-                            new lc(z3Var2.M0, i6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(gd.M0(2131744486, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
+                            new lc(z3Var2.M0, h6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(gd.N0(2131744480, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
                             break;
                         default:
                             z3 z3Var3 = g3Var.A0;
@@ -276,7 +276,7 @@ public final class g3 extends x7 {
                                 gpVar.e();
                             }
                             ConnectionsManager.getInstance(z3Var3.m2).sendRequest(tL_account_saveMusic, null);
-                            new lc(z3Var3.M0, i6Var2).Q(R.raw.ic_save_to_music, 36, gd.M0(2131744488, null)).k(true);
+                            new lc(z3Var3.M0, h6Var2).Q(R.raw.ic_save_to_music, 36, gd.N0(2131744482, null)).k(true);
                             break;
                     }
                 }
@@ -296,24 +296,24 @@ public final class g3 extends x7 {
             return;
         }
         if (s7Var.b == null || s7Var.c == null) {
-            gc Q = new lc(z3Var.M0, i6Var).Q(R.raw.error, 36, gd.M0(2131744429, null));
+            gc Q = new lc(z3Var.M0, h6Var).Q(R.raw.error, 36, gd.N0(2131744423, null));
             Q.a = 3;
             Q.k(true);
         } else {
-            mp.u1(z3Var.m2).R1().g0(s7Var.c.intValue(), s7Var.b.longValue(), new bi.i2(this, s7Var, f9Var, i6Var, 2));
+            mp.u1(z3Var.m2).R1().g0(s7Var.c.intValue(), s7Var.b.longValue(), new bi.m2(this, s7Var, f9Var, h6Var, 2));
         }
     }
 
     public final void M(int i7, String str, CharacterStyle characterStyle, boolean z10) {
-        dz0 dz0Var;
+        fz0 fz0Var;
         if (z10 || org.telegram.messenger.g0.H3(str)) {
             f9 f9Var = this.y0;
             if (i7 == 0 || i7 == 2) {
-                org.telegram.ui.Components.b5.o0(f9Var.f, str, true, true, true, (!(characterStyle instanceof r41) || (dz0Var = ((r41) characterStyle).a) == null || (dz0Var.a & 1024) == 0) ? false : true, null, null, this.z0);
+                org.telegram.ui.Components.c5.o0(f9Var.f, str, true, true, true, (!(characterStyle instanceof u41) || (fz0Var = ((u41) characterStyle).a) == null || (fz0Var.a & 1024) == 0) ? false : true, null, null, this.z0);
                 return;
             } else {
                 if (i7 == 1) {
-                    org.telegram.ui.Components.b5.o0(f9Var.f, str, true, true, false, false, null, null, this.z0);
+                    org.telegram.ui.Components.c5.o0(f9Var.f, str, true, true, false, false, null, null, this.z0);
                     return;
                 }
                 return;

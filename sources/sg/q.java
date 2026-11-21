@@ -13,16 +13,17 @@ import android.widget.LinearLayout;
 import c8.ma;
 import com.google.android.gms.internal.vision.e2;
 import di.za;
+import hi.o4;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.x2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.cd0;
+import org.telegram.ui.jg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class q extends x2 {
+public final class q extends w2 {
     public static final /* synthetic */ int u1 = 0;
     public final za m1;
     public final ImageView n1;
@@ -33,8 +34,8 @@ public final class q extends x2 {
     public androidx.activity.n s1;
     public boolean t1;
 
-    public q(Context context, i6 i6Var) {
-        super(1, context, i6Var, true);
+    public q(Context context, h6 h6Var) {
+        super(1, context, h6Var, true);
         this.p1 = new Path();
         P(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -48,13 +49,13 @@ public final class q extends x2 {
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(n6.h0(1090519039, 1, -1));
-        imageView.setOnClickListener(new cd0(27, this, context));
+        imageView.setBackground(m6.h0(1090519039, 1, -1));
+        imageView.setOnClickListener(new jg0(25, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(n6.h0(1090519039, 1, -1));
-        imageView2.setOnClickListener(new hi.o0(this, 29));
+        imageView2.setBackground(m6.h0(1090519039, 1, -1));
+        imageView2.setOnClickListener(new o4(this, 28));
         k kVar = new k(this, context);
         this.o1 = kVar;
         kVar.c = Color.alpha(-65536) / 255.0f;
@@ -142,7 +143,7 @@ public final class q extends x2 {
         pVar.e = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         super.dismiss();
         q0.a aVar = this.r1;
@@ -151,7 +152,7 @@ public final class q extends x2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         boolean z10;
         androidx.activity.n nVar = this.s1;

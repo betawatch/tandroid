@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k3 extends FrameLayout {
     public int E;
@@ -28,7 +28,7 @@ public final class k3 extends FrameLayout {
     public x2 L;
     public final /* synthetic */ g4 M;
     public int a;
-    public final hi.w b;
+    public final hi.x b;
     public final e4 c;
     public final v4.c0 d;
     public final h3 e;
@@ -45,34 +45,34 @@ public final class k3 extends FrameLayout {
     public k3(g4 g4Var, Activity activity) {
         super(activity);
         this.M = g4Var;
-        int i7 = org.telegram.ui.ActionBar.n6.Gl;
-        this.x = org.telegram.ui.ActionBar.n6.x0(null, i7, false);
-        int x02 = org.telegram.ui.ActionBar.n6.x0(null, i7, false);
+        int i7 = org.telegram.ui.ActionBar.m6.Gl;
+        this.x = org.telegram.ui.ActionBar.m6.x0(null, i7, false);
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, i7, false);
         this.y = x02;
         this.E = x02;
         this.G = false;
         this.K = -1.0f;
         new Matrix();
-        hi.w wVar = new hi.w(this, activity);
-        this.b = wVar;
-        wVar.setClipToPadding(false);
-        wVar.setPadding(0, org.telegram.messenger.g0.L(56.0f), 0, 0);
-        wVar.setTopGlowOffset(org.telegram.messenger.g0.L(56.0f));
-        ((v4.k) wVar.getItemAnimator()).C = false;
+        hi.x xVar = new hi.x(this, activity);
+        this.b = xVar;
+        xVar.setClipToPadding(false);
+        xVar.setPadding(0, org.telegram.messenger.g0.L(56.0f), 0, 0);
+        xVar.setTopGlowOffset(org.telegram.messenger.g0.L(56.0f));
+        ((v4.k) xVar.getItemAnimator()).C = false;
         e4 e4Var = new e4(g4Var, activity, g4Var.L != null);
         this.c = e4Var;
-        wVar.setAdapter(e4Var);
+        xVar.setAdapter(e4Var);
         v4.c0 c0Var = new v4.c0(1, false);
         this.d = c0Var;
-        wVar.setLayoutManager(c0Var);
-        wVar.setOnScrollListener(new g3(this, 0));
-        addView(wVar, c8.ma.c(-1.0f, -1));
+        xVar.setLayoutManager(c0Var);
+        xVar.setOnScrollListener(new g3(this, 0));
+        addView(xVar, c8.ma.c(-1.0f, -1));
         h3 h3Var = new h3(this, getContext());
         this.e = h3Var;
         h3Var.setShouldWaitWebViewScroll(true);
         h3Var.setFullSize(true);
         h3Var.setAllowFullSizeSwipe(true);
-        i3 i3Var = new i3(this, getContext(), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false));
+        i3 i3Var = new i3(this, getContext(), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false));
         this.f = i3Var;
         final int i10 = 0;
         i3Var.setOnCloseRequestedListener(new Runnable(this) { // from class: org.telegram.ui.e3
@@ -89,12 +89,12 @@ public final class k3 extends FrameLayout {
                         g4 g4Var2 = this.b.M;
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity != null) {
-                            org.telegram.ui.ActionBar.g3 N = launchActivity.N();
+                            org.telegram.ui.ActionBar.f3 N = launchActivity.N();
                             if (N != null) {
                                 boolean z10 = false;
                                 int i11 = 0;
                                 while (true) {
-                                    HashMap hashMap = org.telegram.ui.ActionBar.g3.L;
+                                    HashMap hashMap = org.telegram.ui.ActionBar.f3.L;
                                     if (i11 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i11));
                                         if (arrayList != null) {
@@ -103,9 +103,9 @@ public final class k3 extends FrameLayout {
                                             while (i12 < size) {
                                                 Object obj = arrayList.get(i12);
                                                 i12++;
-                                                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj;
-                                                if (f3Var.J == g4Var2) {
-                                                    z10 = N.h(i11, f3Var, true);
+                                                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj;
+                                                if (e3Var.J == g4Var2) {
+                                                    z10 = N.h(i11, e3Var, true);
                                                 }
                                             }
                                         }
@@ -154,12 +154,12 @@ public final class k3 extends FrameLayout {
                         g4 g4Var2 = this.b.M;
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity != null) {
-                            org.telegram.ui.ActionBar.g3 N = launchActivity.N();
+                            org.telegram.ui.ActionBar.f3 N = launchActivity.N();
                             if (N != null) {
                                 boolean z10 = false;
                                 int i112 = 0;
                                 while (true) {
-                                    HashMap hashMap = org.telegram.ui.ActionBar.g3.L;
+                                    HashMap hashMap = org.telegram.ui.ActionBar.f3.L;
                                     if (i112 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i112));
                                         if (arrayList != null) {
@@ -168,9 +168,9 @@ public final class k3 extends FrameLayout {
                                             while (i12 < size) {
                                                 Object obj = arrayList.get(i12);
                                                 i12++;
-                                                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj;
-                                                if (f3Var.J == g4Var2) {
-                                                    z10 = N.h(i112, f3Var, true);
+                                                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj;
+                                                if (e3Var.J == g4Var2) {
+                                                    z10 = N.h(i112, e3Var, true);
                                                 }
                                             }
                                         }
@@ -216,12 +216,12 @@ public final class k3 extends FrameLayout {
                         g4 g4Var2 = this.b.M;
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity != null) {
-                            org.telegram.ui.ActionBar.g3 N = launchActivity.N();
+                            org.telegram.ui.ActionBar.f3 N = launchActivity.N();
                             if (N != null) {
                                 boolean z10 = false;
                                 int i112 = 0;
                                 while (true) {
-                                    HashMap hashMap = org.telegram.ui.ActionBar.g3.L;
+                                    HashMap hashMap = org.telegram.ui.ActionBar.f3.L;
                                     if (i112 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i112));
                                         if (arrayList != null) {
@@ -230,9 +230,9 @@ public final class k3 extends FrameLayout {
                                             while (i122 < size) {
                                                 Object obj = arrayList.get(i122);
                                                 i122++;
-                                                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj;
-                                                if (f3Var.J == g4Var2) {
-                                                    z10 = N.h(i112, f3Var, true);
+                                                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj;
+                                                if (e3Var.J == g4Var2) {
+                                                    z10 = N.h(i112, e3Var, true);
                                                 }
                                             }
                                         }
@@ -272,7 +272,7 @@ public final class k3 extends FrameLayout {
         g4 g4Var = k3Var.M;
         t3 t3Var = g4Var.L;
         if (z10) {
-            int w10 = org.telegram.ui.ActionBar.n6.w(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Gl, false), i7);
+            int w10 = org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false), i7);
             k3Var.x = w10;
             if (k3Var == g4Var.v0[0]) {
                 if (org.telegram.messenger.bz.v0) {
@@ -283,7 +283,7 @@ public final class k3 extends FrameLayout {
                 }
             }
         } else {
-            int w11 = org.telegram.ui.ActionBar.n6.w(-1, i7);
+            int w11 = org.telegram.ui.ActionBar.m6.w(-1, i7);
             k3Var.y = w11;
             if (k3Var == g4Var.v0[0]) {
                 if (org.telegram.messenger.bz.v0) {
@@ -304,9 +304,9 @@ public final class k3 extends FrameLayout {
         i3 i3Var = this.f;
         i3Var.h();
         i3Var.a = null;
-        int i7 = org.telegram.ui.ActionBar.n6.Gl;
-        this.x = org.telegram.ui.ActionBar.n6.x0(null, i7, false);
-        int x02 = org.telegram.ui.ActionBar.n6.x0(null, i7, false);
+        int i7 = org.telegram.ui.ActionBar.m6.Gl;
+        this.x = org.telegram.ui.ActionBar.m6.x0(null, i7, false);
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, i7, false);
         this.y = x02;
         this.E = x02;
         b3 b3Var = this.r;
@@ -373,9 +373,9 @@ public final class k3 extends FrameLayout {
         if (f() && org.telegram.messenger.bz.v0) {
             return this.x;
         }
-        int i7 = org.telegram.ui.ActionBar.n6.Gl;
+        int i7 = org.telegram.ui.ActionBar.m6.Gl;
         this.M.getClass();
-        return org.telegram.ui.ActionBar.n6.v0(i7);
+        return org.telegram.ui.ActionBar.m6.v0(i7);
     }
 
     public e4 getAdapter() {
@@ -383,7 +383,7 @@ public final class k3 extends FrameLayout {
     }
 
     public int getBackgroundColor() {
-        return (f() && org.telegram.messenger.bz.v0) ? this.n ? org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Gl, false) : this.y : org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Gl, false);
+        return (f() && org.telegram.messenger.bz.v0) ? this.n ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false) : this.y : org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false);
     }
 
     public float getListTop() {
@@ -394,14 +394,14 @@ public final class k3 extends FrameLayout {
             }
             return 0.0f;
         }
-        hi.w wVar = this.b;
-        float height = wVar.getHeight();
-        for (int i10 = 0; i10 < wVar.getChildCount(); i10++) {
-            View childAt = wVar.getChildAt(i10);
-            if (wVar.getLayoutManager() == null) {
+        hi.x xVar = this.b;
+        float height = xVar.getHeight();
+        for (int i10 = 0; i10 < xVar.getChildCount(); i10++) {
+            View childAt = xVar.getChildAt(i10);
+            if (xVar.getLayoutManager() == null) {
                 i7 = 0;
             } else {
-                wVar.getLayoutManager().getClass();
+                xVar.getLayoutManager().getClass();
                 i7 = RecyclerView.U(childAt).f;
             }
             height = i7 == 2147483646 ? Math.min(height, childAt.getBottom()) : Math.min(height, childAt.getTop());
@@ -409,7 +409,7 @@ public final class k3 extends FrameLayout {
         return height;
     }
 
-    public org.telegram.ui.Components.ck0 getListView() {
+    public org.telegram.ui.Components.ek0 getListView() {
         return this.b;
     }
 
@@ -425,10 +425,10 @@ public final class k3 extends FrameLayout {
             int L0 = c0Var.L0();
             if (c0Var.m(L0) != null) {
                 int[] iArr = this.c.K;
-                hi.w wVar = this.b;
+                hi.x xVar = this.b;
                 if (iArr != null) {
                     int i7 = L0 - 1;
-                    return Utilities.l((((i7 < 0 || i7 >= iArr.length) ? 0 : iArr[i7]) + ((L0 != 0 || t3Var == null) ? -r4.getTop() : 0)) / Math.max(1, r5.L - wVar.getHeight()));
+                    return Utilities.l((((i7 < 0 || i7 >= iArr.length) ? 0 : iArr[i7]) + ((L0 != 0 || t3Var == null) ? -r4.getTop() : 0)) / Math.max(1, r5.L - xVar.getHeight()));
                 }
                 int N0 = c0Var.N0();
                 if (t3Var != null) {
@@ -444,7 +444,7 @@ public final class k3 extends FrameLayout {
                 if (m10 != null) {
                     float width = getWidth() / (r0 - 1);
                     float measuredHeight = m10.getMeasuredHeight();
-                    return ((L0 * width) + (N0 >= B ? (((B - L0) * width) * (wVar.getMeasuredHeight() - m10.getTop())) / measuredHeight : (1.0f - ((Math.min(0, m10.getTop() - wVar.getPaddingTop()) + measuredHeight) / measuredHeight)) * width)) / getWidth();
+                    return ((L0 * width) + (N0 >= B ? (((B - L0) * width) * (xVar.getMeasuredHeight() - m10.getTop())) / measuredHeight : (1.0f - ((Math.min(0, m10.getTop() - xVar.getPaddingTop()) + measuredHeight) / measuredHeight)) * width)) / getWidth();
                 }
             }
         } else if (f() && (webView = this.f.getWebView()) != null) {
@@ -476,7 +476,7 @@ public final class k3 extends FrameLayout {
                         }
                         String a10 = vf.c.a(parse.getHost());
                         String[] split = a10.split("\\.");
-                        if (split.length > 2 && (l0Var = this.M.i0) != null && hi.m3.h(a10, l0Var.F) > org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(162.0f)) {
+                        if (split.length > 2 && (l0Var = this.M.i0) != null && hi.l3.h(a10, l0Var.F) > org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(162.0f)) {
                             a10 = split[split.length - 2] + '.' + split[split.length - 1];
                         }
                         uri = vf.c.w(parse, null, "", a10, null);
@@ -543,9 +543,9 @@ public final class k3 extends FrameLayout {
         if (!this.n || (b3Var = this.r) == null) {
             return;
         }
-        int i7 = org.telegram.ui.ActionBar.n6.Gl;
-        b3Var.b(org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.n6.x0(null, i7, false)) <= 0.721f, false);
-        org.telegram.ui.ActionBar.u6.h(i7, this.r, null);
+        int i7 = org.telegram.ui.ActionBar.m6.Gl;
+        b3Var.b(org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.x0(null, i7, false)) <= 0.721f, false);
+        org.telegram.ui.ActionBar.t6.h(i7, this.r, null);
     }
 
     public void setLastVisible(boolean z10) {

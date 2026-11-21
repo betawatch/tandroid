@@ -23,7 +23,7 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
-import di.c7;
+import di.v6;
 import fi.m7;
 import fi.w;
 import fi.z3;
@@ -37,7 +37,7 @@ import q4.q;
 import r0.a0;
 import r0.i0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class l extends ViewGroup {
     public static final b u0;
@@ -82,7 +82,7 @@ public class l extends ViewGroup {
     public ArrayList l0;
     public h m0;
     public Parcelable n;
-    public c7 n0;
+    public v6 n0;
     public int o0;
     public int p0;
     public ArrayList q0;

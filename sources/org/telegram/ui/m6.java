@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -56,10 +56,10 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
             case 2:
                 final cx cxVar = (cx) obj5;
                 ad adVar = (ad) obj4;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj3;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj3;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
                 final Long l10 = (Long) obj2;
-                Utilities.u(0, new bi.i2(cxVar, l10, adVar, h2Var, 12), new x(cxVar, u1Var, l10, 8), new org.telegram.messenger.x10() { // from class: org.telegram.ui.ru
+                Utilities.u(0, new bi.m2(cxVar, l10, adVar, g2Var, 12), new x(cxVar, t1Var, l10, 8), new org.telegram.messenger.x10() { // from class: org.telegram.ui.ru
                     @Override // org.telegram.messenger.x10
                     public final void a(Object obj6) {
                         switch (i11) {
@@ -127,21 +127,21 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                                 }
                         }
                     }
-                }, new di.m2(cxVar, u1Var, l10, adVar, h2Var, 5));
+                }, new di.n2(cxVar, t1Var, l10, adVar, g2Var, 5));
                 break;
             default:
-                org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) obj5;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) obj5;
                 TL_account.Passkey passkey = (TL_account.Passkey) obj4;
                 String str = (String) obj3;
                 TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (passkeys == null) {
                     if (tL_error != null) {
-                        new org.telegram.ui.Components.lc(x2Var.F, x2Var.J0).f0(str, false);
+                        new org.telegram.ui.Components.lc(w2Var.F, w2Var.J0).f0(str, false);
                         break;
                     }
                 } else {
-                    x2Var.dismiss();
+                    w2Var.dismiss();
                     while (i11 < passkeys.passkeys.size()) {
                         if (TextUtils.equals(passkeys.passkeys.get(i11).id, passkey.id)) {
                             passkeys.passkeys.remove(i11);
@@ -149,11 +149,11 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                         }
                         i11++;
                     }
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         T.presentFragment(passkeysActivity);
-                        org.telegram.messenger.g0.h3(new we0(9, passkeysActivity, passkey), 150L);
+                        org.telegram.messenger.g0.h3(new fe0(11, passkeysActivity, passkey), 150L);
                         break;
                     }
                 }

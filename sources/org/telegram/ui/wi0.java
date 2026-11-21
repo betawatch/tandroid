@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wi0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class wi0 implements View.OnTouchListener {
             case 0:
                 if (hk0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        ts tsVar = new ts(null, false);
-                        tsVar.r = new aj0(i12, hk0Var, view);
-                        hk0Var.presentFragment(tsVar);
+                        us usVar = new us(null, false);
+                        usVar.r = new aj0(i12, hk0Var, view);
+                        hk0Var.presentFragment(usVar);
                     }
                     break;
                 }
@@ -37,12 +37,12 @@ public final /* synthetic */ class wi0 implements View.OnTouchListener {
                 if (hk0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hk0Var.getParentActivity());
-                        String M0 = org.telegram.messenger.gd.M0(2131747273, null);
-                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                        u1Var.S = M0;
-                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.M0(2131747315, null), org.telegram.messenger.gd.M0(2131747376, null)}, new k4(hk0Var, i11));
-                        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131752578, null), null);
-                        hk0Var.showDialog(u1Var);
+                        String N0 = org.telegram.messenger.gd.N0(2131747272, null);
+                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                        t1Var.S = N0;
+                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.N0(2131747314, null), org.telegram.messenger.gd.N0(2131747375, null)}, new k4(hk0Var, i11));
+                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752577, null), null);
+                        hk0Var.showDialog(t1Var);
                     }
                     break;
                 }
@@ -50,9 +50,9 @@ public final /* synthetic */ class wi0 implements View.OnTouchListener {
             case 2:
                 if (hk0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        ts tsVar2 = new ts(null, false);
-                        tsVar2.r = new xi0(hk0Var, i10);
-                        hk0Var.presentFragment(tsVar2);
+                        us usVar2 = new us(null, false);
+                        usVar2.r = new xi0(hk0Var, i10);
+                        hk0Var.presentFragment(usVar2);
                     }
                     break;
                 }
@@ -60,9 +60,9 @@ public final /* synthetic */ class wi0 implements View.OnTouchListener {
             default:
                 if (hk0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        ts tsVar3 = new ts(null, false);
-                        tsVar3.r = new xi0(hk0Var, i11);
-                        hk0Var.presentFragment(tsVar3);
+                        us usVar3 = new us(null, false);
+                        usVar3.r = new xi0(hk0Var, i11);
+                        hk0Var.presentFragment(usVar3);
                     }
                     break;
                 }

@@ -20,21 +20,22 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Executor;
 import jb.l;
-import kg.x1;
+import kg.i0;
+import kg.w1;
 import m1.g;
-import oi.j0;
+import oi.a6;
 import oi.k0;
-import oi.z5;
+import oi.l0;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.c0;
-import org.telegram.ui.Components.y60;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.md0;
 import p5.e;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class d implements ib.b, q5.b {
     public final /* synthetic */ int a;
@@ -111,9 +112,9 @@ public final class d implements ib.b, q5.b {
 
     public void c() {
         j(null);
-        y60 y60Var = (y60) this.d;
-        if (y60Var != null) {
-            y60Var.v();
+        a70 a70Var = (a70) this.d;
+        if (a70Var != null) {
+            a70Var.v();
             this.d = null;
         }
         this.e = null;
@@ -121,8 +122,8 @@ public final class d implements ib.b, q5.b {
         this.h = null;
     }
 
-    public void d(z5 z5Var, ArrayList arrayList) {
-        i6 i6Var = (i6) this.c;
+    public void d(a6 a6Var, ArrayList arrayList) {
+        h6 h6Var = (h6) this.c;
         LinearLayout linearLayout = (LinearLayout) this.e;
         if (linearLayout == null) {
             return;
@@ -133,12 +134,12 @@ public final class d implements ib.b, q5.b {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            j0 j0Var = (j0) obj;
-            x1 x1Var = new x1(z5Var.getContext(), j0Var, i6Var);
-            x1Var.setPadding(g0.L(8.0f), 0, g0.L(12.0f), 0);
-            x1Var.setBackground(n6.a0(n6.w0(n6.i6, i6Var), 0, 0));
-            x1Var.setOnClickListener(new h(this, z5Var, j0Var, 19));
-            ((LinearLayout) this.e).addView(x1Var, ma.o(-1, 48));
+            k0 k0Var = (k0) obj;
+            w1 w1Var = new w1(a6Var.getContext(), k0Var, h6Var);
+            w1Var.setPadding(g0.L(8.0f), 0, g0.L(12.0f), 0);
+            w1Var.setBackground(m6.a0(m6.w0(m6.i6, h6Var), 0, 0));
+            w1Var.setOnClickListener(new h(this, a6Var, k0Var, 19));
+            ((LinearLayout) this.e).addView(w1Var, ma.o(-1, 48));
         }
     }
 
@@ -191,7 +192,7 @@ public final class d implements ib.b, q5.b {
                 Context context = (Context) ((fd.a) this.b).get();
                 e eVar = (e) ((fd.a) this.c).get();
                 v5.d dVar = (v5.d) ((fd.a) this.d).get();
-                nd0 nd0Var = (nd0) ((nd0) this.e).get();
+                md0 md0Var = (md0) ((md0) this.e).get();
                 Executor executor = (Executor) ((fd.a) this.f).get();
                 w5.c cVar = (w5.c) ((fd.a) this.h).get();
                 qb.a aVar = new qb.a(28);
@@ -201,7 +202,7 @@ public final class d implements ib.b, q5.b {
                 cVar3.a = context;
                 cVar3.b = eVar;
                 cVar3.c = dVar;
-                cVar3.d = nd0Var;
+                cVar3.d = md0Var;
                 cVar3.e = executor;
                 cVar3.f = cVar;
                 cVar3.g = aVar;
@@ -211,51 +212,51 @@ public final class d implements ib.b, q5.b {
         }
     }
 
-    public void j(z5 z5Var) {
-        z5 z5Var2 = (z5) this.n;
-        if (z5Var2 == z5Var) {
+    public void j(a6 a6Var) {
+        a6 a6Var2 = (a6) this.n;
+        if (a6Var2 == a6Var) {
             return;
         }
-        if (z5Var2 != null) {
-            z5Var2.setShowCommandBackground(false);
+        if (a6Var2 != null) {
+            a6Var2.setShowCommandBackground(false);
         }
-        this.n = z5Var;
-        if (z5Var != null) {
-            z5Var.setShowCommandBackground(true);
+        this.n = a6Var;
+        if (a6Var != null) {
+            a6Var.setShowCommandBackground(true);
         }
     }
 
-    public void k(z5 z5Var, String str) {
-        y60 y60Var;
-        y60 y60Var2;
+    public void k(a6 a6Var, String str) {
+        a70 a70Var;
+        a70 a70Var2;
         if (str == null) {
             c();
             return;
         }
-        ArrayList a10 = j0.a(str);
+        ArrayList a10 = k0.a(str);
         if (a10.isEmpty()) {
             c();
             return;
         }
-        j(z5Var);
-        if (((z5) this.h) == z5Var && a10.equals((ArrayList) this.f) && (y60Var2 = (y60) this.d) != null && y60Var2.E()) {
+        j(a6Var);
+        if (((a6) this.h) == a6Var && a10.equals((ArrayList) this.f) && (a70Var2 = (a70) this.d) != null && a70Var2.E()) {
             return;
         }
-        if (((z5) this.h) == z5Var && (y60Var = (y60) this.d) != null && y60Var.E() && ((LinearLayout) this.e) != null) {
+        if (((a6) this.h) == a6Var && (a70Var = (a70) this.d) != null && a70Var.E() && ((LinearLayout) this.e) != null) {
             this.f = a10;
-            d(z5Var, a10);
-            ((y60) this.d).P();
+            d(a6Var, a10);
+            ((a70) this.d).P();
             return;
         }
         c();
-        j(z5Var);
-        this.h = z5Var;
+        j(a6Var);
+        this.h = a6Var;
         this.f = a10;
-        LinearLayout linearLayout = new LinearLayout(z5Var.getContext());
+        LinearLayout linearLayout = new LinearLayout(a6Var.getContext());
         this.e = linearLayout;
         linearLayout.setOrientation(1);
-        d(z5Var, a10);
-        y60 j3 = ((k0) this.b).j(z5Var.getEditText());
+        d(a6Var, a10);
+        a70 j3 = ((l0) this.b).j(a6Var.getEditText());
         j3.T = true;
         j3.s = 0;
         j3.t = false;
@@ -263,7 +264,7 @@ public final class d implements ib.b, q5.b {
         j3.a0 = g0.L(240.0f);
         j3.i = 3;
         j3.b0(-g0.L(12.0f), 0.0f);
-        j3.p = new kg.j0(this, 28);
+        j3.p = new i0(this, 28);
         j3.g0 = true;
         if (j3.E()) {
             j3.D();
@@ -287,10 +288,10 @@ public final class d implements ib.b, q5.b {
         }
     }
 
-    public d(k0 k0Var, i6 i6Var) {
+    public d(l0 l0Var, h6 h6Var) {
         this.a = 3;
-        this.b = k0Var;
-        this.c = i6Var;
+        this.b = l0Var;
+        this.c = h6Var;
     }
 
     public d(Context context) {

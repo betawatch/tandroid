@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b40 extends Drawable {
     public long b;
@@ -26,7 +26,7 @@ public final class b40 extends Drawable {
         int centerX = getBounds().centerX();
         int centerY = getBounds().centerY();
         View view = this.e;
-        if (view instanceof org.telegram.ui.ActionBar.n5) {
+        if (view instanceof org.telegram.ui.ActionBar.m5) {
             L = org.telegram.messenger.g0.L(1.0f) + centerY;
             centerX -= org.telegram.messenger.g0.L(3.0f);
         } else {

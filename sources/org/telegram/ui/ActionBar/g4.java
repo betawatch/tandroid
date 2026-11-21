@@ -1,25 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageButton;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g4 extends ImageButton {
-    public final /* synthetic */ k4 a;
+public final class g4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g4(k4 k4Var, Context context) {
-        super(context);
-        this.a = k4Var;
+    public /* synthetic */ g4(j4 j4Var, int i7) {
+        this.a = i7;
+        this.b = j4Var;
     }
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.a.N) {
-            return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ks.f(j10.t0).d(new oi.c2(this, 13));
+                break;
+            default:
+                ks.f(j10.t0).d(new oi.c2(this, 14));
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 }

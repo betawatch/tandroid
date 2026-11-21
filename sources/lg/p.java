@@ -8,17 +8,17 @@ import android.graphics.Paint;
 import fi.d4;
 import java.util.ArrayList;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.m41;
 import org.telegram.ui.qi0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] E1;
 
-    public p(Context context, i6 i6Var) {
-        super(context, i6Var);
+    public p(Context context, h6 h6Var) {
+        super(context, h6Var);
         this.x0 = true;
         this.y0 = true;
     }

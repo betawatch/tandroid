@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ke0 extends ReplacementSpan {
     public final String a;
@@ -34,12 +34,12 @@ public final class ke0 extends ReplacementSpan {
         float L = f10 + org.telegram.messenger.g0.L(5.0f);
         float L2 = ((i11 + i13) / 2.0f) + org.telegram.messenger.g0.L(1.0f);
         float L3 = org.telegram.messenger.g0.L(17.333f) / 2.0f;
-        int i14 = this.b ? org.telegram.ui.ActionBar.n6.Fi : org.telegram.ui.ActionBar.n6.U9;
+        int i14 = this.b ? org.telegram.ui.ActionBar.m6.Fi : org.telegram.ui.ActionBar.m6.U9;
         me0 me0Var = this.f;
         int themedColor = me0Var.getThemedColor(i14);
         Paint paint2 = this.d;
         paint2.setColor(themedColor);
-        int themedColor2 = me0Var.getThemedColor(org.telegram.ui.ActionBar.n6.s8);
+        int themedColor2 = me0Var.getThemedColor(org.telegram.ui.ActionBar.m6.s8);
         TextPaint textPaint = this.c;
         textPaint.setColor(themedColor2);
         RectF rectF = org.telegram.messenger.g0.P;

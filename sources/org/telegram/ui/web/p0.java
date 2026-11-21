@@ -14,10 +14,11 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
-import bi.r5;
+import bi.v5;
 import c8.ma;
-import hi.t6;
+import hi.s6;
 import java.util.HashMap;
+import oi.c2;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
@@ -26,22 +27,22 @@ import org.telegram.messenger.n5;
 import org.telegram.messenger.o10;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.rm;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.ot;
+import org.telegram.ui.Components.tm;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class p0 extends WebChromeClient {
-    public org.telegram.ui.ActionBar.u1 a;
+    public org.telegram.ui.ActionBar.t1 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ long d;
@@ -79,7 +80,7 @@ public final class p0 extends WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public final boolean onCreateWindow(WebView webView, boolean z10, boolean z11, Message message) {
-        h2 T;
+        g2 T;
         String str = "onCreateWindow isDialog=" + z10 + " isUserGesture=" + z11 + " resultMsg=" + message;
         s0 s0Var = this.e;
         s0Var.c(str);
@@ -136,9 +137,9 @@ public final class p0 extends WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public final void onGeolocationPermissionsHidePrompt() {
-        org.telegram.ui.ActionBar.u1 u1Var = this.a;
+        org.telegram.ui.ActionBar.t1 t1Var = this.a;
         s0 s0Var = this.e;
-        if (u1Var == null) {
+        if (t1Var == null) {
             s0Var.c("onGeolocationPermissionsHidePrompt: no dialog");
             return;
         }
@@ -161,7 +162,7 @@ public final class p0 extends WebChromeClient {
         boolean z10 = this.c;
         String q10 = z10 ? o10.q(s0Var.R.V) : org.telegram.messenger.g0.K0(s0Var.getUrl(), false);
         v0 v0Var2 = s0Var.R;
-        org.telegram.ui.ActionBar.u1 W = b5.W(v0Var2.a0, v0Var2.e, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, R.raw.permission_request_location, gd.a0(null, null, z10 ? 2131752892 : 2131742648, q10), gd.a0(null, null, z10 ? 2131752891 : 2131742647, q10), new l0(this, callback, str, i7));
+        org.telegram.ui.ActionBar.t1 W = c5.W(v0Var2.a0, v0Var2.e, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, R.raw.permission_request_location, gd.a0(null, null, z10 ? 2131752891 : 2131742642, q10), gd.a0(null, null, z10 ? 2131752890 : 2131742641, q10), new l0(this, callback, str, i7));
         this.a = W;
         W.show();
     }
@@ -171,12 +172,12 @@ public final class p0 extends WebChromeClient {
         boolean[] zArr = {false};
         v0 v0Var = this.e.R;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.b, v0Var == null ? null : v0Var.e);
-        String l10 = this.c ? n5.l(j10.t0, this.d) : gd.a0(null, null, 2131742644, str);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = l10;
-        u1Var.U = str2;
-        alertDialog$Builder.k(gd.M0(2131747638, null), new m0(zArr, jsResult, 2));
-        u1Var.setOnDismissListener(new n0(zArr, jsResult, 1));
+        String l10 = this.c ? n5.l(j10.t0, this.d) : gd.a0(null, null, 2131742638, str);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = l10;
+        t1Var.U = str2;
+        alertDialog$Builder.k(gd.N0(2131747637, null), new m0(zArr, jsResult, 2));
+        t1Var.setOnDismissListener(new n0(zArr, jsResult, 1));
         alertDialog$Builder.p();
         return true;
     }
@@ -188,13 +189,13 @@ public final class p0 extends WebChromeClient {
         boolean[] zArr = {false};
         v0 v0Var = this.e.R;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.b, v0Var == null ? null : v0Var.e);
-        String l10 = this.c ? n5.l(j10.t0, this.d) : gd.a0(null, null, 2131742644, str);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = l10;
-        u1Var.U = str2;
-        alertDialog$Builder.h(gd.M0(2131752578, null), new m0(zArr, jsResult, i10));
-        alertDialog$Builder.k(gd.M0(2131747638, null), new m0(zArr, jsResult, i7));
-        u1Var.setOnDismissListener(new n0(zArr, jsResult, 0));
+        String l10 = this.c ? n5.l(j10.t0, this.d) : gd.a0(null, null, 2131742638, str);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = l10;
+        t1Var.U = str2;
+        alertDialog$Builder.h(gd.N0(2131752577, null), new m0(zArr, jsResult, i10));
+        alertDialog$Builder.k(gd.N0(2131747637, null), new m0(zArr, jsResult, i7));
+        t1Var.setOnDismissListener(new n0(zArr, jsResult, 0));
         alertDialog$Builder.p();
         return true;
     }
@@ -202,46 +203,46 @@ public final class p0 extends WebChromeClient {
     @Override // android.webkit.WebChromeClient
     public final boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {
         v0 v0Var = this.e.R;
-        i6 i6Var = v0Var == null ? null : v0Var.e;
+        h6 h6Var = v0Var == null ? null : v0Var.e;
         boolean[] zArr = {false};
         Context context = this.b;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, i6Var);
-        String l10 = this.c ? n5.l(j10.t0, this.d) : gd.a0(null, null, 2131742644, str);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = l10;
-        u1Var.U = str2;
-        mt mtVar = new mt(context, i6Var);
-        mtVar.s0 = true;
-        mtVar.setTextSize(1, 18.0f);
-        u6.U(mtVar, n6.j5, i6Var);
-        u6.l(mtVar, 34, n6.Oi, i6Var);
-        mtVar.setFocusable(true);
-        mtVar.setInputType(147457);
-        u6.F(mtVar, n6.k6, n6.l6, n6.p7, i6Var);
-        mtVar.setImeOptions(6);
-        mtVar.setBackgroundDrawable(null);
-        mtVar.setPadding(0, org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f));
-        mtVar.setText(str3);
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
+        String l10 = this.c ? n5.l(j10.t0, this.d) : gd.a0(null, null, 2131742638, str);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = l10;
+        t1Var.U = str2;
+        ot otVar = new ot(context, h6Var);
+        otVar.s0 = true;
+        otVar.setTextSize(1, 18.0f);
+        t6.U(otVar, m6.j5, h6Var);
+        t6.l(otVar, 34, m6.Oi, h6Var);
+        otVar.setFocusable(true);
+        otVar.setInputType(147457);
+        t6.F(otVar, m6.k6, m6.l6, m6.p7, h6Var);
+        otVar.setImeOptions(6);
+        otVar.setBackgroundDrawable(null);
+        otVar.setPadding(0, org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f));
+        otVar.setText(str3);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        linearLayout.addView(mtVar, ma.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        linearLayout.addView(otVar, ma.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         alertDialog$Builder.c();
         alertDialog$Builder.o(linearLayout);
-        u1Var.a = org.telegram.messenger.g0.L(292.0f);
-        alertDialog$Builder.h(gd.M0(2131752578, null), new wc1(3, zArr, jsPromptResult));
-        alertDialog$Builder.k(gd.M0(2131747638, null), new rm(zArr, jsPromptResult, mtVar, 8));
+        t1Var.a = org.telegram.messenger.g0.L(292.0f);
+        alertDialog$Builder.h(gd.N0(2131752577, null), new wc1(3, zArr, jsPromptResult));
+        alertDialog$Builder.k(gd.N0(2131747637, null), new tm(zArr, jsPromptResult, otVar, 8));
         alertDialog$Builder.j(new di.u1(15, zArr, jsPromptResult));
-        u1Var.P = new t6(mtVar, 21);
-        mtVar.setOnEditorActionListener(new r5(zArr, jsPromptResult, mtVar, alertDialog$Builder.p(), 1));
-        org.telegram.messenger.g0.g3(new oi.a2(mtVar, 27));
+        t1Var.P = new s6(otVar, 21);
+        otVar.setOnEditorActionListener(new v5(zArr, jsPromptResult, otVar, alertDialog$Builder.p(), 1));
+        org.telegram.messenger.g0.g3(new c2(otVar, 27));
         return true;
     }
 
     @Override // android.webkit.WebChromeClient
     public final void onPermissionRequest(PermissionRequest permissionRequest) {
-        org.telegram.ui.ActionBar.u1 u1Var = this.a;
-        if (u1Var != null) {
-            u1Var.dismiss();
+        org.telegram.ui.ActionBar.t1 t1Var = this.a;
+        if (t1Var != null) {
+            t1Var.dismiss();
             this.a = null;
         }
         s0 s0Var = this.e;
@@ -261,7 +262,7 @@ public final class p0 extends WebChromeClient {
                 if ("android.webkit.resource.AUDIO_CAPTURE".equals(resources[0]) || "android.webkit.resource.VIDEO_CAPTURE".equals(resources[0])) {
                     if ("android.webkit.resource.AUDIO_CAPTURE".equals(resources[1]) || "android.webkit.resource.VIDEO_CAPTURE".equals(resources[1])) {
                         v0 v0Var = s0Var.R;
-                        org.telegram.ui.ActionBar.u1 W = b5.W(v0Var.a0, v0Var.e, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, R.raw.permission_request_camera, gd.a0(null, null, z10 ? 2131752897 : 2131742652, q10), gd.a0(null, null, z10 ? 2131752896 : 2131742651, q10), new k0(this, permissionRequest, resources, i7));
+                        org.telegram.ui.ActionBar.t1 W = c5.W(v0Var.a0, v0Var.e, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, R.raw.permission_request_camera, gd.a0(null, null, z10 ? 2131752896 : 2131742646, q10), gd.a0(null, null, z10 ? 2131752895 : 2131742645, q10), new k0(this, permissionRequest, resources, i7));
                         this.a = W;
                         W.show();
                         return;
@@ -285,14 +286,14 @@ public final class p0 extends WebChromeClient {
         str.getClass();
         if (str.equals("android.webkit.resource.VIDEO_CAPTURE")) {
             v0 v0Var3 = s0Var.R;
-            org.telegram.ui.ActionBar.u1 W2 = b5.W(v0Var3.a0, v0Var3.e, new String[]{"android.permission.CAMERA"}, R.raw.permission_request_camera, gd.a0(null, null, z10 ? 2131752895 : 2131742650, q10), gd.a0(null, null, z10 ? 2131752894 : 2131742649, q10), new j0(this, permissionRequest, str, i10));
+            org.telegram.ui.ActionBar.t1 W2 = c5.W(v0Var3.a0, v0Var3.e, new String[]{"android.permission.CAMERA"}, R.raw.permission_request_camera, gd.a0(null, null, z10 ? 2131752894 : 2131742644, q10), gd.a0(null, null, z10 ? 2131752893 : 2131742643, q10), new j0(this, permissionRequest, str, i10));
             this.a = W2;
             W2.show();
             return;
         }
         if (str.equals("android.webkit.resource.AUDIO_CAPTURE")) {
             v0 v0Var4 = s0Var.R;
-            org.telegram.ui.ActionBar.u1 W3 = b5.W(v0Var4.a0, v0Var4.e, new String[]{"android.permission.RECORD_AUDIO"}, R.raw.permission_request_microphone, gd.a0(null, null, z10 ? 2131752890 : 2131742646, q10), gd.a0(null, null, z10 ? 2131752889 : 2131742645, q10), new j0(this, permissionRequest, str, i7));
+            org.telegram.ui.ActionBar.t1 W3 = c5.W(v0Var4.a0, v0Var4.e, new String[]{"android.permission.RECORD_AUDIO"}, R.raw.permission_request_microphone, gd.a0(null, null, z10 ? 2131752889 : 2131742640, q10), gd.a0(null, null, z10 ? 2131752888 : 2131742639, q10), new j0(this, permissionRequest, str, i7));
             this.a = W3;
             W3.show();
         }
@@ -300,9 +301,9 @@ public final class p0 extends WebChromeClient {
 
     @Override // android.webkit.WebChromeClient
     public final void onPermissionRequestCanceled(PermissionRequest permissionRequest) {
-        org.telegram.ui.ActionBar.u1 u1Var = this.a;
+        org.telegram.ui.ActionBar.t1 t1Var = this.a;
         s0 s0Var = this.e;
-        if (u1Var == null) {
+        if (t1Var == null) {
             s0Var.c("onPermissionRequestCanceled: no dialog");
             return;
         }

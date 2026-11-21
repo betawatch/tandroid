@@ -4,10 +4,10 @@ import android.animation.ValueAnimator;
 import c8.ea;
 import ch.w;
 import java.net.URL;
-import ki.e;
-import org.telegram.ui.Components.lr;
+import kg.x1;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b {
     public long a;
@@ -20,7 +20,7 @@ public final class b {
         this.a = j3;
     }
 
-    public void a(oi.a aVar, e eVar) {
+    public void a(oi.a aVar, x1 x1Var) {
         int i7;
         int b10 = ea.b(aVar);
         long j3 = aVar != null ? aVar.a : Long.MIN_VALUE;
@@ -33,12 +33,12 @@ public final class b {
         }
         if (!z10 || (i7 = this.b) == b10) {
             this.b = b10;
-            eVar.c(b10);
+            x1Var.c(b10);
             return;
         }
         ValueAnimator ofInt = ValueAnimator.ofInt(i7, b10);
-        ofInt.addUpdateListener(new w(8, this, eVar));
-        ofInt.setInterpolator(lr.f);
+        ofInt.addUpdateListener(new w(8, this, x1Var));
+        ofInt.setInterpolator(nr.f);
         ofInt.setDuration(200L);
         this.c = ofInt;
         ofInt.start();

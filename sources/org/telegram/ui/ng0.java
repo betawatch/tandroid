@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ng0 extends LinearLayout {
     public static final /* synthetic */ int d = 0;
@@ -46,10 +46,10 @@ public final class ng0 extends LinearLayout {
     public final void a() {
         for (int i7 = 0; i7 < 4; i7++) {
             TextView textView = this.a[i7];
-            int i10 = org.telegram.ui.ActionBar.n6.G6;
+            int i10 = org.telegram.ui.ActionBar.m6.G6;
             og0 og0Var = this.c;
-            textView.setTextColor(org.telegram.ui.ActionBar.n6.w0(i10, og0Var.getResourceProvider()));
-            this.b[i7].setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.z6, og0Var.getResourceProvider()));
+            textView.setTextColor(org.telegram.ui.ActionBar.m6.w0(i10, og0Var.getResourceProvider()));
+            this.b[i7].setTextColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.z6, og0Var.getResourceProvider()));
         }
     }
 }

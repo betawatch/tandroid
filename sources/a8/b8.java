@@ -37,9 +37,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.od;
 import org.telegram.messenger.vy;
 import org.telegram.messenger.xr;
-import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.jw0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class b8 {
     public Object a;
@@ -457,7 +457,7 @@ public class b8 {
             ((ValueAnimator) arrayList3.get(i7)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i7)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new hw0(this, i7, 0));
+                ofFloat.addUpdateListener(new jw0(this, i7, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -466,7 +466,7 @@ public class b8 {
             ((ValueAnimator) arrayList2.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i10)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new hw0(this, i10, 1));
+                ofFloat2.addUpdateListener(new jw0(this, i10, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -475,7 +475,7 @@ public class b8 {
             ((ValueAnimator) arrayList.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i11)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new hw0(this, i11, 2));
+                ofFloat3.addUpdateListener(new jw0(this, i11, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }

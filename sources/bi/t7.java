@@ -1,30 +1,36 @@
 package bi;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class t7 {
-    public static final t7 a;
-    public static final t7 b;
-    public static final t7 c;
-    public static final /* synthetic */ t7[] d;
+public final class t7 extends org.telegram.ui.ActionBar.y0 {
+    public final int W;
+    public long a0;
+    public r7 b0;
 
-    static {
-        t7 t7Var = new t7("BY_PRICE", 0);
-        a = t7Var;
-        t7 t7Var2 = new t7("BY_DATE", 1);
-        b = t7Var2;
-        t7 t7Var3 = new t7("BY_NUMBER", 2);
-        c = t7Var3;
-        d = new t7[]{t7Var, t7Var2, t7Var3};
+    public t7(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(0, context, h6Var, false, false);
+        this.W = i7;
+        setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
+        c(org.telegram.ui.ActionBar.m6.E8, org.telegram.ui.ActionBar.m6.F8);
+        setIconColor(-1);
+        this.c.setTranslationX(org.telegram.messenger.g0.L(2.0f));
+        this.c.setScaleX(1.2f);
+        this.c.setScaleY(1.2f);
+        a(2);
+        setBackground(null);
+        this.c.addOnAttachStateChangeListener(new v2(this, 2));
     }
 
-    public static t7 valueOf(String str) {
-        return (t7) Enum.valueOf(t7.class, str);
-    }
-
-    public static t7[] values() {
-        return (t7[]) d.clone();
+    @Override // org.telegram.ui.ActionBar.y0, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
+            size = org.telegram.messenger.g0.L(250.0f);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i10);
     }
 }

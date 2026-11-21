@@ -3,16 +3,16 @@ package li;
 import android.view.View;
 import di.za;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.y61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Wallet.b3;
 import org.telegram.ui.Wallet.d3;
 import org.telegram.ui.lm0;
 import org.telegram.ui.mt;
 import org.telegram.ui.pt;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class x extends y61 {
+public final class x extends b71 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -22,7 +22,7 @@ public final class x extends y61 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final void b(View view, int i7, int i10) {
         switch (this.a) {
             case 0:
@@ -46,7 +46,7 @@ public final class x extends y61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final View d(int i7) {
         switch (this.a) {
             case 0:
@@ -74,7 +74,7 @@ public final class x extends y61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int e() {
         switch (this.a) {
             case 0:
@@ -90,19 +90,19 @@ public final class x extends y61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public CharSequence g(int i7) {
         switch (this.a) {
             case 1:
-                return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.M0(2131748103, null) : gd.M0(2131748101, null) : gd.M0(2131748104, null) : gd.M0(2131748105, null);
+                return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.N0(2131748102, null) : gd.N0(2131748100, null) : gd.N0(2131748103, null) : gd.N0(2131748104, null);
             case 4:
-                return i7 != 1 ? i7 != 2 ? gd.M0(2131747476, null).toUpperCase() : gd.M0(2131747475, null).toUpperCase() : gd.M0(2131747470, null).toUpperCase();
+                return i7 != 1 ? i7 != 2 ? gd.N0(2131747475, null).toUpperCase() : gd.N0(2131747474, null).toUpperCase() : gd.N0(2131747469, null).toUpperCase();
             default:
                 return super.g(i7);
         }
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public int h(int i7) {
         switch (this.a) {
             case 0:

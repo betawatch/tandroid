@@ -1,63 +1,37 @@
 package hi;
 
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.t90;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c4 implements r1.c {
+public final /* synthetic */ class c4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ k5 b;
 
-    public /* synthetic */ c4(FrameLayout frameLayout, boolean z10, int i7) {
+    public /* synthetic */ c4(k5 k5Var, int i7) {
         this.a = i7;
-        this.b = frameLayout;
-        this.c = z10;
+        this.b = k5Var;
     }
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                l5 l5Var = (l5) this.b;
-                s4 s4Var = l5Var.g1;
-                if (gVar == l5Var.m1) {
-                    l5Var.m1 = null;
-                    if (!this.c) {
-                        s4Var.setVisibility(8);
-                        sg.k0.e(l5Var.p1).g();
-                        s4Var.getAdapter().f();
-                        break;
-                    }
-                }
+                k5 k5Var = this.b;
+                k5Var.getClass();
+                k5Var.Z1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                l5 l5Var2 = (l5) this.b;
-                tg.j1 j1Var = l5Var2.W0;
-                if (gVar == l5Var2.f1) {
-                    l5Var2.f1 = null;
-                    if (!this.c) {
-                        j1Var.setVisibility(8);
-                    }
-                    j1Var.setMaskProvider(null);
-                    break;
-                }
+                k5 k5Var2 = this.b;
+                k5Var2.getClass();
+                k5Var2.Z1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                t90 t90Var = (t90) this.b;
-                if (!z10) {
-                    t90Var.L = null;
-                    boolean z11 = this.c;
-                    t90Var.setVisibility(z11 ? 8 : 0);
-                    if (t90Var.O && z11) {
-                        t90Var.O = false;
-                        t90Var.b.setLayoutManager(t90Var.getNeededLayoutManager());
-                        t90Var.J = true;
-                        t90Var.o(true);
-                        break;
-                    }
-                }
+                k5 k5Var3 = this.b;
+                k5Var3.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k5Var3.L1 = floatValue;
+                k5Var3.J1.setTransitionProgress(floatValue);
                 break;
         }
     }

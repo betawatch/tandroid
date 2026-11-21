@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m90 implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -37,14 +37,14 @@ public final /* synthetic */ class m90 implements org.telegram.messenger.q10 {
                 String str2 = (String) obj2;
                 s90Var.c();
                 if (g2Var != null) {
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T != null && T.getContext() != null) {
                         org.telegram.ui.Wallet.l2.D(T.getContext(), s90Var.b, g2Var, null, T.getResourceProvider(), null, new l90(s90Var, str, 1));
                         break;
                     }
                 } else {
                     if (str2 == null) {
-                        str2 = org.telegram.messenger.gd.M0(2131742733, null);
+                        str2 = org.telegram.messenger.gd.N0(2131742727, null);
                     }
                     org.telegram.ui.Components.lc.c0(str2);
                     break;

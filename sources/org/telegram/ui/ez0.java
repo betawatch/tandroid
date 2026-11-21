@@ -6,9 +6,9 @@ import android.graphics.Path;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ez0 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public final class ez0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final Path a;
     public fh.g b;
 
@@ -38,7 +38,7 @@ public final class ez0 extends FrameLayout implements org.telegram.ui.ActionBar.
         setBackground(gVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         fh.g gVar = this.b;
         if (gVar != null) {
@@ -46,7 +46,7 @@ public final class ez0 extends FrameLayout implements org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

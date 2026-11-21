@@ -3,7 +3,7 @@ package hi;
 import java.io.File;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class q0 implements Runnable {
                 break;
             case 1:
                 v0 v0Var2 = this.b;
-                d7 d7Var = v0Var2.r;
+                c7 c7Var = v0Var2.r;
                 File file = this.c;
-                d7Var.c(file);
+                c7Var.c(file);
                 if (v0Var2.c && v0Var2.r != null) {
                     org.telegram.messenger.g0.g3(new q0(v0Var2, file, 2));
                     break;

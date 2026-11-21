@@ -1,25 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class dt implements org.telegram.messenger.p10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-    public /* synthetic */ dt(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class dt extends v4.m0 {
+    public final ct[] a = new ct[4];
+    public final ArrayList b = new ArrayList();
+
+    @Override // v4.m0
+    public final EdgeEffect a(RecyclerView recyclerView, int i7) {
+        ct ctVar = new ct(recyclerView, i7, new at(this, 0));
+        this.a[i7] = ctVar;
+        return ctVar;
     }
 
-    @Override // org.telegram.messenger.p10
-    public final Object run() {
-        switch (this.a) {
-            case 0:
-                return Boolean.valueOf(((EditTextBoldCursor) this.b).w());
-            case 1:
-                return ((t30) this.b).getCloseIntoObject();
-            default:
-                return Boolean.valueOf(((mt) this.b).w());
+    public final float b(int i7) {
+        ct ctVar = this.a[i7];
+        if (Build.VERSION.SDK_INT < 31 || ctVar == null || ctVar.isFinished()) {
+            return 0.0f;
         }
+        return ctVar.getDistance();
     }
 }

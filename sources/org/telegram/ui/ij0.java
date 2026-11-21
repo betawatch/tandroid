@@ -4,7 +4,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ij0 extends oq0 {
     public final /* synthetic */ hk0 a;
@@ -77,6 +77,6 @@ public final class ij0 extends oq0 {
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final String b0() {
-        return this.a.T0 == 1 ? org.telegram.messenger.gd.a0("PassportDeleteSelfieAlert", null, 2131747388, new Object[0]) : org.telegram.messenger.gd.a0("PassportDeleteScanAlert", null, 2131747390, new Object[0]);
+        return this.a.T0 == 1 ? org.telegram.messenger.gd.a0("PassportDeleteSelfieAlert", null, 2131747387, new Object[0]) : org.telegram.messenger.gd.a0("PassportDeleteScanAlert", null, 2131747389, new Object[0]);
     }
 }

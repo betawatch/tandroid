@@ -5,41 +5,41 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.ViewGroup;
 import java.util.HashSet;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public class e3 extends org.telegram.ui.Components.sa implements org.telegram.ui.ActionBar.c6 {
-    public z41 T1;
+public class e3 extends org.telegram.ui.Components.sa implements org.telegram.ui.ActionBar.b6 {
+    public c51 T1;
     public final ViewGroup U1;
     public final Paint V1;
     public float W1;
 
-    public e3(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, null, true, false, i6Var);
+    public e3(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, null, true, false, h6Var);
         this.V1 = new Paint();
         this.v1 = 0.1f;
         this.U1 = viewGroup;
-        ck0 ck0Var = this.o1;
+        ek0 ek0Var = this.o1;
         int i7 = this.u0;
-        ck0Var.setPadding(i7, 0, i7, 0);
+        ek0Var.setPadding(i7, 0, i7, 0);
         updateColors();
         this.T1.O(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void E0(int i7) {
         super.E0(i7);
         org.telegram.messenger.g0.s3(this, 0, false, null);
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
-        z41 z41Var = new z41(ck0Var, getContext(), this.a, 0, true, new e(this, 5), this.J0);
-        this.T1 = z41Var;
-        return z41Var;
+    public final dk0 M0(ek0 ek0Var) {
+        c51 c51Var = new c51(ek0Var, getContext(), this.a, 0, true, new e(this, 5), this.J0);
+        this.T1 = c51Var;
+        return c51Var;
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -55,28 +55,28 @@ public class e3 extends org.telegram.ui.Components.sa implements org.telegram.ui
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void Z(Canvas canvas) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.c;
-        float height = n2Var.getHeight();
+        org.telegram.ui.ActionBar.m2 m2Var = this.c;
+        float height = m2Var.getHeight();
         float max = Math.max(height - org.telegram.messenger.g0.n, this.b.getY() + this.W1 + this.t0);
         if (max >= height) {
             return;
         }
-        boolean z10 = this.b.getWidth() < n2Var.getWidth();
-        canvas.drawRect(z10 ? this.b.getX() + this.u0 : 0.0f, max, z10 ? (this.b.getX() + this.b.getWidth()) - this.u0 : n2Var.getWidth(), height, this.V1);
+        boolean z10 = this.b.getWidth() < m2Var.getWidth();
+        canvas.drawRect(z10 ? this.b.getX() + this.u0 : 0.0f, max, z10 ? (this.b.getX() + this.b.getWidth()) - this.u0 : m2Var.getWidth(), height, this.V1);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.a7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.a7));
     }
 
     public int e1() {
-        return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.a7, this.J0);
+        return org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, this.J0);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public void show() {
         if (getWindow() != null) {
             org.telegram.messenger.g0.S(getWindow());
@@ -90,7 +90,7 @@ public class e3 extends org.telegram.ui.Components.sa implements org.telegram.ui
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         int e12 = e1();
         this.V1.setColor(e12);

@@ -1,28 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.LinearLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public class sm0 extends LinearLayout {
-    public sm0(Context context) {
-        super(context);
-        setWillNotDraw(false);
+public final class sm0 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ di.i4 b;
+
+    public /* synthetic */ sm0(di.i4 i4Var, int i7) {
+        this.a = i7;
+        this.b = i4Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        if (getParent() instanceof tm0) {
-            ((tm0) getParent()).invalidate();
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                ((org.telegram.ui.kw) this.b.c).P();
+                break;
+            default:
+                ((org.telegram.ui.kw) this.b.c).P();
+                break;
         }
     }
 }

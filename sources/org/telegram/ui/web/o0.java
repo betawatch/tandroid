@@ -6,12 +6,13 @@ import android.os.Build;
 import android.webkit.RenderProcessGoneDetail;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import di.t9;
+import di.u9;
+import oi.c2;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class o0 extends WebViewClient {
     public final /* synthetic */ WebView a;
@@ -41,11 +42,11 @@ public final class o0 extends WebViewClient {
             Context context = s0Var.getContext();
             v0 v0Var = s0Var.R;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, v0Var == null ? null : v0Var.e);
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.S = gd.M0(2131752093, null);
-            u1Var.U = org.telegram.messenger.g0.T2(gd.M0(2131752094, null), new oi.a2(this, 28));
-            alertDialog$Builder.k(gd.M0(2131747638, null), null);
-            u1Var.setOnDismissListener(new t9(this, 12));
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.S = gd.N0(2131752092, null);
+            t1Var.U = org.telegram.messenger.g0.T2(gd.N0(2131752093, null), new c2(this, 28));
+            alertDialog$Builder.k(gd.N0(2131747637, null), null);
+            t1Var.setOnDismissListener(new u9(this, 12));
             alertDialog$Builder.p();
             return true;
         } catch (Exception e10) {

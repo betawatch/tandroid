@@ -3,21 +3,21 @@ package li;
 import org.telegram.messenger.fs;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.or;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.t1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements or {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u1 b;
+    public final /* synthetic */ t1 b;
     public final /* synthetic */ long c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ fs e;
 
-    public /* synthetic */ e(fs fsVar, u1 u1Var, long j3, boolean z10, int i7) {
+    public /* synthetic */ e(fs fsVar, t1 t1Var, long j3, boolean z10, int i7) {
         this.a = i7;
         this.e = fsVar;
-        this.b = u1Var;
+        this.b = t1Var;
         this.c = j3;
         this.d = z10;
     }

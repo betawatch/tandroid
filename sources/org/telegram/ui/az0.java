@@ -7,9 +7,9 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class az0 implements org.telegram.ui.Components.pj0, org.telegram.ui.Components.rj0, ww {
+public final /* synthetic */ class az0 implements org.telegram.ui.Components.rj0, org.telegram.ui.Components.tj0, ww {
     public final /* synthetic */ SaveToGallerySettingsActivity a;
 
     public /* synthetic */ az0(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
@@ -26,12 +26,12 @@ public final /* synthetic */ class az0 implements org.telegram.ui.Components.pj0
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ boolean b1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public void f(float f10, float f11, int i7, View view) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
         ArrayList arrayList = saveToGallerySettingsActivity.s;
@@ -56,9 +56,9 @@ public final /* synthetic */ class az0 implements org.telegram.ui.Components.pj0
                 return;
             }
             if (((cz0) arrayList.get(i7)).a == 4) {
-                org.telegram.ui.ActionBar.u1 u1Var = org.telegram.ui.Components.b5.L(saveToGallerySettingsActivity.getParentActivity(), org.telegram.messenger.gd.M0(2131747720, null), org.telegram.messenger.gd.M0(2131747721, null), org.telegram.messenger.gd.M0(2131751587, null), new ru0(saveToGallerySettingsActivity, 11), null).a;
-                u1Var.show();
-                u1Var.i();
+                org.telegram.ui.ActionBar.t1 t1Var = org.telegram.ui.Components.c5.L(saveToGallerySettingsActivity.getParentActivity(), org.telegram.messenger.gd.N0(2131747719, null), org.telegram.messenger.gd.N0(2131747720, null), org.telegram.messenger.gd.N0(2131751586, null), new ru0(saveToGallerySettingsActivity, 11), null).a;
+                t1Var.show();
+                t1Var.i();
                 return;
             }
             return;
@@ -90,15 +90,15 @@ public final /* synthetic */ class az0 implements org.telegram.ui.Components.pj0
         return true;
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public /* synthetic */ void r(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public /* synthetic */ void j() {
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public boolean f(float f10, float f11, int i7, View view) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
         ArrayList arrayList = saveToGallerySettingsActivity.s;
@@ -107,18 +107,18 @@ public final /* synthetic */ class az0 implements org.telegram.ui.Components.pj0
         }
         org.telegram.messenger.kv kvVar = ((cz0) arrayList.get(i7)).c;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(saveToGallerySettingsActivity.getParentActivity(), null);
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, org.telegram.messenger.gd.M0(2131751269, null), false, null);
-        org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, org.telegram.messenger.gd.M0(2131751531, null), false, null);
-        int i10 = org.telegram.ui.ActionBar.n6.p7;
-        c11.d(org.telegram.ui.ActionBar.n6.x0(null, i10, false), org.telegram.ui.ActionBar.n6.x0(null, i10, false));
-        org.telegram.ui.ActionBar.h1 N = org.telegram.ui.Components.b5.N(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f10, f11);
+        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, org.telegram.messenger.gd.N0(2131751268, null), false, null);
+        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131751530, null), false, null);
+        int i10 = org.telegram.ui.ActionBar.m6.p7;
+        c11.d(org.telegram.ui.ActionBar.m6.x0(null, i10, false), org.telegram.ui.ActionBar.m6.x0(null, i10, false));
+        org.telegram.ui.ActionBar.g1 N = org.telegram.ui.Components.c5.N(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f10, f11);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setParentWindow(N);
-        c10.setOnClickListener(new bi.e5(saveToGallerySettingsActivity, N, i7, 20));
+        c10.setOnClickListener(new bi.i5(saveToGallerySettingsActivity, N, i7, 20));
         c11.setOnClickListener(new y(saveToGallerySettingsActivity, N, kvVar, 15));
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ void s0(View view, float f10, float f11) {
     }
 }

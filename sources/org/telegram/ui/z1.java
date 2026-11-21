@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class z1 extends View implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
@@ -142,7 +142,7 @@ public final class z1 extends View implements org.telegram.ui.Cells.i9, c3 {
                 a10 = Layout.Alignment.ALIGN_CENTER;
             } else {
                 e4 e4Var = this.b;
-                a10 = (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.wu0.a();
+                a10 = (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.zu0.a();
             }
             Layout.Alignment alignment = a10;
             TL_iv.RichText richText = this.f.text;

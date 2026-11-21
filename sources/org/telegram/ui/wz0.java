@@ -1,37 +1,65 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import java.util.HashSet;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wz0 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.ej0 {
-    public final /* synthetic */ r11 a;
+public final /* synthetic */ class wz0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s11 b;
 
-    public /* synthetic */ wz0(r11 r11Var) {
-        this.a = r11Var;
+    public /* synthetic */ wz0(s11 s11Var, int i7) {
+        this.a = i7;
+        this.b = s11Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        r11 r11Var = this.a;
-        int i10 = r11Var.W;
-        ConnectionsManager.getInstance(i10).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
-        org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i10);
-        ArrayList[] arrayListArr = d02.F0;
-        ArrayList arrayList = arrayListArr[0];
-        if (arrayList != null) {
-            arrayList.clear();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                s11 s11Var = this.b;
+                s11Var.getClass();
+                HashSet hashSet = ch.f0.a;
+                com.google.android.gms.internal.cast.b0 b0Var = org.telegram.messenger.ec.D().p;
+                if (((CountDownLatch) b0Var.c) == null) {
+                    b0Var.c = new CountDownLatch(1);
+                }
+                ch.f0.b = true;
+                ch.f0.e = false;
+                ch.f0.g = false;
+                org.telegram.messenger.g0.h3(new wz0(s11Var, 2), 0L);
+                break;
+            case 1:
+                s11 s11Var2 = this.b;
+                ArrayList arrayList = s11Var2.C1;
+                if (arrayList != null) {
+                    arrayList.clear();
+                }
+                ArrayList arrayList2 = s11Var2.D1;
+                if (arrayList2 != null) {
+                    arrayList2.clear();
+                }
+                ArrayList arrayList3 = s11Var2.F1;
+                if (arrayList3 != null) {
+                    arrayList3.clear();
+                }
+                s11Var2.r0.E(true);
+                break;
+            case 2:
+                this.b.W1.start();
+                break;
+            case 3:
+                this.b.B(true, true, true);
+                break;
+            default:
+                s11 s11Var3 = this.b;
+                org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
+                wz0 wz0Var = s11Var3.T1;
+                e10.e.remove(wz0Var);
+                org.telegram.messenger.ks.e().d(wz0Var);
+                break;
         }
-        d02.E0[0] = 0;
-        d02.getMessagesStorage().a.c(new org.telegram.messenger.eg(d02, 9));
-        ArrayList arrayList2 = arrayListArr[0];
-        r11Var.B(false, true, true);
-    }
-
-    @Override // org.telegram.ui.Components.ej0
-    public void i() {
-        this.a.m();
     }
 }

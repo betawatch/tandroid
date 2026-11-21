@@ -17,12 +17,12 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.g71;
 import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.j71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class n5 extends g71 {
+public final class n5 extends j71 {
     public boolean W;
     public final m5 a0;
     public final /* synthetic */ ArrayList b0;
@@ -33,8 +33,8 @@ public final class n5 extends g71 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.ui.Wallet.m5] */
-    public n5(Context context, org.telegram.ui.ActionBar.i6 i6Var, final ArrayList arrayList, final t0 t0Var, int i7, Rect rect, View[] viewArr) {
-        super(context, i6Var);
+    public n5(Context context, org.telegram.ui.ActionBar.h6 h6Var, final ArrayList arrayList, final t0 t0Var, int i7, Rect rect, View[] viewArr) {
+        super(context, h6Var);
         this.b0 = arrayList;
         this.c0 = t0Var;
         this.d0 = i7;
@@ -87,7 +87,7 @@ public final class n5 extends g71 {
         };
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void B(View view, float f10) {
         view.setTranslationX(f10);
         if (getMeasuredWidth() <= 0) {
@@ -178,7 +178,7 @@ public final class n5 extends g71 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final float getAvailableTranslationX() {
         int measuredWidth = getMeasuredWidth();
         Rect rect = this.e0;
@@ -214,7 +214,7 @@ public final class n5 extends g71 {
         super.onMeasure(i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void p(View view, View view2, int i7, int i10) {
         requestLayout();
         View childAt = ((FrameLayout) view).getChildAt(0);
@@ -228,7 +228,7 @@ public final class n5 extends g71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void s(boolean z10) {
         requestLayout();
         View view = this.f0[0];

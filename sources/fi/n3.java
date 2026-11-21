@@ -1,9 +1,9 @@
 package fi;
 
 import org.telegram.messenger.u10;
-import org.telegram.ui.Components.ph0;
+import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n3 implements u10 {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class n3 implements u10 {
                     y3Var.a = false;
                     e9Var.setOnReadyListener(new y1(1, currentTimeMillis, runnable));
                     ((w8) z3Var.A1).g(false);
-                    ph0 ph0Var = z3Var.j0;
-                    if (ph0Var != null) {
-                        ph0Var.setAnimation(this.c.u);
+                    rh0 rh0Var = z3Var.j0;
+                    if (rh0Var != null) {
+                        rh0Var.setAnimation(this.c.u);
                     }
                     if (z3Var.B2 > 0 && l10.longValue() > z3Var.B2 - 1400) {
                         l10 = 0L;
@@ -50,7 +50,7 @@ public final /* synthetic */ class n3 implements u10 {
                     ((w8) z3Var.A1).g(false);
                     z3Var.setActive(true);
                     z3Var.E3 = false;
-                    z3Var.S0 = new ai.z0(2, runnable);
+                    z3Var.S0 = new ai.b1(2, runnable);
                     if (bool.booleanValue()) {
                         z3Var.d1(false);
                     }
@@ -71,9 +71,9 @@ public final /* synthetic */ class n3 implements u10 {
                     y3Var2.a = false;
                     e9Var2.setOnReadyListener(new y1(2, currentTimeMillis2, runnable2));
                     ((w8) z3Var2.A1).g(false);
-                    ph0 ph0Var2 = z3Var2.j0;
-                    if (ph0Var2 != null) {
-                        ph0Var2.setAnimation(this.c.u);
+                    rh0 rh0Var2 = z3Var2.j0;
+                    if (rh0Var2 != null) {
+                        rh0Var2.setAnimation(this.c.u);
                     }
                     if (z3Var2.B2 > 0 && l11.longValue() > z3Var2.B2 - 1400) {
                         l11 = 0L;
@@ -89,7 +89,7 @@ public final /* synthetic */ class n3 implements u10 {
                     ((w8) z3Var2.A1).g(false);
                     z3Var2.setActive(true);
                     z3Var2.E3 = false;
-                    z3Var2.S0 = new ai.z0(3, runnable2);
+                    z3Var2.S0 = new ai.b1(3, runnable2);
                     if (bool2.booleanValue()) {
                         z3Var2.d1(false);
                     }

@@ -6,13 +6,13 @@ import android.graphics.RenderNode;
 import android.util.SparseArray;
 import android.view.View;
 import org.telegram.messenger.bz;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.le0;
 import org.telegram.ui.me0;
 import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class i {
     public final RenderNode a;
@@ -39,21 +39,21 @@ public final class i {
         ca.i iVar = this.b;
         boolean z10 = iVar.b;
         me0 me0Var = (me0) iVar.c;
-        int themedColor = me0Var.getThemedColor(n6.d6);
+        int themedColor = me0Var.getThemedColor(m6.d6);
         RectF rectF = me0Var.V;
         aVar.a(themedColor);
         aVar.b(bz.f());
         SparseArray sparseArray = me0Var.a;
         int size = sparseArray.size();
         for (int i10 = 0; i10 < size; i10++) {
-            h2 h2Var = ((ob1) sparseArray.valueAt(i10)).a;
-            View view = h2Var.fragmentView;
-            if (view != null && jh.k.c(view, me0Var.b, rectF) && rectF.right > 0.0f && rectF.left < me0Var.fragmentView.getMeasuredWidth() && (h2Var instanceof le0)) {
-                le0 le0Var = (le0) h2Var;
+            g2 g2Var = ((ob1) sparseArray.valueAt(i10)).a;
+            View view = g2Var.fragmentView;
+            if (view != null && jh.k.c(view, me0Var.b, rectF) && rectF.right > 0.0f && rectF.left < me0Var.fragmentView.getMeasuredWidth() && (g2Var instanceof le0)) {
+                le0 le0Var = (le0) g2Var;
                 if ((z10 ? le0Var.k() : le0Var.B()) != null) {
                     aVar.c(rectF.left);
                     aVar.c(rectF.top);
-                    aVar.a(h2Var.getClassGuid());
+                    aVar.a(g2Var.getClassGuid());
                 }
             }
         }
@@ -69,13 +69,13 @@ public final class i {
             RectF rectF2 = me0Var.V;
             int measuredWidth = view2.getMeasuredWidth();
             int measuredHeight = me0Var.fragmentView.getMeasuredHeight();
-            beginRecording.drawColor(me0Var.getThemedColor(n6.d6));
+            beginRecording.drawColor(me0Var.getThemedColor(m6.d6));
             int size2 = sparseArray2.size();
             while (i7 < size2) {
-                h2 h2Var2 = ((ob1) sparseArray2.valueAt(i7)).a;
-                View view3 = h2Var2.fragmentView;
-                if (view3 != null && jh.k.c(view3, me0Var.b, rectF2) && rectF2.right > 0.0f && rectF2.left < me0Var.fragmentView.getMeasuredWidth() && (h2Var2 instanceof le0)) {
-                    le0 le0Var2 = (le0) h2Var2;
+                g2 g2Var2 = ((ob1) sparseArray2.valueAt(i7)).a;
+                View view3 = g2Var2.fragmentView;
+                if (view3 != null && jh.k.c(view3, me0Var.b, rectF2) && rectF2.right > 0.0f && rectF2.left < me0Var.fragmentView.getMeasuredWidth() && (g2Var2 instanceof le0)) {
+                    le0 le0Var2 = (le0) g2Var2;
                     ui.f k10 = z10 ? le0Var2.k() : le0Var2.B();
                     if (k10 != null) {
                         beginRecording.save();

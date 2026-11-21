@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ge implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class ge implements Runnable {
                 break;
             case 9:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.n10.t(null, 2131747102, org.telegram.ui.Components.lc.b0(bnVar));
+                org.telegram.messenger.n10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
                 break;
             case 10:
                 bn.a0(bnVar, str);
@@ -79,7 +79,7 @@ public final /* synthetic */ class ge implements Runnable {
                 break;
             case 12:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.n10.t(null, 2131747102, org.telegram.ui.Components.lc.b0(bnVar));
+                org.telegram.messenger.n10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
                 break;
             default:
                 vf.c.t(bnVar.getParentActivity(), "https://fragment.com/username/" + str);

@@ -9,10 +9,10 @@ import org.telegram.messenger.q10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements RequestDelegate {
     public final /* synthetic */ int a = 1;
@@ -36,7 +36,7 @@ public final /* synthetic */ class e implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                g0.g3(new i(tL_error, tLObject, (TwoStepVerificationActivity) this.d, (h2) this.e, this.b, (q10) this.f, (Runnable) this.g, this.c));
+                g0.g3(new i(tL_error, tLObject, (TwoStepVerificationActivity) this.d, (g2) this.e, this.b, (q10) this.f, (Runnable) this.g, this.c));
                 break;
             default:
                 g0.g3(new nb((mp) this.d, (HashMap) this.e, (String) this.f, tLObject, (a0.h) this.g, this.b, this.c));
@@ -44,9 +44,9 @@ public final /* synthetic */ class e implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ e(TwoStepVerificationActivity twoStepVerificationActivity, h2 h2Var, long j3, q10 q10Var, Runnable runnable, int i7) {
+    public /* synthetic */ e(TwoStepVerificationActivity twoStepVerificationActivity, g2 g2Var, long j3, q10 q10Var, Runnable runnable, int i7) {
         this.d = twoStepVerificationActivity;
-        this.e = h2Var;
+        this.e = g2Var;
         this.b = j3;
         this.f = q10Var;
         this.g = runnable;

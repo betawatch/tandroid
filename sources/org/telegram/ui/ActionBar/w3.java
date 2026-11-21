@@ -2,42 +2,41 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class w3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
+public final class w3 {
+    public final l4 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e = true;
+    public boolean f;
+    public long g;
 
-    public /* synthetic */ w3(y3 y3Var, int i7) {
-        this.a = i7;
-        this.b = y3Var;
+    public w3(l4 l4Var) {
+        this.a = l4Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                y3 y3Var = this.b;
-                View view = y3Var.m;
-                if (view.getWindowVisibility() == 0 && view.isShown()) {
-                    x3 x3Var = y3Var.s;
-                    x3Var.getClass();
-                    System.currentTimeMillis();
-                    x3Var.c = false;
-                    y3Var.s.a();
-                    break;
+    public final void a() {
+        if (this.f) {
+            boolean z10 = this.b;
+            l4 l4Var = this.a;
+            if (z10 || this.c || this.d || !this.e) {
+                j4 j4Var = l4Var.b;
+                if (j4Var.f()) {
+                    j4Var.G = true;
+                    j4Var.x.start();
+                    j4Var.D.setEmpty();
+                    return;
                 }
-                break;
-            default:
-                y3 y3Var2 = this.b;
-                View view2 = y3Var2.m;
-                if (view2.getWindowVisibility() == 0 && view2.isShown()) {
-                    x3 x3Var2 = y3Var2.s;
-                    x3Var2.b = false;
-                    x3Var2.a();
-                    break;
-                }
-                break;
+                return;
+            }
+            View view = l4Var.a;
+            z3 z3Var = l4Var.l;
+            view.removeOnLayoutChangeListener(z3Var);
+            l4Var.a.addOnLayoutChangeListener(z3Var);
+            l4Var.c();
+            this.g = System.currentTimeMillis();
         }
     }
 }

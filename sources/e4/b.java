@@ -5,9 +5,9 @@ import a8.la;
 import android.opengl.GLES20;
 import android.text.TextUtils;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.a40;
+import org.telegram.ui.Components.d40;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class b {
     public final int a;
@@ -110,9 +110,9 @@ public class b {
     }
 
     public b(int i7) {
-        int a10 = a40.a(35633, R.raw.round_blur_vert);
+        int a10 = d40.a(35633, R.raw.round_blur_vert);
         this.b = a10;
-        int a11 = a40.a(35632, i7);
+        int a11 = d40.a(35632, i7);
         this.c = a11;
         int glCreateProgram = GLES20.glCreateProgram();
         GLES20.glAttachShader(glCreateProgram, a10);

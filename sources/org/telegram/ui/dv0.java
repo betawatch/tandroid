@@ -7,7 +7,7 @@ import android.animation.ObjectAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class dv0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,13 +43,13 @@ public final class dv0 extends AnimatorListenerAdapter {
         ProfileActivity profileActivity = this.b;
         switch (i7) {
             case 0:
-                qVar = ((org.telegram.ui.ActionBar.h2) profileActivity).glassEngine;
+                qVar = ((org.telegram.ui.ActionBar.g2) profileActivity).glassEngine;
                 qVar.g();
-                kVar = ((org.telegram.ui.ActionBar.h2) profileActivity).actionBar;
-                kVar.G(profileActivity.q2 ? 1090519039 : profileActivity.n6 != null ? 553648127 : org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.f8, profileActivity.A0), false);
+                kVar = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
+                kVar.F(profileActivity.q2 ? 1090519039 : profileActivity.n6 != null ? 553648127 : org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.f8, profileActivity.A0), false);
                 zu0 zu0Var = profileActivity.f0;
                 ImageReceiver imageReceiver = zu0Var.V;
-                org.telegram.ui.Components.b6 m10 = imageReceiver.m();
+                org.telegram.ui.Components.c6 m10 = imageReceiver.m();
                 if (m10 != null) {
                     m10.w(zu0Var);
                 }

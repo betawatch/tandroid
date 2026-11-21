@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class m9 {
     public int a;
@@ -30,13 +30,13 @@ public final class m9 {
                 this.c = y10;
                 aVar.t0();
                 if (aVar.m1() && view != null) {
-                    if (((p4.o0) this.e) != null) {
+                    if (((p4.z) this.e) != null) {
                         throw new AssertionError();
                     }
                     this.a |= 2;
-                    p4.o0 o0Var = new p4.o0(18, this, view);
-                    this.e = o0Var;
-                    view.postDelayed(o0Var, aVar.getLongPressDuration());
+                    p4.z zVar = new p4.z(20, this, view);
+                    this.e = zVar;
+                    view.postDelayed(zVar, aVar.getLongPressDuration());
                     return true;
                 }
             }
@@ -80,11 +80,11 @@ public final class m9 {
         int i7 = this.a;
         if ((i7 & 2) != 0) {
             this.a = i7 & (-3);
-            p4.o0 o0Var = (p4.o0) this.e;
-            if (o0Var == null) {
+            p4.z zVar = (p4.z) this.e;
+            if (zVar == null) {
                 throw new AssertionError();
             }
-            view.removeCallbacks(o0Var);
+            view.removeCallbacks(zVar);
             this.e = null;
         }
         int i10 = this.a;

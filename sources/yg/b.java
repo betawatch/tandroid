@@ -11,57 +11,57 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
-    public final n5 a;
+    public final m5 a;
     public final ImageView b;
 
-    public b(Context context, i6 i6Var) {
+    public b(Context context, h6 h6Var) {
         super(context);
-        n5 n5Var = new n5(context);
-        this.a = n5Var;
-        n5Var.setTextSize(16);
-        n5Var.setGravity(gd.a0 ? 5 : 3);
-        int i7 = n6.L6;
-        u6.X(n5Var, i7, i6Var);
-        n5Var.setTag(Integer.valueOf(i7));
-        addView(n5Var);
+        m5 m5Var = new m5(context);
+        this.a = m5Var;
+        m5Var.setTextSize(16);
+        m5Var.setGravity(gd.a0 ? 5 : 3);
+        int i7 = m6.L6;
+        t6.X(m5Var, i7, h6Var);
+        m5Var.setTag(Integer.valueOf(i7));
+        addView(m5Var);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         addView(imageView);
-        n5Var.k(gd.M0(2131753601, null));
+        m5Var.k(gd.N0(2131753600, null));
         Drawable drawable = getResources().getDrawable(R.drawable.poll_add_circle);
         Drawable drawable2 = getResources().getDrawable(R.drawable.poll_add_plus);
-        int i10 = n6.N6;
+        int i10 = m6.N6;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        u6.x(this, drawable, i10, i6Var, mode);
-        u6.x(this, drawable2, n6.k7, i6Var, mode);
-        imageView.setImageDrawable(new mq(drawable, drawable2));
-        u6.h(n6.h5, this, i6Var);
+        t6.x(this, drawable, i10, h6Var, mode);
+        t6.x(this, drawable2, m6.k7, h6Var, mode);
+        imageView.setImageDrawable(new oq(drawable, drawable2));
+        t6.h(m6.h5, this, h6Var);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         int L;
         int i13 = i11 - i7;
-        n5 n5Var = this.a;
-        int textHeight = ((i12 - i10) - n5Var.getTextHeight()) / 2;
+        m5 m5Var = this.a;
+        int textHeight = ((i12 - i10) - m5Var.getTextHeight()) / 2;
         boolean z11 = gd.a0;
         ImageView imageView = this.b;
         if (z11) {
-            L = (getMeasuredWidth() - n5Var.getMeasuredWidth()) - g0.L(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
+            L = (getMeasuredWidth() - m5Var.getMeasuredWidth()) - g0.L(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
         } else {
             L = g0.L(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
         }
-        n5Var.layout(L, textHeight, n5Var.getMeasuredWidth() + L, n5Var.getMeasuredHeight() + textHeight);
+        m5Var.layout(L, textHeight, m5Var.getMeasuredWidth() + L, m5Var.getMeasuredHeight() + textHeight);
         int L2 = !gd.a0 ? g0.L(24.0f) : (i13 - imageView.getMeasuredWidth()) - g0.L(24.0f);
         imageView.layout(L2, 0, imageView.getMeasuredWidth() + L2, imageView.getMeasuredHeight());
     }

@@ -8,29 +8,29 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ri0 extends org.telegram.ui.Components.k41 {
+public final class ri0 extends org.telegram.ui.Components.n41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        org.telegram.ui.Components.k41.h(new ri0());
+        org.telegram.ui.Components.n41.h(new ri0());
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, org.telegram.ui.Components.l41 l41Var, boolean z10, org.telegram.ui.Components.z41 z41Var, org.telegram.ui.Components.e51 e51Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, org.telegram.ui.Components.o41 o41Var, boolean z10, org.telegram.ui.Components.c51 c51Var, org.telegram.ui.Components.h51 h51Var) {
         si0 si0Var = (si0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) l41Var.H;
-        View.OnClickListener onClickListener = l41Var.E;
+        TL_account.Passkey passkey = (TL_account.Passkey) o41Var.H;
+        View.OnClickListener onClickListener = o41Var.E;
         TextView textView = si0Var.n;
         TextView textView2 = si0Var.h;
-        org.telegram.ui.ActionBar.i6 i6Var = si0Var.d;
+        org.telegram.ui.ActionBar.h6 h6Var = si0Var.d;
         FrameLayout frameLayout = si0Var.e;
         org.telegram.ui.Components.q9 q9Var = si0Var.f;
         si0Var.w = passkey.id;
         long j3 = passkey.software_emoji_id;
         if (j3 != 0) {
-            q9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.o5.m(si0Var.c, j3, null, 3));
+            q9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.p5.m(si0Var.c, j3, null, 3));
             frameLayout.setBackground(null);
             q9Var.setColorFilter(null);
             si0Var.a = false;
@@ -38,8 +38,8 @@ public final class ri0 extends org.telegram.ui.Components.k41 {
             q9Var.setScaleY(1.0f);
         } else {
             int L = org.telegram.messenger.g0.L(4.0f);
-            int i7 = org.telegram.ui.ActionBar.n6.G6;
-            org.telegram.ui.ActionBar.u6.B(frameLayout, org.telegram.ui.ActionBar.n6.d0(L, org.telegram.ui.ActionBar.n6.r1(0.04f, org.telegram.ui.ActionBar.n6.w0(i7, i6Var))), org.telegram.ui.ActionBar.u6.K(0.04f, i7), i6Var);
+            int i7 = org.telegram.ui.ActionBar.m6.G6;
+            org.telegram.ui.ActionBar.t6.B(frameLayout, org.telegram.ui.ActionBar.m6.d0(L, org.telegram.ui.ActionBar.m6.r1(0.04f, org.telegram.ui.ActionBar.m6.w0(i7, h6Var))), org.telegram.ui.ActionBar.t6.K(0.04f, i7), h6Var);
             si0Var.a();
             q9Var.setImageResource(R.drawable.msg2_permissions);
             q9Var.setScaleX(0.666f);
@@ -47,23 +47,23 @@ public final class ri0 extends org.telegram.ui.Components.k41 {
             q9Var.setAnimatedEmojiDrawable(null);
         }
         if (TextUtils.isEmpty(passkey.name)) {
-            textView2.setText(org.telegram.messenger.gd.M0(2131747435, null));
+            textView2.setText(org.telegram.messenger.gd.N0(2131747434, null));
         } else {
             textView2.setText(passkey.name);
         }
         int i10 = passkey.last_usage_date;
         if (i10 != 0) {
-            textView.setText(org.telegram.messenger.gd.a0(null, null, 2131747441, org.telegram.messenger.gd.x(i10, false)));
+            textView.setText(org.telegram.messenger.gd.a0(null, null, 2131747440, org.telegram.messenger.gd.x(i10, false)));
         } else {
-            textView.setText(org.telegram.messenger.gd.a0(null, null, 2131747454, org.telegram.messenger.gd.x(passkey.date, false)));
+            textView.setText(org.telegram.messenger.gd.a0(null, null, 2131747453, org.telegram.messenger.gd.x(passkey.date, false)));
         }
         si0Var.r.setOnClickListener(onClickListener);
         si0Var.s = z10;
         si0Var.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, org.telegram.ui.Components.ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new si0(i7, context, i6Var);
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, org.telegram.ui.Components.ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        return new si0(i7, context, h6Var);
     }
 }

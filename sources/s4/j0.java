@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class j0 extends k0 implements b0 {
     public static final ArrayList J;
@@ -44,7 +44,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public j0(Context context, e eVar) {
-        super(context, new hn(new ComponentName("android", k0.class.getName()), 15));
+        super(context, new jn(new ComponentName("android", k0.class.getName()), 15));
         this.H = new ArrayList();
         this.I = new ArrayList();
         this.r = eVar;

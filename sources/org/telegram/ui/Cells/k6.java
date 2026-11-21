@@ -10,7 +10,7 @@ import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k6 extends FrameLayout {
     public final TextView a;
@@ -18,18 +18,18 @@ public final class k6 extends FrameLayout {
     public final RadioButton c;
     public int d;
 
-    public k6(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public k6(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.d = 50;
         RadioButton radioButton = new RadioButton(context);
         this.c = radioButton;
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
-        org.telegram.ui.ActionBar.u6.O(radioButton, org.telegram.ui.ActionBar.n6.D5, org.telegram.ui.ActionBar.n6.E5, i6Var);
+        org.telegram.ui.ActionBar.t6.O(radioButton, org.telegram.ui.ActionBar.m6.D5, org.telegram.ui.ActionBar.m6.E5, h6Var);
         boolean z10 = gd.a0;
         addView(radioButton, c8.ma.d(22, 22.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 18, 14.0f, z10 ? 18 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, i6Var);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
         n10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((gd.a0 ? 5 : 3) | 16);
@@ -37,7 +37,7 @@ public final class k6 extends FrameLayout {
         addView(textView, c8.ma.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 51, 13.0f, z11 ? 51 : 21, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.y6, i6Var);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.y6, h6Var);
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity((gd.a0 ? 5 : 3) | 16);
         textView2.setVisibility(8);

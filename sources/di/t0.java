@@ -18,14 +18,14 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t0 extends View implements fs {
-    public final org.telegram.ui.Components.c6 E;
+    public final org.telegram.ui.Components.d6 E;
     public float F;
-    public o8 G;
+    public p8 G;
     public final ArrayList H;
     public final ArrayList I;
     public final HashSet J;
@@ -50,7 +50,7 @@ public final class t0 extends View implements fs {
     public t0(Context context, int i7, long j3, org.telegram.ui.k0 k0Var) {
         super(context);
         this.d = true;
-        this.E = new org.telegram.ui.Components.c6(this, 0L, 350L, lr.h);
+        this.E = new org.telegram.ui.Components.d6(this, 0L, 350L, nr.h);
         this.F = 1.0f;
         this.H = new ArrayList();
         this.I = new ArrayList();
@@ -76,7 +76,7 @@ public final class t0 extends View implements fs {
     */
     public final void a() {
         TLRPC.EmojiStatus emojiStatus;
-        o8 G;
+        p8 G;
         boolean z10;
         int i7;
         ArrayList arrayList;
@@ -105,7 +105,7 @@ public final class t0 extends View implements fs {
                     hashSet.add(Long.valueOf(((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id));
                 }
                 int i13 = 0;
-                G = x8.y(i12, false).G(j3, true);
+                G = y8.y(i12, false).G(j3, true);
                 this.G = G;
                 if (G != null) {
                     for (int i14 = 0; i14 < this.G.l.size(); i14++) {
@@ -159,19 +159,19 @@ public final class t0 extends View implements fs {
                         } else {
                             float L = org.telegram.messenger.g0.L(22.5f);
                             int i17 = s0Var6.d;
-                            s0Var6.h = new RadialGradient(0.0f, 0.0f, L, new int[]{i17, org.telegram.ui.ActionBar.n6.r1(0.0f, i17)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                            s0Var6.h = new RadialGradient(0.0f, 0.0f, L, new int[]{i17, org.telegram.ui.ActionBar.m6.r1(0.0f, i17)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                             Paint paint = new Paint(1);
                             s0Var6.i = paint;
                             paint.setShader(s0Var6.h);
                             TLRPC.Document document = s0Var6.b;
                             if (document != null) {
-                                s0Var6.j = org.telegram.ui.Components.o5.l(i12, i13, document);
+                                s0Var6.j = org.telegram.ui.Components.p5.l(i12, i13, document);
                             } else {
-                                s0Var6.j = org.telegram.ui.Components.o5.m(i12, s0Var6.c, null, i13);
+                                s0Var6.j = org.telegram.ui.Components.p5.m(i12, s0Var6.c, null, i13);
                             }
-                            org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this, 0L, 320L, (TimeInterpolator) null);
-                            s0Var6.k = c6Var;
-                            c6Var.e(true, 0.0f);
+                            org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(this, 0L, 320L, (TimeInterpolator) null);
+                            s0Var6.k = d6Var;
+                            d6Var.e(true, 0.0f);
                             if (isAttachedToWindow()) {
                                 s0Var6.j.a(this);
                             }
@@ -238,7 +238,7 @@ public final class t0 extends View implements fs {
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i132 = 0;
-            G = x8.y(i12, false).G(j3, true);
+            G = y8.y(i12, false).G(j3, true);
             this.G = G;
             if (G != null) {
             }
@@ -264,7 +264,7 @@ public final class t0 extends View implements fs {
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 }
                 int i1322 = 0;
-                G = x8.y(i12, false).G(j3, true);
+                G = y8.y(i12, false).G(j3, true);
                 this.G = G;
                 if (G != null) {
                 }
@@ -288,7 +288,7 @@ public final class t0 extends View implements fs {
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i13222 = 0;
-            G = x8.y(i12, false).G(j3, true);
+            G = y8.y(i12, false).G(j3, true);
             this.G = G;
             if (G != null) {
             }

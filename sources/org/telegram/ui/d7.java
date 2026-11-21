@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class d7 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class d7 implements ViewTreeObserver.OnPreDrawListener {
                 }
                 break;
             case 1:
-                ((hi.m5) this.b).invalidate();
+                ((hi.l5) this.b).invalidate();
                 break;
             case 2:
                 View view = ((q50) this.b).fragmentView;
@@ -63,9 +63,9 @@ public final class d7 implements ViewTreeObserver.OnPreDrawListener {
                     }
                     qm0Var.n.f();
                 }
-                org.telegram.ui.Components.ck0 ck0Var = ((qm0) this.b).h;
-                if (ck0Var != null) {
-                    ck0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.ek0 ek0Var = ((qm0) this.b).h;
+                if (ek0Var != null) {
+                    ek0Var.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;
@@ -172,9 +172,9 @@ public final class d7 implements ViewTreeObserver.OnPreDrawListener {
                     }
                     wallpapersListActivity.H0();
                 }
-                org.telegram.ui.Components.ck0 ck0Var2 = ((WallpapersListActivity) this.b).G;
-                if (ck0Var2 != null) {
-                    ck0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.ek0 ek0Var2 = ((WallpapersListActivity) this.b).G;
+                if (ek0Var2 != null) {
+                    ek0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;

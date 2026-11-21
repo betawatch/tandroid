@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import ki.m1;
+import ki.l1;
 import org.telegram.messenger.ks;
 import p4.r0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public abstract class j {
     public static int c;
@@ -135,7 +135,7 @@ public abstract class j {
             } finally {
             }
         }
-        o d2 = a.d(fVar.a, str, new m1(i7, 4, j3, iVar2, fVar));
+        o d2 = a.d(fVar.a, str, new l1(i7, 4, j3, iVar2, fVar));
         synchronized (d) {
             try {
                 if (iVar2.b.get(Long.valueOf(j3)) == fVar) {

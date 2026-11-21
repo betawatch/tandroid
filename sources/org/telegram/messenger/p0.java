@@ -8,70 +8,70 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.dd0;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final hi.w4 A;
     public final hi.w4 B;
-    public final hi.u5 C;
-    public final hi.u5 D;
-    public final hi.u5 E;
+    public final hi.t5 C;
+    public final hi.t5 D;
+    public final hi.t5 E;
     public final h9.g1 F;
     public final h9.g1 G;
     public final h9.g1 H;
     public final hi.w4 I;
     public final hi.w4 J;
-    public final hi.u5 K;
-    public final hi.u5 L;
-    public final hi.u5 M;
-    public final hi.u5 N;
-    public final hi.u5 O;
+    public final hi.t5 K;
+    public final hi.t5 L;
+    public final hi.t5 M;
+    public final hi.t5 N;
+    public final hi.t5 O;
     public final hi.w4 P;
-    public final hi.u5 Q;
-    public final hi.u5 R;
-    public final hi.u5 S;
-    public final hi.u5 T;
-    public final hi.u5 U;
-    public final hi.u5 V;
-    public final hi.u5 W;
-    public final hi.u5 X;
-    public final hi.u5 Y;
+    public final hi.t5 Q;
+    public final hi.t5 R;
+    public final hi.t5 S;
+    public final hi.t5 T;
+    public final hi.t5 U;
+    public final hi.t5 V;
+    public final hi.t5 W;
+    public final hi.t5 X;
+    public final hi.t5 Y;
     public final h9.g1 Z;
     public final HashMap a;
-    public final hi.u5 a0;
-    public final hi.u5 b;
-    public final hi.u5 b0;
-    public final hi.u5 c;
-    public final hi.u5 c0;
-    public final hi.u5 d;
-    public final hi.u5 d0;
-    public final hi.u5 e;
-    public final hi.u5 e0;
-    public final hi.u5 f;
-    public final hi.u5 f0;
+    public final hi.t5 a0;
+    public final hi.t5 b;
+    public final hi.t5 b0;
+    public final hi.t5 c;
+    public final hi.t5 c0;
+    public final hi.t5 d;
+    public final hi.t5 d0;
+    public final hi.t5 e;
+    public final hi.t5 e0;
+    public final hi.t5 f;
+    public final hi.t5 f0;
     public final h9.g1 g;
-    public final hi.u5 g0;
+    public final hi.t5 g0;
     public final h9.g1 h;
-    public final hi.u5 h0;
+    public final hi.t5 h0;
     public final hi.w4 i;
-    public final hi.u5 i0;
+    public final hi.t5 i0;
     public final hi.w4 j;
-    public final hi.u5 j0;
+    public final hi.t5 j0;
     public final hi.w4 k;
-    public final hi.u5 k0;
+    public final hi.t5 k0;
     public final hi.w4 l;
     public final h9.g1 l0;
     public final h9.g1 m;
     public final h9.g1 m0;
-    public final hi.u5 n;
+    public final hi.t5 n;
     public final h9.g1 n0;
-    public final hi.u5 o;
+    public final hi.t5 o;
     public final h9.g1 o0;
-    public final hi.u5 p;
+    public final hi.t5 p;
     public final h9.g1 p0;
-    public final hi.u5 q;
+    public final hi.t5 q;
     public final h9.g1 q0;
     public final h9.g1 r;
     public final h9.g1 r0;
@@ -81,12 +81,12 @@ public final class p0 {
     public final hi.w4 t0;
     public final h9.g1 u;
     public final h9.g1 u0;
-    public final hi.u5 v;
-    public final hi.u5 v0;
-    public final hi.u5 w;
+    public final hi.t5 v;
+    public final hi.t5 v0;
+    public final hi.t5 w;
     public final h9.g1 x;
-    public final hi.u5 y;
-    public final hi.u5 z;
+    public final hi.t5 y;
+    public final hi.t5 z;
 
     public p0() {
         HashMap hashMap = new HashMap();
@@ -184,8 +184,8 @@ public final class p0 {
         this.v0 = e(6, "widgets_processes");
     }
 
-    public static String i(hi.u5 u5Var) {
-        String str = ((n0) u5Var.b).c;
+    public static String i(hi.t5 t5Var) {
+        String str = ((n0) t5Var.b).c;
         return ("visible".equals(str) || "hidden".equals(str)) ? str : "default";
     }
 
@@ -217,7 +217,7 @@ public final class p0 {
         boolean b14 = b(editor, tL_jsonObject, "wallet_available", tL_jsonBool3) | b13;
         if (((h0) this.u0.b).c) {
             ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.n0.a;
-            g0.g3(new dd0(18));
+            g0.g3(new cd0(18));
         }
         return b14;
     }
@@ -258,10 +258,10 @@ public final class p0 {
         return g1Var;
     }
 
-    public final hi.u5 e(int i7, String str) {
-        hi.u5 u5Var = new hi.u5(str, i7);
-        this.a.put(str, (j0) u5Var.b);
-        return u5Var;
+    public final hi.t5 e(int i7, String str) {
+        hi.t5 t5Var = new hi.t5(str, i7);
+        this.a.put(str, (j0) t5Var.b);
+        return t5Var;
     }
 
     public final h9.g1 f(long j3, String str) {
@@ -270,10 +270,10 @@ public final class p0 {
         return g1Var;
     }
 
-    public final hi.u5 g(String str, String str2) {
-        hi.u5 u5Var = new hi.u5(str, str2);
-        this.a.put(str, (n0) u5Var.b);
-        return u5Var;
+    public final hi.t5 g(String str, String str2) {
+        hi.t5 t5Var = new hi.t5(str, str2);
+        this.a.put(str, (n0) t5Var.b);
+        return t5Var;
     }
 
     public final hi.w4 h(long j3, String str) {

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.Comparator;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qw0 implements Comparator {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class qw0 implements Comparator {
                 }
                 return j3 < j10 ? -1 : 0;
             case 2:
-                return Integer.compare(((org.telegram.ui.ActionBar.m6) obj).W, ((org.telegram.ui.ActionBar.m6) obj2).W);
+                return Integer.compare(((org.telegram.ui.ActionBar.l6) obj).W, ((org.telegram.ui.ActionBar.l6) obj2).W);
             case 3:
                 long j11 = org.telegram.messenger.j10.i(((Integer) obj).intValue()).Z;
                 long j12 = org.telegram.messenger.j10.i(((Integer) obj2).intValue()).Z;
@@ -60,7 +60,7 @@ public final /* synthetic */ class qw0 implements Comparator {
             case 11:
                 return ((s2.e) obj).a.compareTo(((s2.e) obj2).a);
             case 12:
-                return (int) ((((ug.m1) obj).a * 100.0f) - (((ug.m1) obj2).a * 100.0f));
+                return (int) ((((ug.l1) obj).a * 100.0f) - (((ug.l1) obj2).a * 100.0f));
             default:
                 return ((String) obj).compareTo((String) obj2);
         }

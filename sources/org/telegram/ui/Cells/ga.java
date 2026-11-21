@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class ga implements Runnable {
                 break;
             case 3:
                 final v0 v0Var2 = (v0) this.b;
-                final org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.c;
+                final org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.c;
                 TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
                 tL_resolveStarGiftOffer.offer_msg_id = v0Var2.getMessageObject().e1();
                 tL_resolveStarGiftOffer.decline = true;
@@ -92,14 +92,14 @@ public final /* synthetic */ class ga implements Runnable {
                             mp.u1(v0.this.I).V3(updates, false);
                         }
                         if (tL_error != null) {
-                            org.telegram.messenger.g0.g3(new ga(4, h2Var, tL_error));
+                            org.telegram.messenger.g0.g3(new ga(4, g2Var, tL_error));
                         }
                     }
                 });
                 break;
             case 4:
-                org.telegram.ui.ActionBar.h2 h2Var2 = (org.telegram.ui.ActionBar.h2) this.b;
-                lc.b0(h2Var2).g0((TLRPC.TL_error) this.c, false);
+                org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) this.b;
+                lc.b0(g2Var2).g0((TLRPC.TL_error) this.c, false);
                 break;
             case 5:
                 r1 r1Var3 = (r1) this.b;
@@ -121,7 +121,7 @@ public final /* synthetic */ class ga implements Runnable {
                 }
                 break;
             default:
-                ((ia) this.b).z1((org.telegram.ui.ActionBar.m6) this.c);
+                ((ia) this.b).z1((org.telegram.ui.ActionBar.l6) this.c);
                 break;
         }
     }

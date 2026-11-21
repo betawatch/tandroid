@@ -13,19 +13,19 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class sq0 extends View {
     public final Paint a;
-    public final org.telegram.ui.Components.m6 b;
+    public final org.telegram.ui.Components.n6 b;
     public final TextPaint c;
     public StaticLayout d;
     public float e;
     public float f;
-    public final org.telegram.ui.Components.m6 h;
+    public final org.telegram.ui.Components.n6 h;
     public String n;
     public boolean r;
-    public final org.telegram.ui.Components.c6 s;
+    public final org.telegram.ui.Components.d6 s;
     public boolean w;
     public int x;
 
@@ -36,32 +36,32 @@ public final class sq0 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         this.r = false;
-        org.telegram.ui.Components.lr lrVar = org.telegram.ui.Components.lr.h;
-        this.s = new org.telegram.ui.Components.c6(this, 0L, 350L, lrVar);
+        org.telegram.ui.Components.nr nrVar = org.telegram.ui.Components.nr.h;
+        this.s = new org.telegram.ui.Components.d6(this, 0L, 350L, nrVar);
         paint.setColor(2130706432);
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true);
-        this.b = m6Var;
-        m6Var.n(0.3f, 320L, lrVar);
-        m6Var.u(-1);
-        m6Var.w(org.telegram.messenger.g0.L(14.0f));
-        m6Var.x(org.telegram.messenger.g0.o());
-        m6Var.setCallback(this);
-        m6Var.t("0", true, true);
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true);
+        this.b = n6Var;
+        n6Var.n(0.3f, 320L, nrVar);
+        n6Var.u(-1);
+        n6Var.w(org.telegram.messenger.g0.L(14.0f));
+        n6Var.x(org.telegram.messenger.g0.o());
+        n6Var.setCallback(this);
+        n6Var.t("0", true, true);
         Point point = org.telegram.messenger.g0.q;
-        m6Var.N = point.x;
+        n6Var.N = point.x;
         textPaint.setColor(-1);
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         c();
-        org.telegram.ui.Components.m6 m6Var2 = new org.telegram.ui.Components.m6(false, true, true);
-        this.h = m6Var2;
-        m6Var2.n(0.3f, 320L, lrVar);
-        m6Var2.u(-1);
-        m6Var2.w(org.telegram.messenger.g0.L(14.0f));
-        m6Var2.x(org.telegram.messenger.g0.o());
-        m6Var2.setCallback(this);
-        m6Var2.t("0", true, true);
-        m6Var2.N = point.x;
+        org.telegram.ui.Components.n6 n6Var2 = new org.telegram.ui.Components.n6(false, true, true);
+        this.h = n6Var2;
+        n6Var2.n(0.3f, 320L, nrVar);
+        n6Var2.u(-1);
+        n6Var2.w(org.telegram.messenger.g0.L(14.0f));
+        n6Var2.x(org.telegram.messenger.g0.o());
+        n6Var2.setCallback(this);
+        n6Var2.t("0", true, true);
+        n6Var2.N = point.x;
     }
 
     public final void a(int i7, int i10) {
@@ -89,7 +89,7 @@ public final class sq0 extends View {
 
     public final void c() {
         this.n = org.telegram.messenger.gd.E0().B.c;
-        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.gd.M0(2131747636, null).replace("%1$d", "").replace("%2$d", ""), this.c, org.telegram.messenger.g0.L(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.gd.N0(2131747635, null).replace("%1$d", "").replace("%2$d", ""), this.c, org.telegram.messenger.g0.L(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         this.d = staticLayout;
         if (staticLayout.getLineCount() >= 1) {
             this.e = this.d.getLineWidth(0);
@@ -125,10 +125,10 @@ public final class sq0 extends View {
         if (e10 <= 0.0f) {
             return;
         }
-        org.telegram.ui.Components.m6 m6Var = this.b;
-        float c10 = m6Var.c() + this.e;
-        org.telegram.ui.Components.m6 m6Var2 = this.h;
-        float c11 = m6Var2.c() + c10 + org.telegram.messenger.g0.L(18.0f);
+        org.telegram.ui.Components.n6 n6Var = this.b;
+        float c10 = n6Var.c() + this.e;
+        org.telegram.ui.Components.n6 n6Var2 = this.h;
+        float c11 = n6Var2.c() + c10 + org.telegram.messenger.g0.L(18.0f);
         float f10 = ((1.0f - e10) * (-org.telegram.messenger.g0.L(8.0f))) + this.x;
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set((getWidth() - c11) / 2.0f, org.telegram.messenger.g0.N(10.0f) + f10, (getWidth() + c11) / 2.0f, org.telegram.messenger.g0.N(33.0f) + f10);
@@ -139,20 +139,20 @@ public final class sq0 extends View {
         paint.setAlpha(alpha);
         canvas.save();
         canvas.translate(((getWidth() - c11) / 2.0f) + org.telegram.messenger.g0.L(9.0f), f10 + org.telegram.messenger.g0.L(9.5f));
-        m6Var.setBounds(0, 0, (int) m6Var.c(), org.telegram.messenger.g0.L(23.0f));
+        n6Var.setBounds(0, 0, (int) n6Var.c(), org.telegram.messenger.g0.L(23.0f));
         int i7 = (int) (e10 * 255.0f);
-        m6Var.C = i7;
-        m6Var.draw(canvas);
-        canvas.translate(m6Var.c(), 0.0f);
+        n6Var.C = i7;
+        n6Var.draw(canvas);
+        canvas.translate(n6Var.c(), 0.0f);
         canvas.save();
         canvas.translate((-(this.d.getWidth() - this.e)) / 2.0f, ((this.f / 2.0f) + (org.telegram.messenger.g0.L(23.0f) - this.d.getHeight())) / 2.0f);
         this.c.setAlpha(i7);
         this.d.draw(canvas);
         canvas.restore();
         canvas.translate(this.e, 0.0f);
-        m6Var2.setBounds(0, 0, (int) m6Var2.c(), org.telegram.messenger.g0.L(23.0f));
-        m6Var2.C = i7;
-        m6Var2.draw(canvas);
+        n6Var2.setBounds(0, 0, (int) n6Var2.c(), org.telegram.messenger.g0.L(23.0f));
+        n6Var2.C = i7;
+        n6Var2.draw(canvas);
         canvas.restore();
     }
 

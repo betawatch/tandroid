@@ -9,7 +9,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ow0 extends View {
     public final RectF a;
@@ -41,7 +41,7 @@ public final class ow0 extends View {
         paint.setColor(637534208);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.d = ofFloat;
-        ofFloat.setInterpolator(org.telegram.ui.Components.lr.j);
+        ofFloat.setInterpolator(org.telegram.ui.Components.nr.j);
         ofFloat.addUpdateListener(new a3(this, 27));
         ofFloat.addListener(new c30(6, this, profileActivity.n1));
         profileActivity.o0.b(new nw0(this));
@@ -66,9 +66,9 @@ public final class ow0 extends View {
         RectF rectF = this.a;
         rectF.right = measuredWidth;
         rectF.left = measuredWidth - (org.telegram.messenger.g0.N(16.0f) + measureText);
-        kVar = ((org.telegram.ui.ActionBar.h2) profileActivity).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
         if (kVar != null) {
-            kVar2 = ((org.telegram.ui.ActionBar.h2) profileActivity).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
             if (kVar2.getOccupyStatusBar()) {
                 i7 = org.telegram.messenger.g0.m;
                 float L = org.telegram.messenger.g0.L(15.0f) + i7;

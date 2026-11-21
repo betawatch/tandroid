@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
+public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
     public final FrameLayout W;
-    public final org.telegram.ui.Components.ck0 a0;
+    public final org.telegram.ui.Components.ek0 a0;
     public final v4.c0 b0;
     public final s91 c0;
-    public b31 d0;
+    public mz0 d0;
     public String e0;
     public final ArrayList f0;
     public final ArrayList g0;
@@ -29,8 +29,8 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
     public int n0;
     public boolean o0;
     public boolean p0;
-    public final org.telegram.ui.Components.kv0 q0;
-    public final org.telegram.ui.Components.fj0 r0;
+    public final org.telegram.ui.Components.nv0 q0;
+    public final org.telegram.ui.Components.hj0 r0;
     public boolean s0;
     public final di.i4 t0;
     public final xr0 u0;
@@ -48,36 +48,36 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.W = frameLayout;
         this.u0 = new xr0(this, 6);
-        org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(context, null);
-        this.a0 = ck0Var;
+        org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
+        this.a0 = ek0Var;
         s91 s91Var = new s91(this);
         this.c0 = s91Var;
-        ck0Var.setAdapter(s91Var);
+        ek0Var.setAdapter(s91Var);
         v4.c0 c0Var = new v4.c0();
         this.b0 = c0Var;
-        ck0Var.setLayoutManager(c0Var);
-        ck0Var.setOnItemClickListener(new zx0(this, 10));
-        ck0Var.setOnScrollListener(new c21(this, 5));
-        org.telegram.ui.Components.wz wzVar = new org.telegram.ui.Components.wz(context, null);
-        wzVar.setViewType(7);
-        wzVar.x = false;
-        wzVar.setUseHeaderOffset(true);
-        org.telegram.ui.Components.kv0 kv0Var = new org.telegram.ui.Components.kv0(context, wzVar, 1, null);
-        this.q0 = kv0Var;
-        kv0Var.d.setText(org.telegram.messenger.gd.M0(2131747975, null));
-        kv0Var.e.setVisibility(8);
-        kv0Var.setVisibility(8);
-        kv0Var.addView(wzVar, 0);
-        kv0Var.setAnimateLayoutChange(true);
-        ck0Var.setEmptyView(kv0Var);
-        ck0Var.X1 = true;
-        ck0Var.Y1 = 0;
-        frameLayout.addView(kv0Var);
-        frameLayout.addView(ck0Var);
+        ek0Var.setLayoutManager(c0Var);
+        ek0Var.setOnItemClickListener(new zx0(this, 10));
+        ek0Var.setOnScrollListener(new d21(this, 5));
+        org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(context, null);
+        yzVar.setViewType(7);
+        yzVar.x = false;
+        yzVar.setUseHeaderOffset(true);
+        org.telegram.ui.Components.nv0 nv0Var = new org.telegram.ui.Components.nv0(context, yzVar, 1, null);
+        this.q0 = nv0Var;
+        nv0Var.d.setText(org.telegram.messenger.gd.N0(2131747974, null));
+        nv0Var.e.setVisibility(8);
+        nv0Var.setVisibility(8);
+        nv0Var.addView(yzVar, 0);
+        nv0Var.setAnimateLayoutChange(true);
+        ek0Var.setEmptyView(nv0Var);
+        ek0Var.X1 = true;
+        ek0Var.Y1 = 0;
+        frameLayout.addView(nv0Var);
+        frameLayout.addView(ek0Var);
         J();
-        org.telegram.ui.Components.fj0 fj0Var = new org.telegram.ui.Components.fj0(ck0Var, true);
-        this.r0 = fj0Var;
-        ck0Var.setItemsEnterAnimator(fj0Var);
+        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(ek0Var, true);
+        this.r0 = hj0Var;
+        ek0Var.setItemsEnterAnimator(hj0Var);
         di.i4 i4Var = new di.i4(this);
         this.t0 = i4Var;
         setAdapter(i4Var);
@@ -99,7 +99,7 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
             tL_messages_search.offset_id = ((org.telegram.messenger.fj) i5.c.h(1, arrayList)).e1();
         }
         this.s0 = true;
-        i7 = ((org.telegram.ui.ActionBar.h2) y91Var).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
         ConnectionsManager.getInstance(i7).sendRequest(tL_messages_search, new e31(5, this, str));
     }
 
@@ -115,18 +115,18 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
                 c00Var.h(-y91Var.a, 0L, 0L, 0L, jg.q0.k3[((r91) ((ArrayList) this.t0.b).get(i7)).b], false, str, z10);
                 return;
             }
-            if (view instanceof org.telegram.ui.Components.ql0) {
-                org.telegram.ui.Components.ql0 ql0Var = (org.telegram.ui.Components.ql0) view;
-                ql0Var.a.b(0, false);
-                ql0Var.L = str;
-                ql0Var.d(false);
+            if (view instanceof org.telegram.ui.Components.sl0) {
+                org.telegram.ui.Components.sl0 sl0Var = (org.telegram.ui.Components.sl0) view;
+                sl0Var.a.b(0, false);
+                sl0Var.L = str;
+                sl0Var.d(false);
                 return;
             }
             return;
         }
-        b31 b31Var = this.d0;
-        if (b31Var != null) {
-            org.telegram.messenger.g0.r(b31Var);
+        mz0 mz0Var = this.d0;
+        if (mz0Var != null) {
+            org.telegram.messenger.g0.r(mz0Var);
             this.d0 = null;
         }
         this.s0 = false;
@@ -139,9 +139,9 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
             J();
             this.o0 = true;
             this.q0.e(true, true);
-            b31 b31Var2 = new b31(12, this, str);
-            this.d0 = b31Var2;
-            org.telegram.messenger.g0.h3(b31Var2, 200L);
+            mz0 mz0Var2 = new mz0(14, this, str);
+            this.d0 = mz0Var2;
+            org.telegram.messenger.g0.h3(mz0Var2, 200L);
             return;
         }
         this.o0 = false;
@@ -196,8 +196,8 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
     @Override // org.telegram.ui.b00
     public final boolean V1() {
         org.telegram.ui.ActionBar.k kVar;
-        kVar = ((org.telegram.ui.ActionBar.h2) this.w0).actionBar;
-        return kVar.y();
+        kVar = ((org.telegram.ui.ActionBar.g2) this.w0).actionBar;
+        return kVar.x();
     }
 
     @Override // org.telegram.ui.b00
@@ -208,16 +208,16 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
             arrayList.add(fjVar);
         }
         if (arrayList.isEmpty()) {
-            kVar = ((org.telegram.ui.ActionBar.h2) this.w0).actionBar;
-            kVar.x();
+            kVar = ((org.telegram.ui.ActionBar.g2) this.w0).actionBar;
+            kVar.w();
         }
     }
 
     @Override // org.telegram.ui.b00
     public final void n() {
         org.telegram.ui.ActionBar.k kVar;
-        kVar = ((org.telegram.ui.ActionBar.h2) this.w0).actionBar;
-        kVar.S(null, null);
+        kVar = ((org.telegram.ui.ActionBar.g2) this.w0).actionBar;
+        kVar.R(null, null);
     }
 
     @Override // org.telegram.ui.b00
@@ -251,7 +251,7 @@ public final class u91 extends org.telegram.ui.Components.g71 implements b00 {
         } else if (org.telegram.messenger.n5.E(B0)) {
             bundle.putLong("user_id", B0);
         } else {
-            i7 = ((org.telegram.ui.ActionBar.h2) y91Var).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
             TLRPC.Chat O0 = org.telegram.messenger.mp.u1(org.telegram.messenger.c.a(i7).a).O0(Long.valueOf(-B0));
             if (O0 != null && O0.migrated_to != null) {
                 bundle.putLong("migrated_to", B0);

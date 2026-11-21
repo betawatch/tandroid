@@ -5,36 +5,36 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class tk implements org.telegram.ui.Components.qi {
+public final class tk implements org.telegram.ui.Components.si {
     public final /* synthetic */ bn a;
 
     public tk(bn bnVar) {
         this.a = bnVar;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final void K0() {
         this.a.a0.U();
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ boolean V1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qi
-    public final void f0(org.telegram.ui.Components.eh ehVar) {
-        this.a.y8(ehVar);
+    @Override // org.telegram.ui.Components.si
+    public final void f0(org.telegram.ui.Components.gh ghVar) {
+        this.a.y8(ghVar);
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final boolean g0() {
         return this.a.sa();
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final void h1(TLRPC.User user) {
         String o4 = org.telegram.messenger.o10.o(user);
         bn bnVar = this.a;
@@ -42,10 +42,10 @@ public final class tk implements org.telegram.ui.Components.qi {
             return;
         }
         bnVar.a0.setFieldText("@" + o4 + " ");
-        bnVar.a0.e1();
+        bnVar.a0.i1();
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
         fi.n2 n2Var;
         HashMap<Object, Object> hashMap;
@@ -207,15 +207,15 @@ public final class tk implements org.telegram.ui.Components.qi {
         }
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ void R0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ void v0() {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public final /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
     }
 }

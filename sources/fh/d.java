@@ -8,9 +8,9 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.NinePatchDrawable;
 import c8.q0;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class d extends ea {
     public NinePatchDrawable d;
@@ -40,10 +40,10 @@ public final class d extends ea {
         }
         if (fVar.e()) {
             float f10 = gVar.c / 255.0f;
-            int r12 = n6.r1(f10, i7);
+            int r12 = m6.r1(f10, i7);
             Paint paint = this.b;
             paint.setColor(r12);
-            int r13 = n6.r1(f10 * gVar.W, gVar.x);
+            int r13 = m6.r1(f10 * gVar.W, gVar.x);
             if (Color.alpha(r13) != 0) {
                 paint.setShadowLayer(gVar.U, 0.0f, gVar.V, r13);
             } else {

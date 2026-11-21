@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class oa0 implements TextureView.SurfaceTextureListener {
     public final TextureView.SurfaceTextureListener a;
@@ -43,7 +43,7 @@ public final class oa0 implements TextureView.SurfaceTextureListener {
         if (surfaceTextureListener != null) {
             surfaceTextureListener.onSurfaceTextureUpdated(surfaceTexture);
         }
-        qVar = ((org.telegram.ui.ActionBar.h2) this.b).glassEngine;
+        qVar = ((org.telegram.ui.ActionBar.g2) this.b).glassEngine;
         qVar.g();
     }
 }

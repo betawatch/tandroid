@@ -4,17 +4,17 @@ import android.animation.LayoutTransition;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class hk implements LayoutTransition.TransitionListener {
     public gk a;
     public int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.y c;
     public final /* synthetic */ bn d;
 
-    public hk(bn bnVar, org.telegram.ui.ActionBar.z zVar) {
+    public hk(bn bnVar, org.telegram.ui.ActionBar.y yVar) {
         this.d = bnVar;
-        this.c = zVar;
+        this.c = yVar;
     }
 
     @Override // android.animation.LayoutTransition.TransitionListener

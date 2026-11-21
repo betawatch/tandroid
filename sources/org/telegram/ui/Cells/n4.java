@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class n4 extends TextView {
     public boolean a;
@@ -13,7 +13,7 @@ public final class n4 extends TextView {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.a) {
-            canvas.drawLine(0.0f, getHeight() - 1, getWidth(), getHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth(), getHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

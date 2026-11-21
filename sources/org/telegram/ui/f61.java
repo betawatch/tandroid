@@ -7,18 +7,18 @@ import android.view.View;
 import android.view.ViewParent;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class f61 extends org.telegram.ui.Components.ck0 {
+public final class f61 extends org.telegram.ui.Components.ek0 {
     public final /* synthetic */ int f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f61(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var);
+    public /* synthetic */ f61(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
         this.f3 = i7;
     }
 
-    @Override // org.telegram.ui.Components.ck0
+    @Override // org.telegram.ui.Components.ek0
     public Integer V0(int i7) {
         switch (this.f3) {
             case 1:
@@ -40,7 +40,7 @@ public final class f61 extends org.telegram.ui.Components.ck0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 0:
@@ -77,7 +77,7 @@ public final class f61 extends org.telegram.ui.Components.ck0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.f3) {
             case 8:
@@ -102,7 +102,7 @@ public final class f61 extends org.telegram.ui.Components.ck0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 13:

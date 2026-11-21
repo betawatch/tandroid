@@ -1,51 +1,37 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class l01 extends AnimatorListenerAdapter {
+public final class l01 extends View {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ r11 c;
+    public final /* synthetic */ Integer b;
 
-    public /* synthetic */ l01(r11 r11Var, boolean z10, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l01(Context context, Integer num, int i7) {
+        super(context);
         this.a = i7;
-        this.c = r11Var;
-        this.b = z10;
+        this.b = num;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 0:
-                r11 r11Var = this.c;
-                f01 f01Var = r11Var.j0;
-                boolean z10 = this.b;
-                f01Var.setVisibility(z10 ? 0 : 8);
-                r11Var.i0.setVisibility(z10 ? 8 : 0);
-                r11Var.G1 = null;
-                if (!z10 && (arrayList2 = r11Var.C1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = r11Var.F1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    r11Var.r0.E(false);
-                }
-                if (!z10 && (arrayList = r11Var.D1) != null) {
-                    arrayList.clear();
+                super.onMeasure(i7, i10);
+                if (this.b != null) {
+                    setPivotX(r2.intValue());
                     break;
                 }
                 break;
             default:
-                r11 r11Var2 = this.c;
-                r11Var2.k0.setVisibility((this.b && r11Var2.j0.getVisibility() == 0) ? 0 : 8);
-                r11Var2.J1 = null;
+                super.onMeasure(i7, i10);
+                if (this.b != null) {
+                    setPivotX(r2.intValue());
+                    break;
+                }
                 break;
         }
     }

@@ -1,68 +1,105 @@
 package ji;
 
-import ai.x2;
-import android.util.Log;
-import java.util.Locale;
-import org.telegram.ui.bn;
+import ai.e2;
+import ai.p0;
+import ai.t;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements Runnable {
+public final /* synthetic */ class f implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+    public final /* synthetic */ o b;
+    public final /* synthetic */ String[] c;
 
-    public /* synthetic */ f(m mVar, int i7) {
+    public /* synthetic */ f(o oVar, String[] strArr, int i7) {
         this.a = i7;
-        this.b = mVar;
+        this.b = oVar;
+        this.c = strArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        e2 e2Var;
+        r rVar;
+        e2 e2Var2;
+        Integer num = (Integer) obj;
         switch (this.a) {
             case 0:
-                this.b.n("field send preview");
-                break;
-            case 1:
-                m mVar = this.b;
-                if (mVar.c == 2) {
-                    if (mVar.y != 0) {
-                        StringBuilder sb2 = new StringBuilder("self-check ok: chunks=");
-                        sb2.append(mVar.y);
-                        sb2.append(" in=");
-                        sb2.append(mVar.w);
-                        sb2.append("B out=");
-                        sb2.append(mVar.x);
-                        sb2.append("B (ratio ");
-                        sb2.append(mVar.x > 0 ? String.format(Locale.US, "%.2f", Double.valueOf(mVar.w / mVar.x)) : "-");
-                        sb2.append(", expect 3.00 at 48 kHz) source=");
-                        int i7 = mVar.F;
-                        p5.c.t(sb2, i7 == 1 ? "MediaController" : i7 == 2 ? "AudioRecorderV2" : "none", "VoiceLive");
-                        break;
-                    } else {
-                        Log.w("VoiceLive", "SELF-CHECK FAILED: no PCM from the recorder tap 1.5 s after lock (neither MediaController nor AudioCapture fed it)");
-                        break;
+                o oVar = this.b;
+                oVar.getClass();
+                if (num.intValue() != 0) {
+                    String str = this.c[num.intValue() - 1];
+                    t J = DictationAsr.J(str);
+                    boolean z10 = (J == null || DictationAsr.y(J)) ? false : true;
+                    DictationAsr.X(str);
+                    DictationAsr.t(J);
+                    if (z10 && oVar.c == 2 && (rVar = oVar.h) != null) {
+                        oVar.n = "";
+                        if (rVar.P1) {
+                            rVar.x1 = null;
+                        }
+                        rVar.k0 = "";
+                        rVar.y1 = -1;
+                        rVar.l0 = null;
+                        rVar.o0.clear();
+                        rVar.U0 = true;
+                        rVar.D0 = 0.0f;
+                        rVar.C0 = 0.0f;
+                        rVar.E0 = 0.0f;
+                        rVar.F0 = 0.0f;
+                        rVar.H0 = -1.0f;
+                        rVar.G0 = -1.0f;
+                        rVar.J0 = -1.0f;
+                        rVar.L0 = false;
+                        rVar.S0 = 0L;
+                        rVar.T0 = 0.0f;
+                        rVar.A0 = true;
+                        rVar.Z0 = true;
+                        rVar.invalidate();
                     }
-                }
-                break;
-            case 2:
-                m mVar2 = this.b;
-                if (mVar2.c == 2) {
-                    mVar2.u();
+                    r rVar2 = oVar.h;
+                    if (rVar2 != null) {
+                        rVar2.setLanguage(p0.H(str));
+                    }
+                    if (oVar.c == 2 && (e2Var = oVar.f) != null) {
+                        e2Var.p(str);
+                    }
+                    oVar.t();
+                    break;
+                } else {
+                    DictationAsr.Y(true);
                     break;
                 }
-                break;
-            case 3:
-                this.b.m();
                 break;
             default:
-                m mVar3 = this.b;
-                mVar3.t();
-                bn bnVar = mVar3.b.a.D3;
-                if (bnVar != null) {
-                    bnVar.presentFragment(new x2());
+                if (num.intValue() != 0) {
+                    String str2 = this.c[num.intValue() - 1];
+                    t J2 = DictationAsr.J(str2);
+                    boolean z11 = (J2 == null || DictationAsr.y(J2)) ? false : true;
+                    DictationAsr.X(str2);
+                    DictationAsr.t(J2);
+                    o oVar2 = this.b;
+                    if (z11 && oVar2.c == 2 && oVar2.X == null && oVar2.e0 == null) {
+                        oVar2.M.clear();
+                        oVar2.o();
+                    }
+                    String H = p0.H(str2);
+                    oVar2.l0 = H;
+                    e eVar = oVar2.K;
+                    if (eVar != null) {
+                        eVar.setLanguage(H);
+                    }
+                    if (oVar2.c == 2 && (e2Var2 = oVar2.f) != null) {
+                        e2Var2.p(str2);
+                    }
+                    oVar2.t();
+                    break;
+                } else {
+                    DictationAsr.Y(true);
                     break;
                 }
-                break;
         }
     }
 }

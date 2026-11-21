@@ -24,7 +24,7 @@ import org.telegram.ui.gi0;
 import org.telegram.ui.ml0;
 import org.telegram.ui.oa1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hx implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -202,7 +202,7 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             break;
                         } else if ("BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
                             TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice = (TLRPC.TL_inputMediaStakeDice) tL_messages_sendMedia.media;
-                            org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                            org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                             if (T != null) {
                                 g0.g3(new px(zyVar, T, tL_inputMediaStakeDice, tLObject2, fjVar, str, lyVar, z11, lyVar2, obj6, hashMap, z12));
                                 break;
@@ -244,7 +244,7 @@ public final /* synthetic */ class hx implements RequestDelegate {
                         fj fjVar3;
                         boolean z15;
                         String str4;
-                        org.telegram.ui.Components.ah ahVar;
+                        org.telegram.ui.Components.ch chVar;
                         final zy zyVar3 = zy.this;
                         String str5 = str3;
                         List list2 = list;
@@ -271,11 +271,11 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             if ("PASSWORD_HASH_INVALID".equals(tL_error2.text)) {
                                 if (inputCheckPasswordSRP2 == null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bnVar2.getParentActivity());
-                                    alertDialog$Builder.a.S = gd.M0(2131753008, null);
-                                    alertDialog$Builder.a.U = g0.W2(gd.a0("BotOwnershipTransferReadyAlertText", null, 2131753005, new Object[0]));
-                                    alertDialog$Builder.k(gd.M0(2131753006, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.messenger.rw
-                                        @Override // org.telegram.ui.ActionBar.r1
-                                        public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i12) {
+                                    alertDialog$Builder.a.S = gd.N0(2131753007, null);
+                                    alertDialog$Builder.a.U = g0.W2(gd.a0("BotOwnershipTransferReadyAlertText", null, 2131753004, new Object[0]));
+                                    alertDialog$Builder.k(gd.N0(2131753005, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.messenger.rw
+                                        @Override // org.telegram.ui.ActionBar.q1
+                                        public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i12) {
                                             final TwoStepVerificationActivity twoStepVerificationActivity3 = new TwoStepVerificationActivity();
                                             final fj fjVar5 = fjVar4;
                                             final zy zyVar4 = zy.this;
@@ -293,7 +293,7 @@ public final /* synthetic */ class hx implements RequestDelegate {
                                             bnVar3.presentFragment(twoStepVerificationActivity3);
                                         }
                                     });
-                                    alertDialog$Builder.h(gd.M0(2131752578, null), null);
+                                    alertDialog$Builder.h(gd.N0(2131752577, null), null);
                                     bnVar2.showDialog(alertDialog$Builder.a);
                                     return;
                                 }
@@ -321,17 +321,17 @@ public final /* synthetic */ class hx implements RequestDelegate {
                                 twoStepVerificationActivity2.t0();
                             }
                             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(bnVar2.getParentActivity());
-                            alertDialog$Builder2.a.S = gd.M0(2131751286, null);
+                            alertDialog$Builder2.a.S = gd.N0(2131751285, null);
                             LinearLayout linearLayout = new LinearLayout(bnVar2.getParentActivity());
                             linearLayout.setPadding(g0.L(24.0f), g0.L(2.0f), g0.L(24.0f), 0);
                             linearLayout.setOrientation(1);
                             alertDialog$Builder2.o(linearLayout);
                             TextView textView = new TextView(bnVar2.getParentActivity());
-                            int i12 = org.telegram.ui.ActionBar.n6.j5;
-                            org.telegram.ui.ActionBar.u6.U(textView, i12, null);
+                            int i12 = org.telegram.ui.ActionBar.m6.j5;
+                            org.telegram.ui.ActionBar.t6.U(textView, i12, null);
                             textView.setTextSize(1, 16.0f);
                             textView.setGravity((gd.a0 ? 5 : 3) | 48);
-                            f3.q("BotOwnershipTransferAlertText", null, 2131753007, new Object[0], textView);
+                            f3.q("BotOwnershipTransferAlertText", null, 2131753006, new Object[0], textView);
                             linearLayout.addView(textView, c8.ma.o(-1, -2));
                             LinearLayout linearLayout2 = new LinearLayout(bnVar2.getParentActivity());
                             linearLayout2.setOrientation(0);
@@ -340,12 +340,12 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             imageView.setImageResource(R.drawable.list_circle);
                             imageView.setPadding(gd.a0 ? g0.L(11.0f) : 0, g0.L(9.0f), gd.a0 ? 0 : g0.L(11.0f), 0);
                             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                            org.telegram.ui.ActionBar.u6.s(imageView, i12, null, mode);
+                            org.telegram.ui.ActionBar.t6.s(imageView, i12, null, mode);
                             TextView textView2 = new TextView(bnVar2.getParentActivity());
-                            org.telegram.ui.ActionBar.u6.U(textView2, i12, null);
+                            org.telegram.ui.ActionBar.t6.U(textView2, i12, null);
                             textView2.setTextSize(1, 16.0f);
                             textView2.setGravity((gd.a0 ? 5 : 3) | 48);
-                            textView2.setText(g0.W2(gd.M0(2131751289, null)));
+                            textView2.setText(g0.W2(gd.N0(2131751288, null)));
                             if (gd.a0) {
                                 linearLayout2.addView(textView2, c8.ma.o(-1, -2));
                                 linearLayout2.addView(imageView, c8.ma.r(-2, -2, 5));
@@ -359,12 +359,12 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             ImageView imageView2 = new ImageView(bnVar2.getParentActivity());
                             imageView2.setImageResource(R.drawable.list_circle);
                             imageView2.setPadding(gd.a0 ? g0.L(11.0f) : 0, g0.L(9.0f), gd.a0 ? 0 : g0.L(11.0f), 0);
-                            org.telegram.ui.ActionBar.u6.s(imageView2, i12, null, mode);
+                            org.telegram.ui.ActionBar.t6.s(imageView2, i12, null, mode);
                             TextView textView3 = new TextView(bnVar2.getParentActivity());
-                            org.telegram.ui.ActionBar.u6.U(textView3, i12, null);
+                            org.telegram.ui.ActionBar.t6.U(textView3, i12, null);
                             textView3.setTextSize(1, 16.0f);
                             textView3.setGravity((gd.a0 ? 5 : 3) | 48);
-                            textView3.setText(g0.W2(gd.M0(2131751288, null)));
+                            textView3.setText(g0.W2(gd.N0(2131751287, null)));
                             if (gd.a0) {
                                 linearLayout3.addView(textView3, c8.ma.o(-1, -2));
                                 i11 = 5;
@@ -375,15 +375,15 @@ public final /* synthetic */ class hx implements RequestDelegate {
                                 linearLayout3.addView(textView3, c8.ma.o(-1, -2));
                             }
                             if ("PASSWORD_MISSING".equals(tL_error2.text)) {
-                                alertDialog$Builder2.k(gd.M0(2131751280, null), new j1(bnVar2, 17));
-                                alertDialog$Builder2.h(gd.M0(2131752578, null), null);
+                                alertDialog$Builder2.k(gd.N0(2131751279, null), new j1(bnVar2, 17));
+                                alertDialog$Builder2.h(gd.N0(2131752577, null), null);
                             } else {
                                 TextView textView4 = new TextView(bnVar2.getParentActivity());
-                                org.telegram.ui.ActionBar.u6.U(textView4, i12, null);
+                                org.telegram.ui.ActionBar.t6.U(textView4, i12, null);
                                 textView4.setTextSize(1, 16.0f);
-                                f3.k(textView4, (gd.a0 ? i11 : 3) | 48, null, 2131751287);
+                                f3.k(textView4, (gd.a0 ? i11 : 3) | 48, null, 2131751286);
                                 linearLayout.addView(textView4, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                                alertDialog$Builder2.h(gd.M0(2131747638, null), null);
+                                alertDialog$Builder2.h(gd.N0(2131747637, null), null);
                             }
                             bnVar2.showDialog(alertDialog$Builder2.a);
                             return;
@@ -421,7 +421,7 @@ public final /* synthetic */ class hx implements RequestDelegate {
                                 return;
                             } else {
                                 if (tLObject3 instanceof TLRPC.TL_urlAuthResultDefault) {
-                                    org.telegram.ui.Components.b5.n0(bnVar2, tL_inlineButtonTypeUrlAuth.url, false, true);
+                                    org.telegram.ui.Components.c5.n0(bnVar2, tL_inlineButtonTypeUrlAuth.url, false, true);
                                     return;
                                 }
                                 return;
@@ -429,7 +429,7 @@ public final /* synthetic */ class hx implements RequestDelegate {
                         }
                         if (cg.c.c(keyboardButtonProto2, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
                             if (tLObject3 instanceof TLRPC.TL_payments_paymentFormStars) {
-                                di.x8.y(zyVar3.currentAccount, false).W(fjVar3, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr2[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject3, new qw(zyVar3, str5, list2, 0), new fi.e(5));
+                                di.y8.y(zyVar3.currentAccount, false).W(fjVar3, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr2[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject3, new qw(zyVar3, str5, list2, 0), new fi.e(5));
                                 return;
                             }
                             fj fjVar5 = fjVar3;
@@ -467,7 +467,7 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             TLRPC.User c23 = zyVar3.getMessagesController().c2(Long.valueOf(Z0));
                             boolean z18 = c23 != null && c23.verified;
                             if (!cg.c.c(keyboardButtonProto2, TL_keyboard.TL_inlineButtonTypeGame.class)) {
-                                org.telegram.ui.Components.b5.n0(bnVar2, tL_messages_botCallbackAnswer.url, false, false);
+                                org.telegram.ui.Components.c5.n0(bnVar2, tL_messages_botCallbackAnswer.url, false, false);
                                 return;
                             }
                             TLRPC.MessageMedia messageMedia = fjVar6.k.media;
@@ -484,11 +484,11 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             }
                             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(bnVar2.getParentActivity());
                             alertDialog$Builder3.a.S = str4;
-                            alertDialog$Builder3.k(gd.M0(2131747638, null), null);
+                            alertDialog$Builder3.k(gd.N0(2131747637, null), null);
                             String str7 = tL_messages_botCallbackAnswer.message;
-                            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder3.a;
-                            u1Var.U = str7;
-                            bnVar2.showDialog(u1Var);
+                            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder3.a;
+                            t1Var.U = str7;
+                            bnVar2.showDialog(t1Var);
                             return;
                         }
                         if (bnVar2.c3 == null && bnVar2.b1 != null && bnVar2.getParentActivity() != null) {
@@ -500,7 +500,7 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             TextView textView5 = new TextView(bnVar2.getParentActivity());
                             bnVar2.e3 = textView5;
                             textView5.setTextSize(1, 14.0f);
-                            org.telegram.ui.ActionBar.u6.U(bnVar2.e3, org.telegram.ui.ActionBar.n6.We, bnVar2.getResourceProvider());
+                            org.telegram.ui.ActionBar.t6.U(bnVar2.e3, org.telegram.ui.ActionBar.m6.We, bnVar2.getResourceProvider());
                             bnVar2.e3.setTypeface(g0.o());
                             bnVar2.e3.setSingleLine(true);
                             TextView textView6 = bnVar2.e3;
@@ -511,17 +511,17 @@ public final /* synthetic */ class hx implements RequestDelegate {
                             TextView textView7 = new TextView(bnVar2.getParentActivity());
                             bnVar2.f3 = textView7;
                             textView7.setTextSize(1, 14.0f);
-                            org.telegram.ui.ActionBar.u6.U(bnVar2.f3, org.telegram.ui.ActionBar.n6.Xe, bnVar2.getResourceProvider());
+                            org.telegram.ui.ActionBar.t6.U(bnVar2.f3, org.telegram.ui.ActionBar.m6.Xe, bnVar2.getResourceProvider());
                             bnVar2.f3.setSingleLine(true);
                             bnVar2.f3.setEllipsize(truncateAt);
                             bnVar2.f3.setMaxLines(1);
                             bnVar2.c3.addView(bnVar2.f3, c8.ma.d(-2, -2.0f, 51, 8.0f, 23.0f, 8.0f, 0.0f));
                         }
                         FrameLayout frameLayout2 = bnVar2.c3;
-                        if (frameLayout2 == null || (ahVar = bnVar2.b1) == null) {
+                        if (frameLayout2 == null || (chVar = bnVar2.b1) == null) {
                             return;
                         }
-                        ahVar.j(frameLayout2, true, true);
+                        chVar.j(frameLayout2, true, true);
                         bnVar2.e3.setText(str4);
                         bnVar2.f3.setText(j6.m(str6.replace('\n', ' '), bnVar2.f3.getPaint().getFontMetricsInt(), false, null, 0));
                         org.telegram.ui.yj yjVar = bnVar2.d3;

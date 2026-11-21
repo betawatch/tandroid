@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class lt0 extends FrameLayout {
     public org.telegram.ui.Components.o9 a;
@@ -33,15 +33,15 @@ public final class lt0 extends FrameLayout {
         this.f = privacyControlActivity;
         setWillNotDraw(false);
         setClipToPadding(false);
-        this.d = org.telegram.ui.ActionBar.n6.Y0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.n6.b7);
+        this.d = org.telegram.ui.ActionBar.m6.Y0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.m6.b7);
         setPadding(0, org.telegram.messenger.g0.L(11.0f), 0, org.telegram.messenger.g0.L(11.0f));
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-        i7 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
         org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
-        i10 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
         TLRPC.User c22 = u12.c2(Long.valueOf(org.telegram.messenger.j10.i(i10).e()));
         TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.message = org.telegram.messenger.gd.M0(2131746639, null);
+        tL_message.message = org.telegram.messenger.gd.N0(2131746638, null);
         tL_message.date = currentTimeMillis - 3540;
         tL_message.dialog_id = 1L;
         tL_message.flags = org.telegram.messenger.ks.k4;
@@ -54,14 +54,14 @@ public final class lt0 extends FrameLayout {
         tL_message.out = false;
         TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
         tL_message.peer_id = tL_peerUser;
-        i11 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
         tL_peerUser.user_id = org.telegram.messenger.j10.i(i11).e();
-        i12 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity).currentAccount;
+        i12 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
         org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(i12, tL_message, true, false);
         this.e = fjVar;
         fjVar.T = 1L;
         fjVar.S1 = false;
-        i13 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity).currentAccount;
+        i13 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
         org.telegram.ui.Cells.r1 r1Var = new org.telegram.ui.Cells.r1(context, i13);
         this.b = r1Var;
         r1Var.setDelegate(new sa.d(19));
@@ -107,7 +107,7 @@ public final class lt0 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        Drawable t02 = org.telegram.ui.ActionBar.n6.t0();
+        Drawable t02 = org.telegram.ui.ActionBar.m6.t0();
         if (t02 != null && this.c != t02) {
             org.telegram.ui.Components.o9 o9Var = this.a;
             if (o9Var != null) {
@@ -117,7 +117,7 @@ public final class lt0 extends FrameLayout {
             this.c = t02;
         }
         Drawable drawable = this.c;
-        if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.bb0)) {
+        if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.cb0)) {
             drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             Drawable drawable2 = this.c;
             if (drawable2 instanceof org.telegram.ui.Components.p9) {
@@ -147,7 +147,7 @@ public final class lt0 extends FrameLayout {
         } else {
             super.onDraw(canvas);
         }
-        if ((getParent() instanceof org.telegram.ui.Components.ck0) && ((org.telegram.ui.Components.ck0) getParent()).b1()) {
+        if ((getParent() instanceof org.telegram.ui.Components.ek0) && ((org.telegram.ui.Components.ek0) getParent()).b1()) {
             return;
         }
         int measuredWidth2 = getMeasuredWidth();

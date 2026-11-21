@@ -1,30 +1,18 @@
 package hi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.app.Activity;
+import android.graphics.Path;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ta b;
+public final class l9 extends w3 {
+    public final Path O;
+    public final /* synthetic */ sa P;
 
-    public /* synthetic */ l9(ta taVar, int i7) {
-        this.a = i7;
-        this.b = taVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ta taVar = this.b;
-                taVar.getClass();
-                taVar.f(1.0f, true, new s8(taVar, 6));
-                taVar.c1.b(true, true);
-                break;
-            default:
-                ta taVar2 = this.b;
-                taVar2.e(false);
-                taVar2.n2 = null;
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l9(sa saVar, Activity activity, fi.b bVar, org.telegram.ui.Components.ca caVar) {
+        super(activity, bVar, caVar);
+        this.P = saVar;
+        this.O = new Path();
     }
 }

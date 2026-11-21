@@ -11,9 +11,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0, org.telegram.ui.Components.pj0, org.telegram.ui.Components.qj0, tz, org.telegram.ui.ActionBar.r1, ri.m, r0.m, ri.n, org.telegram.ui.Components.ej0 {
+public final /* synthetic */ class ju implements org.telegram.ui.Components.dp0, org.telegram.ui.Components.rj0, org.telegram.ui.Components.sj0, tz, org.telegram.ui.ActionBar.q1, ri.m, r0.m, ri.n, org.telegram.ui.Components.gj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ cx b;
 
@@ -53,14 +53,14 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ boolean b1(View view) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
         cx.n0(this.b, i7);
         return false;
@@ -70,12 +70,12 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
     public int e() {
         cx cxVar = this.b;
         cxVar.getClass();
-        return cxVar.getThemedColor(org.telegram.ui.ActionBar.n6.d6);
+        return cxVar.getThemedColor(org.telegram.ui.ActionBar.m6.d6);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:51:0x011d A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:55:0x0100 A[SYNTHETIC] */
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -84,7 +84,7 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
         switch (this.a) {
             case 1:
                 cx cxVar = this.b;
-                org.telegram.ui.Components.l41 G = cxVar.D0.m0.G(i7);
+                org.telegram.ui.Components.o41 G = cxVar.D0.m0.G(i7);
                 Object obj = G != null ? G.H : null;
                 if (!(obj instanceof TLRPC.Chat)) {
                     if (obj instanceof org.telegram.messenger.fj) {
@@ -105,17 +105,17 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
                     Bundle bundle2 = new Bundle();
                     bundle2.putLong("chat_id", ((TLRPC.Chat) obj).id);
                     bn bnVar2 = new bn(bundle2);
-                    org.telegram.ui.Components.mm0 mm0Var = cxVar.D0.m0;
-                    mm0Var.getClass();
+                    org.telegram.ui.Components.pm0 pm0Var = cxVar.D0.m0;
+                    pm0Var.getClass();
                     ArrayList arrayList = new ArrayList();
                     while (true) {
                         i7++;
-                        if (i7 >= mm0Var.E.size()) {
+                        if (i7 >= pm0Var.E.size()) {
                             bnVar2.Fb = arrayList;
                             cxVar.presentFragment(bnVar2);
                             break;
                         } else {
-                            org.telegram.ui.Components.l41 G2 = mm0Var.G(i7);
+                            org.telegram.ui.Components.o41 G2 = pm0Var.G(i7);
                             if (G2 != null) {
                                 Object obj2 = G2.H;
                                 if (obj2 instanceof TLRPC.Chat) {
@@ -134,7 +134,7 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
                 break;
             case 2:
                 cx cxVar2 = this.b;
-                org.telegram.ui.Components.l41 G3 = cxVar2.D0.r0.G(i7);
+                org.telegram.ui.Components.o41 G3 = cxVar2.D0.r0.G(i7);
                 Object obj3 = G3 != null ? G3.H : null;
                 if (!(obj3 instanceof TLRPC.User)) {
                     if (obj3 instanceof org.telegram.messenger.fj) {
@@ -179,11 +179,11 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
                 } else {
                     TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) I;
                     cxVar3.presentFragment(bn.ua(org.telegram.messenger.n5.o(tL_sponsoredPeer.peer)));
-                    org.telegram.ui.Components.km0 km0Var = cxVar3.D0.e0;
-                    km0Var.getClass();
+                    org.telegram.ui.Components.nm0 nm0Var = cxVar3.D0.e0;
+                    nm0Var.getClass();
                     TLRPC.TL_messages_clickSponsoredMessage tL_messages_clickSponsoredMessage = new TLRPC.TL_messages_clickSponsoredMessage();
                     tL_messages_clickSponsoredMessage.random_id = tL_sponsoredPeer.random_id;
-                    ConnectionsManager.getInstance(km0Var.t0).sendRequest(tL_messages_clickSponsoredMessage, null);
+                    ConnectionsManager.getInstance(nm0Var.t0).sendRequest(tL_messages_clickSponsoredMessage, null);
                     break;
                 }
         }
@@ -195,14 +195,14 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
             return;
         }
         if (i7 == 0) {
-            nvVar.K0(true);
+            nvVar.O0(true);
         } else {
-            nvVar.Y1(true, false);
+            nvVar.c2(true, false);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 6:
                 cx.E0(this.b);
@@ -247,7 +247,7 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
         }
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.gj0
     public void i() {
         cx cxVar = this.b;
         cxVar.R = true;
@@ -263,7 +263,7 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.bp0,
         cx.D0(this.b, i7);
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ void s0(View view, float f10, float f11) {
         int i7 = this.a;
     }

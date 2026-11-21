@@ -29,16 +29,16 @@ import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.ks;
-import tg.x;
+import tg.y;
 import u9.m;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final o9.g a;
     public final xa.c b;
-    public final x c;
+    public final y c;
     public final j d;
     public final m e;
     public final h f;
@@ -56,7 +56,7 @@ public final class c implements d {
     public c(o9.g gVar, ua.b bVar, ExecutorService executorService, v9.i iVar) {
         gVar.a();
         xa.c cVar = new xa.c(gVar.a, bVar);
-        x xVar = new x(gVar);
+        y yVar = new y(gVar);
         if (z9.a.a == null) {
             z9.a.a = new z9.a();
         }
@@ -72,7 +72,7 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = gVar;
         this.b = cVar;
-        this.c = xVar;
+        this.c = yVar;
         this.d = jVar;
         this.e = mVar;
         this.f = hVar;
@@ -131,7 +131,7 @@ public final class c implements d {
             try {
                 o9.g gVar = this.a;
                 gVar.a();
-                x a10 = x.a(gVar.a);
+                y a10 = y.a(gVar.a);
                 try {
                     f10 = this.c.f();
                     int i7 = f10.b;
@@ -303,7 +303,7 @@ public final class c implements d {
             try {
                 o9.g gVar = this.a;
                 gVar.a();
-                x a10 = x.a(gVar.a);
+                y a10 = y.a(gVar.a);
                 try {
                     this.c.d(bVar);
                     if (a10 != null) {

@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -28,13 +28,13 @@ public final /* synthetic */ class b3 implements View.OnClickListener {
                 }
                 break;
             default:
-                hi.d dVar = (hi.d) this.b;
-                org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) this.c;
-                if (dVar.J <= 0) {
-                    x2Var.dismiss();
+                hi.e eVar = (hi.e) this.b;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) this.c;
+                if (eVar.J <= 0) {
+                    w2Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.E3(3.0f, dVar, null);
+                    org.telegram.messenger.g0.E3(3.0f, eVar, null);
                     org.telegram.messenger.q2.E.a();
                     break;
                 }

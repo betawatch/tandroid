@@ -12,7 +12,7 @@ import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements q10 {
     public final /* synthetic */ int a;
@@ -42,39 +42,39 @@ public final /* synthetic */ class n implements q10 {
                     boolean z10 = j3 > 0;
                     cc ccVar = new cc(yVar.getContext(), yVar.J0);
                     ccVar.a.setImageResource(R.drawable.filled_gift_sell_24);
-                    String M0 = gd.M0(z10 ? 2131750291 : 2131750290, null);
+                    String N0 = gd.N0(z10 ? 2131750290 : 2131750289, null);
                     TextView textView = ccVar.b;
-                    textView.setText(M0);
+                    textView.setText(N0);
                     textView.setSingleLine(true);
                     textView.setTextSize(1, 15.0f);
                     textView.setMaxLines(1);
                     textView.setTypeface(org.telegram.messenger.g0.o());
-                    String a02 = gd.a0(null, null, 2131750326, Integer.valueOf(yVar.h2.d.gifts_per_round));
+                    String a02 = gd.a0(null, null, 2131750325, Integer.valueOf(yVar.h2.d.gifts_per_round));
                     TextView textView2 = ccVar.c;
                     textView2.setText(a02);
                     textView2.setSingleLine(false);
                     textView2.setMaxLines(5);
                     yVar.i1();
                     gc.f(frameLayout, ccVar, 2750).j();
-                    di.x8.y(yVar.a, false).q(null, false, true);
+                    di.y8.y(yVar.a, false).q(null, false, true);
                 }
                 if (str != null) {
                     yVar.i1();
-                    new lc(frameLayout, yVar.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str)).j();
+                    new lc(frameLayout, yVar.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743635, str)).j();
                     break;
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj3;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error == null) {
-                    li.l0.d(1, -j3, h2Var);
+                    li.l0.d(1, -j3, g2Var);
                     break;
                 } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-                    lc.b0(h2Var).g0(tL_error, false);
+                    lc.b0(g2Var).g0(tL_error, false);
                     break;
                 } else {
-                    li.l0.d(2, -j3, h2Var);
+                    li.l0.d(2, -j3, g2Var);
                     break;
                 }
             default:
@@ -82,7 +82,7 @@ public final /* synthetic */ class n implements q10 {
                 Long l10 = (Long) obj2;
                 String str2 = LaunchActivity.C1;
                 if ("paid".equals((String) obj) && l10.longValue() != 0) {
-                    org.telegram.messenger.g0.g3(new m2(launchActivity, l10, this.b, 29));
+                    org.telegram.messenger.g0.g3(new q2(launchActivity, l10, this.b, 29));
                     break;
                 }
                 break;

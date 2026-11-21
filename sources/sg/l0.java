@@ -2,9 +2,9 @@ package sg;
 
 import android.graphics.Bitmap;
 import android.graphics.PointF;
-import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l0 {
     public final float a;
@@ -15,7 +15,7 @@ public final class l0 {
     public final PointF f;
     public final PointF g;
 
-    public l0(w8.a aVar, Bitmap bitmap, vt0 vt0Var, boolean z10) {
+    public l0(w8.a aVar, Bitmap bitmap, yt0 yt0Var, boolean z10) {
         PointF pointF = null;
         PointF pointF2 = null;
         PointF pointF3 = null;
@@ -24,13 +24,13 @@ public final class l0 {
             PointF pointF5 = cVar.a;
             int i7 = cVar.b;
             if (i7 == 4) {
-                pointF = b(pointF5, bitmap, vt0Var, z10);
+                pointF = b(pointF5, bitmap, yt0Var, z10);
             } else if (i7 == 5) {
-                pointF3 = b(pointF5, bitmap, vt0Var, z10);
+                pointF3 = b(pointF5, bitmap, yt0Var, z10);
             } else if (i7 == 10) {
-                pointF2 = b(pointF5, bitmap, vt0Var, z10);
+                pointF2 = b(pointF5, bitmap, yt0Var, z10);
             } else if (i7 == 11) {
-                pointF4 = b(pointF5, bitmap, vt0Var, z10);
+                pointF4 = b(pointF5, bitmap, yt0Var, z10);
             }
         }
         if (pointF != null && pointF2 != null) {
@@ -64,8 +64,8 @@ public final class l0 {
         this.g = new PointF((((float) Math.cos(radians2)) * f11) + pointF9.x, (f11 * ((float) Math.sin(radians2))) + pointF9.y);
     }
 
-    public static PointF b(PointF pointF, Bitmap bitmap, vt0 vt0Var, boolean z10) {
-        return new PointF((vt0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (vt0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
+    public static PointF b(PointF pointF, Bitmap bitmap, yt0 yt0Var, boolean z10) {
+        return new PointF((yt0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (yt0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
     }
 
     public final PointF a(int i7) {

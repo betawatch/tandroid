@@ -20,12 +20,12 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.s2;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.v0;
 import org.telegram.ui.bj;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF I = new RectF();
@@ -362,7 +362,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 this.H.setTextSize(g0.L(10.0f));
             }
             super.onDraw(canvas);
-            Paint paint = n6.Im;
+            Paint paint = m6.Im;
             RectF rectF = this.c;
             canvas.drawRect(rectF, paint);
             LongSparseArray longSparseArray = this.x;
@@ -370,10 +370,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             for (int i7 = 0; i7 < size; i7++) {
                 d dVar = (d) longSparseArray.valueAt(i7);
                 RectF rectF2 = dVar.c;
-                canvas.drawRect(rectF2, n6.Jm);
+                canvas.drawRect(rectF2, m6.Jm);
                 canvas.save();
                 canvas.translate(rectF2.left, l9.a(l9.a(rectF2.centerY() - g0.L(20.0f), rectF.top - g0.L(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - g0.L(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), g0.L(40.0f), n6.Hm);
+                canvas.drawRect(0.0f, 0.0f, rectF2.width(), g0.L(40.0f), m6.Hm);
                 canvas.translate(g0.L(10.0f), g0.L(16.0f));
                 canvas.save();
                 canvas.drawText("time_in_view_ms: " + dVar.g, 0.0f, 0.0f, this.H);

@@ -1,8 +1,9 @@
 package d3;
 
 import h2.l0;
+import kg.x1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +38,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 l2.f0 f0Var = ((l2.z) h0Var2).a;
                 m2.d dVar4 = f0Var.s;
                 m2.a S = dVar4.S((x2.g0) dVar4.d.e);
-                dVar4.V(S, 1020, new ki.e(S, dVar3, 12));
+                dVar4.V(S, 1020, new x1(S, dVar3, 13));
                 f0Var.S = null;
                 break;
         }

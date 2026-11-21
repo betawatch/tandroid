@@ -13,19 +13,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
 import c8.ra;
-import hi.z2;
+import hi.y2;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class h extends FrameLayout implements c6 {
-    public final i6 a;
+public final class h extends FrameLayout implements b6 {
+    public final h6 a;
     public final q9 b;
     public final LinearLayout c;
     public final FrameLayout.LayoutParams d;
@@ -33,15 +33,15 @@ public final class h extends FrameLayout implements c6 {
     public final TextView f;
     public final TextView h;
     public final ImageView n;
-    public final z2 r;
+    public final y2 r;
     public int s;
     public final Paint w;
     public boolean x;
 
-    public h(Context context, i6 i6Var) {
+    public h(Context context, h6 h6Var) {
         super(context);
         this.w = new Paint(1);
-        this.a = i6Var;
+        this.a = h6Var;
         ra.b(this, 0.03f, 1.25f);
         q9 q9Var = new q9(context);
         this.b = q9Var;
@@ -79,18 +79,18 @@ public final class h extends FrameLayout implements c6 {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.attach_arrow_right);
         addView(imageView, ma.d(32, 32.0f, 21, 8.0f, 8.0f, 8.0f, 8.0f));
-        z2 z2Var = new z2(this, getContext(), i6Var, 2);
-        this.r = z2Var;
-        z2Var.b(-1, n6.d6, n6.k7);
-        z2Var.setDrawUnchecked(false);
-        z2Var.setDrawBackgroundAsArc(3);
-        addView(z2Var, ma.d(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
+        y2 y2Var = new y2(this, getContext(), h6Var, 2);
+        this.r = y2Var;
+        y2Var.b(-1, m6.d6, m6.k7);
+        y2Var.setDrawUnchecked(false);
+        y2Var.setDrawBackgroundAsArc(3);
+        addView(y2Var, ma.d(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(n6.d6));
-        hashSet.add(Integer.valueOf(n6.G6));
+        hashSet.add(Integer.valueOf(m6.d6));
+        hashSet.add(Integer.valueOf(m6.G6));
     }
 
     @Override // android.view.View
@@ -110,18 +110,18 @@ public final class h extends FrameLayout implements c6 {
         this.r.a(z10, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = n6.d6;
-        i6 i6Var = this.a;
-        int w02 = n6.w0(i7, i6Var);
-        int w03 = n6.w0(n6.G6, i6Var);
+        int i7 = m6.d6;
+        h6 h6Var = this.a;
+        int w02 = m6.w0(i7, h6Var);
+        int w03 = m6.w0(m6.G6, h6Var);
         this.s = w03;
         this.e.setTextColor(w03);
-        this.f.setTextColor(n6.w(w02, n6.r1(0.55f, w03)));
-        this.h.setTextColor(n6.r1(0.55f, w03));
-        this.n.setColorFilter(new PorterDuffColorFilter(n6.r1(0.6f, w03), PorterDuff.Mode.SRC_IN));
-        this.w.setColor(n6.r1(0.1f, w03));
+        this.f.setTextColor(m6.w(w02, m6.r1(0.55f, w03)));
+        this.h.setTextColor(m6.r1(0.55f, w03));
+        this.n.setColorFilter(new PorterDuffColorFilter(m6.r1(0.6f, w03), PorterDuff.Mode.SRC_IN));
+        this.w.setColor(m6.r1(0.1f, w03));
         this.b.invalidate();
     }
 }

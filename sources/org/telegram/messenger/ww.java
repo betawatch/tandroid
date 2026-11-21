@@ -2,11 +2,11 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ww implements Runnable {
     public final /* synthetic */ kj E;
-    public final /* synthetic */ sh.g F;
+    public final /* synthetic */ sh.f F;
     public final /* synthetic */ ArrayList G;
     public final /* synthetic */ ArrayList H;
     public final /* synthetic */ ArrayList a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class ww implements Runnable {
     public final /* synthetic */ long x;
     public final /* synthetic */ long y;
 
-    public /* synthetic */ ww(ArrayList arrayList, ArrayList arrayList2, c cVar, ArrayList arrayList3, long j3, fj fjVar, fj fjVar2, org.telegram.ui.rm rmVar, boolean z10, int i7, bw bwVar, long j10, long j11, kj kjVar, sh.g gVar, ArrayList arrayList4, ArrayList arrayList5) {
+    public /* synthetic */ ww(ArrayList arrayList, ArrayList arrayList2, c cVar, ArrayList arrayList3, long j3, fj fjVar, fj fjVar2, org.telegram.ui.rm rmVar, boolean z10, int i7, bw bwVar, long j10, long j11, kj kjVar, sh.f fVar, ArrayList arrayList4, ArrayList arrayList5) {
         this.a = arrayList;
         this.b = arrayList2;
         this.c = cVar;
@@ -38,7 +38,7 @@ public final /* synthetic */ class ww implements Runnable {
         this.x = j10;
         this.y = j11;
         this.E = kjVar;
-        this.F = gVar;
+        this.F = fVar;
         this.G = arrayList4;
         this.H = arrayList5;
     }

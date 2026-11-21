@@ -6,9 +6,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.y10;
-import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ta implements y10 {
     public final /* synthetic */ int a;
@@ -29,26 +29,26 @@ public final /* synthetic */ class ta implements y10 {
                 return uaVar.s[((Integer) obj).intValue() % uaVar.s.length];
             case 1:
                 fj fjVar = (fj) obj;
-                ((hi.v6) callback).m2 = fjVar;
+                ((hi.u6) callback).m2 = fjVar;
                 return Boolean.valueOf(MediaController.B().o0(org.telegram.messenger.f3.i(fjVar), fjVar, 0L, true, null, 0L));
             case 2:
                 ua uaVar2 = (ua) callback;
                 return uaVar2.s[((Integer) obj).intValue() % uaVar2.s.length];
             case 3:
-                return new org.telegram.ui.Wallet.c5(22, (org.telegram.ui.l0) callback, (Integer) obj);
+                return new org.telegram.ui.Wallet.u4(24, (org.telegram.ui.l0) callback, (Integer) obj);
             case 4:
-                tg.g0 g0Var = (tg.g0) callback;
+                tg.h0 h0Var = (tg.h0) callback;
                 if (((Integer) obj).intValue() == 2) {
-                    si siVar = new si(g0Var.getContext(), new tg.w(g0Var), false, false, false, g0Var.A1);
-                    siVar.n = true;
-                    siVar.B1(gd.M0(2131754426, null));
-                    siVar.X3 = new tg.x(g0Var, siVar);
-                    siVar.setOnDismissListener(new hi.f1(8));
-                    siVar.z1(1, false);
-                    siVar.f1();
+                    ui uiVar = new ui(h0Var.getContext(), new tg.x(h0Var), false, false, false, h0Var.A1);
+                    uiVar.n = true;
+                    uiVar.B1(gd.N0(2131754425, null));
+                    uiVar.X3 = new tg.y(h0Var, uiVar);
+                    uiVar.setOnDismissListener(new hi.f1(8));
+                    uiVar.z1(1, false);
+                    uiVar.f1();
                     MediaController.h2 = true;
-                    siVar.e2.i0();
-                    siVar.show();
+                    uiVar.e2.i0();
+                    uiVar.show();
                 }
                 return Boolean.TRUE;
             default:

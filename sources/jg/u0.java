@@ -3,9 +3,9 @@ package jg;
 import java.util.ArrayList;
 import org.telegram.messenger.oi;
 import org.telegram.ui.Cells.h2;
-import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u0 implements oi, h2 {
     public final /* synthetic */ h1 a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class u0 implements oi, h2 {
         h1Var.L = null;
         h1Var.Q = null;
         h1Var.f();
-        o90 o90Var = h1Var.W;
+        q90 q90Var = h1Var.W;
         ArrayList arrayList2 = h1Var.O;
-        o90Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+        q90Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

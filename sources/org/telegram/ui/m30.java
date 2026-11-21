@@ -9,9 +9,9 @@ import java.security.SecureRandom;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class m30 extends org.telegram.ui.ActionBar.n5 {
+public final class m30 extends org.telegram.ui.ActionBar.m5 {
     public LinearGradient N0;
     public int O0;
     public final Matrix P0;
@@ -31,7 +31,7 @@ public final class m30 extends org.telegram.ui.ActionBar.n5 {
         this.Q0 = -1.0f;
     }
 
-    @Override // org.telegram.ui.ActionBar.n5
+    @Override // org.telegram.ui.ActionBar.m5
     public final void d(int i7) {
         super.d(i7);
         int textWidth = getTextWidth();
@@ -40,10 +40,10 @@ public final class m30 extends org.telegram.ui.ActionBar.n5 {
             this.U0 = 1.3f * f10;
             float textHeight = getTextHeight();
             float f11 = f10 * 2.0f;
-            int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Zh, false);
-            int x03 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.bi, false);
-            int i10 = org.telegram.ui.ActionBar.n6.ai;
-            this.N0 = new LinearGradient(0.0f, textHeight, f11, 0.0f, new int[]{x02, x03, org.telegram.ui.ActionBar.n6.x0(null, i10, false), org.telegram.ui.ActionBar.n6.x0(null, i10, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
+            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Zh, false);
+            int x03 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.bi, false);
+            int i10 = org.telegram.ui.ActionBar.m6.ai;
+            this.N0 = new LinearGradient(0.0f, textHeight, f11, 0.0f, new int[]{x02, x03, org.telegram.ui.ActionBar.m6.x0(null, i10, false), org.telegram.ui.ActionBar.m6.x0(null, i10, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
             getPaint().setShader(this.N0);
             this.O0 = textWidth;
         }
@@ -52,7 +52,7 @@ public final class m30 extends org.telegram.ui.ActionBar.n5 {
     /* JADX WARN: Removed duplicated region for block: B:12:0x0060  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x00be  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x008e  */
-    @Override // org.telegram.ui.ActionBar.n5, android.view.View
+    @Override // org.telegram.ui.ActionBar.m5, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -99,7 +99,7 @@ public final class m30 extends org.telegram.ui.ActionBar.n5 {
                 if (e10 > f12) {
                     this.T0 = f12;
                 }
-                float interpolation = org.telegram.ui.Components.lr.g.getInterpolation(this.T0 / f12);
+                float interpolation = org.telegram.ui.Components.nr.g.getInterpolation(this.T0 / f12);
                 float f14 = this.U0;
                 float f15 = this.R0;
                 matrix.postTranslate(((((this.Q0 - f15) * interpolation) + f15) * f14) - (f14 / 2.0f), 0.0f);
@@ -131,7 +131,7 @@ public final class m30 extends org.telegram.ui.ActionBar.n5 {
             f12 = this.S0;
             if (e10 > f12) {
             }
-            float interpolation2 = org.telegram.ui.Components.lr.g.getInterpolation(this.T0 / f12);
+            float interpolation2 = org.telegram.ui.Components.nr.g.getInterpolation(this.T0 / f12);
             float f142 = this.U0;
             float f152 = this.R0;
             matrix2.postTranslate(((((this.Q0 - f152) * interpolation2) + f152) * f142) - (f142 / 2.0f), 0.0f);

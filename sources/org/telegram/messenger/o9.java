@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.vd0;
+import org.telegram.ui.ud0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o9 implements q10 {
     public final /* synthetic */ int a;
@@ -45,17 +45,17 @@ public final /* synthetic */ class o9 implements q10 {
                 i0Var2.a(bool2, tL_error2);
                 break;
             default:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
-                vd0 vd0Var = (vd0) this.d;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.c;
+                ud0 ud0Var = (ud0) this.d;
                 TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                u1Var.dismiss();
+                t1Var.dismiss();
                 long j3 = this.b;
                 if (tL_error3 == null) {
-                    vd0Var.a(Long.valueOf(j3), auth_authorization, null);
+                    ud0Var.a(Long.valueOf(j3), auth_authorization, null);
                     break;
                 } else {
-                    vd0Var.a(Long.valueOf(j3), null, tL_error3.text);
+                    ud0Var.a(Long.valueOf(j3), null, tL_error3.text);
                     break;
                 }
         }

@@ -7,7 +7,7 @@ import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class xq0 extends View {
     public final Paint a;
@@ -30,11 +30,11 @@ public final class xq0 extends View {
         this.b = textPaint;
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         textPaint.setColor(-3289651);
-        this.h = org.telegram.messenger.gd.M0(2131754737, "AccDescrVideoCompressLow");
-        this.n = org.telegram.messenger.gd.M0(2131754738, "AccDescrVideoCompressHigh");
+        this.h = org.telegram.messenger.gd.N0(2131754736, "AccDescrVideoCompressLow");
+        this.n = org.telegram.messenger.gd.N0(2131754737, "AccDescrVideoCompressHigh");
         setImportantForAccessibility(1);
         setFocusable(true);
-        setAccessibilityDelegate(new org.telegram.ui.Components.cu0(2, this));
+        setAccessibilityDelegate(new org.telegram.ui.Components.fu0(2, this));
     }
 
     @Override // android.view.View

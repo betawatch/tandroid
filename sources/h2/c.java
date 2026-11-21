@@ -29,10 +29,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.hc;
 import org.telegram.messenger.q5;
 import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.be0;
+import org.telegram.ui.Components.ce0;
 import org.telegram.ui.rk;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -101,7 +101,7 @@ public final class c {
     }
 
     public boolean F() {
-        return ((be0) this.b).b() && ((be0) this.c).b() && ((be0) this.d).b() && ((be0) this.e).b();
+        return ((ce0) this.b).b() && ((ce0) this.c).b() && ((ce0) this.d).b() && ((ce0) this.e).b();
     }
 
     public void G(Object obj) {
@@ -593,26 +593,26 @@ public final class c {
     public void q() {
         ByteBuffer byteBuffer = (ByteBuffer) this.f;
         byteBuffer.position(0);
-        be0 be0Var = (be0) this.b;
-        if (be0Var.f == null) {
-            be0Var.a();
+        ce0 ce0Var = (ce0) this.b;
+        if (ce0Var.f == null) {
+            ce0Var.a();
         }
-        float[] fArr = be0Var.f;
-        be0 be0Var2 = (be0) this.c;
-        if (be0Var2.f == null) {
-            be0Var2.a();
+        float[] fArr = ce0Var.f;
+        ce0 ce0Var2 = (ce0) this.c;
+        if (ce0Var2.f == null) {
+            ce0Var2.a();
         }
-        float[] fArr2 = be0Var2.f;
-        be0 be0Var3 = (be0) this.d;
-        if (be0Var3.f == null) {
-            be0Var3.a();
+        float[] fArr2 = ce0Var2.f;
+        ce0 ce0Var3 = (ce0) this.d;
+        if (ce0Var3.f == null) {
+            ce0Var3.a();
         }
-        float[] fArr3 = be0Var3.f;
-        be0 be0Var4 = (be0) this.e;
-        if (be0Var4.f == null) {
-            be0Var4.a();
+        float[] fArr3 = ce0Var3.f;
+        ce0 ce0Var4 = (ce0) this.e;
+        if (ce0Var4.f == null) {
+            ce0Var4.a();
         }
-        float[] fArr4 = be0Var4.f;
+        float[] fArr4 = ce0Var4.f;
         for (int i7 = 0; i7 < 200; i7++) {
             byteBuffer.put((byte) (fArr2[i7] * 255.0f));
             byteBuffer.put((byte) (fArr3[i7] * 255.0f));
@@ -777,10 +777,10 @@ public final class c {
     }
 
     public c() {
-        this.b = new be0();
-        this.c = new be0();
-        this.d = new be0();
-        this.e = new be0();
+        this.b = new ce0();
+        this.c = new ce0();
+        this.d = new ce0();
+        this.e = new ce0();
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
         this.f = allocateDirect;
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);

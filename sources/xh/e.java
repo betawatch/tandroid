@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.h40;
-import org.telegram.ui.Components.v40;
+import org.telegram.ui.Components.k40;
+import org.telegram.ui.Components.y40;
 import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e {
     public static HashMap n;
@@ -24,7 +24,7 @@ public final class e {
     public final double b;
     public final int c;
     public final ih0 d;
-    public final v40 e;
+    public final y40 e;
     public d f;
     public final int g;
     public final int h;
@@ -42,11 +42,11 @@ public final class e {
         this.g = i10;
         this.h = i11;
         this.d = ih0Var;
-        v40 v40Var = new v40(2, ih0Var.getContext(), this);
-        this.e = v40Var;
-        v40Var.setSurfaceTextureListener(new h40(this, 4));
-        v40Var.setOpaque(false);
-        ih0Var.addView(v40Var);
+        y40 y40Var = new y40(2, ih0Var.getContext(), this);
+        this.e = y40Var;
+        y40Var.setSurfaceTextureListener(new k40(this, 4));
+        y40Var.setOpaque(false);
+        ih0Var.addView(y40Var);
     }
 
     public static e d(int i7, View view, ViewGroup viewGroup) {
@@ -159,9 +159,9 @@ public final class e {
         if (num.intValue() % 4 == 3) {
             canvas.scale(1.0f, -1.0f, i11 / 2.0f, i12 / 2.0f);
         }
-        v40 v40Var = this.e;
+        y40 y40Var = this.e;
         if (z10) {
-            Bitmap bitmap = v40Var.getBitmap();
+            Bitmap bitmap = y40Var.getBitmap();
             if (bitmap != null) {
                 Paint paint = new Paint(7);
                 paint.setColor(-1);
@@ -169,8 +169,8 @@ public final class e {
                 bitmap.recycle();
             }
         } else {
-            v40Var.setAlpha(f10);
-            v40Var.draw(canvas);
+            y40Var.setAlpha(f10);
+            y40Var.draw(canvas);
         }
         canvas.restore();
     }

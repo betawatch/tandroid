@@ -4,17 +4,17 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import c8.lc;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class t {
     public final TextView a;
-    public final hn b;
+    public final jn b;
 
     public t(TextView textView) {
         this.a = textView;
-        this.b = new hn(textView);
+        this.b = new jn(textView);
     }
 
     public final void a(AttributeSet attributeSet, int i7) {

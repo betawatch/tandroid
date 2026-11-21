@@ -1,34 +1,48 @@
 package ai;
 
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.x10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x10 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ b1(x10 x10Var, int i7, int i10) {
-        this.a = i10;
-        this.b = x10Var;
-        this.c = i7;
+    public /* synthetic */ b1(int i7, Runnable runnable) {
+        this.a = i7;
+        this.b = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        int i10 = this.c;
-        x10 x10Var = this.b;
+        Runnable runnable = this.b;
         switch (i7) {
             case 0:
                 ExecutorService executorService = DictationLid.a;
-                x10Var.a(Integer.valueOf(i10));
+                DictationAsr.M();
+                runnable.run();
+                break;
+            case 1:
+                org.telegram.messenger.g0.r(runnable);
+                org.telegram.messenger.g0.g3(runnable);
+                break;
+            case 2:
+                org.telegram.messenger.g0.r(runnable);
+                org.telegram.messenger.g0.g3(runnable);
+                break;
+            case 3:
+                org.telegram.messenger.g0.r(runnable);
+                org.telegram.messenger.g0.g3(runnable);
+                break;
+            case 4:
+                ConnectionsManager.lambda$cancelRequest$9(runnable);
                 break;
             default:
-                x10Var.a(Integer.valueOf(i10));
+                runnable.run();
                 break;
         }
     }

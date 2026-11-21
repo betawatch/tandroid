@@ -1,96 +1,104 @@
 package oi;
 
-import java.util.ArrayList;
-import org.telegram.ui.Cells.j9;
+import android.view.View;
+import org.telegram.messenger.w7;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class g3 extends j9 {
-    public final /* synthetic */ q3 F0;
-    public final /* synthetic */ s3 G0;
+public final class g3 implements x4 {
+    public final /* synthetic */ r a;
+    public final /* synthetic */ a b;
+    public final /* synthetic */ t3 c;
 
-    public g3(s3 s3Var, q3 q3Var) {
-        this.G0 = s3Var;
-        this.F0 = q3Var;
+    public g3(a aVar, r rVar, t3 t3Var) {
+        this.c = t3Var;
+        this.a = rVar;
+        this.b = aVar;
     }
 
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean C() {
-        s3 s3Var = this.G0;
-        CharSequence r10 = s3Var.v3.r();
-        if (r10 == null || r10.length() == 0) {
-            return true;
+    @Override // oi.x4
+    public final void a() {
+        r rVar = this.a;
+        rVar.a = 3;
+        t3 t3Var = this.c;
+        t3Var.h4.remove(rVar);
+        t3Var.t4(this.b, rVar);
+        t3Var.p3.onContentChanged();
+    }
+
+    @Override // oi.x4
+    public final void b(int i7, int i10) {
+        if (i7 > 0 && i10 > 0) {
+            r rVar = this.a;
+            rVar.j = i7;
+            rVar.k = i10;
         }
-        s3Var.f5(r10);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final void D() {
-        s3 s3Var = this.G0;
-        CharSequence r10 = s3Var.v3.r();
-        if (r10 != null && r10.length() > 0) {
-            s3Var.f5(r10);
+        View C1 = this.c.C1(this.b);
+        if (C1 instanceof s4) {
+            C1.requestLayout();
+            C1.invalidate();
         }
-        s3Var.H2();
     }
 
-    @Override // org.telegram.ui.Cells.j9, org.telegram.ui.Cells.w9
-    public final void F() {
-        super.F();
-        this.F0.G();
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final void H() {
-        this.G0.f4();
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean J() {
-        if (a0()) {
-            return true;
+    @Override // oi.x4
+    public final void c(TLRPC.Photo photo) {
+        int i7;
+        int i10;
+        r rVar = this.a;
+        rVar.g = photo;
+        rVar.a = 2;
+        TLRPC.PhotoSize w10 = w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), false, null, false);
+        if (w10 != null && (i7 = w10.w) > 0 && (i10 = w10.h) > 0) {
+            rVar.j = i7;
+            rVar.k = i10;
         }
-        return this.G0.V4();
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final void K(float f10, float f11) {
-        s3 s3Var = this.G0;
-        s3Var.A3 = true;
-        s3Var.B3 = f10;
-        s3Var.C3 = f11;
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean j() {
-        boolean z10;
-        int size;
-        s3 s3Var = this.G0;
-        g3 g3Var = s3Var.v3;
-        ArrayList arrayList = s3Var.t3;
-        if (!arrayList.isEmpty() && g3Var.x() && g3Var.p0 == 0 && g3Var.q0 == 0 && g3Var.r0 <= 0 && g3Var.s0 == (size = arrayList.size() - 1)) {
-            a aVar = (a) arrayList.get(size);
-            String l10 = z5.p(aVar.b) ? b6.l(z5.j(aVar.b)) : "";
-            boolean z11 = !l10.isEmpty();
-            if (g3Var.t0 == z11) {
-                if (g3Var.u0 >= (z11 ? l10.length() : z5.z(aVar.b).length())) {
-                    z10 = true;
-                    return !z10;
-                }
-            }
+        a aVar = this.b;
+        TL_iv.PageBlock Q3 = t3.Q3(aVar, rVar);
+        if (Q3 instanceof TL_iv.pageBlockPhoto) {
+            ((TL_iv.pageBlockPhoto) Q3).photo_id = photo.id;
         }
-        z10 = false;
-        return !z10;
+        t3 t3Var = this.c;
+        t3Var.h4.remove(rVar);
+        t3Var.q4(aVar);
+        t3Var.p3.onContentChanged();
     }
 
-    @Override // org.telegram.ui.Cells.w9
-    public final int o() {
-        return this.G0.getPaddingBottom();
+    @Override // oi.x4
+    public final void d(TLRPC.Document document) {
+        r rVar = this.a;
+        rVar.h = document;
+        rVar.a = 2;
+        a aVar = this.b;
+        TL_iv.PageBlock Q3 = t3.Q3(aVar, rVar);
+        if (Q3 instanceof TL_iv.pageBlockVideo) {
+            ((TL_iv.pageBlockVideo) Q3).video_id = document.id;
+        }
+        t3 t3Var = this.c;
+        t3Var.h4.remove(rVar);
+        t3Var.q4(aVar);
+        t3Var.p3.onContentChanged();
     }
 
-    @Override // org.telegram.ui.Cells.w9
-    public final int p() {
-        return this.G0.getPaddingTop();
+    @Override // oi.x4
+    public final void g(float f10) {
+        this.a.f = f10;
+        a aVar = this.b;
+        t3 t3Var = this.c;
+        View C1 = t3Var.C1(aVar);
+        if (C1 instanceof s4) {
+            C1.requestLayout();
+            C1.invalidate();
+        }
+        t3Var.p3.onContentChanged();
+    }
+
+    @Override // oi.x4
+    public final /* synthetic */ void e(TLRPC.Document document) {
+    }
+
+    @Override // oi.x4
+    public final /* synthetic */ void f(TLRPC.Document document) {
     }
 }

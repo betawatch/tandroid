@@ -8,18 +8,18 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.bn0;
+import org.telegram.ui.Components.q6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
-    public ym0 a;
+    public bn0 a;
     public float b;
     public float c;
     public float d;
-    public p6 e;
+    public q6 e;
     public String f;
     public TextPaint h;
     public int n;
@@ -33,9 +33,9 @@ public final class h extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         TextPaint textPaint = this.h;
-        textPaint.setColor(n6.x0(null, n6.G6, false));
+        textPaint.setColor(m6.x0(null, m6.G6, false));
         canvas.drawText(this.f, g0.L(24.0f), g0.L(24.0f), textPaint);
-        textPaint.setColor(n6.x0(null, n6.I6, false));
+        textPaint.setColor(m6.x0(null, m6.I6, false));
         String format = String.format(Locale.ROOT, "%.2f", Float.valueOf(this.d));
         canvas.drawText(format, (getMeasuredWidth() - g0.L(8.0f)) - textPaint.measureText(format), this.a.getY() + g0.L(23.0f), textPaint);
     }
@@ -51,10 +51,10 @@ public final class h extends FrameLayout {
         super.onMeasure(i7, i10);
         int size = View.MeasureSpec.getSize(i7);
         if (this.n != size) {
-            ym0 ym0Var = this.a;
+            bn0 bn0Var = this.a;
             float floatValue = ((Float) this.e.get(null)).floatValue();
             float f10 = this.b;
-            ym0Var.setProgress((floatValue - f10) / (this.c - f10));
+            bn0Var.setProgress((floatValue - f10) / (this.c - f10));
             this.n = size;
         }
     }

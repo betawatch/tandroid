@@ -6,21 +6,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class mx0 extends org.telegram.ui.Components.y61 {
+public final class mx0 extends org.telegram.ui.Components.b71 {
     public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.hq0 b;
+    public final /* synthetic */ org.telegram.ui.Components.jq0 b;
 
-    public mx0(org.telegram.ui.Components.hq0 hq0Var) {
-        this.b = hq0Var;
+    public mx0(org.telegram.ui.Components.jq0 jq0Var) {
+        this.b = jq0Var;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final void a(ArrayList arrayList) {
-        org.telegram.ui.Components.hq0 hq0Var = this.b;
-        ru0 ru0Var = hq0Var.w;
-        org.telegram.ui.Components.f71 f71Var = hq0Var.b;
+        org.telegram.ui.Components.jq0 jq0Var = this.b;
+        ru0 ru0Var = jq0Var.w;
+        org.telegram.ui.Components.i71 i71Var = jq0Var.b;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i7 = 0;
@@ -34,8 +34,8 @@ public final class mx0 extends org.telegram.ui.Components.y61 {
                 arrayList2.add(num);
             }
         }
-        int f10 = f(f71Var.getCurrentPosition());
-        fi.d6 d6Var = hq0Var.c;
+        int f10 = f(i71Var.getCurrentPosition());
+        fi.d6 d6Var = jq0Var.c;
         d6Var.getClass();
         HashMap hashMap = new HashMap();
         ArrayList arrayList3 = d6Var.h;
@@ -63,13 +63,13 @@ public final class mx0 extends org.telegram.ui.Components.y61 {
         arrayList3.addAll(arrayList4);
         if (f10 >= 0) {
             int i12 = i(f10);
-            f71Var.f(0.0f, i12, i12);
+            i71Var.f(0.0f, i12, i12);
         }
         org.telegram.messenger.g0.r(ru0Var);
         org.telegram.messenger.g0.h3(ru0Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final boolean c(int i7) {
         if (i7 == 0) {
             return false;
@@ -77,7 +77,7 @@ public final class mx0 extends org.telegram.ui.Components.y61 {
         return (this.a && i7 == e() - 1) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final View d(int i7) {
         if (i7 == -1) {
             return null;
@@ -85,12 +85,12 @@ public final class mx0 extends org.telegram.ui.Components.y61 {
         return new View(this.b.getContext());
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int e() {
         return this.b.c.h.size() + 1 + (this.a ? 1 : 0);
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int f(int i7) {
         if (i7 == 0) {
             return 0;
@@ -101,23 +101,23 @@ public final class mx0 extends org.telegram.ui.Components.y61 {
         return ((fi.i6) this.b.c.h.get(i7 - 1)).a;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final CharSequence g(int i7) {
         if (i7 == 0) {
-            return org.telegram.messenger.gd.M0(2131744551, null);
+            return org.telegram.messenger.gd.N0(2131744545, null);
         }
         if (!this.a || i7 != e() - 1) {
             return ((fi.i6) this.b.c.h.get(i7 - 1)).b;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.M0(2131744572, null));
-        org.telegram.ui.Components.lq lqVar = new org.telegram.ui.Components.lq(R.drawable.poll_add_plus, 0);
-        lqVar.H = 0.8f;
-        spannableStringBuilder.setSpan(lqVar, 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131744566, null));
+        org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.poll_add_plus, 0);
+        nqVar.H = 0.8f;
+        spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final int h(int i7) {
         if (this.a && i7 == e() - 1) {
             return -1;
@@ -136,7 +136,7 @@ public final class mx0 extends org.telegram.ui.Components.y61 {
         return c10 + 1;
     }
 
-    @Override // org.telegram.ui.Components.y61
+    @Override // org.telegram.ui.Components.b71
     public final void b(View view, int i7, int i10) {
     }
 }

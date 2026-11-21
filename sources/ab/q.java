@@ -43,10 +43,10 @@ import org.telegram.messenger.hf;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.yy;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.kp0;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.u30;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.x30;
 import org.telegram.ui.Wallet.h1;
 import org.telegram.ui.Wallet.i1;
 import org.telegram.ui.b5;
@@ -56,7 +56,7 @@ import org.telegram.ui.u4;
 import org.telegram.ui.w0;
 import org.telegram.ui.w4;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class q implements f3.q, bn0 {
     public static q e;
@@ -161,11 +161,11 @@ public final class q implements f3.q, bn0 {
             return;
         }
         ji.e eVar = (ji.e) ((androidx.activity.n) this.d).d;
-        eVar.n3 = z10;
+        eVar.p3 = z10;
         eVar.invalidate();
     }
 
-    public void D(ViewGroup viewGroup, i6 i6Var, w4 w4Var, u4 u4Var) {
+    public void D(ViewGroup viewGroup, h6 h6Var, w4 w4Var, u4 u4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
@@ -176,7 +176,7 @@ public final class q implements f3.q, bn0 {
             }
             this.b = viewGroup;
             this.c = (WindowManager) context.getSystemService(WindowManager.class);
-            r4 r4Var2 = new r4(this, context, i6Var, u4Var);
+            r4 r4Var2 = new r4(this, context, h6Var, u4Var);
             this.d = r4Var2;
             w0 w0Var = new w0(this, 3);
             WeakHashMap weakHashMap = r0.i0.a;
@@ -355,7 +355,7 @@ public final class q implements f3.q, bn0 {
             try {
                 try {
                     rc.u uVar = (rc.u) this.b;
-                    org.telegram.messenger.g0.g3(new kp0(h1Var.c, uVar, h1Var.a, "websocket error: " + i1.a(vVar), 19));
+                    org.telegram.messenger.g0.g3(new mp0(h1Var.c, uVar, h1Var.a, "websocket error: " + i1.a(vVar), 19));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
@@ -396,7 +396,7 @@ public final class q implements f3.q, bn0 {
 
     @Override // org.telegram.ui.bn0
     public boolean e() {
-        return ((u30) this.d).b.e();
+        return ((x30) this.d).b.e();
     }
 
     public void f() {
@@ -433,7 +433,7 @@ public final class q implements f3.q, bn0 {
         ofInt.addUpdateListener(new ch.w(15, this, tVar));
         ofInt.setDuration(i12);
         ofInt.setStartDelay(i11);
-        ofInt.setInterpolator(lr.f);
+        ofInt.setInterpolator(nr.f);
         return ofInt;
     }
 
@@ -631,9 +631,9 @@ public final class q implements f3.q, bn0 {
     @Override // org.telegram.ui.bn0
     public void v0(int i7, boolean z10, boolean z11) {
         ArrayList arrayList = (ArrayList) this.c;
-        u30 u30Var = (u30) this.d;
+        x30 x30Var = (x30) this.d;
         HashMap hashMap = (HashMap) this.b;
-        if (hashMap.isEmpty() || u30Var.b == null || this.a || z10) {
+        if (hashMap.isEmpty() || x30Var.b == null || this.a || z10) {
             return;
         }
         this.a = true;
@@ -659,7 +659,7 @@ public final class q implements f3.q, bn0 {
                 yyVar.h = hfVar.x;
             }
         }
-        u30.a(u30Var, false, arrayList2);
+        x30.a(x30Var, false, arrayList2);
     }
 
     public gc.e w() {

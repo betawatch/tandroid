@@ -1,40 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.text.style.CharacterStyle;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class u41 extends LinkMovementMethod {
-    public final /* synthetic */ UndoView a;
+public final class u41 extends URLSpan {
+    public final fz0 a;
+    public boolean b;
 
-    public u41(UndoView undoView) {
-        this.a = undoView;
+    public u41(String str, fz0 fz0Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = fz0Var;
     }
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
-        CharacterStyle[] characterStyleArr;
-        try {
-            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
-                if (motionEvent.getAction() != 1) {
-                    return super.onTouchEvent(textView, spannable, motionEvent);
-                }
-                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
-                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
-                    this.a.b(characterStyleArr2[0]);
-                }
-                Selection.removeSelection(spannable);
-                return true;
-            }
-            return false;
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-            return false;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).X0 = true;
+        }
+        vf.c.q(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        fz0 fz0Var = this.a;
+        if (fz0Var != null) {
+            fz0Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
         }
     }
 }

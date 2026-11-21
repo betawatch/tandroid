@@ -9,16 +9,16 @@ import android.text.Spanned;
 import android.text.style.ClickableSpan;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class lq0 extends xh.l {
     public final org.telegram.ui.Cells.t9 V;
     public ArrayList W;
     public boolean a0;
     public Layout b0;
-    public org.telegram.ui.Components.t5 c0;
+    public org.telegram.ui.Components.u5 c0;
     public boolean d0;
-    public org.telegram.ui.Components.o80 e0;
+    public org.telegram.ui.Components.q80 e0;
     public Layout f0;
     public Path g0;
 
@@ -27,14 +27,14 @@ public final class lq0 extends xh.l {
         setClearLinkOnLongPress(false);
         setDisablePaddingsOffsetY(false);
         final int i7 = 0;
-        this.G = new org.telegram.ui.Components.j80(this) { // from class: org.telegram.ui.kq0
+        this.G = new org.telegram.ui.Components.l80(this) { // from class: org.telegram.ui.kq0
             public final /* synthetic */ lq0 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.j80
+            @Override // org.telegram.ui.Components.l80
             public final void a(ClickableSpan clickableSpan) {
                 switch (i7) {
                     case 0:
@@ -46,20 +46,20 @@ public final class lq0 extends xh.l {
                     default:
                         org.telegram.messenger.s10 s10Var2 = (org.telegram.messenger.s10) q10Var;
                         lq0 lq0Var2 = this.b;
-                        s10Var2.a(clickableSpan, lq0Var2, new if0(lq0Var2, 25));
+                        s10Var2.a(clickableSpan, lq0Var2, new hf0(lq0Var2, 25));
                         break;
                 }
             }
         };
         final int i10 = 1;
-        this.H = new org.telegram.ui.Components.j80(this) { // from class: org.telegram.ui.kq0
+        this.H = new org.telegram.ui.Components.l80(this) { // from class: org.telegram.ui.kq0
             public final /* synthetic */ lq0 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.j80
+            @Override // org.telegram.ui.Components.l80
             public final void a(ClickableSpan clickableSpan) {
                 switch (i10) {
                     case 0:
@@ -71,7 +71,7 @@ public final class lq0 extends xh.l {
                     default:
                         org.telegram.messenger.s10 s10Var2 = (org.telegram.messenger.s10) s10Var;
                         lq0 lq0Var2 = this.b;
-                        s10Var2.a(clickableSpan, lq0Var2, new if0(lq0Var2, 25));
+                        s10Var2.a(clickableSpan, lq0Var2, new hf0(lq0Var2, 25));
                         break;
                 }
             }
@@ -119,11 +119,11 @@ public final class lq0 extends xh.l {
                 this.f0 = layout;
             }
             if (this.e0 == null) {
-                org.telegram.ui.Components.o80 o80Var = new org.telegram.ui.Components.o80();
-                this.e0 = o80Var;
-                o80Var.y = this.g0;
-                o80Var.k(4.0f);
-                this.e0.g(org.telegram.ui.ActionBar.n6.r1(0.3f, -1), org.telegram.ui.ActionBar.n6.r1(0.1f, -1), org.telegram.ui.ActionBar.n6.r1(0.2f, -1), org.telegram.ui.ActionBar.n6.r1(0.7f, -1));
+                org.telegram.ui.Components.q80 q80Var = new org.telegram.ui.Components.q80();
+                this.e0 = q80Var;
+                q80Var.y = this.g0;
+                q80Var.k(4.0f);
+                this.e0.g(org.telegram.ui.ActionBar.m6.r1(0.3f, -1), org.telegram.ui.ActionBar.m6.r1(0.1f, -1), org.telegram.ui.ActionBar.m6.r1(0.2f, -1), org.telegram.ui.ActionBar.m6.r1(0.7f, -1));
                 this.e0.setCallback(this);
             }
             this.e0.setBounds(0, 0, getWidth(), getHeight());
@@ -136,11 +136,11 @@ public final class lq0 extends xh.l {
             canvas.save();
             canvas.translate(getPaddingLeft(), getPaddingTop());
             for (int i10 = 0; i10 < this.W.size(); i10++) {
-                org.telegram.ui.Components.dh0 dh0Var = (org.telegram.ui.Components.dh0) this.W.get(i10);
+                org.telegram.ui.Components.fh0 fh0Var = (org.telegram.ui.Components.fh0) this.W.get(i10);
                 int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
                 int L3 = this.a0 ? org.telegram.messenger.g0.L(32.0f) : 0;
                 getPaint();
-                dh0Var.a(canvas, width + L3, -1);
+                fh0Var.a(canvas, width + L3, -1);
             }
             canvas.restore();
         }
@@ -151,15 +151,15 @@ public final class lq0 extends xh.l {
         canvas.save();
         canvas.translate(getPaddingLeft(), getPaddingTop());
         canvas.clipRect(0.0f, getScrollY(), getWidth() - getPaddingRight(), (getScrollY() + getHeight()) - (getPaddingBottom() * 0.75f));
-        org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, getLayout(), this.c0, 0.0f, this.b, 0.0f, 0.0f, 0.0f, 1.0f);
+        org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, getLayout(), this.c0, 0.0f, this.b, 0.0f, 0.0f, 0.0f, 1.0f);
         canvas.restore();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.x5.release(this, this.c0);
-        this.W = org.telegram.ui.Components.hh0.e(null, this.W);
+        org.telegram.ui.Components.y5.release(this, this.c0);
+        this.W = org.telegram.ui.Components.jh0.e(null, this.W);
     }
 
     @Override // xh.l, android.widget.TextView, android.view.View
@@ -175,9 +175,9 @@ public final class lq0 extends xh.l {
         }
         super.onDraw(canvas);
         if (this.b0 != getLayout()) {
-            this.c0 = org.telegram.ui.Components.x5.update(0, this, this.c0, getLayout());
-            this.W = org.telegram.ui.Components.hh0.e(getLayout(), this.W);
-            boolean z10 = getLayout() != null && (getLayout().getText() instanceof Spanned) && ((org.telegram.ui.Components.gh0[]) ((Spanned) getLayout().getText()).getSpans(0, getLayout().getText().length(), org.telegram.ui.Components.gh0.class)).length > 0;
+            this.c0 = org.telegram.ui.Components.y5.update(0, this, this.c0, getLayout());
+            this.W = org.telegram.ui.Components.jh0.e(getLayout(), this.W);
+            boolean z10 = getLayout() != null && (getLayout().getText() instanceof Spanned) && ((org.telegram.ui.Components.ih0[]) ((Spanned) getLayout().getText()).getSpans(0, getLayout().getText().length(), org.telegram.ui.Components.ih0.class)).length > 0;
             this.a0 = z10;
             c8.xa.a(this, 16.0f, 8.0f, (z10 ? 32 : 0) + 16, 8.0f);
             this.b0 = getLayout();
@@ -187,8 +187,8 @@ public final class lq0 extends xh.l {
     @Override // xh.l, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         super.onTextChanged(charSequence, i7, i10, i11);
-        this.c0 = org.telegram.ui.Components.x5.update(0, this, this.c0, getLayout());
-        this.W = org.telegram.ui.Components.hh0.e(getLayout(), this.W);
+        this.c0 = org.telegram.ui.Components.y5.update(0, this, this.c0, getLayout());
+        this.W = org.telegram.ui.Components.jh0.e(getLayout(), this.W);
     }
 
     public void setLoading(boolean z10) {

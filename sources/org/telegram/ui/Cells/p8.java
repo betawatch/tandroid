@@ -7,12 +7,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.PollVotesAlert$UserCell;
 import org.telegram.ui.Components.lb;
-import org.telegram.ui.Components.o51;
+import org.telegram.ui.Components.r51;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class p8 extends org.telegram.ui.Components.p6 {
+public final class p8 extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,7 +21,7 @@ public final class p8 extends org.telegram.ui.Components.p6 {
         this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.p6
+    @Override // org.telegram.ui.Components.q6
     public final void c(Object obj, float f10) {
         switch (this.b) {
             case 0:
@@ -40,10 +40,10 @@ public final class p8 extends org.telegram.ui.Components.p6 {
                 c9Var.invalidate();
                 break;
             case 3:
-                org.telegram.ui.Components.f6 f6Var = (org.telegram.ui.Components.f6) obj;
-                if (f6Var.e != f10) {
-                    f6Var.e = f10;
-                    f6Var.g.invalidate();
+                org.telegram.ui.Components.g6 g6Var = (org.telegram.ui.Components.g6) obj;
+                if (g6Var.e != f10) {
+                    g6Var.e = f10;
+                    g6Var.g.invalidate();
                     break;
                 }
                 break;
@@ -66,7 +66,7 @@ public final class p8 extends org.telegram.ui.Components.p6 {
                 ((PollVotesAlert$UserCell) obj).setPlaceholderAlpha(f10);
                 break;
             case 10:
-                ((o51) obj).N0(f10);
+                ((r51) obj).N0(f10);
                 break;
             case 11:
                 wh.h hVar = (wh.h) obj;
@@ -175,7 +175,7 @@ public final class p8 extends org.telegram.ui.Components.p6 {
             case 2:
                 return Float.valueOf(((c9) obj).f);
             case 3:
-                return Float.valueOf(((org.telegram.ui.Components.f6) obj).e);
+                return Float.valueOf(((org.telegram.ui.Components.g6) obj).e);
             case 4:
                 return Float.valueOf(((ImageReceiver) obj).i1);
             case 5:
@@ -189,7 +189,7 @@ public final class p8 extends org.telegram.ui.Components.p6 {
             case 9:
                 return Float.valueOf(((PollVotesAlert$UserCell) obj).getPlaceholderAlpha());
             case 10:
-                return Float.valueOf(((o51) obj).z1);
+                return Float.valueOf(((r51) obj).z1);
             case 11:
                 return Float.valueOf(((wh.h) obj).H);
             default:

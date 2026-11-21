@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qu implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -58,10 +58,10 @@ public final /* synthetic */ class qu implements View.OnLongClickListener {
                     }
                     ArrayList arrayList3 = cxVar.F2;
                     boolean z13 = arrayList3 != null && arrayList3.size() > 1;
-                    org.telegram.ui.Components.y60 I = org.telegram.ui.Components.y60.I(cxVar, view);
-                    I.l(R.drawable.msg_sendfile, org.telegram.messenger.gd.M0(z13 ? 2131745440 : 2131745441, null), new gu(cxVar, 13), z12);
-                    I.c(R.drawable.input_notify_off, org.telegram.messenger.gd.M0(2131745388, null), new gu(cxVar, 14), false);
-                    I.l(R.drawable.msg_calendar2, org.telegram.messenger.gd.M0(z10 ? 2131745319 : 2131745664, null), new org.telegram.ui.Components.pp0(7, cxVar, z10), z11);
+                    org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(cxVar, view);
+                    I.l(R.drawable.msg_sendfile, org.telegram.messenger.gd.N0(z13 ? 2131745439 : 2131745440, null), new gu(cxVar, 13), z12);
+                    I.c(R.drawable.input_notify_off, org.telegram.messenger.gd.N0(2131745387, null), new gu(cxVar, 14), false);
+                    I.l(R.drawable.msg_calendar2, org.telegram.messenger.gd.N0(z10 ? 2131745318 : 2131745663, null), new org.telegram.ui.Components.rp0(7, cxVar, z10), z11);
                     I.a0();
                     break;
                 }

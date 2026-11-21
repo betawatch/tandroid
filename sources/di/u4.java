@@ -5,13 +5,13 @@ import android.graphics.RectF;
 import android.opengl.Matrix;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class u4 {
     public final v4 a;
-    public ai.s d;
+    public ai.r d;
     public int f;
     public int g;
     public float j;
@@ -32,7 +32,7 @@ public final class u4 {
     }
 
     public final void b() {
-        ai.s sVar;
+        ai.r rVar;
         boolean z10 = this.e;
         v4 v4Var = this.a;
         if (!z10) {
@@ -123,18 +123,18 @@ public final class u4 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 v4Var.H = ofFloat;
                 ofFloat.addUpdateListener(new ah.g(v4Var, 7));
-                v4Var.H.addListener(new ai.j0(v4Var, 6));
+                v4Var.H.addListener(new ai.k0(v4Var, 6));
                 v4Var.H.setDuration(i12 * 16);
-                v4Var.H.setInterpolator(lr.h);
+                v4Var.H.setInterpolator(nr.h);
                 v4Var.H.start();
                 return;
             }
         }
         v4Var.I = null;
-        if (this.e || (sVar = this.d) == null) {
+        if (this.e || (rVar = this.d) == null) {
             return;
         }
-        sVar.run();
+        rVar.run();
     }
 
     public final void c(float f10, float f11) {

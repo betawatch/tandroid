@@ -7,24 +7,24 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public final org.telegram.ui.ActionBar.i6 a;
+public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.ActionBar.h6 a;
     public final f61 b;
     public final v4.c0 c;
     public final int d;
     public int e;
 
-    public hc(int i7, Activity activity, org.telegram.ui.ActionBar.i6 i6Var) {
+    public hc(int i7, Activity activity, org.telegram.ui.ActionBar.h6 h6Var) {
         super(activity);
         this.d = i7;
-        this.a = i6Var;
-        f61 f61Var = new f61(3, activity, i6Var);
+        this.a = h6Var;
+        f61 f61Var = new f61(3, activity, h6Var);
         this.b = f61Var;
         f61Var.setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(6.0f), 0);
         f61Var.setClipToPadding(false);
-        f61Var.setAdapter(new fc(this, activity, i6Var, i7));
+        f61Var.setAdapter(new fc(this, activity, h6Var, i7));
         v4.c0 c0Var = new v4.c0();
         this.c = c0Var;
         c0Var.j1(0);
@@ -54,7 +54,7 @@ public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.c
             if (!z10) {
                 this.c.h1(i10, (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(56.0f)) / 2);
             }
-            org.telegram.messenger.g0.d0(this.b, new ai.u2(5, this, z10));
+            org.telegram.messenger.g0.d0(this.b, new ai.w2(5, this, z10));
         }
     }
 
@@ -71,12 +71,12 @@ public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.c
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         org.telegram.messenger.g0.d0(this.b, new li.d(11, this, org.telegram.messenger.mp.u1(this.d).t4));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

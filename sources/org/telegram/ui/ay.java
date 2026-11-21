@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ay extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class ay extends AnimatorListenerAdapter {
                 ((pc0) this.b).s = null;
                 break;
             case 11:
-                ((PhotoViewer) ((org.telegram.ui.Components.h60) this.b).c).B2 = null;
+                ((PhotoViewer) ((org.telegram.ui.Components.h10) this.b).c).B2 = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -40,13 +40,13 @@ public final class ay extends AnimatorListenerAdapter {
         Object obj = this.b;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.a80 a80Var = (org.telegram.ui.Components.a80) obj;
-                FrameLayout frameLayout = a80Var.b;
-                hi.m5 m5Var = (hi.m5) a80Var.c;
-                if (m5Var.getParent() != null) {
-                    frameLayout.removeView(m5Var);
+                org.telegram.ui.Components.c80 c80Var = (org.telegram.ui.Components.c80) obj;
+                FrameLayout frameLayout = c80Var.b;
+                hi.l5 l5Var = (hi.l5) c80Var.c;
+                if (l5Var.getParent() != null) {
+                    frameLayout.removeView(l5Var);
                 }
-                frameLayout.getViewTreeObserver().removeOnPreDrawListener((d7) a80Var.d);
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((d7) c80Var.d);
                 break;
             case 1:
                 f40 f40Var = ((h30) obj).o;
@@ -120,31 +120,31 @@ public final class ay extends AnimatorListenerAdapter {
             case 10:
                 en0 en0Var = (en0) obj;
                 fn0 fn0Var = en0Var.n0;
-                org.telegram.ui.ActionBar.z4[] z4VarArr = fn0Var.n;
+                org.telegram.ui.ActionBar.y4[] y4VarArr = fn0Var.n;
                 fn0Var.r = null;
                 if (fn0Var.x) {
-                    z4VarArr[1].setVisibility(8);
+                    y4VarArr[1].setVisibility(8);
                 } else {
-                    org.telegram.ui.ActionBar.z4 z4Var = z4VarArr[0];
-                    z4VarArr[0] = z4VarArr[1];
-                    z4VarArr[1] = z4Var;
-                    z4Var.setVisibility(8);
+                    org.telegram.ui.ActionBar.y4 y4Var = y4VarArr[0];
+                    y4VarArr[0] = y4VarArr[1];
+                    y4VarArr[1] = y4Var;
+                    y4Var.setVisibility(8);
                     fn0Var.e = fn0Var.n[0].b == fn0Var.h.getFirstTabId();
                     fn0Var.h.i(1.0f, fn0Var.n[0].b);
                 }
                 fn0Var.s = false;
                 en0Var.i0 = false;
                 en0Var.h0 = false;
-                kVar = ((org.telegram.ui.ActionBar.h2) fn0Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) fn0Var).actionBar;
                 kVar.setEnabled(true);
                 fn0Var.h.setEnabled(true);
                 break;
             case 11:
-                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.h60) obj).c;
+                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.h10) obj).c;
                 if (photoViewer.B2 != null) {
-                    if0 if0Var = new if0(this, 21);
-                    photoViewer.I2 = if0Var;
-                    org.telegram.messenger.g0.h3(if0Var, 860L);
+                    hf0 hf0Var = new hf0(this, 21);
+                    photoViewer.I2 = hf0Var;
+                    org.telegram.messenger.g0.h3(hf0Var, 860L);
                     break;
                 }
                 break;
@@ -161,9 +161,9 @@ public final class ay extends AnimatorListenerAdapter {
                 photoViewer2.p6 = null;
                 photoViewer2.u4 = rp0Var.a;
                 photoViewer2.b1().M.b(photoViewer2.u4 != 0);
-                hi.p3 p3Var = photoViewer2.L1;
-                if (p3Var != null) {
-                    p3Var.b(photoViewer2.u4 != 3);
+                hi.o3 o3Var = photoViewer2.L1;
+                if (o3Var != null) {
+                    o3Var.b(photoViewer2.u4 != 3);
                 }
                 if (photoViewer2.u4 != 3) {
                     photoViewer2.Z5 = 0.0f;
@@ -184,9 +184,9 @@ public final class ay extends AnimatorListenerAdapter {
                 photoViewer3.p6 = null;
                 photoViewer3.u4 = sp0Var.a;
                 photoViewer3.b1().M.b(photoViewer3.u4 != 0);
-                hi.p3 p3Var2 = photoViewer3.L1;
-                if (p3Var2 != null) {
-                    p3Var2.b(photoViewer3.u4 != 3);
+                hi.o3 o3Var2 = photoViewer3.L1;
+                if (o3Var2 != null) {
+                    o3Var2.b(photoViewer3.u4 != 3);
                 }
                 if (photoViewer3.u4 != 3) {
                     photoViewer3.Z5 = 0.0f;
@@ -212,7 +212,7 @@ public final class ay extends AnimatorListenerAdapter {
                 photoViewer4.U1.l0 = 1.0f;
                 break;
             case 17:
-                org.telegram.messenger.g0.g3(new if0(this, 23));
+                org.telegram.messenger.g0.g3(new hf0(this, 23));
                 break;
             case 18:
                 op0 op0Var = (op0) obj;
@@ -272,49 +272,49 @@ public final class ay extends AnimatorListenerAdapter {
                 secretMediaViewer.Z.l0 = 1.0f;
                 break;
             case 27:
-                r11 r11Var = ((i01) obj).e;
-                r11Var.T0.H = 0.0f;
-                r11Var.T0 = null;
-                r11Var.i0.invalidate();
+                s11 s11Var = ((j01) obj).e;
+                s11Var.T0.H = 0.0f;
+                s11Var.T0 = null;
+                s11Var.i0.invalidate();
                 break;
             case 28:
                 ch.f0.a();
-                r11 r11Var2 = (r11) obj;
-                p01 p01Var = r11Var2.i0;
-                p01 p01Var2 = r11Var2.i0;
-                p01Var.setLayerType(0, null);
-                j01 j01Var = r11Var2.g0;
-                j01Var.setLayerType(0, null);
-                r11Var2.f0.setLayerType(0, null);
-                r11Var2.c0.setLayerType(0, null);
-                org.telegram.ui.Components.jn jnVar = r11Var2.o0;
-                if (jnVar != null) {
-                    jnVar.setLayerType(0, null);
+                s11 s11Var2 = (s11) obj;
+                q01 q01Var = s11Var2.i0;
+                q01 q01Var2 = s11Var2.i0;
+                q01Var.setLayerType(0, null);
+                k01 k01Var = s11Var2.g0;
+                k01Var.setLayerType(0, null);
+                s11Var2.f0.setLayerType(0, null);
+                s11Var2.c0.setLayerType(0, null);
+                org.telegram.ui.Components.ln lnVar = s11Var2.o0;
+                if (lnVar != null) {
+                    lnVar.setLayerType(0, null);
                 }
-                View view = r11Var2.n0;
+                View view = s11Var2.n0;
                 if (view != null) {
                     view.setLayerType(0, null);
                 }
-                j01Var.b();
-                r11Var2.e0.m(false);
+                k01Var.b();
+                s11Var2.e0.m(false);
                 org.telegram.messenger.ks.e().k(99, 512);
-                r11Var2.Y1.e();
+                s11Var2.Y1.e();
                 org.telegram.messenger.g0.g3(new ru0(org.telegram.messenger.ks.e(), 15));
-                r11Var2.h();
-                r11Var2.E(1.0f);
-                for (int i10 = 0; i10 < p01Var2.getChildCount(); i10++) {
-                    View childAt = p01Var2.getChildAt(i10);
+                s11Var2.h();
+                s11Var2.E(1.0f);
+                for (int i10 = 0; i10 < q01Var2.getChildCount(); i10++) {
+                    View childAt = q01Var2.getChildAt(i10);
                     childAt.setScaleX(1.0f);
                     childAt.setScaleY(1.0f);
                 }
-                for (int i11 = 0; i11 < r11Var2.e0.b.getChildCount(); i11++) {
-                    View childAt2 = r11Var2.e0.b.getChildAt(i11);
+                for (int i11 = 0; i11 < s11Var2.e0.b.getChildCount(); i11++) {
+                    View childAt2 = s11Var2.e0.b.getChildAt(i11);
                     childAt2.setScaleX(1.0f);
                     childAt2.setScaleY(1.0f);
                 }
-                r11Var2.e0.b.invalidate();
-                r11Var2.l0.invalidate();
-                p01Var2.invalidate();
+                s11Var2.e0.b.invalidate();
+                s11Var2.l0.invalidate();
+                q01Var2.invalidate();
                 break;
             default:
                 ((c51) obj).b0.setVisibility(8);

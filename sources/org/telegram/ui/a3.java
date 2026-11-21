@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 adVar.b.invalidateSelf();
                 break;
             case 4:
-                ((org.telegram.ui.Components.kr) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((org.telegram.ui.Components.mr) obj).a(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 5:
                 ik ikVar = (ik) obj;
@@ -169,7 +169,7 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 photoViewer2.U1.invalidate();
                 break;
             case 20:
-                ((PhotoViewer) ((org.telegram.ui.Components.al0) obj).b).U1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((PhotoViewer) ((org.telegram.ui.Components.cl0) obj).b).U1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 21:
                 PhotoViewer photoViewer3 = ((aq0) obj).r;
@@ -206,10 +206,10 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
                 ow0 ow0Var = (ow0) obj;
                 float U12 = org.telegram.messenger.g0.U1(valueAnimator.getAnimatedFraction(), ow0Var.e);
                 ProfileActivity profileActivity2 = ow0Var.n;
-                org.telegram.ui.ActionBar.h5 h5Var = profileActivity2.U0;
-                if (h5Var != null && !profileActivity2.q2) {
+                org.telegram.ui.ActionBar.g5 g5Var = profileActivity2.U0;
+                if (g5Var != null && !profileActivity2.q2) {
                     float f13 = 1.0f - U12;
-                    h5Var.setScaleX(f13);
+                    g5Var.setScaleX(f13);
                     profileActivity2.U0.setScaleY(f13);
                     profileActivity2.U0.setAlpha(f13);
                 }
@@ -225,7 +225,7 @@ public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateLis
             default:
                 yx0 yx0Var = (yx0) obj;
                 yx0Var.E = org.telegram.messenger.g0.U1(valueAnimator.getAnimatedFraction(), yx0Var.F);
-                yx0Var.h.setTextColor(i0.a.f(yx0Var.E, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.z6, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q6, false)));
+                yx0Var.h.setTextColor(i0.a.f(yx0Var.E, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.z6, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q6, false)));
                 break;
         }
     }

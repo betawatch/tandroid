@@ -2,7 +2,7 @@ package tg;
 
 import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements q0.a {
     public final /* synthetic */ int a;
@@ -17,10 +17,10 @@ public final /* synthetic */ class m implements q0.a {
     public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                g0.X(this.b, (Integer) obj);
+                h0.X(this.b, (Integer) obj);
                 break;
             default:
-                g0.a0(this.b, (Integer) obj);
+                h0.a0(this.b, (Integer) obj);
                 break;
         }
     }

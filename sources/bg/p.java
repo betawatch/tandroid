@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hh0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.jh0;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class p {
     public static SpannableStringBuilder a(String str) {
@@ -77,11 +77,11 @@ public abstract class p {
                     } else if (i7 == 2 || i7 == 3) {
                         arrayList3.add(oVar);
                     }
-                } else if (obj instanceof x5) {
+                } else if (obj instanceof y5) {
                     TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-                    x5 x5Var = (x5) obj;
-                    tL_messageEntityCustomEmoji.document_id = x5Var.documentId;
-                    tL_messageEntityCustomEmoji.document = x5Var.document;
+                    y5 y5Var = (y5) obj;
+                    tL_messageEntityCustomEmoji.document_id = y5Var.documentId;
+                    tL_messageEntityCustomEmoji.document = y5Var.document;
                     tL_messageEntityCustomEmoji.offset = spanStart;
                     tL_messageEntityCustomEmoji.length = spanEnd - spanStart;
                     arrayList.add(tL_messageEntityCustomEmoji);
@@ -98,7 +98,7 @@ public abstract class p {
                     if (charSequence.equals(url)) {
                         spannableStringBuilder.setSpan(new URLSpan(url), spanStart2, spanEnd2, 33);
                     } else {
-                        spannableStringBuilder.setSpan(new r41(url, null), spanStart2, spanEnd2, 33);
+                        spannableStringBuilder.setSpan(new u41(url, null), spanStart2, spanEnd2, 33);
                     }
                 }
             }
@@ -111,7 +111,7 @@ public abstract class p {
             }
             for (int i11 = 0; i11 < arrayList3.size(); i11++) {
                 o oVar3 = (o) arrayList3.get(i11);
-                hh0.c(spannableStringBuilder, fromHtml.getSpanStart(oVar3), fromHtml.getSpanEnd(oVar3), oVar3.a == 3);
+                jh0.c(spannableStringBuilder, fromHtml.getSpanStart(oVar3), fromHtml.getSpanEnd(oVar3), oVar3.a == 3);
             }
             return spannableStringBuilder;
         } catch (Exception e10) {

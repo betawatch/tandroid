@@ -1,25 +1,61 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ab0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bb0 b;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 
-    public /* synthetic */ ab0(bb0 bb0Var, int i7) {
-        this.a = i7;
-        this.b = bb0Var;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class ab0 {
+    public SpannableStringBuilder a;
+    public int b;
+    public Drawable c;
+    public float d;
+    public final int e;
+    public final int f;
+    public int g = -1;
+    public int h = -1;
+    public float i = 4.66f;
+
+    public ab0(int i7, int i10) {
+        this.e = i7;
+        this.f = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.y();
-                break;
-            default:
-                this.b.m(true);
-                break;
+    public final CharSequence a(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        SpannableStringBuilder spannableStringBuilder = this.a;
+        int i7 = this.f;
+        if (spannableStringBuilder != null && this.c != null && org.telegram.messenger.g0.p == this.d) {
+            if (this.b != org.telegram.ui.ActionBar.m6.w0(i7, h6Var)) {
+                Drawable drawable = this.c;
+                int w02 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
+                this.b = w02;
+                drawable.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+            }
+            return this.a;
         }
+        if (context == null) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("v ");
+        this.d = org.telegram.messenger.g0.p;
+        Drawable mutate = context.getResources().getDrawable(this.e).mutate();
+        this.c = mutate;
+        int w03 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
+        this.b = w03;
+        mutate.setColorFilter(new PorterDuffColorFilter(w03, PorterDuff.Mode.SRC_IN));
+        int i10 = this.g;
+        int intrinsicWidth = i10 <= 0 ? this.c.getIntrinsicWidth() : org.telegram.messenger.g0.L(i10);
+        int i11 = this.h;
+        int intrinsicHeight = i11 <= 0 ? this.c.getIntrinsicHeight() : org.telegram.messenger.g0.L(i11);
+        int L = org.telegram.messenger.g0.L(this.i);
+        this.c.setBounds(0, L, intrinsicWidth, intrinsicHeight + L);
+        spannableStringBuilder2.setSpan(new ImageSpan(this.c, 2), 0, 1, 33);
+        spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.s2(org.telegram.messenger.g0.L(2.0f)), 1, 2, 33);
+        this.a = spannableStringBuilder2;
+        return spannableStringBuilder2;
     }
 }

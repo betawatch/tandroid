@@ -1,30 +1,80 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class z70 extends yo0 {
-    public final /* synthetic */ e80 V2;
+public final /* synthetic */ class z70 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g80 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z70(e80 e80Var, Context context, String str, String str2, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, null, str, false, str2, false, i6Var);
-        this.V2 = e80Var;
+    public /* synthetic */ z70(g80 g80Var, int i7) {
+        this.a = i7;
+        this.b = g80Var;
     }
 
-    @Override // org.telegram.ui.Components.yo0
-    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String a02;
-        if (z10) {
-            if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.gd.a0(null, null, 2131748995, org.telegram.messenger.gd.G(i7, "Chats", new Object[0]));
-            } else {
-                long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j3 == 0 || j3 == org.telegram.messenger.j10.i(this.a).e()) ? org.telegram.messenger.gd.M0(2131748993, null) : org.telegram.messenger.gd.a0(null, null, 2131748992, org.telegram.messenger.mp.u1(this.a).D1(j3, true));
-            }
-            this.V2.e(org.telegram.messenger.g0.W2(a02));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        g80 g80Var = this.b;
+        int i10 = 1;
+        switch (i7) {
+            case 0:
+                g80Var.r.f();
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.g1 g1Var = g80Var.s;
+                if (g1Var != null) {
+                    g1Var.d(true);
+                }
+                g80Var.r.d();
+                break;
+            case 2:
+                g80 g80Var2 = this.b;
+                String str = g80Var2.b;
+                boolean z10 = str != null && str.endsWith("?direct");
+                Context context = g80Var2.getContext();
+                String N0 = org.telegram.messenger.gd.N0(2131748977, null);
+                String str2 = g80Var2.b;
+                String str3 = g80Var2.K;
+                if (str3 == null) {
+                    str3 = org.telegram.messenger.gd.N0(g80Var2.I ? z10 ? 2131746311 : 2131746312 : 2131746309, null);
+                }
+                d80 d80Var = new d80(g80Var2, context, N0, str2, str3);
+                g80Var2.F = d80Var;
+                d80Var.J0();
+                g80Var2.F.show();
+                org.telegram.ui.ActionBar.g1 g1Var2 = g80Var2.s;
+                if (g1Var2 != null) {
+                    g1Var2.d(true);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.g1 g1Var3 = g80Var.s;
+                if (g1Var3 != null) {
+                    g1Var3.d(true);
+                }
+                org.telegram.ui.ActionBar.g2 g2Var = g80Var.c;
+                if (g2Var.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g2Var.getParentActivity());
+                    String N02 = org.telegram.messenger.gd.N0(2131745827, null);
+                    org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                    t1Var.S = N02;
+                    t1Var.U = org.telegram.messenger.gd.N0(2131745830, null);
+                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131745828, null), new y70(g80Var, i10));
+                    alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                    TextView textView = (TextView) t1Var.d(-1);
+                    if (textView != null) {
+                        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
+                    }
+                    alertDialog$Builder.p();
+                    break;
+                }
+                break;
         }
     }
 }

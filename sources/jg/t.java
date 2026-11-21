@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.d61;
 import org.telegram.ui.mw;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -180,7 +180,7 @@ public final /* synthetic */ class t implements Runnable {
                             TextView textView = (TextView) d61Var.b;
                             Object[] objArr = new Object[i10];
                             objArr[0] = str3;
-                            textView.setText(gd.a0(null, null, 2131745555, objArr));
+                            textView.setText(gd.a0(null, null, 2131745554, objArr));
                         }
                         h0Var2.f();
                         h0Var2.P = i7;

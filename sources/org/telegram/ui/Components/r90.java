@@ -1,43 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class r90 extends v4.o0 {
-    public final /* synthetic */ s90 a;
+public final class r90 extends org.telegram.ui.oq0 {
+    public final /* synthetic */ v90 a;
 
-    public r90(s90 s90Var) {
-        this.a = s90Var;
+    public r90(v90 v90Var) {
+        this.a = v90Var;
     }
 
-    @Override // v4.o0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
-        int R;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        v4.p0 layoutManager = recyclerView.getLayoutManager();
-        t90 t90Var = this.a.j3;
-        if (layoutManager != t90Var.d || (R = RecyclerView.R(view)) == 0 || t90Var.f.N()) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final org.telegram.ui.wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        if (i7 >= 0) {
+            v90 v90Var = this.a;
+            if (i7 < v90Var.Q.size()) {
+                int childCount = v90Var.getListView().getChildCount();
+                Object obj = v90Var.Q.get(i7);
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    View childAt = v90Var.getListView().getChildAt(i10);
+                    if (childAt instanceof org.telegram.ui.Cells.i2) {
+                        org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) childAt;
+                        if (i2Var.getResult() == obj) {
+                            imageReceiver = i2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                org.telegram.ui.wq0 wq0Var = new org.telegram.ui.wq0();
+                                wq0Var.b = iArr[0];
+                                wq0Var.c = iArr[1];
+                                wq0Var.d = v90Var.getListView();
+                                wq0Var.a = imageReceiver;
+                                wq0Var.e = imageReceiver.p();
+                                wq0Var.h = imageReceiver.E();
+                                return wq0Var;
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
+                    }
+                }
+            }
         }
-        if (t90Var.f.I() == null && t90Var.f.V == null) {
-            rect.top = org.telegram.messenger.g0.L(2.0f);
-        } else {
-            if (R == 0) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+        if (i7 >= 0) {
+            v90 v90Var = this.a;
+            if (i7 >= v90Var.Q.size()) {
                 return;
             }
-            R--;
-            m90 m90Var = t90Var.d;
-            m90Var.B1();
-            if (R > m90Var.U) {
-                rect.top = org.telegram.messenger.g0.L(2.0f);
-            }
+            v90Var.y.g((TLRPC.BotInlineResult) v90Var.Q.get(i7), z10, i10);
         }
-        rect.right = t90Var.d.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
     }
 }

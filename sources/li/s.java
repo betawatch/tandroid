@@ -5,52 +5,52 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import bi.q1;
-import bi.r1;
+import bi.u1;
+import bi.v1;
 import c8.ma;
 import di.vb;
 import h9.g1;
-import hi.e7;
+import hi.d7;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y1;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.kv0;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.x1;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.nv0;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class s extends h2 implements te.b {
+public final class s extends g2 implements te.b {
     public final te.a a;
     public long b;
     public FrameLayout c;
-    public e51 d;
+    public h51 d;
     public lh.f e;
     public LinearLayout f;
-    public hi.d h;
-    public hi.d n;
-    public kv0 r;
+    public hi.e h;
+    public hi.e n;
+    public nv0 r;
     public TLRPC.ChatFull s;
     public k0 w;
     public int x;
 
     public s(Bundle bundle) {
         super(bundle);
-        this.a = new te.a(0, this, lr.h, 320L, false);
+        this.a = new te.a(0, this, nr.h, 320L, false);
     }
 
-    public static void Z(s sVar, l41 l41Var) {
-        Object obj = l41Var.H;
+    public static void Z(s sVar, o41 o41Var) {
+        Object obj = o41Var.H;
         if (obj instanceof mi.f) {
             mi.f fVar = (mi.f) obj;
             long j3 = fVar.a;
@@ -61,7 +61,7 @@ public final class s extends h2 implements te.b {
             } else if (v3.t0(O0) || v3.j0(O0)) {
                 sVar.presentFragment(bn.ua(-O0.id));
             } else {
-                new ni.c(sVar.getParentActivity(), O0, new kg.h0(16, sVar, fVar)).show();
+                new ni.b(sVar.getParentActivity(), O0, new ji.i(18, sVar, fVar)).show();
             }
         }
     }
@@ -82,7 +82,7 @@ public final class s extends h2 implements te.b {
         this.e.setFadeZoneBottom(org.telegram.messenger.g0.L(72.0f) + i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         boolean z10 = true;
         z10 = true;
@@ -93,21 +93,21 @@ public final class s extends h2 implements te.b {
         k0Var.d();
         this.w.e();
         final int i7 = 0;
-        this.actionBar.setBackButtonDrawable(new y1(false));
+        this.actionBar.setBackButtonDrawable(new x1(false));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new r1(this, 19));
-        this.actionBar.setTitle(gd.M0(2131751884, null));
+        this.actionBar.setActionBarMenuOnItemClick(new v1(this, 19));
+        this.actionBar.setTitle(gd.N0(2131751883, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        int i10 = n6.a7;
-        u6.h(i10, frameLayout, null);
-        e51 e51Var = new e51(this, new e7(this, 23), new q(this), new c(this, 1));
-        this.d = e51Var;
-        e51Var.setClipToPadding(false);
-        e51 e51Var2 = this.d;
-        e51Var2.g3.r = false;
-        e51Var2.r1();
-        this.d.j(new q1(this, 23));
+        int i10 = m6.a7;
+        t6.h(i10, frameLayout, null);
+        h51 h51Var = new h51(this, new d7(this, 23), new q(this), new c(this, 1));
+        this.d = h51Var;
+        h51Var.setClipToPadding(false);
+        h51 h51Var2 = this.d;
+        h51Var2.g3.r = false;
+        h51Var2.r1();
+        this.d.j(new u1(this, 23));
         this.actionBar.setAdaptiveBackground(this.d);
         this.c.addView(this.d, ma.c(-1.0f, -1));
         lh.f fVar = new lh.f(context);
@@ -121,14 +121,14 @@ public final class s extends h2 implements te.b {
         this.f = linearLayout;
         linearLayout.setOrientation(0);
         this.f.setPadding(org.telegram.messenger.g0.L(7.0f), 0, org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(12.0f));
-        hi.d dVar = new hi.d(context, this.resourceProvider, true);
-        this.n = dVar;
-        dVar.e();
-        hi.d dVar2 = this.n;
-        int f10 = i0.a.f(0.125f, getThemedColor(n6.d6), getThemedColor(n6.G6));
+        hi.e eVar = new hi.e(context, this.resourceProvider, true);
+        this.n = eVar;
+        eVar.e();
+        hi.e eVar2 = this.n;
+        int f10 = i0.a.f(0.125f, getThemedColor(m6.d6), getThemedColor(m6.G6));
         this.x = f10;
-        dVar2.setColor(f10);
-        this.n.setText(gd.M0(2131751889, null));
+        eVar2.setColor(f10);
+        this.n.setText(gd.N0(2131751888, null));
         this.n.f();
         this.n.setOnClickListener(new View.OnClickListener(this) { // from class: li.r
             public final /* synthetic */ s b;
@@ -150,13 +150,13 @@ public final class s extends h2 implements te.b {
             }
         });
         this.f.addView(this.n, ma.q(0, 48, 1.0f, 0, 4, 0, 4, 0));
-        hi.d dVar3 = new hi.d(context, this.resourceProvider, true);
-        this.h = dVar3;
-        dVar3.setText(gd.M0(2131751891, null));
+        hi.e eVar3 = new hi.e(context, this.resourceProvider, true);
+        this.h = eVar3;
+        eVar3.setText(gd.N0(2131751890, null));
         this.h.f();
-        hi.d dVar4 = this.h;
+        hi.e eVar4 = this.h;
         final int i11 = z10 ? 1 : 0;
-        dVar4.setOnClickListener(new View.OnClickListener(this) { // from class: li.r
+        eVar4.setOnClickListener(new View.OnClickListener(this) { // from class: li.r
             public final /* synthetic */ s b;
 
             {
@@ -177,10 +177,10 @@ public final class s extends h2 implements te.b {
         });
         this.f.addView(this.h, ma.q(0, 48, 1.0f, 0, 4, 0, 4, 0));
         this.c.addView(this.f, ma.e(-1, -2, 80));
-        kv0 kv0Var = new kv0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = kv0Var;
-        kv0Var.d.setText(gd.M0(2131748033, null));
-        this.r.e.setText(gd.M0(2131748032, null));
+        nv0 nv0Var = new nv0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = nv0Var;
+        nv0Var.d.setText(gd.N0(2131748032, null));
+        this.r.e.setText(gd.N0(2131748031, null));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
         this.c.addView(this.r, ma.e(-2, -2, 17));
@@ -200,17 +200,17 @@ public final class s extends h2 implements te.b {
         return frameLayout3;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean drawEdgeNavigationBar() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         this.b = this.arguments.getLong("community_id", 0L);
         getMessagesController().O0(Long.valueOf(this.b));
@@ -218,7 +218,7 @@ public final class s extends h2 implements te.b {
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         k0 k0Var = this.w;
@@ -229,17 +229,17 @@ public final class s extends h2 implements te.b {
         k0Var.i = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final void onThemeColorsChanged() {
         try {
             super.onThemeColorsChanged();
-            int f10 = i0.a.f(0.125f, getThemedColor(n6.d6), getThemedColor(n6.G6));
-            hi.d dVar = this.n;
-            if (dVar == null || f10 == this.x) {
+            int f10 = i0.a.f(0.125f, getThemedColor(m6.d6), getThemedColor(m6.G6));
+            hi.e eVar = this.n;
+            if (eVar == null || f10 == this.x) {
                 return;
             }
             this.x = f10;
-            dVar.setColor(f10);
+            eVar.setColor(f10);
         } catch (Exception e10) {
             a8.g(e10, true);
         }

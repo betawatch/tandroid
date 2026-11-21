@@ -1,28 +1,28 @@
 package ch;
 
 import android.os.Bundle;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ long b;
-    public final /* synthetic */ h2 c;
+    public final /* synthetic */ g2 c;
 
-    public /* synthetic */ r0(long j3, h2 h2Var) {
+    public /* synthetic */ r0(long j3, g2 g2Var) {
         this.b = j3;
-        this.c = h2Var;
+        this.c = g2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                h2 h2Var = this.c;
-                h2Var.presentFragment(c51.g0(h2Var.getMessagesController().O0(Long.valueOf(-this.b)), true));
+                g2 g2Var = this.c;
+                g2Var.presentFragment(c51.g0(g2Var.getMessagesController().O0(Long.valueOf(-this.b)), true));
                 break;
             default:
                 Bundle bundle = new Bundle();
@@ -39,8 +39,8 @@ public final /* synthetic */ class r0 implements Runnable {
         }
     }
 
-    public /* synthetic */ r0(h2 h2Var, long j3) {
-        this.c = h2Var;
+    public /* synthetic */ r0(g2 g2Var, long j3) {
+        this.c = g2Var;
         this.b = j3;
     }
 }

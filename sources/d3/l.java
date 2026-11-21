@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.wc1;
 import x2.d1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class l extends u2.r {
     public static final int[] T1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1625,7 +1625,7 @@ public final class l extends u2.r {
     public final void M0(u2.l lVar, int i7, long j3) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.f(i7, j3);
+        lVar.g(i7, j3);
         Trace.endSection();
         this.P0.e++;
         this.A1 = 0;
@@ -1697,7 +1697,7 @@ public final class l extends u2.r {
                     if (Build.VERSION.SDK_INT < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.e();
+                    lVar.f();
                 }
             }
         }
@@ -1837,7 +1837,7 @@ public final class l extends u2.r {
 
     public final void Q0(u2.l lVar, int i7) {
         Trace.beginSection("skipVideoBuffer");
-        lVar.d(i7);
+        lVar.e(i7);
         Trace.endSection();
         this.P0.f++;
     }
@@ -2108,7 +2108,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new c1.c(22, bVar, exc));
+            handler.post(new c1.a(24, bVar, exc));
         }
     }
 
@@ -2281,7 +2281,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new c1.c(20, bVar, cVar));
+            handler.post(new c1.a(22, bVar, cVar));
         }
     }
 
@@ -2290,7 +2290,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new c1.c(23, bVar, str));
+            handler.post(new c1.a(25, bVar, str));
         }
     }
 
@@ -2302,7 +2302,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new aa.r(bVar, uVar, e02, 16));
+            handler.post(new aa.r(bVar, uVar, e02, 17));
         }
         y yVar = this.j1;
         if (yVar != null) {
@@ -2505,7 +2505,7 @@ public final class l extends u2.r {
         }
         if (a10 == 2) {
             Trace.beginSection("dropVideoBuffer");
-            lVar.d(i7);
+            lVar.e(i7);
             Trace.endSection();
             R0(0, 1);
             T0(wVar.a);

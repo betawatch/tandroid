@@ -5,42 +5,42 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.m6;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s extends EditTextBoldCursor {
-    public final f5 M1;
+    public final g5 M1;
     public int N1;
-    public final m6 O1;
-    public final /* synthetic */ i6 P1;
+    public final n6 O1;
+    public final /* synthetic */ h6 P1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(Context context, i6 i6Var) {
+    public s(Context context, h6 h6Var) {
         super(context);
-        this.P1 = i6Var;
-        this.M1 = new f5(this);
-        m6 m6Var = new m6(false, true, true);
-        this.O1 = m6Var;
-        m6Var.n(0.2f, 160L, lr.h);
-        m6Var.w(org.telegram.messenger.g0.L(15.33f));
-        m6Var.setCallback(this);
-        m6Var.b = 5;
+        this.P1 = h6Var;
+        this.M1 = new g5(this);
+        n6 n6Var = new n6(false, true, true);
+        this.O1 = n6Var;
+        n6Var.n(0.2f, 160L, nr.h);
+        n6Var.w(org.telegram.messenger.g0.L(15.33f));
+        n6Var.setCallback(this);
+        n6Var.b = 5;
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int a10 = this.M1.a(n6.w0(this.N1 < 0 ? n6.p7 : n6.P5, this.P1), false);
-        m6 m6Var = this.O1;
-        m6Var.u(a10);
-        m6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        m6Var.draw(canvas);
+        int a10 = this.M1.a(m6.w0(this.N1 < 0 ? m6.p7 : m6.P5, this.P1), false);
+        n6 n6Var = this.O1;
+        n6Var.u(a10);
+        n6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        n6Var.draw(canvas);
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
@@ -48,18 +48,18 @@ public final class s extends EditTextBoldCursor {
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(36.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.rt, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         super.onTextChanged(charSequence, i7, i10, i11);
-        m6 m6Var = this.O1;
-        if (m6Var != null) {
+        n6 n6Var = this.O1;
+        if (n6Var != null) {
             this.N1 = 32 - charSequence.length();
-            m6Var.a();
+            n6Var.a();
             String str = "";
             if (this.N1 <= 4) {
                 str = "" + this.N1;
             }
-            m6Var.t(str, true, true);
+            n6Var.t(str, true, true);
         }
     }
 

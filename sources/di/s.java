@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s extends FrameLayout {
     public final int a;
     public final ArrayList b;
-    public final e51 c;
+    public final h51 c;
     public String d;
     public boolean e;
     public boolean f;
@@ -25,7 +25,7 @@ public final class s extends FrameLayout {
     public s(t tVar, Context context, int i7) {
         super(context);
         int i10;
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         ri.q qVar;
         this.r = tVar;
         this.b = new ArrayList();
@@ -34,22 +34,22 @@ public final class s extends FrameLayout {
         this.a = i7;
         setClipChildren(false);
         setClipToPadding(false);
-        i10 = ((org.telegram.ui.ActionBar.h2) tVar).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.g2) tVar).currentAccount;
         int classGuid = tVar.getClassGuid();
         bi.b bVar = new bi.b(this, 14);
-        a1.c cVar = new a1.c(this, 22);
-        i6Var = ((org.telegram.ui.ActionBar.h2) tVar).resourceProvider;
-        e51 e51Var = new e51(context, i10, classGuid, true, bVar, cVar, null, i6Var);
-        this.c = e51Var;
-        e51Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
-        e51Var.g3.r = false;
-        e51Var.setCaptureSectionsDecoratorAllowed(true);
-        e51Var.setClipToPadding(false);
-        e51Var.setOverScrollMode(0);
-        addView(e51Var, c8.ma.c(-1.0f, -1));
-        qVar = ((org.telegram.ui.ActionBar.h2) tVar).glassEngine;
-        qVar.b(e51Var);
-        e51Var.j(new bi.q1(this, 7));
+        a1.c cVar = new a1.c(this, 23);
+        h6Var = ((org.telegram.ui.ActionBar.g2) tVar).resourceProvider;
+        h51 h51Var = new h51(context, i10, classGuid, true, bVar, cVar, null, h6Var);
+        this.c = h51Var;
+        h51Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
+        h51Var.g3.r = false;
+        h51Var.setCaptureSectionsDecoratorAllowed(true);
+        h51Var.setClipToPadding(false);
+        h51Var.setOverScrollMode(0);
+        addView(h51Var, c8.ma.c(-1.0f, -1));
+        qVar = ((org.telegram.ui.ActionBar.g2) tVar).glassEngine;
+        qVar.b(h51Var);
+        h51Var.j(new bi.u1(this, 7));
     }
 
     public final void a() {
@@ -66,15 +66,15 @@ public final class s extends FrameLayout {
         int i12 = this.a;
         tL_payments_getStarsTransactions.inbound = i12 == 1;
         tL_payments_getStarsTransactions.outbound = i12 == 2;
-        i7 = ((org.telegram.ui.ActionBar.h2) tVar).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) tVar).currentAccount;
         tL_payments_getStarsTransactions.peer = mp.u1(i7).l1(tVar.b);
         String str = this.d;
         tL_payments_getStarsTransactions.offset = str;
         tL_payments_getStarsTransactions.limit = 20;
         this.c.g3.O(false);
-        i10 = ((org.telegram.ui.ActionBar.h2) tVar).currentAccount;
-        int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsTransactions, new bi.k1(4, this, str));
-        i11 = ((org.telegram.ui.ActionBar.h2) tVar).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.g2) tVar).currentAccount;
+        int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsTransactions, new bi.o1(4, this, str));
+        i11 = ((org.telegram.ui.ActionBar.g2) tVar).currentAccount;
         ConnectionsManager.getInstance(i11).bindRequestToGuid(sendRequest, tVar.getClassGuid());
     }
 

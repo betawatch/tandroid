@@ -9,16 +9,16 @@ import h6.m;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.rq;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.tq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements te.b {
     public static final int[] s = {R.drawable.msg_input_attach2, R.drawable.pagedown, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, R.drawable.pagedown, R.drawable.pagedown};
     public final String[] a;
-    public final i6 b;
+    public final h6 b;
     public final gh.a c;
     public final dh.c d;
     public final m[] e;
@@ -27,15 +27,15 @@ public final class h extends FrameLayout implements te.b {
     public b n;
     public int r;
 
-    public h(Context context, i6 i6Var, gh.b bVar, dh.c cVar) {
+    public h(Context context, h6 h6Var, gh.b bVar, dh.c cVar) {
         super(context);
-        this.a = new String[]{gd.M0(2131753951, null), gd.M0(2131754815, null), gd.M0(2131754842, null), gd.M0(2131754790, null), gd.M0(2131754804, null), gd.M0(2131754778, null), gd.M0(2131754779, null)};
+        this.a = new String[]{gd.N0(2131753950, null), gd.N0(2131754814, null), gd.N0(2131754841, null), gd.N0(2131754789, null), gd.N0(2131754803, null), gd.N0(2131754777, null), gd.N0(2131754778, null)};
         this.e = new m[7];
         this.f = new bg.f[7];
         this.r = 83;
         this.d = cVar;
         this.c = bVar;
-        this.b = i6Var;
+        this.b = h6Var;
     }
 
     @Override // te.b
@@ -116,8 +116,8 @@ public final class h extends FrameLayout implements te.b {
         if (mVar != null || z10) {
             if (mVar == null) {
                 int i12 = i7 << 16;
-                te.a aVar = new te.a(i12 | 1, this, i7 == 0 ? lr.h : se.a.a, i7 == 0 ? 300L : 280L, false);
-                te.a aVar2 = new te.a(i12 | 2, this, i7 == 0 ? lr.h : se.a.a, i7 == 0 ? 300L : 280L, false);
+                te.a aVar = new te.a(i12 | 1, this, i7 == 0 ? nr.h : se.a.a, i7 == 0 ? 300L : 280L, false);
+                te.a aVar2 = new te.a(i12 | 2, this, i7 == 0 ? nr.h : se.a.a, i7 == 0 ? 300L : 280L, false);
                 if (i7 == 0) {
                     i10 = 50;
                     i11 = 32;
@@ -128,9 +128,9 @@ public final class h extends FrameLayout implements te.b {
                 int i13 = i11;
                 Context context = getContext();
                 int i14 = s[i7];
-                i6 i6Var = this.b;
-                kh.b bVar = new kh.b(context, i6Var);
-                kh.a d = kh.a.d(context, this.d, this.c, i6Var, i14, i13);
+                h6 h6Var = this.b;
+                kh.b bVar = new kh.b(context, h6Var);
+                kh.a d = kh.a.d(context, this.d, this.c, h6Var, i14, i13);
                 bVar.b = d;
                 bVar.addView(d, ma.e(i10, i10, 80));
                 d.setIconPadding(g0.L(2.0f));
@@ -149,9 +149,9 @@ public final class h extends FrameLayout implements te.b {
                 }
                 if (i7 == 1) {
                     bVar.d = true;
-                    rq rqVar = bVar.c;
-                    if (rqVar != null) {
-                        rqVar.setReverse(true);
+                    tq tqVar = bVar.c;
+                    if (tqVar != null) {
+                        tqVar.setReverse(true);
                     }
                 }
                 addView(bVar, ma.e(i10, i10 + 8, this.r));

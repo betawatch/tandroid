@@ -12,12 +12,12 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.h1;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.s4;
-import org.telegram.ui.ActionBar.z0;
+import org.telegram.ui.ActionBar.g1;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.ActionBar.y0;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.af;
 import org.telegram.ui.bn;
 import org.telegram.ui.e0;
@@ -25,7 +25,7 @@ import org.telegram.ui.ee;
 import org.telegram.ui.mu0;
 import org.telegram.ui.pl;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
     public final boolean onLongClick(View view) {
         af afVar;
         boolean z10;
-        hl0 hl0Var;
+        jl0 jl0Var;
         int i7 = this.a;
         int i10 = this.b;
         FrameLayout frameLayout = this.c;
@@ -63,27 +63,27 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                         z10 = 2;
                     }
                     Activity parentActivity = bnVar.getParentActivity();
-                    s4 parentLayout = bnVar.getParentLayout();
+                    r4 parentLayout = bnVar.getParentLayout();
                     pl plVar = bnVar.m1;
-                    i6 resourceProvider = bnVar.getResourceProvider();
+                    h6 resourceProvider = bnVar.getResourceProvider();
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(parentActivity, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setMinimumWidth(g0.L(200.0f));
-                    z0 z0Var = new z0(0, parentActivity, resourceProvider, true, true);
-                    z0Var.setMinimumWidth(g0.L(200.0f));
-                    z0Var.j(!z10 ? gd.M0(2131746177, null) : z10 ? gd.M0(2131746179, null) : gd.M0(2131746178, null), R.drawable.msg_seen, null);
-                    z0Var.setOnClickListener(new mu0(1, afVar));
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var);
-                    h1 h1Var = new h1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-                    h1Var.e = true;
-                    h1Var.c = ks.x3;
-                    h1Var.setOutsideTouchable(true);
-                    h1Var.setClippingEnabled(true);
-                    h1Var.setAnimationStyle(R.style.PopupContextAnimation);
-                    h1Var.setFocusable(true);
+                    y0 y0Var = new y0(0, parentActivity, resourceProvider, true, true);
+                    y0Var.setMinimumWidth(g0.L(200.0f));
+                    y0Var.j(!z10 ? gd.N0(2131746176, null) : z10 ? gd.N0(2131746178, null) : gd.N0(2131746177, null), R.drawable.msg_seen, null);
+                    y0Var.setOnClickListener(new mu0(1, afVar));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.addView(y0Var);
+                    g1 g1Var = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+                    g1Var.e = true;
+                    g1Var.c = ks.x3;
+                    g1Var.setOutsideTouchable(true);
+                    g1Var.setClippingEnabled(true);
+                    g1Var.setAnimationStyle(R.style.PopupContextAnimation);
+                    g1Var.setFocusable(true);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(1000.0f), TLObject.FLAG_31));
-                    h1Var.setInputMethodMode(2);
-                    h1Var.setSoftInputMode(0);
-                    h1Var.getContentView().setFocusableInTouchMode(true);
+                    g1Var.setInputMethodMode(2);
+                    g1Var.setSoftInputMode(0);
+                    g1Var.getContentView().setFocusableInTouchMode(true);
                     PointF pointF = new PointF();
                     k.b(view, plVar, pointF);
                     float width = ((pointF.x + view.getWidth()) - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) + g0.L(8.0f);
@@ -93,8 +93,8 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                         width += view2.getX() + view2.getPaddingLeft();
                         measuredHeight += view2.getY() + view2.getPaddingTop();
                     }
-                    h1Var.showAtLocation(plVar, 51, (int) width, (int) measuredHeight);
-                    bnVar.g9 = h1Var;
+                    g1Var.showAtLocation(plVar, 51, (int) width, (int) measuredHeight);
+                    bnVar.g9 = g1Var;
                     bnVar.w8(bnVar.y1, false);
                     bnVar.g9.setOnDismissListener(new e0(bnVar, i11));
                     try {
@@ -106,7 +106,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 return false;
             default:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) frameLayout;
-                return (scrollSlidingTextTabStrip.o0 || (hl0Var = scrollSlidingTextTabStrip.b) == null || !hl0Var.h1(i10, view)) ? false : true;
+                return (scrollSlidingTextTabStrip.o0 || (jl0Var = scrollSlidingTextTabStrip.b) == null || !jl0Var.h1(i10, view)) ? false : true;
         }
     }
 }

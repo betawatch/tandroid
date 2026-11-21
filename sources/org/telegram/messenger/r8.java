@@ -16,8 +16,9 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class r8 extends c1 {
     public static volatile r8[] s = new r8[4];
@@ -293,20 +294,20 @@ public final class r8 extends c1 {
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         TLRPC.Peer peer;
-        if (obj instanceof fi.y5) {
-            fi.y5 y5Var = (fi.y5) obj;
-            if (y5Var.a == null) {
+        if (obj instanceof fi.z5) {
+            fi.z5 z5Var = (fi.z5) obj;
+            if (z5Var.a == null) {
                 a8.b("failed request reference can't find list in botpreview");
                 return null;
             }
-            TLRPC.MessageMedia messageMedia = y5Var.media;
+            TLRPC.MessageMedia messageMedia = z5Var.media;
             if (messageMedia.document != null) {
-                return "botstory_doc_" + y5Var.media.document.id;
+                return "botstory_doc_" + z5Var.media.document.id;
             }
             if (messageMedia.photo != null) {
-                return "botstory_photo_" + y5Var.media.photo.id;
+                return "botstory_photo_" + z5Var.media.photo.id;
             }
-            return "botstory_" + y5Var.id;
+            return "botstory_" + z5Var.id;
         }
         if (obj instanceof TL_stories.StoryItem) {
             TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
@@ -390,20 +391,20 @@ public final class r8 extends c1 {
         if (z11 && (((TL_ephemeral.TL_sendMessage) obj2).media instanceof TLRPC.TL_inputMediaPoll) && (obj instanceof ArrayList)) {
             return null;
         }
-        if (obj2 instanceof fi.y5) {
-            fi.y5 y5Var = (fi.y5) obj2;
-            TLRPC.MessageMedia messageMedia = y5Var.media;
+        if (obj2 instanceof fi.z5) {
+            fi.z5 z5Var = (fi.z5) obj2;
+            TLRPC.MessageMedia messageMedia = z5Var.media;
             if (messageMedia.document != null) {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
-                tL_inputDocumentFileLocation.id = y5Var.media.document.id;
-                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + y5Var.media.document.id);
+                tL_inputDocumentFileLocation.id = z5Var.media.document.id;
+                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + z5Var.media.document.id);
             }
             if (messageMedia.photo == null) {
-                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + y5Var.id);
+                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + z5Var.id);
             }
             TLRPC.TL_inputPhotoFileLocation tL_inputPhotoFileLocation = new TLRPC.TL_inputPhotoFileLocation();
-            tL_inputPhotoFileLocation.id = y5Var.media.photo.id;
-            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + y5Var.media.photo.id);
+            tL_inputPhotoFileLocation.id = z5Var.media.photo.id;
+            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + z5Var.media.photo.id);
         }
         if (obj2 instanceof TL_stories.TL_storyItem) {
             TL_stories.TL_storyItem tL_storyItem = (TL_stories.TL_storyItem) obj2;
@@ -880,12 +881,12 @@ public final class r8 extends c1 {
         return f10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x048c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0499, code lost:
     
         return null;
      */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x02d9 A[LOOP:6: B:178:0x02b6->B:184:0x02d9, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x048a A[EDGE_INSN: B:185:0x048a->B:19:0x048a BREAK  A[LOOP:6: B:178:0x02b6->B:184:0x02d9], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x02e6 A[LOOP:6: B:178:0x02b6->B:184:0x02e6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0497 A[EDGE_INSN: B:185:0x0497->B:19:0x0497 BREAK  A[LOOP:6: B:178:0x02b6->B:184:0x02e6], SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -919,8 +920,8 @@ public final class r8 extends c1 {
                 inputFileLocationArr[0] = (TLRPC.InputFileLocation) obj;
             }
         }
-        if (tLObject instanceof fi.y5) {
-            TLRPC.MessageMedia messageMedia3 = ((fi.y5) tLObject).media;
+        if (tLObject instanceof fi.z5) {
+            TLRPC.MessageMedia messageMedia3 = ((fi.z5) tLObject).media;
             TLRPC.Document document2 = messageMedia3.document;
             if (document2 != null) {
                 bArr = e(document2, messageMedia3.alt_documents, inputFileLocation, zArr, inputFileLocationArr);
@@ -1088,7 +1089,9 @@ public final class r8 extends c1 {
                 int size6 = vector.objects.size();
                 for (int i15 = 0; i15 < size6; i15++) {
                     Object obj2 = vector.objects.get(i15);
-                    if (obj2 instanceof TLRPC.User) {
+                    if (obj2 instanceof TLRPC.TL_transcriptionModel) {
+                        d = e(((TLRPC.TL_transcriptionModel) obj2).document, null, inputFileLocation, zArr, inputFileLocationArr);
+                    } else if (obj2 instanceof TLRPC.User) {
                         d = h((TLRPC.User) obj2, inputFileLocation, zArr, inputFileLocationArr);
                     } else {
                         if (obj2 instanceof TLRPC.Chat) {
@@ -1260,10 +1263,10 @@ public final class r8 extends c1 {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00a8 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:379:0x0706  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x071c  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x07ae  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x07c5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x07c4  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x07db  */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0032  */
     /* JADX WARN: Type inference failed for: r12v0 */
     /* JADX WARN: Type inference failed for: r12v1 */
@@ -1393,8 +1396,8 @@ public final class r8 extends c1 {
                                 z13 = true;
                             }
                             p8Var3.d = z13;
-                            if (tLObject instanceof fi.y5) {
-                                TLRPC.MessageMedia messageMedia2 = ((fi.y5) tLObject).media;
+                            if (tLObject instanceof fi.z5) {
+                                TLRPC.MessageMedia messageMedia2 = ((fi.z5) tLObject).media;
                                 arrayList2 = arrayList;
                                 TLRPC.Document document3 = messageMedia2.document;
                                 if (document3 != null) {
@@ -1675,7 +1678,11 @@ public final class r8 extends c1 {
                                                             int i27 = 0;
                                                             while (i27 < size8) {
                                                                 Object obj3 = vector.objects.get(i27);
-                                                                if (obj3 instanceof TLRPC.User) {
+                                                                if (obj3 instanceof TLRPC.TL_transcriptionModel) {
+                                                                    i11 = size8;
+                                                                    i12 = i27;
+                                                                    bArr = e(((TLRPC.TL_transcriptionModel) obj3).document, null, p8Var3.a, zArr2, inputFileLocationArr);
+                                                                } else if (obj3 instanceof TLRPC.User) {
                                                                     TLRPC.User user = (TLRPC.User) obj3;
                                                                     byte[] h = h(user, p8Var3.a, zArr2, inputFileLocationArr);
                                                                     if (!z10 || h == null) {
@@ -2762,28 +2769,28 @@ public final class r8 extends c1 {
                     TLRPC.TL_messages_saveGif tL_messages_saveGif = (TLRPC.TL_messages_saveGif) obj;
                     if (!z10 || !Arrays.equals(tL_messages_saveGif.id.file_reference, bArr)) {
                         tL_messages_saveGif.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_saveGif, new fi.k5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_saveGif, new fi.l5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_messages_saveRecentSticker) {
                     TLRPC.TL_messages_saveRecentSticker tL_messages_saveRecentSticker = (TLRPC.TL_messages_saveRecentSticker) obj;
                     if (!z10 || !Arrays.equals(tL_messages_saveRecentSticker.id.file_reference, bArr)) {
                         tL_messages_saveRecentSticker.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new fi.k5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new fi.l5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_stickers_addStickerToSet) {
                     TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = (TLRPC.TL_stickers_addStickerToSet) obj;
                     if (!z10 || !Arrays.equals(tL_stickers_addStickerToSet.sticker.document.file_reference, bArr)) {
                         tL_stickers_addStickerToSet.sticker.document.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new fi.k5(i16));
+                        getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new fi.l5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_messages_faveSticker) {
                     TLRPC.TL_messages_faveSticker tL_messages_faveSticker = (TLRPC.TL_messages_faveSticker) obj;
                     if (!z10 || !Arrays.equals(tL_messages_faveSticker.id.file_reference, bArr)) {
                         tL_messages_faveSticker.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_faveSticker, new fi.k5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_faveSticker, new fi.l5(i16));
                         return true;
                     }
                 } else {
@@ -2845,14 +2852,14 @@ public final class r8 extends c1 {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x02ab  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x02dd  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x028a  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x0204  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x02e8  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0294  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x020e  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x016a  */
     /* JADX WARN: Removed duplicated region for block: B:80:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0271  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x027a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2867,7 +2874,8 @@ public final class r8 extends c1 {
         final String str4;
         String str5;
         String str6;
-        final String str7;
+        String str7;
+        final String str8;
         boolean z10;
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
@@ -2951,7 +2959,7 @@ public final class r8 extends c1 {
             return;
         }
         TLRPC.InputFileLocation inputFileLocation = (TLRPC.InputFileLocation) p10.first;
-        String str8 = (String) p10.second;
+        String str9 = (String) p10.second;
         if (obj instanceof fj) {
             fj fjVar2 = (fj) obj;
             if (fjVar2.L1() < 0 && (message = fjVar2.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
@@ -2964,11 +2972,11 @@ public final class r8 extends c1 {
                 p8 p8Var = new p8();
                 p8Var.b = objArr;
                 p8Var.a = inputFileLocation;
-                p8Var.c = str8;
-                ArrayList arrayList4 = (ArrayList) this.a.get(str8);
+                p8Var.c = str9;
+                ArrayList arrayList4 = (ArrayList) this.a.get(str9);
                 if (arrayList4 == null) {
                     arrayList4 = new ArrayList();
-                    this.a.put(str8, arrayList4);
+                    this.a.put(str9, arrayList4);
                     i7 = 1;
                 } else {
                     i7 = 0;
@@ -2986,39 +2994,41 @@ public final class r8 extends c1 {
                 }
                 boolean z11 = obj2 instanceof String;
                 if (z11) {
-                    String str9 = (String) obj2;
-                    if ("wallpaper".equals(str9)) {
+                    String str10 = (String) obj2;
+                    if ("wallpaper".equals(str10)) {
                         str = "wallpaper";
-                    } else if (str9.startsWith("gif")) {
+                    } else if (str10.startsWith("gif")) {
                         str = "gif";
-                    } else if ("recent".equals(str9)) {
+                    } else if ("recent".equals(str10)) {
                         str = "recent";
-                    } else if ("fav".equals(str9)) {
+                    } else if ("fav".equals(str10)) {
                         str = "fav";
-                    } else if ("update".equals(str9)) {
+                    } else if ("update".equals(str10)) {
                         str = "update";
+                    } else if ("speech_model".equals(str10)) {
+                        str = "speech_model";
                     }
                     HashMap hashMap = this.c;
                     if (Math.abs(SystemClock.elapsedRealtime() - this.e) >= 600000) {
                         str2 = o4;
-                        str3 = str8;
+                        str3 = str9;
                     } else {
                         this.e = SystemClock.elapsedRealtime();
                         ArrayList arrayList6 = null;
                         for (Map.Entry entry : hashMap.entrySet()) {
-                            String str10 = o4;
-                            String str11 = str8;
+                            String str11 = o4;
+                            String str12 = str9;
                             if (Math.abs(System.currentTimeMillis() - ((o8) entry.getValue()).b) >= 60000) {
                                 if (arrayList6 == null) {
                                     arrayList6 = new ArrayList();
                                 }
                                 arrayList6.add((String) entry.getKey());
                             }
-                            o4 = str10;
-                            str8 = str11;
+                            o4 = str11;
+                            str9 = str12;
                         }
                         str2 = o4;
-                        str3 = str8;
+                        str3 = str9;
                         if (arrayList6 != null) {
                             int size4 = arrayList6.size();
                             for (int i13 = 0; i13 < size4; i13++) {
@@ -3029,48 +3039,50 @@ public final class r8 extends c1 {
                     b10 = b(str);
                     if (b10 == null) {
                         TLObject tLObject = b10.a;
-                        str6 = "wallpaper";
-                        str5 = "gif";
-                        str7 = str3;
+                        str5 = "recent";
+                        str6 = "gif";
+                        str7 = "wallpaper";
+                        str8 = str3;
                         str4 = str2;
-                        if (s(str7, str4, tLObject, null, false, true)) {
+                        if (s(str8, str4, tLObject, null, false, true)) {
                             return;
                         } else {
-                            this.c.remove(str7);
+                            this.c.remove(str8);
                         }
                     } else {
                         str4 = str2;
-                        str5 = "gif";
-                        str6 = "wallpaper";
-                        str7 = str3;
+                        str5 = "recent";
+                        str6 = "gif";
+                        str7 = "wallpaper";
+                        str8 = str3;
                         o8 b11 = b(str4);
                         if (b11 != null) {
-                            if (s(str7, str4, b11.a, null, false, true)) {
+                            if (s(str8, str4, b11.a, null, false, true)) {
                                 return;
                             } else {
                                 this.c.remove(str4);
                             }
                         }
                     }
-                    final int i14 = 5;
-                    if (!(obj2 instanceof fi.y5)) {
-                        fi.y5 y5Var = (fi.y5) obj2;
-                        fi.z5 z5Var = y5Var.a;
-                        if (z5Var == null) {
+                    final int i14 = 6;
+                    if (!(obj2 instanceof fi.z5)) {
+                        fi.z5 z5Var = (fi.z5) obj2;
+                        fi.a6 a6Var = z5Var.a;
+                        if (a6Var == null) {
                             v(objArr);
                             return;
                         }
-                        di.ga gaVar = new di.ga(z5Var, y5Var, new e3(this, str7, str4, 2), i14);
-                        if (z5Var.F != 0) {
-                            ConnectionsManager.getInstance(z5Var.c).cancelRequest(z5Var.F, true);
+                        di.a8 a8Var = new di.a8(a6Var, z5Var, new e3(this, str8, str4, 2), i14);
+                        if (a6Var.F != 0) {
+                            ConnectionsManager.getInstance(a6Var.c).cancelRequest(a6Var.F, true);
                             z10 = false;
-                            z5Var.F = 0;
+                            a6Var.F = 0;
                         } else {
                             z10 = false;
                         }
-                        z5Var.C = z10;
-                        z5Var.D = z10;
-                        z5Var.H(gaVar);
+                        a6Var.C = z10;
+                        a6Var.D = z10;
+                        a6Var.H(a8Var);
                         return;
                     }
                     if (obj2 instanceof TL_stories.StoryItem) {
@@ -3090,82 +3102,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i15) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -3173,7 +3188,7 @@ public final class r8 extends c1 {
                         return;
                     }
                     if (obj2 instanceof TLRPC.TL_help_premiumPromo) {
-                        final int i16 = 16;
+                        final int i16 = 17;
                         getConnectionsManager().sendRequest(new TLRPC.TL_help_getPremiumPromo(), new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
@@ -3185,82 +3200,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i16) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -3270,7 +3288,7 @@ public final class r8 extends c1 {
                     if (obj2 instanceof TLRPC.TL_availableReaction) {
                         TLRPC.TL_messages_getAvailableReactions tL_messages_getAvailableReactions = new TLRPC.TL_messages_getAvailableReactions();
                         tL_messages_getAvailableReactions.hash = 0;
-                        final int i17 = 17;
+                        final int i17 = 18;
                         getConnectionsManager().sendRequest(tL_messages_getAvailableReactions, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
@@ -3282,82 +3300,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i17) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -3367,7 +3388,7 @@ public final class r8 extends c1 {
                     if (obj2 instanceof TL_bots.BotInfo) {
                         TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
                         tL_users_getFullUser.id = getMessagesController().q1(((TL_bots.BotInfo) obj2).user_id);
-                        final int i18 = 18;
+                        final int i18 = 19;
                         getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
@@ -3379,82 +3400,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i18) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -3464,7 +3488,7 @@ public final class r8 extends c1 {
                     if (obj2 instanceof TLRPC.TL_attachMenuBot) {
                         TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
                         tL_messages_getAttachMenuBot.bot = getMessagesController().q1(((TLRPC.TL_attachMenuBot) obj2).bot_id);
-                        final int i19 = 19;
+                        final int i19 = 20;
                         getConnectionsManager().sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
@@ -3476,82 +3500,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i19) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -3566,7 +3593,7 @@ public final class r8 extends c1 {
                             TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
                             tL_messages_getScheduledMessages.peer = getMessagesController().l1(fj.B0(fjVar3.k));
                             tL_messages_getScheduledMessages.id.add(Integer.valueOf(fjVar3.L1()));
-                            final int i20 = 20;
+                            final int i20 = 21;
                             getConnectionsManager().sendRequest(tL_messages_getScheduledMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -3578,82 +3605,85 @@ public final class r8 extends c1 {
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                     switch (i20) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
@@ -3665,7 +3695,7 @@ public final class r8 extends c1 {
                             tL_messages_getQuickReplyMessages.shortcut_id = fj.I1(fjVar3.k);
                             tL_messages_getQuickReplyMessages.flags |= 1;
                             tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(fjVar3.L1()));
-                            final int i21 = 21;
+                            final int i21 = 22;
                             getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -3677,82 +3707,85 @@ public final class r8 extends c1 {
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                     switch (i21) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
@@ -3764,7 +3797,7 @@ public final class r8 extends c1 {
                             TL_iv.getRichMessage getrichmessage = new TL_iv.getRichMessage();
                             getrichmessage.peer = l1;
                             getrichmessage.id = fjVar3.L1();
-                            final int i22 = 22;
+                            final int i22 = 23;
                             getConnectionsManager().sendRequest(getrichmessage, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -3776,82 +3809,85 @@ public final class r8 extends c1 {
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                     switch (i22) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
@@ -3873,82 +3909,85 @@ public final class r8 extends c1 {
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                     switch (i23) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
@@ -3958,7 +3997,7 @@ public final class r8 extends c1 {
                         TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
                         tL_channels_getMessages.channel = getMessagesController().j1(v02);
                         tL_channels_getMessages.id.add(Integer.valueOf(fjVar3.L1()));
-                        final int i24 = 23;
+                        final int i24 = 24;
                         getConnectionsManager().sendRequest(tL_channels_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
@@ -3970,82 +4009,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i24) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -4071,82 +4113,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i25) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -4173,82 +4218,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i26) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -4271,82 +4319,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i27) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -4368,82 +4419,85 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i28) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -4455,7 +4509,107 @@ public final class r8 extends c1 {
                         if (chat instanceof TLRPC.TL_chat) {
                             TLRPC.TL_messages_getChats tL_messages_getChats = new TLRPC.TL_messages_getChats();
                             tL_messages_getChats.id.add(Long.valueOf(chat.id));
+                            final int i29 = 5;
                             getConnectionsManager().sendRequest(tL_messages_getChats, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                                public final /* synthetic */ r8 b;
+
+                                {
+                                    this.b = this;
+                                }
+
+                                @Override // org.telegram.tgnet.RequestDelegate
+                                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                    switch (i29) {
+                                        case 0:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 1:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 2:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 3:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 4:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 5:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 6:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 7:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 8:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 9:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 10:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 11:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 12:
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
+                                            break;
+                                        case 13:
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
+                                            break;
+                                        case 14:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 15:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
+                                            r8 r8Var = this.b;
+                                            r8Var.getClass();
+                                            int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                                            if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            }
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 18:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 19:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 20:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 21:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 22:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        default:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                    }
+                                }
+                            });
+                            return;
+                        }
+                        if ((chat instanceof TLRPC.TL_channel) || (chat instanceof TLRPC.TL_community)) {
+                            TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
+                            tL_channels_getChannels.id.add(mp.k1(chat));
+                            getConnectionsManager().sendRequest(tL_channels_getChannels, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
                                 {
@@ -4466,187 +4620,92 @@ public final class r8 extends c1 {
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                     switch (i14) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
                             });
                             return;
-                        } else {
-                            if ((chat instanceof TLRPC.TL_channel) || (chat instanceof TLRPC.TL_community)) {
-                                TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
-                                tL_channels_getChannels.id.add(mp.k1(chat));
-                                final int i29 = 6;
-                                getConnectionsManager().sendRequest(tL_channels_getChannels, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
-                                    public final /* synthetic */ r8 b;
-
-                                    {
-                                        this.b = this;
-                                    }
-
-                                    @Override // org.telegram.tgnet.RequestDelegate
-                                    public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                        switch (i29) {
-                                            case 0:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 1:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 2:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 3:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 4:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 5:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 6:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 7:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 8:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 9:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 10:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 11:
-                                                this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                                break;
-                                            case 12:
-                                                this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                                break;
-                                            case 13:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 14:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 15:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 16:
-                                                r8 r8Var = this.b;
-                                                r8Var.getClass();
-                                                int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-                                                if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                    r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
-                                                }
-                                                r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 17:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 18:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 19:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 20:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 21:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            case 22:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                            default:
-                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                                break;
-                                        }
-                                    }
-                                });
-                                return;
-                            }
-                            return;
                         }
+                        return;
                     }
                     if (!z11) {
                         if (obj2 instanceof TLRPC.TL_messages_stickerSet) {
@@ -4656,7 +4715,7 @@ public final class r8 extends c1 {
                             TLRPC.StickerSet stickerSet = ((TLRPC.TL_messages_stickerSet) obj2).set;
                             tL_inputStickerSetID.id = stickerSet.id;
                             tL_inputStickerSetID.access_hash = stickerSet.access_hash;
-                            final int i30 = 13;
+                            final int i30 = 14;
                             getConnectionsManager().sendRequest(tL_messages_getStickerSet, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -4668,82 +4727,85 @@ public final class r8 extends c1 {
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                     switch (i30) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
@@ -4757,7 +4819,7 @@ public final class r8 extends c1 {
                             }
                             TLRPC.TL_messages_getStickerSet tL_messages_getStickerSet2 = new TLRPC.TL_messages_getStickerSet();
                             tL_messages_getStickerSet2.stickerset = (TLRPC.InputStickerSet) obj2;
-                            final int i31 = 15;
+                            final int i31 = 16;
                             getConnectionsManager().sendRequest(tL_messages_getStickerSet2, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -4769,82 +4831,85 @@ public final class r8 extends c1 {
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                     switch (i31) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
@@ -4857,7 +4922,7 @@ public final class r8 extends c1 {
                         TLRPC.StickerSet stickerSet2 = ((TLRPC.StickerSetCovered) obj2).set;
                         tL_inputStickerSetID2.id = stickerSet2.id;
                         tL_inputStickerSetID2.access_hash = stickerSet2.access_hash;
-                        final int i32 = 14;
+                        final int i32 = 15;
                         getConnectionsManager().sendRequest(tL_messages_getStickerSet3, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
@@ -4869,90 +4934,93 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i32) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
                         });
                         return;
                     }
-                    String str12 = (String) obj2;
-                    if (str6.equals(str12)) {
+                    String str13 = (String) obj2;
+                    if (str7.equals(str13)) {
                         if (this.f.isEmpty()) {
                             final int i33 = 0;
                             getConnectionsManager().sendRequest(new TL_account.getWallPapers(), new RequestDelegate(this) { // from class: org.telegram.messenger.h8
@@ -4985,10 +5053,10 @@ public final class r8 extends c1 {
                                 }
                             });
                         }
-                        this.f.add(new q8(str7, str4));
+                        this.f.add(new q8(str8, str4));
                         return;
                     }
-                    if (str12.startsWith(str5)) {
+                    if (str13.startsWith(str6)) {
                         if (this.h.isEmpty()) {
                             final int i34 = 1;
                             getConnectionsManager().sendRequest(new TLRPC.TL_messages_getSavedGifs(), new RequestDelegate(this) { // from class: org.telegram.messenger.h8
@@ -5021,10 +5089,10 @@ public final class r8 extends c1 {
                                 }
                             });
                         }
-                        this.h.add(new q8(str7, str4));
+                        this.h.add(new q8(str8, str4));
                         return;
                     }
-                    if ("recent".equals(str12)) {
+                    if (str5.equals(str13)) {
                         if (this.n.isEmpty()) {
                             final int i35 = 2;
                             getConnectionsManager().sendRequest(new TLRPC.TL_messages_getRecentStickers(), new RequestDelegate(this) { // from class: org.telegram.messenger.h8
@@ -5057,10 +5125,10 @@ public final class r8 extends c1 {
                                 }
                             });
                         }
-                        this.n.add(new q8(str7, str4));
+                        this.n.add(new q8(str8, str4));
                         return;
                     }
-                    if ("fav".equals(str12)) {
+                    if ("fav".equals(str13)) {
                         if (this.r.isEmpty()) {
                             getConnectionsManager().sendRequest(new TLRPC.TL_messages_getFavedStickers(), new RequestDelegate(this) { // from class: org.telegram.messenger.h8
                                 public final /* synthetic */ r8 b;
@@ -5092,10 +5160,10 @@ public final class r8 extends c1 {
                                 }
                             });
                         }
-                        this.r.add(new q8(str7, str4));
+                        this.r.add(new q8(str8, str4));
                         return;
                     }
-                    if ("update".equals(str12)) {
+                    if ("update".equals(str13)) {
                         TLRPC.TL_help_getAppUpdate tL_help_getAppUpdate = new TLRPC.TL_help_getAppUpdate();
                         try {
                             tL_help_getAppUpdate.source = t0.b.getPackageManager().getInstallerPackageName(t0.b.getPackageName());
@@ -5116,94 +5184,197 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i36) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
                         });
                         return;
                     }
-                    if (!str12.startsWith("avatar_")) {
-                        if (!str12.startsWith("sent_")) {
+                    if ("speech_model".equals(str13)) {
+                        TLRPC.TL_messages_getTranscriptionModels tL_messages_getTranscriptionModels = new TLRPC.TL_messages_getTranscriptionModels();
+                        tL_messages_getTranscriptionModels.version = DictationAsr.e0();
+                        final int i37 = 9;
+                        getConnectionsManager().sendRequest(tL_messages_getTranscriptionModels, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                            public final /* synthetic */ r8 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                switch (i37) {
+                                    case 0:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 1:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 2:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 3:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 4:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 5:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 6:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 7:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 8:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 9:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 10:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 11:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 12:
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 13:
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 14:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 15:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
+                                        r8 r8Var = this.b;
+                                        r8Var.getClass();
+                                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                                        if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                        }
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 18:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 19:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 20:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 21:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 22:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    default:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                }
+                            }
+                        });
+                        return;
+                    }
+                    if (!str13.startsWith("avatar_")) {
+                        if (!str13.startsWith("sent_")) {
                             v(objArr);
                             return;
                         }
-                        String[] split = str12.split("_");
+                        String[] split = str13.split("_");
                         if (split.length < 3) {
                             v(objArr);
                             return;
@@ -5212,7 +5383,7 @@ public final class r8 extends c1 {
                         if (A.longValue() == 0) {
                             TLRPC.TL_messages_getMessages tL_messages_getMessages2 = new TLRPC.TL_messages_getMessages();
                             tL_messages_getMessages2.id.add(Utilities.z(split[2]));
-                            final int i37 = 12;
+                            final int i38 = 13;
                             getConnectionsManager().sendRequest(tL_messages_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -5222,84 +5393,87 @@ public final class r8 extends c1 {
 
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                    switch (i37) {
+                                    switch (i38) {
                                         case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                             break;
                                         case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 16:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
                                             r8 r8Var = this.b;
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                                 r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 23:
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                         default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                             break;
                                     }
                                 }
@@ -5309,111 +5483,8 @@ public final class r8 extends c1 {
                         TLRPC.TL_channels_getMessages tL_channels_getMessages2 = new TLRPC.TL_channels_getMessages();
                         tL_channels_getMessages2.channel = mp.k1(getMessagesController().O0(A));
                         tL_channels_getMessages2.id.add(Utilities.z(split[2]));
-                        final int i38 = 11;
+                        final int i39 = 12;
                         getConnectionsManager().sendRequest(tL_channels_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
-                            public final /* synthetic */ r8 b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                switch (i38) {
-                                    case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                        break;
-                                    case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                        break;
-                                    case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 16:
-                                        r8 r8Var = this.b;
-                                        r8Var.getClass();
-                                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-                                        if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
-                                        }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                }
-                            }
-                        });
-                        return;
-                    }
-                    Long A2 = Utilities.A(str12);
-                    long longValue = A2.longValue();
-                    if (longValue > 0) {
-                        TLRPC.TL_photos_getUserPhotos tL_photos_getUserPhotos = new TLRPC.TL_photos_getUserPhotos();
-                        tL_photos_getUserPhotos.limit = 80;
-                        tL_photos_getUserPhotos.offset = 0;
-                        tL_photos_getUserPhotos.max_id = 0L;
-                        mp messagesController = getMessagesController();
-                        tL_photos_getUserPhotos.user_id = messagesController.s1(messagesController.c2(A2));
-                        final int i39 = 9;
-                        getConnectionsManager().sendRequest(tL_photos_getUserPhotos, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -5424,82 +5495,191 @@ public final class r8 extends c1 {
                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 switch (i39) {
                                     case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                         break;
                                     case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
                                         r8 r8Var = this.b;
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                             r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                     default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                }
+                            }
+                        });
+                        return;
+                    }
+                    Long A2 = Utilities.A(str13);
+                    long longValue = A2.longValue();
+                    if (longValue > 0) {
+                        TLRPC.TL_photos_getUserPhotos tL_photos_getUserPhotos = new TLRPC.TL_photos_getUserPhotos();
+                        tL_photos_getUserPhotos.limit = 80;
+                        tL_photos_getUserPhotos.offset = 0;
+                        tL_photos_getUserPhotos.max_id = 0L;
+                        mp messagesController = getMessagesController();
+                        tL_photos_getUserPhotos.user_id = messagesController.s1(messagesController.c2(A2));
+                        final int i40 = 10;
+                        getConnectionsManager().sendRequest(tL_photos_getUserPhotos, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                            public final /* synthetic */ r8 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                switch (i40) {
+                                    case 0:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 1:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 2:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 3:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 4:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 5:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 6:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 7:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 8:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 9:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 10:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 11:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 12:
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 13:
+                                        this.b.s(str8, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 14:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 15:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 16:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
+                                        r8 r8Var = this.b;
+                                        r8Var.getClass();
+                                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                                        if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                        }
+                                        r8Var.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 18:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 19:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 20:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 21:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 22:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 23:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    default:
+                                        this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                         break;
                                 }
                             }
@@ -5512,7 +5692,7 @@ public final class r8 extends c1 {
                     tL_messages_search.offset_id = 0;
                     tL_messages_search.q = "";
                     tL_messages_search.peer = getMessagesController().l1(longValue);
-                    final int i40 = 10;
+                    final int i41 = 11;
                     getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                         public final /* synthetic */ r8 b;
 
@@ -5522,99 +5702,102 @@ public final class r8 extends c1 {
 
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                            switch (i40) {
+                            switch (i41) {
                                 case 0:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 1:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 2:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 3:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 4:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 5:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 6:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 7:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 8:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 9:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 10:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 11:
-                                    this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 12:
-                                    this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                     break;
                                 case 13:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, false, false);
                                     break;
                                 case 14:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 15:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 16:
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                    break;
+                                case 17:
                                     r8 r8Var = this.b;
                                     r8Var.getClass();
                                     int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                     if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
                                         r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                     }
-                                    r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                    break;
-                                case 17:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    r8Var.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 18:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 19:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 20:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 21:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 case 22:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
+                                    break;
+                                case 23:
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                                 default:
-                                    this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                    this.b.s(str8, str4, tLObject2, tL_error, true, false);
                                     break;
                             }
                         }
                     });
                     return;
                 }
-                str = str8;
+                str = str9;
                 HashMap hashMap2 = this.c;
                 if (Math.abs(SystemClock.elapsedRealtime() - this.e) >= 600000) {
                 }
                 b10 = b(str);
                 if (b10 == null) {
                 }
-                final int i142 = 5;
-                if (!(obj2 instanceof fi.y5)) {
+                final int i142 = 6;
+                if (!(obj2 instanceof fi.z5)) {
                 }
             }
         }

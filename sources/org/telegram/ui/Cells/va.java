@@ -13,9 +13,9 @@ import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public abstract class va extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public abstract class va extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int a;
     public boolean b;
     public final ua[] c;
@@ -44,15 +44,15 @@ public abstract class va extends FrameLayout implements org.telegram.ui.ActionBa
                 this.w = i5.c.g(context, R.drawable.background_selected);
                 Paint paint2 = new Paint();
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Ci, false));
+                paint2.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ci, false));
                 return;
             }
             ua uaVar = new ua(this, context);
             uaVarArr[i10] = uaVar;
             uaVar.setClipToOutline(true);
             addView(uaVar);
-            uaVar.setOnClickListener(new bi.e5(this, uaVar, i10, 5));
-            uaVar.setOnLongClickListener(new bi.f5(this, uaVar, i10));
+            uaVar.setOnClickListener(new bi.i5(this, uaVar, i10, 5));
+            uaVar.setOnLongClickListener(new bi.j5(this, uaVar, i10));
             i10++;
         }
     }
@@ -81,7 +81,7 @@ public abstract class va extends FrameLayout implements org.telegram.ui.ActionBa
             uaVar.f = animatorSet2;
             animatorSet2.playTogether(ObjectAnimator.ofFloat(t3Var, "scaleX", z10 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(t3Var, "scaleY", z10 ? 0.8875f : 1.0f));
             uaVar.f.setDuration(200L);
-            uaVar.f.addListener(new bi.d7(26, uaVar, z10));
+            uaVar.f.addListener(new bi.h7(26, uaVar, z10));
             uaVar.f.start();
         } else {
             t3Var.setScaleX(z10 ? 0.8875f : 1.0f);
@@ -200,17 +200,17 @@ public abstract class va extends FrameLayout implements org.telegram.ui.ActionBa
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.s.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Ci, false));
+            this.s.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ci, false));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

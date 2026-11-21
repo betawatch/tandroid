@@ -24,11 +24,11 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.n10;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.bb0;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.cb0;
+import org.telegram.ui.Components.nr;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class n2 extends FrameLayout {
     public float E;
@@ -350,7 +350,7 @@ public class n2 extends FrameLayout {
         } else {
             this.c0.setDuration(350L);
         }
-        this.c0.setInterpolator(lr.f);
+        this.c0.setInterpolator(nr.f);
         this.c0.addListener(new y9(this, 17));
         this.c0.start();
         ArrayList arrayList = this.H;
@@ -492,7 +492,7 @@ public class n2 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.r = frameLayout;
-        frameLayout.setBackground(new bb0(true, -14602694, -13935795, -14395293, -14203560));
+        frameLayout.setBackground(new cb0(true, -14602694, -13935795, -14395293, -14203560));
         addView(frameLayout, ma.c(-1.0f, -1));
         int i7 = 8;
         frameLayout.setVisibility(8);
@@ -503,7 +503,7 @@ public class n2 extends FrameLayout {
         frameLayout.addView(imageView2, ma.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(getContext());
         this.w = textView;
-        textView.setText(gd.M0(2131742985, null));
+        textView.setText(gd.N0(2131742979, null));
         textView.setGravity(17);
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView.setTextColor(-1);

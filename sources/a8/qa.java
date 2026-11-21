@@ -19,9 +19,9 @@ import java.util.Locale;
 import java.util.Set;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qa implements Runnable {
     public final /* synthetic */ int a;
@@ -301,7 +301,7 @@ public final /* synthetic */ class qa implements Runnable {
                 yVar.postDelayed(rVar2, 10000L);
                 return;
             case 3:
-                l.e eVar = (l.e) ((hi.u5) this.b).b;
+                l.e eVar = (l.e) ((hi.t5) this.b).b;
                 l.m mVar = (l.m) this.d;
                 l.d dVar = (l.d) this.c;
                 if (dVar != null) {
@@ -319,10 +319,10 @@ public final /* synthetic */ class qa implements Runnable {
                 ((ValueAnimator) this.b).start();
                 return;
             case 5:
-                ((hn) this.c).F((s4.p) this.b, (s4.m) this.d, (Collection) this.e);
+                ((jn) this.c).F((s4.p) this.b, (s4.m) this.d, (Collection) this.e);
                 return;
             case 6:
-                ((hn) this.c).F((s4.p) this.b, (s4.m) this.d, (ArrayList) this.e);
+                ((jn) this.c).F((s4.p) this.b, (s4.m) this.d, (ArrayList) this.e);
                 return;
             default:
                 y7.d9 d9Var = (y7.d9) this.c;

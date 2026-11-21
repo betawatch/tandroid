@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import org.telegram.messenger.video.VideoFramesRewinder;
 import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ip0 extends VideoPlayerRewinder {
     public final /* synthetic */ PhotoViewer a;
@@ -42,10 +42,10 @@ public final class ip0 extends VideoPlayerRewinder {
         if (nVar == null || (hVar = nVar.e) == null) {
             return;
         }
-        org.telegram.ui.Components.x51 x51Var = hVar.F;
-        x51Var.e(false);
-        x51Var.d(z11);
-        x51Var.f(true);
+        org.telegram.ui.Components.a61 a61Var = hVar.F;
+        a61Var.e(false);
+        a61Var.d(z11);
+        a61Var.f(true);
         fi.u2 u2Var = hVar.o;
         if (u2Var != null) {
             u2Var.invalidate();

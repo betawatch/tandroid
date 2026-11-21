@@ -1,29 +1,27 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class yh0 extends v4.u0 {
-    public final /* synthetic */ v4.c0 a;
-    public final /* synthetic */ ei0 b;
+public final class yh0 extends ek0 {
+    public final /* synthetic */ gi0 f3;
 
-    public yh0(ei0 ei0Var, v4.c0 c0Var) {
-        this.b = ei0Var;
-        this.a = c0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yh0(gi0 gi0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        this.f3 = gi0Var;
     }
 
-    @Override // v4.u0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        int loadCount;
-        ei0 ei0Var = this.b;
-        if (ei0Var.x && ei0Var.y && !ei0Var.w) {
-            int N0 = this.a.N0();
-            int b10 = ei0Var.f.b() - 1;
-            loadCount = ei0Var.getLoadCount();
-            if (N0 >= b10 - loadCount) {
-                ei0Var.c();
-            }
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        gi0 gi0Var = this.f3;
+        aa0 aa0Var = gi0Var.K;
+        if (aa0Var != null) {
+            aa0Var.measure(i7, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), 0));
         }
+        super.onMeasure(i7, i10);
+        gi0Var.j();
     }
 }

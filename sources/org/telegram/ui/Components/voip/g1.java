@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g1 implements VideoSink {
     public volatile t0 a;
@@ -12,7 +12,7 @@ public final class g1 implements VideoSink {
     public volatile int c;
     public volatile int d;
     public volatile long e;
-    public final oi.a2 f = new oi.a2(this, 19);
+    public final oi.c2 f = new oi.c2(this, 19);
     public final /* synthetic */ j1 h;
 
     public g1(j1 j1Var) {

@@ -4,22 +4,22 @@ import android.os.Bundle;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class cw implements e50 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 a;
     public final /* synthetic */ cx b;
 
-    public cw(cx cxVar, org.telegram.ui.ActionBar.u1 u1Var) {
+    public cw(cx cxVar, org.telegram.ui.ActionBar.t1 t1Var) {
         this.b = cxVar;
-        this.a = u1Var;
+        this.a = t1Var;
     }
 
     @Override // org.telegram.ui.e50
     public final void c(f50 f50Var, final long j3) {
         final int i7 = 0;
         final int i10 = 1;
-        final org.telegram.ui.ActionBar.h2[] h2VarArr = {f50Var, null};
+        final org.telegram.ui.ActionBar.g2[] g2VarArr = {f50Var, null};
         final int i11 = 0;
         org.telegram.messenger.x10 x10Var = new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.aw
             public final /* synthetic */ cw b;
@@ -43,7 +43,7 @@ public final class cw implements e50 {
                             ad adVar = new ad(bundle);
                             adVar.v0 = new a5(runnable, 12);
                             cxVar.presentFragment(adVar);
-                            h2VarArr[1] = adVar;
+                            g2VarArr[1] = adVar;
                             break;
                         } else {
                             runnable.run();
@@ -52,7 +52,7 @@ public final class cw implements e50 {
                     default:
                         cw cwVar = this.b;
                         cx cxVar2 = cwVar.b;
-                        cxVar2.k5(cxVar2.getMessagesController().O0(Long.valueOf(j3)), runnable, new vs(7, cwVar, h2VarArr));
+                        cxVar2.k5(cxVar2.getMessagesController().O0(Long.valueOf(j3)), runnable, new ss(9, cwVar, g2VarArr));
                         break;
                 }
             }
@@ -80,7 +80,7 @@ public final class cw implements e50 {
                             ad adVar = new ad(bundle);
                             adVar.v0 = new a5(runnable, 12);
                             cxVar.presentFragment(adVar);
-                            h2VarArr[1] = adVar;
+                            g2VarArr[1] = adVar;
                             break;
                         } else {
                             runnable.run();
@@ -89,13 +89,13 @@ public final class cw implements e50 {
                     default:
                         cw cwVar = this.b;
                         cx cxVar2 = cwVar.b;
-                        cxVar2.k5(cxVar2.getMessagesController().O0(Long.valueOf(j3)), runnable, new vs(7, cwVar, h2VarArr));
+                        cxVar2.k5(cxVar2.getMessagesController().O0(Long.valueOf(j3)), runnable, new ss(9, cwVar, g2VarArr));
                         break;
                 }
             }
         };
-        org.telegram.ui.ActionBar.u1 u1Var = this.a;
-        Utilities.u(0, x10Var, x10Var2, new bi.x3(this, u1Var, j3, 4), new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.bw
+        org.telegram.ui.ActionBar.t1 t1Var = this.a;
+        Utilities.u(0, x10Var, x10Var2, new bi.b4(this, t1Var, j3, 4), new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.bw
             public final /* synthetic */ cw b;
 
             {
@@ -173,6 +173,6 @@ public final class cw implements e50 {
                         }
                 }
             }
-        }, new bi.e2(this, u1Var, j3, h2VarArr, 6));
+        }, new bi.i2(this, t1Var, j3, g2VarArr, 6));
     }
 }

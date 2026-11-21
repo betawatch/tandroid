@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.ty;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.bd;
@@ -42,11 +42,11 @@ import org.telegram.ui.bn;
 import org.telegram.ui.go;
 import org.telegram.ui.io;
 import org.telegram.ui.jo;
-import org.telegram.ui.vs;
+import org.telegram.ui.ss;
 import org.telegram.ui.ws;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o3 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,6 +76,7 @@ public final /* synthetic */ class o3 implements Runnable {
         int i10 = 0;
         switch (this.a) {
             case 0:
+                int i11 = 24;
                 f6 f6Var = (f6) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
                 x10 x10Var = (x10) this.e;
@@ -115,24 +116,24 @@ public final /* synthetic */ class o3 implements Runnable {
                                 D.B().e();
                                 D.H().g();
                                 D.K();
-                                int i11 = D.A;
+                                int i12 = D.A;
                                 long[] jArr = org.telegram.ui.Wallet.u0.S;
-                                if (i11 < 7) {
-                                    D.A = i11 + 1;
-                                    org.telegram.messenger.g0.h3(hVar, jArr[i11]);
+                                if (i12 < 7) {
+                                    D.A = i12 + 1;
+                                    org.telegram.messenger.g0.h3(hVar, jArr[i12]);
                                 }
                                 long e10 = j10.i(f6Var.a).e();
-                                x8.y(f6Var.a, false).O(e10);
+                                y8.y(f6Var.a, false).O(e10);
                                 if (j3 != 0 && j3 != e10) {
-                                    x8.y(f6Var.a, false).O(j3);
+                                    y8.y(f6Var.a, false).O(j3);
                                 }
                                 if (M1 != null && !TextUtils.isEmpty(M1.slug)) {
-                                    int i12 = f6Var.a;
+                                    int i13 = f6Var.a;
                                     String str3 = M1.slug;
                                     if (!TextUtils.isEmpty(str3)) {
-                                        org.telegram.messenger.g0.h3(new bi.n4(i12, 0, str3, true), bi.u4.b[0]);
+                                        org.telegram.messenger.g0.h3(new bi.r4(i13, 0, str3, true), bi.y4.b[0]);
                                     }
-                                    org.telegram.messenger.g0.g3(new aa.r((Object) new ai.o(8), (Object) M1.getDocument(), (Object) gd.M0(2131750085, null), 23));
+                                    org.telegram.messenger.g0.g3(new aa.r((Object) new ai.n(8), (Object) M1.getDocument(), (Object) gd.N0(2131750084, null), i11));
                                 }
                                 f6Var.dismiss();
                                 break;
@@ -160,10 +161,10 @@ public final /* synthetic */ class o3 implements Runnable {
                 boolean z11 = this.b;
                 TLObject tLObject2 = (TLObject) this.h;
                 if (tL_error2 != null) {
-                    int i13 = 3;
+                    int i14 = 3;
                     if (!"PASSWORD_MISSING".equals(tL_error2.text) && !tL_error2.text.startsWith("PASSWORD_TOO_FRESH_") && !tL_error2.text.startsWith("SESSION_TOO_FRESH_")) {
                         if ("SRP_ID_INVALID".equals(tL_error2.text)) {
-                            ConnectionsManager.getInstance(xdVar.p0).sendRequest(new TL_account.getPassword(), new n8(xdVar, twoStepVerificationActivity2, z11, i13), 8);
+                            ConnectionsManager.getInstance(xdVar.p0).sendRequest(new TL_account.getPassword(), new o8(xdVar, twoStepVerificationActivity2, z11, i14), 8);
                             break;
                         } else {
                             if (twoStepVerificationActivity2 != null) {
@@ -178,17 +179,17 @@ public final /* synthetic */ class o3 implements Runnable {
                             twoStepVerificationActivity2.t0();
                         }
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
-                        alertDialog$Builder.a.S = gd.M0(2131751286, null);
+                        alertDialog$Builder.a.S = gd.N0(2131751285, null);
                         LinearLayout linearLayout = new LinearLayout(activity);
                         linearLayout.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(24.0f), 0);
                         linearLayout.setOrientation(1);
                         alertDialog$Builder.o(linearLayout);
                         TextView textView = new TextView(activity);
-                        int i14 = org.telegram.ui.ActionBar.n6.j5;
-                        org.telegram.ui.ActionBar.u6.U(textView, i14, null);
+                        int i15 = org.telegram.ui.ActionBar.m6.j5;
+                        org.telegram.ui.ActionBar.t6.U(textView, i15, null);
                         textView.setTextSize(1, 16.0f);
                         textView.setGravity((gd.a0 ? 5 : 3) | 48);
-                        textView.setText(org.telegram.messenger.g0.W2(gd.M0(2131742606, null)));
+                        textView.setText(org.telegram.messenger.g0.W2(gd.N0(2131742600, null)));
                         linearLayout.addView(textView, c8.ma.o(-1, -2));
                         LinearLayout linearLayout2 = new LinearLayout(activity);
                         linearLayout2.setOrientation(0);
@@ -197,12 +198,12 @@ public final /* synthetic */ class o3 implements Runnable {
                         imageView.setImageResource(R.drawable.list_circle);
                         imageView.setPadding(gd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                        org.telegram.ui.ActionBar.u6.s(imageView, i14, null, mode);
+                        org.telegram.ui.ActionBar.t6.s(imageView, i15, null, mode);
                         TextView textView2 = new TextView(activity);
-                        org.telegram.ui.ActionBar.u6.U(textView2, i14, null);
+                        org.telegram.ui.ActionBar.t6.U(textView2, i15, null);
                         textView2.setTextSize(1, 16.0f);
                         textView2.setGravity((gd.a0 ? 5 : 3) | 48);
-                        textView2.setText(org.telegram.messenger.g0.W2(gd.M0(2131751289, null)));
+                        textView2.setText(org.telegram.messenger.g0.W2(gd.N0(2131751288, null)));
                         if (gd.a0) {
                             linearLayout2.addView(textView2, c8.ma.o(-1, -2));
                             linearLayout2.addView(imageView, c8.ma.r(-2, -2, 5));
@@ -215,12 +216,12 @@ public final /* synthetic */ class o3 implements Runnable {
                         ImageView imageView2 = new ImageView(activity);
                         imageView2.setImageResource(R.drawable.list_circle);
                         imageView2.setPadding(gd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
-                        org.telegram.ui.ActionBar.u6.s(imageView2, i14, null, mode);
+                        org.telegram.ui.ActionBar.t6.s(imageView2, i15, null, mode);
                         TextView textView3 = new TextView(activity);
-                        org.telegram.ui.ActionBar.u6.U(textView3, i14, null);
+                        org.telegram.ui.ActionBar.t6.U(textView3, i15, null);
                         textView3.setTextSize(1, 16.0f);
                         textView3.setGravity((gd.a0 ? 5 : 3) | 48);
-                        textView3.setText(org.telegram.messenger.g0.W2(gd.M0(2131751288, null)));
+                        textView3.setText(org.telegram.messenger.g0.W2(gd.N0(2131751287, null)));
                         if (gd.a0) {
                             f10.addView(textView3, c8.ma.o(-1, -2));
                             i7 = 5;
@@ -231,15 +232,15 @@ public final /* synthetic */ class o3 implements Runnable {
                             f10.addView(textView3, c8.ma.o(-1, -2));
                         }
                         if ("PASSWORD_MISSING".equals(tL_error2.text)) {
-                            alertDialog$Builder.k(gd.M0(2131751280, null), new bd(xdVar));
-                            alertDialog$Builder.h(gd.M0(2131752578, null), null);
+                            alertDialog$Builder.k(gd.N0(2131751279, null), new bd(xdVar));
+                            alertDialog$Builder.h(gd.N0(2131752577, null), null);
                         } else {
                             TextView textView4 = new TextView(activity);
-                            org.telegram.ui.ActionBar.u6.U(textView4, i14, null);
+                            org.telegram.ui.ActionBar.t6.U(textView4, i15, null);
                             textView4.setTextSize(1, 16.0f);
-                            org.telegram.messenger.f3.k(textView4, (gd.a0 ? i7 : 3) | 48, null, 2131751287);
+                            org.telegram.messenger.f3.k(textView4, (gd.a0 ? i7 : 3) | 48, null, 2131751286);
                             linearLayout.addView(textView4, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                            alertDialog$Builder.h(gd.M0(2131747638, null), null);
+                            alertDialog$Builder.h(gd.N0(2131747637, null), null);
                         }
                         if (twoStepVerificationActivity2 != null) {
                             twoStepVerificationActivity2.showDialog(alertDialog$Builder.a);
@@ -267,13 +268,13 @@ public final /* synthetic */ class o3 implements Runnable {
                 break;
             case 5:
                 bn bnVar = (bn) this.c;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.d;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.d;
                 boolean[] zArr = (boolean[]) this.e;
                 boolean z12 = this.b;
                 fj fjVar = (fj) this.f;
                 TLRPC.WebPage webPage = (TLRPC.WebPage) this.h;
                 try {
-                    u1Var.dismiss();
+                    t1Var.dismiss();
                 } catch (Throwable unused) {
                 }
                 if (!zArr[0]) {
@@ -293,7 +294,7 @@ public final /* synthetic */ class o3 implements Runnable {
                 }
                 break;
             case 6:
-                int i15 = 16;
+                int i16 = 16;
                 go goVar = (go) this.c;
                 TLRPC.TL_channels_toggleUsername tL_channels_toggleUsername = (TLRPC.TL_channels_toggleUsername) this.e;
                 TLObject tLObject3 = (TLObject) this.h;
@@ -309,17 +310,17 @@ public final /* synthetic */ class o3 implements Runnable {
                     ioVar.z1(tL_username, z13, true);
                     joVar.b0();
                 } else {
-                    org.telegram.messenger.g0.g3(new p6(goVar, tL_username, z13, i15));
+                    org.telegram.messenger.g0.g3(new p6(goVar, tL_username, z13, i16));
                 }
                 joVar.getMessagesController().F5(joVar.Y, tL_username.username, tL_username.active);
                 break;
             case 7:
-                ((ry) this.c).K((ph.a) this.d, (TLObject) this.h, (TLRPC.StickerSet) this.e, (TLRPC.Document) this.f, this.b, true);
+                ((ty) this.c).K((ph.a) this.d, (TLObject) this.h, (TLRPC.StickerSet) this.e, (TLRPC.Document) this.f, this.b, true);
                 break;
             case 8:
                 ws wsVar = (ws) this.c;
                 TLObject tLObject4 = (TLObject) this.h;
-                hi.d dVar = (hi.d) this.e;
+                hi.e eVar = (hi.e) this.e;
                 boolean z14 = this.b;
                 HashSet hashSet = (HashSet) this.f;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.d;
@@ -329,14 +330,14 @@ public final /* synthetic */ class o3 implements Runnable {
                     mp.u1(wsVar.a).Z3(updates.chats, false);
                     ArrayList A0 = mp.A0(updates, TL_update.TL_updateGroupCall.class);
                     int size = A0.size();
-                    int i16 = 0;
+                    int i17 = 0;
                     TLRPC.GroupCall groupCall = null;
-                    while (i16 < size) {
-                        Object obj = A0.get(i16);
-                        i16++;
+                    while (i17 < size) {
+                        Object obj = A0.get(i17);
+                        i17++;
                         groupCall = ((TL_update.TL_updateGroupCall) obj).call;
                     }
-                    Utilities.d.c(new vs(0, wsVar, updates));
+                    Utilities.d.c(new ss(2, wsVar, updates));
                     if (groupCall != null && LaunchActivity.H1 != null) {
                         TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
                         tL_inputGroupCall.id = groupCall.id;
@@ -346,7 +347,7 @@ public final /* synthetic */ class o3 implements Runnable {
                         break;
                     } else {
                         wsVar.Y1 = false;
-                        dVar.setLoading(false);
+                        eVar.setLoading(false);
                         break;
                     }
                 } else if (tLObject4 instanceof TL_phone.groupCall) {
@@ -355,7 +356,7 @@ public final /* synthetic */ class o3 implements Runnable {
                     mp.u1(wsVar.a).Z3(groupcall.chats, false);
                     if (LaunchActivity.H1 == null) {
                         wsVar.Y1 = false;
-                        dVar.setLoading(false);
+                        eVar.setLoading(false);
                         break;
                     } else {
                         TLRPC.TL_inputGroupCall tL_inputGroupCall2 = new TLRPC.TL_inputGroupCall();
@@ -379,100 +380,99 @@ public final /* synthetic */ class o3 implements Runnable {
                 int[] iArr4 = (int[]) this.h;
                 boolean z15 = this.b;
                 org.telegram.messenger.r5 r5Var = org.telegram.ui.Wallet.sa.a;
-                int i17 = 0;
+                int i18 = 0;
                 while (true) {
-                    int i18 = ks.K4;
-                    if (i17 < 288) {
-                        int i19 = i17 * ks.L4;
-                        int i20 = 8;
-                        for (int i21 = 0; i21 < 288; i21++) {
-                            int i22 = i19 + i21;
-                            i20 = (iArr[i22] >>> 24) >= 128 ? 0 : Math.min(i20 + 1, 8);
-                            iArr3[i22] = i20;
+                    int i19 = ks.K4;
+                    if (i18 < 288) {
+                        int i20 = i18 * ks.L4;
+                        int i21 = 8;
+                        for (int i22 = 0; i22 < 288; i22++) {
+                            int i23 = i20 + i22;
+                            i21 = (iArr[i23] >>> 24) >= 128 ? 0 : Math.min(i21 + 1, 8);
+                            iArr3[i23] = i21;
                         }
-                        int i23 = 8;
-                        while (i18 >= 0) {
-                            int i24 = i19 + i18;
-                            i23 = iArr3[i24] == 0 ? 0 : Math.min(i23 + 1, 8);
-                            if (i23 < iArr3[i24]) {
-                                iArr3[i24] = i23;
+                        int i24 = 8;
+                        while (i19 >= 0) {
+                            int i25 = i20 + i19;
+                            i24 = iArr3[i25] == 0 ? 0 : Math.min(i24 + 1, 8);
+                            if (i24 < iArr3[i25]) {
+                                iArr3[i25] = i24;
                             }
-                            i18--;
+                            i19--;
                         }
-                        i17++;
+                        i18++;
                     } else {
-                        int i25 = 0;
-                        while (i25 < 288) {
-                            for (int i26 = i10; i26 < 288; i26++) {
-                                iArr4[i26] = iArr3[(i26 * ks.L4) + i25];
+                        int i26 = 0;
+                        while (i26 < 288) {
+                            for (int i27 = i10; i27 < 288; i27++) {
+                                iArr4[i27] = iArr3[(i27 * ks.L4) + i26];
                             }
-                            int i27 = i10;
-                            while (i27 < 288) {
-                                int min = Math.min(i18, i27 + 8);
-                                int i28 = 128;
-                                for (int max = Math.max(i10, i27 - 8); max <= min; max++) {
-                                    int i29 = iArr4[max];
-                                    if (i29 < 8) {
-                                        int i30 = max - i27;
-                                        int i31 = (i30 * i30) + (i29 * i29);
-                                        if (i31 < i28) {
-                                            i28 = i31;
+                            int i28 = i10;
+                            while (i28 < 288) {
+                                int min = Math.min(i19, i28 + 8);
+                                int i29 = 128;
+                                for (int max = Math.max(i10, i28 - 8); max <= min; max++) {
+                                    int i30 = iArr4[max];
+                                    if (i30 < 8) {
+                                        int i31 = max - i28;
+                                        int i32 = (i31 * i31) + (i30 * i30);
+                                        if (i32 < i29) {
+                                            i29 = i32;
                                         }
                                     }
                                 }
-                                iArr3[(i27 * ks.L4) + i25] = org.telegram.ui.Wallet.sa.b[i28];
-                                i27++;
+                                iArr3[(i28 * ks.L4) + i26] = org.telegram.ui.Wallet.sa.b[i29];
+                                i28++;
                                 i10 = 0;
-                                i18 = ks.K4;
+                                i19 = ks.K4;
                             }
-                            i25++;
+                            i26++;
                             i10 = 0;
-                            i18 = ks.K4;
+                            i19 = ks.K4;
                         }
-                        int i32 = 0;
-                        while (i32 < 82944) {
-                            int i33 = iArr[i32];
-                            int i34 = i33 >>> 24;
-                            int max2 = Math.max(iArr3[i32], i34);
-                            if (i34 != 255) {
-                                if (i34 == 0) {
-                                    i33 = (max2 << 24) | 16777215;
+                        int i33 = 0;
+                        while (i33 < 82944) {
+                            int i34 = iArr[i33];
+                            int i35 = i34 >>> 24;
+                            int max2 = Math.max(iArr3[i33], i35);
+                            if (i35 != 255) {
+                                if (i35 == 0) {
+                                    i34 = (max2 << 24) | 16777215;
                                 } else {
-                                    int i35 = ((255 - i34) * max2) / ks.e4;
-                                    int i36 = i34 + i35;
-                                    int i37 = ((i33 >> 16) & ks.e4) * i34;
-                                    int i38 = i35 * ks.e4;
+                                    int i36 = ((255 - i35) * max2) / ks.e4;
+                                    int i37 = i35 + i36;
+                                    int i38 = ((i34 >> 16) & ks.e4) * i35;
+                                    int i39 = i36 * ks.e4;
                                     c10 = c11;
-                                    i33 = ((((i33 & ks.e4) * i34) + i38) / i36) | ((((((i33 >> 8) & ks.e4) * i34) + i38) / i36) << 8) | (i36 << 24) | (((i37 + i38) / i36) << 16);
-                                    iArr2[i32] = i33;
-                                    i32++;
+                                    i34 = ((((i34 & ks.e4) * i35) + i39) / i37) | ((((((i34 >> 8) & ks.e4) * i35) + i39) / i37) << 8) | (i37 << 24) | (((i38 + i39) / i37) << 16);
+                                    iArr2[i33] = i34;
+                                    i33++;
                                     c11 = c10;
                                 }
                             }
                             c10 = c11;
-                            iArr2[i32] = i33;
-                            i32++;
+                            iArr2[i33] = i34;
+                            i33++;
                             c11 = c10;
                         }
                         if (z15) {
-                            int i39 = 0;
-                            for (int i40 = 0; i40 < 82944; i40 += 7) {
-                                if ((iArr2[i40] >>> 24) > 0) {
-                                    i39++;
+                            int i40 = 0;
+                            for (int i41 = 0; i41 < 82944; i41 += 7) {
+                                if ((iArr2[i41] >>> 24) > 0) {
+                                    i40++;
                                 }
                             }
-                            if (i39 > 592) {
+                            if (i40 > 592) {
                                 Bitmap createBitmap = Bitmap.createBitmap(iArr2, ks.L4, ks.L4, Bitmap.Config.ARGB_8888);
                                 Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, 128, 128, true);
                                 Bitmap extractAlpha = createScaledBitmap.extractAlpha();
-                                Bitmap createBitmap2 = Bitmap.createBitmap(ks.G2, ks.G2, Bitmap.Config.ALPHA_8);
+                                bitmap = Bitmap.createBitmap(ks.G2, ks.G2, Bitmap.Config.ALPHA_8);
                                 Paint paint = new Paint(1);
                                 paint.setMaskFilter(new BlurMaskFilter(5.0f, BlurMaskFilter.Blur.NORMAL));
-                                new Canvas(createBitmap2).drawBitmap(extractAlpha, 24.0f, 24.0f, paint);
+                                new Canvas(bitmap).drawBitmap(extractAlpha, 24.0f, 24.0f, paint);
                                 createBitmap.recycle();
                                 createScaledBitmap.recycle();
                                 extractAlpha.recycle();
-                                bitmap = createBitmap2;
                                 org.telegram.messenger.g0.g3(new org.telegram.ui.Wallet.p(q8Var, iArr2, bitmap, 21));
                                 break;
                             }
@@ -504,10 +504,10 @@ public final /* synthetic */ class o3 implements Runnable {
         this.h = tLObject;
     }
 
-    public /* synthetic */ o3(bn bnVar, org.telegram.ui.ActionBar.u1 u1Var, boolean[] zArr, boolean z10, fj fjVar, TLRPC.TL_webPage tL_webPage) {
+    public /* synthetic */ o3(bn bnVar, org.telegram.ui.ActionBar.t1 t1Var, boolean[] zArr, boolean z10, fj fjVar, TLRPC.TL_webPage tL_webPage) {
         this.a = 5;
         this.c = bnVar;
-        this.d = u1Var;
+        this.d = t1Var;
         this.e = zArr;
         this.b = z10;
         this.f = fjVar;
@@ -534,9 +534,9 @@ public final /* synthetic */ class o3 implements Runnable {
         this.d = tL_error;
     }
 
-    public /* synthetic */ o3(ry ryVar, ph.a aVar, TLObject tLObject, TLRPC.StickerSet stickerSet, TLRPC.Document document, boolean z10) {
+    public /* synthetic */ o3(ty tyVar, ph.a aVar, TLObject tLObject, TLRPC.StickerSet stickerSet, TLRPC.Document document, boolean z10) {
         this.a = 7;
-        this.c = ryVar;
+        this.c = tyVar;
         this.d = aVar;
         this.h = tLObject;
         this.e = stickerSet;
@@ -544,11 +544,11 @@ public final /* synthetic */ class o3 implements Runnable {
         this.b = z10;
     }
 
-    public /* synthetic */ o3(ws wsVar, TLObject tLObject, hi.d dVar, boolean z10, HashSet hashSet, TLRPC.TL_error tL_error) {
+    public /* synthetic */ o3(ws wsVar, TLObject tLObject, hi.e eVar, boolean z10, HashSet hashSet, TLRPC.TL_error tL_error) {
         this.a = 8;
         this.c = wsVar;
         this.h = tLObject;
-        this.e = dVar;
+        this.e = eVar;
         this.b = z10;
         this.f = hashSet;
         this.d = tL_error;

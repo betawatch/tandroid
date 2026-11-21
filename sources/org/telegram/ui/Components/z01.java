@@ -1,66 +1,49 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class z01 extends v4.o {
-    public final /* synthetic */ int b = 1;
-    public ArrayList c;
-    public ArrayList d;
+public final class z01 extends Drawable {
+    public final Paint a = new Paint(1);
+    public final RectF b = new RectF();
+    public final /* synthetic */ int c;
+    public final /* synthetic */ h11 d;
 
-    public /* synthetic */ z01() {
+    public z01(h11 h11Var, int i7) {
+        this.d = h11Var;
+        this.c = i7;
     }
 
-    @Override // v4.o
-    public final boolean a(int i7, int i10) {
-        switch (this.b) {
-            case 0:
-                return true;
-            default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) this.d.get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.a(aVar2);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.b;
+        rectF.set(bounds);
+        int i7 = this.c;
+        rectF.inset(i7, i7);
+        float height = rectF.height() / 2.0f;
+        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.O5, this.d.e);
+        Paint paint = this.a;
+        paint.setColor(w02);
+        canvas.drawRoundRect(rectF, height, height, paint);
     }
 
-    @Override // v4.o
-    public final boolean b(int i7, int i10) {
-        switch (this.b) {
-            case 0:
-                c11 c11Var = (c11) this.c.get(i7);
-                c11 c11Var2 = (c11) this.d.get(i10);
-                return c11Var.a == c11Var2.a && Objects.equals(c11Var.b, c11Var2.b);
-            default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) this.d.get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.equals(aVar2);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
     }
 
-    @Override // v4.o
-    public final int d() {
-        switch (this.b) {
-        }
-        return this.d.size();
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
     }
 
-    @Override // v4.o
-    public final int e() {
-        switch (this.b) {
-        }
-        return this.c.size();
-    }
-
-    public z01(ArrayList arrayList, ArrayList arrayList2) {
-        this.c = arrayList;
-        this.d = arrayList2;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

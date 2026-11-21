@@ -9,13 +9,13 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class z50 extends ViewGroup {
     public AnimatorSet a;
     public boolean b;
     public final ArrayList c;
-    public org.telegram.ui.Components.m20 d;
+    public org.telegram.ui.Components.p20 d;
     public int e;
     public final /* synthetic */ a60 f;
 
@@ -26,11 +26,11 @@ public final class z50 extends ViewGroup {
         this.c = new ArrayList();
     }
 
-    public final void a(org.telegram.ui.Components.m20 m20Var) {
+    public final void a(org.telegram.ui.Components.p20 p20Var) {
         a60 a60Var = this.f;
-        a60Var.E.remove(m20Var.getKey());
-        a60Var.F.remove(m20Var);
-        m20Var.setOnClickListener(null);
+        a60Var.E.remove(p20Var.getKey());
+        a60Var.F.remove(p20Var);
+        p20Var.setOnClickListener(null);
         AnimatorSet animatorSet = this.a;
         if (animatorSet != null && animatorSet.isRunning()) {
             this.a.setupEndValues();
@@ -39,15 +39,15 @@ public final class z50 extends ViewGroup {
         this.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.h60(9, this, m20Var));
-        this.a.setInterpolator(org.telegram.ui.Components.lr.h);
+        animatorSet2.addListener(new org.telegram.ui.Components.h10(10, this, p20Var));
+        this.a.setInterpolator(org.telegram.ui.Components.nr.h);
         this.a.setDuration(320L);
-        this.d = m20Var;
+        this.d = p20Var;
         ArrayList arrayList = this.c;
         arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.m20, Float>) View.SCALE_X, 1.0f, 0.75f));
-        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.m20, Float>) View.SCALE_Y, 1.0f, 0.75f));
-        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.m20, Float>) View.ALPHA, 1.0f, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p20, Float>) View.SCALE_X, 1.0f, 0.75f));
+        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p20, Float>) View.SCALE_Y, 1.0f, 0.75f));
+        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p20, Float>) View.ALPHA, 1.0f, 0.0f));
         requestLayout();
     }
 
@@ -80,7 +80,7 @@ public final class z50 extends ViewGroup {
                 break;
             }
             View childAt = getChildAt(i15);
-            if (childAt instanceof org.telegram.ui.Components.m20) {
+            if (childAt instanceof org.telegram.ui.Components.p20) {
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(28.0f), TLObject.FLAG_30));
                 if (childAt != this.d && childAt.getMeasuredWidth() + i17 > i12) {
                     i14 += org.telegram.messenger.g0.L(34.0f);
@@ -92,11 +92,11 @@ public final class z50 extends ViewGroup {
                 }
                 int i19 = L + i17;
                 if (!this.b) {
-                    org.telegram.ui.Components.m20 m20Var = this.d;
-                    if (childAt == m20Var) {
+                    org.telegram.ui.Components.p20 p20Var = this.d;
+                    if (childAt == p20Var) {
                         childAt.setTranslationX(L + i18);
                         childAt.setTranslationY(i13);
-                    } else if (m20Var != null) {
+                    } else if (p20Var != null) {
                         float f10 = i19;
                         if (childAt.getTranslationX() != f10) {
                             i11 = 1;

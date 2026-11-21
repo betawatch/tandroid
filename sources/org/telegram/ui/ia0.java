@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ia0 extends jg.r0 {
     public boolean e0;
     public final /* synthetic */ qa0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ia0(qa0 qa0Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, boolean z11) {
-        super(context, i7, j3, false, i6Var, false, z10, z11);
+    public ia0(qa0 qa0Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11) {
+        super(context, i7, j3, false, h6Var, false, z10, z11);
         this.f0 = qa0Var;
         this.e0 = true;
     }

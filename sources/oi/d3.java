@@ -1,84 +1,127 @@
 package oi;
 
 import android.view.View;
-import org.telegram.messenger.w7;
-import org.telegram.tgnet.TLRPC;
+import hi.s6;
+import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class d3 implements w4 {
-    public final /* synthetic */ r a;
-    public final /* synthetic */ a b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ s3 d;
+public final class d3 implements x5 {
+    public final /* synthetic */ t3 a;
 
-    public d3(s3 s3Var, r rVar, a aVar, String str) {
-        this.d = s3Var;
-        this.a = rVar;
-        this.b = aVar;
-        this.c = str;
+    public d3(t3 t3Var) {
+        this.a = t3Var;
     }
 
-    @Override // oi.w4
-    public final void a() {
-        r rVar = this.a;
-        rVar.a = 3;
-        s3 s3Var = this.d;
-        s3Var.h4.remove(rVar);
-        s3Var.t3.remove(this.b);
-        s3Var.g3.O(true);
-        s3Var.p3.onContentChanged();
+    public final int a(a aVar) {
+        int i7;
+        t3 t3Var = this.a;
+        int indexOf = t3Var.t3.indexOf(aVar);
+        return org.telegram.messenger.g0.L((indexOf < 0 || (i7 = indexOf + 1) >= t3Var.t3.size() || ((a) t3Var.t3.get(i7)).c <= 0) ? 11.0f : 5.0f);
     }
 
-    @Override // oi.w4
-    public final void e(TLRPC.Document document) {
-        String str = this.c;
-        document.localPath = str;
-        s3 s3Var = this.d;
-        w7.G(s3Var.n3).e0(str, document);
-        r rVar = this.a;
-        rVar.h = document;
-        rVar.a = 2;
-        TL_iv.PageBlock pageBlock = this.b.b;
-        if (pageBlock instanceof TL_iv.pageBlockDocument) {
-            ((TL_iv.pageBlockDocument) pageBlock).document_id = document.id;
+    public final int b(a aVar) {
+        t3 t3Var = this.a;
+        int indexOf = t3Var.t3.indexOf(aVar);
+        return org.telegram.messenger.g0.L((indexOf <= 0 || ((a) t3Var.t3.get(indexOf + (-1))).c <= 0) ? 8.0f : 2.0f);
+    }
+
+    public final void c(a aVar, int i7) {
+        t3 t3Var = this.a;
+        r3 r3Var = t3Var.p3;
+        if (i7 == 7) {
+            t3Var.U4(aVar, new TL_iv.pageBlockButtonRow(), 0, 0, false, false);
         }
-        s3Var.h4.remove(rVar);
-        s3Var.g3.O(false);
-        s3Var.p3.onContentChanged();
-    }
-
-    @Override // oi.w4
-    public final void g(float f10) {
-        this.a.f = f10;
-        a aVar = this.b;
-        s3 s3Var = this.d;
-        View C1 = s3Var.C1(aVar);
-        if (C1 instanceof v0) {
-            v0 v0Var = (v0) C1;
-            v0Var.g(v0Var.h());
-            v0Var.l();
-            v0Var.m(false);
-            v0Var.requestLayout();
-            v0Var.invalidate();
+        t3Var.j4 = null;
+        t3Var.k4 = aVar;
+        g2 g2Var = t3Var.R3;
+        if (g2Var != null) {
+            g2Var.d();
         }
-        s3Var.p3.onContentChanged();
+        if (aVar != null) {
+            a6.e(aVar.b, "");
+            View C1 = t3Var.C1(aVar);
+            if (C1 instanceof a6) {
+                ((a6) C1).getEditText().setTextSilently("");
+            }
+        }
+        g2 g2Var2 = t3Var.R3;
+        if (g2Var2 != null) {
+            g2Var2.h();
+        }
+        switch (i7) {
+            case 1:
+                r3Var.D(3);
+                break;
+            case 2:
+                r3Var.D(6);
+                break;
+            case 3:
+                o.Z(t3Var.getContext(), "", new s6(t3Var, 18), t3Var.o3);
+                break;
+            case 4:
+            case 5:
+                r3Var.D(1);
+                break;
+            case 6:
+                t3Var.w3();
+                break;
+        }
     }
 
-    @Override // oi.w4
-    public final /* synthetic */ void c(TLRPC.Photo photo) {
-    }
-
-    @Override // oi.w4
-    public final /* synthetic */ void d(TLRPC.Document document) {
-    }
-
-    @Override // oi.w4
-    public final /* synthetic */ void f(TLRPC.Document document) {
-    }
-
-    @Override // oi.w4
-    public final /* synthetic */ void b(int i7, int i10) {
+    public final void d(a aVar, TL_iv.PageBlock pageBlock, int i7, int i10, boolean z10, boolean z11) {
+        boolean z12 = pageBlock instanceof TL_iv.pageBlockBlockquote;
+        t3 t3Var = this.a;
+        if (!z12) {
+            t3Var.U4(aVar, pageBlock, i7, i10, z10, z11);
+            return;
+        }
+        if (aVar == null) {
+            aVar = t3Var.a5();
+        }
+        if (aVar != null) {
+            ArrayList arrayList = aVar.k;
+            if (t3Var.t3.indexOf(aVar) < 0 || t3.A3(aVar) || aVar.i) {
+                return;
+            }
+            g2 g2Var = t3Var.R3;
+            if (g2Var != null) {
+                g2Var.d();
+            }
+            boolean z13 = arrayList.isEmpty() && !a6.p(aVar.b);
+            if (z13) {
+                TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
+                pageblockblockquote.caption = new TL_iv.textEmpty();
+                aVar.b = pageblockblockquote;
+            } else {
+                if (a6.p(aVar.b)) {
+                    long a10 = m0.a();
+                    TL_iv.RichText j3 = a6.j(aVar.b);
+                    if (j3 != null && !(j3 instanceof TL_iv.textEmpty)) {
+                        t3Var.u3.put(Long.valueOf(a10), j3);
+                    }
+                    arrayList.add(Long.valueOf(a10));
+                }
+                aVar.b = new TL_iv.pageBlockParagraph();
+                arrayList.add(Long.valueOf(m0.a()));
+            }
+            t3Var.v4();
+            if (z13 && (t3Var.findFocus() instanceof f1)) {
+                t3Var.b2();
+                g2 g2Var2 = t3Var.R3;
+                if (g2Var2 != null) {
+                    g2Var2.h();
+                }
+                t3Var.g3(aVar);
+                return;
+            }
+            t3Var.g3.O(false);
+            g2 g2Var3 = t3Var.R3;
+            if (g2Var3 != null) {
+                g2Var3.h();
+            }
+            t3Var.post(new y2(t3Var, aVar, 5));
+        }
     }
 }

@@ -9,10 +9,10 @@ import c8.ma;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.h60;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.h10;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e3 extends FrameLayout {
     public final l1 a;
@@ -48,22 +48,22 @@ public final class e3 extends FrameLayout {
     }
 
     public final void a(int i7) {
-        this.b.a = new mh0(R.raw.bt_to_speaker, i7, i7, true, null);
-        this.b.b = new mh0(R.raw.bt_to_speaker, i7, i7, true, null);
+        this.b.a = new oh0(R.raw.bt_to_speaker, i7, i7, true, null);
+        this.b.b = new oh0(R.raw.bt_to_speaker, i7, i7, true, null);
         this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
     }
 
     public final void b(int i7, int i10, int i11, boolean z10) {
         d3 d3Var = new d3(getContext(), this.a);
         if (i7 == R.raw.camera_flip2) {
-            mh0 mh0Var = new mh0(i7, i10, i10, true, null);
-            d3Var.c = mh0Var;
-            mh0Var.R(d3Var);
+            oh0 oh0Var = new oh0(i7, i10, i10, true, null);
+            d3Var.c = oh0Var;
+            oh0Var.R(d3Var);
         } else {
-            d3Var.a = new mh0(i7, i10, i10, true, null);
-            mh0 mh0Var2 = new mh0(i7, i10, i10, true, null);
-            d3Var.b = mh0Var2;
-            mh0Var2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
+            d3Var.a = new oh0(i7, i10, i10, true, null);
+            oh0 oh0Var2 = new oh0(i7, i10, i10, true, null);
+            d3Var.b = oh0Var2;
+            oh0Var2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
         }
         d3Var.a(i11, z10, false);
         d3Var.setAlpha(0.0f);
@@ -72,12 +72,12 @@ public final class e3 extends FrameLayout {
         d3 d3Var2 = this.b;
         this.b = d3Var;
         d3Var.animate().alpha(1.0f).setDuration(250L).start();
-        d3Var2.animate().alpha(0.0f).setDuration(250L).setListener(new h60(7, this, d3Var2)).start();
+        d3Var2.animate().alpha(0.0f).setDuration(250L).setListener(new h10(8, this, d3Var2)).start();
     }
 
     public final void c(int i7) {
-        this.b.a = new mh0(R.raw.speaker_to_bt, i7, i7, true, null);
-        this.b.b = new mh0(R.raw.speaker_to_bt, i7, i7, true, null);
+        this.b.a = new oh0(R.raw.speaker_to_bt, i7, i7, true, null);
+        this.b.b = new oh0(R.raw.speaker_to_bt, i7, i7, true, null);
         this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
     }
 
@@ -89,7 +89,7 @@ public final class e3 extends FrameLayout {
     */
     public final void d(int i7, boolean z10, boolean z11) {
         boolean z12;
-        String M0;
+        String N0;
         TextView textView;
         int visibility;
         TextView textView2;
@@ -112,7 +112,7 @@ public final class e3 extends FrameLayout {
                     b(R.raw.camera_flip2, L, i7, z10);
                     z12 = true;
                 } else if (i10 != 2) {
-                    this.b.c = new mh0(R.raw.camera_flip2, L, L, true, null);
+                    this.b.c = new oh0(R.raw.camera_flip2, L, L, true, null);
                     d3 d3Var = this.b;
                     d3Var.c.R(d3Var);
                 }
@@ -122,10 +122,10 @@ public final class e3 extends FrameLayout {
                     if (i11 == 5) {
                         d3 d3Var2 = this.b;
                         z12 = z10 == d3Var2.w;
-                        mh0 mh0Var = z10 ? d3Var2.b : d3Var2.a;
-                        mh0Var.R(d3Var2);
-                        mh0Var.u0 = new z2(this, L, 1);
-                        mh0Var.start();
+                        oh0 oh0Var = z10 ? d3Var2.b : d3Var2.a;
+                        oh0Var.R(d3Var2);
+                        oh0Var.u0 = new z2(this, L, 1);
+                        oh0Var.start();
                     } else if (i11 == 2) {
                         b(R.raw.bt_to_speaker, L, i7, z10);
                         z12 = true;
@@ -137,10 +137,10 @@ public final class e3 extends FrameLayout {
                     if (i12 == 4) {
                         d3 d3Var3 = this.b;
                         z12 = z10 == d3Var3.w;
-                        mh0 mh0Var2 = z10 ? d3Var3.b : d3Var3.a;
-                        mh0Var2.R(d3Var3);
-                        mh0Var2.u0 = new z2(this, L, 0);
-                        mh0Var2.start();
+                        oh0 oh0Var2 = z10 ? d3Var3.b : d3Var3.a;
+                        oh0Var2.R(d3Var3);
+                        oh0Var2.u0 = new z2(this, L, 0);
+                        oh0Var2.start();
                     } else if (i12 == 2) {
                         b(R.raw.speaker_to_bt, L, i7, z10);
                         z12 = true;
@@ -149,8 +149,8 @@ public final class e3 extends FrameLayout {
                     }
                 }
             } else if (this.c != 3) {
-                this.b.a = new mh0(R.raw.video_stop, L, L, true, null);
-                this.b.b = new mh0(R.raw.video_stop, L, L, true, null);
+                this.b.a = new oh0(R.raw.video_stop, L, L, true, null);
+                this.b.b = new oh0(R.raw.video_stop, L, L, true, null);
                 this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
                 d3 d3Var4 = this.b;
                 d3Var4.b.R(d3Var4);
@@ -159,18 +159,18 @@ public final class e3 extends FrameLayout {
                 this.b.a(i7, z10, (this.c == 0 || z11) ? false : true);
             }
             int c11 = p1.g.c(i7);
-            M0 = c11 == 0 ? c11 != 1 ? c11 != 2 ? c11 != 3 ? c11 != 4 ? "" : gd.M0(2131743002, null) : gd.M0(2131743266, null) : z10 ? gd.M0(2131743001, null) : gd.M0(2131743000, null) : gd.M0(2131743169, null) : z10 ? gd.M0(2131742993, null) : gd.M0(2131743056, null);
-            setContentDescription(M0);
+            N0 = c11 == 0 ? c11 != 1 ? c11 != 2 ? c11 != 3 ? c11 != 4 ? "" : gd.N0(2131742996, null) : gd.N0(2131743260, null) : z10 ? gd.N0(2131742995, null) : gd.N0(2131742994, null) : gd.N0(2131743163, null) : z10 ? gd.N0(2131742987, null) : gd.N0(2131743050, null);
+            setContentDescription(N0);
             textView = this.d;
             visibility = textView.getVisibility();
             textView2 = this.e;
             if (visibility != 8 && textView2.getVisibility() == 8) {
                 textView.setVisibility(0);
-                textView.setText(M0);
-                textView2.setText(M0);
-            } else if (textView2.getText().equals(M0) || !textView.getText().equals(M0)) {
-                textView.animate().alpha(0.0f).translationY(-org.telegram.messenger.g0.L(4.0f)).setDuration(140L).setListener(new h60(6, this, M0)).start();
-                textView2.setText(M0);
+                textView.setText(N0);
+                textView2.setText(N0);
+            } else if (textView2.getText().equals(N0) || !textView.getText().equals(N0)) {
+                textView.animate().alpha(0.0f).translationY(-org.telegram.messenger.g0.L(4.0f)).setDuration(140L).setListener(new h10(7, this, N0)).start();
+                textView2.setText(N0);
                 textView2.setVisibility(0);
                 textView2.setAlpha(0.0f);
                 textView2.setTranslationY(org.telegram.messenger.g0.L(5.0f));
@@ -179,8 +179,8 @@ public final class e3 extends FrameLayout {
             this.c = i7;
         }
         if (this.c != 1) {
-            this.b.a = new mh0(R.raw.call_mute, L, L, true, null);
-            this.b.b = new mh0(R.raw.call_mute, L, L, true, null);
+            this.b.a = new oh0(R.raw.call_mute, L, L, true, null);
+            this.b.b = new oh0(R.raw.call_mute, L, L, true, null);
             this.b.b.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             d3 d3Var5 = this.b;
             d3Var5.b.R(d3Var5);
@@ -191,16 +191,16 @@ public final class e3 extends FrameLayout {
         int c112 = p1.g.c(i7);
         if (c112 == 0) {
         }
-        setContentDescription(M0);
+        setContentDescription(N0);
         textView = this.d;
         visibility = textView.getVisibility();
         textView2 = this.e;
         if (visibility != 8) {
         }
-        if (textView2.getText().equals(M0)) {
+        if (textView2.getText().equals(N0)) {
         }
-        textView.animate().alpha(0.0f).translationY(-org.telegram.messenger.g0.L(4.0f)).setDuration(140L).setListener(new h60(6, this, M0)).start();
-        textView2.setText(M0);
+        textView.animate().alpha(0.0f).translationY(-org.telegram.messenger.g0.L(4.0f)).setDuration(140L).setListener(new h10(7, this, N0)).start();
+        textView2.setText(N0);
         textView2.setVisibility(0);
         textView2.setAlpha(0.0f);
         textView2.setTranslationY(org.telegram.messenger.g0.L(5.0f));

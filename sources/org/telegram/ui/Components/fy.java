@@ -1,7 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.content.Context;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface fy extends Runnable {
-    void e();
+public final class fy extends lv0 {
+    public final /* synthetic */ int H3;
+    public final /* synthetic */ gy I3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fy(gy gyVar, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10) {
+        super(i7, context, h6Var);
+        this.I3 = gyVar;
+        this.H3 = i10;
+    }
+
+    @Override // org.telegram.ui.Components.lv0
+    public final boolean D1() {
+        return org.telegram.messenger.pc.e(8200);
+    }
+
+    @Override // org.telegram.ui.Components.lv0
+    public final void H1(int i7) {
+        hw hwVar;
+        yw ywVar;
+        super.H1(i7);
+        gy gyVar = this.I3;
+        ty tyVar = gyVar.H;
+        fy fyVar = gyVar.r;
+        boolean z10 = fyVar.getSelectedCategory() == null;
+        int i10 = ty.V2;
+        tyVar.N(z10);
+        int i11 = this.H3;
+        if (i11 == 1 && (ywVar = tyVar.J) != null) {
+            ywVar.n(fyVar.getSelectedCategory() == null);
+        } else if (i11 == 0 && (hwVar = tyVar.C0) != null) {
+            hwVar.p0 = fyVar.getSelectedCategory() == null;
+            hwVar.invalidate();
+        }
+        gyVar.g(false);
+    }
 }

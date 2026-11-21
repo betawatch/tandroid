@@ -21,22 +21,22 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
-import ki.n3;
+import ki.m3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.r1;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.w5;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.x5;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -45,7 +45,7 @@ public class e extends FrameLayout {
     public boolean H;
     public Drawable I;
     public y J;
-    public final i6 K;
+    public final h6 K;
     public final o L;
     public DecimalFormat M;
     public boolean a;
@@ -62,7 +62,7 @@ public class e extends FrameLayout {
     public final SimpleDateFormat x;
     public boolean y;
 
-    public e(Context context, i6 i6Var) {
+    public e(Context context, h6 h6Var) {
         super(context);
         this.n = new SimpleDateFormat("E, ");
         this.r = new SimpleDateFormat("MMM dd");
@@ -71,7 +71,7 @@ public class e extends FrameLayout {
         this.x = new SimpleDateFormat(" HH:mm");
         this.H = true;
         this.L = new o(this, 4);
-        this.K = i6Var;
+        this.K = h6Var;
         setPadding(g0.L(8.0f), g0.L(8.0f), g0.L(8.0f), g0.L(8.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.b = linearLayout;
@@ -108,20 +108,20 @@ public class e extends FrameLayout {
     }
 
     public void b() {
-        int i7 = n6.j5;
+        int i7 = m6.j5;
         TextView textView = this.d;
-        i6 i6Var = this.K;
-        u6.U(textView, i7, i6Var);
-        u6.U(this.e, i7, i6Var);
-        int i10 = n6.Xj;
-        u6.s(this.f, i10, i6Var, PorterDuff.Mode.SRC_ATOP);
-        this.h.setProgressColor(n6.w0(i10, i6Var));
+        h6 h6Var = this.K;
+        t6.U(textView, i7, h6Var);
+        t6.U(this.e, i7, h6Var);
+        int i10 = m6.Xj;
+        t6.s(this.f, i10, h6Var, PorterDuff.Mode.SRC_ATOP);
+        this.h.setProgressColor(m6.w0(i10, h6Var));
         this.I = getContext().getResources().getDrawable(R.drawable.stats_tooltip).mutate();
         int L = g0.L(4.0f);
-        this.J = n6.k0(L, L, L, L, n6.w0(n6.h5, i6Var), n6.w0(n6.i6, i6Var), -16777216);
-        mq mqVar = new mq(this.I, this.J, g0.L(3.0f), g0.L(3.0f));
-        mqVar.x = true;
-        setBackground(mqVar);
+        this.J = m6.k0(L, L, L, L, m6.w0(m6.h5, h6Var), m6.w0(m6.i6, h6Var), -16777216);
+        oq oqVar = new oq(this.I, this.J, g0.L(3.0f), g0.L(3.0f));
+        oqVar.x = true;
+        setBackground(oqVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -175,7 +175,7 @@ public class e extends FrameLayout {
                 LinearLayout linearLayout = (LinearLayout) c0Var.e;
                 TextView textView2 = (TextView) c0Var.d;
                 TextView textView3 = (TextView) c0Var.c;
-                w5 w5Var = (w5) c0Var.b;
+                x5 x5Var = (x5) c0Var.b;
                 if (linearLayout.getMeasuredHeight() == 0) {
                     linearLayout.requestLayout();
                 }
@@ -201,7 +201,7 @@ public class e extends FrameLayout {
                             i14 = 2;
                         }
                         decimalFormat2.setMaximumFractionDigits(i14);
-                        charSequence = xd.K("TON " + this.M.format(j11 / 1.0E9d), w5Var.getPaint(), 0.82f, 0.0f, false);
+                        charSequence = xd.K("TON " + this.M.format(j11 / 1.0E9d), x5Var.getPaint(), 0.82f, 0.0f, false);
                     } else {
                         charSequence = "≈" + r1.i().f((long) (j11 / f10), "USD");
                     }
@@ -222,32 +222,32 @@ public class e extends FrameLayout {
                 } else {
                     charSequence = "≈" + r1.i().f((long) (j11 / f10), "USD");
                 }
-                w5Var.setText(charSequence);
+                x5Var.setText(charSequence);
                 if (i10 == 1) {
-                    textView3.setText(gd.a0(null, null, i20 == 0 ? 2131752240 : 2131752239, aVar.d));
+                    textView3.setText(gd.a0(null, null, i20 == 0 ? 2131752239 : 2131752238, aVar.d));
                 } else if (i10 == 2) {
-                    textView3.setText(pb.b1(false, gd.a0(null, null, i20 == 0 ? 2131752238 : 2131752239, aVar.d), 0.7f, null));
+                    textView3.setText(pb.b1(false, gd.a0(null, null, i20 == 0 ? 2131752237 : 2131752238, aVar.d), 0.7f, null));
                 } else {
                     textView3.setText(aVar.d);
                 }
                 int i23 = aVar.g;
-                i6 i6Var = this.K;
-                if (i23 < 0 || !n6.f1(i23)) {
-                    t6 t6Var = u6.a;
-                    w5Var.setTag(R.id.theme_bind, null);
-                    w5Var.setTextColor(n6.D0().q() ? aVar.i : aVar.h);
+                h6 h6Var = this.K;
+                if (i23 < 0 || !m6.f1(i23)) {
+                    s6 s6Var = t6.a;
+                    x5Var.setTag(R.id.theme_bind, null);
+                    x5Var.setTextColor(m6.D0().q() ? aVar.i : aVar.h);
                 } else {
-                    u6.U(w5Var, aVar.g, i6Var);
+                    t6.U(x5Var, aVar.g, h6Var);
                 }
-                int i24 = n6.j5;
-                u6.U(textView3, i24, i6Var);
+                int i24 = m6.j5;
+                t6.U(textView3, i24, h6Var);
                 if (!this.F || textView2 == null) {
                     i11 = i21;
                     i12 = 2;
                     i13 = 1;
                 } else {
                     textView2.setVisibility(0);
-                    u6.U(textView2, i24, i6Var);
+                    t6.U(textView2, i24, h6Var);
                     i11 = i21;
                     float f12 = ((f) arrayList.get(i11)).a.a[i7] / j10;
                     if (f12 >= 0.1f || f12 == 0.0f) {
@@ -299,7 +299,7 @@ public class e extends FrameLayout {
         }
         this.f.animate().setDuration(80L).alpha(1.0f).start();
         if (radialProgressView.getVisibility() == 0) {
-            radialProgressView.animate().setDuration(80L).alpha(0.0f).setListener(new n3(this, 3)).start();
+            radialProgressView.animate().setDuration(80L).alpha(0.0f).setListener(new m3(this, 3)).start();
         }
     }
 

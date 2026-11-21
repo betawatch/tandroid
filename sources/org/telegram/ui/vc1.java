@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import com.google.android.gms.tasks.OnFailureListener;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vc1 implements OnFailureListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hi.d b;
+    public final /* synthetic */ hi.e b;
 
-    public /* synthetic */ vc1(hi.d dVar, int i7) {
+    public /* synthetic */ vc1(hi.e eVar, int i7) {
         this.a = i7;
-        this.b = dVar;
+        this.b = eVar;
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener

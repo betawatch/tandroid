@@ -5,7 +5,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d80 implements org.telegram.messenger.or {
     public final /* synthetic */ LaunchActivity a;
@@ -14,21 +14,21 @@ public final /* synthetic */ class d80 implements org.telegram.messenger.or {
     public final /* synthetic */ boolean d;
     public final /* synthetic */ ArrayList e;
     public final /* synthetic */ Uri f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 h;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 h;
 
-    public /* synthetic */ d80(LaunchActivity launchActivity, int i7, cx cxVar, boolean z10, ArrayList arrayList, Uri uri, org.telegram.ui.ActionBar.u1 u1Var) {
+    public /* synthetic */ d80(LaunchActivity launchActivity, int i7, cx cxVar, boolean z10, ArrayList arrayList, Uri uri, org.telegram.ui.ActionBar.t1 t1Var) {
         this.a = launchActivity;
         this.b = i7;
         this.c = cxVar;
         this.d = z10;
         this.e = arrayList;
         this.f = uri;
-        this.h = u1Var;
+        this.h = t1Var;
     }
 
     @Override // org.telegram.messenger.or
     public final void run(long j3) {
-        org.telegram.ui.ActionBar.u1 u1Var = this.h;
+        org.telegram.ui.ActionBar.t1 t1Var = this.h;
         LaunchActivity launchActivity = this.a;
         if (j3 != 0) {
             String str = LaunchActivity.C1;
@@ -43,7 +43,7 @@ public final /* synthetic */ class d80 implements org.telegram.messenger.or {
             }
             bn bnVar = new bn(k10);
             bnVar.O9 = true;
-            org.telegram.ui.ActionBar.s4 M = launchActivity.M();
+            org.telegram.ui.ActionBar.r4 M = launchActivity.M();
             cx cxVar = this.c;
             ((ActionBarLayout) M).V(bnVar, cxVar != null || this.d, cxVar == null);
         } else {
@@ -56,7 +56,7 @@ public final /* synthetic */ class d80 implements org.telegram.messenger.or {
             launchActivity.j0(true);
         }
         try {
-            u1Var.dismiss();
+            t1Var.dismiss();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }

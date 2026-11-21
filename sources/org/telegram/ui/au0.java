@@ -7,7 +7,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class au0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -74,30 +74,30 @@ public final /* synthetic */ class au0 implements View.OnClickListener {
                 if (profileActivity.getParentLayout() != null && profileActivity.getParentLayout().getFragmentStack() != null) {
                     int i10 = 0;
                     while (i10 < profileActivity.getParentLayout().getFragmentStack().size()) {
-                        org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) profileActivity.getParentLayout().getFragmentStack().get(i10);
-                        if (h2Var instanceof cx) {
-                            cx cxVar = (cx) h2Var;
+                        org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) profileActivity.getParentLayout().getFragmentStack().get(i10);
+                        if (g2Var instanceof cx) {
+                            cx cxVar = (cx) g2Var;
                             xv xvVar = cxVar.H3;
                             if (xvVar != null) {
-                                org.telegram.ui.ActionBar.h2 fragment = xvVar.getFragment();
+                                org.telegram.ui.ActionBar.g2 fragment = xvVar.getFragment();
                                 if ((fragment instanceof y91) && (-((y91) fragment).a) == profileActivity.a()) {
                                     cxVar.H3.a();
                                 }
                             }
-                        } else if (h2Var instanceof bn) {
-                            if (((bn) h2Var).a() == profileActivity.a()) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).d0(h2Var, false);
+                        } else if (g2Var instanceof bn) {
+                            if (((bn) g2Var).a() == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).d0(g2Var, false);
                                 i10--;
                             }
-                        } else if (h2Var instanceof y91) {
-                            if ((-((y91) h2Var).a) == profileActivity.a()) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).d0(h2Var, false);
+                        } else if (g2Var instanceof y91) {
+                            if ((-((y91) g2Var).a) == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).d0(g2Var, false);
                                 i10--;
                             }
-                        } else if ((h2Var instanceof ProfileActivity) && h2Var != profileActivity) {
-                            ProfileActivity profileActivity2 = (ProfileActivity) h2Var;
+                        } else if ((g2Var instanceof ProfileActivity) && g2Var != profileActivity) {
+                            ProfileActivity profileActivity2 = (ProfileActivity) g2Var;
                             if (profileActivity2.a() == profileActivity.a() && profileActivity2.q1) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).d0(h2Var, false);
+                                ((ActionBarLayout) profileActivity.getParentLayout()).d0(g2Var, false);
                                 i10--;
                             }
                         }

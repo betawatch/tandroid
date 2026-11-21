@@ -24,9 +24,9 @@ import java.util.Map;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int E;
     public int F;
     public int G;
@@ -130,7 +130,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                         animatorSet.playTogether(ObjectAnimator.ofFloat(g4Var.h0, (Property<k0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, g4.f1, 0.0f));
                     }
                     animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.ks.Z3));
-                    animatorSet.setInterpolator(org.telegram.ui.Components.lr.h);
+                    animatorSet.setInterpolator(org.telegram.ui.Components.nr.h);
                     animatorSet.addListener(new f4(this, z11));
                     animatorSet.start();
                     g4Var.V0 = true;
@@ -165,18 +165,18 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Gl));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.d6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.y6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.J6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.K6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.k6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.d7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.M6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Ld));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Gl));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.y6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.J6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.K6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.k6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.M6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Ld));
     }
 
     public final void b(MotionEvent motionEvent) {
@@ -518,20 +518,20 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        hi.w wVar;
-        org.telegram.ui.ActionBar.b3 b3Var;
+        hi.x xVar;
         org.telegram.ui.ActionBar.a3 a3Var;
+        org.telegram.ui.ActionBar.z2 z2Var;
         Paint paint;
         k3 k3Var;
         k3 k3Var2;
         int i7;
-        b3 b3Var2;
+        b3 b3Var;
         g4 g4Var = this.I;
         t3 t3Var = g4Var.L;
         try {
-            int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Gl, false);
+            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false);
             if (g4Var.v0 != null) {
                 int i10 = 0;
                 while (true) {
@@ -548,8 +548,8 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                             k3Var3.y = x02;
                         }
                         k3Var3.E = x02;
-                        if (k3Var3.n && (b3Var2 = k3Var3.r) != null) {
-                            b3Var2.b(org.telegram.messenger.g0.B(x02) <= 0.721f, false);
+                        if (k3Var3.n && (b3Var = k3Var3.r) != null) {
+                            b3Var.b(org.telegram.messenger.g0.B(x02) <= 0.721f, false);
                         }
                     }
                     i10++;
@@ -568,10 +568,10 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                 paint2.setColor(x02);
             }
             if (g4Var.A0 && (paint = g4Var.z0) != null) {
-                paint.setColor(t3Var == null ? org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.a7, true) : org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.a7, false));
+                paint.setColor(t3Var == null ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, true) : org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, false));
             }
-            if (t3Var != null && (b3Var = t3Var.e) != null && (a3Var = b3Var.b) != null) {
-                org.telegram.messenger.g0.q3(a3Var, t3Var.f());
+            if (t3Var != null && (a3Var = t3Var.e) != null && (z2Var = a3Var.b) != null) {
+                org.telegram.messenger.g0.q3(z2Var, t3Var.f());
             }
             if (g4Var.m0 != null && g4.s1 != null) {
                 g4.e0(g4Var);
@@ -584,9 +584,9 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                         break;
                     }
                     k3 k3Var4 = k3VarArr4[i11];
-                    if (k3Var4 != null && (wVar = k3Var4.b) != null) {
-                        for (int i12 = 0; i12 < wVar.getChildCount(); i12++) {
-                            View childAt = wVar.getChildAt(i12);
+                    if (k3Var4 != null && (xVar = k3Var4.b) != null) {
+                        for (int i12 = 0; i12 < xVar.getChildCount(); i12++) {
+                            View childAt = xVar.getChildAt(i12);
                             if ((childAt instanceof s2) && ((s2) childAt).e != null) {
                                 ((s2) childAt).e.invalidate();
                             }

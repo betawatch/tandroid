@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Random;
 import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class f9 extends View {
     public ValueAnimator E;
@@ -52,7 +52,7 @@ public final class f9 extends View {
         this.h = f11;
         this.r = (fontMetrics.bottom - f10) + f11;
         setImportantForAccessibility(1);
-        setContentDescription(gd.M0(2131748587, null));
+        setContentDescription(gd.N0(2131748586, null));
     }
 
     public final float a() {
@@ -82,7 +82,7 @@ public final class f9 extends View {
             String str2 = this.w;
             this.y = str2 != null;
             if (str2 == null) {
-                str2 = gd.M0(2131748587, null);
+                str2 = gd.N0(2131748586, null);
             }
             setContentDescription(str2);
             requestLayout();
@@ -148,10 +148,10 @@ public final class f9 extends View {
         int i11;
         int i12;
         super.onDraw(canvas);
-        int i13 = org.telegram.ui.ActionBar.n6.D6;
-        org.telegram.ui.ActionBar.i6 i6Var = this.F.a;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(i13, i6Var);
-        int w03 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, i6Var);
+        int i13 = org.telegram.ui.ActionBar.m6.D6;
+        org.telegram.ui.ActionBar.h6 h6Var = this.F.a;
+        int w02 = org.telegram.ui.ActionBar.m6.w0(i13, h6Var);
+        int w03 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, h6Var);
         String str = this.w;
         int min = str != null ? Math.min(48, str.length()) : 48;
         int i14 = 0;

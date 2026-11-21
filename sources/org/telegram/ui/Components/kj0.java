@@ -1,6 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class kj0 extends v4.f1 {
+public abstract class kj0 extends dk0 {
+    public boolean E(ek0 ek0Var) {
+        return true;
+    }
+
+    public abstract String F(int i7);
+
+    public abstract void G(ek0 ek0Var, float f10, int[] iArr);
+
+    public float H(ek0 ek0Var) {
+        return ek0Var.computeVerticalScrollOffset() / ((e() * ek0Var.getChildAt(0).getMeasuredHeight()) - ek0Var.getMeasuredHeight());
+    }
+
+    public void J(ek0 ek0Var) {
+    }
+
+    public void I() {
+    }
+
+    public void K() {
+    }
 }

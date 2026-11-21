@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class zo0 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final class zo0 implements Runnable {
             case 0:
                 PhotoViewer photoViewer = this.b;
                 if (photoViewer.l3 && photoViewer.P3 && !org.telegram.messenger.t0.x) {
-                    org.telegram.ui.ActionBar.r0 r0Var = this.b.p0;
-                    if (r0Var == null || !r0Var.y()) {
-                        org.telegram.ui.ActionBar.r0 r0Var2 = this.b.q0;
-                        if (r0Var2 == null || !r0Var2.y()) {
+                    org.telegram.ui.ActionBar.q0 q0Var = this.b.p0;
+                    if (q0Var == null || !q0Var.y()) {
+                        org.telegram.ui.ActionBar.q0 q0Var2 = this.b.q0;
+                        if (q0Var2 == null || !q0Var2.y()) {
                             wp0 wp0Var = this.b.U1;
                             if (wp0Var == null || wp0Var.getScrollY() == 0) {
                                 yc ycVar = this.b.Y0;
@@ -209,9 +209,9 @@ public final class zo0 implements Runnable {
                                 photoViewer16.w3 = g10;
                                 photoViewer16.K3 = true;
                                 if (!photoViewer16.E2) {
-                                    org.telegram.ui.Components.se0 se0Var = photoViewer16.z2;
-                                    if (se0Var != null) {
-                                        se0Var.removeView(photoViewer16.C2);
+                                    org.telegram.ui.Components.ue0 ue0Var = photoViewer16.z2;
+                                    if (ue0Var != null) {
+                                        ue0Var.removeView(photoViewer16.C2);
                                         photoViewer16.z2.removeView(photoViewer16.D2);
                                     }
                                     photoViewer16.G2.z0(null);
@@ -223,9 +223,9 @@ public final class zo0 implements Runnable {
                                     break;
                                 } else {
                                     photoViewer16.Q8 = g10;
-                                    org.telegram.ui.Components.se0 se0Var2 = photoViewer16.z2;
-                                    if (se0Var2 != null) {
-                                        se0Var2.removeView(photoViewer16.C2);
+                                    org.telegram.ui.Components.ue0 ue0Var2 = photoViewer16.z2;
+                                    if (ue0Var2 != null) {
+                                        ue0Var2.removeView(photoViewer16.C2);
                                         photoViewer16.z2.removeView(photoViewer16.D2);
                                     }
                                     photoViewer16.Q8 = null;

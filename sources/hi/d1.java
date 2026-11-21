@@ -20,7 +20,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public abstract class d1 extends CameraView {
     public static final int[] b0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -146,7 +146,7 @@ public abstract class d1 extends CameraView {
                 tL_inputAppEvent.data = tL_jsonObject;
                 tL_inputAppEvent.peer = (z10 ? 1 : 0) | (p10 ? 2 : 0);
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(j10.t0).sendRequest(tL_help_saveAppLog, new fi.k5(4));
+                ConnectionsManager.getInstance(j10.t0).sendRequest(tL_help_saveAppLog, new fi.l5(4));
             } catch (Exception unused) {
             }
         }
@@ -163,13 +163,13 @@ public abstract class d1 extends CameraView {
     public final void onDualCameraSuccess() {
         v();
         if (this.I) {
-            w9 w9Var = (w9) this;
+            v9 v9Var = (v9) this;
             if (mp.g1().getInt("storysvddualhint", 0) < 2) {
-                org.telegram.messenger.g0.h3(new k(w9Var, 20), 340L);
+                org.telegram.messenger.g0.h3(new l(v9Var, 20), 340L);
             }
-            ta taVar = w9Var.c0;
-            taVar.G0.setValue(w9Var.isDual());
-            taVar.G0.setContentDescription(gd.M0(w9Var.isDual() ? 2131754886 : 2131754887, null));
+            sa saVar = v9Var.c0;
+            saVar.G0.setValue(v9Var.isDual());
+            saVar.G0.setContentDescription(gd.N0(v9Var.isDual() ? 2131754886 : 2131754887, null));
         }
         t(true);
     }
@@ -182,11 +182,11 @@ public abstract class d1 extends CameraView {
                 this.a = false;
                 edit.putBoolean("dual_available", false).apply();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
-                String M0 = gd.M0(2131751329, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.S = M0;
-                u1Var.U = gd.M0(2131751330, null);
-                org.telegram.messenger.f3.m(null, 2131747638, alertDialog$Builder, null);
+                String N0 = gd.N0(2131751328, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = N0;
+                t1Var.U = gd.N0(2131751329, null);
+                org.telegram.messenger.f3.m(null, 2131747637, alertDialog$Builder, null);
             }
             t(false);
             toggleDual();
@@ -608,8 +608,8 @@ public abstract class d1 extends CameraView {
                     boolean z16 = Math.max(f45, (this.U / 2.0f) + f45) > ((float) (getHeight() - org.telegram.messenger.g0.L(66.0f)));
                     if (this.G != z15) {
                         this.G = z15;
-                        ta taVar = ((w9) this).c0;
-                        taVar.p1.a(true, z15, taVar.j0);
+                        sa saVar = ((v9) this).c0;
+                        saVar.p1.a(true, z15, saVar.j0);
                     }
                     if (this.H != z16) {
                         this.H = z16;
@@ -624,8 +624,8 @@ public abstract class d1 extends CameraView {
                     this.s = false;
                     if (this.G) {
                         this.G = false;
-                        ta taVar2 = ((w9) this).c0;
-                        taVar2.p1.a(true, false, taVar2.j0);
+                        sa saVar2 = ((v9) this).c0;
+                        saVar2.p1.a(true, false, saVar2.j0);
                     }
                     if (this.H) {
                         this.H = false;
@@ -635,8 +635,8 @@ public abstract class d1 extends CameraView {
                     this.s = false;
                     if (this.G) {
                         this.G = false;
-                        ta taVar3 = ((w9) this).c0;
-                        taVar3.p1.a(true, false, taVar3.j0);
+                        sa saVar3 = ((v9) this).c0;
+                        saVar3.p1.a(true, false, saVar3.j0);
                     }
                     if (this.H) {
                         this.H = false;

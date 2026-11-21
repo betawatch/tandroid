@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,11 +39,11 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                 break;
             case 1:
                 TL_stars.TL_starGiftUnique M1 = f6Var.M1();
-                if (bi.u4.u(M1)) {
+                if (bi.y4.u(M1)) {
                     if (!f6Var.t1()) {
-                        bi.u4.q(f6Var.getContext(), f6Var.a, f6Var.J0, f6Var.k(), "STARGIFT_ONCHAIN_SALE_DISABLED", Boolean.valueOf(M1.fixed_sale));
+                        bi.y4.q(f6Var.getContext(), f6Var.a, f6Var.J0, f6Var.k(), "STARGIFT_ONCHAIN_SALE_DISABLED", Boolean.valueOf(M1.fixed_sale));
                         break;
-                    } else if (!bi.u4.m(M1)) {
+                    } else if (!bi.y4.m(M1)) {
                         f6Var.f2();
                         break;
                     } else {
@@ -58,12 +58,12 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                     if (M12 != null) {
                         if (M12.resell_amount != null) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f6Var.getContext(), f6Var.J0);
-                            String a02 = gd.a0(null, null, 2131749870, f6Var.E1());
-                            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                            u1Var.S = a02;
-                            u1Var.U = gd.M0(2131749871, null);
-                            alertDialog$Builder.k(gd.M0(2131750416, null), new s3(f6Var, M12, i11));
-                            alertDialog$Builder.h(gd.M0(2131752578, null), new ci.v(2));
+                            String a02 = gd.a0(null, null, 2131749869, f6Var.E1());
+                            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                            t1Var.S = a02;
+                            t1Var.U = gd.N0(2131749870, null);
+                            alertDialog$Builder.k(gd.N0(2131750415, null), new s3(f6Var, M12, i11));
+                            alertDialog$Builder.h(gd.N0(2131752577, null), new ci.v(2));
                             alertDialog$Builder.p();
                             break;
                         } else {

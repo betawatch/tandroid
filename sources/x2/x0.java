@@ -1,25 +1,24 @@
 package x2;
 
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.nd0;
-import tg.z1;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class x0 implements f0 {
     public final j2.g a;
-    public final z1 b;
-    public final nd0 c;
+    public final tg.o1 b;
+    public final md0 c;
     public final qb.a d;
     public final int e;
 
     public x0(j2.g gVar, f3.m mVar) {
-        z1 z1Var = new z1(mVar, 15);
-        nd0 nd0Var = new nd0(7);
+        tg.o1 o1Var = new tg.o1(mVar, 16);
+        md0 md0Var = new md0(7);
         qb.a aVar = new qb.a(4);
         this.a = gVar;
-        this.b = z1Var;
-        this.c = nd0Var;
+        this.b = o1Var;
+        this.c = md0Var;
         this.d = aVar;
         this.e = TLObject.FLAG_20;
     }

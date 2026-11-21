@@ -3,9 +3,9 @@ package li;
 import java.io.Serializable;
 import org.telegram.messenger.rr;
 import org.telegram.messenger.v10;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements v10, rr {
     public final /* synthetic */ g a;
@@ -19,6 +19,6 @@ public final /* synthetic */ class b implements v10, rr {
 
     @Override // org.telegram.messenger.v10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        g.Z(this.a, (l41) obj);
+        g.Z(this.a, (o41) obj);
     }
 }

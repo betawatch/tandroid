@@ -13,17 +13,17 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.e40;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x extends View implements c6 {
+public final class x extends View implements b6 {
     public e40 E;
     public e40 F;
     public int G;
@@ -49,7 +49,7 @@ public final class x extends View implements c6 {
         this.I = yVar;
         this.a = new ImageReceiver(null);
         this.b = new ImageReceiver(null);
-        this.c = new b9((i6) null);
+        this.c = new b9((h6) null);
         Paint paint = new Paint(1);
         this.f = paint;
         Paint paint2 = new Paint(1);
@@ -67,7 +67,7 @@ public final class x extends View implements c6 {
         w9Var2.a = org.telegram.messenger.g0.L(80.0f);
         w9Var2.b = org.telegram.messenger.g0.L(95.0f);
         w9Var2.b();
-        paint.setColor(i0.a.f(0.0f, n6.x0(null, n6.gh, false), n6.x0(null, n6.hh, false)));
+        paint.setColor(i0.a.f(0.0f, m6.x0(null, m6.gh, false), m6.x0(null, m6.hh, false)));
         paint.setAlpha(ks.n1);
         paint2.setColor(i0.a.o(-16777216, ks.L1));
     }
@@ -85,11 +85,11 @@ public final class x extends View implements c6 {
             e40VarArr[i7] = new e40(i7);
             int i10 = xVar.G;
             if (i10 == 2) {
-                e40VarArr[i10].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{n6.x0(null, n6.Zh, false), n6.x0(null, n6.bi, false), n6.x0(null, n6.ai, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                e40VarArr[i10].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{m6.x0(null, m6.Zh, false), m6.x0(null, m6.bi, false), m6.x0(null, m6.ai, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else if (i10 == 1) {
-                e40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{n6.x0(null, n6.wh, false), n6.x0(null, n6.yh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                e40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{m6.x0(null, m6.wh, false), m6.x0(null, m6.yh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else {
-                e40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{n6.x0(null, n6.Ah, false), n6.x0(null, n6.zh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                e40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{m6.x0(null, m6.Ah, false), m6.x0(null, m6.zh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             }
         }
         e40 e40Var = e40VarArr[xVar.G];
@@ -213,17 +213,17 @@ public final class x extends View implements c6 {
         imageReceiver.y0(this.w - f10, this.x - f10, L, L);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.f.setColor(i0.a.f(0.0f, n6.x0(null, n6.gh, false), n6.x0(null, n6.hh, false)));
+            this.f.setColor(i0.a.f(0.0f, m6.x0(null, m6.gh, false), m6.x0(null, m6.hh, false)));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

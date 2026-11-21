@@ -15,9 +15,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, org.telegram.ui.Cells.w5, org.telegram.ui.ActionBar.r1, org.telegram.ui.ActionBar.g1, r0.m, org.telegram.messenger.r10, org.telegram.ui.Cells.a5, org.telegram.messenger.mc, RequestTimeDelegate, org.telegram.ui.ActionBar.g2, org.telegram.ui.Components.qj0, lg.e, jg.y1 {
+public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, org.telegram.ui.Cells.w5, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.f1, r0.m, org.telegram.messenger.r10, org.telegram.ui.Cells.a5, org.telegram.messenger.mc, RequestTimeDelegate, org.telegram.ui.ActionBar.f2, org.telegram.ui.Components.sj0, lg.e, jg.y1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -40,9 +40,9 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                 i0.b I0 = org.telegram.messenger.g0.I0(l1Var, false);
                 premiumPreviewFragment.p0 = I0;
                 premiumPreviewFragment.a.setPadding(0, I0.b, 0, org.telegram.messenger.g0.L(48.0f) + premiumPreviewFragment.p0.d);
-                org.telegram.ui.Components.ck0 ck0Var = premiumPreviewFragment.a;
+                org.telegram.ui.Components.ek0 ek0Var = premiumPreviewFragment.a;
                 i0.b bVar = premiumPreviewFragment.p0;
-                org.telegram.messenger.g0.z3(ck0Var, bVar.a, 0, bVar.c, 0);
+                org.telegram.messenger.g0.z3(ek0Var, bVar.a, 0, bVar.c, 0);
                 vs0 vs0Var = premiumPreviewFragment.V;
                 i0.b bVar2 = premiumPreviewFragment.p0;
                 vs0Var.setPadding(bVar2.a, 0, bVar2.c, 0);
@@ -98,7 +98,7 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1
+    @Override // org.telegram.ui.ActionBar.f1
     public void a() {
         switch (this.a) {
             case 5:
@@ -120,11 +120,11 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
         switch (this.a) {
             case 16:
-                return ((d21) this.b).f1(i7, view);
+                return ((e21) this.b).f1(i7, view);
             default:
                 ((p81) this.b).K.c(i7, view);
                 return true;
@@ -148,12 +148,12 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         }
         if (privacyControlActivity.B0 == null) {
             SpannableString spannableString = new SpannableString("l");
-            org.telegram.ui.Components.lq lqVar = new org.telegram.ui.Components.lq(R.drawable.msg_mini_lock3, 0);
+            org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.msg_mini_lock3, 0);
             float L = org.telegram.messenger.g0.L(2.0f);
             float L2 = org.telegram.messenger.g0.L(1.0f);
-            lqVar.r = L;
-            lqVar.s = L2;
-            spannableString.setSpan(lqVar, 0, 1, 33);
+            nqVar.r = L;
+            nqVar.s = L2;
+            spannableString.setSpan(nqVar, 0, 1, 33);
             privacyControlActivity.B0 = spannableString;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -163,8 +163,8 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         int i10;
         int i11;
         int i12;
@@ -244,31 +244,31 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                     g61Var2.h(i12, new Object());
                 }
                 if (themeActivity.c != null) {
-                    org.telegram.ui.ActionBar.m6 Q0 = org.telegram.ui.ActionBar.n6.Q0("Blue");
-                    org.telegram.ui.ActionBar.m6 D0 = org.telegram.ui.ActionBar.n6.D0();
+                    org.telegram.ui.ActionBar.l6 Q0 = org.telegram.ui.ActionBar.m6.Q0("Blue");
+                    org.telegram.ui.ActionBar.l6 D0 = org.telegram.ui.ActionBar.m6.D0();
                     SparseArray sparseArray = Q0.b0;
-                    int i15 = org.telegram.ui.ActionBar.n6.n;
-                    org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) sparseArray.get(i15);
-                    if (k6Var != null) {
-                        org.telegram.ui.ActionBar.e6 e6Var = new org.telegram.ui.ActionBar.e6();
-                        e6Var.c = "d";
-                        e6Var.a = "Blue_99_wp.jpg";
-                        e6Var.b = "Blue_99_wp.jpg";
-                        k6Var.y = e6Var;
-                        Q0.v(e6Var);
+                    int i15 = org.telegram.ui.ActionBar.m6.n;
+                    org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) sparseArray.get(i15);
+                    if (j6Var != null) {
+                        org.telegram.ui.ActionBar.d6 d6Var = new org.telegram.ui.ActionBar.d6();
+                        d6Var.c = "d";
+                        d6Var.a = "Blue_99_wp.jpg";
+                        d6Var.b = "Blue_99_wp.jpg";
+                        j6Var.y = d6Var;
+                        Q0.v(d6Var);
                     }
                     if (Q0 == D0) {
                         if (Q0.Z == i15) {
-                            org.telegram.ui.ActionBar.n6.u1(true);
+                            org.telegram.ui.ActionBar.m6.u1(true);
                             break;
                         } else {
-                            org.telegram.ui.ActionBar.n6.K1(D0, themeActivity.f == 1, i15, null);
+                            org.telegram.ui.ActionBar.m6.K1(D0, themeActivity.f == 1, i15, null);
                             themeActivity.a.g(themeActivity.r0);
                             break;
                         }
                     } else {
                         Q0.u(i15);
-                        org.telegram.ui.ActionBar.n6.z1(Q0, true, false, true, false, false);
+                        org.telegram.ui.ActionBar.m6.z1(Q0, true, false, true, false, false);
                         themeActivity.c.B1(Q0, null);
                         themeActivity.c.y0(0);
                         break;
@@ -277,11 +277,11 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                 break;
             case 19:
                 x71 x71Var = ((a71) this.b).a;
-                org.telegram.ui.ActionBar.m6 m6Var = x71Var.g0;
-                org.telegram.ui.ActionBar.n6.l0(m6Var, x71Var.w, true);
-                org.telegram.ui.ActionBar.n6.p();
-                org.telegram.ui.ActionBar.n6.t1(false, false);
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, m6Var, Boolean.valueOf(x71Var.h0), null, -1);
+                org.telegram.ui.ActionBar.l6 l6Var = x71Var.g0;
+                org.telegram.ui.ActionBar.m6.l0(l6Var, x71Var.w, true);
+                org.telegram.ui.ActionBar.m6.p();
+                org.telegram.ui.ActionBar.m6.t1(false, false);
+                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, l6Var, Boolean.valueOf(x71Var.h0), null, -1);
                 x71Var.finishFragment();
                 break;
             default:
@@ -294,20 +294,20 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         switch (this.a) {
             case 0:
-                PasskeysActivity.b0((PasskeysActivity) this.b, (org.telegram.ui.Components.l41) obj, (View) obj2);
+                PasskeysActivity.b0((PasskeysActivity) this.b, (org.telegram.ui.Components.o41) obj, (View) obj2);
                 break;
             default:
                 py0 py0Var = (py0) this.b;
-                org.telegram.ui.Components.l41 l41Var = (org.telegram.ui.Components.l41) obj;
+                org.telegram.ui.Components.o41 o41Var = (org.telegram.ui.Components.o41) obj;
                 qy0 qy0Var = py0Var.w;
-                if (l41Var.a == 30) {
+                if (o41Var.a == 30) {
                     TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = py0Var.b;
                     if (tL_channels_sponsoredMessageReportResultChooseOption == null) {
                         TLRPC.TL_reportResultChooseOption tL_reportResultChooseOption = py0Var.c;
                         if (tL_reportResultChooseOption == null) {
                             TLRPC.TL_reportResultAddComment tL_reportResultAddComment = py0Var.d;
                             if (tL_reportResultAddComment == null) {
-                                qy0.J0(qy0Var, l41Var.m, null, null);
+                                qy0.J0(qy0Var, o41Var.m, null, null);
                                 break;
                             } else {
                                 byte[] bArr = tL_reportResultAddComment.option;
@@ -317,14 +317,14 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                                 }
                             }
                         } else {
-                            TLRPC.TL_messageReportOption tL_messageReportOption = tL_reportResultChooseOption.options.get(l41Var.d);
+                            TLRPC.TL_messageReportOption tL_messageReportOption = tL_reportResultChooseOption.options.get(o41Var.d);
                             if (tL_messageReportOption != null) {
                                 qy0.J0(qy0Var, tL_messageReportOption.text, tL_messageReportOption.option, null);
                                 break;
                             }
                         }
                     } else {
-                        TLRPC.TL_sponsoredMessageReportOption tL_sponsoredMessageReportOption = tL_channels_sponsoredMessageReportResultChooseOption.options.get(l41Var.d);
+                        TLRPC.TL_sponsoredMessageReportOption tL_sponsoredMessageReportOption = tL_channels_sponsoredMessageReportResultChooseOption.options.get(o41Var.d);
                         if (tL_sponsoredMessageReportOption != null) {
                             qy0.J0(qy0Var, tL_sponsoredMessageReportOption.text, tL_sponsoredMessageReportOption.option, null);
                             break;
@@ -337,10 +337,10 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
 
     @Override // org.telegram.messenger.mc
     public void q(Exception exc) {
-        bi.c5 c5Var = (bi.c5) this.b;
+        bi.g5 g5Var = (bi.g5) this.b;
         RectF rectF = ProfileActivity.Z6;
         org.telegram.messenger.a8.e("mlkit: failed to detect language in selection", exc);
-        c5Var.run();
+        g5Var.run();
     }
 
     @Override // jg.y1

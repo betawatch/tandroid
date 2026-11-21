@@ -14,11 +14,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.lq;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.nq;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class kb extends LinearLayout {
     public static HashMap F;
@@ -30,25 +30,25 @@ public final class kb extends LinearLayout {
     public int e;
     public final TextView f;
     public final LinearLayout.LayoutParams h;
-    public final k80 n;
+    public final m80 n;
     public final TextView r;
     public final TextView s;
     public final SpannableString w;
     public final SpannableString x;
     public boolean y;
 
-    public kb(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public kb(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.e = 1;
         this.a = i7;
         setOrientation(0);
-        d1 d1Var = new d1(this, context, i6Var);
+        d1 d1Var = new d1(this, context, h6Var);
         addView(d1Var, c8.ma.p(72, -1, 0.0f, ks.A1));
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.d = q9Var;
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(46.0f));
         d1Var.addView(q9Var, c8.ma.d(46, 46.0f, 16, 13.0f, 0.0f, 13.0f, 0.0f));
-        this.b = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.b = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         org.telegram.ui.Components.q9 q9Var2 = new org.telegram.ui.Components.q9(context);
         this.c = q9Var2;
         q9Var2.setRoundRadius(org.telegram.messenger.g0.L(46.0f));
@@ -60,8 +60,8 @@ public final class kb extends LinearLayout {
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTypeface(org.telegram.messenger.g0.o());
-        int i10 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.U(textView, i10, i6Var);
+        int i10 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(textView, i10, h6Var);
         textView.setTextSize(1, 16.0f);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
@@ -69,16 +69,16 @@ public final class kb extends LinearLayout {
         LinearLayout.LayoutParams k10 = c8.ma.k(0.0f, 0.0f, 0.0f, 4.33f, -1, -2);
         this.h = k10;
         linearLayout.addView(textView, k10);
-        k80 k80Var = new k80(context, null);
-        this.n = k80Var;
-        org.telegram.ui.ActionBar.u6.U(k80Var, i10, i6Var);
-        k80Var.setTextSize(1, 13.0f);
-        k80Var.setEllipsize(truncateAt);
-        k80Var.setSingleLine(true);
-        linearLayout.addView(k80Var, c8.ma.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
+        m80 m80Var = new m80(context, null);
+        this.n = m80Var;
+        org.telegram.ui.ActionBar.t6.U(m80Var, i10, h6Var);
+        m80Var.setTextSize(1, 13.0f);
+        m80Var.setEllipsize(truncateAt);
+        m80Var.setSingleLine(true);
+        linearLayout.addView(m80Var, c8.ma.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
         TextView textView2 = new TextView(context);
         this.r = textView2;
-        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.z6, i6Var);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, h6Var);
         textView2.setTextSize(1, 14.0f);
         textView2.setEllipsize(truncateAt);
         textView2.setSingleLine(true);
@@ -96,26 +96,26 @@ public final class kb extends LinearLayout {
         spannableString.setSpan(new ImageSpan(g10), 0, spannableString.length(), 33);
         SpannableString spannableString2 = new SpannableString("TON");
         this.x = spannableString2;
-        lq lqVar = new lq(0, i5.c.g(context, R.drawable.mini_gram_72));
-        lqVar.d = false;
-        lqVar.c(org.telegram.messenger.g0.L(18.0f));
-        lqVar.s = org.telegram.messenger.g0.L(0.5f);
-        spannableString2.setSpan(lqVar, 0, spannableString2.length(), 33);
+        nq nqVar = new nq(0, i5.c.g(context, R.drawable.mini_gram_72));
+        nqVar.d = false;
+        nqVar.c(org.telegram.messenger.g0.L(18.0f));
+        nqVar.s = org.telegram.messenger.g0.L(0.5f);
+        spannableString2.setSpan(nqVar, 0, spannableString2.length(), 33);
     }
 
-    public static mq a(int i7, String str) {
+    public static oq a(int i7, String str) {
         if (i7 != 44) {
             return org.telegram.ui.Cells.t6.a(i7, str);
         }
         if (F == null) {
             F = new HashMap();
         }
-        mq mqVar = (mq) F.get(str);
-        if (mqVar != null) {
-            return mqVar;
+        oq oqVar = (oq) F.get(str);
+        if (oqVar != null) {
+            return oqVar;
         }
         HashMap hashMap = F;
-        mq a10 = org.telegram.ui.Cells.t6.a(44, str);
+        oq a10 = org.telegram.ui.Cells.t6.a(44, str);
         hashMap.put(str, a10);
         return a10;
     }
@@ -124,7 +124,7 @@ public final class kb extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.E) {
-            canvas.drawRect(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.n6.k0);
+            canvas.drawRect(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

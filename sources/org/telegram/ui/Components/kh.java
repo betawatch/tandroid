@@ -1,46 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kh implements org.telegram.messenger.u10 {
+public final /* synthetic */ class kh implements eh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ kh(KeyEvent.Callback callback, int i7) {
+    public /* synthetic */ kh(Object obj, int i7) {
         this.a = i7;
-        this.b = callback;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // eh.a
+    public final void c(dh.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // eh.a
+    public final void d(Canvas canvas, RectF rectF) {
+        Canvas canvas2;
+        RectF rectF2;
+        mi miVar;
         switch (this.a) {
             case 0:
-                si siVar = (si) this.b;
-                CharSequence charSequence = (CharSequence) obj;
-                vh vhVar = siVar.C2;
-                vhVar.setText(charSequence);
-                vhVar.w(charSequence.length(), charSequence.length());
-                siVar.o1();
+                ui uiVar = (ui) this.b;
+                int i7 = 0;
+                while (i7 < 2) {
+                    mi miVar2 = i7 == 0 ? uiVar.w2 : uiVar.x2;
+                    if (miVar2 == null || miVar2.c == null || miVar2.getVisibility() != 0) {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                    } else {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                        ih.d.b(miVar2.c, canvas2, rectF2, miVar2.d, uiVar.b, (int) (((i7 == 0 && (miVar = uiVar.x2) != null && miVar.getVisibility() == 0) ? (1.0f - uiVar.x2.getAlpha()) * miVar2.getAlpha() : miVar2.getAlpha()) * 255.0f));
+                    }
+                    i7++;
+                    canvas = canvas2;
+                    rectF = rectF2;
+                }
                 break;
             case 1:
-                si siVar2 = (si) this.b;
-                CharSequence charSequence2 = (CharSequence) obj;
-                xh xhVar = siVar2.N2;
-                xhVar.setText(charSequence2);
-                xhVar.w(charSequence2.length(), charSequence2.length());
-                siVar2.o1();
+                ty tyVar = (ty) this.b;
+                gx gxVar = tyVar.Q;
+                ih.d.a(gxVar, canvas, rectF, gxVar, tyVar);
+                yv yvVar = tyVar.i0;
+                ih.d.a(yvVar, canvas, rectF, yvVar, tyVar);
+                dw dwVar = tyVar.E0;
+                ih.d.a(dwVar, canvas, rectF, dwVar, tyVar);
                 break;
             default:
-                yc ycVar = (yc) this.b;
-                hi.g gVar = ycVar.f;
-                gVar.setText((CharSequence) obj);
-                gVar.d();
-                gVar.k(true);
-                hi.e eVar = ycVar.d0;
-                org.telegram.messenger.g0.r(eVar);
-                eVar.run();
+                ap0 ap0Var = (ap0) this.b;
+                co0 co0Var = ap0Var.B1;
+                ih.d.a(co0Var, canvas, rectF, co0Var, ap0Var.b);
                 break;
         }
     }

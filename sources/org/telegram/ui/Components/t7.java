@@ -3,15 +3,15 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t7 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g8 b;
+    public final /* synthetic */ f8 b;
 
-    public /* synthetic */ t7(g8 g8Var, int i7) {
+    public /* synthetic */ t7(f8 f8Var, int i7) {
         this.a = i7;
-        this.b = g8Var;
+        this.b = f8Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -33,10 +33,10 @@ public final class t7 extends AnimatorListenerAdapter {
                 this.b.g2 = false;
                 break;
             case 1:
-                g8 g8Var = this.b;
-                g8Var.c2.setVisibility(4);
-                g8Var.d2.setImageBitmap(null);
-                g8Var.g2 = false;
+                f8 f8Var = this.b;
+                f8Var.c2.setVisibility(4);
+                f8Var.d2.setImageBitmap(null);
+                f8Var.g2 = false;
                 break;
         }
     }

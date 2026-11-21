@@ -1,45 +1,101 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ng implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pg b;
-    public final /* synthetic */ hi.m3 c;
+public interface ng {
+    void A(boolean z10);
 
-    public /* synthetic */ ng(pg pgVar, hi.m3 m3Var, int i7) {
-        this.a = i7;
-        this.b = pgVar;
-        this.c = m3Var;
-    }
+    void B2();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                pg pgVar = this.b;
-                hi.m3 m3Var = this.c;
-                pgVar.removeView(m3Var);
-                if (pgVar.b == m3Var) {
-                    pgVar.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.removeView(this.c);
-                break;
-            case 2:
-                this.b.removeView(this.c);
-                break;
-            default:
-                pg pgVar2 = this.b;
-                hi.m3 m3Var2 = this.c;
-                pgVar2.removeView(m3Var2);
-                if (pgVar2.a == m3Var2) {
-                    pgVar2.a = null;
-                    break;
-                }
-                break;
-        }
-    }
+    void D();
+
+    boolean E0();
+
+    void G();
+
+    void G0();
+
+    void G1();
+
+    void H(CharSequence charSequence, boolean z10, int i7, int i10, long j3);
+
+    TLRPC.TL_channels_sendAsPeers J();
+
+    void J0();
+
+    void Q(float f10, int i7);
+
+    void Q0();
+
+    void V();
+
+    void a0(boolean z10);
+
+    void a1(int i7);
+
+    void b0();
+
+    int b1();
+
+    TL_stories.StoryItem c1();
+
+    void d();
+
+    boolean e1(long j3);
+
+    void g();
+
+    boolean g1();
+
+    void i2();
+
+    void j1(CharSequence charSequence, boolean z10, boolean z11);
+
+    boolean k();
+
+    void k2(int i7);
+
+    void l1();
+
+    org.telegram.ui.rm m0();
+
+    boolean m1();
+
+    void m2();
+
+    int n();
+
+    void n1();
+
+    void n2(boolean z10);
+
+    void o1();
+
+    void o2(int i7, int i10, int i11, long j3, long j10, boolean z10);
+
+    void q1();
+
+    void r2();
+
+    void s0();
+
+    void s1(View view, CharSequence charSequence, boolean z10);
+
+    TLRPC.Peer t();
+
+    void u();
+
+    void u1(CharSequence charSequence);
+
+    boolean v1();
+
+    void w1();
+
+    void w2();
+
+    void x(float f10);
 }

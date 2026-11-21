@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class j extends org.telegram.ui.ActionBar.m {
     public final /* synthetic */ int d = 1;
@@ -26,9 +26,9 @@ public final class j extends org.telegram.ui.ActionBar.m {
             default:
                 super.f(jVar);
                 float totalVisibility = getTotalVisibility();
-                bi.p2 p2Var = ((org.telegram.ui.Components.v7) this.e).G0;
-                if (p2Var != null) {
-                    p2Var.setTranslationY(totalVisibility * org.telegram.messenger.g0.L(-11.0f));
+                bi.t2 t2Var = ((org.telegram.ui.Components.v7) this.e).G0;
+                if (t2Var != null) {
+                    t2Var.setTranslationY(totalVisibility * org.telegram.messenger.g0.L(-11.0f));
                     break;
                 }
                 break;
@@ -36,8 +36,8 @@ public final class j extends org.telegram.ui.ActionBar.m {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(org.telegram.ui.Components.v7 v7Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, ab.q qVar) {
-        super(context, i6Var, qVar);
+    public j(org.telegram.ui.Components.v7 v7Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, ab.q qVar) {
+        super(context, h6Var, qVar);
         this.e = v7Var;
     }
 }

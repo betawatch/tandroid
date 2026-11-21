@@ -16,7 +16,7 @@ import ob.c;
 import org.telegram.messenger.gd;
 import org.telegram.ui.Wallet.e1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
             default:
                 e1 e1Var = (e1) obj;
                 if (e1Var.f() && (alertDialog = e1Var.i) != null) {
-                    alertDialog.setMessage(gd.M0(2131742878, null));
+                    alertDialog.setMessage(gd.N0(2131742872, null));
                     break;
                 }
                 break;

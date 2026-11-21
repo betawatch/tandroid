@@ -1,219 +1,162 @@
 package oi;
 
-import android.animation.ValueAnimator;
-import android.view.VelocityTracker;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import androidx.recyclerview.widget.RecyclerView;
+import c8.fa;
+import c8.ma;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import java.util.HashSet;
+import org.telegram.messenger.bz;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o4 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r4 b;
+public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
+    public z2 E;
+    public boolean F;
+    public final int[] G;
+    public final h6 n;
+    public final Paint r;
+    public final HorizontalScrollView s;
+    public final ImageView w;
+    public Bitmap x;
+    public int y;
 
-    public /* synthetic */ o4(r4 r4Var, int i7) {
-        this.a = i7;
-        this.b = r4Var;
+    public o4(Context context, h6 h6Var) {
+        super(context);
+        this.r = new Paint(1);
+        this.y = 0;
+        this.G = new int[4];
+        this.n = h6Var;
+        setWillNotDraw(false);
+        f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(6.0f));
+        ImageView imageView = new ImageView(context);
+        this.w = imageView;
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.addView(imageView, new FrameLayout.LayoutParams(-2, -2, 17));
+        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
+        this.s = horizontalScrollView;
+        horizontalScrollView.setHorizontalScrollBarEnabled(false);
+        horizontalScrollView.setClipToPadding(false);
+        horizontalScrollView.setPadding(0, 0, 0, 0);
+        horizontalScrollView.setFillViewport(true);
+        horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
+        addView(horizontalScrollView, ma.e(-1, -2, 16));
+        updateColors();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        a aVar;
-        a aVar2;
-        TL_iv.pageBlockSlideshow pageblockslideshow;
-        int i7 = this.a;
-        final int i10 = 1;
-        final r4 r4Var = this.b;
-        final int i11 = 0;
-        switch (i7) {
-            case 0:
-                ArrayList arrayList = r4Var.F;
-                int indexOf = arrayList.indexOf(view);
-                if (r4Var.O != null && r4Var.a != null) {
-                    List n10 = r4Var.n();
-                    if (indexOf >= 0 && indexOf < n10.size() && indexOf < arrayList.size()) {
-                        final r rVar = (r) n10.get(indexOf);
-                        y60 G0 = r4Var.O.a.p3.G0((View) arrayList.get(indexOf));
-                        boolean z10 = rVar.n;
-                        G0.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, gd.M0(z10 ? 2131751419 : 2131751143, null), new Runnable() { // from class: oi.p4
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                a aVar3;
-                                a aVar4;
-                                switch (i11) {
-                                    case 0:
-                                        r4 r4Var2 = r4Var;
-                                        l3 l3Var = r4Var2.O;
-                                        if (l3Var != null && (aVar3 = r4Var2.a) != null) {
-                                            s3 s3Var = l3Var.a;
-                                            s3Var.getClass();
-                                            r rVar2 = rVar;
-                                            if (rVar2 != null) {
-                                                e2 e2Var = s3Var.R3;
-                                                if (e2Var != null) {
-                                                    e2Var.d();
-                                                }
-                                                rVar2.n = !rVar2.n;
-                                                TL_iv.PageBlock Q3 = s3.Q3(aVar3, rVar2);
-                                                if (Q3 instanceof TL_iv.pageBlockPhoto) {
-                                                    ((TL_iv.pageBlockPhoto) Q3).spoiler = rVar2.n;
-                                                } else if (Q3 instanceof TL_iv.pageBlockVideo) {
-                                                    ((TL_iv.pageBlockVideo) Q3).spoiler = rVar2.n;
-                                                }
-                                                s3Var.q4(aVar3);
-                                                e2 e2Var2 = s3Var.R3;
-                                                if (e2Var2 != null) {
-                                                    e2Var2.h();
-                                                }
-                                                s3Var.p3.onContentChanged();
-                                                break;
-                                            }
-                                        }
-                                        break;
-                                    default:
-                                        r4 r4Var3 = r4Var;
-                                        l3 l3Var2 = r4Var3.O;
-                                        if (l3Var2 != null && (aVar4 = r4Var3.a) != null) {
-                                            s3.R1(aVar4, rVar, l3Var2.a);
-                                            break;
-                                        }
-                                        break;
-                                }
-                            }
-                        }, false);
-                        G0.c(R.drawable.msg_delete, gd.M0(2131751587, null), new Runnable() { // from class: oi.p4
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                a aVar3;
-                                a aVar4;
-                                switch (i10) {
-                                    case 0:
-                                        r4 r4Var2 = r4Var;
-                                        l3 l3Var = r4Var2.O;
-                                        if (l3Var != null && (aVar3 = r4Var2.a) != null) {
-                                            s3 s3Var = l3Var.a;
-                                            s3Var.getClass();
-                                            r rVar2 = rVar;
-                                            if (rVar2 != null) {
-                                                e2 e2Var = s3Var.R3;
-                                                if (e2Var != null) {
-                                                    e2Var.d();
-                                                }
-                                                rVar2.n = !rVar2.n;
-                                                TL_iv.PageBlock Q3 = s3.Q3(aVar3, rVar2);
-                                                if (Q3 instanceof TL_iv.pageBlockPhoto) {
-                                                    ((TL_iv.pageBlockPhoto) Q3).spoiler = rVar2.n;
-                                                } else if (Q3 instanceof TL_iv.pageBlockVideo) {
-                                                    ((TL_iv.pageBlockVideo) Q3).spoiler = rVar2.n;
-                                                }
-                                                s3Var.q4(aVar3);
-                                                e2 e2Var2 = s3Var.R3;
-                                                if (e2Var2 != null) {
-                                                    e2Var2.h();
-                                                }
-                                                s3Var.p3.onContentChanged();
-                                                break;
-                                            }
-                                        }
-                                        break;
-                                    default:
-                                        r4 r4Var3 = r4Var;
-                                        l3 l3Var2 = r4Var3.O;
-                                        if (l3Var2 != null && (aVar4 = r4Var3.a) != null) {
-                                            s3.R1(aVar4, rVar, l3Var2.a);
-                                            break;
-                                        }
-                                        break;
-                                }
-                            }
-                        }, true);
-                        G0.b0(0.0f, -org.telegram.messenger.g0.L(38.0f));
-                        if (r4Var.I) {
-                            G0.u = false;
-                            G0.v = true;
-                            G0.s = 0;
-                        }
-                        G0.a0();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                l3 l3Var = r4Var.O;
-                if (l3Var != null && (aVar = r4Var.a) != null) {
-                    s3 s3Var = l3Var.a;
-                    s3Var.j4 = aVar;
-                    s3Var.p3.D(0);
-                    break;
-                }
-                break;
-            default:
-                l3 l3Var2 = r4Var.O;
-                if (l3Var2 != null && (aVar2 = r4Var.a) != null) {
-                    s3 s3Var2 = l3Var2.a;
-                    s3Var2.getClass();
-                    if (s3.E3(aVar2.b)) {
-                        e2 e2Var = s3Var2.R3;
-                        if (e2Var != null) {
-                            e2Var.d();
-                        }
-                        ArrayList<TL_iv.PageBlock> j3 = s3.j3(aVar2.b);
-                        TL_iv.PageBlock pageBlock = aVar2.b;
-                        TL_iv.PageCaption pageCaption = pageBlock.caption;
-                        if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
-                            TL_iv.pageBlockCollage pageblockcollage = new TL_iv.pageBlockCollage();
-                            if (j3 == null) {
-                                j3 = new ArrayList<>();
-                            }
-                            pageblockcollage.items = j3;
-                            pageblockcollage.caption = pageCaption;
-                            pageblockslideshow = pageblockcollage;
-                        } else {
-                            TL_iv.pageBlockSlideshow pageblockslideshow2 = new TL_iv.pageBlockSlideshow();
-                            if (j3 == null) {
-                                j3 = new ArrayList<>();
-                            }
-                            pageblockslideshow2.items = j3;
-                            pageblockslideshow2.caption = pageCaption;
-                            pageblockslideshow = pageblockslideshow2;
-                        }
-                        aVar2.b = pageblockslideshow;
-                        e2 e2Var2 = s3Var2.R3;
-                        if (e2Var2 != null) {
-                            e2Var2.h();
-                        }
-                        View C1 = s3Var2.C1(aVar2);
-                        if (C1 instanceof r4) {
-                            r4 r4Var2 = (r4) C1;
-                            ValueAnimator valueAnimator = r4Var2.j0;
-                            if (valueAnimator != null) {
-                                valueAnimator.cancel();
-                                r4Var2.j0 = null;
-                            }
-                            if (r4Var2.getParent() != null) {
-                                r4Var2.getParent().requestDisallowInterceptTouchEvent(false);
-                            }
-                            VelocityTracker velocityTracker = r4Var2.i0;
-                            if (velocityTracker != null) {
-                                velocityTracker.recycle();
-                                r4Var2.i0 = null;
-                            }
-                            r4Var2.a0 = 0;
-                            r4Var2.b0 = 0.0f;
-                            r4Var2.q(true);
-                            r4Var2.requestLayout();
-                            r4Var2.invalidate();
-                            break;
-                        }
-                    }
-                }
-                break;
+    private String getSource() {
+        a aVar = this.a;
+        if (aVar == null) {
+            return null;
         }
+        TL_iv.PageBlock pageBlock = aVar.b;
+        if (pageBlock instanceof TL_iv.pageBlockMath) {
+            return ((TL_iv.pageBlockMath) pageBlock).source;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(m6.lg));
+        hashSet.add(Integer.valueOf(m6.G6));
+    }
+
+    public final void g(a aVar, z2 z2Var) {
+        p a10;
+        this.a = aVar;
+        this.E = z2Var;
+        c(aVar);
+        this.x = null;
+        this.s.scrollTo(0, 0);
+        String source = getSource();
+        if (!TextUtils.isEmpty(source) && (a10 = p.a(source, org.telegram.messenger.g0.L(bz.W0 + 4), false)) != null) {
+            this.x = a10.a;
+        }
+        this.w.setImageBitmap(this.x);
+        invalidate();
+    }
+
+    public a getRow() {
+        return this.a;
+    }
+
+    public final void h(int[] iArr) {
+        int paddingTop = getPaddingTop();
+        int height = getHeight() - getPaddingBottom();
+        if (this.x != null && this.w.getWidth() > this.s.getWidth()) {
+            iArr[0] = getPaddingLeft();
+            iArr[1] = paddingTop;
+            iArr[2] = getWidth() - getPaddingRight();
+            iArr[3] = height;
+            return;
+        }
+        Bitmap bitmap = this.x;
+        int width = bitmap != null ? bitmap.getWidth() : Math.max(1, getWidth() / 2);
+        int width2 = (getWidth() - width) / 2;
+        iArr[0] = width2 - org.telegram.messenger.g0.L(4.0f);
+        iArr[1] = paddingTop;
+        iArr[2] = org.telegram.messenger.g0.L(4.0f) + width2 + width;
+        iArr[3] = height;
+    }
+
+    @Override // org.telegram.ui.Cells.i9
+    public final void k(ArrayList arrayList) {
+        int[] iArr = this.G;
+        h(iArr);
+        arrayList.add(fa.a(iArr[0], iArr[1], iArr[2], iArr[3]));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        z2 z2Var;
+        j9 textSelectionHelper;
+        if (this.y != m6.w0(m6.G6, this.n)) {
+            updateColors();
+        }
+        if (this.x == null || (z2Var = this.E) == null || (textSelectionHelper = z2Var.a.getTextSelectionHelper()) == null || !textSelectionHelper.x() || !(getParent() instanceof RecyclerView)) {
+            return;
+        }
+        ((RecyclerView) getParent()).getClass();
+        int R = RecyclerView.R(this);
+        if (R >= 0 && R >= textSelectionHelper.p0 && R <= textSelectionHelper.s0) {
+            h(this.G);
+            canvas.drawRoundRect(r0[0], r0[1], r0[2], r0[3], org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), this.r);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int i7 = m6.lg;
+        h6 h6Var = this.n;
+        this.r.setColor(m6.w0(i7, h6Var));
+        int w02 = m6.w0(m6.G6, h6Var);
+        if (!this.F || w02 != this.y) {
+            this.F = true;
+            this.y = w02;
+            this.w.setColorFilter(new PorterDuffColorFilter(this.y, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
     }
 }

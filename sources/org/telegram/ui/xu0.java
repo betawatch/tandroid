@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class xu0 extends v4.u0 {
     public final /* synthetic */ int a;
@@ -35,11 +35,11 @@ public final class xu0 extends v4.u0 {
                 if (i7 == 0 && !profileActivity.G1 && (m10 = profileActivity.c.m(0)) != null) {
                     ProfileActivity.R0(profileActivity, m10, 0.0f);
                 }
-                org.telegram.ui.ActionBar.h5 h5Var = profileActivity.U0;
-                if (h5Var != null) {
+                org.telegram.ui.ActionBar.g5 g5Var = profileActivity.U0;
+                if (g5Var != null) {
                     boolean z10 = i7 != 0;
                     profileActivity.z1 = z10;
-                    h5Var.setEnabled((z10 || profileActivity.q2) ? false : true);
+                    g5Var.setEnabled((z10 || profileActivity.q2) ? false : true);
                 }
                 vv0 vv0Var = profileActivity.O;
                 boolean z11 = profileActivity.a.J1;
@@ -53,9 +53,9 @@ public final class xu0 extends v4.u0 {
         switch (this.a) {
             case 1:
                 ProfileActivity profileActivity = this.b;
-                hi.m3 m3Var = profileActivity.X;
-                if (m3Var != null) {
-                    m3Var.f(true);
+                hi.l3 l3Var = profileActivity.X;
+                if (l3Var != null) {
+                    l3Var.f(true);
                 }
                 profileActivity.O3();
                 if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.y4 - 8) {

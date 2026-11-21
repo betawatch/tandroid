@@ -5,7 +5,7 @@ import fi.f7;
 import org.json.JSONObject;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class b0 extends cx {
     public final /* synthetic */ boolean[] G4;
@@ -20,7 +20,7 @@ public final class b0 extends cx {
         this.H4 = f7Var;
     }
 
-    @Override // org.telegram.ui.cx, org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.cx, org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         JSONObject jSONObject;
         super.onFragmentDestroy();

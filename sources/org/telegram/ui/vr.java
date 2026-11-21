@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class vr extends jg.e {
     public final /* synthetic */ ContactsActivity P;
@@ -18,7 +18,7 @@ public final class vr extends jg.e {
     /* JADX WARN: Removed duplicated region for block: B:32:0x005f  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
-    @Override // org.telegram.ui.Components.xj0
+    @Override // org.telegram.ui.Components.zj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -26,7 +26,7 @@ public final class vr extends jg.e {
         int size;
         boolean z10;
         boolean z11;
-        org.telegram.ui.ActionBar.h5 h5Var;
+        org.telegram.ui.ActionBar.g5 g5Var;
         boolean z12 = false;
         this.J = false;
         int i7 = this.G;
@@ -56,13 +56,13 @@ public final class vr extends jg.e {
             }
             ContactsActivity contactsActivity = this.P;
             ContactsActivity.g0(contactsActivity);
-            h5Var = contactsActivity.n;
-            if (h5Var != null) {
+            g5Var = contactsActivity.n;
+            if (g5Var != null) {
                 vr vrVar = contactsActivity.b;
                 if (vrVar != null && !vrVar.J) {
                     z12 = true;
                 }
-                h5Var.Z(z12, true);
+                g5Var.Z(z12, true);
             }
             contactsActivity.k0();
             return i12;
@@ -83,19 +83,19 @@ public final class vr extends jg.e {
         }
         ContactsActivity contactsActivity2 = this.P;
         ContactsActivity.g0(contactsActivity2);
-        h5Var = contactsActivity2.n;
-        if (h5Var != null) {
+        g5Var = contactsActivity2.n;
+        if (g5Var != null) {
         }
         contactsActivity2.k0();
         return i12;
     }
 
-    @Override // org.telegram.ui.Components.xj0, v4.i0
+    @Override // org.telegram.ui.Components.zj0, v4.i0
     public final void f() {
         X(false);
         ContactsActivity contactsActivity = this.P;
-        org.telegram.ui.Components.ck0 ck0Var = contactsActivity.d;
-        if (ck0Var == null || ck0Var.getAdapter() != this) {
+        org.telegram.ui.Components.ek0 ek0Var = contactsActivity.d;
+        if (ek0Var == null || ek0Var.getAdapter() != this) {
             return;
         }
         int b10 = b();

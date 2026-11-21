@@ -6,19 +6,19 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class py0 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public final class py0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int a;
     public TLRPC.TL_channels_sponsoredMessageReportResultChooseOption b;
     public TLRPC.TL_reportResultChooseOption c;
     public TLRPC.TL_reportResultAddComment d;
     public final FrameLayout e;
-    public final org.telegram.ui.Components.e51 f;
+    public final org.telegram.ui.Components.h51 f;
     public final di.n4 h;
     public ny0 n;
     public FrameLayout r;
-    public hi.d s;
+    public hi.e s;
     public final /* synthetic */ qy0 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -36,29 +36,29 @@ public final class py0 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.h = n4Var;
         n4Var.e = new my0(this, 0);
         if (qy0Var.p1) {
-            textView.setText(org.telegram.messenger.gd.M0(2131746039, null));
+            textView.setText(org.telegram.messenger.gd.N0(2131746038, null));
         } else if (qy0Var.q1) {
-            textView.setText(org.telegram.messenger.gd.M0(2131746000, null));
+            textView.setText(org.telegram.messenger.gd.N0(2131745999, null));
         } else {
-            textView.setText(org.telegram.messenger.gd.M0(2131746048, null));
+            textView.setText(org.telegram.messenger.gd.N0(2131746047, null));
         }
-        ((org.telegram.ui.ActionBar.y1) n4Var.d).a(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, qy0Var.J0));
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, n4Var, qy0Var.J0);
+        ((org.telegram.ui.ActionBar.x1) n4Var.d).a(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, qy0Var.J0));
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.h5, n4Var, qy0Var.J0);
         addView(n4Var, c8.ma.e(-1, -2, 55));
-        org.telegram.ui.Components.e51 e51Var = new org.telegram.ui.Components.e51(context, qy0Var.a, 0, true, new a5(this, 20), new qi0(this, 14), null, qy0Var.J0);
-        this.f = e51Var;
-        e51Var.setClipToPadding(false);
-        e51Var.f3.k1(true);
-        e51Var.setOnScrollListener(new g3(this, 28));
-        frameLayout.addView(e51Var, c8.ma.c(-1.0f, -1));
+        org.telegram.ui.Components.h51 h51Var = new org.telegram.ui.Components.h51(context, qy0Var.a, 0, true, new a5(this, 20), new qi0(this, 14), null, qy0Var.J0);
+        this.f = h51Var;
+        h51Var.setClipToPadding(false);
+        h51Var.f3.k1(true);
+        h51Var.setOnScrollListener(new g3(this, 28));
+        frameLayout.addView(h51Var, c8.ma.c(-1.0f, -1));
     }
 
     public final void a(int i7) {
         this.a = i7;
         this.h.b(i7 != 0);
-        org.telegram.ui.Components.e51 e51Var = this.f;
-        if (e51Var != null) {
-            e51Var.g3.O(true);
+        org.telegram.ui.Components.h51 h51Var = this.f;
+        if (h51Var != null) {
+            h51Var.g3.O(true);
         }
     }
 
@@ -72,24 +72,24 @@ public final class py0 extends FrameLayout implements org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        org.telegram.ui.ActionBar.y1 y1Var;
+        org.telegram.ui.ActionBar.x1 x1Var;
         try {
             di.n4 n4Var = this.h;
-            if (n4Var == null || (y1Var = (org.telegram.ui.ActionBar.y1) n4Var.d) == null) {
+            if (n4Var == null || (x1Var = (org.telegram.ui.ActionBar.x1) n4Var.d) == null) {
                 return;
             }
-            int i7 = org.telegram.ui.ActionBar.n6.G6;
+            int i7 = org.telegram.ui.ActionBar.m6.G6;
             qy0 qy0Var = this.w;
             int i10 = qy0.w1;
-            y1Var.a(org.telegram.ui.ActionBar.n6.w0(i7, qy0Var.J0));
+            x1Var.a(org.telegram.ui.ActionBar.m6.w0(i7, qy0Var.J0));
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

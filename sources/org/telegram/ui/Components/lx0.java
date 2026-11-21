@@ -1,29 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.util.Pair;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class lx0 extends ArrayList {
-    public final Class a;
-    public final Class b;
+public final class lx0 extends px0 {
+    public int d;
 
-    public lx0(Class cls, Class cls2) {
-        this.a = cls;
-        this.b = cls2;
+    @Override // org.telegram.ui.Components.px0
+    public final int a(yx0 yx0Var, rx0 rx0Var, kx0 kx0Var, int i7, boolean z10) {
+        return Math.max(0, this.a - kx0Var.a(rx0Var, i7));
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final h6.m f() {
-        int size = size();
-        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
-        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
-        for (int i7 = 0; i7 < size; i7++) {
-            objArr[i7] = ((Pair) get(i7)).first;
-            objArr2[i7] = ((Pair) get(i7)).second;
-        }
-        return new h6.m(objArr, objArr2);
+    @Override // org.telegram.ui.Components.px0
+    public final void b(int i7, int i10) {
+        super.b(i7, i10);
+        this.d = Math.max(this.d, i7 + i10);
+    }
+
+    @Override // org.telegram.ui.Components.px0
+    public final void c() {
+        super.c();
+        this.d = TLObject.FLAG_31;
+    }
+
+    @Override // org.telegram.ui.Components.px0
+    public final int d(boolean z10) {
+        return Math.max(super.d(z10), this.d);
     }
 }

@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.e6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -57,9 +57,9 @@ public final /* synthetic */ class d implements ToIntFunction {
             case 16:
                 return ((TLRPC.Message) obj).id;
             case 17:
-                return ((d6) obj).d;
+                return ((e6) obj).d;
             case 18:
-                return ((d6) obj).e;
+                return ((e6) obj).e;
             case 19:
                 ad.c cVar = (ad.c) obj;
                 return cVar.d - cVar.b;

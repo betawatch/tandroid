@@ -5,9 +5,9 @@ import android.media.MediaRoute2Info;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
-import tg.e2;
+import tg.f2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f1 implements g9.k, sg.y, t3.g, OnFailureListener, u9.e, ua.a {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class f1 implements g9.k, sg.y, t3.g, OnFailureList
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        int i7 = e2.s0;
+        int i7 = f2.s0;
     }
 
     @Override // ua.a

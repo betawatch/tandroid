@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class n41 extends m41 {
     public final int w;
@@ -22,8 +22,8 @@ public abstract class n41 extends m41 {
     public final void b(o41 o41Var) {
         int i7;
         c51 c51Var = this.x;
-        i7 = ((org.telegram.ui.ActionBar.h2) c51Var).classGuid;
-        o41Var.a(this.w, i7, c51Var.a.stats_dc, new eh(2, c51Var, this.r));
+        i7 = ((org.telegram.ui.ActionBar.g2) c51Var).classGuid;
+        o41Var.a(this.w, i7, c51Var.a.stats_dc, new fh(2, c51Var, this.r));
     }
 
     @Override // org.telegram.ui.m41
@@ -68,7 +68,7 @@ public abstract class n41 extends m41 {
             int i10 = this.w;
             int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new mo0(this, str, b51Var, 10), null, null, 0, c51Var.a.stats_dc, 1, true);
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-            i7 = ((org.telegram.ui.ActionBar.h2) c51Var).classGuid;
+            i7 = ((org.telegram.ui.ActionBar.g2) c51Var).classGuid;
             connectionsManager.bindRequestToGuid(sendRequest, i7);
         }
     }

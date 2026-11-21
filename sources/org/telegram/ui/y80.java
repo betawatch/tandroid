@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class y80 extends RelativeLayout {
     public i0.b a;
@@ -51,8 +51,8 @@ public final class y80 extends RelativeLayout {
         int measuredWidth2 = (measuredWidth - launchActivity.q0.getView().getMeasuredWidth()) / 2;
         int L = org.telegram.messenger.g0.L(8.0f) + this.a.b;
         launchActivity.q0.getView().layout(measuredWidth2, L, launchActivity.q0.getView().getMeasuredWidth() + measuredWidth2, launchActivity.q0.getView().getMeasuredHeight() + L);
-        v8 v8Var = launchActivity.u0;
-        v8Var.layout(0, 0, v8Var.getMeasuredWidth(), launchActivity.u0.getMeasuredHeight());
+        w8 w8Var = launchActivity.u0;
+        w8Var.layout(0, 0, w8Var.getMeasuredWidth(), launchActivity.u0.getMeasuredHeight());
         FrameLayout frameLayout = launchActivity.t0;
         frameLayout.layout(0, 0, frameLayout.getMeasuredWidth(), launchActivity.t0.getMeasuredHeight());
     }

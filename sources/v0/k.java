@@ -12,9 +12,9 @@ import android.os.CancellationSignal;
 import android.text.TextUtils;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.beta.R;
-import tg.x;
+import tg.y;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class k implements i {
     public final CredentialManager a;
@@ -41,10 +41,10 @@ public final class k implements i {
         j jVar = new j(bVar2, (e) bVar, this);
         kotlin.jvm.internal.j.b(credentialManager);
         Bundle bundle = bVar.a;
-        x xVar = bVar.c;
+        y yVar = bVar.c;
         Bundle bundle2 = new Bundle();
-        bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_ID", (String) xVar.b);
-        CharSequence charSequence = (CharSequence) xVar.c;
+        bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_ID", (String) yVar.b);
+        CharSequence charSequence = (CharSequence) yVar.c;
         if (!TextUtils.isEmpty(charSequence)) {
             bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_DISPLAY_NAME", charSequence);
         }

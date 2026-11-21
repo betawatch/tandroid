@@ -1,43 +1,84 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public abstract class ks extends z41 {
+public class ks extends c51 {
     public final int Q;
     public final int R;
-    public final ArrayList S;
-    public final ArrayList T;
+    public final boolean S;
+    public final js T;
     public final ArrayList U;
     public final ArrayList V;
-    public boolean W;
+    public final ArrayList W;
     public boolean X;
-    public final ArrayList Y;
-    public boolean Z;
-    public boolean a0;
-    public boolean b0;
-    public int c0;
-    public int d0;
-    public String e0;
-    public final mo f0;
+    public boolean Y;
+    public final SpannableStringBuilder Z;
+    public int a0;
+    public int b0;
+    public boolean c0;
+    public boolean d0;
+    public boolean e0;
+    public int f0;
+    public int g0;
+    public String h0;
+    public final gs i0;
+    public boolean j0;
+    public final z2 k0;
 
-    public ks(ck0 ck0Var, Context context, int i7, int i10) {
-        super(ck0Var, context, i7, 0, false, null, null);
-        this.S = new ArrayList();
-        this.T = new ArrayList();
+    public ks(ek0 ek0Var, Context context, int i7, int i10, boolean z10, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(ek0Var, context, i7, 0, true, null, h6Var);
         this.U = new ArrayList();
         this.V = new ArrayList();
-        this.Y = new ArrayList();
-        mm0 mm0Var = (mm0) this;
-        this.f0 = new mo(mm0Var, 8);
-        this.w = new d(mm0Var, 10);
+        this.W = new ArrayList();
+        this.i0 = new gs(this, 0);
+        this.j0 = true;
+        this.k0 = new z2(this, 5);
+        this.w = new d(this, 9);
         this.Q = i7;
         this.R = i10;
+        this.S = z10;
+        this.T = new js(i7, new gs(this, 1));
+        this.Z = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.N0(2131754174, null), new di.a(this, h6Var, context)), true);
         O(false);
+        org.telegram.messenger.ri.d0(i7).P0(true);
+    }
+
+    public final void W() {
+        boolean isEmpty = TextUtils.isEmpty(this.h0);
+        ek0 ek0Var = this.d;
+        if (isEmpty) {
+            if (!this.j0) {
+                if (ek0Var != null) {
+                    for (int i7 = 0; i7 < ek0Var.getChildCount(); i7++) {
+                        if (!(ek0Var.getChildAt(i7) instanceof yz)) {
+                        }
+                    }
+                }
+            }
+            this.T.a();
+            break;
+        }
+        if (this.e0 && !this.c0 && ek0Var != null) {
+            int i10 = 0;
+            while (true) {
+                if (i10 >= ek0Var.getChildCount()) {
+                    break;
+                }
+                if (!(ek0Var.getChildAt(i10) instanceof yz)) {
+                    i10++;
+                } else if (this.e0 && !this.c0 && !TextUtils.isEmpty(this.h0)) {
+                    X(true);
+                }
+            }
+        }
+        this.j0 = false;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
@@ -47,40 +88,40 @@ public abstract class ks extends z41 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void W(boolean z10) {
-        this.Z = true;
-        int i7 = this.d0 + 1;
-        this.d0 = i7;
+    public final void X(boolean z10) {
+        this.c0 = true;
+        int i7 = this.g0 + 1;
+        this.g0 = i7;
         TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
-        tL_messages_searchGlobal.broadcasts_only = true;
+        tL_messages_searchGlobal.broadcasts_only = false;
         int i10 = this.R;
         if (i10 != 0) {
             tL_messages_searchGlobal.flags |= 1;
             tL_messages_searchGlobal.folder_id = i10;
         }
-        tL_messages_searchGlobal.q = this.e0;
+        tL_messages_searchGlobal.q = this.h0;
         tL_messages_searchGlobal.limit = 25;
         tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
         int i11 = this.Q;
         if (z10) {
-            ArrayList arrayList = this.S;
+            ArrayList arrayList = this.W;
             if (!arrayList.isEmpty()) {
                 org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) i5.c.h(1, arrayList);
-                tL_messages_searchGlobal.offset_rate = this.c0;
+                tL_messages_searchGlobal.offset_rate = this.f0;
                 tL_messages_searchGlobal.offset_id = fjVar.e1();
                 if (fjVar.k.peer_id == null) {
                     tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 } else {
                     tL_messages_searchGlobal.offset_peer = org.telegram.messenger.mp.u1(i11).o1(fjVar.k.peer_id);
                 }
-                org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.l0(this, i7, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
+                org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.l0(this, i7, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
                 if (z10) {
-                    this.a0 = true;
+                    this.d0 = true;
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
-                    tL_contacts_search.limit = 20;
-                    tL_contacts_search.broadcasts = true;
-                    tL_contacts_search.q = this.e0;
-                    ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_search, new d3.b(1), new bi.l6(20, this, tL_contacts_search));
+                    tL_contacts_search.limit = 30;
+                    tL_contacts_search.bots = true;
+                    tL_contacts_search.q = this.h0;
+                    ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_search, new d3.b(1), new bi.p6(19, this, tL_contacts_search));
                     return;
                 }
                 return;
@@ -89,30 +130,8 @@ public abstract class ks extends z41 {
         tL_messages_searchGlobal.offset_rate = 0;
         tL_messages_searchGlobal.offset_id = 0;
         tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.l0(this, i7, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
+        org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.l0(this, i7, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
         if (z10) {
         }
-    }
-
-    public final void X() {
-        ArrayList arrayList = new ArrayList();
-        int i7 = this.Q;
-        ArrayList arrayList2 = org.telegram.messenger.mp.u1(i7).y;
-        int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
-            TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(-((TLRPC.Dialog) obj).id));
-            if (O0 != null && org.telegram.messenger.v3.V(O0) && org.telegram.messenger.v3.t0(O0) && !org.telegram.messenger.v3.r0(O0)) {
-                arrayList.add(O0);
-                if (arrayList.size() >= 100) {
-                    break;
-                }
-            }
-        }
-        ArrayList arrayList3 = this.Y;
-        arrayList3.clear();
-        arrayList3.addAll(arrayList);
     }
 }

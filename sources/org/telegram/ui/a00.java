@@ -11,9 +11,9 @@ import org.telegram.messenger.fj;
 import org.telegram.ui.a00;
 import org.telegram.ui.c00;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class a00 extends org.telegram.ui.Components.bk0 {
+public final class a00 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public final /* synthetic */ c00 d;
 
@@ -22,7 +22,7 @@ public final class a00 extends org.telegram.ui.Components.bk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return false;
     }
@@ -54,7 +54,7 @@ public final class a00 extends org.telegram.ui.Components.bk0 {
                 if (i10 == 1) {
                     int ceil = (int) Math.ceil(arrayList.size() / c00Var.s);
                     int i11 = c00Var.s;
-                    ((org.telegram.ui.Components.wz) view).w = i11 - ((ceil * i11) - arrayList.size());
+                    ((org.telegram.ui.Components.yz) view).w = i11 - ((ceil * i11) - arrayList.size());
                     return;
                 }
                 return;
@@ -105,7 +105,7 @@ public final class a00 extends org.telegram.ui.Components.bk0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.wz, org.telegram.ui.qz] */
+    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.yz, org.telegram.ui.qz] */
     /* JADX WARN: Type inference failed for: r6v5 */
     /* JADX WARN: Type inference failed for: r6v6, types: [android.view.View] */
     @Override // v4.i0
@@ -119,7 +119,7 @@ public final class a00 extends org.telegram.ui.Components.bk0 {
             q7Var.n = paint;
             q7Var.s = org.telegram.messenger.j10.t0;
             q7Var.r = 1;
-            paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Ci, false));
+            paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ci, false));
             q7Var.b = new org.telegram.messenger.fj[6];
             q7Var.a = new org.telegram.ui.Cells.n7[6];
             q7Var.c = new int[6];
@@ -163,7 +163,7 @@ public final class a00 extends org.telegram.ui.Components.bk0 {
                 return i5.c.q(r62, r62, -1, -2);
             }
             FrameLayout y3Var = new org.telegram.ui.Cells.y3(context, null);
-            y3Var.setBackgroundColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.e7, false) & (-218103809));
+            y3Var.setBackgroundColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.e7, false) & (-218103809));
             frameLayout = y3Var;
         }
         r62 = frameLayout;

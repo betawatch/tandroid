@@ -9,11 +9,11 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.p10;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.s10;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class b4 {
     public final int a;
@@ -21,9 +21,9 @@ public final class b4 {
     public int c;
     public boolean d;
     public float e;
-    public final org.telegram.ui.Components.c6 f;
-    public final org.telegram.ui.Components.c6 g;
-    public final org.telegram.ui.Components.c6 h;
+    public final org.telegram.ui.Components.d6 f;
+    public final org.telegram.ui.Components.d6 g;
+    public final org.telegram.ui.Components.d6 h;
     public float i;
     public float j;
     public float k;
@@ -34,16 +34,16 @@ public final class b4 {
     public b4(ProfileStoriesView profileStoriesView, TL_stories.StoryItem storyItem) {
         ArrayList<TLRPC.PhotoSize> arrayList;
         TLRPC.Document document;
-        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.b = imageReceiver;
         this.c = 0;
         this.d = false;
         this.e = 1.0f;
-        lr lrVar = lr.h;
-        this.f = new org.telegram.ui.Components.c6(profileStoriesView, 420L, lrVar);
-        this.g = new org.telegram.ui.Components.c6(profileStoriesView, 420L, lrVar);
-        this.h = new org.telegram.ui.Components.c6(profileStoriesView, 420L, lrVar);
+        nr nrVar = nr.h;
+        this.f = new org.telegram.ui.Components.d6(profileStoriesView, 420L, nrVar);
+        this.g = new org.telegram.ui.Components.d6(profileStoriesView, 420L, nrVar);
+        this.h = new org.telegram.ui.Components.d6(profileStoriesView, 420L, nrVar);
         this.m = new RectF();
         this.n = new RectF();
         this.a = storyItem.id;
@@ -53,7 +53,7 @@ public final class b4 {
         if (profileStoriesView.y) {
             imageReceiver.P();
         }
-        p10[] p10VarArr = i7.a;
+        s10[] s10VarArr = i7.a;
         TLRPC.MessageMedia messageMedia = storyItem.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
             TLObject g22 = mp.u1(imageReceiver.d).g2(storyItem.dialogId);

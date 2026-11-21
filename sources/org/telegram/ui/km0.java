@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class km0 extends FrameLayout {
     public int E;
@@ -27,7 +27,7 @@ public final class km0 extends FrameLayout {
     public final v4.c0 b;
     public final y7 c;
     public int d;
-    public final org.telegram.ui.Components.c6 e;
+    public final org.telegram.ui.Components.d6 e;
     public final ArrayList f;
     public xl0 h;
     public final RectF n;
@@ -37,7 +37,7 @@ public final class km0 extends FrameLayout {
     public final Paint x;
     public int y;
 
-    public km0(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public km0(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.f = new ArrayList();
         this.n = new RectF();
@@ -47,7 +47,7 @@ public final class km0 extends FrameLayout {
         this.x = new Paint(1);
         this.K = new Path();
         this.L = TLObject.FLAG_31;
-        et etVar = new et(this, context, i6Var, 6);
+        et etVar = new et(this, context, h6Var, 6);
         this.a = etVar;
         etVar.setClipToPadding(false);
         etVar.setClipChildren(false);
@@ -66,7 +66,7 @@ public final class km0 extends FrameLayout {
         setHorizontalScrollBarEnabled(false);
         setClipToPadding(false);
         setClipChildren(false);
-        this.e = new org.telegram.ui.Components.c6(etVar, 0L, 320L, org.telegram.ui.Components.lr.h);
+        this.e = new org.telegram.ui.Components.d6(etVar, 0L, 320L, org.telegram.ui.Components.nr.h);
     }
 
     public final void a(int i7, boolean z10) {

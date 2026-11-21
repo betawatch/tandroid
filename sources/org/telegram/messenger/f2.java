@@ -16,20 +16,20 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class f2 extends c1 {
     public static volatile f2[] f = new f2[4];
-    public final hi.u5 a;
-    public final hi.u5 b;
+    public final hi.t5 a;
+    public final hi.t5 b;
     public final Set c;
     public final LongSparseArray d;
     public final SharedPreferences e;
 
     public f2(int i7) {
         super(i7);
-        this.a = new hi.u5();
-        this.b = new hi.u5();
+        this.a = new hi.t5();
+        this.b = new hi.t5();
         this.c = DesugarCollections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
         this.d = new LongSparseArray();
         this.e = t0.b.getSharedPreferences("bot_drafts" + i7, 0);
@@ -173,7 +173,7 @@ public final class f2 extends c1 {
                         E = zy.E();
                     }
                     if (TextUtils.isEmpty(str)) {
-                        str = gd.M0(2131743743, null);
+                        str = gd.N0(2131743737, null);
                     } else if (str.length() > 16) {
                         str = str.substring(0, 16) + "...";
                     }

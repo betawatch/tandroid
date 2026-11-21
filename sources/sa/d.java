@@ -37,13 +37,13 @@ import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Cells.m1;
 import org.telegram.ui.Cells.r1;
-import org.telegram.ui.Components.eh;
-import org.telegram.ui.Components.kg;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.qi;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.ng;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.fr0;
-import org.telegram.ui.q11;
+import org.telegram.ui.r11;
 import org.telegram.ui.rm;
 import org.telegram.utils.twidget.d1;
 import org.telegram.utils.twidget.k0;
@@ -55,9 +55,9 @@ import q2.x;
 import u2.u;
 import w7.o;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, Continuation, u9.d, qi, kg, gh.a, m1, m, u, y2.m, yi.f {
+public class d implements SuccessContinuation, b7.c, r11, eg.a, q, fg.a, j2.g, Continuation, u9.d, si, ng, gh.a, m1, m, u, y2.m, yi.f {
     public static final /* synthetic */ d b = new d(13);
     public final /* synthetic */ int a;
 
@@ -66,17 +66,17 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     }
 
     public static void D2(d1 d1Var, boolean z10) {
-        pk0 pk0Var;
+        rk0 rk0Var;
         k0 h = n0.h(d1Var);
         StringBuilder sb2 = new StringBuilder("widget ");
         sb2.append(d1Var.a);
         sb2.append(": engine process died");
         p5.c.s(z10 ? ", restarting" : "", sb2);
-        if (!z10 || h == null || (pk0Var = h.w) == null || !pk0Var.f0 || pk0Var.Y == null) {
+        if (!z10 || h == null || (rk0Var = h.w) == null || !rk0Var.f0 || rk0Var.Y == null) {
             return;
         }
-        pk0Var.s0();
-        pk0Var.r0();
+        rk0Var.s0();
+        rk0Var.r0();
     }
 
     public static void E2(String str) {
@@ -117,7 +117,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ boolean E0() {
         return true;
     }
@@ -132,7 +132,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ TLRPC.TL_channels_sendAsPeers J() {
         return null;
     }
@@ -222,7 +222,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ boolean V1() {
         return false;
     }
@@ -262,7 +262,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ int b1() {
         return 0;
     }
@@ -272,7 +272,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return null;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ TL_stories.StoryItem c1() {
         return null;
     }
@@ -326,7 +326,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ boolean e1(long j3) {
         return false;
     }
@@ -336,9 +336,9 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return MediaCodecList.getCodecInfoAt(i7);
     }
 
-    @Override // org.telegram.ui.Components.qi
-    public void f0(eh ehVar) {
-        ehVar.run();
+    @Override // org.telegram.ui.Components.si
+    public void f0(gh ghVar) {
+        ghVar.run();
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -351,12 +351,12 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ boolean g0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public boolean g1() {
         return false;
     }
@@ -381,7 +381,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ boolean k() {
         return false;
     }
@@ -391,17 +391,17 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ rm m0() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ boolean m1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ int n() {
         return 0;
     }
@@ -422,7 +422,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean p0(x5 x5Var) {
+    public /* synthetic */ boolean p0(y5 y5Var) {
         return false;
     }
 
@@ -453,7 +453,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         }
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ TLRPC.Peer t() {
         return null;
     }
@@ -477,7 +477,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ boolean v1() {
         return false;
     }
@@ -530,35 +530,35 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void A0() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void B2() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void D() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void G() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void G0() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void G1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void J0() {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void K0() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void Q0() {
     }
 
@@ -566,7 +566,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void U1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void V() {
     }
 
@@ -574,7 +574,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void a() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void b0() {
     }
 
@@ -582,7 +582,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void c() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void d() {
     }
 
@@ -590,7 +590,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public void d1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void g() {
     }
 
@@ -598,11 +598,11 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void i1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void i2() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void l1() {
     }
 
@@ -610,23 +610,23 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void m() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void m2() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void n1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void o1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void q1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void r2() {
     }
 
@@ -634,7 +634,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void release() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void s0() {
     }
 
@@ -642,7 +642,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void s2() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void u() {
     }
 
@@ -650,15 +650,15 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void v() {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void v0() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void w1() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void w2() {
     }
 
@@ -666,7 +666,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void x2() {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void A(boolean z10) {
     }
 
@@ -722,7 +722,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void R(fj fjVar) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void R0(Object obj) {
     }
 
@@ -738,11 +738,11 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void Y(r1 r1Var) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void a0(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void a1(int i7) {
     }
 
@@ -750,7 +750,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void h0(int i7) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void h1(TLRPC.User user) {
     }
 
@@ -762,7 +762,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void j2(r1 r1Var) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void k2(int i7) {
     }
 
@@ -770,7 +770,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void l0(r1 r1Var) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void n2(boolean z10) {
     }
 
@@ -790,7 +790,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void s(r1 r1Var) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void u1(CharSequence charSequence) {
     }
 
@@ -798,7 +798,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void w(r1 r1Var) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public /* synthetic */ void x(float f10) {
     }
 
@@ -834,7 +834,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void O0(r1 r1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void Q(float f10, int i7) {
     }
 
@@ -899,7 +899,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void j0(r1 r1Var, float f10, float f11) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void j1(CharSequence charSequence, boolean z10, boolean z11) {
     }
 
@@ -907,7 +907,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void q0(r1 r1Var, float f10, float f11) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void s1(View view, CharSequence charSequence, boolean z10) {
     }
 
@@ -935,11 +935,11 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void w0(r1 r1Var, float f10, float f11, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void H(CharSequence charSequence, boolean z10, int i7, int i10, long j3) {
     }
 
@@ -959,7 +959,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void X(r1 r1Var, TLRPC.Chat chat, int i7, float f10, float f11, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.Components.ng
     public void o2(int i7, int i10, int i11, long j3, long j10, boolean z10) {
     }
 
@@ -967,7 +967,7 @@ public class d implements SuccessContinuation, b7.c, q11, eg.a, q, fg.a, j2.g, C
     public /* synthetic */ void S1(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
     }
 }

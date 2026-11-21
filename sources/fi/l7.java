@@ -7,7 +7,7 @@ import org.telegram.messenger.j10;
 import org.telegram.ui.Components.ia;
 import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class l7 implements c5.h {
     public final /* synthetic */ int a;
@@ -47,20 +47,20 @@ public final class l7 implements c5.h {
                 }
                 break;
             default:
-                ug.z0 z0Var = (ug.z0) callback;
-                ArrayList arrayList = z0Var.o1;
+                ug.y0 y0Var = (ug.y0) callback;
+                ArrayList arrayList = y0Var.o1;
                 if (((ws0) arrayList.get(i7)).a == 0) {
-                    z0Var.I1.setTitle(gd.M0(2131751338, null));
-                    z0Var.I1.requestLayout();
+                    y0Var.I1.setTitle(gd.N0(2131751337, null));
+                    y0Var.I1.requestLayout();
                 } else if (((ws0) arrayList.get(i7)).a == 14) {
-                    z0Var.I1.setTitle(gd.M0(2131743568, null));
-                    z0Var.I1.requestLayout();
+                    y0Var.I1.setTitle(gd.N0(2131743562, null));
+                    y0Var.I1.requestLayout();
                 } else if (((ws0) arrayList.get(i7)).a == 40) {
-                    z0Var.I1.setTitle(gd.M0(2131750826, null));
-                    z0Var.I1.requestLayout();
+                    y0Var.I1.setTitle(gd.N0(2131750825, null));
+                    y0Var.I1.requestLayout();
                 } else if (((ws0) arrayList.get(i7)).a == 28) {
-                    z0Var.I1.setTitle(gd.M0(2131744017, null));
-                    z0Var.I1.requestLayout();
+                    y0Var.I1.setTitle(gd.N0(2131744011, null));
+                    y0Var.I1.requestLayout();
                 }
                 d();
                 break;
@@ -96,10 +96,10 @@ public final class l7 implements c5.h {
                 iaVar.b = f10;
                 iaVar.c = i7;
                 iaVar.invalidate();
-                ug.z0 z0Var = (ug.z0) this.c;
-                z0Var.B1 = i7;
-                z0Var.C1 = i10 > 0 ? i7 + 1 : i7 - 1;
-                z0Var.D1 = f10;
+                ug.y0 y0Var = (ug.y0) this.c;
+                y0Var.B1 = i7;
+                y0Var.C1 = i10 > 0 ? i7 + 1 : i7 - 1;
+                y0Var.D1 = f10;
                 d();
                 break;
         }
@@ -129,67 +129,67 @@ public final class l7 implements c5.h {
     public void d() {
         int i7;
         int i10;
-        ug.z0 z0Var = (ug.z0) this.c;
-        ug.x0 x0Var = z0Var.s1;
-        ArrayList arrayList = z0Var.o1;
+        ug.y0 y0Var = (ug.y0) this.c;
+        ug.w0 w0Var = y0Var.s1;
+        ArrayList arrayList = y0Var.o1;
         int i11 = 0;
         while (true) {
             float f10 = 0.0f;
-            if (i11 >= x0Var.getChildCount()) {
+            if (i11 >= w0Var.getChildCount()) {
                 break;
             }
-            ug.y0 y0Var = (ug.y0) x0Var.getChildAt(i11);
-            if (!z0Var.w1 || !(y0Var.f instanceof ug.q0)) {
-                int i12 = y0Var.a;
-                ug.o0 o0Var = y0Var.e;
-                if (i12 == z0Var.B1) {
-                    f10 = (-y0Var.getMeasuredWidth()) * z0Var.D1;
-                    o0Var.setOffset(f10);
-                } else if (i12 == z0Var.C1) {
-                    f10 = ((-y0Var.getMeasuredWidth()) * z0Var.D1) + y0Var.getMeasuredWidth();
-                    o0Var.setOffset(f10);
+            ug.x0 x0Var = (ug.x0) w0Var.getChildAt(i11);
+            if (!y0Var.w1 || !(x0Var.f instanceof ug.p0)) {
+                int i12 = x0Var.a;
+                ug.n0 n0Var = x0Var.e;
+                if (i12 == y0Var.B1) {
+                    f10 = (-x0Var.getMeasuredWidth()) * y0Var.D1;
+                    n0Var.setOffset(f10);
+                } else if (i12 == y0Var.C1) {
+                    f10 = ((-x0Var.getMeasuredWidth()) * y0Var.D1) + x0Var.getMeasuredWidth();
+                    n0Var.setOffset(f10);
                 } else {
-                    o0Var.setOffset(y0Var.getMeasuredWidth());
+                    n0Var.setOffset(x0Var.getMeasuredWidth());
                 }
             }
-            if (y0Var.f instanceof ug.q0) {
-                y0Var.setTranslationX(-f10);
-                y0Var.b.setTranslationX(f10);
-                y0Var.c.setTranslationX(f10);
+            if (x0Var.f instanceof ug.p0) {
+                x0Var.setTranslationX(-f10);
+                x0Var.b.setTranslationX(f10);
+                x0Var.c.setTranslationX(f10);
             }
             i11++;
         }
-        int i13 = z0Var.B1;
-        boolean z10 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((ws0) arrayList.get(z0Var.B1)).a) == 0 || i10 == 14 || i10 == 28);
-        int i14 = z0Var.C1;
-        boolean z11 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((ws0) arrayList.get(z0Var.C1)).a) == 0 || i7 == 14 || i7 == 28);
+        int i13 = y0Var.B1;
+        boolean z10 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((ws0) arrayList.get(y0Var.B1)).a) == 0 || i10 == 14 || i10 == 28);
+        int i14 = y0Var.C1;
+        boolean z11 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((ws0) arrayList.get(y0Var.C1)).a) == 0 || i7 == 14 || i7 == 28);
         if (z10 && z11) {
-            z0Var.q1 = 1.0f;
-            float f11 = z0Var.D1;
+            y0Var.q1 = 1.0f;
+            float f11 = y0Var.D1;
             if (f11 == 0.0f) {
                 f11 = 1.0f;
             }
-            z0Var.p1 = f11;
-            z0Var.r1 = true;
+            y0Var.p1 = f11;
+            y0Var.r1 = true;
         } else if (z10) {
-            float f12 = 1.0f - z0Var.D1;
-            z0Var.p1 = f12;
-            z0Var.q1 = f12;
-            z0Var.r1 = true;
+            float f12 = 1.0f - y0Var.D1;
+            y0Var.p1 = f12;
+            y0Var.q1 = f12;
+            y0Var.r1 = true;
         } else if (z11) {
-            float f13 = z0Var.D1;
-            z0Var.p1 = f13;
-            z0Var.q1 = f13;
-            z0Var.r1 = false;
+            float f13 = y0Var.D1;
+            y0Var.p1 = f13;
+            y0Var.q1 = f13;
+            y0Var.r1 = false;
         } else {
-            z0Var.p1 = 0.0f;
-            z0Var.q1 = 0.0f;
-            z0Var.r1 = true;
+            y0Var.p1 = 0.0f;
+            y0Var.q1 = 0.0f;
+            y0Var.r1 = true;
         }
-        int i15 = (int) ((1.0f - z0Var.p1) * 255.0f);
-        if (i15 != z0Var.F1) {
-            z0Var.F1 = i15;
-            z0Var.t1.invalidate();
+        int i15 = (int) ((1.0f - y0Var.p1) * 255.0f);
+        if (i15 != y0Var.F1) {
+            y0Var.F1 = i15;
+            y0Var.t1.invalidate();
             org.telegram.messenger.g0.g3(new org.telegram.ui.web.z0(this, 26));
         }
     }

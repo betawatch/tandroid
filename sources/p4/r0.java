@@ -7,7 +7,7 @@ import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.utils.code.highlight.PrismaHighlighter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r0 implements h2.j, c1, b1, q2.l, androidx.car.app.utils.b {
     public final /* synthetic */ int a;
@@ -113,31 +113,31 @@ public final /* synthetic */ class r0 implements h2.j, c1, b1, q2.l, androidx.ca
     }
 
     @Override // p4.c1
-    public Object k(d0 d0Var, v vVar, int i7) {
+    public Object k(e0 e0Var, v vVar, int i7) {
         switch (this.a) {
             case 4:
-                d0Var.getClass();
+                e0Var.getClass();
                 throw new ClassCastException();
             case 7:
-                w7.s sVar = d0Var.e;
-                d0Var.s(vVar);
+                w7.s sVar = e0Var.e;
+                e0Var.s(vVar);
                 sVar.getClass();
                 return t9.b(new o1(-6));
             case 11:
-                d0Var.getClass();
+                e0Var.getClass();
                 throw new ClassCastException();
             case 15:
-                d0Var.getClass();
+                e0Var.getClass();
                 throw new ClassCastException();
             case 17:
-                d0Var.getClass();
+                e0Var.getClass();
                 throw new ClassCastException();
             case 19:
-                d0Var.getClass();
+                e0Var.getClass();
                 throw new ClassCastException();
             default:
-                w7.s sVar2 = d0Var.e;
-                d0Var.s(vVar);
+                w7.s sVar2 = e0Var.e;
+                e0Var.s(vVar);
                 sVar2.getClass();
                 return t9.b(new o1(-6));
         }

@@ -4,41 +4,70 @@ import android.R;
 import android.content.Context;
 import android.view.ActionMode;
 import android.view.Menu;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class on extends org.telegram.ui.Cells.b6 {
-    public final /* synthetic */ org.telegram.ui.l4 G;
+    public final /* synthetic */ int G;
+    public final /* synthetic */ org.telegram.ui.l4 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public on(org.telegram.ui.l4 l4Var, Context context, int i7) {
-        super(context, i7, null, null);
-        this.G = l4Var;
+    public on(org.telegram.ui.l4 l4Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10) {
+        super(context, i7, null, h6Var);
+        this.H = l4Var;
+        this.G = i10;
     }
 
     @Override // org.telegram.ui.Cells.b6
     public final void h(bi.u uVar, ActionMode actionMode) {
-        if (uVar.isFocused() && uVar.hasSelection()) {
+        tn tnVar = (tn) this.H.e;
+        if (!tnVar.n && this.G == 11 && uVar.isFocused() && uVar.hasSelection()) {
             Menu menu = actionMode.getMenu();
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.bn.C8(menu, ((org.telegram.ui.bn) ((rn) this.G.e).b.a2).h, false, true, true, true);
+            org.telegram.ui.bn.C8(menu, ((org.telegram.ui.bn) tnVar.b.a2).h, false, true, true, true);
         }
     }
 
     @Override // org.telegram.ui.Cells.b6
     public final void j(boolean z10) {
-        rn.R((rn) this.G.e, this, z10);
+        tn.R((tn) this.H.e, this, z10);
     }
 
     @Override // org.telegram.ui.Cells.b6
     public final void k(org.telegram.ui.Cells.b6 b6Var) {
-        rn.S((rn) this.G.e, b6Var);
+        tn.S((tn) this.H.e, b6Var);
     }
 
     @Override // org.telegram.ui.Cells.b6
     public final void l(bi.u uVar) {
-        ((rn) this.G.e).b.i1(uVar, true);
+        ((tn) this.H.e).b.i1(uVar, true);
+    }
+
+    @Override // org.telegram.ui.Cells.b6
+    public final boolean m(ArrayList arrayList) {
+        tn tnVar = (tn) this.H.e;
+        if (arrayList.isEmpty()) {
+            return false;
+        }
+        bi.u uVar = this.d;
+        uVar.getText().replace(uVar.getSelectionStart(), uVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+        int i7 = 0;
+        while (!arrayList.isEmpty() && i7 < tnVar.K) {
+            for (int length = tnVar.L.length - 1; length > i7; length--) {
+                CharSequence[] charSequenceArr = tnVar.L;
+                charSequenceArr[length] = charSequenceArr[length - 1];
+            }
+            tnVar.L[i7] = (CharSequence) arrayList.remove(0);
+            tnVar.N++;
+            i7++;
+        }
+        tnVar.n0();
+        tnVar.l0 = (tnVar.u0 + i7) - 1;
+        tnVar.s.setItemAnimator(tnVar.w);
+        tnVar.r.f();
+        return true;
     }
 }

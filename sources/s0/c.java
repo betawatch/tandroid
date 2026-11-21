@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c {
     public static int c;
@@ -307,7 +307,7 @@ public final class c {
         sb2.append("; viewIdResName: ");
         sb2.append(accessibilityNodeInfo.getViewIdResourceName());
         sb2.append("; uniqueId: ");
-        sb2.append(i7 >= 33 ? ai.d.g(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY"));
+        sb2.append(i7 >= 33 ? ai.d.h(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY"));
         sb2.append("; checkable: ");
         sb2.append(accessibilityNodeInfo.isCheckable());
         sb2.append("; checked: ");
@@ -340,7 +340,7 @@ public final class c {
         sb2.append("; visible: ");
         sb2.append(accessibilityNodeInfo.isVisibleToUser());
         sb2.append("; isTextSelectable: ");
-        sb2.append(i7 >= 33 ? ai.d.i(accessibilityNodeInfo) : f(TLObject.FLAG_23));
+        sb2.append(i7 >= 33 ? ai.d.j(accessibilityNodeInfo) : f(TLObject.FLAG_23));
         sb2.append("; accessibilityDataSensitive: ");
         sb2.append(i7 >= 34 ? h1.a.k(accessibilityNodeInfo) : f(64));
         sb2.append("; [");

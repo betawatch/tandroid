@@ -1,48 +1,21 @@
 package tg;
 
-import android.graphics.Insets;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
-import org.telegram.ui.Components.w01;
+import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class j2 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ k2 a;
+public final class j2 extends j0 {
+    public final /* synthetic */ l2 u0;
 
-    public j2(k2 k2Var) {
-        this.a = k2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(l2 l2Var, Context context, float f10) {
+        super(context, f10);
+        this.u0 = l2Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        WindowInsets windowInsets2;
-        int i7;
-        int i10;
-        int i11;
-        int i12;
-        k2 k2Var = this.a;
-        w01 w01Var = k2Var.b;
-        Rect rect = k2Var.h;
-        int i13 = Build.VERSION.SDK_INT;
-        if (i13 >= 30) {
-            Insets insets = windowInsets.getInsets(647);
-            i7 = insets.left;
-            i10 = insets.top;
-            i11 = insets.right;
-            i12 = insets.bottom;
-            rect.set(i7, i10, i11, i12);
-        } else {
-            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
-        }
-        w01Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        w01Var.requestLayout();
-        if (i13 < 30) {
-            return windowInsets.consumeSystemWindowInsets();
-        }
-        windowInsets2 = WindowInsets.CONSUMED;
-        return windowInsets2;
+    @Override // android.view.View
+    public final void invalidate() {
+        this.u0.d.invalidate();
+        super.invalidate();
     }
 }

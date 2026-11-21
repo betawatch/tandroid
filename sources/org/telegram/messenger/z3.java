@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z3 implements q10 {
     public final /* synthetic */ int a;
@@ -29,11 +29,11 @@ public final /* synthetic */ class z3 implements q10 {
         switch (this.a) {
             case 0:
                 f4 f4Var = (f4) this.b;
-                org.telegram.ui.Components.ip ipVar = (org.telegram.ui.Components.ip) this.c;
+                org.telegram.ui.Components.kp kpVar = (org.telegram.ui.Components.kp) this.c;
                 TL_account.ChatThemes chatThemes = (TL_account.ChatThemes) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error != null) {
-                    g0.g3(new w3(22, ipVar, tL_error));
+                    g0.g3(new w3(22, kpVar, tL_error));
                     break;
                 } else {
                     ArrayList arrayList = new ArrayList();
@@ -59,17 +59,17 @@ public final /* synthetic */ class z3 implements q10 {
                         }
                         ArrayList arrayList4 = new ArrayList(arrayList.size());
                         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                            org.telegram.ui.ActionBar.t3 t3Var = new org.telegram.ui.ActionBar.t3(f4Var.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i10));
-                            t3Var.p(0, null);
-                            t3Var.p(1, null);
-                            t3Var.n(0, null);
-                            t3Var.n(1, null);
-                            arrayList4.add(t3Var);
+                            org.telegram.ui.ActionBar.s3 s3Var = new org.telegram.ui.ActionBar.s3(f4Var.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i10));
+                            s3Var.p(0, null);
+                            s3Var.p(1, null);
+                            s3Var.n(0, null);
+                            s3Var.n(1, null);
+                            arrayList4.add(s3Var);
                         }
-                        g0.g3(new fn(f4Var, tl_chatThemes, arrayList4, arrayList, ipVar, 1));
+                        g0.g3(new fn(f4Var, tl_chatThemes, arrayList4, arrayList, kpVar, 1));
                         break;
                     } else if (chatThemes instanceof TL_account.TL_chatThemesNotModified) {
-                        g0.g3(new w3(23, f4Var, ipVar));
+                        g0.g3(new w3(23, f4Var, kpVar));
                         break;
                     }
                 }
@@ -147,17 +147,17 @@ public final /* synthetic */ class z3 implements q10 {
                 }
             case 4:
                 mp mpVar2 = (mp) this.b;
-                hi.t6 t6Var = (hi.t6) this.c;
+                hi.s6 s6Var = (hi.s6) this.c;
                 TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) obj;
                 if (messages_chats != null) {
                     mpVar2.Z3(messages_chats.chats, false);
                     mpVar2.W7 = messages_chats.chats;
                 }
-                t6Var.a(messages_chats != null ? messages_chats.chats : null);
+                s6Var.a(messages_chats != null ? messages_chats.chats : null);
                 break;
             case 5:
                 mp mpVar3 = (mp) this.b;
-                org.telegram.ui.Components.rr rrVar = (org.telegram.ui.Components.rr) this.c;
+                org.telegram.ui.Components.tr trVar = (org.telegram.ui.Components.tr) this.c;
                 TL_communities.ParticipantJoinedChats participantJoinedChats = (TL_communities.ParticipantJoinedChats) obj;
                 TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj2;
                 if (participantJoinedChats != null) {
@@ -175,14 +175,14 @@ public final /* synthetic */ class z3 implements q10 {
                         }
                     }
                 }
-                rrVar.a(participantJoinedChats, tL_error5);
+                trVar.a(participantJoinedChats, tL_error5);
                 break;
             case 6:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.b;
                 q10 q10Var2 = (q10) this.c;
                 TL_account.Passkey passkey = (TL_account.Passkey) obj;
                 TLRPC.TL_error tL_error6 = (TLRPC.TL_error) obj2;
-                u1Var.dismiss();
+                t1Var.dismiss();
                 if (tL_error6 != null) {
                     q10Var2.a(null, tL_error6.text);
                     break;

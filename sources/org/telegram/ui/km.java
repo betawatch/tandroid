@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class km implements ls {
     public final /* synthetic */ TLRPC.TL_messageMediaPoll a;
@@ -35,7 +35,7 @@ public final class km implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ org.telegram.ui.Components.y60 E(ai.k0 k0Var) {
+    public final /* synthetic */ org.telegram.ui.Components.a70 E(ai.l0 l0Var) {
         return null;
     }
 
@@ -73,12 +73,12 @@ public final class km implements ls {
         TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
         tL_inputStickerSetID.access_hash = inputStickerSet.access_hash;
         tL_inputStickerSetID.id = inputStickerSet.id;
-        org.telegram.ui.Components.iw0 iw0Var = new org.telegram.ui.Components.iw0(bnVar.getParentActivity(), bnVar, tL_inputStickerSetID, null, bnVar.a0, bnVar.Ba);
+        org.telegram.ui.Components.kw0 kw0Var = new org.telegram.ui.Components.kw0(bnVar.getParentActivity(), bnVar, tL_inputStickerSetID, null, bnVar.a0, bnVar.Ba);
         boolean V9 = bnVar.V9();
-        iw0Var.i0 = V9;
-        iw0Var.n = V9;
-        iw0Var.d2 = z10;
-        bnVar.showDialog(iw0Var);
+        kw0Var.i0 = V9;
+        kw0Var.n = V9;
+        kw0Var.d2 = z10;
+        bnVar.showDialog(kw0Var);
     }
 
     @Override // org.telegram.ui.ls
@@ -226,7 +226,7 @@ public final class km implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void y(CharSequence charSequence, String str, org.telegram.ui.Components.ph phVar) {
+    public final /* synthetic */ void y(CharSequence charSequence, String str, org.telegram.ui.Components.rh rhVar) {
     }
 
     @Override // org.telegram.ui.ls

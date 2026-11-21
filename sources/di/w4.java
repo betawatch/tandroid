@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class w4 extends View {
     public final Paint a;
-    public final org.telegram.ui.Components.c6 b;
-    public final org.telegram.ui.Components.c6 c;
+    public final org.telegram.ui.Components.d6 b;
+    public final org.telegram.ui.Components.d6 c;
     public float d;
     public float e;
 
@@ -21,9 +21,9 @@ public final class w4 extends View {
         Paint paint = new Paint(1);
         this.a = paint;
         ca.r rVar = new ca.r(this, 21);
-        lr lrVar = lr.h;
-        this.b = new org.telegram.ui.Components.c6(rVar, 420L, lrVar, 0);
-        this.c = new org.telegram.ui.Components.c6(new ca.r(this, 21), 420L, lrVar, 0);
+        nr nrVar = nr.h;
+        this.b = new org.telegram.ui.Components.d6(rVar, 420L, nrVar, 0);
+        this.c = new org.telegram.ui.Components.d6(new ca.r(this, 21), 420L, nrVar, 0);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -38,12 +38,12 @@ public final class w4 extends View {
         float f10 = this.e;
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(width - f10, height - f10, width + f10, height + f10);
-        int r12 = org.telegram.ui.ActionBar.n6.r1(0.25f, -1);
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.25f, -1);
         Paint paint = this.a;
         paint.setColor(r12);
         canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
         if (d > 0.0f) {
-            paint.setColor(org.telegram.ui.ActionBar.n6.r1(d, -1));
+            paint.setColor(org.telegram.ui.ActionBar.m6.r1(d, -1));
             canvas.drawArc(rectF, 135.0f, e10 * 270.0f, false, paint);
         }
     }

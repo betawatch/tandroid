@@ -15,9 +15,9 @@ import java.util.Set;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.rv0;
+import org.telegram.ui.Components.uv0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xr implements Runnable {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class xr implements Runnable {
                 arrayList2.clear();
                 return;
             case 10:
-                ((rv0) this.b).a(null);
+                ((uv0) this.b).a(null);
                 return;
             case 11:
                 g0.g3((ww) this.b);

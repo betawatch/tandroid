@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import m.o3;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class z implements Runnable {
     public final /* synthetic */ c0 a;
@@ -34,7 +34,7 @@ public final class z implements Runnable {
                 n6.e eVar = c0Var.d;
                 i0 i0Var = c0Var.a;
                 Context context = c0Var.c;
-                ji.j jVar = new ji.j(eVar);
+                ji.l lVar = new ji.l(eVar);
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
                 HashMap hashMap = (HashMap) this.d;
@@ -50,7 +50,7 @@ public final class z implements Runnable {
                 if (arrayList.isEmpty()) {
                     int size = arrayList2.size();
                     while (i7 < size) {
-                        i10 = jVar.R(context, (com.google.android.gms.common.api.c) arrayList2.get(i7));
+                        i10 = lVar.R(context, (com.google.android.gms.common.api.c) arrayList2.get(i7));
                         i7++;
                         if (i10 == 0) {
                         }
@@ -58,7 +58,7 @@ public final class z implements Runnable {
                 } else {
                     int size2 = arrayList.size();
                     while (i7 < size2) {
-                        i10 = jVar.R(context, (com.google.android.gms.common.api.c) arrayList.get(i7));
+                        i10 = lVar.R(context, (com.google.android.gms.common.api.c) arrayList.get(i7));
                         i7++;
                         if (i10 != 0) {
                         }
@@ -75,7 +75,7 @@ public final class z implements Runnable {
                 }
                 for (com.google.android.gms.common.api.c cVar2 : hashMap.keySet()) {
                     q6.b bVar = (q6.b) hashMap.get(cVar2);
-                    if (!cVar2.c() || jVar.R(context, cVar2) == 0) {
+                    if (!cVar2.c() || lVar.R(context, cVar2) == 0) {
                         cVar2.h(bVar);
                     } else {
                         v vVar = new v(this, c0Var, bVar);

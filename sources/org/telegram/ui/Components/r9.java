@@ -8,12 +8,12 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class r9 extends Drawable implements Drawable.Callback {
     public static int[] s;
     public final Context a;
-    public final m6 b;
+    public final n6 b;
     public Drawable c;
     public Drawable d;
     public int e;
@@ -24,14 +24,14 @@ public final class r9 extends Drawable implements Drawable.Callback {
 
     public r9(Context context) {
         this.a = context;
-        m6 m6Var = new m6(false, false, false);
-        this.b = m6Var;
-        m6Var.x(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
-        m6Var.n(0.2f, 160L, lr.h);
-        m6Var.w(org.telegram.messenger.g0.L(10.0f));
-        m6Var.b = 17;
-        m6Var.setCallback(this);
-        m6Var.U = true;
+        n6 n6Var = new n6(false, false, false);
+        this.b = n6Var;
+        n6Var.x(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
+        n6Var.n(0.2f, 160L, nr.h);
+        n6Var.w(org.telegram.messenger.g0.L(10.0f));
+        n6Var.b = 17;
+        n6Var.setCallback(this);
+        n6Var.U = true;
         if (s != null) {
             return;
         }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class hw extends oq0 {
     public final /* synthetic */ boolean[] a;
@@ -28,18 +28,18 @@ public final class hw extends oq0 {
     public final void D() {
         int i7;
         cx cxVar = this.b;
-        org.telegram.ui.Components.cp0 cp0Var = cxVar.I2;
-        if (cp0Var != null) {
-            i7 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
-            cp0Var.i(i7, cxVar.F2);
+        org.telegram.ui.Components.ep0 ep0Var = cxVar.I2;
+        if (ep0Var != null) {
+            i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
+            ep0Var.i(i7, cxVar.F2);
         }
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         cx cxVar = this.b;
-        org.telegram.ui.Components.cp0 cp0Var = cxVar.I2;
-        org.telegram.ui.Components.q9 f10 = cp0Var != null ? cp0Var.f(i7) : null;
+        org.telegram.ui.Components.ep0 ep0Var = cxVar.I2;
+        org.telegram.ui.Components.q9 f10 = ep0Var != null ? ep0Var.f(i7) : null;
         if (f10 == null) {
             return null;
         }
@@ -109,7 +109,7 @@ public final class hw extends oq0 {
         }
         int size = cxVar.F2.size();
         if (size == 1) {
-            return org.telegram.messenger.gd.M0(((org.telegram.messenger.ef) cxVar.F2.get(0)).b ? 2131753931 : 2131753946, null);
+            return org.telegram.messenger.gd.N0(((org.telegram.messenger.ef) cxVar.F2.get(0)).b ? 2131753930 : 2131753945, null);
         }
         ArrayList arrayList2 = cxVar.F2;
         int size2 = arrayList2.size();
@@ -171,8 +171,8 @@ public final class hw extends oq0 {
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final org.telegram.messenger.hc j(int i7) {
-        org.telegram.ui.Components.cp0 cp0Var = this.b.I2;
-        org.telegram.ui.Components.q9 f10 = cp0Var != null ? cp0Var.f(i7) : null;
+        org.telegram.ui.Components.ep0 ep0Var = this.b.I2;
+        org.telegram.ui.Components.q9 f10 = ep0Var != null ? ep0Var.f(i7) : null;
         if (f10 != null) {
             return f10.getImageReceiver().p();
         }
@@ -194,10 +194,10 @@ public final class hw extends oq0 {
             }
             nvVar.setFieldText(charSequence);
         }
-        org.telegram.ui.Components.cp0 cp0Var = cxVar.I2;
-        if (cp0Var != null) {
-            i12 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
-            cp0Var.i(i12, cxVar.F2);
+        org.telegram.ui.Components.ep0 ep0Var = cxVar.I2;
+        if (ep0Var != null) {
+            i12 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
+            ep0Var.i(i12, cxVar.F2);
         }
         if ((z10 && i10 == 0 && !z11) || cxVar.E2 == null || arrayList2.isEmpty()) {
             PhotoViewer.p1().z0(true, false);

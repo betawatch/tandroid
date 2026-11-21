@@ -1,60 +1,81 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ka0 extends pi.k {
-    public int W;
-    public Runnable X;
-    public final /* synthetic */ oa0 Y;
+public final class ka0 extends org.telegram.ui.Cells.k9 {
+    public final /* synthetic */ qa0 w0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ka0(oa0 oa0Var, di.b1 b1Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(null, b1Var, i6Var);
-        this.Y = oa0Var;
-        this.W = -1;
+    public ka0(qa0 qa0Var) {
+        this.w0 = qa0Var;
+        this.g0 = qa0Var.d0.G;
     }
 
-    @Override // pi.k, v4.k
-    public final void N() {
-        super.N();
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
+    @Override // org.telegram.ui.Cells.w9
+    public final void I(int i7, int i10, org.telegram.messenger.fj fjVar) {
+        org.telegram.ui.rm rmVar;
+        org.telegram.messenger.fj fjVar2;
+        qa0 qa0Var = this.w0;
+        ka0 ka0Var = qa0Var.e;
+        int i11 = ka0Var.v - ka0Var.u;
+        wa0 wa0Var = qa0Var.d0;
+        if (i11 > org.telegram.messenger.mp.u1(wa0Var.x).r4) {
+            qa0Var.g();
+            return;
         }
-        ja0 ja0Var = new ja0(this, 0);
-        this.X = ja0Var;
-        org.telegram.messenger.g0.g3(ja0Var);
-        oa0 oa0Var = this.Y;
-        if (oa0Var.W) {
-            oa0Var.W = false;
-            org.telegram.messenger.g0.g3(new ja0(this, 1));
+        org.telegram.messenger.jj jjVar = wa0Var.d;
+        jjVar.e = ka0Var.u;
+        jjVar.f = ka0Var.v;
+        org.telegram.messenger.fj c10 = qa0Var.c(fjVar);
+        if (c10 != null && ((rmVar = wa0Var.d.d) == null || rmVar.m || (fjVar2 = rmVar.a) == null || fjVar2.e1() != c10.e1())) {
+            wa0Var.d.d = org.telegram.ui.rm.b(i7, i10, c10);
+        }
+        wa0Var.b();
+        wa0Var.a(true);
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final boolean b() {
+        org.telegram.messenger.fj c10;
+        TLRPC.Message message;
+        qa0 qa0Var = this.w0;
+        if (qa0Var.a == 0 && (c10 = qa0Var.c(null)) != null && (message = c10.k) != null && message.rich_message != null) {
+            return false;
+        }
+        org.telegram.messenger.jj jjVar = qa0Var.d0.d;
+        return jjVar == null || !jjVar.s;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final boolean e() {
+        org.telegram.messenger.fj c10;
+        TLRPC.Message message;
+        qa0 qa0Var = this.w0;
+        int i7 = qa0Var.a;
+        if (i7 != 0 || qa0Var.d0.d.i) {
+            return false;
+        }
+        return i7 != 0 || (c10 = qa0Var.c(null)) == null || (message = c10.k) == null || message.rich_message == null || org.telegram.messenger.iv.c(qa0Var.c(null));
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final org.telegram.ui.ActionBar.h6 q() {
+        return this.g0;
+    }
+
+    @Override // org.telegram.ui.Cells.k9, org.telegram.ui.Cells.w9
+    public final void w() {
+        super.w();
+        di.b1 b1Var = this.w0.f;
+        if (b1Var != null) {
+            b1Var.invalidate();
         }
     }
 
-    @Override // pi.k
-    public final void W() {
-        ua0 ua0Var = this.Y.d0;
-        org.telegram.messenger.g0.r(ua0Var.E);
-        ua0Var.E.run();
-        if (this.W == -1) {
-            this.W = org.telegram.messenger.ks.f(ua0Var.x).q(null, this.W, false);
-        }
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            this.X = null;
-        }
-    }
-
-    @Override // pi.k, v4.k, v4.n0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-        }
-        ja0 ja0Var = new ja0(this, 2);
-        this.X = ja0Var;
-        org.telegram.messenger.g0.g3(ja0Var);
+    @Override // org.telegram.ui.Cells.w9
+    public final boolean z(org.telegram.messenger.fj fjVar) {
+        qa0 qa0Var = this.w0;
+        return qa0Var.a == 0 && !qa0Var.d0.d.i && x();
     }
 }

@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uh implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class uh implements Runnable {
                 try {
                     TL_bots.BotInfo K0 = riVar.K0(j3, j10);
                     if (K0 != null) {
-                        g0.g3(new di.i9(riVar, j3, j10, K0, x10Var, i7));
+                        g0.g3(new di.j9(riVar, j3, j10, K0, x10Var, i7));
                     } else if (x10Var != null) {
                         g0.g3(new fg(x10Var, 5));
                     }

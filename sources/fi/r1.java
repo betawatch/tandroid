@@ -8,7 +8,7 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,13 +32,13 @@ public final /* synthetic */ class r1 implements Runnable {
                 if (!z3Var.t0.H0) {
                     z3Var.j3 = null;
                     if (z3Var.r0 == null) {
-                        hi.m3 m3Var = new hi.m3(z3Var.getContext(), 3);
-                        m3Var.o(1.0f, -22.0f);
-                        z3Var.r0 = m3Var;
-                        m3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), ks.P3));
-                        hi.m3 m3Var2 = z3Var.r0;
-                        m3Var2.V = false;
-                        m3Var2.v(gd.M0(2131746204, null));
+                        hi.l3 l3Var = new hi.l3(z3Var.getContext(), 3);
+                        l3Var.o(1.0f, -22.0f);
+                        z3Var.r0 = l3Var;
+                        l3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), ks.P3));
+                        hi.l3 l3Var2 = z3Var.r0;
+                        l3Var2.V = false;
+                        l3Var2.v(gd.N0(2131746203, null));
                         z3Var.r0.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(1.0f));
                         z3Var.M0.addView(z3Var.r0, ma.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, z3Var.h2 ? 0.0f : 56.0f));
                     }
@@ -71,7 +71,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 i2 i2Var = z3Var.L1;
                 if (i2Var != null) {
                     i2Var.P(true);
-                    z3Var.L1.v2();
+                    z3Var.L1.y2();
                     z3Var.p0(true);
                     break;
                 }
@@ -79,15 +79,15 @@ public final /* synthetic */ class r1 implements Runnable {
             case 8:
                 Activity W = org.telegram.messenger.g0.W(z3Var.getContext());
                 if (W != null) {
-                    di.w2 w2Var = new di.w2(26, z3Var, W);
+                    di.f2 f2Var = new di.f2(28, z3Var, W);
                     f9 f9Var2 = ((w8) z3Var.A1).d;
                     e9 e9Var = f9Var2.A0;
                     if (e9Var != null) {
-                        z10 = e9Var.release(w2Var);
+                        z10 = e9Var.release(f2Var);
                         f9Var2.A0 = null;
                     }
                     if (!z10) {
-                        org.telegram.messenger.g0.h3(w2Var, 80L);
+                        org.telegram.messenger.g0.h3(f2Var, 80L);
                         break;
                     }
                 }

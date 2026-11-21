@@ -11,9 +11,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c extends Drawable {
     public final /* synthetic */ int a;
@@ -36,16 +36,16 @@ public final class c extends Drawable {
             default:
                 float exactCenterX = getBounds().exactCenterX();
                 float exactCenterY = getBounds().exactCenterY();
-                int x02 = n6.x0(null, n6.G6, false);
-                int x03 = n6.x0(null, n6.d6, false);
+                int x02 = m6.x0(null, m6.G6, false);
+                int x03 = m6.x0(null, m6.d6, false);
                 int i7 = this.c;
                 Drawable drawable = this.b;
                 if (i7 != x03) {
                     this.c = x03;
                     drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
                 }
-                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(7.6666665f), n6.n0(i0.a.o(x03, this.d)));
-                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(6.6666665f), n6.n0(i0.a.o(x02, this.d)));
+                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(7.6666665f), m6.n0(i0.a.o(x03, this.d)));
+                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(6.6666665f), m6.n0(i0.a.o(x02, this.d)));
                 t.d(drawable, exactCenterX, exactCenterY, 17);
                 canvas.translate(0.0f, g0.L(0.66f));
                 canvas.save();

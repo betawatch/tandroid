@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.util.Property;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class rp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final class rp0 extends AnimatorListenerAdapter {
         }
         Bitmap n10 = photoViewer.C4.n();
         if (n10 != null || photoViewer.s1) {
-            photoViewer.D1.b(n10, photoViewer.C4.V, photoViewer.d2 != 1, false, photoViewer.E1, photoViewer.s1 ? (org.telegram.ui.Components.v51) photoViewer.C2 : null, nq0Var.c);
+            photoViewer.D1.b(n10, photoViewer.C4.V, photoViewer.d2 != 1, false, photoViewer.E1, photoViewer.s1 ? (org.telegram.ui.Components.y51) photoViewer.C2 : null, nq0Var.c);
             photoViewer.D1.a();
             int q10 = photoViewer.C4.q();
             int o4 = photoViewer.C4.o();
@@ -86,7 +86,7 @@ public final class rp0 extends AnimatorListenerAdapter {
         }
         AnimatorSet animatorSet = new AnimatorSet();
         photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.V0, (Property<org.telegram.ui.Cells.x0, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.q6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.D1, (Property<org.telegram.ui.Components.qd0, Float>) View.ALPHA, 0.0f, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.V0, (Property<org.telegram.ui.Cells.x0, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.r6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.D1, (Property<org.telegram.ui.Components.rd0, Float>) View.ALPHA, 0.0f, 1.0f));
         photoViewer.p6.setDuration(200L);
         photoViewer.p6.addListener(new ay(this, 12));
         photoViewer.p6.start();

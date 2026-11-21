@@ -11,9 +11,9 @@ import org.telegram.messenger.x00;
 import org.telegram.messenger.z00;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.b31;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -98,15 +98,15 @@ public final /* synthetic */ class h3 implements View.OnClickListener {
                 l3 l3Var = new l3(r3Var6, 1);
                 z00 z00Var = mp.u1(z3Var6.m2).v7;
                 TL_stories.StoryItem storyItem3 = x3Var2.a;
-                bi.y3 y3Var = new bi.y3(l3Var, currentTimeMillis, 5);
+                bi.c4 c4Var = new bi.c4(l3Var, currentTimeMillis, 5);
                 HashSet hashSet = z00Var.K;
                 if (storyItem3 != null) {
                     x00 x00Var = new x00();
-                    String N0 = y21.N0();
+                    String N0 = b31.N0();
                     if (storyItem3.translatedText != null && TextUtils.equals(storyItem3.translatedLng, N0)) {
-                        y3Var.run();
+                        c4Var.run();
                     } else if (hashSet.contains(x00Var)) {
-                        y3Var.run();
+                        c4Var.run();
                     } else {
                         hashSet.add(x00Var);
                         TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
@@ -116,7 +116,7 @@ public final /* synthetic */ class h3 implements View.OnClickListener {
                         tL_textWithEntities.entities = storyItem3.entities;
                         tL_messages_translateText.text.add(tL_textWithEntities);
                         tL_messages_translateText.to_lang = z00.D(N0);
-                        z00Var.getConnectionsManager().sendRequest(tL_messages_translateText, new sn(z00Var, storyItem3, N0, x00Var, y3Var, tL_textWithEntities, 1));
+                        z00Var.getConnectionsManager().sendRequest(tL_messages_translateText, new sn(z00Var, storyItem3, N0, x00Var, c4Var, tL_textWithEntities, 1));
                     }
                 }
                 z3Var6.d1(false);

@@ -1,201 +1,211 @@
 package di;
 
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ce;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.tr;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.pf;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ee0;
-import org.telegram.ui.hk0;
-import org.telegram.ui.md0;
-import org.telegram.ui.o60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ j8(x8 x8Var, boolean[] zArr, fj fjVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i7, x10 x10Var, x10 x10Var2) {
-        this.a = 0;
-        this.c = x8Var;
-        this.d = zArr;
-        this.f = fjVar;
-        this.h = inputInvoice;
-        this.n = tL_payments_paymentFormStars;
-        this.e = zArr2;
-        this.b = i7;
-        this.r = x10Var;
-        this.s = x10Var2;
+    public /* synthetic */ j8(y8 y8Var, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j3, int i7, fj fjVar, long j10) {
+        this.f = y8Var;
+        this.h = tLObject;
+        this.n = runnable;
+        this.r = tL_error;
+        this.c = z10;
+        this.b = j3;
+        this.e = i7;
+        this.s = fjVar;
+        this.d = j10;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00e9  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        int i7 = this.a;
-        int i10 = this.b;
-        Object obj = this.s;
-        Object obj2 = this.r;
-        Object obj3 = this.n;
-        Object obj4 = this.h;
-        Object obj5 = this.f;
-        Object obj6 = this.e;
-        Object obj7 = this.d;
-        Object obj8 = this.c;
-        switch (i7) {
+        SQLitePreparedStatement executeFast;
+        int intValue;
+        Throwable th2;
+        switch (this.a) {
             case 0:
-                x8 x8Var = (x8) obj8;
-                ((boolean[]) obj7)[0] = true;
-                x8Var.Y((fj) obj5, (TLRPC.InputInvoice) obj4, (TLRPC.TL_payments_paymentFormStars) obj3, new u6(x8Var, (boolean[]) obj6, this.b, (x10) obj2, (x10) obj));
-                break;
-            case 1:
-                pf pfVar = (pf) obj8;
-                FrameLayout frameLayout = (FrameLayout) obj6;
-                View view = (View) obj5;
-                RectF rectF = (RectF) obj4;
-                pfVar.getClass();
-                ((ji.e) obj7).getLocationInWindow(new int[2]);
-                frameLayout.getLocationInWindow(new int[2]);
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
-                layoutParams.leftMargin = Math.round((rectF.left + r2[0]) - r0[0]);
-                layoutParams.topMargin = Math.round((rectF.top + r2[1]) - r0[1]);
-                view.setLayoutParams(layoutParams);
-                view.post(new ce(pfVar, view, frameLayout, layoutParams, (ArrayList) obj3, this.b, (ji.g) obj2, (ji.f) obj, 1));
-                break;
-            case 2:
-                LaunchActivity launchActivity = (LaunchActivity) obj8;
-                TLObject tLObject = (TLObject) obj7;
-                int[] iArr = (int[]) obj6;
-                o60 o60Var = (o60) obj5;
-                Integer num = (Integer) obj4;
-                Integer num2 = (Integer) obj3;
-                Long l10 = (Long) obj2;
-                Integer num3 = (Integer) obj;
-                String str = LaunchActivity.C1;
-                if (tLObject instanceof TLRPC.TL_messages_chats) {
-                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
-                    if (!tL_messages_chats.chats.isEmpty()) {
-                        mp.u1(launchActivity.P).Z3(tL_messages_chats.chats, false);
-                        iArr[0] = launchActivity.z0(this.b, o60Var, num, num2, l10, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
-                        break;
+                y8 y8Var = (y8) this.f;
+                TLObject tLObject = (TLObject) this.h;
+                Runnable runnable = (Runnable) this.n;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.r;
+                boolean z10 = this.c;
+                long j3 = this.b;
+                int i7 = this.e;
+                fj fjVar = (fj) this.s;
+                long j10 = this.d;
+                if (tLObject instanceof TLRPC.Updates) {
+                    Utilities.d.c(new w7(y8Var, tLObject, 5));
+                    runnable.run();
+                    return;
+                } else {
+                    if (tL_error == null || !org.telegram.messenger.r8.r(tL_error.text) || z10) {
+                        runnable.run();
+                        return;
                     }
+                    TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
+                    tL_messages_getScheduledMessages.peer = mp.u1(y8Var.a).l1(j3);
+                    tL_messages_getScheduledMessages.id.add(Integer.valueOf(i7));
+                    ConnectionsManager.getInstance(y8Var.a).sendRequest(tL_messages_getScheduledMessages, new y(y8Var, fjVar, j10, runnable, 2));
+                    return;
                 }
-                try {
-                    o60Var.run();
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                }
-                launchActivity.F0(org.telegram.ui.Components.b5.E(launchActivity, gd.M0(2131751443, null), gd.M0(2131748703, null)));
-                break;
-            case 3:
-                LaunchActivity launchActivity2 = (LaunchActivity) obj8;
-                o60 o60Var2 = (o60) obj7;
-                TLObject tLObject2 = (TLObject) obj6;
-                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) obj5;
-                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
-                String str2 = (String) obj3;
-                String str3 = (String) obj2;
-                String str4 = (String) obj;
-                String str5 = LaunchActivity.C1;
-                try {
-                    o60Var2.run();
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                }
-                if (tLObject2 != null) {
-                    mp.u1(i10).f4(authorizationform.users, false);
-                    launchActivity2.t0(new hk0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str2, str3, str4, authorizationform, (TL_account.Password) tLObject2));
-                    break;
-                }
-                break;
             default:
-                md0 md0Var = (md0) obj8;
-                TLObject tLObject3 = (TLObject) obj7;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
-                f5.i iVar = (f5.i) obj5;
-                f5.m mVar = (f5.m) obj4;
-                TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj3;
-                String str6 = (String) obj2;
-                TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
-                ee0 ee0Var = md0Var.w;
-                hi.d dVar = md0Var.b;
-                org.telegram.messenger.a8.b("LoginBilling canPurchaseStore returned " + tLObject3 + " " + tL_error);
-                if (!(tLObject3 instanceof TLRPC.TL_boolTrue)) {
-                    if (!(tLObject3 instanceof TLRPC.TL_boolFalse)) {
-                        if (tL_error != null) {
-                            md0Var.e = tL_error.text;
-                            new org.telegram.ui.Components.lc(ee0Var.a0, null).g0(tL_error, false);
-                            break;
+                tr trVar = (tr) this.f;
+                long j11 = this.b;
+                boolean z11 = this.c;
+                String str = (String) this.h;
+                long j12 = this.d;
+                int i10 = this.e;
+                String str2 = (String) this.n;
+                String str3 = (String) this.r;
+                String str4 = (String) this.s;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    if (j11 == 0) {
+                        try {
+                            SQLiteDatabase sQLiteDatabase = trVar.b;
+                            Locale locale = Locale.ENGLISH;
+                            executeFast = sQLiteDatabase.executeFast("UPDATE dialogs SET " + str3 + " = ? WHERE did = ?");
+                        } catch (SQLiteException e10) {
+                            e = e10;
+                        }
+                        try {
+                            executeFast.bindInteger(1, Math.max(i10, 0));
+                            executeFast.bindLong(2, j12);
+                            executeFast.step();
+                            executeFast.dispose();
+                            if (i10 == 0) {
+                                executeFast = trVar.b.executeFast("UPDATE " + str4 + " SET state = 0 WHERE dialog_id = ?");
+                                executeFast.bindLong(1, j12);
+                                executeFast.step();
+                                executeFast.dispose();
+                            }
+                        } catch (SQLiteException e11) {
+                            e = e11;
+                            sQLitePreparedStatement = executeFast;
+                            e.printStackTrace();
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            return;
+                        } catch (Throwable th3) {
+                            th = th3;
+                            sQLitePreparedStatement = executeFast;
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            throw th;
+                        }
+                        return;
+                    }
+                    if (z11) {
+                        try {
+                            try {
+                                SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                                Locale locale2 = Locale.ENGLISH;
+                                SQLiteCursor queryFinalized = sQLiteDatabase2.queryFinalized("SELECT " + str + " FROM topics WHERE did = " + j12 + " AND topic_id = " + j11, new Object[0]);
+                                intValue = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
+                                queryFinalized.dispose();
+                            } catch (SQLiteException e12) {
+                                e = e12;
+                                e.printStackTrace();
+                                if (sQLitePreparedStatement == null) {
+                                    sQLitePreparedStatement.dispose();
+                                    return;
+                                }
+                                return;
+                            }
+                        } catch (Throwable th4) {
+                            th2 = th4;
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            throw th2;
                         }
                     } else {
-                        md0Var.e = "RESPONSE_FALSE";
-                        new org.telegram.ui.Components.lc(ee0Var.a0, null).H(R.raw.error, gd.a0(null, null, 2131743641, "RESPONSE_FALSE"));
-                        break;
+                        intValue = 0;
                     }
-                } else {
-                    dVar.i(gd.a0(null, null, 2131745772, iVar.a), false, true);
-                    dVar.g(i10 == 7 ? gd.M0(2131745776, null) : gd.H(',', "SMSFeePurchaseTextDays", i10), false);
-                    dVar.setLoading(false);
-                    dVar.setOnClickListener(new fi.d0(md0Var, mVar, tL_inputStorePaymentAuthCode, str6, tL_payments_canPurchaseStore, 14));
-                    break;
+                    SQLiteDatabase sQLiteDatabase3 = trVar.b;
+                    Locale locale3 = Locale.ENGLISH;
+                    SQLitePreparedStatement executeFast2 = sQLiteDatabase3.executeFast("UPDATE topics SET " + str + " = ? WHERE did = ? AND topic_id = ?");
+                    try {
+                        executeFast2.bindInteger(1, Math.max(intValue + i10, 0));
+                        executeFast2.bindLong(2, j12);
+                        executeFast2.bindLong(3, j11);
+                        executeFast2.step();
+                        executeFast2.dispose();
+                        if (i10 != 0) {
+                            return;
+                        }
+                        SQLitePreparedStatement executeFast3 = trVar.b.executeFast("UPDATE " + str2 + " SET state = 0 WHERE dialog_id = ? AND topic_id = ? ");
+                        try {
+                            executeFast3.bindLong(1, j12);
+                            executeFast3.bindLong(2, j11);
+                            executeFast3.step();
+                            executeFast3.dispose();
+                            return;
+                        } catch (SQLiteException e13) {
+                            e = e13;
+                            sQLitePreparedStatement = executeFast3;
+                            e.printStackTrace();
+                            if (sQLitePreparedStatement == null) {
+                            }
+                        } catch (Throwable th5) {
+                            th2 = th5;
+                            sQLitePreparedStatement = executeFast3;
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            throw th2;
+                        }
+                    } catch (SQLiteException e14) {
+                        e = e14;
+                        sQLitePreparedStatement = executeFast2;
+                    } catch (Throwable th6) {
+                        th2 = th6;
+                        sQLitePreparedStatement = executeFast2;
+                    }
+                } catch (Throwable th7) {
+                    th = th7;
                 }
-                break;
         }
     }
 
-    public /* synthetic */ j8(pf pfVar, ji.e eVar, FrameLayout frameLayout, View view, RectF rectF, ArrayList arrayList, int i7, ji.g gVar, ji.f fVar) {
-        this.a = 1;
-        this.c = pfVar;
-        this.d = eVar;
-        this.e = frameLayout;
-        this.f = view;
-        this.h = rectF;
-        this.n = arrayList;
-        this.b = i7;
-        this.r = gVar;
-        this.s = fVar;
-    }
-
-    public /* synthetic */ j8(LaunchActivity launchActivity, Object obj, Object obj2, int i7, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, int i10) {
-        this.a = i10;
-        this.c = launchActivity;
-        this.d = obj;
-        this.e = obj2;
-        this.b = i7;
-        this.f = obj3;
-        this.h = obj4;
-        this.n = obj5;
-        this.r = obj6;
-        this.s = obj7;
-    }
-
-    public /* synthetic */ j8(md0 md0Var, TLObject tLObject, TLRPC.TL_error tL_error, f5.i iVar, int i7, f5.m mVar, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, String str, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
-        this.a = 4;
-        this.c = md0Var;
-        this.d = tLObject;
-        this.e = tL_error;
-        this.f = iVar;
-        this.b = i7;
-        this.h = mVar;
-        this.n = tL_inputStorePaymentAuthCode;
-        this.r = str;
-        this.s = tL_payments_canPurchaseStore;
+    public /* synthetic */ j8(tr trVar, long j3, boolean z10, String str, long j10, int i7, String str2, String str3, String str4) {
+        this.f = trVar;
+        this.b = j3;
+        this.c = z10;
+        this.h = str;
+        this.d = j10;
+        this.e = i7;
+        this.n = str2;
+        this.r = str3;
+        this.s = str4;
     }
 }

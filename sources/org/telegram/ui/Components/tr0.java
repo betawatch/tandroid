@@ -1,134 +1,145 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class tr0 extends bk0 {
-    public final Context c;
-    public TLRPC.ChatFull d;
-    public ArrayList e;
-    public final /* synthetic */ gt0 f;
+public final class tr0 extends v4.w {
+    public cs0 d;
+    public final /* synthetic */ jt0 e;
 
-    public tr0(gt0 gt0Var, Context context) {
-        this.f = gt0Var;
-        this.c = context;
+    public tr0(jt0 jt0Var) {
+        this.e = jt0Var;
     }
 
-    @Override // org.telegram.ui.Components.bk0
-    public final boolean D(v4.f1 f1Var) {
+    @Override // v4.w
+    public final void a(RecyclerView recyclerView, v4.f1 f1Var) {
+        super.a(recyclerView, f1Var);
+        f1Var.a.setPressed(false);
+    }
+
+    @Override // v4.w
+    public final int e(RecyclerView recyclerView, v4.f1 f1Var) {
+        v4.i0 adapter = recyclerView.getAdapter();
+        gt0 gt0Var = adapter instanceof gt0 ? (gt0) adapter : null;
+        if (!k() || gt0Var == null || !gt0Var.M(f1Var.b())) {
+            return v4.w.l(0, 0);
+        }
+        ds0 ds0Var = this.e.n0[0];
+        nq0 nq0Var = ds0Var != null ? ds0Var.h : null;
+        this.d = nq0Var;
+        if (nq0Var != null) {
+            nq0Var.setItemAnimator(ds0Var.d);
+        }
+        return v4.w.l(15, 0);
+    }
+
+    @Override // v4.w
+    public final boolean k() {
+        jt0 jt0Var = this.e;
+        if (jt0Var.F1) {
+            return true;
+        }
+        jq0 jq0Var = jt0Var.c0;
+        return jq0Var != null && jq0Var.f;
+    }
+
+    @Override // v4.w
+    public final boolean n(RecyclerView recyclerView, v4.f1 f1Var, v4.f1 f1Var2) {
+        fi.h6 h6Var;
+        ArrayList arrayList;
+        v4.i0 adapter = recyclerView.getAdapter();
+        gt0 gt0Var = adapter instanceof gt0 ? (gt0) adapter : null;
+        if (gt0Var == null || !gt0Var.M(f1Var.b()) || !gt0Var.M(f1Var2.b())) {
+            return false;
+        }
+        int b10 = f1Var.b();
+        int b11 = f1Var2.b();
+        ArrayList arrayList2 = gt0Var.E;
+        if (!gt0Var.h && (h6Var = gt0Var.s) != null && b10 >= 0 && b10 < h6Var.i.size() && b11 >= 0 && b11 < gt0Var.s.i.size()) {
+            if ((gt0Var.s instanceof fi.a6) || gt0Var.n > 0) {
+                arrayList = new ArrayList();
+                for (int i7 = 0; i7 < gt0Var.s.i.size(); i7++) {
+                    arrayList.add(Integer.valueOf(((org.telegram.messenger.fj) gt0Var.s.i.get(i7)).e1()));
+                }
+            } else {
+                arrayList = new ArrayList(gt0Var.s.g);
+            }
+            if (!gt0Var.F) {
+                arrayList2.clear();
+                arrayList2.addAll(arrayList);
+                gt0Var.F = true;
+            }
+            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) gt0Var.s.i.get(b10);
+            arrayList.remove(Integer.valueOf(fjVar.e1()));
+            arrayList.add(Utilities.j(b11, arrayList.size(), 0), Integer.valueOf(fjVar.e1()));
+            gt0Var.s.C(arrayList, false);
+            gt0Var.j(b10, b11);
+        }
         return true;
     }
 
-    @Override // v4.i0
-    public final int b() {
-        TLRPC.ChatFull chatFull = this.d;
-        if (chatFull != null && chatFull.participants.participants.isEmpty()) {
-            return 1;
+    @Override // v4.w
+    public final void p(v4.f1 f1Var, int i7) {
+        fi.h6 h6Var;
+        ArrayList arrayList;
+        cs0 cs0Var = this.d;
+        if (cs0Var != null && f1Var != null) {
+            cs0Var.d1(false);
         }
-        TLRPC.ChatFull chatFull2 = this.d;
-        if (chatFull2 != null) {
-            return chatFull2.participants.participants.size();
+        if (i7 != 0) {
+            cs0 cs0Var2 = this.d;
+            if (cs0Var2 != null) {
+                cs0Var2.I0(false);
+            }
+            if (f1Var != null) {
+                f1Var.a.setPressed(true);
+                return;
+            }
+            return;
         }
-        return 0;
-    }
-
-    @Override // v4.i0
-    public final int d(int i7) {
-        TLRPC.ChatFull chatFull = this.d;
-        return (chatFull == null || !chatFull.participants.participants.isEmpty()) ? 21 : 20;
-    }
-
-    @Override // v4.i0
-    public final void t(v4.f1 f1Var, int i7) {
-        String str;
-        boolean z10;
-        boolean z11;
-        boolean z12;
-        boolean z13;
-        boolean z14;
-        boolean z15;
-        gt0 gt0Var = this.f;
-        org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
-        View view = f1Var.a;
-        if (view instanceof org.telegram.ui.Cells.ra) {
-            org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) view;
-            TLRPC.ChatParticipant chatParticipant = !this.e.isEmpty() ? this.d.participants.participants.get(((Integer) this.e.get(i7)).intValue()) : this.d.participants.participants.get(i7);
-            if (chatParticipant != null) {
-                if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
-                    TLRPC.ChannelParticipant channelParticipant = ((TLRPC.TL_chatChannelParticipant) chatParticipant).channelParticipant;
-                    String str2 = channelParticipant.rank;
-                    if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
-                        if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.gd.M0(2131752412, "ChannelCreator");
-                        }
-                        z14 = true;
-                        z15 = true;
-                        z13 = false;
-                    } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
-                        if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.gd.M0(2131752509, "ChannelAdmin");
-                        }
-                        z13 = channelParticipant.promoted_by == h2Var.getUserConfig().e();
-                        z14 = true;
-                        z15 = false;
-                    } else {
-                        z13 = false;
-                        z14 = false;
-                        z15 = false;
+        cs0 cs0Var3 = this.d;
+        if (cs0Var3 != null && (cs0Var3.getAdapter() instanceof gt0)) {
+            gt0 gt0Var = (gt0) this.d.getAdapter();
+            ArrayList arrayList2 = gt0Var.E;
+            if (!gt0Var.h && (h6Var = gt0Var.s) != null && gt0Var.F) {
+                if ((h6Var instanceof fi.a6) || gt0Var.n > 0) {
+                    arrayList = new ArrayList();
+                    for (int i10 = 0; i10 < gt0Var.s.i.size(); i10++) {
+                        arrayList.add(Integer.valueOf(((org.telegram.messenger.fj) gt0Var.s.i.get(i10)).e1()));
                     }
-                    boolean z16 = z15;
-                    z12 = z13;
-                    z10 = z14;
-                    z11 = z16;
-                    str = str2;
                 } else {
-                    String str3 = chatParticipant.rank;
-                    if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
-                        if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.gd.M0(2131752412, "ChannelCreator");
+                    arrayList = h6Var.g;
+                }
+                boolean z10 = arrayList2.size() != arrayList.size();
+                if (!z10) {
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 >= arrayList2.size()) {
+                            break;
                         }
-                        str = str3;
-                        z10 = true;
-                        z11 = true;
-                        z12 = false;
-                    } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
-                        if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.gd.M0(2131752509, "ChannelAdmin");
+                        if (arrayList2.get(i11) != arrayList.get(i11)) {
+                            z10 = true;
+                            break;
                         }
-                        z12 = chatParticipant.inviter_id == h2Var.getUserConfig().e();
-                        str = str3;
-                        z10 = true;
-                        z11 = false;
-                    } else {
-                        str = str3;
-                        z10 = false;
-                        z11 = false;
-                        z12 = false;
+                        i11++;
                     }
                 }
-                TLRPC.User c22 = h2Var.getMessagesController().c2(Long.valueOf(chatParticipant.user_id));
-                raVar.a(str, z10, z11, org.telegram.messenger.o10.C(c22) && org.telegram.messenger.v3.h(h2Var.getMessagesController().O0(Long.valueOf(-gt0Var.m1))), new n50(this, c22, str, z10, z11, z12, 1));
-                raVar.d(c22, null, null, i7 != this.d.participants.participants.size() - 1);
+                if (z10) {
+                    gt0Var.s.C(arrayList, true);
+                }
+                gt0Var.F = false;
             }
+        }
+        cs0 cs0Var4 = this.d;
+        if (cs0Var4 != null) {
+            cs0Var4.setItemAnimator(null);
         }
     }
 
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        gt0 gt0Var = this.f;
-        if (i7 != 20) {
-            org.telegram.ui.Cells.ra raVar = new org.telegram.ui.Cells.ra(9, 0, this.c, gt0Var.I1, true, false);
-            raVar.setLayoutParams(new v4.q0(-1, -2));
-            return new kj0(raVar);
-        }
-        x3 X = gt0.X(7, gt0Var.m1, this.c, gt0Var.I1);
-        X.setLayoutParams(new v4.q0(-1, -1));
-        return new kj0(X);
+    @Override // v4.w
+    public final void q(v4.f1 f1Var) {
     }
 }

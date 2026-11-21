@@ -7,12 +7,12 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class e9 extends View {
     public final d9 a;
-    public ug.b1 b;
-    public vy0 c;
+    public ug.a1 b;
+    public xy0 c;
     public Paint d;
 
     public e9(Context context, boolean z10) {

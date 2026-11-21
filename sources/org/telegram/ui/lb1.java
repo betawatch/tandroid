@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lb1 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,19 +78,19 @@ public final /* synthetic */ class lb1 implements Runnable {
                 ArrayList arrayList2 = mb1Var3.r;
                 String lowerCase = str4.trim().toLowerCase();
                 if (lowerCase.length() == 0) {
-                    org.telegram.messenger.g0.g3(new u21(mb1Var3, new ArrayList(), new ArrayList(), 9));
+                    org.telegram.messenger.g0.g3(new v21(mb1Var3, new ArrayList(), new ArrayList(), 9));
                     break;
                 } else {
                     boolean z19 = false;
-                    String S0 = org.telegram.messenger.gd.E0().S0(lowerCase, true, false);
-                    if (lowerCase.equals(S0) || S0.length() == 0) {
-                        S0 = null;
+                    String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                    if (lowerCase.equals(T0) || T0.length() == 0) {
+                        T0 = null;
                     }
-                    int i7 = (S0 != null ? 1 : 0) + 1;
+                    int i7 = (T0 != null ? 1 : 0) + 1;
                     String[] strArr = new String[i7];
                     strArr[0] = lowerCase;
-                    if (S0 != null) {
-                        strArr[1] = S0;
+                    if (T0 != null) {
+                        strArr[1] = T0;
                     }
                     ArrayList arrayList3 = new ArrayList();
                     ArrayList arrayList4 = new ArrayList();
@@ -111,10 +111,10 @@ public final /* synthetic */ class lb1 implements Runnable {
                             strArr2[z19 ? 1 : 0] = org.telegram.messenger.i5.m(z19 ? 1 : 0, user.first_name, user.last_name).toLowerCase();
                             str = org.telegram.messenger.o10.o(user);
                             if (org.telegram.messenger.o10.A(user)) {
-                                strArr2[2] = org.telegram.messenger.gd.M0(2131746071, null).toLowerCase();
+                                strArr2[2] = org.telegram.messenger.gd.N0(2131746070, null).toLowerCase();
                             } else if (org.telegram.messenger.o10.C(user)) {
                                 if (mb1Var3.w.H) {
-                                    strArr2[2] = org.telegram.messenger.gd.M0(2131745706, null).toLowerCase();
+                                    strArr2[2] = org.telegram.messenger.gd.N0(2131745705, null).toLowerCase();
                                 } else {
                                     z11 = z18;
                                     arrayList = arrayList2;
@@ -123,9 +123,9 @@ public final /* synthetic */ class lb1 implements Runnable {
                             } else if (user.bot) {
                             }
                             z11 = z18;
-                            String S02 = org.telegram.messenger.gd.E0().S0(strArr2[z19 ? 1 : 0], true, z19);
-                            strArr2[1] = S02;
-                            if (strArr2[z19 ? 1 : 0].equals(S02)) {
+                            String T02 = org.telegram.messenger.gd.E0().T0(strArr2[z19 ? 1 : 0], true, z19);
+                            strArr2[1] = T02;
+                            if (strArr2[z19 ? 1 : 0].equals(T02)) {
                                 strArr2[1] = null;
                             }
                             int i11 = z19 ? 1 : 0;
@@ -186,7 +186,7 @@ public final /* synthetic */ class lb1 implements Runnable {
                         arrayList2 = arrayList;
                         z19 = false;
                     }
-                    org.telegram.messenger.g0.g3(new u21(mb1Var3, arrayList3, arrayList4, 9));
+                    org.telegram.messenger.g0.g3(new v21(mb1Var3, arrayList3, arrayList4, 9));
                     break;
                 }
         }

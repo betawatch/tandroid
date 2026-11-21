@@ -1,27 +1,27 @@
 package gi;
 
-import ai.g0;
+import ai.h0;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import fi.g4;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class p extends sa {
     public final int T1;
     public final CharSequence U1;
-    public z41 V1;
+    public c51 V1;
 
-    public p(h2 h2Var, String str, g0 g0Var) {
-        super(h2Var, true, false, h2Var.getResourceProvider());
+    public p(g2 g2Var, String str, h0 h0Var) {
+        super(g2Var, true, false, g2Var.getResourceProvider());
         new FrameLayout(getContext());
         new ImageView(getContext());
-        this.T1 = h2Var.getCurrentAccount();
+        this.T1 = g2Var.getCurrentAccount();
         this.U1 = str;
         c1();
         this.v1 = 0.6f;
@@ -29,18 +29,18 @@ public final class p extends sa {
         this.z1 = true;
         O();
         Z0();
-        ck0 ck0Var = this.o1;
+        ek0 ek0Var = this.o1;
         int i7 = this.u0;
-        ck0Var.setPadding(i7, 0, i7, 0);
-        this.o1.setOnItemClickListener(new g4(1, this, g0Var));
+        ek0Var.setPadding(i7, 0, i7, 0);
+        this.o1.setOnItemClickListener(new g4(1, this, h0Var));
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
-        z41 z41Var = new z41(ck0Var, getContext(), this.T1, 0, false, new bi.b(this, 23), this.J0);
-        this.V1 = z41Var;
-        z41Var.r = false;
-        return z41Var;
+    public final dk0 M0(ek0 ek0Var) {
+        c51 c51Var = new c51(ek0Var, getContext(), this.T1, 0, false, new bi.b(this, 23), this.J0);
+        this.V1 = c51Var;
+        c51Var.r = false;
+        return c51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

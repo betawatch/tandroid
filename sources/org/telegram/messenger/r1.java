@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class r1 implements f5.o, f5.c {
     public static final f5.p k;
@@ -478,7 +478,7 @@ public final class r1 implements f5.o, f5.c {
                 tL_inputAppEvent.type = "premium.promo_screen_fail";
                 tL_inputAppEvent.data = new TLRPC.TL_jsonNull();
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(j10.t0).sendRequest(tL_help_saveAppLog, new fi.k5(9));
+                ConnectionsManager.getInstance(j10.t0).sendRequest(tL_help_saveAppLog, new fi.l5(9));
             }
             Runnable runnable = r1Var2.h;
             if (runnable != null) {
@@ -588,8 +588,8 @@ public final class r1 implements f5.o, f5.c {
                                     tL_payments_assignPlayMarketTransaction.receipt = tL_dataJSON;
                                     tL_dataJSON.data = purchase.a;
                                     tL_payments_assignPlayMarketTransaction.purpose = (TLRPC.InputStorePaymentPurpose) obj2;
-                                    final org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
-                                    g0.g3(new n1(u1VarArr, 0));
+                                    final org.telegram.ui.ActionBar.t1[] t1VarArr = new org.telegram.ui.ActionBar.t1[1];
+                                    g0.g3(new n1(t1VarArr, 0));
                                     atomicInteger.incrementAndGet();
                                     int i14 = tL_payments_assignPlayMarketTransaction.purpose instanceof TLRPC.TL_inputStorePaymentAuthCode ? 65608 : 65600;
                                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i13);
@@ -598,7 +598,7 @@ public final class r1 implements f5.o, f5.c {
                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                             int i15;
                                             r1 r1Var3 = r1.this;
-                                            org.telegram.ui.ActionBar.u1[] u1VarArr2 = u1VarArr;
+                                            org.telegram.ui.ActionBar.t1[] t1VarArr2 = t1VarArr;
                                             Purchase purchase2 = purchase;
                                             TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction2 = tL_payments_assignPlayMarketTransaction;
                                             c cVar3 = cVar2;
@@ -606,7 +606,7 @@ public final class r1 implements f5.o, f5.c {
                                             AtomicInteger atomicInteger3 = atomicInteger2;
                                             AtomicInteger atomicInteger4 = atomicInteger;
                                             Runnable runnable2 = yfVar;
-                                            g0.g3(new n1(u1VarArr2, 1));
+                                            g0.g3(new n1(t1VarArr2, 1));
                                             r1Var3.b.remove(purchase2.c());
                                             if (!(tLObject instanceof TLRPC.Updates)) {
                                                 StringBuilder sb3 = new StringBuilder("BillingController.onPurchasesUpdatedInternal: ");

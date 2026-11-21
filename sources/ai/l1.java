@@ -1,277 +1,403 @@
 package ai;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
+import android.content.SharedPreferences;
+import android.net.NetworkInfo;
 import android.os.SystemClock;
-import android.text.Layout;
-import android.widget.EditText;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.util.Log;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.ui.Components.gf;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.pt;
-import org.telegram.ui.Components.vu0;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.zip.GZIPInputStream;
+import org.telegram.messenger.a6;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.w7;
+import org.telegram.messenger.z5;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class l1 {
-    public static final lr J = new lr(0.42d, 0.0d, 0.22d, 1.0d);
-    public final int[] A;
-    public final float B;
-    public boolean C;
-    public boolean D;
-    public float E;
-    public float F;
-    public int[] G;
-    public Runnable H;
-    public boolean I;
-    public final EditText b;
-    public boolean d;
-    public long e;
-    public float f;
-    public float g;
-    public Bitmap h;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public final Paint p;
-    public final Paint q;
-    public final LinearGradient r;
-    public final LinearGradient s;
-    public final LinearGradient t;
-    public final Matrix u;
-    public int v;
-    public int w;
-    public int x;
-    public float y;
-    public float z;
-    public long a = 900;
-    public final vu0 c = new vu0(2600);
-    public float[] i = new float[0];
-    public float[] j = new float[0];
-    public final Paint o = new Paint(2);
+public abstract class l1 {
+    public static ArrayList a;
+    public static long b;
+    public static CountDownLatch c;
+    public static long d;
 
-    public l1(gf gfVar) {
-        Paint paint = new Paint();
-        this.p = paint;
-        Paint paint2 = new Paint();
-        this.q = paint2;
-        this.u = new Matrix();
-        this.A = new int[2];
-        this.F = 0.06f;
-        this.b = gfVar;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.r = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, 0, -16777216, tileMode);
-        this.s = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, -16777216, 0, tileMode);
-        this.t = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, 16777215, -1, tileMode);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
-        this.B = org.telegram.messenger.g0.L(22.0f);
+    public static synchronized ArrayList a() {
+        synchronized (l1.class) {
+            try {
+                if (a == null) {
+                    String string = mp.g1().getString("speech_models", null);
+                    if (string == null) {
+                        return null;
+                    }
+                    try {
+                        SerializedData serializedData = new SerializedData(Base64.decode(string, 0));
+                        int readInt32 = serializedData.readInt32(true);
+                        ArrayList arrayList = new ArrayList(readInt32);
+                        for (int i7 = 0; i7 < readInt32; i7++) {
+                            arrayList.add(TLRPC.TL_transcriptionModel.TLdeserialize(serializedData, serializedData.readInt32(true), true));
+                        }
+                        serializedData.cleanup();
+                        a = arrayList;
+                    } catch (Throwable th2) {
+                        Log.d("Dictation", "speech models: cached list unreadable: " + th2);
+                        mp.g1().edit().remove("speech_models").apply();
+                    }
+                }
+                return a;
+            } catch (Throwable th3) {
+                throw th3;
+            }
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x004e, code lost:
+    public static boolean b() {
+        a6 q10 = a6.q(j10.l());
+        int e10 = org.telegram.messenger.t0.e();
+        z5 p10 = e10 == 1 ? q10.p() : e10 == 2 ? q10.o() : q10.n();
+        return p10 != null && p10.g;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x0110, code lost:
     
-        if (r1 != null) goto L10;
+        android.util.Log.d(r7, "speech models: " + r17 + " download stalled");
      */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0076, code lost:
+    
+        if (org.telegram.messenger.a6.q(org.telegram.messenger.j10.l()).p().g != false) goto L31;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:102:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x015f  */
+    /* JADX WARN: Type inference failed for: r5v10 */
+    /* JADX WARN: Type inference failed for: r5v12 */
+    /* JADX WARN: Type inference failed for: r5v5, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r5v6 */
+    /* JADX WARN: Type inference failed for: r5v7, types: [java.io.File] */
+    /* JADX WARN: Type inference failed for: r5v8 */
+    /* JADX WARN: Type inference failed for: r5v9 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(long j3) {
-        this.a = j3;
-        EditText editText = this.b;
-        Layout layout = editText.getLayout();
-        this.l = 0;
-        if (layout != null && layout.getWidth() > 0 && layout.getHeight() > 0) {
-            Bitmap bitmap = null;
-            try {
-                bitmap = Bitmap.createBitmap(layout.getWidth() + org.telegram.messenger.g0.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(bitmap);
-                editText.getPaint().setColor(editText.getCurrentTextColor());
-                layout.draw(canvas);
-                this.l = f(1100, bitmap, false);
-            } catch (Throwable unused) {
-            }
-            bitmap.recycle();
-        }
-        this.n = 0;
-        this.m = 0;
-        this.e = SystemClock.uptimeMillis();
-        this.I = false;
-        this.d = true;
-        editText.invalidate();
-    }
-
-    public final boolean b(float f10, float f11, int i7, boolean z10) {
-        c();
-        EditText editText = this.b;
-        Layout layout = editText.getLayout();
-        if (layout == null || layout.getWidth() <= 0 || layout.getHeight() <= 0) {
-            return false;
-        }
-        try {
-            this.h = Bitmap.createBitmap(layout.getWidth() + org.telegram.messenger.g0.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(this.h);
-            editText.getPaint().setColor(editText.getCurrentTextColor());
-            layout.draw(canvas);
-            this.w = editText.getScrollY();
-            this.x = Math.max(1, (editText.getHeight() - editText.getTotalPaddingTop()) - editText.getTotalPaddingBottom());
-            this.k = f(1200, this.h, true);
-            editText.getLocationInWindow(this.A);
-            this.y = (editText instanceof pt ? ((pt) editText).getOffsetY() : 0.0f) + ((editText.getTotalPaddingTop() + r1[1]) - this.w);
-            this.f = f10;
-            this.g = f11;
-            int i10 = this.v;
-            Paint paint = this.q;
-            if (i10 != i7 || paint.getColorFilter() == null) {
-                this.v = i7;
-                paint.setColorFilter(new PorterDuffColorFilter(this.v, PorterDuff.Mode.SRC_IN));
-            }
-            vu0 vu0Var = this.c;
-            vu0Var.a();
-            vu0Var.e(z10);
-            vu0Var.a = s0.k(z10);
-            vu0Var.Q = org.telegram.messenger.g0.L(10.0f);
-            return true;
-        } catch (Throwable unused) {
-            return false;
-        }
-    }
-
-    public final void c() {
-        this.d = false;
-        this.e = 0L;
-        Bitmap bitmap = this.h;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.h = null;
-        }
-        this.c.a();
-    }
-
-    public final float d(float f10) {
-        float interpolation = J.getInterpolation(Math.max(0.0f, Math.min(1.0f, (f10 * 1000.0f) / (this.a - (this.F * 1000.0f)))));
-        float f11 = this.f;
-        return com.google.android.gms.internal.vision.e2.z(this.g, f11, interpolation, f11);
-    }
-
-    public final void e(LinearGradient linearGradient, float f10, float f11) {
-        float sqrt = (float) Math.sqrt(1.809999942779541d);
-        float f12 = 1.0f / sqrt;
-        float f13 = 0.9f / sqrt;
-        float f14 = f10 / sqrt;
-        float f15 = f11 / sqrt;
-        Matrix matrix = this.u;
-        matrix.reset();
-        matrix.setScale(Math.max(0.01f, f15 - f14), 1.0f);
-        matrix.postRotate((float) Math.toDegrees(Math.atan2(f13, f12)));
-        matrix.postTranslate(f12 * f14, f14 * f13);
-        linearGradient.setLocalMatrix(matrix);
-    }
-
-    public final int f(int i7, Bitmap bitmap, boolean z10) {
-        int width = bitmap.getWidth();
-        int height = bitmap.getHeight();
-        int[] iArr = this.G;
-        if (iArr == null || iArr.length < width * height) {
-            this.G = new int[width * height];
-        }
-        int[] iArr2 = this.G;
-        bitmap.getPixels(iArr2, 0, width, 0, 0, width, height);
-        int max = Math.max(1, Math.round(org.telegram.messenger.g0.p * 0.8f));
-        int i10 = 0;
-        for (int i11 = 0; i11 < height; i11 += max) {
-            for (int i12 = 0; i12 < width; i12 += max) {
-                if ((iArr2[(i11 * width) + i12] >>> 24) > 90) {
-                    i10++;
+    public static int c(TLRPC.TL_transcriptionModel tL_transcriptionModel, File file, boolean z10, k1 k1Var) {
+        int i7;
+        int i10;
+        int i11;
+        int i12;
+        String str;
+        c1 c1Var;
+        File file2;
+        if (tL_transcriptionModel != null) {
+            TLRPC.Document document = tL_transcriptionModel.document;
+            String str2 = "speech_doc_" + file.getName();
+            int i13 = 1;
+            String str3 = "Dictation";
+            if (file.exists()) {
+                if (mp.g1().getLong(str2, 0L) != document.id) {
+                    if (!z10) {
+                        try {
+                            org.telegram.messenger.t0.c(false);
+                            if (org.telegram.messenger.t0.c != null) {
+                                if (org.telegram.messenger.t0.c.getType() != 1) {
+                                    if (org.telegram.messenger.t0.c.getType() == 9) {
+                                    }
+                                }
+                                if (org.telegram.messenger.t0.c.getState() == NetworkInfo.State.CONNECTED) {
+                                }
+                            }
+                        } catch (Exception e10) {
+                            a8.g(e10, true);
+                        }
+                        Log.d("Dictation", "speech models: " + file.getName() + " has an update, not on Wi-Fi / auto-download");
+                        return 0;
+                    }
                 }
             }
-        }
-        float f10 = i10 > i7 ? i7 / i10 : 1.0f;
-        float[] fArr = z10 ? this.i : this.j;
-        int i13 = i7 + 32;
-        if (fArr.length < Math.min(i10, i13) * 3) {
-            fArr = new float[Math.min(i10, i13) * 3];
-        }
-        int i14 = 0;
-        for (int i15 = 0; i15 < height; i15 += max) {
-            for (int i16 = 0; i16 < width; i16 += max) {
-                if ((iArr2[(i15 * width) + i16] >>> 24) > 90) {
-                    if (z10) {
-                        int i17 = this.w;
-                        if (i15 >= i17 - max) {
-                            if (i15 > i17 + this.x + max) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            int l10 = j10.l();
+            w7 G = w7.G(l10);
+            File J = w7.J(document, null, true, true);
+            if (J.exists()) {
+                i7 = 0;
+                str = "Dictation";
+                file2 = J;
+                i10 = -1;
+            } else {
+                String r10 = w7.r(null, document);
+                CountDownLatch countDownLatch = new CountDownLatch(1);
+                File[] fileArr = new File[1];
+                long[] jArr = {SystemClock.elapsedRealtime()};
+                j1 j1Var = new j1(r10, jArr, k1Var, fileArr, J, countDownLatch);
+                int[] iArr = {ks.X1, ks.Y1, ks.Z1};
+                i7 = 0;
+                i10 = -1;
+                org.telegram.messenger.g0.g3(new i1(l10, iArr, j1Var, G, document, 0));
+                while (true) {
+                    try {
+                        str = str3;
+                    } catch (InterruptedException unused) {
+                        i12 = i13;
+                        str = str3;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        i11 = i13;
+                    }
+                    try {
+                        if (countDownLatch.await(10L, TimeUnit.SECONDS)) {
+                            break;
+                        }
+                        if (SystemClock.elapsedRealtime() - jArr[0] > 120000) {
+                            break;
+                        }
+                        str3 = str;
+                        i13 = 1;
+                    } catch (InterruptedException unused2) {
+                        i12 = 1;
+                        c1Var = new c1(l10, iArr, j1Var, i12);
+                        org.telegram.messenger.g0.g3(c1Var);
+                        File file3 = fileArr[0];
+                        if (file3 == null) {
+                        }
+                        if (file2 != null) {
+                        }
+                    } catch (Throwable th3) {
+                        th = th3;
+                        i11 = 1;
+                        org.telegram.messenger.g0.g3(new c1(l10, iArr, j1Var, i11));
+                        throw th;
+                    }
+                }
+                c1Var = new c1(l10, iArr, j1Var, 1);
+                org.telegram.messenger.g0.g3(c1Var);
+                File file32 = fileArr[0];
+                file2 = (file32 == null && file32.exists()) ? fileArr[0] : null;
+            }
+            if (file2 != null) {
+                return i10;
+            }
+            File parentFile = file.getParentFile();
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(file.getName());
+            ?? r52 = ".part";
+            sb2.append(".part");
+            File file4 = new File(parentFile, sb2.toString());
+            try {
+                try {
+                    file.getParentFile().mkdirs();
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file2));
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(file4);
+                        try {
+                            bufferedInputStream.mark(2);
+                            int i14 = (bufferedInputStream.read() == 31 && bufferedInputStream.read() == 139) ? 1 : i7;
+                            bufferedInputStream.reset();
+                            InputStream gZIPInputStream = i14 != 0 ? new GZIPInputStream(bufferedInputStream, 65536) : bufferedInputStream;
+                            byte[] bArr = new byte[65536];
+                            while (true) {
+                                int read = gZIPInputStream.read(bArr);
+                                if (read <= 0) {
+                                    break;
+                                }
+                                int i15 = i7;
+                                fileOutputStream.write(bArr, i15, read);
+                                i7 = i15;
+                            }
+                            fileOutputStream.close();
+                            bufferedInputStream.close();
+                        } catch (Throwable th4) {
+                            r52 = file;
+                            try {
+                                try {
+                                    fileOutputStream.close();
+                                    throw th4;
+                                } catch (Throwable th5) {
+                                    th = th5;
+                                    Throwable th6 = th;
+                                    try {
+                                        bufferedInputStream.close();
+                                        throw th6;
+                                    } catch (Throwable th7) {
+                                        th6.addSuppressed(th7);
+                                        throw th6;
+                                    }
+                                }
+                            } catch (Throwable th8) {
+                                th4.addSuppressed(th8);
+                                throw th4;
                             }
                         }
+                    } catch (Throwable th9) {
+                        th = th9;
+                        r52 = file;
                     }
-                    vu0 vu0Var = this.c;
-                    if (vu0Var.d() <= f10) {
-                        int i18 = i14 + 1;
-                        if (i18 * 3 <= fArr.length) {
-                            float f11 = max;
-                            float d = ((vu0Var.d() - 0.5f) * f11) + i16;
-                            float d2 = ((vu0Var.d() - 0.5f) * f11) + i15;
-                            int i19 = i14 * 3;
-                            fArr[i19] = d;
-                            fArr[i19 + 1] = d2;
-                            fArr[i19 + 2] = (d2 * 0.9f) + d;
-                            i14 = i18;
-                        }
+                } catch (Throwable th10) {
+                    th = th10;
+                    r52 = file;
+                    try {
+                        Log.d(str, "speech models: " + r52.getName() + " unzip failed: " + th);
+                        return i10;
+                    } finally {
+                        file4.delete();
+                        file2.delete();
                     }
+                }
+            } catch (Throwable th11) {
+                th = th11;
+                Log.d(str, "speech models: " + r52.getName() + " unzip failed: " + th);
+                return i10;
+            }
+            if (!file4.renameTo(file)) {
+                Log.d(str, "speech models: couldn't store " + file.getName());
+                return i10;
+            }
+            mp.g1().edit().putLong(str2, document.id).apply();
+            Log.d(str, "speech models: " + file.getName() + " (" + TextUtils.join(",", tL_transcriptionModel.languages) + " v" + tL_transcriptionModel.version + "), " + file2.length() + " → " + file.length() + " bytes in " + (SystemClock.elapsedRealtime() - elapsedRealtime) + " ms");
+            file4.delete();
+            file2.delete();
+            return 1;
+        }
+        if (!file.exists()) {
+            return -1;
+        }
+        return 0;
+    }
+
+    public static boolean d() {
+        ArrayList a10 = a();
+        long currentTimeMillis = System.currentTimeMillis() - mp.g1().getLong("speech_models_checked", 0L);
+        if (a10 == null) {
+            return true;
+        }
+        if (currentTimeMillis > (a10.isEmpty() ? 3600000L : 86400000L)) {
+            return true;
+        }
+        if (a10.isEmpty() && b == 0) {
+            return true;
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(org.telegram.messenger.s2.c);
+        sb2.append("/");
+        sb2.append(DictationAsr.e0());
+        return !sb2.toString().equals(mp.g1().getString("speech_models_build", null));
+    }
+
+    public static synchronized CountDownLatch e() {
+        synchronized (l1.class) {
+            CountDownLatch countDownLatch = c;
+            if (countDownLatch != null) {
+                return countDownLatch;
+            }
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long j3 = b;
+            if (j3 != 0 && elapsedRealtime - j3 < 60000) {
+                return null;
+            }
+            int l10 = j10.l();
+            if (!j10.r(l10)) {
+                return null;
+            }
+            b = elapsedRealtime;
+            CountDownLatch countDownLatch2 = new CountDownLatch(1);
+            c = countDownLatch2;
+            TLRPC.TL_messages_getTranscriptionModels tL_messages_getTranscriptionModels = new TLRPC.TL_messages_getTranscriptionModels();
+            tL_messages_getTranscriptionModels.version = DictationAsr.e0();
+            ConnectionsManager.getInstance(l10).sendRequest(tL_messages_getTranscriptionModels, new g1(countDownLatch2, 0));
+            return countDownLatch2;
+        }
+    }
+
+    public static TLRPC.TL_transcriptionModel f(ArrayList arrayList, String... strArr) {
+        if (arrayList == null) {
+            return null;
+        }
+        String[] strArr2 = (String[]) strArr.clone();
+        Arrays.sort(strArr2);
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            TLRPC.TL_transcriptionModel tL_transcriptionModel = (TLRPC.TL_transcriptionModel) obj;
+            String[] strArr3 = (String[]) tL_transcriptionModel.languages.toArray(new String[0]);
+            Arrays.sort(strArr3);
+            if (Arrays.equals(strArr2, strArr3)) {
+                return tL_transcriptionModel;
+            }
+        }
+        return null;
+    }
+
+    public static void g(File file) {
+        mp.g1().edit().remove("speech_doc_" + file.getName()).apply();
+    }
+
+    public static boolean h() {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = d;
+        if (j3 == 0 || elapsedRealtime - j3 > 60000) {
+            d = elapsedRealtime;
+            if (d()) {
+                e();
+            }
+        }
+        ArrayList a10 = a();
+        if (a10 != null) {
+            int size = a10.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = a10.get(i7);
+                i7++;
+                TLRPC.TL_transcriptionModel tL_transcriptionModel = (TLRPC.TL_transcriptionModel) obj;
+                if (!tL_transcriptionModel.languages.isEmpty() && !tL_transcriptionModel.languages.contains("tinylid") && !tL_transcriptionModel.languages.contains("silero-vad")) {
+                    return true;
                 }
             }
         }
-        Integer[] numArr = new Integer[i14];
-        for (int i20 = 0; i20 < i14; i20++) {
-            numArr[i20] = Integer.valueOf(i20);
-        }
-        Arrays.sort(numArr, new l(1, fArr));
-        float[] copyOf = Arrays.copyOf(fArr, i14 * 3);
-        for (int i21 = 0; i21 < i14; i21++) {
-            int i22 = i21 * 3;
-            int intValue = numArr[i21].intValue() * 3;
-            fArr[i22] = copyOf[intValue];
-            fArr[i22 + 1] = copyOf[intValue + 1];
-            fArr[i22 + 2] = copyOf[intValue + 2];
-        }
-        if (z10) {
-            this.i = fArr;
-            return i14;
-        }
-        this.j = fArr;
-        return i14;
+        return false;
     }
 
-    public final float g() {
-        if (!this.d) {
-            return -1.0f;
+    public static boolean i(TLRPC.TL_transcriptionModel tL_transcriptionModel, File file) {
+        if (tL_transcriptionModel == null || !file.exists()) {
+            return false;
         }
-        if (this.e == 0) {
-            return 0.0f;
-        }
-        return J.getInterpolation(Math.min(1.0f, (SystemClock.uptimeMillis() - this.e) / this.a));
+        SharedPreferences g12 = mp.g1();
+        StringBuilder sb2 = new StringBuilder("speech_doc_");
+        sb2.append(file.getName());
+        return g12.getLong(sb2.toString(), 0L) != tL_transcriptionModel.document.id;
     }
 
-    public final long h(float f10) {
-        if (this.g <= this.f) {
-            return 0L;
+    public static void j() {
+        CountDownLatch e10 = e();
+        if (e10 != null) {
+            new Thread(new h1(e10, 0), "DictationModels").start();
         }
-        float f11 = this.a / 1000.0f;
-        float f12 = 0.0f;
-        for (int i7 = 0; i7 < 24; i7++) {
-            float f13 = (f12 + f11) / 2.0f;
-            if (d(f13) < f10) {
-                f12 = f13;
-            } else {
-                f11 = f13;
-            }
+    }
+
+    public static void k(ArrayList arrayList) {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(arrayList.size());
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((TLRPC.TL_transcriptionModel) obj).serializeToStream(serializedData);
         }
-        return (long) (f11 * 1000.0f);
+        mp.g1().edit().putString("speech_models", Base64.encodeToString(serializedData.toByteArray(), 2)).putLong("speech_models_checked", System.currentTimeMillis()).putString("speech_models_build", org.telegram.messenger.s2.c + "/" + DictationAsr.e0()).apply();
+        serializedData.cleanup();
     }
 }

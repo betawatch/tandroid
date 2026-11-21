@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class br0 extends org.telegram.ui.Components.ck0 {
+public final class br0 extends org.telegram.ui.Components.ek0 {
     public final /* synthetic */ int f3 = 0;
     public final Paint g3;
     public final Object h3;
@@ -37,7 +37,7 @@ public final class br0 extends org.telegram.ui.Components.ck0 {
         this.h3 = context.getResources().getDrawable(R.drawable.photo_tooltip2).mutate();
     }
 
-    @Override // org.telegram.ui.Components.ck0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.f3) {
             case 1:
@@ -46,7 +46,7 @@ public final class br0 extends org.telegram.ui.Components.ck0 {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                 path.addRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), Path.Direction.CW);
-                int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.h5, false);
+                int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h5, false);
                 Paint paint = this.g3;
                 paint.setColor(x02);
                 canvas.drawPath(path, paint);
@@ -61,7 +61,7 @@ public final class br0 extends org.telegram.ui.Components.ck0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 1:
@@ -105,7 +105,7 @@ public final class br0 extends org.telegram.ui.Components.ck0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 1:
@@ -117,7 +117,7 @@ public final class br0 extends org.telegram.ui.Components.ck0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onSizeChanged(int i7, int i10, int i11, int i12) {
         switch (this.f3) {
             case 1:
@@ -150,7 +150,7 @@ public final class br0 extends org.telegram.ui.Components.ck0 {
         this.i3 = vs0Var;
         Paint paint = new Paint(1);
         this.g3 = paint;
-        paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.h5, false));
+        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h5, false));
         this.h3 = new Path();
     }
 }

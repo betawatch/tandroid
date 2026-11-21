@@ -8,9 +8,9 @@ import android.view.TextureView;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram.ui.Components.c50, ll, pm0 {
+public final class xi implements org.telegram.ui.ActionBar.n0, dr0, org.telegram.ui.Components.f50, ll, pm0 {
     public final /* synthetic */ bn a;
 
     public /* synthetic */ xi(bn bnVar) {
@@ -48,7 +48,7 @@ public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram
                 if (this.a.A0.getChildAt(i7) instanceof org.telegram.ui.Cells.r1) {
                     org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.a.A0.getChildAt(i7);
                     if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == fjVar.e1()) {
-                        org.telegram.ui.Components.b6 m10 = r1Var.getPhotoImage().m();
+                        org.telegram.ui.Components.c6 m10 = r1Var.getPhotoImage().m();
                         if (m10.c0) {
                             m10.stop();
                         }
@@ -87,9 +87,9 @@ public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram
         return this.a.M8;
     }
 
-    @Override // org.telegram.ui.ActionBar.o0
+    @Override // org.telegram.ui.ActionBar.n0
     public void k() {
-        org.telegram.ui.Components.wk0.d(new le(this.a, 2));
+        org.telegram.ui.Components.yk0.d(new le(this.a, 2));
     }
 
     @Override // org.telegram.ui.pm0
@@ -118,7 +118,7 @@ public final class xi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram
     public void d(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.ActionBar.o0
+    @Override // org.telegram.ui.ActionBar.n0
     public void j() {
     }
 

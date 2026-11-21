@@ -7,32 +7,32 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class vr0 implements View.OnClickListener {
-    public final /* synthetic */ nf0 a;
+    public final /* synthetic */ mf0 a;
     public final /* synthetic */ bn b;
-    public final /* synthetic */ org.telegram.ui.Components.ck0 c;
+    public final /* synthetic */ org.telegram.ui.Components.ek0 c;
     public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.y60 e;
-    public final /* synthetic */ org.telegram.ui.Components.y60 f;
+    public final /* synthetic */ org.telegram.ui.Components.a70 e;
+    public final /* synthetic */ org.telegram.ui.Components.a70 f;
     public final /* synthetic */ as0 h;
 
-    public vr0(as0 as0Var, nf0 nf0Var, bn bnVar, org.telegram.ui.Components.ck0 ck0Var, LinearLayout linearLayout, org.telegram.ui.Components.y60 y60Var, org.telegram.ui.Components.y60 y60Var2) {
+    public vr0(as0 as0Var, mf0 mf0Var, bn bnVar, org.telegram.ui.Components.ek0 ek0Var, LinearLayout linearLayout, org.telegram.ui.Components.a70 a70Var, org.telegram.ui.Components.a70 a70Var2) {
         this.h = as0Var;
-        this.a = nf0Var;
+        this.a = mf0Var;
         this.b = bnVar;
-        this.c = ck0Var;
+        this.c = ek0Var;
         this.d = linearLayout;
-        this.e = y60Var;
-        this.f = y60Var2;
+        this.e = a70Var;
+        this.f = a70Var2;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        nf0 nf0Var = this.a;
-        ArrayList arrayList = nf0Var.b;
-        ArrayList arrayList2 = nf0Var.c;
+        mf0 mf0Var = this.a;
+        ArrayList arrayList = mf0Var.b;
+        ArrayList arrayList2 = mf0Var.c;
         if (arrayList2.isEmpty()) {
             return;
         }
@@ -55,16 +55,16 @@ public final class vr0 implements View.OnClickListener {
             return;
         }
         if (org.telegram.messenger.bz.c1 > 0 && bnVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
-            org.telegram.ui.Components.gc t6 = new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(as0Var.getContext()), as0Var.b).t(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0(2131748296, null)), null);
+            org.telegram.ui.Components.gc t6 = new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(as0Var.getContext()), as0Var.b).t(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131748295, null)), null);
             bnVar.C1 = t6;
             t6.j = 4000;
             t6.j();
             org.telegram.messenger.bz.S(org.telegram.messenger.bz.c1 - 1);
         }
-        org.telegram.ui.Components.ck0 ck0Var = this.c;
-        ck0Var.requestLayout();
+        org.telegram.ui.Components.ek0 ek0Var = this.c;
+        ek0Var.requestLayout();
         this.d.requestLayout();
-        ck0Var.getAdapter().f();
+        ek0Var.getAdapter().f();
         this.e.L(this.f);
     }
 }

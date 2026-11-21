@@ -1,41 +1,42 @@
 package tg;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.ks;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x0 extends View {
-    public int a;
-    public float b;
-    public final /* synthetic */ y0 c;
+public final class x0 extends v4.i0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ z0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x0(y0 y0Var, Context context) {
-        super(context);
-        this.c = y0Var;
-        setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-        setLayoutParams(new v4.q0(-2, 0));
+    public x0(z0 z0Var, Context context) {
+        this.d = z0Var;
+        this.c = context;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        y0 y0Var = this.c;
-        y0Var.f3.setColor(this.a);
-        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
-        if (this.b != 0.0f) {
-            min -= (y0Var.g3.getStrokeWidth() + org.telegram.messenger.g0.L(3.0f)) * this.b;
+    @Override // v4.i0
+    public final int b() {
+        return 14;
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        y0 y0Var = (y0) f1Var.a;
+        ViewGroup.LayoutParams layoutParams = y0Var.getLayoutParams();
+        z0 z0Var = this.d;
+        layoutParams.height = ((z0Var.getHeight() - z0Var.getPaddingTop()) - z0Var.getPaddingBottom()) / 2;
+        sg.k0 k0Var = z0Var.i3;
+        if (k0Var != null) {
+            y0Var.a = k0Var.b(i7);
+            y0Var.invalidate();
+            y0Var.b = z0Var.h3 == i7 ? 1.0f : 0.0f;
+            y0Var.invalidate();
         }
-        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
-        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
-        y0.A1(width, height, min, this.a, canvas);
-        if (this.b != 0.0f) {
-            y0Var.g3.setColor(this.a);
-            y0Var.g3.setAlpha(ks.e4);
-            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - org.telegram.messenger.g0.L(2.0f), y0Var.g3);
-        }
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        return new mj0(new y0(this.d, this.c));
     }
 }

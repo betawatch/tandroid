@@ -22,9 +22,9 @@ import org.telegram.messenger.n10;
 import org.telegram.messenger.r5;
 import org.telegram.messenger.s2;
 import org.telegram.ui.Components.ca;
-import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s0 extends r5 {
     public final /* synthetic */ u0 E;
@@ -237,16 +237,16 @@ public final class s0 extends r5 {
                                         i7 = 0;
                                     }
                                     i0Var.r = DesugarCollections.unmodifiableMap(hashMap);
-                                    vt0 vt0Var = i0Var.g;
-                                    if (u0Var.h.getWidth() != vt0Var.a || u0Var.h.getHeight() != vt0Var.b) {
-                                        Bitmap createBitmap = Bitmap.createBitmap((int) vt0Var.a, (int) vt0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap).drawBitmap(u0Var.h, (Rect) null, new RectF(0.0f, 0.0f, vt0Var.a, vt0Var.b), (Paint) null);
+                                    yt0 yt0Var = i0Var.g;
+                                    if (u0Var.h.getWidth() != yt0Var.a || u0Var.h.getHeight() != yt0Var.b) {
+                                        Bitmap createBitmap = Bitmap.createBitmap((int) yt0Var.a, (int) yt0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap).drawBitmap(u0Var.h, (Rect) null, new RectF(0.0f, 0.0f, yt0Var.a, yt0Var.b), (Paint) null);
                                         u0Var.h = createBitmap;
                                         u0Var.r = true;
                                     }
-                                    if (u0Var.n != null && (r5.getWidth() != vt0Var.a || u0Var.n.getHeight() != vt0Var.b)) {
-                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) vt0Var.a, (int) vt0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap2).drawBitmap(u0Var.n, (Rect) null, new RectF(0.0f, 0.0f, vt0Var.a, vt0Var.b), (Paint) null);
+                                    if (u0Var.n != null && (r5.getWidth() != yt0Var.a || u0Var.n.getHeight() != yt0Var.b)) {
+                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) yt0Var.a, (int) yt0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap2).drawBitmap(u0Var.n, (Rect) null, new RectF(0.0f, 0.0f, yt0Var.a, yt0Var.b), (Paint) null);
                                         u0Var.n = createBitmap2;
                                         u0Var.r = true;
                                     }

@@ -9,23 +9,23 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class dy extends FrameLayout {
     public float[] E;
     public FrameLayout a;
-    public org.telegram.ui.ActionBar.n5 b;
-    public org.telegram.ui.ActionBar.n5 c;
+    public org.telegram.ui.ActionBar.m5 b;
+    public org.telegram.ui.ActionBar.m5 c;
     public ImageView d;
     public cy e;
     public di.xb f;
     public di.xb h;
     public TextView n;
-    public org.telegram.ui.ActionBar.h2 r;
+    public org.telegram.ui.ActionBar.g2 r;
     public String s;
     public float w;
     public ValueAnimator x;
-    public org.telegram.ui.ActionBar.h1 y;
+    public org.telegram.ui.ActionBar.g1 y;
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */

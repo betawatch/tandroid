@@ -22,17 +22,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.qf;
 import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
     public final q b;
     public final k8.a c;
-    public final hn d;
+    public final jn d;
     public final boolean e;
     public final boolean f;
     public final HashMap g;
@@ -53,13 +53,13 @@ public final class b implements g {
     public byte[] v;
     public byte[] w;
     public o x;
-    public of y;
+    public qf y;
     public p z;
 
-    public b(UUID uuid, q qVar, k8.a aVar, hn hnVar, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, ab.q qVar2, Looper looper, qb.a aVar2, m2.i iVar) {
+    public b(UUID uuid, q qVar, k8.a aVar, jn jnVar, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, ab.q qVar2, Looper looper, qb.a aVar2, m2.i iVar) {
         this.l = uuid;
         this.c = aVar;
-        this.d = hnVar;
+        this.d = jnVar;
         this.b = qVar;
         this.e = z10;
         this.f = z11;
@@ -163,7 +163,7 @@ public final class b implements g {
             this.z = null;
             byte[] bArr = this.v;
             if (bArr != null) {
-                this.b.A(bArr);
+                this.b.x(bArr);
                 this.v = null;
             }
         }
@@ -173,9 +173,9 @@ public final class b implements g {
                 jVar.e();
             }
         }
-        hn hnVar = this.d;
+        jn jnVar = this.d;
         int i11 = this.q;
-        e eVar = (e) hnVar.b;
+        e eVar = (e) jnVar.b;
         if (i11 == 1 && eVar.F > 0 && eVar.w != -9223372036854775807L) {
             eVar.E.add(this);
             Handler handler = eVar.K;
@@ -286,7 +286,7 @@ public final class b implements g {
         }
         if (this.p != 4) {
             try {
-                this.b.x(this.v, this.w);
+                this.b.u(this.v, this.w);
             } catch (Exception | NoSuchMethodError e10) {
                 l(1, e10);
                 z11 = false;
@@ -425,7 +425,7 @@ public final class b implements g {
         try {
             byte[] t6 = this.b.t();
             this.v = t6;
-            this.b.G(t6, this.j);
+            this.b.F(t6, this.j);
             this.t = this.b.r(this.v);
             this.p = 3;
             h2.k kVar = this.h;
@@ -460,7 +460,7 @@ public final class b implements g {
         try {
             synchronized (this.o) {
                 try {
-                    this.y = new of(11);
+                    this.y = new qf(11);
                     List list = this.a;
                     if (list != null) {
                         i0.q(list);
@@ -469,13 +469,13 @@ public final class b implements g {
                     throw th2;
                 }
             }
-            o H = this.b.H(bArr, this.a, i7, this.g);
-            this.x = H;
+            o G = this.b.G(bArr, this.a, i7, this.g);
+            this.x = G;
             android.support.v4.media.session.f fVar = this.s;
             String str = l0.a;
-            H.getClass();
+            G.getClass();
             fVar.getClass();
-            fVar.obtainMessage(2, new a(x2.u.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), H)).sendToTarget();
+            fVar.obtainMessage(2, new a(x2.u.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), G)).sendToTarget();
         } catch (Exception | NoSuchMethodError e10) {
             m(e10, true);
         }

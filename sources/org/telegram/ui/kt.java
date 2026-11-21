@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class kt extends org.telegram.ui.Components.rc {
-    public final /* synthetic */ org.telegram.ui.Components.li0 f0;
+    public final /* synthetic */ org.telegram.ui.Components.ni0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kt(org.telegram.ui.Components.li0 li0Var, Context context, int i7, int[] iArr, int[] iArr2) {
+    public kt(org.telegram.ui.Components.ni0 ni0Var, Context context, int i7, int[] iArr, int[] iArr2) {
         super(context, i7, iArr, 1, iArr2);
-        this.f0 = li0Var;
+        this.f0 = ni0Var;
     }
 
     @Override // org.telegram.ui.Components.rc

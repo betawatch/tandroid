@@ -4,7 +4,7 @@ import j$.util.function.Consumer$-CC;
 import java.util.List;
 import java.util.function.Consumer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c6 implements Consumer {
     public final /* synthetic */ d6 a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class c6 implements Consumer {
     @Override // java.util.function.Consumer
     /* renamed from: accept */
     public final void x(Object obj) {
-        org.telegram.messenger.g0.g3(new a6(1, this.a, (List) obj));
+        org.telegram.messenger.g0.g3(new l4(3, this.a, (List) obj));
     }
 
     public /* synthetic */ Consumer andThen(Consumer consumer) {

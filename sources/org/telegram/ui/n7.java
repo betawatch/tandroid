@@ -6,12 +6,12 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class n7 extends f7 {
     public m.o3 n;
     public final ArrayList r;
-    public org.telegram.ui.Components.mq s;
+    public org.telegram.ui.Components.oq s;
     public final /* synthetic */ s7 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -40,9 +40,9 @@ public final class n7 extends f7 {
     @Override // v4.i0
     public final void t(v4.f1 f1Var, int i7) {
         if (this.s == null) {
-            org.telegram.ui.Components.mq mqVar = new org.telegram.ui.Components.mq(new ColorDrawable(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.X9, false)), org.telegram.ui.ActionBar.n6.R4);
-            this.s = mqVar;
-            mqVar.x = true;
+            org.telegram.ui.Components.oq oqVar = new org.telegram.ui.Components.oq(new ColorDrawable(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.X9, false)), org.telegram.ui.ActionBar.m6.R4);
+            this.s = oqVar;
+            oqVar.x = true;
         }
         org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) f1Var.a;
         ei.b bVar = ((l7) this.e.get(i7)).d;
@@ -70,6 +70,6 @@ public final class n7 extends f7 {
         }
         m7 m7Var = new m7(this, viewGroup.getContext(), this.n, this.w.e.getCurrentAccount());
         m7Var.setStyle(1);
-        return new org.telegram.ui.Components.kj0(m7Var);
+        return new org.telegram.ui.Components.mj0(m7Var);
     }
 }

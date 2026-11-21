@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class m8 implements Runnable {
     public final /* synthetic */ r8 a;
@@ -97,7 +97,7 @@ public final class m8 implements Runnable {
         float f19;
         e8 e8Var4;
         float f20;
-        mh0 B;
+        oh0 B;
         float f21;
         float f22;
         p8 p8Var3;
@@ -378,7 +378,7 @@ public final class m8 implements Runnable {
                                 }
                                 B = s2Var.B();
                                 if (B == null && B.l0) {
-                                    mh0 B2 = s2Var.B();
+                                    oh0 B2 = s2Var.B();
                                     int i13 = B2 == null ? 0 : B2.b0;
                                     if (i13 >= 2) {
                                         q8Var2.T = true;
@@ -523,15 +523,15 @@ public final class m8 implements Runnable {
                                 if (r8Var.getParent() instanceof ViewGroup) {
                                     RectF Z3 = e8Var6 == null ? e8Var : r8Var.Z(r8Var.l1);
                                     if (Z3 != null) {
-                                        hi.m3 m3Var = r8Var.x1;
-                                        if (m3Var == null) {
-                                            r8Var.x1 = r8Var.B(2131742866, true);
-                                        } else if (r8Var.k1 && !(z11 = m3Var.W)) {
+                                        hi.l3 l3Var = r8Var.x1;
+                                        if (l3Var == null) {
+                                            r8Var.x1 = r8Var.B(2131742860, true);
+                                        } else if (r8Var.k1 && !(z11 = l3Var.W)) {
                                             r8Var.k1 = false;
                                             r8Var.j1 = false;
                                             r8Var.i1 = false;
                                             if (z11) {
-                                                m3Var.f(true);
+                                                l3Var.f(true);
                                             }
                                             if (!z18) {
                                                 mp.g1().edit().putBoolean("walletcardstickerhint", true).apply();
@@ -539,44 +539,44 @@ public final class m8 implements Runnable {
                                             r8Var.f0();
                                         }
                                         r8.J(r8Var.x1, Z3.centerX(), Z3.top + org.telegram.messenger.g0.L(4.0f));
-                                        hi.m3 m3Var2 = r8Var.x1;
-                                        if (!m3Var2.W) {
-                                            m3Var2.x();
+                                        hi.l3 l3Var2 = r8Var.x1;
+                                        if (!l3Var2.W) {
+                                            l3Var2.x();
                                         }
                                         r8Var.k1 = true;
                                     } else {
                                         r8Var.k1 = false;
-                                        hi.m3 m3Var3 = r8Var.x1;
-                                        if (m3Var3 != null && m3Var3.W) {
-                                            m3Var3.f(true);
+                                        hi.l3 l3Var3 = r8Var.x1;
+                                        if (l3Var3 != null && l3Var3.W) {
+                                            l3Var3.f(true);
                                         }
                                     }
                                     if (r8Var.j1 && p8Var17.a > 0.5f && (aVar = r8Var.d) != null && aVar.J0() && r8Var.C()) {
                                         if (r8Var.y1 == null) {
-                                            r8Var.y1 = r8Var.B(2131742867, false);
+                                            r8Var.y1 = r8Var.B(2131742861, false);
                                         }
                                         r8Var.v1.computeBounds(rectF, true);
                                         float[] L = r8Var.L(rectF.centerX(), rectF.top);
                                         if ((L[1] - org.telegram.messenger.g0.L(2.0f)) - org.telegram.messenger.g0.L(56.0f) < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m) {
                                             float[] L2 = r8Var.L(rectF.centerX(), rectF.bottom);
-                                            hi.m3 m3Var4 = r8Var.y1;
+                                            hi.l3 l3Var4 = r8Var.y1;
                                             float f43 = L2[0];
                                             float L3 = L2[1] + org.telegram.messenger.g0.L(2.0f);
-                                            r8.o(m3Var4, 1);
-                                            m3Var4.p(0.0f, f43 - m3Var4.getPaddingLeft());
-                                            m3Var4.setTranslationY(L3);
-                                            m3Var4.invalidate();
+                                            r8.o(l3Var4, 1);
+                                            l3Var4.p(0.0f, f43 - l3Var4.getPaddingLeft());
+                                            l3Var4.setTranslationY(L3);
+                                            l3Var4.invalidate();
                                         } else {
                                             r8.J(r8Var.y1, L[0], L[1] - org.telegram.messenger.g0.L(2.0f));
                                         }
-                                        hi.m3 m3Var5 = r8Var.y1;
-                                        if (!m3Var5.W) {
-                                            m3Var5.x();
+                                        hi.l3 l3Var5 = r8Var.y1;
+                                        if (!l3Var5.W) {
+                                            l3Var5.x();
                                         }
                                     } else {
-                                        hi.m3 m3Var6 = r8Var.y1;
-                                        if (m3Var6 != null && m3Var6.W) {
-                                            m3Var6.f(true);
+                                        hi.l3 l3Var6 = r8Var.y1;
+                                        if (l3Var6 != null && l3Var6.W) {
+                                            l3Var6.f(true);
                                         }
                                     }
                                 }

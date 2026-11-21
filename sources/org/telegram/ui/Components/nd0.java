@@ -1,47 +1,39 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.graphics.Path;
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class nd0 extends p6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ qd0 c;
+public final class nd0 extends Path {
+    public int a;
+    public int b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nd0(qd0 qd0Var, int i7) {
-        super("thumbAnimationProgress", 0);
-        this.b = i7;
-        switch (i7) {
-            case 1:
-                this.c = qd0Var;
-                super("thumbImageVisibleProgress", 0);
-                break;
-            default:
-                this.c = qd0Var;
-                break;
+    public final void a(int i7, int i10, int i11) {
+        if (this.a == i7 && this.b == i10 && this.c == i11) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.p6
-    public final void c(Object obj, float f10) {
-        switch (this.b) {
-            case 0:
-                this.c.r = f10;
-                ((qd0) obj).invalidate();
-                break;
-            default:
-                this.c.n = f10;
-                ((qd0) obj).invalidate();
-                break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(this.c.r);
-            default:
-                return Float.valueOf(this.c.n);
-        }
+        rewind();
+        RectF rectF = org.telegram.messenger.g0.P;
+        float f10 = i7 - i11;
+        float f11 = i10 + i11;
+        rectF.set(f10, i10 - i11, i7 + i11, f11);
+        arcTo(rectF, -180.0f, 270.0f, false);
+        float f12 = i11 / 81.0f;
+        float f13 = i7;
+        float f14 = f11 - (3.0f * f12);
+        cubicTo(f13 - (13.0f * f12), f11, f13 - (25.0f * f12), f14, f13 - (36.0f * f12), f11 - (8.42f * f12));
+        float f15 = f11 - f12;
+        cubicTo(f13 - (52.0f * f12), f15, f13 - (56.5f * f12), f15, f13 - (78.02f * f12), f15);
+        cubicTo(f13 - (80.0f * f12), f15, f13 - (81.0f * f12), f14, f13 - (79.52f * f12), f11 - (4.5f * f12));
+        float f16 = f13 - (63.73f * f12);
+        cubicTo(f13 - (78.0f * f12), f11 - (6.0f * f12), f16, f11 - (15.0f * f12), f16, f11 - (31.0f * f12));
+        float f17 = i10;
+        cubicTo(f13 - (74.5f * f12), f11 - (44.75f * f12), f10, (f12 * 18.87f) + f17, f10, f17);
+        close();
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
     }
 }

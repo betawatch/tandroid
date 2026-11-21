@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ha {
     public FloatBuffer e;
@@ -33,7 +33,7 @@ public final class ha {
     public final Object n = new Object();
     public final int[] r = new int[3];
     public final int[] s = new int[3];
-    public final lg u = new lg(this, 13);
+    public final og u = new og(this, 13);
     public final Matrix v = new Matrix();
 
     public final void a(int i7, int i10, int i11, float[] fArr) {
@@ -215,8 +215,8 @@ public final class ha {
                 if (i13 == 1) {
                     y23 = "#extension GL_OES_EGL_image_external : require\n" + y23.replace("sampler2D tex", "samplerExternalOES tex");
                 }
-                int h = fz.h(35633, y22);
-                int h7 = fz.h(35632, y23);
+                int h = hz.h(35633, y22);
+                int h7 = hz.h(35632, y23);
                 if (h == 0 || h7 == 0) {
                     break;
                 }

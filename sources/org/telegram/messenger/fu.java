@@ -12,7 +12,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class fu extends zt {
     public final TL_iv.pageBlockDetails X;
@@ -32,7 +32,7 @@ public final class fu extends zt {
         dv dvVar = new dv(evVar, spannableStringBuilder, i5.c.d(16.0f, this.c - g0.L(53.0f), 0));
         this.Y = dvVar;
         this.Z = new dv[]{dvVar};
-        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.vl : org.telegram.ui.ActionBar.n6.ul, evVar.D));
+        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.vl : org.telegram.ui.ActionBar.m6.ul, evVar.D));
         this.a0 = animatedArrowDrawable;
         animatedArrowDrawable.setAnimationProgress(pageblockdetails.open ? 0.0f : 1.0f);
     }
@@ -54,7 +54,7 @@ public final class fu extends zt {
 
     @Override // org.telegram.messenger.zt
     public final CharSequence D() {
-        return gd.M0(this.X.open ? 2131754882 : 2131754892, null);
+        return gd.N0(this.X.open ? 2131754882 : 2131754892, null);
     }
 
     @Override // org.telegram.messenger.zt
@@ -62,7 +62,7 @@ public final class fu extends zt {
         StaticLayout staticLayout;
         dv dvVar = this.Y;
         CharSequence h02 = (dvVar == null || (staticLayout = dvVar.b) == null) ? null : zt.h0(staticLayout.getText());
-        return TextUtils.concat(gd.M0(2131753985, null), ", ", gd.M0(this.X.open ? 2131754882 : 2131754892, null), TextUtils.isEmpty(h02) ? "" : TextUtils.concat(", ", h02));
+        return TextUtils.concat(gd.N0(2131753984, null), ", ", gd.N0(this.X.open ? 2131754882 : 2131754892, null), TextUtils.isEmpty(h02) ? "" : TextUtils.concat(", ", h02));
     }
 
     @Override // org.telegram.messenger.zt
@@ -116,7 +116,7 @@ public final class fu extends zt {
             canvas.save();
             canvas.scale(a10, a10, (f10 + f11) / 2.0f, i0() / 2.0f);
         }
-        int w02 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.vl : org.telegram.ui.ActionBar.n6.ul, evVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.vl : org.telegram.ui.ActionBar.m6.ul, evVar.D);
         AnimatedArrowDrawable animatedArrowDrawable = this.a0;
         animatedArrowDrawable.a.setColor(w02);
         animatedArrowDrawable.invalidateSelf();
@@ -135,7 +135,7 @@ public final class fu extends zt {
         if (this.X.open || evVar.s) {
             return;
         }
-        int w03 = org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.xl : org.telegram.ui.ActionBar.n6.wl, evVar.D);
+        int w03 = org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.xl : org.telegram.ui.ActionBar.m6.wl, evVar.D);
         Paint paint = this.b0;
         paint.setColor(w03);
         canvas.drawRect(f10, i0() - 1.0f, f11, i0(), paint);

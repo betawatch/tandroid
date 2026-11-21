@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xl0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -27,19 +27,19 @@ public final /* synthetic */ class xl0 implements org.telegram.messenger.x10 {
                 fm0Var2.L = starGift;
                 lm0 lm0Var = fm0Var2.q0;
                 if (starGift == null) {
-                    bi.u7 u7Var = fm0Var2.K;
-                    if (u7Var != null) {
-                        u7Var.i();
+                    bi.y7 y7Var = fm0Var2.K;
+                    if (y7Var != null) {
+                        y7Var.i();
                         fm0Var2.K = null;
                     }
                 } else {
-                    bi.u7 u7Var2 = fm0Var2.K;
-                    if (u7Var2 == null || u7Var2.b != starGift.id) {
-                        i7 = ((org.telegram.ui.ActionBar.h2) lm0Var).currentAccount;
-                        bi.u7 u7Var3 = new bi.u7(i7, fm0Var2.L.id, new xl0(yl0Var, 2));
-                        u7Var3.w = true;
-                        fm0Var2.K = u7Var3;
-                        u7Var3.l(false);
+                    bi.y7 y7Var2 = fm0Var2.K;
+                    if (y7Var2 == null || y7Var2.b != starGift.id) {
+                        i7 = ((org.telegram.ui.ActionBar.g2) lm0Var).currentAccount;
+                        bi.y7 y7Var3 = new bi.y7(i7, fm0Var2.L.id, new xl0(yl0Var, 2));
+                        y7Var3.w = true;
+                        fm0Var2.K = y7Var3;
+                        y7Var3.l(false);
                     }
                 }
                 fm0.a(fm0Var2);

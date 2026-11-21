@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import org.telegram.ui.Cells.c5;
 import p4.r0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class t implements q {
     public static final r0 d = new r0(23);
@@ -45,12 +45,7 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final void A(byte[] bArr) {
-        this.b.closeSession(bArr);
-    }
-
-    @Override // q2.q
-    public final byte[] C(byte[] bArr, byte[] bArr2) {
+    public final byte[] A(byte[] bArr, byte[] bArr2) {
         if (e2.l.d.equals(this.a) && Build.VERSION.SDK_INT < 27) {
             try {
                 JSONObject jSONObject = new JSONObject(l0.r(bArr2));
@@ -79,12 +74,12 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final void D(byte[] bArr) {
+    public final void C(byte[] bArr) {
         this.b.provideProvisionResponse(bArr);
     }
 
     @Override // q2.q
-    public final void G(byte[] bArr, m2.i iVar) {
+    public final void F(byte[] bArr, m2.i iVar) {
         if (Build.VERSION.SDK_INT >= 31) {
             try {
                 o0.h(this.b, bArr, iVar);
@@ -111,7 +106,7 @@ public final class t implements q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final o H(byte[] bArr, List list, int i7, HashMap hashMap) {
+    public final o G(byte[] bArr, List list, int i7, HashMap hashMap) {
         byte[] bArr2;
         String str;
         String str2;
@@ -259,7 +254,7 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final int J() {
+    public final int H() {
         return 2;
     }
 
@@ -363,7 +358,12 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final void x(byte[] bArr, byte[] bArr2) {
+    public final void u(byte[] bArr, byte[] bArr2) {
         this.b.restoreKeys(bArr, bArr2);
+    }
+
+    @Override // q2.q
+    public final void x(byte[] bArr) {
+        this.b.closeSession(bArr);
     }
 }

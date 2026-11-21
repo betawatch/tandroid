@@ -1,10 +1,19 @@
 package hi;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public interface b7 {
-    Bitmap c(BitmapFactory.Options options);
+public final class b7 {
+    public int a;
+    public int b;
+
+    public final int a() {
+        if (this.a != 6) {
+            return 0;
+        }
+        int i7 = this.b;
+        if (i7 == 7) {
+            return 1;
+        }
+        return i7 == 6 ? 2 : 0;
+    }
 }

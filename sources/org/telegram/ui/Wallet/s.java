@@ -19,14 +19,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.dz0;
-import org.telegram.ui.Components.ez0;
+import org.telegram.ui.Components.fz0;
+import org.telegram.ui.Components.gz0;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.p51;
 import org.telegram.ui.wt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements q10 {
     public final /* synthetic */ int a;
@@ -577,20 +577,20 @@ public final /* synthetic */ class s implements q10 {
             case 9:
                 boolean[] zArr = (boolean[]) this.b;
                 e3[] e3VarArr = (e3[]) this.c;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.d;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.d;
                 xh.l lVar = (xh.l) this.e;
                 String str16 = (String) obj;
                 String str17 = (String) obj2;
                 zArr[0] = false;
                 if (str17 != null) {
-                    new lc(e3VarArr[0].F, i6Var).f0(str17, false);
+                    new lc(e3VarArr[0].F, h6Var).f0(str17, false);
                     return;
                 }
                 lVar.setPadding(org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                dz0 dz0Var = new dz0();
-                dz0Var.a |= 256;
-                spannableString.setSpan(new ez0(dz0Var, 0), 0, spannableString.length(), 33);
+                fz0 fz0Var = new fz0();
+                fz0Var.a |= 256;
+                spannableString.setSpan(new gz0(fz0Var, 0), 0, spannableString.length(), 33);
                 lVar.setText(spannableString);
                 lVar.setTextIsSelectable(true);
                 lVar.setOnClickListener(null);

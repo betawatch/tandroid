@@ -11,11 +11,11 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.z51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class f0 implements k1, w51, com.google.android.gms.common.api.internal.q, z2.d {
+public final class f0 implements k1, z51, com.google.android.gms.common.api.internal.q, z2.d {
     public Object a;
 
     public /* synthetic */ f0(Object obj) {
@@ -204,7 +204,7 @@ public final class f0 implements k1, w51, com.google.android.gms.common.api.inte
         return p0.v(view) + ((ViewGroup.MarginLayoutParams) ((q0) view.getLayoutParams())).bottomMargin;
     }
 
-    @Override // org.telegram.ui.Components.w51
+    @Override // org.telegram.ui.Components.z51
     public void invalidate() {
         ((wi.h) this.a).m.invalidate();
     }

@@ -10,15 +10,15 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.y60;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.bn;
 import org.telegram.ui.ne;
 import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -87,11 +87,11 @@ public final /* synthetic */ class p implements Runnable {
                 break;
             case 4:
                 h2 h2Var = (h2) obj3;
-                hi.d dVar = (hi.d) obj;
-                if (!((bi.g6) obj2).canScrollVertically(1)) {
+                hi.e eVar = (hi.e) obj;
+                if (!((bi.k6) obj2).canScrollVertically(1)) {
                     h2Var.p = true;
                 }
-                dVar.setEnabled((!h2Var.p || h2Var.m || h2Var.n) ? false : true);
+                eVar.setEnabled((!h2Var.p || h2Var.m || h2Var.n) ? false : true);
                 break;
             case 5:
                 l2 l2Var = (l2) obj2;
@@ -154,30 +154,30 @@ public final /* synthetic */ class p implements Runnable {
             case 8:
                 boolean[] zArr = (boolean[]) obj3;
                 w2 w2Var = (w2) obj;
-                z2.a.remove((bi.c5) obj2);
+                z2.a.remove((bi.g5) obj2);
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    lc.c0(gd.M0(2131742701, null));
+                    lc.c0(gd.N0(2131742695, null));
                     w2Var.a();
                     break;
                 }
                 break;
             case 9:
                 y2 y2Var = (y2) obj2;
-                hi.d dVar2 = (hi.d) obj3;
-                hi.d dVar3 = (hi.d) obj;
+                hi.e eVar2 = (hi.e) obj3;
+                hi.e eVar3 = (hi.e) obj;
                 boolean a10 = y2Var.a();
-                dVar2.setEnabled((a10 || y2Var.d) ? false : true);
-                dVar3.setEnabled((a10 || y2Var.d) ? false : true);
+                eVar2.setEnabled((a10 || y2Var.d) ? false : true);
+                eVar3.setEnabled((a10 || y2Var.d) ? false : true);
                 break;
             case 10:
                 w3 w3Var = (w3) obj2;
-                w3Var.V = new r3((org.telegram.ui.ActionBar.h2) obj3, (TL_wallet.card) obj, i10);
+                w3Var.V = new r3((org.telegram.ui.ActionBar.g2) obj3, (TL_wallet.card) obj, i10);
                 w3Var.dismiss();
                 break;
             case 11:
                 ((v7) obj2).run();
-                ((y60) obj3).L((y60) obj);
+                ((a70) obj3).L((a70) obj);
                 break;
             case 12:
                 e3[] e3VarArr = (e3[]) obj3;
@@ -187,7 +187,7 @@ public final /* synthetic */ class p implements Runnable {
                     if (e3Var != null) {
                         e3Var.dismiss();
                     }
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T != null) {
                         T.presentFragment(bn.ua(wallettransactionpeeruser.user_id));
                         break;
@@ -207,7 +207,7 @@ public final /* synthetic */ class p implements Runnable {
                     if (e3Var2 != null) {
                         e3Var2.dismiss();
                     }
-                    org.telegram.ui.ActionBar.h2 T2 = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                     if (T2 != null) {
                         T2.presentFragment(bn.ua(-walletTransactionPeer.channel_id));
                         break;
@@ -276,12 +276,12 @@ public final /* synthetic */ class p implements Runnable {
             default:
                 d9 d9Var = (d9) obj3;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, d9Var.getParentActivity(), d9Var.getResourceProvider());
-                String M0 = gd.M0(2131742893, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.S = M0;
-                u1Var.U = gd.M0(2131742896, null);
-                alertDialog$Builder.h(gd.M0(2131752578, null), null);
-                alertDialog$Builder.k(gd.M0(2131742898, null), new x8(d9Var, (u0) obj2, (o0) obj));
+                String N0 = gd.N0(2131742887, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = N0;
+                t1Var.U = gd.N0(2131742890, null);
+                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                alertDialog$Builder.k(gd.N0(2131742892, null), new x8(d9Var, (u0) obj2, (o0) obj));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;

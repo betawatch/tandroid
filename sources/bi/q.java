@@ -9,12 +9,12 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.p70;
+import org.telegram.ui.Components.r70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class q implements View.OnClickListener {
             case 0:
                 y yVar = (y) this.c;
                 yVar.getClass();
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     long j3 = this.b;
                     if (!o10.B(j3)) {
@@ -57,11 +57,11 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 yVar.dismiss();
                 break;
             case 1:
-                j3 j3Var = (j3) this.c;
-                j3Var.getClass();
-                org.telegram.ui.ActionBar.h2 T2 = LaunchActivity.T();
+                n3 n3Var = (n3) this.c;
+                n3Var.getClass();
+                org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                 if (T2 != null) {
-                    j3Var.dismiss();
+                    n3Var.dismiss();
                     T2.presentFragment(ProfileActivity.D4(this.b));
                     break;
                 }
@@ -79,11 +79,11 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 z3Var.t0.N(new ProfileActivity(bundle2, null));
                 break;
             case 3:
-                p70 p70Var = (p70) this.c;
-                p70Var.dismiss();
+                r70 r70Var = (r70) this.c;
+                r70Var.dismiss();
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
-                tL_messages_importChatInvite.hash = p70Var.n1;
-                ConnectionsManager.getInstance(p70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new b8(p70Var, this.b, tL_messages_importChatInvite), 2);
+                tL_messages_importChatInvite.hash = r70Var.n1;
+                ConnectionsManager.getInstance(r70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new f8(r70Var, this.b, tL_messages_importChatInvite), 2);
                 break;
             case 4:
                 cx cxVar = (cx) this.c;
@@ -99,7 +99,7 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 cxVar.finishPreviewFragment();
                 break;
             default:
-                x10 x10Var = ((sh.n) this.c).f;
+                x10 x10Var = ((sh.m) this.c).f;
                 if (x10Var != null) {
                     x10Var.a(Long.valueOf(this.b));
                     break;

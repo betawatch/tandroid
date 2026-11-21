@@ -1,549 +1,104 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.os.Build;
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
-import org.telegram.ui.PhotoViewer;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class k10 {
-    public static final int x;
-    public static final int y;
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final android.support.v4.media.session.q f;
-    public final j10 g;
-    public i10 h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public MotionEvent n;
-    public MotionEvent o;
-    public MotionEvent p;
-    public boolean q;
-    public float r;
-    public float s;
-    public float t;
-    public float u;
-    public boolean v;
-    public VelocityTracker w;
+public final class k10 extends LinearLayout {
+    public final hi.e a;
+    public final hi.e b;
+    public final hi.e c;
+    public final long d;
 
-    static {
-        ViewConfiguration.getLongPressTimeout();
-        x = ViewConfiguration.getTapTimeout();
-        y = ViewConfiguration.getDoubleTapTimeout();
-    }
-
-    public k10(Context context, PhotoViewer photoViewer) {
-        this(context, (j10) photoViewer);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x0431, code lost:
-    
-        if (java.lang.Math.sqrt(java.lang.Math.pow(((r1.y + org.telegram.messenger.g0.m) / 2.0f) - r4.getY(), 2.0d) + java.lang.Math.pow((r1.x / 2.0f) - r4.getX(), 2.0d)) < org.telegram.messenger.g0.L(40.0f)) goto L234;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:213:0x04a1, code lost:
-    
-        if (r4 > r5) goto L246;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:215:0x0491, code lost:
-    
-        if (r1 > r5) goto L240;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x04d0  */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x04e7  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x037e  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x03c1  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a(MotionEvent motionEvent) {
-        android.support.v4.media.session.q qVar;
-        boolean z10;
-        MotionEvent motionEvent2;
-        MotionEvent motionEvent3;
-        long j3;
-        j10 j10Var;
-        long j10;
-        boolean z11;
-        j10 j10Var2;
-        boolean z12;
-        boolean z13;
-        org.telegram.ui.dq0 dq0Var;
-        org.telegram.messenger.fj fjVar;
-        org.telegram.ui.dq0 dq0Var2;
-        i10 i10Var;
-        boolean z14;
-        boolean onScroll;
-        int i7;
-        boolean z15;
-        int action = motionEvent.getAction();
-        MotionEvent motionEvent4 = this.o;
-        if (motionEvent4 != null) {
-            motionEvent4.recycle();
+    public k10(Context context, int i7) {
+        super(context);
+        TLRPC.TL_emojiList a10 = a9.a(i7);
+        setOrientation(1);
+        q9 q9Var = new q9(context);
+        q9Var.setImageDrawable(new oh0(R.raw.utyan_gallery, org.telegram.messenger.g0.L(110.0f), org.telegram.messenger.g0.L(110.0f)));
+        if (!org.telegram.messenger.g0.Q1()) {
+            addView(q9Var, c8.ma.r(org.telegram.messenger.ks.v1, org.telegram.messenger.ks.v1, 49));
         }
-        this.o = MotionEvent.obtain(motionEvent);
-        if (this.w == null) {
-            this.w = VelocityTracker.obtain();
-        }
-        this.w.addMovement(motionEvent);
-        int i10 = action & org.telegram.messenger.ks.e4;
-        boolean z16 = i10 == 6;
-        int actionIndex = z16 ? motionEvent.getActionIndex() : -1;
-        int pointerCount = motionEvent.getPointerCount();
-        float f10 = 0.0f;
-        float f11 = 0.0f;
-        for (int i11 = 0; i11 < pointerCount; i11++) {
-            if (actionIndex != i11) {
-                f10 += motionEvent.getX(i11);
-                f11 += motionEvent.getY(i11);
-            }
-        }
-        float f12 = z16 ? pointerCount - 1 : pointerCount;
-        float f13 = f10 / f12;
-        float f14 = f11 / f12;
-        j10 j10Var3 = this.g;
-        android.support.v4.media.session.q qVar2 = this.f;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                boolean z17 = false;
-                this.i = false;
-                j10Var3.a1();
-                MotionEvent obtain = MotionEvent.obtain(motionEvent);
-                if (!this.q) {
-                    if (this.k) {
-                        qVar2.removeMessages(3);
-                        this.k = false;
-                    } else if (this.l) {
-                        boolean onSingleTapUp = j10Var3.onSingleTapUp(motionEvent);
-                        if (this.j && (i10Var = this.h) != null) {
-                            ((PhotoViewer) i10Var).Y1(motionEvent);
-                        }
-                        z17 = onSingleTapUp;
-                    } else {
-                        VelocityTracker velocityTracker = this.w;
-                        int pointerId = motionEvent.getPointerId(0);
-                        velocityTracker.computeCurrentVelocity(1000, this.e);
-                        float yVelocity = velocityTracker.getYVelocity(pointerId);
-                        float xVelocity = velocityTracker.getXVelocity(pointerId);
-                        if (Math.abs(yVelocity) > this.d || Math.abs(xVelocity) > this.d) {
-                            z17 = j10Var3.onFling(this.n, motionEvent, xVelocity, yVelocity);
-                        }
-                    }
-                    z17 = false;
-                }
-                MotionEvent motionEvent5 = this.p;
-                if (motionEvent5 != null) {
-                    motionEvent5.recycle();
-                }
-                this.p = obtain;
-                VelocityTracker velocityTracker2 = this.w;
-                if (velocityTracker2 != null) {
-                    velocityTracker2.recycle();
-                    this.w = null;
-                }
-                this.q = false;
-                this.j = false;
-                qVar2.removeMessages(1);
-                qVar2.removeMessages(2);
-                return z17;
-            }
-            if (i10 != 2) {
-                if (i10 == 3) {
-                    qVar2.removeMessages(1);
-                    qVar2.removeMessages(2);
-                    qVar2.removeMessages(3);
-                    this.w.recycle();
-                    this.w = null;
-                    this.q = false;
-                    this.i = false;
-                    this.l = false;
-                    this.m = false;
-                    this.j = false;
-                    this.k = false;
-                    return false;
-                }
-                if (i10 == 5) {
-                    this.r = f13;
-                    this.t = f13;
-                    this.s = f14;
-                    this.u = f14;
-                    qVar2.removeMessages(1);
-                    qVar2.removeMessages(2);
-                    qVar2.removeMessages(3);
-                    this.q = false;
-                    this.l = false;
-                    this.m = false;
-                    this.j = false;
-                    this.k = false;
-                    return false;
-                }
-                if (i10 == 6) {
-                    this.r = f13;
-                    this.t = f13;
-                    this.s = f14;
-                    this.u = f14;
-                    this.w.computeCurrentVelocity(1000, this.e);
-                    int actionIndex2 = motionEvent.getActionIndex();
-                    int pointerId2 = motionEvent.getPointerId(actionIndex2);
-                    float xVelocity2 = this.w.getXVelocity(pointerId2);
-                    float yVelocity2 = this.w.getYVelocity(pointerId2);
-                    for (int i12 = 0; i12 < pointerCount; i12++) {
-                        if (i12 != actionIndex2) {
-                            int pointerId3 = motionEvent.getPointerId(i12);
-                            if ((this.w.getYVelocity(pointerId3) * yVelocity2) + (this.w.getXVelocity(pointerId3) * xVelocity2) < 0.0f) {
-                                this.w.clear();
-                                return false;
-                            }
-                        }
-                    }
-                }
-            } else if (!this.k) {
-                int i13 = Build.VERSION.SDK_INT;
-                int i14 = 29;
-                int classification = i13 >= 29 ? motionEvent.getClassification() : 0;
-                boolean hasMessages = qVar2.hasMessages(2);
-                float f15 = this.r - f13;
-                float f16 = this.s - f14;
-                if (this.q) {
-                    onScroll = false;
-                    z14 = hasMessages;
-                } else {
-                    if (this.l) {
-                        int i15 = (int) (f13 - this.t);
-                        int i16 = (int) (f14 - this.u);
-                        int i17 = (i16 * i16) + (i15 * i15);
-                        boolean z18 = i13 >= 29 && classification == 1;
-                        int i18 = this.a;
-                        if (hasMessages && z18) {
-                            if (i17 > i18) {
-                                qVar2.removeMessages(2);
-                                i7 = i17;
-                                z14 = hasMessages;
-                                qVar2.sendMessageDelayed(qVar2.obtainMessage(2, 0, 0), (long) (ViewConfiguration.getLongPressTimeout() * 2.0f));
-                            } else {
-                                i7 = i17;
-                                z14 = hasMessages;
-                            }
-                            i18 = (int) (i18 * 4.0f);
-                        } else {
-                            i7 = i17;
-                            z14 = hasMessages;
-                        }
-                        int i19 = i7;
-                        if (i19 > i18) {
-                            onScroll = j10Var3.onScroll(this.n, motionEvent, f15, f16);
-                            this.r = f13;
-                            this.s = f14;
-                            z15 = false;
-                            this.l = false;
-                            qVar2.removeMessages(3);
-                            qVar2.removeMessages(1);
-                            qVar2.removeMessages(2);
-                        } else {
-                            z15 = false;
-                            onScroll = false;
-                        }
-                        if (i19 > this.b) {
-                            this.m = z15;
-                        }
-                    } else {
-                        z14 = hasMessages;
-                        if (Math.abs(f15) >= 1.0f || Math.abs(f16) >= 1.0f) {
-                            onScroll = j10Var3.onScroll(this.n, motionEvent, f15, f16);
-                            this.r = f13;
-                            this.s = f14;
-                        } else {
-                            onScroll = false;
-                        }
-                    }
-                    i14 = 29;
-                }
-                if (i13 >= i14 && classification == 2 && z14) {
-                    qVar2.removeMessages(2);
-                    qVar2.sendMessage(qVar2.obtainMessage(2, 0, 0));
-                }
-                return onScroll;
-            }
-            return false;
-        }
-        this.j = false;
-        i10 i10Var2 = this.h;
-        if (i10Var2 != null) {
-            PhotoViewer photoViewer = (PhotoViewer) i10Var2;
-            if (photoViewer.O0.getVisibility() != 0) {
-                boolean[] zArr = photoViewer.x1;
-                if (!zArr[0] && !zArr[1]) {
-                    float x10 = motionEvent.getX();
-                    if ((x10 < Math.min(org.telegram.messenger.ks.R1, photoViewer.f0.getMeasuredWidth() / 8) || x10 > photoViewer.f0.getMeasuredWidth() - r4) && (fjVar = photoViewer.T4) != null && ((!org.telegram.messenger.fj.L4(fjVar.k) && ((dq0Var2 = photoViewer.g0) == null || !dq0Var2.y)) || SystemClock.elapsedRealtime() - photoViewer.v1 < 500 || !photoViewer.j0(motionEvent))) {
-                        this.j = true;
-                    }
-                }
-            }
-            boolean hasMessages2 = qVar2.hasMessages(3);
-            if (hasMessages2) {
-                qVar2.removeMessages(3);
-            }
-            MotionEvent motionEvent6 = this.n;
-            int i20 = y;
-            if (motionEvent6 != null && (motionEvent3 = this.p) != null && hasMessages2 && this.m) {
-                long eventTime = motionEvent.getEventTime() - motionEvent3.getEventTime();
-                if (eventTime <= i20 && eventTime >= 40) {
-                    int x11 = ((int) motionEvent6.getX()) - ((int) motionEvent.getX());
-                    int y10 = ((int) motionEvent6.getY()) - ((int) motionEvent.getY());
-                    if ((y10 * y10) + (x11 * x11) < this.c) {
-                        this.q = true;
-                        i10 i10Var3 = this.h;
-                        MotionEvent motionEvent7 = this.n;
-                        PhotoViewer photoViewer2 = (PhotoViewer) i10Var3;
-                        if ((photoViewer2.G2 != null || ((dq0Var = photoViewer2.g0) != null && dq0Var.y)) && photoViewer2.l3) {
-                            long k12 = photoViewer2.k1();
-                            j3 = 0;
-                            long x12 = photoViewer2.x1();
-                            float x13 = motionEvent7.getX();
-                            int g12 = photoViewer2.g1(photoViewer2.u4) / 3;
-                            float f17 = g12 * 2;
-                            if (photoViewer2.j0(motionEvent7)) {
-                                long j11 = x13 >= f17 ? k12 + 10000 : x13 < ((float) g12) ? k12 - 10000 : k12;
-                                if (k12 != j11) {
-                                    if (j11 > x12) {
-                                        j10 = x12;
-                                    } else {
-                                        if (j11 < 0) {
-                                            z11 = j11 >= -9000;
-                                            j10 = 0;
-                                            if (z11) {
-                                                j10Var2 = j10Var3;
-                                            } else {
-                                                photoViewer2.A1.e(true);
-                                                photoViewer2.A1.d(x13 < ((float) g12));
-                                                x51 x51Var = photoViewer2.A1;
-                                                j10Var2 = j10Var3;
-                                                long j12 = x51Var.o + 10000;
-                                                x51Var.o = j12;
-                                                x51Var.p = org.telegram.messenger.gd.G((int) (j12 / 1000), "Seconds", new Object[0]);
-                                                photoViewer2.r2(j10);
-                                                photoViewer2.f0.invalidate();
-                                                photoViewer2.q3.h(true, j10 / x12);
-                                                photoViewer2.r3.invalidate();
-                                            }
-                                            qVar = qVar2;
-                                            j10Var3 = j10Var2;
-                                            z12 = true;
-                                            this.h.getClass();
-                                            z10 = z12;
-                                            this.r = f13;
-                                            this.t = f13;
-                                            this.s = f14;
-                                            this.u = f14;
-                                            motionEvent2 = this.n;
-                                            if (motionEvent2 != null) {
-                                                motionEvent2.recycle();
-                                            }
-                                            this.n = MotionEvent.obtain(motionEvent);
-                                            this.l = true;
-                                            this.m = true;
-                                            this.i = true;
-                                            this.k = false;
-                                            if (this.v) {
-                                                qVar.removeMessages(2);
-                                                qVar.sendMessageDelayed(qVar.obtainMessage(2, 0, 0), ViewConfiguration.getLongPressTimeout());
-                                            }
-                                            qVar.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
-                                            return j10Var3.onDown(motionEvent) | z10;
-                                        }
-                                        j10 = j11;
-                                    }
-                                    z11 = true;
-                                    if (z11) {
-                                    }
-                                    qVar = qVar2;
-                                    j10Var3 = j10Var2;
-                                    z12 = true;
-                                    this.h.getClass();
-                                    z10 = z12;
-                                    this.r = f13;
-                                    this.t = f13;
-                                    this.s = f14;
-                                    this.u = f14;
-                                    motionEvent2 = this.n;
-                                    if (motionEvent2 != null) {
-                                    }
-                                    this.n = MotionEvent.obtain(motionEvent);
-                                    this.l = true;
-                                    this.m = true;
-                                    this.i = true;
-                                    this.k = false;
-                                    if (this.v) {
-                                    }
-                                    qVar.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
-                                    return j10Var3.onDown(motionEvent) | z10;
-                                }
-                            }
-                            j10Var = j10Var3;
-                        } else {
-                            j10Var = j10Var3;
-                            j3 = 0;
-                        }
-                        if (photoViewer2.I6 && ((photoViewer2.a6 != 1.0f || (photoViewer2.Y5 == 0.0f && photoViewer2.X5 == 0.0f)) && photoViewer2.n6 == j3 && photoViewer2.n4 == 0)) {
-                            org.telegram.ui.wo0 wo0Var = photoViewer2.X0[0];
-                            if (wo0Var == null || !wo0Var.p || wo0Var.h == -1) {
-                                qVar = qVar2;
-                                j10Var3 = j10Var;
-                            } else {
-                                Point point = org.telegram.messenger.g0.q;
-                                qVar = qVar2;
-                                j10Var3 = j10Var;
-                            }
-                            if (photoViewer2.a6 == 1.0f) {
-                                float w10 = org.telegram.messenger.n10.w(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.g1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.g1(photoViewer2.u4) / 2));
-                                float w11 = org.telegram.messenger.n10.w(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.e1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.e1() / 2));
-                                photoViewer2.u3(3.0f);
-                                float f18 = photoViewer2.E6;
-                                if (w10 >= f18) {
-                                    f18 = photoViewer2.F6;
-                                }
-                                w10 = f18;
-                                float f19 = photoViewer2.G6;
-                                if (w11 >= f19) {
-                                    f19 = photoViewer2.H6;
-                                }
-                                w11 = f19;
-                                z13 = true;
-                                photoViewer2.c0(3.0f, w10, w11, true);
-                            } else {
-                                z13 = true;
-                                photoViewer2.c0(1.0f, 0.0f, 0.0f, true);
-                            }
-                            photoViewer2.O6 = z13;
-                            photoViewer2.B1();
-                            z12 = true;
-                            this.h.getClass();
-                            z10 = z12;
-                            this.r = f13;
-                            this.t = f13;
-                            this.s = f14;
-                            this.u = f14;
-                            motionEvent2 = this.n;
-                            if (motionEvent2 != null) {
-                            }
-                            this.n = MotionEvent.obtain(motionEvent);
-                            this.l = true;
-                            this.m = true;
-                            this.i = true;
-                            this.k = false;
-                            if (this.v) {
-                            }
-                            qVar.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
-                            return j10Var3.onDown(motionEvent) | z10;
-                        }
-                        qVar = qVar2;
-                        j10Var3 = j10Var;
-                        z12 = false;
-                        this.h.getClass();
-                        z10 = z12;
-                        this.r = f13;
-                        this.t = f13;
-                        this.s = f14;
-                        this.u = f14;
-                        motionEvent2 = this.n;
-                        if (motionEvent2 != null) {
-                        }
-                        this.n = MotionEvent.obtain(motionEvent);
-                        this.l = true;
-                        this.m = true;
-                        this.i = true;
-                        this.k = false;
-                        if (this.v) {
-                        }
-                        qVar.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
-                        return j10Var3.onDown(motionEvent) | z10;
-                    }
-                }
-                j10Var3 = j10Var3;
-            }
-            qVar = qVar2;
-            qVar.sendEmptyMessageDelayed(3, i20);
-            z10 = false;
-            this.r = f13;
-            this.t = f13;
-            this.s = f14;
-            this.u = f14;
-            motionEvent2 = this.n;
-            if (motionEvent2 != null) {
-            }
-            this.n = MotionEvent.obtain(motionEvent);
-            this.l = true;
-            this.m = true;
-            this.i = true;
-            this.k = false;
-            if (this.v) {
-            }
-            qVar.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
-            return j10Var3.onDown(motionEvent) | z10;
-        }
-        qVar = qVar2;
-        z10 = false;
-        this.r = f13;
-        this.t = f13;
-        this.s = f14;
-        this.u = f14;
-        motionEvent2 = this.n;
-        if (motionEvent2 != null) {
-        }
-        this.n = MotionEvent.obtain(motionEvent);
-        this.l = true;
-        this.m = true;
-        this.i = true;
-        this.k = false;
-        if (this.v) {
-        }
-        qVar.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
-        return j10Var3.onDown(motionEvent) | z10;
-    }
-
-    public final void b() {
-        this.v = false;
-    }
-
-    public k10(Context context, j10 j10Var) {
-        int scaledTouchSlop;
-        int i7;
-        int i10;
-        this.f = new android.support.v4.media.session.q(this, 5);
-        this.g = j10Var;
-        if (j10Var instanceof i10) {
-            this.h = (i10) j10Var;
-        }
-        this.v = true;
-        if (context == null) {
-            i7 = ViewConfiguration.getTouchSlop();
-            this.d = ViewConfiguration.getMinimumFlingVelocity();
-            this.e = ViewConfiguration.getMaximumFlingVelocity();
-            i10 = 100;
-            scaledTouchSlop = i7;
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 20.0f);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
+        textView.setGravity(1);
+        textView.setText(org.telegram.messenger.gd.N0(2131750466, null));
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        addView(textView, c8.ma.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView2 = new TextView(context);
+        textView2.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.c7, null);
+        textView2.setGravity(1);
+        textView2.setText(org.telegram.messenger.gd.N0(org.telegram.messenger.j10.i(i7).q() ? 2131750461 : 2131750462, null));
+        textView2.setMaxWidth(org.telegram.messenger.g0.L(260.0f));
+        textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        addView(textView2, c8.ma.t(-2, -2, 49, 0, 0, 0, 14));
+        hi.e eVar = new hi.e(context, null, true);
+        this.a = eVar;
+        eVar.f();
+        eVar.i(org.telegram.messenger.gd.N0(2131750465, null), false, true);
+        addView(eVar, c8.ma.r(-2, 44, 49));
+        hi.e eVar2 = new hi.e(context, null, false);
+        this.b = eVar2;
+        eVar2.f();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new nq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.gd.N0(2131750463, null));
+        eVar2.i(spannableStringBuilder, false, true);
+        addView(eVar2, c8.ma.t(-2, 44, 49, 0, 8, 0, 0));
+        hi.e eVar3 = new hi.e(context, null, false);
+        this.c = eVar3;
+        eVar3.f();
+        eVar3.setVisibility(8);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("c");
+        ArrayList<Long> arrayList = a10.document_id;
+        if (arrayList == null || arrayList.isEmpty()) {
+            this.d = 0L;
         } else {
-            ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-            int scaledTouchSlop2 = viewConfiguration.getScaledTouchSlop();
-            scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
-            int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
-            this.d = viewConfiguration.getScaledMinimumFlingVelocity();
-            this.e = viewConfiguration.getScaledMaximumFlingVelocity();
-            i7 = scaledTouchSlop2;
-            i10 = scaledDoubleTapSlop;
+            long longValue = a10.document_id.get(0).longValue();
+            this.d = longValue;
+            spannableStringBuilder2.setSpan(new y5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
+            spannableStringBuilder2.append((CharSequence) "  ");
         }
-        this.a = i7 * i7;
-        this.b = scaledTouchSlop * scaledTouchSlop;
-        this.c = i10 * i10;
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.N0(2131743554, null));
+        eVar3.i(spannableStringBuilder2, false, true);
+        addView(eVar3, c8.ma.t(-2, 44, 49, 0, 1, 0, 0));
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30);
+        hi.e eVar = this.a;
+        eVar.setUseWrapContent(true);
+        hi.e eVar2 = this.b;
+        eVar2.setUseWrapContent(true);
+        hi.e eVar3 = this.c;
+        eVar3.setUseWrapContent(true);
+        eVar.measure(makeMeasureSpec, makeMeasureSpec2);
+        eVar2.measure(makeMeasureSpec, makeMeasureSpec2);
+        eVar3.measure(makeMeasureSpec, makeMeasureSpec2);
+        eVar.setUseWrapContent(false);
+        eVar2.setUseWrapContent(false);
+        eVar3.setUseWrapContent(false);
+        int max = Math.max(Math.max(eVar.getMeasuredWidth(), eVar2.getMeasuredWidth()), eVar3.getMeasuredWidth());
+        eVar.getLayoutParams().width = org.telegram.messenger.g0.L(80.0f) + max;
+        eVar2.getLayoutParams().width = org.telegram.messenger.g0.L(80.0f) + max;
+        eVar3.getLayoutParams().width = org.telegram.messenger.g0.L(80.0f) + max;
+        super.onMeasure(i7, i10);
+    }
+
+    public void setUseAnEmojiVisible(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 8);
     }
 }

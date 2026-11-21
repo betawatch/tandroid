@@ -4,19 +4,19 @@ import android.app.Activity;
 import android.content.Context;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class re extends sg {
+public final class re extends ug {
     public final /* synthetic */ int y0 = 0;
     public final /* synthetic */ ChatActivityEnterView z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public re(ChatActivityEnterView chatActivityEnterView, Activity activity, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(i7, activity, i6Var, true);
+    public re(ChatActivityEnterView chatActivityEnterView, Activity activity, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(i7, activity, h6Var, true);
         this.z0 = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.sg
+    @Override // org.telegram.ui.Components.ug
     public boolean b() {
         switch (this.y0) {
             case 0:
@@ -26,33 +26,33 @@ public final class re extends sg {
         }
     }
 
-    @Override // org.telegram.ui.Components.sg
+    @Override // org.telegram.ui.Components.ug
     public final boolean c() {
         switch (this.y0) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.z0;
                 return !chatActivityEnterView.c() && chatActivityEnterView.H0 == Integer.MAX_VALUE;
             default:
-                return !this.z0.e4;
+                return !this.z0.g4;
         }
     }
 
-    @Override // org.telegram.ui.Components.sg
+    @Override // org.telegram.ui.Components.ug
     public final boolean d() {
         switch (this.y0) {
             case 0:
-                org.telegram.ui.fg0 fg0Var = this.z0.M0;
-                return !(fg0Var == null || fg0Var.u0) || this.w > 0;
+                org.telegram.ui.eg0 eg0Var = this.z0.M0;
+                return !(eg0Var == null || eg0Var.u0) || this.w > 0;
             default:
                 return true;
         }
     }
 
-    @Override // org.telegram.ui.Components.sg
+    @Override // org.telegram.ui.Components.ug
     public boolean j() {
         switch (this.y0) {
             case 0:
-                return this.z0.W5;
+                return this.z0.Y5;
             default:
                 return super.j();
         }
@@ -63,8 +63,8 @@ public final class re extends sg {
         switch (this.y0) {
             case 0:
                 super.setAlpha(f10);
-                int i7 = ChatActivityEnterView.n7;
-                this.z0.c2();
+                int i7 = ChatActivityEnterView.s7;
+                this.z0.g2();
                 break;
             default:
                 super.setAlpha(f10);
@@ -73,8 +73,8 @@ public final class re extends sg {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public re(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(R.drawable.input_done, context, i6Var, true);
+    public re(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(R.drawable.input_done, context, h6Var, true);
         this.z0 = chatActivityEnterView;
     }
 }

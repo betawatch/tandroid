@@ -1,9 +1,9 @@
 package p4;
 
-import ai.r1;
-import ai.s1;
+import ai.t1;
+import ai.u1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v0 implements c1 {
     public final /* synthetic */ int a;
@@ -15,16 +15,16 @@ public final /* synthetic */ class v0 implements c1 {
     }
 
     @Override // p4.c1
-    public final Object k(d0 d0Var, v vVar, int i7) {
+    public final Object k(e0 e0Var, v vVar, int i7) {
         switch (this.a) {
             case 0:
-                if (d0Var != null) {
+                if (e0Var != null) {
                     throw new ClassCastException();
                 }
-                e1.k1(null, vVar, i7, this.b, new s1(vVar, i7, 21));
+                e1.k1(null, vVar, i7, this.b, new u1(vVar, i7, 21));
                 throw null;
             default:
-                return e1.k1(d0Var, vVar, i7, this.b, new r1(d0Var, vVar, i7, 19));
+                return e1.k1(e0Var, vVar, i7, this.b, new t1(e0Var, vVar, i7, 19));
         }
     }
 }

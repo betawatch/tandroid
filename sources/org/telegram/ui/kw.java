@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class kw extends org.telegram.ui.Components.rm0 {
+public final class kw extends org.telegram.ui.Components.um0 {
     public final bg.d0 c1;
     public final bg.d0 d1;
     public final /* synthetic */ cx e1;
@@ -20,7 +20,7 @@ public final class kw extends org.telegram.ui.Components.rm0 {
 
     public final void P() {
         ri.q qVar;
-        qVar = ((org.telegram.ui.ActionBar.h2) this.e1).glassEngine;
+        qVar = ((org.telegram.ui.ActionBar.g2) this.e1).glassEngine;
         qVar.g++;
     }
 
@@ -31,11 +31,11 @@ public final class kw extends org.telegram.ui.Components.rm0 {
         cx cxVar = this.e1;
         if (cxVar.b0 != null || cxVar.a3 != 0) {
             int L = org.telegram.messenger.g0.L(54.0f);
-            kVar = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+            kVar = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
             int L2 = ((org.telegram.messenger.g0.L(cxVar.a) + kVar.getMeasuredHeight()) - org.telegram.messenger.g0.L(2.0f)) - (cxVar.a3 != 0 ? L : 0);
-            org.telegram.ui.Components.cs csVar = cxVar.L1;
-            int d = L2 + (csVar != null ? (int) csVar.d(org.telegram.messenger.g0.L(7.0f)) : 0);
-            int r12 = org.telegram.ui.ActionBar.n6.r1(0.7f, cxVar.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
+            org.telegram.ui.Components.es esVar = cxVar.L1;
+            int d = L2 + (esVar != null ? (int) esVar.d(org.telegram.messenger.g0.L(7.0f)) : 0);
+            int r12 = org.telegram.ui.ActionBar.m6.r1(0.7f, cxVar.getThemedColor(org.telegram.ui.ActionBar.m6.d6));
             bg.d0 d0Var = this.c1;
             d0Var.b(r12);
             d0Var.c(d, 0);
@@ -43,7 +43,7 @@ public final class kw extends org.telegram.ui.Components.rm0 {
             d0Var.draw(canvas);
         }
         if (cxVar.k4 > org.telegram.messenger.g0.L(32.0f)) {
-            int r13 = org.telegram.ui.ActionBar.n6.r1(0.9f, cxVar.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
+            int r13 = org.telegram.ui.ActionBar.m6.r1(0.9f, cxVar.getThemedColor(org.telegram.ui.ActionBar.m6.d6));
             bg.d0 d0Var2 = this.d1;
             d0Var2.b(r13);
             d0Var2.setBounds(0, getMeasuredHeight() - cxVar.k4, getMeasuredWidth(), getMeasuredHeight());
@@ -55,7 +55,7 @@ public final class kw extends org.telegram.ui.Components.rm0 {
     public final void setAlpha(float f10) {
         ri.q qVar;
         super.setAlpha(f10);
-        qVar = ((org.telegram.ui.ActionBar.h2) this.e1).glassEngine;
+        qVar = ((org.telegram.ui.ActionBar.g2) this.e1).glassEngine;
         qVar.g();
     }
 
@@ -68,7 +68,7 @@ public final class kw extends org.telegram.ui.Components.rm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void u(int i7) {
         di.i4 i4Var = this.W;
         this.e1.y5(i4Var != null && i4Var.h(i7) == 2);

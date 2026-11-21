@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.tr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class b1 {
     public final int a;
@@ -67,9 +67,9 @@ public final class b1 {
         ks.f(i7).k(ks.B5, new Object[0]);
     }
 
-    public final void b(d7 d7Var) {
+    public final void b(c7 c7Var) {
         ArrayList arrayList = new ArrayList(1);
-        arrayList.add(d7Var);
+        arrayList.add(c7Var);
         c(arrayList);
     }
 
@@ -82,27 +82,27 @@ public final class b1 {
         }
         ArrayList arrayList2 = new ArrayList();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            d7 d7Var = (d7) arrayList.get(i7);
-            if (d7Var != null) {
+            c7 c7Var = (c7) arrayList.get(i7);
+            if (c7Var != null) {
                 StringBuilder sb3 = new StringBuilder("StoryDraft delete ");
-                sb3.append(d7Var.b);
+                sb3.append(c7Var.b);
                 sb3.append(" (edit=");
-                sb3.append(d7Var.g);
-                if (d7Var.g) {
+                sb3.append(c7Var.g);
+                if (c7Var.g) {
                     StringBuilder sb4 = new StringBuilder(", storyId=");
-                    sb4.append(d7Var.f);
+                    sb4.append(c7Var.f);
                     sb4.append(", ");
-                    if (d7Var.H != 0) {
+                    if (c7Var.H != 0) {
                         sb2 = new StringBuilder("documentId=");
-                        j3 = d7Var.H;
+                        j3 = c7Var.H;
                     } else {
                         sb2 = new StringBuilder("photoId=");
-                        j3 = d7Var.I;
+                        j3 = c7Var.I;
                     }
                     sb2.append(j3);
                     sb4.append(sb2.toString());
                     sb4.append(", expireDate=");
-                    sb4.append(d7Var.J);
+                    sb4.append(c7Var.J);
                     str = sb4.toString();
                 } else {
                     str = "";
@@ -112,8 +112,8 @@ public final class b1 {
                 sb3.append(System.currentTimeMillis());
                 sb3.append(")");
                 org.telegram.messenger.a8.b(sb3.toString());
-                arrayList2.add(Long.valueOf(d7Var.b));
-                d7Var.i(true);
+                arrayList2.add(Long.valueOf(c7Var.b));
+                c7Var.i(true);
             }
         }
         if (arrayList2.isEmpty()) {
@@ -126,47 +126,47 @@ public final class b1 {
         ks.f(i10).k(ks.B5, new Object[0]);
     }
 
-    public final void d(d7 d7Var) {
-        if (d7Var == null) {
+    public final void d(c7 c7Var) {
+        if (c7Var == null) {
             return;
         }
-        e(d7Var);
+        e(c7Var);
         ArrayList arrayList = this.b;
-        arrayList.remove(d7Var);
-        if (!d7Var.w) {
-            arrayList.add(0, d7Var);
+        arrayList.remove(c7Var);
+        if (!c7Var.w) {
+            arrayList.add(0, c7Var);
         }
-        a1 a1Var = new a1(d7Var);
+        a1 a1Var = new a1(c7Var);
         int i7 = this.a;
         tr a02 = tr.a0(i7);
         a02.a.c(new y0(a02, a1Var, 0));
         ks.f(i7).k(ks.B5, new Object[0]);
     }
 
-    public final void e(d7 d7Var) {
-        if (d7Var == null) {
+    public final void e(c7 c7Var) {
+        if (c7Var == null) {
             return;
         }
-        if (d7Var.b == 0) {
-            d7Var.b = Utilities.b.nextLong();
+        if (c7Var.b == 0) {
+            c7Var.b = Utilities.b.nextLong();
         }
-        d7Var.d = System.currentTimeMillis();
-        d7Var.c = true;
-        if (d7Var.M) {
-            d7Var.L = f(d7Var.L);
-        } else if (d7Var.L != null) {
-            File x10 = d7.x(this.a, d7Var.K);
+        c7Var.d = System.currentTimeMillis();
+        c7Var.c = true;
+        if (c7Var.M) {
+            c7Var.L = f(c7Var.L);
+        } else if (c7Var.L != null) {
+            File x10 = c7.x(this.a, c7Var.K);
             try {
-                org.telegram.messenger.g0.E(d7Var.L, x10);
-                d7Var.L = f(x10);
-                d7Var.M = true;
+                org.telegram.messenger.g0.E(c7Var.L, x10);
+                c7Var.L = f(x10);
+                c7Var.M = true;
             } catch (IOException e10) {
                 org.telegram.messenger.a8.g(e10, true);
             }
         }
-        d7Var.Z0 = f(d7Var.Z0);
-        d7Var.P0 = f(d7Var.P0);
-        d7Var.O0 = f(d7Var.O0);
+        c7Var.Z0 = f(c7Var.Z0);
+        c7Var.P0 = f(c7Var.P0);
+        c7Var.O0 = f(c7Var.O0);
     }
 
     public final File f(File file) {

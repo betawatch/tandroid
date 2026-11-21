@@ -7,7 +7,7 @@ import android.provider.Settings;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class hn0 implements Runnable {
                 }
                 break;
             case 8:
-                org.telegram.ui.Components.qd0 qd0Var = this.b.D1;
-                og.f fVar = qd0Var.c;
+                org.telegram.ui.Components.rd0 rd0Var = this.b.D1;
+                og.f fVar = rd0Var.c;
                 fVar.b(0.0f);
                 fVar.setMirrored(false);
                 fVar.setRotated(false);
-                qd0Var.b.l(true);
+                rd0Var.b.l(true);
                 break;
             case 9:
                 PhotoViewer photoViewer9 = this.b;
@@ -196,9 +196,9 @@ public final /* synthetic */ class hn0 implements Runnable {
                 break;
             case 26:
                 PhotoViewer photoViewer24 = this.b;
-                org.telegram.ui.Components.f61 f61Var = photoViewer24.G2;
-                if (f61Var != null && photoViewer24.a6 <= 1.35f) {
-                    long S = f61Var.S();
+                org.telegram.ui.Components.i61 i61Var = photoViewer24.G2;
+                if (i61Var != null && photoViewer24.a6 <= 1.35f) {
+                    long S = i61Var.S();
                     long U = photoViewer24.G2.U();
                     if (S != -9223372036854775807L && U >= 8000) {
                         float f10 = photoViewer24.E7;
@@ -229,18 +229,18 @@ public final /* synthetic */ class hn0 implements Runnable {
             case 28:
                 PhotoViewer photoViewer26 = this.b;
                 if (!photoViewer26.U4.isPopupShown()) {
-                    org.telegram.ui.Components.f61 f61Var2 = photoViewer26.G2;
-                    if (f61Var2 != null && photoViewer26.U4.videoWasPlaying) {
-                        f61Var2.h0();
+                    org.telegram.ui.Components.i61 i61Var2 = photoViewer26.G2;
+                    if (i61Var2 != null && photoViewer26.U4.videoWasPlaying) {
+                        i61Var2.h0();
                         break;
                     }
                 } else {
                     VideoAds videoAds = photoViewer26.U4;
-                    org.telegram.ui.Components.f61 f61Var3 = photoViewer26.G2;
-                    videoAds.videoWasPlaying = f61Var3 != null ? f61Var3.d0() : true;
-                    org.telegram.ui.Components.f61 f61Var4 = photoViewer26.G2;
-                    if (f61Var4 != null) {
-                        f61Var4.g0();
+                    org.telegram.ui.Components.i61 i61Var3 = photoViewer26.G2;
+                    videoAds.videoWasPlaying = i61Var3 != null ? i61Var3.d0() : true;
+                    org.telegram.ui.Components.i61 i61Var4 = photoViewer26.G2;
+                    if (i61Var4 != null) {
+                        i61Var4.g0();
                         break;
                     }
                 }
@@ -249,13 +249,13 @@ public final /* synthetic */ class hn0 implements Runnable {
                 PhotoViewer photoViewer27 = this.b;
                 Drawable[] drawableArr16 = PhotoViewer.Z8;
                 photoViewer27.z0(false, false);
-                org.telegram.ui.Components.si siVar = photoViewer27.b2;
-                if (siVar != null) {
-                    siVar.a(true);
+                org.telegram.ui.Components.ui uiVar = photoViewer27.b2;
+                if (uiVar != null) {
+                    uiVar.a(true);
                 }
-                org.telegram.ui.ActionBar.h2 h2Var = photoViewer27.m4;
-                if (h2Var != null) {
-                    h2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                org.telegram.ui.ActionBar.g2 g2Var = photoViewer27.m4;
+                if (g2Var != null) {
+                    g2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
                     break;
                 }
                 break;

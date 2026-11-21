@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.x10;
 import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.nx0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class Vector<T extends TLObject> extends TLObject {
     public static final int constructor = 481674261;
     private final TLDeserializer<T> itemDeserializer;
     public final ArrayList<T> objects = new ArrayList<>();
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class Int extends TLObject {
         public int value;
 
@@ -37,7 +37,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class Long extends TLObject {
         public long value;
 
@@ -60,7 +60,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class Strings extends TLObject {
         public final ArrayList<String> values = new ArrayList<>();
 
@@ -78,7 +78,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     @FunctionalInterface
     public interface TLDeserializer<T extends TLObject> {
         T deserialize(InputSerializedData inputSerializedData, int i7, boolean z10);
@@ -139,31 +139,31 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "VectorWrongSize", readInt32, z10);
             return new ArrayList<>();
         }
-        lx0 lx0Var = (ArrayList<T>) new ArrayList(readInt322);
+        nx0 nx0Var = (ArrayList<T>) new ArrayList(readInt322);
         for (int i7 = 0; i7 < readInt322; i7++) {
-            lx0Var.add(y10Var.a(Boolean.valueOf(z10)));
+            nx0Var.add(y10Var.a(Boolean.valueOf(z10)));
         }
-        return lx0Var;
+        return nx0Var;
     }
 
     public static ArrayList<byte[]> deserializeByteArray(InputSerializedData inputSerializedData, boolean z10) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new u(inputSerializedData, 3), z10);
+        return deserialize(inputSerializedData, new v(inputSerializedData, 3), z10);
     }
 
     public static ArrayList<Integer> deserializeInt(InputSerializedData inputSerializedData, boolean z10) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new u(inputSerializedData, 1), z10);
+        return deserialize(inputSerializedData, new v(inputSerializedData, 1), z10);
     }
 
     public static ArrayList<java.lang.Long> deserializeLong(InputSerializedData inputSerializedData, boolean z10) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new u(inputSerializedData, 0), z10);
+        return deserialize(inputSerializedData, new v(inputSerializedData, 0), z10);
     }
 
     public static ArrayList<String> deserializeString(InputSerializedData inputSerializedData, boolean z10) {
         Objects.requireNonNull(inputSerializedData);
-        return deserialize(inputSerializedData, new u(inputSerializedData, 2), z10);
+        return deserialize(inputSerializedData, new v(inputSerializedData, 2), z10);
     }
 
     public static <T extends TLObject> void serialize(OutputSerializedData outputSerializedData, ArrayList<T> arrayList) {
@@ -176,22 +176,22 @@ public class Vector<T extends TLObject> extends TLObject {
 
     public static void serializeByteArray(OutputSerializedData outputSerializedData, ArrayList<byte[]> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new v(outputSerializedData, 2), arrayList);
+        serialize(outputSerializedData, new w(outputSerializedData, 2), arrayList);
     }
 
     public static void serializeInt(OutputSerializedData outputSerializedData, ArrayList<Integer> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new v(outputSerializedData, 1), arrayList);
+        serialize(outputSerializedData, new w(outputSerializedData, 1), arrayList);
     }
 
     public static void serializeLong(OutputSerializedData outputSerializedData, ArrayList<java.lang.Long> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new v(outputSerializedData, 0), arrayList);
+        serialize(outputSerializedData, new w(outputSerializedData, 0), arrayList);
     }
 
     public static void serializeString(OutputSerializedData outputSerializedData, ArrayList<String> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new v(outputSerializedData, 3), arrayList);
+        serialize(outputSerializedData, new w(outputSerializedData, 3), arrayList);
     }
 
     private static boolean validateSize(int i7, int i10, int i11) {

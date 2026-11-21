@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.h8;
-import bi.q1;
-import bi.s2;
+import bi.l8;
+import bi.u1;
+import bi.w2;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +25,11 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l5;
-import org.telegram.ui.Components.o5;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.Components.m5;
+import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class s extends FrameLayout implements fs {
     public static final long[] L = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -45,7 +46,7 @@ public abstract class s extends FrameLayout implements fs {
     public final m c;
     public final v4.t d;
     public final k e;
-    public final l5 f;
+    public final k5 f;
     public final r h;
     public final ArrayList n;
     public int r;
@@ -71,19 +72,19 @@ public abstract class s extends FrameLayout implements fs {
         this.c = mVar;
         v4.t tVar = new v4.t(this.r);
         this.d = tVar;
-        tVar.O = new s2(h0Var, 3);
+        tVar.O = new w2(h0Var, 3);
         mVar.setLayoutManager(tVar);
-        l5 l5Var = new l5(mVar, tVar);
-        this.f = l5Var;
-        l5Var.r = new h(h0Var, 0);
+        k5 k5Var = new k5(mVar, tVar);
+        this.f = k5Var;
+        k5Var.r = new h(h0Var, 0);
         mVar.setAdapter(kVar);
         mVar.setSelectorDrawableColor(0);
-        mVar.setOnItemClickListener(new h8(g0Var, 1));
+        mVar.setOnItemClickListener(new l8(g0Var, 1));
         mVar.setItemAnimator(null);
         mVar.setOverScrollMode(2);
         mVar.setVerticalScrollBarEnabled(false);
         mVar.setClipToPadding(false);
-        mVar.j(new q1(h0Var, 6));
+        mVar.j(new u1(h0Var, 6));
         addView(mVar, ma.c(-1.0f, -1));
         r rVar = new r(h0Var, context);
         this.h = rVar;
@@ -103,7 +104,7 @@ public abstract class s extends FrameLayout implements fs {
     }
 
     public static boolean d(Drawable drawable) {
-        return (drawable instanceof o5) && fj.C4(((o5) drawable).e);
+        return (drawable instanceof p5) && fj.C4(((p5) drawable).e);
     }
 
     public final ArrayList a() {
@@ -206,7 +207,7 @@ public abstract class s extends FrameLayout implements fs {
             this.F = true;
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-            TLRPC.TL_messages_stickerSet n02 = ri.d0(i11).n0(tL_inputStickerSetShortName, null, false, true, new ai.g0(this, 6));
+            TLRPC.TL_messages_stickerSet n02 = ri.d0(i11).n0(tL_inputStickerSetShortName, null, false, true, new ai.h0(this, 6));
             if (n02 != null && (arrayList5 = n02.documents) != null && !arrayList5.isEmpty()) {
                 this.E = n02;
             }
@@ -254,16 +255,16 @@ public abstract class s extends FrameLayout implements fs {
                 long j11 = (i17 == 4 && j10 != j3 && hashMap.containsKey(Long.valueOf(j10))) ? j10 : L[i17];
                 TLRPC.Document document6 = (TLRPC.Document) hashMap.get(Long.valueOf(j11));
                 if (document6 == null) {
-                    document6 = o5.e(i11, j11);
+                    document6 = p5.e(i11, j11);
                 }
                 if (document6 != null) {
                     arrayList10.add(document6);
                     hashSet.add(Long.valueOf(document6.id));
                 } else if (this.H.add(Long.valueOf(j11))) {
-                    o5.g(i11).b(j11, new org.telegram.ui.Components.l5() { // from class: ci.g
-                        @Override // org.telegram.ui.Components.l5
+                    p5.g(i11).b(j11, new m5() { // from class: ci.g
+                        @Override // org.telegram.ui.Components.m5
                         public final void a(TLRPC.Document document7) {
-                            org.telegram.messenger.g0.g3(new c1.c(7, s.this, document7));
+                            org.telegram.messenger.g0.g3(new c1.a(9, s.this, document7));
                         }
                     });
                 }
@@ -276,7 +277,7 @@ public abstract class s extends FrameLayout implements fs {
             str2 = "application/x-tgsticker";
         }
         if (!arrayList10.isEmpty()) {
-            arrayList6.add(new o(0, gd.M0(2131746302, null), arrayList10));
+            arrayList6.add(new o(0, gd.N0(2131746301, null), arrayList10));
         }
         ArrayList arrayList11 = new ArrayList();
         HashSet hashSet2 = new HashSet();
@@ -305,7 +306,7 @@ public abstract class s extends FrameLayout implements fs {
                 i20 = i10;
             }
             if (document == null) {
-                document = o5.e(i11, longValue);
+                document = p5.e(i11, longValue);
             }
             if (document != null && str2.equals(document.mime_type) && hashSet2.add(Long.valueOf(document.id))) {
                 arrayList11.add(document);
@@ -323,7 +324,7 @@ public abstract class s extends FrameLayout implements fs {
             String str5 = (String) arrayList12.get(i21);
             if (str5 != null && str5.startsWith("animated_")) {
                 try {
-                    TLRPC.Document e10 = o5.e(i11, Long.parseLong(str5.substring(9)));
+                    TLRPC.Document e10 = p5.e(i11, Long.parseLong(str5.substring(9)));
                     if ((e10 != null && str2.equals(e10.mime_type)) && hashSet2.add(Long.valueOf(e10.id))) {
                         arrayList11.add(e10);
                     }
@@ -336,7 +337,7 @@ public abstract class s extends FrameLayout implements fs {
             i7 = 1;
         } else {
             i7 = 1;
-            arrayList6.add(new o(1, gd.M0(2131746166, null), arrayList11));
+            arrayList6.add(new o(1, gd.N0(2131746165, null), arrayList11));
         }
         arrayList6.addAll(arrayList7);
         int size6 = arrayList6.size();

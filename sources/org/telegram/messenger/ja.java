@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ja implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -155,20 +155,20 @@ public final /* synthetic */ class ja implements Runnable {
             default:
                 p4.v vVar = (p4.v) obj4;
                 p4.k1 k1Var = (p4.k1) obj3;
-                p4.d0 d0Var = (p4.d0) obj2;
+                p4.e0 e0Var = (p4.e0) obj2;
                 p4.c1 c1Var = (p4.c1) obj;
                 ab.c0 c0Var = ((p4.e1) obj5).b;
                 if (c0Var.A(vVar)) {
                     if (k1Var == null) {
                         if (!c0Var.D(vVar, i11)) {
-                            p4.e1.r1(d0Var, vVar, i10, new p4.o1(-4));
+                            p4.e1.r1(e0Var, vVar, i10, new p4.o1(-4));
                             break;
                         }
                     } else if (!c0Var.F(vVar, k1Var)) {
-                        p4.e1.r1(d0Var, vVar, i10, new p4.o1(-4));
+                        p4.e1.r1(e0Var, vVar, i10, new p4.o1(-4));
                         break;
                     }
-                    c1Var.k(d0Var, vVar, i10);
+                    c1Var.k(e0Var, vVar, i10);
                     break;
                 }
                 break;
@@ -185,11 +185,11 @@ public final /* synthetic */ class ja implements Runnable {
         this.n = runnable;
     }
 
-    public /* synthetic */ ja(p4.e1 e1Var, p4.v vVar, p4.k1 k1Var, p4.d0 d0Var, int i7, int i10, p4.c1 c1Var) {
+    public /* synthetic */ ja(p4.e1 e1Var, p4.v vVar, p4.k1 k1Var, p4.e0 e0Var, int i7, int i10, p4.c1 c1Var) {
         this.d = e1Var;
         this.e = vVar;
         this.f = k1Var;
-        this.h = d0Var;
+        this.h = e0Var;
         this.b = i7;
         this.c = i10;
         this.n = c1Var;

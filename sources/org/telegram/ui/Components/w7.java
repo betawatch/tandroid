@@ -6,23 +6,23 @@ import android.os.SystemClock;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class w7 extends FrameLayout {
     public final q9[] a;
     public int b;
     public AnimatorSet c;
     public long d;
-    public final /* synthetic */ g8 e;
+    public final /* synthetic */ f8 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w7(g8 g8Var, Context context) {
+    public w7(f8 f8Var, Context context) {
         super(context);
-        this.e = g8Var;
+        this.e = f8Var;
         this.a = new q9[2];
         for (int i7 = 0; i7 < 2; i7++) {
             this.a[i7] = new q9(context);
-            this.a[i7].getImageReceiver().h1 = new ai.s1(this, i7, 8);
+            this.a[i7].getImageReceiver().h1 = new ai.u1(this, i7, 8);
             this.a[i7].setRoundRadius(org.telegram.messenger.g0.L(4.0f));
             if (i7 == 1) {
                 this.a[i7].setVisibility(8);
@@ -34,15 +34,15 @@ public final class w7 extends FrameLayout {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
-        g8 g8Var = this.e;
+        f8 f8Var = this.e;
         if (action == 0) {
             if (this.a[this.b].getImageReceiver().I()) {
-                g8Var.X0(true, true);
+                f8Var.X0(true, true);
                 this.d = SystemClock.elapsedRealtime();
                 return true;
             }
         } else if (action != 2 && SystemClock.elapsedRealtime() - this.d >= 400) {
-            g8Var.X0(false, true);
+            f8Var.X0(false, true);
         }
         return true;
     }

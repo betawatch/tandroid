@@ -18,12 +18,12 @@ import java.util.UUID;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.n10;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List q0 = Arrays.asList(-90, 0, 90, Integer.valueOf(ks.K2));
@@ -274,7 +274,7 @@ public abstract class j extends FrameLayout {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.o0, z11 ? 0.5f : 1.0f);
                     this.p0 = ofFloat;
                     ofFloat.addUpdateListener(new f(this, i7));
-                    this.p0.setInterpolator(lr.h);
+                    this.p0.setInterpolator(nr.h);
                     this.p0.setDuration(280L);
                     this.p0.start();
                     this.E = z11;
@@ -333,7 +333,7 @@ public abstract class j extends FrameLayout {
         canvas.scale(a10, a10, getWidth() / 2.0f, getHeight() / 2.0f);
         if (getParent() instanceof View) {
             View view = (View) getParent();
-            if (this instanceof r1) {
+            if (this instanceof t1) {
                 float f10 = this.o0;
                 canvas.scale(f10, f10, getWidth() / 2.0f, getHeight() / 2.0f);
             } else {
@@ -467,7 +467,7 @@ public abstract class j extends FrameLayout {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 this.R = duration;
-                duration.setInterpolator(lr.f);
+                duration.setInterpolator(nr.f);
                 this.R.addUpdateListener(new f(this, i7));
                 this.R.addListener(new g(this, 3));
                 this.R.start();
@@ -563,8 +563,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public yi0 getSelectionBounds() {
-        return new yi0(0.0f, 0.0f, 0.0f, 0.0f);
+    public aj0 getSelectionBounds() {
+        return new aj0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {
@@ -602,7 +602,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.b0 = duration;
-        duration.setInterpolator(lr.f);
+        duration.setInterpolator(nr.f);
         this.b0.addUpdateListener(new f(this, 3));
         this.b0.addListener(new g(this, 0));
         this.b0.start();
@@ -615,7 +615,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.c0 = duration;
-        duration.setInterpolator(lr.f);
+        duration.setInterpolator(nr.f);
         this.c0.addUpdateListener(new f(this, 4));
         this.c0.addListener(new g(this, 1));
         this.c0.start();
@@ -631,7 +631,7 @@ public abstract class j extends FrameLayout {
         float f12 = f10 * f11;
         this.i0 = f12;
         float i7 = Utilities.i(Math.max(f12, 0.1f), getMaxScale(), getMinScale());
-        if (!(this instanceof q1)) {
+        if (!(this instanceof s1)) {
             if ((i7 >= getMaxScale() || i7 <= getMinScale()) != (f11 >= getMaxScale() || f11 <= getMinScale())) {
                 try {
                     performHapticFeedback(3, 1);
@@ -674,7 +674,7 @@ public abstract class j extends FrameLayout {
             ofFloat.addUpdateListener(new f(this, 2));
             this.l0.addListener(new g(this, 4));
             this.l0.setDuration(280L);
-            this.l0.setInterpolator(lr.h);
+            this.l0.setInterpolator(nr.h);
             this.l0.start();
         }
     }

@@ -3,23 +3,23 @@ package org.telegram.ui;
 import android.content.Intent;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h80 implements org.telegram.ui.Components.nc0, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class h80 implements org.telegram.ui.Components.oc0, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ LaunchActivity a;
 
     public /* synthetic */ h80(LaunchActivity launchActivity) {
         this.a = launchActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         String str = LaunchActivity.C1;
         org.telegram.messenger.mp.u1(this.a.P).H3(2);
     }
 
-    @Override // org.telegram.ui.Components.nc0
-    public void p(org.telegram.ui.Components.pc0 pc0Var) {
+    @Override // org.telegram.ui.Components.oc0
+    public void p(org.telegram.ui.Components.qc0 qc0Var) {
         String str = LaunchActivity.C1;
         org.telegram.messenger.bz.C = false;
         LaunchActivity launchActivity = this.a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class h80 implements org.telegram.ui.Components.nc0
         launchActivity.p0.getView().setVisibility(0);
         launchActivity.p0.X(true, true);
         ActionBarLayout actionBarLayout = launchActivity.p0;
-        org.telegram.ui.ActionBar.h2 lastFragment = actionBarLayout.getLastFragment();
+        org.telegram.ui.ActionBar.g2 lastFragment = actionBarLayout.getLastFragment();
         if (lastFragment != null) {
             lastFragment.setTitleOverlayText(actionBarLayout.N0, actionBarLayout.O0, actionBarLayout.P0);
         }
@@ -49,7 +49,7 @@ public final /* synthetic */ class h80 implements org.telegram.ui.Components.nc0
                 launchActivity.r0.getView().setVisibility(0);
             }
         }
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.o0, pc0Var);
+        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.o0, qc0Var);
         try {
             org.telegram.messenger.xs.t(org.telegram.messenger.j10.t0).Y();
         } catch (Exception e10) {

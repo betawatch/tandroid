@@ -8,12 +8,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.i9;
 import org.telegram.messenger.s2;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.t1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a0 implements h2.o, g9.k, l5.g, i9, OnSuccessListener, r1 {
+public final /* synthetic */ class a0 implements h2.o, g9.k, l5.g, i9, OnSuccessListener, q1 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a0(int i7) {
@@ -33,9 +33,9 @@ public final /* synthetic */ class a0 implements h2.o, g9.k, l5.g, i9, OnSuccess
         return h9.i0.u(Integer.valueOf(((y2.i) obj).a));
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(u1 u1Var, int i7) {
-        u1Var.dismiss();
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(t1 t1Var, int i7) {
+        t1Var.dismiss();
     }
 
     @Override // h2.o

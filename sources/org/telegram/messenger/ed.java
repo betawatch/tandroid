@@ -14,14 +14,14 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.du0;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.nj0;
-import org.telegram.ui.Components.ot0;
+import org.telegram.ui.Components.gu0;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.rt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ed implements i9, Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.r1, du0, r10, ot0, w10, jh.i, nj0 {
+public final /* synthetic */ class ed implements i9, Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.q1, gu0, r10, rt0, w10, jh.i, pj0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ ed(int i7) {
@@ -29,7 +29,7 @@ public final /* synthetic */ class ed implements i9, Vector.TLDeserializer, OnCo
     }
 
     @Override // org.telegram.messenger.w10
-    public Boolean a(l41 l41Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -77,30 +77,30 @@ public final /* synthetic */ class ed implements i9, Vector.TLDeserializer, OnCo
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 16:
                 int i10 = bz.a;
                 break;
             case 19:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
             case 23:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
             default:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ot0
+    @Override // org.telegram.ui.Components.rt0
     public /* synthetic */ float j(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.c0.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public void k(int i7) {
         if (i7 == 0) {
             bz.A(3);
@@ -129,7 +129,7 @@ public final /* synthetic */ class ed implements i9, Vector.TLDeserializer, OnCo
         }
     }
 
-    @Override // org.telegram.ui.Components.ot0
+    @Override // org.telegram.ui.Components.rt0
     public RecyclerView n(View view) {
         return ((org.telegram.ui.rd) view).a;
     }
@@ -152,7 +152,7 @@ public final /* synthetic */ class ed implements i9, Vector.TLDeserializer, OnCo
         PushListenerController.sendRegistrationToServer(2, null);
     }
 
-    @Override // org.telegram.ui.Components.ot0
+    @Override // org.telegram.ui.Components.rt0
     public /* synthetic */ void r(RecyclerView recyclerView) {
         org.telegram.ui.Cells.c0.b(recyclerView);
     }
@@ -161,7 +161,7 @@ public final /* synthetic */ class ed implements i9, Vector.TLDeserializer, OnCo
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public /* synthetic */ void o() {
     }
 }

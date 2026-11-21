@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class vb {
     public static q2.v a(j2.h hVar, String str, byte[] bArr, Map map) {
@@ -27,9 +27,9 @@ public abstract class vb {
                 try {
                     byte[] b10 = i9.f.b(kVar);
                     x2.u uVar = new x2.u(mVar, b0Var.c, b0Var.d, SystemClock.elapsedRealtime(), 0L, b10.length);
-                    ji.j jVar = new ji.j(b10, 22);
-                    jVar.c = uVar;
-                    q2.v vVar = new q2.v(jVar);
+                    ji.l lVar = new ji.l(b10, 22);
+                    lVar.c = uVar;
+                    q2.v vVar = new q2.v(lVar);
                     try {
                         kVar.close();
                     } catch (IOException unused) {

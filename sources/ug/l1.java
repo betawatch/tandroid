@@ -1,181 +1,88 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import c8.ma;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.u5;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class l1 extends View {
-    public final /* synthetic */ m1 a;
+public final class l1 extends FrameLayout {
+    public float a;
+    public final k1 b;
+    public final ImageReceiver c;
+    public final ImageReceiver d;
+    public boolean e;
+    public boolean f;
+    public float h;
+    public float n;
+    public TLRPC.Document r;
+    public boolean s;
+    public final /* synthetic */ u0 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l1(m1 m1Var, Context context) {
+    public l1(u0 u0Var, Context context) {
         super(context);
-        this.a = m1Var;
+        this.w = u0Var;
+        this.f = true;
+        k1 k1Var = new k1(this, context);
+        this.b = k1Var;
+        ImageReceiver imageReceiver = new ImageReceiver(k1Var);
+        this.c = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver(k1Var);
+        this.d = imageReceiver2;
+        imageReceiver.u0 = false;
+        imageReceiver2.u0 = false;
+        setClipChildren(false);
+        addView(k1Var, ma.e(-1, -2, 21));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00fe  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00d7  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0051  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        ImageReceiver imageReceiver;
-        boolean z10;
-        boolean z11;
-        super.draw(canvas);
-        m1 m1Var = this.a;
-        v0 v0Var = m1Var.w;
-        ImageReceiver imageReceiver2 = m1Var.c;
-        ImageReceiver imageReceiver3 = m1Var.d;
-        if (m1Var.s) {
-            imageReceiver2.q0(fc.b(m1Var.r), null, u5.f(m1Var.r, n6.a7, 0.5f, null), "webp", null, 1);
-            if (fj.X3(m1Var.r)) {
-                imageReceiver = imageReceiver3;
-                imageReceiver.t0(fc.d(fj.F1(m1Var.r), m1Var.r), "140_140", null, null, "tgs", null, 1);
-                if (!m1Var.e) {
-                    if (m1Var.h == 0.0f) {
-                        m1Var.h = 1.0f;
-                        if (imageReceiver.B() != null) {
-                            imageReceiver.B().N(0, false, false);
-                        }
-                    }
-                    if (imageReceiver.B() != null) {
-                        imageReceiver.B().start();
-                    }
-                    if (imageReceiver.B() != null && imageReceiver.B().A() && v0Var.v3) {
-                        org.telegram.messenger.g0.r(v0Var.m3);
-                        org.telegram.messenger.g0.h3(v0Var.m3, 0L);
-                    }
-                } else if (imageReceiver.B() != null) {
-                    imageReceiver.B().stop();
-                }
-                if (m1Var.f) {
-                    if (imageReceiver2.B() != null) {
-                        imageReceiver2.B().stop();
-                    }
-                } else if (imageReceiver2.B() != null) {
-                    imageReceiver2.B().start();
-                }
-                z10 = m1Var.f;
-                if (z10) {
-                    float f10 = m1Var.n;
-                    if (f10 != 1.0f) {
-                        m1Var.n = f10 + 0.10666667f;
-                        invalidate();
-                        m1Var.n = Utilities.i(m1Var.n, 1.0f, 0.0f);
-                        z11 = m1Var.e;
-                        if (z11) {
-                            float f11 = m1Var.h;
-                            if (f11 != 1.0f) {
-                                m1Var.h = f11 + 0.10666667f;
-                                invalidate();
-                                m1Var.h = Utilities.i(m1Var.h, 1.0f, 0.0f);
-                                float f12 = v0Var.s3 * 0.45f;
-                                float f13 = 1.499267f * f12;
-                                float measuredWidth = getMeasuredWidth() - f13;
-                                float measuredHeight = (getMeasuredHeight() - f13) / 2.0f;
-                                float f14 = f13 - f12;
-                                imageReceiver2.y0((f14 - (0.02f * f13)) + measuredWidth, (f14 / 2.0f) + measuredHeight, f12, f12);
-                                imageReceiver2.setAlpha((m1Var.n * 0.7f) + 0.3f);
-                                imageReceiver2.h(canvas, null);
-                                if (m1Var.h == 0.0f) {
-                                    imageReceiver.y0(measuredWidth, measuredHeight, f13, f13);
-                                    imageReceiver.setAlpha(m1Var.h);
-                                    imageReceiver.h(canvas, null);
-                                    return;
-                                }
-                                return;
-                            }
-                        }
-                        if (!z11) {
-                            float f15 = m1Var.h;
-                            if (f15 != 0.0f) {
-                                m1Var.h = f15 - 0.10666667f;
-                                invalidate();
-                            }
-                        }
-                        m1Var.h = Utilities.i(m1Var.h, 1.0f, 0.0f);
-                        float f122 = v0Var.s3 * 0.45f;
-                        float f132 = 1.499267f * f122;
-                        float measuredWidth2 = getMeasuredWidth() - f132;
-                        float measuredHeight2 = (getMeasuredHeight() - f132) / 2.0f;
-                        float f142 = f132 - f122;
-                        imageReceiver2.y0((f142 - (0.02f * f132)) + measuredWidth2, (f142 / 2.0f) + measuredHeight2, f122, f122);
-                        imageReceiver2.setAlpha((m1Var.n * 0.7f) + 0.3f);
-                        imageReceiver2.h(canvas, null);
-                        if (m1Var.h == 0.0f) {
-                        }
-                    }
-                }
-                if (!z10) {
-                    float f16 = m1Var.n;
-                    if (f16 != 0.0f) {
-                        m1Var.n = f16 - 0.10666667f;
-                        invalidate();
-                    }
-                }
-                m1Var.n = Utilities.i(m1Var.n, 1.0f, 0.0f);
-                z11 = m1Var.e;
-                if (z11) {
-                }
-                if (!z11) {
-                }
-                m1Var.h = Utilities.i(m1Var.h, 1.0f, 0.0f);
-                float f1222 = v0Var.s3 * 0.45f;
-                float f1322 = 1.499267f * f1222;
-                float measuredWidth22 = getMeasuredWidth() - f1322;
-                float measuredHeight22 = (getMeasuredHeight() - f1322) / 2.0f;
-                float f1422 = f1322 - f1222;
-                imageReceiver2.y0((f1422 - (0.02f * f1322)) + measuredWidth22, (f1422 / 2.0f) + measuredHeight22, f1222, f1222);
-                imageReceiver2.setAlpha((m1Var.n * 0.7f) + 0.3f);
-                imageReceiver2.h(canvas, null);
-                if (m1Var.h == 0.0f) {
-                }
+    public final void a(boolean z10, boolean z11, boolean z12) {
+        boolean z13 = this.e;
+        k1 k1Var = this.b;
+        if (z13 != z11) {
+            this.e = z11;
+            if (!z12) {
+                this.h = z11 ? 1.0f : 0.0f;
             }
+            k1Var.invalidate();
         }
-        imageReceiver = imageReceiver3;
-        if (!m1Var.e) {
+        if (this.f != z10) {
+            this.f = z10;
+            if (!z12) {
+                this.n = z10 ? 1.0f : 0.0f;
+            }
+            k1Var.invalidate();
         }
-        if (m1Var.f) {
-        }
-        z10 = m1Var.f;
-        if (z10) {
-        }
-        if (!z10) {
-        }
-        m1Var.n = Utilities.i(m1Var.n, 1.0f, 0.0f);
-        z11 = m1Var.e;
-        if (z11) {
-        }
-        if (!z11) {
-        }
-        m1Var.h = Utilities.i(m1Var.h, 1.0f, 0.0f);
-        float f12222 = v0Var.s3 * 0.45f;
-        float f13222 = 1.499267f * f12222;
-        float measuredWidth222 = getMeasuredWidth() - f13222;
-        float measuredHeight222 = (getMeasuredHeight() - f13222) / 2.0f;
-        float f14222 = f13222 - f12222;
-        imageReceiver2.y0((f14222 - (0.02f * f13222)) + measuredWidth222, (f14222 / 2.0f) + measuredHeight222, f12222, f12222);
-        imageReceiver2.setAlpha((m1Var.n * 0.7f) + 0.3f);
-        imageReceiver2.h(canvas, null);
-        if (m1Var.h == 0.0f) {
-        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c.P();
+        this.d.P();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.c.R();
+        this.d.R();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11 = (int) (this.w.s3 * 0.6f);
+        k1 k1Var = this.b;
+        ViewGroup.LayoutParams layoutParams = k1Var.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams2 = k1Var.getLayoutParams();
+        int L = i11 - org.telegram.messenger.g0.L(16.0f);
+        layoutParams2.height = L;
+        layoutParams.width = L;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i11 * 0.7f), TLObject.FLAG_30));
     }
 }

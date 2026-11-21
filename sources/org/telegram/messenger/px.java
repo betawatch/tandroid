@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class px implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -88,10 +88,10 @@ public final /* synthetic */ class px implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.x;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.x;
                 TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice = (TLRPC.TL_inputMediaStakeDice) this.y;
-                Context context = h2Var.getContext();
-                org.telegram.ui.ActionBar.i6 resourceProvider = h2Var.getResourceProvider();
+                Context context = g2Var.getContext();
+                org.telegram.ui.ActionBar.h6 resourceProvider = g2Var.getResourceProvider();
                 cg.a j3 = cg.a.j(tL_inputMediaStakeDice.ton_amount, cg.b.b);
                 zy zyVar2 = this.b;
                 TLObject tLObject3 = this.c;
@@ -104,9 +104,9 @@ public final /* synthetic */ class px implements Runnable {
         }
     }
 
-    public /* synthetic */ px(zy zyVar, org.telegram.ui.ActionBar.h2 h2Var, TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice, TLObject tLObject, fj fjVar, String str, ly lyVar, boolean z10, ly lyVar2, Object obj, HashMap hashMap, boolean z11) {
+    public /* synthetic */ px(zy zyVar, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice, TLObject tLObject, fj fjVar, String str, ly lyVar, boolean z10, ly lyVar2, Object obj, HashMap hashMap, boolean z11) {
         this.b = zyVar;
-        this.x = h2Var;
+        this.x = g2Var;
         this.y = tL_inputMediaStakeDice;
         this.c = tLObject;
         this.d = fjVar;

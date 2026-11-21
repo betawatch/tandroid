@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class dx0 extends View {
     public static final String[] s = {"🎉", "🎆", "🎈"};
@@ -163,7 +163,7 @@ public final class dx0 extends View {
                     float f18 = ((w10 - f15) * s5) + (f14 * f12) + f15;
                     PointF pointF2 = pointF;
                     float pow = f17 - ((f17 + f13) * ((float) Math.pow(this.h, 2.0d)));
-                    float interpolation = org.telegram.ui.Components.lr.h.getInterpolation(Utilities.i(s5 / 0.4f, 1.0f, 0.0f));
+                    float interpolation = org.telegram.ui.Components.nr.h.getInterpolation(Utilities.i(s5 / 0.4f, 1.0f, 0.0f));
                     float f19 = (f13 / f16) * interpolation;
                     float f20 = f13 * interpolation;
                     cx0Var.y0(f18 - f19, pow - f19, f20, f20);

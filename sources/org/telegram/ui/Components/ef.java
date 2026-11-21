@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ef extends ki.v {
+public final class ef extends ki.u {
     public boolean s;
     public final /* synthetic */ ChatActivityEnterView w;
 
@@ -23,9 +23,9 @@ public final class ef extends ki.v {
         b1Var.setOverScrollMode(2);
         b1Var.setClipToPadding(false);
         b1Var.setClipToOutline(true);
-        b1Var.j(new bi.q1(this, 21));
+        b1Var.j(new bi.u1(this, 21));
         addView(b1Var);
-        paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.zj, false));
+        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.zj, false));
         fh.g gVar = this.r;
         if (gVar != null) {
             gVar.updateColors();
@@ -42,6 +42,6 @@ public final class ef extends ki.v {
             return;
         }
         this.s = true;
-        this.w.f2();
+        this.w.j2();
     }
 }

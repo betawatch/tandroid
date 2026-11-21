@@ -4,25 +4,25 @@ import org.telegram.messenger.x10;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements x10 {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ hi.d b;
-    public final /* synthetic */ hi.d c;
+    public final /* synthetic */ hi.e b;
+    public final /* synthetic */ hi.e c;
     public final /* synthetic */ d3 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 e;
     public final /* synthetic */ h2 f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ u1(hi.d dVar, hi.d dVar2, l2 l2Var, h2 h2Var, d3 d3Var, org.telegram.ui.ActionBar.i6 i6Var, p pVar) {
-        this.b = dVar;
-        this.c = dVar2;
+    public /* synthetic */ u1(hi.e eVar, hi.e eVar2, l2 l2Var, h2 h2Var, d3 d3Var, org.telegram.ui.ActionBar.h6 h6Var, p pVar) {
+        this.b = eVar;
+        this.c = eVar2;
         this.g = l2Var;
         this.f = h2Var;
         this.d = d3Var;
-        this.e = i6Var;
+        this.e = h6Var;
         this.h = pVar;
     }
 
@@ -33,36 +33,36 @@ public final /* synthetic */ class u1 implements x10 {
                 l2 l2Var = (l2) this.g;
                 p pVar = (p) this.h;
                 Boolean bool = (Boolean) obj;
-                hi.d dVar = this.b;
-                dVar.setEnabled(false);
-                hi.d dVar2 = this.c;
-                dVar2.setEnabled(false);
-                (bool.booleanValue() ? dVar2 : dVar).setLoading(true);
+                hi.e eVar = this.b;
+                eVar.setEnabled(false);
+                hi.e eVar2 = this.c;
+                eVar2.setEnabled(false);
+                (bool.booleanValue() ? eVar2 : eVar).setLoading(true);
                 boolean booleanValue = bool.booleanValue();
                 d3 d3Var = this.d;
-                org.telegram.ui.ActionBar.i6 i6Var = this.e;
+                org.telegram.ui.ActionBar.h6 h6Var = this.e;
                 h2 h2Var = this.f;
-                l2Var.f(h2Var, booleanValue, new u60(dVar, dVar2, d3Var, i6Var, pVar, h2Var, 3));
+                l2Var.f(h2Var, booleanValue, new u60(eVar, eVar2, d3Var, h6Var, pVar, h2Var, 3));
                 break;
             default:
                 boolean[] zArr = (boolean[]) this.g;
                 boolean[] zArr2 = (boolean[]) this.h;
                 String str = (String) obj;
-                hi.d dVar3 = this.b;
+                hi.e eVar3 = this.b;
                 boolean z10 = false;
-                dVar3.setLoading(false);
-                hi.d dVar4 = this.c;
-                dVar4.setLoading(false);
+                eVar3.setLoading(false);
+                hi.e eVar4 = this.c;
+                eVar4.setLoading(false);
                 d3 d3Var2 = this.d;
                 if (str != null) {
                     if (!zArr[0]) {
                         lc.d0(str, d3Var2.F, this.e);
                         h2 h2Var2 = this.f;
-                        dVar3.setEnabled(!h2Var2.n && zArr2[0]);
+                        eVar3.setEnabled(!h2Var2.n && zArr2[0]);
                         if (!h2Var2.n && !h2Var2.o) {
                             z10 = true;
                         }
-                        dVar4.setEnabled(z10);
+                        eVar4.setEnabled(z10);
                         break;
                     } else {
                         lc.c0(str);
@@ -76,12 +76,12 @@ public final /* synthetic */ class u1 implements x10 {
         }
     }
 
-    public /* synthetic */ u1(hi.d dVar, hi.d dVar2, d3 d3Var, boolean[] zArr, org.telegram.ui.ActionBar.i6 i6Var, h2 h2Var, boolean[] zArr2) {
-        this.b = dVar;
-        this.c = dVar2;
+    public /* synthetic */ u1(hi.e eVar, hi.e eVar2, d3 d3Var, boolean[] zArr, org.telegram.ui.ActionBar.h6 h6Var, h2 h2Var, boolean[] zArr2) {
+        this.b = eVar;
+        this.c = eVar2;
         this.d = d3Var;
         this.g = zArr;
-        this.e = i6Var;
+        this.e = h6Var;
         this.f = h2Var;
         this.h = zArr2;
     }

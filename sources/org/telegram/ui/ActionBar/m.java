@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import c8.ma;
 import java.util.Iterator;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout implements te.i {
-    public final i6 a;
+    public final h6 a;
     public final ab.q b;
     public final te.j c;
 
-    public m(Context context, i6 i6Var, ab.q qVar) {
+    public m(Context context, h6 h6Var, ab.q qVar) {
         super(context);
-        this.c = new te.j(this, lr.h, 350L);
-        this.a = i6Var;
+        this.c = new te.j(this, nr.h, 350L);
+        this.a = h6Var;
         this.b = qVar;
     }
 
@@ -43,10 +43,10 @@ public abstract class m extends FrameLayout implements te.i {
             charSequence2 = charSequence;
         }
         l lVar = new l(this, getContext());
-        int i7 = n6.Xl;
-        i6 i6Var = this.a;
-        u6.U(lVar, i7, i6Var);
-        u6.G(lVar, i7, i6Var);
+        int i7 = m6.Xl;
+        h6 h6Var = this.a;
+        t6.U(lVar, i7, h6Var);
+        t6.G(lVar, i7, h6Var);
         lVar.setTextSize(1, 14.0f);
         lVar.setAlpha(0.0f);
         lVar.setText(charSequence2);
@@ -62,10 +62,10 @@ public abstract class m extends FrameLayout implements te.i {
         while (it.hasNext()) {
             te.e eVar = (te.e) it.next();
             l lVar = (l) eVar.a;
-            int i7 = n6.Xl;
-            i6 i6Var = this.a;
-            lVar.setTextColor(n6.w0(i7, i6Var));
-            ((l) eVar.a).setLinkTextColor(n6.w0(i7, i6Var));
+            int i7 = m6.Xl;
+            h6 h6Var = this.a;
+            lVar.setTextColor(m6.w0(i7, h6Var));
+            ((l) eVar.a).setLinkTextColor(m6.w0(i7, h6Var));
         }
     }
 

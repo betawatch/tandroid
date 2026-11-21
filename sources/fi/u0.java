@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements NativeInstance.PayloadCallback, RequestDelegateTimestamp, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class u0 implements NativeInstance.PayloadCallback,
         while (i7 < iArr.length) {
             i7 = com.google.android.gms.internal.vision.e2.f(iArr[i7], i7, 1, getgroupparticipants.sources);
         }
-        ConnectionsManager.getInstance(c1Var.e).sendRequest(getgroupparticipants, new di.p2(c1Var, iArr, j3, 3));
+        ConnectionsManager.getInstance(c1Var.e).sendRequest(getgroupparticipants, new di.q2(c1Var, iArr, j3, 3));
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
@@ -135,14 +135,14 @@ public final /* synthetic */ class u0 implements NativeInstance.PayloadCallback,
                         str = i7 + "_" + j3 + "_" + i10;
                     }
                     final String str2 = str;
-                    org.telegram.messenger.g0.g3(new ai.a1(c1Var, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(c1Var.e).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: fi.v0
+                    org.telegram.messenger.g0.g3(new ai.c1(c1Var, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(c1Var.e).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: fi.v0
                         @Override // org.telegram.tgnet.RequestDelegateTimestamp
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j11) {
                             c1 c1Var2 = c1.this;
                             if (c1Var2.x || c1Var2.F == null) {
                                 return;
                             }
-                            org.telegram.messenger.g0.g3(new di.w2(24, c1Var2, str2));
+                            org.telegram.messenger.g0.g3(new di.f2(26, c1Var2, str2));
                             long j12 = currentTimeMillis;
                             long j13 = j3;
                             long j14 = j10;

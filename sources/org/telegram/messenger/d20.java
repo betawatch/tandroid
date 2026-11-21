@@ -8,7 +8,7 @@ import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class d20 extends TLObject {
     public static final /* synthetic */ int C = 0;
@@ -25,36 +25,36 @@ public final class d20 extends TLObject {
     public int l;
     public int m;
     public long o;
-    public hi.t r;
+    public hi.u r;
     public FloatBuffer s;
     public FloatBuffer t;
-    public org.telegram.ui.Components.b6 u;
+    public org.telegram.ui.Components.c6 u;
     public float v;
     public SurfaceTexture z;
 
-    public static ArrayList a(hi.d7 d7Var) {
-        if (d7Var == null || d7Var.T == null) {
+    public static ArrayList a(hi.c7 c7Var) {
+        if (c7Var == null || c7Var.T == null) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
-        for (int i7 = 0; i7 < d7Var.T.size(); i7++) {
-            hi.d7 d7Var2 = (hi.d7) d7Var.T.get(i7);
+        for (int i7 = 0; i7 < c7Var.T.size(); i7++) {
+            hi.c7 c7Var2 = (hi.c7) c7Var.T.get(i7);
             d20 d20Var = new d20();
             d20Var.e = 1.0f;
             d20Var.f = 0L;
             d20Var.i = true;
-            d20Var.b = d7Var2.K;
-            d20Var.c = d7Var2.Y;
-            d20Var.d = d7Var2.L.getAbsolutePath();
-            d20Var.e = d7Var2.P;
-            d20Var.i = d7Var2.U;
-            d20Var.f = d7Var2.X;
-            d20Var.j = d7Var2.V;
-            d20Var.k = d7Var2.W;
-            d20Var.l = d7Var2.k0;
-            d20Var.m = d7Var2.l0;
-            d20Var.o = d7Var2.h0;
-            d20Var.r = (hi.t) d7Var.S.e.get(i7);
+            d20Var.b = c7Var2.K;
+            d20Var.c = c7Var2.Y;
+            d20Var.d = c7Var2.L.getAbsolutePath();
+            d20Var.e = c7Var2.P;
+            d20Var.i = c7Var2.U;
+            d20Var.f = c7Var2.X;
+            d20Var.j = c7Var2.V;
+            d20Var.k = c7Var2.W;
+            d20Var.l = c7Var2.k0;
+            d20Var.m = c7Var2.l0;
+            d20Var.o = c7Var2.h0;
+            d20Var.r = (hi.u) c7Var.S.e.get(i7);
             arrayList.add(d20Var);
         }
         return arrayList;

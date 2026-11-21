@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class x8 extends FrameLayout {
     public float E;
@@ -21,13 +21,13 @@ public abstract class x8 extends FrameLayout {
     public long a;
     public TLRPC.Document b;
     public final fi.t3 c;
-    public final p10 d;
-    public final p10 e;
+    public final s10 d;
+    public final s10 e;
     public float f;
     public u8 h;
     public boolean n;
     public final PorterDuffColorFilter r;
-    public final c6 s;
+    public final d6 s;
     public boolean w;
     public float x;
     public float y;
@@ -36,11 +36,11 @@ public abstract class x8 extends FrameLayout {
     public x8(y8 y8Var, Context context) {
         super(context);
         this.G = y8Var;
-        this.d = new p10();
-        this.e = new p10();
+        this.d = new s10();
+        this.e = new s10();
         this.f = 1.0f;
         this.r = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
-        this.s = new c6(this, 200L, lr.g);
+        this.s = new d6(this, 200L, nr.g);
         this.x = -1.0f;
         fi.t3 t3Var = new fi.t3(7, context, this);
         this.c = t3Var;
@@ -86,19 +86,19 @@ public abstract class x8 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         x8 x8Var;
         Canvas canvas2;
-        o5 o5Var;
+        p5 p5Var;
         this.E = getMeasuredWidth() / 2.0f;
         this.F = getMeasuredHeight() / 2.0f;
         y8 y8Var = this.G;
         float measuredWidth = y8Var.V ? getMeasuredWidth() * 0.3f : org.telegram.messenger.g0.L(50.0f);
         float f10 = this.w ? 1.0f : 0.0f;
-        c6 c6Var = this.s;
-        c6Var.e(false, f10);
+        d6 d6Var = this.s;
+        d6Var.e(false, f10);
         float f11 = this.x;
         if (f11 >= 0.0f) {
-            c6Var.e(true, f11);
+            d6Var.e(true, f11);
         }
-        float T1 = org.telegram.messenger.g0.T1(measuredWidth, getMeasuredWidth() / 2.0f, c6Var.c);
+        float T1 = org.telegram.messenger.g0.T1(measuredWidth, getMeasuredWidth() / 2.0f, d6Var.c);
         this.y = T1;
         this.y = org.telegram.messenger.g0.T1(T1, org.telegram.messenger.g0.L(21.0f), y8Var.O);
         this.E = org.telegram.messenger.g0.T1(this.E, (getMeasuredWidth() - org.telegram.messenger.g0.L(12.0f)) - org.telegram.messenger.g0.L(21.0f), y8Var.O);
@@ -110,22 +110,22 @@ public abstract class x8 extends FrameLayout {
             int i10 = u8Var.d;
             int i11 = u8Var.e;
             int i12 = u8Var.f;
-            p10 p10Var = this.d;
-            p10Var.d(i7, i10, i11, i12);
-            Paint paint = p10Var.c;
+            s10 s10Var = this.d;
+            s10Var.d(i7, i10, i11, i12);
+            Paint paint = s10Var.c;
             float f12 = this.E;
             float f13 = this.y;
             float f14 = this.F;
-            p10Var.b(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
+            s10Var.b(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
             if (this.f == 1.0f) {
                 x8Var = this;
                 paint.setAlpha(org.telegram.messenger.ks.e4);
                 canvas2 = canvas;
                 x8Var.a(canvas2, x8Var.E, x8Var.F, measuredWidth, x8Var.y, paint);
-                float T12 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.W1(c6Var.c, !y8Var.V ? (int) ((measuredWidth * 2.0f) * 0.7f) : org.telegram.messenger.g0.L(70.0f), (int) (getMeasuredWidth() * 0.7f)), (int) (org.telegram.messenger.g0.L(42.0f) * 0.7f), y8Var.O) / 2.0f;
+                float T12 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.W1(d6Var.c, !y8Var.V ? (int) ((measuredWidth * 2.0f) * 0.7f) : org.telegram.messenger.g0.L(70.0f), (int) (getMeasuredWidth() * 0.7f)), (int) (org.telegram.messenger.g0.L(42.0f) * 0.7f), y8Var.O) / 2.0f;
                 fi.t3 t3Var = x8Var.c;
-                o5Var = t3Var.e;
-                if (o5Var != null) {
+                p5Var = t3Var.e;
+                if (p5Var != null) {
                     ImageReceiver imageReceiver = t3Var.a;
                     float f15 = x8Var.E - T12;
                     float f16 = x8Var.F - T12;
@@ -135,14 +135,14 @@ public abstract class x8 extends FrameLayout {
                     t3Var.a.h(canvas2, null);
                     return;
                 }
-                fi.s2 s2Var = o5Var.k;
+                fi.s2 s2Var = p5Var.k;
                 if (s2Var != null) {
                     s2Var.J0((int) (2.0f * T12 * 0.13f));
                 }
-                o5 o5Var2 = t3Var.e;
+                p5 p5Var2 = t3Var.e;
                 float f18 = x8Var.E;
                 float f19 = x8Var.F;
-                o5Var2.setBounds((int) (f18 - T12), (int) (f19 - T12), (int) (f18 + T12), (int) (f19 + T12));
+                p5Var2.setBounds((int) (f18 - T12), (int) (f19 - T12), (int) (f18 + T12), (int) (f19 + T12));
                 t3Var.e.setColorFilter(x8Var.r);
                 t3Var.e.draw(canvas2);
                 return;
@@ -154,9 +154,9 @@ public abstract class x8 extends FrameLayout {
             float f24 = f23 - f21;
             float f25 = f20 + f21;
             float f26 = f23 + f21;
-            p10 p10Var2 = this.e;
-            p10Var2.b(f22, f24, f25, f26);
-            Paint paint2 = p10Var2.c;
+            s10 s10Var2 = this.e;
+            s10Var2.b(f22, f24, f25, f26);
+            Paint paint2 = s10Var2.c;
             paint2.setAlpha(org.telegram.messenger.ks.e4);
             x8Var = this;
             x8Var.a(canvas, this.E, this.F, measuredWidth, this.y, paint2);
@@ -175,19 +175,19 @@ public abstract class x8 extends FrameLayout {
         canvas2 = canvas;
         if (!y8Var.V) {
         }
-        float T122 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.W1(c6Var.c, !y8Var.V ? (int) ((measuredWidth * 2.0f) * 0.7f) : org.telegram.messenger.g0.L(70.0f), (int) (getMeasuredWidth() * 0.7f)), (int) (org.telegram.messenger.g0.L(42.0f) * 0.7f), y8Var.O) / 2.0f;
+        float T122 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.W1(d6Var.c, !y8Var.V ? (int) ((measuredWidth * 2.0f) * 0.7f) : org.telegram.messenger.g0.L(70.0f), (int) (getMeasuredWidth() * 0.7f)), (int) (org.telegram.messenger.g0.L(42.0f) * 0.7f), y8Var.O) / 2.0f;
         fi.t3 t3Var2 = x8Var.c;
-        o5Var = t3Var2.e;
-        if (o5Var != null) {
+        p5Var = t3Var2.e;
+        if (p5Var != null) {
         }
     }
 
     public long getDuration() {
         fi.t3 t3Var = this.c;
         ImageReceiver imageReceiver = t3Var.getImageReceiver();
-        o5 o5Var = t3Var.e;
-        if (o5Var != null) {
-            imageReceiver = o5Var.k;
+        p5 p5Var = t3Var.e;
+        if (p5Var != null) {
+            imageReceiver = p5Var.k;
         }
         if (imageReceiver == null || imageReceiver.B() == null) {
             return 5000L;
@@ -198,12 +198,12 @@ public abstract class x8 extends FrameLayout {
     public ImageReceiver getImageReceiver() {
         fi.t3 t3Var = this.c;
         ImageReceiver imageReceiver = t3Var.getImageReceiver();
-        o5 o5Var = t3Var.e;
-        if (o5Var == null) {
+        p5 p5Var = t3Var.e;
+        if (p5Var == null) {
             return imageReceiver;
         }
-        fi.s2 s2Var = o5Var.k;
-        o5Var.setColorFilter(this.r);
+        fi.s2 s2Var = p5Var.k;
+        p5Var.setColorFilter(this.r);
         return s2Var;
     }
 
@@ -230,8 +230,8 @@ public abstract class x8 extends FrameLayout {
         this.w = z10;
         if (z10) {
             fi.t3 t3Var = this.c;
-            o5 o5Var = t3Var.e;
-            if (o5Var != null && (s2Var = o5Var.k) != null) {
+            p5 p5Var = t3Var.e;
+            if (p5Var != null && (s2Var = p5Var.k) != null) {
                 s2Var.P0(false);
             }
             t3Var.a.P0(false);

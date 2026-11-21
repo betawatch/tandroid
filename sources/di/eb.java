@@ -14,9 +14,9 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class eb extends LinearLayout implements fs {
     public long a;
@@ -26,7 +26,7 @@ public final class eb extends LinearLayout implements fs {
     public long e;
     public ValueAnimator f;
 
-    public eb(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public eb(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.e = -1L;
         this.b = i7;
@@ -34,9 +34,9 @@ public final class eb extends LinearLayout implements fs {
         setOrientation(1);
         setGravity(21);
         TextView textView = new TextView(context);
-        int i10 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.U(textView, i10, i6Var);
-        i5.c.r(13.0f, 1, 2131744920, textView, null);
+        int i10 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(textView, i10, h6Var);
+        i5.c.r(13.0f, 1, 2131744914, textView, null);
         textView.setGravity(5);
         textView.setTypeface(org.telegram.messenger.g0.o());
         addView(textView, c8.ma.r(-2, -2, 5));
@@ -45,7 +45,7 @@ public final class eb extends LinearLayout implements fs {
         dbVar.n = true;
         dbVar.getDrawable().r(false, true);
         dbVar.setTypeface(org.telegram.messenger.g0.o());
-        org.telegram.ui.ActionBar.u6.Y(dbVar, i10, i6Var);
+        org.telegram.ui.ActionBar.t6.Y(dbVar, i10, h6Var);
         dbVar.setTextSize(org.telegram.messenger.g0.L(13.0f));
         dbVar.setGravity(5);
         dbVar.setPadding(org.telegram.messenger.g0.L(19.0f), 0, 0, 0);
@@ -59,7 +59,7 @@ public final class eb extends LinearLayout implements fs {
         boolean z11;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
         int i7 = this.b;
-        x8 y10 = x8.y(i7, false);
+        y8 y10 = y8.y(i7, false);
         db dbVar = this.c;
         dbVar.a();
         if (this.a == j10.i(i7).e()) {
@@ -80,7 +80,7 @@ public final class eb extends LinearLayout implements fs {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.9f, 1.0f);
             this.f = ofFloat;
             ofFloat.addUpdateListener(new ah.g(this, 10));
-            this.f.addListener(new ai.j0(this, 7));
+            this.f.addListener(new ai.k0(this, 7));
             this.f.setDuration(320L);
             this.f.setInterpolator(new OvershootInterpolator());
             this.f.start();
@@ -93,7 +93,7 @@ public final class eb extends LinearLayout implements fs {
         if (this.d == null) {
             SpannableString spannableString = new SpannableString("x");
             this.d = spannableString;
-            spannableString.setSpan(new p80(org.telegram.messenger.g0.L(48.0f), dbVar), 0, this.d.length(), 33);
+            spannableString.setSpan(new r80(org.telegram.messenger.g0.L(48.0f), dbVar), 0, this.d.length(), 33);
         }
         dbVar.c(this.d, z10, true);
         this.e = -1L;

@@ -6,36 +6,36 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.g71;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.j71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class j extends g71 {
+public final class j extends j71 {
     public final Path W;
     public final Paint a0;
     public boolean b0;
     public boolean c0;
     public final boolean d0;
     public final /* synthetic */ w0 e0;
-    public final /* synthetic */ i6 f0;
+    public final /* synthetic */ h6 f0;
     public final /* synthetic */ a0 g0;
     public final /* synthetic */ l h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(l lVar, Context context, w0 w0Var, i6 i6Var, a0 a0Var) {
+    public j(l lVar, Context context, w0 w0Var, h6 h6Var, a0 a0Var) {
         super(context, null);
         this.h0 = lVar;
         this.e0 = w0Var;
-        this.f0 = i6Var;
+        this.f0 = h6Var;
         this.g0 = a0Var;
         this.W = new Path();
         this.a0 = new Paint(1);
         this.d0 = org.telegram.messenger.g0.Q1();
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final boolean b(MotionEvent motionEvent) {
         return this.h0.m1.getCurrentPosition() == 1;
     }
@@ -45,7 +45,7 @@ public final class j extends g71 {
         float f10;
         l lVar = this.h0;
         j jVar = lVar.m1;
-        int w02 = n6.w0(n6.h5, this.f0);
+        int w02 = m6.w0(m6.h5, this.f0);
         Paint paint = this.a0;
         paint.setColor(w02);
         if (!this.b0) {
@@ -82,7 +82,7 @@ public final class j extends g71 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final float getAvailableTranslationX() {
         return (this.d0 || this.h0.o1) ? getMeasuredWidth() : super.getAvailableTranslationX();
     }
@@ -100,13 +100,13 @@ public final class j extends g71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void q() {
         this.b0 = false;
         this.h0.m1.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void s(boolean z10) {
         l lVar = this.h0;
         j jVar = lVar.m1;

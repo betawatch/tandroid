@@ -7,7 +7,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gu implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class gu implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        org.telegram.ui.ActionBar.r0 r0Var;
+        org.telegram.ui.ActionBar.q0 q0Var;
         int i7;
         int i10 = 0;
         switch (this.a) {
@@ -67,56 +67,56 @@ public final /* synthetic */ class gu implements Runnable {
                     SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
                     String str = "Blue";
                     String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                    if (org.telegram.ui.ActionBar.n6.Q0(string) == null || org.telegram.ui.ActionBar.n6.Q0(string).q()) {
+                    if (org.telegram.ui.ActionBar.m6.Q0(string) == null || org.telegram.ui.ActionBar.m6.Q0(string).q()) {
                         string = "Blue";
                     }
                     String str2 = "Dark Blue";
                     String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                    if (org.telegram.ui.ActionBar.n6.Q0(string2) == null || !org.telegram.ui.ActionBar.n6.Q0(string2).q()) {
+                    if (org.telegram.ui.ActionBar.m6.Q0(string2) == null || !org.telegram.ui.ActionBar.m6.Q0(string2).q()) {
                         string2 = "Dark Blue";
                     }
-                    org.telegram.ui.ActionBar.m6 m6Var = org.telegram.ui.ActionBar.n6.I;
+                    org.telegram.ui.ActionBar.l6 l6Var = org.telegram.ui.ActionBar.m6.I;
                     if (!string.equals(string2)) {
                         str2 = string2;
-                    } else if (m6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                    } else if (l6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        boolean equals = str.equals(m6Var.m());
-                        org.telegram.ui.ActionBar.m6 Q0 = !equals ? org.telegram.ui.ActionBar.n6.Q0(str2) : org.telegram.ui.ActionBar.n6.Q0(str);
-                        r0Var = cxVar5.l0;
-                        if (r0Var != null) {
+                        boolean equals = str.equals(l6Var.m());
+                        org.telegram.ui.ActionBar.l6 Q0 = !equals ? org.telegram.ui.ActionBar.m6.Q0(str2) : org.telegram.ui.ActionBar.m6.Q0(str);
+                        q0Var = cxVar5.l0;
+                        if (q0Var != null) {
                             int[] iArr = {(cxVar5.l0.getIconView().getMeasuredWidth() / 2) + r7, (cxVar5.l0.getIconView().getMeasuredHeight() / 2) + r7};
-                            r0Var.getLocationInWindow(iArr);
+                            q0Var.getLocationInWindow(iArr);
                             int i11 = iArr[0];
                             int i12 = iArr[1];
                             org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), null, null, null, Boolean.TRUE);
                         }
                         org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(cxVar5);
                         gu guVar = new gu(cxVar5, 20);
-                        i7 = org.telegram.ui.ActionBar.n6.o;
+                        i7 = org.telegram.ui.ActionBar.m6.o;
                         if (i7 == 0) {
                             if (b02 != null) {
                                 try {
-                                    b02.J(R.raw.auto_night_off, i7 == 3 ? org.telegram.messenger.gd.M0(2131753783, "AutoNightSystemModeOff") : org.telegram.messenger.gd.M0(2131753788, "AutoNightModeOff"), org.telegram.messenger.gd.M0(2131745300, "Settings"), 5000, false, guVar).j();
+                                    b02.J(R.raw.auto_night_off, i7 == 3 ? org.telegram.messenger.gd.N0(2131753782, "AutoNightSystemModeOff") : org.telegram.messenger.gd.N0(2131753787, "AutoNightModeOff"), org.telegram.messenger.gd.N0(2131745299, "Settings"), 5000, false, guVar).j();
                                 } catch (Exception e10) {
                                     org.telegram.messenger.a8.g(e10, true);
                                 }
                             }
-                            org.telegram.ui.ActionBar.n6.o = 0;
-                            org.telegram.ui.ActionBar.n6.w1();
-                            org.telegram.ui.ActionBar.n6.B();
+                            org.telegram.ui.ActionBar.m6.o = 0;
+                            org.telegram.ui.ActionBar.m6.w1();
+                            org.telegram.ui.ActionBar.m6.B();
                             break;
                         }
                     }
                     str = string;
-                    boolean equals2 = str.equals(m6Var.m());
+                    boolean equals2 = str.equals(l6Var.m());
                     if (!equals2) {
                     }
-                    r0Var = cxVar5.l0;
-                    if (r0Var != null) {
+                    q0Var = cxVar5.l0;
+                    if (q0Var != null) {
                     }
                     org.telegram.ui.Components.lc b022 = org.telegram.ui.Components.lc.b0(cxVar5);
                     gu guVar2 = new gu(cxVar5, 20);
-                    i7 = org.telegram.ui.ActionBar.n6.o;
+                    i7 = org.telegram.ui.ActionBar.m6.o;
                     if (i7 == 0) {
                     }
                 }
@@ -129,7 +129,7 @@ public final /* synthetic */ class gu implements Runnable {
             case 7:
                 cx cxVar7 = this.b;
                 cxVar7.getClass();
-                cxVar7.presentFragment(new i9(null));
+                cxVar7.presentFragment(new j9(null));
                 break;
             case 8:
                 cx cxVar8 = this.b;
@@ -233,7 +233,7 @@ public final /* synthetic */ class gu implements Runnable {
                 cx cxVar18 = this.b;
                 org.telegram.messenger.tr messagesStorage = cxVar18.getMessagesStorage();
                 messagesStorage.a.c(new org.telegram.messenger.pq(messagesStorage, 16));
-                Toast.makeText(cxVar18.getParentActivity(), org.telegram.messenger.gd.M0(2131751640, null), 0).show();
+                Toast.makeText(cxVar18.getParentActivity(), org.telegram.messenger.gd.N0(2131751639, null), 0).show();
                 break;
             case 24:
                 org.telegram.messenger.mp messagesController = this.b.getMessagesController();
@@ -275,9 +275,9 @@ public final /* synthetic */ class gu implements Runnable {
                 }
                 cxVar21.E3();
                 cxVar21.F3();
-                oi.u1 u1Var = cxVar21.E1;
-                if (u1Var != null) {
-                    u1Var.setTranslationY(-cxVar21.w.d());
+                oi.w1 w1Var = cxVar21.E1;
+                if (w1Var != null) {
+                    w1Var.setTranslationY(-cxVar21.w.d());
                     break;
                 }
                 break;

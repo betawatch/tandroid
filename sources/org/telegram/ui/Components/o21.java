@@ -1,106 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.util.Log;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import org.json.JSONArray;
-import org.json.JSONTokener;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class o21 extends Thread {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ org.telegram.messenger.q10 d;
+public final class o21 extends v4.u0 {
+    public final /* synthetic */ b31 a;
 
-    public o21(String str, String str2, String str3, org.telegram.messenger.q10 q10Var) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = q10Var;
+    public o21(b31 b31Var) {
+        this.a = b31Var;
     }
 
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        HttpURLConnection httpURLConnection;
-        String str;
-        org.telegram.messenger.q10 q10Var = this.d;
-        String str2 = this.c;
-        boolean z10 = false;
-        try {
-            httpURLConnection = (HttpURLConnection) new URI(("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + Uri.encode(this.a) + "&tl=" + Uri.encode(this.b) + "&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&q=") + str2).toURL().openConnection();
-        } catch (Exception e10) {
-            e = e10;
-            httpURLConnection = null;
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        b31 b31Var = this.a;
+        n21 n21Var = b31Var.H1;
+        if (i7 == 0) {
+            b31Var.G1 = false;
         }
-        try {
-            httpURLConnection.setRequestMethod("GET");
-            httpURLConnection.setRequestProperty("User-Agent", y21.S1[(int) Math.round(Math.random() * 5)]);
-            httpURLConnection.setRequestProperty("Content-Type", "application/json");
-            StringBuilder sb2 = new StringBuilder();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), g9.j.a));
-            while (true) {
-                try {
-                    int read = bufferedReader.read();
-                    if (read == -1) {
-                        break;
-                    } else {
-                        sb2.append((char) read);
-                    }
-                } finally {
-                }
-            }
-            bufferedReader.close();
-            JSONArray jSONArray = new JSONArray(new JSONTokener(sb2.toString()));
-            JSONArray jSONArray2 = jSONArray.getJSONArray(0);
-            try {
-                str = jSONArray.getString(2);
-            } catch (Exception unused) {
-                str = null;
-            }
-            if (str != null && str.contains("-")) {
-                str.substring(0, str.indexOf("-"));
-            }
-            String str3 = "";
-            for (int i7 = 0; i7 < jSONArray2.length(); i7++) {
-                String string = jSONArray2.getJSONArray(i7).getString(0);
-                if (string != null && !string.equals("null")) {
-                    str3 = str3 + string;
-                }
-            }
-            if (str2.length() > 0 && str2.charAt(0) == '\n') {
-                str3 = "\n" + str3;
-            }
-            org.telegram.messenger.g0.g3(new n21(str3, 0, q10Var));
-        } catch (Exception e11) {
-            e = e11;
-            try {
-                StringBuilder sb3 = new StringBuilder();
-                sb3.append("failed to translate a text ");
-                sb3.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
-                sb3.append(" ");
-                sb3.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
-                Log.e("translate", sb3.toString());
-            } catch (IOException e12) {
-                e12.printStackTrace();
-            }
-            e.printStackTrace();
-            if (httpURLConnection != null) {
-                try {
-                    if (httpURLConnection.getResponseCode() == 429) {
-                        z10 = true;
-                    }
-                } catch (Exception unused2) {
-                    org.telegram.messenger.g0.g3(new ap0(q10Var, 22));
-                    return;
-                }
-            }
-            org.telegram.messenger.g0.g3(new pp0(5, q10Var, z10));
+        if ((i7 == 0 || i7 == 2) && b31Var.M0(false) > 0.0f && b31Var.M0(false) < org.telegram.messenger.g0.L(96.0f) && n21Var.canScrollVertically(1) && b31.J0(b31Var)) {
+            b31Var.G1 = true;
+            n21Var.w0(0, (int) b31Var.M0(false), null);
+        }
+    }
+
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        b31 b31Var = this.a;
+        b31Var.b.invalidate();
+        boolean canScrollVertically = b31Var.H1.canScrollVertically(1);
+        View view = b31Var.L1;
+        Boolean bool = b31Var.R1;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            b31Var.R1 = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.n10.o(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), nr.h, 320L);
         }
     }
 }

@@ -7,25 +7,25 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class bb extends k41 {
+public final class bb extends n41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        k41.h(new bb());
+        n41.h(new bb());
     }
 
-    public static l41 i(int i7, int i10, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
-        l41 K = l41.K(bb.class);
+    public static o41 i(int i7, int i10, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
+        o41 K = o41.K(bb.class);
         K.d = i7;
         K.A = i10;
         long j3 = tL_starsTopupOption.stars;
@@ -36,13 +36,13 @@ public final class bb extends k41 {
         return K;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
         cb cbVar = (cb) view;
-        int i7 = l41Var.A;
-        CharSequence charSequence = l41Var.m;
-        CharSequence charSequence2 = l41Var.n;
-        org.telegram.ui.Components.n6 n6Var = cbVar.e;
+        int i7 = o41Var.A;
+        CharSequence charSequence = o41Var.m;
+        CharSequence charSequence2 = o41Var.n;
+        org.telegram.ui.Components.o6 o6Var = cbVar.e;
         TextView textView = cbVar.d;
         boolean equals = TextUtils.equals(textView.getText(), charSequence);
         cbVar.n = i7;
@@ -54,14 +54,14 @@ public final class bb extends k41 {
             if (cbVar.f == null) {
                 SpannableString spannableString = new SpannableString("x");
                 cbVar.f = spannableString;
-                spannableString.setSpan(new p80(org.telegram.messenger.g0.L(55.0f), n6Var), 0, cbVar.f.length(), 33);
+                spannableString.setSpan(new r80(org.telegram.messenger.g0.L(55.0f), o6Var), 0, cbVar.f.length(), 33);
             }
             charSequence2 = cbVar.f;
         }
-        n6Var.setText(charSequence2);
+        o6Var.setText(charSequence2);
         float f10 = gd.a0 ? -1.0f : 1.0f;
         if (equals) {
-            textView.animate().translationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f)).setDuration(320L).setInterpolator(lr.h).start();
+            textView.animate().translationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f)).setDuration(320L).setInterpolator(nr.h).start();
         } else {
             textView.setTranslationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f));
         }
@@ -69,18 +69,18 @@ public final class bb extends k41 {
         cbVar.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean c(l41 l41Var, l41 l41Var2) {
-        return l41Var.A == l41Var2.A && l41Var.d == l41Var2.d && TextUtils.equals(l41Var.n, l41Var2.n);
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c(o41 o41Var, o41 o41Var2) {
+        return o41Var.A == o41Var2.A && o41Var.d == o41Var2.d && TextUtils.equals(o41Var.n, o41Var2.n);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new cb(context, i6Var);
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        return new cb(context, h6Var);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean e(l41 l41Var, l41 l41Var2) {
-        return l41Var.d == l41Var2.d;
+    @Override // org.telegram.ui.Components.n41
+    public final boolean e(o41 o41Var, o41 o41Var2) {
+        return o41Var.d == o41Var2.d;
     }
 }

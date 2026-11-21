@@ -21,15 +21,14 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.p;
-import org.telegram.ui.Components.h01;
+import org.telegram.tgnet.u;
+import org.telegram.ui.Components.j01;
 import s4.n;
 import s4.r0;
 import s4.s0;
-import s4.u;
 import s4.x;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h {
     public boolean a;
@@ -326,7 +325,7 @@ public final class h {
     }
 
     public void n(int i7, Serializable serializable) {
-        ((Executor) this.b).execute(new h01(this, i7, serializable, 28));
+        ((Executor) this.b).execute(new j01(this, i7, serializable, 28));
     }
 
     public void o() {
@@ -383,7 +382,7 @@ public final class h {
                     }
                     if (i12 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.G = new p(this, r0Var);
+                        r0Var.G = new u(this, r0Var);
                         if (!r0Var.x) {
                             r0Var.x = true;
                             r0Var.r();
@@ -415,7 +414,7 @@ public final class h {
             if (i10 < arrayList.size()) {
                 for (int size3 = arrayList.size() - 1; size3 >= i10; size3--) {
                     r0 r0Var3 = (r0) arrayList.get(size3);
-                    u d = eVar.d(r0Var3);
+                    s4.u d = eVar.d(r0Var3);
                     if (d != null) {
                         r0Var3.getClass();
                         x.b();

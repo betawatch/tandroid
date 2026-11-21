@@ -9,7 +9,7 @@ import di.fc;
 import fi.b4;
 import fi.s0;
 import h9.r1;
-import hi.ya;
+import hi.xa;
 import java.io.File;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Comparator {
     public final /* synthetic */ int a;
@@ -140,7 +140,7 @@ public final /* synthetic */ class c implements Comparator {
                 String str2 = p0Var.f;
                 return i16 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
             default:
-                return (int) (((ya) obj2).e - ((ya) obj).e);
+                return (int) (((xa) obj2).e - ((xa) obj).e);
         }
         return i7 - i10;
     }

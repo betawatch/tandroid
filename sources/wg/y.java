@@ -2,11 +2,11 @@ package wg;
 
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements x10 {
     public final /* synthetic */ a0 a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class y implements x10 {
         a0 a0Var = this.a;
         a0Var.dismiss();
         if (this.b == null) {
-            org.telegram.messenger.g0.h3(new r(2, a0Var, this.e), 220L);
+            org.telegram.messenger.g0.h3(new q(4, a0Var, this.e), 220L);
             return;
         }
-        h2 T = LaunchActivity.T();
+        g2 T = LaunchActivity.T();
         if (T != null) {
             bn ua2 = bn.ua(this.c);
             ua2.whenFullyVisible(new bg.k0(ua2, this.d, 7));

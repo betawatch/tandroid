@@ -1,99 +1,84 @@
 package hi;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ue;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.du0;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class h3 extends e3 {
-    public final /* synthetic */ int l0 = 0;
-    public final /* synthetic */ Object m0;
+public final class h3 extends org.telegram.ui.ActionBar.w2 {
+    public final g3 m1;
+    public ValueAnimator n1;
+    public r1.g o1;
+    public Boolean p1;
+    public x10 q1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h3(int i7, Context context, fi.b bVar, float f10, String str) {
-        super(i7, context, bVar, null, true, f10, false, false);
-        this.m0 = str;
+    public h3(Context context, org.telegram.ui.ActionBar.h6 h6Var, String str, float f10) {
+        super(1, context, h6Var, false);
+        P(-14737633);
+        g3 g3Var = new g3(j10.t0, context, new fi.b(), f10, str);
+        this.m1 = g3Var;
+        g3Var.H.setVisibility(8);
+        g3Var.setMultipleOnClick(false);
+        g3Var.setOnBackClickListener(new e3(this, 0));
+        g3Var.setOnSelectListener(new bi.b(this, 27));
+        du0 du0Var = new du0(context, null);
+        this.b = du0Var;
+        int i7 = this.u0;
+        du0Var.setPadding(i7, 0, i7, 0);
+        this.b.addView(g3Var);
     }
 
-    @Override // hi.e3
-    public void a() {
-        switch (this.l0) {
-            case 1:
-                ta taVar = (ta) this.m0;
-                taVar.N0.setTranslationY(taVar.n.getMeasuredHeight() - taVar.N0.g());
-                c9 c9Var = taVar.r2;
-                if (c9Var != null) {
-                    c9Var.run();
-                    taVar.r2 = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.w2
+    public final boolean G() {
+        return !this.m1.x;
+    }
+
+    public final void K0(boolean z10, e3 e3Var) {
+        g3 g3Var = this.m1;
+        float translationY = g3Var.getTranslationY();
+        float height = z10 ? 0.0f : (this.b.getHeight() - g3Var.g()) + (org.telegram.messenger.g0.n * 2.5f);
+        this.p1 = Boolean.valueOf(z10);
+        if (z10) {
+            r1.g gVar = new r1.g(g3Var, r1.g.p, height);
+            this.o1 = gVar;
+            gVar.m.a(0.75f);
+            this.o1.m.b(350.0f);
+            this.o1.a(new f3(this, height, e3Var));
+            this.o1.h();
+            return;
         }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, height);
+        this.n1 = ofFloat;
+        ofFloat.addUpdateListener(new ah.g(this, 29));
+        this.n1.addListener(new ah.l(5, this, e3Var));
+        this.n1.setDuration(450L);
+        this.n1.setInterpolator(nr.h);
+        this.n1.start();
     }
 
-    @Override // hi.e3
-    public void c(boolean z10) {
-        switch (this.l0) {
-            case 1:
-                if (((ta) this.m0).g0 == 0 && z10) {
-                    org.telegram.messenger.g0.g3(new k(this, 18));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
+    public final void dismiss() {
+        K0(false, new e3(this, 1));
+        super.dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.view.Window.Callback
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.m1.g()) {
+            return super.dispatchTouchEvent(motionEvent);
         }
+        dismiss();
+        return true;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.l0) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= g()) {
-                    return super.dispatchTouchEvent(motionEvent);
-                }
-                ta taVar = (ta) this.m0;
-                taVar.M0 = true;
-                taVar.e(false);
-                return true;
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // hi.e3
-    public String getTitle() {
-        switch (this.l0) {
-            case 0:
-                return (String) this.m0;
-            default:
-                return super.getTitle();
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        switch (this.l0) {
-            case 1:
-                super.setTranslationY(f10);
-                ta taVar = (ta) this.m0;
-                if (taVar.l2) {
-                    float i7 = Utilities.i(1.0f - (f10 / (taVar.n.getMeasuredHeight() - taVar.N0.g())), 1.0f, 0.0f);
-                    taVar.r.b(org.telegram.messenger.g0.L(-32.0f) * i7);
-                    taVar.r.setAlpha(1.0f - (0.6f * i7));
-                    taVar.j0.setAlpha(1.0f - i7);
-                    break;
-                }
-                break;
-            default:
-                super.setTranslationY(f10);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h3(ta taVar, int i7, Context context, fi.b bVar, ue ueVar, boolean z10, boolean z11, boolean z12) {
-        super(i7, context, bVar, ueVar, z10, 1.39f, z11, z12);
-        this.m0 = taVar;
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
+    public final void show() {
+        super.show();
+        K0(true, null);
     }
 }

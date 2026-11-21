@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jw0 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,9 +62,9 @@ public final /* synthetic */ class jw0 implements Runnable {
                 SessionsActivity sessionsActivity = (SessionsActivity) obj;
                 sessionsActivity.f.remove(i14);
                 sessionsActivity.r0();
-                z21 z21Var = sessionsActivity.a;
-                if (z21Var != null) {
-                    z21Var.f();
+                a31 a31Var = sessionsActivity.a;
+                if (a31Var != null) {
+                    a31Var.f();
                     break;
                 }
                 break;
@@ -105,7 +105,7 @@ public final /* synthetic */ class jw0 implements Runnable {
             case 4:
                 org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i14);
                 org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(i14);
-                org.telegram.ui.Wallet.h0 h0Var = new org.telegram.ui.Wallet.h0(f10, (o60) obj, D);
+                org.telegram.ui.Wallet.h0 h0Var = new org.telegram.ui.Wallet.h0(f10, (fe0) obj, D);
                 f10.b(h0Var, org.telegram.messenger.ks.d4);
                 org.telegram.messenger.g0.h3(h0Var, 10000L);
                 if (D.e == null && D.C < 0) {
@@ -128,7 +128,7 @@ public final /* synthetic */ class jw0 implements Runnable {
                 break;
             case 7:
                 org.telegram.ui.Wallet.p6 p6Var = (org.telegram.ui.Wallet.p6) obj;
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.h01(p6Var, i14, org.telegram.ui.Wallet.p6.h(p6Var.R, i14), 20));
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.j01(p6Var, i14, org.telegram.ui.Wallet.p6.h(p6Var.R, i14), 20));
                 break;
             case 8:
                 org.telegram.ui.Wallet.m7 m7Var = (org.telegram.ui.Wallet.m7) obj;
@@ -165,7 +165,7 @@ public final /* synthetic */ class jw0 implements Runnable {
                 }
                 break;
             case 11:
-                ((org.telegram.ui.Components.mx) obj).w0(i14, 0, null);
+                ((org.telegram.ui.Components.ox) obj).w0(i14, 0, null);
                 break;
             case 12:
                 tg.j jVar = (tg.j) obj;
@@ -185,7 +185,7 @@ public final /* synthetic */ class jw0 implements Runnable {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 jVar.Q = duration;
-                duration.setInterpolator(org.telegram.ui.Components.lr.f);
+                duration.setInterpolator(org.telegram.ui.Components.nr.f);
                 jVar.Q.addUpdateListener(new tg.f(jVar, 5));
                 jVar.Q.addListener(new tg.g(jVar, i11));
                 jVar.Q.start();
@@ -198,15 +198,15 @@ public final /* synthetic */ class jw0 implements Runnable {
                 break;
             case 14:
                 org.telegram.messenger.ks.f(i14).k(org.telegram.messenger.ks.u3, Boolean.FALSE);
-                ((tg.e2) obj).h();
+                ((tg.f2) obj).h();
                 break;
             case 15:
-                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) obj;
-                org.telegram.ui.ActionBar.u1 u1Var = u1VarArr[0];
-                if (u1Var != null) {
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) obj;
+                org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
+                if (t1Var != null) {
                     try {
-                        u1Var.setOnCancelListener(new h60(i14, i12));
-                        u1VarArr[0].show();
+                        t1Var.setOnCancelListener(new i60(i14, i12));
+                        t1VarArr[0].show();
                         break;
                     } catch (Exception unused3) {
                         return;
@@ -214,10 +214,10 @@ public final /* synthetic */ class jw0 implements Runnable {
                 }
                 break;
             case 16:
-                org.telegram.ui.Components.k80 k80Var = ((wg.p0) obj).e;
+                org.telegram.ui.Components.m80 m80Var = ((wg.p0) obj).e;
                 try {
-                    if (k80Var.getLayout().getLineForOffset(i14) == 0) {
-                        k80Var.getEditableText().insert(i14, "\n");
+                    if (m80Var.getLayout().getLineForOffset(i14) == 0) {
+                        m80Var.getEditableText().insert(i14, "\n");
                         break;
                     }
                 } catch (Exception e10) {

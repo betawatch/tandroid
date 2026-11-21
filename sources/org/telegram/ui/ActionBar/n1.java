@@ -1,59 +1,71 @@
 package org.telegram.ui.ActionBar;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import c8.ma;
+import org.telegram.messenger.gd;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class n1 extends o5 {
-    public final /* synthetic */ int d;
+public final class n1 extends FrameLayout {
+    public final TextView a;
+    public final ImageView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n1(Context context, int i7) {
+    public n1(Context context, h6 h6Var) {
         super(context);
-        this.d = i7;
+        int i7 = m6.I5;
+        Drawable h02 = m6.h0(m6.w0(i7, h6Var), 2, -1);
+        p6 M = t6.M(i7);
+        setBackground(h02);
+        t6.j(this, h02, null, M, h6Var);
+        setPadding(org.telegram.messenger.g0.L(23.0f), 0, org.telegram.messenger.g0.L(23.0f), 0);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        t6.s(imageView, m6.J5, h6Var, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, ma.e(-2, 40, (gd.a0 ? 5 : 3) | 16));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        t6.U(textView, m6.j5, h6Var);
+        textView.setTextSize(1, 16.0f);
+        addView(textView, ma.e(-2, -2, (gd.a0 ? 5 : 3) | 16));
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void setEnabled(boolean z10) {
-        switch (this.d) {
-            case 0:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
-            case 1:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
-            case 2:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
-            default:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
+    public final void a(int i7, CharSequence charSequence) {
+        TextView textView = this.a;
+        textView.setText(charSequence);
+        ImageView imageView = this.b;
+        if (i7 == 0) {
+            imageView.setVisibility(4);
+            textView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView.setImageResource(i7);
+            imageView.setVisibility(0);
+            textView.setPadding(gd.a0 ? 0 : org.telegram.messenger.g0.L(56.0f), 0, gd.a0 ? org.telegram.messenger.g0.L(56.0f) : 0, 0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o5, android.widget.TextView
-    public final void setTextColor(int i7) {
-        switch (this.d) {
-            case 0:
-                super.setTextColor(i7);
-                setBackground(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
-                break;
-            case 1:
-                super.setTextColor(i7);
-                setBackground(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
-                break;
-            case 2:
-                super.setTextColor(i7);
-                setBackground(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
-                break;
-            default:
-                super.setTextColor(i7);
-                setBackgroundDrawable(n6.J0(org.telegram.messenger.g0.L(20.0f), i7));
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
+    }
+
+    public void setGravity(int i7) {
+        this.a.setGravity(i7);
+    }
+
+    public void setTextColor(int i7) {
+        this.a.setTextColor(i7);
     }
 }

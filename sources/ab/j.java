@@ -7,12 +7,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.view.View;
 import androidx.car.app.hardware.common.CarResultStub;
-import bi.p3;
+import bi.t3;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import di.f6;
 import di.l3;
-import hi.c3;
+import hi.b3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
@@ -25,18 +25,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.a9;
-import org.telegram.ui.Components.h10;
-import org.telegram.ui.Components.hm;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.qi;
+import org.telegram.ui.Components.jm;
+import org.telegram.ui.Components.k10;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.rj0;
 import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.voip.b2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -46,17 +46,17 @@ import org.telegram.ui.ca;
 import org.telegram.ui.cz;
 import org.telegram.ui.go;
 import org.telegram.ui.hk0;
-import org.telegram.ui.i9;
 import org.telegram.ui.io;
+import org.telegram.ui.j9;
 import org.telegram.ui.kz;
 import org.telegram.ui.oa1;
 import org.telegram.ui.ui0;
 import org.telegram.ui.xi0;
 import org.telegram.ui.yr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, androidx.car.app.utils.a {
+public final /* synthetic */ class j implements Continuation, oa1, q1, rj0, yr, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -85,7 +85,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
         b2.m(user, this.b, d2 != null && d2.video_calls_available, launchActivity, d2, org.telegram.messenger.c.a(iArr[0]));
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ boolean b1(View view) {
         return false;
     }
@@ -94,31 +94,31 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
     
         if (r7.R1 != false) goto L96;
      */
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void f(float f10, float f11, int i7, View view) {
         int i10 = i7;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.c;
-        i6 i6Var = (i6) this.d;
+        h6 h6Var = (h6) this.d;
         ArrayList arrayList = ChatAttachAlertPhotoLayout.u1;
         HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
-        si siVar = chatAttachAlertPhotoLayout.b;
+        ui uiVar = chatAttachAlertPhotoLayout.b;
         if (chatAttachAlertPhotoLayout.w0) {
-            boolean z10 = siVar.Q1;
-            h2 h2Var = siVar.a2;
+            boolean z10 = uiVar.Q1;
+            g2 g2Var = uiVar.a2;
             if (z10) {
                 return;
             }
-            h2 Q = h2Var == null ? LaunchActivity.Q() : h2Var;
-            if (Q == null || (view instanceof h10)) {
+            g2 Q = g2Var == null ? LaunchActivity.Q() : g2Var;
+            if (Q == null || (view instanceof k10)) {
                 return;
             }
             int i11 = Build.VERSION.SDK_INT;
-            hm hmVar = chatAttachAlertPhotoLayout.H;
+            jm jmVar = chatAttachAlertPhotoLayout.H;
             try {
-                if (hmVar.d && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0 && i10 == 0 && chatAttachAlertPhotoLayout.P0) {
+                if (jmVar.d && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0 && i10 == 0 && chatAttachAlertPhotoLayout.P0) {
                     Q.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
                     return;
                 }
@@ -132,7 +132,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
                         return;
                     }
                 }
-                boolean z11 = hmVar.f;
+                boolean z11 = jmVar.f;
                 if (z11 && i10 == chatAttachAlertPhotoLayout.N0) {
                     chatAttachAlertPhotoLayout.l0();
                     return;
@@ -155,7 +155,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
                             return;
                         }
                         chatAttachAlertPhotoLayout.u0((a9) view, null, 0L);
-                        siVar.dismiss();
+                        uiVar.dismiss();
                     }
                     i10--;
                 }
@@ -164,56 +164,56 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
                     return;
                 }
                 if (!(allPhotosArray.get(i10) instanceof ef) || ((ef) allPhotosArray.get(i10)).k(null)) {
-                    qi qiVar = siVar.X3;
-                    if (qiVar != null && qiVar.V1() && (allPhotosArray.get(i10) instanceof ef)) {
+                    si siVar = uiVar.X3;
+                    if (siVar != null && siVar.V1() && (allPhotosArray.get(i10) instanceof ef)) {
                         ef efVar = (ef) allPhotosArray.get(i10);
                         hashMap.clear();
                         if (efVar != null) {
                             chatAttachAlertPhotoLayout.T(efVar, -1);
                         }
-                        siVar.N0();
-                        siVar.X3.y1(7, true, true, 0, 0, 0L, siVar.g1(), false, 0L);
+                        uiVar.N0();
+                        uiVar.X3.y1(7, true, true, 0, 0, 0L, uiVar.g1(), false, 0L);
                         hashMap.clear();
                         ChatAttachAlertPhotoLayout.s1.clear();
                         arrayList.clear();
                         hashMap.clear();
                         return;
                     }
-                    PhotoViewer.p1().I2(null, Q, i6Var);
-                    PhotoViewer.p1().J2(siVar);
+                    PhotoViewer.p1().I2(null, Q, h6Var);
+                    PhotoViewer.p1().J2(uiVar);
                     PhotoViewer p12 = PhotoViewer.p1();
-                    int i13 = siVar.Q3;
-                    boolean z13 = siVar.R3;
+                    int i13 = uiVar.Q3;
+                    boolean z13 = uiVar.R3;
                     p12.h = i13;
                     p12.n = z13;
-                    if (siVar.A1 && siVar.B1) {
+                    if (uiVar.A1 && uiVar.B1) {
                         i12 = 11;
-                        if (h2Var instanceof bn) {
-                            bnVar = (bn) h2Var;
+                        if (g2Var instanceof bn) {
+                            bnVar = (bn) g2Var;
                         }
-                    } else if (siVar.O2 != 0) {
+                    } else if (uiVar.O2 != 0) {
                         i12 = 1;
                     } else {
-                        if (h2Var instanceof bn) {
-                            bnVar = (bn) h2Var;
+                        if (g2Var instanceof bn) {
+                            bnVar = (bn) g2Var;
                         }
                         i12 = 0;
                     }
-                    if (!siVar.X3.g0()) {
+                    if (!uiVar.X3.g0()) {
                         org.telegram.messenger.g0.v1(Q.getFragmentView().findFocus());
-                        org.telegram.messenger.g0.v1(siVar.c.findFocus());
+                        org.telegram.messenger.g0.v1(uiVar.c.findFocus());
                     }
                     if (hashMap.size() > 0 && arrayList.size() > 0) {
                         Object obj = hashMap.get(arrayList.get(0));
                         if (obj instanceof ef) {
-                            ((ef) obj).a = siVar.b1().getText();
+                            ((ef) obj).a = uiVar.b1().getText();
                         }
                         if (obj instanceof hf) {
-                            ((hf) obj).I = siVar.b1().getText();
+                            ((hf) obj).I = uiVar.b1().getText();
                         }
                     }
-                    if (siVar.L1 != null) {
-                        siVar.L1.e = allPhotosArray.get(i10) instanceof ef ? ((ef) allPhotosArray.get(i10)).b : false;
+                    if (uiVar.L1 != null) {
+                        uiVar.L1.e = allPhotosArray.get(i10) instanceof ef ? ((ef) allPhotosArray.get(i10)).b : false;
                     }
                     boolean z14 = (allPhotosArray.get(i10) instanceof ef) && ((ef) allPhotosArray.get(i10)).M;
                     Object obj2 = allPhotosArray.get(i10);
@@ -223,39 +223,39 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
                     if (z14) {
                         chatAttachAlertPhotoLayout.s0(i10, false);
                     }
-                    org.telegram.messenger.g0.h3(new p3(chatAttachAlertPhotoLayout, i12, Q, allPhotosArray, i10, bnVar), z14 ? 250L : 0L);
+                    org.telegram.messenger.g0.h3(new t3(chatAttachAlertPhotoLayout, i12, Q, allPhotosArray, i10, bnVar), z14 ? 250L : 0L);
                 }
             } catch (Exception unused) {
             }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(t1 t1Var, int i7) {
         switch (this.a) {
             case 2:
-                kg.a0 a0Var = (kg.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((l41) this.d).y));
-                a0Var.e.run();
+                kg.b0 b0Var = (kg.b0) this.c;
+                (!this.b ? b0Var.k : b0Var.j).remove(Long.valueOf(((o41) this.d).y));
+                b0Var.e.run();
                 break;
             case 3:
-                i9 i9Var = (i9) this.c;
+                j9 j9Var = (j9) this.c;
                 boolean z10 = this.b;
                 boolean[] zArr = (boolean[]) this.d;
                 if (z10) {
                     boolean z11 = zArr[0];
                     TLRPC.TL_messages_deletePhoneCallHistory tL_messages_deletePhoneCallHistory = new TLRPC.TL_messages_deletePhoneCallHistory();
                     tL_messages_deletePhoneCallHistory.revoke = z11;
-                    i9Var.getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new c3(2, i9Var, z11));
-                    i9Var.x.clear();
-                    i9Var.y = false;
-                    i9Var.F = true;
-                    i9Var.w.setVisibility(8);
-                    i9Var.c.g3.O(true);
+                    j9Var.getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new b3(2, j9Var, z11));
+                    j9Var.x.clear();
+                    j9Var.y = false;
+                    j9Var.F = true;
+                    j9Var.w.setVisibility(8);
+                    j9Var.c.g3.O(true);
                 } else {
-                    i9Var.getMessagesController().Z(new ArrayList(i9Var.H), null, null, 0L, 0, zArr[0], 0);
+                    j9Var.getMessagesController().Z(new ArrayList(j9Var.H), null, null, 0L, 0, zArr[0], 0);
                 }
-                i9Var.j0(false);
+                j9Var.j0(false);
                 break;
             case 4:
                 ((ca) this.c).a.o0((TLRPC.TL_username) this.d, this.b, true);
@@ -269,11 +269,11 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
                 ioVar.i3.b0();
                 break;
             case 6:
-                h2 h2Var = (h2) this.c;
+                g2 g2Var = (g2) this.c;
                 TLRPC.User user = (TLRPC.User) this.d;
                 boolean z13 = this.b;
-                TLRPC.UserFull d2 = h2Var.getMessagesController().d2(user.id);
-                b2.m(user, z13, d2 != null && d2.video_calls_available, h2Var.getParentActivity(), d2, h2Var.getAccountInstance());
+                TLRPC.UserFull d2 = g2Var.getMessagesController().d2(user.id);
+                b2.m(user, z13, d2 != null && d2.video_calls_available, g2Var.getParentActivity(), d2, g2Var.getAccountInstance());
                 break;
             case 7:
             case 9:
@@ -305,7 +305,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
             case 10:
                 boolean z16 = this.b;
                 String str = (String) this.c;
-                h2 h2Var2 = (h2) this.d;
+                g2 g2Var2 = (g2) this.d;
                 try {
                     PackageInfo packageInfo = t0.b.getPackageManager().getPackageInfo(t0.b.getPackageName(), 0);
                     Locale locale = Locale.US;
@@ -320,14 +320,14 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
                         intent.putExtra("android.intent.extra.SUBJECT", "Invalid phone number: " + str);
                         intent.putExtra("android.intent.extra.TEXT", "I'm trying to use my mobile phone number: " + str + "\nBut Telegram says it's invalid. Please help.\n\nApp version: " + str2 + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
                     }
-                    h2Var2.getParentActivity().startActivity(Intent.createChooser(intent, "Send email..."));
+                    g2Var2.getParentActivity().startActivity(Intent.createChooser(intent, "Send email..."));
                     break;
                 } catch (Exception unused) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(h2Var2.getParentActivity());
-                    alertDialog$Builder.a.S = gd.M0(2131745876, null);
-                    alertDialog$Builder.a.U = gd.M0(2131748007, "NoMailInstalled");
-                    alertDialog$Builder.k(gd.M0(2131747638, "OK"), null);
-                    h2Var2.showDialog(alertDialog$Builder.a);
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g2Var2.getParentActivity());
+                    alertDialog$Builder.a.S = gd.N0(2131745875, null);
+                    alertDialog$Builder.a.U = gd.N0(2131748006, "NoMailInstalled");
+                    alertDialog$Builder.k(gd.N0(2131747637, "OK"), null);
+                    g2Var2.showDialog(alertDialog$Builder.a);
                     return;
                 }
         }
@@ -355,14 +355,14 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, pj0, yr, 
         this.d = obj2;
     }
 
-    public /* synthetic */ j(String str, h2 h2Var, boolean z10) {
+    public /* synthetic */ j(String str, g2 g2Var, boolean z10) {
         this.a = 10;
         this.b = z10;
         this.c = str;
-        this.d = h2Var;
+        this.d = g2Var;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public /* synthetic */ void s0(View view, float f10, float f11) {
     }
 }

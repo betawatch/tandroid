@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class dn0 implements org.telegram.ui.Components.hl0 {
+public final class dn0 implements org.telegram.ui.Components.jl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ fn0 b;
 
@@ -13,26 +13,26 @@ public final class dn0 implements org.telegram.ui.Components.hl0 {
         this.b = fn0Var;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.jl0
     public void a(int i7, boolean z10) {
         fn0 fn0Var = this.b;
         if (fn0Var.n[0].b == i7) {
             return;
         }
         fn0Var.e = i7 == fn0Var.h.getFirstTabId();
-        org.telegram.ui.ActionBar.z4 z4Var = fn0Var.n[1];
-        z4Var.b = i7;
-        z4Var.setVisibility(0);
+        org.telegram.ui.ActionBar.y4 y4Var = fn0Var.n[1];
+        y4Var.b = i7;
+        y4Var.setVisibility(0);
         fn0Var.o0(true);
         fn0Var.w = z10;
         if (i7 == 0) {
-            fn0Var.c.setSearchFieldHint(org.telegram.messenger.gd.M0(2131745566, null));
+            fn0Var.c.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745565, null));
         } else {
-            fn0Var.c.setSearchFieldHint(org.telegram.messenger.gd.M0(2131745569, null));
+            fn0Var.c.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745568, null));
         }
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.jl0
     public void g(float f10) {
         fn0 fn0Var = this.b;
         if (f10 != 1.0f || fn0Var.n[1].getVisibility() == 0) {
@@ -44,21 +44,21 @@ public final class dn0 implements org.telegram.ui.Components.hl0 {
                 fn0Var.n[1].setTranslationX((f10 * r3[0].getMeasuredWidth()) - fn0Var.n[0].getMeasuredWidth());
             }
             if (f10 == 1.0f) {
-                org.telegram.ui.ActionBar.z4[] z4VarArr = fn0Var.n;
-                org.telegram.ui.ActionBar.z4 z4Var = z4VarArr[0];
-                z4VarArr[0] = z4VarArr[1];
-                z4VarArr[1] = z4Var;
-                z4Var.setVisibility(8);
+                org.telegram.ui.ActionBar.y4[] y4VarArr = fn0Var.n;
+                org.telegram.ui.ActionBar.y4 y4Var = y4VarArr[0];
+                y4VarArr[0] = y4VarArr[1];
+                y4VarArr[1] = y4Var;
+                y4Var.setVisibility(8);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean h1(int i7, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void D() {
     }
 }

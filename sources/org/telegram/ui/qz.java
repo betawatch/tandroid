@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class qz extends org.telegram.ui.Components.wz {
+public final class qz extends org.telegram.ui.Components.yz {
     public final /* synthetic */ int V;
     public final /* synthetic */ Object W;
 
@@ -15,7 +15,7 @@ public final class qz extends org.telegram.ui.Components.wz {
         this.W = obj;
     }
 
-    @Override // org.telegram.ui.Components.wz
+    @Override // org.telegram.ui.Components.yz
     public final int getColumnsCount() {
         switch (this.V) {
             case 0:

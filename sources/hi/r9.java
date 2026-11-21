@@ -1,33 +1,37 @@
 package hi;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class r9 extends CharacterStyle {
+public final class r9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ sa d;
 
-    public /* synthetic */ r9(int i7) {
-        this.a = i7;
+    public /* synthetic */ r9(sa saVar, int i7, int i10, int i11) {
+        this.a = i11;
+        this.d = saVar;
+        this.b = i7;
+        this.c = i10;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                textPaint.setAlpha(128);
+                this.d.M(this.b, this.c);
                 break;
-            case 1:
-                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
-                textPaint.setColor(org.telegram.ui.ActionBar.n6.T2.getColor());
-                break;
-            case 2:
-                textPaint.setColor(org.telegram.ui.ActionBar.n6.o2.linkColor);
+            default:
+                int i7 = this.b;
+                int i10 = this.c;
+                if (i7 != i10) {
+                    this.d.P(i7, i10);
+                    break;
+                }
                 break;
         }
-    }
-
-    private final void a(TextPaint textPaint) {
     }
 }

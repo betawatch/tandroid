@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class jl extends org.telegram.ui.Components.p6 {
+public final class jl extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int b;
     public final /* synthetic */ il c;
 
@@ -27,7 +27,7 @@ public final class jl extends org.telegram.ui.Components.p6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p6
+    @Override // org.telegram.ui.Components.q6
     public final void c(Object obj, float f10) {
         switch (this.b) {
             case 0:

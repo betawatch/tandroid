@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.nu0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d4 implements Runnable {
     public final /* synthetic */ int a;
@@ -656,7 +656,7 @@ public final /* synthetic */ class d4 implements Runnable {
                 mpVar3.getClass();
                 mpVar3.f4(tL_messages_invitedUsers.updates.users, false);
                 mpVar3.Z3(tL_messages_invitedUsers.updates.chats, false);
-                org.telegram.ui.Components.b5.f(mpVar3.currentAccount, mpVar3.O0(Long.valueOf(j13)), tL_messages_invitedUsers);
+                org.telegram.ui.Components.c5.f(mpVar3.currentAccount, mpVar3.O0(Long.valueOf(j13)), tL_messages_invitedUsers);
                 return;
             case 5:
                 tr trVar = (tr) this.c;
@@ -1140,12 +1140,12 @@ public final /* synthetic */ class d4 implements Runnable {
                 org.telegram.ui.Components.nc[] ncVarArr = (org.telegram.ui.Components.nc[]) this.d;
                 zArr[0] = false;
                 if (j18 == -1) {
-                    ncVarArr[0].setText(gd.M0(2131743676, null));
-                    org.telegram.ui.ActionBar.u6.U(ncVarArr[0], org.telegram.ui.ActionBar.n6.p7, null);
+                    ncVarArr[0].setText(gd.N0(2131743670, null));
+                    org.telegram.ui.ActionBar.t6.U(ncVarArr[0], org.telegram.ui.ActionBar.m6.p7, null);
                     return;
                 } else {
-                    ncVarArr[0].setText(gd.a0(null, null, 2131747042, Long.valueOf(j18)));
-                    org.telegram.ui.ActionBar.u6.U(ncVarArr[0], org.telegram.ui.ActionBar.n6.w6, null);
+                    ncVarArr[0].setText(gd.a0(null, null, 2131747041, Long.valueOf(j18)));
+                    org.telegram.ui.ActionBar.t6.U(ncVarArr[0], org.telegram.ui.ActionBar.m6.w6, null);
                     return;
                 }
             case 11:

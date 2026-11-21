@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class xv extends c1 {
     public static volatile xv[] r = new xv[4];
@@ -73,7 +73,7 @@ public final class xv extends c1 {
         byte[] bArr3;
         boolean z12 = false;
         boolean z13 = i7 == 1 ? false : z10;
-        ji.j K = ji.j.K(i7, z13, bArr, bArr2);
+        ji.l K = ji.l.K(i7, z13, bArr, bArr2);
         Utilities.c(nativeByteBuffer.buffer, (byte[]) K.b, (byte[]) K.c, false, false, 24, nativeByteBuffer.limit() - 24);
         int readInt32 = nativeByteBuffer.readInt32(false);
         if (i7 == 2) {
@@ -172,15 +172,15 @@ public final class xv extends c1 {
             return;
         }
         this.n = true;
-        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, activity, null);
+        org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, activity, null);
         TLRPC.TL_messages_getDhConfig tL_messages_getDhConfig = new TLRPC.TL_messages_getDhConfig();
         tL_messages_getDhConfig.random_length = 256;
         tr messagesStorage = getMessagesStorage();
         messagesStorage.H();
         tL_messages_getDhConfig.version = messagesStorage.x;
-        u1Var.setOnCancelListener(new am(this, getConnectionsManager().sendRequest(tL_messages_getDhConfig, new q6(this, activity, u1Var, user, 4), 2), 2));
+        t1Var.setOnCancelListener(new am(this, getConnectionsManager().sendRequest(tL_messages_getDhConfig, new q6(this, activity, t1Var, user, 4), 2), 2));
         try {
-            u1Var.show();
+            t1Var.show();
         } catch (Exception unused) {
         }
     }

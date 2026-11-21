@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class pc {
     public static int a = 198684;
@@ -174,7 +174,7 @@ public abstract class pc {
     public static void i(int i7, int i10) {
         int i11 = (~i7) & i10;
         if ((i11 & 28700) > 0) {
-            org.telegram.ui.Components.o5.t();
+            org.telegram.ui.Components.p5.t();
         }
         int i12 = i11 & 32;
         if (i12 > 0) {
@@ -182,7 +182,7 @@ public abstract class pc {
             lz.A = e(32);
         }
         if (i12 > 0) {
-            org.telegram.ui.ActionBar.n6.u1(true);
+            org.telegram.ui.ActionBar.m6.u1(true);
         }
         if (c8.dd.a(i11, 256) || c8.dd.a(i11, 262144)) {
             ri.q.f();

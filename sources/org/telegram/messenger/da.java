@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class da {
     public k8.a a;
@@ -127,7 +127,7 @@ public final class da {
         k8.a aVar = this.a;
         aVar.getClass();
         try {
-            if (((hi.u5) aVar.c) == null) {
+            if (((hi.t5) aVar.c) == null) {
                 l8.e eVar = (l8.e) aVar.b;
                 Parcel o12 = eVar.o1(eVar.p1(), 25);
                 IBinder readStrongBinder = o12.readStrongBinder();
@@ -138,11 +138,11 @@ public final class da {
                     bVar = queryLocalInterface instanceof l8.b ? (l8.b) queryLocalInterface : new l8.b(readStrongBinder, "com.google.android.gms.maps.internal.IUiSettingsDelegate", 11);
                 }
                 o12.recycle();
-                aVar.c = new hi.u5(bVar, 8);
+                aVar.c = new hi.t5(bVar, 8);
             }
-            hi.u5 u5Var = (hi.u5) aVar.c;
+            hi.t5 t5Var = (hi.t5) aVar.c;
             hi.w4 w4Var = new hi.w4(24, false);
-            w4Var.b = u5Var;
+            w4Var.b = t5Var;
             return w4Var;
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);

@@ -2,18 +2,18 @@ package org.telegram.ui.Wallet;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class qa extends AnimatorListenerAdapter {
-    public final /* synthetic */ si a;
+    public final /* synthetic */ ui a;
     public final /* synthetic */ m7 b;
     public final /* synthetic */ ra c;
 
-    public qa(ra raVar, si siVar, m7 m7Var) {
+    public qa(ra raVar, ui uiVar, m7 m7Var) {
         this.c = raVar;
-        this.a = siVar;
+        this.a = uiVar;
         this.b = m7Var;
     }
 

@@ -14,16 +14,16 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Components.ba;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.jj0;
 import org.telegram.ui.Components.q9;
-import org.telegram.ui.Components.wy;
+import org.telegram.ui.Components.yy;
 import org.telegram.ui.bw0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class y6 implements b9 {
-    public final ck0 a;
+    public final ek0 a;
     public final bw0 b;
     public final int[] c;
     public final boolean d;
@@ -34,15 +34,15 @@ public final class y6 implements b9 {
     public boolean r;
     public int s;
 
-    public y6(ck0 ck0Var, boolean z10) {
+    public y6(ek0 ek0Var, boolean z10) {
         this.c = new int[2];
-        this.a = ck0Var;
+        this.a = ek0Var;
         this.d = z10;
         this.b = null;
     }
 
-    public static y6 a(ck0 ck0Var) {
-        return new y6(ck0Var, false);
+    public static y6 a(ek0 ek0Var) {
+        return new y6(ek0Var, false);
     }
 
     @Override // fi.b9
@@ -77,9 +77,9 @@ public final class y6 implements b9 {
     @Override // fi.b9
     public final void e(long j3, int i7, e3 e3Var) {
         ArrayList arrayList;
-        ck0 ck0Var = this.a;
-        if (ck0Var != null && (ck0Var.getParent() instanceof q)) {
-            q qVar = (q) ck0Var.getParent();
+        ek0 ek0Var = this.a;
+        if (ek0Var != null && (ek0Var.getParent() instanceof q)) {
+            q qVar = (q) ek0Var.getParent();
             if (qVar.k(j3)) {
                 qVar.c0.add(e3Var);
                 return;
@@ -89,7 +89,7 @@ public final class y6 implements b9 {
             }
         }
         int i10 = 0;
-        if (ck0Var == null || !(ck0Var.getParent() instanceof a5)) {
+        if (ek0Var == null || !(ek0Var.getParent() instanceof b5)) {
             if (this.d) {
                 p6 R1 = mp.u1(j10.t0).R1();
                 ArrayList arrayList2 = R1.h;
@@ -100,18 +100,18 @@ public final class y6 implements b9 {
             e3Var.run();
             return;
         }
-        a5 a5Var = (a5) ck0Var.getParent();
-        wy wyVar = a5Var.y;
-        w4 w4Var = a5Var.x;
-        if (w4Var != null && (arrayList = w4Var.c) != null && wyVar != null) {
+        b5 b5Var = (b5) ek0Var.getParent();
+        yy yyVar = b5Var.y;
+        x4 x4Var = b5Var.x;
+        if (x4Var != null && (arrayList = x4Var.c) != null && yyVar != null) {
             while (true) {
                 if (i10 >= arrayList.size()) {
                     i10 = -1;
                     break;
                 }
-                r4 r4Var = (r4) arrayList.get(i10);
-                if (r4Var != null) {
-                    TL_stories.StoryReaction storyReaction = r4Var.c;
+                s4 s4Var = (s4) arrayList.get(i10);
+                if (s4Var != null) {
+                    TL_stories.StoryReaction storyReaction = s4Var.c;
                     if (storyReaction instanceof TL_stories.TL_storyReactionPublicRepost) {
                         TL_stories.TL_storyReactionPublicRepost tL_storyReactionPublicRepost = (TL_stories.TL_storyReactionPublicRepost) storyReaction;
                         if (tL_storyReactionPublicRepost.story != null && org.telegram.messenger.n5.o(tL_storyReactionPublicRepost.peer_id) == j3 && tL_storyReactionPublicRepost.story.id == i7) {
@@ -124,11 +124,11 @@ public final class y6 implements b9 {
                 i10++;
             }
             if (i10 >= 0) {
-                int L0 = wyVar.L0();
-                int N0 = wyVar.N0();
+                int L0 = yyVar.L0();
+                int N0 = yyVar.N0();
                 if (i10 < L0 || i10 > N0) {
-                    wyVar.h1(i10, org.telegram.messenger.g0.L(60.0f));
-                    ck0Var.post(e3Var);
+                    yyVar.h1(i10, org.telegram.messenger.g0.L(60.0f));
+                    ek0Var.post(e3Var);
                     return;
                 }
             }
@@ -143,9 +143,9 @@ public final class y6 implements b9 {
         c9Var.b = null;
         c9Var.c = null;
         c9Var.e = null;
-        ck0 ck0Var = this.a;
-        q qVar = (ck0Var == null || !(ck0Var.getParent() instanceof q)) ? null : (q) ck0Var.getParent();
-        ViewGroup viewGroup = (qVar == null || qVar.g()) ? ck0Var : qVar.r;
+        ek0 ek0Var = this.a;
+        q qVar = (ek0Var == null || !(ek0Var.getParent() instanceof q)) ? null : (q) ek0Var.getParent();
+        ViewGroup viewGroup = (qVar == null || qVar.g()) ? ek0Var : qVar.r;
         ViewGroup viewGroup2 = this.b;
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
@@ -167,7 +167,7 @@ public final class y6 implements b9 {
                         c9Var.h = 0.0f;
                         c9Var.k = 1.0f;
                         if (pVar.H && qVar2.g()) {
-                            c9Var.f = new di.c7(new Path(), 8);
+                            c9Var.f = new di.v6(new Path(), 9);
                             return true;
                         }
                         c9Var.f = z8Var;
@@ -220,11 +220,11 @@ public final class y6 implements b9 {
                         c(c9Var);
                         return true;
                     }
-                } else if ((childAt instanceof org.telegram.ui.Cells.p7) && ck0Var != null) {
+                } else if ((childAt instanceof org.telegram.ui.Cells.p7) && ek0Var != null) {
                     org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) childAt;
                     fj messageObject = p7Var.getMessageObject();
                     if ((p7Var.getStyle() == 1 && i10 == 0) || (messageObject != null && messageObject.x4() && messageObject.e1() == i10 && messageObject.l.dialogId == j3)) {
-                        hj0 fastScroll = ck0Var.getFastScroll();
+                        jj0 fastScroll = ek0Var.getFastScroll();
                         int[] iArr = new int[2];
                         if (fastScroll != null) {
                             fastScroll.getLocationInWindow(iArr);
@@ -265,7 +265,7 @@ public final class y6 implements b9 {
                             if (alphaInternal < 1.0f) {
                                 Paint paint = new Paint(1);
                                 c9Var.j = paint;
-                                paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, n6Var.getResourcesProvider()));
+                                paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, n6Var.getResourcesProvider()));
                             }
                             c(c9Var);
                             return true;
@@ -281,7 +281,7 @@ public final class y6 implements b9 {
                             if (alphaInternal2 < 1.0f) {
                                 Paint paint2 = new Paint(1);
                                 c9Var.j = paint2;
-                                paint2.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, n6Var.getResourcesProvider()));
+                                paint2.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, n6Var.getResourcesProvider()));
                             }
                             c(c9Var);
                             return true;

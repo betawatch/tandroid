@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kg implements Runnable {
     public final /* synthetic */ int a;
@@ -1116,18 +1116,18 @@ public final /* synthetic */ class kg implements Runnable {
                 ((ri) this.b).t2((TLRPC.Message) this.d, (String) this.c);
                 return;
             case 5:
-                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.b;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.b;
                 boolean[] zArr = (boolean[]) this.c;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.d;
-                org.telegram.ui.ActionBar.u1 u1Var = u1VarArr[0];
-                if (u1Var == null) {
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
+                org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
+                if (t1Var == null) {
                     return;
                 }
-                u1Var.setOnCancelListener(new ae(zArr, 2));
-                h2Var.showDialog(u1VarArr[0]);
+                t1Var.setOnCancelListener(new ae(zArr, 2));
+                g2Var.showDialog(t1VarArr[0]);
                 return;
             case 6:
-                ((mp) this.b).getNotificationCenter().k(ks.N2, (org.telegram.ui.ActionBar.m6) this.c, (org.telegram.ui.ActionBar.k6) this.d);
+                ((mp) this.b).getNotificationCenter().k(ks.N2, (org.telegram.ui.ActionBar.l6) this.c, (org.telegram.ui.ActionBar.j6) this.d);
                 return;
             case 7:
                 mp mpVar = (mp) this.b;

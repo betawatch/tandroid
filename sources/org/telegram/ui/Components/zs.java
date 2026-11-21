@@ -1,7 +1,11 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface zs {
-    void a(int i7, boolean z10);
+public abstract class zs {
+    public static final nr a = new nr(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final nr b = new nr(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final nr c = new nr(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final nr d = new nr(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final nr e = new nr(0.455d, 0.03d, 0.515d, 0.955d);
 }

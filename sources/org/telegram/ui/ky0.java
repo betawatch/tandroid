@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ky0 implements ly0 {
     public final /* synthetic */ org.telegram.messenger.video.a a;
@@ -26,7 +26,7 @@ public final class ky0 implements ly0 {
 
     @Override // org.telegram.ui.ly0
     public final void d() {
-        org.telegram.messenger.g0.h3(new tr0(25, this.a, this.b), 200L);
+        org.telegram.messenger.g0.h3(new tr0(27, this.a, this.b), 200L);
     }
 
     @Override // org.telegram.ui.ly0

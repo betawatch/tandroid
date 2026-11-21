@@ -4,9 +4,9 @@ import android.graphics.Point;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.telegram.ui.Components.oo0, org.telegram.ui.Components.xm0, org.telegram.ui.Components.nm0 {
+public final class xr0 implements r0.m, org.telegram.ui.Components.j61, org.telegram.ui.Components.qo0, org.telegram.ui.Components.an0, org.telegram.ui.Components.qm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -15,17 +15,17 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public void C() {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.oo0
+    @Override // org.telegram.ui.Components.qo0
     public void D0() {
         ((StickersActivity) this.b).o0();
     }
 
-    @Override // org.telegram.ui.Components.nm0
+    @Override // org.telegram.ui.Components.qm0
     public void F(org.telegram.ui.Cells.u2 u2Var) {
         y91 y91Var = ((u91) this.b).w0;
         HashSet hashSet = y91.s1;
@@ -53,12 +53,12 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.oo0
+    @Override // org.telegram.ui.Components.qo0
     public void Q() {
         ((StickersActivity) this.b).o0();
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.j61
     public void a(float f10) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
         lp0 lp0Var = secretMediaViewer.E;
@@ -71,7 +71,7 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         }
     }
 
-    @Override // org.telegram.ui.Components.nm0
+    @Override // org.telegram.ui.Components.qm0
     public void finish() {
         Point point = org.telegram.messenger.g0.q;
         if (point.x > point.y) {
@@ -79,7 +79,7 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         }
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.j61
     public void g(float f10) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
         lp0 lp0Var = secretMediaViewer.E;
@@ -92,7 +92,7 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public CharSequence getContentDescription() {
         switch (this.a) {
             case 3:
@@ -103,7 +103,7 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public void n(boolean z10, float f10) {
         switch (this.a) {
             case 3:
@@ -116,7 +116,7 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         }
     }
 
-    @Override // org.telegram.ui.Components.nm0
+    @Override // org.telegram.ui.Components.qm0
     public void o(float f10) {
         Point point = org.telegram.messenger.g0.q;
         if (point.x > point.y) {
@@ -124,7 +124,7 @@ public final class xr0 implements r0.m, org.telegram.ui.Components.g61, org.tele
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public int r0() {
         switch (this.a) {
             case 3:

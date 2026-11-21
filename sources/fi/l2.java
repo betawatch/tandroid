@@ -9,9 +9,9 @@ import org.telegram.messenger.x10;
 import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kk;
+import org.telegram.ui.Components.mk;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l2 implements x10 {
     public final /* synthetic */ int a;
@@ -45,10 +45,10 @@ public final /* synthetic */ class l2 implements x10 {
                 hashMap.put("bot", "" + j3);
                 TLRPC.User user2 = z3Var.N2.getAdapter().x0;
                 hashMap.put("bot_name", user2 != null ? user2.username : "");
-                org.telegram.ui.ActionBar.h2 h2Var = z3Var.t0.f;
+                org.telegram.ui.ActionBar.g2 g2Var = z3Var.t0.f;
                 accountInstance = z3Var.getAccountInstance();
                 long j10 = j3;
-                zy.S(this.c, z3Var.l1, 0L, l10.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, z3Var.y1.a, h2Var, null, this.b);
+                zy.S(this.c, z3Var.l1, 0L, l10.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, z3Var.y1.a, g2Var, null, this.b);
                 z3Var.L1.setFieldText("");
                 z3Var.i0(l10.longValue() <= 0);
                 ri.d0(z3Var.m2).x0(j10, false);
@@ -70,7 +70,7 @@ public final /* synthetic */ class l2 implements x10 {
                     break;
                 }
             default:
-                ((kk) this.d).R.p((ArrayList) this.e, this.b, this.c, ((Long) obj).longValue());
+                ((mk) this.d).R.p((ArrayList) this.e, this.b, this.c, ((Long) obj).longValue());
                 break;
         }
     }

@@ -15,9 +15,9 @@ import org.telegram.messenger.we;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.be0;
+import org.telegram.ui.Components.ce0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class a1 {
     public final long A;
@@ -65,7 +65,7 @@ public final class a1 {
     public final long i;
     public final TLRPC.InputMedia i0;
     public final long j;
-    public final u j0;
+    public final v j0;
     public final int k;
     public final ArrayList k0;
     public final int l;
@@ -84,7 +84,7 @@ public final class a1 {
     public final String y;
     public final String z;
 
-    public a1(d7 d7Var) {
+    public a1(c7 c7Var) {
         float[] fArr = new float[9];
         this.s = fArr;
         ArrayList arrayList = new ArrayList();
@@ -93,182 +93,182 @@ public final class a1 {
         this.W = 1.0f;
         this.d0 = 1.0f;
         this.e0 = 1.0f;
-        this.a = d7Var.b;
-        this.b = d7Var.d;
-        File file = d7Var.O0;
+        this.a = c7Var.b;
+        this.b = c7Var.d;
+        File file = c7Var.O0;
         this.c = file == null ? "" : file.toString();
-        File file2 = d7Var.N0;
+        File file2 = c7Var.N0;
         this.d = file2 == null ? "" : file2.toString();
-        this.e = d7Var.K;
-        File file3 = d7Var.L;
+        this.e = c7Var.K;
+        File file3 = c7Var.L;
         this.f = file3 == null ? "" : file3.toString();
-        this.g = d7Var.M;
-        this.h = d7Var.Y;
-        float f10 = d7Var.Z;
-        long j3 = d7Var.h0;
+        this.g = c7Var.M;
+        this.h = c7Var.Y;
+        float f10 = c7Var.Z;
+        long j3 = c7Var.h0;
         this.i = (long) (f10 * j3);
-        this.j = (long) (d7Var.a0 * j3);
-        this.k = d7Var.Q;
-        this.l = d7Var.R;
-        this.m = d7Var.k0;
-        this.n = d7Var.l0;
-        this.o = d7Var.m0;
-        this.p = d7Var.i0;
-        this.q = d7Var.j0;
+        this.j = (long) (c7Var.a0 * j3);
+        this.k = c7Var.Q;
+        this.l = c7Var.R;
+        this.m = c7Var.k0;
+        this.n = c7Var.l0;
+        this.o = c7Var.m0;
+        this.p = c7Var.i0;
+        this.q = c7Var.j0;
         this.r = j3;
-        d7Var.n0.getValues(fArr);
-        this.t = d7Var.A0;
-        this.u = d7Var.B0;
-        CharSequence[] charSequenceArr = {d7Var.C0};
-        this.w = d7Var.D0 ? ri.d0(d7Var.a).Y(charSequenceArr, true, true) : null;
+        c7Var.n0.getValues(fArr);
+        this.t = c7Var.A0;
+        this.u = c7Var.B0;
+        CharSequence[] charSequenceArr = {c7Var.C0};
+        this.w = c7Var.D0 ? ri.d0(c7Var.a).Y(charSequenceArr, true, true) : null;
         CharSequence charSequence = charSequenceArr[0];
         this.v = charSequence == null ? "" : charSequence.toString();
-        arrayList.addAll(d7Var.F0);
-        File file4 = d7Var.P0;
+        arrayList.addAll(c7Var.F0);
+        File file4 = c7Var.P0;
         this.y = file4 == null ? "" : file4.toString();
-        File file5 = d7Var.R0;
+        File file5 = c7Var.R0;
         this.z = file5 == null ? "" : file5.toString();
-        this.A = d7Var.S0;
-        this.B = d7Var.T0;
-        this.C = d7Var.U0;
-        File file6 = d7Var.Z0;
+        this.A = c7Var.S0;
+        this.B = c7Var.T0;
+        this.C = c7Var.U0;
+        File file6 = c7Var.Z0;
         this.D = file6 != null ? file6.toString() : "";
-        this.E = d7Var.a1;
-        this.F = d7Var.I0;
-        this.M = d7Var.w;
-        this.N = d7Var.x;
-        this.O = d7Var.y;
-        this.P = d7Var.z;
-        this.Q = d7Var.A;
-        this.R = d7Var.B;
-        this.S = d7Var.C;
-        this.T = d7Var.D;
-        this.U = d7Var.E;
-        this.V = d7Var.F;
-        this.W = d7Var.G;
-        File file7 = d7Var.o0;
+        this.E = c7Var.a1;
+        this.F = c7Var.I0;
+        this.M = c7Var.w;
+        this.N = c7Var.x;
+        this.O = c7Var.y;
+        this.P = c7Var.z;
+        this.Q = c7Var.A;
+        this.R = c7Var.B;
+        this.S = c7Var.C;
+        this.T = c7Var.D;
+        this.U = c7Var.E;
+        this.V = c7Var.F;
+        this.W = c7Var.G;
+        File file7 = c7Var.o0;
         this.X = file7 != null ? file7.getAbsolutePath() : null;
-        this.Y = d7Var.p0;
-        this.Z = d7Var.q0;
-        this.a0 = d7Var.r0;
-        this.b0 = d7Var.s0;
-        this.c0 = d7Var.t0;
-        this.d0 = d7Var.u0;
-        this.e0 = d7Var.P;
-        this.f0 = d7Var.v0;
-        this.g0 = d7Var.J0;
-        this.h0 = d7Var.K0;
-        this.i0 = d7Var.L0;
-        this.j0 = d7Var.S;
-        this.k0 = d20.a(d7Var);
+        this.Y = c7Var.p0;
+        this.Z = c7Var.q0;
+        this.a0 = c7Var.r0;
+        this.b0 = c7Var.s0;
+        this.c0 = c7Var.t0;
+        this.d0 = c7Var.u0;
+        this.e0 = c7Var.P;
+        this.f0 = c7Var.v0;
+        this.g0 = c7Var.J0;
+        this.h0 = c7Var.K0;
+        this.i0 = c7Var.L0;
+        this.j0 = c7Var.S;
+        this.k0 = d20.a(c7Var);
     }
 
-    public final d7 a() {
-        d7 d7Var = new d7();
-        d7Var.b = this.a;
-        d7Var.c = true;
-        d7Var.d = this.b;
+    public final c7 a() {
+        c7 c7Var = new c7();
+        c7Var.b = this.a;
+        c7Var.c = true;
+        c7Var.d = this.b;
         String str = this.c;
         if (!TextUtils.isEmpty(str)) {
-            d7Var.O0 = new File(str);
+            c7Var.O0 = new File(str);
         }
         String str2 = this.d;
         if (!TextUtils.isEmpty(str2)) {
-            d7Var.N0 = new File(str2);
+            c7Var.N0 = new File(str2);
         }
-        d7Var.K = this.e;
+        c7Var.K = this.e;
         String str3 = this.f;
         if (str3 != null) {
-            d7Var.L = new File(str3);
+            c7Var.L = new File(str3);
         }
-        d7Var.M = this.g;
-        d7Var.Y = this.h;
+        c7Var.M = this.g;
+        c7Var.Y = this.h;
         long j3 = this.r;
-        d7Var.h0 = j3;
+        c7Var.h0 = j3;
         if (j3 > 0) {
-            d7Var.Z = this.i / j3;
-            d7Var.a0 = this.j / j3;
+            c7Var.Z = this.i / j3;
+            c7Var.a0 = this.j / j3;
         } else {
-            d7Var.Z = 0.0f;
-            d7Var.a0 = 1.0f;
+            c7Var.Z = 0.0f;
+            c7Var.a0 = 1.0f;
         }
-        d7Var.Q = this.k;
-        d7Var.R = this.l;
-        d7Var.k0 = this.m;
-        d7Var.l0 = this.n;
-        d7Var.m0 = this.o;
-        d7Var.i0 = this.p;
-        d7Var.j0 = this.q;
-        d7Var.n0.setValues(this.s);
-        d7Var.A0 = this.t;
-        d7Var.B0 = this.u;
+        c7Var.Q = this.k;
+        c7Var.R = this.l;
+        c7Var.k0 = this.m;
+        c7Var.l0 = this.n;
+        c7Var.m0 = this.o;
+        c7Var.i0 = this.p;
+        c7Var.j0 = this.q;
+        c7Var.n0.setValues(this.s);
+        c7Var.A0 = this.t;
+        c7Var.B0 = this.u;
         ArrayList arrayList = null;
         String str4 = this.v;
         int i7 = 0;
         if (str4 != null) {
             SpannableString spannableString = new SpannableString(str4);
-            if (org.telegram.ui.ActionBar.n6.o2 == null) {
-                org.telegram.ui.ActionBar.n6.Q();
+            if (org.telegram.ui.ActionBar.m6.o2 == null) {
+                org.telegram.ui.ActionBar.m6.Q();
             }
-            CharSequence m10 = org.telegram.messenger.j6.m(spannableString, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), true, null, 0);
+            CharSequence m10 = org.telegram.messenger.j6.m(spannableString, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), true, null, 0);
             fj.b(m10, this.w, true, false, true, false, 0);
-            d7Var.C0 = fj.B5(m10, this.w, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false);
+            c7Var.C0 = fj.B5(m10, this.w, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
         } else {
-            d7Var.C0 = "";
+            c7Var.C0 = "";
         }
-        ArrayList arrayList2 = d7Var.F0;
+        ArrayList arrayList2 = c7Var.F0;
         arrayList2.clear();
         arrayList2.addAll(this.x);
         String str5 = this.y;
         if (str5 != null) {
-            d7Var.P0 = new File(str5);
+            c7Var.P0 = new File(str5);
         }
         String str6 = this.z;
         if (str6 != null) {
-            d7Var.R0 = new File(str6);
+            c7Var.R0 = new File(str6);
         }
-        d7Var.S0 = this.A;
-        d7Var.T0 = this.B;
-        d7Var.U0 = this.C;
+        c7Var.S0 = this.A;
+        c7Var.T0 = this.B;
+        c7Var.U0 = this.C;
         String str7 = this.D;
         if (str7 != null) {
-            d7Var.Z0 = new File(str7);
+            c7Var.Z0 = new File(str7);
         }
-        d7Var.a1 = this.E;
-        d7Var.I0 = this.F;
-        d7Var.g = this.G;
-        d7Var.f = this.H;
-        d7Var.e = this.I;
-        d7Var.J = this.L;
-        d7Var.I = this.K;
-        d7Var.H = this.J;
-        d7Var.w = this.M;
-        d7Var.x = this.N;
-        d7Var.y = this.O;
-        d7Var.z = this.P;
-        d7Var.A = this.Q;
-        d7Var.B = this.R;
-        d7Var.C = this.S;
-        d7Var.D = this.T;
-        d7Var.E = this.U;
-        d7Var.F = this.V;
-        d7Var.G = this.W;
+        c7Var.a1 = this.E;
+        c7Var.I0 = this.F;
+        c7Var.g = this.G;
+        c7Var.f = this.H;
+        c7Var.e = this.I;
+        c7Var.J = this.L;
+        c7Var.I = this.K;
+        c7Var.H = this.J;
+        c7Var.w = this.M;
+        c7Var.x = this.N;
+        c7Var.y = this.O;
+        c7Var.z = this.P;
+        c7Var.A = this.Q;
+        c7Var.B = this.R;
+        c7Var.C = this.S;
+        c7Var.D = this.T;
+        c7Var.E = this.U;
+        c7Var.F = this.V;
+        c7Var.G = this.W;
         String str8 = this.X;
         if (str8 != null) {
-            d7Var.o0 = new File(str8);
+            c7Var.o0 = new File(str8);
         }
-        d7Var.p0 = this.Y;
-        d7Var.q0 = this.Z;
-        d7Var.r0 = this.a0;
-        d7Var.s0 = this.b0;
-        d7Var.t0 = this.c0;
-        d7Var.u0 = this.d0;
-        d7Var.P = this.e0;
-        d7Var.v0 = this.f0;
-        d7Var.J0 = this.g0;
-        d7Var.K0 = this.h0;
-        d7Var.L0 = this.i0;
-        d7Var.S = this.j0;
+        c7Var.p0 = this.Y;
+        c7Var.q0 = this.Z;
+        c7Var.r0 = this.a0;
+        c7Var.s0 = this.b0;
+        c7Var.t0 = this.c0;
+        c7Var.u0 = this.d0;
+        c7Var.P = this.e0;
+        c7Var.v0 = this.f0;
+        c7Var.J0 = this.g0;
+        c7Var.K0 = this.h0;
+        c7Var.L0 = this.i0;
+        c7Var.S = this.j0;
         int i10 = d20.C;
         ArrayList arrayList3 = this.k0;
         if (arrayList3 != null) {
@@ -278,23 +278,23 @@ public final class a1 {
                 Object obj = arrayList3.get(i7);
                 i7++;
                 d20 d20Var = (d20) obj;
-                d7 d7Var2 = new d7();
-                d7Var2.K = d20Var.b;
-                d7Var2.Y = d20Var.c;
-                d7Var2.L = new File(d20Var.d);
-                d7Var2.P = d20Var.e;
-                d7Var2.U = d20Var.i;
-                d7Var2.X = d20Var.f;
-                d7Var2.V = d20Var.j;
-                d7Var2.W = d20Var.k;
-                d7Var2.k0 = d20Var.l;
-                d7Var2.l0 = d20Var.m;
-                d7Var2.h0 = d20Var.o;
-                arrayList.add(d7Var2);
+                c7 c7Var2 = new c7();
+                c7Var2.K = d20Var.b;
+                c7Var2.Y = d20Var.c;
+                c7Var2.L = new File(d20Var.d);
+                c7Var2.P = d20Var.e;
+                c7Var2.U = d20Var.i;
+                c7Var2.X = d20Var.f;
+                c7Var2.V = d20Var.j;
+                c7Var2.W = d20Var.k;
+                c7Var2.k0 = d20Var.l;
+                c7Var2.l0 = d20Var.m;
+                c7Var2.h0 = d20Var.o;
+                arrayList.add(c7Var2);
             }
         }
-        d7Var.T = arrayList;
-        return d7Var;
+        c7Var.T = arrayList;
+        return c7Var;
     }
 
     public final void b(NativeByteBuffer nativeByteBuffer) {
@@ -389,10 +389,10 @@ public final class a1 {
             nativeByteBuffer.writeInt32(ffVar.n);
             nativeByteBuffer.writeFloat(ffVar.o);
             h2.c cVar = ffVar.p;
-            ((be0) cVar.b).d(nativeByteBuffer);
-            ((be0) cVar.c).d(nativeByteBuffer);
-            ((be0) cVar.d).d(nativeByteBuffer);
-            ((be0) cVar.e).d(nativeByteBuffer);
+            ((ce0) cVar.b).d(nativeByteBuffer);
+            ((ce0) cVar.c).d(nativeByteBuffer);
+            ((ce0) cVar.d).d(nativeByteBuffer);
+            ((ce0) cVar.e).d(nativeByteBuffer);
             nativeByteBuffer.writeFloat(ffVar.q);
             if (ffVar.r == null) {
                 nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
@@ -476,12 +476,12 @@ public final class a1 {
         } else {
             inputMedia.serializeToStream(nativeByteBuffer);
         }
-        u uVar = this.j0;
-        if (uVar == null || uVar.e.size() <= 1 || (arrayList = this.k0) == null || arrayList.size() <= 1) {
+        v vVar = this.j0;
+        if (vVar == null || vVar.e.size() <= 1 || (arrayList = this.k0) == null || arrayList.size() <= 1) {
             nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
         } else {
             nativeByteBuffer.writeInt32(-559038737);
-            nativeByteBuffer.writeString(uVar.a);
+            nativeByteBuffer.writeString(vVar.a);
             int size = arrayList.size();
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
@@ -615,10 +615,10 @@ public final class a1 {
                                 ffVar.n = nativeByteBuffer.readInt32(true);
                                 ffVar.o = nativeByteBuffer.readFloat(true);
                                 h2.c cVar = ffVar.p;
-                                ((be0) cVar.b).c(nativeByteBuffer);
-                                ((be0) cVar.c).c(nativeByteBuffer);
-                                ((be0) cVar.d).c(nativeByteBuffer);
-                                ((be0) cVar.e).c(nativeByteBuffer);
+                                ((ce0) cVar.b).c(nativeByteBuffer);
+                                ((ce0) cVar.c).c(nativeByteBuffer);
+                                ((ce0) cVar.d).c(nativeByteBuffer);
+                                ((ce0) cVar.e).c(nativeByteBuffer);
                                 ffVar.q = nativeByteBuffer.readFloat(true);
                                 if (nativeByteBuffer.readInt32(true) == 1450380236) {
                                     ffVar.r = null;
@@ -704,12 +704,12 @@ public final class a1 {
                                 }
                             }
                             if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == -559038737) {
-                                this.j0 = new u(nativeByteBuffer.readString(true));
+                                this.j0 = new v(nativeByteBuffer.readString(true));
                                 this.k0 = new ArrayList();
                                 for (int i14 = 0; i14 < this.j0.e.size(); i14++) {
                                     d20 d20Var = new d20();
                                     d20Var.readParams(nativeByteBuffer, true);
-                                    d20Var.r = (t) this.j0.e.get(i14);
+                                    d20Var.r = (u) this.j0.e.get(i14);
                                     this.k0.add(d20Var);
                                 }
                             }

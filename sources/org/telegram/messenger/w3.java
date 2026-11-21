@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w3 implements Runnable {
     public final /* synthetic */ int a;
@@ -295,12 +295,12 @@ public final /* synthetic */ class w3 implements Runnable {
                 }
                 String lowerCase = tL_langPackDifference.lang_code.replace('-', '_').toLowerCase();
                 if (lowerCase.equals(E0.B.c) || lowerCase.equals(E0.B.e)) {
-                    E0.b1(E0.B, tL_langPackDifference, i13, false, null);
+                    E0.c1(E0.B, tL_langPackDifference, i13, false, null);
                     return;
                 }
                 return;
             case 7:
-                gd.E0().Z0(((mp) obj2).currentAccount, ((TL_update.TL_updateLangPackTooLong) obj).lang_code, false, null);
+                gd.E0().a1(((mp) obj2).currentAccount, ((TL_update.TL_updateLangPackTooLong) obj).lang_code, false, null);
                 return;
             case 8:
                 mp mpVar3 = (mp) obj2;
@@ -352,11 +352,11 @@ public final /* synthetic */ class w3 implements Runnable {
                     boolean z11 = str5 == null || !str5.equals(str4);
                     mpVar3.R3 = tL_config.suggested_lang_code;
                     if (z11) {
-                        gd.E0().V0(mpVar3.currentAccount, true);
+                        gd.E0().W0(mpVar3.currentAccount, true);
                     }
                 }
-                org.telegram.ui.ActionBar.n6.m1(mpVar3.currentAccount, false);
-                org.telegram.ui.ActionBar.n6.G(false);
+                org.telegram.ui.ActionBar.m6.m1(mpVar3.currentAccount, false);
+                org.telegram.ui.ActionBar.m6.G(false);
                 if (tL_config.static_maps_provider == null) {
                     tL_config.static_maps_provider = "telegram";
                 }
@@ -476,7 +476,7 @@ public final /* synthetic */ class w3 implements Runnable {
                     return;
                 } else {
                     mpVar4.getNotificationCenter().k(28, Long.valueOf(tL_messages_invitedUsers.updates.chats.get(0).id));
-                    org.telegram.ui.Components.b5.f(mpVar4.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
+                    org.telegram.ui.Components.c5.f(mpVar4.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
                     return;
                 }
             case 10:
@@ -527,7 +527,7 @@ public final /* synthetic */ class w3 implements Runnable {
                     return;
                 }
             case 11:
-                di.x8.y(((zy) obj2).currentAccount, false).d0((ArrayList) obj);
+                di.y8.y(((zy) obj2).currentAccount, false).d0((ArrayList) obj);
                 return;
             case 12:
                 e00 e00Var = (e00) obj2;
@@ -623,15 +623,15 @@ public final /* synthetic */ class w3 implements Runnable {
                 return;
             case 14:
                 e00 e00Var3 = (e00) obj2;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
                 e00Var3.getClass();
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(h2Var.getContext());
-                String M0 = gd.M0(2131748786, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.S = M0;
-                u1Var.U = gd.a0(null, null, 2131748756, Integer.valueOf(mp.u1(e00Var3.currentAccount).g5));
-                alertDialog$Builder.k(gd.M0(2131747638, null), null);
-                h2Var.showDialog(u1Var);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g2Var.getContext());
+                String N0 = gd.N0(2131748785, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = N0;
+                t1Var.U = gd.a0(null, null, 2131748755, Integer.valueOf(mp.u1(e00Var3.currentAccount).g5));
+                alertDialog$Builder.k(gd.N0(2131747637, null), null);
+                g2Var.showDialog(t1Var);
                 return;
             case 15:
                 h1 h1Var = (h1) obj2;
@@ -666,10 +666,10 @@ public final /* synthetic */ class w3 implements Runnable {
                     tr.a0(i25).m1(contactbirthdays.users, null, true, true);
                     SharedPreferences.Editor edit4 = mp.u1(i25).h7.edit();
                     edit4.putLong("bday_check", v1Var.b);
-                    u1 u1Var2 = new u1();
-                    u1Var2.a = contactbirthdays.contacts;
-                    SerializedData serializedData = new SerializedData(u1Var2.getObjectSize());
-                    u1Var2.serializeToStream(serializedData);
+                    u1 u1Var = new u1();
+                    u1Var.a = contactbirthdays.contacts;
+                    SerializedData serializedData = new SerializedData(u1Var.getObjectSize());
+                    u1Var.serializeToStream(serializedData);
                     edit4.putString("bday_contacts", Utilities.f(serializedData.toByteArray()));
                     edit4.apply();
                     ks.f(i25).k(ks.j5, new Object[0]);
@@ -681,7 +681,7 @@ public final /* synthetic */ class w3 implements Runnable {
                 ((k3) obj2).a.getMessagesController().R1().k.j((ArrayList) obj);
                 return;
             case 18:
-                org.telegram.ui.ActionBar.r3 r3Var = (org.telegram.ui.ActionBar.r3) obj;
+                org.telegram.ui.ActionBar.q3 q3Var = (org.telegram.ui.ActionBar.q3) obj;
                 try {
                     try {
                         fileInputStream = new FileInputStream((File) obj2);
@@ -692,7 +692,7 @@ public final /* synthetic */ class w3 implements Runnable {
                         a8.g(e, true);
                         bitmap = r52;
                         arrayList = r72;
-                        g0.g3(new w3(21, r3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
+                        g0.g3(new w3(21, q3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
                         return;
                     }
                 } catch (Exception e15) {
@@ -700,7 +700,7 @@ public final /* synthetic */ class w3 implements Runnable {
                     a8.g(e, true);
                     bitmap = r52;
                     arrayList = r72;
-                    g0.g3(new w3(21, r3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
+                    g0.g3(new w3(21, q3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
                     return;
                 }
                 try {
@@ -754,7 +754,7 @@ public final /* synthetic */ class w3 implements Runnable {
                                 fileInputStream.close();
                                 bitmap = d;
                                 arrayList = arrayList6;
-                                g0.g3(new w3(21, r3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
+                                g0.g3(new w3(21, q3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
                                 return;
                             } catch (Throwable th7) {
                                 th3 = th7;
@@ -792,16 +792,16 @@ public final /* synthetic */ class w3 implements Runnable {
                 ((j1) obj2).onComplete((Bitmap) obj);
                 return;
             case 21:
-                ((org.telegram.ui.ActionBar.r3) obj2).a((gg.a) obj);
+                ((org.telegram.ui.ActionBar.q3) obj2).a((gg.a) obj);
                 return;
             case 22:
-                ((org.telegram.ui.Components.ip) obj2).onError((TLRPC.TL_error) obj);
+                ((org.telegram.ui.Components.kp) obj2).onError((TLRPC.TL_error) obj);
                 return;
             case 23:
                 l2.q1 q1Var = ((f4) obj2).f;
                 q1Var.b = System.currentTimeMillis();
                 q1Var.c = true;
-                ((org.telegram.ui.Components.ip) obj).onComplete(null);
+                ((org.telegram.ui.Components.kp) obj).onComplete(null);
                 return;
             case 24:
                 Bitmap bitmap2 = (Bitmap) obj;

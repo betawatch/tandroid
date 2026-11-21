@@ -25,16 +25,16 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.p10;
-import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.s10;
+import org.telegram.ui.Components.sh0;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class p extends FrameLayout {
-    public org.telegram.ui.ActionBar.n5 E;
+    public org.telegram.ui.ActionBar.m5 E;
     public long F;
     public boolean G;
     public boolean H;
@@ -48,7 +48,7 @@ public final class p extends FrameLayout {
     public final e7 P;
     public float Q;
     public float R;
-    public qh0 S;
+    public sh0 S;
     public g T;
     public final float U;
     public boolean V;
@@ -56,7 +56,7 @@ public final class p extends FrameLayout {
     public boolean a;
     public boolean a0;
     public int b;
-    public final org.telegram.ui.Components.c6 b0;
+    public final org.telegram.ui.Components.d6 b0;
     public boolean c;
     public final /* synthetic */ tv c0;
     public boolean d;
@@ -74,19 +74,19 @@ public final class p extends FrameLayout {
     public p(tv tvVar, Context context) {
         super(context);
         this.c0 = tvVar;
-        this.n = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.n = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.r = imageReceiver;
         ImageReceiver imageReceiver2 = new ImageReceiver(this);
         this.s = imageReceiver2;
-        this.w = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.w = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         this.x = true;
         e7 e7Var = new e7(null, true);
         this.P = e7Var;
         this.Q = 1.0f;
         this.R = 1.0f;
         this.U = 1.0f;
-        this.b0 = new org.telegram.ui.Components.c6(this, 0L, 350L, lr.h);
+        this.b0 = new org.telegram.ui.Components.d6(this, 0L, 350L, nr.h);
         e7Var.o = tvVar.b == 1;
         e7Var.D = true;
         imageReceiver.K0 = true;
@@ -115,9 +115,9 @@ public final class p extends FrameLayout {
     }
 
     public final void b() {
-        org.telegram.ui.ActionBar.n5 n5Var = new org.telegram.ui.ActionBar.n5(getContext());
-        this.E = n5Var;
-        n5Var.setTypeface(org.telegram.messenger.g0.o());
+        org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(getContext());
+        this.E = m5Var;
+        m5Var.setTypeface(org.telegram.messenger.g0.o());
         this.E.setGravity(17);
         this.E.setTextSize(11);
         this.E.setTextColor(this.c0.getTextColor());
@@ -138,15 +138,15 @@ public final class p extends FrameLayout {
         if (this.G && !p6Var.K(this.F) && Utilities.x(p6Var.F(this.F))) {
             float L = f10 + org.telegram.messenger.g0.L(16.0f);
             float L2 = f11 + org.telegram.messenger.g0.L(16.0f);
-            paint.setColor(org.telegram.ui.ActionBar.n6.r1(f12, tvVar.f(org.telegram.ui.ActionBar.n6.Yl)));
+            paint.setColor(org.telegram.ui.ActionBar.m6.r1(f12, tvVar.f(org.telegram.ui.ActionBar.m6.Yl)));
             if (i7 == 0) {
-                paint2.setColor(org.telegram.ui.ActionBar.n6.r1(f12, tvVar.f(org.telegram.ui.ActionBar.n6.s8)));
+                paint2.setColor(org.telegram.ui.ActionBar.m6.r1(f12, tvVar.f(org.telegram.ui.ActionBar.m6.s8)));
             } else {
-                paint2.setColor(org.telegram.ui.ActionBar.n6.r1(f12, tvVar.f(org.telegram.ui.ActionBar.n6.M8)));
+                paint2.setColor(org.telegram.ui.ActionBar.m6.r1(f12, tvVar.f(org.telegram.ui.ActionBar.m6.M8)));
             }
             canvas.drawCircle(L, L2, org.telegram.messenger.g0.L(11.0f), paint2);
             canvas.drawCircle(L, L2, org.telegram.messenger.g0.L(9.0f), paint);
-            int f13 = tvVar.f(i7 == 0 ? org.telegram.ui.ActionBar.n6.s8 : org.telegram.ui.ActionBar.n6.M8);
+            int f13 = tvVar.f(i7 == 0 ? org.telegram.ui.ActionBar.m6.s8 : org.telegram.ui.ActionBar.m6.M8);
             if (f13 != tvVar.e) {
                 tvVar.e = f13;
                 drawable.setColorFilter(new PorterDuffColorFilter(f13, PorterDuff.Mode.MULTIPLY));
@@ -202,7 +202,7 @@ public final class p extends FrameLayout {
         float f16;
         ImageReceiver imageReceiver2;
         boolean[] zArr;
-        qh0 qh0Var;
+        sh0 sh0Var;
         float L = org.telegram.messenger.g0.L(48.0f);
         float L2 = org.telegram.messenger.g0.L(26.33f);
         float L3 = org.telegram.messenger.g0.L(8.0f);
@@ -238,10 +238,10 @@ public final class p extends FrameLayout {
         this.N = f20;
         if (i7 == 0) {
             f10 = f17;
-            paint.setColor(tvVar3.f(org.telegram.ui.ActionBar.n6.s8));
+            paint.setColor(tvVar3.f(org.telegram.ui.ActionBar.m6.s8));
         } else {
             f10 = f17;
-            paint.setColor(tvVar3.f(org.telegram.ui.ActionBar.n6.M8));
+            paint.setColor(tvVar3.f(org.telegram.ui.ActionBar.m6.M8));
         }
         if (this.K != 0.0f) {
             imageReceiver = imageReceiver3;
@@ -261,7 +261,7 @@ public final class p extends FrameLayout {
         }
         ArrayList arrayList = (ArrayList) p6Var.c.f(this.F);
         boolean z13 = (arrayList == null || arrayList.isEmpty()) ? false : true;
-        if (z13 || (this.a0 && (qh0Var = this.S) != null && qh0Var.f < 0.98f)) {
+        if (z13 || (this.a0 && (sh0Var = this.S) != null && sh0Var.f < 0.98f)) {
             canvas2 = canvas;
             e7Var = e7Var2;
             ImageReceiver imageReceiver4 = imageReceiver;
@@ -282,14 +282,14 @@ public final class p extends FrameLayout {
             }
             invalidate();
             if (this.S == null) {
-                qh0 qh0Var2 = tvVar3.n;
-                if (qh0Var2 != null) {
-                    this.S = qh0Var2;
+                sh0 sh0Var2 = tvVar3.n;
+                if (sh0Var2 != null) {
+                    this.S = sh0Var2;
                 } else {
-                    qh0 qh0Var3 = new qh0(this);
-                    this.S = qh0Var3;
-                    tvVar3.n = qh0Var3;
-                    qh0Var3.d(null, true, false);
+                    sh0 sh0Var3 = new sh0(this);
+                    this.S = sh0Var3;
+                    tvVar3.n = sh0Var3;
+                    sh0Var3.d(null, true, false);
                 }
             }
             if (this.x) {
@@ -302,9 +302,9 @@ public final class p extends FrameLayout {
             this.S.q = 0;
             Paint o4 = z11 ? i7.o(imageReceiver4) : i7.t(imageReceiver4, true);
             o4.setAlpha(ks.e4);
-            qh0 qh0Var4 = this.S;
-            qh0Var4.t = o4;
-            qh0Var4.f((int) (imageReceiver4.L0 - org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.M0 - org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.y() + org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.A() + org.telegram.messenger.g0.L(3.0f)));
+            sh0 sh0Var4 = this.S;
+            sh0Var4.t = o4;
+            sh0Var4.f((int) (imageReceiver4.L0 - org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.M0 - org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.y() + org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.A() + org.telegram.messenger.g0.L(3.0f)));
             this.S.e(this.a0, Utilities.i(size, 1.0f, 0.0f));
             if (imageReceiver4.R0) {
                 this.S.a(canvas2);
@@ -319,7 +319,7 @@ public final class p extends FrameLayout {
                     e7Var2.e = 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     ofFloat.addUpdateListener(new ah.g(this, 13));
-                    ofFloat.addListener(new ai.j0(this, 9));
+                    ofFloat.addListener(new ai.k0(this, 9));
                     tvVar2 = tvVar3;
                     ofFloat.setDuration(100L);
                     ofFloat.start();
@@ -330,7 +330,7 @@ public final class p extends FrameLayout {
                 e7Var2.b = !this.a0;
                 tvVar = tvVar2;
                 if (!this.c && tvVar.o0 <= 0.0f) {
-                    if (org.telegram.messenger.g0.W1(lr.g.getInterpolation(this.K), getMeasuredWidth(), org.telegram.messenger.g0.L(16.0f)) < (org.telegram.messenger.g0.N(3.5f) + f10) * 2.0f) {
+                    if (org.telegram.messenger.g0.W1(nr.g.getInterpolation(this.K), getMeasuredWidth(), org.telegram.messenger.g0.L(16.0f)) < (org.telegram.messenger.g0.N(3.5f) + f10) * 2.0f) {
                         f15 = ((float) Math.toDegrees(Math.acos((r1 / 2.0f) / r4))) * 2.0f;
                         e7Var2.f = f15;
                         e7Var2.l = this.c;
@@ -367,16 +367,16 @@ public final class p extends FrameLayout {
                         ImageReceiver imageReceiver5 = imageReceiver2;
                         if (f16 > 0.0f) {
                             if (i7.d == null) {
-                                p10 p10Var = new p10();
-                                i7.d = p10Var;
-                                p10Var.a = true;
-                                p10Var.b = true;
-                                p10Var.c.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
+                                s10 s10Var = new s10();
+                                i7.d = s10Var;
+                                s10Var.a = true;
+                                s10Var.b = true;
+                                s10Var.c.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
                                 i7.d.c.setStyle(Paint.Style.STROKE);
                                 i7.d.c.setStrokeCap(Paint.Cap.ROUND);
                             }
-                            int x02 = org.telegram.ui.ActionBar.n6.x0(zArr, org.telegram.ui.ActionBar.n6.ok, z10);
-                            int x03 = org.telegram.ui.ActionBar.n6.x0(zArr, org.telegram.ui.ActionBar.n6.q7, z10);
+                            int x02 = org.telegram.ui.ActionBar.m6.x0(zArr, org.telegram.ui.ActionBar.m6.ok, z10);
+                            int x03 = org.telegram.ui.ActionBar.m6.x0(zArr, org.telegram.ui.ActionBar.m6.q7, z10);
                             i7.d.d(i0.a.f(0.25f, x02, x03), x03, z10 ? 1 : 0, z10 ? 1 : 0);
                             i7.d.b(imageReceiver5.L0, imageReceiver5.M0, imageReceiver5.y(), imageReceiver5.A());
                             Paint paint2 = i7.d.c;
@@ -422,16 +422,16 @@ public final class p extends FrameLayout {
                     float L4 = f27 + org.telegram.messenger.g0.L(17.0f);
                     float L5 = f28 + org.telegram.messenger.g0.L(17.0f);
                     Paint paint3 = tvVar.H;
-                    paint3.setColor(org.telegram.ui.ActionBar.n6.r1(d, tvVar.f(org.telegram.ui.ActionBar.n6.q7)));
+                    paint3.setColor(org.telegram.ui.ActionBar.m6.r1(d, tvVar.f(org.telegram.ui.ActionBar.m6.q7)));
                     if (i7 == 0) {
-                        paint.setColor(org.telegram.ui.ActionBar.n6.r1(d, tvVar.f(org.telegram.ui.ActionBar.n6.s8)));
+                        paint.setColor(org.telegram.ui.ActionBar.m6.r1(d, tvVar.f(org.telegram.ui.ActionBar.m6.s8)));
                     } else {
-                        paint.setColor(org.telegram.ui.ActionBar.n6.r1(d, tvVar.f(org.telegram.ui.ActionBar.n6.M8)));
+                        paint.setColor(org.telegram.ui.ActionBar.m6.r1(d, tvVar.f(org.telegram.ui.ActionBar.m6.M8)));
                     }
-                    float interpolation = lr.k.getInterpolation(d) * org.telegram.messenger.g0.L(9.0f);
+                    float interpolation = nr.k.getInterpolation(d) * org.telegram.messenger.g0.L(9.0f);
                     canvas2.drawCircle(L4, L5, org.telegram.messenger.g0.L(2.0f) + interpolation, paint);
                     canvas2.drawCircle(L4, L5, interpolation, paint3);
-                    paint3.setColor(org.telegram.ui.ActionBar.n6.r1(d, tvVar.getTextColor()));
+                    paint3.setColor(org.telegram.ui.ActionBar.m6.r1(d, tvVar.getTextColor()));
                     RectF rectF2 = org.telegram.messenger.g0.P;
                     rectF2.set(L4 - org.telegram.messenger.g0.L(1.0f), L5 - org.telegram.messenger.g0.N(4.6f), org.telegram.messenger.g0.L(1.0f) + L4, org.telegram.messenger.g0.N(1.6f) + L5);
                     canvas2.drawRoundRect(rectF2, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), paint3);
@@ -595,7 +595,7 @@ public final class p extends FrameLayout {
         this.E.i(null);
         if (p6Var.Q(j3)) {
             this.E.setTextSize(10);
-            this.E.l(gd.M0(2131750834, null), false);
+            this.E.l(gd.N0(2131750833, null), false);
             this.V = false;
             return;
         }
@@ -618,7 +618,7 @@ public final class p extends FrameLayout {
                 }
                 if (this.G) {
                     if (z10 && this.V && !this.O) {
-                        org.telegram.ui.ActionBar.n5 n5Var = this.E;
+                        org.telegram.ui.ActionBar.m5 m5Var = this.E;
                         b();
                         ValueAnimator valueAnimator = tvVar.k0;
                         if (valueAnimator != null) {
@@ -628,8 +628,8 @@ public final class p extends FrameLayout {
                         int i11 = 2;
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                         tvVar.k0 = ofFloat;
-                        ofFloat.addUpdateListener(new ch.w(i11, this, n5Var));
-                        tvVar.k0.addListener(new ah.l(i11, this, n5Var));
+                        ofFloat.addUpdateListener(new ch.w(i11, this, m5Var));
+                        tvVar.k0.addListener(new ah.l(i11, this, m5Var));
                         tvVar.k0.setDuration(150L);
                         this.E.setAlpha(0.0f);
                         this.E.setTranslationY(org.telegram.messenger.g0.L(5.0f));
@@ -638,7 +638,7 @@ public final class p extends FrameLayout {
                     org.telegram.messenger.g0.h3(tvVar.l0, 500L);
                     this.V = false;
                     this.E.setTextSize(10);
-                    this.E.l(gd.M0(2131748109, null), false);
+                    this.E.l(gd.N0(2131748108, null), false);
                     return;
                 }
                 if (this.f == null) {

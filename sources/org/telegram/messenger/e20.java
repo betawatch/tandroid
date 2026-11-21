@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.be0;
+import org.telegram.ui.Components.ce0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e20 {
     public ff A;
@@ -21,8 +21,8 @@ public final class e20 {
     public we H;
     public boolean I;
     public boolean J;
-    public hi.c7 K;
-    public hi.u L;
+    public hi.b7 K;
+    public hi.v L;
     public ArrayList M;
     public boolean N;
     public Bitmap O;
@@ -125,12 +125,12 @@ public final class e20 {
                 serializedData.writeFloat(this.A.t);
                 int i10 = 0;
                 while (i10 < 4) {
-                    be0 be0Var = (be0) (i10 == 0 ? this.A.p.b : i10 == 1 ? this.A.p.c : i10 == 2 ? this.A.p.d : this.A.p.e);
-                    serializedData.writeFloat(be0Var.a);
-                    serializedData.writeFloat(be0Var.b);
-                    serializedData.writeFloat(be0Var.c);
-                    serializedData.writeFloat(be0Var.d);
-                    serializedData.writeFloat(be0Var.e);
+                    ce0 ce0Var = (ce0) (i10 == 0 ? this.A.p.b : i10 == 1 ? this.A.p.c : i10 == 2 ? this.A.p.d : this.A.p.e);
+                    serializedData.writeFloat(ce0Var.a);
+                    serializedData.writeFloat(ce0Var.b);
+                    serializedData.writeFloat(ce0Var.c);
+                    serializedData.writeFloat(ce0Var.d);
+                    serializedData.writeFloat(ce0Var.e);
                     i10++;
                 }
             } else {
@@ -180,8 +180,8 @@ public final class e20 {
             }
             serializedData.writeFloat(this.u);
             serializedData.writeBool(this.N);
-            hi.u uVar = this.L;
-            if (uVar == null || this.M == null || uVar.e.size() <= 1 || this.M.isEmpty()) {
+            hi.v vVar = this.L;
+            if (vVar == null || this.M == null || vVar.e.size() <= 1 || this.M.isEmpty()) {
                 serializedData.writeInt32(TLRPC.TL_null.constructor);
             } else {
                 serializedData.writeInt32(-559038737);

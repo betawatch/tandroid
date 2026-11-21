@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l00 implements q10 {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class l00 implements q10 {
                 Boolean bool = (Boolean) obj2;
                 if (str2 == null) {
                     z00Var.K(j3, false);
-                    ks.e().k(ks.S4, 1, gd.M0(bool.booleanValue() ? 2131743710 : 2131743709, null));
+                    ks.e().k(ks.S4, 1, gd.N0(bool.booleanValue() ? 2131743704 : 2131743703, null));
                     break;
                 } else {
                     TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
@@ -51,7 +51,7 @@ public final /* synthetic */ class l00 implements q10 {
                 Boolean bool2 = (Boolean) obj2;
                 if (str3 == null) {
                     z00Var.K(j3, false);
-                    ks.e().k(ks.S4, 1, gd.M0(bool2.booleanValue() ? 2131743710 : 2131743709, null));
+                    ks.e().k(ks.S4, 1, gd.N0(bool2.booleanValue() ? 2131743704 : 2131743703, null));
                     break;
                 } else {
                     TLRPC.TL_textWithEntities tL_textWithEntities2 = new TLRPC.TL_textWithEntities();

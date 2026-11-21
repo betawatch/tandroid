@@ -1,0 +1,91 @@
+package org.telegram.ui.Components;
+
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import java.util.Locale;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class m00 extends URLSpan {
+    public static final /* synthetic */ int e = 0;
+    public final String a;
+    public final TLRPC.TL_messageEntityFormattedDate b;
+    public final fz0 c;
+    public final boolean d;
+
+    public m00(String str, fz0 fz0Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
+        super(str);
+        this.a = str;
+        this.b = tL_messageEntityFormattedDate;
+        this.c = fz0Var;
+        this.d = false;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v0 */
+    /* JADX WARN: Type inference failed for: r4v1 */
+    /* JADX WARN: Type inference failed for: r4v2 */
+    /* JADX WARN: Type inference failed for: r4v3, types: [android.text.SpannableStringBuilder] */
+    /* JADX WARN: Type inference failed for: r4v4 */
+    /* JADX WARN: Type inference failed for: r4v5 */
+    public static CharSequence a(CharSequence charSequence, boolean z10) {
+        if (charSequence instanceof Spanned) {
+            Spanned spanned = (Spanned) charSequence;
+            m00[] m00VarArr = (m00[]) spanned.getSpans(0, spanned.length(), m00.class);
+            int length = m00VarArr.length;
+            ?? r42 = 0;
+            int i7 = 0;
+            while (i7 < length) {
+                m00 m00Var = m00VarArr[i7];
+                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = m00Var.b;
+                if (tL_messageEntityFormattedDate.flags != 0 && (m00Var.d != z10 || (z10 && tL_messageEntityFormattedDate.relative))) {
+                    if (r42 == 0) {
+                        charSequence = new SpannableStringBuilder(spanned);
+                        r42 = charSequence;
+                    }
+                    int spanStart = r42.getSpanStart(m00Var);
+                    int spanEnd = r42.getSpanEnd(m00Var);
+                    String A = z10 ? org.telegram.messenger.gd.A(m00Var.b, System.currentTimeMillis(), Locale.getDefault(), false) : m00Var.a;
+                    r42.removeSpan(m00Var);
+                    r42.replace(spanStart, spanEnd, A);
+                    r42.setSpan(new m00(m00Var, z10), spanStart, A.length() + spanStart, 33);
+                }
+                i7++;
+                r42 = r42;
+            }
+        }
+        return charSequence;
+    }
+
+    public static CharSequence b(SpannableStringBuilder spannableStringBuilder) {
+        return a(spannableStringBuilder, false);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i7 = textPaint.linkColor;
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        fz0 fz0Var = this.c;
+        if (fz0Var != null) {
+            fz0Var.a(textPaint);
+        }
+        textPaint.setUnderlineText(i7 == color);
+    }
+
+    public m00(m00 m00Var, boolean z10) {
+        super(m00Var.a);
+        this.a = m00Var.a;
+        this.b = m00Var.b;
+        this.c = m00Var.c;
+        this.d = z10;
+    }
+
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+    }
+}

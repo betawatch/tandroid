@@ -9,63 +9,63 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.n10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l0 b;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ v(l0 l0Var, int i7) {
+    public /* synthetic */ v(k0 k0Var, int i7) {
         this.a = i7;
-        this.b = l0Var;
+        this.b = k0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        l0 l0Var = this.b;
+        k0 k0Var = this.b;
         switch (i7) {
             case 0:
                 if (LaunchActivity.Q() != null) {
-                    f2 f2Var = new f2();
-                    f2Var.a = true;
-                    l0Var.G2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), f2Var);
+                    e2 e2Var = new e2();
+                    e2Var.a = true;
+                    k0Var.G2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), e2Var);
                     break;
                 }
                 break;
             case 1:
-                l0Var.t2.g(l0Var.X1, false);
-                l0Var.u1();
+                k0Var.t2.g(k0Var.X1, false);
+                k0Var.u1();
                 break;
             case 2:
-                HashSet hashSet = l0Var.u2;
+                HashSet hashSet = k0Var.u2;
                 lc Y = lc.Y();
                 if (Y != null) {
-                    n10.u(hashSet.size() == 1 ? gd.a0(null, null, 2131748951, i5.p((TLRPC.User) hashSet.iterator().next())) : gd.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), Y, R.raw.voip_invite, 36);
+                    n10.u(hashSet.size() == 1 ? gd.a0(null, null, 2131748950, i5.p((TLRPC.User) hashSet.iterator().next())) : gd.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), Y, R.raw.voip_invite, 36);
                     break;
                 }
                 break;
             case 3:
-                hi.d dVar = l0Var.O2;
-                TLRPC.ChatFull P0 = mp.u1(l0Var.a).P0(-l0Var.W1);
-                dVar.c(Math.max(P0.boosts_unrestrict - P0.boosts_applied, 0), false);
+                hi.e eVar = k0Var.O2;
+                TLRPC.ChatFull P0 = mp.u1(k0Var.a).P0(-k0Var.W1);
+                eVar.c(Math.max(P0.boosts_unrestrict - P0.boosts_applied, 0), false);
                 break;
             default:
-                if (v3.N(l0Var.o1())) {
-                    if (l0Var.A2.getParent() != null) {
-                        ((ViewGroup) l0Var.A2.getParent()).removeView(l0Var.A2);
+                if (v3.N(k0Var.o1())) {
+                    if (k0Var.A2.getParent() != null) {
+                        ((ViewGroup) k0Var.A2.getParent()).removeView(k0Var.A2);
                     }
-                    uv uvVar = l0Var.H2;
+                    uv uvVar = k0Var.H2;
                     if (uvVar != null && uvVar.getParent() != null) {
-                        ((ViewGroup) l0Var.H2.getParent()).removeView(l0Var.H2);
+                        ((ViewGroup) k0Var.H2.getParent()).removeView(k0Var.H2);
                     }
-                    l0Var.o1.setPadding(0, 0, 0, 0);
+                    k0Var.o1.setPadding(0, 0, 0, 0);
                     break;
                 }
                 break;

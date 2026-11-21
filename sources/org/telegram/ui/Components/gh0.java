@@ -1,43 +1,84 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.text.TextPaint;
-import android.text.style.LineHeightSpan;
-import android.text.style.MetricAffectingSpan;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class gh0 extends MetricAffectingSpan implements LineHeightSpan {
-    public hh0 a;
+public final class gh0 extends Drawable {
+    public final View a;
+    public final Paint b;
+    public final Path c;
+    public int d;
+    public boolean e;
+    public final d6 f;
 
-    @Override // android.text.style.LineHeightSpan
-    public final void chooseHeight(CharSequence charSequence, int i7, int i10, int i11, int i12, Paint.FontMetricsInt fontMetricsInt) {
-        hh0 hh0Var = this.a;
-        if (hh0Var.b) {
-            int i13 = hh0Var.f ? 7 : 2;
-            if (i7 <= hh0Var.c) {
-                fontMetricsInt.ascent -= org.telegram.messenger.g0.L((hh0Var.n ? 2 : 0) + i13);
-                fontMetricsInt.top -= org.telegram.messenger.g0.L((this.a.n ? 2 : 0) + i13);
-            }
-            if (i10 >= this.a.d) {
-                float f10 = i13;
-                fontMetricsInt.descent = org.telegram.messenger.g0.L(f10) + fontMetricsInt.descent;
-                fontMetricsInt.bottom = org.telegram.messenger.g0.L(f10) + fontMetricsInt.bottom;
-            }
-        }
+    public gh0(View view) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Path path = new Path();
+        this.c = path;
+        this.d = org.telegram.messenger.ks.e4;
+        this.a = view;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
+        this.f = new d6(view, 0L, 350L, nr.h);
+        float N = org.telegram.messenger.g0.N(4.66f);
+        float N2 = org.telegram.messenger.g0.N(2.16f);
+        path.rewind();
+        path.moveTo(N / 2.0f, 0.0f);
+        float f10 = (-N) / 2.0f;
+        path.lineTo(f10, 0.0f);
+        float f11 = f10 + N2;
+        path.lineTo(f11, -N2);
+        path.moveTo(f10, 0.0f);
+        path.lineTo(f11, N2);
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        if (textPaint == null) {
-            return;
-        }
-        textPaint.setTextSize(org.telegram.messenger.g0.L(this.a.a ? 16.0f : org.telegram.messenger.bz.W0 - 2));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        float d = this.f.d(this.e);
+        float N = org.telegram.messenger.g0.N(2.51f);
+        canvas.save();
+        canvas.translate(centerX, centerY);
+        canvas.save();
+        canvas.translate(N, N);
+        canvas.rotate(45.0f);
+        canvas.scale(org.telegram.messenger.g0.T1(-1.0f, 1.0f, d), 1.0f);
+        Path path = this.c;
+        Paint paint = this.b;
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.save();
+        float f10 = -N;
+        canvas.translate(f10, f10);
+        canvas.rotate(225.0f);
+        canvas.scale(org.telegram.messenger.g0.T1(-1.0f, 1.0f, d), 1.0f);
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.g0.L(this.a.a ? 16.0f : org.telegram.messenger.bz.W0 - 2));
-        textPaint.setTextScaleX(this.a.a ? 1.1f : 1.0f);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.d = i7;
+        this.b.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

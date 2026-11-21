@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c0 implements q10 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class c0 implements q10 {
                     sb2.append(proofchallenge.expires - currentTime);
                     sb2.append("s");
                     u0.P(sb2.toString());
-                    Utilities.d.c(new oi.o2(u0Var, z10, r0Var, proofchallenge, currentTime, q10Var));
+                    Utilities.d.c(new oi.q2(u0Var, z10, r0Var, proofchallenge, currentTime, q10Var));
                     break;
                 } else {
                     r0Var.close();

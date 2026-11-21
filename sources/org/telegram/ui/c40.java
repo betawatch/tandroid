@@ -19,7 +19,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c40 extends FrameLayout {
     public final RectF E;
@@ -30,10 +30,10 @@ public final class c40 extends FrameLayout {
     public final float[] J;
     public boolean K;
     public final /* synthetic */ f40 L;
-    public final org.telegram.ui.Components.ph0 a;
+    public final org.telegram.ui.Components.rh0 a;
     public final TextView b;
     public final TLRPC.GroupCallParticipant c;
-    public final org.telegram.ui.Components.mh0 d;
+    public final org.telegram.ui.Components.oh0 d;
     public boolean e;
     public float f;
     public float h;
@@ -60,23 +60,23 @@ public final class c40 extends FrameLayout {
         this.r = org.telegram.messenger.v3.H(groupCallParticipant) / 20000.0f;
         this.H = 1.0f;
         setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
-        org.telegram.ui.Components.mh0 mh0Var = new org.telegram.ui.Components.mh0(R.raw.speaker, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), true, null);
-        this.d = mh0Var;
-        org.telegram.ui.Components.ph0 ph0Var = new org.telegram.ui.Components.ph0(context);
-        this.a = ph0Var;
-        ph0Var.setScaleType(ImageView.ScaleType.CENTER);
-        ph0Var.setAnimation(mh0Var);
-        ph0Var.setTag(this.r == 0.0d ? 1 : null);
-        addView(ph0Var, c8.ma.d(-2, 40.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
-        mh0Var.P(this.r == 0.0d ? 17 : 34);
-        mh0Var.N(mh0Var.f - 1, false, true);
+        org.telegram.ui.Components.oh0 oh0Var = new org.telegram.ui.Components.oh0(R.raw.speaker, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), true, null);
+        this.d = oh0Var;
+        org.telegram.ui.Components.rh0 rh0Var = new org.telegram.ui.Components.rh0(context);
+        this.a = rh0Var;
+        rh0Var.setScaleType(ImageView.ScaleType.CENTER);
+        rh0Var.setAnimation(oh0Var);
+        rh0Var.setTag(this.r == 0.0d ? 1 : null);
+        addView(rh0Var, c8.ma.d(-2, 40.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
+        oh0Var.P(this.r == 0.0d ? 17 : 34);
+        oh0Var.N(oh0Var.f - 1, false, true);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setLines(1);
         textView.setSingleLine(true);
         textView.setGravity(3);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.Yg, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.Yg, null);
         textView.setTextSize(1, 16.0f);
         double H = org.telegram.messenger.v3.H(groupCallParticipant) / 100.0d;
         Locale locale = Locale.US;
@@ -134,16 +134,16 @@ public final class c40 extends FrameLayout {
             }
         }
         Integer num = this.r == 0.0d ? 1 : null;
-        org.telegram.ui.Components.ph0 ph0Var = this.a;
-        if ((ph0Var.getTag() != null || num == null) && (ph0Var.getTag() == null || num != null)) {
+        org.telegram.ui.Components.rh0 rh0Var = this.a;
+        if ((rh0Var.getTag() != null || num == null) && (rh0Var.getTag() == null || num != null)) {
             return;
         }
         int i7 = this.r == 0.0d ? 17 : 34;
-        org.telegram.ui.Components.mh0 mh0Var = this.d;
-        mh0Var.P(i7);
-        mh0Var.M(this.r != 0.0d ? 17 : 0);
-        mh0Var.start();
-        ph0Var.setTag(num);
+        org.telegram.ui.Components.oh0 oh0Var = this.d;
+        oh0Var.P(i7);
+        oh0Var.M(this.r != 0.0d ? 17 : 0);
+        oh0Var.start();
+        rh0Var.setTag(num);
     }
 
     public final boolean b(MotionEvent motionEvent) {
@@ -284,9 +284,9 @@ public final class c40 extends FrameLayout {
         Canvas canvas2 = canvas;
         canvas2.drawPath(path, paint);
         int H = (int) (org.telegram.messenger.v3.H(c40Var.c) / 100.0d);
-        org.telegram.ui.Components.ph0 ph0Var = c40Var.a;
-        int L4 = org.telegram.messenger.g0.L(5.0f) + (ph0Var.getMeasuredWidth() / 2) + ph0Var.getLeft();
-        int measuredHeight2 = (ph0Var.getMeasuredHeight() / 2) + ph0Var.getTop();
+        org.telegram.ui.Components.rh0 rh0Var = c40Var.a;
+        int L4 = org.telegram.messenger.g0.L(5.0f) + (rh0Var.getMeasuredWidth() / 2) + rh0Var.getLeft();
+        int measuredHeight2 = (rh0Var.getMeasuredHeight() / 2) + rh0Var.getTop();
         int i15 = 0;
         while (true) {
             float[] fArr2 = c40Var.J;

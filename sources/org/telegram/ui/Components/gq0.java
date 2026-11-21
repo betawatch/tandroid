@@ -1,19 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class gq0 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
-    public final /* synthetic */ gt0 d;
+public final class gq0 extends bi.t6 {
+    public final /* synthetic */ jt0 W;
 
-    public gq0(gt0 gt0Var, Context context, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        this.d = gt0Var;
-        this.a = context;
-        this.b = h2Var;
-        this.c = i6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gq0(jt0 jt0Var, org.telegram.ui.ActionBar.g2 g2Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var, dh.c cVar) {
+        super(g2Var, context, i7, j3, h6Var, cVar);
+        this.W = jt0Var;
+    }
+
+    @Override // bi.t6
+    public final void q(boolean z10) {
+        jt0 jt0Var = this.W;
+        TextView textView = jt0Var.t0;
+        textView.setVisibility(0);
+        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new rp0(1, this, z10)).start();
+        jt0Var.I1(true);
+        jt0Var.W0();
     }
 }

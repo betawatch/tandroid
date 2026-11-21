@@ -15,18 +15,19 @@ import android.os.Looper;
 import android.util.Pair;
 import c8.k1;
 import h9.t1;
-import hi.u5;
+import hi.t5;
 import j$.util.Objects;
 import java.math.RoundingMode;
 import java.util.List;
+import kg.x1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class i0 implements o {
     public final Context a;
     public final s0 b;
     public final l0 c;
-    public final u5 d;
+    public final t5 d;
     public final float e;
     public h2.r f;
     public h2.g0 g;
@@ -43,7 +44,7 @@ public final class i0 implements o {
         this.c = l0Var;
         this.b = h0Var.c;
         this.h = h0Var.d;
-        this.d = context == null ? null : new u5(this, 16);
+        this.d = context == null ? null : new t5(this, 16);
         this.e = h0Var.e;
         this.g = h2.g0.a;
     }
@@ -294,7 +295,7 @@ public final class i0 implements o {
         f();
         e eVar2 = this.i;
         if (eVar2 == null && (context = this.a) != null) {
-            e eVar3 = new e(context, new ki.e(this, 17), eVar, audioDeviceInfo);
+            e eVar3 = new e(context, new x1(this, 18), eVar, audioDeviceInfo);
             this.i = eVar3;
             if (eVar3.k) {
                 b10 = eVar3.h;
@@ -311,7 +312,7 @@ public final class i0 implements o {
                 Handler handler = eVar3.c;
                 d.registerAudioDeviceCallback(cVar, handler);
                 if (Build.VERSION.SDK_INT >= 32 && eVar3.g == null) {
-                    eVar3.g = new c3.d(context2, new kg.j0(eVar3, 21), Boolean.valueOf(h2.l0.P(context2)));
+                    eVar3.g = new c3.d(context2, new kg.i0(eVar3, 21), Boolean.valueOf(h2.l0.P(context2)));
                 }
                 b10 = b.b(context2, context2.registerReceiver(eVar3.e, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler), eVar3.j, eVar3.i, eVar3.a());
                 eVar3.h = b10;

@@ -1,35 +1,113 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class bi implements kj {
-    public final /* synthetic */ si a;
+public final class bi implements TextWatcher {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 c;
+    public final /* synthetic */ ui d;
 
-    public bi(si siVar) {
-        this.a = siVar;
+    public bi(ui uiVar, org.telegram.ui.ActionBar.g2 g2Var) {
+        this.d = uiVar;
+        this.c = g2Var;
     }
 
-    @Override // org.telegram.ui.Components.kj
-    public final void a(TLRPC.User user, boolean z10, int i7, long j3) {
-        org.telegram.ui.bn bnVar = (org.telegram.ui.bn) this.a.a2;
-        if (bnVar.u7()) {
-            org.telegram.messenger.xy g10 = org.telegram.messenger.xy.g(user, bnVar.l6, bnVar.F5, bnVar.m4, null, null, z10, i7, 0);
-            g10.K = bnVar.Y8();
-            g10.O = 0L;
-            g10.L = false;
-            g10.Q = j3;
-            g10.R = bnVar.j9();
-            g10.T = bnVar.y5;
-            bnVar.getSendMessagesHelper().r0(g10);
-            bnVar.L6();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        int i7;
+        ui uiVar = this.d;
+        o6 o6Var = uiVar.u1;
+        zh zhVar = uiVar.N2;
+        int i10 = uiVar.H3;
+        o6 o6Var2 = uiVar.v1;
+        if (this.b != TextUtils.isEmpty(editable)) {
+            mi miVar = uiVar.w2;
+            if (miVar != null) {
+                miVar.E(miVar.getSelectedItemsCount());
+            }
+            this.b = !this.b;
+        }
+        boolean z11 = false;
+        if (this.a) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
+            }
+            org.telegram.messenger.j6.l(editable, zhVar.getEditText().getPaint().getFontMetricsInt(), false);
+            this.a = false;
+        }
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        uiVar.G1 = codePointCount;
+        uiVar.p1.a(codePointCount > 0, true);
+        int i11 = uiVar.F1;
+        if (i11 <= 0 || (i7 = i11 - uiVar.G1) > 100) {
+            o6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new y(this, 10));
+            o6Var.setAlpha(0.0f);
+            z10 = true;
+        } else {
+            if (i7 < -9999) {
+                i7 = -9999;
+            }
+            long j3 = i7;
+            o6Var2.c(org.telegram.messenger.gd.E(j3, ','), o6Var2.getVisibility() == 0, true);
+            if (o6Var2.getVisibility() != 0) {
+                o6Var2.setVisibility(0);
+                o6Var2.setAlpha(0.0f);
+                o6Var2.setScaleX(0.5f);
+                o6Var2.setScaleY(0.5f);
+            }
+            o6Var2.animate().setListener(null).cancel();
+            o6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+            if (i7 < 0) {
+                org.telegram.ui.ActionBar.t6.Y(o6Var2, org.telegram.ui.ActionBar.m6.p7, uiVar.J0);
+                z10 = false;
+            } else {
+                org.telegram.ui.ActionBar.t6.Y(o6Var2, org.telegram.ui.ActionBar.m6.y6, uiVar.J0);
+                z10 = true;
+            }
+            o6Var.c(org.telegram.messenger.gd.E(j3, ','), false, true);
+            o6Var.setAlpha(1.0f);
+        }
+        if (uiVar.S2 != z10) {
+            uiVar.S2 = z10;
+            uiVar.G2.invalidate();
+        }
+        if (!uiVar.g4 && !org.telegram.messenger.mp.u1(i10).K3() && !org.telegram.messenger.j10.i(i10).q() && uiVar.G1 > org.telegram.messenger.mp.u1(i10).W4 && uiVar.G1 < org.telegram.messenger.mp.u1(i10).X4) {
+            uiVar.g4 = true;
+            uiVar.E1(this.c);
+        }
+        if (uiVar.X1) {
+            if (zhVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(zhVar.getText().toString().trim())) {
+                z11 = true;
+            }
+            uiVar.C1(z11);
+        }
+        uiVar.R0(true);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        if (i11 - i10 >= 1) {
+            this.a = true;
+        }
+        ui uiVar = this.d;
+        if (uiVar.C4 == null) {
+            ui.L0(uiVar);
+        }
+        if (uiVar.C4.getAdapter() != null) {
+            uiVar.C4.setReversed(true);
+            uiVar.C4.getAdapter().U(charSequence, uiVar.N2.getEditText().getSelectionStart(), null, false, false);
+            uiVar.K1();
         }
     }
 
-    @Override // org.telegram.ui.Components.kj
-    public final void b(ArrayList arrayList, String str, boolean z10, int i7, long j3, boolean z11) {
-        ((org.telegram.ui.bn) this.a.a2).Jb(arrayList, str, z10, i7, j3, z11);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class sh0 extends org.telegram.ui.Components.bk0 {
+public final class sh0 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -25,7 +25,7 @@ public final class sh0 extends org.telegram.ui.Components.bk0 {
         z1Var.a = new zr(this, 25);
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return true;
     }
@@ -84,7 +84,7 @@ public final class sh0 extends org.telegram.ui.Components.bk0 {
             if (i10 != 1) {
                 return;
             }
-            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.M0(2131754374, "AddToExceptions"));
+            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.N0(2131754373, "AddToExceptions"));
             return;
         }
         org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) view;
@@ -94,7 +94,7 @@ public final class sh0 extends org.telegram.ui.Components.bk0 {
         } else {
             int f10 = i5.c.f(1, i7, this.d);
             ArrayList arrayList = this.h.e;
-            raVar.d((TLObject) arrayList.get(f10), null, org.telegram.messenger.gd.M0(2131747699, "NotificationsOn"), f10 != arrayList.size() - 1);
+            raVar.d((TLObject) arrayList.get(f10), null, org.telegram.messenger.gd.N0(2131747698, "NotificationsOn"), f10 != arrayList.size() - 1);
             raVar.setAddButtonVisible(true);
         }
     }
@@ -109,6 +109,6 @@ public final class sh0 extends org.telegram.ui.Components.bk0 {
         } else {
             raVar = new org.telegram.ui.Cells.ra(4, 0, this.c, null, false, true);
         }
-        return new org.telegram.ui.Components.kj0(raVar);
+        return new org.telegram.ui.Components.mj0(raVar);
     }
 }

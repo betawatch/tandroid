@@ -1,13 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.MenuItem;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.ui.Components.bn0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z3 implements MenuItem.OnMenuItemClickListener {
-    @Override // android.view.MenuItem.OnMenuItemClickListener
-    public final boolean onMenuItemClick(MenuItem menuItem) {
-        z3 z3Var = m4.p;
-        return false;
+public final class z3 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
+
+    public z3(bn0 bn0Var, bn0 bn0Var2, bn0 bn0Var3) {
+        this.a = 1;
+        this.b = bn0Var;
+        this.c = bn0Var2;
+        this.d = bn0Var3;
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        switch (this.a) {
+            case 0:
+                Rect rect = (Rect) this.b;
+                rect.set(i7, i10, i11, i12);
+                Rect rect2 = (Rect) this.c;
+                rect2.set(i13, i14, i15, i16);
+                l4 l4Var = (l4) this.d;
+                j4 j4Var = l4Var.b;
+                if (j4Var.f() && !rect.equals(rect2)) {
+                    l4Var.h = true;
+                    if (j4Var.f()) {
+                        l4Var.c();
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((bn0) this.b).setProgress(org.telegram.ui.h5.n1);
+                ((bn0) this.c).setProgress(org.telegram.ui.h5.o1);
+                ((bn0) this.d).setProgress(org.telegram.ui.h5.p1);
+                break;
+        }
+    }
+
+    public z3(l4 l4Var) {
+        this.a = 0;
+        this.d = l4Var;
+        this.b = new Rect();
+        this.c = new Rect();
     }
 }

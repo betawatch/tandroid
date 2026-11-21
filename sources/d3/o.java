@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class o implements k0 {
     public h9.i0 a;
@@ -187,7 +187,7 @@ public final class o implements k0 {
                 u2.l lVar2 = iVar.a;
                 int i10 = iVar.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar2.d(i10);
+                lVar2.e(i10);
                 Trace.endSection();
                 lVar.R0(0, 1);
                 return true;

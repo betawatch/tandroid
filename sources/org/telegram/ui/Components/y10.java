@@ -1,32 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class y10 extends AnimatorListenerAdapter {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ WindowManager c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ View e;
-    public final /* synthetic */ z10 f;
+public final class y10 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c20 b;
 
-    public y10(z10 z10Var, x10 x10Var, bi.a3 a3Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.w7 w7Var) {
-        this.f = z10Var;
-        this.a = x10Var;
-        this.b = a3Var;
-        this.c = windowManager;
-        this.d = frameLayout;
-        this.e = w7Var;
+    public /* synthetic */ y10(c20 c20Var, int i7) {
+        this.a = i7;
+        this.b = c20Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.messenger.ks.f(this.f.h).d(new org.telegram.ui.wn(this.a, this.b, this.c, this.d, this.e, 4));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c20 c20Var = this.b;
+                c20Var.s.x = (int) floatValue;
+                c20Var.i();
+                a20 a20Var = c20Var.a;
+                if (a20Var.getParent() != null) {
+                    c20Var.n.updateViewLayout(a20Var, c20Var.s);
+                    break;
+                }
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c20 c20Var2 = this.b;
+                c20Var2.s.y = (int) floatValue2;
+                a20 a20Var2 = c20Var2.a;
+                if (a20Var2.getParent() != null) {
+                    c20Var2.n.updateViewLayout(a20Var2, c20Var2.s);
+                    break;
+                }
+                break;
+        }
     }
 }

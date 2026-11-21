@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.z71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,8 +46,8 @@ public final /* synthetic */ class x0 implements Runnable {
         int i11;
         long j10;
         long j11;
-        w71 w71Var;
-        w71 w71Var2;
+        z71 z71Var;
+        z71 z71Var2;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         long j12 = 0;
@@ -298,14 +298,14 @@ public final /* synthetic */ class x0 implements Runnable {
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.c;
                 int i36 = this.b;
                 boolean z13 = FilesMigrationService.c;
-                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(ks.Y4, f9.b.a(filesMigrationService, xs.k0).setContentTitle(gd.M0(2131748238, null)).setContentText(i36 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i36, false).build());
+                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(ks.Y4, f9.b.a(filesMigrationService, xs.k0).setContentTitle(gd.N0(2131748237, null)).setContentText(i36 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i36, false).build());
                 return;
             case 3:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.c;
                 int i37 = this.b;
                 String[] strArr = MediaController.W1;
                 try {
-                    u1Var.o(i37);
+                    t1Var.o(i37);
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);
@@ -321,11 +321,11 @@ public final /* synthetic */ class x0 implements Runnable {
                     } else if (mediaController.J()) {
                         mediaController.B0(2, 0, false, false);
                     }
-                    org.telegram.ui.Components.gu guVar = org.telegram.ui.Components.gu.S1;
-                    if (guVar != null && (w71Var2 = guVar.n1) != null && w71Var2.x) {
-                        w71Var2.a.g0();
-                        w71Var2.n();
-                        w71Var2.g0.d(true, true);
+                    org.telegram.ui.Components.iu iuVar = org.telegram.ui.Components.iu.S1;
+                    if (iuVar != null && (z71Var2 = iuVar.n1) != null && z71Var2.x) {
+                        z71Var2.a.g0();
+                        z71Var2.n();
+                        z71Var2.g0.d(true, true);
                     }
                     mediaController.X = true;
                     return;
@@ -335,11 +335,11 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
                 if (i38 == 2) {
-                    org.telegram.ui.Components.gu guVar2 = org.telegram.ui.Components.gu.S1;
-                    if (guVar2 != null && (w71Var = guVar2.n1) != null && w71Var.x) {
-                        w71Var.a.g0();
-                        w71Var.n();
-                        w71Var.g0.d(true, true);
+                    org.telegram.ui.Components.iu iuVar2 = org.telegram.ui.Components.iu.S1;
+                    if (iuVar2 != null && (z71Var = iuVar2.n1) != null && z71Var.x) {
+                        z71Var.a.g0();
+                        z71Var.n();
+                        z71Var.g0.d(true, true);
                     }
                     mediaController.X = true;
                     return;
@@ -468,7 +468,7 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             case 9:
-                ((ai.u2) this.c).a(Integer.valueOf(this.b));
+                ((ai.w2) this.c).a(Integer.valueOf(this.b));
                 return;
             case 10:
                 ((org.telegram.ui.cg) this.c).a(this.b);
@@ -484,7 +484,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 c cVar = (c) this.c;
                 try {
                     if (i43 == 1) {
-                        ks.e().k(ks.S4, 1, gd.M0(2131743596, null));
+                        ks.e().k(ks.S4, 1, gd.N0(2131743590, null));
                     } else if (i43 != 2) {
                         return;
                     } else {

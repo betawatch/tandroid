@@ -4,12 +4,12 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import ch.n0;
 import di.q5;
-import oi.p0;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.cq;
-import org.telegram.ui.Components.f21;
+import oi.q0;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.i21;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -41,16 +41,16 @@ public final class b implements Drawable.Callback {
             case 4:
                 break;
             case 5:
-                ((p0) this.b).b.invalidate();
+                ((q0) this.b).b.invalidate();
                 break;
             case 6:
-                ((cq) this.b).invalidateSelf();
+                ((eq) this.b).invalidateSelf();
                 break;
             case 7:
-                ((cn0) this.b).b.run();
+                ((fn0) this.b).b.run();
                 break;
             case 8:
-                ((f21) this.b).invalidateSelf();
+                ((i21) this.b).invalidateSelf();
                 break;
             case 9:
                 ((zg.a) this.b).c.invalidate();
@@ -89,7 +89,7 @@ public final class b implements Drawable.Callback {
             case 5:
                 break;
             case 6:
-                ((cq) this.b).scheduleSelf(runnable, j3);
+                ((eq) this.b).scheduleSelf(runnable, j3);
                 break;
             case 7:
             case 8:
@@ -131,7 +131,7 @@ public final class b implements Drawable.Callback {
             case 5:
                 break;
             case 6:
-                ((cq) this.b).unscheduleSelf(runnable);
+                ((eq) this.b).unscheduleSelf(runnable);
                 break;
             case 7:
             case 8:

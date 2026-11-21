@@ -9,13 +9,13 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.s5;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.p10;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.s10;
 import org.telegram.ui.Components.voip.h2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class o implements Runnable {
     public static final /* synthetic */ o b = new o(1);
@@ -51,7 +51,7 @@ public final class o implements Runnable {
                 return;
             case 2:
                 Math.abs(Utilities.b.nextInt() % 3);
-                p10[] p10VarArr = i7.a;
+                s10[] s10VarArr = i7.a;
                 ks.f(j10.t0).k(2, 0);
                 g0.h3(i7.o, 1000L);
                 LaunchActivity.Q().getFragmentView();
@@ -80,12 +80,12 @@ public final class o implements Runnable {
                 Utilities.e.c(new org.telegram.messenger.k(i7, arrayList2));
                 return;
             case 5:
-                n6.j = false;
-                n6.m(false);
+                m6.j = false;
+                m6.m(false);
                 return;
             case 6:
-                n6.k = false;
-                n6.m(true);
+                m6.k = false;
+                m6.m(true);
                 return;
             case 7:
                 return;

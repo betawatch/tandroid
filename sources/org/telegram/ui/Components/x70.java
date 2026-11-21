@@ -1,80 +1,131 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x70 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e80 b;
+public final class x70 extends View {
+    public static DecelerateInterpolator w;
+    public static Paint x;
+    public long a;
+    public float b;
+    public float c;
+    public long d;
+    public float e;
+    public float f;
+    public int h;
+    public int n;
+    public final RectF r;
+    public org.telegram.ui.Components.voip.n s;
 
-    public /* synthetic */ x70(e80 e80Var, int i7) {
-        this.a = i7;
-        this.b = e80Var;
+    public x70(Context context) {
+        super(context);
+        this.f = 1.0f;
+        this.r = new RectF();
+        if (w == null) {
+            w = new DecelerateInterpolator();
+            Paint paint = new Paint(1);
+            x = paint;
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            x.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        }
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        e80 e80Var = this.b;
-        int i10 = 1;
-        switch (i7) {
-            case 0:
-                e80Var.r.f();
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.h1 h1Var = e80Var.s;
-                if (h1Var != null) {
-                    h1Var.d(true);
-                }
-                e80Var.r.d();
-                break;
-            case 2:
-                e80 e80Var2 = this.b;
-                String str = e80Var2.b;
-                boolean z10 = str != null && str.endsWith("?direct");
-                Context context = e80Var2.getContext();
-                String M0 = org.telegram.messenger.gd.M0(2131748978, null);
-                String str2 = e80Var2.b;
-                String str3 = e80Var2.K;
-                if (str3 == null) {
-                    str3 = org.telegram.messenger.gd.M0(e80Var2.I ? z10 ? 2131746312 : 2131746313 : 2131746310, null);
-                }
-                b80 b80Var = new b80(e80Var2, context, M0, str2, str3);
-                e80Var2.F = b80Var;
-                b80Var.J0();
-                e80Var2.F.show();
-                org.telegram.ui.ActionBar.h1 h1Var2 = e80Var2.s;
-                if (h1Var2 != null) {
-                    h1Var2.d(true);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.h1 h1Var3 = e80Var.s;
-                if (h1Var3 != null) {
-                    h1Var3.d(true);
-                }
-                org.telegram.ui.ActionBar.h2 h2Var = e80Var.c;
-                if (h2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(h2Var.getParentActivity());
-                    String M02 = org.telegram.messenger.gd.M0(2131745828, null);
-                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                    u1Var.S = M02;
-                    u1Var.U = org.telegram.messenger.gd.M0(2131745831, null);
-                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131745829, null), new w70(e80Var, i10));
-                    alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-                    TextView textView = (TextView) u1Var.d(-1);
-                    if (textView != null) {
-                        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
-                    }
-                    alertDialog$Builder.p();
-                    break;
-                }
-                break;
+    public final void a(boolean z10, float f10) {
+        if (z10) {
+            this.c = this.e;
+        } else {
+            this.e = f10;
+            this.c = f10;
         }
+        if (f10 != 1.0f) {
+            this.f = 1.0f;
+        }
+        this.b = f10;
+        this.d = 0L;
+        this.a = System.currentTimeMillis();
+        invalidate();
+    }
+
+    public float getCurrentProgress() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7 = this.h;
+        RectF rectF = this.r;
+        if (i7 != 0 && this.e != 1.0f) {
+            x.setColor(i7);
+            x.setAlpha((int) (this.f * 255.0f));
+            getWidth();
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        }
+        x.setColor(this.n);
+        x.setAlpha((int) (this.f * 255.0f));
+        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
+        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        if (this.f > 0.0f) {
+            if (this.s == null) {
+                org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n(org.telegram.messenger.ks.q2, 0);
+                this.s = nVar;
+                nVar.k = false;
+                nVar.n = 0.8f;
+                nVar.m = 1.2f;
+            }
+            this.s.f = getMeasuredWidth();
+            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
+            invalidate();
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        float f10 = this.e;
+        if (f10 != 1.0f) {
+            float f11 = this.b;
+            if (f10 != f11) {
+                float f12 = this.c;
+                float f13 = f11 - f12;
+                if (f13 > 0.0f) {
+                    long j10 = this.d + j3;
+                    this.d = j10;
+                    if (j10 >= 300) {
+                        this.e = f11;
+                        this.c = f11;
+                        this.d = 0L;
+                    } else {
+                        this.e = (w.getInterpolation(j10 / 300.0f) * f13) + f12;
+                    }
+                }
+                invalidate();
+            }
+        }
+        float f14 = this.e;
+        if (f14 < 1.0f || f14 != 1.0f) {
+            return;
+        }
+        float f15 = this.f;
+        if (f15 != 0.0f) {
+            float f16 = f15 - (j3 / 200.0f);
+            this.f = f16;
+            if (f16 <= 0.0f) {
+                this.f = 0.0f;
+            }
+            invalidate();
+        }
+    }
+
+    public void setBackColor(int i7) {
+        this.h = i7;
+    }
+
+    public void setProgressColor(int i7) {
+        this.n = i7;
     }
 }

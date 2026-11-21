@@ -1,27 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class o50 extends e80 {
-    public final /* synthetic */ s50 N;
+public final class o50 extends v4.u0 {
+    public final /* synthetic */ v4.c0 a;
+    public final /* synthetic */ a60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o50(s50 s50Var, Context context, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.x2 x2Var, boolean z10) {
-        super(context, h2Var, x2Var, false, z10);
-        this.N = s50Var;
+    public o50(a60 a60Var, v4.c0 c0Var) {
+        this.b = a60Var;
+        this.a = c0Var;
     }
 
-    @Override // org.telegram.ui.Components.e80
-    public final void e(SpannableStringBuilder spannableStringBuilder) {
-        x50 x50Var = this.N.c;
-        org.telegram.ui.ActionBar.n2 n2Var = x50Var.c;
-        int i7 = x50.i2;
-        gc Q = new lc(n2Var, x50Var.J0).Q(R.raw.forward, 36, spannableStringBuilder);
-        Q.r = false;
-        Q.k(true);
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        a60 a60Var = this.b;
+        a60.J0(a60Var);
+        if (!a60Var.M1 || a60Var.L1) {
+            return;
+        }
+        if (a60Var.N1 - this.a.N0() < 10) {
+            a60Var.L0();
+        }
     }
 }

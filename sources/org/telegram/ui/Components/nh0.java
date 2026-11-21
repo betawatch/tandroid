@@ -1,24 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class nh0 extends ImageReceiver {
-    public final /* synthetic */ ph0 K1;
+public final /* synthetic */ class nh0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oh0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nh0(ph0 ph0Var) {
-        super(null);
-        this.K1 = ph0Var;
+    public /* synthetic */ nh0(oh0 oh0Var, int i7) {
+        this.a = i7;
+        this.b = oh0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean x0(Drawable drawable, String str, int i7, boolean z10, int i10) {
-        if (drawable != null) {
-            this.K1.c();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                oh0 oh0Var = this.b;
+                oh0Var.getClass();
+                try {
+                    bg.i iVar = oh0Var.C0;
+                    if (iVar != null) {
+                        iVar.b();
+                    }
+                } catch (Throwable unused) {
+                }
+                org.telegram.messenger.g0.g3(oh0Var.A0);
+                break;
+            case 1:
+                oh0 oh0Var2 = this.b;
+                oh0Var2.Q = null;
+                oh0Var2.p();
+                break;
+            case 2:
+                oh0.h(this.b);
+                break;
+            case 3:
+                oh0.e(this.b);
+                break;
+            case 4:
+                oh0.d(this.b);
+                break;
+            case 5:
+                oh0.f(this.b);
+                break;
+            default:
+                this.b.m();
+                break;
         }
-        return super.x0(drawable, str, i7, z10, i10);
     }
 }

@@ -1,7 +1,7 @@
 package vh;
 
 import ah.i;
-import ai.e1;
+import ai.g1;
 import android.content.Context;
 import android.graphics.Rect;
 import android.text.TextUtils;
@@ -25,32 +25,31 @@ import java.util.Map;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j0;
-import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.y3;
-import org.telegram.ui.Components.a10;
-import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.g10;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.j10;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.z41;
 import org.telegram.ui.Wallet.i9;
 import r0.a0;
-import ug.j1;
+import ug.i1;
 import ug.z;
 import v4.k;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g extends sa implements te.b {
     public static final /* synthetic */ int n2 = 0;
@@ -60,28 +59,28 @@ public final class g extends sa implements te.b {
     public final ArrayList W1;
     public final ArrayList X1;
     public String Y1;
-    public z41 Z1;
-    public final hi.d a2;
+    public c51 Z1;
+    public final hi.e a2;
     public final j b2;
     public final n4 c2;
-    public final g10 d2;
+    public final j10 d2;
     public final y3 e2;
     public final HashMap f2;
-    public hn g2;
+    public jn g2;
     public int h2;
     public final int i2;
     public final FrameLayout j2;
     public HashSet k2;
     public final Rect l2;
-    public m20 m2;
+    public p20 m2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(Context context, i6 i6Var) {
-        super(context, i6Var, true);
+    public g(Context context, h6 h6Var) {
+        super(context, h6Var, true);
         int i7 = 1;
-        lr lrVar = lr.h;
-        this.T1 = new te.c(3, this, lrVar, 350L);
-        this.U1 = new te.a(4, this, lrVar, 320L, false);
+        nr nrVar = nr.h;
+        this.T1 = new te.c(3, this, nrVar, 350L);
+        this.U1 = new te.a(4, this, nrVar, 320L, false);
         this.V1 = new HashMap();
         this.W1 = new ArrayList();
         this.X1 = new ArrayList();
@@ -93,54 +92,54 @@ public final class g extends sa implements te.b {
         this.w1 = false;
         this.i2 = ((j0) mp.u1(this.a).A7.M.b).c;
         g0.S(getWindow());
-        ck0 ck0Var = this.o1;
+        ek0 ek0Var = this.o1;
         int i10 = this.u0;
-        ck0Var.setPadding(i10, 0, i10, g0.L(68.0f) + g0.n);
+        ek0Var.setPadding(i10, 0, i10, g0.L(68.0f) + g0.n);
         this.o1.setClipToPadding(false);
-        this.o1.j(new j1(this, i7));
-        this.o1.setOnItemClickListener(new d(context, i6Var, this));
-        hi.d dVar = new hi.d(context, i6Var, true);
-        this.a2 = dVar;
-        dVar.f();
-        dVar.setCountFilled(true);
-        dVar.setText(gd.M0(2131745751, null));
-        dVar.setOnClickListener(new a(this, 0));
+        this.o1.j(new i1(this, i7));
+        this.o1.setOnItemClickListener(new d(context, h6Var, this));
+        hi.e eVar = new hi.e(context, h6Var, true);
+        this.a2 = eVar;
+        eVar.f();
+        eVar.setCountFilled(true);
+        eVar.setText(gd.N0(2131745750, null));
+        eVar.setOnClickListener(new a(this, 0));
         j jVar = new j(this, context);
         this.b2 = jVar;
-        u6.U(jVar, n6.Ji, i6Var);
-        jVar.setText(gd.M0(2131745751, null));
+        t6.U(jVar, m6.Ji, h6Var);
+        jVar.setText(gd.N0(2131745750, null));
         jVar.setTypeface(g0.o());
         jVar.setTextSize(1, 14.0f);
         jVar.setGravity(17);
         jVar.setPadding(g0.L(16.0f), 0, g0.L(16.0f), 0);
         jVar.setVisibility(8);
         ra.a(jVar);
-        this.p1.t().addView(jVar, ma.t(-2, 48, 16, 12, 0, 12, 0));
+        this.p1.s().addView(jVar, ma.t(-2, 48, 16, 12, 0, 12, 0));
         jVar.setOnClickListener(new a(this, i7));
-        c10 c10Var = new c10(context, i6Var);
-        String M0 = gd.M0(2131746934, null);
-        i iVar = c10Var.r;
-        iVar.setHint(M0);
+        e10 e10Var = new e10(context, h6Var);
+        String N0 = gd.N0(2131746933, null);
+        i iVar = e10Var.r;
+        iVar.setHint(N0);
         iVar.addTextChangedListener(new i9(this, 6));
-        g10 g10Var = new g10(context, this.a);
-        this.d2 = g10Var;
-        g10Var.setDelegate(new b(this));
-        n4 n4Var = new n4(context, i6Var, this);
+        j10 j10Var = new j10(context, this.a);
+        this.d2 = j10Var;
+        j10Var.setDelegate(new b(this));
+        n4 n4Var = new n4(context, h6Var, this);
         this.c2 = n4Var;
         int i11 = this.u0;
         n4Var.setPadding(i11, 0, i11, 0);
-        n4Var.addView(c10Var, ma.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
-        n4Var.addView(g10Var, ma.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
-        y3 y3Var = new y3(18, context, i6Var);
+        n4Var.addView(e10Var, ma.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        n4Var.addView(j10Var, ma.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
+        y3 y3Var = new y3(18, context, h6Var);
         this.e2 = y3Var;
         y3Var.setTranslationY(g0.L(48.0f));
         int i12 = 2;
-        y3Var.b(gd.M0(2131745615, null), gd.M0(2131751446, null), new a(this, i12));
+        y3Var.b(gd.N0(2131745614, null), gd.N0(2131751445, null), new a(this, i12));
         n4Var.addView(y3Var, ma.e(-1, 32, 48));
         this.b.addView(n4Var, ma.e(-1, ks.t3, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(g0.L(10.0f) + this.u0, g0.L(10.0f), g0.L(10.0f) + this.u0, g0.L(10.0f) + g0.n);
-        frameLayout.addView(dVar, ma.c(48.0f, -1));
+        frameLayout.addView(eVar, ma.c(48.0f, -1));
         this.b.addView(frameLayout, ma.e(-1, -2, 80));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.j2 = frameLayout2;
@@ -148,16 +147,16 @@ public final class g extends sa implements te.b {
         this.b.addView(frameLayout2, ma.e(-1, ks.g2, 80));
         k kVar = new k();
         kVar.n(350L);
-        kVar.o(lrVar);
+        kVar.o(nrVar);
         kVar.C = false;
         kVar.m = false;
         this.o1.setItemAnimator(kVar);
-        this.o1.i(new e(this, i6Var));
+        this.o1.i(new e(this, h6Var));
         z zVar = new z(this, i12);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(j10.t0);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(org.telegram.messenger.j10.t0);
         TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
         tL_help_getCountriesList.lang_code = gd.E0().B != null ? gd.E0().B.c() : Locale.getDefault().getCountry();
-        connectionsManager.sendRequest(tL_help_getCountriesList, new e1(zVar, 27));
+        connectionsManager.sendRequest(tL_help_getCountriesList, new g1(zVar, 27));
         a0.i(this.c, new b(this));
     }
 
@@ -189,10 +188,10 @@ public final class g extends sa implements te.b {
                     }
                 }
                 if (tL_help_country != null) {
-                    m20 m20Var = new m20(gVar.getContext(), tL_help_country);
-                    m20Var.setOnClickListener(new a(gVar, 3));
-                    gVar.d2.a(m20Var);
-                    hashMap.put(tL_help_country.iso2, m20Var);
+                    p20 p20Var = new p20(gVar.getContext(), tL_help_country);
+                    p20Var.setOnClickListener(new a(gVar, 3));
+                    gVar.d2.a(p20Var);
+                    hashMap.put(tL_help_country.iso2, p20Var);
                 }
             }
         }
@@ -204,7 +203,7 @@ public final class g extends sa implements te.b {
     public final void H(int i7, float f10, float f11, te.c cVar) {
         if (i7 != 3) {
             if (i7 == 4) {
-                a10.d(this.b2, f10);
+                c10.d(this.b2, f10);
             }
         } else {
             f1();
@@ -214,19 +213,19 @@ public final class g extends sa implements te.b {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
-        z41 z41Var = new z41(ck0Var, getContext(), this.a, 0, true, new org.telegram.ui.web.b(this, 2), this.J0);
-        this.Z1 = z41Var;
-        z41Var.r = false;
-        return z41Var;
+    public final dk0 M0(ek0 ek0Var) {
+        c51 c51Var = new c51(ek0Var, getContext(), this.a, 0, true, new org.telegram.ui.web.b(this, 2), this.J0);
+        this.Z1 = c51Var;
+        c51Var.r = false;
+        return c51Var;
     }
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.M0(2131753286, null);
+        return gd.N0(2131753285, null);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void e0() {
         f1();
         g1();
@@ -238,23 +237,23 @@ public final class g extends sa implements te.b {
         Rect rect = this.l2;
         boolean z10 = (rect.top == L && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, L, this.b.getMeasuredWidth(), measuredHeight);
-        ck0 ck0Var = this.o1;
-        ck0Var.setClipBounds(rect);
+        ek0 ek0Var = this.o1;
+        ek0Var.setClipBounds(rect);
         if (z10) {
-            ck0Var.invalidate();
+            ek0Var.invalidate();
         }
     }
 
     public final void g1() {
-        ck0 ck0Var;
+        ek0 ek0Var;
         float f10 = g0.q.y;
         int i7 = 0;
         while (true) {
-            ck0Var = this.o1;
-            if (i7 >= ck0Var.getChildCount()) {
+            ek0Var = this.o1;
+            if (i7 >= ek0Var.getChildCount()) {
                 break;
             }
-            View childAt = ck0Var.getChildAt(i7);
+            View childAt = ek0Var.getChildAt(i7);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f10) {
                 f10 = childAt.getY();
             }
@@ -264,24 +263,24 @@ public final class g extends sa implements te.b {
         n4 n4Var = this.c2;
         if (n4Var.getTranslationY() != max) {
             n4Var.setTranslationY(max);
-            ck0Var.invalidate();
+            ek0Var.invalidate();
         }
     }
 
     public final void h1(View view) {
-        m20 m20Var = (m20) view;
-        if (!m20Var.E) {
-            m20 m20Var2 = this.m2;
-            if (m20Var2 != null) {
-                m20Var2.a();
+        p20 p20Var = (p20) view;
+        if (!p20Var.E) {
+            p20 p20Var2 = this.m2;
+            if (p20Var2 != null) {
+                p20Var2.a();
             }
-            this.m2 = m20Var;
-            m20Var.b();
+            this.m2 = p20Var;
+            p20Var.b();
             return;
         }
         this.m2 = null;
-        this.d2.c(m20Var);
-        String countryIso2 = m20Var.getCountryIso2();
+        this.d2.c(p20Var);
+        String countryIso2 = p20Var.getCountryIso2();
         HashMap hashMap = this.f2;
         hashMap.remove(countryIso2);
         this.a2.c(hashMap.size(), true);

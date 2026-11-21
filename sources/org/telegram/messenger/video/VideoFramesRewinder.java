@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import bi.m2;
+import bi.q2;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,7 +19,7 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -43,7 +43,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -183,7 +183,7 @@ public class VideoFramesRewinder {
             c12 = c10;
             i12 = 0;
         }
-        g0.g3(new m2(this, arrayList, currentTimeMillis, 13));
+        g0.g3(new q2(this, arrayList, currentTimeMillis, 13));
     }
 
     private void prepare(long j3) {

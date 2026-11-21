@@ -13,12 +13,12 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class g9 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.i6 a;
+    public final org.telegram.ui.ActionBar.h6 a;
     public final FrameLayout b;
     public final org.telegram.ui.Components.b9 c;
     public final org.telegram.ui.Components.q9 d;
@@ -29,25 +29,25 @@ public final class g9 extends FrameLayout {
     public TLRPC.User r;
     public String s;
 
-    public g9(Context context, Runnable runnable, Runnable runnable2, org.telegram.ui.ActionBar.i6 i6Var) {
+    public g9(Context context, Runnable runnable, Runnable runnable2, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.c = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
-        this.a = i6Var;
+        this.c = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
+        this.a = h6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
         frameLayout.setDuplicateParentStateEnabled(true);
         frameLayout.setPivotX(0.0f);
         frameLayout.setPivotY(0.0f);
         addView(frameLayout, c8.ma.c(-1.0f, -1));
-        int i7 = org.telegram.ui.ActionBar.n6.a7;
-        int w02 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
-        int w03 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
-        int i10 = org.telegram.ui.ActionBar.n6.i6;
-        org.telegram.ui.Cells.y b02 = org.telegram.ui.ActionBar.n6.b0(w02, org.telegram.ui.ActionBar.n6.w(w03, org.telegram.ui.ActionBar.n6.w0(i10, i6Var)), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
-        org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i7);
-        org.telegram.ui.ActionBar.q6 p10 = org.telegram.ui.ActionBar.u6.p(i7, i10);
+        int i7 = org.telegram.ui.ActionBar.m6.a7;
+        int w02 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
+        int w03 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
+        int i10 = org.telegram.ui.ActionBar.m6.i6;
+        org.telegram.ui.Cells.y b02 = org.telegram.ui.ActionBar.m6.b0(w02, org.telegram.ui.ActionBar.m6.w(w03, org.telegram.ui.ActionBar.m6.w0(i10, h6Var)), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
+        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i7);
+        org.telegram.ui.ActionBar.p6 p10 = org.telegram.ui.ActionBar.t6.p(i7, i10);
         frameLayout.setBackground(b02);
-        org.telegram.ui.ActionBar.u6.j(frameLayout, b02, M, p10, i6Var);
+        org.telegram.ui.ActionBar.t6.j(frameLayout, b02, M, p10, h6Var);
         c8.ra.b(this, 0.02f, 1.2f);
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.d = q9Var;
@@ -56,7 +56,7 @@ public final class g9 extends FrameLayout {
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, h6Var);
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -67,12 +67,12 @@ public final class g9 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.n = imageView;
         imageView.setImageResource(R.drawable.msg2_help);
-        org.telegram.ui.ActionBar.u6.s(imageView, org.telegram.ui.ActionBar.n6.D6, i6Var, PorterDuff.Mode.SRC_IN);
+        org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.D6, h6Var, PorterDuff.Mode.SRC_IN);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setScaleX(0.9f);
         imageView.setScaleY(0.9f);
         frameLayout.addView(imageView, c8.ma.d(24, 24.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
-        setOnClickListener(new w8(this, i6Var, runnable, runnable2, 2));
+        setOnClickListener(new w8(this, h6Var, runnable, runnable2, 2));
     }
 
     public final void a(String str, TLRPC.User user) {
@@ -113,12 +113,12 @@ public final class g9 extends FrameLayout {
         setClickable(false);
         setVisibility(0);
         if (this.e == null) {
-            ShapeDrawable L = org.telegram.ui.ActionBar.n6.L(org.telegram.messenger.g0.L(34.0f), -1);
+            ShapeDrawable L = org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(34.0f), -1);
             this.e = L;
-            org.telegram.ui.ActionBar.u6.x(q9Var, L, org.telegram.ui.ActionBar.n6.Fi, this.a, PorterDuff.Mode.SRC_IN);
+            org.telegram.ui.ActionBar.t6.x(q9Var, L, org.telegram.ui.ActionBar.m6.Fi, this.a, PorterDuff.Mode.SRC_IN);
         }
-        q9Var.setImageDrawable(new mq(this.e, getContext().getResources().getDrawable(R.drawable.menu_gram_24).mutate()));
-        textView.setText(gd.M0(2131742860, null));
+        q9Var.setImageDrawable(new oq(this.e, getContext().getResources().getDrawable(R.drawable.menu_gram_24).mutate()));
+        textView.setText(gd.N0(2131742854, null));
         f9Var.c(str, z10);
         imageView.setVisibility(8);
     }

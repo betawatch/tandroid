@@ -1,91 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.tgnet.TLObject;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class xw0 extends View {
-    public String a;
-    public Drawable b;
-    public boolean c;
-    public int d;
-    public final c6 e;
-    public final /* synthetic */ yw0 f;
+public final class xw0 extends ek0 {
+    public boolean f3;
+    public boolean g3;
+    public final /* synthetic */ ax0 h3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xw0(yw0 yw0Var, Context context) {
-        super(context);
-        this.f = yw0Var;
-        this.d = 0;
-        this.e = new c6(this, 350L, new OvershootInterpolator(5.0f));
+    public xw0(ax0 ax0Var, Context context) {
+        super(context, null);
+        this.h3 = ax0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float e10 = ((1.0f - this.e.e(false, isPressed() ? 1.0f : 0.0f)) * 0.2f) + 0.8f;
-        if (this.b != null) {
-            int width = getWidth() / 2;
-            int paddingTop = (getPaddingTop() + (getHeight() - getPaddingBottom())) / 2;
-            this.b.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-            canvas.scale(e10, e10, width, paddingTop);
-            Drawable drawable = this.b;
-            if (drawable instanceof o5) {
-                ((o5) drawable).p(System.currentTimeMillis());
-            }
-            this.b.draw(canvas);
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i7) {
+        boolean canScrollHorizontally = canScrollHorizontally(-1);
+        boolean canScrollHorizontally2 = canScrollHorizontally(1);
+        if (this.f3 == canScrollHorizontally && this.g3 == canScrollHorizontally2) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        Drawable drawable = this.b;
-        if (drawable instanceof o5) {
-            ((o5) drawable).a(this);
+        bi.e3 e3Var = this.h3.d;
+        if (e3Var != null) {
+            e3Var.invalidate();
         }
-        this.c = true;
+        this.f3 = canScrollHorizontally;
+        this.g3 = canScrollHorizontally2;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        Drawable drawable = this.b;
-        if (drawable instanceof o5) {
-            ((o5) drawable).n(this);
-        }
-        this.c = false;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L((this.d == 0 ? 0.0f : 6.66f) + 3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L((this.d != 0 ? 0.0f : 6.66f) + 3.0f));
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
-    }
-
-    public void setDirection(int i7) {
-        this.d = i7;
-        invalidate();
-    }
-
-    public void setImageDrawable(Drawable drawable) {
-        Drawable drawable2 = this.b;
-        if (drawable2 instanceof o5) {
-            ((o5) drawable2).n(this);
-        }
-        this.b = drawable;
-        if ((drawable instanceof o5) && this.c) {
-            ((o5) drawable).a(this);
-        }
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        super.setPressed(z10);
-        invalidate();
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ls previewDelegate;
+        org.telegram.ui.ns p10 = org.telegram.ui.ns.p();
+        ax0 ax0Var = this.h3;
+        xw0 xw0Var = ax0Var.e;
+        previewDelegate = ax0Var.getPreviewDelegate();
+        return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, xw0Var, previewDelegate, this.o2);
     }
 }

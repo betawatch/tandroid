@@ -15,12 +15,12 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class c extends sh.d {
+public final class c extends sh.c {
     public final String b;
     public final Uri c;
     public final String d;
@@ -58,19 +58,19 @@ public final class c extends sh.d {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(g0.L(13.0f));
         textPaint.setTypeface(g0.o());
-        textPaint.setColor(n6.x0(null, n6.sj, false));
+        textPaint.setColor(m6.x0(null, m6.sj, false));
         this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
     public static b d(View view, String str, String str2, TLRPC.Document document, fj fjVar) {
         b bVar = new b();
-        bVar.a.setColor(n6.x0(null, n6.G6, false));
-        bVar.b.setColor(n6.x0(null, n6.y6, false));
+        bVar.a.setColor(m6.x0(null, m6.G6, false));
+        bVar.b.setColor(m6.x0(null, m6.y6, false));
         bVar.d = true;
         RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
         bVar.c = radialProgress2;
         radialProgress2.setCircleRadius(g0.L(21.0f));
-        bVar.c.g(n6.Ze, n6.af, n6.ld, n6.md);
+        bVar.c.g(m6.Ze, m6.af, m6.ld, m6.md);
         if (fj.J3(document)) {
             if (fj.W2(document)) {
                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, g0.L(22.0f), true, null, false);
@@ -103,7 +103,7 @@ public final class c extends sh.d {
         return bVar;
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void c(Canvas canvas, int i7, int i10) {
         Drawable drawable = this.h;
         if (drawable != null) {
@@ -136,7 +136,7 @@ public final class c extends sh.d {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setTextSize(g0.L(13.0f));
             textPaint.setTypeface(g0.o());
-            textPaint.setColor(n6.x0(null, n6.sj, false));
+            textPaint.setColor(m6.x0(null, m6.sj, false));
             this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
             return;
         }

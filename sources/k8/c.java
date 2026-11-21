@@ -2,7 +2,7 @@ package k8;
 
 import a8.q;
 import a8.r7;
-import ai.k0;
+import ai.l0;
 import android.location.Location;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -17,12 +17,12 @@ import org.telegram.messenger.da;
 import org.telegram.messenger.fa;
 import org.telegram.messenger.j1;
 import org.telegram.messenger.o;
-import org.telegram.ui.Components.dl;
-import org.telegram.ui.Components.yk;
+import org.telegram.ui.Components.al;
+import org.telegram.ui.Components.fl;
 import org.telegram.ui.aa0;
 import v7.i;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final /* synthetic */ int b = 1;
@@ -82,7 +82,7 @@ public final class c extends q {
                     daVar2.c = new HashMap();
                     daVar2.a = aVar;
                     aVar2.accept(daVar2);
-                    r7Var.r((k0) r7Var.b);
+                    r7Var.r((l0) r7Var.b);
                     parcel2.writeNoException();
                     break;
                 }
@@ -91,14 +91,14 @@ public final class c extends q {
                 if (i7 == 1) {
                     a7.a m12 = a7.b.m1(parcel.readStrongBinder());
                     v7.b.a(parcel);
-                    ((dl) ((j1) this.c).b).accept((Location) a7.b.n1(m12));
+                    ((fl) ((j1) this.c).b).accept((Location) a7.b.n1(m12));
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             case 3:
                 if (i7 == 1) {
-                    ((yk) ((j1) this.c).b).run();
+                    ((al) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -129,7 +129,7 @@ public final class c extends q {
                 break;
             default:
                 if (i7 == 1) {
-                    ((yk) ((j1) this.c).b).run();
+                    ((al) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }

@@ -10,15 +10,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y b;
+    public final /* synthetic */ z b;
 
-    public /* synthetic */ x(y yVar, int i7) {
+    public /* synthetic */ x(z zVar, int i7) {
         this.a = i7;
-        this.b = yVar;
+        this.b = zVar;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -26,28 +26,28 @@ public final /* synthetic */ class x implements RequestDelegate {
         switch (this.a) {
             case 0:
                 final int i7 = 1;
-                final y yVar = this.b;
+                final z zVar = this.b;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: kg.w
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i10 = i7;
                         TLObject tLObject2 = tLObject;
-                        y yVar2 = yVar;
+                        z zVar2 = zVar;
                         switch (i10) {
                             case 0:
-                                int i11 = yVar2.a;
+                                int i11 = zVar2.a;
                                 if (tLObject2 instanceof TL_account.TL_businessChatLink) {
                                     TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) tLObject2;
-                                    yVar2.b.add(tL_businessChatLink);
+                                    zVar2.b.add(tL_businessChatLink);
                                     ks.f(i11).k(ks.J1, new Object[0]);
                                     ks.f(i11).k(ks.K1, tL_businessChatLink);
-                                    yVar2.f();
+                                    zVar2.f();
                                     break;
                                 }
                                 break;
                             default:
-                                ArrayList arrayList = yVar2.b;
-                                int i12 = yVar2.a;
+                                ArrayList arrayList = zVar2.b;
+                                int i12 = zVar2.a;
                                 if (tLObject2 instanceof TL_account.businessChatLinks) {
                                     TL_account.businessChatLinks businesschatlinks = (TL_account.businessChatLinks) tLObject2;
                                     arrayList.clear();
@@ -56,12 +56,12 @@ public final /* synthetic */ class x implements RequestDelegate {
                                     mp.u1(i12).Z3(businesschatlinks.chats, false);
                                     tr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
                                     ks.f(i12).k(ks.J1, new Object[0]);
-                                    yVar2.f();
+                                    zVar2.f();
                                 } else {
                                     a8.g(new RuntimeException("Unexpected response from server!"), true);
                                 }
-                                yVar2.c = false;
-                                yVar2.d = true;
+                                zVar2.c = false;
+                                zVar2.d = true;
                                 break;
                         }
                     }
@@ -69,28 +69,28 @@ public final /* synthetic */ class x implements RequestDelegate {
                 break;
             default:
                 final int i10 = 0;
-                final y yVar2 = this.b;
+                final z zVar2 = this.b;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: kg.w
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i102 = i10;
                         TLObject tLObject2 = tLObject;
-                        y yVar22 = yVar2;
+                        z zVar22 = zVar2;
                         switch (i102) {
                             case 0:
-                                int i11 = yVar22.a;
+                                int i11 = zVar22.a;
                                 if (tLObject2 instanceof TL_account.TL_businessChatLink) {
                                     TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) tLObject2;
-                                    yVar22.b.add(tL_businessChatLink);
+                                    zVar22.b.add(tL_businessChatLink);
                                     ks.f(i11).k(ks.J1, new Object[0]);
                                     ks.f(i11).k(ks.K1, tL_businessChatLink);
-                                    yVar22.f();
+                                    zVar22.f();
                                     break;
                                 }
                                 break;
                             default:
-                                ArrayList arrayList = yVar22.b;
-                                int i12 = yVar22.a;
+                                ArrayList arrayList = zVar22.b;
+                                int i12 = zVar22.a;
                                 if (tLObject2 instanceof TL_account.businessChatLinks) {
                                     TL_account.businessChatLinks businesschatlinks = (TL_account.businessChatLinks) tLObject2;
                                     arrayList.clear();
@@ -99,12 +99,12 @@ public final /* synthetic */ class x implements RequestDelegate {
                                     mp.u1(i12).Z3(businesschatlinks.chats, false);
                                     tr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
                                     ks.f(i12).k(ks.J1, new Object[0]);
-                                    yVar22.f();
+                                    zVar22.f();
                                 } else {
                                     a8.g(new RuntimeException("Unexpected response from server!"), true);
                                 }
-                                yVar22.c = false;
-                                yVar22.d = true;
+                                zVar22.c = false;
+                                zVar22.d = true;
                                 break;
                         }
                     }

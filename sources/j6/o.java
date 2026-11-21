@@ -24,18 +24,17 @@ import android.widget.OverScroller;
 import android.widget.TextView;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
-import bg.e0;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import hi.u5;
+import hi.t5;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
-import ki.n3;
+import ki.m3;
 import m.r1;
-import oi.d0;
+import oi.e0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MusicPlayerService;
 import org.telegram.messenger.Utilities;
@@ -65,26 +64,26 @@ import org.telegram.messenger.vr;
 import org.telegram.messenger.xf;
 import org.telegram.messenger.yd;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.j1;
-import org.telegram.ui.ActionBar.j2;
-import org.telegram.ui.ActionBar.k4;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.ActionBar.x2;
+import org.telegram.ui.ActionBar.i1;
+import org.telegram.ui.ActionBar.i2;
+import org.telegram.ui.ActionBar.j4;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Cells.l7;
-import org.telegram.ui.Cells.r6;
 import org.telegram.ui.Cells.s7;
+import org.telegram.ui.Cells.u5;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.g8;
-import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.f8;
+import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.p7;
-import org.telegram.ui.Components.q6;
+import org.telegram.ui.Components.r6;
+import org.telegram.ui.Components.s41;
 import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -339,10 +338,10 @@ public final /* synthetic */ class o implements Runnable {
                 eVar.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 5:
-                Object obj = ((u5) this.b).b;
+                Object obj = ((t5) this.b).b;
                 return;
             case 6:
-                ((d0) this.b).h();
+                ((e0) this.b).h();
                 return;
             case 7:
                 if (!((s5) this.b).a.isEmpty()) {
@@ -397,10 +396,10 @@ public final /* synthetic */ class o implements Runnable {
                     }
                     byteBuffer.limit(read);
                     int i13 = mediaController.B1;
-                    ji.m mVar = vr.k;
-                    if (mVar != null && read > 0) {
+                    ji.o oVar = vr.k;
+                    if (oVar != null && read > 0) {
                         try {
-                            mVar.o(byteBuffer, read, i13, 1);
+                            oVar.n(byteBuffer, read, i13, 1);
                         } catch (Throwable th2) {
                             a8.g(th2, true);
                         }
@@ -584,7 +583,7 @@ public final /* synthetic */ class o implements Runnable {
                             }
                             czVar.r.seek(0L);
                             RandomAccessFile randomAccessFile = czVar.r;
-                            e0 e0Var = czVar.s;
+                            bg.e0 e0Var = czVar.s;
                             randomAccessFile.write(e0Var.a, 0, e0Var.b);
                             czVar.r.getFD().sync();
                             return;
@@ -611,84 +610,84 @@ public final /* synthetic */ class o implements Runnable {
                 actionBarLayout.h0(false, true, false);
                 return;
             case 18:
-                j1 j1Var = (j1) this.b;
-                ValueAnimator valueAnimator = j1Var.m;
+                i1 i1Var = (i1) this.b;
+                ValueAnimator valueAnimator = i1Var.m;
                 if (valueAnimator == null || valueAnimator.isRunning()) {
                     return;
                 }
-                j1Var.m.start();
+                i1Var.m.start();
                 return;
             case 19:
-                x2 x2Var = (x2) this.b;
-                if (x2Var.H != this || (z10 = x2Var.J)) {
+                w2 w2Var = (w2) this.b;
+                if (w2Var.H != this || (z10 = w2Var.J)) {
                     return;
                 }
-                x2Var.H = null;
+                w2Var.H = null;
                 if (z10) {
                     return;
                 }
-                x2Var.b.setVisibility(0);
-                if (x2Var.m0()) {
+                w2Var.b.setVisibility(0);
+                if (w2Var.m0()) {
                     return;
                 }
-                if (x2Var.K) {
-                    x2Var.c.setLayerType(2, null);
+                if (w2Var.K) {
+                    w2Var.c.setLayerType(2, null);
                 }
-                if (x2Var.W0) {
-                    x2Var.b.setTranslationX(g0.L(48.0f));
-                    x2Var.b.setAlpha(0.0f);
-                    x2Var.b.setTranslationY(0.0f);
+                if (w2Var.W0) {
+                    w2Var.b.setTranslationX(g0.L(48.0f));
+                    w2Var.b.setAlpha(0.0f);
+                    w2Var.b.setTranslationY(0.0f);
                 } else {
-                    x2Var.b.setTranslationY(Math.max(0, Math.min(g0.n, x2Var.R())) + g0.L(10.0f) + x2Var.S() + x2Var.f);
+                    w2Var.b.setTranslationY(Math.max(0, Math.min(g0.n, w2Var.R())) + g0.L(10.0f) + w2Var.S() + w2Var.f);
                 }
-                x2Var.h0();
-                x2Var.B0 = 1;
-                ValueAnimator valueAnimator2 = x2Var.C0;
+                w2Var.h0();
+                w2Var.B0 = 1;
+                ValueAnimator valueAnimator2 = w2Var.C0;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(x2Var.D0, 1.0f);
-                x2Var.C0 = ofFloat;
-                ofFloat.addUpdateListener(new j2(x2Var, 0));
-                x2Var.A0 = new AnimatorSet();
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(w2Var.D0, 1.0f);
+                w2Var.C0 = ofFloat;
+                ofFloat.addUpdateListener(new i2(w2Var, 0));
+                w2Var.A0 = new AnimatorSet();
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(ObjectAnimator.ofFloat(x2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(x2Var.b, (Property<ViewGroup, Float>) View.ALPHA, 1.0f));
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(x2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
-                ofFloat2.addUpdateListener(new j2(x2Var, 1));
+                arrayList.add(ObjectAnimator.ofFloat(w2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(w2Var.b, (Property<ViewGroup, Float>) View.ALPHA, 1.0f));
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(w2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
+                ofFloat2.addUpdateListener(new i2(w2Var, 1));
                 arrayList.add(ofFloat2);
-                arrayList.add(ObjectAnimator.ofInt(x2Var.Z, q6.d, x2Var.p0 ? x2Var.q0 : 0));
-                arrayList.add(x2Var.C0);
-                x2Var.F(arrayList, true);
-                x2Var.A0.playTogether(arrayList);
-                if (x2Var.W0) {
-                    x2Var.A0.setDuration(250L);
-                    x2Var.A0.setInterpolator(lr.f);
+                arrayList.add(ObjectAnimator.ofInt(w2Var.Z, r6.d, w2Var.p0 ? w2Var.q0 : 0));
+                arrayList.add(w2Var.C0);
+                w2Var.F(arrayList, true);
+                w2Var.A0.playTogether(arrayList);
+                if (w2Var.W0) {
+                    w2Var.A0.setDuration(250L);
+                    w2Var.A0.setInterpolator(nr.f);
                 } else {
-                    x2Var.A0.setDuration(x2Var.k0);
-                    x2Var.A0.setInterpolator(x2Var.l0);
+                    w2Var.A0.setDuration(w2Var.k0);
+                    w2Var.A0.setInterpolator(w2Var.l0);
                 }
-                x2Var.A0.setStartDelay(x2Var.E ? 0L : 20L);
-                x2Var.A0.setInterpolator(x2Var.l0);
-                x2Var.M0.d();
-                x2Var.A0.addListener(new p2(x2Var, r15));
-                if (x2Var.L0) {
+                w2Var.A0.setStartDelay(w2Var.E ? 0L : 20L);
+                w2Var.A0.setInterpolator(w2Var.l0);
+                w2Var.M0.d();
+                w2Var.A0.addListener(new o2(w2Var, r15));
+                if (w2Var.L0) {
                     ks.e().k(98, 512);
                 }
-                x2Var.A0.start();
+                w2Var.A0.start();
                 return;
             case 20:
-                k4 k4Var = (k4) this.b;
-                k4Var.k();
-                k4Var.j();
-                k4Var.f.setAlpha(1.0f);
+                j4 j4Var = (j4) this.b;
+                j4Var.k();
+                j4Var.j();
+                j4Var.f.setAlpha(1.0f);
                 return;
             case 21:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                l80 l80Var = jVar.x;
-                if (l80Var != null) {
-                    CharacterStyle characterStyle = l80Var.i;
-                    final String url = characterStyle instanceof p41 ? ((p41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+                n80 n80Var = jVar.x;
+                if (n80Var != null) {
+                    CharacterStyle characterStyle = n80Var.i;
+                    final String url = characterStyle instanceof s41 ? ((s41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
                     try {
                         jVar.performHapticFeedback(0, 2);
                     } catch (Exception unused2) {
@@ -697,15 +696,15 @@ public final /* synthetic */ class o implements Runnable {
                     final float f13 = jVar.y;
                     if (jVar.getContext() != null) {
                         final ClickableSpan clickableSpan = (ClickableSpan) jVar.x.i;
-                        x2 j11 = f3.j(1, jVar.getContext(), null, false);
+                        w2 j11 = f3.j(1, jVar.getContext(), null, false);
                         j11.P = url;
                         j11.Q = false;
-                        CharSequence[] charSequenceArr = {gd.M0(2131747624, null), gd.M0(2131751756, null)};
+                        CharSequence[] charSequenceArr = {gd.N0(2131747623, null), gd.N0(2131751755, null)};
                         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i24) {
                                 j jVar2 = (j) j6.o.this.b;
-                                org.telegram.ui.ActionBar.h2 h2Var = jVar2.I;
+                                org.telegram.ui.ActionBar.g2 g2Var = jVar2.I;
                                 if (i24 == 0) {
                                     jVar2.d(clickableSpan, staticLayout, f13);
                                     return;
@@ -715,11 +714,11 @@ public final /* synthetic */ class o implements Runnable {
                                     org.telegram.messenger.g0.g(str);
                                     if (org.telegram.messenger.g0.G3()) {
                                         if (str.startsWith("@")) {
-                                            org.telegram.messenger.f3.n(null, 2131743428, lc.b0(h2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.f3.n(null, 2131743422, lc.b0(g2Var), R.raw.copy, 36);
                                         } else if (str.startsWith("#") || str.startsWith("$")) {
-                                            org.telegram.messenger.f3.n(null, 2131749170, lc.b0(h2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.f3.n(null, 2131749169, lc.b0(g2Var), R.raw.copy, 36);
                                         } else {
-                                            org.telegram.messenger.f3.n(null, 2131748729, lc.b0(h2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.f3.n(null, 2131748728, lc.b0(g2Var), R.raw.copy, 36);
                                         }
                                     }
                                 }
@@ -751,7 +750,7 @@ public final /* synthetic */ class o implements Runnable {
                 zVar.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             case 23:
-                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) this.b;
+                u5 u5Var = (u5) this.b;
                 TextView textView = u5Var.b;
                 textView.setTag(null);
                 AnimatorSet animatorSet = new AnimatorSet();
@@ -760,11 +759,11 @@ public final /* synthetic */ class o implements Runnable {
                 animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 1.0f));
                 u5Var.d.setDuration(250L);
                 u5Var.d.setInterpolator(new DecelerateInterpolator());
-                u5Var.d.addListener(new n3(this, 26));
+                u5Var.d.addListener(new m3(this, 26));
                 u5Var.d.start();
                 return;
             case 24:
-                r6 r6Var = (r6) this.b;
+                org.telegram.ui.Cells.r6 r6Var = (org.telegram.ui.Cells.r6) this.b;
                 r6Var.a();
                 RectF rectF = r6Var.r;
                 r6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
@@ -789,12 +788,12 @@ public final /* synthetic */ class o implements Runnable {
                 return;
             case 27:
                 p7 p7Var = (p7) this.b;
-                g8 g8Var = p7Var.E;
+                f8 f8Var = p7Var.E;
                 if (MediaController.B().v0 == null) {
                     return;
                 }
-                int i26 = g8Var.D2 + 1;
-                g8Var.D2 = i26;
+                int i26 = f8Var.D2 + 1;
+                f8Var.D2 = i26;
                 if (i26 != 1) {
                     if (i26 != 2) {
                         MediaController.B().m0(true, 13.0f);
@@ -806,51 +805,51 @@ public final /* synthetic */ class o implements Runnable {
                     }
                 }
                 p7Var.w = true;
-                g8Var.B2 = 1;
+                f8Var.B2 = 1;
                 if (MediaController.B().H()) {
-                    g8Var.Z0();
-                } else if (g8Var.B2 == 1) {
-                    g0.r(g8Var.I2);
-                    g8Var.F2 = 0L;
+                    f8Var.Z0();
+                } else if (f8Var.B2 == 1) {
+                    g0.r(f8Var.I2);
+                    f8Var.F2 = 0L;
                 }
                 MediaController.B().m0(true, 4.0f);
                 g0.h3(this, 2000L);
                 return;
             case 28:
-                g8 g8Var2 = (g8) this.b;
-                f61 f61Var = MediaController.B().j0;
-                long U = f61Var == null ? 0L : f61Var.U();
+                f8 f8Var2 = (f8) this.b;
+                i61 i61Var = MediaController.B().j0;
+                long U = i61Var == null ? 0L : i61Var.U();
                 if (U == 0 || U == -9223372036854775807L) {
-                    g8Var2.E2 = System.currentTimeMillis();
+                    f8Var2.E2 = System.currentTimeMillis();
                     return;
                 }
-                float f14 = g8Var2.C2;
+                float f14 = f8Var2.C2;
                 long currentTimeMillis2 = System.currentTimeMillis();
-                long j12 = currentTimeMillis2 - g8Var2.E2;
-                g8Var2.E2 = currentTimeMillis2;
-                long j13 = currentTimeMillis2 - g8Var2.F2;
-                int i27 = g8Var2.D2;
+                long j12 = currentTimeMillis2 - f8Var2.E2;
+                f8Var2.E2 = currentTimeMillis2;
+                long j13 = currentTimeMillis2 - f8Var2.F2;
+                int i27 = f8Var2.D2;
                 float f15 = ((long) ((f14 * r2) + (((i27 == 1 ? 3L : i27 == 2 ? 6L : 12L) * j12) - j12))) / U;
                 if (f15 < 0.0f) {
                     f15 = 0.0f;
                 }
-                g8Var2.C2 = f15;
+                f8Var2.C2 = f15;
                 fj fjVar = MediaController.B().v0;
                 if (fjVar != null && fjVar.I3()) {
                     if (!MediaController.B().H()) {
-                        MediaController.B().v0.b0 = g8Var2.C2;
+                        MediaController.B().v0.b0 = f8Var2.C2;
                     }
-                    g8Var2.c1(fjVar, false);
+                    f8Var2.c1(fjVar, false);
                 }
-                if (g8Var2.B2 == 1 && g8Var2.D2 > 0 && MediaController.B().H()) {
-                    if (j13 > 200 || g8Var2.C2 == 0.0f) {
-                        g8Var2.F2 = currentTimeMillis2;
+                if (f8Var2.B2 == 1 && f8Var2.D2 > 0 && MediaController.B().H()) {
+                    if (j13 > 200 || f8Var2.C2 == 0.0f) {
+                        f8Var2.F2 = currentTimeMillis2;
                         MediaController.B().i0(MediaController.B().v0, f15);
                     }
-                    if (g8Var2.D2 <= 0 || g8Var2.C2 <= 0.0f) {
+                    if (f8Var2.D2 <= 0 || f8Var2.C2 <= 0.0f) {
                         return;
                     }
-                    g0.h3(g8Var2.I2, 16L);
+                    g0.h3(f8Var2.I2, 16L);
                     return;
                 }
                 return;
@@ -872,8 +871,8 @@ public final /* synthetic */ class o implements Runnable {
         this.b = obj;
     }
 
-    public o(u5 u5Var, int i7) {
+    public o(t5 t5Var, int i7) {
         this.a = 5;
-        this.b = u5Var;
+        this.b = t5Var;
     }
 }

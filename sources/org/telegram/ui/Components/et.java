@@ -1,27 +1,124 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final class et extends m6 {
-    public final /* synthetic */ int e0;
-    public final /* synthetic */ mt f0;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ et(mt mtVar, int i7) {
-        super(false, false, false);
-        this.e0 = i7;
-        this.f0 = mtVar;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public class et extends View {
+    public final xy0 a;
+    public final Drawable b;
+    public final ImageReceiver c;
+    public final Rect d;
+    public final RectF e;
+    public fh.g f;
+
+    public et(Context context, CharSequence charSequence) {
+        super(context);
+        this.d = new Rect();
+        this.e = new RectF();
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.c = imageReceiver;
+        imageReceiver.J0(org.telegram.messenger.g0.L(22.66f));
+        this.a = new xy0(charSequence, 14.0f, org.telegram.messenger.g0.o());
+        Drawable g10 = i5.c.g(context, R.drawable.arrow_newchat);
+        this.b = g10;
+        g10.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.e0) {
-            case 0:
-                this.f0.invalidate();
-                break;
-            default:
-                this.f0.invalidate();
-                break;
+    public final void a(TLRPC.Photo photo, Object obj) {
+        TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.L(48.0f), false, null, true);
+        TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.L(24.0f), false, w10, false);
+        this.c.r0(org.telegram.messenger.fc.i(w10, photo), "24_24", org.telegram.messenger.fc.i(w11, photo), "24_24", null, 0L, null, obj, 0);
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.d.contains((int) motionEvent.getX(), (int) motionEvent.getY()) || motionEvent.getAction() != 0) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c.P();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.c.R();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        ImageReceiver imageReceiver = this.c;
+        boolean I = imageReceiver.I();
+        int L = org.telegram.messenger.g0.L(19.0f) + ((int) Math.ceil(this.a.c)) + org.telegram.messenger.g0.L(I ? 30.33f : 11.33f);
+        int L2 = org.telegram.messenger.g0.L(24.0f);
+        int width = (getWidth() - L) / 2;
+        int height = getHeight() / 2;
+        int i7 = height - (L2 / 2);
+        int i10 = L + width;
+        Rect rect = this.d;
+        rect.set(width, i7, i10, L2 + i7);
+        rect.inset(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f));
+        fh.g gVar = this.f;
+        if (gVar != null) {
+            gVar.setBounds(rect);
+            this.f.draw(canvas);
+        }
+        if (I) {
+            float L3 = org.telegram.messenger.g0.L(0.66f) + width;
+            float f10 = height;
+            float L4 = f10 - (org.telegram.messenger.g0.L(22.66f) / 2.0f);
+            float L5 = org.telegram.messenger.g0.L(23.32f) + width;
+            float L6 = (org.telegram.messenger.g0.L(22.66f) / 2.0f) + f10;
+            RectF rectF = this.e;
+            rectF.set(L3, L4, L5, L6);
+            imageReceiver.A0(rectF);
+            imageReceiver.h(canvas, null);
+        }
+        this.a.c(width + r2, height, 1.0f, -1, canvas);
+        int L7 = i10 - org.telegram.messenger.g0.L(17.0f);
+        int L8 = height - org.telegram.messenger.g0.L(6.0f);
+        int L9 = i10 - org.telegram.messenger.g0.L(5.0f);
+        int L10 = org.telegram.messenger.g0.L(6.0f) + height;
+        Drawable drawable = this.b;
+        drawable.setBounds(L7, L8, L9, L10);
+        drawable.draw(canvas);
+    }
+
+    public void setBlurredBackgroundDrawable(fh.g gVar) {
+        gVar.q(org.telegram.messenger.g0.L(4.0f));
+        gVar.r(org.telegram.messenger.g0.L(11.0f));
+        this.f = gVar;
+    }
+
+    public void setImage(Bitmap bitmap) {
+        this.c.v0(bitmap);
+        invalidate();
+    }
+
+    public void setImage(String str) {
+        if (str == null) {
+            setImage((Bitmap) null);
+        } else {
+            Utilities.e.c(new mf(27, this, str));
         }
     }
 }

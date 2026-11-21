@@ -3,19 +3,19 @@ package org.telegram.ui.Wallet;
 import java.util.ArrayList;
 import org.telegram.messenger.fs;
 import org.telegram.messenger.ks;
-import org.telegram.ui.o60;
+import org.telegram.ui.fe0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class h0 implements Runnable, fs {
     public boolean a;
     public final /* synthetic */ ks b;
-    public final /* synthetic */ o60 c;
+    public final /* synthetic */ fe0 c;
     public final /* synthetic */ u0 d;
 
-    public h0(ks ksVar, o60 o60Var, u0 u0Var) {
+    public h0(ks ksVar, fe0 fe0Var, u0 u0Var) {
         this.b = ksVar;
-        this.c = o60Var;
+        this.c = fe0Var;
         this.d = u0Var;
     }
 

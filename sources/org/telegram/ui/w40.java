@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w40 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,15 +59,15 @@ public final /* synthetic */ class w40 implements Runnable {
                 } else {
                     boolean z11 = true;
                     ?? r62 = 0;
-                    String S0 = org.telegram.messenger.gd.E0().S0(lowerCase, true, false);
-                    if (lowerCase.equals(S0) || S0.isEmpty()) {
-                        S0 = null;
+                    String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                    if (lowerCase.equals(T0) || T0.isEmpty()) {
+                        T0 = null;
                     }
-                    int i7 = (S0 != null ? 1 : 0) + 1;
+                    int i7 = (T0 != null ? 1 : 0) + 1;
                     String[] strArr = new String[i7];
                     strArr[0] = lowerCase;
-                    if (S0 != null) {
-                        strArr[1] = S0;
+                    if (T0 != null) {
+                        strArr[1] = T0;
                     }
                     ArrayList arrayList3 = new ArrayList();
                     ArrayList arrayList4 = new ArrayList();
@@ -92,14 +92,14 @@ public final /* synthetic */ class w40 implements Runnable {
                             arrayList2 = arrayList;
                             r62 = 0;
                         }
-                        String S02 = org.telegram.messenger.gd.E0().S0(str, z11, r62);
-                        if (str.equals(S02)) {
-                            S02 = null;
+                        String T02 = org.telegram.messenger.gd.E0().T0(str, z11, r62);
+                        if (str.equals(T02)) {
+                            T02 = null;
                         }
                         char c11 = r62;
                         for (int i11 = r62; i11 < i7; i11++) {
                             String str5 = strArr[i11];
-                            if (str.startsWith(str5) || i5.c.B(" ", str5, str) || (S02 != null && (S02.startsWith(str5) || i5.c.B(" ", str5, S02)))) {
+                            if (str.startsWith(str5) || i5.c.B(" ", str5, str) || (T02 != null && (T02.startsWith(str5) || i5.c.B(" ", str5, T02)))) {
                                 c10 = 1;
                             } else {
                                 if (K != null && K.startsWith(str5)) {

@@ -1,15 +1,17 @@
 package tg;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface c1 {
-    void D();
+public final class c1 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    void a();
-
-    void b();
-
-    void c(int i7);
-
-    void t();
+    public c1(int i7, int i10, int i11, int i12) {
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+    }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oy0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                 saveToGallerySettingsActivity.finishFragment();
                 break;
             case 3:
-                ((org.telegram.ui.Components.x20) this.b).dismiss();
+                ((org.telegram.ui.Components.a30) this.b).dismiss();
                 break;
             case 4:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
@@ -50,9 +50,9 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                 if (fjVar != null) {
                     TLRPC.Message message = fjVar.k;
                     if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
-                        hi.m3 m3Var = secretMediaViewer.r;
-                        if (m3Var.W) {
-                            m3Var.f(true);
+                        hi.l3 l3Var = secretMediaViewer.r;
+                        if (l3Var.W) {
+                            l3Var.f(true);
                             break;
                         } else {
                             secretMediaViewer.m();
@@ -62,24 +62,24 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                 }
                 break;
             case 5:
-                b21 b21Var = (b21) this.b;
-                if (b21Var.W1 instanceof TLRPC.User) {
-                    hi.d dVar = b21Var.d2;
-                    if (!dVar.R) {
-                        dVar.setLoading(true);
-                        b21Var.f1((TLRPC.User) b21Var.W1, null, null);
+                c21 c21Var = (c21) this.b;
+                if (c21Var.W1 instanceof TLRPC.User) {
+                    hi.e eVar = c21Var.d2;
+                    if (!eVar.R) {
+                        eVar.setLoading(true);
+                        c21Var.f1((TLRPC.User) c21Var.W1, null, null);
                         break;
                     }
                 }
                 break;
             case 6:
-                SessionsActivity sessionsActivity = ((a31) this.b).f;
+                SessionsActivity sessionsActivity = ((b31) this.b).f;
                 if (sessionsActivity.getParentActivity() != null) {
                     if (sessionsActivity.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
                         sessionsActivity.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
                         break;
                     } else {
-                        t9.j0(sessionsActivity.getParentActivity(), 2, new y21(sessionsActivity));
+                        t9.j0(sessionsActivity.getParentActivity(), 2, new z21(sessionsActivity));
                         break;
                     }
                 }
@@ -90,7 +90,7 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                 SharedPreferences.Editor edit = org.telegram.messenger.mp.g1().edit();
                 edit.putBoolean("compactMode", org.telegram.messenger.bz.H0);
                 edit.apply();
-                org.telegram.ui.ActionBar.n6.k(false, false);
+                org.telegram.ui.ActionBar.m6.k(false, false);
                 h61Var.c.setChecked(org.telegram.messenger.bz.H0);
                 org.telegram.ui.Cells.ba baVar = h61Var.a;
                 for (org.telegram.ui.Cells.r1 r1Var : baVar.getCells()) {

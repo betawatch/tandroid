@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final di.b1 a;
@@ -115,7 +115,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.M0(2131754895, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131754895, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -186,7 +186,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
             TL_iv.pageBlockCollage pageblockcollage3 = h1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (h1Var.x.H) {
-                alignment = org.telegram.ui.Components.wu0.a();
+                alignment = org.telegram.ui.Components.zu0.a();
             }
             z2 n11 = g4.n(g4Var, h1Var, null, richText2, L, 0, pageblockcollage3, alignment, 0, h1Var.x);
             h1Var.d = n11;

@@ -5,17 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.view.KeyEvent;
-import fi.a6;
+import fi.l4;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
+import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.kk;
-import org.telegram.ui.Components.lg;
+import org.telegram.ui.Components.mk;
+import org.telegram.ui.Components.og;
 import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -47,7 +48,7 @@ public final class f extends BroadcastReceiver {
                     return;
                 }
             case 3:
-                ((Executor) ((h2.w) this.b).c).execute(new a6(23, this, context));
+                ((Executor) ((h2.w) this.b).c).execute(new l4(25, this, context));
                 break;
             case 4:
                 n2.e eVar = (n2.e) this.b;
@@ -57,7 +58,7 @@ public final class f extends BroadcastReceiver {
                 }
                 break;
             case 5:
-                ((org.telegram.messenger.a6) this.b).g();
+                ((a6) this.b).g();
                 break;
             case 6:
                 if (s2.a) {
@@ -75,12 +76,12 @@ public final class f extends BroadcastReceiver {
                 t0.d.post(new org.telegram.messenger.a(this, 14));
                 break;
             case 8:
-                lg lgVar = new lg(this, 25);
+                og ogVar = new og(this, 25);
                 if (!"android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    lgVar.run();
+                    ogVar.run();
                     break;
                 } else {
-                    ((kk) this.b).r.postDelayed(lgVar, 1000L);
+                    ((mk) this.b).r.postDelayed(ogVar, 1000L);
                     break;
                 }
             case 9:
@@ -92,7 +93,7 @@ public final class f extends BroadcastReceiver {
                 break;
             case 11:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((q4.f) ((q4.u) ((p4.m0) this.b).n.c).a).a.dispatchMediaButtonEvent(keyEvent);
+                    ((q4.f) ((q4.u) ((p4.n0) this.b).n.c).a).a.dispatchMediaButtonEvent(keyEvent);
                     break;
                 }
                 break;

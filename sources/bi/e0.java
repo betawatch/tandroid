@@ -2,7 +2,7 @@ package bi;
 
 import android.content.Context;
 import android.text.TextUtils;
-import di.o9;
+import di.p9;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e0(ai.v1 v1Var, int i7, long j3, org.telegram.ui.ActionBar.h2 h2Var, s4 s4Var) {
+    public /* synthetic */ e0(ai.x1 x1Var, int i7, long j3, org.telegram.ui.ActionBar.g2 g2Var, w4 w4Var) {
         this.a = 6;
-        this.d = v1Var;
+        this.d = x1Var;
         this.c = i7;
         this.b = j3;
-        this.e = h2Var;
-        this.f = s4Var;
+        this.e = g2Var;
+        this.f = w4Var;
     }
 
     @Override // java.lang.Runnable
@@ -46,16 +46,16 @@ public final /* synthetic */ class e0 implements Runnable {
         TL_stories.StoryItem storyItem = null;
         switch (this.a) {
             case 0:
-                new z8((Context) this.d, this.c, ((q9) this.e).d, null, this.b, (Runnable) this.f, false, false).show();
+                new d9((Context) this.d, this.c, ((q9) this.e).d, null, this.b, (Runnable) this.f, false, false).show();
                 break;
             case 1:
-                c1.c cVar = (c1.c) this.d;
+                c1.a aVar = (c1.a) this.d;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.e;
                 long j3 = this.b;
                 String str = (String) this.f;
                 int i10 = this.c;
-                cVar.run();
-                u4.s(tL_starGiftUnique, j3 != 0 ? gd.a0(null, null, 2131749656, str, org.telegram.messenger.n5.s(i10, j3)) : gd.a0(null, null, 2131749657, str));
+                aVar.run();
+                y4.s(tL_starGiftUnique, j3 != 0 ? gd.a0(null, null, 2131749655, str, org.telegram.messenger.n5.s(i10, j3)) : gd.a0(null, null, 2131749656, str));
                 break;
             case 2:
                 di.k1 k1Var = (di.k1) this.d;
@@ -64,10 +64,10 @@ public final /* synthetic */ class e0 implements Runnable {
                 int i11 = this.c;
                 long j10 = this.b;
                 k1Var.run();
-                u4.s(tL_starGiftUnique2, gd.a0(null, null, 2131749651, str2));
+                y4.s(tL_starGiftUnique2, gd.a0(null, null, 2131749650, str2));
                 String str3 = tL_starGiftUnique2.slug;
                 if (!TextUtils.isEmpty(str3)) {
-                    org.telegram.messenger.g0.h3(new k4(i11, 0, j10, str3, true), u4.a[0]);
+                    org.telegram.messenger.g0.h3(new o4(i11, 0, j10, str3, true), y4.a[0]);
                     break;
                 }
                 break;
@@ -97,16 +97,16 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 break;
             case 4:
-                hi.d dVar = (hi.d) this.d;
+                hi.e eVar = (hi.e) this.d;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.e;
                 int i14 = this.c;
-                org.telegram.ui.ActionBar.x2[] x2VarArr = (org.telegram.ui.ActionBar.x2[]) this.f;
+                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.f;
                 long j12 = this.b;
-                dVar.setLoading(true);
+                eVar.setLoading(true);
                 TL_stars.TL_fulfillStarsSubscription tL_fulfillStarsSubscription = new TL_stars.TL_fulfillStarsSubscription();
                 tL_fulfillStarsSubscription.subscription_id = starsSubscription.id;
                 tL_fulfillStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
-                ConnectionsManager.getInstance(i14).sendRequest(tL_fulfillStarsSubscription, new di.v(i14, 1, j12, dVar, x2VarArr));
+                ConnectionsManager.getInstance(i14).sendRequest(tL_fulfillStarsSubscription, new di.v(i14, 1, j12, eVar, w2VarArr));
                 break;
             case 5:
                 fi.p6 p6Var = (fi.p6) this.d;
@@ -153,14 +153,14 @@ public final /* synthetic */ class e0 implements Runnable {
                     break;
                 }
             case 6:
-                ai.v1 v1Var = (ai.v1) this.d;
+                ai.x1 x1Var = (ai.x1) this.d;
                 int i17 = this.c;
                 long j14 = this.b;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.e;
-                s4 s4Var = (s4) this.f;
-                v1Var.a(Boolean.TRUE);
-                lc.Y().Q(R.raw.contact_check, 36, gd.M0(2131749333, null)).j();
-                ii.n.a(i17, j14, 180000 + System.currentTimeMillis(), 0, new o9(v1Var, h2Var, i17, s4Var, 1));
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.e;
+                w4 w4Var = (w4) this.f;
+                x1Var.a(Boolean.TRUE);
+                lc.Y().Q(R.raw.contact_check, 36, gd.N0(2131749332, null)).j();
+                ii.n.a(i17, j14, 180000 + System.currentTimeMillis(), 0, new p9(x1Var, g2Var, i17, w4Var, 1));
                 break;
             case 7:
                 org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.d;
@@ -221,9 +221,9 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = runnable;
     }
 
-    public /* synthetic */ e0(c1.c cVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, String str, int i7) {
+    public /* synthetic */ e0(c1.a aVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, String str, int i7) {
         this.a = 1;
-        this.d = cVar;
+        this.d = aVar;
         this.e = tL_starGiftUnique;
         this.b = j3;
         this.f = str;

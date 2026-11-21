@@ -20,7 +20,7 @@ import java.io.ByteArrayInputStream;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class n1 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -73,11 +73,11 @@ public final class n1 extends WebViewClient {
         switch (i7) {
             case 1:
                 super.onPageFinished(webView, str);
-                org.telegram.ui.Components.gu guVar = (org.telegram.ui.Components.gu) obj;
-                ImageView imageView = guVar.x1;
-                if (!guVar.y1) {
-                    guVar.s1.setVisibility(4);
-                    guVar.r1.setVisibility(4);
+                org.telegram.ui.Components.iu iuVar = (org.telegram.ui.Components.iu) obj;
+                ImageView imageView = iuVar.x1;
+                if (!iuVar.y1) {
+                    iuVar.s1.setVisibility(4);
+                    iuVar.r1.setVisibility(4);
                     imageView.setEnabled(true);
                     imageView.setAlpha(1.0f);
                     break;
@@ -98,8 +98,8 @@ public final class n1 extends WebViewClient {
             case 3:
                 super.onPageFinished(webView, str);
                 cd1 cd1Var = (cd1) obj;
-                org.telegram.ui.Components.oq oqVar = cd1Var.c;
-                if (oqVar != null && oqVar.getVisibility() == 0) {
+                org.telegram.ui.Components.qq qqVar = cd1Var.c;
+                if (qqVar != null && qqVar.getVisibility() == 0) {
                     AnimatorSet animatorSet = new AnimatorSet();
                     cd1Var.b.getContentView().setVisibility(0);
                     cd1Var.b.setEnabled(true);
@@ -179,10 +179,10 @@ public final class n1 extends WebViewClient {
                     LaunchActivity launchActivity = LaunchActivity.H1;
                     if (launchActivity == null || !launchActivity.isFinishing()) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ((q1) obj).getContext(), null);
-                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                        u1Var.S = org.telegram.messenger.gd.M0(2131752093, null);
-                        u1Var.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new hq0(this, 8));
-                        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
+                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                        t1Var.S = org.telegram.messenger.gd.N0(2131752092, null);
+                        t1Var.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.N0(2131752093, null), new hq0(this, 8));
+                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                         alertDialog$Builder.p();
                     }
                     return true;
@@ -191,14 +191,14 @@ public final class n1 extends WebViewClient {
                     return false;
                 }
             case 1:
-                org.telegram.ui.Components.gu guVar = (org.telegram.ui.Components.gu) obj;
+                org.telegram.ui.Components.iu iuVar = (org.telegram.ui.Components.iu) obj;
                 try {
-                    if (org.telegram.messenger.g0.M1(guVar.getContext())) {
-                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, guVar.getContext(), guVar.J0);
-                        org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
-                        u1Var2.S = org.telegram.messenger.gd.M0(2131752093, null);
-                        u1Var2.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new org.telegram.ui.Components.mo(this, 11));
-                        alertDialog$Builder2.k(org.telegram.messenger.gd.M0(2131747638, null), null);
+                    if (org.telegram.messenger.g0.M1(iuVar.getContext())) {
+                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, iuVar.getContext(), iuVar.J0);
+                        org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
+                        t1Var2.S = org.telegram.messenger.gd.N0(2131752092, null);
+                        t1Var2.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.N0(2131752093, null), new org.telegram.ui.Components.oo(this, 11));
+                        alertDialog$Builder2.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                         alertDialog$Builder2.p();
                     }
                     return true;
@@ -227,7 +227,7 @@ public final class n1 extends WebViewClient {
                 if (!((dq0) this.b).y || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
                     return null;
                 }
-                Utilities.j.c(new org.telegram.ui.Components.k7(this, uri, webResourceRequest, 20));
+                Utilities.j.c(new org.telegram.ui.Components.g(this, uri, webResourceRequest, 21));
                 return null;
             case 3:
             default:
@@ -257,7 +257,7 @@ public final class n1 extends WebViewClient {
                 }
                 break;
             case 1:
-                if (!((org.telegram.ui.Components.gu) this.b).y1) {
+                if (!((org.telegram.ui.Components.iu) this.b).y1) {
                     break;
                 } else {
                     vf.c.t(webView.getContext(), str);

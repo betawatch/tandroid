@@ -11,10 +11,10 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class r0 implements DownloadListener {
     public final /* synthetic */ s0 a;
@@ -59,14 +59,14 @@ public final class r0 implements DownloadListener {
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(s0Var.getContext());
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.S = gd.M0(2131742672, null);
-            u1Var.U = org.telegram.messenger.g0.W2(j3 > 0 ? gd.a0(null, null, 2131742673, U, org.telegram.messenger.g0.i0(j3, false, false)) : gd.a0(null, null, 2131742674, U));
-            alertDialog$Builder.k(gd.M0(2131742671, null), new org.telegram.ui.ActionBar.p(xVar, 10));
-            alertDialog$Builder.h(gd.M0(2131752578, null), null);
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.S = gd.N0(2131742666, null);
+            t1Var.U = org.telegram.messenger.g0.W2(j3 > 0 ? gd.a0(null, null, 2131742667, U, org.telegram.messenger.g0.i0(j3, false, false)) : gd.a0(null, null, 2131742668, U));
+            alertDialog$Builder.k(gd.N0(2131742665, null), new org.telegram.tgnet.u(xVar, 11));
+            alertDialog$Builder.h(gd.N0(2131752577, null), null);
             TextView textView = (TextView) alertDialog$Builder.p().d(-2);
             if (textView != null) {
-                u6.U(textView, n6.q7, null);
+                t6.U(textView, m6.q7, null);
             }
         } catch (Exception e10) {
             a8.g(e10, true);

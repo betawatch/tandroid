@@ -1,84 +1,63 @@
 package ki;
 
-import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ShapeDrawable;
-import android.widget.FrameLayout;
-import c8.ma;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.q9;
+import android.util.SparseIntArray;
+import android.widget.ImageView;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public abstract class p1 {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static void a(Activity activity, int i7, long j3, long j10, TL_bots.BotVerifierSettings botVerifierSettings, bi.r3 r3Var) {
-        String str;
-        TLRPC.Chat chat;
-        if (j10 >= 0) {
-            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j10));
-            str = o10.l(c22);
-            chat = c22;
-        } else {
-            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j10));
-            if (O0 == null) {
-                str = "";
-                chat = O0;
-            } else {
-                str = O0.title;
-                chat = O0;
-            }
+public final class p1 {
+    public final SparseIntArray a = new SparseIntArray();
+    public final SparseIntArray b = new SparseIntArray();
+    public final int[] c = {m6.G6, m6.u8, m6.G8, m6.E8, m6.F8, m6.I5, m6.zj};
+    public float d;
+
+    public final int a(int i7) {
+        return i0.a.f(this.d, this.a.get(i7), this.b.get(i7));
+    }
+
+    public final void b(org.telegram.ui.ActionBar.k kVar, float f10) {
+        this.d = f10;
+        int i7 = m6.G6;
+        kVar.setTitleColor(a(i7));
+        kVar.setSubtitleColor(m6.r1(0.45f, a(i7)));
+        kVar.G(a(i7), false);
+        ImageView imageView = kVar.e;
+        if (imageView != null) {
+            imageView.setColorFilter(new PorterDuffColorFilter(a(i7), PorterDuff.Mode.SRC_IN));
         }
-        FrameLayout frameLayout = new FrameLayout(activity);
-        FrameLayout frameLayout2 = new FrameLayout(activity);
-        int L = org.telegram.messenger.g0.L(28.0f);
-        int L2 = org.telegram.messenger.g0.L(28.0f);
-        int i10 = n6.Ti;
-        ShapeDrawable e02 = n6.e0(L, L2, n6.x0(null, i10, false));
-        q6 M = u6.M(i10);
-        frameLayout2.setBackground(e02);
-        u6.j(frameLayout2, e02, M, null, null);
-        q9 q9Var = new q9(activity);
-        q9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
-        b9 b9Var = new b9((i6) null);
-        b9Var.l(chat);
-        q9Var.f(chat, b9Var);
-        frameLayout2.addView(q9Var, ma.e(28, 28, 51));
-        q9 q9Var2 = new q9(activity);
-        q9Var2.setEmojiColorFilter(new PorterDuffColorFilter(n6.x0(null, n6.z9, false), PorterDuff.Mode.SRC_IN));
-        q9Var2.setAnimatedEmojiDrawable(o5.m(i7, botVerifierSettings.icon, null, 3));
-        frameLayout2.addView(q9Var2, ma.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
-        n5 n5Var = new n5(activity);
-        u6.X(n5Var, n6.j5, null);
-        n5Var.setTextSize(13);
-        n5Var.setEllipsizeByGradient(true);
-        n5Var.l(str, false);
-        n5Var.setWidthWrapContent(true);
-        frameLayout2.addView(n5Var, ma.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
-        frameLayout.addView(frameLayout2, ma.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
-        boolean[] zArr = new boolean[1];
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
-        String M0 = gd.M0(2131752986, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = M0;
-        u1Var.U = gd.M0(j10 >= 0 ? 2131752987 : 2131752988, null);
-        alertDialog$Builder.o(frameLayout);
-        alertDialog$Builder.h(gd.M0(2131752578, null), null);
-        alertDialog$Builder.k(gd.M0(2131746126, null), new ii.h(zArr, i7, j3, j10, r3Var));
-        alertDialog$Builder.d(-1);
-        alertDialog$Builder.p();
+        kVar.F(a(m6.u8), false);
+    }
+
+    public final void c(SparseIntArray sparseIntArray, int i7, h6 h6Var) {
+        int i10;
+        int[] iArr = this.c;
+        int i11 = 0;
+        if (i7 == 0) {
+            while (i11 < iArr.length) {
+                int i12 = iArr[i11];
+                sparseIntArray.put(i12, m6.w0(i12, h6Var));
+                i11++;
+            }
+            return;
+        }
+        int i13 = i0.a.h(i7) < 0.5d ? -1 : -16777216;
+        int o4 = i0.a.o(i13, 60);
+        while (i11 < iArr.length) {
+            int i14 = iArr[i11];
+            if (i14 == m6.G8 || i14 == m6.E8 || i14 == m6.F8 || i14 == (i10 = m6.I5)) {
+                sparseIntArray.put(i14, m6.w0(i14, h6Var));
+            } else if (i14 == m6.zj) {
+                sparseIntArray.put(i14, i0.a.f(0.5f, i7, i13));
+            } else if (i14 == m6.u8 || i14 == i10) {
+                sparseIntArray.put(i14, o4);
+            } else {
+                sparseIntArray.put(i14, i13);
+            }
+            i11++;
+        }
     }
 }

@@ -11,9 +11,9 @@ import android.os.SystemClock;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class mw0 extends View implements org.telegram.ui.Components.bg0 {
+public final class mw0 extends View implements org.telegram.ui.Components.dg0 {
     public final float[] E;
     public boolean F;
     public float G;
@@ -53,9 +53,9 @@ public final class mw0 extends View implements org.telegram.ui.Components.bg0 {
         int i10;
         boolean z10;
         this.Q = profileActivity;
-        kVar = ((org.telegram.ui.ActionBar.h2) profileActivity).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
         if (kVar.getOccupyStatusBar()) {
-            z10 = ((org.telegram.ui.ActionBar.h2) profileActivity).inBubbleMode;
+            z10 = ((org.telegram.ui.ActionBar.g2) profileActivity).inBubbleMode;
             if (!z10) {
                 i7 = org.telegram.messenger.g0.m;
                 this.a = i7;
@@ -96,7 +96,7 @@ public final class mw0 extends View implements org.telegram.ui.Components.bg0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.h = ofFloat;
                 ofFloat.setDuration(250L);
-                ofFloat.setInterpolator(org.telegram.ui.Components.lr.j);
+                ofFloat.setInterpolator(org.telegram.ui.Components.nr.j);
                 ofFloat.addUpdateListener(new a3(this, 26));
                 ofFloat.addListener(new ay(this, 23));
             }
@@ -137,30 +137,30 @@ public final class mw0 extends View implements org.telegram.ui.Components.bg0 {
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat2;
         ofFloat2.setDuration(250L);
-        ofFloat2.setInterpolator(org.telegram.ui.Components.lr.j);
+        ofFloat2.setInterpolator(org.telegram.ui.Components.nr.j);
         ofFloat2.addUpdateListener(new a3(this, 26));
         ofFloat2.addListener(new ay(this, 23));
     }
 
-    @Override // org.telegram.ui.Components.bg0
+    @Override // org.telegram.ui.Components.dg0
     public final void a() {
         Arrays.fill(this.y, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.bg0
+    @Override // org.telegram.ui.Components.dg0
     public final void b(boolean z10) {
         this.y[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.bg0
+    @Override // org.telegram.ui.Components.dg0
     public final void c() {
         RectF rectF = ProfileActivity.Z6;
         this.Q.M5(false);
     }
 
-    @Override // org.telegram.ui.Components.bg0
+    @Override // org.telegram.ui.Components.dg0
     public final void d() {
         invalidate();
     }
@@ -279,7 +279,7 @@ public final class mw0 extends View implements org.telegram.ui.Components.bg0 {
             f11 = 180.0f;
             int z12 = org.telegram.messenger.n10.z((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f), realCount);
             int L = org.telegram.messenger.g0.L(1.0f);
-            z11 = ((org.telegram.ui.ActionBar.h2) profileActivity).inBubbleMode;
+            z11 = ((org.telegram.ui.ActionBar.g2) profileActivity).inBubbleMode;
             int i14 = L + (!z11 ? org.telegram.messenger.g0.m : 0);
             int i15 = 0;
             z10 = false;
@@ -328,7 +328,7 @@ public final class mw0 extends View implements org.telegram.ui.Components.bg0 {
                     if (i15 != this.N) {
                         this.I[i15] = 0.75f;
                     } else if (profileActivity.B0 == 3) {
-                        paint4.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.lr.j.getInterpolation(this.I[i15]), i10, org.telegram.messenger.ks.e4) * this.H));
+                        paint4.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.nr.j.getInterpolation(this.I[i15]), i10, org.telegram.messenger.ks.e4) * this.H));
                     }
                     canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), i15 != this.N ? paint : paint4);
                     i15++;

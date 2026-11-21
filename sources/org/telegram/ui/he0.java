@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class he0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class he0 implements Runnable {
                 break;
             case 2:
                 me0Var.getClass();
-                i9.l0(me0Var);
+                j9.l0(me0Var);
                 break;
             case 3:
                 me0.h0(me0Var);
@@ -50,25 +50,25 @@ public final /* synthetic */ class he0 implements Runnable {
                 me0Var.getClass();
                 Bundle bundle = new Bundle();
                 bundle.putBoolean("needFinishFragment", false);
-                me0Var.presentFragment(new i9(bundle));
+                me0Var.presentFragment(new j9(bundle));
                 break;
             case 7:
                 if (me0Var.getParentActivity() != null && (bVarArr = me0Var.L) != null) {
                     float width = ((r0.getWidth() / 2.0f) + (me0Var.b.getWidth() - ((bVarArr[4].getX() + me0Var.G.getX()) + r0.getWidth()))) / org.telegram.messenger.g0.p;
-                    hi.m3 m3Var = new hi.m3(me0Var.getParentActivity(), 3);
-                    me0Var.Q = m3Var;
-                    m3Var.setTranslationY(org.telegram.messenger.g0.L(4.0f) + (-me0Var.M));
+                    hi.l3 l3Var = new hi.l3(me0Var.getParentActivity(), 3);
+                    me0Var.Q = l3Var;
+                    l3Var.setTranslationY(org.telegram.messenger.g0.L(4.0f) + (-me0Var.M));
                     me0Var.Q.setPadding(org.telegram.messenger.g0.L(7.33f), 0, org.telegram.messenger.g0.L(7.33f), 0);
                     me0Var.Q.r(false);
                     me0Var.Q.k(true);
-                    me0Var.Q.v(org.telegram.messenger.gd.M0(2131744066, null));
+                    me0Var.Q.v(org.telegram.messenger.gd.N0(2131744060, null));
                     me0Var.Q.o(1.0f, (-width) + 7.33f);
                     me0Var.b.addView(me0Var.Q, c8.ma.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
-                    hi.m3 m3Var2 = me0Var.Q;
-                    m3Var2.r0 = new he0(me0Var, 8);
-                    m3Var2.d = 8000L;
-                    m3Var2.x();
-                    org.telegram.ui.Components.k30.r.b();
+                    hi.l3 l3Var2 = me0Var.Q;
+                    l3Var2.r0 = new he0(me0Var, 8);
+                    l3Var2.d = 8000L;
+                    l3Var2.x();
+                    org.telegram.ui.Components.n30.r.b();
                     break;
                 }
                 break;

@@ -1,21 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class uq0 extends ClippingImageView {
-    public final /* synthetic */ ck0 S;
+public final class uq0 extends v4.u0 {
+    public final /* synthetic */ kq0 a;
+    public final /* synthetic */ lq0 b;
+    public final /* synthetic */ jt0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uq0(Context context, as0 as0Var) {
-        super(context);
-        this.S = as0Var;
+    public uq0(jt0 jt0Var, kq0 kq0Var, lq0 lq0Var) {
+        this.c = jt0Var;
+        this.a = kq0Var;
+        this.b = lq0Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.S.invalidate();
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        this.c.e1 = i7 != 0;
+    }
+
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        int i11;
+        int i12;
+        jt0 jt0Var = this.c;
+        ys0[] ys0VarArr = jt0Var.w1;
+        lq0 lq0Var = this.b;
+        kq0 kq0Var = this.a;
+        jt0Var.O(kq0Var, (ek0) recyclerView, lq0Var);
+        if (i10 != 0 && ((i12 = jt0Var.n0[0].F) == 0 || i12 == 5)) {
+            ys0VarArr[0].a.isEmpty();
+        }
+        if (i10 != 0 && ((i11 = kq0Var.F) == 0 || jt0.z0(i11))) {
+            jt0.s(kq0Var, ys0VarArr, true);
+        }
+        kq0Var.h.L0(true);
+        if (kq0Var.G != null) {
+            kq0Var.invalidate();
+        }
     }
 }

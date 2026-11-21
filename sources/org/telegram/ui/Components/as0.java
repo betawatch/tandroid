@@ -1,29 +1,46 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public class as0 extends ck0 implements fi.w6 {
-    public int f3;
-    public int g3;
-    public int h3;
-    public int i3;
-    public boolean j3;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-    @Override // fi.w6
-    public final void a(int[] iArr) {
-        if (this.j3) {
-            iArr[0] = getPaddingTop() - org.telegram.messenger.g0.L(2.0f);
-            iArr[1] = getMeasuredHeight() - getPaddingBottom();
-        } else {
-            iArr[0] = (getPaddingTop() - org.telegram.messenger.g0.L(2.0f)) - this.h3;
-            iArr[1] = (getMeasuredHeight() - getPaddingBottom()) - this.i3;
-        }
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class as0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bs0 b;
+    public final /* synthetic */ String c;
+
+    public /* synthetic */ as0(bs0 bs0Var, String str, int i7) {
+        this.a = i7;
+        this.b = bs0Var;
+        this.c = str;
     }
 
-    @Override // android.view.View
-    public final void setPadding(int i7, int i10, int i11, int i12) {
-        this.f3 = i10;
-        this.g3 = i12;
-        super.setPadding(i7, i10, i11, i12);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bs0 bs0Var = this.b;
+                String str = this.c;
+                bs0Var.getClass();
+                org.telegram.messenger.g0.g3(new as0(bs0Var, str, 1));
+                break;
+            default:
+                bs0 bs0Var2 = this.b;
+                String str2 = this.c;
+                ArrayList arrayList = null;
+                bs0Var2.f = null;
+                if (!org.telegram.messenger.v3.T(bs0Var2.n) && bs0Var2.s.g1 != null) {
+                    arrayList = new ArrayList(bs0Var2.s.g1.participants.participants);
+                }
+                bs0Var2.r = 2;
+                if (arrayList != null) {
+                    Utilities.g.c(new g(bs0Var2, str2, arrayList, 28));
+                } else {
+                    bs0Var2.r = 1;
+                }
+                bs0Var2.e.g(str2, false, false, true, false, org.telegram.messenger.v3.T(bs0Var2.n) ? bs0Var2.n.id : 0L, false, 2, 1);
+                break;
+        }
     }
 }

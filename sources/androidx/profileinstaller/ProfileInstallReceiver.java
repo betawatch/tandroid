@@ -10,11 +10,11 @@ import android.os.Process;
 import android.util.Log;
 import d3.b;
 import java.io.File;
-import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.qf;
 import u4.a;
 import u4.d;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class ProfileInstallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -25,7 +25,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         }
         String action = intent.getAction();
         if ("androidx.profileinstaller.action.INSTALL_PROFILE".equals(action)) {
-            d.s(context, new b(3), new of(this, 21), true);
+            d.s(context, new b(3), new qf(this, 21), true);
             return;
         }
         if ("androidx.profileinstaller.action.SKIP_FILE".equals(action)) {
@@ -41,26 +41,26 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
                     }
                     return;
                 }
-                of ofVar = new of(this, 21);
+                qf qfVar = new qf(this, 21);
                 try {
                     d.e(context.getPackageManager().getPackageInfo(context.getApplicationContext().getPackageName(), 0), context.getFilesDir());
-                    ofVar.C(10, null);
+                    qfVar.C(10, null);
                     return;
                 } catch (PackageManager.NameNotFoundException e10) {
-                    ofVar.C(7, e10);
+                    qfVar.C(7, e10);
                     return;
                 }
             }
             return;
         }
         if ("androidx.profileinstaller.action.SAVE_PROFILE".equals(action)) {
-            of ofVar2 = new of(this, 21);
+            qf qfVar2 = new qf(this, 21);
             if (Build.VERSION.SDK_INT < 24) {
-                ofVar2.C(13, null);
+                qfVar2.C(13, null);
                 return;
             } else {
                 Process.sendSignal(Process.myPid(), 10);
-                ofVar2.C(12, null);
+                qfVar2.C(12, null);
                 return;
             }
         }
@@ -68,15 +68,15 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
             return;
         }
         String string2 = extras.getString("EXTRA_BENCHMARK_OPERATION");
-        of ofVar3 = new of(this, 21);
+        qf qfVar3 = new qf(this, 21);
         if (!"DROP_SHADER_CACHE".equals(string2)) {
-            ofVar3.C(16, null);
+            qfVar3.C(16, null);
             return;
         }
         if (d.c(Build.VERSION.SDK_INT >= 24 ? a.a(context) : context.getCodeCacheDir())) {
-            ofVar3.C(14, null);
+            qfVar3.C(14, null);
         } else {
-            ofVar3.C(15, null);
+            qfVar3.C(15, null);
         }
     }
 }

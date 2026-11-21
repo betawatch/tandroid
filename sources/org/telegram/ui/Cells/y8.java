@@ -15,11 +15,11 @@ import android.widget.ImageView;
 import java.util.HashSet;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final xh.l a;
     public final x8 b;
     public final x8 c;
@@ -27,10 +27,10 @@ public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public boolean e;
     public boolean f;
     public final boolean h;
-    public final org.telegram.ui.ActionBar.i6 n;
+    public final org.telegram.ui.ActionBar.h6 n;
 
-    public y8(Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
-        this(23, context, i6Var, z10, false);
+    public y8(Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
+        this(23, context, h6Var, z10, false);
     }
 
     public final void b(Drawable drawable, String str) {
@@ -44,12 +44,12 @@ public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
             imageView.setImportantForAccessibility(2);
         } else {
             int L = org.telegram.messenger.g0.L(48.0f);
-            int i7 = org.telegram.ui.ActionBar.n6.i6;
-            org.telegram.ui.ActionBar.i6 i6Var = this.n;
-            y j02 = org.telegram.ui.ActionBar.n6.j0(L, 0, org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
-            org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i7);
+            int i7 = org.telegram.ui.ActionBar.m6.i6;
+            org.telegram.ui.ActionBar.h6 h6Var = this.n;
+            y j02 = org.telegram.ui.ActionBar.m6.j0(L, 0, org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
+            org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i7);
             imageView.setBackground(j02);
-            org.telegram.ui.ActionBar.u6.j(imageView, j02, null, M, i6Var);
+            org.telegram.ui.ActionBar.t6.j(imageView, j02, null, M, h6Var);
             imageView.setImportantForAccessibility(1);
         }
         int L2 = org.telegram.messenger.g0.L(23.0f) + (drawable != null ? org.telegram.messenger.g0.L(48.0f) : 0);
@@ -94,10 +94,10 @@ public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            org.telegram.ui.ActionBar.i6 i6Var = this.n;
-            Paint g10 = i6Var != null ? i6Var.g("paintDivider") : org.telegram.ui.ActionBar.n6.k0;
+            org.telegram.ui.ActionBar.h6 h6Var = this.n;
+            Paint g10 = h6Var != null ? h6Var.g("paintDivider") : org.telegram.ui.ActionBar.m6.k0;
             if (g10 == null) {
-                g10 = org.telegram.ui.ActionBar.n6.k0;
+                g10 = org.telegram.ui.ActionBar.m6.k0;
             }
             canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, g10);
         }
@@ -162,40 +162,40 @@ public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.n6.Xc;
-        org.telegram.ui.ActionBar.i6 i6Var = this.n;
-        int a10 = a(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
+        int i7 = org.telegram.ui.ActionBar.m6.Xc;
+        org.telegram.ui.ActionBar.h6 h6Var = this.n;
+        int a10 = a(org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
         xh.l lVar = this.a;
         lVar.setLinkTextColor(a10);
-        lVar.setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, i6Var));
+        lVar.setTextColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, h6Var));
         lVar.invalidate();
-        int a11 = a(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
+        int a11 = a(org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
         x8 x8Var = this.b;
         x8Var.setLinkTextColor(a11);
-        int i10 = org.telegram.ui.ActionBar.n6.z6;
-        x8Var.setTextColor(org.telegram.ui.ActionBar.n6.w0(i10, i6Var));
-        this.c.setTextColor(org.telegram.ui.ActionBar.n6.w0(i10, i6Var));
+        int i10 = org.telegram.ui.ActionBar.m6.z6;
+        x8Var.setTextColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
+        this.c.setTextColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
         x8Var.invalidate();
     }
 
-    public y8(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, boolean z11) {
+    public y8(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11) {
         super(context);
-        this.n = i6Var;
+        this.n = h6Var;
         boolean z12 = z10 || z11;
         this.h = z12;
-        xh.l lVar = new xh.l(context, i6Var, true);
+        xh.l lVar = new xh.l(context, h6Var, true);
         this.a = lVar;
         final int i10 = 0;
-        lVar.setOnLinkLongPressListener(new j80(this) { // from class: org.telegram.ui.Cells.w8
+        lVar.setOnLinkLongPressListener(new l80(this) { // from class: org.telegram.ui.Cells.w8
             public final /* synthetic */ y8 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.j80
+            @Override // org.telegram.ui.Components.l80
             public final void a(ClickableSpan clickableSpan) {
                 switch (i10) {
                     case 0:
@@ -250,17 +250,17 @@ public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
         lVar.setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(5.0f));
         float f10 = i7 - 6;
         addView(lVar, c8.ma.d(-2, -2.0f, gd.a0 ? 5 : 3, f10, 6.0f, f10, z10 ? 27.0f : 0.0f));
-        x8 x8Var = new x8(this, context, i6Var, 0);
+        x8 x8Var = new x8(this, context, h6Var, 0);
         this.b = x8Var;
         final int i11 = 1;
-        x8Var.setOnLinkLongPressListener(new j80(this) { // from class: org.telegram.ui.Cells.w8
+        x8Var.setOnLinkLongPressListener(new l80(this) { // from class: org.telegram.ui.Cells.w8
             public final /* synthetic */ y8 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.j80
+            @Override // org.telegram.ui.Components.l80
             public final void a(ClickableSpan clickableSpan) {
                 switch (i11) {
                     case 0:
@@ -318,17 +318,17 @@ public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
             float f12 = i7;
             addView(x8Var, c8.ma.d(-1, -2.0f, gd.a0 ? 5 : 3, f12, 32.0f, f12, 4.0f));
         }
-        x8 x8Var2 = new x8(this, context, i6Var, 1);
+        x8 x8Var2 = new x8(this, context, h6Var, 1);
         this.c = x8Var2;
         final int i12 = 2;
-        x8Var2.setOnLinkLongPressListener(new j80(this) { // from class: org.telegram.ui.Cells.w8
+        x8Var2.setOnLinkLongPressListener(new l80(this) { // from class: org.telegram.ui.Cells.w8
             public final /* synthetic */ y8 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.j80
+            @Override // org.telegram.ui.Components.l80
             public final void a(ClickableSpan clickableSpan) {
                 switch (i12) {
                     case 0:
@@ -399,7 +399,7 @@ public class y8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
         return i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

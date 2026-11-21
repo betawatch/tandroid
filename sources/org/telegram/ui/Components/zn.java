@@ -1,45 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zn extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ao b;
+public final class zn implements j8 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.g1[] a;
+    public final /* synthetic */ co b;
 
-    public /* synthetic */ zn(ao aoVar, int i7) {
-        this.a = i7;
-        this.b = aoVar;
+    public zn(co coVar, org.telegram.ui.ActionBar.g1[] g1VarArr) {
+        this.b = coVar;
+        this.a = g1VarArr;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.R = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // org.telegram.ui.Components.j8
+    public final void R0(int i7, int i10) {
+        org.telegram.ui.bn bnVar = this.b.H;
+        if (bnVar == null) {
+            return;
+        }
+        bnVar.getMessagesController().T4(i7, bnVar.a());
+        TLRPC.ChatFull chatFull = bnVar.r8;
+        TLRPC.UserFull userFull = bnVar.s8;
+        if (userFull == null && chatFull == null) {
+            return;
+        }
+        bnVar.h8();
+        UndoView undoView = bnVar.N3;
+        if (undoView != null) {
+            undoView.k(bnVar.a(), i10, bnVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ao aoVar = this.b;
-                if (aoVar.R == animator) {
-                    aoVar.getSubtitleTextView().setVisibility(4);
-                    aoVar.R = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.R = null;
-                break;
+    @Override // org.telegram.ui.Components.j8
+    public final void dismiss() {
+        org.telegram.ui.ActionBar.g1 g1Var = this.a[0];
+        if (g1Var != null) {
+            g1Var.dismiss();
         }
+    }
+
+    @Override // org.telegram.ui.Components.j8
+    public final /* synthetic */ void d1() {
     }
 }

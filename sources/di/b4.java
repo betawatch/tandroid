@@ -8,7 +8,7 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b4 implements x10 {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class b4 implements x10 {
         switch (i7) {
             case 0:
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 ((boolean[]) obj4)[0] = false;
                 if (arrayList != null) {
-                    new h1(context, i6Var, this.b, this.c, arrayList, false).show();
+                    new h1(context, h6Var, this.b, this.c, arrayList, false).show();
                     break;
                 }
                 break;
@@ -60,9 +60,9 @@ public final /* synthetic */ class b4 implements x10 {
                         bVar.b();
                     }
                     if (c22 == null) {
-                        org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                        org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
                         if (Q != null) {
-                            org.telegram.messenger.f3.o(null, 2131747942, org.telegram.ui.Components.lc.b0(Q), null);
+                            org.telegram.messenger.f3.o(null, 2131747941, org.telegram.ui.Components.lc.b0(Q), null);
                             break;
                         }
                     } else {

@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fx implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -168,7 +168,7 @@ public final /* synthetic */ class fx implements RequestDelegate {
                                                 TLRPC.InputMedia inputMedia5 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
                                                 if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
                                                     TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia5;
-                                                    sh.e.k(tL_inputMediaPoll, sh.e.a(tL_inputMediaPoll, inputMedia2), tL_inputMediaDocument);
+                                                    sh.d.k(tL_inputMediaPoll, sh.d.a(tL_inputMediaPoll, inputMedia2), tL_inputMediaDocument);
                                                 }
                                             }
                                             boolean z14 = tLObject3 instanceof TL_ephemeral.TL_sendMessage;
@@ -192,7 +192,7 @@ public final /* synthetic */ class fx implements RequestDelegate {
                                                 TLRPC.InputMedia inputMedia7 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
                                                 if (inputMedia7 instanceof TLRPC.TL_inputMediaPoll) {
                                                     TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia7;
-                                                    sh.e.k(tL_inputMediaPoll2, sh.e.a(tL_inputMediaPoll2, inputMedia2), tL_inputMediaDocument);
+                                                    sh.d.k(tL_inputMediaPoll2, sh.d.a(tL_inputMediaPoll2, inputMedia2), tL_inputMediaDocument);
                                                 }
                                             }
                                         }
@@ -354,7 +354,7 @@ public final /* synthetic */ class fx implements RequestDelegate {
                                                 TLRPC.InputMedia inputMedia5 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
                                                 if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
                                                     TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia5;
-                                                    sh.e.k(tL_inputMediaPoll, sh.e.a(tL_inputMediaPoll, inputMedia22), tL_inputMediaDocument);
+                                                    sh.d.k(tL_inputMediaPoll, sh.d.a(tL_inputMediaPoll, inputMedia22), tL_inputMediaDocument);
                                                 }
                                             }
                                             boolean z14 = tLObject3 instanceof TL_ephemeral.TL_sendMessage;
@@ -378,7 +378,7 @@ public final /* synthetic */ class fx implements RequestDelegate {
                                                 TLRPC.InputMedia inputMedia7 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
                                                 if (inputMedia7 instanceof TLRPC.TL_inputMediaPoll) {
                                                     TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia7;
-                                                    sh.e.k(tL_inputMediaPoll2, sh.e.a(tL_inputMediaPoll2, inputMedia22), tL_inputMediaDocument);
+                                                    sh.d.k(tL_inputMediaPoll2, sh.d.a(tL_inputMediaPoll2, inputMedia22), tL_inputMediaDocument);
                                                 }
                                             }
                                         }

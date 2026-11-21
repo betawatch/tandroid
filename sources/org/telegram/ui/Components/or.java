@@ -1,60 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.text.TextPaint;
+import android.view.KeyEvent;
 import android.view.View;
-import java.util.HashSet;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class or extends View implements org.telegram.ui.ActionBar.c6 {
-    public final TextPaint a;
-    public final TextPaint b;
-    public final String c;
-    public final String d;
-    public final Rect e;
+public final /* synthetic */ class or implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rr b;
 
-    public or(Context context, String str, String str2) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.b = textPaint2;
-        this.e = new Rect();
-        this.c = str;
-        this.d = str2;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(24.0f));
-        textPaint2.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        textPaint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.G6, false));
-        textPaint2.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.H6, false));
+    public /* synthetic */ or(rr rrVar, int i7) {
+        this.a = i7;
+        this.b = rrVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextPaint textPaint = this.b;
-        String str = this.d;
-        float measureText = textPaint.measureText(str);
-        TextPaint textPaint2 = this.a;
-        String str2 = this.c;
-        float measureText2 = textPaint2.measureText(str2);
-        int length = str2.length();
-        Rect rect = this.e;
-        textPaint2.getTextBounds(str2, 0, length, rect);
-        textPaint.getTextBounds(str, 0, str.length(), rect);
-        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
-        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        this.a.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.G6, false));
-        this.b.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.H6, false));
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
+        switch (this.a) {
+            case 0:
+                rr rrVar = this.b;
+                if (rrVar.b == null && (view = rrVar.d) != null) {
+                    View findFocus = view.findFocus();
+                    if (findFocus instanceof EditText) {
+                        rrVar.b = (EditText) findFocus;
+                    }
+                }
+                EditText editText = rrVar.b;
+                if (editText != null) {
+                    if (editText.length() != 0 || rrVar.e) {
+                        try {
+                            rrVar.performHapticFeedback(3, 2);
+                            rrVar.playSoundEffect(0);
+                        } catch (Exception unused) {
+                        }
+                        rrVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
+                        rrVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
+                        if (rrVar.f) {
+                            rrVar.postDelayed(rrVar.h, 50L);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                rr rrVar2 = this.b;
+                rrVar2.n = false;
+                rrVar2.f = true;
+                rrVar2.h.run();
+                break;
+        }
     }
 }

@@ -1,9 +1,10 @@
 package xi;
 
+import kg.x1;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -44,8 +45,8 @@ public final /* synthetic */ class b implements Runnable {
                         b bVar2 = new b(eVar2, dVar4, 2);
                         eVar2.d = bVar2;
                         g0.h3(bVar2, 20000L);
-                        ki.e eVar3 = dVar4.a;
-                        ((ConnectionsManager) eVar3.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
+                        x1 x1Var = dVar4.a;
+                        ((ConnectionsManager) x1Var.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
                         break;
                     } else {
                         eVar2.m(dVar4);
@@ -54,12 +55,12 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             default:
-                e eVar4 = this.b;
-                d dVar5 = (d) eVar4.b;
+                e eVar3 = this.b;
+                d dVar5 = (d) eVar3.b;
                 d dVar6 = this.c;
                 if (dVar5 == dVar6) {
-                    eVar4.d = null;
-                    eVar4.m(dVar6);
+                    eVar3.d = null;
+                    eVar3.m(dVar6);
                     break;
                 }
                 break;

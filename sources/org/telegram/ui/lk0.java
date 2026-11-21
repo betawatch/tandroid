@@ -5,7 +5,7 @@ import android.webkit.WebView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lk0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,16 +34,16 @@ public final /* synthetic */ class lk0 implements Runnable {
                 ml0Var.J0(false);
                 ml0Var.A0 = true;
                 ml0Var.N0(true, true);
-                org.telegram.ui.Components.oq oqVar = ml0Var.r;
-                if (oqVar != null) {
-                    oqVar.setVisibility(0);
+                org.telegram.ui.Components.qq qqVar = ml0Var.r;
+                if (qqVar != null) {
+                    qqVar.setVisibility(0);
                 }
-                org.telegram.ui.ActionBar.r0 r0Var = ml0Var.n;
-                if (r0Var != null) {
-                    r0Var.setEnabled(false);
+                org.telegram.ui.ActionBar.q0 q0Var = ml0Var.n;
+                if (q0Var != null) {
+                    q0Var.setEnabled(false);
                     ml0Var.n.getContentView().setVisibility(4);
                 }
-                org.telegram.ui.ActionBar.s4 parentLayout = ml0Var.getParentLayout();
+                org.telegram.ui.ActionBar.r4 parentLayout = ml0Var.getParentLayout();
                 Activity parentActivity = ml0Var.getParentActivity();
                 ml0Var.getMessagesController().o7 = new z6(ml0Var, parentLayout, parentActivity, 17);
                 WebView webView = ml0Var.x;

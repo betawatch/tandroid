@@ -1,34 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x61 extends AnimatorListenerAdapter {
-    public boolean a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ g71 d;
+public final /* synthetic */ class x61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j71 b;
 
-    public x61(g71 g71Var, View view, float f10) {
-        this.d = g71Var;
-        this.b = view;
-        this.c = f10;
+    public /* synthetic */ x61(j71 j71Var, int i7) {
+        this.a = i7;
+        this.b = j71Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        super.onAnimationCancel(animator);
-        this.a = true;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.a) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                j71 j71Var = this.b;
+                j71Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = j71Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (j71Var.E) {
+                        j71Var.B(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        j71Var.B(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        j71Var.B(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        j71Var.B(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    j71Var.c = floatValue;
+                    j71Var.t(true);
+                    z61 z61Var = j71Var.N;
+                    if (z61Var != null) {
+                        z61Var.w.invalidate();
+                        j71Var.N.w.g1();
+                        j71Var.N.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                j71 j71Var2 = this.b;
+                j71Var2.getClass();
+                j71Var2.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                j71 j71Var3 = this.b;
+                j71Var3.O.onAnimationUpdate(valueAnimator);
+                j71Var3.N.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j71Var3.N.w.g1();
+                j71Var3.N.invalidate();
+                break;
+            default:
+                j71 j71Var4 = this.b;
+                j71Var4.getClass();
+                j71Var4.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
         }
-        this.d.B(this.b, this.c);
     }
 }

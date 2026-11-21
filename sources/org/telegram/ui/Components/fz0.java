@@ -1,44 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.ViewSwitcher;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public class fz0 extends ViewSwitcher {
-    public final void a(CharSequence charSequence, boolean z10, boolean z11) {
-        if (z11 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
-            if (!z10) {
-                getCurrentView().setText(charSequence);
+public final class fz0 {
+    public int a;
+    public int b;
+    public int c;
+    public TLRPC.MessageEntity d;
+    public boolean e;
+
+    public fz0() {
+    }
+
+    public final void a(TextPaint textPaint) {
+        Typeface typeface;
+        if (this.e) {
+            typeface = (this.a & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/mw_bolditalic.ttf") : org.telegram.messenger.g0.o1("fonts/mw_bold.ttf");
+        } else {
+            int i7 = this.a;
+            if ((i7 & 4) == 0 && (i7 & 2048) == 0) {
+                int i10 = i7 & 1;
+                typeface = (i10 == 0 || (i7 & 2) == 0) ? i10 != 0 ? org.telegram.messenger.g0.o() : (i7 & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/ritalic.ttf") : null : org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf");
             } else {
-                getNextView().setText(charSequence);
-                showNext();
+                typeface = Typeface.MONOSPACE;
             }
         }
-    }
-
-    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
-    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
-        if (!(view instanceof TextView)) {
-            throw new IllegalArgumentException();
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
         }
-        super.addView(view, i7, layoutParams);
+        if ((this.a & 16) != 0) {
+            textPaint.setFlags(textPaint.getFlags() | 8);
+        } else {
+            textPaint.setFlags(textPaint.getFlags() & (-9));
+        }
+        int i11 = this.a;
+        if ((i11 & 8) == 0 && (i11 & TLObject.FLAG_13) == 0) {
+            textPaint.setFlags(textPaint.getFlags() & (-17));
+        } else {
+            textPaint.setFlags(textPaint.getFlags() | 16);
+        }
+        if ((this.a & 512) != 0) {
+            textPaint.bgColor = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.R9, false);
+        }
+        int i12 = this.a;
+        if ((i12 & TLObject.FLAG_13) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q7, false));
+        } else if ((i12 & TLObject.FLAG_12) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Fi, false));
+        }
     }
 
-    public void setText(CharSequence charSequence) {
-        a(charSequence, true, false);
+    public final void b(fz0 fz0Var) {
+        TLRPC.MessageEntity messageEntity;
+        this.a |= fz0Var.a;
+        if (this.d != null || (messageEntity = fz0Var.d) == null) {
+            return;
+        }
+        this.d = messageEntity;
     }
 
-    @Override // android.widget.ViewAnimator
-    public TextView getCurrentView() {
-        return (TextView) super.getCurrentView();
-    }
-
-    @Override // android.widget.ViewSwitcher
-    public TextView getNextView() {
-        return (TextView) super.getNextView();
+    public fz0(fz0 fz0Var) {
+        this.a = fz0Var.a;
+        this.b = fz0Var.b;
+        this.c = fz0Var.c;
+        this.d = fz0Var.d;
+        this.e = fz0Var.e;
     }
 }

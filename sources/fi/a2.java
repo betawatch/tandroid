@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class a2 extends t0 {
     public final /* synthetic */ f9 i0;
@@ -78,9 +78,9 @@ public final class a2 extends t0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(b1Var.getAlpha(), z10 ? 0.0f : 1.0f);
                 this.f0 = ofFloat;
                 ofFloat.addUpdateListener(new ah.g(this, 15));
-                this.f0.addListener(new bi.d7(3, this, z10));
+                this.f0.addListener(new bi.h7(3, this, z10));
                 this.f0.setDuration(420L);
-                this.f0.setInterpolator(lr.h);
+                this.f0.setInterpolator(nr.h);
                 this.f0.start();
             } else {
                 this.a.setAlpha(z10 ? 0.0f : 0.5f);

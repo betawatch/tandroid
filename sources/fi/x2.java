@@ -4,43 +4,43 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Components.ui0;
+import org.telegram.ui.Components.wi0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class x2 implements ui0 {
+public final class x2 implements wi0 {
     public final /* synthetic */ z3 a;
 
     public x2(z3 z3Var) {
         this.a = z3Var;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final /* synthetic */ boolean E() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final void g(View view, ch.p0 p0Var, boolean z10, boolean z11) {
         z3 z3Var = this.a;
         if (z10) {
-            org.telegram.ui.Components.b5.X(z3Var.m2, 1, z3Var.l1, new w2(this, z10, p0Var, view));
+            org.telegram.ui.Components.c5.X(z3Var.m2, 1, z3Var.l1, new w2(this, z10, p0Var, view));
         } else {
             z3Var.l0(new aa.c0(this, view, p0Var, z10, z11));
         }
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final /* synthetic */ boolean o() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final boolean q() {
         return this.a.L0();
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final void x(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
         z3 z3Var = this.a;
         Paint paint = z3Var.X1;
@@ -57,7 +57,7 @@ public final class x2 implements ui0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final void z() {
         ((w8) this.a.A1).b(false);
     }

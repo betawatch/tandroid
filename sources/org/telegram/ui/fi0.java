@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class fi0 extends org.telegram.ui.ActionBar.w4 {
-    public final /* synthetic */ hi.d r;
+public final class fi0 extends org.telegram.ui.ActionBar.v4 {
+    public final /* synthetic */ hi.e r;
 
-    public fi0(hi.d dVar) {
-        this.r = dVar;
+    public fi0(hi.e eVar) {
+        this.r = eVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.w4, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.ActionBar.v4, org.telegram.ui.ActionBar.q2
     public final boolean x() {
         return !this.r.R;
     }

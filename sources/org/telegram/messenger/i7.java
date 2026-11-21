@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class i7 {
     public static bg.e0 l1;
@@ -2413,14 +2413,14 @@ public final class i7 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0105, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x010e, code lost:
     
-        if ("update".equals(r2) != false) goto L62;
+        if ("speech_model".equals(r2) != false) goto L62;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0162  */
     /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r10v0 */
     /* JADX WARN: Type inference failed for: r10v1, types: [boolean, int] */
@@ -2495,6 +2495,9 @@ public final class i7 {
                                                 str3 = "fav";
                                                 if (!"fav".equals(str2)) {
                                                     str3 = "update";
+                                                    if (!"update".equals(str2)) {
+                                                        str3 = "speech_model";
+                                                    }
                                                 }
                                             }
                                         }

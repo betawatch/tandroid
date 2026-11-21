@@ -1,82 +1,22 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xr0 implements jg.y1, org.telegram.ui.Cells.a5 {
-    public final /* synthetic */ zr0 a;
+public interface xr0 {
+    void J();
 
-    public /* synthetic */ xr0(zr0 zr0Var) {
-        this.a = zr0Var;
-    }
+    void W();
 
-    @Override // jg.y1
-    public /* synthetic */ a0.h K0() {
-        return null;
-    }
+    boolean Y();
 
-    @Override // org.telegram.ui.Cells.a5
-    public boolean b(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
-        int intValue = ((Integer) b5Var.getTag()).intValue();
-        zr0 zr0Var = this.a;
-        TLObject E = zr0Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
-        }
-        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = org.telegram.messenger.fj.B1(channelParticipant.peer);
-        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-        tL_chatChannelParticipant.date = channelParticipant.date;
-        return zr0Var.s.G1.h(tL_chatChannelParticipant, true, !z10, b5Var);
-    }
+    ek0 f();
 
-    @Override // jg.y1
-    public /* synthetic */ a0.h d1() {
-        return null;
-    }
+    TLRPC.Chat g();
 
-    @Override // jg.y1
-    public void r(int i7) {
-        zr0 zr0Var = this.a;
-        zr0Var.f();
-        if (i7 != 1) {
-            return;
-        }
-        int i10 = zr0Var.r - 1;
-        zr0Var.r = i10;
-        if (i10 != 0) {
-            return;
-        }
-        int i11 = 0;
-        while (true) {
-            gt0 gt0Var = zr0Var.s;
-            bs0[] bs0VarArr = gt0Var.n0;
-            if (i11 >= bs0VarArr.length) {
-                return;
-            }
-            bs0 bs0Var = bs0VarArr[i11];
-            if (bs0Var.F == 7) {
-                if (zr0Var.h == 0) {
-                    bs0Var.w.e(false, true);
-                } else {
-                    gt0Var.D(bs0Var.h, 0, null);
-                }
-            }
-            i11++;
-        }
-    }
+    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view);
 
-    @Override // jg.y1
-    public /* synthetic */ boolean v1(int i7) {
-        return true;
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ void P1(ArrayList arrayList) {
-    }
+    boolean t();
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class bx0 implements org.telegram.messenger.jc {
     public final /* synthetic */ Runnable[] a;
@@ -17,7 +17,7 @@ public final class bx0 implements org.telegram.messenger.jc {
         if (imageReceiver.I()) {
             Runnable[] runnableArr = this.a;
             if (runnableArr[0] != null) {
-                org.telegram.ui.Components.mh0 B = imageReceiver.B();
+                org.telegram.ui.Components.oh0 B = imageReceiver.B();
                 if (B == null) {
                     runnableArr[0].run();
                     runnableArr[0] = null;

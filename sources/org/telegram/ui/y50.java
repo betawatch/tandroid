@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class y50 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -38,7 +38,7 @@ public final class y50 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         View[] viewArr;
-        org.telegram.ui.Components.l41 G;
+        org.telegram.ui.Components.o41 G;
         switch (this.a) {
             case 0:
                 RectF rectF = (RectF) this.e;
@@ -81,20 +81,20 @@ public final class y50 extends FrameLayout {
                     } else {
                         py0 py0Var = (py0) view;
                         FrameLayout frameLayout = py0Var.e;
-                        org.telegram.ui.Components.e51 e51Var = py0Var.f;
+                        org.telegram.ui.Components.h51 h51Var = py0Var.f;
                         float i10 = Utilities.i(1.0f - Math.abs(py0Var.getTranslationX() / py0Var.getMeasuredWidth()), 1.0f, f11);
                         float f12 = this.b;
                         float paddingTop = frameLayout.getPaddingTop();
                         int i11 = 0;
                         while (true) {
-                            int childCount = e51Var.getChildCount();
-                            org.telegram.ui.Components.z41 z41Var = e51Var.g3;
+                            int childCount = h51Var.getChildCount();
+                            org.telegram.ui.Components.c51 c51Var = h51Var.g3;
                             if (i11 < childCount) {
-                                View childAt = e51Var.getChildAt(i11);
-                                e51Var.f3.getClass();
+                                View childAt = h51Var.getChildAt(i11);
+                                h51Var.f3.getClass();
                                 int H = v4.p0.H(childAt);
                                 View[] viewArr2 = viewPages;
-                                if (H >= 0 && H < z41Var.E.size() && (G = z41Var.G(H)) != null && G.a == 28) {
+                                if (H >= 0 && H < c51Var.E.size() && (G = c51Var.G(H)) != null && G.a == 28) {
                                     paddingTop = childAt.getY() + frameLayout.getPaddingTop();
                                 }
                                 i11++;
@@ -107,10 +107,10 @@ public final class y50 extends FrameLayout {
                                     float f13 = -n4Var.getHeight();
                                     int i12 = 0;
                                     while (true) {
-                                        if (i12 < e51Var.getChildCount()) {
-                                            View childAt2 = e51Var.getChildAt(i12);
-                                            e51Var.f3.getClass();
-                                            if (z41Var.G(v4.p0.H(childAt2)).a == 28) {
+                                        if (i12 < h51Var.getChildCount()) {
+                                            View childAt2 = h51Var.getChildAt(i12);
+                                            h51Var.f3.getClass();
+                                            if (c51Var.G(v4.p0.H(childAt2)).a == 28) {
                                                 f13 = childAt2.getY() + frameLayout.getPaddingTop();
                                             } else {
                                                 i12++;
@@ -126,7 +126,7 @@ public final class y50 extends FrameLayout {
                     viewPages = viewArr;
                     f11 = 0.0f;
                 }
-                float e10 = ((org.telegram.ui.Components.c6) this.d).e(false, this.b <= ((float) org.telegram.messenger.g0.m) ? 1.0f : 0.0f);
+                float e10 = ((org.telegram.ui.Components.d6) this.d).e(false, this.b <= ((float) org.telegram.messenger.g0.m) ? 1.0f : 0.0f);
                 float f14 = org.telegram.messenger.g0.m;
                 float f15 = f14 * e10;
                 float max = Math.max(f14, this.b) - (org.telegram.messenger.g0.m * e10);
@@ -145,8 +145,8 @@ public final class y50 extends FrameLayout {
                 boolean z10 = f15 > ((float) org.telegram.messenger.g0.m) / 2.0f;
                 Boolean bool = (Boolean) this.e;
                 if (bool == null || bool.booleanValue() != z10) {
-                    boolean z11 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, qy0Var.J0)) > 0.721f;
-                    boolean z12 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.n6.w(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, qy0Var.J0), 855638016)) > 0.721f;
+                    boolean z11 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, qy0Var.J0)) > 0.721f;
+                    boolean z12 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, qy0Var.J0), 855638016)) > 0.721f;
                     this.e = Boolean.valueOf(z10);
                     if (!z10) {
                         z11 = z12;
@@ -204,7 +204,7 @@ public final class y50 extends FrameLayout {
     public y50(qy0 qy0Var, Context context) {
         super(context);
         this.f = qy0Var;
-        this.d = new org.telegram.ui.Components.c6(this, 250L, org.telegram.ui.Components.lr.h);
+        this.d = new org.telegram.ui.Components.d6(this, 250L, org.telegram.ui.Components.nr.h);
         this.c = new Path();
     }
 }

@@ -22,7 +22,7 @@ import android.util.Size;
 import android.view.Display;
 import android.view.Surface;
 import android.view.TextureView;
-import bi.o1;
+import bi.s1;
 import com.google.android.gms.internal.vision.e2;
 import j$.util.Objects;
 import java.io.IOException;
@@ -31,13 +31,13 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.h40;
-import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.k40;
+import org.telegram.ui.Components.rp0;
 import org.telegram.ui.b80;
 import org.telegram.ui.jw0;
 import y7.f7;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class k {
     public CameraCaptureSession A;
@@ -120,7 +120,7 @@ public final class k {
     public long i1;
     public final o j;
     public boolean j0;
-    public final o1 j1;
+    public final s1 j1;
     public final k0 k;
     public boolean k0;
     public final a k1;
@@ -128,7 +128,7 @@ public final class k {
     public final a l1;
     public HandlerThread m;
     public boolean m0;
-    public final h40 m1;
+    public final k40 m1;
     public Handler n;
     public boolean n0;
     public final e n1;
@@ -165,11 +165,11 @@ public final class k {
     public int s1 = 1;
 
     public k(Context context, TextureView textureView, s0 s0Var, int i7, o0 o0Var, p0 p0Var, boolean z10, o oVar, k0 k0Var) {
-        o1 o1Var = new o1(this, 3);
-        this.j1 = o1Var;
+        s1 s1Var = new s1(this, 3);
+        this.j1 = s1Var;
         this.k1 = new a(this, 5);
         this.l1 = new a(this, 6);
-        this.m1 = new h40(this, 5);
+        this.m1 = new k40(this, 5);
         this.n1 = new e(this, 0);
         this.o1 = new e(this, 1);
         this.p1 = new f(this, 0);
@@ -186,7 +186,7 @@ public final class k {
         this.i = z10;
         this.j = oVar;
         this.k = k0Var;
-        textureView.addOnLayoutChangeListener(o1Var);
+        textureView.addOnLayoutChangeListener(s1Var);
     }
 
     public static Range C(Range[] rangeArr, int i7) {
@@ -826,7 +826,7 @@ public final class k {
         if (handler == null || handlerThread == null) {
             return;
         }
-        handler.post(new wg.r(22, this, handlerThread));
+        handler.post(new wg.q(24, this, handlerThread));
     }
 
     public final void L(Exception exc) {
@@ -1355,7 +1355,7 @@ public final class k {
         if (!this.U || handler == null) {
             return;
         }
-        handler.post(new pp0(19, this, z10));
+        handler.post(new rp0(19, this, z10));
     }
 
     public final boolean T(float f10) {
@@ -1442,7 +1442,7 @@ public final class k {
         this.P = false;
         this.M = 0.0f;
         k0 k0Var = this.k;
-        ((u0) k0Var.a).i.post(new wg.r(24, k0Var, n0Var));
+        ((u0) k0Var.a).i.post(new wg.q(26, k0Var, n0Var));
         this.F0 = SystemClock.elapsedRealtimeNanos();
         this.j.b("camera device switch started: from=" + this.F + ", to=" + n0Var);
         if (Z(n0Var)) {
@@ -1860,7 +1860,7 @@ public final class k {
             oVar3.b(sb2.toString());
             Handler handler2 = new Handler(tVar3.t.getLooper());
             tVar3.u = handler2;
-            handler2.post(new wg.r(23, tVar3, countDownLatch));
+            handler2.post(new wg.q(25, tVar3, countDownLatch));
             try {
                 countDownLatch.await();
                 if (tVar3.x0 != null) {

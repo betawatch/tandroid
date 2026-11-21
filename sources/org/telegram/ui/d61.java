@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class d61 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -65,13 +65,13 @@ public final class d61 extends LinearLayout {
                 break;
             case 11:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
-                float f12 = chatActivityEnterView.w1;
+                float f12 = chatActivityEnterView.y1;
                 if (f12 < 1.0f) {
                     if (f12 <= 0.0f) {
                         super.dispatchDraw(canvas);
                         break;
                     } else {
-                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.w1) * 255.0f));
+                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.y1) * 255.0f));
                         super.dispatchDraw(canvas);
                         canvas.restoreToCount(saveLayerAlpha);
                         break;
@@ -197,16 +197,16 @@ public final class d61 extends LinearLayout {
                             }
                         }
                         if (i7 != indexOfChild) {
-                            org.telegram.ui.Components.hl0 hl0Var = scrollSlidingTextTabStrip.b;
+                            org.telegram.ui.Components.jl0 jl0Var = scrollSlidingTextTabStrip.b;
                             sparseIntArray.get(i7);
-                            hl0Var.getClass();
+                            jl0Var.getClass();
                         }
                     }
                 } else if (motionEvent.getAction() == 1) {
                     View view3 = scrollSlidingTextTabStrip.d0;
                     if (view3 != null) {
                         final int i11 = 0;
-                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.fl0
+                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.hl0
                             public final /* synthetic */ org.telegram.ui.d61 b;
 
                             {
@@ -228,14 +228,14 @@ public final class d61 extends LinearLayout {
                                         break;
                                 }
                             }
-                        }).setInterpolator(org.telegram.ui.Components.lr.h).start();
+                        }).setInterpolator(org.telegram.ui.Components.nr.h).start();
                     }
                     scrollSlidingTextTabStrip.d0 = null;
                 } else if (motionEvent.getAction() == 3) {
                     View view4 = scrollSlidingTextTabStrip.d0;
                     if (view4 != null) {
                         final int i12 = 1;
-                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.fl0
+                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.hl0
                             public final /* synthetic */ org.telegram.ui.d61 b;
 
                             {
@@ -257,7 +257,7 @@ public final class d61 extends LinearLayout {
                                         break;
                                 }
                             }
-                        }).setInterpolator(org.telegram.ui.Components.lr.h).start();
+                        }).setInterpolator(org.telegram.ui.Components.nr.h).start();
                     }
                     scrollSlidingTextTabStrip.d0 = null;
                 }
@@ -289,7 +289,7 @@ public final class d61 extends LinearLayout {
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 8:
-                if (!(view instanceof org.telegram.ui.ActionBar.e1) || ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).O == null) {
+                if (!(view instanceof org.telegram.ui.ActionBar.d1) || ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).O == null) {
                     return super.drawChild(canvas, view, j3);
                 }
                 return false;
@@ -299,11 +299,11 @@ public final class d61 extends LinearLayout {
                 }
                 return super.drawChild(canvas, view, j3);
             case 14:
-                org.telegram.ui.Components.el0 el0Var = (org.telegram.ui.Components.el0) this.b;
-                if (view instanceof org.telegram.ui.Components.pv0) {
-                    ((org.telegram.ui.Components.pv0) view).a(el0Var.j0);
+                org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) this.b;
+                if (view instanceof org.telegram.ui.Components.sv0) {
+                    ((org.telegram.ui.Components.sv0) view).a(gl0Var.j0);
                 }
-                if (view == el0Var.s) {
+                if (view == gl0Var.s) {
                     return true;
                 }
                 return super.drawChild(canvas, view, j3);
@@ -317,8 +317,8 @@ public final class d61 extends LinearLayout {
                 }
                 return drawChild;
             case 25:
-                ug.i1 i1Var = (ug.i1) ((di.l4) this.b).d;
-                if (view == i1Var.n2 && i1Var.D2) {
+                ug.h1 h1Var = (ug.h1) ((di.l4) this.b).d;
+                if (view == h1Var.n2 && h1Var.D2) {
                     return true;
                 }
                 return super.drawChild(canvas, view, j3);
@@ -365,7 +365,7 @@ public final class d61 extends LinearLayout {
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 9:
-                return org.telegram.ui.ActionBar.k4.b((org.telegram.ui.ActionBar.k4) this.b);
+                return org.telegram.ui.ActionBar.j4.b((org.telegram.ui.ActionBar.j4) this.b);
             default:
                 return super.onInterceptTouchEvent(motionEvent);
         }
@@ -383,14 +383,14 @@ public final class d61 extends LinearLayout {
                 int i13 = (i12 - i10) / 2;
                 for (int i14 = 0; i14 < getChildCount(); i14++) {
                     View childAt = getChildAt(i14);
-                    if (childAt != ((org.telegram.ui.Components.jv) this.b).s.G && childAt != null) {
+                    if (childAt != ((org.telegram.ui.Components.mv) this.b).s.G && childAt != null) {
                         childAt.layout(paddingLeft, i13 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i13);
                         paddingLeft = org.telegram.messenger.f3.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
                     }
                 }
                 break;
             case 13:
-                ((org.telegram.ui.Components.c10) this.b).c.a(getMeasuredWidth());
+                ((org.telegram.ui.Components.e10) this.b).c.a(getMeasuredWidth());
                 super.onLayout(z10, i7, i10, i11, i12);
                 break;
             case 14:
@@ -422,51 +422,51 @@ public final class d61 extends LinearLayout {
             case 6:
                 int size2 = View.MeasureSpec.getSize(i7);
                 int paddingRight = getPaddingRight() + getPaddingLeft();
-                oi.z1 z1Var = (oi.z1) this.b;
-                LinearLayout linearLayout = z1Var.n0;
+                oi.b2 b2Var = (oi.b2) this.b;
+                LinearLayout linearLayout = b2Var.n0;
                 if (linearLayout != null) {
                     linearLayout.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) z1Var.n0.getLayoutParams();
-                    paddingRight += z1Var.n0.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) b2Var.n0.getLayoutParams();
+                    paddingRight += b2Var.n0.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin;
                 }
-                LinearLayout linearLayout2 = z1Var.o0;
+                LinearLayout linearLayout2 = b2Var.o0;
                 if (linearLayout2 != null) {
                     linearLayout2.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) z1Var.o0.getLayoutParams();
-                    paddingRight += z1Var.o0.getMeasuredWidth() + marginLayoutParams2.leftMargin + marginLayoutParams2.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) b2Var.o0.getLayoutParams();
+                    paddingRight += b2Var.o0.getMeasuredWidth() + marginLayoutParams2.leftMargin + marginLayoutParams2.rightMargin;
                 }
-                LinearLayout linearLayout3 = z1Var.p0;
+                LinearLayout linearLayout3 = b2Var.p0;
                 if (linearLayout3 != null) {
                     linearLayout3.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams3 = (ViewGroup.MarginLayoutParams) z1Var.p0.getLayoutParams();
-                    paddingRight += z1Var.p0.getMeasuredWidth() + marginLayoutParams3.leftMargin + marginLayoutParams3.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams3 = (ViewGroup.MarginLayoutParams) b2Var.p0.getLayoutParams();
+                    paddingRight += b2Var.p0.getMeasuredWidth() + marginLayoutParams3.leftMargin + marginLayoutParams3.rightMargin;
                 }
-                z1Var.l0 = Math.max(0, size2 - paddingRight);
+                b2Var.l0 = Math.max(0, size2 - paddingRight);
                 super.onMeasure(i7, i10);
                 break;
             case 7:
                 int size3 = View.MeasureSpec.getSize(i7);
                 int paddingRight2 = getPaddingRight() + getPaddingLeft();
-                oi.x3 x3Var = (oi.x3) this.b;
-                LinearLayout linearLayout4 = x3Var.M;
+                oi.y3 y3Var = (oi.y3) this.b;
+                LinearLayout linearLayout4 = y3Var.M;
                 if (linearLayout4 != null) {
                     linearLayout4.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams4 = (ViewGroup.MarginLayoutParams) x3Var.M.getLayoutParams();
-                    paddingRight2 += x3Var.M.getMeasuredWidth() + marginLayoutParams4.leftMargin + marginLayoutParams4.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams4 = (ViewGroup.MarginLayoutParams) y3Var.M.getLayoutParams();
+                    paddingRight2 += y3Var.M.getMeasuredWidth() + marginLayoutParams4.leftMargin + marginLayoutParams4.rightMargin;
                 }
-                LinearLayout linearLayout5 = x3Var.N;
+                LinearLayout linearLayout5 = y3Var.N;
                 if (linearLayout5 != null) {
                     linearLayout5.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams5 = (ViewGroup.MarginLayoutParams) x3Var.N.getLayoutParams();
-                    paddingRight2 += x3Var.N.getMeasuredWidth() + marginLayoutParams5.leftMargin + marginLayoutParams5.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams5 = (ViewGroup.MarginLayoutParams) y3Var.N.getLayoutParams();
+                    paddingRight2 += y3Var.N.getMeasuredWidth() + marginLayoutParams5.leftMargin + marginLayoutParams5.rightMargin;
                 }
-                LinearLayout linearLayout6 = x3Var.O;
+                LinearLayout linearLayout6 = y3Var.O;
                 if (linearLayout6 != null) {
                     linearLayout6.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams6 = (ViewGroup.MarginLayoutParams) x3Var.O.getLayoutParams();
-                    paddingRight2 += x3Var.O.getMeasuredWidth() + marginLayoutParams6.leftMargin + marginLayoutParams6.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams6 = (ViewGroup.MarginLayoutParams) y3Var.O.getLayoutParams();
+                    paddingRight2 += y3Var.O.getMeasuredWidth() + marginLayoutParams6.leftMargin + marginLayoutParams6.rightMargin;
                 }
-                x3Var.L = Math.max(0, size3 - paddingRight2);
+                y3Var.L = Math.max(0, size3 - paddingRight2);
                 super.onMeasure(i7, i10);
                 break;
             case 8:
@@ -518,16 +518,16 @@ public final class d61 extends LinearLayout {
                 super.onMeasure(i7, i10);
                 break;
             case 9:
-                org.telegram.ui.ActionBar.k4 k4Var = (org.telegram.ui.ActionBar.k4) this.b;
-                super.onMeasure((!org.telegram.ui.ActionBar.k4.b(k4Var) || (size = k4Var.J) == null) ? i7 : View.MeasureSpec.makeMeasureSpec(size.getWidth(), TLObject.FLAG_30), i11);
+                org.telegram.ui.ActionBar.j4 j4Var = (org.telegram.ui.ActionBar.j4) this.b;
+                super.onMeasure((!org.telegram.ui.ActionBar.j4.b(j4Var) || (size = j4Var.J) == null) ? i7 : View.MeasureSpec.makeMeasureSpec(size.getWidth(), TLObject.FLAG_30), i11);
                 break;
             case 12:
-                super.onMeasure(Math.max(View.MeasureSpec.getSize(i7), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(((org.telegram.ui.Components.jv) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
+                super.onMeasure(Math.max(View.MeasureSpec.getSize(i7), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(((org.telegram.ui.Components.mv) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
                 break;
             case 17:
                 super.onMeasure(i7, i10);
                 if (org.telegram.messenger.gd.a0) {
-                    ((org.telegram.ui.Components.w21) this.b).c.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.z21) this.b).c.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
@@ -600,10 +600,10 @@ public final class d61 extends LinearLayout {
     public void setVisibility(int i7) {
         switch (this.a) {
             case 16:
-                org.telegram.ui.Components.kv0 kv0Var = (org.telegram.ui.Components.kv0) this.b;
-                org.telegram.ui.Components.q9 q9Var = kv0Var.b;
+                org.telegram.ui.Components.nv0 nv0Var = (org.telegram.ui.Components.nv0) this.b;
+                org.telegram.ui.Components.q9 q9Var = nv0Var.b;
                 if (getVisibility() == 8 && i7 == 0) {
-                    kv0Var.c();
+                    nv0Var.c();
                     if (org.telegram.messenger.pc.e(3)) {
                         q9Var.getImageReceiver().P0(false);
                     }
@@ -628,10 +628,10 @@ public final class d61 extends LinearLayout {
     public d61(ContextThemeWrapper contextThemeWrapper, final qn0 qn0Var) {
         super(contextThemeWrapper);
         this.a = 21;
-        this.b = new org.telegram.ui.ActionBar.z0[]{r0, r0, r0, r0, r0};
+        this.b = new org.telegram.ui.ActionBar.y0[]{r0, r0, r0, r0, r0};
         final int i7 = 1;
         setOrientation(1);
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_0_2, org.telegram.messenger.gd.M0(2131745028, null), false, null);
+        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_0_2, org.telegram.messenger.gd.N0(2131745022, null), false, null);
         c10.d(-328966, -328966);
         final int i10 = 0;
         c10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
@@ -669,7 +669,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c10.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_slow, org.telegram.messenger.gd.M0(2131745031, null), false, null);
+        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_slow, org.telegram.messenger.gd.N0(2131745025, null), false, null);
         c11.d(-328966, -328966);
         c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
             @Override // android.view.View.OnClickListener
@@ -706,7 +706,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c11.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c12 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_normal, org.telegram.messenger.gd.M0(2131745032, null), false, null);
+        org.telegram.ui.ActionBar.y0 c12 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_normal, org.telegram.messenger.gd.N0(2131745026, null), false, null);
         c12.d(-328966, -328966);
         final int i11 = 2;
         c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
@@ -744,7 +744,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c12.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c13 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_fast, org.telegram.messenger.gd.M0(2131745035, null), false, null);
+        org.telegram.ui.ActionBar.y0 c13 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_fast, org.telegram.messenger.gd.N0(2131745029, null), false, null);
         c13.d(-328966, -328966);
         final int i12 = 3;
         c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
@@ -782,7 +782,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c13.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c14 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_superfast, org.telegram.messenger.gd.M0(2131745029, null), false, null);
+        org.telegram.ui.ActionBar.y0 c14 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_superfast, org.telegram.messenger.gd.N0(2131745023, null), false, null);
         c14.d(-328966, -328966);
         final int i13 = 4;
         c14.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31

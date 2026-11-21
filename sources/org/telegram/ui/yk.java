@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class yk extends oq0 {
     public final /* synthetic */ org.telegram.messenger.fj a;
@@ -42,7 +42,7 @@ public final class yk extends oq0 {
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final void e(CharSequence charSequence) {
-        this.c.a0.D1(charSequence, false);
+        this.c.a0.H1(charSequence, false);
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
@@ -60,7 +60,7 @@ public final class yk extends oq0 {
         if (efVar.w || efVar.v || efVar.u || e20Var != null) {
             bnVar.u(efVar, e20Var, z10, i10, 0, z11, 0L);
         } else {
-            bnVar.a0.q0();
+            bnVar.a0.u0();
         }
     }
 }

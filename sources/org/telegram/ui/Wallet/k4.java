@@ -7,24 +7,24 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Shader;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.q80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class k4 extends o80 {
+public final class k4 extends q80 {
     public final Paint M;
     public final /* synthetic */ m4 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k4(m4 m4Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(i6Var);
+    public k4(m4 m4Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(h6Var);
         this.N = m4Var;
         Paint paint = new Paint(1);
         this.M = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // org.telegram.ui.Components.o80
+    @Override // org.telegram.ui.Components.q80
     public final void b(Canvas canvas, Path path) {
         super.b(canvas, path);
         m4 m4Var = this.N;

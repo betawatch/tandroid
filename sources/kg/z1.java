@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class z1 {
     public static volatile z1[] e = new z1[4];
@@ -187,6 +187,6 @@ public final class z1 {
         ks.f(i7).k(ks.t3, new Object[0]);
         TLRPC.TL_help_getTimezonesList tL_help_getTimezonesList = new TLRPC.TL_help_getTimezonesList();
         tL_help_getTimezonesList.hash = help_timezoneslist != null ? help_timezoneslist.hash : 0;
-        ConnectionsManager.getInstance(i7).sendRequest(tL_help_getTimezonesList, new bi.k1(22, this, sharedPreferences));
+        ConnectionsManager.getInstance(i7).sendRequest(tL_help_getTimezonesList, new bi.o1(22, this, sharedPreferences));
     }
 }

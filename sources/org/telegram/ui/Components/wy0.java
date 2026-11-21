@@ -1,71 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class wy0 extends ReplacementSpan {
-    public static final /* synthetic */ int f = 0;
-    public ImageReceiver a;
-    public int b;
-    public int c;
-    public final boolean d;
-    public final int e;
+public final class wy0 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public TextView a;
+    public vy0 b;
+    public TLRPC.TL_help_termsOfService c;
+    public int d;
 
-    public wy0(View view, Bitmap bitmap, int i7, int i10, int i11, int i12) {
-        this.b = i7;
-        this.c = i10;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.a = imageReceiver;
-        imageReceiver.K0 = true;
-        imageReceiver.v0(bitmap);
-        imageReceiver.p1 = new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN);
-        this.e = i12;
-        this.d = true;
+    public final void a() {
+        vy0 vy0Var = this.b;
+        int i7 = this.d;
+        org.telegram.ui.n80 n80Var = (org.telegram.ui.n80) vy0Var;
+        n80Var.getClass();
+        org.telegram.messenger.j10.i(i7).a0 = null;
+        org.telegram.messenger.j10.i(i7).v(false);
+        LaunchActivity launchActivity = n80Var.a;
+        ArrayList arrayList = launchActivity.e0;
+        if (!arrayList.isEmpty()) {
+            ((org.telegram.ui.ActionBar.g2) i5.c.h(1, arrayList)).onResume();
+        }
+        launchActivity.B0.animate().alpha(0.0f).setDuration(150L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.lz(n80Var, 17)).start();
+        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
+        tL_help_acceptTermsOfService.id = this.c.id;
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new fi.l5(22));
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        int i14 = this.b;
-        int i15 = this.c;
-        ImageReceiver imageReceiver = this.a;
-        canvas.save();
-        if (this.d) {
-            imageReceiver.y0((int) f10, i12 - (i15 - this.e), i14, i15);
-        } else {
-            imageReceiver.y0((int) f10, i5.c.e(org.telegram.messenger.f3.z(4.0f, i13, i11), i15, 2, i11), i14, i15);
-        }
-        imageReceiver.h(canvas, null);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        int i11 = this.c;
-        if (fontMetricsInt != null) {
-            if (this.d) {
-                int i12 = this.e;
-                int i13 = -(i11 - i12);
-                fontMetricsInt.ascent = i13;
-                fontMetricsInt.top = i13;
-                fontMetricsInt.descent = i12;
-                fontMetricsInt.bottom = i12;
-            } else {
-                int L = ((-i11) / 2) - org.telegram.messenger.g0.L(4.0f);
-                fontMetricsInt.ascent = L;
-                fontMetricsInt.top = L;
-                int L2 = (i11 - (i11 / 2)) - org.telegram.messenger.g0.L(4.0f);
-                fontMetricsInt.descent = L2;
-                fontMetricsInt.bottom = L2;
-            }
-        }
-        return this.b;
+    public void setDelegate(vy0 vy0Var) {
+        this.b = vy0Var;
     }
 }

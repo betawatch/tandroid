@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import java.util.HashMap;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class bl0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final class bl0 implements TextWatcher {
                     ml0Var.n0 = true;
                     String d = pf.b.d(ml0Var.f[8].getText().toString(), false);
                     ml0Var.f[8].setText(d);
-                    org.telegram.ui.Components.g30 g30Var = (org.telegram.ui.Components.g30) ml0Var.f[9];
+                    org.telegram.ui.Components.j30 j30Var = (org.telegram.ui.Components.j30) ml0Var.f[9];
                     if (d.length() == 0) {
-                        g30Var.setHintText((String) null);
-                        g30Var.setHint(org.telegram.messenger.gd.M0(2131747179, null));
+                        j30Var.setHintText((String) null);
+                        j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
                     } else {
                         int i10 = 4;
                         if (d.length() > 4) {
@@ -72,20 +72,20 @@ public final class bl0 implements TextWatcher {
                         }
                         String str4 = (String) hashMap.get(d);
                         if (str4 == null || ml0Var.a.indexOf(str4) == -1 || (str2 = (String) ml0Var.d.get(d)) == null) {
-                            g30Var.setHintText((String) null);
-                            g30Var.setHint(org.telegram.messenger.gd.M0(2131747179, null));
+                            j30Var.setHintText((String) null);
+                            j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
                         } else {
-                            g30Var.setHintText(str2.replace('X', (char) 8211));
-                            g30Var.setHint((CharSequence) null);
+                            j30Var.setHintText(str2.replace('X', (char) 8211));
+                            j30Var.setHint((CharSequence) null);
                         }
                         if (!z10) {
                             EditTextBoldCursor editTextBoldCursor2 = ml0Var.f[8];
                             editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
                         }
                         if (str != null) {
-                            g30Var.requestFocus();
-                            g30Var.setText(str);
-                            g30Var.setSelection(g30Var.length());
+                            j30Var.requestFocus();
+                            j30Var.setText(str);
+                            j30Var.setSelection(j30Var.length());
                         }
                     }
                     ml0Var.n0 = false;

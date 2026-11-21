@@ -16,9 +16,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class qq0 extends org.telegram.ui.Components.bu0 {
+public final class qq0 extends org.telegram.ui.Components.eu0 {
     public final Paint k0;
     public boolean l0;
     public boolean m0;
@@ -36,7 +36,7 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
         setLayerType(2, null);
     }
 
-    @Override // org.telegram.ui.Components.bu0, org.telegram.ui.Components.au0
+    @Override // org.telegram.ui.Components.eu0, org.telegram.ui.Components.du0
     public final void R() {
         super.R();
         PhotoViewer photoViewer = this.o0;
@@ -63,7 +63,7 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         PhotoViewer photoViewer = this.o0;
@@ -103,13 +103,13 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
             return;
         }
         int measuredHeight = ((int) ((photoViewer.a6 - 1.0f) * dq0Var.getWebView().getMeasuredHeight())) / 2;
-        org.telegram.ui.Components.x51 x51Var = photoViewer.A1;
-        if (x51Var != null && x51Var.j) {
-            x51Var.setBounds(photoViewer.g0.getLeft(), (photoViewer.g0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.Y5 / photoViewer.a6)), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
+        org.telegram.ui.Components.a61 a61Var = photoViewer.A1;
+        if (a61Var != null && a61Var.j) {
+            a61Var.setBounds(photoViewer.g0.getLeft(), (photoViewer.g0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.Y5 / photoViewer.a6)), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
             photoViewer.A1.draw(canvas);
         }
-        org.telegram.ui.Components.cn0 cn0Var = photoViewer.B1;
-        if (cn0Var == null || !cn0Var.a()) {
+        org.telegram.ui.Components.fn0 fn0Var = photoViewer.B1;
+        if (fn0Var == null || !fn0Var.a()) {
             return;
         }
         photoViewer.B1.setBounds(photoViewer.g0.getLeft(), (int) ((photoViewer.G.getAlpha() * org.telegram.messenger.g0.L(90.0f)) + org.telegram.messenger.g0.m), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
@@ -140,18 +140,18 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.au0
+    @Override // org.telegram.ui.Components.du0
     public final int getBottomPadding() {
         return this.o0.Q0.getHeight();
     }
 
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        setTag(R.id.bulletin_delegate_tag, new y8(this, 6));
+        setTag(R.id.bulletin_delegate_tag, new z8(this, 6));
     }
 
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
@@ -188,7 +188,7 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
     /* JADX WARN: Removed duplicated region for block: B:122:0x00c5  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00b7  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x00d8  */
-    @Override // org.telegram.ui.Components.bu0, org.telegram.ui.Components.au0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.eu0, org.telegram.ui.Components.du0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -380,8 +380,8 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
             qq0Var.l0 = false;
         }
         int L = photoViewer.j0.getVisibility() != 8 ? org.telegram.messenger.g0.L(48.0f) : 0;
-        org.telegram.ui.Components.w20 w20Var = photoViewer.m1;
-        if (w20Var == null || w20Var.getVisibility() == 8) {
+        org.telegram.ui.Components.z20 z20Var = photoViewer.m1;
+        if (z20Var == null || z20Var.getVisibility() == 8) {
             i11 = i7;
             i12 = 0;
         } else {
@@ -412,11 +412,11 @@ public final class qq0 extends org.telegram.ui.Components.bu0 {
         while (i16 < childCount) {
             View childAt = qq0Var.getChildAt(i16);
             if (childAt.getVisibility() != 8 && childAt != photoViewer.m1) {
-                org.telegram.ui.Components.se0 se0Var = photoViewer.z2;
-                if (childAt == se0Var) {
+                org.telegram.ui.Components.ue0 ue0Var = photoViewer.z2;
+                if (childAt == ue0Var) {
                     childAt.measure(i11, View.MeasureSpec.makeMeasureSpec(qq0Var.getMeasuredHeight(), TLObject.FLAG_30));
                 } else if (childAt == photoViewer.y4) {
-                    if (se0Var == null || se0Var.getVisibility() != 0) {
+                    if (ue0Var == null || ue0Var.getVisibility() != 0) {
                         q10 = photoViewer.C4.q();
                         o4 = photoViewer.C4.o();
                     } else {

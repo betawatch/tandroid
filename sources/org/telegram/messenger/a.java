@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -166,17 +166,17 @@ public final /* synthetic */ class a implements Runnable {
                 }
             case 9:
                 TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.b;
-                ArrayList arrayList2 = org.telegram.ui.ActionBar.n6.F;
+                ArrayList arrayList2 = org.telegram.ui.ActionBar.m6.F;
                 int size = arrayList2.size();
                 for (int i12 = 0; i12 < size; i12++) {
-                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.m6) arrayList2.get(i12)).G;
+                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.l6) arrayList2.get(i12)).G;
                     if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                         TLRPC.Document document2 = tL_theme2.document;
                         if (document2 == null || (document = tL_theme.document) == null) {
                             return;
                         }
                         document2.file_reference = document.file_reference;
-                        org.telegram.ui.ActionBar.n6.y1(true, false);
+                        org.telegram.ui.ActionBar.m6.y1(true, false);
                         return;
                     }
                 }
@@ -202,13 +202,13 @@ public final /* synthetic */ class a implements Runnable {
                 if (((gd) ((androidx.mediarouter.app.f) this.b).b).q0().getTimeZone().equals(TimeZone.getDefault())) {
                     return;
                 }
-                gd.E0().Y0();
+                gd.E0().Z0();
                 return;
             case 15:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.b;
                 String[] strArr = MediaController.W1;
                 try {
-                    u1Var.dismiss();
+                    t1Var.dismiss();
                     return;
                 } catch (Exception e11) {
                     a8.g(e11, true);

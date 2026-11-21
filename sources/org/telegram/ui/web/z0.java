@@ -4,23 +4,23 @@ import a8.xa;
 import android.graphics.RectF;
 import android.os.Bundle;
 import fi.l7;
-import hi.b5;
+import hi.a5;
 import java.io.File;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.ri;
-import org.telegram.ui.ActionBar.l5;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.ph0;
-import org.telegram.ui.Components.sz;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.Components.rh0;
+import org.telegram.ui.Components.uz;
 import org.telegram.ui.Wallet.m6;
 import org.telegram.ui.bn;
 import org.telegram.ui.c51;
 import org.telegram.ui.y91;
-import tg.c2;
-import tg.m2;
+import tg.d2;
+import tg.n2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class z0 implements Runnable {
                     length += n1.e0(file2, null);
                 }
                 File file3 = new File(org.telegram.messenger.t0.b.getApplicationInfo().dataDir, "app_webview");
-                org.telegram.messenger.g0.g3(new ai.f0(n1Var, length, file3.exists() ? n1.e0(file3, Boolean.TRUE) : 0L, 3));
+                org.telegram.messenger.g0.g3(new ai.g0(n1Var, length, file3.exists() ? n1.e0(file3, Boolean.TRUE) : 0L, 3));
                 return;
             case 3:
                 q2.d dVar = (q2.d) this.b;
@@ -87,17 +87,17 @@ public final /* synthetic */ class z0 implements Runnable {
                 }
                 return;
             case 6:
-                ((of) this.b).v0();
+                ((qf) this.b).v0();
                 return;
             case 7:
-                sz szVar = (sz) this.b;
-                rh.b bVar = (rh.b) szVar.c;
+                uz uzVar = (uz) this.b;
+                rh.b bVar = (rh.b) uzVar.c;
                 if (bVar == rh.b.b) {
-                    szVar.a(rh.b.a, true);
+                    uzVar.a(rh.b.a, true);
                     return;
                 } else {
                     if (bVar == rh.b.c) {
-                        szVar.a(rh.b.d, true);
+                        uzVar.a(rh.b.d, true);
                         return;
                     }
                     return;
@@ -109,12 +109,12 @@ public final /* synthetic */ class z0 implements Runnable {
                 ((s4.g) this.b).n = -1;
                 return;
             case 10:
-                ((l5) this.b).i();
+                ((k5) this.b).i();
                 return;
             case 11:
-                hn hnVar = ((sg.g0) this.b).b.a;
-                if (hnVar != null) {
-                    hnVar.l();
+                jn jnVar = ((sg.g0) this.b).b.a;
+                if (jnVar != null) {
+                    jnVar.l();
                     return;
                 }
                 return;
@@ -150,32 +150,32 @@ public final /* synthetic */ class z0 implements Runnable {
                 }
                 return;
             case 15:
-                org.telegram.messenger.g0.I3(((sh.c) this.b).a);
+                org.telegram.messenger.g0.I3(((sh.b) this.b).a);
                 return;
             case 16:
-                sh.c cVar = (sh.c) ((bi.u) this.b).f2;
-                org.telegram.ui.Cells.r1 r1Var = cVar.n;
+                sh.b bVar2 = (sh.b) ((bi.u) this.b).f2;
+                org.telegram.ui.Cells.r1 r1Var = bVar2.n;
                 if (r1Var == null || r1Var.getDelegate() == null) {
                     return;
                 }
-                cVar.n.getDelegate().F1(cVar.n, false);
+                bVar2.n.getDelegate().F1(bVar2.n, false);
                 return;
             case 17:
-                ((sh.o) this.b).c.g3.O(true);
+                ((sh.n) this.b).c.g3.O(true);
                 return;
             case 18:
-                ((sh.n) this.b).a();
+                ((sh.m) this.b).a();
                 return;
             case 19:
-                b5 b5Var = (b5) this.b;
-                b5Var.y0 = true;
-                b5Var.s();
+                a5 a5Var = (a5) this.b;
+                a5Var.y0 = true;
+                a5Var.s();
                 return;
             case 20:
-                ri.d0(j10.t0).d(2, null, ((c2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                ri.d0(j10.t0).d(2, null, ((d2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
                 return;
             case 21:
-                org.telegram.messenger.g0.I3(((m2) this.b).r0);
+                org.telegram.messenger.g0.I3(((n2) this.b).r0);
                 return;
             case 22:
                 u2.f fVar = (u2.f) this.b;
@@ -201,33 +201,33 @@ public final /* synthetic */ class z0 implements Runnable {
                 }
             case 23:
                 ab.c0 c0Var = (ab.c0) this.b;
-                ((v5.g) ((w5.c) c0Var.e)).f(new tg.z1(c0Var, 6));
+                ((v5.g) ((w5.c) c0Var.e)).f(new tg.o1(c0Var, 7));
                 return;
             case 24:
-                ug.l0 l0Var = ((ug.e0) this.b).c;
-                l0Var.s1.presentFragment(c51.g0(l0Var.o1(), true));
+                ug.k0 k0Var = ((ug.d0) this.b).c;
+                k0Var.s1.presentFragment(c51.g0(k0Var.o1(), true));
                 return;
             case 25:
-                ph0 ph0Var = ((ug.s0) this.b).G;
-                ph0Var.getAnimatedDrawable().N(0, true, false);
-                ph0Var.d();
+                rh0 rh0Var = ((ug.r0) this.b).G;
+                rh0Var.getAnimatedDrawable().N(0, true, false);
+                rh0Var.d();
                 return;
             case 26:
-                ((ug.z0) ((l7) this.b).c).J0();
+                ((ug.y0) ((l7) this.b).c).J0();
                 return;
             case 27:
-                ug.n1 n1Var2 = (ug.n1) this.b;
-                int size = 1073741823 - (1073741823 % n1Var2.f3.size());
-                v4.c0 c0Var2 = n1Var2.g3;
-                n1Var2.t3 = size;
-                c0Var2.h1(size, (n1Var2.getMeasuredHeight() - n1Var2.getChildAt(0).getMeasuredHeight()) >> 1);
-                n1Var2.z1(null, false);
+                ug.m1 m1Var = (ug.m1) this.b;
+                int size = 1073741823 - (1073741823 % m1Var.f3.size());
+                v4.c0 c0Var2 = m1Var.g3;
+                m1Var.t3 = size;
+                c0Var2.h1(size, (m1Var.getMeasuredHeight() - m1Var.getChildAt(0).getMeasuredHeight()) >> 1);
+                m1Var.z1(null, false);
                 return;
             case 28:
-                ((ug.p1) this.b).invalidate();
+                ((ug.o1) this.b).invalidate();
                 return;
             default:
-                ((ug.x1) this.b).a();
+                ((ug.w1) this.b).a();
                 return;
         }
     }

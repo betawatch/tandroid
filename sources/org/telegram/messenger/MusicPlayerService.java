@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements fs {
     public static final boolean s;
@@ -174,7 +174,7 @@ public class MusicPlayerService extends Service implements fs {
                     if (bitmap == null && bitmap2 != null) {
                         bitmap = bitmap2;
                     }
-                    w12 = !fj.R4(fjVar.k) ? gd.M0(2131753980, null) : gd.M0(2131753939, null);
+                    w12 = !fj.R4(fjVar.k) ? gd.N0(2131753979, null) : gd.N0(2131753938, null);
                 }
             }
             bitmap2 = c10;
@@ -223,8 +223,8 @@ public class MusicPlayerService extends Service implements fs {
         } else {
             builder.setLargeIcon(this.d);
         }
-        String M0 = gd.M0(2131748058, null);
-        String M02 = gd.M0(2131754800, null);
+        String N0 = gd.N0(2131748057, null);
+        String N02 = gd.N0(2131754799, null);
         this.c = new android.support.v4.media.session.d0();
         if (MediaController.B().B0) {
             android.support.v4.media.session.d0 d0Var = this.c;
@@ -232,11 +232,11 @@ public class MusicPlayerService extends Service implements fs {
             d0Var.c(6, 0L, 1.0f);
             d0Var.e = 0L;
             if (fjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M02, pendingIntent).build());
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, N02, pendingIntent).build());
             }
-            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, gd.M0(2131748587, null), (PendingIntent) null).build());
+            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, gd.N0(2131748586, null), (PendingIntent) null).build());
             if (fjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M0, broadcast3).build());
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, N0, broadcast3).build());
             }
             str2 = y12;
             str3 = w12;
@@ -258,20 +258,20 @@ public class MusicPlayerService extends Service implements fs {
                 android.support.v4.media.session.d0 d0Var2 = this.c;
                 str2 = y12;
                 str3 = w12;
-                String M03 = gd.M0(2131745127, null);
+                String N03 = gd.N0(2131745126, null);
                 if (TextUtils.isEmpty(str)) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
-                if (TextUtils.isEmpty(M03)) {
+                if (TextUtils.isEmpty(N03)) {
                     throw new IllegalArgumentException("You must specify a name to build a CustomAction");
                 }
-                str4 = M0;
-                d0Var2.a(new PlaybackStateCompat.CustomAction(str, M03, i11, null));
+                str4 = N0;
+                d0Var2.a(new PlaybackStateCompat.CustomAction(str, N03, i11, null));
             } else {
                 str2 = y12;
                 str3 = w12;
                 aVar = aVar3;
-                str4 = M0;
+                str4 = N0;
                 i7 = i13;
             }
             android.support.v4.media.session.d0 d0Var3 = this.c;
@@ -283,14 +283,14 @@ public class MusicPlayerService extends Service implements fs {
                 int i15 = bz.S0;
                 int i16 = i15 != 1 ? i15 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 android.support.v4.media.session.d0 d0Var4 = this.c;
-                String M04 = gd.M0(2131746078, null);
+                String N04 = gd.N0(2131746077, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
-                if (TextUtils.isEmpty(M04)) {
+                if (TextUtils.isEmpty(N04)) {
                     throw new IllegalArgumentException("You must specify a name to build a CustomAction");
                 }
-                d0Var4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", M04, i16, null));
+                d0Var4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", N04, i16, null));
             }
             if (H) {
                 str5 = null;
@@ -299,12 +299,12 @@ public class MusicPlayerService extends Service implements fs {
                 i10 = 2131754930;
                 str5 = null;
             }
-            String M05 = gd.M0(i10, str5);
+            String N05 = gd.N0(i10, str5);
             if (fjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(bz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, gd.M0(2131745127, str5), pendingIntent2).build());
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M02, pendingIntent3).build());
+                builder.addAction(new Notification.Action.Builder(bz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, gd.N0(2131745126, str5), pendingIntent2).build());
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, N02, pendingIntent3).build());
             }
-            builder.addAction(new Notification.Action.Builder(!H ? R.drawable.ic_action_pause : R.drawable.ic_action_play, M05, broadcast2).build());
+            builder.addAction(new Notification.Action.Builder(!H ? R.drawable.ic_action_pause : R.drawable.ic_action_play, N05, broadcast2).build());
             if (fjVar.I3()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, str4, broadcast3).build());
                 int i17 = bz.S0;
@@ -312,7 +312,7 @@ public class MusicPlayerService extends Service implements fs {
                     i14 = i17 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone;
                 }
                 str6 = null;
-                builder.addAction(new Notification.Action.Builder(i14, gd.M0(2131746078, null), broadcast4).build());
+                builder.addAction(new Notification.Action.Builder(i14, gd.N0(2131746077, null), broadcast4).build());
                 w.u(this.c.b());
                 g();
                 a0Var = w;
@@ -471,7 +471,7 @@ public class MusicPlayerService extends Service implements fs {
         if (z10) {
             return null;
         }
-        org.telegram.ui.ActionBar.n6.T(this);
+        org.telegram.ui.ActionBar.m6.T(this);
         org.telegram.ui.Components.b9 b9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.b9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.b9((TLRPC.Chat) tLObject);
         b9Var.r = 1;
         float f12 = i7;
@@ -559,14 +559,14 @@ public class MusicPlayerService extends Service implements fs {
             } else {
                 int i7 = bz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
                 android.support.v4.media.session.d0 d0Var2 = this.c;
-                String M0 = gd.M0(2131745127, null);
+                String N0 = gd.N0(2131745126, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.shuffle")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
-                if (TextUtils.isEmpty(M0)) {
+                if (TextUtils.isEmpty(N0)) {
                     throw new IllegalArgumentException("You must specify a name to build a CustomAction");
                 }
-                d0Var2.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.shuffle", M0, i7, null));
+                d0Var2.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.shuffle", N0, i7, null));
                 j10 = 2360118;
             }
             android.support.v4.media.session.d0 d0Var3 = this.c;
@@ -576,14 +576,14 @@ public class MusicPlayerService extends Service implements fs {
                 int i10 = bz.S0;
                 int i11 = i10 != 1 ? i10 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 android.support.v4.media.session.d0 d0Var4 = this.c;
-                String M02 = gd.M0(2131746078, null);
+                String N02 = gd.N0(2131746077, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
-                if (TextUtils.isEmpty(M02)) {
+                if (TextUtils.isEmpty(N02)) {
                     throw new IllegalArgumentException("You must specify a name to build a CustomAction");
                 }
-                d0Var4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", M02, i11, null));
+                d0Var4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", N02, i11, null));
             }
         }
         w.u(this.c.b());

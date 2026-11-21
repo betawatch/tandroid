@@ -1,54 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Rect;
 import android.view.View;
-import org.telegram.ui.Components.ym0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class a4 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class a4 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final Object b;
-    public final Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ j4 b;
 
-    public a4(ym0 ym0Var, ym0 ym0Var2, ym0 ym0Var3) {
-        this.a = 1;
-        this.b = ym0Var;
-        this.c = ym0Var2;
-        this.d = ym0Var3;
+    public /* synthetic */ a4(j4 j4Var, int i7) {
+        this.a = i7;
+        this.b = j4Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Rect rect = (Rect) this.b;
-                rect.set(i7, i10, i11, i12);
-                Rect rect2 = (Rect) this.c;
-                rect2.set(i13, i14, i15, i16);
-                m4 m4Var = (m4) this.d;
-                k4 k4Var = m4Var.b;
-                if (k4Var.f() && !rect.equals(rect2)) {
-                    m4Var.h = true;
-                    if (k4Var.f()) {
-                        m4Var.c();
-                        break;
-                    }
-                }
+                this.b.g();
+                break;
+            case 1:
+                this.b.g();
                 break;
             default:
-                ((ym0) this.b).setProgress(org.telegram.ui.h5.n1);
-                ((ym0) this.c).setProgress(org.telegram.ui.h5.o1);
-                ((ym0) this.d).setProgress(org.telegram.ui.h5.p1);
+                this.b.g();
                 break;
         }
-    }
-
-    public a4(m4 m4Var) {
-        this.a = 0;
-        this.d = m4Var;
-        this.b = new Rect();
-        this.c = new Rect();
     }
 }

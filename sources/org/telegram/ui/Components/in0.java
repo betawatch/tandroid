@@ -1,30 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class in0 extends LinearLayout {
+public final /* synthetic */ class in0 implements r1.c {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ qn0 b;
+    public final /* synthetic */ r1.g c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public in0(Context context, int i7, int i10) {
-        super(context);
+    public /* synthetic */ in0(qn0 qn0Var, r1.g gVar, int i7) {
         this.a = i7;
-        this.b = i10;
+        this.b = qn0Var;
+        this.c = gVar;
     }
 
-    @Override // android.view.View
-    public final int getSuggestedMinimumWidth() {
-        return org.telegram.messenger.g0.L(260.0f);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.b), View.MeasureSpec.getMode(i10)));
+    @Override // r1.c
+    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                if (!z10) {
+                    this.b.z.remove(this.c);
+                    gVar.d();
+                    break;
+                }
+                break;
+            default:
+                qn0 qn0Var = this.b;
+                if (!z10) {
+                    qn0Var.z.remove(this.c);
+                    gVar.d();
+                    break;
+                } else {
+                    qn0Var.getClass();
+                    break;
+                }
+        }
     }
 }

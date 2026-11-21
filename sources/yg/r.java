@@ -23,71 +23,71 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.n10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.lr;
-import ug.t1;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.nr;
+import ug.s1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final bc a;
     public final o b;
     public final TextView c;
-    public final k80 d;
-    public final i6 e;
+    public final m80 d;
+    public final h6 e;
     public final o0 f;
     public final Paint[] h;
     public ValueAnimator n;
 
-    public r(Context context, i6 i6Var) {
+    public r(Context context, h6 h6Var) {
         super(context);
-        this.e = i6Var;
+        this.e = h6Var;
         LinearLayout g10 = f3.g(context, 1);
         bc bcVar = new bc(context, 1, 0, 5);
         this.a = bcVar;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
-        int i7 = n6.Dk;
-        canvas.drawColor(i0.a.f(0.5f, n6.w0(i7, i6Var), n6.w0(n6.h5, i6Var)));
+        int i7 = m6.Dk;
+        canvas.drawColor(i0.a.f(0.5f, m6.w0(i7, h6Var), m6.w0(m6.h5, h6Var)));
         bcVar.setBackgroundBitmap(createBitmap);
         vg.f fVar = bcVar.b;
         fVar.z = i7;
-        fVar.A = n6.Ck;
+        fVar.A = m6.Ck;
         fVar.b();
         g10.addView(bcVar, ma.r(ks.q2, ks.q2, 1));
         o oVar = new o(this, context);
         this.b = oVar;
         this.h = new Paint[20];
         a(0.0f);
-        t1 t1Var = oVar.a;
-        t1Var.q = false;
-        t1Var.K = false;
-        t1Var.L = true;
-        t1Var.H = true;
-        t1Var.l = new ta(this, 5);
-        t1Var.c();
+        s1 s1Var = oVar.a;
+        s1Var.q = false;
+        s1Var.K = false;
+        s1Var.L = true;
+        s1Var.H = true;
+        s1Var.l = new ta(this, 5);
+        s1Var.c();
         bcVar.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
         n10.p(textView, 1, 22.0f);
-        int i10 = n6.G6;
-        u6.U(textView, i10, i6Var);
+        int i10 = m6.G6;
+        t6.U(textView, i10, h6Var);
         textView.setGravity(1);
         g10.addView(textView, ma.t(-2, -2, 1, 24, -8, 24, 0));
         o0 o0Var = new o0(this);
         this.f = o0Var;
-        k80 k80Var = new k80(context, o0Var, i6Var);
-        this.d = k80Var;
-        k80Var.setTextSize(1, 15.0f);
-        k80Var.setGravity(17);
-        u6.U(k80Var, i10, i6Var);
-        k80Var.setMovementMethod(LinkMovementMethod.getInstance());
-        u6.G(k80Var, n6.J6, i6Var);
-        k80Var.setImportantForAccessibility(2);
-        g10.addView(k80Var, ma.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
+        m80 m80Var = new m80(context, o0Var, h6Var);
+        this.d = m80Var;
+        m80Var.setTextSize(1, 15.0f);
+        m80Var.setGravity(17);
+        t6.U(m80Var, i10, h6Var);
+        m80Var.setMovementMethod(LinkMovementMethod.getInstance());
+        t6.G(m80Var, m6.J6, h6Var);
+        m80Var.setImportantForAccessibility(2);
+        g10.addView(m80Var, ma.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
         addView(oVar, ma.e(-1, 234, 48));
         addView(g10);
@@ -95,10 +95,10 @@ public final class r extends FrameLayout {
     }
 
     public final void a(float f10) {
-        int i7 = n6.Ck;
-        i6 i6Var = this.e;
-        int w02 = n6.w0(i7, i6Var);
-        int w03 = n6.w0(n6.Dk, i6Var);
+        int i7 = m6.Ck;
+        h6 h6Var = this.e;
+        int w02 = m6.w0(i7, h6Var);
+        int w03 = m6.w0(m6.Dk, h6Var);
         int f11 = i0.a.f(f10, w02, -371690);
         int f12 = i0.a.f(f10, w03, -14281);
         int i10 = 0;
@@ -119,8 +119,8 @@ public final class r extends FrameLayout {
         o0 o0Var = this.f;
         if (o0Var != null) {
             canvas.save();
-            k80 k80Var = this.d;
-            canvas.translate(k80Var.getLeft(), k80Var.getTop());
+            m80 m80Var = this.d;
+            canvas.translate(m80Var.getLeft(), m80Var.getTop());
             if (o0Var.h(canvas)) {
                 invalidate();
             }
@@ -142,14 +142,14 @@ public final class r extends FrameLayout {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
         marginLayoutParams.topMargin = -g0.L(6.0f);
         setLayoutParams(marginLayoutParams);
-        int i7 = n6.a7;
-        i6 i6Var = this.e;
-        u6.h(i7, this, i6Var);
-        this.c.setText(gd.a0("BoostingBoostsViaGifts", null, 2131753560, new Object[0]));
-        String a02 = gd.a0(null, null, v3.V(chat) ? 2131753508 : 2131753503, new Object[0]);
-        k80 k80Var = this.d;
-        k80Var.setText(a02);
-        u6.U(k80Var, n6.r5, i6Var);
+        int i7 = m6.a7;
+        h6 h6Var = this.e;
+        t6.h(i7, this, h6Var);
+        this.c.setText(gd.a0("BoostingBoostsViaGifts", null, 2131753559, new Object[0]));
+        String a02 = gd.a0(null, null, v3.V(chat) ? 2131753507 : 2131753502, new Object[0]);
+        m80 m80Var = this.d;
+        m80Var.setText(a02);
+        t6.U(m80Var, m6.r5, h6Var);
     }
 
     public void setPaused(boolean z10) {
@@ -190,7 +190,7 @@ public final class r extends FrameLayout {
         });
         this.n.addListener(new q(this, fArr, f10, f11, z10));
         this.n.setDuration(680L);
-        this.n.setInterpolator(lr.h);
+        this.n.setInterpolator(nr.h);
         this.n.start();
     }
 }

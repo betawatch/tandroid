@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class xb1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -42,8 +42,8 @@ public final class xb1 extends AnimatorListenerAdapter {
                 break;
             case 3:
                 for (org.telegram.ui.Components.q9 q9Var : hc1Var.W) {
-                    org.telegram.ui.Components.o5 o5Var = q9Var.e;
-                    if (o5Var != null && (s2Var = o5Var.k) != null) {
+                    org.telegram.ui.Components.p5 p5Var = q9Var.e;
+                    if (p5Var != null && (s2Var = p5Var.k) != null) {
                         s2Var.u0 = true;
                         s2Var.P0(false);
                     }
@@ -52,8 +52,8 @@ public final class xb1 extends AnimatorListenerAdapter {
             case 4:
                 hc1Var.s();
                 for (org.telegram.ui.Components.q9 q9Var2 : hc1Var.W) {
-                    org.telegram.ui.Components.o5 o5Var2 = q9Var2.e;
-                    if (o5Var2 != null && (s2Var2 = o5Var2.k) != null) {
+                    org.telegram.ui.Components.p5 p5Var2 = q9Var2.e;
+                    if (p5Var2 != null && (s2Var2 = p5Var2.k) != null) {
                         s2Var2.u0 = false;
                         s2Var2.Q0();
                     }
@@ -61,7 +61,7 @@ public final class xb1 extends AnimatorListenerAdapter {
                 hc1Var.S.setVisibility(8);
                 break;
             case 5:
-                hc1Var.F.setText(org.telegram.messenger.gd.M0(2131743253, null));
+                hc1Var.F.setText(org.telegram.messenger.gd.N0(2131743247, null));
                 hc1Var.F.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
                 break;
             case 6:

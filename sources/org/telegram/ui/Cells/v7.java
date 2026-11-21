@@ -5,17 +5,17 @@ import android.graphics.Canvas;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class v7 extends org.telegram.ui.Components.q9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 H;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 H;
     public final /* synthetic */ x7 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v7(x7 x7Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public v7(x7 x7Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.I = x7Var;
-        this.H = i6Var;
+        this.H = h6Var;
     }
 
     @Override // org.telegram.ui.Components.q9, android.view.View

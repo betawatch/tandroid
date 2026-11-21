@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sn implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -34,17 +34,17 @@ public final /* synthetic */ class sn implements RequestDelegate {
             case 0:
                 mp mpVar = (mp) this.b;
                 Context context = (Context) this.c;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.d;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.d;
                 lr lrVar = (lr) this.e;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.f;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.f;
                 TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = (TLRPC.TL_channels_convertToGigagroup) this.g;
                 mpVar.getClass();
                 if (tL_error != null) {
-                    g0.g3(new wm(mpVar, lrVar, context, u1Var, tL_error, h2Var, tL_channels_convertToGigagroup, 1));
+                    g0.g3(new wm(mpVar, lrVar, context, t1Var, tL_error, g2Var, tL_channels_convertToGigagroup, 1));
                     break;
                 } else {
                     if (context != null) {
-                        g0.g3(new vm(1, context, u1Var));
+                        g0.g3(new vm(1, context, t1Var));
                     }
                     mpVar.V3((TLRPC.Updates) tLObject, false);
                     g0.g3(new a(lrVar, 27));
@@ -55,7 +55,7 @@ public final /* synthetic */ class sn implements RequestDelegate {
                 final TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
                 final String str = (String) this.d;
                 final x00 x00Var = (x00) this.e;
-                final bi.y3 y3Var = (bi.y3) this.f;
+                final bi.c4 c4Var = (bi.c4) this.f;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.g;
                 z00Var.getClass();
                 if (!(tLObject instanceof TLRPC.TL_messages_translateResult)) {
@@ -72,7 +72,7 @@ public final /* synthetic */ class sn implements RequestDelegate {
                                     storyItem2.translatedText = null;
                                     z00Var2.getMessagesController().R1().k.h(storyItem2.dialogId, storyItem2);
                                     z00Var2.K.remove(x00Var);
-                                    y3Var.run();
+                                    c4Var.run();
                                     break;
                                 default:
                                     z00 z00Var3 = z00Var;
@@ -82,7 +82,7 @@ public final /* synthetic */ class sn implements RequestDelegate {
                                     storyItem3.translatedText = null;
                                     z00Var3.getMessagesController().R1().k.h(storyItem3.dialogId, storyItem3);
                                     z00Var3.K.remove(x00Var);
-                                    y3Var.run();
+                                    c4Var.run();
                                     break;
                             }
                         }
@@ -91,7 +91,7 @@ public final /* synthetic */ class sn implements RequestDelegate {
                 } else {
                     ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
                     if (arrayList.size() > 0) {
-                        g0.g3(new wm(z00Var, storyItem, str, tL_textWithEntities, arrayList.get(0), x00Var, y3Var, 4));
+                        g0.g3(new wm(z00Var, storyItem, str, tL_textWithEntities, arrayList.get(0), x00Var, c4Var, 4));
                         break;
                     } else {
                         final int i10 = 0;
@@ -107,7 +107,7 @@ public final /* synthetic */ class sn implements RequestDelegate {
                                         storyItem2.translatedText = null;
                                         z00Var2.getMessagesController().R1().k.h(storyItem2.dialogId, storyItem2);
                                         z00Var2.K.remove(x00Var);
-                                        y3Var.run();
+                                        c4Var.run();
                                         break;
                                     default:
                                         z00 z00Var3 = z00Var;
@@ -117,7 +117,7 @@ public final /* synthetic */ class sn implements RequestDelegate {
                                         storyItem3.translatedText = null;
                                         z00Var3.getMessagesController().R1().k.h(storyItem3.dialogId, storyItem3);
                                         z00Var3.K.remove(x00Var);
-                                        y3Var.run();
+                                        c4Var.run();
                                         break;
                                 }
                             }

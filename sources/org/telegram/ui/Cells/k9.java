@@ -20,7 +20,7 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class k9 extends w9 {
     public final SparseArray p0 = new SparseArray();
@@ -70,7 +70,7 @@ public abstract class k9 extends w9 {
         r1Var.setSelectedBackgroundProgress(0.01f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.01f, 1.0f);
         int i7 = 1;
-        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.k2(r1Var, e12, i7));
+        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.j2(r1Var, e12, i7));
         ofFloat.addListener(new l1(r1Var, i7));
         ofFloat.setDuration(300L);
         ofFloat.start();
@@ -139,11 +139,11 @@ public abstract class k9 extends w9 {
             Paint paint = this.p;
             Paint paint2 = this.o;
             if (P3) {
-                int i13 = org.telegram.ui.ActionBar.n6.Mc;
+                int i13 = org.telegram.ui.ActionBar.m6.Mc;
                 paint2.setColor(t(i13));
                 paint.setColor(t(i13));
             } else {
-                int i14 = org.telegram.ui.ActionBar.n6.lg;
+                int i14 = org.telegram.ui.ActionBar.m6.lg;
                 paint2.setColor(t(i14));
                 paint.setColor(t(i14));
             }
@@ -161,11 +161,11 @@ public abstract class k9 extends w9 {
             Paint paint = this.p;
             Paint paint2 = this.o;
             if (z10) {
-                int i7 = org.telegram.ui.ActionBar.n6.Mc;
+                int i7 = org.telegram.ui.ActionBar.m6.Mc;
                 paint2.setColor(t(i7));
                 paint.setColor(t(i7));
             } else {
-                int i10 = org.telegram.ui.ActionBar.n6.lg;
+                int i10 = org.telegram.ui.ActionBar.m6.lg;
                 paint2.setColor(t(i10));
                 paint.setColor(t(i10));
             }
@@ -187,11 +187,11 @@ public abstract class k9 extends w9 {
         Paint paint = this.p;
         Paint paint2 = this.o;
         if (P3) {
-            int i7 = org.telegram.ui.ActionBar.n6.Mc;
+            int i7 = org.telegram.ui.ActionBar.m6.Mc;
             paint2.setColor(t(i7));
             paint.setColor(t(i7));
         } else {
-            int i10 = org.telegram.ui.ActionBar.n6.lg;
+            int i10 = org.telegram.ui.ActionBar.m6.lg;
             paint2.setColor(t(i10));
             paint.setColor(t(i10));
         }

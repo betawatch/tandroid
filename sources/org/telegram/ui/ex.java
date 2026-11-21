@@ -14,9 +14,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ex extends View implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.c6 {
+public final class ex extends View implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.b6 {
     public boolean E;
     public int F;
     public final Paint a;
@@ -28,8 +28,8 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
     public float h;
     public final ImageReceiver n;
     public final ImageReceiver r;
-    public final org.telegram.ui.Components.mh0 s;
-    public final org.telegram.ui.Components.mh0 w;
+    public final org.telegram.ui.Components.oh0 s;
+    public final org.telegram.ui.Components.oh0 w;
     public boolean x;
     public int y;
 
@@ -45,15 +45,15 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
         this.c = i7;
         imageReceiver.y = true;
         imageReceiver2.y = true;
-        org.telegram.ui.Components.mh0 mh0Var = new org.telegram.ui.Components.mh0(R.raw.download_progress, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-        this.s = mh0Var;
-        org.telegram.ui.Components.mh0 mh0Var2 = new org.telegram.ui.Components.mh0(R.raw.download_finish, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-        this.w = mh0Var2;
-        imageReceiver.w0(mh0Var);
-        imageReceiver2.w0(mh0Var2);
+        org.telegram.ui.Components.oh0 oh0Var = new org.telegram.ui.Components.oh0(R.raw.download_progress, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        this.s = oh0Var;
+        org.telegram.ui.Components.oh0 oh0Var2 = new org.telegram.ui.Components.oh0(R.raw.download_finish, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        this.w = oh0Var2;
+        imageReceiver.w0(oh0Var);
+        imageReceiver2.w0(oh0Var2);
         imageReceiver.W(1);
-        mh0Var.K(1);
-        mh0Var.start();
+        oh0Var.K(1);
+        oh0Var.start();
     }
 
     public final void a() {
@@ -170,20 +170,20 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
             return;
         }
         int i7 = this.y;
-        int i10 = org.telegram.ui.ActionBar.n6.v8;
-        int x02 = org.telegram.ui.ActionBar.n6.x0(null, i10, false);
+        int i10 = org.telegram.ui.ActionBar.m6.v8;
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, i10, false);
         ImageReceiver imageReceiver = this.r;
         ImageReceiver imageReceiver2 = this.n;
         Paint paint = this.a;
         Paint paint2 = this.b;
         if (i7 != x02) {
-            this.y = org.telegram.ui.ActionBar.n6.x0(null, i10, false);
-            paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, i10, false));
-            paint2.setColor(org.telegram.ui.ActionBar.n6.x0(null, i10, false));
-            int x03 = org.telegram.ui.ActionBar.n6.x0(null, i10, false);
+            this.y = org.telegram.ui.ActionBar.m6.x0(null, i10, false);
+            paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
+            paint2.setColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
+            int x03 = org.telegram.ui.ActionBar.m6.x0(null, i10, false);
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
             imageReceiver2.p1 = new PorterDuffColorFilter(x03, mode);
-            imageReceiver.p1 = new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.x0(null, i10, false), mode);
+            imageReceiver.p1 = new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.x0(null, i10, false), mode);
             paint2.setAlpha(100);
         }
         float f10 = this.f;
@@ -222,9 +222,9 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
             imageReceiver2.h(canvas, null);
         }
         if (this.e == 1.0f && !this.x && this.s.b0 == 0) {
-            org.telegram.ui.Components.mh0 mh0Var = this.w;
-            mh0Var.N(0, false, false);
-            mh0Var.start();
+            org.telegram.ui.Components.oh0 oh0Var = this.w;
+            oh0Var.N(0, false, false);
+            oh0Var.start();
             this.x = true;
         }
         canvas.restore();
@@ -259,23 +259,23 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
         super.setVisibility(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        org.telegram.ui.Components.mh0 mh0Var;
-        org.telegram.ui.Components.mh0 mh0Var2 = this.s;
-        if (mh0Var2 == null || (mh0Var = this.w) == null) {
+        org.telegram.ui.Components.oh0 oh0Var;
+        org.telegram.ui.Components.oh0 oh0Var2 = this.s;
+        if (oh0Var2 == null || (oh0Var = this.w) == null) {
             return;
         }
-        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.v8, false);
-        if (x02 != this.F || mh0Var2.getColorFilter() == null) {
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.v8, false);
+        if (x02 != this.F || oh0Var2.getColorFilter() == null) {
             this.F = x02;
-            mh0Var2.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
-            mh0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC));
+            oh0Var2.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
+            oh0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC));
             invalidate();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

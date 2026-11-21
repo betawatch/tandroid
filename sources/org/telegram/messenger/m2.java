@@ -2,14 +2,14 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class m2 {
     public final ArrayList a = new ArrayList();
     public int b;
 
     public final void a() {
-        this.a.add(new n2[]{new p2(4, 2131753063, 0)});
+        this.a.add(new n2[]{new p2(4, 2131753062, 0)});
     }
 
     public final void b(b3.j jVar) {

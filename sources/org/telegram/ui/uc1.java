@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class uc1 extends org.telegram.ui.Components.bk0 {
-    public org.telegram.ui.Wallet.c5 E;
+public final class uc1 extends org.telegram.ui.Components.dk0 {
+    public org.telegram.ui.Wallet.u4 E;
     public final /* synthetic */ WallpapersListActivity F;
     public final Context c;
     public final ArrayList d = new ArrayList();
@@ -33,7 +33,7 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return f1Var.f != 2;
     }
@@ -43,9 +43,9 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
         if (str != null && this.n != null) {
             str = p5.c.m(this.n, " ", str, new StringBuilder("#color"));
         }
-        org.telegram.ui.Wallet.c5 c5Var = this.E;
-        if (c5Var != null) {
-            org.telegram.messenger.g0.r(c5Var);
+        org.telegram.ui.Wallet.u4 u4Var = this.E;
+        if (u4Var != null) {
+            org.telegram.messenger.g0.r(u4Var);
             this.E = null;
         }
         boolean isEmpty = TextUtils.isEmpty(str);
@@ -58,7 +58,7 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
             this.f = true;
             this.h = null;
             if (this.s != 0) {
-                i7 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+                i7 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
                 ConnectionsManager.getInstance(i7).cancelRequest(this.s, true);
                 this.s = 0;
             }
@@ -73,9 +73,9 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
                 this.h = str;
                 f();
             } else {
-                org.telegram.ui.Wallet.c5 c5Var2 = new org.telegram.ui.Wallet.c5(14, this, str);
-                this.E = c5Var2;
-                org.telegram.messenger.g0.h3(c5Var2, 500L);
+                org.telegram.ui.Wallet.u4 u4Var2 = new org.telegram.ui.Wallet.u4(16, this, str);
+                this.E = u4Var2;
+                org.telegram.messenger.g0.h3(u4Var2, 500L);
             }
         }
         f();
@@ -94,14 +94,14 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
         int i18 = this.s;
         WallpapersListActivity wallpapersListActivity = this.F;
         if (i18 != 0) {
-            i17 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+            i17 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
             ConnectionsManager.getInstance(i17).cancelRequest(this.s, true);
             this.s = 0;
         }
         this.y = str;
-        i7 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
         org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
-        i10 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
         TLObject h22 = u12.h2(org.telegram.messenger.mp.u1(i10).O3);
         if (!(h22 instanceof TLRPC.User)) {
             if (!z10 || this.x) {
@@ -109,26 +109,26 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
             }
             this.x = true;
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            i15 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+            i15 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
             tL_contacts_resolveUsername.username = org.telegram.messenger.mp.u1(i15).O3;
-            i16 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+            i16 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
             ConnectionsManager.getInstance(i16).sendRequest(tL_contacts_resolveUsername, new l(this, 25));
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
         tL_messages_getInlineBotResults.query = p5.c.k("#wallpaper ", str);
-        i11 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
         tL_messages_getInlineBotResults.bot = org.telegram.messenger.mp.u1(i11).s1((TLRPC.User) h22);
         tL_messages_getInlineBotResults.offset = str2;
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         int i19 = this.w + 1;
         this.w = i19;
-        i12 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+        i12 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
         this.s = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getInlineBotResults, new di.w1(this, i19, 10));
-        i13 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+        i13 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i13);
         int i20 = this.s;
-        i14 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).classGuid;
+        i14 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).classGuid;
         connectionsManager.bindRequestToGuid(i20, i14);
     }
 
@@ -156,7 +156,7 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
             if (i10 != 2) {
                 return;
             }
-            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.M0(2131745620, null));
+            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.N0(2131745619, null));
             return;
         }
         org.telegram.ui.Cells.va vaVar = (org.telegram.ui.Cells.va) view;
@@ -173,14 +173,14 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, androidx.recyclerview.widget.RecyclerView, org.telegram.ui.Components.ck0, org.telegram.ui.f61] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, androidx.recyclerview.widget.RecyclerView, org.telegram.ui.Components.ek0, org.telegram.ui.f61] */
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        FrameLayout ejVar;
+        FrameLayout gjVar;
         FrameLayout frameLayout;
         Context context = this.c;
         if (i7 != 0) {
-            ejVar = null;
+            gjVar = null;
             if (i7 == 1) {
                 ?? f61Var = new f61(14, context, false ? 1 : 0);
                 f61Var.setItemAnimator(null);
@@ -196,16 +196,16 @@ public final class uc1 extends org.telegram.ui.Components.bk0 {
             } else if (i7 == 2) {
                 frameLayout = new org.telegram.ui.Cells.y3(context, null);
             }
-            ejVar = frameLayout;
+            gjVar = frameLayout;
         } else {
-            ejVar = new org.telegram.ui.Components.ej(this, context, 2);
-            ejVar.setTag(-33024);
+            gjVar = new org.telegram.ui.Components.gj(this, context, 2);
+            gjVar.setTag(-33024);
         }
         if (i7 == 1) {
-            ejVar.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(60.0f)));
+            gjVar.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(60.0f)));
         } else {
-            ejVar.setLayoutParams(new v4.q0(-1, -2));
+            gjVar.setLayoutParams(new v4.q0(-1, -2));
         }
-        return new org.telegram.ui.Components.kj0(ejVar);
+        return new org.telegram.ui.Components.mj0(gjVar);
     }
 }

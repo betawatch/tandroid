@@ -9,11 +9,11 @@ import c8.dd;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class h {
     public final /* synthetic */ q a;
@@ -36,14 +36,14 @@ public final class h {
         } else {
             i7 = 0;
         }
-        long j11 = n6.Dm + u6.b;
+        long j11 = m6.Dm + t6.b;
         if (qVar.s != j11) {
             qVar.s = j11;
             i7 |= 16;
         }
         Iterator it = qVar.n.iterator();
         while (it.hasNext()) {
-            if (((ck0) it.next()).b0()) {
+            if (((ek0) it.next()).b0()) {
                 qVar.i++;
             }
         }

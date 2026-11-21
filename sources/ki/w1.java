@@ -1,40 +1,27 @@
 package ki;
 
-import org.telegram.messenger.x10;
-import org.telegram.tgnet.TLRPC;
+import android.app.Dialog;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements x10 {
+public final /* synthetic */ class w1 implements View.OnApplyWindowInsetsListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t2 b;
+    public final /* synthetic */ Dialog b;
 
-    public /* synthetic */ w1(t2 t2Var, int i7) {
+    public /* synthetic */ w1(Dialog dialog, int i7) {
         this.a = i7;
-        this.b = t2Var;
+        this.b = dialog;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
         switch (this.a) {
             case 0:
-                Boolean bool = (Boolean) obj;
-                l2 l2Var = this.b.E;
-                if (l2Var != null) {
-                    if (!bool.booleanValue()) {
-                        l2Var.Q = System.currentTimeMillis();
-                        l2Var.y("secondary_button_pressed", null);
-                        break;
-                    } else {
-                        l2Var.Q = System.currentTimeMillis();
-                        l2Var.y("main_button_pressed", null);
-                        break;
-                    }
-                }
-                break;
+                return s2.h((s2) this.b, view, windowInsets);
             default:
-                org.telegram.messenger.g0.g3(new kg.h0(7, this.b, (TLRPC.UserFull) obj));
-                break;
+                return org.telegram.ui.ActionBar.w2.z((org.telegram.ui.ActionBar.w2) this.b, windowInsets);
         }
     }
 }

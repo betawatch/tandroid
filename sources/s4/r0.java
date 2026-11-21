@@ -12,15 +12,15 @@ import android.util.Log;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class r0 extends h3 implements ServiceConnection {
     public static final /* synthetic */ int H = 0;
     public m0 E;
     public boolean F;
-    public org.telegram.ui.ActionBar.p G;
+    public org.telegram.tgnet.u G;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.y s;
     public final ArrayList w;
@@ -32,7 +32,7 @@ public final class r0 extends h3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new hn(componentName, 15));
+        super(context, new jn(componentName, 15));
         this.w = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.y();

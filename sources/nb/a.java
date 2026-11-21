@@ -33,7 +33,7 @@ import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import ji.j;
+import ji.l;
 import lf.b;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.cj;
@@ -49,14 +49,14 @@ import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Cells.m1;
 import org.telegram.ui.Cells.r1;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.fr0;
 import pb.h;
 import u4.c;
 import u9.d;
 import yi.f;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation, d, r, f, gh.a, m1, OnFailureListener, c {
     public static final /* synthetic */ a b = new a(14);
@@ -603,7 +603,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
                 case "application/x-mp4-vtt":
                     return new g1(8);
                 case "text/vtt":
-                    return new j(2);
+                    return new l(2);
                 case "application/x-quicktime-tx3g":
                     return new j4.a(list);
                 case "text/x-ssa":
@@ -726,7 +726,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean p0(x5 x5Var) {
+    public /* synthetic */ boolean p0(y5 y5Var) {
         switch (this.a) {
         }
         return false;

@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class p7 extends f7 {
     public final /* synthetic */ s7 n;
@@ -95,6 +95,6 @@ public final class p7 extends f7 {
         o7 o7Var = new o7(this, viewGroup.getContext(), j7Var);
         o7Var.setCheckForButtonPress(true);
         j7Var.b.addView(o7Var);
-        return new org.telegram.ui.Components.kj0(j7Var);
+        return new org.telegram.ui.Components.mj0(j7Var);
     }
 }

@@ -12,9 +12,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class v71 extends org.telegram.ui.Components.bk0 {
+public final class v71 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public final /* synthetic */ x71 d;
 
@@ -23,7 +23,7 @@ public final class v71 extends org.telegram.ui.Components.bk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return false;
     }
@@ -52,7 +52,7 @@ public final class v71 extends org.telegram.ui.Components.bk0 {
         if (Build.VERSION.SDK_INT >= 29) {
             int i10 = 0;
             if (x71Var.b == 1) {
-                int E0 = org.telegram.ui.ActionBar.n6.E0(org.telegram.ui.ActionBar.n6.Ge);
+                int E0 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.Ge);
                 long j3 = x71Var.w.l;
                 int i11 = (int) j3;
                 if (i11 != 0 || j3 == 0) {
@@ -89,6 +89,6 @@ public final class v71 extends org.telegram.ui.Components.bk0 {
         k5Var.T = org.telegram.messenger.a6.q(i11).k();
         k5Var.setOutlineProvider(new bg.q0(8));
         k5Var.setClipToOutline(true);
-        return new org.telegram.ui.Components.kj0(k5Var);
+        return new org.telegram.ui.Components.mj0(k5Var);
     }
 }

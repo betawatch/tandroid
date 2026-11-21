@@ -1,50 +1,71 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import android.os.Build;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sl implements Comparator {
+public final /* synthetic */ class sl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
-    public /* synthetic */ sl(Object obj, int i7) {
+    public /* synthetic */ sl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int indexOf;
-        int indexOf2;
+    @Override // java.lang.Runnable
+    public final void run() {
         int i7 = this.a;
-        Object obj3 = this.b;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         switch (i7) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj3;
-                org.telegram.messenger.ue ueVar = (org.telegram.messenger.ue) obj;
-                org.telegram.messenger.ue ueVar2 = (org.telegram.messenger.ue) obj2;
                 boolean z10 = ChatAttachAlertPhotoLayout.r1;
-                int i10 = ueVar.a;
-                if (i10 != 0 || ueVar2.a == 0) {
-                    if ((i10 != 0 && ueVar2.a == 0) || (indexOf = arrayList.indexOf(ueVar)) > (indexOf2 = arrayList.indexOf(ueVar2))) {
-                        return 1;
-                    }
-                    if (indexOf >= indexOf2) {
-                        return 0;
+                chatAttachAlertPhotoLayout.b.c.removeView(chatAttachAlertPhotoLayout.Q);
+                chatAttachAlertPhotoLayout.Q = null;
+                break;
+            case 1:
+                boolean z11 = ChatAttachAlertPhotoLayout.r1;
+                chatAttachAlertPhotoLayout.w0(false);
+                chatAttachAlertPhotoLayout.o0 = null;
+                break;
+            case 2:
+                boolean z12 = ChatAttachAlertPhotoLayout.r1;
+                chatAttachAlertPhotoLayout.w0(false);
+                chatAttachAlertPhotoLayout.o0 = null;
+                break;
+            case 3:
+                chatAttachAlertPhotoLayout.x.setVisibility(8);
+                break;
+            case 4:
+                chatAttachAlertPhotoLayout.H.f();
+                break;
+            case 5:
+                boolean z13 = ChatAttachAlertPhotoLayout.r1;
+                ui uiVar = chatAttachAlertPhotoLayout.b;
+                if (f0.d.b(uiVar.a2.getParentActivity(), "android.permission.CAMERA") == 0) {
+                    chatAttachAlertPhotoLayout.l0();
+                    break;
+                } else {
+                    try {
+                        uiVar.a2.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
+                        break;
+                    } catch (Exception unused) {
+                        return;
                     }
                 }
-                return -1;
             default:
-                ry ryVar = ((fw) obj3).H0;
-                int indexOf3 = ryVar.e1.indexOf((TLRPC.TL_messages_stickerSet) obj);
-                int indexOf4 = ryVar.e1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
-                if (indexOf3 < 0 || indexOf4 < 0) {
-                    return 0;
+                boolean z14 = ChatAttachAlertPhotoLayout.r1;
+                ui uiVar2 = chatAttachAlertPhotoLayout.b;
+                try {
+                    if (Build.VERSION.SDK_INT >= 33) {
+                        uiVar2.a2.getParentActivity().requestPermissions(new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES"}, 4);
+                    } else {
+                        uiVar2.a2.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
+                    }
+                    break;
+                } catch (Exception unused2) {
+                    return;
                 }
-                return indexOf3 - indexOf4;
         }
     }
 }

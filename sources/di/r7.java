@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -24,15 +24,15 @@ public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ TLObject n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ r7(x8 x8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.l8 l8Var) {
-        this.e = x8Var;
+    public /* synthetic */ r7(y8 y8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.p8 p8Var) {
+        this.e = y8Var;
         this.f = zArr;
         this.h = starGift;
         this.b = z10;
         this.d = z11;
         this.c = j3;
         this.n = tL_textWithEntities;
-        this.r = l8Var;
+        this.r = p8Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0082  */
@@ -56,41 +56,41 @@ public final /* synthetic */ class r7 implements Runnable {
         switch (i11) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                ((x8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.l8) obj);
+                ((y8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.p8) obj);
                 break;
             default:
-                hi.ta taVar = (hi.ta) obj3;
+                hi.sa saVar = (hi.sa) obj3;
                 TLObject tLObject3 = (TLObject) obj2;
                 TL_stories.TL_startLive tL_startLive = (TL_stories.TL_startLive) tLObject2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) tLObject;
-                hi.k kVar = (hi.k) obj;
-                fi.b bVar = taVar.a;
-                int i13 = taVar.c;
+                hi.l lVar = (hi.l) obj;
+                fi.b bVar = saVar.a;
+                int i13 = saVar.c;
                 if (!(tLObject3 instanceof TLRPC.Updates)) {
                     if (tL_error != null) {
                         if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
-                            hi.q8 q8Var = taVar.r0;
-                            if (q8Var != null) {
-                                new org.telegram.ui.Components.lc(q8Var.c, bVar).g0(tL_error, true);
-                                kVar.run();
+                            hi.p8 p8Var = saVar.r0;
+                            if (p8Var != null) {
+                                new org.telegram.ui.Components.lc(p8Var.c, bVar).g0(tL_error, true);
+                                lVar.run();
                                 break;
                             }
                         } else {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, taVar.b, bVar);
-                            String M0 = gd.M0(2131748634, null);
-                            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                            u1Var.S = M0;
-                            u1Var.U = gd.M0(2131748635, null);
-                            org.telegram.messenger.f3.m(null, 2131747638, alertDialog$Builder, null);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, saVar.b, bVar);
+                            String N0 = gd.N0(2131748633, null);
+                            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                            t1Var.S = N0;
+                            t1Var.U = gd.N0(2131748634, null);
+                            org.telegram.messenger.f3.m(null, 2131747637, alertDialog$Builder, null);
                             break;
                         }
                     }
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject3;
                     mp.u1(i13).V3(updates, false);
-                    hi.w9 w9Var = taVar.C0;
-                    if (w9Var != null) {
-                        w9Var.destroy(true, null);
+                    hi.v9 v9Var = saVar.C0;
+                    if (v9Var != null) {
+                        v9Var.destroy(true, null);
                     }
                     ArrayList A0 = mp.A0(updates, TL_update.TL_updateStoryID.class);
                     int size = A0.size();
@@ -136,7 +136,7 @@ public final /* synthetic */ class r7 implements Runnable {
                                                 f10.k(ks.G2, objArr);
                                             }
                                         }
-                                        org.telegram.messenger.g0.h3(new hi.g9(taVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
+                                        org.telegram.messenger.g0.h3(new hi.f9(saVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
                                         break;
                                     }
                                 }
@@ -157,14 +157,14 @@ public final /* synthetic */ class r7 implements Runnable {
         }
     }
 
-    public /* synthetic */ r7(hi.ta taVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z10, long j3, boolean z11, TLRPC.TL_error tL_error, hi.k kVar) {
-        this.e = taVar;
+    public /* synthetic */ r7(hi.sa saVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z10, long j3, boolean z11, TLRPC.TL_error tL_error, hi.l lVar) {
+        this.e = saVar;
         this.f = tLObject;
         this.h = tL_startLive;
         this.b = z10;
         this.c = j3;
         this.d = z11;
         this.n = tL_error;
-        this.r = kVar;
+        this.r = lVar;
     }
 }

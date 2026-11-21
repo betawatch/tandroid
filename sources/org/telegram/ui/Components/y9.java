@@ -13,17 +13,17 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class y9 extends FrameLayout implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.c6 {
+public final class y9 extends FrameLayout implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.b6 {
     public boolean E;
     public int F;
     public int G;
     public TextView a;
     public TextView b;
-    public bi.a3 c;
-    public bi.a3 d;
-    public qh0 e;
+    public bi.e3 c;
+    public bi.e3 d;
+    public sh0 e;
     public ScrollView f;
     public AnimatorSet h;
     public TLRPC.TL_help_appUpdate n;
@@ -34,9 +34,9 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
     public GradientDrawable y;
 
     public final void a(boolean z10) {
-        bi.a3 a3Var = this.d;
+        bi.e3 e3Var = this.d;
         TextView textView = this.b;
-        bi.a3 a3Var2 = this.c;
+        bi.e3 e3Var2 = this.c;
         AnimatorSet animatorSet = this.h;
         if (animatorSet != null) {
             animatorSet.cancel();
@@ -47,13 +47,13 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
         Property property2 = View.SCALE_Y;
         Property property3 = View.SCALE_X;
         if (z10) {
-            a3Var2.setVisibility(0);
-            a3Var.setEnabled(false);
-            this.h.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(a3Var2, (Property<bi.a3, Float>) property3, 1.0f), ObjectAnimator.ofFloat(a3Var2, (Property<bi.a3, Float>) property2, 1.0f), ObjectAnimator.ofFloat(a3Var2, (Property<bi.a3, Float>) property, 1.0f));
+            e3Var2.setVisibility(0);
+            e3Var.setEnabled(false);
+            this.h.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(e3Var2, (Property<bi.e3, Float>) property3, 1.0f), ObjectAnimator.ofFloat(e3Var2, (Property<bi.e3, Float>) property2, 1.0f), ObjectAnimator.ofFloat(e3Var2, (Property<bi.e3, Float>) property, 1.0f));
         } else {
             textView.setVisibility(0);
-            a3Var.setEnabled(true);
-            this.h.playTogether(ObjectAnimator.ofFloat(a3Var2, (Property<bi.a3, Float>) property3, 0.1f), ObjectAnimator.ofFloat(a3Var2, (Property<bi.a3, Float>) property2, 0.1f), ObjectAnimator.ofFloat(a3Var2, (Property<bi.a3, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
+            e3Var.setEnabled(true);
+            this.h.playTogether(ObjectAnimator.ofFloat(e3Var2, (Property<bi.e3, Float>) property3, 0.1f), ObjectAnimator.ofFloat(e3Var2, (Property<bi.e3, Float>) property2, 0.1f), ObjectAnimator.ofFloat(e3Var2, (Property<bi.e3, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
         }
         this.h.addListener(new org.telegram.ui.on(i7, this, z10));
         this.h.setDuration(150L);
@@ -113,18 +113,18 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         int x02;
         ScrollView scrollView;
         GradientDrawable gradientDrawable = this.y;
         GradientDrawable gradientDrawable2 = this.x;
         try {
-            int x03 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false);
+            int x03 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false);
             if (this.E) {
                 if (x03 != this.F) {
                 }
-                x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.s8, false);
+                x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.s8, false);
                 scrollView = this.f;
                 if (scrollView != null && (!this.E || x02 != this.G)) {
                     this.G = x02;
@@ -140,7 +140,7 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
             if (gradientDrawable != null) {
                 gradientDrawable.setColors(new int[]{x03, 0});
             }
-            x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.s8, false);
+            x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.s8, false);
             scrollView = this.f;
             if (scrollView != null) {
                 this.G = x02;
@@ -153,7 +153,7 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

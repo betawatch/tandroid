@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class yu0 implements kp {
     public final /* synthetic */ TLRPC.Chat a;
@@ -34,9 +34,9 @@ public final class yu0 implements kp {
         if (!npVar.R || npVar.getParentLayout() == null) {
             return;
         }
-        for (org.telegram.ui.ActionBar.h2 h2Var : npVar.getParentLayout().getFragmentStack()) {
-            if (h2Var instanceof lb) {
-                lb lbVar = (lb) h2Var;
+        for (org.telegram.ui.ActionBar.g2 g2Var : npVar.getParentLayout().getFragmentStack()) {
+            if (g2Var instanceof lb) {
+                lb lbVar = (lb) g2Var;
                 lbVar.a1();
                 org.telegram.messenger.g0.g3(new mc0(lbVar, c22, chat, 28));
                 return;

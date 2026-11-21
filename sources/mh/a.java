@@ -1,12 +1,12 @@
 package mh;
 
-import kg.j0;
+import kg.i0;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.voip.q2;
 import te.c;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a implements te.b {
     public final c a;
@@ -14,18 +14,18 @@ public final class a implements te.b {
     public final te.a c;
     public final te.a d;
     public final q2 e;
-    public final j0 f;
+    public final i0 f;
     public boolean h;
 
-    public a(q2 q2Var, j0 j0Var) {
-        lr lrVar = lr.h;
-        this.a = new c(1, this, lrVar, 350L);
-        this.b = new c(2, this, lrVar, 350L);
-        this.c = new te.a(0, this, lrVar, 350L, true);
-        this.d = new te.a(3, this, lrVar, 350L, true);
+    public a(q2 q2Var, i0 i0Var) {
+        nr nrVar = nr.h;
+        this.a = new c(1, this, nrVar, 350L);
+        this.b = new c(2, this, nrVar, 350L);
+        this.c = new te.a(0, this, nrVar, 350L, true);
+        this.d = new te.a(3, this, nrVar, 350L, true);
         this.h = true;
         this.e = q2Var;
-        this.f = j0Var;
+        this.f = i0Var;
     }
 
     @Override // te.b
@@ -48,9 +48,9 @@ public final class a implements te.b {
         if (i7 == 3) {
             q2Var.setAlpha(g0.T1(0.5f, 1.0f, aVar.e) * aVar2.e);
         }
-        j0 j0Var = this.f;
-        if (j0Var != null) {
-            j0Var.run();
+        i0 i0Var = this.f;
+        if (i0Var != null) {
+            i0Var.run();
         }
     }
 

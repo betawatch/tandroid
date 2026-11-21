@@ -1,36 +1,39 @@
 package bi;
 
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l5 implements Runnable {
+public final /* synthetic */ class l5 implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ t6 b;
 
-    public /* synthetic */ l5(ProfileActivity profileActivity, int i7) {
+    public /* synthetic */ l5(t6 t6Var, int i7) {
         this.a = i7;
-        this.b = profileActivity;
+        this.b = t6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.X4(true);
-                break;
-            case 1:
-                this.b.X4(true);
+                t6 t6Var = this.b;
+                t6Var.f(true);
+                i71 i71Var = t6Var.n;
+                int i7 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
+                i71Var.e(i7, t6Var.e.f(i7) + 1);
+                org.telegram.ui.ActionBar.g2 g2Var = t6Var.a;
+                if (g2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) g2Var).X4(true);
+                }
+                t6Var.o();
                 break;
             default:
-                ProfileActivity profileActivity = this.b;
-                vv0 vv0Var = profileActivity.O;
-                if (vv0Var != null) {
-                    vv0Var.k1(14);
-                    profileActivity.X4(false);
-                    break;
-                }
+                t6 t6Var2 = this.b;
+                t6Var2.e.b((String) obj, new l5(t6Var2, 0));
                 break;
         }
     }

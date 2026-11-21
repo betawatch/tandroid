@@ -2,28 +2,28 @@ package di;
 
 import android.content.Context;
 import android.graphics.Rect;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g1 extends qh.c implements te.b {
     public static final /* synthetic */ int w = 0;
     public final te.c f;
-    public final ai.g0 h;
+    public final ai.h0 h;
     public final qh.b[] n;
-    public final org.telegram.ui.ActionBar.i6 r;
+    public final org.telegram.ui.ActionBar.h6 r;
     public int s;
 
-    public g1(Context context, org.telegram.ui.ActionBar.i6 i6Var, ai.g0 g0Var) {
+    public g1(Context context, org.telegram.ui.ActionBar.h6 h6Var, ai.h0 h0Var) {
         super(context);
-        this.f = new te.c(0, this, lr.h, 1600L);
-        this.h = g0Var;
-        this.r = i6Var;
-        int i7 = org.telegram.ui.ActionBar.n6.Nl;
-        int r12 = org.telegram.ui.ActionBar.n6.r1(0.09411765f, org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
-        org.telegram.ui.ActionBar.n6.r1(0.1254902f, org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
+        this.f = new te.c(0, this, nr.h, 1600L);
+        this.h = h0Var;
+        this.r = h6Var;
+        int i7 = org.telegram.ui.ActionBar.m6.Nl;
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.09411765f, org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
+        org.telegram.ui.ActionBar.m6.r1(0.1254902f, org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
         this.e.setColor(r12);
-        this.n = new qh.b[]{qh.b.c(context, i6Var, qh.a.H, 2131749453), qh.b.c(context, i6Var, qh.a.w, 2131749470), qh.b.c(context, i6Var, qh.a.K, 2131749451)};
+        this.n = new qh.b[]{qh.b.c(context, h6Var, qh.a.H, 2131749452), qh.b.c(context, h6Var, qh.a.w, 2131749469), qh.b.c(context, h6Var, qh.a.K, 2131749450)};
         int i10 = 0;
         while (true) {
             qh.b[] bVarArr = this.n;

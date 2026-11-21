@@ -4,19 +4,19 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class pb extends vi0 {
+public final class pb extends xi0 {
     public final /* synthetic */ int n1 = 0;
     public final /* synthetic */ Object o1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb(org.telegram.ui.ns nsVar, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(4, i7, context, null, i6Var);
+    public pb(org.telegram.ui.ns nsVar, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(4, i7, context, null, h6Var);
         this.o1 = nsVar;
     }
 
-    @Override // org.telegram.ui.Components.vi0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.xi0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         gc gcVar;
         switch (this.n1) {
@@ -35,7 +35,7 @@ public final class pb extends vi0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.vi0
+    @Override // org.telegram.ui.Components.xi0
     public void j() {
         switch (this.n1) {
             case 1:
@@ -61,7 +61,7 @@ public final class pb extends vi0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vi0
+    @Override // org.telegram.ui.Components.xi0
     public void m() {
         switch (this.n1) {
             case 0:
@@ -69,14 +69,14 @@ public final class pb extends vi0 {
                 if (gcVar != null) {
                     gcVar.i(false);
                 }
-                ((rb) this.o1).d.getReactionsWindow().c.setOnClickListener(new n0(this, 3));
+                ((rb) this.o1).d.getReactionsWindow().c.setOnClickListener(new o0(this, 3));
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb(rb rbVar, org.telegram.ui.ActionBar.h2 h2Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(3, i7, context, h2Var, i6Var);
+    public pb(rb rbVar, org.telegram.ui.ActionBar.g2 g2Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(3, i7, context, g2Var, h6Var);
         this.o1 = rbVar;
     }
 }

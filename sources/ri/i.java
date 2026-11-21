@@ -1,18 +1,18 @@
 package ri;
 
-import org.telegram.ui.Components.hw;
+import org.telegram.ui.Components.jw;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class i implements c5.h {
     public int a;
-    public final /* synthetic */ hw b;
+    public final /* synthetic */ jw b;
     public final /* synthetic */ q c;
 
-    public i(q qVar, hw hwVar) {
+    public i(q qVar, jw jwVar) {
         this.c = qVar;
-        this.b = hwVar;
-        this.a = hwVar.getScrollX();
+        this.b = jwVar;
+        this.a = jwVar.getScrollX();
     }
 
     @Override // c5.h

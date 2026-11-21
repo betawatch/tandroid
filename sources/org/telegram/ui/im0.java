@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
-    public final org.telegram.ui.ActionBar.i6 a;
+public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.ActionBar.h6 a;
     public final Paint b;
     public final int c;
     public final int d;
@@ -30,7 +30,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
     public org.telegram.messenger.x10 w;
     public hm0 x;
 
-    public im0(int i7, int i10, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public im0(int i7, int i10, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.b = paint;
@@ -41,7 +41,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
         this.s = 0;
         this.c = i7;
         this.d = i10;
-        this.a = i6Var;
+        this.a = h6Var;
     }
 
     public final void a(int i7, boolean z10) {
@@ -112,7 +112,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
                     Paint paint = im0Var.b;
                     Paint paint2 = im0Var.b;
                     paint.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
-                    paint2.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, im0Var.a));
+                    paint2.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, im0Var.a));
                     canvas.drawCircle(rectF.centerX(), rectF.centerY(), (org.telegram.messenger.g0.T1(0.5f, -2.0f, d) * paint2.getStrokeWidth()) + Math.min(rectF.height() / 2.0f, rectF.width() / 2.0f), paint2);
                 }
                 if (hm0Var.h) {
@@ -150,7 +150,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
             }
         }
         if (this.r) {
-            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d7, this.a);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d7, this.a);
             Paint paint4 = this.n;
             paint4.setColor(w02);
             canvas.drawRect(org.telegram.messenger.g0.L(21.0f), getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(21.0f), getMeasuredHeight(), paint4);
@@ -271,12 +271,12 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
                     hm0Var.o = i16;
                     hm0Var.h = i16 < 0;
                     if (i16 < 0) {
-                        i11 = org.telegram.ui.ActionBar.n6.c8;
+                        i11 = org.telegram.ui.ActionBar.m6.c8;
                     } else {
-                        int[] iArr = org.telegram.ui.ActionBar.n6.r8;
+                        int[] iArr = org.telegram.ui.ActionBar.m6.r8;
                         i11 = iArr[i16 % iArr.length];
                     }
-                    int w02 = org.telegram.ui.ActionBar.n6.w0(i11, this.a);
+                    int w02 = org.telegram.ui.ActionBar.m6.w0(i11, this.a);
                     hm0Var.g = false;
                     hm0Var.f = false;
                     hm0Var.a.setColor(w02);
@@ -333,7 +333,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
         this.w = x10Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         int i7;
         if (this.f == null) {
@@ -349,7 +349,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
                 invalidate();
                 return;
             }
-            org.telegram.ui.ActionBar.i6 i6Var = this.a;
+            org.telegram.ui.ActionBar.h6 h6Var = this.a;
             int[] iArr = this.h;
             if (i10 == 2) {
                 hm0 hm0Var = hm0VarArr[i11];
@@ -357,12 +357,12 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
                 hm0Var.o = i12;
                 hm0Var.h = i12 < 0;
                 if (i12 < 0) {
-                    i7 = org.telegram.ui.ActionBar.n6.c8;
+                    i7 = org.telegram.ui.ActionBar.m6.c8;
                 } else {
-                    int[] iArr2 = org.telegram.ui.ActionBar.n6.r8;
+                    int[] iArr2 = org.telegram.ui.ActionBar.m6.r8;
                     i7 = iArr2[i12 % iArr2.length];
                 }
-                int w02 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
+                int w02 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
                 hm0Var.g = false;
                 hm0Var.f = false;
                 hm0Var.a.setColor(w02);
@@ -370,7 +370,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
                 hm0 hm0Var2 = hm0VarArr[i11];
                 int i13 = iArr[i11];
                 hm0Var2.o = i13;
-                int w03 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.r8[i13], i6Var);
+                int w03 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.r8[i13], h6Var);
                 hm0Var2.g = false;
                 hm0Var2.f = false;
                 hm0Var2.a.setColor(w03);
@@ -385,7 +385,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

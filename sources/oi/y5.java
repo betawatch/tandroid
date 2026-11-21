@@ -1,25 +1,38 @@
 package oi;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class y5 {
-    public final TL_iv.PageBlock a;
-    public final int b;
-    public final int c;
-    public final boolean d;
-    public final boolean e;
+public final class y5 extends n41 {
+    public static final /* synthetic */ int b = 0;
 
-    public y5(TL_iv.PageBlock pageBlock, int i7, int i10) {
-        this(pageBlock, i7, i10, false, false);
+    static {
+        n41.h(new y5());
     }
 
-    public y5(TL_iv.PageBlock pageBlock, int i7, int i10, boolean z10, boolean z11) {
-        this.a = pageBlock;
-        this.b = i7;
-        this.c = i10;
-        this.d = z10;
-        this.e = z11;
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
+        ((a6) view).f((a) o41Var.H, (x5) o41Var.I, o41Var.s);
+    }
+
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, ek0 ek0Var, int i7, h6 h6Var) {
+        a6 a6Var = new a6(context, h6Var);
+        a6Var.setBackground(new y1(m6.w0(m6.d6, h6Var)));
+        return a6Var;
+    }
+
+    @Override // org.telegram.ui.Components.n41
+    public final boolean f() {
+        return false;
     }
 }

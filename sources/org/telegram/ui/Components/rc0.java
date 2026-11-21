@@ -1,88 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class rc0 extends Dialog {
-    public final FrameLayout a;
-    public final qc0 b;
+public final class rc0 extends qc0 {
+    public final /* synthetic */ sc0 k0;
 
-    public rc0(LaunchActivity launchActivity) {
-        super(launchActivity, R.style.TransparentDialog);
-        org.telegram.messenger.g0.S(getWindow());
-        FrameLayout frameLayout = new FrameLayout(launchActivity);
-        this.a = frameLayout;
-        wb0 wb0Var = new wb0(3);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(frameLayout, wb0Var);
-        qc0 qc0Var = new qc0(this, launchActivity);
-        this.b = qc0Var;
-        frameLayout.addView(qc0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rc0(sc0 sc0Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.k0 = sc0Var;
     }
 
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        LaunchActivity launchActivity;
-        if (!this.b.i() || (launchActivity = LaunchActivity.H1) == null) {
+    @Override // org.telegram.ui.Components.qc0
+    public final void h(float f10) {
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity == null) {
             return;
         }
-        launchActivity.moveTaskToBack(true);
+        org.telegram.ui.ActionBar.o3 o3Var = launchActivity.y0;
+        o3Var.setScaleX(org.telegram.messenger.g0.T1(1.0f, 1.25f, f10));
+        o3Var.setScaleY(org.telegram.messenger.g0.T1(1.0f, 1.25f, f10));
     }
 
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        LaunchActivity launchActivity;
-        if (keyEvent.getKeyCode() != 4 || keyEvent.getRepeatCount() != 0) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        if (this.b.i() && (launchActivity = LaunchActivity.H1) != null) {
-            launchActivity.moveTaskToBack(true);
-        }
-        return true;
-    }
-
-    @Override // android.app.Dialog
-    public final void onBackPressed() {
-        LaunchActivity launchActivity;
-        if (!this.b.i() || (launchActivity = LaunchActivity.H1) == null) {
+    @Override // org.telegram.ui.Components.qc0
+    public final void j() {
+        super/*android.app.Dialog*/.dismiss();
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity == null) {
             return;
         }
-        launchActivity.moveTaskToBack(true);
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        FrameLayout frameLayout = this.a;
-        setContentView(frameLayout, layoutParams);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = org.telegram.messenger.ks.E1;
-        attributes.dimAmount = 0.0f;
-        int i7 = attributes.flags & (-3);
-        attributes.flags = i7;
-        attributes.softInputMode = 16;
-        boolean z10 = org.telegram.messenger.s2.a;
-        attributes.flags = i7 | TLObject.FLAG_13;
-        org.telegram.messenger.g0.h2();
-        attributes.flags |= -2013198976;
-        window.setAttributes(attributes);
-        frameLayout.setSystemUiVisibility(256);
-        org.telegram.messenger.g0.m3(this, false);
+        org.telegram.ui.ActionBar.o3 o3Var = launchActivity.y0;
+        o3Var.setScaleX(1.0f);
+        o3Var.setScaleY(1.0f);
     }
 }

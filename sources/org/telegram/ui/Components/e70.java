@@ -1,9 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface e70 {
-    void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12);
+public final class e70 extends ek0 {
+    public final /* synthetic */ i70 f3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e70(i70 i70Var, Context context) {
+        super(context, null);
+        this.f3 = i70Var;
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3.u1) {
+            return;
+        }
+        super.requestLayout();
+    }
 }

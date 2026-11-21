@@ -1,56 +1,37 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fv0 implements RequestDelegate {
+public final class fv0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.x2 b;
+    public final /* synthetic */ gv0 b;
 
-    public /* synthetic */ fv0(org.telegram.messenger.x2 x2Var, int i7) {
+    public /* synthetic */ fv0(gv0 gv0Var, int i7) {
         this.a = i7;
-        this.b = x2Var;
+        this.b = gv0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
-                org.telegram.messenger.x2 x2Var = this.b;
-                if (!z10) {
-                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
-                        x2Var.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        x2Var.a(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool = Boolean.TRUE;
-                    x2Var.a(bool, null, 0L, bool);
-                    break;
-                }
+                gv0 gv0Var = this.b;
+                gv0Var.E = 1.0f;
+                gv0Var.invalidate();
+                gv0Var.H = null;
+                break;
+            case 1:
+                gv0 gv0Var2 = this.b;
+                gv0Var2.m(((Float) gv0Var2.w.getAnimatedValue()).floatValue());
+                gv0Var2.w = null;
+                break;
             default:
-                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
-                org.telegram.messenger.x2 x2Var2 = this.b;
-                if (!z11) {
-                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
-                        x2Var2.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
-                        x2Var2.a(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool2 = Boolean.TRUE;
-                    x2Var2.a(bool2, null, 0L, bool2);
-                    break;
-                }
+                super.onAnimationEnd(animator);
+                this.b.G = null;
+                break;
         }
     }
 }

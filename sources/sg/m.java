@@ -12,7 +12,7 @@ import android.view.View;
 import c8.l9;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class m extends View {
     public final Paint a;
@@ -76,7 +76,7 @@ public final class m extends View {
         float strokeWidth = L2 - (paint.getStrokeWidth() / 2.0f);
         float max = Math.max(L + strokeWidth, (((getWidth() - (2.0f * L)) * red) + L) - strokeWidth);
         canvas.drawCircle(max, height, L2, paint);
-        tg.y0.A1(max, height, strokeWidth, this.d, canvas);
+        tg.z0.A1(max, height, strokeWidth, this.d, canvas);
     }
 
     @Override // android.view.View

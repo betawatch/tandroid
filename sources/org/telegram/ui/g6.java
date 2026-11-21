@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g6 implements org.telegram.ui.Components.nt0, h7 {
+public final class g6 implements org.telegram.ui.Components.qt0, h7 {
     public final /* synthetic */ x6 a;
 
     public /* synthetic */ g6(x6 x6Var) {
         this.a = x6Var;
     }
 
-    @Override // org.telegram.ui.Components.nt0
+    @Override // org.telegram.ui.Components.qt0
     public void G(boolean z10) {
         te.a aVar = this.a.U;
         if (aVar == null || aVar.f == z10) {
@@ -23,7 +23,7 @@ public final class g6 implements org.telegram.ui.Components.nt0, h7 {
         aVar.a(z10, true);
     }
 
-    @Override // org.telegram.ui.Components.nt0
+    @Override // org.telegram.ui.Components.qt0
     public float U0() {
         return i5.c.d(9.66f, ri.a.d(this.a.Q), 0);
     }
@@ -33,7 +33,7 @@ public final class g6 implements org.telegram.ui.Components.nt0, h7 {
         x6.k0(this.a);
     }
 
-    @Override // org.telegram.ui.Components.nt0
+    @Override // org.telegram.ui.Components.qt0
     public int j1() {
         return this.a.R;
     }

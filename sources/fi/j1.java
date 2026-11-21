@@ -10,9 +10,9 @@ import android.widget.ImageView;
 import c8.ma;
 import c8.ra;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class j1 extends FrameLayout {
     public final FrameLayout a;
@@ -40,7 +40,7 @@ public final class j1 extends FrameLayout {
         addView(frameLayout, ma.e(40, 40, 17));
         View view = new View(context);
         this.b = view;
-        view.setBackground(org.telegram.ui.ActionBar.n6.L(org.telegram.messenger.g0.L(40.0f), -13522392));
+        view.setBackground(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(40.0f), -13522392));
         frameLayout.addView(view, ma.e(38, 38, 17));
         view.setAlpha(0.0f);
         view.setScaleX(0.0f);
@@ -76,7 +76,7 @@ public final class j1 extends FrameLayout {
             this.f = ofFloat;
             ofFloat.addUpdateListener(new h1(this, 0));
             this.f.setDuration(320L);
-            this.f.setInterpolator(lr.h);
+            this.f.setInterpolator(nr.h);
             this.f.start();
         } else {
             i1Var.setAlpha(z10 ? 0.0f : 1.0f);
@@ -116,7 +116,7 @@ public final class j1 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z10 ? 1.0f : 0.0f);
             this.r = ofFloat;
             ofFloat.addUpdateListener(new h1(this, 1));
-            this.r.setInterpolator(lr.h);
+            this.r.setInterpolator(nr.h);
             this.r.setDuration(420L);
             this.r.start();
             return;

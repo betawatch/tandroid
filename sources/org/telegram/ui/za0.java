@@ -1,29 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class za0 implements org.telegram.ui.Components.zt0 {
+public final /* synthetic */ class za0 implements org.telegram.ui.Components.cu0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 b;
 
-    public /* synthetic */ za0(int i7, org.telegram.ui.ActionBar.h2 h2Var) {
+    public /* synthetic */ za0(int i7, org.telegram.ui.ActionBar.g2 g2Var) {
         this.a = i7;
-        this.b = h2Var;
+        this.b = g2Var;
     }
 
-    @Override // org.telegram.ui.Components.zt0
+    @Override // org.telegram.ui.Components.cu0
     public final void L(int i7, boolean z10) {
-        sd0 sd0Var;
+        rd0 rd0Var;
         ji0 ji0Var;
         switch (this.a) {
             case 0:
-                ee0 ee0Var = (ee0) this.b;
-                if (i7 > org.telegram.messenger.g0.L(20.0f) && ee0Var.z1()) {
-                    org.telegram.messenger.g0.v1(ee0Var.fragmentView);
+                de0 de0Var = (de0) this.b;
+                if (i7 > org.telegram.messenger.g0.L(20.0f) && de0Var.z1()) {
+                    org.telegram.messenger.g0.v1(de0Var.fragmentView);
                 }
-                if (i7 <= org.telegram.messenger.g0.L(20.0f) && (sd0Var = ee0Var.U) != null) {
-                    sd0Var.run();
-                    ee0Var.U = null;
+                if (i7 <= org.telegram.messenger.g0.L(20.0f) && (rd0Var = de0Var.U) != null) {
+                    rd0Var.run();
+                    de0Var.U = null;
                     break;
                 }
                 break;

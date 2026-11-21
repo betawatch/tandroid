@@ -2,18 +2,18 @@ package org.telegram.ui;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1[] c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1[] c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ yf(bn bnVar, org.telegram.ui.ActionBar.u1[] u1VarArr, int i7, int i10) {
+    public /* synthetic */ yf(bn bnVar, org.telegram.ui.ActionBar.t1[] t1VarArr, int i7, int i10) {
         this.a = i10;
         this.b = bnVar;
-        this.c = u1VarArr;
+        this.c = t1VarArr;
         this.d = i7;
     }
 
@@ -21,13 +21,13 @@ public final /* synthetic */ class yf implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.u1[] u1VarArr = this.c;
-                org.telegram.ui.ActionBar.u1 u1Var = u1VarArr[0];
-                if (u1Var != null) {
+                org.telegram.ui.ActionBar.t1[] t1VarArr = this.c;
+                org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
+                if (t1Var != null) {
                     final int i7 = 1;
                     final bn bnVar = this.b;
                     final int i10 = this.d;
-                    u1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.pg
+                    t1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.pg
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i7) {
@@ -43,18 +43,18 @@ public final /* synthetic */ class yf implements Runnable {
                             }
                         }
                     });
-                    bnVar.showDialog(u1VarArr[0]);
+                    bnVar.showDialog(t1VarArr[0]);
                     break;
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.u1[] u1VarArr2 = this.c;
-                org.telegram.ui.ActionBar.u1 u1Var2 = u1VarArr2[0];
-                if (u1Var2 != null) {
+                org.telegram.ui.ActionBar.t1[] t1VarArr2 = this.c;
+                org.telegram.ui.ActionBar.t1 t1Var2 = t1VarArr2[0];
+                if (t1Var2 != null) {
                     final int i11 = 0;
                     final bn bnVar2 = this.b;
                     final int i12 = this.d;
-                    u1Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.pg
+                    t1Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.pg
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i11) {
@@ -70,18 +70,18 @@ public final /* synthetic */ class yf implements Runnable {
                             }
                         }
                     });
-                    bnVar2.showDialog(u1VarArr2[0]);
+                    bnVar2.showDialog(t1VarArr2[0]);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.u1[] u1VarArr3 = this.c;
-                org.telegram.ui.ActionBar.u1 u1Var3 = u1VarArr3[0];
-                if (u1Var3 != null) {
+                org.telegram.ui.ActionBar.t1[] t1VarArr3 = this.c;
+                org.telegram.ui.ActionBar.t1 t1Var3 = t1VarArr3[0];
+                if (t1Var3 != null) {
                     final int i13 = 2;
                     final bn bnVar3 = this.b;
                     final int i14 = this.d;
-                    u1Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.pg
+                    t1Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.pg
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i13) {
@@ -97,7 +97,7 @@ public final /* synthetic */ class yf implements Runnable {
                             }
                         }
                     });
-                    bnVar3.showDialog(u1VarArr3[0]);
+                    bnVar3.showDialog(t1VarArr3[0]);
                     break;
                 }
                 break;

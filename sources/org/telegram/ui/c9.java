@@ -1,44 +1,33 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class c9 extends z40 {
-    public final /* synthetic */ int w0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 x0;
+public final class c9 extends org.telegram.ui.Components.ap0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2 V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c9(Bundle bundle, int i7, org.telegram.ui.ActionBar.h2 h2Var) {
-        super(bundle);
-        this.w0 = i7;
-        this.x0 = h2Var;
+    public c9(Context context, String str, String str2, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.w2 w2Var) {
+        super(context, null, str, false, str2, false, h6Var);
+        this.V2 = w2Var;
     }
 
-    @Override // org.telegram.ui.z40
-    public final void s0(HashSet hashSet) {
-        int size = hashSet.size();
-        int i7 = this.w0;
-        if (size == 1) {
-            TLRPC.User c22 = org.telegram.messenger.mp.u1(i7).c2((Long) hashSet.iterator().next());
-            TLRPC.UserFull d2 = org.telegram.messenger.mp.u1(i7).d2(c22.id);
-            if (d2 == null) {
-                TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
-                tL_users_getFullUser.id = org.telegram.messenger.mp.u1(i7).q1(c22.id);
-                ConnectionsManager.getInstance(i7).sendRequest(tL_users_getFullUser, new jg.u(this, i7, c22, 3));
-                return;
+    @Override // org.telegram.ui.Components.ap0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String a02;
+        if (z10) {
+            if (hVar == null || hVar.m() != 1) {
+                a02 = org.telegram.messenger.gd.a0(null, null, 2131748994, org.telegram.messenger.gd.G(hVar == null ? 1 : hVar.m(), "Chats", new Object[0]));
+            } else {
+                long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
+                a02 = (j3 == 0 || j3 == org.telegram.messenger.j10.i(this.a).e()) ? org.telegram.messenger.gd.N0(2131748992, null) : org.telegram.messenger.gd.a0(null, null, 2131748991, org.telegram.messenger.mp.u1(this.a).D1(j3, true));
             }
-            org.telegram.ui.Components.voip.b2.m(c22, false, d2.video_calls_available, getParentActivity(), d2, org.telegram.messenger.c.a(i7));
-        } else {
-            TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
-            createconferencecall.random_id = Utilities.b.nextInt();
-            ConnectionsManager.getInstance(i7).sendRequest(createconferencecall, new jg.u(i7, hashSet, this.x0));
+            org.telegram.ui.Components.gc Q = new org.telegram.ui.Components.lc(this.V2.F, this.J0).Q(R.raw.forward, 36, org.telegram.messenger.g0.W2(a02));
+            Q.r = false;
+            Q.j();
         }
-        finishFragment();
     }
 }

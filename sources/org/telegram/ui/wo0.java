@@ -8,13 +8,13 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class wo0 {
     public final View i;
     public boolean p;
-    public final org.telegram.ui.Components.mq q;
-    public final org.telegram.ui.Components.ue0 r;
+    public final org.telegram.ui.Components.oq q;
+    public final org.telegram.ui.Components.we0 r;
     public final /* synthetic */ PhotoViewer s;
     public final /* synthetic */ PhotoViewer t;
     public long a = 0;
@@ -50,10 +50,10 @@ public final class wo0 {
             float[] fArr = this.n;
             if (i7 >= fArr.length) {
                 a();
-                org.telegram.ui.Components.ue0 ue0Var = new org.telegram.ui.Components.ue0(28);
-                this.r = ue0Var;
-                ue0Var.h = org.telegram.messenger.ks.e3;
-                this.q = new org.telegram.ui.Components.mq(photoViewer.E.getDrawable(R.drawable.circle_big).mutate(), ue0Var);
+                org.telegram.ui.Components.we0 we0Var = new org.telegram.ui.Components.we0(28);
+                this.r = we0Var;
+                we0Var.h = org.telegram.messenger.ks.e3;
+                this.q = new org.telegram.ui.Components.oq(photoViewer.E.getDrawable(R.drawable.circle_big).mutate(), we0Var);
                 return;
             }
             this.m[i7] = 1.0f;
@@ -167,16 +167,16 @@ public final class wo0 {
             return;
         }
         View view = this.i;
-        org.telegram.ui.Components.ue0 ue0Var = this.r;
-        if (ue0Var != null) {
+        org.telegram.ui.Components.we0 we0Var = this.r;
+        if (we0Var != null) {
             boolean z12 = z11 && (i11 == 3 || i11 == 4);
             if (i7 == 3) {
-                ue0Var.a(false, z12);
+                we0Var.a(false, z12);
             } else if (i7 == 4) {
-                ue0Var.a(true, z12);
+                we0Var.a(true, z12);
             }
-            ue0Var.f = view;
-            ue0Var.invalidateSelf();
+            we0Var.f = view;
+            we0Var.invalidateSelf();
         }
         this.a = System.currentTimeMillis();
         if (!z10 || (i10 = this.h) == i7) {

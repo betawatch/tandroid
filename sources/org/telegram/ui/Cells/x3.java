@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x3 extends org.telegram.ui.Components.n6 {
+public final class x3 extends org.telegram.ui.Components.o6 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -54,7 +54,7 @@ public final class x3 extends org.telegram.ui.Components.n6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n6, android.view.View
+    @Override // org.telegram.ui.Components.o6, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.s) {
             case 2:
@@ -69,7 +69,7 @@ public final class x3 extends org.telegram.ui.Components.n6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n6, android.view.View
+    @Override // org.telegram.ui.Components.o6, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.s) {
             case 3:

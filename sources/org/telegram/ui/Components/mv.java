@@ -1,70 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mv implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ry b;
+public final class mv extends kl0 {
+    public long h;
+    public boolean n;
+    public float r;
+    public final /* synthetic */ ov s;
 
-    public /* synthetic */ mv(ry ryVar, int i7) {
-        this.a = i7;
-        this.b = ryVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mv(ov ovVar, Context context) {
+        super(context);
+        this.s = ovVar;
+        boolean z10 = ovVar.n;
+        this.n = z10;
+        this.r = z10 ? 1.0f : 0.0f;
+        setSmoothScrollingEnabled(true);
+        setHorizontalScrollBarEnabled(false);
+        setVerticalScrollBarEnabled(false);
+        setNestedScrollingEnabled(true);
+        org.telegram.ui.d61 d61Var = new org.telegram.ui.d61(12, context, this);
+        this.b = d61Var;
+        d61Var.setOrientation(0);
+        addView(this.b, new FrameLayout.LayoutParams(-2, -1));
+        for (int i7 = 0; i7 < 8; i7++) {
+            int i10 = ov.f0[i7];
+            lv lvVar = new lv(this, context, ov.g0[i7]);
+            lvVar.setContentDescription(ov.f(i7));
+            this.b.addView(lvVar);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        ry ryVar = this.b;
-        switch (i7) {
-            case 0:
-                ryVar.Y(false);
-                ryVar.E();
-                break;
-            case 1:
-                bx bxVar = ryVar.S;
-                if (bxVar != null) {
-                    bxVar.F(true);
-                    break;
-                }
-                break;
-            case 2:
-                rx rxVar = ryVar.u1;
-                if (rxVar != null) {
-                    rxVar.t(ryVar.S.h);
-                    break;
-                }
-                break;
-            case 3:
-                rx rxVar2 = ryVar.u1;
-                if (rxVar2 != null) {
-                    rxVar2.q();
-                    break;
-                }
-                break;
-            case 4:
-                ryVar.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", org.telegram.messenger.j10.i(ryVar.d1).e());
-                ryVar.Z1.presentFragment(new qw(bundle));
-                break;
-            default:
-                ArrayList<fx> emojipacks = ryVar.getEmojipacks();
-                for (int i10 = 0; i10 < emojipacks.size(); i10++) {
-                    if (emojipacks.get(i10).i) {
-                        SparseIntArray sparseIntArray = ryVar.S.s;
-                        char[] cArr = org.telegram.messenger.k6.a;
-                        int i11 = sparseIntArray.get(i10 + 8);
-                        ryVar.Q.C0();
-                        ryVar.V(i11);
-                        ryVar.G(i11, org.telegram.messenger.g0.L(-9.0f));
-                        ryVar.n(0, null);
-                    }
-                }
-                break;
+    public final void d(MotionEvent motionEvent) {
+        if (!this.n || this.d) {
+            return;
         }
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action == 1) {
+                this.a = false;
+                return;
+            } else if (action != 2) {
+                return;
+            }
+        }
+        this.a = true;
+        if (!this.d) {
+            this.e = -1;
+        }
+        this.s.requestDisallowInterceptTouchEvent(true);
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.W1(this.r, org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(Math.min(5.7f, this.b.getChildCount()) * 32.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.kl0, android.widget.HorizontalScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        d(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 }

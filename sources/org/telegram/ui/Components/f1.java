@@ -1,63 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f1 implements View.OnClickListener {
+public final /* synthetic */ class f1 implements pb0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ int[] b;
 
-    public /* synthetic */ f1(int i7, boolean[] zArr) {
+    public /* synthetic */ f1(int[] iArr, int i7) {
         this.a = i7;
-        this.b = zArr;
+        this.b = iArr;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.pb0
+    public final String i(int i7) {
+        int i10 = this.a;
+        int[] iArr = this.b;
+        switch (i10) {
             case 0:
-                boolean[] zArr = this.b;
-                boolean z10 = !zArr[0];
-                zArr[0] = z10;
-                ((org.telegram.ui.Cells.d2) view).c(z10, true);
-                break;
-            case 1:
-                boolean[] zArr2 = this.b;
-                boolean z11 = !zArr2[0];
-                zArr2[0] = z11;
-                ((org.telegram.ui.Cells.d2) view).c(z11, true);
-                break;
-            case 2:
-                boolean[] zArr3 = this.b;
-                boolean z12 = !zArr3[0];
-                zArr3[0] = z12;
-                ((org.telegram.ui.Cells.d2) view).c(z12, true);
-                break;
-            case 3:
-                boolean[] zArr4 = this.b;
-                boolean z13 = !zArr4[0];
-                zArr4[0] = z13;
-                ((org.telegram.ui.Cells.d2) view).c(z13, true);
-                break;
-            case 4:
-                boolean[] zArr5 = this.b;
-                boolean z14 = !zArr5[0];
-                zArr5[0] = z14;
-                ((org.telegram.ui.Cells.d2) view).c(z14, true);
-                break;
-            case 5:
-                boolean[] zArr6 = this.b;
-                boolean z15 = !zArr6[0];
-                zArr6[0] = z15;
-                ((org.telegram.ui.Cells.d2) view).c(z15, true);
-                break;
+                int i11 = iArr[i7];
+                return i11 == 0 ? org.telegram.messenger.gd.N0(2131748114, null) : i11 < 60 ? org.telegram.messenger.gd.G(i11, "Minutes", new Object[0]) : i11 < 1440 ? org.telegram.messenger.gd.G(i11 / 60, "Hours", new Object[0]) : i11 < 10080 ? org.telegram.messenger.gd.G(i11 / 1440, "Days", new Object[0]) : i11 < 44640 ? org.telegram.messenger.gd.G(i11 / 10080, "Weeks", new Object[0]) : i11 < 525600 ? org.telegram.messenger.gd.G(i11 / 44640, "Months", new Object[0]) : org.telegram.messenger.gd.G(i11 / 525600, "Years", new Object[0]);
             default:
-                boolean[] zArr7 = this.b;
-                boolean z16 = !zArr7[0];
-                zArr7[0] = z16;
-                ((org.telegram.ui.Cells.d2) view).c(z16, true);
-                break;
+                int i12 = iArr[i7];
+                return i12 == 0 ? org.telegram.messenger.gd.N0(2131753846, null) : i12 < 10080 ? org.telegram.messenger.gd.G(i12 / 1440, "Days", new Object[0]) : i12 < 44640 ? org.telegram.messenger.gd.G(i12 / 10080, "Weeks", new Object[0]) : i12 < 525600 ? org.telegram.messenger.gd.G(i12 / 44640, "Months", new Object[0]) : org.telegram.messenger.gd.G(i12 / 525600, "Years", new Object[0]);
         }
     }
 }

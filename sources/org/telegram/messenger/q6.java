@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -96,11 +96,11 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                 break;
             case 3:
                 mp mpVar2 = (mp) obj4;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj3;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj3;
                 TLRPC.TL_wallPaperSettings tL_wallPaperSettings = (TLRPC.TL_wallPaperSettings) obj2;
                 String str = (String) obj;
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
-                File file = new File(t0.h(), e6Var.b);
+                File file = new File(t0.h(), d6Var.b);
                 if (wallPaper != null) {
                     try {
                         w7 fileLoader = mpVar2.getFileLoader();
@@ -110,12 +110,12 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                     } catch (Exception unused) {
                     }
                 }
-                g0.g3(new tj(mpVar2, wallPaper, tL_wallPaperSettings, e6Var, file, str, 0));
+                g0.g3(new tj(mpVar2, wallPaper, tL_wallPaperSettings, d6Var, file, str, 0));
                 break;
             case 4:
                 xv xvVar = (xv) obj4;
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj2;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj2;
                 TLRPC.User user2 = (TLRPC.User) obj;
                 if (tL_error == null) {
                     TLRPC.messages_DhConfig messages_dhconfig = (TLRPC.messages_DhConfig) tLObject;
@@ -124,7 +124,7 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                         int i13 = messages_dhconfig.g;
                         Pattern pattern = Utilities.a;
                         if (!ConnectionsManager.native_isGoodPrime(bArr, i13)) {
-                            g0.g3(new vm(2, context, u1Var));
+                            g0.g3(new vm(2, context, t1Var));
                             break;
                         } else {
                             tr messagesStorage = xvVar.getMessagesStorage();
@@ -170,11 +170,11 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                     tL_messages_requestEncryption.g_a = byteArray;
                     tL_messages_requestEncryption.user_id = xvVar.getMessagesController().s1(user2);
                     tL_messages_requestEncryption.random_id = Utilities.b.nextInt();
-                    xvVar.getConnectionsManager().sendRequest(tL_messages_requestEncryption, new yn(xvVar, context, u1Var, bArr3, user2, 2), 2);
+                    xvVar.getConnectionsManager().sendRequest(tL_messages_requestEncryption, new yn(xvVar, context, t1Var, bArr3, user2, 2), 2);
                     break;
                 } else {
                     xvVar.f.clear();
-                    g0.g3(new uv(xvVar, context, u1Var, i10));
+                    g0.g3(new uv(xvVar, context, t1Var, i10));
                     break;
                 }
             default:

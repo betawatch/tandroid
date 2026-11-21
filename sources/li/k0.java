@@ -5,9 +5,9 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import bi.y3;
+import bi.c4;
 import di.vb;
-import hi.mb;
+import hi.lb;
 import java.util.ArrayList;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
@@ -20,24 +20,24 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.c5;
 import org.telegram.ui.Components.e9;
 import org.telegram.ui.Components.ec;
 import org.telegram.ui.Components.fc;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class k0 implements mi.e {
     public final Context a;
-    public final i6 b;
+    public final h6 b;
     public final lc c;
     public final int d;
     public final long e;
@@ -50,14 +50,14 @@ public final class k0 implements mi.e {
     public boolean n;
     public long o;
     public int p;
-    public u1 q;
+    public t1 q;
     public int r;
     public final a0.h g = new a0.h();
     public ArrayList j = new ArrayList();
 
-    public k0(Context context, i6 i6Var, lc lcVar, int i7, long j3) {
+    public k0(Context context, h6 h6Var, lc lcVar, int i7, long j3) {
         this.a = context;
-        this.b = i6Var;
+        this.b = h6Var;
         this.c = lcVar;
         this.d = i7;
         this.e = j3;
@@ -83,8 +83,8 @@ public final class k0 implements mi.e {
         }
     }
 
-    public final void b(e51 e51Var) {
-        if (this.m || this.n || e51Var.f3.N0() + 10 <= e51Var.g3.E.size()) {
+    public final void b(h51 h51Var) {
+        if (this.m || this.n || h51Var.f3.N0() + 10 <= h51Var.g3.E.size()) {
             return;
         }
         d();
@@ -108,7 +108,7 @@ public final class k0 implements mi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i7 < size + (-1);
                     int i10 = mi.g.b;
-                    l41 K = l41.K(mi.g.class);
+                    o41 K = o41.K(mi.g.class);
                     K.H = new mi.f(o4, c22, z10);
                     K.I = this;
                     K.j = !z11;
@@ -120,7 +120,7 @@ public final class k0 implements mi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(l41.p(29));
+        arrayList.add(o41.p(29));
     }
 
     public final void d() {
@@ -151,12 +151,12 @@ public final class k0 implements mi.e {
         if (this.q == null && this.r == 0) {
             int i7 = 0;
             if (z11) {
-                u1 M = b5.M(this.a, this.b, gd.M0(z10 ? 2131751972 : 2131751924, null), org.telegram.messenger.g0.W2(gd.G(this.l, z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), gd.M0(z10 ? 2131754484 : 2131751593, null), new ch.k(11, this, z10));
+                t1 M = c5.M(this.a, this.b, gd.N0(z10 ? 2131751971 : 2131751923, null), org.telegram.messenger.g0.W2(gd.G(this.l, z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), gd.N0(z10 ? 2131754483 : 2131751592, null), new ch.k(11, this, z10));
                 M.show();
                 if (z10 || (textView = (TextView) M.d(-1)) == null) {
                     return;
                 }
-                u6.U(textView, n6.q7, null);
+                t6.U(textView, m6.q7, null);
                 return;
             }
             vb vbVar = this.i;
@@ -164,9 +164,9 @@ public final class k0 implements mi.e {
                 vbVar.run();
             }
             this.i = null;
-            u1 u1Var = new u1(3, this.a, this.b);
-            this.q = u1Var;
-            u1Var.setOnCancelListener(new mb(this, 3));
+            t1 t1Var = new t1(3, this.a, this.b);
+            this.q = t1Var;
+            t1Var.setOnCancelListener(new lb(this, 3));
             this.q.r(500L);
             mp u12 = mp.u1(this.d);
             i0 i0Var = new i0(this, i7);
@@ -187,7 +187,7 @@ public final class k0 implements mi.e {
         if (j0Var != null) {
             j0Var.F();
         }
-        int i10 = z10 ? 2131751869 : 2131751868;
+        int i10 = z10 ? 2131751868 : 2131751867;
         int i11 = this.d;
         SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, i10, n5.s(i11, j3)));
         vb vbVar = this.i;
@@ -196,8 +196,8 @@ public final class k0 implements mi.e {
         }
         this.i = new vb(this, j3, z10, 2);
         Context context = this.a;
-        i6 i6Var = this.b;
-        fc fcVar = new fc(context, i6Var, false);
+        h6 h6Var = this.b;
+        fc fcVar = new fc(context, h6Var, false);
         TLObject g22 = mp.u1(i11).g2(j3);
         e9 e9Var = fcVar.a;
         if (g22 != null) {
@@ -211,25 +211,25 @@ public final class k0 implements mi.e {
         e9Var.setScaleX(1.333f);
         e9Var.setScaleY(1.333f);
         e9Var.a(false);
-        k80 k80Var = fcVar.b;
-        k80Var.setSingleLine(false);
-        k80Var.setMaxLines(2);
-        k80Var.setTextSize(1, 14.0f);
-        k80Var.setText(W2);
-        if (k80Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        m80 m80Var = fcVar.b;
+        m80Var.setSingleLine(false);
+        m80Var.setMaxLines(2);
+        m80Var.setTextSize(1, 14.0f);
+        m80Var.setText(W2);
+        if (m80Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int L = org.telegram.messenger.g0.L(74 - ((3 - i7) * 12));
             if (gd.a0) {
-                ((ViewGroup.MarginLayoutParams) k80Var.getLayoutParams()).rightMargin = L;
+                ((ViewGroup.MarginLayoutParams) m80Var.getLayoutParams()).rightMargin = L;
             } else {
-                ((ViewGroup.MarginLayoutParams) k80Var.getLayoutParams()).leftMargin = L;
+                ((ViewGroup.MarginLayoutParams) m80Var.getLayoutParams()).leftMargin = L;
             }
         }
         if (gd.a0) {
             e9Var.setTranslationX(org.telegram.messenger.g0.L(32 - ((i7 - 1) * 12)));
         }
-        ec ecVar = new ec(context, i6Var, true, true);
-        ecVar.e(gd.M0(2131743648, null));
-        ecVar.b = new y3(this, j3, 13);
+        ec ecVar = new ec(context, h6Var, true, true);
+        ecVar.e(gd.N0(2131743642, null));
+        ecVar.b = new c4(this, j3, 13);
         ecVar.c = this.i;
         fcVar.setButton(ecVar);
         this.c.b(fcVar, 5000).j();

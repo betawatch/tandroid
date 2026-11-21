@@ -4,13 +4,13 @@ import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class q1 {
     public StaticLayout A;
-    public org.telegram.ui.Components.t5 B;
+    public org.telegram.ui.Components.u5 B;
     public int C;
     public int D;
     public final /* synthetic */ r1 E;
@@ -30,8 +30,8 @@ public final class q1 {
     public float n;
     public boolean o;
     public StaticLayout p;
-    public vy0 q;
-    public org.telegram.ui.Components.t5 r;
+    public xy0 q;
+    public org.telegram.ui.Components.u5 r;
     public TLRPC.PollAnswer s;
     public TLRPC.TodoItem t;
     public boolean u;

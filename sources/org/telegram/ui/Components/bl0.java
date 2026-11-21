@@ -1,99 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class bl0 extends AnimatorListenerAdapter {
+public final class bl0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+    public final /* synthetic */ gl0 b;
 
-    public /* synthetic */ bl0(KeyEvent.Callback callback, boolean z10, float f10, int i7) {
+    public /* synthetic */ bl0(gl0 gl0Var, int i7) {
         this.a = i7;
-        this.d = callback;
-        this.b = z10;
-        this.c = f10;
+        this.b = gl0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
+    
+        if (r2.r0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
+    
+        if (r2.r0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
+    
+        if (r2.r0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
+    
+        r4 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x004b, code lost:
+    
+        r2.scrollBy(r0 * r4, 0);
+        org.telegram.messenger.g0.g3(r2.t0);
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int tabSize;
+        int max;
         switch (this.a) {
             case 0:
-                el0 el0Var = (el0) this.d;
-                org.telegram.ui.d61 d61Var = el0Var.e;
-                el0Var.i0 = null;
-                boolean z10 = this.b;
-                el0Var.j0 = z10 ? 1.0f : 0.0f;
-                for (int i7 = 0; i7 < d61Var.getChildCount(); i7++) {
-                    d61Var.getChildAt(i7).invalidate();
-                }
-                d61Var.invalidate();
-                el0Var.p();
-                if (!z10) {
-                    float childCount = el0Var.l0 * d61Var.getChildCount();
-                    float scrollX = el0Var.getScrollX();
-                    float f10 = this.c;
-                    float childCount2 = (scrollX + f10) / (el0Var.k0 * d61Var.getChildCount());
-                    float measuredWidth = (childCount - el0Var.getMeasuredWidth()) / childCount;
-                    if (childCount2 > measuredWidth) {
-                        f10 = 0.0f;
-                        childCount2 = measuredWidth;
+                gl0 gl0Var = this.b;
+                org.telegram.ui.d61 d61Var = gl0Var.e;
+                gl0Var.c0 = false;
+                gl0Var.W = gl0Var.getScrollX() + gl0Var.a0;
+                tabSize = gl0Var.getTabSize();
+                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
+                gl0Var.V = ceil;
+                gl0Var.U = ceil;
+                if (gl0Var.e(ceil) && ceil >= 0 && ceil < d61Var.getChildCount()) {
+                    try {
+                        gl0Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
                     }
-                    float f11 = childCount * childCount2;
-                    if (f11 - f10 < 0.0f) {
-                        f11 = f10;
-                    }
-                    el0Var.m0 = (el0Var.getScrollX() + f10) - f11;
-                    int i10 = (int) (f11 - f10);
-                    el0Var.n0 = i10;
-                    if (i10 < 0) {
-                        el0Var.n0 = 0;
-                    }
-                    for (int i11 = 0; i11 < d61Var.getChildCount(); i11++) {
-                        View childAt = d61Var.getChildAt(i11);
-                        if (childAt instanceof pv0) {
-                            ((pv0) childAt).setExpanded(false);
-                        }
-                        childAt.getLayoutParams().width = org.telegram.messenger.g0.L(33.0f);
-                    }
-                    el0Var.h0 = false;
-                    el0Var.getLayoutParams().height = org.telegram.messenger.g0.L(36.0f);
-                    d61Var.requestLayout();
+                    gl0Var.e0 = 0.0f;
+                    gl0Var.w = 0.0f;
+                    View childAt = d61Var.getChildAt(ceil);
+                    gl0Var.s = childAt;
+                    gl0Var.d0 = childAt.getX() - gl0Var.getScrollX();
+                    gl0Var.s.invalidate();
+                    d61Var.invalidate();
+                    gl0Var.j();
+                    gl0Var.invalidate();
                     break;
                 }
                 break;
             default:
-                super.onAnimationEnd(animator);
-                if (!this.b) {
-                    super/*android.app.Dialog*/.dismiss();
+                long currentTimeMillis = System.currentTimeMillis();
+                gl0 gl0Var2 = this.b;
+                long j3 = currentTimeMillis - gl0Var2.s0;
+                int i7 = -1;
+                if (j3 >= 3000) {
+                    if (j3 >= 5000) {
+                        max = Math.max(1, org.telegram.messenger.g0.L(4.0f));
+                        break;
+                    } else {
+                        max = Math.max(1, org.telegram.messenger.g0.L(2.0f));
+                        break;
+                    }
+                } else {
+                    max = Math.max(1, org.telegram.messenger.g0.L(1.0f));
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                super.onAnimationStart(animator);
-                zh.j jVar = ((zh.k) this.d).E;
-                jVar.setVisibility(0);
-                if (this.b) {
-                    float f10 = this.c;
-                    jVar.setScaleX(f10);
-                    jVar.setScaleY(f10);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
         }
     }
 }

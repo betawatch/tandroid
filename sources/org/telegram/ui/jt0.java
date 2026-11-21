@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jt0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -41,9 +41,9 @@ public final /* synthetic */ class jt0 implements org.telegram.messenger.x10 {
                 }
                 privacyControlActivity2.getMessagesController().o2();
                 privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new mo0(kt0Var, d2, tL_birthday2, 1), 1024);
-                i7 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity2).currentAccount;
+                i7 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity2).currentAccount;
                 org.telegram.messenger.mp.u1(i7).s4(0L, "BIRTHDAY_SETUP");
-                i10 = ((org.telegram.ui.ActionBar.h2) privacyControlActivity2).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity2).currentAccount;
                 org.telegram.messenger.ks.f(i10).k(org.telegram.messenger.ks.j5, new Object[0]);
                 privacyControlActivity2.Q0(true);
                 break;

@@ -1,27 +1,41 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import j$.util.Objects;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lj implements rj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.f5 b;
+public final class lj {
+    public final int a;
+    public final long b;
 
-    public /* synthetic */ lj(org.telegram.messenger.f5 f5Var, int i7) {
+    public lj(int i7, long j3) {
         this.a = i7;
-        this.b = f5Var;
+        this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.rj
-    public final String run() {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = this.b.e;
-                return arrayList.isEmpty() ? "" : pf.b.c().b((String) arrayList.get(0));
-            default:
-                ArrayList arrayList2 = this.b.e;
-                return arrayList2.isEmpty() ? "" : pf.b.c().b((String) arrayList2.get(0));
+    public static lj a(Object obj) {
+        if (obj instanceof org.telegram.messenger.f5) {
+            return new lj(2, ((org.telegram.messenger.f5) obj).a);
         }
+        if (obj instanceof TLRPC.User) {
+            return new lj(1, ((TLRPC.User) obj).id);
+        }
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || lj.class != obj.getClass()) {
+            return false;
+        }
+        lj ljVar = (lj) obj;
+        return this.b == ljVar.b && this.a == ljVar.a;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(p1.g.a(this.a), Long.valueOf(this.b));
     }
 }

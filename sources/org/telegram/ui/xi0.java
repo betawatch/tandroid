@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xi0 implements org.telegram.ui.ActionBar.r1, ss, wj0 {
+public final /* synthetic */ class xi0 implements org.telegram.ui.ActionBar.q1, ts, wj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ hk0 b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class xi0 implements org.telegram.ui.ActionBar.r1, 
         this.b = hk0Var;
     }
 
-    @Override // org.telegram.ui.ss
+    @Override // org.telegram.ui.ts
     public void b(ps psVar) {
         switch (this.a) {
             case 2:
@@ -47,8 +47,8 @@ public final /* synthetic */ class xi0 implements org.telegram.ui.ActionBar.r1, 
         this.b.B1();
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 hk0 hk0Var = this.b;

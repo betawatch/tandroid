@@ -1,86 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class xz0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yz0 b;
+public final class xz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ThemeEditorView.EditorAlert a;
 
-    public xz0(yz0 yz0Var, int i7) {
-        this.b = yz0Var;
-        this.a = i7;
+    public xz0(ThemeEditorView.EditorAlert editorAlert) {
+        this.a = editorAlert;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x007f A[LOOP:0: B:13:0x0075->B:15:0x007f, LOOP_END] */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        int i7;
-        int i10;
-        int i11;
-        yz0 yz0Var = this.b;
-        EditTextBoldCursor[] editTextBoldCursorArr = yz0Var.n;
-        ThemeEditorView.EditorAlert editorAlert = yz0Var.J;
-        if (editorAlert.F1) {
-            return;
-        }
-        editorAlert.F1 = true;
-        int intValue = Utilities.z(editable.toString()).intValue();
-        int i12 = this.a;
-        if (intValue < 0) {
-            editTextBoldCursorArr[i12].setText("0");
-            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i12];
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-            intValue = 0;
-        } else if (intValue > 255) {
-            editTextBoldCursorArr[i12].setText("255");
-            EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursorArr[i12];
-            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-            intValue = 255;
-        }
-        int b10 = yz0Var.b();
-        if (i12 == 2) {
-            i7 = b10 & (-256);
-            i10 = intValue & org.telegram.messenger.ks.e4;
-        } else if (i12 == 1) {
-            i7 = b10 & (-65281);
-            i10 = (intValue & org.telegram.messenger.ks.e4) << 8;
-        } else {
-            if (i12 != 0) {
-                if (i12 == 3) {
-                    i7 = b10 & 16777215;
-                    i10 = (intValue & org.telegram.messenger.ks.e4) << 24;
-                }
-                yz0Var.c(b10);
-                for (i11 = 0; i11 < ThemeEditorView.this.e.size(); i11++) {
-                    ((org.telegram.ui.ActionBar.w6) ThemeEditorView.this.e.get(i11)).e(yz0Var.b(), false, true);
-                }
-                ThemeEditorView.a(ThemeEditorView.this);
-                editorAlert.F1 = false;
-            }
-            i7 = b10 & (-16711681);
-            i10 = (intValue & org.telegram.messenger.ks.e4) << 16;
-        }
-        b10 = i7 | i10;
-        yz0Var.c(b10);
-        while (i11 < ThemeEditorView.this.e.size()) {
-        }
-        ThemeEditorView.a(ThemeEditorView.this);
-        editorAlert.F1 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.a;
+        editorAlert.n1.setVisibility(4);
+        editorAlert.q1.setVisibility(4);
+        editorAlert.u1.setVisibility(4);
+        editorAlert.C1 = false;
     }
 }

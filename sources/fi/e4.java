@@ -9,17 +9,17 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.fc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.p10;
-import org.telegram.ui.Components.wu0;
+import org.telegram.ui.Components.s10;
+import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class e4 {
     public final ImageReceiver a;
     public int b;
     public StaticLayout c;
     public final TextPaint d;
-    public h5 e;
+    public i5 e;
     public final /* synthetic */ f4 f;
 
     public e4(f4 f4Var) {
@@ -40,19 +40,19 @@ public final class e4 {
         if (i7 < 0 || i7 >= arrayList.size()) {
             return;
         }
-        this.e = (h5) arrayList.get(i7);
+        this.e = (i5) arrayList.get(i7);
         boolean z10 = f4Var.w;
         ImageReceiver imageReceiver = this.a;
         if (z10) {
             imageReceiver.P();
         }
-        h5 h5Var = this.e;
-        TL_stories.StoryItem storyItem = h5Var.a;
+        i5 i5Var = this.e;
+        TL_stories.StoryItem storyItem = i5Var.a;
         if (storyItem != null) {
             i7.x(imageReceiver, storyItem);
         } else {
-            o6 o6Var = h5Var.b;
-            p10[] p10VarArr = i7.a;
+            o6 o6Var = i5Var.b;
+            s10[] s10VarArr = i7.a;
             if (o6Var.c.K) {
                 imageReceiver.r0(fc.g(o6Var.f), "320_180", null, null, null, 0L, null, null, 0);
             } else {
@@ -76,12 +76,12 @@ public final class e4 {
         int i7 = (int) (f4Var.K + 1.0f);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         TextPaint textPaint = this.d;
-        StaticLayout c10 = wu0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        StaticLayout c10 = zu0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
         this.c = c10;
         if (c10.getLineCount() > 1) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
             f4.a(f4Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = wu0.c(spannableStringBuilder2, textPaint, (int) (f4Var.K + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
+            this.c = zu0.c(spannableStringBuilder2, textPaint, (int) (f4Var.K + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
         }
     }
 }

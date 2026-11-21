@@ -1,6 +1,5 @@
 package jg;
 
-import di.ga;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -8,7 +7,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.tr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +44,7 @@ public final /* synthetic */ class w1 implements Runnable {
                     }
                     queryFinalized.dispose();
                     Collections.sort(arrayList, new w(2));
-                    org.telegram.messenger.g0.g3(new ga(z1Var, arrayList, hashMap, 24));
+                    org.telegram.messenger.g0.g3(new di.a8(z1Var, arrayList, hashMap, 25));
                     break;
                 } catch (Exception e11) {
                     a8.g(e11, true);

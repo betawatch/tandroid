@@ -8,11 +8,11 @@ import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.md0;
 import sg.h0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class l extends rf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -88,7 +88,7 @@ public final class l extends rf.a {
         byte b10;
         byte b11;
         byte b12;
-        nd0 nd0Var;
+        md0 md0Var;
         Logger logger;
         uf.a aVar;
         int i7;
@@ -106,12 +106,12 @@ public final class l extends rf.a {
                 hVar.b = 0;
                 hVar.c = 0;
                 long j13 = dVar.b;
-                hn hnVar = new hn(dVar, 19);
+                jn jnVar = new jn(dVar, 19);
                 byte[] bArr = new byte[3];
                 int i10 = 0;
                 for (int i11 = 3; i10 < i11; i11 = 3) {
                     long j14 = j13;
-                    int read = ((ab.d) hnVar.b).read(bArr, i10, 3 - i10);
+                    int read = ((ab.d) jnVar.b).read(bArr, i10, 3 - i10);
                     if (read <= 0) {
                         throw new EOFException();
                     }
@@ -123,14 +123,14 @@ public final class l extends rf.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte Q = hnVar.Q();
+                byte Q = jnVar.Q();
                 hVar.a = Q;
                 if (Q != 2 && Q != 3 && Q != 4) {
                     throw new c(i5.c.i(Q, "Unsupported ID3v2 version: "));
                 }
-                byte Q2 = hnVar.Q();
-                byte Q3 = hnVar.Q();
-                int S = hnVar.S();
+                byte Q2 = jnVar.Q();
+                byte Q3 = jnVar.Q();
+                int S = jnVar.S();
                 hVar.b = S + 10;
                 if (Q == 2) {
                     hVar.d = (Q3 & 128) != 0;
@@ -142,17 +142,17 @@ public final class l extends rf.a {
                         b11 = Q2;
                         b12 = Q3;
                     } else if (Q == 3) {
-                        int R = hnVar.R();
-                        hnVar.Q();
-                        hnVar.Q();
-                        hnVar.R();
+                        int R = jnVar.R();
+                        jnVar.Q();
+                        jnVar.Q();
+                        jnVar.R();
                         b11 = Q2;
                         b12 = Q3;
-                        hnVar.T(R - 6);
+                        jnVar.T(R - 6);
                     } else {
                         b11 = Q2;
                         b12 = Q3;
-                        hnVar.T(hnVar.S() - 4);
+                        jnVar.T(jnVar.S() - 4);
                     }
                     if (Q >= 4 && (b12 & 16) != 0) {
                         hVar.c = 10;
@@ -168,7 +168,7 @@ public final class l extends rf.a {
                 }
                 if (Q >= 4 || !hVar.d) {
                     logger = logger2;
-                    nd0Var = new nd0(mVar, i12, (i13 - i12) - hVar.c, hVar);
+                    md0Var = new md0(mVar, i12, (i13 - i12) - hVar.c, hVar);
                 } else {
                     int i14 = i13 - i12;
                     byte[] bArr2 = new byte[i14];
@@ -190,18 +190,18 @@ public final class l extends rf.a {
                         }
                         z10 = b13 == -1;
                     }
-                    nd0Var = new nd0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
+                    md0Var = new md0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
                     logger = logger2;
                 }
-                hn hnVar2 = (hn) nd0Var.d;
-                uf.a aVar2 = (uf.a) nd0Var.b;
+                jn jnVar2 = (jn) md0Var.d;
+                uf.a aVar2 = (uf.a) md0Var.b;
                 while (true) {
                     try {
                         if (aVar2.e() <= 10) {
                             aVar = aVar2;
                             break;
                         }
-                        f fVar = new f(nd0Var);
+                        f fVar = new f(md0Var);
                         String str6 = fVar.a;
                         int i18 = fVar.c;
                         aVar = aVar2;
@@ -222,7 +222,7 @@ public final class l extends rf.a {
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                hnVar2.T(aVar.e());
+                                jnVar2.T(aVar.e());
                                 i7 = hVar.c;
                                 if (i7 > 0) {
                                 }
@@ -274,7 +274,7 @@ public final class l extends rf.a {
                                     i20++;
                                 }
                             }
-                            hnVar2.T(i18);
+                            jnVar2.T(i18);
                             aVar2 = aVar;
                         } else if (logger.isLoggable(level)) {
                             logger.log(level, "ID3 frame claims to extend frames area");
@@ -284,7 +284,7 @@ public final class l extends rf.a {
                         aVar = aVar2;
                     }
                 }
-                hnVar2.T(aVar.e());
+                jnVar2.T(aVar.e());
                 i7 = hVar.c;
                 if (i7 > 0) {
                     mVar.skip(i7);

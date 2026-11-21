@@ -16,12 +16,13 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
+import ji.l;
 import org.telegram.ui.Cells.c5;
 import sg.h0;
 import u9.m;
 import v9.j;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object k = new Object();
@@ -224,9 +225,9 @@ public final class g {
     }
 
     public final String toString() {
-        ji.j jVar = new ji.j(this);
-        jVar.E(this.b, "name");
-        jVar.E(this.c, "options");
-        return jVar.toString();
+        l lVar = new l(this);
+        lVar.E(this.b, "name");
+        lVar.E(this.c, "options");
+        return lVar.toString();
     }
 }

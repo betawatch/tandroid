@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.Toast;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d31 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class d31 implements View.OnClickListener {
                 } else {
                     boolean z10 = org.telegram.messenger.s2.a;
                     try {
-                        Toast.makeText(o31Var.getParentActivity(), org.telegram.messenger.gd.M0(2131751614, null), 0).show();
+                        Toast.makeText(o31Var.getParentActivity(), org.telegram.messenger.gd.N0(2131751613, null), 0).show();
                         break;
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);

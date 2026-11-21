@@ -1,46 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z61 implements pj0, qj0 {
-    public final /* synthetic */ f71 a;
+public final class z61 extends i71 {
+    public final /* synthetic */ j71 u0;
 
-    public /* synthetic */ z61(f71 f71Var) {
-        this.a = f71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z61(j71 j71Var, Context context, boolean z10, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(i7, context, h6Var, z10);
+        this.u0 = j71Var;
     }
 
-    @Override // org.telegram.ui.Components.pj0
-    public /* synthetic */ boolean b1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.qj0
-    public boolean c(int i7, View view) {
-        org.telegram.messenger.r10 r10Var = this.a.b;
-        if (r10Var == null) {
-            return false;
-        }
-        return ((Boolean) r10Var.g(Integer.valueOf(((d71) view).a.a), view)).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.pj0
-    public void f(float f10, float f11, int i7, View view) {
-        f71 f71Var = this.a;
-        e71 e71Var = f71Var.E;
-        if (e71Var == null || e71Var.b()) {
-            d71 d71Var = (d71) view;
-            if (i7 != f71Var.G || f71Var.E == null) {
-                org.telegram.messenger.r10 r10Var = f71Var.m0;
-                if (r10Var == null || !((Boolean) r10Var.g(Integer.valueOf(d71Var.a.a), Integer.valueOf(i7))).booleanValue()) {
-                    f71Var.e(d71Var.a.a, i7);
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0
-    public /* synthetic */ void s0(View view, float f10, float f11) {
+    @Override // org.telegram.ui.Components.i71
+    public final void f(float f10, int i7, int i10) {
+        super.f(f10, i7, i10);
+        this.u0.v(f10 <= 0.5f ? i7 : i10, i7 < i10);
     }
 }

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ia implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -25,9 +25,9 @@ public final /* synthetic */ class ia implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ ia(int i7, hi.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, org.telegram.ui.ActionBar.x2[] x2VarArr) {
-        this.e = dVar;
-        this.f = x2VarArr;
+    public /* synthetic */ ia(int i7, hi.e eVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, org.telegram.ui.ActionBar.w2[] w2VarArr) {
+        this.e = eVar;
+        this.f = w2VarArr;
         this.d = i7;
         this.b = z10;
         this.h = starsSubscription;
@@ -59,32 +59,32 @@ public final /* synthetic */ class ia implements Runnable {
         int i7;
         switch (this.a) {
             case 0:
-                hi.d dVar = (hi.d) this.e;
-                org.telegram.ui.ActionBar.x2[] x2VarArr = (org.telegram.ui.ActionBar.x2[]) this.f;
+                hi.e eVar = (hi.e) this.e;
+                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.f;
                 int i10 = this.d;
                 boolean z11 = this.b;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
                 boolean z12 = this.c;
                 TLObject tLObject = (TLObject) this.n;
-                dVar.setLoading(false);
-                org.telegram.ui.ActionBar.x2 x2Var = x2VarArr[0];
-                if (x2Var != null) {
-                    x2Var.dismiss();
+                eVar.setLoading(false);
+                org.telegram.ui.ActionBar.w2 w2Var = w2VarArr[0];
+                if (w2Var != null) {
+                    w2Var.dismiss();
                 }
-                x8.y(i10, false).Q();
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                y8.y(i10, false).Q();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     if (z11 && !TextUtils.isEmpty(starsSubscription.title)) {
-                        a02 = gd.a0(null, null, 2131744765, gd.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = gd.a0(null, null, 2131744759, gd.u(starsSubscription.until_date, false), starsSubscription.title);
                         z10 = false;
                     } else if (!z12 || TextUtils.isEmpty(starsSubscription.title)) {
                         z10 = false;
-                        a02 = gd.a0(null, null, 2131744761, gd.u(starsSubscription.until_date, false));
+                        a02 = gd.a0(null, null, 2131744755, gd.u(starsSubscription.until_date, false));
                     } else {
                         z10 = false;
-                        a02 = gd.a0(null, null, 2131744764, gd.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = gd.a0(null, null, 2131744758, gd.u(starsSubscription.until_date, false), starsSubscription.title);
                     }
-                    org.telegram.ui.Components.lc.b0(T).V(Collections.singletonList(tLObject), gd.M0(2131744762, null), org.telegram.messenger.g0.W2(a02), null).k(z10);
+                    org.telegram.ui.Components.lc.b0(T).V(Collections.singletonList(tLObject), gd.N0(2131744756, null), org.telegram.messenger.g0.W2(a02), null).k(z10);
                     return;
                 }
                 return;

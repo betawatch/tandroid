@@ -16,9 +16,9 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h2 extends View {
     public final RectF E;
@@ -29,15 +29,15 @@ public final class h2 extends View {
     public final org.telegram.ui.Components.mc J;
     public final long K;
     public boolean L;
-    public final org.telegram.ui.Components.c6 M;
+    public final org.telegram.ui.Components.d6 M;
     public boolean N;
-    public final org.telegram.ui.Components.c6 O;
+    public final org.telegram.ui.Components.d6 O;
     public boolean P;
-    public final org.telegram.ui.Components.c6 Q;
-    public final vy0 R;
-    public final vy0 S;
+    public final org.telegram.ui.Components.d6 Q;
+    public final xy0 R;
+    public final xy0 S;
     public final h6.m T;
-    public vy0 U;
+    public xy0 U;
     public Drawable V;
     public Drawable W;
     public final Paint a;
@@ -86,20 +86,20 @@ public final class h2 extends View {
         this.H = new RectF();
         this.I = new RectF();
         this.J = new org.telegram.ui.Components.mc(this);
-        org.telegram.ui.Components.lr lrVar = org.telegram.ui.Components.lr.h;
-        this.M = new org.telegram.ui.Components.c6(this, 0L, 320L, lrVar);
+        org.telegram.ui.Components.nr nrVar = org.telegram.ui.Components.nr.h;
+        this.M = new org.telegram.ui.Components.d6(this, 0L, 320L, nrVar);
         this.N = true;
-        this.O = new org.telegram.ui.Components.c6(this, 0L, 420L, lrVar);
+        this.O = new org.telegram.ui.Components.d6(this, 0L, 420L, nrVar);
         this.P = false;
-        this.Q = new org.telegram.ui.Components.c6(this, 0L, 420L, lrVar);
+        this.Q = new org.telegram.ui.Components.d6(this, 0L, 420L, nrVar);
         this.T = new h6.m(29);
         this.b0 = new a(this, 2);
         this.K = System.currentTimeMillis();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.R = new vy0(gd.M0(2131753061, null), 13.0f, g0.o());
-        this.S = new vy0(gd.M0(2131753060, null), 13.0f, g0.o());
+        this.R = new xy0(gd.N0(2131753060, null), 13.0f, g0.o());
+        this.S = new xy0(gd.N0(2131753059, null), 13.0f, g0.o());
         paint2.setPathEffect(new CornerPathEffect(g0.L(1.0f)));
         path.rewind();
         path.moveTo(-g0.N(1.33f), g0.N(0.16f));
@@ -170,13 +170,13 @@ public final class h2 extends View {
         float d = this.M.d(this.L);
         float d2 = this.O.d(this.N);
         float L7 = (rectF2.left - g0.L(18.0f)) - (rectF.left + g0.L(38.0f));
-        vy0 vy0Var = this.U;
-        if (vy0Var == null) {
+        xy0 xy0Var = this.U;
+        if (xy0Var == null) {
             f10 = 18.0f;
             L = 0.0f;
         } else {
             f10 = 18.0f;
-            L = vy0Var.c + g0.L(this.V != null ? 30.0f : 12.0f);
+            L = xy0Var.c + g0.L(this.V != null ? 30.0f : 12.0f);
         }
         float min = Math.min(L7, L);
         float T1 = g0.T1(g0.T1(this.S.c, this.R.c, d) + g0.L(12.0f), min, d2);
@@ -198,7 +198,7 @@ public final class h2 extends View {
         Object obj = this.f0;
         Paint paint3 = this.a;
         if (obj == null || Build.VERSION.SDK_INT < 31 || !canvas.isHardwareAccelerated() || !((webView = this.g0) == null || webView.getLayerType() == 2)) {
-            paint3.setColor(org.telegram.ui.ActionBar.n6.r1(0.35f, -16777216));
+            paint3.setColor(org.telegram.ui.ActionBar.m6.r1(0.35f, -16777216));
             canvas.drawPath(path, paint3);
         } else {
             if (this.a0 == null) {
@@ -218,7 +218,7 @@ public final class h2 extends View {
             canvas.translate(g0.L(8.0f), 0.0f);
             canvas.drawRenderNode(this.a0);
             canvas.restore();
-            paint3.setColor(org.telegram.ui.ActionBar.n6.r1(0.22f, -16777216));
+            paint3.setColor(org.telegram.ui.ActionBar.m6.r1(0.22f, -16777216));
             canvas.drawPaint(paint3);
             canvas.restore();
         }
@@ -244,10 +244,10 @@ public final class h2 extends View {
         } else {
             canvas2.save();
             canvas2.translate(com.google.android.gms.internal.vision.e2.t(1.0f, d2, min, rectF5.left + g0.L(30.0f)), rectF5.centerY());
-            vy0 vy0Var2 = this.U;
-            vy0Var2.p = ((rectF5.right - g0.L(this.V != null ? 30.0f : 12.0f)) - (rectF5.left + g0.L(30.0f))) + 2.0f;
+            xy0 xy0Var2 = this.U;
+            xy0Var2.p = ((rectF5.right - g0.L(this.V != null ? 30.0f : 12.0f)) - (rectF5.left + g0.L(30.0f))) + 2.0f;
             f12 = 1.0f;
-            vy0Var2.c(0.0f, 0.0f, d2, -1, canvas);
+            xy0Var2.c(0.0f, 0.0f, d2, -1, canvas);
             f11 = d2;
             canvas2 = canvas;
             canvas2.translate(this.U.k() + g0.L(5.0f), 0.0f);
@@ -308,7 +308,7 @@ public final class h2 extends View {
             canvas.translate(-g0.N(8.166f), g0.N(3.5f));
             float f24 = (d11 * 0.5f) + 0.5f;
             canvas.scale(f24, f24);
-            int r12 = org.telegram.ui.ActionBar.n6.r1(0.4f, -1);
+            int r12 = org.telegram.ui.ActionBar.m6.r1(0.4f, -1);
             Paint paint4 = this.e;
             paint4.setColor(r12);
             Path path2 = this.f;
@@ -317,13 +317,13 @@ public final class h2 extends View {
             float f25 = 0.5f + currentTimeMillis;
             canvas.save();
             canvas.clipRect(-g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), currentTimeMillis), g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), f25));
-            paint4.setColor(org.telegram.ui.ActionBar.n6.r1(f12, -1));
+            paint4.setColor(org.telegram.ui.ActionBar.m6.r1(f12, -1));
             canvas.drawPath(path2, paint4);
             canvas.restore();
             if (f25 > f12) {
                 canvas.save();
                 canvas.clipRect(-g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), 0.0f), g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), f25 - f12));
-                paint4.setColor(org.telegram.ui.ActionBar.n6.r1(f12, -1));
+                paint4.setColor(org.telegram.ui.ActionBar.m6.r1(f12, -1));
                 canvas.drawPath(path2, paint4);
                 canvas.restore();
             }

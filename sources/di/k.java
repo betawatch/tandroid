@@ -17,10 +17,10 @@ import org.telegram.messenger.z00;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.b31;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -59,18 +59,18 @@ public final /* synthetic */ class k implements Runnable {
                 t.e0((t) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.c, this.b, (TLObject) this.n);
                 return;
             case 1:
-                x8 x8Var = (x8) this.d;
+                y8 y8Var = (y8) this.d;
                 q10 q10Var = (q10) this.e;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.f;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) this.h;
                 long j3 = this.b;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.n;
                 boolean z10 = this.c;
-                if (x8Var.e) {
-                    x8Var.h(tL_payments_paymentFormStarGift, starGift, j3, tL_textWithEntities, z10, q10Var);
+                if (y8Var.e) {
+                    y8Var.h(tL_payments_paymentFormStarGift, starGift, j3, tL_textWithEntities, z10, q10Var);
                     return;
                 } else {
-                    x8.e("NO_BALANCE");
+                    y8.e("NO_BALANCE");
                     q10Var.a(Boolean.FALSE, null);
                     return;
                 }
@@ -155,21 +155,21 @@ public final /* synthetic */ class k implements Runnable {
                     ArrayList<TLRPC.TL_textWithEntities> arrayList9 = ((TLRPC.TL_messages_translateResult) tLObject2).result;
                     int min = Math.min(arrayList3.size(), arrayList9.size());
                     for (int i11 = 0; i11 < min; i11++) {
-                        ((u10) arrayList3.get(i11)).a(Boolean.valueOf(z15), (Integer) arrayList2.get(i11), y21.R0((TLRPC.TL_textWithEntities) arrayList4.get(i11), arrayList9.get(i11)), str);
+                        ((u10) arrayList3.get(i11)).a(Boolean.valueOf(z15), (Integer) arrayList2.get(i11), b31.R0((TLRPC.TL_textWithEntities) arrayList4.get(i11), arrayList9.get(i11)), str);
                     }
                 } else {
                     if (tL_error2 == null || !"TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error2.text)) {
                         arrayList5 = arrayList2;
                         if (tL_error2 == null || !"TO_LANG_INVALID".equals(tL_error2.text)) {
                             if (tL_error2 != null && "QUOTA_EXCEEDED".equals(tL_error2.text)) {
-                                ks.e().k(ks.S4, 1, gd.M0(2131743710, null));
+                                ks.e().k(ks.S4, 1, gd.N0(2131743704, null));
                             }
                             for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                                 ((u10) arrayList3.get(i12)).a(Boolean.valueOf(z15), (Integer) arrayList5.get(i12), null, v00Var.e);
                             }
                         } else {
                             z00Var.K(j12, false);
-                            ks.e().k(ks.S4, 1, gd.M0(2131743709, null));
+                            ks.e().k(ks.S4, 1, gd.N0(2131743703, null));
                         }
                         synchronized (z00Var) {
                             for (int i13 = 0; i13 < arrayList5.size(); i13++) {
@@ -187,7 +187,7 @@ public final /* synthetic */ class k implements Runnable {
                         int intValue = ((Integer) arrayList2.get(i14)).intValue();
                         ArrayList arrayList10 = arrayList2;
                         String str2 = str;
-                        y21.K0(((TLRPC.TL_textWithEntities) arrayList4.get(i14)).text, null, str2, new l00(z00Var, (u10) arrayList3.get(i14), z15, intValue, str2, j12, 1));
+                        b31.K0(((TLRPC.TL_textWithEntities) arrayList4.get(i14)).text, null, str2, new l00(z00Var, (u10) arrayList3.get(i14), z15, intValue, str2, j12, 1));
                         i14++;
                         arrayList2 = arrayList10;
                         str = str2;
@@ -201,8 +201,8 @@ public final /* synthetic */ class k implements Runnable {
         }
     }
 
-    public /* synthetic */ k(x8 x8Var, q10 q10Var, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
-        this.d = x8Var;
+    public /* synthetic */ k(y8 y8Var, q10 q10Var, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
+        this.d = y8Var;
         this.e = q10Var;
         this.f = tL_payments_paymentFormStarGift;
         this.h = starGift;

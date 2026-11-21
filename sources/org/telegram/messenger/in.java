@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class in implements Runnable {
     public final /* synthetic */ int a;
@@ -436,7 +436,7 @@ public final /* synthetic */ class in implements Runnable {
         int i22 = 1;
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.b5.c0(((mp) this.c).currentAccount, (TLRPC.TL_error) this.d, (org.telegram.ui.ActionBar.h2) this.e, (TLRPC.TL_channels_editBanned) this.f, Boolean.valueOf(this.b));
+                org.telegram.ui.Components.c5.c0(((mp) this.c).currentAccount, (TLRPC.TL_error) this.d, (org.telegram.ui.ActionBar.g2) this.e, (TLRPC.TL_channels_editBanned) this.f, Boolean.valueOf(this.b));
                 return;
             case 1:
                 tr trVar4 = (tr) this.c;
@@ -942,15 +942,15 @@ public final /* synthetic */ class in implements Runnable {
                 TLObject tLObject = (TLObject) this.d;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.e;
                 boolean z15 = this.b;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.f;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.f;
                 if (tLObject instanceof TLRPC.Updates) {
                     Utilities.d.c(new z4(r32, x6Var, tLObject));
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T != null && ((isEmpty = TextUtils.isEmpty(tL_textWithEntities.text)) || !z15)) {
-                        f3.n(null, isEmpty ? 2131750842 : 2131750840, org.telegram.ui.Components.lc.b0(T), isEmpty ? R.raw.ic_delete : R.raw.contact_check, 36);
+                        f3.n(null, isEmpty ? 2131750841 : 2131750839, org.telegram.ui.Components.lc.b0(T), isEmpty ? R.raw.ic_delete : R.raw.contact_check, 36);
                     }
                 }
-                u1Var.dismiss();
+                t1Var.dismiss();
                 return;
             case 3:
                 a();
@@ -1013,7 +1013,7 @@ public final /* synthetic */ class in implements Runnable {
                 zy zyVar2 = (zy) this.c;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage2 = (TLRPC.TL_messages_editMessage) this.d;
                 fj fjVar2 = (fj) this.f;
-                int sendRequest = zyVar2.getConnectionsManager().sendRequest(tL_messages_editMessage2, new r4(fjVar2, zyVar2, tL_messages_editMessage2, (org.telegram.ui.ActionBar.h2) this.e, this.b));
+                int sendRequest = zyVar2.getConnectionsManager().sendRequest(tL_messages_editMessage2, new r4(fjVar2, zyVar2, tL_messages_editMessage2, (org.telegram.ui.ActionBar.g2) this.e, this.b));
                 if (fjVar2 == null || (message = fjVar2.k) == null) {
                     return;
                 }
@@ -1073,12 +1073,12 @@ public final /* synthetic */ class in implements Runnable {
         this.f = obj2;
     }
 
-    public /* synthetic */ in(fj fjVar, zy zyVar, TLRPC.TL_messages_editMessage tL_messages_editMessage, org.telegram.ui.ActionBar.h2 h2Var, boolean z10) {
+    public /* synthetic */ in(fj fjVar, zy zyVar, TLRPC.TL_messages_editMessage tL_messages_editMessage, org.telegram.ui.ActionBar.g2 g2Var, boolean z10) {
         this.a = 5;
         this.c = zyVar;
         this.d = tL_messages_editMessage;
         this.f = fjVar;
-        this.e = h2Var;
+        this.e = g2Var;
         this.b = z10;
     }
 }

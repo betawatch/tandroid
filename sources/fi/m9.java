@@ -5,7 +5,7 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class m9 implements Runnable {
     public final /* synthetic */ n9 a;
@@ -28,6 +28,6 @@ public final class m9 implements Runnable {
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
             tL_stories_getPeerMaxIDs.id.add(mp.u1(i7).l1(((Long) arrayList2.get(i10)).longValue()));
         }
-        ConnectionsManager.getInstance(i7).sendRequestTyped(tL_stories_getPeerMaxIDs, new d3.b(1), new bi.l6(8, this, arrayList2));
+        ConnectionsManager.getInstance(i7).sendRequestTyped(tL_stories_getPeerMaxIDs, new d3.b(1), new bi.p6(8, this, arrayList2));
     }
 }

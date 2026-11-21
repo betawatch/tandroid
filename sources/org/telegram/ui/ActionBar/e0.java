@@ -1,34 +1,26 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class e0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r0 b;
-    public final /* synthetic */ int c;
+import android.view.View;
 
-    public /* synthetic */ e0(r0 r0Var, int i7, int i10) {
-        this.a = i10;
-        this.b = r0Var;
-        this.c = i7;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y0 b;
+
+    public /* synthetic */ e0(y0 y0Var, int i7) {
+        this.a = i7;
+        this.b = y0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                r0 r0Var = this.b;
-                if (r0Var.b.getSwipeBack() != null) {
-                    r0Var.b.getSwipeBack().e(this.c);
-                    break;
-                }
+                this.b.b();
                 break;
             default:
-                r0 r0Var2 = this.b;
-                if (r0Var2.b.getSwipeBack() != null) {
-                    r0Var2.b.getSwipeBack().e(this.c);
-                    break;
-                }
+                this.b.b();
                 break;
         }
     }

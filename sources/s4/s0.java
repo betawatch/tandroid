@@ -1,6 +1,6 @@
 package s4;
 
-import ai.e1;
+import ai.g1;
 import android.graphics.Rect;
 import android.opengl.GLES20;
 import android.os.SystemClock;
@@ -24,15 +24,15 @@ import org.telegram.ui.vp0;
 import org.telegram.ui.web.z0;
 import sg.u0;
 import sg.v0;
-import tg.m2;
-import ug.m1;
+import tg.n2;
+import ug.l1;
+import ug.s1;
 import ug.t1;
-import ug.u1;
 import v4.f1;
-import wg.d1;
+import wg.e1;
 import wg.w0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -204,8 +204,8 @@ public final class s0 implements Runnable {
                 return;
             case 3:
                 tg.j jVar = ((vp0) this.b).C0;
-                if (jVar instanceof m2) {
-                    ((m2) jVar).getEditText();
+                if (jVar instanceof n2) {
+                    ((n2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -247,28 +247,28 @@ public final class s0 implements Runnable {
                 }
                 return;
             case 5:
-                ug.v0 v0Var = (ug.v0) this.b;
-                ArrayList arrayList = v0Var.o3;
-                if (v0Var.v3) {
-                    if (!arrayList.isEmpty() && (R = RecyclerView.R((m1) i5.c.h(1, arrayList))) >= 0) {
-                        View m10 = v0Var.g3.m(R + 1);
+                ug.u0 u0Var = (ug.u0) this.b;
+                ArrayList arrayList = u0Var.o3;
+                if (u0Var.v3) {
+                    if (!arrayList.isEmpty() && (R = RecyclerView.R((l1) i5.c.h(1, arrayList))) >= 0) {
+                        View m10 = u0Var.g3.m(R + 1);
                         if (m10 != null) {
-                            v0Var.l3 = false;
-                            v0Var.z1(m10, true);
-                            v0Var.w0(0, m10.getTop() - ((v0Var.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), org.telegram.messenger.g0.H);
+                            u0Var.l3 = false;
+                            u0Var.z1(m10, true);
+                            u0Var.w0(0, m10.getTop() - ((u0Var.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), org.telegram.messenger.g0.H);
                         }
                     }
-                    v0Var.A1();
+                    u0Var.A1();
                     return;
                 }
                 return;
             case 6:
-                u1 u1Var = (u1) this.b;
+                t1 t1Var = (t1) this.b;
                 try {
-                    t1 t1Var = u1Var.a;
-                    if (t1Var != null) {
-                        t1Var.g();
-                        u1Var.invalidate();
+                    s1 s1Var = t1Var.a;
+                    if (s1Var != null) {
+                        s1Var.g();
+                        t1Var.invalidate();
                         return;
                     }
                     return;
@@ -346,29 +346,29 @@ public final class s0 implements Runnable {
                 }
                 return;
             case 9:
-                d1 d1Var = (d1) this.b;
-                String str2 = d1Var.j2;
+                e1 e1Var = (e1) this.b;
+                String str2 = e1Var.j2;
                 if (str2 != null) {
-                    if (d1Var.r2 >= 0) {
-                        ConnectionsManager.getInstance(d1Var.a).cancelRequest(d1Var.r2, true);
-                        d1Var.r2 = -1;
+                    if (e1Var.r2 >= 0) {
+                        ConnectionsManager.getInstance(e1Var.a).cancelRequest(e1Var.r2, true);
+                        e1Var.r2 = -1;
                     }
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                     tL_contacts_search.q = str2;
-                    d1Var.r2 = ConnectionsManager.getInstance(d1Var.a).sendRequest(tL_contacts_search, new e1(d1Var, 28));
+                    e1Var.r2 = ConnectionsManager.getInstance(e1Var.a).sendRequest(tL_contacts_search, new g1(e1Var, 28));
                     return;
                 }
                 return;
             default:
-                zi.u0 u0Var = (zi.u0) this.b;
-                if (u0Var.a0 == 5 && (f0Var = u0Var.W) != null && u0Var.z) {
+                zi.u0 u0Var2 = (zi.u0) this.b;
+                if (u0Var2.a0 == 5 && (f0Var = u0Var2.W) != null && u0Var2.z) {
                     long l10 = f0Var.l();
-                    long j12 = u0Var.K;
-                    if (l10 < j12 || l10 >= u0Var.L) {
-                        u0Var.W.Z0(5, j12);
+                    long j12 = u0Var2.K;
+                    if (l10 < j12 || l10 >= u0Var2.L) {
+                        u0Var2.W.Z0(5, j12);
                     }
-                    u0Var.d.getClass();
-                    u0Var.i.postDelayed(this, 33L);
+                    u0Var2.d.getClass();
+                    u0Var2.i.postDelayed(this, 33L);
                     return;
                 }
                 return;

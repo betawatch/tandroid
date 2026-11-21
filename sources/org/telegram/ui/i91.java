@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class i91 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final class i91 extends AnimatorListenerAdapter {
                 y91Var.W0(f10);
                 if (!z10) {
                     Activity parentActivity = y91Var.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.h2) y91Var).classGuid;
+                    i7 = ((org.telegram.ui.ActionBar.g2) y91Var).classGuid;
                     org.telegram.messenger.g0.k3(parentActivity, i7);
                     y91Var.s0.setVisibility(8);
                     y91Var.U0(true);

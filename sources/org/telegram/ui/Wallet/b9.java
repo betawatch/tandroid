@@ -5,41 +5,41 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class b9 extends k41 {
+public final class b9 extends n41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        k41.h(new b9());
+        n41.h(new b9());
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
         c9 c9Var = (c9) view;
-        String charSequence = l41Var.m.toString();
-        long j3 = l41Var.C;
-        int i7 = l41Var.A;
-        boolean z11 = l41Var.r;
+        String charSequence = o41Var.m.toString();
+        long j3 = o41Var.C;
+        int i7 = o41Var.A;
+        boolean z11 = o41Var.r;
         TextView textView = c9Var.c;
         TextView textView2 = c9Var.b;
         textView2.setText(u8.c0(charSequence));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         if (j3 < 0) {
-            spannableStringBuilder.append((CharSequence) gd.M0(2131748587, null));
-            spannableStringBuilder.setSpan(new p80(org.telegram.messenger.g0.L(35.0f), textView), 0, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) gd.N0(2131748586, null));
+            spannableStringBuilder.setSpan(new r80(org.telegram.messenger.g0.L(35.0f), textView), 0, spannableStringBuilder.length(), 33);
         } else {
             spannableStringBuilder.append((CharSequence) u0.x(j3, false));
         }
         if (i7 > 0) {
-            spannableStringBuilder = new SpannableStringBuilder(gd.V(null, null, 2131742792, spannableStringBuilder, gd.Q(i7)));
+            spannableStringBuilder = new SpannableStringBuilder(gd.V(null, null, 2131742786, spannableStringBuilder, gd.Q(i7)));
         }
         textView.setText(spannableStringBuilder);
         textView2.setAlpha(z11 ? 0.5f : 1.0f);
@@ -47,8 +47,8 @@ public final class b9 extends k41 {
         c9Var.d.setAlpha(z11 ? 0.5f : 1.0f);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new c9(context, i6Var);
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        return new c9(context, h6Var);
     }
 }

@@ -1,134 +1,121 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s10 extends bk0 {
-    public org.telegram.messenger.t3 c;
-    public final int d;
-    public ArrayList h;
-    public org.telegram.ui.b20 n;
-    public final org.telegram.ui.f40 r;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public boolean s = false;
+public class s10 {
+    public boolean a;
+    public boolean b;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public Shader i;
+    public boolean m;
+    public final Paint c = new Paint(1);
+    public final RectF h = new RectF();
+    public final Matrix j = new Matrix();
+    public Bitmap k = null;
+    public final int[] l = new int[4];
 
-    public s10(org.telegram.messenger.t3 t3Var, int i7, org.telegram.ui.f40 f40Var) {
-        this.c = t3Var;
+    public final int a() {
+        int i7 = this.d;
+        int i10 = this.e;
+        if (i10 != 0) {
+            i7 = i0.a.f(0.5f, i7, i10);
+        }
+        int i11 = this.f;
+        if (i11 != 0) {
+            i7 = i0.a.f(0.5f, i7, i11);
+        }
+        int i12 = this.g;
+        return i12 != 0 ? i0.a.f(0.5f, i7, i12) : i7;
+    }
+
+    public final void b(float f10, float f11, float f12, float f13) {
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(f10, f11, f12, f13);
+        c(rectF);
+    }
+
+    public final void c(RectF rectF) {
+        RectF rectF2 = this.h;
+        if (rectF2.top == rectF.top && rectF2.bottom == rectF.bottom && rectF2.left == rectF.left && rectF2.right == rectF.right) {
+            return;
+        }
+        rectF2.set(rectF);
+        e();
+    }
+
+    public final void d(int i7, int i10, int i11, int i12) {
+        if (this.i != null && this.d == i7 && this.e == i10 && this.f == i11 && this.g == i12) {
+            return;
+        }
         this.d = i7;
-        this.r = f40Var;
-    }
-
-    @Override // org.telegram.ui.Components.bk0
-    public final boolean D(v4.f1 f1Var) {
-        return false;
-    }
-
-    public final void E(ArrayList arrayList, org.telegram.ui.b20 b20Var) {
-        this.h = arrayList;
-        this.n = b20Var;
-    }
-
-    public final void F(org.telegram.ui.x10 x10Var, boolean z10) {
-        this.s = z10;
-        for (int i7 = 0; i7 < x10Var.getChildCount(); i7++) {
-            View childAt = x10Var.getChildAt(i7);
-            if (childAt instanceof r10) {
-                r10 r10Var = (r10) childAt;
-                if (r10Var.getVideoParticipant() != null) {
-                    r10Var.b(z10);
-                }
-            }
-        }
-    }
-
-    public final void G(ck0 ck0Var, boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        ArrayList arrayList2 = this.f;
-        if (!z10) {
-            arrayList2.clear();
-            org.telegram.messenger.t3 t3Var = this.c;
-            if (!t3Var.b.rtmp_stream) {
-                arrayList2.addAll(t3Var.g);
-            }
-            arrayList.clear();
-            org.telegram.messenger.t3 t3Var2 = this.c;
-            if (!t3Var2.b.rtmp_stream) {
-                arrayList.addAll(t3Var2.f);
-            }
-            f();
-            return;
-        }
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        ArrayList arrayList4 = new ArrayList(arrayList);
-        arrayList2.clear();
-        org.telegram.messenger.t3 t3Var3 = this.c;
-        if (!t3Var3.b.rtmp_stream) {
-            arrayList2.addAll(t3Var3.g);
-        }
-        arrayList.clear();
-        org.telegram.messenger.t3 t3Var4 = this.c;
-        if (!t3Var4.b.rtmp_stream) {
-            arrayList.addAll(t3Var4.f);
-        }
-        v4.o.c(new q10(this, arrayList4, arrayList3), true).c(this);
-        org.telegram.messenger.g0.Z3(ck0Var);
-    }
-
-    @Override // v4.i0
-    public final int b() {
-        return this.f.size() + this.e.size();
-    }
-
-    @Override // v4.i0
-    public final void t(v4.f1 f1Var, int i7) {
-        TLRPC.GroupCallParticipant groupCallParticipant;
-        org.telegram.messenger.u3 u3Var;
-        r10 r10Var = (r10) f1Var.a;
-        org.telegram.messenger.u3 u3Var2 = r10Var.f;
-        ArrayList arrayList = this.e;
-        if (i7 < arrayList.size()) {
-            u3Var = (org.telegram.messenger.u3) arrayList.get(i7);
-            groupCallParticipant = ((org.telegram.messenger.u3) arrayList.get(i7)).a;
-        } else {
-            int size = i7 - arrayList.size();
-            ArrayList arrayList2 = this.f;
-            if (size >= arrayList2.size()) {
-                return;
-            }
-            groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList2.get(i7 - arrayList.size());
-            u3Var = null;
-        }
-        r10Var.e(u3Var, groupCallParticipant);
-        if (u3Var2 != null && !u3Var2.equals(u3Var) && r10Var.L && r10Var.getRenderer() != null) {
-            r10Var.b(false);
-            if (u3Var != null) {
-                r10Var.b(true);
-                return;
-            }
-            return;
-        }
-        if (r10Var.L) {
-            if (r10Var.getRenderer() == null && u3Var != null && this.s) {
-                r10Var.b(true);
+        int[] iArr = this.l;
+        iArr[0] = i7;
+        this.e = i10;
+        iArr[1] = i10;
+        this.f = i11;
+        iArr[2] = i11;
+        this.g = i12;
+        iArr[3] = i12;
+        Paint paint = this.c;
+        if (i10 == 0) {
+            this.i = null;
+            paint.setShader(null);
+            paint.setColor(i7);
+        } else if (i11 == 0) {
+            if (this.a && this.b) {
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i7, i10}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient;
+                paint.setShader(linearGradient);
             } else {
-                if (r10Var.getRenderer() == null || u3Var != null) {
-                    return;
-                }
-                r10Var.b(false);
+                LinearGradient linearGradient2 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i7, i10}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient2;
+                paint.setShader(linearGradient2);
             }
+        } else if (!this.m) {
+            if (this.k == null) {
+                this.k = Bitmap.createBitmap(60, 80, Bitmap.Config.ARGB_8888);
+            }
+            Utilities.generateGradient(this.k, 0, 0.0f, iArr);
+            Bitmap bitmap = this.k;
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.i = bitmapShader;
+            paint.setShader(bitmapShader);
+        } else if (this.a && this.b) {
+            LinearGradient linearGradient3 = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i7, i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient3;
+            paint.setShader(linearGradient3);
+        } else {
+            LinearGradient linearGradient4 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i7, i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient4;
+            paint.setShader(linearGradient4);
         }
+        e();
     }
 
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        return new kj0(new r10(this, viewGroup.getContext()));
+    public void e() {
+        if (this.i == null) {
+            return;
+        }
+        RectF rectF = this.h;
+        float width = rectF.width() / 60.0f;
+        float height = rectF.height() / 80.0f;
+        Matrix matrix = this.j;
+        matrix.reset();
+        matrix.postTranslate(rectF.left, rectF.top);
+        matrix.preScale(width, height);
+        this.i.setLocalMatrix(matrix);
     }
 }

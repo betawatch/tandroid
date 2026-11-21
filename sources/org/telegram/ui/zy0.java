@@ -9,13 +9,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zy0 extends org.telegram.ui.ActionBar.h2 {
+public final class zy0 extends org.telegram.ui.ActionBar.g2 {
     public static final int[] d = {750000, 1000000, 1200000, 2000000};
     public final /* synthetic */ int a;
-    public org.telegram.ui.Components.ck0 b;
-    public org.telegram.ui.Components.bk0 c;
+    public org.telegram.ui.Components.ek0 b;
+    public org.telegram.ui.Components.dk0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ zy0(int i7, Bundle bundle) {
@@ -27,8 +27,8 @@ public final class zy0 extends org.telegram.ui.ActionBar.h2 {
         if (i7 != 1) {
             if (MediaController.s0(zy0Var.currentAccount) && i7 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zy0Var.getParentActivity());
-                alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(2131753920, null);
-                alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.M0(2131753919, null), org.telegram.messenger.gd.M0(2131753918, null)}, new k4(zy0Var, 0));
+                alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(2131753919, null);
+                alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.N0(2131753918, null), org.telegram.messenger.gd.N0(2131753917, null)}, new k4(zy0Var, 0));
                 zy0Var.showDialog(alertDialog$Builder.a);
                 return;
             }
@@ -48,7 +48,7 @@ public final class zy0 extends org.telegram.ui.ActionBar.h2 {
     public static void a0(zy0 zy0Var, int i7) {
         if (i7 == 1) {
             aj.a aVar = aj.e.d;
-            boolean z10 = !org.telegram.ui.Components.e50.e(zy0Var.currentAccount);
+            boolean z10 = !org.telegram.ui.Components.h50.e(zy0Var.currentAccount);
             synchronized (aVar) {
                 aVar.d = z10;
                 aVar.c = true;
@@ -58,20 +58,20 @@ public final class zy0 extends org.telegram.ui.ActionBar.h2 {
             ((l4) zy0Var.c).f();
             return;
         }
-        if (!org.telegram.ui.Components.e50.e(zy0Var.currentAccount)) {
+        if (!org.telegram.ui.Components.h50.e(zy0Var.currentAccount)) {
             return;
         }
         int i10 = 0;
         if (i7 == 2) {
-            zy0Var.g0(2131745791, new CharSequence[]{"480p", "360p"}, new l60(13));
+            zy0Var.g0(2131745790, new CharSequence[]{"480p", "360p"}, new m60(13));
             return;
         }
         if (i7 == 3) {
-            zy0Var.g0(2131745801, new CharSequence[]{org.telegram.messenger.gd.M0(2131745800, null), org.telegram.messenger.gd.M0(2131745798, null), org.telegram.messenger.gd.M0(2131745799, null)}, new l60(14));
+            zy0Var.g0(2131745800, new CharSequence[]{org.telegram.messenger.gd.N0(2131745799, null), org.telegram.messenger.gd.N0(2131745797, null), org.telegram.messenger.gd.N0(2131745798, null)}, new m60(14));
             return;
         }
         if (i7 == 4) {
-            zy0Var.g0(2131745794, new CharSequence[]{"30 FPS", "60 FPS"}, new l60(15));
+            zy0Var.g0(2131745793, new CharSequence[]{"30 FPS", "60 FPS"}, new m60(15));
             return;
         }
         if (i7 != 5) {
@@ -88,7 +88,7 @@ public final class zy0 extends org.telegram.ui.ActionBar.h2 {
         while (true) {
             int[] iArr = d;
             if (i10 >= 3) {
-                zy0Var.g0(2131745802, charSequenceArr, new l60(16));
+                zy0Var.g0(2131745801, charSequenceArr, new m60(16));
                 return;
             } else {
                 charSequenceArr[i10] = f0(iArr[i10]);
@@ -107,7 +107,7 @@ public final class zy0 extends org.telegram.ui.ActionBar.h2 {
         return (i7 / 1000) + " kbps";
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         int i7 = 2;
         int i10 = 0;
@@ -115,40 +115,40 @@ public final class zy0 extends org.telegram.ui.ActionBar.h2 {
             case 0:
                 setHasOwnBackground(true);
                 this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                this.simpleActionBar.setTitle(org.telegram.messenger.gd.M0(2131745790, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131745789, null));
                 this.simpleActionBar.setActionBarMenuOnItemClick(new hs0(this, 10));
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.fragmentView = frameLayout;
-                org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(context, null);
-                this.b = ck0Var;
-                ck0Var.r1();
+                org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
+                this.b = ek0Var;
+                ek0Var.r1();
                 this.b.setSectionsDrawBackground(true);
                 this.b.setLayoutManager(new v4.c0());
                 this.b.setVerticalScrollBarEnabled(false);
-                org.telegram.ui.Components.ck0 ck0Var2 = this.b;
+                org.telegram.ui.Components.ek0 ek0Var2 = this.b;
                 l4 l4Var = new l4(17, this, context);
                 this.c = l4Var;
-                ck0Var2.setAdapter(l4Var);
+                ek0Var2.setAdapter(l4Var);
                 this.b.setOnItemClickListener(new zx0(this, i7));
                 frameLayout.addView(this.b, c8.ma.c(-1.0f, -1));
                 break;
             default:
                 setHasOwnBackground(true);
                 this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                this.simpleActionBar.setTitle(org.telegram.messenger.gd.M0(2131753917, null));
-                this.simpleActionBar.setActionBarMenuOnItemClick(new bi.r1(this, 26));
+                this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131753916, null));
+                this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 26));
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.fragmentView = frameLayout2;
-                org.telegram.ui.Components.ck0 ck0Var3 = new org.telegram.ui.Components.ck0(context, null);
-                this.b = ck0Var3;
-                ck0Var3.setSectionsDrawBackground(true);
+                org.telegram.ui.Components.ek0 ek0Var3 = new org.telegram.ui.Components.ek0(context, null);
+                this.b = ek0Var3;
+                ek0Var3.setSectionsDrawBackground(true);
                 this.b.r1();
                 this.b.setLayoutManager(new v4.c0());
                 this.b.setVerticalScrollBarEnabled(false);
-                org.telegram.ui.Components.ck0 ck0Var4 = this.b;
+                org.telegram.ui.Components.ek0 ek0Var4 = this.b;
                 l4 l4Var2 = new l4(i10, this, context);
                 this.c = l4Var2;
-                ck0Var4.setAdapter(l4Var2);
+                ek0Var4.setAdapter(l4Var2);
                 this.b.setOnItemClickListener(new h(this, i7));
                 frameLayout2.addView(this.b, c8.ma.c(-1.0f, -1));
                 break;
@@ -156,28 +156,28 @@ public final class zy0 extends org.telegram.ui.ActionBar.h2 {
         return this.fragmentView;
     }
 
-    public void g0(int i7, CharSequence[] charSequenceArr, l60 l60Var) {
+    public void g0(int i7, CharSequence[] charSequenceArr, m60 m60Var) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(i7, null);
-        alertDialog$Builder.f(charSequenceArr, new og.j(11, this, l60Var));
+        alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(i7, null);
+        alertDialog$Builder.f(charSequenceArr, new og.j(11, this, m60Var));
         showDialog(alertDialog$Builder.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
-    public final org.telegram.ui.Components.ck0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.g2
+    public final org.telegram.ui.Components.ek0 getListViewForSimpleGlass() {
         switch (this.a) {
         }
         return this.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean isSupportEdgeToEdge() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean useSimpleActionBar() {
         switch (this.a) {
         }

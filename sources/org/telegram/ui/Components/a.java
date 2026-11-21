@@ -1,70 +1,70 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+    public final /* synthetic */ n0 b;
 
-    public /* synthetic */ a(m0 m0Var, int i7) {
+    public /* synthetic */ a(n0 n0Var, int i7) {
         this.a = i7;
-        this.b = m0Var;
+        this.b = n0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        m0 m0Var = this.b;
+        n0 n0Var = this.b;
         switch (i7) {
             case 0:
-                l0 l0Var = m0Var.v2;
-                if (l0Var == null || l0Var.getSelectedTone() == null) {
-                    hi.m3 m3Var = m0Var.z2;
-                    if (m3Var != null) {
-                        m3Var.f(true);
-                        m0Var.z2 = null;
+                m0 m0Var = n0Var.v2;
+                if (m0Var == null || m0Var.getSelectedTone() == null) {
+                    hi.l3 l3Var = n0Var.z2;
+                    if (l3Var != null) {
+                        l3Var.f(true);
+                        n0Var.z2 = null;
                     }
-                    hi.m3 m3Var2 = new hi.m3(m0Var.getContext(), 1);
-                    m0Var.z2 = m3Var2;
-                    m3Var2.t();
-                    m0Var.z2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-                    m0Var.z2.s(20.0f);
-                    m0Var.z2.u(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.n6.r1(0.25f, -16777216));
-                    m0Var.z2.v(org.telegram.messenger.gd.M0(2131755000, null));
-                    if (i0.a.h(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, m0Var.J0)) < 0.5d) {
-                        m0Var.z2.j(956301311);
-                        hi.m3 m3Var3 = m0Var.z2;
-                        m3Var3.I.u(-1);
-                        m3Var3.K.setColor(-1);
-                        m0Var.z2.u(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.n6.r1(0.12f, -16777216));
+                    hi.l3 l3Var2 = new hi.l3(n0Var.getContext(), 1);
+                    n0Var.z2 = l3Var2;
+                    l3Var2.t();
+                    n0Var.z2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+                    n0Var.z2.s(20.0f);
+                    n0Var.z2.u(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.m6.r1(0.25f, -16777216));
+                    n0Var.z2.v(org.telegram.messenger.gd.N0(2131755000, null));
+                    if (i0.a.h(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, n0Var.J0)) < 0.5d) {
+                        n0Var.z2.j(956301311);
+                        hi.l3 l3Var3 = n0Var.z2;
+                        l3Var3.I.u(-1);
+                        l3Var3.K.setColor(-1);
+                        n0Var.z2.u(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.m6.r1(0.12f, -16777216));
                     }
-                    m0Var.z2.o(0.5f, 0.0f);
-                    hi.m3 m3Var4 = m0Var.z2;
-                    m3Var4.d = 8000L;
-                    m0Var.b.addView(m3Var4, c8.ma.d(-1, 200.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
-                    m0Var.z2.x();
-                    m0Var.D1();
+                    n0Var.z2.o(0.5f, 0.0f);
+                    hi.l3 l3Var4 = n0Var.z2;
+                    l3Var4.d = 8000L;
+                    n0Var.b.addView(l3Var4, c8.ma.d(-1, 200.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
+                    n0Var.z2.x();
+                    n0Var.D1();
                     break;
                 }
                 break;
             case 1:
-                if (!m0Var.I2) {
-                    m0Var.B2.setVisibility(8);
+                if (!n0Var.I2) {
+                    n0Var.B2.setVisibility(8);
                     break;
                 }
                 break;
             case 2:
-                if (m0Var.I2) {
-                    m0Var.A2.setVisibility(8);
+                if (n0Var.I2) {
+                    n0Var.A2.setVisibility(8);
                     break;
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.I3(m0Var.y2.d);
+                org.telegram.messenger.g0.I3(n0Var.y2.d);
                 break;
             default:
-                m0Var.u1(0, 0, false);
-                m0Var.dismiss();
+                n0Var.u1(0, 0, false);
+                n0Var.dismiss();
                 break;
         }
     }

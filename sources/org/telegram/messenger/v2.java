@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class v2 {
     public final int a;
@@ -56,7 +56,7 @@ public final class v2 {
     }
 
     public static String f(int i7) {
-        return i7 == 5 ? gd.G(1, "Minutes", new Object[0]) : i7 == 3 ? gd.G(1, "Days", new Object[0]) : i7 == 6 ? gd.G(2, "Days", new Object[0]) : i7 == 0 ? gd.G(1, "Weeks", new Object[0]) : i7 == 1 ? gd.G(1, "Months", new Object[0]) : gd.M0(2131753849, null);
+        return i7 == 5 ? gd.G(1, "Minutes", new Object[0]) : i7 == 3 ? gd.G(1, "Days", new Object[0]) : i7 == 6 ? gd.G(2, "Days", new Object[0]) : i7 == 0 ? gd.G(1, "Weeks", new Object[0]) : i7 == 1 ? gd.G(1, "Months", new Object[0]) : gd.N0(2131753848, null);
     }
 
     public final int c(int i7) {

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class kv extends jg.m {
     public final /* synthetic */ bx c0;
@@ -27,7 +27,7 @@ public final class kv extends jg.m {
     @Override // jg.m
     public final void L() {
         cx cxVar = this.d0;
-        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, cxVar.getParentActivity(), null);
+        org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, cxVar.getParentActivity(), null);
         TLRPC.RequestPeerType requestPeerType = cxVar.H;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
             Bundle f10 = p5.c.f(0, "step");
@@ -36,7 +36,7 @@ public final class kv extends jg.m {
                 f10.putBoolean("forcePublic", bool.booleanValue());
             }
             ad adVar = new ad(f10);
-            adVar.v0 = new m6(cxVar, adVar, u1Var, 2);
+            adVar.v0 = new m6(cxVar, adVar, t1Var, 2);
             cxVar.presentFragment(adVar);
             return;
         }
@@ -48,7 +48,7 @@ public final class kv extends jg.m {
             bundle.putInt("chatType", (bool3 == null || !bool3.booleanValue()) ? 4 : 5);
             bundle.putBoolean("canToggleTopics", false);
             f50 f50Var = new f50(bundle);
-            f50Var.Z = new cw(cxVar, u1Var);
+            f50Var.Z = new cw(cxVar, t1Var);
             cxVar.presentFragment(f50Var);
         }
     }
@@ -56,7 +56,7 @@ public final class kv extends jg.m {
     @Override // jg.m
     public final void M(TLRPC.User user) {
         int i7;
-        i7 = ((org.telegram.ui.ActionBar.h2) this.d0).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) this.d0).currentAccount;
         org.telegram.messenger.mp.u1(i7).E3(null, user, null, 0, null, false, false);
     }
 
@@ -94,7 +94,7 @@ public final class kv extends jg.m {
             cx cxVar = this.d0;
             org.telegram.messenger.e00 e00Var = cxVar.getMessagesController().t7;
             long j3 = -u2Var.getDialogId();
-            i7 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
             TLRPC.TL_forumTopic f10 = e00Var.f(j3, org.telegram.messenger.fj.b2(i7, u2Var.getMessage().k, true, false));
             if (f10 != null) {
                 if (cxVar.n2) {

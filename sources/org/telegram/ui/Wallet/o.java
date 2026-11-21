@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements x10 {
     public final /* synthetic */ int a;
@@ -109,12 +109,12 @@ public final /* synthetic */ class o implements x10 {
                 break;
             case 6:
                 e3[] e3VarArr = (e3[]) obj3;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
                 String str4 = (String) obj;
-                ((hi.d) obj4).setLoading(false);
+                ((hi.e) obj4).setLoading(false);
                 if (!u0.L(str4)) {
                     if (!TextUtils.isEmpty(str4)) {
-                        new lc(e3VarArr[0].F, i6Var).f0(str4, false);
+                        new lc(e3VarArr[0].F, h6Var).f0(str4, false);
                         break;
                     } else {
                         e3VarArr[0].dismiss();
@@ -139,7 +139,7 @@ public final /* synthetic */ class o implements x10 {
                     } else {
                         naVar.h = false;
                         naVar.a0.setLoading(false);
-                        lc.b0(naVar).f0(TextUtils.isEmpty(str5) ? gd.M0(2131742781, null) : "WALLET_CHANGED", false);
+                        lc.b0(naVar).f0(TextUtils.isEmpty(str5) ? gd.N0(2131742775, null) : "WALLET_CHANGED", false);
                         break;
                     }
                 }
@@ -149,11 +149,11 @@ public final /* synthetic */ class o implements x10 {
                 break;
             default:
                 e3 e3Var = (e3) obj3;
-                org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) obj2;
+                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) obj2;
                 String str6 = (String) obj;
-                ((hi.d) obj4).setLoading(false);
+                ((hi.e) obj4).setLoading(false);
                 if (str6 != null) {
-                    lc.d0(str6, e3Var.F, i6Var2);
+                    lc.d0(str6, e3Var.F, h6Var2);
                     break;
                 } else {
                     e3Var.dismiss();

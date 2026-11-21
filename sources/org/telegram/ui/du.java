@@ -3,13 +3,13 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class du extends FrameLayout {
-    public org.telegram.ui.ActionBar.h2 a;
+    public org.telegram.ui.ActionBar.g2 a;
     public FrameLayout b;
     public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.ck0 d;
+    public org.telegram.ui.Components.ek0 d;
     public di.b1 e;
     public int f;
     public final /* synthetic */ eu h;

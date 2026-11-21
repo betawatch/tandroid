@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class v2 extends FrameLayout implements org.telegram.messenger.y5, org.telegram.ui.Cells.i9 {
     public static final /* synthetic */ int W = 0;
@@ -395,7 +395,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.M0(2131753931, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131753930, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -588,7 +588,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
                         int i25 = i15;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.M;
                         e4Var = e4Var2;
-                        z2 n10 = g4.n(this.a, this, null, pageblockvideo3.caption.credit, L, 0, pageblockvideo3, (e4Var2 == null || !e4Var2.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.wu0.a(), 0, this.b);
+                        z2 n10 = g4.n(this.a, this, null, pageblockvideo3.caption.credit, L, 0, pageblockvideo3, (e4Var2 == null || !e4Var2.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.zu0.a(), 0, this.b);
                         this.d = n10;
                         if (n10 != null) {
                             i15 = this.d.d.getHeight() + org.telegram.messenger.g0.L(4.0f) + i25;

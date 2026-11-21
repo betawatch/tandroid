@@ -17,8 +17,8 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import bi.r2;
-import hi.u5;
+import bi.v2;
+import hi.t5;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -29,7 +29,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -52,8 +52,8 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     public final ArrayList h = new ArrayList();
     public final ArrayList n = new ArrayList();
     public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 1);
-    public final r2 s = new r2(this, 7);
-    public final u5 w = new u5(this, 9);
+    public final v2 s = new v2(this, 7);
+    public final t5 w = new t5(this, 9);
     public int x = 0;
     public int y = 0;
     public boolean L = false;

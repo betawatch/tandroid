@@ -1,66 +1,6 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class mj0 extends v4.o0 implements eh.a {
-    public final org.telegram.messenger.y10 a;
-    public final ck0 b;
-    public final int c;
-    public final boolean d;
-
-    public mj0(ck0 ck0Var, org.telegram.messenger.y10 y10Var, int i7, boolean z10) {
-        this.b = ck0Var;
-        this.a = y10Var;
-        this.c = i7;
-        this.d = z10;
-    }
-
-    @Override // eh.a
-    public final void c(dh.a aVar, RectF rectF) {
-        aVar.a = true;
-    }
-
-    @Override // eh.a
-    public final void d(Canvas canvas, RectF rectF) {
-        canvas.save();
-        canvas.clipRect(rectF);
-        this.b.P0(canvas);
-        canvas.restore();
-    }
-
-    @Override // v4.o0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
-        int b10;
-        if (((Boolean) this.a.a(view)).booleanValue()) {
-            int i7 = this.c;
-            rect.right = i7;
-            rect.left = i7;
-            v4.f1 T = recyclerView.T(view);
-            v4.i0 adapter = recyclerView.getAdapter();
-            if (T == null || adapter == null || (b10 = T.b()) == -1) {
-                return;
-            }
-            boolean z10 = b10 == 0;
-            boolean z11 = b10 == adapter.b() - 1;
-            if (z10) {
-                rect.top = this.d ? i7 : org.telegram.messenger.g0.L(4.0f);
-            }
-            if (z11) {
-                rect.bottom = i7;
-            }
-        }
-    }
-
-    @Override // v4.o0
-    public final void f(Canvas canvas, RecyclerView recyclerView) {
-        if (recyclerView instanceof ck0) {
-            ((ck0) recyclerView).P0(canvas);
-        }
-    }
+public final class mj0 extends v4.f1 {
 }

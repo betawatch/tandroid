@@ -20,17 +20,17 @@ import androidx.core.widget.NestedScrollView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.fj;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class w9 {
     public final h9 A;
     public final Rect B;
     public v9 C;
     public c8.ha D;
-    public ck0 E;
+    public ek0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -50,7 +50,7 @@ public abstract class w9 {
     public float V;
     public r9 W;
     public r9 X;
-    public org.telegram.ui.ActionBar.y3 Y;
+    public org.telegram.ui.ActionBar.x3 Y;
     public boolean Z;
     public int a;
     public final m9 a0;
@@ -65,7 +65,7 @@ public abstract class w9 {
     public float f;
     public final e9 f0;
     public float g;
-    public org.telegram.ui.ActionBar.i6 g0;
+    public org.telegram.ui.ActionBar.h6 g0;
     public final int[] h = new int[2];
     public boolean h0;
     public boolean i;
@@ -83,7 +83,7 @@ public abstract class w9 {
     public final Paint o;
     public final q9 o0;
     public final Paint p;
-    public final pq q;
+    public final rq q;
     public final Path r;
     public int s;
     public int t;
@@ -99,10 +99,10 @@ public abstract class w9 {
         Paint paint = new Paint(1);
         this.o = paint;
         this.p = new Paint(1);
-        pq pqVar = new pq();
-        this.q = pqVar;
+        rq rqVar = new rq();
+        this.q = rqVar;
         this.r = new Path();
-        new n9().a = pqVar;
+        new n9().a = rqVar;
         this.u = -1;
         this.v = -1;
         this.A = new h9(this, new g9(this));
@@ -128,7 +128,7 @@ public abstract class w9 {
         float L = org.telegram.messenger.g0.L(6.0f);
         this.n = L;
         paint.setPathEffect(new CornerPathEffect(L));
-        pqVar.d = 1.0f;
+        rqVar.d = 1.0f;
     }
 
     public static void a(w9 w9Var, int i7) {
@@ -361,8 +361,8 @@ public abstract class w9 {
     }
 
     public final void S(ViewGroup viewGroup) {
-        if (viewGroup instanceof ck0) {
-            this.E = (ck0) viewGroup;
+        if (viewGroup instanceof ek0) {
+            this.E = (ek0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -370,15 +370,15 @@ public abstract class w9 {
     public final void T() {
         if (this.C != null && !this.i && x() && d()) {
             if (!this.P) {
-                org.telegram.ui.ActionBar.y3 y3Var = this.Y;
+                org.telegram.ui.ActionBar.x3 x3Var = this.Y;
                 h9 h9Var = this.A;
-                if (y3Var == null) {
-                    org.telegram.ui.ActionBar.y3 y3Var2 = new org.telegram.ui.ActionBar.y3(this.C.getContext(), h9Var, this.C, new org.telegram.ui.ActionBar.m4(this.C.getContext(), this.C, 1, q(), null));
-                    this.Y = y3Var2;
-                    h9Var.onCreateActionMode(y3Var2, y3Var2.c);
+                if (x3Var == null) {
+                    org.telegram.ui.ActionBar.x3 x3Var2 = new org.telegram.ui.ActionBar.x3(this.C.getContext(), h9Var, this.C, new org.telegram.ui.ActionBar.l4(this.C.getContext(), this.C, 1, q(), null));
+                    this.Y = x3Var2;
+                    h9Var.onCreateActionMode(x3Var2, x3Var2.c);
                 }
-                org.telegram.ui.ActionBar.y3 y3Var3 = this.Y;
-                h9Var.onPrepareActionMode(y3Var3, y3Var3.c);
+                org.telegram.ui.ActionBar.x3 x3Var3 = this.Y;
+                h9Var.onPrepareActionMode(x3Var3, x3Var3.c);
                 this.Y.hide(1L);
             }
             org.telegram.messenger.g0.r(this.n0);
@@ -459,7 +459,7 @@ public abstract class w9 {
         float f11;
         float f12;
         int i12;
-        pq pqVar;
+        rq rqVar;
         float f13;
         q9 q9Var = this.o0;
         q9Var.reset();
@@ -476,21 +476,21 @@ public abstract class w9 {
         int i13 = 0;
         while (true) {
             i12 = q9Var.c;
-            pqVar = this.q;
+            rqVar = this.q;
             f13 = this.n;
             if (i13 >= i12) {
                 break;
             }
             RectF rectF = (RectF) q9Var.b.get(i13);
             rectF.set((int) (Math.max(f10, rectF.left) - (z10 ? f13 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.z(rectF.top, f12, f11, f12), (int) (Math.max(f10, rectF.right) + (z11 ? f13 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.z(rectF.bottom, f12, f11, f12));
-            pqVar.addRect(rectF, Path.Direction.CW);
+            rqVar.addRect(rectF, Path.Direction.CW);
             i13++;
         }
         if (i12 != 0 || z11) {
             return;
         }
         try {
-            pqVar.addRect(((int) layout.getPrimaryHorizontal(i10)) - (f13 / 2.0f), layout.getLineTop(i7), (f13 / 4.0f) + ((int) layout.getPrimaryHorizontal(i11)), layout.getLineBottom(i7), Path.Direction.CW);
+            rqVar.addRect(((int) layout.getPrimaryHorizontal(i10)) - (f13 / 2.0f), layout.getLineTop(i7), (f13 / 4.0f) + ((int) layout.getPrimaryHorizontal(i11)), layout.getLineBottom(i7), Path.Direction.CW);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
@@ -513,14 +513,14 @@ public abstract class w9 {
         w9 w9Var;
         int i16;
         float lineRight;
-        pq pqVar;
+        rq rqVar;
         if (layout == null || layout.getText() == null) {
             return;
         }
         int j3 = Utilities.j(i7, layout.getText().length(), 0);
         int j10 = Utilities.j(i10, layout.getText().length(), 0);
-        pq pqVar2 = this.q;
-        pqVar2.reset();
+        rq rqVar2 = this.q;
+        rqVar2.reset();
         Path path2 = this.r;
         path2.reset();
         float f12 = this.n;
@@ -564,7 +564,7 @@ public abstract class w9 {
                     if (rect != null) {
                         RectF rectF = org.telegram.messenger.g0.P;
                         rectF.set(rect);
-                        pqVar2.addRect(rectF, Path.Direction.CW);
+                        rqVar2.addRect(rectF, Path.Direction.CW);
                     }
                     i12 = lineForOffset + 1;
                     while (i12 < lineForOffset2) {
@@ -574,7 +574,7 @@ public abstract class w9 {
                         int max2 = Math.max(lineLeft, lineRight2);
                         float max3 = Math.max(f10, min2);
                         float f14 = i17;
-                        pqVar2.addRect(max3 - f14, layout.getLineTop(i12), Math.max(f10, max2) + f14, layout.getLineBottom(i12) + 1, Path.Direction.CW);
+                        rqVar2.addRect(max3 - f14, layout.getLineTop(i12), Math.max(f10, max2) + f14, layout.getLineBottom(i12) + 1, Path.Direction.CW);
                         i12++;
                         lineForOffset2 = lineForOffset2;
                         i17 = i17;
@@ -630,13 +630,13 @@ public abstract class w9 {
             if (i21 >= 26) {
                 canvas.clipOutRect(rect2);
             }
-            pqVar = pqVar2;
+            rqVar = rqVar2;
         } else {
             if (!z10 || layout.isRtlCharAt(i15)) {
-                pqVar = pqVar2;
+                rqVar = rqVar2;
             } else {
                 Rect rect3 = org.telegram.messenger.g0.Q;
-                pqVar = pqVar2;
+                rqVar = rqVar2;
                 rect3.set((int) primaryHorizontal2, (int) (lineBottom - f11), (int) Math.min(primaryHorizontal2 + f11, layout.getLineRight(i14)), (int) lineBottom);
                 RectF rectF3 = org.telegram.messenger.g0.P;
                 rectF3.set(rect3);
@@ -657,8 +657,8 @@ public abstract class w9 {
                 }
             }
         }
-        pqVar.a();
-        canvas.drawPath(pqVar, w9Var.o);
+        rqVar.a();
+        canvas.drawPath(rqVar, w9Var.o);
         if (z12) {
             canvas.restore();
             canvas.drawPath(path, w9Var.p);
@@ -717,7 +717,7 @@ public abstract class w9 {
         return 0;
     }
 
-    public org.telegram.ui.ActionBar.i6 q() {
+    public org.telegram.ui.ActionBar.h6 q() {
         return this.g0;
     }
 
@@ -732,20 +732,20 @@ public abstract class w9 {
     public abstract CharSequence s(r9 r9Var, boolean z10);
 
     public int t(int i7) {
-        return org.telegram.ui.ActionBar.n6.w0(i7, this.g0);
+        return org.telegram.ui.ActionBar.m6.w0(i7, this.g0);
     }
 
     public final void u() {
-        org.telegram.ui.ActionBar.y3 y3Var;
+        org.telegram.ui.ActionBar.x3 x3Var;
         if (this.Y != null && this.P) {
             this.P = false;
             this.n0.run();
         }
         this.P = false;
-        if (x() || (y3Var = this.Y) == null) {
+        if (x() || (x3Var = this.Y) == null) {
             return;
         }
-        y3Var.finish();
+        x3Var.finish();
         this.Y = null;
     }
 

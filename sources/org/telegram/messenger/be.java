@@ -1,15 +1,15 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class be implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 c;
 
-    public /* synthetic */ be(org.telegram.ui.ActionBar.u1 u1Var, boolean[] zArr, int i7) {
+    public /* synthetic */ be(org.telegram.ui.ActionBar.t1 t1Var, boolean[] zArr, int i7) {
         this.a = i7;
-        this.c = u1Var;
+        this.c = t1Var;
         this.b = zArr;
     }
 
@@ -17,27 +17,27 @@ public final /* synthetic */ class be implements Runnable {
     public final void run() {
         int i7 = this.a;
         boolean[] zArr = this.b;
-        org.telegram.ui.ActionBar.u1 u1Var = this.c;
+        org.telegram.ui.ActionBar.t1 t1Var = this.c;
         switch (i7) {
             case 0:
                 String[] strArr = MediaController.W1;
                 if (!zArr[0]) {
-                    u1Var.show();
+                    t1Var.show();
                     break;
                 }
                 break;
             case 1:
                 String[] strArr2 = MediaController.W1;
                 if (!zArr[0]) {
-                    u1Var.show();
+                    t1Var.show();
                     break;
                 }
                 break;
             case 2:
                 String[] strArr3 = MediaController.W1;
                 try {
-                    if (u1Var.isShowing()) {
-                        u1Var.dismiss();
+                    if (t1Var.isShowing()) {
+                        t1Var.dismiss();
                     } else {
                         zArr[0] = true;
                     }
@@ -49,8 +49,8 @@ public final /* synthetic */ class be implements Runnable {
             default:
                 String[] strArr4 = MediaController.W1;
                 try {
-                    if (u1Var.isShowing()) {
-                        u1Var.dismiss();
+                    if (t1Var.isShowing()) {
+                        t1Var.dismiss();
                     } else {
                         zArr[0] = true;
                     }
@@ -62,9 +62,9 @@ public final /* synthetic */ class be implements Runnable {
         }
     }
 
-    public /* synthetic */ be(boolean[] zArr, org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    public /* synthetic */ be(boolean[] zArr, org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         this.a = i7;
         this.b = zArr;
-        this.c = u1Var;
+        this.c = t1Var;
     }
 }

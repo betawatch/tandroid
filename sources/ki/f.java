@@ -1,132 +1,39 @@
 package ki;
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.q00;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class f extends ug.u1 {
-    public final /* synthetic */ int r;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(Context context, int i7) {
-        super(context);
-        this.r = i7;
+public final class f extends n41 {
+    static {
+        n41.h(new f());
     }
 
-    @Override // ug.u1
-    public final void a() {
-        switch (this.r) {
-            case 0:
-                super.a();
-                ug.t1 t1Var = this.a;
-                t1Var.q = true;
-                t1Var.K = false;
-                t1Var.L = true;
-                t1Var.H = true;
-                t1Var.c();
-                break;
-            case 1:
-                super.a();
-                ug.t1 t1Var2 = this.a;
-                t1Var2.q = true;
-                t1Var2.K = false;
-                t1Var2.L = true;
-                t1Var2.H = true;
-                t1Var2.c();
-                break;
-            case 2:
-                q00 q00Var = new q00(50);
-                this.a = q00Var;
-                q00Var.O = 100;
-                q00Var.M = false;
-                q00Var.G = false;
-                q00Var.K = true;
-                q00Var.H = true;
-                q00Var.J = false;
-                q00Var.r = 4;
-                q00Var.w = 0.98f;
-                q00Var.v = 0.98f;
-                q00Var.u = 0.98f;
-                q00Var.c();
-                break;
-            case 3:
-                ug.t1 t1Var3 = this.a;
-                t1Var3.q = true;
-                t1Var3.K = false;
-                t1Var3.H = true;
-                t1Var3.J = true;
-                t1Var3.k = org.telegram.messenger.g0.L(-14.0f);
-                ug.t1 t1Var4 = this.a;
-                t1Var4.x = 2000L;
-                t1Var4.y = 3000;
-                t1Var4.r = 16;
-                t1Var4.G = false;
-                t1Var4.O = 28;
-                t1Var4.Q = n6.Dk;
-                t1Var4.c();
-                break;
-            case 4:
-                ug.t1 t1Var5 = this.a;
-                t1Var5.q = true;
-                t1Var5.K = false;
-                t1Var5.H = true;
-                t1Var5.J = true;
-                t1Var5.k = org.telegram.messenger.g0.L(-14.0f);
-                ug.t1 t1Var6 = this.a;
-                t1Var6.x = 2000L;
-                t1Var6.y = 3000;
-                t1Var6.r = 16;
-                t1Var6.G = false;
-                t1Var6.O = 28;
-                t1Var6.Q = n6.Dk;
-                t1Var6.c();
-                break;
-            default:
-                super.a();
-                ug.t1 t1Var7 = this.a;
-                t1Var7.q = true;
-                t1Var7.K = false;
-                t1Var7.L = true;
-                t1Var7.H = true;
-                t1Var7.c();
-                break;
-        }
+    public static o41 i(int i7, int i10, CharSequence charSequence, String str) {
+        o41 K = o41.K(f.class);
+        K.d = i7;
+        K.A = i10;
+        K.k = R.drawable.filled_earn_stars;
+        K.m = charSequence;
+        K.n = str;
+        return K;
     }
 
-    @Override // ug.u1
-    public int getStarsRectWidth() {
-        switch (this.r) {
-            case 0:
-                return getMeasuredWidth();
-            case 1:
-                return getMeasuredWidth();
-            case 2:
-                return getMeasuredWidth();
-            default:
-                return super.getStarsRectWidth();
-        }
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
+        ((g) view).a(o41Var.A, o41Var.k, o41Var.m, o41Var.n);
     }
 
-    @Override // ug.u1, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.r) {
-            case 3:
-                super.onMeasure(i7, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            case 4:
-                super.onMeasure(i7, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            case 5:
-                super.onMeasure(i7, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
-        }
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, ek0 ek0Var, int i7, h6 h6Var) {
+        return new g(context, h6Var);
     }
 }

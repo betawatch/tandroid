@@ -2,11 +2,11 @@ package org.telegram.ui.Cells;
 
 import android.util.Property;
 import android.view.View;
-import org.telegram.ui.Components.g01;
-import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.i01;
+import org.telegram.ui.Components.xi0;
 import org.telegram.ui.cr0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h1 extends Property {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final class h1 extends Property {
             case 1:
                 return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
             case 2:
-                return Float.valueOf(((vi0) obj).w);
+                return Float.valueOf(((xi0) obj).w);
             case 3:
-                return Float.valueOf(((g01) obj).h);
+                return Float.valueOf(((i01) obj).h);
             default:
                 return Float.valueOf(((cr0) obj).a);
         }
@@ -43,12 +43,12 @@ public final class h1 extends Property {
                 ((View) obj).setTranslationY(((Integer) obj2).intValue());
                 break;
             case 2:
-                ((vi0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                ((xi0) obj).setTransitionProgress(((Float) obj2).floatValue());
                 break;
             case 3:
-                g01 g01Var = (g01) obj;
-                g01Var.h = ((Float) obj2).floatValue();
-                g01Var.invalidate();
+                i01 i01Var = (i01) obj;
+                i01Var.h = ((Float) obj2).floatValue();
+                i01Var.invalidate();
                 break;
             default:
                 ((cr0) obj).b(((Float) obj2).floatValue());

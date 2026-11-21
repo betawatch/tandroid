@@ -5,21 +5,21 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ak;
-import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ck;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class m implements ak {
-    public final /* synthetic */ si a;
+public final class m implements ck {
+    public final /* synthetic */ ui a;
     public final /* synthetic */ o b;
 
-    public m(o oVar, si siVar) {
+    public m(o oVar, ui uiVar) {
         this.b = oVar;
-        this.a = siVar;
+        this.a = uiVar;
     }
 
-    @Override // org.telegram.ui.Components.ak
+    @Override // org.telegram.ui.Components.ck
     public final void A() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -30,28 +30,28 @@ public final class m implements ak {
         }
     }
 
-    @Override // org.telegram.ui.Components.ak
+    @Override // org.telegram.ui.Components.ck
     public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
-        s3 s3Var = this.b.r;
+        t3 t3Var = this.b.r;
         if (!arrayList.isEmpty()) {
-            s3Var.f2((String) arrayList.get(0));
+            t3Var.f2((String) arrayList.get(0));
         } else if (!arrayList3.isEmpty()) {
             fj fjVar = (fj) arrayList3.get(0);
-            s3Var.getClass();
+            t3Var.getClass();
             if (fjVar != null && fjVar.F0() != null) {
                 TLRPC.Document F0 = fjVar.F0();
                 TLRPC.Message message = fjVar.k;
-                s3Var.g2(F0, message != null ? message.attachPath : null);
+                t3Var.g2(F0, message != null ? message.attachPath : null);
             }
         }
         this.a.a(true);
     }
 
-    @Override // org.telegram.ui.Components.ak
+    @Override // org.telegram.ui.Components.ck
     public final /* synthetic */ void T() {
     }
 
-    @Override // org.telegram.ui.Components.ak
+    @Override // org.telegram.ui.Components.ck
     public final /* synthetic */ void p(ArrayList arrayList, boolean z10, int i7, long j3) {
     }
 }

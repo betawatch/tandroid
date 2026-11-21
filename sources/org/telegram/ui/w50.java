@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w50 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,15 +29,15 @@ public final /* synthetic */ class w50 implements Runnable {
                 String lowerCase = str.trim().toLowerCase();
                 if (!lowerCase.isEmpty()) {
                     boolean z10 = true;
-                    String S0 = org.telegram.messenger.gd.E0().S0(lowerCase, true, false);
-                    if (lowerCase.equals(S0) || S0.isEmpty()) {
-                        S0 = null;
+                    String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                    if (lowerCase.equals(T0) || T0.isEmpty()) {
+                        T0 = null;
                     }
-                    int i7 = (S0 != null ? 1 : 0) + 1;
+                    int i7 = (T0 != null ? 1 : 0) + 1;
                     String[] strArr = new String[i7];
                     strArr[0] = lowerCase;
-                    if (S0 != null) {
-                        strArr[1] = S0;
+                    if (T0 != null) {
+                        strArr[1] = T0;
                     }
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
@@ -45,16 +45,16 @@ public final /* synthetic */ class w50 implements Runnable {
                     while (i10 < x50Var.n.w.size()) {
                         org.telegram.messenger.f5 f5Var = (org.telegram.messenger.f5) x50Var.n.w.get(i10);
                         String lowerCase2 = org.telegram.messenger.i5.m(0, f5Var.i, f5Var.j).toLowerCase();
-                        String S02 = org.telegram.messenger.gd.E0().S0(lowerCase2, z10, false);
-                        if (lowerCase2.equals(S02)) {
-                            S02 = null;
+                        String T02 = org.telegram.messenger.gd.E0().T0(lowerCase2, z10, false);
+                        if (lowerCase2.equals(T02)) {
+                            T02 = null;
                         }
                         int i11 = 0;
                         boolean z11 = false;
                         while (true) {
                             if (i11 < i7) {
                                 String str2 = strArr[i11];
-                                if (lowerCase2.startsWith(str2) || i5.c.B(" ", str2, lowerCase2) || (S02 != null && (S02.startsWith(str2) || i5.c.B(" ", str2, S02)))) {
+                                if (lowerCase2.startsWith(str2) || i5.c.B(" ", str2, lowerCase2) || (T02 != null && (T02.startsWith(str2) || i5.c.B(" ", str2, T02)))) {
                                     z11 = true;
                                 }
                                 if (z11) {

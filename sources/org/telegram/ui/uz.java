@@ -6,29 +6,29 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class uz extends View implements org.telegram.ui.ActionBar.c6 {
-    public final org.telegram.ui.Components.m6 a;
+public final class uz extends View implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.Components.n6 a;
     public fh.g b;
     public String c;
 
     public uz(Activity activity) {
         super(activity);
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(true, false, false);
-        this.a = m6Var;
-        m6Var.u(-1);
-        m6Var.b = 17;
-        m6Var.x(org.telegram.messenger.g0.o());
-        m6Var.w(org.telegram.messenger.g0.L(14.0f));
-        m6Var.setCallback(this);
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(true, false, false);
+        this.a = n6Var;
+        n6Var.u(-1);
+        n6Var.b = 17;
+        n6Var.x(org.telegram.messenger.g0.o());
+        n6Var.w(org.telegram.messenger.g0.L(14.0f));
+        n6Var.setCallback(this);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        org.telegram.ui.Components.m6 m6Var = this.a;
-        int N = (int) (org.telegram.messenger.g0.N(30.0f) + m6Var.c());
+        org.telegram.ui.Components.n6 n6Var = this.a;
+        int N = (int) (org.telegram.messenger.g0.N(30.0f) + n6Var.c());
         int width = (getWidth() - N) / 2;
         int i7 = N + width;
         fh.g gVar = this.b;
@@ -36,7 +36,7 @@ public final class uz extends View implements org.telegram.ui.ActionBar.c6 {
             gVar.setBounds(width, 0, i7, getHeight());
             this.b.draw(canvas);
         }
-        m6Var.draw(canvas);
+        n6Var.draw(canvas);
     }
 
     @Override // android.view.View
@@ -45,7 +45,7 @@ public final class uz extends View implements org.telegram.ui.ActionBar.c6 {
         this.a.setBounds(0, 0, i7, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         fh.g gVar = this.b;
         if (gVar != null) {
@@ -59,7 +59,7 @@ public final class uz extends View implements org.telegram.ui.ActionBar.c6 {
         return super.verifyDrawable(drawable) || drawable == this.a;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

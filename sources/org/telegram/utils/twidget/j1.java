@@ -8,11 +8,11 @@ import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.s2;
-import org.telegram.ui.Components.a81;
-import org.telegram.ui.Components.z71;
-import org.telegram.ui.dd0;
+import org.telegram.ui.Components.c81;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class j1 implements Runnable {
         JSONObject jSONObject;
         d1 d1Var;
         d1 d1Var2;
-        a81 a81Var;
+        d81 d81Var;
         p1 p1Var;
         String str;
         String optString;
@@ -152,12 +152,12 @@ public final /* synthetic */ class j1 implements Runnable {
         if (jSONObject.optBoolean("loaded") && d1Var2.g != null && (p1Var = d1Var2.f) != null) {
             d1Var2.g(p1Var);
         } else {
-            if (!d1Var2.e() || (a81Var = d1Var2.h) == null) {
+            if (!d1Var2.e() || (d81Var = d1Var2.h) == null) {
                 return;
             }
-            z71 z71Var = a81Var.a;
-            z71Var.j();
-            z71Var.h();
+            c81 c81Var = d81Var.a;
+            c81Var.j();
+            c81Var.h();
         }
     }
 
@@ -268,9 +268,9 @@ public final /* synthetic */ class j1 implements Runnable {
                         }
                         if ("local".equals(str2)) {
                             n0.d.put(a10, h);
-                            dd0 dd0Var = n0.e;
-                            org.telegram.messenger.g0.r(dd0Var);
-                            org.telegram.messenger.g0.h3(dd0Var, 1000L);
+                            cd0 cd0Var = n0.e;
+                            org.telegram.messenger.g0.r(cd0Var);
+                            org.telegram.messenger.g0.h3(cd0Var, 1000L);
                         }
                     }
                 }

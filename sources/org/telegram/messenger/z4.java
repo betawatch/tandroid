@@ -20,11 +20,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z4 implements Runnable {
     public final /* synthetic */ int a;
@@ -355,29 +355,29 @@ public final /* synthetic */ class z4 implements Runnable {
                 ec ecVar3 = tbVar.e;
                 ib ibVar = ecVar3.e;
                 sb sbVar2 = tbVar.c;
-                if (drawable2 instanceof mh0) {
-                    mh0 mh0Var = (mh0) drawable2;
+                if (drawable2 instanceof oh0) {
+                    oh0 oh0Var = (oh0) drawable2;
                     Drawable drawable3 = (Drawable) ibVar.f(sbVar2.d);
                     if (drawable3 == null) {
-                        ibVar.l(sbVar2.d, mh0Var);
-                        drawable = mh0Var;
+                        ibVar.l(sbVar2.d, oh0Var);
+                        drawable = oh0Var;
                     } else {
-                        mh0Var.C(false);
+                        oh0Var.C(false);
                         drawable = drawable3;
                     }
                     ecVar3.H(sbVar2.d);
                     str = sbVar2.d;
-                } else if (drawable2 instanceof org.telegram.ui.Components.b6) {
-                    org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) drawable2;
-                    if (b6Var.o0) {
+                } else if (drawable2 instanceof org.telegram.ui.Components.c6) {
+                    org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) drawable2;
+                    if (c6Var.o0) {
                         String str6 = sbVar2.d;
                         ThreadLocal threadLocal = ec.I;
                         BitmapDrawable y10 = ecVar3.y(str6);
                         if (y10 == null) {
-                            ibVar.l(sbVar2.d, b6Var);
-                            bitmapDrawable2 = b6Var;
+                            ibVar.l(sbVar2.d, c6Var);
+                            bitmapDrawable2 = c6Var;
                         } else {
-                            b6Var.u();
+                            c6Var.u();
                             bitmapDrawable2 = y10;
                         }
                         ecVar3.H(sbVar2.d);
@@ -442,22 +442,22 @@ public final /* synthetic */ class z4 implements Runnable {
                 try {
                     int i18 = mediaController2.l0 + 1;
                     mediaController2.l0 = i18;
-                    f61 f61Var = mediaController2.k0;
-                    if (f61Var != null) {
-                        f61Var.m0();
+                    i61 i61Var = mediaController2.k0;
+                    if (i61Var != null) {
+                        i61Var.m0();
                     }
-                    f61 f61Var2 = new f61(false, false);
-                    mediaController2.k0 = f61Var2;
-                    f61Var2.K = new b3.j(mediaController2, i18, 8);
-                    f61Var2.j0(Uri.fromFile(file), "other");
+                    i61 i61Var2 = new i61(false, false);
+                    mediaController2.k0 = i61Var2;
+                    i61Var2.K = new b3.j(mediaController2, i18, 8);
+                    i61Var2.j0(Uri.fromFile(file), "other");
                     mediaController2.k0.x0(3);
                     mediaController2.k0.h0();
                     return;
                 } catch (Exception e14) {
                     a8.g(e14, true);
-                    f61 f61Var3 = mediaController2.k0;
-                    if (f61Var3 != null) {
-                        f61Var3.m0();
+                    i61 i61Var3 = mediaController2.k0;
+                    if (i61Var3 != null) {
+                        i61Var3.m0();
                         mediaController2.k0 = null;
                         return;
                     }
@@ -476,14 +476,14 @@ public final /* synthetic */ class z4 implements Runnable {
                 jg.q1 q1Var = (jg.q1) this.b;
                 fj fjVar2 = (fj) this.c;
                 MediaController mediaController3 = (MediaController) q1Var.c;
-                f61 f61Var4 = mediaController3.j0;
-                if ((f61Var4 == null && mediaController3.F0 == null) || mediaController3.h0) {
+                i61 i61Var4 = mediaController3.j0;
+                if ((i61Var4 == null && mediaController3.F0 == null) || mediaController3.h0) {
                     return;
                 }
                 try {
-                    f61 f61Var5 = mediaController3.F0;
-                    if (f61Var5 != null) {
-                        U = f61Var5.U();
+                    i61 i61Var5 = mediaController3.F0;
+                    if (i61Var5 != null) {
+                        U = i61Var5.U();
                         S = ((MediaController) q1Var.c).F0.S();
                         if (S >= 0 && U > 0) {
                             float f11 = U;
@@ -495,7 +495,7 @@ public final /* synthetic */ class z4 implements Runnable {
                         }
                         return;
                     }
-                    U = f61Var4.U();
+                    U = i61Var4.U();
                     S = ((MediaController) q1Var.c).j0.S();
                     f10 = U >= 0 ? S / U : 0.0f;
                     K = ((MediaController) q1Var.c).j0.K() / U;

@@ -3,20 +3,20 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class mj extends FragmentContextView {
     public final /* synthetic */ int Y0;
     public final /* synthetic */ bn Z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mj(bn bnVar, Context context, bn bnVar2, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
-        super(context, bnVar2, null, true, i6Var);
+    public mj(bn bnVar, Context context, bn bnVar2, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+        super(context, bnVar2, null, true, h6Var);
         this.Y0 = i7;
         switch (i7) {
             case 1:
                 this.Z0 = bnVar;
-                super(context, bnVar2, null, false, i6Var);
+                super(context, bnVar2, null, false, h6Var);
                 break;
             default:
                 this.Z0 = bnVar;

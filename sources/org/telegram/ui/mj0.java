@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class mj0 implements yj0 {
     public final /* synthetic */ TLRPC.SecureValueType a;
@@ -143,7 +143,7 @@ public final class mj0 implements yj0 {
                 TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
                 savesecurevalue.value = tL_inputSecureValue;
                 savesecurevalue.secure_secret_id = hk0Var.c1;
-                i7 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+                i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
                 ConnectionsManager.getInstance(i7).sendRequest(savesecurevalue, new lj0(this, aVar, str, savesecurevalue, tL_secureRequiredType2, tL_secureRequiredType, arrayList, yvVar, yvVar2, yvVar3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
             }
             tL_inputSecureValue = tL_inputSecureValue4;
@@ -152,7 +152,7 @@ public final class mj0 implements yj0 {
         TL_account.saveSecureValue savesecurevalue2 = new TL_account.saveSecureValue();
         savesecurevalue2.value = tL_inputSecureValue;
         savesecurevalue2.secure_secret_id = hk0Var.c1;
-        i7 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
         ConnectionsManager.getInstance(i7).sendRequest(savesecurevalue2, new lj0(this, aVar, str, savesecurevalue2, tL_secureRequiredType2, tL_secureRequiredType, arrayList, yvVar, yvVar2, yvVar3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
     }
 }

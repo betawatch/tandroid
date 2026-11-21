@@ -1,32 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.graphics.Canvas;
+import android.view.View;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class qx0 {
-    public final int a;
-    public final int b;
+public interface qx0 extends org.telegram.ui.Cells.u9 {
+    int b();
 
-    public qx0(int i7, int i10) {
-        this.a = i7;
-        this.b = i10;
-    }
+    void d(Canvas canvas, View view);
 
-    public final int a() {
-        return this.b - this.a;
-    }
+    void f(View view);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || qx0.class != obj.getClass()) {
-            return false;
-        }
-        qx0 qx0Var = (qx0) obj;
-        return this.b == qx0Var.b && this.a == qx0Var.a;
-    }
+    void g(int i7);
 
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
-    }
+    void h(int i7);
+
+    void i(View view);
+
+    void j(int i7);
 }

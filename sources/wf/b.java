@@ -24,7 +24,7 @@ import androidx.emoji2.text.w;
 import androidx.fragment.app.j0;
 import androidx.fragment.app.s;
 import androidx.fragment.app.v;
-import bi.m2;
+import bi.q2;
 import ca.i;
 import ci.a0;
 import ci.b0;
@@ -84,7 +84,6 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import jb.l;
 import kotlin.jvm.internal.j;
-import oi.y3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
@@ -94,10 +93,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import s4.z;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, j2.g, n, ja.a {
     public static volatile b d;
@@ -366,7 +365,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     }
 
     public boolean M() {
-        return ((a) ((nd0) this.b).d) != null;
+        return ((a) ((md0) this.b).d) != null;
     }
 
     public void N(boolean z10, boolean z11, float f10) {
@@ -418,50 +417,50 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     public void P(Object obj) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new m2(this, obj, SystemClock.elapsedRealtime(), 1));
+            handler.post(new q2(this, obj, SystemClock.elapsedRealtime(), 1));
         }
     }
 
-    public void Q(y3 y3Var) {
+    public void Q(oi.z3 z3Var) {
         d dVar;
-        y3 y3Var2;
+        oi.z3 z3Var2;
         int i7;
         Log.d("CAST_CONTROLLER", "set current media");
-        nd0 nd0Var = (nd0) this.b;
-        y3 y3Var3 = (y3) nd0Var.c;
+        md0 md0Var = (md0) this.b;
+        oi.z3 z3Var3 = (oi.z3) md0Var.c;
         if (f.u()) {
-            if (y3Var3 == null && y3Var == null) {
+            if (z3Var3 == null && z3Var == null) {
                 return;
             }
-            if (y3Var3 != null) {
-                ArrayList arrayList = y3Var3.a;
-                if (y3Var != null && arrayList.size() == y3Var.a.size()) {
+            if (z3Var3 != null) {
+                ArrayList arrayList = z3Var3.a;
+                if (z3Var != null && arrayList.size() == z3Var.a.size()) {
                     for (0; i7 < arrayList.size(); i7 + 1) {
-                        e j3 = y3Var3.j(i7);
-                        e j10 = y3Var.j(i7);
+                        e j3 = z3Var3.j(i7);
+                        e j10 = z3Var.j(i7);
                         i7 = ((j3 == null && j10 == null) || (j3 != null && j10 != null && Objects.equals(j3.a, j10.a) && Objects.equals(j3.b, j10.b) && Objects.equals(j3.c, j10.c) && Objects.equals(j3.d, j10.d) && j3.e == j10.e && j3.f == j10.f)) ? i7 + 1 : 0;
                     }
                     return;
                 }
             }
         }
-        if (((a) nd0Var.d) != null && y3Var != null) {
-            nd0Var.j(y3Var);
+        if (((a) md0Var.d) != null && z3Var != null) {
+            md0Var.j(z3Var);
         }
-        if (((a) nd0Var.d) != null && (y3Var2 = (y3) nd0Var.c) != null) {
-            nd0Var.F(y3Var2);
+        if (((a) md0Var.d) != null && (z3Var2 = (oi.z3) md0Var.c) != null) {
+            md0Var.F(z3Var2);
         }
-        if (y3Var != null && y3Var.a.size() > 0 && !y3Var.j(0).a.startsWith("audio/") && (dVar = (d) nd0Var.b) != null) {
+        if (z3Var != null && z3Var.a.size() > 0 && !z3Var.j(0).a.startsWith("audio/") && (dVar = (d) md0Var.b) != null) {
             dVar.l(null, null);
         }
-        a aVar = (a) nd0Var.d;
-        if (aVar != null && y3Var != null) {
-            aVar.d = y3Var;
+        a aVar = (a) md0Var.d;
+        if (aVar != null && z3Var != null) {
+            aVar.d = z3Var;
             aVar.g = 0;
             aVar.h = 0;
             aVar.p();
         }
-        nd0Var.c = y3Var;
+        md0Var.c = z3Var;
     }
 
     public void R(f5.m mVar) {
@@ -476,7 +475,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     }
 
     public void S(g6.c cVar) {
-        nd0 nd0Var = (nd0) this.b;
+        md0 md0Var = (md0) this.b;
         if (cVar == null) {
             return;
         }
@@ -486,9 +485,9 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
         if (TextUtils.isEmpty(a10) || hVar == null) {
             return;
         }
-        a aVar = (a) nd0Var.d;
+        a aVar = (a) md0Var.d;
         if (aVar == null || !TextUtils.equals(aVar.c.a(), a10)) {
-            nd0Var.I(new a(cVar, (g6.g) this.c, hVar));
+            md0Var.I(new a(cVar, (g6.g) this.c, hVar));
             q6.m.e("Must be called from the main thread.");
             CastDevice castDevice = cVar.k;
             String str = castDevice != null ? castDevice.d : null;
@@ -497,7 +496,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
             if (p12.F == null || p12.f0 == null || !p12.P1()) {
                 return;
             }
-            new lc(p12.f0, new fi.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? gd.a0(null, null, 2131752091, str) : gd.M0(2131752092, null)).j();
+            new lc(p12.f0, new fi.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? gd.a0(null, null, 2131752090, str) : gd.N0(2131752091, null)).j();
         }
     }
 
@@ -533,7 +532,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     public void V(x1 x1Var) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new c1.c(21, this, x1Var));
+            handler.post(new c1.a(23, this, x1Var));
         }
     }
 
@@ -794,7 +793,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
     @Override // g6.h
     public void k(g6.f fVar, int i7) {
         Log.d("CAST_SESSION", "onSessionEnded " + ((g6.c) fVar).a() + " " + i7);
-        ((nd0) this.b).I(null);
+        ((md0) this.b).I(null);
     }
 
     @Override // g6.h
@@ -1241,7 +1240,7 @@ public class b implements h, ce.c, a0, OnCompleteListener, g, lf.b, y, q, ib.b, 
                 } catch (RemoteException e10) {
                     g6.g.c.a(e10, "Unable to call %s on %s.", "addCastStateListener", g6.y.class.getSimpleName());
                 }
-                this.b = new nd0(23, z10);
+                this.b = new md0(23, z10);
                 g6.g b10 = c10.b();
                 this.c = b10;
                 b10.a(this);

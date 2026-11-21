@@ -21,17 +21,17 @@ import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class k8 extends View {
     public int a;
     public int b;
     public final Matrix c;
     public final Paint[] d;
-    public final org.telegram.ui.Components.c6 e;
+    public final org.telegram.ui.Components.d6 e;
     public boolean f;
     public int h;
     public final Drawable[] n;
@@ -45,7 +45,7 @@ public final class k8 extends View {
         super(context);
         this.c = new Matrix();
         this.d = new Paint[]{new Paint(1), new Paint(1)};
-        this.e = new org.telegram.ui.Components.c6(this, 0L, 260L, lr.h);
+        this.e = new org.telegram.ui.Components.d6(this, 0L, 260L, nr.h);
         this.n = new Drawable[2];
         this.r = new float[2];
         Paint paint = new Paint(1);
@@ -59,30 +59,30 @@ public final class k8 extends View {
     }
 
     public final void a(boolean z10, o6 o6Var, boolean z11) {
-        hi.o8 o8Var;
+        hi.n8 n8Var;
         this.s = z10;
         this.f = true;
-        if (o6Var == null || (o8Var = o6Var.c.E0) == null) {
+        if (o6Var == null || (n8Var = o6Var.c.E0) == null) {
             this.f = false;
         } else {
-            int i7 = o8Var.a;
-            org.telegram.ui.Components.c6 c6Var = this.e;
+            int i7 = n8Var.a;
+            org.telegram.ui.Components.d6 d6Var = this.e;
             if (i7 == 1) {
                 c(15.0f, R.drawable.msg_stories_closefriends);
                 d(-7808710, -13781445);
-                c6Var.f(z11, !z11);
+                d6Var.f(z11, !z11);
             } else if (i7 == 2) {
                 c(17.33f, R.drawable.msg_folders_private);
                 d(-3905294, -6923014);
-                c6Var.f(z11, !z11);
+                d6Var.f(z11, !z11);
             } else if (i7 == 3) {
                 c(17.33f, R.drawable.msg_folders_groups);
                 d(-18621, -618956);
-                c6Var.f(z11, !z11);
+                d6Var.f(z11, !z11);
             } else if (z10) {
                 c(17.33f, R.drawable.msg_folders_channels);
                 d(-15292942, -15630089);
-                c6Var.f(z11, !z11);
+                d6Var.f(z11, !z11);
             } else {
                 this.f = false;
             }
@@ -99,23 +99,23 @@ public final class k8 extends View {
             this.f = false;
         } else {
             boolean z12 = storyItem.close_friends;
-            org.telegram.ui.Components.c6 c6Var = this.e;
+            org.telegram.ui.Components.d6 d6Var = this.e;
             if (z12) {
                 c(15.0f, R.drawable.msg_stories_closefriends);
                 d(-7808710, -13781445);
-                c6Var.f(z11, true);
+                d6Var.f(z11, true);
             } else if (storyItem.contacts) {
                 c(17.33f, R.drawable.msg_folders_private);
                 d(-3905294, -6923014);
-                c6Var.f(z11, true);
+                d6Var.f(z11, true);
             } else if (storyItem.selected_contacts || (z10 && ((arrayList = storyItem.privacy) == null || arrayList.isEmpty()))) {
                 c(17.33f, R.drawable.msg_folders_groups);
                 d(-18621, -618956);
-                c6Var.f(z11, true);
+                d6Var.f(z11, true);
             } else if (z10) {
                 c(17.33f, R.drawable.msg_folders_channels);
                 d(-15292942, -15630089);
-                c6Var.f(z11, true);
+                d6Var.f(z11, true);
             } else {
                 this.f = false;
             }
@@ -126,13 +126,13 @@ public final class k8 extends View {
 
     public final void c(float f10, int i7) {
         if (i7 == R.drawable.msg_stories_closefriends) {
-            setContentDescription(gd.M0(2131744297, null));
+            setContentDescription(gd.N0(2131744291, null));
         } else if (i7 == R.drawable.msg_folders_private) {
-            setContentDescription(gd.M0(2131744295, null));
+            setContentDescription(gd.N0(2131744289, null));
         } else if (i7 == R.drawable.msg_folders_groups) {
-            setContentDescription(gd.M0(2131744285, null));
+            setContentDescription(gd.N0(2131744279, null));
         } else if (i7 == R.drawable.msg_folders_channels) {
-            setContentDescription(gd.M0(2131744293, null));
+            setContentDescription(gd.N0(2131744287, null));
         }
         Drawable[] drawableArr = this.n;
         Drawable drawable = drawableArr[0];

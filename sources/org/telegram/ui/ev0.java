@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ev0 extends fr0 {
     public final /* synthetic */ ProfileActivity T;
@@ -29,15 +29,15 @@ public final class ev0 extends fr0 {
             canvas.saveLayerAlpha(rectF, (int) (255.0f * f10), 31);
             profileActivity.Z.draw(canvas);
             canvas.save();
-            kVar = ((org.telegram.ui.ActionBar.h2) profileActivity).actionBar;
+            kVar = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
             float x10 = kVar.getX();
-            kVar2 = ((org.telegram.ui.ActionBar.h2) profileActivity).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
             canvas.translate(x10, kVar2.getY());
-            kVar3 = ((org.telegram.ui.ActionBar.h2) profileActivity).actionBar;
+            kVar3 = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
             kVar3.draw(canvas);
             canvas.restore();
-            org.telegram.ui.Components.ph0 ph0Var = profileActivity.s;
-            if (ph0Var != null && ph0Var.getVisibility() == 0 && profileActivity.s.getAlpha() > 0.0f) {
+            org.telegram.ui.Components.rh0 rh0Var = profileActivity.s;
+            if (rh0Var != null && rh0Var.getVisibility() == 0 && profileActivity.s.getAlpha() > 0.0f) {
                 canvas.save();
                 float f15 = (f10 * 0.5f) + 0.5f;
                 canvas.scale(f15, f15, (profileActivity.s.getMeasuredWidth() / 2.0f) + profileActivity.s.getX(), (profileActivity.s.getMeasuredHeight() / 2.0f) + profileActivity.s.getY());
@@ -57,9 +57,9 @@ public final class ev0 extends fr0 {
         for (int i7 = 0; i7 < profileActivity.o0.getChildCount(); i7++) {
             profileActivity.o0.getChildAt(i7).invalidate();
         }
-        org.telegram.ui.Components.ph0 ph0Var = profileActivity.s;
-        if (ph0Var != null) {
-            ph0Var.invalidate();
+        org.telegram.ui.Components.rh0 rh0Var = profileActivity.s;
+        if (rh0Var != null) {
+            rh0Var.invalidate();
         }
     }
 

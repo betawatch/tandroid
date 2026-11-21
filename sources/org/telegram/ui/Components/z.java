@@ -1,73 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.text.style.ReplacementSpan;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class z extends ReplacementSpan {
-    public final Paint a;
-    public final Path b;
-    public final Rect c;
-    public float d;
-    public float e;
-    public float f;
-    public float h;
-    public float n;
+public final class z extends org.telegram.ui.Cells.s8 {
+    public boolean L;
+    public float M;
+    public float N;
+    public ValueAnimator O;
 
-    public z() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        this.c = new Rect();
-        this.d = -1.0f;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-    }
-
-    public final void a(Paint paint) {
-        float textSize = paint.getTextSize();
-        if (textSize == this.d) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        View childAt = getChildAt(0);
+        TextView valueTextView = getValueTextView();
+        if (childAt == null || valueTextView == null) {
             return;
         }
-        this.d = textSize;
-        this.e = 0.62f * textSize;
-        this.f = 0.1f * textSize;
-        this.h = textSize * 0.3f;
-        paint.getTextBounds("x", 0, 1, this.c);
-        this.n = r3.height();
-        float f10 = this.e;
-        float f11 = 0.475f * f10;
-        float f12 = f10 * 0.46f;
-        Path path = this.b;
-        path.rewind();
-        path.moveTo(0.0f, 0.0f);
-        path.lineTo(this.e, 0.0f);
-        path.moveTo(this.e - f11, -f12);
-        path.lineTo(this.e, 0.0f);
-        path.lineTo(this.e - f11, f12);
-        this.a.setStrokeWidth(this.f);
+        int measuredHeight = childAt.getMeasuredHeight();
+        int measuredHeight2 = valueTextView.getMeasuredHeight();
+        int L = org.telegram.messenger.g0.L(3.0f);
+        float L2 = (org.telegram.messenger.g0.L(60.0f) - ((measuredHeight + L) + measuredHeight2)) / 2.0f;
+        childAt.setTranslationY(org.telegram.messenger.g0.T1((org.telegram.messenger.g0.L(50.0f) - measuredHeight) / 2.0f, L2, this.M) - childAt.getTop());
+        valueTextView.setTranslationY((((1.0f - this.M) * org.telegram.messenger.g0.L(5.0f)) + ((L2 + measuredHeight) + L)) - valueTextView.getTop());
+        valueTextView.setAlpha(this.M);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        a(paint);
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        paint2.setColor(color);
-        canvas.save();
-        org.telegram.messenger.n10.k(this.n, 2.0f, i12, (this.f / 2.0f) + f10, canvas);
-        canvas.drawPath(this.b, paint2);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        a(paint);
-        return (int) Math.ceil(this.f + this.e + this.h);
+    @Override // org.telegram.ui.Cells.s8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        setMeasuredDimension(getMeasuredWidth(), Math.round(org.telegram.messenger.g0.W1(this.M, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(60.0f))));
     }
 }

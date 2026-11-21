@@ -3,132 +3,74 @@ package ki;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class t0 implements SensorEventListener {
-    public final /* synthetic */ int a;
-    public long b;
+    public long a;
+    public float[] b;
     public float[] c;
-    public final /* synthetic */ w0 d;
+    public final /* synthetic */ v0 d;
 
-    public t0(w0 w0Var, int i7) {
-        this.a = i7;
-        switch (i7) {
-            case 1:
-                this.d = w0Var;
-                this.c = new float[3];
-                break;
-            default:
-                this.d = w0Var;
-                break;
-        }
+    public t0(v0 v0Var) {
+        this.d = v0Var;
     }
 
-    public final void c() {
-        switch (this.a) {
-            case 0:
-                w0 w0Var = this.d;
-                if (w0Var.k != null && this.c != null) {
-                    this.b = System.currentTimeMillis();
-                    try {
-                        JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("x", -this.c[0]);
-                        jSONObject.put("y", -this.c[1]);
-                        jSONObject.put("z", -this.c[2]);
-                        w0Var.k.d("window.Telegram.WebView.receiveEvent('accelerometer_changed', " + jSONObject + ");");
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-            default:
-                float[] fArr = this.c;
-                w0 w0Var2 = this.d;
-                if (w0Var2.k != null) {
-                    this.b = System.currentTimeMillis();
-                    try {
-                        JSONObject jSONObject2 = new JSONObject();
-                        jSONObject2.put("x", fArr[0]);
-                        jSONObject2.put("y", fArr[1]);
-                        jSONObject2.put("z", fArr[2]);
-                        w0Var2.k.d("window.Telegram.WebView.receiveEvent('gyroscope_changed', " + jSONObject2 + ");");
-                    } catch (Exception unused2) {
-                    }
-                    fArr[0] = 0.0f;
-                    fArr[1] = 0.0f;
-                    fArr[2] = 0.0f;
-                    break;
-                }
-                break;
+    public final void a() {
+        if (this.b == null || this.c == null) {
+            return;
         }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i7) {
-        int i10 = this.a;
+        v0 v0Var = this.d;
+        if (v0Var.k == null) {
+            return;
+        }
+        this.a = System.currentTimeMillis();
+        float[] fArr = new float[9];
+        if (SensorManager.getRotationMatrix(fArr, new float[9], this.b, this.c)) {
+            SensorManager.getOrientation(fArr, new float[3]);
+            try {
+                JSONObject jSONObject = new JSONObject();
+                jSONObject.put("absolute", true);
+                jSONObject.put("alpha", -r2[0]);
+                jSONObject.put("beta", -r2[1]);
+                jSONObject.put("gamma", r2[2]);
+                v0Var.k.d("window.Telegram.WebView.receiveEvent('device_orientation_changed', " + jSONObject + ");");
+            } catch (Exception unused) {
+            }
+        }
     }
 
     @Override // android.hardware.SensorEventListener
     public final void onSensorChanged(SensorEvent sensorEvent) {
-        switch (this.a) {
-            case 0:
-                w0 w0Var = this.d;
-                kg.j0 j0Var = w0Var.m;
-                if (j0Var != null) {
-                    org.telegram.messenger.g0.r(j0Var);
-                    w0Var.m = null;
-                }
-                if (!w0Var.l && w0Var.k != null) {
-                    long currentTimeMillis = System.currentTimeMillis() - this.b;
-                    this.c = sensorEvent.values;
-                    long j3 = w0Var.c;
-                    if (currentTimeMillis >= j3) {
-                        c();
-                        break;
-                    } else {
-                        kg.j0 j0Var2 = new kg.j0(this, 9);
-                        w0Var.m = j0Var2;
-                        org.telegram.messenger.g0.h3(j0Var2, j3 - currentTimeMillis);
-                        break;
-                    }
-                }
-                break;
-            default:
-                w0 w0Var2 = this.d;
-                kg.j0 j0Var3 = w0Var2.o;
-                if (j0Var3 != null) {
-                    org.telegram.messenger.g0.r(j0Var3);
-                    w0Var2.o = null;
-                }
-                if (!w0Var2.l && w0Var2.k != null) {
-                    float[] fArr = this.c;
-                    float f10 = fArr[0];
-                    float[] fArr2 = sensorEvent.values;
-                    fArr[0] = f10 + fArr2[0];
-                    fArr[1] = fArr[1] + fArr2[1];
-                    fArr[2] = fArr[2] + fArr2[2];
-                    long currentTimeMillis2 = System.currentTimeMillis() - this.b;
-                    long j10 = w0Var2.e;
-                    if (currentTimeMillis2 >= j10) {
-                        c();
-                        break;
-                    } else {
-                        kg.j0 j0Var4 = new kg.j0(this, 10);
-                        w0Var2.o = j0Var4;
-                        org.telegram.messenger.g0.h3(j0Var4, j10 - currentTimeMillis2);
-                        break;
-                    }
-                }
-                break;
+        v0 v0Var = this.d;
+        kg.i0 i0Var = v0Var.q;
+        if (i0Var != null) {
+            org.telegram.messenger.g0.r(i0Var);
+            v0Var.q = null;
         }
+        if (v0Var.l || v0Var.k == null) {
+            return;
+        }
+        long currentTimeMillis = System.currentTimeMillis() - this.a;
+        if (sensorEvent.sensor.getType() == 1) {
+            this.b = sensorEvent.values;
+        }
+        if (sensorEvent.sensor.getType() == 2) {
+            this.c = sensorEvent.values;
+        }
+        long j3 = v0Var.h;
+        if (currentTimeMillis >= j3) {
+            a();
+            return;
+        }
+        kg.i0 i0Var2 = new kg.i0(this, 11);
+        v0Var.q = i0Var2;
+        org.telegram.messenger.g0.h3(i0Var2, j3 - currentTimeMillis);
     }
 
-    private final void a(Sensor sensor, int i7) {
-    }
-
-    private final void b(Sensor sensor, int i7) {
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i7) {
     }
 }

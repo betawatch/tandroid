@@ -1,6 +1,6 @@
 package si;
 
-import ai.r0;
+import ai.t0;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.RecordingCanvas;
@@ -13,11 +13,11 @@ import android.support.v4.media.session.w;
 import c8.kc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class e extends kc {
     public final RenderNode a = w.o();
-    public final RuntimeShader b = r0.d();
+    public final RuntimeShader b = t0.d();
     public int c = -1;
     public int d = -1;
     public int e;

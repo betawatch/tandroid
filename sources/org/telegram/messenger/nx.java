@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nx implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -199,7 +199,7 @@ public final /* synthetic */ class nx implements Runnable {
                                             i17--;
                                             z14 = true;
                                         } else if (update instanceof TL_update.TL_updateQuickReplyMessage) {
-                                            kg.w1 f10 = kg.w1.f(zyVar3.currentAccount);
+                                            kg.v1 f10 = kg.v1.f(zyVar3.currentAccount);
                                             if (arrayList6.isEmpty()) {
                                                 i15 = 0;
                                                 J1 = null;
@@ -597,7 +597,7 @@ public final /* synthetic */ class nx implements Runnable {
                     r12 = z13;
                     i7 = 2;
                     tL_error = tL_error3;
-                    org.telegram.ui.Components.b5.c0(zyVar2.currentAccount, tL_error, null, tLObject2, new Object[0]);
+                    org.telegram.ui.Components.c5.c0(zyVar2.currentAccount, tL_error, null, tLObject2, new Object[0]);
                     z10 = true;
                     zyVar = zyVar2;
                 }
@@ -610,10 +610,10 @@ public final /* synthetic */ class nx implements Runnable {
                         int i27 = i7;
                         message11.send_state = i27;
                         if (r12 == 0 && tL_error != null && (str = tL_error.text) != null && str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                            di.x8.y(zyVar.currentAccount, false);
-                            message11.errorAllowedPriceStars = di.x8.o(tLObject2);
+                            di.y8.y(zyVar.currentAccount, false);
+                            message11.errorAllowedPriceStars = di.y8.o(tLObject2);
                             message11.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23));
-                            di.x8.y(zyVar.currentAccount, false).d0(Arrays.asList(fjVar5));
+                            di.y8.y(zyVar.currentAccount, false).d0(Arrays.asList(fjVar5));
                             zyVar.getMessagesStorage().X1(fj.B0(message11), message11);
                         }
                         zyVar.getNotificationCenter().k(23, Integer.valueOf(message11.id));
@@ -634,7 +634,7 @@ public final /* synthetic */ class nx implements Runnable {
                 boolean z18 = this.e;
                 TLObject tLObject4 = this.f;
                 if (tL_error6 != null) {
-                    org.telegram.ui.Components.b5.c0(zyVar7.currentAccount, tL_error6, null, tLObject4, new Object[0]);
+                    org.telegram.ui.Components.c5.c0(zyVar7.currentAccount, tL_error6, null, tLObject4, new Object[0]);
                     zyVar7.i0(message12.id, z18);
                     zyVar7.l0(fjVar6);
                     break;

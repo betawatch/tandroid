@@ -18,18 +18,19 @@ import org.telegram.messenger.fc;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.op;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class n7 extends FrameLayout {
     public final org.telegram.ui.Components.q9 a;
     public final TextView b;
     public final p5 c;
     public final View d;
-    public final mp e;
+    public final op e;
     public final FrameLayout f;
     public AnimatorSet h;
     public fj n;
@@ -66,15 +67,15 @@ public final class n7 extends FrameLayout {
         p5Var.addView(textView, c8.ma.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
         View view = new View(context);
         this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.n6.N0(false));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.N0(false));
         addView(view, c8.ma.c(-1.0f, -1));
-        mp mpVar = new mp(21, context, null);
-        this.e = mpVar;
-        mpVar.setVisibility(4);
-        mpVar.b(-1, org.telegram.ui.ActionBar.n6.Ci, org.telegram.ui.ActionBar.n6.k7);
-        mpVar.setDrawUnchecked(false);
-        mpVar.setDrawBackgroundAsArc(1);
-        addView(mpVar, c8.ma.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
+        op opVar = new op(21, context, null);
+        this.e = opVar;
+        opVar.setVisibility(4);
+        opVar.b(-1, org.telegram.ui.ActionBar.m6.Ci, org.telegram.ui.ActionBar.m6.k7);
+        opVar.setDrawUnchecked(false);
+        opVar.setDrawBackgroundAsArc(1);
+        addView(opVar, c8.ma.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -102,14 +103,14 @@ public final class n7 extends FrameLayout {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.n.D3()) {
-            accessibilityNodeInfo.setText(gd.M0(2131753960, null));
+            accessibilityNodeInfo.setText(gd.N0(2131753959, null));
         } else if (fj.L4(this.n.k)) {
             StringBuilder sb2 = new StringBuilder();
-            c0.u(null, 2131753931, sb2, ", ");
+            c0.u(null, 2131753930, sb2, ", ");
             sb2.append(gd.z((int) this.n.L0()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {
-            accessibilityNodeInfo.setText(gd.M0(2131753946, null));
+            accessibilityNodeInfo.setText(gd.N0(2131753945, null));
         }
         if (this.e.a.q) {
             accessibilityNodeInfo.setCheckable(true);
@@ -127,7 +128,7 @@ public final class n7 extends FrameLayout {
         TLRPC.PhotoSize photoSize;
         this.n = fjVar;
         this.a.getImageReceiver().O0(!PhotoViewer.L1(fjVar), false);
-        if (!TextUtils.isEmpty(org.telegram.messenger.mp.u1(this.r.s).H1(fjVar.k.restriction_reason))) {
+        if (!TextUtils.isEmpty(mp.u1(this.r.s).H1(fjVar.k.restriction_reason))) {
             this.c.setVisibility(4);
             this.a.setImageResource(R.drawable.photo_placeholder_in);
             return;

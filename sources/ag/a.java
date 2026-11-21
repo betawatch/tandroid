@@ -12,18 +12,19 @@ import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.p3;
 import com.google.android.gms.internal.play_billing.u;
 import f5.w;
+import f5.x;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
-import tg.x;
+import tg.y;
 import wf.b;
 import zf.c;
 import zf.d;
 import zf.e;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -35,7 +36,7 @@ public final class a implements ServiceConnection {
 
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        x xVar;
+        y yVar;
         e eVar = null;
         g gVar = null;
         switch (this.a) {
@@ -51,12 +52,12 @@ public final class a implements ServiceConnection {
                         eVar = (e) queryLocalInterface;
                     }
                 }
-                x xVar2 = new x(10, eVar, componentName);
+                y yVar2 = new y(10, eVar, componentName);
                 if (((vf.a) ((WeakReference) this.b).get()) != null) {
-                    vf.c.b = xVar2;
-                    if (mp.u1(j10.t0).U2() && (xVar = vf.c.b) != null) {
+                    vf.c.b = yVar2;
+                    if (mp.u1(j10.t0).U2() && (yVar = vf.c.b) != null) {
                         try {
-                            ((c) ((e) xVar.b)).i1();
+                            ((c) ((e) yVar.b)).i1();
                             break;
                         } catch (RemoteException unused) {
                             return;
@@ -82,8 +83,8 @@ public final class a implements ServiceConnection {
                 }
                 wVar.E = gVar;
                 wVar.D = 2;
-                int i11 = f5.x.a;
-                i3 c10 = f5.x.c(26, m3.b);
+                int i11 = x.a;
+                i3 c10 = x.c(26, m3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
                 b bVar = wVar.h;
                 bVar.getClass();

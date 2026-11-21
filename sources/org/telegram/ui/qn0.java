@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qn0 implements org.telegram.ui.Components.z4, org.telegram.ui.ActionBar.r1, org.telegram.messenger.jc, r0.m {
+public final /* synthetic */ class qn0 implements org.telegram.ui.Components.a5, org.telegram.ui.ActionBar.q1, org.telegram.messenger.jc, r0.m {
     public final /* synthetic */ PhotoViewer a;
 
     public /* synthetic */ qn0(PhotoViewer photoViewer) {
         this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.z4
+    @Override // org.telegram.ui.Components.a5
     public void O(int i7, int i10, boolean z10) {
         Drawable[] drawableArr = PhotoViewer.Z8;
         this.a.u2(z10, i7, i10, false, false, false);
@@ -66,8 +66,8 @@ public final /* synthetic */ class qn0 implements org.telegram.ui.Components.z4,
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         Drawable[] drawableArr = PhotoViewer.Z8;
         this.a.c3(0);
     }
@@ -81,10 +81,10 @@ public final /* synthetic */ class qn0 implements org.telegram.ui.Components.z4,
         PhotoViewer photoViewer = this.a;
         if (imageReceiver == photoViewer.C4 && z10 && !z11) {
             if (!photoViewer.s1 && ((photoViewer.u4 == 1 || (i10 = photoViewer.d2) == 1 || i10 == 11) && photoViewer.D1 != null && (n10 = imageReceiver.n()) != null)) {
-                org.telegram.ui.Components.qd0 qd0Var = photoViewer.D1;
+                org.telegram.ui.Components.rd0 rd0Var = photoViewer.D1;
                 int i11 = imageReceiver.V;
                 int i12 = photoViewer.d2;
-                qd0Var.b(n10, i11, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.E1, null, null);
+                rd0Var.b(n10, i11, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.E1, null, null);
             }
             if (photoViewer.y4.getVisibility() == 0) {
                 photoViewer.f0.requestLayout();

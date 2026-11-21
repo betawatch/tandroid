@@ -7,20 +7,20 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import h6.m;
-import hi.f9;
+import hi.e9;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.cb0;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l {
     public static final Rect f = new Rect();
     public final ui.c a = new ui.c();
     public final ui.b b = new ui.b();
-    public final m c = new m(new f9(7));
-    public final m d = new m(new f9(8));
-    public final m e = new m(new f9(9));
+    public final m c = new m(new e9(7));
+    public final m d = new m(new e9(8));
+    public final m e = new m(new e9(9));
 
     public final int a(ui.a aVar) {
         if (aVar instanceof ui.c) {
@@ -55,15 +55,15 @@ public final class l {
             cVar.a(((ColorDrawable) drawable).getColor());
             return cVar;
         }
-        boolean z11 = drawable instanceof bb0;
+        boolean z11 = drawable instanceof cb0;
         ui.b bVar = this.b;
         if (z11) {
-            bb0 bb0Var = (bb0) drawable;
-            if (bb0Var.q < 0) {
+            cb0 cb0Var = (cb0) drawable;
+            if (cb0Var.q < 0) {
                 cVar.a(-16777216);
                 return cVar;
             }
-            bVar.a(bb0Var.k);
+            bVar.a(cb0Var.k);
             return bVar;
         }
         boolean z12 = drawable instanceof BitmapDrawable;

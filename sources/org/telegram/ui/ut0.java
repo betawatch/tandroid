@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ut0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a = 0;
@@ -53,12 +53,12 @@ public final /* synthetic */ class ut0 implements org.telegram.messenger.x10 {
                     break;
                 }
             default:
-                r11 r11Var = (r11) fsVar;
+                s11 s11Var = (s11) fsVar;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) obj4;
                 HashMap hashMap = (HashMap) obj3;
                 ArrayList arrayList3 = (ArrayList) obj2;
                 Runnable runnable = (Runnable) obj;
-                int i10 = r11Var.W;
+                int i10 = s11Var.W;
                 boolean z11 = this.b;
                 String str = this.c;
                 if (z11) {
@@ -89,15 +89,15 @@ public final /* synthetic */ class ut0 implements org.telegram.messenger.x10 {
                     runnable.run();
                     break;
                 } else {
-                    org.telegram.messenger.ri.d0(i10).X(r11.c2, str, false, new di.l6(r11Var, linkedHashSet, hashMap, arrayList3, runnable), true, r11Var.a0 == 3, false, false, 30);
+                    org.telegram.messenger.ri.d0(i10).X(s11.c2, str, false, new di.l6(s11Var, linkedHashSet, hashMap, arrayList3, runnable), true, s11Var.a0 == 3, false, false, 30);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ ut0(r11 r11Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
-        this.d = r11Var;
+    public /* synthetic */ ut0(s11 s11Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.d = s11Var;
         this.b = z10;
         this.e = linkedHashSet;
         this.c = str;

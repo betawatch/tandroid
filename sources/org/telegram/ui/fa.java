@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fa implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -22,9 +22,9 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
             case 0:
                 ga gaVar = (ga) this.b;
                 if (i7 == 6) {
-                    org.telegram.ui.ActionBar.d5 d5Var = gaVar.c.a;
-                    if (d5Var != null) {
-                        d5Var.performClick();
+                    org.telegram.ui.ActionBar.c5 c5Var = gaVar.c.a;
+                    if (c5Var != null) {
+                        c5Var.performClick();
                         return true;
                     }
                 } else {
@@ -34,8 +34,8 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
             case 1:
                 bn bnVar = (bn) this.b;
                 if (i7 == 6) {
-                    sh.c cVar = bnVar.kd;
-                    if (cVar != null && (r1Var = cVar.n) != null) {
+                    sh.b bVar = bnVar.kd;
+                    if (bVar != null && (r1Var = bVar.n) != null) {
                         bnVar.Wa(r1Var);
                         return true;
                     }
@@ -46,9 +46,9 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
             case 2:
                 rn rnVar = (rn) this.b;
                 if (i7 == 6) {
-                    org.telegram.ui.ActionBar.d5 d5Var2 = rnVar.a;
-                    if (d5Var2 != null) {
-                        d5Var2.performClick();
+                    org.telegram.ui.ActionBar.c5 c5Var2 = rnVar.a;
+                    if (c5Var2 != null) {
+                        c5Var2.performClick();
                         return true;
                     }
                 } else {
@@ -127,14 +127,14 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
                 editTextBoldCursorArr[intValue].requestFocus();
                 return true;
             case 11:
-                b21 b21Var = (b21) this.b;
+                c21 c21Var = (c21) this.b;
                 if (keyEvent == null) {
                     return false;
                 }
                 if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
                     return false;
                 }
-                org.telegram.messenger.g0.v1(b21Var.Y1);
+                org.telegram.messenger.g0.v1(c21Var.Y1);
                 return false;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;

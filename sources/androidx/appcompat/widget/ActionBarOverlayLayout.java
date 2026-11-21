@@ -21,7 +21,7 @@ import c8.z;
 import e2.r0;
 import g.b0;
 import java.util.WeakHashMap;
-import ki.n3;
+import ki.m3;
 import l.w;
 import m.f3;
 import m.h;
@@ -44,7 +44,7 @@ import r0.y;
 import r0.y0;
 import r0.z0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
     public static final int[] S = {R.attr.actionBarSize, android.R.attr.windowContentOverlay};
@@ -58,7 +58,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
     public m.b L;
     public OverScroller M;
     public ViewPropertyAnimator N;
-    public final n3 O;
+    public final m3 O;
     public final m.a P;
     public final m.a Q;
     public final r0 R;
@@ -608,7 +608,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements j1, k, l {
         this.I = l1Var;
         this.J = l1Var;
         this.K = l1Var;
-        this.O = new n3(this, 2);
+        this.O = new m3(this, 2);
         this.P = new m.a(this, 0);
         this.Q = new m.a(this, 1);
         c(context);

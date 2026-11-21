@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n40 implements org.telegram.ui.Components.d10, org.telegram.ui.ActionBar.r1, r0.m {
+public final /* synthetic */ class n40 implements org.telegram.ui.Components.f10, org.telegram.ui.ActionBar.q1, r0.m {
     public final /* synthetic */ int a;
     public final /* synthetic */ z40 b;
 
@@ -27,13 +27,13 @@ public final /* synthetic */ class n40 implements org.telegram.ui.Components.d10
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.d10
+    @Override // org.telegram.ui.Components.f10
     public void a(int i7) {
         this.b.b.a(Math.min(i7, r0.d0));
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 1:
                 this.b.t0();

@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x7 extends b8 {
+public final class x7 extends a8 {
     public final /* synthetic */ int E;
     public final /* synthetic */ Context F;
     public final /* synthetic */ KeyEvent.Callback G;
@@ -20,42 +20,42 @@ public final class x7 extends b8 {
         this.F = context2;
     }
 
-    @Override // org.telegram.ui.Components.b8
+    @Override // org.telegram.ui.Components.a8
     public final TextView a() {
         switch (this.E) {
             case 0:
-                c90 c90Var = new c90(this.F);
-                org.telegram.ui.ActionBar.u6.U(c90Var, org.telegram.ui.ActionBar.n6.Fj, ((g8) this.G).J0);
-                c90Var.setTextSize(1, 17.0f);
-                c90Var.setTypeface(org.telegram.messenger.g0.o());
-                c90Var.setEllipsize(TextUtils.TruncateAt.END);
-                c90Var.setSingleLine(true);
-                return c90Var;
+                e90 e90Var = new e90(this.F);
+                org.telegram.ui.ActionBar.t6.U(e90Var, org.telegram.ui.ActionBar.m6.Fj, ((f8) this.G).J0);
+                e90Var.setTextSize(1, 17.0f);
+                e90Var.setTypeface(org.telegram.messenger.g0.o());
+                e90Var.setEllipsize(TextUtils.TruncateAt.END);
+                e90Var.setSingleLine(true);
+                return e90Var;
             case 1:
-                c90 c90Var2 = new c90(this.F);
-                int i7 = org.telegram.ui.ActionBar.n6.Jj;
-                g8 g8Var = (g8) this.G;
-                org.telegram.ui.ActionBar.u6.U(c90Var2, i7, g8Var.J0);
-                c90Var2.setTextSize(1, 13.0f);
-                c90Var2.setEllipsize(TextUtils.TruncateAt.END);
-                c90Var2.setSingleLine(true);
-                c90Var2.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.0f));
-                int i10 = org.telegram.ui.ActionBar.n6.i6;
-                org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.n6.a0(org.telegram.ui.ActionBar.n6.w0(i10, g8Var.J0), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-                org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i10);
-                org.telegram.ui.ActionBar.i6 i6Var = g8Var.J0;
-                c90Var2.setBackground(a02);
-                org.telegram.ui.ActionBar.u6.j(c90Var2, a02, null, M, i6Var);
-                c90Var2.setOnClickListener(new y7(0, this, c90Var2));
-                return c90Var2;
+                e90 e90Var2 = new e90(this.F);
+                int i7 = org.telegram.ui.ActionBar.m6.Jj;
+                f8 f8Var = (f8) this.G;
+                org.telegram.ui.ActionBar.t6.U(e90Var2, i7, f8Var.J0);
+                e90Var2.setTextSize(1, 13.0f);
+                e90Var2.setEllipsize(TextUtils.TruncateAt.END);
+                e90Var2.setSingleLine(true);
+                e90Var2.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.0f));
+                int i10 = org.telegram.ui.ActionBar.m6.i6;
+                org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.m6.a0(org.telegram.ui.ActionBar.m6.w0(i10, f8Var.J0), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
+                org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i10);
+                org.telegram.ui.ActionBar.h6 h6Var = f8Var.J0;
+                e90Var2.setBackground(a02);
+                org.telegram.ui.ActionBar.t6.j(e90Var2, a02, null, M, h6Var);
+                e90Var2.setOnClickListener(new oi.i1(29, this, e90Var2));
+                return e90Var2;
             default:
-                c90 c90Var3 = new c90(this.F);
-                org.telegram.ui.ActionBar.u6.U(c90Var3, org.telegram.ui.ActionBar.n6.Jj, ((ym0) this.G).O);
-                c90Var3.setTextSize(1, 12.0f);
-                c90Var3.setEllipsize(TextUtils.TruncateAt.END);
-                c90Var3.setSingleLine(true);
-                c90Var3.setPadding(org.telegram.messenger.g0.L(0.0f), 0, org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(0.0f));
-                return c90Var3;
+                e90 e90Var3 = new e90(this.F);
+                org.telegram.ui.ActionBar.t6.U(e90Var3, org.telegram.ui.ActionBar.m6.Jj, ((bn0) this.G).O);
+                e90Var3.setTextSize(1, 12.0f);
+                e90Var3.setEllipsize(TextUtils.TruncateAt.END);
+                e90Var3.setSingleLine(true);
+                e90Var3.setPadding(org.telegram.messenger.g0.L(0.0f), 0, org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(0.0f));
+                return e90Var3;
         }
     }
 }

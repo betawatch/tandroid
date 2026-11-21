@@ -1,69 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityEvent;
-import android.widget.ImageView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class j20 extends ImageView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class j20 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.g30 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j20(Object obj, Context context, int i7, int i10) {
+    public j20(org.telegram.ui.g30 g30Var, Context context) {
         super(context);
-        this.a = i10;
-        this.c = obj;
-        this.b = i7;
+        this.a = g30Var;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.onDraw(canvas);
-                org.telegram.ui.f00 f00Var = (org.telegram.ui.f00) this.c;
-                o80 o80Var = f00Var.s;
-                if (f00Var.r) {
-                    int i7 = this.b / 2;
-                    o80Var.setBounds(i7, i7, getWidth() - i7, getHeight() - i7);
-                    o80Var.draw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        o20.J0(this.a);
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        switch (this.a) {
-            case 0:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                if (accessibilityEvent.getEventType() == 32768) {
-                    ((org.telegram.ui.g30) ((k20) this.c).d).m1.x(this.b, true);
-                    break;
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        boolean z10 = View.MeasureSpec.getSize(i7) > View.MeasureSpec.getSize(i10);
+        org.telegram.ui.g30 g30Var = this.a;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) g30Var.n1.getLayoutParams();
+        if (z10) {
+            int L = org.telegram.messenger.g0.L(80.0f);
+            marginLayoutParams.leftMargin = L;
+            marginLayoutParams.rightMargin = L;
+        } else {
+            int L2 = org.telegram.messenger.g0.L(16.0f);
+            marginLayoutParams.leftMargin = L2;
+            marginLayoutParams.rightMargin = L2;
         }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == ((org.telegram.ui.f00) this.c).s || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
-        }
+        int z11 = org.telegram.messenger.n10.z(200.0f, View.MeasureSpec.getSize(i7), 2);
+        g30Var.m1.setPadding(z11, 0, z11, 0);
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(370.0f), TLObject.FLAG_30));
+        measureChildWithMargins(g30Var.o1, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30), 0);
     }
 }

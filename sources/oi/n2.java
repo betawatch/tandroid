@@ -1,94 +1,163 @@
 package oi;
 
+import android.view.KeyEvent;
 import android.view.View;
+import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
+    public final /* synthetic */ t3 b;
     public final /* synthetic */ a c;
-    public final /* synthetic */ int d;
 
-    public /* synthetic */ n2(s3 s3Var, a aVar, int i7, int i10) {
-        this.a = i10;
-        this.b = s3Var;
+    public /* synthetic */ n2(t3 t3Var, a aVar, int i7) {
+        this.a = i7;
+        this.b = t3Var;
         this.c = aVar;
-        this.d = i7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        View C1;
-        View C12;
         switch (this.a) {
             case 0:
-                s3 s3Var = this.b;
-                a aVar = this.c;
-                if (aVar == null) {
-                    s3Var.getClass();
-                    C1 = null;
-                } else {
-                    C1 = s3Var.C1(aVar);
-                }
-                if (C1 instanceof z5) {
-                    z5 z5Var = (z5) C1;
-                    z5Var.B();
-                    z5Var.getEditText().setSelection(Math.min(this.d, z5Var.getEditText().length()));
-                    break;
-                }
+                this.b.g3(this.c);
                 break;
             case 1:
-                s3 s3Var2 = this.b;
-                a aVar2 = this.c;
-                if (aVar2 == null) {
-                    s3Var2.getClass();
-                    C12 = null;
-                } else {
-                    C12 = s3Var2.C1(aVar2);
-                }
-                if (C12 instanceof z5) {
-                    z5 z5Var2 = (z5) C12;
-                    z5Var2.B();
-                    z5Var2.getEditText().setSelection(Math.min(this.d, z5Var2.getEditText().length()));
+                View C1 = this.b.C1(this.c);
+                if (C1 instanceof a6) {
+                    a6 a6Var = (a6) C1;
+                    a6Var.B();
+                    a6Var.getEditText().setSelection(0);
                     break;
                 }
                 break;
             case 2:
-                View C13 = this.b.C1(this.c);
-                if (C13 instanceof z5) {
-                    z5 z5Var3 = (z5) C13;
-                    z5Var3.B();
-                    z5Var3.getEditText().setSelection(Math.max(0, Math.min(this.d, z5Var3.getEditText().length())));
-                    break;
-                }
+                this.b.g3(this.c);
                 break;
             case 3:
-                View C14 = this.b.C1(this.c);
-                if (C14 instanceof z5) {
-                    z5 z5Var4 = (z5) C14;
-                    z5Var4.B();
-                    z5Var4.getEditText().setSelection(Math.max(0, Math.min(this.d, z5Var4.getEditText().length())));
-                    break;
-                }
+                this.b.f3(this.c, true);
                 break;
             case 4:
-                View C15 = this.b.C1(this.c);
-                if (C15 instanceof z5) {
-                    z5 z5Var5 = (z5) C15;
-                    z5Var5.B();
-                    z5Var5.getEditText().setSelection(Math.max(0, Math.min(this.d, z5Var5.getEditText().length())));
+                this.b.f3(this.c, false);
+                break;
+            case 5:
+                this.b.f3(this.c, true);
+                break;
+            case 6:
+                this.b.g3(this.c);
+                break;
+            case 7:
+                this.b.e3(this.c, false);
+                break;
+            case 8:
+                this.b.e3(this.c, true);
+                break;
+            case 9:
+                this.b.g3(this.c);
+                break;
+            case 10:
+                this.b.e3(this.c, true);
+                break;
+            case 11:
+                this.b.g3(this.c);
+                break;
+            case 12:
+                this.b.f3(this.c, false);
+                break;
+            case 13:
+                this.b.e3(this.c, true);
+                break;
+            case 14:
+                t3 t3Var = this.b;
+                KeyEvent.Callback C12 = t3Var.C1(this.c);
+                if (C12 instanceof i9) {
+                    t3Var.v3.b0(0, 0, (i9) C12);
                     break;
                 }
                 break;
-            default:
-                View C16 = this.b.C1(this.c);
-                if (C16 instanceof z5) {
-                    z5 z5Var6 = (z5) C16;
-                    z5Var6.B();
-                    z5Var6.getEditText().setSelection(Math.max(0, Math.min(this.d, z5Var6.getEditText().length())));
+            case 15:
+                t3 t3Var2 = this.b;
+                KeyEvent.Callback C13 = t3Var2.C1(this.c);
+                if (C13 instanceof i9) {
+                    t3Var2.v3.b0(0, C13 instanceof a6 ? ((a6) C13).getEditText().length() : 0, (i9) C13);
                     break;
                 }
+                break;
+            case 16:
+                this.b.i3(this.c);
+                break;
+            case 17:
+                View C14 = this.b.C1(this.c);
+                if (C14 instanceof a6) {
+                    a6 a6Var2 = (a6) C14;
+                    a6Var2.B();
+                    a6Var2.getEditText().setSelection(0);
+                    break;
+                }
+                break;
+            case 18:
+                View C15 = this.b.C1(this.c);
+                if (!(C15 instanceof a6)) {
+                    if (C15 instanceof m5) {
+                        m5 m5Var = (m5) C15;
+                        if (m5Var.getGrid().getChildCount() > 0) {
+                            View childAt = m5Var.getGrid().getChildAt(0);
+                            if (childAt instanceof p5) {
+                                ((p5) childAt).a.O();
+                                break;
+                            }
+                        }
+                    }
+                } else {
+                    a6 a6Var3 = (a6) C15;
+                    a6Var3.B();
+                    a6Var3.getEditText().setSelection(a6Var3.getEditText().length());
+                    break;
+                }
+                break;
+            case 19:
+                this.b.h3(this.c);
+                break;
+            case 20:
+                View C16 = this.b.C1(this.c);
+                if (C16 instanceof q0) {
+                    ((q0) C16).d.O();
+                    break;
+                }
+                break;
+            case 21:
+                this.b.h3(this.c);
+                break;
+            case 22:
+                this.b.h3(this.c);
+                break;
+            case 23:
+                View C17 = this.b.C1(this.c);
+                if (C17 instanceof a6) {
+                    a6 a6Var4 = (a6) C17;
+                    a6Var4.B();
+                    a6Var4.getEditText().setSelection(0);
+                    break;
+                }
+                break;
+            case 24:
+                this.b.g3(this.c);
+                break;
+            case 25:
+                this.b.d5("", this.c);
+                break;
+            case 26:
+                this.b.g3(this.c);
+                break;
+            case 27:
+                this.b.g3(this.c);
+                break;
+            case 28:
+                this.b.g3(this.c);
+                break;
+            default:
+                this.b.g3(this.c);
                 break;
         }
     }

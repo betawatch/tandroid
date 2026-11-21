@@ -1,30 +1,39 @@
 package hi;
 
-import android.content.Context;
-import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class q extends j6 {
-    public final /* synthetic */ s G;
+public final /* synthetic */ class q implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ia b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(s sVar, Context context) {
-        super(context);
-        this.G = sVar;
+    public /* synthetic */ q(ia iaVar, int i7) {
+        this.a = i7;
+        this.b = iaVar;
     }
 
-    @Override // hi.j6
-    public final void c() {
-        org.telegram.messenger.g0.r(this.h);
-        if (this.c <= 0) {
-            a(true);
-        } else {
-            CameraController.getInstance().stopVideoRecording(this.a.getCameraSessionRecording(), false, false);
-        }
-        s sVar = this.G;
-        if (sVar.O1) {
-            sVar.z(true, false);
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        Integer num = (Integer) obj;
+        switch (this.a) {
+            case 0:
+                int intValue = num.intValue();
+                ia iaVar = this.b;
+                iaVar.setPeriod(intValue);
+                x10 x10Var = iaVar.B1;
+                if (x10Var != null) {
+                    x10Var.a(num);
+                    break;
+                }
+                break;
+            default:
+                x10 x10Var2 = this.b.C1;
+                if (x10Var2 != null) {
+                    x10Var2.a(num);
+                    break;
+                }
+                break;
         }
     }
 }

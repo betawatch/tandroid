@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -21,9 +21,9 @@ public final class r5 extends FrameLayout {
         di.n4 n4Var = new di.n4(t5Var, getContext());
         di.n4 n4Var2 = new di.n4(t5Var, getContext());
         di.n4 n4Var3 = new di.n4(t5Var, getContext());
-        n4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.gd.M0(2131753662, null));
-        n4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.gd.M0(2131749378, null));
-        n4Var3.c(R.drawable.filled_info, org.telegram.messenger.gd.M0(2131750819, null));
+        n4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.gd.N0(2131753661, null));
+        n4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.gd.N0(2131749377, null));
+        n4Var3.c(R.drawable.filled_info, org.telegram.messenger.gd.N0(2131750818, null));
         n4Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 
@@ -33,7 +33,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.i6 i6Var;
+                org.telegram.ui.ActionBar.h6 h6Var;
                 int i10 = i7;
                 r5 r5Var = this.b;
                 switch (i10) {
@@ -42,14 +42,14 @@ public final class r5 extends FrameLayout {
                         long j3 = t5Var2.S;
                         org.telegram.messenger.g3 g3Var = t5Var2.V;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.U;
-                        int i11 = ug.l0.S2;
+                        int i11 = ug.k0.S2;
                         if (g3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
-                            ug.l0 l0Var = new ug.l0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
-                            l0Var.B1(g3Var);
-                            l0Var.A1(tL_premium_boostsStatus, true);
-                            l0Var.C1(j3);
-                            l0Var.c2 = null;
-                            t5Var2.showDialog(l0Var);
+                            ug.k0 k0Var = new ug.k0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
+                            k0Var.B1(g3Var);
+                            k0Var.A1(tL_premium_boostsStatus, true);
+                            k0Var.C1(j3);
+                            k0Var.c2 = null;
+                            t5Var2.showDialog(k0Var);
                             break;
                         }
                         break;
@@ -57,16 +57,16 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        i6Var = ((org.telegram.ui.ActionBar.h2) t5Var3).resourceProvider;
-                        wg.l.J0(t5Var3, i6Var, j10, null);
+                        h6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, h6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
-                        ug.l0 l0Var2 = new ug.l0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
-                        l0Var2.A1(t5Var4.U, true);
-                        l0Var2.C1(t5Var4.S);
-                        t5Var4.showDialog(l0Var2);
+                        ug.k0 k0Var2 = new ug.k0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
+                        k0Var2.A1(t5Var4.U, true);
+                        k0Var2.C1(t5Var4.S);
+                        t5Var4.showDialog(k0Var2);
                         break;
                 }
             }
@@ -81,7 +81,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.i6 i6Var;
+                org.telegram.ui.ActionBar.h6 h6Var;
                 int i102 = i10;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -90,14 +90,14 @@ public final class r5 extends FrameLayout {
                         long j3 = t5Var2.S;
                         org.telegram.messenger.g3 g3Var = t5Var2.V;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.U;
-                        int i11 = ug.l0.S2;
+                        int i11 = ug.k0.S2;
                         if (g3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
-                            ug.l0 l0Var = new ug.l0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
-                            l0Var.B1(g3Var);
-                            l0Var.A1(tL_premium_boostsStatus, true);
-                            l0Var.C1(j3);
-                            l0Var.c2 = null;
-                            t5Var2.showDialog(l0Var);
+                            ug.k0 k0Var = new ug.k0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
+                            k0Var.B1(g3Var);
+                            k0Var.A1(tL_premium_boostsStatus, true);
+                            k0Var.C1(j3);
+                            k0Var.c2 = null;
+                            t5Var2.showDialog(k0Var);
                             break;
                         }
                         break;
@@ -105,16 +105,16 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        i6Var = ((org.telegram.ui.ActionBar.h2) t5Var3).resourceProvider;
-                        wg.l.J0(t5Var3, i6Var, j10, null);
+                        h6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, h6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
-                        ug.l0 l0Var2 = new ug.l0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
-                        l0Var2.A1(t5Var4.U, true);
-                        l0Var2.C1(t5Var4.S);
-                        t5Var4.showDialog(l0Var2);
+                        ug.k0 k0Var2 = new ug.k0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
+                        k0Var2.A1(t5Var4.U, true);
+                        k0Var2.C1(t5Var4.S);
+                        t5Var4.showDialog(k0Var2);
                         break;
                 }
             }
@@ -129,7 +129,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.i6 i6Var;
+                org.telegram.ui.ActionBar.h6 h6Var;
                 int i102 = i11;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -138,14 +138,14 @@ public final class r5 extends FrameLayout {
                         long j3 = t5Var2.S;
                         org.telegram.messenger.g3 g3Var = t5Var2.V;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.U;
-                        int i112 = ug.l0.S2;
+                        int i112 = ug.k0.S2;
                         if (g3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
-                            ug.l0 l0Var = new ug.l0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
-                            l0Var.B1(g3Var);
-                            l0Var.A1(tL_premium_boostsStatus, true);
-                            l0Var.C1(j3);
-                            l0Var.c2 = null;
-                            t5Var2.showDialog(l0Var);
+                            ug.k0 k0Var = new ug.k0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
+                            k0Var.B1(g3Var);
+                            k0Var.A1(tL_premium_boostsStatus, true);
+                            k0Var.C1(j3);
+                            k0Var.c2 = null;
+                            t5Var2.showDialog(k0Var);
                             break;
                         }
                         break;
@@ -153,16 +153,16 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        i6Var = ((org.telegram.ui.ActionBar.h2) t5Var3).resourceProvider;
-                        wg.l.J0(t5Var3, i6Var, j10, null);
+                        h6Var = ((org.telegram.ui.ActionBar.g2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, h6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
-                        ug.l0 l0Var2 = new ug.l0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
-                        l0Var2.A1(t5Var4.U, true);
-                        l0Var2.C1(t5Var4.S);
-                        t5Var4.showDialog(l0Var2);
+                        ug.k0 k0Var2 = new ug.k0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
+                        k0Var2.A1(t5Var4.U, true);
+                        k0Var2.C1(t5Var4.S);
+                        t5Var4.showDialog(k0Var2);
                         break;
                 }
             }

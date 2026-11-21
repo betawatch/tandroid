@@ -1,113 +1,69 @@
 package bi;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import di.ec;
-import org.telegram.messenger.pc;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class h3 extends Drawable {
-    public final int a;
-    public final RectF b;
-    public final Path c;
-    public final Paint d;
-    public final ec e;
-    public boolean f;
-    public a3.f g;
-    public ai.g0 h;
-    public boolean i;
+public final class h3 extends View {
+    public final j3 a;
+    public CharSequence b;
 
-    public h3(int i7) {
-        this(i0.a.o(i7, 128), i7);
+    public h3(Context context) {
+        super(context);
+        j3 j3Var = new j3(this, 1.0f);
+        this.a = j3Var;
+        j3Var.setCallback(this);
     }
 
-    public final void a() {
-        boolean z10 = this.e != null && this.i && pc.e(131072);
-        if (this.f == z10) {
-            return;
-        }
-        this.f = z10;
-        if (z10) {
-            bg.k d = bg.k.d();
-            a3.f fVar = new a3.f(this, 24);
-            this.g = fVar;
-            d.a(15, fVar);
-        } else {
-            bg.k.d().f(this.g);
-        }
-        invalidateSelf();
+    public final void a(int i7, int i10) {
+        ((Paint) this.a.b).setShader(new LinearGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.d;
-        Path path = this.c;
-        canvas.drawPath(path, paint);
-        ec ecVar = this.e;
-        if (ecVar != null) {
-            if (this.f || !this.i) {
-                canvas.save();
-                canvas.clipPath(path);
-                if (this.g == null) {
-                    ecVar.d();
-                }
-                ecVar.a(canvas, this.a);
-                canvas.restore();
-                if (this.g == null) {
-                    invalidateSelf();
-                }
-            }
-        }
+    public final void b(String str, boolean z10) {
+        this.b = str;
+        this.a.g(z10 ? 10 : 11, str, z10);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int width = getWidth();
+        int height = getHeight();
+        j3 j3Var = this.a;
+        j3Var.setBounds(0, 0, width, height);
+        j3Var.draw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        float min = Math.min(rect.width(), rect.height()) / 2.0f;
-        RectF rectF = this.b;
-        rectF.set(rect);
-        Path path = this.c;
-        path.rewind();
-        path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        ec ecVar = this.e;
-        if (ecVar != null) {
-            ecVar.g(rectF);
-        }
+    public CharSequence getText() {
+        return this.b;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.d.setAlpha(i7);
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.d.setColorFilter(colorFilter);
+    public void setBackdrop(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+        this.a.e(stargiftattributebackdrop, false, false);
+        invalidate();
     }
 
-    public h3(int i7, int i10) {
-        this.b = new RectF();
-        this.c = new Path();
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.a = i7;
-        paint.setColor(i10);
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.e = new ec(1, 25);
-        } else {
-            this.e = null;
-        }
+    public void setColor(int i7) {
+        this.a.f(i7);
+    }
+
+    public void setStrokeColor(int i7) {
+        this.a.r.setColor(i7);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.a == drawable || super.verifyDrawable(drawable);
     }
 }

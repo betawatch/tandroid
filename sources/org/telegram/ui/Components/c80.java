@@ -1,22 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class c80 extends e9 {
-    public final /* synthetic */ di.d1 e;
+public final class c80 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
+    public final /* synthetic */ ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c80(di.d1 d1Var, Context context) {
-        super(context, false);
-        this.e = d1Var;
+    public /* synthetic */ c80(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i7) {
+        this.a = i7;
+        this.e = viewGroup;
+        this.c = view;
+        this.b = frameLayout;
+        this.d = onPreDrawListener;
     }
 
-    @Override // org.telegram.ui.Components.e9, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(Math.min(3, ((e80) this.e.d).x) == 0 ? 0 : com.google.android.gms.internal.vision.e2.v(r4, 1, 20, 32)), TLObject.FLAG_30), i10);
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        switch (this.a) {
+            case 0:
+                ((g80) this.e).s = null;
+                hi.l5 l5Var = (hi.l5) this.c;
+                l5Var.animate().cancel();
+                l5Var.animate().alpha(0.0f).setDuration(150L).setListener(new s60(this, 3));
+                break;
+            default:
+                ((org.telegram.ui.iy) this.e).y = null;
+                hi.l5 l5Var2 = (hi.l5) this.c;
+                l5Var2.animate().cancel();
+                l5Var2.animate().alpha(0.0f).setDuration(150L).setListener(new org.telegram.ui.ay(this, 0));
+                break;
+        }
     }
 }

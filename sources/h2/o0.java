@@ -17,12 +17,12 @@ import android.os.SystemClock;
 import android.util.Log;
 import c8.ad;
 import c8.bc;
-import fi.a6;
+import fi.l4;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class o0 implements yb.a {
     public final /* synthetic */ int a = 1;
@@ -45,7 +45,7 @@ public final class o0 implements yb.a {
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
         i0 i0Var2 = (i0) this.f;
-        i0Var2.a.postDelayed(new a6(25, this, atomicBoolean), 1000L);
+        i0Var2.a.postDelayed(new l4(27, this, atomicBoolean), 1000L);
         i0Var.d(new n0(this, atomicBoolean, z10, z11, 0));
     }
 

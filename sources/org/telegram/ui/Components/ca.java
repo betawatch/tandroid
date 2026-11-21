@@ -10,7 +10,7 @@ import android.view.View;
 import java.util.ArrayList;
 import javax.microedition.khronos.egl.EGLContext;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ca {
     public int a;
@@ -22,7 +22,7 @@ public final class ca {
     public EGLContext g;
     public final Object h;
     public int i;
-    public hi.fa j;
+    public hi.ea j;
     public Object k;
     public Object l;
     public ha m;
@@ -37,7 +37,7 @@ public final class ca {
         this.e = new ArrayList();
         this.f = new Object();
         this.h = new Object();
-        this.n = new h2.c(0, new lg(this, 14));
+        this.n = new h2.c(0, new og(this, 14));
         this.p = 0;
         this.b = view;
         if (view.isAttachedToWindow()) {
@@ -49,7 +49,7 @@ public final class ca {
                 }
             }
         }
-        view.addOnAttachStateChangeListener(new bi.r2(this, 11));
+        view.addOnAttachStateChangeListener(new bi.v2(this, 11));
     }
 
     public final void a(EGLContext eGLContext) {
@@ -119,8 +119,8 @@ public final class ca {
         this.o = this.n.s(bitmap, sb2.toString(), 0, 0, z10);
     }
 
-    public final void g(hi.fa faVar, Object obj) {
-        this.j = faVar;
+    public final void g(hi.ea eaVar, Object obj) {
+        this.j = eaVar;
         this.k = obj;
         this.i = -14737633;
         if (obj == null || Build.VERSION.SDK_INT < 31) {

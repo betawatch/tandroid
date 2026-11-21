@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class n implements TextView.OnEditorActionListener 
 
     @Override // android.widget.TextView.OnEditorActionListener
     public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
-        oi.d1 d1Var;
+        oi.e1 e1Var;
         switch (this.a) {
             case 0:
                 t tVar = (t) this.b;
@@ -29,51 +29,51 @@ public final /* synthetic */ class n implements TextView.OnEditorActionListener 
                     break;
                 }
             case 1:
-                kg.t0 t0Var = (kg.t0) this.b;
-                kg.n0 n0Var = t0Var.G;
+                kg.s0 s0Var = (kg.s0) this.b;
+                kg.m0 m0Var = s0Var.G;
                 boolean z10 = false;
                 if (i7 == 6) {
-                    t0Var.y = false;
-                    org.telegram.messenger.g0.r(n0Var);
+                    s0Var.y = false;
+                    org.telegram.messenger.g0.r(m0Var);
                     z10 = true;
-                    if (TextUtils.isEmpty(t0Var.f.getText())) {
-                        t0Var.E = null;
-                        t0Var.d.b();
-                        t0Var.c.g3.O(true);
+                    if (TextUtils.isEmpty(s0Var.f.getText())) {
+                        s0Var.E = null;
+                        s0Var.d.b();
+                        s0Var.c.g3.O(true);
                     } else {
-                        org.telegram.messenger.g0.g3(n0Var);
+                        org.telegram.messenger.g0.g3(m0Var);
                     }
-                    t0Var.g0();
+                    s0Var.g0();
                     break;
                 }
                 break;
             case 2:
-                oi.e1 e1Var = (oi.e1) this.b;
-                if (i7 == 5 && (d1Var = e1Var.e2) != null && !e1Var.n2) {
-                    if (!e1Var.k2) {
-                        d1Var.x0(e1Var);
+                oi.f1 f1Var = (oi.f1) this.b;
+                if (i7 == 5 && (e1Var = f1Var.e2) != null && !f1Var.n2) {
+                    if (!f1Var.k2) {
+                        e1Var.x0(f1Var);
                         break;
                     } else {
-                        e1Var.M();
+                        f1Var.M();
                         break;
                     }
                 }
                 break;
             case 3:
-                org.telegram.ui.ActionBar.r0 r0Var = (org.telegram.ui.ActionBar.r0) this.b;
+                org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(r0Var.e);
-                        org.telegram.ui.ActionBar.n0 n0Var2 = r0Var.I;
-                        if (n0Var2 != null) {
-                            n0Var2.k(r0Var.e);
+                        org.telegram.messenger.g0.v1(q0Var.e);
+                        org.telegram.ui.ActionBar.m0 m0Var2 = q0Var.I;
+                        if (m0Var2 != null) {
+                            m0Var2.k(q0Var.e);
                             break;
                         }
                     }
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.a5.i((org.telegram.ui.ActionBar.a5) this.b, i7, keyEvent);
+                org.telegram.ui.ActionBar.z4.i((org.telegram.ui.ActionBar.z4) this.b, i7, keyEvent);
                 break;
         }
         return false;

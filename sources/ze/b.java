@@ -2,42 +2,42 @@ package ze;
 
 import android.graphics.Paint;
 import android.text.SpannableStringBuilder;
-import hi.g;
-import hi.n;
+import hi.h;
+import hi.o;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.q90;
-import ug.n0;
+import org.telegram.ui.Components.s90;
+import ug.m0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class b implements q90 {
+public final class b implements s90 {
     public final /* synthetic */ int a = 0;
     public Object b;
 
     public /* synthetic */ b() {
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public Paint.FontMetricsInt P() {
-        return ((n) this.b).f.getEditText().getPaint().getFontMetricsInt();
+        return ((o) this.b).f.getEditText().getPaint().getFontMetricsInt();
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public void l0(int i7, int i10, CharSequence charSequence, boolean z10) {
-        g gVar = ((n) this.b).f;
-        if (gVar == null) {
+        h hVar = ((o) this.b).f;
+        if (hVar == null) {
             return;
         }
         try {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gVar.getText());
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hVar.getText());
             spannableStringBuilder.replace(i7, i10 + i7, charSequence);
             if (z10) {
-                j6.l(spannableStringBuilder, gVar.getEditText().getPaint().getFontMetricsInt(), false);
+                j6.l(spannableStringBuilder, hVar.getEditText().getPaint().getFontMetricsInt(), false);
             }
-            gVar.setText(spannableStringBuilder);
-            gVar.setSelection(i7 + charSequence.length());
+            hVar.setText(spannableStringBuilder);
+            hVar.setSelection(i7 + charSequence.length());
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -50,7 +50,7 @@ public final class b implements q90 {
                 StringBuffer stringBuffer = new StringBuffer();
                 stringBuffer.append("method-execution".substring(7));
                 stringBuffer.append("(");
-                stringBuffer.append(((n0) this.b).m());
+                stringBuffer.append(((m0) this.b).m());
                 stringBuffer.append(")");
                 return stringBuffer.toString();
             default:
@@ -58,19 +58,19 @@ public final class b implements q90 {
         }
     }
 
-    public b(n nVar) {
-        this.b = nVar;
+    public b(o oVar) {
+        this.b = oVar;
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public /* synthetic */ void q0(String str) {
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public /* synthetic */ void Y(TLRPC.TL_document tL_document, String str, Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public /* synthetic */ void g(TLRPC.BotInlineResult botInlineResult, boolean z10, int i7) {
     }
 }

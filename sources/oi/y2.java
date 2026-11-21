@@ -1,11 +1,47 @@
 package oi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes4.dex */
-public final class y2 {
-    public final /* synthetic */ s3 a;
+import android.view.View;
 
-    public y2(s3 s3Var) {
-        this.a = s3Var;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class y2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t3 b;
+    public final /* synthetic */ a c;
+
+    public /* synthetic */ y2(t3 t3Var, a aVar, int i7) {
+        this.a = i7;
+        this.b = t3Var;
+        this.c = aVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                View C1 = this.b.C1(this.c);
+                if (C1 instanceof a6) {
+                    a6 a6Var = (a6) C1;
+                    a6Var.B();
+                    a6Var.getEditText().setSelection(0);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.g3(this.c);
+                break;
+            case 2:
+                this.b.g3(this.c);
+                break;
+            case 3:
+                this.b.h3(this.c);
+                break;
+            case 4:
+                this.b.g3(this.c);
+                break;
+            default:
+                this.b.g3(this.c);
+                break;
+        }
     }
 }

@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s9 extends Drawable {
     public TextPaint a;
@@ -47,9 +47,9 @@ public final class s9 extends Drawable {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.g, max);
         this.i = ofFloat;
-        ofFloat.addUpdateListener(new w(this, 6));
-        this.i.addListener(new org.telegram.ui.ActionBar.t0(this, max, 4));
-        this.i.setInterpolator(lr.h);
+        ofFloat.addUpdateListener(new x(this, 6));
+        this.i.addListener(new org.telegram.ui.ActionBar.s0(this, max, 4));
+        this.i.setInterpolator(nr.h);
         this.i.setDuration(200L);
         this.i.start();
     }

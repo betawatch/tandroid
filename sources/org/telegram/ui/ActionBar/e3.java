@@ -1,122 +1,76 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
+import a8.xa;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
-import java.util.ArrayList;
+import org.telegram.messenger.a8;
 import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class e3 extends k1.b {
-    public static final /* synthetic */ int r = 0;
-    public final RectF o;
-    public final Rect p;
-    public final /* synthetic */ g3 q;
+public class e3 {
+    public boolean A;
+    public boolean B;
+    public boolean C;
+    public boolean D;
+    public String E;
+    public Bitmap F;
+    public boolean G;
+    public String H;
+    public float I;
+    public org.telegram.ui.g4 J;
+    public ki.v0 K;
+    public boolean L;
+    public ki.e4 a;
+    public org.telegram.ui.web.s0 b;
+    public org.telegram.ui.k3 c;
+    public Object d;
+    public boolean e;
+    public String f;
+    public int g;
+    public int h;
+    public int i;
+    public boolean j;
+    public float k = Float.MAX_VALUE;
+    public boolean l = true;
+    public Bitmap m;
+    public boolean n;
+    public boolean o;
+    public int p;
+    public int q;
+    public int r;
+    public int s;
+    public boolean t;
+    public boolean u;
+    public boolean v;
+    public xa w;
+    public String x;
+    public boolean y;
+    public boolean z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e3(g3 g3Var, g3 g3Var2) {
-        super(g3Var2);
-        this.q = g3Var;
-        this.o = new RectF();
-        this.p = new Rect();
-    }
-
-    @Override // k1.b
-    public final int g(float f10, float f11) {
-        d3 c10;
-        g3 g3Var = this.q;
-        if (!g3Var.b) {
-            return -1;
-        }
-        ArrayList<f3> tabs = g3Var.getTabs();
-        if (tabs.isEmpty() || (c10 = g3Var.c(tabs.get(0))) == null) {
-            return -1;
-        }
-        float c11 = c10.c();
-        RectF rectF = this.o;
-        g3Var.d(rectF, c11);
-        Rect bounds = c10.l.getBounds();
-        if (bounds.isEmpty() || !bounds.contains((int) (f10 - rectF.left), (int) (f11 - rectF.centerY()))) {
-            return rectF.contains(f10, f11) ? 1 : -1;
-        }
-        return 2;
-    }
-
-    @Override // k1.b
-    public final void h(ArrayList arrayList) {
-        g3 g3Var = this.q;
-        if (g3Var.b) {
-            ArrayList<f3> tabs = g3Var.getTabs();
-            if (tabs.isEmpty() || g3Var.c(tabs.get(0)) == null) {
-                return;
+    public final void a() {
+        try {
+            org.telegram.ui.web.s0 s0Var = this.b;
+            if (s0Var != null) {
+                s0Var.destroy();
+                this.b = null;
             }
-            arrayList.add(1);
-            arrayList.add(2);
+            org.telegram.ui.g4 g4Var = this.J;
+            if (g4Var != null) {
+                g4Var.q();
+            }
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
     }
 
-    @Override // k1.b
-    public final boolean k(int i7, int i10) {
-        if (i10 == 16) {
-            g3 g3Var = this.q;
-            ArrayList<f3> tabs = g3Var.getTabs();
-            if (!tabs.isEmpty()) {
-                f3 f3Var = tabs.get(0);
-                if (i7 == 1) {
-                    g3Var.b();
-                    return true;
-                }
-                if (i7 == 2) {
-                    g3Var.g(f3Var, new fi.e(7));
-                    return true;
-                }
-            }
+    public String b() {
+        if (this.J != null) {
+            return TextUtils.isEmpty(this.E) ? gd.N0(2131742662, null) : this.E;
         }
-        return false;
-    }
-
-    @Override // k1.b
-    public final void l(int i7, s0.c cVar) {
-        String str;
-        String str2;
-        g3 g3Var = this.q;
-        ArrayList<f3> tabs = g3Var.getTabs();
-        f3 f3Var = tabs.isEmpty() ? null : tabs.get(0);
-        d3 c10 = f3Var == null ? null : g3Var.c(f3Var);
-        cVar.i("android.widget.Button");
-        cVar.b(s0.b.c);
-        Rect rect = this.p;
-        if (c10 == null) {
-            rect.set(0, 0, 1, 1);
-            cVar.h(rect);
-            cVar.j("");
-            cVar.p(false);
-            return;
-        }
-        float c11 = c10.c();
-        RectF rectF = this.o;
-        g3Var.d(rectF, c11);
-        String b10 = f3Var.b() != null ? f3Var.b() : "";
-        if (i7 != 2) {
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            cVar.h(rect);
-            if (TextUtils.isEmpty(b10)) {
-                str = gd.M0(2131747624, null);
-            } else {
-                str = gd.M0(2131747624, null) + ", " + b10;
-            }
-            cVar.j(str);
-            return;
-        }
-        Rect bounds = c10.l.getBounds();
-        rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
-        cVar.h(rect);
-        if (TextUtils.isEmpty(b10)) {
-            str2 = gd.M0(2131752030, null);
-        } else {
-            str2 = gd.M0(2131752030, null) + ", " + b10;
-        }
-        cVar.j(str2);
+        ki.e4 e4Var = this.a;
+        return e4Var == null ? "" : e4Var.g == 6 ? e4Var.e : o10.q(mp.u1(e4Var.a).c2(Long.valueOf(this.a.c)));
     }
 }

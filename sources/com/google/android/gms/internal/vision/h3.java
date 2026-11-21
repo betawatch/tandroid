@@ -7,9 +7,9 @@ import android.os.RemoteException;
 import android.util.Log;
 import c8.mc;
 import j$.util.Objects;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class h3 {
     public final Context a;
@@ -150,15 +150,15 @@ public abstract class h3 {
         }
     }
 
-    public h3(Context context, hn hnVar) {
+    public h3(Context context, jn jnVar) {
         this.e = new android.support.v4.media.session.q(this, 12);
         if (context != null) {
             this.a = context;
-            if (hnVar == null) {
-                this.d = new hn(new ComponentName(context, getClass()), 15);
+            if (jnVar == null) {
+                this.d = new jn(new ComponentName(context, getClass()), 15);
                 return;
             } else {
-                this.d = hnVar;
+                this.d = jnVar;
                 return;
             }
         }

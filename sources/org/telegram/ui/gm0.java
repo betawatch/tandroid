@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class gm0 extends Drawable {
     public static final /* synthetic */ int j = 0;
@@ -20,7 +20,7 @@ public final class gm0 extends Drawable {
     public final Paint f;
     public final Path g;
     public final Path h;
-    public final org.telegram.ui.Components.m5 i;
+    public final org.telegram.ui.Components.n5 i;
 
     public gm0(int i7, int i10, int i11) {
         Paint paint = new Paint(1);
@@ -41,8 +41,8 @@ public final class gm0 extends Drawable {
 
     public static gm0 a(int i7, int i10) {
         if (i10 < 7) {
-            int[] iArr = org.telegram.ui.ActionBar.n6.r8;
-            return new gm0(org.telegram.ui.ActionBar.n6.x0(null, iArr[i10], false), org.telegram.ui.ActionBar.n6.x0(null, iArr[i10], false), org.telegram.ui.ActionBar.n6.x0(null, iArr[i10], false));
+            int[] iArr = org.telegram.ui.ActionBar.m6.r8;
+            return new gm0(org.telegram.ui.ActionBar.m6.x0(null, iArr[i10], false), org.telegram.ui.ActionBar.m6.x0(null, iArr[i10], false), org.telegram.ui.ActionBar.m6.x0(null, iArr[i10], false));
         }
         org.telegram.messenger.cp cpVar = org.telegram.messenger.mp.u1(i7).t4;
         return b(cpVar != null ? cpVar.d(i10) : null, false);
@@ -52,7 +52,7 @@ public final class gm0 extends Drawable {
         if (bpVar == null) {
             return new gm0(0, 0, 0);
         }
-        return new gm0(bpVar.f(), (!z10 || bpVar.o(org.telegram.ui.ActionBar.n6.I.q())) ? bpVar.g() : bpVar.f(), z10 ? bpVar.f() : bpVar.i());
+        return new gm0(bpVar.f(), (!z10 || bpVar.o(org.telegram.ui.ActionBar.m6.I.q())) ? bpVar.g() : bpVar.f(), z10 ? bpVar.f() : bpVar.i());
     }
 
     public static gm0 c(int i7, int i10) {
@@ -94,24 +94,24 @@ public final class gm0 extends Drawable {
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.33f), org.telegram.messenger.g0.L(2.33f), this.f);
         }
         canvas.restore();
-        org.telegram.ui.Components.m5 m5Var = this.i;
-        if (m5Var != null) {
+        org.telegram.ui.Components.n5 n5Var = this.i;
+        if (n5Var != null) {
             int L = org.telegram.messenger.g0.L(14.0f) / 2;
-            m5Var.setBounds(getBounds().centerX() - L, getBounds().centerY() - L, getBounds().centerX() + L, getBounds().centerY() + L);
-            m5Var.draw(canvas);
+            n5Var.setBounds(getBounds().centerX() - L, getBounds().centerY() - L, getBounds().centerX() + L, getBounds().centerY() + L);
+            n5Var.draw(canvas);
         }
     }
 
     public final void e(View view) {
-        org.telegram.ui.Components.m5 m5Var = this.i;
+        org.telegram.ui.Components.n5 n5Var = this.i;
         if (view != null) {
-            if (m5Var != null) {
-                m5Var.l(view);
+            if (n5Var != null) {
+                n5Var.l(view);
             }
             view.addOnAttachStateChangeListener(new e5(this, 4));
-        } else if (m5Var != null) {
-            m5Var.b();
-            m5Var.l(null);
+        } else if (n5Var != null) {
+            n5Var.b();
+            n5Var.l(null);
         }
     }
 
@@ -154,9 +154,9 @@ public final class gm0 extends Drawable {
         paint2.setColor(i10);
         paint3.setColor(i11);
         d();
-        org.telegram.ui.Components.m5 m5Var = new org.telegram.ui.Components.m5(org.telegram.messenger.g0.L(14.0f), null);
-        this.i = m5Var;
-        m5Var.j(j3, false);
+        org.telegram.ui.Components.n5 n5Var = new org.telegram.ui.Components.n5(org.telegram.messenger.g0.L(14.0f), null);
+        this.i = n5Var;
+        n5Var.j(j3, false);
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -1,162 +1,42 @@
 package hi;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.io.File;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j10;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lr;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public abstract class j6 extends FrameLayout {
-    public ValueAnimator E;
-    public float F;
-    public final i6 a;
-    public final File b;
-    public long c;
-    public long d;
-    public final Paint e;
-    public final Paint f;
-    public final f6 h;
-    public fi.b0 n;
-    public o r;
-    public float s;
-    public tg.r1 w;
-    public ValueAnimator x;
-    public boolean y;
+public final /* synthetic */ class j6 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n6 b;
 
-    public j6(Context context) {
-        super(context);
-        this.c = -1L;
-        this.d = -1L;
-        this.e = new Paint(1);
-        Paint paint = new Paint(1);
-        this.f = paint;
-        this.h = new f6(this, 0);
-        this.s = 1.0f;
-        this.y = false;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        this.b = d7.x(j10.t0, true);
-        i6 i6Var = new i6(this, context);
-        this.a = i6Var;
-        i6Var.setScaleX(0.0f);
-        i6Var.setScaleY(0.0f);
-        addView(i6Var);
-        i6Var.setDelegate(new g6(this));
-        i6Var.initTexture();
-        setWillNotDraw(false);
+    public /* synthetic */ j6(n6 n6Var, int i7) {
+        this.a = i7;
+        this.b = n6Var;
     }
 
-    public final void a(boolean z10) {
-        o oVar = this.r;
-        if (oVar != null) {
-            oVar.run();
-            this.r = null;
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                m6 m6Var = (m6) obj;
+                n6 n6Var = this.b;
+                n6Var.I = null;
+                n6Var.F = m6Var;
+                n6Var.E = m6Var != null;
+                n6Var.a();
+                n6Var.invalidate();
+                r8 r8Var = n6Var.b;
+                if (r8Var != null) {
+                    r8Var.run();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
+                m6 m6Var2 = this.b.F;
+                if (m6Var2 != null || g2Var == null) {
+                    m6Var2.c(g2Var);
+                    break;
+                }
         }
-        org.telegram.messenger.g0.r(this.h);
-        this.a.destroy(true, null);
-        try {
-            this.b.delete();
-        } catch (Exception unused) {
-        }
-        if (z10) {
-            if (getParent() instanceof ViewGroup) {
-                ((ViewGroup) getParent()).removeView(this);
-                return;
-            }
-            return;
-        }
-        ValueAnimator valueAnimator = this.E;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.F, 1.0f);
-        this.E = ofFloat;
-        ofFloat.addUpdateListener(new k3(this, 4));
-        this.E.addListener(new ai.j0(this, 25));
-        this.E.setInterpolator(lr.h);
-        this.E.setDuration(280L);
-        this.E.start();
-    }
-
-    public final long b() {
-        if (this.c < 0) {
-            return 0L;
-        }
-        long j3 = this.d;
-        if (j3 < 0) {
-            j3 = System.currentTimeMillis();
-        }
-        return Math.min(59500L, j3 - this.c);
-    }
-
-    public abstract void c();
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        RectF rectF = org.telegram.messenger.g0.P;
-        i6 i6Var = this.a;
-        rectF.set(((1.0f - i6Var.getScaleX()) * (i6Var.getWidth() / 2.0f)) + i6Var.getX(), ((1.0f - i6Var.getScaleY()) * (i6Var.getHeight() / 2.0f)) + i6Var.getY(), (i6Var.getX() + i6Var.getWidth()) - ((1.0f - i6Var.getScaleX()) * (i6Var.getWidth() / 2.0f)), (i6Var.getY() + i6Var.getHeight()) - ((1.0f - i6Var.getScaleY()) * (i6Var.getHeight() / 2.0f)));
-        float L = org.telegram.messenger.g0.L(2.0f);
-        float L2 = org.telegram.messenger.g0.L(0.66f);
-        int r12 = org.telegram.ui.ActionBar.n6.r1(this.s, TLObject.FLAG_29);
-        Paint paint = this.e;
-        paint.setShadowLayer(L, 0.0f, L2, r12);
-        paint.setAlpha((int) (this.s * 255.0f));
-        canvas.drawCircle(rectF.centerX(), rectF.centerY(), Math.min(rectF.width() / 2.0f, rectF.height() / 2.0f) - 1.0f, paint);
-        super.dispatchDraw(canvas);
-        tg.r1 r1Var = this.w;
-        if (r1Var != null && r1Var.getWidth() > 0 && this.w.getHeight() > 0) {
-            canvas.save();
-            canvas.translate(rectF.left, rectF.top);
-            canvas.scale(rectF.width() / this.w.getWidth(), rectF.height() / this.w.getHeight());
-            float alpha = this.w.getAlpha();
-            this.w.setDraw(true);
-            this.w.setAlpha(1.0f - this.s);
-            this.w.draw(canvas);
-            this.w.setAlpha(alpha);
-            this.w.setDraw(false);
-            canvas.restore();
-        }
-        if (this.c > 0) {
-            float i7 = Utilities.i(b() / 59500.0f, 1.0f, 0.0f);
-            float L3 = org.telegram.messenger.g0.L(3.33f);
-            Paint paint2 = this.f;
-            paint2.setStrokeWidth(L3);
-            paint2.setColor(org.telegram.ui.ActionBar.n6.r1(this.s, -1090519041));
-            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.33f), org.telegram.ui.ActionBar.n6.r1(this.s, TLObject.FLAG_29));
-            rectF.inset(-org.telegram.messenger.g0.L(7.665f), -org.telegram.messenger.g0.L(7.665f));
-            canvas.drawArc(rectF, -90.0f, i7 * 360.0f, false, paint2);
-            if (this.d <= 0) {
-                invalidate();
-            }
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        i6 i6Var = this.a;
-        int measuredWidth = ((i11 - i7) - i6Var.getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f);
-        int L = org.telegram.messenger.g0.L(72.0f);
-        i6Var.layout(measuredWidth, L, i6Var.getMeasuredWidth() + measuredWidth, i6Var.getMeasuredHeight() + L);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        int size2 = View.MeasureSpec.getSize(i10);
-        int min = (int) (Math.min(size, size2) * 0.43f);
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30));
-        setMeasuredDimension(size, size2);
     }
 }

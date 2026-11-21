@@ -9,10 +9,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.h60;
 import org.telegram.ui.j70;
-import org.telegram.ui.o60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q4 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -131,7 +131,7 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                 break;
             default:
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
-                o60 o60Var = (o60) this.e;
+                h60 h60Var = (h60) this.e;
                 boolean z17 = this.b;
                 Long l10 = (Long) this.f;
                 vf.b bVar = (vf.b) this.g;
@@ -139,18 +139,18 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                 Integer num = (Integer) this.i;
                 Integer num2 = (Integer) this.j;
                 byte[] bArr = (byte[]) this.k;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.l;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.l;
                 int i14 = this.c;
                 Bundle bundle = (Bundle) this.m;
                 String str = LaunchActivity.C1;
-                g0.g3(new j70(launchActivity, o60Var, tLObject, z17, l10, bVar, l11, num, num2, bArr, h2Var, i14, bundle));
+                g0.g3(new j70(launchActivity, h60Var, tLObject, z17, l10, bVar, l11, num, num2, bArr, g2Var, i14, bundle));
                 break;
         }
     }
 
-    public /* synthetic */ q4(LaunchActivity launchActivity, o60 o60Var, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.h2 h2Var, int i7, Bundle bundle) {
+    public /* synthetic */ q4(LaunchActivity launchActivity, h60 h60Var, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.g2 g2Var, int i7, Bundle bundle) {
         this.d = launchActivity;
-        this.e = o60Var;
+        this.e = h60Var;
         this.b = z10;
         this.f = l10;
         this.g = bVar;
@@ -158,7 +158,7 @@ public final /* synthetic */ class q4 implements RequestDelegate {
         this.i = num;
         this.j = num2;
         this.k = bArr;
-        this.l = h2Var;
+        this.l = g2Var;
         this.c = i7;
         this.m = bundle;
     }

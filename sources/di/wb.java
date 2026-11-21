@@ -3,7 +3,7 @@ package di;
 import android.content.Context;
 import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class wb extends jc {
     public final /* synthetic */ boolean n0;
@@ -11,8 +11,8 @@ public final class wb extends jc {
     public final /* synthetic */ mc p0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wb(mc mcVar, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, int i7) {
-        super(context, i6Var);
+    public wb(mc mcVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, int i7) {
+        super(context, h6Var);
         this.p0 = mcVar;
         this.n0 = z10;
         this.o0 = i7;
@@ -23,9 +23,9 @@ public final class wb extends jc {
         long j3 = i7;
         mc mcVar = this.p0;
         mcVar.O0(j3);
-        hi.d dVar = mcVar.x1;
-        if (dVar != null) {
-            dVar.i(pb.Z0(false, gd.a0(null, null, 2131744812, gd.E(j3, ',')), mcVar.N1), true, true);
+        hi.e eVar = mcVar.x1;
+        if (eVar != null) {
+            eVar.i(pb.Z0(false, gd.a0(null, null, 2131744806, gd.E(j3, ',')), mcVar.N1), true, true);
         }
         if (this.n0) {
             fi.r0 r0Var = mcVar.B1;

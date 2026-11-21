@@ -1,48 +1,84 @@
 package ki;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.xb0;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ShapeDrawable;
+import android.widget.FrameLayout;
+import c8.ma;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.b9;
+import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class o1 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ xb0 d;
-
-    public o1(EditTextBoldCursor editTextBoldCursor, int i7, xb0 xb0Var) {
-        this.b = editTextBoldCursor;
-        this.c = i7;
-        this.d = xb0Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        EditTextBoldCursor editTextBoldCursor = this.b;
-        CharSequence text = editTextBoldCursor.getText();
-        if (!this.a) {
-            int length = text.length();
-            int i7 = this.c;
-            if (length > i7) {
-                this.a = true;
-                text = text.subSequence(0, i7);
-                editTextBoldCursor.setText(text);
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                this.a = false;
+public abstract class o1 {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void a(Activity activity, int i7, long j3, long j10, TL_bots.BotVerifierSettings botVerifierSettings, bi.v3 v3Var) {
+        String str;
+        TLRPC.Chat chat;
+        if (j10 >= 0) {
+            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j10));
+            str = o10.l(c22);
+            chat = c22;
+        } else {
+            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j10));
+            if (O0 == null) {
+                str = "";
+                chat = O0;
+            } else {
+                str = O0.title;
+                chat = O0;
             }
         }
-        this.d.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(text));
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        FrameLayout frameLayout = new FrameLayout(activity);
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        int L = org.telegram.messenger.g0.L(28.0f);
+        int L2 = org.telegram.messenger.g0.L(28.0f);
+        int i10 = m6.Ti;
+        ShapeDrawable e02 = m6.e0(L, L2, m6.x0(null, i10, false));
+        p6 M = t6.M(i10);
+        frameLayout2.setBackground(e02);
+        t6.j(frameLayout2, e02, M, null, null);
+        q9 q9Var = new q9(activity);
+        q9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
+        b9 b9Var = new b9((h6) null);
+        b9Var.l(chat);
+        q9Var.f(chat, b9Var);
+        frameLayout2.addView(q9Var, ma.e(28, 28, 51));
+        q9 q9Var2 = new q9(activity);
+        q9Var2.setEmojiColorFilter(new PorterDuffColorFilter(m6.x0(null, m6.z9, false), PorterDuff.Mode.SRC_IN));
+        q9Var2.setAnimatedEmojiDrawable(p5.m(i7, botVerifierSettings.icon, null, 3));
+        frameLayout2.addView(q9Var2, ma.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
+        m5 m5Var = new m5(activity);
+        t6.X(m5Var, m6.j5, null);
+        m5Var.setTextSize(13);
+        m5Var.setEllipsizeByGradient(true);
+        m5Var.l(str, false);
+        m5Var.setWidthWrapContent(true);
+        frameLayout2.addView(m5Var, ma.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        frameLayout.addView(frameLayout2, ma.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
+        boolean[] zArr = new boolean[1];
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
+        String N0 = gd.N0(2131752985, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = N0;
+        t1Var.U = gd.N0(j10 >= 0 ? 2131752986 : 2131752987, null);
+        alertDialog$Builder.o(frameLayout);
+        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+        alertDialog$Builder.k(gd.N0(2131746125, null), new ii.h(zArr, i7, j3, j10, v3Var));
+        alertDialog$Builder.d(-1);
+        alertDialog$Builder.p();
     }
 }

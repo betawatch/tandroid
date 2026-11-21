@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n90 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class n90 implements Runnable {
                 TLRPC.UserFull userFull = profileActivity.w2;
                 if (userFull != null) {
                     org.telegram.messenger.g0.g(org.telegram.messenger.fj.h0(userFull.note, false));
-                    org.telegram.messenger.n10.t(null, 2131743959, org.telegram.ui.Components.lc.b0(profileActivity));
+                    org.telegram.messenger.n10.t(null, 2131743953, org.telegram.ui.Components.lc.b0(profileActivity));
                     break;
                 }
                 break;
@@ -81,12 +81,12 @@ public final /* synthetic */ class n90 implements Runnable {
             case 10:
                 RectF rectF6 = ProfileActivity.Z6;
                 profileActivity.getClass();
-                profileActivity.presentFragment(new kg.f1());
+                profileActivity.presentFragment(new kg.e1());
                 break;
             case 11:
                 RectF rectF7 = ProfileActivity.Z6;
                 profileActivity.getClass();
-                profileActivity.presentFragment(new kg.d1());
+                profileActivity.presentFragment(new kg.c1());
                 break;
             case 12:
                 RectF rectF8 = ProfileActivity.Z6;
@@ -105,9 +105,9 @@ public final /* synthetic */ class n90 implements Runnable {
                 break;
             case 15:
                 RectF rectF11 = ProfileActivity.Z6;
-                org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
-                f2Var.a = true;
-                profileActivity.showAsSheet(new PrivacyControlActivity(11, false), f2Var);
+                org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
+                e2Var.a = true;
+                profileActivity.showAsSheet(new PrivacyControlActivity(11, false), e2Var);
                 break;
             case 16:
                 RectF rectF12 = ProfileActivity.Z6;

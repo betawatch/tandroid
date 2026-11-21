@@ -1,25 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class h11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i11 b;
+import android.content.Context;
 
-    public /* synthetic */ h11(i11 i11Var, int i7) {
-        this.a = i7;
-        this.b = i11Var;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class h11 extends org.telegram.ui.Components.lv0 {
+    public final /* synthetic */ k01 H3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h11(k01 k01Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(i7, context, h6Var);
+        this.H3 = k01Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                super/*android.widget.PopupWindow*/.dismiss();
-                break;
-            default:
-                this.b.dismiss();
-                break;
-        }
+    @Override // org.telegram.ui.Components.lv0
+    public final boolean D1() {
+        return org.telegram.messenger.pc.e(16388) || this.H3.G.a0 == 4;
+    }
+
+    @Override // org.telegram.ui.Components.lv0
+    public final void H1(int i7) {
+        super.H1(i7);
+        this.H3.d(false);
     }
 }

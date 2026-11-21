@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class vj0 implements RequestDelegate {
     public final /* synthetic */ boolean a;
@@ -28,15 +28,15 @@ public final class vj0 implements RequestDelegate {
 
     public final void a() {
         int i7;
-        org.telegram.ui.ActionBar.s4 s4Var;
-        org.telegram.ui.ActionBar.s4 s4Var2;
+        org.telegram.ui.ActionBar.r4 r4Var;
+        org.telegram.ui.ActionBar.r4 r4Var2;
         int i10;
         hk0 hk0Var = this.e;
         if (hk0Var.Z == null) {
             return;
         }
         if (!this.a) {
-            i10 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
             org.telegram.messenger.j10 i11 = org.telegram.messenger.j10.i(i10);
             byte[] bArr = this.b;
             byte[] bArr2 = this.e.f1;
@@ -51,17 +51,17 @@ public final class vj0 implements RequestDelegate {
         hk0 hk0Var3 = new hk0(j3 == 0 ? 8 : 0, j3, hk0Var2.h, hk0Var2.r, hk0Var2.d, hk0Var2.e, hk0Var2.n, hk0Var2.E, hk0Var2.K);
         hk0 hk0Var4 = this.e;
         hk0Var3.e1 = hk0Var4.e1;
-        i7 = ((org.telegram.ui.ActionBar.h2) hk0Var4).currentAccount;
-        ((org.telegram.ui.ActionBar.h2) hk0Var3).currentAccount = i7;
+        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var4).currentAccount;
+        ((org.telegram.ui.ActionBar.g2) hk0Var3).currentAccount = i7;
         hk0 hk0Var5 = this.e;
         hk0Var3.f1 = hk0Var5.f1;
         hk0Var3.d1 = hk0Var5.d1;
         hk0Var3.c1 = hk0Var5.c1;
         hk0Var3.D1 = hk0Var5.D1;
-        s4Var = ((org.telegram.ui.ActionBar.h2) hk0Var5).parentLayout;
-        if (s4Var != null) {
-            s4Var2 = ((org.telegram.ui.ActionBar.h2) this.e).parentLayout;
-            if (((ActionBarLayout) s4Var2).i()) {
+        r4Var = ((org.telegram.ui.ActionBar.g2) hk0Var5).parentLayout;
+        if (r4Var != null) {
+            r4Var2 = ((org.telegram.ui.ActionBar.g2) this.e).parentLayout;
+            if (((ActionBarLayout) r4Var2).i()) {
                 this.e.i1 = hk0Var3;
                 return;
             }
@@ -87,7 +87,7 @@ public final class vj0 implements RequestDelegate {
         TL_account.passwordInputSettings passwordinputsettings2 = updatepasswordsettings.new_settings;
         passwordinputsettings2.new_secure_settings.secure_secret_id = 0L;
         passwordinputsettings2.flags |= 4;
-        i7 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
         ConnectionsManager.getInstance(i7).sendRequest(this.c, new tj0(this, 1));
     }
 
@@ -104,7 +104,7 @@ public final class vj0 implements RequestDelegate {
             }
         }
         TL_account.getPassword getpassword = new TL_account.getPassword();
-        i7 = ((org.telegram.ui.ActionBar.h2) this.e).currentAccount;
-        ConnectionsManager.getInstance(i7).sendRequest(getpassword, new hi.c3(8, this, this.a), 8);
+        i7 = ((org.telegram.ui.ActionBar.g2) this.e).currentAccount;
+        ConnectionsManager.getInstance(i7).sendRequest(getpassword, new hi.b3(8, this, this.a), 8);
     }
 }

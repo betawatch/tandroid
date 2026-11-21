@@ -9,10 +9,10 @@ import c8.ma;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class o extends LinearLayout {
     public final TextView a;
@@ -26,13 +26,13 @@ public final class o extends LinearLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 16.0f);
-        u6.U(textView, n6.j5, null);
+        t6.U(textView, m6.j5, null);
         textView.setGravity(gd.a0 ? 5 : 3);
         addView(textView, ma.t(-1, -2, 51, 0, 7, 0, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 13.0f);
-        u6.U(textView2, n6.q5, null);
+        t6.U(textView2, m6.q5, null);
         textView2.setGravity(gd.a0 ? 5 : 3);
         addView(textView2, ma.t(-1, -2, 51, 0, 4, 0, 0));
     }
@@ -41,7 +41,7 @@ public final class o extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.c) {
-            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), n6.k0);
+            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), m6.k0);
         }
     }
 

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class v41 {
     public TLRPC.User a;
@@ -31,18 +31,18 @@ public final class v41 {
         return null;
     }
 
-    public final void b(org.telegram.ui.ActionBar.h2 h2Var) {
+    public final void b(org.telegram.ui.ActionBar.g2 g2Var) {
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", this.a.id);
         org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).e4(this.a, false, false);
-        h2Var.presentFragment(new ProfileActivity(bundle, null));
+        g2Var.presentFragment(new ProfileActivity(bundle, null));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:71:0x01c1 A[LOOP:1: B:70:0x01bf->B:71:0x01c1, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(final TLRPC.ChatFull chatFull, final c51 c51Var, final org.telegram.ui.ActionBar.u1[] u1VarArr, boolean z10) {
+    public final void c(final TLRPC.ChatFull chatFull, final c51 c51Var, final org.telegram.ui.ActionBar.t1[] t1VarArr, boolean z10) {
         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant;
         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant2;
         boolean z11;
@@ -72,16 +72,16 @@ public final class v41 {
                 }
             }
         }
-        org.telegram.ui.Cells.c0.v("StatisticOpenProfile", 2131744661, arrayList2, R.drawable.msg_openprofile, arrayList4);
+        org.telegram.ui.Cells.c0.v("StatisticOpenProfile", 2131744655, arrayList2, R.drawable.msg_openprofile, arrayList4);
         arrayList3.add(2);
-        arrayList2.add(org.telegram.messenger.gd.M0(2131744659, "StatisticSearchUserHistory"));
+        arrayList2.add(org.telegram.messenger.gd.N0(2131744653, "StatisticSearchUserHistory"));
         arrayList4.add(Integer.valueOf(R.drawable.msg_msgbubble3));
         arrayList3.add(1);
         if (z10 && tL_chatChannelParticipant == null) {
-            if (u1VarArr[0] == null) {
-                org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, c51Var.getFragmentView().getContext(), null);
-                u1VarArr[0] = u1Var;
-                u1Var.r(300L);
+            if (t1VarArr[0] == null) {
+                org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, c51Var.getFragmentView().getContext(), null);
+                t1VarArr[0] = t1Var;
+                t1Var.r(300L);
             }
             TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
             tL_channels_getParticipant.channel = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).j1(chatFull.id);
@@ -101,7 +101,7 @@ public final class v41 {
                             final int i12 = 0;
                             final v41 v41Var = this.b;
                             final c51 c51Var2 = c51Var;
-                            final org.telegram.ui.ActionBar.u1[] u1VarArr2 = u1VarArr;
+                            final org.telegram.ui.ActionBar.t1[] t1VarArr2 = t1VarArr;
                             final TLRPC.ChatFull chatFull2 = chatFull;
                             org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.s41
                                 @Override // java.lang.Runnable
@@ -112,12 +112,12 @@ public final class v41 {
                                             v41Var2.getClass();
                                             c51 c51Var3 = c51Var2;
                                             if (!c51Var3.isFinishing() && c51Var3.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr3 = u1VarArr2;
-                                                if (u1VarArr3[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr3 = t1VarArr2;
+                                                if (t1VarArr3[0] != null) {
                                                     TLRPC.TL_error tL_error2 = tL_error;
                                                     TLRPC.ChatFull chatFull3 = chatFull2;
                                                     if (tL_error2 != null) {
-                                                        v41Var2.c(chatFull3, c51Var3, u1VarArr3, false);
+                                                        v41Var2.c(chatFull3, c51Var3, t1VarArr3, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -125,7 +125,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant3.channelParticipant = tL_channels_channelParticipant.participant;
                                                         tL_chatChannelParticipant3.user_id = v41Var2.a.id;
                                                         chatFull3.participants.participants.add(0, tL_chatChannelParticipant3);
-                                                        v41Var2.c(chatFull3, c51Var3, u1VarArr3, true);
+                                                        v41Var2.c(chatFull3, c51Var3, t1VarArr3, true);
                                                         break;
                                                     }
                                                 }
@@ -136,12 +136,12 @@ public final class v41 {
                                             v41Var3.getClass();
                                             c51 c51Var4 = c51Var2;
                                             if (!c51Var4.isFinishing() && c51Var4.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr4 = u1VarArr2;
-                                                if (u1VarArr4[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr4 = t1VarArr2;
+                                                if (t1VarArr4[0] != null) {
                                                     TLRPC.TL_error tL_error3 = tL_error;
                                                     TLRPC.ChatFull chatFull4 = chatFull2;
                                                     if (tL_error3 != null) {
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, false);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -149,7 +149,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
                                                         tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, true);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
                                                     }
                                                 }
@@ -163,7 +163,7 @@ public final class v41 {
                             final int i13 = 1;
                             final v41 v41Var2 = this.b;
                             final c51 c51Var3 = c51Var;
-                            final org.telegram.ui.ActionBar.u1[] u1VarArr3 = u1VarArr;
+                            final org.telegram.ui.ActionBar.t1[] t1VarArr3 = t1VarArr;
                             final TLRPC.ChatFull chatFull3 = chatFull;
                             org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.s41
                                 @Override // java.lang.Runnable
@@ -174,12 +174,12 @@ public final class v41 {
                                             v41Var22.getClass();
                                             c51 c51Var32 = c51Var3;
                                             if (!c51Var32.isFinishing() && c51Var32.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr32 = u1VarArr3;
-                                                if (u1VarArr32[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr32 = t1VarArr3;
+                                                if (t1VarArr32[0] != null) {
                                                     TLRPC.TL_error tL_error2 = tL_error;
                                                     TLRPC.ChatFull chatFull32 = chatFull3;
                                                     if (tL_error2 != null) {
-                                                        v41Var22.c(chatFull32, c51Var32, u1VarArr32, false);
+                                                        v41Var22.c(chatFull32, c51Var32, t1VarArr32, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -187,7 +187,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant3.channelParticipant = tL_channels_channelParticipant.participant;
                                                         tL_chatChannelParticipant3.user_id = v41Var22.a.id;
                                                         chatFull32.participants.participants.add(0, tL_chatChannelParticipant3);
-                                                        v41Var22.c(chatFull32, c51Var32, u1VarArr32, true);
+                                                        v41Var22.c(chatFull32, c51Var32, t1VarArr32, true);
                                                         break;
                                                     }
                                                 }
@@ -198,12 +198,12 @@ public final class v41 {
                                             v41Var3.getClass();
                                             c51 c51Var4 = c51Var3;
                                             if (!c51Var4.isFinishing() && c51Var4.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr4 = u1VarArr3;
-                                                if (u1VarArr4[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr4 = t1VarArr3;
+                                                if (t1VarArr4[0] != null) {
                                                     TLRPC.TL_error tL_error3 = tL_error;
                                                     TLRPC.ChatFull chatFull4 = chatFull3;
                                                     if (tL_error3 != null) {
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, false);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -211,7 +211,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
                                                         tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, true);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
                                                     }
                                                 }
@@ -227,10 +227,10 @@ public final class v41 {
             return;
         }
         if (z10 && tL_chatChannelParticipant2 == null) {
-            if (u1VarArr[0] == null) {
-                org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, c51Var.getFragmentView().getContext(), null);
-                u1VarArr[0] = u1Var2;
-                u1Var2.r(300L);
+            if (t1VarArr[0] == null) {
+                org.telegram.ui.ActionBar.t1 t1Var2 = new org.telegram.ui.ActionBar.t1(3, c51Var.getFragmentView().getContext(), null);
+                t1VarArr[0] = t1Var2;
+                t1Var2.r(300L);
             }
             TLRPC.TL_channels_getParticipant tL_channels_getParticipant2 = new TLRPC.TL_channels_getParticipant();
             tL_channels_getParticipant2.channel = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).j1(chatFull.id);
@@ -250,7 +250,7 @@ public final class v41 {
                             final int i122 = 0;
                             final v41 v41Var = this.b;
                             final c51 c51Var2 = c51Var;
-                            final org.telegram.ui.ActionBar.u1[] u1VarArr2 = u1VarArr;
+                            final org.telegram.ui.ActionBar.t1[] t1VarArr2 = t1VarArr;
                             final TLRPC.ChatFull chatFull2 = chatFull;
                             org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.s41
                                 @Override // java.lang.Runnable
@@ -261,12 +261,12 @@ public final class v41 {
                                             v41Var22.getClass();
                                             c51 c51Var32 = c51Var2;
                                             if (!c51Var32.isFinishing() && c51Var32.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr32 = u1VarArr2;
-                                                if (u1VarArr32[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr32 = t1VarArr2;
+                                                if (t1VarArr32[0] != null) {
                                                     TLRPC.TL_error tL_error2 = tL_error;
                                                     TLRPC.ChatFull chatFull32 = chatFull2;
                                                     if (tL_error2 != null) {
-                                                        v41Var22.c(chatFull32, c51Var32, u1VarArr32, false);
+                                                        v41Var22.c(chatFull32, c51Var32, t1VarArr32, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -274,7 +274,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant3.channelParticipant = tL_channels_channelParticipant.participant;
                                                         tL_chatChannelParticipant3.user_id = v41Var22.a.id;
                                                         chatFull32.participants.participants.add(0, tL_chatChannelParticipant3);
-                                                        v41Var22.c(chatFull32, c51Var32, u1VarArr32, true);
+                                                        v41Var22.c(chatFull32, c51Var32, t1VarArr32, true);
                                                         break;
                                                     }
                                                 }
@@ -285,12 +285,12 @@ public final class v41 {
                                             v41Var3.getClass();
                                             c51 c51Var4 = c51Var2;
                                             if (!c51Var4.isFinishing() && c51Var4.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr4 = u1VarArr2;
-                                                if (u1VarArr4[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr4 = t1VarArr2;
+                                                if (t1VarArr4[0] != null) {
                                                     TLRPC.TL_error tL_error3 = tL_error;
                                                     TLRPC.ChatFull chatFull4 = chatFull2;
                                                     if (tL_error3 != null) {
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, false);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -298,7 +298,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
                                                         tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, true);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
                                                     }
                                                 }
@@ -312,7 +312,7 @@ public final class v41 {
                             final int i13 = 1;
                             final v41 v41Var2 = this.b;
                             final c51 c51Var3 = c51Var;
-                            final org.telegram.ui.ActionBar.u1[] u1VarArr3 = u1VarArr;
+                            final org.telegram.ui.ActionBar.t1[] t1VarArr3 = t1VarArr;
                             final TLRPC.ChatFull chatFull3 = chatFull;
                             org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.s41
                                 @Override // java.lang.Runnable
@@ -323,12 +323,12 @@ public final class v41 {
                                             v41Var22.getClass();
                                             c51 c51Var32 = c51Var3;
                                             if (!c51Var32.isFinishing() && c51Var32.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr32 = u1VarArr3;
-                                                if (u1VarArr32[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr32 = t1VarArr3;
+                                                if (t1VarArr32[0] != null) {
                                                     TLRPC.TL_error tL_error2 = tL_error;
                                                     TLRPC.ChatFull chatFull32 = chatFull3;
                                                     if (tL_error2 != null) {
-                                                        v41Var22.c(chatFull32, c51Var32, u1VarArr32, false);
+                                                        v41Var22.c(chatFull32, c51Var32, t1VarArr32, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -336,7 +336,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant3.channelParticipant = tL_channels_channelParticipant.participant;
                                                         tL_chatChannelParticipant3.user_id = v41Var22.a.id;
                                                         chatFull32.participants.participants.add(0, tL_chatChannelParticipant3);
-                                                        v41Var22.c(chatFull32, c51Var32, u1VarArr32, true);
+                                                        v41Var22.c(chatFull32, c51Var32, t1VarArr32, true);
                                                         break;
                                                     }
                                                 }
@@ -347,12 +347,12 @@ public final class v41 {
                                             v41Var3.getClass();
                                             c51 c51Var4 = c51Var3;
                                             if (!c51Var4.isFinishing() && c51Var4.getFragmentView() != null) {
-                                                org.telegram.ui.ActionBar.u1[] u1VarArr4 = u1VarArr3;
-                                                if (u1VarArr4[0] != null) {
+                                                org.telegram.ui.ActionBar.t1[] t1VarArr4 = t1VarArr3;
+                                                if (t1VarArr4[0] != null) {
                                                     TLRPC.TL_error tL_error3 = tL_error;
                                                     TLRPC.ChatFull chatFull4 = chatFull3;
                                                     if (tL_error3 != null) {
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, false);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, false);
                                                         break;
                                                     } else {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
@@ -360,7 +360,7 @@ public final class v41 {
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
                                                         tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
-                                                        v41Var3.c(chatFull4, c51Var4, u1VarArr4, true);
+                                                        v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
                                                     }
                                                 }
@@ -375,10 +375,10 @@ public final class v41 {
             });
             return;
         }
-        org.telegram.ui.ActionBar.u1 u1Var3 = u1VarArr[0];
-        if (u1Var3 != null) {
-            u1Var3.dismiss();
-            u1VarArr[0] = null;
+        org.telegram.ui.ActionBar.t1 t1Var3 = t1VarArr[0];
+        if (t1Var3 != null) {
+            t1Var3.dismiss();
+            t1VarArr[0] = null;
         }
         if (tL_chatChannelParticipant2 != null && tL_chatChannelParticipant != null && tL_chatChannelParticipant2.user_id != tL_chatChannelParticipant.user_id) {
             TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
@@ -391,12 +391,12 @@ public final class v41 {
                 z11 = channelParticipant.admin_rights == null;
                 if (z11) {
                     str = "SetAsAdmin";
-                    i7 = 2131745352;
+                    i7 = 2131745351;
                 } else {
                     str = "EditAdminRights";
-                    i7 = 2131751293;
+                    i7 = 2131751292;
                 }
-                arrayList2.add(org.telegram.messenger.gd.M0(i7, str));
+                arrayList2.add(org.telegram.messenger.gd.N0(i7, str));
                 arrayList4.add(Integer.valueOf(z11 ? R.drawable.msg_admins : R.drawable.msg_permissions));
                 arrayList3.add(0);
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c51Var.getParentActivity());
@@ -442,11 +442,11 @@ public final class v41 {
                         c51Var2.presentFragment(t41Var);
                     }
                 };
-                org.telegram.ui.ActionBar.u1 u1Var4 = alertDialog$Builder.a;
-                u1Var4.Q = charSequenceArr;
-                u1Var4.R = iArr;
-                u1Var4.N = onClickListener;
-                c51Var.showDialog(u1Var4);
+                org.telegram.ui.ActionBar.t1 t1Var4 = alertDialog$Builder.a;
+                t1Var4.Q = charSequenceArr;
+                t1Var4.R = iArr;
+                t1Var4.N = onClickListener;
+                c51Var.showDialog(t1Var4);
             }
         }
         z11 = false;
@@ -492,10 +492,10 @@ public final class v41 {
                 c51Var2.presentFragment(t41Var);
             }
         };
-        org.telegram.ui.ActionBar.u1 u1Var42 = alertDialog$Builder2.a;
-        u1Var42.Q = charSequenceArr2;
-        u1Var42.R = iArr2;
-        u1Var42.N = onClickListener2;
-        c51Var.showDialog(u1Var42);
+        org.telegram.ui.ActionBar.t1 t1Var42 = alertDialog$Builder2.a;
+        t1Var42.Q = charSequenceArr2;
+        t1Var42.R = iArr2;
+        t1Var42.N = onClickListener2;
+        c51Var.showDialog(t1Var42);
     }
 }

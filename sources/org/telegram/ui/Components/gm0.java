@@ -1,97 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class gm0 extends v4.u0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.cx b;
-    public final /* synthetic */ org.telegram.ui.kw c;
+public final class gm0 extends v4.k {
+    public final /* synthetic */ org.telegram.ui.kw F;
 
-    public /* synthetic */ gm0(org.telegram.ui.kw kwVar, org.telegram.ui.cx cxVar, int i7) {
-        this.a = i7;
-        this.c = kwVar;
-        this.b = cxVar;
+    public gm0(org.telegram.ui.kw kwVar) {
+        this.F = kwVar;
     }
 
-    @Override // v4.u0
-    public final void a(RecyclerView recyclerView, int i7) {
-        switch (this.a) {
-            case 0:
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 1:
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 2:
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // v4.u0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        org.telegram.ui.mw mwVar;
-        int i11;
-        ck0 ck0Var;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.kw kwVar = this.c;
-                kwVar.r0.W();
-                kwVar.P();
-                break;
-            case 1:
-                org.telegram.ui.kw kwVar2 = this.c;
-                kwVar2.y0.X();
-                kwVar2.P();
-                break;
-            case 2:
-                org.telegram.ui.kw kwVar3 = this.c;
-                km0 km0Var = kwVar3.e0;
-                v4.c0 c0Var = kwVar3.f0;
-                int L0 = c0Var.L0();
-                int N0 = c0Var.N0();
-                int abs = Math.abs(c0Var.N0() - L0) + 1;
-                int b10 = recyclerView.getAdapter().b();
-                if (abs > 0 && (((km0Var.V.a() != 0 && !km0Var.Y) || !km0Var.X) && (N0 == b10 - 1 || ((mwVar = km0Var.V) != null && mwVar.a() != 0 && (i11 = km0Var.Z) >= 0 && L0 <= i11 && N0 >= i11)))) {
-                    km0Var.P();
-                }
-                kwVar3.P();
-                break;
-            default:
-                org.telegram.ui.kw kwVar4 = this.c;
-                mm0 mm0Var = kwVar4.m0;
-                if (mm0Var.b0 && !mm0Var.Z && !TextUtils.isEmpty(mm0Var.e0) && (ck0Var = mm0Var.d) != null) {
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 < ck0Var.getChildCount()) {
-                            if (!(ck0Var.getChildAt(i12) instanceof wz)) {
-                                i12++;
-                            } else if (mm0Var.b0 && !mm0Var.Z && !TextUtils.isEmpty(mm0Var.e0)) {
-                                mm0Var.W(true);
-                            }
-                        }
-                    }
-                }
-                kwVar4.P();
-                break;
-        }
+    @Override // v4.k
+    public final void P(v4.f1 f1Var) {
+        this.F.invalidate();
     }
 }

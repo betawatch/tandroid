@@ -1,43 +1,26 @@
 package ug;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.ui.j4;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class v1 extends j4 {
-    public final Path h;
-    public final /* synthetic */ x1 n;
+public final class v1 extends oq {
+    public final /* synthetic */ w1 E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(x1 x1Var, Context context) {
-        super(context);
-        this.n = x1Var;
-        this.h = new Path();
+    public v1(w1 w1Var, j0.a aVar, Drawable drawable) {
+        super(aVar, drawable);
+        this.E = w1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.h);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.j4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        Path path = this.h;
-        path.reset();
-        x1 x1Var = this.n;
-        if (x1Var.d) {
-            org.telegram.messenger.g0.P.set(0.0f, -x1Var.N, getMeasuredWidth(), getMeasuredHeight());
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i7, int i10, int i11, int i12) {
+        w1 w1Var = this.E;
+        if (w1Var.d) {
+            super.setBounds(i7, (int) (i10 - w1Var.N), i11, i12);
         } else {
-            org.telegram.messenger.g0.P.set(0.0f, 0.0f, getMeasuredWidth(), (int) (getMeasuredHeight() + x1Var.N));
+            super.setBounds(i7, i10, i11, (int) (i12 + w1Var.N));
         }
-        float L = x1Var.N - org.telegram.messenger.g0.L(3.0f);
-        path.addRoundRect(org.telegram.messenger.g0.P, L, L, Path.Direction.CW);
     }
 }

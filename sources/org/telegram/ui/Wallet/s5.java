@@ -3,19 +3,18 @@ package org.telegram.ui.Wallet;
 import android.text.Editable;
 import android.text.TextWatcher;
 import org.telegram.messenger.ce;
-import org.telegram.ui.b31;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class s5 implements TextWatcher {
     public final /* synthetic */ String[] a;
-    public final /* synthetic */ b31 b;
+    public final /* synthetic */ u4 b;
     public final /* synthetic */ Runnable[] c;
     public final /* synthetic */ ce d;
 
-    public s5(String[] strArr, b31 b31Var, Runnable[] runnableArr, ce ceVar) {
+    public s5(String[] strArr, u4 u4Var, Runnable[] runnableArr, ce ceVar) {
         this.a = strArr;
-        this.b = b31Var;
+        this.b = u4Var;
         this.c = runnableArr;
         this.d = ceVar;
     }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class vs0 extends LinearLayout {
     public final TextView a;
@@ -233,13 +233,13 @@ public final class vs0 extends LinearLayout {
         TextView textView = this.a;
         TextView textView2 = this.b;
         if (i7 == 0) {
-            textView.setText(org.telegram.messenger.gd.M0(premiumPreviewFragment.q0 ? 2131743993 : 2131743996, null));
-            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131743994 : 2131743992, null)));
+            textView.setText(org.telegram.messenger.gd.N0(premiumPreviewFragment.q0 ? 2131743987 : 2131743990, null));
+            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131743988 : 2131743986, null)));
         } else if (i7 == 1) {
-            textView.setText(org.telegram.messenger.gd.M0(premiumPreviewFragment.q0 ? 2131743993 : 2131744017, null));
-            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131744015 : 2131744012, null)));
+            textView.setText(org.telegram.messenger.gd.N0(premiumPreviewFragment.q0 ? 2131743987 : 2131744011, null));
+            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131744009 : 2131744006, null)));
         }
-        textView2.getLayoutParams().width = Math.min(org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(42.0f), hi.m3.a(textView2.getText(), textView2.getPaint()));
+        textView2.getLayoutParams().width = Math.min(org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(42.0f), hi.l3.a(textView2.getText(), textView2.getPaint()));
         if (!premiumPreviewFragment.q0) {
             boolean z12 = org.telegram.messenger.s2.a;
             if (premiumPreviewFragment.d.size() > 1) {
@@ -252,8 +252,8 @@ public final class vs0 extends LinearLayout {
                 } else if (br0Var.getVisibility() == 0 && z10 && this.h == z10) {
                     ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
                     duration.addUpdateListener(new ss0(this, br0Var, duration, r2));
-                    duration.addListener(new org.telegram.ui.Components.h60(12, this, br0Var));
-                    duration.setInterpolator(org.telegram.ui.Components.lr.f);
+                    duration.addListener(new org.telegram.ui.Components.h10(13, this, br0Var));
+                    duration.setInterpolator(org.telegram.ui.Components.nr.f);
                     duration.start();
                 }
                 this.h = !z10;

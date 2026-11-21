@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class j9 extends w9 {
     public boolean E0;
@@ -238,9 +238,9 @@ public class j9 extends w9 {
 
     public final void Z(Canvas canvas, i9 i9Var, int i7) {
         u9 u9Var;
-        int i10 = org.telegram.ui.ActionBar.n6.lg;
-        this.o.setColor(org.telegram.ui.ActionBar.n6.w0(i10, this.g0));
-        this.p.setColor(org.telegram.ui.ActionBar.n6.w0(i10, this.g0));
+        int i10 = org.telegram.ui.ActionBar.m6.lg;
+        this.o.setColor(org.telegram.ui.ActionBar.m6.w0(i10, this.g0));
+        this.p.setColor(org.telegram.ui.ActionBar.m6.w0(i10, this.g0));
         int d02 = d0(i9Var);
         if (d02 < 0) {
             return;

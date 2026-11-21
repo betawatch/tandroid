@@ -1,29 +1,40 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class a9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ org.telegram.ui.Components.k80 b;
-    public final /* synthetic */ String c;
+public final class a9 extends TextView {
+    public final Paint a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 b;
 
-    public a9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.k80 k80Var, String str) {
-        this.a = atomicBoolean;
-        this.b = k80Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context);
+        this.b = h6Var;
+        this.a = new Paint(1);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        AtomicBoolean atomicBoolean = this.a;
-        if (atomicBoolean.get()) {
-            return;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.8f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.z6, this.b));
+        Paint paint = this.a;
+        paint.setColor(r12);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        Layout layout = getLayout();
+        int i7 = 0;
+        for (int i10 = 0; i10 < layout.getLineCount(); i10++) {
+            i7 = Math.max(i7, (int) layout.getLineWidth(i10));
         }
-        atomicBoolean.set(true);
-        this.b.setText(this.c);
+        float f10 = i7 / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - f10) - org.telegram.messenger.g0.L(8.0f), height, paint);
+        canvas.drawLine((getWidth() / 2.0f) + f10 + org.telegram.messenger.g0.L(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

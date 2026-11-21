@@ -6,9 +6,9 @@ import org.telegram.messenger.q10;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.m60;
+import org.telegram.ui.n60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w1 implements q10 {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class w1 implements q10 {
         TL_wallet.tonConnectSession tonconnectsession;
         switch (this.a) {
             case 0:
-                final m60 m60Var = (m60) this.e;
+                final n60 n60Var = (n60) this.e;
                 final TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 final l2 l2Var = this.b;
@@ -63,7 +63,7 @@ public final /* synthetic */ class w1 implements q10 {
                             @Override // org.telegram.messenger.q10
                             public final void a(Object obj3, Object obj4) {
                                 l2 l2Var2 = l2.this;
-                                m60 m60Var2 = m60Var;
+                                n60 n60Var2 = n60Var;
                                 TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
                                 TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
                                 String str = y10;
@@ -75,25 +75,25 @@ public final /* synthetic */ class w1 implements q10 {
                                 l2Var2.getClass();
                                 if (r0Var != null && str2 == null) {
                                     r0 b10 = r0Var.b();
-                                    Utilities.e.c(new ki.z0(l2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new e0(4, b10, m60Var2), j10, i11));
+                                    Utilities.e.c(new ki.y0(l2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new e0(4, b10, n60Var2), j10, i11));
                                 } else {
                                     l2Var2.h = false;
                                     if (str2 == null) {
                                         str2 = "Recovery phrase is unavailable";
                                     }
-                                    m60Var2.a(null, str2);
+                                    n60Var2.a(null, str2);
                                 }
                             }
                         });
                         break;
                     } else {
                         l2Var.h = false;
-                        m60Var.a(null, "This request has expired or has already been answered");
+                        n60Var.a(null, "This request has expired or has already been answered");
                         break;
                     }
                 } else {
                     l2Var.h = false;
-                    m60Var.a(null, l2.z(tL_error, "getPending"));
+                    n60Var.a(null, l2.z(tL_error, "getPending"));
                     break;
                 }
                 break;

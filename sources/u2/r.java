@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.util.Pair;
+import bg.o0;
 import c8.m1;
 import h2.j0;
 import h2.l0;
@@ -34,10 +35,10 @@ import n2.v0;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.c5;
-import p4.o0;
+import p4.z;
 import x2.g0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class r extends l2.b {
     public static final byte[] Z0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -537,7 +538,7 @@ public abstract class r extends l2.b {
             bufferInfo.presentationTimeUs -= this.V0;
             if (this.q0) {
                 this.q0 = false;
-                lVar.d(j11);
+                lVar.e(j11);
                 return true;
             }
             if (bufferInfo.size == 0 && (bufferInfo.flags & 4) != 0) {
@@ -587,10 +588,10 @@ public abstract class r extends l2.b {
             int i7 = this.v0;
             k2.h hVar = this.O;
             if (i7 < 0) {
-                int g10 = lVar.g();
-                this.v0 = g10;
-                if (g10 >= 0) {
-                    hVar.c = lVar.getInputBuffer(g10);
+                int h = lVar.h();
+                this.v0 = h;
+                if (h >= 0) {
+                    hVar.c = lVar.getInputBuffer(h);
                     hVar.clear();
                 }
             }
@@ -637,7 +638,7 @@ public abstract class r extends l2.b {
             k8.a aVar = this.c;
             aVar.g0();
             try {
-                lVar.h(new o0(14, this, aVar));
+                lVar.d(new z(16, this, aVar));
                 int i11 = this.U.get();
                 if (i11 == -3) {
                     if (k()) {
@@ -826,13 +827,13 @@ public abstract class r extends l2.b {
         if (i10 >= 31) {
             m2.i iVar = this.f;
             iVar.getClass();
-            bg.o0.i(T, iVar);
+            o0.i(T, iVar);
         }
         try {
             Trace.beginSection("createCodec:" + str);
-            l F = this.K.F(T);
-            this.e0 = F;
-            this.t0 = F.i(new c5(this));
+            l D = this.K.D(T);
+            this.e0 = D;
+            this.t0 = D.i(new c5(this));
             Trace.endSection();
             this.h.getClass();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();

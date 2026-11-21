@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h implements f3.o {
     public final m a;
@@ -111,7 +111,7 @@ public final class h implements f3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x008f, code lost:
     
-        r20.a.v(r20.e, 0, r20.g, r2, new a1.c(r20, 16));
+        r20.a.v(r20.e, 0, r20.g, r2, new a1.c(r20, 17));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
         r2 = r22;

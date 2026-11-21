@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class y61 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -42,19 +42,19 @@ public final class y61 extends FrameLayout {
                 break;
             case 4:
                 bg.d0 d0Var = (bg.d0) this.b;
-                d0Var.b(org.telegram.ui.ActionBar.n6.r1(0.65f, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, (org.telegram.ui.ActionBar.i6) this.c)));
+                d0Var.b(org.telegram.ui.ActionBar.m6.r1(0.65f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, (org.telegram.ui.ActionBar.h6) this.c)));
                 d0Var.draw(canvas);
                 super.dispatchDraw(canvas);
                 break;
             case 6:
-                ((ug.b1) this.c).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
+                ((ug.a1) this.c).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(0.0f, org.telegram.messenger.g0.L(2.0f), getMeasuredWidth(), org.telegram.messenger.g0.L(18.0f) + getMeasuredHeight());
                 canvas.save();
                 canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                ug.b1 b1Var = (ug.b1) this.c;
-                b1Var.f.setAlpha(((ug.z0) this.b).F1);
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(24.0f) - 1, org.telegram.messenger.g0.L(24.0f) - 1, b1Var.f);
+                ug.a1 a1Var = (ug.a1) this.c;
+                a1Var.f.setAlpha(((ug.y0) this.b).F1);
+                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(24.0f) - 1, org.telegram.messenger.g0.L(24.0f) - 1, a1Var.f);
                 canvas.restore();
                 super.dispatchDraw(canvas);
                 break;
@@ -88,11 +88,11 @@ public final class y61 extends FrameLayout {
                 return drawChild;
             case 5:
                 Path path = (Path) this.c;
-                tg.f0 f0Var = (tg.f0) this.b;
-                if (f0Var.h == null || (!((z10 = f0Var.f) && view == f0Var.d) && (z10 || view != f0Var.c))) {
+                tg.g0 g0Var = (tg.g0) this.b;
+                if (g0Var.h == null || (!((z10 = g0Var.f) && view == g0Var.d) && (z10 || view != g0Var.c))) {
                     return super.drawChild(canvas, view, j3);
                 }
-                float measuredWidth = ((z10 ? f0Var.e : 1.0f - f0Var.e) * getMeasuredWidth()) / 2.0f;
+                float measuredWidth = ((z10 ? g0Var.e : 1.0f - g0Var.e) * getMeasuredWidth()) / 2.0f;
                 canvas.save();
                 path.rewind();
                 path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, measuredWidth, Path.Direction.CW);
@@ -110,9 +110,9 @@ public final class y61 extends FrameLayout {
         switch (this.a) {
             case 1:
                 super.invalidate();
-                ai.l0 l0Var = ((x71) this.b).v0;
-                if (l0Var != null) {
-                    l0Var.invalidate();
+                ai.m0 m0Var = ((x71) this.b).v0;
+                if (m0Var != null) {
+                    m0Var.invalidate();
                     break;
                 }
                 break;
@@ -157,11 +157,11 @@ public final class y61 extends FrameLayout {
     public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                int intrinsicHeight = org.telegram.ui.ActionBar.n6.i3.getIntrinsicHeight();
-                org.telegram.ui.ActionBar.n6.i3.setBounds(0, 0, getMeasuredWidth(), intrinsicHeight);
-                org.telegram.ui.ActionBar.n6.i3.draw(canvas);
+                int intrinsicHeight = org.telegram.ui.ActionBar.m6.i3.getIntrinsicHeight();
+                org.telegram.ui.ActionBar.m6.i3.setBounds(0, 0, getMeasuredWidth(), intrinsicHeight);
+                org.telegram.ui.ActionBar.m6.i3.draw(canvas);
                 Paint paint = (Paint) this.c;
-                paint.setColor(((x71) this.b).getThemedColor(org.telegram.ui.ActionBar.n6.Je));
+                paint.setColor(((x71) this.b).getThemedColor(org.telegram.ui.ActionBar.m6.Je));
                 canvas.drawRect(0.0f, intrinsicHeight, getMeasuredWidth(), getMeasuredHeight(), paint);
                 break;
             case 1:
@@ -189,7 +189,7 @@ public final class y61 extends FrameLayout {
     public void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 6:
-                super.onMeasure(i7, org.telegram.messenger.n10.C(2.0f, ((ug.z0) this.b).u1, TLObject.FLAG_30));
+                super.onMeasure(i7, org.telegram.messenger.n10.C(2.0f, ((ug.y0) this.b).u1, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -220,7 +220,7 @@ public final class y61 extends FrameLayout {
             case 3:
                 pg.i iVar = (pg.i) this.b;
                 pg.d dVar = iVar.r;
-                boolean onTouchEvent = ((GestureDetector) ((org.telegram.ui.Components.hn) this.c).b).onTouchEvent(motionEvent);
+                boolean onTouchEvent = ((GestureDetector) ((org.telegram.ui.Components.jn) this.c).b).onTouchEvent(motionEvent);
                 if (motionEvent.getAction() == 0) {
                     org.telegram.messenger.g0.h3(dVar, 200L);
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -276,11 +276,11 @@ public final class y61 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y61(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public y61(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.a = 4;
         this.b = new bg.d0(8);
-        this.c = i6Var;
+        this.c = h6Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -309,10 +309,10 @@ public final class y61 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y61(tg.f0 f0Var, Context context) {
+    public y61(tg.g0 g0Var, Context context) {
         super(context);
         this.a = 5;
-        this.b = f0Var;
+        this.b = g0Var;
         this.c = new Path();
     }
 }

@@ -1,61 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.util.Collections;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class np0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ gt0 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
-    public final /* synthetic */ org.telegram.messenger.fj d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jt0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ int d;
     public final /* synthetic */ int e;
+    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ np0(gt0 gt0Var, org.telegram.ui.ActionBar.i6 i6Var, int i7, org.telegram.messenger.fj fjVar) {
-        this.b = gt0Var;
-        this.c = i6Var;
-        this.e = i7;
-        this.d = fjVar;
+    public /* synthetic */ np0(jt0 jt0Var, TLRPC.TL_error tL_error, int i7, int i10, TLObject tLObject, int i11) {
+        this.a = i11;
+        this.b = jt0Var;
+        this.c = tL_error;
+        this.d = i7;
+        this.e = i10;
+        this.f = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, this.b.getContext(), this.c)};
-                int i7 = this.e;
-                int w02 = org.telegram.messenger.zy.C(i7).w0(this.d, null, new ds(u1VarArr, 1));
-                if (w02 != 0) {
-                    org.telegram.messenger.g0.h3(new yp0(u1VarArr, i7, w02, 0), 500L);
-                    break;
-                }
+                jt0 jt0Var = this.b;
+                org.telegram.messenger.ks.f(jt0Var.y1.getCurrentAccount()).d(new np0(jt0Var, this.c, this.d, this.e, this.f, 1));
                 break;
             default:
-                gt0 gt0Var = this.b;
-                Context context = gt0Var.getContext();
-                org.telegram.ui.ActionBar.i6 i6Var = this.c;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, i6Var);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.Q0 = false;
-                org.telegram.messenger.fj fjVar = this.d;
-                if (fjVar.c4()) {
-                    u1Var.S = org.telegram.messenger.gd.M0(2131744589, null);
-                    u1Var.U = org.telegram.messenger.gd.M0(2131744590, null);
-                } else {
-                    u1Var.S = org.telegram.messenger.gd.M0(2131744594, null);
-                    u1Var.U = org.telegram.messenger.gd.M0(2131744595, null);
+                jt0 jt0Var2 = this.b;
+                ys0[] ys0VarArr = jt0Var2.w1;
+                if (this.c == null) {
+                    int i7 = this.e;
+                    ys0 ys0Var = ys0VarArr[i7];
+                    if (this.d == ys0Var.p) {
+                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
+                        ys0Var.e.clear();
+                        int size = tL_messages_searchResultsPositions.positions.size();
+                        int i10 = 0;
+                        for (int i11 = 0; i11 < size; i11++) {
+                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i11);
+                            int i12 = tL_searchResultPosition.date;
+                            if (i12 != 0) {
+                                js0 js0Var = new js0();
+                                js0Var.c = i12;
+                                js0Var.d = tL_searchResultPosition.msg_id;
+                                js0Var.b = tL_searchResultPosition.offset;
+                                js0Var.a = org.telegram.messenger.gd.e0(i12, true);
+                                ys0VarArr[i7].e.add(js0Var);
+                            }
+                        }
+                        Collections.sort(ys0VarArr[i7].e, new org.telegram.ui.pe(16));
+                        ys0 ys0Var2 = ys0VarArr[i7];
+                        ys0Var2.f[0] = tL_messages_searchResultsPositions.count;
+                        ys0Var2.h = true;
+                        if (!ys0Var2.e.isEmpty()) {
+                            while (true) {
+                                ds0[] ds0VarArr = jt0Var2.n0;
+                                if (i10 < ds0VarArr.length) {
+                                    ds0 ds0Var = ds0VarArr[i10];
+                                    if (ds0Var.F == i7) {
+                                        ds0Var.b = true;
+                                        jt0Var2.F1(ds0Var, true);
+                                    }
+                                    i10++;
+                                }
+                            }
+                        }
+                        jt0Var2.K.f();
+                        break;
+                    }
                 }
-                alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131744606, null), new bg.g0(gt0Var, i6Var, fjVar, this.e, 5));
-                i5.c.y(null, 2131752578, alertDialog$Builder, null);
                 break;
         }
-    }
-
-    public /* synthetic */ np0(gt0 gt0Var, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.messenger.fj fjVar, int i7) {
-        this.b = gt0Var;
-        this.c = i6Var;
-        this.d = fjVar;
-        this.e = i7;
     }
 }

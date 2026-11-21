@@ -1,69 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kl b;
+public final class yk implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ TextView b;
 
-    public /* synthetic */ yk(kl klVar, int i7) {
-        this.a = i7;
-        this.b = klVar;
+    public yk(kg.z0 z0Var, TextView textView) {
+        this.b = textView;
+        this.a = TextUtils.isEmpty(z0Var.getText());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Location location;
-        switch (this.a) {
-            case 0:
-                kl.T(this.b);
-                break;
-            case 1:
-                kl.V(this.b);
-                break;
-            case 2:
-                kl klVar = this.b;
-                double[] dArr = klVar.b.y4;
-                klVar.h0(dArr[0], dArr[1]);
-                break;
-            case 3:
-                org.telegram.messenger.g0.g3(new yk(this.b, 6));
-                break;
-            case 4:
-                kl klVar2 = this.b;
-                jg.r0 r0Var = klVar2.L;
-                if (!klVar2.l0) {
-                    org.telegram.messenger.da daVar = klVar2.E;
-                    if (daVar != null && (location = klVar2.j0) != null) {
-                        location.setLatitude(((org.telegram.messenger.ab) daVar.d().b).a);
-                        klVar2.j0.setLongitude(((org.telegram.messenger.ab) klVar2.E.d().b).b);
-                    }
-                    r0Var.L(klVar2.j0);
-                    r0Var.H();
-                    break;
-                } else {
-                    klVar2.l0 = false;
-                    break;
-                }
-                break;
-            case 5:
-                View view = this.b.J;
-                if (view.getTag() == null) {
-                    view.animate().alpha(0.0f).setDuration(180L).start();
-                    break;
-                }
-                break;
-            case 6:
-                View view2 = this.b.J;
-                view2.setTag(1);
-                view2.animate().alpha(0.0f).setDuration(180L).start();
-                break;
-            default:
-                this.b.h0(0.0d, 0.0d);
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        if (isEmpty != this.a) {
+            this.a = isEmpty;
+            this.b.setText(org.telegram.messenger.gd.N0(isEmpty ? 2131746125 : 2131754483, null));
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

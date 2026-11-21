@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class fj0 implements TextWatcher {
     public boolean a;
@@ -41,7 +41,7 @@ public final class fj0 implements TextWatcher {
         this.a = false;
         EditTextBoldCursor editTextBoldCursor = this.b;
         if (z10) {
-            editTextBoldCursor.setErrorText(org.telegram.messenger.gd.M0(2131747256, null));
+            editTextBoldCursor.setErrorText(org.telegram.messenger.gd.N0(2131747255, null));
         } else {
             hk0.N0(this.d, editTextBoldCursor, this.c, editable, false);
         }

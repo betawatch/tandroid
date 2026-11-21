@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ce implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,13 +42,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar2.G5 = 0;
                                 if (tLObject2 == null && bnVar2.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar2.getParentActivity(), bnVar2.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.M0(2131751260, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar2.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar2.a0;
                                     if (rjVar != null) {
-                                        rjVar.A1(null, null, false);
+                                        rjVar.E1(null, null, false);
                                         bnVar2.D9(true);
                                         break;
                                     }
@@ -98,13 +98,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar22.G5 = 0;
                                 if (tLObject2 == null && bnVar22.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar22.getParentActivity(), bnVar22.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.M0(2131751260, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar22.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar22.a0;
                                     if (rjVar != null) {
-                                        rjVar.A1(null, null, false);
+                                        rjVar.E1(null, null, false);
                                         bnVar22.D9(true);
                                         break;
                                     }
@@ -154,13 +154,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar22.G5 = 0;
                                 if (tLObject2 == null && bnVar22.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar22.getParentActivity(), bnVar22.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.M0(2131751260, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar22.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar22.a0;
                                     if (rjVar != null) {
-                                        rjVar.A1(null, null, false);
+                                        rjVar.E1(null, null, false);
                                         bnVar22.D9(true);
                                         break;
                                     }
@@ -210,13 +210,13 @@ public final /* synthetic */ class ce implements RequestDelegate {
                                 bnVar22.G5 = 0;
                                 if (tLObject2 == null && bnVar22.getParentActivity() != null) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar22.getParentActivity(), bnVar22.Ba);
-                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.M0(R.string.AppName, null);
-                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.M0(2131751260, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
+                                    alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                                    alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751259, null);
+                                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
                                     bnVar22.showDialog(alertDialog$Builder.a);
                                     rj rjVar = bnVar22.a0;
                                     if (rjVar != null) {
-                                        rjVar.A1(null, null, false);
+                                        rjVar.E1(null, null, false);
                                         bnVar22.D9(true);
                                         break;
                                     }

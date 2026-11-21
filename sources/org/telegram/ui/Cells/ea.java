@@ -9,14 +9,14 @@ import org.telegram.messenger.jc;
 import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.sj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ea implements qj0, bg.q, jc, org.telegram.messenger.h9, np, r10 {
+public final /* synthetic */ class ea implements sj0, bg.q, jc, org.telegram.messenger.h9, pp, r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -35,7 +35,7 @@ public final /* synthetic */ class ea implements qj0, bg.q, jc, org.telegram.mes
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.np
+    @Override // org.telegram.ui.Components.pp
     public void a() {
         switch (this.a) {
             case 4:
@@ -57,7 +57,7 @@ public final /* synthetic */ class ea implements qj0, bg.q, jc, org.telegram.mes
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
         ia iaVar = (ia) this.b;
         iaVar.getClass();
@@ -77,7 +77,7 @@ public final /* synthetic */ class ea implements qj0, bg.q, jc, org.telegram.mes
 
     @Override // org.telegram.messenger.jc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        mh0 B;
+        oh0 B;
         s0 s0Var;
         int w10;
         fj fjVar;
@@ -127,7 +127,7 @@ public final /* synthetic */ class ea implements qj0, bg.q, jc, org.telegram.mes
                     int J0 = org.telegram.messenger.g0.J0(imageReceiver3.n());
                     p7Var.a = J0;
                     CheckBoxBase checkBoxBase = p7Var.Q;
-                    if (checkBoxBase != null && checkBoxBase.x != (w10 = org.telegram.ui.ActionBar.n6.w(J0, org.telegram.ui.ActionBar.n6.r1(0.25f, -1)))) {
+                    if (checkBoxBase != null && checkBoxBase.x != (w10 = org.telegram.ui.ActionBar.m6.w(J0, org.telegram.ui.ActionBar.m6.r1(0.25f, -1)))) {
                         checkBoxBase.x = w10;
                         checkBoxBase.b();
                         break;

@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uj0 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,9 +41,9 @@ public final /* synthetic */ class uj0 implements Runnable {
                     break;
                 } else {
                     if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.Components.b5.u0(hk0Var.getParentActivity(), org.telegram.messenger.gd.M0(2131743583, null), true);
+                        org.telegram.ui.Components.c5.u0(hk0Var.getParentActivity(), org.telegram.messenger.gd.N0(2131743577, null), true);
                     } else {
-                        hk0Var.Q1(org.telegram.messenger.gd.M0(R.string.AppName, null), tL_error.text);
+                        hk0Var.Q1(org.telegram.messenger.gd.N0(R.string.AppName, null), tL_error.text);
                     }
                     hk0Var.R1(true, false);
                     break;

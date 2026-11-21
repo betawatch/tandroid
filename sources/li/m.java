@@ -2,19 +2,19 @@ package li;
 
 import android.content.Context;
 import android.widget.TextView;
-import bi.y3;
+import bi.c4;
 import java.util.ArrayList;
 import org.telegram.messenger.fs;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.b5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.c5;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class m implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        int i10 = 2131751903;
+        int i10 = 2131751902;
         boolean z10 = this.c;
         boolean z11 = this.b;
         long j3 = this.d;
@@ -42,29 +42,29 @@ public final /* synthetic */ class m implements Runnable {
         switch (i7) {
             case 0:
                 p pVar = (p) fsVar;
-                String M0 = gd.M0(2131751904, null);
+                String N0 = gd.N0(2131751903, null);
                 if (z11) {
-                    i10 = 2131751906;
-                } else if (z10) {
                     i10 = 2131751905;
+                } else if (z10) {
+                    i10 = 2131751904;
                 }
-                b5.s0(pVar, M0, gd.M0(i10, null), gd.M0(2131746126, null), true, new h(pVar, j3, 0));
+                c5.s0(pVar, N0, gd.N0(i10, null), gd.N0(2131746125, null), true, new h(pVar, j3, 0));
                 break;
             case 1:
                 d0 d0Var = (d0) fsVar;
                 Context context = d0Var.getContext();
-                i6 i6Var = d0Var.J0;
-                String M02 = gd.M0(2131751904, null);
+                h6 h6Var = d0Var.J0;
+                String N02 = gd.N0(2131751903, null);
                 if (z11) {
-                    i10 = 2131751906;
-                } else if (z10) {
                     i10 = 2131751905;
+                } else if (z10) {
+                    i10 = 2131751904;
                 }
-                u1 M = b5.M(context, i6Var, M02, gd.M0(i10, null), gd.M0(2131746126, null), new y3(d0Var, j3, 12));
+                t1 M = c5.M(context, h6Var, N02, gd.N0(i10, null), gd.N0(2131746125, null), new c4(d0Var, j3, 12));
                 M.show();
                 TextView textView = (TextView) M.d(-1);
                 if (textView != null) {
-                    u6.U(textView, n6.q7, null);
+                    t6.U(textView, m6.q7, null);
                     break;
                 }
                 break;

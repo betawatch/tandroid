@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.jh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k4 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,19 +57,19 @@ public final /* synthetic */ class k4 implements Runnable {
                                     cxVar.u3(true);
                                     break;
                                 } else if (activity instanceof org.telegram.ui.g5) {
-                                    org.telegram.ui.ActionBar.u1 v = ((org.telegram.ui.g5) activity).v(R.raw.permission_request_folder, gd.M0(2131747106, null));
+                                    org.telegram.ui.ActionBar.t1 v = ((org.telegram.ui.g5) activity).v(R.raw.permission_request_folder, gd.N0(2131747105, null));
                                     cxVar.V1 = v;
                                     cxVar.showDialog(v);
                                     break;
                                 }
                             } else {
-                                org.telegram.ui.ActionBar.u1 u1Var = org.telegram.ui.Components.b5.v(activity, new org.telegram.ui.xu(cxVar, i10)).a;
-                                cxVar.V1 = u1Var;
-                                cxVar.showDialog(u1Var);
+                                org.telegram.ui.ActionBar.t1 t1Var = org.telegram.ui.Components.c5.v(activity, new org.telegram.ui.xu(cxVar, i10)).a;
+                                cxVar.V1 = t1Var;
+                                cxVar.showDialog(t1Var);
                                 break;
                             }
                         } else {
-                            c8.na.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new org.telegram.ui.Components.bn(new org.telegram.ui.Components.ph(14, cxVar, activity), 1));
+                            c8.na.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new org.telegram.ui.Components.dn(new org.telegram.ui.Components.rh(14, cxVar, activity), 1));
                             break;
                         }
                     }
@@ -94,14 +94,14 @@ public final /* synthetic */ class k4 implements Runnable {
                     org.telegram.ui.Wallet.u0.P("getSecretPhrase: device has secured phrase, requesting");
                     org.telegram.ui.Wallet.z0 z0Var = u0Var.c;
                     byte[] bArr = tL_walletState.public_key;
-                    hi.lb lbVar = new hi.lb(u0Var, q10Var, z10, 5);
+                    hi.kb kbVar = new hi.kb(u0Var, q10Var, z10, 5);
                     if (bArr == null) {
                         p10 = "";
                     } else {
                         z0Var.getClass();
                         p10 = org.telegram.ui.Wallet.z0.p(bArr);
                     }
-                    org.telegram.ui.Wallet.z0.i.execute(new org.telegram.ui.Components.r2(z0Var, z0Var.l(), p10, true, (x10) lbVar));
+                    org.telegram.ui.Wallet.z0.i.execute(new org.telegram.ui.Components.s2(z0Var, z0Var.l(), p10, true, (x10) kbVar));
                     break;
                 }
         }

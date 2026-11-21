@@ -33,15 +33,15 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import l2.r0;
 import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.qf;
 import org.telegram.ui.web.z0;
 import s2.w;
 import x2.b1;
 import x2.f1;
 import x2.r1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class p implements b3.k, b3.n, f1, f3.q, b1 {
     public static final Set q0 = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(1, 2, 5)));
@@ -71,7 +71,7 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
     public Set a0;
     public final int b;
     public int[] b0;
-    public final of c;
+    public final qf c;
     public int c0;
     public final h d;
     public boolean d0;
@@ -99,10 +99,10 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
 
     /* JADX WARN: Type inference failed for: r2v13, types: [r2.m] */
     /* JADX WARN: Type inference failed for: r2v14, types: [r2.m] */
-    public p(String str, int i7, of ofVar, h hVar, Map map, h6.m mVar, long j3, u uVar, q2.m mVar2, q2.j jVar, qb.a aVar, xa xaVar, int i10, c3.a aVar2) {
+    public p(String str, int i7, qf qfVar, h hVar, Map map, h6.m mVar, long j3, u uVar, q2.m mVar2, q2.j jVar, qb.a aVar, xa xaVar, int i10, c3.a aVar2) {
         this.a = str;
         this.b = i7;
-        this.c = ofVar;
+        this.c = qfVar;
         this.d = hVar;
         this.K = map;
         this.e = mVar;
@@ -525,7 +525,7 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
         long j10;
         int a10;
         l2.s0 s0Var2;
-        hn hnVar;
+        jn jnVar;
         long j11;
         h hVar;
         boolean z10;
@@ -542,7 +542,7 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
         boolean z12;
         c cVar;
         boolean z13;
-        hn hnVar2;
+        jn jnVar2;
         byte[] bArr;
         b3.p pVar;
         boolean z14;
@@ -600,20 +600,20 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
                 nVar2.d = null;
                 boolean z19 = this.U || !list.isEmpty();
                 h hVar7 = this.d;
-                hn hnVar3 = hVar7.j;
+                jn jnVar3 = hVar7.j;
                 w[] wVarArr = hVar7.e;
                 s2.d dVar = hVar7.g;
                 i iVar3 = list.isEmpty() ? null : (i) h9.o.n(list);
                 if (iVar3 == null) {
                     j10 = -9223372036854775807L;
                     a10 = -1;
-                    hnVar = hnVar3;
+                    jnVar = jnVar3;
                     s0Var2 = s0Var;
                 } else {
                     j10 = -9223372036854775807L;
                     a10 = hVar7.h.a(iVar3.d);
                     s0Var2 = s0Var;
-                    hnVar = hnVar3;
+                    jnVar = jnVar3;
                 }
                 long j19 = s0Var2.a;
                 long j20 = max - j19;
@@ -756,18 +756,18 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
                                                             boolean z25 = hVar2.l;
                                                             c5 c5Var = hVar2.d;
                                                             if (g12 != null) {
-                                                                hnVar.getClass();
+                                                                jnVar.getClass();
                                                                 cVar = cVar4;
                                                                 z13 = z25;
-                                                                hnVar2 = hnVar;
+                                                                jnVar2 = jnVar;
                                                                 bArr = null;
                                                             } else {
                                                                 cVar = cVar4;
                                                                 z13 = z25;
-                                                                hnVar2 = hnVar;
-                                                                bArr = (byte[]) ((org.telegram.utils.twidget.w) hnVar2.b).get(g12);
+                                                                jnVar2 = jnVar;
+                                                                bArr = (byte[]) ((org.telegram.utils.twidget.w) jnVar2.b).get(g12);
                                                             }
-                                                            byte[] bArr4 = g10 != null ? null : (byte[]) ((org.telegram.utils.twidget.w) hnVar2.b).get(g10);
+                                                            byte[] bArr4 = g10 != null ? null : (byte[]) ((org.telegram.utils.twidget.w) jnVar2.b).get(g10);
                                                             m2.i iVar5 = hVar2.k;
                                                             AtomicInteger atomicInteger2 = i.d0;
                                                             Map map = Collections.EMPTY_MAP;
@@ -1431,11 +1431,11 @@ public final class p implements b3.k, b3.n, f1, f3.q, b1 {
             byte[] bArr = dVar.s;
             h hVar = this.d;
             hVar.m = bArr;
-            hn hnVar = hVar.j;
+            jn jnVar = hVar.j;
             Uri uri = dVar.b.a;
             byte[] bArr2 = dVar.x;
             bArr2.getClass();
-            org.telegram.utils.twidget.w wVar = (org.telegram.utils.twidget.w) hnVar.b;
+            org.telegram.utils.twidget.w wVar = (org.telegram.utils.twidget.w) jnVar.b;
             uri.getClass();
         }
         long j11 = fVar.a;

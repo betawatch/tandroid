@@ -9,13 +9,13 @@ import org.telegram.messenger.ro;
 import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fr0;
-import org.telegram.ui.Components.gt0;
-import org.telegram.ui.Components.je0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.hr0;
+import org.telegram.ui.Components.jt0;
+import org.telegram.ui.Components.ke0;
+import org.telegram.ui.Components.ul0;
 import org.telegram.ui.kz;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x7 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,13 +40,13 @@ public final /* synthetic */ class x7 implements Runnable {
         Object obj = this.d;
         switch (i7) {
             case 0:
-                x8 x8Var = (x8) obj;
+                y8 y8Var = (y8) obj;
                 if (!z10) {
-                    x8Var.getClass();
+                    y8Var.getClass();
                     break;
                 } else {
-                    x8Var.Q.remove(Integer.valueOf(i10));
-                    Runnable runnable = (Runnable) x8Var.R.remove(Integer.valueOf(i10));
+                    y8Var.Q.remove(Integer.valueOf(i10));
+                    Runnable runnable = (Runnable) y8Var.R.remove(Integer.valueOf(i10));
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -87,45 +87,45 @@ public final /* synthetic */ class x7 implements Runnable {
                 }
                 break;
             case 4:
-                ((je0) obj).a.b.x3(i10, z10);
+                ((ke0) obj).a.b.x3(i10, z10);
                 break;
             case 5:
-                sl0 sl0Var = (sl0) obj;
-                sl0Var.o = null;
-                sl0Var.c(i10, z10, true);
+                ul0 ul0Var = (ul0) obj;
+                ul0Var.o = null;
+                ul0Var.c(i10, z10, true);
                 break;
             case 6:
-                gt0 gt0Var = ((fr0) obj).a;
-                org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
-                if (h2Var != null) {
+                jt0 jt0Var = ((hr0) obj).a;
+                org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
+                if (g2Var != null) {
                     if (z10) {
                         TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
-                        tL_channels_setMainProfileTab.tab = gt0.o0(i10, true);
-                        tL_channels_setMainProfileTab.channel = h2Var.getMessagesController().j1(gt0Var.g1.id);
-                        TLRPC.ChatFull chatFull = gt0Var.g1;
+                        tL_channels_setMainProfileTab.tab = jt0.o0(i10, true);
+                        tL_channels_setMainProfileTab.channel = g2Var.getMessagesController().j1(jt0Var.g1.id);
+                        TLRPC.ChatFull chatFull = jt0Var.g1;
                         chatFull.flags2 |= TLObject.FLAG_22;
                         chatFull.main_tab = tL_channels_setMainProfileTab.tab;
                         tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
                     } else {
                         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
-                        TLRPC.ProfileTab o02 = gt0.o0(i10, true);
+                        TLRPC.ProfileTab o02 = jt0.o0(i10, true);
                         tL_account_setMainProfileTab2.tab = o02;
-                        TLRPC.UserFull userFull = gt0Var.h1;
+                        TLRPC.UserFull userFull = jt0Var.h1;
                         tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         if (userFull != null) {
                             userFull.flags2 |= TLObject.FLAG_20;
                             userFull.main_tab = o02;
-                            h2Var.getMessagesStorage().j2(gt0Var.h1, true);
+                            g2Var.getMessagesStorage().j2(jt0Var.h1, true);
                             tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         }
                     }
-                    h2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
-                    gt0Var.P1(true);
+                    g2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
+                    jt0Var.P1(true);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0((kz) obj).I(z10 ? R.raw.folder_in : R.raw.folder_out, z10 ? gd.G(i10, "FolderLinkAddedChats", new Object[0]) : gd.G(i10, "FolderLinkRemovedChats", new Object[0]), gd.M0(2131750652, null));
+                org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0((kz) obj).I(z10 ? R.raw.folder_in : R.raw.folder_out, z10 ? gd.G(i10, "FolderLinkAddedChats", new Object[0]) : gd.G(i10, "FolderLinkRemovedChats", new Object[0]), gd.N0(2131750651, null));
                 I.j = 5000;
                 I.j();
                 break;

@@ -6,7 +6,7 @@ import org.telegram.messenger.x10;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v8 implements x10 {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class v8 implements x10 {
             case 1:
                 String str = (String) obj;
                 if (str == null) {
-                    gc I = lc.b0(d9Var).I(R.raw.contact_check, gd.M0(2131742950, null), gd.M0(2131742948, null));
+                    gc I = lc.b0(d9Var).I(R.raw.contact_check, gd.N0(2131742944, null), gd.N0(2131742942, null));
                     I.j = 5000;
                     I.j();
                     d9Var.a.g3.O(true);

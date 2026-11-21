@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.fj;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t0 {
     public TextPaint a;
@@ -69,7 +69,7 @@ public final class t0 {
             }
             v0Var = v0Var2;
         }
-        this.h = org.telegram.ui.Components.x5.update(0, (View) v0Var, false, (org.telegram.ui.Components.t5) this.h, (StaticLayout) this.f);
+        this.h = org.telegram.ui.Components.y5.update(0, (View) v0Var, false, (org.telegram.ui.Components.u5) this.h, (StaticLayout) this.f);
     }
 
     public t0(v0 v0Var) {

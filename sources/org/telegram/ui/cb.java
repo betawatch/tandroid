@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class cb extends pi.k {
     public int W;
@@ -8,8 +8,8 @@ public final class cb extends pi.k {
     public final /* synthetic */ lb Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cb(lb lbVar, org.telegram.ui.Components.ck0 ck0Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(null, ck0Var, i6Var);
+    public cb(lb lbVar, org.telegram.ui.Components.ek0 ek0Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(null, ek0Var, h6Var);
         this.Y = lbVar;
         this.W = -1;
     }

@@ -14,16 +14,16 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.pc;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
-    public o5 a;
+    public p5 a;
     public Rect b;
     public ArrayList c;
     public View d;
@@ -36,14 +36,14 @@ public final class d {
     public int k;
     public long l;
 
-    public static d a(o5 o5Var, boolean z10, boolean z11) {
+    public static d a(p5 p5Var, boolean z10, boolean z11) {
         int i7 = j10.t0;
         d dVar = new d();
         dVar.b = new Rect();
         dVar.c = new ArrayList();
         dVar.g = true;
         dVar.k = -1;
-        dVar.a = o5Var;
+        dVar.a = p5Var;
         dVar.f = z10;
         dVar.h = i7;
         dVar.i = z11;
@@ -107,13 +107,13 @@ public final class d {
             cVar3.h = min;
             float i11 = Utilities.i(min, 1.0f, 0.0f);
             cVar3.h = i11;
-            lr lrVar = lr.g;
-            float interpolation = lrVar.getInterpolation(i11);
+            nr nrVar = nr.g;
+            float interpolation = nrVar.getInterpolation(i11);
             float T1 = org.telegram.messenger.g0.T1(cVar3.a, cVar3.c, interpolation);
             d dVar = cVar3.l;
-            o5 o5Var = dVar.a;
+            p5 p5Var = dVar.a;
             float f11 = cVar3.h;
-            float T12 = f11 < 0.3f ? org.telegram.messenger.g0.T1(cVar3.b, cVar3.d, lrVar.getInterpolation(f11 / 0.3f)) : org.telegram.messenger.g0.T1(cVar3.d, cVar3.e, lr.i.getInterpolation((f11 - 0.3f) / 0.7f));
+            float T12 = f11 < 0.3f ? org.telegram.messenger.g0.T1(cVar3.b, cVar3.d, nrVar.getInterpolation(f11 / 0.3f)) : org.telegram.messenger.g0.T1(cVar3.d, cVar3.e, nr.i.getInterpolation((f11 - 0.3f) / 0.7f));
             float T13 = org.telegram.messenger.g0.T1(cVar3.f, cVar3.g, interpolation);
             if (!dVar.f) {
                 float height = dVar.b.height() * 0.8f;
@@ -125,10 +125,10 @@ public final class d {
                         canvas.scale(-1.0f, 1.0f, T1, T12);
                     }
                     canvas.rotate(cVar3.k, T1, T12);
-                    o5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
-                    o5Var.setBounds((int) (T1 - f12), (int) (T12 - f12), (int) (T1 + f12), (int) (T12 + f12));
-                    o5Var.draw(canvas);
-                    o5Var.setAlpha(ks.e4);
+                    p5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
+                    p5Var.setBounds((int) (T1 - f12), (int) (T12 - f12), (int) (T1 + f12), (int) (T12 + f12));
+                    p5Var.draw(canvas);
+                    p5Var.setAlpha(ks.e4);
                     canvas.restore();
                     if (((c) arrayList.get(i10)).h < 1.0f) {
                         arrayList.remove(i10);
@@ -143,10 +143,10 @@ public final class d {
             if (cVar3.j) {
             }
             canvas.rotate(cVar3.k, T1, T12);
-            o5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
-            o5Var.setBounds((int) (T1 - f122), (int) (T12 - f122), (int) (T1 + f122), (int) (T12 + f122));
-            o5Var.draw(canvas);
-            o5Var.setAlpha(ks.e4);
+            p5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
+            p5Var.setBounds((int) (T1 - f122), (int) (T12 - f122), (int) (T1 + f122), (int) (T12 + f122));
+            p5Var.draw(canvas);
+            p5Var.setAlpha(ks.e4);
             canvas.restore();
             if (((c) arrayList.get(i10)).h < 1.0f) {
             }
@@ -189,15 +189,15 @@ public final class d {
         TLRPC.Document document;
         boolean z12 = this.f;
         int i7 = this.h;
-        o5 o5Var = this.a;
-        o5Var.a(view);
+        p5 p5Var = this.a;
+        p5Var.a(view);
         this.d = view;
         ImageReceiver imageReceiver = this.j;
         if (imageReceiver == null || !this.i) {
             return;
         }
         imageReceiver.P();
-        TLRPC.Document document2 = o5Var.e;
+        TLRPC.Document document2 = p5Var.e;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = null;
         String V = fj.V(document2, null, null);
         if (V == null || (tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(i7).r.get(V)) == null || (document = tL_availableReaction.around_animation) == null) {
@@ -245,7 +245,7 @@ public final class d {
             }
         }
         if (!z11) {
-            imageReceiver.w0(new mh0(R.raw.custom_emoji_reaction, org.telegram.messenger.g0.L(60.0f), org.telegram.messenger.g0.L(60.0f), false, null));
+            imageReceiver.w0(new oh0(R.raw.custom_emoji_reaction, org.telegram.messenger.g0.L(60.0f), org.telegram.messenger.g0.L(60.0f), false, null));
             return;
         }
         if (imageReceiver.B() != null) {

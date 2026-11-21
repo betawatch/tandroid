@@ -10,11 +10,11 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.x10;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ad0;
-import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.bd0;
 import org.telegram.ui.Components.zc0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class na {
     public static int a = 1500;
@@ -45,17 +45,17 @@ public abstract class na {
                 while (true) {
                     int i10 = 1;
                     if (i7 >= length) {
-                        e(strArr, new zc0(strArr, activity, x10Var, 1));
+                        e(strArr, new ad0(strArr, activity, x10Var, 1));
                         return;
                     }
                     if (activity.shouldShowRequestPermissionRationale(strArr[i7])) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, null);
-                        int i11 = org.telegram.ui.ActionBar.n6.L5;
-                        alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.n6.x0(null, i11, false), null);
+                        int i11 = org.telegram.ui.ActionBar.m6.L5;
+                        alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.m6.x0(null, i11, false), null);
                         alertDialog$Builder.n(i11, null);
-                        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0(2131747116, null));
-                        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747107, null), new yc0(activity, i10));
-                        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131751761, null), null);
+                        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131747115, null));
+                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747106, null), new zc0(activity, i10));
+                        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751760, null), null);
                         alertDialog$Builder.a.show();
                         x10Var.a(Boolean.FALSE);
                         return;
@@ -85,18 +85,18 @@ public abstract class na {
         for (String str2 : strArr) {
             if (!activity.shouldShowRequestPermissionRationale(str2)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, null);
-                int i12 = org.telegram.ui.ActionBar.n6.L5;
-                alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.n6.x0(null, i12, false), null);
+                int i12 = org.telegram.ui.ActionBar.m6.L5;
+                alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.m6.x0(null, i12, false), null);
                 alertDialog$Builder.n(i12, null);
-                alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0(i10, null));
-                alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747107, null), new yc0(activity, i11));
-                alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131751761, null), null);
+                alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(i10, null));
+                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747106, null), new zc0(activity, i11));
+                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751760, null), null);
                 alertDialog$Builder.a.show();
                 x10Var.a(Boolean.FALSE);
                 return;
             }
         }
-        e(strArr2, new zc0(strArr2, activity, x10Var, 0));
+        e(strArr2, new ad0(strArr2, activity, x10Var, 0));
     }
 
     public static boolean d(String str) {
@@ -118,7 +118,7 @@ public abstract class na {
         int i7 = a;
         a = i7 + 1;
         fs[] fsVarArr = new fs[1];
-        fsVarArr[0] = new ad0(i7, x10Var, fsVarArr);
+        fsVarArr[0] = new bd0(i7, x10Var, fsVarArr);
         ks.e().b(fsVarArr[0], ks.s5);
         activity.requestPermissions(strArr, i7);
     }

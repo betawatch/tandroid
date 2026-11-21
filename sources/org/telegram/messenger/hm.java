@@ -16,10 +16,10 @@ import java.util.zip.ZipInputStream;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.b31;
 import org.telegram.ui.d80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hm implements Runnable {
     public final /* synthetic */ int a;
@@ -58,14 +58,14 @@ public final /* synthetic */ class hm implements Runnable {
             }
         } else if (tL_error == null || !"TO_LANG_INVALID".equals(tL_error.text)) {
             if (tL_error != null && "QUOTA_EXCEEDED".equals(tL_error.text)) {
-                ks.e().k(ks.S4, 1, gd.M0(2131743710, null));
+                ks.e().k(ks.S4, 1, gd.N0(2131743704, null));
             }
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 ((s10) arrayList2.get(i10)).a((Integer) arrayList.get(i10), null, u00Var.d);
             }
         } else {
             z00Var.K(j3, false);
-            ks.e().k(ks.S4, 1, gd.M0(2131743709, null));
+            ks.e().k(ks.S4, 1, gd.N0(2131743703, null));
         }
         synchronized (z00Var) {
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
@@ -123,7 +123,7 @@ public final /* synthetic */ class hm implements Runnable {
                     x10Var.a(tL_messages_invitedUsers);
                     return;
                 } else {
-                    org.telegram.ui.Components.b5.f(mpVar.currentAccount, mpVar.O0(Long.valueOf(j3)), tL_messages_invitedUsers);
+                    org.telegram.ui.Components.c5.f(mpVar.currentAccount, mpVar.O0(Long.valueOf(j3)), tL_messages_invitedUsers);
                     return;
                 }
             case 1:
@@ -200,7 +200,7 @@ public final /* synthetic */ class hm implements Runnable {
                                             break;
                                         default:
                                             d80 d80Var2 = d80Var;
-                                            Toast.makeText(t0.b, gd.M0(2131749058, null), 0).show();
+                                            Toast.makeText(t0.b, gd.N0(2131749057, null), 0).show();
                                             d80Var2.run(0L);
                                             break;
                                     }
@@ -354,7 +354,7 @@ public final /* synthetic */ class hm implements Runnable {
                                                             break;
                                                         default:
                                                             d80 d80Var2 = d80Var;
-                                                            Toast.makeText(t0.b, gd.M0(2131749058, null), 0).show();
+                                                            Toast.makeText(t0.b, gd.N0(2131749057, null), 0).show();
                                                             d80Var2.run(0L);
                                                             break;
                                                     }
@@ -382,7 +382,7 @@ public final /* synthetic */ class hm implements Runnable {
                                                 break;
                                             default:
                                                 d80 d80Var2 = d80Var;
-                                                Toast.makeText(t0.b, gd.M0(2131749058, null), 0).show();
+                                                Toast.makeText(t0.b, gd.N0(2131749057, null), 0).show();
                                                 d80Var2.run(0L);
                                                 break;
                                         }
@@ -451,7 +451,7 @@ public final /* synthetic */ class hm implements Runnable {
                                 tL_textWithEntities = arrayList7.get(i16);
                                 i16++;
                             }
-                            w00Var3.a = y21.R0(w00Var.a, tL_textWithEntities);
+                            w00Var3.a = b31.R0(w00Var.a, tL_textWithEntities);
                         }
                         if (w00Var.b.size() != (w00Var2 == null ? 0 : w00Var2.b.size())) {
                             ArrayList arrayList9 = w00Var.b;
@@ -494,7 +494,7 @@ public final /* synthetic */ class hm implements Runnable {
                                 i16++;
                                 tL_textWithEntities2 = tL_textWithEntities6;
                             }
-                            w00Var3.c = y21.R0(w00Var.c, tL_textWithEntities2);
+                            w00Var3.c = b31.R0(w00Var.c, tL_textWithEntities2);
                         }
                         arrayList8.add(w00Var3);
                         size2 = i10;
@@ -505,14 +505,14 @@ public final /* synthetic */ class hm implements Runnable {
                     }
                 } else if (tL_error == null || !"TO_LANG_INVALID".equals(tL_error.text)) {
                     if (tL_error != null && "QUOTA_EXCEEDED".equals(tL_error.text)) {
-                        ks.e().k(ks.S4, 1, gd.M0(2131743710, null));
+                        ks.e().k(ks.S4, 1, gd.N0(2131743704, null));
                     }
                     for (int i21 = 0; i21 < arrayList2.size(); i21++) {
                         ((s10) arrayList2.get(i21)).a((Integer) arrayList.get(i21), null, t00Var.e);
                     }
                 } else {
                     z00Var.K(j14, false);
-                    ks.e().k(ks.S4, 1, gd.M0(2131743709, null));
+                    ks.e().k(ks.S4, 1, gd.N0(2131743703, null));
                 }
                 synchronized (z00Var) {
                     for (int i22 = 0; i22 < arrayList.size(); i22++) {

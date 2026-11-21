@@ -13,10 +13,10 @@ import android.os.Build;
 import android.os.Looper;
 import android.view.Display;
 import android.view.MenuItem;
-import di.w2;
+import di.f2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class i {
     public static AudioManager a;
@@ -65,7 +65,7 @@ public abstract class i {
                     Looper myLooper = Looper.myLooper();
                     if (myLooper != null && myLooper != Looper.getMainLooper()) {
                         h2.i iVar = new h2.i();
-                        h2.a.e().execute(new w2(19, applicationContext, iVar));
+                        h2.a.e().execute(new f2(21, applicationContext, iVar));
                         iVar.b();
                         AudioManager audioManager2 = a;
                         audioManager2.getClass();

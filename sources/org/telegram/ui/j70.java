@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j70 implements Runnable {
     public final /* synthetic */ Object E;
@@ -14,29 +14,29 @@ public final /* synthetic */ class j70 implements Runnable {
     public final /* synthetic */ LaunchActivity b;
     public final /* synthetic */ Bundle c;
     public final /* synthetic */ Long d;
-    public final /* synthetic */ o60 e;
+    public final /* synthetic */ h60 e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ vf.b h;
     public final /* synthetic */ Long n;
     public final /* synthetic */ Integer r;
     public final /* synthetic */ Integer s;
     public final /* synthetic */ byte[] w;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 x;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 x;
     public final /* synthetic */ int y;
 
-    public /* synthetic */ j70(LaunchActivity launchActivity, Bundle bundle, Long l10, int[] iArr, o60 o60Var, boolean z10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.h2 h2Var, int i7) {
+    public /* synthetic */ j70(LaunchActivity launchActivity, Bundle bundle, Long l10, int[] iArr, h60 h60Var, boolean z10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.g2 g2Var, int i7) {
         this.b = launchActivity;
         this.c = bundle;
         this.d = l10;
         this.E = iArr;
-        this.e = o60Var;
+        this.e = h60Var;
         this.f = z10;
         this.h = bVar;
         this.n = l11;
         this.r = num;
         this.s = num2;
         this.w = bArr;
-        this.x = h2Var;
+        this.x = g2Var;
         this.y = i7;
     }
 
@@ -46,11 +46,11 @@ public final /* synthetic */ class j70 implements Runnable {
         Object obj = this.E;
         switch (i7) {
             case 0:
-                o60 o60Var = this.e;
+                h60 h60Var = this.e;
                 TLObject tLObject = (TLObject) obj;
                 String str = LaunchActivity.C1;
                 try {
-                    o60Var.run();
+                    h60Var.run();
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
@@ -74,21 +74,21 @@ public final /* synthetic */ class j70 implements Runnable {
                                 launchActivity.l0(-l10.longValue(), null, null, num, bArr, null, 0, -1);
                             }
                         }
-                        org.telegram.ui.ActionBar.h2 h2Var = this.x;
+                        org.telegram.ui.ActionBar.g2 g2Var = this.x;
                         Bundle bundle = this.c;
-                        if (h2Var == null || org.telegram.messenger.mp.u1(this.y).E(bundle, h2Var, null, null)) {
+                        if (g2Var == null || org.telegram.messenger.mp.u1(this.y).E(bundle, g2Var, null, null)) {
                             ((ActionBarLayout) launchActivity.M()).S(new bn(bundle));
                             break;
                         }
                     }
                 }
-                launchActivity.F0(org.telegram.ui.Components.b5.E(launchActivity, org.telegram.messenger.gd.M0(2131751443, null), org.telegram.messenger.gd.M0(2131748703, null)));
+                launchActivity.F0(org.telegram.ui.Components.c5.E(launchActivity, org.telegram.messenger.gd.N0(2131751442, null), org.telegram.messenger.gd.N0(2131748702, null)));
                 break;
             default:
                 int[] iArr = (int[]) obj;
                 String str2 = LaunchActivity.C1;
                 LaunchActivity launchActivity2 = this.b;
-                org.telegram.ui.ActionBar.s4 M = launchActivity2.M();
+                org.telegram.ui.ActionBar.r4 M = launchActivity2.M();
                 Bundle bundle2 = this.c;
                 if (!((ActionBarLayout) M).S(new bn(bundle2))) {
                     TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
@@ -103,9 +103,9 @@ public final /* synthetic */ class j70 implements Runnable {
         }
     }
 
-    public /* synthetic */ j70(LaunchActivity launchActivity, o60 o60Var, TLObject tLObject, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.h2 h2Var, int i7, Bundle bundle) {
+    public /* synthetic */ j70(LaunchActivity launchActivity, h60 h60Var, TLObject tLObject, boolean z10, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.g2 g2Var, int i7, Bundle bundle) {
         this.b = launchActivity;
-        this.e = o60Var;
+        this.e = h60Var;
         this.E = tLObject;
         this.f = z10;
         this.d = l10;
@@ -114,7 +114,7 @@ public final /* synthetic */ class j70 implements Runnable {
         this.r = num;
         this.s = num2;
         this.w = bArr;
-        this.x = h2Var;
+        this.x = g2Var;
         this.y = i7;
         this.c = bundle;
     }

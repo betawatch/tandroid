@@ -10,7 +10,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class pc {
     public float A;
@@ -22,17 +22,17 @@ public final class pc {
     public Bitmap b;
     public float c;
     public float d;
-    public final c6 e;
-    public final c6 f;
+    public final d6 e;
+    public final d6 f;
     public float g;
-    public final c6 h;
+    public final d6 h;
     public float i;
-    public final c6 j;
-    public final m6 k;
+    public final d6 j;
+    public final n6 k;
     public float l;
-    public final c6 m;
+    public final d6 m;
     public boolean n;
-    public final c6 o;
+    public final d6 o;
     public final Path p;
     public final Paint q;
     public final RectF r;
@@ -50,22 +50,22 @@ public final class pc {
         Paint paint = new Paint(3);
         this.a = paint;
         paint.setColor(-1);
-        lr lrVar = lr.h;
-        this.e = new c6(rcVar, 650L, lrVar);
-        this.f = new c6(rcVar, 650L, lrVar);
-        lr lrVar2 = lr.g;
-        this.h = new c6(rcVar, 0L, 150L, lrVar2);
+        nr nrVar = nr.h;
+        this.e = new d6(rcVar, 650L, nrVar);
+        this.f = new d6(rcVar, 650L, nrVar);
+        nr nrVar2 = nr.g;
+        this.h = new d6(rcVar, 0L, 150L, nrVar2);
         this.i = 1.0f;
-        this.j = new c6(rcVar, 0L, 150L, lrVar2);
-        m6 m6Var = new m6(false, true, true);
-        this.k = m6Var;
-        this.m = new c6(rcVar, 0L, 150L, lrVar2);
-        this.o = new c6(rcVar, 0L, 200L, lrVar);
-        m6Var.u(-1);
-        m6Var.n(0.35f, 200L, lrVar);
-        m6Var.x(org.telegram.messenger.g0.o());
-        m6Var.w(org.telegram.messenger.g0.L(15.0f));
-        m6Var.b = 17;
+        this.j = new d6(rcVar, 0L, 150L, nrVar2);
+        n6 n6Var = new n6(false, true, true);
+        this.k = n6Var;
+        this.m = new d6(rcVar, 0L, 150L, nrVar2);
+        this.o = new d6(rcVar, 0L, 200L, nrVar);
+        n6Var.u(-1);
+        n6Var.n(0.35f, 200L, nrVar);
+        n6Var.x(org.telegram.messenger.g0.o());
+        n6Var.w(org.telegram.messenger.g0.L(15.0f));
+        n6Var.b = 17;
         this.p = new Path();
         Paint paint2 = new Paint(1);
         this.q = paint2;

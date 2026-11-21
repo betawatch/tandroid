@@ -1,26 +1,25 @@
 package p4;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f0 implements l0 {
+public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ n0 b;
 
-    public /* synthetic */ f0(m0 m0Var, long j3, int i7) {
+    public /* synthetic */ f0(n0 n0Var, int i7) {
         this.a = i7;
-        this.b = m0Var;
-        this.c = j3;
+        this.b = n0Var;
     }
 
-    @Override // p4.l0
-    public final void f(v vVar) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.h.t.Y((int) this.c);
+                n0 n0Var = this.b;
+                h2.l0.W(n0Var.h.l, new f0(n0Var, 1));
                 break;
             default:
-                this.b.h.t.c(this.c);
+                this.b.o0();
                 break;
         }
     }

@@ -5,12 +5,12 @@ import android.os.Parcelable;
 import c8.bc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
-import ji.j;
+import ji.l;
 import m6.e;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class CameraPosition extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CameraPosition> CREATOR = new e(2);
@@ -44,12 +44,12 @@ public final class CameraPosition extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        j jVar = new j(this);
-        jVar.E(this.a, "target");
-        jVar.E(Float.valueOf(this.b), "zoom");
-        jVar.E(Float.valueOf(this.c), "tilt");
-        jVar.E(Float.valueOf(this.d), "bearing");
-        return jVar.toString();
+        l lVar = new l(this);
+        lVar.E(this.a, "target");
+        lVar.E(Float.valueOf(this.b), "zoom");
+        lVar.E(Float.valueOf(this.c), "tilt");
+        lVar.E(Float.valueOf(this.d), "bearing");
+        return lVar.toString();
     }
 
     @Override // android.os.Parcelable

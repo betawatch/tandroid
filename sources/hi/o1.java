@@ -10,12 +10,12 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.bz;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class o1 extends ck0 {
-    public org.telegram.ui.ActionBar.l5 f3;
+public final class o1 extends ek0 {
+    public org.telegram.ui.ActionBar.k5 f3;
     public boolean g3;
     public float h3;
     public float i3;
@@ -56,7 +56,7 @@ public final class o1 extends ck0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -197,10 +197,10 @@ public final class o1 extends ck0 {
         super.setLayoutManager(p0Var);
         this.f3 = null;
         if (p0Var instanceof v4.c0) {
-            org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(this, (v4.c0) p0Var);
-            this.f3 = l5Var;
-            l5Var.r = new ci.h(this, 1);
-            l5Var.n = new di.c7(this, 17);
+            org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(this, (v4.c0) p0Var);
+            this.f3 = k5Var;
+            k5Var.r = new ci.h(this, 1);
+            k5Var.n = new di.v6(this, 18);
         }
     }
 }

@@ -2,24 +2,24 @@ package kg;
 
 import android.content.Context;
 import android.text.Editable;
-import bi.c6;
-import org.telegram.ui.ActionBar.i6;
+import bi.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.l3;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l extends l3 {
     public final /* synthetic */ int F;
     public final /* synthetic */ n G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(n nVar, Context context, String str, int i7, i6 i6Var, int i10) {
-        super(context, str, false, false, i7, i6Var);
+    public l(n nVar, Context context, String str, int i7, h6 h6Var, int i10) {
+        super(context, str, false, false, i7, h6Var);
         this.F = i10;
         switch (i10) {
             case 1:
                 this.G = nVar;
-                super(context, str, true, false, i7, i6Var);
+                super(context, str, true, false, i7, h6Var);
                 break;
             default:
                 this.G = nVar;
@@ -29,18 +29,18 @@ public final class l extends l3 {
 
     @Override // org.telegram.ui.Cells.l3
     public final void a(boolean z10) {
-        c6 c6Var;
-        c6 c6Var2;
+        g6 g6Var;
+        g6 g6Var2;
         switch (this.F) {
             case 0:
-                if (z10 && (c6Var = this.G.a) != null) {
-                    c6Var.y0(2);
+                if (z10 && (g6Var = this.G.a) != null) {
+                    g6Var.y0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (c6Var2 = this.G.a) != null) {
-                    c6Var2.y0(3);
+                if (z10 && (g6Var2 = this.G.a) != null) {
+                    g6Var2.y0(3);
                     break;
                 }
                 break;

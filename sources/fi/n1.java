@@ -13,10 +13,10 @@ import c8.ra;
 import di.ec;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.lq;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nq;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class n1 extends View {
     public long E;
@@ -27,9 +27,9 @@ public final class n1 extends View {
     public final RectF b;
     public final Path c;
     public final ec d;
-    public final org.telegram.ui.Components.c6 e;
-    public final org.telegram.ui.Components.c6 f;
-    public final org.telegram.ui.Components.m6 h;
+    public final org.telegram.ui.Components.d6 e;
+    public final org.telegram.ui.Components.d6 f;
+    public final org.telegram.ui.Components.n6 h;
     public final Paint n;
     public final Paint r;
     public final Drawable s;
@@ -41,9 +41,9 @@ public final class n1 extends View {
         super(context);
         this.b = new RectF();
         this.c = new Path();
-        lr lrVar = lr.h;
-        this.e = new org.telegram.ui.Components.c6(this, 320L, lrVar);
-        this.f = new org.telegram.ui.Components.c6(this, 320L, lrVar);
+        nr nrVar = nr.h;
+        this.e = new org.telegram.ui.Components.d6(this, 320L, nrVar);
+        this.f = new org.telegram.ui.Components.d6(this, 320L, nrVar);
         Paint paint = new Paint(1);
         this.n = paint;
         Paint paint2 = new Paint(1);
@@ -57,18 +57,18 @@ public final class n1 extends View {
         this.w = jVar;
         jVar.a = bVar;
         jVar.a();
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true);
-        this.h = m6Var;
-        m6Var.u(-9866632);
-        m6Var.w(org.telegram.messenger.g0.L(9.0f));
-        m6Var.setCallback(this);
-        m6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        m6Var.K = true;
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true);
+        this.h = n6Var;
+        n6Var.u(-9866632);
+        n6Var.w(org.telegram.messenger.g0.L(9.0f));
+        n6Var.setCallback(this);
+        n6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        n6Var.K = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        lq lqVar = new lq(R.drawable.star, 0);
-        lqVar.I = 1.8f;
-        lqVar.J = 1.8f;
+        nq nqVar = new nq(R.drawable.star, 0);
+        nqVar.I = 1.8f;
+        nqVar.J = 1.8f;
         setCount(0);
         this.d = new ec(1, 50);
     }
@@ -120,9 +120,9 @@ public final class n1 extends View {
         if (d2 > 0.0f) {
             float L3 = org.telegram.messenger.g0.L(12.0f);
             float L4 = org.telegram.messenger.g0.L(6.0f);
-            org.telegram.ui.Components.m6 m6Var = this.h;
-            float max = Math.max(L3, m6Var.c() + L4);
-            float i13 = m6Var.i() * this.H * d2;
+            org.telegram.ui.Components.n6 n6Var = this.h;
+            float max = Math.max(L3, n6Var.c() + L4);
+            float i13 = n6Var.i() * this.H * d2;
             canvas.save();
             RectF rectF2 = org.telegram.messenger.g0.P;
             rectF2.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
@@ -131,9 +131,9 @@ public final class n1 extends View {
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, this.r);
             rectF2.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
-            canvas.translate(((max - m6Var.c()) / 2.0f) + rectF2.left, org.telegram.messenger.g0.L(6.33f));
-            m6Var.u(i0.a.f(d, -9866632, -1));
-            m6Var.draw(canvas);
+            canvas.translate(((max - n6Var.c()) / 2.0f) + rectF2.left, org.telegram.messenger.g0.L(6.33f));
+            n6Var.u(i0.a.f(d, -9866632, -1));
+            n6Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -146,11 +146,11 @@ public final class n1 extends View {
 
     public void setCount(int i7) {
         this.x = i7;
-        org.telegram.ui.Components.m6 m6Var = this.h;
+        org.telegram.ui.Components.n6 n6Var = this.h;
         if (i7 > 50000) {
-            m6Var.t(org.telegram.messenger.g0.o0(i7, 0), true, true);
+            n6Var.t(org.telegram.messenger.g0.o0(i7, 0), true, true);
         } else {
-            m6Var.t(gd.E(i7, ','), true, true);
+            n6Var.t(gd.E(i7, ','), true, true);
         }
         invalidate();
         requestLayout();

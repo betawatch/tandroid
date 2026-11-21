@@ -1,136 +1,76 @@
 package ai;
 
-import bi.c6;
-import java.util.HashMap;
-import org.telegram.messenger.ep;
-import org.telegram.messenger.mp;
-import org.telegram.ui.Components.z41;
-import org.telegram.ui.rn;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f0 implements Runnable {
+public final /* synthetic */ class f0 implements View.OnKeyListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ f0(Object obj, long j3, long j10, int i7) {
+    public /* synthetic */ f0(int i7, FrameLayout frameLayout) {
         this.a = i7;
-        this.d = obj;
-        this.b = j3;
-        this.c = j10;
+        this.b = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        z41 z41Var;
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.g1 g1Var;
         switch (this.a) {
             case 0:
-                n0 n0Var = (n0) this.d;
-                long j3 = this.b;
-                long j10 = this.c;
-                n0Var.getClass();
-                n0Var.e(j3, Math.max(120L, j10 - j3));
-                break;
-            case 1:
-                mp mpVar = (mp) this.d;
-                long j11 = this.b;
-                long j12 = this.c;
-                a0.h hVar = mpVar.T1;
-                HashMap hashMap = mpVar.V1;
-                if (j11 == 0) {
-                    ep epVar = (ep) hVar.f(j12);
-                    if (epVar != null) {
-                        mpVar.R(epVar);
-                        mpVar.S1.remove(epVar);
-                        hVar.l(j12);
-                        break;
+                bi.b1 b1Var = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        LinearLayout linearLayout = b1Var.e;
+                        if (linearLayout == null || b1Var.O) {
+                            b1Var.c(null);
+                        } else {
+                            b1Var.e = null;
+                            b1Var.h(linearLayout, false);
+                        }
                     }
-                } else {
-                    String str = j12 + "_" + j11;
-                    ep epVar2 = (ep) hashMap.get(str);
-                    if (epVar2 != null) {
-                        mpVar.R(epVar2);
-                        mpVar.U1.remove(epVar2);
-                        hashMap.remove(str);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                rn.b0((rn) this.d, this.b, this.c);
-                break;
-            case 3:
-                org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) this.d;
-                long j13 = this.b;
-                long j14 = this.c;
-                n1Var.h = j13;
-                n1Var.n = j14;
-                c6 c6Var = n1Var.a;
-                if (c6Var != null && (z41Var = c6Var.g3) != null && c6Var.H) {
-                    z41Var.O(true);
                     break;
                 }
                 break;
-            case 4:
-                yi.j jVar = (yi.j) this.d;
-                long j15 = this.b;
-                long j16 = this.c;
-                if (jVar.G == 7) {
-                    long j17 = ((j15 - j16) * 48000) / 1000;
-                    jVar.p = j17;
-                    jVar.r = 0L;
-                    jVar.s = yi.j.r(j17);
-                    jVar.i();
+            case 1:
+                bi.b1 b1Var2 = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        b1Var2.c(null);
+                    }
+                    break;
+                }
+                break;
+            case 2:
+                bi.b1 b1Var3 = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        b1Var3.c(null);
+                    }
+                    break;
+                }
+                break;
+            case 3:
+                bi.b1 b1Var4 = (bi.b1) this.b;
+                if (i7 == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        b1Var4.c(null);
+                    }
                     break;
                 }
                 break;
             default:
-                ac.e eVar = (ac.e) this.d;
-                long j18 = this.b;
-                long j19 = this.c;
-                yi.j jVar2 = (yi.j) eVar.c;
-                if (j18 == jVar2.o) {
-                    jVar2.n = null;
-                    jVar2.p += j19;
-                    jVar2.q = 0L;
-                    jVar2.i.removeCallbacks(jVar2.D);
-                    int i7 = jVar2.G;
-                    if (i7 != 10) {
-                        if (i7 != 9) {
-                            if (!jVar2.v) {
-                                if (i7 == 4) {
-                                    yi.h hVar2 = jVar2.z;
-                                    if (hVar2 != null) {
-                                        long j20 = jVar2.j();
-                                        jVar2.r = 0L;
-                                        jVar2.s = j20;
-                                        jVar2.j.execute(new org.telegram.utils.recorder.audio.c(1, jVar2, hVar2));
-                                        break;
-                                    } else {
-                                        jVar2.g(new IllegalStateException("Output generation is missing"));
-                                        break;
-                                    }
-                                }
-                            } else {
-                                jVar2.v = false;
-                                jVar2.i();
-                                break;
-                            }
-                        } else {
-                            jVar2.c();
-                            jVar2.t();
-                            break;
-                        }
-                    } else {
-                        jVar2.c();
-                        jVar2.t();
-                        jVar2.l("cancelled");
-                        break;
-                    }
+                org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) this.b;
+                q0Var.getClass();
+                if (i7 == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && (g1Var = q0Var.d) != null && g1Var.isShowing()) {
+                    q0Var.d.d(true);
+                    break;
                 }
                 break;
         }
+        return true;
     }
 }

@@ -1,31 +1,39 @@
 package ki;
 
-import org.telegram.messenger.fs;
-import org.telegram.ui.Components.zt0;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v1 implements zt0 {
+public final /* synthetic */ class v1 implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fs b;
+    public final /* synthetic */ s2 b;
 
-    public /* synthetic */ v1(fs fsVar, int i7) {
+    public /* synthetic */ v1(s2 s2Var, int i7) {
         this.a = i7;
-        this.b = fsVar;
+        this.b = s2Var;
     }
 
-    @Override // org.telegram.ui.Components.zt0
-    public final void L(int i7, boolean z10) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                k2 k2Var = ((t2) this.b).x;
-                if (i7 > org.telegram.messenger.g0.L(20.0f)) {
-                    k2Var.e(k2Var.getTopActionBarOffsetY() + (-k2Var.getOffsetY()));
-                    break;
+                Boolean bool = (Boolean) obj;
+                k2 k2Var = this.b.E;
+                if (k2Var != null) {
+                    if (!bool.booleanValue()) {
+                        k2Var.Q = System.currentTimeMillis();
+                        k2Var.y("secondary_button_pressed", null);
+                        break;
+                    } else {
+                        k2Var.Q = System.currentTimeMillis();
+                        k2Var.y("main_button_pressed", null);
+                        break;
+                    }
                 }
                 break;
             default:
-                ((oi.z1) this.b).getClass();
+                org.telegram.messenger.g0.g3(new ji.i(9, this.b, (TLRPC.UserFull) obj));
                 break;
         }
     }

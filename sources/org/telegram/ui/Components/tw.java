@@ -1,29 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final class tw extends g.p {
-    public final /* synthetic */ ry c;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
 
-    public tw(ry ryVar) {
-        this.c = ryVar;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class tw extends FrameLayout {
+    public final /* synthetic */ ty a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tw(ty tyVar, Context context) {
+        super(context);
+        this.a = tyVar;
     }
 
-    @Override // g.p
-    public final int i(int i7) {
-        ry ryVar = this.c;
-        bx bxVar = ryVar.S;
-        sw swVar = ryVar.R;
-        v4.i0 adapter = ryVar.Q.getAdapter();
-        qx qxVar = ryVar.T;
-        if (adapter == qxVar) {
-            int d = qxVar.d(i7);
-            if (d == 1 || d == 3 || d == 2 || d == 4 || d == 5) {
-                return swVar.J;
-            }
-        } else if ((ryVar.e0 && i7 == 0) || i7 == bxVar.d || i7 == bxVar.c || i7 == bxVar.f || bxVar.r.indexOfKey(i7) >= 0 || bxVar.w.indexOfKey(i7) >= 0) {
-            return swVar.J;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        ty tyVar = this.a;
+        yw ywVar = tyVar.J;
+        vv vvVar = tyVar.W;
+        gx gxVar = tyVar.Q;
+        if (view != gxVar && view != vvVar) {
+            return super.drawChild(canvas, view, j3);
         }
-        return 1;
+        canvas.save();
+        float y10 = ywVar.getY() + ywVar.getMeasuredHeight() + 1.0f;
+        if (view == gxVar && vvVar != null) {
+            y10 = Math.max(y10, vvVar.getY() + vvVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y10 - (org.telegram.messenger.g0.L(16.0f) * tyVar.b.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
     }
 }

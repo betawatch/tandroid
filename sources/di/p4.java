@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.bn;
 import org.telegram.ui.rg;
 import org.telegram.ui.ti;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements x10 {
     public final /* synthetic */ int a;
@@ -36,17 +36,17 @@ public final /* synthetic */ class p4 implements x10 {
         SpannableStringBuilder spannableStringBuilder;
         int size;
         int i7;
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         int i10 = this.a;
         Object obj2 = this.d;
         switch (i10) {
             case 0:
                 b5 b5Var = (b5) obj2;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.w5 w5Var = b5Var.F;
+                org.telegram.ui.Components.x5 x5Var = b5Var.F;
                 if (this.b == this.c) {
                     b5Var.e0 = arrayList;
-                    w5Var.animate().alpha(b5Var.s ? 0.0f : b5Var.e0 != null ? 1.0f : 0.25f).setInterpolator(lr.h).setDuration(420L).start();
+                    x5Var.animate().alpha(b5Var.s ? 0.0f : b5Var.e0 != null ? 1.0f : 0.25f).setInterpolator(nr.h).setDuration(420L).start();
                     ArrayList arrayList2 = new ArrayList();
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         if ((arrayList.get(i11) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i11)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
@@ -59,14 +59,14 @@ public final /* synthetic */ class p4 implements x10 {
                                     Object obj3 = arrayList2.get(i7);
                                     i7++;
                                     spannableStringBuilder.append((CharSequence) "x");
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.x5(((TL_stars.starGiftAttributeModel) obj3).document, w5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(((TL_stars.starGiftAttributeModel) obj3).document, x5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
                                 if (spannableStringBuilder.length() > 0) {
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(gd.M0(2131749738, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
-                                w5Var.setText(spannableStringBuilder);
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(gd.N0(2131749737, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                                x5Var.setText(spannableStringBuilder);
                                 break;
                             }
                         }
@@ -78,8 +78,8 @@ public final /* synthetic */ class p4 implements x10 {
                     }
                     if (spannableStringBuilder.length() > 0) {
                     }
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(gd.M0(2131749738, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
-                    w5Var.setText(spannableStringBuilder);
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(gd.N0(2131749737, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                    x5Var.setText(spannableStringBuilder);
                 }
                 break;
             case 1:
@@ -91,15 +91,15 @@ public final /* synthetic */ class p4 implements x10 {
                 bn bnVar = tiVar.b;
                 if (bnVar.getParentActivity() != null) {
                     Activity parentActivity = bnVar.getParentActivity();
-                    String M0 = gd.M0(2131746096, null);
-                    int i12 = org.telegram.messenger.v3.p0(bnVar.e) ? 2131746100 : 2131746101;
+                    String N0 = gd.N0(2131746095, null);
+                    int i12 = org.telegram.messenger.v3.p0(bnVar.e) ? 2131746099 : 2131746100;
                     long j3 = this.b;
                     SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, i12, org.telegram.messenger.n5.t(j3)));
                     String H = l10.longValue() > 0 ? gd.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
-                    String M02 = gd.M0(2131751806, null);
+                    String N02 = gd.N0(2131751805, null);
                     rg rgVar = new rg(tiVar, j3, this.c, l10, 1);
-                    i6Var = ((org.telegram.ui.ActionBar.h2) bnVar).resourceProvider;
-                    org.telegram.ui.Components.b5.f0(parentActivity, M0, W2, H, M02, rgVar, i6Var, true);
+                    h6Var = ((org.telegram.ui.ActionBar.g2) bnVar).resourceProvider;
+                    org.telegram.ui.Components.c5.f0(parentActivity, N0, W2, H, N02, rgVar, h6Var, true);
                     break;
                 }
                 break;

@@ -16,14 +16,14 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.xs;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.oo;
+import org.telegram.ui.Components.qo;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ea1;
 import org.telegram.ui.jx0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, o2.i, oo, zi.x0 {
+public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, o2.i, qo, zi.x0 {
     public final /* synthetic */ int a;
     public long b;
     public Object c;
@@ -39,7 +39,7 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
         ((zi.x) this.c).n(mediaFormat, true);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public void B(int i7) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         if (i7 == 0) {
@@ -274,7 +274,7 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
             case 2:
             case 3:
             default:
-                ((AtomicLong) ((tg.x) this.c).c).set(this.b);
+                ((AtomicLong) ((tg.y) this.c).c).set(this.b);
                 break;
             case 4:
                 int statusCode = exc instanceof com.google.android.gms.common.api.f ? ((com.google.android.gms.common.api.f) exc).getStatusCode() : 13;
@@ -287,7 +287,7 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public void p() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
@@ -319,7 +319,7 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
         ((f3.p) this.c).readFully(bArr, i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public void s() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         boolean z10 = !profileActivity.getMessagesController().u2(this.b, profileActivity.g1, null);
@@ -353,7 +353,7 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public void u() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         long j3 = this.b;
@@ -370,11 +370,11 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public void w() {
         int i7;
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        i7 = ((org.telegram.ui.ActionBar.h2) profileActivity).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) profileActivity).currentAccount;
         SharedPreferences sharedPreferences = mp.u1(i7).g7;
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j3 = this.b;
@@ -427,7 +427,7 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public /* synthetic */ void dismiss() {
     }
 }

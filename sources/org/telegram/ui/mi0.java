@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class mi0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 c;
 
-    public /* synthetic */ mi0(org.telegram.ui.ActionBar.h2 h2Var, Object obj, int i7) {
+    public /* synthetic */ mi0(org.telegram.ui.ActionBar.g2 g2Var, Object obj, int i7) {
         this.a = i7;
-        this.c = h2Var;
+        this.c = g2Var;
         this.b = obj;
     }
 
@@ -25,14 +25,14 @@ public final class mi0 extends org.telegram.ui.ActionBar.j {
         int i10 = this.a;
         Object obj = this.b;
         int i11 = 0;
-        org.telegram.ui.ActionBar.h2 h2Var = this.c;
+        org.telegram.ui.ActionBar.g2 g2Var = this.c;
         switch (i10) {
             case 0:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) h2Var;
+                PasscodeActivity passcodeActivity = (PasscodeActivity) g2Var;
                 if (i7 != -1) {
                     if (i7 == 1) {
                         passcodeActivity.E = passcodeActivity.E != 0 ? 0 : 1;
-                        org.telegram.messenger.g0.h3(new we0(8, this, (org.telegram.ui.ActionBar.z0) obj), 150L);
+                        org.telegram.messenger.g0.h3(new fe0(10, this, (org.telegram.ui.ActionBar.y0) obj), 150L);
                         passcodeActivity.h.setText("");
                         er[] erVarArr = passcodeActivity.n.f;
                         int length = erVarArr.length;
@@ -49,7 +49,7 @@ public final class mi0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             default:
-                ProxyListActivity proxyListActivity = (ProxyListActivity) h2Var;
+                ProxyListActivity proxyListActivity = (ProxyListActivity) g2Var;
                 ArrayList arrayList = proxyListActivity.F;
                 if (i7 == -1) {
                     if (!arrayList.isEmpty()) {
@@ -61,16 +61,16 @@ public final class mi0 extends org.telegram.ui.ActionBar.j {
                     }
                 } else if (i7 == 0) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
-                    String M0 = org.telegram.messenger.gd.M0(arrayList.size() > 1 ? 2131751499 : 2131751500, null);
-                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                    u1Var.U = M0;
-                    alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-                    u1Var.S = org.telegram.messenger.gd.M0(2131751498, null);
-                    alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131751587, null), new qi0(this, 13));
-                    proxyListActivity.showDialog(u1Var);
-                    TextView textView = (TextView) u1Var.d(-1);
+                    String N0 = org.telegram.messenger.gd.N0(arrayList.size() > 1 ? 2131751498 : 2131751499, null);
+                    org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                    t1Var.U = N0;
+                    alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                    t1Var.S = org.telegram.messenger.gd.N0(2131751497, null);
+                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new qi0(this, 13));
+                    proxyListActivity.showDialog(t1Var);
+                    TextView textView = (TextView) t1Var.d(-1);
                     if (textView != null) {
-                        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
+                        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
                         break;
                     }
                 } else if (i7 == 1) {
@@ -88,7 +88,7 @@ public final class mi0 extends org.telegram.ui.ActionBar.j {
                     Intent intent = new Intent("android.intent.action.SEND");
                     intent.setType("text/plain");
                     intent.putExtra("android.intent.extra.TEXT", sb2.toString());
-                    Intent createChooser = Intent.createChooser(intent, org.telegram.messenger.gd.M0(arrayList.size() > 1 ? 2131745262 : 2131745263, null));
+                    Intent createChooser = Intent.createChooser(intent, org.telegram.messenger.gd.N0(arrayList.size() > 1 ? 2131745261 : 2131745262, null));
                     createChooser.setFlags(TLObject.FLAG_28);
                     ((Context) obj).startActivity(createChooser);
                     l4 l4Var = proxyListActivity.a;

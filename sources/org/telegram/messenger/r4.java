@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r4 implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -67,7 +67,7 @@ public final /* synthetic */ class r4 implements RequestDelegate {
                 boolean z11 = this.c;
                 fj fjVar = (fj) this.e;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) this.f;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.b;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.b;
                 if (tL_error == null) {
                     if (z11 && fjVar != null) {
                         fjVar.A2 = true;
@@ -78,7 +78,7 @@ public final /* synthetic */ class r4 implements RequestDelegate {
                 } else {
                     if (r8.r(tL_error.text)) {
                         String str2 = tL_error.text;
-                        in inVar = new in(fjVar, zyVar, tL_messages_editMessage, h2Var, z11);
+                        in inVar = new in(fjVar, zyVar, tL_messages_editMessage, g2Var, z11);
                         zyVar = zyVar;
                         if (fjVar != null && (tL_inputRichMessage = tL_messages_editMessage.rich_message) != null) {
                             ArrayList arrayList3 = new ArrayList(tL_inputRichMessage.documents.size() + tL_inputRichMessage.photos.size());
@@ -95,8 +95,8 @@ public final /* synthetic */ class r4 implements RequestDelegate {
                         }
                     }
                     g0.g3(new rq(20, zyVar, fjVar));
-                    if (h2Var != null) {
-                        g0.g3(new mw(zyVar, tL_error, h2Var, tL_messages_editMessage, 1));
+                    if (g2Var != null) {
+                        g0.g3(new mw(zyVar, tL_error, g2Var, tL_messages_editMessage, 1));
                         break;
                     }
                 }
@@ -104,12 +104,12 @@ public final /* synthetic */ class r4 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ r4(fj fjVar, zy zyVar, TLRPC.TL_messages_editMessage tL_messages_editMessage, org.telegram.ui.ActionBar.h2 h2Var, boolean z10) {
+    public /* synthetic */ r4(fj fjVar, zy zyVar, TLRPC.TL_messages_editMessage tL_messages_editMessage, org.telegram.ui.ActionBar.g2 g2Var, boolean z10) {
         this.d = zyVar;
         this.c = z10;
         this.e = fjVar;
         this.f = tL_messages_editMessage;
-        this.b = h2Var;
+        this.b = g2Var;
     }
 
     public /* synthetic */ r4(zy zyVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.bn bnVar, String str, boolean z10) {

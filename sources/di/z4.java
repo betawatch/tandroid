@@ -10,12 +10,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class z4 extends FrameLayout {
-    public final bi.y2 a;
+    public final bi.c3 a;
     public final FrameLayout b;
     public final org.telegram.ui.Components.q9 c;
     public final TextView d;
@@ -28,7 +28,7 @@ public final class z4 extends FrameLayout {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         addView(frameLayout, c8.ma.d(-1, -1.0f, ks.E1, 6.0f, 6.0f, 6.0f, 6.0f));
-        frameLayout.setBackground(org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.n6.r1(0.12f, -4530177)));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.m6.r1(0.12f, -4530177)));
         frameLayout.setForeground(new p5(org.telegram.messenger.g0.L(18.0f), 0));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.filled_add_album);
@@ -37,11 +37,11 @@ public final class z4 extends FrameLayout {
         frameLayout.addView(imageView, c8.ma.e(24, 24, 17));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.b = frameLayout2;
-        bi.y2 y2Var = new bi.y2(frameLayout2, null, false);
-        this.a = y2Var;
-        frameLayout2.setBackground(y2Var);
-        y2Var.s = org.telegram.messenger.g0.L(18.0f);
-        y2Var.v = false;
+        bi.c3 c3Var = new bi.c3(frameLayout2, null, false);
+        this.a = c3Var;
+        frameLayout2.setBackground(c3Var);
+        c3Var.s = org.telegram.messenger.g0.L(18.0f);
+        c3Var.v = false;
         frameLayout.addView(frameLayout2, c8.ma.e(-1, -1, ks.E1));
         frameLayout2.setAlpha(0.0f);
         frameLayout2.setScaleX(0.6f);
@@ -73,15 +73,15 @@ public final class z4 extends FrameLayout {
     public final void a(TL_stars.StarGift starGift, boolean z10) {
         this.h = starGift;
         if (starGift != null) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) x8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) x8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) x8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
-            bi.y2 y2Var = this.a;
-            y2Var.d(stargiftattributebackdrop);
-            y2Var.e(stargiftattributepattern);
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) y8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) y8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
+            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) y8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+            bi.c3 c3Var = this.a;
+            c3Var.d(stargiftattributebackdrop);
+            c3Var.e(stargiftattributepattern);
             pb.d1(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
-            int b10 = org.telegram.ui.ActionBar.n6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.n6.r1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
-            String J0 = ki.k.J0(starGift.craft_chance_permille);
+            int b10 = org.telegram.ui.ActionBar.m6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.m6.r1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
+            String J0 = ki.j.J0(starGift.craft_chance_permille);
             TextView textView = this.d;
             textView.setText(J0);
             textView.setBackground(new p5(org.telegram.messenger.g0.L(10.0f), b10));
@@ -110,9 +110,9 @@ public final class z4 extends FrameLayout {
         }
         frameLayout.setVisibility(0);
         ViewPropertyAnimator alpha = frameLayout.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).alpha(z10 ? 1.0f : 0.0f);
-        lr lrVar = lr.h;
+        nr nrVar = nr.h;
         final int i7 = 0;
-        alpha.setInterpolator(lrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: di.y4
+        alpha.setInterpolator(nrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: di.y4
             public final /* synthetic */ z4 b;
 
             {
@@ -157,7 +157,7 @@ public final class z4 extends FrameLayout {
         }).start();
         textView.setVisibility(0);
         final int i10 = 1;
-        textView.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(lrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: di.y4
+        textView.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(nrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: di.y4
             public final /* synthetic */ z4 b;
 
             {
@@ -202,7 +202,7 @@ public final class z4 extends FrameLayout {
         }).start();
         frameLayout2.setVisibility(0);
         final int i11 = 2;
-        frameLayout2.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(lrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: di.y4
+        frameLayout2.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(nrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: di.y4
             public final /* synthetic */ z4 b;
 
             {

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -30,19 +30,19 @@ public final /* synthetic */ class y implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new bi.k2((e0) this.c, (org.telegram.ui.ActionBar.u1) this.d, tLObject, this.b, (x10) this.e));
+                org.telegram.messenger.g0.g3(new bi.o2((e0) this.c, (org.telegram.ui.ActionBar.t1) this.d, tLObject, this.b, (x10) this.e));
                 break;
             case 1:
                 org.telegram.messenger.g0.g3(new a3((f6) this.c, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.b));
                 break;
             case 2:
-                org.telegram.messenger.g0.g3(new bi.k2((x8) this.c, tLObject, (fj) this.d, this.b, (Runnable) this.e, 3));
+                org.telegram.messenger.g0.g3(new bi.o2((y8) this.c, tLObject, (fj) this.d, this.b, (Runnable) this.e, 3));
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new bi.k2((org.telegram.ui.ActionBar.u1) this.d, tLObject, this.b, (org.telegram.messenger.c) this.c, (lr) this.e, 13));
+                org.telegram.messenger.g0.g3(new bi.o2((org.telegram.ui.ActionBar.t1) this.d, tLObject, this.b, (org.telegram.messenger.c) this.c, (lr) this.e, 13));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new a3((org.telegram.ui.ActionBar.h2) this.c, tLObject, (ro) this.d, tL_error, (Runnable) this.e, this.b));
+                org.telegram.messenger.g0.g3(new a3((org.telegram.ui.ActionBar.g2) this.c, tLObject, (ro) this.d, tL_error, (Runnable) this.e, this.b));
                 break;
         }
     }
@@ -55,9 +55,9 @@ public final /* synthetic */ class y implements RequestDelegate {
         this.b = j3;
     }
 
-    public /* synthetic */ y(org.telegram.ui.ActionBar.u1 u1Var, long j3, org.telegram.messenger.c cVar, lr lrVar) {
+    public /* synthetic */ y(org.telegram.ui.ActionBar.t1 t1Var, long j3, org.telegram.messenger.c cVar, lr lrVar) {
         this.a = 3;
-        this.d = u1Var;
+        this.d = t1Var;
         this.b = j3;
         this.c = cVar;
         this.e = lrVar;

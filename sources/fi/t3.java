@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Cells.ua;
-import org.telegram.ui.Components.hv;
+import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.ad;
 import org.telegram.ui.f50;
@@ -20,7 +20,7 @@ import org.telegram.ui.rc1;
 import org.telegram.ui.rn;
 import org.telegram.ui.sc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class t3 extends q9 {
     public final /* synthetic */ int H;
@@ -101,7 +101,7 @@ public final class t3 extends q9 {
                     canvas2 = canvas;
                 }
                 if (uaVar.e) {
-                    uaVar.s.r.setColor(org.telegram.ui.ActionBar.n6.c0);
+                    uaVar.s.r.setColor(org.telegram.ui.ActionBar.m6.c0);
                     int measuredWidth = getMeasuredWidth() / 2;
                     int measuredHeight = getMeasuredHeight() / 2;
                     canvas2.drawCircle(measuredWidth, measuredHeight, org.telegram.messenger.g0.L(20.0f), uaVar.s.r);
@@ -157,7 +157,7 @@ public final class t3 extends q9 {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.H) {
             case 1:
-                return drawable == ((kg.d1) this.I).n || super.verifyDrawable(drawable);
+                return drawable == ((kg.c1) this.I).n || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -175,16 +175,16 @@ public final class t3 extends q9 {
     public void invalidate() {
         switch (this.H) {
             case 5:
-                hi.m5 m5Var = ((ad) this.I).h;
-                if (m5Var != null) {
-                    m5Var.invalidate();
+                hi.l5 l5Var = ((ad) this.I).h;
+                if (l5Var != null) {
+                    l5Var.invalidate();
                 }
                 super.invalidate();
                 break;
             case 6:
-                hi.m5 m5Var2 = ((rn) this.I).f;
-                if (m5Var2 != null) {
-                    m5Var2.invalidate();
+                hi.l5 l5Var2 = ((rn) this.I).f;
+                if (l5Var2 != null) {
+                    l5Var2.invalidate();
                 }
                 super.invalidate();
                 break;
@@ -195,21 +195,21 @@ public final class t3 extends q9 {
             case 8:
                 if (!ch.f0.b(this)) {
                     super.invalidate();
-                    ((hv) this.I).f();
+                    ((kv) this.I).f();
                     break;
                 }
                 break;
             case 9:
-                hi.m5 m5Var3 = ((f50) this.I).e;
-                if (m5Var3 != null) {
-                    m5Var3.invalidate();
+                hi.l5 l5Var3 = ((f50) this.I).e;
+                if (l5Var3 != null) {
+                    l5Var3.invalidate();
                 }
                 super.invalidate();
                 break;
             case 10:
-                hi.m5 m5Var4 = ((pc0) this.I).h;
-                if (m5Var4 != null) {
-                    m5Var4.invalidate();
+                hi.l5 l5Var4 = ((pc0) this.I).h;
+                if (l5Var4 != null) {
+                    l5Var4.invalidate();
                 }
                 super.invalidate();
                 break;
@@ -223,16 +223,16 @@ public final class t3 extends q9 {
     public void invalidate(int i7, int i10, int i11, int i12) {
         switch (this.H) {
             case 5:
-                hi.m5 m5Var = ((ad) this.I).h;
-                if (m5Var != null) {
-                    m5Var.invalidate();
+                hi.l5 l5Var = ((ad) this.I).h;
+                if (l5Var != null) {
+                    l5Var.invalidate();
                 }
                 super.invalidate(i7, i10, i11, i12);
                 break;
             case 6:
-                hi.m5 m5Var2 = ((rn) this.I).f;
-                if (m5Var2 != null) {
-                    m5Var2.invalidate();
+                hi.l5 l5Var2 = ((rn) this.I).f;
+                if (l5Var2 != null) {
+                    l5Var2.invalidate();
                 }
                 super.invalidate(i7, i10, i11, i12);
                 break;
@@ -247,16 +247,16 @@ public final class t3 extends q9 {
                 }
                 break;
             case 9:
-                hi.m5 m5Var3 = ((f50) this.I).e;
-                if (m5Var3 != null) {
-                    m5Var3.invalidate();
+                hi.l5 l5Var3 = ((f50) this.I).e;
+                if (l5Var3 != null) {
+                    l5Var3.invalidate();
                 }
                 super.invalidate(i7, i10, i11, i12);
                 break;
             case 10:
-                hi.m5 m5Var4 = ((pc0) this.I).h;
-                if (m5Var4 != null) {
-                    m5Var4.invalidate();
+                hi.l5 l5Var4 = ((pc0) this.I).h;
+                if (l5Var4 != null) {
+                    l5Var4.invalidate();
                 }
                 super.invalidate(i7, i10, i11, i12);
                 break;

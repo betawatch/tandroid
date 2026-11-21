@@ -15,15 +15,15 @@ import org.telegram.messenger.t3;
 import org.telegram.messenger.u3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.gk;
+import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.me;
-import org.telegram.ui.Components.ph;
+import org.telegram.ui.Components.rh;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.f40;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j1 implements wi.l, fs {
     public static j1 w;
@@ -36,7 +36,7 @@ public final class j1 implements wi.l, fs {
     public final int r;
     public long s;
     public final g1 b = new g1(this);
-    public final gk n = new gk(this, 23);
+    public final ik n = new ik(this, 23);
 
     public j1(int i7) {
         this.r = i7;
@@ -81,9 +81,9 @@ public final class j1 implements wi.l, fs {
             j1Var.b.a = t0Var;
             j1Var.a();
             j1Var.s = SystemClock.elapsedRealtime();
-            gk gkVar = j1Var.n;
-            org.telegram.messenger.g0.r(gkVar);
-            org.telegram.messenger.g0.h3(gkVar, 700L);
+            ik ikVar = j1Var.n;
+            org.telegram.messenger.g0.r(ikVar);
+            org.telegram.messenger.g0.h3(ikVar, 700L);
             f40 f40Var = f40.C5;
             if (f40Var != null) {
                 f40Var.dismiss();
@@ -217,7 +217,7 @@ public final class j1 implements wi.l, fs {
     }
 
     @Override // wi.l
-    public final /* synthetic */ boolean V(boolean z10, float f10, cn0 cn0Var) {
+    public final /* synthetic */ boolean V(boolean z10, float f10, fn0 fn0Var) {
         return false;
     }
 
@@ -255,7 +255,7 @@ public final class j1 implements wi.l, fs {
         t0 t0Var = this.e;
         this.e = null;
         this.b.a = null;
-        this.a.a(new ph(11, this, t0Var));
+        this.a.a(new rh(11, this, t0Var));
         org.telegram.messenger.g0.g3(new me(19));
     }
 
@@ -370,9 +370,9 @@ public final class j1 implements wi.l, fs {
         this.b.a = t0Var;
         a();
         this.s = SystemClock.elapsedRealtime();
-        gk gkVar = this.n;
-        org.telegram.messenger.g0.r(gkVar);
-        org.telegram.messenger.g0.h3(gkVar, 700L);
+        ik ikVar = this.n;
+        org.telegram.messenger.g0.r(ikVar);
+        org.telegram.messenger.g0.h3(ikVar, 700L);
     }
 
     @Override // wi.l

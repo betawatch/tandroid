@@ -1,32 +1,76 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class w10 implements Runnable {
-    public final /* synthetic */ x10 a;
+public final class w10 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public w10(x10 x10Var) {
-        this.a = x10Var;
+    public w10(org.telegram.ui.l51 l51Var, ti tiVar, org.telegram.ui.Cells.r1 r1Var, org.telegram.ui.rj rjVar, org.telegram.ui.bn bnVar) {
+        this.f = l51Var;
+        this.b = tiVar;
+        this.c = r1Var;
+        this.d = rjVar;
+        this.e = bnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !sharedInstance.isMicMute()) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                WindowManager windowManager = (WindowManager) this.f;
+                View view = this.b;
+                if (view.getParent() != null) {
+                    view.setVisibility(8);
+                    View view2 = this.c;
+                    view2.setVisibility(8);
+                    View view3 = this.d;
+                    view3.setVisibility(8);
+                    windowManager.removeView(view);
+                    windowManager.removeView(view2);
+                    windowManager.removeView(view3);
+                    windowManager.removeView((View) this.e);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.l51 l51Var = (org.telegram.ui.l51) this.f;
+                l51Var.E.e();
+                ti tiVar = (ti) this.b;
+                ((ArrayList) tiVar.c).remove(l51Var);
+                tiVar.a();
+                ((ViewGroup) tiVar.d).invalidate();
+                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.c;
+                r1Var.setEnterTransitionInProgress(false);
+                r1Var.getTransitionParams().E0.set(r1Var.getBackgroundDrawableLeft(), r1Var.getBackgroundDrawableTop(), r1Var.getBackgroundDrawableRight(), r1Var.getBackgroundDrawableBottom());
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
+                chatActivityEnterView.setTextTransitionIsRunning(false);
+                chatActivityEnterView.getEditField().setAlpha(1.0f);
+                org.telegram.ui.bn bnVar = (org.telegram.ui.bn) this.e;
+                ((so[]) bnVar.c0.b)[0].c.setAlpha(1.0f);
+                ((so[]) bnVar.c0.b)[0].d.setAlpha(1.0f);
+                y5.release((View) null, l51Var.I);
+                break;
         }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.d.f(sharedInstance.getSelfId());
-        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || org.telegram.messenger.v3.w(14, sharedInstance.getChat())) {
-            x10 x10Var = this.a;
-            org.telegram.messenger.g0.h3(x10Var.f, 90L);
-            try {
-                x10Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            x10Var.c = true;
-        }
+    }
+
+    public w10(a20 a20Var, bi.e3 e3Var, FrameLayout frameLayout, WindowManager windowManager, org.telegram.ui.w7 w7Var) {
+        this.b = a20Var;
+        this.c = e3Var;
+        this.d = frameLayout;
+        this.f = windowManager;
+        this.e = w7Var;
     }
 }

@@ -1,10 +1,10 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.Components.q40;
-import org.telegram.ui.Components.r40;
-import org.telegram.ui.Components.z40;
+import org.telegram.ui.Components.c50;
+import org.telegram.ui.Components.t40;
+import org.telegram.ui.Components.u40;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class re implements Runnable {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class re implements Runnable {
                 ks.f(mediaController.i1).k(ks.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d));
                 break;
             default:
-                z40 z40Var = ((r40) ((q40) runnable).b).I0;
-                ks.f(z40Var.e).k(ks.k2, Integer.valueOf(z40Var.V), Double.valueOf(d));
+                c50 c50Var = ((u40) ((t40) runnable).b).I0;
+                ks.f(c50Var.e).k(ks.k2, Integer.valueOf(c50Var.V), Double.valueOf(d));
                 break;
         }
     }

@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.a8;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.ph;
-import org.telegram.ui.Components.y40;
+import org.telegram.ui.Components.b50;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.Components.rh;
 import org.telegram.ui.Wallet.l7;
 import org.telegram.ui.Wallet.m7;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -293,7 +293,7 @@ public final /* synthetic */ class p implements Runnable {
                 ((wg.y) this.b).a(null);
                 return;
             case 6:
-                ((ph) this.b).a(Collections.EMPTY_LIST);
+                ((rh) this.b).a(Collections.EMPTY_LIST);
                 return;
             case 7:
                 ((wg.v) this.b).a(null);
@@ -302,10 +302,10 @@ public final /* synthetic */ class p implements Runnable {
                 wg.b0 b0Var = (wg.b0) this.b;
                 b0Var.getClass();
                 wg.c0 c0Var = b0Var.r;
-                ug.i1 i1Var = new ug.i1(c0Var.s1, c0Var.a, null, null, null, c0Var.J0);
-                i1Var.F2 = true;
-                i1Var.Y1 = true;
-                c0Var.s1.showDialog(i1Var);
+                ug.h1 h1Var = new ug.h1(c0Var.s1, c0Var.a, null, null, null, c0Var.J0);
+                h1Var.F2 = true;
+                h1Var.Y1 = true;
+                c0Var.s1.showDialog(h1Var);
                 return;
             case 9:
                 ((FrameLayout) this.b).invalidate();
@@ -352,14 +352,14 @@ public final /* synthetic */ class p implements Runnable {
                 kVar.e(true);
                 return;
             default:
-                y40 y40Var = (y40) ((of) this.b).b;
-                y40Var.r0 = true;
+                b50 b50Var = (b50) ((qf) this.b).b;
+                b50Var.r0 = true;
                 StringBuilder sb2 = new StringBuilder("RoundVideo camera flip first frame: elapsedMs=");
-                cameraFlipElapsedMs = y40Var.getCameraFlipElapsedMs();
+                cameraFlipElapsedMs = b50Var.getCameraFlipElapsedMs();
                 sb2.append(cameraFlipElapsedMs);
                 a8.b(sb2.toString());
-                y40Var.w(true);
-                y40.n(y40Var);
+                b50Var.w(true);
+                b50.n(b50Var);
                 return;
         }
     }

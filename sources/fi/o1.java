@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.r1, lh.a {
+public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.q1, lh.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ z3 b;
 
@@ -36,8 +36,8 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.r1, l
     /* JADX WARN: Type inference failed for: r9v5 */
     /* JADX WARN: Type inference failed for: r9v6 */
     /* JADX WARN: Type inference failed for: r9v9 */
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         long j3;
         TLRPC.ChatFull chatFull;
         ?? r92;
@@ -75,11 +75,11 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.r1, l
                     }
                 }
                 TL_stories.StoryItem storyItem2 = x3Var.a;
-                if (storyItem2 instanceof y5) {
-                    z5 z5Var = ((y5) storyItem2).a;
+                if (storyItem2 instanceof z5) {
+                    a6 a6Var = ((z5) storyItem2).a;
                     TLRPC.MessageMedia messageMedia2 = storyItem2.media;
-                    z5Var.getClass();
-                    z5Var.F(new ArrayList(Arrays.asList(messageMedia2)));
+                    a6Var.getClass();
+                    a6Var.F(new ArrayList(Arrays.asList(messageMedia2)));
                 } else if (storyItem2 != null) {
                     z3 z3Var2 = x3Var.k;
                     p6 p6Var = z3Var2.C1;
@@ -170,7 +170,7 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.r1, l
                         TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
                         tL_stories_deleteStories.peer = mp.u1(i12).l1(j10);
                         tL_stories_deleteStories.id.add(Integer.valueOf(storyItem2.id));
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new n5(p6Var, 4));
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new o5(p6Var, 4));
                         c7 c7Var = p6Var.k;
                         c7Var.b.a.c(new z6(c7Var, j10, storyItem2.id, 1));
                         ks.f(i12).k(ks.y5, new Object[0]);

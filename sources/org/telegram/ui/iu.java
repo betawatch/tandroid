@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iu implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class iu implements View.OnClickListener {
                 break;
             case 9:
                 cxVar.getClass();
-                cxVar.showDialog(new ug.z0((org.telegram.ui.ActionBar.h2) cxVar, 2, true));
+                cxVar.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) cxVar, 2, true));
                 break;
             case 10:
                 cxVar.getContactsController().B();
@@ -134,7 +134,7 @@ public final /* synthetic */ class iu implements View.OnClickListener {
                 cx.u0(cxVar);
                 break;
             case 15:
-                cxVar.showDialog((org.telegram.ui.ActionBar.x2) org.telegram.ui.Components.b5.l(cxVar.getParentActivity(), org.telegram.messenger.gd.M0(2131751227, null), org.telegram.messenger.gd.M0(2131751232, null), null, new hu(cxVar, 1), new zu(cxVar, 12), false, false, cxVar.getResourceProvider()).b);
+                cxVar.showDialog((org.telegram.ui.ActionBar.w2) org.telegram.ui.Components.c5.l(cxVar.getParentActivity(), org.telegram.messenger.gd.N0(2131751226, null), org.telegram.messenger.gd.N0(2131751231, null), null, new hu(cxVar, 1), new zu(cxVar, 12), false, false, cxVar.getResourceProvider()).b);
                 break;
             case 16:
                 cx.B0(cxVar);

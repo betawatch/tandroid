@@ -5,14 +5,14 @@ import android.os.Build;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.PopupWindow;
-import hi.u5;
+import hi.t5;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class j2 extends d2 implements e2 {
     public static final Method U;
-    public u5 T;
+    public t5 T;
 
     static {
         try {
@@ -26,17 +26,17 @@ public final class j2 extends d2 implements e2 {
 
     @Override // m.e2
     public final void h(l.k kVar, MenuItem menuItem) {
-        u5 u5Var = this.T;
-        if (u5Var != null) {
-            u5Var.h(kVar, menuItem);
+        t5 t5Var = this.T;
+        if (t5Var != null) {
+            t5Var.h(kVar, menuItem);
         }
     }
 
     @Override // m.e2
     public final void n(l.k kVar, l.m mVar) {
-        u5 u5Var = this.T;
-        if (u5Var != null) {
-            u5Var.n(kVar, mVar);
+        t5 t5Var = this.T;
+        if (t5Var != null) {
+            t5Var.n(kVar, mVar);
         }
     }
 

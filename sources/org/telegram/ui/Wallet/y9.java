@@ -10,13 +10,13 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import java.util.ArrayList;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class y9 extends EditTextBoldCursor {
-    public final org.telegram.ui.Components.c6 M1;
-    public final org.telegram.ui.Components.c6 N1;
+    public final org.telegram.ui.Components.d6 M1;
+    public final org.telegram.ui.Components.d6 N1;
     public float O1;
     public float P1;
     public final /* synthetic */ ca Q1;
@@ -25,8 +25,8 @@ public final class y9 extends EditTextBoldCursor {
     public y9(ca caVar, Context context) {
         super(context);
         this.Q1 = caVar;
-        this.M1 = new org.telegram.ui.Components.c6(this, 180L, lr.h);
-        this.N1 = new org.telegram.ui.Components.c6(this, 320L, ca.T);
+        this.M1 = new org.telegram.ui.Components.d6(this, 180L, nr.h);
+        this.N1 = new org.telegram.ui.Components.d6(this, 320L, ca.T);
         this.O1 = 1.0f;
     }
 
@@ -49,7 +49,7 @@ public final class y9 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0082  */
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.rt, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -97,7 +97,7 @@ public final class y9 extends EditTextBoldCursor {
         paint.setTextSize(textSize);
     }
 
-    @Override // org.telegram.ui.Components.pt, android.widget.TextView
+    @Override // org.telegram.ui.Components.rt, android.widget.TextView
     public final void onSelectionChanged(int i7, int i10) {
         super.onSelectionChanged(i7, i10);
         if (i7 != i10) {

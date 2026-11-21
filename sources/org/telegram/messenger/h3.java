@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h3 {
     public final mp a;
@@ -28,6 +28,6 @@ public final class h3 {
         g3Var.k = mpVar.O0(Long.valueOf(-j3));
         e3 e3Var = new e3(g3Var, tL_premium_boostsStatus, x10Var, 0);
         g1 g1Var = new g1(1, g3Var, x10Var);
-        ConnectionsManager.getInstance(j10.t0).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new bi.m1(g1Var, mp.u1(j10.t0), e3Var, 27));
+        ConnectionsManager.getInstance(j10.t0).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new bi.q1(g1Var, mp.u1(j10.t0), e3Var, 27));
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class j9 implements Runnable {
                 long j3 = this.b;
                 bi.x xVar = (bi.x) this.f;
                 long j10 = this.c;
-                if (di.x8.y(u9Var.currentAccount, false).e) {
+                if (di.y8.y(u9Var.currentAccount, false).e) {
                     u9Var.k(j3, xVar, j10, nVar);
                     return;
                 } else {
@@ -86,7 +86,7 @@ public final /* synthetic */ class j9 implements Runnable {
                 ne neVar = (ne) this.e;
                 long j15 = this.b;
                 long j16 = this.c;
-                org.telegram.ui.Components.lg lgVar = (org.telegram.ui.Components.lg) this.f;
+                org.telegram.ui.Components.og ogVar = (org.telegram.ui.Components.og) this.f;
                 if (MediaController.cropOpusFile(mediaController.k1.getAbsolutePath(), neVar.getAbsolutePath(), j15, j16)) {
                     File file = mediaController.k1;
                     if (file != null) {
@@ -94,7 +94,7 @@ public final /* synthetic */ class j9 implements Runnable {
                     }
                     mediaController.k1 = neVar;
                     mediaController.l1 = j16 - j15;
-                    g0.g3(lgVar);
+                    g0.g3(ogVar);
                     return;
                 }
                 return;

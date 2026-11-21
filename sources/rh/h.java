@@ -3,19 +3,17 @@ package rh;
 import android.graphics.Typeface;
 import android.provider.Settings;
 import android.view.View;
-import hi.t6;
-import ji.j;
+import hi.s6;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.j1;
-import org.telegram.ui.Components.sz;
+import org.telegram.ui.ActionBar.i1;
+import org.telegram.ui.Components.uz;
 import org.telegram.ui.web.z0;
-import r0.i1;
 import r0.l1;
 import te.k;
 import te.l;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class h implements f, e, c {
     public d E;
@@ -27,7 +25,7 @@ public class h implements f, e, c {
     public final l c = new l();
     public final l d = new l();
     public final h2.f e = new h2.f((int[]) null);
-    public final sz f;
+    public final uz f;
     public final Runnable h;
     public boolean n;
     public l1 r;
@@ -38,23 +36,23 @@ public class h implements f, e, c {
 
     /* JADX WARN: Multi-variable type inference failed */
     public h(Runnable runnable) {
-        t6 t6Var = new t6(this, 25);
-        sz szVar = new sz();
-        szVar.c = b.a;
-        szVar.d = new z0(szVar, 7);
-        szVar.b = t6Var;
+        s6 s6Var = new s6(this, 25);
+        uz uzVar = new uz();
+        uzVar.c = b.a;
+        uzVar.d = new z0(uzVar, 7);
+        uzVar.b = s6Var;
         Typeface typeface = g0.a;
         float f10 = 1.0f;
         try {
             f10 = Settings.Global.getFloat(t0.b.getContentResolver(), "animator_duration_scale", 1.0f);
         } catch (Exception unused) {
         }
-        szVar.a = (long) (f10 * 250.0f * 1.1f);
-        this.f = szVar;
+        uzVar.a = (long) (f10 * 250.0f * 1.1f);
+        this.f = uzVar;
         this.s = 1;
         this.y = new g(this, 0);
         this.h = runnable;
-        this.a = new te.c(0, new j(this, runnable, 0 == true ? 1 : 0, 27), j1.w, 250L);
+        this.a = new te.c(0, new ji.l(this, runnable, 0 == true ? 1 : 0, 27), i1.w, 250L);
     }
 
     @Override // rh.c
@@ -150,7 +148,7 @@ public class h implements f, e, c {
         this.r = b10;
         i0.b bVar2 = i0.b.e;
         if (b10 != null) {
-            i1 i1Var = b10.a;
+            r0.i1 i1Var = b10.a;
             bVar = i0.b.a(i1Var.f(647), i1Var.g(647));
         } else {
             bVar = bVar2;
@@ -158,12 +156,12 @@ public class h implements f, e, c {
         if (b10 != null) {
             bVar2 = b10.a.f(8);
         }
-        sz szVar = this.f;
-        b bVar3 = (b) szVar.c;
+        uz uzVar = this.f;
+        b bVar3 = (b) uzVar.c;
         boolean z11 = bVar2.d > 0;
         b bVar4 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
         if (bVar3 != bVar4) {
-            szVar.a(bVar4, false);
+            uzVar.a(bVar4, false);
         }
         int i10 = this.s;
         if (i10 == 2) {

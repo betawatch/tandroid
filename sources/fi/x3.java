@@ -11,9 +11,9 @@ import org.telegram.messenger.o10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.b31;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class x3 {
     public TL_stories.StoryItem a = null;
@@ -241,24 +241,24 @@ public final class x3 {
             } else {
                 o6 o6Var = this.b;
                 if (o6Var != null) {
-                    hi.d7 d7Var = o6Var.c;
-                    if (d7Var != null) {
-                        if (d7Var.n) {
+                    hi.c7 c7Var = o6Var.c;
+                    if (c7Var != null) {
+                        if (c7Var.n) {
                             s7Var = new s7();
-                            s7Var.k = d7Var.p;
-                            String str = d7Var.s;
+                            s7Var.k = c7Var.p;
+                            String str = c7Var.s;
                             s7Var.l = str;
                             s7Var.f = TextUtils.isEmpty(str);
-                        } else if (d7Var.u && (arrayList = d7Var.v) != null && arrayList.size() > 0) {
-                            fj fjVar = (fj) d7Var.v.get(0);
-                            long p10 = hi.d7.p(fjVar);
+                        } else if (c7Var.u && (arrayList = c7Var.v) != null && arrayList.size() > 0) {
+                            fj fjVar = (fj) c7Var.v.get(0);
+                            long p10 = hi.c7.p(fjVar);
                             if (p10 < 0 && (O0 = mp.u1(fjVar.K1).O0(Long.valueOf(-p10))) != null) {
                                 s7Var = new s7();
                                 s7Var.b = Long.valueOf(p10);
                                 s7Var.e = true;
                                 s7Var.a = fjVar.K1;
                                 s7Var.f = true;
-                                Boolean D = hi.d7.D(fjVar);
+                                Boolean D = hi.c7.D(fjVar);
                                 s7Var.d = Integer.valueOf(D != null ? D.booleanValue() ? fjVar.k.fwd_from.channel_post : fjVar.e1() : 0);
                                 s7Var.k = new SpannableStringBuilder(org.telegram.messenger.v3.V(O0) ? fj.F() : fj.m2()).append((CharSequence) " ").append((CharSequence) O0.title);
                             }
@@ -359,7 +359,7 @@ public final class x3 {
         }
         TL_stories.StoryItem storyItem = x3Var.a;
         if (storyItem != null) {
-            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, y21.N0())) {
+            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, b31.N0())) {
                 String str = x3Var.a.caption;
                 this.h = str;
                 CharSequence m11 = org.telegram.messenger.j6.m(str, g3Var.c0.getPaint().getFontMetricsInt(), false, null, 0);

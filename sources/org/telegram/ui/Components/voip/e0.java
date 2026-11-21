@@ -13,14 +13,14 @@ import org.telegram.messenger.t3;
 import org.telegram.messenger.u3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.c20;
+import org.telegram.ui.Components.fn0;
 import org.telegram.ui.Components.me;
-import org.telegram.ui.Components.z10;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b20;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e0 implements wi.l {
     public static e0 e;
@@ -77,11 +77,11 @@ public final class e0 implements wi.l {
         if (e0Var == null || (nVar = e0Var.a) == null || !nVar.d()) {
             return;
         }
-        z10 z10Var = z10.f0;
+        c20 c20Var = c20.f0;
         wi.n nVar2 = e.a;
         boolean z10 = false;
-        ?? r42 = z10Var != null ? 1 : 0;
-        if (z10Var != null && z10Var.r) {
+        ?? r42 = c20Var != null ? 1 : 0;
+        if (c20Var != null && c20Var.r) {
             z10 = true;
         }
         int i7 = nVar2.c;
@@ -219,7 +219,7 @@ public final class e0 implements wi.l {
     }
 
     @Override // wi.l
-    public final /* synthetic */ boolean V(boolean z10, float f10, cn0 cn0Var) {
+    public final /* synthetic */ boolean V(boolean z10, float f10, fn0 fn0Var) {
         return false;
     }
 
@@ -249,7 +249,7 @@ public final class e0 implements wi.l {
             a0Var.j(true);
             org.telegram.messenger.g0.h3(a0Var.J, 250L);
         }
-        z10.k(view.getContext());
+        c20.k(view.getContext());
     }
 
     @Override // wi.l
@@ -278,7 +278,7 @@ public final class e0 implements wi.l {
             }
             f40Var.z1();
         }
-        z10.k(view.getContext());
+        c20.k(view.getContext());
     }
 
     @Override // wi.l

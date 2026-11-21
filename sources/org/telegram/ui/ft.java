@@ -12,7 +12,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ft extends FrameLayout {
     public final ImageView a;
@@ -23,7 +23,7 @@ public final class ft extends FrameLayout {
 
     public ft(pt ptVar, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, this, null);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, this, null);
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -41,8 +41,8 @@ public final class ft extends FrameLayout {
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
-        int i7 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.U(textView, i7, null);
+        int i7 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(textView, i7, null);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine();
         textView.setLines(1);
@@ -50,7 +50,7 @@ public final class ft extends FrameLayout {
         this.c = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imageView2.setImageResource(R.drawable.arrow_more);
-        org.telegram.ui.ActionBar.u6.s(imageView2, i7, null, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.t6.s(imageView2, i7, null, PorterDuff.Mode.MULTIPLY);
         imageView2.setTranslationY(org.telegram.messenger.g0.L(1.0f));
         imageView2.setVisibility(8);
         if (org.telegram.messenger.gd.a0) {
@@ -63,7 +63,7 @@ public final class ft extends FrameLayout {
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.o6, null);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.o6, null);
         textView2.setGravity(org.telegram.messenger.gd.a0 ? 3 : 5);
         if (org.telegram.messenger.gd.a0) {
             linearLayout.addView(textView2, c8.ma.r(-2, -2, 19));
@@ -78,7 +78,7 @@ public final class ft extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.e) {
-            canvas.drawLine(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+            canvas.drawLine(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

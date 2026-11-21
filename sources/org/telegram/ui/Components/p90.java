@@ -1,68 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class p90 extends org.telegram.ui.oq0 {
-    public final /* synthetic */ t90 a;
+public final class p90 extends g.p {
+    public final /* synthetic */ v90 c;
 
-    public p90(t90 t90Var) {
-        this.a = t90Var;
+    public p90(v90 v90Var) {
+        this.c = v90Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
-        ImageReceiver imageReceiver;
-        if (i7 >= 0) {
-            t90 t90Var = this.a;
-            if (i7 < t90Var.Q.size()) {
-                int childCount = t90Var.getListView().getChildCount();
-                Object obj = t90Var.Q.get(i7);
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = t90Var.getListView().getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.i2) {
-                        org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) childAt;
-                        if (i2Var.getResult() == obj) {
-                            imageReceiver = i2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.wq0 wq0Var = new org.telegram.ui.wq0();
-                                wq0Var.b = iArr[0];
-                                wq0Var.c = iArr[1];
-                                wq0Var.d = t90Var.getListView();
-                                wq0Var.a = imageReceiver;
-                                wq0Var.e = imageReceiver.p();
-                                wq0Var.h = imageReceiver.E();
-                                return wq0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
+    @Override // g.p
+    public final int i(int i7) {
+        v90 v90Var = this.c;
+        jg.h1 h1Var = v90Var.f;
+        if (i7 == 0) {
+            return 100;
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
-        if (i7 >= 0) {
-            t90 t90Var = this.a;
-            if (i7 >= t90Var.Q.size()) {
-                return;
-            }
-            t90Var.y.g((TLRPC.BotInlineResult) t90Var.Q.get(i7), z10, i10);
+        int i10 = i7 - 1;
+        Object J = h1Var.J(i10);
+        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
+            return 100;
         }
+        if (J instanceof TLRPC.Document) {
+            return 20;
+        }
+        if (h1Var.I() != null || h1Var.V != null) {
+            i7 = i10;
+        }
+        o90 o90Var = v90Var.d;
+        o90Var.B1();
+        return o90Var.R.get(i7);
     }
 }

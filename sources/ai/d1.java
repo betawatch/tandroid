@@ -1,25 +1,35 @@
 package ai;
 
-import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d1 {
-    public final String a;
-    public final float b;
-    public final boolean c;
+public final /* synthetic */ class d1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x10 b;
+    public final /* synthetic */ int c;
 
-    public d1(String str, float f10, boolean z10) {
-        this.a = str;
-        this.b = f10;
-        this.c = z10;
+    public /* synthetic */ d1(x10 x10Var, int i7, int i10) {
+        this.a = i10;
+        this.b = x10Var;
+        this.c = i7;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.a);
-        sb2.append(String.format(Locale.US, " %.2f", Float.valueOf(this.b)));
-        sb2.append(this.c ? " sure" : "");
-        return sb2.toString();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        int i10 = this.c;
+        x10 x10Var = this.b;
+        switch (i7) {
+            case 0:
+                ExecutorService executorService = DictationLid.a;
+                x10Var.a(Integer.valueOf(i10));
+                break;
+            default:
+                x10Var.a(Integer.valueOf(i10));
+                break;
+        }
     }
 }

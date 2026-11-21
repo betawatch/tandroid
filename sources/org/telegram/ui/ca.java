@@ -4,16 +4,16 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ca implements org.telegram.ui.Components.oj0 {
+public final class ca implements org.telegram.ui.Components.qj0 {
     public final /* synthetic */ la a;
 
     public ca(la laVar) {
         this.a = laVar;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.qj0
     public final void c(int i7, View view) {
         boolean z10 = view instanceof ia;
         la laVar = this.a;
@@ -35,12 +35,12 @@ public final class ca implements org.telegram.ui.Components.oj0 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, laVar.getParentActivity(), laVar.getResourceProvider());
-        String M0 = org.telegram.messenger.gd.M0(tL_username.active ? 2131743427 : 2131743434, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = M0;
-        u1Var.U = org.telegram.messenger.gd.M0(tL_username.active ? 2131743425 : 2131743432, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.M0(tL_username.active ? 2131749133 : 2131745158, null), new bg.g0(this, tL_username, i7, view, 1));
-        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), new org.telegram.messenger.ed(23));
+        String N0 = org.telegram.messenger.gd.N0(tL_username.active ? 2131743421 : 2131743428, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = N0;
+        t1Var.U = org.telegram.messenger.gd.N0(tL_username.active ? 2131743419 : 2131743426, null);
+        alertDialog$Builder.k(org.telegram.messenger.gd.N0(tL_username.active ? 2131749132 : 2131745157, null), new bg.g0(this, tL_username, i7, view, 1));
+        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), new org.telegram.messenger.ed(23));
         alertDialog$Builder.p();
     }
 }

@@ -1,27 +1,31 @@
 package ki;
 
-import android.app.Dialog;
 import android.view.View;
-import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x1 implements View.OnApplyWindowInsetsListener {
+public final /* synthetic */ class x1 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Dialog b;
+    public final /* synthetic */ s2 b;
 
-    public /* synthetic */ x1(Dialog dialog, int i7) {
+    public /* synthetic */ x1(s2 s2Var, int i7) {
         this.a = i7;
-        this.b = dialog;
+        this.b = s2Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                return t2.h((t2) this.b, view, windowInsets);
+                org.telegram.ui.web.s0 webView = this.b.E.getWebView();
+                if (webView != null) {
+                    webView.reload();
+                    break;
+                }
+                break;
             default:
-                return org.telegram.ui.ActionBar.x2.z((org.telegram.ui.ActionBar.x2) this.b, windowInsets);
+                this.b.w();
+                break;
         }
     }
 }

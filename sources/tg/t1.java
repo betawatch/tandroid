@@ -1,47 +1,196 @@
 package tg;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.w7;
-import org.telegram.ui.Components.mz0;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PointF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
+import c8.ma;
+import org.telegram.messenger.f3;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.aj0;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e2 b;
+public final class t1 extends j {
+    public final Path A0;
+    public boolean B0;
+    public boolean C0;
+    public final d6 D0;
+    public final int r0;
+    public boolean s0;
+    public final d6 t0;
+    public final yt0 u0;
+    public final TextureView v0;
+    public final Bitmap w0;
+    public final Rect x0;
+    public final Rect y0;
+    public float z0;
 
-    public /* synthetic */ t1(e2 e2Var, int i7) {
-        this.a = i7;
-        this.b = e2Var;
+    public t1(Context context, PointF pointF, yt0 yt0Var, String str) {
+        super(context, pointF);
+        this.r0 = -1;
+        this.s0 = false;
+        Rect rect = new Rect();
+        this.x0 = rect;
+        this.y0 = new Rect();
+        this.z0 = 1.0f;
+        this.A0 = new Path();
+        this.B0 = true;
+        this.C0 = true;
+        nr nrVar = nr.h;
+        this.D0 = new d6(this, 0L, 350L, nrVar);
+        new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        setRotation(0.0f);
+        setScale(1.0f);
+        this.u0 = yt0Var;
+        Bitmap decodeFile = BitmapFactory.decodeFile(str);
+        this.w0 = decodeFile;
+        if (decodeFile != null) {
+            this.z0 = decodeFile.getWidth() / decodeFile.getHeight();
+            rect.set(0, 0, decodeFile.getWidth(), decodeFile.getHeight());
+        }
+        TextureView textureView = new TextureView(context);
+        this.v0 = textureView;
+        addView(textureView, ma.c(-1.0f, -1));
+        this.t0 = new d6(this, 0L, 500L, nrVar);
+        k();
+        setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e2 e2Var = this.b;
-                c2 c2Var = e2Var.a0;
-                if (c2Var != null) {
-                    if (c2Var.r != null) {
-                        MediaController.B().i(e2Var.a0.r);
-                        w7.G(e2Var.a).b(e2Var.a0.b, false);
-                        e2Var.a0.getClass();
-                    }
-                    e2Var.a0.a();
-                    e2Var.a0 = null;
-                }
-                e2Var.e0.a();
-                e2Var.e0 = null;
-                break;
-            default:
-                e2 e2Var2 = this.b;
-                mz0 mz0Var = e2Var2.T;
-                if (mz0Var != null) {
-                    e2Var2.T = null;
-                    e2Var2.removeView(mz0Var);
-                    break;
-                }
-                break;
+    @Override // tg.j
+    public final i a() {
+        return new r1(this, getContext());
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        Rect rect;
+        Bitmap bitmap;
+        Path path;
+        if (!this.B0) {
+            return false;
+        }
+        if (view != this.v0) {
+            return super.drawChild(canvas, view, j3);
+        }
+        canvas.save();
+        float d = this.t0.d(this.s0);
+        canvas.scale(1.0f - (d * 2.0f), 1.0f, getMeasuredWidth() / 2.0f, 0.0f);
+        canvas.skew(0.0f, f3.A(1.0f, d, 4.0f * d, 0.25f));
+        float d2 = this.D0.d(this.C0);
+        float width = (view.getWidth() / 2.0f) + view.getX();
+        float height = (view.getHeight() / 2.0f) + view.getY();
+        float min = Math.min(view.getWidth() / 2.0f, view.getHeight() / 2.0f);
+        Rect rect2 = this.x0;
+        Rect rect3 = this.y0;
+        Bitmap bitmap2 = this.w0;
+        Path path2 = this.A0;
+        if (d2 < 1.0f) {
+            rect = rect3;
+            bitmap = bitmap2;
+            canvas.saveLayerAlpha(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight(), 128, 31);
+            path2.rewind();
+            path = path2;
+            path.addCircle(width, height, min, Path.Direction.CW);
+            canvas.clipPath(path);
+            if (bitmap != null) {
+                rect.set(0, 0, view.getWidth(), view.getHeight());
+                canvas.drawBitmap(bitmap, rect2, rect, (Paint) null);
+            }
+            super.drawChild(canvas, view, j3);
+            canvas.restore();
+        } else {
+            rect = rect3;
+            bitmap = bitmap2;
+            path = path2;
+        }
+        canvas.save();
+        path.rewind();
+        path.addCircle(width, height, min * d2, Path.Direction.CW);
+        canvas.clipPath(path);
+        if (bitmap != null) {
+            rect.set(0, 0, view.getWidth(), view.getHeight());
+            canvas.drawBitmap(bitmap, rect2, rect, (Paint) null);
+        }
+        boolean drawChild = ((getParent() instanceof d) && ((d) getParent()).a) ? true : super.drawChild(canvas, view, j3);
+        canvas.restore();
+        canvas.restore();
+        return drawChild;
+    }
+
+    public int getAnchor() {
+        return this.r0;
+    }
+
+    public yt0 getBaseSize() {
+        return this.u0;
+    }
+
+    @Override // tg.j
+    public aj0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new aj0();
+        }
+        float scaleX = viewGroup.getScaleX();
+        float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float y10 = n10.y(L, 2.0f, getPositionX(), scaleX);
+        return new aj0(y10, n10.y(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + y10) - y10, L2 * scaleX);
+    }
+
+    @Override // tg.j
+    public final void k() {
+        yt0 yt0Var = this.u0;
+        float f10 = yt0Var.a / 2.0f;
+        float f11 = yt0Var.b / 2.0f;
+        setX(getPositionX() - f10);
+        setY(getPositionY() - f11);
+        m();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        TextureView textureView = this.v0;
+        if (textureView != null) {
+            int measuredHeight = ((i12 - i10) - textureView.getMeasuredHeight()) / 2;
+            int measuredWidth = ((i11 - i7) - textureView.getMeasuredWidth()) / 2;
+            textureView.layout(measuredWidth, measuredHeight, textureView.getMeasuredWidth() + measuredWidth, textureView.getMeasuredHeight() + measuredHeight);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        yt0 yt0Var = this.u0;
+        int i11 = (int) yt0Var.a;
+        int i12 = (int) yt0Var.b;
+        TextureView textureView = this.v0;
+        if (textureView != null) {
+            float f10 = this.z0;
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(f10 >= 1.0f ? (int) (f10 * i12) : i11, TLObject.FLAG_30);
+            float f11 = this.z0;
+            textureView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(f11 >= 1.0f ? i12 : (int) (i11 / f11), TLObject.FLAG_30));
+        }
+        setMeasuredDimension(i11, i12);
+    }
+
+    public void setDraw(boolean z10) {
+        if (this.B0 != z10) {
+            this.B0 = z10;
+            invalidate();
         }
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n81 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class n81 implements Runnable {
                 String str3 = null;
                 if (lowerCase.length() != 0) {
                     boolean z10 = false;
-                    String S0 = org.telegram.messenger.gd.E0().S0(lowerCase, true, false);
-                    if (!lowerCase.equals(S0) && S0.length() != 0) {
-                        str3 = S0;
+                    String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                    if (!lowerCase.equals(T0) && T0.length() != 0) {
+                        str3 = T0;
                     }
                     int i11 = (str3 != null ? 1 : 0) + 1;
                     String[] strArr = new String[i11];
@@ -104,10 +104,10 @@ public final /* synthetic */ class n81 implements Runnable {
                         o81Var3 = o81Var;
                         z10 = false;
                     }
-                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.kp0(o81Var3, i10, arrayList2, arrayList3, 18));
+                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.mp0(o81Var3, i10, arrayList2, arrayList3, 18));
                     break;
                 } else {
-                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.kp0(o81Var3, i10, str3, str3, 18));
+                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.mp0(o81Var3, i10, str3, str3, 18));
                     break;
                 }
                 break;

@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.h9, er0, r0.m, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.h9, er0, r0.m, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ bn a;
 
     public /* synthetic */ dh(bn bnVar) {
@@ -26,9 +26,9 @@ public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.h9
             bnVar.m1.requestLayout();
         }
         bnVar.w.j(P8);
-        bi.a3 a3Var = bnVar.Z3;
-        if (a3Var != null) {
-            a3Var.setPadding(i7, 0, i10, 0);
+        bi.e3 e3Var = bnVar.Z3;
+        if (e3Var != null) {
+            e3Var.setPadding(i7, 0, i10, 0);
         }
         bnVar.C7();
         bnVar.G7();
@@ -52,8 +52,8 @@ public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.h9
         fArr[0] = (bnVar.A0.getTop() + bnVar.P9) - org.telegram.messenger.g0.L(4.0f);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         bn bnVar = this.a;
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");

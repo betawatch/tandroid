@@ -8,15 +8,16 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.n5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.sa;
+import org.telegram.ui.jg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class q0 extends sa {
     public final ArrayList T1;
@@ -26,8 +27,8 @@ public final class q0 extends sa {
     public p0 X1;
     public l0 Y1;
 
-    public q0(h2 h2Var, TL_stories.TL_premium_myBoosts tL_premium_myBoosts, TLRPC.Chat chat) {
-        super(h2Var, false);
+    public q0(g2 g2Var, TL_stories.TL_premium_myBoosts tL_premium_myBoosts, TLRPC.Chat chat) {
+        super(g2Var, false);
         this.T1 = new ArrayList();
         this.U1 = new ArrayList();
         this.v1 = 0.3f;
@@ -48,19 +49,19 @@ public final class q0 extends sa {
         aVar.setClickable(true);
         aVar.setOrientation(1);
         aVar.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-        u6.h(n6.h5, aVar, this.J0);
+        t6.h(m6.h5, aVar, this.J0);
         d0 d0Var = new d0(getContext(), this.J0);
         this.W1 = d0Var;
         d0Var.k();
         d0Var.setCounterColor(-6785796);
-        d0Var.setOnClickListener(new ug.a0(1, this, chat));
+        d0Var.setOnClickListener(new jg0(29, this, chat));
         aVar.addView(d0Var, ma.r(-1, 48, 87));
         ViewGroup viewGroup = this.b;
         int i10 = this.u0;
         viewGroup.addView(aVar, ma.f(-2.0f, -1, 87, i10, 0, i10, 0));
-        ck0 ck0Var = this.o1;
+        ek0 ek0Var = this.o1;
         int i11 = this.u0;
-        ck0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(64.0f));
+        ek0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(64.0f));
         this.o1.setOnItemClickListener(new g4(24, this, chat));
         O();
         c1();
@@ -69,13 +70,13 @@ public final class q0 extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
+    public final dk0 M0(ek0 ek0Var) {
         return new m0(this);
     }
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.M0(2131753319, null);
+        return gd.N0(2131753318, null);
     }
 
     public final void e1(boolean z10) {
@@ -83,9 +84,9 @@ public final class q0 extends sa {
         d0Var.setShowZero(false);
         ArrayList arrayList = this.T1;
         if (arrayList.size() > 1) {
-            d0Var.i(gd.M0(2131753314, null), z10, true);
+            d0Var.i(gd.N0(2131753313, null), z10, true);
         } else {
-            d0Var.i(gd.M0(2131753319, null), z10, true);
+            d0Var.i(gd.N0(2131753318, null), z10, true);
         }
         d0Var.c(arrayList.size(), z10);
         d0Var.setEnabled(arrayList.size() > 0);
@@ -103,7 +104,7 @@ public final class q0 extends sa {
         this.Y1.cancel();
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void v() {
         this.Y1.start();
     }

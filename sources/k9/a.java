@@ -21,7 +21,7 @@ import h9.q;
 import h9.s;
 import h9.t1;
 import h9.y;
-import hi.f9;
+import hi.e9;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.AbstractCollection;
@@ -32,7 +32,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a {
     public static final j0 f;
@@ -224,7 +224,7 @@ public final class a {
     }
 
     public final i1 c() {
-        return new i1(this.c.b(), new g1(new f9(11), 0));
+        return new i1(this.c.b(), new g1(new e9(11), 0));
     }
 
     public final boolean equals(Object obj) {
@@ -260,7 +260,7 @@ public final class a {
         j0 j0Var = this.c;
         if (j0Var.f != 0) {
             sb2.append("; ");
-            Collection a10 = new m1(j0Var, new g1(new f9(10), 0)).a();
+            Collection a10 = new m1(j0Var, new g1(new e9(10), 0)).a();
             c cVar = j;
             cVar.getClass();
             try {

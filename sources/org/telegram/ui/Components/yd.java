@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yd implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a = 0;
@@ -16,8 +16,8 @@ public final /* synthetic */ class yd implements org.telegram.messenger.x10 {
     public final /* synthetic */ Object i;
     public final /* synthetic */ Object j;
 
-    public /* synthetic */ yd(fg fgVar, Object obj, org.telegram.messenger.ef efVar, boolean z10, int i7, int i10, boolean z11, String str, Object obj2) {
-        this.h = fgVar;
+    public /* synthetic */ yd(ig igVar, Object obj, org.telegram.messenger.ef efVar, boolean z10, int i7, int i10, boolean z11, String str, Object obj2) {
+        this.h = igVar;
         this.b = obj;
         this.i = efVar;
         this.c = z10;
@@ -36,17 +36,17 @@ public final /* synthetic */ class yd implements org.telegram.messenger.x10 {
         switch (i7) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
-                int i10 = ChatActivityEnterView.n7;
+                int i10 = ChatActivityEnterView.s7;
                 jd jdVar = new jd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (org.telegram.messenger.bj) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
-                if (!chatActivityEnterView.R1(jdVar)) {
+                if (!chatActivityEnterView.V1(jdVar)) {
                     jdVar.run();
                     break;
                 }
                 break;
             default:
-                fg fgVar = (fg) obj3;
-                jd jdVar2 = new jd(fgVar, this.b, (org.telegram.messenger.ef) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
-                if (!fgVar.a.R1(jdVar2)) {
+                ig igVar = (ig) obj3;
+                jd jdVar2 = new jd(igVar, this.b, (org.telegram.messenger.ef) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
+                if (!igVar.a.V1(jdVar2)) {
                     jdVar2.run();
                     break;
                 }

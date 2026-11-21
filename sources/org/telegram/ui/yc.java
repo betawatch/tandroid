@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.ContextThemeWrapper;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class yc extends RadialProgressView {
     public final /* synthetic */ int O;
     public final /* synthetic */ Object P;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yc(org.telegram.ui.Components.t30 t30Var, Context context, int i7) {
+    public /* synthetic */ yc(org.telegram.ui.Components.w30 w30Var, Context context, int i7) {
         super(context, null);
         this.O = i7;
-        this.P = t30Var;
+        this.P = w30Var;
     }
 
     @Override // android.view.View
@@ -61,8 +61,8 @@ public final class yc extends RadialProgressView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yc(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(contextThemeWrapper, i6Var);
+    public yc(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(contextThemeWrapper, h6Var);
         this.O = 3;
         this.P = photoViewer;
     }

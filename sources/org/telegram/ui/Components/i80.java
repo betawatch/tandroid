@@ -2,99 +2,76 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.view.MotionEvent;
+import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class i80 extends org.telegram.ui.ActionBar.n5 {
-    public final org.telegram.ui.ActionBar.i6 N0;
-    public final n2.o0 O0;
-    public l80 P0;
+public abstract class i80 extends org.telegram.ui.ActionBar.m5 {
+    public final n2.o0 N0;
+    public final Paint O0;
+    public n80 P0;
 
-    public i80(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public i80(Context context) {
         super(context);
-        this.O0 = new n2.o0(this);
-        this.N0 = i6Var;
+        this.N0 = new n2.o0(this);
+        this.O0 = new Paint(1);
     }
 
-    @Override // org.telegram.ui.ActionBar.n5, android.view.View
-    public final void onDraw(Canvas canvas) {
+    private int getLinkColor() {
+        return i0.a.o(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
+    }
+
+    @Override // org.telegram.ui.ActionBar.m5, android.view.View
+    public void onDraw(Canvas canvas) {
+        if (isClickable()) {
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight());
+            int linkColor = getLinkColor();
+            Paint paint = this.O0;
+            paint.setColor(linkColor);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
+        }
         super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getLayoutX(), getLayoutY());
-        if (this.O0.h(canvas)) {
+        if (isClickable() && this.N0.h(canvas)) {
             invalidate();
         }
-        canvas.restore();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
-    @Override // org.telegram.ui.ActionBar.n5, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    @Override // org.telegram.ui.ActionBar.m5, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ClickableSpan clickableSpan;
-        CharacterStyle characterStyle;
-        n2.o0 o0Var = this.O0;
+        if (!isClickable()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        n2.o0 o0Var = this.N0;
         if (o0Var != null) {
-            Layout layout = getLayout();
-            int x10 = (int) motionEvent.getX();
-            int y10 = (int) motionEvent.getY();
-            Layout layout2 = getLayout();
-            if (layout2 != null) {
-                int layoutX = (int) (x10 - getLayoutX());
-                int layoutY = (int) (y10 - getLayoutY());
-                int lineForVertical = layout2.getLineForVertical(layoutY);
-                float f10 = layoutX;
-                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f10);
-                float lineLeft = layout2.getLineLeft(lineForVertical);
-                if (lineLeft <= f10 && layout2.getLineWidth(lineForVertical) + lineLeft >= f10 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                    if (clickableSpanArr.length != 0 && !org.telegram.messenger.g0.C1()) {
-                        clickableSpan = clickableSpanArr[0];
-                        if (clickableSpan == null && motionEvent.getAction() == 0) {
-                            l80 l80Var = new l80(clickableSpan, this.N0, motionEvent.getX(), motionEvent.getY(), 0);
-                            this.P0 = l80Var;
-                            o0Var.b(l80Var, null);
-                            SpannableString spannableString = new SpannableString(layout.getText());
-                            int spanStart = spannableString.getSpanStart(this.P0.i);
-                            int spanEnd = spannableString.getSpanEnd(this.P0.i);
-                            f80 b10 = this.P0.b();
-                            b10.d(layout, spanStart, 0.0f);
-                            layout.getSelectionPath(spanStart, spanEnd, b10);
-                            return true;
-                        }
-                        if (motionEvent.getAction() == 1) {
-                            o0Var.f(true);
-                            l80 l80Var2 = this.P0;
-                            if (l80Var2 != null && (characterStyle = l80Var2.i) == clickableSpan) {
-                                if (characterStyle instanceof ClickableSpan) {
-                                    ((ClickableSpan) characterStyle).onClick(this);
-                                }
-                                this.P0 = null;
-                                return true;
-                            }
-                            this.P0 = null;
-                        }
-                        if (motionEvent.getAction() == 3) {
-                            o0Var.f(true);
-                            this.P0 = null;
-                        }
-                    }
-                }
-            }
-            clickableSpan = null;
-            if (clickableSpan == null) {
+            if (motionEvent.getAction() == 0) {
+                n80 n80Var = new n80(null, null, motionEvent.getX(), motionEvent.getY(), 0);
+                n80Var.d(getLinkColor());
+                this.P0 = n80Var;
+                o0Var.b(n80Var, null);
+                h80 b10 = this.P0.b();
+                b10.e(null, 0, 0.0f, 0.0f);
+                b10.addRect(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight(), Path.Direction.CW);
+                org.telegram.messenger.g0.h3(new ou(19, this, n80Var), ViewConfiguration.getLongPressTimeout());
+                return true;
             }
             if (motionEvent.getAction() == 1) {
+                o0Var.f(true);
+                if (this.P0 != null) {
+                    performClick();
+                }
+                this.P0 = null;
+                return true;
             }
             if (motionEvent.getAction() == 3) {
+                o0Var.f(true);
+                this.P0 = null;
+                return true;
             }
         }
         return this.P0 != null || super.onTouchEvent(motionEvent);

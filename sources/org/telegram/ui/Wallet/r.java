@@ -2,7 +2,7 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements x10 {
     public final /* synthetic */ int a = 3;
@@ -35,7 +35,7 @@ public final /* synthetic */ class r implements x10 {
                 runnable.run();
                 break;
             case 1:
-                u8.Z((u8) this.d, (String) this.b, this.c, (org.telegram.ui.ActionBar.h2) this.e, (String) obj);
+                u8.Z((u8) this.d, (String) this.b, this.c, (org.telegram.ui.ActionBar.g2) this.e, (String) obj);
                 break;
             case 2:
                 d9 d9Var = (d9) this.d;
@@ -66,7 +66,7 @@ public final /* synthetic */ class r implements x10 {
                         break;
                     } else {
                         o oVar = new o(x10Var, this.c, z0Var2, d9Var2);
-                        z0.i.execute(new org.telegram.ui.Components.r2(z0Var2, z0Var2.l(), bArr == null ? "" : z0.p(bArr), z10, oVar));
+                        z0.i.execute(new org.telegram.ui.Components.s2(z0Var2, z0Var2.l(), bArr == null ? "" : z0.p(bArr), z10, oVar));
                         break;
                     }
                 } else {
@@ -83,11 +83,11 @@ public final /* synthetic */ class r implements x10 {
         this.e = runnable;
     }
 
-    public /* synthetic */ r(u8 u8Var, String str, u0 u0Var, org.telegram.ui.ActionBar.h2 h2Var) {
+    public /* synthetic */ r(u8 u8Var, String str, u0 u0Var, org.telegram.ui.ActionBar.g2 g2Var) {
         this.d = u8Var;
         this.b = str;
         this.c = u0Var;
-        this.e = h2Var;
+        this.e = g2Var;
     }
 
     public /* synthetic */ r(d9 d9Var, u0 u0Var, String str, z0 z0Var) {

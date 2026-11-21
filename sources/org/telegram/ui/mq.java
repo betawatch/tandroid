@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.du0 {
+public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.gu0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ nq b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.t
         return rqVar.m0(rqVar.a.E(((Integer) b5Var.getTag()).intValue()), !z10, b5Var);
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public void k(int i7) {
         switch (this.a) {
             case 1:
@@ -41,7 +41,7 @@ public final /* synthetic */ class mq implements org.telegram.ui.Cells.a5, org.t
         }
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public /* synthetic */ void o() {
         int i7 = this.a;
     }

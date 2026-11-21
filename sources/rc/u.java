@@ -1,7 +1,7 @@
 package rc;
 
 import a8.p0;
-import bi.q3;
+import bi.u3;
 import com.google.android.gms.internal.clearcut.y0;
 import e2.r0;
 import java.io.BufferedInputStream;
@@ -15,11 +15,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 import org.telegram.ui.Wallet.h1;
 import org.telegram.ui.web.d1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -83,7 +83,7 @@ public final class u {
                     try {
                         try {
                             int i10 = 6;
-                            g0.g3(new q3(h1Var.a, i10, h1Var.b, h1Var, (u) qVar.b));
+                            g0.g3(new u3(h1Var.a, i10, h1Var.b, h1Var, (u) qVar.b));
                         } catch (Throwable unused) {
                             h1Var.getClass();
                         }
@@ -360,7 +360,7 @@ public final class u {
                 try {
                     yVar.write(k.a(sb2));
                     yVar.flush();
-                    hn hnVar = new hn(this, 13);
+                    jn jnVar = new jn(this, 13);
                     try {
                         String b10 = k.b(d1Var);
                         if (b10 == null || b10.length() == 0) {
@@ -379,7 +379,7 @@ public final class u {
                                     char charAt = b11.charAt(0);
                                     if (charAt != ' ' && charAt != '\t') {
                                         if (sb3 != null) {
-                                            hn.P(sb3.toString(), treeMap);
+                                            jn.P(sb3.toString(), treeMap);
                                         }
                                         sb3 = new StringBuilder(b11);
                                     } else if (sb3 != null) {
@@ -390,7 +390,7 @@ public final class u {
                                 }
                             }
                             if (sb3 != null) {
-                                hn.P(sb3.toString(), treeMap);
+                                jn.P(sb3.toString(), treeMap);
                             }
                             if (y0Var.b != 101) {
                                 try {
@@ -516,7 +516,7 @@ public final class u {
                                                                                 throw new n(16, p5.c.k("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), y0Var);
                                                                             }
                                                                             String str6 = wVar2.a;
-                                                                            h hVar2 = ((u) hnVar.b).c;
+                                                                            h hVar2 = ((u) jnVar.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
@@ -542,9 +542,9 @@ public final class u {
                                                                 wVar3 = wVar4;
                                                             }
                                                         }
-                                                        ((u) hnVar.b).l = arrayList3;
+                                                        ((u) jnVar.b).l = arrayList3;
                                                     }
-                                                    hnVar.U(y0Var, treeMap);
+                                                    jnVar.U(y0Var, treeMap);
                                                     this.h = d1Var;
                                                     this.i = yVar;
                                                     return treeMap;

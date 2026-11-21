@@ -1,17 +1,334 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class cc0 extends tg.b {
-    @Override // org.telegram.ui.Components.pt, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+public final class cc0 extends HorizontalScrollView implements org.telegram.ui.ActionBar.b6 {
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public final org.telegram.ui.ActionBar.h6 I;
+    public int J;
+    public final d6 K;
+    public final d6 L;
+    public final LinearLayout.LayoutParams a;
+    public final fi.e5 b;
+    public c5.h c;
+    public final LinearLayout d;
+    public c5.l e;
+    public int f;
+    public int h;
+    public float n;
+    public final Paint r;
+    public int s;
+    public int w;
+    public boolean x;
+    public int y;
+
+    public cc0(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context);
+        this.b = new fi.e5(1, this);
+        this.h = 0;
+        this.n = 0.0f;
+        this.s = -10066330;
+        this.w = 436207616;
+        this.x = false;
+        this.y = org.telegram.messenger.g0.L(52.0f);
+        this.E = org.telegram.messenger.g0.L(8.0f);
+        this.F = org.telegram.messenger.g0.L(2.0f);
+        this.G = org.telegram.messenger.g0.L(12.0f);
+        this.H = org.telegram.messenger.g0.L(24.0f);
+        this.J = 0;
+        nr nrVar = nr.h;
+        this.K = new d6(this, 350L, nrVar);
+        this.L = new d6(this, 350L, nrVar);
+        this.I = h6Var;
+        setFillViewport(true);
+        setWillNotDraw(false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.d = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        addView(linearLayout);
+        Paint paint = new Paint();
+        this.r = paint;
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        this.a = new LinearLayout.LayoutParams(-2, -1);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+    public static void a(cc0 cc0Var, int i7, int i10) {
+        View childAt;
+        if (cc0Var.f == 0 || (childAt = cc0Var.d.getChildAt(i7)) == null) {
+            return;
+        }
+        int left = childAt.getLeft() + i10;
+        if (i7 > 0 || i10 > 0) {
+            left -= cc0Var.y;
+        }
+        if (left != cc0Var.J) {
+            cc0Var.J = left;
+            cc0Var.scrollTo(left, 0);
+        }
+    }
+
+    public final void b(int i7, CharSequence charSequence) {
+        bc0 bc0Var = new bc0(this, getContext(), i7);
+        bc0Var.setTextSize(1, 14.0f);
+        bc0Var.setTypeface(org.telegram.messenger.g0.o());
+        bc0Var.setTextColor(c(0.6f));
+        bc0Var.setFocusable(true);
+        bc0Var.setGravity(17);
+        bc0Var.setText(charSequence);
+        c8.ra.b(bc0Var, 0.025f, 1.2f);
+        bc0Var.setOnClickListener(new ci.q(this, i7, 17));
+        bc0Var.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
+        this.d.addView(bc0Var, c8.ma.k(10.0f, 0.0f, 10.0f, 0.0f, -2, -2));
+        bc0Var.setSelected(i7 == this.h);
+    }
+
+    public final int c(float f10) {
+        return i0.a.o(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Nl, this.I), (int) (f10 * 255.0f));
+    }
+
+    public final void d() {
+        this.d.removeAllViews();
+        this.f = this.e.getAdapter().b();
+        for (int i7 = 0; i7 < this.f; i7++) {
+            if (this.e.getAdapter() instanceof nx) {
+                ((nx) this.e.getAdapter()).getClass();
+                b(i7, this.e.getAdapter().d(i7));
+            } else {
+                b(i7, this.e.getAdapter().d(i7));
+            }
+        }
+        e();
+        getViewTreeObserver().addOnGlobalLayoutListener(new androidx.mediarouter.app.i(this, 5));
+    }
+
+    public final void e() {
+        int i7 = 0;
+        while (i7 < this.f) {
+            View childAt = this.d.getChildAt(i7);
+            childAt.setLayoutParams(this.a);
+            if (this.x) {
+                childAt.setPadding(0, 0, 0, 0);
+                childAt.setLayoutParams(new LinearLayout.LayoutParams(-1, -1, 1.0f));
+            } else if (this.e.getAdapter() instanceof nx) {
+                ((nx) this.e.getAdapter()).getClass();
+                int L = org.telegram.messenger.g0.L(i7 == 1 ? 12.0f : 18.0f);
+                childAt.setPadding(L, 0, L, 0);
+            } else {
+                int i10 = this.H;
+                childAt.setPadding(i10, 0, i10, 0);
+            }
+            i7++;
+        }
+    }
+
+    public int getDividerPadding() {
+        return this.G;
+    }
+
+    public int getIndicatorColor() {
+        return this.s;
+    }
+
+    public int getIndicatorHeight() {
+        return this.E;
+    }
+
+    public int getScrollOffset() {
+        return this.y;
+    }
+
+    public boolean getShouldExpand() {
+        return this.x;
+    }
+
+    public int getTabPaddingLeftRight() {
+        return this.H;
+    }
+
+    public int getUnderlineColor() {
+        return this.w;
+    }
+
+    public int getUnderlineHeight() {
+        return this.F;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e10;
+        float e11;
+        int i7;
+        if (isInEditMode() || this.f == 0) {
+            super.onDraw(canvas);
+            return;
+        }
+        int height = getHeight();
+        int i10 = this.F;
+        LinearLayout linearLayout = this.d;
+        Paint paint = this.r;
+        if (i10 != 0) {
+            paint.setColor(this.w);
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(0.0f, height - this.F, linearLayout.getWidth(), height);
+            float f10 = this.F / 2.0f;
+            canvas.drawRoundRect(rectF, f10, f10, paint);
+        }
+        View childAt = linearLayout.getChildAt(this.h);
+        if (childAt != null) {
+            float paddingLeft = childAt.getPaddingLeft() + childAt.getLeft();
+            float right = childAt.getRight() - childAt.getPaddingRight();
+            float f11 = this.n;
+            d6 d6Var = this.L;
+            d6 d6Var2 = this.K;
+            if (f11 <= 0.0f || (i7 = this.h) >= this.f - 1) {
+                e10 = d6Var2.e(false, paddingLeft);
+                e11 = d6Var.e(false, right);
+            } else {
+                View childAt2 = linearLayout.getChildAt(i7 + 1);
+                float paddingLeft2 = childAt2.getPaddingLeft() + childAt2.getLeft();
+                float right2 = childAt2.getRight() - childAt2.getPaddingRight();
+                float f12 = this.n;
+                float f13 = 1.0f - f12;
+                e10 = (paddingLeft * f13) + (paddingLeft2 * f12);
+                e11 = (f13 * right) + (f12 * right2);
+                d6Var2.e(true, e10);
+                d6Var.e(true, e11);
+                if (childAt instanceof bc0) {
+                    bc0 bc0Var = (bc0) childAt;
+                    bc0Var.setTextColor(bc0Var.a.c(org.telegram.messenger.g0.T1(0.6f, 0.8f, 1.0f - this.n)));
+                }
+                if (childAt2 instanceof bc0) {
+                    bc0 bc0Var2 = (bc0) childAt2;
+                    bc0Var2.setTextColor(bc0Var2.a.c(org.telegram.messenger.g0.T1(0.6f, 0.8f, this.n)));
+                }
+            }
+            if (this.E != 0) {
+                paint.setColor(this.s);
+                RectF rectF2 = org.telegram.messenger.g0.P;
+                rectF2.set(e10 - org.telegram.messenger.g0.L(11.0f), getPaddingTop(), e11 + org.telegram.messenger.g0.L(11.0f), height - getPaddingBottom());
+                rectF2.offset(getPaddingLeft(), 0.0f);
+                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
+            }
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        if (!this.x || View.MeasureSpec.getMode(i7) == 0) {
+            return;
+        }
+        this.d.measure(getMeasuredWidth() | TLObject.FLAG_30, i10);
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.view.View
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        if (this.x) {
+            return;
+        }
+        post(new hb0(this, 2));
+    }
+
+    public void setDividerPadding(int i7) {
+        this.G = i7;
+        invalidate();
+    }
+
+    public void setIndicatorColor(int i7) {
+        this.s = i7;
+        invalidate();
+    }
+
+    public void setIndicatorColorResource(int i7) {
+        this.s = getResources().getColor(i7);
+        invalidate();
+    }
+
+    public void setIndicatorHeight(int i7) {
+        this.E = i7;
+        invalidate();
+    }
+
+    public void setOnPageChangeListener(c5.h hVar) {
+        this.c = hVar;
+    }
+
+    public void setScrollOffset(int i7) {
+        this.y = i7;
+        invalidate();
+    }
+
+    public void setShouldExpand(boolean z10) {
+        this.x = z10;
+        this.d.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        e();
+        requestLayout();
+    }
+
+    public void setTabPaddingLeftRight(int i7) {
+        this.H = i7;
+        e();
+    }
+
+    public void setUnderlineColor(int i7) {
+        this.w = i7;
+        invalidate();
+    }
+
+    public void setUnderlineColorResource(int i7) {
+        this.w = getResources().getColor(i7);
+        invalidate();
+    }
+
+    public void setUnderlineHeight(int i7) {
+        this.F = i7;
+        invalidate();
+    }
+
+    public void setViewPager(c5.l lVar) {
+        this.e = lVar;
+        if (lVar.getAdapter() == null) {
+            throw new IllegalStateException("ViewPager does not have adapter instance.");
+        }
+        lVar.setOnPageChangeListener(this.b);
+        d();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        LinearLayout linearLayout = this.d;
+        if (linearLayout == null) {
+            return;
+        }
+        for (int i7 = 0; i7 < linearLayout.getChildCount(); i7++) {
+            try {
+                View childAt = linearLayout.getChildAt(i7);
+                childAt.setSelected(childAt.isSelected());
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+                return;
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -17,9 +17,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -104,20 +104,20 @@ public final /* synthetic */ class h implements Runnable {
                     return;
                 }
                 actionBarLayout.e = null;
-                h2 h2Var = (h2) this.c;
-                if (h2Var != null) {
-                    h2Var.onTransitionAnimationStart(false, false);
+                g2 g2Var = (g2) this.c;
+                if (g2Var != null) {
+                    g2Var.onTransitionAnimationStart(false, false);
                 }
-                ((h2) this.d).onTransitionAnimationStart(true, false);
+                ((g2) this.d).onTransitionAnimationStart(true, false);
                 actionBarLayout.h0(true, true, this.b);
                 return;
         }
     }
 
-    public h(ActionBarLayout actionBarLayout, h2 h2Var, h2 h2Var2, boolean z10) {
+    public h(ActionBarLayout actionBarLayout, g2 g2Var, g2 g2Var2, boolean z10) {
         this.e = actionBarLayout;
-        this.c = h2Var;
-        this.d = h2Var2;
+        this.c = g2Var;
+        this.d = g2Var2;
         this.b = z10;
     }
 }

@@ -5,7 +5,7 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.tr;
 import org.telegram.ui.mw;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class n implements Runnable {
                         ArrayList arrayList2 = new ArrayList();
                         ArrayList arrayList3 = new ArrayList();
                         new ArrayList();
-                        org.telegram.messenger.g0.g3(new ai.g1(h0Var, h0Var.e0, arrayList, arrayList2, arrayList3, 4));
+                        org.telegram.messenger.g0.g3(new ai.i1(h0Var, h0Var.e0, arrayList, arrayList2, arrayList3, 4));
                     }
                 }
                 str = str3;
@@ -117,10 +117,10 @@ public final /* synthetic */ class n implements Runnable {
                 ArrayList arrayList7 = h0Var3.r0;
                 String str4 = this.d;
                 a02.M0(i18, str4, arrayList4, arrayList5, arrayList6, arrayList7, -1);
-                org.telegram.messenger.g0.g3(new ai.g1(h0Var3, this.c, arrayList4, arrayList5, arrayList6, 4));
+                org.telegram.messenger.g0.g3(new ai.i1(h0Var3, this.c, arrayList4, arrayList5, arrayList6, 4));
                 q0.B1(str4, h0Var3.z0);
                 h0Var3.A0 = false;
-                if (str4.length() >= 3 && (gd.M0(2131754148, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
+                if (str4.length() >= 3 && (gd.N0(2131754147, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
                     h0Var3.A0 = true;
                 }
                 org.telegram.messenger.g0.g3(new v(h0Var3, 0));

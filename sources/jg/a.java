@@ -4,7 +4,7 @@ import java.util.Locale;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -38,14 +38,14 @@ public final /* synthetic */ class a implements Runnable {
                 if (cVar2.d) {
                     if (locale3.getLanguage().contains("en")) {
                         locale = locale3;
-                        Utilities.e.c(new ai.g1(cVar2, locale3, str2, locale, i7, 3));
+                        Utilities.e.c(new ai.i1(cVar2, locale3, str2, locale, i7, 3));
                         break;
                     } else {
                         locale2 = Locale.US;
                     }
                 }
                 locale = locale2;
-                Utilities.e.c(new ai.g1(cVar2, locale3, str2, locale, i7, 3));
+                Utilities.e.c(new ai.i1(cVar2, locale3, str2, locale, i7, 3));
         }
     }
 }

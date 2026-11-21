@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class gj extends v4.u0 {
     public boolean b;
@@ -42,12 +42,12 @@ public final class gj extends v4.u0 {
             bnVar.Pa = false;
             return;
         }
-        hi.m3 m3Var = bnVar.N1;
-        if (m3Var != null && m3Var.W) {
-            m3Var.f(true);
+        hi.l3 l3Var = bnVar.N1;
+        if (l3Var != null && l3Var.W) {
+            l3Var.f(true);
         }
-        org.telegram.ui.Components.n6 n6Var = bnVar.l3;
-        if (n6Var != null && n6Var.getVisibility() == 0 && bnVar.V9()) {
+        org.telegram.ui.Components.o6 o6Var = bnVar.l3;
+        if (o6Var != null && o6Var.getVisibility() == 0 && bnVar.V9()) {
             org.telegram.messenger.g0.v1(bnVar.getParentActivity().getCurrentFocus());
         }
         if (i7 == 2) {
@@ -182,10 +182,10 @@ public final class gj extends v4.u0 {
             }
         }
         bnVar.x7(false);
-        hi.m3 m3Var = bnVar.M1;
-        if (m3Var != null) {
-            if (m3Var.W) {
-                m3Var.f(true);
+        hi.l3 l3Var = bnVar.M1;
+        if (l3Var != null) {
+            if (l3Var.W) {
+                l3Var.f(true);
             } else if (!bnVar.zc) {
                 bnVar.yc = System.currentTimeMillis();
                 org.telegram.messenger.g0.r(new vf(bnVar, 29));
@@ -196,20 +196,20 @@ public final class gj extends v4.u0 {
         if (alVar != null && alVar.W) {
             alVar.f(true);
         }
-        hi.m3 m3Var2 = bnVar.O1;
-        if (m3Var2 == null || !m3Var2.W) {
+        hi.l3 l3Var2 = bnVar.O1;
+        if (l3Var2 == null || !l3Var2.W) {
             org.telegram.messenger.g0.r(new fj(bnVar, 1));
             org.telegram.messenger.g0.h3(new fj(bnVar, 2), 2000L);
         } else {
-            m3Var2.f(true);
+            l3Var2.f(true);
         }
-        hi.m3 m3Var3 = bnVar.P1;
-        if (m3Var3 != null) {
-            m3Var3.f(true);
+        hi.l3 l3Var3 = bnVar.P1;
+        if (l3Var3 != null) {
+            l3Var3.f(true);
         }
         rj rjVar = bnVar.a0;
         if (rjVar != null) {
-            rjVar.F0();
+            rjVar.J0();
         }
         di.k6 k6Var = bnVar.Xc;
         if (k6Var != null) {

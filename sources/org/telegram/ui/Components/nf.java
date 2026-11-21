@@ -1,26 +1,66 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nf implements Runnable {
+public final /* synthetic */ class nf implements bi.a1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ rf b;
+    public final /* synthetic */ FrameLayout c;
 
-    public /* synthetic */ nf(int i7, FrameLayout frameLayout) {
+    public /* synthetic */ nf(rf rfVar, FrameLayout frameLayout, int i7) {
         this.a = i7;
-        this.b = frameLayout;
+        this.b = rfVar;
+        this.c = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // bi.a1
+    public final void a(Canvas canvas) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.E2(this.b);
+                rf rfVar = this.b;
+                rfVar.getClass();
+                this.c.getLocationInWindow(new int[2]);
+                ChatActivityEnterView chatActivityEnterView = rfVar.a;
+                du0 du0Var = chatActivityEnterView.c2;
+                du0Var.getLocationInWindow(new int[2]);
+                canvas.save();
+                canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
+                Drawable backgroundImage = du0Var.getBackgroundImage();
+                if (backgroundImage != null) {
+                    backgroundImage.draw(canvas);
+                }
+                org.telegram.ui.bn bnVar = chatActivityEnterView.F3;
+                org.telegram.ui.bj bjVar = bnVar != null ? bnVar.A0 : null;
+                if (bjVar != null && bjVar.getWidth() > 0) {
+                    canvas.translate(bjVar.getX(), bjVar.getY());
+                    bjVar.draw(canvas);
+                }
+                canvas.restore();
                 break;
             default:
-                org.telegram.messenger.g0.E2(this.b);
+                rf rfVar2 = this.b;
+                rfVar2.getClass();
+                this.c.getLocationInWindow(new int[2]);
+                ChatActivityEnterView chatActivityEnterView2 = rfVar2.a;
+                du0 du0Var2 = chatActivityEnterView2.c2;
+                du0Var2.getLocationInWindow(new int[2]);
+                canvas.save();
+                canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
+                Drawable backgroundImage2 = du0Var2.getBackgroundImage();
+                if (backgroundImage2 != null) {
+                    backgroundImage2.draw(canvas);
+                }
+                org.telegram.ui.bn bnVar2 = chatActivityEnterView2.F3;
+                org.telegram.ui.bj bjVar2 = bnVar2 != null ? bnVar2.A0 : null;
+                if (bjVar2 != null && bjVar2.getWidth() > 0) {
+                    canvas.translate(bjVar2.getX(), bjVar2.getY());
+                    bjVar2.draw(canvas);
+                }
+                canvas.restore();
                 break;
         }
     }

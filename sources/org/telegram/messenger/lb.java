@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lb implements Runnable {
     public final /* synthetic */ int a;
@@ -165,7 +165,7 @@ public final /* synthetic */ class lb implements Runnable {
                     }
                     i13++;
                 }
-                gdVar.a1();
+                gdVar.b1();
                 ks.e().k(ks.B4, new Object[0]);
                 if (this.b) {
                     gdVar.d(gdVar.B, true, false, this.c);
@@ -233,7 +233,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                                 if (hVar.f(user2.id) == null) {
                                                                                     hVar.k(userFull8, user2.id);
                                                                                     mpVar.v7.M(user2.id);
-                                                                                    di.x8.y(mpVar.currentAccount, false).P(userFull8);
+                                                                                    di.y8.y(mpVar.currentAccount, false).P(userFull8);
                                                                                     int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                     boolean z13 = userFull8.blocked;
                                                                                     int i15 = ks.g0;
@@ -274,7 +274,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                                 if (hVar.f(user2.id) == null) {
                                                                                     hVar.k(userFull8, user2.id);
                                                                                     mpVar.v7.M(user2.id);
-                                                                                    di.x8.y(mpVar.currentAccount, false).P(userFull8);
+                                                                                    di.y8.y(mpVar.currentAccount, false).P(userFull8);
                                                                                     int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                     boolean z13 = userFull8.blocked;
                                                                                     int i15 = ks.g0;
@@ -322,7 +322,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull8, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull8);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull8);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull8.blocked;
                                                                                 int i15 = ks.g0;
@@ -382,7 +382,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i15 = ks.g0;
@@ -428,7 +428,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i15 = ks.g0;
@@ -489,7 +489,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i15 = ks.g0;
@@ -534,7 +534,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i15 = ks.g0;
@@ -605,7 +605,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i15 = ks.g0;
@@ -654,7 +654,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i15 = ks.g0;
@@ -712,7 +712,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i152 = ks.g0;
@@ -758,7 +758,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull82, user2.id);
                                                                                 mpVar.v7.M(user2.id);
-                                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z13 = userFull82.blocked;
                                                                                 int i152 = ks.g0;
@@ -838,7 +838,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                     if (hVar.f(user2.id) == null) {
                                                                         hVar.k(userFull82, user2.id);
                                                                         mpVar.v7.M(user2.id);
-                                                                        di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                        di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                         int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                         boolean z132 = userFull82.blocked;
                                                                         int i152 = ks.g0;
@@ -883,7 +883,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                     if (hVar.f(user2.id) == null) {
                                                                         hVar.k(userFull82, user2.id);
                                                                         mpVar.v7.M(user2.id);
-                                                                        di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                        di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                         int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                         boolean z132 = userFull82.blocked;
                                                                         int i152 = ks.g0;
@@ -928,7 +928,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                                     if (hVar.f(user2.id) == null) {
                                                                         hVar.k(userFull82, user2.id);
                                                                         mpVar.v7.M(user2.id);
-                                                                        di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                        di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                         int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                         boolean z132 = userFull82.blocked;
                                                                         int i152 = ks.g0;
@@ -977,7 +977,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                             if (hVar.f(user2.id) == null) {
                                                                 hVar.k(userFull82, user2.id);
                                                                 mpVar.v7.M(user2.id);
-                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                 boolean z132 = userFull82.blocked;
                                                                 int i152 = ks.g0;
@@ -1025,7 +1025,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                             if (hVar.f(user2.id) == null) {
                                                                 hVar.k(userFull82, user2.id);
                                                                 mpVar.v7.M(user2.id);
-                                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                 boolean z132 = userFull82.blocked;
                                                                 int i152 = ks.g0;
@@ -1091,7 +1091,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                     if (hVar.f(user2.id) == null) {
                                                         hVar.k(userFull82, user2.id);
                                                         mpVar.v7.M(user2.id);
-                                                        di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                        di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                         int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                         boolean z1322 = userFull82.blocked;
                                                         int i152 = ks.g0;
@@ -1138,7 +1138,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                     if (hVar.f(user2.id) == null) {
                                                         hVar.k(userFull82, user2.id);
                                                         mpVar.v7.M(user2.id);
-                                                        di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                        di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                         int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                         boolean z1322 = userFull82.blocked;
                                                         int i152 = ks.g0;
@@ -1185,7 +1185,7 @@ public final /* synthetic */ class lb implements Runnable {
                                                     if (hVar.f(user2.id) == null) {
                                                         hVar.k(userFull82, user2.id);
                                                         mpVar.v7.M(user2.id);
-                                                        di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                        di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                         int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                         boolean z1322 = userFull82.blocked;
                                                         int i152 = ks.g0;
@@ -1261,7 +1261,7 @@ public final /* synthetic */ class lb implements Runnable {
                                             if (hVar.f(user2.id) == null) {
                                                 hVar.k(userFull82, user2.id);
                                                 mpVar.v7.M(user2.id);
-                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                 boolean z1322 = userFull82.blocked;
                                                 int i152 = ks.g0;
@@ -1307,7 +1307,7 @@ public final /* synthetic */ class lb implements Runnable {
                                             if (hVar.f(user2.id) == null) {
                                                 hVar.k(userFull82, user2.id);
                                                 mpVar.v7.M(user2.id);
-                                                di.x8.y(mpVar.currentAccount, false).P(userFull82);
+                                                di.y8.y(mpVar.currentAccount, false).P(userFull82);
                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                 boolean z1322 = userFull82.blocked;
                                                 int i152 = ks.g0;

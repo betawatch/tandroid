@@ -4,7 +4,7 @@ import a8.la;
 import h2.l0;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class j implements c4.e {
     public final ArrayDeque a = new ArrayDeque();
@@ -22,7 +22,7 @@ public abstract class j implements c4.e {
         this.b = new ArrayDeque();
         for (int i10 = 0; i10 < 2; i10++) {
             ArrayDeque arrayDeque = this.b;
-            a1.c cVar = new a1.c(this, 19);
+            a1.c cVar = new a1.c(this, 20);
             i iVar = new i();
             iVar.c = cVar;
             arrayDeque.add(iVar);

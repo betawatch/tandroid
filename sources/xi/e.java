@@ -25,7 +25,6 @@ import com.google.android.gms.internal.vision.e2;
 import h2.l0;
 import h2.x;
 import h9.i0;
-import h9.o;
 import h9.t1;
 import java.io.BufferedReader;
 import java.io.File;
@@ -46,6 +45,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.Inflater;
 import jg.w;
+import ji.o;
 import kotlin.jvm.internal.j;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
@@ -59,27 +59,27 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.r0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.au0;
 import org.telegram.ui.Components.dd;
+import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.gf;
-import org.telegram.ui.Components.pf;
-import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.rf;
+import org.telegram.ui.Components.z71;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.bn;
 import org.telegram.ui.fy0;
 import org.telegram.ui.he;
 import org.telegram.ui.ly0;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import org.telegram.ui.web.b1;
 import org.telegram.ui.web.c1;
 import q4.q;
-import ug.z0;
+import ug.y0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class e implements m, gs, ly0, q5.b {
     public static volatile e e;
@@ -146,7 +146,7 @@ public final class e implements m, gs, ly0, q5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = w71.A0.matcher(trim);
+            Matcher matcher = z71.A0.matcher(trim);
             int i10 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -303,11 +303,11 @@ public final class e implements m, gs, ly0, q5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = w71.y0.matcher(trim);
+        Matcher matcher = z71.y0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = w71.z0.matcher(trim);
+            Matcher matcher2 = z71.z0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;
@@ -317,7 +317,7 @@ public final class e implements m, gs, ly0, q5.b {
     }
 
     public boolean C() {
-        bn bnVar = ((ji.m) this.d).b.a.D3;
+        bn bnVar = ((o) this.d).b.a.F3;
         if (bnVar == null) {
             return false;
         }
@@ -356,36 +356,36 @@ public final class e implements m, gs, ly0, q5.b {
         ji.e eVar;
         int[] iArr = (int[]) this.b;
         int[] iArr2 = (int[]) this.a;
-        ji.m mVar = (ji.m) this.d;
-        pf pfVar = mVar.b;
-        if (Float.isNaN(f10) || (eVar = mVar.K) == null || mVar.c == 0) {
-            pfVar.g(Float.NaN, 0.0f);
+        o oVar = (o) this.d;
+        rf rfVar = oVar.b;
+        if (Float.isNaN(f10) || (eVar = oVar.K) == null || oVar.c == 0) {
+            rfVar.g(Float.NaN, 0.0f);
             return;
         }
         eVar.getLocationInWindow(iArr2);
         ((ViewGroup) this.c).getLocationInWindow(iArr);
-        pfVar.g((f10 + iArr2[1]) - iArr[1], f11);
+        rfVar.g((f10 + iArr2[1]) - iArr[1], f11);
     }
 
     public void G() {
-        ji.m mVar = (ji.m) this.d;
-        String trim = mVar.n.trim();
+        o oVar = (o) this.d;
+        String trim = oVar.n.trim();
         if (trim.isEmpty()) {
             return;
         }
         Log.d("VoiceLive", "field: send " + trim.length() + " chars as text");
-        mVar.n("field send");
-        ChatActivityEnterView chatActivityEnterView = mVar.b.a;
-        int i7 = ChatActivityEnterView.n7;
-        chatActivityEnterView.x2(trim, new dd(chatActivityEnterView, 20));
+        oVar.m("field send");
+        ChatActivityEnterView chatActivityEnterView = oVar.b.a;
+        int i7 = ChatActivityEnterView.s7;
+        chatActivityEnterView.A2(trim, new dd(chatActivityEnterView, 20));
     }
 
     public void H(float f10, float f11, float f12, float f13) {
-        ji.m mVar = (ji.m) this.d;
-        int[] iArr = mVar.d0;
-        int[] iArr2 = mVar.c0;
-        EditTextBoldCursor editTextBoldCursor = mVar.X;
-        if (editTextBoldCursor == null || mVar.K == null) {
+        o oVar = (o) this.d;
+        int[] iArr = oVar.d0;
+        int[] iArr2 = oVar.c0;
+        EditTextBoldCursor editTextBoldCursor = oVar.X;
+        if (editTextBoldCursor == null || oVar.K == null) {
             return;
         }
         int max = Math.max(1, Math.round(f12 - f10));
@@ -400,7 +400,7 @@ public final class e implements m, gs, ly0, q5.b {
         if (clipBounds == null || clipBounds.width() != max || clipBounds.height() != max2 || clipBounds.left != 0 || clipBounds.top != 0) {
             editTextBoldCursor.setClipBounds(new Rect(0, 0, max, max2));
         }
-        mVar.K.getLocationInWindow(iArr2);
+        oVar.K.getLocationInWindow(iArr2);
         editTextBoldCursor.getLocationInWindow(iArr);
         float translationX = iArr[0] - editTextBoldCursor.getTranslationX();
         float translationY = iArr[1] - editTextBoldCursor.getTranslationY();
@@ -517,7 +517,7 @@ public final class e implements m, gs, ly0, q5.b {
         String str = aVar.b;
         String str2 = aVar.f;
         c cVar = new c(this, dVar);
-        nd0 k10 = i.k(str);
+        md0 k10 = i.k(str);
         byte[] f10 = i.f(str2);
         int i7 = 0;
         if (k10 != null && f10 != null) {
@@ -567,7 +567,7 @@ public final class e implements m, gs, ly0, q5.b {
         HashMap hashMap = (HashMap) this.c;
         ArrayList i7 = i(list);
         if (i7.size() < 2) {
-            return (p2.b) o.m(i7, null);
+            return (p2.b) h9.o.m(i7, null);
         }
         Collections.sort(i7, new w(9));
         ArrayList arrayList = new ArrayList();
@@ -599,7 +599,7 @@ public final class e implements m, gs, ly0, q5.b {
         int i15 = 0;
         while (true) {
             if (i10 >= subList.size()) {
-                bVar = (p2.b) o.n(subList);
+                bVar = (p2.b) h9.o.n(subList);
                 break;
             }
             bVar = (p2.b) subList.get(i10);
@@ -620,7 +620,7 @@ public final class e implements m, gs, ly0, q5.b {
 
     @Override // org.telegram.ui.ly0
     public void a() {
-        g0.h3(new fy0((bn) this.a, (Activity) this.b, (i6) this.c, (fj) this.d, 2), 200L);
+        g0.h3(new fy0((bn) this.a, (Activity) this.b, (h6) this.c, (fj) this.d, 2), 200L);
     }
 
     @Override // org.telegram.messenger.gs
@@ -700,13 +700,13 @@ public final class e implements m, gs, ly0, q5.b {
 
     @Override // fd.a
     public Object get() {
-        return new c0((Executor) ((fd.a) this.a).get(), (v5.d) ((fd.a) this.b).get(), (nd0) ((nd0) this.c).get(), (w5.c) ((fd.a) this.d).get(), 14);
+        return new c0((Executor) ((fd.a) this.a).get(), (v5.d) ((fd.a) this.b).get(), (md0) ((md0) this.c).get(), (w5.c) ((fd.a) this.d).get(), 14);
     }
 
     @Override // org.telegram.ui.ly0
     public void h() {
         bn bnVar = (bn) this.a;
-        bnVar.showDialog(new z0((h2) bnVar, 3, true));
+        bnVar.showDialog(new y0((g2) bnVar, 3, true));
     }
 
     public ArrayList i(List list) {
@@ -742,11 +742,11 @@ public final class e implements m, gs, ly0, q5.b {
     public fh.g k(ji.e eVar) {
         fh.g gVar;
         gh.a aVar;
-        ChatActivityEnterView chatActivityEnterView = ((ji.m) this.d).b.a;
-        int i7 = ChatActivityEnterView.n7;
-        jh.f z02 = chatActivityEnterView.z0();
-        dh.c cVar = chatActivityEnterView.J1;
-        if (cVar == null || z02 == null || (gVar = z02.n) == null || (aVar = gVar.w) == null) {
+        ChatActivityEnterView chatActivityEnterView = ((o) this.d).b.a;
+        int i7 = ChatActivityEnterView.s7;
+        jh.f D0 = chatActivityEnterView.D0();
+        dh.c cVar = chatActivityEnterView.L1;
+        if (cVar == null || D0 == null || (gVar = D0.n) == null || (aVar = gVar.w) == null) {
             return null;
         }
         return cVar.c(eVar, aVar, false);
@@ -853,7 +853,7 @@ public final class e implements m, gs, ly0, q5.b {
     }
 
     public float s() {
-        EditTextBoldCursor editTextBoldCursor = ((ji.m) this.d).X;
+        EditTextBoldCursor editTextBoldCursor = ((o) this.d).X;
         if (editTextBoldCursor == null) {
             return -1.0f;
         }
@@ -864,33 +864,33 @@ public final class e implements m, gs, ly0, q5.b {
     }
 
     public Drawable t() {
-        ChatActivityEnterView chatActivityEnterView = ((ji.m) this.d).b.a;
-        long j3 = chatActivityEnterView.N6;
+        ChatActivityEnterView chatActivityEnterView = ((o) this.d).b.a;
+        long j3 = chatActivityEnterView.P6;
         if (j3 == 0) {
             return null;
         }
-        if (chatActivityEnterView.w6 != j3) {
-            chatActivityEnterView.w6 = j3;
-            TLRPC.TL_availableEffect b12 = mp.u1(chatActivityEnterView.R).b1(chatActivityEnterView.N6);
-            chatActivityEnterView.x6 = b12 != null ? j6.g(b12.emoticon) : null;
+        if (chatActivityEnterView.y6 != j3) {
+            chatActivityEnterView.y6 = j3;
+            TLRPC.TL_availableEffect b12 = mp.u1(chatActivityEnterView.R).b1(chatActivityEnterView.P6);
+            chatActivityEnterView.z6 = b12 != null ? j6.g(b12.emoticon) : null;
         }
-        return chatActivityEnterView.x6;
+        return chatActivityEnterView.z6;
     }
 
     public boolean u(RectF rectF, boolean z10) {
         char c10;
         int[] iArr = (int[]) this.b;
         int[] iArr2 = (int[]) this.a;
-        ji.m mVar = (ji.m) this.d;
-        if (mVar.K != null) {
-            ChatActivityEnterView chatActivityEnterView = mVar.b.a;
-            au0 au0Var = chatActivityEnterView.a2;
-            RectF rectF2 = chatActivityEnterView.G4;
-            if (au0Var != null && chatActivityEnterView.getWidth() > 0) {
+        o oVar = (o) this.d;
+        if (oVar.K != null) {
+            ChatActivityEnterView chatActivityEnterView = oVar.b.a;
+            du0 du0Var = chatActivityEnterView.c2;
+            RectF rectF2 = chatActivityEnterView.I4;
+            if (du0Var != null && chatActivityEnterView.getWidth() > 0) {
                 int[] iArr3 = new int[2];
                 int[] iArr4 = new int[2];
                 chatActivityEnterView.getLocationInWindow(iArr3);
-                au0Var.getLocationInWindow(iArr4);
+                du0Var.getLocationInWindow(iArr4);
                 float f10 = iArr3[0] - iArr4[0];
                 float f11 = iArr3[1] - iArr4[1];
                 if (z10) {
@@ -901,8 +901,8 @@ public final class e implements m, gs, ly0, q5.b {
                 } else {
                     c10 = 0;
                     float width = (chatActivityEnterView.getWidth() + f10) - g0.L(64.0f);
-                    if (chatActivityEnterView.C2 != null && !rectF2.isEmpty() && chatActivityEnterView.C2.getVisibility() == 0) {
-                        chatActivityEnterView.C2.getLocationInWindow(new int[2]);
+                    if (chatActivityEnterView.E2 != null && !rectF2.isEmpty() && chatActivityEnterView.E2.getVisibility() == 0) {
+                        chatActivityEnterView.E2.getLocationInWindow(new int[2]);
                         width = ((r6[0] - iArr4[0]) + rectF2.left) - g0.L(8.0f);
                     }
                     rectF.set(f10, 0.0f, width, f11);
@@ -910,7 +910,7 @@ public final class e implements m, gs, ly0, q5.b {
                         return false;
                     }
                 }
-                mVar.K.getLocationInWindow(iArr2);
+                oVar.K.getLocationInWindow(iArr2);
                 ((ViewGroup) this.c).getLocationInWindow(iArr);
                 rectF.offset(iArr[c10] - iArr2[c10], iArr[1] - iArr2[1]);
                 return true;
@@ -1080,7 +1080,7 @@ public final class e implements m, gs, ly0, q5.b {
     }
 
     public float x() {
-        gf gfVar = ((ji.m) this.d).b.a.F0;
+        gf gfVar = ((o) this.d).b.a.F0;
         return gfVar != null ? gfVar.getTextSize() : g0.L(18.0f);
     }
 
@@ -1090,8 +1090,8 @@ public final class e implements m, gs, ly0, q5.b {
     }
 
     public boolean z() {
-        ((ji.m) this.d).getClass();
-        return DictationAsr.B() && DictationAsr.C().length > 0;
+        ((o) this.d).getClass();
+        return DictationAsr.D() && DictationAsr.E().length > 0;
     }
 
     public e(File file) {

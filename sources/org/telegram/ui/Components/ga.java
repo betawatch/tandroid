@@ -19,7 +19,7 @@ import android.os.Build;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ga {
     public final ca a;
@@ -133,7 +133,7 @@ public final class ga {
                 this.f = 1.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
                 this.t = ofFloat;
-                ofFloat.addUpdateListener(new w(this, 7));
+                ofFloat.addUpdateListener(new x(this, 7));
                 this.t.start();
             }
             this.n = b10;

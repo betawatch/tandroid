@@ -1,43 +1,44 @@
 package hi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class d9 implements r1.c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ d9(Object obj, float f10, int i7) {
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class d9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sa b;
+
+    public /* synthetic */ d9(sa saVar, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.b = f10;
+        this.b = saVar;
     }
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ta taVar = (ta) this.c;
-                if (!z10) {
-                    taVar.N0.setTranslationY(this.b);
-                    taVar.N0.L = false;
-                    taVar.p2 = null;
-                    taVar.q2 = null;
-                    break;
-                }
+                this.b.N0.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 2:
+                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 3:
+                this.b.t1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                this.b.t1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                ki.s3 s3Var = (ki.s3) this.c;
-                s3Var.w = null;
-                float f12 = this.b;
-                if (!z10) {
-                    s3Var.f = f12;
-                    s3Var.c();
-                    break;
-                } else {
-                    s3Var.h = f12;
-                    break;
-                }
+                sa saVar = this.b;
+                saVar.getClass();
+                saVar.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                saVar.n();
+                saVar.r.invalidate();
+                saVar.n.invalidate();
+                break;
         }
     }
 }

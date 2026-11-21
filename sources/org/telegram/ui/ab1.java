@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ab1 extends ScrollView {
     public final int[] a;
@@ -46,7 +46,7 @@ public final class ab1 extends ScrollView {
         int[] iArr = this.a;
         textView.getLocationOnScreen(iArr);
         int measuredHeight = bb1Var.c.getMeasuredHeight() + iArr[1];
-        kVar = ((org.telegram.ui.ActionBar.h2) bb1Var).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) bb1Var).actionBar;
         boolean z10 = measuredHeight < kVar.getBottom();
         if (z10 != (bb1Var.c.getTag() == null)) {
             bb1Var.c.setTag(z10 ? null : 1);
@@ -57,12 +57,12 @@ public final class ab1 extends ScrollView {
             }
             AnimatorSet animatorSet2 = new AnimatorSet();
             bb1Var.L = animatorSet2;
-            hi.m5 m5Var = bb1Var.E;
+            hi.l5 l5Var = bb1Var.E;
             float[] fArr = {z10 ? 1.0f : 0.0f};
             Property property = View.ALPHA;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(m5Var, (Property<hi.m5, Float>) property, fArr);
-            kVar2 = ((org.telegram.ui.ActionBar.h2) bb1Var).actionBar;
-            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.n5, Float>) property, z10 ? 1.0f : 0.0f));
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(l5Var, (Property<hi.l5, Float>) property, fArr);
+            kVar2 = ((org.telegram.ui.ActionBar.g2) bb1Var).actionBar;
+            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.m5, Float>) property, z10 ? 1.0f : 0.0f));
             bb1Var.L.setDuration(150L);
             bb1Var.L.addListener(new k71(this, 3));
             bb1Var.L.start();

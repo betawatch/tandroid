@@ -14,11 +14,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.oq;
 import org.telegram.ui.v41;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class x7 extends FrameLayout {
     public final v7 a;
@@ -30,19 +30,19 @@ public abstract class x7 extends FrameLayout {
     public final Paint h;
     public final org.telegram.ui.Components.b9 n;
     public final fi.e7 r;
-    public final org.telegram.ui.ActionBar.i6 s;
+    public final org.telegram.ui.ActionBar.h6 s;
     public z41 w;
     public final TLRPC.ChatFull x;
     public boolean y;
 
-    public x7(Context context, TLRPC.ChatFull chatFull, org.telegram.ui.ActionBar.i6 i6Var) {
+    public x7(Context context, TLRPC.ChatFull chatFull, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.h = new Paint(1);
-        this.n = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.n = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         this.r = new fi.e7(null, false);
         this.x = chatFull;
-        this.s = i6Var;
-        v7 v7Var = new v7(this, context, i6Var);
+        this.s = h6Var;
+        v7 v7Var = new v7(this, context, h6Var);
         this.a = v7Var;
         setClipChildren(false);
         boolean z10 = gd.a0;
@@ -99,31 +99,31 @@ public abstract class x7 extends FrameLayout {
         linearLayout.addView(g11, c8.ma.d(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
         boolean z11 = gd.a0;
         addView(linearLayout, c8.ma.d(-1, -2.0f, 0, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f));
-        int i7 = org.telegram.ui.ActionBar.n6.j5;
-        org.telegram.ui.ActionBar.u6.X(w7Var, i7, null);
-        org.telegram.ui.ActionBar.u6.U(textView, i7, null);
-        int i10 = org.telegram.ui.ActionBar.n6.A6;
-        org.telegram.ui.ActionBar.u6.U(textView2, i10, null);
-        org.telegram.ui.ActionBar.u6.U(textView3, i10, null);
-        org.telegram.ui.ActionBar.u6.U(textView4, i10, null);
+        int i7 = org.telegram.ui.ActionBar.m6.j5;
+        org.telegram.ui.ActionBar.t6.X(w7Var, i7, null);
+        org.telegram.ui.ActionBar.t6.U(textView, i7, null);
+        int i10 = org.telegram.ui.ActionBar.m6.A6;
+        org.telegram.ui.ActionBar.t6.U(textView2, i10, null);
+        org.telegram.ui.ActionBar.t6.U(textView3, i10, null);
+        org.telegram.ui.ActionBar.t6.U(textView4, i10, null);
         Drawable mutate = context.getDrawable(R.drawable.mini_stats_likes).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        org.telegram.ui.ActionBar.u6.x(textView4, mutate, i10, null, mode);
+        org.telegram.ui.ActionBar.t6.x(textView4, mutate, i10, null, mode);
         Drawable mutate2 = context.getDrawable(R.drawable.mini_stats_shares).mutate();
-        org.telegram.ui.ActionBar.u6.x(textView3, mutate2, i10, null, mode);
-        mq mqVar = new mq(null, mutate, 0, org.telegram.messenger.g0.L(1.0f));
+        org.telegram.ui.ActionBar.t6.x(textView3, mutate2, i10, null, mode);
+        oq oqVar = new oq(null, mutate, 0, org.telegram.messenger.g0.L(1.0f));
         int intrinsicWidth = mutate2.getIntrinsicWidth();
         int intrinsicHeight = mutate2.getIntrinsicHeight();
-        mqVar.h = intrinsicWidth;
-        mqVar.n = intrinsicHeight;
-        textView4.setCompoundDrawablesWithIntrinsicBounds(mqVar, (Drawable) null, (Drawable) null, (Drawable) null);
+        oqVar.h = intrinsicWidth;
+        oqVar.n = intrinsicHeight;
+        textView4.setCompoundDrawablesWithIntrinsicBounds(oqVar, (Drawable) null, (Drawable) null, (Drawable) null);
         textView4.setCompoundDrawablePadding(org.telegram.messenger.g0.L(2.0f));
-        mq mqVar2 = new mq(null, mutate2, 0, org.telegram.messenger.g0.L(1.0f));
+        oq oqVar2 = new oq(null, mutate2, 0, org.telegram.messenger.g0.L(1.0f));
         int intrinsicWidth2 = mutate2.getIntrinsicWidth();
         int intrinsicHeight2 = mutate2.getIntrinsicHeight();
-        mqVar2.h = intrinsicWidth2;
-        mqVar2.n = intrinsicHeight2;
-        textView3.setCompoundDrawablesWithIntrinsicBounds(mqVar2, (Drawable) null, (Drawable) null, (Drawable) null);
+        oqVar2.h = intrinsicWidth2;
+        oqVar2.n = intrinsicHeight2;
+        textView3.setCompoundDrawablesWithIntrinsicBounds(oqVar2, (Drawable) null, (Drawable) null, (Drawable) null);
         textView3.setCompoundDrawablePadding(org.telegram.messenger.g0.L(2.0f));
         setWillNotDraw(false);
     }
@@ -132,7 +132,7 @@ public abstract class x7 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.y) {
-            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d7, this.s);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d7, this.s);
             Paint paint = this.h;
             paint.setColor(w02);
             if (gd.a0) {

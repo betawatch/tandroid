@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a90 implements org.telegram.ui.Components.z4, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.du0 {
+public final /* synthetic */ class a90 implements org.telegram.ui.Components.a5, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.gu0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ k90 b;
 
@@ -13,19 +13,19 @@ public final /* synthetic */ class a90 implements org.telegram.ui.Components.z4,
         this.b = k90Var;
     }
 
-    @Override // org.telegram.ui.Components.z4
+    @Override // org.telegram.ui.Components.a5
     public void O(int i7, int i10, boolean z10) {
         this.b.a0(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         k90 k90Var = this.b;
         k90Var.T.a(k90Var.e);
         k90Var.finishFragment();
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public void k(int i7) {
         switch (this.a) {
             case 2:
@@ -52,7 +52,7 @@ public final /* synthetic */ class a90 implements org.telegram.ui.Components.z4,
         }
     }
 
-    @Override // org.telegram.ui.Components.du0
+    @Override // org.telegram.ui.Components.gu0
     public /* synthetic */ void o() {
         int i7 = this.a;
     }

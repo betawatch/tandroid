@@ -33,18 +33,18 @@ import org.telegram.messenger.xs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.s4;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.w4;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.v4;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.kr0;
+import org.telegram.ui.Components.ap0;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.ld0;
-import org.telegram.ui.Components.yo0;
+import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.mr0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.a81;
 import org.telegram.ui.aj0;
@@ -59,8 +59,8 @@ import org.telegram.ui.hk0;
 import org.telegram.ui.ii;
 import org.telegram.ui.k30;
 import org.telegram.ui.l4;
-import org.telegram.ui.l60;
-import org.telegram.ui.m21;
+import org.telegram.ui.m60;
+import org.telegram.ui.n21;
 import org.telegram.ui.t3;
 import org.telegram.ui.wu0;
 import org.telegram.ui.yz;
@@ -72,7 +72,7 @@ import zi.o0;
 import zi.p0;
 import zi.s0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -97,8 +97,8 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
         String str;
         TLRPC.TL_secureRequiredType tL_secureRequiredType;
         TLRPC.TL_secureRequiredType tL_secureRequiredType2;
-        s4 s4Var;
-        s4 s4Var2;
+        r4 r4Var;
+        r4 r4Var2;
         File q02;
         String str2;
         File file;
@@ -175,7 +175,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 bn bnVar = (bn) this.b;
                 String str5 = (String) this.c;
                 g0.g(str5);
-                lc.b0(bnVar).i(gd.a0(null, null, 2131750873, str5)).j();
+                lc.b0(bnVar).i(gd.a0(null, null, 2131750872, str5)).j();
                 return;
             case 4:
                 ArrayList arrayList = (ArrayList) this.b;
@@ -192,13 +192,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 5:
-                ld0 ld0Var = (ld0) this.b;
+                md0 md0Var = (md0) this.b;
                 f0 f0Var = (f0) this.c;
                 if (i7 == 0) {
                     try {
                         ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", f0Var.c(false)));
                         if (g0.G3()) {
-                            Toast.makeText(ld0Var.t1.getParentActivity(), gd.M0(2131743959, null), 0).show();
+                            Toast.makeText(md0Var.t1.getParentActivity(), gd.N0(2131743953, null), 0).show();
                             return;
                         }
                         return;
@@ -209,13 +209,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 6:
-                kr0 kr0Var = (kr0) this.b;
+                mr0 mr0Var = (mr0) this.b;
                 String str6 = (String) this.c;
                 if (i7 == 0) {
-                    kr0Var.a.d1(str6);
+                    mr0Var.a.d1(str6);
                     return;
                 }
-                kr0Var.getClass();
+                mr0Var.getClass();
                 if (i7 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -293,7 +293,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 return;
             case 11:
                 zy0 zy0Var = (zy0) this.b;
-                switch (((l60) this.c).a) {
+                switch (((m60) this.c).a) {
                     case 13:
                         aj.e.e.b(i7 == 0 ? s0.b : s0.c);
                         break;
@@ -316,65 +316,65 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 ((l4) zy0Var.c).f();
                 return;
             case 12:
-                m21 m21Var = (m21) this.b;
+                n21 n21Var = (n21) this.b;
                 ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                n10.t(null, 2131743959, new lc(m21Var.c, null));
+                n10.t(null, 2131743953, new lc(n21Var.c, null));
                 return;
             case 13:
                 g61 g61Var = (g61) this.b;
-                m6 m6Var = (m6) this.c;
+                l6 l6Var = (l6) this.c;
                 ThemeActivity themeActivity = g61Var.e;
                 if (themeActivity.getParentActivity() == null) {
                     return;
                 }
                 if (i7 == 0) {
-                    if (m6Var.G == null) {
-                        themeActivity.getMessagesController().H4(m6Var, null);
-                        ks.e().k(ks.v4, m6Var, null);
+                    if (l6Var.G == null) {
+                        themeActivity.getMessagesController().H4(l6Var, null);
+                        ks.e().k(ks.v4, l6Var, null);
                         return;
                     }
-                    String str8 = "https://" + themeActivity.getMessagesController().X2 + "/addtheme/" + m6Var.G.slug;
-                    themeActivity.showDialog(new yo0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    String str8 = "https://" + themeActivity.getMessagesController().X2 + "/addtheme/" + l6Var.G.slug;
+                    themeActivity.showDialog(new ap0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i7 != 1) {
                     if (i7 == 2) {
-                        s4Var = ((h2) themeActivity).parentLayout;
-                        if (s4Var != null) {
-                            n6.u(m6Var, true, false);
-                            s4Var2 = ((h2) themeActivity).parentLayout;
-                            ((ActionBarLayout) s4Var2).X(true, true);
-                            new ThemeEditorView().d(themeActivity.getParentActivity(), m6Var);
+                        r4Var = ((g2) themeActivity).parentLayout;
+                        if (r4Var != null) {
+                            m6.u(l6Var, true, false);
+                            r4Var2 = ((g2) themeActivity).parentLayout;
+                            ((ActionBarLayout) r4Var2).X(true, true);
+                            new ThemeEditorView().d(themeActivity.getParentActivity(), l6Var);
                             return;
                         }
                         return;
                     }
                     if (i7 == 3) {
-                        themeActivity.presentFragment(new a81(m6Var, null, false));
+                        themeActivity.presentFragment(new a81(l6Var, null, false));
                         return;
                     }
                     if (themeActivity.getParentActivity() == null) {
                         return;
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                    alertDialog$Builder.a.S = gd.M0(2131751473, "DeleteThemeTitle");
-                    alertDialog$Builder.a.U = gd.M0(2131751474, "DeleteThemeAlert");
-                    alertDialog$Builder.k(gd.M0(2131751587, "Delete"), new aj0(21, g61Var, m6Var));
-                    alertDialog$Builder.h(gd.M0(2131752578, "Cancel"), null);
-                    u1 u1Var = alertDialog$Builder.a;
-                    themeActivity.showDialog(u1Var);
-                    TextView textView = (TextView) u1Var.d(-1);
+                    alertDialog$Builder.a.S = gd.N0(2131751472, "DeleteThemeTitle");
+                    alertDialog$Builder.a.U = gd.N0(2131751473, "DeleteThemeAlert");
+                    alertDialog$Builder.k(gd.N0(2131751586, "Delete"), new aj0(21, g61Var, l6Var));
+                    alertDialog$Builder.h(gd.N0(2131752577, "Cancel"), null);
+                    t1 t1Var = alertDialog$Builder.a;
+                    themeActivity.showDialog(t1Var);
+                    TextView textView = (TextView) t1Var.d(-1);
                     if (textView != null) {
-                        u6.U(textView, n6.q7, null);
+                        t6.U(textView, m6.q7, null);
                         return;
                     }
                     return;
                 }
-                if (m6Var.b == null && m6Var.d == null) {
+                if (l6Var.b == null && l6Var.d == null) {
                     StringBuilder sb3 = new StringBuilder();
-                    int[] iArr = n6.hm;
+                    int[] iArr = m6.hm;
                     for (int i13 = 0; i13 < iArr.length; i13++) {
-                        sb3.append(w4.c(i13));
+                        sb3.append(v4.c(i13));
                         sb3.append("=");
                         sb3.append(iArr[i13]);
                         sb3.append("\n");
@@ -403,7 +403,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         if (fileOutputStream2 != null) {
                             fileOutputStream2.close();
                         }
-                        str2 = m6Var.a;
+                        str2 = l6Var.a;
                         if (!str2.endsWith(".attheme")) {
                         }
                         file = new File(w7.z(4), w7.q(str2));
@@ -424,10 +424,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         }
                     }
                 } else {
-                    String str9 = m6Var.d;
-                    q02 = str9 != null ? n6.q0(str9) : new File(m6Var.b);
+                    String str9 = l6Var.d;
+                    q02 = str9 != null ? m6.q0(str9) : new File(l6Var.b);
                 }
-                str2 = m6Var.a;
+                str2 = l6Var.a;
                 if (!str2.endsWith(".attheme")) {
                     str2 = str2.concat(".attheme");
                 }
@@ -453,7 +453,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     } else {
                         intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
                     }
-                    themeActivity.startActivityForResult(Intent.createChooser(intent, gd.M0(2131745264, "ShareFile")), 500);
+                    themeActivity.startActivityForResult(Intent.createChooser(intent, gd.N0(2131745263, "ShareFile")), 500);
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);

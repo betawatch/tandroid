@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class u9 extends c1 {
     public static volatile u9[] h = new u9[4];
@@ -175,8 +175,8 @@ public final class u9 extends c1 {
             nVar.a(Boolean.FALSE, null);
             return;
         }
-        if (!di.x8.y(this.currentAccount, false).e) {
-            di.x8.y(this.currentAccount, false).r(new j9(this, nVar, j3, xVar, j10));
+        if (!di.y8.y(this.currentAccount, false).e) {
+            di.y8.y(this.currentAccount, false).r(new j9(this, nVar, j3, xVar, j10));
             return;
         }
         q9 q9Var = r9Var.b;

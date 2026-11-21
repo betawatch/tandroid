@@ -5,20 +5,20 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class j0 extends ReplacementSpan {
     public final /* synthetic */ int a;
     public final Object b;
     public final Paint c;
-    public final vy0 d;
+    public final xy0 d;
 
-    public j0(org.telegram.ui.ActionBar.i6 i6Var) {
+    public j0(org.telegram.ui.ActionBar.h6 h6Var) {
         this.a = 2;
-        this.b = i6Var;
-        this.d = new vy0(gd.M0(2131745002, null), 12.0f, org.telegram.messenger.g0.o());
+        this.b = h6Var;
+        this.d = new xy0(gd.N0(2131744996, null), 12.0f, org.telegram.messenger.g0.o());
         this.c = new Paint(1);
     }
 
@@ -45,7 +45,7 @@ public final class j0 extends ReplacementSpan {
                 break;
             default:
                 float L3 = ((i11 + i13) / 2.0f) + org.telegram.messenger.g0.L(1.0f);
-                int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fi, (org.telegram.ui.ActionBar.i6) this.b);
+                int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Fi, (org.telegram.ui.ActionBar.h6) this.b);
                 Paint paint4 = this.c;
                 paint4.setColor(w02);
                 RectF rectF3 = org.telegram.messenger.g0.P;
@@ -86,12 +86,12 @@ public final class j0 extends ReplacementSpan {
             case 1:
                 this.b = new RectF();
                 this.c = new Paint(1);
-                this.d = new vy0(gd.M0(2131748633, null), 9.0f, org.telegram.messenger.g0.o());
+                this.d = new xy0(gd.N0(2131748632, null), 9.0f, org.telegram.messenger.g0.o());
                 break;
             default:
                 this.b = new RectF();
                 this.c = new Paint(1);
-                this.d = new vy0(gd.M0(2131748633, null), 8.0f, org.telegram.messenger.g0.o());
+                this.d = new xy0(gd.N0(2131748632, null), 8.0f, org.telegram.messenger.g0.o());
                 break;
         }
     }

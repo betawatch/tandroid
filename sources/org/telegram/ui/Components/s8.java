@@ -5,9 +5,9 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s8 extends org.telegram.ui.r11 {
+public final class s8 extends org.telegram.ui.s11 {
     public boolean f2;
     public final /* synthetic */ y8 g2;
 
@@ -18,7 +18,7 @@ public final class s8 extends org.telegram.ui.r11 {
         this.f2 = true;
     }
 
-    @Override // org.telegram.ui.r11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.s11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         super.onLayout(z10, i7, i10, i11, i12);
         if (this.f2) {
@@ -27,7 +27,7 @@ public final class s8 extends org.telegram.ui.r11 {
         }
     }
 
-    @Override // org.telegram.ui.r11
+    @Override // org.telegram.ui.s11
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         int i7;
         TLRPC.TL_emojiList tL_emojiList;
@@ -36,10 +36,10 @@ public final class s8 extends org.telegram.ui.r11 {
         boolean z11 = this.S;
         y8 y8Var = this.g2;
         if (z11) {
-            i10 = ((org.telegram.ui.ActionBar.h2) y8Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.g2) y8Var).currentAccount;
             tL_emojiList = org.telegram.messenger.ri.d0(i10).M1;
         } else {
-            i7 = ((org.telegram.ui.ActionBar.h2) y8Var).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) y8Var).currentAccount;
             tL_emojiList = org.telegram.messenger.ri.d0(i7).N1;
         }
         if (tL_emojiList != null) {

@@ -4,14 +4,14 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.u3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a11;
-import org.telegram.ui.Components.b11;
-import org.telegram.ui.Components.bx;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.dx;
+import org.telegram.ui.Components.zj0;
 import org.telegram.ui.i40;
-import org.telegram.ui.r11;
+import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g extends v4.o {
     public final /* synthetic */ int b;
@@ -51,11 +51,11 @@ public final class g extends v4.o {
                 TLRPC.Dialog dialog2 = kVar2.c;
                 return i11 == i12 && (i11 != 0 ? i11 != 14 ? i11 != 4 ? i11 != 6 ? i11 != 5 ? i11 != 10 : kVar.j == kVar2.j : !((tL_contact = kVar.e) == null || (tL_contact2 = kVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = kVar.d) == null || kVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && kVar.h == kVar2.h && kVar.f == kVar2.f && kVar.g == kVar2.g);
             case 1:
-                return ((Integer) this.c.get(i7)).equals(((bx) this.d).n.get(i10));
+                return ((Integer) this.c.get(i7)).equals(((dx) this.d).n.get(i10));
             case 2:
-                return Objects.equals(this.c.get(i7), ((xj0) this.d).n.get(i10));
+                return Objects.equals(this.c.get(i7), ((zj0) this.d).n.get(i10));
             case 3:
-                return ((b11) this.c.get(i7)).a() == ((b11) ((a11) this.d).c.get(i10)).a();
+                return ((d11) this.c.get(i7)).a() == ((d11) ((c11) this.d).c.get(i10)).a();
             case 4:
                 i40 i40Var = (i40) this.d;
                 ArrayList arrayList = this.c;
@@ -64,7 +64,7 @@ public final class g extends v4.o {
                 }
                 return ((u3) arrayList.get(i7)).equals(i40Var.e.get(i10));
             default:
-                return ((Long) this.c.get(i7)).equals(((r11) this.d).w0.get(i10));
+                return ((Long) this.c.get(i7)).equals(((s11) this.d).w0.get(i10));
         }
     }
 
@@ -74,15 +74,15 @@ public final class g extends v4.o {
             case 0:
                 return this.c.size();
             case 1:
-                return ((bx) this.d).n.size();
+                return ((dx) this.d).n.size();
             case 2:
-                return ((xj0) this.d).n.size();
+                return ((zj0) this.d).n.size();
             case 3:
-                return ((a11) this.d).c.size();
+                return ((c11) this.d).c.size();
             case 4:
                 return ((i40) this.d).e.size();
             default:
-                return ((r11) this.d).w0.size();
+                return ((s11) this.d).w0.size();
         }
     }
 

@@ -1,45 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.tc1;
+import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gj implements qj0, kj {
-    public final /* synthetic */ tj a;
+public final class gj extends org.telegram.ui.Cells.va {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ dk0 y;
 
-    public /* synthetic */ gj(tj tjVar) {
-        this.a = tjVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ gj(dk0 dk0Var, Context context, int i7) {
+        super(context, 5);
+        this.x = i7;
+        this.y = dk0Var;
     }
 
-    @Override // org.telegram.ui.Components.kj
-    public void a(TLRPC.User user, boolean z10, int i7, long j3) {
-        tj tjVar = this.a;
-        tjVar.b.a(true);
-        tjVar.K.a(user, z10, i7, j3);
-    }
-
-    @Override // org.telegram.ui.Components.qj0
-    public boolean c(int i7, View view) {
-        Object O;
-        tj tjVar = this.a;
-        v4.i0 adapter = tjVar.s.getAdapter();
-        pj pjVar = tjVar.G;
-        if (adapter == pjVar) {
-            O = pjVar.E(i7);
-        } else {
-            nj njVar = tjVar.F;
-            O = njVar.O(njVar.S(i7), njVar.Q(i7));
+    @Override // org.telegram.ui.Cells.va
+    public final void a(int i7, Object obj) {
+        switch (this.x) {
+            case 0:
+                q0.a aVar = ((hj) ((qa) this.y).f).y;
+                if (aVar != null) {
+                    aVar.accept(obj);
+                    break;
+                }
+                break;
+            case 1:
+                WallpapersListActivity.w0(((tc1) this.y).d, this, obj, i7);
+                break;
+            default:
+                ((uc1) this.y).F.presentFragment(new org.telegram.ui.x71(obj, null, true));
+                break;
         }
-        if (O == null) {
-            return false;
-        }
-        tjVar.Q((sj) view, O);
-        return true;
     }
 
-    @Override // org.telegram.ui.Components.kj
-    public /* synthetic */ void b(ArrayList arrayList, String str, boolean z10, int i7, long j3, boolean z11) {
+    @Override // org.telegram.ui.Cells.va
+    public boolean b(Object obj, int i7) {
+        switch (this.x) {
+            case 1:
+                return WallpapersListActivity.x0(((tc1) this.y).d, this, obj, i7);
+            default:
+                return super.b(obj, i7);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gj(qa qaVar, Context context) {
+        super(context, 1);
+        this.x = 0;
+        this.y = qaVar;
     }
 }

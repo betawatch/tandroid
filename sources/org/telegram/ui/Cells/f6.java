@@ -13,7 +13,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class f6 {
     public final int a;
@@ -112,7 +112,7 @@ public final class f6 {
         ConnectionsManager.getInstance(i11).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Cells.e6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                org.telegram.messenger.g0.g3(new bi.l4(f6.this, tLObject, trVar, j3, i7, arrayList, 4));
+                org.telegram.messenger.g0.g3(new bi.p4(f6.this, tLObject, trVar, j3, i7, arrayList, 4));
             }
         });
     }

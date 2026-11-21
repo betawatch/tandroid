@@ -5,18 +5,18 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class wc extends org.telegram.ui.Components.au0 {
+public final class wc extends org.telegram.ui.Components.du0 {
     public final /* synthetic */ int g0;
     public boolean h0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 i0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wc(int i7, Context context, org.telegram.ui.ActionBar.h2 h2Var) {
+    public /* synthetic */ wc(int i7, Context context, org.telegram.ui.ActionBar.g2 g2Var) {
         super(context, null);
         this.g0 = i7;
-        this.i0 = h2Var;
+        this.i0 = g2Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:124:0x0202  */
@@ -39,7 +39,7 @@ public final class wc extends org.telegram.ui.Components.au0 {
     /* JADX WARN: Removed duplicated region for block: B:85:0x0170  */
     /* JADX WARN: Removed duplicated region for block: B:87:0x017a  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x0154  */
-    @Override // org.telegram.ui.Components.au0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -50,7 +50,7 @@ public final class wc extends org.telegram.ui.Components.au0 {
         int i16;
         int i17;
         int i18;
-        org.telegram.ui.Components.wt wtVar;
+        org.telegram.ui.Components.yt ytVar;
         int measuredHeight;
         int measuredHeight2;
         int i19;
@@ -59,7 +59,7 @@ public final class wc extends org.telegram.ui.Components.au0 {
         int i22;
         int i23;
         int i24;
-        org.telegram.ui.Components.wt wtVar2;
+        org.telegram.ui.Components.yt ytVar2;
         int measuredHeight3;
         int measuredHeight4;
         int i25;
@@ -68,7 +68,7 @@ public final class wc extends org.telegram.ui.Components.au0 {
         int i28;
         int i29;
         int i30;
-        org.telegram.ui.Components.wt wtVar3;
+        org.telegram.ui.Components.yt ytVar3;
         int measuredHeight5;
         int measuredHeight6;
         int i31;
@@ -77,7 +77,7 @@ public final class wc extends org.telegram.ui.Components.au0 {
         int i34;
         int i35;
         int i36;
-        org.telegram.ui.Components.ry ryVar;
+        org.telegram.ui.Components.ty tyVar;
         int measuredHeight7;
         int measuredHeight8;
         switch (this.g0) {
@@ -113,8 +113,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                     i16 = ((i12 - emojiPadding) - i10) - measuredHeight9;
                                     i17 = layoutParams.bottomMargin;
                                 }
-                                wtVar = adVar.d;
-                                if (wtVar != null && wtVar.l(childAt)) {
+                                ytVar = adVar.d;
+                                if (ytVar != null && ytVar.l(childAt)) {
                                     if (org.telegram.messenger.g0.Q1()) {
                                         measuredHeight = getMeasuredHeight() + Q;
                                         measuredHeight2 = childAt.getMeasuredHeight();
@@ -130,8 +130,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                 i17 = layoutParams.bottomMargin;
                             }
                             i18 = i16 - i17;
-                            wtVar = adVar.d;
-                            if (wtVar != null) {
+                            ytVar = adVar.d;
+                            if (ytVar != null) {
                                 if (org.telegram.messenger.g0.Q1()) {
                                 }
                                 i18 = measuredHeight - measuredHeight2;
@@ -145,8 +145,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                         if (i39 == 16) {
                         }
                         i18 = i16 - i17;
-                        wtVar = adVar.d;
-                        if (wtVar != null) {
+                        ytVar = adVar.d;
+                        if (ytVar != null) {
                         }
                         childAt.layout(i15, i18, measuredWidth + i15, measuredHeight9 + i18);
                     }
@@ -185,8 +185,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                     i22 = ((i12 - emojiPadding2) - i10) - measuredHeight10;
                                     i23 = layoutParams2.bottomMargin;
                                 }
-                                wtVar2 = rnVar.w;
-                                if (wtVar2 != null && wtVar2.l(childAt2)) {
+                                ytVar2 = rnVar.w;
+                                if (ytVar2 != null && ytVar2.l(childAt2)) {
                                     if (org.telegram.messenger.g0.Q1()) {
                                         measuredHeight3 = getMeasuredHeight() + Q2;
                                         measuredHeight4 = childAt2.getMeasuredHeight();
@@ -202,8 +202,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                 i23 = layoutParams2.bottomMargin;
                             }
                             i24 = i22 - i23;
-                            wtVar2 = rnVar.w;
-                            if (wtVar2 != null) {
+                            ytVar2 = rnVar.w;
+                            if (ytVar2 != null) {
                                 if (org.telegram.messenger.g0.Q1()) {
                                 }
                                 i24 = measuredHeight3 - measuredHeight4;
@@ -217,8 +217,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                         if (i43 == 16) {
                         }
                         i24 = i22 - i23;
-                        wtVar2 = rnVar.w;
-                        if (wtVar2 != null) {
+                        ytVar2 = rnVar.w;
+                        if (ytVar2 != null) {
                         }
                         childAt2.layout(i21, i24, measuredWidth2 + i21, measuredHeight10 + i24);
                     }
@@ -257,8 +257,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                     i28 = ((i12 - emojiPadding3) - i10) - measuredHeight11;
                                     i29 = layoutParams3.bottomMargin;
                                 }
-                                wtVar3 = f50Var.c;
-                                if (wtVar3 != null && wtVar3.l(childAt3)) {
+                                ytVar3 = f50Var.c;
+                                if (ytVar3 != null && ytVar3.l(childAt3)) {
                                     if (org.telegram.messenger.g0.Q1()) {
                                         measuredHeight5 = getMeasuredHeight() + Q3;
                                         measuredHeight6 = childAt3.getMeasuredHeight();
@@ -274,8 +274,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                 i29 = layoutParams3.bottomMargin;
                             }
                             i30 = i28 - i29;
-                            wtVar3 = f50Var.c;
-                            if (wtVar3 != null) {
+                            ytVar3 = f50Var.c;
+                            if (ytVar3 != null) {
                                 if (org.telegram.messenger.g0.Q1()) {
                                 }
                                 i30 = measuredHeight5 - measuredHeight6;
@@ -289,8 +289,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                         if (i47 == 16) {
                         }
                         i30 = i28 - i29;
-                        wtVar3 = f50Var.c;
-                        if (wtVar3 != null) {
+                        ytVar3 = f50Var.c;
+                        if (ytVar3 != null) {
                         }
                         childAt3.layout(i27, i30, measuredWidth3 + i27, measuredHeight11 + i30);
                     }
@@ -329,8 +329,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                     i34 = ((i12 - i49) - i10) - measuredHeight12;
                                     i35 = layoutParams4.bottomMargin;
                                 }
-                                ryVar = pr0Var.S;
-                                if (ryVar != null && ryVar == childAt4) {
+                                tyVar = pr0Var.S;
+                                if (tyVar != null && tyVar == childAt4) {
                                     if (org.telegram.messenger.g0.Q1()) {
                                         measuredHeight7 = getMeasuredHeight() + Q4;
                                         measuredHeight8 = childAt4.getMeasuredHeight();
@@ -346,8 +346,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                                 i35 = layoutParams4.bottomMargin;
                             }
                             i36 = i34 - i35;
-                            ryVar = pr0Var.S;
-                            if (ryVar != null) {
+                            tyVar = pr0Var.S;
+                            if (tyVar != null) {
                                 if (org.telegram.messenger.g0.Q1()) {
                                 }
                                 i36 = measuredHeight7 - measuredHeight8;
@@ -361,8 +361,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                         if (i52 == 16) {
                         }
                         i36 = i34 - i35;
-                        ryVar = pr0Var.S;
-                        if (ryVar != null) {
+                        tyVar = pr0Var.S;
+                        if (tyVar != null) {
                         }
                         childAt4.layout(i33, i36, measuredWidth4 + i33, measuredHeight12 + i36);
                     }
@@ -376,8 +376,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
     public final void onMeasure(int i7, int i10) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
-        org.telegram.ui.ActionBar.a5 a5Var;
-        org.telegram.ui.ActionBar.a5 a5Var2;
+        org.telegram.ui.ActionBar.z4 z4Var;
+        org.telegram.ui.ActionBar.z4 z4Var2;
         org.telegram.ui.ActionBar.k kVar3;
         org.telegram.ui.ActionBar.k kVar4;
         org.telegram.ui.ActionBar.k kVar5;
@@ -389,7 +389,7 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 setMeasuredDimension(size, size2);
                 int paddingTop = size2 - getPaddingTop();
                 ad adVar = (ad) this.i0;
-                kVar = ((org.telegram.ui.ActionBar.h2) adVar).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) adVar).actionBar;
                 measureChildWithMargins(kVar, i7, 0, i10, 0);
                 if (Q() > org.telegram.messenger.g0.L(20.0f)) {
                     this.h0 = true;
@@ -400,10 +400,10 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 for (int i11 = 0; i11 < childCount; i11++) {
                     View childAt = getChildAt(i11);
                     if (childAt != null && childAt.getVisibility() != 8) {
-                        kVar2 = ((org.telegram.ui.ActionBar.h2) adVar).actionBar;
+                        kVar2 = ((org.telegram.ui.ActionBar.g2) adVar).actionBar;
                         if (childAt != kVar2) {
-                            org.telegram.ui.Components.wt wtVar = adVar.d;
-                            if (wtVar == null || !wtVar.l(childAt)) {
+                            org.telegram.ui.Components.yt ytVar = adVar.d;
+                            if (ytVar == null || !ytVar.l(childAt)) {
                                 measureChildWithMargins(childAt, i7, 0, i10, 0);
                             } else if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
                                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
@@ -422,8 +422,8 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 setMeasuredDimension(size3, size4);
                 int paddingTop2 = size4 - getPaddingTop();
                 rn rnVar = (rn) this.i0;
-                a5Var = ((org.telegram.ui.ActionBar.h2) rnVar).simpleActionBar;
-                measureChildWithMargins(a5Var, i7, 0, i10, 0);
+                z4Var = ((org.telegram.ui.ActionBar.g2) rnVar).simpleActionBar;
+                measureChildWithMargins(z4Var, i7, 0, i10, 0);
                 if (Q() > org.telegram.messenger.g0.L(20.0f)) {
                     this.h0 = true;
                     rnVar.w.j();
@@ -433,10 +433,10 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 for (int i12 = 0; i12 < childCount2; i12++) {
                     View childAt2 = getChildAt(i12);
                     if (childAt2 != null && childAt2.getVisibility() != 8) {
-                        a5Var2 = ((org.telegram.ui.ActionBar.h2) rnVar).simpleActionBar;
-                        if (childAt2 != a5Var2) {
-                            org.telegram.ui.Components.wt wtVar2 = rnVar.w;
-                            if (wtVar2 == null || !wtVar2.l(childAt2)) {
+                        z4Var2 = ((org.telegram.ui.ActionBar.g2) rnVar).simpleActionBar;
+                        if (childAt2 != z4Var2) {
+                            org.telegram.ui.Components.yt ytVar2 = rnVar.w;
+                            if (ytVar2 == null || !ytVar2.l(childAt2)) {
                                 measureChildWithMargins(childAt2, i7, 0, i10, 0);
                             } else if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
                                 childAt2.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt2.getLayoutParams().height, TLObject.FLAG_30));
@@ -455,13 +455,13 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 setMeasuredDimension(size5, size6);
                 int paddingTop3 = size6 - getPaddingTop();
                 f50 f50Var = (f50) this.i0;
-                kVar3 = ((org.telegram.ui.ActionBar.h2) f50Var).actionBar;
+                kVar3 = ((org.telegram.ui.ActionBar.g2) f50Var).actionBar;
                 measureChildWithMargins(kVar3, i7, 0, i10, 0);
                 if (Q() > org.telegram.messenger.g0.L(20.0f)) {
-                    org.telegram.ui.Components.wt wtVar3 = f50Var.c;
-                    if (!wtVar3.e) {
+                    org.telegram.ui.Components.yt ytVar3 = f50Var.c;
+                    if (!ytVar3.e) {
                         this.h0 = true;
-                        wtVar3.j();
+                        ytVar3.j();
                         this.h0 = false;
                     }
                 }
@@ -469,10 +469,10 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 for (int i13 = 0; i13 < childCount3; i13++) {
                     View childAt3 = getChildAt(i13);
                     if (childAt3 != null && childAt3.getVisibility() != 8) {
-                        kVar4 = ((org.telegram.ui.ActionBar.h2) f50Var).actionBar;
+                        kVar4 = ((org.telegram.ui.ActionBar.g2) f50Var).actionBar;
                         if (childAt3 != kVar4) {
-                            org.telegram.ui.Components.wt wtVar4 = f50Var.c;
-                            if (wtVar4 == null || !wtVar4.l(childAt3)) {
+                            org.telegram.ui.Components.yt ytVar4 = f50Var.c;
+                            if (ytVar4 == null || !ytVar4.l(childAt3)) {
                                 measureChildWithMargins(childAt3, i7, 0, i10, 0);
                             } else if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
                                 childAt3.measure(View.MeasureSpec.makeMeasureSpec(size5, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt3.getLayoutParams().height, TLObject.FLAG_30));
@@ -491,7 +491,7 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 setMeasuredDimension(size7, size8);
                 int paddingTop4 = size8 - getPaddingTop();
                 pr0 pr0Var = (pr0) this.i0;
-                kVar5 = ((org.telegram.ui.ActionBar.h2) pr0Var).actionBar;
+                kVar5 = ((org.telegram.ui.ActionBar.g2) pr0Var).actionBar;
                 measureChildWithMargins(kVar5, i7, 0, i10, 0);
                 int Q = Q();
                 if (Q > org.telegram.messenger.g0.L(20.0f) && !pr0Var.Q && !pr0Var.C0) {
@@ -508,10 +508,10 @@ public final class wc extends org.telegram.ui.Components.au0 {
                 for (int i16 = 0; i16 < childCount4; i16++) {
                     View childAt4 = getChildAt(i16);
                     if (childAt4 != null && childAt4.getVisibility() != 8) {
-                        kVar6 = ((org.telegram.ui.ActionBar.h2) pr0Var).actionBar;
+                        kVar6 = ((org.telegram.ui.ActionBar.g2) pr0Var).actionBar;
                         if (childAt4 != kVar6) {
-                            org.telegram.ui.Components.ry ryVar = pr0Var.S;
-                            if (ryVar == null || ryVar != childAt4) {
+                            org.telegram.ui.Components.ty tyVar = pr0Var.S;
+                            if (tyVar == null || tyVar != childAt4) {
                                 if (pr0Var.c == childAt4) {
                                     childAt4.measure(i7, View.MeasureSpec.makeMeasureSpec(paddingTop4 - i15, TLObject.FLAG_30));
                                 } else {

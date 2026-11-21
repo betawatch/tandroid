@@ -1,22 +1,22 @@
 package ii;
 
-import ai.v1;
+import ai.x1;
 import bi.e0;
-import bi.s4;
+import bi.w4;
 import di.xb;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.qb0;
-import org.telegram.ui.Components.sb0;
-import org.telegram.ui.Components.t4;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.rb0;
+import org.telegram.ui.Components.tb0;
 import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.v4;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.oa1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j implements oa1, qb0 {
+public final /* synthetic */ class j implements oa1, rb0 {
     public final /* synthetic */ long a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
@@ -25,42 +25,42 @@ public final /* synthetic */ class j implements oa1, qb0 {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ j(xb xbVar, long j3, long j10, int i7, sb0 sb0Var, t4 t4Var, u4 u4Var) {
+    public /* synthetic */ j(xb xbVar, long j3, long j10, int i7, tb0 tb0Var, u4 u4Var, v4 v4Var) {
         this.d = xbVar;
         this.a = j3;
         this.b = j10;
         this.c = i7;
-        this.e = sb0Var;
-        this.f = t4Var;
-        this.h = u4Var;
+        this.e = tb0Var;
+        this.f = u4Var;
+        this.h = v4Var;
     }
 
     @Override // org.telegram.ui.oa1
     public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        h2 h2Var = (h2) this.d;
+        g2 g2Var = (g2) this.d;
         TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.e;
-        e0 e0Var = new e0((v1) this.f, this.c, this.b, h2Var, (s4) this.h);
-        int currentAccount = h2Var.getCurrentAccount();
+        e0 e0Var = new e0((x1) this.f, this.c, this.b, g2Var, (w4) this.h);
+        int currentAccount = g2Var.getCurrentAccount();
         boolean[] zArr = n.a;
         if (zArr[currentAccount]) {
             return;
         }
         zArr[currentAccount] = true;
-        n.b(h2Var, this.a, tL_inputCheckPasswordSRP, twoStepVerificationActivity, null, e0Var);
+        n.b(g2Var, this.a, tL_inputCheckPasswordSRP, twoStepVerificationActivity, null, e0Var);
     }
 
-    @Override // org.telegram.ui.Components.qb0
-    public void n(sb0 sb0Var, int i7) {
-        b5.g((xb) this.d, null, this.a, this.b, this.c, (sb0) this.e, (t4) this.f, (u4) this.h);
+    @Override // org.telegram.ui.Components.rb0
+    public void n(tb0 tb0Var, int i7) {
+        c5.g((xb) this.d, null, this.a, this.b, this.c, (tb0) this.e, (u4) this.f, (v4) this.h);
     }
 
-    public /* synthetic */ j(h2 h2Var, long j3, TwoStepVerificationActivity twoStepVerificationActivity, v1 v1Var, int i7, long j10, s4 s4Var) {
-        this.d = h2Var;
+    public /* synthetic */ j(g2 g2Var, long j3, TwoStepVerificationActivity twoStepVerificationActivity, x1 x1Var, int i7, long j10, w4 w4Var) {
+        this.d = g2Var;
         this.a = j3;
         this.e = twoStepVerificationActivity;
-        this.f = v1Var;
+        this.f = x1Var;
         this.c = i7;
         this.b = j10;
-        this.h = s4Var;
+        this.h = w4Var;
     }
 }

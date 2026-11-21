@@ -13,12 +13,12 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.o41;
 import v4.q0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class c {
     public static void A(jg.m mVar, int i7, ArrayList arrayList) {
@@ -82,7 +82,7 @@ public abstract /* synthetic */ class c {
     }
 
     public static String k(int i7, String str, StringBuilder sb2) {
-        sb2.append(gd.M0(i7, str));
+        sb2.append(gd.N0(i7, str));
         return sb2.toString();
     }
 
@@ -117,18 +117,18 @@ public abstract /* synthetic */ class c {
         return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
     }
 
-    public static kj0 q(View view, View view2, int i7, int i10) {
+    public static mj0 q(View view, View view2, int i7, int i10) {
         view.setLayoutParams(new q0(i7, i10));
-        return new kj0(view2);
+        return new mj0(view2);
     }
 
     public static void r(float f10, int i7, int i10, TextView textView, String str) {
         textView.setTextSize(i7, f10);
-        textView.setText(gd.M0(i10, str));
+        textView.setText(gd.N0(i10, str));
     }
 
     public static void s(int i7, String str, ArrayList arrayList) {
-        arrayList.add(l41.u(gd.M0(i7, str)));
+        arrayList.add(o41.u(gd.N0(i7, str)));
     }
 
     public static void t(int i7, StringBuilder sb2) {
@@ -156,8 +156,8 @@ public abstract /* synthetic */ class c {
         textView.setTypeface(g0.o());
     }
 
-    public static void y(String str, int i7, AlertDialog$Builder alertDialog$Builder, r1 r1Var) {
-        alertDialog$Builder.h(gd.M0(i7, str), r1Var);
+    public static void y(String str, int i7, AlertDialog$Builder alertDialog$Builder, q1 q1Var) {
+        alertDialog$Builder.h(gd.N0(i7, str), q1Var);
         alertDialog$Builder.p();
     }
 

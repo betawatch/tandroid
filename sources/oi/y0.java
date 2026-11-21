@@ -1,52 +1,39 @@
 package oi;
 
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class y0 implements ActionMode.Callback {
+public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ f1 b;
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+    public /* synthetic */ y0(f1 f1Var, int i7) {
+        this.a = i7;
+        this.b = f1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
+            case 0:
+                f1 f1Var = this.b;
+                i4 i4Var = f1Var.L2;
+                if (i4Var != null && f1Var.f2 != null) {
+                    f1Var.M2 = true;
+                    i4Var.b().a.m(false);
+                    try {
+                        f1Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
+                    }
+                    ((s2) f1Var.f2).a(f1Var, f1Var.L2, true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.K();
+                break;
+            default:
+                this.b.P();
+                break;
         }
-        return false;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        int i7 = this.a;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    private final void a(ActionMode actionMode) {
-    }
-
-    private final void b(ActionMode actionMode) {
-    }
-
-    private final void c(ActionMode actionMode) {
-    }
-
-    private final void d(ActionMode actionMode) {
-    }
-
-    private final void e(ActionMode actionMode) {
     }
 }

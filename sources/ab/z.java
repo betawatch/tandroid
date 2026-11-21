@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import com.google.android.gms.tasks.OnSuccessListener;
 import fi.p6;
 import fi.x6;
-import h9.t1;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.gd;
@@ -13,12 +12,12 @@ import org.telegram.messenger.n5;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.xo;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.Cells.x1;
-import org.telegram.ui.Components.l70;
-import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.p70;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.r70;
 import org.telegram.ui.bn;
 import org.telegram.ui.f40;
 import org.telegram.ui.k30;
@@ -28,9 +27,9 @@ import org.telegram.ui.rj;
 import p4.c1;
 import p4.i1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, r1, bg.q, xo, c1, h2.j, xh.j {
+public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, q1, bg.q, xo, c1, h2.j, xh.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -76,12 +75,12 @@ public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, r1, 
     public void c(int i7, ArrayList arrayList) {
         switch (this.a) {
             case 2:
-                kg.a0 a0Var = (kg.a0) this.c;
-                ArrayList arrayList2 = a0Var.k;
-                ArrayList arrayList3 = a0Var.j;
+                kg.b0 b0Var = (kg.b0) this.c;
+                ArrayList arrayList2 = b0Var.k;
+                ArrayList arrayList3 = b0Var.j;
                 int i10 = 0;
                 if (this.b) {
-                    a0Var.f = i7;
+                    b0Var.f = i7;
                     arrayList3.clear();
                     arrayList3.addAll(arrayList);
                     while (i10 < arrayList3.size()) {
@@ -89,7 +88,7 @@ public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, r1, 
                         i10++;
                     }
                 } else {
-                    a0Var.g = i7;
+                    b0Var.g = i7;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
                     while (i10 < arrayList2.size()) {
@@ -97,7 +96,7 @@ public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, r1, 
                         i10++;
                     }
                 }
-                a0Var.e.run();
+                b0Var.e.run();
                 break;
             default:
                 kz kzVar = (kz) this.c;
@@ -140,16 +139,16 @@ public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, r1, 
 
     @Override // org.telegram.messenger.xo
     public boolean e(TLRPC.TL_error tL_error) {
-        p70 p70Var = (p70) this.c;
+        r70 r70Var = (r70) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            p70Var.setOnDismissListener(new l70(0, p70Var, this.b));
+            r70Var.setOnDismissListener(new n70(0, r70Var, this.b));
         }
-        p70Var.dismiss();
+        r70Var.dismiss();
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(t1 t1Var, int i7) {
         switch (this.a) {
             case 3:
                 org.telegram.ui.x6.d0((org.telegram.ui.x6) this.c, this.b);
@@ -178,23 +177,23 @@ public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, r1, 
 
     @Override // bg.q
     public void i(long j3) {
-        m6 m6Var = ((x1) this.c).a.z3;
-        if (m6Var != null) {
-            m6Var.t(gd.M((int) j3, this.b), true, true);
+        n6 n6Var = ((x1) this.c).a.z3;
+        if (n6Var != null) {
+            n6Var.t(gd.M((int) j3, this.b), true, true);
         }
     }
 
     @Override // p4.c1
-    public Object k(p4.d0 d0Var, p4.v vVar, int i7) {
+    public Object k(p4.e0 e0Var, p4.v vVar, int i7) {
         switch (this.a) {
             case 9:
-                t1 u10 = h9.i0.u((e2.l0) this.c);
+                h9.t1 u10 = h9.i0.u((e2.l0) this.c);
                 boolean z10 = this.b;
-                return d0Var.q(vVar, u10, z10 ? -1 : d0Var.t.o0(), z10 ? -9223372036854775807L : d0Var.t.l());
+                return e0Var.q(vVar, u10, z10 ? -1 : e0Var.t.o0(), z10 ? -9223372036854775807L : e0Var.t.l());
             default:
                 List list = (List) this.c;
                 boolean z11 = this.b;
-                return d0Var.q(vVar, list, z11 ? -1 : d0Var.t.o0(), z11 ? -9223372036854775807L : d0Var.t.l());
+                return e0Var.q(vVar, list, z11 ? -1 : e0Var.t.o0(), z11 ? -9223372036854775807L : e0Var.t.l());
         }
     }
 

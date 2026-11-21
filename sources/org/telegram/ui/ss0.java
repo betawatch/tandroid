@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ss0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,11 +43,11 @@ public final /* synthetic */ class ss0 implements ValueAnimator.AnimatorUpdateLi
             default:
                 l51 l51Var = (l51) this.b;
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.ri riVar = (org.telegram.ui.Components.ri) this.d;
+                org.telegram.ui.Components.ti tiVar = (org.telegram.ui.Components.ti) this.d;
                 l51Var.getClass();
                 l51Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 chatActivityEnterView.getEditField().setAlpha(l51Var.a);
-                riVar.invalidate();
+                tiVar.invalidate();
                 break;
         }
     }

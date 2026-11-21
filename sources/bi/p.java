@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.View;
 import di.gb;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 c;
 
-    public /* synthetic */ p(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public /* synthetic */ p(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         this.a = i7;
         this.b = context;
-        this.c = i6Var;
+        this.c = h6Var;
     }
 
     @Override // android.view.View.OnClickListener

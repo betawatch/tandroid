@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import org.webrtc.MediaStreamTrack;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xmlpull.v1.XmlPullParser;
@@ -38,7 +38,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements b3.r {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -2821,8 +2821,8 @@ public final class e extends DefaultHandler implements b3.r {
         long j23 = j14;
         long j24 = j12 == -9223372036854775807L ? j11 : j12;
         long j25 = j24 == Long.MAX_VALUE ? -9223372036854775807L : j24;
-        nd0 s5 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        nd0 s9 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        md0 s5 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        md0 s9 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
@@ -2884,11 +2884,11 @@ public final class e extends DefaultHandler implements b3.r {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:31:0x0100. Please report as an issue. */
-    public static nd0 s(XmlPullParser xmlPullParser, String str, nd0 nd0Var) {
+    public static md0 s(XmlPullParser xmlPullParser, String str, md0 md0Var) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return nd0Var;
+            return md0Var;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -2944,7 +2944,7 @@ public final class e extends DefaultHandler implements b3.r {
                 i7 = indexOf2 + 1;
             }
         }
-        return new nd0(arrayList, arrayList2, arrayList3, 3);
+        return new md0(arrayList, arrayList2, arrayList3, 3);
     }
 
     @Override // b3.r

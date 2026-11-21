@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class i9 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -54,9 +54,9 @@ public final class i9 implements TextWatcher {
                 naVar.K = i7;
                 naVar.M = !TextUtils.isEmpty(trim) && naVar.y == null;
                 naVar.x.g(null, true, false, false, false, 0L, false, 0, i7);
-                hi.d dVar = naVar.a0;
-                if (dVar != null) {
-                    dVar.setEnabled(naVar.y != null);
+                hi.e eVar = naVar.a0;
+                if (eVar != null) {
+                    eVar.setEnabled(naVar.y != null);
                 }
                 if (!TextUtils.isEmpty(trim) && naVar.y == null && naVar.E == null) {
                     naVar.j0(trim);
@@ -173,13 +173,13 @@ public final class i9 implements TextWatcher {
                 }
                 break;
             case 5:
-                sh.c cVar = (sh.c) this.b;
-                int length = cVar.a.getText().length();
-                te.a aVar = cVar.I;
-                int i13 = cVar.y;
+                sh.b bVar = (sh.b) this.b;
+                int length = bVar.a.getText().length();
+                te.a aVar = bVar.I;
+                int i13 = bVar.y;
                 aVar.a(length > (i13 * 7) / 10, true);
-                cVar.J.a(length > i13, true);
-                cVar.f.l(Integer.toString(i13 - length), false);
+                bVar.J.a(length > i13, true);
+                bVar.f.l(Integer.toString(i13 - length), false);
                 break;
             case 6:
                 vh.g gVar = (vh.g) this.b;
@@ -210,7 +210,7 @@ public final class i9 implements TextWatcher {
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         switch (this.a) {
             case 0:
-                ((v4) this.b).a(charSequence.toString());
+                ((w4) this.b).a(charSequence.toString());
                 break;
         }
     }

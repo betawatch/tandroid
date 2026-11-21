@@ -1,5 +1,6 @@
 package xg;
 
+import ah.r;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,28 +17,28 @@ import org.telegram.messenger.j6;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.tr;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Cells.y3;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.kv0;
-import ug.a0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.nv0;
 import ug.z;
 import v4.f1;
 import v4.q0;
-import wg.r;
-import wg.z0;
+import wg.a1;
+import wg.q;
+import wg.y0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends rg.b {
-    public final i6 d;
+    public final h6 d;
     public final Context e;
-    public ck0 f;
+    public ek0 f;
     public ArrayList n;
     public boolean s;
     public y3 w;
@@ -47,16 +48,16 @@ public final class h extends rg.b {
     public boolean E = true;
     public final boolean h = true;
 
-    public h(Context context, i6 i6Var, boolean z10) {
+    public h(Context context, h6 h6Var, boolean z10) {
         this.e = context;
         this.x = z10;
-        this.d = i6Var;
+        this.d = h6Var;
         z zVar = new z(this, 8);
         tr a02 = tr.a0(j10.t0);
-        a02.a.c(new r(0, a02, zVar));
+        a02.a.c(new q(2, a02, zVar));
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(f1 f1Var) {
         int i7 = f1Var.f;
         return i7 == 3 || i7 == 6 || i7 == 9;
@@ -112,7 +113,7 @@ public final class h extends rg.b {
         View view = f1Var.a;
         int i12 = 8;
         if (i11 == 3) {
-            ah.r rVar = (ah.r) view;
+            r rVar = (r) view;
             gVar.getClass();
             TLRPC.User user = gVar.c;
             if (user != null) {
@@ -120,7 +121,7 @@ public final class h extends rg.b {
                 String str = gVar.g;
                 if (str != null) {
                     rVar.setSubtitle(str);
-                    u6.X(rVar.e, n6.r5, this.d);
+                    t6.X(rVar.e, m6.r5, this.d);
                 }
             } else {
                 TLRPC.InputPeer inputPeer = gVar.d;
@@ -146,21 +147,21 @@ public final class h extends rg.b {
                 rVar.setDivider(false);
             }
             rVar.setOptions(gVar.m);
-            z0 z0Var = gVar.n;
-            z0 z0Var2 = gVar.o;
+            a1 a1Var = gVar.n;
+            a1 a1Var2 = gVar.o;
             ImageView imageView = rVar.G;
             ImageView imageView2 = rVar.E;
-            boolean z11 = z0Var != null;
+            boolean z11 = a1Var != null;
             rVar.y = z11;
             imageView2.setVisibility((z11 && rVar.H) ? 0 : 8);
-            imageView2.setOnClickListener(z0Var);
-            z10 = z0Var2 != null;
+            imageView2.setOnClickListener(a1Var);
+            z10 = a1Var2 != null;
             rVar.F = z10;
             if (z10 && rVar.H) {
                 i12 = 0;
             }
             imageView.setVisibility(i12);
-            imageView.setOnClickListener(z0Var2);
+            imageView.setOnClickListener(a1Var2);
             rVar.g(this.E, false);
             return;
         }
@@ -187,7 +188,7 @@ public final class h extends rg.b {
         }
         if (i11 == 5) {
             try {
-                ((kv0) view).b.getImageReceiver().P0(false);
+                ((nv0) view).b.getImageReceiver().P0(false);
                 return;
             } catch (Exception unused) {
                 return;
@@ -196,7 +197,7 @@ public final class h extends rg.b {
         if (i11 != 8) {
             if (i11 == 9) {
                 n8 n8Var = (n8) view;
-                n8Var.g(n6.v6, n6.u6);
+                n8Var.g(m6.v6, m6.u6);
                 n8Var.o(gVar.i, gVar.f, false);
                 return;
             } else {
@@ -223,10 +224,10 @@ public final class h extends rg.b {
             y3Var.setText(j6.p(gVar.f, y3Var.getTextView(), null));
             if (!TextUtils.isEmpty(gVar.g)) {
                 String str3 = gVar.g;
-                a0 a0Var = gVar.l;
+                y0 y0Var = gVar.l;
                 x3 x3Var = y3Var.b;
                 x3Var.c(str3, false, true);
-                x3Var.setOnClickListener(a0Var);
+                x3Var.setOnClickListener(y0Var);
                 x3Var.setVisibility(0);
             }
         }
@@ -242,19 +243,19 @@ public final class h extends rg.b {
             view.setTag(-33024);
             rVar = view;
         } else if (i7 == 3) {
-            rVar = new ah.r(this.e, this.x, this.y, this.d, this.s);
+            rVar = new r(this.e, this.x, this.y, this.d, this.s);
         } else {
-            i6 i6Var = this.d;
+            h6 h6Var = this.d;
             if (i7 == 5) {
-                kv0 kv0Var = new kv0(context, null, 1, i6Var);
-                kv0Var.d.setText(gd.M0(2131747975, null));
-                kv0Var.e.setText(gd.M0(2131745612, null));
-                kv0Var.a.setTranslationY(g0.L(24.0f));
-                rVar = kv0Var;
+                nv0 nv0Var = new nv0(context, null, 1, h6Var);
+                nv0Var.d.setText(gd.N0(2131747974, null));
+                nv0Var.e.setText(gd.N0(2131745611, null));
+                nv0Var.a.setTranslationY(g0.L(24.0f));
+                rVar = nv0Var;
             } else {
                 boolean z10 = this.h;
                 if (i7 == 7) {
-                    ah.f fVar = new ah.f(context, i6Var);
+                    ah.f fVar = new ah.f(context, h6Var);
                     fVar.setTag(-33024);
                     rVar = fVar;
                     if (z10) {
@@ -262,7 +263,7 @@ public final class h extends rg.b {
                         rVar = fVar;
                     }
                 } else if (i7 == 6) {
-                    ah.c cVar = new ah.c(context, i6Var);
+                    ah.c cVar = new ah.c(context, h6Var);
                     cVar.setTag(-33024);
                     rVar = cVar;
                     if (z10) {
@@ -270,7 +271,7 @@ public final class h extends rg.b {
                         rVar = cVar;
                     }
                 } else if (i7 == 8) {
-                    y3 y3Var = new y3(context, i6Var);
+                    y3 y3Var = new y3(context, h6Var);
                     y3Var.setTag(-33024);
                     rVar = y3Var;
                     if (z10) {
@@ -278,7 +279,7 @@ public final class h extends rg.b {
                         rVar = y3Var;
                     }
                 } else if (i7 == 9) {
-                    n8 n8Var = new n8(context, i6Var);
+                    n8 n8Var = new n8(context, h6Var);
                     n8Var.n = 16;
                     n8Var.x = 19;
                     rVar = n8Var;
@@ -287,14 +288,14 @@ public final class h extends rg.b {
                 }
             }
         }
-        return new kj0(rVar);
+        return new mj0(rVar);
     }
 
     @Override // v4.i0
     public final void y(f1 f1Var) {
         View view = f1Var.a;
-        if (view instanceof ah.r) {
-            ((ah.r) view).g(this.E, false);
+        if (view instanceof r) {
+            ((r) view).g(this.E, false);
         }
     }
 }

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j extends rg.b {
     public final /* synthetic */ k d;
@@ -15,7 +15,7 @@ public final class j extends rg.b {
         this.d = kVar;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         int i7 = f1Var.f;
         return (i7 == 2 || i7 == 0) ? false : true;
@@ -95,6 +95,6 @@ public final class j extends rg.b {
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         k kVar = this.d;
-        return new org.telegram.ui.Components.kj0(i7 == 0 ? new org.telegram.ui.Cells.o4(kVar.getParentActivity()) : i7 == 1 ? new org.telegram.ui.Cells.s8(kVar.getParentActivity()) : new org.telegram.ui.Cells.a9(kVar.getParentActivity()));
+        return new org.telegram.ui.Components.mj0(i7 == 0 ? new org.telegram.ui.Cells.o4(kVar.getParentActivity()) : i7 == 1 ? new org.telegram.ui.Cells.s8(kVar.getParentActivity()) : new org.telegram.ui.Cells.a9(kVar.getParentActivity()));
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k3 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -23,10 +23,10 @@ public final /* synthetic */ class k3 implements RequestDelegate {
     public final /* synthetic */ TLObject f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ k3(f6 f6Var, vf.b bVar, org.telegram.ui.ActionBar.u1 u1Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, CharSequence charSequence) {
+    public /* synthetic */ k3(f6 f6Var, vf.b bVar, org.telegram.ui.ActionBar.t1 t1Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, CharSequence charSequence) {
         this.c = f6Var;
         this.d = bVar;
-        this.e = u1Var;
+        this.e = t1Var;
         this.f = tL_starGiftUnique;
         this.b = j3;
         this.g = charSequence;
@@ -36,16 +36,16 @@ public final /* synthetic */ class k3 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new m3((f6) this.c, (vf.b) this.d, (org.telegram.ui.ActionBar.u1) this.e, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.b, (CharSequence) this.g));
+                org.telegram.messenger.g0.g3(new m3((f6) this.c, (vf.b) this.d, (org.telegram.ui.ActionBar.t1) this.e, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.b, (CharSequence) this.g));
                 break;
             case 1:
                 mp mpVar = (mp) this.c;
                 Runnable runnable = (Runnable) this.d;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.e;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.e;
                 TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin = (TLRPC.TL_messages_editChatAdmin) this.f;
                 xo xoVar = (xo) this.g;
                 if (tL_error != null) {
-                    org.telegram.messenger.g0.g3(new tl(mpVar, tL_error, h2Var, tL_messages_editChatAdmin, 3));
+                    org.telegram.messenger.g0.g3(new tl(mpVar, tL_error, g2Var, tL_messages_editChatAdmin, 3));
                     if (xoVar != null) {
                         org.telegram.messenger.g0.g3(new zm(xoVar, tL_error, 0));
                         break;
@@ -56,23 +56,23 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                 }
                 break;
             default:
-                org.telegram.messenger.g0.g3(new m3((cx) this.c, (org.telegram.ui.ActionBar.u1) this.e, tLObject, (TLRPC.User) this.d, (TLRPC.Chat) this.f, this.b, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
+                org.telegram.messenger.g0.g3(new m3((cx) this.c, (org.telegram.ui.ActionBar.t1) this.e, tLObject, (TLRPC.User) this.d, (TLRPC.Chat) this.f, this.b, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
                 break;
         }
     }
 
-    public /* synthetic */ k3(mp mpVar, long j3, Runnable runnable, org.telegram.ui.ActionBar.h2 h2Var, TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin, xo xoVar) {
+    public /* synthetic */ k3(mp mpVar, long j3, Runnable runnable, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin, xo xoVar) {
         this.c = mpVar;
         this.b = j3;
         this.d = runnable;
-        this.e = h2Var;
+        this.e = g2Var;
         this.f = tL_messages_editChatAdmin;
         this.g = xoVar;
     }
 
-    public /* synthetic */ k3(cx cxVar, org.telegram.ui.ActionBar.u1 u1Var, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
+    public /* synthetic */ k3(cx cxVar, org.telegram.ui.ActionBar.t1 t1Var, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
         this.c = cxVar;
-        this.e = u1Var;
+        this.e = t1Var;
         this.d = user;
         this.f = chat;
         this.b = j3;

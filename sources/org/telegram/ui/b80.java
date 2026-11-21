@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b80 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class b80 implements Runnable {
         switch (this.a) {
             case 0:
                 LaunchActivity launchActivity = (LaunchActivity) this.b;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.d;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
                 boolean z13 = this.c;
                 String str2 = LaunchActivity.C1;
-                launchActivity.u0(h2Var, z13, false);
+                launchActivity.u0(g2Var, z13, false);
                 return;
             case 1:
                 LaunchActivity launchActivity2 = (LaunchActivity) this.b;
@@ -102,7 +102,7 @@ public final /* synthetic */ class b80 implements Runnable {
                     if (z14 || d1Var == null || (org.telegram.messenger.bz.U(d1Var2.b, d1Var.b) && d1Var2.a > d1Var.a)) {
                         ((ApplicationLoaderImpl) org.telegram.messenger.t0.a).getClass();
                         try {
-                            new org.telegram.ui.Components.k51(launchActivity2, d1Var2).show();
+                            new org.telegram.ui.Components.n51(launchActivity2, d1Var2).show();
                             return;
                         } catch (Exception e11) {
                             org.telegram.messenger.a8.g(e11, true);
@@ -121,7 +121,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
                 hk0 hk0Var = vj0Var.e;
                 if (z15) {
-                    i10 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
                     org.telegram.messenger.j10.i(i10).u();
                     hk0Var.O0 = 0;
                     hk0Var.W1();
@@ -139,7 +139,7 @@ public final /* synthetic */ class b80 implements Runnable {
                     return;
                 }
                 if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                    hk0Var.Q1(org.telegram.messenger.gd.M0(R.string.AppName, null), tL_error.text);
+                    hk0Var.Q1(org.telegram.messenger.gd.N0(R.string.AppName, null), tL_error.text);
                     return;
                 }
                 int intValue = Utilities.z(tL_error.text).intValue();
@@ -150,10 +150,10 @@ public final /* synthetic */ class b80 implements Runnable {
                     c10 = 0;
                     G = org.telegram.messenger.gd.G(intValue / 60, "Minutes", new Object[0]);
                 }
-                String M0 = org.telegram.messenger.gd.M0(R.string.AppName, null);
+                String N0 = org.telegram.messenger.gd.N0(R.string.AppName, null);
                 Object[] objArr = new Object[1];
                 objArr[c10] = G;
-                hk0Var.Q1(M0, org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750670, objArr));
+                hk0Var.Q1(N0, org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, objArr));
                 return;
             case 4:
                 cn0.Z((cn0) this.b, (TLObject) this.d, this.c);
@@ -186,25 +186,25 @@ public final /* synthetic */ class b80 implements Runnable {
                 if (!z18) {
                     RectF rectF = ProfileActivity.Z6;
                 } else if (profileActivity.P4 == -1) {
-                    org.telegram.ui.Components.rf0 rf0Var = profileActivity.a0;
-                    if (rf0Var != null) {
-                        org.telegram.ui.Components.of0 i14 = org.telegram.ui.Components.rf0.i(7, rf0Var.a);
+                    org.telegram.ui.Components.tf0 tf0Var = profileActivity.a0;
+                    if (tf0Var != null) {
+                        org.telegram.ui.Components.qf0 i14 = org.telegram.ui.Components.tf0.i(7, tf0Var.a);
                         if (i14 == null || !i14.s) {
                             r72 = 0;
                         } else {
                             r72 = 0;
                             i14.s = false;
-                            rf0Var.invalidate();
+                            tf0Var.invalidate();
                         }
                         if (zArr[r72]) {
-                            org.telegram.ui.Components.rf0 rf0Var2 = profileActivity.a0;
-                            rf0Var2.G = true;
-                            rf0Var2.o(7, r72);
+                            org.telegram.ui.Components.tf0 tf0Var2 = profileActivity.a0;
+                            tf0Var2.G = true;
+                            tf0Var2.o(7, r72);
                             profileActivity.a0.o(9, true);
-                            org.telegram.ui.Components.rf0 rf0Var3 = profileActivity.a0;
-                            if (rf0Var3.G) {
-                                rf0Var3.G = r72;
-                                rf0Var3.d();
+                            org.telegram.ui.Components.tf0 tf0Var3 = profileActivity.a0;
+                            if (tf0Var3.G) {
+                                tf0Var3.G = r72;
+                                tf0Var3.d();
                                 return;
                             }
                             return;
@@ -221,14 +221,14 @@ public final /* synthetic */ class b80 implements Runnable {
                 }
                 return;
             case 8:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.b;
                 boolean z19 = this.c;
                 Activity activity = (Activity) this.d;
                 RectF rectF2 = ProfileActivity.Z6;
                 try {
                     File P0 = org.telegram.messenger.g0.P0();
                     if (P0 == null) {
-                        org.telegram.messenger.g0.g3(new di.u3(u1Var, 2));
+                        org.telegram.messenger.g0.g3(new di.u3(t1Var, 2));
                         return;
                     }
                     File file = new File(P0, "logs.zip");
@@ -289,7 +289,7 @@ public final /* synthetic */ class b80 implements Runnable {
                                             if (zipOutputStream != null) {
                                                 zipOutputStream.close();
                                             }
-                                            org.telegram.messenger.g0.g3(new kg0(u1Var, zArr2, activity, file, 11));
+                                            org.telegram.messenger.g0.g3(new kg0(t1Var, zArr2, activity, file, 11));
                                             return;
                                         } catch (Throwable th2) {
                                             th = th2;
@@ -324,7 +324,7 @@ public final /* synthetic */ class b80 implements Runnable {
                             }
                             if (zipOutputStream != null) {
                             }
-                            org.telegram.messenger.g0.g3(new kg0(u1Var, zArr2, activity, file, 11));
+                            org.telegram.messenger.g0.g3(new kg0(t1Var, zArr2, activity, file, 11));
                             return;
                         } catch (Throwable th4) {
                             th = th4;
@@ -339,28 +339,28 @@ public final /* synthetic */ class b80 implements Runnable {
                         zipOutputStream = null;
                     }
                     zipOutputStream.close();
-                    org.telegram.messenger.g0.g3(new kg0(u1Var, zArr2, activity, file, 11));
+                    org.telegram.messenger.g0.g3(new kg0(t1Var, zArr2, activity, file, 11));
                     return;
                 } catch (Exception e15) {
                     e15.printStackTrace();
                     return;
                 }
             case 9:
-                org.telegram.ui.Components.x20 x20Var = (org.telegram.ui.Components.x20) this.b;
+                org.telegram.ui.Components.a30 a30Var = (org.telegram.ui.Components.a30) this.b;
                 boolean z20 = this.c;
-                org.telegram.ui.Components.dw dwVar = (org.telegram.ui.Components.dw) this.d;
+                org.telegram.ui.Components.fm0 fm0Var = (org.telegram.ui.Components.fm0) this.d;
                 if (z20) {
-                    org.telegram.messenger.mp.u1(x20Var.a).p0(true);
-                    dwVar.run();
+                    org.telegram.messenger.mp.u1(a30Var.a).p0(true);
+                    fm0Var.run();
                 } else {
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T == null) {
                         return;
                     } else {
                         T.presentFragment(new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(3)));
                     }
                 }
-                x20Var.dismiss();
+                a30Var.dismiss();
                 return;
             case 10:
                 TwoStepVerificationActivity.c0((TwoStepVerificationActivity) this.b, this.c, (byte[]) this.d);
@@ -406,7 +406,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 m.b3 b3Var = (m.b3) this.b;
                 boolean z22 = this.c;
                 org.telegram.ui.Wallet.m3 m3Var = (org.telegram.ui.Wallet.m3) this.d;
-                org.telegram.ui.ActionBar.h2 T2 = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                 if (b3Var.a) {
                     return;
                 }
@@ -418,9 +418,9 @@ public final /* synthetic */ class b80 implements Runnable {
                         T2.presentFragment(m3Var);
                         return;
                     }
-                    org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
-                    f2Var.a = true;
-                    T2.showAsSheet(m3Var, f2Var);
+                    org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
+                    e2Var.a = true;
+                    T2.showAsSheet(m3Var, e2Var);
                     return;
                 }
             case 13:
@@ -454,10 +454,10 @@ public final /* synthetic */ class b80 implements Runnable {
                                     wallpapersListActivity.d0.add(wallPaper);
                                     hashMap2.put(Long.valueOf(wallPaper.document.id), wallPaper);
                                 }
-                                if (i18 != i13 && ((!(z12 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i18 != 2 || z12) && (org.telegram.ui.ActionBar.n6.I.q() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
+                                if (i18 != i13 && ((!(z12 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i18 != 2 || z12) && (org.telegram.ui.ActionBar.m6.I.q() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
                                     arrayList3.add(wallPaper);
                                 }
-                            } else if (wallPaper.settings.background_color != 0 && (org.telegram.ui.ActionBar.n6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
+                            } else if (wallPaper.settings.background_color != 0 && (org.telegram.ui.ActionBar.m6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
                                 TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
                                 int i20 = wallPaperSettings4.second_background_color;
                                 if (i20 == 0 || (i11 = wallPaperSettings4.third_background_color) == 0) {
@@ -488,9 +488,9 @@ public final /* synthetic */ class b80 implements Runnable {
                 } else {
                     z10 = z23;
                 }
-                org.telegram.ui.ActionBar.u1 u1Var2 = wallpapersListActivity.M;
-                if (u1Var2 != null) {
-                    u1Var2.dismiss();
+                org.telegram.ui.ActionBar.t1 t1Var2 = wallpapersListActivity.M;
+                if (t1Var2 != null) {
+                    t1Var2.dismiss();
                     if (z10) {
                         return;
                     }
@@ -502,7 +502,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) this.b;
                 String str5 = (String) this.d;
                 boolean z24 = this.c;
-                bi.c6 c6Var = kVar.x;
+                bi.g6 g6Var = kVar.x;
                 ArrayList arrayList4 = kVar.y;
                 arrayList4.clear();
                 org.telegram.ui.web.e1.a().getClass();
@@ -535,9 +535,9 @@ public final /* synthetic */ class b80 implements Runnable {
                     }
                 }
                 arrayList4.addAll(arrayList5);
-                c6Var.g3.O(true);
+                g6Var.g3.O(true);
                 if (z24 != (!arrayList4.isEmpty())) {
-                    c6Var.f3.h1(0, 0);
+                    g6Var.f3.h1(0, 0);
                     return;
                 }
                 return;
@@ -610,15 +610,15 @@ public final /* synthetic */ class b80 implements Runnable {
                         if (z26) {
                         }
                         u0Var.y = false;
-                        org.telegram.ui.Components.y40 y40Var = (org.telegram.ui.Components.y40) u0Var.d.b;
-                        y40Var.q0 = true;
+                        org.telegram.ui.Components.b50 b50Var = (org.telegram.ui.Components.b50) u0Var.d.b;
+                        b50Var.q0 = true;
                         StringBuilder sb3 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                         sb3.append(n0Var);
                         sb3.append(", elapsedMs=");
-                        cameraFlipElapsedMs = y40Var.getCameraFlipElapsedMs();
+                        cameraFlipElapsedMs = b50Var.getCameraFlipElapsedMs();
                         sb3.append(cameraFlipElapsedMs);
                         org.telegram.messenger.a8.b(sb3.toString());
-                        org.telegram.ui.Components.y40.n(y40Var);
+                        org.telegram.ui.Components.b50.n(b50Var);
                         u0Var.o();
                         return;
                     }
@@ -645,15 +645,15 @@ public final /* synthetic */ class b80 implements Runnable {
                     if (z26) {
                     }
                     u0Var.y = false;
-                    org.telegram.ui.Components.y40 y40Var2 = (org.telegram.ui.Components.y40) u0Var.d.b;
-                    y40Var2.q0 = true;
+                    org.telegram.ui.Components.b50 b50Var2 = (org.telegram.ui.Components.b50) u0Var.d.b;
+                    b50Var2.q0 = true;
                     StringBuilder sb32 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                     sb32.append(n0Var);
                     sb32.append(", elapsedMs=");
-                    cameraFlipElapsedMs = y40Var2.getCameraFlipElapsedMs();
+                    cameraFlipElapsedMs = b50Var2.getCameraFlipElapsedMs();
                     sb32.append(cameraFlipElapsedMs);
                     org.telegram.messenger.a8.b(sb32.toString());
-                    org.telegram.ui.Components.y40.n(y40Var2);
+                    org.telegram.ui.Components.b50.n(b50Var2);
                     u0Var.o();
                     return;
                 }
@@ -680,15 +680,15 @@ public final /* synthetic */ class b80 implements Runnable {
                     oVar22.b(sb222.toString());
                     if (!z26 || u0Var.y) {
                         u0Var.y = false;
-                        org.telegram.ui.Components.y40 y40Var22 = (org.telegram.ui.Components.y40) u0Var.d.b;
-                        y40Var22.q0 = true;
+                        org.telegram.ui.Components.b50 b50Var22 = (org.telegram.ui.Components.b50) u0Var.d.b;
+                        b50Var22.q0 = true;
                         StringBuilder sb322 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                         sb322.append(n0Var);
                         sb322.append(", elapsedMs=");
-                        cameraFlipElapsedMs = y40Var22.getCameraFlipElapsedMs();
+                        cameraFlipElapsedMs = b50Var22.getCameraFlipElapsedMs();
                         sb322.append(cameraFlipElapsedMs);
                         org.telegram.messenger.a8.b(sb322.toString());
-                        org.telegram.ui.Components.y40.n(y40Var22);
+                        org.telegram.ui.Components.b50.n(b50Var22);
                         u0Var.o();
                         return;
                     }
@@ -717,15 +717,15 @@ public final /* synthetic */ class b80 implements Runnable {
                 if (z26) {
                 }
                 u0Var.y = false;
-                org.telegram.ui.Components.y40 y40Var222 = (org.telegram.ui.Components.y40) u0Var.d.b;
-                y40Var222.q0 = true;
+                org.telegram.ui.Components.b50 b50Var222 = (org.telegram.ui.Components.b50) u0Var.d.b;
+                b50Var222.q0 = true;
                 StringBuilder sb3222 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                 sb3222.append(n0Var);
                 sb3222.append(", elapsedMs=");
-                cameraFlipElapsedMs = y40Var222.getCameraFlipElapsedMs();
+                cameraFlipElapsedMs = b50Var222.getCameraFlipElapsedMs();
                 sb3222.append(cameraFlipElapsedMs);
                 org.telegram.messenger.a8.b(sb3222.toString());
-                org.telegram.ui.Components.y40.n(y40Var222);
+                org.telegram.ui.Components.b50.n(b50Var222);
                 u0Var.o();
                 return;
         }

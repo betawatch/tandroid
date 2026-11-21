@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Comparator {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class w implements Comparator {
             case 3:
                 return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
             case 4:
-                return ((kg.v1) obj).c - ((kg.v1) obj2).c;
+                return ((kg.u1) obj).c - ((kg.u1) obj2).c;
             case 5:
                 return Integer.compare(((l4.d) obj).a.b, ((l4.d) obj2).a.b);
             case 6:

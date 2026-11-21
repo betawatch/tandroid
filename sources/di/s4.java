@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s4 implements Comparator {
     public final /* synthetic */ int a;
@@ -88,12 +88,12 @@ public final /* synthetic */ class s4 implements Comparator {
                 }
                 return -1;
             case 3:
-                oi.d6 d6Var = (oi.d6) this.b;
+                oi.e6 e6Var = (oi.e6) this.b;
                 TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
                 TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) obj2;
-                int b10 = d6Var.b(pagetablecell);
-                int b11 = d6Var.b(pagetablecell2);
-                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(d6Var.a(pagetablecell), d6Var.a(pagetablecell2));
+                int b10 = e6Var.b(pagetablecell);
+                int b11 = e6Var.b(pagetablecell2);
+                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(e6Var.a(pagetablecell), e6Var.a(pagetablecell2));
             case 4:
                 u2.v vVar = (u2.v) this.b;
                 return vVar.c(obj2) - vVar.c(obj);

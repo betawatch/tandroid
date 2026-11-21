@@ -7,7 +7,7 @@ import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class r50 extends ReplacementSpan {
     public final Paint a;
@@ -65,7 +65,7 @@ public final class r50 extends ReplacementSpan {
             int alpha = paint.getAlpha();
             this.n = alpha;
             paint2.setAlpha(alpha);
-            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.n6.r1(this.n / 255.0f, 855638016));
+            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.m6.r1(this.n / 255.0f, 855638016));
         }
         float f11 = this.h + f10;
         float L = (((i11 + i13) / 2.0f) + 0.0f) - (org.telegram.messenger.g0.L(this.c) / 2.0f);

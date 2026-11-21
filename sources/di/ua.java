@@ -6,9 +6,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ua extends ug.u1 {
+public final class ua extends ug.t1 {
     public final /* synthetic */ int r;
     public Paint[] s;
     public final /* synthetic */ int w;
@@ -33,7 +33,7 @@ public final class ua extends ug.u1 {
         }
     }
 
-    @Override // ug.u1
+    @Override // ug.t1
     public final void a() {
         int f10;
         float f11;
@@ -41,42 +41,42 @@ public final class ua extends ug.u1 {
         int i10;
         switch (this.r) {
             case 0:
-                ug.t1 t1Var = new ug.t1(this.w);
-                this.a = t1Var;
-                t1Var.O = ks.q1;
+                ug.s1 s1Var = new ug.s1(this.w);
+                this.a = s1Var;
+                s1Var.O = ks.q1;
                 int i11 = 0;
-                t1Var.M = false;
-                t1Var.G = false;
-                t1Var.K = true;
-                t1Var.H = true;
-                t1Var.J = false;
-                t1Var.m = true;
-                t1Var.h = true;
+                s1Var.M = false;
+                s1Var.G = false;
+                s1Var.K = true;
+                s1Var.H = true;
+                s1Var.J = false;
+                s1Var.m = true;
+                s1Var.h = true;
                 int i12 = this.x;
                 if (i12 == 1) {
-                    t1Var.k = org.telegram.messenger.g0.L(24.0f);
+                    s1Var.k = org.telegram.messenger.g0.L(24.0f);
                 }
                 this.s = new Paint[i12 == 2 ? 40 : 20];
                 while (true) {
                     Paint[] paintArr = this.s;
                     if (i11 >= paintArr.length) {
-                        ug.t1 t1Var2 = this.a;
-                        t1Var2.l = new ta(this, 0);
-                        t1Var2.r = 17;
-                        t1Var2.s = 18;
-                        t1Var2.t = 19;
+                        ug.s1 s1Var2 = this.a;
+                        s1Var2.l = new ta(this, 0);
+                        s1Var2.r = 17;
+                        s1Var2.s = 18;
+                        s1Var2.t = 19;
                         if (i12 == 2) {
-                            t1Var2.N = true;
-                            t1Var2.r = 9;
-                            t1Var2.s = 11;
-                            t1Var2.t = 13;
-                            t1Var2.o = 1.6f;
-                            t1Var2.x = 1400L;
-                            t1Var2.y = 1600;
-                            t1Var2.L = true;
+                            s1Var2.N = true;
+                            s1Var2.r = 9;
+                            s1Var2.s = 11;
+                            s1Var2.t = 13;
+                            s1Var2.o = 1.6f;
+                            s1Var2.x = 1400L;
+                            s1Var2.y = 1600;
+                            s1Var2.L = true;
                         }
-                        t1Var2.Q = org.telegram.ui.ActionBar.n6.G6;
-                        t1Var2.c();
+                        s1Var2.Q = org.telegram.ui.ActionBar.m6.G6;
+                        s1Var2.c();
                         break;
                     } else {
                         paintArr[i11] = new Paint(1);
@@ -101,31 +101,31 @@ public final class ua extends ug.u1 {
                     }
                 }
             default:
-                ug.t1 t1Var3 = new ug.t1(this.w);
-                this.a = t1Var3;
-                t1Var3.O = ks.r1;
+                ug.s1 s1Var3 = new ug.s1(this.w);
+                this.a = s1Var3;
+                s1Var3.O = ks.r1;
                 int i13 = 0;
-                t1Var3.M = false;
-                t1Var3.G = false;
-                t1Var3.K = true;
-                t1Var3.H = true;
-                t1Var3.J = false;
-                t1Var3.m = true;
-                t1Var3.h = true;
+                s1Var3.M = false;
+                s1Var3.G = false;
+                s1Var3.K = true;
+                s1Var3.H = true;
+                s1Var3.J = false;
+                s1Var3.m = true;
+                s1Var3.h = true;
                 if (this.x == 1) {
-                    t1Var3.k = org.telegram.messenger.g0.L(24.0f);
+                    s1Var3.k = org.telegram.messenger.g0.L(24.0f);
                 }
                 this.s = new Paint[20];
                 while (true) {
                     Paint[] paintArr2 = this.s;
                     if (i13 >= paintArr2.length) {
-                        ug.t1 t1Var4 = this.a;
-                        t1Var4.l = new ta(this, 2);
-                        t1Var4.r = 17;
-                        t1Var4.s = 18;
-                        t1Var4.t = 19;
-                        t1Var4.Q = org.telegram.ui.ActionBar.n6.G6;
-                        t1Var4.c();
+                        ug.s1 s1Var4 = this.a;
+                        s1Var4.l = new ta(this, 2);
+                        s1Var4.r = 17;
+                        s1Var4.s = 18;
+                        s1Var4.t = 19;
+                        s1Var4.Q = org.telegram.ui.ActionBar.m6.G6;
+                        s1Var4.c();
                         break;
                     } else {
                         paintArr2[i13] = new Paint(1);
@@ -136,7 +136,7 @@ public final class ua extends ug.u1 {
         }
     }
 
-    @Override // ug.u1
+    @Override // ug.t1
     public final int getStarsRectWidth() {
         switch (this.r) {
         }

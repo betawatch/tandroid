@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class k81 extends org.telegram.ui.ActionBar.n0 {
+public final class k81 extends org.telegram.ui.ActionBar.m0 {
     public boolean a = false;
     public final /* synthetic */ p81 b;
 
@@ -14,7 +14,7 @@ public final class k81 extends org.telegram.ui.ActionBar.n0 {
         this.b = p81Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n0
+    @Override // org.telegram.ui.ActionBar.m0
     public final void h() {
         p81 p81Var = this.b;
         if (p81Var.a.getVisibility() != 0) {
@@ -28,7 +28,7 @@ public final class k81 extends org.telegram.ui.ActionBar.n0 {
         this.a = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n0
+    @Override // org.telegram.ui.ActionBar.m0
     public final void l(EditText editText) {
         String obj = editText.getText().toString();
         o81 o81Var = this.b.e;

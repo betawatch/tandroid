@@ -3,9 +3,9 @@ package org.telegram.ui.web;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.gd;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class t0 {
     public final String a;
@@ -28,25 +28,25 @@ public final class t0 {
         switch (string.hashCode()) {
             case -1829997182:
                 if (string.equals("destructive")) {
-                    this.c = n6.q7;
+                    this.c = m6.q7;
                     break;
                 }
                 break;
             case -1367724422:
                 if (string.equals("cancel")) {
-                    this.b = gd.M0(2131752578, null);
+                    this.b = gd.N0(2131752577, null);
                     return;
                 }
                 break;
             case 3548:
                 if (string.equals("ok")) {
-                    this.b = gd.M0(2131747638, null);
+                    this.b = gd.N0(2131747637, null);
                     return;
                 }
                 break;
             case 94756344:
                 if (string.equals("close")) {
-                    this.b = gd.M0(2131752030, null);
+                    this.b = gd.N0(2131752029, null);
                     return;
                 }
                 break;

@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class hs extends org.telegram.ui.ActionBar.h1 {
+public final class hs extends org.telegram.ui.ActionBar.g1 {
     public final /* synthetic */ js o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class hs extends org.telegram.ui.ActionBar.h1 {
         this.o = jsVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.h1, android.widget.PopupWindow
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
         ns nsVar = this.o.a;

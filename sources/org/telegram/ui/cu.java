@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class cu extends FrameLayout {
     public int a;
@@ -79,7 +79,7 @@ public final class cu extends FrameLayout {
         this.c = false;
         this.b = true;
         this.d = (int) motionEvent.getX();
-        kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
         kVar.setEnabled(false);
         euVar.e.setEnabled(false);
         du duVar = duVarArr[1];
@@ -97,19 +97,19 @@ public final class cu extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.s4 s4Var;
-        org.telegram.ui.ActionBar.s4 s4Var2;
+        org.telegram.ui.ActionBar.r4 r4Var;
+        org.telegram.ui.ActionBar.r4 r4Var2;
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         super.dispatchDraw(canvas);
         eu euVar = this.n;
-        s4Var = ((org.telegram.ui.ActionBar.h2) euVar).parentLayout;
-        if (s4Var != null) {
-            s4Var2 = ((org.telegram.ui.ActionBar.h2) euVar).parentLayout;
-            kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+        r4Var = ((org.telegram.ui.ActionBar.g2) euVar).parentLayout;
+        if (r4Var != null) {
+            r4Var2 = ((org.telegram.ui.ActionBar.g2) euVar).parentLayout;
+            kVar = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
             int measuredHeight = kVar.getMeasuredHeight();
-            kVar2 = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
-            ((ActionBarLayout) s4Var2).q(canvas, measuredHeight + ((int) kVar2.getTranslationY()));
+            kVar2 = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
+            ((ActionBarLayout) r4Var2).q(canvas, measuredHeight + ((int) kVar2.getTranslationY()));
         }
     }
 
@@ -119,10 +119,10 @@ public final class cu extends FrameLayout {
         org.telegram.ui.ActionBar.k kVar2;
         eu euVar = this.n;
         Paint paint = euVar.d;
-        paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false));
-        kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false));
+        kVar = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
         float measuredHeight = kVar.getMeasuredHeight();
-        kVar2 = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+        kVar2 = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
         canvas.drawRect(0.0f, kVar2.getTranslationY() + measuredHeight, getMeasuredWidth(), getMeasuredHeight(), paint);
     }
 
@@ -139,17 +139,17 @@ public final class cu extends FrameLayout {
         setMeasuredDimension(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10));
         eu euVar = this.n;
         du[] duVarArr = euVar.f;
-        kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
         measureChildWithMargins(kVar, i7, 0, i10, 0);
-        kVar2 = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+        kVar2 = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
         int measuredHeight = kVar2.getMeasuredHeight();
         this.h = true;
         for (int i11 = 0; i11 < duVarArr.length; i11++) {
             du duVar = duVarArr[i11];
             if (duVar != null) {
-                org.telegram.ui.Components.ck0 ck0Var = duVar.d;
-                if (ck0Var != null) {
-                    ck0Var.setPadding(0, measuredHeight, 0, 0);
+                org.telegram.ui.Components.ek0 ek0Var = duVar.d;
+                if (ek0Var != null) {
+                    ek0Var.setPadding(0, measuredHeight, 0, 0);
                 }
                 di.b1 b1Var = duVarArr[i11].e;
                 if (b1Var != null) {
@@ -162,7 +162,7 @@ public final class cu extends FrameLayout {
         for (int i12 = 0; i12 < childCount; i12++) {
             View childAt = getChildAt(i12);
             if (childAt != null && childAt.getVisibility() != 8) {
-                kVar3 = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+                kVar3 = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
                 if (childAt != kVar3) {
                     measureChildWithMargins(childAt, i7, 0, i10, 0);
                 }
@@ -172,7 +172,7 @@ public final class cu extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.s4 s4Var;
+        org.telegram.ui.ActionBar.r4 r4Var;
         float f10;
         float f11;
         org.telegram.ui.ActionBar.k kVar;
@@ -180,8 +180,8 @@ public final class cu extends FrameLayout {
         boolean z10;
         eu euVar = this.n;
         du[] duVarArr = euVar.f;
-        s4Var = ((org.telegram.ui.ActionBar.h2) euVar).parentLayout;
-        if (((ActionBarLayout) s4Var).i() || a()) {
+        r4Var = ((org.telegram.ui.ActionBar.g2) euVar).parentLayout;
+        if (((ActionBarLayout) r4Var).i() || a()) {
             return false;
         }
         if (motionEvent != null) {
@@ -265,7 +265,7 @@ public final class cu extends FrameLayout {
                 this.b = false;
             } else {
                 this.c = false;
-                kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
                 kVar.setEnabled(true);
                 euVar.e.setEnabled(true);
             }

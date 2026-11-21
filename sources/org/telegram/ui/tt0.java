@@ -10,9 +10,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tt0 implements u40, org.telegram.ui.Components.tu0, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lr, r0.m, org.telegram.ui.Components.qf0, org.telegram.ui.Components.qj0, te.b, org.telegram.messenger.h9 {
+public final /* synthetic */ class tt0 implements u40, org.telegram.ui.Components.wu0, org.telegram.ui.ActionBar.q1, org.telegram.messenger.lr, r0.m, org.telegram.ui.Components.sf0, org.telegram.ui.Components.sj0, te.b, org.telegram.messenger.h9 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
 
@@ -44,15 +44,15 @@ public final /* synthetic */ class tt0 implements u40, org.telegram.ui.Component
         }
         if (profileActivity.O != null) {
             profileActivity.H3();
-            org.telegram.ui.Components.eq0 eq0Var = profileActivity.O.b0;
-            if (eq0Var != null) {
-                eq0Var.setButtonOffset(profileActivity.P6 + profileActivity.O6);
+            org.telegram.ui.Components.gq0 gq0Var = profileActivity.O.b0;
+            if (gq0Var != null) {
+                gq0Var.setButtonOffset(profileActivity.P6 + profileActivity.O6);
             }
         }
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
         ProfileActivity profileActivity = this.b;
         ww0 ww0Var = profileActivity.e;
@@ -60,18 +60,18 @@ public final /* synthetic */ class tt0 implements u40, org.telegram.ui.Component
             return false;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, profileActivity.getParentActivity(), profileActivity.A0);
-        String M0 = org.telegram.messenger.gd.M0(2131752045, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.S = M0;
-        u1Var.U = org.telegram.messenger.gd.M0(2131752050, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131752088, null), new tt0(profileActivity, 10));
-        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-        profileActivity.showDialog(u1Var);
-        TextView textView = (TextView) u1Var.d(-1);
+        String N0 = org.telegram.messenger.gd.N0(2131752044, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = N0;
+        t1Var.U = org.telegram.messenger.gd.N0(2131752049, null);
+        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752087, null), new tt0(profileActivity, 10));
+        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        profileActivity.showDialog(t1Var);
+        TextView textView = (TextView) t1Var.d(-1);
         if (textView == null) {
             return true;
         }
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
         return true;
     }
 
@@ -87,8 +87,8 @@ public final /* synthetic */ class tt0 implements u40, org.telegram.ui.Component
         profileActivity.getNotificationCenter().k(org.telegram.messenger.ks.K2, Long.valueOf(-profileActivity.F2.id), null, profileActivity.F2, Boolean.valueOf(z10));
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         int i10 = this.a;
         ProfileActivity profileActivity = this.b;
         switch (i10) {

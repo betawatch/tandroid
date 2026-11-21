@@ -12,7 +12,7 @@ import h9.t1;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class r {
     public static final AtomicReference n = new AtomicReference(null);
@@ -54,7 +54,7 @@ public final class r {
         la.p(!this.m);
         this.m = true;
         Object obj = x.b;
-        int intValue = ((Integer) d0.C.get()).intValue();
+        int intValue = ((Integer) e0.C.get()).intValue();
         int i7 = Build.VERSION.SDK_INT;
         Context context = this.a;
         if (i7 < 27) {
@@ -88,7 +88,7 @@ public final class r {
                 atomicReference.set(aVar2);
                 aVar = aVar2;
             }
-            this.g = new ji.j(20, dVar2, aVar);
+            this.g = new ji.l(20, dVar2, aVar);
         }
         this.g = new k8.a(this.g);
         return new x(this.a, this.c, this.b, this.i, this.j, this.k, this.d, this.e, this.f, this.g, this.h, this.l);

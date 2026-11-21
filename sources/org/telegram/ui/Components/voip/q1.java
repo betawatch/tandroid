@@ -15,14 +15,14 @@ import android.view.ViewPropertyAnimator;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import fi.d4;
-import hi.k3;
+import hi.j3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class q1 extends FrameLayout {
     public float E;
@@ -58,7 +58,7 @@ public final class q1 extends FrameLayout {
     public final d4 f0;
     public ValueAnimator g0;
     public int h;
-    public final k3 h0;
+    public final j3 h0;
     public View.OnClickListener i0;
     public p1 j0;
     public long k0;
@@ -83,7 +83,7 @@ public final class q1 extends FrameLayout {
         this.R = -1.0f;
         this.S = true;
         this.f0 = new d4(this, 11);
-        this.h0 = new k3(this, 20);
+        this.h0 = new j3(this, 20);
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
         setOutlineProvider(new fh.a(this, 7));
         setClipToOutline(true);
@@ -188,8 +188,8 @@ public final class q1 extends FrameLayout {
         q1Var.e0.start();
         animate().setListener(null).cancel();
         ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
-        lr lrVar = lr.f;
-        duration.setInterpolator(lrVar).setListener(new n1(this, translationX2, translationY2, 0)).setInterpolator(lrVar).start();
+        nr nrVar = nr.f;
+        duration.setInterpolator(nrVar).setListener(new n1(this, translationX2, translationY2, 0)).setInterpolator(nrVar).start();
     }
 
     public final void d(float f10, float f11) {
@@ -263,7 +263,7 @@ public final class q1 extends FrameLayout {
         float z12 = com.google.android.gms.internal.vision.e2.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i10, f11, systemWindowInsetTop);
         if (z10) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.M ? 0L : 150L).setDuration(150L).setInterpolator(lr.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.M ? 0L : 150L).setDuration(150L).setInterpolator(nr.f).start();
             return;
         }
         if (!this.T) {
@@ -390,7 +390,7 @@ public final class q1 extends FrameLayout {
                 } else if (getY() + getMeasuredHeight() > measuredHeight - f13) {
                     startDelay.translationY((measuredHeight - getMeasuredHeight()) - f13);
                 }
-                startDelay.setDuration(150L).setInterpolator(lr.f).start();
+                startDelay.setDuration(150L).setInterpolator(nr.f).start();
             }
             this.e = false;
             return true;

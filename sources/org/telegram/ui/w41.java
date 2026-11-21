@@ -5,9 +5,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class w41 extends LinearLayout implements org.telegram.ui.ActionBar.c6 {
+public final class w41 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public final TextView[] a;
     public final TextView[] b;
     public final TextView[] c;
@@ -60,13 +60,13 @@ public final class w41 extends LinearLayout implements org.telegram.ui.ActionBar
         textViewArr[3].setText(y41Var.n);
         TextView[] textViewArr2 = this.b;
         textViewArr2[0].setText(y41Var.c);
-        textViewArr2[0].setTag(Integer.valueOf(y41Var.d ? org.telegram.ui.ActionBar.n6.x6 : org.telegram.ui.ActionBar.n6.p7));
+        textViewArr2[0].setTag(Integer.valueOf(y41Var.d ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
         textViewArr2[1].setText(y41Var.g);
-        textViewArr2[1].setTag(Integer.valueOf(y41Var.h ? org.telegram.ui.ActionBar.n6.x6 : org.telegram.ui.ActionBar.n6.p7));
+        textViewArr2[1].setTag(Integer.valueOf(y41Var.h ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
         textViewArr2[2].setText(y41Var.k);
-        textViewArr2[2].setTag(Integer.valueOf(y41Var.l ? org.telegram.ui.ActionBar.n6.x6 : org.telegram.ui.ActionBar.n6.p7));
+        textViewArr2[2].setTag(Integer.valueOf(y41Var.l ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
         textViewArr2[3].setText(y41Var.o);
-        textViewArr2[3].setTag(Integer.valueOf(y41Var.p ? org.telegram.ui.ActionBar.n6.x6 : org.telegram.ui.ActionBar.n6.p7));
+        textViewArr2[3].setTag(Integer.valueOf(y41Var.p ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
         TextView[] textViewArr3 = this.c;
         textViewArr3[0].setText(y41Var.a);
         textViewArr3[1].setText(y41Var.e);
@@ -75,7 +75,7 @@ public final class w41 extends LinearLayout implements org.telegram.ui.ActionBar
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         TextView[] textViewArr;
         TextView[] textViewArr2;
@@ -85,19 +85,19 @@ public final class w41 extends LinearLayout implements org.telegram.ui.ActionBar
         }
         for (int i7 = 0; i7 < textViewArr3.length; i7++) {
             TextView textView = textViewArr3[i7];
-            int i10 = org.telegram.ui.ActionBar.n6.G6;
-            textView.setTextColor(org.telegram.ui.ActionBar.n6.x0(null, i10, false));
-            textViewArr2[i7].setTextColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.z6, false));
+            int i10 = org.telegram.ui.ActionBar.m6.G6;
+            textView.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
+            textViewArr2[i7].setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.z6, false));
             Integer num = (Integer) textViewArr[i7].getTag();
             if (num != null) {
-                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.n6.x0(null, num.intValue(), false));
+                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.m6.x0(null, num.intValue(), false));
             } else {
-                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.n6.x0(null, i10, false));
+                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
             }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

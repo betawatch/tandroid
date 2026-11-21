@@ -1,48 +1,26 @@
 package hi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class t9 extends AnimatorListenerAdapter {
+public final class t9 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ta b;
+    public final /* synthetic */ sa b;
 
-    public /* synthetic */ t9(ta taVar, int i7) {
+    public /* synthetic */ t9(sa saVar, int i7) {
         this.a = i7;
-        this.b = taVar;
+        this.b = saVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ta taVar = this.b;
-                taVar.k2 = null;
-                taVar.r.setTranslationY(0.0f);
-                taVar.r.b(0.0f);
-                break;
-            case 1:
-                ta taVar2 = this.b;
-                taVar2.n.removeView(taVar2.N0);
-                taVar2.N0 = null;
-                taVar2.o2 = null;
-                taVar2.q2 = null;
-                taVar2.d1.M.b(taVar2.g0 != 1);
+                this.b.d1.m();
                 break;
             default:
-                ta taVar3 = this.b;
-                ba baVar = taVar3.D2;
-                if (baVar != null) {
-                    if (baVar.getParent() != null) {
-                        ((ViewGroup) taVar3.D2.getParent()).removeView(taVar3.D2);
-                    }
-                    taVar3.D2 = null;
-                }
-                taVar3.F2 = null;
-                super.onAnimationEnd(animator);
+                this.b.m0();
                 break;
         }
     }

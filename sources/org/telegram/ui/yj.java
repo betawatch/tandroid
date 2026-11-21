@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.AnimatorSet;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class yj implements Runnable {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final class yj implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.ah ahVar;
+        org.telegram.ui.Components.ch chVar;
         FrameLayout frameLayout;
         switch (this.a) {
             case 0:
@@ -29,8 +29,8 @@ public final class yj implements Runnable {
                 break;
             default:
                 bn bnVar2 = this.b;
-                if (bnVar2.d3 == this && (ahVar = bnVar2.b1) != null && (frameLayout = bnVar2.c3) != null) {
-                    ahVar.j(frameLayout, false, true);
+                if (bnVar2.d3 == this && (chVar = bnVar2.b1) != null && (frameLayout = bnVar2.c3) != null) {
+                    chVar.j(frameLayout, false, true);
                     break;
                 }
                 break;

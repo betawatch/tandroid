@@ -36,21 +36,21 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.a30;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.q9;
-import org.telegram.ui.Components.qu0;
-import org.telegram.ui.Components.x20;
+import org.telegram.ui.Components.tu0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.r8;
 import org.telegram.ui.Wallet.v5;
 import org.telegram.ui.Wallet.w5;
 import org.telegram.ui.bn;
-import ug.z0;
+import ug.y0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -134,14 +134,14 @@ public final /* synthetic */ class r implements Runnable {
                 ((ValueAnimator) this.b).start();
                 return;
             case 4:
-                h2 h2Var = ((x) this.b).h2.r;
-                if (h2Var instanceof bn) {
-                    h2Var.showDialog(new z0(h2Var, 11, false));
+                g2 g2Var = ((x) this.b).h2.r;
+                if (g2Var instanceof bn) {
+                    g2Var.showDialog(new y0(g2Var, 11, false));
                     return;
                 }
-                h2 Q = LaunchActivity.Q();
+                g2 Q = LaunchActivity.Q();
                 if (Q != null) {
-                    Q.showDialog(new z0(h2Var, 11, false));
+                    Q.showDialog(new y0(g2Var, 11, false));
                     return;
                 }
                 return;
@@ -170,7 +170,7 @@ public final /* synthetic */ class r implements Runnable {
                 sVar2.a();
                 return;
             case 11:
-                new qu0(((x20) this.b).getContext()).show();
+                new tu0(((a30) this.b).getContext()).show();
                 return;
             case 12:
                 EditTextBoldCursor editTextBoldCursor = ((o0) this.b).s1;
@@ -357,8 +357,8 @@ public final /* synthetic */ class r implements Runnable {
                     }
                     int i14 = 1 - z5Var.y0;
                     z5Var.y0 = i14;
-                    mh0 B = q9VarArr[2 - i14].getImageReceiver().B();
-                    mh0 B2 = q9VarArr[z5Var.y0 + 1].getImageReceiver().B();
+                    oh0 B = q9VarArr[2 - i14].getImageReceiver().B();
+                    oh0 B2 = q9VarArr[z5Var.y0 + 1].getImageReceiver().B();
                     if (B2 != null && B != null) {
                         B2.T(false, B.t());
                     }
@@ -376,7 +376,7 @@ public final /* synthetic */ class r implements Runnable {
                     ofFloat.addUpdateListener(new di.v5(z5Var, 2));
                     z5Var.o0.addListener(new y5(z5Var));
                     z5Var.o0.setDuration(320L);
-                    z5Var.o0.setInterpolator(lr.h);
+                    z5Var.o0.setInterpolator(nr.h);
                     z5Var.o0.start();
                     return;
                 }
@@ -399,10 +399,10 @@ public final /* synthetic */ class r implements Runnable {
                 ((u0[]) this.b)[0].dismiss();
                 return;
             case 28:
-                vf.c.t(((fb) this.b).getContext(), gd.M0(2131744731, null));
+                vf.c.t(((fb) this.b).getContext(), gd.N0(2131744725, null));
                 return;
             default:
-                vf.c.t(((gb) this.b).getContext(), gd.M0(2131744731, null));
+                vf.c.t(((gb) this.b).getContext(), gd.N0(2131744725, null));
                 return;
         }
     }

@@ -4,17 +4,17 @@ import android.view.View;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.a70;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
+    public final /* synthetic */ t3 b;
 
-    public /* synthetic */ b(s3 s3Var, int i7) {
+    public /* synthetic */ b(t3 t3Var, int i7) {
         this.a = i7;
-        this.b = s3Var;
+        this.b = t3Var;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:102:0x017c, code lost:
@@ -23,7 +23,7 @@ public final /* synthetic */ class b implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:86:0x014a, code lost:
     
-        if (oi.z5.m(r5, r5.getLeft(), r5.getTop(), r1, r3) != false) goto L87;
+        if (oi.a6.m(r5, r5.getLeft(), r5.getTop(), r1, r3) != false) goto L87;
      */
     @Override // java.lang.Runnable
     /*
@@ -38,109 +38,109 @@ public final /* synthetic */ class b implements Runnable {
                 this.b.w3();
                 break;
             case 2:
-                s3 s3Var = this.b;
-                if (s3Var.F3 != null && !s3Var.v3.x()) {
-                    if (s3Var.W4(s3Var.F3, s3Var.D3, s3Var.E3)) {
-                        s3Var.I3 = true;
+                t3 t3Var = this.b;
+                if (t3Var.F3 != null && !t3Var.v3.x()) {
+                    if (t3Var.W4(t3Var.F3, t3Var.D3, t3Var.E3)) {
+                        t3Var.I3 = true;
                         break;
                     } else {
-                        int left = (int) ((s3Var.D3 - s3Var.F3.getLeft()) - s3Var.getLeft());
-                        int top = (int) ((s3Var.E3 - s3Var.F3.getTop()) - s3Var.getTop());
-                        View view = s3Var.F3;
-                        if (view instanceof d0) {
-                            d0 d0Var = (d0) view;
-                            d0Var.getLocationOnScreen(new int[2]);
+                        int left = (int) ((t3Var.D3 - t3Var.F3.getLeft()) - t3Var.getLeft());
+                        int top = (int) ((t3Var.E3 - t3Var.F3.getTop()) - t3Var.getTop());
+                        View view = t3Var.F3;
+                        if (view instanceof e0) {
+                            e0 e0Var = (e0) view;
+                            e0Var.getLocationOnScreen(new int[2]);
                             float f10 = r8[0] + left;
                             float f11 = r8[1] + top;
-                            if (!d0.g(d0Var.x, f10, f11) && !d0.g(d0Var.y, f10, f11)) {
-                                ArrayList arrayList = d0Var.E;
+                            if (!e0.g(e0Var.x, f10, f11) && !e0.g(e0Var.y, f10, f11)) {
+                                ArrayList arrayList = e0Var.E;
                                 int size = arrayList.size();
                                 int i7 = 0;
                                 while (i7 < size) {
                                     Object obj = arrayList.get(i7);
                                     i7++;
-                                    if (d0.g((a0) obj, f10, f11)) {
+                                    if (e0.g((b0) obj, f10, f11)) {
                                     }
                                 }
                             }
-                            s3Var.I3 = true;
+                            t3Var.I3 = true;
                             break;
                         }
-                        View view2 = s3Var.F3;
-                        if (view2 instanceof l5) {
-                            l5 l5Var = (l5) view2;
-                            if (s3Var.m3(l5Var, left, top)) {
+                        View view2 = t3Var.F3;
+                        if (view2 instanceof m5) {
+                            m5 m5Var = (m5) view2;
+                            if (t3Var.m3(m5Var, left, top)) {
                                 try {
-                                    l5Var.performHapticFeedback(0);
+                                    m5Var.performHapticFeedback(0);
                                 } catch (Exception unused) {
                                 }
-                                s3Var.I3 = true;
+                                t3Var.I3 = true;
                                 break;
                             } else {
-                                TL_iv.pageTableCell n10 = l5Var.n(left, top);
+                                TL_iv.pageTableCell n10 = m5Var.n(left, top);
                                 if (n10 != null) {
-                                    y60 y60Var = s3Var.r4;
-                                    if (y60Var != null) {
-                                        s3Var.r4 = null;
-                                        y60Var.v();
+                                    a70 a70Var = t3Var.r4;
+                                    if (a70Var != null) {
+                                        t3Var.r4 = null;
+                                        a70Var.v();
                                     }
-                                    s3Var.j2(l5Var);
-                                    s3Var.C0();
-                                    s3Var.requestDisallowInterceptTouchEvent(true);
-                                    s3Var.J3 = true;
-                                    s3Var.L3 = n10;
-                                    s3Var.M3 = n10;
-                                    l5Var.y(n10, n10);
+                                    t3Var.j2(m5Var);
+                                    t3Var.C0();
+                                    t3Var.requestDisallowInterceptTouchEvent(true);
+                                    t3Var.J3 = true;
+                                    t3Var.L3 = n10;
+                                    t3Var.M3 = n10;
+                                    m5Var.y(n10, n10);
                                     try {
-                                        l5Var.performHapticFeedback(0);
+                                        m5Var.performHapticFeedback(0);
                                     } catch (Exception unused2) {
                                     }
-                                    s3Var.I3 = true;
+                                    t3Var.I3 = true;
                                     break;
                                 } else {
-                                    s3Var.M4(s3Var.F3);
+                                    t3Var.M4(t3Var.F3);
                                     break;
                                 }
                             }
-                        } else if (view2 instanceof z5) {
-                            z5 z5Var = (z5) view2;
-                            e1 e1Var = z5Var.h;
-                            e1 e1Var2 = z5Var.f;
-                            LinearLayout linearLayout = z5Var.b;
-                            if (!z5.m(e1Var2, e1Var2.getLeft() + linearLayout.getLeft(), e1Var2.getTop() + linearLayout.getTop(), left, top)) {
-                                if (e1Var.getVisibility() == 0) {
+                        } else if (view2 instanceof a6) {
+                            a6 a6Var = (a6) view2;
+                            f1 f1Var = a6Var.h;
+                            f1 f1Var2 = a6Var.f;
+                            LinearLayout linearLayout = a6Var.b;
+                            if (!a6.m(f1Var2, f1Var2.getLeft() + linearLayout.getLeft(), f1Var2.getTop() + linearLayout.getTop(), left, top)) {
+                                if (f1Var.getVisibility() == 0) {
                                     break;
                                 }
-                                s3Var.M4(s3Var.F3);
+                                t3Var.M4(t3Var.F3);
                                 break;
                             }
-                            s3Var.I3 = true;
+                            t3Var.I3 = true;
                             break;
                         } else {
-                            if (view2 instanceof p0) {
-                                e1 e1Var3 = ((p0) view2).d;
-                                if (e1Var3.length() == 0 && left >= e1Var3.getLeft()) {
-                                    if (left <= e1Var3.getWidth() + e1Var3.getLeft() && top >= e1Var3.getTop()) {
+                            if (view2 instanceof q0) {
+                                f1 f1Var3 = ((q0) view2).d;
+                                if (f1Var3.length() == 0 && left >= f1Var3.getLeft()) {
+                                    if (left <= f1Var3.getWidth() + f1Var3.getLeft() && top >= f1Var3.getTop()) {
                                         break;
                                     }
                                 }
                             }
-                            s3Var.M4(s3Var.F3);
+                            t3Var.M4(t3Var.F3);
                         }
                     }
                 }
                 break;
             case 3:
-                s3 s3Var2 = this.b;
-                g3 g3Var = s3Var2.v3;
-                if (g3Var != null && g3Var.x()) {
-                    for (int i10 = 0; i10 < s3Var2.getChildCount(); i10++) {
-                        View childAt = s3Var2.getChildAt(i10);
-                        if ((childAt instanceof z5) || (childAt instanceof l5) || (childAt instanceof i0) || (childAt instanceof p0)) {
+                t3 t3Var2 = this.b;
+                h3 h3Var = t3Var2.v3;
+                if (h3Var != null && h3Var.x()) {
+                    for (int i10 = 0; i10 < t3Var2.getChildCount(); i10++) {
+                        View childAt = t3Var2.getChildAt(i10);
+                        if ((childAt instanceof a6) || (childAt instanceof m5) || (childAt instanceof j0) || (childAt instanceof q0)) {
                             childAt.invalidate();
                         }
                     }
-                    g3Var.w();
+                    h3Var.w();
                     break;
                 }
                 break;

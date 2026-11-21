@@ -1,26 +1,16 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class sw extends v4.t {
-    public final /* synthetic */ ry Q;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sw(ry ryVar) {
-        super(8);
-        this.Q = ryVar;
-    }
-
-    @Override // v4.c0, v4.p0
-    public final void v0(RecyclerView recyclerView, v4.c1 c1Var, int i7) {
-        try {
-            hi.l1 l1Var = new hi.l1(2, recyclerView.getContext(), this);
-            l1Var.a = i7;
-            w0(l1Var);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+public final class sw extends org.telegram.ui.bn {
+    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        org.telegram.ui.rj rjVar;
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || (rjVar = this.a0) == null) {
+            return;
         }
+        rjVar.W1();
+        this.a0.postDelayed(new oo(this, 14), 100L);
     }
 }

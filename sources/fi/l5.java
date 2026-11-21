@@ -1,31 +1,131 @@
 package fi;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.gc;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Pattern;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.xs;
+import org.telegram.messenger.zb;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.hw;
+import org.telegram.ui.Components.rz;
+import org.telegram.ui.Components.wy0;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.dk0;
+import org.telegram.ui.gd0;
+import org.telegram.ui.hf0;
+import org.telegram.ui.io;
+import org.telegram.ui.la;
+import org.telegram.ui.ml0;
+import org.telegram.ui.n21;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class l5 extends FrameLayout {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ m5 b;
+public final /* synthetic */ class l5 implements RequestDelegate {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l5(m5 m5Var, Context context, float f10) {
-        super(context);
-        this.b = m5Var;
-        this.a = f10;
+    public /* synthetic */ l5(int i7) {
+        this.a = i7;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        gc.a(this.b.c, new bi.e1(this, 4));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7 = 0;
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.g3(new ai.n(14));
+                break;
+            case 1:
+                Comparator comparator = p6.X;
+                break;
+            case 2:
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.j2(i7));
+                break;
+            case 3:
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.j2(i7));
+                break;
+            case 4:
+                int[] iArr = hi.d1.b0;
+                break;
+            case 5:
+                org.telegram.messenger.g0.g3(new ai.n(21));
+                break;
+            case 6:
+                org.telegram.messenger.g0.g3(new ai.n(21));
+                break;
+            case 7:
+                org.telegram.messenger.g0.g3(new ai.n(21));
+                break;
+            case 8:
+                org.telegram.messenger.q5 q5Var = org.telegram.messenger.f4.s;
+                break;
+            case 9:
+                break;
+            case 10:
+                int i10 = zb.i;
+                break;
+            case 11:
+                Pattern pattern = ri.U1;
+                break;
+            case 12:
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.a(tL_error, 25));
+                break;
+            case 13:
+                int i11 = mp.I8;
+                break;
+            case 14:
+                String str = xs.k0;
+                break;
+            case 15:
+                Paint paint = la.I;
+                break;
+            case 16:
+                int i12 = io.j3;
+                break;
+            case 17:
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.j2(i7));
+                break;
+            case 18:
+                Pattern pattern2 = org.telegram.ui.Components.c5.a;
+                break;
+            case 19:
+                int i13 = hw.I0;
+                break;
+            case 20:
+                int i14 = rz.H0;
+                break;
+            case 21:
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.j2(i7));
+                break;
+            case 22:
+                int i15 = wy0.e;
+                break;
+            case 23:
+                int i16 = gd0.w0;
+                break;
+            case 24:
+                org.telegram.messenger.g0.g3(new hf0(tLObject, 5));
+                break;
+            case 25:
+                int i17 = dk0.S;
+                break;
+            case 26:
+                List list = ml0.h1;
+                break;
+            case 27:
+                RectF rectF = ProfileActivity.Z6;
+                break;
+            default:
+                int i18 = n21.p1;
+                break;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        gc.h(this.b.c);
+    private final void a(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

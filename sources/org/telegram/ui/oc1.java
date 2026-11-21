@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.r1, ww {
+public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.q1, ww {
     public final /* synthetic */ pc1 a;
 
     public /* synthetic */ oc1(pc1 pc1Var) {
@@ -35,21 +35,21 @@ public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.r1, 
     /* JADX WARN: Type inference failed for: r17v4 */
     /* JADX WARN: Type inference failed for: r17v5 */
     /* JADX WARN: Type inference failed for: r17v6 */
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        org.telegram.ui.ActionBar.a5 a5Var;
-        org.telegram.ui.ActionBar.a5 a5Var2;
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        org.telegram.ui.ActionBar.z4 z4Var;
+        org.telegram.ui.ActionBar.z4 z4Var2;
         ?? r17;
         int i10;
         pc1 pc1Var = this.a;
         WallpapersListActivity wallpapersListActivity = pc1Var.a;
         Activity parentActivity = wallpapersListActivity.getParentActivity();
         LongSparseArray longSparseArray = wallpapersListActivity.f0;
-        org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, parentActivity, null);
-        wallpapersListActivity.M = u1Var2;
+        org.telegram.ui.ActionBar.t1 t1Var2 = new org.telegram.ui.ActionBar.t1(3, parentActivity, null);
+        wallpapersListActivity.M = t1Var2;
         boolean z10 = false;
-        u1Var2.j0 = false;
-        u1Var2.show();
+        t1Var2.j0 = false;
+        t1Var2.show();
         new ArrayList();
         int[] iArr = new int[1];
         iArr[0] = 0;
@@ -90,11 +90,11 @@ public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.r1, 
                 }
                 String str = wallPaper2.slug;
                 if (str != null && str.equals(wallpapersListActivity.P)) {
-                    wallpapersListActivity.P = org.telegram.ui.ActionBar.n6.g1() ? "t" : "d";
-                    org.telegram.ui.ActionBar.n6.I.v(null);
-                    org.telegram.ui.ActionBar.n6.u1(true);
+                    wallpapersListActivity.P = org.telegram.ui.ActionBar.m6.g1() ? "t" : "d";
+                    org.telegram.ui.ActionBar.m6.I.v(null);
+                    org.telegram.ui.ActionBar.m6.u1(true);
                 }
-                i10 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
                 ConnectionsManager.getInstance(i10).sendRequest(savewallpaper, new e31(8, pc1Var, iArr));
             }
             i11++;
@@ -104,17 +104,17 @@ public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.r1, 
             wallpapersListActivity.G0(true);
         }
         longSparseArray.clear();
-        a5Var = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).simpleActionBar;
-        a5Var.w();
-        a5Var2 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).simpleActionBar;
-        a5Var2.o(true);
+        z4Var = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).simpleActionBar;
+        z4Var.w();
+        z4Var2 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).simpleActionBar;
+        z4Var2.o(true);
     }
 
     @Override // org.telegram.ui.ww
     public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
         LongSparseArray longSparseArray;
-        org.telegram.ui.ActionBar.a5 a5Var;
-        org.telegram.ui.ActionBar.a5 a5Var2;
+        org.telegram.ui.ActionBar.z4 z4Var;
+        org.telegram.ui.ActionBar.z4 z4Var2;
         int i11;
         int i12;
         int i13;
@@ -167,13 +167,13 @@ public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.r1, 
             i17++;
         }
         longSparseArray.clear();
-        a5Var = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).simpleActionBar;
-        a5Var.w();
-        a5Var2 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).simpleActionBar;
-        a5Var2.o(true);
+        z4Var = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).simpleActionBar;
+        z4Var.w();
+        z4Var2 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).simpleActionBar;
+        z4Var2.o(true);
         if (arrayList.size() <= 1) {
             long j3 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
-            i13 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+            i13 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
             if (j3 != org.telegram.messenger.j10.i(i13).e() && charSequence == null) {
                 long j10 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
                 Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
@@ -185,15 +185,15 @@ public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.r1, 
                     } else if (org.telegram.messenger.n5.z(j10)) {
                         k10.putLong("chat_id", -j10);
                     }
-                    i14 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+                    i14 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
                     if (!org.telegram.messenger.mp.u1(i14).E(k10, cxVar, null, null)) {
                         return true;
                     }
                 }
-                i15 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+                i15 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
                 org.telegram.messenger.ks.f(i15).k(org.telegram.messenger.ks.t, new Object[0]);
                 wallpapersListActivity.presentFragment(new bn(k10), true);
-                i16 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+                i16 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
                 org.telegram.messenger.zy.C(i16).r0(org.telegram.messenger.xy.b(sb2.toString(), j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
                 return true;
             }
@@ -202,11 +202,11 @@ public final /* synthetic */ class oc1 implements org.telegram.ui.ActionBar.r1, 
         for (int i18 = 0; i18 < arrayList.size(); i18++) {
             long j11 = ((org.telegram.messenger.sr) arrayList.get(i18)).a;
             if (charSequence != null) {
-                i12 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
                 org.telegram.messenger.zy.C(i12).r0(org.telegram.messenger.xy.b(charSequence.toString(), j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
             }
             if (!TextUtils.isEmpty(sb2)) {
-                i11 = ((org.telegram.ui.ActionBar.h2) wallpapersListActivity).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
                 org.telegram.messenger.zy.C(i11).r0(org.telegram.messenger.xy.b(sb2.toString(), j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
             }
         }

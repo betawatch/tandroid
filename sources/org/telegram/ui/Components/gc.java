@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class gc {
     public static gc w;
@@ -17,7 +17,7 @@ public class gc {
     public r1.g d;
     public final lb e;
     public final za f;
-    public final org.telegram.ui.ActionBar.h2 g;
+    public final org.telegram.ui.ActionBar.g2 g;
     public final FrameLayout h;
     public final Runnable i;
     public int j;
@@ -83,16 +83,16 @@ public class gc {
         return frameLayout == null ? new gb() : new gc(null, frameLayout, lbVar, i7);
     }
 
-    public static gc g(org.telegram.ui.ActionBar.h2 h2Var, eb ebVar, int i7) {
-        if (h2Var == null) {
+    public static gc g(org.telegram.ui.ActionBar.g2 g2Var, eb ebVar, int i7) {
+        if (g2Var == null) {
             return new gb();
         }
-        if (h2Var instanceof org.telegram.ui.bn) {
+        if (g2Var instanceof org.telegram.ui.bn) {
             lb.access$000(ebVar, -2, 1);
-        } else if (h2Var instanceof org.telegram.ui.cx) {
+        } else if (g2Var instanceof org.telegram.ui.cx) {
             lb.access$000(ebVar, -1, 0);
         }
-        return new gc(h2Var, h2Var.getBulletinLayoutContainer(), ebVar, i7);
+        return new gc(g2Var, g2Var.getBulletinLayoutContainer(), ebVar, i7);
     }
 
     public static void h(FrameLayout frameLayout) {
@@ -220,7 +220,7 @@ public class gc {
                             hVar.a(1.0f);
                             gVar2.m = hVar;
                             gcVar2.d = gVar2;
-                            gVar2.b(new i7(gcVar2, 1));
+                            gVar2.b(new j7(gcVar2, 1));
                             gcVar2.d.a(new ya(gcVar2, 0));
                         } else {
                             gVar.m.i = f10;
@@ -234,7 +234,7 @@ public class gc {
         frameLayout.addOnLayoutChangeListener(r22);
         lbVar.addOnLayoutChangeListener(new ab(this, z10));
         if (!this.t) {
-            lbVar.addOnAttachStateChangeListener(new bi.r2(this, 12));
+            lbVar.addOnAttachStateChangeListener(new bi.v2(this, 12));
         }
         frameLayout.addView(zaVar);
     }
@@ -246,14 +246,14 @@ public class gc {
         }
     }
 
-    public gc(org.telegram.ui.ActionBar.h2 h2Var, FrameLayout frameLayout, lb lbVar, int i7) {
+    public gc(org.telegram.ui.ActionBar.g2 g2Var, FrameLayout frameLayout, lb lbVar, int i7) {
         this.i = new ua(this, 0);
         this.r = true;
         this.u = true;
         this.e = lbVar;
         this.n = true ^ (lbVar instanceof mb);
         this.f = new za(this, lbVar, frameLayout);
-        this.g = h2Var;
+        this.g = g2Var;
         this.h = frameLayout;
         this.j = i7;
     }

@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.b31;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wm implements Runnable {
     public final /* synthetic */ int a;
@@ -74,14 +74,14 @@ public final /* synthetic */ class wm implements Runnable {
             case 0:
                 mp mpVar = (mp) c1Var;
                 Context context = (Context) obj5;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj4;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj2;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj2;
                 TLRPC.TL_messages_migrateChat tL_messages_migrateChat = (TLRPC.TL_messages_migrateChat) obj;
                 ((or) obj6).run(0L);
                 if (context != null && !((Activity) context).isFinishing()) {
                     try {
-                        u1Var.dismiss();
+                        t1Var.dismiss();
                         i7 = 1;
                     } catch (Exception e10) {
                         i7 = 1;
@@ -90,22 +90,22 @@ public final /* synthetic */ class wm implements Runnable {
                     int i13 = mpVar.currentAccount;
                     Object[] objArr = new Object[i7];
                     objArr[0] = Boolean.FALSE;
-                    org.telegram.ui.Components.b5.c0(i13, tL_error, h2Var, tL_messages_migrateChat, objArr);
+                    org.telegram.ui.Components.c5.c0(i13, tL_error, g2Var, tL_messages_migrateChat, objArr);
                     break;
                 }
                 break;
             case 1:
                 mp mpVar2 = (mp) c1Var;
                 Context context2 = (Context) obj5;
-                org.telegram.ui.ActionBar.u1 u1Var2 = (org.telegram.ui.ActionBar.u1) obj4;
+                org.telegram.ui.ActionBar.t1 t1Var2 = (org.telegram.ui.ActionBar.t1) obj4;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj3;
-                org.telegram.ui.ActionBar.h2 h2Var2 = (org.telegram.ui.ActionBar.h2) obj2;
+                org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) obj2;
                 TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = (TLRPC.TL_channels_convertToGigagroup) obj;
                 mpVar2.getClass();
                 ((lr) obj6).d(false);
                 if (context2 != null && !((Activity) context2).isFinishing()) {
                     try {
-                        u1Var2.dismiss();
+                        t1Var2.dismiss();
                         i10 = 1;
                     } catch (Exception e11) {
                         i10 = 1;
@@ -114,7 +114,7 @@ public final /* synthetic */ class wm implements Runnable {
                     int i14 = mpVar2.currentAccount;
                     Object[] objArr2 = new Object[i10];
                     objArr2[0] = Boolean.FALSE;
-                    org.telegram.ui.Components.b5.c0(i14, tL_error2, h2Var2, tL_channels_convertToGigagroup, objArr2);
+                    org.telegram.ui.Components.c5.c0(i14, tL_error2, g2Var2, tL_channels_convertToGigagroup, objArr2);
                     break;
                 }
                 break;
@@ -197,7 +197,7 @@ public final /* synthetic */ class wm implements Runnable {
                                     message.seq_in = tL_decryptedMessageLayer.in_seq_no;
                                     message.seq_out = tL_decryptedMessageLayer.out_seq_no;
                                     tr messagesStorage2 = xvVar.getMessagesStorage();
-                                    messagesStorage2.a.c(new hi.c0(messagesStorage2, message.id, message.seq_in, message.seq_out, 3));
+                                    messagesStorage2.a.c(new hi.d0(messagesStorage2, message.id, message.seq_in, message.seq_out, 3));
                                 }
                                 if (s2.a) {
                                     a8.b(decryptedMessage + " send message with in_seq = " + tL_decryptedMessageLayer.in_seq_no + " out_seq = " + tL_decryptedMessageLayer.out_seq_no);
@@ -223,7 +223,7 @@ public final /* synthetic */ class wm implements Runnable {
                                 ByteBuffer byteBuffer = nativeByteBuffer2.buffer;
                                 System.arraycopy(Utilities.p(bArr4, 88 + i18, byteBuffer, 0, byteBuffer.limit()), 8, bArr3, 0, 16);
                                 nativeByteBuffer.reuse();
-                                ji.j K = ji.j.K(2, z13, encryptedChat.auth_key, bArr3);
+                                ji.l K = ji.l.K(2, z13, encryptedChat.auth_key, bArr3);
                                 Utilities.c(nativeByteBuffer2.buffer, (byte[]) K.b, (byte[]) K.c, true, false, 0, nativeByteBuffer2.limit());
                                 NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(24 + nativeByteBuffer2.length());
                                 nativeByteBuffer2.position(0);
@@ -301,7 +301,7 @@ public final /* synthetic */ class wm implements Runnable {
                     ByteBuffer byteBuffer2 = nativeByteBuffer22.buffer;
                     System.arraycopy(Utilities.p(bArr42, 88 + i18, byteBuffer2, 0, byteBuffer2.limit()), 8, bArr32, 0, 16);
                     nativeByteBuffer4.reuse();
-                    ji.j K2 = ji.j.K(2, z13, encryptedChat.auth_key, bArr32);
+                    ji.l K2 = ji.l.K(2, z13, encryptedChat.auth_key, bArr32);
                     Utilities.c(nativeByteBuffer22.buffer, (byte[]) K2.b, (byte[]) K2.c, true, false, 0, nativeByteBuffer22.limit());
                     NativeByteBuffer nativeByteBuffer32 = new NativeByteBuffer(24 + nativeByteBuffer22.length());
                     nativeByteBuffer22.position(0);
@@ -323,10 +323,10 @@ public final /* synthetic */ class wm implements Runnable {
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj6;
                 z00Var.getClass();
                 storyItem.translatedLng = (String) obj5;
-                storyItem.translatedText = y21.R0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
+                storyItem.translatedText = b31.R0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
                 z00Var.getMessagesController().R1().k.h(storyItem.dialogId, storyItem);
                 z00Var.K.remove((x00) obj2);
-                ((bi.y3) obj).run();
+                ((bi.c4) obj).run();
                 break;
         }
     }

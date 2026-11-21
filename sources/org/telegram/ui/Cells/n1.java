@@ -8,9 +8,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.q80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class n1 {
     public final boolean a;
@@ -25,14 +25,14 @@ public final class n1 {
     public int j;
     public y k;
     public int l;
-    public o80 m;
+    public q80 m;
     public boolean n;
     public final float[] o;
 
     public n1(r1 r1Var, boolean z10) {
         ImageReceiver imageReceiver = new ImageReceiver(r1Var);
         this.b = imageReceiver;
-        this.c = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.c = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         this.d = new RectF();
         this.e = new mc(r1Var);
         this.o = new float[8];

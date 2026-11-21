@@ -1,17 +1,20 @@
 package ji;
 
+import di.p9;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class k {
-    public final ArrayList a = new ArrayList();
-    public long b;
-    public float c;
-    public float d;
-    public String e;
-    public String f;
-    public int g;
-    public boolean h;
-    public String i;
+    public final CharSequence a;
+    public final ArrayList b;
+    public final int c;
+    public final p9 d;
+
+    public k(String str, ArrayList arrayList, int i7, p9 p9Var) {
+        this.a = str;
+        this.b = arrayList;
+        this.c = i7;
+        this.d = p9Var;
+    }
 }

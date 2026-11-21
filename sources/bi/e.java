@@ -6,21 +6,21 @@ import c8.ma;
 import java.util.List;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.q9;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e extends sa {
     public static final /* synthetic */ int W1 = 0;
     public final List T1;
     public final q9 U1;
-    public z41 V1;
+    public c51 V1;
 
-    public e(Context context, org.telegram.ui.ActionBar.i6 i6Var, q9 q9Var, List list) {
-        super(context, null, false, false, 2, i6Var);
+    public e(Context context, org.telegram.ui.ActionBar.h6 h6Var, q9 q9Var, List list) {
+        super(context, null, false, false, 2, h6Var);
         this.U1 = q9Var;
         this.T1 = list;
         this.v1 = 0.2f;
@@ -31,24 +31,24 @@ public final class e extends sa {
         this.o1.setPadding(this.u0, org.telegram.messenger.g0.L(9.0f), this.u0, org.telegram.messenger.g0.L(64.0f));
         this.o1.setOnItemClickListener(new a(0));
         this.o1.setOverScrollMode(2);
-        hi.d dVar = new hi.d(context, i6Var, true);
-        dVar.setOnClickListener(new ah.d(this, 3));
-        dVar.i(gd.M0(2131747638, null), false, true);
+        hi.e eVar = new hi.e(context, h6Var, true);
+        eVar.setOnClickListener(new ah.d(this, 3));
+        eVar.i(gd.N0(2131747637, null), false, true);
         FrameLayout.LayoutParams d = ma.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
         int i7 = d.leftMargin;
         int i10 = this.u0;
         d.leftMargin = i7 + i10;
         d.rightMargin += i10;
-        this.b.addView(dVar, d);
+        this.b.addView(eVar, d);
         this.V1.O(false);
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
-        z41 z41Var = new z41(this.o1, getContext(), this.a, 0, true, new b(this, 0), this.J0);
-        this.V1 = z41Var;
-        z41Var.r = false;
-        return z41Var;
+    public final dk0 M0(ek0 ek0Var) {
+        c51 c51Var = new c51(this.o1, getContext(), this.a, 0, true, new b(this, 0), this.J0);
+        this.V1 = c51Var;
+        c51Var.r = false;
+        return c51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

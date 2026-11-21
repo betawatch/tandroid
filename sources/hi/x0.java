@@ -6,7 +6,7 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements x10 {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class x0 implements x10 {
                 ArrayList arrayList3 = new ArrayList();
                 ArrayList arrayList4 = new ArrayList();
                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                    d7 a10 = ((a1) arrayList.get(i7)).a();
+                    c7 a10 = ((a1) arrayList.get(i7)).a();
                     if ((a10.v() || ((file = a10.L) != null && file.exists())) && currentTimeMillis - a10.d <= 604800000) {
                         arrayList4.add(a10);
                         arrayList2.add(Long.valueOf(a10.b));
@@ -47,7 +47,7 @@ public final /* synthetic */ class x0 implements x10 {
                 while (i10 < size) {
                     Object obj2 = arrayList4.get(i10);
                     i10++;
-                    fi.o6 o6Var = new fi.o6(R1, (d7) obj2);
+                    fi.o6 o6Var = new fi.o6(R1, (c7) obj2);
                     R1.d(o6Var.K, o6Var, R1.b, false);
                 }
                 ks.f(R1.a).k(ks.y5, new Object[0]);
@@ -59,7 +59,7 @@ public final /* synthetic */ class x0 implements x10 {
                 ArrayList arrayList5 = new ArrayList();
                 ArrayList arrayList6 = new ArrayList();
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    d7 a11 = ((a1) arrayList.get(i11)).a();
+                    c7 a11 = ((a1) arrayList.get(i11)).a();
                     if ((a11.v() || ((file2 = a11.L) != null && file2.exists())) && (!a11.g ? currentTimeMillis2 - a11.d <= 604800000 : currentTimeMillis2 <= a11.J)) {
                         b1Var2.b.add(a11);
                         arrayList5.add(Long.valueOf(a11.b));

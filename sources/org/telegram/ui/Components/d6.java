@@ -1,51 +1,188 @@
 package org.telegram.ui.Components;
 
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d6 implements te.f, we.a {
-    public final View a;
-    public boolean b;
-    public boolean c;
-    public int d;
-    public int e;
+public final class d6 {
+    public View a;
+    public final Runnable b;
+    public float c;
+    public float d;
+    public boolean e;
+    public long f;
+    public long g;
+    public TimeInterpolator h;
+    public boolean i;
+    public long j;
+    public float k;
+
+    public d6(long j3, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.a = null;
+        this.g = j3;
+        this.h = timeInterpolator;
+        this.e = true;
+    }
+
+    public final void a(boolean z10) {
+        e(true, z10 ? 1.0f : 0.0f);
+    }
+
+    public final float b() {
+        if (this.i) {
+            return c8.l9.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
+        }
+        return 0.0f;
+    }
+
+    public final float c() {
+        if (this.i) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            float a10 = c8.l9.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            if (elapsedRealtime - this.j >= this.f) {
+                TimeInterpolator timeInterpolator = this.h;
+                if (timeInterpolator == null) {
+                    this.c = org.telegram.messenger.g0.T1(this.k, this.d, a10);
+                } else {
+                    this.c = org.telegram.messenger.g0.T1(this.k, this.d, timeInterpolator.getInterpolation(a10));
+                }
+            }
+            if (a10 >= 1.0f) {
+                this.i = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+        }
+        return this.c;
+    }
+
+    public final float d(boolean z10) {
+        return e(false, z10 ? 1.0f : 0.0f);
+    }
+
+    public final float e(boolean z10, float f10) {
+        if (z10 || this.g <= 0 || this.e) {
+            this.d = f10;
+            this.c = f10;
+            this.i = false;
+            this.e = false;
+        } else if (Math.abs(this.d - f10) > 1.0E-4f) {
+            this.i = true;
+            this.d = f10;
+            this.k = this.c;
+            this.j = SystemClock.elapsedRealtime();
+        }
+        return c();
+    }
+
+    public final float f(boolean z10, boolean z11) {
+        return e(z11, z10 ? 1.0f : 0.0f);
+    }
+
+    public d6(long j3, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.a = null;
+        this.f = j3;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = true;
+    }
 
     public d6(View view) {
+        this.f = 0L;
+        this.g = 200L;
+        this.h = nr.f;
         this.a = view;
+        this.e = true;
     }
 
-    @Override // we.a
-    public final void a() {
-        if (!this.b) {
-            this.a.setVisibility(8);
-        }
-        this.c = false;
+    public d6(View view, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.a = view;
+        this.g = j3;
+        this.h = timeInterpolator;
+        this.e = true;
     }
 
-    @Override // te.f
-    public final /* synthetic */ int b(boolean z10) {
-        return 0;
+    public d6(View view, long j3, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = true;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof d6)) {
-            return false;
-        }
-        return this.a.equals(((d6) obj).a);
+    public d6(Runnable runnable) {
+        this.f = 0L;
+        this.g = 200L;
+        this.h = nr.f;
+        this.b = runnable;
+        this.e = true;
     }
 
-    @Override // te.f
-    public final int getHeight() {
-        return this.a.getMeasuredHeight();
+    public d6(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.b = runnable;
+        this.g = j3;
+        this.h = timeInterpolator;
+        this.e = true;
     }
 
-    @Override // te.f
-    public final int getWidth() {
-        return this.a.getMeasuredWidth();
+    public d6(Runnable runnable, long j3, TimeInterpolator timeInterpolator, int i7) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.b = runnable;
+        this.f = 0L;
+        this.g = j3;
+        this.h = timeInterpolator;
+        this.e = true;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    public d6(float f10, View view, long j3, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.a = view;
+        this.d = f10;
+        this.c = f10;
+        this.f = j3;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = false;
+    }
+
+    public d6(float f10, Runnable runnable, long j3, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        nr nrVar = nr.f;
+        this.b = runnable;
+        this.d = f10;
+        this.c = f10;
+        this.f = j3;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = false;
     }
 }

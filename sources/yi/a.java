@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import ji.m;
+import ji.o;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ke;
@@ -13,7 +13,7 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.vr;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -87,10 +87,10 @@ public final /* synthetic */ class a implements Runnable {
                         throw new IllegalStateException("AudioRecord read failed: " + read);
                     }
                     byteBuffer.limit(read);
-                    m mVar = vr.k;
-                    if (mVar != null && read > 0) {
+                    o oVar = vr.k;
+                    if (oVar != null && read > 0) {
                         try {
-                            mVar.o(byteBuffer, read, 48000, 2);
+                            oVar.n(byteBuffer, read, 48000, 2);
                         } catch (Throwable th3) {
                             a8.g(th3, true);
                         }

@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.fn0;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class e1 implements wi.l {
     public static e1 w;
@@ -22,7 +22,7 @@ public final class e1 implements wi.l {
     public c1 b;
     public f9 c;
     public org.telegram.ui.Components.voip.t0 e;
-    public hi.r3 f;
+    public hi.q3 f;
     public VideoSink h;
     public LaunchActivity r;
     public boolean s;
@@ -37,13 +37,13 @@ public final class e1 implements wi.l {
 
     @Override // wi.l
     public final void B(View view) {
-        hi.r3 r3Var;
+        hi.q3 q3Var;
         c1 c1Var = this.b;
-        if (c1Var == null || view != (r3Var = this.f)) {
+        if (c1Var == null || view != (q3Var = this.f)) {
             return;
         }
         this.h = c1Var.P;
-        this.d.a = r3Var.getSink();
+        this.d.a = q3Var.getSink();
         this.b.s(this.d);
         this.b.v(1.0f);
         g(true);
@@ -81,12 +81,12 @@ public final class e1 implements wi.l {
     @Override // wi.l
     public final int J() {
         int i7;
-        hi.r3 r3Var;
+        hi.q3 q3Var;
         if (this.d.b > 0) {
             return this.d.b;
         }
         f9 f9Var = this.c;
-        TextureViewRenderer textureViewRenderer = (f9Var == null || (r3Var = f9Var.E0) == null) ? null : r3Var.d;
+        TextureViewRenderer textureViewRenderer = (f9Var == null || (q3Var = f9Var.E0) == null) ? null : q3Var.d;
         if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameWidth) <= 0) {
             return 9;
         }
@@ -153,13 +153,13 @@ public final class e1 implements wi.l {
     }
 
     @Override // wi.l
-    public final /* synthetic */ boolean V(boolean z10, float f10, cn0 cn0Var) {
+    public final /* synthetic */ boolean V(boolean z10, float f10, fn0 fn0Var) {
         return false;
     }
 
     @Override // wi.l
     public final void X(View view) {
-        this.f = (hi.r3) view;
+        this.f = (hi.q3) view;
     }
 
     @Override // wi.l
@@ -172,7 +172,7 @@ public final class e1 implements wi.l {
                 if (i7 != j10.t0 && (launchActivity = LaunchActivity.H1) != null) {
                     launchActivity.O0(i7);
                 }
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 TL_stories.StoryItem u10 = mp.u1(i7).R1().u(c1Var.c, c1Var.b);
                 if (u10 == null) {
                     u10 = c1Var.a;
@@ -198,12 +198,12 @@ public final class e1 implements wi.l {
     @Override // wi.l
     public final int a0() {
         int i7;
-        hi.r3 r3Var;
+        hi.q3 q3Var;
         if (this.d.c > 0) {
             return this.d.c;
         }
         f9 f9Var = this.c;
-        TextureViewRenderer textureViewRenderer = (f9Var == null || (r3Var = f9Var.E0) == null) ? null : r3Var.d;
+        TextureViewRenderer textureViewRenderer = (f9Var == null || (q3Var = f9Var.E0) == null) ? null : q3Var.d;
         if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameHeight) <= 0) {
             return 16;
         }
@@ -318,7 +318,7 @@ public final class e1 implements wi.l {
     @Override // wi.l
     public final View v(LaunchActivity launchActivity) {
         c1 c1Var = this.b;
-        return new hi.r3(launchActivity, c1Var != null ? c1Var.e : j10.t0);
+        return new hi.q3(launchActivity, c1Var != null ? c1Var.e : j10.t0);
     }
 
     @Override // wi.l
@@ -327,17 +327,17 @@ public final class e1 implements wi.l {
             this.d.a = null;
             this.f = null;
         }
-        hi.r3 r3Var = (hi.r3) view;
-        TextureViewRenderer textureViewRenderer = r3Var.d;
+        hi.q3 q3Var = (hi.q3) view;
+        TextureViewRenderer textureViewRenderer = q3Var.d;
         if (textureViewRenderer != null) {
             textureViewRenderer.release();
         }
-        SurfaceViewRenderer surfaceViewRenderer = r3Var.c;
+        SurfaceViewRenderer surfaceViewRenderer = q3Var.c;
         if (surfaceViewRenderer != null) {
             surfaceViewRenderer.release();
         }
-        r3Var.r = false;
-        r3Var.c(false, false);
+        q3Var.r = false;
+        q3Var.c(false, false);
     }
 
     @Override // wi.l

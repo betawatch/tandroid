@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class he implements Runnable {
     public final /* synthetic */ int a;
@@ -91,7 +91,7 @@ public final /* synthetic */ class he implements Runnable {
                     break;
                 }
             default:
-                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.gd.M0(2131754486, null)).j();
+                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.gd.N0(2131754485, null)).j();
                 bnVar.ib(fjVar);
                 bnVar.kb(fjVar);
                 break;

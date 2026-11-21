@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class n5 {
     public static boolean A() {
@@ -62,24 +62,24 @@ public abstract class n5 {
         }
         TLRPC.User user = (TLRPC.User) tLObject;
         if (o10.A(user)) {
-            String M0 = gd.M0(2131746071, null);
+            String N0 = gd.N0(2131746070, null);
             if (b9Var != null) {
                 b9Var.g(12);
             }
             if (imageReceiver != null) {
                 imageReceiver.i0(null, b9Var, null);
             }
-            return M0;
+            return N0;
         }
         if (o10.C(user)) {
-            String M02 = gd.M0(2131745706, null);
+            String N02 = gd.N0(2131745705, null);
             if (b9Var != null) {
                 b9Var.g(1);
             }
             if (imageReceiver != null) {
                 imageReceiver.i0(null, b9Var, null);
             }
-            return M02;
+            return N02;
         }
         String q10 = o10.q(user);
         if (b9Var != null) {
@@ -350,7 +350,7 @@ public abstract class n5 {
             return "";
         }
         TLRPC.Chat chat = (TLRPC.Chat) g22;
-        return chat.participants_count > 1 ? v3.V(chat) ? gd.H(',', "Subscribers", chat.participants_count) : gd.H(',', "Members", chat.participants_count) : v3.V(chat) ? gd.M0(2131751379, null) : gd.M0(2131754876, null);
+        return chat.participants_count > 1 ? v3.V(chat) ? gd.H(',', "Subscribers", chat.participants_count) : gd.H(',', "Members", chat.participants_count) : v3.V(chat) ? gd.N0(2131751378, null) : gd.N0(2131754876, null);
     }
 
     public static void x(TLRPC.Dialog dialog) {

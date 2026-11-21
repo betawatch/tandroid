@@ -13,9 +13,9 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class p extends View {
     public org.telegram.ui.Cells.y a;
@@ -57,7 +57,7 @@ public final class p extends View {
         paint2.setColor(-16777216);
         setLayerType(2, null);
         setClickable(true);
-        this.h = gd.M0(2131752030, null);
+        this.h = gd.N0(2131752029, null);
     }
 
     @Override // android.view.View
@@ -113,7 +113,7 @@ public final class p extends View {
         canvas.drawText(str, width, org.telegram.messenger.g0.L(6.0f) + height, paint2);
         canvas.drawText(str, width, height + org.telegram.messenger.g0.L(6.0f), paint3);
         if (this.a == null) {
-            org.telegram.ui.Cells.y a02 = n6.a0(n6.x0(null, n6.i6, false), 8, 8);
+            org.telegram.ui.Cells.y a02 = m6.a0(m6.x0(null, m6.i6, false), 8, 8);
             this.a = a02;
             a02.setCallback(this);
         }

@@ -42,9 +42,9 @@ import java.util.Map;
 import java.util.UUID;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.qf;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -143,7 +143,7 @@ public final class f implements o {
         this.L = -1L;
         this.M = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new of(this, 27);
+        bVar.d = new qf(this, 27);
         this.f = kVar;
         this.C = new SparseArray();
         this.d = (i7 & 1) == 0;
@@ -495,9 +495,9 @@ public final class f implements o {
                         bVar.g = r82.b(pVar3, false, z10, 8);
                         bVar.e = 2;
                     }
-                    of ofVar = bVar.d;
+                    qf qfVar = bVar.d;
                     int i21 = bVar.f;
-                    Object obj2 = ofVar.b;
+                    Object obj2 = qfVar.b;
                     switch (i21) {
                         case ks.P1 /* 131 */:
                         case ks.S1 /* 136 */:
@@ -625,7 +625,7 @@ public final class f implements o {
                         if (j12 > 8) {
                             throw t0.a(null, "Invalid integer size: " + bVar.g);
                         }
-                        ofVar.u0(i21, bVar.a(pVar3, (int) j12));
+                        qfVar.u0(i21, bVar.a(pVar3, (int) j12));
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -647,12 +647,12 @@ public final class f implements o {
                             r15 = 0;
                             str = new String(bArr3, 0, i22);
                         }
-                        ofVar.z0(i21, str);
+                        qfVar.z0(i21, str);
                         bVar.e = r15;
                         z11 = r15;
                         pVar2 = pVar3;
                     } else if (i7 == 4) {
-                        ofVar.r0(i21, (int) bVar.g, pVar3);
+                        qfVar.r0(i21, (int) bVar.g, pVar3);
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -666,7 +666,7 @@ public final class f implements o {
                         }
                         int i23 = (int) j14;
                         double intBitsToFloat = i23 == 4 ? Float.intBitsToFloat((int) r4) : Double.longBitsToDouble(bVar.a(pVar3, i23));
-                        f fVar2 = (f) ofVar.b;
+                        f fVar2 = (f) qfVar.b;
                         if (i21 == 181) {
                             fVar2.h(i21);
                             fVar2.y.S = (int) intBitsToFloat;
@@ -736,9 +736,9 @@ public final class f implements o {
                         pVar2 = pVar3;
                     }
                 } else {
-                    of ofVar2 = bVar.d;
+                    qf qfVar2 = bVar.d;
                     int i24 = ((a) arrayDeque.pop()).a;
-                    f fVar3 = (f) ofVar2.b;
+                    f fVar3 = (f) qfVar2.b;
                     ?? r83 = fVar3.C;
                     ?? r92 = fVar3.c;
                     fVar3.j0.getClass();

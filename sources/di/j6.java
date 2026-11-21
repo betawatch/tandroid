@@ -7,11 +7,11 @@ import android.graphics.PorterDuff;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.we;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.qd0;
+import org.telegram.ui.Components.rd0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.q30;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j6 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -52,33 +52,33 @@ public final class j6 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                hi.o2 o2Var = (hi.o2) obj;
-                o2Var.h = f10;
-                o2Var.i();
+                hi.n2 n2Var = (hi.n2) obj;
+                n2Var.h = f10;
+                n2Var.i();
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
             case 3:
-                hi.ta taVar = (hi.ta) obj;
-                taVar.M = null;
-                taVar.J = f10;
-                taVar.j();
-                taVar.r.invalidate();
-                taVar.n.invalidate();
+                hi.sa saVar = (hi.sa) obj;
+                saVar.M = null;
+                saVar.J = f10;
+                saVar.j();
+                saVar.r.invalidate();
+                saVar.n.invalidate();
                 runnable.run();
-                taVar.Q.e();
+                saVar.Q.e();
                 ks.e().k(99, 512);
                 ks.e().o();
-                taVar.n();
-                Runnable runnable2 = taVar.R;
+                saVar.n();
+                Runnable runnable2 = saVar.R;
                 if (runnable2 != null) {
                     runnable2.run();
-                    taVar.R = null;
+                    saVar.R = null;
                 }
-                taVar.r.invalidate();
-                taVar.i0.invalidate();
+                saVar.r.invalidate();
+                saVar.i0.invalidate();
                 break;
             case 4:
                 q30 q30Var = (q30) obj;
@@ -108,14 +108,14 @@ public final class j6 extends AnimatorListenerAdapter {
                 cropAreaView.invalidate();
                 photoViewer.D1.c.setRotated(false);
                 if (Math.abs(f10) > 0.0f) {
-                    qd0 qd0Var = photoViewer.D1;
-                    og.f fVar = qd0Var.c;
+                    rd0 rd0Var = photoViewer.D1;
+                    og.f fVar = rd0Var.c;
                     if (fVar != null) {
                         fVar.b(0.0f);
                         fVar.setRotated(false);
                     }
-                    if (qd0Var.b.m(f10)) {
-                        org.telegram.ui.ActionBar.u6.s(photoViewer.c1, org.telegram.ui.ActionBar.n6.qg, photoViewer.w2, PorterDuff.Mode.MULTIPLY);
+                    if (rd0Var.b.m(f10)) {
+                        org.telegram.ui.ActionBar.t6.s(photoViewer.c1, org.telegram.ui.ActionBar.m6.qg, photoViewer.w2, PorterDuff.Mode.MULTIPLY);
                     } else {
                         photoViewer.c1.setColorFilter((ColorFilter) null);
                     }

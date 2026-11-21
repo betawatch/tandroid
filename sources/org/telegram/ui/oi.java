@@ -6,16 +6,16 @@ import android.view.View;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class oi implements org.telegram.ui.Components.pj0 {
+public final class oi implements org.telegram.ui.Components.rj0 {
     public final /* synthetic */ bn a;
 
     public oi(bn bnVar) {
         this.a = bnVar;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public final boolean b1(View view) {
         boolean z10;
         org.telegram.messenger.fj messageObject;
@@ -40,8 +40,8 @@ public final class oi implements org.telegram.ui.Components.pj0 {
                         messageObject = ((org.telegram.ui.Cells.v0) view).getMessageObject();
                     }
                     if (messageObject != null && !messageObject.l0 && !messageObject.o4() && messageObject.z() && !messageObject.Y2()) {
-                        kVar = ((org.telegram.ui.ActionBar.h2) bnVar).actionBar;
-                        if (!kVar.y() && !bnVar.z() && !bnVar.c() && !messageObject.r4()) {
+                        kVar = ((org.telegram.ui.ActionBar.g2) bnVar).actionBar;
+                        if (!kVar.x() && !bnVar.z() && !bnVar.c() && !messageObject.r4()) {
                             return true;
                         }
                     }
@@ -51,7 +51,7 @@ public final class oi implements org.telegram.ui.Components.pj0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public final void f(float f10, float f11, int i7, View view) {
         boolean z10;
         org.telegram.ui.ActionBar.k kVar;
@@ -59,9 +59,9 @@ public final class oi implements org.telegram.ui.Components.pj0 {
         org.telegram.messenger.fj messageObject;
         org.telegram.messenger.fj messageObject2;
         int i10;
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         bn bnVar = this.a;
-        z10 = ((org.telegram.ui.ActionBar.h2) bnVar).inPreviewMode;
+        z10 = ((org.telegram.ui.ActionBar.g2) bnVar).inPreviewMode;
         if (z10) {
             return;
         }
@@ -75,11 +75,11 @@ public final class oi implements org.telegram.ui.Components.pj0 {
                     return;
                 }
                 Activity parentActivity = bnVar.getParentActivity();
-                i10 = ((org.telegram.ui.ActionBar.h2) bnVar).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
                 long j3 = tL_messageActionWalletTonConnectRequest.session_id;
                 int e12 = messageObject2.e1();
-                i6Var = ((org.telegram.ui.ActionBar.h2) bnVar).resourceProvider;
-                org.telegram.ui.Wallet.l2.q(parentActivity, i10, j3, e12, i6Var, null);
+                h6Var = ((org.telegram.ui.ActionBar.g2) bnVar).resourceProvider;
+                org.telegram.ui.Wallet.l2.q(parentActivity, i10, j3, e12, h6Var, null);
                 return;
             }
         }
@@ -111,12 +111,12 @@ public final class oi implements org.telegram.ui.Components.pj0 {
         if (z11) {
             org.telegram.ui.Cells.v0 v0Var3 = (org.telegram.ui.Cells.v0) view;
             if (v0Var3.getMessageObject() != null && (v0Var3.getMessageObject().k.action instanceof TLRPC.TL_messageActionSetSameChatWallPaper)) {
-                org.telegram.messenger.g0.h3(new ai.w0(this, v0Var3.getMessageObject().N1(), 27), 16L);
+                org.telegram.messenger.g0.h3(new ai.y0(this, v0Var3.getMessageObject().N1(), 27), 16L);
                 return;
             }
         }
-        kVar = ((org.telegram.ui.ActionBar.h2) bnVar).actionBar;
-        if (kVar.y() || bnVar.Y9()) {
+        kVar = ((org.telegram.ui.ActionBar.g2) bnVar).actionBar;
+        if (kVar.x() || bnVar.Y9()) {
             if (view instanceof org.telegram.ui.Cells.r1) {
                 org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) view;
                 if (bnVar.u9.z(r1Var2.getMessageObject())) {
@@ -141,7 +141,7 @@ public final class oi implements org.telegram.ui.Components.pj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.rj0
     public final void s0(View view, float f10, float f11) {
         org.telegram.messenger.fj messageObject;
         boolean z10;

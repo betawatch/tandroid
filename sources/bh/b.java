@@ -14,12 +14,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Components.b9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b extends ra {
     public final TextView c0;
@@ -35,7 +35,7 @@ public final class b extends ra {
         this.d0 = new FrameLayout(getContext());
         TextView textView = new TextView(getContext());
         this.c0 = textView;
-        textView.setTextColor(n6.w0(n6.G6, this.E));
+        textView.setTextColor(m6.w0(m6.G6, this.E));
         this.c0.setTypeface(g0.o());
         this.c0.setTextSize(12.0f);
         this.c0.setGravity(17);
@@ -64,7 +64,7 @@ public final class b extends ra {
     @Override // org.telegram.ui.Cells.ra, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.T) {
-            canvas.drawLine(gd.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, n6.k0);
+            canvas.drawLine(gd.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, m6.k0);
         }
     }
 
@@ -73,7 +73,7 @@ public final class b extends ra {
         boolean z10 = boost.gift;
         FrameLayout frameLayout = this.d0;
         TextView textView = this.c0;
-        n5 n5Var = this.b;
+        m5 m5Var = this.b;
         if (z10 || boost.giveaway) {
             frameLayout.setVisibility(0);
             int i7 = ((boost.expires - boost.date) / 30) / 86400;
@@ -81,30 +81,30 @@ public final class b extends ra {
             t3 t3Var = this.a;
             b9 b9Var = this.F;
             if (j3 > 0) {
-                n5Var.l(gd.G((int) j3, "BoostingBoostStars", new Object[0]), false);
+                m5Var.l(gd.G((int) j3, "BoostingBoostStars", new Object[0]), false);
                 b9Var.g(26);
                 t3Var.f(null, b9Var);
-                n5Var.i(null);
+                m5Var.i(null);
             } else if (boost.unclaimed) {
-                n5Var.l(gd.M0(2131753175, null), false);
+                m5Var.l(gd.N0(2131753174, null), false);
                 b9Var.g(18);
                 setAvatarColorByMonths(i7);
                 t3Var.f(null, b9Var);
-                n5Var.i(null);
+                m5Var.i(null);
             } else if (boost.user_id == -1) {
-                n5Var.l(gd.M0(2131753176, null), false);
+                m5Var.l(gd.N0(2131753175, null), false);
                 b9Var.g(19);
                 setAvatarColorByMonths(i7);
                 t3Var.f(null, b9Var);
-                n5Var.i(null);
+                m5Var.i(null);
             }
             String format = gd.E0().o0().format(new Date(boost.expires * 1000));
             long j10 = boost.stars;
-            n5 n5Var2 = this.c;
+            m5 m5Var2 = this.c;
             if (j10 > 0) {
-                n5Var2.l(gd.a0(null, null, 2131753242, format), false);
+                m5Var2.l(gd.a0(null, null, 2131753241, format), false);
             } else {
-                n5Var2.l(gd.a0(null, null, 2131753522, format), false);
+                m5Var2.l(gd.a0(null, null, 2131753521, format), false);
             }
             if (boost.gift) {
                 if (this.f0 == null) {
@@ -115,8 +115,8 @@ public final class b extends ra {
                 textView.setTextColor(-3240417);
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.f0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(g0.L(4.0f));
-                textView.setText(gd.M0(2131753499, null));
-                frameLayout.setBackground(n6.e0(g0.L(12.0f), g0.L(12.0f), n6.r1(0.2f, -3240417)));
+                textView.setText(gd.N0(2131753498, null));
+                frameLayout.setBackground(m6.e0(g0.L(12.0f), g0.L(12.0f), m6.r1(0.2f, -3240417)));
             }
             if (boost.giveaway) {
                 if (this.e0 == null) {
@@ -127,8 +127,8 @@ public final class b extends ra {
                 textView.setTextColor(-13397548);
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.e0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(g0.L(4.0f));
-                textView.setText(gd.M0(2131753490, null));
-                frameLayout.setBackground(n6.e0(g0.L(12.0f), g0.L(12.0f), n6.r1(0.2f, -13397548)));
+                textView.setText(gd.N0(2131753489, null));
+                frameLayout.setBackground(m6.e0(g0.L(12.0f), g0.L(12.0f), m6.r1(0.2f, -13397548)));
             }
         } else {
             frameLayout.setVisibility(8);
@@ -140,15 +140,15 @@ public final class b extends ra {
             aVar.f = valueOf;
             aVar.e = aVar.a.measureText(valueOf);
             aVar.invalidateSelf();
-            n5Var.i(aVar);
+            m5Var.i(aVar);
         } else {
-            n5Var.i(null);
+            m5Var.i(null);
         }
         if (frameLayout.getVisibility() != 0) {
-            n5Var.setPadding(0, n5Var.getPaddingTop(), 0, n5Var.getPaddingBottom());
+            m5Var.setPadding(0, m5Var.getPaddingTop(), 0, m5Var.getPaddingBottom());
         } else {
             int L = g0.L(22.0f) + ((int) textView.getPaint().measureText(textView.getText().toString()));
-            n5Var.setPadding(gd.a0 ? L : 0, n5Var.getPaddingTop(), gd.a0 ? 0 : L, n5Var.getPaddingBottom());
+            m5Var.setPadding(gd.a0 ? L : 0, m5Var.getPaddingTop(), gd.a0 ? 0 : L, m5Var.getPaddingBottom());
         }
     }
 }

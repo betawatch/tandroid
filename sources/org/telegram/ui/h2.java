@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h2 extends View implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
@@ -112,7 +112,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.i9, c3 {
         if (z2Var == null) {
             return;
         }
-        accessibilityNodeInfo.setText(g4.g(2131754857, g4.h(this.a, this.b, z2Var)));
+        accessibilityNodeInfo.setText(g4.g(2131754856, g4.h(this.a, this.b, z2Var)));
     }
 
     @Override // android.view.View

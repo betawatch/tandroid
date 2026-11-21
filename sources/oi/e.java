@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.jl;
-import org.telegram.ui.Components.si;
-import org.telegram.ui.Components.zi;
+import org.telegram.ui.Components.bj;
+import org.telegram.ui.Components.ll;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements jl, zi {
+public final /* synthetic */ class e implements ll, bj {
     public final /* synthetic */ o a;
-    public final /* synthetic */ si b;
+    public final /* synthetic */ ui b;
 
-    public /* synthetic */ e(o oVar, si siVar) {
+    public /* synthetic */ e(o oVar, ui uiVar) {
         this.a = oVar;
-        this.b = siVar;
+        this.b = uiVar;
     }
 
-    @Override // org.telegram.ui.Components.jl
+    @Override // org.telegram.ui.Components.ll
     public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
         o oVar = this.a;
         oVar.getClass();
-        si siVar = this.b;
+        ui uiVar = this.b;
         if (messageMedia == null || messageMedia.geo == null) {
-            siVar.a(true);
+            uiVar.a(true);
             return;
         }
         TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
@@ -35,10 +35,10 @@ public final /* synthetic */ class e implements jl, zi {
         pageblockmap.h = 400;
         oVar.r.V1(pageblockmap);
         oVar.a0(true);
-        siVar.a(true);
+        uiVar.a(true);
     }
 
-    @Override // org.telegram.ui.Components.zi
+    @Override // org.telegram.ui.Components.bj
     public void i(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
         if (!arrayList.isEmpty()) {
             this.a.r.e2((fj) arrayList.get(0));

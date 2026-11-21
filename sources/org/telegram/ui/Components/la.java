@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class la extends kb0 {
+public final class la extends lb0 {
     public final /* synthetic */ boolean m0;
     public final /* synthetic */ boolean n0;
     public final /* synthetic */ sa o0;
@@ -21,7 +21,7 @@ public final class la extends kb0 {
         this.n0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         sa saVar = this.o0;
         saVar.X0(canvas, this);
@@ -49,7 +49,7 @@ public final class la extends kb0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.kb0, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.lb0, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i10);
         sa saVar = this.o0;

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.text.style.CharacterStyle;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class nk extends UndoView {
     public final /* synthetic */ int k0 = 1;
@@ -55,8 +55,8 @@ public final class nk extends UndoView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(bn bnVar, Activity activity, bn bnVar2, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(activity, bnVar2, true, i6Var);
+    public nk(bn bnVar, Activity activity, bn bnVar2, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(activity, bnVar2, true, h6Var);
         this.l0 = bnVar;
     }
 }

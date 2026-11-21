@@ -4,11 +4,11 @@ import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import org.telegram.ui.Components.gz0;
-import org.telegram.ui.Components.h6;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.iz0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class g {
     public static final b o = new b(1);
@@ -181,10 +181,10 @@ public final class g {
         ArrayList arrayList = aVar.b;
         if (arrayList.size() == 0) {
             if (aVar.d == null) {
-                aVar.d = new nd0(aVar.c);
+                aVar.d = new md0(aVar.c);
             }
-            nd0 nd0Var = aVar.d;
-            ((Choreographer) nd0Var.c).postFrameCallback((gz0) nd0Var.d);
+            md0 md0Var = aVar.d;
+            ((Choreographer) md0Var.c).postFrameCallback((iz0) md0Var.d);
         }
         if (arrayList.contains(this)) {
             return;
@@ -210,7 +210,7 @@ public final class g {
         this.k = new ArrayList();
         this.l = new ArrayList();
         this.d = null;
-        this.e = new h6(fVar, 1);
+        this.e = new i6(fVar, 1);
         this.j = 1.0f;
         this.m = null;
         this.n = Float.MAX_VALUE;

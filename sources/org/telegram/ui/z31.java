@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z31 implements org.telegram.ui.Components.qj0, te.b {
+public final /* synthetic */ class z31 implements org.telegram.ui.Components.sj0, te.b {
     public final /* synthetic */ c51 a;
 
     public /* synthetic */ z31(c51 c51Var) {
@@ -18,10 +18,10 @@ public final /* synthetic */ class z31 implements org.telegram.ui.Components.qj0
         this.a.t0();
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
         final c51 c51Var = this.a;
-        org.telegram.ui.ActionBar.u1[] u1VarArr = c51Var.h0;
+        org.telegram.ui.ActionBar.t1[] t1VarArr = c51Var.h0;
         h41 h41Var = c51Var.X;
         int i10 = h41Var.J;
         final int i11 = 0;
@@ -29,24 +29,24 @@ public final /* synthetic */ class z31 implements org.telegram.ui.Components.qj0
         if (i7 < i10 || i7 > h41Var.K) {
             int i13 = h41Var.V;
             if (i7 >= i13 && i7 <= h41Var.W) {
-                ((v41) c51Var.R.get(i7 - i13)).c(c51Var.a, c51Var, u1VarArr, true);
+                ((v41) c51Var.R.get(i7 - i13)).c(c51Var.a, c51Var, t1VarArr, true);
                 return true;
             }
             int i14 = h41Var.S;
             if (i7 >= i14 && i7 <= h41Var.T) {
-                ((v41) c51Var.P.get(i7 - i14)).c(c51Var.a, c51Var, u1VarArr, true);
+                ((v41) c51Var.P.get(i7 - i14)).c(c51Var.a, c51Var, t1VarArr, true);
                 return true;
             }
             int i15 = h41Var.Y;
             if (i7 >= i15 && i7 <= h41Var.Z) {
-                ((v41) c51Var.Q.get(i7 - i15)).c(c51Var.a, c51Var, u1VarArr, true);
+                ((v41) c51Var.Q.get(i7 - i15)).c(c51Var.a, c51Var, t1VarArr, true);
                 return true;
             }
         } else {
             final org.telegram.messenger.fj fjVar = ((z41) c51Var.z0.get(i7 - i10)).b;
             if (!fjVar.x4()) {
-                org.telegram.ui.Components.y60 I = org.telegram.ui.Components.y60.I(c51Var, view);
-                I.c(R.drawable.msg_stats, org.telegram.messenger.gd.M0(2131743312, null), new Runnable() { // from class: org.telegram.ui.y31
+                org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(c51Var, view);
+                I.c(R.drawable.msg_stats, org.telegram.messenger.gd.N0(2131743306, null), new Runnable() { // from class: org.telegram.ui.y31
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -67,7 +67,7 @@ public final /* synthetic */ class z31 implements org.telegram.ui.Components.qj0
                         }
                     }
                 }, false);
-                I.c(R.drawable.msg_msgbubble3, org.telegram.messenger.gd.M0(2131743313, null), new Runnable() { // from class: org.telegram.ui.y31
+                I.c(R.drawable.msg_msgbubble3, org.telegram.messenger.gd.N0(2131743307, null), new Runnable() { // from class: org.telegram.ui.y31
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {

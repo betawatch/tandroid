@@ -4,15 +4,15 @@ import android.os.RemoteException;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class bf implements e2.a1 {
     public final /* synthetic */ int a = 0;
     public final Object b;
     public final Object c;
 
-    public bf(p4.d0 d0Var, p4.i1 i1Var) {
-        this.b = new WeakReference(d0Var);
+    public bf(p4.e0 e0Var, p4.i1 i1Var) {
+        this.b = new WeakReference(e0Var);
         this.c = new WeakReference(i1Var);
     }
 
@@ -32,7 +32,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -59,7 +59,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -104,15 +104,15 @@ public final class bf implements e2.a1 {
                                     a8.la.p(z10);
                                     b10.s = new p4.g1(v0Var, i7, n1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
                                     b10.c.a(true, true);
-                                    p4.m0 m0Var = (p4.m0) b10.h.j.e;
-                                    m0Var.p0(m0Var.h.t);
+                                    p4.n0 n0Var = (p4.n0) b10.h.j.e;
+                                    n0Var.p0(n0Var.h.t);
                                     break;
                                 }
                             } else {
                                 q1Var = q1Var2;
                             }
-                            p4.m0 m0Var2 = (p4.m0) b10.h.j.e;
-                            m0Var2.p0(m0Var2.h.t);
+                            p4.n0 n0Var2 = (p4.n0) b10.h.j.e;
+                            n0Var2.p0(n0Var2.h.t);
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }
@@ -132,7 +132,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -150,7 +150,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     p4.i1 i1Var = (p4.i1) ((WeakReference) this.c).get();
@@ -180,7 +180,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -216,7 +216,7 @@ public final class bf implements e2.a1 {
                 }
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -257,8 +257,8 @@ public final class bf implements e2.a1 {
                         b10.s = new p4.g1(v0Var, i7, n1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z10, z14, o0Var2, j10, j11, j12, s1Var, q1Var);
                         b10.c.a(true, true);
                         try {
-                            p4.m0 m0Var = (p4.m0) b10.h.j.e;
-                            m0Var.p0(m0Var.h.t);
+                            p4.n0 n0Var = (p4.n0) b10.h.j.e;
+                            n0Var.p0(n0Var.h.t);
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }
@@ -278,7 +278,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     p4.g1 g1Var = b10.s;
@@ -341,8 +341,8 @@ public final class bf implements e2.a1 {
         }
     }
 
-    public p4.d0 b() {
-        return (p4.d0) ((WeakReference) this.b).get();
+    public p4.e0 b() {
+        return (p4.e0) ((WeakReference) this.b).get();
     }
 
     @Override // e2.a1
@@ -353,7 +353,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -426,7 +426,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -502,7 +502,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -510,8 +510,8 @@ public final class bf implements e2.a1 {
                         b10.s = g1Var.b(g1Var.w, i7, g1Var.v);
                         b10.c.a(true, true);
                         try {
-                            p4.m0 m0Var = (p4.m0) b10.h.j.e;
-                            m0Var.p0(m0Var.h.t);
+                            p4.n0 n0Var = (p4.n0) b10.h.j.e;
+                            n0Var.p0(n0Var.h.t);
                             break;
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
@@ -552,7 +552,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -621,7 +621,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -629,8 +629,8 @@ public final class bf implements e2.a1 {
                         b10.s = g1Var.b(i7, g1Var.z, z10);
                         b10.c.a(true, true);
                         try {
-                            p4.m0 m0Var = (p4.m0) b10.h.j.e;
-                            m0Var.p0(m0Var.h.t);
+                            p4.n0 n0Var = (p4.n0) b10.h.j.e;
+                            n0Var.p0(n0Var.h.t);
                             break;
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
@@ -649,7 +649,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     p4.g1 g1Var = b10.s;
@@ -721,7 +721,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     p4.i1 i1Var = (p4.i1) ((WeakReference) this.c).get();
@@ -765,8 +765,8 @@ public final class bf implements e2.a1 {
                         try {
                             pe peVar = b10.h.j;
                             i1Var.W();
-                            p4.m0 m0Var = (p4.m0) peVar.e;
-                            m0Var.p0(m0Var.h.t);
+                            p4.n0 n0Var = (p4.n0) peVar.e;
+                            n0Var.p0(n0Var.h.t);
                             break;
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
@@ -785,7 +785,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     p4.g1 g1Var = b10.s;
@@ -856,7 +856,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -901,17 +901,17 @@ public final class bf implements e2.a1 {
                                     a8.la.p(z10);
                                     b10.s = new p4.g1(v0Var, i7, n1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
                                     b10.c.a(true, true);
-                                    p4.m0 m0Var = (p4.m0) b10.h.j.e;
-                                    m0Var.h.t.K().getClass();
-                                    ((q4.l) m0Var.n.b).a.setPlaybackToLocal(eVar.b());
+                                    p4.n0 n0Var = (p4.n0) b10.h.j.e;
+                                    n0Var.h.t.K().getClass();
+                                    ((q4.l) n0Var.n.b).a.setPlaybackToLocal(eVar.b());
                                     break;
                                 }
                             } else {
                                 q1Var = q1Var2;
                             }
-                            p4.m0 m0Var2 = (p4.m0) b10.h.j.e;
-                            m0Var2.h.t.K().getClass();
-                            ((q4.l) m0Var2.n.b).a.setPlaybackToLocal(eVar.b());
+                            p4.n0 n0Var2 = (p4.n0) b10.h.j.e;
+                            n0Var2.h.t.K().getClass();
+                            ((q4.l) n0Var2.n.b).a.setPlaybackToLocal(eVar.b());
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }
@@ -931,7 +931,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     ab.c0 c0Var = b10.g.b;
@@ -955,7 +955,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -1041,7 +1041,7 @@ public final class bf implements e2.a1 {
                 }
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -1080,8 +1080,8 @@ public final class bf implements e2.a1 {
                         b10.s = new p4.g1(v0Var, i10, n1Var, b1Var, b1Var2, i7, w0Var, i11, z10, x1Var, l1Var, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z11, z12, i15, i16, i17, z13, z14, o0Var2, j10, j11, j12, s1Var, q1Var);
                         b10.c.a(true, true);
                         try {
-                            p4.m0 m0Var = (p4.m0) b10.h.j.e;
-                            m0Var.p0(m0Var.h.t);
+                            p4.n0 n0Var = (p4.n0) b10.h.j.e;
+                            n0Var.p0(n0Var.h.t);
                             break;
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
@@ -1100,7 +1100,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -1171,7 +1171,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -1193,7 +1193,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -1266,7 +1266,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -1333,7 +1333,7 @@ public final class bf implements e2.a1 {
             case 0:
                 break;
             default:
-                p4.d0 b10 = b();
+                p4.e0 b10 = b();
                 if (b10 != null) {
                     b10.u();
                     if (((p4.i1) ((WeakReference) this.c).get()) != null) {
@@ -1378,15 +1378,15 @@ public final class bf implements e2.a1 {
                                     a8.la.p(z10);
                                     b10.s = new p4.g1(v0Var, i7, n1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
                                     b10.c.a(true, true);
-                                    p4.m0 m0Var = (p4.m0) b10.h.j.e;
-                                    m0Var.p0(m0Var.h.t);
+                                    p4.n0 n0Var = (p4.n0) b10.h.j.e;
+                                    n0Var.p0(n0Var.h.t);
                                     break;
                                 }
                             } else {
                                 q1Var = q1Var2;
                             }
-                            p4.m0 m0Var2 = (p4.m0) b10.h.j.e;
-                            m0Var2.p0(m0Var2.h.t);
+                            p4.n0 n0Var2 = (p4.n0) b10.h.j.e;
+                            n0Var2.p0(n0Var2.h.t);
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }

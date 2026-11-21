@@ -1,30 +1,44 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.graphics.Point;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class q3 {
-    public static final q3 a;
-    public static final q3 b;
-    public static final q3 c;
-    public static final /* synthetic */ q3[] d;
+public final /* synthetic */ class q3 implements x10 {
+    public final /* synthetic */ x10 a;
+    public final /* synthetic */ TLRPC.WallPaper b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
 
-    static {
-        q3 q3Var = new q3("NONE", 0);
-        a = q3Var;
-        q3 q3Var2 = new q3("VERTICAL", 1);
-        b = q3Var2;
-        q3 q3Var3 = new q3("FULL", 2);
-        c = q3Var3;
-        d = new q3[]{q3Var, q3Var2, q3Var3};
+    public /* synthetic */ q3(x10 x10Var, TLRPC.WallPaper wallPaper, int i7, int i10, long j3) {
+        this.a = x10Var;
+        this.b = wallPaper;
+        this.c = i7;
+        this.d = i10;
+        this.e = j3;
     }
 
-    public static q3 valueOf(String str) {
-        return (q3) Enum.valueOf(q3.class, str);
-    }
-
-    public static q3[] values() {
-        return (q3[]) d.clone();
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        gg.a aVar = (gg.a) obj;
+        x10 x10Var = this.a;
+        if (aVar != null) {
+            x10Var.a(aVar);
+            return;
+        }
+        TLRPC.WallPaper wallPaper = this.b;
+        fc b10 = fc.b(wallPaper.document);
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        imageReceiver.A1 = false;
+        Point point = org.telegram.messenger.g0.q;
+        imageReceiver.q0(b10, (Math.min(point.x, point.y) / org.telegram.messenger.g0.p) + "_" + (Math.max(point.x, point.y) / org.telegram.messenger.g0.p) + "_f", null, ".jpg", wallPaper, 1);
+        imageReceiver.h1 = new org.telegram.tgnet.f(this.c, this.d, this.e, x10Var);
+        ec.D().M(imageReceiver, null);
     }
 }

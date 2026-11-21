@@ -1,6 +1,6 @@
 package di;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class m1 implements Runnable {
                 f6Var.d2(j3);
                 break;
             case 6:
-                fb fbVar = new fb(f6Var.getContext(), f6Var.J0, this.c, 10, null, new w2(4, f6Var, new boolean[]{false}), 0L);
+                fb fbVar = new fb(f6Var.getContext(), f6Var.J0, this.c, 10, null, new f2(6, f6Var, new boolean[]{false}), 0L);
                 fbVar.setOnDismissListener(new n3(f6Var, 0));
                 fbVar.show();
                 break;

@@ -19,8 +19,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import n6.c;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.md0;
 import pb.g;
 import pb.j;
 import pb.n;
@@ -29,7 +29,7 @@ import q6.p;
 import rb.b;
 import s6.d;
 import tb.e;
-import tg.x;
+import tg.y;
 import y7.d6;
 import y7.d9;
 import y7.f7;
@@ -41,11 +41,11 @@ import y7.k6;
 import y7.k7;
 import y7.l6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final d9 a;
-    public final x b;
+    public final y b;
     public final Executor c;
     public final AtomicReference d;
     public final CancellationTokenSource e = new CancellationTokenSource();
@@ -56,7 +56,7 @@ public class LanguageIdentifierImpl implements b {
         this.c = executor;
         this.d = new AtomicReference(eVar);
         this.f = eVar.g ? j6.c : j6.b;
-        this.b = new x(g.c().b());
+        this.b = new y(g.c().b());
     }
 
     public static final h6 k() {
@@ -105,11 +105,11 @@ public class LanguageIdentifierImpl implements b {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
                     String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), ks.e3)));
-                    hn hnVar = new hn(28);
+                    jn jnVar = new jn(28);
                     aa.b0 b0Var = new aa.b0();
                     b0Var.a = e10;
-                    hnVar.b = new g7(b0Var);
-                    languageIdentifierImpl.j(elapsedRealtime, z11, new i7(hnVar), k6.b);
+                    jnVar.b = new g7(b0Var);
+                    languageIdentifierImpl.j(elapsedRealtime, z11, new i7(jnVar), k6.b);
                     return e10;
                 } catch (RuntimeException e11) {
                     languageIdentifierImpl.j(elapsedRealtime, z11, null, k6.c);
@@ -130,11 +130,11 @@ public class LanguageIdentifierImpl implements b {
             hashMap.put(l6Var, Long.valueOf(elapsedRealtime2));
             f7 f7Var = new f7();
             f7Var.b = k();
-            nd0 nd0Var = new nd0(29, false);
-            nd0Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            nd0Var.d = Boolean.valueOf(z10);
-            nd0Var.c = k6Var;
-            f7Var.a = new d6(nd0Var);
+            md0 md0Var = new md0(29, false);
+            md0Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
+            md0Var.d = Boolean.valueOf(z10);
+            md0Var.c = k6Var;
+            f7Var.a = new d6(md0Var);
             if (i7Var != null) {
                 f7Var.c = i7Var;
             }
@@ -146,16 +146,16 @@ public class LanguageIdentifierImpl implements b {
             n.a.execute(new qa(d9Var, xaVar, l6Var, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(d9Var.g), 7));
         }
         long currentTimeMillis = System.currentTimeMillis();
-        x xVar = this.b;
+        y yVar = this.b;
         int i7 = this.f == j6.c ? 24603 : 24602;
         int i10 = k6Var.a;
         long j10 = currentTimeMillis - elapsedRealtime;
-        synchronized (xVar) {
+        synchronized (yVar) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
-            if (((AtomicLong) xVar.c).get() != -1 && elapsedRealtime3 - ((AtomicLong) xVar.c).get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (((AtomicLong) yVar.c).get() != -1 && elapsedRealtime3 - ((AtomicLong) yVar.c).get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            ((d) xVar.b).f(new p(0, Arrays.asList(new k(i7, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new va(xVar, elapsedRealtime3, 9));
+            ((d) yVar.b).f(new p(0, Arrays.asList(new k(i7, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new va(yVar, elapsedRealtime3, 9));
         }
     }
 }

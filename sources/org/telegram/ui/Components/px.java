@@ -1,37 +1,38 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class px implements fy {
-    public final /* synthetic */ qx a;
+public final class px implements View.OnClickListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ hi.w4 b;
+    public final /* synthetic */ androidx.mediarouter.app.w c;
 
-    public px(qx qxVar) {
-        this.a = qxVar;
+    public px(androidx.mediarouter.app.w wVar, boolean[] zArr, hi.w4 w4Var) {
+        this.c = wVar;
+        this.a = zArr;
+        this.b = w4Var;
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final void e() {
-        qx qxVar = this.a;
-        if (qxVar.G.W.G) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        sx sxVar = (sx) this.c.b;
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
             return;
         }
-        ArrayList arrayList = new ArrayList();
-        qxVar.G.W.e(true);
-        qx.E(qxVar, new dw(3, this, arrayList), arrayList, true);
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        String str = this.a.w;
-        dw dwVar = new dw(2, this, str);
-        if (org.telegram.messenger.j6.d(str)) {
-            iv0.G3.c(org.telegram.messenger.j10.t0, str, new ph(3, linkedHashSet, dwVar));
-        } else {
-            dwVar.run();
+        zArr[0] = true;
+        org.telegram.ui.ActionBar.t1[] t1VarArr = {new org.telegram.ui.ActionBar.t1(3, sxVar.G.getContext(), null)};
+        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
+        ty tyVar = sxVar.G;
+        String str = sxVar.x;
+        if (str == null) {
+            str = tyVar.X0[0];
         }
+        tL_messages_getEmojiURL.lang_code = str;
+        org.telegram.messenger.g0.h3(new org.telegram.ui.b0(this, t1VarArr, ConnectionsManager.getInstance(tyVar.d1).sendRequest(tL_messages_getEmojiURL, new bi.q1(this, t1VarArr, this.b, 16)), 11), 1000L);
     }
 }

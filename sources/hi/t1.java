@@ -1,78 +1,111 @@
 package hi;
 
+import android.content.Context;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.uy;
-import org.telegram.ui.Components.vt0;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class t1 extends uy {
-    public final vt0 X;
-    public final /* synthetic */ u1 Y;
+public final class t1 extends u1 implements fs {
+    public final di.b1 b;
+    public final r1 c;
+    public final d2 d;
+    public final s1 e;
+    public final q1 f;
+    public final ArrayList h;
+    public final ArrayList n;
+    public final /* synthetic */ i2 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t1(u1 u1Var) {
-        super(100, true);
-        this.Y = u1Var;
-        this.X = new vt0();
-        this.O = new bi.s2(this, 5);
+    public t1(i2 i2Var, Context context) {
+        super(context);
+        this.r = i2Var;
+        this.f = new q1();
+        this.h = new ArrayList();
+        this.n = new ArrayList();
+        di.b1 b1Var = new di.b1(2, context, this);
+        this.b = b1Var;
+        r1 r1Var = new r1(this);
+        this.c = r1Var;
+        b1Var.setAdapter(r1Var);
+        s1 s1Var = new s1(this);
+        this.e = s1Var;
+        b1Var.setLayoutManager(s1Var);
+        b1Var.i(new ai.j0(this, 1));
+        b1Var.setClipToPadding(true);
+        b1Var.setVerticalScrollBarEnabled(false);
+        bi.l8 l8Var = new bi.l8(this, 9);
+        b1Var.setOnTouchListener(new p1(0, this, l8Var));
+        b1Var.setOnItemClickListener(l8Var);
+        b1Var.setOnScrollListener(new bi.u1(this, 14));
+        addView(b1Var, c8.ma.d(-1, -1.0f, ks.E1, 0.0f, 58.0f, 0.0f, 40.0f));
+        int i7 = i2.C1;
+        d2 d2Var = new d2(context, i2Var.J0);
+        this.d = d2Var;
+        d2Var.x = new bi.b(this, 25);
+        d2Var.a(2, false);
+        addView(d2Var, c8.ma.e(-1, -2, 48));
     }
 
-    @Override // v4.p0
-    public final int A() {
-        return B();
+    @Override // hi.u1
+    public final void a(int i7) {
+        r1 r1Var = this.c;
+        r1.E(r1Var, false);
+        if (this.n.isEmpty() && TextUtils.isEmpty(this.r.m1)) {
+            r1Var.G();
+        }
+        r1Var.H(null);
     }
 
-    @Override // org.telegram.ui.Components.uy
-    public final vt0 D1(int i7) {
-        TLRPC.Document document;
-        ArrayList<TLRPC.DocumentAttribute> arrayList;
-        TLRPC.PhotoSize w10;
-        int i10;
-        int i11;
-        vt0 vt0Var = this.X;
-        vt0Var.c = false;
-        Object F = this.Y.c.F(i7);
-        if (F instanceof TLRPC.BotInlineResult) {
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) F;
-            document = botInlineResult.document;
-            if (document != null) {
-                arrayList = document.attributes;
-            } else {
-                TLRPC.WebDocument webDocument = botInlineResult.content;
-                if (webDocument != null) {
-                    arrayList = webDocument.attributes;
-                } else {
-                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
-                    arrayList = webDocument2 != null ? webDocument2.attributes : null;
-                }
+    @Override // hi.u1
+    public final float b() {
+        int i7 = 0;
+        while (true) {
+            di.b1 b1Var = this.b;
+            if (i7 >= b1Var.getChildCount()) {
+                return 0.0f;
             }
-        } else {
-            if (!(F instanceof TLRPC.Document)) {
-                vt0Var.c = true;
-                return vt0Var;
+            Object tag = b1Var.getChildAt(i7).getTag();
+            if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
+                return Math.max(0, r2.getBottom());
             }
-            document = (TLRPC.Document) F;
-            arrayList = document.attributes;
+            i7++;
         }
-        vt0Var.b = 100.0f;
-        vt0Var.a = 100.0f;
-        vt0Var.c = false;
-        if (document != null && (w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false)) != null && (i10 = w10.w) != 0 && (i11 = w10.h) != 0) {
-            vt0Var.a = i10;
-            vt0Var.b = i11;
+    }
+
+    @Override // hi.u1
+    public final void c() {
+        this.d.setTranslationY(org.telegram.messenger.g0.L(10.0f) + Math.max(0.0f, b()));
+    }
+
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == ks.X0) {
+            r1.E(this.c, true);
         }
-        if (arrayList != null) {
-            for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i12);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    vt0Var.a = documentAttribute.w;
-                    vt0Var.b = documentAttribute.h;
-                    break;
-                }
-            }
-        }
-        return vt0Var;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        int i7 = i2.C1;
+        ks.f(this.r.a).c(this, ks.X0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        int i7 = i2.C1;
+        ks.f(this.r.a).n(this, ks.X0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11 = i2.C1;
+        int i12 = this.r.u0;
+        setPadding(i12, 0, i12, org.telegram.messenger.g0.n);
+        super.onMeasure(i7, i10);
     }
 }

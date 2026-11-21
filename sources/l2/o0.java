@@ -21,10 +21,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import kg.x1;
 import org.telegram.messenger.ks;
 import x2.r1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class o0 implements Handler.Callback, x2.d0, h1, d3.v {
     public static final long x0 = h2.l0.h0(10000);
@@ -151,7 +152,7 @@ public final class o0 implements Handler.Callback, x2.d0, h1, d3.v {
         this.q0 = true;
         h2.i0 a10 = g0Var.a(looper, null);
         this.O = a10;
-        this.I = new w0(dVar2, a10, new ki.e(this, 9));
+        this.I = new w0(dVar2, a10, new x1(this, 10));
         this.J = new f1(this, dVar2, a10, iVar);
         m6.n nVar = new m6.n(7);
         this.r = nVar;
@@ -1109,7 +1110,7 @@ public final class o0 implements Handler.Callback, x2.d0, h1, d3.v {
         l0Var.f = g1Var;
         if (z10) {
             f0 f0Var = this.H.b;
-            f0Var.j.d(new kg.h0(14, f0Var, l0Var));
+            f0Var.j.d(new ji.i(16, f0Var, l0Var));
             this.Z = new l0(this.Y);
         }
     }
@@ -2050,7 +2051,7 @@ public final class o0 implements Handler.Callback, x2.d0, h1, d3.v {
     public final void Z(j1 j1Var) {
         Looper looper = j1Var.e;
         if (looper.getThread().isAlive()) {
-            this.G.a(looper, null).d(new kg.j0(this, j1Var));
+            this.G.a(looper, null).d(new kg.i0(this, j1Var));
         } else {
             h2.a.l("TAG", "Trying to send message on a dead thread.");
             j1Var.a(false);
@@ -2975,7 +2976,7 @@ public final class o0 implements Handler.Callback, x2.d0, h1, d3.v {
             }
             int i7 = this.X;
             if (i7 > 0) {
-                this.O.d(new ai.w0(this, i7, 17));
+                this.O.d(new ai.y0(this, i7, 17));
             }
             this.X = 0;
             this.V = false;

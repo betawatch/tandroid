@@ -3,10 +3,10 @@ package sg;
 import android.animation.ValueAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.q2;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class d0 implements Runnable {
                     i0Var.h = new RectF();
                 }
                 i0Var.c.a(i0Var.h);
-                hn hnVar = i0Var.a;
-                if (hnVar != null) {
-                    hnVar.l();
+                jn jnVar = i0Var.a;
+                if (jnVar != null) {
+                    jnVar.l();
                     break;
                 }
                 break;
@@ -45,9 +45,9 @@ public final /* synthetic */ class d0 implements Runnable {
                 if (i0Var.H == (x0Var != null)) {
                     if (x0Var != i0Var.d) {
                         i0Var.d = x0Var;
-                        hn hnVar2 = i0Var.a;
-                        if (hnVar2 != null) {
-                            hnVar2.l();
+                        jn jnVar2 = i0Var.a;
+                        if (jnVar2 != null) {
+                            jnVar2.l();
                             break;
                         }
                     }
@@ -62,12 +62,12 @@ public final /* synthetic */ class d0 implements Runnable {
                     i0Var.K = ofFloat;
                     ofFloat.addUpdateListener(new c0(i0Var, i10));
                     i0Var.K.addListener(new g0(i0Var, i10));
-                    i0Var.K.setInterpolator(lr.h);
+                    i0Var.K.setInterpolator(nr.h);
                     i0Var.K.start();
                     i0Var.d = x0Var;
-                    hn hnVar3 = i0Var.a;
-                    if (hnVar3 != null) {
-                        hnVar3.l();
+                    jn jnVar3 = i0Var.a;
+                    if (jnVar3 != null) {
+                        jnVar3.l();
                     }
                     if (i0Var.H) {
                         q2.y.a();

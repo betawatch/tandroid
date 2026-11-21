@@ -1,10 +1,10 @@
 package fi;
 
 import android.view.ViewGroup;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.mj0;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class m extends rg.b {
     public final boolean d;
@@ -15,7 +15,7 @@ public final class m extends rg.b {
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return false;
     }
@@ -48,6 +48,6 @@ public final class m extends rg.b {
         if (z10) {
             pVar.d(1.0f, 1.0f, 0.0f, false);
         }
-        return new kj0(pVar);
+        return new mj0(pVar);
     }
 }

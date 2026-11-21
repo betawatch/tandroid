@@ -10,7 +10,7 @@ import android.os.Build;
 import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class o6 extends ReplacementSpan {
     public static Typeface x;
@@ -18,7 +18,7 @@ public final class o6 extends ReplacementSpan {
     public final String b;
     public final String c;
     public final String d;
-    public final org.telegram.ui.ActionBar.i6 e;
+    public final org.telegram.ui.ActionBar.h6 e;
     public final TextPaint f;
     public final Paint h;
     public final RectF n;
@@ -26,7 +26,7 @@ public final class o6 extends ReplacementSpan {
     public float s;
     public int w;
 
-    public o6(String str, String str2, String str3, String str4, org.telegram.ui.ActionBar.i6 i6Var) {
+    public o6(String str, String str2, String str3, String str4, org.telegram.ui.ActionBar.h6 h6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.f = textPaint;
         this.h = new Paint(1);
@@ -35,7 +35,7 @@ public final class o6 extends ReplacementSpan {
         this.b = str2;
         this.c = str3;
         this.d = str4;
-        this.e = i6Var;
+        this.e = h6Var;
         if (x == null) {
             if (Build.VERSION.SDK_INT >= 26) {
                 x = new Typeface.Builder(org.telegram.messenger.t0.b.getAssets(), "fonts/rmono_var.ttf").setFontVariationSettings("'wght' 500").setWeight(500).build();
@@ -55,7 +55,7 @@ public final class o6 extends ReplacementSpan {
         textPaint.setTextSize(textSize);
         int color = paint.getColor();
         textPaint.setColor(color);
-        int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.a7, this.e);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, this.e);
         Paint paint2 = this.h;
         paint2.setColor(w02);
         Paint.FontMetricsInt fontMetricsInt = textPaint.getFontMetricsInt();
@@ -89,7 +89,7 @@ public final class o6 extends ReplacementSpan {
             float max = Math.max(0.0f, Math.min(0.4f, textPaint.measureText("0") / measureText3));
             f11 = f17;
             float min = Math.min(0.49f, ((0.5f - max) * 0.75f) + max);
-            int r12 = org.telegram.ui.ActionBar.n6.r1(0.0f, color);
+            int r12 = org.telegram.ui.ActionBar.m6.r1(0.0f, color);
             f12 = f19;
             this.r = new LinearGradient(f19, 0.0f, f19 + measureText3, 0.0f, new int[]{color, color, r12, r12, color, color}, new float[]{0.0f, max, min, 1.0f - min, 1.0f - max, 1.0f}, Shader.TileMode.CLAMP);
             this.s = f12;

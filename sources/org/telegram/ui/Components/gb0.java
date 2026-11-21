@@ -1,243 +1,166 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
-import android.util.StateSet;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Color;
+import android.graphics.ComposeShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
+import android.os.Build;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class gb0 {
+    public static final float[] k = new float[4];
+    public static final Matrix l = new Matrix();
+    public final eb0 d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final h6.m a = new h6.m(new l2(24));
+    public final a8.xa b = new a8.xa(17, (byte) 0);
+    public final ci.b1 c = new ci.b1(3);
+    public final Matrix i = new Matrix();
+    public final RectF j = new RectF();
 
-    public /* synthetic */ gb0(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public gb0() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d = new eb0();
+        } else {
+            this.d = null;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((hi.v) this.b).invalidateSelf();
-                break;
-            case 1:
-                ((h00) this.b).invalidateSelf();
-                break;
-            case 2:
-                ((bc0) this.b).d();
-                break;
-            case 3:
-                jc0 jc0Var = (jc0) this.b;
-                jc0Var.getClass();
-                try {
-                    jc0Var.d.N.performHapticFeedback(3, 2);
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
-            case 4:
-                ((xc0) this.b).o1.start();
-                break;
-            case 5:
-                cz czVar = ((ae0) this.b).c.m0;
-                if (czVar != null) {
-                    czVar.c(false, true, false);
-                    break;
-                }
-                break;
-            case 6:
-                ce0 ce0Var = (ce0) this.b;
-                ce0Var.r = false;
-                ce0Var.invalidate();
-                break;
-            case 7:
-                ((ee0) this.b).h = null;
-                break;
-            case 8:
-                ee0 ee0Var = (ee0) ((ji.j) this.b).c;
-                ee0Var.d.q0(ee0Var.e, false);
-                break;
-            case 9:
-                org.telegram.ui.dq0 dq0Var = (org.telegram.ui.dq0) this.b;
-                if (dq0Var.y) {
-                    dq0Var.h("pollPosition();");
-                }
-                if (dq0Var.H) {
-                    org.telegram.messenger.g0.h3(dq0Var.M, 500L);
-                    break;
-                }
-                break;
-            case 10:
-                ((ve0) this.b).f();
-                break;
-            case 11:
-                try {
-                    ug0 ug0Var = ((tg0) this.b).b;
-                    if (ug0Var.getParent() instanceof ViewGroup) {
-                        ((ViewGroup) ug0Var.getParent()).removeView(ug0Var);
-                    }
-                    ug0Var.R.run();
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            case 12:
-                ((RLottieNative) this.b).d();
-                break;
-            case 13:
-                vi0 vi0Var = (vi0) this.b;
-                vi0Var.y0 = null;
-                vi0Var.j();
-                ui0 ui0Var = vi0Var.h0;
-                if (ui0Var != null) {
-                    ui0Var.z();
-                    break;
-                }
-                break;
-            case 14:
-                ((si0) this.b).I.a.setVisibility(4);
-                break;
-            case 15:
-                ((ve) this.b).a();
-                break;
-            case 16:
-                xi0 xi0Var = (xi0) this.b;
-                f61 f61Var = xi0Var.n;
-                if (f61Var != null) {
-                    boolean d02 = f61Var.d0();
-                    float S = xi0Var.n.S() / xi0Var.n.U();
-                    float f10 = xi0Var.s;
-                    if (S < f10) {
-                        xi0Var.n.q0((long) (f10 * r2.U()), false);
-                    } else if (S > xi0Var.w || (xi0Var.d0 && !d02 && xi0Var.x && xi0Var.n.S() >= xi0Var.n.U() - 50)) {
-                        xi0Var.setPlaying(false);
-                        d02 = false;
-                    }
-                    if (d02) {
-                        org.telegram.messenger.g0.h3(xi0Var.y, 16L);
-                    }
-                    if (xi0Var.d0) {
-                        xi0Var.i(true);
-                    }
-                }
-                xi0Var.invalidate();
-                break;
-            case 17:
-                ck0 ck0Var = (ck0) this.b;
-                ck0Var.U1 = null;
-                ck0Var.T1 = null;
-                org.telegram.ui.Cells.y yVar = ck0Var.C1;
-                if (yVar != null) {
-                    Drawable current = yVar.getCurrent();
-                    if (current instanceof TransitionDrawable) {
-                        ((TransitionDrawable) current).resetTransition();
-                    }
-                }
-                org.telegram.ui.Cells.y yVar2 = ck0Var.C1;
-                if (yVar2 != null && yVar2.isStateful()) {
-                    ck0Var.C1.setState(StateSet.NOTHING);
-                    break;
-                }
-                break;
-            case 18:
-                pk0 pk0Var = (pk0) this.b;
-                if (pk0Var.f0 && pk0Var.k0() != pk0Var.j0) {
-                    pk0Var.q0("on screen, settled after start", true);
-                    break;
-                }
-                break;
-            case 19:
-                ql0 ql0Var = (ql0) this.b;
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                ArrayList arrayList4 = new ArrayList();
-                int i7 = ql0Var.d;
-                org.telegram.messenger.w7.G(i7).y(arrayList);
-                org.telegram.messenger.w7.G(i7).P(arrayList2);
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    org.telegram.messenger.w7.G(i7);
-                    if (org.telegram.messenger.w7.M(((org.telegram.messenger.fj) arrayList.get(i10)).k, false, true).exists()) {
-                        arrayList3.add((org.telegram.messenger.fj) arrayList.get(i10));
-                    }
-                }
-                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    org.telegram.messenger.w7.G(i7);
-                    if (!org.telegram.messenger.w7.M(((org.telegram.messenger.fj) arrayList2.get(i11)).k, false, true).exists()) {
-                        arrayList4.add((org.telegram.messenger.fj) arrayList2.get(i11));
-                    }
-                }
-                org.telegram.messenger.g0.g3(new k7(ql0Var, arrayList3, arrayList4, 22));
-                break;
-            case 20:
-                ((sl0) this.b).invalidateSelf();
-                break;
-            case 21:
-                ((cm0) this.b).f.setVisibility(8);
-                break;
-            case 22:
-                ((org.telegram.ui.kw) this.b).o();
-                break;
-            case 23:
-                ((y60) this.b).s();
-                break;
-            case 24:
-                ((tm0) this.b).setOverscrolling(false);
-                break;
-            case 25:
-                ((ym0) this.b).getClass();
-                break;
-            case 26:
-                org.telegram.ui.Cells.r1 r1Var = ((bn0) this.b).n;
-                if (r1Var != null) {
-                    r1Var.invalidate();
-                    break;
-                }
-                break;
-            case 27:
-                cn0 cn0Var = (cn0) this.b;
-                cn0Var.q = false;
-                cn0Var.b.run();
-                break;
-            case 28:
-                ((fo0) this.b).b.c1(1);
-                break;
-            default:
-                cp0 cp0Var = (cp0) this.b;
-                hi.k1[] k1VarArr = cp0Var.a;
-                if (cp0Var.b != 1) {
-                    for (hi.k1 k1Var : k1VarArr) {
-                        org.telegram.ui.ActionBar.n5 n5Var = (org.telegram.ui.ActionBar.n5) k1Var.e;
-                        n5Var.setAlpha(1.0f);
-                        n5Var.setScaleX(1.0f);
-                        n5Var.setScaleY(1.0f);
-                        ((org.telegram.ui.ActionBar.n5) k1Var.f).setAlpha(0.0f);
-                    }
-                    cp0Var.F = false;
-                    org.telegram.messenger.g0.h3(cp0Var.H, 4000L);
-                    break;
-                } else {
-                    cp0Var.F = !cp0Var.F;
-                    for (hi.k1 k1Var2 : k1VarArr) {
-                        org.telegram.ui.ActionBar.n5 n5Var2 = (org.telegram.ui.ActionBar.n5) k1Var2.e;
-                        org.telegram.ui.ActionBar.n5 n5Var3 = (org.telegram.ui.ActionBar.n5) k1Var2.f;
-                        n5Var2.setPivotX(0.0f);
-                        n5Var3.setPivotX(0.0f);
-                        if (cp0Var.F) {
-                            n5Var2.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
-                            n5Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
-                        } else {
-                            n5Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
-                            n5Var3.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
-                        }
-                    }
-                    org.telegram.messenger.g0.h3(cp0Var.H, 4000L);
-                    break;
-                }
+    public static void a(Matrix matrix, float[] fArr) {
+        Matrix matrix2 = l;
+        matrix.invert(matrix2);
+        float[] fArr2 = k;
+        fArr2[0] = 0.0f;
+        fArr2[1] = 0.0f;
+        fArr2[2] = 1.0f;
+        fArr2[3] = 1.0f;
+        matrix2.mapPoints(fArr2);
+        fArr[0] = fArr2[2] - fArr2[0];
+        fArr[1] = fArr2[3] - fArr2[1];
+        fArr[2] = fArr2[0];
+        fArr[3] = fArr2[1];
+    }
+
+    public static boolean b(float f10) {
+        return Math.abs(f10 - 1.0f) <= 1.0E-4f;
+    }
+
+    public final void c(RectF rectF) {
+        float f10 = this.e;
+        float f11 = this.f;
+        RectF rectF2 = this.j;
+        rectF2.set(0.0f, 0.0f, f10, f11);
+        Matrix.ScaleToFit scaleToFit = Matrix.ScaleToFit.FILL;
+        Matrix matrix = this.i;
+        matrix.setRectToRect(rectF2, rectF, scaleToFit);
+        ci.b1 b1Var = this.c;
+        fb0 fb0Var = (fb0) b1Var.c;
+        fb0Var.b.set(matrix);
+        BitmapShader bitmapShader = fb0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
         }
+        fb0 fb0Var2 = (fb0) b1Var.d;
+        fb0Var2.b.set(matrix);
+        BitmapShader bitmapShader2 = fb0Var2.d;
+        if (bitmapShader2 != null) {
+            bitmapShader2.setLocalMatrix(matrix);
+        }
+        eb0 eb0Var = this.d;
+        if (eb0Var == null || Build.VERSION.SDK_INT < 33) {
+            return;
+        }
+        float[] fArr = eb0Var.g;
+        a(matrix, fArr);
+        eb0Var.e.a(fArr);
+        eb0Var.f.a(fArr);
+    }
+
+    public final void d(Matrix matrix) {
+        ci.b1 b1Var = this.c;
+        float[] fArr = (float[]) b1Var.h;
+        a(matrix, fArr);
+        fb0 fb0Var = (fb0) b1Var.e;
+        fb0Var.b.set(matrix);
+        BitmapShader bitmapShader = fb0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
+        }
+        boolean z10 = false;
+        fb0Var.a(b(fArr[0]) && b(fArr[1]));
+        eb0 eb0Var = this.d;
+        if (eb0Var == null || Build.VERSION.SDK_INT < 33) {
+            return;
+        }
+        float[] fArr2 = eb0Var.g;
+        a(matrix, fArr2);
+        fb0 fb0Var2 = eb0Var.d;
+        if (b(fArr2[0]) && b(fArr2[1])) {
+            z10 = true;
+        }
+        fb0Var2.a(z10);
+        eb0Var.e.b(fArr2);
+        eb0Var.f.b(fArr2);
+    }
+
+    public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i7, int i10, int i11, boolean z10) {
+        Bitmap bitmap3;
+        Bitmap bitmap4 = (Bitmap) this.a.r(bitmap2);
+        if (i11 >= 0) {
+            int o4 = i0.a.o(i7, ((Color.alpha(i7) * i10) * i11) / 25500);
+            a8.xa xaVar = this.b;
+            ih.a aVar = (ih.a) xaVar.c;
+            if (aVar.a(bitmap) || o4 != xaVar.b || ((Bitmap) xaVar.d) == null) {
+                Bitmap bitmap5 = (Bitmap) xaVar.d;
+                if (bitmap5 == null || bitmap5.getWidth() != bitmap.getWidth() || ((Bitmap) xaVar.d).getHeight() != bitmap.getHeight()) {
+                    xaVar.d = Bitmap.createBitmap(bitmap);
+                }
+                Utilities.applySoftLight(bitmap, (Bitmap) xaVar.d, o4);
+                aVar.b(bitmap);
+                xaVar.b = o4;
+            }
+            bitmap3 = (Bitmap) xaVar.d;
+        } else {
+            bitmap3 = null;
+        }
+        Bitmap bitmap6 = bitmap3;
+        this.e = bitmap.getWidth();
+        this.f = bitmap.getHeight();
+        this.g = bitmap4.getWidth();
+        this.h = bitmap4.getHeight();
+        eb0 eb0Var = this.d;
+        if (eb0Var != null && z10 && Build.VERSION.SDK_INT >= 33) {
+            return eb0Var.a(bitmap, bitmap4, bitmap6, i10, i11);
+        }
+        ci.b1 b1Var = this.c;
+        cn cnVar = (cn) b1Var.f;
+        cn cnVar2 = (cn) b1Var.g;
+        fb0 fb0Var = (fb0) b1Var.d;
+        Paint paint = (Paint) b1Var.b;
+        fb0 fb0Var2 = (fb0) b1Var.c;
+        boolean b10 = fb0Var2.b(bitmap);
+        fb0 fb0Var3 = (fb0) b1Var.e;
+        boolean b11 = b10 | fb0Var3.b(bitmap4);
+        if (i11 >= 0) {
+            if ((fb0Var.b(bitmap6) | b11) || b1Var.a != 1) {
+                b1Var.a = 1;
+                paint.setShader(new ComposeShader(fb0Var2.d, new ComposeShader(fb0Var.d, fb0Var3.d, PorterDuff.Mode.DST_IN), PorterDuff.Mode.SRC_OVER));
+                return paint;
+            }
+        } else if ((cnVar2.R(i0.a.o(-1, ((-i11) * i10) / 100)) | b11 | cnVar.R(-16777216)) || b1Var.a != 2) {
+            b1Var.a = 2;
+            paint.setShader(new ComposeShader((bg.l) cnVar.b, new ComposeShader(new ComposeShader(fb0Var2.d, fb0Var3.d, PorterDuff.Mode.DST_IN), (bg.l) cnVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
+            return paint;
+        }
+        return paint;
     }
 }

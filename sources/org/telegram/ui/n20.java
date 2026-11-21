@@ -4,16 +4,16 @@ import android.content.SharedPreferences;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class n20 implements org.telegram.ui.ActionBar.r2 {
+public final class n20 implements org.telegram.ui.ActionBar.q2 {
     public final /* synthetic */ f40 a;
 
     public n20(f40 f40Var) {
         this.a = f40Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.ActionBar.q2
     public final void v() {
         CountDownLatch groupCallBottomSheetLatch;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
@@ -28,13 +28,13 @@ public final class n20 implements org.telegram.ui.ActionBar.r2 {
             }
             g12.edit().putBoolean("reminderhint", true).commit();
             if (f40Var.i2 == null) {
-                org.telegram.ui.Components.j30 j30Var = new org.telegram.ui.Components.j30(f40Var.getContext(), 8);
-                f40Var.i2 = j30Var;
-                j30Var.setAlpha(0.0f);
+                org.telegram.ui.Components.m30 m30Var = new org.telegram.ui.Components.m30(f40Var.getContext(), 8);
+                f40Var.i2 = m30Var;
+                m30Var.setAlpha(0.0f);
                 f40Var.i2.setVisibility(4);
                 f40Var.i2.setShowingDuration(4000L);
                 f40Var.b.addView(f40Var.i2, c8.ma.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
-                f40Var.i2.setText(org.telegram.messenger.gd.M0(2131743201, null));
+                f40Var.i2.setText(org.telegram.messenger.gd.N0(2131743195, null));
                 f40Var.i2.b();
             }
             f40Var.i2.setExtraTranslationY(-org.telegram.messenger.g0.m);
@@ -42,7 +42,7 @@ public final class n20 implements org.telegram.ui.ActionBar.r2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.ActionBar.q2
     public final boolean x() {
         return true;
     }

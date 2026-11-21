@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e20 extends FrameLayout {
     public final Rect a;
@@ -74,7 +74,7 @@ public final class e20 extends FrameLayout {
         if (d20Var.j1) {
             for (int i13 = 0; i13 < d20Var.getChildCount(); i13++) {
                 childAt = d20Var.getChildAt(i13);
-                if (childAt instanceof org.telegram.ui.Components.dg0) {
+                if (childAt instanceof org.telegram.ui.Components.fg0) {
                     break;
                 }
             }

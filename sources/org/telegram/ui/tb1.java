@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tb1 implements Runnable {
     public final /* synthetic */ int a;
@@ -107,13 +107,13 @@ public final /* synthetic */ class tb1 implements Runnable {
                 hc1Var4.L.setAlpha(0.0f);
                 hc1Var4.M0.setAlpha(0.0f);
                 hc1Var4.Z.c0 = true;
-                org.telegram.messenger.g0.h3(new b31(21, hc1Var4, b10), 32L);
+                org.telegram.messenger.g0.h3(new mz0(23, hc1Var4, b10), 32L);
                 break;
             case 12:
                 hc1 hc1Var5 = this.b;
                 hc1Var5.R0 = false;
-                org.telegram.ui.Components.pp ppVar = hc1Var5.N0;
-                boolean z10 = ppVar != null && ppVar.W;
+                org.telegram.ui.Components.rp rpVar = hc1Var5.N0;
+                boolean z10 = rpVar != null && rpVar.W;
                 if (hc1Var5.z0 && hc1Var5.x0 && !hc1Var5.C0 && !z10) {
                     hc1Var5.K0 = System.currentTimeMillis();
                     hc1Var5.r(false);

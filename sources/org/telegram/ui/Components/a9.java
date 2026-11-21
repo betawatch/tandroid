@@ -9,16 +9,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class a9 extends FrameLayout {
     public final z8 E;
-    public o5 a;
-    public o5 b;
+    public p5 a;
+    public p5 b;
     public q9 c;
     public q9 d;
-    public p10 e;
-    public p10 f;
+    public s10 e;
+    public s10 f;
     public final TextView h;
     public final TLRPC.TL_emojiList n;
     public final int r;
@@ -34,7 +34,7 @@ public abstract class a9 extends FrameLayout {
         this.s = 0;
         this.w = 0;
         this.x = 1.0f;
-        this.E = new z8((gm) this);
+        this.E = new z8((im) this);
         TLRPC.TL_emojiList a10 = a(i7);
         this.n = a10;
         this.c = new q9(context);
@@ -42,9 +42,9 @@ public abstract class a9 extends FrameLayout {
         addView(this.c, c8.ma.e(50, 50, 1));
         addView(this.d, c8.ma.e(50, 50, 1));
         if (!a10.document_id.isEmpty()) {
-            o5 o5Var = new o5(4, i7, a10.document_id.get(0).longValue());
-            this.a = o5Var;
-            this.c.setAnimatedEmojiDrawable(o5Var);
+            p5 p5Var = new p5(4, i7, a10.document_id.get(0).longValue());
+            this.a = p5Var;
+            this.c.setAnimatedEmojiDrawable(p5Var);
             b();
         }
         int[] iArr = y8.d0[this.s];
@@ -52,16 +52,16 @@ public abstract class a9 extends FrameLayout {
         int i11 = iArr[1];
         int i12 = iArr[2];
         int i13 = iArr[3];
-        p10 p10Var = new p10();
-        this.e = p10Var;
-        p10Var.d(i10, i11, i12, i13);
+        s10 s10Var = new s10();
+        this.e = s10Var;
+        s10Var.d(i10, i11, i12, i13);
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 12.0f);
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.J7, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.J7, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
-        textView.setText(org.telegram.messenger.gd.M0(2131743560, null));
+        textView.setText(org.telegram.messenger.gd.N0(2131743554, null));
         addView(textView, c8.ma.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
     }
 
@@ -107,21 +107,21 @@ public abstract class a9 extends FrameLayout {
             this.y = true;
             return;
         }
-        o5 o5Var = new o5(4, this.r, tL_emojiList.document_id.get(i7).longValue());
-        this.b = o5Var;
-        o5Var.m = true;
-        o5Var.u();
+        p5 p5Var = new p5(4, this.r, tL_emojiList.document_id.get(i7).longValue());
+        this.b = p5Var;
+        p5Var.m = true;
+        p5Var.u();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        p10 p10Var = this.e;
-        if (p10Var != null) {
-            p10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        s10 s10Var = this.e;
+        if (s10Var != null) {
+            s10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
-        p10 p10Var2 = this.f;
-        if (p10Var2 != null) {
-            p10Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        s10 s10Var2 = this.f;
+        if (s10Var2 != null) {
+            s10Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
         float f10 = this.x;
         if (f10 == 1.0f) {
@@ -132,7 +132,7 @@ public abstract class a9 extends FrameLayout {
             this.c.setScaleY(1.0f);
             this.d.setAlpha(0.0f);
         } else {
-            float interpolation = lr.f.getInterpolation(f10);
+            float interpolation = nr.f.getInterpolation(f10);
             this.e.c.setAlpha(org.telegram.messenger.ks.e4);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
             this.f.c.setAlpha((int) (255.0f * interpolation));
@@ -159,7 +159,7 @@ public abstract class a9 extends FrameLayout {
         super.dispatchDraw(canvas);
     }
 
-    public o5 getAnimatedEmoji() {
+    public p5 getAnimatedEmoji() {
         return this.a;
     }
 

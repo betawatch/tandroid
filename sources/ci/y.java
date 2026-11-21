@@ -14,13 +14,13 @@ import org.telegram.ui.Cells.a9;
 import org.telegram.ui.Cells.e2;
 import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Cells.z6;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.Wallet.na;
 import org.telegram.ui.g00;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements y10 {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class y implements y10 {
                 return Boolean.valueOf(r3);
             case 1:
                 String str2 = (String) obj;
-                lr lrVar = b0.A0;
+                nr nrVar = b0.A0;
                 if (TextUtils.isEmpty(str2) || (!str2.startsWith("tg:") && !vf.c.g(Uri.parse(str2), false, null))) {
                     r3 = false;
                 }
@@ -61,7 +61,7 @@ public final /* synthetic */ class y implements y10 {
                 View view = (View) obj;
                 return Boolean.valueOf(((view instanceof a9) || (view instanceof z6) || (view instanceof g00) || (view instanceof y3) || (view instanceof e2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 8:
-                return Boolean.valueOf(z41.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(c51.K(((Integer) obj).intValue()));
             case 9:
                 TL_wallet.exportSecretPhrase exportsecretphrase = new TL_wallet.exportSecretPhrase();
                 exportsecretphrase.password = (TLRPC.InputCheckPasswordSRP) obj;

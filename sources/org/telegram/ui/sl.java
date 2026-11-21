@@ -7,7 +7,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class sl extends oq0 {
     public final ArrayList a;
@@ -144,7 +144,7 @@ public final class sl extends oq0 {
                 wq0Var.e = imageReceiver.p();
                 wq0Var.h = imageReceiver.E();
                 wq0Var.j = (int) ((bnVar.P9 - bnVar.R9) - org.telegram.messenger.g0.L(4.0f));
-                wq0Var.i = (int) (bnVar.t9(org.telegram.ui.Components.v11.c) + bnVar.w.d() + org.telegram.messenger.g0.L(9.0f) + bnVar.Ya + bnVar.ad);
+                wq0Var.i = (int) (bnVar.t9(org.telegram.ui.Components.x11.c) + bnVar.w.d() + org.telegram.messenger.g0.L(9.0f) + bnVar.Ya + bnVar.ad);
                 return wq0Var;
             }
             i10++;

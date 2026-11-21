@@ -12,9 +12,9 @@ import android.view.WindowManager;
 import java.util.Iterator;
 import java.util.WeakHashMap;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.q40;
+import org.telegram.ui.Components.t40;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class y6 implements SensorEventListener {
     public static y6 H;
@@ -33,7 +33,7 @@ public final class y6 implements SensorEventListener {
     public final float[] h = new float[9];
     public final float[] n = new float[3];
     public int y = -1;
-    public final q40 G = new q40(this, 1);
+    public final t40 G = new t40(this, 1);
 
     public y6(Context context) {
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");

@@ -1,25 +1,58 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import org.telegram.messenger.beta.R;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i21 implements org.telegram.messenger.nc, org.telegram.messenger.mc {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ org.telegram.messenger.q10 c;
+public final class i21 extends Drawable {
+    public final oh0 a;
+    public int b;
+    public final TextPaint c;
 
-    public /* synthetic */ i21(String str, String str2, org.telegram.messenger.q10 q10Var) {
-        this.a = str;
-        this.b = str2;
-        this.c = q10Var;
+    public i21(TextPaint textPaint) {
+        a5.b bVar = new a5.b(this, 8);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        oh0 oh0Var = new oh0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = oh0Var;
+        oh0Var.setCallback(bVar);
+        oh0Var.K(1);
+        oh0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        oh0Var.J(true);
+        oh0Var.start();
     }
 
-    @Override // org.telegram.messenger.nc
-    public void a(String str) {
-        y21.K0(this.a, str, this.b, this.c);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int color = this.c.getColor();
+        int i7 = this.b;
+        oh0 oh0Var = this.a;
+        if (color != i7) {
+            oh0Var.a0 = true;
+            oh0Var.Q(color, "Comp 1");
+            oh0Var.o();
+            oh0Var.J(true);
+            oh0Var.V(0L);
+            this.b = color;
+        }
+        oh0Var.draw(canvas);
     }
 
-    @Override // org.telegram.messenger.mc
-    public void q(Exception exc) {
-        y21.K0(this.a, "en", this.b, this.c);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

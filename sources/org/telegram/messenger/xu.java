@@ -6,12 +6,12 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.k51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class xu extends zt implements Drawable.Callback {
-    public final h51 X;
+    public final k51 X;
     public final int Y;
     public final int Z;
     public final int a0;
@@ -23,16 +23,16 @@ public final class xu extends zt implements Drawable.Callback {
         super(evVar, rect, i7);
         this.a0 = i10;
         this.b0 = i11;
-        h51 h51Var = new h51();
-        this.X = h51Var;
-        h51Var.setCallback(this);
-        h51Var.n = gd.M0(2131743594, null);
-        h51Var.o = gd.M0(2131743595, null);
-        h51Var.p = gd.M0(2131743589, null);
-        h51Var.j = new xr(evVar, 7);
+        k51 k51Var = new k51();
+        this.X = k51Var;
+        k51Var.setCallback(this);
+        k51Var.n = gd.N0(2131743588, null);
+        k51Var.o = gd.N0(2131743589, null);
+        k51Var.p = gd.N0(2131743583, null);
+        k51Var.j = new xr(evVar, 7);
         int i12 = this.c;
         this.Y = i12;
-        this.Z = h51Var.a(i12);
+        this.Z = k51Var.a(i12);
     }
 
     @Override // org.telegram.messenger.zt
@@ -88,9 +88,9 @@ public final class xu extends zt implements Drawable.Callback {
         int i10 = rect.top;
         int i11 = this.Y + i7;
         int i12 = this.Z + i10;
-        h51 h51Var = this.X;
-        h51Var.setBounds(i7, i10, i11, i12);
-        h51Var.draw(canvas);
+        k51 k51Var = this.X;
+        k51Var.setBounds(i7, i10, i11, i12);
+        k51Var.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable.Callback

@@ -10,7 +10,7 @@ import e2.x1;
 import h2.l0;
 import x2.d1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class a extends l2.b {
     public final long J;
@@ -302,7 +302,7 @@ public abstract class a extends l2.b {
             h2.a.d("DecoderVideoRenderer", "Video codec error", e11);
             Handler handler2 = (Handler) bVar.b;
             if (handler2 != null) {
-                handler2.post(new c1.c(22, bVar, e11));
+                handler2.post(new c1.a(24, bVar, e11));
             }
             throw d(e11, this.O, false, 4001);
         }
@@ -326,7 +326,7 @@ public abstract class a extends l2.b {
             uVar3.getClass();
             Handler handler = (Handler) bVar.b;
             if (handler != null) {
-                handler.post(new aa.r(bVar, uVar3, (Object) null, 16));
+                handler.post(new aa.r(bVar, uVar3, (Object) null, 17));
                 return;
             }
             return;
@@ -352,7 +352,7 @@ public abstract class a extends l2.b {
         uVar4.getClass();
         Handler handler2 = (Handler) bVar.b;
         if (handler2 != null) {
-            handler2.post(new aa.r(bVar, uVar4, eVar, 16));
+            handler2.post(new aa.r(bVar, uVar4, eVar, 17));
         }
     }
 
@@ -370,7 +370,7 @@ public abstract class a extends l2.b {
             wf.b bVar = this.L;
             Handler handler = (Handler) bVar.b;
             if (handler != null) {
-                handler.post(new c1.c(23, bVar, name));
+                handler.post(new c1.a(25, bVar, name));
             }
             this.Q = null;
         }
@@ -655,7 +655,7 @@ public abstract class a extends l2.b {
                 wf.b bVar = this.L;
                 Handler handler = (Handler) bVar.b;
                 if (handler != null) {
-                    handler.post(new c1.c(22, bVar, e10));
+                    handler.post(new c1.a(24, bVar, e10));
                 }
                 throw d(e10, this.O, false, 4003);
             }

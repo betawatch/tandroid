@@ -18,11 +18,11 @@ import org.telegram.messenger.ef;
 import org.telegram.messenger.fc;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class a extends View implements org.telegram.ui.ActionBar.c6 {
+public final class a extends View implements org.telegram.ui.ActionBar.b6 {
     public final ImageReceiver a;
     public final String b;
     public final String c;
@@ -34,9 +34,9 @@ public final class a extends View implements org.telegram.ui.ActionBar.c6 {
     public StaticLayout r;
     public float s;
     public float w;
-    public final org.telegram.ui.ActionBar.i6 x;
+    public final org.telegram.ui.ActionBar.h6 x;
 
-    public a(Context context, ef efVar, String str, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+    public a(Context context, ef efVar, String str, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         String str2;
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -45,15 +45,15 @@ public final class a extends View implements org.telegram.ui.ActionBar.c6 {
         this.d = textPaint;
         TextPaint textPaint2 = new TextPaint(1);
         this.n = textPaint2;
-        this.x = i6Var;
+        this.x = h6Var;
         setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.n6.N0(false));
+        setBackground(org.telegram.ui.ActionBar.m6.N0(false));
         setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i10 = org.telegram.ui.ActionBar.n6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.n6.w0(i10, i6Var));
+        int i10 = org.telegram.ui.ActionBar.m6.E8;
+        textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
         textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.n6.w0(i10, i6Var));
+        textPaint2.setColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
         textPaint2.setAlpha(ks.n1);
         textPaint2.setTextSize(org.telegram.messenger.g0.L(13.0f));
         String str3 = "";
@@ -63,27 +63,27 @@ public final class a extends View implements org.telegram.ui.ActionBar.c6 {
         imageReceiver.J0(org.telegram.messenger.g0.L(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        mq mqVar = new mq(org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(6.0f), -13750737), mutate);
-        mqVar.x = false;
+        oq oqVar = new oq(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(6.0f), -13750737), mutate);
+        oqVar.x = false;
         int L = org.telegram.messenger.g0.L(18.0f);
         int L2 = org.telegram.messenger.g0.L(18.0f);
-        mqVar.e = L;
-        mqVar.f = L2;
+        oqVar.e = L;
+        oqVar.f = L2;
         if (efVar == null || (str2 = efVar.c) == null) {
             if (efVar != null) {
                 int i11 = efVar.C;
                 String str5 = efVar.I;
                 if (str5 != null) {
                     if (efVar.b) {
-                        imageReceiver.s0(fc.g("vthumb://" + i11 + ":" + str5), "30.0_30.0", null, null, mqVar, null, 0);
+                        imageReceiver.s0(fc.g("vthumb://" + i11 + ":" + str5), "30.0_30.0", null, null, oqVar, null, 0);
                     } else {
-                        imageReceiver.s0(fc.g("thumb://" + i11 + ":" + str5), "30.0_30.0", null, null, mqVar, null, 0);
+                        imageReceiver.s0(fc.g("thumb://" + i11 + ":" + str5), "30.0_30.0", null, null, oqVar, null, 0);
                     }
                 }
             }
-            imageReceiver.w0(mqVar);
+            imageReceiver.w0(oqVar);
         } else {
-            imageReceiver.s0(fc.g(str2), "30.0_30.0", null, null, mqVar, null, 0);
+            imageReceiver.s0(fc.g(str2), "30.0_30.0", null, null, oqVar, null, 0);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);
@@ -160,11 +160,11 @@ public final class a extends View implements org.telegram.ui.ActionBar.c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         TextPaint textPaint = this.n;
         try {
-            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.E8, this.x);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.E8, this.x);
             this.d.setColor(w02);
             textPaint.setColor(w02);
             textPaint.setAlpha(ks.n1);
@@ -174,7 +174,7 @@ public final class a extends View implements org.telegram.ui.ActionBar.c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,157 +1,115 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.view.SurfaceView;
+import android.view.TextureView;
 import android.view.View;
-import android.view.animation.AnimationUtils;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ue0 extends Drawable {
-    public final Paint a;
-    public final int b;
-    public boolean c;
-    public float d;
-    public long e;
-    public View f;
-    public int g = org.telegram.messenger.ks.e4;
-    public float h = 300.0f;
+public final class ue0 extends org.telegram.ui.j4 {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
-    public ue0(int i7) {
-        this.b = org.telegram.messenger.g0.L(i7);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ue0(int i7, Context context, Object obj) {
+        super(context);
+        this.h = i7;
+        this.n = obj;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.c != z10) {
-            this.c = z10;
-            if (!z11) {
-                this.d = z10 ? 1.0f : 0.0f;
-            }
-            this.e = AnimationUtils.currentAnimationTimeMillis();
-            invalidateSelf();
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.h) {
+            case 2:
+                PhotoViewer photoViewer = (PhotoViewer) this.n;
+                Drawable[] drawableArr = PhotoViewer.Z8;
+                photoViewer.getClass();
+                super.draw(canvas);
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        int i7;
-        Canvas canvas2;
-        wc0 wc0Var;
-        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        long j3 = currentAnimationTimeMillis - this.e;
-        this.e = currentAnimationTimeMillis;
-        if (j3 > 18) {
-            j3 = 16;
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        org.telegram.messenger.fj fjVar;
+        switch (this.h) {
+            case 0:
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
+                if (view == pipRoundVideoView.c && (fjVar = MediaController.B().v0) != null) {
+                    pipRoundVideoView.F.set(org.telegram.messenger.g0.N(1.5f), org.telegram.messenger.g0.N(1.5f), getMeasuredWidth() - org.telegram.messenger.g0.N(1.5f), getMeasuredHeight() - org.telegram.messenger.g0.N(1.5f));
+                    canvas.drawArc(pipRoundVideoView.F, -90.0f, fjVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.m6.k2);
+                }
+                return drawChild;
+            case 1:
+            default:
+                return super.drawChild(canvas, view, j3);
+            case 2:
+                PhotoViewer photoViewer = (PhotoViewer) this.n;
+                if (view == photoViewer.E3 && photoViewer.g4) {
+                    return true;
+                }
+                return super.drawChild(canvas, view, j3);
         }
-        boolean z10 = this.c;
-        if (z10) {
-            float f10 = this.d;
-            if (f10 < 1.0f) {
-                float f11 = (j3 / this.h) + f10;
-                this.d = f11;
-                if (f11 >= 1.0f) {
-                    this.d = 1.0f;
-                } else {
-                    View view = this.f;
-                    if (view != null) {
-                        view.invalidate();
+    }
+
+    @Override // org.telegram.ui.j4, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.h) {
+            case 1:
+                super.onMeasure(i7, i10);
+                z71 z71Var = (z71) this.n;
+                if (z71Var.f != null) {
+                    ViewGroup.LayoutParams layoutParams = z71Var.d.getLayoutParams();
+                    layoutParams.width = getMeasuredWidth();
+                    layoutParams.height = getMeasuredHeight();
+                    ImageView imageView = z71Var.e;
+                    if (imageView != null) {
+                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
+                        layoutParams2.width = getMeasuredWidth();
+                        layoutParams2.height = getMeasuredHeight();
+                        break;
                     }
-                    invalidateSelf();
                 }
-                Rect bounds = getBounds();
-                i7 = this.g;
-                if (i7 != 255) {
-                    canvas.save();
-                    canvas2 = canvas;
+                break;
+            case 2:
+                super.onMeasure(i7, i10);
+                PhotoViewer photoViewer = (PhotoViewer) this.n;
+                ImageView imageView2 = photoViewer.x3;
+                if (imageView2 != null) {
+                    ViewGroup.LayoutParams layoutParams3 = imageView2.getLayoutParams();
+                    layoutParams3.width = getMeasuredWidth();
+                    layoutParams3.height = getMeasuredHeight();
+                }
+                TextureView textureView = photoViewer.C2;
+                if (textureView instanceof y51) {
+                    textureView.setPivotX(textureView.getMeasuredWidth() / 2);
+                    photoViewer.F2.setPivotX(photoViewer.C2.getMeasuredWidth() / 2);
                 } else {
-                    canvas2 = canvas;
-                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i7, 31);
-                }
-                canvas2.translate(com.google.android.gms.internal.vision.e2.z(1.0f, this.d, org.telegram.messenger.g0.L(1.0f), bounds.centerX()), bounds.centerY());
-                float f12 = this.d * 500.0f;
-                float interpolation = f12 >= 100.0f ? lr.j.getInterpolation(f12 / 100.0f) * (-5.0f) : f12 < 484.0f ? (lr.j.getInterpolation((f12 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
-                int i10 = this.b;
-                canvas2.scale((i10 * 1.45f) / org.telegram.messenger.g0.L(28.0f), (i10 * 1.5f) / org.telegram.messenger.g0.L(28.0f));
-                canvas2.rotate(interpolation);
-                wc0Var = org.telegram.ui.ActionBar.n6.x3;
-                if (wc0Var != null) {
-                    Paint paint = this.a;
-                    wc0Var.b(canvas2, paint, f12);
-                    canvas2.scale(1.0f, -1.0f);
-                    org.telegram.ui.ActionBar.n6.x3.b(canvas2, paint, f12);
-                }
-                canvas2.restore();
-            }
-        }
-        if (!z10) {
-            float f13 = this.d;
-            if (f13 > 0.0f) {
-                float f14 = f13 - (j3 / this.h);
-                this.d = f14;
-                if (f14 <= 0.0f) {
-                    this.d = 0.0f;
-                } else {
-                    View view2 = this.f;
-                    if (view2 != null) {
-                        view2.invalidate();
+                    if (textureView != null) {
+                        textureView.setPivotX(0.0f);
                     }
-                    invalidateSelf();
+                    SurfaceView surfaceView = photoViewer.D2;
+                    if (surfaceView != null) {
+                        surfaceView.setPivotX(0.0f);
+                    }
+                    photoViewer.F2.setPivotX(0.0f);
                 }
-            }
+                photoViewer.s0();
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
         }
-        Rect bounds2 = getBounds();
-        i7 = this.g;
-        if (i7 != 255) {
-        }
-        canvas2.translate(com.google.android.gms.internal.vision.e2.z(1.0f, this.d, org.telegram.messenger.g0.L(1.0f), bounds2.centerX()), bounds2.centerY());
-        float f122 = this.d * 500.0f;
-        if (f122 >= 100.0f) {
-        }
-        int i102 = this.b;
-        canvas2.scale((i102 * 1.45f) / org.telegram.messenger.g0.L(28.0f), (i102 * 1.5f) / org.telegram.messenger.g0.L(28.0f));
-        canvas2.rotate(interpolation);
-        wc0Var = org.telegram.ui.ActionBar.n6.x3;
-        if (wc0Var != null) {
-        }
-        canvas2.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.g = i7;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

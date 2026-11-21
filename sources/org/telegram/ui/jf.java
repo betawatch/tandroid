@@ -4,9 +4,9 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jf implements org.telegram.ui.Components.di0, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class jf implements org.telegram.ui.Components.fi0, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
     public final /* synthetic */ org.telegram.messenger.fj c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.di0,
         this.c = fjVar;
     }
 
-    @Override // org.telegram.ui.Components.di0
+    @Override // org.telegram.ui.Components.fi0
     public void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -54,10 +54,10 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.di0,
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         bn bnVar = this.b;
-        org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, bnVar.getParentActivity(), bnVar.Ba)};
+        org.telegram.ui.ActionBar.t1[] t1VarArr = {new org.telegram.ui.ActionBar.t1(3, bnVar.getParentActivity(), bnVar.Ba)};
         TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
         org.telegram.messenger.fj fjVar = this.c;
         TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) fjVar.k.media;
@@ -73,6 +73,6 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.di0,
         tL_messages_editMessage.peer = bnVar.getMessagesController().l1(bnVar.l6);
         tL_messages_editMessage.id = fjVar.e1();
         tL_messages_editMessage.flags |= TLObject.FLAG_14;
-        org.telegram.messenger.g0.h3(new yf(bnVar, u1VarArr, bnVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new z9(bnVar, u1VarArr, tL_messages_editMessage, 5)), 2), 500L);
+        org.telegram.messenger.g0.h3(new yf(bnVar, t1VarArr, bnVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new z9(bnVar, t1VarArr, tL_messages_editMessage, 5)), 2), 500L);
     }
 }

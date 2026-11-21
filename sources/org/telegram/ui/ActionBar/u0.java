@@ -1,165 +1,62 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.ViewGroup;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.ui.Components.bn0;
-import org.telegram.ui.Components.mu0;
-import org.telegram.ui.Components.vm0;
-import org.telegram.ui.Components.xm0;
-import org.telegram.ui.Components.xz;
-import org.telegram.ui.Components.ym0;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityNodeInfo;
+import c8.l9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class u0 extends xz {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ViewGroup f;
+public final class u0 extends v0 {
+    public final t0 h0;
+    public String i0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u0(ViewGroup viewGroup, int i7) {
-        super(false);
-        this.e = i7;
-        this.f = viewGroup;
+    public u0(Context context, h6 h6Var) {
+        super(context, h6Var);
+        this.i0 = null;
+        setFocusable(true);
+        setFocusableInTouchMode(true);
+        setImportantForAccessibility(1);
+        t0 t0Var = new t0(this, 0);
+        this.h0 = t0Var;
+        setAccessibilityDelegate(t0Var);
     }
 
-    @Override // org.telegram.ui.Components.wm0
-    public CharSequence d() {
-        int i7 = this.e;
-        ViewGroup viewGroup = this.f;
-        switch (i7) {
-            case 0:
-                return mu0.a(((v0) viewGroup).getSpeed()) + "x  " + gd.M0(2131754759, null);
-            case 1:
-            default:
-                return super.d();
-            case 2:
-                xm0 xm0Var = ((ym0) viewGroup).y;
-                if (xm0Var != null) {
-                    return xm0Var.getContentDescription();
-                }
-                return null;
+    @Override // org.telegram.ui.ActionBar.v0
+    public final int c(float f10) {
+        int i7 = m6.jk;
+        h6 h6Var = this.y;
+        return i0.a.f(l9.a((((f10 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), m6.w0(i7, h6Var), m6.w0(m6.kk, h6Var));
+    }
+
+    public final void e(boolean z10, float f10) {
+        d(z10, (f10 - 0.2f) / 2.8f);
+    }
+
+    public float getSpeed() {
+        return (getValue() * 2.8f) + 0.2f;
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.h0.e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i7, Bundle bundle) {
+        return super.performAccessibilityAction(i7, bundle) || this.h0.g(this, i7, bundle);
+    }
+
+    public void setLabel(String str) {
+        this.i0 = str;
+    }
+
+    @Override // org.telegram.ui.ActionBar.v0
+    public void setStops(float[] fArr) {
+        for (int i7 = 0; i7 < fArr.length; i7++) {
+            fArr[i7] = (fArr[i7] - 0.2f) / 2.8f;
         }
-    }
-
-    @Override // org.telegram.ui.Components.xz
-    public float h() {
-        switch (this.e) {
-            case 0:
-                return 0.2f;
-            case 1:
-            default:
-                return super.h();
-            case 2:
-                int r02 = ((ym0) this.f).y.r0();
-                if (r02 > 0) {
-                    return 1.0f / r02;
-                }
-                return 0.05f;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xz
-    public float i() {
-        switch (this.e) {
-            case 0:
-                return 3.0f;
-            default:
-                return super.i();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xz
-    public float j() {
-        switch (this.e) {
-            case 0:
-                return 0.2f;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xz
-    public final float k() {
-        float f10;
-        int i7;
-        int i10;
-        switch (this.e) {
-            case 0:
-                return ((v0) this.f).getSpeed();
-            case 1:
-                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.f;
-                org.telegram.ui.Cells.j1 j1Var = r1Var.D4;
-                if (r1Var.Q5.I3()) {
-                    f10 = j1Var.b;
-                    i7 = j1Var.f;
-                    i10 = vm0.E;
-                } else {
-                    if (!fj.R4(r1Var.Q5.k)) {
-                        if (r1Var.Q5.h4()) {
-                            return r1Var.Q5.b0;
-                        }
-                        return 0.0f;
-                    }
-                    if (r1Var.C4) {
-                        bn0 bn0Var = r1Var.E4;
-                        return bn0Var.a / bn0Var.g;
-                    }
-                    f10 = j1Var.b;
-                    i7 = j1Var.f;
-                    i10 = vm0.E;
-                }
-                return f10 / (i7 - i10);
-            default:
-                return ((ym0) this.f).getProgress();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xz
-    public final void l(float f10) {
-        switch (this.e) {
-            case 0:
-                ((v0) this.f).e(true, f10);
-                break;
-            case 1:
-                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.f;
-                bn0 bn0Var = r1Var.E4;
-                org.telegram.ui.Cells.j1 j1Var = r1Var.D4;
-                if (r1Var.Q5.I3()) {
-                    j1Var.h(f10);
-                } else if (fj.R4(r1Var.Q5.k)) {
-                    if (r1Var.C4) {
-                        bn0Var.g(false, f10);
-                    } else {
-                        j1Var.h(f10);
-                    }
-                } else if (r1Var.Q5.h4()) {
-                    if (r1Var.C4) {
-                        if (bn0Var != null) {
-                            bn0Var.g(false, f10);
-                        }
-                    } else if (j1Var != null) {
-                        j1Var.h(f10);
-                    }
-                    r1Var.Q5.b0 = f10;
-                }
-                r1Var.a(f10);
-                r1Var.invalidate();
-                break;
-            default:
-                ym0 ym0Var = (ym0) this.f;
-                ym0Var.x = true;
-                ym0Var.setProgress(f10);
-                ym0Var.f(true, f10);
-                ym0Var.x = false;
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u0(ym0 ym0Var, boolean z10) {
-        super(z10);
-        this.e = 2;
-        this.f = ym0Var;
+        super.setStops(fArr);
     }
 }

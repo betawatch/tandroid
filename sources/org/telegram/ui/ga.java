@@ -9,9 +9,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final EditTextBoldCursor a;
     public final TextView b;
     public final /* synthetic */ la c;
@@ -27,9 +27,9 @@ public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.c
         this.a = editTextBoldCursor;
         int i10 = 1;
         editTextBoldCursor.setTextSize(1, 17.0f);
-        org.telegram.ui.ActionBar.u6.D(editTextBoldCursor, org.telegram.ui.ActionBar.n6.H6, null);
-        int i11 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.U(editTextBoldCursor, i11, null);
+        org.telegram.ui.ActionBar.t6.D(editTextBoldCursor, org.telegram.ui.ActionBar.m6.H6, null);
+        int i11 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(editTextBoldCursor, i11, null);
         editTextBoldCursor.setBackgroundDrawable(null);
         editTextBoldCursor.setMaxLines(1);
         editTextBoldCursor.setLines(1);
@@ -38,8 +38,8 @@ public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.c
         editTextBoldCursor.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 48);
         editTextBoldCursor.setInputType(180224);
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(org.telegram.messenger.gd.M0(2131743411, null));
-        org.telegram.ui.ActionBar.u6.l(editTextBoldCursor, 30, i11, null);
+        editTextBoldCursor.setHint(org.telegram.messenger.gd.N0(2131743405, null));
+        org.telegram.ui.ActionBar.t6.l(editTextBoldCursor, 30, i11, null);
         editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
         editTextBoldCursor.setOnEditorActionListener(new fa(this, i7));
@@ -58,7 +58,7 @@ public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.c
         textView.setSingleLine(true);
         textView.setText(laVar.getMessagesController().X2 + "/");
         textView.setTextSize(1, 17.0f);
-        org.telegram.ui.ActionBar.u6.U(textView, i11, null);
+        org.telegram.ui.ActionBar.t6.U(textView, i11, null);
         textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 48);
         textView.setTranslationY(-org.telegram.messenger.g0.L(3.0f));
         linearLayout.addView(textView, c8.ma.q(-2, -2, 0.0f, 16, 21, 15, 0, 15));
@@ -75,17 +75,17 @@ public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.c
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.a.setCursorColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.G6, false));
+            this.a.setCursorColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

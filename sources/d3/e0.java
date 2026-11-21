@@ -3,7 +3,7 @@ package d3;
 import a8.p0;
 import di.f6;
 import di.fb;
-import di.i2;
+import di.j2;
 import di.n3;
 import fi.t0;
 import h2.l0;
@@ -16,8 +16,8 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.po;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ro;
+import org.telegram.ui.Components.sy0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.cx;
@@ -25,7 +25,7 @@ import org.telegram.ui.y91;
 import zi.q0;
 import zi.u0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 return;
             case 1:
                 f6 f6Var = (f6) this.d;
-                fb fbVar = new fb(f6Var.getContext(), f6Var.J0, this.b, 11, null, new i2(f6Var, new boolean[]{false}, this.c, (x10) this.e, 2), 0L);
+                fb fbVar = new fb(f6Var.getContext(), f6Var.J0, this.b, 11, null, new j2(f6Var, new boolean[]{false}, this.c, (x10) this.e, 2), 0L);
                 fbVar.setOnDismissListener(new n3(f6Var, 1));
                 fbVar.show();
                 return;
@@ -80,7 +80,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
                 return;
             case 5:
-                ((po) this.d).e(this.b, this.c, (HashSet) this.e);
+                ((ro) this.d).e(this.b, this.c, (HashSet) this.e);
                 return;
             case 6:
                 cx cxVar = (cx) this.d;
@@ -124,7 +124,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 long j18 = this.c;
                 synchronized (u0Var.g) {
                     if (!q0Var.d && !q0Var.e) {
-                        ((qy0) u0Var.e).a(q0Var.a, q0Var.b, j17, j18);
+                        ((sy0) u0Var.e).a(q0Var.a, q0Var.b, j17, j18);
                         return;
                     }
                     return;

@@ -1,1428 +1,1267 @@
 package hi;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.provider.MediaStore;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.lang.reflect.Array;
+import android.util.LongSparseArray;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.b20;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.ff;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.we;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.RLottieNative;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.hb0;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.q20;
+import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class d7 {
-    public String A;
-    public int A0;
-    public String B;
-    public int B0;
-    public long C;
-    public CharSequence C0;
-    public long D;
-    public float E;
-    public o8 E0;
-    public long H;
-    public boolean H0;
-    public long I;
-    public long J;
-    public long J0;
-    public boolean K;
-    public File L;
-    public TLRPC.InputMedia L0;
-    public boolean M;
-    public Bitmap M0;
-    public String N;
-    public File N0;
-    public Bitmap O;
-    public File O0;
-    public File P0;
-    public int Q;
-    public File Q0;
-    public int R;
-    public File R0;
-    public u S;
-    public ArrayList T;
-    public ArrayList T0;
-    public List U0;
-    public ArrayList V0;
-    public File W0;
-    public long X;
-    public File X0;
-    public boolean Y;
-    public File Y0;
-    public float Z;
-    public File Z0;
-    public ff a1;
-    public long b;
-    public boolean b0;
-    public Bitmap b1;
-    public boolean c;
-    public TLRPC.Document c0;
-    public boolean c1;
-    public long d;
-    public bi.j d0;
-    public c7 d1;
-    public long e;
-    public int f;
-    public boolean f0;
-    public boolean g;
-    public Bitmap g0;
-    public boolean h;
-    public long h0;
-    public boolean j;
-    public boolean k;
-    public int k0;
-    public boolean l;
-    public int l0;
-    public ArrayList m;
-    public we m0;
-    public boolean n;
-    public boolean o;
-    public File o0;
-    public SpannableStringBuilder p;
-    public String p0;
-    public TLRPC.Peer q;
-    public long q0;
-    public int r;
-    public long r0;
-    public String s;
-    public float s0;
-    public TLRPC.MessageMedia t;
-    public boolean u;
-    public ArrayList v;
-    public TLRPC.InputPeer v0;
-    public boolean w;
-    public HashSet w0;
-    public TLRPC.TL_error x;
-    public Drawable x0;
-    public String y;
-    public TLRPC.InputDocument z;
-    public final int a = j10.t0;
-    public double i = -1.0d;
-    public float F = 1.0f;
-    public float G = 1.0f;
-    public float P = 1.0f;
-    public boolean U = false;
-    public float V = 0.0f;
-    public float W = 1.0f;
-    public float a0 = 1.0f;
-    public long e0 = -1;
-    public int i0 = 720;
-    public int j0 = 1280;
-    public final Matrix n0 = new Matrix();
-    public float t0 = 1.0f;
-    public float u0 = 1.0f;
-    public boolean y0 = org.telegram.ui.ActionBar.n6.I.q();
-    public long z0 = Long.MIN_VALUE;
-    public boolean D0 = true;
-    public final ArrayList F0 = new ArrayList();
-    public boolean G0 = true;
-    public int I0 = 86400;
-    public String K0 = "";
-    public long S0 = 5000;
-    public int e1 = 0;
+public final /* synthetic */ class d7 implements q10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public static void C(BitmapFactory.Options options, int i7) {
-        Runtime runtime = Runtime.getRuntime();
-        long maxMemory = runtime.maxMemory() - (runtime.totalMemory() - runtime.freeMemory());
-        int i10 = options.outWidth;
-        int i11 = options.outHeight;
-        if (i10 * i11 * 8 > maxMemory || Math.max(i10, i11) > 4200 || bz.o() <= 0) {
-            options.inScaled = true;
-            options.inDensity = options.outWidth;
-            options.inTargetDensity = i7;
-        }
+    public /* synthetic */ d7(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public static Boolean D(fj fjVar) {
-        TLRPC.Peer peer;
-        if (fjVar != null) {
-            int i7 = fjVar.K1;
-            TLRPC.Message message = fjVar.k;
-            if (message != null) {
-                TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-org.telegram.messenger.n5.o(message.peer_id)));
-                if ((O0 == null || !O0.noforwards) && org.telegram.messenger.v3.V(O0)) {
-                    return Boolean.FALSE;
-                }
-                TLRPC.MessageFwdHeader messageFwdHeader = fjVar.k.fwd_from;
-                if (messageFwdHeader != null && (peer = messageFwdHeader.from_id) != null && (messageFwdHeader.flags & 4) != 0) {
-                    long o4 = org.telegram.messenger.n5.o(peer);
-                    TLRPC.Chat O02 = mp.u1(i7).O0(Long.valueOf(-o4));
-                    if (o4 < 0 && ((O02 == null || !O02.noforwards) && org.telegram.messenger.v3.V(O02))) {
-                        return Boolean.TRUE;
-                    }
-                }
-                return null;
-            }
-        }
-        return null;
+    private final void b(Object obj, Object obj2) {
+        ni.a aVar = (ni.a) this.b;
+        ArrayList arrayList = (ArrayList) obj;
+        arrayList.add(o41.E(0, org.telegram.messenger.g0.L(12.0f)));
+        arrayList.add(o41.j(1, aVar.V1));
+        arrayList.add(o41.E(2, org.telegram.messenger.g0.L(12.0f)));
+        arrayList.add(o41.t(3, gd.N0(2131751935, null)));
+        aVar.Y1 = arrayList.size();
+        String N0 = gd.N0(2131751934, null);
+        boolean z10 = aVar.X1;
+        o41 y10 = o41.y(ks.h2, N0, gd.N0(z10 ? 2131751933 : 2131751932, null));
+        y10.L(true ^ aVar.U1);
+        arrayList.add(y10);
+        o41 y11 = o41.y(ks.g2, gd.N0(2131751938, null), gd.N0(z10 ? 2131751937 : 2131751936, null));
+        y11.L(aVar.U1);
+        arrayList.add(y11);
+        arrayList.add(o41.B(6, gd.N0(2131751939, null)));
     }
 
-    public static d7 a(u uVar, ArrayList arrayList) {
-        d7 d7Var = new d7();
-        d7Var.S = uVar;
-        d7Var.T = arrayList;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            d7 d7Var2 = (d7) obj;
-            if (d7Var2.K) {
-                d7Var.K = true;
-                d7Var2.V = 0.0f;
-                d7Var2.W = Math.min(1.0f, 59000.0f / d7Var2.h0);
-            }
-        }
-        if (d7Var.K) {
-            d7Var.k0 = 720;
-            d7Var.l0 = 1280;
-            d7Var.i0 = 720;
-            d7Var.j0 = 1280;
-        } else {
-            d7Var.k0 = 1080;
-            d7Var.l0 = 1920;
-            d7Var.i0 = 1080;
-            d7Var.j0 = 1920;
-        }
-        d7Var.A();
-        return d7Var;
-    }
-
-    public static int d(BitmapFactory.Options options, int i7, int i10) {
-        double min = (options.outHeight > i10 || options.outWidth > i7) ? Math.min((int) Math.ceil(r0 / i10), (int) Math.ceil(r6 / i7)) : 1;
-        return Math.max(1, (int) Math.pow(min, Math.floor(Math.log(min) / Math.log(2.0d))));
-    }
-
-    public static void j(Canvas canvas, Drawable drawable, int i7, int i10) {
-        if (drawable == null) {
-            return;
-        }
-        Rect rect = new Rect(drawable.getBounds());
-        Drawable.Callback callback = drawable.getCallback();
-        drawable.setCallback(null);
-        if (drawable instanceof BitmapDrawable) {
-            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
-            float width = bitmapDrawable.getBitmap().getWidth();
-            float height = bitmapDrawable.getBitmap().getHeight();
-            float max = Math.max(i7 / width, i10 / height);
-            drawable.setBounds(0, 0, (int) (width * max), (int) (height * max));
-            drawable.draw(canvas);
-        } else {
-            drawable.setBounds(0, 0, i7, i10);
-            drawable.draw(canvas);
-        }
-        drawable.setBounds(rect);
-        drawable.setCallback(callback);
-    }
-
-    public static String k(File file) {
-        String path;
-        int lastIndexOf;
-        if (file != null && (lastIndexOf = (path = file.getPath()).lastIndexOf(46)) > 0) {
-            return path.substring(lastIndexOf + 1);
-        }
-        return null;
-    }
-
-    public static d7 l(ef efVar) {
-        int i7;
-        d7 d7Var = new d7();
-        d7Var.L = new File(efVar.I);
-        d7Var.Q = efVar.J;
-        d7Var.R = efVar.K;
-        d7Var.K = !efVar.d() && efVar.b;
-        d7Var.N = efVar.c;
-        long j3 = efVar.E * 1000;
-        d7Var.h0 = j3;
-        d7Var.Z = 0.0f;
-        d7Var.a0 = Math.min(1.0f, 59000.0f / j3);
-        if (d7Var.K && d7Var.N == null) {
-            d7Var.N = "vthumb://" + efVar.C;
-        }
-        d7Var.A0 = efVar.T;
-        d7Var.B0 = efVar.U;
-        d7Var.h(d7Var.L.getAbsolutePath());
-        int i10 = efVar.F;
-        if (i10 > 0 && (i7 = efVar.G) > 0) {
-            d7Var.k0 = i10;
-            d7Var.l0 = i7;
-        }
-        d7Var.A();
-        return d7Var;
-    }
-
-    public static d7 m(File file, int i7) {
-        d7 d7Var = new d7();
-        d7Var.L = file;
-        d7Var.M = true;
-        d7Var.Q = i7;
-        d7Var.R = 0;
-        d7Var.K = false;
-        if (file != null) {
-            d7Var.h(file.getAbsolutePath());
-        }
-        d7Var.A();
-        return d7Var;
-    }
-
-    public static d7 n(File file, TL_stories.StoryItem storyItem) {
-        d7 d7Var = new d7();
-        d7Var.g = true;
-        d7Var.f = storyItem.id;
-        d7Var.L = file;
-        d7Var.M = false;
-        d7Var.k0 = 720;
-        d7Var.l0 = 1280;
-        TLRPC.MessageMedia messageMedia = storyItem.media;
-        boolean z10 = messageMedia instanceof TLRPC.TL_messageMediaPhoto;
-        int i7 = d7Var.a;
-        if (z10) {
-            d7Var.K = false;
-            if (file != null) {
-                d7Var.h(file.getAbsolutePath());
-            }
-        } else if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
-            d7Var.K = true;
-            TLRPC.Document document = messageMedia.document;
-            if (document != null && document.attributes != null) {
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= storyItem.media.document.attributes.size()) {
-                        break;
-                    }
-                    TLRPC.DocumentAttribute documentAttribute = storyItem.media.document.attributes.get(i10);
-                    if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                        d7Var.k0 = documentAttribute.w;
-                        d7Var.l0 = documentAttribute.h;
-                        d7Var.i = documentAttribute.duration;
-                        break;
-                    }
-                    i10++;
-                }
-            }
-            TLRPC.Document document2 = storyItem.media.document;
-            if (document2 != null) {
-                String str = storyItem.firstFramePath;
-                if (str != null) {
-                    d7Var.N = str;
-                } else if (document2.thumbs != null) {
-                    int i11 = 0;
-                    while (true) {
-                        if (i11 >= storyItem.media.document.thumbs.size()) {
-                            break;
-                        }
-                        TLRPC.PhotoSize photoSize = storyItem.media.document.thumbs.get(i11);
-                        if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                            d7Var.O = ec.F(null, photoSize.bytes);
-                            break;
-                        }
-                        org.telegram.messenger.w7.G(i7);
-                        File J = org.telegram.messenger.w7.J(photoSize, null, true, true);
-                        if (J != null && J.exists()) {
-                            d7Var.N = J.getAbsolutePath();
-                            break;
-                        }
-                        i11++;
-                    }
-                }
-            }
-        }
-        ArrayList arrayList = d7Var.F0;
-        arrayList.clear();
-        ArrayList<TLRPC.PrivacyRule> arrayList2 = storyItem.privacy;
-        mp u12 = mp.u1(i7);
-        ArrayList arrayList3 = new ArrayList();
-        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-            TLRPC.PrivacyRule privacyRule = arrayList2.get(i12);
-            if (privacyRule != null) {
-                if (privacyRule instanceof TLRPC.TL_privacyValueAllowAll) {
-                    arrayList3.add(new TLRPC.TL_inputPrivacyValueAllowAll());
-                } else if (privacyRule instanceof TLRPC.TL_privacyValueAllowCloseFriends) {
-                    arrayList3.add(new TLRPC.TL_inputPrivacyValueAllowCloseFriends());
-                } else if (privacyRule instanceof TLRPC.TL_privacyValueAllowContacts) {
-                    arrayList3.add(new TLRPC.TL_inputPrivacyValueAllowContacts());
-                } else if (privacyRule instanceof TLRPC.TL_privacyValueDisallowUsers) {
-                    TLRPC.TL_privacyValueDisallowUsers tL_privacyValueDisallowUsers = (TLRPC.TL_privacyValueDisallowUsers) privacyRule;
-                    TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers = new TLRPC.TL_inputPrivacyValueDisallowUsers();
-                    for (int i13 = 0; i13 < tL_privacyValueDisallowUsers.users.size(); i13++) {
-                        Long l10 = tL_privacyValueDisallowUsers.users.get(i13);
-                        l10.getClass();
-                        TLRPC.InputUser s12 = u12.s1(u12.c2(l10));
-                        if (!(s12 instanceof TLRPC.TL_inputUserEmpty)) {
-                            tL_inputPrivacyValueDisallowUsers.users.add(s12);
-                        }
-                    }
-                    arrayList3.add(tL_inputPrivacyValueDisallowUsers);
-                } else if (privacyRule instanceof TLRPC.TL_privacyValueAllowUsers) {
-                    TLRPC.TL_privacyValueAllowUsers tL_privacyValueAllowUsers = (TLRPC.TL_privacyValueAllowUsers) privacyRule;
-                    TLRPC.TL_inputPrivacyValueAllowUsers tL_inputPrivacyValueAllowUsers = new TLRPC.TL_inputPrivacyValueAllowUsers();
-                    for (int i14 = 0; i14 < tL_privacyValueAllowUsers.users.size(); i14++) {
-                        Long l11 = tL_privacyValueAllowUsers.users.get(i14);
-                        l11.getClass();
-                        TLRPC.InputUser s13 = u12.s1(u12.c2(l11));
-                        if (!(s13 instanceof TLRPC.TL_inputUserEmpty)) {
-                            tL_inputPrivacyValueAllowUsers.users.add(s13);
-                        }
-                    }
-                    arrayList3.add(tL_inputPrivacyValueAllowUsers);
-                }
-            }
-        }
-        arrayList.addAll(arrayList3);
-        d7Var.I0 = storyItem.expire_date - storyItem.date;
-        try {
-            CharSequence m10 = org.telegram.messenger.j6.m(new SpannableString(storyItem.caption), org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), true, null, 0);
-            fj.b(m10, storyItem.entities, true, false, true, false, 0);
-            d7Var.C0 = fj.B5(m10, storyItem.entities, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false);
-        } catch (Exception unused) {
-        }
-        d7Var.A();
-        d7Var.e(storyItem);
-        d7Var.m = storyItem.media_areas;
-        d7Var.v0 = mp.u1(i7).l1(storyItem.dialogId);
-        return d7Var;
-    }
-
-    public static d7 o(File file, String str, long j3) {
-        d7 d7Var = new d7();
-        d7Var.c1 = true;
-        d7Var.L = file;
-        d7Var.M = true;
-        d7Var.Q = 0;
-        d7Var.R = 0;
-        d7Var.K = true;
-        d7Var.h0 = j3;
-        d7Var.N = str;
-        d7Var.Z = 0.0f;
-        d7Var.a0 = Math.min(1.0f, 59500.0f / j3);
-        return d7Var;
-    }
-
-    public static long p(fj fjVar) {
-        Boolean D = D(fjVar);
-        if (D == null) {
-            return 0L;
-        }
-        return D.booleanValue() ? org.telegram.messenger.n5.o(fjVar.k.fwd_from.from_id) : fj.B0(fjVar.k);
-    }
-
-    public static Bitmap q(b7 b7Var, int i7, int i10, int i11, boolean z10) {
-        int i12;
-        int i13;
-        if (i11 == 90 || i11 == 270) {
-            i12 = i7;
-            i13 = i10;
-        } else {
-            i13 = i7;
-            i12 = i10;
-        }
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        b7Var.c(options);
-        options.inJustDecodeBounds = false;
-        options.inScaled = false;
-        Runtime runtime = Runtime.getRuntime();
-        long maxMemory = runtime.maxMemory() - (runtime.totalMemory() - runtime.freeMemory());
-        int i14 = options.outWidth;
-        int i15 = options.outHeight;
-        boolean z11 = ((double) ((((long) (i13 * i12)) * 4) + (((long) (i14 * i15)) * 4))) * 1.1d <= ((double) maxMemory);
-        if (i14 <= i13 && i15 <= i12) {
-            return b7Var.c(options);
-        }
-        if (z10 && z11 && bz.o() >= 1) {
-            Bitmap c10 = b7Var.c(options);
-            float max = Math.max(i13 / c10.getWidth(), i12 / c10.getHeight());
-            Bitmap createBitmap = Bitmap.createBitmap((int) (c10.getWidth() * max), (int) (c10.getHeight() * max), Bitmap.Config.ARGB_8888);
-            Utilities.y(c10, createBitmap);
-            Utilities.j(Math.round(1.0f / max), 8, 0);
-            return createBitmap;
-        }
-        options.inScaled = true;
-        int i16 = options.outWidth;
-        float f10 = i13 / i16;
-        int i17 = options.outHeight;
-        if (f10 > i12 / i17) {
-            options.inDensity = i16;
-            options.inTargetDensity = i13;
-        } else {
-            options.inDensity = i17;
-            options.inTargetDensity = i12;
-        }
-        return b7Var.c(options);
-    }
-
-    public static boolean u(TLRPC.Document document, String str) {
-        long j3;
-        if (document != null) {
-            if (!"video/webm".equals(document.mime_type) && !"video/mp4".equals(document.mime_type)) {
-                if (fj.K2(document, true)) {
-                    RLottieNative a10 = RLottieNative.a(str, null, null, null, 0, null);
-                    if (a10 != null) {
-                        int i7 = a10.a[0];
-                        a10.d();
-                        j3 = i7;
-                    } else {
-                        j3 = 0;
-                    }
-                    if (j3 > 1) {
-                    }
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v11, types: [org.telegram.tgnet.TLRPC$PhotoSize, org.telegram.tgnet.TLRPC$TL_photoSize_layer127] */
-    public static File w(int i7, String str) {
-        TLRPC.TL_videoSize_layer127 tL_videoSize_layer127;
-        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
-        tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
-        tL_fileLocationToBeDeprecated.dc_id = TLObject.FLAG_31;
-        tL_fileLocationToBeDeprecated.local_id = bz.p();
-        tL_fileLocationToBeDeprecated.file_reference = new byte[0];
-        if ("mp4".equals(str) || "webm".equals(str)) {
-            TLRPC.TL_videoSize_layer127 tL_videoSize_layer1272 = new TLRPC.TL_videoSize_layer127();
-            tL_videoSize_layer1272.location = tL_fileLocationToBeDeprecated;
-            tL_videoSize_layer127 = tL_videoSize_layer1272;
-        } else {
-            ?? tL_photoSize_layer127 = new TLRPC.TL_photoSize_layer127();
-            tL_photoSize_layer127.location = tL_fileLocationToBeDeprecated;
-            tL_videoSize_layer127 = tL_photoSize_layer127;
-        }
-        org.telegram.messenger.w7.G(i7);
-        return org.telegram.messenger.w7.J(tL_videoSize_layer127, str, true, true);
-    }
-
-    public static File x(int i7, boolean z10) {
-        return w(i7, z10 ? "mp4" : "jpg");
-    }
-
-    public static d7 y(ArrayList arrayList) {
-        fj fjVar;
-        int i7;
-        d7 d7Var = new d7();
-        d7Var.u = true;
-        d7Var.v = arrayList;
-        d7Var.i0 = 1080;
-        d7Var.j0 = 1920;
-        d7Var.z0 = p((fj) arrayList.get(0));
-        c20 c20Var = new c20();
-        c20Var.a = (byte) 6;
-        c20Var.c = 0.5f;
-        c20Var.d = 0.5f;
-        ArrayList arrayList2 = new ArrayList();
-        d7Var.T0 = arrayList2;
-        arrayList2.add(c20Var);
-        if (arrayList.size() == 1 && (fjVar = (fj) arrayList.get(0)) != null && ((i7 = fjVar.D) == 8 || i7 == 3 || i7 == 5)) {
-            TLRPC.Message message = fjVar.k;
-            if (message != null && message.attachPath != null) {
-                d7Var.L = new File(fjVar.k.attachPath);
-            }
-            File file = d7Var.L;
-            if (file == null || !file.exists()) {
-                org.telegram.messenger.w7.G(d7Var.a);
-                d7Var.L = org.telegram.messenger.w7.M(fjVar.k, false, true);
-            }
-            File file2 = d7Var.L;
-            if (file2 != null && file2.exists()) {
-                d7Var.K = true;
-                d7Var.M = false;
-                long L0 = (long) (fjVar.L0() * 1000.0d);
-                d7Var.h0 = L0;
-                d7Var.Z = 0.0f;
-                d7Var.a0 = Math.min(1.0f, 59500.0f / L0);
-                return d7Var;
-            }
-            d7Var.L = null;
-        }
-        return d7Var;
-    }
-
-    public final void A() {
-        Matrix matrix = this.n0;
-        matrix.reset();
-        int i7 = this.k0;
-        int i10 = this.l0;
-        int i11 = this.Q;
-        int i12 = this.R;
-        matrix.postScale(i12 == 1 ? -1.0f : 1.0f, i12 == 2 ? -1.0f : 1.0f, i7 / 2.0f, i10 / 2.0f);
-        if (i11 != 0) {
-            matrix.postTranslate((-i7) / 2.0f, (-i10) / 2.0f);
-            matrix.postRotate(i11);
-            if (i11 == 90 || i11 == 270) {
-                i10 = i7;
-                i7 = i10;
-            }
-            matrix.postTranslate(i7 / 2.0f, i10 / 2.0f);
-        }
-        float f10 = i7;
-        float f11 = this.i0 / f10;
-        if (this.J0 != 0) {
-            f11 = Math.min(f11, this.j0 / i10);
-        } else {
-            float f12 = i10;
-            if (f12 / f10 > 1.29f) {
-                f11 = Math.max(f11, this.j0 / f12);
-            }
-        }
-        matrix.postScale(f11, f11);
-        matrix.postTranslate(com.google.android.gms.internal.vision.e2.w(f10, f11, this.i0, 2.0f), com.google.android.gms.internal.vision.e2.w(i10, f11, this.j0, 2.0f));
-    }
-
-    public final void B() {
-        if (!this.K || v() || this.g || this.n || this.h0 <= 69000 || !j10.i(this.a).q()) {
-            return;
-        }
-        long j3 = this.h0 - 59000;
-        long min = j3 > 10000 ? Math.min(59000L, j3) + 59000 : 59000L;
-        long j10 = this.h0 - min;
-        if (j10 > 10000) {
-            min += Math.min(59000L, j10);
-        }
-        this.a0 = Math.min(1.0f, min / this.h0);
-    }
-
-    public final boolean E() {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        fj fjVar;
-        TLRPC.Message message;
-        ArrayList arrayList3 = this.T0;
-        if (!this.K && this.y == null && this.o0 == null && ((arrayList = this.v) == null || arrayList.size() != 1 || (fjVar = (fj) this.v.get(0)) == null || (message = fjVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionStarGiftUnique))) {
-            if (arrayList3 != null && !arrayList3.isEmpty()) {
-                for (int i7 = 0; i7 < arrayList3.size(); i7++) {
-                    c20 c20Var = (c20) arrayList3.get(i7);
-                    byte b10 = c20Var.a;
-                    if (b10 != 0) {
-                        if (b10 == 1 && (arrayList2 = c20Var.k) != null && !arrayList2.isEmpty()) {
-                            for (int i10 = 0; i10 < c20Var.k.size(); i10++) {
-                                b20 b20Var = (b20) c20Var.k.get(i10);
-                                if (!u(b20Var.document, b20Var.a)) {
-                                }
-                            }
-                        }
-                    } else if (!u(c20Var.B, c20Var.j)) {
-                    }
-                }
-            }
-            return false;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0261 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x02c3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:93:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0291 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:492:0x08a1, code lost:
+    
+        if (r1.y != false) goto L442;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0153  */
+    @Override // org.telegram.messenger.q10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Bitmap b(float f10, Bitmap bitmap) {
-        int i7;
-        final int i10;
-        Bitmap bitmap2;
-        float f11;
-        Paint paint;
+    public final void a(Object obj, Object obj2) {
+        long j3;
+        long j10;
+        TL_stars.StarsAmount starsAmount;
+        String str;
         boolean z10;
-        Paint paint2;
-        Bitmap bitmap3;
-        int i11;
+        c51 c51Var;
+        String str2;
+        int i7;
+        c51 c51Var2;
+        String str3;
+        String str4;
+        String str5;
+        String str6;
+        String upperCase;
         boolean z11;
-        Matrix matrix = new Matrix();
-        Paint paint3 = new Paint(7);
-        int i12 = (int) (this.i0 * f10);
-        int i13 = (int) (this.j0 * f10);
-        Bitmap createBitmap = Bitmap.createBitmap(i12, i13, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        final int i14 = 0;
-        if (this.Y0 != null) {
-            try {
-                Bitmap q10 = q(new b7() { // from class: hi.z6
-                    @Override // hi.b7
-                    public final Bitmap c(BitmapFactory.Options options) {
-                        switch (i14) {
-                            case 0:
-                                return BitmapFactory.decodeFile(this.Y0.getPath(), options);
-                            case 1:
-                                return BitmapFactory.decodeFile(this.P0.getPath(), options);
-                            case 2:
-                                return BitmapFactory.decodeFile(this.W0.getPath(), options);
-                            default:
-                                return BitmapFactory.decodeFile(this.R0.getPath(), options);
-                        }
-                    }
-                }, i12, i13, 0, true);
-                canvas.save();
-                float width = this.i0 / q10.getWidth();
-                canvas.scale(width, width);
-                matrix.postScale(f10, f10);
-                canvas.drawBitmap(q10, 0.0f, 0.0f, paint3);
-                canvas.restore();
-                q10.recycle();
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
-        } else {
-            long j3 = this.z0;
-            if (j3 == Long.MIN_VALUE) {
-                Paint paint4 = new Paint(1);
-                paint4.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, canvas.getHeight(), new int[]{this.A0, this.B0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-                i7 = 2;
-                i10 = 0;
-                canvas.drawRect(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), paint4);
-                matrix.set(this.n0);
-                if (bitmap == null) {
-                    float width2 = this.k0 / bitmap.getWidth();
-                    matrix.preScale(width2, width2);
-                    matrix.postScale(f10, f10);
-                    canvas.drawBitmap(bitmap, matrix, paint3);
-                    return createBitmap;
+        int i10;
+        oi.g2 g2Var;
+        String str7 = "";
+        int i11 = 29;
+        int i12 = 9;
+        boolean z12 = false;
+        int i13 = 0;
+        z12 = false;
+        final int i14 = 1;
+        switch (this.a) {
+            case 0:
+                k7 k7Var = (k7) this.b;
+                ArrayList arrayList = (ArrayList) obj;
+                if (k7Var.d2 || k7Var.c2 != null) {
+                    TLRPC.WebPage webPage = k7Var.c2;
+                    e7 e7Var = new e7(k7Var, 0);
+                    int i15 = i7.b;
+                    o41 K = o41.K(i7.class);
+                    K.H = webPage;
+                    K.E = e7Var;
+                    arrayList.add(K);
                 }
-                if (v()) {
-                    int i15 = i10;
-                    while (i15 < this.T.size()) {
-                        d7 d7Var = (d7) this.T.get(i15);
-                        final File file = d7Var.Z0;
-                        if (file == null) {
-                            file = d7Var.L;
-                        }
-                        if (file != null) {
-                            try {
-                                boolean z12 = true;
-                                try {
-                                    Bitmap q11 = q(new b7() { // from class: hi.a7
-                                        @Override // hi.b7
-                                        public final Bitmap c(BitmapFactory.Options options) {
-                                            switch (i10) {
-                                            }
-                                            return BitmapFactory.decodeFile(file.getPath(), options);
-                                        }
-                                    }, i12, i13, i10, true);
-                                    canvas.save();
-                                    RectF rectF = new RectF();
-                                    int width3 = q11.getWidth();
-                                    int height = q11.getHeight();
-                                    if ((((Integer) org.telegram.messenger.g0.L0(file).first).intValue() / 90) % 2 == 1) {
-                                        try {
-                                            width3 = q11.getHeight();
-                                            height = q11.getWidth();
-                                        } catch (Exception e11) {
-                                            e = e11;
-                                            paint2 = paint3;
-                                            bitmap3 = createBitmap;
-                                            i11 = i15;
-                                            org.telegram.messenger.a8.g(e, z12);
-                                            i15 = i11 + 1;
-                                            createBitmap = bitmap3;
-                                            paint3 = paint2;
-                                            i10 = 0;
-                                        }
-                                    }
-                                    t tVar = (t) this.S.e.get(i15);
-                                    z11 = true;
-                                    float f12 = i12;
-                                    bitmap3 = createBitmap;
-                                    float f13 = i13;
-                                    try {
-                                        i11 = i15;
-                                        try {
-                                            paint2 = paint3;
-                                            try {
-                                                rectF.set(tVar.a(f12), tVar.c * (f13 / tVar.a.c), tVar.b(f12), (f13 / tVar.a.c) * (tVar.c + 1));
-                                            } catch (Exception e12) {
-                                                e = e12;
-                                            }
-                                        } catch (Exception e13) {
-                                            e = e13;
-                                            paint2 = paint3;
-                                        }
-                                        try {
-                                            canvas.translate(rectF.centerX(), rectF.centerY());
-                                            canvas.clipRect((-rectF.width()) / 2.0f, (-rectF.height()) / 2.0f, rectF.width() / 2.0f, rectF.height() / 2.0f);
-                                            float max = Math.max(rectF.width() / width3, rectF.height() / height);
-                                            canvas.scale(max, max);
-                                            canvas.rotate(((Integer) r3.first).intValue());
-                                            canvas.translate((-q11.getWidth()) / 2.0f, (-q11.getHeight()) / 2.0f);
-                                            try {
-                                                canvas.drawBitmap(q11, 0.0f, 0.0f, (Paint) null);
-                                                canvas.restore();
-                                            } catch (Exception e14) {
-                                                e = e14;
-                                                z12 = z11;
-                                                org.telegram.messenger.a8.g(e, z12);
-                                                i15 = i11 + 1;
-                                                createBitmap = bitmap3;
-                                                paint3 = paint2;
-                                                i10 = 0;
-                                            }
-                                        } catch (Exception e15) {
-                                            e = e15;
-                                            z12 = z11;
-                                            org.telegram.messenger.a8.g(e, z12);
-                                            i15 = i11 + 1;
-                                            createBitmap = bitmap3;
-                                            paint3 = paint2;
-                                            i10 = 0;
-                                        }
-                                    } catch (Exception e16) {
-                                        e = e16;
-                                        paint2 = paint3;
-                                        i11 = i15;
-                                    }
-                                } catch (Exception e17) {
-                                    e = e17;
-                                    paint2 = paint3;
-                                    bitmap3 = createBitmap;
-                                    i11 = i15;
-                                }
-                            } catch (Exception e18) {
-                                e = e18;
-                                paint2 = paint3;
-                                bitmap3 = createBitmap;
-                                i11 = i15;
-                                z11 = true;
-                            }
-                        } else {
-                            paint2 = paint3;
-                            bitmap3 = createBitmap;
-                            i11 = i15;
-                        }
-                        i15 = i11 + 1;
-                        createBitmap = bitmap3;
-                        paint3 = paint2;
-                        i10 = 0;
-                    }
-                    bitmap2 = createBitmap;
-                    f11 = 0.0f;
-                    paint = paint3;
+                arrayList.add(o41.k(k7Var.U1));
+                arrayList.add(o41.B(1, null));
+                o41 i16 = o41.i(2, gd.N0(2131744396, null));
+                i16.L(k7Var.i2);
+                arrayList.add(i16);
+                if (k7Var.i2) {
+                    arrayList.add(o41.k(k7Var.V1));
+                }
+                arrayList.add(o41.B(3, null));
+                arrayList.add(o41.k(k7Var.W1));
+                break;
+            case 1:
+                sa saVar = (sa) this.b;
+                Float f10 = (Float) obj2;
+                long duration = saVar.Y0.getDuration() < 100 ? saVar.L1.h0 : saVar.Y0.getDuration();
+                float floatValue = ((f10.floatValue() / 0.96f) * 0.04f) + f10.floatValue();
+                c7 c7Var = saVar.L1;
+                float f11 = c7Var.a0;
+                float f12 = c7Var.Z;
+                float f13 = (f11 - f12) * floatValue;
+                float f14 = duration;
+                long j11 = (long) (f13 * f14);
+                ga gaVar = saVar.Y0;
+                long j12 = (long) ((f12 * f14) + j11);
+                saVar.N1 = j12;
+                gaVar.m(j12);
+                u9 u9Var = saVar.w1;
+                if (u9Var != null) {
+                    u9Var.setCoverTime(saVar.N1);
+                }
+                c7 c7Var2 = saVar.L1;
+                if (c7Var2 != null && c7Var2.g) {
+                    c7Var2.j = true;
+                    break;
+                }
+                break;
+            case 2:
+                ((va) this.b).b((short[]) obj, ((Integer) obj2).intValue());
+                break;
+            case 3:
+                bi.u4 u4Var = (bi.u4) this.b;
+                TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus = (TLRPC.TL_starsRevenueStatus) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (tL_starsRevenueStatus == null || (starsAmount = tL_starsRevenueStatus.available_balance) == null || !tL_starsRevenueStatus.withdrawal_enabled) {
+                    j3 = 0;
+                    j10 = 0;
                 } else {
-                    bitmap2 = createBitmap;
-                    f11 = 0.0f;
-                    final File file2 = this.Z0;
-                    if (file2 == null) {
-                        file2 = this.L;
+                    j3 = starsAmount.amount;
+                    j10 = 0;
+                }
+                u4Var.a(Long.valueOf(Math.max(j10, j3)), tL_error);
+                break;
+            case 4:
+                ((ii.t) this.b).E0((ArrayList) obj, (c51) obj2);
+                break;
+            case 5:
+                ii.s sVar = (ii.s) this.b;
+                ArrayList arrayList2 = (ArrayList) obj;
+                arrayList2.add(o41.k(sVar.U1));
+                arrayList2.add(o41.k(sVar.V1));
+                break;
+            case 6:
+                TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) obj2;
+                nm0 nm0Var = (nm0) ((jg.h0) this.b);
+                cx cxVar = nm0Var.J0;
+                org.telegram.messenger.g0.v1(cxVar.getParentActivity().getCurrentFocus());
+                a70 J = a70.J(cxVar, (org.telegram.ui.Cells.h6) obj);
+                if (TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info) && TextUtils.isEmpty(tL_sponsoredPeer.additional_info)) {
+                    z10 = false;
+                    str = null;
+                } else {
+                    a70 K2 = J.K();
+                    K2.c(R.drawable.ic_ab_back, gd.N0(2131753753, null), new hb0(J, 23), false);
+                    K2.k();
+                    if (!TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info)) {
+                        K2.p(13, -1, tL_sponsoredPeer.sponsor_info);
                     }
-                    if (file2 != null) {
-                        try {
-                            final int i16 = 1;
-                            Bitmap q12 = q(new b7() { // from class: hi.a7
-                                @Override // hi.b7
-                                public final Bitmap c(BitmapFactory.Options options) {
-                                    switch (i16) {
-                                    }
-                                    return BitmapFactory.decodeFile(file2.getPath(), options);
-                                }
-                            }, i12, i13, this.Q, true);
-                            float width4 = this.k0 / q12.getWidth();
-                            matrix.preScale(width4, width4);
-                            matrix.postScale(f10, f10);
-                            paint = paint3;
-                            try {
-                                canvas.drawBitmap(q12, matrix, paint);
-                                q12.recycle();
-                            } catch (Exception e19) {
-                                e = e19;
-                                z10 = true;
-                                org.telegram.messenger.a8.g(e, true);
-                                if (this.P0 != null) {
-                                }
-                                if (this.W0 != null) {
-                                }
-                                if (this.R0 != null) {
-                                }
-                            }
-                        } catch (Exception e20) {
-                            e = e20;
-                            paint = paint3;
+                    if (!TextUtils.isEmpty(tL_sponsoredPeer.additional_info)) {
+                        if (!TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info)) {
+                            K2.k();
                         }
+                        K2.p(13, -1, tL_sponsoredPeer.additional_info);
+                    }
+                    str = null;
+                    z10 = false;
+                    J.c(R.drawable.msg_channel, gd.N0(2131745007, null), new bi.y5(J, K2, i12), false);
+                }
+                J.c(R.drawable.msg_info, gd.N0(2131754943, str), new q20(nm0Var, cxVar, nm0Var.K0, J, 5), z10);
+                J.c(R.drawable.msg_block2, gd.N0(2131746038, str), new q20(nm0Var, cxVar, tL_sponsoredPeer, J, 6), z10);
+                J.k();
+                J.c(R.drawable.msg_cancel, gd.N0(2131746124, str), new org.telegram.ui.Components.g(nm0Var, cxVar, J, 24), z10);
+                J.W(gd.a0 ? 3 : 5);
+                J.b0 = true;
+                J.t = z10;
+                J.a0();
+                break;
+            case 7:
+                kg.c.Z((kg.c) this.b, (ArrayList) obj, (c51) obj2);
+                break;
+            case 8:
+                kg.n nVar = (kg.n) this.b;
+                nVar.M.dismiss();
+                nVar.E = (String) obj;
+                nVar.F = (TLRPC.InputDocument) obj2;
+                nVar.x = false;
+                org.telegram.messenger.g0.r(nVar.e);
+                nVar.n.setSticker(nVar.E);
+                nVar.j0(true);
+                bi.g6 g6Var = nVar.a;
+                if (g6Var != null && (c51Var = g6Var.g3) != null) {
+                    c51Var.O(true);
+                    break;
+                }
+                break;
+            case 9:
+                kg.k0 k0Var = (kg.k0) this.b;
+                ArrayList arrayList3 = (ArrayList) obj;
+                c51 c51Var3 = (c51) obj2;
+                c51Var3.G = 1;
+                arrayList3.add(o41.l(-5, k0Var.W1));
+                TL_account.TL_connectedBot tL_connectedBot = k0Var.T1;
+                if (tL_connectedBot != null) {
+                    if (TLObject.hasFlag(tL_connectedBot.flags, 1) || TLObject.hasFlag(tL_connectedBot.flags, 2) || TLObject.hasFlag(tL_connectedBot.flags, 4)) {
+                        str2 = null;
+                        i5.c.s(2131745363, null, arrayList3);
+                        if (TLObject.hasFlag(tL_connectedBot.flags, 1)) {
+                            arrayList3.add(o41.f(gd.N0(2131745360, null), tL_connectedBot.device, 1));
+                        }
+                        if (TLObject.hasFlag(tL_connectedBot.flags, 4)) {
+                            i7 = 2;
+                            arrayList3.add(o41.f(gd.N0(2131745359, null), tL_connectedBot.location, 2));
+                        } else {
+                            i7 = 2;
+                        }
+                        if (TLObject.hasFlag(tL_connectedBot.flags, i7)) {
+                            arrayList3.add(o41.f(gd.N0(2131745361, null), gd.x(tL_connectedBot.date, false), 3));
+                        }
+                        arrayList3.add(o41.C(null));
                     } else {
-                        paint = paint3;
+                        str2 = null;
                     }
-                }
-                z10 = true;
-                if (this.P0 != null) {
-                    try {
-                        final int i17 = z10 ? 1 : 0;
-                        Bitmap q13 = q(new b7() { // from class: hi.z6
-                            @Override // hi.b7
-                            public final Bitmap c(BitmapFactory.Options options) {
-                                switch (i17) {
-                                    case 0:
-                                        return BitmapFactory.decodeFile(this.Y0.getPath(), options);
-                                    case 1:
-                                        return BitmapFactory.decodeFile(this.P0.getPath(), options);
-                                    case 2:
-                                        return BitmapFactory.decodeFile(this.W0.getPath(), options);
-                                    default:
-                                        return BitmapFactory.decodeFile(this.R0.getPath(), options);
-                                }
-                            }
-                        }, i12, i13, 0, z10);
-                        canvas.save();
-                        float width5 = this.i0 / q13.getWidth();
-                        canvas.scale(width5, width5);
-                        matrix.postScale(f10, f10);
-                        canvas.drawBitmap(q13, f11, f11, paint);
-                        canvas.restore();
-                        q13.recycle();
-                        z10 = true;
-                    } catch (Exception e21) {
-                        z10 = true;
-                        org.telegram.messenger.a8.g(e21, true);
+                    c51Var3.V();
+                    arrayList3.add(o41.u(gd.N0(2131752807, str2)));
+                    int i17 = kg.k0.g2;
+                    o41 x10 = o41.x(-1, gd.N0(2131752769, str2));
+                    x10.L(k0Var.b2);
+                    arrayList3.add(x10);
+                    int i18 = kg.k0.h2;
+                    o41 x11 = o41.x(-2, gd.N0(2131752764, str2));
+                    x11.L(!k0Var.b2);
+                    arrayList3.add(x11);
+                    c51Var3.U();
+                    arrayList3.add(o41.C(str2));
+                    kg.b0 b0Var = k0Var.V1;
+                    if (b0Var != null) {
+                        b0Var.a(arrayList3, c51Var3, true);
                     }
+                    arrayList3.add(o41.C(gd.N0(2131752806, str2)));
+                    break;
                 }
-                if (this.W0 != null) {
-                    try {
-                        final int i18 = i7;
-                        Bitmap q14 = q(new b7() { // from class: hi.z6
-                            @Override // hi.b7
-                            public final Bitmap c(BitmapFactory.Options options) {
-                                switch (i18) {
-                                    case 0:
-                                        return BitmapFactory.decodeFile(this.Y0.getPath(), options);
-                                    case 1:
-                                        return BitmapFactory.decodeFile(this.P0.getPath(), options);
-                                    case 2:
-                                        return BitmapFactory.decodeFile(this.W0.getPath(), options);
-                                    default:
-                                        return BitmapFactory.decodeFile(this.R0.getPath(), options);
-                                }
-                            }
-                        }, i12, i13, 0, z10);
-                        canvas.save();
-                        float width6 = this.i0 / q14.getWidth();
-                        canvas.scale(width6, width6);
-                        matrix.postScale(f10, f10);
-                        canvas.drawBitmap(q14, f11, f11, paint);
-                        canvas.restore();
-                        q14.recycle();
-                        z10 = true;
-                    } catch (Exception e22) {
-                        z10 = true;
-                        org.telegram.messenger.a8.g(e22, true);
-                    }
-                }
-                if (this.R0 != null) {
-                    return bitmap2;
-                }
-                try {
-                    final int i19 = 3;
-                    Bitmap q15 = q(new b7() { // from class: hi.z6
-                        @Override // hi.b7
-                        public final Bitmap c(BitmapFactory.Options options) {
+                break;
+            case 10:
+                final kg.s0 s0Var = (kg.s0) this.b;
+                ArrayList arrayList4 = (ArrayList) obj;
+                c51 c51Var4 = (c51) obj2;
+                LongSparseArray longSparseArray = s0Var.O;
+                String N0 = gd.N0(2131752771, null);
+                String N02 = gd.N0(2131752770, null);
+                o41 o41Var = new o41(2);
+                o41Var.m = N0;
+                o41Var.p = N02;
+                o41Var.n = "tg_superplaceholders_android_2";
+                o41Var.o = "🤖🏝️";
+                o41Var.A = 120;
+                arrayList4.add(o41Var);
+                if (s0Var.N != null) {
+                    c51Var4.V();
+                    c51Var2 = c51Var4;
+                    long j13 = s0Var.N.id;
+                    o41 o41Var2 = new o41(13);
+                    o41Var2.y = j13;
+                    o41Var2.L(true);
+                    final int i19 = z12 ? 1 : 0;
+                    o41Var2.E = new View.OnClickListener() { // from class: kg.o0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
                             switch (i19) {
                                 case 0:
-                                    return BitmapFactory.decodeFile(this.Y0.getPath(), options);
+                                    s0 s0Var2 = s0Var;
+                                    s0Var2.N = null;
+                                    s0Var2.c.g3.O(true);
+                                    s0Var2.d0(true);
+                                    break;
                                 case 1:
-                                    return BitmapFactory.decodeFile(this.P0.getPath(), options);
+                                    s0 s0Var3 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights = s0Var3.K;
+                                    if (tL_businessBotRights.reply && tL_businessBotRights.read_messages && tL_businessBotRights.delete_received_messages && tL_businessBotRights.delete_sent_messages) {
+                                        tL_businessBotRights.delete_sent_messages = false;
+                                        tL_businessBotRights.delete_received_messages = false;
+                                        tL_businessBotRights.read_messages = false;
+                                        tL_businessBotRights.reply = false;
+                                    } else {
+                                        tL_businessBotRights.delete_sent_messages = true;
+                                        tL_businessBotRights.delete_received_messages = true;
+                                        tL_businessBotRights.read_messages = true;
+                                        tL_businessBotRights.reply = true;
+                                    }
+                                    s0Var3.c.g3.O(true);
+                                    s0Var3.d0(true);
+                                    break;
                                 case 2:
-                                    return BitmapFactory.decodeFile(this.W0.getPath(), options);
+                                    s0 s0Var4 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights2 = s0Var4.K;
+                                    if (!tL_businessBotRights2.edit_name || !tL_businessBotRights2.edit_bio || !tL_businessBotRights2.edit_profile_photo || !tL_businessBotRights2.edit_username) {
+                                        s0Var4.c0(-14, true, new m0(s0Var4, 2));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights2.edit_username = false;
+                                        tL_businessBotRights2.edit_profile_photo = false;
+                                        tL_businessBotRights2.edit_bio = false;
+                                        tL_businessBotRights2.edit_name = false;
+                                        s0Var4.c.g3.O(true);
+                                        s0Var4.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                case 3:
+                                    s0 s0Var5 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights3 = s0Var5.K;
+                                    if (!tL_businessBotRights3.view_gifts || !tL_businessBotRights3.sell_gifts || !tL_businessBotRights3.change_gift_settings || !tL_businessBotRights3.transfer_and_upgrade_gifts || !tL_businessBotRights3.transfer_stars) {
+                                        s0Var5.c0(-17, true, new m0(s0Var5, 1));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights3.transfer_stars = false;
+                                        tL_businessBotRights3.transfer_and_upgrade_gifts = false;
+                                        tL_businessBotRights3.change_gift_settings = false;
+                                        tL_businessBotRights3.sell_gifts = false;
+                                        tL_businessBotRights3.view_gifts = false;
+                                        s0Var5.c.g3.O(true);
+                                        s0Var5.d0(true);
+                                        break;
+                                    }
+                                    break;
                                 default:
-                                    return BitmapFactory.decodeFile(this.R0.getPath(), options);
+                                    s0 s0Var6 = s0Var;
+                                    s0Var6.K.manage_stories = !r0.manage_stories;
+                                    s0Var6.c.g3.O(true);
+                                    s0Var6.d0(true);
+                                    break;
                             }
                         }
-                    }, i12, i13, 0, z10);
-                    canvas.save();
-                    float width7 = this.i0 / q15.getWidth();
-                    canvas.scale(width7, width7);
-                    matrix.postScale(f10, f10);
-                    canvas.drawBitmap(q15, f11, f11, paint);
-                    canvas.restore();
-                    q15.recycle();
-                    return bitmap2;
-                } catch (Exception e23) {
-                    org.telegram.messenger.a8.g(e23, true);
-                    return bitmap2;
-                }
-            }
-            Drawable drawable = this.x0;
-            if (drawable == null) {
-                drawable = w5.e(null, this.a, j3, this.y0);
-            }
-            j(canvas, drawable, canvas.getWidth(), canvas.getHeight());
-        }
-        i7 = 2;
-        i10 = 0;
-        matrix.set(this.n0);
-        if (bitmap == null) {
-        }
-    }
-
-    public final void c(File file) {
-        Bitmap b10 = b(1.0f, null);
-        Bitmap bitmap = this.b1;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.b1 = null;
-        }
-        this.b1 = Bitmap.createScaledBitmap(b10, 40, 22, true);
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            b10.compress(Bitmap.CompressFormat.JPEG, 95, fileOutputStream);
-            fileOutputStream.close();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-        b10.recycle();
-    }
-
-    public final void e(TL_stories.StoryItem storyItem) {
-        if (storyItem != null && storyItem.media != null) {
-            TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = new TLRPC.TL_messages_getAttachedStickers();
-            TLRPC.MessageMedia messageMedia = storyItem.media;
-            TLRPC.Photo photo = messageMedia.photo;
-            if (photo == null) {
-                TLRPC.Document document = messageMedia.document;
-                if (document != null && fj.V2(document)) {
-                    TLRPC.TL_inputStickeredMediaDocument tL_inputStickeredMediaDocument = new TLRPC.TL_inputStickeredMediaDocument();
-                    TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                    tL_inputStickeredMediaDocument.id = tL_inputDocument;
-                    tL_inputDocument.id = document.id;
-                    tL_inputDocument.access_hash = document.access_hash;
-                    byte[] bArr = document.file_reference;
-                    tL_inputDocument.file_reference = bArr;
-                    if (bArr == null) {
-                        tL_inputDocument.file_reference = new byte[0];
-                    }
-                    tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
-                    this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.g2(this, storyItem, tL_messages_getAttachedStickers, new ai.e1(this, 11), 7));
-                }
-            } else if (photo.has_stickers) {
-                TLRPC.TL_inputStickeredMediaPhoto tL_inputStickeredMediaPhoto = new TLRPC.TL_inputStickeredMediaPhoto();
-                TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-                tL_inputStickeredMediaPhoto.id = tL_inputPhoto;
-                tL_inputPhoto.id = photo.id;
-                tL_inputPhoto.access_hash = photo.access_hash;
-                byte[] bArr2 = photo.file_reference;
-                tL_inputPhoto.file_reference = bArr2;
-                if (bArr2 == null) {
-                    tL_inputPhoto.file_reference = new byte[0];
-                }
-                tL_messages_getAttachedStickers.media = tL_inputStickeredMediaPhoto;
-                this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.g2(this, storyItem, tL_messages_getAttachedStickers, new ai.e1(this, 11), 7));
-            }
-        }
-    }
-
-    public final void f() {
-        File file = this.P0;
-        if (file != null) {
-            file.delete();
-            this.P0 = null;
-        }
-        File file2 = this.Y0;
-        if (file2 != null) {
-            file2.delete();
-            this.Y0 = null;
-        }
-        File file3 = this.W0;
-        if (file3 != null) {
-            file3.delete();
-            this.W0 = null;
-        }
-        File file4 = this.X0;
-        if (file4 != null) {
-            file4.delete();
-            this.X0 = null;
-        }
-        File file5 = this.R0;
-        if (file5 != null) {
-            file5.delete();
-            this.R0 = null;
-        }
-    }
-
-    public final d7 g() {
-        d7 d7Var = new d7();
-        d7Var.b = this.b;
-        d7Var.c = this.c;
-        d7Var.d = this.d;
-        d7Var.e = this.e;
-        d7Var.f = this.f;
-        d7Var.g = this.g;
-        d7Var.h = this.h;
-        d7Var.i = this.i;
-        d7Var.j = this.j;
-        d7Var.k = this.k;
-        d7Var.l = this.l;
-        d7Var.m = this.m;
-        d7Var.w = this.w;
-        d7Var.x = this.x;
-        d7Var.y = this.y;
-        d7Var.z = this.z;
-        d7Var.A = this.A;
-        d7Var.B = this.B;
-        d7Var.C = this.C;
-        d7Var.D = this.D;
-        d7Var.E = this.E;
-        d7Var.F = this.F;
-        d7Var.G = this.G;
-        d7Var.H = this.H;
-        d7Var.I = this.I;
-        d7Var.J = this.J;
-        d7Var.K = this.K;
-        d7Var.L = this.L;
-        d7Var.M = this.M;
-        boolean z10 = this.M;
-        int i7 = this.a;
-        if (z10) {
-            File w10 = w(i7, k(this.L));
-            d7Var.L = w10;
-            org.telegram.messenger.g0.F(this.L, w10);
-        }
-        d7Var.N = this.N;
-        d7Var.Y = this.Y;
-        d7Var.Z = this.Z;
-        d7Var.a0 = this.a0;
-        d7Var.h0 = this.h0;
-        d7Var.k0 = this.k0;
-        d7Var.l0 = this.l0;
-        d7Var.i0 = this.i0;
-        d7Var.j0 = this.j0;
-        d7Var.v0 = this.v0;
-        d7Var.R = this.R;
-        d7Var.n0.set(this.n0);
-        d7Var.A0 = this.A0;
-        d7Var.B0 = this.B0;
-        d7Var.C0 = this.C0;
-        d7Var.D0 = this.D0;
-        d7Var.E0 = this.E0;
-        ArrayList arrayList = d7Var.F0;
-        arrayList.clear();
-        arrayList.addAll(this.F0);
-        d7Var.G0 = this.G0;
-        d7Var.H0 = this.H0;
-        d7Var.I0 = this.I0;
-        d7Var.M0 = this.M0;
-        d7Var.N0 = this.N0;
-        d7Var.w0 = this.w0;
-        File file = this.N0;
-        if (file != null && file.exists()) {
-            File w11 = w(i7, k(this.N0));
-            d7Var.N0 = w11;
-            org.telegram.messenger.g0.F(this.N0, w11);
-        }
-        d7Var.O0 = this.O0;
-        File file2 = this.O0;
-        if (file2 != null && file2.exists()) {
-            File w12 = w(i7, k(this.O0));
-            d7Var.O0 = w12;
-            org.telegram.messenger.g0.F(this.O0, w12);
-        }
-        d7Var.P0 = this.P0;
-        File file3 = this.P0;
-        if (file3 != null && file3.exists()) {
-            File w13 = w(i7, k(this.P0));
-            d7Var.P0 = w13;
-            org.telegram.messenger.g0.F(this.P0, w13);
-        }
-        d7Var.W0 = this.W0;
-        File file4 = this.W0;
-        if (file4 != null && file4.exists()) {
-            File w14 = w(i7, k(this.W0));
-            d7Var.W0 = w14;
-            org.telegram.messenger.g0.F(this.W0, w14);
-        }
-        d7Var.Y0 = this.Y0;
-        File file5 = this.Y0;
-        if (file5 != null && file5.exists()) {
-            File w15 = w(i7, k(this.Y0));
-            d7Var.Y0 = w15;
-            org.telegram.messenger.g0.F(this.Y0, w15);
-        }
-        d7Var.Q0 = this.Q0;
-        File file6 = this.Q0;
-        if (file6 != null && file6.exists()) {
-            File w16 = w(i7, k(this.Q0));
-            d7Var.Q0 = w16;
-            org.telegram.messenger.g0.F(this.Q0, w16);
-        }
-        d7Var.R0 = this.R0;
-        File file7 = this.R0;
-        if (file7 != null && file7.exists()) {
-            File w17 = w(i7, k(this.R0));
-            d7Var.R0 = w17;
-            org.telegram.messenger.g0.F(this.R0, w17);
-        }
-        d7Var.S0 = this.S0;
-        d7Var.T0 = new ArrayList();
-        if (this.T0 != null) {
-            for (int i10 = 0; i10 < this.T0.size(); i10++) {
-                d7Var.T0.add(((c20) this.T0.get(i10)).a());
-            }
-        }
-        d7Var.U0 = this.U0;
-        d7Var.V0 = this.V0;
-        d7Var.Z0 = this.Z0;
-        File file8 = this.Z0;
-        if (file8 != null && file8.exists()) {
-            File w18 = w(i7, k(this.Z0));
-            d7Var.Z0 = w18;
-            org.telegram.messenger.g0.F(this.Z0, w18);
-        }
-        d7Var.a1 = this.a1;
-        d7Var.b1 = this.b1;
-        d7Var.c1 = this.c1;
-        d7Var.O = this.O;
-        d7Var.n = this.n;
-        d7Var.o = this.o;
-        d7Var.o0 = this.o0;
-        d7Var.s0 = this.s0;
-        d7Var.t0 = this.t0;
-        d7Var.q0 = this.q0;
-        d7Var.p0 = this.p0;
-        d7Var.r0 = this.r0;
-        d7Var.u0 = this.u0;
-        d7Var.b0 = this.b0;
-        d7Var.J0 = this.J0;
-        d7Var.K0 = this.K0;
-        d7Var.L0 = this.L0;
-        d7Var.e0 = this.e0;
-        d7Var.T = this.T;
-        d7Var.S = this.S;
-        d7Var.U = this.U;
-        d7Var.X = this.X;
-        d7Var.P = this.P;
-        return d7Var;
-    }
-
-    public final void h(String str) {
-        if (str != null) {
-            try {
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inJustDecodeBounds = true;
-                BitmapFactory.decodeFile(str, options);
-                this.k0 = options.outWidth;
-                this.l0 = options.outHeight;
-            } catch (Exception unused) {
-            }
-        }
-        if (this.K) {
-            return;
-        }
-        if (((int) Math.max(this.k0, (this.l0 / 16.0f) * 9.0f)) <= 900) {
-            this.i0 = 720;
-            this.j0 = 1280;
-        } else {
-            this.i0 = 1080;
-            this.j0 = 1920;
-        }
-    }
-
-    public final void i(boolean z10) {
-        if (this.M0 != null) {
-            this.M0 = null;
-        }
-        File file = this.N0;
-        if (file != null) {
-            file.delete();
-            this.N0 = null;
-        }
-        if (!z10) {
-            f();
-            File file2 = this.Z0;
-            if (file2 != null) {
-                file2.delete();
-                this.Z0 = null;
-            }
-            File file3 = this.L;
-            if (file3 != null) {
-                if (this.M && (!this.g || this.j)) {
-                    file3.delete();
-                }
-                this.L = null;
-            }
-            if (this.N != null) {
-                if (this.M) {
-                    new File(this.N).delete();
-                }
-                this.N = null;
-            }
-            ArrayList arrayList = this.T0;
-            if (arrayList != null) {
-                int size = arrayList.size();
-                int i7 = 0;
-                while (i7 < size) {
-                    Object obj = arrayList.get(i7);
-                    i7++;
-                    c20 c20Var = (c20) obj;
-                    if (c20Var.a == 2 && !TextUtils.isEmpty(c20Var.t)) {
-                        try {
-                            new File(c20Var.t).delete();
-                        } catch (Exception e10) {
-                            org.telegram.messenger.a8.g(e10, true);
-                        }
-                        c20Var.t = "";
-                    }
-                }
-            }
-            File file4 = this.o0;
-            if (file4 != null && (!this.g || this.j)) {
-                file4.delete();
-                this.o0 = null;
-            }
-            if (this.p0 != null && (!this.g || this.j)) {
-                try {
-                    new File(this.p0).delete();
-                } catch (Exception unused) {
-                }
-                this.p0 = null;
-            }
-        }
-        this.O = null;
-        if (this.T != null) {
-            for (int i10 = 0; i10 < this.T.size(); i10++) {
-                ((d7) this.T.get(i10)).i(z10);
-            }
-        }
-        if (this.e1 != 0) {
-            ConnectionsManager.getInstance(this.a).cancelRequest(this.e1, true);
-        }
-    }
-
-    public final int r() {
-        if (!this.K || v() || this.g) {
-            return 1;
-        }
-        long j3 = this.h0;
-        if (j3 <= 0 || this.n) {
-            return 1;
-        }
-        if (((long) ((this.a0 - this.Z) * j3)) < 68999) {
-            return 1;
-        }
-        return (int) Math.ceil(r0 / 59000.0f);
-    }
-
-    public final void s(x10 x10Var) {
-        int i7;
-        if (!E()) {
-            x10Var.a(null);
-            return;
-        }
-        if (!this.K && ((i7 = this.i0) > 720 || this.j0 > 1280)) {
-            float f10 = 720.0f / i7;
-            this.n0.postScale(f10, f10, 0.0f, 0.0f);
-            this.i0 = 720;
-            this.j0 = 1280;
-        }
-        File file = this.L;
-        String absolutePath = file == null ? null : file.getAbsolutePath();
-        int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, Math.max(1, v() ? this.T.size() : 0), 11);
-        iArr[0] = new int[11];
-        ai.s sVar = new ai.s((Object) this, absolutePath, (Object) iArr, (Object) x10Var, 20);
-        if (!v()) {
-            if (this.L == null) {
-                sVar.run();
-                return;
-            } else {
-                Utilities.e.c(new di.ga(absolutePath, iArr, sVar, 16));
-                return;
-            }
-        }
-        String[] strArr = new String[this.T.size()];
-        for (int i10 = 0; i10 < this.T.size(); i10++) {
-            strArr[i10] = ((d7) this.T.get(i10)).L == null ? null : ((d7) this.T.get(i10)).L.getAbsolutePath();
-            iArr[i10] = new int[11];
-        }
-        Utilities.e.c(new di.ga(strArr, iArr, sVar, 15));
-    }
-
-    public final boolean t() {
-        if (v()) {
-            for (int i7 = 0; i7 < this.T.size(); i7++) {
-                if (((d7) this.T.get(i7)).K) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public final boolean v() {
-        return (this.S == null || this.T == null) ? false : true;
-    }
-
-    public final void z(Runnable runnable) {
-        Bitmap bitmap;
-        if (this.K && this.A0 == 0 && this.B0 == 0) {
-            if (this.N == null) {
-                Bitmap bitmap2 = this.O;
-                if (bitmap2 != null) {
-                    int[] b10 = c8.j0.b(bitmap2, true);
-                    this.A0 = b10[0];
-                    this.B0 = b10[1];
-                    runnable.run();
-                    return;
-                }
-                return;
-            }
-            try {
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                if (this.N.startsWith("vthumb://")) {
-                    long parseInt = Integer.parseInt(this.N.substring(9));
-                    options.inJustDecodeBounds = true;
-                    MediaStore.Video.Thumbnails.getThumbnail(org.telegram.messenger.t0.b.getContentResolver(), parseInt, 1, options);
-                    options.inSampleSize = d(options, ks.P3, ks.P3);
-                    options.inJustDecodeBounds = false;
-                    options.inPreferredConfig = Bitmap.Config.RGB_565;
-                    options.inDither = true;
-                    bitmap = MediaStore.Video.Thumbnails.getThumbnail(org.telegram.messenger.t0.b.getContentResolver(), parseInt, 1, options);
+                    };
+                    arrayList4.add(o41Var2);
+                    c51Var2.U();
                 } else {
-                    options.inJustDecodeBounds = true;
-                    BitmapFactory.decodeFile(this.N);
-                    options.inSampleSize = d(options, ks.P3, ks.P3);
-                    options.inJustDecodeBounds = false;
-                    options.inPreferredConfig = Bitmap.Config.RGB_565;
-                    options.inDither = true;
-                    bitmap = BitmapFactory.decodeFile(this.N);
+                    c51Var2 = c51Var4;
+                    c51Var2.V();
+                    arrayList4.add(o41.k(s0Var.e));
+                    longSparseArray.clear();
+                    int i20 = 0;
+                    boolean z13 = false;
+                    while (i20 < s0Var.d.d.size()) {
+                        TLObject tLObject = (TLObject) s0Var.d.d.get(i20);
+                        if (tLObject instanceof TLRPC.User) {
+                            TLRPC.User user = (TLRPC.User) tLObject;
+                            if (user.bot) {
+                                long j14 = user.id;
+                                String str8 = s0Var.E;
+                                o41 o41Var3 = new o41(13);
+                                o41Var3.y = j14;
+                                o41Var3.o = str8;
+                                arrayList4.add(o41Var3);
+                                longSparseArray.put(user.id, user);
+                                z13 = true;
+                            }
+                        }
+                        i20++;
+                        z13 = z13;
+                    }
+                    int i21 = 0;
+                    boolean z14 = z13;
+                    while (i21 < s0Var.d.e.size()) {
+                        TLObject tLObject2 = (TLObject) s0Var.d.e.get(i21);
+                        if (tLObject2 instanceof TLRPC.User) {
+                            TLRPC.User user2 = (TLRPC.User) tLObject2;
+                            if (user2.bot) {
+                                long j15 = user2.id;
+                                String str9 = s0Var.E;
+                                o41 o41Var4 = new o41(13);
+                                o41Var4.y = j15;
+                                o41Var4.o = str9;
+                                arrayList4.add(o41Var4);
+                                longSparseArray.put(user2.id, user2);
+                                z14 = true;
+                            }
+                        }
+                        i21++;
+                        z14 = z14;
+                    }
+                    boolean z15 = z14;
+                    if (longSparseArray.size() <= 0) {
+                        if (TextUtils.isEmpty(s0Var.f.getText().toString()) && !s0Var.d.e()) {
+                            z15 = z14;
+                            break;
+                        }
+                        arrayList4.add(o41.k(s0Var.n));
+                        z15 = true;
+                    }
+                    s0Var.h.setVisibility(z15 ? 0 : 8);
+                    c51Var2.U();
                 }
-            } catch (Exception unused) {
-                bitmap = null;
-            }
-            if (bitmap != null) {
-                int[] b11 = c8.j0.b(bitmap, true);
-                this.A0 = b11[0];
-                this.B0 = b11[1];
-                bitmap.recycle();
-                runnable.run();
-            }
+                arrayList4.add(o41.C(gd.N0(2131752803, null)));
+                c51Var2.V();
+                o41 u10 = o41.u(gd.N0(2131752807, null));
+                u10.g = s0Var.N != null;
+                arrayList4.add(u10);
+                o41 x12 = o41.x(-1, gd.N0(2131752769, null));
+                x12.L(s0Var.J);
+                x12.g = s0Var.N != null;
+                arrayList4.add(x12);
+                o41 x13 = o41.x(-2, gd.N0(2131752764, null));
+                x13.L(!s0Var.J);
+                x13.g = s0Var.N != null;
+                arrayList4.add(x13);
+                c51Var2.U();
+                arrayList4.add(o41.C(null));
+                c51 c51Var5 = c51Var2;
+                s0Var.w.a(arrayList4, c51Var5, s0Var.N != null);
+                arrayList4.add(o41.C(gd.N0(2131752806, null)));
+                if (s0Var.N != null) {
+                    c51Var5.V();
+                    arrayList4.add(o41.u(gd.N0(2131752796, null)));
+                    String N03 = gd.N0(2131752783, null);
+                    StringBuilder sb2 = new StringBuilder();
+                    TL_account.TL_businessBotRights tL_businessBotRights = s0Var.K;
+                    sb2.append((tL_businessBotRights.reply ? 1 : 0) + 1 + (tL_businessBotRights.read_messages ? 1 : 0) + (tL_businessBotRights.delete_sent_messages ? 1 : 0) + (tL_businessBotRights.delete_received_messages ? 1 : 0));
+                    sb2.append("/5");
+                    o41 o4 = o41.o(-4, N03, sb2.toString());
+                    TL_account.TL_businessBotRights tL_businessBotRights2 = s0Var.K;
+                    o4.L(tL_businessBotRights2.reply && tL_businessBotRights2.read_messages && tL_businessBotRights2.delete_received_messages && tL_businessBotRights2.delete_sent_messages);
+                    o4.f = !s0Var.Q;
+                    o4.E = new View.OnClickListener() { // from class: kg.o0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            switch (i14) {
+                                case 0:
+                                    s0 s0Var2 = s0Var;
+                                    s0Var2.N = null;
+                                    s0Var2.c.g3.O(true);
+                                    s0Var2.d0(true);
+                                    break;
+                                case 1:
+                                    s0 s0Var3 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights3 = s0Var3.K;
+                                    if (tL_businessBotRights3.reply && tL_businessBotRights3.read_messages && tL_businessBotRights3.delete_received_messages && tL_businessBotRights3.delete_sent_messages) {
+                                        tL_businessBotRights3.delete_sent_messages = false;
+                                        tL_businessBotRights3.delete_received_messages = false;
+                                        tL_businessBotRights3.read_messages = false;
+                                        tL_businessBotRights3.reply = false;
+                                    } else {
+                                        tL_businessBotRights3.delete_sent_messages = true;
+                                        tL_businessBotRights3.delete_received_messages = true;
+                                        tL_businessBotRights3.read_messages = true;
+                                        tL_businessBotRights3.reply = true;
+                                    }
+                                    s0Var3.c.g3.O(true);
+                                    s0Var3.d0(true);
+                                    break;
+                                case 2:
+                                    s0 s0Var4 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights22 = s0Var4.K;
+                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
+                                        s0Var4.c0(-14, true, new m0(s0Var4, 2));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights22.edit_username = false;
+                                        tL_businessBotRights22.edit_profile_photo = false;
+                                        tL_businessBotRights22.edit_bio = false;
+                                        tL_businessBotRights22.edit_name = false;
+                                        s0Var4.c.g3.O(true);
+                                        s0Var4.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                case 3:
+                                    s0 s0Var5 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights32 = s0Var5.K;
+                                    if (!tL_businessBotRights32.view_gifts || !tL_businessBotRights32.sell_gifts || !tL_businessBotRights32.change_gift_settings || !tL_businessBotRights32.transfer_and_upgrade_gifts || !tL_businessBotRights32.transfer_stars) {
+                                        s0Var5.c0(-17, true, new m0(s0Var5, 1));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights32.transfer_stars = false;
+                                        tL_businessBotRights32.transfer_and_upgrade_gifts = false;
+                                        tL_businessBotRights32.change_gift_settings = false;
+                                        tL_businessBotRights32.sell_gifts = false;
+                                        tL_businessBotRights32.view_gifts = false;
+                                        s0Var5.c.g3.O(true);
+                                        s0Var5.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    s0 s0Var6 = s0Var;
+                                    s0Var6.K.manage_stories = !r0.manage_stories;
+                                    s0Var6.c.g3.O(true);
+                                    s0Var6.d0(true);
+                                    break;
+                            }
+                        }
+                    };
+                    arrayList4.add(o4);
+                    if (s0Var.Q) {
+                        str3 = null;
+                        o41 z16 = o41.z(-5, gd.N0(2131752785, null));
+                        z16.L(true);
+                        z16.g = false;
+                        z16.i = 1;
+                        arrayList4.add(z16);
+                        o41 z17 = o41.z(-6, gd.N0(2131752784, null));
+                        z17.L(s0Var.K.reply);
+                        z17.i = 1;
+                        arrayList4.add(z17);
+                        o41 z18 = o41.z(-7, gd.N0(2131752786, null));
+                        z18.L(s0Var.K.read_messages);
+                        z18.i = 1;
+                        arrayList4.add(z18);
+                        o41 z19 = o41.z(-8, gd.N0(2131752787, null));
+                        z19.L(s0Var.K.delete_sent_messages);
+                        z19.i = 1;
+                        arrayList4.add(z19);
+                        o41 z20 = o41.z(-9, gd.N0(2131752788, null));
+                        z20.L(s0Var.K.delete_received_messages);
+                        z20.i = 1;
+                        arrayList4.add(z20);
+                    } else {
+                        str3 = null;
+                    }
+                    String N04 = gd.N0(2131752779, str3);
+                    StringBuilder sb3 = new StringBuilder();
+                    TL_account.TL_businessBotRights tL_businessBotRights3 = s0Var.K;
+                    sb3.append((tL_businessBotRights3.edit_name ? 1 : 0) + (tL_businessBotRights3.edit_bio ? 1 : 0) + (tL_businessBotRights3.edit_profile_photo ? 1 : 0) + (tL_businessBotRights3.edit_username ? 1 : 0));
+                    sb3.append("/4");
+                    o41 o10 = o41.o(-10, N04, sb3.toString());
+                    TL_account.TL_businessBotRights tL_businessBotRights4 = s0Var.K;
+                    o10.L(tL_businessBotRights4.edit_name && tL_businessBotRights4.edit_bio && tL_businessBotRights4.edit_profile_photo && tL_businessBotRights4.edit_username);
+                    o10.f = !s0Var.R;
+                    final int i22 = 2;
+                    o10.E = new View.OnClickListener() { // from class: kg.o0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            switch (i22) {
+                                case 0:
+                                    s0 s0Var2 = s0Var;
+                                    s0Var2.N = null;
+                                    s0Var2.c.g3.O(true);
+                                    s0Var2.d0(true);
+                                    break;
+                                case 1:
+                                    s0 s0Var3 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights32 = s0Var3.K;
+                                    if (tL_businessBotRights32.reply && tL_businessBotRights32.read_messages && tL_businessBotRights32.delete_received_messages && tL_businessBotRights32.delete_sent_messages) {
+                                        tL_businessBotRights32.delete_sent_messages = false;
+                                        tL_businessBotRights32.delete_received_messages = false;
+                                        tL_businessBotRights32.read_messages = false;
+                                        tL_businessBotRights32.reply = false;
+                                    } else {
+                                        tL_businessBotRights32.delete_sent_messages = true;
+                                        tL_businessBotRights32.delete_received_messages = true;
+                                        tL_businessBotRights32.read_messages = true;
+                                        tL_businessBotRights32.reply = true;
+                                    }
+                                    s0Var3.c.g3.O(true);
+                                    s0Var3.d0(true);
+                                    break;
+                                case 2:
+                                    s0 s0Var4 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights22 = s0Var4.K;
+                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
+                                        s0Var4.c0(-14, true, new m0(s0Var4, 2));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights22.edit_username = false;
+                                        tL_businessBotRights22.edit_profile_photo = false;
+                                        tL_businessBotRights22.edit_bio = false;
+                                        tL_businessBotRights22.edit_name = false;
+                                        s0Var4.c.g3.O(true);
+                                        s0Var4.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                case 3:
+                                    s0 s0Var5 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights322 = s0Var5.K;
+                                    if (!tL_businessBotRights322.view_gifts || !tL_businessBotRights322.sell_gifts || !tL_businessBotRights322.change_gift_settings || !tL_businessBotRights322.transfer_and_upgrade_gifts || !tL_businessBotRights322.transfer_stars) {
+                                        s0Var5.c0(-17, true, new m0(s0Var5, 1));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights322.transfer_stars = false;
+                                        tL_businessBotRights322.transfer_and_upgrade_gifts = false;
+                                        tL_businessBotRights322.change_gift_settings = false;
+                                        tL_businessBotRights322.sell_gifts = false;
+                                        tL_businessBotRights322.view_gifts = false;
+                                        s0Var5.c.g3.O(true);
+                                        s0Var5.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    s0 s0Var6 = s0Var;
+                                    s0Var6.K.manage_stories = !r0.manage_stories;
+                                    s0Var6.c.g3.O(true);
+                                    s0Var6.d0(true);
+                                    break;
+                            }
+                        }
+                    };
+                    arrayList4.add(o10);
+                    if (s0Var.R) {
+                        str4 = null;
+                        o41 z21 = o41.z(-11, gd.N0(2131752781, null));
+                        z21.L(s0Var.K.edit_name);
+                        z21.i = 1;
+                        arrayList4.add(z21);
+                        o41 z22 = o41.z(-12, gd.N0(2131752782, null));
+                        z22.L(s0Var.K.edit_bio);
+                        z22.i = 1;
+                        arrayList4.add(z22);
+                        o41 z23 = o41.z(-13, gd.N0(2131752780, null));
+                        z23.L(s0Var.K.edit_profile_photo);
+                        z23.i = 1;
+                        arrayList4.add(z23);
+                        o41 z24 = o41.z(-14, gd.N0(2131752778, null));
+                        z24.L(s0Var.K.edit_username);
+                        z24.i = 1;
+                        arrayList4.add(z24);
+                    } else {
+                        str4 = null;
+                    }
+                    String N05 = gd.N0(2131752795, str4);
+                    StringBuilder sb4 = new StringBuilder();
+                    TL_account.TL_businessBotRights tL_businessBotRights5 = s0Var.K;
+                    sb4.append((tL_businessBotRights5.view_gifts ? 1 : 0) + (tL_businessBotRights5.sell_gifts ? 1 : 0) + (tL_businessBotRights5.change_gift_settings ? 1 : 0) + (tL_businessBotRights5.transfer_and_upgrade_gifts ? 1 : 0) + (tL_businessBotRights5.transfer_stars ? 1 : 0));
+                    sb4.append("/5");
+                    o41 o11 = o41.o(-15, N05, sb4.toString());
+                    TL_account.TL_businessBotRights tL_businessBotRights6 = s0Var.K;
+                    o11.L(tL_businessBotRights6.view_gifts && tL_businessBotRights6.sell_gifts && tL_businessBotRights6.change_gift_settings && tL_businessBotRights6.transfer_and_upgrade_gifts && tL_businessBotRights6.transfer_stars);
+                    o11.f = !s0Var.S;
+                    final int i23 = 3;
+                    o11.E = new View.OnClickListener() { // from class: kg.o0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            switch (i23) {
+                                case 0:
+                                    s0 s0Var2 = s0Var;
+                                    s0Var2.N = null;
+                                    s0Var2.c.g3.O(true);
+                                    s0Var2.d0(true);
+                                    break;
+                                case 1:
+                                    s0 s0Var3 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights32 = s0Var3.K;
+                                    if (tL_businessBotRights32.reply && tL_businessBotRights32.read_messages && tL_businessBotRights32.delete_received_messages && tL_businessBotRights32.delete_sent_messages) {
+                                        tL_businessBotRights32.delete_sent_messages = false;
+                                        tL_businessBotRights32.delete_received_messages = false;
+                                        tL_businessBotRights32.read_messages = false;
+                                        tL_businessBotRights32.reply = false;
+                                    } else {
+                                        tL_businessBotRights32.delete_sent_messages = true;
+                                        tL_businessBotRights32.delete_received_messages = true;
+                                        tL_businessBotRights32.read_messages = true;
+                                        tL_businessBotRights32.reply = true;
+                                    }
+                                    s0Var3.c.g3.O(true);
+                                    s0Var3.d0(true);
+                                    break;
+                                case 2:
+                                    s0 s0Var4 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights22 = s0Var4.K;
+                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
+                                        s0Var4.c0(-14, true, new m0(s0Var4, 2));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights22.edit_username = false;
+                                        tL_businessBotRights22.edit_profile_photo = false;
+                                        tL_businessBotRights22.edit_bio = false;
+                                        tL_businessBotRights22.edit_name = false;
+                                        s0Var4.c.g3.O(true);
+                                        s0Var4.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                case 3:
+                                    s0 s0Var5 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights322 = s0Var5.K;
+                                    if (!tL_businessBotRights322.view_gifts || !tL_businessBotRights322.sell_gifts || !tL_businessBotRights322.change_gift_settings || !tL_businessBotRights322.transfer_and_upgrade_gifts || !tL_businessBotRights322.transfer_stars) {
+                                        s0Var5.c0(-17, true, new m0(s0Var5, 1));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights322.transfer_stars = false;
+                                        tL_businessBotRights322.transfer_and_upgrade_gifts = false;
+                                        tL_businessBotRights322.change_gift_settings = false;
+                                        tL_businessBotRights322.sell_gifts = false;
+                                        tL_businessBotRights322.view_gifts = false;
+                                        s0Var5.c.g3.O(true);
+                                        s0Var5.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    s0 s0Var6 = s0Var;
+                                    s0Var6.K.manage_stories = !r0.manage_stories;
+                                    s0Var6.c.g3.O(true);
+                                    s0Var6.d0(true);
+                                    break;
+                            }
+                        }
+                    };
+                    arrayList4.add(o11);
+                    if (s0Var.S) {
+                        str5 = null;
+                        o41 z25 = o41.z(-16, gd.N0(2131752790, null));
+                        z25.L(s0Var.K.view_gifts);
+                        z25.i = 1;
+                        arrayList4.add(z25);
+                        o41 z26 = o41.z(-17, gd.N0(2131752794, null));
+                        z26.L(s0Var.K.sell_gifts);
+                        z26.i = 1;
+                        arrayList4.add(z26);
+                        o41 z27 = o41.z(-18, gd.N0(2131752793, null));
+                        z27.L(s0Var.K.change_gift_settings);
+                        z27.i = 1;
+                        arrayList4.add(z27);
+                        o41 z28 = o41.z(-19, gd.N0(2131752792, null));
+                        z28.L(s0Var.K.transfer_and_upgrade_gifts);
+                        z28.i = 1;
+                        arrayList4.add(z28);
+                        o41 z29 = o41.z(-20, gd.N0(2131752791, null));
+                        z29.L(s0Var.K.transfer_stars);
+                        z29.i = 1;
+                        arrayList4.add(z29);
+                    } else {
+                        str5 = null;
+                    }
+                    o41 o12 = o41.o(-21, gd.N0(2131752777, str5), "");
+                    o12.L(s0Var.K.manage_stories);
+                    final int i24 = 4;
+                    o12.E = new View.OnClickListener() { // from class: kg.o0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            switch (i24) {
+                                case 0:
+                                    s0 s0Var2 = s0Var;
+                                    s0Var2.N = null;
+                                    s0Var2.c.g3.O(true);
+                                    s0Var2.d0(true);
+                                    break;
+                                case 1:
+                                    s0 s0Var3 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights32 = s0Var3.K;
+                                    if (tL_businessBotRights32.reply && tL_businessBotRights32.read_messages && tL_businessBotRights32.delete_received_messages && tL_businessBotRights32.delete_sent_messages) {
+                                        tL_businessBotRights32.delete_sent_messages = false;
+                                        tL_businessBotRights32.delete_received_messages = false;
+                                        tL_businessBotRights32.read_messages = false;
+                                        tL_businessBotRights32.reply = false;
+                                    } else {
+                                        tL_businessBotRights32.delete_sent_messages = true;
+                                        tL_businessBotRights32.delete_received_messages = true;
+                                        tL_businessBotRights32.read_messages = true;
+                                        tL_businessBotRights32.reply = true;
+                                    }
+                                    s0Var3.c.g3.O(true);
+                                    s0Var3.d0(true);
+                                    break;
+                                case 2:
+                                    s0 s0Var4 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights22 = s0Var4.K;
+                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
+                                        s0Var4.c0(-14, true, new m0(s0Var4, 2));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights22.edit_username = false;
+                                        tL_businessBotRights22.edit_profile_photo = false;
+                                        tL_businessBotRights22.edit_bio = false;
+                                        tL_businessBotRights22.edit_name = false;
+                                        s0Var4.c.g3.O(true);
+                                        s0Var4.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                case 3:
+                                    s0 s0Var5 = s0Var;
+                                    TL_account.TL_businessBotRights tL_businessBotRights322 = s0Var5.K;
+                                    if (!tL_businessBotRights322.view_gifts || !tL_businessBotRights322.sell_gifts || !tL_businessBotRights322.change_gift_settings || !tL_businessBotRights322.transfer_and_upgrade_gifts || !tL_businessBotRights322.transfer_stars) {
+                                        s0Var5.c0(-17, true, new m0(s0Var5, 1));
+                                        break;
+                                    } else {
+                                        tL_businessBotRights322.transfer_stars = false;
+                                        tL_businessBotRights322.transfer_and_upgrade_gifts = false;
+                                        tL_businessBotRights322.change_gift_settings = false;
+                                        tL_businessBotRights322.sell_gifts = false;
+                                        tL_businessBotRights322.view_gifts = false;
+                                        s0Var5.c.g3.O(true);
+                                        s0Var5.d0(true);
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    s0 s0Var6 = s0Var;
+                                    s0Var6.K.manage_stories = !r0.manage_stories;
+                                    s0Var6.c.g3.O(true);
+                                    s0Var6.d0(true);
+                                    break;
+                            }
+                        }
+                    };
+                    arrayList4.add(o12);
+                    c51Var5.U();
+                    arrayList4.add(o41.B(-4, null));
+                    arrayList4.add(o41.B(-5, null));
+                    arrayList4.add(o41.B(-6, null));
+                    arrayList4.add(o41.B(-7, null));
+                    break;
+                }
+                break;
+            case 11:
+                kg.u0.Z((kg.u0) this.b, (ArrayList) obj, (c51) obj2);
+                break;
+            case 12:
+                kg.c1 c1Var = (kg.c1) this.b;
+                ArrayList arrayList5 = (ArrayList) obj;
+                String N06 = gd.N0(2131752686, null);
+                String N07 = gd.N0(2131752680, null);
+                o41 o41Var5 = new o41(2);
+                o41Var5.m = N06;
+                o41Var5.p = N07;
+                o41Var5.k = R.raw.biz_map;
+                arrayList5.add(o41Var5);
+                arrayList5.add(o41.k(c1Var.d));
+                arrayList5.add(o41.C(null));
+                o41 i25 = o41.i(1, gd.N0(2131752679, null));
+                i25.L(c1Var.x != null);
+                arrayList5.add(i25);
+                if (c1Var.x != null) {
+                    arrayList5.add(o41.k(c1Var.f));
+                }
+                arrayList5.add(o41.C(null));
+                if (c1Var.w != null && (c1Var.x != null || !TextUtils.isEmpty(c1Var.y))) {
+                    z12 = true;
+                }
+                c1Var.G = z12;
+                if (z12) {
+                    o41 e10 = o41.e(2, gd.N0(2131752684, null));
+                    e10.s = true;
+                    arrayList5.add(e10);
+                    arrayList5.add(o41.C(null));
+                }
+                c1Var.Z(true);
+                break;
+            case 13:
+                kg.e1.a0((kg.e1) this.b, (ArrayList) obj);
+                break;
+            case 14:
+                kg.g1 g1Var = (kg.g1) this.b;
+                ArrayList arrayList6 = (ArrayList) obj;
+                ArrayList arrayList7 = g1Var.b;
+                String str10 = null;
+                String N08 = gd.N0(2131752740, null);
+                o41 o41Var6 = new o41(9);
+                o41Var6.d = -1;
+                o41Var6.m = N08;
+                o41Var6.L(g1Var.r);
+                arrayList6.add(o41Var6);
+                arrayList6.add(o41.C(null));
+                if (g1Var.r) {
+                    while (i13 < arrayList7.size()) {
+                        if (i13 > 0) {
+                            arrayList6.add(o41.C(str10));
+                        }
+                        kg.d1 d1Var = (kg.d1) arrayList7.get(i13);
+                        if (g1Var.Z()) {
+                            str6 = null;
+                        } else {
+                            int i26 = i13 * 3;
+                            str6 = null;
+                            arrayList6.add(o41.f(gd.N0(2131752739, null), kg.d1.a(d1Var.a), i26));
+                            arrayList6.add(o41.f(gd.N0(2131752745, null), kg.d1.a(d1Var.b), i26 + 1));
+                            o41 e11 = o41.e(i26 + 2, gd.N0(2131746125, null));
+                            e11.s = true;
+                            arrayList6.add(e11);
+                        }
+                        i13++;
+                        str10 = str6;
+                    }
+                    String str11 = str10;
+                    if (g1Var.a0()) {
+                        arrayList6.add(o41.C(str11));
+                        o41 c10 = o41.c(-2, R.drawable.menu_premium_clock_add, gd.N0(2131752746, str11));
+                        c10.r = true;
+                        arrayList6.add(c10);
+                    }
+                    arrayList6.add(o41.C(gd.N0(2131752741, str11)));
+                    break;
+                }
+                break;
+            case 15:
+                kg.y1.a0((kg.y1) this.b, (ArrayList) obj, (c51) obj2);
+                break;
+            case 16:
+                ((ki.j) this.b).H0((ArrayList) obj, (c51) obj2);
+                break;
+            case 17:
+                ki.q.Z((ki.q) this.b, (ArrayList) obj);
+                break;
+            case 18:
+                org.telegram.ui.Components.o6 o6Var = (org.telegram.ui.Components.o6) this.b;
+                String str12 = (String) obj;
+                Long l10 = (Long) obj2;
+                StringBuilder sb5 = new StringBuilder();
+                if (l10.longValue() > 0) {
+                    sb5.append("~");
+                    sb5.append(org.telegram.messenger.g0.i0(l10.longValue(), false, false));
+                }
+                if (str12 == null) {
+                    upperCase = null;
+                } else {
+                    if (!str12.isEmpty()) {
+                        switch (str12) {
+                            case "application/epub+zip":
+                                str7 = "epub";
+                                break;
+                            case "application/vnd.oasis.opendocument.text":
+                                str7 = "odt";
+                                break;
+                            case "video/3gpp":
+                            case "audio/3gpp":
+                                str7 = "3gp";
+                                break;
+                            case "application/vnd.ms-fontobject":
+                                str7 = "eot";
+                                break;
+                            case "application/x-cdf":
+                                str7 = "cda";
+                                break;
+                            case "application/x-csh":
+                                str7 = "csh";
+                                break;
+                            case "video/x-msvideo":
+                                str7 = "avi";
+                                break;
+                            case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
+                                str7 = "pptx";
+                                break;
+                            case "application/vnd.ms-powerpoint":
+                                str7 = "ppt";
+                                break;
+                            case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                                str7 = "docx";
+                                break;
+                            case "audio/x-midi":
+                                str7 = "midi";
+                                break;
+                            case "text/calendar":
+                                str7 = "ics";
+                                break;
+                            case "application/x-httpd-php":
+                                str7 = "php";
+                                break;
+                            case "audio/3gpp2":
+                            case "video/3gpp2":
+                                str7 = "3g2";
+                                break;
+                            case "application/vnd.apple.installer+xml":
+                                str7 = "mpkg";
+                                break;
+                            case "application/vnd.ms-excel":
+                                str7 = "xls";
+                                break;
+                            case "application/gzip":
+                            case "application/x-gzip":
+                                str7 = "gz";
+                                break;
+                            case "application/x-sh":
+                                str7 = "sh";
+                                break;
+                            case "audio/ogg":
+                                str7 = "opus";
+                                break;
+                            case "text/plain":
+                                str7 = "txt";
+                                break;
+                            case "application/x-abiword":
+                                str7 = "abw";
+                                break;
+                            case "application/ld+json":
+                                str7 = "jsonld";
+                                break;
+                            case "application/msword":
+                                str7 = "doc";
+                                break;
+                            case "application/x-bzip":
+                                str7 = "bz";
+                                break;
+                            case "application/octet-stream":
+                                str7 = "bin";
+                                break;
+                            case "application/x-bzip2":
+                                str7 = "bz2";
+                                break;
+                            case "application/vnd.oasis.opendocument.presentation":
+                                str7 = "odp";
+                                break;
+                            case "application/x-7z-compressed":
+                                str7 = "7z";
+                                break;
+                            case "application/x-freearc":
+                                str7 = "arc";
+                                break;
+                            case "audio/mpeg":
+                                str7 = "mp3";
+                                break;
+                            case "application/vnd.rar":
+                                str7 = "rar";
+                                break;
+                            case "image/vnd.microsoft.icon":
+                                str7 = "ico";
+                                break;
+                            case "application/vnd.oasis.opendocument.spreadsheet":
+                                str7 = "ods";
+                                break;
+                            case "application/vnd.amazon.ebook":
+                                str7 = "azw";
+                                break;
+                            case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+                                str7 = "xlsx";
+                                break;
+                            case "application/java-archive":
+                                str7 = "jar";
+                                break;
+                            case "text/javascript":
+                                str7 = "js";
+                                break;
+                            default:
+                                if (str12.contains("/")) {
+                                    str12 = str12.substring(str12.indexOf("/") + 1);
+                                }
+                                if (str12.contains("-")) {
+                                    str12 = str12.substring(str12.indexOf("-") + 1);
+                                }
+                                if (str12.contains("+")) {
+                                    str12 = str12.substring(0, str12.indexOf("+"));
+                                }
+                                str7 = str12.toLowerCase();
+                                break;
+                        }
+                    }
+                    upperCase = str7.toUpperCase();
+                }
+                if (!TextUtils.isEmpty(upperCase)) {
+                    if (sb5.length() > 0) {
+                        sb5.append(" ");
+                    }
+                    sb5.append(upperCase.toUpperCase());
+                }
+                if (sb5.length() <= 0) {
+                    sb5.append(gd.N0(2131753972, null));
+                }
+                o6Var.setText(sb5);
+                break;
+            case 19:
+                ki.g1 g1Var2 = (ki.g1) this.b;
+                ArrayList arrayList8 = (ArrayList) obj;
+                arrayList8.add(o41.j(-1, g1Var2.W1));
+                arrayList8.add(o41.C(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131752968, g1Var2.U1))));
+                break;
+            case 20:
+                ki.s2 s2Var = (ki.s2) this.b;
+                TLRPC.TL_webViewResultUrl tL_webViewResultUrl = (TLRPC.TL_webViewResultUrl) obj;
+                if (((TLRPC.TL_error) obj2) != null) {
+                    s2Var.getClass();
+                    break;
+                } else {
+                    ki.e4 e4Var = s2Var.x0;
+                    if (e4Var != null) {
+                        e4Var.a(tL_webViewResultUrl);
+                        s2Var.s();
+                        break;
+                    }
+                }
+                break;
+            case 21:
+                ((ki.h3) this.b).I0((ArrayList) obj, (c51) obj2);
+                break;
+            case 22:
+                ((ki.d4) this.b).Z((ArrayList) obj, (c51) obj2);
+                break;
+            case 23:
+                ((li.s) this.b).w.c((ArrayList) obj);
+                break;
+            case 24:
+                b(obj, obj2);
+                break;
+            case 25:
+                ((ArrayList) obj).add(o41.j(0, ((ni.b) this.b).T1));
+                break;
+            case 26:
+                Utilities.i.c(new ji.i(i11, (String[]) this.b, (q10) obj2));
+                break;
+            case 27:
+                oi.v vVar = (oi.v) this.b;
+                ArrayList arrayList9 = (ArrayList) obj;
+                arrayList9.add(o41.j(1, vVar.W1));
+                arrayList9.add(o41.j(3, vVar.Z1));
+                if (vVar.e2 != null) {
+                    arrayList9.add(o41.j(2, vVar.X1));
+                    break;
+                }
+                break;
+            case 28:
+                oi.t3.L1((oi.t3[]) this.b, (ArrayList) obj, (c51) obj2);
+                break;
+            default:
+                oi.t3 t3Var = (oi.t3) this.b;
+                ((Integer) obj).getClass();
+                ArrayList arrayList10 = (ArrayList) obj2;
+                ArrayList arrayList11 = t3Var.t3;
+                ArrayList arrayList12 = new ArrayList(arrayList10.size());
+                int size = arrayList10.size();
+                int i27 = 0;
+                while (i27 < size) {
+                    Object obj3 = arrayList10.get(i27);
+                    i27++;
+                    Object obj4 = ((o41) obj3).H;
+                    if (obj4 instanceof oi.a) {
+                        arrayList12.add((oi.a) obj4);
+                    }
+                }
+                if (arrayList12.size() >= 2) {
+                    ArrayList arrayList13 = new ArrayList();
+                    int size2 = arrayList12.size();
+                    int i28 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    int i29 = 0;
+                    int i30 = 0;
+                    while (i30 < size2) {
+                        Object obj5 = arrayList12.get(i30);
+                        i30++;
+                        oi.a aVar = (oi.a) obj5;
+                        int indexOf = arrayList11.indexOf(aVar);
+                        if (indexOf < 0) {
+                            break;
+                        } else {
+                            int i31 = indexOf + 1;
+                            if (oi.t3.A3(aVar) && !((TL_iv.pageBlockDetails) aVar.b).open) {
+                                int S3 = t3Var.S3(indexOf);
+                                i31 = S3 >= arrayList11.size() ? arrayList11.size() : S3 + 1;
+                            }
+                            arrayList13.add(new ArrayList(arrayList11.subList(indexOf, i31)));
+                            i28 = Math.min(i28, indexOf);
+                            i29 += i31 - indexOf;
+                        }
+                    }
+                    if (i29 == r6 - i28) {
+                        ArrayList arrayList14 = new ArrayList(i29);
+                        int size3 = arrayList13.size();
+                        int i32 = 0;
+                        while (i32 < size3) {
+                            Object obj6 = arrayList13.get(i32);
+                            i32++;
+                            arrayList14.addAll((ArrayList) obj6);
+                        }
+                        for (int i33 = 0; i33 < arrayList14.size(); i33++) {
+                            if (arrayList11.get(i28 + i33) != arrayList14.get(i33)) {
+                                oi.g2 g2Var2 = t3Var.R3;
+                                if (g2Var2 != null) {
+                                    g2Var2.d();
+                                }
+                                for (int i34 = 0; i34 < arrayList14.size(); i34++) {
+                                    arrayList11.set(i28 + i34, (oi.a) arrayList14.get(i34));
+                                }
+                                oi.a aVar2 = t3Var.a4;
+                                ArrayList arrayList15 = oi.t3.A4;
+                                if (aVar2 != null) {
+                                    ArrayList arrayList16 = aVar2.k;
+                                    int indexOf2 = arrayList11.indexOf(aVar2);
+                                    if (indexOf2 >= 0) {
+                                        ArrayList arrayList17 = indexOf2 > 0 ? ((oi.a) arrayList11.get(indexOf2 - 1)).k : arrayList15;
+                                        int i35 = indexOf2 + 1;
+                                        if (i35 < arrayList11.size()) {
+                                            arrayList15 = ((oi.a) arrayList11.get(i35)).k;
+                                        }
+                                        if (arrayList17.size() < arrayList15.size()) {
+                                            arrayList17 = arrayList15;
+                                        }
+                                        if (!arrayList16.equals(arrayList17)) {
+                                            arrayList16.clear();
+                                            arrayList16.addAll(arrayList17);
+                                            z11 = true;
+                                            boolean A2 = t3Var.A2();
+                                            i10 = 0;
+                                            while (i10 < arrayList11.size()) {
+                                                oi.a aVar3 = (oi.a) arrayList11.get(i10);
+                                                if (!aVar3.i && !oi.t3.A3(aVar3)) {
+                                                    oi.a aVar4 = i10 > 0 ? (oi.a) arrayList11.get(i10 - 1) : null;
+                                                    int max = aVar4 != null ? Math.max(0, aVar4.c) : 0;
+                                                    if (oi.t3.H3(aVar3.b)) {
+                                                        aVar3.c = max;
+                                                        if (max > 0) {
+                                                            aVar3.d = aVar4.d > 0 ? 1 : 0;
+                                                            aVar3.e = false;
+                                                            aVar3.f = false;
+                                                        }
+                                                    } else {
+                                                        int i36 = max + 1;
+                                                        if (aVar3.c > i36) {
+                                                            aVar3.c = i36;
+                                                        }
+                                                    }
+                                                    if (aVar3.c <= 0) {
+                                                        aVar3.c = 0;
+                                                        aVar3.d = 0;
+                                                        aVar3.e = false;
+                                                        aVar3.f = false;
+                                                    }
+                                                }
+                                                i10++;
+                                            }
+                                            t3Var.v4();
+                                            t3Var.d2();
+                                            if (!z11 || A2) {
+                                                t3Var.g3.O(true);
+                                                t3Var.A4();
+                                            } else {
+                                                t3Var.A4();
+                                            }
+                                            g2Var = t3Var.R3;
+                                            if (g2Var == null) {
+                                                g2Var.h();
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                z11 = false;
+                                boolean A22 = t3Var.A2();
+                                i10 = 0;
+                                while (i10 < arrayList11.size()) {
+                                }
+                                t3Var.v4();
+                                t3Var.d2();
+                                if (z11) {
+                                }
+                                t3Var.g3.O(true);
+                                t3Var.A4();
+                                g2Var = t3Var.R3;
+                                if (g2Var == null) {
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

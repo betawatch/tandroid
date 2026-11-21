@@ -10,7 +10,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoIPServiceState;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ac1 extends org.telegram.ui.Components.voip.r2 {
     public final Path s;
@@ -91,14 +91,14 @@ public final class ac1 extends org.telegram.ui.Components.voip.r2 {
         if (Build.VERSION.SDK_INT < 33 || this.x != null) {
             return;
         }
-        this.x = ai.d.j(this, new tb1(this.y, 14));
+        this.x = ai.d.k(this, new tb1(this.y, 14));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         wn0 wn0Var;
         if (Build.VERSION.SDK_INT >= 33 && (wn0Var = this.x) != null) {
-            ai.d.l(this, wn0Var);
+            ai.d.m(this, wn0Var);
             this.x = null;
         }
         super.onDetachedFromWindow();

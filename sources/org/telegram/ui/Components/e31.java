@@ -1,79 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.text.style.ClickableSpan;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class e31 extends k41 {
-    static {
-        k41.h(new e31());
+public final /* synthetic */ class e31 implements org.telegram.messenger.q10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m31 b;
+
+    public /* synthetic */ e31(m31 m31Var, int i7) {
+        this.a = i7;
+        this.b = m31Var;
     }
 
-    public static l41 i(int i7, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z10, View.OnClickListener onClickListener2, s sVar) {
-        l41 K = l41.K(e31.class);
-        K.d = i7;
-        K.m = charSequence;
-        K.n = charSequence2;
-        K.o = charSequence3;
-        K.E = onClickListener;
-        K.e = z10;
-        K.F = onClickListener2;
-        K.H = sVar;
-        return K;
-    }
-
-    public static l41 j(int i7, String str, String str2, String str3, a31 a31Var) {
-        return i(i7, str, str2, str3, a31Var, false, null, null);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        f31 f31Var = (f31) view;
-        CharSequence charSequence = l41Var.m;
-        CharSequence charSequence2 = l41Var.n;
-        CharSequence charSequence3 = l41Var.o;
-        View.OnClickListener onClickListener = l41Var.E;
-        boolean z11 = l41Var.e;
-        View.OnClickListener onClickListener2 = l41Var.F;
-        Object obj = l41Var.H;
-        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
-        LinearLayout linearLayout = f31Var.r;
-        LinearLayout linearLayout2 = f31Var.h;
-        LinearLayout linearLayout3 = f31Var.b;
-        f31Var.c.setText(charSequence);
-        f31Var.d.setText(charSequence2);
-        f31Var.e.setText(charSequence3);
-        f31Var.f.setVisibility(onClickListener != null ? 0 : 8);
-        linearLayout3.setOnClickListener(onClickListener);
-        linearLayout3.setClickable(onClickListener != null);
-        f31Var.n.a(z11, false);
-        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
-        linearLayout2.setOnClickListener(onClickListener2);
-        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
-        linearLayout.setOnClickListener(new c31(1, f31Var, onClickListener3));
-        f31Var.updateColors();
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final boolean c(l41 l41Var, l41 l41Var2) {
-        return TextUtils.equals(l41Var.m, l41Var2.m) && TextUtils.equals(l41Var.n, l41Var2.n) && TextUtils.equals(l41Var.o, l41Var2.o) && l41Var.F == l41Var2.F;
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new f31(context, i6Var);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final boolean e(l41 l41Var, l41 l41Var2) {
-        return l41Var.d == l41Var2.d;
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final boolean f() {
-        return false;
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        int i7 = this.a;
+        final m31 m31Var = this.b;
+        switch (i7) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                c51 c51Var = (c51) obj2;
+                String[] strArr = m31Var.e2;
+                arrayList.add(o41.C(null));
+                c51Var.G = 1;
+                c51Var.V();
+                String str = m31Var.a2;
+                arrayList.add(g31.j(3, "", str != null ? b31.L0(b31.P0(str, null, null)) : org.telegram.messenger.gd.N0(2131754986, null), null, null));
+                arrayList.add(k31.i(4, m31Var.W1, m31Var.g2, new m8(28, m31Var, c51Var), new l80() { // from class: org.telegram.ui.Components.f31
+                    @Override // org.telegram.ui.Components.l80
+                    public final void a(ClickableSpan clickableSpan) {
+                        if (clickableSpan == null) {
+                            return;
+                        }
+                        clickableSpan.onClick(m31.this.b);
+                    }
+                }, null));
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(b31.P0(m31Var.b2, null, null));
+                sb2.append((m31Var.c2 == 1 || strArr == null) ? "" : a8.p0.s(new StringBuilder(" ("), strArr[m31Var.c2], ")"));
+                arrayList.add(g31.j(5, "", b31.L0(sb2.toString()), null, new d31(m31Var, 4)));
+                arrayList.add(k31.i(6, m31Var.Y1, false, null, new l80() { // from class: org.telegram.ui.Components.f31
+                    @Override // org.telegram.ui.Components.l80
+                    public final void a(ClickableSpan clickableSpan) {
+                        if (clickableSpan == null) {
+                            return;
+                        }
+                        clickableSpan.onClick(m31.this.b);
+                    }
+                }, null));
+                c51Var.U();
+                arrayList.add(o41.C(null));
+                c51Var.V();
+                arrayList.add(o41.c(1, R.drawable.msg_copy, org.telegram.messenger.gd.N0(2131743715, null)));
+                c51Var.U();
+                break;
+            default:
+                TLRPC.TL_messages_translateResult tL_messages_translateResult = (TLRPC.TL_messages_translateResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                m31Var.h2 = -1;
+                hi.e eVar = m31Var.V1;
+                eVar.setLoading(false);
+                if (tL_error == null) {
+                    if (tL_messages_translateResult != null && !tL_messages_translateResult.result.isEmpty()) {
+                        m31Var.Y1 = org.telegram.messenger.fj.h0(tL_messages_translateResult.result.get(0), false);
+                        m31Var.X1 = false;
+                        m31Var.f2.O(true);
+                        break;
+                    } else {
+                        eVar.setText(org.telegram.messenger.gd.N0(2131747637, null));
+                        eVar.setOnClickListener(new d31(m31Var, 1));
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.Cells.c0.t(m31Var.F, m31Var.J0, tL_error, false);
+                    eVar.setText(org.telegram.messenger.gd.N0(2131747637, null));
+                    eVar.setOnClickListener(new d31(m31Var, 0));
+                    break;
+                }
+                break;
+        }
     }
 }

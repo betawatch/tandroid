@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class v8 extends ck0 {
+public final class v8 extends ek0 {
     public final ArrayList f3;
     public final int g3;
     public int h3;
@@ -53,14 +53,14 @@ public final class v8 extends ck0 {
         setClipToPadding(false);
         this.g1 = true;
         int i13 = 2;
-        setOnItemClickListener(new n(this, i13));
+        setOnItemClickListener(new o(this, i13));
         org.telegram.ui.y7 y7Var = new org.telegram.ui.y7(this, i13);
         this.i3 = y7Var;
         setAdapter(y7Var);
         setOverScrollMode(1);
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i7) / this.i3.b();
         y8 y8Var = this.k3;

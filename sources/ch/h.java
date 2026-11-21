@@ -3,7 +3,7 @@ package ch;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class h implements Runnable {
                 vf.c.t(pVar.getParentActivity(), "https://t.me/stickers");
                 break;
             case 5:
-                vf.c.t(pVar.getParentActivity(), gd.M0(2131752398, null));
+                vf.c.t(pVar.getParentActivity(), gd.N0(2131752397, null));
                 break;
             default:
                 pVar.e0(false);

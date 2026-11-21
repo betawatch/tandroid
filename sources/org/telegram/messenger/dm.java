@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.zn0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dm implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -20,12 +20,12 @@ public final /* synthetic */ class dm implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ TLObject h;
 
-    public /* synthetic */ dm(mp mpVar, long j3, String str, Runnable runnable, org.telegram.ui.ActionBar.h2 h2Var, TLRPC.TL_channels_updateUsername tL_channels_updateUsername, Runnable runnable2) {
+    public /* synthetic */ dm(mp mpVar, long j3, String str, Runnable runnable, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_channels_updateUsername tL_channels_updateUsername, Runnable runnable2) {
         this.b = mpVar;
         this.d = j3;
         this.c = str;
         this.e = runnable;
-        this.g = h2Var;
+        this.g = g2Var;
         this.h = tL_channels_updateUsername;
         this.f = runnable2;
     }
@@ -40,11 +40,11 @@ public final /* synthetic */ class dm implements RequestDelegate {
             case 0:
                 mp mpVar3 = (mp) this.b;
                 Runnable runnable = (Runnable) this.e;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.g;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.g;
                 TLRPC.TL_channels_updateUsername tL_channels_updateUsername = (TLRPC.TL_channels_updateUsername) this.h;
                 Runnable runnable2 = (Runnable) this.f;
                 if (!(tLObject instanceof TLRPC.TL_boolTrue) && (tL_error == null || !"USERNAME_NOT_MODIFIED".equals(tL_error.text))) {
-                    org.telegram.ui.Components.b5.c0(j10.t0, tL_error, h2Var, tL_channels_updateUsername, new Object[0]);
+                    org.telegram.ui.Components.c5.c0(j10.t0, tL_error, g2Var, tL_channels_updateUsername, new Object[0]);
                     runnable2.run();
                     break;
                 } else {

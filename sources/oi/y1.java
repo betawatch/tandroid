@@ -2,146 +2,57 @@ package oi;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Outline;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class y1 extends Drawable implements Drawable.Callback {
-    public final Drawable a;
-    public final Paint b;
-    public final Path c;
-    public final RectF d;
-    public final Outline e;
-    public boolean f;
-    public final boolean h;
-    public boolean n;
+public final class y1 extends Drawable {
+    public boolean c;
+    public final Paint a = new Paint(1);
+    public final org.telegram.ui.Components.d6 b = new org.telegram.ui.Components.d6(new kg.i0(this, 29), 420, nr.h, 0);
+    public int d = ks.e4;
 
-    public y1(Drawable drawable) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new Path();
-        this.d = new RectF();
-        this.e = new Outline();
-        this.f = true;
-        this.a = drawable;
-        drawable.setCallback(this);
-        paint.setColor(0);
-        this.h = true;
-        a(n6.I.q());
+    public y1(int i7) {
+        a(i7);
     }
 
-    public final void a(boolean z10) {
-        this.n = z10;
-        this.b.setShadowLayer(org.telegram.messenger.g0.L(12.0f), 0.0f, org.telegram.messenger.g0.L(4.0f), n6.r1(z10 ? 0.3f : 0.1f, -16777216));
+    public final void a(int i7) {
+        this.a.setColor(i7);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
     @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void draw(Canvas canvas) {
-        float radius;
-        if (this.h && this.n != n6.I.q()) {
-            a(!this.n);
+        float d = this.b.d(this.c);
+        if (d <= 0.0f) {
+            return;
         }
-        boolean z10 = this.f;
-        Drawable drawable = this.a;
-        Path path = this.c;
-        if (z10) {
-            Outline outline = this.e;
-            path.reset();
-            Rect bounds = getBounds();
-            RectF rectF = this.d;
-            rectF.set(bounds);
-            if (Build.VERSION.SDK_INT >= 24) {
-                try {
-                    drawable.getOutline(outline);
-                    radius = outline.getRadius();
-                } catch (Throwable unused) {
-                }
-                if (radius <= 0.0f) {
-                    path.addRoundRect(rectF, radius, radius, Path.Direction.CW);
-                } else {
-                    path.addRect(rectF, Path.Direction.CW);
-                }
-                this.f = false;
-            }
-            radius = -1.0f;
-            if (radius <= 0.0f) {
-            }
-            this.f = false;
-        }
-        canvas.drawPath(path, this.b);
-        drawable.draw(canvas);
+        Paint paint = this.a;
+        paint.setAlpha((int) (this.d * d));
+        paint.setShadowLayer(org.telegram.messenger.g0.L(12.0f) * d, 0.0f, org.telegram.messenger.g0.L(3.0f), m6.r1(d, 805306368));
+        Rect bounds = getBounds();
+        float L = org.telegram.messenger.g0.L(8.0f) * d;
+        float L2 = org.telegram.messenger.g0.L(0.0f) * d;
+        float L3 = org.telegram.messenger.g0.L(12.0f) * d;
+        canvas.drawRoundRect(bounds.left + L, bounds.top + L2, bounds.right - L, (org.telegram.messenger.g0.L(6.0f) * d) + (bounds.bottom - L2), L3, L3, paint);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean isStateful() {
-        return this.a.isStateful();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        this.a.jumpToCurrentState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-        this.f = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean onStateChange(int[] iArr) {
-        return this.a.setState(iArr);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
+        return -2;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i7) {
-        this.a.setAlpha(i7);
+        this.d = i7;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
         this.a.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f10, float f11) {
-        this.a.setHotspot(f10, f11);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i7, int i10, int i11, int i12) {
-        this.a.setHotspotBounds(i7, i10, i11, i12);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
     }
 }

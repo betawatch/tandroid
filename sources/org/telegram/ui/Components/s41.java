@@ -1,37 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
 import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s41 extends p41 {
-    public final int e;
-    public final dz0 f;
+public class s41 extends URLSpan {
+    public final boolean a;
+    public final fz0 b;
+    public TLObject c;
+    public String d;
 
-    public s41(String str, int i7, dz0 dz0Var) {
-        super(str, (dz0) null);
-        this.e = i7;
-        this.f = dz0Var;
+    public s41(String str) {
+        this(str, (fz0) null);
     }
 
-    @Override // org.telegram.ui.Components.p41, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public void onClick(View view) {
+        String url = getURL();
+        if (!url.startsWith("@")) {
+            vf.c.t(view.getContext(), url);
+            return;
+        }
+        vf.c.q(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        int i7 = textPaint.linkColor;
+        int color = textPaint.getColor();
         super.updateDrawState(textPaint);
-        int i7 = this.e;
-        if (i7 == 3) {
-            textPaint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.J6, false));
-        } else if (i7 == 2) {
-            textPaint.setColor(-1);
-        } else if (i7 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Yc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Xc, false));
+        fz0 fz0Var = this.b;
+        if (fz0Var != null) {
+            fz0Var.a(textPaint);
         }
-        dz0 dz0Var = this.f;
-        if (dz0Var != null) {
-            dz0Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
-        }
+        textPaint.setUnderlineText(i7 == color && !this.a);
+    }
+
+    public s41(String str, int i7) {
+        this(str, (fz0) null);
+        this.a = true;
+    }
+
+    public s41(String str, fz0 fz0Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = false;
+        this.b = fz0Var;
     }
 }

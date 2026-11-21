@@ -5,25 +5,25 @@ import android.content.Context;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uv implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ xv b;
     public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 d;
 
-    public /* synthetic */ uv(xv xvVar, Context context, org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    public /* synthetic */ uv(xv xvVar, Context context, org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         this.a = i7;
         this.b = xvVar;
         this.c = context;
-        this.d = u1Var;
+        this.d = t1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        org.telegram.ui.ActionBar.u1 u1Var = this.d;
+        org.telegram.ui.ActionBar.t1 t1Var = this.d;
         Context context = this.c;
         xv xvVar = this.b;
         switch (i7) {
@@ -31,7 +31,7 @@ public final /* synthetic */ class uv implements Runnable {
                 xvVar.n = false;
                 if (!((Activity) context).isFinishing()) {
                     try {
-                        u1Var.dismiss();
+                        t1Var.dismiss();
                         break;
                     } catch (Exception e10) {
                         a8.g(e10, true);
@@ -43,16 +43,16 @@ public final /* synthetic */ class uv implements Runnable {
                 if (!((Activity) context).isFinishing()) {
                     xvVar.n = false;
                     try {
-                        u1Var.dismiss();
+                        t1Var.dismiss();
                     } catch (Exception e11) {
                         a8.g(e11, true);
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                    String M0 = gd.M0(R.string.AppName, null);
-                    org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
-                    u1Var2.S = M0;
-                    u1Var2.U = gd.M0(2131751739, null);
-                    alertDialog$Builder.k(gd.M0(2131747638, null), null);
+                    String N0 = gd.N0(R.string.AppName, null);
+                    org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
+                    t1Var2.S = N0;
+                    t1Var2.U = gd.N0(2131751738, null);
+                    alertDialog$Builder.k(gd.N0(2131747637, null), null);
                     alertDialog$Builder.p().setCanceledOnTouchOutside(true);
                     break;
                 }

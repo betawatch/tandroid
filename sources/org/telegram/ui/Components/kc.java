@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses ext
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class kc {
     public static final kc E;
@@ -36,35 +36,35 @@ public final class kc {
 
     static {
         jc jcVar = jc.e;
-        kc kcVar = new kc("PHOTO", 0, "PhotoSavedHint", 2131747071, jcVar);
+        kc kcVar = new kc("PHOTO", 0, "PhotoSavedHint", 2131747070, jcVar);
         e = kcVar;
         kc kcVar2 = new kc("PHOTOS", 1, "PhotosSavedHint", jcVar);
         f = kcVar2;
-        kc kcVar3 = new kc("VIDEO", 2, "VideoSavedHint", 2131743348, jcVar);
+        kc kcVar3 = new kc("VIDEO", 2, "VideoSavedHint", 2131743342, jcVar);
         h = kcVar3;
         kc kcVar4 = new kc("VIDEOS", 3, "VideosSavedHint", jcVar);
         n = kcVar4;
-        kc kcVar5 = new kc("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748642, jcVar);
+        kc kcVar5 = new kc("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748641, jcVar);
         r = kcVar5;
         kc kcVar6 = new kc("LIVEPHOTOS", 5, "LivePhotosSavedHint", jcVar);
         s = kcVar6;
         kc kcVar7 = new kc("MEDIA", 6, "MediaSavedHint", jcVar);
         w = kcVar7;
         jc jcVar2 = jc.d;
-        kc kcVar8 = new kc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747070, jcVar2);
+        kc kcVar8 = new kc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747069, jcVar2);
         x = kcVar8;
-        kc kcVar9 = new kc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743347, jcVar2);
+        kc kcVar9 = new kc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743341, jcVar2);
         y = kcVar9;
-        kc kcVar10 = new kc("GIF", 9, "GifSavedHint", 2131750454, jc.h);
+        kc kcVar10 = new kc("GIF", 9, "GifSavedHint", 2131750453, jc.h);
         E = kcVar10;
-        kc kcVar11 = new kc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750453, jcVar2);
+        kc kcVar11 = new kc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750452, jcVar2);
         F = kcVar11;
         jc jcVar3 = jc.f;
-        kc kcVar12 = new kc("AUDIO", 11, "AudioSavedHint", 2131753906, jcVar3);
+        kc kcVar12 = new kc("AUDIO", 11, "AudioSavedHint", 2131753905, jcVar3);
         G = kcVar12;
         kc kcVar13 = new kc("AUDIOS", 12, "AudiosSavedHint", jcVar3);
         H = kcVar13;
-        kc kcVar14 = new kc("UNKNOWN", 13, "FileSavedHintLinked", 2131750817, jcVar2);
+        kc kcVar14 = new kc("UNKNOWN", 13, "FileSavedHintLinked", 2131750816, jcVar2);
         I = kcVar14;
         kc kcVar15 = new kc("UNKNOWNS", 14, "FilesSavedHintLinked", jcVar2);
         J = kcVar15;

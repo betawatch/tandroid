@@ -1,58 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class vv extends ck0 {
-    public boolean f3;
-    public boolean g3;
-    public final /* synthetic */ ry h3;
+public final class vv extends gy {
+    public final /* synthetic */ ty I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vv(ry ryVar, Context context) {
-        super(context, null);
-        this.h3 = ryVar;
+    public vv(ty tyVar, Context context) {
+        super(tyVar, context, 1);
+        this.I = tyVar;
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ns p10 = org.telegram.ui.ns.p();
-        ry ryVar = this.h3;
-        return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, ryVar.i0, ryVar.h2, this.o2);
-    }
-
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        ry ryVar = this.h3;
-        if (ryVar.r0 && ryVar.o0.H > 1) {
-            this.f3 = true;
-            ryVar.j0.h1(0, 0);
-            ryVar.p0.setVisibility(0);
-            ryVar.q0.k(0, 0);
-            ryVar.r0 = false;
-            this.f3 = false;
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (f10 != getTranslationY()) {
+            super.setTranslationY(f10);
+            this.I.K.invalidate();
         }
-        super.onLayout(z10, i7, i10, i11, i12);
-        ry.f(ryVar, true);
-    }
-
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        if (this.g3) {
-            return;
-        }
-        this.h3.o0.f();
-        this.g3 = true;
-    }
-
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.f3) {
-            return;
-        }
-        super.requestLayout();
     }
 }

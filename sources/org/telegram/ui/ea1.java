@@ -8,11 +8,11 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ea1 extends org.telegram.ui.ActionBar.h2 {
+public final class ea1 extends org.telegram.ui.ActionBar.g2 {
     public ca1 a;
-    public org.telegram.ui.Components.ck0 b;
+    public org.telegram.ui.Components.ek0 b;
     public long c;
     public ArrayList d;
     public HashSet e;
@@ -28,7 +28,7 @@ public final class ea1 extends org.telegram.ui.ActionBar.h2 {
         tL_inputNotifyForumTopic.peer = ea1Var.getMessagesController().l1(ea1Var.c);
         tL_inputNotifyForumTopic.top_msg_id = i7;
         updatenotifysettings.peer = tL_inputNotifyForumTopic;
-        ea1Var.getConnectionsManager().sendRequest(updatenotifysettings, new fi.k5(9));
+        ea1Var.getConnectionsManager().sendRequest(updatenotifysettings, new fi.l5(9));
     }
 
     public final void a0() {
@@ -66,50 +66,50 @@ public final class ea1 extends org.telegram.ui.ActionBar.h2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
+        this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
         this.simpleActionBar.setActionBarMenuOnItemClick(new hs0(this, 19));
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.M0(2131747719, null));
-        org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(context, null);
-        this.b = ck0Var;
-        ck0Var.r1();
+        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131747718, null));
+        org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
+        this.b = ek0Var;
+        ek0Var.r1();
         this.b.setSectionsDrawBackground(true);
         v4.k kVar = new v4.k();
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
         this.b.setLayoutManager(new v4.c0());
-        org.telegram.ui.Components.ck0 ck0Var2 = this.b;
+        org.telegram.ui.Components.ek0 ek0Var2 = this.b;
         ca1 ca1Var = new ca1(this);
         this.a = ca1Var;
-        ck0Var2.setAdapter(ca1Var);
+        ek0Var2.setAdapter(ca1Var);
         this.b.setOnItemClickListener(new ba1(this));
         frameLayout.addView(this.b);
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
-    public final org.telegram.ui.Components.ck0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.g2
+    public final org.telegram.ui.Components.ek0 getListViewForSimpleGlass() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         this.c = this.arguments.getLong("dialog_id");
         a0();
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean useSimpleActionBar() {
         return true;
     }

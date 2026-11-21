@@ -6,24 +6,24 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class hb1 extends org.telegram.ui.Components.k41 {
+public final class hb1 extends org.telegram.ui.Components.n41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        org.telegram.ui.Components.k41.h(new hb1());
+        org.telegram.ui.Components.n41.h(new hb1());
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, org.telegram.ui.Components.l41 l41Var, boolean z10, org.telegram.ui.Components.z41 z41Var, org.telegram.ui.Components.e51 e51Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, org.telegram.ui.Components.o41 o41Var, boolean z10, org.telegram.ui.Components.c51 c51Var, org.telegram.ui.Components.h51 h51Var) {
         ib1 ib1Var = (ib1) view;
-        int i7 = l41Var.k;
-        CharSequence charSequence = l41Var.m;
-        CharSequence charSequence2 = l41Var.n;
-        boolean z11 = l41Var.r;
-        boolean z12 = l41Var.s;
-        int i10 = l41Var.A;
+        int i7 = o41Var.k;
+        CharSequence charSequence = o41Var.m;
+        CharSequence charSequence2 = o41Var.n;
+        boolean z11 = o41Var.r;
+        boolean z12 = o41Var.s;
+        int i10 = o41Var.A;
         TextView textView = ib1Var.e;
         ImageView imageView = ib1Var.f;
         ib1Var.h = z11;
@@ -43,8 +43,8 @@ public final class hb1 extends org.telegram.ui.Components.k41 {
         ib1Var.updateColors();
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, org.telegram.ui.Components.ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new ib1(context, i6Var);
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, org.telegram.ui.Components.ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        return new ib1(context, h6Var);
     }
 }

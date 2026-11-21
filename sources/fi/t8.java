@@ -21,14 +21,14 @@ import org.telegram.messenger.fj;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.au0;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.qh0;
-import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.du0;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.sh0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class t8 extends au0 {
+public final class t8 extends du0 {
     public float g0;
     public float h0;
     public float i0;
@@ -40,14 +40,14 @@ public final class t8 extends au0 {
     public final RectF o0;
     public final RectF p0;
     public final SparseArray q0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 r0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 r0;
     public final /* synthetic */ f9 s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t8(f9 f9Var, Context context, org.telegram.ui.ActionBar.h2 h2Var) {
+    public t8(f9 f9Var, Context context, org.telegram.ui.ActionBar.g2 g2Var) {
         super(context, null);
         this.s0 = f9Var;
-        this.r0 = h2Var;
+        this.r0 = g2Var;
         this.j0 = new float[8];
         this.k0 = new Path();
         this.l0 = new RectF();
@@ -66,7 +66,7 @@ public final class t8 extends au0 {
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v6 */
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -105,7 +105,7 @@ public final class t8 extends au0 {
         e7 e7Var3;
         int i11;
         z3 z11;
-        qh0 qh0Var;
+        sh0 sh0Var;
         boolean z12;
         float f24;
         f9 f9Var = this.s0;
@@ -118,9 +118,9 @@ public final class t8 extends au0 {
             boolean z13 = (1.0f - f9Var.W) * f9Var.V == 1.0f;
             if (f9Var.K0 != z13) {
                 f9Var.K0 = z13;
-                org.telegram.ui.ActionBar.h2 h2Var = this.r0;
-                if (h2Var.getLayoutContainer() != null) {
-                    h2Var.getLayoutContainer().invalidate();
+                org.telegram.ui.ActionBar.g2 g2Var = this.r0;
+                if (g2Var.getLayoutContainer() != null) {
+                    g2Var.getLayoutContainer().invalidate();
                 }
             }
         }
@@ -469,13 +469,13 @@ public final class t8 extends au0 {
                             f9Var.d = false;
                             f9.x1 = true;
                             f9Var.c0 = f9Var.X;
-                            if (c9Var.d != null && (z11 = f9Var.z()) != null && (qh0Var = z11.Y0.d) != null) {
-                                qh0 qh0Var2 = c9Var.d;
-                                qh0Var.c = qh0Var2.c;
-                                qh0Var.f = qh0Var2.f;
-                                qh0Var.b = qh0Var2.b;
-                                qh0Var.a = System.currentTimeMillis();
-                                qh0Var.c();
+                            if (c9Var.d != null && (z11 = f9Var.z()) != null && (sh0Var = z11.Y0.d) != null) {
+                                sh0 sh0Var2 = c9Var.d;
+                                sh0Var.c = sh0Var2.c;
+                                sh0Var.f = sh0Var2.f;
+                                sh0Var.b = sh0Var2.b;
+                                sh0Var.a = System.currentTimeMillis();
+                                sh0Var.c();
                             }
                             f9Var.F = true;
                             float[] fArr3 = new float[i10];
@@ -497,7 +497,7 @@ public final class t8 extends au0 {
                             f9Var.G.addListener(new o8(f9Var, i11));
                             f9Var.G.setStartDelay(40L);
                             f9Var.G.setDuration(250L);
-                            f9Var.G.setInterpolator(lr.f);
+                            f9Var.G.setInterpolator(nr.f);
                             f9Var.G.start();
                             if (!arrayList.isEmpty()) {
                                 for (int i17 = 0; i17 < arrayList.size(); i17++) {
@@ -592,7 +592,7 @@ public final class t8 extends au0 {
         boolean z11;
         v8 v8Var;
         int i7;
-        vi0 vi0Var;
+        xi0 xi0Var;
         f9 f9Var = this.s0;
         float[] fArr = f9Var.p0;
         z3 currentPeerView = f9Var.o0.getCurrentPeerView();
@@ -610,7 +610,7 @@ public final class t8 extends au0 {
         }
         float f10 = 0.0f;
         int i10 = 0;
-        if (f9Var.p1 && currentPeerView != null && (vi0Var = currentPeerView.b3) != null) {
+        if (f9Var.p1 && currentPeerView != null && (xi0Var = currentPeerView.b3) != null) {
             float f11 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f10 += view.getX();
@@ -622,14 +622,14 @@ public final class t8 extends au0 {
                 return true;
             }
             Rect rect = org.telegram.messenger.g0.Q;
-            vi0Var.getHitRect(rect);
+            xi0Var.getHitRect(rect);
             rect.offset((int) f10, (int) f11);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.Z0(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            vi0Var.dispatchTouchEvent(motionEvent);
+            xi0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -642,7 +642,7 @@ public final class t8 extends au0 {
                 ofFloat.addUpdateListener(new q8(this, i10));
                 f9Var.H.addListener(new r8(this, i10));
                 f9Var.H.setDuration(250L);
-                f9Var.H.setInterpolator(lr.f);
+                f9Var.H.setInterpolator(nr.f);
                 f9Var.H.start();
             }
             if (f9Var.W >= 0.3f) {
@@ -657,15 +657,15 @@ public final class t8 extends au0 {
         if (motionEvent.getAction() == 0) {
             f9Var.b0 = false;
             if (currentPeerView != null) {
-                bi.p2 p2Var = currentPeerView.i0;
+                bi.t2 t2Var = currentPeerView.i0;
                 k8 k8Var = currentPeerView.m0;
                 c3 c3Var = currentPeerView.M0;
-                hi.m3 m3Var = currentPeerView.p0;
-                if (m3Var != null && m3Var.W && k8Var != null && !m3Var.D0.contains(motionEvent.getX() - (currentPeerView.p0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.p0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(k8Var, motionEvent)) {
+                hi.l3 l3Var = currentPeerView.p0;
+                if (l3Var != null && l3Var.W && k8Var != null && !l3Var.D0.contains(motionEvent.getX() - (currentPeerView.p0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.p0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(k8Var, motionEvent)) {
                     currentPeerView.p0.f(true);
                 }
-                hi.m3 m3Var2 = currentPeerView.q0;
-                if (m3Var2 != null && m3Var2.W && p2Var != null && !m3Var2.D0.contains(motionEvent.getX() - (currentPeerView.q0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.q0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(p2Var, motionEvent)) {
+                hi.l3 l3Var2 = currentPeerView.q0;
+                if (l3Var2 != null && l3Var2.W && t2Var != null && !l3Var2.D0.contains(motionEvent.getX() - (currentPeerView.q0.getX() + (c3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.q0.getY() + (c3Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(t2Var, motionEvent)) {
                     currentPeerView.q0.f(true);
                 }
             }
@@ -750,13 +750,13 @@ public final class t8 extends au0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         f9 f9Var = this.s0;
         if (f9Var.b && !f9Var.c) {
-            org.telegram.ui.ActionBar.h2 h2Var = this.r0;
-            org.telegram.messenger.g0.Z2(h2Var.getParentActivity(), h2Var.getClassGuid());
+            org.telegram.ui.ActionBar.g2 g2Var = this.r0;
+            org.telegram.messenger.g0.Z2(g2Var.getParentActivity(), g2Var.getClassGuid());
         }
         setTag(R.id.bulletin_delegate_tag, new s8(this));
         ks.f(f9Var.h).c(f9Var, ks.A5);
@@ -766,7 +766,7 @@ public final class t8 extends au0 {
         ks.f(f9Var.h).c(f9Var, ks.z5);
     }
 
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
@@ -927,8 +927,8 @@ public final class t8 extends au0 {
                 }
             }
         }
-        i5 i5Var = f9Var.x;
-        boolean z14 = i5Var != null && i5Var.f == f10;
+        j5 j5Var = f9Var.x;
+        boolean z14 = j5Var != null && j5Var.f == f10;
         if (!f9Var.k0 && !z14) {
             f9Var.j0.onTouchEvent(motionEvent);
         }
@@ -960,7 +960,7 @@ public final class t8 extends au0 {
                 ofFloat.addUpdateListener(new q8(this, i7));
                 f9Var.H.addListener(new r8(this, i7));
                 f9Var.H.setDuration(150L);
-                f9Var.H.setInterpolator(lr.f);
+                f9Var.H.setInterpolator(nr.f);
                 f9Var.H.start();
             }
             z3 z10 = f9Var.z();

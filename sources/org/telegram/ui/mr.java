@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class mr extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ qr a;
@@ -51,7 +51,7 @@ public final class mr extends org.telegram.ui.ActionBar.j {
             tL_contacts_addContact.note = textWithEntities;
         }
         contactsController.getConnectionsManager().sendRequest(tL_contacts_addContact, new org.telegram.messenger.t4(1, contactsController, c22), 6);
-        i10 = ((org.telegram.ui.ActionBar.h2) qrVar).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.g2) qrVar).currentAccount;
         org.telegram.messenger.mp.u1(i10).g7.edit().putInt("dialog_bar_vis3" + qrVar.I, 3).commit();
         qrVar.getNotificationCenter().k(org.telegram.messenger.ks.r, 1);
         qrVar.getNotificationCenter().k(org.telegram.messenger.ks.Q0, Long.valueOf(qrVar.I));
@@ -63,7 +63,7 @@ public final class mr extends org.telegram.ui.ActionBar.j {
                 d2.flags2 |= TLObject.FLAG_22;
                 d2.note = textWithEntities;
             }
-            i11 = ((org.telegram.ui.ActionBar.h2) qrVar).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.g2) qrVar).currentAccount;
             org.telegram.messenger.tr.a0(i11).j2(d2, true);
             qrVar.getNotificationCenter().k(org.telegram.messenger.ks.E0, Long.valueOf(d2.id), d2);
         }

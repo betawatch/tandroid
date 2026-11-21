@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class lj0 implements RequestDelegate {
     public final /* synthetic */ wj0 a;
@@ -80,8 +80,8 @@ public final class lj0 implements RequestDelegate {
                     if (wj0Var2 != null) {
                         wj0Var2.d(tL_error2.text, str4);
                     }
-                    i10 = ((org.telegram.ui.ActionBar.h2) hk0Var2).currentAccount;
-                    org.telegram.ui.Components.b5.c0(i10, tL_error2, hk0Var2, savesecurevalue, str4);
+                    i10 = ((org.telegram.ui.ActionBar.g2) hk0Var2).currentAccount;
+                    org.telegram.ui.Components.c5.c0(i10, tL_error2, hk0Var2, savesecurevalue, str4);
                     return;
                 }
                 boolean z11 = z10;
@@ -211,7 +211,7 @@ public final class lj0 implements RequestDelegate {
                 TL_account.sendVerifyEmailCode sendverifyemailcode = new TL_account.sendVerifyEmailCode();
                 sendverifyemailcode.purpose = new TLRPC.TL_emailVerifyPurposePassport();
                 sendverifyemailcode.email = str;
-                i10 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
                 ConnectionsManager.getInstance(i10).sendRequest(sendverifyemailcode, new di.m7(this, this.b, this.e, this.n, this.a, 11));
                 return;
             }
@@ -230,7 +230,7 @@ public final class lj0 implements RequestDelegate {
         TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
         savesecurevalue.value = tL_inputSecureValue;
         savesecurevalue.secure_secret_id = hk0Var.c1;
-        i7 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
         ConnectionsManager.getInstance(i7).sendRequest(savesecurevalue, new e00(15, this, (TLRPC.TL_secureValue) tLObject));
     }
 }

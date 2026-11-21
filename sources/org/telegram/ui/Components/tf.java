@@ -2,47 +2,39 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class tf extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public tf(ChatActivityEnterView chatActivityEnterView, boolean z10) {
-        this.b = chatActivityEnterView;
-        this.a = z10;
+    public tf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        if (animator.equals(chatActivityEnterView.h3)) {
-            chatActivityEnterView.h3 = null;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        zi0 zi0Var = chatActivityEnterView.i1;
+        if (zi0Var != null && zi0Var.T0 != null) {
+            chatActivityEnterView.z5 = new mf(1, this, animator);
+            return;
         }
-        chatActivityEnterView.S0();
-        chatActivityEnterView.Y1.setAlpha(1.0f);
-        chatActivityEnterView.Y1.setTranslationX(0.0f);
-        pg pgVar = chatActivityEnterView.C2;
-        if (pgVar != null && org.telegram.messenger.bz.O < 3) {
-            ChatActivityEnterView chatActivityEnterView2 = pgVar.Q0;
-            chatActivityEnterView2.S4 = true;
-            chatActivityEnterView2.T4 = System.currentTimeMillis();
+        w61 w61Var = chatActivityEnterView.g1;
+        if (w61Var != null) {
+            w61Var.setVisibility(8);
         }
-        gf gfVar = chatActivityEnterView.F0;
-        if (gfVar != null) {
-            gfVar.setAlpha(chatActivityEnterView.l1 ? 1.0f : 0.0f);
+        zi0 zi0Var2 = chatActivityEnterView.i1;
+        if (zi0Var2 != null) {
+            zi0Var2.setVisibility(8);
         }
-        if (this.a) {
-            xi0 xi0Var = chatActivityEnterView.i1;
-            if (xi0Var != null) {
-                xi0Var.setVisibility(8);
-            }
-            de deVar = chatActivityEnterView.f1;
-            if (deVar != null) {
-                deVar.setVisibility(8);
-            }
-            chatActivityEnterView.S0();
+        chatActivityEnterView.f5 = 0.0f;
+        chatActivityEnterView.W0();
+        chatActivityEnterView.N0();
+        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.D2;
+        if (recordCircle != null) {
+            recordCircle.g();
         }
     }
 }

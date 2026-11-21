@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a80 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final /* synthetic */ class a80 implements RequestDelegate {
             case 0:
                 String str = LaunchActivity.C1;
                 if (tLObject != null) {
-                    org.telegram.messenger.g0.g3(new o60(4, launchActivity, (TL_account.Password) tLObject));
+                    org.telegram.messenger.g0.g3(new h60(6, launchActivity, (TL_account.Password) tLObject));
                     break;
                 }
                 break;
             default:
                 String str2 = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new o60(0, launchActivity, tLObject));
+                org.telegram.messenger.g0.g3(new h60(2, launchActivity, tLObject));
                 break;
         }
     }

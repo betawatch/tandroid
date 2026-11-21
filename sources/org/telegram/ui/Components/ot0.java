@@ -1,14 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface ot0 {
-    float j(RecyclerView recyclerView);
+public final class ot0 {
+    public static final ot0 a;
+    public static final ot0 b;
+    public static final /* synthetic */ ot0[] c;
 
-    RecyclerView n(View view);
+    static {
+        ot0 ot0Var = new ot0("DEFAULT", 0);
+        a = ot0Var;
+        ot0 ot0Var2 = new ot0("RECORDING", 1);
+        b = ot0Var2;
+        c = new ot0[]{ot0Var, ot0Var2};
+    }
 
-    void r(RecyclerView recyclerView);
+    public static ot0 valueOf(String str) {
+        return (ot0) Enum.valueOf(ot0.class, str);
+    }
+
+    public static ot0[] values() {
+        return (ot0[]) c.clone();
+    }
 }

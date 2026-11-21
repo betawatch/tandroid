@@ -1,141 +1,110 @@
 package ki;
 
 import android.content.Context;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.SpannableStringBuilder;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import c8.ma;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j6;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
-import org.telegram.ui.iz;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class e3 extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class e3 extends FrameLayout {
+    public final int a;
+    public final h6 b;
+    public final q9 c;
+    public final View d;
+    public final View e;
+    public final ImageView f;
+    public final TextView h;
+    public final TextView n;
+    public final ImageView r;
+    public boolean s;
 
-    static {
-        k41.h(new e3());
+    public e3(int i7, Context context, h6 h6Var) {
+        super(context);
+        this.a = i7;
+        this.b = h6Var;
+        q9 q9Var = new q9(context);
+        this.c = q9Var;
+        q9Var.setRoundRadius(org.telegram.messenger.g0.L(46.0f));
+        addView(q9Var, ma.d(46, 46.0f, 19, 13.0f, 0.0f, 13.0f, 0.0f));
+        View view = new View(context);
+        this.d = view;
+        int L = org.telegram.messenger.g0.L(11.0f);
+        int i10 = m6.d6;
+        Drawable L2 = m6.L(L, m6.w0(i10, h6Var));
+        p6 M = t6.M(i10);
+        view.setBackground(L2);
+        t6.j(view, L2, M, null, h6Var);
+        addView(view, ma.d(22, 22.0f, 19, 40.0f, 15.0f, 0.0f, 0.0f));
+        View view2 = new View(context);
+        this.e = view2;
+        int L3 = org.telegram.messenger.g0.L(9.665f);
+        int i11 = m6.lk;
+        Drawable L4 = m6.L(L3, m6.w0(i11, h6Var));
+        p6 M2 = t6.M(i11);
+        view2.setBackground(L4);
+        t6.j(view2, L4, M2, null, h6Var);
+        addView(view2, ma.b(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.f = imageView;
+        imageView.setScaleX(0.6f);
+        imageView.setScaleY(0.6f);
+        addView(imageView, ma.b(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, ma.d(-1, -2.0f, 55, 66.0f, 8.66f, 10.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.h = textView;
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setTextSize(1, 16.0f);
+        t6.U(textView, m6.G6, h6Var);
+        ks.i(textView);
+        TextView f10 = n10.f(linearLayout, textView, ma.t(-1, -2, 55, 6, 0, 24, 0), context);
+        this.n = f10;
+        f10.setMaxLines(1);
+        f10.setSingleLine(true);
+        f10.setEllipsize(truncateAt);
+        f10.setTextSize(1, 14.0f);
+        t6.U(f10, m6.z6, h6Var);
+        linearLayout.addView(f10, ma.t(-1, -2, 55, 6, 1, 24, 0));
+        ImageView imageView2 = new ImageView(context);
+        this.r = imageView2;
+        t6.s(imageView2, m6.M6, h6Var, PorterDuff.Mode.SRC_IN);
+        imageView2.setImageResource(R.drawable.msg_arrowright);
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView2, ma.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        Object obj = l41Var.H;
-        if (!(obj instanceof TL_payments.connectedBotStarRef)) {
-            if (obj instanceof TL_payments.starRefProgram) {
-                f3 f3Var = (f3) view;
-                TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj;
-                boolean z11 = l41Var.s;
-                TLRPC.User c22 = mp.u1(f3Var.a).c2(Long.valueOf(starrefprogram.bot_id));
-                b9 b9Var = new b9((i6) null);
-                b9Var.r(c22);
-                f3Var.c.f(c22, b9Var);
-                f3Var.h.setText(o10.q(c22));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                if (starrefprogram.commission_permille > 0) {
-                    spannableStringBuilder.append((CharSequence) " d");
-                    iz izVar = new iz();
-                    int i7 = n6.lk;
-                    izVar.f = n6.w0(i7, null);
-                    izVar.r = i7;
-                    izVar.s = null;
-                    izVar.n = true;
-                    izVar.w = k.J0(starrefprogram.commission_permille);
-                    if (izVar.c != null) {
-                        izVar.c = null;
-                        izVar.a();
-                    }
-                    spannableStringBuilder.setSpan(izVar, 1, 2, 33);
-                }
-                int i10 = starrefprogram.duration_months;
-                if (i10 == 0) {
-                    spannableStringBuilder.append((CharSequence) gd.M0(2131748794, null));
-                } else if (i10 < 12 || i10 % 12 != 0) {
-                    spannableStringBuilder.append((CharSequence) gd.G(i10, "Months", new Object[0]));
-                } else {
-                    spannableStringBuilder.append((CharSequence) gd.G(i10 / 12, "Years", new Object[0]));
-                }
-                f3Var.n.setText(spannableStringBuilder);
-                f3Var.r.setVisibility(z11 ? 0 : 8);
-                f3Var.d.setVisibility(8);
-                f3Var.f.setVisibility(8);
-                f3Var.e.setVisibility(8);
-                f3Var.s = z10;
-                f3Var.setWillNotDraw(!z10);
-                return;
-            }
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.s) {
+            canvas.drawRect(org.telegram.messenger.g0.L(72.0f), getHeight() - 1, getWidth(), getHeight(), m6.k0);
         }
-        f3 f3Var2 = (f3) view;
-        TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
-        boolean z12 = l41Var.s;
-        i6 i6Var = f3Var2.b;
-        View view2 = f3Var2.e;
-        ImageView imageView = f3Var2.f;
-        TLRPC.User c23 = mp.u1(f3Var2.a).c2(Long.valueOf(connectedbotstarref.bot_id));
-        b9 b9Var2 = new b9((i6) null);
-        b9Var2.r(c23);
-        f3Var2.c.f(c23, b9Var2);
-        TextView textView = f3Var2.h;
-        textView.setText(j6.m(o10.q(c23), textView.getPaint().getFontMetricsInt(), false, null, 0));
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        if (connectedbotstarref.commission_permille > 0) {
-            spannableStringBuilder2.append((CharSequence) " d");
-            iz izVar2 = new iz();
-            int i11 = n6.lk;
-            izVar2.f = n6.w0(i11, null);
-            izVar2.r = i11;
-            izVar2.s = null;
-            izVar2.n = true;
-            izVar2.w = k.J0(connectedbotstarref.commission_permille);
-            if (izVar2.c != null) {
-                izVar2.c = null;
-                izVar2.a();
-            }
-            spannableStringBuilder2.setSpan(izVar2, 1, 2, 33);
-        }
-        int i12 = connectedbotstarref.duration_months;
-        if (i12 == 0) {
-            spannableStringBuilder2.append((CharSequence) gd.M0(2131748794, null));
-        } else if (i12 < 12 || i12 % 12 != 0) {
-            spannableStringBuilder2.append((CharSequence) gd.G(i12, "Months", new Object[0]));
-        } else {
-            spannableStringBuilder2.append((CharSequence) gd.G(i12 / 12, "Years", new Object[0]));
-        }
-        f3Var2.n.setText(spannableStringBuilder2);
-        f3Var2.r.setVisibility(z12 ? 0 : 8);
-        f3Var2.d.setVisibility(0);
-        imageView.setVisibility(0);
-        view2.setVisibility(0);
-        ShapeDrawable L = n6.L(org.telegram.messenger.g0.L(9.665f), n6.w0(connectedbotstarref.revoked ? n6.nk : n6.lk, i6Var));
-        q6 M = u6.M(connectedbotstarref.revoked ? n6.nk : n6.lk);
-        view2.setBackground(L);
-        u6.j(view2, L, M, null, i6Var);
-        imageView.setImageResource(connectedbotstarref.revoked ? R.drawable.msg_link_2 : R.drawable.msg_limit_links);
-        imageView.setScaleX(connectedbotstarref.revoked ? 0.8f : 0.6f);
-        imageView.setScaleY(connectedbotstarref.revoked ? 0.8f : 0.6f);
-        f3Var2.s = z10;
-        f3Var2.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
-        return new f3(i7, context, i6Var);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
     }
 }

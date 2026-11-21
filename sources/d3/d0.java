@@ -7,7 +7,7 @@ import e2.x1;
 import h2.l0;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class d0 {
     public final q4.q a;
@@ -79,7 +79,7 @@ public final class d0 {
                     tVar.z = x1Var.b;
                     tVar.r = s0.n("video/raw");
                     qVar.b = new e2.u(tVar);
-                    eVar.i.execute(new c1.c(19, qVar, x1Var));
+                    eVar.i.execute(new c1.a(21, qVar, x1Var));
                 }
                 long nanoTime = z10 ? System.nanoTime() : wVar.b;
                 boolean z11 = xVar.e != 3;
@@ -128,7 +128,7 @@ public final class d0 {
                 u2.l lVar2 = iVar2.a;
                 int i12 = iVar2.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar2.d(i12);
+                lVar2.e(i12);
                 Trace.endSection();
                 lVar.R0(0, 1);
             } else {

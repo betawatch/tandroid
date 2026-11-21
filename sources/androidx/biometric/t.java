@@ -3,11 +3,11 @@ package androidx.biometric;
 import a8.r7;
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class t {
     public Context a;
@@ -32,17 +32,17 @@ public final class t {
         jVar.a = q5.a.a(o5.m.a);
         e.a aVar = new e.a(context);
         jVar.b = aVar;
-        jVar.c = q5.a.a(new ji.j(21, aVar, new of(aVar, 9)));
+        jVar.c = q5.a.a(new ji.l(21, aVar, new qf(aVar, 9)));
         e.a aVar2 = jVar.b;
-        jVar.d = new of(aVar2, 26);
-        fd.a a10 = q5.a.a(new sg.h0(6, jVar.d, q5.a.a(new hn(aVar2, 25))));
+        jVar.d = new qf(aVar2, 26);
+        fd.a a10 = q5.a.a(new sg.h0(6, jVar.d, q5.a.a(new jn(aVar2, 25))));
         jVar.e = a10;
         pb.b bVar = new pb.b(25);
         e.a aVar3 = jVar.b;
-        nd0 nd0Var = new nd0(aVar3, a10, bVar, 17);
+        md0 md0Var = new md0(aVar3, a10, bVar, 17);
         fd.a aVar4 = jVar.a;
         fd.a aVar5 = jVar.c;
-        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, nd0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, nd0Var, aVar4, a10, a10, 5), new xi.e(aVar4, a10, nd0Var, a10), false, 17));
+        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, md0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, md0Var, aVar4, a10, a10, 5), new xi.e(aVar4, a10, md0Var, a10), false, 17));
         return jVar;
     }
 

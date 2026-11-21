@@ -3,9 +3,9 @@ package ci;
 import android.view.ViewGroup;
 import c8.oa;
 import hi.o1;
-import org.telegram.ui.r11;
+import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends oa {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final class h extends oa {
                 ((o1) this.b).j3 = false;
                 break;
             default:
-                ((r11) this.b).y1 = false;
+                ((s11) this.b).y1 = false;
                 break;
         }
     }
@@ -38,7 +38,7 @@ public final class h extends oa {
                 ((o1) this.b).j3 = true;
                 break;
             case 2:
-                ((r11) this.b).y1 = true;
+                ((s11) this.b).y1 = true;
                 break;
         }
     }

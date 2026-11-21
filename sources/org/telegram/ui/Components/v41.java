@@ -1,48 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class v41 extends FrameLayout {
-    public int a;
-    public boolean b;
+public final class v41 extends s41 {
+    public final int e;
+    public final fz0 f;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int i11 = this.a;
-        View view = getParent() instanceof View ? (View) getParent() : null;
-        if (this.b && view != null) {
-            i11 = view.getPaddingBottom() + view.getPaddingTop() + i11;
-        }
-        if (view != null && view.getMeasuredHeight() > 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i11, TLObject.FLAG_30));
-            return;
-        }
-        if (View.MeasureSpec.getMode(i10) != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10) - i11, TLObject.FLAG_30));
-            return;
-        }
-        int size = View.MeasureSpec.getSize(i10);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30);
-        measureChildren(makeMeasureSpec, i10);
-        int i12 = 0;
-        for (int i13 = 0; i13 < getChildCount(); i13++) {
-            i12 = Math.max(i12, getChildAt(i13).getMeasuredHeight());
-        }
-        if (size > 0) {
-            i12 = Math.min(i12, size - i11);
-        }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30));
+    public v41(String str, int i7, fz0 fz0Var) {
+        super(str, (fz0) null);
+        this.e = i7;
+        this.f = fz0Var;
     }
 
-    public void setMinusHeight(int i7) {
-        this.a = i7;
-    }
-
-    public void setMinusPadding(boolean z10) {
-        this.b = z10;
+    @Override // org.telegram.ui.Components.s41, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i7 = this.e;
+        if (i7 == 3) {
+            textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.J6, false));
+        } else if (i7 == 2) {
+            textPaint.setColor(-1);
+        } else if (i7 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Yc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Xc, false));
+        }
+        fz0 fz0Var = this.f;
+        if (fz0Var != null) {
+            fz0Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
+        }
     }
 }

@@ -9,53 +9,53 @@ import c8.ma;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.mt;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.ot;
 import org.telegram.ui.Wallet.i9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l extends LinearLayout {
-    public final mt a;
+    public final ot a;
     public final TextView b;
     public k c;
 
-    public l(Context context, i6 i6Var) {
+    public l(Context context, h6 h6Var) {
         super(context);
         setOrientation(0);
-        mt mtVar = new mt(context, i6Var);
-        this.a = mtVar;
-        mtVar.setLines(1);
-        mtVar.setSingleLine(true);
+        ot otVar = new ot(context, h6Var);
+        this.a = otVar;
+        otVar.setLines(1);
+        otVar.setSingleLine(true);
         InputFilter[] inputFilterArr = {new j(this)};
-        mtVar.setInputType(TLObject.FLAG_14);
-        mtVar.setFilters(inputFilterArr);
-        mtVar.setTextSize(1, 16.0f);
-        u6.U(mtVar, n6.Le, i6Var);
-        u6.G(mtVar, n6.Yc, i6Var);
-        u6.C(mtVar, n6.lg, i6Var);
-        int i7 = n6.Me;
-        u6.l(mtVar, 34, i7, i6Var);
-        u6.D(mtVar, i7, i6Var);
-        u6.l(mtVar, 30, n6.Ne, i6Var);
-        u6.l(mtVar, 36, n6.mg, i6Var);
-        mtVar.setBackground(null);
-        mtVar.setHint(gd.M0(2131753475, null));
-        mtVar.addTextChangedListener(new i9(this, 7));
-        mtVar.setImeOptions(6);
+        otVar.setInputType(TLObject.FLAG_14);
+        otVar.setFilters(inputFilterArr);
+        otVar.setTextSize(1, 16.0f);
+        t6.U(otVar, m6.Le, h6Var);
+        t6.G(otVar, m6.Yc, h6Var);
+        t6.C(otVar, m6.lg, h6Var);
+        int i7 = m6.Me;
+        t6.l(otVar, 34, i7, h6Var);
+        t6.D(otVar, i7, h6Var);
+        t6.l(otVar, 30, m6.Ne, h6Var);
+        t6.l(otVar, 36, m6.mg, h6Var);
+        otVar.setBackground(null);
+        otVar.setHint(gd.N0(2131753474, null));
+        otVar.addTextChangedListener(new i9(this, 7));
+        otVar.setImeOptions(6);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
-        u6.U(textView, n6.j5, i6Var);
+        t6.U(textView, m6.j5, h6Var);
         if (!gd.a0) {
             addView(textView, ma.t(-2, -2, 16, 20, 0, 0, 0));
-            addView(mtVar, ma.t(-1, -2, 16, 36, 0, 20, 0));
+            addView(otVar, ma.t(-1, -2, 16, 36, 0, 20, 0));
         } else {
             LinearLayout.LayoutParams t6 = ma.t(-1, -2, 16, 20, 0, 36, 0);
             t6.weight = 1.0f;
-            addView(mtVar, t6);
+            addView(otVar, t6);
             addView(textView, ma.t(-2, -2, 16, 0, 0, 20, 0));
         }
     }

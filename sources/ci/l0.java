@@ -11,7 +11,7 @@ import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements q10 {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class l0 implements q10 {
                             if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z10) {
                                 if (str != null) {
                                     z0Var.getClass();
-                                    z0Var.d1(R.drawable.msg_warning, gd.M0(2131751094, null), null);
+                                    z0Var.d1(R.drawable.msg_warning, gd.N0(2131751093, null), null);
                                     break;
                                 }
                             }
@@ -70,11 +70,11 @@ public final /* synthetic */ class l0 implements q10 {
                         o0Var.f().edit().putBoolean("qrNoPaidPermanent", false).apply();
                         if (!z0Var.w0) {
                             if (str != null) {
-                                z0Var.d1(R.drawable.msg_warning, gd.M0(2131751094, null), null);
+                                z0Var.d1(R.drawable.msg_warning, gd.N0(2131751093, null), null);
                                 break;
                             }
                         } else {
-                            z0Var.U0(str != null ? gd.M0(2131751094, null) : null);
+                            z0Var.U0(str != null ? gd.N0(2131751093, null) : null);
                             break;
                         }
                     }

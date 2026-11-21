@@ -2,17 +2,17 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jt implements org.telegram.ui.Components.lj0, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class jt implements org.telegram.ui.Components.nj0, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ mt a;
 
     public /* synthetic */ jt(mt mtVar) {
         this.a = mtVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         int i10;
         int i11;
         int i12;
@@ -24,11 +24,11 @@ public final /* synthetic */ class jt implements org.telegram.ui.Components.lj0,
         while (true) {
             lt[] ltVarArr = mtVar.o3;
             if (i13 >= ltVarArr.length) {
-                i10 = ((org.telegram.ui.ActionBar.h2) ptVar).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) ptVar).currentAccount;
                 org.telegram.messenger.cz.e(i10).l(0);
-                i11 = ((org.telegram.ui.ActionBar.h2) ptVar).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.g2) ptVar).currentAccount;
                 org.telegram.messenger.cz.e(i11).l(1);
-                i12 = ((org.telegram.ui.ActionBar.h2) ptVar).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.g2) ptVar).currentAccount;
                 org.telegram.messenger.cz.e(i12).l(2);
                 mtVar.f3 = true;
                 mtVar.C1();
@@ -43,7 +43,7 @@ public final /* synthetic */ class jt implements org.telegram.ui.Components.lj0,
         }
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.nj0
     public int run() {
         mt mtVar = this.a;
         ArrayList arrayList = mtVar.k3;

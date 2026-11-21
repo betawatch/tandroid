@@ -1,112 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class mu0 extends Drawable implements Drawable.Callback {
-    public final m6 a;
-    public final Paint b;
+public class mu0 extends v4.d0 {
+    public final nr r;
+    public int s;
+    public float t;
 
-    public mu0() {
-        m6 m6Var = new m6(false, true, true);
-        this.a = m6Var;
-        m6Var.setCallback(this);
-        m6Var.n(0.3f, 165L, lr.h);
-        m6Var.b = 1;
-        m6Var.x(org.telegram.messenger.g0.o());
-        m6Var.w(org.telegram.messenger.g0.L(10.0f));
-        Paint.Style style = Paint.Style.FILL_AND_STROKE;
-        TextPaint textPaint = m6Var.a;
-        textPaint.setStyle(style);
-        textPaint.setStrokeWidth(org.telegram.messenger.g0.N(0.6f));
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStyle(Paint.Style.STROKE);
+    public mu0(Context context) {
+        super(context);
+        this.r = nr.f;
+        this.t = 1.0f;
     }
 
-    public static String a(float f10) {
-        Math.abs(f10 - 0.25f);
-        float round = Math.round(f10 * 10.0f) / 10.0f;
-        long j3 = (long) round;
-        if (round == j3) {
-            return a8.p0.o(j3, "");
+    @Override // v4.d0, v4.b1
+    public final void g(View view, v4.a1 a1Var) {
+        int j3 = j(o(), view);
+        int k10 = k(p(), view);
+        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
+        if (m10 > 0) {
+            a1Var.b(-j3, -k10, m10, this.r);
         }
-        return "" + round;
+        org.telegram.messenger.g0.h3(new cp0(this, 8), Math.max(0, m10));
     }
 
-    public final void b(boolean z10, float f10) {
-        String str = a(f10) + "X";
-        m6 m6Var = this.a;
-        if (z10 && TextUtils.equals(m6Var.i, str)) {
+    @Override // v4.d0
+    public final int k(int i7, View view) {
+        return super.k(i7, view) - this.s;
+    }
+
+    @Override // v4.d0
+    public final int m(int i7) {
+        return Math.round(Math.min(super.m(i7), 500) * this.t);
+    }
+
+    @Override // v4.d0
+    public final int n(int i7) {
+        return Math.round(Math.min(super.n(i7), org.telegram.messenger.ks.g2) * this.t);
+    }
+
+    @Override // v4.d0
+    public final void q(v4.a1 a1Var) {
+        PointF a10 = a(this.a);
+        if (a10 == null || (a10.x == 0.0f && a10.y == 0.0f)) {
+            a1Var.d = this.a;
+            h();
             return;
         }
-        m6Var.a();
-        m6Var.t(str, z10, true);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        m6 m6Var = this.a;
-        Paint paint = this.b;
-        if (paint != null) {
-            paint.setStrokeWidth(org.telegram.messenger.g0.N(1.6f));
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(((org.telegram.messenger.g0.L(24.0f) - m6Var.c()) / 2.0f) - org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(0.2f) + ((org.telegram.messenger.g0.L(24.0f) - m6Var.e) / 2.0f), org.telegram.messenger.g0.N(3.0f) + ((m6Var.c() + org.telegram.messenger.g0.L(24.0f)) / 2.0f), (org.telegram.messenger.g0.L(24.0f) + m6Var.e) / 2.0f);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(3.0f), paint);
-        }
-        m6Var.a.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
-        m6Var.setBounds(0, (int) ((org.telegram.messenger.g0.L(24.0f) - m6Var.e) / 2.0f), org.telegram.messenger.g0.L(24.0f), (int) ((org.telegram.messenger.g0.L(24.0f) + m6Var.e) / 2.0f));
-        m6Var.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.a.C = i7;
-        Paint paint = this.b;
-        if (paint != null) {
-            paint.setAlpha(i7);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        v4.b1.b(a10);
+        this.k = a10;
+        this.o = (int) (a10.x * 10000.0f);
+        this.p = (int) (a10.y * 10000.0f);
+        a1Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

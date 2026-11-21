@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class u5 {
     public static lz a(int i7) {
@@ -74,7 +74,7 @@ public abstract class u5 {
         return f(document, i7, f10, null);
     }
 
-    public static lz f(TLRPC.Document document, int i7, float f10, org.telegram.ui.ActionBar.i6 i6Var) {
+    public static lz f(TLRPC.Document document, int i7, float f10, org.telegram.ui.ActionBar.h6 h6Var) {
         int i10;
         int i11;
         if (document == null) {
@@ -100,7 +100,7 @@ public abstract class u5 {
                 }
                 lz j3 = mz.j((int) (i10 * 1.0f), (int) (i11 * 1.0f), ((TLRPC.TL_photoPathSize) photoSize).svgPath);
                 if (j3 != null) {
-                    j3.f(i7, i6Var, f10, false);
+                    j3.f(i7, h6Var, f10, false);
                 }
                 return j3;
             }

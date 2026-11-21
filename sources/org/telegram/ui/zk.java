@@ -3,18 +3,18 @@ package org.telegram.ui;
 import android.app.Activity;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zk extends org.telegram.ui.Components.o10 {
+public final class zk extends org.telegram.ui.Components.r10 {
     public final /* synthetic */ bn n1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zk(bn bnVar, Activity activity, org.telegram.ui.ActionBar.h2 h2Var) {
-        super(activity, h2Var);
+    public zk(bn bnVar, Activity activity, org.telegram.ui.ActionBar.g2 g2Var) {
+        super(activity, g2Var);
         this.n1 = bnVar;
     }
 
-    @Override // org.telegram.ui.Components.o10
+    @Override // org.telegram.ui.Components.r10
     public final void J0() {
         bn bnVar = this.n1;
         bnVar.h8();
@@ -26,7 +26,7 @@ public final class zk extends org.telegram.ui.Components.o10 {
         bnVar.getMessagesController().s4(bnVar.l6, "CONVERT_GIGAGROUP");
     }
 
-    @Override // org.telegram.ui.Components.o10
+    @Override // org.telegram.ui.Components.r10
     public final void K0() {
         bn bnVar = this.n1;
         bnVar.getMessagesController().S(bnVar.getParentActivity(), bnVar.e, bnVar, new w0(this, 21));

@@ -4,7 +4,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class r3 implements Runnable {
             case 0:
                 f6 f6Var = this.b;
                 f6Var.dismiss();
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 TL_stars.TL_starGiftUnique M1 = f6Var.M1();
                 if (T != null && M1 != null) {
                     cx cxVar = new cx(org.telegram.ui.Cells.c0.l(4, "onlySelect", "dialogsType", true));

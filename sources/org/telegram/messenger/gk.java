@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gk implements x10 {
     public final /* synthetic */ int a = 2;
@@ -35,35 +35,35 @@ public final /* synthetic */ class gk implements x10 {
         switch (i7) {
             case 0:
                 vf.b bVar = (vf.b) obj5;
-                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) obj4;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj3;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) obj4;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj3;
                 boolean[] zArr = (boolean[]) obj2;
                 Long l10 = (Long) obj;
                 try {
                     if (bVar != null) {
                         bVar.b();
                     } else {
-                        u1VarArr[0].dismiss();
+                        t1VarArr[0].dismiss();
                     }
                 } catch (Exception unused) {
                 }
-                u1VarArr[0] = null;
-                h2Var.setVisibleDialog(null);
+                t1VarArr[0] = null;
+                g2Var.setVisibleDialog(null);
                 if (!zArr[0]) {
                     if (l10 != null) {
                         if (l10.longValue() >= 0) {
-                            mpVar.G3(mpVar.c2(l10), null, h2Var, i10);
+                            mpVar.G3(mpVar.c2(l10), null, g2Var, i10);
                             break;
                         } else {
-                            mpVar.G3(null, mpVar.O0(Long.valueOf(-l10.longValue())), h2Var, 1);
+                            mpVar.G3(null, mpVar.O0(Long.valueOf(-l10.longValue())), g2Var, 1);
                             break;
                         }
-                    } else if (h2Var.getParentActivity() != null) {
+                    } else if (g2Var.getParentActivity() != null) {
                         try {
-                            if (h2Var instanceof org.telegram.ui.bn) {
-                                ((org.telegram.ui.bn) h2Var).Xb();
+                            if (g2Var instanceof org.telegram.ui.bn) {
+                                ((org.telegram.ui.bn) g2Var).Xb();
                             }
-                            org.telegram.ui.Components.lc.b0(h2Var).t(gd.M0(2131747942, null), null).j();
+                            org.telegram.ui.Components.lc.b0(g2Var).t(gd.N0(2131747941, null), null).j();
                             break;
                         } catch (Exception e10) {
                             a8.g(e10, true);
@@ -121,11 +121,11 @@ public final /* synthetic */ class gk implements x10 {
         }
     }
 
-    public /* synthetic */ gk(mp mpVar, vf.b bVar, org.telegram.ui.ActionBar.u1[] u1VarArr, org.telegram.ui.ActionBar.h2 h2Var, boolean[] zArr, int i7) {
+    public /* synthetic */ gk(mp mpVar, vf.b bVar, org.telegram.ui.ActionBar.t1[] t1VarArr, org.telegram.ui.ActionBar.g2 g2Var, boolean[] zArr, int i7) {
         this.b = mpVar;
         this.e = bVar;
-        this.f = u1VarArr;
-        this.g = h2Var;
+        this.f = t1VarArr;
+        this.g = g2Var;
         this.c = zArr;
         this.d = i7;
     }

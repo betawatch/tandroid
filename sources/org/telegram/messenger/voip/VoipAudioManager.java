@@ -3,17 +3,16 @@ package org.telegram.messenger.voip;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.os.Build;
-import oi.s2;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.q10;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class VoipAudioManager {
     private Boolean isSpeakerphoneOn;
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static final class InstanceHolder {
         static final VoipAudioManager instance = new VoipAudioManager();
 
@@ -74,7 +73,7 @@ public class VoipAudioManager {
     }
 
     public void isBluetoothAndSpeakerOnAsync(q10 q10Var) {
-        Utilities.e.c(new s2(19, this, q10Var));
+        Utilities.e.c(new oi.t(21, this, q10Var));
     }
 
     public boolean isBluetoothOn() {
@@ -113,7 +112,7 @@ public class VoipAudioManager {
             return;
         }
         this.isSpeakerphoneOn = Boolean.FALSE;
-        Utilities.e.c(new s2(18, audioManager, findBluetoothDevice));
+        Utilities.e.c(new oi.t(20, audioManager, findBluetoothDevice));
     }
 
     public void stopBluetooth() {

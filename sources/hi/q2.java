@@ -1,0 +1,77 @@
+package hi;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.yz;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes4.dex */
+public final class q2 extends yz {
+    public static int W;
+    public final /* synthetic */ int V;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ q2(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        this.V = i7;
+    }
+
+    @Override // org.telegram.ui.Components.yz
+    public int getColumnsCount() {
+        switch (this.V) {
+            case 0:
+                return 3;
+            case 1:
+                return 3;
+            default:
+                return super.getColumnsCount();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yz
+    public int getViewType() {
+        switch (this.V) {
+            case 1:
+                return 2;
+            default:
+                return super.getViewType();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yz, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.V) {
+            case 2:
+                int i11 = 0;
+                if (getParent() instanceof ViewGroup) {
+                    ViewGroup viewGroup = (ViewGroup) getParent();
+                    int i12 = 0;
+                    while (i11 < viewGroup.getChildCount()) {
+                        View childAt = viewGroup.getChildAt(i11);
+                        if ((childAt instanceof org.telegram.ui.Wallet.e8) && childAt.getMeasuredHeight() > 0) {
+                            i12 = Math.max(i12, childAt.getMeasuredHeight());
+                        }
+                        i11++;
+                    }
+                    i11 = i12;
+                }
+                if (i11 <= 0) {
+                    i11 = W;
+                }
+                if (i11 > 0) {
+                    setMeasuredDimension(View.MeasureSpec.getSize(i7), i11);
+                    break;
+                } else {
+                    super.onMeasure(i7, i10);
+                    break;
+                }
+            case 3:
+                setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(104.0f));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+}

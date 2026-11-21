@@ -1,28 +1,54 @@
 package di;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v8 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ w8 b;
 
-    public /* synthetic */ u8(v8 v8Var, long j3, int i7) {
+    public /* synthetic */ u8(w8 w8Var, int i7) {
         this.a = i7;
-        this.b = v8Var;
-        this.c = j3;
+        this.b = w8Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        w8 w8Var = this.b;
+        switch (i7) {
             case 0:
-                v8 v8Var = this.b;
-                v8Var.q.b0(v8Var.b, v8Var.c, this.c, true, true, v8Var.n);
+                w8Var.b();
+                break;
+            case 1:
+                w8Var.a();
                 break;
             default:
-                v8 v8Var2 = this.b;
-                v8Var2.q.b0(v8Var2.b, v8Var2.c, this.c, true, true, v8Var2.n);
+                org.telegram.ui.Components.gc gcVar = w8Var.d;
+                y8 y8Var = w8Var.q;
+                u8 u8Var = w8Var.p;
+                fj fjVar = w8Var.b;
+                if (!w8Var.l) {
+                    w8Var.l = true;
+                    fjVar.f((int) w8Var.k, w8Var.c(), true);
+                    long j3 = y8Var.g;
+                    int i10 = y8Var.a;
+                    y8Var.g = j3 + w8Var.k;
+                    ks.f(i10).k(ks.A3, new Object[0]);
+                    w8Var.k = 0L;
+                    ks.f(i10).k(ks.o1, Long.valueOf(fj.B0(fjVar.k)), Integer.valueOf(fjVar.e1()), fjVar.k.reactions);
+                }
+                if (!w8Var.m) {
+                    w8Var.m = true;
+                    w8Var.f.b = 5000L;
+                    org.telegram.messenger.g0.r(u8Var);
+                    org.telegram.messenger.g0.h3(u8Var, 5000L);
+                    gcVar.k(true);
+                    gcVar.v = u8Var;
+                }
+                w8Var.e.b.setText(w8Var.d());
                 break;
         }
     }

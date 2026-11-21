@@ -6,10 +6,10 @@ import android.graphics.SurfaceTexture;
 import android.view.View;
 import e2.c1;
 import java.util.ArrayList;
-import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.fn0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public interface l {
     void B(View view);
@@ -36,7 +36,7 @@ public interface l {
 
     void U();
 
-    boolean V(boolean z10, float f10, cn0 cn0Var);
+    boolean V(boolean z10, float f10, fn0 fn0Var);
 
     void X(View view);
 

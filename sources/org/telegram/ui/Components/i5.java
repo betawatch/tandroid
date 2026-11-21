@@ -1,43 +1,124 @@
 package org.telegram.ui.Components;
 
+import android.os.Looper;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k5 b;
+    public final /* synthetic */ l5 b;
     public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ HashSet d;
 
-    public /* synthetic */ i5(k5 k5Var, ArrayList arrayList, HashSet hashSet, int i7) {
+    public /* synthetic */ i5(l5 l5Var, ArrayList arrayList, int i7) {
         this.a = i7;
-        this.b = k5Var;
+        this.b = l5Var;
         this.c = arrayList;
-        this.d = hashSet;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0054 A[Catch: SQLiteException -> 0x0058, TryCatch #4 {SQLiteException -> 0x0058, blocks: (B:5:0x0012, B:6:0x0019, B:8:0x001f, B:10:0x0027, B:18:0x0054, B:25:0x004e, B:20:0x005a, B:29:0x005d), top: B:4:0x0012 }] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x005a A[SYNTHETIC] */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
+        NativeByteBuffer nativeByteBuffer;
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new i5(this.b, this.c, this.d, 1));
-                break;
-            default:
-                k5 k5Var = this.b;
-                k5Var.d(this.c);
-                HashSet hashSet = this.d;
-                if (!hashSet.isEmpty()) {
-                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
-                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
-                    ConnectionsManager.getInstance(k5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.u7(11, k5Var, arrayList));
-                    break;
+                ArrayList arrayList = this.c;
+                l5 l5Var = this.b;
+                int i7 = l5Var.e;
+                org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(i7);
+                SQLiteDatabase sQLiteDatabase = a02.b;
+                if (sQLiteDatabase != null) {
+                    try {
+                        String join = TextUtils.join(",", arrayList);
+                        Locale locale = Locale.US;
+                        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT data FROM animated_emoji WHERE document_id IN (" + join + ")", new Object[0]);
+                        ArrayList arrayList2 = new ArrayList();
+                        HashSet hashSet = new HashSet(arrayList);
+                        while (queryFinalized.next()) {
+                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                            try {
+                                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
+                                if (TLdeserialize != null && TLdeserialize.id != 0) {
+                                    arrayList2.add(TLdeserialize);
+                                    hashSet.remove(Long.valueOf(TLdeserialize.id));
+                                }
+                            } catch (Exception e10) {
+                                org.telegram.messenger.a8.g(e10, true);
+                            }
+                            if (byteBufferValue != null) {
+                                byteBufferValue.reuse();
+                            }
+                        }
+                        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+                            l5Var.d(arrayList2);
+                            if (!hashSet.isEmpty()) {
+                                ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
+                                TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                                tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
+                                ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.u7(11, l5Var, arrayList3));
+                            }
+                        } else {
+                            org.telegram.messenger.ks.f(i7).d(new j5(l5Var, arrayList2, hashSet, 0));
+                        }
+                        queryFinalized.dispose();
+                        break;
+                    } catch (SQLiteException e11) {
+                        a02.o(e11, true);
+                        return;
+                    }
                 }
                 break;
+            default:
+                ArrayList arrayList4 = this.c;
+                try {
+                    SQLitePreparedStatement executeFast = org.telegram.messenger.tr.a0(this.b.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
+                    for (int i10 = 0; i10 < arrayList4.size(); i10++) {
+                        if (arrayList4.get(i10) instanceof TLRPC.Document) {
+                            TLRPC.Document document = (TLRPC.Document) arrayList4.get(i10);
+                            NativeByteBuffer nativeByteBuffer2 = null;
+                            try {
+                                nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
+                            } catch (Exception e12) {
+                                e = e12;
+                            }
+                            try {
+                                document.serializeToStream(nativeByteBuffer);
+                                executeFast.requery();
+                                executeFast.bindLong(1, document.id);
+                                executeFast.bindByteBuffer(2, nativeByteBuffer);
+                                executeFast.step();
+                            } catch (Exception e13) {
+                                e = e13;
+                                nativeByteBuffer2 = nativeByteBuffer;
+                                e.printStackTrace();
+                                nativeByteBuffer = nativeByteBuffer2;
+                                if (nativeByteBuffer == null) {
+                                }
+                            }
+                            if (nativeByteBuffer == null) {
+                                nativeByteBuffer.reuse();
+                            }
+                        }
+                    }
+                    executeFast.dispose();
+                    break;
+                } catch (SQLiteException e14) {
+                    org.telegram.messenger.a8.g(e14, true);
+                }
         }
     }
 }

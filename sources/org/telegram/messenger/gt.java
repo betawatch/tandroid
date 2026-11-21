@@ -8,17 +8,17 @@ import org.json.JSONObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.vd0;
+import org.telegram.ui.ud0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class gt implements v0.g {
-    public final /* synthetic */ vd0 a;
+    public final /* synthetic */ ud0 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ int c;
 
-    public gt(vd0 vd0Var, Context context, int i7) {
-        this.a = vd0Var;
+    public gt(ud0 ud0Var, Context context, int i7) {
+        this.a = ud0Var;
         this.b = context;
         this.c = i7;
     }
@@ -27,23 +27,23 @@ public final class gt implements v0.g {
     public final void a(Object obj) {
         w0.i iVar = (w0.i) obj;
         boolean z10 = iVar instanceof w0.k;
-        vd0 vd0Var = this.a;
+        ud0 ud0Var = this.a;
         if (z10) {
-            vd0Var.a(0L, null, "EMPTY");
+            ud0Var.a(0L, null, "EMPTY");
             return;
         }
         if (iVar instanceof w0.g) {
-            vd0Var.a(0L, null, "CANCELLED");
+            ud0Var.a(0L, null, "CANCELLED");
         } else if (iVar instanceof w0.j) {
-            vd0Var.a(0L, null, "CANCELLED");
+            ud0Var.a(0L, null, "CANCELLED");
         } else if (iVar != null) {
-            vd0Var.a(0L, null, iVar.getMessage());
+            ud0Var.a(0L, null, iVar.getMessage());
         }
     }
 
     @Override // v0.g
     public final void onResult(Object obj) {
-        final vd0 vd0Var = this.a;
+        final ud0 ud0Var = this.a;
         com.google.android.gms.common.api.q qVar = ((v0.n) obj).a;
         TL_account.finishPasskeyLogin finishpasskeylogin = new TL_account.finishPasskeyLogin();
         finishpasskeylogin.credential = new TL_account.inputPasskeyCredentialPublicKey();
@@ -63,8 +63,8 @@ public final class gt implements v0.g {
             int parseInt = Integer.parseInt(str.split(":")[0]);
             final long parseLong = Long.parseLong(inputpasskeyresponselogin.user_handle.split(":")[1]);
             finishpasskeylogin.credential.response = inputpasskeyresponselogin;
-            org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, this.b, null);
-            u1Var.r(500L);
+            org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, this.b, null);
+            t1Var.r(500L);
             int i7 = this.c;
             if (parseInt != ConnectionsManager.getInstance(i7).getCurrentDatacenterId()) {
                 int currentDatacenterId = ConnectionsManager.getInstance(i7).getCurrentDatacenterId();
@@ -74,18 +74,18 @@ public final class gt implements v0.g {
                 finishpasskeylogin.from_dc_id = currentDatacenterId;
                 finishpasskeylogin.from_auth_key_id = currentAuthKeyId;
             }
-            final int sendRequestTyped = ConnectionsManager.getInstance(i7).sendRequestTyped(finishpasskeylogin, new d3.b(1), new o9(u1Var, vd0Var, parseLong, 3), parseInt, 72);
+            final int sendRequestTyped = ConnectionsManager.getInstance(i7).sendRequestTyped(finishpasskeylogin, new d3.b(1), new o9(t1Var, ud0Var, parseLong, 3), parseInt, 72);
             final int i10 = this.c;
-            u1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.ft
+            t1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.ft
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
                     ConnectionsManager.getInstance(i10).cancelRequest(sendRequestTyped, true);
-                    vd0Var.a(Long.valueOf(parseLong), null, "CANCELLED");
+                    ud0Var.a(Long.valueOf(parseLong), null, "CANCELLED");
                 }
             });
         } catch (Exception e10) {
             a8.g(e10, true);
-            vd0Var.a(0L, null, e10.getMessage());
+            ud0Var.a(0L, null, e10.getMessage());
         }
     }
 }

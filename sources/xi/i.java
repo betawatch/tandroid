@@ -32,18 +32,17 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.r0;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.j00;
+import org.telegram.ui.Components.l00;
+import org.telegram.ui.md0;
 import org.telegram.ui.n1;
-import org.telegram.ui.nd0;
 import org.telegram.ui.web.p1;
-import tg.z1;
-import v4.p;
+import tg.o1;
+import wg.p;
 import wg.q;
-import wg.r;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class i implements j00 {
+public final class i implements l00 {
     public static i A;
     public static final Object y = new Object();
     public static i z;
@@ -72,11 +71,11 @@ public final class i implements j00 {
     public final HashMap m = new HashMap();
     public final ArrayDeque n = new ArrayDeque();
 
-    public i(nd0 nd0Var, String str, byte[] bArr) {
-        this.b = (String) nd0Var.c;
-        String str2 = (String) nd0Var.d;
+    public i(md0 md0Var, String str, byte[] bArr) {
+        this.b = (String) md0Var.c;
+        String str2 = (String) md0Var.d;
         this.c = str2;
-        String str3 = (String) nd0Var.b;
+        String str3 = (String) md0Var.b;
         String p10 = str3.isEmpty() ? "/" : p0.p("/", str3, "/");
         this.d = p10;
         this.e = str;
@@ -130,7 +129,7 @@ public final class i implements j00 {
                         webView.setWebViewClient(new n1(iVar, 4));
                         HashSet hashSet = new HashSet();
                         hashSet.add(iVar.f);
-                        d5.b.a(webView, "TelegramWebProxy", hashSet, new z1(iVar, 17));
+                        d5.b.a(webView, "TelegramWebProxy", hashSet, new o1(iVar, 18));
                         webView.loadUrl(iVar.g);
                     } catch (Exception e10) {
                         a8.g(e10, true);
@@ -163,7 +162,7 @@ public final class i implements j00 {
                                 hVar.e = true;
                                 iVar.n(1, andUpdate, null);
                             }
-                            iVar.j.execute(new r(10, iVar, hVar));
+                            iVar.j.execute(new q(12, iVar, hVar));
                         }
                         try {
                             accept.close();
@@ -215,7 +214,7 @@ public final class i implements j00 {
         return null;
     }
 
-    public static nd0 k(String str) {
+    public static md0 k(String str) {
         if (str == null) {
             return null;
         }
@@ -238,7 +237,7 @@ public final class i implements j00 {
                 }
             }
         }
-        return new nd0(l10, substring);
+        return new md0(l10, substring);
     }
 
     public static String l(String str) {
@@ -266,7 +265,7 @@ public final class i implements j00 {
 
     public static int o(String str, String str2) {
         boolean z10;
-        nd0 k10 = k(str);
+        md0 k10 = k(str);
         byte[] f10 = f(str2);
         if (k10 != null && f10 != null) {
             try {
@@ -328,7 +327,7 @@ public final class i implements j00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.j00
+    @Override // org.telegram.ui.Components.l00
     public final void b() {
         g0.g3(new f(this, 2));
     }
@@ -418,12 +417,12 @@ public final class i implements j00 {
                         return;
                     }
                     WebView webView = this.o;
-                    q qVar = new q(this, webView, fVar, 2);
-                    g0.h3(qVar, 5000L);
+                    p pVar = new p(this, webView, fVar, 3);
+                    g0.h3(pVar, 5000L);
                     try {
-                        webView.evaluateJavascript("(function(){\n'use strict';\ntry {\n var bridge=window.TelegramWebProxy;\n if(!bridge||typeof bridge.postMessage!=='function'||typeof bridge.onmessage!=='function')return false;\n var nativePost=bridge.postMessage;\n var receive=bridge.onmessage;\n var prefix='tproxy-base64:';\n var maxBytes=1048584;\n var maxChars=1398112;\n function post(value){\n  if(value instanceof ArrayBuffer){\n   if(value.byteLength>maxBytes)throw new Error('WEB proxy frame too large');\n   var bytes=new Uint8Array(value),parts=[];\n   for(var i=0;i<bytes.length;i+=8192){\n    parts.push(String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+8192,bytes.length))));\n   }\n   nativePost.call(bridge,prefix+btoa(parts.join('')));\n  }else nativePost.call(bridge,value);\n }\n function onmessage(event){\n  var data=event.data;\n  if(typeof data==='string'&&data.indexOf(prefix)===0){\n   try {\n    var encoded=data.substring(prefix.length);\n    if(encoded.length>maxChars)throw new Error('WEB proxy frame too large');\n    var binary=atob(encoded);\n    if(binary.length>maxBytes)throw new Error('WEB proxy frame too large');\n    var bytes=new Uint8Array(binary.length);\n    for(var i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);\n    receive.call(bridge,{data:bytes.buffer});\n   }catch(error){nativePost.call(bridge,'{\"t\":\"close\"}');}\n  }else receive.call(bridge,event);\n }\n bridge.postMessage=post;\n bridge.onmessage=onmessage;\n return bridge.postMessage===post&&bridge.onmessage===onmessage;\n}catch(error){return false;}\n})()\n", new p1(this, qVar, webView, fVar));
+                        webView.evaluateJavascript("(function(){\n'use strict';\ntry {\n var bridge=window.TelegramWebProxy;\n if(!bridge||typeof bridge.postMessage!=='function'||typeof bridge.onmessage!=='function')return false;\n var nativePost=bridge.postMessage;\n var receive=bridge.onmessage;\n var prefix='tproxy-base64:';\n var maxBytes=1048584;\n var maxChars=1398112;\n function post(value){\n  if(value instanceof ArrayBuffer){\n   if(value.byteLength>maxBytes)throw new Error('WEB proxy frame too large');\n   var bytes=new Uint8Array(value),parts=[];\n   for(var i=0;i<bytes.length;i+=8192){\n    parts.push(String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+8192,bytes.length))));\n   }\n   nativePost.call(bridge,prefix+btoa(parts.join('')));\n  }else nativePost.call(bridge,value);\n }\n function onmessage(event){\n  var data=event.data;\n  if(typeof data==='string'&&data.indexOf(prefix)===0){\n   try {\n    var encoded=data.substring(prefix.length);\n    if(encoded.length>maxChars)throw new Error('WEB proxy frame too large');\n    var binary=atob(encoded);\n    if(binary.length>maxBytes)throw new Error('WEB proxy frame too large');\n    var bytes=new Uint8Array(binary.length);\n    for(var i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);\n    receive.call(bridge,{data:bytes.buffer});\n   }catch(error){nativePost.call(bridge,'{\"t\":\"close\"}');}\n  }else receive.call(bridge,event);\n }\n bridge.postMessage=post;\n bridge.onmessage=onmessage;\n return bridge.postMessage===post&&bridge.onmessage===onmessage;\n}catch(error){return false;}\n})()\n", new p1(this, pVar, webView, fVar));
                     } catch (Exception e10) {
-                        g0.r(qVar);
+                        g0.r(pVar);
                         a8.g(e10, true);
                         a8.d("WEB proxy: Base64 bridge installation threw an exception; transport stopped");
                         q();
@@ -544,7 +543,7 @@ public final class i implements j00 {
                             c cVar = this.x;
                             this.a.notifyAll();
                             if (cVar != null) {
-                                g0.g3(new p(cVar, 14));
+                                g0.g3(new v4.p(cVar, 14));
                             }
                         }
                     } finally {
@@ -623,7 +622,7 @@ public final class i implements j00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.j00
+    @Override // org.telegram.ui.Components.l00
     public final void a() {
     }
 }

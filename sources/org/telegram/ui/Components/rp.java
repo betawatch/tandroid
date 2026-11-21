@@ -1,91 +1,106 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
+import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
-import java.util.Random;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class rp {
-    public float g;
-    public float k;
-    public final Path a = new Path();
-    public final float[] b = new float[4];
-    public final float[] c = new float[4];
-    public final Matrix d = new Matrix();
-    public final float h = 1.0f;
-    public final Random i = new Random();
-    public final int f = 6;
-    public final float e = (float) (Math.tan(3.141592653589793d / 12) * 1.3333333333333333d);
-    public final float[] j = new float[6];
+public final class rp extends hi.l3 {
+    public final /* synthetic */ int X0 = 0;
+    public final Object Y0;
+    public final Object Z0;
 
-    public rp() {
-        for (int i7 = 0; i7 < this.f; i7++) {
-            this.j[i7] = (this.i.nextInt() % 100) / 100.0f;
+    public rp(Activity activity, int i7, org.telegram.ui.Components.voip.l1 l1Var, boolean z10) {
+        super(activity, i7);
+        Paint paint = new Paint(1);
+        this.Y0 = paint;
+        this.Z0 = l1Var;
+        l1Var.a(this);
+        paint.setPathEffect(new CornerPathEffect(this.w));
+        if (z10) {
+            k(true);
         }
     }
 
-    public final void a(float f10, float f11, Canvas canvas, Paint paint) {
-        rp rpVar = this;
-        float f12 = rpVar.g;
-        float f13 = (f12 - 0.0f) - 0.0f;
-        float f14 = f12 + 0.0f + 0.0f;
-        float max = Math.max(f13, f14);
-        float f15 = rpVar.e;
-        float f16 = max * f15 * rpVar.h;
-        Path path = rpVar.a;
-        path.reset();
-        int i7 = 0;
-        while (true) {
-            int i10 = rpVar.f;
-            if (i7 >= i10) {
-                canvas.save();
-                canvas.rotate(0.0f, f10, f11);
+    @Override // hi.l3
+    public void c(Canvas canvas, float f10) {
+        switch (this.X0) {
+            case 1:
+                Paint paint = (Paint) this.Y0;
+                org.telegram.ui.Components.voip.l1 l1Var = (org.telegram.ui.Components.voip.l1) this.Z0;
+                paint.setShader(l1Var.b().getShader());
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.G.getAlpha(), l1Var.b().getAlpha()) * f10), 31);
+                Path path = this.F0;
                 canvas.drawPath(path, paint);
+                if (l1Var.e) {
+                    paint.setShader(((Paint) l1Var.d.a).getShader());
+                    canvas.drawPath(path, paint);
+                }
                 canvas.restore();
-                return;
-            }
-            Matrix matrix = rpVar.d;
-            matrix.reset();
-            float f17 = 360.0f / i10;
-            matrix.setRotate(i7 * f17, f10, f11);
-            float f18 = i7 % 2 == 0 ? f13 : f14;
-            float f19 = rpVar.k;
-            float[] fArr = rpVar.j;
-            float f20 = (fArr[i7] * f19) + f18;
-            float[] fArr2 = rpVar.b;
-            fArr2[0] = f10;
-            float f21 = f11 - f20;
-            fArr2[1] = f21;
-            float f22 = f14;
-            fArr2[2] = com.google.android.gms.internal.vision.e2.x(f19, fArr[i7], f15, f10 + f16);
-            fArr2[3] = f21;
-            matrix.mapPoints(fArr2);
-            int i11 = i7 + 1;
-            int i12 = i11 >= i10 ? 0 : i11;
-            float f23 = i12 % 2 == 0 ? f13 : f22;
-            float f24 = rpVar.k;
-            float f25 = (fArr[i12] * f24) + f23;
-            float[] fArr3 = rpVar.c;
-            fArr3[0] = f10;
-            float f26 = f11 - f25;
-            fArr3[1] = f26;
-            float f27 = f13;
-            fArr3[2] = com.google.android.gms.internal.vision.e2.x(f24, fArr[i12], f15, f10 - f16);
-            fArr3[3] = f26;
-            matrix.reset();
-            matrix.setRotate(f17 * i12, f10, f11);
-            matrix.mapPoints(fArr3);
-            if (i7 == 0) {
-                path.moveTo(fArr2[0], fArr2[1]);
-            }
-            path.cubicTo(fArr2[2], fArr2[3], fArr3[2], fArr3[3], fArr3[0], fArr3[1]);
-            i7 = i11;
-            f14 = f22;
-            f13 = f27;
-            rpVar = this;
+                break;
+            default:
+                super.c(canvas, f10);
+                break;
         }
+    }
+
+    @Override // hi.l3, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.X0) {
+            case 1:
+                ((org.telegram.ui.Components.voip.l1) this.Z0).d(getX(), getY());
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // hi.l3, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.X0) {
+            case 0:
+                oh0[] oh0VarArr = (oh0[]) this.Y0;
+                return (oh0VarArr != null && (drawable == oh0VarArr[0] || drawable == oh0VarArr[1])) || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rp(Activity activity) {
+        super(activity, 3);
+        int i7 = 0;
+        this.Y0 = new oh0[2];
+        this.Z0 = new int[2];
+        r(true);
+        this.L = Layout.Alignment.ALIGN_NORMAL;
+        this.d = 3200L;
+        this.U = true;
+        this.e = true;
+        n(8.0f, 6.0f, 10.0f, 6.0f);
+        this.v0 = 0.0f;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        while (i7 < 2) {
+            ((oh0[]) this.Y0)[i7] = new oh0(i7 == 0 ? R.raw.ticks_single : R.raw.ticks_double, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+            ((oh0[]) this.Y0)[i7].setCallback(this);
+            if (i7 > 0) {
+                spannableStringBuilder.append((CharSequence) "\n");
+            }
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) "x");
+            spannableStringBuilder.setSpan(new qp(((oh0[]) this.Y0)[i7]), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(i7 == 0 ? 2131749105 : 2131749106, null));
+            i7++;
+        }
+        v(spannableStringBuilder);
     }
 }

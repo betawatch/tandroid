@@ -16,7 +16,7 @@ import android.view.animation.OvershootInterpolator;
 import java.util.ArrayList;
 import org.telegram.messenger.fj;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class v9 extends View {
     public final Paint a;
@@ -123,9 +123,9 @@ public final class v9 extends View {
                 r9 r9Var2 = w9Var.W;
                 fj messageObject = r9Var2 instanceof r1 ? ((r1) r9Var2).getMessageObject() : null;
                 if (messageObject == null || !messageObject.P3()) {
-                    paint.setColor(w9Var.t(org.telegram.ui.ActionBar.n6.mg));
+                    paint.setColor(w9Var.t(org.telegram.ui.ActionBar.m6.mg));
                 } else {
-                    paint.setColor(w9Var.t(org.telegram.ui.ActionBar.n6.Nc));
+                    paint.setColor(w9Var.t(org.telegram.ui.ActionBar.m6.Nc));
                 }
                 int length = w9Var.s(w9Var.W, false).length();
                 int i13 = w9Var.v;
@@ -301,12 +301,12 @@ public final class v9 extends View {
                 org.telegram.messenger.g0.r(fVar);
                 org.telegram.messenger.g0.g3(fVar);
             }
-            org.telegram.ui.ActionBar.y3 y3Var = w9Var.Y;
-            if (y3Var != null) {
-                y3Var.invalidateContentRect();
-                org.telegram.ui.ActionBar.y3 y3Var2 = w9Var.Y;
-                if (y3Var2 != null) {
-                    y3Var2.c();
+            org.telegram.ui.ActionBar.x3 x3Var = w9Var.Y;
+            if (x3Var != null) {
+                x3Var.invalidateContentRect();
+                org.telegram.ui.ActionBar.x3 x3Var2 = w9Var.Y;
+                if (x3Var2 != null) {
+                    x3Var2.c();
                 }
             }
             if (w9Var.k) {

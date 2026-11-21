@@ -1,47 +1,24 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x4 implements View.OnClickListener {
+public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a5 b;
+    public final /* synthetic */ m5 b;
 
-    public /* synthetic */ x4(a5 a5Var, int i7) {
+    public /* synthetic */ x4(m5 m5Var, int i7) {
         this.a = i7;
-        this.b = a5Var;
+        this.b = m5Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                a5 a5Var = this.b;
-                if (!a5Var.H && a5Var.G) {
-                    a5Var.o(true);
-                    break;
-                } else {
-                    j jVar = a5Var.W;
-                    if (jVar != null) {
-                        jVar.b(-1);
-                        break;
-                    }
-                }
+                this.b.setVisibility(8);
                 break;
             default:
-                a5 a5Var2 = this.b;
-                if (a5Var2.s.length() != 0) {
-                    a5Var2.s.setText("");
-                } else {
-                    TextView textView = a5Var2.x;
-                    if (textView != null && textView.getVisibility() == 0) {
-                        a5Var2.n();
-                    }
-                }
-                a5Var2.s.requestFocus();
-                org.telegram.messenger.g0.I3(a5Var2.s);
+                this.b.setVisibility(8);
                 break;
         }
     }

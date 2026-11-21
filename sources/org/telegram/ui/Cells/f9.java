@@ -9,11 +9,11 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 import org.telegram.messenger.mc;
 import org.telegram.messenger.nc;
-import org.telegram.ui.Components.rd0;
+import org.telegram.ui.Components.sd0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f9 implements nc, mc, rd0 {
+public final /* synthetic */ class f9 implements nc, mc, sd0 {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
 
@@ -30,13 +30,13 @@ public final /* synthetic */ class f9 implements nc, mc, rd0 {
         g9Var.b(menu);
     }
 
-    @Override // org.telegram.ui.Components.rd0
+    @Override // org.telegram.ui.Components.sd0
     public void j(int i7, int i10) {
         u5 u5Var = (u5) this.a;
-        rd0 rd0Var = (rd0) this.b;
+        sd0 sd0Var = (sd0) this.b;
         j6.o oVar = u5Var.e;
         TextView textView = u5Var.b;
-        rd0Var.j(i7, i10);
+        sd0Var.j(i7, i10);
         if (i10 > 0) {
             textView.setText("+" + i10);
         } else {
@@ -58,7 +58,7 @@ public final /* synthetic */ class f9 implements nc, mc, rd0 {
         animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 0.0f));
         u5Var.d.setDuration(250L);
         u5Var.d.setInterpolator(new DecelerateInterpolator());
-        u5Var.d.addListener(new ki.n3(u5Var, 27));
+        u5Var.d.addListener(new ki.m3(u5Var, 27));
         u5Var.d.start();
     }
 

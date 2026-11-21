@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class go implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -227,11 +227,11 @@ public final /* synthetic */ class go implements RequestDelegate {
                 break;
             case 7:
                 mp mpVar6 = (mp) this.c;
-                ai.g0 g0Var = (ai.g0) this.d;
+                ai.h0 h0Var = (ai.h0) this.d;
                 long j15 = this.b;
                 if (tLObject instanceof TLRPC.TL_exportedContactToken) {
                     mpVar6.d8 = (TLRPC.TL_exportedContactToken) tLObject;
-                    g0.h3(new fi(24, mpVar6, g0Var), Math.max(0L, 0 - (System.currentTimeMillis() - j15)));
+                    g0.h3(new fi(24, mpVar6, h0Var), Math.max(0L, 0 - (System.currentTimeMillis() - j15)));
                     break;
                 } else {
                     mpVar6.c8 = false;
@@ -307,9 +307,9 @@ public final /* synthetic */ class go implements RequestDelegate {
             case 10:
                 e00 e00Var = (e00) this.c;
                 long j19 = this.b;
-                t01 t01Var = (t01) this.d;
+                v01 v01Var = (v01) this.d;
                 e00Var.getClass();
-                g0.g3(new fm(e00Var, tLObject, j19, t01Var, 19));
+                g0.g3(new fm(e00Var, tLObject, j19, v01Var, 19));
                 break;
             case 11:
                 g0.g3(new hm((z00) this.c, (t00) this.d, tLObject, tL_error, this.b, 6));

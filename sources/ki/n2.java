@@ -1,34 +1,378 @@
 package ki;
 
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import di.y8;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.ri;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.y5;
+import org.telegram.ui.Components.zb0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bn;
+import org.telegram.ui.cx;
+import org.telegram.ui.ml0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n2 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o2 b;
+public final class n2 implements org.telegram.ui.web.c0 {
+    public boolean a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ h6 c;
+    public final /* synthetic */ s2 d;
 
-    public /* synthetic */ n2(o2 o2Var, int i7) {
-        this.a = i7;
-        this.b = o2Var;
+    public n2(s2 s2Var, Context context, h6 h6Var) {
+        this.d = s2Var;
+        this.b = context;
+        this.c = h6Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                t2 t2Var = this.b.d;
-                if (tLObject instanceof TLRPC.TL_updates) {
-                    mp.u1(t2Var.I).V3((TLRPC.TL_updates) tLObject, false);
-                }
-                org.telegram.messenger.g0.g3(new t1(t2Var, 16));
-                break;
-            default:
-                org.telegram.messenger.g0.g3(new kg.i0(this.b, tLObject, tL_error, 6));
-                break;
+    @Override // org.telegram.ui.web.c0
+    public final v0 A() {
+        s2 s2Var = this.d;
+        if (s2Var.D0 == null) {
+            v0 v0Var = new v0(this.b);
+            s2Var.D0 = v0Var;
+            v0Var.k = s2Var.E.getWebView();
         }
+        return s2Var.D0;
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void a() {
+        s2 s2Var = this.d;
+        TLRPC.User c22 = mp.u1(s2Var.I).c2(Long.valueOf(s2Var.J));
+        k8.a aVar = new k8.a(15, false);
+        aVar.b = new l2(this, 0);
+        gc V = new lc(s2Var.r0, s2Var.G).V(Arrays.asList(c22), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753084, o10.q(c22))), null, aVar);
+        V.j = 5000;
+        V.k(true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void b() {
+        this.d.o(true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void c() {
+        s2 s2Var = this.d;
+        if (s2Var.F0 != null) {
+            org.telegram.ui.ActionBar.f3 N = LaunchActivity.H1.N();
+            if (N != null) {
+                N.e(s2Var.F0);
+            }
+            s2Var.F0 = null;
+        }
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void d(TLRPC.Document document) {
+        s2 s2Var = this.d;
+        new lc(s2Var.r0, s2Var.G).q(document, gd.N0(2131753072, null)).k(true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void e(String str) {
+        s2 s2Var = this.d;
+        if (s2Var.q() || s2Var.L != 0 || this.a) {
+            return;
+        }
+        this.a = true;
+        TLRPC.TL_messages_sendWebViewData tL_messages_sendWebViewData = new TLRPC.TL_messages_sendWebViewData();
+        tL_messages_sendWebViewData.bot = mp.u1(s2Var.I).q1(s2Var.J);
+        tL_messages_sendWebViewData.random_id = Utilities.b.nextLong();
+        tL_messages_sendWebViewData.button_text = s2Var.O;
+        tL_messages_sendWebViewData.data = str;
+        ConnectionsManager.getInstance(s2Var.I).sendRequest(tL_messages_sendWebViewData, new m2(this, 0));
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void f(ArrayList arrayList) {
+        int size = arrayList.size();
+        s2 s2Var = this.d;
+        new lc(s2Var.r0, s2Var.G).Q(R.raw.forward, 36, org.telegram.messenger.g0.W2(size == 1 ? gd.a0(null, null, 2131752961, mp.u1(s2Var.I).D1(((Long) arrayList.get(0)).longValue(), false)) : gd.G(arrayList.size(), "BotSharedToMany", new Object[0]))).k(true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final String g(boolean z10, boolean z11) {
+        s2 s2Var = this.d;
+        boolean z12 = s2Var.f0;
+        if (z12 != z10) {
+            s2Var.C(z10, true, z11);
+            return null;
+        }
+        if (z12) {
+            return "ALREADY_FULLSCREEN";
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final boolean h() {
+        s2 s2Var = this.d;
+        if (s2Var.q()) {
+            return false;
+        }
+        return ri.d0(s2Var.I).l(s2Var.J) || mp.u1(s2Var.I).Z6.contains(Long.valueOf(s2Var.J));
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void i(boolean z10) {
+        s2 s2Var = this.d;
+        ImageView backButton = s2Var.Y.getBackButton();
+        s2Var.y0 = z10;
+        org.telegram.messenger.g0.P3(backButton, z10 ? R.drawable.ic_ab_back : R.drawable.ic_close_white);
+        org.telegram.messenger.h2 h2Var = s2Var.o0;
+        if (h2Var != null) {
+            h2Var.L = z10;
+            h2Var.invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void j() {
+        z();
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void k(boolean z10) {
+        this.d.t0 = z10;
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void l(boolean z10, boolean z11, String str, long j3, int i7, int i10, boolean z12, boolean z13, String str2) {
+        s2 s2Var = this.d;
+        o2 o2Var = s2Var.n0;
+        s sVar = new s();
+        sVar.a = z10;
+        sVar.b = z11;
+        sVar.c = z12;
+        sVar.d = z13;
+        sVar.e = str;
+        sVar.f = j3;
+        sVar.g = i7;
+        sVar.h = i10;
+        sVar.i = str2;
+        int totalHeight = o2Var.getTotalHeight();
+        o2Var.e.d = sVar;
+        t.b(o2Var.f[1].l, sVar, true);
+        o2Var.invalidate();
+        if (totalHeight != o2Var.getTotalHeight() && o2Var.r != null) {
+            if (totalHeight < o2Var.getTotalHeight()) {
+                org.telegram.messenger.g0.h3(o2Var.r, 200L);
+            } else {
+                o2Var.r.run();
+            }
+        }
+        if (s2Var.f0) {
+            s2Var.I();
+            s2Var.L();
+        }
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void m(int i7) {
+        this.d.A(i7, true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
+        s2 s2Var = this.d;
+        j2 j2Var = s2Var.x;
+        r2 r2Var = s2Var.f;
+        org.telegram.ui.ActionBar.g2 lastFragment = ((LaunchActivity) s2Var.m0).M().getLastFragment();
+        ml0 ml0Var = null;
+        if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
+            org.telegram.messenger.g0.v1(r2Var);
+            org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, s2Var.getContext(), null);
+            t1Var.r(150L);
+            y8.y(s2Var.I, false).W(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new di.u3(t1Var, 1), new ai.x1(29, this, str));
+            return;
+        }
+        if (tLObject instanceof TLRPC.PaymentForm) {
+            TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
+            mp.u1(s2Var.I).f4(paymentForm.users, false);
+            ml0Var = new ml0(paymentForm, null, str, lastFragment);
+        } else if (tLObject instanceof TLRPC.PaymentReceipt) {
+            ml0Var = new ml0((TLRPC.PaymentReceipt) tLObject);
+        }
+        if (ml0Var != null) {
+            j2Var.e(j2Var.getTopActionBarOffsetY() + (-j2Var.getOffsetY()));
+            org.telegram.messenger.g0.v1(r2Var);
+            zb0 zb0Var = new zb0(this.b);
+            zb0Var.show();
+            ml0Var.a1 = new a3.h((Object) this, (Object) zb0Var, str, 14);
+            ml0Var.Z0 = this.c;
+            zb0Var.d(ml0Var);
+        }
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void p(boolean z10) {
+        this.d.t(z10);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void q(boolean z10, boolean z11, String str, long j3, int i7, int i10, boolean z12, boolean z13) {
+        s2 s2Var = this.d;
+        o2 o2Var = s2Var.n0;
+        s sVar = new s();
+        sVar.a = z10;
+        sVar.b = z11;
+        sVar.c = z12;
+        sVar.d = z13;
+        sVar.e = str;
+        sVar.f = j3;
+        sVar.g = i7;
+        sVar.h = i10;
+        sVar.i = null;
+        int totalHeight = o2Var.getTotalHeight();
+        o2Var.e.c = sVar;
+        r[] rVarArr = o2Var.f;
+        rVarArr[0].l.a();
+        if (sVar.f != 0) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            spannableStringBuilder.append((CharSequence) "* ");
+            spannableStringBuilder.append((CharSequence) sVar.e);
+            spannableStringBuilder.setSpan(new y5(sVar.f, 1.4f, rVarArr[0].l.a.getFontMetricsInt()), 0, 1, 33);
+            rVarArr[0].l.t(spannableStringBuilder, true, true);
+        } else {
+            rVarArr[0].l.t(sVar.e, true, true);
+        }
+        o2Var.invalidate();
+        if (totalHeight != o2Var.getTotalHeight() && o2Var.r != null) {
+            if (totalHeight < o2Var.getTotalHeight()) {
+                org.telegram.messenger.g0.h3(o2Var.r, 200L);
+            } else {
+                o2Var.r.run();
+            }
+        }
+        if (s2Var.f0) {
+            s2Var.I();
+            s2Var.L();
+        }
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void r(int i7) {
+        this.d.D(i7, true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void s() {
+        j2 j2Var = this.d.x;
+        if (j2Var.c) {
+            return;
+        }
+        j2Var.e(j2Var.getTopActionBarOffsetY() + (-j2Var.getOffsetY()));
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void t(boolean z10) {
+        this.d.d0 = z10;
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void u(int i7, int i10, boolean z10) {
+        s2 s2Var = this.d;
+        s2Var.w0 = i7;
+        s2Var.y(i10, z10, true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void v(TLRPC.User user, String str, ArrayList arrayList) {
+        boolean isEmpty = arrayList.isEmpty();
+        s2 s2Var = this.d;
+        if (isEmpty) {
+            Activity activity = s2Var.m0;
+            if (activity instanceof LaunchActivity) {
+                org.telegram.ui.ActionBar.g2 lastFragment = ((LaunchActivity) activity).M().getLastFragment();
+                if (lastFragment instanceof bn) {
+                    ((bn) lastFragment).a0.setFieldText("@" + o10.o(user) + " " + str);
+                    s2Var.o(false);
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putInt("dialogsType", 14);
+        bundle.putBoolean("onlySelect", true);
+        bundle.putBoolean("allowGroups", arrayList.contains("groups"));
+        bundle.putBoolean("allowMegagroups", arrayList.contains("groups"));
+        bundle.putBoolean("allowLegacyGroups", arrayList.contains("groups"));
+        bundle.putBoolean("allowUsers", arrayList.contains("users"));
+        bundle.putBoolean("allowChannels", arrayList.contains("channels"));
+        bundle.putBoolean("allowBots", arrayList.contains("bots"));
+        cx cxVar = new cx(bundle);
+        org.telegram.messenger.g0.v1(s2Var.f);
+        zb0 zb0Var = new zb0(this.b);
+        cxVar.E2 = new a1.d(this, user, str, zb0Var, 5);
+        zb0Var.show();
+        zb0Var.d(cxVar);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void w(boolean z10) {
+        s2 s2Var = this.d;
+        h6 h6Var = s2Var.G;
+        FrameLayout frameLayout = s2Var.r0;
+        TLRPC.User c22 = mp.u1(s2Var.I).c2(Long.valueOf(s2Var.J));
+        int i7 = 1;
+        if (z10) {
+            k8.a aVar = new k8.a(15, false);
+            gd.N0(2131743642, null);
+            aVar.b = new l2(this, i7);
+            gc V = new lc(frameLayout, h6Var).V(Arrays.asList(c22), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753042, o10.q(c22))), null, aVar);
+            V.j = 5000;
+            V.k(true);
+            return;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        org.telegram.messenger.f3.p(null, null, 2131753044, new Object[]{o10.q(c22)}, spannableStringBuilder);
+        spannableStringBuilder.append((CharSequence) " ");
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(gd.N0(2131753043, null), new l2(this, 2)), true));
+        gc P = new lc(frameLayout, h6Var).P(R.raw.error, spannableStringBuilder);
+        P.j = 5000;
+        P.k(true);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void x(int i7) {
+        r(i7);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void y(boolean z10) {
+        j2 j2Var = this.d.x;
+        if (j2Var != null) {
+            j2Var.setAllowSwipes(z10);
+        }
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final void z() {
+        this.d.o(false);
+    }
+
+    @Override // org.telegram.ui.web.c0
+    public final /* synthetic */ void o(int i7, boolean z10) {
     }
 }

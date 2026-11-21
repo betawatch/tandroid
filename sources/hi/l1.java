@@ -1,12 +1,12 @@
 package hi;
 
 import android.content.Context;
-import org.telegram.ui.Components.ry;
-import org.telegram.ui.Components.sw;
-import org.telegram.ui.g01;
-import org.telegram.ui.r11;
+import org.telegram.ui.Components.ty;
+import org.telegram.ui.Components.uw;
+import org.telegram.ui.h01;
+import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class l1 extends pi.l {
     public final /* synthetic */ int q;
@@ -26,10 +26,10 @@ public final class l1 extends pi.l {
                 ((o1) this.r).j3 = true;
                 break;
             case 1:
-                ((ry) this.r).g0 = true;
+                ((ty) this.r).g0 = true;
                 break;
             case 4:
-                ((r11) this.r).y1 = true;
+                ((s11) this.r).y1 = true;
                 break;
         }
     }
@@ -41,19 +41,19 @@ public final class l1 extends pi.l {
                 ((o1) this.r).j3 = false;
                 break;
             case 1:
-                ((ry) this.r).g0 = false;
+                ((ty) this.r).g0 = false;
                 break;
             case 2:
-                ((sw) this.r).Q.g0 = false;
+                ((uw) this.r).Q.g0 = false;
                 break;
             case 3:
-                ((g01) this.r).R.y1 = false;
+                ((h01) this.r).R.y1 = false;
                 break;
             case 4:
-                ((r11) this.r).y1 = false;
+                ((s11) this.r).y1 = false;
                 break;
             default:
-                ((g01) this.r).R.y1 = false;
+                ((h01) this.r).R.y1 = false;
                 break;
         }
     }

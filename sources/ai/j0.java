@@ -1,39 +1,26 @@
 package ai;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
-import android.view.TextureView;
+import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
-import android.widget.ImageView;
-import di.db;
-import di.eb;
-import di.u4;
-import di.v4;
-import fi.f4;
-import fi.q4;
-import fi.s6;
-import fi.t6;
-import fi.v3;
-import fi.w7;
-import hi.e3;
-import hi.i5;
-import hi.j6;
-import hi.j8;
-import hi.l8;
-import hi.m3;
-import hi.o5;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.vi0;
-import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.tl;
-import org.telegram.ui.wv0;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.n10;
+import org.telegram.ui.Cells.k8;
+import org.telegram.ui.Components.dv;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.ev;
+import org.telegram.ui.Components.gx;
+import org.telegram.ui.Components.lx;
+import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.ty;
+import org.telegram.ui.fm0;
+import org.telegram.ui.mf0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class j0 extends AnimatorListenerAdapter {
+public final class j0 extends v4.o0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -42,223 +29,139 @@ public final class j0 extends AnimatorListenerAdapter {
         this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator) {
-        tl tlVar;
-        boolean z10;
-        int i7 = this.a;
-        Object obj = this.b;
-        switch (i7) {
+    @Override // v4.o0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
+        switch (this.a) {
             case 0:
-                n0 n0Var = (n0) obj;
-                if (n0Var.F0 <= 0.0f && (tlVar = n0Var.E0) != null && n0Var.G0 == animator) {
-                    tlVar.q0(n0Var.H0);
-                    n0Var.E0 = null;
+                p0 p0Var = (p0) this.b;
+                if (p0Var.F0 > 0.0f && RecyclerView.R(view) == 0) {
+                    rect.bottom += (int) p0Var.F0;
                     break;
                 }
                 break;
             case 1:
-                ((bi.c1) obj).b.w1.setVisibility(8);
+                rect.right = ((hi.t1) this.b).e.E1(RecyclerView.R(view)) ? 0 : org.telegram.messenger.g0.L(4.0f);
+                rect.bottom = org.telegram.messenger.g0.L(4.0f);
                 break;
             case 2:
-                ((c1.c) obj).run();
-                break;
+                org.telegram.ui.Cells.t tVar = (org.telegram.ui.Cells.t) this.b;
+                int b10 = recyclerView.T(view).b();
+                if (b10 == 0) {
+                    rect.left = org.telegram.messenger.g0.L(18.0f);
+                }
+                if (b10 != tVar.getAdapter().b() - 1) {
+                    int b11 = tVar.getAdapter().b();
+                    if (b11 != 4) {
+                        rect.right = org.telegram.messenger.g0.L(24.0f);
+                        break;
+                    } else {
+                        rect.right = n10.B(58.0f, b11, tVar.getWidth() - org.telegram.messenger.g0.L(36.0f)) / (b11 - 1);
+                        break;
+                    }
+                } else {
+                    rect.right = org.telegram.messenger.g0.L(18.0f);
+                    break;
+                }
             case 3:
-                ((ch.p) obj).w.setVisibility(4);
+                hi.x xVar = ((ev) this.b).r1;
+                if (!(view instanceof dv)) {
+                    xVar.getClass();
+                    if (RecyclerView.R(view) == 1) {
+                        rect.top = org.telegram.messenger.g0.L(14.0f);
+                        break;
+                    }
+                } else {
+                    rect.left = -xVar.getPaddingLeft();
+                    rect.right = -xVar.getPaddingRight();
+                    break;
+                }
                 break;
             case 4:
-                ch.s sVar = (ch.s) obj;
-                sVar.setVisibility(8);
-                ch.r rVar = sVar.b;
-                if (rVar != null) {
-                    sVar.removeView(rVar);
-                    sVar.b = null;
+                ty tyVar = (ty) this.b;
+                gx gxVar = tyVar.Q;
+                if (!(view instanceof k8)) {
+                    if (!(view instanceof ek0) && !(view instanceof lx)) {
+                        if (view instanceof q9) {
+                            rect.bottom = org.telegram.messenger.g0.L(12.0f);
+                            break;
+                        }
+                    } else {
+                        rect.left = -gxVar.getPaddingLeft();
+                        rect.right = -gxVar.getPaddingRight();
+                        if (view instanceof lx) {
+                            rect.top = org.telegram.messenger.g0.L(8.0f);
+                            break;
+                        }
+                    }
+                } else {
+                    rect.left = org.telegram.messenger.g0.L(5.0f);
+                    rect.right = org.telegram.messenger.g0.L(5.0f);
+                    if (RecyclerView.R(view) + 1 > tyVar.S.F && !j10.i(tyVar.d1).q() && !tyVar.V0) {
+                        rect.top = org.telegram.messenger.g0.L(10.0f);
+                        break;
+                    }
                 }
-                sVar.e = null;
                 break;
             case 5:
-                ((ch.i0) obj).y.c();
+                if (RecyclerView.R(view) == ((ArrayList) this.b).size() - 1) {
+                    rect.bottom = org.telegram.messenger.g0.L(4.0f);
+                    break;
+                }
                 break;
             case 6:
-                v4 v4Var = (v4) obj;
-                v4Var.F = 1.0f;
-                v4Var.G = -1;
-                u4 u4Var = v4Var.I;
-                if (u4Var != null && (z10 = u4Var.l) && z10) {
-                    u4Var.l = false;
-                    u4Var.b();
+                if (RecyclerView.R(view) == ((mf0) this.b).c.size() - 1) {
+                    rect.bottom = org.telegram.messenger.g0.L(4.0f);
+                    break;
                 }
-                v4Var.H = null;
                 break;
             case 7:
-                db dbVar = ((eb) obj).c;
-                dbVar.setScaleX(1.0f);
-                dbVar.setScaleY(1.0f);
+                super.e(rect, view, recyclerView, c1Var);
+                int R = RecyclerView.R(view);
+                vg0 vg0Var = (vg0) this.b;
+                if (R == vg0Var.Y1.size()) {
+                    rect.bottom = vg0Var.h2;
+                    break;
+                }
                 break;
             case 8:
-                fi.a aVar = (fi.a) obj;
-                aVar.h = 1.0f;
-                aVar.invalidate();
+                int R2 = RecyclerView.R(view);
+                fm0 fm0Var = (fm0) this.b;
+                int i7 = fm0Var.c0;
+                if (R2 >= i7) {
+                    int i10 = fm0Var.g0;
+                    if (R2 < i7 + i10) {
+                        int i11 = R2 - i7;
+                        int i12 = i11 / 3;
+                        boolean z10 = i12 == 0;
+                        boolean z11 = i12 == (i10 - 1) / 3;
+                        int i13 = i11 % 3;
+                        boolean z12 = i13 == 0;
+                        boolean z13 = i13 == 2;
+                        rect.top = z10 ? org.telegram.messenger.g0.L(8.0f) : 0;
+                        rect.bottom = z11 ? org.telegram.messenger.g0.L(8.0f) : 0;
+                        rect.left = z12 ? org.telegram.messenger.g0.L(10.0f) : 0;
+                        rect.right = z13 ? org.telegram.messenger.g0.L(10.0f) : 0;
+                        break;
+                    }
+                }
                 break;
             case 9:
-                super.onAnimationEnd(animator);
-                ((fi.p) obj).P.p = false;
-                break;
-            case 10:
-                fi.m0 m0Var = (fi.m0) obj;
-                fi.r0 r0Var = m0Var.L;
-                if (r0Var != null && m0Var.J == r0Var.a) {
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    m0Var.K = ofFloat;
-                    ofFloat.addUpdateListener(new ah.g(this, 17));
-                    m0Var.K.setStartDelay(3000L);
-                    m0Var.K.setDuration(550L);
-                    m0Var.K.setInterpolator(new LinearInterpolator());
-                    m0Var.K.start();
+                super.e(rect, view, recyclerView, c1Var);
+                int R3 = RecyclerView.R(view);
+                wg.w0 w0Var = (wg.w0) this.b;
+                if (R3 == w0Var.Z1.size()) {
+                    rect.bottom = w0Var.l2;
                     break;
                 }
-                break;
-            case 11:
-                fi.i2 i2Var = (fi.i2) obj;
-                i2Var.s7.invalidate();
-                i2Var.setAnimatedTop(0);
-                i2Var.s7.F2 = true;
-                View view = i2Var.u2;
-                if (view != null && view.getVisibility() == 0) {
-                    i2Var.u2.setTranslationY(((1.0f - i2Var.getTopViewEnterProgress()) * i2Var.u2.getLayoutParams().height) + i2Var.H2);
-                }
-                i2Var.s7.O1 = null;
-                break;
-            case 12:
-                v3 v3Var = (v3) obj;
-                v3Var.c[1].setVisibility(8);
-                v3Var.c[0].setAlpha(1.0f);
-                v3Var.c[0].setTranslationY(0.0f);
-                break;
-            case 13:
-                ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                wv0 wv0Var = profileStoriesView.h;
-                profileStoriesView.H = 1.0f;
-                wv0Var.S = 1.0f;
-                wv0Var.invalidate();
-                profileStoriesView.invalidate();
-                break;
-            case 14:
-                ((f4) obj).N = null;
-                break;
-            case 15:
-                q4 q4Var = (q4) obj;
-                q4Var.x = null;
-                q4Var.r = 1.0f;
-                q4Var.invalidate();
-                break;
-            case 16:
-            default:
-                super.onAnimationEnd(animator);
-                break;
-            case 17:
-                w7 w7Var = (w7) obj;
-                w7Var.I = false;
-                w7Var.H = 0.0f;
-                w7Var.invalidate();
-                w7Var.requestLayout();
-                w7Var.K.requestLayout();
-                break;
-            case 18:
-                hi.n nVar = ((hi.g) obj).d0;
-                if (nVar.g0 == animator) {
-                    nVar.g0 = null;
-                    nVar.f.getEditText().setScrollY(nVar.c0);
-                    break;
-                }
-                break;
-            case 19:
-                hi.e0 e0Var = (hi.e0) obj;
-                e0Var.l = 1.0f;
-                hi.f0 f0Var = e0Var.p;
-                if (f0Var.n.contains(e0Var)) {
-                    e0Var.c.R();
-                    hi.d0 d0Var = e0Var.d;
-                    if (d0Var != null) {
-                        d0Var.pause();
-                        e0Var.d.release(null);
-                        e0Var.d = null;
-                    }
-                    TextureView textureView = e0Var.e;
-                    if (textureView != null) {
-                        org.telegram.messenger.g0.E2(textureView);
-                        e0Var.e = null;
-                    }
-                    e0Var.f = false;
-                    f0Var.n.remove(e0Var);
-                }
-                f0Var.invalidate();
-                break;
-            case 20:
-                e3 e3Var = (e3) ((hi.t2) obj).c;
-                e3Var.G.setVisibility(8);
-                e3Var.d.setVisibility(8);
-                break;
-            case 21:
-                m3 m3Var = (m3) obj;
-                m3Var.A0 = 1.0f;
-                m3Var.invalidate();
-                break;
-            case 22:
-                org.telegram.messenger.g0.E2((vi0) obj);
-                break;
-            case 23:
-                super.onAnimationEnd(animator);
-                i5 i5Var = (i5) obj;
-                ImageView imageView = i5Var.c;
-                i5Var.c = i5Var.d;
-                i5Var.d = imageView;
-                imageView.bringToFront();
-                i5Var.d.setVisibility(8);
-                i5Var.h = null;
-                break;
-            case 24:
-                super.onAnimationEnd(animator);
-                ((o5) obj).x = null;
-                break;
-            case 25:
-                j6 j6Var = (j6) obj;
-                if (j6Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) j6Var.getParent()).removeView(j6Var);
-                    break;
-                }
-                break;
-            case 26:
-                ((l8) obj).O = false;
-                break;
-            case 27:
-                j8 j8Var = (j8) obj;
-                j8Var.setTranslationY(0.0f);
-                j8Var.d = null;
-                break;
-            case 28:
-                ki.v vVar = (ki.v) obj;
-                vVar.setVisibility(8);
-                vVar.a = null;
-                break;
-            case 29:
-                ((ki.t2) obj).F.setVisibility(8);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 16:
-                super.onAnimationStart(animator);
-                t6 t6Var = (t6) this.b;
-                mh0 mh0Var = ((s6) t6Var.a.get(t6Var.d)).c;
-                mh0Var.M = 2;
-                mh0Var.start();
                 break;
             default:
-                super.onAnimationStart(animator);
+                super.e(rect, view, recyclerView, c1Var);
+                int R4 = RecyclerView.R(view);
+                wg.e1 e1Var = (wg.e1) this.b;
+                if (R4 == e1Var.b2.size()) {
+                    rect.bottom = e1Var.l2;
+                    break;
+                }
                 break;
         }
     }

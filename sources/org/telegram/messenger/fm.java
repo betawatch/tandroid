@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fm implements Runnable {
     public final /* synthetic */ int a;
@@ -697,7 +697,7 @@ public final /* synthetic */ class fm implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:145:0x032d  */
     /* JADX WARN: Type inference failed for: r0v2, types: [a0.h] */
     /* JADX WARN: Type inference failed for: r0v26, types: [a0.h] */
-    /* JADX WARN: Type inference failed for: r10v22, types: [org.telegram.ui.Components.t01] */
+    /* JADX WARN: Type inference failed for: r10v22, types: [org.telegram.ui.Components.v01] */
     /* JADX WARN: Type inference failed for: r11v1, types: [org.telegram.messenger.x10] */
     /* JADX WARN: Type inference failed for: r17v4 */
     /* JADX WARN: Type inference failed for: r17v5 */
@@ -738,7 +738,7 @@ public final /* synthetic */ class fm implements Runnable {
                 ?? r11 = (x10) obj2;
                 TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj;
                 if (r11 == null) {
-                    org.telegram.ui.Components.b5.f(mpVar.currentAccount, mpVar.O0(Long.valueOf(j10)), tL_messages_invitedUsers);
+                    org.telegram.ui.Components.c5.f(mpVar.currentAccount, mpVar.O0(Long.valueOf(j10)), tL_messages_invitedUsers);
                     return;
                 } else {
                     mpVar.getClass();
@@ -1215,7 +1215,7 @@ public final /* synthetic */ class fm implements Runnable {
             default:
                 e00 e00Var = (e00) obj3;
                 TLObject tLObject2 = (TLObject) obj2;
-                ?? r10 = (t01) obj;
+                ?? r10 = (v01) obj;
                 e00Var.getClass();
                 ArrayList arrayList22 = new ArrayList();
                 if (tLObject2 instanceof TLRPC.TL_messages_forumTopics) {

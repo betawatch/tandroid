@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.Window;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -22,14 +22,14 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.bh bhVar = (org.telegram.ui.Components.bh) this.b;
+                org.telegram.ui.Components.dh dhVar = (org.telegram.ui.Components.dh) this.b;
                 Window window = (Window) this.c;
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                if (bhVar != null) {
-                    org.telegram.ui.Components.si siVar = bhVar.b;
-                    siVar.G0 = -1;
-                    siVar.H0 = intValue;
-                    siVar.b.invalidate();
+                if (dhVar != null) {
+                    org.telegram.ui.Components.ui uiVar = dhVar.b;
+                    uiVar.G0 = -1;
+                    uiVar.H0 = intValue;
+                    uiVar.b.invalidate();
                 }
                 try {
                     window.setNavigationBarColor(intValue);
@@ -38,7 +38,7 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
                     return;
                 }
             case 1:
-                ((f61) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).Y != 1 ? 1.0f : 0.2f));
+                ((i61) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).Y != 1 ? 1.0f : 0.2f));
                 break;
             default:
                 zu zuVar = (zu) this.b;

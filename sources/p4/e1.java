@@ -10,7 +10,7 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.view.Surface;
-import bi.p3;
+import bi.t3;
 import c8.ib;
 import c8.kb;
 import e2.r1;
@@ -22,10 +22,10 @@ import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Set;
 import org.telegram.messenger.ja;
-import org.telegram.ui.Components.ht;
+import org.telegram.ui.Components.kt;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e1 extends Binder implements m {
     public final WeakReference a;
@@ -36,38 +36,38 @@ public final class e1 extends Binder implements m {
     public int f;
     public d1 i;
 
-    public e1(d0 d0Var) {
+    public e1(e0 e0Var) {
         attachInterface(this, "androidx.media3.session.IMediaSession");
-        this.a = new WeakReference(d0Var);
-        this.b = new ab.c0(d0Var);
+        this.a = new WeakReference(e0Var);
+        this.b = new ab.c0(e0Var);
         this.c = DesugarCollections.synchronizedSet(new HashSet());
         this.d = s1.r;
         this.e = y1.h;
     }
 
-    public static m9.y k1(d0 d0Var, v vVar, int i7, c1 c1Var, h2.j jVar) {
-        if (d0Var.j()) {
+    public static m9.y k1(e0 e0Var, v vVar, int i7, c1 c1Var, h2.j jVar) {
+        if (e0Var.j()) {
             return m9.w.b;
         }
-        m9.y yVar = (m9.y) c1Var.k(d0Var, vVar, i7);
-        m9.e0 e0Var = new m9.e0();
-        yVar.b(new s0(d0Var, (Object) e0Var, (Object) jVar, (Object) yVar, 1), m9.r.a);
-        return e0Var;
+        m9.y yVar = (m9.y) c1Var.k(e0Var, vVar, i7);
+        m9.e0 e0Var2 = new m9.e0();
+        yVar.b(new s0(e0Var, (Object) e0Var2, (Object) jVar, (Object) yVar, 1), m9.r.a);
+        return e0Var2;
     }
 
-    public static void r1(d0 d0Var, v vVar, int i7, o1 o1Var) {
+    public static void r1(e0 e0Var, v vVar, int i7, o1 o1Var) {
         try {
             u uVar = vVar.d;
             uVar.getClass();
             uVar.f(i7, o1Var);
-            d0Var.c.a(true, true);
+            e0Var.c.a(true, true);
         } catch (RemoteException e10) {
             h2.a.m("MediaSessionStub", "Failed to send result to controller " + vVar, e10);
         }
     }
 
-    public static org.telegram.ui.ActionBar.p s1(h2.j jVar) {
-        return new org.telegram.ui.ActionBar.p(new org.telegram.ui.ActionBar.p(jVar, 16), 15);
+    public static org.telegram.tgnet.u s1(h2.j jVar) {
+        return new org.telegram.tgnet.u(new org.telegram.tgnet.u(jVar, 17), 16);
     }
 
     public final g1 A1(g1 g1Var) {
@@ -145,13 +145,13 @@ public final class e1 extends Binder implements m {
 
     public final void h1(l lVar, Bundle bundle) {
         WeakReference weakReference = this.a;
-        d0 d0Var = (d0) weakReference.get();
-        if (lVar == null || bundle == null || d0Var == null) {
+        e0 e0Var = (e0) weakReference.get();
+        if (lVar == null || bundle == null || e0Var == null) {
             kb.a(lVar);
             return;
         }
         try {
-            Context context = d0Var.f;
+            Context context = e0Var.f;
             i a10 = i.a(bundle);
             int callingUid = Binder.getCallingUid();
             int callingPid = Binder.getCallingPid();
@@ -176,10 +176,10 @@ public final class e1 extends Binder implements m {
                 int i7 = a10.a;
                 int i10 = a10.b;
                 v vVar = new v(rVar, i7, i10, b10, new z0(lVar, i10), a10.e);
-                d0 d0Var2 = (d0) weakReference.get();
-                if (d0Var2 != null && !d0Var2.j()) {
+                e0 e0Var2 = (e0) weakReference.get();
+                if (e0Var2 != null && !e0Var2.j()) {
                     this.c.add(vVar);
-                    h2.l0.W(d0Var2.l, new s0(this, vVar, d0Var2, lVar, 0));
+                    h2.l0.W(e0Var2.l, new s0(this, vVar, e0Var2, lVar, 0));
                 }
                 kb.a(lVar);
             } finally {
@@ -200,13 +200,13 @@ public final class e1 extends Binder implements m {
     public final void j1(l lVar, int i7, k1 k1Var, int i10, c1 c1Var) {
         long clearCallingIdentity = Binder.clearCallingIdentity();
         try {
-            d0 d0Var = (d0) this.a.get();
-            if (d0Var != null && !d0Var.j()) {
+            e0 e0Var = (e0) this.a.get();
+            if (e0Var != null && !e0Var.j()) {
                 v r10 = this.b.r(lVar.asBinder());
                 if (r10 == null) {
                     Binder.restoreCallingIdentity(clearCallingIdentity);
                 } else {
-                    h2.l0.W(d0Var.l, new ja(this, r10, k1Var, d0Var, i7, i10, c1Var));
+                    h2.l0.W(e0Var.l, new ja(this, r10, k1Var, e0Var, i7, i10, c1Var));
                     Binder.restoreCallingIdentity(clearCallingIdentity);
                 }
             }
@@ -257,13 +257,13 @@ public final class e1 extends Binder implements m {
             }
             long clearCallingIdentity = Binder.clearCallingIdentity();
             try {
-                d0 d0Var = (d0) this.a.get();
-                if (d0Var != null && !d0Var.j()) {
+                e0 e0Var = (e0) this.a.get();
+                if (e0Var != null && !e0Var.j()) {
                     v r10 = this.b.r(lVar.asBinder());
                     if (r10 == null) {
                         Binder.restoreCallingIdentity(clearCallingIdentity);
                     } else {
-                        h2.l0.W(d0Var.l, new bg.m0(this, r10, k1Var, d0Var, i7, lVar, 15));
+                        h2.l0.W(e0Var.l, new bg.m0(this, r10, k1Var, e0Var, i7, lVar, 14));
                         Binder.restoreCallingIdentity(clearCallingIdentity);
                     }
                 }
@@ -414,7 +414,7 @@ public final class e1 extends Binder implements m {
                 int readInt7 = parcel.readInt();
                 int readInt8 = parcel.readInt();
                 if (h18 != null && readInt8 >= 0) {
-                    p1(h18, readInt7, 20, new org.telegram.ui.ActionBar.p(new p0(this, readInt8, 4), 15));
+                    p1(h18, readInt7, 20, new org.telegram.tgnet.u(new p0(this, readInt8, 4), 16));
                     return true;
                 }
                 return true;
@@ -424,7 +424,7 @@ public final class e1 extends Binder implements m {
                 int readInt10 = parcel.readInt();
                 int readInt11 = parcel.readInt();
                 if (h19 != null && readInt10 >= 0 && readInt11 >= readInt10) {
-                    p1(h19, readInt9, 20, new org.telegram.ui.ActionBar.p(new n0(this, readInt10, readInt11), 15));
+                    p1(h19, readInt9, 20, new org.telegram.tgnet.u(new o0(this, readInt10, readInt11), 16));
                     return true;
                 }
                 return true;
@@ -492,7 +492,7 @@ public final class e1 extends Binder implements m {
                 Bundle bundle2 = (Bundle) ib.a(parcel, Bundle.CREATOR);
                 if (h116 != null && bundle2 != null) {
                     try {
-                        p1(h116, readInt23, 13, s1(new org.telegram.ui.ActionBar.p(new e2.w0(bundle2.getFloat(e2.w0.e, 1.0f), bundle2.getFloat(e2.w0.f, 1.0f)), 14)));
+                        p1(h116, readInt23, 13, s1(new org.telegram.tgnet.u(new e2.w0(bundle2.getFloat(e2.w0.e, 1.0f), bundle2.getFloat(e2.w0.f, 1.0f)), 15)));
                     } catch (RuntimeException e11) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for PlaybackParameters", e11);
                     }
@@ -517,10 +517,10 @@ public final class e1 extends Binder implements m {
                         final int i11 = 2;
                         q1(r12, readInt25, 20, new v0(new wc1(10, new c1() { // from class: p4.q0
                             @Override // p4.c1
-                            public final Object k(d0 d0Var, v vVar, int i12) {
+                            public final Object k(e0 e0Var, v vVar, int i12) {
                                 switch (i11) {
                                 }
-                                return d0Var.l(vVar, h9.i0.u(a16));
+                                return e0Var.l(vVar, h9.i0.u(a16));
                             }
                         }, new r0(10)), 1));
                     } catch (RuntimeException e12) {
@@ -539,10 +539,10 @@ public final class e1 extends Binder implements m {
                         final int i12 = 0;
                         q1(r13, readInt26, 20, new v0(new wc1(10, new c1() { // from class: p4.q0
                             @Override // p4.c1
-                            public final Object k(d0 d0Var, v vVar, int i122) {
+                            public final Object k(e0 e0Var, v vVar, int i122) {
                                 switch (i12) {
                                 }
-                                return d0Var.l(vVar, h9.i0.u(a17));
+                                return e0Var.l(vVar, h9.i0.u(a17));
                             }
                         }, new p0(this, readInt27, 1)), 1));
                     } catch (RuntimeException e13) {
@@ -615,9 +615,9 @@ public final class e1 extends Binder implements m {
                 if (h124 != null) {
                     long clearCallingIdentity2 = Binder.clearCallingIdentity();
                     try {
-                        d0 d0Var = (d0) this.a.get();
-                        if (d0Var != null && !d0Var.j()) {
-                            h2.l0.W(d0Var.l, new o0(0, this, h124));
+                        e0 e0Var = (e0) this.a.get();
+                        if (e0Var != null && !e0Var.j()) {
+                            h2.l0.W(e0Var.l, new z(2, this, h124));
                             return true;
                         }
                         return true;
@@ -638,7 +638,7 @@ public final class e1 extends Binder implements m {
                 int readInt34 = parcel.readInt();
                 int readInt35 = parcel.readInt();
                 if (h126 != null && readInt35 >= 0) {
-                    p1(h126, readInt34, 10, new org.telegram.ui.ActionBar.p(new p0(this, readInt35, 0), 15));
+                    p1(h126, readInt34, 10, new org.telegram.tgnet.u(new p0(this, readInt35, 0), 16));
                     return true;
                 }
                 return true;
@@ -657,7 +657,7 @@ public final class e1 extends Binder implements m {
                 int readInt38 = parcel.readInt();
                 long readLong2 = parcel.readLong();
                 if (h128 != null && readInt38 >= 0) {
-                    p1(h128, readInt37, 10, new org.telegram.ui.ActionBar.p(new c4.n(this, readInt38, readLong2, 6), 15));
+                    p1(h128, readInt37, 10, new org.telegram.tgnet.u(new c4.n(this, readInt38, readLong2, 6), 16));
                     return true;
                 }
                 return true;
@@ -707,11 +707,11 @@ public final class e1 extends Binder implements m {
                 if (h134 != null) {
                     long clearCallingIdentity3 = Binder.clearCallingIdentity();
                     try {
-                        d0 d0Var2 = (d0) this.a.get();
-                        if (d0Var2 != null && !d0Var2.j()) {
+                        e0 e0Var2 = (e0) this.a.get();
+                        if (e0Var2 != null && !e0Var2.j()) {
                             v r25 = this.b.r(h134.asBinder());
                             if (r25 != null) {
-                                h2.l0.W(d0Var2.l, new o0(1, this, r25));
+                                h2.l0.W(e0Var2.l, new z(3, this, r25));
                             }
                             return true;
                         }
@@ -831,10 +831,10 @@ public final class e1 extends Binder implements m {
                         final int i15 = 1;
                         q1(r22, readInt58, 20, new v0(new wc1(10, new c1() { // from class: p4.q0
                             @Override // p4.c1
-                            public final Object k(d0 d0Var3, v vVar, int i122) {
+                            public final Object k(e0 e0Var3, v vVar, int i122) {
                                 switch (i15) {
                                 }
-                                return d0Var3.l(vVar, h9.i0.u(a20));
+                                return e0Var3.l(vVar, h9.i0.u(a20));
                             }
                         }, new p0(this, readInt59, 2)), 1));
                     } catch (RuntimeException e20) {
@@ -857,7 +857,7 @@ public final class e1 extends Binder implements m {
                             bundle12.getClass();
                             p12.c(e2.l0.a(r23.c, bundle12));
                         }
-                        q1(r23, readInt60, 20, new v0(new wc1(10, new org.telegram.ui.ActionBar.p(p12.f(), 13), new n0(this, readInt61, readInt62)), 1));
+                        q1(r23, readInt60, 20, new v0(new wc1(10, new org.telegram.tgnet.u(p12.f(), 14), new o0(this, readInt61, readInt62)), 1));
                     } catch (RuntimeException e21) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e21);
                     }
@@ -905,7 +905,7 @@ public final class e1 extends Binder implements m {
                 int readInt68 = parcel.readInt();
                 int readInt69 = parcel.readInt();
                 if (h150 != null) {
-                    p1(h150, readInt67, 27, s1(new ht(this, surface2, readInt68, readInt69)));
+                    p1(h150, readInt67, 27, s1(new kt(this, surface2, readInt68, readInt69)));
                     return true;
                 }
                 return true;
@@ -915,7 +915,7 @@ public final class e1 extends Binder implements m {
                 int readInt71 = parcel.readInt();
                 int readInt72 = parcel.readInt();
                 if (h151 != null) {
-                    p1(h151, readInt70, 27, s1(new n0(this, readInt71, readInt72)));
+                    p1(h151, readInt70, 27, s1(new o0(this, readInt71, readInt72)));
                     return true;
                 }
                 return true;
@@ -1060,19 +1060,19 @@ public final class e1 extends Binder implements m {
         }
     }
 
-    public final void p1(l lVar, int i7, int i10, org.telegram.ui.ActionBar.p pVar) {
+    public final void p1(l lVar, int i7, int i10, org.telegram.tgnet.u uVar) {
         v r10 = this.b.r(lVar.asBinder());
         if (r10 != null) {
-            q1(r10, i7, i10, pVar);
+            q1(r10, i7, i10, uVar);
         }
     }
 
     public final void q1(v vVar, int i7, int i10, c1 c1Var) {
         long clearCallingIdentity = Binder.clearCallingIdentity();
         try {
-            d0 d0Var = (d0) this.a.get();
-            if (d0Var != null && !d0Var.j()) {
-                h2.l0.W(d0Var.l, new p3(this, vVar, i10, d0Var, i7, c1Var));
+            e0 e0Var = (e0) this.a.get();
+            if (e0Var != null && !e0Var.j()) {
+                h2.l0.W(e0Var.l, new t3(this, vVar, i10, e0Var, i7, c1Var));
                 Binder.restoreCallingIdentity(clearCallingIdentity);
             }
         } finally {

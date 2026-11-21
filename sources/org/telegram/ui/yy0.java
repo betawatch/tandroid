@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class yy0 extends FrameLayout {
     public static long R;
@@ -39,27 +39,27 @@ public abstract class yy0 extends FrameLayout {
     public boolean r;
     public int s;
     public boolean w;
-    public org.telegram.ui.ActionBar.s4 x;
+    public org.telegram.ui.ActionBar.r4 x;
     public r1.g y;
 
-    public static void f(org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.h2 h2Var2, float f10) {
-        if (h2Var == null && h2Var2 == null) {
+    public static void f(org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.ActionBar.g2 g2Var2, float f10) {
+        if (g2Var == null && g2Var2 == null) {
             return;
         }
-        int measuredWidth = h2Var != null ? h2Var.getFragmentView().getMeasuredWidth() : h2Var2.getFragmentView().getMeasuredWidth();
-        if (h2Var != null) {
-            if (h2Var.getFragmentView() != null) {
-                h2Var.getFragmentView().setAlpha(1.0f - f10);
-                h2Var.getFragmentView().setTranslationX(measuredWidth * 0.6f * f10);
+        int measuredWidth = g2Var != null ? g2Var.getFragmentView().getMeasuredWidth() : g2Var2.getFragmentView().getMeasuredWidth();
+        if (g2Var != null) {
+            if (g2Var.getFragmentView() != null) {
+                g2Var.getFragmentView().setAlpha(1.0f - f10);
+                g2Var.getFragmentView().setTranslationX(measuredWidth * 0.6f * f10);
             }
-            h2Var.setPreviewOpenedProgress(1.0f - f10);
+            g2Var.setPreviewOpenedProgress(1.0f - f10);
         }
-        if (h2Var2 != null) {
-            if (h2Var2.getFragmentView() != null) {
-                h2Var2.getFragmentView().setAlpha(1.0f);
-                h2Var2.getFragmentView().setTranslationX((1.0f - f10) * measuredWidth);
+        if (g2Var2 != null) {
+            if (g2Var2.getFragmentView() != null) {
+                g2Var2.getFragmentView().setAlpha(1.0f);
+                g2Var2.getFragmentView().setTranslationX((1.0f - f10) * measuredWidth);
             }
-            h2Var2.setPreviewReplaceProgress(f10);
+            g2Var2.setPreviewReplaceProgress(f10);
         }
     }
 
@@ -84,7 +84,7 @@ public abstract class yy0 extends FrameLayout {
             ofFloat.addUpdateListener(new vy0(this, 0));
             this.h.addListener(new xy0(this, i7));
             this.h.setDuration(250L);
-            this.h.setInterpolator(org.telegram.ui.Components.lr.f);
+            this.h.setInterpolator(org.telegram.ui.Components.nr.f);
             this.h.start();
             return;
         }
@@ -125,7 +125,7 @@ public abstract class yy0 extends FrameLayout {
         if (this.Q == null) {
             this.Q = new Paint();
         }
-        this.Q.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.w8, false));
+        this.Q.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.w8, false));
         if (max == 1.0f) {
             canvas.save();
         } else {
@@ -188,7 +188,7 @@ public abstract class yy0 extends FrameLayout {
         return R;
     }
 
-    public org.telegram.ui.ActionBar.h2 getFragment() {
+    public org.telegram.ui.ActionBar.g2 getFragment() {
         return this.a;
     }
 
@@ -226,8 +226,8 @@ public abstract class yy0 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.s4 s4Var = this.x;
-        if ((s4Var != null && ((ActionBarLayout) s4Var).y()) || !c() || !this.N) {
+        org.telegram.ui.ActionBar.r4 r4Var = this.x;
+        if ((r4Var != null && ((ActionBarLayout) r4Var).y()) || !c() || !this.N) {
             return false;
         }
         int i7 = 1;
@@ -279,7 +279,7 @@ public abstract class yy0 extends FrameLayout {
                     ofFloat.addUpdateListener(new vy0(this, 2));
                     this.h.addListener(new xy0(this, i7));
                     this.h.setDuration(250L);
-                    this.h.setInterpolator(org.telegram.ui.Components.lr.f);
+                    this.h.setInterpolator(org.telegram.ui.Components.nr.f);
                     this.h.start();
                 }
             }

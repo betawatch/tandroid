@@ -1,37 +1,45 @@
 package hi;
 
-import org.telegram.messenger.x10;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p implements x10 {
+public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ja b;
+    public final /* synthetic */ ia b;
 
-    public /* synthetic */ p(ja jaVar, int i7) {
+    public /* synthetic */ p(ia iaVar, int i7) {
         this.a = i7;
-        this.b = jaVar;
+        this.b = iaVar;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
-        Integer num = (Integer) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int intValue = num.intValue();
-                ja jaVar = this.b;
-                jaVar.setPeriod(intValue);
-                x10 x10Var = jaVar.B1;
-                if (x10Var != null) {
-                    x10Var.a(num);
-                    break;
-                }
+                this.b.n();
+                break;
+            case 1:
+                ia iaVar = this.b;
+                iaVar.K0 = false;
+                iaVar.L0 = TLObject.FLAG_31;
+                iaVar.invalidate();
+                iaVar.S0.setVisibility(0);
+                iaVar.T0.setVisibility(0);
                 break;
             default:
-                x10 x10Var2 = this.b.C1;
-                if (x10Var2 != null) {
-                    x10Var2.a(num);
-                    break;
+                sa saVar = this.b.S1;
+                ga gaVar = saVar.Y0;
+                if (gaVar != null) {
+                    gaVar.P = false;
+                    gaVar.c();
+                    ga gaVar2 = saVar.Y0;
+                    gaVar2.m(0L);
+                    cb cbVar = gaVar2.G;
+                    if (cbVar != null) {
+                        cbVar.setProgress(0L);
+                        break;
+                    }
                 }
                 break;
         }

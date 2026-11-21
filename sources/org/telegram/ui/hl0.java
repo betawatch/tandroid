@@ -7,7 +7,7 @@ import java.util.Calendar;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class hl0 implements TextWatcher {
     public int a = -1;
@@ -54,7 +54,7 @@ public final class hl0 implements TextWatcher {
             i10 = i11;
         }
         ml0Var.p0 = true;
-        org.telegram.ui.ActionBar.u6.U(ml0Var.f[1], org.telegram.ui.ActionBar.n6.G6, ml0Var.Z0);
+        org.telegram.ui.ActionBar.t6.U(ml0Var.f[1], org.telegram.ui.ActionBar.m6.G6, ml0Var.Z0);
         if (sb2.length() > 4) {
             sb2.setLength(4);
         }
@@ -71,7 +71,7 @@ public final class hl0 implements TextWatcher {
             } else if (sb2.length() == 2) {
                 int intValue2 = Utilities.z(sb2.toString()).intValue();
                 if (intValue2 > 12 || intValue2 == 0) {
-                    org.telegram.ui.ActionBar.u6.U(ml0Var.f[1], org.telegram.ui.ActionBar.n6.p7, ml0Var.Z0);
+                    org.telegram.ui.ActionBar.t6.U(ml0Var.f[1], org.telegram.ui.ActionBar.m6.p7, ml0Var.Z0);
                 } else {
                     z10 = false;
                 }
@@ -107,12 +107,12 @@ public final class hl0 implements TextWatcher {
             int intValue3 = Utilities.z(strArr[0]).intValue();
             int intValue4 = Utilities.z(strArr[1]).intValue() + 2000;
             Calendar calendar = Calendar.getInstance();
-            i7 = ((org.telegram.ui.ActionBar.h2) ml0Var).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) ml0Var).currentAccount;
             boolean z11 = org.telegram.messenger.j10.i(i7).d().startsWith("7") || ((psVar = ml0Var.B0) != null && psVar.c.equals("7"));
             int i13 = z11 ? 2022 : calendar.get(1);
             int i14 = z11 ? 1 : calendar.get(2) + 1;
             if (intValue4 < i13 || (intValue4 == i13 && intValue3 < i14)) {
-                org.telegram.ui.ActionBar.u6.U(ml0Var.f[1], org.telegram.ui.ActionBar.n6.p7, ml0Var.Z0);
+                org.telegram.ui.ActionBar.t6.U(ml0Var.f[1], org.telegram.ui.ActionBar.m6.p7, ml0Var.Z0);
                 if (!z10) {
                 }
                 if (sb2.length() == 2) {
@@ -136,7 +136,7 @@ public final class hl0 implements TextWatcher {
         }
         int intValue5 = Utilities.z(strArr[0]).intValue();
         if (intValue5 > 12 || intValue5 == 0) {
-            org.telegram.ui.ActionBar.u6.U(ml0Var.f[1], org.telegram.ui.ActionBar.n6.p7, ml0Var.Z0);
+            org.telegram.ui.ActionBar.t6.U(ml0Var.f[1], org.telegram.ui.ActionBar.m6.p7, ml0Var.Z0);
             if (!z10 && sb2.length() == 4) {
                 ml0Var.f[ml0Var.j0 ? (char) 2 : (char) 3].requestFocus();
             }

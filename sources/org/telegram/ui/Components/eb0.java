@@ -1,49 +1,72 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
-import android.os.Build;
-import java.lang.ref.WeakReference;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class eb0 {
-    public final Shader.TileMode a;
-    public final Matrix b = new Matrix();
-    public boolean c;
-    public BitmapShader d;
-    public WeakReference e;
+    public final Paint a;
+    public final fb0 b;
+    public final fb0 c;
+    public final fb0 d;
+    public final db0 e;
+    public final db0 f;
+    public final float[] g;
+    public int h;
+    public float i;
 
-    public eb0(Shader.TileMode tileMode) {
-        this.a = tileMode;
+    public eb0() {
+        Paint paint = new Paint();
+        this.a = paint;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new fb0(tileMode);
+        this.c = new fb0(tileMode);
+        this.d = new fb0(Shader.TileMode.REPEAT);
+        this.e = new db0(R.raw.wallpaper_pos_intensity);
+        this.f = new db0(R.raw.wallpaper_neg_intensity);
+        this.g = new float[4];
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
     }
 
-    public final void a(boolean z10) {
-        BitmapShader bitmapShader;
-        if (this.c != z10) {
-            this.c = z10;
-            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
-                return;
+    public final Paint a(Bitmap bitmap, Bitmap bitmap2, Bitmap bitmap3, int i7, int i10) {
+        fb0 fb0Var = this.b;
+        boolean b10 = fb0Var.b(bitmap);
+        fb0 fb0Var2 = this.d;
+        boolean b11 = b10 | fb0Var2.b(bitmap2);
+        Paint paint = this.a;
+        if (i10 >= 0) {
+            fb0 fb0Var3 = this.c;
+            if ((b11 | fb0Var3.b(bitmap3)) || this.h != 1) {
+                this.h = 1;
+                db0 db0Var = this.e;
+                db0Var.a.setInputBuffer("shaderPattern", fb0Var2.d);
+                db0Var.a.setInputBuffer("shaderGradient", fb0Var.d);
+                db0Var.a.setInputBuffer("shaderGradientSoftLight", fb0Var3.d);
+                db0Var.a.setFloatUniform("transformGradient", db0Var.b);
+                db0Var.a.setFloatUniform("transformPattern", db0Var.c);
+                paint.setShader(db0Var.a);
+                return paint;
             }
-            bitmapShader.setFilterMode(z10 ? 1 : 2);
+        } else {
+            float a10 = c8.l9.a((i7 * (-i10)) / 25500.0f, 0.0f, 1.0f);
+            if (b11 || this.i != a10 || this.h != 2) {
+                this.h = 2;
+                this.i = a10;
+                db0 db0Var2 = this.f;
+                db0Var2.a.setInputBuffer("shaderPattern", fb0Var2.d);
+                db0Var2.a.setInputBuffer("shaderGradient", fb0Var.d);
+                db0Var2.a.setFloatUniform("intensity", a10);
+                db0Var2.a.setFloatUniform("transformGradient", db0Var2.b);
+                db0Var2.a.setFloatUniform("transformPattern", db0Var2.c);
+                paint.setShader(db0Var2.a);
+                return paint;
+            }
         }
-    }
-
-    public final boolean b(Bitmap bitmap) {
-        WeakReference weakReference = this.e;
-        if (weakReference != null && weakReference.get() == bitmap) {
-            return false;
-        }
-        this.e = new WeakReference(bitmap);
-        Shader.TileMode tileMode = this.a;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        this.d = bitmapShader;
-        bitmapShader.setLocalMatrix(this.b);
-        if (Build.VERSION.SDK_INT >= 33) {
-            this.d.setFilterMode(this.c ? 1 : 2);
-        }
-        return true;
+        return paint;
     }
 }

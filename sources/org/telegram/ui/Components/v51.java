@@ -1,166 +1,149 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class v51 extends TextureView implements TextureView.SurfaceTextureListener {
-    public f61 a;
-    public cz b;
-    public final yi0 c;
-    public int d;
-    public int e;
-    public hi.c7 f;
-    public u51 h;
-    public int n;
-    public int r;
-    public ca s;
+public final class v51 extends View {
+    public final n6 a;
+    public final n6 b;
+    public final Paint c;
+    public final Paint d;
+    public final Paint e;
+    public boolean f;
+    public final d6 h;
+    public final int[] n;
 
-    public v51(Context context, f61 f61Var) {
+    public v51(Context context) {
         super(context);
-        this.c = new yi0();
-        this.a = f61Var;
-        setSurfaceTextureListener(this);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        Paint paint3 = new Paint(1);
+        this.e = paint3;
+        nr nrVar = nr.h;
+        this.h = new d6(this, 0L, 300L, nrVar);
+        this.n = new int[]{org.telegram.messenger.ks.a2, org.telegram.messenger.ks.P3, 360, 480, 720, 1080, 1440, 2160};
+        n6 n6Var = new n6(true, false, false);
+        this.a = n6Var;
+        n6Var.n(0.4f, 360L, nrVar);
+        n6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        n6Var.u(-1);
+        n6Var.w(org.telegram.messenger.g0.N(10.6f));
+        n6Var.setCallback(this);
+        n6Var.b = 17;
+        n6 n6Var2 = new n6(true, false, false);
+        this.b = n6Var2;
+        n6Var2.n(0.2f, 360L, nrVar);
+        n6Var2.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        n6Var2.u(-1);
+        n6Var2.w(org.telegram.messenger.g0.N(8.6f));
+        n6Var2.setCallback(this);
+        n6Var2.b = 5;
+        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
+        n6Var2.a.setXfermode(new PorterDuffXfermode(mode));
+        n6Var2.N = org.telegram.messenger.g0.q.x;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint2.setColor(-1);
+        paint3.setXfermode(new PorterDuffXfermode(mode));
     }
 
-    public final void a(float f10, float f11, float f12, float f13) {
-        yi0 yi0Var = this.c;
-        yi0Var.a = f10;
-        yi0Var.b = f11;
-        yi0Var.c = f12;
-        yi0Var.d = f13;
-    }
-
-    public Bitmap getUiBlurBitmap() {
-        ha haVar;
-        cz czVar = this.b;
-        if (czVar == null || (haVar = czVar.J) == null) {
-            return null;
-        }
-        synchronized (haVar.n) {
-            try {
-                if (haVar.q) {
-                    return haVar.p;
+    public final void a(int i7, boolean z10, boolean z11) {
+        this.f = !z10 || z11;
+        n6 n6Var = this.a;
+        n6 n6Var2 = this.b;
+        if (z11) {
+            n6Var.t("GIF", true, true);
+            n6Var2.t("", true, true);
+        } else {
+            n6Var.t(i7 >= 720 ? "HD" : "SD", true, true);
+            int[] iArr = this.n;
+            int length = iArr.length - 1;
+            while (true) {
+                if (length < 0) {
+                    length = -1;
+                    break;
+                } else if (i7 >= iArr[length]) {
+                    break;
+                } else {
+                    length--;
                 }
-                return null;
-            } catch (Throwable th2) {
-                throw th2;
             }
-        }
-    }
-
-    public int getVideoHeight() {
-        return this.e;
-    }
-
-    public int getVideoWidth() {
-        return this.d;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
-        int i11;
-        if (this.b != null || surfaceTexture == null || this.a == null) {
-            return;
-        }
-        cz czVar = new cz(surfaceTexture, new iy(this, 25), this.f, this.s, i7, i10);
-        this.b = czVar;
-        czVar.h(this.n, this.r);
-        cz czVar2 = this.b;
-        ca caVar = this.s;
-        ha haVar = czVar2.J;
-        if (haVar != null) {
-            ca caVar2 = haVar.t;
-            if (caVar2 != null && caVar2.m != null) {
-                caVar2.m = null;
-            }
-            haVar.t = caVar;
-            if (caVar != null && caVar.m != haVar) {
-                caVar.m = haVar;
-                caVar.d();
-            }
-        }
-        int i12 = this.d;
-        if (i12 != 0 && (i11 = this.e) != 0) {
-            cz czVar3 = this.b;
-            czVar3.getClass();
-            czVar3.postRunnable(new yy(czVar3, i12, i11, 0));
-        }
-        this.b.c(true, true, false);
-        u51 u51Var = this.h;
-        if (u51Var != null) {
-            u51Var.a(this.b);
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        cz czVar = this.b;
-        if (czVar == null) {
-            return true;
-        }
-        czVar.postRunnable(new zy(czVar, 0));
-        this.b = null;
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
-        cz czVar = this.b;
-        if (czVar != null) {
-            czVar.postRunnable(new yy(czVar, i7, i10, 1));
-            this.b.c(false, true, false);
-            this.b.postRunnable(new t51(this, 0));
-        }
-    }
-
-    public void setDelegate(u51 u51Var) {
-        this.h = u51Var;
-        cz czVar = this.b;
-        if (czVar != null) {
-            if (u51Var == null) {
-                czVar.d(null);
+            if (length < 0) {
+                n6Var2.t("", true, true);
+            } else if (length == 6) {
+                n6Var2.t("2K", TextUtils.isEmpty(n6Var2.i), true);
+            } else if (length == 7) {
+                n6Var2.t("4K", TextUtils.isEmpty(n6Var2.i), true);
             } else {
-                u51Var.a(czVar);
+                n6Var2.t("" + iArr[length], TextUtils.isEmpty(n6Var2.i), true);
             }
         }
+        setClickable(!this.f);
+        invalidate();
     }
 
-    public void setHDRInfo(hi.c7 c7Var) {
-        this.f = c7Var;
-        cz czVar = this.b;
-        if (czVar != null) {
-            czVar.postRunnable(new dw(6, czVar, c7Var));
-        }
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+        float C = com.google.android.gms.internal.vision.e2.C(this.h.d(this.f), 0.35f, 1.0f, 255.0f);
+        int i7 = (int) C;
+        Paint paint = this.c;
+        paint.setAlpha(i7);
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.33f));
+        float N = org.telegram.messenger.g0.N(21.33f);
+        float N2 = org.telegram.messenger.g0.N(6.0f);
+        n6 n6Var = this.a;
+        float max = Math.max(N, n6Var.c() + N2);
+        float N3 = org.telegram.messenger.g0.N(17.33f);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set((getWidth() - max) / 2.0f, (getHeight() - N3) / 2.0f, (getWidth() + max) / 2.0f, (getHeight() + N3) / 2.0f);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(4.0f), org.telegram.messenger.g0.N(4.0f), paint);
+        Rect rect = org.telegram.messenger.g0.Q;
+        rect.set(0, (int) ((getHeight() - N3) / 2.0f), getWidth(), (int) ((getHeight() + N3) / 2.0f));
+        n6Var.setBounds(rect);
+        n6Var.C = i7;
+        n6Var.draw(canvas);
+        n6 n6Var2 = this.b;
+        rect.set((int) ((org.telegram.messenger.g0.N(16.0f) + (getWidth() / 2.0f)) - (n6Var2.c() + (org.telegram.messenger.g0.N(2.0f) * n6Var2.i()))), (int) ((getHeight() / 2.0f) - org.telegram.messenger.g0.N(14.0f)), (int) (org.telegram.messenger.g0.N(16.0f) + (getWidth() / 2.0f)), (int) (((getHeight() / 2.0f) - org.telegram.messenger.g0.N(14.0f)) + org.telegram.messenger.g0.N(8.33f)));
+        rectF.set(rect);
+        rectF.inset(-org.telegram.messenger.g0.N(1.33f), -org.telegram.messenger.g0.N(1.33f));
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(1.66f), org.telegram.messenger.g0.N(1.66f), this.e);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+        rectF.set(rect);
+        int i10 = (int) (n6Var2.i() * C);
+        Paint paint2 = this.d;
+        paint2.setAlpha(i10);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(1.66f), org.telegram.messenger.g0.N(1.66f), paint2);
+        rect.offset((int) (-org.telegram.messenger.g0.N(1.33f)), 0);
+        canvas.save();
+        n6Var2.setBounds(rect);
+        n6Var2.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // android.view.TextureView
-    public void setTransform(Matrix matrix) {
-        super.setTransform(matrix);
-        cz czVar = this.b;
-        if (czVar != null) {
-            int width = getWidth();
-            int height = getHeight();
-            ha haVar = czVar.J;
-            if (haVar == null) {
-                return;
-            }
-            Matrix matrix2 = haVar.v;
-            matrix.invert(matrix2);
-            float f10 = width;
-            float f11 = height;
-            matrix2.preScale(f10, f11);
-            matrix2.postScale(1.0f / f10, 1.0f / f11);
-            haVar.c(matrix2);
-            czVar.c(false, false, false);
-        }
+    public void setPhotoState(boolean z10) {
+        this.f = false;
+        this.a.t(z10 ? "HD" : "SD", true, true);
+        this.b.t("", false, true);
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.a == drawable || this.b == drawable || super.verifyDrawable(drawable);
     }
 }

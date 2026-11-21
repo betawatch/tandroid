@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cm implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class cm implements RequestDelegate {
                                     hVar.k(tL_messages_forumTopics.messages.get(i10), tL_messages_forumTopics.messages.get(i10).id);
                                     i10++;
                                 }
-                                g0.g3(new bi.l4(e00Var, tL_messages_forumTopics, j3, tL_messages_forumTopics, hVar, i7));
+                                g0.g3(new bi.p4(e00Var, tL_messages_forumTopics, j3, tL_messages_forumTopics, hVar, i7));
                                 break;
                             }
                         } else {
@@ -75,7 +75,7 @@ public final /* synthetic */ class cm implements RequestDelegate {
                     break;
                 }
             default:
-                g0.g3(new bi.q3(this.c, 3, this.b, (org.telegram.ui.g4) this.d, tLObject));
+                g0.g3(new bi.u3(this.c, 3, this.b, (org.telegram.ui.g4) this.d, tLObject));
                 break;
         }
     }

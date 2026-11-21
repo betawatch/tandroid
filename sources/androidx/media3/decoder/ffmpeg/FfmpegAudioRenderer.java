@@ -15,16 +15,16 @@ import h2.l0;
 import h9.g1;
 import h9.i0;
 import i5.c;
+import ji.i;
 import k2.e;
 import k2.f;
 import k2.h;
 import k2.l;
-import kg.h0;
+import kg.y;
 import l2.b;
 import l2.d;
 import l2.m1;
 import l2.t0;
-import m2.i;
 import n2.g0;
 import n2.o;
 import n2.p;
@@ -38,7 +38,7 @@ import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import q2.g;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioRenderer extends b implements t0 {
     public final k8.a J;
@@ -350,7 +350,7 @@ public final class FfmpegAudioRenderer extends b implements t0 {
             u uVar3 = this.N;
             Handler handler = (Handler) aVar2.b;
             if (handler != null) {
-                handler.post(new kg.i0(aVar2, uVar3, null, 12));
+                handler.post(new y(aVar2, uVar3, (Object) null, 13));
                 return;
             }
             return;
@@ -368,7 +368,7 @@ public final class FfmpegAudioRenderer extends b implements t0 {
         u uVar4 = this.N;
         Handler handler2 = (Handler) aVar2.b;
         if (handler2 != null) {
-            handler2.post(new kg.i0(aVar2, uVar4, eVar, 12));
+            handler2.post(new y(aVar2, uVar4, eVar, 13));
         }
     }
 
@@ -387,7 +387,7 @@ public final class FfmpegAudioRenderer extends b implements t0 {
             k8.a aVar = this.J;
             Handler handler = (Handler) aVar.b;
             if (handler != null) {
-                handler.post(new h0(23, aVar, name));
+                handler.post(new i(25, aVar, name));
             }
             this.R = null;
         }
@@ -604,7 +604,7 @@ public final class FfmpegAudioRenderer extends b implements t0 {
                 r0Var2.v();
             }
         }
-        i iVar = this.f;
+        m2.i iVar = this.f;
         iVar.getClass();
         r0 r0Var3 = (r0) xVar;
         r0Var3.m = iVar;

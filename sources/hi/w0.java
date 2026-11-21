@@ -11,9 +11,9 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class w0 extends View {
     public final Paint a;
@@ -22,9 +22,9 @@ public final class w0 extends View {
     public final float d;
     public final float e;
     public final Path f;
-    public k h;
+    public l h;
     public boolean n;
-    public final org.telegram.ui.Components.c6 r;
+    public final org.telegram.ui.Components.d6 r;
 
     public w0(Context context) {
         super(context);
@@ -33,23 +33,23 @@ public final class w0 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.b = textPaint;
         this.f = new Path();
-        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this);
-        this.r = c6Var;
+        org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(this);
+        this.r = d6Var;
         paint.setColor(-869783512);
         paint.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(6.0f)));
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         textPaint.setColor(-1);
-        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(gd.N0("StoryDraftSaved"), textPaint, r1.x, TextUtils.TruncateAt.END), textPaint, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(gd.O0("StoryDraftSaved"), textPaint, r1.x, TextUtils.TruncateAt.END), textPaint, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.c = staticLayout;
         this.d = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
         this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        c6Var.e(true, 0.0f);
+        d6Var.e(true, 0.0f);
     }
 
     public final void a(boolean z10) {
-        k kVar;
-        if (!z10 && (kVar = this.h) != null) {
-            org.telegram.messenger.g0.r(kVar);
+        l lVar;
+        if (!z10 && (lVar = this.h) != null) {
+            org.telegram.messenger.g0.r(lVar);
             this.h = null;
         }
         this.n = z10;
@@ -63,8 +63,8 @@ public final class w0 extends View {
             return;
         }
         canvas.save();
-        canvas.translate(0.0f, (this.n ? lr.k.getInterpolation(d) : 1.0f) * org.telegram.messenger.g0.L(12.0f));
-        float interpolation = lr.h.getInterpolation(d);
+        canvas.translate(0.0f, (this.n ? nr.k.getInterpolation(d) : 1.0f) * org.telegram.messenger.g0.L(12.0f));
+        float interpolation = nr.h.getInterpolation(d);
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         float L = org.telegram.messenger.g0.L(22.0f) + this.d;

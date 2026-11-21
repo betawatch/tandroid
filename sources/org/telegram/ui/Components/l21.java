@@ -1,41 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class l21 extends v4.u0 {
-    public final /* synthetic */ y21 a;
+public final /* synthetic */ class l21 implements org.telegram.messenger.nc, org.telegram.messenger.mc {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.messenger.q10 c;
 
-    public l21(y21 y21Var) {
-        this.a = y21Var;
+    public /* synthetic */ l21(String str, String str2, org.telegram.messenger.q10 q10Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = q10Var;
     }
 
-    @Override // v4.u0
-    public final void a(RecyclerView recyclerView, int i7) {
-        y21 y21Var = this.a;
-        k21 k21Var = y21Var.H1;
-        if (i7 == 0) {
-            y21Var.G1 = false;
-        }
-        if ((i7 == 0 || i7 == 2) && y21Var.M0(false) > 0.0f && y21Var.M0(false) < org.telegram.messenger.g0.L(96.0f) && k21Var.canScrollVertically(1) && y21.J0(y21Var)) {
-            y21Var.G1 = true;
-            k21Var.w0(0, (int) y21Var.M0(false), null);
-        }
+    @Override // org.telegram.messenger.nc
+    public void a(String str) {
+        b31.K0(this.a, str, this.b, this.c);
     }
 
-    @Override // v4.u0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        y21 y21Var = this.a;
-        y21Var.b.invalidate();
-        boolean canScrollVertically = y21Var.H1.canScrollVertically(1);
-        View view = y21Var.L1;
-        Boolean bool = y21Var.R1;
-        if (bool == null || bool.booleanValue() != canScrollVertically) {
-            y21Var.R1 = Boolean.valueOf(canScrollVertically);
-            view.animate().cancel();
-            org.telegram.messenger.n10.o(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), lr.h, 320L);
-        }
+    @Override // org.telegram.messenger.mc
+    public void q(Exception exc) {
+        b31.K0(this.a, "en", this.b, this.c);
     }
 }

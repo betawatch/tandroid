@@ -38,7 +38,7 @@ import h2.k0;
 import h2.l0;
 import h2.x;
 import h9.i0;
-import hi.u5;
+import hi.t5;
 import j$.util.Objects;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -60,16 +60,16 @@ import m9.y;
 import n2.q;
 import n2.s;
 import o0.f;
-import oi.e1;
-import oi.g3;
-import oi.g4;
+import oi.a6;
+import oi.f1;
+import oi.h3;
+import oi.h4;
 import oi.o;
-import oi.p3;
 import oi.q3;
 import oi.r3;
 import oi.s3;
-import oi.x3;
-import oi.z5;
+import oi.t3;
+import oi.y3;
 import org.telegram.messenger.aw;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.cj;
@@ -82,8 +82,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Cells.i3;
 import org.telegram.ui.Cells.k9;
@@ -91,15 +92,15 @@ import org.telegram.ui.Cells.m1;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.au0;
-import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.an0;
+import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.rj0;
-import org.telegram.ui.Components.si;
-import org.telegram.ui.Components.x5;
-import org.telegram.ui.Components.xm0;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.ot;
+import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.bn;
@@ -107,9 +108,9 @@ import org.telegram.ui.bx;
 import org.telegram.ui.cx;
 import org.telegram.ui.fr0;
 import org.telegram.ui.h5;
+import org.telegram.ui.hf0;
 import org.telegram.ui.hk0;
-import org.telegram.ui.if0;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import org.telegram.ui.qj0;
 import org.telegram.ui.rw;
 import org.telegram.ui.wj0;
@@ -118,11 +119,11 @@ import s2.m;
 import s2.p;
 import s2.t;
 import sg.h0;
-import ug.b1;
+import ug.a1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
+public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -135,11 +136,11 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
 
     @Override // li.j0
     public void A(long j3) {
-        ((h2) this.b).presentFragment(bn.ua(j3));
+        ((g2) this.b).presentFragment(bn.ua(j3));
         ((d0) this.c).dismiss();
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void D(int i7) {
         o.T((o) this.c, 74, i7);
     }
@@ -152,13 +153,13 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
             return null;
         }
         long j10 = i7;
-        LongSparseArray p10 = ((u5) this.b).p(j3, 0L);
+        LongSparseArray p10 = ((t5) this.b).p(j3, 0L);
         yg0 yg0Var = (yg0) (p10 != null ? p10.get(j10) : null);
         if (yg0Var != null || !z10) {
             return yg0Var;
         }
         yg0 yg0Var2 = new yg0();
-        ((u5) this.b).w(j3, 0L, j10, yg0Var2);
+        ((t5) this.b).w(j3, 0L, j10, yg0Var2);
         return yg0Var2;
     }
 
@@ -179,18 +180,18 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         d0Var.v1.d.g3.O(true);
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void G() {
         o oVar = (o) this.c;
-        s3 s3Var = oVar.r;
-        x3 x3Var = oVar.s;
-        if (x3Var != null) {
-            g3 g3Var = s3Var.v3;
-            int i7 = (g3Var != null && g3Var.x() && s3Var.F4()) ? 1 : 0;
-            if (x3Var.b0 == 2) {
-                x3Var.c0 = i7;
+        t3 t3Var = oVar.r;
+        y3 y3Var = oVar.s;
+        if (y3Var != null) {
+            h3 h3Var = t3Var.v3;
+            int i7 = (h3Var != null && h3Var.x() && t3Var.F4()) ? 1 : 0;
+            if (y3Var.b0 == 2) {
+                y3Var.c0 = i7;
             } else {
-                x3Var.g(i7, true);
+                y3Var.g(i7, true);
             }
             if (i7 != 0) {
                 oVar.b0();
@@ -199,27 +200,27 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         oVar.e0();
     }
 
-    @Override // oi.q3
-    public y60 G0(View view) {
+    @Override // oi.r3
+    public a70 G0(View view) {
         o oVar = (o) this.c;
-        y60 y60Var = new y60(oVar, (i6) this.b, view, false, false, true);
-        oVar.I = y60Var;
-        return y60Var;
+        a70 a70Var = new a70(oVar, (h6) this.b, view, false, false, true);
+        oVar.I = a70Var;
+        return a70Var;
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void H(oi.a aVar) {
         o oVar = (o) this.c;
-        si siVar = oVar.b;
-        h2 h2Var = siVar.a2;
-        if (h2Var != null && aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && g0.J1(h2Var)) {
-            si siVar2 = new si(oVar.getContext(), siVar.a2, false, false, false, null);
-            siVar2.X3 = new qb.a(16);
-            siVar2.K1 = true;
-            siVar2.v3.setVisibility(8);
-            siVar2.u4 = new h(oVar, aVar, siVar2, 15);
-            siVar2.f1();
-            siVar2.show();
+        ui uiVar = oVar.b;
+        g2 g2Var = uiVar.a2;
+        if (g2Var != null && aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && g0.J1(g2Var)) {
+            ui uiVar2 = new ui(oVar.getContext(), uiVar.a2, false, false, false, null);
+            uiVar2.X3 = new qb.a(16);
+            uiVar2.K1 = true;
+            uiVar2.v3.setVisibility(8);
+            uiVar2.u4 = new h(oVar, aVar, uiVar2, 15);
+            uiVar2.f1();
+            uiVar2.show();
         }
     }
 
@@ -251,7 +252,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
 
     @Override // org.telegram.ui.Cells.m1
     public boolean L0(long j3) {
-        return ((ny0) this.c).w;
+        return ((py0) this.c).w;
     }
 
     public void M(aw awVar, int i7) {
@@ -280,9 +281,9 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
     public y O(o0 o0Var) {
         Uri uri;
         byte[] bArr;
-        nd0 nd0Var = (nd0) this.c;
-        if (nd0Var != null && (((uri = (Uri) nd0Var.c) != null && uri.equals(o0Var.n)) || ((bArr = (byte[]) nd0Var.b) != null && Arrays.equals(bArr, o0Var.k)))) {
-            y yVar = (y) ((nd0) this.c).d;
+        md0 md0Var = (md0) this.c;
+        if (md0Var != null && (((uri = (Uri) md0Var.c) != null && uri.equals(o0Var.n)) || ((bArr = (byte[]) md0Var.b) != null && Arrays.equals(bArr, o0Var.k)))) {
+            y yVar = (y) ((md0) this.c).d;
             yVar.getClass();
             return yVar;
         }
@@ -290,32 +291,32 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         if (O == null) {
             return null;
         }
-        this.c = new nd0(o0Var, O);
+        this.c = new md0(o0Var, O);
         return O;
     }
 
     public void P0(f fVar) {
         androidx.biometric.o oVar = (androidx.biometric.o) this.c;
-        u5 u5Var = (u5) this.b;
+        t5 t5Var = (t5) this.b;
         int i7 = fVar.b;
         if (i7 != 0) {
-            oVar.execute(new j6.o(u5Var, i7));
+            oVar.execute(new j6.o(t5Var, i7));
         } else {
-            oVar.execute(new u(24, u5Var, fVar.a));
+            oVar.execute(new u(24, t5Var, fVar.a));
         }
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void Q() {
-        x3 x3Var = ((o) this.c).s;
-        if (x3Var != null) {
-            int i7 = x3Var.b0;
+        y3 y3Var = ((o) this.c).s;
+        if (y3Var != null) {
+            int i7 = y3Var.b0;
             if (i7 == 2) {
                 i7 = 0;
             }
-            x3Var.c0 = i7;
-            x3Var.e(false, false);
-            x3Var.g(2, true);
+            y3Var.c0 = i7;
+            y3Var.e(false, false);
+            y3Var.g(2, true);
         }
     }
 
@@ -336,14 +337,14 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         vf.c.t(r1Var.getContext(), str);
     }
 
-    @Override // oi.q3
-    public void R0(r3 r3Var, View view) {
+    @Override // oi.r3
+    public void R0(s3 s3Var, View view) {
         o oVar = (o) this.c;
-        y60 y60Var = new y60(oVar, (i6) this.b, view, false, false, true);
-        y60Var.T = true;
-        h2 h2Var = oVar.b.a2;
+        a70 a70Var = new a70(oVar, (h6) this.b, view, false, false, true);
+        a70Var.T = true;
+        g2 g2Var = oVar.b.a2;
         oVar.getContext();
-        oVar.I = g4.b(y60Var, h2Var, r3Var, true);
+        oVar.I = h4.b(a70Var, g2Var, s3Var, true);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -408,7 +409,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         return j3;
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void V() {
         o oVar = (o) this.c;
         if (oVar.getCurrentItemTop() != oVar.J) {
@@ -483,41 +484,41 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x0023 A[RETURN] */
-    @Override // oi.q3
+    @Override // oi.r3
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean a(float f10) {
         boolean z10;
-        x3 x3Var = ((o) this.c).s;
-        if (x3Var != null) {
-            FrameLayout frameLayout = x3Var.I;
+        y3 y3Var = ((o) this.c).s;
+        if (y3Var != null) {
+            FrameLayout frameLayout = y3Var.I;
             if (frameLayout != null) {
                 frameLayout.getLocationOnScreen(new int[2]);
                 if (f10 >= r4[1]) {
                     z10 = true;
-                    x3Var.e(z10, true);
+                    y3Var.e(z10, true);
                     if (!z10) {
                         return true;
                     }
                 }
             }
             z10 = false;
-            x3Var.e(z10, true);
+            y3Var.e(z10, true);
             if (!z10) {
             }
         }
         return false;
     }
 
-    @Override // oi.q3
-    public void a0(z5 z5Var, String str) {
+    @Override // oi.r3
+    public void a0(a6 a6Var, String str) {
         o oVar = (o) this.c;
         if (oVar.w == null) {
-            i6 i6Var = (i6) this.b;
-            oVar.w = new ga.d(new ab.g(29, this, i6Var), i6Var);
+            h6 h6Var = (h6) this.b;
+            oVar.w = new ga.d(new ab.g(29, this, h6Var), h6Var);
         }
-        oVar.w.k(z5Var, str);
+        oVar.w.k(a6Var, str);
     }
 
     public long a1(int i7, int i10, int i11) {
@@ -547,7 +548,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         return false;
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void b0(int i7) {
         o oVar = (o) this.c;
         oVar.b.N1(oVar, i7);
@@ -596,7 +597,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
     public void d(String str, String str2) {
         hk0 hk0Var = ((qj0) this.c).a;
         if ("PHONE_VERIFICATION_NEEDED".equals(str)) {
-            hk0Var.S1(true, str2, (if0) this.b, this, hk0Var.C1);
+            hk0Var.S1(true, str2, (hf0) this.b, this, hk0Var.C1);
         } else {
             hk0Var.R1(true, false);
         }
@@ -709,7 +710,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         }
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public boolean f(float f10, float f11, int i7, View view) {
         cx cxVar = (cx) this.c;
         if (view instanceof u2) {
@@ -738,12 +739,12 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
 
     @Override // org.telegram.ui.Cells.m1
     public boolean f2(long j3) {
-        return ((ny0) this.c).s;
+        return ((py0) this.c).s;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.mt
     public void g() {
-        ((i3) this.c).b(((mt) this.b).getText());
+        ((i3) this.c).b(((ot) this.b).getText());
     }
 
     public void g0() {
@@ -762,7 +763,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -787,7 +788,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public void j() {
         Point point = g0.q;
         if (point.x > point.y) {
@@ -795,16 +796,16 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         }
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void j1() {
         o oVar = (o) this.c;
         oVar.c0();
         oVar.d0();
     }
 
-    @Override // oi.q3
-    public void k(e1 e1Var, boolean z10) {
-        ((o) this.c).b.i1(e1Var, z10);
+    @Override // oi.r3
+    public void k(f1 f1Var, boolean z10) {
+        ((o) this.c).b.i1(f1Var, z10);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -812,23 +813,23 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         return 0;
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void m0() {
-        x3 x3Var = ((o) this.c).s;
-        if (x3Var != null) {
-            x3Var.e(false, true);
-            int i7 = x3Var.c0;
-            x3Var.g(i7 != 2 ? i7 : 0, true);
+        y3 y3Var = ((o) this.c).s;
+        if (y3Var != null) {
+            y3Var.e(false, true);
+            int i7 = y3Var.c0;
+            y3Var.g(i7 != 2 ? i7 : 0, true);
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public void n(boolean z10, float f10) {
         h5.n1 = f10;
         ((TextView) this.b).setText("Saturation " + (f10 * 5.0f));
-        au0 au0Var = ((h5) this.c).m1;
-        au0Var.M();
-        au0Var.K();
+        du0 du0Var = ((h5) this.c).m1;
+        du0Var.M();
+        du0Var.K();
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -840,22 +841,22 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
     public void o(float f10, float f11, float f12, float f13, Canvas canvas) {
         Paint paint = (Paint) this.b;
         PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.c;
-        b1 b1Var = premiumPreviewFragment.n0;
+        a1 a1Var = premiumPreviewFragment.n0;
         if (premiumPreviewFragment.i0) {
-            paint.setColor(premiumPreviewFragment.getThemedColor(org.telegram.ui.ActionBar.n6.a7));
+            paint.setColor(premiumPreviewFragment.getThemedColor(m6.a7));
             canvas.drawRect(f10, f11, f12, f13, paint);
         } else {
-            b1Var.d(0, (-premiumPreviewFragment.e0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.c0, 0, premiumPreviewFragment.e0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.e0.getMeasuredHeight());
-            canvas.drawRect(f10, f11, f12, f13, b1Var.f);
+            a1Var.d(0, (-premiumPreviewFragment.e0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.c0, 0, premiumPreviewFragment.e0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.e0.getMeasuredHeight());
+            canvas.drawRect(f10, f11, f12, f13, a1Var.f);
         }
     }
 
-    @Override // oi.q3
+    @Override // oi.r3
     public void onContentChanged() {
         o oVar = (o) this.c;
-        x3 x3Var = oVar.s;
-        if (x3Var != null) {
-            x3Var.setSendLoading(oVar.r.p3());
+        y3 y3Var = oVar.s;
+        if (y3Var != null) {
+            y3Var.setSendLoading(oVar.r.p3());
         }
         oVar.a0(true);
         oVar.d0();
@@ -865,7 +866,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean p0(x5 x5Var) {
+    public /* synthetic */ boolean p0(y5 y5Var) {
         return false;
     }
 
@@ -874,7 +875,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public void r(float f10) {
         Point point = g0.q;
         if (point.x > point.y) {
@@ -882,7 +883,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public /* synthetic */ int r0() {
         return 0;
     }
@@ -907,13 +908,13 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
     @Override // h2.d
     public y t0(byte[] bArr) {
         byte[] bArr2;
-        nd0 nd0Var = (nd0) this.c;
-        if (nd0Var == null || (bArr2 = (byte[]) nd0Var.b) == null || !Arrays.equals(bArr2, bArr)) {
+        md0 md0Var = (md0) this.c;
+        if (md0Var == null || (bArr2 = (byte[]) md0Var.b) == null || !Arrays.equals(bArr2, bArr)) {
             y t02 = ((d) this.b).t0(bArr);
-            this.c = new nd0(bArr, t02);
+            this.c = new md0(bArr, t02);
             return t02;
         }
-        y yVar = (y) ((nd0) this.c).d;
+        y yVar = (y) ((md0) this.c).d;
         yVar.getClass();
         return yVar;
     }
@@ -979,12 +980,12 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         return false;
     }
 
-    @Override // oi.q3
-    public void x(p3 p3Var, View view) {
+    @Override // oi.r3
+    public void x(q3 q3Var, View view) {
         o oVar = (o) this.c;
-        y60 y60Var = new y60(oVar, (i6) this.b, view, false, false, true);
-        y60Var.T = true;
-        oVar.I = g4.c(y60Var, oVar.b.a2, oVar.getContext(), (i6) this.b, p3Var, true);
+        a70 a70Var = new a70(oVar, (h6) this.b, view, false, false, true);
+        a70Var.T = true;
+        oVar.I = h4.c(a70Var, oVar.b.a2, oVar.getContext(), (h6) this.b, q3Var, true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x003e  */
@@ -1077,7 +1078,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((ny0) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((py0) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -1146,7 +1147,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
     public /* synthetic */ void A0() {
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public void C() {
     }
 
@@ -1378,7 +1379,7 @@ public final class a implements j0, i, q3, xm0, kt, m1, rj0, wj0, ui.a, d, t {
                 this.c = new DataOutputStream(byteArrayOutputStream);
                 break;
             default:
-                this.b = new u5();
+                this.b = new t5();
                 this.c = new SparseIntArray();
                 break;
         }

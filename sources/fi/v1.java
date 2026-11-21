@@ -11,19 +11,19 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.hi;
+import org.telegram.ui.Components.ji;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.td;
+import org.telegram.ui.Components.ui;
 import org.telegram.ui.bn;
 import org.telegram.ui.cn0;
 import org.telegram.ui.d61;
 import org.telegram.ui.dn0;
-import org.telegram.ui.fg0;
+import org.telegram.ui.eg0;
 import org.telegram.ui.fn0;
 import org.telegram.ui.k90;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        fg0 fg0Var;
+        eg0 eg0Var;
         int i7 = this.a;
         int i10 = 2;
         boolean z10 = this.b;
@@ -55,7 +55,7 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
                     edit.putBoolean("storyQualityFull", z11).apply();
                     u12.getNotificationCenter().k(ks.o3, new Object[0]);
                 }
-                new lc(z3Var.M0, z3Var.l0).I(R.raw.chats_infotip, gd.M0(!z10 ? 2131744272 : 2131744275, null), gd.M0(!z10 ? 2131744273 : 2131744276, null)).j();
+                new lc(z3Var.M0, z3Var.l0).I(R.raw.chats_infotip, gd.N0(!z10 ? 2131744266 : 2131744269, null), gd.N0(!z10 ? 2131744267 : 2131744270, null)).j();
                 r3 r3Var = z3Var.d1;
                 if (r3Var != null) {
                     r3Var.a();
@@ -82,21 +82,21 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
                 }
                 break;
             case 2:
-                org.telegram.ui.ActionBar.r0 r0Var = (org.telegram.ui.ActionBar.r0) obj;
-                if (r0Var.y() && z10) {
-                    if (!r0Var.U) {
-                        r0Var.U = true;
-                        r0Var.r();
+                org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) obj;
+                if (q0Var.y() && z10) {
+                    if (!q0Var.U) {
+                        q0Var.U = true;
+                        q0Var.r();
                     }
                 }
-                org.telegram.ui.ActionBar.z zVar = r0Var.c;
-                if (zVar != null) {
-                    zVar.o(((Integer) view.getTag()).intValue());
+                org.telegram.ui.ActionBar.y yVar = q0Var.c;
+                if (yVar != null) {
+                    yVar.o(((Integer) view.getTag()).intValue());
                     break;
                 } else {
-                    org.telegram.ui.ActionBar.m0 m0Var = r0Var.Q;
-                    if (m0Var != null) {
-                        m0Var.g(((Integer) view.getTag()).intValue());
+                    org.telegram.ui.ActionBar.l0 l0Var = q0Var.Q;
+                    if (l0Var != null) {
+                        l0Var.g(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -115,47 +115,47 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
                 break;
             case 4:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                td tdVar = chatActivityEnterView.d6;
+                td tdVar = chatActivityEnterView.f6;
                 chatActivityEnterView.N0 = System.currentTimeMillis();
-                boolean r12 = chatActivityEnterView.r1();
-                if (!z10 && (fg0Var = chatActivityEnterView.M0) != null) {
-                    fg0Var.h(!r12);
+                boolean v12 = chatActivityEnterView.v1();
+                if (!z10 && (eg0Var = chatActivityEnterView.M0) != null) {
+                    eg0Var.h(!v12);
                     chatActivityEnterView.M0 = null;
                     break;
                 } else {
-                    chatActivityEnterView.c6 = !r12;
+                    chatActivityEnterView.e6 = !v12;
                     org.telegram.messenger.g0.r(tdVar);
                     org.telegram.messenger.g0.h3(tdVar, 500L);
                     break;
                 }
             case 5:
-                si siVar = (si) obj;
-                org.telegram.ui.ActionBar.h2 h2Var = siVar.a2;
-                if (siVar.O2 != 0) {
-                    siVar.X3.v0();
-                    siVar.dismiss();
+                ui uiVar = (ui) obj;
+                org.telegram.ui.ActionBar.g2 g2Var = uiVar.a2;
+                if (uiVar.O2 != 0) {
+                    uiVar.X3.v0();
+                    uiVar.dismiss();
                     break;
                 } else {
                     HashMap hashMap = new HashMap();
                     ArrayList arrayList = new ArrayList();
-                    fn0 fn0Var = new fn0(hashMap, arrayList, 0, true, (bn) h2Var);
-                    hi hiVar = new hi(siVar, hashMap, arrayList);
+                    fn0 fn0Var = new fn0(hashMap, arrayList, 0, true, (bn) g2Var);
+                    ji jiVar = new ji(uiVar, hashMap, arrayList);
                     cn0 cn0Var = fn0Var.a;
-                    cn0Var.t0 = hiVar;
+                    cn0Var.t0 = jiVar;
                     cn0 cn0Var2 = fn0Var.b;
-                    cn0Var2.t0 = hiVar;
+                    cn0Var2.t0 = jiVar;
                     cn0Var.u0 = new dn0(fn0Var, i11);
                     cn0Var2.u0 = new dn0(fn0Var, i10);
-                    int i13 = siVar.Q3;
-                    boolean z13 = siVar.R3;
+                    int i13 = uiVar.Q3;
+                    boolean z13 = uiVar.R3;
                     cn0Var.k0(i13, z13);
                     cn0Var2.k0(i13, z13);
                     if (z10) {
-                        h2Var.showAsSheet(fn0Var);
+                        g2Var.showAsSheet(fn0Var);
                     } else {
-                        h2Var.presentFragment(fn0Var);
+                        g2Var.presentFragment(fn0Var);
                     }
-                    siVar.dismiss();
+                    uiVar.dismiss();
                     break;
                 }
             default:

@@ -9,15 +9,15 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.PathInterpolator;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.si;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class ra {
-    public final si a;
+    public final ui a;
     public final ViewGroup b;
     public final View c;
     public final m7 d;
@@ -40,7 +40,7 @@ public final class ra {
     public final oa u;
 
     /* JADX WARN: Type inference failed for: r1v3, types: [org.telegram.ui.Wallet.oa] */
-    public ra(ViewGroup viewGroup, View view, m7 m7Var, n6 n6Var, TL_wallet.walletTransaction wallettransaction, Runnable runnable, si siVar) {
+    public ra(ViewGroup viewGroup, View view, m7 m7Var, n6 n6Var, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ui uiVar) {
         AnimatorSet animatorSet = new AnimatorSet();
         this.m = animatorSet;
         this.o = new RectF();
@@ -71,13 +71,13 @@ public final class ra {
                             raVar.c(rectF2.centerX(), rectF2.centerY(), rectF2.width());
                             n6 n6Var2 = raVar.e;
                             TL_wallet.walletTransaction wallettransaction3 = raVar.f;
-                            e51 e51Var = n6Var2.u0[0];
+                            h51 h51Var = n6Var2.u0[0];
                             f4 f4Var2 = null;
-                            if (e51Var != null) {
+                            if (h51Var != null) {
                                 int i10 = 0;
                                 while (true) {
-                                    if (i10 < e51Var.getChildCount()) {
-                                        View childAt = e51Var.getChildAt(i10);
+                                    if (i10 < h51Var.getChildCount()) {
+                                        View childAt = h51Var.getChildAt(i10);
                                         if ((childAt instanceof f4) && (wallettransaction2 = (f4Var = (f4) childAt).S) != null && d4.j(wallettransaction2, wallettransaction3)) {
                                             f4Var2 = f4Var;
                                         } else {
@@ -127,7 +127,7 @@ public final class ra {
                 }
             }
         };
-        this.a = siVar;
+        this.a = uiVar;
         this.b = viewGroup;
         this.c = view;
         this.d = m7Var;
@@ -176,13 +176,13 @@ public final class ra {
                             raVar.c(rectF2.centerX(), rectF2.centerY(), rectF2.width());
                             n6 n6Var2 = raVar.e;
                             TL_wallet.walletTransaction wallettransaction3 = raVar.f;
-                            e51 e51Var = n6Var2.u0[0];
+                            h51 h51Var = n6Var2.u0[0];
                             f4 f4Var2 = null;
-                            if (e51Var != null) {
+                            if (h51Var != null) {
                                 int i102 = 0;
                                 while (true) {
-                                    if (i102 < e51Var.getChildCount()) {
-                                        View childAt = e51Var.getChildAt(i102);
+                                    if (i102 < h51Var.getChildCount()) {
+                                        View childAt = h51Var.getChildAt(i102);
                                         if ((childAt instanceof f4) && (wallettransaction2 = (f4Var = (f4) childAt).S) != null && d4.j(wallettransaction2, wallettransaction3)) {
                                             f4Var2 = f4Var;
                                         } else {
@@ -237,27 +237,27 @@ public final class ra {
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addUpdateListener(new z3(this, 10));
         animatorSet.playTogether(ofFloat);
-        animatorSet.addListener(new qa(this, siVar, m7Var));
+        animatorSet.addListener(new qa(this, uiVar, m7Var));
         n6Var.T0();
         n6Var.c1(false);
-        bi.c6 c6Var = n6Var.a;
-        if (c6Var != null) {
-            c6Var.C0();
+        bi.g6 g6Var = n6Var.a;
+        if (g6Var != null) {
+            g6Var.C0();
             n6Var.a.f3.h1(0, 0);
-            e51 e51Var = n6Var.u0[0];
-            if (e51Var != null) {
-                z41 z41Var = e51Var.g3;
-                e51Var.C0();
-                z41Var.O(false);
-                for (int i11 = 0; i11 < z41Var.E.size(); i11++) {
-                    l41 G = z41Var.G(i11);
+            h51 h51Var = n6Var.u0[0];
+            if (h51Var != null) {
+                c51 c51Var = h51Var.g3;
+                h51Var.C0();
+                c51Var.O(false);
+                for (int i11 = 0; i11 < c51Var.E.size(); i11++) {
+                    o41 G = c51Var.G(i11);
                     if (G != null) {
                         Object obj = G.H;
                         if (obj instanceof TL_wallet.walletTransaction) {
                             TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
                             int i12 = d4.b;
                             if ((wallettransaction2 instanceof c4 ? ((c4) wallettransaction2).a : wallettransaction2) == wallettransaction || u0.t0((TL_wallet.walletTransaction) obj, wallettransaction)) {
-                                e51Var.f3.h1(i11, 0);
+                                h51Var.f3.h1(i11, 0);
                                 break;
                             }
                         } else {
@@ -345,14 +345,14 @@ public final class ra {
         paVar.removeView(m7Var);
         paVar.setClickable(false);
         this.d.setAlpha(this.l);
-        si siVar = this.a;
-        if (siVar == null) {
+        ui uiVar = this.a;
+        if (uiVar == null) {
             this.c.setTranslationY(0.0f);
         } else {
-            siVar.y1(1.0f);
+            uiVar.y1(1.0f);
         }
         ViewGroup viewGroup = this.b;
-        if (siVar != null && this.j.d()) {
+        if (uiVar != null && this.j.d()) {
             n6 n6Var = this.e;
             if (n6Var.getParentLayout() != null) {
                 ViewGroup view = n6Var.getParentLayout().getView();
@@ -368,7 +368,7 @@ public final class ra {
             }
         }
         this.g.run();
-        org.telegram.messenger.g0.h3(new c5(12, this, viewGroup), 650L);
+        org.telegram.messenger.g0.h3(new u4(14, this, viewGroup), 650L);
     }
 
     public final void c(float f10, float f11, float f12) {
@@ -384,9 +384,9 @@ public final class ra {
     }
 
     public final RectF d(m7 m7Var) {
-        si siVar = this.a;
+        ui uiVar = this.a;
         ViewGroup viewGroup = this.b;
-        if (siVar == null) {
+        if (uiVar == null) {
             return a(m7Var, viewGroup);
         }
         ViewGroup viewGroup2 = (ViewGroup) m7Var.getRootView();
@@ -403,12 +403,12 @@ public final class ra {
         RectF rectF = this.n;
         ViewGroup viewGroup = this.b;
         m7 m7Var = this.d;
-        si siVar = this.a;
-        if (siVar == null) {
+        ui uiVar = this.a;
+        if (uiVar == null) {
             f(m7Var, this.c, viewGroup, rectF);
         } else if (m7Var.isAttachedToWindow() && m7Var.getRootView() == viewGroup.getRootView()) {
             rectF.set(a(m7Var, viewGroup));
-            rectF.offset(0.0f, siVar.j4 - siVar.t2);
+            rectF.offset(0.0f, uiVar.j4 - uiVar.t2);
         }
     }
 }

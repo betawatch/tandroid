@@ -7,22 +7,22 @@ import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c4 extends ClickableSpan {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ String f;
     public final /* synthetic */ String h;
 
-    public c4(boolean[] zArr, int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var, long j3, String str, String str2) {
+    public c4(boolean[] zArr, int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, String str, String str2) {
         this.a = zArr;
         this.b = i7;
         this.c = context;
-        this.d = i6Var;
+        this.d = h6Var;
         this.e = j3;
         this.f = str;
         this.h = str2;
@@ -45,7 +45,7 @@ public final class c4 extends ClickableSpan {
         }
         TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
         getuniquestargift.slug = this.h.concat("-1");
-        ConnectionsManager.getInstance(i7).sendRequest(getuniquestargift, new bi.k1(8, j0Var, str));
+        ConnectionsManager.getInstance(i7).sendRequest(getuniquestargift, new bi.o1(8, j0Var, str));
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle

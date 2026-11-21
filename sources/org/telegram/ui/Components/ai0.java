@@ -1,61 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ai0 extends LinearLayout {
-    public boolean a;
+public final class ai0 extends v4.u0 {
+    public final /* synthetic */ v4.c0 a;
+    public final /* synthetic */ gi0 b;
 
-    public ai0(Context context) {
-        super(context);
+    public ai0(gi0 gi0Var, v4.c0 c0Var) {
+        this.b = gi0Var;
+        this.a = c0Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int i11;
-        wh0 wh0Var = null;
-        if (this.a) {
-            i11 = 0;
-        } else {
-            i11 = 0;
-            for (int i12 = 0; i12 < getChildCount(); i12++) {
-                if (getChildAt(i12) instanceof ei0) {
-                    wh0Var = ((ei0) getChildAt(i12)).e;
-                    if (wh0Var.getAdapter().b() == wh0Var.getChildCount()) {
-                        int childCount = wh0Var.getChildCount();
-                        for (int i13 = 0; i13 < childCount; i13++) {
-                            wh0Var.getChildAt(i13).measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), 0), i10);
-                            if (wh0Var.getChildAt(i13).getMeasuredWidth() > i11) {
-                                i11 = wh0Var.getChildAt(i13).getMeasuredWidth();
-                            }
-                        }
-                        i11 += org.telegram.messenger.g0.L(16.0f);
-                    }
-                }
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        int loadCount;
+        gi0 gi0Var = this.b;
+        if (gi0Var.x && gi0Var.y && !gi0Var.w) {
+            int N0 = this.a.N0();
+            int b10 = gi0Var.f.b() - 1;
+            loadCount = gi0Var.getLoadCount();
+            if (N0 >= b10 - loadCount) {
+                gi0Var.c();
             }
         }
-        int size = View.MeasureSpec.getSize(i7);
-        if (size < org.telegram.messenger.g0.L(240.0f)) {
-            size = org.telegram.messenger.g0.L(240.0f);
-        }
-        if (size > org.telegram.messenger.g0.L(280.0f)) {
-            size = org.telegram.messenger.g0.L(280.0f);
-        }
-        if (size < 0) {
-            size = 0;
-        }
-        if (i11 == 0 || i11 >= size) {
-            i11 = size;
-        }
-        if (wh0Var != null) {
-            for (int i14 = 0; i14 < wh0Var.getChildCount(); i14++) {
-                wh0Var.getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), i10);
-            }
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), i10);
     }
 }

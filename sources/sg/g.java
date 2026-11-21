@@ -5,7 +5,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g extends h {
     public static final List c = Arrays.asList(new g(2), new g(3), new g(4), new g(1), new g(0));
@@ -77,15 +77,15 @@ public final class g extends h {
     public final String n() {
         switch (this.b) {
             case 0:
-                return gd.M0(2131747483, null);
+                return gd.N0(2131747482, null);
             case 1:
-                return gd.M0(2131747481, null);
+                return gd.N0(2131747480, null);
             case 2:
-                return gd.M0(2131747480, null);
+                return gd.N0(2131747479, null);
             case 3:
-                return gd.M0(2131747469, null);
+                return gd.N0(2131747468, null);
             default:
-                return gd.M0(2131747468, null);
+                return gd.N0(2131747467, null);
         }
     }
 

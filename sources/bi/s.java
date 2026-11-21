@@ -3,14 +3,14 @@ package bi;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s extends hi.d {
+public final class s extends hi.e {
     public final /* synthetic */ int m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
-        super(context, i6Var, z10);
+    public /* synthetic */ s(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
+        super(context, h6Var, z10);
         this.m0 = i7;
     }
 
@@ -27,7 +27,7 @@ public final class s extends hi.d {
         }
     }
 
-    @Override // hi.d
+    @Override // hi.e
     public boolean j() {
         switch (this.m0) {
             case 1:

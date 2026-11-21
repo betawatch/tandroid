@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import c8.ma;
 import c8.nd;
-import hi.k3;
+import hi.j3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.fs;
@@ -21,12 +21,12 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.c31;
-import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.me;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.q31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h2 implements VoIPService.StateListener, fs {
     public static boolean T = false;
@@ -42,9 +42,8 @@ public final class h2 implements VoIPService.StateListener, fs {
     public boolean L;
     public long M;
     public int N;
-    public final androidx.emoji2.text.o O;
     public AnimatorSet P;
-    public final ai.k0 a;
+    public final ai.l0 a;
     public final g2 b;
     public WindowManager c;
     public WindowManager.LayoutParams d;
@@ -56,27 +55,26 @@ public final class h2 implements VoIPService.StateListener, fs {
     public final n2 s;
     public float w;
     public ValueAnimator x;
-    public final k3 y = new k3(this, 21);
+    public final j3 y = new j3(this, 21);
     public final float[] E = new float[2];
+    public final androidx.emoji2.text.o O = new androidx.emoji2.text.o(8);
     public final e2 Q = new e2(this, 0);
     public final e2 R = new e2(this, 1);
     public final f2 S = new f2();
 
     public h2(Context context, int i7, int i10, boolean z10) {
-        int i11 = 8;
-        this.O = new androidx.emoji2.text.o(i11);
         this.f = i7;
         this.h = i10;
         float f10 = i10 * 0.4f;
-        int i12 = ((int) ((f10 * 1.05f) - f10)) / 2;
-        this.G = i12;
+        int i11 = ((int) ((f10 * 1.05f) - f10)) / 2;
+        this.G = i11;
         float f11 = i7 * 0.4f;
-        int i13 = ((int) ((1.05f * f11) - f11)) / 2;
-        this.F = i13;
-        ai.k0 k0Var = new ai.k0(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), 22);
-        this.a = k0Var;
-        k0Var.setWillNotDraw(false);
-        k0Var.setPadding(i13, i12, i13, i12);
+        int i12 = ((int) ((1.05f * f11) - f11)) / 2;
+        this.F = i12;
+        ai.l0 l0Var = new ai.l0(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), 22);
+        this.a = l0Var;
+        l0Var.setWillNotDraw(false);
+        l0Var.setPadding(i12, i11, i12, i11);
         g2 g2Var = new g2(this, context);
         this.b = g2Var;
         n2 n2Var = new n2(context, false, true);
@@ -88,9 +86,9 @@ public final class h2 implements VoIPService.StateListener, fs {
         g2Var.addView(n2Var);
         g2Var.addView(n2Var2);
         g2Var.setBackgroundColor(-7829368);
-        k0Var.addView(g2Var);
-        k0Var.setClipChildren(false);
-        k0Var.setClipToPadding(false);
+        l0Var.addView(g2Var);
+        l0Var.setClipChildren(false);
+        l0Var.setClipToPadding(false);
         if (z10) {
             View view = new View(context);
             this.n = view;
@@ -99,15 +97,15 @@ public final class h2 implements VoIPService.StateListener, fs {
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(R.drawable.pip_close);
             imageView.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-            imageView.setContentDescription(gd.M0(2131752030, null));
+            imageView.setContentDescription(gd.N0(2131752029, null));
             g2Var.addView(imageView, ma.d(40, 40.0f, 53, 4.0f, 4.0f, 4.0f, 0.0f));
             ImageView imageView2 = new ImageView(context);
             imageView2.setImageResource(R.drawable.pip_enlarge);
             imageView2.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-            imageView2.setContentDescription(gd.M0(2131747624, null));
+            imageView2.setContentDescription(gd.N0(2131747623, null));
             g2Var.addView(imageView2, ma.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new bi.o(19));
-            imageView2.setOnClickListener(new c31(i11, this, context));
+            imageView2.setOnClickListener(new q31(6, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
@@ -305,7 +303,7 @@ public final class h2 implements VoIPService.StateListener, fs {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, this.I ? 1.0f : 0.0f);
             this.x = ofFloat;
             ofFloat.addUpdateListener(this.y);
-            this.x.setDuration(300L).setInterpolator(lr.f);
+            this.x.setDuration(300L).setInterpolator(nr.f);
             this.x.start();
         }
     }

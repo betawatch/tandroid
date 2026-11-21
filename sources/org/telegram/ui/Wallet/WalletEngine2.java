@@ -35,11 +35,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.n21;
+import org.telegram.ui.Components.q21;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.wt0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class WalletEngine2 implements AutoCloseable {
     private static final long NFT_ATTACHED_NANOGRAMS = 100000000;
@@ -57,16 +57,16 @@ public class WalletEngine2 implements AutoCloseable {
     public final byte[] publicKey;
     private ScheduledFuture<?> resolutionTask;
     private final HttpTransport transport;
-    private final ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor(new ai.y0(5));
+    private final ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor(new ai.a1(5));
     private long nextAuxiliaryRequestId = -1;
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class HttpTransport {
         private boolean closed;
         public final int currentAccount;
         private final HashMap<Long, z7> pending = new HashMap<>();
 
-        /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+        /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
         public static class HostException extends RuntimeException {
             final int kind;
 
@@ -227,7 +227,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static final class ImportedWalletProof {
         public final byte[] publicKey;
         public final byte[] signature;
@@ -240,7 +240,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class PreparedRotation {
         final byte[] newPublicKey;
         final r0 newSecretPhrase;
@@ -267,7 +267,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class PreparedSend {
         final String encryptedCommentBody;
         final TL_wallet.sendTransfer transfer;
@@ -296,7 +296,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class RotationCallbacks extends SendCallbacks {
         private final q10 onReplacement;
 
@@ -373,7 +373,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class SendCallbacks {
         final s10 callback;
         String error;
@@ -413,7 +413,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public enum SendPhase {
         IDLE(1),
         VALIDATING(2),
@@ -450,7 +450,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class SendResolution {
         final String error;
         final String operationId;
@@ -1044,7 +1044,7 @@ public class WalletEngine2 implements AutoCloseable {
             org.telegram.messenger.a8.g(e10, true);
             wallettransaction = null;
         }
-        org.telegram.messenger.g0.g3(new c5(6, x10Var, wallettransaction));
+        org.telegram.messenger.g0.g3(new u4(8, x10Var, wallettransaction));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2213,7 +2213,7 @@ public class WalletEngine2 implements AutoCloseable {
             e = e11;
             RejectedExecutionException rejectedExecutionException = e;
             Arrays.fill(c10, (byte) 0);
-            org.telegram.messenger.g0.g3(new n21(l2.i("schedule transaction signing", rejectedExecutionException), 2, q10Var2));
+            org.telegram.messenger.g0.g3(new q21(l2.i("schedule transaction signing", rejectedExecutionException), 2, q10Var2));
         }
     }
 
@@ -2227,12 +2227,12 @@ public class WalletEngine2 implements AutoCloseable {
             q10Var2 = q10Var;
         }
         try {
-            this.worker.execute(new bi.h2(this, c10, k2Var, str, k2Var2, q10Var2, 26));
+            this.worker.execute(new bi.l2(this, c10, k2Var, str, k2Var2, q10Var2, 26));
         } catch (RejectedExecutionException e11) {
             e = e11;
             RejectedExecutionException rejectedExecutionException = e;
             Arrays.fill(c10, (byte) 0);
-            org.telegram.messenger.g0.g3(new n21(l2.i("schedule transaction signing", rejectedExecutionException), 1, q10Var2));
+            org.telegram.messenger.g0.g3(new q21(l2.i("schedule transaction signing", rejectedExecutionException), 1, q10Var2));
         }
     }
 
@@ -2248,7 +2248,7 @@ public class WalletEngine2 implements AutoCloseable {
         try {
             this.worker.execute(new p(this, k2Var, q10Var, 20));
         } catch (RejectedExecutionException e10) {
-            org.telegram.messenger.g0.g3(new n21(l2.i("schedule transaction preview", e10), 3, q10Var));
+            org.telegram.messenger.g0.g3(new q21(l2.i("schedule transaction preview", e10), 3, q10Var));
         }
     }
 
@@ -2317,7 +2317,7 @@ public class WalletEngine2 implements AutoCloseable {
                     try {
                         q10Var2 = q10Var;
                         try {
-                            this.worker.execute(new bi.h2(this, str, str2, str3, c10, q10Var2, 27));
+                            this.worker.execute(new bi.l2(this, str, str2, str3, c10, q10Var2, 27));
                         } catch (RejectedExecutionException unused) {
                             Arrays.fill(c10, (byte) 0);
                             org.telegram.messenger.g0.g3(new u(q10Var2, 8));

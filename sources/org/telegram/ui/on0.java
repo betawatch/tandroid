@@ -15,7 +15,7 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -37,17 +37,17 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
         switch (this.a) {
             case 0:
                 PhotoViewer photoViewer = this.b;
-                tg.b2 b2Var = (tg.b2) obj;
+                tg.c2 c2Var = (tg.c2) obj;
                 Drawable[] drawableArr = PhotoViewer.Z8;
                 try {
                     boolean isEmpty = TextUtils.isEmpty(((org.telegram.messenger.xe) photoViewer.g7.get(photoViewer.P4)).i);
-                    tg.e2 e2Var = photoViewer.p5;
-                    e2Var.M = true;
-                    e2Var.F = b2Var;
+                    tg.f2 f2Var = photoViewer.p5;
+                    f2Var.M = true;
+                    f2Var.F = c2Var;
                     Bitmap n10 = photoViewer.C4.n();
                     int i12 = photoViewer.C4.V;
-                    tg.b2 b2Var2 = e2Var.F;
-                    photoViewer.C4.v0(b2Var2 == null ? e2Var.J : (isEmpty || n10 == null) ? b2Var2.b() : e2Var.e(n10));
+                    tg.c2 c2Var2 = f2Var.F;
+                    photoViewer.C4.v0(c2Var2 == null ? f2Var.J : (isEmpty || n10 == null) ? c2Var2.b() : f2Var.e(n10));
                     photoViewer.t5.setUndoCutState(true);
                     photoViewer.Y2(true, true);
                     photoViewer.t5.post(new hn0(photoViewer, i10));
@@ -85,7 +85,7 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
                 photoViewer3.M1.R1 = photoViewer3.L1.c();
                 photoViewer3.f0.invalidate();
                 int max = Math.max(((Integer) obj).intValue(), photoViewer3.M1.T1);
-                float L = (!(photoViewer3.M1.C0 instanceof tg.m2) || max <= 0) ? 0.0f : ((org.telegram.messenger.g0.q.y - max) - org.telegram.messenger.g0.L(80.0f)) - photoViewer3.M1.getSelectedEntityBottom();
+                float L = (!(photoViewer3.M1.C0 instanceof tg.n2) || max <= 0) ? 0.0f : ((org.telegram.messenger.g0.q.y - max) - org.telegram.messenger.g0.L(80.0f)) - photoViewer3.M1.getSelectedEntityBottom();
                 ValueAnimator valueAnimator = photoViewer3.s7;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
@@ -99,8 +99,8 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
                 ofFloat.addUpdateListener(new gn0(photoViewer3, i10));
                 photoViewer3.s7.setDuration(320L);
                 ValueAnimator valueAnimator2 = photoViewer3.s7;
-                org.telegram.ui.Components.lr lrVar = org.telegram.ui.Components.lr.h;
-                valueAnimator2.setInterpolator(lrVar);
+                org.telegram.ui.Components.nr nrVar = org.telegram.ui.Components.nr.h;
+                valueAnimator2.setInterpolator(nrVar);
                 photoViewer3.s7.start();
                 AnimatorSet animatorSet = photoViewer3.K1;
                 if (animatorSet != null) {
@@ -110,25 +110,25 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
                 ofFloat2.addUpdateListener(new gn0(photoViewer3, i11));
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 photoViewer3.K1 = animatorSet2;
-                tg.m1 m1Var = photoViewer3.M1.V0;
+                tg.n1 n1Var = photoViewer3.M1.V0;
                 Property property = View.TRANSLATION_Y;
-                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(m1Var, (Property<tg.m1, Float>) property, (-max) / 2.5f);
-                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(photoViewer3.M1.M0, (Property<tg.e0, Float>) property, Math.min(0, org.telegram.messenger.g0.L(40.0f) + r15));
+                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(n1Var, (Property<tg.n1, Float>) property, (-max) / 2.5f);
+                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(photoViewer3.M1.M0, (Property<tg.f0, Float>) property, Math.min(0, org.telegram.messenger.g0.L(40.0f) + r15));
                 hi.x4 x4Var = photoViewer3.M1.P0;
                 Property property2 = View.ALPHA;
-                animatorSet2.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofFloat(x4Var, (Property<hi.x4, Float>) property2, max > org.telegram.messenger.g0.L(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer3.M1.k0, (Property<tg.v0, Float>) property2, max > org.telegram.messenger.g0.L(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer3.M1.l0, (Property<tg.z0, Float>) property2, max > org.telegram.messenger.g0.L(20.0f) ? 0.0f : 1.0f), ofFloat2);
+                animatorSet2.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofFloat(x4Var, (Property<hi.x4, Float>) property2, max > org.telegram.messenger.g0.L(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer3.M1.k0, (Property<tg.w0, Float>) property2, max > org.telegram.messenger.g0.L(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer3.M1.l0, (Property<tg.a1, Float>) property2, max > org.telegram.messenger.g0.L(20.0f) ? 0.0f : 1.0f), ofFloat2);
                 animatorSet2.setDuration(320L);
-                animatorSet2.setInterpolator(lrVar);
+                animatorSet2.setInterpolator(nrVar);
                 animatorSet2.start();
                 vp0 vp0Var = photoViewer3.M1;
-                tg.e1 e1Var = vp0Var.e1;
-                if (e1Var != null) {
+                tg.f1 f1Var = vp0Var.e1;
+                if (f1Var != null) {
                     if (vp0Var.R1) {
-                        e1Var.a(R.drawable.input_smile);
+                        f1Var.a(R.drawable.input_smile);
                     } else if (vp0Var.Q1) {
-                        e1Var.a(R.drawable.input_keyboard);
+                        f1Var.a(R.drawable.input_keyboard);
                     } else {
-                        e1Var.a(R.drawable.msg_add);
+                        f1Var.a(R.drawable.msg_add);
                     }
                 }
                 TextView textView = vp0Var.i1;
@@ -152,11 +152,11 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
                 PhotoViewer photoViewer4 = this.b;
                 org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) obj;
                 if (!photoViewer4.q5.b.R && (i7 = photoViewer4.P4) >= 0 && i7 < photoViewer4.g7.size() && (photoViewer4.g7.get(photoViewer4.P4) instanceof org.telegram.messenger.ef)) {
-                    org.telegram.ui.Components.ee0 ee0Var = photoViewer4.q5;
-                    hi.i3 i3Var = ee0Var.h;
-                    if (i3Var != null) {
-                        i3Var.dismiss();
-                        ee0Var.h = null;
+                    org.telegram.ui.Components.fe0 fe0Var = photoViewer4.q5;
+                    hi.h3 h3Var = fe0Var.h;
+                    if (h3Var != null) {
+                        h3Var.dismiss();
+                        fe0Var.h = null;
                     }
                     photoViewer4.q5.b.setLoading(true);
                     Utilities.e.c(new kg0((org.telegram.messenger.fs) photoViewer4, (Object) efVar, photoViewer4.g7.get(photoViewer4.P4), PhotoViewer.v1(), 4));
@@ -187,9 +187,9 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
                 photoViewer6.f1.setTranslationY(photoViewer6.V1.getAlpha() * (-i5.c.d(46.0f, num2.intValue(), 0)));
                 photoViewer6.g1.setTranslationY(photoViewer6.V1.getAlpha() * (-i5.c.d(46.0f, num2.intValue(), 0)));
                 photoViewer6.h1.setTranslationY(photoViewer6.V1.getAlpha() * (-i5.c.d(46.0f, num2.intValue(), 0)));
-                hi.i iVar = photoViewer6.V1.N;
-                if (iVar != null) {
-                    iVar.setTranslationY((-num2.intValue()) - org.telegram.messenger.g0.L(14.0f));
+                hi.j jVar = photoViewer6.V1.N;
+                if (jVar != null) {
+                    jVar.setTranslationY((-num2.intValue()) - org.telegram.messenger.g0.L(14.0f));
                     break;
                 }
                 break;
@@ -209,9 +209,9 @@ public final /* synthetic */ class on0 implements org.telegram.messenger.x10 {
                 break;
             case 8:
                 Integer num4 = (Integer) obj;
-                hi.i iVar2 = this.b.W1.N;
-                if (iVar2 != null) {
-                    iVar2.setTranslationY(num4.intValue());
+                hi.j jVar2 = this.b.W1.N;
+                if (jVar2 != null) {
+                    jVar2.setTranslationY(num4.intValue());
                     break;
                 }
                 break;

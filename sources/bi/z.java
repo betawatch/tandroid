@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements q10 {
     public final /* synthetic */ int a = 2;
@@ -56,7 +56,7 @@ public final /* synthetic */ class z implements q10 {
         switch (i11) {
             case 0:
                 Context context = (Context) obj5;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj4;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj4;
                 Runnable runnable = (Runnable) obj3;
                 q9 q9Var = (q9) obj;
                 if (q9Var != null) {
@@ -84,34 +84,34 @@ public final /* synthetic */ class z implements q10 {
                         g10.addView(new di.c6(context, O0, O02), ma.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context);
                         ks.i(textView);
-                        textView.setText(gd.M0(2131750289, null));
-                        int i14 = org.telegram.ui.ActionBar.n6.j5;
-                        org.telegram.messenger.f3.l(textView, i14, i6Var, 1, 20.0f);
+                        textView.setText(gd.N0(2131750288, null));
+                        int i14 = org.telegram.ui.ActionBar.m6.j5;
+                        org.telegram.messenger.f3.l(textView, i14, h6Var, 1, 20.0f);
                         textView.setGravity(gd.a0 ? 5 : 3);
                         g10.addView(textView, ma.d(-2, -2.0f, (gd.a0 ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context);
-                        org.telegram.ui.ActionBar.u6.U(textView2, i14, i6Var);
+                        org.telegram.ui.ActionBar.t6.U(textView2, i14, h6Var);
                         textView2.setTextSize(1, 16.0f);
                         String t6 = org.telegram.messenger.n5.t(o4);
                         String t10 = org.telegram.messenger.n5.t(j10);
                         Object[] objArr = new Object[2];
                         objArr[i10] = t6;
                         objArr[1] = t10;
-                        org.telegram.messenger.f3.q(null, null, 2131750288, objArr, textView2);
+                        org.telegram.messenger.f3.q(null, null, 2131750287, objArr, textView2);
                         g10.addView(textView2, ma.t(-1, -2, 48, 24, 4, 24, 4));
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i10, context, i6Var);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i10, context, h6Var);
                         alertDialog$Builder.o(g10);
-                        alertDialog$Builder.k(gd.M0(2131751760, null), new a1.c(e0Var, 12));
-                        alertDialog$Builder.h(gd.M0(2131752578, null), null);
+                        alertDialog$Builder.k(gd.N0(2131751759, null), new a1.c(e0Var, 13));
+                        alertDialog$Builder.h(gd.N0(2131752577, null), null);
                         alertDialog$Builder.a.show();
                         break;
                     } else if (q9Var.e.bid_date > 0 && !q9Var.f()) {
-                        y yVar = new y(context, i6Var, null, q9Var);
+                        y yVar = new y(context, h6Var, null, q9Var);
                         yVar.j2 = runnable;
                         yVar.show();
                         break;
                     } else {
-                        new m0(context, i6Var, j10, q9Var.d, runnable).show();
+                        new m0(context, h6Var, j10, q9Var.d, runnable).show();
                         break;
                     }
                 }
@@ -135,7 +135,7 @@ public final /* synthetic */ class z implements q10 {
                     if (!o0Var.F) {
                         ci.z0 z0Var = o0Var.b;
                         z0Var.getClass();
-                        z0Var.d1(R.drawable.msg_warning, gd.M0(2131751094, null), null);
+                        z0Var.d1(R.drawable.msg_warning, gd.N0(2131751093, null), null);
                         break;
                     }
                 }
@@ -196,9 +196,9 @@ public final /* synthetic */ class z implements q10 {
         }
     }
 
-    public /* synthetic */ z(Context context, org.telegram.ui.ActionBar.i6 i6Var, int i7, long j3, Runnable runnable) {
+    public /* synthetic */ z(Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7, long j3, Runnable runnable) {
         this.d = context;
-        this.e = i6Var;
+        this.e = h6Var;
         this.b = i7;
         this.c = j3;
         this.f = runnable;

@@ -1,91 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PointF;
-import android.view.animation.Interpolator;
-import android.view.animation.PathInterpolator;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class lr implements Interpolator {
-    public static final lr f = new lr(0.25d, 0.1d, 0.25d, 1.0d);
-    public static final lr g = new lr(0.0d, 0.0d, 0.58d, 1.0d);
-    public static final lr h = new lr(0.23d, 1.0d, 0.32d, 1.0d);
-    public static final lr i = new lr(0.42d, 0.0d, 1.0d, 1.0d);
-    public static final lr j = new lr(0.42d, 0.0d, 0.58d, 1.0d);
-    public static final lr k = new lr(0.34d, 1.56d, 0.64d, 1.0d);
-    public static final PathInterpolator l;
-    public final PointF a;
-    public final PointF b;
-    public final PointF c;
-    public final PointF d;
-    public final PointF e;
+public final class lr implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mr b;
 
-    static {
-        new PathInterpolator(c8.l0.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
-        new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
-        new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
-        l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);
+    public /* synthetic */ lr(mr mrVar, int i7) {
+        this.a = i7;
+        this.b = mrVar;
     }
 
-    public lr(float f10, float f11, float f12, float f13) {
-        PointF pointF = new PointF(f10, f11);
-        PointF pointF2 = new PointF(f12, f13);
-        this.c = new PointF();
-        this.d = new PointF();
-        this.e = new PointF();
-        float f14 = pointF.x;
-        if (f14 < 0.0f || f14 > 1.0f) {
-            throw new IllegalArgumentException("startX value must be in the range [0, 1]");
-        }
-        float f15 = pointF2.x;
-        if (f15 < 0.0f || f15 > 1.0f) {
-            throw new IllegalArgumentException("endX value must be in the range [0, 1]");
-        }
-        this.a = pointF;
-        this.b = pointF2;
-    }
-
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f10) {
-        PointF pointF;
-        PointF pointF2;
-        PointF pointF3;
-        PointF pointF4;
-        PointF pointF5;
-        int i7 = 1;
-        float f11 = f10;
-        while (true) {
-            pointF = this.b;
-            pointF2 = this.a;
-            pointF3 = this.c;
-            pointF4 = this.d;
-            pointF5 = this.e;
-            if (i7 >= 14) {
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 0:
+                mr mrVar = this.b;
+                if (mrVar.c < 1.0f) {
+                    mrVar.invalidateSelf();
+                    break;
+                }
                 break;
-            }
-            float f12 = pointF2.x * 3.0f;
-            pointF5.x = f12;
-            float f13 = ((pointF.x - pointF2.x) * 3.0f) - f12;
-            pointF4.x = f13;
-            float f14 = (1.0f - pointF5.x) - f13;
-            pointF3.x = f14;
-            float f15 = (((((f14 * f11) + pointF4.x) * f11) + pointF5.x) * f11) - f10;
-            if (Math.abs(f15) < 0.001d) {
+            default:
+                mr mrVar2 = this.b;
+                if (mrVar2.c > 0.0f) {
+                    mrVar2.invalidateSelf();
+                    break;
+                }
                 break;
-            }
-            f11 -= f15 / (((((pointF3.x * 3.0f) * f11) + (pointF4.x * 2.0f)) * f11) + pointF5.x);
-            i7++;
         }
-        float f16 = pointF2.y * 3.0f;
-        pointF5.y = f16;
-        float f17 = ((pointF.y - pointF2.y) * 3.0f) - f16;
-        pointF4.y = f17;
-        float f18 = (1.0f - pointF5.y) - f17;
-        pointF3.y = f18;
-        return ((((f18 * f11) + pointF4.y) * f11) + pointF5.y) * f11;
     }
 
-    public lr(double d, double d2, double d10, double d11) {
-        this((float) d, (float) d2, (float) d10, (float) d11);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        switch (this.a) {
+            case 0:
+                mr mrVar = this.b;
+                if (mrVar.c < 1.0f) {
+                    mrVar.scheduleSelf(runnable, j3);
+                    break;
+                }
+                break;
+            default:
+                mr mrVar2 = this.b;
+                if (mrVar2.c > 0.0f) {
+                    mrVar2.scheduleSelf(runnable, j3);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                mr mrVar = this.b;
+                if (mrVar.c < 1.0f) {
+                    mrVar.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+            default:
+                mr mrVar2 = this.b;
+                if (mrVar2.c > 0.0f) {
+                    mrVar2.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+        }
     }
 }

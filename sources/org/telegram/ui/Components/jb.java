@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jb implements r1.d {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class jb implements r1.d {
                 ((xa) this.c).accept(Float.valueOf(this.b.getTranslationY()));
                 break;
             default:
-                ((pl) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                ((rl) this.c).accept(Float.valueOf(this.b.getTranslationY()));
                 break;
         }
     }

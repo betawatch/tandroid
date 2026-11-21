@@ -1,67 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class y31 extends vy {
-    public final /* synthetic */ h41 Y;
+public final class y31 {
+    public final /* synthetic */ h41 a;
+    public final /* synthetic */ k41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y31(h41 h41Var, int i7, x31 x31Var) {
-        super(5, i7, x31Var);
-        this.Y = h41Var;
+    public y31(k41 k41Var, h41 h41Var) {
+        this.b = k41Var;
+        this.a = h41Var;
     }
 
-    @Override // org.telegram.ui.Components.vy
-    public final boolean D1() {
-        h41 h41Var = this.Y;
-        return h41Var.n.getAdapter() == h41Var.w;
+    public final int a() {
+        return this.b.s.w;
     }
 
-    @Override // v4.c0
-    public final boolean Y0() {
-        return org.telegram.messenger.gd.a0;
-    }
-
-    @Override // v4.t, v4.c0, v4.p0
-    public final int o0(int i7, v4.x0 x0Var, v4.c1 c1Var) {
-        int i10;
-        View m10;
-        h41 h41Var = this.Y;
-        if (h41Var.O) {
-            return super.o0(i7, x0Var, c1Var);
-        }
-        int i11 = 0;
-        if (h41Var.M != null) {
-            return 0;
-        }
-        if (h41Var.N) {
-            while (true) {
-                i10 = 1;
-                if (i11 >= r()) {
-                    break;
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        k41 k41Var = this.b;
+        a41 a41Var = k41Var.n;
+        if (z10) {
+            v4.i0 adapter = a41Var.getAdapter();
+            jg.c2 c2Var = k41Var.w;
+            if (adapter != c2Var) {
+                a41Var.setAdapter(c2Var);
+                if (a41Var.getAdapter().b() <= 0) {
+                    k41Var.r.i1(0, org.telegram.messenger.g0.L(58.0f) + (-a41Var.getPaddingTop()) + k41Var.F, false);
+                    return;
                 }
-                x31 x31Var = h41Var.n;
-                View q10 = q(i11);
-                x31Var.getClass();
-                int R = RecyclerView.R(q10);
-                if (R < 1) {
-                    i10 = R;
-                    break;
-                }
-                i11++;
-            }
-            if (i10 == 0 && (m10 = h41Var.r.m(i10)) != null && m10.getTop() - i7 > org.telegram.messenger.g0.L(58.0f)) {
-                i7 = m10.getTop() - org.telegram.messenger.g0.L(58.0f);
+                return;
             }
         }
-        return super.o0(i7, x0Var, c1Var);
-    }
-
-    @Override // v4.t, v4.c0, v4.p0
-    public final boolean y0() {
-        return false;
+        if (z10) {
+            return;
+        }
+        v4.i0 adapter2 = a41Var.getAdapter();
+        j41 j41Var = k41Var.s;
+        if (adapter2 == j41Var) {
+            return;
+        }
+        a41Var.setAdapter(j41Var);
+        if (a41Var.getAdapter().b() <= 0) {
+        }
     }
 }

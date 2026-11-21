@@ -3,13 +3,14 @@ package l2;
 import a8.la;
 import android.util.Pair;
 import java.util.ArrayList;
+import kg.x1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class w0 {
     public final m2.d c;
     public final h2.i0 d;
-    public final ki.e e;
+    public final x1 e;
     public long f;
     public int g;
     public boolean h;
@@ -25,10 +26,10 @@ public final class w0 {
     public final e2.k1 b = new e2.k1();
     public ArrayList q = new ArrayList();
 
-    public w0(m2.d dVar, h2.i0 i0Var, ki.e eVar) {
+    public w0(m2.d dVar, h2.i0 i0Var, x1 x1Var) {
         this.c = dVar;
         this.d = i0Var;
-        this.e = eVar;
+        this.e = x1Var;
     }
 
     public static x2.g0 o(e2.l1 l1Var, Object obj, long j3, long j10, e2.k1 k1Var, e2.i1 i1Var) {
@@ -370,7 +371,7 @@ public final class w0 {
             p10.c(u0Var.g.a);
         }
         u0 u0Var2 = this.j;
-        this.d.d(new kg.i0(this, p10, u0Var2 == null ? null : u0Var2.g.a, 9));
+        this.d.d(new kg.y(this, p10, u0Var2 == null ? null : u0Var2.g.a, 10));
     }
 
     /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, x2.f1] */

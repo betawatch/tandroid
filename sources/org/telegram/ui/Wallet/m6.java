@@ -10,9 +10,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class m6 extends Drawable {
     public final /* synthetic */ int a;
@@ -30,12 +30,12 @@ public final class m6 extends Drawable {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        this.d = new org.telegram.ui.Components.c6(new org.telegram.ui.web.z0(this, 1), 350L, lr.h, 0);
+        this.d = new org.telegram.ui.Components.d6(new org.telegram.ui.web.z0(this, 1), 350L, nr.h, 0);
     }
 
     public void c() {
         invalidateSelf();
-        ((org.telegram.ui.l0) this.e).P.setContentDescription(gd.M0(2131750571, null));
+        ((org.telegram.ui.l0) this.e).P.setContentDescription(gd.N0(2131750570, null));
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -45,7 +45,7 @@ public final class m6 extends Drawable {
                 canvas.drawPath(this.b, this.c);
                 break;
             default:
-                float d = ((org.telegram.ui.Components.c6) this.d).d(true);
+                float d = ((org.telegram.ui.Components.d6) this.d).d(true);
                 float centerX = getBounds().centerX();
                 float centerY = getBounds().centerY();
                 float width = getBounds().width();

@@ -36,7 +36,6 @@ import android.widget.FrameLayout;
 import c8.ma;
 import com.google.android.gms.internal.vision.e2;
 import com.google.android.gms.internal.vision.u2;
-import com.google.android.gms.internal.vision.x1;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
@@ -50,25 +49,25 @@ import org.telegram.messenger.x10;
 import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.s4;
-import org.telegram.ui.ActionBar.y1;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.nd0;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.ActionBar.x1;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b0 extends FrameLayout {
-    public static final lr A0 = new lr(0.05d, 0.7d, 0.1d, 1.0d);
-    public static final lr B0 = new lr(0.3d, 0.0d, 0.1d, 1.0d);
+    public static final nr A0 = new nr(0.05d, 0.7d, 0.1d, 1.0d);
+    public static final nr B0 = new nr(0.3d, 0.0d, 0.1d, 1.0d);
     public final Paint E;
     public final Paint F;
     public final b1 G;
     public final Drawable H;
     public final Drawable I;
     public final Drawable J;
-    public final y1 K;
+    public final x1 K;
     public final TextPaint L;
     public String M;
     public final TextPaint N;
@@ -140,8 +139,8 @@ public final class b0 extends FrameLayout {
         Paint paint2 = new Paint(1);
         this.F = paint2;
         this.G = new b1(0);
-        y1 y1Var = new y1(true);
-        this.K = y1Var;
+        x1 x1Var = new x1(true);
+        this.K = x1Var;
         TextPaint textPaint = new TextPaint(1);
         this.L = textPaint;
         this.N = new TextPaint(1);
@@ -168,8 +167,8 @@ public final class b0 extends FrameLayout {
         this.H = o(activity, R.drawable.msg_qr_scan);
         this.I = o(activity, R.drawable.qr_flashlight);
         this.J = o(activity, R.drawable.qr_gallery);
-        y1Var.a(-1);
-        y1Var.b(-1);
+        x1Var.a(-1);
+        x1Var.b(-1);
         textPaint.setColor(-1);
         textPaint.setTextSize(org.telegram.messenger.g0.L(22.0f));
         textPaint.setTypeface(org.telegram.messenger.g0.o());
@@ -234,14 +233,14 @@ public final class b0 extends FrameLayout {
         int height = bitmap.getHeight();
         int i10 = 0;
         if (nVar != null && nVar.b.k()) {
-            nd0 nd0Var = new nd0(18);
+            md0 md0Var = new md0(18);
             int width2 = bitmap.getWidth();
             int height2 = bitmap.getHeight();
-            nd0Var.d = bitmap;
-            b7.d dVar = (b7.d) nd0Var.b;
+            md0Var.d = bitmap;
+            b7.d dVar = (b7.d) md0Var.b;
             dVar.a = width2;
             dVar.b = height2;
-            SparseArray e12 = nVar.e1(nd0Var);
+            SparseArray e12 = nVar.e1(md0Var);
             for (int i11 = 0; i11 < e12.size(); i11++) {
                 u8.m mVar = (u8.m) e12.valueAt(i11);
                 String str = mVar.b;
@@ -315,10 +314,10 @@ public final class b0 extends FrameLayout {
         return f10 >= rectF.left - ((float) org.telegram.messenger.g0.L(8.0f)) && f10 <= rectF.right + ((float) org.telegram.messenger.g0.L(8.0f)) && f11 >= rectF.top - ((float) org.telegram.messenger.g0.L(8.0f)) && f11 <= rectF.bottom + ((float) org.telegram.messenger.g0.L(8.0f));
     }
 
-    public static b0 k(b51 b51Var, View view, y10 y10Var, x10 x10Var, Runnable runnable) {
-        s4 parentLayout = b51Var.getParentLayout();
+    public static b0 k(e51 e51Var, View view, y10 y10Var, x10 x10Var, Runnable runnable) {
+        r4 parentLayout = e51Var.getParentLayout();
         FrameLayout overlayContainerView = parentLayout != null ? parentLayout.getOverlayContainerView() : null;
-        if (overlayContainerView == null || b51Var.getParentActivity() == null) {
+        if (overlayContainerView == null || e51Var.getParentActivity() == null) {
             return null;
         }
         overlayContainerView.getLocationInWindow(new int[2]);
@@ -327,10 +326,10 @@ public final class b0 extends FrameLayout {
         float width = (view.getWidth() / 2.0f) + (r1[0] - r2[0]);
         float height = (view.getHeight() / 2.0f) + (r1[1] - r2[1]);
         float f10 = min / 2.0f;
-        b0 b0Var = new b0(b51Var.getParentActivity(), new RectF(width - f10, height - f10, width + f10, height + f10), new RectF(), new wf.b(10, x10Var, runnable));
+        b0 b0Var = new b0(e51Var.getParentActivity(), new RectF(width - f10, height - f10, width + f10, height + f10), new RectF(), new wf.b(10, x10Var, runnable));
         b0Var.setPlainButton(true);
         b0Var.setAccept(y10Var);
-        b0Var.setOnGallery(new ai.s(b51Var, b0Var, y10Var, x10Var, 5));
+        b0Var.setOnGallery(new ai.r(e51Var, b0Var, y10Var, x10Var, 5));
         overlayContainerView.addView(b0Var, ma.c(-1.0f, -1));
         return b0Var;
     }
@@ -339,7 +338,7 @@ public final class b0 extends FrameLayout {
         u8.n nVar;
         try {
             Context context = org.telegram.messenger.t0.b;
-            x1 x1Var = new x1();
+            com.google.android.gms.internal.vision.x1 x1Var = new com.google.android.gms.internal.vision.x1();
             x1Var.a = 256;
             nVar = new u8.n(new u2(context, x1Var));
         } catch (Throwable th2) {
@@ -362,15 +361,15 @@ public final class b0 extends FrameLayout {
         return mutate;
     }
 
-    public static void p(h2 h2Var, int i7, z zVar) {
-        if (h2Var.isFinished) {
+    public static void p(g2 g2Var, int i7, z zVar) {
+        if (g2Var.isFinished) {
             return;
         }
-        s4 parentLayout = h2Var.getParentLayout();
-        if (parentLayout == null || ((parentLayout.getLastFragment() == h2Var && !((ActionBarLayout) parentLayout).B()) || i7 >= 40)) {
+        r4 parentLayout = g2Var.getParentLayout();
+        if (parentLayout == null || ((parentLayout.getLastFragment() == g2Var && !((ActionBarLayout) parentLayout).B()) || i7 >= 40)) {
             zVar.run();
         } else {
-            org.telegram.messenger.g0.h3(new ai.a1(h2Var, i7, zVar, 5), 50L);
+            org.telegram.messenger.g0.h3(new ai.c1(g2Var, i7, zVar, 5), 50L);
         }
     }
 
@@ -810,11 +809,11 @@ public final class b0 extends FrameLayout {
             drawable.setAlpha((int) (f11 * 255.0f));
             drawable.draw(canvas);
         } else {
-            y1 y1Var = this.K;
-            y1Var.setAlpha((int) (f11 * 255.0f));
+            x1 x1Var = this.K;
+            x1Var.setAlpha((int) (f11 * 255.0f));
             canvas.save();
             n10.k(org.telegram.messenger.g0.L(24.0f), 2.0f, rectF.centerY(), rectF.centerX() - (org.telegram.messenger.g0.L(24.0f) / 2.0f), canvas);
-            y1Var.draw(canvas);
+            x1Var.draw(canvas);
             canvas.restore();
         }
         canvas.restore();
@@ -923,7 +922,7 @@ public final class b0 extends FrameLayout {
         this.h.set(f10 - f17, L3, f10 + f17, f18);
         float L4 = (f11 - org.telegram.messenger.g0.L(35.0f)) - f17;
         this.n.set(L4 - f17, L3, L4 + f17, f18);
-        this.R = new StaticLayout(gd.M0(2131745666, null), this.L, i5.c.d(72.0f, i13, 1), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.R = new StaticLayout(gd.N0(2131745665, null), this.L, i5.c.d(72.0f, i13, 1), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         RectF rectF2 = this.f;
         if (!rectF2.isEmpty()) {
             return;

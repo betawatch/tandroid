@@ -1,30 +1,64 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.um;
-import org.telegram.ui.wm;
-import org.telegram.ui.zm;
+import android.app.Activity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.FrameLayout;
+import java.util.List;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class r4 {
-    public final m6 a;
-    public final int b;
-    public final boolean c;
-    public final boolean d;
-    public boolean e;
-    public aa.c0 h;
-    public um i;
-    public um j;
-    public wm k;
-    public zm m;
-    public boolean f = true;
-    public boolean g = true;
-    public long l = 200;
+public interface r4 {
+    g2 getBackgroundFragment();
 
-    public r4(m6 m6Var, int i7, boolean z10, boolean z11) {
-        this.a = m6Var;
-        this.b = i7;
-        this.c = z10;
-        this.d = z11;
-    }
+    w2 getBottomSheet();
+
+    List getFragmentStack();
+
+    g2 getLastFragment();
+
+    u4 getMessageDrawableOutMediaStart();
+
+    u4 getMessageDrawableOutStart();
+
+    FrameLayout getOverlayContainerView();
+
+    Activity getParentActivity();
+
+    List getPulledDialogs();
+
+    g2 getSafeLastFragment();
+
+    float getThemeAnimationValue();
+
+    ViewGroup getView();
+
+    Window getWindow();
+
+    void setBackgroundView(View view);
+
+    void setDelegate(o4 o4Var);
+
+    void setDrawerLayoutContainer(o3 o3Var);
+
+    void setFragmentPanTranslationOffset(int i7);
+
+    void setFragmentStack(List list);
+
+    void setHighlightActionButtons(boolean z10);
+
+    void setInBubbleMode(boolean z10);
+
+    void setIsSheet(boolean z10);
+
+    void setNavigationBarColor(int i7);
+
+    void setPulledDialogs(List list);
+
+    void setRemoveActionBarExtraHeight(boolean z10);
+
+    void setUseAlphaAnimations(boolean z10);
+
+    void setWindow(Window window);
 }

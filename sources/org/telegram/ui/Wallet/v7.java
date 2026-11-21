@@ -9,11 +9,11 @@ import org.telegram.messenger.q10;
 import org.telegram.messenger.u10;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.a70;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v7 implements Runnable {
     public final /* synthetic */ int a;
@@ -133,28 +133,28 @@ public final /* synthetic */ class v7 implements Runnable {
                     i7 = l2.i("sign data", e10);
                     jSONObject = null;
                 }
-                org.telegram.messenger.g0.g3(new bi.h2(l2Var2, h2Var, r0Var, p51Var3, jSONObject, i7, 24));
+                org.telegram.messenger.g0.g3(new bi.l2(l2Var2, h2Var, r0Var, p51Var3, jSONObject, i7, 24));
                 break;
             case 9:
                 y2 y2Var = (y2) obj4;
-                hi.d dVar = (hi.d) obj3;
+                hi.e eVar = (hi.e) obj3;
                 int[] iArr = (int[]) obj2;
-                hi.d dVar2 = (hi.d) obj;
+                hi.e eVar2 = (hi.e) obj;
                 boolean a10 = y2Var.a();
-                dVar.setText(gd.M0(iArr[0] == 2 ? 2131742732 : 2131742930, null));
-                dVar.setEnabled((a10 || y2Var.d || ((i10 = iArr[0]) != 1 && i10 != 2)) ? false : true);
-                dVar2.setEnabled((a10 || y2Var.d) ? false : true);
+                eVar.setText(gd.N0(iArr[0] == 2 ? 2131742726 : 2131742924, null));
+                eVar.setEnabled((a10 || y2Var.d || ((i10 = iArr[0]) != 1 && i10 != 2)) ? false : true);
+                eVar2.setEnabled((a10 || y2Var.d) ? false : true);
                 break;
             case 10:
-                n6.i0((n6) obj4, (LinearLayout) obj3, (u0) obj2, (y60) obj);
+                n6.i0((n6) obj4, (LinearLayout) obj3, (u0) obj2, (a70) obj);
                 break;
             case 11:
                 boolean[] zArr = (boolean[]) obj3;
-                org.telegram.ui.ActionBar.z0 z0Var = (org.telegram.ui.ActionBar.z0) obj2;
+                org.telegram.ui.ActionBar.y0 y0Var = (org.telegram.ui.ActionBar.y0) obj2;
                 v7 v7Var = (v7) obj;
                 g gVar = ((u0) obj4).h;
                 if (gVar.f() != null && !zArr[0]) {
-                    z0Var.setSubtext(gVar.i());
+                    y0Var.setSubtext(gVar.i());
                     v7Var.run();
                     zArr[0] = true;
                     break;

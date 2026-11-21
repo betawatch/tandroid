@@ -16,10 +16,10 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import h2.w;
 import java.util.Collections;
 import java.util.Set;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import v4.f0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class j {
     public final Context a;
@@ -38,17 +38,17 @@ public abstract class j {
         this(context, eVar, aVar, new i(rVar, Looper.getMainLooper()));
     }
 
-    public final nd0 a() {
-        nd0 nd0Var = new nd0(8, false);
+    public final md0 a() {
+        md0 md0Var = new md0(8, false);
         Set set = Collections.EMPTY_SET;
-        if (((a0.g) nd0Var.b) == null) {
-            nd0Var.b = new a0.g(0);
+        if (((a0.g) md0Var.b) == null) {
+            md0Var.b = new a0.g(0);
         }
-        ((a0.g) nd0Var.b).addAll(set);
+        ((a0.g) md0Var.b).addAll(set);
         Context context = this.a;
-        nd0Var.c = context.getClass().getName();
-        nd0Var.d = context.getPackageName();
-        return nd0Var;
+        md0Var.c = context.getClass().getName();
+        md0Var.d = context.getPackageName();
+        return md0Var;
     }
 
     public final Task b(a1 a1Var) {

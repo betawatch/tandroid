@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class xv extends yy0 {
     public boolean T;
@@ -73,7 +73,7 @@ public final class xv extends yy0 {
         this.U = bxVar;
         if (bxVar.G == null) {
             bxVar.G = new vv(this.W, null);
-            qVar = ((org.telegram.ui.ActionBar.h2) cxVar).glassEngine;
+            qVar = ((org.telegram.ui.ActionBar.g2) cxVar).glassEngine;
             qVar.b(this.U.G);
             this.U.G.setLayoutManager(new wv(this, this.U));
             bx bxVar2 = this.U;
@@ -81,7 +81,7 @@ public final class xv extends yy0 {
             int i11 = cxVar.Y2;
             boolean z11 = cxVar.n2;
             ArrayList arrayList = cxVar.K2;
-            i7 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
             bxVar2.H = new jg.m(cxVar, this.W, i10, i11, z11, arrayList, i7, cxVar.H);
             bx bxVar3 = this.U;
             jg.m mVar = bxVar3.H;
@@ -124,11 +124,11 @@ public final class xv extends yy0 {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         cx cxVar = this.a0;
-        kVar = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
         if (kVar == null) {
             return false;
         }
-        kVar2 = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+        kVar2 = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
         return kVar2.getOccupyStatusBar();
     }
 
@@ -150,24 +150,24 @@ public final class xv extends yy0 {
         if (view != null) {
             view.invalidate();
         }
-        kVar = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
         if (kVar.getTitleTextView() != null) {
-            kVar4 = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+            kVar4 = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
             kVar4.getTitleTextView().setAlpha(1.0f - f10);
-            kVar5 = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+            kVar5 = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
             if (kVar5.getTitleTextView().getAlpha() > 0.0f) {
-                kVar6 = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+                kVar6 = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
                 kVar6.getTitleTextView().setVisibility(0);
             }
         }
-        kVar2 = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+        kVar2 = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
         if (kVar2.getBackButton() != null) {
-            kVar3 = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+            kVar3 = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
             kVar3.getBackButton().setAlpha(f10 != 1.0f ? 1.0f : 0.0f);
         }
         if (cxVar.Y2 != 0 || cxVar.a3 != 0) {
             Paint paint = cxVar.h1;
-            int i7 = org.telegram.ui.ActionBar.n6.d6;
+            int i7 = org.telegram.ui.ActionBar.m6.d6;
             paint.setColor(i0.a.f(f10, cxVar.getThemedColor(i7), cxVar.getThemedColor(i7)));
         }
         bx bxVar = this.U;

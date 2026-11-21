@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.pc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ec {
     public final int a;
@@ -60,7 +60,7 @@ public final class ec {
         path.close();
         Canvas canvas = new Canvas(createBitmap);
         Paint paint = new Paint();
-        paint.setColor(org.telegram.ui.ActionBar.n6.r1(0.75f, -1));
+        paint.setColor(org.telegram.ui.ActionBar.m6.r1(0.75f, -1));
         canvas.drawPath(path, paint);
         if (Build.VERSION.SDK_INT < 29) {
             this.l = null;
@@ -74,7 +74,7 @@ public final class ec {
         for (int i13 = 0; i13 < kVar.b; i13++) {
             a4.k.d((float[]) kVar.d, i13, 0.0f, 0.0f, width, height);
         }
-        this.m = ai.d.b(createBitmap);
+        this.m = ai.d.c(createBitmap);
     }
 
     public final void a(Canvas canvas, int i7) {
@@ -102,7 +102,7 @@ public final class ec {
                     a4.k.d((float[]) kVar.c, i11, f15 - f13, f16 - f14, f15 + f13, f16 + f14);
                     this.l.s(i11, i0.a.o(i7, (int) (Utilities.l(dcVar.h * f10) * 255.0f)));
                 }
-                ai.d.c(canvas, this.l, min, this.m);
+                ai.d.d(canvas, this.l, min, this.m);
             } else {
                 if (this.e != i7) {
                     this.e = i7;

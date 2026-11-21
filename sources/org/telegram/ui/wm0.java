@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class wm0 extends oq0 {
     public final /* synthetic */ cn0 a;
@@ -92,19 +92,19 @@ public final class wm0 extends oq0 {
             int i10 = efVar.C;
             String str2 = efVar.I;
             if (str != null) {
-                imageView.h(str, null, org.telegram.ui.ActionBar.n6.R4);
+                imageView.h(str, null, org.telegram.ui.ActionBar.m6.R4);
                 return;
             }
             if (str2 == null) {
-                imageView.setImageDrawable(org.telegram.ui.ActionBar.n6.R4);
+                imageView.setImageDrawable(org.telegram.ui.ActionBar.m6.R4);
                 return;
             }
             imageView.s(efVar.J, efVar.K, true);
             if (!efVar.b || efVar.d()) {
-                imageView.h("thumb://" + i10 + ":" + str2, null, org.telegram.ui.ActionBar.n6.R4);
+                imageView.h("thumb://" + i10 + ":" + str2, null, org.telegram.ui.ActionBar.m6.R4);
                 return;
             }
-            imageView.h("vthumb://" + i10 + ":" + str2, null, org.telegram.ui.ActionBar.n6.R4);
+            imageView.h("vthumb://" + i10 + ":" + str2, null, org.telegram.ui.ActionBar.m6.R4);
         }
     }
 

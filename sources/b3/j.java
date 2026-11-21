@@ -1,6 +1,7 @@
 package b3;
 
 import a8.p0;
+import ai.h0;
 import android.R;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -42,15 +43,15 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.ur;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.j9;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.k9;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class j implements s9, d61, h2.d, u2.u, f0 {
+public final class j implements s9, g61, h2.d, u2.u, f0 {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
@@ -65,9 +66,9 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
     public void J(String str) {
         String c10 = vf.c.c(str);
         if (TextUtils.isEmpty(c10)) {
-            g0.g3(new ai.o(7));
+            g0.g3(new ai.n(7));
         } else {
-            mp.u1(this.b).f2().a(c10, null, new ai.g0((h2) this.c, 7));
+            mp.u1(this.b).f2().a(c10, null, new h0((g2) this.c, 7));
         }
     }
 
@@ -87,7 +88,7 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
         if (O == null) {
             return null;
         }
-        return t9.c(O, new org.telegram.ui.ActionBar.p(this, 18));
+        return t9.c(O, new org.telegram.tgnet.u(this, 19));
     }
 
     @Override // u2.u
@@ -154,7 +155,7 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
     }
 
     @Override // org.telegram.ui.s9
-    public /* synthetic */ boolean c1(String str, j9 j9Var) {
+    public /* synthetic */ boolean c1(String str, k9 k9Var) {
         return false;
     }
 
@@ -393,16 +394,16 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
         return i11;
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public void onStateChanged(boolean z10, int i7) {
         g0.g3(new jg.q(this, this.b, i7, 3));
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -485,7 +486,7 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
 
     @Override // h2.d
     public y t0(byte[] bArr) {
-        return t9.c(((h2.d) this.c).t0(bArr), new org.telegram.ui.ActionBar.p(this, 18));
+        return t9.c(((h2.d) this.c).t0(bArr), new org.telegram.tgnet.u(this, 19));
     }
 
     public String toString() {
@@ -561,7 +562,7 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public void onRenderedFirstFrame() {
     }
 
@@ -646,15 +647,15 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
     public /* synthetic */ void S0(ur urVar) {
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -663,11 +664,11 @@ public final class j implements s9, d61, h2.d, u2.u, f0 {
         this.b = (z10 || z11 || z12) ? 1 : 0;
     }
 
-    @Override // org.telegram.ui.Components.d61
-    public void onError(f61 f61Var, Exception exc) {
+    @Override // org.telegram.ui.Components.g61
+    public void onError(i61 i61Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.Components.d61
+    @Override // org.telegram.ui.Components.g61
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
     }
 }

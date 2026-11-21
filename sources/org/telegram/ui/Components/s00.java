@@ -1,146 +1,254 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s00 extends FrameLayout {
-    public final RectF a;
+public final class s00 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
     public final /* synthetic */ FragmentContextView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s00(FragmentContextView fragmentContextView, Context context) {
-        super(context);
+    public /* synthetic */ s00(FragmentContextView fragmentContextView, int i7) {
+        this.a = i7;
         this.b = fragmentContextView;
-        this.a = new RectF();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f10;
-        super.dispatchDraw(canvas);
-        FragmentContextView fragmentContextView = this.b;
-        org.telegram.ui.ActionBar.h2 h2Var = fragmentContextView.h;
-        m6 m6Var = fragmentContextView.k0;
-        if (fragmentContextView.V == 4 && fragmentContextView.i0) {
-            int L = org.telegram.messenger.g0.L(24.0f) + ((int) Math.ceil(m6Var.c()));
-            if (L != fragmentContextView.g0) {
-                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, L, 0.0f, new int[]{-10121218, -6983683}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                fragmentContextView.e0 = linearGradient;
-                fragmentContextView.d0.setShader(linearGradient);
-                fragmentContextView.g0 = L;
-            }
-            org.telegram.messenger.t3 groupCall = fragmentContextView.n.getGroupCall();
-            if (h2Var == null || groupCall == null || !groupCall.j()) {
-                f10 = 0.0f;
-            } else {
-                long currentTimeMillis = (groupCall.b.schedule_date * 1000) - h2Var.getConnectionsManager().getCurrentTimeMillis();
-                f10 = currentTimeMillis >= 0 ? currentTimeMillis < 5000 ? 1.0f - (currentTimeMillis / 5000.0f) : 0.0f : 1.0f;
-                if (currentTimeMillis < 6000) {
-                    invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                FragmentContextView fragmentContextView = this.b;
+                AnimatorSet animatorSet = fragmentContextView.f;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    fragmentContextView.f = null;
+                    break;
                 }
-            }
-            fragmentContextView.f0.reset();
-            fragmentContextView.f0.postTranslate((-fragmentContextView.g0) * 0.7f * f10, 0.0f);
-            fragmentContextView.e0.setLocalMatrix(fragmentContextView.f0);
-            int measuredWidth = (getMeasuredWidth() - L) - org.telegram.messenger.g0.L(10.0f);
-            int L2 = org.telegram.messenger.g0.L(10.0f);
-            float f11 = measuredWidth;
-            float f12 = L2;
-            float L3 = org.telegram.messenger.g0.L(28.0f) + L2;
-            RectF rectF = this.a;
-            rectF.set(f11, f12, measuredWidth + L, L3);
-            canvas.save();
-            float a10 = fragmentContextView.l0.a(0.1f);
-            canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-            canvas.translate(f11, f12);
-            RectF rectF2 = org.telegram.messenger.g0.P;
-            rectF2.set(0.0f, 0.0f, L, org.telegram.messenger.g0.L(28.0f));
-            canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), fragmentContextView.d0);
-            canvas.translate(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f));
-            m6Var.setBounds(0, 0, org.telegram.messenger.g0.q.x, org.telegram.messenger.g0.L(16.0f));
-            m6Var.draw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        zg zgVar;
-        org.telegram.messenger.t3 groupCall;
-        FragmentContextView fragmentContextView = this.b;
-        if (fragmentContextView.V == 4 && fragmentContextView.i0 && fragmentContextView.l0 != null) {
-            boolean contains = this.a.contains(motionEvent.getX(), motionEvent.getY());
-            if (motionEvent.getAction() == 0) {
-                fragmentContextView.l0.c(contains);
-            } else if (motionEvent.getAction() == 2) {
-                if (!contains) {
-                    fragmentContextView.l0.c(false);
-                }
-            } else if (motionEvent.getAction() == 1) {
-                if (contains) {
-                    r00 r00Var = fragmentContextView.n0;
-                    org.telegram.ui.ActionBar.h2 h2Var = fragmentContextView.h;
-                    if (h2Var != null && (zgVar = fragmentContextView.n) != null && (groupCall = zgVar.getGroupCall()) != null && groupCall.b != null) {
-                        if (fragmentContextView.T0 != 0) {
-                            h2Var.getConnectionsManager().cancelRequest(fragmentContextView.T0, true);
-                            fragmentContextView.T0 = 0;
-                        }
-                        TL_phone.toggleGroupCallStartSubscription togglegroupcallstartsubscription = new TL_phone.toggleGroupCallStartSubscription();
-                        togglegroupcallstartsubscription.call = groupCall.g(groupCall.a);
-                        TLRPC.GroupCall groupCall2 = groupCall.b;
-                        boolean z10 = !fragmentContextView.j0;
-                        fragmentContextView.j0 = z10;
-                        groupCall2.schedule_start_subscribed = z10;
-                        togglegroupcallstartsubscription.subscribed = z10;
-                        fragmentContextView.T0 = h2Var.getConnectionsManager().sendRequest(togglegroupcallstartsubscription, null);
-                        if (fragmentContextView.m0) {
-                            org.telegram.messenger.g0.r(r00Var);
-                            fragmentContextView.m0 = false;
-                        }
-                        r00Var.run();
-                        lc b02 = lc.b0(h2Var);
-                        boolean z11 = fragmentContextView.j0;
-                        org.telegram.messenger.f3.n(null, z11 ? 2131748588 : 2131748589, b02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
+                break;
+            case 1:
+                FragmentContextView fragmentContextView2 = this.b;
+                fragmentContextView2.v0.e();
+                AnimatorSet animatorSet2 = fragmentContextView2.f;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    fragmentContextView2.setVisibility(8);
+                    z00 z00Var = fragmentContextView2.q0;
+                    if (z00Var != null) {
+                        ((jp0) z00Var).b(false);
                     }
+                    fragmentContextView2.f = null;
+                    if (fragmentContextView2.y0) {
+                        fragmentContextView2.e(false);
+                    } else if (fragmentContextView2.x0) {
+                        fragmentContextView2.a(false);
+                    } else if (fragmentContextView2.z0) {
+                        fragmentContextView2.g(false);
+                    } else if (fragmentContextView2.A0) {
+                        fragmentContextView2.c(false);
+                    }
+                    fragmentContextView2.y0 = false;
+                    fragmentContextView2.x0 = false;
+                    fragmentContextView2.z0 = false;
+                    fragmentContextView2.A0 = false;
+                    break;
                 }
-                fragmentContextView.l0.c(false);
-            } else if (motionEvent.getAction() == 3) {
-                fragmentContextView.l0.c(false);
-            }
-        } else {
-            mc mcVar = fragmentContextView.l0;
-            if (mcVar != null) {
-                mcVar.c(false);
-            }
+                break;
+            case 2:
+                FragmentContextView fragmentContextView3 = this.b;
+                fragmentContextView3.v0.e();
+                AnimatorSet animatorSet3 = fragmentContextView3.f;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    z00 z00Var2 = fragmentContextView3.q0;
+                    if (z00Var2 != null) {
+                        ((jp0) z00Var2).b(false);
+                    }
+                    fragmentContextView3.f = null;
+                    if (fragmentContextView3.y0) {
+                        fragmentContextView3.e(false);
+                    } else if (fragmentContextView3.x0) {
+                        fragmentContextView3.a(false);
+                    } else if (fragmentContextView3.z0) {
+                        fragmentContextView3.g(false);
+                    } else if (fragmentContextView3.A0) {
+                        fragmentContextView3.c(false);
+                    }
+                    fragmentContextView3.y0 = false;
+                    fragmentContextView3.x0 = false;
+                    fragmentContextView3.z0 = false;
+                    fragmentContextView3.A0 = false;
+                    break;
+                }
+                break;
+            case 3:
+                FragmentContextView fragmentContextView4 = this.b;
+                fragmentContextView4.v0.e();
+                AnimatorSet animatorSet4 = fragmentContextView4.f;
+                if (animatorSet4 != null && animatorSet4.equals(animator)) {
+                    fragmentContextView4.setVisibility(8);
+                    fragmentContextView4.f = null;
+                    if (fragmentContextView4.y0) {
+                        fragmentContextView4.e(false);
+                    } else if (fragmentContextView4.x0) {
+                        fragmentContextView4.a(false);
+                    } else if (fragmentContextView4.z0) {
+                        fragmentContextView4.g(false);
+                    } else if (fragmentContextView4.A0) {
+                        fragmentContextView4.c(false);
+                    }
+                    fragmentContextView4.y0 = false;
+                    fragmentContextView4.x0 = false;
+                    fragmentContextView4.z0 = false;
+                    fragmentContextView4.A0 = false;
+                    break;
+                }
+                break;
+            case 4:
+                FragmentContextView fragmentContextView5 = this.b;
+                fragmentContextView5.v0.e();
+                AnimatorSet animatorSet5 = fragmentContextView5.f;
+                if (animatorSet5 != null && animatorSet5.equals(animator)) {
+                    z00 z00Var3 = fragmentContextView5.q0;
+                    if (z00Var3 != null) {
+                        ((jp0) z00Var3).b(false);
+                    }
+                    fragmentContextView5.f = null;
+                    if (fragmentContextView5.y0) {
+                        fragmentContextView5.e(false);
+                    } else if (fragmentContextView5.x0) {
+                        fragmentContextView5.a(false);
+                    } else if (fragmentContextView5.z0) {
+                        fragmentContextView5.g(false);
+                    } else if (fragmentContextView5.A0) {
+                        fragmentContextView5.c(false);
+                    }
+                    fragmentContextView5.y0 = false;
+                    fragmentContextView5.x0 = false;
+                    fragmentContextView5.z0 = false;
+                    fragmentContextView5.A0 = false;
+                    break;
+                }
+                break;
+            case 5:
+                FragmentContextView fragmentContextView6 = this.b;
+                fragmentContextView6.v0.e();
+                AnimatorSet animatorSet6 = fragmentContextView6.f;
+                if (animatorSet6 != null && animatorSet6.equals(animator)) {
+                    fragmentContextView6.setVisibility(8);
+                    fragmentContextView6.f = null;
+                    if (fragmentContextView6.y0) {
+                        fragmentContextView6.e(false);
+                    } else if (fragmentContextView6.x0) {
+                        fragmentContextView6.a(false);
+                    } else if (fragmentContextView6.z0) {
+                        fragmentContextView6.g(false);
+                    } else if (fragmentContextView6.A0) {
+                        fragmentContextView6.c(false);
+                    }
+                    fragmentContextView6.y0 = false;
+                    fragmentContextView6.x0 = false;
+                    fragmentContextView6.z0 = false;
+                    fragmentContextView6.A0 = false;
+                    break;
+                }
+                break;
+            case 6:
+                FragmentContextView fragmentContextView7 = this.b;
+                fragmentContextView7.v0.e();
+                AnimatorSet animatorSet7 = fragmentContextView7.f;
+                if (animatorSet7 != null && animatorSet7.equals(animator)) {
+                    fragmentContextView7.U = false;
+                    fragmentContextView7.f = null;
+                    fragmentContextView7.e(false);
+                    break;
+                }
+                break;
+            case 7:
+                FragmentContextView fragmentContextView8 = this.b;
+                fragmentContextView8.w0.e();
+                AnimatorSet animatorSet8 = fragmentContextView8.f;
+                if (animatorSet8 != null && animatorSet8.equals(animator)) {
+                    fragmentContextView8.f = null;
+                }
+                if (fragmentContextView8.y0) {
+                    fragmentContextView8.e(false);
+                } else if (fragmentContextView8.x0) {
+                    fragmentContextView8.a(false);
+                } else if (fragmentContextView8.z0) {
+                    fragmentContextView8.g(false);
+                } else if (fragmentContextView8.A0) {
+                    fragmentContextView8.c(false);
+                }
+                fragmentContextView8.y0 = false;
+                fragmentContextView8.x0 = false;
+                fragmentContextView8.z0 = false;
+                fragmentContextView8.A0 = false;
+                fragmentContextView8.n();
+                break;
+            case 8:
+                FragmentContextView fragmentContextView9 = this.b;
+                fragmentContextView9.v0.e();
+                AnimatorSet animatorSet9 = fragmentContextView9.f;
+                if (animatorSet9 != null && animatorSet9.equals(animator)) {
+                    fragmentContextView9.setVisibility(8);
+                    fragmentContextView9.f = null;
+                    if (fragmentContextView9.y0) {
+                        fragmentContextView9.e(false);
+                    } else if (fragmentContextView9.x0) {
+                        fragmentContextView9.a(false);
+                    } else if (fragmentContextView9.z0) {
+                        fragmentContextView9.g(false);
+                    } else if (fragmentContextView9.A0) {
+                        fragmentContextView9.c(false);
+                    }
+                    fragmentContextView9.y0 = false;
+                    fragmentContextView9.x0 = false;
+                    fragmentContextView9.z0 = false;
+                    fragmentContextView9.A0 = false;
+                    break;
+                }
+                break;
+            case 9:
+                FragmentContextView fragmentContextView10 = this.b;
+                fragmentContextView10.v0.e();
+                AnimatorSet animatorSet10 = fragmentContextView10.f;
+                if (animatorSet10 != null && animatorSet10.equals(animator)) {
+                    fragmentContextView10.U = false;
+                    fragmentContextView10.f = null;
+                    fragmentContextView10.a(false);
+                    break;
+                }
+                break;
+            case 10:
+                FragmentContextView fragmentContextView11 = this.b;
+                fragmentContextView11.w0.e();
+                AnimatorSet animatorSet11 = fragmentContextView11.f;
+                if (animatorSet11 != null && animatorSet11.equals(animator)) {
+                    fragmentContextView11.f = null;
+                }
+                if (fragmentContextView11.y0) {
+                    fragmentContextView11.e(false);
+                } else if (fragmentContextView11.x0) {
+                    fragmentContextView11.a(false);
+                } else if (fragmentContextView11.z0) {
+                    fragmentContextView11.g(false);
+                } else if (fragmentContextView11.A0) {
+                    fragmentContextView11.c(false);
+                }
+                fragmentContextView11.y0 = false;
+                fragmentContextView11.x0 = false;
+                fragmentContextView11.z0 = false;
+                fragmentContextView11.A0 = false;
+                fragmentContextView11.n();
+                break;
+            default:
+                FragmentContextView fragmentContextView12 = this.b;
+                AnimatorSet animatorSet12 = fragmentContextView12.f;
+                if (animatorSet12 != null && animatorSet12.equals(animator)) {
+                    fragmentContextView12.setVisibility(8);
+                    fragmentContextView12.f = null;
+                    break;
+                }
+                break;
         }
-        mc mcVar2 = fragmentContextView.l0;
-        return (mcVar2 != null && mcVar2.i) || super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        FragmentContextView fragmentContextView = this.b;
-        e9 e9Var = fragmentContextView.c0;
-        if (e9Var == null || e9Var.getVisibility() != 0) {
-            return;
-        }
-        fragmentContextView.c0.invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.b.k0 || super.verifyDrawable(drawable);
     }
 }

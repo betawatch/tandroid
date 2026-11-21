@@ -6,19 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class dn extends FrameLayout {
     public final cn a;
-    public final org.telegram.ui.ActionBar.s4 b;
+    public final org.telegram.ui.ActionBar.r4 b;
     public View c;
     public int d;
     public boolean e;
 
-    public dn(Context context, org.telegram.ui.ActionBar.s4 s4Var, Bundle bundle) {
+    public dn(Context context, org.telegram.ui.ActionBar.r4 r4Var, Bundle bundle) {
         super(context);
         this.e = true;
-        this.b = s4Var;
+        this.b = r4Var;
         cn cnVar = new cn(this, bundle);
         this.a = cnVar;
         cnVar.mb = true;

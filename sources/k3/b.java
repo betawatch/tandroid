@@ -2,7 +2,7 @@ package k3;
 
 import a8.xa;
 import d4.f;
-import di.c7;
+import di.v6;
 import e2.q0;
 import e2.s0;
 import e2.t;
@@ -24,7 +24,7 @@ import java.util.List;
 import ob.c;
 import t3.h;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -228,7 +228,7 @@ public final class b implements o {
             } else {
                 int i17 = this.k;
                 int i18 = uVar3.c;
-                c7 c7Var = new c7(uVar3, 25);
+                v6 v6Var = new v6(uVar3, 26);
                 xa xaVar = new xa(uVar3, i17);
                 long b10 = uVar3.b();
                 long j15 = uVar3.j;
@@ -241,7 +241,7 @@ public final class b implements o {
                     int i20 = uVar3.a;
                     j3 = 64 + (((((i20 != uVar3.b || i20 <= 0) ? 4096L : i20) * uVar3.g) * uVar3.h) / 8);
                 }
-                a aVar = new a(c7Var, xaVar, b10, j15, position, length, j3, Math.max(6, i18));
+                a aVar = new a(v6Var, xaVar, b10, j15, position, length, j3, Math.max(6, i18));
                 this.l = aVar;
                 tVar = aVar.a;
             }

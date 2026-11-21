@@ -1,66 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
+import android.location.Location;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fl implements ViewTreeObserver.OnPreDrawListener {
+public final /* synthetic */ class fl implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ ml b;
 
-    public /* synthetic */ fl(int i7, View view) {
+    public /* synthetic */ fl(ml mlVar, int i7) {
         this.a = i7;
-        this.b = view;
+        this.b = mlVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        RecyclerView recyclerView;
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                kl klVar = (kl) this.b;
-                v7 v7Var = klVar.b.V2;
-                float alpha = v7Var != null ? v7Var.getAlpha() : 0.0f;
-                if (alpha != klVar.A0) {
-                    klVar.A0 = alpha;
-                    klVar.i0();
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.y3 y3Var = ((EditTextBoldCursor) this.b).Z0;
-                if (y3Var != null) {
-                    y3Var.c();
-                    break;
-                }
-                break;
-            case 2:
-                ((u60) this.b).invalidate();
+                ml.Z(this.b, (org.telegram.messenger.da) obj);
                 break;
             default:
-                qt0 qt0Var = (qt0) this.b;
-                if (qt0Var.a && qt0Var.b > 0) {
-                    qt0Var.f("PRE_DRAW_BEFORE", null, 0, 0, true);
-                }
-                qt0Var.p();
-                if (qt0Var.h0 && (recyclerView = qt0Var.F) != null && !recyclerView.c0()) {
-                    float n10 = qt0Var.n();
-                    if (!Float.isInfinite(n10)) {
-                        qt0Var.h0 = false;
-                        qt0Var.t(qt0Var.F, Math.round(n10 - qt0Var.V));
-                        qt0Var.B();
-                    }
-                }
-                if (qt0Var.a && qt0Var.b > 0) {
-                    qt0Var.f("PRE_DRAW_AFTER", null, 0, 0, true);
-                    qt0Var.b--;
-                    qt0Var.c++;
-                    break;
-                }
+                ml.X(this.b, (Location) obj);
                 break;
         }
-        return true;
     }
 }

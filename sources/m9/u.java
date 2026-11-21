@@ -13,7 +13,7 @@ import b9.l0;
 import c8.t9;
 import com.google.android.gms.common.data.DataHolder;
 import h2.j0;
-import hi.u5;
+import hi.t5;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -29,7 +29,7 @@ import org.telegram.messenger.r1;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.kp;
+import org.telegram.ui.Components.mp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.lq;
@@ -38,7 +38,7 @@ import org.telegram.ui.nq;
 import org.telegram.ui.nx;
 import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -463,9 +463,9 @@ public final class u implements Runnable {
                 a();
                 return;
             case 24:
-                u5 u5Var = (u5) this.b;
+                t5 t5Var = (t5) this.b;
                 Typeface typeface = (Typeface) this.c;
-                j0 j0Var = (j0) u5Var.b;
+                j0 j0Var = (j0) t5Var.b;
                 if (j0Var != null) {
                     j0Var.h(typeface);
                     return;
@@ -477,8 +477,8 @@ public final class u implements Runnable {
             case 26:
                 ArrayList arrayList = (ArrayList) this.b;
                 for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                    if (arrayList.get(i17) != null && ((kp) arrayList.get(i17)).a != null) {
-                        ((kp) arrayList.get(i17)).a.m(0);
+                    if (arrayList.get(i17) != null && ((mp) arrayList.get(i17)).a != null) {
+                        ((mp) arrayList.get(i17)).a.m(0);
                     }
                 }
                 org.telegram.messenger.g0.g3(new fi(i7, this, arrayList));

@@ -5,17 +5,17 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.sp;
+import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class i1 extends View {
     public final /* synthetic */ int a = 1;
-    public final sp b;
+    public final up b;
 
     public i1(Context context) {
         super(context);
-        this.b = new sp(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(2.0f), -13522392);
+        this.b = new up(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(2.0f), -13522392);
     }
 
     @Override // android.view.View
@@ -25,19 +25,19 @@ public final class i1 extends View {
                 int L = org.telegram.messenger.g0.L(1.0f);
                 int width = (getWidth() - L) - L;
                 int height = (getHeight() - L) - L;
-                sp spVar = this.b;
-                spVar.setBounds(L, L, width, height);
-                spVar.draw(canvas);
+                up upVar = this.b;
+                upVar.setBounds(L, L, width, height);
+                upVar.draw(canvas);
                 invalidate();
                 break;
             default:
                 int width2 = getWidth();
                 int height2 = getHeight();
-                sp spVar2 = this.b;
-                spVar2.setBounds(0, 0, width2, height2);
-                spVar2.b(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.m5, false));
-                spVar2.setAlpha(ks.e4);
-                spVar2.draw(canvas);
+                up upVar2 = this.b;
+                upVar2.setBounds(0, 0, width2, height2);
+                upVar2.b(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.m5, false));
+                upVar2.setAlpha(ks.e4);
+                upVar2.draw(canvas);
                 invalidate();
                 super.onDraw(canvas);
                 break;
@@ -46,6 +46,6 @@ public final class i1 extends View {
 
     public i1(Activity activity) {
         super(activity);
-        this.b = new sp(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.m5, false));
+        this.b = new up(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.m5, false));
     }
 }

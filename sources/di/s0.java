@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public final long a;
@@ -19,8 +19,8 @@ public final class s0 {
     public int g = -1;
     public RadialGradient h;
     public Paint i;
-    public org.telegram.ui.Components.o5 j;
-    public org.telegram.ui.Components.c6 k;
+    public org.telegram.ui.Components.p5 j;
+    public org.telegram.ui.Components.d6 k;
     public final RectF l;
     public final org.telegram.ui.Components.mc m;
 
@@ -32,7 +32,7 @@ public final class s0 {
         TLRPC.Document document = tL_starGiftUnique.getDocument();
         this.b = document;
         this.c = document == null ? 0L : document.id;
-        this.d = ((TL_stars.starGiftAttributeBackdrop) x8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
+        this.d = ((TL_stars.starGiftAttributeBackdrop) y8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
         this.e = tL_starGiftUnique.slug;
         this.f = new ec(1, 6);
         float L = org.telegram.messenger.g0.L(36.0f);

@@ -5,7 +5,7 @@ import java.util.Collections;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class gq implements kq {
     public final /* synthetic */ rq a;
@@ -26,7 +26,7 @@ public final class gq implements kq {
         a0.h hVar = rqVar.K;
         TLRPC.User c22 = rqVar.getMessagesController().c2(Long.valueOf(j3));
         if (c22 != null) {
-            org.telegram.messenger.g0.h3(new ci(14, this, c22), 200L);
+            org.telegram.messenger.g0.h3(new eh(16, this, c22), 200L);
         }
         if (hVar.f(j3) == null) {
             lq B0 = rqVar.B0();

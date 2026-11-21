@@ -3,42 +3,42 @@ package org.telegram.messenger;
 import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class tt extends k41 {
+public final class tt extends n41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        k41.h(new tt());
+        n41.h(new tt());
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
         ut utVar = (ut) view;
-        utVar.set((TL_iv.RichMessage) l41Var.H);
-        utVar.setTranslationLoading(l41Var.e);
+        utVar.set((TL_iv.RichMessage) o41Var.H);
+        utVar.setTranslationLoading(o41Var.e);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean c(l41 l41Var, l41 l41Var2) {
-        return l41Var.d == l41Var2.d && l41Var.H == l41Var2.H && l41Var.e == l41Var2.e;
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c(o41 o41Var, o41 o41Var2) {
+        return o41Var.d == o41Var2.d && o41Var.H == o41Var2.H && o41Var.e == o41Var2.e;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        ut utVar = new ut(i7, context, i6Var);
+    @Override // org.telegram.ui.Components.n41
+    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        ut utVar = new ut(i7, context, h6Var);
         utVar.setPadding(g0.L(20.0f), 0, g0.L(20.0f), g0.L(16.0f));
         return utVar;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean e(l41 l41Var, l41 l41Var2) {
-        return l41Var.d == l41Var2.d;
+    @Override // org.telegram.ui.Components.n41
+    public final boolean e(o41 o41Var, o41 o41Var2) {
+        return o41Var.d == o41Var2.d;
     }
 }

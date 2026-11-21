@@ -24,7 +24,7 @@ import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.wg0;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class zt implements wg0 {
     public boolean E;
@@ -263,7 +263,7 @@ public abstract class zt implements wg0 {
         if (this.r == null) {
             CheckBoxBase checkBoxBase = new CheckBoxBase(20, null, this.a.D);
             this.r = checkBoxBase;
-            checkBoxBase.h(org.telegram.ui.ActionBar.n6.Yl, org.telegram.ui.ActionBar.n6.z5, org.telegram.ui.ActionBar.n6.k7);
+            checkBoxBase.h(org.telegram.ui.ActionBar.m6.Yl, org.telegram.ui.ActionBar.m6.z5, org.telegram.ui.ActionBar.m6.k7);
             this.r.d(10);
             this.r.k(true);
             this.r.i(g0.L(5.0f));
@@ -321,7 +321,7 @@ public abstract class zt implements wg0 {
         if (n()) {
             ev evVar = this.a;
             if (!mp.u1(evVar.a).B4()) {
-                new ug.z0(43, evVar.E.getContext(), evVar.D).show();
+                new ug.y0(43, evVar.E.getContext(), evVar.D).show();
                 return;
             }
             boolean z10 = !G();
@@ -480,7 +480,7 @@ public abstract class zt implements wg0 {
         float L = (((evVar.C + evVar.T) - g0.L(14.0f)) - rect.right) - rect.left;
         if (this.d != null) {
             textPaint.setTextSize(g0.L(bz.W0));
-            textPaint.setColor(org.telegram.ui.ActionBar.n6.w0(evVar.E() ? org.telegram.ui.ActionBar.n6.Wc : org.telegram.ui.ActionBar.n6.Vc, evVar.D));
+            textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(evVar.E() ? org.telegram.ui.ActionBar.m6.Wc : org.telegram.ui.ActionBar.m6.Vc, evVar.D));
             canvas.save();
             if (!this.x && !this.y) {
                 float N2 = g0.N(5.0f);
@@ -529,17 +529,17 @@ public abstract class zt implements wg0 {
 
     public boolean s(Canvas canvas, ColorFilter colorFilter) {
         dv dvVar;
-        org.telegram.ui.Components.t5 t5Var;
+        org.telegram.ui.Components.u5 u5Var;
         org.telegram.ui.Cells.u9[] L = L();
         if (L == null) {
             return false;
         }
         boolean z10 = false;
         for (org.telegram.ui.Cells.u9 u9Var : L) {
-            if ((u9Var instanceof dv) && (t5Var = (dvVar = (dv) u9Var).F) != null && !t5Var.a.isEmpty()) {
+            if ((u9Var instanceof dv) && (u5Var = (dvVar = (dv) u9Var).F) != null && !u5Var.a.isEmpty()) {
                 canvas.save();
                 canvas.translate(dvVar.c, dvVar.d - this.N);
-                org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, dvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
+                org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, dvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
                 canvas.restore();
                 z10 = true;
             }
@@ -626,15 +626,15 @@ public abstract class zt implements wg0 {
             spannableStringBuilder.append(y10).append(", ");
         }
         k(spannableStringBuilder);
-        return spannableStringBuilder.length() > 0 ? spannableStringBuilder : gd.M0(2131754903, null);
+        return spannableStringBuilder.length() > 0 ? spannableStringBuilder : gd.N0(2131754903, null);
     }
 
     public CharSequence y() {
         int i7 = this.F;
-        String M0 = i7 == 0 ? null : gd.M0(i7, null);
+        String N0 = i7 == 0 ? null : gd.N0(i7, null);
         int i10 = this.G;
-        String M02 = i10 != 0 ? gd.M0(i10, null) : null;
-        return TextUtils.isEmpty(M0) ? M02 : TextUtils.isEmpty(M02) ? M0 : TextUtils.concat(M0, ", ", M02);
+        String N02 = i10 != 0 ? gd.N0(i10, null) : null;
+        return TextUtils.isEmpty(N0) ? N02 : TextUtils.isEmpty(N02) ? N0 : TextUtils.concat(N0, ", ", N02);
     }
 
     public float z() {

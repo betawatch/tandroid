@@ -1,63 +1,41 @@
 package hi;
 
-import org.telegram.ui.wv0;
+import android.graphics.Canvas;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class ma extends oa {
-    public final /* synthetic */ int g;
-    public final /* synthetic */ Object h;
+public final class ma extends na {
+    public final /* synthetic */ fi.p g;
+    public final /* synthetic */ float h;
 
-    public /* synthetic */ ma(Object obj, int i7) {
-        this.g = i7;
-        this.h = obj;
+    public ma(fi.p pVar, float f10) {
+        this.g = pVar;
+        this.h = f10;
     }
 
-    @Override // hi.oa
+    @Override // hi.na
+    public final void a(Canvas canvas, float f10) {
+        float pow = (float) Math.pow(f10, 16.0d);
+        fi.p pVar = this.g;
+        float f11 = this.h;
+        pVar.c(canvas, f11, f11, pow);
+    }
+
+    @Override // hi.na
     public final void e() {
-        switch (this.g) {
-            case 0:
-                wv0 wv0Var = (wv0) this.h;
-                wv0Var.R = false;
-                wv0Var.invalidate();
-                break;
-            case 1:
-                fi.z3 z10 = ((fi.f9) this.h).z();
-                if (z10 != null) {
-                    z10.k0(true);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Components.q9 q9Var = (org.telegram.ui.Components.q9) this.h;
-                q9Var.post(new k(q9Var, 21));
-                break;
-        }
+        fi.p pVar = this.g;
+        pVar.post(new fi.o(pVar, 1));
     }
 
-    @Override // hi.oa
+    @Override // hi.na
     public final void f(boolean z10) {
-        switch (this.g) {
-            case 0:
-                wv0 wv0Var = (wv0) this.h;
-                wv0Var.R = true;
-                wv0Var.invalidate();
-                break;
-            case 1:
-                fi.z3 z11 = ((fi.f9) this.h).z();
-                if (z11 != null) {
-                    z11.k0(false);
-                }
-                fi.c3 c3Var = this.f;
-                if (c3Var != null) {
-                    c3Var.setTranslationX(0.0f);
-                    this.f.setTranslationY(0.0f);
-                    break;
-                }
-                break;
-            default:
-                ((org.telegram.ui.Components.q9) this.h).setVisibility(0);
-                break;
+        fi.p pVar = this.g;
+        pVar.x = true;
+        pVar.invalidate();
+        if (z10) {
+            pVar.getLocationInWindow(new int[2]);
+            LaunchActivity.b0((pVar.getWidth() / 2.0f) + r6[0], (pVar.getHeight() / 2.0f) + r6[1], 1.0f);
         }
     }
 }

@@ -5,38 +5,38 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zb extends r11 {
+public final class zb extends s11 {
     public final /* synthetic */ ub f2;
-    public final /* synthetic */ i11[] g2;
+    public final /* synthetic */ j11[] g2;
     public final /* synthetic */ qc h2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zb(qc qcVar, qc qcVar2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.i6 i6Var, int i10, int i11, ub ubVar, i11[] i11VarArr) {
-        super(qcVar2, activity, true, num, i7, true, i6Var, i10, i11);
+    public zb(qc qcVar, qc qcVar2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, int i11, ub ubVar, j11[] j11VarArr) {
+        super(qcVar2, activity, true, num, i7, true, h6Var, i10, i11);
         this.h2 = qcVar;
         this.f2 = ubVar;
-        this.g2 = i11VarArr;
+        this.g2 = j11VarArr;
     }
 
-    @Override // org.telegram.ui.r11
+    @Override // org.telegram.ui.s11
     public final long getDialogId() {
         return this.h2.a;
     }
 
-    @Override // org.telegram.ui.r11
+    @Override // org.telegram.ui.s11
     public final float getScrimDrawableTranslationY() {
         return 0.0f;
     }
 
-    @Override // org.telegram.ui.r11
+    @Override // org.telegram.ui.s11
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         this.f2.a(Long.valueOf(l10 == null ? 0L : l10.longValue()), num, tL_starGiftUnique);
-        i11 i11Var = this.g2[0];
-        if (i11Var != null) {
+        j11 j11Var = this.g2[0];
+        if (j11Var != null) {
             this.h2.R = null;
-            i11Var.dismiss();
+            j11Var.dismiss();
         }
     }
 }

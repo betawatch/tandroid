@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -67,7 +67,7 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                             }
                         }
                         if (this.d) {
-                            c7Var.b.a.c(new a6(9, c7Var, arrayList));
+                            c7Var.b.a.c(new l4(11, c7Var, arrayList));
                         }
                     }
                 } else if (tL_error != null) {

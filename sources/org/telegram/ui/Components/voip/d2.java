@@ -10,9 +10,9 @@ import android.widget.TextView;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.ui.Components.wu0;
+import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class d2 extends LinearLayout {
     public HashMap a;
@@ -34,7 +34,7 @@ public final class d2 extends LinearLayout {
         c2Var.a = str2;
         int L = org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(120.0f);
         TextView textView = c2Var.c;
-        StaticLayout c10 = wu0.c(str, textView.getPaint(), L, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, L, 10, true);
+        StaticLayout c10 = zu0.c(str, textView.getPaint(), L, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, L, 10, true);
         if (c10 != null) {
             L = 0;
             for (int i10 = 0; i10 < c10.getLineCount(); i10++) {

@@ -13,14 +13,14 @@ import org.telegram.messenger.hf;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
     public org.telegram.ui.Components.q9 a;
     public FrameLayout b;
-    public mp c;
+    public op c;
     public TextView d;
     public di.n4 e;
     public int f;
@@ -29,7 +29,7 @@ public final class y5 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.c.b(org.telegram.ui.ActionBar.n6.W9, org.telegram.ui.ActionBar.n6.X9, org.telegram.ui.ActionBar.n6.V9);
+        this.c.b(org.telegram.ui.ActionBar.m6.W9, org.telegram.ui.ActionBar.m6.X9, org.telegram.ui.ActionBar.m6.V9);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -55,20 +55,20 @@ public final class y5 extends FrameLayout {
         q9Var.s(efVar.J, efVar.K, true);
         if (efVar.d()) {
             n4Var.setVisibility(4);
-            setContentDescription(gd.M0(2131753960, null));
+            setContentDescription(gd.N0(2131753959, null));
             q9Var.h("thumb://" + i7 + ":" + str2, null, drawable);
             return;
         }
         if (!efVar.b) {
             n4Var.setVisibility(4);
-            setContentDescription(gd.M0(2131753946, null));
+            setContentDescription(gd.N0(2131753945, null));
             q9Var.h("thumb://" + i7 + ":" + str2, null, drawable);
             return;
         }
         n4Var.setVisibility(0);
         this.d.setText(org.telegram.messenger.g0.g0(efVar.E, false, false));
         StringBuilder sb2 = new StringBuilder();
-        c0.u(null, 2131753931, sb2, ", ");
+        c0.u(null, 2131753930, sb2, ", ");
         sb2.append(gd.z(efVar.E));
         setContentDescription(sb2.toString());
         StringBuilder sb3 = new StringBuilder("vthumb://");

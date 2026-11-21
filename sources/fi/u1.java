@@ -4,7 +4,7 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements x10 {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class u1 implements x10 {
                 z3 z3Var = this.b;
                 if (tL_premium_boostsStatus != null) {
                     z3Var.t3 = tL_premium_boostsStatus;
-                    mp.u1(z3Var.m2).I0().b(z3Var.l1, tL_premium_boostsStatus, new ai.v1(14, z3Var, tL_premium_boostsStatus));
+                    mp.u1(z3Var.m2).I0().b(z3Var.l1, tL_premium_boostsStatus, new ai.x1(14, z3Var, tL_premium_boostsStatus));
                     break;
                 } else {
                     f9 f9Var = z3Var.t0;
@@ -41,7 +41,7 @@ public final /* synthetic */ class u1 implements x10 {
                 i2 i2Var = z3Var2.L1;
                 if (i2Var != null) {
                     i2Var.P(true);
-                    z3Var2.L1.v2();
+                    z3Var2.L1.y2();
                 }
                 z3Var2.p0(true);
                 break;

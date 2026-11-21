@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xn implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,17 +24,17 @@ public final /* synthetic */ class xn implements View.OnClickListener {
             case 0:
                 TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(joVar.getParentActivity());
-                String M0 = org.telegram.messenger.gd.M0(R.string.AppName, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.S = M0;
+                String N0 = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = N0;
                 if (joVar.b0) {
-                    u1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("RevokeLinkAlertChannel", null, 2131745826, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
+                    t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("RevokeLinkAlertChannel", null, 2131745825, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
                 } else {
-                    u1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("RevokeLinkAlert", null, 2131745827, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
+                    t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("RevokeLinkAlert", null, 2131745826, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
                 }
-                alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131745829, null), new oi.e0(20, joVar, currentChannel));
-                joVar.showDialog(u1Var);
+                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131745828, null), new oi.f0(20, joVar, currentChannel));
+                joVar.showDialog(t1Var);
                 break;
             case 1:
                 if (!joVar.W) {
@@ -56,9 +56,9 @@ public final /* synthetic */ class xn implements View.OnClickListener {
                 }
                 break;
             case 3:
-                gf0 gf0Var = new gf0(joVar.a0, 0, 0L);
-                gf0Var.m0(joVar.Z, joVar.m0);
-                joVar.presentFragment(gf0Var);
+                ff0 ff0Var = new ff0(joVar.a0, 0, 0L);
+                ff0Var.m0(joVar.Z, joVar.m0);
+                joVar.presentFragment(ff0Var);
                 break;
             default:
                 boolean z10 = !joVar.c0;

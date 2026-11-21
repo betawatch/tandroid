@@ -4,9 +4,9 @@ import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.ui.Cells.r1;
-import org.telegram.ui.Components.h60;
+import org.telegram.ui.Components.h10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -26,11 +26,11 @@ public final /* synthetic */ class e implements ValueAnimator.AnimatorUpdateList
                 ((k) this.b).P((f1) this.c);
                 break;
             default:
-                h60 h60Var = (h60) this.b;
+                h10 h10Var = (h10) this.b;
                 Drawable drawable = (Drawable) this.c;
-                h60Var.getClass();
+                h10Var.getClass();
                 drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                View view = ((ug.i1) h60Var.c).w2;
+                View view = ((ug.h1) h10Var.c).w2;
                 if (!(view instanceof r1)) {
                     view.invalidate();
                     break;

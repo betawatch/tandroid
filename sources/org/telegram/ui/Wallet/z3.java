@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -49,9 +49,9 @@ public final /* synthetic */ class z3 implements ValueAnimator.AnimatorUpdateLis
                 if (!e7Var.v) {
                     e7Var.e();
                     float interpolation = e7Var.k.getInterpolation(Math.min(1.0f, floatValue2 * 2.0f));
-                    si siVar = e7Var.c;
-                    if (siVar != null) {
-                        siVar.y1(interpolation);
+                    ui uiVar = e7Var.c;
+                    if (uiVar != null) {
+                        uiVar.y1(interpolation);
                     } else {
                         e7Var.b.setTranslationY(r7.getHeight() * interpolation);
                     }
@@ -152,9 +152,9 @@ public final /* synthetic */ class z3 implements ValueAnimator.AnimatorUpdateLis
                 if (!raVar.s) {
                     raVar.e();
                     float interpolation2 = raVar.k.getInterpolation(Math.min(1.0f, floatValue3 * 2.0f));
-                    si siVar2 = raVar.a;
-                    if (siVar2 != null) {
-                        siVar2.y1(interpolation2);
+                    ui uiVar2 = raVar.a;
+                    if (uiVar2 != null) {
+                        uiVar2.y1(interpolation2);
                     } else {
                         raVar.c.setTranslationY(r5.getHeight() * interpolation2);
                     }

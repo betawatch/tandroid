@@ -3,15 +3,15 @@ package di;
 import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.nx;
-import org.telegram.ui.Components.qx;
+import org.telegram.ui.Components.px;
+import org.telegram.ui.Components.sx;
 import org.telegram.ui.a81;
 import org.telegram.ui.f40;
 import org.telegram.ui.mm;
 import org.telegram.ui.qa0;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class z implements DialogInterface.OnCancelListener
                 rnVar.getConnectionsManager().cancelRequest(this.b, true);
                 break;
             case 4:
-                ((ChatActivityEnterView) this.c).D3.getConnectionsManager().cancelRequest(this.b, true);
+                ((ChatActivityEnterView) this.c).F3.getConnectionsManager().cancelRequest(this.b, true);
                 break;
             case 5:
-                ConnectionsManager.getInstance(((qx) ((nx) this.c).c.b).G.d1).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((sx) ((px) this.c).c.b).G.d1).cancelRequest(this.b, true);
                 break;
             case 6:
                 ConnectionsManager.getInstance(((f40) this.c).o1.a).cancelRequest(this.b, true);

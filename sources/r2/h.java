@@ -21,10 +21,10 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 import s2.w;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h {
     public final c a;
@@ -43,7 +43,7 @@ public final class h {
     public Uri p;
     public boolean q;
     public a3.u r;
-    public final hn j = new hn();
+    public final jn j = new jn();
     public byte[] m = l0.b;
     public long s = -9223372036854775807L;
 
@@ -311,8 +311,8 @@ public final class h {
         if (uri == null) {
             return null;
         }
-        hn hnVar = this.j;
-        byte[] bArr = (byte[]) ((org.telegram.utils.twidget.w) hnVar.b).remove(uri);
+        jn jnVar = this.j;
+        byte[] bArr = (byte[]) ((org.telegram.utils.twidget.w) jnVar.b).remove(uri);
         if (bArr != null) {
             return null;
         }

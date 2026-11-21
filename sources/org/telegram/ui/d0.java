@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.h1 h1Var;
+        org.telegram.ui.ActionBar.g1 g1Var;
         int i7;
         Runnable runnable;
         switch (this.a) {
             case 0:
                 g4 g4Var = (g4) this.b;
                 g4Var.getClass();
-                if (motionEvent.getActionMasked() == 0 && (h1Var = g4Var.I) != null && h1Var.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (g1Var = g4Var.I) != null && g1Var.isShowing()) {
                     view.getHitRect(g4Var.E0);
                     if (!g4Var.E0.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                         g4Var.I.d(true);
@@ -66,7 +66,7 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
                             if (!externalActionActivity.d.getFragmentStack().isEmpty()) {
                                 while (externalActionActivity.d.getFragmentStack().size() - 1 > 0) {
                                     ActionBarLayout actionBarLayout = externalActionActivity.d;
-                                    actionBarLayout.d0((org.telegram.ui.ActionBar.h2) actionBarLayout.getFragmentStack().get(0), false);
+                                    actionBarLayout.d0((org.telegram.ui.ActionBar.g2) actionBarLayout.getFragmentStack().get(0), false);
                                 }
                                 externalActionActivity.d.l(true, false);
                             }
@@ -374,9 +374,9 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
                 }
                 break;
             case 6:
-                r11 r11Var = (r11) this.b;
-                r11Var.getClass();
-                if (motionEvent.getAction() == 0 && (runnable = r11Var.V1) != null) {
+                s11 s11Var = (s11) this.b;
+                s11Var.getClass();
+                if (motionEvent.getAction() == 0 && (runnable = s11Var.V1) != null) {
                     runnable.run();
                     break;
                 }

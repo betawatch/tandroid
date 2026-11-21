@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class b6 extends h6 {
     public final String C;
@@ -102,7 +102,7 @@ public final class b6 extends h6 {
             tL_stories_searchPosts.flags |= 4;
             tL_stories_searchPosts.peer = mp.m1(tLObject);
         }
-        this.I = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_searchPosts, new ai.e1(this, 7));
+        this.I = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_searchPosts, new ai.g1(this, 7));
         return true;
     }
 

@@ -14,11 +14,11 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.fz0;
-import org.telegram.ui.Components.ph0;
-import org.telegram.ui.Components.xs;
+import org.telegram.ui.Components.hz0;
+import org.telegram.ui.Components.rh0;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a3 extends LinearLayout {
     public static final /* synthetic */ int x = 0;
@@ -27,9 +27,9 @@ public final class a3 extends LinearLayout {
     public q0.a c;
     public boolean d;
     public ValueAnimator e;
-    public final ph0 f;
+    public final rh0 f;
     public final TextView h;
-    public final fz0 n;
+    public final hz0 n;
     public int r;
     public int s;
     public final int w;
@@ -41,32 +41,32 @@ public final class a3 extends LinearLayout {
         setGravity(17);
         setOrientation(1);
         setOnTouchListener(new gi.a(5));
-        ph0 ph0Var = new ph0(context);
-        this.f = ph0Var;
-        ph0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ph0Var, c8.ma.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
-        ph0Var.setOnClickListener(new a(this, 3));
+        rh0 rh0Var = new rh0(context);
+        this.f = rh0Var;
+        rh0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(rh0Var, c8.ma.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
+        rh0Var.setOnClickListener(new a(this, 3));
         TextView textView = new TextView(context);
         this.h = textView;
-        org.telegram.messenger.f3.l(textView, org.telegram.ui.ActionBar.n6.m9, null, 1, 20.0f);
+        org.telegram.messenger.f3.l(textView, org.telegram.ui.ActionBar.m6.m9, null, 1, 20.0f);
         textView.setGravity(17);
         addView(textView, c8.ma.d(-1, -2.0f, 51, 52.0f, 10.0f, 52.0f, 0.0f));
-        fz0 fz0Var = new fz0(context);
-        this.n = fz0Var;
-        fz0Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.x2
+        hz0 hz0Var = new hz0(context);
+        this.n = hz0Var;
+        hz0Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.x2
             @Override // android.widget.ViewSwitcher.ViewFactory
             public final View makeView() {
                 TextView textView2 = new TextView(context);
-                org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.g9, null);
+                org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.g9, null);
                 textView2.setTextSize(1, 14.0f);
                 textView2.setGravity(17);
                 textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 return textView2;
             }
         });
-        fz0Var.setInAnimation(context, R.anim.alpha_in);
-        fz0Var.setOutAnimation(context, R.anim.alpha_out);
-        addView(fz0Var, c8.ma.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
+        hz0Var.setInAnimation(context, R.anim.alpha_in);
+        hz0Var.setOutAnimation(context, R.anim.alpha_out);
+        addView(hz0Var, c8.ma.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
     }
 
     public final void a(boolean z10) {
@@ -76,15 +76,15 @@ public final class a3 extends LinearLayout {
         }
         this.d = true;
         if (z10) {
-            String M0 = gd.M0(2131748037, null);
+            String N0 = gd.N0(2131748036, null);
             if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.P1()) {
-                M0 = M0.replace('\n', ' ');
+                N0 = N0.replace('\n', ' ');
             }
-            this.n.a(M0, true, false);
+            this.n.a(N0, true, false);
         }
         ValueAnimator duration = ValueAnimator.ofFloat(this.a, 1.0f).setDuration(250L);
         this.e = duration;
-        duration.setInterpolator(xs.d);
+        duration.setInterpolator(zs.d);
         this.e.addUpdateListener(new y2(this, 0));
         this.e.addListener(new z2(this, 1));
         this.e.start();

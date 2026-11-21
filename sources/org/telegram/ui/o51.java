@@ -5,7 +5,7 @@ import android.location.Geocoder;
 import java.util.List;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o51 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,13 +23,13 @@ public final /* synthetic */ class o51 implements Runnable {
                 ThemeActivity themeActivity = this.b;
                 String str = null;
                 try {
-                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.t0.b, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.n6.x, org.telegram.ui.ActionBar.n6.y, 1);
+                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.t0.b, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.m6.x, org.telegram.ui.ActionBar.m6.y, 1);
                     if (fromLocation.size() > 0) {
                         str = fromLocation.get(0).getLocality();
                     }
                 } catch (Exception unused) {
                 }
-                org.telegram.messenger.g0.g3(new b31(5, themeActivity, str));
+                org.telegram.messenger.g0.g3(new mz0(7, themeActivity, str));
                 break;
             default:
                 ThemeActivity themeActivity2 = this.b;

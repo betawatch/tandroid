@@ -2,17 +2,17 @@ package org.telegram.ui;
 
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class d30 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ org.telegram.ui.Components.qp G1;
+    public final /* synthetic */ org.telegram.ui.Components.sp G1;
     public final /* synthetic */ f40 H1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d30(f40 f40Var, LaunchActivity launchActivity, org.telegram.ui.Components.qp qpVar) {
+    public d30(f40 f40Var, LaunchActivity launchActivity, org.telegram.ui.Components.sp spVar) {
         super(launchActivity, null);
         this.H1 = f40Var;
-        this.G1 = qpVar;
+        this.G1 = spVar;
     }
 
     @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
@@ -22,9 +22,9 @@ public final class d30 extends org.telegram.ui.ActionBar.k {
             canvas.save();
             canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - org.telegram.messenger.g0.L(1.0f));
             int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
-            org.telegram.ui.Components.qp qpVar = this.G1;
-            qpVar.f = alpha;
-            qpVar.draw(canvas);
+            org.telegram.ui.Components.sp spVar = this.G1;
+            spVar.f = alpha;
+            spVar.draw(canvas);
             canvas.restore();
             invalidate();
         }

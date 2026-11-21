@@ -1,101 +1,75 @@
 package ki;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.messenger.a8;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.zy;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class j3 extends FrameLayout implements c6 {
-    public Path a;
-    public float b;
-    public int c;
-    public boolean d;
-    public int e;
-    public int f;
-    public View h;
-    public z n;
+public final /* synthetic */ class j3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s3 b;
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(n6.Uf));
-        hashSet.add(Integer.valueOf(n6.Fi));
+    public /* synthetic */ j3(s3 s3Var, int i7) {
+        this.a = i7;
+        this.b = s3Var;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        float height = (getHeight() - org.telegram.messenger.g0.L(32.0f)) / 2.0f;
-        float max = Math.max((getWidth() - this.f) - org.telegram.messenger.g0.L(4.0f), getHeight()) * this.b;
-        float L = org.telegram.messenger.g0.L(16.0f) + max;
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(org.telegram.messenger.g0.L(14.0f) - max, (org.telegram.messenger.g0.L(4.0f) + height) - max, org.telegram.messenger.g0.L(6.0f) + this.f + max, (getHeight() - org.telegram.messenger.g0.L(12.0f)) + max);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(rectF, L, L, Path.Direction.CW);
-        canvas.clipPath(path);
-        canvas.drawColor(this.e);
-        canvas.saveLayerAlpha(rectF, (int) ((1.0f - (Math.min(0.5f, this.b) / 0.5f)) * 255.0f), 31);
-        canvas.translate(org.telegram.messenger.g0.L(10.0f), height);
-        z zVar = this.n;
-        if (zVar != null) {
-            zVar.setDrawBackgroundDrawable(false);
-            this.n.draw(canvas);
-            this.n.setDrawBackgroundDrawable(true);
-        }
-        canvas.restore();
-        canvas.translate((1.0f - this.b) * (-org.telegram.messenger.g0.L(8.0f)), 0.0f);
-        super.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i10);
-        int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
-        if (height > 0) {
-            size = Math.min(size, height);
-        }
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.getMode(i10)));
-    }
-
-    public void setBotMenuButton(z zVar) {
-        this.n = zVar;
-        invalidate();
-    }
-
-    public void setMeasuredButtonWidth(int i7) {
-        this.f = i7;
-        invalidate();
-    }
-
-    public void setProgress(float f10) {
-        this.b = f10;
-        this.e = i0.a.f(f10, n6.x0(null, n6.Uf, false), this.c);
-        for (int i7 = 0; i7 < getChildCount(); i7++) {
-            getChildAt(i7).setAlpha(f10);
-        }
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        try {
-            if (this.d) {
-                this.c = n6.x0(null, n6.Fi, false);
-            }
-            if (this.e != 0) {
-                this.e = i0.a.f(this.b, n6.x0(null, n6.Uf, false), this.c);
-                invalidate();
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.ChatFull P0;
+        TLRPC.Peer peer;
+        switch (this.a) {
+            case 0:
+                this.b.n.R();
+                break;
+            case 1:
+                this.b.Q();
+                break;
+            case 2:
+                s3 s3Var = this.b;
+                if (!s3Var.U) {
+                    TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
+                    tL_messages_prolongWebView.bot = mp.u1(s3Var.G).q1(s3Var.w);
+                    tL_messages_prolongWebView.peer = mp.u1(s3Var.G).l1(s3Var.x);
+                    tL_messages_prolongWebView.query_id = s3Var.y;
+                    tL_messages_prolongWebView.silent = false;
+                    if (s3Var.E != 0) {
+                        zy.C(s3Var.G);
+                        int i7 = s3Var.E;
+                        TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = new TLRPC.TL_inputReplyToMessage();
+                        tL_inputReplyToMessage.reply_to_msg_id = i7;
+                        tL_messages_prolongWebView.reply_to = tL_inputReplyToMessage;
+                        if (s3Var.F != 0) {
+                            tL_inputReplyToMessage.monoforum_peer_id = mp.u1(s3Var.G).l1(s3Var.F);
+                            tL_messages_prolongWebView.reply_to.flags |= 32;
+                        }
+                        tL_messages_prolongWebView.flags |= 1;
+                    } else if (s3Var.F != 0) {
+                        TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                        tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
+                        tL_inputReplyToMonoForum.monoforum_peer_id = mp.u1(s3Var.G).l1(s3Var.F);
+                        tL_messages_prolongWebView.flags |= 1;
+                    }
+                    if (s3Var.x < 0 && (P0 = mp.u1(s3Var.G).P0(-s3Var.x)) != null && (peer = P0.default_send_as) != null) {
+                        tL_messages_prolongWebView.send_as = mp.u1(s3Var.G).o1(peer);
+                        tL_messages_prolongWebView.flags |= TLObject.FLAG_13;
+                    }
+                    ConnectionsManager.getInstance(s3Var.G).sendRequest(tL_messages_prolongWebView, new ai.g1(s3Var, 22));
+                    break;
+                }
+                break;
+            case 3:
+                s3 s3Var2 = this.b;
+                s3Var2.b.N1(s3Var2, 0);
+                s3Var2.n.n(false, false);
+                System.currentTimeMillis();
+                break;
+            default:
+                this.b.n.n(true, false);
+                break;
         }
     }
 }

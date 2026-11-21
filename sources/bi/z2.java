@@ -1,41 +1,46 @@
 package bi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c3 b;
-    public final /* synthetic */ boolean c;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.sa;
 
-    public /* synthetic */ z2(c3 c3Var, boolean z10, int i7) {
-        this.a = i7;
-        this.b = c3Var;
-        this.c = z10;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class z2 extends di.f6 {
+    public final /* synthetic */ int A3 = 0;
+    public final /* synthetic */ sa B3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z2(n3 n3Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, i7, j3, h6Var, null);
+        this.B3 = n3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean z10 = this.c;
-                c3 c3Var = this.b;
-                if (!z10) {
-                    c3Var.H.setVisibility(8);
-                    break;
-                } else {
-                    c3Var.getClass();
-                    break;
-                }
+    @Override // org.telegram.ui.ActionBar.w2
+    public int R() {
+        switch (this.A3) {
+            case 1:
+                return ((di.f6) this.B3).R();
             default:
-                boolean z11 = this.c;
-                c3 c3Var2 = this.b;
-                if (!z11) {
-                    c3Var2.w.setVisibility(8);
-                    break;
-                } else {
-                    c3Var2.getClass();
-                    break;
-                }
+                return super.R();
         }
+    }
+
+    @Override // di.f6, org.telegram.ui.ActionBar.w2, org.telegram.ui.ActionBar.c2
+    public lc k() {
+        switch (this.A3) {
+            case 0:
+                n3 n3Var = (n3) this.B3;
+                return new lc(n3Var.c, n3Var.J0);
+            default:
+                return super.k();
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z2(di.f6 f6Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var, View view) {
+        super(context, i7, j3, h6Var, view);
+        this.B3 = f6Var;
     }
 }

@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class fr0 {
     public float A;
@@ -323,10 +323,10 @@ public class fr0 {
                         imageReceiver5.P();
                         Drawable t6 = imageReceiver.t();
                         this.f.w0(t6);
-                        if (t6 instanceof org.telegram.ui.Components.b6) {
-                            org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) t6;
-                            b6Var.f(this.d);
-                            b6Var.S = true;
+                        if (t6 instanceof org.telegram.ui.Components.c6) {
+                            org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) t6;
+                            c6Var.f(this.d);
+                            c6Var.S = true;
                         }
                         this.f.y0(this.u, this.v, this.x, this.w);
                         ImageReceiver imageReceiver6 = this.f;
@@ -384,8 +384,8 @@ public class fr0 {
             ImageReceiver imageReceiver = this.f;
             if (imageReceiver != null) {
                 Drawable t6 = imageReceiver.t();
-                if (t6 instanceof org.telegram.ui.Components.b6) {
-                    ((org.telegram.ui.Components.b6) t6).w(this.d);
+                if (t6 instanceof org.telegram.ui.Components.c6) {
+                    ((org.telegram.ui.Components.c6) t6).w(this.d);
                 }
             }
         }
@@ -425,7 +425,7 @@ public class fr0 {
             ofFloat.addUpdateListener(new a3(this, 23));
             this.C.addListener(new ay(this, 20));
             this.C.setDuration(220L);
-            this.C.setInterpolator(org.telegram.ui.Components.lr.f);
+            this.C.setInterpolator(org.telegram.ui.Components.nr.f);
             this.C.start();
         }
     }
@@ -490,15 +490,15 @@ public class fr0 {
         if (this.c) {
             return true;
         }
-        if (imageReceiver.t() instanceof org.telegram.ui.Components.b6) {
-            AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.b6) imageReceiver.t()).v0;
+        if (imageReceiver.t() instanceof org.telegram.ui.Components.c6) {
+            AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.c6) imageReceiver.t()).v0;
             return animatedFileDrawableStream == null || !animatedFileDrawableStream.s;
         }
         if (imageReceiver.T != null || imageReceiver.k0 != null) {
             return true;
         }
         Drawable drawable = imageReceiver.n0;
-        if (drawable instanceof org.telegram.ui.Components.q51) {
+        if (drawable instanceof org.telegram.ui.Components.t51) {
             return true;
         }
         return drawable != null && !(drawable instanceof org.telegram.ui.Components.b9) && imageReceiver.R == null && imageReceiver.i0 == null;

@@ -7,17 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import j$.util.Objects;
-import org.telegram.ui.Components.c30;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.tm0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.f30;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.wm0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.pt;
 import org.telegram.ui.qu0;
 import org.telegram.ui.vv0;
 import org.telegram.ui.zw0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements eh.a {
     public final /* synthetic */ int a;
@@ -55,20 +55,20 @@ public final /* synthetic */ class f implements eh.a {
                 ((org.telegram.ui.x6) this.b).c0.d(canvas, rectF, (org.telegram.ui.z5) this.c);
                 break;
             case 4:
-                ((c30) this.b).n.L(canvas, rectF, (FrameLayout) this.c);
+                ((f30) this.b).n.L(canvas, rectF, (FrameLayout) this.c);
                 break;
             case 5:
-                ((i90) this.b).S.L(canvas, rectF, (bi.a3) this.c);
+                ((k90) this.b).S.L(canvas, rectF, (bi.e3) this.c);
                 break;
             case 6:
                 pt ptVar = (pt) this.b;
-                bi.p2 p2Var = (bi.p2) this.c;
+                bi.t2 t2Var = (bi.t2) this.c;
                 int childCount = ptVar.a.getChildCount();
                 for (int i7 = 0; i7 < childCount; i7++) {
                     View childAt = ptVar.a.getChildAt(i7);
-                    if (childAt instanceof ck0) {
-                        ck0 ck0Var = (ck0) childAt;
-                        ih.d.a(ck0Var, canvas, rectF, ck0Var, p2Var);
+                    if (childAt instanceof ek0) {
+                        ek0 ek0Var = (ek0) childAt;
+                        ih.d.a(ek0Var, canvas, rectF, ek0Var, t2Var);
                     }
                 }
                 break;
@@ -92,7 +92,7 @@ public final /* synthetic */ class f implements eh.a {
                 }
                 if (f10 > 0.0f) {
                     float y10 = f10 < 1.0f ? profileActivity.O.getY() + profileActivity.a.getY() : Float.MAX_VALUE;
-                    paint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.a7, profileActivity.A0));
+                    paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, profileActivity.A0));
                     paint.setAlpha((int) (f10 * 255.0f));
                     canvas2 = canvas;
                     canvas2.drawRect(rectF.left, rectF.top, rectF.right, Math.min(rectF.bottom, y10), paint);
@@ -105,12 +105,12 @@ public final /* synthetic */ class f implements eh.a {
                 ProfileActivity.N3(profileActivity.n0, canvas2, rectF, viewGroup);
                 break;
             case 8:
-                tm0 tm0Var = (tm0) this.b;
-                ih.d.a(tm0Var, canvas, rectF, tm0Var, (FrameLayout) this.c);
+                wm0 wm0Var = (wm0) this.b;
+                ih.d.a(wm0Var, canvas, rectF, wm0Var, (FrameLayout) this.c);
                 break;
             default:
-                ck0 ck0Var2 = (ck0) this.b;
-                ih.d.a(ck0Var2, canvas, rectF, ck0Var2, (FrameLayout) this.c);
+                ek0 ek0Var2 = (ek0) this.b;
+                ih.d.a(ek0Var2, canvas, rectF, ek0Var2, (FrameLayout) this.c);
                 break;
         }
     }

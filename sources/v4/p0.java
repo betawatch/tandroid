@@ -15,13 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class p0 {
-    public nd0 a;
+    public md0 a;
     public RecyclerView b;
     public final sg.h0 c;
     public final sg.h0 d;
@@ -37,9 +37,9 @@ public abstract class p0 {
     public int n;
 
     public p0() {
-        of ofVar = new of(this, 25);
+        qf qfVar = new qf(this, 25);
         f0 f0Var = new f0(this);
-        this.c = new sg.h0(ofVar);
+        this.c = new sg.h0(qfVar);
         this.d = new sg.h0(f0Var);
         this.f = false;
         this.g = true;
@@ -272,8 +272,8 @@ public abstract class p0 {
         if (U == null || U.j()) {
             return;
         }
-        nd0 nd0Var = this.a;
-        if (((ArrayList) nd0Var.d).contains(U.a)) {
+        md0 md0Var = this.a;
+        if (((ArrayList) md0Var.d).contains(U.a)) {
             return;
         }
         RecyclerView recyclerView = this.b;
@@ -306,9 +306,9 @@ public abstract class p0 {
             }
             this.a.l(view, i7, view.getLayoutParams(), false);
         } else if (view.getParent() == this.b) {
-            nd0 nd0Var = this.a;
-            va vaVar = (va) nd0Var.c;
-            int indexOfChild = ((RecyclerView) ((of) nd0Var.b).b).indexOfChild(view);
+            md0 md0Var = this.a;
+            va vaVar = (va) md0Var.c;
+            int indexOfChild = ((RecyclerView) ((qf) md0Var.b).b).indexOfChild(view);
             int D = (indexOfChild == -1 || vaVar.G(indexOfChild)) ? -1 : indexOfChild - vaVar.D(indexOfChild);
             if (i7 == -1) {
                 i7 = this.a.u();
@@ -448,17 +448,17 @@ public abstract class p0 {
 
     public final void j0(int i7) {
         if (q(i7) != null) {
-            nd0 nd0Var = this.a;
-            int x10 = nd0Var.x(i7);
-            of ofVar = (of) nd0Var.b;
-            View childAt = ((RecyclerView) ofVar.b).getChildAt(x10);
+            md0 md0Var = this.a;
+            int x10 = md0Var.x(i7);
+            qf qfVar = (qf) md0Var.b;
+            View childAt = ((RecyclerView) qfVar.b).getChildAt(x10);
             if (childAt == null) {
                 return;
             }
-            if (((va) nd0Var.c).I(x10)) {
-                nd0Var.K(childAt);
+            if (((va) md0Var.c).I(x10)) {
+                md0Var.K(childAt);
             }
-            ofVar.x0(x10);
+            qfVar.x0(x10);
         }
     }
 
@@ -536,9 +536,9 @@ public abstract class p0 {
     }
 
     public final View q(int i7) {
-        nd0 nd0Var = this.a;
-        if (nd0Var != null) {
-            return nd0Var.t(i7);
+        md0 md0Var = this.a;
+        if (md0Var != null) {
+            return md0Var.t(i7);
         }
         return null;
     }
@@ -559,9 +559,9 @@ public abstract class p0 {
     }
 
     public final int r() {
-        nd0 nd0Var = this.a;
-        if (nd0Var != null) {
-            return nd0Var.u();
+        md0 md0Var = this.a;
+        if (md0Var != null) {
+            return md0Var.u();
         }
         return 0;
     }

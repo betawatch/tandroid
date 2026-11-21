@@ -2,11 +2,11 @@ package fi;
 
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class c2 extends mq {
+public final class c2 extends oq {
     public final /* synthetic */ int E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class c2 extends mq {
         this.E = i7;
     }
 
-    @Override // org.telegram.ui.Components.mq, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.oq, android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
         int i7 = this.E;
     }

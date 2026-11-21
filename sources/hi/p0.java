@@ -3,7 +3,7 @@ package hi;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 break;
             default:
                 if (v0Var.c && v0Var.r != null) {
-                    v0Var.n.b(R.raw.error, 3500, gd.N0("VideoConvertFail"));
+                    v0Var.n.b(R.raw.error, 3500, gd.O0("VideoConvertFail"));
                     v0Var.c = false;
                     v0Var.d();
                     break;

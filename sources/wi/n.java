@@ -27,21 +27,20 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.h60;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.a61;
+import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.h10;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.qf;
 import org.telegram.ui.LaunchActivity;
 import v4.f0;
-import wg.r;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class n {
     public final l a;
@@ -66,7 +65,7 @@ public final class n {
         this.c = 0;
         hVar.K = true;
         hVar.d();
-        g0.h3(new r(6, hVar, x10Var), 100L);
+        g0.h3(new wg.q(8, hVar, x10Var), 100L);
         this.b.f();
     }
 
@@ -99,9 +98,9 @@ public final class n {
             if (z10 && hVar.g) {
                 AnimatorSet animatorSet = new AnimatorSet();
                 animatorSet.setDuration(250L);
-                animatorSet.setInterpolator(lr.f);
+                animatorSet.setInterpolator(nr.f);
                 animatorSet.playTogether(ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_Y, 0.1f));
-                animatorSet.addListener(new h60(23, hVar, pVar));
+                animatorSet.addListener(new h10(24, hVar, pVar));
                 animatorSet.start();
             } else {
                 hVar.f(pVar);
@@ -162,7 +161,7 @@ public final class n {
         RectF rectF = new RectF();
         l lVar = hVar.b;
         h.j(rectF, lVar.J(), lVar.a0());
-        hVar.z = ((SharedPreferences) hn.m().b).getFloat("scale_factor", 1.0f);
+        hVar.z = ((SharedPreferences) jn.m().b).getFloat("scale_factor", 1.0f);
         Point point = g0.q;
         hVar.A = (Math.min(point.x, point.y) - (h.m() * 2.0f)) / hVar.h();
         hVar.x = (int) rectF.width();
@@ -172,9 +171,9 @@ public final class n {
         int J = lVar.J();
         int a02 = lVar.a0();
         float f10 = ((J <= 0 || a02 <= 0) ? 0.5625f : ((float) a02) / ((float) J)) < 1.0f ? 0.6f : 0.45f;
-        x51 x51Var = hVar.F;
-        x51Var.q = f10;
-        x51Var.a();
+        a61 a61Var = hVar.F;
+        a61Var.q = f10;
+        a61Var.a();
         r1.g gVar = new r1.g(hVar, h.Q);
         r1.h hVar2 = new r1.h();
         hVar2.a(0.75f);
@@ -196,7 +195,7 @@ public final class n {
         hVar.p = scaleGestureDetector;
         scaleGestureDetector.setQuickScaleEnabled(false);
         hVar.p.setStylusScaleEnabled(false);
-        hVar.q = new of(activity2, new g(hVar, scaledTouchSlop));
+        hVar.q = new qf(activity2, new g(hVar, scaledTouchSlop));
         hVar.i = new d(hVar, activity2, i10);
         org.telegram.ui.e eVar = new org.telegram.ui.e(3, activity2, hVar);
         hVar.h = eVar;
@@ -206,17 +205,17 @@ public final class n {
         q0 q0Var = u0.a;
         dVar.setOutlineProvider(new s0(0, L));
         hVar.i.setClipToOutline(true);
-        u6.h(n6.Xg, hVar.i, null);
+        t6.h(m6.Xg, hVar.i, null);
         ImageView imageView = new ImageView(activity2);
         hVar.l = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         hVar.l.setVisibility(8);
         hVar.i.addView(hVar.l, ma.c(-1.0f, -1));
-        x51Var.n = new f0(hVar);
+        a61Var.n = new f0(hVar);
         hVar.m = new d(hVar, activity2, i11);
         d dVar2 = hVar.m;
         Objects.requireNonNull(dVar2);
-        hVar.G = new cn0(new v4.p(dVar2, 9), true);
+        hVar.G = new fn0(new v4.p(dVar2, 9), true);
         hVar.m.setWillNotDraw(false);
         hVar.m.setAlpha(0.0f);
         View view = new View(activity2);
@@ -225,14 +224,14 @@ public final class n {
         int L2 = g0.L(8.0f);
         ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_close);
-        int i12 = n6.Yg;
+        int i12 = m6.Yg;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        u6.s(imageView2, i12, null, mode);
-        int i13 = n6.i6;
-        y h02 = n6.h0(n6.x0(null, i13, false), 1, -1);
-        q6 M = u6.M(i13);
+        t6.s(imageView2, i12, null, mode);
+        int i13 = m6.i6;
+        y h02 = m6.h0(m6.x0(null, i13, false), 1, -1);
+        p6 M = t6.M(i13);
         imageView2.setBackground(h02);
-        u6.j(imageView2, h02, null, M, null);
+        t6.j(imageView2, h02, null, M, null);
         imageView2.setPadding(L2, L2, L2, L2);
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: wi.a
             @Override // android.view.View.OnClickListener
@@ -287,12 +286,12 @@ public final class n {
         hVar.m.addView(imageView2, ma.d(38, 38.0f, 5, 0.0f, 4.0f, 4.0f, 0.0f));
         ImageView imageView3 = new ImageView(activity2);
         imageView3.setImageResource(R.drawable.pip_video_expand);
-        u6.s(imageView3, i12, null, mode);
+        t6.s(imageView3, i12, null, mode);
         final int i14 = 1;
-        y h03 = n6.h0(n6.x0(null, i13, false), 1, -1);
-        q6 M2 = u6.M(i13);
+        y h03 = m6.h0(m6.x0(null, i13, false), 1, -1);
+        p6 M2 = t6.M(i13);
         imageView3.setBackground(h03);
-        u6.j(imageView3, h03, null, M2, null);
+        t6.j(imageView3, h03, null, M2, null);
         imageView3.setPadding(L2, L2, L2, L2);
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: wi.a
             @Override // android.view.View.OnClickListener
@@ -347,8 +346,8 @@ public final class n {
         hVar.m.addView(imageView3, ma.d(38, 38.0f, 5, 0.0f, 4.0f, 48.0f, 0.0f));
         ImageView imageView4 = new ImageView(activity2);
         hVar.n = imageView4;
-        u6.s(imageView4, i12, null, mode);
-        u6.Q(hVar.n, n6.h0(n6.x0(null, i13, false), 1, -1), null, u6.M(i13), null);
+        t6.s(imageView4, i12, null, mode);
+        t6.Q(hVar.n, m6.h0(m6.x0(null, i13, false), 1, -1), null, t6.M(i13), null);
         final int i15 = 2;
         hVar.n.setOnClickListener(new View.OnClickListener() { // from class: wi.a
             @Override // android.view.View.OnClickListener
@@ -429,7 +428,7 @@ public final class n {
             hVar.h.setScaleY(0.1f);
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.setDuration(250L);
-            animatorSet.setInterpolator(lr.f);
+            animatorSet.setInterpolator(nr.f);
             i7 = 1;
             animatorSet.playTogether(ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_Y, 1.0f));
             animatorSet.start();

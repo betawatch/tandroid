@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b10 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class b10 implements DialogInterface.OnDismissListe
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (this.b.s2 && (T instanceof bn)) {
                     ((bn) T).wa(true, true);
                     break;

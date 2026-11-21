@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class u9 extends View {
     public Bitmap a;
@@ -26,7 +26,7 @@ public final class u9 extends View {
         Paint paint = this.c;
         int i7 = 0;
         while (i7 < this.d) {
-            paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, i7 < this.e ? org.telegram.ui.ActionBar.n6.m5 : org.telegram.ui.ActionBar.n6.t5, false));
+            paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, i7 < this.e ? org.telegram.ui.ActionBar.m6.m5 : org.telegram.ui.ActionBar.m6.t5, false));
             canvas.drawBitmap(i7 < this.e ? this.a : this.b, org.telegram.messenger.g0.L(48.0f) * i7, 0.0f, paint);
             i7++;
         }
@@ -49,7 +49,7 @@ public final class u9 extends View {
                 if (t9Var != null) {
                     View view = ((org.telegram.ui.Components.voip.r1) t9Var).a;
                     view.setEnabled(i7 > 0);
-                    ((TextView) view).setText(org.telegram.messenger.gd.M0(i7 < 4 ? 2131748058 : 2131745445, null).toUpperCase());
+                    ((TextView) view).setText(org.telegram.messenger.gd.N0(i7 < 4 ? 2131748057 : 2131745444, null).toUpperCase());
                 }
                 invalidate();
                 return true;

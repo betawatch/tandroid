@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class dw extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class dw extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         int i7;
-        org.telegram.ui.ActionBar.r0 r0Var;
+        org.telegram.ui.ActionBar.q0 q0Var;
         switch (this.a) {
             case 0:
                 cx cxVar = this.c;
@@ -63,7 +63,7 @@ public final class dw extends AnimatorListenerAdapter {
                         }
                         cxVar.t3 = true;
                         Activity parentActivity = cxVar.getParentActivity();
-                        i7 = ((org.telegram.ui.ActionBar.h2) cxVar).classGuid;
+                        i7 = ((org.telegram.ui.ActionBar.g2) cxVar).classGuid;
                         org.telegram.messenger.g0.Z2(parentActivity, i7);
                         cxVar.k0.setVisibility(8);
                         xv xvVar = cxVar.H3;
@@ -113,8 +113,8 @@ public final class dw extends AnimatorListenerAdapter {
             case 1:
                 cx cxVar2 = this.c;
                 cxVar2.T3 = null;
-                if (!this.b && (r0Var = cxVar2.n0) != null) {
-                    r0Var.setVisibility(8);
+                if (!this.b && (q0Var = cxVar2.n0) != null) {
+                    q0Var.setVisibility(8);
                     break;
                 }
                 break;

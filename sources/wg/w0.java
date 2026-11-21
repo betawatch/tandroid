@@ -1,6 +1,6 @@
 package wg;
 
-import ai.e1;
+import ai.g1;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import c8.ma;
 import com.google.android.gms.internal.vision.e2;
-import di.p2;
+import di.q2;
 import j$.util.Map;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,25 +32,25 @@ import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Cells.y3;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.e31;
-import tg.z1;
-import ug.j1;
+import tg.o1;
+import ug.i1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class w0 extends sa {
-    public final hi.d T1;
+    public final hi.e T1;
     public final v0 U1;
     public final y3 V1;
     public final ah.e W1;
@@ -65,7 +65,7 @@ public final class w0 extends sa {
     public final ArrayList f2;
     public final ArrayList g2;
     public final LinkedHashMap h2;
-    public final c6 i2;
+    public final d6 i2;
     public String j2;
     public xg.h k2;
     public int l2;
@@ -76,8 +76,8 @@ public final class w0 extends sa {
     public k q2;
     public final s4.s0 r2;
 
-    public w0(h2 h2Var, long j3) {
-        super(h2Var, false);
+    public w0(g2 g2Var, long j3) {
+        super(g2Var, false);
         this.X1 = new Paint(1);
         this.Y1 = new ArrayList();
         ArrayList arrayList = new ArrayList();
@@ -96,8 +96,8 @@ public final class w0 extends sa {
         this.m2 = mp.u1(this.a).O0(Long.valueOf(-j3));
         ((ViewGroup) this.p1.getParent()).removeView(this.p1);
         ViewGroup viewGroup = this.b;
-        lr lrVar = lr.h;
-        this.i2 = new c6(viewGroup, 0L, 350L, lrVar);
+        nr nrVar = nr.h;
+        this.i2 = new d6(viewGroup, 0L, 350L, nrVar);
         ah.e eVar = new ah.e(getContext(), this.J0);
         this.W1 = eVar;
         eVar.setOnCloseClickListener(new r0(this, 7));
@@ -106,8 +106,8 @@ public final class w0 extends sa {
         eVar.f.c(false, 0.0f);
         v0 v0Var = new v0(this, getContext(), this.J0);
         this.U1 = v0Var;
-        int i7 = n6.h5;
-        u6.h(i7, v0Var, this.J0);
+        int i7 = m6.h5;
+        t6.h(i7, v0Var, this.J0);
         v0Var.setOnSearchTextChange(new t0(this, 0));
         this.V1 = new y3(getContext(), this.J0);
         p1();
@@ -117,33 +117,33 @@ public final class w0 extends sa {
         ViewGroup viewGroup3 = this.b;
         int i11 = this.u0;
         viewGroup3.addView(v0Var, ma.f(-2.0f, -1, 55, i11, 0, i11, 0));
-        ah.a aVar = new ah.a(getContext(), this.J0, (ck0) null);
+        ah.a aVar = new ah.a(getContext(), this.J0, (ek0) null);
         aVar.setClickable(true);
         aVar.setOrientation(1);
         aVar.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f));
-        u6.h(i7, aVar, this.J0);
-        hi.d dVar = new hi.d(getContext(), this.J0, true);
-        this.T1 = dVar;
-        dVar.setOnClickListener(new s0(this, 1));
-        aVar.addView(dVar, ma.r(-1, 48, 87));
+        t6.h(i7, aVar, this.J0);
+        hi.e eVar2 = new hi.e(getContext(), this.J0, true);
+        this.T1 = eVar2;
+        eVar2.setOnClickListener(new s0(this, 1));
+        aVar.addView(eVar2, ma.r(-1, 48, 87));
         ViewGroup viewGroup4 = this.b;
         int i12 = this.u0;
         viewGroup4.addView(aVar, ma.f(-2.0f, -1, 87, i12, 0, i12, 0));
         xg.h hVar = this.k2;
-        ck0 ck0Var = this.o1;
+        ek0 ek0Var = this.o1;
         hVar.n = arrayList;
-        hVar.f = ck0Var;
+        hVar.f = ek0Var;
         int i13 = this.u0;
-        ck0Var.setPadding(i13, 0, i13, org.telegram.messenger.g0.L(60.0f));
-        this.o1.j(new j1(this, 2));
-        this.o1.setOnItemClickListener(new z1(this, 13));
+        ek0Var.setPadding(i13, 0, i13, org.telegram.messenger.g0.L(60.0f));
+        this.o1.j(new i1(this, 2));
+        this.o1.setOnItemClickListener(new o1(this, 14));
         v4.k kVar = new v4.k();
         kVar.n(350L);
-        kVar.o(lrVar);
+        kVar.o(nrVar);
         kVar.C = false;
         kVar.m = false;
         this.o1.setItemAnimator(kVar);
-        this.o1.i(new ai.i0(this, 9));
+        this.o1.i(new ai.j0(this, 9));
         o1(false, true);
         g1(1, null, true);
         g1(3, null, true);
@@ -177,14 +177,14 @@ public final class w0 extends sa {
         return lowerCase2.startsWith(str) || i5.c.B(" ", str, lowerCase2);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void L() {
         super.L();
         org.telegram.messenger.g0.r(this.r2);
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
+    public final dk0 M0(ek0 ek0Var) {
         xg.h hVar = new xg.h(getContext(), this.J0, true);
         this.k2 = hVar;
         return hVar;
@@ -193,7 +193,7 @@ public final class w0 extends sa {
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
         int i7 = this.n2;
-        return i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.M0(2131753286, null) : gd.M0(2131753601, null) : gd.M0(2131749508, null);
+        return i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.N0(2131753285, null) : gd.N0(2131753600, null) : gd.N0(2131749507, null);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -205,25 +205,25 @@ public final class w0 extends sa {
         float translationY = eVar.getTranslationY() + eVar.getMeasuredHeight();
         this.U1.setTranslationY(translationY);
         this.o1.setTranslationY((r2.getMeasuredHeight() + eVar.getMeasuredHeight()) - org.telegram.messenger.g0.L(16.0f));
-        int w02 = n6.w0(n6.h5, this.J0);
+        int w02 = m6.w0(m6.h5, this.J0);
         Paint paint = this.X1;
         paint.setColor(w02);
         int max = Math.max(0, i7);
         boolean z10 = max < org.telegram.messenger.g0.m;
-        c6 c6Var = this.i2;
-        int W1 = org.telegram.messenger.g0.W1(c6Var.d(z10), max, 0);
+        d6 d6Var = this.i2;
+        int W1 = org.telegram.messenger.g0.W1(d6Var.d(z10), max, 0);
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(this.u0, W1, this.b.getWidth() - this.u0, org.telegram.messenger.g0.L(14.0f) + this.b.getHeight());
-        float L = (1.0f - c6Var.c) * org.telegram.messenger.g0.L(14.0f);
+        float L = (1.0f - d6Var.c) * org.telegram.messenger.g0.L(14.0f);
         canvas.drawRoundRect(rectF, L, L, paint);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void c0(Configuration configuration) {
         n1(false, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         i iVar = this.o2;
         if (iVar != null) {
@@ -273,7 +273,7 @@ public final class w0 extends sa {
             ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(j10.t0);
             TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
             tL_help_getCountriesList.lang_code = gd.E0().B != null ? gd.E0().B.c() : Locale.getDefault().getCountry();
-            connectionsManager2.sendRequest(tL_help_getCountriesList, new e1(u0Var2, 26));
+            connectionsManager2.sendRequest(tL_help_getCountriesList, new g1(u0Var2, 26));
             return;
         }
         long j10 = chat.id;
@@ -283,7 +283,7 @@ public final class w0 extends sa {
         TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
         tL_contacts_search.q = str;
         tL_contacts_search.limit = 50;
-        connectionsManager3.sendRequest(tL_contacts_search, new p2(u13, j10, t0Var, 7));
+        connectionsManager3.sendRequest(tL_contacts_search, new q2(u13, j10, t0Var, 7));
     }
 
     public final void i1(int i7, List list) {
@@ -424,20 +424,20 @@ public final class w0 extends sa {
     }
 
     public final void k1(boolean z10) {
-        ck0 ck0Var = this.o1;
+        ek0 ek0Var = this.o1;
         if (!z10) {
-            ck0Var.v0(0);
+            ek0Var.v0(0);
             return;
         }
         pi.l lVar = new pi.l(getContext(), 2, 0.6f);
         lVar.a = 1;
         lVar.p = org.telegram.messenger.g0.L(38.0f);
-        ck0Var.getLayoutManager().w0(lVar);
+        ek0Var.getLayoutManager().w0(lVar);
     }
 
     public final void l1() {
         int i7 = this.n2;
-        String G = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.G((int) mp.u1(j10.t0).q0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : gd.G((int) s.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : gd.M0(2131753270, null);
+        String G = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.G((int) mp.u1(j10.t0).q0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : gd.G((int) s.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : gd.N0(2131753269, null);
         k kVar = this.q2;
         if (kVar != null) {
             new lc(kVar.c.c, kVar.b).Q(R.raw.chats_infotip, 36, G).k(true);
@@ -445,13 +445,13 @@ public final class w0 extends sa {
     }
 
     public final void m1(boolean z10) {
-        hi.d dVar = this.T1;
-        dVar.setShowZero(false);
+        hi.e eVar = this.T1;
+        eVar.setShowZero(false);
         int i7 = this.n2;
-        dVar.i(i7 != 1 ? (i7 == 2 || i7 == 3) ? gd.M0(2131745751, null) : "" : gd.M0(2131753287, null), z10, true);
+        eVar.i(i7 != 1 ? (i7 == 2 || i7 == 3) ? gd.N0(2131745750, null) : "" : gd.N0(2131753286, null), z10, true);
         HashSet hashSet = this.a2;
-        dVar.c(hashSet.size(), z10);
-        dVar.setEnabled(hashSet.size() > 0);
+        eVar.c(hashSet.size(), z10);
+        eVar.setEnabled(hashSet.size() > 0);
     }
 
     public final void n1(boolean z10, boolean z11) {
@@ -463,11 +463,11 @@ public final class w0 extends sa {
         arrayList.addAll(arrayList2);
         arrayList2.clear();
         if (this.n2 == 1) {
-            String M0 = gd.M0(2131749377, null);
+            String N0 = gd.N0(2131749376, null);
             xg.g gVar = new xg.g(9, false);
             gVar.h = 1;
             gVar.i = R.drawable.menu_random;
-            gVar.f = M0;
+            gVar.f = N0;
             arrayList2.add(gVar);
         }
         xg.g gVar2 = new xg.g(10, false);
@@ -537,7 +537,7 @@ public final class w0 extends sa {
         gVar6.k = max;
         arrayList2.add(gVar6);
         if (hashSet.size() > 0 && this.n2 != 3) {
-            y3Var.a(gd.M0(2131743393, null), new s0(this, i13));
+            y3Var.a(gd.N0(2131743387, null), new s0(this, i13));
         } else if (z10) {
             y3Var.setRightText(null);
         } else {
@@ -560,12 +560,12 @@ public final class w0 extends sa {
         n1(z10, z11);
         int i7 = 0;
         while (true) {
-            ck0 ck0Var = this.o1;
-            if (i7 >= ck0Var.getChildCount()) {
+            ek0 ek0Var = this.o1;
+            if (i7 >= ek0Var.getChildCount()) {
                 m1(z10);
                 return;
             }
-            View childAt = ck0Var.getChildAt(i7);
+            View childAt = ek0Var.getChildAt(i7);
             if (childAt instanceof ah.r) {
                 int R = RecyclerView.R(childAt) - 1;
                 if (R >= 0) {

@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -33,14 +33,14 @@ public final /* synthetic */ class g0 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new ai.v((g4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (org.telegram.messenger.fj) this.f, this.c, (String) this.g));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new ai.v((vf.b) this.d, (org.telegram.ui.ActionBar.u1[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
+                org.telegram.messenger.g0.g3(new ai.v((vf.b) this.d, (org.telegram.ui.ActionBar.t1[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
                 break;
         }
     }
 
-    public /* synthetic */ g0(vf.b bVar, org.telegram.ui.ActionBar.u1[] u1VarArr, int i7, Uri uri, Context context, boolean z10) {
+    public /* synthetic */ g0(vf.b bVar, org.telegram.ui.ActionBar.t1[] t1VarArr, int i7, Uri uri, Context context, boolean z10) {
         this.d = bVar;
-        this.e = u1VarArr;
+        this.e = t1VarArr;
         this.b = i7;
         this.f = uri;
         this.g = context;

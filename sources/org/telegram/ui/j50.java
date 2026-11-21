@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j50 implements TextWatcher {
     public final /* synthetic */ k50 a;
@@ -21,18 +21,18 @@ public final class j50 implements TextWatcher {
             n50Var.getConnectionsManager().cancelRequest(k50Var.c, true);
             k50Var.c = 0;
         }
-        vs vsVar = k50Var.d;
-        if (vsVar != null) {
-            org.telegram.messenger.g0.r(vsVar);
+        ss ssVar = k50Var.d;
+        if (ssVar != null) {
+            org.telegram.messenger.g0.r(ssVar);
         }
         k50Var.e = null;
         if (trim.isEmpty()) {
             n50.f0(n50Var, null);
             return;
         }
-        vs vsVar2 = new vs(24, this, trim);
-        k50Var.d = vsVar2;
-        org.telegram.messenger.g0.h3(vsVar2, 300L);
+        ss ssVar2 = new ss(26, this, trim);
+        k50Var.d = ssVar2;
+        org.telegram.messenger.g0.h3(ssVar2, 300L);
     }
 
     @Override // android.text.TextWatcher

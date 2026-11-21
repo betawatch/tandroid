@@ -5,23 +5,23 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ps0 extends js0 {
     public final /* synthetic */ int r = 1;
-    public final /* synthetic */ org.telegram.ui.Components.bk0 s;
+    public final /* synthetic */ org.telegram.ui.Components.dk0 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ps0(di.l4 l4Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var);
+    public ps0(di.l4 l4Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
         this.s = l4Var;
     }
 
     @Override // org.telegram.ui.js0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         boolean q10;
-        org.telegram.ui.ActionBar.i6 i6Var2;
+        org.telegram.ui.ActionBar.h6 h6Var2;
         switch (this.r) {
             case 0:
                 float L = org.telegram.messenger.g0.L(10.0f);
@@ -34,12 +34,12 @@ public final class ps0 extends js0 {
                 premiumPreviewFragment.T.postTranslate(0.0f, -this.f.e);
                 premiumPreviewFragment.S.setLocalMatrix(premiumPreviewFragment.T);
                 canvas.drawRoundRect(rectF, L, L, premiumPreviewFragment.U);
-                i6Var = ((org.telegram.ui.ActionBar.h2) premiumPreviewFragment).resourceProvider;
-                if (i6Var != null) {
-                    i6Var2 = ((org.telegram.ui.ActionBar.h2) premiumPreviewFragment).resourceProvider;
-                    q10 = i6Var2.d();
+                h6Var = ((org.telegram.ui.ActionBar.g2) premiumPreviewFragment).resourceProvider;
+                if (h6Var != null) {
+                    h6Var2 = ((org.telegram.ui.ActionBar.g2) premiumPreviewFragment).resourceProvider;
+                    q10 = h6Var2.d();
                 } else {
-                    q10 = org.telegram.ui.ActionBar.n6.I.q();
+                    q10 = org.telegram.ui.ActionBar.m6.I.q();
                 }
                 if (q10) {
                     float L2 = org.telegram.messenger.g0.L(1.0f);
@@ -59,8 +59,8 @@ public final class ps0 extends js0 {
                 ImageView imageView2 = this.c;
                 rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
                 di.l4 l4Var = (di.l4) this.s;
-                ((ug.i1) l4Var.d).l2.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, ((ug.i1) l4Var.d).a2);
-                canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), ((ug.i1) l4Var.d).l2.f);
+                ((ug.h1) l4Var.d).l2.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, ((ug.h1) l4Var.d).a2);
+                canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), ((ug.h1) l4Var.d).l2.f);
                 super.dispatchDraw(canvas);
                 break;
         }

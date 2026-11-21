@@ -1,125 +1,96 @@
 package kg;
 
-import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.j10;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.xj0;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.bk;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.il;
+import org.telegram.ui.Components.in;
+import org.telegram.ui.Components.kj;
+import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.ml;
+import org.telegram.ui.Components.yy;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d0 extends xj0 {
-    public final ArrayList r;
-    public final int s;
-    public final Context w;
-    public final /* synthetic */ g0 x;
+public final class d0 extends yy {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ mi V;
 
-    public d0(g0 g0Var, Context context) {
-        this.x = g0Var;
-        ArrayList arrayList = new ArrayList();
-        this.r = arrayList;
-        int i7 = j10.t0;
-        this.s = i7;
-        this.w = context;
-        arrayList.addAll(w1.f(i7).e());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ d0(mi miVar, int i7, ek0 ek0Var, int i10) {
+        super(i7, 0, ek0Var);
+        this.U = i10;
+        this.V = miVar;
     }
 
-    @Override // org.telegram.ui.Components.ij0
-    public final String F(int i7) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.ij0
-    public final void G(ck0 ck0Var, float f10, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
-    }
-
-    @Override // org.telegram.ui.Components.xj0
-    public final int M(int i7) {
-        if (i7 == 0 || i7 == 2) {
-            return 1;
-        }
-        return this.r.size();
-    }
-
-    @Override // org.telegram.ui.Components.xj0
-    public final Object O(int i7, int i10) {
-        if (i7 != 0 && i10 >= 0) {
-            ArrayList arrayList = this.r;
-            if (i10 < arrayList.size()) {
-                return arrayList.get(i10);
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.xj0
-    public final int P(int i7, int i10) {
-        if (i7 == 0) {
-            return 1;
-        }
-        return i7 == 2 ? 2 : 0;
-    }
-
-    @Override // org.telegram.ui.Components.xj0
-    public final int R() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.xj0
-    public final View T(int i7, View view) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.xj0
-    public final boolean V(int i7, int i10, v4.f1 f1Var) {
-        return (i7 == 0 || i7 == 2 || i10 >= this.r.size()) ? false : true;
-    }
-
-    @Override // org.telegram.ui.Components.xj0
-    public final void W(int i7, int i10, v4.f1 f1Var) {
-        if (f1Var.f == 0) {
-            s1 s1Var = (s1) f1Var.a;
-            Object O = O(i7, i10);
-            boolean z10 = true;
-            if (i7 == 1 && i10 == M(i7) - 1) {
-                z10 = false;
-            }
-            if (O instanceof v1) {
-                v1 v1Var = (v1) O;
-                s1Var.a(v1Var, null, z10);
-                s1Var.d.a(this.x.x.contains(Integer.valueOf(v1Var.a)), false);
-            }
+    @Override // v4.p0
+    public int[] t(View view, Rect rect) {
+        switch (this.U) {
+            case 4:
+                int C = this.n - C();
+                int top = (view.getTop() + rect.top) - view.getScrollY();
+                int height = rect.height() + top;
+                int min = Math.min(0, top);
+                int max = Math.max(0, height - C);
+                if (min == 0) {
+                    min = Math.min(top, max);
+                }
+                return new int[]{0, min};
+            default:
+                return super.t(view, rect);
         }
     }
 
-    @Override // org.telegram.ui.Components.xj0, v4.i0
-    public final void f() {
-        ArrayList arrayList = this.r;
-        arrayList.clear();
-        arrayList.addAll(w1.f(this.s).e());
-        X(false);
-        this.x.Q();
+    @Override // v4.c0, v4.p0
+    public final void v0(RecyclerView recyclerView, v4.c1 c1Var, int i7) {
+        switch (this.U) {
+            case 0:
+                c0 c0Var = new c0(this, recyclerView.getContext());
+                c0Var.a = i7;
+                w0(c0Var);
+                break;
+            case 1:
+                kj kjVar = new kj(this, recyclerView.getContext());
+                kjVar.a = i7;
+                w0(kjVar);
+                break;
+            case 2:
+                bk bkVar = new bk(this, recyclerView.getContext());
+                bkVar.a = i7;
+                w0(bkVar);
+                break;
+            case 3:
+                il ilVar = new il(this, recyclerView.getContext());
+                ilVar.a = i7;
+                w0(ilVar);
+                break;
+            default:
+                in inVar = new in(this, recyclerView.getContext());
+                inVar.a = i7;
+                w0(inVar);
+                break;
+        }
     }
 
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View s1Var;
-        Context context = this.w;
-        if (i7 == 0) {
-            s1Var = new s1(context, this.x.a, false);
-        } else if (i7 != 1) {
-            s1Var = new View(context);
-            s1Var.setTag(-33024);
-        } else {
-            s1Var = new View(context);
-            s1Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
-            s1Var.setTag(-33024);
+    @Override // v4.c0
+    public void z0(v4.c1 c1Var, int[] iArr) {
+        switch (this.U) {
+            case 3:
+                super.z0(c1Var, iArr);
+                iArr[1] = Math.max(iArr[1], ((ml) this.V).M.getHeight());
+                break;
+            default:
+                super.z0(c1Var, iArr);
+                break;
         }
-        return new kj0(s1Var);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d0(ml mlVar, di.b1 b1Var) {
+        super(0, 0, b1Var);
+        this.U = 3;
+        this.V = mlVar;
     }
 }

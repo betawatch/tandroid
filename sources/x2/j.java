@@ -4,11 +4,11 @@ import a8.xa;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.Components.rm;
+import org.telegram.ui.Components.tm;
 import org.telegram.ui.wc1;
 import org.telegram.ui.zl;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class j implements k0, q2.k {
     public final Object a;
@@ -40,7 +40,7 @@ public final class j implements k0, q2.k {
             c0 d = d(c0Var, g0Var);
             g0 g0Var2 = (g0) xaVar.c;
             g0Var2.getClass();
-            xaVar.i(new rm(xaVar, g0Var2, d, 17));
+            xaVar.i(new tm(xaVar, g0Var2, d, 17));
         }
     }
 

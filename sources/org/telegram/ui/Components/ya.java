@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ya implements r1.c {
     public final /* synthetic */ int a;
@@ -29,44 +29,44 @@ public final /* synthetic */ class ya implements r1.c {
                 }
                 break;
             case 2:
-                xk xkVar = (xk) this.b;
-                xkVar.m0 = null;
-                xkVar.n0 = 1.0f;
-                xkVar.m0();
+                zk zkVar = (zk) this.b;
+                zkVar.m0 = null;
+                zkVar.n0 = 1.0f;
+                zkVar.m0();
                 break;
             case 3:
-                on0 on0Var = (on0) this.b;
-                on0Var.q = false;
-                on0Var.dismiss();
+                qn0 qn0Var = (qn0) this.b;
+                qn0Var.q = false;
+                qn0Var.dismiss();
                 break;
             case 4:
-                pn0 pn0Var = (pn0) this.b;
-                pn0Var.s = false;
-                pn0Var.r = false;
+                rn0 rn0Var = (rn0) this.b;
+                rn0Var.s = false;
+                rn0Var.r = false;
                 if (!z10) {
                     gVar.d();
                 }
-                if (gVar == pn0Var.f) {
-                    pn0Var.f = null;
+                if (gVar == rn0Var.f) {
+                    rn0Var.f = null;
                     break;
                 }
                 break;
             case 5:
-                yo0 yo0Var = (yo0) this.b;
-                yo0Var.A1.setVisibility(8);
-                yo0Var.v2.setVisibility(8);
-                wo0 wo0Var = yo0Var.H1;
-                wo0Var.f = null;
-                wo0Var.f();
-                yo0Var.x2 = null;
-                yo0Var.I2 = false;
+                ap0 ap0Var = (ap0) this.b;
+                ap0Var.A1.setVisibility(8);
+                ap0Var.v2.setVisibility(8);
+                yo0 yo0Var = ap0Var.H1;
+                yo0Var.f = null;
+                yo0Var.f();
+                ap0Var.x2 = null;
+                ap0Var.I2 = false;
                 break;
             default:
-                yo0 yo0Var2 = ((ho0) this.b).d;
-                yo0Var2.B1.setVisibility(8);
-                yo0Var2.C1.setVisibility(8);
-                yo0Var2.u2.setVisibility(8);
-                yo0Var2.x2 = null;
+                ap0 ap0Var2 = ((jo0) this.b).d;
+                ap0Var2.B1.setVisibility(8);
+                ap0Var2.C1.setVisibility(8);
+                ap0Var2.u2.setVisibility(8);
+                ap0Var2.x2 = null;
                 break;
         }
     }

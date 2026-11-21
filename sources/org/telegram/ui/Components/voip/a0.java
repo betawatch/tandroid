@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import c8.md;
-import hi.k3;
+import hi.j3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -26,12 +26,12 @@ import org.telegram.messenger.u3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.gk;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.ik;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a0 extends ViewGroup {
     public final z E;
@@ -39,7 +39,7 @@ public final class a0 extends ViewGroup {
     public long G;
     public long H;
     public int[] I;
-    public final gk J;
+    public final ik J;
     public final /* synthetic */ e0 K;
     public final ArrayList a;
     public final ArrayList b;
@@ -65,7 +65,7 @@ public final class a0 extends ViewGroup {
         this.h = org.telegram.messenger.g0.L(2.0f);
         this.r = 1.0f;
         this.E = new z(this, 1);
-        this.J = new gk(this, 21);
+        this.J = new ik(this, 21);
         setBackgroundColor(-16777216);
         setChildrenDrawingOrderEnabled(true);
         this.n = e0Var.c;
@@ -73,7 +73,7 @@ public final class a0 extends ViewGroup {
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(-1);
-        imageView.setBackground(n6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
+        imageView.setBackground(m6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
         addView(imageView);
         TextView textView = new TextView(context);
         this.d = textView;
@@ -388,8 +388,8 @@ public final class a0 extends ViewGroup {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.s = ofFloat;
         ofFloat.setDuration(420L);
-        this.s.setInterpolator(lr.h);
-        this.s.addUpdateListener(new k3(this, 16));
+        this.s.setInterpolator(nr.h);
+        this.s.addUpdateListener(new j3(this, 16));
         this.s.addListener(new y9(this, 12));
         this.s.start();
     }
@@ -519,10 +519,10 @@ public final class a0 extends ViewGroup {
             }
             int callState = sharedInstance.getCallState();
             if (callState == 5) {
-                textView.setText(gd.M0(2131743016, null));
+                textView.setText(gd.N0(2131743010, null));
                 textView.setVisibility(0);
             } else if (callState != 3) {
-                textView.setText(gd.M0(2131743182, null));
+                textView.setText(gd.N0(2131743176, null));
                 textView.setVisibility(0);
             } else {
                 textView.setVisibility(8);

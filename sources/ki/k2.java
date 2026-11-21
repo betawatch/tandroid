@@ -1,130 +1,94 @@
 package ki;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.n10;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class k2 extends s3 {
-    public final /* synthetic */ int d0;
-    public final /* synthetic */ Object e0;
+public final class k2 extends org.telegram.ui.web.v0 {
+    public final /* synthetic */ int U0;
+    public final /* synthetic */ Object V0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k2(int i7, Context context, Object obj) {
-        super(context);
-        this.d0 = i7;
-        this.e0 = obj;
+    public /* synthetic */ k2(Object obj, Context context, h6 h6Var, int i7, int i10) {
+        super(i7, context, h6Var, true);
+        this.U0 = i10;
+        this.V0 = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0099  */
-    @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i7, int i10) {
-        int i11;
-        float f10;
-        int size;
-        switch (this.d0) {
+    @Override // org.telegram.ui.web.v0
+    public void E(boolean z10, String str) {
+        switch (this.U0) {
             case 0:
-                t2 t2Var = (t2) this.e0;
-                p2 p2Var = t2Var.n0;
-                int size2 = View.MeasureSpec.getSize(i10);
-                if (!org.telegram.messenger.g0.Q1()) {
-                    Point point = org.telegram.messenger.g0.q;
-                    if (point.x > point.y) {
-                        i11 = (int) (size2 / 3.5f);
-                        if (i11 < 0) {
-                            i11 = 0;
-                        }
-                        f10 = i11;
-                        if (getOffsetY() != f10 && !t2Var.e0 && t2Var.V0) {
-                            t2Var.H = true;
-                            setOffsetY(f10);
-                            t2Var.H = false;
-                            t2Var.V0 = false;
-                        }
-                        if (!t2Var.f0 && org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.E && !org.telegram.messenger.g0.P1()) {
-                            Point point2 = org.telegram.messenger.g0.q;
-                            i7 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point2.x, point2.y) * 0.8f), TLObject.FLAG_30);
-                        }
-                        size = View.MeasureSpec.getSize(i10);
-                        if (!t2Var.f0) {
-                            size = (size - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                        }
-                        if (p2Var != null && p2Var.getTotalHeight() > 0) {
-                            size -= p2Var.getTotalHeight();
-                        }
-                        super.onMeasure(i7, n10.C(24.0f, size, TLObject.FLAG_30));
-                        break;
+                s2 s2Var = (s2) this.V0;
+                Paint paint = s2Var.R;
+                if (z10) {
+                    s2Var.m();
+                    s2Var.Z0.a(s2Var.q() ? s2Var.x0.e : o10.q(mp.u1(s2Var.I).c2(Long.valueOf(s2Var.J))), str);
+                    s2Var.Z0.b(org.telegram.messenger.g0.B(paint.getColor()) <= 0.721f, false);
+                    s2Var.Z0.setBackgroundColor(paint.getColor());
+                    s2Var.Y0 = str;
+                }
+                org.telegram.ui.b3 b3Var = s2Var.Z0;
+                s2Var.X0 = z10;
+                org.telegram.messenger.g0.X3(b3Var, z10, 1.0f, true, false);
+                invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.web.v0
+    public final void K(org.telegram.ui.web.s0 s0Var) {
+        switch (this.U0) {
+            case 0:
+                s2 s2Var = (s2) this.V0;
+                s2Var.x.setWebView(s0Var);
+                v0 v0Var = s2Var.D0;
+                if (v0Var != null) {
+                    v0Var.k = s0Var;
+                }
+                s2Var.o0.setWebView(s0Var);
+                s2Var.K();
+                break;
+            default:
+                ((s3) this.V0).K.setWebView(s0Var);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.web.v0
+    public void L(org.telegram.ui.web.s0 s0Var) {
+        switch (this.U0) {
+            case 0:
+                s2 s2Var = (s2) this.V0;
+                v0 v0Var = s2Var.D0;
+                if (v0Var != null && v0Var.k == s0Var) {
+                    v0Var.k = null;
+                    v0Var.b();
+                }
+                s2Var.o0.setWebView(null);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.U0) {
+            case 1:
+                if (motionEvent.getAction() == 0) {
+                    s3 s3Var = (s3) this.V0;
+                    if (!s3Var.Q) {
+                        s3Var.Q = true;
+                        s3Var.n.R();
                     }
                 }
-                i11 = (size2 / 5) * 2;
-                if (i11 < 0) {
-                }
-                f10 = i11;
-                if (getOffsetY() != f10) {
-                    t2Var.H = true;
-                    setOffsetY(f10);
-                    t2Var.H = false;
-                    t2Var.V0 = false;
-                }
-                if (!t2Var.f0) {
-                    Point point22 = org.telegram.messenger.g0.q;
-                    i7 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point22.x, point22.y) * 0.8f), TLObject.FLAG_30);
-                }
-                size = View.MeasureSpec.getSize(i10);
-                if (!t2Var.f0) {
-                }
-                if (p2Var != null) {
-                    size -= p2Var.getTotalHeight();
-                }
-                super.onMeasure(i7, n10.C(24.0f, size, TLObject.FLAG_30));
+                return super.dispatchTouchEvent(motionEvent);
             default:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i10) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(84.0f)) + ((t3) this.e0).O, TLObject.FLAG_30));
-                break;
-        }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        switch (this.d0) {
-            case 0:
-                if (!((t2) this.e0).H) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.requestLayout();
-                break;
-        }
-    }
-
-    @Override // ki.s3, android.view.View
-    public void setTranslationY(float f10) {
-        switch (this.d0) {
-            case 0:
-                super.setTranslationY(f10);
-                t2 t2Var = (t2) this.e0;
-                org.telegram.messenger.h2 h2Var = t2Var.o0;
-                if (h2Var != null) {
-                    h2Var.setTranslationY(org.telegram.messenger.g0.L(24.0f) + f10);
-                }
-                FrameLayout frameLayout = t2Var.r0;
-                if (frameLayout != null) {
-                    frameLayout.setTranslationY(t2Var.x.getTranslationY() + org.telegram.messenger.g0.W1(t2Var.h0, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(70.0f) + t2Var.n.top));
-                    break;
-                }
-                break;
-            default:
-                super.setTranslationY(f10);
-                break;
+                return super.dispatchTouchEvent(motionEvent);
         }
     }
 }

@@ -6,20 +6,20 @@ import android.view.MotionEvent;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class nv extends ChatActivityEnterView {
-    public final /* synthetic */ cx o7;
+    public final /* synthetic */ cx t7;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public nv(cx cxVar, Activity activity, vw vwVar) {
         super(activity, vwVar, null, false, null);
-        this.o7 = cxVar;
+        this.t7 = cxVar;
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void X0(float f10) {
-        cx cxVar = this.o7;
+    public final void b1(float f10) {
+        cx cxVar = this.t7;
         cxVar.A1.setInputBubbleHeight(f10);
         cxVar.E3();
         cxVar.F3();
@@ -29,9 +29,9 @@ public final class nv extends ChatActivityEnterView {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int i7;
         if (motionEvent.getAction() == 0) {
-            cx cxVar = this.o7;
+            cx cxVar = this.t7;
             Activity parentActivity = cxVar.getParentActivity();
-            i7 = ((org.telegram.ui.ActionBar.h2) cxVar).classGuid;
+            i7 = ((org.telegram.ui.ActionBar.g2) cxVar).classGuid;
             org.telegram.messenger.g0.Z2(parentActivity, i7);
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -39,7 +39,7 @@ public final class nv extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final int getMessagesCount() {
-        cx cxVar = this.o7;
+        cx cxVar = this.t7;
         int i7 = cxVar.U0;
         nv nvVar = cxVar.D1;
         return Math.max(1, i7 + (!TextUtils.isEmpty(nvVar == null ? "" : nvVar.getFieldText()) ? 1 : 0));
@@ -47,7 +47,7 @@ public final class nv extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final long getStarsPrice() {
-        cx cxVar = this.o7;
+        cx cxVar = this.t7;
         ArrayList arrayList = cxVar.K2;
         if (arrayList == null) {
             return 0L;

@@ -4,9 +4,9 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pt0 implements org.telegram.messenger.i9, org.telegram.ui.Components.qj0, v40 {
+public final /* synthetic */ class pt0 implements org.telegram.messenger.i9, org.telegram.ui.Components.sj0, v40 {
     public final /* synthetic */ st0 a;
 
     public /* synthetic */ pt0(st0 st0Var) {
@@ -22,7 +22,7 @@ public final /* synthetic */ class pt0 implements org.telegram.messenger.i9, org
         this.a.a0();
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
         st0 st0Var = this.a;
         if (i7 < st0Var.r || i7 >= st0Var.s) {
@@ -40,7 +40,7 @@ public final /* synthetic */ class pt0 implements org.telegram.messenger.i9, org
         st0 st0Var = this.a;
         st0Var.getClass();
         if (((Integer) obj).intValue() == st0Var.x) {
-            return Integer.valueOf(org.telegram.ui.ActionBar.n6.r1(0.12f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.p7, false)));
+            return Integer.valueOf(org.telegram.ui.ActionBar.m6.r1(0.12f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.p7, false)));
         }
         return null;
     }

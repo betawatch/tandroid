@@ -10,7 +10,7 @@ import android.os.SystemClock;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class o10 extends mh.b {
     public final OvershootInterpolator d;
@@ -241,8 +241,8 @@ public final class o10 extends mh.b {
                     f40Var.s1.a(i15, i14);
                     f40Var.q1.a(i15, i14);
                     org.telegram.ui.Components.voip.q2 q2Var4 = f40Var.u1;
-                    int i21 = org.telegram.ui.ActionBar.n6.uh;
-                    q2Var4.a(org.telegram.ui.ActionBar.n6.x0(null, i21, false), org.telegram.ui.ActionBar.n6.x0(null, i21, false));
+                    int i21 = org.telegram.ui.ActionBar.m6.uh;
+                    q2Var4.a(org.telegram.ui.ActionBar.m6.x0(null, i21, false), org.telegram.ui.ActionBar.m6.x0(null, i21, false));
                     f40Var.r1.a(i14, i16);
                 }
                 e40 e40Var9 = f40Var.M3;
@@ -350,7 +350,7 @@ public final class o10 extends mh.b {
                         paint3.setShader(e40Var10.g);
                         f21 = f36;
                     }
-                    int S0 = org.telegram.messenger.g0.S0(f40Var.T3, f20, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.bh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Bh, false));
+                    int S0 = org.telegram.messenger.g0.S0(f40Var.T3, f20, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.bh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Bh, false));
                     Paint paint7 = paint;
                     paint7.setColor(S0);
                     float measuredWidth2 = (int) ((q2Var3.getMeasuredWidth() / 2.0f) + q2Var3.getX());
@@ -384,7 +384,7 @@ public final class o10 extends mh.b {
                     paint3.setAlpha(org.telegram.messenger.ks.e4);
                     if (z11) {
                         canvas.drawCircle(measuredWidth2, y10, org.telegram.messenger.g0.L(25.909092f), paint3);
-                        paint3.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Fh, false));
+                        paint3.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Fh, false));
                         if (f21 != 0.0f) {
                             paint3.setAlpha((int) (f21 * 255.0f));
                             paint3.setShader(null);
@@ -492,24 +492,24 @@ public final class o10 extends mh.b {
                     } else {
                         f17 = f16;
                         f18 = L2;
-                        paint2.setColor(org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.bh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Bh, false)));
+                        paint2.setColor(org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.bh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Bh, false)));
                     }
                     if (f40Var.v1()) {
                         radialProgressView4 = radialProgressView2;
                         w9Var3 = w9Var6;
                         w9Var4 = w9Var7;
                     } else {
-                        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Ch, false);
-                        int i24 = org.telegram.ui.ActionBar.n6.Bh;
+                        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ch, false);
+                        int i24 = org.telegram.ui.ActionBar.m6.Bh;
                         radialProgressView4 = radialProgressView2;
-                        int S02 = org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, x02, org.telegram.ui.ActionBar.n6.x0(null, i24, false));
+                        int S02 = org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, x02, org.telegram.ui.ActionBar.m6.x0(null, i24, false));
                         paint2.setColor(S02);
                         paint2.setShader(null);
-                        int i25 = org.telegram.ui.ActionBar.n6.bh;
+                        int i25 = org.telegram.ui.ActionBar.m6.bh;
                         w9Var4 = w9Var7;
                         w9Var3 = w9Var6;
-                        q2Var.a(org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, org.telegram.ui.ActionBar.n6.x0(null, i25, false), org.telegram.ui.ActionBar.n6.x0(null, i24, false)), S02);
-                        q2Var2.a(org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, org.telegram.ui.ActionBar.n6.x0(null, i25, false), org.telegram.ui.ActionBar.n6.x0(null, i24, false)), S02);
+                        q2Var.a(org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, org.telegram.ui.ActionBar.m6.x0(null, i25, false), org.telegram.ui.ActionBar.m6.x0(null, i24, false)), S02);
+                        q2Var2.a(org.telegram.messenger.g0.S0(f40Var.T3, 1.0f, org.telegram.ui.ActionBar.m6.x0(null, i25, false), org.telegram.ui.ActionBar.m6.x0(null, i24, false)), S02);
                     }
                     float measuredWidth32 = (int) ((q2Var3.getMeasuredWidth() / 2.0f) + q2Var3.getX());
                     float y112 = (int) (q2Var3.getY() + org.telegram.messenger.g0.L(f14));

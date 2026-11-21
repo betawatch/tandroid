@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class lg0 extends m41 {
     public final /* synthetic */ mg0 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lg0(mg0 mg0Var, Context context, int i7, lg.f fVar, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i7, fVar, i6Var);
+    public lg0(mg0 mg0Var, Context context, int i7, lg.f fVar, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, i7, fVar, h6Var);
         this.w = mg0Var;
     }
 
@@ -58,11 +58,11 @@ public final class lg0 extends m41 {
             og0Var.f.getClass();
             b51Var.a = RecyclerView.R(this);
             gVar.u0.d(true, false);
-            i7 = ((org.telegram.ui.ActionBar.h2) og0Var).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) og0Var).currentAccount;
             int sendRequest = ConnectionsManager.getInstance(i7).sendRequest(tL_loadAsyncGraph, new z9(this, str, b51Var, 25), null, null, 0, og0Var.a.stats_dc, 1, true);
-            i10 = ((org.telegram.ui.ActionBar.h2) og0Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.g2) og0Var).currentAccount;
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-            i11 = ((org.telegram.ui.ActionBar.h2) og0Var).classGuid;
+            i11 = ((org.telegram.ui.ActionBar.g2) og0Var).classGuid;
             connectionsManager.bindRequestToGuid(sendRequest, i11);
         }
     }

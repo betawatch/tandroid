@@ -15,9 +15,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import p4.o0;
+import p4.z;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b implements b3.k {
     public final Uri a;
@@ -95,7 +95,7 @@ public final class b implements b3.k {
             b(uri);
         } else {
             this.s = true;
-            this.y.n.postDelayed(new o0(7, this, uri), j3 - elapsedRealtime);
+            this.y.n.postDelayed(new z(9, this, uri), j3 - elapsedRealtime);
         }
     }
 

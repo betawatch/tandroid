@@ -1,438 +1,443 @@
 package hi;
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.View;
+import android.graphics.Bitmap;
 import android.view.WindowManager;
-import java.io.File;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s8 implements Runnable {
+public final /* synthetic */ class s8 implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ta b;
+    public final /* synthetic */ sa b;
 
-    public /* synthetic */ s8(ta taVar, int i7) {
+    public /* synthetic */ s8(sa saVar, int i7) {
         this.a = i7;
-        this.b = taVar;
+        this.b = saVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x035d  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i7;
-        int i10;
-        ArrayList arrayList;
-        ha haVar;
-        sa saVar;
-        int i11 = this.a;
-        int i12 = 2;
-        int i13 = 1;
-        ta taVar = this.b;
-        switch (i11) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        boolean z10;
+        cb cbVar;
+        l9 l9Var;
+        int i7 = this.a;
+        int i10 = 2;
+        int i11 = 0;
+        sa saVar = this.b;
+        switch (i7) {
             case 0:
-                taVar.q();
+                n2 n2Var = saVar.s;
+                n2Var.p = ((Float) obj).floatValue();
+                n2Var.i();
                 break;
             case 1:
-                if (taVar.u2 >= 0) {
-                    mp.g1().edit().putFloat("frontflash_warmth", taVar.s.o).putFloat("frontflash_intensity", taVar.s.p).apply();
+                Bitmap bitmap = (Bitmap) obj;
+                c7 c7Var = saVar.L1;
+                if (c7Var != null) {
+                    org.telegram.messenger.g0.z2(c7Var.g0);
+                    saVar.L1.g0 = bitmap;
+                    p8 p8Var = saVar.r0;
+                    if (p8Var != null) {
+                        p8Var.U0(bitmap);
+                        break;
+                    }
                 }
-                taVar.s.e(0.0f, 240L, null);
-                taVar.F0.setSelected(false);
                 break;
             case 2:
-                taVar.l();
-                taVar.X1 = false;
-                int i14 = taVar.c;
-                if (taVar.L1 == null) {
-                    taVar.p(true);
-                    break;
+                c7 c7Var2 = (c7) obj;
+                saVar.V(c7Var2, false);
+                int i12 = saVar.c;
+                fi.p6 R1 = mp.u1(i12).R1();
+                a0.h hVar = R1.e;
+                int i13 = R1.a;
+                ArrayList arrayList = R1.h;
+                ArrayList arrayList2 = R1.g;
+                fi.o6 o6Var = new fi.o6(R1, c7Var2);
+                boolean z11 = c7Var2.g;
+                long j3 = o6Var.K;
+                if (z11) {
+                    HashMap hashMap = (HashMap) hVar.f(j3);
+                    if (hashMap == null) {
+                        hashMap = new HashMap();
+                        hVar.k(hashMap, j3);
+                    }
+                    hashMap.put(Integer.valueOf(c7Var2.f), o6Var);
                 } else {
-                    taVar.x();
-                    t8 t8Var = new t8(taVar, i12);
-                    if (taVar.I1 == null) {
-                        d7 d7Var = taVar.L1;
-                        if (d7Var.K && !d7Var.v() && !d7Var.g) {
-                            long j3 = d7Var.h0;
-                            if (j3 > 0 && !d7Var.n) {
-                                long j10 = (long) ((d7Var.a0 - d7Var.Z) * j3);
-                                if (j10 < 68999) {
-                                    i7 = i14;
-                                    arrayList = null;
-                                    i10 = 0;
+                    R1.d(j3, o6Var, R1.b, false);
+                }
+                R1.d(j3, o6Var, R1.c, true);
+                if (j3 != j10.i(i13).n) {
+                    int i14 = 0;
+                    while (true) {
+                        if (i14 >= arrayList2.size()) {
+                            z10 = false;
+                        } else if (org.telegram.messenger.n5.o(((TL_stories.PeerStories) arrayList2.get(i14)).peer) == j3) {
+                            arrayList2.add(0, (TL_stories.PeerStories) arrayList2.remove(i14));
+                            z10 = true;
+                        } else {
+                            i14++;
+                        }
+                    }
+                    if (!z10) {
+                        int i15 = 0;
+                        while (true) {
+                            if (i15 < arrayList.size()) {
+                                if (org.telegram.messenger.n5.o(((TL_stories.PeerStories) arrayList.get(i15)).peer) == j3) {
+                                    arrayList.add(0, (TL_stories.PeerStories) arrayList.remove(i15));
+                                    z10 = true;
                                 } else {
-                                    arrayList = new ArrayList();
-                                    d7Var.a0 = (59000.0f / d7Var.h0) + d7Var.Z;
-                                    arrayList.add(d7Var);
-                                    long j11 = 59000;
-                                    long j12 = 59000;
-                                    while (true) {
-                                        i10 = r9;
-                                        if (j12 < j10) {
-                                            if (Math.min(j11, j10 - j12) >= 1000) {
-                                                long j13 = j11;
-                                                d7 g10 = d7Var.g();
-                                                float f10 = d7Var.Z;
-                                                float f11 = d7Var.h0;
-                                                g10.Z = (j12 / f11) + f10;
-                                                g10.a0 = ((r9 + j12) / f11) + d7Var.Z;
-                                                g10.C0 = "";
-                                                j12 += j13;
-                                                arrayList.add(g10);
-                                                r9 = i10;
-                                                j11 = j13;
-                                                i14 = i14;
-                                            }
-                                        }
-                                    }
-                                    i7 = i14;
-                                }
-                                taVar.I1 = arrayList;
-                                if (arrayList != null) {
-                                    taVar.J1 = new ArrayList();
-                                    taVar.K1 = new ArrayList();
-                                    for (int i15 = i10; i15 < taVar.I1.size(); i15 = com.google.android.gms.internal.vision.e2.f(i15, i15, 1, taVar.K1)) {
-                                        taVar.J1.add(Integer.valueOf(i15));
-                                    }
+                                    i15++;
                                 }
                             }
                         }
-                        i7 = i14;
-                        i10 = 0;
-                        arrayList = null;
-                        taVar.I1 = arrayList;
-                        if (arrayList != null) {
-                        }
-                    } else {
-                        i7 = i14;
-                        i10 = 0;
                     }
-                    if (taVar.I1 != null) {
-                        ArrayList arrayList2 = taVar.K1;
-                        int size = arrayList2.size();
-                        int i16 = i10;
-                        while (i16 < size) {
-                            Object obj = arrayList2.get(i16);
-                            i16++;
-                            Integer num = (Integer) obj;
-                            if (taVar.J1.contains(num)) {
-                                d7 d7Var2 = (d7) taVar.I1.get(num.intValue());
-                                d7 d7Var3 = taVar.L1;
-                                if (d7Var3 == d7Var2) {
-                                    CharSequence[] charSequenceArr = new CharSequence[1];
-                                    charSequenceArr[i10] = taVar.d1.getText();
-                                    ArrayList Y = mp.u1(i7).j5() ? ri.d0(i7).Y(charSequenceArr, true, true) : new ArrayList();
-                                    CharSequence[] charSequenceArr2 = new CharSequence[1];
-                                    charSequenceArr2[i10] = taVar.L1.C0;
-                                    ArrayList Y2 = mp.u1(i7).j5() ? ri.d0(i7).Y(charSequenceArr2, true, true) : new ArrayList();
-                                    d7 d7Var4 = taVar.L1;
-                                    d7Var4.k = (TextUtils.equals(d7Var4.C0, charSequenceArr[i10]) && ri.M(Y, Y2)) ? i10 : 1;
-                                    taVar.L1.C0 = new SpannableString(taVar.d1.getText());
-                                } else if (d7Var2.C0 == null) {
-                                    d7Var3.k = i10;
-                                    d7Var3.C0 = new SpannableString("");
-                                }
-                                t8Var.a(d7Var2);
-                                i10 = 0;
-                            }
-                        }
-                    } else {
-                        CharSequence[] charSequenceArr3 = {taVar.d1.getText()};
-                        ArrayList Y3 = mp.u1(i7).j5() ? ri.d0(i7).Y(charSequenceArr3, true, true) : new ArrayList();
-                        ArrayList Y4 = mp.u1(i7).j5() ? ri.d0(i7).Y(new CharSequence[]{taVar.L1.C0}, true, true) : new ArrayList();
-                        d7 d7Var5 = taVar.L1;
-                        d7Var5.k = (TextUtils.equals(d7Var5.C0, charSequenceArr3[0]) && ri.M(Y3, Y4)) ? false : true;
-                        taVar.L1.C0 = new SpannableString(taVar.d1.getText());
-                        t8Var.a(taVar.L1);
+                    if (!z10) {
+                        TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
+                        tL_peerStories.peer = mp.u1(i13).B1(j3);
+                        R1.e0(j3, tL_peerStories);
+                        arrayList2.add(0, tL_peerStories);
+                        R1.R(j3);
                     }
-                    long j14 = j10.i(i7).n;
-                    TLRPC.InputPeer inputPeer = taVar.L1.v0;
-                    if (inputPeer != null && !(inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
-                        j14 = org.telegram.messenger.n5.n(inputPeer);
-                    }
-                    taVar.L1 = null;
-                    taVar.w = true;
-                    taVar.x = j14;
-                    taVar.C2 = true;
-                    taVar.n();
-                    bi.y3 y3Var = new bi.y3(taVar, j14, 9);
-                    ka kaVar = taVar.y;
-                    if (kaVar != null) {
-                        kaVar.b(j14, y3Var);
-                    } else {
-                        y3Var.run();
-                    }
-                    mp.g1().edit().putInt("storyhint2", 2).apply();
+                }
+                o6Var.d();
+                ks.f(i13).k(ks.y5, new Object[0]);
+                if (c7Var2.c && !c7Var2.g) {
+                    mp.u1(i12).R1().w.b(c7Var2);
+                }
+                if (c7Var2.e1 != 0) {
+                    ConnectionsManager.getInstance(c7Var2.a).cancelRequest(c7Var2.e1, true);
                     break;
                 }
                 break;
             case 3:
-                taVar.Y(false);
+                x5 x5Var = (x5) obj;
+                if (saVar.D0 != null) {
+                    saVar.E0.setLink(x5Var == null ? null : x5Var.a);
+                    fa faVar = saVar.B0;
+                    if (faVar != null) {
+                        faVar.c.a(saVar.E0.E ? saVar.D0.d : null);
+                        break;
+                    }
+                }
                 break;
             case 4:
-                d7 d7Var6 = taVar.L1;
-                if (d7Var6 != null) {
-                    d7Var6.y0 = !d7Var6.y0;
-                    ha haVar2 = taVar.Y0;
-                    if (haVar2 != null) {
-                        haVar2.u(d7Var6);
-                    }
-                    v9 v9Var = taVar.w1;
-                    if (v9Var != null && v9Var.B0 != null) {
-                        while (r9 < taVar.w1.B0.getChildCount()) {
-                            View childAt = taVar.w1.B0.getChildAt(r9);
-                            if (childAt instanceof tg.u0) {
-                                ((tg.u0) childAt).setupTheme(taVar.L1);
-                            }
-                            r9++;
-                        }
-                    }
-                    taVar.n0(true);
+                Integer num = (Integer) obj;
+                c7 c7Var3 = saVar.L1;
+                if (c7Var3 != null) {
+                    c7Var3.I0 = num.intValue();
+                    mp.g1().edit().putInt("story_period", num.intValue()).apply();
                     break;
                 }
                 break;
             case 5:
-                taVar.p(true);
+                fi.b bVar = saVar.a;
+                int intValue = ((Integer) obj).intValue() / 3600;
+                org.telegram.ui.Components.bb bbVar = new org.telegram.ui.Components.cb(saVar.b, new bi.t(i10)).a;
+                WindowManager.LayoutParams layout = bbVar.getLayout();
+                if (layout != null) {
+                    layout.height = -2;
+                    layout.width = saVar.r.getWidth();
+                    layout.y = (int) (saVar.r.getY() + org.telegram.messenger.g0.L(56.0f));
+                    org.telegram.ui.Components.cb cbVar2 = bbVar.a;
+                    cbVar2.getWindow().setAttributes(cbVar2.b);
+                }
+                bbVar.setTouchable(true);
+                new lc(bbVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.R2(gd.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.m6.Xc, 0, new r8(saVar, 27), bVar)).k(true);
                 break;
             case 6:
-                taVar.d = true;
-                taVar.w = false;
-                if (taVar.K == 1) {
-                    taVar.i0.setAlpha(1.0f);
-                    taVar.i0.setTranslationX(0.0f);
-                    taVar.i0.setTranslationY(0.0f);
-                    taVar.j0.setAlpha(1.0f);
-                    taVar.l0.setAlpha(1.0f);
-                    taVar.n.setBackgroundColor(-16777216);
-                    if (taVar.g0 == 2) {
-                        taVar.v1.setAlpha(1.0f);
+                Boolean bool = (Boolean) obj;
+                if (bool.booleanValue() && (cbVar = saVar.a1) != null && cbVar.Q) {
+                    cbVar.Q = false;
+                    if (cbVar.F && cbVar.h == null) {
+                        cbVar.H = true;
+                        wa waVar = cbVar.a;
+                        if (waVar != null) {
+                            waVar.h1(true);
+                        }
                     }
                 }
-                s8 s8Var = taVar.y2;
-                if (s8Var != null) {
-                    s8Var.run();
-                    taVar.y2 = null;
-                } else {
-                    taVar.O();
-                }
-                d7 d7Var7 = taVar.L1;
-                if (d7Var7 != null && d7Var7.n) {
-                    taVar.t();
-                    taVar.G();
-                    taVar.r();
-                    break;
-                } else if (d7Var7 != null && d7Var7.u) {
-                    if (d7Var7.K) {
-                        taVar.Y0.t(d7Var7, null, 0L);
-                    }
-                    taVar.r();
+                saVar.Y0.x(2, bool.booleanValue());
+                saVar.Z0.clearAnimation();
+                n10.n(saVar.Z0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                gc gcVar = gc.w;
+                if (gcVar != null && gcVar.a == 2) {
+                    gcVar.l();
                     break;
                 }
                 break;
             case 7:
-                taVar.f(1.0f, true, new s8(taVar, 6));
+                saVar.k();
+                saVar.l();
+                saVar.h((Runnable) obj);
                 break;
             case 8:
-                taVar.B0.setCameraThumb(taVar.z());
-                w9 w9Var = taVar.C0;
-                if (w9Var != null) {
-                    w9Var.destroy(true, null);
-                    org.telegram.messenger.g0.E2(taVar.C0);
-                    ga gaVar = taVar.B0;
-                    if (gaVar != null) {
-                        gaVar.setCameraView(null);
-                    }
-                    taVar.C0 = null;
+                v vVar = (v) obj;
+                fa faVar2 = saVar.B0;
+                saVar.A0 = vVar;
+                faVar2.o(vVar);
+                saVar.J0.setSelected(vVar);
+                v9 v9Var = saVar.C0;
+                if (v9Var != null) {
+                    v9Var.recordHevc = !saVar.B0.j();
+                }
+                saVar.H0.setDrawable(new w(vVar, false));
+                saVar.b0(saVar.I0, saVar.J0.e, true);
+                saVar.P0.e(true, saVar.B0.j() ? saVar.B0.getFilledProgress() : 0.0f);
+                g3 g3Var = saVar.N0;
+                if (g3Var != null) {
+                    g3Var.setMultipleOnClick(saVar.B0.j());
+                    saVar.N0.setMaxCount(Math.min(10, v.b() - saVar.B0.getFilledCount()));
                     break;
                 }
                 break;
             case 9:
-                taVar.B0.setCameraThumb(taVar.z());
+                saVar.P = true;
+                saVar.p(true);
+                org.telegram.messenger.g0.h3(new h9((x10) obj, i11), 210L);
                 break;
             case 10:
-                if (taVar.g0 == 1) {
-                    taVar.k0(2, false, true);
+                Integer num2 = (Integer) obj;
+                if (!saVar.Q1 && !saVar.R1) {
+                    int intValue2 = num2.intValue();
+                    saVar.P1 = intValue2;
+                    saVar.p0.a(intValue2 == -1, true);
+                    saVar.h0(saVar.P1 == 1 && !saVar.J0.e, true);
+                    saVar.R0.a(num2.intValue());
+                    d6 d6Var = saVar.P0;
+                    boolean z12 = num2.intValue() == 1;
+                    d6Var.o0 = -1.0f;
+                    d6Var.p0 = z12;
+                    d6Var.invalidate();
+                    if (num2.intValue() == -1) {
+                        v9 v9Var2 = saVar.C0;
+                        if (v9Var2 != null && v9Var2.isDual()) {
+                            saVar.C0.toggleDual();
+                        }
+                        l3 l3Var = saVar.m1;
+                        if (l3Var != null) {
+                            l3Var.f(true);
+                        }
+                        l3 l3Var2 = saVar.n1;
+                        if (l3Var2 != null) {
+                            l3Var2.f(true);
+                        }
+                        l3 l3Var3 = saVar.X0;
+                        if (l3Var3 != null) {
+                            l3Var3.f(true);
+                        }
+                        saVar.B0.o(null);
+                        saVar.B0.c();
+                        saVar.J0.setSelected((v) null);
+                        v9 v9Var3 = saVar.C0;
+                        if (v9Var3 != null) {
+                            v9Var3.recordHevc = !saVar.B0.j();
+                        }
+                    }
+                    saVar.J0.a(false, true);
+                    saVar.l0(true);
                     break;
                 }
                 break;
             case 11:
-                m9 m9Var = taVar.e1;
-                if (m9Var != null) {
-                    int i17 = -(org.telegram.messenger.g0.L(24.0f) + taVar.d1.getEditTextHeight());
-                    m9Var.setTranslationY(i17 - (taVar.a1 != null ? r3.getContentHeight() - org.telegram.messenger.g0.L(5.0f) : 0));
+                Float f10 = (Float) obj;
+                d6 d6Var2 = saVar.P0;
+                d6Var2.o0 = f10.floatValue();
+                d6Var2.invalidate();
+                saVar.P0.setVisibility(f10.floatValue() <= -1.0f ? 8 : 0);
+                saVar.P0.setAlpha(Utilities.l(f10.floatValue() + 1.0f));
+                saVar.Q0.setVisibility(f10.floatValue() < 0.0f ? 0 : 8);
+                saVar.Q0.setAlpha(org.telegram.messenger.g0.z1(f10.floatValue(), 0.0f, -1.0f));
+                saVar.Q0.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, org.telegram.messenger.g0.z1(f10.floatValue(), 0.0f, -1.0f)));
+                saVar.Q0.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, org.telegram.messenger.g0.z1(f10.floatValue(), 0.0f, -1.0f)));
+                saVar.Q0.setTranslationY(org.telegram.messenger.g0.W1(org.telegram.messenger.g0.z1(f10.floatValue(), 0.0f, -1.0f), org.telegram.messenger.g0.L(12.0f), 0));
+                if (f10.floatValue() < 0.0f) {
+                    saVar.e(false);
                     break;
                 }
                 break;
             case 12:
-                ga gaVar2 = taVar.B0;
-                if (gaVar2 != null) {
-                    gaVar2.c.a(taVar.E0.E ? taVar.D0.d : null);
-                    break;
-                }
-                break;
-            case 13:
-                taVar.l0(true);
-                break;
-            case 14:
-                taVar.r();
-                break;
-            case 15:
-                ja jaVar = taVar.d1;
-                if (jaVar != null) {
-                    jaVar.m();
-                    break;
-                }
-                break;
-            case 16:
-                if (taVar.h0 == -1 && taVar.g0 == 1) {
-                    ja jaVar2 = taVar.d1;
-                    if (!jaVar2.p0 && !jaVar2.O1) {
-                        db dbVar = taVar.a1;
-                        if (!dbVar.Q) {
-                            m9 m9Var2 = taVar.e1;
-                            if (m9Var2.N) {
-                                m9Var2.c(false, true);
-                                break;
+                Integer num3 = (Integer) obj;
+                if (saVar.L1 != null) {
+                    ia iaVar = saVar.d1;
+                    if (!iaVar.O1) {
+                        iaVar.clearFocus();
+                        if (num3.intValue() != 5) {
+                            if (num3.intValue() != 0) {
+                                if (num3.intValue() != 1) {
+                                    if (num3.intValue() != 2) {
+                                        if (num3.intValue() != 4) {
+                                            if (num3.intValue() == 3) {
+                                                saVar.k0(3, false, true);
+                                                break;
+                                            }
+                                        } else {
+                                            saVar.k0(1, false, true);
+                                            break;
+                                        }
+                                    } else {
+                                        saVar.t();
+                                        saVar.G();
+                                        u9 u9Var = saVar.w1;
+                                        if (u9Var != null) {
+                                            u9Var.O0(1);
+                                            u9Var.x0();
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    saVar.k0(0, false, true);
+                                    u9 u9Var2 = saVar.w1;
+                                    if (u9Var2 != null) {
+                                        u9Var2.O0(2);
+                                        u9Var2.V1 = true;
+                                        u9Var2.l0(true);
+                                        saVar.w1.w0 = true;
+                                        break;
+                                    }
+                                }
                             } else {
-                                taVar.k0(0, false, true);
-                                v9 v9Var2 = taVar.w1;
-                                if (v9Var2 != null) {
-                                    v9Var2.O0(2);
-                                    v9Var2.V1 = true;
-                                    v9Var2.l0(true);
-                                    taVar.w1.w0 = true;
+                                saVar.k0(0, false, true);
+                                u9 u9Var3 = saVar.w1;
+                                if (u9Var3 != null) {
+                                    u9Var3.w0 = false;
+                                    u9Var3.O0(0);
+                                    u9Var3.A0(null, true);
                                     break;
                                 }
                             }
                         } else {
-                            dbVar.Q = false;
-                            if (dbVar.F && dbVar.h == null) {
-                                dbVar.H = true;
-                                xa xaVar = dbVar.a;
-                                if (xaVar != null) {
-                                    xaVar.h1(true);
-                                    break;
-                                }
-                            }
+                            saVar.W();
+                            break;
                         }
                     }
                 }
                 break;
+            case 13:
+                FrameLayout frameLayout = saVar.Z0;
+                if (frameLayout != null) {
+                    frameLayout.setTranslationY(saVar.h0 == 2 ? org.telegram.messenger.g0.L(68.0f) : org.telegram.messenger.g0.L(64.0f) + (-(org.telegram.messenger.g0.L(12.0f) + saVar.d1.getEditTextHeight())));
+                }
+                l9 l9Var2 = saVar.e1;
+                if (l9Var2 != null) {
+                    int i16 = -(org.telegram.messenger.g0.L(24.0f) + saVar.d1.getEditTextHeight());
+                    l9Var2.setTranslationY(i16 - (saVar.a1 == null ? 0 : r3.getContentHeight() - org.telegram.messenger.g0.L(5.0f)));
+                }
+                gc gcVar2 = gc.w;
+                if (gcVar2 != null && gcVar2.a == 2) {
+                    gcVar2.l();
+                }
+                if (saVar.d1.p0 && (l9Var = saVar.e1) != null) {
+                    l9Var.c(false, true);
+                    break;
+                }
+                break;
+            case 14:
+                n8 n8Var = (n8) obj;
+                c7 c7Var4 = saVar.L1;
+                if (c7Var4 != null) {
+                    c7Var4.E0 = n8Var;
+                }
+                ArrayList arrayList3 = saVar.I1;
+                if (arrayList3 != null) {
+                    int size = arrayList3.size();
+                    while (i11 < size) {
+                        Object obj2 = arrayList3.get(i11);
+                        i11++;
+                        ((c7) obj2).E0 = n8Var;
+                    }
+                    break;
+                }
+                break;
+            case 15:
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
+                c7 c7Var5 = saVar.L1;
+                if (c7Var5 != null) {
+                    if (inputPeer == null) {
+                        inputPeer = new TLRPC.TL_inputPeerSelf();
+                    }
+                    c7Var5.v0 = inputPeer;
+                    ArrayList arrayList4 = saVar.I1;
+                    if (arrayList4 != null) {
+                        int size2 = arrayList4.size();
+                        while (i11 < size2) {
+                            Object obj3 = arrayList4.get(i11);
+                            i11++;
+                            ((c7) obj3).v0 = saVar.L1.v0;
+                        }
+                        break;
+                    }
+                }
+                break;
+            case 16:
+                HashSet hashSet = (HashSet) obj;
+                c7 c7Var6 = saVar.L1;
+                if (c7Var6 != null) {
+                    c7Var6.w0 = hashSet;
+                    ArrayList arrayList5 = saVar.I1;
+                    if (arrayList5 != null) {
+                        int size3 = arrayList5.size();
+                        while (i11 < size3) {
+                            Object obj4 = arrayList5.get(i11);
+                            i11++;
+                            ((c7) obj4).w0 = hashSet;
+                        }
+                        break;
+                    }
+                }
+                break;
             case 17:
-                taVar.O1 = true;
-                taVar.c1.setShareEnabled(false);
-                v0 v0Var = taVar.f1;
-                v0Var.getClass();
-                v0Var.c(gd.N0("VideoConvertFail"));
+                Bitmap bitmap2 = (Bitmap) obj;
+                c7 c7Var7 = saVar.L1;
+                if (c7Var7 != null) {
+                    Bitmap bitmap3 = c7Var7.g0;
+                    if (bitmap3 != null) {
+                        bitmap3.recycle();
+                    }
+                    saVar.L1.g0 = bitmap2;
+                    p8 p8Var2 = saVar.r0;
+                    if (p8Var2 != null) {
+                        p8Var2.U0(bitmap2);
+                        break;
+                    }
+                }
                 break;
             case 18:
-                taVar.B0.setCameraThumb(taVar.z());
+                saVar.z0 = (n8) obj;
                 break;
             case 19:
-                sa saVar2 = taVar.n;
-                fi.b bVar = taVar.a;
-                new lc(saVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.R2(gd.M0(2131744346, null), org.telegram.ui.ActionBar.n6.Xc, 0, new s8(taVar, 27), bVar)).k(true);
+                TLRPC.InputPeer inputPeer2 = (TLRPC.InputPeer) obj;
+                v6 v6Var = saVar.p0;
+                saVar.y0 = inputPeer2;
+                v6Var.set(inputPeer2);
                 break;
             case 20:
-                q8 q8Var = taVar.r0;
-                if (q8Var != null) {
-                    q8Var.dismiss();
-                }
-                taVar.J(2, true);
-                break;
-            case 21:
-                taVar.k0(-1, false, true);
-                break;
-            case 22:
-                taVar.k0(-1, false, true);
-                break;
-            case 23:
-                taVar.d = false;
-                org.telegram.messenger.g0.O3(taVar.b);
-                if (taVar.C0 != null) {
-                    if (taVar.R1) {
-                        CameraController.getInstance().stopVideoRecording(taVar.C0.getCameraSession(), false);
-                    }
-                    taVar.u(false);
-                }
-                ha haVar3 = taVar.Y0;
-                if (haVar3 != null) {
-                    haVar3.set(null);
-                }
-                taVar.y();
-                taVar.x();
-                File file = taVar.H1;
-                if (file != null && !taVar.w) {
-                    try {
-                        file.delete();
-                    } catch (Exception unused) {
-                    }
-                }
-                taVar.H1 = null;
-                org.telegram.messenger.g0.h3(new s8(taVar, 28), 16L);
-                oa oaVar = taVar.G;
-                if (oaVar != null) {
-                    oaVar.f(false);
-                }
-                if (taVar.y2 != null) {
-                    taVar.y2 = null;
-                }
-                taVar.m2 = null;
-                ta taVar2 = ta.G2;
-                if (taVar2 != null) {
-                    taVar2.p(false);
-                }
-                ta.G2 = null;
-                sa saVar3 = taVar.n;
-                if (saVar3 != null) {
-                    saVar3.setTag(R.id.bulletin_delegate_tag, null);
-                }
-                bi.a3 a3Var = taVar.m0;
-                if (a3Var != null) {
-                    a3Var.setTag(R.id.bulletin_delegate_tag, null);
-                }
-                ga gaVar3 = taVar.B0;
-                if (gaVar3 != null) {
-                    gaVar3.c();
-                    break;
-                }
-                break;
-            case 24:
-                if (!taVar.L1.b0 && taVar.r0 != null && (haVar = taVar.Y0) != null) {
-                    haVar.h(new t8(taVar, i13), haVar, taVar.x1, taVar.A1);
-                }
-                taVar.J(1, true);
-                break;
-            case 25:
-                taVar.i0(false);
-                taVar.f2 = null;
-                break;
-            case 26:
-                taVar.i0(false);
-                taVar.f2 = null;
-                break;
-            case 27:
-                taVar.S();
+                TLRPC.InputPeer inputPeer3 = (TLRPC.InputPeer) obj;
+                v6 v6Var2 = saVar.p0;
+                saVar.y0 = inputPeer3;
+                v6Var2.set(inputPeer3);
                 break;
             default:
-                WindowManager windowManager = taVar.f;
-                if (windowManager != null && (saVar = taVar.n) != null && saVar.getParent() != null) {
-                    windowManager.removeView(taVar.n);
-                    break;
-                }
+                n2 n2Var2 = saVar.s;
+                float floatValue = ((Float) obj).floatValue();
+                n2Var2.o = floatValue;
+                n2Var2.n = n2.f(floatValue);
+                n2Var2.g();
                 break;
         }
     }

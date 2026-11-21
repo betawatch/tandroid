@@ -10,10 +10,10 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MusicPlayerService;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.fj;
-import org.telegram.ui.Components.g8;
+import org.telegram.ui.Components.f8;
 import q6.m;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class g extends s {
     public final /* synthetic */ int g;
@@ -218,9 +218,9 @@ public final class g extends s {
                 if ("org.telegram.android.musicplayer.repeat".equals(str)) {
                     bz.E((bz.S0 + 1) % 3);
                     MusicPlayerService.g();
-                    g8 g8Var = g8.T2;
-                    if (g8Var != null) {
-                        g8Var.d1();
+                    f8 f8Var = f8.T2;
+                    if (f8Var != null) {
+                        f8Var.d1();
                     }
                 } else if ("org.telegram.android.musicplayer.shuffle".equals(str)) {
                     if (bz.N0) {
@@ -232,9 +232,9 @@ public final class g extends s {
                     if (a0Var != null) {
                         a0Var.x(bz.N0 ? 1 : 0);
                     }
-                    g8 g8Var2 = g8.T2;
-                    if (g8Var2 != null) {
-                        g8Var2.d1();
+                    f8 f8Var2 = f8.T2;
+                    if (f8Var2 != null) {
+                        f8Var2.d1();
                     }
                 }
                 fj fjVar = MediaController.B().v0;

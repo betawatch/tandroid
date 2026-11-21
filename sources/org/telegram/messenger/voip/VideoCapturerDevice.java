@@ -8,9 +8,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.view.Display;
 import android.view.WindowManager;
-import bi.m2;
-import bi.y3;
-import oi.s2;
+import bi.c4;
+import bi.q2;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.webrtc.Camera1Enumerator;
@@ -25,7 +24,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
@@ -43,7 +42,7 @@ public class VideoCapturerDevice {
     private VideoCapturer videoCapturer;
     private SurfaceTextureHelper videoCapturerSurfaceTextureHelper;
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -80,7 +79,7 @@ public class VideoCapturerDevice {
         }
         videoCapturerDevice.currentWidth = i10;
         videoCapturerDevice.currentHeight = screenCaptureSize.y;
-        videoCapturerDevice.handler.post(new s2(12, videoCapturerDevice, screenCaptureSize));
+        videoCapturerDevice.handler.post(new oi.t(14, videoCapturerDevice, screenCaptureSize));
     }
 
     public static EglBase getEglBase() {
@@ -114,7 +113,7 @@ public class VideoCapturerDevice {
     }
 
     private void init(long j3, String str) {
-        org.telegram.messenger.g0.g3(new m2(this, j3, str, 15));
+        org.telegram.messenger.g0.g3(new q2(this, j3, str, 15));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -184,11 +183,11 @@ public class VideoCapturerDevice {
                 if (this.videoCapturer == null) {
                     this.videoCapturer = camera2Enumerator.createCapturer(str2, new 2());
                     this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("VideoCapturerThread", eglBase.getEglBaseContext());
-                    this.handler.post(new y3(this, j3, 18));
+                    this.handler.post(new c4(this, j3, 18));
                     return;
                 } else {
                     a8.b("VideoCapturerDevice init(" + j3 + "): videoCapturer.switchCamera CAMERA");
-                    this.handler.post(new s2(13, this, str2));
+                    this.handler.post(new oi.t(15, this, str2));
                     return;
                 }
             }
@@ -198,7 +197,7 @@ public class VideoCapturerDevice {
                 this.currentWidth = screenCaptureSize.x;
                 this.currentHeight = screenCaptureSize.y;
                 this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("ScreenCapturerThread", eglBase.getEglBaseContext());
-                this.handler.post(new m2(this, j3, screenCaptureSize, 16));
+                this.handler.post(new q2(this, j3, screenCaptureSize, 16));
             }
         }
     }
@@ -354,7 +353,7 @@ public class VideoCapturerDevice {
         return point;
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -392,7 +391,7 @@ public class VideoCapturerDevice {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public class 3 implements CameraVideoCapturer.CameraSwitchHandler {
         public 3() {
         }

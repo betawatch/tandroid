@@ -1,26 +1,53 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class yh extends org.telegram.ui.Components.go {
-    public final /* synthetic */ bn N;
+public final class yh extends org.telegram.ui.ActionBar.g1 {
+    public final /* synthetic */ org.telegram.ui.Components.xi0 o;
+    public final /* synthetic */ bn p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yh(bn bnVar, Activity activity, int i7, TLRPC.Document document, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(activity, i7, document, i6Var);
-        this.N = bnVar;
+    public yh(bn bnVar, wa waVar, org.telegram.ui.Components.xi0 xi0Var) {
+        super(waVar, -2, -2);
+        this.p = bnVar;
+        this.o = xi0Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        float y10 = getY();
-        bn bnVar = this.N;
-        float y11 = bnVar.g1.getY() + y10;
-        this.K = bnVar.m1.getBackgroundSizeY();
-        this.J = y11;
+    @Override // org.telegram.ui.ActionBar.g1
+    public final void d(boolean z10) {
+        super.d(z10);
+        org.telegram.ui.Components.xi0 xi0Var = this.o;
+        if (xi0Var != null) {
+            xi0Var.d(z10);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        bn bnVar = this.p;
+        if (bnVar.g9 != this) {
+            return;
+        }
+        org.telegram.ui.Components.gc gcVar = org.telegram.ui.Components.gc.w;
+        org.telegram.ui.Components.gc gcVar2 = bnVar.C1;
+        if (gcVar == gcVar2 && gcVar2 != null) {
+            gcVar2.b();
+            bnVar.C1 = null;
+        }
+        bnVar.g9 = null;
+        bnVar.l9 = null;
+        bnVar.k9 = null;
+        bnVar.C0.R = true;
+        if (bnVar.h9) {
+            bnVar.x8(false, true, 0.0f);
+        } else {
+            bnVar.h9 = true;
+        }
+        rj rjVar = bnVar.a0;
+        if (rjVar == null || rjVar.getEditField() == null) {
+            return;
+        }
+        bnVar.a0.getEditField().setAllowDrawCursor(true);
     }
 }

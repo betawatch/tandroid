@@ -1,40 +1,50 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t01 implements org.telegram.messenger.s10 {
-    public final /* synthetic */ f11 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Boolean d;
+public final /* synthetic */ class t01 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h11 b;
 
-    public /* synthetic */ t01(f11 f11Var, String str, long j3, Boolean bool) {
-        this.a = f11Var;
-        this.b = str;
-        this.c = j3;
-        this.d = bool;
+    public /* synthetic */ t01(h11 h11Var, int i7) {
+        this.a = i7;
+        this.b = h11Var;
     }
 
-    @Override // org.telegram.messenger.s10
-    public final void a(Object obj, Object obj2, Object obj3) {
-        ArrayList arrayList = (ArrayList) obj;
-        org.telegram.messenger.d00 d00Var = (org.telegram.messenger.d00) obj2;
-        Integer num = (Integer) obj3;
-        f11 f11Var = this.a;
-        ArrayList arrayList2 = f11Var.N;
-        f11Var.O = 0;
-        if (this.b.equals(f11Var.M)) {
-            if (this.c == f11Var.V) {
-                if (Objects.equals(this.d, f11Var.W)) {
-                    arrayList2.addAll(arrayList);
-                    f11Var.Q = d00Var;
-                    f11Var.R = d00Var == null || arrayList2.size() >= num.intValue();
-                    f11Var.n();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                h11 h11Var = this.b;
+                h11Var.getClass();
+                h11Var.c(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h11 h11Var2 = this.b;
+                h11Var2.a0 = floatValue;
+                org.telegram.ui.f61 f61Var = h11Var2.S;
+                f61Var.setVisibility(floatValue > 0.0f ? 0 : 8);
+                f61Var.setAlpha(floatValue);
+                f61Var.setTranslationY((1.0f - floatValue) * (-org.telegram.messenger.g0.L(8.0f)));
+                h11Var2.c(floatValue);
+                int L = org.telegram.messenger.g0.L(100.0f) + org.telegram.messenger.g0.m + ((int) (org.telegram.messenger.g0.L(36.0f) * floatValue));
+                ((FrameLayout.LayoutParams) h11Var2.r.getLayoutParams()).topMargin = L;
+                View view = h11Var2.F;
+                if (view != null) {
+                    ((FrameLayout.LayoutParams) view.getLayoutParams()).topMargin = L;
                 }
-            }
+                h11Var2.h.requestLayout();
+                break;
+            default:
+                h11 h11Var3 = this.b;
+                h11Var3.getClass();
+                h11Var3.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

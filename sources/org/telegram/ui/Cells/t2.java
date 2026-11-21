@@ -12,9 +12,9 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.i41;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t2 {
     public final u2 a;
@@ -41,17 +41,17 @@ public final class t2 {
             t2Var.d = false;
             t2Var.e = false;
             t2Var.b = e12;
-            TextPaint textPaint = org.telegram.ui.ActionBar.n6.F0[0];
+            TextPaint textPaint = org.telegram.ui.ActionBar.m6.F0[0];
             if (chat != null) {
                 ArrayList l10 = mp.u1(i7).t7.l(chat.id);
                 boolean z11 = true;
                 if (l10 == null || l10.isEmpty()) {
                     if (mp.u1(i7).t7.e(chat.id)) {
-                        t2Var.g = gd.M0(org.telegram.messenger.v3.p0(chat) ? 2131747998 : 2131747945, null);
+                        t2Var.g = gd.N0(org.telegram.messenger.v3.p0(chat) ? 2131747997 : 2131747944, null);
                         return;
                     }
                     mp.u1(i7).t7.n(0, chat.id, true);
-                    t2Var.g = gd.M0(2131748587, null);
+                    t2Var.g = gd.N0(2131748586, null);
                     t2Var.e = true;
                     return;
                 }
@@ -122,12 +122,12 @@ public final class t2 {
                 }
                 if (i10 > 0) {
                     Typeface o10 = org.telegram.messenger.g0.o();
-                    int i14 = org.telegram.ui.ActionBar.n6.X8;
-                    i41 i41Var = new i41();
-                    i41Var.a = o10;
-                    i41Var.c = i14;
-                    i41Var.b = org.telegram.ui.ActionBar.n6.v0(i14);
-                    spannableStringBuilder.setSpan(i41Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
+                    int i14 = org.telegram.ui.ActionBar.m6.X8;
+                    l41 l41Var = new l41();
+                    l41Var.a = o10;
+                    l41Var.c = i14;
+                    l41Var.b = org.telegram.ui.ActionBar.m6.v0(i14);
+                    spannableStringBuilder.setSpan(l41Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
                 }
                 t2Var.g = spannableStringBuilder;
             }

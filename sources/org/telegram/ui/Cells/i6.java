@@ -11,7 +11,7 @@ import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class i6 extends FrameLayout {
     public final TextView a;
@@ -25,18 +25,18 @@ public final class i6 extends FrameLayout {
         this.c = radioButton;
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
         if (z10) {
-            org.telegram.ui.ActionBar.u6.O(radioButton, org.telegram.ui.ActionBar.n6.D5, org.telegram.ui.ActionBar.n6.E5, null);
+            org.telegram.ui.ActionBar.t6.O(radioButton, org.telegram.ui.ActionBar.m6.D5, org.telegram.ui.ActionBar.m6.E5, null);
         } else {
-            org.telegram.ui.ActionBar.u6.O(radioButton, org.telegram.ui.ActionBar.n6.g7, org.telegram.ui.ActionBar.n6.h7, null);
+            org.telegram.ui.ActionBar.t6.O(radioButton, org.telegram.ui.ActionBar.m6.g7, org.telegram.ui.ActionBar.m6.h7, null);
         }
         boolean z11 = gd.a0;
         addView(radioButton, c8.ma.d(22, 22.0f, (z11 ? 5 : 3) | 48, z11 ? 0 : 20, 10.0f, z11 ? 20 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         if (z10) {
-            org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, null);
+            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, null);
         } else {
-            org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
+            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
         }
         n10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
@@ -46,9 +46,9 @@ public final class i6 extends FrameLayout {
         TextView textView2 = new TextView(context);
         this.b = textView2;
         if (z10) {
-            org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.q5, null);
+            org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.q5, null);
         } else {
-            org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.z6, null);
+            org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
         }
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(gd.a0 ? 5 : 3);
@@ -74,7 +74,7 @@ public final class i6 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            canvas.drawLine(org.telegram.messenger.g0.L(gd.a0 ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(gd.a0 ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+            canvas.drawLine(org.telegram.messenger.g0.L(gd.a0 ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(gd.a0 ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

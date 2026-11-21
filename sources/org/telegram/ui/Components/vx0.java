@@ -1,18 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface vx0 {
-    ox0 c(TL_iv.pageTableCell pagetablecell, int i7);
+public final class vx0 {
+    public static final vx0 e = new vx0(false, new sx0(TLObject.FLAG_31, -2147483647), yx0.T, 0.0f);
+    public final boolean a;
+    public final sx0 b;
+    public final kx0 c;
+    public final float d;
 
-    void g(ox0 ox0Var, int i7);
+    public vx0(boolean z10, sx0 sx0Var, kx0 kx0Var, float f10) {
+        this.a = z10;
+        this.b = sx0Var;
+        this.c = kx0Var;
+        this.d = f10;
+    }
 
-    Paint getHeaderPaint();
+    public static kx0 a(vx0 vx0Var, boolean z10) {
+        kx0 kx0Var = vx0Var.c;
+        return kx0Var != yx0.T ? kx0Var : vx0Var.d == 0.0f ? z10 ? yx0.U : yx0.V : yx0.W;
+    }
 
-    Paint getLinePaint();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || vx0.class != obj.getClass()) {
+            return false;
+        }
+        vx0 vx0Var = (vx0) obj;
+        return this.c.equals(vx0Var.c) && this.b.equals(vx0Var.b);
+    }
 
-    Paint getStripPaint();
+    public final int hashCode() {
+        return this.c.hashCode() + (this.b.hashCode() * 31);
+    }
 }

@@ -1,34 +1,41 @@
 package ki;
 
-import android.os.Bundle;
-import org.telegram.ui.cx;
+import org.telegram.messenger.fj;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class f1 extends cx {
-    public final /* synthetic */ bi.h0 G4;
-    public final /* synthetic */ h1 H4;
+public final class f1 extends fj {
+    public TL_iv.RichMessage u3;
+    public final /* synthetic */ boolean v3;
+    public final /* synthetic */ TLRPC.BotInlineResult w3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f1(h1 h1Var, Bundle bundle, bi.h0 h0Var) {
-        super(bundle);
-        this.H4 = h1Var;
-        this.G4 = h0Var;
+    public f1(int i7, TLRPC.TL_message tL_message, boolean z10, TLRPC.BotInlineResult botInlineResult) {
+        super(i7, tL_message, true, true);
+        this.v3 = z10;
+        this.w3 = botInlineResult;
     }
 
-    @Override // org.telegram.ui.cx
-    public final boolean U3() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.cx, org.telegram.ui.ActionBar.h2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        h1 h1Var = this.H4;
-        if (h1Var.Y1) {
-            return;
+    @Override // org.telegram.messenger.fj
+    public final TL_iv.RichMessage E0() {
+        if (!this.v3) {
+            return super.E0();
         }
-        h1Var.Y1 = true;
-        this.G4.a("USER_DECLINED", null);
+        if (this.u3 == null) {
+            this.u3 = org.telegram.utils.twidget.n0.o(org.telegram.utils.twidget.n0.v(this.K1, this.w3));
+        }
+        return this.u3;
+    }
+
+    @Override // org.telegram.messenger.fj
+    public final boolean N3() {
+        return false;
+    }
+
+    @Override // org.telegram.messenger.fj
+    public final boolean P3() {
+        return false;
     }
 }

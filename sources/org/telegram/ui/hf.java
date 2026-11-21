@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -21,18 +21,18 @@ public final /* synthetic */ class hf implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 bn bnVar = this.b;
-                wh whVar = new wh(bnVar, bnVar, bnVar.getParentActivity(), bnVar.Ba, this.c);
+                xh xhVar = new xh(bnVar, bnVar, bnVar.getParentActivity(), bnVar.Ba, this.c);
                 boolean V9 = bnVar.V9();
-                whVar.i0 = V9;
-                whVar.n = V9;
-                whVar.p0 = false;
+                xhVar.i0 = V9;
+                xhVar.n = V9;
+                xhVar.p0 = false;
                 bnVar.P7(false);
-                bnVar.showDialog(whVar);
+                bnVar.showDialog(xhVar);
                 break;
             default:
                 bn bnVar2 = this.b;
                 if (bnVar2.getParentActivity() != null && bnVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.bv(bnVar2, bnVar2.getParentActivity(), bnVar2.Ba, this.c).show();
+                    new org.telegram.ui.Components.ev(bnVar2, bnVar2.getParentActivity(), bnVar2.Ba, this.c).show();
                     bnVar2.P7(true);
                     break;
                 }

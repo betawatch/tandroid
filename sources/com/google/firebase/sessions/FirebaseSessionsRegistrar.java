@@ -16,7 +16,7 @@ import gb.s;
 import gb.t;
 import gb.v;
 import h6.m;
-import hi.u5;
+import hi.t5;
 import ib.c;
 import id.h;
 import java.util.List;
@@ -29,7 +29,7 @@ import u9.q;
 import va.d;
 import zd.x;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
@@ -67,7 +67,7 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         iVar.a = o.b((g) e13);
         o b10 = o.b((Context) e10);
         iVar.b = b10;
-        iVar.c = ib.a.a(new u5(b10, 5));
+        iVar.c = ib.a.a(new t5(b10, 5));
         iVar.d = ib.a.a(t.a);
         iVar.e = o.b((d) e14);
         iVar.f = ib.a.a(new d6.i(iVar.a, 25));

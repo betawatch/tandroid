@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class r0 implements Application.ActivityLifecycleCallbacks {
     public static r0 f;
@@ -37,7 +37,7 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
                 try {
-                    ((org.telegram.ui.Components.j00) it.next()).b();
+                    ((org.telegram.ui.Components.l00) it.next()).b();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
@@ -93,7 +93,7 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
                 try {
-                    ((org.telegram.ui.Components.j00) it.next()).a();
+                    ((org.telegram.ui.Components.l00) it.next()).a();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }

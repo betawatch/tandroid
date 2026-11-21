@@ -4,7 +4,7 @@ import android.util.Pair;
 import di.o3;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c1 implements x2.k0, q2.k {
     public final e1 a;
@@ -43,7 +43,7 @@ public final class c1 implements x2.k0, q2.k {
     public final void I(int i7, x2.g0 g0Var, x2.u uVar, x2.c0 c0Var, int i10) {
         Pair a10 = a(i7, g0Var);
         if (a10 != null) {
-            this.b.i.d(new ai.g1(this, a10, uVar, c0Var, i10, 8));
+            this.b.i.d(new ai.i1(this, a10, uVar, c0Var, i10, 8));
         }
     }
 
@@ -51,7 +51,7 @@ public final class c1 implements x2.k0, q2.k {
     public final void K(int i7, x2.g0 g0Var, Exception exc) {
         Pair a10 = a(i7, g0Var);
         if (a10 != null) {
-            this.b.i.d(new kg.i0(this, a10, exc, 11));
+            this.b.i.d(new kg.y(this, a10, exc, 12));
         }
     }
 
@@ -59,7 +59,7 @@ public final class c1 implements x2.k0, q2.k {
     public final void N(int i7, x2.g0 g0Var, int i10) {
         Pair a10 = a(i7, g0Var);
         if (a10 != null) {
-            this.b.i.d(new ai.a1(this, a10, i10, 23));
+            this.b.i.d(new ai.c1(this, a10, i10, 23));
         }
     }
 
@@ -103,7 +103,7 @@ public final class c1 implements x2.k0, q2.k {
     public final void c(int i7, x2.g0 g0Var, nb.a aVar) {
         Pair a10 = a(i7, g0Var);
         if (a10 != null) {
-            this.b.i.d(new kg.i0(this, a10, aVar, 10));
+            this.b.i.d(new kg.y(this, a10, aVar, 11));
         }
     }
 

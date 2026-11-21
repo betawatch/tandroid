@@ -13,7 +13,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f6 implements Runnable {
     public final /* synthetic */ int a;
@@ -149,7 +149,7 @@ public final /* synthetic */ class f6 implements Runnable {
                     h6Var = h6Var2;
                 }
                 sQLiteCursor.dispose();
-                org.telegram.messenger.g0.g3(new bi.h2(h6Var, arrayList2, arrayList, arrayList3, arrayList4, hashSet, 8));
+                org.telegram.messenger.g0.g3(new bi.l2(h6Var, arrayList2, arrayList, arrayList3, arrayList4, hashSet, 8));
                 return;
             default:
                 h6 h6Var3 = this.b;

@@ -1,45 +1,65 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.ui.dd0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i2 implements Runnable {
+public final /* synthetic */ class i2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x2 b;
+    public final /* synthetic */ w2 b;
 
-    public /* synthetic */ i2(x2 x2Var, int i7) {
+    public /* synthetic */ i2(w2 w2Var, int i7) {
         this.a = i7;
-        this.b = x2Var;
+        this.b = w2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                x2 x2Var = this.b;
-                n2 n2Var = x2Var.c;
-                org.telegram.messenger.g0.E2(n2Var);
-                x2Var.j1.getLayoutContainer().addView(n2Var);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w2 w2Var = this.b;
+                w2Var.D0 = floatValue;
+                m2 m2Var = w2Var.c;
+                if (m2Var != null) {
+                    m2Var.invalidate();
+                    break;
+                }
                 break;
             case 1:
-                this.b.dismiss();
+                this.b.h0();
                 break;
             case 2:
-                try {
-                    this.b.L();
+                this.b.h0();
+                break;
+            case 3:
+                w2 w2Var2 = this.b;
+                w2Var2.getClass();
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                w2Var2.C0(w2Var2.Y.intValue(), intValue, intValue);
+                break;
+            case 4:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w2 w2Var3 = this.b;
+                w2Var3.T0 = floatValue2;
+                w2Var3.c.requestLayout();
+                w2Var3.b.requestLayout();
+                break;
+            case 5:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w2 w2Var4 = this.b;
+                w2Var4.D0 = floatValue3;
+                m2 m2Var2 = w2Var4.c;
+                if (m2Var2 != null) {
+                    m2Var2.invalidate();
                     break;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
                 }
+                break;
+            case 6:
+                this.b.h0();
+                break;
             default:
-                this.b.dismiss();
-                ks.f(j10.t0).k(ks.V2, new Object[0]);
-                org.telegram.messenger.g0.h3(new dd0(28), 220L);
+                this.b.h0();
                 break;
         }
     }

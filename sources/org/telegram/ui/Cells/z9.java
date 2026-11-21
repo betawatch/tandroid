@@ -8,7 +8,7 @@ import android.view.animation.PathInterpolator;
 import org.telegram.messenger.ri;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class z9 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class z9 extends GestureDetector.SimpleOnGestureListener {
                         ch.l0.d(baVar.x, null, baVar.n[1], null, motionEvent.getX(), motionEvent.getY(), ch.p0.b(ri.d0(i7).S()), aaVar.a6, 0);
                         ch.l0.f();
                     }
-                    aaVar.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.i1(this, 1));
+                    aaVar.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.h1(this, 1));
                 }
                 return z10;
             default:
@@ -92,7 +92,7 @@ public final class z9 extends GestureDetector.SimpleOnGestureListener {
                     eVar.d = ofFloat;
                     ofFloat.setDuration(220L);
                     eVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
-                    eVar.d.addUpdateListener(new hi.h6(this, f10, x10, f11, y10, 2));
+                    eVar.d.addUpdateListener(new hi.g6(this, f10, x10, f11, y10, 2));
                     eVar.d.addListener(new k71(this, 21));
                     eVar.d.start();
                     break;

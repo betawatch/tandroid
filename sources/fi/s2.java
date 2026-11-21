@@ -5,12 +5,12 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.n10;
-import org.telegram.ui.Components.lg;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.og;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class s2 extends ImageReceiver {
     public final /* synthetic */ int K1;
@@ -25,7 +25,7 @@ public final class s2 extends ImageReceiver {
 
     @Override // org.telegram.messenger.ImageReceiver
     public void L0(int[] iArr) {
-        sh.f fVar;
+        sh.e eVar;
         switch (this.K1) {
             case 2:
                 super.L0(iArr);
@@ -37,8 +37,8 @@ public final class s2 extends ImageReceiver {
                 iArr2[3] = L;
                 iArr2[2] = L;
                 org.telegram.ui.Cells.x1 x1Var = r1Var.x2;
-                if (x1Var != null && (fVar = x1Var.m) != null) {
-                    fVar.b.L0(iArr2);
+                if (x1Var != null && (eVar = x1Var.m) != null) {
+                    eVar.b.L0(iArr2);
                     break;
                 }
                 break;
@@ -48,7 +48,7 @@ public final class s2 extends ImageReceiver {
         }
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.u5
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.v5
     public void invalidate() {
         int i7 = this.K1;
         Object obj = this.L1;
@@ -61,7 +61,7 @@ public final class s2 extends ImageReceiver {
                 }
                 break;
             case 4:
-                ((org.telegram.ui.Components.o5) obj).j();
+                ((org.telegram.ui.Components.p5) obj).j();
                 super.invalidate();
                 break;
             case 5:
@@ -93,7 +93,7 @@ public final class s2 extends ImageReceiver {
                 return x02;
             case 1:
                 if (drawable != null && i7 != 1) {
-                    n10.o(((kg.d1) ((t3) obj).I).h.animate().alpha(1.0f).translationY(0.0f), lr.k, 250L);
+                    n10.o(((kg.c1) ((t3) obj).I).h.animate().alpha(1.0f).translationY(0.0f), nr.k, 250L);
                 }
                 return super.x0(drawable, str, i7, z10, i10);
             case 2:
@@ -102,12 +102,12 @@ public final class s2 extends ImageReceiver {
             default:
                 return super.x0(drawable, str, i7, z10, i10);
             case 4:
-                org.telegram.ui.Components.o5 o5Var = (org.telegram.ui.Components.o5) obj;
-                o5Var.j();
+                org.telegram.ui.Components.p5 p5Var = (org.telegram.ui.Components.p5) obj;
+                p5Var.j();
                 boolean x03 = super.x0(drawable, str, i7, z10, i10);
-                if (o5Var.m && J()) {
-                    o5Var.m = false;
-                    org.telegram.messenger.g0.g3(new lg(o5Var, 4));
+                if (p5Var.m && J()) {
+                    p5Var.m = false;
+                    org.telegram.messenger.g0.g3(new og(p5Var, 4));
                 }
                 return x03;
             case 5:
@@ -117,7 +117,7 @@ public final class s2 extends ImageReceiver {
             case 7:
                 boolean x05 = super.x0(drawable, str, i7, z10, i10);
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
-                duration.addUpdateListener(new hi.k3(this, 22));
+                duration.addUpdateListener(new hi.j3(this, 22));
                 duration.start();
                 return x05;
         }

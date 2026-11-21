@@ -3,11 +3,11 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class bx extends FrameLayout {
     public static final /* synthetic */ int M = 0;
-    public org.telegram.ui.Components.fj0 E;
+    public org.telegram.ui.Components.hj0 E;
     public boolean F;
     public vv G;
     public jg.m H;
@@ -23,10 +23,10 @@ public final class bx extends FrameLayout {
     public ax f;
     public int h;
     public jv n;
-    public org.telegram.ui.ActionBar.l5 r;
+    public org.telegram.ui.ActionBar.k5 r;
     public int s;
     public int w;
-    public org.telegram.ui.Components.wz x;
+    public org.telegram.ui.Components.yz x;
     public ev y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -49,7 +49,7 @@ public final class bx extends FrameLayout {
     }
 
     public final void q(boolean z10) {
-        if (((org.telegram.ui.ActionBar.h2) this.L).isPaused) {
+        if (((org.telegram.ui.ActionBar.g2) this.L).isPaused) {
             return;
         }
         fv fvVar = this.K;
@@ -78,14 +78,14 @@ public final class bx extends FrameLayout {
             if (cxVar.j3 && (bxVar = cxVar.f0[0]) == this) {
                 cxVar.A0.h(Math.abs(bxVar.getTranslationX()) / cxVar.f0[0].getMeasuredWidth(), cxVar.f0[1].h);
             }
-            ((org.telegram.ui.ActionBar.h2) cxVar).glassEngine.g();
+            ((org.telegram.ui.ActionBar.g2) cxVar).glassEngine.g();
         }
     }
 
     @Override // android.view.View
     public void setTranslationY(float f10) {
         if (getTranslationY() != f10) {
-            ((org.telegram.ui.ActionBar.h2) this.L).glassEngine.g();
+            ((org.telegram.ui.ActionBar.g2) this.L).glassEngine.g();
         }
         super.setTranslationY(f10);
     }

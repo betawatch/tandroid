@@ -5,15 +5,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class cv0 extends ProfileStoriesView {
     public final /* synthetic */ Context u0;
     public final /* synthetic */ ProfileActivity v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cv0(ProfileActivity profileActivity, Context context, int i7, long j3, boolean z10, k0 k0Var, zu0 zu0Var, org.telegram.ui.ActionBar.i6 i6Var, Context context2) {
-        super(context, i7, j3, z10, k0Var, zu0Var, i6Var);
+    public cv0(ProfileActivity profileActivity, Context context, int i7, long j3, boolean z10, k0 k0Var, zu0 zu0Var, org.telegram.ui.ActionBar.h6 h6Var, Context context2) {
+        super(context, i7, j3, z10, k0Var, zu0Var, h6Var);
         this.v0 = profileActivity;
         this.u0 = context2;
     }

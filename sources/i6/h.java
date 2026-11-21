@@ -31,14 +31,14 @@ import f6.l;
 import f6.o;
 import f6.q;
 import g6.c0;
-import hi.u5;
+import hi.t5;
 import hi.w4;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import q6.m;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h {
     public static final j6.b v = new j6.b("MediaSessionManager", null);
@@ -87,7 +87,7 @@ public final class h {
         r7Var.f = new w4(this, 3);
         r7 r7Var2 = new r7(context);
         this.i = r7Var2;
-        r7Var2.f = new u5(this, i7);
+        r7Var2.f = new t5(this, i7);
         this.k = new y(Looper.getMainLooper(), 0);
         j6.b bVar3 = f.u;
         h6.a aVar3 = bVar.f;

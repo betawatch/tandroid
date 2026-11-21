@@ -9,7 +9,7 @@ import java.util.Iterator;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j91 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -70,7 +70,7 @@ public final class j91 extends org.telegram.ui.ActionBar.j {
                         }
                     }
                     long j10 = P0.id;
-                    i10 = ((org.telegram.ui.ActionBar.h2) y91Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
                     h91 h91Var = new h91(this, this.a, i10, hVar, P0.id, y91Var, j10);
                     h91Var.g2 = new ai.d0(this, j10, 11);
                     h91Var.show();
@@ -128,7 +128,7 @@ public final class j91 extends org.telegram.ui.ActionBar.j {
                 break;
             case 11:
                 TLRPC.Chat O0 = y91Var.getMessagesController().O0(Long.valueOf(j3));
-                org.telegram.ui.Components.b5.r(y91Var, false, O0, null, false, true, false, false, new aj0(23, this, O0));
+                org.telegram.ui.Components.c5.r(y91Var, false, O0, null, false, true, false, false, new aj0(23, this, O0));
                 break;
             case 12:
             case 13:

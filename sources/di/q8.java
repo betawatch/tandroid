@@ -1,43 +1,19 @@
 package di;
 
-import j$.util.Objects;
-import org.telegram.messenger.fj;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class q8 {
-    public final long a;
-    public final int b;
+public interface q8 {
+    void a();
 
-    public q8(long j3, int i7) {
-        this.a = j3;
-        this.b = i7;
-    }
+    int b(int i7);
 
-    public static q8 a(int i7, long j3) {
-        return new q8(j3, i7);
-    }
+    int c();
 
-    public static q8 b(fj fjVar) {
-        if (fjVar == null) {
-            return null;
-        }
-        TLRPC.Message message = fjVar.k;
-        return (message == null || !(message.isThreadMessage || fjVar.k3()) || fjVar.k.fwd_from == null) ? new q8(fj.B0(fjVar.k), fjVar.e1()) : new q8(fjVar.Z0(), fjVar.k.fwd_from.saved_from_msg_id);
-    }
+    void d();
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof q8) {
-            q8 q8Var = (q8) obj;
-            if (q8Var.a == this.a && q8Var.b == this.b) {
-                return true;
-            }
-        }
-        return false;
-    }
+    int e();
 
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
-    }
+    Object get(int i7);
+
+    int indexOf(Object obj);
 }

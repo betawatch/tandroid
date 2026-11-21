@@ -20,18 +20,18 @@ import android.view.ViewConfiguration;
 import ch.w;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import ki.n3;
+import ki.m3;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.m41;
 import org.telegram.ui.qi0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean B1;
@@ -64,7 +64,7 @@ public abstract class g extends View implements i {
     public final TextPaint O;
     public final d O0;
     public final TextPaint P;
-    public final n3 P0;
+    public final m3 P0;
     public final TextPaint Q;
     public boolean Q0;
     public final Paint R;
@@ -79,7 +79,7 @@ public abstract class g extends View implements i {
     public float V0;
     public final Rect W;
     public float W0;
-    public final i6 X0;
+    public final h6 X0;
     public int Y0;
     public int Z0;
     public f a;
@@ -157,7 +157,7 @@ public abstract class g extends View implements i {
 
     /* JADX WARN: Type inference failed for: r1v10, types: [lg.b] */
     /* JADX WARN: Type inference failed for: r1v9, types: [lg.b] */
-    public g(Context context, i6 i6Var) {
+    public g(Context context, h6 h6Var) {
         super(context);
         this.b = new ArrayList(10);
         this.c = new ArrayList(25);
@@ -259,7 +259,7 @@ public abstract class g extends View implements i {
             }
         };
         this.O0 = new d(this, 2);
-        this.P0 = new n3(this, i7);
+        this.P0 = new m3(this, i7);
         this.Q0 = false;
         this.Y0 = 0;
         this.Z0 = 0;
@@ -270,7 +270,7 @@ public abstract class g extends View implements i {
         arrayList.add(rect);
         this.c1 = 0L;
         this.j1 = false;
-        this.X0 = i6Var;
+        this.X0 = h6Var;
         t();
         this.B0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
@@ -586,7 +586,7 @@ public abstract class g extends View implements i {
                 this.w = f12;
             } else {
                 float f14 = this.U0;
-                this.w = (lr.g.getInterpolation(f13) * (f12 - f14)) + f14;
+                this.w = (nr.g.getInterpolation(f13) * (f12 - f14)) + f14;
             }
             invalidate();
         }
@@ -601,7 +601,7 @@ public abstract class g extends View implements i {
                     this.x = f16;
                 } else {
                     float f18 = this.V0;
-                    this.x = (lr.g.getInterpolation(f17) * (f16 - f18)) + f18;
+                    this.x = (nr.g.getInterpolation(f17) * (f16 - f18)) + f18;
                 }
                 invalidate();
             }
@@ -609,23 +609,23 @@ public abstract class g extends View implements i {
     }
 
     public final void G() {
-        int i7 = this.y0 ? n6.Qj : n6.Pj;
-        i6 i6Var = this.X0;
-        int w02 = n6.w0(i7, i6Var);
+        int i7 = this.y0 ? m6.Qj : m6.Pj;
+        h6 h6Var = this.X0;
+        int w02 = m6.w0(i7, h6Var);
         this.O.setColor(w02);
-        this.P.setColor(n6.w0(this.y0 ? n6.Qj : n6.Pj, i6Var));
-        int w03 = n6.w0(n6.Pj, i6Var);
+        this.P.setColor(m6.w0(this.y0 ? m6.Qj : m6.Pj, h6Var));
+        int w03 = m6.w0(m6.Pj, h6Var);
         this.Q.setColor(w03);
-        int w04 = n6.w0(n6.Rj, i6Var);
+        int w04 = m6.w0(m6.Rj, h6Var);
         Paint paint = this.M;
         paint.setColor(w04);
-        int w05 = n6.w0(n6.Sj, i6Var);
+        int w05 = m6.w0(m6.Sj, h6Var);
         Paint paint2 = this.N;
         paint2.setColor(w05);
-        this.R.setColor(n6.w0(n6.Uj, i6Var));
-        this.S.setColor(n6.w0(n6.Tj, i6Var));
-        this.T.setColor(n6.w0(n6.d6, i6Var));
-        this.U.setColor(n6.w0(n6.Vj, i6Var));
+        this.R.setColor(m6.w0(m6.Uj, h6Var));
+        this.S.setColor(m6.w0(m6.Tj, h6Var));
+        this.T.setColor(m6.w0(m6.d6, h6Var));
+        this.U.setColor(m6.w0(m6.Vj, h6Var));
         this.u0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();

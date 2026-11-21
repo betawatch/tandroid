@@ -2,35 +2,47 @@ package hi;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class s9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ta d;
+    public final /* synthetic */ sa b;
 
-    public /* synthetic */ s9(ta taVar, int i7, int i10, int i11) {
-        this.a = i11;
-        this.d = taVar;
-        this.b = i7;
-        this.c = i10;
+    public /* synthetic */ s9(sa saVar, int i7) {
+        this.a = i7;
+        this.b = saVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.d.M(this.b, this.c);
+                sa saVar = this.b;
+                saVar.k2 = null;
+                saVar.r.setTranslationY(0.0f);
+                saVar.r.b(0.0f);
+                break;
+            case 1:
+                sa saVar2 = this.b;
+                saVar2.n.removeView(saVar2.N0);
+                saVar2.N0 = null;
+                saVar2.o2 = null;
+                saVar2.q2 = null;
+                saVar2.d1.M.b(saVar2.g0 != 1);
                 break;
             default:
-                int i7 = this.b;
-                int i10 = this.c;
-                if (i7 != i10) {
-                    this.d.P(i7, i10);
-                    break;
+                sa saVar3 = this.b;
+                aa aaVar = saVar3.D2;
+                if (aaVar != null) {
+                    if (aaVar.getParent() != null) {
+                        ((ViewGroup) saVar3.D2.getParent()).removeView(saVar3.D2);
+                    }
+                    saVar3.D2 = null;
                 }
+                saVar3.F2 = null;
+                super.onAnimationEnd(animator);
                 break;
         }
     }

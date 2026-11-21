@@ -1,65 +1,44 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zc0 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class zc0 implements org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ org.telegram.messenger.x10 d;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ zc0(String[] strArr, Activity activity, org.telegram.messenger.x10 x10Var, int i7) {
+    public /* synthetic */ zc0(Activity activity, int i7) {
         this.a = i7;
-        this.b = strArr;
-        this.c = activity;
-        this.d = x10Var;
+        this.b = activity;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
-                String[] strArr = this.b;
-                int length = strArr.length;
-                boolean z10 = false;
-                int i7 = 0;
-                while (true) {
-                    if (i7 < length) {
-                        if (this.c.checkSelfPermission(strArr[i7]) == 0) {
-                            z10 = true;
-                        } else {
-                            i7++;
-                        }
-                    }
-                }
-                org.telegram.messenger.x10 x10Var = this.d;
-                if (x10Var != null) {
-                    x10Var.a(Boolean.valueOf(z10));
+                Activity activity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    activity.startActivity(intent);
                     break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
                 }
-                break;
             default:
-                String[] strArr2 = this.b;
-                int length2 = strArr2.length;
-                boolean z11 = false;
-                int i10 = 0;
-                while (true) {
-                    if (i10 < length2) {
-                        if (this.c.checkSelfPermission(strArr2[i10]) == 0) {
-                            i10++;
-                        }
-                    } else {
-                        z11 = true;
-                    }
-                }
-                org.telegram.messenger.x10 x10Var2 = this.d;
-                if (x10Var2 != null) {
-                    x10Var2.a(Boolean.valueOf(z11));
+                Activity activity2 = this.b;
+                try {
+                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    activity2.startActivity(intent2);
                     break;
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
                 }
-                break;
         }
     }
 }

@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class oe0 extends org.telegram.ui.Components.e6 implements org.telegram.ui.Components.v60 {
+public final class oe0 extends org.telegram.ui.Components.f6 implements org.telegram.ui.Components.x60 {
     public static final float[] T = {12.0f, 12.0f, 10.0f};
     public static final int[] U = {16, 8, 4};
     public int[] E;
@@ -30,12 +30,12 @@ public final class oe0 extends org.telegram.ui.Components.e6 implements org.tele
     public final HashSet Q;
     public final te.a R;
     public final org.telegram.ui.Cells.m9 S;
-    public final org.telegram.ui.ActionBar.i6 s;
+    public final org.telegram.ui.ActionBar.h6 s;
     public int w;
     public float[] x;
     public float[] y;
 
-    public oe0(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public oe0(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.I = new lz(this, 29);
         this.K = new Paint(1);
@@ -66,9 +66,9 @@ public final class oe0 extends org.telegram.ui.Components.e6 implements org.tele
         hVar3.a(0.75f);
         gVar2.m = hVar3;
         this.Q = new HashSet();
-        this.R = new te.a(0, new zr(this, 22), org.telegram.ui.Components.lr.h, 380L, false);
+        this.R = new te.a(0, new zr(this, 22), org.telegram.ui.Components.nr.h, 380L, false);
         this.S = new org.telegram.ui.Cells.m9(new f(this, 24));
-        this.s = i6Var;
+        this.s = h6Var;
     }
 
     public static void l(oe0 oe0Var, View view, float f10, float f11) {
@@ -196,7 +196,7 @@ public final class oe0 extends org.telegram.ui.Components.e6 implements org.tele
     public void setSkipDrawSelector(boolean z10) {
         this.J = z10;
         if (z10) {
-            this.K.setColor(org.telegram.ui.ActionBar.n6.r1(0.09f, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Rl, this.s)));
+            this.K.setColor(org.telegram.ui.ActionBar.m6.r1(0.09f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Rl, this.s)));
         }
         int childCount = getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
@@ -208,10 +208,10 @@ public final class oe0 extends org.telegram.ui.Components.e6 implements org.tele
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.v60
-    public final void c(org.telegram.ui.Components.t60 t60Var) {
+    @Override // org.telegram.ui.Components.x60
+    public final void c(org.telegram.ui.Components.v60 v60Var) {
         if (getBackground() instanceof fh.g) {
-            t60Var.a(((fh.g) getBackground()).R.k);
+            v60Var.a(((fh.g) getBackground()).R.k);
         }
     }
 
@@ -267,12 +267,12 @@ public final class oe0 extends org.telegram.ui.Components.e6 implements org.tele
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.e6
+    @Override // org.telegram.ui.Components.f6
     public final void f() {
         p();
     }
 
-    @Override // org.telegram.ui.Components.e6
+    @Override // org.telegram.ui.Components.f6
     public final void g(View view, float f10) {
         float T1 = org.telegram.messenger.g0.T1(0.7f, 1.0f, f10);
         view.setAlpha(f10);
@@ -288,14 +288,14 @@ public final class oe0 extends org.telegram.ui.Components.e6 implements org.tele
         }
     }
 
-    @Override // org.telegram.ui.Components.e6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.f6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         super.onLayout(z10, i7, i10, i11, i12);
         p();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.e6, android.widget.LinearLayout, android.view.View
+    @Override // org.telegram.ui.Components.f6, android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         int[] iArr;
         float[] fArr;
@@ -461,7 +461,7 @@ public final class oe0 extends org.telegram.ui.Components.e6 implements org.tele
         int entriesCount = getEntriesCount();
         for (int i7 = 0; i7 < entriesCount; i7++) {
             te.e i10 = this.c.i(i7);
-            ((qh.b) ((org.telegram.ui.Components.d6) i10.a).a).setVisualWidth(i10.b().width());
+            ((qh.b) ((org.telegram.ui.Components.e6) i10.a).a).setVisualWidth(i10.b().width());
         }
     }
 

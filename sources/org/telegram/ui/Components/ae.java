@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ae extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -19,43 +19,43 @@ public final class ae extends AnimatorListenerAdapter {
         switch (this.a) {
             case 4:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                if (animator.equals(chatActivityEnterView.g3)) {
-                    chatActivityEnterView.g3 = null;
+                if (animator.equals(chatActivityEnterView.i3)) {
+                    chatActivityEnterView.i3 = null;
                     break;
                 }
                 break;
             case 5:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (animator.equals(chatActivityEnterView2.f3)) {
-                    chatActivityEnterView2.f3 = null;
+                if (animator.equals(chatActivityEnterView2.h3)) {
+                    chatActivityEnterView2.h3 = null;
                     break;
                 }
                 break;
             case 6:
                 ChatActivityEnterView chatActivityEnterView3 = this.b;
-                if (animator.equals(chatActivityEnterView3.g3)) {
-                    chatActivityEnterView3.g3 = null;
+                if (animator.equals(chatActivityEnterView3.i3)) {
+                    chatActivityEnterView3.i3 = null;
                     break;
                 }
                 break;
             case 7:
                 ChatActivityEnterView chatActivityEnterView4 = this.b;
-                if (animator.equals(chatActivityEnterView4.f3)) {
-                    chatActivityEnterView4.f3 = null;
+                if (animator.equals(chatActivityEnterView4.h3)) {
+                    chatActivityEnterView4.h3 = null;
                     break;
                 }
                 break;
             case 8:
                 ChatActivityEnterView chatActivityEnterView5 = this.b;
-                if (animator.equals(chatActivityEnterView5.g3)) {
-                    chatActivityEnterView5.g3 = null;
+                if (animator.equals(chatActivityEnterView5.i3)) {
+                    chatActivityEnterView5.i3 = null;
                     break;
                 }
                 break;
             case 9:
                 ChatActivityEnterView chatActivityEnterView6 = this.b;
-                if (animator.equals(chatActivityEnterView6.f3)) {
-                    chatActivityEnterView6.f3 = null;
+                if (animator.equals(chatActivityEnterView6.h3)) {
+                    chatActivityEnterView6.h3 = null;
                     break;
                 }
                 break;
@@ -70,14 +70,14 @@ public final class ae extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.p4 = null;
+                chatActivityEnterView.r4 = null;
                 chatActivityEnterView.V0.setLayerType(0, null);
                 break;
             case 1:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                chatActivityEnterView2.p4 = null;
+                chatActivityEnterView2.r4 = null;
                 chatActivityEnterView2.V0.setLayerType(0, null);
-                chatActivityEnterView2.z4.e();
+                chatActivityEnterView2.B4.e();
                 break;
             case 2:
                 this.b.c0.setVisibility(8);
@@ -88,24 +88,24 @@ public final class ae extends AnimatorListenerAdapter {
                 if (deVar != null) {
                     deVar.setVisibility(8);
                 }
-                chatActivityEnterView3.n1();
+                chatActivityEnterView3.r1();
                 gf gfVar = chatActivityEnterView3.F0;
                 if (gfVar != null) {
                     gfVar.requestFocus();
                 }
-                chatActivityEnterView3.S0();
+                chatActivityEnterView3.W0();
                 break;
             case 4:
                 ChatActivityEnterView chatActivityEnterView4 = this.b;
-                if (animator.equals(chatActivityEnterView4.g3)) {
-                    chatActivityEnterView4.d2.setVisibility(8);
-                    chatActivityEnterView4.g3 = null;
+                if (animator.equals(chatActivityEnterView4.i3)) {
+                    chatActivityEnterView4.f2.setVisibility(8);
+                    chatActivityEnterView4.i3 = null;
                     break;
                 }
                 break;
             case 5:
                 ChatActivityEnterView chatActivityEnterView5 = this.b;
-                if (animator.equals(chatActivityEnterView5.f3)) {
+                if (animator.equals(chatActivityEnterView5.h3)) {
                     chatActivityEnterView5.getSendButtonInternal().setVisibility(8);
                     chatActivityEnterView5.Q0.setVisibility(8);
                     chatActivityEnterView5.a1.setVisibility(8);
@@ -113,44 +113,44 @@ public final class ae extends AnimatorListenerAdapter {
                     if (ieVar != null) {
                         ieVar.setVisibility(8);
                     }
-                    chatActivityEnterView5.f3 = null;
-                    chatActivityEnterView5.j3 = 0;
+                    chatActivityEnterView5.h3 = null;
+                    chatActivityEnterView5.l3 = 0;
                     break;
                 }
                 break;
             case 6:
                 ChatActivityEnterView chatActivityEnterView6 = this.b;
-                if (animator.equals(chatActivityEnterView6.g3)) {
-                    chatActivityEnterView6.g3 = null;
+                if (animator.equals(chatActivityEnterView6.i3)) {
+                    chatActivityEnterView6.i3 = null;
                     break;
                 }
                 break;
             case 7:
                 ChatActivityEnterView chatActivityEnterView7 = this.b;
-                if (animator.equals(chatActivityEnterView7.f3)) {
+                if (animator.equals(chatActivityEnterView7.h3)) {
                     chatActivityEnterView7.getSendButtonInternal().setVisibility(8);
                     chatActivityEnterView7.Q0.setVisibility(8);
                     chatActivityEnterView7.setSlowModeButtonVisible(false);
                     chatActivityEnterView7.a1.setVisibility(8);
                     chatActivityEnterView7.T0.setVisibility(0);
-                    chatActivityEnterView7.f3 = null;
-                    chatActivityEnterView7.j3 = 0;
+                    chatActivityEnterView7.h3 = null;
+                    chatActivityEnterView7.l3 = 0;
                     break;
                 }
                 break;
             case 8:
                 ChatActivityEnterView chatActivityEnterView8 = this.b;
-                if (animator.equals(chatActivityEnterView8.g3)) {
-                    chatActivityEnterView8.g3 = null;
+                if (animator.equals(chatActivityEnterView8.i3)) {
+                    chatActivityEnterView8.i3 = null;
                     break;
                 }
                 break;
             case 9:
                 ChatActivityEnterView chatActivityEnterView9 = this.b;
-                if (animator.equals(chatActivityEnterView9.f3)) {
+                if (animator.equals(chatActivityEnterView9.h3)) {
                     chatActivityEnterView9.setSlowModeButtonVisible(false);
-                    chatActivityEnterView9.f3 = null;
-                    chatActivityEnterView9.j3 = 0;
+                    chatActivityEnterView9.h3 = null;
+                    chatActivityEnterView9.l3 = 0;
                     oe oeVar = chatActivityEnterView9.a1;
                     if (oeVar != null) {
                         oeVar.setVisibility(0);
@@ -182,12 +182,12 @@ public final class ae extends AnimatorListenerAdapter {
             default:
                 ChatActivityEnterView chatActivityEnterView11 = this.b;
                 chatActivityEnterView11.W0 = null;
-                kg kgVar = chatActivityEnterView11.N3;
-                if (kgVar != null) {
-                    kgVar.x(0.0f);
+                ng ngVar = chatActivityEnterView11.P3;
+                if (ngVar != null) {
+                    ngVar.x(0.0f);
                 }
                 chatActivityEnterView11.requestLayout();
-                chatActivityEnterView11.z4.e();
+                chatActivityEnterView11.B4.e();
                 break;
         }
     }

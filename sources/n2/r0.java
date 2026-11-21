@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class r0 implements x {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -725,10 +725,10 @@ public final class r0 implements x {
             synchronized (g0.t) {
                 try {
                     if (g0.u == null) {
-                        g0.u = Executors.newSingleThreadScheduledExecutor(new ai.y0(1));
+                        g0.u = Executors.newSingleThreadScheduledExecutor(new ai.a1(1));
                     }
                     g0.v++;
-                    g0.u.schedule(new kg.i0(audioTrack, q10, rVar, 13), 20L, TimeUnit.MILLISECONDS);
+                    g0.u.schedule(new kg.y(audioTrack, q10, rVar, 14), 20L, TimeUnit.MILLISECONDS);
                 } catch (Throwable th2) {
                     throw th2;
                 }
@@ -815,7 +815,7 @@ public final class r0 implements x {
                 this.b0 = new Handler(Looper.myLooper());
             }
             this.b0.removeCallbacksAndMessages(null);
-            this.b0.postDelayed(new kg.j0(this, 23), 100L);
+            this.b0.postDelayed(new kg.i0(this, 23), 100L);
         }
         return Y;
     }

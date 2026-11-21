@@ -1,12 +1,12 @@
 package c8;
 
-import org.telegram.ui.Components.mk0;
+import org.telegram.ui.Components.ok0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class ea {
-    public static void a(mk0 mk0Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        mk0Var.r(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fi, i6Var), i6Var != null ? i6Var.d() : org.telegram.ui.ActionBar.n6.I.q());
+    public static void a(ok0 ok0Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        ok0Var.r(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Fi, h6Var), h6Var != null ? h6Var.d() : org.telegram.ui.ActionBar.m6.I.q());
     }
 
     public static int b(oi.a aVar) {

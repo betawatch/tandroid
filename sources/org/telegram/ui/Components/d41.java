@@ -1,26 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d41 implements ValueAnimator.AnimatorUpdateListener {
-    public int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ h41 c;
+public final class d41 extends v4.u0 {
+    public final /* synthetic */ k41 a;
 
-    public d41(h41 h41Var, int i7) {
-        this.c = h41Var;
-        this.b = i7;
+    public d41(k41 k41Var) {
+        this.a = k41Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
-        h41 h41Var = this.c;
-        h41Var.O = true;
-        h41Var.n.scrollBy(0, floatValue - this.a);
-        h41Var.O = false;
-        this.a = floatValue;
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        v4.u0 u0Var = this.a.E;
+        if (u0Var != null) {
+            u0Var.a(recyclerView, i7);
+        }
+    }
+
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        k41 k41Var = this.a;
+        j41 j41Var = k41Var.s;
+        a41 a41Var = k41Var.n;
+        v4.u0 u0Var = k41Var.E;
+        if (u0Var != null) {
+            u0Var.b(a41Var, i7, i10);
+        }
+        if (i10 <= 0 || a41Var.getAdapter() != j41Var || !k41Var.K || j41Var.r || j41Var.s) {
+            return;
+        }
+        if (k41Var.r.N0() >= ((j41Var.x + 1) - ((j41Var.w + 1) * 10)) - 1) {
+            k41 k41Var2 = j41Var.y;
+            if (!k41Var2.K || j41Var.r || j41Var.s) {
+                return;
+            }
+            j41Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = j41Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(k41Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new f2(j41Var, 16));
+        }
     }
 }

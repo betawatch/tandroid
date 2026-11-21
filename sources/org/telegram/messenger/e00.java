@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e00 extends c1 {
     public static final int[] w = new int[5];
@@ -496,7 +496,7 @@ public final class e00 extends c1 {
         g0.g3(new rq(24, this, arrayList));
     }
 
-    public final void t(long j3, int i7, boolean z10, org.telegram.ui.ActionBar.h2 h2Var) {
+    public final void t(long j3, int i7, boolean z10, org.telegram.ui.ActionBar.g2 g2Var) {
         TL_forum.TL_messages_updatePinnedForumTopic tL_messages_updatePinnedForumTopic = new TL_forum.TL_messages_updatePinnedForumTopic();
         tL_messages_updatePinnedForumTopic.peer = getMessagesController().l1(-j3);
         tL_messages_updatePinnedForumTopic.topic_id = i7;
@@ -508,7 +508,7 @@ public final class e00 extends c1 {
             arrayList.add(0, Integer.valueOf(i7));
         }
         a(j3, arrayList, true);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_updatePinnedForumTopic, new pm(this, h2Var, j3, g10));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_updatePinnedForumTopic, new pm(this, g2Var, j3, g10));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:173:0x0274, code lost:

@@ -9,9 +9,9 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.c5;
-import p4.o0;
+import p4.z;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -37,18 +37,18 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final void d(int i7) {
+    public final void d(z zVar) {
+        zVar.run();
+    }
+
+    @Override // u2.l
+    public final void e(int i7) {
         this.a.releaseOutputBuffer(i7, false);
     }
 
     @Override // u2.l
-    public final void e() {
+    public final void f() {
         this.a.detachOutputSurface();
-    }
-
-    @Override // u2.l
-    public final void f(int i7, long j3) {
-        this.a.releaseOutputBuffer(i7, j3);
     }
 
     @Override // u2.l
@@ -57,8 +57,8 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final int g() {
-        return this.a.dequeueInputBuffer(0L);
+    public final void g(int i7, long j3) {
+        this.a.releaseOutputBuffer(i7, j3);
     }
 
     @Override // u2.l
@@ -77,8 +77,8 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final void h(o0 o0Var) {
-        o0Var.run();
+    public final int h() {
+        return this.a.dequeueInputBuffer(0L);
     }
 
     @Override // u2.l

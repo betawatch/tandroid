@@ -1,11 +1,11 @@
 package oi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class l3 {
-    public final /* synthetic */ s3 a;
+public final class l3 implements c0 {
+    public final /* synthetic */ t3 a;
 
-    public l3(s3 s3Var) {
-        this.a = s3Var;
+    public l3(t3 t3Var) {
+        this.a = t3Var;
     }
 }

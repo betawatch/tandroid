@@ -1,28 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class eg extends t31 {
-    public final /* synthetic */ fg q1;
+public final class eg extends org.telegram.ui.bn {
+    public boolean vd;
+    public final /* synthetic */ TLRPC.User wd;
+    public final /* synthetic */ TLRPC.User xd;
+    public final /* synthetic */ long yd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eg(fg fgVar, Context context, org.telegram.ui.ActionBar.h2 h2Var, h41 h41Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, h2Var, h41Var, i6Var);
-        this.q1 = fgVar;
+    public eg(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j3) {
+        super(bundle);
+        this.wd = user;
+        this.xd = user2;
+        this.yd = j3;
     }
 
-    @Override // org.telegram.ui.Components.t31, org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
-    public final void dismiss() {
-        super.dismiss();
-        ChatActivityEnterView chatActivityEnterView = this.q1.a;
-        if (chatActivityEnterView.O3 == this) {
-            chatActivityEnterView.O3 = null;
+    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.vd) {
+            return;
         }
-        kg kgVar = chatActivityEnterView.N3;
-        if (kgVar != null) {
-            kgVar.A(false);
-        }
+        this.vd = true;
+        lc.b0(this).I(R.raw.contact_check, org.telegram.messenger.gd.a0(null, null, 2131751727, org.telegram.messenger.o10.q(this.wd)), org.telegram.messenger.g0.T2(org.telegram.messenger.gd.a0(null, null, 2131751728, org.telegram.messenger.o10.q(this.xd)), new bi.c4(this, this.yd, 22))).j();
     }
 }

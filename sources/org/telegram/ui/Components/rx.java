@@ -1,63 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface rx {
-    boolean A();
+public final class rx implements hy {
+    public final /* synthetic */ sx a;
 
-    long a();
+    public rx(sx sxVar) {
+        this.a = sxVar;
+    }
 
-    boolean b();
+    @Override // org.telegram.ui.Components.hy
+    public final void e() {
+        sx sxVar = this.a;
+        if (sxVar.G.W.G) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        sxVar.G.W.e(true);
+        sx.E(sxVar, new ou(5, this, arrayList), arrayList, true);
+    }
 
-    boolean c();
-
-    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10);
-
-    void e(Object obj, Object obj2);
-
-    int f();
-
-    boolean g();
-
-    void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void i(int i7);
-
-    boolean j();
-
-    boolean k();
-
-    void l(String str);
-
-    void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10, int i7);
-
-    void n();
-
-    void o(h41 h41Var);
-
-    float p();
-
-    void q();
-
-    void r(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void s(int i7);
-
-    void t(ArrayList arrayList);
-
-    void u();
-
-    void v(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10);
-
-    void w();
-
-    void x(long j3, TLRPC.Document document, String str, boolean z10);
-
-    void y(long j3);
-
-    boolean z();
+    @Override // java.lang.Runnable
+    public final void run() {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        String str = this.a.w;
+        ou ouVar = new ou(4, this, str);
+        if (org.telegram.messenger.j6.d(str)) {
+            lv0.G3.c(org.telegram.messenger.j10.t0, str, new rh(3, linkedHashSet, ouVar));
+        } else {
+            ouVar.run();
+        }
+    }
 }

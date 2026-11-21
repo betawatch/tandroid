@@ -2,16 +2,16 @@ package org.telegram.ui;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class wz extends org.telegram.ui.Components.bk0 {
+public final class wz extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ c00 c;
 
     public wz(c00 c00Var) {
         this.c = c00Var;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return true;
     }
@@ -39,7 +39,7 @@ public final class wz extends org.telegram.ui.Components.bk0 {
             u2Var.P = c00Var.q0;
             u2Var.d0(org.telegram.messenger.fj.B0(fjVar.k), fjVar, fjVar.k.date, false, false);
             u2Var.t2 = i7 != b() - 1;
-            u2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.ik(this, u2Var, fjVar, u2Var.getMessage() != null && u2Var.getMessage().e1() == fjVar.e1(), 1));
+            u2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.kk(this, u2Var, fjVar, u2Var.getMessage() != null && u2Var.getMessage().e1() == fjVar.e1(), 1));
         }
     }
 
@@ -51,13 +51,13 @@ public final class wz extends org.telegram.ui.Components.bk0 {
             a0Var = new jg.a0(2, viewGroup.getContext(), true);
         } else if (i7 != 3) {
             org.telegram.ui.Cells.y3 y3Var = new org.telegram.ui.Cells.y3(viewGroup.getContext(), null);
-            y3Var.setText(org.telegram.messenger.gd.M0(2131745561, null));
+            y3Var.setText(org.telegram.messenger.gd.N0(2131745560, null));
             a0Var = y3Var;
         } else {
-            org.telegram.ui.Components.wz wzVar = new org.telegram.ui.Components.wz(viewGroup.getContext(), null);
-            wzVar.setIsSingleCell(true);
-            wzVar.setViewType(1);
-            a0Var = wzVar;
+            org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(viewGroup.getContext(), null);
+            yzVar.setIsSingleCell(true);
+            yzVar.setViewType(1);
+            a0Var = yzVar;
         }
         return i5.c.q(a0Var, a0Var, -1, -2);
     }

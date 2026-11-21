@@ -43,9 +43,9 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class ec {
     public static Bitmap M;
@@ -1079,16 +1079,16 @@ public final class ec {
     }
 
     public static int d(ec ecVar, BitmapDrawable bitmapDrawable) {
-        if (bitmapDrawable instanceof org.telegram.ui.Components.b6) {
-            org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) bitmapDrawable;
-            return Math.max(b6Var.getIntrinsicHeight() * b6Var.getIntrinsicWidth(), b6Var.k0 * b6Var.j0) * 12;
+        if (bitmapDrawable instanceof org.telegram.ui.Components.c6) {
+            org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) bitmapDrawable;
+            return Math.max(c6Var.getIntrinsicHeight() * c6Var.getIntrinsicWidth(), c6Var.k0 * c6Var.j0) * 12;
         }
-        if (!(bitmapDrawable instanceof mh0)) {
+        if (!(bitmapDrawable instanceof oh0)) {
             return bitmapDrawable.getBitmap().getByteCount();
         }
-        mh0 mh0Var = (mh0) bitmapDrawable;
-        int i7 = mh0Var.b * mh0Var.c;
-        return mh0Var.H ? i7 * 2 : i7 * 8;
+        oh0 oh0Var = (oh0) bitmapDrawable;
+        int i7 = oh0Var.b * oh0Var.c;
+        return oh0Var.H ? i7 * 2 : i7 * 8;
     }
 
     public static boolean d0(Uri uri, String str) {
@@ -1625,7 +1625,7 @@ public final class ec {
                 }
             }
             Drawable drawable3 = s9;
-            if ((drawable3 instanceof mh0 ? ((mh0) drawable3).u() : drawable3 instanceof org.telegram.ui.Components.b6 ? ((org.telegram.ui.Components.b6) drawable3).s() : true) && drawable3 != null) {
+            if ((drawable3 instanceof oh0 ? ((oh0) drawable3).u() : drawable3 instanceof org.telegram.ui.Components.c6 ? ((org.telegram.ui.Components.c6) drawable3).s() : true) && drawable3 != null) {
                 h(imageReceiver, true);
                 imageReceiver.x0(drawable3, str21, 3, true, i16);
                 if (!imageReceiver.T0) {
@@ -3590,11 +3590,11 @@ public final class ec {
 
     public final BitmapDrawable y(String str) {
         BitmapDrawable bitmapDrawable = (BitmapDrawable) this.e.f(str);
-        if (!(bitmapDrawable instanceof org.telegram.ui.Components.b6)) {
+        if (!(bitmapDrawable instanceof org.telegram.ui.Components.c6)) {
             return bitmapDrawable;
         }
-        org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) bitmapDrawable;
-        if (!b6Var.d0 && b6Var.H0 < 15) {
+        org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) bitmapDrawable;
+        if (!c6Var.d0 && c6Var.H0 < 15) {
             return bitmapDrawable;
         }
         this.e.n(str);

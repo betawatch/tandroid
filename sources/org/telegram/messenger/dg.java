@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dg implements Runnable {
     public final /* synthetic */ int a;
@@ -117,7 +117,7 @@ public final /* synthetic */ class dg implements Runnable {
                         }
                         z10 = true;
                         mpVar.v7.M(user.id);
-                        di.x8.y(mpVar.currentAccount, false).P(userFull);
+                        di.y8.y(mpVar.currentAccount, false).P(userFull);
                         mpVar.r1.remove(Long.valueOf(user.id));
                         mpVar.s1.put(user.id, System.currentTimeMillis());
                         str = user.first_name + user.last_name + o10.o(user);
@@ -176,7 +176,7 @@ public final /* synthetic */ class dg implements Runnable {
                 }
                 z10 = false;
                 mpVar.v7.M(user.id);
-                di.x8.y(mpVar.currentAccount, false).P(userFull);
+                di.y8.y(mpVar.currentAccount, false).P(userFull);
                 mpVar.r1.remove(Long.valueOf(user.id));
                 mpVar.s1.put(user.id, System.currentTimeMillis());
                 str = user.first_name + user.last_name + o10.o(user);
@@ -538,9 +538,9 @@ public final /* synthetic */ class dg implements Runnable {
                 int i30 = this.b;
                 TL_account.registerPasskey registerpasskey = (TL_account.registerPasskey) this.d;
                 q10 q10Var = (q10) this.e;
-                org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, context, null);
-                u1Var.r(500L);
-                u1Var.setOnCancelListener(new li.e0(i30, ConnectionsManager.getInstance(i30).sendRequestTyped(registerpasskey, new d3.b(i11), new z3(6, u1Var, q10Var)), q10Var, i11));
+                org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, context, null);
+                t1Var.r(500L);
+                t1Var.setOnCancelListener(new li.e0(i30, ConnectionsManager.getInstance(i30).sendRequestTyped(registerpasskey, new d3.b(i11), new z3(6, t1Var, q10Var)), q10Var, i11));
                 return;
             default:
                 xv xvVar = (xv) this.c;

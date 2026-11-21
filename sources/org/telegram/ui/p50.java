@@ -6,14 +6,14 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class p50 {
     public String G;
     public int H;
-    public org.telegram.ui.ActionBar.h1 I;
-    public org.telegram.ui.ActionBar.x2 J;
-    public org.telegram.ui.Components.l80 b;
+    public org.telegram.ui.ActionBar.g1 I;
+    public org.telegram.ui.ActionBar.w2 J;
+    public org.telegram.ui.Components.n80 b;
     public z2 d;
     public int e;
     public View f;
@@ -21,7 +21,7 @@ public abstract class p50 {
     public TLRPC.Chat n;
     public boolean r;
     public View s;
-    public org.telegram.ui.Components.o80 w;
+    public org.telegram.ui.Components.q80 w;
     public VideoPlayerHolderBase x;
     public v2 y;
     public int a = 0;
@@ -29,7 +29,7 @@ public abstract class p50 {
     public final a0.h E = new a0.h();
     public ArrayList F = new ArrayList();
 
-    public abstract void a(e4 e4Var, org.telegram.ui.Components.zy0 zy0Var);
+    public abstract void a(e4 e4Var, org.telegram.ui.Components.bz0 bz0Var);
 
     public abstract boolean b(TL_iv.PageBlock pageBlock, e4 e4Var);
 }

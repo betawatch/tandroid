@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ek implements Runnable {
     public final /* synthetic */ int a;
@@ -252,7 +252,7 @@ public final /* synthetic */ class ek implements Runnable {
             case 0:
                 TLRPC.TL_sendMessageTextDraftAction tL_sendMessageTextDraftAction = (TLRPC.TL_sendMessageTextDraftAction) obj;
                 final f2 b10 = f2.b(((mp) obj2).currentAccount);
-                hi.u5 u5Var = b10.a;
+                hi.t5 t5Var = b10.a;
                 long j14 = tL_sendMessageTextDraftAction.random_id;
                 TLRPC.TL_textWithEntities tL_textWithEntities = tL_sendMessageTextDraftAction.text;
                 boolean z10 = tL_sendMessageTextDraftAction.can_stop;
@@ -272,7 +272,7 @@ public final /* synthetic */ class ek implements Runnable {
                     a8.b("[BotForum] onDraftNewDraft ignore " + j15 + " " + i14 + " " + j14);
                     return;
                 }
-                LongSparseArray p11 = u5Var.p(j15, j16);
+                LongSparseArray p11 = t5Var.p(j15, j16);
                 if (p11 == null || p11.size() <= 0) {
                     jArr = null;
                 } else {
@@ -283,7 +283,7 @@ public final /* synthetic */ class ek implements Runnable {
                     }
                     jArr = jArr3;
                 }
-                LongSparseArray p12 = u5Var.p(j15, j16);
+                LongSparseArray p12 = t5Var.p(j15, j16);
                 a2 a2Var3 = (a2) (p12 == null ? null : p12.get(j14));
                 if (a2Var3 == null) {
                     a2Var = new a2(j14, b10.getUserConfig().j());
@@ -368,7 +368,7 @@ public final /* synthetic */ class ek implements Runnable {
             case 1:
                 TLRPC.TL_sendMessageRichMessageDraftAction tL_sendMessageRichMessageDraftAction = (TLRPC.TL_sendMessageRichMessageDraftAction) obj;
                 final f2 b11 = f2.b(((mp) obj2).currentAccount);
-                hi.u5 u5Var2 = b11.a;
+                hi.t5 t5Var2 = b11.a;
                 long j20 = tL_sendMessageRichMessageDraftAction.random_id;
                 TL_iv.RichMessage richMessage = tL_sendMessageRichMessageDraftAction.rich_message;
                 boolean z12 = tL_sendMessageRichMessageDraftAction.can_stop;
@@ -388,7 +388,7 @@ public final /* synthetic */ class ek implements Runnable {
                     a8.b("[BotForum] onDraftNewDraft (rich_message) ignore " + j21 + " " + i21 + " " + j20);
                     return;
                 }
-                LongSparseArray p14 = u5Var2.p(j21, j22);
+                LongSparseArray p14 = t5Var2.p(j21, j22);
                 if (p14 == null || p14.size() <= 0) {
                     jArr2 = null;
                 } else {
@@ -399,7 +399,7 @@ public final /* synthetic */ class ek implements Runnable {
                     }
                     jArr2 = jArr4;
                 }
-                LongSparseArray p15 = u5Var2.p(j21, j22);
+                LongSparseArray p15 = t5Var2.p(j21, j22);
                 a2 a2Var4 = (a2) (p15 == null ? null : p15.get(j20));
                 if (a2Var4 == null) {
                     a2Var2 = new a2(j20, b11.getUserConfig().j());

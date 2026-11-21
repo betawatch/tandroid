@@ -1,550 +1,390 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.media.MediaMetadataRetriever;
+import android.graphics.PorterDuff;
+import android.os.Build;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class jm {
-    public float a;
-    public int b;
-    public int c;
-    public int d;
-    public final Object e;
-    public final Object f;
-    public Object g;
-    public final Object h;
+public final class jm extends kj0 {
+    public final Context c;
+    public final boolean d;
+    public boolean e;
+    public boolean f;
+    public final ArrayList h = new ArrayList(8);
+    public int n;
+    public int r;
+    public boolean s;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout w;
 
-    public jm(Context context, hn hnVar) {
-        this.b = -1;
-        this.c = -1;
-        this.d = -1;
-        this.h = new int[]{ConnectionsManager.DEFAULT_DATACENTER_ID, 0};
-        this.e = context;
-        this.f = hnVar;
+    public jm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z10) {
+        this.w = chatAttachAlertPhotoLayout;
+        this.c = context;
+        this.d = z10;
     }
 
-    public static float b(int i7, int i10, float[] fArr) {
-        float f10 = 0.0f;
-        while (i7 < i10) {
-            f10 += fArr[i7];
-            i7++;
+    @Override // org.telegram.ui.Components.dk0
+    public final boolean D(v4.f1 f1Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.kj0
+    public final boolean E(ek0 ek0Var) {
+        org.telegram.messenger.ue ueVar;
+        boolean isEmpty = ChatAttachAlertPhotoLayout.s1.isEmpty();
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        return !(isEmpty && ((ueVar = chatAttachAlertPhotoLayout.U0) == null || ueVar.e.isEmpty())) && chatAttachAlertPhotoLayout.b.M1 && b() > 30;
+    }
+
+    @Override // org.telegram.ui.Components.kj0
+    public final String F(int i7) {
+        ArrayList arrayList;
+        org.telegram.messenger.ef M = M(i7);
+        if (M == null) {
+            int i10 = this.r;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+            if (i7 <= i10) {
+                ArrayList arrayList2 = ChatAttachAlertPhotoLayout.s1;
+                if (arrayList2.isEmpty()) {
+                    org.telegram.messenger.ue ueVar = chatAttachAlertPhotoLayout.U0;
+                    if (ueVar != null && (arrayList = ueVar.e) != null) {
+                        M = (org.telegram.messenger.ef) arrayList.get(0);
+                    }
+                } else {
+                    M = (org.telegram.messenger.ef) arrayList2.get(0);
+                }
+            } else if (!chatAttachAlertPhotoLayout.U0.e.isEmpty()) {
+                M = (org.telegram.messenger.ef) i5.c.h(1, chatAttachAlertPhotoLayout.U0.e);
+            }
         }
-        return 1000.0f / f10;
+        if (M == null) {
+            return "";
+        }
+        long j3 = M.D;
+        if (Build.VERSION.SDK_INT <= 28) {
+            j3 /= 1000;
+        }
+        return org.telegram.messenger.gd.e0(j3, true);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:310:0x0692, code lost:
-    
-        if (r13[2] > r13[3]) goto L181;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x0095, code lost:
-    
-        if (r6.equals("270") != false) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00a7, code lost:
-    
-        if (r6 != 8) goto L37;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x06a5  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void a() {
-        float f10;
-        float f11;
-        int i7;
-        char c10;
-        float f12;
-        boolean z10;
-        ArrayList arrayList = (ArrayList) this.f;
-        int size = arrayList.size();
-        ArrayList arrayList2 = (ArrayList) this.e;
-        arrayList2.clear();
-        HashMap hashMap = (HashMap) this.g;
-        hashMap.clear();
-        boolean z11 = false;
-        if (size == 0) {
-            this.b = 0;
-            this.a = 0.0f;
-            this.c = 0;
-            this.d = 0;
+    @Override // org.telegram.ui.Components.kj0
+    public final void G(ek0 ek0Var, float f10, int[] iArr) {
+        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int measuredHeight = ek0Var.getChildAt(0).getMeasuredHeight();
+        float b10 = b();
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        float ceil = (((int) (Math.ceil(b10 / chatAttachAlertPhotoLayout.N0) * measuredHeight)) - (ek0Var.getMeasuredHeight() - currentActionBarHeight)) * f10;
+        float f11 = measuredHeight;
+        iArr[0] = ((int) (ceil / f11)) * chatAttachAlertPhotoLayout.N0;
+        int paddingTop = ek0Var.getPaddingTop() + ((int) (ceil % f11)) + ((int) ((1.0f - f10) * currentActionBarHeight));
+        iArr[1] = paddingTop;
+        if (iArr[0] != 0 || paddingTop >= chatAttachAlertPhotoLayout.getListTopPadding()) {
             return;
         }
-        arrayList2.ensureCapacity(size);
-        char[] cArr = new char[size];
-        int i10 = 0;
-        boolean z12 = false;
-        float f13 = 1.0f;
-        while (i10 < size) {
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) arrayList.get(i10);
-            org.telegram.messenger.xi xiVar = new org.telegram.messenger.xi();
-            xiVar.h = i10 == size + (-1) ? true : z11;
-            org.telegram.messenger.we weVar = efVar.A;
-            String str = efVar.I;
-            int i11 = weVar != null ? weVar.s : efVar.F;
-            int i12 = weVar != null ? weVar.t : efVar.G;
-            HashMap hashMap2 = pm.V;
-            if (hashMap2.containsKey(efVar)) {
-                z10 = ((Boolean) hashMap2.get(efVar)).booleanValue();
-            } else {
-                if (efVar.b) {
-                    MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
-                    mediaMetadataRetriever.setDataSource(str);
-                    String extractMetadata = mediaMetadataRetriever.extractMetadata(24);
-                    if (extractMetadata != null) {
-                        if (!extractMetadata.equals("90")) {
-                        }
-                    }
-                    z10 = false;
-                    pm.V.put(efVar, Boolean.valueOf(z10));
-                } else {
-                    int c11 = new u1.g(str).c();
-                    if (c11 != 6) {
-                    }
-                }
-                z10 = true;
-                pm.V.put(efVar, Boolean.valueOf(z10));
-            }
-            if (z10) {
-                int i13 = i11;
-                i11 = i12;
-                i12 = i13;
-            }
-            float f14 = i11 / i12;
-            xiVar.g = f14;
-            cArr[i10] = f14 > 1.2f ? 'w' : f14 < 0.8f ? 'n' : 'q';
-            f13 += f14;
-            if (f14 > 2.0f) {
-                z12 = true;
-            }
-            hashMap.put(efVar, xiVar);
-            arrayList2.add(xiVar);
-            i10++;
-            z11 = false;
-        }
-        float f15 = 1.0f;
-        String str2 = new String(cArr);
-        int L = org.telegram.messenger.g0.L(120.0f);
-        float L2 = org.telegram.messenger.g0.L(120.0f);
-        Point point = org.telegram.messenger.g0.q;
-        int min = (int) (L2 / (Math.min(point.x, point.y) / 1000.0f));
-        int L3 = (int) (org.telegram.messenger.g0.L(40.0f) / (Math.min(point.x, point.y) / 1000.0f));
-        float f16 = f13 / size;
-        float L4 = org.telegram.messenger.g0.L(100.0f) / 814.0f;
-        if (size == 1) {
-            org.telegram.messenger.xi xiVar2 = (org.telegram.messenger.xi) arrayList2.get(0);
-            int i14 = point.x;
-            xiVar2.a((((i14 - (((pm) this.h).b.u0 * 2)) * 0.8f) / xiVar2.g) / (Math.max(i14, point.y) * 0.5f), 0, 0, 0, 0, 800, 15);
-        } else {
-            char c12 = 4;
-            if (z12 || !(size == 2 || size == 3 || size == 4)) {
-                int i15 = 2;
-                int size2 = arrayList2.size();
-                float[] fArr = new float[size2];
-                int i16 = 0;
-                while (i16 < size) {
-                    if (f16 > 1.1f) {
-                        f12 = f15;
-                        fArr[i16] = Math.max(f12, ((org.telegram.messenger.xi) arrayList2.get(i16)).g);
-                    } else {
-                        f12 = f15;
-                        fArr[i16] = Math.min(f12, ((org.telegram.messenger.xi) arrayList2.get(i16)).g);
-                    }
-                    fArr[i16] = Math.max(0.66667f, Math.min(1.7f, fArr[i16]));
-                    i16++;
-                    f15 = f12;
-                }
-                ArrayList arrayList3 = new ArrayList();
-                int i17 = 1;
-                while (i17 < size2) {
-                    int i18 = size2 - i17;
-                    if (i17 <= 3 && i18 <= 3) {
-                        float b10 = b(0, i17, fArr);
-                        float b11 = b(i17, size2, fArr);
-                        im imVar = new im();
-                        imVar.a = new int[]{i17, i18};
-                        float[] fArr2 = new float[i15];
-                        fArr2[0] = b10;
-                        fArr2[1] = b11;
-                        imVar.b = fArr2;
-                        arrayList3.add(imVar);
-                    }
-                    i17++;
-                    i15 = 2;
-                }
-                for (int i19 = 1; i19 < size2 - 1; i19++) {
-                    int i20 = 1;
-                    while (true) {
-                        int i21 = size2 - i19;
-                        if (i20 < i21) {
-                            int i22 = i21 - i20;
-                            if (i19 <= 3) {
-                                if (i20 <= (f16 < 0.85f ? 4 : 3) && i22 <= 3) {
-                                    float b12 = b(0, i19, fArr);
-                                    int i23 = i19 + i20;
-                                    float b13 = b(i19, i23, fArr);
-                                    float b14 = b(i23, size2, fArr);
-                                    im imVar2 = new im();
-                                    imVar2.a = new int[]{i19, i20, i22};
-                                    imVar2.b = new float[]{b12, b13, b14};
-                                    arrayList3.add(imVar2);
-                                }
-                            }
-                            i20++;
-                        }
-                    }
-                }
-                for (int i24 = 1; i24 < size2 - 2; i24++) {
-                    int i25 = 1;
-                    while (true) {
-                        int i26 = size2 - i24;
-                        if (i25 < i26) {
-                            int i27 = 1;
-                            while (true) {
-                                int i28 = i26 - i25;
-                                if (i27 < i28) {
-                                    int i29 = i28 - i27;
-                                    if (i24 > 3 || i25 > 3 || i27 > 3 || i29 > 3) {
-                                        i7 = size2;
-                                        c10 = c12;
-                                    } else {
-                                        float b15 = b(0, i24, fArr);
-                                        int i30 = i24 + i25;
-                                        float b16 = b(i24, i30, fArr);
-                                        int i31 = i30 + i27;
-                                        float b17 = b(i30, i31, fArr);
-                                        float b18 = b(i31, size2, fArr);
-                                        im imVar3 = new im();
-                                        imVar3.a = new int[]{i24, i25, i27, i29};
-                                        i7 = size2;
-                                        c10 = 4;
-                                        imVar3.b = new float[]{b15, b16, b17, b18};
-                                        arrayList3.add(imVar3);
-                                    }
-                                    i27++;
-                                    c12 = c10;
-                                    size2 = i7;
-                                }
-                            }
-                            i25++;
-                        }
-                    }
-                }
-                float f17 = 0.0f;
-                im imVar4 = null;
-                for (int i32 = 0; i32 < arrayList3.size(); i32++) {
-                    im imVar5 = (im) arrayList3.get(i32);
-                    float f18 = Float.MAX_VALUE;
-                    float f19 = 0.0f;
-                    int i33 = 0;
-                    while (true) {
-                        float[] fArr3 = imVar5.b;
-                        if (i33 >= fArr3.length) {
-                            break;
-                        }
-                        float f20 = fArr3[i33];
-                        f19 += f20;
-                        if (f20 < f18) {
-                            f18 = f20;
-                        }
-                        i33++;
-                    }
-                    float abs = Math.abs(f19 - 1332.0f);
-                    int[] iArr = imVar5.a;
-                    if (iArr.length > 1) {
-                        int i34 = iArr[0];
-                        int i35 = iArr[1];
-                        if (i34 <= i35) {
-                            f10 = abs;
-                            if (iArr.length <= 2 || i35 <= iArr[2]) {
-                                if (iArr.length > 3) {
-                                }
-                            }
-                        } else {
-                            f10 = abs;
-                        }
-                        f11 = f10 * 1.2f;
-                        if (f18 < min) {
-                            f11 *= 1.5f;
-                        }
-                        if (imVar4 != null || f11 < f17) {
-                            f17 = f11;
-                            imVar4 = imVar5;
-                        }
-                    } else {
-                        f10 = abs;
-                    }
-                    f11 = f10;
-                    if (f18 < min) {
-                    }
-                    if (imVar4 != null) {
-                    }
-                    f17 = f11;
-                    imVar4 = imVar5;
-                }
-                if (imVar4 == null) {
-                    return;
-                }
-                int[] iArr2 = imVar4.a;
-                int i36 = 0;
-                int i37 = 0;
-                while (i36 < iArr2.length) {
-                    int i38 = iArr2[i36];
-                    float f21 = imVar4.b[i36];
-                    int i39 = 0;
-                    org.telegram.messenger.xi xiVar3 = null;
-                    int i40 = 1000;
-                    while (i39 < i38) {
-                        int i41 = (int) (fArr[i37] * f21);
-                        i40 -= i41;
-                        org.telegram.messenger.xi xiVar4 = (org.telegram.messenger.xi) arrayList2.get(i37);
-                        int i42 = i36 == 0 ? 4 : 0;
-                        float[] fArr4 = fArr;
-                        if (i36 == iArr2.length - 1) {
-                            i42 |= 8;
-                        }
-                        if (i39 == 0) {
-                            i42 |= 1;
-                            xiVar3 = xiVar4;
-                        }
-                        if (i39 == i38 - 1) {
-                            i42 |= 2;
-                            xiVar3 = xiVar4;
-                        }
-                        int i43 = i39;
-                        xiVar4.a(Math.max(L4, f21 / 814.0f), i43, i39, i36, i36, i41, i42);
-                        i37++;
-                        i39 = i43 + 1;
-                        fArr = fArr4;
-                    }
-                    int i44 = i36;
-                    float[] fArr5 = fArr;
-                    if (xiVar3 != null) {
-                        xiVar3.e += i40;
-                        xiVar3.i += i40;
-                    }
-                    i36 = i44 + 1;
-                    fArr = fArr5;
-                }
-            } else if (size == 2) {
-                org.telegram.messenger.xi xiVar5 = (org.telegram.messenger.xi) arrayList2.get(0);
-                org.telegram.messenger.xi xiVar6 = (org.telegram.messenger.xi) arrayList2.get(1);
-                if (str2.equals("ww") && f16 > 1.2285012f * 1.4d) {
-                    float f22 = xiVar5.g;
-                    float f23 = xiVar6.g;
-                    if (f22 - f23 < 0.2d) {
-                        float round = Math.round(Math.min(1000.0f / f22, Math.min(1000.0f / f23, 407.0f))) / 814.0f;
-                        xiVar5.a(round, 0, 0, 0, 0, 1000, 7);
-                        xiVar6.a(round, 0, 0, 1, 1, 1000, 11);
-                    }
-                }
-                if (str2.equals("ww") || str2.equals("qq")) {
-                    float f24 = 500;
-                    float round2 = Math.round(Math.min(f24 / xiVar5.g, Math.min(f24 / xiVar6.g, 814.0f))) / 814.0f;
-                    xiVar5.a(round2, 0, 0, 0, 0, 500, 13);
-                    xiVar6.a(round2, 1, 1, 0, 0, 500, 14);
-                } else {
-                    float f25 = xiVar5.g;
-                    int max = (int) Math.max(400.0f, Math.round((1000.0f / f25) / ((1.0f / xiVar6.g) + (1.0f / f25))));
-                    int i45 = 1000 - max;
-                    if (i45 < min) {
-                        max -= min - i45;
-                    } else {
-                        min = i45;
-                    }
-                    float min2 = Math.min(814.0f, Math.round(Math.min(min / xiVar5.g, max / xiVar6.g))) / 814.0f;
-                    xiVar5.a(min2, 0, 0, 0, 0, min, 13);
-                    xiVar6.a(min2, 1, 1, 0, 0, max, 14);
-                }
-            } else if (size == 3) {
-                org.telegram.messenger.xi xiVar7 = (org.telegram.messenger.xi) arrayList2.get(0);
-                org.telegram.messenger.xi xiVar8 = (org.telegram.messenger.xi) arrayList2.get(1);
-                org.telegram.messenger.xi xiVar9 = (org.telegram.messenger.xi) arrayList2.get(2);
-                if (str2.charAt(0) == 'n') {
-                    float f26 = xiVar8.g;
-                    float min3 = Math.min(407.0f, Math.round((f26 * 1000.0f) / (xiVar9.g + f26)));
-                    int max2 = (int) Math.max(min, Math.min(500.0f, Math.round(Math.min(xiVar9.g * min3, xiVar8.g * r8))));
-                    float f27 = (xiVar7.g * 814.0f) + L3;
-                    int i46 = 1000 - max2;
-                    xiVar7.a(1.0f, 0, 0, 0, 1, Math.round(Math.min(f27, i46)), 13);
-                    float f28 = (814.0f - min3) / 814.0f;
-                    xiVar8.a(f28, 1, 1, 0, 0, max2, 6);
-                    float f29 = min3 / 814.0f;
-                    xiVar9.a(f29, 1, 1, 1, 1, max2, 10);
-                    xiVar9.i = 1000;
-                    xiVar7.m = new float[]{f29, f28};
-                    xiVar7.i = i46;
-                } else {
-                    float round3 = Math.round(Math.min(1000.0f / xiVar7.g, 537.24005f)) / 814.0f;
-                    xiVar7.a(round3, 0, 1, 0, 0, 1000, 7);
-                    float f30 = 500;
-                    float min4 = Math.min(814.0f - round3, Math.round(Math.min(f30 / xiVar8.g, f30 / xiVar9.g))) / 814.0f;
-                    float f31 = min4 < L4 ? L4 : min4;
-                    xiVar8.a(f31, 0, 0, 1, 1, 500, 9);
-                    xiVar9.a(f31, 1, 1, 1, 1, 500, 10);
-                }
-            } else {
-                org.telegram.messenger.xi xiVar10 = (org.telegram.messenger.xi) arrayList2.get(0);
-                org.telegram.messenger.xi xiVar11 = (org.telegram.messenger.xi) arrayList2.get(1);
-                org.telegram.messenger.xi xiVar12 = (org.telegram.messenger.xi) arrayList2.get(2);
-                org.telegram.messenger.xi xiVar13 = (org.telegram.messenger.xi) arrayList2.get(3);
-                if (str2.charAt(0) == 'w') {
-                    float round4 = Math.round(Math.min(1000.0f / xiVar10.g, 537.24005f)) / 814.0f;
-                    xiVar10.a(round4, 0, 2, 0, 0, 1000, 7);
-                    float round5 = Math.round(1000.0f / ((xiVar11.g + xiVar12.g) + xiVar13.g));
-                    float f32 = min;
-                    int max3 = (int) Math.max(f32, Math.min(400.0f, xiVar11.g * round5));
-                    int max4 = (int) Math.max(Math.max(f32, 330.0f), xiVar13.g * round5);
-                    int i47 = (1000 - max3) - max4;
-                    if (i47 < org.telegram.messenger.g0.L(58.0f)) {
-                        int L5 = org.telegram.messenger.g0.L(58.0f) - i47;
-                        i47 = org.telegram.messenger.g0.L(58.0f);
-                        int i48 = L5 / 2;
-                        max3 -= i48;
-                        max4 -= L5 - i48;
-                    }
-                    int i49 = max3;
-                    float min5 = Math.min(814.0f - round4, round5) / 814.0f;
-                    float f33 = min5 < L4 ? L4 : min5;
-                    xiVar11.a(f33, 0, 0, 1, 1, i49, 9);
-                    xiVar12.a(f33, 1, 1, 1, 1, i47, 8);
-                    xiVar13.a(f33, 2, 2, 1, 1, max4, 10);
-                } else {
-                    int max5 = Math.max(min, Math.round(814.0f / ((1.0f / xiVar13.g) + ((1.0f / xiVar12.g) + (1.0f / xiVar11.g)))));
-                    float f34 = L;
-                    float f35 = max5;
-                    float min6 = Math.min(0.33f, Math.max(f34, f35 / xiVar11.g) / 814.0f);
-                    float min7 = Math.min(0.33f, Math.max(f34, f35 / xiVar12.g) / 814.0f);
-                    float f36 = (1.0f - min6) - min7;
-                    float f37 = (xiVar10.g * 814.0f) + L3;
-                    int i50 = 1000 - max5;
-                    xiVar10.a(min6 + min7 + f36, 0, 0, 0, 2, Math.round(Math.min(f37, i50)), 13);
-                    xiVar11.a(min6, 1, 1, 0, 0, max5, 6);
-                    xiVar12.a(min7, 1, 1, 1, 1, max5, 2);
-                    xiVar12.i = 1000;
-                    xiVar13.a(f36, 1, 1, 2, 2, max5, 10);
-                    xiVar13.i = 1000;
-                    xiVar10.i = i50;
-                    xiVar10.m = new float[]{min6, min7, f36};
-                }
-            }
-        }
-        int i51 = 0;
-        while (i51 < size) {
-            org.telegram.messenger.xi xiVar14 = (org.telegram.messenger.xi) arrayList2.get(i51);
-            if (xiVar14.a == 0) {
-                xiVar14.i += org.telegram.messenger.ks.e3;
-            }
-            if ((xiVar14.l & 2) != 0) {
-                xiVar14.k = true;
-            }
-            this.c = Math.max(this.c, (int) xiVar14.b);
-            this.d = Math.max(this.d, (int) xiVar14.d);
-            byte b19 = xiVar14.c;
-            byte b20 = xiVar14.d;
-            byte b21 = xiVar14.a;
-            int i52 = (b20 - b19) + 1;
-            float[] fArr6 = new float[i52];
-            Arrays.fill(fArr6, 0.0f);
-            int size3 = arrayList2.size();
-            int i53 = 0;
-            while (i53 < size3) {
-                org.telegram.messenger.xi xiVar15 = (org.telegram.messenger.xi) arrayList2.get(i53);
-                if (xiVar15 != xiVar14 && xiVar15.b < b21) {
-                    int min8 = Math.min((int) xiVar15.d, (int) b20) - b19;
-                    int max6 = Math.max(xiVar15.c - b19, 0);
-                    while (max6 <= min8) {
-                        fArr6[max6] = fArr6[max6] + xiVar15.e;
-                        max6++;
-                        i51 = i51;
-                    }
-                }
-                i53++;
-                i51 = i51;
-            }
-            int i54 = i51;
-            float f38 = 0.0f;
-            for (int i55 = 0; i55 < i52; i55++) {
-                float f39 = fArr6[i55];
-                if (f38 < f39) {
-                    f38 = f39;
-                }
-            }
-            xiVar14.q = f38;
-            i51 = i54 + 1;
-        }
-        for (int i56 = 0; i56 < size; i56++) {
-            org.telegram.messenger.xi xiVar16 = (org.telegram.messenger.xi) arrayList2.get(i56);
-            byte b22 = xiVar16.c;
-            int i57 = this.c + 1;
-            float[] fArr7 = new float[i57];
-            Arrays.fill(fArr7, 0.0f);
-            int size4 = arrayList2.size();
-            for (int i58 = 0; i58 < size4; i58++) {
-                org.telegram.messenger.xi xiVar17 = (org.telegram.messenger.xi) arrayList2.get(i58);
-                if (xiVar17 != xiVar16 && xiVar17.d < b22) {
-                    for (int i59 = xiVar17.a; i59 <= xiVar17.b; i59++) {
-                        fArr7[i59] = fArr7[i59] + xiVar17.f;
-                    }
-                }
-            }
-            float f40 = 0.0f;
-            for (int i60 = 0; i60 < i57; i60++) {
-                float f41 = fArr7[i60];
-                if (f40 < f41) {
-                    f40 = f41;
-                }
-            }
-            xiVar16.p = f40;
-        }
-        int[] iArr3 = new int[10];
-        Arrays.fill(iArr3, 0);
-        int size5 = arrayList2.size();
-        for (int i61 = 0; i61 < size5; i61++) {
-            org.telegram.messenger.xi xiVar18 = (org.telegram.messenger.xi) arrayList2.get(i61);
-            int i62 = xiVar18.e;
-            for (int i63 = xiVar18.c; i63 <= xiVar18.d; i63++) {
-                iArr3[i63] = iArr3[i63] + i62;
-            }
-        }
-        int i64 = iArr3[0];
-        for (int i65 = 1; i65 < 10; i65++) {
-            int i66 = iArr3[i65];
-            if (i64 < i66) {
-                i64 = i66;
-            }
-        }
-        this.b = i64;
-        float[] fArr8 = new float[10];
-        Arrays.fill(fArr8, 0.0f);
-        int size6 = arrayList2.size();
-        for (int i67 = 0; i67 < size6; i67++) {
-            org.telegram.messenger.xi xiVar19 = (org.telegram.messenger.xi) arrayList2.get(i67);
-            float f42 = xiVar19.f;
-            for (int i68 = xiVar19.a; i68 <= xiVar19.b; i68++) {
-                fArr8[i68] = fArr8[i68] + f42;
-            }
-        }
-        float f43 = fArr8[0];
-        for (int i69 = 1; i69 < 10; i69++) {
-            float f44 = fArr8[i69];
-            if (f43 < f44) {
-                f43 = f44;
-            }
-        }
-        this.a = f43;
+        iArr[1] = chatAttachAlertPhotoLayout.getListTopPadding() + currentActionBarHeight;
     }
 
-    public jm(pm pmVar, ArrayList arrayList) {
-        this.h = pmVar;
-        this.e = new ArrayList();
-        this.g = new HashMap();
-        this.f = arrayList;
-        a();
+    @Override // org.telegram.ui.Components.kj0
+    public final float H(ek0 ek0Var) {
+        int i7 = this.w.N0;
+        int ceil = (int) Math.ceil(this.n / i7);
+        if (ek0Var.getChildCount() != 0) {
+            int measuredHeight = ek0Var.getChildAt(0).getMeasuredHeight();
+            if (RecyclerView.R(ek0Var.getChildAt(0)) >= 0) {
+                return Utilities.i((((r5 / i7) * measuredHeight) - r2.getTop()) / ((ceil * measuredHeight) - (ek0Var.getMeasuredHeight() - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())), 1.0f, 0.0f);
+            }
+        }
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.Components.kj0
+    public final void J(ek0 ek0Var) {
+        this.s = false;
+        int childCount = ek0Var.getChildCount();
+        for (int i7 = 0; i7 < childCount; i7++) {
+            ek0Var.getChildAt(i7).invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kj0
+    public final void K() {
+        this.s = true;
+    }
+
+    public final mj0 L() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        org.telegram.ui.Cells.s5 s5Var = new org.telegram.ui.Cells.s5(this.c, chatAttachAlertPhotoLayout.a);
+        if (this == chatAttachAlertPhotoLayout.H) {
+            s5Var.setOutlineProvider(new fh.a(this, 3));
+            s5Var.setClipToOutline(true);
+        }
+        s5Var.setFastScrollDelegate(new c0(this, 21));
+        s5Var.setDelegate(new h2(11, this, s5Var));
+        return new mj0(s5Var);
+    }
+
+    public final org.telegram.messenger.ef M(int i7) {
+        boolean z10 = this.f;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        if (z10 && i7 > chatAttachAlertPhotoLayout.N0) {
+            i7--;
+        }
+        if (this.d && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
+            i7--;
+        }
+        boolean z11 = ChatAttachAlertPhotoLayout.r1;
+        return chatAttachAlertPhotoLayout.e0(i7);
+    }
+
+    @Override // v4.i0
+    public final int b() {
+        int i7 = 0;
+        this.e = false;
+        this.f = false;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        jm jmVar = chatAttachAlertPhotoLayout.H;
+        if (!chatAttachAlertPhotoLayout.w0) {
+            return 1;
+        }
+        boolean z10 = chatAttachAlertPhotoLayout.Q0;
+        if (z10 && this == jmVar) {
+            return 2;
+        }
+        if (this.d && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
+            this.e = true;
+            i7 = 1;
+        }
+        if (chatAttachAlertPhotoLayout.h1) {
+            i7++;
+        }
+        if (z10 && this == jmVar) {
+            i7++;
+        }
+        this.r = i7;
+        if (!z10) {
+            i7 += ChatAttachAlertPhotoLayout.s1.size();
+            org.telegram.messenger.ue ueVar = chatAttachAlertPhotoLayout.U0;
+            if (ueVar != null) {
+                i7 += ueVar.e.size();
+            }
+        }
+        if (this.e && i7 > chatAttachAlertPhotoLayout.N0 && !chatAttachAlertPhotoLayout.P0) {
+            this.f = true;
+            i7++;
+        }
+        if (this == jmVar) {
+            i7++;
+        }
+        this.n = i7;
+        return i7;
+    }
+
+    @Override // v4.i0
+    public final int d(int i7) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        jm jmVar = chatAttachAlertPhotoLayout.H;
+        if (!chatAttachAlertPhotoLayout.w0) {
+            return 2;
+        }
+        boolean z10 = chatAttachAlertPhotoLayout.Q0;
+        if (z10 && this == jmVar) {
+            return i7 == 0 ? 7 : 2;
+        }
+        boolean z11 = this.d;
+        if (z11 && i7 == 0 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
+            return chatAttachAlertPhotoLayout.P0 ? 8 : 1;
+        }
+        boolean z12 = this.f;
+        if (z12 && i7 == chatAttachAlertPhotoLayout.N0) {
+            return 5;
+        }
+        int i10 = (!z12 || i7 <= chatAttachAlertPhotoLayout.N0) ? i7 : i7 - 1;
+        if (z11) {
+            i10--;
+        }
+        if (chatAttachAlertPhotoLayout.h1 && i10 == 0) {
+            return 4;
+        }
+        if (this == jmVar && i7 == this.n - 1) {
+            return 2;
+        }
+        return z10 ? 3 : 0;
+    }
+
+    @Override // v4.i0
+    public final void f() {
+        super.f();
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        if (this == chatAttachAlertPhotoLayout.H) {
+            chatAttachAlertPhotoLayout.I.setVisibility((!(b() == 1 && !chatAttachAlertPhotoLayout.Q0 && chatAttachAlertPhotoLayout.U0 == null) && chatAttachAlertPhotoLayout.w0) ? 4 : 0);
+        }
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        ui uiVar = chatAttachAlertPhotoLayout.b;
+        int i10 = f1Var.f;
+        View view = f1Var.a;
+        boolean z10 = this.d;
+        if (i10 != 0) {
+            if (i10 == 1) {
+                ((org.telegram.ui.Cells.m5) view).setItemSize(chatAttachAlertPhotoLayout.L0);
+                return;
+            }
+            if (i10 != 3) {
+                if (i10 != 7) {
+                    return;
+                }
+                ((k10) view).setUseAnEmojiVisible(chatAttachAlertPhotoLayout.h1);
+                return;
+            } else {
+                org.telegram.ui.Cells.n5 n5Var = (org.telegram.ui.Cells.n5) view;
+                n5Var.setItemSize(chatAttachAlertPhotoLayout.L0);
+                n5Var.setType((z10 && chatAttachAlertPhotoLayout.P0 && i7 == 0) ? 0 : 1);
+                return;
+            }
+        }
+        if (this.f && i7 > chatAttachAlertPhotoLayout.N0) {
+            i7--;
+        }
+        if (z10 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
+            i7--;
+        }
+        if (chatAttachAlertPhotoLayout.h1) {
+            i7--;
+        }
+        org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+        if (this == chatAttachAlertPhotoLayout.H) {
+            s5Var.setItemSize(chatAttachAlertPhotoLayout.L0);
+        } else {
+            s5Var.setIsVertical(chatAttachAlertPhotoLayout.s.o == 1);
+        }
+        if (uiVar.O2 != 0 || uiVar.R2 || uiVar.C1) {
+            s5Var.getCheckBox().setVisibility(8);
+        } else {
+            s5Var.getCheckBox().setVisibility(0);
+        }
+        org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(i7);
+        if (e02 == null) {
+            return;
+        }
+        int i11 = e02.C;
+        HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
+        s5Var.d(e02, hashMap.size() > 1, z10 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0, i7 == b() - 1, uiVar != null && uiVar.d2);
+        if ((uiVar.a2 instanceof org.telegram.ui.bn) && uiVar.R3) {
+            s5Var.b(ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(i11)), hashMap.containsKey(Integer.valueOf(i11)), false);
+        } else {
+            s5Var.b(-1, hashMap.containsKey(Integer.valueOf(i11)), false);
+        }
+        if (!chatAttachAlertPhotoLayout.x0 && e02.b) {
+            s5Var.setAlpha(0.3f);
+        } else if (chatAttachAlertPhotoLayout.y0 || e02.b) {
+            s5Var.setAlpha(1.0f);
+        } else {
+            s5Var.setAlpha(0.3f);
+        }
+        s5Var.getImageView().setTag(Integer.valueOf(i7));
+        s5Var.setTag(Integer.valueOf(i7));
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
+        ui uiVar = chatAttachAlertPhotoLayout.b;
+        org.telegram.ui.ActionBar.h6 h6Var = chatAttachAlertPhotoLayout.a;
+        if (i7 == 0) {
+            ArrayList arrayList = this.h;
+            if (arrayList.isEmpty()) {
+                return L();
+            }
+            mj0 mj0Var = (mj0) arrayList.get(0);
+            arrayList.remove(0);
+            return mj0Var;
+        }
+        Context context = this.c;
+        if (i7 == 1) {
+            org.telegram.ui.Cells.m5 m5Var = new org.telegram.ui.Cells.m5(context);
+            m5Var.setFocusable(true);
+            m5Var.a = org.telegram.messenger.g0.L(0.0f);
+            return new mj0(m5Var);
+        }
+        int i10 = 15;
+        if (i7 == 2) {
+            return new mj0(new bi.m3(i10, context, this));
+        }
+        int i11 = 4;
+        if (i7 == 4) {
+            uiVar.getClass();
+            return new mj0(new im(this, context));
+        }
+        int i12 = 5;
+        if (i7 == 5) {
+            return new mj0(new View(context));
+        }
+        if (i7 == 7) {
+            k10 k10Var = new k10(context, uiVar.H3);
+            k10Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(400.0f)));
+            k10Var.setGravity(17);
+            k10Var.isClickable();
+            k10Var.b.setOnClickListener(new o0(new sl(chatAttachAlertPhotoLayout, i12), 19));
+            k10Var.a.setOnClickListener(new o0(new sl(chatAttachAlertPhotoLayout, 6), 20));
+            k10Var.c.setOnClickListener(new m8(i10, k10Var, new z2(this, i11)));
+            return new mj0(k10Var);
+        }
+        if (i7 == 8) {
+            FrameLayout frameLayout = new FrameLayout(context);
+            frameLayout.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
+            hi.e eVar = new hi.e(context, h6Var, true);
+            eVar.setUseWrapContent(true);
+            eVar.f();
+            eVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+            spannableStringBuilder.setSpan(new nq(R.drawable.camera, 0), 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.gd.N0(2131750464, null));
+            eVar.i(spannableStringBuilder, false, true);
+            frameLayout.addView(eVar, c8.ma.d(-2, 44.0f, 81, 10.0f, 0.0f, 10.0f, 12.0f));
+            return new mj0(frameLayout);
+        }
+        org.telegram.ui.Cells.n5 n5Var = new org.telegram.ui.Cells.n5(context);
+        ImageView imageView = new ImageView(context);
+        n5Var.a = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        int i13 = org.telegram.ui.ActionBar.m6.aa;
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        org.telegram.ui.ActionBar.t6.s(imageView, i13, h6Var, mode);
+        n5Var.addView(imageView, c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+        ImageView imageView2 = new ImageView(context);
+        n5Var.b = imageView2;
+        imageView2.setScaleType(scaleType);
+        org.telegram.ui.ActionBar.t6.s(imageView2, org.telegram.ui.ActionBar.m6.ba, h6Var, mode);
+        n5Var.addView(imageView2, c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
+        TextView textView = new TextView(context);
+        n5Var.c = textView;
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.ca, h6Var);
+        textView.setTextSize(1, 12.0f);
+        textView.setGravity(17);
+        n5Var.addView(textView, c8.ma.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
+        n5Var.d = org.telegram.messenger.g0.L(80.0f);
+        return new mj0(n5Var);
+    }
+
+    @Override // v4.i0
+    public final void y(v4.f1 f1Var) {
+        if (f1Var.a instanceof org.telegram.ui.Cells.m5) {
+            this.w.R.i();
+        }
     }
 }

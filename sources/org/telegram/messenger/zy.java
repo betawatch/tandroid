@@ -59,7 +59,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.d80;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class zy extends c1 implements fs {
     public static final q5 J = new q5("mediaSendQueue");
@@ -108,7 +108,7 @@ public final class zy extends c1 implements fs {
         this.E = new a0.h();
         this.F = new HashMap();
         this.G = new HashMap();
-        this.H = new a8.b8(new hi.u5(this, 28));
+        this.H = new a8.b8(new hi.t5(this, 28));
         this.I = new HashMap();
         g0.g3(new xr(this, 12));
     }
@@ -337,7 +337,7 @@ public final class zy extends c1 implements fs {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void K(ArrayList arrayList, final long j3, boolean z10, boolean z11, boolean z12, final c cVar, long j10, final fj fjVar, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final fj fjVar2, final fj fjVar3, final boolean z13, final int i7, final int i10, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final bw bwVar, final long j11, final boolean z14, final long j12, final long j13, final kj kjVar, final sh.g gVar, boolean z15, org.telegram.ui.Components.of ofVar, final boolean z16) {
+    public static void K(ArrayList arrayList, final long j3, boolean z10, boolean z11, boolean z12, final c cVar, long j10, final fj fjVar, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final fj fjVar2, final fj fjVar3, final boolean z13, final int i7, final int i10, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final bw bwVar, final long j11, final boolean z14, final long j12, final long j13, final kj kjVar, final sh.f fVar, boolean z15, org.telegram.ui.Components.qf qfVar, final boolean z16) {
         String str;
         String str2;
         ?? r52;
@@ -928,7 +928,7 @@ public final class zy extends c1 implements fs {
                                                             e12.R = j13;
                                                             e12.T = kjVar;
                                                             e12.k = yyVar6.B;
-                                                            e12.j = gVar;
+                                                            e12.j = fVar;
                                                             zy.C(cVar3.a).r0(e12);
                                                         }
                                                     });
@@ -1009,7 +1009,7 @@ public final class zy extends c1 implements fs {
                                                             e122.R = j13;
                                                             e122.T = kjVar;
                                                             e122.k = yyVar6.B;
-                                                            e122.j = gVar;
+                                                            e122.j = fVar;
                                                             zy.C(cVar3.a).r0(e122);
                                                         }
                                                     });
@@ -1082,7 +1082,7 @@ public final class zy extends c1 implements fs {
                                                 e122.R = j13;
                                                 e122.T = kjVar;
                                                 e122.k = yyVar6.B;
-                                                e122.j = gVar;
+                                                e122.j = fVar;
                                                 zy.C(cVar3.a).r0(e122);
                                             }
                                         });
@@ -1178,7 +1178,7 @@ public final class zy extends c1 implements fs {
                                 e122.R = j13;
                                 e122.T = kjVar;
                                 e122.k = yyVar6.B;
-                                e122.j = gVar;
+                                e122.j = fVar;
                                 zy.C(cVar3.a).r0(e122);
                             }
                         });
@@ -1264,7 +1264,7 @@ public final class zy extends c1 implements fs {
                             if (z15) {
                                 i31 = i12;
                             } else {
-                                if (gVar == null && i40 == 10) {
+                                if (fVar == null && i40 == 10) {
                                     i31 = i12;
                                 } else {
                                     i31 = i12;
@@ -1307,7 +1307,7 @@ public final class zy extends c1 implements fs {
                                 c11.R = j13;
                                 c11.T = kjVar;
                                 c11.k = yyVar6.B;
-                                c11.j = gVar;
+                                c11.j = fVar;
                                 zy.C(cVar3.a).r0(c11);
                             }
                         });
@@ -1351,7 +1351,7 @@ public final class zy extends c1 implements fs {
                             str29 = (Build.VERSION.SDK_INT < 30 || !"content".equals(uri2.getScheme())) ? g0.T0(yyVar5.a) : null;
                             str28 = yyVar5.a.toString();
                         }
-                        if (ofVar == null || yyVar5.a == null || !ofVar.s0().hasMimeType("image/png")) {
+                        if (qfVar == null || yyVar5.a == null || !qfVar.s0().hasMimeType("image/png")) {
                             obj12 = "masks";
                             str30 = str28;
                             str31 = str7;
@@ -1676,7 +1676,7 @@ public final class zy extends c1 implements fs {
                                                             i29 = i13;
                                                             i30 = i14;
                                                         } else {
-                                                            if (gVar == null && i38 == 10) {
+                                                            if (fVar == null && i38 == 10) {
                                                                 i29 = i13;
                                                                 i30 = i14;
                                                             } else {
@@ -1726,7 +1726,7 @@ public final class zy extends c1 implements fs {
                                                             c11.R = j13;
                                                             c11.T = kjVar;
                                                             c11.S = z37;
-                                                            c11.j = gVar;
+                                                            c11.j = fVar;
                                                             zy.C(cVar3.a).r0(c11);
                                                         }
                                                     });
@@ -1781,7 +1781,7 @@ public final class zy extends c1 implements fs {
                                                         c11.R = j13;
                                                         c11.T = kjVar;
                                                         c11.S = z372;
-                                                        c11.j = gVar;
+                                                        c11.j = fVar;
                                                         zy.C(cVar3.a).r0(c11);
                                                     }
                                                 });
@@ -2135,7 +2135,7 @@ public final class zy extends c1 implements fs {
                                                                             e18.T = kjVar;
                                                                             e18.U = yyVar7.p;
                                                                             e18.V = yyVar7.A / 1000;
-                                                                            e18.j = gVar;
+                                                                            e18.j = fVar;
                                                                             zy.C(cVar3.a).r0(e18);
                                                                         }
                                                                     });
@@ -2278,7 +2278,7 @@ public final class zy extends c1 implements fs {
                                                                             e182.T = kjVar;
                                                                             e182.U = yyVar7.p;
                                                                             e182.V = yyVar7.A / 1000;
-                                                                            e182.j = gVar;
+                                                                            e182.j = fVar;
                                                                             zy.C(cVar3.a).r0(e182);
                                                                         }
                                                                     });
@@ -2423,7 +2423,7 @@ public final class zy extends c1 implements fs {
                                                                         e182.T = kjVar;
                                                                         e182.U = yyVar7.p;
                                                                         e182.V = yyVar7.A / 1000;
-                                                                        e182.j = gVar;
+                                                                        e182.j = fVar;
                                                                         zy.C(cVar3.a).r0(e182);
                                                                     }
                                                                 });
@@ -2777,7 +2777,7 @@ public final class zy extends c1 implements fs {
                                                 i17 = i13;
                                                 i18 = i14;
                                             } else {
-                                                if (gVar == null && i45 == 10) {
+                                                if (fVar == null && i45 == 10) {
                                                     i17 = i13;
                                                     i18 = i14;
                                                 } else {
@@ -2852,7 +2852,7 @@ public final class zy extends c1 implements fs {
                                                 e182.T = kjVar;
                                                 e182.U = yyVar7.p;
                                                 e182.V = yyVar7.A / 1000;
-                                                e182.j = gVar;
+                                                e182.j = fVar;
                                                 zy.C(cVar3.a).r0(e182);
                                             }
                                         });
@@ -2971,7 +2971,7 @@ public final class zy extends c1 implements fs {
                                     e182.T = kjVar;
                                     e182.U = yyVar7.p;
                                     e182.V = yyVar7.A / 1000;
-                                    e182.j = gVar;
+                                    e182.j = fVar;
                                     zy.C(cVar3.a).r0(e182);
                                 }
                             });
@@ -3063,8 +3063,8 @@ public final class zy extends c1 implements fs {
         if (j31 != j30 && !z15) {
             z(cVar2, j31, i7);
         }
-        if (ofVar != null) {
-            ((t0.h) ofVar.b).i();
+        if (qfVar != null) {
+            ((t0.h) qfVar.b).i();
         }
         if (arrayList20 != null && !arrayList20.isEmpty()) {
             int i48 = 1;
@@ -3156,7 +3156,7 @@ public final class zy extends c1 implements fs {
         C(cVar.a).r0(c10);
     }
 
-    public static void S(final int i7, final long j3, final long j10, final long j11, final HashMap hashMap, final c cVar, final fj fjVar, final fj fjVar2, final bw bwVar, final TLRPC.BotInlineResult botInlineResult, final TL_stories.StoryItem storyItem, final org.telegram.ui.ActionBar.h2 h2Var, final org.telegram.ui.rm rmVar, final boolean z10) {
+    public static void S(final int i7, final long j3, final long j10, final long j11, final HashMap hashMap, final c cVar, final fj fjVar, final fj fjVar2, final bw bwVar, final TLRPC.BotInlineResult botInlineResult, final TL_stories.StoryItem storyItem, final org.telegram.ui.ActionBar.g2 g2Var, final org.telegram.ui.rm rmVar, final boolean z10) {
         xy d;
         TLRPC.TL_webPagePending tL_webPagePending;
         if (botInlineResult == null) {
@@ -3631,12 +3631,12 @@ public final class zy extends c1 implements fs {
                     }
                     if (inputPeer2 != null && inputPeer2.user_id != 0 && mp.u1(cVar2.a).d2(inputPeer2.user_id) != null && mp.u1(cVar2.a).d2(inputPeer2.user_id).voice_messages_forbidden && tL_document2 != null) {
                         boolean Q4 = fj.Q4(tL_document2);
-                        org.telegram.ui.ActionBar.h2 h2Var2 = h2Var;
+                        org.telegram.ui.ActionBar.g2 g2Var2 = g2Var;
                         if (Q4) {
-                            g0.g3(new ln(i11, h2Var2));
+                            g0.g3(new ln(i11, g2Var2));
                             return;
                         } else if (fj.i4(tL_document2)) {
-                            g0.g3(new ln(2, h2Var2));
+                            g0.g3(new ln(2, g2Var2));
                             return;
                         }
                     }
@@ -3865,7 +3865,7 @@ public final class zy extends c1 implements fs {
         C(cVar.a).r0(c11);
     }
 
-    public static void T(c cVar, String str, String str2, Uri uri, String str3, String str4, long j3, fj fjVar, fj fjVar2, TL_stories.StoryItem storyItem, org.telegram.ui.rm rmVar, boolean z10, org.telegram.ui.Components.of ofVar, bw bwVar) {
+    public static void T(c cVar, String str, String str2, Uri uri, String str3, String str4, long j3, fj fjVar, fj fjVar2, TL_stories.StoryItem storyItem, org.telegram.ui.rm rmVar, boolean z10, org.telegram.ui.Components.qf qfVar, bw bwVar) {
         ArrayList arrayList;
         if ((str == null || str2 == null) && uri == null) {
             return;
@@ -3883,7 +3883,7 @@ public final class zy extends c1 implements fs {
             arrayList2.add(str);
             arrayList3.add(str2);
         }
-        V(0, j3, 0L, 0L, 0L, str3, str4, arrayList2, arrayList3, arrayList4, null, null, null, cVar, fjVar, fjVar2, null, null, bwVar, storyItem, rmVar, ofVar, null, z10, false);
+        V(0, j3, 0L, 0L, 0L, str3, str4, arrayList2, arrayList3, arrayList4, null, null, null, cVar, fjVar, fjVar2, null, null, bwVar, storyItem, rmVar, qfVar, null, z10, false);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:292|293|(7:295|296|297|298|299|300|301)(1:349)|(3:310|311|(3:313|314|(4:316|304|305|306)))|303|304|305|306) */
@@ -3928,7 +3928,7 @@ public final class zy extends c1 implements fs {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int U(c cVar, String str, String str2, Uri uri, String str3, final long j3, final fj fjVar, final fj fjVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final ArrayList arrayList, final fj fjVar3, long[] jArr, boolean z10, CharSequence charSequence, final boolean z11, int i7, final int i10, Integer[] numArr, boolean z12, final bw bwVar, final long j10, final boolean z13, final long j11, final long j12, final kj kjVar, final sh.g gVar, final int i11) {
+    public static int U(c cVar, String str, String str2, Uri uri, String str3, final long j3, final fj fjVar, final fj fjVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final ArrayList arrayList, final fj fjVar3, long[] jArr, boolean z10, CharSequence charSequence, final boolean z11, int i7, final int i10, Integer[] numArr, boolean z12, final bw bwVar, final long j10, final boolean z13, final long j11, final long j12, final kj kjVar, final sh.f fVar, final int i11) {
         MimeTypeMap mimeTypeMap;
         long j13;
         int i12;
@@ -4004,7 +4004,7 @@ public final class zy extends c1 implements fs {
         Cursor query;
         c cVar2 = cVar;
         String str26 = str2;
-        long j18 = gVar != null ? gVar.c : 0L;
+        long j18 = fVar != null ? fVar.c : 0L;
         if (((str != null && str.length() != 0) || uri != null) && ((uri == null || !g0.I1(uri, 0)) && (str == null || !g0.I1(Uri.fromFile(new File(str)), 0)))) {
             MimeTypeMap singleton = MimeTypeMap.getSingleton();
             if (uri != null && str == null) {
@@ -4161,7 +4161,7 @@ public final class zy extends c1 implements fs {
                                                                     if (str26 != null) {
                                                                     }
                                                                     z15 = false;
-                                                                    if (gVar == null) {
+                                                                    if (fVar == null) {
                                                                     }
                                                                     if (z15) {
                                                                     }
@@ -4230,7 +4230,7 @@ public final class zy extends c1 implements fs {
                                                                             f10.R = j12;
                                                                             f10.T = kjVar;
                                                                             f10.k = i11;
-                                                                            f10.j = gVar;
+                                                                            f10.j = fVar;
                                                                             zy.C(cVar4.a).r0(f10);
                                                                         }
                                                                     });
@@ -4263,7 +4263,7 @@ public final class zy extends c1 implements fs {
                                                             if (str26 != null) {
                                                             }
                                                             z15 = false;
-                                                            if (gVar == null) {
+                                                            if (fVar == null) {
                                                             }
                                                             if (z15) {
                                                             }
@@ -4332,7 +4332,7 @@ public final class zy extends c1 implements fs {
                                                                     f10.R = j12;
                                                                     f10.T = kjVar;
                                                                     f10.k = i11;
-                                                                    f10.j = gVar;
+                                                                    f10.j = fVar;
                                                                     zy.C(cVar4.a).r0(f10);
                                                                 }
                                                             });
@@ -4360,7 +4360,7 @@ public final class zy extends c1 implements fs {
                                                         if (str26 != null) {
                                                         }
                                                         z15 = false;
-                                                        if (gVar == null) {
+                                                        if (fVar == null) {
                                                         }
                                                         if (z15) {
                                                         }
@@ -4429,7 +4429,7 @@ public final class zy extends c1 implements fs {
                                                                 f10.R = j12;
                                                                 f10.T = kjVar;
                                                                 f10.k = i11;
-                                                                f10.j = gVar;
+                                                                f10.j = fVar;
                                                                 zy.C(cVar4.a).r0(f10);
                                                             }
                                                         });
@@ -4473,7 +4473,7 @@ public final class zy extends c1 implements fs {
                                                             if (str26 != null) {
                                                             }
                                                             z15 = false;
-                                                            if (gVar == null) {
+                                                            if (fVar == null) {
                                                             }
                                                             if (z15) {
                                                             }
@@ -4542,7 +4542,7 @@ public final class zy extends c1 implements fs {
                                                                     f10.R = j12;
                                                                     f10.T = kjVar;
                                                                     f10.k = i11;
-                                                                    f10.j = gVar;
+                                                                    f10.j = fVar;
                                                                     zy.C(cVar4.a).r0(f10);
                                                                 }
                                                             });
@@ -4569,7 +4569,7 @@ public final class zy extends c1 implements fs {
                                                             if (str26 != null) {
                                                             }
                                                             z15 = false;
-                                                            if (gVar == null) {
+                                                            if (fVar == null) {
                                                             }
                                                             if (z15) {
                                                             }
@@ -4638,7 +4638,7 @@ public final class zy extends c1 implements fs {
                                                                     f10.R = j12;
                                                                     f10.T = kjVar;
                                                                     f10.k = i11;
-                                                                    f10.j = gVar;
+                                                                    f10.j = fVar;
                                                                     zy.C(cVar4.a).r0(f10);
                                                                 }
                                                             });
@@ -4683,7 +4683,7 @@ public final class zy extends c1 implements fs {
                                                             if (str26 != null) {
                                                             }
                                                             z15 = false;
-                                                            if (gVar == null) {
+                                                            if (fVar == null) {
                                                             }
                                                             if (z15) {
                                                             }
@@ -4752,7 +4752,7 @@ public final class zy extends c1 implements fs {
                                                                     f10.R = j12;
                                                                     f10.T = kjVar;
                                                                     f10.k = i11;
-                                                                    f10.j = gVar;
+                                                                    f10.j = fVar;
                                                                     zy.C(cVar4.a).r0(f10);
                                                                 }
                                                             });
@@ -4838,7 +4838,7 @@ public final class zy extends c1 implements fs {
                                 if (str26 != null) {
                                     if (str26.endsWith("attheme")) {
                                         z15 = true;
-                                        boolean z21 = gVar == null;
+                                        boolean z21 = fVar == null;
                                         if (!z15 || C || z21) {
                                             Bitmap bitmap6222222 = bitmap2;
                                             obj4 = "mp3";
@@ -5136,7 +5136,7 @@ public final class zy extends c1 implements fs {
                                                                         f10.R = j12;
                                                                         f10.T = kjVar;
                                                                         f10.k = i11;
-                                                                        f10.j = gVar;
+                                                                        f10.j = fVar;
                                                                         zy.C(cVar4.a).r0(f10);
                                                                     }
                                                                 });
@@ -5190,7 +5190,7 @@ public final class zy extends c1 implements fs {
                                                                 f10.R = j12;
                                                                 f10.T = kjVar;
                                                                 f10.k = i11;
-                                                                f10.j = gVar;
+                                                                f10.j = fVar;
                                                                 zy.C(cVar4.a).r0(f10);
                                                             }
                                                         });
@@ -5259,7 +5259,7 @@ public final class zy extends c1 implements fs {
                                                             if (!z16 || jArr == null) {
                                                                 i15 = i7;
                                                             } else {
-                                                                if (numArr == null || num2 == null || num2 == numArr[i2022222222] || gVar != null) {
+                                                                if (numArr == null || num2 == null || num2 == numArr[i2022222222] || fVar != null) {
                                                                     i15 = i7;
                                                                 } else {
                                                                     i15 = i7;
@@ -5304,7 +5304,7 @@ public final class zy extends c1 implements fs {
                                                                     f10.R = j12;
                                                                     f10.T = kjVar;
                                                                     f10.k = i11;
-                                                                    f10.j = gVar;
+                                                                    f10.j = fVar;
                                                                     zy.C(cVar4.a).r0(f10);
                                                                 }
                                                             });
@@ -5360,7 +5360,7 @@ public final class zy extends c1 implements fs {
                                                             f10.R = j12;
                                                             f10.T = kjVar;
                                                             f10.k = i11;
-                                                            f10.j = gVar;
+                                                            f10.j = fVar;
                                                             zy.C(cVar4.a).r0(f10);
                                                         }
                                                     });
@@ -5418,7 +5418,7 @@ public final class zy extends c1 implements fs {
                                                 f10.R = j12;
                                                 f10.T = kjVar;
                                                 f10.k = i11;
-                                                f10.j = gVar;
+                                                f10.j = fVar;
                                                 zy.C(cVar4.a).r0(f10);
                                             }
                                         });
@@ -5436,7 +5436,7 @@ public final class zy extends c1 implements fs {
                                     str26 = sb2;
                                 }
                                 z15 = false;
-                                if (gVar == null) {
+                                if (fVar == null) {
                                 }
                                 if (z15) {
                                 }
@@ -5505,7 +5505,7 @@ public final class zy extends c1 implements fs {
                                         f10.R = j12;
                                         f10.T = kjVar;
                                         f10.k = i11;
-                                        f10.j = gVar;
+                                        f10.j = fVar;
                                         zy.C(cVar4.a).r0(f10);
                                     }
                                 });
@@ -5545,7 +5545,7 @@ public final class zy extends c1 implements fs {
                             if (str26 != null) {
                             }
                             z15 = false;
-                            if (gVar == null) {
+                            if (fVar == null) {
                             }
                             if (z15) {
                             }
@@ -5614,7 +5614,7 @@ public final class zy extends c1 implements fs {
                                     f10.R = j12;
                                     f10.T = kjVar;
                                     f10.k = i11;
-                                    f10.j = gVar;
+                                    f10.j = fVar;
                                     zy.C(cVar4.a).r0(f10);
                                 }
                             });
@@ -5640,7 +5640,7 @@ public final class zy extends c1 implements fs {
                     if (str26 != null) {
                     }
                     z15 = false;
-                    if (gVar == null) {
+                    if (fVar == null) {
                     }
                     if (z15) {
                     }
@@ -5709,7 +5709,7 @@ public final class zy extends c1 implements fs {
                             f10.R = j12;
                             f10.T = kjVar;
                             f10.k = i11;
-                            f10.j = gVar;
+                            f10.j = fVar;
                             zy.C(cVar4.a).r0(f10);
                         }
                     });
@@ -5721,7 +5721,7 @@ public final class zy extends c1 implements fs {
         return 1;
     }
 
-    public static void V(final int i7, final long j3, final long j10, final long j11, final long j12, final String str, final String str2, final ArrayList arrayList, final ArrayList arrayList2, final ArrayList arrayList3, final ArrayList arrayList4, final ArrayList arrayList5, final ArrayList arrayList6, final c cVar, final fj fjVar, final fj fjVar2, final fj fjVar3, final kj kjVar, final bw bwVar, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final org.telegram.ui.Components.of ofVar, final sh.g gVar, final boolean z10, final boolean z11) {
+    public static void V(final int i7, final long j3, final long j10, final long j11, final long j12, final String str, final String str2, final ArrayList arrayList, final ArrayList arrayList2, final ArrayList arrayList3, final ArrayList arrayList4, final ArrayList arrayList5, final ArrayList arrayList6, final c cVar, final fj fjVar, final fj fjVar2, final fj fjVar3, final kj kjVar, final bw bwVar, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final org.telegram.ui.Components.qf qfVar, final sh.f fVar, final boolean z10, final boolean z11) {
         if (arrayList == null && arrayList2 == null && arrayList3 == null) {
             return;
         }
@@ -5748,7 +5748,7 @@ public final class zy extends c1 implements fs {
                     boolean C = n5.C(j16);
                     ArrayList arrayList8 = arrayList;
                     String str4 = str;
-                    sh.g gVar2 = gVar;
+                    sh.f fVar2 = fVar;
                     c cVar3 = cVar;
                     int i13 = i7;
                     String str5 = str2;
@@ -5760,9 +5760,9 @@ public final class zy extends c1 implements fs {
                     ArrayList arrayList9 = arrayList4;
                     fj fjVar6 = fjVar3;
                     boolean z14 = z10;
-                    org.telegram.ui.Components.of ofVar2 = ofVar;
+                    org.telegram.ui.Components.qf qfVar2 = qfVar;
                     bw bwVar2 = bwVar;
-                    org.telegram.ui.Components.of ofVar3 = ofVar2;
+                    org.telegram.ui.Components.qf qfVar3 = qfVar2;
                     int i14 = i13;
                     long j17 = j10;
                     boolean z15 = z11;
@@ -5778,10 +5778,10 @@ public final class zy extends c1 implements fs {
                         int i16 = 0;
                         z12 = true;
                         while (i15 < size) {
-                            org.telegram.ui.Components.of ofVar4 = ofVar3;
+                            org.telegram.ui.Components.qf qfVar4 = qfVar3;
                             String str8 = i15 == 0 ? str7 : null;
                             boolean z16 = z15;
-                            if (C || size <= 1 || i16 % 10 != 0 || gVar2 != null) {
+                            if (C || size <= 1 || i16 % 10 != 0 || fVar2 != null) {
                                 kjVar2 = kjVar3;
                                 j15 = j16;
                                 i12 = i14;
@@ -5800,7 +5800,7 @@ public final class zy extends c1 implements fs {
                             }
                             int i17 = i16 + 1;
                             long j22 = jArr[0];
-                            if ((gVar2 == null && i17 == 10) || i15 == size - 1) {
+                            if ((fVar2 == null && i17 == 10) || i15 == size - 1) {
                                 arrayList7 = arrayList9;
                                 z13 = true;
                             } else {
@@ -5814,7 +5814,7 @@ public final class zy extends c1 implements fs {
                             String str11 = str6;
                             ArrayList arrayList10 = i15 == 0 ? arrayList7 : null;
                             String str12 = str7;
-                            boolean z17 = ofVar4 == null;
+                            boolean z17 = qfVar4 == null;
                             long j23 = j18;
                             if (!z12) {
                                 j18 = 0;
@@ -5827,13 +5827,13 @@ public final class zy extends c1 implements fs {
                             ArrayList arrayList13 = arrayList7;
                             int i21 = i12;
                             j16 = j24;
-                            i10 = zy.U(cVar3, str9, str10, null, str11, j16, fjVar4, fjVar5, storyItem2, rmVar2, arrayList10, fjVar6, jArr, z13, str8, z14, i21, 0, numArr, z17, bwVar2, j18, z16, j19, j20, kjVar4, gVar2, arrayList11 != null ? ((Integer) arrayList11.get(i15)).intValue() : -1);
+                            i10 = zy.U(cVar3, str9, str10, null, str11, j16, fjVar4, fjVar5, storyItem2, rmVar2, arrayList10, fjVar6, jArr, z13, str8, z14, i21, 0, numArr, z17, bwVar2, j18, z16, j19, j20, kjVar4, fVar2, arrayList11 != null ? ((Integer) arrayList11.get(i15)).intValue() : -1);
                             c cVar4 = cVar3;
                             long j25 = jArr[0];
                             if (j22 != j25 || j25 == -1) {
                                 i18 = 1;
                             }
-                            if (i10 != 0 && z13 && gVar2 == null && j25 != 0) {
+                            if (i10 != 0 && z13 && fVar2 == null && j25 != 0) {
                                 zy.z(cVar4, j25, i21);
                                 jArr[0] = 0;
                                 i18 = 0;
@@ -5848,7 +5848,7 @@ public final class zy extends c1 implements fs {
                             arrayList9 = arrayList13;
                             str7 = str12;
                             j18 = j23;
-                            ofVar3 = ofVar4;
+                            qfVar3 = qfVar4;
                             i15 = i22;
                             z15 = z16;
                             size = i20;
@@ -5864,7 +5864,7 @@ public final class zy extends c1 implements fs {
                     kj kjVar5 = kjVar3;
                     String str13 = str6;
                     ArrayList arrayList15 = arrayList9;
-                    org.telegram.ui.Components.of ofVar5 = ofVar3;
+                    org.telegram.ui.Components.qf qfVar5 = qfVar3;
                     int i23 = i14;
                     String str14 = str7;
                     long j26 = j18;
@@ -5878,7 +5878,7 @@ public final class zy extends c1 implements fs {
                         while (i24 < arrayList16.size()) {
                             String str15 = (i24 == 0 && (arrayList14 == null || arrayList14.size() == 0)) ? str14 : null;
                             ArrayList arrayList17 = (i24 == 0 && (arrayList14 == null || arrayList14.size() == 0)) ? arrayList15 : null;
-                            if (C || size2 <= 1 || i25 % 10 != 0 || gVar2 != null) {
+                            if (C || size2 <= 1 || i25 % 10 != 0 || fVar2 != null) {
                                 str3 = str13;
                                 j13 = j16;
                             } else {
@@ -5893,9 +5893,9 @@ public final class zy extends c1 implements fs {
                             }
                             int i26 = i25 + 1;
                             long j28 = jArr[0];
-                            boolean z20 = (gVar2 == null && i26 == 10) || i24 == size2 + (-1);
+                            boolean z20 = (fVar2 == null && i26 == 10) || i24 == size2 + (-1);
                             Uri uri2 = (Uri) arrayList16.get(i24);
-                            boolean z21 = ofVar5 == null;
+                            boolean z21 = qfVar5 == null;
                             if (z12) {
                                 i11 = size2;
                                 cVar2 = cVar5;
@@ -5918,13 +5918,13 @@ public final class zy extends c1 implements fs {
                             str13 = str3;
                             boolean z22 = z19;
                             int i30 = i11;
-                            i10 = zy.U(cVar2, null, null, uri, str13, j16, fjVar4, fjVar5, storyItem2, rmVar2, arrayList17, fjVar6, jArr, z20, str15, z14, i28, 0, numArr, z21, bwVar2, j14, z22, j19, j20, kjVar5, gVar2, intValue);
+                            i10 = zy.U(cVar2, null, null, uri, str13, j16, fjVar4, fjVar5, storyItem2, rmVar2, arrayList17, fjVar6, jArr, z20, str15, z14, i28, 0, numArr, z21, bwVar2, j14, z22, j19, j20, kjVar5, fVar2, intValue);
                             i23 = i28;
                             long j29 = jArr[0];
                             if (j28 != j29 || j29 == -1) {
                                 i29 = 1;
                             }
-                            if (i10 == 0 || !z20 || gVar2 != null || j29 == 0) {
+                            if (i10 == 0 || !z20 || fVar2 != null || j29 == 0) {
                                 i25 = i29;
                             } else {
                                 zy.z(cVar2, j29, i23);
@@ -5941,8 +5941,8 @@ public final class zy extends c1 implements fs {
                     }
                     c cVar6 = cVar5;
                     int i31 = i10;
-                    if (ofVar5 != null) {
-                        ((t0.h) ofVar5.b).i();
+                    if (qfVar5 != null) {
+                        ((t0.h) qfVar5.b).i();
                     }
                     if (i31 != 0) {
                         g0.g3(new x0(i31, cVar6, 13));
@@ -5970,7 +5970,7 @@ public final class zy extends c1 implements fs {
         V(i7, j3, 0L, 0L, 0L, charSequence2 != null ? charSequence2.toString() : null, str, arrayList, arrayList2, arrayList3, arrayList4, null, null, cVar2, fjVar, fjVar2, null, null, null, null, null, null, null, z10, false);
     }
 
-    public static void X(final c cVar, final ArrayList arrayList, final long j3, final fj fjVar, final fj fjVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final boolean z10, boolean z11, final fj fjVar3, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final boolean z12, final int i7, final int i10, final boolean z13, final org.telegram.ui.Components.of ofVar, final bw bwVar, final long j10, final boolean z14, final long j11, final long j12, final kj kjVar, final sh.g gVar, final boolean z15) {
+    public static void X(final c cVar, final ArrayList arrayList, final long j3, final fj fjVar, final fj fjVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final boolean z10, boolean z11, final fj fjVar3, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final boolean z12, final int i7, final int i10, final boolean z13, final org.telegram.ui.Components.qf qfVar, final bw bwVar, final long j10, final boolean z14, final long j11, final long j12, final kj kjVar, final sh.f fVar, final boolean z15) {
         final boolean z16;
         if (arrayList.isEmpty()) {
             return;
@@ -5989,21 +5989,21 @@ public final class zy extends c1 implements fs {
                 i11++;
             }
         }
-        final long j13 = gVar != null ? gVar.c : 0L;
+        final long j13 = fVar != null ? fVar.c : 0L;
         final boolean z17 = j13 != 0;
         J.c(new Runnable() { // from class: org.telegram.messenger.kw
             @Override // java.lang.Runnable
             public final void run() {
-                zy.K(arrayList, j3, z10, z16, z17, cVar, j13, fjVar3, tL_inputPollAnswer, fjVar, fjVar2, z12, i7, i10, storyItem, rmVar, bwVar, j10, z14, j11, j12, kjVar, gVar, z15, ofVar, z13);
+                zy.K(arrayList, j3, z10, z16, z17, cVar, j13, fjVar3, tL_inputPollAnswer, fjVar, fjVar2, z12, i7, i10, storyItem, rmVar, bwVar, j10, z14, j11, j12, kjVar, fVar, z15, qfVar, z13);
             }
         });
     }
 
-    public static void Y(c cVar, Uri uri, long j3, fj fjVar, fj fjVar2, org.telegram.ui.Components.of ofVar, fj fjVar3, boolean z10, int i7, bw bwVar) {
-        Z(cVar, null, null, uri, j3, fjVar, fjVar2, null, null, null, ofVar, 0, fjVar3, null, z10, i7, false, null, bwVar, 0L, 0L, 0L, null);
+    public static void Y(c cVar, Uri uri, long j3, fj fjVar, fj fjVar2, org.telegram.ui.Components.qf qfVar, fj fjVar3, boolean z10, int i7, bw bwVar) {
+        Z(cVar, null, null, uri, j3, fjVar, fjVar2, null, null, null, qfVar, 0, fjVar3, null, z10, i7, false, null, bwVar, 0L, 0L, 0L, null);
     }
 
-    public static void Z(c cVar, String str, String str2, Uri uri, long j3, fj fjVar, fj fjVar2, org.telegram.ui.rm rmVar, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.Components.of ofVar, int i7, fj fjVar3, e20 e20Var, boolean z10, int i10, boolean z11, CharSequence charSequence, bw bwVar, long j10, long j11, long j12, kj kjVar) {
+    public static void Z(c cVar, String str, String str2, Uri uri, long j3, fj fjVar, fj fjVar2, org.telegram.ui.rm rmVar, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.Components.qf qfVar, int i7, fj fjVar3, e20 e20Var, boolean z10, int i10, boolean z11, CharSequence charSequence, bw bwVar, long j10, long j11, long j12, kj kjVar) {
         yy yyVar = new yy();
         yyVar.c = str;
         yyVar.e = str2;
@@ -6019,7 +6019,7 @@ public final class zy extends c1 implements fs {
         yyVar.k = e20Var;
         ArrayList arrayList3 = new ArrayList();
         arrayList3.add(yyVar);
-        X(cVar, arrayList3, j3, fjVar, fjVar2, null, rmVar, z11, false, fjVar3, null, z10, i10, 0, false, ofVar, bwVar, j10, false, j11, j12, kjVar, null, false);
+        X(cVar, arrayList3, j3, fjVar, fjVar2, null, rmVar, z11, false, fjVar3, null, z10, i10, 0, false, qfVar, bwVar, j10, false, j11, j12, kjVar, null, false);
     }
 
     public static void a0(c cVar, CharSequence charSequence, long j3, long j10, boolean z10, int i7, int i10) {
@@ -6505,8 +6505,8 @@ public final class zy extends c1 implements fs {
 
     public static boolean h(CharSequence charSequence) {
         if (charSequence instanceof Spannable) {
-            for (org.telegram.ui.Components.x5 x5Var : (org.telegram.ui.Components.x5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.x5.class)) {
-                if (x5Var.fromEmojiKeyboard) {
+            for (org.telegram.ui.Components.y5 y5Var : (org.telegram.ui.Components.y5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.y5.class)) {
+                if (y5Var.fromEmojiKeyboard) {
                     return true;
                 }
             }
@@ -6796,12 +6796,12 @@ public final class zy extends c1 implements fs {
 
     public static Bitmap s(String str, long j3, int[] iArr, boolean z10) {
         if (z10) {
-            org.telegram.ui.Components.b6 b6Var = new org.telegram.ui.Components.b6(new File(str), true, 0L, 0, null, null, null, 0L, 0, true, 0, 0, null, 0, true);
-            Bitmap q10 = b6Var.q(j3, z10);
+            org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(new File(str), true, 0L, 0, null, null, null, 0L, 0, true, 0, 0, null, 0, true);
+            Bitmap q10 = c6Var.q(j3, z10);
             if (iArr != null) {
-                iArr[0] = b6Var.d[2];
+                iArr[0] = c6Var.d[2];
             }
-            b6Var.u();
+            c6Var.u();
             return q10 == null ? s(str, j3, iArr, false) : q10;
         }
         MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
@@ -7023,7 +7023,7 @@ public final class zy extends c1 implements fs {
     }
 
     public static void z(c cVar, long j3, int i7) {
-        g0.g3(new di.b9(cVar, j3, i7, 6));
+        g0.g3(new di.c9(cVar, j3, i7, 6));
     }
 
     public final TLRPC.TL_photo A(String str, Uri uri, boolean z10) {
@@ -7128,7 +7128,7 @@ public final class zy extends c1 implements fs {
                 TLRPC.InputMedia inputMedia3 = tL_messages_sendMedia2.media;
                 if (inputMedia3 instanceof TLRPC.TL_inputMediaPoll) {
                     tL_messages_uploadMedia.peer = tL_messages_sendMedia2.peer;
-                    int a10 = sh.e.a((TLRPC.TL_inputMediaPoll) inputMedia3, inputMedia);
+                    int a10 = sh.d.a((TLRPC.TL_inputMediaPoll) inputMedia3, inputMedia);
                     int i14 = 0;
                     while (true) {
                         if (i14 >= lyVar.C.size()) {
@@ -7169,7 +7169,7 @@ public final class zy extends c1 implements fs {
                 TLRPC.InputMedia inputMedia5 = tL_sendMessage2.media;
                 if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
                     tL_messages_uploadMedia.peer = tL_sendMessage2.peer;
-                    int a11 = sh.e.a((TLRPC.TL_inputMediaPoll) inputMedia5, inputMedia);
+                    int a11 = sh.d.a((TLRPC.TL_inputMediaPoll) inputMedia5, inputMedia);
                     int i16 = 0;
                     while (true) {
                         if (i16 >= lyVar.C.size()) {
@@ -7408,7 +7408,7 @@ public final class zy extends c1 implements fs {
                     inputMedia3 = tL_inputMediaPaidMedia.extended_media.get(0);
                 }
             }
-            if ((inputMedia3 instanceof TLRPC.TL_inputMediaPoll) && (d = sh.e.d((TLRPC.TL_inputMediaPoll) inputMedia3)) != null) {
+            if ((inputMedia3 instanceof TLRPC.TL_inputMediaPoll) && (d = sh.d.d((TLRPC.TL_inputMediaPoll) inputMedia3)) != null) {
                 inputMedia3 = d;
             }
             TLRPC.InputFile inputFile3 = inputMedia3.file;
@@ -7458,7 +7458,7 @@ public final class zy extends c1 implements fs {
                 zyVar.getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.ex
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject4, TLRPC.TL_error tL_error) {
-                        g0.g3(new di.ca(zy.this, tLObject4, lyVar2, z10, i12));
+                        g0.g3(new di.da(zy.this, tLObject4, lyVar2, z10, i12));
                     }
                 });
                 return;
@@ -7590,7 +7590,7 @@ public final class zy extends c1 implements fs {
                 F09 = messageMedia == null ? null : messageMedia.document;
             }
             if (F09 == null && (fj.m1(fjVar8) instanceof TLRPC.TL_messageMediaPoll)) {
-                TLRPC.MessageMedia f10 = sh.e.f((TLRPC.TL_messageMediaPoll) fj.m1(fjVar8), ((Integer) lyVar2.C.get(size)).intValue());
+                TLRPC.MessageMedia f10 = sh.d.f((TLRPC.TL_messageMediaPoll) fj.m1(fjVar8), ((Integer) lyVar2.C.get(size)).intValue());
                 F09 = f10 == null ? null : f10.document;
             }
             if (F09 != null) {
@@ -7643,7 +7643,7 @@ public final class zy extends c1 implements fs {
                                 inputMedia = ((TLRPC.TL_inputMediaPaidMedia) inputMedia5).extended_media.get(size);
                             } else {
                                 if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
-                                    inputMedia = sh.e.e((TLRPC.TL_inputMediaPoll) inputMedia5, ((Integer) lyVar2.C.get(size)).intValue());
+                                    inputMedia = sh.d.e((TLRPC.TL_inputMediaPoll) inputMedia5, ((Integer) lyVar2.C.get(size)).intValue());
                                 }
                                 inputMedia = null;
                             }
@@ -7655,7 +7655,7 @@ public final class zy extends c1 implements fs {
                                 inputMedia = ((TLRPC.TL_inputMediaPaidMedia) inputMedia6).extended_media.get(size);
                             } else {
                                 if (inputMedia6 instanceof TLRPC.TL_inputMediaPoll) {
-                                    inputMedia = sh.e.e((TLRPC.TL_inputMediaPoll) inputMedia6, ((Integer) lyVar2.C.get(size)).intValue());
+                                    inputMedia = sh.d.e((TLRPC.TL_inputMediaPoll) inputMedia6, ((Integer) lyVar2.C.get(size)).intValue());
                                 }
                                 inputMedia = null;
                             }
@@ -7823,7 +7823,7 @@ public final class zy extends c1 implements fs {
                         if (z12) {
                             TLRPC.InputMedia inputMedia10 = ((TLRPC.TL_messages_sendMedia) tLObject6).media;
                             if (inputMedia10 instanceof TLRPC.TL_inputMediaPoll) {
-                                tLObject = sh.e.e((TLRPC.TL_inputMediaPoll) inputMedia10, ((Integer) lyVar2.C.get(size)).intValue());
+                                tLObject = sh.d.e((TLRPC.TL_inputMediaPoll) inputMedia10, ((Integer) lyVar2.C.get(size)).intValue());
                             }
                         }
                         boolean z13 = tLObject6 instanceof TL_ephemeral.TL_sendMessage;
@@ -7836,7 +7836,7 @@ public final class zy extends c1 implements fs {
                         if (z13) {
                             TLRPC.InputMedia inputMedia12 = ((TL_ephemeral.TL_sendMessage) tLObject6).media;
                             if (inputMedia12 instanceof TLRPC.TL_inputMediaPoll) {
-                                tLObject = sh.e.e((TLRPC.TL_inputMediaPoll) inputMedia12, ((Integer) lyVar2.C.get(size)).intValue());
+                                tLObject = sh.d.e((TLRPC.TL_inputMediaPoll) inputMedia12, ((Integer) lyVar2.C.get(size)).intValue());
                             }
                         }
                         tLObject = ((TLRPC.TL_messages_sendEncryptedMultiMedia) lyVar2.d).files.get(size);
@@ -7902,11 +7902,11 @@ public final class zy extends c1 implements fs {
         }
         TLRPC.Message message = fjVar.k;
         f0(message, z11);
-        di.x8 y11 = di.x8.y(this.currentAccount, false);
+        di.y8 y11 = di.y8.y(this.currentAccount, false);
         hw hwVar = new hw(this, tLObject2, fjVar, str, lyVar, z10, lyVar2, obj, hashMap, z11, 1);
         if (fjVar.k != null) {
             int e12 = fjVar.e1();
-            if (di.x8.o(tLObject) > 0 && y11.Q.remove(Integer.valueOf(e12))) {
+            if (di.y8.o(tLObject) > 0 && y11.Q.remove(Integer.valueOf(e12))) {
                 y11.R.put(Integer.valueOf(e12), hwVar);
                 return;
             }
@@ -7933,7 +7933,7 @@ public final class zy extends c1 implements fs {
             f0(((fj) arrayList.get(i7)).k, z10);
         }
         final int i10 = 0;
-        if (di.x8.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.zw
+        if (di.y8.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.zw
             public final /* synthetic */ zy b;
 
             {
@@ -8618,7 +8618,7 @@ public final class zy extends c1 implements fs {
                                 inputMedia = hashMap3 == null ? ((TLRPC.TL_inputMediaPaidMedia) inputMedia).extended_media.get(i18) : (TLRPC.InputMedia) hashMap3.get(str14);
                             } else if (inputMedia instanceof TLRPC.TL_inputMediaPoll) {
                                 HashMap hashMap4 = lyVar6.E;
-                                inputMedia = hashMap4 == null ? sh.e.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap4.get(str14);
+                                inputMedia = hashMap4 == null ? sh.d.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap4.get(str14);
                             }
                         } else if (tLObject2 instanceof TL_ephemeral.TL_sendMessage) {
                             inputMedia = ((TL_ephemeral.TL_sendMessage) tLObject2).media;
@@ -8627,7 +8627,7 @@ public final class zy extends c1 implements fs {
                                 inputMedia = hashMap5 == null ? ((TLRPC.TL_inputMediaPaidMedia) inputMedia).extended_media.get(i18) : (TLRPC.InputMedia) hashMap5.get(str14);
                             } else if (inputMedia instanceof TLRPC.TL_inputMediaPoll) {
                                 HashMap hashMap6 = lyVar6.E;
-                                inputMedia = hashMap6 == null ? sh.e.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap6.get(str14);
+                                inputMedia = hashMap6 == null ? sh.d.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap6.get(str14);
                             }
                         } else {
                             inputMedia = tLObject2 instanceof TLRPC.TL_messages_editMessage ? ((TLRPC.TL_messages_editMessage) tLObject2).media : tLObject2 instanceof TLRPC.TL_messages_sendMultiMedia ? (TLRPC.InputMedia) lyVar6.E.get(str14) : tLObject2 instanceof TLRPC.TL_messages_addPollAnswer ? ((TLRPC.TL_messages_addPollAnswer) tLObject2).answer.input_media : null;
@@ -8976,21 +8976,21 @@ public final class zy extends c1 implements fs {
             if (i02 != null) {
                 getConnectionsManager().cancelRequest(i02.reqId, true);
             }
-            di.x8 y10 = di.x8.y(this.currentAccount, z10);
-            di.s8 s8Var = y10.N;
+            di.y8 y10 = di.y8.y(this.currentAccount, z10);
+            di.t8 t8Var = y10.N;
             ArrayList arrayList5 = arrayList4;
-            if (s8Var == null || s8Var.b != fj.B0(fjVar2.k)) {
+            if (t8Var == null || t8Var.b != fj.B0(fjVar2.k)) {
                 i11 = i15;
                 j3 = B0;
             } else {
-                di.s8 s8Var2 = y10.N;
+                di.t8 t8Var2 = y10.N;
                 int e12 = fjVar2.e1();
-                di.r8 r8Var = s8Var2.p;
-                org.telegram.ui.Components.ac acVar = s8Var2.d;
+                di.s8 s8Var = t8Var2.p;
+                org.telegram.ui.Components.ac acVar = t8Var2.d;
                 i11 = i15;
-                HashSet hashSet = s8Var2.k;
+                HashSet hashSet = t8Var2.k;
                 j3 = B0;
-                if (!s8Var2.n && !s8Var2.o) {
+                if (!t8Var2.n && !t8Var2.o) {
                     Iterator it = hashSet.iterator();
                     while (true) {
                         if (!it.hasNext()) {
@@ -9006,31 +9006,31 @@ public final class zy extends c1 implements fs {
                         it = it2;
                     }
                     if (hashSet.isEmpty()) {
-                        s8Var2.n = true;
-                        s8Var2.c.b();
+                        t8Var2.n = true;
+                        t8Var2.c.b();
                         y10.N = null;
                     } else {
-                        s8Var2.g--;
+                        t8Var2.g--;
                         if (fjVar != null && (message = fjVar.k) != null) {
-                            s8Var2.h -= message.paid_message_stars;
+                            t8Var2.h -= message.paid_message_stars;
                         }
-                        di.w8 w8Var = s8Var2.f;
-                        if (w8Var != null) {
-                            w8Var.b = 3000L;
-                            g0.r(r8Var);
-                            g0.h3(r8Var, 3000L);
+                        di.x8 x8Var = t8Var2.f;
+                        if (x8Var != null) {
+                            x8Var.b = 3000L;
+                            g0.r(s8Var);
+                            g0.h3(s8Var, 3000L);
                         }
-                        org.telegram.ui.Components.n6 n6Var = acVar.b;
-                        int i17 = s8Var2.g;
+                        org.telegram.ui.Components.o6 o6Var = acVar.b;
+                        int i17 = t8Var2.g;
                         if (i17 == 1) {
-                            G = gd.M0(2131747510, null);
+                            G = gd.N0(2131747509, null);
                             i12 = 0;
                         } else {
                             i12 = 0;
                             G = gd.G(i17, "PaidMessageSentTitle", new Object[0]);
                         }
-                        n6Var.setText(G);
-                        acVar.c.setText(g0.W2(gd.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) s8Var2.h))));
+                        o6Var.setText(G);
+                        acVar.c.setText(g0.W2(gd.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) t8Var2.h))));
                         acVar.a.d();
                     }
                 }
@@ -9077,7 +9077,7 @@ public final class zy extends c1 implements fs {
                                     if (z12) {
                                         TLRPC.InputMedia inputMedia2 = ((TLRPC.TL_messages_sendMedia) tLObject).media;
                                         if (inputMedia2 instanceof TLRPC.TL_inputMediaPoll) {
-                                            sh.e.i((TLRPC.TL_inputMediaPoll) inputMedia2, ((Integer) lyVar.C.get(i19)).intValue());
+                                            sh.d.i((TLRPC.TL_inputMediaPoll) inputMedia2, ((Integer) lyVar.C.get(i19)).intValue());
                                         }
                                     }
                                     boolean z13 = tLObject instanceof TL_ephemeral.TL_sendMessage;
@@ -9090,7 +9090,7 @@ public final class zy extends c1 implements fs {
                                     if (z13) {
                                         TLRPC.InputMedia inputMedia4 = ((TL_ephemeral.TL_sendMessage) tLObject).media;
                                         if (inputMedia4 instanceof TLRPC.TL_inputMediaPoll) {
-                                            sh.e.i((TLRPC.TL_inputMediaPoll) inputMedia4, ((Integer) lyVar.C.get(i19)).intValue());
+                                            sh.d.i((TLRPC.TL_inputMediaPoll) inputMedia4, ((Integer) lyVar.C.get(i19)).intValue());
                                         }
                                     }
                                     TLRPC.TL_messages_sendEncryptedMultiMedia tL_messages_sendEncryptedMultiMedia = (TLRPC.TL_messages_sendEncryptedMultiMedia) lyVar.d;
@@ -9679,7 +9679,7 @@ public final class zy extends c1 implements fs {
             tL_inputInvoiceMessage.msg_id = fjVar.e1();
             tL_inputInvoiceMessage.peer = getMessagesController().o1(fjVar.k.peer_id);
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceMessage;
-            JSONObject u10 = ki.t2.u(null, false);
+            JSONObject u10 = ki.s2.u(null, false);
             if (u10 != null) {
                 TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
                 tL_payments_getPaymentForm.theme_params = tL_dataJSON;
@@ -10062,7 +10062,7 @@ public final class zy extends c1 implements fs {
             P1 = n5.k(zyVar2.getMessagesController().P2(j20));
         }
         if (P1 != j10) {
-            org.telegram.ui.Components.b5.X(zyVar2.currentAccount, Math.max(1, arrayList.size()), j20, new x10() { // from class: org.telegram.messenger.kx
+            org.telegram.ui.Components.c5.X(zyVar2.currentAccount, Math.max(1, arrayList.size()), j20, new x10() { // from class: org.telegram.messenger.kx
                 @Override // org.telegram.messenger.x10
                 public final void a(Object obj) {
                     zy zyVar3 = zy.this;
@@ -10831,7 +10831,7 @@ public final class zy extends c1 implements fs {
                                                     arrayList9 = arrayList17;
                                                     arrayList9.add(tL_message);
                                                     hVar2 = hVar6;
-                                                    di.x8.y(this.currentAccount, false).d(fjVar4);
+                                                    di.y8.y(this.currentAccount, false).d(fjVar4);
                                                     if (fjVar3.C != null) {
                                                         int i36 = 0;
                                                         while (i36 < arrayList.size()) {
@@ -10961,7 +10961,7 @@ public final class zy extends c1 implements fs {
                                                             z23 = z33;
                                                             tlVar = new tl(this, tL_messages_forwardMessages, arrayList11, new lx(i7, j3, hVar9, arrayList9, arrayList11, fjVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z33), 4);
                                                             zyVar = this;
-                                                            if (di.x8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
+                                                            if (di.y8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
                                                                 tlVar.run();
                                                             }
                                                             if (i27 != arrayList10.size() - 1) {
@@ -11020,7 +11020,7 @@ public final class zy extends c1 implements fs {
                                                     z23 = z332;
                                                     tlVar = new tl(this, tL_messages_forwardMessages, arrayList11, new lx(i7, j3, hVar92, arrayList9, arrayList11, fjVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z332), 4);
                                                     zyVar = this;
-                                                    if (di.x8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
+                                                    if (di.y8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
                                                     }
                                                     if (i27 != arrayList10.size() - 1) {
                                                     }
@@ -11105,7 +11105,7 @@ public final class zy extends c1 implements fs {
                                             arrayList9 = arrayList17;
                                             arrayList9.add(tL_message);
                                             hVar2 = hVar6;
-                                            di.x8.y(this.currentAccount, false).d(fjVar42);
+                                            di.y8.y(this.currentAccount, false).d(fjVar42);
                                             if (fjVar3.C != null) {
                                             }
                                             arrayList10 = arrayList;
@@ -11154,7 +11154,7 @@ public final class zy extends c1 implements fs {
                                             z23 = z3322;
                                             tlVar = new tl(this, tL_messages_forwardMessages, arrayList11, new lx(i7, j3, hVar922, arrayList9, arrayList11, fjVar3, this, peer72, tL_messages_forwardMessages, i7 != 2147483646, z3322), 4);
                                             zyVar = this;
-                                            if (di.x8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
+                                            if (di.y8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
                                             }
                                             if (i27 != arrayList10.size() - 1) {
                                             }
@@ -11372,7 +11372,7 @@ public final class zy extends c1 implements fs {
                 arrayList9 = arrayList17;
                 arrayList9.add(tL_message);
                 hVar2 = hVar6;
-                di.x8.y(this.currentAccount, false).d(fjVar422);
+                di.y8.y(this.currentAccount, false).d(fjVar422);
                 if (fjVar3.C != null) {
                 }
                 arrayList10 = arrayList;
@@ -11421,7 +11421,7 @@ public final class zy extends c1 implements fs {
                 z23 = z33222;
                 tlVar = new tl(this, tL_messages_forwardMessages, arrayList11, new lx(i7, j3, hVar9222, arrayList9, arrayList11, fjVar3, this, peer722, tL_messages_forwardMessages, i7 != 2147483646, z33222), 4);
                 zyVar = this;
-                if (di.x8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
+                if (di.y8.y(zyVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, tlVar)) {
                 }
                 if (i27 != arrayList10.size() - 1) {
                 }
@@ -11465,9 +11465,9 @@ public final class zy extends c1 implements fs {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void s0(fj fjVar, ArrayList arrayList, ch.p0 p0Var, boolean z10, boolean z11, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.di diVar) {
+    public final void s0(fj fjVar, ArrayList arrayList, ch.p0 p0Var, boolean z10, boolean z11, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.di diVar) {
         TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji;
-        if (fjVar == null || h2Var == null) {
+        if (fjVar == null || g2Var == null) {
             return;
         }
         TLRPC.TL_messages_sendReaction tL_messages_sendReaction = new TLRPC.TL_messages_sendReaction();
@@ -11675,10 +11675,10 @@ public final class zy extends c1 implements fs {
                             w7.G(this.currentAccount);
                             message.attachPath = w7.K(fileLocation, true).toString();
                             w7.G(this.currentAccount);
-                            sh.e.j(message, w7.K(fileLocation, true).toString(), size);
+                            sh.d.j(message, w7.K(fileLocation, true).toString(), size);
                         } else {
                             message.attachPath = str6;
-                            sh.e.j(message, str6, size);
+                            sh.d.j(message, str6, size);
                         }
                         z12 = z20;
                         c11 = 2;
@@ -11695,7 +11695,7 @@ public final class zy extends c1 implements fs {
                                 hashMap4.put("ve", e20Var.b());
                             }
                             message.attachPath = str6;
-                            sh.e.j(message, str6, size);
+                            sh.d.j(message, str6, size);
                             if (!(photoSize instanceof bc)) {
                                 TLRPC.MessageMedia messageMedia3 = tL_pollAnswer.media;
                                 messageMedia3.flags |= 512;
@@ -11714,7 +11714,7 @@ public final class zy extends c1 implements fs {
                         if (e20Var != null) {
                         }
                         message.attachPath = str6;
-                        sh.e.j(message, str6, size);
+                        sh.d.j(message, str6, size);
                         if (!(photoSize instanceof bc)) {
                         }
                     } else {
@@ -12525,7 +12525,7 @@ public final class zy extends c1 implements fs {
                         if (!(inputMedia4 instanceof TLRPC.TL_inputMediaUploadedPhoto) && !(inputMedia4 instanceof TLRPC.TL_inputMediaUploadedDocument)) {
                             int size = tL_inputMediaPoll.poll.answers.size();
                             while (r4 < size) {
-                                TLRPC.InputMedia e10 = sh.e.e(tL_inputMediaPoll, r4);
+                                TLRPC.InputMedia e10 = sh.d.e(tL_inputMediaPoll, r4);
                                 r4 = ((e10 instanceof TLRPC.TL_inputMediaUploadedPhoto) || (e10 instanceof TLRPC.TL_inputMediaUploadedDocument)) ? 0 : r4 + 1;
                             }
                             ly y11 = y(lyVar3.G, j3);
@@ -12596,9 +12596,9 @@ public final class zy extends c1 implements fs {
         lyVar3.d();
     }
 
-    public final void u(fj fjVar, org.telegram.ui.ActionBar.h2 h2Var, int i7, int i10) {
+    public final void u(fj fjVar, org.telegram.ui.ActionBar.g2 g2Var, int i7, int i10) {
         TLRPC.TL_messages_editMessage tL_messages_editMessage;
-        if (h2Var == null || h2Var.getParentActivity() == null) {
+        if (g2Var == null || g2Var.getParentActivity() == null) {
             return;
         }
         if (fj.c3(fjVar.k)) {
@@ -12627,7 +12627,7 @@ public final class zy extends c1 implements fs {
                 tL_messages_editMessage.flags = i11 | 294912;
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_editMessage, new ci(this, h2Var, tL_messages_editMessage, 11));
+        getConnectionsManager().sendRequest(tL_messages_editMessage, new ci(this, g2Var, tL_messages_editMessage, 11));
     }
 
     public final void u0(TLRPC.Document document, String str, final long j3, final CharSequence charSequence, final e20 e20Var, final fj fjVar, final fj fjVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.rm rmVar, final bj bjVar, final boolean z10, final int i7, final int i10, boolean z11, final Object obj, final bw bwVar, final long j10, final long j11, final kj kjVar, final boolean z12) {
@@ -12795,7 +12795,7 @@ public final class zy extends c1 implements fs {
         r0(f10);
     }
 
-    public final void v(fj fjVar, TL_iv.RichMessage richMessage, ArrayList arrayList, org.telegram.ui.ActionBar.h2 h2Var, boolean z10) {
+    public final void v(fj fjVar, TL_iv.RichMessage richMessage, ArrayList arrayList, org.telegram.ui.ActionBar.g2 g2Var, boolean z10) {
         TLRPC.TL_messages_editMessage tL_messages_editMessage;
         if (fjVar == null || richMessage == null || fjVar.k == null) {
             return;
@@ -12831,7 +12831,7 @@ public final class zy extends c1 implements fs {
         }
         message.rich_message = richMessage;
         message.send_state = 3;
-        int sendRequest = getConnectionsManager().sendRequest(tL_messages_editMessage3, new r4(fjVar, this, tL_messages_editMessage3, h2Var, z10));
+        int sendRequest = getConnectionsManager().sendRequest(tL_messages_editMessage3, new r4(fjVar, this, tL_messages_editMessage3, g2Var, z10));
         TLRPC.Message message2 = fjVar.k;
         if (message2 != null) {
             message2.reqId = sendRequest;
@@ -13016,7 +13016,7 @@ public final class zy extends c1 implements fs {
                     tL_messageMediaDice.value = tL_messageMediaDice2.value;
                     tL_messageMediaDice.flags = tL_messageMediaDice2.flags;
                     tL_messageMediaDice.game_outcome = tL_messageMediaDice2.game_outcome;
-                    di.x8.y(zyVar2.currentAccount, true).N();
+                    di.y8.y(zyVar2.currentAccount, true).N();
                 } else {
                     TLRPC.MessageMedia messageMedia12 = message6.media;
                     TLRPC.Photo photo8 = messageMedia12.photo;

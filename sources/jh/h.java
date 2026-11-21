@@ -9,14 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import bg.t;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.g71;
-import org.telegram.ui.Components.j41;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.Wallet.p5;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends View {
     public final /* synthetic */ int a = 0;
@@ -25,16 +25,16 @@ public final class h extends View {
     public final Object d;
     public final Object e;
 
-    public h(Activity activity, i6 i6Var) {
+    public h(Activity activity, h6 h6Var) {
         super(activity);
-        this.c = new te.a(this, lr.h, 380L);
+        this.c = new te.a(this, nr.h, 380L);
         this.b = new Paint(1);
-        this.d = i6Var;
-        j41 j41Var = new j41(true);
-        this.e = j41Var;
-        j41Var.setCallback(this);
-        j41Var.b(-1);
-        j41Var.i = true;
+        this.d = h6Var;
+        m41 m41Var = new m41(true);
+        this.e = m41Var;
+        m41Var.setCallback(this);
+        m41Var.b(-1);
+        m41Var.i = true;
     }
 
     @Override // android.view.View
@@ -42,7 +42,7 @@ public final class h extends View {
         switch (this.a) {
             case 0:
                 super.onAttachedToWindow();
-                ((j41) this.e).d();
+                ((m41) this.e).d();
                 break;
             default:
                 super.onAttachedToWindow();
@@ -55,7 +55,7 @@ public final class h extends View {
         switch (this.a) {
             case 0:
                 super.onDetachedFromWindow();
-                ((j41) this.e).e();
+                ((m41) this.e).e();
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -70,20 +70,20 @@ public final class h extends View {
                 float width = getWidth() / 2.0f;
                 float height = getHeight() / 2.0f;
                 super.onDraw(canvas);
-                int w02 = n6.w0(n6.Pe, (i6) this.d);
+                int w02 = m6.w0(m6.Pe, (h6) this.d);
                 Paint paint = this.b;
                 paint.setColor(w02);
                 canvas.drawCircle(width, height, g0.L(19.0f), paint);
                 float f10 = ((te.a) this.c).e;
                 float f11 = 1.0f - f10;
                 if (f11 > 0.0f) {
-                    t.b(canvas, (j41) this.e, f11 * 1.35f);
+                    t.b(canvas, (m41) this.e, f11 * 1.35f);
                     invalidate();
                 }
                 if (f10 > 0.0f) {
                     float L = g0.L(6.666f) * f10;
                     float L2 = g0.L(2.666f) * f10;
-                    canvas.drawRoundRect(width - L, height - L, width + L, L + height, L2, L2, n6.n0(-1));
+                    canvas.drawRoundRect(width - L, height - L, width + L, L + height, L2, L2, m6.n0(-1));
                     break;
                 }
                 break;
@@ -98,12 +98,12 @@ public final class h extends View {
                 int[] iArr2 = (int[]) this.d;
                 getLocationInWindow(iArr2);
                 float f12 = iArr[0] - iArr2[0];
-                View view = ((g71) p5Var.X1).getViewPages()[0];
+                View view = ((j71) p5Var.X1).getViewPages()[0];
                 int paddingLeft = view != null ? view.getPaddingLeft() : 0;
                 int paddingRight = view != null ? view.getPaddingRight() : 0;
                 canvas.save();
                 canvas.clipRect(paddingLeft + f12, 0.0f, (f12 + p5Var.X1.getWidth()) - paddingRight, getHeight());
-                for (View view2 : ((g71) p5Var.X1).getViewPages()) {
+                for (View view2 : ((j71) p5Var.X1).getViewPages()) {
                     if (view2 != null && view2.getVisibility() == 0) {
                         canvas.save();
                         canvas.translate(view2.getLeft() + (iArr[0] - iArr2[0]), view2.getTop() + (iArr[1] - iArr2[1]));
@@ -122,7 +122,7 @@ public final class h extends View {
         switch (this.a) {
             case 0:
                 super.onSizeChanged(i7, i10, i11, i12);
-                t.d((j41) this.e, i7 / 2.0f, i10 / 2.0f, 17);
+                t.d((m41) this.e, i7 / 2.0f, i10 / 2.0f, 17);
                 break;
             default:
                 super.onSizeChanged(i7, i10, i11, i12);
@@ -134,7 +134,7 @@ public final class h extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 0:
-                return super.verifyDrawable(drawable) || (drawable == ((j41) this.e) && !((te.a) this.c).f);
+                return super.verifyDrawable(drawable) || (drawable == ((m41) this.e) && !((te.a) this.c).f);
             default:
                 return super.verifyDrawable(drawable);
         }

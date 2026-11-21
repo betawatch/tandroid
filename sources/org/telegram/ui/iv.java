@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class iv extends v4.u0 {
     public boolean a;
@@ -141,10 +141,10 @@ public final class iv extends v4.u0 {
             }
         }
         if (!cxVar.L && recyclerView == cxVar.f0[0].a && !cxVar.l2) {
-            kVar = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
+            kVar = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
             if (kVar != null) {
-                kVar2 = ((org.telegram.ui.ActionBar.h2) cxVar).actionBar;
-                if (!kVar2.y() && !cxVar.g2 && !cxVar.H3.c()) {
+                kVar2 = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
+                if (!kVar2.x() && !cxVar.g2 && !cxVar.H3.c()) {
                     if (i10 > 0 && cxVar.n4() && cxVar.f0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
                         int top2 = (childAt.getTop() - recyclerView.getPaddingTop()) + childAt.getMeasuredHeight();
                         if (top2 + i10 > 0) {

@@ -4,17 +4,17 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class z4 extends org.telegram.ui.Components.q9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 H;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 H;
     public final /* synthetic */ b5 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.I = b5Var;
-        this.H = i6Var;
+        this.H = h6Var;
     }
 
     @Override // org.telegram.ui.Components.q9, android.view.View

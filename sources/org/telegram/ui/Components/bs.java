@@ -1,44 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.view.View;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class bs extends View {
-    public final Paint a;
-    public final Matrix b;
-    public LinearGradient c;
+public final class bs {
+    public int a;
+    public int b;
+    public xy0 c;
     public int d;
-    public float e;
-    public float f;
+    public boolean e;
+    public int f;
+    public int g;
 
-    public bs(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.e + this.f, this.a);
-    }
-
-    public void setColor(int i7) {
-        if (this.d != i7) {
-            this.d = i7;
-            int alpha = Color.alpha(i7);
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i7, (alpha * org.telegram.messenger.ks.I3) / org.telegram.messenger.ks.e4), i0.a.o(i7, (alpha * org.telegram.messenger.ks.W2) / org.telegram.messenger.ks.e4), i0.a.o(i7, (alpha * org.telegram.messenger.ks.a2) / org.telegram.messenger.ks.e4), i0.a.o(i7, 0)}, (float[]) null, Shader.TileMode.CLAMP);
-            this.c = linearGradient;
-            this.a.setShader(linearGradient);
-            this.c.setLocalMatrix(this.b);
-            invalidate();
+    public static bs b(org.telegram.ui.Cells.u2 u2Var, org.telegram.messenger.ro roVar) {
+        bs bsVar = new bs();
+        bsVar.a = roVar.a;
+        bsVar.b = roVar.m;
+        String str = roVar.b;
+        if (str == null) {
+            str = "";
         }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
+        xy0 xy0Var = new xy0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o());
+        xy0Var.r(u2Var);
+        bsVar.c = xy0Var;
+        bsVar.c.q(org.telegram.messenger.fj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, xy0Var.a.getFontMetricsInt(), false, null, 0), roVar.c, bsVar.c.a.getFontMetricsInt(), false));
+        bsVar.c.o(26);
+        int L = org.telegram.messenger.g0.L(9.32f);
+        xy0 xy0Var2 = bsVar.c;
+        bsVar.g = L + ((int) xy0Var2.c);
+        xy0Var2.i();
+        int[] iArr = org.telegram.ui.ActionBar.m6.r8;
+        int i7 = iArr[roVar.m % iArr.length];
+        bsVar.f = i7;
+        bsVar.e = true;
+        bsVar.d = org.telegram.ui.ActionBar.m6.x0(null, i7, false);
+        return bsVar;
+    }
+
+    public final void a(Canvas canvas) {
+        if (this.e) {
+            this.d = org.telegram.ui.ActionBar.m6.x0(null, this.f, false);
+        }
+        org.telegram.ui.ActionBar.m6.A0.setColor(org.telegram.ui.ActionBar.m6.r1(org.telegram.ui.ActionBar.m6.I.q() ? 0.2f : 0.1f, this.d));
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(0.0f, 0.0f, this.g, org.telegram.messenger.g0.L(14.66f));
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.m6.A0);
+        this.c.c(org.telegram.messenger.g0.L(4.66f), org.telegram.messenger.g0.L(14.66f) / 2.0f, 1.0f, this.d, canvas);
     }
 }

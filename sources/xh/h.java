@@ -14,9 +14,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.r5;
-import tg.x;
+import tg.y;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h {
     public static h q;
@@ -31,7 +31,7 @@ public final class h {
     public boolean p;
     public final r5 a = new r5("SpoilerEffectBitmapFactory", 3);
     public final b3.j[] b = new b3.j[f.C.length];
-    public final x[] c = new x[2];
+    public final y[] c = new y[2];
     public int d = 0;
     public final Rect m = new Rect();
     public final z n = new z(this, 2);

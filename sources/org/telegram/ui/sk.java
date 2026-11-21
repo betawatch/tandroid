@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class sk implements ll {
     public final /* synthetic */ bn a;
@@ -37,7 +37,7 @@ public final class sk implements ll {
         ArrayList arrayList2 = new ArrayList(bnVar.X4.values());
         org.telegram.ui.Components.gc gcVar = null;
         if (z11) {
-            i7 = ((org.telegram.ui.ActionBar.h2) bnVar).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
             SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i7).g7;
             if (bnVar.V4.isEmpty()) {
                 sharedPreferences.edit().remove("pin_" + bnVar.l6).commit();
@@ -68,8 +68,8 @@ public final class sk implements ll {
             if (z11) {
                 org.telegram.ui.Components.dc dcVar = new org.telegram.ui.Components.dc(bnVar.getParentActivity(), zmVar);
                 dcVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                dcVar.b.setText(org.telegram.messenger.gd.M0(2131747031, null));
-                dcVar.c.setText(org.telegram.messenger.gd.M0(2131747030, null));
+                dcVar.b.setText(org.telegram.messenger.gd.N0(2131747030, null));
+                dcVar.c.setText(org.telegram.messenger.gd.N0(2131747029, null));
                 ebVar = dcVar;
             } else {
                 org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(bnVar.getParentActivity(), zmVar);

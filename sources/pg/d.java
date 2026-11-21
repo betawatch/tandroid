@@ -6,22 +6,22 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import c8.ma;
-import ji.j;
+import ji.l;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
-import org.telegram.ui.ActionBar.a4;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.au0;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.z3;
+import org.telegram.ui.Components.bn0;
+import org.telegram.ui.Components.du0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.h5;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -38,49 +38,49 @@ public final /* synthetic */ class d implements Runnable {
         i iVar = this.b;
         switch (i7) {
             case 0:
-                h2 Q = LaunchActivity.Q();
+                g2 Q = LaunchActivity.Q();
                 h5 h5Var = new h5(Q.getParentActivity(), false);
-                if (Q.getFragmentView() instanceof au0) {
-                    h5Var.m1 = (au0) Q.getFragmentView();
+                if (Q.getFragmentView() instanceof du0) {
+                    h5Var.m1 = (du0) Q.getFragmentView();
                 }
                 Activity parentActivity = Q.getParentActivity();
                 LinearLayout f10 = f3.f(parentActivity, 1);
                 TextView textView = new TextView(parentActivity);
                 textView.setText("Saturation " + (h5.n1 * 5.0f));
-                int i10 = n6.n5;
-                u6.U(textView, i10, null);
+                int i10 = m6.n5;
+                t6.U(textView, i10, null);
                 n10.q(textView, 1, 16.0f, 1, 1);
                 textView.setSingleLine(true);
                 int i11 = 5;
                 textView.setGravity((gd.a0 ? 3 : 5) | 48);
                 f10.addView(textView, ma.d(-2, -1.0f, (gd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                ym0 ym0Var = new ym0(parentActivity);
-                ym0Var.setDelegate(new k8.a(12, h5Var, textView));
-                ym0Var.setReportChanges(true);
-                f10.addView(ym0Var, ma.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                bn0 bn0Var = new bn0(parentActivity);
+                bn0Var.setDelegate(new k8.a(12, h5Var, textView));
+                bn0Var.setReportChanges(true);
+                f10.addView(bn0Var, ma.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
                 TextView textView2 = new TextView(parentActivity);
                 textView2.setText("Alpha " + h5.p1);
-                u6.U(textView2, i10, null);
+                t6.U(textView2, i10, null);
                 n10.q(textView2, 1, 16.0f, 1, 1);
                 textView2.setSingleLine(true);
                 textView2.setGravity((gd.a0 ? 3 : 5) | 48);
                 f10.addView(textView2, ma.d(-2, -1.0f, (gd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                ym0 ym0Var2 = new ym0(parentActivity);
-                ym0Var2.setDelegate(new j(h5Var, textView2, false, 12));
-                ym0Var2.setReportChanges(true);
-                f10.addView(ym0Var2, ma.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                bn0 bn0Var2 = new bn0(parentActivity);
+                bn0Var2.setDelegate(new l(h5Var, textView2, false, 12));
+                bn0Var2.setReportChanges(true);
+                f10.addView(bn0Var2, ma.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
                 TextView textView3 = new TextView(parentActivity);
                 textView3.setText("Blur Radius");
-                u6.U(textView3, i10, null);
+                t6.U(textView3, i10, null);
                 n10.q(textView3, 1, 16.0f, 1, 1);
                 textView3.setSingleLine(true);
                 textView3.setGravity((gd.a0 ? 3 : 5) | 48);
                 f10.addView(textView3, ma.d(-2, -1.0f, (gd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                ym0 ym0Var3 = new ym0(parentActivity);
-                ym0Var3.setDelegate(new org.telegram.ui.f(h5Var, i11));
-                ym0Var3.setReportChanges(true);
-                f10.addView(ym0Var3, ma.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                f10.addOnLayoutChangeListener(new a4(ym0Var, ym0Var3, ym0Var2));
+                bn0 bn0Var3 = new bn0(parentActivity);
+                bn0Var3.setDelegate(new org.telegram.ui.f(h5Var, i11));
+                bn0Var3.setReportChanges(true);
+                f10.addView(bn0Var3, ma.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                f10.addOnLayoutChangeListener(new z3(bn0Var, bn0Var3, bn0Var2));
                 ScrollView scrollView = new ScrollView(parentActivity);
                 scrollView.addView(f10);
                 h5Var.O = scrollView;
@@ -90,7 +90,7 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 iVar.getClass();
                 bz.K();
-                Toast.makeText(iVar.getContext(), gd.M0(bz.J0 ? 2131751607 : 2131751608, null), 0).show();
+                Toast.makeText(iVar.getContext(), gd.N0(bz.J0 ? 2131751606 : 2131751607, null), 0).show();
                 break;
             case 2:
                 ProfileActivity.Y4((Activity) iVar.getContext(), false);

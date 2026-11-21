@@ -12,20 +12,20 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
-import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class u0 extends View {
     public float E;
     public boolean F;
-    public final org.telegram.ui.Components.c6 G;
+    public final org.telegram.ui.Components.d6 G;
     public boolean H;
     public float I;
-    public final org.telegram.ui.Components.c6 J;
-    public final org.telegram.ui.Components.c6 K;
+    public final org.telegram.ui.Components.d6 J;
+    public final org.telegram.ui.Components.d6 K;
     public final RectF L;
     public final RectF M;
     public final RectF N;
@@ -40,7 +40,7 @@ public final class u0 extends View {
     public final Paint e;
     public final Paint f;
     public final mc h;
-    public mh0 n;
+    public oh0 n;
     public final StaticLayout r;
     public final float s;
     public final float w;
@@ -63,11 +63,11 @@ public final class u0 extends View {
         this.f = paint4;
         this.h = new mc(this);
         this.F = false;
-        this.G = new org.telegram.ui.Components.c6(0.0f, this, 0L, 350L, lr.h);
+        this.G = new org.telegram.ui.Components.d6(0.0f, this, 0L, 350L, nr.h);
         this.H = true;
         this.I = 0.0f;
-        this.J = new org.telegram.ui.Components.c6(this);
-        this.K = new org.telegram.ui.Components.c6(this);
+        this.J = new org.telegram.ui.Components.d6(this);
+        this.K = new org.telegram.ui.Components.d6(this);
         this.L = new RectF();
         this.M = new RectF();
         this.N = new RectF();
@@ -107,14 +107,14 @@ public final class u0 extends View {
     }
 
     public final void b(int i7, int i10, CharSequence charSequence) {
-        mh0 mh0Var = this.n;
-        if (mh0Var != null) {
-            mh0Var.setCallback(null);
+        oh0 oh0Var = this.n;
+        if (oh0Var != null) {
+            oh0Var.setCallback(null);
             this.n.C(true);
         }
-        mh0 mh0Var2 = new mh0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f));
-        this.n = mh0Var2;
-        mh0Var2.setCallback(this);
+        oh0 oh0Var2 = new oh0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f));
+        this.n = oh0Var2;
+        oh0Var2.setCallback(this);
         this.n.start();
         StaticLayout staticLayout = new StaticLayout(charSequence, this.c, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.x = staticLayout;
@@ -223,9 +223,9 @@ public final class u0 extends View {
         }
         if (e11 > 0.0f) {
             float f16 = f11 * e11;
-            mh0 mh0Var = this.n;
-            if (mh0Var != null) {
-                mh0Var.setAlpha((int) (f16 * f13));
+            oh0 oh0Var = this.n;
+            if (oh0Var != null) {
+                oh0Var.setAlpha((int) (f16 * f13));
                 this.n.setBounds((int) (rectF.left + org.telegram.messenger.g0.L(9.0f)), (int) (rectF.top + org.telegram.messenger.g0.L(6.0f)), (int) (rectF.left + org.telegram.messenger.g0.L(45.0f)), (int) (rectF.top + org.telegram.messenger.g0.L(f10)));
                 this.n.draw(canvas2);
             }
@@ -291,6 +291,6 @@ public final class u0 extends View {
     }
 
     public u0(Context context) {
-        this(context, gd.M0(2131746725, null));
+        this(context, gd.N0(2131746724, null));
     }
 }

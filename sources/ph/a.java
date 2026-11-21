@@ -5,24 +5,24 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
 import bg.u0;
-import hi.d;
+import hi.e;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class a extends d implements te.b {
+public final class a extends e implements te.b {
     public final te.a m0;
-    public final i6 n0;
+    public final h6 n0;
     public boolean o0;
 
-    public a(Context context, i6 i6Var) {
-        super(context, i6Var, true);
-        this.m0 = new te.a(0, this, lr.h, 320L, true);
-        this.n0 = i6Var;
+    public a(Context context, h6 h6Var) {
+        super(context, h6Var, true);
+        this.m0 = new te.a(0, this, nr.h, 320L, true);
+        this.n0 = h6Var;
         f();
         setOutlineProvider(u0.b);
     }
@@ -30,12 +30,12 @@ public final class a extends d implements te.b {
     @Override // te.b
     public final void H(int i7, float f10, float f11, te.c cVar) {
         this.o0 = true;
-        i6 i6Var = this.n0;
-        boolean d = i6Var != null ? i6Var.d() : n6.I.q();
+        h6 h6Var = this.n0;
+        boolean d = h6Var != null ? h6Var.d() : m6.I.q();
         float f12 = this.m0.e;
         setElevation((1.0f - f12) * g0.L(1.0f));
-        setColor(i0.a.f(f12, m(n6.d6), m(n6.Fi)));
-        setTextColor(i0.a.f(f12, m(n6.q7), m(n6.Ji)));
+        setColor(i0.a.f(f12, m(m6.d6), m(m6.Fi)));
+        setTextColor(i0.a.f(f12, m(m6.q7), m(m6.Ji)));
         if (Build.VERSION.SDK_INT >= 28) {
             if (d) {
                 setOutlineAmbientShadowColor(553648127);
@@ -48,11 +48,11 @@ public final class a extends d implements te.b {
     }
 
     public final int m(int i7) {
-        i6 i6Var = this.n0;
-        return i6Var != null ? i6Var.k(i7) : n6.x0(null, i7, false);
+        h6 h6Var = this.n0;
+        return h6Var != null ? h6Var.k(i7) : m6.x0(null, i7, false);
     }
 
-    @Override // hi.d, org.telegram.ui.ActionBar.c6
+    @Override // hi.e, org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         super.updateColors();
         te.a aVar = this.m0;
@@ -61,13 +61,13 @@ public final class a extends d implements te.b {
         }
         try {
             float f10 = aVar.e;
-            int f11 = i0.a.f(f10, m(n6.d6), m(n6.Fi));
+            int f11 = i0.a.f(f10, m(m6.d6), m(m6.Fi));
             Drawable background = getBackground();
             if ((background instanceof ShapeDrawable) && ((ShapeDrawable) background).getPaint().getColor() != f11) {
                 ((ShapeDrawable) background).getPaint().setColor(f11);
                 background.invalidateSelf();
             }
-            setTextColor(i0.a.f(f10, m(n6.q7), m(n6.Ji)));
+            setTextColor(i0.a.f(f10, m(m6.q7), m(m6.Ji)));
         } catch (Exception e10) {
             a8.g(e10, true);
         }

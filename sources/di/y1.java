@@ -6,18 +6,18 @@ import j$.util.Objects;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f6 b;
-    public final /* synthetic */ bi.a5[] c;
+    public final /* synthetic */ bi.e5[] c;
     public final /* synthetic */ TL_stars.TL_starGiftUnique d;
 
-    public /* synthetic */ y1(f6 f6Var, bi.a5[] a5VarArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i7) {
+    public /* synthetic */ y1(f6 f6Var, bi.e5[] e5VarArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i7) {
         this.a = i7;
         this.b = f6Var;
-        this.c = a5VarArr;
+        this.c = e5VarArr;
         this.d = tL_starGiftUnique;
     }
 
@@ -31,10 +31,10 @@ public final /* synthetic */ class y1 implements x10 {
                 Context context = f6Var.getContext();
                 int i7 = f6Var.a;
                 long longValue = l10.longValue();
-                org.telegram.ui.ActionBar.i6 i6Var = f6Var.J0;
-                hi.d dVar = f6Var.g2;
-                Objects.requireNonNull(dVar);
-                ai.g0 g0Var = new ai.g0(dVar, 3);
+                org.telegram.ui.ActionBar.h6 h6Var = f6Var.J0;
+                hi.e eVar = f6Var.g2;
+                Objects.requireNonNull(eVar);
+                ai.h0 h0Var = new ai.h0(eVar, 3);
                 org.telegram.ui.Components.lc k10 = f6Var.k();
                 k1 k1Var = new k1(f6Var, 13);
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = this.d;
@@ -42,7 +42,7 @@ public final /* synthetic */ class y1 implements x10 {
                     TL_stars.updateStarGiftOnchainPrice updatestargiftonchainprice = new TL_stars.updateStarGiftOnchainPrice();
                     updatestargiftonchainprice.slug = tL_starGiftUnique.slug;
                     updatestargiftonchainprice.amount = longValue;
-                    bi.u4.o(context, i7, updatestargiftonchainprice, tL_starGiftUnique.onchain_sale ? Boolean.valueOf(tL_starGiftUnique.fixed_sale) : null, i6Var, g0Var, k10, new bi.j4(longValue, tL_starGiftUnique, context, i7, i6Var, bi.u4.h(tL_starGiftUnique), k1Var));
+                    bi.y4.o(context, i7, updatestargiftonchainprice, tL_starGiftUnique.onchain_sale ? Boolean.valueOf(tL_starGiftUnique.fixed_sale) : null, h6Var, h0Var, k10, new bi.n4(longValue, tL_starGiftUnique, context, i7, h6Var, bi.y4.h(tL_starGiftUnique), k1Var));
                     break;
                 }
                 break;
@@ -52,10 +52,10 @@ public final /* synthetic */ class y1 implements x10 {
                 Context context2 = f6Var2.getContext();
                 int i10 = f6Var2.a;
                 long longValue2 = l10.longValue();
-                org.telegram.ui.ActionBar.i6 i6Var2 = f6Var2.J0;
-                hi.d dVar2 = f6Var2.g2;
-                Objects.requireNonNull(dVar2);
-                ai.g0 g0Var2 = new ai.g0(dVar2, 3);
+                org.telegram.ui.ActionBar.h6 h6Var2 = f6Var2.J0;
+                hi.e eVar2 = f6Var2.g2;
+                Objects.requireNonNull(eVar2);
+                ai.h0 h0Var2 = new ai.h0(eVar2, 3);
                 org.telegram.ui.Components.lc k11 = f6Var2.k();
                 k1 k1Var2 = new k1(f6Var2, 11);
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = this.d;
@@ -63,7 +63,7 @@ public final /* synthetic */ class y1 implements x10 {
                     TL_stars.updateStarGiftOnchainPrice updatestargiftonchainprice2 = new TL_stars.updateStarGiftOnchainPrice();
                     updatestargiftonchainprice2.slug = tL_starGiftUnique2.slug;
                     updatestargiftonchainprice2.amount = longValue2;
-                    bi.u4.o(context2, i10, updatestargiftonchainprice2, Boolean.TRUE, i6Var2, g0Var2, k11, new bi.j4(tL_starGiftUnique2, longValue2, context2, i10, i6Var2, bi.u4.h(tL_starGiftUnique2), k1Var2));
+                    bi.y4.o(context2, i10, updatestargiftonchainprice2, Boolean.TRUE, h6Var2, h0Var2, k11, new bi.n4(tL_starGiftUnique2, longValue2, context2, i10, h6Var2, bi.y4.h(tL_starGiftUnique2), k1Var2));
                     break;
                 }
                 break;

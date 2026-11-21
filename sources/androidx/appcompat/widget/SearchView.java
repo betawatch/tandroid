@@ -34,7 +34,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import c8.j9;
 import h6.m;
-import hi.u6;
+import hi.t6;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import kd.f;
@@ -55,7 +55,7 @@ import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class SearchView extends w1 implements k.b {
     public static final f x0;
@@ -100,7 +100,7 @@ public class SearchView extends w1 implements k.b {
     public final q2 v0;
     public final WeakHashMap w0;
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class SearchAutoComplete extends l {
         public int e;
         public SearchView f;
@@ -922,7 +922,7 @@ public class SearchView extends w1 implements k.b {
         searchAutoComplete.setOnItemClickListener(k0Var);
         searchAutoComplete.setOnItemSelectedListener(x1Var);
         searchAutoComplete.setOnKeyListener(bVar);
-        searchAutoComplete.setOnFocusChangeListener(new u6(this, 1));
+        searchAutoComplete.setOnFocusChangeListener(new t6(this, 1));
         setIconifiedByDefault(obtainStyledAttributes.getBoolean(8, true));
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(1, -1);
         if (dimensionPixelSize != -1) {

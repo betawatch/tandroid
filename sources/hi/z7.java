@@ -1,121 +1,194 @@
 package hi;
 
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class z7 extends rg.a {
-    public int c;
-    public Drawable d;
-    public CharSequence e;
-    public CharSequence f;
-    public TLRPC.User g;
-    public TLRPC.Chat h;
-    public int i;
-    public int j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public int o;
-    public int p;
-    public int q;
+public final /* synthetic */ class z7 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k8 b;
 
-    public z7(int i7, boolean z10) {
-        super(i7, z10);
-        this.p = -1;
+    public /* synthetic */ z7(k8 k8Var, int i7) {
+        this.a = i7;
+        this.b = k8Var;
     }
 
-    public static z7 b(String str, CharSequence charSequence, int i7) {
-        z7 z7Var = new z7(9, false);
-        z7Var.e = str;
-        z7Var.f = charSequence;
-        z7Var.q = i7;
-        return z7Var;
-    }
-
-    public static z7 c() {
-        return new z7(0, false);
-    }
-
-    public static z7 d() {
-        z7 z7Var = new z7(-1, false);
-        z7Var.o = -1;
-        return z7Var;
-    }
-
-    public static z7 e() {
-        return new z7(1, false);
-    }
-
-    public static z7 f() {
-        return new z7(2, false);
-    }
-
-    public static z7 g(CharSequence charSequence) {
-        z7 z7Var = new z7(6, false);
-        z7Var.e = charSequence;
-        return z7Var;
-    }
-
-    public static z7 h(int i7, int i10, boolean z10) {
-        z7 z7Var = new z7(3, false);
-        z7Var.i = i7;
-        z7Var.k = z10;
-        z7Var.j = i10;
-        return z7Var;
-    }
-
-    public static z7 i(TLRPC.User user, boolean z10, boolean z11) {
-        z7 z7Var = new z7(3, true);
-        z7Var.g = user;
-        z7Var.k = z10;
-        z7Var.l = z11;
-        return z7Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || z7.class != obj.getClass()) {
-            return false;
-        }
-        z7 z7Var = (z7) obj;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        n8 n8Var;
         int i7 = this.a;
-        if (i7 != z7Var.a) {
-            return false;
+        int i10 = 0;
+        k8 k8Var = this.b;
+        int i11 = 1;
+        switch (i7) {
+            case 0:
+                HashMap hashMap = k8Var.d;
+                ArrayList arrayList = k8Var.c;
+                p8 p8Var = k8Var.a0;
+                e eVar = k8Var.w;
+                if (!eVar.R) {
+                    int i12 = p8.Y1;
+                    int i13 = p8Var.a;
+                    HashMap hashMap2 = p8Var.p1;
+                    ArrayList arrayList2 = p8Var.o1;
+                    HashMap hashMap3 = p8Var.t1;
+                    ArrayList arrayList3 = p8Var.s1;
+                    mp u12 = mp.u1(i13);
+                    int i14 = k8Var.a;
+                    if (i14 == 5) {
+                        b8 b8Var = p8Var.Q1;
+                        if (b8Var != null) {
+                            b8Var.a(arrayList);
+                        }
+                        p8Var.dismiss();
+                        break;
+                    } else if (i14 == 1) {
+                        TLRPC.TL_editCloseFriends tL_editCloseFriends = new TLRPC.TL_editCloseFriends();
+                        tL_editCloseFriends.id.addAll(arrayList);
+                        eVar.setLoading(true);
+                        ConnectionsManager.getInstance(p8Var.a).sendRequest(tL_editCloseFriends, new bi.o1(17, k8Var, u12));
+                        break;
+                    } else if (i14 == 0) {
+                        int i15 = p8Var.I1;
+                        if (i15 == 3) {
+                            n8Var = new n8(p8Var.I1, p8Var.a, new ArrayList(p8.S0(arrayList3, hashMap3)));
+                            ArrayList arrayList4 = n8Var.c;
+                            arrayList4.clear();
+                            arrayList4.addAll(arrayList3);
+                            HashMap hashMap4 = n8Var.d;
+                            hashMap4.clear();
+                            hashMap4.putAll(hashMap3);
+                        } else if (i15 == 2) {
+                            n8Var = new n8(i15, p8Var.a, p8Var.r1);
+                        } else if (i15 == 4) {
+                            n8Var = new n8(p8Var.I1, p8Var.a, new ArrayList(p8.S0(arrayList2, hashMap2)));
+                            ArrayList arrayList5 = n8Var.c;
+                            arrayList5.clear();
+                            arrayList5.addAll(arrayList2);
+                            HashMap hashMap5 = n8Var.d;
+                            hashMap5.clear();
+                            hashMap5.putAll(hashMap2);
+                        } else {
+                            n8Var = new n8(i15, p8Var.a, (ArrayList) null);
+                        }
+                        p8Var.O0(n8Var, new fi.o3(p8Var, 1), false);
+                        break;
+                    } else if (i14 == 2) {
+                        if (p8Var.U1) {
+                            p8Var.N0();
+                            p8Var.O0(new n8(2, p8Var.a, arrayList), new fi.o3(p8Var, 1), false);
+                            break;
+                        } else {
+                            p8Var.N0();
+                            p8Var.m1.A(0);
+                            break;
+                        }
+                    } else if (i14 != 3) {
+                        int i16 = 6;
+                        if (i14 == 6) {
+                            HashSet S0 = p8.S0(arrayList, hashMap);
+                            eVar.setLoading(true);
+                            fi.p6 R1 = mp.u1(p8Var.a).R1();
+                            a8 a8Var = new a8(k8Var, i11);
+                            int i17 = R1.a;
+                            TLRPC.TL_contacts_setBlocked tL_contacts_setBlocked = new TLRPC.TL_contacts_setBlocked();
+                            tL_contacts_setBlocked.my_stories_from = true;
+                            HashSet hashSet = R1.L;
+                            tL_contacts_setBlocked.limit = hashSet.size();
+                            int size = R1.N - hashSet.size();
+                            R1.N = size;
+                            if (size < 0) {
+                                R1.N = 0;
+                            }
+                            hashSet.clear();
+                            Iterator it = S0.iterator();
+                            while (it.hasNext()) {
+                                Long l10 = (Long) it.next();
+                                TLRPC.InputPeer l1 = mp.u1(i17).l1(l10.longValue());
+                                if (!(l1 instanceof TLRPC.TL_inputPeerEmpty)) {
+                                    hashSet.add(l10);
+                                    tL_contacts_setBlocked.id.add(l1);
+                                }
+                            }
+                            R1.N = hashSet.size() + R1.N;
+                            tL_contacts_setBlocked.limit = Math.max(tL_contacts_setBlocked.limit, hashSet.size());
+                            ConnectionsManager.getInstance(i17).sendRequest(tL_contacts_setBlocked, new ai.g1(a8Var, i16));
+                            break;
+                        } else {
+                            p8Var.I1 = i14;
+                            p8Var.N0();
+                            p8Var.m1.A(0);
+                            break;
+                        }
+                    } else if (p8Var.U1) {
+                        HashSet S02 = p8.S0(arrayList, hashMap);
+                        if (!S02.isEmpty()) {
+                            p8Var.N0();
+                            n8 n8Var2 = new n8(3, p8Var.a, new ArrayList(S02));
+                            ArrayList arrayList6 = n8Var2.c;
+                            arrayList6.clear();
+                            arrayList6.addAll(arrayList);
+                            HashMap hashMap6 = n8Var2.d;
+                            hashMap6.clear();
+                            hashMap6.putAll(hashMap);
+                            p8Var.O0(n8Var2, new a8(k8Var, i10), false);
+                            break;
+                        }
+                    } else if (!p8.S0(arrayList, hashMap).isEmpty()) {
+                        p8Var.I1 = 3;
+                        p8Var.N0();
+                        p8Var.m1.A(0);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                p8 p8Var2 = k8Var.a0;
+                if (p8Var2.J1) {
+                    p8Var2.H1 = 5;
+                    p8Var2.m1.A(1);
+                    break;
+                } else {
+                    p8 p8Var3 = new p8(k8Var.getContext(), p8Var2.J0);
+                    p8Var3.Q1 = new b8(k8Var, i11);
+                    p8Var3.L1 = p8Var2.L1;
+                    p8Var3.show();
+                    break;
+                }
+            default:
+                HashMap hashMap7 = k8Var.d;
+                a0.h hVar = k8Var.b;
+                ArrayList arrayList7 = k8Var.c;
+                int size2 = arrayList7.size();
+                int i18 = 0;
+                while (i18 < size2) {
+                    Object obj = arrayList7.get(i18);
+                    i18++;
+                    hVar.k(Boolean.FALSE, ((Long) obj).longValue());
+                }
+                for (ArrayList arrayList8 : hashMap7.values()) {
+                    int size3 = arrayList8.size();
+                    int i19 = 0;
+                    while (i19 < size3) {
+                        Object obj2 = arrayList8.get(i19);
+                        i19++;
+                        hVar.k(Boolean.FALSE, ((Long) obj2).longValue());
+                    }
+                }
+                arrayList7.clear();
+                hashMap7.clear();
+                k8Var.a0.E1.clear();
+                k8Var.y.d.a();
+                k8Var.g(true);
+                k8Var.f(true);
+                break;
         }
-        if (i7 == -1 && (this.o != z7Var.o || this.p != z7Var.p)) {
-            return false;
-        }
-        if (i7 == 3 && (this.g != z7Var.g || this.h != z7Var.h || this.i != z7Var.i || this.j != z7Var.j || this.k != z7Var.k || this.m != z7Var.m || this.n != z7Var.n)) {
-            return false;
-        }
-        if (i7 == 0 && this.c != z7Var.c) {
-            return false;
-        }
-        if (i7 == 2 && !TextUtils.equals(this.e, z7Var.e)) {
-            return false;
-        }
-        if (this.a == 8 && !TextUtils.equals(this.e, z7Var.e)) {
-            return false;
-        }
-        int i10 = this.a;
-        if ((i10 == 4 || i10 == 11) && !(TextUtils.equals(this.e, z7Var.e) && TextUtils.equals(this.f, z7Var.f))) {
-            return false;
-        }
-        if (this.a == 6 && (!TextUtils.equals(this.e, z7Var.e) || this.c != z7Var.c)) {
-            return false;
-        }
-        if (this.a == 7 && (this.c != z7Var.c || !TextUtils.equals(this.e, z7Var.e) || this.k != z7Var.k)) {
-            return false;
-        }
-        if (this.a != 9 || (this.q == z7Var.q && this.d == z7Var.d && TextUtils.equals(this.e, z7Var.e) && TextUtils.equals(this.f, z7Var.f))) {
-            return this.a != 10 || this.q == z7Var.q;
-        }
-        return false;
     }
 }

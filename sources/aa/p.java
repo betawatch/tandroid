@@ -67,7 +67,7 @@ import java.util.function.Supplier;
 import m.o3;
 import sg.h0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class p {
     public static final h r = new h(1);
@@ -709,7 +709,7 @@ public final class p {
                 str2 = str7;
                 str3 = str10;
                 i7 = 4;
-                ((ba.e) o3Var.b).b.a(new ai.s((Object) o3Var, str, (Object) ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), (Object) ((ca.q) o3Var.f).a(), 4));
+                ((ba.e) o3Var.b).b.a(new ai.r((Object) o3Var, str, (Object) ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), (Object) ((ca.q) o3Var.f).a(), 4));
             }
         }
         ca.f fVar3 = this.i;

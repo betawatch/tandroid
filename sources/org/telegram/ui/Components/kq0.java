@@ -1,53 +1,58 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final class kq0 extends g.p {
-    public final /* synthetic */ iq0 c;
-    public final /* synthetic */ gt0 d;
+import android.content.Context;
 
-    public kq0(gt0 gt0Var, iq0 iq0Var) {
-        this.d = gt0Var;
-        this.c = iq0Var;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class kq0 extends ds0 {
+    public final /* synthetic */ jt0 Q;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kq0(jt0 jt0Var, Context context) {
+        super(context);
+        this.Q = jt0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        if (r3.h.getAdapter().d(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r5.d(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
-    
-        r1 = 1;
-     */
-    @Override // g.p
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i7) {
-        gt0 gt0Var = this.d;
-        int[] iArr = gt0Var.p1;
-        wr0 wr0Var = gt0Var.R;
-        iq0 iq0Var = this.c;
-        int i10 = iArr[gt0.z0(iq0Var.F) ? 1 : 0];
-        v4.i0 adapter = iq0Var.h.getAdapter();
-        nr0 nr0Var = gt0Var.K;
-        if (adapter != nr0Var) {
-            if (gt0.x(gt0Var, iq0Var.h.getAdapter()) == -1) {
-                if (iq0Var.h.getAdapter() != wr0Var) {
-                    i10 = iq0Var.x.J;
-                } else if (iq0Var.h.getAdapter() == wr0Var && gt0Var.w1[5].a.isEmpty()) {
-                    i10 = iq0Var.x.J;
-                } else {
-                    jq0 jq0Var = iq0Var.x;
-                    jq0Var.B1();
-                    i10 = jq0Var.R.get(i7);
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        ds0 ds0Var;
+        float translationX = getTranslationX();
+        super.setTranslationX(f10);
+        jt0 jt0Var = this.Q;
+        ds0[] ds0VarArr = jt0Var.n0;
+        if (ds0VarArr[0] == this) {
+            float f11 = translationX - f10;
+            ri.q qVar = jt0Var.h2;
+            if (qVar != null) {
+                float f12 = jt0Var.i2 + f11;
+                jt0Var.i2 = f12;
+                int i7 = (int) f12;
+                if (i7 != 0) {
+                    jt0Var.i2 = f12 - i7;
+                    qVar.h(i7, 0);
                 }
             }
         }
-        return Math.min(i10, iq0Var.x.J);
+        if (jt0Var.j1 && (ds0Var = ds0VarArr[0]) == this) {
+            float abs = Math.abs(ds0Var.getTranslationX()) / ds0VarArr[0].getMeasuredWidth();
+            jt0Var.l1(abs, ds0VarArr[1].F);
+            if (jt0Var.I()) {
+                int i10 = jt0Var.A0;
+                if (i10 == 2) {
+                    jt0Var.r0 = 1.0f - abs;
+                } else if (i10 == 1) {
+                    jt0Var.r0 = abs;
+                }
+                jt0Var.M1(abs);
+                float k02 = jt0Var.k0(abs);
+                jt0Var.s0 = k02;
+                jt0Var.u0.setVisibility((k02 == 0.0f || !jt0Var.I() || jt0Var.A0()) ? 4 : 0);
+            } else {
+                jt0Var.r0 = 0.0f;
+            }
+            jt0Var.I1(false);
+        }
+        jt0Var.S();
+        jt0Var.U();
     }
 }

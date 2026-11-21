@@ -1,39 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ma0 extends org.telegram.ui.Cells.r1 {
-    public final /* synthetic */ org.telegram.ui.y7 zd;
+public final class ma0 extends pi.k {
+    public int W;
+    public Runnable X;
+    public final /* synthetic */ qa0 Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ma0(org.telegram.ui.y7 y7Var, Context context, int i7, h6.m mVar, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i7, false, mVar, i6Var);
-        this.zd = y7Var;
+    public ma0(qa0 qa0Var, di.b1 b1Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(null, b1Var, h6Var);
+        this.Y = qa0Var;
+        this.W = -1;
     }
 
-    @Override // org.telegram.ui.Cells.r1, org.telegram.ui.Cells.z, android.view.View, org.telegram.ui.Cells.r9
-    public final void invalidate() {
-        super.invalidate();
-        ((oa0) this.zd.d).f.invalidate();
+    @Override // pi.k, v4.k
+    public final void N() {
+        super.N();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+        }
+        la0 la0Var = new la0(this, 0);
+        this.X = la0Var;
+        org.telegram.messenger.g0.g3(la0Var);
+        qa0 qa0Var = this.Y;
+        if (qa0Var.W) {
+            qa0Var.W = false;
+            org.telegram.messenger.g0.g3(new la0(this, 1));
+        }
     }
 
-    @Override // org.telegram.ui.Cells.r1, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        oa0.b((oa0) this.zd.d, this);
+    @Override // pi.k
+    public final void W() {
+        wa0 wa0Var = this.Y.d0;
+        org.telegram.messenger.g0.r(wa0Var.E);
+        wa0Var.E.run();
+        if (this.W == -1) {
+            this.W = org.telegram.messenger.ks.f(wa0Var.x).q(null, this.W, false);
+        }
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            this.X = null;
+        }
     }
 
-    @Override // org.telegram.ui.Cells.r1
-    public final void y3(org.telegram.messenger.fj fjVar, org.telegram.messenger.aj ajVar, boolean z10, boolean z11, boolean z12, boolean z13) {
-        super.y3(fjVar, ajVar, z10, z11, z12, z13);
-        oa0.b((oa0) this.zd.d, this);
-    }
-
-    @Override // org.telegram.ui.Cells.r1, android.view.View
-    public final void invalidate(int i7, int i10, int i11, int i12) {
-        super.invalidate(i7, i10, i11, i12);
-        ((oa0) this.zd.d).f.invalidate();
+    @Override // pi.k, v4.k, v4.n0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+        }
+        la0 la0Var = new la0(this, 2);
+        this.X = la0Var;
+        org.telegram.messenger.g0.g3(la0Var);
     }
 }

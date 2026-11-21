@@ -1,27 +1,46 @@
 package sh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.wz;
+import java.util.ArrayList;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class m extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class m {
+    public final int a;
+    public final TLRPC.InputPeer b;
+    public final int c;
+    public final byte[] d;
+    public final z0 e;
+    public final x10 f;
+    public String g;
+    public boolean h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
 
-    static {
-        k41.h(new m());
+    public m(int i7, TLRPC.InputPeer inputPeer, int i10, byte[] bArr, z0 z0Var, x10 x10Var) {
+        this.a = i7;
+        this.b = inputPeer;
+        this.c = i10;
+        this.d = bArr;
+        this.e = z0Var;
+        this.f = x10Var;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
-        wz wzVar = new wz(context, null);
-        wzVar.setViewType(16);
-        wzVar.setMinimumHeight(g0.L(48.0f));
-        return wzVar;
+    public final void a() {
+        if (this.h || this.i) {
+            return;
+        }
+        this.i = true;
+        TLRPC.TL_messages_getPollVotes tL_messages_getPollVotes = new TLRPC.TL_messages_getPollVotes();
+        String str = this.g;
+        tL_messages_getPollVotes.limit = str != null ? 10 : 15;
+        tL_messages_getPollVotes.peer = this.b;
+        tL_messages_getPollVotes.id = this.c;
+        tL_messages_getPollVotes.option = this.d;
+        tL_messages_getPollVotes.offset = str;
+        ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getPollVotes, new d3.b(1), new h(this, 1));
     }
 }

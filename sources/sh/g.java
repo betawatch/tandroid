@@ -1,112 +1,98 @@
 package sh;
 
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.SparseArray;
+import c8.dd;
 import java.util.ArrayList;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n0;
+import org.telegram.messenger.n5;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g {
-    public final TLRPC.TL_messageMediaPoll a;
-    public final TLRPC.TL_inputMediaPoll b;
-    public final long c;
-    public final String d;
-    public final ArrayList e;
+public abstract class g {
+    public static int a(fj fjVar) {
+        if (fjVar.D == 17) {
+            TLRPC.Message message = fjVar.k;
+            int i7 = fjVar.K1;
+            TLRPC.MessageMedia n1 = fj.n1(message);
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) (TLRPC.TL_messageMediaPoll.class.isInstance(n1) ? (TLRPC.MessageMedia) TLRPC.TL_messageMediaPoll.class.cast(n1) : null);
+            if (tL_messageMediaPoll != null) {
+                TLRPC.Poll poll = tL_messageMediaPoll.poll;
+                int i10 = poll.closed ? 8 : 0;
+                if (poll.subscribers_only) {
+                    TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+                    TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-(messageFwdHeader != null ? n5.o(messageFwdHeader.from_id) : fj.B0(fjVar.k))));
+                    if (O0 != null) {
+                        if (O0.left || O0.kicked) {
+                            i10 |= 1;
+                        }
+                        TLRPC.MessageFwdHeader messageFwdHeader2 = message.fwd_from;
+                        if ((messageFwdHeader2 != null ? messageFwdHeader2.date : message.date) - O0.date < 86400) {
+                            i10 |= 2;
+                        }
+                    }
+                }
+                ArrayList<String> arrayList = tL_messageMediaPoll.poll.countries_iso2;
+                if (arrayList != null && !arrayList.isEmpty()) {
+                    if (!tL_messageMediaPoll.poll.countries_iso2.contains(((n0) mp.u1(i7).A7.T.b).c)) {
+                        return i10 | 4;
+                    }
+                }
+                return i10;
+            }
+        }
+        return 0;
+    }
 
-    public g(e eVar, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, long j3, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.c = j3;
-        this.d = str;
-        this.e = arrayList;
-        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
-        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-        tL_inputMediaPoll.poll = tL_poll;
-        TLRPC.Poll poll = tL_messageMediaPoll.poll;
-        tL_poll.id = poll.id;
-        tL_poll.flags = poll.flags;
-        tL_poll.closed = poll.closed;
-        tL_poll.public_voters = poll.public_voters;
-        tL_poll.multiple_choice = poll.multiple_choice;
-        tL_poll.open_answers = poll.open_answers;
-        tL_poll.revoting_disabled = poll.revoting_disabled;
-        tL_poll.shuffle_answers = poll.shuffle_answers;
-        tL_poll.subscribers_only = poll.subscribers_only;
-        tL_poll.countries_iso2 = poll.countries_iso2;
-        tL_poll.hide_results_until_close = poll.hide_results_until_close;
-        tL_poll.creator = poll.creator;
-        tL_poll.quiz = poll.quiz;
-        tL_poll.answers = new ArrayList<>(tL_messageMediaPoll.poll.answers);
-        ArrayList<TLRPC.PollAnswer> arrayList3 = tL_messageMediaPoll.poll.answers;
-        int size = arrayList3.size();
-        int i7 = 0;
-        while (i7 < size) {
-            TLRPC.PollAnswer pollAnswer = arrayList3.get(i7);
-            i7++;
-            new TLRPC.TL_inputPollAnswer().text = pollAnswer.text;
-        }
-        TLRPC.Poll poll2 = tL_inputMediaPoll.poll;
-        TLRPC.Poll poll3 = tL_messageMediaPoll.poll;
-        poll2.question = poll3.question;
-        poll2.close_period = poll3.close_period;
-        poll2.close_date = poll3.close_date;
-        poll2.hash = poll3.hash;
-        TLRPC.PollResults pollResults = tL_messageMediaPoll.results;
-        if (pollResults != null && !TextUtils.isEmpty(pollResults.solution)) {
-            TLRPC.PollResults pollResults2 = tL_messageMediaPoll.results;
-            tL_inputMediaPoll.solution = pollResults2.solution;
-            tL_inputMediaPoll.solution_entities = pollResults2.solution_entities;
-            tL_inputMediaPoll.flags |= 2;
-        }
-        if (arrayList2 != null && !arrayList2.isEmpty()) {
-            tL_inputMediaPoll.correct_answers = new ArrayList<>(arrayList2);
-            tL_inputMediaPoll.flags |= 1;
-        }
-        if (eVar != null) {
-            SparseArray sparseArray = eVar.a;
-            int size2 = sparseArray.size();
-            for (int i10 = 0; i10 < size2; i10++) {
-                int keyAt = sparseArray.keyAt(i10);
-                d dVar = (d) sparseArray.valueAt(i10);
-                if (dVar instanceof th.e) {
-                    TLRPC.TL_inputMediaWebPage tL_inputMediaWebPage = new TLRPC.TL_inputMediaWebPage();
-                    tL_inputMediaWebPage.url = ((th.e) dVar).b;
-                    tL_inputMediaWebPage.optional = true;
-                    e.k(tL_inputMediaPoll, keyAt, tL_inputMediaWebPage);
-                } else if (dVar instanceof th.f) {
-                    e.k(tL_inputMediaPoll, keyAt, cg.d.h(((th.f) dVar).b));
-                } else if (dVar instanceof th.h) {
-                    TLRPC.TL_inputMediaDocument tL_inputMediaDocument = new TLRPC.TL_inputMediaDocument();
-                    TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                    TLRPC.Document document = ((th.h) dVar).b;
-                    tL_inputDocument.id = document.id;
-                    tL_inputDocument.access_hash = document.access_hash;
-                    tL_inputDocument.file_reference = document.file_reference;
-                    tL_inputMediaDocument.id = tL_inputDocument;
-                    e.k(tL_inputMediaPoll, keyAt, tL_inputMediaDocument);
+    public static SpannableStringBuilder b(int i7, fj fjVar) {
+        if (fjVar.D == 17) {
+            TLRPC.Message message = fjVar.k;
+            int i10 = fjVar.K1;
+            TLRPC.MessageMedia n1 = fj.n1(message);
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) (TLRPC.TL_messageMediaPoll.class.isInstance(n1) ? (TLRPC.MessageMedia) TLRPC.TL_messageMediaPoll.class.cast(n1) : null);
+            if (tL_messageMediaPoll != null) {
+                if (dd.a(i7, 4)) {
+                    ArrayList arrayList = new ArrayList(tL_messageMediaPoll.poll.countries_iso2.size());
+                    ArrayList<String> arrayList2 = tL_messageMediaPoll.poll.countries_iso2;
+                    int size = arrayList2.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        String str = arrayList2.get(i11);
+                        i11++;
+                        String str2 = str;
+                        String i02 = gd.i0(2131750504, str2);
+                        if (!TextUtils.isEmpty(i02)) {
+                            str2 = i02;
+                        }
+                        arrayList.add(str2);
+                    }
+                    boolean z10 = tL_messageMediaPoll.poll.subscribers_only;
+                    if (arrayList.size() == 1) {
+                        return g0.W2(gd.a0(null, null, z10 ? 2131746923 : 2131746920, arrayList.get(0)));
+                    }
+                    StringBuffer stringBuffer = new StringBuffer();
+                    for (int i12 = 0; i12 < arrayList.size() - 1; i12++) {
+                        if (stringBuffer.length() > 0) {
+                            stringBuffer.append(", ");
+                        }
+                        stringBuffer.append((String) arrayList.get(i12));
+                    }
+                    return g0.W2(gd.a0(null, null, z10 ? 2131746922 : 2131746919, stringBuffer, i5.c.h(1, arrayList)));
                 }
-            }
-            int size3 = sparseArray.size();
-            for (int i11 = 0; i11 < size3; i11++) {
-                int keyAt2 = sparseArray.keyAt(i11);
-                d dVar2 = (d) sparseArray.valueAt(i11);
-                if (dVar2 instanceof th.e) {
-                    TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
-                    TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
-                    tL_messageMediaWebPage.webpage = tL_webPage;
-                    String str2 = ((th.e) dVar2).b;
-                    tL_webPage.display_url = str2;
-                    tL_webPage.url = str2;
-                    e.l(tL_messageMediaPoll, keyAt2, tL_messageMediaWebPage);
-                } else if (dVar2 instanceof th.f) {
-                    e.l(tL_messageMediaPoll, keyAt2, ((th.f) dVar2).b);
-                } else if (dVar2 instanceof th.h) {
-                    TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
-                    tL_messageMediaDocument.document = ((th.h) dVar2).b;
-                    e.l(tL_messageMediaPoll, keyAt2, tL_messageMediaDocument);
+                if (dd.a(i7, 1)) {
+                    TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+                    return g0.W2(gd.a0(null, null, 2131746924, n5.u(mp.u1(i10).O0(Long.valueOf(-(messageFwdHeader != null ? n5.o(messageFwdHeader.from_id) : fj.B0(fjVar.k)))))));
+                }
+                if (dd.a(i7, 2)) {
+                    return g0.W2(gd.N0(2131746921, null));
                 }
             }
         }
-        this.a = tL_messageMediaPoll;
-        this.b = tL_inputMediaPoll;
+        return null;
     }
 }

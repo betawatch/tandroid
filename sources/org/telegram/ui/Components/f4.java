@@ -1,10 +1,115 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Point;
+import android.text.TextPaint;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class f4 extends sb0 {
-    @Override // org.telegram.ui.Components.sb0
-    public final CharSequence d(int i7) {
-        return org.telegram.messenger.gd.G(i7, "Hours", new Object[0]);
+public final class f4 extends LinearLayout {
+    public final /* synthetic */ int a = 0;
+    public boolean b;
+    public final /* synthetic */ tb0 c;
+    public final Object d;
+    public final /* synthetic */ tb0 e;
+    public final /* synthetic */ tb0 f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f4(Context context, z4 z4Var, tb0 tb0Var, wg.f fVar, wg.g gVar) {
+        super(context);
+        this.c = tb0Var;
+        this.e = fVar;
+        this.f = gVar;
+        this.b = false;
+        TextPaint textPaint = new TextPaint(1);
+        this.d = textPaint;
+        setWillNotDraw(false);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(20.0f));
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        textPaint.setColor(z4Var.a);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.onDraw(canvas);
+                canvas.drawText(":", ((wg.f) this.e).getRight() - org.telegram.messenger.g0.L(12.0f), (getHeight() / 2.0f) - org.telegram.messenger.g0.L(11.0f), (TextPaint) this.d);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                tb0 tb0Var = (tb0) this.d;
+                this.b = true;
+                Point point = org.telegram.messenger.g0.q;
+                int i11 = point.x > point.y ? 3 : 5;
+                tb0 tb0Var2 = this.c;
+                tb0Var2.setItemCount(i11);
+                tb0Var.setItemCount(i11);
+                tb0 tb0Var3 = this.e;
+                tb0Var3.setItemCount(i11);
+                tb0 tb0Var4 = this.f;
+                tb0Var4.setItemCount(i11);
+                tb0Var2.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                tb0Var.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                tb0Var3.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                tb0Var4.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                this.b = false;
+                super.onMeasure(i7, i10);
+                break;
+            default:
+                wg.g gVar = (wg.g) this.f;
+                wg.f fVar = (wg.f) this.e;
+                this.b = true;
+                Point point2 = org.telegram.messenger.g0.q;
+                int i12 = point2.x > point2.y ? 3 : 5;
+                tb0 tb0Var5 = this.c;
+                tb0Var5.setItemCount(i12);
+                fVar.setItemCount(i12);
+                gVar.setItemCount(i12);
+                tb0Var5.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i12;
+                fVar.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i12;
+                gVar.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i12;
+                this.b = false;
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    super.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    super.requestLayout();
+                    break;
+                }
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f4(Context context, tb0 tb0Var, tb0 tb0Var2, tb0 tb0Var3, tb0 tb0Var4) {
+        super(context);
+        this.c = tb0Var;
+        this.d = tb0Var2;
+        this.e = tb0Var3;
+        this.f = tb0Var4;
+        this.b = false;
     }
 }

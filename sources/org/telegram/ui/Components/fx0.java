@@ -1,28 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class fx0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Switch b;
+public final class fx0 extends tb0 {
+    public final /* synthetic */ gx0 z0;
 
-    public /* synthetic */ fx0(Switch r12, int i7) {
-        this.a = i7;
-        this.b = r12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fx0(gx0 gx0Var, Context context) {
+        super(13, context, null);
+        this.z0 = gx0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.d = null;
-                break;
-            default:
-                this.b.e = null;
-                break;
+    @Override // org.telegram.ui.Components.tb0, android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.j5, false);
+        gx0 gx0Var = this.z0;
+        if (x02 != gx0Var.a) {
+            gx0Var.a = x02;
+            setTextColor(x02);
         }
+        super.onDraw(canvas);
+        float L = org.telegram.messenger.g0.L(31.0f);
+        gx0Var.e.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.h7, false));
+        canvas.drawLine(org.telegram.messenger.g0.L(2.0f), L, getMeasuredWidth() - org.telegram.messenger.g0.L(2.0f), L, gx0Var.e);
+        float measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(31.0f);
+        canvas.drawLine(org.telegram.messenger.g0.L(2.0f), measuredHeight, getMeasuredWidth() - org.telegram.messenger.g0.L(2.0f), measuredHeight, gx0Var.e);
     }
 }

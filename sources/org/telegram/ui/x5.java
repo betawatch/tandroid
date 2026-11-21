@@ -7,11 +7,11 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public class x5 extends org.telegram.ui.ActionBar.h2 {
+public class x5 extends org.telegram.ui.ActionBar.g2 {
     public v5 a;
-    public org.telegram.ui.Components.ck0 b;
+    public org.telegram.ui.Components.ek0 b;
     public final ArrayList c;
     public ArrayList d;
     public int e;
@@ -59,51 +59,51 @@ public class x5 extends org.telegram.ui.ActionBar.h2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.r1(this, 28));
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.M0(2131747719, null));
-        org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(context, null);
-        this.b = ck0Var;
-        ck0Var.r1();
+        this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 28));
+        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131747718, null));
+        org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
+        this.b = ek0Var;
+        ek0Var.r1();
         this.b.setSectionsDrawBackground(true);
         v4.k kVar = new v4.k();
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
         this.b.setLayoutManager(new v4.c0());
-        org.telegram.ui.Components.ck0 ck0Var2 = this.b;
+        org.telegram.ui.Components.ek0 ek0Var2 = this.b;
         v5 v5Var = new v5(this);
         this.a = v5Var;
-        ck0Var2.setAdapter(v5Var);
+        ek0Var2.setAdapter(v5Var);
         this.b.setOnItemClickListener(new w0(this, 7));
         frameLayout.addView(this.b);
         Z();
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
-    public final org.telegram.ui.Components.ck0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.g2
+    public final org.telegram.ui.Components.ek0 getListViewForSimpleGlass() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         this.e = getArguments().getInt(TeXSymbolParser.TYPE_ATTR);
         Z();
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean useSimpleActionBar() {
         return true;
     }

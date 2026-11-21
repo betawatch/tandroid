@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class z extends o0 implements r0 {
     public int F;
@@ -26,7 +26,7 @@ public class z extends o0 implements r0 {
     public VelocityTracker K;
     public ArrayList L;
     public ArrayList M;
-    public hn O;
+    public jn O;
     public x P;
     public Rect R;
     public long S;
@@ -47,7 +47,7 @@ public class z extends o0 implements r0 {
     public final ArrayList G = new ArrayList();
     public final s4.s0 J = new s4.s0(this, 7);
     public View N = null;
-    public final vj0 Q = new vj0(this);
+    public final xj0 Q = new xj0(this);
 
     public z(w wVar) {
         this.y = wVar;
@@ -164,17 +164,17 @@ public class z extends o0 implements r0 {
         }
     }
 
-    public final void h(ck0 ck0Var) {
+    public final void h(ek0 ek0Var) {
         RecyclerView recyclerView = this.I;
-        if (recyclerView == ck0Var) {
+        if (recyclerView == ek0Var) {
             return;
         }
-        vj0 vj0Var = this.Q;
+        xj0 xj0Var = this.Q;
         if (recyclerView != null) {
             recyclerView.q0(this);
             RecyclerView recyclerView2 = this.I;
-            recyclerView2.F.remove(vj0Var);
-            if (recyclerView2.G == vj0Var) {
+            recyclerView2.F.remove(xj0Var);
+            if (recyclerView2.G == xj0Var) {
                 recyclerView2.G = null;
             }
             ArrayList arrayList = this.I.Q;
@@ -206,21 +206,21 @@ public class z extends o0 implements r0 {
                 this.O = null;
             }
         }
-        this.I = ck0Var;
-        if (ck0Var != null) {
-            ck0Var.getResources();
+        this.I = ek0Var;
+        if (ek0Var != null) {
+            ek0Var.getResources();
             this.f = org.telegram.messenger.g0.L(120.0f);
             this.h = org.telegram.messenger.g0.L(800.0f);
             this.H = ViewConfiguration.get(this.I.getContext()).getScaledTouchSlop();
             this.I.i(this);
-            this.I.F.add(vj0Var);
+            this.I.F.add(xj0Var);
             RecyclerView recyclerView3 = this.I;
             if (recyclerView3.Q == null) {
                 recyclerView3.Q = new ArrayList();
             }
             recyclerView3.Q.add(this);
             this.P = new x(this);
-            this.O = new hn(this.I.getContext(), this.P);
+            this.O = new jn(this.I.getContext(), this.P);
         }
     }
 

@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.provider.Settings;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v00 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class v00 implements Runnable {
                     LaunchActivity launchActivity2 = f40Var.d2;
                     Typeface typeface2 = org.telegram.messenger.g0.a;
                     if (Settings.canDrawOverlays(launchActivity2)) {
-                        org.telegram.ui.Components.z10.g0 = false;
+                        org.telegram.ui.Components.c20.g0 = false;
                         break;
                     }
                 }

@@ -3,14 +3,14 @@ package org.telegram.ui.Cells;
 import android.graphics.Canvas;
 import android.text.Layout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class t9 extends w9 {
     public final s9 p0;
 
-    public t9(fi.w7 w7Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public t9(fi.w7 w7Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.p0 = w7Var;
-        this.g0 = i6Var;
+        this.g0 = h6Var;
     }
 
     @Override // org.telegram.ui.Cells.w9
@@ -19,7 +19,7 @@ public class t9 extends w9 {
 
     public final void W(Canvas canvas) {
         Layout staticTextLayout = this.p0.getStaticTextLayout();
-        int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.De, this.g0);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.De, this.g0);
         this.o.setColor(w02);
         this.p.setColor(w02);
         h(canvas, staticTextLayout, this.u, this.v, true, true, 0.0f);

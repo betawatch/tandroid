@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class j0 extends FrameLayout {
     public final int a;
@@ -40,10 +40,10 @@ public abstract class j0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        int i7 = org.telegram.ui.ActionBar.n6.m6;
+        int i7 = org.telegram.ui.ActionBar.m6.m6;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        org.telegram.ui.ActionBar.u6.s(this.b, i7, null, mode);
-        org.telegram.ui.ActionBar.u6.s(this.c, i7, null, mode);
+        org.telegram.ui.ActionBar.t6.s(this.b, i7, null, mode);
+        org.telegram.ui.ActionBar.t6.s(this.c, i7, null, mode);
     }
 
     @Override // android.view.View

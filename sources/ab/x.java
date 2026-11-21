@@ -1,12 +1,12 @@
 package ab;
 
 import java.util.HashMap;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class x {
-    public static final nd0 a;
+    public static final md0 a;
 
     static {
         HashMap hashMap = new HashMap();
@@ -17,6 +17,6 @@ public abstract class x {
         hashMap2.remove(bb.e.class);
         hashMap.put(bb.d.class, a.a);
         hashMap2.remove(bb.d.class);
-        a = new nd0(new HashMap(hashMap), new HashMap(hashMap2), qa.f.a, 11);
+        a = new md0(new HashMap(hashMap), new HashMap(hashMap2), qa.f.a, 11);
     }
 }

@@ -19,7 +19,7 @@ import javax.crypto.Mac;
 import org.telegram.messenger.ht;
 import org.telegram.ui.Cells.c5;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class n implements k, u2.k {
     public final Context a;
@@ -70,24 +70,24 @@ public final class n implements k, u2.k {
     }
 
     @Override // u2.k
-    public u2.l F(b8 b8Var) {
+    public u2.l D(b8 b8Var) {
         Context context;
         int i7 = Build.VERSION.SDK_INT;
         if (i7 < 31 && ((context = this.a) == null || i7 < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen"))) {
-            return new w7.s(25).F(b8Var);
+            return new w7.s(25).D(b8Var);
         }
         int h = s0.h(((e2.u) b8Var.c).s);
         h2.a.g("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + l0.I(h));
         androidx.activity.n nVar = new androidx.activity.n(new u2.b(h, 0), new u2.b(h, 1));
         nVar.b = true;
-        return nVar.F(b8Var);
+        return nVar.D(b8Var);
     }
 
     @Override // androidx.emoji2.text.k
     public void a(u6 u6Var) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new a("EmojiCompatInitializer", 0));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
-        threadPoolExecutor.execute(new aa.r(this, u6Var, threadPoolExecutor, 6));
+        threadPoolExecutor.execute(new aa.r(this, u6Var, threadPoolExecutor, 7));
     }
 
     public void b(h6.m mVar, ca.i iVar, ob.c cVar) {

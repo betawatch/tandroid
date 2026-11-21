@@ -3,17 +3,17 @@ package gi;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import hi.e3;
+import hi.d3;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.bm;
-import org.telegram.ui.Components.dj;
-import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.ki;
+import org.telegram.ui.Components.dm;
+import org.telegram.ui.Components.fj;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.mi;
 import v4.c1;
 import v4.t;
 import v4.x0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class g extends t {
     public final /* synthetic */ int Q;
@@ -30,7 +30,7 @@ public final class g extends t {
     public boolean Y0() {
         switch (this.Q) {
             case 4:
-                return ((iw0) this.R).R1 != null && gd.a0;
+                return ((kw0) this.R).R1 != null && gd.a0;
             default:
                 return super.Y0();
         }
@@ -41,10 +41,10 @@ public final class g extends t {
         switch (this.Q) {
             case 1:
                 super.b0(x0Var, c1Var);
-                e3 e3Var = (e3) this.R;
-                if (e3Var.V) {
-                    e3Var.V = false;
-                    e3Var.a();
+                d3 d3Var = (d3) this.R;
+                if (d3Var.V) {
+                    d3Var.V = false;
+                    d3Var.a();
                     break;
                 }
                 break;
@@ -71,14 +71,14 @@ public final class g extends t {
     public void v0(RecyclerView recyclerView, c1 c1Var, int i7) {
         switch (this.Q) {
             case 2:
-                dj djVar = new dj(this, recyclerView.getContext());
-                djVar.a = i7;
-                w0(djVar);
+                fj fjVar = new fj(this, recyclerView.getContext());
+                fjVar.a = i7;
+                w0(fjVar);
                 break;
             case 3:
-                bm bmVar = new bm(this, recyclerView.getContext());
-                bmVar.a = i7;
-                w0(bmVar);
+                dm dmVar = new dm(this, recyclerView.getContext());
+                dmVar.a = i7;
+                w0(dmVar);
                 break;
             default:
                 super.v0(recyclerView, c1Var, i7);
@@ -102,16 +102,16 @@ public final class g extends t {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(ki kiVar, int i7, int i10) {
+    public /* synthetic */ g(mi miVar, int i7, int i10) {
         super(i7);
         this.Q = i10;
-        this.R = kiVar;
+        this.R = miVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(iw0 iw0Var) {
+    public g(kw0 kw0Var) {
         super(5);
         this.Q = 4;
-        this.R = iw0Var;
+        this.R = kw0Var;
     }
 }

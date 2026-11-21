@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import bg.i0;
 import bi.h0;
-import bi.m2;
+import bi.q2;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.fj;
@@ -15,18 +15,18 @@ import org.telegram.messenger.t3;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.n20;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.Components.q20;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.f40;
 import org.telegram.ui.fy0;
-import org.telegram.ui.gh;
+import org.telegram.ui.hh;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -38,13 +38,13 @@ public final /* synthetic */ class f implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ f(int i7, q10 q10Var, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, TwoStepVerificationActivity twoStepVerificationActivity, Runnable runnable, h2 h2Var, long j3) {
+    public /* synthetic */ f(int i7, q10 q10Var, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, TwoStepVerificationActivity twoStepVerificationActivity, Runnable runnable, g2 g2Var, long j3) {
         this.b = i7;
         this.d = q10Var;
         this.e = inputCheckPasswordSRP;
         this.f = twoStepVerificationActivity;
         this.g = runnable;
-        this.h = h2Var;
+        this.h = g2Var;
         this.c = j3;
     }
 
@@ -59,10 +59,10 @@ public final /* synthetic */ class f implements RequestDelegate {
         Object obj5 = this.d;
         switch (i7) {
             case 0:
-                g0.g3(new i(this.b, tL_error, (q10) obj5, (TLRPC.InputCheckPasswordSRP) obj4, (TwoStepVerificationActivity) obj3, (Runnable) obj2, (h2) obj, this.c));
+                g0.g3(new i(this.b, tL_error, (q10) obj5, (TLRPC.InputCheckPasswordSRP) obj4, (TwoStepVerificationActivity) obj3, (Runnable) obj2, (g2) obj, this.c));
                 break;
             case 1:
-                g0.g3(new i(tLObject, this.b, (u1) obj5, (Context) obj4, this.c, (i6) obj3, (org.telegram.ui.web.q) obj2, (h0) obj));
+                g0.g3(new i(tLObject, this.b, (t1) obj5, (Context) obj4, this.c, (h6) obj3, (org.telegram.ui.web.q) obj2, (h0) obj));
                 break;
             case 2:
                 f40 f40Var = (f40) obj5;
@@ -75,12 +75,12 @@ public final /* synthetic */ class f implements RequestDelegate {
                 if (z10) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                     mp.u1(f40Var.a).V3(updates, false);
-                    g0.g3(new m2(f40Var, updates, j3, 28));
+                    g0.g3(new q2(f40Var, updates, j3, 28));
                 } else if (tL_error != null && "USER_PRIVACY_RESTRICTED".equalsIgnoreCase(tL_error.text)) {
                     hashSet.add(Long.valueOf(j3));
                 }
                 if (atomicInteger.incrementAndGet() == i10 && !hashSet.isEmpty()) {
-                    g0.g3(new n20(f40Var, hashSet, t3Var, str, 14));
+                    g0.g3(new q20(f40Var, hashSet, t3Var, str, 14));
                     break;
                 }
                 break;
@@ -90,46 +90,46 @@ public final /* synthetic */ class f implements RequestDelegate {
                 break;
             default:
                 Activity activity = (Activity) obj5;
-                i6 i6Var = (i6) obj4;
+                h6 h6Var = (h6) obj4;
                 byte[] bArr = (byte[]) obj3;
                 bn bnVar = (bn) obj2;
                 fj fjVar = (fj) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        g0.h3(new fy0(bnVar, activity, i6Var, fjVar, 1), 200L);
+                        g0.h3(new fy0(bnVar, activity, h6Var, fjVar, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            g0.h3(new gh(bnVar, i10, fjVar), 200L);
+                            g0.h3(new hh(bnVar, i10, fjVar), 200L);
                             break;
                         }
                     } else {
-                        g0.h3(new fy0(bnVar, activity, i6Var, fjVar, 0), 200L);
+                        g0.h3(new fy0(bnVar, activity, h6Var, fjVar, 0), 200L);
                         break;
                     }
                 } else {
-                    g0.g3(new i0(tLObject, activity, i6Var, this.c, bArr, bnVar, fjVar));
+                    g0.g3(new i0(tLObject, activity, h6Var, this.c, bArr, bnVar, fjVar));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ f(int i7, u1 u1Var, Context context, long j3, i6 i6Var, org.telegram.ui.web.q qVar, h0 h0Var) {
+    public /* synthetic */ f(int i7, t1 t1Var, Context context, long j3, h6 h6Var, org.telegram.ui.web.q qVar, h0 h0Var) {
         this.b = i7;
-        this.d = u1Var;
+        this.d = t1Var;
         this.e = context;
         this.c = j3;
-        this.f = i6Var;
+        this.f = h6Var;
         this.g = qVar;
         this.h = h0Var;
     }
 
-    public /* synthetic */ f(Activity activity, i6 i6Var, long j3, byte[] bArr, bn bnVar, fj fjVar, int i7) {
+    public /* synthetic */ f(Activity activity, h6 h6Var, long j3, byte[] bArr, bn bnVar, fj fjVar, int i7) {
         this.d = activity;
-        this.e = i6Var;
+        this.e = h6Var;
         this.c = j3;
         this.f = bArr;
         this.g = bnVar;

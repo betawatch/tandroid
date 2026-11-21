@@ -1,28 +1,67 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class b41 implements fw0 {
-    public final /* synthetic */ h41 a;
+public final class b41 extends xy {
+    public final /* synthetic */ k41 Y;
 
-    public b41(h41 h41Var) {
-        this.a = h41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b41(k41 k41Var, int i7, a41 a41Var) {
+        super(5, i7, a41Var);
+        this.Y = k41Var;
     }
 
-    @Override // org.telegram.ui.Components.fw0
-    public final boolean b() {
-        return this.a.b.a();
+    @Override // org.telegram.ui.Components.xy
+    public final boolean D1() {
+        k41 k41Var = this.Y;
+        return k41Var.n.getAdapter() == k41Var.w;
     }
 
-    @Override // org.telegram.ui.Components.fw0
-    public final boolean c() {
-        return this.a.b.c();
+    @Override // v4.c0
+    public final boolean Y0() {
+        return org.telegram.messenger.gd.a0;
     }
 
-    @Override // org.telegram.ui.Components.fw0
-    public final void d(TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10, boolean z11, int i7, int i10) {
-        this.a.b.f(document, obj, z11, i7);
+    @Override // v4.t, v4.c0, v4.p0
+    public final int o0(int i7, v4.x0 x0Var, v4.c1 c1Var) {
+        int i10;
+        View m10;
+        k41 k41Var = this.Y;
+        if (k41Var.O) {
+            return super.o0(i7, x0Var, c1Var);
+        }
+        int i11 = 0;
+        if (k41Var.M != null) {
+            return 0;
+        }
+        if (k41Var.N) {
+            while (true) {
+                i10 = 1;
+                if (i11 >= r()) {
+                    break;
+                }
+                a41 a41Var = k41Var.n;
+                View q10 = q(i11);
+                a41Var.getClass();
+                int R = RecyclerView.R(q10);
+                if (R < 1) {
+                    i10 = R;
+                    break;
+                }
+                i11++;
+            }
+            if (i10 == 0 && (m10 = k41Var.r.m(i10)) != null && m10.getTop() - i7 > org.telegram.messenger.g0.L(58.0f)) {
+                i7 = m10.getTop() - org.telegram.messenger.g0.L(58.0f);
+            }
+        }
+        return super.o0(i7, x0Var, c1Var);
+    }
+
+    @Override // v4.t, v4.c0, v4.p0
+    public final boolean y0() {
+        return false;
     }
 }

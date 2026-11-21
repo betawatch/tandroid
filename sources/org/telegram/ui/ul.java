@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ul implements Runnable {
     public final /* synthetic */ int a;
@@ -23,21 +23,21 @@ public final /* synthetic */ class ul implements Runnable {
                 mm mmVar = this.b;
                 mmVar.getClass();
                 bn bnVar2 = mmVar.a;
-                new ug.z0((org.telegram.ui.ActionBar.h2) bnVar2, 8, true).show();
+                new ug.y0((org.telegram.ui.ActionBar.g2) bnVar2, 8, true).show();
                 bnVar2.getMessagesController().L3();
                 break;
             case 2:
                 mm mmVar2 = this.b;
                 mmVar2.getClass();
                 bn bnVar3 = mmVar2.a;
-                new ug.z0((org.telegram.ui.ActionBar.h2) bnVar3, 8, true).show();
+                new ug.y0((org.telegram.ui.ActionBar.g2) bnVar3, 8, true).show();
                 bnVar3.getMessagesController().L3();
                 break;
             case 3:
                 mm mmVar3 = this.b;
                 mmVar3.getClass();
                 bn bnVar4 = mmVar3.a;
-                new ug.z0((org.telegram.ui.ActionBar.h2) bnVar4, 8, true).show();
+                new ug.y0((org.telegram.ui.ActionBar.g2) bnVar4, 8, true).show();
                 bnVar4.getMessagesController().L3();
                 break;
             case 4:
@@ -49,10 +49,10 @@ public final /* synthetic */ class ul implements Runnable {
                 bnVar5.w5 = null;
                 break;
             case 6:
-                this.b.a.a0.e1();
+                this.b.a.a0.i1();
                 break;
             case 7:
-                this.b.a.a0.e1();
+                this.b.a.a0.i1();
                 break;
             case 8:
                 bn bnVar6 = this.b.a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class ul implements Runnable {
                 break;
             default:
                 bn bnVar7 = this.b.a;
-                bnVar7.showDialog(new ug.z0((org.telegram.ui.ActionBar.h2) bnVar7, 39, false));
+                bnVar7.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) bnVar7, 39, false));
                 break;
         }
     }

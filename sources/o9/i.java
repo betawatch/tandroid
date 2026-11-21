@@ -3,10 +3,10 @@ package o9;
 import android.content.Context;
 import android.text.TextUtils;
 import j$.util.Objects;
-import ji.j;
+import ji.l;
 import q6.m;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -53,14 +53,14 @@ public final class i {
     }
 
     public final String toString() {
-        j jVar = new j(this);
-        jVar.E(this.b, "applicationId");
-        jVar.E(this.a, "apiKey");
-        jVar.E(this.c, "databaseUrl");
-        jVar.E(this.e, "gcmSenderId");
-        jVar.E(this.f, "storageBucket");
-        jVar.E(this.g, "recaptchaSiteKey");
-        jVar.E(this.h, "projectId");
-        return jVar.toString();
+        l lVar = new l(this);
+        lVar.E(this.b, "applicationId");
+        lVar.E(this.a, "apiKey");
+        lVar.E(this.c, "databaseUrl");
+        lVar.E(this.e, "gcmSenderId");
+        lVar.E(this.f, "storageBucket");
+        lVar.E(this.g, "recaptchaSiteKey");
+        lVar.E(this.h, "projectId");
+        return lVar.toString();
     }
 }

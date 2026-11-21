@@ -6,10 +6,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.gt0;
-import org.telegram.ui.Components.lp0;
+import org.telegram.ui.Components.jt0;
+import org.telegram.ui.Components.np0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class de implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class de implements RequestDelegate {
                 }
                 break;
             default:
-                g0.g3(new lp0((gt0) fsVar, tL_error, this.b, this.c, tLObject, 0));
+                g0.g3(new np0((jt0) fsVar, tL_error, this.b, this.c, tLObject, 0));
                 break;
         }
     }

@@ -1,534 +1,305 @@
 package org.telegram.ui.Components;
 
-import android.os.AsyncTask;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.concurrent.CountDownLatch;
-import java.util.regex.Matcher;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class v71 extends AsyncTask {
-    public final String a;
-    public final CountDownLatch b = new CountDownLatch(1);
-    public final String[] c = new String[2];
-    public String d;
-    public final /* synthetic */ w71 e;
+public final class v71 extends FrameLayout {
+    public static final /* synthetic */ int J = 0;
+    public AnimatorSet E;
+    public int F;
+    public int G;
+    public final w51 H;
+    public final /* synthetic */ z71 I;
+    public final ImageReceiver a;
+    public boolean b;
+    public final TextPaint c;
+    public StaticLayout d;
+    public StaticLayout e;
+    public final Paint f;
+    public final Paint h;
+    public final Paint n;
+    public int r;
+    public int s;
+    public int w;
+    public int x;
+    public boolean y;
 
-    public v71(w71 w71Var, String str) {
-        this.e = w71Var;
-        this.a = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v71(z71 z71Var, Context context) {
+        super(context);
+        this.I = z71Var;
+        this.y = true;
+        this.H = new w51(this, 5);
+        setWillNotDraw(false);
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
+        Paint paint = new Paint(1);
+        this.f = paint;
+        paint.setColor(-15095832);
+        Paint paint2 = new Paint();
+        this.h = paint2;
+        paint2.setColor(-6975081);
+        Paint paint3 = new Paint(1);
+        this.n = paint3;
+        paint3.setColor(-1);
+        this.a = new ImageReceiver(this);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x0247, code lost:
-    
-        r2 = r24.c;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x024b, code lost:
-    
-        if (r2[r19] != null) goto L104;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x024d, code lost:
-    
-        if (r10 == null) goto L104;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x024f, code lost:
-    
-        r2[r19] = r10;
-        r2[1] = "other";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x0257, code lost:
-    
-        r2 = r2[r19];
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x0259, code lost:
-    
-        if (r2 == null) goto L110;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x025b, code lost:
-    
-        if (r0 != 0) goto L111;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x0261, code lost:
-    
-        if (r2.contains("/s/") == false) goto L110;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x0267, code lost:
-    
-        if (r4 == null) goto L110;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x0269, code lost:
-    
-        r0 = r24.c[r19].indexOf("/s/");
-        r2 = r24.c[r19].indexOf(47, r0 + 10);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x027e, code lost:
-    
-        if (r0 == (-1)) goto L173;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x0280, code lost:
-    
-        if (r2 != (-1)) goto L116;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x0282, code lost:
-    
-        r2 = r24.c[r19].length();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:136:0x028a, code lost:
-    
-        r24.d = r24.c[r19].substring(r0, r2);
-        r0 = org.telegram.ui.Components.w71.v0.matcher(r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x029e, code lost:
-    
-        if (r0.find() == false) goto L127;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x02bf, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x02c0, code lost:
-    
-        r0 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x02c1, code lost:
-    
-        if (r0 != null) goto L130;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x02c3, code lost:
-    
-        r2 = org.telegram.ui.Components.w71.B0.matcher(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:142:0x02cd, code lost:
-    
-        if (r2.find() != false) goto L132;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x02cf, code lost:
-    
-        r2 = r2.group(r3) + r2.group(2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x02e9, code lost:
-    
-        r5 = r19;
-        r3 = org.telegram.messenger.t0.b.getSharedPreferences("youtubecode", r5);
-        r6 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x02f6, code lost:
-    
-        if (r2 != null) goto L136;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x02f8, code lost:
-    
-        r7 = r3.getString(r2, null);
-        r8 = r3.getString(r2.concat("n"), null);
-        r6 = r7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x0307, code lost:
-    
-        if (r6 == null) goto L139;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x030f, code lost:
-    
-        if (r0.startsWith("//") != false) goto L141;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0311, code lost:
-    
-        r0 = "https:".concat(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x0326, code lost:
-    
-        r24.e.getClass();
-        r7 = null;
-        r0 = org.telegram.ui.Components.w71.c(r24, r0, null, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:152:0x0335, code lost:
-    
-        if (isCancelled() == false) goto L148;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:154:?, code lost:
-    
-        return r7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:155:0x033a, code lost:
-    
-        if (r0 != null) goto L149;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x033c, code lost:
-    
-        r10 = org.telegram.ui.Components.w71.w0.matcher(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x0346, code lost:
-    
-        if (r10.find() != false) goto L151;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:158:0x0348, code lost:
-    
-        r8 = r10.group(1);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x035d, code lost:
-    
-        if (r8 != null) goto L184;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x035f, code lost:
-    
-        r6 = new xi.e(r0).l(r8);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x036c, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r6) == false) goto L158;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:164:0x0370, code lost:
-    
-        r3.edit().putString(r2, r6).putString(r2 + "n", r8).commit();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:166:0x038f, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x0390, code lost:
-    
-        org.telegram.messenger.a8.g(r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x034d, code lost:
-    
-        r10 = org.telegram.ui.Components.w71.x0.matcher(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:169:0x0357, code lost:
-    
-        if (r10.find() != false) goto L154;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:170:0x0359, code lost:
-    
-        r8 = r10.group(1);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:172:0x039a, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r6) == false) goto L166;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x03bf, code lost:
-    
-        org.telegram.messenger.g0.g3(new org.telegram.ui.Components.hn0(23, r24, r6 + r8 + "('" + r24.d.substring(3) + "');"));
-        r24.b.await();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x03e2, code lost:
-    
-        if (isCancelled() == false) goto L178;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x03ea, code lost:
-    
-        return r24.c;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x03cf, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x03d0, code lost:
-    
-        r3 = 1;
-        org.telegram.messenger.a8.g(r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:184:0x03db, code lost:
-    
-        r5 = r3;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x03d5, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x031e, code lost:
-    
-        if (r0.startsWith("/") != false) goto L144;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x0320, code lost:
-    
-        r0 = "https://www.youtube.com".concat(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x0395, code lost:
-    
-        r7 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:190:0x0306, code lost:
-    
-        r8 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:191:0x02e8, code lost:
-    
-        r2 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:192:0x03d7, code lost:
-    
-        r7 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:194:0x02a0, code lost:
-    
-        r0 = new org.json.JSONTokener(r0.group(1)).nextValue();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:195:0x02b0, code lost:
-    
-        if ((r0 instanceof java.lang.String) == false) goto L124;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x02b2, code lost:
-    
-        r0 = (java.lang.String) r0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x02b9, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:199:0x02b8, code lost:
-    
-        r0 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:200:0x02b5, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:201:0x02b6, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:202:0x02bb, code lost:
-    
-        org.telegram.messenger.a8.g(r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:203:0x03d9, code lost:
-    
-        r3 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:204:0x0264, code lost:
-    
-        r7 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:205:0x03dd, code lost:
-    
-        r5 = r0;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x03e4 A[ADDED_TO_REGION] */
-    /* JADX WARN: Type inference failed for: r16v0 */
-    /* JADX WARN: Type inference failed for: r16v1 */
-    /* JADX WARN: Type inference failed for: r16v3, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r16v4 */
-    /* JADX WARN: Type inference failed for: r16v5 */
-    /* JADX WARN: Type inference failed for: r3v42, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v14, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v28 */
-    /* JADX WARN: Type inference failed for: r5v29 */
-    @Override // android.os.AsyncTask
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object doInBackground(Object[] objArr) {
-        int i7;
-        int i10;
-        int i11;
-        String str;
-        int i12;
-        int i13;
-        w71 w71Var = this.e;
-        String str2 = "https://www.youtube.com/embed/" + this.a;
-        w71Var.getClass();
-        HashMap hashMap = null;
-        boolean z10 = true;
-        String c10 = w71.c(this, str2, null, true);
-        if (!isCancelled()) {
-            String s5 = a8.p0.s(new StringBuilder("video_id="), this.a, "&ps=default&gl=US&hl=en");
-            try {
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(s5);
-                sb2.append("&eurl=");
-                sb2.append(URLEncoder.encode("https://youtube.googleapis.com/v/" + this.a, "UTF-8"));
-                s5 = sb2.toString();
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
-            if (c10 != null) {
-                Matcher matcher = w71.u0.matcher(c10);
-                if (matcher.find()) {
-                    StringBuilder n10 = p5.c.n(s5, "&sts=");
-                    n10.append(c10.substring(matcher.start() + 6, matcher.end()));
-                    s5 = n10.toString();
-                } else {
-                    s5 = p5.c.v(s5, "&sts=");
-                }
-            }
-            this.c[1] = "dash";
-            String[] strArr = {"", "&el=leanback", "&el=embedded", "&el=detailpage", "&el=vevo"};
-            int i14 = 0;
-            String str3 = null;
-            int i15 = 0;
-            int i16 = 0;
-            while (true) {
-                int i17 = 2;
-                if (i16 >= 5) {
-                    i7 = i14;
-                    break;
-                }
-                w71 w71Var2 = this.e;
-                String str4 = "https://www.youtube.com/get_video_info?" + s5 + strArr[i16];
-                w71Var2.getClass();
-                String c11 = w71.c(this, str4, hashMap, z10);
-                if (isCancelled()) {
-                    return hashMap;
-                }
-                if (c11 != null) {
-                    String[] split = c11.split("&");
-                    ?? r16 = hashMap;
-                    int i18 = i14;
-                    i10 = i18;
-                    i11 = i10;
-                    String str5 = str3;
-                    int i19 = i15;
-                    ?? r52 = z10;
-                    while (i18 < split.length) {
-                        if (split[i18].startsWith("dashmpd")) {
-                            String[] split2 = split[i18].split("=");
-                            if (split2.length == i17) {
-                                try {
-                                    this.c[i14] = URLDecoder.decode(split2[r52], "UTF-8");
-                                } catch (Exception e11) {
-                                    org.telegram.messenger.a8.g(e11, r52);
-                                }
-                            }
-                            i11 = r52;
-                            i12 = i14;
-                        } else {
-                            i12 = i14;
-                            if (split[i18].startsWith("url_encoded_fmt_stream_map")) {
-                                String[] split3 = split[i18].split("=");
-                                if (split3.length == i17) {
-                                    try {
-                                        String[] split4 = URLDecoder.decode(split3[r52], "UTF-8").split("[&,]");
-                                        i13 = r52;
-                                        int i20 = i12;
-                                        int i21 = i20;
-                                        String str6 = null;
-                                        while (true) {
-                                            try {
-                                                if (i20 < split4.length) {
-                                                    String[] split5 = split4[i20].split("=");
-                                                    String[] strArr2 = split4;
-                                                    if (split5[i12].startsWith(TeXSymbolParser.TYPE_ATTR)) {
-                                                        if (URLDecoder.decode(split5[i13], "UTF-8").contains("video/mp4")) {
-                                                            i21 = i13;
-                                                        }
-                                                    } else if (split5[i12].startsWith("url")) {
-                                                        str6 = URLDecoder.decode(split5[i13], "UTF-8");
-                                                    } else if (split5[i12].startsWith("itag")) {
-                                                        i21 = i12;
-                                                        str6 = null;
-                                                    }
-                                                    if (i21 != 0 && str6 != null) {
-                                                        str5 = str6;
-                                                        break;
-                                                    }
-                                                    i20++;
-                                                    split4 = strArr2;
-                                                }
-                                            } catch (Exception e12) {
-                                                e = e12;
-                                                org.telegram.messenger.a8.g(e, i13);
-                                                i18++;
-                                                i14 = i12;
-                                                r52 = 1;
-                                                i17 = 2;
-                                                r16 = r16;
-                                            }
-                                        }
-                                    } catch (Exception e13) {
-                                        e = e13;
-                                        i13 = r52;
-                                    }
-                                }
-                            } else if (split[i18].startsWith("use_cipher_signature")) {
-                                String[] split6 = split[i18].split("=");
-                                if (split6.length == 2 && split6[1].toLowerCase().equals("true")) {
-                                    i19 = 1;
-                                }
-                            } else if (split[i18].startsWith("hlsvp")) {
-                                String[] split7 = split[i18].split("=");
-                                if (split7.length == 2) {
-                                    try {
-                                        r16 = URLDecoder.decode(split7[1], "UTF-8");
-                                    } catch (Exception e14) {
-                                        org.telegram.messenger.a8.g(e14, true);
-                                    }
-                                }
-                            } else if (split[i18].startsWith("livestream")) {
-                                String[] split8 = split[i18].split("=");
-                                if (split8.length == 2 && split8[1].toLowerCase().equals("1")) {
-                                    i10 = 1;
-                                }
-                            }
-                        }
-                        i18++;
-                        i14 = i12;
-                        r52 = 1;
-                        i17 = 2;
-                        r16 = r16;
-                    }
-                    i7 = i14;
-                    i15 = i19;
-                    str3 = str5;
-                    str = r16;
-                } else {
-                    i7 = i14;
-                    i10 = i7;
-                    i11 = i10;
-                    str = null;
-                }
-                if (i10 != 0) {
-                    if (str == null || i15 != 0 || str.contains("/s/")) {
-                        break;
-                    }
-                    String[] strArr3 = this.c;
-                    strArr3[i7] = str;
-                    strArr3[1] = "hls";
-                }
-                if (i11 != 0) {
-                    break;
-                }
-                i16++;
-                i14 = i7;
-                hashMap = null;
-                z10 = true;
-            }
-        } else {
-            return null;
+    public final void a() {
+        w51 w51Var = this.H;
+        org.telegram.messenger.g0.r(w51Var);
+        if (this.y && this.I.a.d0()) {
+            org.telegram.messenger.g0.h3(w51Var, 3000L);
         }
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        String[] strArr = (String[]) obj;
-        String str = strArr[0];
-        w71 w71Var = this.e;
-        if (str == null) {
-            if (isCancelled()) {
-                return;
-            }
-            w71Var.h();
+    public final void b(int i7) {
+        if (this.s == i7 || i7 < 0 || this.I.I) {
             return;
         }
-        if (org.telegram.messenger.s2.a) {
-            StringBuilder sb2 = new StringBuilder("start play youtube video ");
-            sb2.append(strArr[1]);
-            sb2.append(" ");
-            p5.c.s(strArr[0], sb2);
+        this.s = i7;
+        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.g0.g0(this.s, false, false), this.c, org.telegram.messenger.g0.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.d = staticLayout;
+        if (staticLayout.getLineCount() > 0) {
+            this.r = (int) Math.ceil(this.d.getLineWidth(0));
         }
-        w71Var.x = true;
-        w71Var.y = strArr[0];
-        String str2 = strArr[1];
-        w71Var.E = str2;
-        if (str2.equals("hls")) {
-            w71Var.I = true;
+        invalidate();
+    }
+
+    public final void c(int i7) {
+        if (this.b || i7 < 0 || this.I.I) {
+            return;
         }
-        if (w71Var.s) {
-            w71Var.i();
+        this.w = i7;
+        this.e = new StaticLayout(org.telegram.messenger.g0.g0(this.w, false, false), this.c, org.telegram.messenger.g0.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        invalidate();
+    }
+
+    public final void d(boolean z10, boolean z11) {
+        if (this.y == z10) {
+            return;
         }
-        w71Var.j(false, true);
-        w71Var.g0.d(true, true);
+        this.y = z10;
+        AnimatorSet animatorSet = this.E;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        boolean z12 = this.y;
+        Property property = View.ALPHA;
+        if (z12) {
+            if (z11) {
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                this.E = animatorSet2;
+                animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<v71, Float>) property, 1.0f));
+                this.E.setDuration(150L);
+                this.E.addListener(new u71(this, 0));
+                this.E.start();
+            } else {
+                setAlpha(1.0f);
+            }
+        } else if (z11) {
+            AnimatorSet animatorSet3 = new AnimatorSet();
+            this.E = animatorSet3;
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(this, (Property<v71, Float>) property, 0.0f));
+            this.E.setDuration(150L);
+            this.E.addListener(new u71(this, 1));
+            this.E.start();
+        } else {
+            setAlpha(0.0f);
+        }
+        a();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int L;
+        int L2;
+        Canvas canvas2;
+        int i7;
+        z71 z71Var = this.I;
+        if (z71Var.Q) {
+            if (z71Var.N && z71Var.O != 0.0f) {
+                long currentTimeMillis = System.currentTimeMillis();
+                long j3 = currentTimeMillis - z71Var.M;
+                z71Var.M = currentTimeMillis;
+                float f10 = z71Var.O - (j3 / 150.0f);
+                z71Var.O = f10;
+                if (f10 < 0.0f) {
+                    z71Var.O = 0.0f;
+                }
+                invalidate();
+            }
+            float f11 = z71Var.O;
+            ImageReceiver imageReceiver = this.a;
+            imageReceiver.setAlpha(f11);
+            imageReceiver.h(canvas, null);
+        }
+        if (z71Var.a.d == null || z71Var.I) {
+            return;
+        }
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        if (!z71Var.V) {
+            if (this.d != null) {
+                canvas.save();
+                canvas.translate((measuredWidth - org.telegram.messenger.g0.L(58.0f)) - this.r, measuredHeight - org.telegram.messenger.g0.L((z71Var.U ? 6 : 10) + 29));
+                this.d.draw(canvas);
+                canvas.restore();
+            }
+            if (this.e != null) {
+                canvas.save();
+                canvas.translate(org.telegram.messenger.g0.L(18.0f), measuredHeight - org.telegram.messenger.g0.L((z71Var.U ? 6 : 10) + 29));
+                this.e.draw(canvas);
+                canvas.restore();
+            }
+        }
+        if (this.s != 0) {
+            int i10 = 0;
+            if (z71Var.V) {
+                L = measuredHeight - org.telegram.messenger.g0.L(3.0f);
+                L2 = org.telegram.messenger.g0.L(7.0f);
+            } else if (z71Var.U) {
+                L = measuredHeight - org.telegram.messenger.g0.L(29.0f);
+                i10 = org.telegram.messenger.g0.L(36.0f) + this.r;
+                measuredWidth = (measuredWidth - org.telegram.messenger.g0.L(76.0f)) - this.r;
+                L2 = org.telegram.messenger.g0.L(28.0f);
+            } else {
+                L = measuredHeight - org.telegram.messenger.g0.L(13.0f);
+                L2 = org.telegram.messenger.g0.L(12.0f);
+            }
+            int i11 = measuredHeight - L2;
+            boolean z10 = z71Var.U;
+            Paint paint = this.h;
+            if (z10) {
+                canvas.drawRect(i10, L, measuredWidth, org.telegram.messenger.g0.L(3.0f) + L, paint);
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+            }
+            int i12 = this.b ? this.G : ((int) ((this.w / this.s) * (measuredWidth - i10))) + i10;
+            int i13 = this.x;
+            if (i13 != 0 && (i7 = this.s) != 0) {
+                float f12 = i10;
+                float f13 = L;
+                float c10 = com.google.android.gms.internal.vision.e2.c(i13, i7, measuredWidth - i10, f12);
+                float L3 = org.telegram.messenger.g0.L(3.0f) + L;
+                if (z71Var.U) {
+                    paint = this.n;
+                }
+                canvas2.drawRect(f12, f13, c10, L3, paint);
+            }
+            float f14 = i12;
+            float L4 = org.telegram.messenger.g0.L(3.0f) + L;
+            Paint paint2 = this.f;
+            canvas2.drawRect(i10, L, f14, L4, paint2);
+            if (z71Var.V) {
+                return;
+            }
+            canvas2.drawCircle(f14, i11, org.telegram.messenger.g0.L(this.b ? 7.0f : 5.0f), paint2);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0) {
+            return super.onInterceptTouchEvent(motionEvent);
+        }
+        if (this.y) {
+            onTouchEvent(motionEvent);
+            return this.b;
+        }
+        d(true, true);
+        return true;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int measuredWidth;
+        int measuredHeight;
+        int i7;
+        int i10;
+        z71 z71Var = this.I;
+        i61 i61Var = z71Var.a;
+        if (z71Var.U) {
+            i7 = org.telegram.messenger.g0.L(36.0f) + this.r;
+            measuredWidth = (getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f)) - this.r;
+            measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(28.0f);
+        } else {
+            measuredWidth = getMeasuredWidth();
+            measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(12.0f);
+            i7 = 0;
+        }
+        int i11 = this.s;
+        if (i11 != 0) {
+            i10 = (int) ((this.w / i11) * (measuredWidth - i7));
+        } else {
+            i10 = 0;
+        }
+        int i12 = i10 + i7;
+        int action = motionEvent.getAction();
+        w51 w51Var = this.H;
+        if (action == 0) {
+            if (!this.y || z71Var.V || z71Var.I) {
+                d(true, true);
+            } else if (this.s != 0) {
+                int x10 = (int) motionEvent.getX();
+                int y10 = (int) motionEvent.getY();
+                if (x10 >= i12 - org.telegram.messenger.g0.L(10.0f) && x10 <= org.telegram.messenger.g0.L(10.0f) + i12 && y10 >= measuredHeight - org.telegram.messenger.g0.L(10.0f) && y10 <= org.telegram.messenger.g0.L(10.0f) + measuredHeight) {
+                    this.b = true;
+                    this.F = x10;
+                    this.G = i12;
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                    invalidate();
+                }
+            }
+            org.telegram.messenger.g0.r(w51Var);
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            if (z71Var.x && i61Var.d0()) {
+                org.telegram.messenger.g0.h3(w51Var, 3000L);
+            }
+            if (this.b) {
+                this.b = false;
+                if (z71Var.x) {
+                    int i13 = (int) (((this.G - i7) / (measuredWidth - i7)) * this.s);
+                    this.w = i13;
+                    i61Var.q0(i13 * 1000, false);
+                }
+            }
+        } else if (motionEvent.getAction() == 2 && this.b) {
+            int x11 = (int) motionEvent.getX();
+            int i14 = this.G - (this.F - x11);
+            this.G = i14;
+            this.F = x11;
+            if (i14 < i7) {
+                this.G = i7;
+            } else if (i14 > measuredWidth) {
+                this.G = measuredWidth;
+            }
+            c((int) (((this.G - i7) / (measuredWidth - i7)) * this.s * 1000));
+            invalidate();
+        }
+        super.onTouchEvent(motionEvent);
+        return true;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void requestDisallowInterceptTouchEvent(boolean z10) {
+        super.requestDisallowInterceptTouchEvent(z10);
+        a();
     }
 }

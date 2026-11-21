@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.cb0;
 import org.telegram.ui.bc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a1 extends TextView {
     public final /* synthetic */ int a = 1;
@@ -64,7 +64,7 @@ public final class a1 extends TextView {
                 }
                 super.onDraw(canvas);
                 if (bc1Var.P) {
-                    canvas.drawText(gd.M0(2131743003, null), getWidth() / 2, (int) ((getHeight() / 2) - ((a1Var.getPaint().ascent() + a1Var.getPaint().descent()) / 2.0f)), a1Var.getPaint());
+                    canvas.drawText(gd.N0(2131742997, null), getWidth() / 2, (int) ((getHeight() / 2) - ((a1Var.getPaint().ascent() + a1Var.getPaint().descent()) / 2.0f)), a1Var.getPaint());
                     break;
                 }
                 break;
@@ -116,22 +116,22 @@ public final class a1 extends TextView {
         Paint paint = new Paint();
         this.b = paint;
         this.c = new Paint[bc1Var.e.length];
-        bb0 bb0Var = bc1Var.S;
-        bb0Var.setBounds(0, 0, 80, 80);
-        bb0 bb0Var2 = bc1Var.T;
-        bb0Var2.setBounds(0, 0, 80, 80);
+        cb0 cb0Var = bc1Var.S;
+        cb0Var.setBounds(0, 0, 80, 80);
+        cb0 cb0Var2 = bc1Var.T;
+        cb0Var2.setBounds(0, 0, 80, 80);
         b8 b8Var = bc1Var.Q;
         b8Var.k(0.0f, 0.0f, 80.0f, 80.0f);
         b8 b8Var2 = bc1Var.R;
         b8Var2.k(0.0f, 0.0f, 80.0f, 80.0f);
-        bb0Var.setAlpha(ks.e4);
-        bb0Var2.setAlpha(ks.e4);
+        cb0Var.setAlpha(ks.e4);
+        cb0Var2.setAlpha(ks.e4);
         Canvas canvas = (Canvas) b8Var.b;
         PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
         canvas.drawColor(0, mode);
         ((Canvas) b8Var2.b).drawColor(0, mode);
-        bb0Var.draw((Canvas) b8Var.b);
-        bb0Var2.draw((Canvas) b8Var2.b);
+        cb0Var.draw((Canvas) b8Var.b);
+        cb0Var2.draw((Canvas) b8Var2.b);
         paint.setColor(-1);
     }
 }

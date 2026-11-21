@@ -13,17 +13,17 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class PipRoundVideoView implements org.telegram.messenger.fs {
     public static PipRoundVideoView G;
     public DecelerateInterpolator E;
     public final RectF F = new RectF();
-    public re0 a;
+    public te0 a;
     public int b;
     public TextureView c;
     public ImageView d;
-    public se0 e;
+    public ue0 e;
     public Bitmap f;
     public int h;
     public int n;
@@ -93,7 +93,7 @@ public class PipRoundVideoView implements org.telegram.messenger.fs {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<te0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<te0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<te0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.E == null) {
             this.E = new DecelerateInterpolator();
@@ -109,14 +109,14 @@ public class PipRoundVideoView implements org.telegram.messenger.fs {
         }
         G = this;
         this.s = runnable;
-        re0 re0Var = new re0(this, launchActivity);
-        this.a = re0Var;
-        re0Var.setWillNotDraw(false);
+        te0 te0Var = new te0(this, launchActivity);
+        this.a = te0Var;
+        te0Var.setWillNotDraw(false);
         this.h = org.telegram.messenger.g0.L(126.0f);
         this.n = org.telegram.messenger.g0.L(126.0f);
-        se0 se0Var = new se0(0, launchActivity, this);
-        this.e = se0Var;
-        se0Var.setOutlineProvider(new bg.q0(13));
+        ue0 ue0Var = new ue0(0, launchActivity, this);
+        this.e = ue0Var;
+        ue0Var.setOutlineProvider(new bg.q0(13));
         this.e.setClipToOutline(true);
         this.e.a(1.0f, 0);
         this.a.addView(this.e, c8.ma.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
@@ -165,11 +165,11 @@ public class PipRoundVideoView implements org.telegram.messenger.fs {
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        se0 se0Var;
-        if (i7 != org.telegram.messenger.ks.e2 || (se0Var = this.e) == null) {
+        ue0 ue0Var;
+        if (i7 != org.telegram.messenger.ks.e2 || (ue0Var = this.e) == null) {
             return;
         }
-        se0Var.invalidate();
+        ue0Var.invalidate();
     }
 
     public final void e(boolean z10) {
@@ -179,12 +179,12 @@ public class PipRoundVideoView implements org.telegram.messenger.fs {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<te0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<te0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<te0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.E == null) {
             this.E = new DecelerateInterpolator();
         }
-        this.r.addListener(new te0(this, 0));
+        this.r.addListener(new ve0(this, 0));
         this.r.setInterpolator(this.E);
         this.r.start();
     }

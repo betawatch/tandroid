@@ -1,45 +1,177 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class rq extends View {
-    public final qq a;
+public class rq extends Path {
+    public static ArrayList g;
+    public int e;
+    public int f;
+    public boolean b = false;
+    public boolean c = true;
+    public float d = 0.0f;
+    public final ArrayList a = new ArrayList(1);
 
-    public rq(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context);
-        setVisibility(8);
-        qq qqVar = new qq(this, true, i6Var);
-        this.a = qqVar;
-        qqVar.G = true;
+    public rq() {
     }
 
-    public float getEnterProgress() {
-        int i7;
-        qq qqVar = this.a;
-        float f10 = qqVar.l;
-        return (f10 == 1.0f || !((i7 = qqVar.c) == 0 || i7 == 1)) ? qqVar.h == 0 ? 0.0f : 1.0f : i7 == 0 ? f10 : 1.0f - f10;
+    public final void a() {
+        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
+            return;
+        }
+        b(this.a);
+        this.b = true;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.a.a(canvas);
+    @Override // android.graphics.Path
+    public final void addRect(RectF rectF, Path.Direction direction) {
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            float f10 = rectF.left;
+            int i7 = this.e;
+            float f11 = f10 - i7;
+            float f12 = rectF.top;
+            int i10 = this.f;
+            super.addRect(f11, f12 - i10, rectF.right + i7, rectF.bottom + i10, direction);
+            return;
+        }
+        ArrayList arrayList = this.a;
+        if (arrayList.size() <= 0 || !((RectF) i5.c.h(1, arrayList)).contains(rectF)) {
+            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) i5.c.h(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) i5.c.h(1, arrayList)).bottom) > this.d) {
+                ArrayList arrayList2 = g;
+                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
+                rectF2.set(rectF);
+                arrayList.add(rectF2);
+            } else {
+                ((RectF) i5.c.h(1, arrayList)).union(rectF);
+            }
+            this.b = false;
+        }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        this.a.d(getMeasuredHeight(), getMeasuredWidth());
+    public final void b(List list) {
+        if (list.isEmpty()) {
+            return;
+        }
+        boolean z10 = false;
+        if (list.size() == 1) {
+            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
+            return;
+        }
+        RectF rectF = (RectF) list.get(0);
+        int size = list.size() - 1;
+        super.moveTo(rectF.left - this.e, rectF.top - this.f);
+        for (int i7 = 1; i7 < list.size(); i7++) {
+            RectF rectF2 = (RectF) list.get(i7);
+            if (rectF2.width() != 0.0f) {
+                float f10 = rectF.bottom;
+                int i10 = this.f;
+                float f11 = f10 + i10;
+                float f12 = rectF2.top;
+                if (f11 >= f12 - i10) {
+                    float f13 = rectF.left;
+                    if (f13 <= rectF2.right) {
+                        float f14 = rectF.right;
+                        float f15 = rectF2.left;
+                        if (f14 >= f15) {
+                            if (f13 != f15) {
+                                super.lineTo(f13 - this.e, f12);
+                                super.lineTo(rectF2.left - this.e, rectF2.top);
+                            }
+                            rectF = rectF2;
+                        }
+                    }
+                }
+                z10 = true;
+                size = i7;
+                break;
+            }
+        }
+        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
+        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
+        for (int i11 = size - 1; i11 >= 0; i11--) {
+            RectF rectF3 = (RectF) list.get(i11);
+            if (rectF3.width() != 0.0f) {
+                float f16 = rectF.right;
+                if (f16 != rectF3.right) {
+                    super.lineTo(f16 + this.e, rectF.top);
+                    super.lineTo(rectF3.right + this.e, rectF.top);
+                }
+                rectF = rectF3;
+            }
+        }
+        super.lineTo(rectF.right + this.e, rectF.top - this.f);
+        super.close();
+        if (z10) {
+            b(list.subList(size, list.size()));
+        }
     }
 
-    public void setGravity(int i7) {
-        this.a.z = i7;
+    @Override // android.graphics.Path
+    public void reset() {
+        super.reset();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
+        }
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            g = new ArrayList(arrayList2.size());
+        }
+        g.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
     }
 
-    public void setReverse(boolean z10) {
-        this.a.D = z10;
+    @Override // android.graphics.Path
+    public final void rewind() {
+        super.rewind();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
+        }
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            g = new ArrayList(arrayList2.size());
+        }
+        g.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
+    }
+
+    public rq(int i7) {
+    }
+
+    @Override // android.graphics.Path
+    public void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
+        RectF rectF;
+        if (Build.VERSION.SDK_INT >= 34 && this.c) {
+            ArrayList arrayList = this.a;
+            if (arrayList.size() <= 0 || !((RectF) i5.c.h(1, arrayList)).contains(f10, f11, f12, f13)) {
+                if (arrayList.size() > 0 && Math.abs(f11 - ((RectF) i5.c.h(1, arrayList)).top) <= this.d && Math.abs(f13 - ((RectF) i5.c.h(1, arrayList)).bottom) <= this.d) {
+                    ((RectF) i5.c.h(1, arrayList)).union(f10, f11, f12, f13);
+                } else {
+                    ArrayList arrayList2 = g;
+                    if (arrayList2 != null && arrayList2.size() > 0) {
+                        rectF = (RectF) g.remove(0);
+                    } else {
+                        rectF = new RectF();
+                    }
+                    rectF.set(f10, f11, f12, f13);
+                    arrayList.add(rectF);
+                }
+                this.b = false;
+                return;
+            }
+            return;
+        }
+        int i7 = this.e;
+        float f14 = f10 - i7;
+        int i10 = this.f;
+        super.addRect(f14, f11 - i10, f12 + i7, f13 + i10, direction);
     }
 }

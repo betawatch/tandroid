@@ -3,18 +3,18 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f30 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 b;
     public final /* synthetic */ EditTextBoldCursor c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ f30(Object obj, org.telegram.ui.ActionBar.u1 u1Var, EditTextBoldCursor editTextBoldCursor, int i7) {
+    public /* synthetic */ f30(Object obj, org.telegram.ui.ActionBar.t1 t1Var, EditTextBoldCursor editTextBoldCursor, int i7) {
         this.a = i7;
         this.d = obj;
-        this.b = u1Var;
+        this.b = t1Var;
         this.c = editTextBoldCursor;
     }
 

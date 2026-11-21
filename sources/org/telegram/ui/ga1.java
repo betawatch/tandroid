@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ga1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class ga1 implements RequestDelegate {
                                     if (!(tLObject2 instanceof TL_account.resetPasswordRequestedWait)) {
                                         if (tLObject2 instanceof TL_account.resetPasswordFailedWait) {
                                             int currentTime = ((TL_account.resetPasswordFailedWait) tLObject2).retry_date - twoStepVerificationActivity2.getConnectionsManager().getCurrentTime();
-                                            twoStepVerificationActivity2.B0(org.telegram.messenger.gd.M0(2131745898, null), org.telegram.messenger.gd.a0("ResetPasswordWait", null, 2131745897, currentTime > 86400 ? org.telegram.messenger.gd.G(currentTime / 86400, "Days", new Object[0]) : currentTime > 3600 ? org.telegram.messenger.gd.G(currentTime / 86400, "Hours", new Object[0]) : currentTime > 60 ? org.telegram.messenger.gd.G(currentTime / 60, "Minutes", new Object[0]) : org.telegram.messenger.gd.G(Math.max(1, currentTime), "Seconds", new Object[0])));
+                                            twoStepVerificationActivity2.B0(org.telegram.messenger.gd.N0(2131745897, null), org.telegram.messenger.gd.a0("ResetPasswordWait", null, 2131745896, currentTime > 86400 ? org.telegram.messenger.gd.G(currentTime / 86400, "Days", new Object[0]) : currentTime > 3600 ? org.telegram.messenger.gd.G(currentTime / 86400, "Hours", new Object[0]) : currentTime > 60 ? org.telegram.messenger.gd.G(currentTime / 60, "Minutes", new Object[0]) : org.telegram.messenger.gd.G(Math.max(1, currentTime), "Seconds", new Object[0])));
                                             break;
                                         }
                                     } else {
@@ -46,12 +46,12 @@ public final /* synthetic */ class ga1 implements RequestDelegate {
                                     }
                                 } else {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(twoStepVerificationActivity2.getParentActivity());
-                                    alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131747638, null), null);
-                                    String M0 = org.telegram.messenger.gd.M0(2131745898, null);
-                                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                                    u1Var.S = M0;
-                                    u1Var.U = org.telegram.messenger.gd.M0(2131745872, null);
-                                    twoStepVerificationActivity2.showDialog(u1Var, new q5(twoStepVerificationActivity2, 17));
+                                    alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131747637, null), null);
+                                    String N0 = org.telegram.messenger.gd.N0(2131745897, null);
+                                    org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                                    t1Var.S = N0;
+                                    t1Var.U = org.telegram.messenger.gd.N0(2131745871, null);
+                                    twoStepVerificationActivity2.showDialog(t1Var, new q5(twoStepVerificationActivity2, 17));
                                     break;
                                 }
                                 break;
@@ -110,7 +110,7 @@ public final /* synthetic */ class ga1 implements RequestDelegate {
                                     if (!(tLObject2 instanceof TL_account.resetPasswordRequestedWait)) {
                                         if (tLObject2 instanceof TL_account.resetPasswordFailedWait) {
                                             int currentTime = ((TL_account.resetPasswordFailedWait) tLObject2).retry_date - twoStepVerificationActivity22.getConnectionsManager().getCurrentTime();
-                                            twoStepVerificationActivity22.B0(org.telegram.messenger.gd.M0(2131745898, null), org.telegram.messenger.gd.a0("ResetPasswordWait", null, 2131745897, currentTime > 86400 ? org.telegram.messenger.gd.G(currentTime / 86400, "Days", new Object[0]) : currentTime > 3600 ? org.telegram.messenger.gd.G(currentTime / 86400, "Hours", new Object[0]) : currentTime > 60 ? org.telegram.messenger.gd.G(currentTime / 60, "Minutes", new Object[0]) : org.telegram.messenger.gd.G(Math.max(1, currentTime), "Seconds", new Object[0])));
+                                            twoStepVerificationActivity22.B0(org.telegram.messenger.gd.N0(2131745897, null), org.telegram.messenger.gd.a0("ResetPasswordWait", null, 2131745896, currentTime > 86400 ? org.telegram.messenger.gd.G(currentTime / 86400, "Days", new Object[0]) : currentTime > 3600 ? org.telegram.messenger.gd.G(currentTime / 86400, "Hours", new Object[0]) : currentTime > 60 ? org.telegram.messenger.gd.G(currentTime / 60, "Minutes", new Object[0]) : org.telegram.messenger.gd.G(Math.max(1, currentTime), "Seconds", new Object[0])));
                                             break;
                                         }
                                     } else {
@@ -120,12 +120,12 @@ public final /* synthetic */ class ga1 implements RequestDelegate {
                                     }
                                 } else {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(twoStepVerificationActivity22.getParentActivity());
-                                    alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131747638, null), null);
-                                    String M0 = org.telegram.messenger.gd.M0(2131745898, null);
-                                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                                    u1Var.S = M0;
-                                    u1Var.U = org.telegram.messenger.gd.M0(2131745872, null);
-                                    twoStepVerificationActivity22.showDialog(u1Var, new q5(twoStepVerificationActivity22, 17));
+                                    alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131747637, null), null);
+                                    String N0 = org.telegram.messenger.gd.N0(2131745897, null);
+                                    org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                                    t1Var.S = N0;
+                                    t1Var.U = org.telegram.messenger.gd.N0(2131745871, null);
+                                    twoStepVerificationActivity22.showDialog(t1Var, new q5(twoStepVerificationActivity22, 17));
                                     break;
                                 }
                                 break;

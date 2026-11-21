@@ -2,25 +2,25 @@ package p4;
 
 import org.telegram.messenger.bf;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d0 b;
+    public final /* synthetic */ e0 b;
 
-    public /* synthetic */ y(d0 d0Var, int i7) {
+    public /* synthetic */ y(e0 e0Var, int i7) {
         this.a = i7;
-        this.b = d0Var;
+        this.b = e0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                d0 d0Var = this.b;
-                bf bfVar = d0Var.u;
+                e0 e0Var = this.b;
+                bf bfVar = e0Var.u;
                 if (bfVar != null) {
-                    d0Var.t.h0(bfVar);
+                    e0Var.t.h0(bfVar);
                     break;
                 }
                 break;
@@ -28,7 +28,7 @@ public final /* synthetic */ class y implements Runnable {
                 this.b.getClass();
                 break;
             case 2:
-                d0.a(this.b);
+                e0.a(this.b);
                 break;
             default:
                 this.b.t();

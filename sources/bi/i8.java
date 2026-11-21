@@ -1,88 +1,51 @@
 package bi;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z0 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z0 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z0 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z0 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z0 f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z0 n;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z0 r;
-    public final /* synthetic */ Object s;
+public final class i8 implements fs {
+    public final int a;
+    public final di.p8 b;
+    public final y7 c;
+    public c8 d;
+    public boolean e;
 
-    public /* synthetic */ i8(j8 j8Var, org.telegram.ui.ActionBar.z0 z0Var, org.telegram.ui.ActionBar.z0 z0Var2, org.telegram.ui.ActionBar.z0 z0Var3, org.telegram.ui.ActionBar.z0 z0Var4, org.telegram.ui.ActionBar.z0 z0Var5, boolean z10, org.telegram.ui.ActionBar.z0 z0Var6, org.telegram.ui.ActionBar.z0 z0Var7) {
-        this.s = j8Var;
-        this.b = z0Var;
-        this.c = z0Var2;
-        this.d = z0Var3;
-        this.e = z0Var4;
-        this.f = z0Var5;
-        this.h = z10;
-        this.n = z0Var6;
-        this.r = z0Var7;
+    public i8(int i7, long j3) {
+        this.a = i7;
+        di.p8 p8Var = new di.p8(i7, 0L, false);
+        this.b = p8Var;
+        p8Var.p = j3;
+        y7 y7Var = new y7(i7, j3, new ai.h0(this, 4));
+        y7Var.x = true;
+        this.c = y7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        org.telegram.ui.ActionBar.z0 z0Var = this.r;
-        org.telegram.ui.ActionBar.z0 z0Var2 = this.n;
-        boolean z10 = this.h;
-        org.telegram.ui.ActionBar.z0 z0Var3 = this.f;
-        org.telegram.ui.ActionBar.z0 z0Var4 = this.e;
-        org.telegram.ui.ActionBar.z0 z0Var5 = this.d;
-        org.telegram.ui.ActionBar.z0 z0Var6 = this.c;
-        Object obj = this.s;
-        org.telegram.ui.ActionBar.z0 z0Var7 = this.b;
-        switch (i7) {
-            case 0:
-                di.o8 o8Var = ((j8) obj).c.U1;
-                z0Var7.j(gd.M0(o8Var.e ? 2131750181 : 2131750182, null), o8Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                z0Var6.setChecked(TLObject.hasFlag(o8Var.g, 1));
-                z0Var5.setChecked(TLObject.hasFlag(o8Var.g, 2));
-                z0Var4.setChecked(TLObject.hasFlag(o8Var.g, 4));
-                z0Var3.setChecked(TLObject.hasFlag(o8Var.g, 8));
-                if (z10) {
-                    z0Var2.setChecked(TLObject.hasFlag(o8Var.g, 256));
-                    z0Var.setChecked(TLObject.hasFlag(o8Var.g, 512));
-                    break;
-                }
-                break;
-            default:
-                di.o8 o8Var2 = (di.o8) obj;
-                if (z0Var7 != null) {
-                    z0Var7.j(gd.M0(o8Var2.e ? 2131750181 : 2131750182, null), o8Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                }
-                z0Var6.setChecked(TLObject.hasFlag(o8Var2.g, 1));
-                z0Var5.setChecked(TLObject.hasFlag(o8Var2.g, 2));
-                z0Var4.setChecked(TLObject.hasFlag(o8Var2.g, 4));
-                z0Var3.setChecked(TLObject.hasFlag(o8Var2.g, 8));
-                if (z10) {
-                    z0Var2.setChecked(TLObject.hasFlag(o8Var2.g, 256));
-                    z0Var.setChecked(TLObject.hasFlag(o8Var2.g, 512));
-                    break;
-                }
-                break;
+    public final void a() {
+        if (this.e) {
+            return;
+        }
+        ks.f(this.a).c(this, ks.I3);
+        this.b.a();
+        this.c.l(false);
+        this.e = true;
+    }
+
+    public final void b() {
+        if (this.e) {
+            ks.f(this.a).n(this, ks.I3);
+            this.b.f();
+            this.c.i();
+            this.e = false;
         }
     }
 
-    public /* synthetic */ i8(org.telegram.ui.ActionBar.z0 z0Var, di.o8 o8Var, org.telegram.ui.ActionBar.z0 z0Var2, org.telegram.ui.ActionBar.z0 z0Var3, org.telegram.ui.ActionBar.z0 z0Var4, org.telegram.ui.ActionBar.z0 z0Var5, boolean z10, org.telegram.ui.ActionBar.z0 z0Var6, org.telegram.ui.ActionBar.z0 z0Var7) {
-        this.b = z0Var;
-        this.s = o8Var;
-        this.c = z0Var2;
-        this.d = z0Var3;
-        this.e = z0Var4;
-        this.f = z0Var5;
-        this.h = z10;
-        this.n = z0Var6;
-        this.r = z0Var7;
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        c8 c8Var;
+        if (i7 == ks.I3 && objArr[1] == this.b && (c8Var = this.d) != null) {
+            c8Var.run();
+        }
     }
 }

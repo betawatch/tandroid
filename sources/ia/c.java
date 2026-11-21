@@ -9,7 +9,7 @@ import com.google.android.gms.internal.vision.e2;
 import di.h;
 import h2.e0;
 import h9.g1;
-import hi.u5;
+import hi.t5;
 import j$.util.Objects;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -21,6 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
+import kg.x1;
 import n5.g0;
 import n5.h0;
 import n5.j0;
@@ -36,14 +37,14 @@ import o5.i;
 import o5.l;
 import o5.n;
 import org.json.JSONObject;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import org.telegram.ui.wc1;
 import p1.g;
 import p5.f;
-import tg.z1;
+import tg.o1;
 import w7.s;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -71,7 +72,7 @@ public final class c {
             if (!g.b(2, i7)) {
                 JSONObject K = ((g1) this.e).K();
                 if (K != null) {
-                    b s5 = ((u5) this.c).s(K);
+                    b s5 = ((t5) this.c).s(K);
                     d("Loaded cached settings: ", K);
                     ((s) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
@@ -106,8 +107,8 @@ public final class c {
         return (b) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0456  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x043a A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0458  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x043c A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -225,7 +226,7 @@ public final class c {
             if (!iterable.iterator().hasNext()) {
                 return;
             }
-            int i14 = 3;
+            int i14 = 4;
             if (a10 == null) {
                 gc.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new p5.a(3, -1L);
@@ -240,7 +241,7 @@ public final class c {
                 if (bArr2 != null) {
                     v5.c cVar4 = (v5.c) cVar2.i;
                     Objects.requireNonNull(cVar4);
-                    r5.a aVar3 = (r5.a) gVar.f(new z1(cVar4, i14));
+                    r5.a aVar3 = (r5.a) gVar.f(new o1(cVar4, i14));
                     e0 e0Var = new e0();
                     e0Var.f = new HashMap();
                     e0Var.d = Long.valueOf(((x5.a) cVar2.g).r());
@@ -248,11 +249,11 @@ public final class c {
                     e0Var.a = "GDT_CLIENT_METRICS";
                     l5.c cVar5 = new l5.c("proto");
                     aVar3.getClass();
-                    nd0 nd0Var = n.a;
-                    nd0Var.getClass();
+                    md0 md0Var = n.a;
+                    md0Var.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        nd0Var.q(aVar3, byteArrayOutputStream);
+                        md0Var.q(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
                     e0Var.c = new l(cVar5, byteArrayOutputStream.toByteArray());
@@ -381,11 +382,11 @@ public final class c {
                 }
                 try {
                     h6.m mVar2 = new h6.m(url, mVar, str, false, 13);
-                    ki.e eVar = new ki.e(cVar6, 16);
-                    h6.m mVar3 = mVar2;
+                    x1 x1Var = new x1(cVar6, 17);
                     int i16 = 5;
+                    h6.m mVar3 = mVar2;
                     do {
-                        b10 = eVar.b(mVar3);
+                        b10 = x1Var.b(mVar3);
                         URL url2 = (URL) b10.c;
                         if (url2 != null) {
                             gc.a(url2, "CctTransportBackend", "Following redirect to: %s");
@@ -430,7 +431,7 @@ public final class c {
             i11 = aVar2.a;
             if (i11 != i10) {
                 gVar.f(new f0(this, iterable, iVar, j3, 7));
-                ((nd0) this.d).H(iVar, i7 + 1, true);
+                ((md0) this.d).H(iVar, i7 + 1, true);
                 return;
             }
             cVar2 = this;
@@ -440,7 +441,7 @@ public final class c {
             if (i11 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new z1(cVar2, 5));
+                    gVar.f(new o1(cVar2, 6));
                 }
             } else if (i11 == 4) {
                 HashMap hashMap2 = new HashMap();

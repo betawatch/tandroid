@@ -18,14 +18,14 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.i41;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.l30;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s0 extends LinearLayout {
     public final ArrayList a;
@@ -34,12 +34,12 @@ public final class s0 extends LinearLayout {
     public l30 d;
     public Runnable e;
     public int f;
-    public final oi.a2 h;
+    public final oi.c2 h;
 
     public s0(LaunchActivity launchActivity) {
         super(launchActivity);
         this.a = new ArrayList();
-        this.h = new oi.a2(this, 18);
+        this.h = new oi.c2(this, 18);
         setOrientation(1);
         setGravity(80);
         setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
@@ -47,13 +47,13 @@ public final class s0 extends LinearLayout {
         LayoutTransition layoutTransition = new LayoutTransition();
         layoutTransition.enableTransitionType(4);
         layoutTransition.setDuration(320L);
-        lr lrVar = lr.h;
-        layoutTransition.setInterpolator(4, lrVar);
-        layoutTransition.setInterpolator(0, lrVar);
-        layoutTransition.setInterpolator(1, lrVar);
+        nr nrVar = nr.h;
+        layoutTransition.setInterpolator(4, nrVar);
+        layoutTransition.setInterpolator(0, nrVar);
+        layoutTransition.setInterpolator(1, nrVar);
         Property property = View.ALPHA;
         layoutTransition.setAnimator(2, ObjectAnimator.ofPropertyValuesHolder(null, PropertyValuesHolder.ofFloat((Property<?, Float>) property, 0.0f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, 0.6f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, 0.6f, 1.0f)));
-        layoutTransition.setInterpolator(2, lrVar);
+        layoutTransition.setInterpolator(2, nrVar);
         layoutTransition.setAnimator(3, ObjectAnimator.ofFloat((Object) null, (Property<Object, Float>) property, 1.0f, 0.0f));
         layoutTransition.setStartDelay(2, 0L);
         layoutTransition.setStartDelay(0, 0L);
@@ -86,11 +86,11 @@ public final class s0 extends LinearLayout {
             r0Var = new r0(this, getContext(), j10);
             TLObject g22 = mp.u1(i7).g2(j3);
             String k10 = g22 instanceof TLRPC.User ? o10.k((TLRPC.User) g22, true) : g22 instanceof TLRPC.Chat ? ((TLRPC.Chat) g22).title : "";
-            b9 b9Var = new b9((i6) null);
+            b9 b9Var = new b9((h6) null);
             b9Var.p(g22);
             r0Var.d.i0(g22, b9Var, null);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(k10);
-            spannableStringBuilder.setSpan(new i41(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new l41(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
             spannableStringBuilder.append((CharSequence) "  ");
             r0Var.x = spannableStringBuilder.length();
             r0Var.e.setText(spannableStringBuilder, TextView.BufferType.EDITABLE);

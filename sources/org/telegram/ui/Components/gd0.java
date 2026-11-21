@@ -1,18 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public final class gd0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ ld0 a;
+import android.app.Activity;
 
-    public gd0(ld0 ld0Var) {
-        this.a = ld0Var;
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class gd0 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ md0 G1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gd0(md0 md0Var, Activity activity) {
+        super(activity, null);
+        this.G1 = md0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        if (i7 == -1) {
-            this.a.dismiss();
-        }
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        super.setAlpha(f10);
+        this.G1.b.invalidate();
     }
 }

@@ -4,7 +4,7 @@ import android.media.AudioTimestamp;
 import android.media.AudioTrack;
 import android.media.metrics.LogSessionId;
 import android.os.Build;
-import hi.u5;
+import hi.t5;
 import hi.w4;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class g0 {
     public static final Object t = new Object();
@@ -21,7 +21,7 @@ public final class g0 {
     public final AudioTrack a;
     public final n b;
     public final float c;
-    public final u5 d;
+    public final t5 d;
     public c0 e;
     public final j0 f;
     public final boolean g;
@@ -38,11 +38,11 @@ public final class g0 {
     public int r;
     public boolean s;
 
-    public g0(AudioTrack audioTrack, n nVar, u5 u5Var, float f10, h2.g0 g0Var) {
+    public g0(AudioTrack audioTrack, n nVar, t5 t5Var, float f10, h2.g0 g0Var) {
         this.a = audioTrack;
         this.b = nVar;
         this.c = f10;
-        this.d = u5Var;
+        this.d = t5Var;
         boolean M = h2.l0.M(nVar.a);
         this.g = M;
         if (M) {
@@ -51,8 +51,8 @@ public final class g0 {
             this.h = -1;
         }
         this.f = new j0(new w4(this, 14), g0Var, audioTrack, nVar.a, this.h, nVar.f);
-        if (Build.VERSION.SDK_INT >= 24 && u5Var != null) {
-            this.e = new c0(audioTrack, u5Var);
+        if (Build.VERSION.SDK_INT >= 24 && t5Var != null) {
+            this.e = new c0(audioTrack, t5Var);
         }
         this.i = c() ? new f0(this) : null;
     }
@@ -440,7 +440,7 @@ public final class g0 {
         AudioTrack audioTrack;
         int write;
         boolean z10;
-        u5 u5Var;
+        t5 t5Var;
         i0 i0Var;
         e eVar;
         int i10;
@@ -534,7 +534,7 @@ public final class g0 {
             return z10;
         }
         z10 = (Build.VERSION.SDK_INT >= 24 && write == -6) || write == -32;
-        if (z10 && (u5Var = this.d) != null && (eVar = (i0Var = (i0) u5Var.b).i) != null) {
+        if (z10 && (t5Var = this.d) != null && (eVar = (i0Var = (i0) t5Var.b).i) != null) {
             b bVar = b.f;
             i0Var.h = bVar;
             eVar.b(bVar);

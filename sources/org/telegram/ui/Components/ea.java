@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ea implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -32,8 +32,8 @@ public final class ea implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                vy0 vy0Var = (vy0) obj2;
-                vy0Var.k = x5.update(vy0Var.l, (View) obj, vy0Var.k, vy0Var.b);
+                xy0 xy0Var = (xy0) obj2;
+                xy0Var.k = y5.update(xy0Var.l, (View) obj, xy0Var.k, xy0Var.b);
                 break;
             default:
                 org.telegram.ui.Wallet.m4 m4Var = (org.telegram.ui.Wallet.m4) obj2;
@@ -73,7 +73,7 @@ public final class ea implements View.OnAttachStateChangeListener {
                 paint.setShader(null);
                 break;
             case 1:
-                x5.release((View) this.b, ((vy0) this.c).k);
+                y5.release((View) this.b, ((xy0) this.c).k);
                 break;
             default:
                 org.telegram.ui.Wallet.m4 m4Var = (org.telegram.ui.Wallet.m4) this.c;

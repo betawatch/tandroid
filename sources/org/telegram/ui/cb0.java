@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class cb0 implements Runnable {
                 pc0Var.o(true);
                 pc0Var.e.j(null, null, pc0Var.f, null);
                 xc xcVar = pc0Var.n;
-                org.telegram.ui.Components.mh0 mh0Var = pc0Var.K;
-                xcVar.setAnimation(mh0Var);
-                mh0Var.M(0);
+                org.telegram.ui.Components.oh0 oh0Var = pc0Var.K;
+                xcVar.setAnimation(oh0Var);
+                oh0Var.M(0);
                 pc0Var.M = true;
                 break;
             case 2:

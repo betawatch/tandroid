@@ -17,11 +17,11 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
 import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.b9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
@@ -45,7 +45,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver;
         String str;
         String str2;
-        b9 b9Var = new b9((i6) null);
+        b9 b9Var = new b9((h6) null);
         int i7 = j10.t0;
         this.l = 1.0f;
         this.m = true;
@@ -62,7 +62,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
             TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
             b9Var.r(c22);
             if (o10.C(c22)) {
-                str2 = gd.M0(2131745706, null);
+                str2 = gd.N0(2131745705, null);
                 b9Var.g(1);
                 b9Var.p = 0.75f;
                 imageReceiver = imageReceiver2;

@@ -9,13 +9,13 @@ import android.util.Property;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ma;
-import hi.k3;
+import hi.j3;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.pc;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public final o0 a;
@@ -41,7 +41,7 @@ public final class p0 extends FrameLayout {
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
-        this.c.setInterpolator(lr.g);
+        this.c.setInterpolator(nr.g);
         this.c.setDuration(3000L);
         boolean e10 = pc.e(512);
         this.f = e10;
@@ -63,7 +63,7 @@ public final class p0 extends FrameLayout {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.c = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_X, getScaleX(), 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_Y, getScaleY(), 1.05f, 1.0f));
-        this.c.setInterpolator(lr.g);
+        this.c.setInterpolator(nr.g);
         this.c.setDuration(400L);
         this.c.start();
     }
@@ -89,7 +89,7 @@ public final class p0 extends FrameLayout {
                     o0Var.k = 0;
                     o0Var.j = ValueAnimator.ofFloat(o0Var.i, 1.0f);
                 }
-                o0Var.j.addUpdateListener(new k3(o0Var, 17));
+                o0Var.j.addUpdateListener(new j3(o0Var, 17));
                 if (z11) {
                     o0Var.j.setDuration(150L);
                 } else {

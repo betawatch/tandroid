@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class an0 implements org.telegram.ui.Cells.r5 {
     public final /* synthetic */ l4 a;
@@ -18,7 +18,7 @@ public final class an0 implements org.telegram.ui.Cells.r5 {
         if (!cn0Var.J || (bnVar = cn0Var.V) == null || (chat = bnVar.e) == null || org.telegram.messenger.v3.N(chat) || !chat.slowmode_enabled || cn0Var.X == 2) {
             return;
         }
-        org.telegram.ui.Components.b5.r0(cn0Var, org.telegram.messenger.gd.M0(2131745115, null), org.telegram.messenger.gd.M0(2131745108, null), null);
+        org.telegram.ui.Components.c5.r0(cn0Var, org.telegram.messenger.gd.N0(2131745114, null), org.telegram.messenger.gd.N0(2131745107, null), null);
         if (cn0Var.X == 1) {
             cn0Var.X = 2;
         }

@@ -11,26 +11,26 @@ import c8.ma;
 import java.util.HashSet;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.a8;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements te.b, c6 {
+public final class b extends FrameLayout implements te.b, b6 {
     public ShapeDrawable a;
-    public final i6 b;
+    public final h6 b;
     public final a8 c;
     public final TextView d;
     public final te.a e;
 
-    public b(Context context, i6 i6Var) {
+    public b(Context context, h6 h6Var) {
         super(context);
-        this.e = new te.a(0, this, lr.h, 380L, false);
-        this.b = i6Var;
-        a8 a8Var = new a8(context, i6Var, false);
+        this.e = new te.a(0, this, nr.h, 380L, false);
+        this.b = h6Var;
+        a8 a8Var = new a8(context, h6Var, false);
         this.c = a8Var;
         addView(a8Var, ma.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
@@ -54,7 +54,7 @@ public final class b extends FrameLayout implements te.b, c6 {
 
     public final void a(boolean z10, boolean z11) {
         if (z10 && this.a == null) {
-            this.a = n6.d0(g0.L(10.0f), i0.a.o(n6.w0(n6.Nl, this.b), 25));
+            this.a = m6.d0(g0.L(10.0f), i0.a.o(m6.w0(m6.Nl, this.b), 25));
         }
         te.a aVar = this.e;
         if (aVar.f != z10 || z11) {
@@ -62,9 +62,9 @@ public final class b extends FrameLayout implements te.b, c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(n6.Nl));
+        hashSet.add(Integer.valueOf(m6.Nl));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -90,16 +90,16 @@ public final class b extends FrameLayout implements te.b, c6 {
         this.c.d(!tL_messages_stickerSet.documents.isEmpty() ? tL_messages_stickerSet.documents.get(0) : null, null, null, null, false, false);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         ShapeDrawable shapeDrawable = this.a;
-        i6 i6Var = this.b;
+        h6 h6Var = this.b;
         if (shapeDrawable != null) {
-            n6.C1(i0.a.o(n6.w0(n6.Nl, i6Var), 25), shapeDrawable);
+            m6.C1(i0.a.o(m6.w0(m6.Nl, h6Var), 25), shapeDrawable);
             this.a.setAlpha((int) (this.e.e * 255.0f));
             invalidate();
         }
-        this.d.setTextColor(i0.a.o(n6.w0(n6.Nl, i6Var), 229));
+        this.d.setTextColor(i0.a.o(m6.w0(m6.Nl, h6Var), 229));
     }
 
     @Override // te.b

@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final /* synthetic */ class z1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        m8 F;
+        n8 F;
         int i7 = this.a;
         boolean z10 = this.c;
         Object obj = this.e;
@@ -51,11 +51,11 @@ public final /* synthetic */ class z1 implements Runnable {
                 TLRPC.Document document = (TLRPC.Document) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TL_stars.saveStarGift savestargift = (TL_stars.saveStarGift) obj3;
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
                         if (tL_error != null) {
-                            if (z11 && f6Var.B2 != null && (F = x8.y(f6Var.a, false).F(f6Var.T1, false)) != null) {
+                            if (z11 && f6Var.B2 != null && (F = y8.y(f6Var.a, false).F(f6Var.T1, false)) != null) {
                                 F.m(f6Var.B2, true ^ savestargift.unsave);
                             }
                             f6Var.k().t(org.telegram.ui.Components.lc.W(tL_error.text), null).k(false);
@@ -65,13 +65,13 @@ public final /* synthetic */ class z1 implements Runnable {
                         f6Var.dismiss();
                         long C1 = f6Var.C1();
                         if (!z11) {
-                            x8.y(f6Var.a, false).O(C1);
+                            y8.y(f6Var.a, false).O(C1);
                         }
                         if (C1 < 0) {
-                            org.telegram.ui.Components.lc.b0(T).s(document, gd.M0(z10 ? 2131750244 : 2131750242, null), gd.M0(z10 ? 2131750245 : 2131750243, null)).j();
+                            org.telegram.ui.Components.lc.b0(T).s(document, gd.N0(z10 ? 2131750243 : 2131750241, null), gd.N0(z10 ? 2131750244 : 2131750242, null)).j();
                             break;
                         } else {
-                            org.telegram.ui.Components.lc.b0(T).s(document, gd.M0(z10 ? 2131750107 : 2131750105, null), org.telegram.messenger.g0.T2(gd.M0(z10 ? 2131750108 : 2131750106, null), T instanceof ProfileActivity ? null : new ch.r0(C1, T))).k(true);
+                            org.telegram.ui.Components.lc.b0(T).s(document, gd.N0(z10 ? 2131750106 : 2131750104, null), org.telegram.messenger.g0.T2(gd.N0(z10 ? 2131750107 : 2131750105, null), T instanceof ProfileActivity ? null : new ch.r0(C1, T))).k(true);
                             break;
                         }
                     }

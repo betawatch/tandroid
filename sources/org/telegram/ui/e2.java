@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
@@ -73,12 +73,12 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
     public static SpannableString b(e2 e2Var, CharSequence charSequence, String str) {
         SpannableString spannableString = new SpannableString(charSequence);
         setDiffMarkerSpans(spannableString);
-        Pattern pattern = org.telegram.ui.Components.b90.a;
+        Pattern pattern = org.telegram.ui.Components.d90.a;
         char[] cArr = new char[spannableString.length()];
         int i7 = 0;
         for (int i10 = 0; i10 <= spannableString.length(); i10++) {
             if (i10 >= spannableString.length() || spannableString.charAt(i10) == '\n') {
-                int h = org.telegram.ui.Components.b90.h(i7, spannableString);
+                int h = org.telegram.ui.Components.d90.h(i7, spannableString);
                 int i11 = i7;
                 while (i11 < i10) {
                     cArr[i11] = (h == 3 || i11 == i7) ? ' ' : spannableString.charAt(i11);
@@ -91,12 +91,12 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
             }
         }
         String str2 = new String(cArr);
-        oi.s2 s2Var = new oi.s2(23, e2Var, spannableString);
+        oi.t tVar = new oi.t(25, e2Var, spannableString);
         qi.p pVar = qi.j.a;
         if (str2.length() == spannableString.length()) {
             String b10 = qi.p.b(str);
             if (!b10.isEmpty() && !str2.isEmpty()) {
-                qi.j.a.d(str2, b10, new wc1(11, spannableString, s2Var));
+                qi.j.a.d(str2, b10, new wc1(11, spannableString, tVar));
             }
         }
         return spannableString;
@@ -109,7 +109,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
             if (indexOf < 0) {
                 indexOf = spannableString.length();
             }
-            int h = org.telegram.ui.Components.b90.h(i7, spannableString);
+            int h = org.telegram.ui.Components.d90.h(i7, spannableString);
             if (h == 1) {
                 spannableString.setSpan(new qi.c(19), i7, i7 + 1, 33);
             } else if (h == 2) {
@@ -207,7 +207,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
         int lineCount = staticLayout.getLineCount();
         int i7 = 0;
         while (i7 < lineCount) {
-            int h = org.telegram.ui.Components.b90.h(staticLayout.getLineStart(i7), text);
+            int h = org.telegram.ui.Components.d90.h(staticLayout.getLineStart(i7), text);
             Paint paint = this.s;
             if (h == 1) {
                 paint.setColor(640993113);
@@ -232,7 +232,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
         if (z2Var == null) {
             return;
         }
-        accessibilityNodeInfo.setText(g4.g(2131754871, g4.h(this.a, this.b, z2Var)));
+        accessibilityNodeInfo.setText(g4.g(2131754870, g4.h(this.a, this.b, z2Var)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

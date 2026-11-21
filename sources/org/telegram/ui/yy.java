@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class yy extends rg.b {
     public final /* synthetic */ zy d;
@@ -13,7 +13,7 @@ public final class yy extends rg.b {
         this.d = zyVar;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         int i7 = f1Var.f;
         return i7 == 8 || i7 == 7;
@@ -95,7 +95,7 @@ public final class yy extends rg.b {
         }
         if (i11 != 0 && i11 == 8) {
             vy vyVar = (vy) view;
-            vyVar.a.setText(org.telegram.messenger.gd.M0(2131751703, null));
+            vyVar.a.setText(org.telegram.messenger.gd.N0(2131751702, null));
             if (vyVar.c != z10) {
                 vyVar.c = z10;
                 vyVar.setWillNotDraw(!z10);
@@ -109,16 +109,16 @@ public final class yy extends rg.b {
         zy zyVar = this.d;
         if (i7 == 8) {
             a9Var = new vy(zyVar.getContext());
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, a9Var, null);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.h5, a9Var, null);
         } else if (i7 == 7) {
             a9Var = new xy(this, zyVar.getContext(), zyVar.a, zyVar.U1.a);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, a9Var, null);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.h5, a9Var, null);
         } else if (i7 == 6 || i7 == 3) {
             a9Var = new org.telegram.ui.Cells.a9(zyVar.getContext());
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.a7, a9Var, null);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.a7, a9Var, null);
         } else {
             a9Var = new k0(zyVar, zyVar.getContext());
         }
-        return new org.telegram.ui.Components.kj0(a9Var);
+        return new org.telegram.ui.Components.mj0(a9Var);
     }
 }

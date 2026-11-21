@@ -9,17 +9,17 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class q0 extends c3 {
+public final class q0 extends g3 {
     public final /* synthetic */ t0 A0;
     public final RectF x0;
     public final RectF y0;
     public final Path z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q0(t0 t0Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(i7, context, i6Var);
+    public q0(t0 t0Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(i7, context, h6Var);
         this.A0 = t0Var;
         this.x0 = new RectF();
         this.y0 = new RectF();

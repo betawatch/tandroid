@@ -5,7 +5,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class VideoEncodingService extends Service implements fs {
     public static VideoEncodingService e;
@@ -31,14 +31,14 @@ public class VideoEncodingService extends Service implements fs {
             fj fjVar = jfVar.a;
             boolean z10 = fjVar != null && fj.t3(fjVar.k);
             if (jfVar.d) {
-                this.a.p(gd.M0(2131751757, null));
-                this.a.f(gd.M0(2131751757, null));
+                this.a.p(gd.N0(2131751756, null));
+                this.a.f(gd.N0(2131751756, null));
             } else if (z10) {
-                this.a.p(gd.M0(2131745384, null));
-                this.a.f(gd.M0(2131745384, null));
+                this.a.p(gd.N0(2131745383, null));
+                this.a.f(gd.N0(2131745383, null));
             } else {
-                this.a.p(gd.M0(2131745381, null));
-                this.a.f(gd.M0(2131745381, null));
+                this.a.p(gd.N0(2131745380, null));
+                this.a.f(gd.N0(2131745380, null));
             }
             e0.q qVar = this.a;
             qVar.n = 100;
@@ -134,7 +134,7 @@ public class VideoEncodingService extends Service implements fs {
             qVar.F.when = System.currentTimeMillis();
             e0.q qVar2 = this.a;
             qVar2.y = xs.k0;
-            qVar2.g(gd.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            qVar2.g(gd.N0(org.telegram.messenger.beta.R.string.AppName, null));
         }
         a(jfVar);
         int i11 = 1;

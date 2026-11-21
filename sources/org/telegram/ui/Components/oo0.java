@@ -1,9 +1,143 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes3.dex */
-public interface oo0 {
-    void D0();
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
 
-    void Q();
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes3.dex */
+public final class oo0 extends FrameLayout {
+    public final View a;
+    public final org.telegram.ui.ActionBar.m5 b;
+    public final org.telegram.ui.ActionBar.m5 c;
+    public final bi.m3 d;
+    public int e;
+    public AnimatorSet f;
+    public LinearGradient h;
+    public final Paint n;
+    public final RectF r;
+    public final /* synthetic */ ap0 s;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oo0(ap0 ap0Var, Context context) {
+        super(context);
+        this.s = ap0Var;
+        final int i7 = 1;
+        this.n = new Paint(1);
+        this.r = new RectF();
+        View view = new View(context);
+        this.a = view;
+        int L = org.telegram.messenger.g0.L(18.0f);
+        int i10 = org.telegram.ui.ActionBar.m6.O5;
+        Drawable d02 = org.telegram.ui.ActionBar.m6.d0(L, org.telegram.ui.ActionBar.m6.w0(i10, ap0Var.J0));
+        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i10);
+        org.telegram.ui.ActionBar.h6 h6Var = ap0Var.J0;
+        view.setBackground(d02);
+        org.telegram.ui.ActionBar.t6.j(view, d02, M, null, h6Var);
+        addView(view, c8.ma.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
+        bi.m3 m3Var = new bi.m3(25, context, this);
+        this.d = m3Var;
+        addView(m3Var, c8.ma.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
+        org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(context);
+        this.c = m5Var;
+        int i11 = org.telegram.ui.ActionBar.m6.eh;
+        org.telegram.ui.ActionBar.t6.X(m5Var, i11, ap0Var.J0);
+        m5Var.setTextSize(13);
+        m5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
+        final int i12 = 0;
+        m5Var.l(org.telegram.messenger.gd.N0(2131743132, null), false);
+        m5Var.setGravity(17);
+        addView(m5Var, c8.ma.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
+        m5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zo0
+            public final /* synthetic */ oo0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i12) {
+                    case 0:
+                        this.b.a(0);
+                        break;
+                    default:
+                        this.b.a(1);
+                        break;
+                }
+            }
+        });
+        org.telegram.ui.ActionBar.m5 m5Var2 = new org.telegram.ui.ActionBar.m5(context);
+        this.b = m5Var2;
+        org.telegram.ui.ActionBar.t6.X(m5Var2, i11, ap0Var.J0);
+        m5Var2.setTextSize(13);
+        m5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
+        m5Var2.l(org.telegram.messenger.gd.N0(2131743131, null), false);
+        m5Var2.setGravity(17);
+        addView(m5Var2, c8.ma.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
+        m5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zo0
+            public final /* synthetic */ oo0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i7) {
+                    case 0:
+                        this.b.a(0);
+                        break;
+                    default:
+                        this.b.a(1);
+                        break;
+                }
+            }
+        });
+    }
+
+    public final void a(int i7) {
+        if (this.e == i7) {
+            return;
+        }
+        this.e = i7;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.f = animatorSet2;
+        int i10 = this.e;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.d, (Property<bi.m3, Float>) View.TRANSLATION_X, i10 == 0 ? 0.0f : r1.getMeasuredWidth()));
+        this.f.setDuration(180L);
+        this.f.setInterpolator(nr.g);
+        this.f.addListener(new s60(this, 19));
+        this.f.start();
+        this.s.b1();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = (View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(28.0f)) / 2;
+        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).width = size;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
+        layoutParams.width = size;
+        layoutParams.leftMargin = org.telegram.messenger.g0.L(14.0f) + size;
+        bi.m3 m3Var = this.d;
+        ((FrameLayout.LayoutParams) m3Var.getLayoutParams()).width = size;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        m3Var.setTranslationX(this.e == 0 ? 0.0f : r2.width);
+        super.onMeasure(i7, i10);
+    }
 }

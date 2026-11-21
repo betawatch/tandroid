@@ -1,67 +1,46 @@
 package ki;
 
-import j$.util.function.Predicate$-CC;
-import java.util.HashSet;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import c8.ma;
+import c8.va;
+import java.util.Date;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i1 implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class i1 extends FrameLayout {
+    public final String a;
+    public final RadioButton b;
+    public final boolean c;
 
-    public /* synthetic */ i1(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public i1(j1 j1Var, boolean z10, Context context) {
+        super(context);
+        this.a = j1Var.a;
+        RadioButton radioButton = new RadioButton(context);
+        this.b = radioButton;
+        radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
+        t6.O(radioButton, m6.D5, m6.E5, null);
+        addView(radioButton, ma.d(22, 22.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
+        TextView b10 = va.b(context, 16.0f, m6.G6, true, null);
+        b10.setText(j1Var.c);
+        addView(b10, ma.t(-1, -2, 7, 62, 9, 8, 0));
+        TextView b11 = va.b(context, 14.0f, m6.y6, false, null);
+        b11.setText(gd.a0(null, null, 2131752981, gd.a0(null, null, 2131742519, gd.T(j1Var.d / 1000), gd.E0().p0().format(new Date(j1Var.d / 1000)))));
+        addView(b11, ma.t(-1, -2, 7, 62, 32, 8, 0));
+        this.c = z10;
+        setWillNotDraw(!z10);
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c) {
+            canvas.drawLine(org.telegram.messenger.g0.L(62.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, m6.k0);
         }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        boolean contains;
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                contains = ((HashSet) this.b).contains(Long.valueOf(((k1) obj).b));
-                break;
-            case 1:
-                contains = ((HashSet) this.b).contains(Long.valueOf(((k1) obj).b));
-                break;
-            default:
-                bi.j3 j3Var = (bi.j3) this.b;
-                TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-                if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                    z10 = j3Var.W1.disallow_unique_stargifts;
-                } else {
-                    j3Var.getClass();
-                    if (starGift.limited) {
-                        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = j3Var.W1;
-                        if (disallowedGiftsSettings.disallow_limited_stargifts) {
-                            return starGift.can_upgrade && !disallowedGiftsSettings.disallow_unique_stargifts;
-                        }
-                        return true;
-                    }
-                    z10 = j3Var.W1.disallow_unlimited_stargifts;
-                }
-                return true ^ z10;
-        }
-        return !contains;
     }
 }

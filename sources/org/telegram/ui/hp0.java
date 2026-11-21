@@ -7,7 +7,7 @@ import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class hp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,16 +20,16 @@ public final class hp0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.Components.si siVar;
+        org.telegram.ui.Components.ui uiVar;
         int i7 = this.a;
         PhotoViewer photoViewer = this.b;
         switch (i7) {
             case 0:
                 photoViewer.p6 = null;
-                org.telegram.ui.Components.qd0 qd0Var = photoViewer.D1;
-                if (qd0Var != null) {
-                    if (qd0Var.b.j()) {
-                        org.telegram.ui.ActionBar.u6.s(photoViewer.b1, org.telegram.ui.ActionBar.n6.qg, photoViewer.w2, PorterDuff.Mode.MULTIPLY);
+                org.telegram.ui.Components.rd0 rd0Var = photoViewer.D1;
+                if (rd0Var != null) {
+                    if (rd0Var.b.j()) {
+                        org.telegram.ui.ActionBar.t6.s(photoViewer.b1, org.telegram.ui.ActionBar.m6.qg, photoViewer.w2, PorterDuff.Mode.MULTIPLY);
                     } else {
                         photoViewer.b1.setColorFilter((ColorFilter) null);
                     }
@@ -52,17 +52,17 @@ public final class hp0 extends AnimatorListenerAdapter {
                 vp0Var.J0.setVisibility(0);
                 vp0Var.G0.setVisibility(0);
                 vp0Var.H0.setVisibility(0);
-                org.telegram.ui.Components.dc0 dc0Var = photoViewer.y4;
-                int childCount = dc0Var.getChildCount();
+                org.telegram.ui.Components.ec0 ec0Var = photoViewer.y4;
+                int childCount = ec0Var.getChildCount();
                 for (int i10 = 0; i10 < childCount; i10++) {
-                    dc0Var.getChildAt(i10).setVisibility(4);
+                    ec0Var.getChildAt(i10).setVisibility(4);
                 }
                 photoViewer.p6 = null;
                 photoViewer.u4 = 3;
                 photoViewer.b1().M.b(photoViewer.u4 != 0);
-                hi.p3 p3Var = photoViewer.L1;
-                if (p3Var != null) {
-                    p3Var.b(photoViewer.u4 != 3);
+                hi.o3 o3Var = photoViewer.L1;
+                if (o3Var != null) {
+                    o3Var.b(photoViewer.u4 != 3);
                 }
                 photoViewer.o6 = -1;
                 float p22 = photoViewer.p2(false);
@@ -88,17 +88,17 @@ public final class hp0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                org.telegram.messenger.g0.g3(new if0(this, 24));
+                org.telegram.messenger.g0.g3(new hf0(this, 24));
                 break;
             case 6:
                 photoViewer.m6 = 1.0f;
                 Runnable runnable = photoViewer.p4;
                 if (runnable != null) {
                     bn bnVar = photoViewer.l4;
-                    if (bnVar == null && (siVar = photoViewer.b2) != null) {
-                        org.telegram.ui.ActionBar.h2 h2Var = siVar.a2;
-                        if (h2Var instanceof bn) {
-                            bnVar = (bn) h2Var;
+                    if (bnVar == null && (uiVar = photoViewer.b2) != null) {
+                        org.telegram.ui.ActionBar.g2 g2Var = uiVar.a2;
+                        if (g2Var instanceof bn) {
+                            bnVar = (bn) g2Var;
                         }
                     }
                     if (bnVar != null) {

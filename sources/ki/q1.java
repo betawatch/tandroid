@@ -1,63 +1,45 @@
 package ki;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.util.SparseIntArray;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class q1 {
-    public final SparseIntArray a = new SparseIntArray();
-    public final SparseIntArray b = new SparseIntArray();
-    public final int[] c = {n6.G6, n6.u8, n6.G8, n6.E8, n6.F8, n6.I5, n6.zj};
-    public float d;
+public final /* synthetic */ class q1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s2 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public final int a(int i7) {
-        return i0.a.f(this.d, this.a.get(i7), this.b.get(i7));
+    public /* synthetic */ q1(s2 s2Var, int i7, int i10, int i11) {
+        this.a = i11;
+        this.b = s2Var;
+        this.c = i7;
+        this.d = i10;
     }
 
-    public final void b(org.telegram.ui.ActionBar.k kVar, float f10) {
-        this.d = f10;
-        int i7 = n6.G6;
-        kVar.setTitleColor(a(i7));
-        kVar.setSubtitleColor(n6.r1(0.45f, a(i7)));
-        kVar.I(a(i7), false);
-        ImageView imageView = kVar.e;
-        if (imageView != null) {
-            imageView.setColorFilter(new PorterDuffColorFilter(a(i7), PorterDuff.Mode.SRC_IN));
-        }
-        kVar.G(a(n6.u8), false);
-    }
-
-    public final void c(SparseIntArray sparseIntArray, int i7, i6 i6Var) {
-        int i10;
-        int[] iArr = this.c;
-        int i11 = 0;
-        if (i7 == 0) {
-            while (i11 < iArr.length) {
-                int i12 = iArr[i11];
-                sparseIntArray.put(i12, n6.w0(i12, i6Var));
-                i11++;
-            }
-            return;
-        }
-        int i13 = i0.a.h(i7) < 0.5d ? -1 : -16777216;
-        int o4 = i0.a.o(i13, 60);
-        while (i11 < iArr.length) {
-            int i14 = iArr[i11];
-            if (i14 == n6.G8 || i14 == n6.E8 || i14 == n6.F8 || i14 == (i10 = n6.I5)) {
-                sparseIntArray.put(i14, n6.w0(i14, i6Var));
-            } else if (i14 == n6.zj) {
-                sparseIntArray.put(i14, i0.a.f(0.5f, i7, i13));
-            } else if (i14 == n6.u8 || i14 == i10) {
-                sparseIntArray.put(i14, o4);
-            } else {
-                sparseIntArray.put(i14, i13);
-            }
-            i11++;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                s2 s2Var = this.b;
+                Paint paint = s2Var.R;
+                paint.setColor(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d));
+                s2Var.F();
+                s2Var.f.invalidate();
+                org.telegram.ui.b3 b3Var = s2Var.Z0;
+                if (b3Var != null) {
+                    b3Var.b(org.telegram.messenger.g0.B(paint.getColor()) <= 0.721f, false);
+                    s2Var.Z0.setBackgroundColor(paint.getColor());
+                }
+                s2Var.K();
+                break;
+            default:
+                s2 s2Var2 = this.b;
+                s2Var2.getClass();
+                s2Var2.T = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d);
+                s2Var2.l();
+                break;
         }
     }
 }

@@ -1,143 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class si0 extends q9 {
-    public final /* synthetic */ int H;
-    public final /* synthetic */ ti0 I;
+public final class si0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vi0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ si0(ti0 ti0Var, Context context, int i7) {
-        super(context);
-        this.H = i7;
-        this.I = ti0Var;
+    public /* synthetic */ si0(vi0 vi0Var, int i7) {
+        this.a = i7;
+        this.b = vi0Var;
     }
 
-    @Override // org.telegram.ui.Components.q9
-    public ImageReceiver c() {
-        switch (this.H) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                return new ri0(0, this);
-            case 1:
-                return new ri0(1, this);
-            default:
-                return super.c();
-        }
-    }
-
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.H) {
-            case 0:
-                ti0 ti0Var = this.I;
-                si0 si0Var = ti0Var.b;
-                super.dispatchDraw(canvas);
-                if (this.a.B() != null && !ti0Var.F) {
-                    this.a.B().start();
+                if (this.b.a.getImageReceiver().B() != null && !this.b.a.getImageReceiver().B().l0 && !this.b.a.getImageReceiver().B().y()) {
+                    this.b.a.getImageReceiver().B().start();
                 }
-                if (ti0Var.s && !ti0Var.w && this.a.B() != null && this.a.B().A() && si0Var.a.B() != null && si0Var.a.B().u()) {
-                    ti0Var.w = true;
-                    si0Var.a.B().N(0, false, true);
-                    si0Var.setVisibility(0);
-                    Runnable runnable = ti0Var.Q.Q0;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                    org.telegram.messenger.g0.g3(new gb0(this, 14));
-                }
-                invalidate();
+                this.b.F = false;
                 break;
             default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate(Rect rect) {
-        switch (this.H) {
-            case 0:
-                ti0 ti0Var = this.I;
-                if (!ch.f0.c(this, ti0Var.Q)) {
-                    super.invalidate(rect);
-                    ti0Var.Q.invalidate();
-                    break;
+                vi0 vi0Var = this.b;
+                xi0 xi0Var = vi0Var.Q;
+                try {
+                    vi0Var.performHapticFeedback(0);
+                } catch (Exception unused) {
                 }
-                break;
-            default:
-                super.invalidate(rect);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.q9, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.H) {
-            case 1:
-                this.I.b();
-                super.onDraw(canvas);
-                break;
-            case 2:
-                o5 o5Var = this.e;
-                ImageReceiver imageReceiver = o5Var != null ? o5Var.k : this.a;
-                if (imageReceiver != null && imageReceiver.B() != null) {
-                    imageReceiver.B().start();
-                }
-                super.onDraw(canvas);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate(int i7, int i10, int i11, int i12) {
-        switch (this.H) {
-            case 0:
-                if (!ch.f0.c(this)) {
-                    super.invalidate(i7, i10, i11, i12);
-                    break;
-                }
-                break;
-            case 1:
-                if (!ch.f0.c(this)) {
-                    super.invalidate(i7, i10, i11, i12);
-                    break;
-                }
-                break;
-            default:
-                super.invalidate(i7, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        int i7 = this.H;
-        ti0 ti0Var = this.I;
-        switch (i7) {
-            case 0:
-                if (!ch.f0.c(this, ti0Var.Q)) {
-                    super.invalidate();
-                    ti0Var.Q.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                if (!ch.f0.c(this)) {
-                    super.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                ti0Var.Q.invalidate();
+                xi0Var.n0 = xi0Var.U.indexOf(vi0Var.e);
+                xi0Var.m0 = vi0Var.e;
+                xi0Var.invalidate();
                 break;
         }
     }

@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class uo extends org.telegram.ui.Components.bk0 {
+public final class uo extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -42,7 +42,7 @@ public final class uo extends org.telegram.ui.Components.bk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return f1Var.f != 1;
     }
@@ -94,7 +94,7 @@ public final class uo extends org.telegram.ui.Components.bk0 {
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(this.c, 6, 2, false, null);
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, b5Var, null);
-        return new org.telegram.ui.Components.kj0(b5Var);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, b5Var, null);
+        return new org.telegram.ui.Components.mj0(b5Var);
     }
 }

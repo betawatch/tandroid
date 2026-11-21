@@ -13,9 +13,9 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.xg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, RequestTimeDelegate, xo, xg0, QuickAckDelegate {
+public final /* synthetic */ class o implements org.telegram.ui.ActionBar.q1, RequestTimeDelegate, xo, xg0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -35,7 +35,7 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, Re
         StaticLayout staticLayout = dvVar.b;
         ArrayList arrayList = dvVar.x;
         xh.f.g(view, false, -1, 0, atomicReference, 0, staticLayout, arrayList, canvas, false);
-        org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
+        org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
     }
 
     @Override // org.telegram.messenger.xo
@@ -48,13 +48,13 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, Re
         return tL_error == null || !"USER_PRIVACY_RESTRICTED".equals(tL_error.text);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 String str = (String) this.b;
                 try {
-                    ((org.telegram.ui.ActionBar.h2) this.c).getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + str)), 500);
+                    ((org.telegram.ui.ActionBar.g2) this.c).getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + str)), 500);
                     break;
                 } catch (Exception e10) {
                     a8.g(e10, true);

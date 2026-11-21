@@ -1,52 +1,30 @@
 package bi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e8 b;
+public final class x7 {
+    public static final x7 a;
+    public static final x7 b;
+    public static final x7 c;
+    public static final /* synthetic */ x7[] d;
 
-    public /* synthetic */ x7(e8 e8Var, int i7) {
-        this.a = i7;
-        this.b = e8Var;
+    static {
+        x7 x7Var = new x7("BY_PRICE", 0);
+        a = x7Var;
+        x7 x7Var2 = new x7("BY_DATE", 1);
+        b = x7Var2;
+        x7 x7Var3 = new x7("BY_NUMBER", 2);
+        c = x7Var3;
+        d = new x7[]{x7Var, x7Var2, x7Var3};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                u7 u7Var = this.b.c;
-                if (!u7Var.j.isEmpty()) {
-                    u7Var.j.clear();
-                    u7Var.m();
-                    break;
-                }
-                break;
-            case 1:
-                u7 u7Var2 = this.b.c;
-                if (!u7Var2.k.isEmpty()) {
-                    u7Var2.k.clear();
-                    u7Var2.m();
-                    break;
-                }
-                break;
-            case 2:
-                u7 u7Var3 = this.b.c;
-                if (!u7Var3.l.isEmpty()) {
-                    u7Var3.l.clear();
-                    u7Var3.m();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.c.p(t7.a);
-                break;
-            case 4:
-                this.b.c.p(t7.b);
-                break;
-            default:
-                this.b.c.p(t7.c);
-                break;
-        }
+    public static x7 valueOf(String str) {
+        return (x7) Enum.valueOf(x7.class, str);
+    }
+
+    public static x7[] values() {
+        return (x7[]) d.clone();
     }
 }

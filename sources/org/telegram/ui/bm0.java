@@ -5,27 +5,27 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class bm0 extends r11 {
+public final class bm0 extends s11 {
     public final /* synthetic */ em0 f2;
-    public final /* synthetic */ i11[] g2;
+    public final /* synthetic */ j11[] g2;
     public final /* synthetic */ fm0 h2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bm0(fm0 fm0Var, org.telegram.ui.ActionBar.h2 h2Var, Context context, Integer num, int i7, org.telegram.ui.ActionBar.i6 i6Var, int i10, int i11, em0 em0Var, i11[] i11VarArr) {
-        super(h2Var, context, true, num, i7, true, i6Var, i10, i11);
+    public bm0(fm0 fm0Var, org.telegram.ui.ActionBar.g2 g2Var, Context context, Integer num, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, int i11, em0 em0Var, j11[] j11VarArr) {
+        super(g2Var, context, true, num, i7, true, h6Var, i10, i11);
         this.h2 = fm0Var;
         this.f2 = em0Var;
-        this.g2 = i11VarArr;
+        this.g2 = j11VarArr;
     }
 
-    @Override // org.telegram.ui.r11
+    @Override // org.telegram.ui.s11
     public final float getScrimDrawableTranslationY() {
         return 0.0f;
     }
 
-    @Override // org.telegram.ui.r11
+    @Override // org.telegram.ui.s11
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         fm0 fm0Var = this.h2;
         if (tL_starGiftUnique != null) {
@@ -55,10 +55,10 @@ public final class bm0 extends r11 {
         fm0Var.j(true);
         fm0Var.i();
         fm0Var.f(true);
-        i11 i11Var = this.g2[0];
-        if (i11Var != null) {
+        j11 j11Var = this.g2[0];
+        if (j11Var != null) {
             fm0Var.p0 = null;
-            i11Var.dismiss();
+            j11Var.dismiss();
         }
     }
 }

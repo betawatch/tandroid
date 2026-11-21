@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
         boolean z13;
         int i10;
         String str3 = "NULL_ERROR";
-        int i11 = 23;
+        int i11 = 25;
         int i12 = 1;
         r8 = true;
         boolean z14 = true;
@@ -97,38 +97,38 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                     i12 = 0;
                     j3 = 0;
                 }
-                org.telegram.ui.Components.y60 J = org.telegram.ui.Components.y60.J(bnVar2, r1Var);
-                org.telegram.ui.Components.wk0 wk0Var = new org.telegram.ui.Components.wk0(bnVar2.getParentActivity(), bnVar2.Ba);
-                J.p = new fe(wk0Var, r9);
+                org.telegram.ui.Components.a70 J = org.telegram.ui.Components.a70.J(bnVar2, r1Var);
+                org.telegram.ui.Components.yk0 yk0Var = new org.telegram.ui.Components.yk0(bnVar2.getParentActivity(), bnVar2.Ba);
+                J.p = new fe(yk0Var, r9);
                 int i13 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
                 if (i13 != 0) {
                     int i14 = z10 ? R.drawable.msg_channel : R.drawable.msg_discussion;
-                    int i15 = z10 ? 2131743324 : 2131745406;
+                    int i15 = z10 ? 2131743318 : 2131745405;
                     i7 = i13;
                     z11 = z10;
                     z12 = false;
-                    J.c(i14, org.telegram.messenger.gd.M0(i15, null), new bg.k0(bnVar2, j3, 5), false);
+                    J.c(i14, org.telegram.messenger.gd.N0(i15, null), new bg.k0(bnVar2, j3, 5), false);
                 } else {
                     i7 = i13;
                     z11 = z10;
                     z12 = false;
                 }
-                J.c(R.drawable.msg_copy, org.telegram.messenger.gd.M0(2131746483, null), new je(bnVar2, wk0Var, str4, 3), z12);
+                J.c(R.drawable.msg_copy, org.telegram.messenger.gd.N0(2131746482, null), new je(bnVar2, yk0Var, str4, 3), z12);
                 int i16 = 13;
                 if (bool.booleanValue()) {
-                    J.c(R.drawable.outline_gram_24, org.telegram.messenger.gd.M0(2131752642, null), new ge(bnVar2, str4, i16), z12);
+                    J.c(R.drawable.outline_gram_24, org.telegram.messenger.gd.N0(2131752641, null), new ge(bnVar2, str4, i16), z12);
                 }
                 J.k();
                 if (i7 != 0) {
                     charSequence = null;
-                    J.n(tLObject, org.telegram.messenger.gd.M0(i12 != 0 ? 2131743309 : z11 ? 2131743323 : 2131743316, null), new bg.k0(bnVar2, j3, 6));
+                    J.n(tLObject, org.telegram.messenger.gd.N0(i12 != 0 ? 2131743303 : z11 ? 2131743317 : 2131743310, null), new bg.k0(bnVar2, j3, 6));
                 } else {
                     charSequence = null;
-                    J.p(13, org.telegram.messenger.g0.L(200.0f), org.telegram.messenger.gd.M0(2131747941, null));
+                    J.p(13, org.telegram.messenger.g0.L(200.0f), org.telegram.messenger.gd.N0(2131747940, null));
                 }
-                wk0Var.e(J);
-                wk0Var.f(r1Var, characterStyle, charSequence, false);
-                bnVar2.showDialog(wk0Var);
+                yk0Var.e(J);
+                yk0Var.f(r1Var, characterStyle, charSequence, false);
+                bnVar2.showDialog(yk0Var);
                 break;
             case 2:
                 bn bnVar3 = (bn) this.b;
@@ -176,7 +176,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TL_update.TL_updateSentWalletTransaction G = org.telegram.ui.Wallet.u0.G(updates);
                 if (updates != null) {
-                    Utilities.d.c(new b31(i11, u0Var, updates));
+                    Utilities.d.c(new mz0(i11, u0Var, updates));
                 }
                 if (G != null) {
                     String str5 = G.msg_hash;
@@ -220,7 +220,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                         }
                         zyVar.k(fjVar2, updates2, z14);
                         if (updates2 != null) {
-                            Utilities.d.c(new b31(i11, u0Var2, updates2));
+                            Utilities.d.c(new mz0(i11, u0Var2, updates2));
                         }
                         if (objArr != true) {
                             org.telegram.ui.Wallet.u0.P("transfer is sent, msg_hash=" + G2.msg_hash + ", gasless=" + G2.gasless);
@@ -293,7 +293,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                         i18++;
                         z13 |= update instanceof TL_update.TL_updateSentWalletTransaction;
                     }
-                    Utilities.d.c(new b31(26, l2Var2, updates3));
+                    Utilities.d.c(new mz0(28, l2Var2, updates3));
                 } else {
                     z13 = false;
                 }

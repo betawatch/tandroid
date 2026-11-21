@@ -1,59 +1,61 @@
 package hi;
 
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.j01;
+import android.content.Context;
+import org.telegram.messenger.pc;
+import org.telegram.ui.Components.hv0;
+import org.telegram.ui.Components.lv0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class c2 extends dq {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object i;
+public final class c2 extends lv0 {
+    public final /* synthetic */ boolean H3;
+    public final /* synthetic */ d2 I3;
 
-    public /* synthetic */ c2(int i7, FrameLayout frameLayout) {
-        this.h = i7;
-        this.i = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c2(d2 d2Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
+        super(i7, context, h6Var);
+        this.I3 = d2Var;
+        this.H3 = z10;
     }
 
-    @Override // org.telegram.ui.Components.dq
-    public final int a() {
-        switch (this.h) {
-            case 0:
-                return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Bf, (org.telegram.ui.ActionBar.i6) this.i);
-            case 1:
-                return ((org.telegram.ui.ActionBar.r0) this.i).c.b.s0;
-            case 2:
-                return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Bf, ((ey) this.i).H.a2);
-            case 3:
-                return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Q5, ((rl0) this.i).e);
-            default:
-                return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Bf, ((j01) this.i).G.a1);
+    @Override // org.telegram.ui.Components.lv0
+    public final boolean D1() {
+        return pc.e(8200);
+    }
+
+    @Override // org.telegram.ui.Components.lv0
+    public final hv0[] E1(hv0[] hv0VarArr) {
+        if (hv0VarArr != null && this.H3) {
+            int i7 = 0;
+            while (true) {
+                if (i7 >= hv0VarArr.length) {
+                    i7 = -1;
+                    break;
+                }
+                hv0 hv0Var = hv0VarArr[i7];
+                if (hv0Var != null && hv0Var.b) {
+                    break;
+                }
+                i7++;
+            }
+            if (i7 >= 0) {
+                int length = hv0VarArr.length;
+                hv0[] hv0VarArr2 = new hv0[length];
+                hv0VarArr2[0] = hv0VarArr[i7];
+                int i10 = 1;
+                while (i10 < length) {
+                    hv0VarArr2[i10] = hv0VarArr[i10 <= i7 ? i10 - 1 : i10];
+                    i10++;
+                }
+                return hv0VarArr2;
+            }
         }
+        return hv0VarArr;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(ey eyVar) {
-        super(1.25f);
-        this.h = 2;
-        this.i = eyVar;
-        this.f = org.telegram.messenger.g0.L(7.0f);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(org.telegram.ui.ActionBar.i6 i6Var) {
-        super(1.25f);
-        this.h = 0;
-        this.i = i6Var;
-        this.f = org.telegram.messenger.g0.L(7.0f);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(j01 j01Var) {
-        super(1.25f);
-        this.h = 4;
-        this.i = j01Var;
-        this.f = org.telegram.messenger.g0.L(7.0f);
+    @Override // org.telegram.ui.Components.lv0
+    public final void H1(int i7) {
+        super.H1(i7);
+        this.I3.d(false);
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class m40 extends qc {
     public jc A0;
@@ -39,17 +39,17 @@ public final class m40 extends qc {
     @Override // org.telegram.ui.qc
     public final void C0() {
         B0();
-        org.telegram.ui.Components.ck0 ck0Var = this.N;
-        if (ck0Var != null) {
-            ck0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.n6.a7));
+        org.telegram.ui.Components.ek0 ek0Var = this.N;
+        if (ek0Var != null) {
+            ek0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.m6.a7));
         }
         FrameLayout frameLayout = this.P;
-        if (frameLayout == null || !(frameLayout.getBackground() instanceof org.telegram.ui.Components.mq)) {
+        if (frameLayout == null || !(frameLayout.getBackground() instanceof org.telegram.ui.Components.oq)) {
             return;
         }
-        Drawable drawable = ((org.telegram.ui.Components.mq) this.P.getBackground()).a;
+        Drawable drawable = ((org.telegram.ui.Components.oq) this.P.getBackground()).a;
         if (drawable instanceof ColorDrawable) {
-            ((ColorDrawable) drawable).setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, this.resourceProvider));
+            ((ColorDrawable) drawable).setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, this.resourceProvider));
             this.P.invalidate();
         }
     }
@@ -69,17 +69,17 @@ public final class m40 extends qc {
 
     @Override // org.telegram.ui.qc
     public final int H0() {
-        return 2131749249;
+        return 2131749248;
     }
 
     @Override // org.telegram.ui.qc
     public final int I0() {
-        return 2131749251;
+        return 2131749250;
     }
 
     @Override // org.telegram.ui.qc
     public final int L0() {
-        return 2131749247;
+        return 2131749246;
     }
 
     @Override // org.telegram.ui.qc
@@ -89,7 +89,7 @@ public final class m40 extends qc {
 
     @Override // org.telegram.ui.qc
     public final int N0() {
-        return 2131749248;
+        return 2131749247;
     }
 
     @Override // org.telegram.ui.qc
@@ -109,22 +109,22 @@ public final class m40 extends qc {
 
     @Override // org.telegram.ui.qc
     public final int R0() {
-        return 2131749212;
+        return 2131749211;
     }
 
     @Override // org.telegram.ui.qc
     public final int S0() {
-        return 2131749206;
+        return 2131749205;
     }
 
     @Override // org.telegram.ui.qc
     public final int T0() {
-        return 2131749207;
+        return 2131749206;
     }
 
     @Override // org.telegram.ui.qc
     public final int U0() {
-        return 2131749192;
+        return 2131749191;
     }
 
     @Override // org.telegram.ui.qc
@@ -134,7 +134,7 @@ public final class m40 extends qc {
 
     @Override // org.telegram.ui.qc
     public final int W0() {
-        return 2131749193;
+        return 2131749192;
     }
 
     @Override // org.telegram.ui.qc
@@ -148,10 +148,10 @@ public final class m40 extends qc {
             return;
         }
         this.C0 = true;
-        org.telegram.messenger.mp.u1(this.currentAccount).I0().b(this.a, this.c, new ai.y1(this, i7, 7));
+        org.telegram.messenger.mp.u1(this.currentAccount).I0().b(this.a, this.c, new ai.a2(this, i7, 7));
     }
 
-    @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         View createView = super.createView(context);
         g1(false);
@@ -185,10 +185,10 @@ public final class m40 extends qc {
     public final void g1(boolean z10) {
         super.g1(z10);
         this.actionBar.setBackgroundColor(0);
-        org.telegram.ui.Components.mq mqVar = new org.telegram.ui.Components.mq(new ColorDrawable(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, this.resourceProvider)), org.telegram.ui.ActionBar.n6.Y0(getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.n6.b7), 0, 0);
-        mqVar.x = true;
-        this.P.setBackground(mqVar);
-        this.N.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.n6.a7));
+        org.telegram.ui.Components.oq oqVar = new org.telegram.ui.Components.oq(new ColorDrawable(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, this.resourceProvider)), org.telegram.ui.ActionBar.m6.Y0(getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.m6.b7), 0, 0);
+        oqVar.x = true;
+        this.P.setBackground(oqVar);
+        this.N.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.m6.a7));
         jc jcVar = this.A0;
         if (jcVar == null || z10) {
             return;
@@ -251,7 +251,7 @@ public final class m40 extends qc {
         this.Z = i14 + 3;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         jc jcVar = this.A0;
@@ -260,13 +260,13 @@ public final class m40 extends qc {
         }
     }
 
-    @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.T);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.T);

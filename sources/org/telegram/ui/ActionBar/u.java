@@ -1,27 +1,46 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Outline;
-import android.graphics.Path;
-import android.os.Build;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class u extends ViewOutlineProvider {
-    public final Path a = new Path();
+public final class u implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ g2 b;
+    public final /* synthetic */ g2 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ActionBarLayout e;
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        float L = org.telegram.messenger.g0.L(29.0f);
-        float L2 = org.telegram.messenger.g0.L(12.0f);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(0.0f, 0.0f, view.getWidth(), view.getHeight(), new float[]{L, L, L, L, L2, L2, L2, L2}, Path.Direction.CW);
-        if (Build.VERSION.SDK_INT >= 30) {
-            outline.setPath(path);
-        } else {
-            outline.setConvexPath(path);
+    public u(ActionBarLayout actionBarLayout, boolean z10, g2 g2Var, g2 g2Var2, boolean z11) {
+        this.e = actionBarLayout;
+        this.a = z10;
+        this.b = g2Var;
+        this.c = g2Var2;
+        this.d = z11;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        ActionBarLayout actionBarLayout = this.e;
+        if (actionBarLayout.d != this) {
+            return;
+        }
+        actionBarLayout.d = null;
+        if (this.a) {
+            g2 g2Var = this.b;
+            if (g2Var != null) {
+                g2Var.onTransitionAnimationStart(false, false);
+            }
+            this.c.onTransitionAnimationStart(true, false);
+            actionBarLayout.h0(true, true, this.d);
+            return;
+        }
+        Runnable runnable = actionBarLayout.e;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            if (actionBarLayout.Y0) {
+                actionBarLayout.e.run();
+            } else {
+                org.telegram.messenger.g0.h3(actionBarLayout.e, 200L);
+            }
         }
     }
 }

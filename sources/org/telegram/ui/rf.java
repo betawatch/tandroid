@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rf implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -52,20 +52,20 @@ public final /* synthetic */ class rf implements ValueAnimator.AnimatorUpdateLis
                 if (gfVar != null) {
                     gfVar.setAlpha(1.0f - floatValue3);
                 }
-                chatActivityEnterView.N4.set(feVar, Float.valueOf(org.telegram.messenger.g0.T1(1.0f, 0.6f, floatValue3)));
-                chatActivityEnterView.P4.set(feVar, Float.valueOf((1.0f - floatValue3) * this.b));
+                chatActivityEnterView.P4.set(feVar, Float.valueOf(org.telegram.messenger.g0.T1(1.0f, 0.6f, floatValue3)));
+                chatActivityEnterView.R4.set(feVar, Float.valueOf((1.0f - floatValue3) * this.b));
                 break;
             case 3:
-                org.telegram.ui.ActionBar.t0 t0Var = (org.telegram.ui.ActionBar.t0) this.c;
+                org.telegram.ui.ActionBar.s0 s0Var = (org.telegram.ui.ActionBar.s0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) t0Var.c;
-                org.telegram.ui.Components.ce ceVar = chatActivityEnterView2.N4;
+                ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) s0Var.c;
+                org.telegram.ui.Components.ce ceVar = chatActivityEnterView2.P4;
                 org.telegram.ui.Components.fe feVar2 = chatActivityEnterView2.R0;
                 ceVar.set(feVar2, Float.valueOf(org.telegram.messenger.g0.T1(0.6f, 1.0f, floatValue4)));
-                chatActivityEnterView2.P4.set(feVar2, Float.valueOf(this.b * floatValue4));
+                chatActivityEnterView2.R4.set(feVar2, Float.valueOf(this.b * floatValue4));
                 break;
             case 4:
-                ((org.telegram.ui.Components.rn) this.c).F.setTranslationY(org.telegram.messenger.g0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((org.telegram.ui.Components.tn) this.c).F.setTranslationY(org.telegram.messenger.g0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 5:
                 ((pr0) this.c).S.setTranslationY(org.telegram.messenger.g0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
@@ -79,12 +79,12 @@ public final /* synthetic */ class rf implements ValueAnimator.AnimatorUpdateLis
                 rx0Var.b.setTranslationX(T1);
                 ImageView imageView = rx0Var.c;
                 imageView.setTranslationX(T1);
-                org.telegram.ui.Components.mp mpVar = rx0Var.f;
-                mpVar.setTranslationX((org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(32.0f) : -org.telegram.messenger.g0.L(32.0f)) + T1);
+                org.telegram.ui.Components.op opVar = rx0Var.f;
+                opVar.setTranslationX((org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(32.0f) : -org.telegram.messenger.g0.L(32.0f)) + T1);
                 float f10 = (floatValue5 * 0.5f) + 0.5f;
-                mpVar.setScaleX(f10);
-                mpVar.setScaleY(f10);
-                mpVar.setAlpha(floatValue5);
+                opVar.setScaleX(f10);
+                opVar.setScaleY(f10);
+                opVar.setAlpha(floatValue5);
                 float f11 = 1.0f - floatValue5;
                 float f12 = (f11 * 0.5f) + 0.5f;
                 imageView.setScaleX(f12);

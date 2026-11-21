@@ -13,14 +13,14 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import bi.r2;
+import bi.v2;
 import java.util.WeakHashMap;
 import m.j2;
 import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public w E;
@@ -40,7 +40,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     public View x;
     public View y;
     public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 2);
-    public final r2 s = new r2(this, 8);
+    public final v2 s = new v2(this, 8);
     public int J = 0;
 
     public c0(Context context, k kVar, View view, int i7, boolean z10) {

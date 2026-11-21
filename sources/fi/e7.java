@@ -11,11 +11,11 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class e7 {
     public int A;
@@ -23,14 +23,14 @@ public class e7 {
     public final boolean E;
     public float G;
     public mc H;
-    public org.telegram.ui.ActionBar.i6 J;
+    public org.telegram.ui.ActionBar.h6 J;
     public float K;
     public boolean L;
     public float M;
     public boolean N;
     public float O;
     public float P;
-    public a6 Q;
+    public l4 Q;
     public View R;
     public int c;
     public TL_stories.StoryItem d;
@@ -63,9 +63,9 @@ public class e7 {
     public final RectF F = new RectF();
     public boolean I = false;
 
-    public e7(org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+    public e7(org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
         this.E = z10;
-        this.J = i6Var;
+        this.J = h6Var;
     }
 
     public final boolean a(View view, MotionEvent motionEvent) {
@@ -110,13 +110,13 @@ public class e7 {
                     this.O = motionEvent.getX();
                     this.P = motionEvent.getY();
                     if (this.I) {
-                        a6 a6Var = this.Q;
-                        if (a6Var != null) {
-                            org.telegram.messenger.g0.r(a6Var);
+                        l4 l4Var = this.Q;
+                        if (l4Var != null) {
+                            org.telegram.messenger.g0.r(l4Var);
                         }
-                        a6 a6Var2 = new a6(15, this, view);
-                        this.Q = a6Var2;
-                        org.telegram.messenger.g0.h3(a6Var2, ViewConfiguration.getLongPressTimeout());
+                        l4 l4Var2 = new l4(17, this, view);
+                        this.Q = l4Var2;
+                        org.telegram.messenger.g0.h3(l4Var2, ViewConfiguration.getLongPressTimeout());
                     }
                 }
                 return this.N;
@@ -129,9 +129,9 @@ public class e7 {
                     mcVar2.a = view;
                     mcVar2.c(false);
                 }
-                a6 a6Var3 = this.Q;
-                if (a6Var3 != null) {
-                    org.telegram.messenger.g0.r(a6Var3);
+                l4 l4Var3 = this.Q;
+                if (l4Var3 != null) {
+                    org.telegram.messenger.g0.r(l4Var3);
                 }
                 view.getParent().requestDisallowInterceptTouchEvent(false);
                 this.N = false;
@@ -171,9 +171,9 @@ public class e7 {
                 ((ViewGroup) parent).requestDisallowInterceptTouchEvent(false);
             }
             this.N = false;
-            a6 a6Var4 = this.Q;
-            if (a6Var4 != null) {
-                org.telegram.messenger.g0.r(a6Var4);
+            l4 l4Var4 = this.Q;
+            if (l4Var4 != null) {
+                org.telegram.messenger.g0.r(l4Var4);
             }
         }
         return this.N;
@@ -196,13 +196,13 @@ public class e7 {
     }
 
     public void f(long j3) {
-        org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+        org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
         if (Q == null || this.R == null) {
             return;
         }
         Q.getOrCreateStoryViewer().getClass();
         ViewParent parent = this.R.getParent();
-        Q.getOrCreateStoryViewer().J(Q.getContext(), j3, parent instanceof RecyclerView ? y6.a((ck0) parent) : null);
+        Q.getOrCreateStoryViewer().J(Q.getContext(), j3, parent instanceof RecyclerView ? y6.a((ek0) parent) : null);
     }
 
     public final void g() {

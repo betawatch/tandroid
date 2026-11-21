@@ -1,42 +1,48 @@
 package oi;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import org.telegram.messenger.gd;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
+import java.util.HashSet;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class s0 extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class s0 extends View implements org.telegram.ui.ActionBar.b6 {
+    public final h6 a;
+    public final Paint b;
+    public a c;
 
-    static {
-        k41.h(new s0());
+    public s0(Context context, h6 h6Var) {
+        super(context);
+        this.b = new Paint();
+        this.a = h6Var;
+        updateColors();
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        t0 t0Var = (t0) view;
-        a aVar = (a) l41Var.H;
-        p2 p2Var = (p2) l41Var.I;
-        t0Var.a = aVar;
-        t0Var.w = p2Var;
-        t0Var.x = gd.a0;
-        t0Var.c(aVar);
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(m6.wl));
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
-        return new t0(context, i6Var);
+    public a getRow() {
+        return this.c;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean f() {
-        return false;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, org.telegram.messenger.g0.L(6.0f), getMeasuredWidth(), org.telegram.messenger.g0.L(6.0f) + 1, this.b);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(6.0f) + 1);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        this.b.setColor(m6.w0(m6.wl, this.a));
     }
 }

@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class f91 implements org.telegram.ui.Components.oo {
+public final class f91 implements org.telegram.ui.Components.qo {
     public final /* synthetic */ TLRPC.TL_forumTopic a;
     public final /* synthetic */ y91 b;
 
@@ -15,7 +15,7 @@ public final class f91 implements org.telegram.ui.Components.oo {
         this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void B(int i7) {
         y91 y91Var = this.b;
         long j3 = y91Var.a;
@@ -37,12 +37,12 @@ public final class f91 implements org.telegram.ui.Components.oo {
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void dismiss() {
         this.b.finishPreviewFragment();
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void s() {
         y91 y91Var = this.b;
         y91Var.finishPreviewFragment();
@@ -56,17 +56,17 @@ public final class f91 implements org.telegram.ui.Components.oo {
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void u() {
         this.b.finishPreviewFragment();
-        org.telegram.messenger.g0.h3(new b31(11, this, this.a), 500L);
+        org.telegram.messenger.g0.h3(new mz0(13, this, this.a), 500L);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void w() {
         int i7;
         y91 y91Var = this.b;
-        i7 = ((org.telegram.ui.ActionBar.h2) y91Var).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
         SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i7).g7;
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j3 = y91Var.a;
@@ -81,7 +81,7 @@ public final class f91 implements org.telegram.ui.Components.oo {
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final /* synthetic */ void p() {
     }
 }

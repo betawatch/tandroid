@@ -1,30 +1,65 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pz0 implements View.OnClickListener {
+public final /* synthetic */ class pz0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tz0 b;
+    public final /* synthetic */ uz0 b;
 
-    public /* synthetic */ pz0(tz0 tz0Var, int i7) {
+    public /* synthetic */ pz0(uz0 uz0Var, int i7) {
         this.a = i7;
-        this.b = tz0Var;
+        this.b = uz0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                tz0 tz0Var = this.b;
-                if (tz0Var.Z == null) {
-                    tz0Var.dismiss();
-                    break;
+                uz0 uz0Var = this.b;
+                pz0 pz0Var = uz0Var.a0;
+                if (uz0Var.x != null) {
+                    uz0Var.b0 = r2.S() / uz0Var.x.U();
+                    sz0 sz0Var = uz0Var.O;
+                    if (sz0Var != null) {
+                        sz0Var.pc = (uz0Var.x.U() - uz0Var.x.S()) / 1000;
+                        uz0Var.O.U3();
+                        org.telegram.ui.Components.en0 seekBarWaveform = uz0Var.O.getSeekBarWaveform();
+                        if (seekBarWaveform != null) {
+                            float f10 = uz0Var.b0;
+                            seekBarWaveform.J = true;
+                            seekBarWaveform.K = f10;
+                            org.telegram.ui.Cells.r1 r1Var = seekBarWaveform.n;
+                            if (r1Var != null) {
+                                r1Var.invalidate();
+                            }
+                        }
+                    }
+                    if (uz0Var.x.d0()) {
+                        org.telegram.messenger.g0.r(pz0Var);
+                        org.telegram.messenger.g0.h3(pz0Var, 16L);
+                        break;
+                    }
                 }
                 break;
+            case 1:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
             default:
-                this.b.dismiss();
+                uz0 uz0Var2 = this.b;
+                if (uz0Var2.d == null) {
+                    org.telegram.messenger.g0.g3(new pz0(uz0Var2, 2));
+                    org.telegram.ui.Cells.r1 r1Var2 = uz0Var2.P;
+                    if (r1Var2 != null) {
+                        r1Var2.setVisibility(0);
+                        uz0Var2.P.invalidate();
+                    }
+                }
+                MediaController.B().F0();
                 break;
         }
     }

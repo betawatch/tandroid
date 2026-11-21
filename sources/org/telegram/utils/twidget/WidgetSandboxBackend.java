@@ -32,12 +32,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.az;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.cz;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements g1, h {
     private static final int MAX_CANVAS_WORDS = 2097152;
@@ -1293,14 +1293,14 @@ final class WidgetSandboxBackend implements g1, h {
                             return;
                         }
                         org.telegram.messenger.g0.g(str2);
-                        h2 T = org.telegram.messenger.g0.G3() ? LaunchActivity.T() : null;
+                        g2 T = org.telegram.messenger.g0.G3() ? LaunchActivity.T() : null;
                         if (T == null) {
                             return;
                         }
                         if (str2.length() > 80) {
                             str2 = str2.substring(0, 80) + "…";
                         }
-                        lc.b0(T).Q(R.raw.copy, 36, gd.a0(null, null, 2131742608, str2)).j();
+                        lc.b0(T).Q(R.raw.copy, 36, gd.a0(null, null, 2131742602, str2)).j();
                     }
                 });
                 return;
@@ -1319,7 +1319,7 @@ final class WidgetSandboxBackend implements g1, h {
             if (i7 != 16 && i7 != 17 && i7 != 9) {
                 if (i7 == 3) {
                     JSONObject jSONObject5 = new JSONObject(text);
-                    p1Var.a.post(new az(p1Var, jSONObject5.optBoolean("x"), jSONObject5.optBoolean("y"), jSONObject5.optBoolean("hold"), 2));
+                    p1Var.a.post(new cz(p1Var, jSONObject5.optBoolean("x"), jSONObject5.optBoolean("y"), jSONObject5.optBoolean("hold"), 2));
                     return;
                 }
                 if (i7 == 4) {

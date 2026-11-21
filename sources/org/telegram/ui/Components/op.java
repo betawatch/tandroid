@@ -1,77 +1,164 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.text.style.ReplacementSpan;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class op extends ReplacementSpan {
-    public final /* synthetic */ int a;
-    public final Object b;
+public class op extends View {
+    public final CheckBoxBase a;
+    public Drawable b;
+    public int c;
 
-    public /* synthetic */ op(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public op(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context);
+        this.a = new CheckBoxBase(i7, this, h6Var);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        switch (this.a) {
-            case 0:
-                Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
-                int i14 = ((fontMetricsInt.ascent + fontMetricsInt.descent) / 2) + i12;
-                Drawable drawable = (Drawable) this.b;
-                int i15 = (int) f10;
-                drawable.setBounds(i15, i14 - org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(24.0f) + i15, org.telegram.messenger.g0.L(12.0f) + i14);
-                drawable.setAlpha(paint.getAlpha());
-                drawable.draw(canvas);
-                break;
+    public final void a(boolean z10, boolean z11) {
+        this.a.f(-1, z10, z11);
+    }
+
+    public final void b(int i7, int i10, int i11) {
+        this.a.h(i7, i10, i11);
+    }
+
+    public CheckBoxBase getCheckBoxBase() {
+        return this.a;
+    }
+
+    public boolean getDrawUnchecked() {
+        return this.a.z;
+    }
+
+    public float getProgress() {
+        return this.a.getProgress();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.l = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.l = false;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b == null) {
+            this.a.a(canvas);
+            return;
+        }
+        int measuredWidth = getMeasuredWidth() >> 1;
+        int measuredHeight = getMeasuredHeight() >> 1;
+        Drawable drawable = this.b;
+        drawable.setBounds(org.telegram.ui.Cells.c0.C(2, measuredWidth, drawable), org.telegram.ui.Cells.c0.A(2, measuredHeight, this.b), org.telegram.ui.Cells.c0.y(2, measuredWidth, this.b), org.telegram.ui.Cells.c0.j(2, measuredHeight, this.b));
+        this.b.draw(canvas);
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(1.2f));
+        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.U6, false));
+        canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth - org.telegram.messenger.g0.L(1.5f), paint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Switch");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.a.q);
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        this.a.e(0, 0, i11 - i7, i12 - i10);
+    }
+
+    public void setCirclePaintProvider(org.telegram.messenger.i9 i9Var) {
+        CheckBoxBase checkBoxBase = this.a;
+        if (checkBoxBase.G == i9Var) {
+            return;
+        }
+        checkBoxBase.G = i9Var;
+        checkBoxBase.b();
+    }
+
+    public void setDrawBackgroundAsArc(int i7) {
+        this.a.d(i7);
+    }
+
+    public void setDrawUnchecked(boolean z10) {
+        this.a.k(z10);
+    }
+
+    public void setDuration(long j3) {
+        this.a.H = j3;
+    }
+
+    @Override // android.view.View
+    public void setEnabled(boolean z10) {
+        CheckBoxBase checkBoxBase = this.a;
+        if (checkBoxBase.k != z10) {
+            checkBoxBase.k = z10;
+            checkBoxBase.b();
+        }
+        super.setEnabled(z10);
+    }
+
+    public void setForbidden(boolean z10) {
+        CheckBoxBase checkBoxBase = this.a;
+        if (checkBoxBase.n == z10) {
+            return;
+        }
+        checkBoxBase.n = z10;
+        checkBoxBase.b();
+    }
+
+    public void setIcon(int i7) {
+        if (i7 != this.c) {
+            this.c = i7;
+            if (i7 == 0) {
+                this.b = null;
+                return;
+            }
+            Drawable mutate = getContext().getDrawable(i7).mutate();
+            this.b = mutate;
+            org.telegram.ui.ActionBar.t6.x(this, mutate, org.telegram.ui.ActionBar.m6.U6, null, PorterDuff.Mode.MULTIPLY);
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                if (fontMetricsInt != null) {
-                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
-                    int i11 = fontMetricsInt2.ascent;
-                    int i12 = (fontMetricsInt2.descent + i11) / 2;
-                    int D = org.telegram.messenger.n10.D(12.0f, i12, i11);
-                    fontMetricsInt.top = D;
-                    fontMetricsInt.ascent = D;
-                    int b10 = org.telegram.messenger.f3.b(12.0f, i12, fontMetricsInt2.descent);
-                    fontMetricsInt.bottom = b10;
-                    fontMetricsInt.descent = b10;
-                }
-                return org.telegram.messenger.g0.L(32.0f);
-            case 1:
-                return ((y90) this.b).y;
-            case 2:
-                return (int) ((org.telegram.ui.vg0) this.b).j2;
-            case 3:
-                return (int) ((wg.d1) this.b).o2;
-            default:
-                return ((org.telegram.messenger.g6) this.b).getSize(paint, charSequence, i7, i10, fontMetricsInt);
+    public void setNum(int i7) {
+        String str;
+        CheckBoxBase checkBoxBase = this.a;
+        if (i7 >= 0) {
+            checkBoxBase.getClass();
+            str = "" + (i7 + 1);
+        } else {
+            str = checkBoxBase.p != null ? checkBoxBase.C : null;
         }
+        String str2 = checkBoxBase.C;
+        if (str2 == null) {
+            if (str == null) {
+                return;
+            }
+        } else if (str2.equals(str)) {
+            return;
+        }
+        checkBoxBase.C = str;
+        checkBoxBase.b();
     }
 
-    public op(mh0 mh0Var) {
-        this.a = 0;
-        this.b = mh0Var;
-    }
-
-    private final void a(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-    }
-
-    private final void b(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-    }
-
-    private final void c(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-    }
-
-    private final void d(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    public void setProgressDelegate(pp ppVar) {
+        this.a.D = ppVar;
     }
 }

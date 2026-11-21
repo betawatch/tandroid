@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class cc1 extends FrameLayout {
     public float a;
@@ -58,7 +58,7 @@ public final class cc1 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.Components.pp ppVar;
+        org.telegram.ui.Components.rp rpVar;
         hc1 hc1Var = this.e;
         tb1 tb1Var = hc1Var.T0;
         if (motionEvent.getActionMasked() == 1) {
@@ -179,8 +179,8 @@ public final class cc1 extends FrameLayout {
                 } else if (hc1Var.z0) {
                     hc1Var.r(!hc1Var.x0);
                     hc1Var.q0 = hc1Var.p0;
-                    if (!hc1Var.x0 && (ppVar = hc1Var.N0) != null && ppVar.W) {
-                        ppVar.f(true);
+                    if (!hc1Var.x0 && (rpVar = hc1Var.N0) != null && rpVar.W) {
+                        rpVar.f(true);
                     }
                     hc1Var.y();
                 }

@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class wc extends Drawable {
     public static final uc H = new uc(0);
@@ -44,7 +44,7 @@ public final class wc extends Drawable {
     public final float[] z = new float[4];
     public int A = -1;
     public float E = 1.0f;
-    public final lg F = new lg(this, 16);
+    public final og F = new og(this, 16);
     public int G = org.telegram.messenger.ks.e4;
 
     public wc() {
@@ -70,7 +70,7 @@ public final class wc extends Drawable {
     }
 
     public static int e(int i7) {
-        return i7 != 0 ? i7 != 1 ? i7 != 3 ? org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Sh, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Zh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.ai, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.bi, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Qh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Rh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Oh, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Ph, false));
+        return i7 != 0 ? i7 != 1 ? i7 != 3 ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Sh, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Zh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.ai, false)), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.bi, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Qh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Rh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Oh, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ph, false));
     }
 
     public final void a(int i7) {

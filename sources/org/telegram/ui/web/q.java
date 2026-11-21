@@ -5,7 +5,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -49,15 +49,15 @@ public final /* synthetic */ class q implements Runnable {
             default:
                 v0 v0Var2 = this.b;
                 f7 f7Var = v0Var2.K0;
-                ki.s0 s0Var2 = v0Var2.l0;
-                s0Var2.getClass();
+                ki.r0 r0Var = v0Var2.l0;
+                r0Var.getClass();
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("available", s0Var2.d());
-                    if (s0Var2.d()) {
-                        jSONObject.put("access_requested", s0Var2.d);
-                        if (s0Var2.d) {
-                            jSONObject.put("access_granted", s0Var2.e && s0Var2.a());
+                    jSONObject.put("available", r0Var.d());
+                    if (r0Var.d()) {
+                        jSONObject.put("access_requested", r0Var.d);
+                        if (r0Var.d) {
+                            jSONObject.put("access_granted", r0Var.e && r0Var.a());
                         }
                     }
                 } catch (Exception e10) {

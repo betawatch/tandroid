@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.lq;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nq;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public abstract class f4 extends View {
     public float E;
@@ -46,14 +46,14 @@ public abstract class f4 extends View {
         int i7 = storyViews == null ? 0 : storyViews.views_count;
         if (i7 > 0) {
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new lq(R.drawable.msg_views, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new nq(R.drawable.msg_views, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(i7, 0));
             if (storyViews == null || storyViews.reactions_count <= 0) {
                 return;
             }
             spannableStringBuilder.append((CharSequence) (z10 ? "\n" : "  "));
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new lq(R.drawable.mini_like_filled, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new nq(R.drawable.mini_like_filled, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(storyViews.reactions_count, 0));
         }
     }
@@ -87,8 +87,8 @@ public abstract class f4 extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, f10);
             this.N = ofFloat;
             ofFloat.addUpdateListener(new d4(this, 0));
-            this.N.addListener(new ai.j0(this, 14));
-            this.N.setInterpolator(lr.f);
+            this.N.addListener(new ai.k0(this, 14));
+            this.N.setInterpolator(nr.f);
             this.N.setDuration(200L);
             this.N.start();
         }

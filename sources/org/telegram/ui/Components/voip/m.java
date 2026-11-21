@@ -15,10 +15,10 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout {
     public final n2 a;
@@ -79,7 +79,7 @@ public final class m extends FrameLayout {
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(-1);
-        imageView.setBackground(n6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
+        imageView.setBackground(m6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
         addView(imageView, ma.d(28, 28.0f, 51, 6.0f, 6.0f, 0.0f, 0.0f));
     }
 
@@ -118,12 +118,12 @@ public final class m extends FrameLayout {
         int callState = sharedInstance.getCallState();
         TextView textView2 = this.d;
         if (callState == 5) {
-            textView2.setText(gd.M0(2131743016, null));
+            textView2.setText(gd.N0(2131743010, null));
             textView2.setVisibility(0);
         } else if (callState == 3) {
             textView2.setVisibility(8);
         } else {
-            textView2.setText(gd.M0(2131743182, null));
+            textView2.setText(gd.N0(2131743176, null));
             textView2.setVisibility(0);
         }
     }

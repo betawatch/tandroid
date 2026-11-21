@@ -14,14 +14,14 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
 import org.telegram.messenger.ri;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class l9 extends org.telegram.ui.ActionBar.h2 {
+public final class l9 extends org.telegram.ui.ActionBar.g2 {
     public final ArrayList a;
     public ScrollView b;
     public ImageView c;
     public LinearLayout d;
-    public hi.d e;
+    public hi.e e;
     public Runnable f;
     public boolean h;
 
@@ -52,22 +52,22 @@ public final class l9 extends org.telegram.ui.ActionBar.h2 {
         this.d.addView(d9.j0(0, size, context, arrayList, this.resourceProvider), c8.ma.p(0, -2, 1.0f, 48));
         this.d.addView(new View(context), c8.ma.o(10, 0));
         this.d.addView(d9.j0(size, arrayList.size(), context, arrayList, this.resourceProvider), c8.ma.p(0, -2, 1.0f, 48));
-        hi.d dVar = this.e;
-        if (dVar != null) {
+        hi.e eVar = this.e;
+        if (eVar != null) {
             if (arrayList.size() != 12 && arrayList.size() != 24) {
                 z10 = false;
             }
-            dVar.setEnabled(z10);
+            eVar.setEnabled(z10);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         final int i7 = 0;
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, frameLayout, this.resourceProvider);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, frameLayout, this.resourceProvider);
         this.fragmentView = frameLayout;
         ScrollView scrollView = new ScrollView(context);
         this.b = scrollView;
@@ -86,12 +86,12 @@ public final class l9 extends org.telegram.ui.ActionBar.h2 {
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         ImageView imageView2 = this.c;
-        int i11 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.u6.s(imageView2, i11, this.resourceProvider, PorterDuff.Mode.SRC_IN);
+        int i11 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.s(imageView2, i11, this.resourceProvider, PorterDuff.Mode.SRC_IN);
         this.c.setImageResource(R.drawable.ic_ab_close);
         ImageView imageView3 = this.c;
-        int i12 = org.telegram.ui.ActionBar.n6.i6;
-        org.telegram.ui.ActionBar.u6.Q(imageView3, org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.w0(i12, this.resourceProvider), 3, -1), null, org.telegram.ui.ActionBar.u6.M(i12), this.resourceProvider);
+        int i12 = org.telegram.ui.ActionBar.m6.i6;
+        org.telegram.ui.ActionBar.t6.Q(imageView3, org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i12, this.resourceProvider), 3, -1), null, org.telegram.ui.ActionBar.t6.M(i12), this.resourceProvider);
         this.c.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.k9
             public final /* synthetic */ l9 b;
 
@@ -122,13 +122,13 @@ public final class l9 extends org.telegram.ui.ActionBar.h2 {
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(1);
-        org.telegram.ui.ActionBar.u6.U(textView, i11, this.resourceProvider);
-        textView.setText(gd.M0(this.h ? 2131742908 : 2131742831, null));
+        org.telegram.ui.ActionBar.t6.U(textView, i11, this.resourceProvider);
+        textView.setText(gd.N0(this.h ? 2131742902 : 2131742825, null));
         TextView f10 = n10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 32, 0, 32, 10), context);
         f10.setTextSize(1, 14.0f);
         f10.setGravity(1);
-        org.telegram.ui.ActionBar.u6.U(f10, org.telegram.ui.ActionBar.n6.z6, this.resourceProvider);
-        f10.setText(gd.M0(this.h ? 2131742907 : 2131742830, null));
+        org.telegram.ui.ActionBar.t6.U(f10, org.telegram.ui.ActionBar.m6.z6, this.resourceProvider);
+        f10.setText(gd.N0(this.h ? 2131742901 : 2131742824, null));
         linearLayout.addView(f10, c8.ma.t(-1, -2, 1, 32, 0, 32, 8));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.d = linearLayout2;
@@ -136,10 +136,10 @@ public final class l9 extends org.telegram.ui.ActionBar.h2 {
         this.d.setGravity(1);
         linearLayout.addView(this.d, c8.ma.t(-1, -2, 1, 4, 24, 4, 0));
         linearLayout.addView(new View(context), c8.ma.l(1.0f, -1, 0));
-        hi.d dVar = new hi.d(context, this.resourceProvider, true);
-        this.e = dVar;
-        dVar.f();
-        this.e.setText(gd.M0(2131742916, null));
+        hi.e eVar = new hi.e(context, this.resourceProvider, true);
+        this.e = eVar;
+        eVar.f();
+        this.e.setText(gd.N0(2131742910, null));
         this.e.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.k9
             public final /* synthetic */ l9 b;
 
@@ -164,12 +164,12 @@ public final class l9 extends org.telegram.ui.ActionBar.h2 {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.ActionBar.g2
     public final void onInsets(int i7, int i10, int i11, int i12) {
         ScrollView scrollView = this.b;
         if (scrollView != null) {

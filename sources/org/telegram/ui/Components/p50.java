@@ -1,29 +1,34 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p50 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r50 b;
+public final class p50 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    public /* synthetic */ p50(r50 r50Var, int i7) {
-        this.a = i7;
-        this.b = r50Var;
+    public p50(org.telegram.ui.ActionBar.w2[] w2VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = w2VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.g3(new k7((Object) this.b, (Object) tL_error, (Object) tLObject, 14));
-                break;
-            default:
-                org.telegram.messenger.g0.g3(new dw(14, this.b, tL_error));
-                break;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
+        if (T != null) {
+            T.presentFragment(ProfileActivity.D4(this.b.user_id));
         }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

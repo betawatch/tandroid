@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,12 +39,12 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                 long j3 = o6Var.K;
                 String str = o6Var.f;
                 boolean z11 = o6Var.b;
-                hi.d7 d7Var = o6Var.c;
+                hi.c7 c7Var = o6Var.c;
                 int i13 = o6Var.N.a;
                 if (tLObject instanceof TLRPC.Updates) {
                     o6Var.J = false;
                     TLRPC.Updates updates3 = (TLRPC.Updates) tLObject;
-                    if (d7Var.b0) {
+                    if (c7Var.b0) {
                         mp.u1(i13).V3(updates3, false);
                         org.telegram.messenger.g0.g3(new m6(o6Var, 1));
                         break;
@@ -72,13 +72,13 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                                     storyItem = new TL_stories.TL_storyItem();
                                     int currentTime = ConnectionsManager.getInstance(i13).getCurrentTime();
                                     storyItem.date = currentTime;
-                                    int i17 = d7Var.I0;
+                                    int i17 = c7Var.I0;
                                     if (i17 == Integer.MAX_VALUE) {
                                         i17 = 86400;
                                     }
                                     storyItem.expire_date = currentTime + i17;
                                     storyItem.parsedPrivacy = null;
-                                    ArrayList arrayList2 = d7Var.F0;
+                                    ArrayList arrayList2 = c7Var.F0;
                                     ArrayList<TLRPC.PrivacyRule> arrayList3 = new ArrayList<>();
                                     int i18 = 0;
                                     while (true) {
@@ -143,7 +143,7 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                                             i7 = i14;
                                             i10 = i13;
                                             storyItem.privacy = arrayList3;
-                                            storyItem.pinned = d7Var.I0 == Integer.MAX_VALUE;
+                                            storyItem.pinned = c7Var.I0 == Integer.MAX_VALUE;
                                             storyItem.dialogId = j10.i(i10).n;
                                             storyItem.attachPath = o6Var.e;
                                             storyItem.firstFramePath = str;
@@ -179,7 +179,7 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                                 TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
                                 tL_updateStory.peer = mp.u1(i21).B1(j3);
                                 tL_updateStory.story = storyItem;
-                                org.telegram.messenger.g0.g3(new a6(4, o6Var, tL_updateStory));
+                                org.telegram.messenger.g0.g3(new l4(6, o6Var, tL_updateStory));
                             }
                             TLRPC.MessageMedia messageMedia = storyItem.media;
                             if (messageMedia != null && storyItem.attachPath != null) {
@@ -192,23 +192,23 @@ public final /* synthetic */ class l6 implements RequestDelegate {
                                     }
                                 }
                             }
-                            org.telegram.messenger.g0.g3(new bi.m2(o6Var, j3, storyItem, 7));
+                            org.telegram.messenger.g0.g3(new bi.q2(o6Var, j3, storyItem, 7));
                             mp.u1(i21).U3(updates4.updates, updates4.users, updates4.chats, false, updates4.date);
                         }
                     }
                 } else if (tLObject instanceof TL_bots.botPreviewMedia) {
                     o6Var.M = (TL_bots.botPreviewMedia) tLObject;
-                } else if (tL_error != null && org.telegram.messenger.r8.r(tL_error.text) && d7Var.c0 != null && (jVar = d7Var.d0) != null) {
+                } else if (tL_error != null && org.telegram.messenger.r8.r(tL_error.text) && c7Var.c0 != null && (jVar = c7Var.d0) != null) {
                     jVar.a(new n6(o6Var, 0));
-                    d7Var.d0 = null;
+                    c7Var.d0 = null;
                     break;
                 } else if (tL_error != null && !z11) {
-                    org.telegram.messenger.g0.g3(new a6(5, o6Var, tL_error));
+                    org.telegram.messenger.g0.g3(new l4(7, o6Var, tL_error));
                 }
                 org.telegram.messenger.g0.g3(new m6(o6Var, 1));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new u5(this.b.N, 2));
+                org.telegram.messenger.g0.g3(new v5(this.b.N, 2));
                 break;
         }
     }

@@ -5,28 +5,28 @@ import android.widget.Scroller;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class z61 implements org.telegram.ui.Components.xm0, org.telegram.ui.Components.j10 {
+public final class z61 implements org.telegram.ui.Components.an0, org.telegram.ui.Components.m10 {
     public final /* synthetic */ x71 a;
 
     public /* synthetic */ z61(x71 x71Var) {
         this.a = x71Var;
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public void n(boolean z10, float f10) {
         x71 x71Var = this.a;
         x71Var.n1 = f10;
         x71Var.p1();
     }
 
-    @Override // org.telegram.ui.Components.j10
+    @Override // org.telegram.ui.Components.m10
     public boolean onDown(MotionEvent motionEvent) {
         Scroller scroller = this.a.c;
         if (scroller == null) {
@@ -36,7 +36,7 @@ public final class z61 implements org.telegram.ui.Components.xm0, org.telegram.u
         return true;
     }
 
-    @Override // org.telegram.ui.Components.j10
+    @Override // org.telegram.ui.Components.m10
     public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
         x71 x71Var = this.a;
         Scroller scroller = x71Var.c;
@@ -49,7 +49,7 @@ public final class z61 implements org.telegram.ui.Components.xm0, org.telegram.u
         return true;
     }
 
-    @Override // org.telegram.ui.Components.j10
+    @Override // org.telegram.ui.Components.m10
     public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
         x71 x71Var = this.a;
         Scroller scroller = x71Var.c;
@@ -62,25 +62,25 @@ public final class z61 implements org.telegram.ui.Components.xm0, org.telegram.u
         return true;
     }
 
-    @Override // org.telegram.ui.Components.j10
+    @Override // org.telegram.ui.Components.m10
     public boolean onSingleTapUp(MotionEvent motionEvent) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public /* synthetic */ int r0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.j10
+    @Override // org.telegram.ui.Components.m10
     public void onLongPress(MotionEvent motionEvent) {
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.an0
     public void C() {
     }
 
-    @Override // org.telegram.ui.Components.j10
+    @Override // org.telegram.ui.Components.m10
     public void a1() {
     }
 }

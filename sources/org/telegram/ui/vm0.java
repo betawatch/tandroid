@@ -10,7 +10,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vm0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
         switch (i10) {
             case 0:
                 cn0 cn0Var = (cn0) obj;
-                org.telegram.ui.ActionBar.h1 h1Var = cn0Var.n0;
-                if (h1Var != null && h1Var.isShowing()) {
+                org.telegram.ui.ActionBar.g1 g1Var = cn0Var.n0;
+                if (g1Var != null && g1Var.isShowing()) {
                     cn0Var.n0.d(true);
                 }
                 if (i11 == 0) {
-                    org.telegram.ui.Components.b5.I(cn0Var.getParentActivity(), cn0Var.V.a(), new um0(cn0Var, i12));
+                    org.telegram.ui.Components.c5.I(cn0Var.getParentActivity(), cn0Var.V.a(), new um0(cn0Var, i12));
                     break;
                 } else {
                     cn0Var.j0(0, true);
@@ -56,31 +56,30 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                 break;
             case 2:
                 ProfileActivity profileActivity = (ProfileActivity) obj;
-                int i14 = 14;
                 if (i11 == 0) {
                     vv0 vv0Var = profileActivity.O;
                     if (!vv0Var.F1) {
-                        if (org.telegram.ui.Components.gt0.J0(vv0Var.getClosestTab())) {
+                        if (org.telegram.ui.Components.jt0.J0(vv0Var.getClosestTab())) {
                             vv0 vv0Var2 = profileActivity.O;
                             profileActivity.O.a1(vv0Var2.w1(vv0Var2.getClosestTab()), profileActivity.a(), profileActivity);
                             break;
                         } else if (profileActivity.getMessagesController().i5()) {
                             profileActivity.getMessagesController().h7.edit().putBoolean("story_keep", true).apply();
-                            hi.ta D = hi.ta.D(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
+                            hi.sa D = hi.sa.D(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
                             D.y = new uv0(profileActivity);
                             D.Q(null);
                             break;
                         } else {
-                            profileActivity.showDialog(new ug.z0((org.telegram.ui.ActionBar.h2) profileActivity, 14, true));
+                            profileActivity.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) profileActivity, 14, true));
                             break;
                         }
                     }
                 }
-                if (!org.telegram.ui.Components.gt0.J0(profileActivity.O.getClosestTab())) {
+                if (!org.telegram.ui.Components.jt0.J0(profileActivity.O.getClosestTab())) {
                     long e10 = profileActivity.getUserConfig().e();
-                    ai.l2 l2Var = profileActivity.D5;
-                    if (l2Var != null) {
-                        l2Var.run();
+                    ai.n2 n2Var = profileActivity.D5;
+                    if (n2Var != null) {
+                        n2Var.run();
                         profileActivity.D5 = null;
                     }
                     org.telegram.ui.Components.gc.e();
@@ -88,15 +87,15 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                     ArrayList arrayList = new ArrayList();
                     SparseArray<org.telegram.messenger.fj> actionModeSelected = profileActivity.O.getActionModeSelected();
                     if (actionModeSelected != null) {
-                        int i15 = 0;
-                        for (int i16 = 0; i16 < actionModeSelected.size(); i16++) {
-                            TL_stories.StoryItem storyItem = actionModeSelected.valueAt(i16).l;
+                        int i14 = 0;
+                        for (int i15 = 0; i15 < actionModeSelected.size(); i15++) {
+                            TL_stories.StoryItem storyItem = actionModeSelected.valueAt(i15).l;
                             if (storyItem != null) {
                                 arrayList.add(storyItem);
-                                i15++;
+                                i14++;
                             }
                         }
-                        i7 = i15;
+                        i7 = i14;
                     } else {
                         i7 = 0;
                     }
@@ -106,17 +105,17 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                     }
                     if (!arrayList.isEmpty()) {
                         boolean[] zArr = new boolean[arrayList.size()];
-                        for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                            TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i17);
-                            zArr[i17] = storyItem2.pinned;
+                        for (int i16 = 0; i16 < arrayList.size(); i16++) {
+                            TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i16);
+                            zArr[i16] = storyItem2.pinned;
                             storyItem2.pinned = z10;
                         }
                         profileActivity.getMessagesController().R1().q0(e10, arrayList, false);
                         boolean[] zArr2 = {false};
                         boolean z11 = z10;
-                        profileActivity.D5 = new ai.l2(profileActivity, e10, arrayList, z10, 3);
-                        bi.k2 k2Var = new bi.k2(profileActivity, zArr2, arrayList, zArr, e10, 15);
-                        (z11 ? org.telegram.ui.Components.lc.b0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.gd.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.M0(2131744249, null), org.telegram.messenger.gd.M0(2131743648, null), k2Var).j() : org.telegram.ui.Components.lc.b0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.gd.M0(2131743648, null), 5000, false, k2Var).j()).v = new tr0(i14, profileActivity, zArr2);
+                        profileActivity.D5 = new ai.n2(profileActivity, e10, arrayList, z10, 3);
+                        bi.o2 o2Var = new bi.o2(profileActivity, zArr2, arrayList, zArr, e10, 15);
+                        (z11 ? org.telegram.ui.Components.lc.b0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.gd.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.N0(2131744243, null), org.telegram.messenger.gd.N0(2131743642, null), o2Var).j() : org.telegram.ui.Components.lc.b0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.gd.N0(2131743642, null), 5000, false, o2Var).j()).v = new tr0(16, profileActivity, zArr2);
                         break;
                     }
                 } else {
@@ -124,17 +123,17 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                     vv0 vv0Var3 = profileActivity.O;
                     int w12 = vv0Var3.w1(vv0Var3.getClosestTab());
                     String w10 = profileActivity.getMessagesController().R1().w(w12, a10);
-                    ai.l2 l2Var2 = profileActivity.D5;
-                    if (l2Var2 != null) {
-                        l2Var2.run();
+                    ai.n2 n2Var2 = profileActivity.D5;
+                    if (n2Var2 != null) {
+                        n2Var2.run();
                         profileActivity.D5 = null;
                     }
                     org.telegram.ui.Components.gc.e();
                     ArrayList arrayList2 = new ArrayList();
                     SparseArray<org.telegram.messenger.fj> actionModeSelected2 = profileActivity.O.getActionModeSelected();
                     if (actionModeSelected2 != null) {
-                        for (int i18 = 0; i18 < actionModeSelected2.size(); i18++) {
-                            TL_stories.StoryItem storyItem3 = actionModeSelected2.valueAt(i18).l;
+                        for (int i17 = 0; i17 < actionModeSelected2.size(); i17++) {
+                            TL_stories.StoryItem storyItem3 = actionModeSelected2.valueAt(i17).l;
                             if (storyItem3 != null) {
                                 arrayList2.add(storyItem3);
                             }
@@ -142,9 +141,9 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                     }
                     profileActivity.O.V(false);
                     if (!arrayList2.isEmpty()) {
-                        bi.q3 q3Var = new bi.q3(profileActivity, a10, w12, arrayList2, 5);
+                        bi.u3 u3Var = new bi.u3(profileActivity, a10, w12, arrayList2, 5);
                         profileActivity.getMessagesController().R1().f0(w12, a10, arrayList2);
-                        org.telegram.ui.Components.lc.b0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.gd.M0(2131743648, null), q3Var).j();
+                        org.telegram.ui.Components.lc.b0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.gd.N0(2131743642, null), u3Var).j();
                         break;
                     }
                 }

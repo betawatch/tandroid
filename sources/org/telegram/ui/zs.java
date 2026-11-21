@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.text.TextUtils;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class zs extends org.telegram.ui.Cells.d5 {
     public final /* synthetic */ int e;
@@ -25,7 +25,7 @@ public final class zs extends org.telegram.ui.Cells.d5 {
         setWillNotDraw(false);
         TextView textView = new TextView(activity);
         this.a = textView;
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, null);
         org.telegram.messenger.n10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 48);
@@ -34,7 +34,7 @@ public final class zs extends org.telegram.ui.Cells.d5 {
         addView(textView, c8.ma.d(-1, -1.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(activity);
         this.b = textView2;
-        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.n5, null);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.n5, null);
         org.telegram.messenger.n10.q(textView2, 1, 16.0f, 1, 1);
         textView2.setSingleLine(true);
         textView2.setGravity((org.telegram.messenger.gd.a0 ? 3 : 5) | 48);

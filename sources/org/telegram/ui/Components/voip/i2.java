@@ -9,14 +9,14 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.gk;
+import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.me;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ac1;
 import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class i2 implements wi.l {
     public static i2 h;
@@ -24,7 +24,7 @@ public final class i2 implements wi.l {
     public m b;
     public long c;
     public boolean d;
-    public final gk e = new gk(this, 25);
+    public final ik e = new ik(this, 25);
     public boolean f;
 
     /* JADX WARN: Type inference failed for: r5v1 */
@@ -170,7 +170,7 @@ public final class i2 implements wi.l {
     }
 
     @Override // wi.l
-    public final /* synthetic */ boolean V(boolean z10, float f10, cn0 cn0Var) {
+    public final /* synthetic */ boolean V(boolean z10, float f10, fn0 fn0Var) {
         return false;
     }
 
@@ -183,9 +183,9 @@ public final class i2 implements wi.l {
         mVar.b();
         this.c = g.c();
         this.d = m.a(VoIPService.getSharedInstance());
-        gk gkVar = this.e;
-        org.telegram.messenger.g0.r(gkVar);
-        org.telegram.messenger.g0.h3(gkVar, 500L);
+        ik ikVar = this.e;
+        org.telegram.messenger.g0.r(ikVar);
+        org.telegram.messenger.g0.h3(ikVar, 500L);
         this.f = false;
         if (hc1.m1 != null || h2.d() == null) {
             return;
@@ -267,10 +267,10 @@ public final class i2 implements wi.l {
         }
         if (h2.d() != null) {
             h2 d = h2.d();
-            ai.k0 k0Var = d.a;
+            ai.l0 l0Var = d.a;
             try {
-                if (k0Var.getParent() == null) {
-                    d.c.addView(k0Var, d.d);
+                if (l0Var.getParent() == null) {
+                    d.c.addView(l0Var, d.d);
                 }
             } catch (Exception e11) {
                 a8.g(e11, true);

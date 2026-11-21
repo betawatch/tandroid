@@ -7,9 +7,9 @@ import android.os.Parcel;
 import android.os.SystemClock;
 import android.util.Log;
 import java.nio.charset.StandardCharsets;
-import org.telegram.ui.dd0;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class a0 extends Binder implements b {
     public static final /* synthetic */ int b = 0;
@@ -200,7 +200,7 @@ public final class a0 extends Binder implements b {
                 l.b++;
                 if (!l.c) {
                     l.c = true;
-                    Thread thread = new Thread(new dd0(17), "widget-engine-memory");
+                    Thread thread = new Thread(new cd0(17), "widget-engine-memory");
                     thread.setDaemon(true);
                     thread.start();
                 }

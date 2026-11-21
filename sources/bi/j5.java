@@ -1,59 +1,42 @@
 package bi;
 
 import android.view.View;
-import android.widget.FrameLayout;
-import hi.ta;
-import org.telegram.ui.Components.eq0;
-import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Cells.ua;
+import org.telegram.ui.Cells.va;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j5 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ FrameLayout d;
+public final /* synthetic */ class j5 implements View.OnLongClickListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ j5(FrameLayout frameLayout, boolean z10, int i7, int i10) {
-        this.a = i10;
-        this.d = frameLayout;
-        this.b = z10;
-        this.c = i7;
+    public /* synthetic */ j5(di.p8 p8Var, int i7, Runnable runnable) {
+        this.c = p8Var;
+        this.b = i7;
+        this.d = runnable;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
         switch (this.a) {
             case 0:
-                eq0 eq0Var = (eq0) this.d;
-                if (eq0Var.e.h() && eq0Var.h.getCurrentPosition() != 0) {
-                    eq0Var.a();
-                    break;
-                } else {
-                    boolean z10 = this.b;
-                    int i7 = this.c;
-                    if (!z10) {
-                        a2.l1(false, org.telegram.messenger.v1.a(i7).b());
-                        break;
-                    } else {
-                        j3 j3Var = new j3(eq0Var.getContext(), i7, eq0Var.c, null, null);
-                        j3Var.g1(org.telegram.messenger.v1.a(i7).c(eq0Var.c));
-                        j3Var.show();
-                        break;
-                    }
-                }
-                break;
+                di.p8 p8Var = (di.p8) this.c;
+                Runnable runnable = (Runnable) this.d;
+                p8Var.g(this.b, true);
+                runnable.run();
+                return true;
             default:
-                gt0 gt0Var = (gt0) this.d;
-                org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
-                if (!this.b) {
-                    h2Var.getMessagesController().h7.edit().putBoolean("story_keep", true).apply();
-                    ta.D(h2Var.getParentActivity(), h2Var.getCurrentAccount()).Q(null);
-                    break;
-                } else {
-                    gt0Var.a1(this.c, gt0Var.m1, h2Var);
-                    break;
-                }
+                va vaVar = (va) this.c;
+                ua uaVar = (ua) this.d;
+                return vaVar.b(uaVar.h, this.b);
         }
+    }
+
+    public /* synthetic */ j5(va vaVar, ua uaVar, int i7) {
+        this.c = vaVar;
+        this.d = uaVar;
+        this.b = i7;
     }
 }

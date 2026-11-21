@@ -51,31 +51,31 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.be0;
-import org.telegram.ui.Components.c61;
-import org.telegram.ui.Components.dz0;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.ez0;
+import org.telegram.ui.Components.ce0;
 import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.g21;
-import org.telegram.ui.Components.gh0;
-import org.telegram.ui.Components.hh0;
-import org.telegram.ui.Components.i41;
-import org.telegram.ui.Components.j41;
+import org.telegram.ui.Components.fz0;
+import org.telegram.ui.Components.gz0;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.ih0;
+import org.telegram.ui.Components.j21;
+import org.telegram.ui.Components.jh0;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.nu0;
-import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.s41;
-import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.z71;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class fj {
     public static Pattern m3;
@@ -224,18 +224,18 @@ public class fj {
     public float g0;
     public TLRPC.TL_peerColorCollectible g1;
     public boolean g2;
-    public e61 g3;
+    public h61 g3;
     public Boolean h;
     public float h0;
     public boolean h1;
     public TLRPC.Peer h2;
-    public e61 h3;
+    public h61 h3;
     public final boolean i;
     public int i0;
     public boolean i1;
     public final Drawable[] i2;
-    public e61 i3;
-    public fi.z5 j;
+    public h61 i3;
+    public fi.a6 j;
     public int j0;
     public TLRPC.TL_forumTopic j1;
     public final boolean j2;
@@ -472,16 +472,16 @@ public class fj {
                     g6Var = g6Var3;
                     if (messageEntity.offset + messageEntity.length <= spannableString.length()) {
                         int i14 = messageEntity.offset;
-                        org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) spannableString.getSpans(i14, messageEntity.length + i14, org.telegram.ui.Components.x5.class);
-                        if (x5VarArr != null && x5VarArr.length > 0) {
-                            for (org.telegram.ui.Components.x5 x5Var : x5VarArr) {
-                                spannableString.removeSpan(x5Var);
+                        org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) spannableString.getSpans(i14, messageEntity.length + i14, org.telegram.ui.Components.y5.class);
+                        if (y5VarArr != null && y5VarArr.length > 0) {
+                            for (org.telegram.ui.Components.y5 y5Var : y5VarArr) {
+                                spannableString.removeSpan(y5Var);
                             }
                         }
-                        org.telegram.ui.Components.x5 x5Var2 = tL_messageEntityCustomEmoji.document != null ? new org.telegram.ui.Components.x5(tL_messageEntityCustomEmoji.document, f10, fontMetricsInt) : new org.telegram.ui.Components.x5(tL_messageEntityCustomEmoji.document_id, f10, fontMetricsInt);
-                        x5Var2.top = z10;
+                        org.telegram.ui.Components.y5 y5Var2 = tL_messageEntityCustomEmoji.document != null ? new org.telegram.ui.Components.y5(tL_messageEntityCustomEmoji.document, f10, fontMetricsInt) : new org.telegram.ui.Components.y5(tL_messageEntityCustomEmoji.document_id, f10, fontMetricsInt);
+                        y5Var2.top = z10;
                         int i15 = messageEntity.offset;
-                        spannableString.setSpan(x5Var2, i15, messageEntity.length + i15, 33);
+                        spannableString.setSpan(y5Var2, i15, messageEntity.length + i15, 33);
                         i10--;
                         i11++;
                         g6Var3 = g6Var;
@@ -585,19 +585,19 @@ public class fj {
             str2 = str4;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.replace(charSequence, new String[]{str}, new CharSequence[]{charSequence2}));
-        q41 q41Var = new q41(p5.c.k("", str2));
-        q41Var.c = tLObject3;
-        spannableStringBuilder.setSpan(q41Var, indexOf, charSequence2.length() + indexOf, 33);
+        t41 t41Var = new t41(p5.c.k("", str2));
+        t41Var.c = tLObject3;
+        spannableStringBuilder.setSpan(t41Var, indexOf, charSequence2.length() + indexOf, 33);
         return spannableStringBuilder;
     }
 
     public static CharSequence F() {
         if (t3 == null) {
             t3 = new SpannableStringBuilder("c");
-            org.telegram.ui.Components.lq lqVar = new org.telegram.ui.Components.lq(R.drawable.msg_folders_channels, 0);
-            lqVar.I = 0.7f;
-            lqVar.J = 0.7f;
-            t3.setSpan(lqVar, 0, 1, 33);
+            org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.msg_folders_channels, 0);
+            nqVar.I = 0.7f;
+            nqVar.J = 0.7f;
+            t3.setSpan(nqVar, 0, 1, 33);
         }
         return t3;
     }
@@ -668,7 +668,7 @@ public class fj {
     }
 
     public static int H1(int i7, TLRPC.Message message) {
-        kg.v1 d;
+        kg.u1 d;
         if (message == null) {
             return 0;
         }
@@ -680,7 +680,7 @@ public class fj {
             return ((TLRPC.TL_inputQuickReplyShortcutId) inputQuickReplyShortcut).shortcut_id;
         }
         String J1 = J1(message);
-        if (J1 == null || (d = kg.w1.f(i7).d(J1)) == null) {
+        if (J1 == null || (d = kg.v1.f(i7).d(J1)) == null) {
             return 0;
         }
         return d.a;
@@ -1194,18 +1194,18 @@ public class fj {
         int i7;
         TreeSet treeSet = new TreeSet();
         HashMap hashMap = new HashMap();
-        gh0[] gh0VarArr = (gh0[]) spanned.getSpans(0, spanned.length(), gh0.class);
+        ih0[] ih0VarArr = (ih0[]) spanned.getSpans(0, spanned.length(), ih0.class);
         int i10 = 0;
         while (true) {
-            if (i10 >= gh0VarArr.length) {
+            if (i10 >= ih0VarArr.length) {
                 break;
             }
-            gh0 gh0Var = gh0VarArr[i10];
-            gh0Var.a.b = false;
-            int spanStart = spanned.getSpanStart(gh0Var);
-            int spanEnd = spanned.getSpanEnd(gh0VarArr[i10]);
+            ih0 ih0Var = ih0VarArr[i10];
+            ih0Var.a.b = false;
+            int spanStart = spanned.getSpanStart(ih0Var);
+            int spanEnd = spanned.getSpanEnd(ih0VarArr[i10]);
             treeSet.add(Integer.valueOf(spanStart));
-            hashMap.put(Integer.valueOf(spanStart), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanStart)) ? ((Integer) hashMap.get(Integer.valueOf(spanStart))).intValue() : 0) | (gh0VarArr[i10].a.e ? 16 : 1)));
+            hashMap.put(Integer.valueOf(spanStart), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanStart)) ? ((Integer) hashMap.get(Integer.valueOf(spanStart))).intValue() : 0) | (ih0VarArr[i10].a.e ? 16 : 1)));
             treeSet.add(Integer.valueOf(spanEnd));
             hashMap.put(Integer.valueOf(spanEnd), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanEnd)) ? ((Integer) hashMap.get(Integer.valueOf(spanEnd))).intValue() : 0) | 2));
             i10++;
@@ -1323,7 +1323,7 @@ public class fj {
 
     public static SpannableStringBuilder T5(int i7, String str) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-        spannableStringBuilder.setSpan(new org.telegram.ui.Components.lq(i7, 0), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new org.telegram.ui.Components.nq(i7, 0), 0, spannableStringBuilder.length(), 33);
         return spannableStringBuilder;
     }
 
@@ -1502,10 +1502,10 @@ public class fj {
     public static CharSequence X1(TLRPC.ChatReactions chatReactions) {
         String str;
         if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-            return gd.M0(2131754289, null);
+            return gd.N0(2131754288, null);
         }
         if (!(chatReactions instanceof TLRPC.TL_chatReactionsSome)) {
-            return gd.M0(2131747983, null);
+            return gd.N0(2131747982, null);
         }
         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -1518,7 +1518,7 @@ public class fj {
                 str = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
             } else if (reaction instanceof TLRPC.TL_reactionCustomEmoji) {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("d");
-                spannableStringBuilder2.setSpan(new org.telegram.ui.Components.x5(((TLRPC.TL_reactionCustomEmoji) reaction).document_id, (Paint.FontMetricsInt) null), 0, 1, 0);
+                spannableStringBuilder2.setSpan(new org.telegram.ui.Components.y5(((TLRPC.TL_reactionCustomEmoji) reaction).document_id, (Paint.FontMetricsInt) null), 0, 1, 0);
                 str = spannableStringBuilder2;
             } else {
                 str = "";
@@ -1662,7 +1662,7 @@ public class fj {
         if (!(charSequence instanceof Spannable)) {
             return false;
         }
-        CharSequence a10 = org.telegram.ui.Components.k00.a(charSequence, false);
+        CharSequence a10 = org.telegram.ui.Components.m00.a(charSequence, false);
         Spannable spannable2 = (Spannable) a10;
         URLSpan[] uRLSpanArr = (URLSpan[]) spannable2.getSpans(0, a10.length(), URLSpan.class);
         boolean z15 = uRLSpanArr != null && uRLSpanArr.length > 0;
@@ -1694,37 +1694,37 @@ public class fj {
                         }
                     }
                     if ((i7 != 1 || (messageEntity instanceof TLRPC.TL_messageEntityHashtag)) && !(messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) && !(messageEntity instanceof TLRPC.TL_messageEntityBlockquote) && !(messageEntity instanceof TLRPC.TL_messageEntityPre) && !(messageEntity instanceof TLRPC.TL_messageEntityDiffReplace)) {
-                        dz0 dz0Var = new dz0();
+                        fz0 fz0Var = new fz0();
                         int i20 = messageEntity.offset;
-                        dz0Var.b = i20;
-                        dz0Var.c = i20 + messageEntity.length;
+                        fz0Var.b = i20;
+                        fz0Var.c = i20 + messageEntity.length;
                         if (messageEntity instanceof TLRPC.TL_messageEntitySpoiler) {
-                            dz0Var.a = 256;
+                            fz0Var.a = 256;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityStrike) {
-                            dz0Var.a = 8;
+                            fz0Var.a = 8;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityDiffDelete) {
-                            dz0Var.a = TLObject.FLAG_13;
+                            fz0Var.a = TLObject.FLAG_13;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityUnderline) {
-                            dz0Var.a = 16;
+                            fz0Var.a = 16;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityBold) {
-                            dz0Var.a = 1;
+                            fz0Var.a = 1;
                         } else {
                             if (messageEntity instanceof TLRPC.TL_messageEntityItalic) {
-                                dz0Var.a = 2;
+                                fz0Var.a = 2;
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityCode) {
-                                dz0Var.a = 4;
+                                fz0Var.a = 4;
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityDiffInsert) {
-                                dz0Var.a = TLObject.FLAG_12;
+                                fz0Var.a = TLObject.FLAG_12;
                             } else {
                                 if (messageEntity instanceof TLRPC.TL_messageEntityMentionName) {
                                     if (z11) {
-                                        dz0Var.a = 64;
-                                        dz0Var.d = messageEntity;
+                                        fz0Var.a = 64;
+                                        fz0Var.d = messageEntity;
                                     }
                                 } else if (messageEntity instanceof TLRPC.TL_inputMessageEntityMentionName) {
                                     if (z11) {
-                                        dz0Var.a = 64;
-                                        dz0Var.d = messageEntity;
+                                        fz0Var.a = 64;
+                                        fz0Var.d = messageEntity;
                                     }
                                 } else if (!z13 || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) || (messageEntity instanceof TLRPC.TL_messageEntityFormattedDate)) {
                                     if (((messageEntity instanceof TLRPC.TL_messageEntityUrl) || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl)) && (str2 = messageEntity.url) != null) {
@@ -1742,10 +1742,10 @@ public class fj {
                                         }
                                     }
                                     if (!(messageEntity instanceof TLRPC.TL_messageEntityMention) || z11) {
-                                        dz0Var.a = 128;
-                                        dz0Var.d = messageEntity;
+                                        fz0Var.a = 128;
+                                        fz0Var.d = messageEntity;
                                         if (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) {
-                                            dz0Var.a = 1152;
+                                            fz0Var.a = 1152;
                                         }
                                     }
                                 }
@@ -1755,58 +1755,58 @@ public class fj {
                             size = arrayList2.size();
                             i15 = 0;
                             while (i15 < size) {
-                                dz0 dz0Var2 = (dz0) arrayList2.get(i15);
-                                if ((dz0Var2.a & 256) == 0 || dz0Var.b < dz0Var2.b || dz0Var.c > dz0Var2.c) {
-                                    int i21 = dz0Var.b;
-                                    int i22 = dz0Var2.b;
+                                fz0 fz0Var2 = (fz0) arrayList2.get(i15);
+                                if ((fz0Var2.a & 256) == 0 || fz0Var.b < fz0Var2.b || fz0Var.c > fz0Var2.c) {
+                                    int i21 = fz0Var.b;
+                                    int i22 = fz0Var2.b;
                                     if (i21 > i22) {
-                                        int i23 = dz0Var2.c;
+                                        int i23 = fz0Var2.c;
                                         if (i21 < i23) {
-                                            if (dz0Var.c < i23) {
-                                                dz0 dz0Var3 = new dz0(dz0Var);
-                                                dz0Var3.b(dz0Var2);
-                                                arrayList2.add(i15 + 1, dz0Var3);
-                                                dz0 dz0Var4 = new dz0(dz0Var2);
-                                                dz0Var4.b = dz0Var.c;
+                                            if (fz0Var.c < i23) {
+                                                fz0 fz0Var3 = new fz0(fz0Var);
+                                                fz0Var3.b(fz0Var2);
+                                                arrayList2.add(i15 + 1, fz0Var3);
+                                                fz0 fz0Var4 = new fz0(fz0Var2);
+                                                fz0Var4.b = fz0Var.c;
                                                 i15 += 2;
                                                 size += 2;
-                                                arrayList2.add(i15, dz0Var4);
+                                                arrayList2.add(i15, fz0Var4);
                                             } else {
-                                                dz0 dz0Var5 = new dz0(dz0Var);
-                                                dz0Var5.b(dz0Var2);
-                                                dz0Var5.c = dz0Var2.c;
+                                                fz0 fz0Var5 = new fz0(fz0Var);
+                                                fz0Var5.b(fz0Var2);
+                                                fz0Var5.c = fz0Var2.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, dz0Var5);
+                                                arrayList2.add(i15, fz0Var5);
                                             }
-                                            int i24 = dz0Var.b;
-                                            dz0Var.b = dz0Var2.c;
-                                            dz0Var2.c = i24;
+                                            int i24 = fz0Var.b;
+                                            fz0Var.b = fz0Var2.c;
+                                            fz0Var2.c = i24;
                                         }
                                     } else {
-                                        int i25 = dz0Var.c;
+                                        int i25 = fz0Var.c;
                                         if (i22 < i25) {
                                             i16 = size2;
-                                            int i26 = dz0Var2.c;
+                                            int i26 = fz0Var2.c;
                                             if (i25 == i26) {
-                                                dz0Var2.b(dz0Var);
+                                                fz0Var2.b(fz0Var);
                                             } else if (i25 < i26) {
-                                                dz0 dz0Var6 = new dz0(dz0Var2);
-                                                dz0Var6.b(dz0Var);
-                                                dz0Var6.c = dz0Var.c;
+                                                fz0 fz0Var6 = new fz0(fz0Var2);
+                                                fz0Var6.b(fz0Var);
+                                                fz0Var6.c = fz0Var.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, dz0Var6);
-                                                dz0Var2.b = dz0Var.c;
+                                                arrayList2.add(i15, fz0Var6);
+                                                fz0Var2.b = fz0Var.c;
                                             } else {
-                                                dz0 dz0Var7 = new dz0(dz0Var);
-                                                dz0Var7.b = dz0Var2.c;
+                                                fz0 fz0Var7 = new fz0(fz0Var);
+                                                fz0Var7.b = fz0Var2.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, dz0Var7);
-                                                dz0Var2.b(dz0Var);
+                                                arrayList2.add(i15, fz0Var7);
+                                                fz0Var2.b(fz0Var);
                                             }
-                                            dz0Var.c = i22;
+                                            fz0Var.c = i22;
                                             i15++;
                                             size2 = i16;
                                         }
@@ -1817,8 +1817,8 @@ public class fj {
                                 size2 = i16;
                             }
                             i13 = size2;
-                            if (dz0Var.b >= dz0Var.c) {
-                                arrayList2.add(dz0Var);
+                            if (fz0Var.b >= fz0Var.c) {
+                                arrayList2.add(fz0Var);
                             }
                             i17++;
                             size2 = i13;
@@ -1828,7 +1828,7 @@ public class fj {
                         while (i15 < size) {
                         }
                         i13 = size2;
-                        if (dz0Var.b >= dz0Var.c) {
+                        if (fz0Var.b >= fz0Var.c) {
                         }
                         i17++;
                         size2 = i13;
@@ -1843,17 +1843,17 @@ public class fj {
             int i28 = 0;
             int i29 = 0;
             while (i27 < min) {
-                dz0 dz0Var8 = (dz0) arrayList2.get(i27);
-                int i30 = dz0Var8.b;
-                if (i30 >= 0 && i30 < (i11 = dz0Var8.c) && i11 <= a10.length() && (i7 != 1 || (dz0Var8.d instanceof TLRPC.TL_messageEntityHashtag))) {
-                    TLRPC.MessageEntity messageEntity2 = dz0Var8.d;
+                fz0 fz0Var8 = (fz0) arrayList2.get(i27);
+                int i30 = fz0Var8.b;
+                if (i30 >= 0 && i30 < (i11 = fz0Var8.c) && i11 <= a10.length() && (i7 != 1 || (fz0Var8.d instanceof TLRPC.TL_messageEntityHashtag))) {
+                    TLRPC.MessageEntity messageEntity2 = fz0Var8.d;
                     if (messageEntity2 != null) {
                         int i31 = messageEntity2.offset;
                         str = TextUtils.substring(a10, i31, messageEntity2.length + i31);
                     } else {
                         str = null;
                     }
-                    TLRPC.MessageEntity messageEntity3 = dz0Var8.d;
+                    TLRPC.MessageEntity messageEntity3 = fz0Var8.d;
                     if (!(messageEntity3 instanceof TLRPC.TL_messageEntityBotCommand)) {
                         if ((messageEntity3 instanceof TLRPC.TL_messageEntityHashtag) || (messageEntity3 instanceof TLRPC.TL_messageEntityMention)) {
                             charSequence2 = a10;
@@ -1882,7 +1882,7 @@ public class fj {
                                         b10 = b11;
                                         z15 = true;
                                     } else {
-                                        spannable2.setSpan(new n41(str, dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                                        spannable2.setSpan(new q41(str, fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                                         spannable = spannable2;
                                         b10 = b11;
                                         z14 = false;
@@ -1896,7 +1896,7 @@ public class fj {
                             } else if (messageEntity3 instanceof TLRPC.TL_messageEntityFormattedDate) {
                                 if (i28 < 250) {
                                     i28++;
-                                    spannable2.setSpan(new org.telegram.ui.Components.k00(str, dz0Var8, (TLRPC.TL_messageEntityFormattedDate) dz0Var8.d), dz0Var8.b, dz0Var8.c, 33);
+                                    spannable2.setSpan(new org.telegram.ui.Components.m00(str, fz0Var8, (TLRPC.TL_messageEntityFormattedDate) fz0Var8.d), fz0Var8.b, fz0Var8.c, 33);
                                     spannable = spannable2;
                                     b10 = b11;
                                     z14 = false;
@@ -1907,15 +1907,15 @@ public class fj {
                                 b10 = b11;
                             } else {
                                 if (messageEntity3 instanceof TLRPC.TL_messageEntityTonAddress) {
-                                    spannable2.setSpan(new p41(p5.c.k("tonaddress:", str), dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                                    spannable2.setSpan(new s41(p5.c.k("tonaddress:", str), fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityBankCard) {
-                                    spannable2.setSpan(new p41(p5.c.k("card:", str), dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                                    spannable2.setSpan(new s41(p5.c.k("card:", str), fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityPhone) {
                                     String d = pf.b.d(str, false);
                                     if (str.startsWith("+")) {
                                         d = p5.c.k("+", d);
                                     }
-                                    spannable2.setSpan(new p41(p5.c.k("tel:", d), dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                                    spannable2.setSpan(new s41(p5.c.k("tel:", d), fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityTextUrl) {
                                     if (i28 < 250) {
                                         i28++;
@@ -1924,7 +1924,7 @@ public class fj {
                                             str3 = str3.replaceAll("∕|⁄|%E2%81%84|%E2%88%95", "/");
                                         }
                                         if (!vf.c.k(str3)) {
-                                            spannable2.setSpan(new r41(str3, dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                                            spannable2.setSpan(new u41(str3, fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                                             spannable = spannable2;
                                             b10 = b11;
                                             z14 = false;
@@ -1936,22 +1936,22 @@ public class fj {
                                     b10 = b11;
                                 } else {
                                     if (messageEntity3 instanceof TLRPC.TL_messageEntityMentionName) {
-                                        spannable2.setSpan(new s41("" + ((TLRPC.TL_messageEntityMentionName) dz0Var8.d).user_id, b11, dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                                        spannable2.setSpan(new v41("" + ((TLRPC.TL_messageEntityMentionName) fz0Var8.d).user_id, b11, fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                                     } else if (messageEntity3 instanceof TLRPC.TL_inputMessageEntityMentionName) {
-                                        spannable2.setSpan(new s41("" + ((TLRPC.TL_inputMessageEntityMentionName) dz0Var8.d).user_id.user_id, b11, dz0Var8), dz0Var8.b, dz0Var8.c, 33);
-                                    } else if ((dz0Var8.a & 4) != 0) {
+                                        spannable2.setSpan(new v41("" + ((TLRPC.TL_inputMessageEntityMentionName) fz0Var8.d).user_id.user_id, b11, fz0Var8), fz0Var8.b, fz0Var8.c, 33);
+                                    } else if ((fz0Var8.a & 4) != 0) {
                                         Spannable spannable3 = spannable2;
                                         byte b12 = b11;
                                         spannable = spannable3;
                                         b10 = b12;
-                                        spannable.setSpan(new o41(spannable3, dz0Var8.b, dz0Var8.c, b12, dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                                        spannable.setSpan(new r41(spannable3, fz0Var8.b, fz0Var8.c, b12, fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                                         z14 = false;
                                         if (!z14) {
                                         }
                                     } else {
                                         spannable = spannable2;
                                         b10 = b11;
-                                        spannable.setSpan(new ez0(dz0Var8, 0), dz0Var8.b, dz0Var8.c, 33);
+                                        spannable.setSpan(new gz0(fz0Var8, 0), fz0Var8.b, fz0Var8.c, 33);
                                         z14 = true;
                                         if (!z14) {
                                         }
@@ -1971,7 +1971,7 @@ public class fj {
                             }
                         } else if (i28 < 250) {
                             i28++;
-                            spannable2.setSpan(new r41(p5.c.k("mailto:", str), dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                            spannable2.setSpan(new u41(p5.c.k("mailto:", str), fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                             charSequence2 = a10;
                             spannable = spannable2;
                             b10 = b11;
@@ -1981,22 +1981,22 @@ public class fj {
                         }
                         if (i28 < i12) {
                             i28++;
-                            spannable.setSpan(new p41(str, dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                            spannable.setSpan(new s41(str, fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                             z14 = false;
                             if (!z14) {
                             }
                         }
                     } else if (i28 < 250) {
                         i28++;
-                        spannable2.setSpan(new m41(str, b11, dz0Var8), dz0Var8.b, dz0Var8.c, 33);
+                        spannable2.setSpan(new p41(str, b11, fz0Var8), fz0Var8.b, fz0Var8.c, 33);
                         charSequence2 = a10;
                         spannable = spannable2;
                         b10 = b11;
                         z14 = false;
                         if (!z14) {
-                            if ((dz0Var8.a & 256) != 0 && i29 < 100) {
+                            if ((fz0Var8.a & 256) != 0 && i29 < 100) {
                                 i29++;
-                                spannable.setSpan(new ez0(dz0Var8, 0), dz0Var8.b, dz0Var8.c, 33);
+                                spannable.setSpan(new gz0(fz0Var8, 0), fz0Var8.b, fz0Var8.c, 33);
                             }
                         }
                     }
@@ -2025,7 +2025,7 @@ public class fj {
                     }
                     if (messageEntity4 instanceof TLRPC.TL_messageEntityBlockquote) {
                         int i34 = messageEntity4.offset;
-                        hh0.b(spannable4, i34, messageEntity4.length + i34, messageEntity4.collapsed);
+                        jh0.b(spannable4, i34, messageEntity4.length + i34, messageEntity4.collapsed);
                     } else {
                         if (messageEntity4 instanceof TLRPC.TL_messageEntityPre) {
                             if (i32 < 50) {
@@ -2036,7 +2036,7 @@ public class fj {
                             }
                         } else if (messageEntity4 instanceof TLRPC.TL_messageEntityDiffReplace) {
                             int i37 = messageEntity4.offset;
-                            spannable4.setSpan(new nu0(), i37, messageEntity4.length + i37, 33);
+                            spannable4.setSpan(new qu0(), i37, messageEntity4.length + i37, 33);
                         }
                     }
                 }
@@ -2138,11 +2138,11 @@ public class fj {
         }
         TLRPC.Document document = null;
         if (pageBlock instanceof TL_iv.pageBlockMath) {
-            spannableStringBuilder.append((CharSequence) T5(R.drawable.iv_formula, "fx")).append(" ").append((CharSequence) gd.M0(2131754864, null));
+            spannableStringBuilder.append((CharSequence) T5(R.drawable.iv_formula, "fx")).append(" ").append((CharSequence) gd.N0(2131754863, null));
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockMap) {
-            spannableStringBuilder.append((CharSequence) gd.M0(2131748498, null));
+            spannableStringBuilder.append((CharSequence) gd.N0(2131748497, null));
             TL_iv.PageCaption pageCaption = pageBlock.caption;
             if (pageCaption == null || (pageCaption.text instanceof TL_iv.textEmpty)) {
                 return;
@@ -2243,7 +2243,7 @@ public class fj {
             spannableStringBuilder.append((CharSequence) T5(R.drawable.iv_preview_table, "⊞")).append(" ");
             TL_iv.RichText richText = ((TL_iv.pageBlockTable) pageBlock).title;
             if (richText == null || (richText instanceof TL_iv.textEmpty)) {
-                spannableStringBuilder.append((CharSequence) gd.M0(2131754855, null));
+                spannableStringBuilder.append((CharSequence) gd.N0(2131754854, null));
                 return;
             } else {
                 f0(richText, i7, spannableStringBuilder, 0);
@@ -2295,7 +2295,7 @@ public class fj {
                 String B = w7.B(Z);
                 SpannableStringBuilder append = spannableStringBuilder.append((CharSequence) T5(R.drawable.msg_filled_data_files, "📎")).append(" ");
                 if (TextUtils.isEmpty(B)) {
-                    B = gd.M0(2131753973, null);
+                    B = gd.N0(2131753972, null);
                 }
                 append.append((CharSequence) B);
                 return;
@@ -2307,23 +2307,23 @@ public class fj {
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockPhoto) {
-            spannableStringBuilder.append((CharSequence) gd.M0(2131753946, null));
+            spannableStringBuilder.append((CharSequence) gd.N0(2131753945, null));
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockVideo) {
-            spannableStringBuilder.append((CharSequence) gd.M0(2131753931, null));
+            spannableStringBuilder.append((CharSequence) gd.N0(2131753930, null));
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockCollage) {
-            spannableStringBuilder.append((CharSequence) gd.M0(2131754895, null));
+            spannableStringBuilder.append((CharSequence) gd.N0(2131754895, null));
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
-            spannableStringBuilder.append((CharSequence) gd.M0(2131754856, null));
+            spannableStringBuilder.append((CharSequence) gd.N0(2131754855, null));
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockUnsupported) {
-            spannableStringBuilder.append((CharSequence) gd.M0(2131743596, null));
+            spannableStringBuilder.append((CharSequence) gd.N0(2131743590, null));
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
@@ -2523,7 +2523,7 @@ public class fj {
         } else {
             if (tLObject instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) tLObject;
-                str = user.deleted ? gd.M0(2131749136, null) : i5.m(0, user.first_name, user.last_name);
+                str = user.deleted ? gd.N0(2131749135, null) : i5.m(0, user.first_name, user.last_name);
                 K = o10.o(user);
                 j3 = user.id;
             } else {
@@ -2584,19 +2584,19 @@ public class fj {
         } else if (richText instanceof TL_iv.textUrl) {
             f0(richText.text, i7, spannableStringBuilder, i10);
             if (spannableStringBuilder.length() > length) {
-                dz0 dz0Var = new dz0();
-                dz0Var.a = i10;
-                spannableStringBuilder.setSpan(new n41(richText.url, dz0Var), length, spannableStringBuilder.length(), 33);
+                fz0 fz0Var = new fz0();
+                fz0Var.a = i10;
+                spannableStringBuilder.setSpan(new q41(richText.url, fz0Var), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textEmail) {
             f0(richText.text, i7, spannableStringBuilder, i10);
             if (spannableStringBuilder.length() > length) {
-                dz0 dz0Var2 = new dz0();
-                dz0Var2.a = i10;
-                spannableStringBuilder.setSpan(new r41("mailto:" + richText.email, dz0Var2), length, spannableStringBuilder.length(), 33);
+                fz0 fz0Var2 = new fz0();
+                fz0Var2.a = i10;
+                spannableStringBuilder.setSpan(new u41("mailto:" + richText.email, fz0Var2), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textMath) {
-            spannableStringBuilder.append((CharSequence) T5(R.drawable.iv_formula, "fx")).append(" ").append((CharSequence) gd.M0(2131754864, null));
+            spannableStringBuilder.append((CharSequence) T5(R.drawable.iv_formula, "fx")).append(" ").append((CharSequence) gd.N0(2131754863, null));
         } else if (richText instanceof TL_iv.textPhone) {
             f0(richText.text, i7, spannableStringBuilder, i10);
             if (spannableStringBuilder.length() > length) {
@@ -2605,9 +2605,9 @@ public class fj {
                 if (textphone.phone.startsWith("+")) {
                     d = p5.c.k("+", d);
                 }
-                dz0 dz0Var3 = new dz0();
-                dz0Var3.a = i10;
-                spannableStringBuilder.setSpan(new p41(p5.c.k("tel:", d), dz0Var3), length, spannableStringBuilder.length(), 33);
+                fz0 fz0Var3 = new fz0();
+                fz0Var3.a = i10;
+                spannableStringBuilder.setSpan(new s41(p5.c.k("tel:", d), fz0Var3), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textConcat) {
             ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
@@ -2627,9 +2627,9 @@ public class fj {
         if (spannableStringBuilder.length() <= length || i10 == 0) {
             return;
         }
-        dz0 dz0Var4 = new dz0();
-        dz0Var4.a = i10;
-        spannableStringBuilder.setSpan(new ez0(dz0Var4, 0), length, spannableStringBuilder.length(), 33);
+        fz0 fz0Var4 = new fz0();
+        fz0Var4.a = i10;
+        spannableStringBuilder.setSpan(new gz0(fz0Var4, 0), length, spannableStringBuilder.length(), 33);
     }
 
     public static int f1(TLRPC.BotInlineResult botInlineResult) {
@@ -2639,7 +2639,7 @@ public class fj {
 
     public static String f2(ArrayList arrayList) {
         if (arrayList == null || arrayList.size() == 0) {
-            return gd.M0(2131743424, null).toLowerCase();
+            return gd.N0(2131743418, null).toLowerCase();
         }
         StringBuilder sb2 = new StringBuilder();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
@@ -2792,9 +2792,9 @@ public class fj {
         URLSpan[] uRLSpanArr;
         int i13;
         int i14;
-        p41 p41Var;
+        s41 s41Var;
         Object[] objArr;
-        p41 m41Var;
+        s41 p41Var;
         if (charSequence == null) {
             return;
         }
@@ -2830,7 +2830,7 @@ public class fj {
                 while (matcher.find() && i17 < 100) {
                     int start = matcher.start();
                     int end = matcher.end();
-                    p41 p41Var2 = null;
+                    s41 s41Var2 = null;
                     if (i7 == i15 || i7 == 4) {
                         i11 = 0;
                         matcher.groupCount();
@@ -2860,17 +2860,17 @@ public class fj {
                                 if (i13 <= i10) {
                                     i14 = 3;
                                     if (i7 == 3) {
-                                        p41Var = new p41("video?" + i13, (dz0) null);
+                                        s41Var = new s41("video?" + i13, (fz0) null);
                                     } else {
-                                        p41Var = new p41("audio?" + i13, (dz0) null);
+                                        s41Var = new s41("audio?" + i13, (fz0) null);
                                     }
-                                    p41Var2 = p41Var;
-                                    p41Var2.d = str;
-                                    if (p41Var2 != null) {
+                                    s41Var2 = s41Var;
+                                    s41Var2.d = str;
+                                    if (s41Var2 != null) {
                                         if (z12 && (objArr = (ClickableSpan[]) spannable.getSpans(start, end, ClickableSpan.class)) != null && objArr.length > 0) {
                                             spannable.removeSpan(objArr[i11]);
                                         }
-                                        spannable.setSpan(p41Var2, start, end, i11);
+                                        spannable.setSpan(s41Var2, start, end, i11);
                                         i17 = i12 + 1;
                                     } else {
                                         i17 = i12;
@@ -2913,15 +2913,15 @@ public class fj {
                         }
                         if (i7 == i16) {
                             if (charAt == '@') {
-                                m41Var = new p41("https://instagram.com/" + charSequence.subSequence(start + 1, end).toString(), (dz0) null);
+                                p41Var = new s41("https://instagram.com/" + charSequence.subSequence(start + 1, end).toString(), (fz0) null);
                             } else {
-                                m41Var = new p41("https://www.instagram.com/explore/tags/" + charSequence.subSequence(start + 1, end).toString(), (dz0) null);
+                                p41Var = new s41("https://www.instagram.com/explore/tags/" + charSequence.subSequence(start + 1, end).toString(), (fz0) null);
                             }
                         } else if (i7 == 2) {
                             if (charAt == '@') {
-                                m41Var = new p41("https://twitter.com/" + charSequence.subSequence(start + 1, end).toString(), (dz0) null);
+                                p41Var = new s41("https://twitter.com/" + charSequence.subSequence(start + 1, end).toString(), (fz0) null);
                             } else {
-                                m41Var = new p41("https://twitter.com/hashtag/" + charSequence.subSequence(start + 1, end).toString(), (dz0) null);
+                                p41Var = new s41("https://twitter.com/hashtag/" + charSequence.subSequence(start + 1, end).toString(), (fz0) null);
                             }
                         } else if (charSequence.charAt(start) != '/') {
                             String charSequence2 = charSequence.subSequence(start, end).toString();
@@ -2930,29 +2930,29 @@ public class fj {
                             }
                             i14 = i15;
                             i12 = i17;
-                            p41Var2 = new p41(charSequence2, (dz0) null);
-                            if (p41Var2 != null) {
+                            s41Var2 = new s41(charSequence2, (fz0) null);
+                            if (s41Var2 != null) {
                             }
                             i15 = i14;
                         } else if (z11) {
-                            m41Var = new m41(charSequence.subSequence(start, end).toString(), z10 ? 1 : 0, null);
+                            p41Var = new p41(charSequence.subSequence(start, end).toString(), z10 ? 1 : 0, null);
                             i14 = i15;
-                            p41Var2 = m41Var;
+                            s41Var2 = p41Var;
                             i12 = i17;
-                            if (p41Var2 != null) {
+                            if (s41Var2 != null) {
                             }
                             i15 = i14;
                         } else {
                             i14 = i15;
                             i12 = i17;
-                            if (p41Var2 != null) {
+                            if (s41Var2 != null) {
                             }
                             i15 = i14;
                         }
                         i14 = i15;
-                        p41Var2 = m41Var;
+                        s41Var2 = p41Var;
                         i12 = i17;
-                        if (p41Var2 != null) {
+                        if (s41Var2 != null) {
                         }
                         i15 = i14;
                     }
@@ -2966,8 +2966,8 @@ public class fj {
     }
 
     public static CharSequence h0(TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
-        org.telegram.ui.ActionBar.n6.P();
-        TextPaint textPaint = org.telegram.ui.ActionBar.n6.s2;
+        org.telegram.ui.ActionBar.m6.P();
+        TextPaint textPaint = org.telegram.ui.ActionBar.m6.s2;
         if (textPaint == null) {
             textPaint = new TextPaint(1);
             textPaint.setTypeface(g0.o());
@@ -2996,12 +2996,12 @@ public class fj {
         CharSequence[] charSequenceArr = r3;
         if (charSequenceArr[0] == null) {
             charSequenceArr[0] = new SpannableStringBuilder("u");
-            org.telegram.ui.Components.lq lqVar = new org.telegram.ui.Components.lq(R.drawable.mini_reply_user, 0);
-            lqVar.H = 0.9f;
+            org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.mini_reply_user, 0);
+            nqVar.H = 0.9f;
             float L = g0.L(1.0f);
-            lqVar.r = 0.0f;
-            lqVar.s = L;
-            ((SpannableStringBuilder) r3[0]).setSpan(lqVar, 0, 1, 33);
+            nqVar.r = 0.0f;
+            nqVar.s = L;
+            ((SpannableStringBuilder) r3[0]).setSpan(nqVar, 0, 1, 33);
         }
         return r3[0];
     }
@@ -3119,10 +3119,10 @@ public class fj {
     public static CharSequence m2() {
         if (s3 == null) {
             s3 = new SpannableStringBuilder("g");
-            org.telegram.ui.Components.lq lqVar = new org.telegram.ui.Components.lq(R.drawable.msg_folders_groups, 0);
-            lqVar.I = 0.7f;
-            lqVar.J = 0.7f;
-            s3.setSpan(lqVar, 0, 1, 33);
+            org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.msg_folders_groups, 0);
+            nqVar.I = 0.7f;
+            nqVar.J = 0.7f;
+            s3.setSpan(nqVar, 0, 1, 33);
         }
         return s3;
     }
@@ -3413,11 +3413,11 @@ public class fj {
                 TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i7);
                 if ((documentAttribute instanceof TLRPC.TL_documentAttributeAudio) && !documentAttribute.voice) {
                     String str = documentAttribute.performer;
-                    return TextUtils.isEmpty(str) ? gd.M0(2131753898, null) : str;
+                    return TextUtils.isEmpty(str) ? gd.N0(2131753897, null) : str;
                 }
             }
         }
-        return gd.M0(2131753898, null);
+        return gd.N0(2131753897, null);
     }
 
     public static boolean v4(TLRPC.Document document) {
@@ -3457,7 +3457,7 @@ public class fj {
 
     public static String x1(TLRPC.Document document) {
         if (document == null) {
-            return gd.M0(2131753897, null);
+            return gd.N0(2131753896, null);
         }
         for (int i7 = 0; i7 < document.attributes.size(); i7++) {
             TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i7);
@@ -3467,11 +3467,11 @@ public class fj {
                     return str;
                 }
                 String B = w7.B(document);
-                return TextUtils.isEmpty(B) ? gd.M0(2131753897, null) : B;
+                return TextUtils.isEmpty(B) ? gd.N0(2131753896, null) : B;
             }
         }
         String B2 = w7.B(document);
-        return !TextUtils.isEmpty(B2) ? B2 : gd.M0(2131753897, null);
+        return !TextUtils.isEmpty(B2) ? B2 : gd.N0(2131753896, null);
     }
 
     public static TLRPC.TL_textWithEntities x5(TLRPC.TL_textWithEntities tL_textWithEntities) {
@@ -3511,7 +3511,7 @@ public class fj {
         if (charSequence instanceof Spannable) {
             Spannable spannable = (Spannable) charSequence;
             for (URLSpan uRLSpan : (URLSpan[]) spannable.getSpans(0, spannable.length(), URLSpan.class)) {
-                if (!(uRLSpan instanceof org.telegram.ui.Components.k00)) {
+                if (!(uRLSpan instanceof org.telegram.ui.Components.m00)) {
                     spannable.removeSpan(uRLSpan);
                 }
             }
@@ -3727,13 +3727,13 @@ public class fj {
                     int i7 = this.K1;
                     TLRPC.Message message2 = this.k;
                     TLRPC.MessageMedia messageMedia2 = message2 != null ? message2.media : null;
-                    int i10 = f61.k0;
-                    ArrayList arrayList = !(messageMedia2 instanceof TLRPC.TL_messageMediaDocument) ? new ArrayList() : f61.X(i7, messageMedia2.document, messageMedia2.alt_documents, 0, z10);
+                    int i10 = i61.k0;
+                    ArrayList arrayList = !(messageMedia2 instanceof TLRPC.TL_messageMediaDocument) ? new ArrayList() : i61.X(i7, messageMedia2.document, messageMedia2.alt_documents, 0, z10);
                     this.e3 = arrayList;
                     this.d3 = Boolean.valueOf(arrayList.size() > 1);
-                    this.g3 = f61.a0(this.e3);
-                    this.h3 = f61.b0(this.e3);
-                    this.i3 = f61.N(this.e3);
+                    this.g3 = i61.a0(this.e3);
+                    this.h3 = i61.b0(this.e3);
+                    this.i3 = i61.N(this.e3);
                 }
                 this.d3 = Boolean.FALSE;
                 return false;
@@ -3759,9 +3759,9 @@ public class fj {
         CharSequence charSequence;
         if (com.google.android.gms.internal.vision.e2.s(spannable)) {
             g6[] g6VarArr = (g6[]) spannable.getSpans(0, spannable.length(), g6.class);
-            org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) spannable.getSpans(0, spannable.length(), org.telegram.ui.Components.x5.class);
+            org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) spannable.getSpans(0, spannable.length(), org.telegram.ui.Components.y5.class);
             if (g6VarArr != null) {
-                if ((iArr[0] - g6VarArr.length) - (x5VarArr == null ? 0 : x5VarArr.length) > 0) {
+                if ((iArr[0] - g6VarArr.length) - (y5VarArr == null ? 0 : y5VarArr.length) > 0) {
                     return;
                 }
                 for (int i7 = 0; i7 < g6VarArr.length; i7++) {
@@ -3778,10 +3778,10 @@ public class fj {
                         int spanStart = spannable.getSpanStart(g6VarArr[i7]);
                         int spanEnd = spannable.getSpanEnd(g6VarArr[i7]);
                         spannable.removeSpan(g6VarArr[i7]);
-                        org.telegram.ui.Components.x5 x5Var = new org.telegram.ui.Components.x5(V, g6VarArr[i7].a);
-                        x5Var.standard = true;
-                        x5Var.invert = z10;
-                        spannable.setSpan(x5Var, spanStart, spanEnd, 33);
+                        org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(V, g6VarArr[i7].a);
+                        y5Var.standard = true;
+                        y5Var.invert = z10;
+                        spannable.setSpan(y5Var, spanStart, spanEnd, 33);
                     }
                 }
             }
@@ -3902,9 +3902,9 @@ public class fj {
     }
 
     public final TLRPC.Document F0() {
-        e61 e61Var;
+        h61 h61Var;
         TLRPC.Document document = this.n;
-        return document != null ? document : (!D2(true) || (e61Var = this.g3) == null) ? G0(this.k) : e61Var.g;
+        return document != null ? document : (!D2(true) || (h61Var = this.g3) == null) ? G0(this.k) : h61Var.g;
     }
 
     public final boolean F2() {
@@ -3942,7 +3942,7 @@ public class fj {
                 StringBuilder sb2 = new StringBuilder("");
                 i7 = i10;
                 sb2.append(user.id);
-                spannableStringBuilder.setSpan(new q41(sb2.toString()), length, q10.length() + length, 33);
+                spannableStringBuilder.setSpan(new t41(sb2.toString()), length, q10.length() + length, 33);
             } else {
                 i7 = i10;
             }
@@ -3952,7 +3952,7 @@ public class fj {
     }
 
     public final void G() {
-        org.telegram.ui.Components.x5[] x5VarArr;
+        org.telegram.ui.Components.y5[] y5VarArr;
         int i7;
         this.n = null;
         this.o = null;
@@ -4008,12 +4008,12 @@ public class fj {
                     try {
                         Long valueOf = Long.valueOf(((TLRPC.TL_messageEntityCustomEmoji) this.k.entities.get(0)).document_id);
                         this.o = valueOf;
-                        TLRPC.Document e10 = org.telegram.ui.Components.o5.e(i10, valueOf.longValue());
+                        TLRPC.Document e10 = org.telegram.ui.Components.p5.e(i10, valueOf.longValue());
                         this.n = e10;
                         if (e10 == null) {
                             CharSequence charSequence3 = this.v;
-                            if ((charSequence3 instanceof Spanned) && (x5VarArr = (org.telegram.ui.Components.x5[]) ((Spanned) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.x5.class)) != null && x5VarArr.length == 1) {
-                                this.n = x5VarArr[0].document;
+                            if ((charSequence3 instanceof Spanned) && (y5VarArr = (org.telegram.ui.Components.y5[]) ((Spanned) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.y5.class)) != null && y5VarArr.length == 1) {
+                                this.n = y5VarArr[0].document;
                             }
                         }
                     } catch (Exception unused) {
@@ -4057,42 +4057,42 @@ public class fj {
         Integer valueOf = iArr == null ? null : Integer.valueOf(iArr[0]);
         if (valueOf == null || valueOf.intValue() < 1 || this.k == null || u2()) {
             CharSequence charSequence = this.v;
-            org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.x5.class);
-            if (x5VarArr == null || x5VarArr.length <= 0) {
+            org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.y5.class);
+            if (y5VarArr == null || y5VarArr.length <= 0) {
                 this.R1 = 0;
                 return;
             }
-            this.R1 = x5VarArr.length;
-            for (int i7 = 0; i7 < x5VarArr.length; i7++) {
-                x5VarArr[i7].replaceFontMetrics(org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.n6.o2.getTextSize() + g0.L(4.0f)), -1);
-                x5VarArr[i7].full = false;
+            this.R1 = y5VarArr.length;
+            for (int i7 = 0; i7 < y5VarArr.length; i7++) {
+                y5VarArr[i7].replaceFontMetrics(org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.m6.o2.getTextSize() + g0.L(4.0f)), -1);
+                y5VarArr[i7].full = false;
             }
             return;
         }
         CharSequence charSequence2 = this.v;
         g6[] g6VarArr = (g6[]) ((Spannable) charSequence2).getSpans(0, charSequence2.length(), g6.class);
         CharSequence charSequence3 = this.v;
-        org.telegram.ui.Components.x5[] x5VarArr2 = (org.telegram.ui.Components.x5[]) ((Spannable) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.x5.class);
-        this.P1 = Math.max(valueOf.intValue(), (g6VarArr == null ? 0 : g6VarArr.length) + (x5VarArr2 == null ? 0 : x5VarArr2.length));
-        this.R1 = x5VarArr2 == null ? 0 : x5VarArr2.length;
+        org.telegram.ui.Components.y5[] y5VarArr2 = (org.telegram.ui.Components.y5[]) ((Spannable) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.y5.class);
+        this.P1 = Math.max(valueOf.intValue(), (g6VarArr == null ? 0 : g6VarArr.length) + (y5VarArr2 == null ? 0 : y5VarArr2.length));
+        this.R1 = y5VarArr2 == null ? 0 : y5VarArr2.length;
         this.Q1 = 0;
-        if (x5VarArr2 != null) {
-            for (org.telegram.ui.Components.x5 x5Var : x5VarArr2) {
-                if (!x5Var.standard) {
+        if (y5VarArr2 != null) {
+            for (org.telegram.ui.Components.y5 y5Var : y5VarArr2) {
+                if (!y5Var.standard) {
                     this.Q1++;
                 }
             }
         }
         int i10 = this.P1;
-        boolean z10 = (i10 - (g6VarArr == null ? 0 : g6VarArr.length)) - (x5VarArr2 == null ? 0 : x5VarArr2.length) > 0;
+        boolean z10 = (i10 - (g6VarArr == null ? 0 : g6VarArr.length)) - (y5VarArr2 == null ? 0 : y5VarArr2.length) > 0;
         this.O1 = z10;
         if (i10 == 0 || z10) {
-            if (x5VarArr2 == null || x5VarArr2.length <= 0) {
+            if (y5VarArr2 == null || y5VarArr2.length <= 0) {
                 return;
             }
-            for (int i11 = 0; i11 < x5VarArr2.length; i11++) {
-                x5VarArr2[i11].replaceFontMetrics(org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.n6.o2.getTextSize() + g0.L(4.0f)), -1);
-                x5VarArr2[i11].full = false;
+            for (int i11 = 0; i11 < y5VarArr2.length; i11++) {
+                y5VarArr2[i11].replaceFontMetrics(org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.m6.o2.getTextSize() + g0.L(4.0f)), -1);
+                y5VarArr2[i11].full = false;
             }
             return;
         }
@@ -4103,22 +4103,22 @@ public class fj {
             case 0:
             case 1:
             case 2:
-                TextPaint[] textPaintArr = org.telegram.ui.ActionBar.n6.y2;
+                TextPaint[] textPaintArr = org.telegram.ui.ActionBar.m6.y2;
                 textPaint = z11 ? textPaintArr[0] : textPaintArr[2];
                 i13 = 1;
                 break;
             case 3:
-                TextPaint[] textPaintArr2 = org.telegram.ui.ActionBar.n6.y2;
+                TextPaint[] textPaintArr2 = org.telegram.ui.ActionBar.m6.y2;
                 textPaint = z11 ? textPaintArr2[1] : textPaintArr2[3];
                 i13 = 1;
                 break;
             case 4:
-                TextPaint[] textPaintArr3 = org.telegram.ui.ActionBar.n6.y2;
+                TextPaint[] textPaintArr3 = org.telegram.ui.ActionBar.m6.y2;
                 textPaint = z11 ? textPaintArr3[2] : textPaintArr3[4];
                 i13 = 1;
                 break;
             case 5:
-                TextPaint[] textPaintArr4 = org.telegram.ui.ActionBar.n6.y2;
+                TextPaint[] textPaintArr4 = org.telegram.ui.ActionBar.m6.y2;
                 if (z11) {
                     textPaint = textPaintArr4[3];
                     break;
@@ -4127,7 +4127,7 @@ public class fj {
                     break;
                 }
             case 6:
-                TextPaint[] textPaintArr5 = org.telegram.ui.ActionBar.n6.y2;
+                TextPaint[] textPaintArr5 = org.telegram.ui.ActionBar.m6.y2;
                 if (z11) {
                     textPaint = textPaintArr5[4];
                     break;
@@ -4137,7 +4137,7 @@ public class fj {
                 }
             default:
                 int i14 = this.P1 > 9 ? 0 : -1;
-                textPaint = org.telegram.ui.ActionBar.n6.y2[5];
+                textPaint = org.telegram.ui.ActionBar.m6.y2[5];
                 i13 = i14;
                 break;
         }
@@ -4148,12 +4148,12 @@ public class fj {
                 g6Var.c = textSize;
             }
         }
-        if (x5VarArr2 == null || x5VarArr2.length <= 0) {
+        if (y5VarArr2 == null || y5VarArr2.length <= 0) {
             return;
         }
-        for (int i15 = 0; i15 < x5VarArr2.length; i15++) {
-            x5VarArr2[i15].replaceFontMetrics(textPaint.getFontMetricsInt(), textSize, i13);
-            x5VarArr2[i15].full = true;
+        for (int i15 = 0; i15 < y5VarArr2.length; i15++) {
+            y5VarArr2[i15].replaceFontMetrics(textPaint.getFontMetricsInt(), textSize, i13);
+            y5VarArr2[i15].full = true;
         }
     }
 
@@ -4331,7 +4331,7 @@ public class fj {
         if ((i7 == 0 || i7 == 19 || i7 == 36) && this.k.peer_id != null && (charSequence = this.v) != null && (charSequence.length() != 0 || this.Y1)) {
             if (this.S1) {
                 int A1 = (!g0.Q1() || this.T == 0) ? A1() : g0.L(530.0f);
-                TextPaint textPaint = org.telegram.ui.ActionBar.n6.o2;
+                TextPaint textPaint = org.telegram.ui.ActionBar.m6.o2;
                 float textSize = textPaint != null ? textPaint.getTextSize() : 0.0f;
                 if (Math.abs(this.T1 - A1) > (this.D == 36 ? 0 : g0.L(52.0f)) || this.U1 != g0.p || this.W1 != textSize || this.V1 != P2()) {
                     this.S1 = false;
@@ -4340,7 +4340,7 @@ public class fj {
             if (!this.S1) {
                 this.S1 = true;
                 TLRPC.User c22 = p3() ? mp.u1(this.K1).c2(Long.valueOf(this.k.from_id.user_id)) : null;
-                TextPaint textPaint2 = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.n6.x2 : org.telegram.ui.ActionBar.n6.o2;
+                TextPaint textPaint2 = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
                 int[] iArr = i() ? new int[1] : null;
                 CharSequence m10 = j6.m(this.v, textPaint2.getFontMetricsInt(), false, iArr, 0);
                 this.v = m10;
@@ -4750,7 +4750,7 @@ public class fj {
                             } else if ((messageAction instanceof TLRPC.TL_messageActionSetChatTheme) && (((TLRPC.TL_messageActionSetChatTheme) messageAction).theme instanceof TLRPC.TL_chatThemeUniqueGift)) {
                                 this.D = 31;
                                 this.U = 1;
-                            } else if (bi.e4.o(message)) {
+                            } else if (bi.i4.o(message)) {
                                 this.D = 10;
                                 this.U = 1;
                             } else {
@@ -5100,7 +5100,7 @@ public class fj {
                 charSequence = s5(i7, this.C.R1());
             }
         }
-        return (charSequence2 == null || charSequence == null) ? charSequence2 != null ? charSequence2 : charSequence != null ? charSequence : gd.M0(2131748587, null) : new SpannableStringBuilder(charSequence).append((CharSequence) " ").append(charSequence2);
+        return (charSequence2 == null || charSequence == null) ? charSequence2 != null ? charSequence2 : charSequence != null ? charSequence : gd.N0(2131748586, null) : new SpannableStringBuilder(charSequence).append((CharSequence) " ").append(charSequence2);
     }
 
     public final boolean O5() {
@@ -5162,13 +5162,13 @@ public class fj {
                             parseInt = Integer.parseInt(str5);
                         } catch (Throwable unused) {
                         }
-                        f10 = sh.e.f((TLRPC.TL_messageMediaPoll) m12, parseInt);
+                        f10 = sh.d.f((TLRPC.TL_messageMediaPoll) m12, parseInt);
                         if (f10 != null && K4(f10.document)) {
                             z11 = true;
                         }
                     }
                     parseInt = -1;
-                    f10 = sh.e.f((TLRPC.TL_messageMediaPoll) m12, parseInt);
+                    f10 = sh.d.f((TLRPC.TL_messageMediaPoll) m12, parseInt);
                     if (f10 != null) {
                         z11 = true;
                     }
@@ -5231,12 +5231,12 @@ public class fj {
                                             e20Var2.A.t = serializedData.readFloat(false);
                                             int i10 = 0;
                                             while (i10 < 4) {
-                                                be0 be0Var = i10 == 0 ? (be0) e20Var2.A.p.b : i10 == 1 ? (be0) e20Var2.A.p.c : i10 == 2 ? (be0) e20Var2.A.p.d : (be0) e20Var2.A.p.e;
-                                                be0Var.a = serializedData.readFloat(false);
-                                                be0Var.b = serializedData.readFloat(false);
-                                                be0Var.c = serializedData.readFloat(false);
-                                                be0Var.d = serializedData.readFloat(false);
-                                                be0Var.e = serializedData.readFloat(false);
+                                                ce0 ce0Var = i10 == 0 ? (ce0) e20Var2.A.p.b : i10 == 1 ? (ce0) e20Var2.A.p.c : i10 == 2 ? (ce0) e20Var2.A.p.d : (ce0) e20Var2.A.p.e;
+                                                ce0Var.a = serializedData.readFloat(false);
+                                                ce0Var.b = serializedData.readFloat(false);
+                                                ce0Var.c = serializedData.readFloat(false);
+                                                ce0Var.d = serializedData.readFloat(false);
+                                                ce0Var.e = serializedData.readFloat(false);
                                                 i10++;
                                             }
                                         }
@@ -5284,11 +5284,11 @@ public class fj {
                                             e20Var2.N = serializedData.readBool(false);
                                         }
                                         if (readInt32 >= 11 && serializedData.readInt32(false) == -559038737) {
-                                            e20Var2.L = new hi.u(serializedData.readString(false));
+                                            e20Var2.L = new hi.v(serializedData.readString(false));
                                             e20Var2.M = new ArrayList();
                                             for (int i12 = 0; i12 < e20Var2.L.e.size(); i12++) {
                                                 d20 d20Var = new d20();
-                                                d20Var.r = (hi.t) e20Var2.L.e.get(i12);
+                                                d20Var.r = (hi.u) e20Var2.L.e.get(i12);
                                                 d20Var.readParams(serializedData, false);
                                                 e20Var2.M.add(d20Var);
                                             }
@@ -5348,7 +5348,7 @@ public class fj {
                 if (str5 != null) {
                 }
                 parseInt = -1;
-                f10 = sh.e.f((TLRPC.TL_messageMediaPoll) m12, parseInt);
+                f10 = sh.d.f((TLRPC.TL_messageMediaPoll) m12, parseInt);
                 if (f10 != null) {
                 }
             }
@@ -5638,16 +5638,16 @@ public class fj {
     }
 
     public final long S1() {
-        e61 e61Var = this.g3;
-        if (e61Var != null) {
-            return e61Var.g.size;
+        h61 h61Var = this.g3;
+        if (h61Var != null) {
+            return h61Var.g.size;
         }
-        e61 e61Var2 = this.h3;
-        if (e61Var2 != null) {
-            return e61Var2.g.size;
+        h61 h61Var2 = this.h3;
+        if (h61Var2 != null) {
+            return h61Var2.g.size;
         }
-        e61 e61Var3 = this.i3;
-        return e61Var3 != null ? e61Var3.g.size : p1(n1(this.k));
+        h61 h61Var3 = this.i3;
+        return h61Var3 != null ? h61Var3.g.size : p1(n1(this.k));
     }
 
     public final boolean S2() {
@@ -5696,14 +5696,14 @@ public class fj {
         if (message == null) {
             return false;
         }
-        if (!R4(message) && (!h4() || !g21.l(this))) {
+        if (!R4(message) && (!h4() || !j21.l(this))) {
             return false;
         }
         TLRPC.Message message2 = this.k;
         if (!message2.voiceTranscriptionOpen || message2.voiceTranscription == null) {
             return false;
         }
-        return message2.voiceTranscriptionFinal || g21.k(this);
+        return message2.voiceTranscriptionFinal || j21.k(this);
     }
 
     public final String U1() {
@@ -6016,7 +6016,7 @@ public class fj {
             return (message == null || (messageMedia2 = message.media) == null || messageMedia2.webpage == null || !bool.booleanValue()) ? false : true;
         }
         TLRPC.Message message2 = this.k;
-        if (message2 != null && (messageMedia = message2.media) != null && (webPage = messageMedia.webpage) != null && !TextUtils.isEmpty(w71.e(webPage.url))) {
+        if (message2 != null && (messageMedia = message2.media) != null && (webPage = messageMedia.webpage) != null && !TextUtils.isEmpty(z71.e(webPage.url))) {
             z10 = true;
         }
         this.T2 = Boolean.valueOf(z10);
@@ -6184,13 +6184,13 @@ public class fj {
                                 TLRPC.Peer peer3 = messageFwdHeader.from_id;
                                 if (peer3 instanceof TLRPC.TL_peerChannel) {
                                     V = v3.V(w0(abstractMap2, hVar2, peer3.channel_id));
-                                    this.v = gd.L0(!V ? 2131753480 : 2131753474);
+                                    this.v = gd.M0(!V ? 2131753479 : 2131753473);
                                 }
                             }
                             V = v3.V(chat9);
-                            this.v = gd.L0(!V ? 2131753480 : 2131753474);
+                            this.v = gd.M0(!V ? 2131753479 : 2131753473);
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaGiveawayResults) {
-                            this.v = gd.L0(2131753390);
+                            this.v = gd.M0(2131753389);
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaStory) {
                             if (n1(this.k).via_mention) {
                                 TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(n1(this.k).user_id));
@@ -6205,33 +6205,33 @@ public class fj {
                                 if (str2 != null) {
                                     SpannableString spannableString = new SpannableString(str2);
                                     this.v = spannableString;
-                                    spannableString.setSpan(new r41("https://".concat(str2), new dz0()), 0, this.v.length(), 33);
+                                    spannableString.setSpan(new u41("https://".concat(str2), new fz0()), 0, this.v.length(), 33);
                                 } else {
                                     this.v = str;
                                 }
                             } else {
-                                this.v = gd.L0(2131750527);
+                                this.v = gd.M0(2131750526);
                             }
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaDice) {
                             this.v = C0();
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaPoll) {
                             if (((TLRPC.TL_messageMediaPoll) n1(this.k)).poll.quiz) {
-                                this.v = gd.L0(2131746250);
+                                this.v = gd.M0(2131746249);
                             } else {
-                                this.v = gd.L0(2131746992);
+                                this.v = gd.M0(2131746991);
                             }
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaToDo) {
                             TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) n1(this.k);
                             TLRPC.TodoList todoList = tL_messageMediaToDo.todo;
                             if (todoList == null || (tL_textWithEntities = todoList.title) == null || tL_textWithEntities.text.isEmpty()) {
-                                this.v = gd.L0(2131748277);
+                                this.v = gd.M0(2131748276);
                             } else {
-                                this.v = gd.U(2131748275, h0(tL_messageMediaToDo.todo.title, P3()));
+                                this.v = gd.U(2131748274, h0(tL_messageMediaToDo.todo.title, P3()));
                             }
                         } else if (S4()) {
-                            this.v = gd.L0(2131753949);
+                            this.v = gd.M0(2131753948);
                         } else if (g4()) {
-                            this.v = gd.L0(2131753948);
+                            this.v = gd.M0(2131753947);
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaPaidMedia) {
                             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) n1(this.k);
                             int size = tL_messageMediaPaidMedia.extended_media.size();
@@ -6251,7 +6251,7 @@ public class fj {
                                 }
                             }
                             if (size == 1) {
-                                G = gd.L0(z13 ? 2131753931 : 2131753946);
+                                G = gd.M0(z13 ? 2131753930 : 2131753945);
                                 c10 = 0;
                             } else {
                                 c10 = 0;
@@ -6260,41 +6260,41 @@ public class fj {
                             this.v = G;
                             Object[] objArr = new Object[1];
                             objArr[c10] = G;
-                            this.v = di.pb.T0(gd.Z(2131753947, objArr));
+                            this.v = di.pb.T0(gd.Z(2131753946, objArr));
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto) {
                             if (n1(this.k).ttl_seconds != 0 && !(this.k instanceof TLRPC.TL_message_secret)) {
-                                this.v = gd.L0(2131753975);
+                                this.v = gd.M0(2131753974);
                             } else if (c1() != 0) {
-                                this.v = gd.L0(2131754303);
+                                this.v = gd.M0(2131754302);
                             } else if (D3()) {
-                                this.v = gd.L0(2131753960);
+                                this.v = gd.M0(2131753959);
                             } else {
-                                this.v = gd.L0(2131753946);
+                                this.v = gd.M0(2131753945);
                             }
                         } else if (H4() || ((n1(this.k) instanceof TLRPC.TL_messageMediaDocument) && (((F0() instanceof TLRPC.TL_documentEmpty) || F0() == null) && n1(this.k).ttl_seconds != 0))) {
                             if (n1(this.k).ttl_seconds != 0) {
                                 TLRPC.Message message2 = this.k;
                                 if (!(message2 instanceof TLRPC.TL_message_secret)) {
                                     if (n1(message2).voice) {
-                                        this.v = gd.L0(2131753927);
+                                        this.v = gd.M0(2131753926);
                                     } else if (n1(this.k).round) {
-                                        this.v = gd.L0(2131753938);
+                                        this.v = gd.M0(2131753937);
                                     } else {
-                                        this.v = gd.L0(2131753974);
+                                        this.v = gd.M0(2131753973);
                                     }
                                 }
                             }
-                            this.v = gd.L0(2131753931);
+                            this.v = gd.M0(2131753930);
                         } else if (P4()) {
-                            this.v = gd.L0(2131753980);
+                            this.v = gd.M0(2131753979);
                         } else if (h4()) {
-                            this.v = gd.L0(2131753939);
+                            this.v = gd.M0(2131753938);
                         } else if ((n1(this.k) instanceof TLRPC.TL_messageMediaGeo) || (n1(this.k) instanceof TLRPC.TL_messageMediaVenue)) {
-                            this.v = gd.L0(2131753959);
+                            this.v = gd.M0(2131753958);
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaGeoLive) {
-                            this.v = gd.L0(2131753964);
+                            this.v = gd.M0(2131753963);
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaContact) {
-                            this.v = gd.L0(2131753977);
+                            this.v = gd.M0(2131753976);
                             if (!TextUtils.isEmpty(n1(this.k).vcard)) {
                                 this.Z1 = h6.m.F(n1(this.k).vcard);
                             }
@@ -6303,25 +6303,25 @@ public class fj {
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaInvoice) {
                             this.v = n1(this.k).description;
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaUnsupported) {
-                            this.v = gd.L0(2131743592);
+                            this.v = gd.M0(2131743586);
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaWidget) {
-                            this.v = TextUtils.isEmpty(this.k.message) ? gd.L0(2131753924) : this.k.message;
+                            this.v = TextUtils.isEmpty(this.k.message) ? gd.M0(2131753923) : this.k.message;
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaDocument) {
                             if (t4() || K2(F0(), true)) {
                                 String U1 = U1();
                                 if (U1 == null || U1.length() <= 0) {
-                                    this.v = gd.L0(2131753934);
+                                    this.v = gd.M0(2131753933);
                                 } else {
-                                    this.v = a8.p0.E(U1, " ", gd.L0(2131753934));
+                                    this.v = a8.p0.E(U1, " ", gd.M0(2131753933));
                                 }
                             } else if (I3()) {
-                                this.v = gd.L0(2131753950);
+                                this.v = gd.M0(2131753949);
                             } else if (q3()) {
-                                this.v = gd.L0(2131753969);
+                                this.v = gd.M0(2131753968);
                             } else {
                                 String B = w7.B(F0());
                                 if (TextUtils.isEmpty(B)) {
-                                    this.v = gd.L0(2131753973);
+                                    this.v = gd.M0(2131753972);
                                 } else {
                                     this.v = B;
                                 }
@@ -6336,33 +6336,33 @@ public class fj {
                     if (messageAction != null) {
                         if (messageAction instanceof TLRPC.TL_messageActionNewCreatorPending) {
                             TLRPC.User d2 = d2(abstractMap, hVar, ((TLRPC.TL_messageActionNewCreatorPending) messageAction).new_creator_id);
-                            String L0 = gd.L0(2131754599);
-                            this.v = L0;
-                            CharSequence E5 = E5(L0, "un1", d2);
+                            String M0 = gd.M0(2131754598);
+                            this.v = M0;
+                            CharSequence E5 = E5(M0, "un1", d2);
                             this.v = E5;
                             this.v = E5(E5, "un2", tLObject5);
                         } else if (messageAction instanceof TLRPC.TL_messageActionChangeCreator) {
                             TLRPC.User d22 = d2(abstractMap, hVar, ((TLRPC.TL_messageActionChangeCreator) messageAction).new_creator_id);
-                            String L02 = gd.L0(2131754666);
-                            this.v = L02;
-                            CharSequence E52 = E5(L02, "un1", tLObject5);
+                            String M02 = gd.M0(2131754665);
+                            this.v = M02;
+                            CharSequence E52 = E5(M02, "un1", tLObject5);
                             this.v = E52;
                             this.v = E5(E52, "un2", d22);
                         } else if (messageAction instanceof TLRPC.TL_messageActionManagedBotCreated) {
                             TLRPC.User d23 = d2(abstractMap, hVar, ((TLRPC.TL_messageActionManagedBotCreated) messageAction).bot_id);
                             TLRPC.User d24 = d2(abstractMap, hVar, this.k.peer_id.user_id);
-                            String L03 = gd.L0(2131754602);
-                            this.v = L03;
-                            CharSequence E53 = E5(L03, "un1", d23);
+                            String M03 = gd.M0(2131754601);
+                            this.v = M03;
+                            CharSequence E53 = E5(M03, "un1", d23);
                             this.v = E53;
                             this.v = E5(E53, "un2", d24);
                         } else if (messageAction instanceof TLRPC.TL_messageActionBotInvite) {
                             long j10 = ((TLRPC.TL_messageActionBotInvite) messageAction).inviter_id;
                             TLRPC.User d25 = j10 != 0 ? d2(abstractMap, hVar, j10) : null;
                             if (d25 == null || o10.C(d25)) {
-                                this.v = gd.L0(2131754668);
+                                this.v = gd.M0(2131754667);
                             } else {
-                                this.v = E5(gd.L0(2131754669), "un1", d25);
+                                this.v = E5(gd.M0(2131754668), "un1", d25);
                             }
                         } else if (messageAction instanceof TLRPC.TL_messageActionSetSameChatWallPaper) {
                             TLRPC.Chat chat10 = w02;
@@ -6379,14 +6379,14 @@ public class fj {
                             }
                             if (d26 != null) {
                                 if (d26.id == j10.i(i11).n) {
-                                    this.v = gd.Z(2131754564, new Object[0]);
+                                    this.v = gd.Z(2131754563, new Object[0]);
                                 } else {
-                                    this.v = gd.Z(2131754565, d26.first_name);
+                                    this.v = gd.Z(2131754564, d26.first_name);
                                 }
                             } else if (chat10 != null) {
-                                this.v = gd.L0(v3.V(chat10) ? 2131754563 : 2131754558);
+                                this.v = gd.M0(v3.V(chat10) ? 2131754562 : 2131754557);
                             } else if (user != null) {
-                                this.v = gd.Z(2131754557, o10.j(user));
+                                this.v = gd.Z(2131754556, o10.j(user));
                             }
                         } else {
                             TLRPC.Chat chat11 = w02;
@@ -6406,38 +6406,38 @@ public class fj {
                                 if (d27 != null) {
                                     if (d27.id != j10.i(i11).n) {
                                         SpannableString spannableString2 = new SpannableString(o10.j(d27));
-                                        spannableString2.setSpan(new i41(g0.o()), 0, spannableString2.length(), 33);
+                                        spannableString2.setSpan(new l41(g0.o()), 0, spannableString2.length(), 33);
                                         if (tL_messageActionSetChatWallPaper.same) {
                                             this.D = 10;
-                                            this.v = gd.L0(2131754565);
+                                            this.v = gd.M0(2131754564);
                                         } else if (tL_messageActionSetChatWallPaper.for_both) {
-                                            this.v = gd.L0(2131754561);
+                                            this.v = gd.M0(2131754560);
                                         } else {
-                                            this.v = gd.L0(2131754562);
+                                            this.v = gd.M0(2131754561);
                                         }
                                         this.v = g0.K2(this.v, spannableString2, "%s");
                                     } else if (tL_messageActionSetChatWallPaper.same) {
                                         this.D = 10;
-                                        this.v = gd.Z(2131754564, new Object[0]);
+                                        this.v = gd.Z(2131754563, new Object[0]);
                                     } else if (!tL_messageActionSetChatWallPaper.for_both || d28 == null) {
-                                        this.v = gd.L0(2131754560);
+                                        this.v = gd.M0(2131754559);
                                     } else {
-                                        this.v = gd.L0(2131754559);
+                                        this.v = gd.M0(2131754558);
                                         SpannableString spannableString3 = new SpannableString(o10.j(d28));
-                                        spannableString3.setSpan(new i41(g0.o()), 0, spannableString3.length(), 33);
+                                        spannableString3.setSpan(new l41(g0.o()), 0, spannableString3.length(), 33);
                                         this.v = g0.K2(this.v, spannableString3, "%s");
                                     }
                                 } else if (chat11 != null) {
-                                    this.v = gd.L0(v3.V(chat11) ? 2131754563 : 2131754558);
+                                    this.v = gd.M0(v3.V(chat11) ? 2131754562 : 2131754557);
                                 } else if (user != null) {
-                                    this.v = gd.Z(2131754557, o10.j(user));
+                                    this.v = gd.Z(2131754556, o10.j(user));
                                 }
                             } else if (messageAction instanceof TLRPC.TL_messageActionGroupCallScheduled) {
                                 TLRPC.TL_messageActionGroupCallScheduled tL_messageActionGroupCallScheduled = (TLRPC.TL_messageActionGroupCallScheduled) messageAction;
                                 if ((message.peer_id instanceof TLRPC.TL_peerChat) || A4()) {
-                                    this.v = gd.Z(2131754617, gd.W(3, tL_messageActionGroupCallScheduled.schedule_date, false));
+                                    this.v = gd.Z(2131754616, gd.W(3, tL_messageActionGroupCallScheduled.schedule_date, false));
                                 } else {
-                                    this.v = gd.Z(2131754660, gd.W(3, tL_messageActionGroupCallScheduled.schedule_date, false));
+                                    this.v = gd.Z(2131754659, gd.W(3, tL_messageActionGroupCallScheduled.schedule_date, false));
                                 }
                             } else if (messageAction instanceof TLRPC.TL_messageActionGroupCall) {
                                 int i13 = messageAction.duration;
@@ -6459,22 +6459,22 @@ public class fj {
                                     if (!(this.k.peer_id instanceof TLRPC.TL_peerChat) && !A4()) {
                                         Object[] objArr2 = new Object[1];
                                         objArr2[c11] = G2;
-                                        this.v = gd.Z(2131754662, objArr2);
+                                        this.v = gd.Z(2131754661, objArr2);
                                     } else if (N3()) {
                                         Object[] objArr3 = new Object[1];
                                         objArr3[c11] = G2;
-                                        this.v = gd.Z(2131754620, objArr3);
+                                        this.v = gd.Z(2131754619, objArr3);
                                     } else {
                                         Object[] objArr4 = new Object[1];
                                         objArr4[c11] = G2;
-                                        this.v = E5(gd.Z(2131754621, objArr4), "un1", tLObject5);
+                                        this.v = E5(gd.Z(2131754620, objArr4), "un1", tLObject5);
                                     }
                                 } else if (!(message.peer_id instanceof TLRPC.TL_peerChat) && !A4()) {
-                                    this.v = gd.L0(2131754661);
+                                    this.v = gd.M0(2131754660);
                                 } else if (N3()) {
-                                    this.v = gd.L0(2131754615);
+                                    this.v = gd.M0(2131754614);
                                 } else {
-                                    this.v = E5(gd.L0(2131754616), "un1", tLObject5);
+                                    this.v = E5(gd.M0(2131754615), "un1", tLObject5);
                                 }
                             } else if (messageAction instanceof TLRPC.TL_messageActionInviteToGroupCall) {
                                 long j11 = messageAction.user_id;
@@ -6484,18 +6484,18 @@ public class fj {
                                 if (j11 != 0) {
                                     TLRPC.User d29 = d2(abstractMap, hVar, j11);
                                     if (N3()) {
-                                        this.v = E5(gd.L0(2131754614), "un2", d29);
+                                        this.v = E5(gd.M0(2131754613), "un2", d29);
                                     } else if (j11 == j10.i(i11).e()) {
-                                        this.v = E5(gd.L0(2131754618), "un1", tLObject5);
+                                        this.v = E5(gd.M0(2131754617), "un1", tLObject5);
                                     } else {
-                                        CharSequence E54 = E5(gd.L0(2131754619), "un2", d29);
+                                        CharSequence E54 = E5(gd.M0(2131754618), "un2", d29);
                                         this.v = E54;
                                         this.v = E5(E54, "un1", tLObject5);
                                     }
                                 } else if (N3()) {
-                                    this.v = F5(gd.L0(2131754614), this.k.action.users, abstractMap, hVar);
+                                    this.v = F5(gd.M0(2131754613), this.k.action.users, abstractMap, hVar);
                                 } else {
-                                    CharSequence F5 = F5(gd.L0(2131754619), this.k.action.users, abstractMap, hVar);
+                                    CharSequence F5 = F5(gd.M0(2131754618), this.k.action.users, abstractMap, hVar);
                                     this.v = F5;
                                     this.v = E5(F5, "un1", tLObject5);
                                 }
@@ -6511,13 +6511,13 @@ public class fj {
                                 long B12 = B1(tL_messageActionGeoProximityReached.to_id);
                                 long e10 = j10.i(i11).e();
                                 if (B12 == e10) {
-                                    this.v = E5(gd.Z(2131754501, gd.y(tL_messageActionGeoProximityReached.distance, 2, null)), "un1", w05);
+                                    this.v = E5(gd.Z(2131754500, gd.y(tL_messageActionGeoProximityReached.distance, 2, null)), "un1", w05);
                                 } else {
                                     TLObject d210 = B12 > 0 ? d2(abstractMap, hVar, B12) : w0(abstractMap2, hVar2, -B12);
                                     if (B1 == e10) {
-                                        this.v = E5(gd.Z(2131754500, gd.y(tL_messageActionGeoProximityReached.distance, 2, null)), "un1", d210);
+                                        this.v = E5(gd.Z(2131754499, gd.y(tL_messageActionGeoProximityReached.distance, 2, null)), "un1", d210);
                                     } else {
-                                        CharSequence E55 = E5(gd.Z(2131754502, gd.y(tL_messageActionGeoProximityReached.distance, 2, null)), "un2", d210);
+                                        CharSequence E55 = E5(gd.Z(2131754501, gd.y(tL_messageActionGeoProximityReached.distance, 2, null)), "un2", d210);
                                         this.v = E55;
                                         this.v = E5(E55, "un1", w05);
                                     }
@@ -6526,28 +6526,28 @@ public class fj {
                                 this.v = messageAction.message;
                             } else if (messageAction instanceof TLRPC.TL_messageActionChatCreate) {
                                 if (N3()) {
-                                    this.v = gd.L0(2131754494);
+                                    this.v = gd.M0(2131754493);
                                 } else {
-                                    this.v = E5(gd.L0(2131754654), "un1", tLObject5);
+                                    this.v = E5(gd.M0(2131754653), "un1", tLObject5);
                                 }
                             } else if (messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) {
                                 if (p3()) {
                                     TLRPC.Message message3 = this.k;
                                     if (message3.action.user_id == message3.from_id.user_id) {
                                         if (N3()) {
-                                            this.v = gd.L0(2131754492);
+                                            this.v = gd.M0(2131754491);
                                         } else {
-                                            this.v = E5(gd.L0(2131754603), "un1", tLObject5);
+                                            this.v = E5(gd.M0(2131754602), "un1", tLObject5);
                                         }
                                     }
                                 }
                                 TLRPC.User d211 = d2(abstractMap, hVar, this.k.action.user_id);
                                 if (N3()) {
-                                    this.v = E5(gd.L0(2131754493), "un2", d211);
+                                    this.v = E5(gd.M0(2131754492), "un2", d211);
                                 } else if (this.k.action.user_id == j10.i(i11).e()) {
-                                    this.v = E5(gd.L0(2131754604), "un1", tLObject5);
+                                    this.v = E5(gd.M0(2131754603), "un1", tLObject5);
                                 } else {
-                                    CharSequence E56 = E5(gd.L0(2131754605), "un2", d211);
+                                    CharSequence E56 = E5(gd.M0(2131754604), "un2", d211);
                                     this.v = E56;
                                     this.v = E5(E56, "un1", tLObject5);
                                 }
@@ -6558,7 +6558,7 @@ public class fj {
                                 StringBuilder sb3 = new StringBuilder();
                                 sb3.append(tL_messageActionPaymentRefunded.currency);
                                 sb3.append(" ");
-                                this.v = di.pb.T0(E5(gd.Z(2131754578, i5.c.l(tL_messageActionPaymentRefunded.total_amount, ',', sb3)), "un1", d212));
+                                this.v = di.pb.T0(E5(gd.Z(2131754577, i5.c.l(tL_messageActionPaymentRefunded.total_amount, ',', sb3)), "un1", d212));
                             } else {
                                 boolean g10 = cg.d.g(messageAction, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class);
                                 cg.b bVar = cg.b.b;
@@ -6580,15 +6580,15 @@ public class fj {
                                     if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostRefund) {
                                         boolean z14 = ((TLRPC.TL_messageActionSuggestedPostRefund) messageAction2).payer_initiated;
                                         if (r52 == null || (aVar2 = r52.a) == null) {
-                                            this.v = gd.Z(z14 ? 2131744143 : 2131744145, m10, i17);
+                                            this.v = gd.Z(z14 ? 2131744137 : 2131744139, m10, i17);
                                         } else {
-                                            this.v = di.pb.V0(gd.Z(z14 ? 2131744144 : 2131744146, m10, i17, aVar2.b()), aVar2.a == bVar);
+                                            this.v = di.pb.V0(gd.Z(z14 ? 2131744138 : 2131744140, m10, i17, aVar2.b()), aVar2.a == bVar);
                                         }
                                     } else if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostSuccess) {
                                         if (r52 == null || (aVar = r52.a) == null) {
-                                            this.v = gd.Z(2131744148, i17);
+                                            this.v = gd.Z(2131744142, i17);
                                         } else {
-                                            this.v = di.pb.V0(gd.Z(2131744149, i17, aVar.b()), aVar.a == bVar);
+                                            this.v = di.pb.V0(gd.Z(2131744143, i17, aVar.b()), aVar.a == bVar);
                                         }
                                     }
                                 } else {
@@ -6606,36 +6606,36 @@ public class fj {
                                             TLRPC.Peer peer4 = this.k.from_id;
                                             if (peer4 == null || j13 != peer4.user_id) {
                                                 if (N3()) {
-                                                    this.v = E5(gd.L0(2131754498), "un2", d213);
+                                                    this.v = E5(gd.M0(2131754497), "un2", d213);
                                                 } else if (j13 != j10.i(i11).e()) {
-                                                    CharSequence E57 = E5(gd.L0(2131754692), "un2", d213);
+                                                    CharSequence E57 = E5(gd.M0(2131754691), "un2", d213);
                                                     this.v = E57;
                                                     this.v = E5(E57, "un1", tLObject5);
                                                 } else if (this.k.peer_id.channel_id == 0) {
-                                                    this.v = E5(gd.L0(2131754688), "un1", tLObject5);
+                                                    this.v = E5(gd.M0(2131754687), "un1", tLObject5);
                                                 } else if (w07 == null || !w07.megagroup) {
-                                                    this.v = E5(gd.L0(2131752511), "un1", tLObject5);
+                                                    this.v = E5(gd.M0(2131752510), "un1", tLObject5);
                                                 } else {
-                                                    this.v = E5(gd.L0(2131748454), "un1", tLObject5);
+                                                    this.v = E5(gd.M0(2131748453), "un1", tLObject5);
                                                 }
                                             } else if (v3.T(w07) && !w07.megagroup) {
                                                 this.h1 = true;
-                                                this.v = gd.L0(2131752380);
+                                                this.v = gd.M0(2131752379);
                                             } else if (this.k.peer_id.channel_id != 0) {
                                                 if (j13 == j10.i(i11).e()) {
-                                                    this.v = gd.L0(2131752369);
+                                                    this.v = gd.M0(2131752368);
                                                 } else {
-                                                    this.v = E5(gd.L0(2131754690), "un1", tLObject5);
+                                                    this.v = E5(gd.M0(2131754689), "un1", tLObject5);
                                                 }
                                             } else if (N3()) {
-                                                this.v = gd.L0(2131754689);
+                                                this.v = gd.M0(2131754688);
                                             } else {
-                                                this.v = E5(gd.L0(2131754691), "un1", tLObject5);
+                                                this.v = E5(gd.M0(2131754690), "un1", tLObject5);
                                             }
                                         } else if (N3()) {
-                                            this.v = F5(gd.L0(2131754498), this.k.action.users, abstractMap, hVar);
+                                            this.v = F5(gd.M0(2131754497), this.k.action.users, abstractMap, hVar);
                                         } else {
-                                            CharSequence F52 = F5(gd.L0(2131754692), this.k.action.users, abstractMap, hVar);
+                                            CharSequence F52 = F5(gd.M0(2131754691), this.k.action.users, abstractMap, hVar);
                                             this.v = F52;
                                             this.v = E5(F52, "un1", tLObject5);
                                         }
@@ -6643,17 +6643,17 @@ public class fj {
                                         TLRPC.Chat w08 = w0(abstractMap2, hVar2, ((TLRPC.TL_messageActionChatJoinedViaCommunity) messageAction3).community_id);
                                         boolean V2 = v3.V(w0(abstractMap2, hVar2, -n5.o(this.k.peer_id)));
                                         if (N3()) {
-                                            this.v = E5(gd.L0(V2 ? 2131754606 : 2131754607), "un1", w08);
+                                            this.v = E5(gd.M0(V2 ? 2131754605 : 2131754606), "un1", w08);
                                         } else {
-                                            CharSequence E58 = E5(gd.L0(2131754608), "un1", w08);
+                                            CharSequence E58 = E5(gd.M0(2131754607), "un1", w08);
                                             this.v = E58;
                                             this.v = E5(E58, "un2", tLObject5);
                                         }
                                     } else if (messageAction3 instanceof TLRPC.TL_messageActionChatJoinedByLink) {
                                         if (N3()) {
-                                            this.v = gd.L0(2131754609);
+                                            this.v = gd.M0(2131754608);
                                         } else {
-                                            this.v = E5(gd.L0(2131754611), "un1", tLObject5);
+                                            this.v = E5(gd.M0(2131754610), "un1", tLObject5);
                                         }
                                     } else if (messageAction3 instanceof TLRPC.TL_messageActionGiveawayLaunch) {
                                         TLRPC.TL_messageActionGiveawayLaunch tL_messageActionGiveawayLaunch = (TLRPC.TL_messageActionGiveawayLaunch) messageAction3;
@@ -6666,7 +6666,7 @@ public class fj {
                                                 if ((tL_messageActionGiveawayLaunch.flags & 1) == 0) {
                                                     this.v = gd.J((int) tL_messageActionGiveawayLaunch.stars, V3 ? "BoostingStarsGiveawayJustStarted" : "BoostingStarsGiveawayJustStartedGroup", chat8 != null ? chat8.title : "");
                                                 } else {
-                                                    this.v = gd.Z(V3 ? 2131753428 : 2131753427, chat8 != null ? chat8.title : "");
+                                                    this.v = gd.Z(V3 ? 2131753427 : 2131753426, chat8 != null ? chat8.title : "");
                                                 }
                                             }
                                         }
@@ -6677,9 +6677,9 @@ public class fj {
                                     } else if (messageAction3 instanceof TLRPC.TL_messageActionWalletTonConnectRequest) {
                                         TLRPC.TL_messageActionWalletTonConnectRequest tL_messageActionWalletTonConnectRequest = (TLRPC.TL_messageActionWalletTonConnectRequest) messageAction3;
                                         if (TextUtils.isEmpty(tL_messageActionWalletTonConnectRequest.dapp_name)) {
-                                            this.v = gd.L0(tL_messageActionWalletTonConnectRequest.declined ? 2131742739 : tL_messageActionWalletTonConnectRequest.accepted ? 2131742736 : tL_messageActionWalletTonConnectRequest.expires <= ConnectionsManager.getInstance(i11).getCurrentTime() ? 2131742738 : 2131742737);
+                                            this.v = gd.M0(tL_messageActionWalletTonConnectRequest.declined ? 2131742733 : tL_messageActionWalletTonConnectRequest.accepted ? 2131742730 : tL_messageActionWalletTonConnectRequest.expires <= ConnectionsManager.getInstance(i11).getCurrentTime() ? 2131742732 : 2131742731);
                                         } else {
-                                            this.v = gd.Z(tL_messageActionWalletTonConnectRequest.declined ? 2131742743 : tL_messageActionWalletTonConnectRequest.accepted ? 2131742740 : tL_messageActionWalletTonConnectRequest.expires <= ConnectionsManager.getInstance(i11).getCurrentTime() ? 2131742742 : 2131742741, tL_messageActionWalletTonConnectRequest.dapp_name);
+                                            this.v = gd.Z(tL_messageActionWalletTonConnectRequest.declined ? 2131742737 : tL_messageActionWalletTonConnectRequest.accepted ? 2131742734 : tL_messageActionWalletTonConnectRequest.expires <= ConnectionsManager.getInstance(i11).getCurrentTime() ? 2131742736 : 2131742735, tL_messageActionWalletTonConnectRequest.dapp_name);
                                         }
                                     } else if (messageAction3 instanceof TLRPC.TL_messageActionBoostApply) {
                                         TLRPC.Peer peer6 = message4.peer_id;
@@ -6700,14 +6700,14 @@ public class fj {
                                                 if (z12) {
                                                     int i18 = tL_messageActionBoostApply.boosts;
                                                     if (i18 <= 1) {
-                                                        this.v = gd.Z(V4 ? 2131753578 : 2131753566, str7);
+                                                        this.v = gd.Z(V4 ? 2131753577 : 2131753565, str7);
                                                     } else {
                                                         this.v = gd.G(i18, V4 ? "BoostingBoostsChannelByUserServiceMsgCount" : "BoostingBoostsGroupByUserServiceMsgCount", str7);
                                                     }
                                                 } else {
                                                     int i19 = tL_messageActionBoostApply.boosts;
                                                     if (i19 <= 1) {
-                                                        this.v = gd.L0(V4 ? 2131753575 : 2131753563);
+                                                        this.v = gd.M0(V4 ? 2131753574 : 2131753562);
                                                     } else {
                                                         this.v = gd.G(i19, V4 ? "BoostingBoostsChannelByYouServiceMsgCount" : "BoostingBoostsGroupByYouServiceMsgCount", new Object[0]);
                                                     }
@@ -6790,37 +6790,37 @@ public class fj {
                                             }
                                             if (!tL_messageActionStarGift.prepaid_upgrade) {
                                                 if (o10.B(A0()) && tL_messageActionStarGift.from_id == null) {
-                                                    this.v = g0.W2(gd.L0(tL_messageActionStarGift.auction_acquired ? 2131754645 : 2131754630));
-                                                    this.w = gd.L0(2131754554);
+                                                    this.v = g0.W2(gd.M0(tL_messageActionStarGift.auction_acquired ? 2131754644 : 2131754629));
+                                                    this.w = gd.M0(2131754553);
                                                 } else if (z15) {
                                                     SpannableStringBuilder W2 = g0.W2(gd.I(i10, "ActionGiftChannel"));
                                                     this.v = W2;
                                                     CharSequence E59 = E5(W2, "un1", tLObject3);
                                                     this.v = E59;
                                                     this.v = E5(E59, "un2", tLObject4);
-                                                    this.w = gd.L0(2131754554);
+                                                    this.w = gd.M0(2131754553);
                                                 } else if (o10.C(d214)) {
-                                                    this.v = g0.W2(gd.L0(tL_messageActionStarGift.auction_acquired ? 2131754645 : 2131754631));
-                                                    this.w = gd.L0(2131754554);
+                                                    this.v = g0.W2(gd.M0(tL_messageActionStarGift.auction_acquired ? 2131754644 : 2131754630));
+                                                    this.w = gd.M0(2131754553);
                                                 } else {
                                                     boolean z16 = tLObject3 instanceof TLRPC.User;
                                                     if (z16 && ((TLRPC.User) tLObject3).self && !tL_messageActionStarGift.forceIn) {
-                                                        this.v = E5(g0.W2(gd.L0(2131754640)), "un1", d214);
+                                                        this.v = E5(g0.W2(gd.M0(2131754639)), "un1", d214);
                                                         TLRPC.TL_textWithEntities tL_textWithEntities2 = tL_messageActionStarGift.message;
                                                         if (tL_textWithEntities2 == null || TextUtils.isEmpty(tL_textWithEntities2.text)) {
-                                                            this.w = gd.L0(2131754554);
+                                                            this.w = gd.M0(2131754553);
                                                         } else {
                                                             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(tL_messageActionStarGift.message.text);
                                                             a(spannableStringBuilder3, tL_messageActionStarGift.message.entities, P3(), false, false);
                                                             this.w = spannableStringBuilder3;
                                                         }
                                                     } else if (z16 && o10.B(((TLRPC.User) tLObject3).id)) {
-                                                        this.v = TextUtils.replace(g0.W2(gd.L0(2131754641)), new String[]{"un1"}, new CharSequence[]{gd.L0(2131744690)});
+                                                        this.v = TextUtils.replace(g0.W2(gd.M0(2131754640)), new String[]{"un1"}, new CharSequence[]{gd.M0(2131744684)});
                                                     } else {
-                                                        this.v = E5(g0.W2(gd.L0(2131754641)), "un1", tLObject3);
+                                                        this.v = E5(g0.W2(gd.M0(2131754640)), "un1", tLObject3);
                                                         TLRPC.TL_textWithEntities tL_textWithEntities3 = tL_messageActionStarGift.message;
                                                         if (tL_textWithEntities3 == null || TextUtils.isEmpty(tL_textWithEntities3.text)) {
-                                                            this.w = gd.L0(2131754554);
+                                                            this.w = gd.M0(2131754553);
                                                         } else {
                                                             SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(tL_messageActionStarGift.message.text);
                                                             a(spannableStringBuilder4, tL_messageActionStarGift.message.entities, P3(), false, false);
@@ -6829,9 +6829,9 @@ public class fj {
                                                     }
                                                 }
                                             } else if ((tLObject3 instanceof TLRPC.User) && ((TLRPC.User) tLObject3).self && !tL_messageActionStarGift.forceIn) {
-                                                this.v = E5(g0.W2(gd.L0(2131754581)), "un1", d214);
+                                                this.v = E5(g0.W2(gd.M0(2131754580)), "un1", d214);
                                             } else {
-                                                this.v = E5(g0.W2(gd.L0(2131754582)), "un1", tLObject3);
+                                                this.v = E5(g0.W2(gd.M0(2131754581)), "un1", tLObject3);
                                             }
                                             int indexOf = this.v.toString().indexOf("un2");
                                             if (indexOf != -1) {
@@ -6853,14 +6853,14 @@ public class fj {
                                                     }
                                                     TLObject d216 = A0 >= 0 ? d2(abstractMap, hVar, A0) : w0(abstractMap2, hVar2, -A0);
                                                     if (tL_messageActionStarGiftUnique.craft) {
-                                                        this.v = g0.W2(gd.L0(2131754531));
+                                                        this.v = g0.W2(gd.M0(2131754530));
                                                     } else {
                                                         TLRPC.Peer peer11 = tL_messageActionStarGiftUnique.peer;
                                                         if (peer11 != null) {
                                                             long o14 = n5.o(peer11);
                                                             TLObject d217 = o14 >= 0 ? d2(abstractMap, hVar, o14) : w0(abstractMap2, hVar2, -o14);
                                                             if (n10.a == bVar) {
-                                                                this.v = g0.W2(gd.Z(2131754521, n10.d()));
+                                                                this.v = g0.W2(gd.Z(2131754520, n10.d()));
                                                             } else {
                                                                 this.v = g0.W2(gd.I((int) n10.a(), "ActionUniqueGiftResaleService"));
                                                             }
@@ -6871,12 +6871,12 @@ public class fj {
                                                             if (tL_messageActionStarGiftUnique.from_offer) {
                                                                 boolean z17 = P3() && A0() != j10.i(i11).e();
                                                                 if (n10.a == bVar) {
-                                                                    this.v = g0.W2(gd.Z(z17 ? 2131754517 : 2131754525, n10.d()));
+                                                                    this.v = g0.W2(gd.Z(z17 ? 2131754516 : 2131754524, n10.d()));
                                                                 } else {
                                                                     this.v = g0.W2(gd.I((int) n10.a(), z17 ? "ActionUniqueGiftResaleSoldOutbound" : "ActionUniqueGiftResaleOutbound"));
                                                                 }
                                                             } else if (n10.a == bVar) {
-                                                                this.v = E5(g0.W2(gd.Z(P3() ? 2131754525 : 2131754529, n10.d())), "un1", d216);
+                                                                this.v = E5(g0.W2(gd.Z(P3() ? 2131754524 : 2131754528, n10.d())), "un1", d216);
                                                             } else {
                                                                 this.v = E5(g0.W2(gd.I((int) n10.a(), P3() ? "ActionUniqueGiftResaleOutbound" : "ActionUniqueGiftResaleInbound")), "un1", d216);
                                                             }
@@ -6886,11 +6886,11 @@ public class fj {
                                                     TLRPC.Peer peer12 = tL_messageActionStarGiftUnique.peer;
                                                     if (peer12 != null) {
                                                         long o15 = n5.o(peer12);
-                                                        this.v = E5(g0.W2(gd.L0(2131754509)), "un1", o15 >= 0 ? d2(abstractMap, hVar, o15) : w0(abstractMap2, hVar2, -o15));
+                                                        this.v = E5(g0.W2(gd.M0(2131754508)), "un1", o15 >= 0 ? d2(abstractMap, hVar, o15) : w0(abstractMap2, hVar2, -o15));
                                                     } else if (o10.C(d215)) {
-                                                        this.v = g0.W2(gd.L0(2131754507));
+                                                        this.v = g0.W2(gd.M0(2131754506));
                                                     } else {
-                                                        this.v = E5(g0.W2(gd.L0(P3() ? 2131754508 : 2131754510)), "un1", d215);
+                                                        this.v = E5(g0.W2(gd.M0(P3() ? 2131754507 : 2131754509)), "un1", d215);
                                                     }
                                                 } else {
                                                     long A02 = A0();
@@ -6900,13 +6900,13 @@ public class fj {
                                                     }
                                                     TLObject d218 = A02 >= 0 ? d2(abstractMap, hVar, A02) : w0(abstractMap2, hVar2, -A02);
                                                     if (tL_messageActionStarGiftUnique.craft) {
-                                                        this.v = g0.W2(gd.L0(2131754531));
+                                                        this.v = g0.W2(gd.M0(2131754530));
                                                     } else {
                                                         TLRPC.Peer peer14 = tL_messageActionStarGiftUnique.peer;
                                                         if (peer14 != null) {
                                                             long o16 = n5.o(peer14);
                                                             TLObject d219 = o16 >= 0 ? d2(abstractMap, hVar, o16) : w0(abstractMap2, hVar2, -o16);
-                                                            SpannableStringBuilder W22 = g0.W2(gd.L0(2131754511));
+                                                            SpannableStringBuilder W22 = g0.W2(gd.M0(2131754510));
                                                             this.v = W22;
                                                             CharSequence E511 = E5(W22, "un1", d218);
                                                             this.v = E511;
@@ -6915,20 +6915,20 @@ public class fj {
                                                             StringBuilder sb4 = new StringBuilder();
                                                             sb4.append(tL_messageActionStarGiftUnique.gift.title);
                                                             sb4.append(" #");
-                                                            this.v = E5(g0.W2(gd.Z(2131754512, i5.c.l(tL_messageActionStarGiftUnique.gift.num, ',', sb4))), "un1", d218);
+                                                            this.v = E5(g0.W2(gd.Z(2131754511, i5.c.l(tL_messageActionStarGiftUnique.gift.num, ',', sb4))), "un1", d218);
                                                         } else {
-                                                            this.v = E5(g0.W2(gd.L0(P3() ? 2131754513 : 2131754514)), "un1", d218);
+                                                            this.v = E5(g0.W2(gd.M0(P3() ? 2131754512 : 2131754513)), "un1", d218);
                                                         }
                                                     }
                                                 }
                                             } else if (messageAction3 instanceof TLRPC.TL_messageActionGiftStars) {
                                                 boolean z18 = tLObject6 instanceof TLRPC.User;
                                                 if (z18 && ((TLRPC.User) tLObject6).self) {
-                                                    this.v = E5(g0.W2(gd.L0(2131754640)), "un1", d2(abstractMap, hVar, message4.peer_id.user_id));
+                                                    this.v = E5(g0.W2(gd.M0(2131754639)), "un1", d2(abstractMap, hVar, message4.peer_id.user_id));
                                                 } else if (z18 && o10.B(((TLRPC.User) tLObject6).id)) {
-                                                    this.v = TextUtils.replace(g0.W2(gd.L0(2131754641)), new String[]{"un1"}, new CharSequence[]{gd.L0(2131744690)});
+                                                    this.v = TextUtils.replace(g0.W2(gd.M0(2131754640)), new String[]{"un1"}, new CharSequence[]{gd.M0(2131744684)});
                                                 } else {
-                                                    this.v = E5(g0.W2(gd.L0(2131754641)), "un1", tLObject6);
+                                                    this.v = E5(g0.W2(gd.M0(2131754640)), "un1", tLObject6);
                                                 }
                                                 int indexOf2 = this.v.toString().indexOf("un2");
                                                 if (indexOf2 != -1) {
@@ -6944,14 +6944,14 @@ public class fj {
                                             } else {
                                                 TLObject tLObject7 = tLObject6;
                                                 if ((messageAction3 instanceof TLRPC.TL_messageActionGiftCode) && ((TLRPC.TL_messageActionGiftCode) messageAction3).boost_peer != null) {
-                                                    this.v = gd.L0(2131753308);
+                                                    this.v = gd.M0(2131753307);
                                                 } else if (cg.d.g(messageAction3, TLRPC.TL_messageActionGiftPremium.class, TLRPC.TL_messageActionGiftCode.class, TLRPC.TL_messageActionGiftTon.class)) {
                                                     if ((tLObject7 instanceof TLRPC.User) && ((TLRPC.User) tLObject7).self) {
-                                                        this.v = E5(g0.W2(gd.L0(2131754640)), "un1", d2(abstractMap, hVar, this.k.peer_id.user_id));
+                                                        this.v = E5(g0.W2(gd.M0(2131754639)), "un1", d2(abstractMap, hVar, this.k.peer_id.user_id));
                                                     } else if (this.k.action instanceof TLRPC.TL_messageActionGiftTon) {
-                                                        this.v = g0.W2(gd.L0(2131754623));
+                                                        this.v = g0.W2(gd.M0(2131754622));
                                                     } else {
-                                                        this.v = E5(g0.W2(gd.L0(2131754641)), "un1", tLObject7);
+                                                        this.v = E5(g0.W2(gd.M0(2131754640)), "un1", tLObject7);
                                                     }
                                                     int indexOf3 = this.v.toString().indexOf("un2");
                                                     if (indexOf3 != -1) {
@@ -6970,16 +6970,16 @@ public class fj {
                                                     TLRPC.MessageAction messageAction6 = message5.action;
                                                     if (messageAction6 instanceof TLRPC.TL_messageActionSuggestBirthday) {
                                                         if (P3()) {
-                                                            this.v = gd.L0(2131754488);
+                                                            this.v = gd.M0(2131754487);
                                                         } else {
-                                                            this.v = E5(g0.W2(gd.L0(2131754548)), "un1", tLObject7);
+                                                            this.v = E5(g0.W2(gd.M0(2131754547)), "un1", tLObject7);
                                                         }
                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionSuggestProfilePhoto) {
                                                         TLRPC.Photo photo = messageAction6.photo;
                                                         if (photo == null || (arrayList = photo.video_sizes) == null || arrayList.isEmpty()) {
-                                                            this.v = gd.L0(2131754545);
+                                                            this.v = gd.M0(2131754544);
                                                         } else {
-                                                            this.v = gd.L0(2131754541);
+                                                            this.v = gd.M0(2131754540);
                                                         }
                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionChatEditPhoto) {
                                                         TLRPC.Peer peer15 = message5.peer_id;
@@ -6990,19 +6990,19 @@ public class fj {
                                                                 if (v3.T(chat5) || chat5.megagroup) {
                                                                     if (N3()) {
                                                                         if (I4()) {
-                                                                            this.v = E5(gd.L0(2131754663), "un1", tLObject7);
+                                                                            this.v = E5(gd.M0(2131754662), "un1", tLObject7);
                                                                         } else {
-                                                                            this.v = E5(gd.L0(2131754665), "un1", tLObject7);
+                                                                            this.v = E5(gd.M0(2131754664), "un1", tLObject7);
                                                                         }
                                                                     } else if (I4()) {
-                                                                        this.v = gd.L0(2131754495);
+                                                                        this.v = gd.M0(2131754494);
                                                                     } else {
-                                                                        this.v = gd.L0(2131754497);
+                                                                        this.v = gd.M0(2131754496);
                                                                     }
                                                                 } else if (I4()) {
-                                                                    this.v = gd.L0(2131754657);
+                                                                    this.v = gd.M0(2131754656);
                                                                 } else {
-                                                                    this.v = gd.L0(2131754659);
+                                                                    this.v = gd.M0(2131754658);
                                                                 }
                                                             }
                                                         }
@@ -7018,11 +7018,11 @@ public class fj {
                                                             if (j19 != 0) {
                                                                 chat4 = w0(abstractMap2, hVar2, j19);
                                                                 if (!v3.T(chat4) && !chat4.megagroup) {
-                                                                    this.v = gd.L0(2131754658).replace("un2", this.k.action.title);
+                                                                    this.v = gd.M0(2131754657).replace("un2", this.k.action.title);
                                                                 } else if (N3()) {
-                                                                    this.v = E5(gd.L0(2131754664).replace("un2", this.k.action.title), "un1", tLObject7);
+                                                                    this.v = E5(gd.M0(2131754663).replace("un2", this.k.action.title), "un1", tLObject7);
                                                                 } else {
-                                                                    this.v = gd.L0(2131754496).replace("un2", this.k.action.title);
+                                                                    this.v = gd.M0(2131754495).replace("un2", this.k.action.title);
                                                                 }
                                                             }
                                                         }
@@ -7038,11 +7038,11 @@ public class fj {
                                                             if (j20 != 0) {
                                                                 chat3 = w0(abstractMap2, hVar2, j20);
                                                                 if (!v3.T(chat3) && !chat3.megagroup) {
-                                                                    this.v = gd.L0(2131754656);
+                                                                    this.v = gd.M0(2131754655);
                                                                 } else if (N3()) {
-                                                                    this.v = E5(gd.L0(2131754577), "un1", tLObject7);
+                                                                    this.v = E5(gd.M0(2131754576), "un1", tLObject7);
                                                                 } else {
-                                                                    this.v = gd.L0(2131754491);
+                                                                    this.v = gd.M0(2131754490);
                                                                 }
                                                             }
                                                         }
@@ -7124,7 +7124,7 @@ public class fj {
                                                                     i27++;
                                                                     str10 = str11;
                                                                 }
-                                                                this.v = g0.K2(gd.L0(2131754576), spannableStringBuilder5, "un1");
+                                                                this.v = g0.K2(gd.M0(2131754575), spannableStringBuilder5, "un1");
                                                             } else {
                                                                 this.v = gd.K0(i24, "ActionRequestedPeerChatPlural");
                                                             }
@@ -7145,7 +7145,7 @@ public class fj {
                                                                         if (j3 == 0) {
                                                                             this.s2 = true;
                                                                             if (j3 == j10.i(i11).n) {
-                                                                                this.v = g0.W2(gd.Z(2131753857, gd.c0(tL_messageActionSetMessagesTTL.period)));
+                                                                                this.v = g0.W2(gd.Z(2131753856, gd.c0(tL_messageActionSetMessagesTTL.period)));
                                                                             } else {
                                                                                 TLObject tLObject8 = hVar != null ? (TLObject) hVar.f(tL_messageActionSetMessagesTTL.auto_setting_from) : null;
                                                                                 if (tLObject8 == null && abstractMap != null) {
@@ -7160,25 +7160,25 @@ public class fj {
                                                                                 if (tLObject8 != null) {
                                                                                     tLObject7 = tLObject8;
                                                                                 }
-                                                                                this.v = E5(g0.W2(gd.Z(2131753858, gd.c0(tL_messageActionSetMessagesTTL.period))), "un1", tLObject7);
+                                                                                this.v = E5(g0.W2(gd.Z(2131753857, gd.c0(tL_messageActionSetMessagesTTL.period))), "un1", tLObject7);
                                                                             }
                                                                         } else if (tL_messageActionSetMessagesTTL.period != 0) {
                                                                             if (N3()) {
-                                                                                this.v = gd.Z(2131754535, gd.c0(tL_messageActionSetMessagesTTL.period));
+                                                                                this.v = gd.Z(2131754534, gd.c0(tL_messageActionSetMessagesTTL.period));
                                                                             } else {
-                                                                                this.v = E5(gd.Z(2131754539, gd.c0(tL_messageActionSetMessagesTTL.period)), "un1", tLObject7);
+                                                                                this.v = E5(gd.Z(2131754538, gd.c0(tL_messageActionSetMessagesTTL.period)), "un1", tLObject7);
                                                                             }
                                                                         } else if (N3()) {
-                                                                            this.v = gd.L0(2131754534);
+                                                                            this.v = gd.M0(2131754533);
                                                                         } else {
-                                                                            this.v = E5(gd.L0(2131754536), "un1", tLObject7);
+                                                                            this.v = E5(gd.M0(2131754535), "un1", tLObject7);
                                                                         }
                                                                     } else {
                                                                         int i28 = tL_messageActionSetMessagesTTL.period;
                                                                         if (i28 != 0) {
-                                                                            this.v = gd.Z(2131754538, gd.c0(i28));
+                                                                            this.v = gd.Z(2131754537, gd.c0(i28));
                                                                         } else {
-                                                                            this.v = gd.L0(2131754537);
+                                                                            this.v = gd.M0(2131754536);
                                                                         }
                                                                     }
                                                                 }
@@ -7195,7 +7195,7 @@ public class fj {
                                                                 str = str3;
                                                                 str5 = str + this.k.date;
                                                             } else {
-                                                                str5 = gd.Z(2131742525, gd.E0().C0().format(j22), gd.E0().p0().format(j22));
+                                                                str5 = gd.Z(2131742519, gd.E0().C0().format(j22), gd.E0().p0().format(j22));
                                                                 str = str3;
                                                             }
                                                             TLRPC.User f12 = j10.i(i11).f();
@@ -7204,43 +7204,43 @@ public class fj {
                                                             }
                                                             String j23 = f12 != null ? o10.j(f12) : str;
                                                             TLRPC.MessageAction messageAction7 = this.k.action;
-                                                            this.v = gd.Z(2131747734, j23, str5, messageAction7.title, messageAction7.address);
+                                                            this.v = gd.Z(2131747733, j23, str5, messageAction7.title, messageAction7.address);
                                                         } else {
                                                             str = str3;
                                                             if ((messageAction6 instanceof TLRPC.TL_messageActionUserJoined) || (messageAction6 instanceof TLRPC.TL_messageActionContactSignUp)) {
-                                                                this.v = gd.Z(2131747854, o10.q(user));
-                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionUserUpdatedPhoto) {
                                                                 this.v = gd.Z(2131747853, o10.q(user));
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionUserUpdatedPhoto) {
+                                                                this.v = gd.Z(2131747852, o10.q(user));
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageEncryptedAction) {
                                                                 TLRPC.DecryptedMessageAction decryptedMessageAction = messageAction6.encryptedAction;
                                                                 if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionScreenshotMessages) {
                                                                     if (N3()) {
-                                                                        this.v = gd.L0(2131754532);
+                                                                        this.v = gd.M0(2131754531);
                                                                     } else {
-                                                                        this.v = E5(gd.L0(2131754533), "un1", tLObject7);
+                                                                        this.v = E5(gd.M0(2131754532), "un1", tLObject7);
                                                                     }
                                                                 } else if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionSetMessageTTL) {
                                                                     TLRPC.TL_decryptedMessageActionSetMessageTTL tL_decryptedMessageActionSetMessageTTL = (TLRPC.TL_decryptedMessageActionSetMessageTTL) decryptedMessageAction;
                                                                     if (tL_decryptedMessageActionSetMessageTTL.ttl_seconds != 0) {
                                                                         if (N3()) {
-                                                                            this.v = gd.Z(2131748393, gd.c0(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
+                                                                            this.v = gd.Z(2131748392, gd.c0(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
                                                                         } else {
-                                                                            this.v = gd.Z(2131748394, o10.j(user), gd.c0(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
+                                                                            this.v = gd.Z(2131748393, o10.j(user), gd.c0(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
                                                                         }
                                                                     } else if (N3()) {
-                                                                        this.v = gd.L0(2131748391);
+                                                                        this.v = gd.M0(2131748390);
                                                                     } else {
-                                                                        this.v = gd.Z(2131748392, o10.j(user));
+                                                                        this.v = gd.Z(2131748391, o10.j(user));
                                                                     }
                                                                 }
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionScreenshotTaken) {
                                                                 if (N3()) {
-                                                                    this.v = gd.L0(2131754532);
+                                                                    this.v = gd.M0(2131754531);
                                                                 } else {
-                                                                    this.v = E5(gd.L0(2131754533), "un1", tLObject7);
+                                                                    this.v = E5(gd.M0(2131754532), "un1", tLObject7);
                                                                 }
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionCreatedBroadcastList) {
-                                                                this.v = gd.L0(2131742580);
+                                                                this.v = gd.M0(2131742574);
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionChannelCreate) {
                                                                 TLRPC.Peer peer21 = message5.peer_id;
                                                                 if (peer21 != null) {
@@ -7248,32 +7248,32 @@ public class fj {
                                                                     if (j24 != 0) {
                                                                         chat = w0(abstractMap2, hVar2, j24);
                                                                         if (v3.T(chat) || !chat.megagroup) {
-                                                                            this.v = gd.L0(2131754655);
+                                                                            this.v = gd.M0(2131754654);
                                                                         } else {
-                                                                            this.v = gd.L0(2131754653);
+                                                                            this.v = gd.M0(2131754652);
                                                                         }
                                                                     }
                                                                 }
                                                                 chat = null;
                                                                 if (v3.T(chat)) {
                                                                 }
-                                                                this.v = gd.L0(2131754655);
+                                                                this.v = gd.M0(2131754654);
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionChatMigrateTo) {
-                                                                this.v = gd.L0(2131754601);
+                                                                this.v = gd.M0(2131754600);
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionChannelMigrateFrom) {
-                                                                this.v = gd.L0(2131754601);
+                                                                this.v = gd.M0(2131754600);
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionPinMessage) {
                                                                 q0(user == null ? w0(abstractMap2, hVar2, message5.peer_id.channel_id) : null, user);
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionHistoryClear) {
-                                                                this.v = gd.L0(2131749102);
+                                                                this.v = gd.M0(2131749101);
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionTopicCreate) {
-                                                                this.v = gd.L0(2131743786);
+                                                                this.v = gd.M0(2131743780);
                                                                 TLRPC.TL_messageActionTopicCreate tL_messageActionTopicCreate = (TLRPC.TL_messageActionTopicCreate) this.k.action;
                                                                 TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
                                                                 tL_forumTopic.icon_emoji_id = tL_messageActionTopicCreate.icon_emoji_id;
                                                                 tL_forumTopic.title = tL_messageActionTopicCreate.title;
                                                                 tL_forumTopic.icon_color = tL_messageActionTopicCreate.icon_color;
-                                                                this.w = g0.K2(gd.L0(2131743764), qg.c.k(tL_forumTopic, null, null), "%s");
+                                                                this.w = g0.K2(gd.M0(2131743758), qg.c.k(tL_forumTopic, null, null), "%s");
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionTopicEdit) {
                                                                 TLRPC.TL_messageActionTopicEdit tL_messageActionTopicEdit = (TLRPC.TL_messageActionTopicEdit) messageAction6;
                                                                 if (user != null) {
@@ -7290,11 +7290,11 @@ public class fj {
                                                                 int i29 = messageAction8.flags;
                                                                 if ((i29 & 8) > 0) {
                                                                     if (((TLRPC.TL_messageActionTopicEdit) messageAction8).hidden) {
-                                                                        this.v = E5(gd.L0(2131743782), "%s", user);
-                                                                        this.w = gd.L0(2131743783);
+                                                                        this.v = E5(gd.M0(2131743776), "%s", user);
+                                                                        this.w = gd.M0(2131743777);
                                                                     } else {
-                                                                        this.v = E5(gd.L0(2131743768), "%s", user);
-                                                                        this.w = gd.L0(2131743769);
+                                                                        this.v = E5(gd.M0(2131743762), "%s", user);
+                                                                        this.w = gd.M0(2131743763);
                                                                     }
                                                                 } else if ((i29 & 4) <= 0) {
                                                                     int i30 = i29 & 2;
@@ -7305,45 +7305,45 @@ public class fj {
                                                                         tL_forumTopic2.title = tL_messageActionTopicEdit.title;
                                                                         tL_forumTopic2.icon_color = qg.a.k[0];
                                                                         CharSequence k10 = qg.c.k(tL_forumTopic2, null, drawableArr);
-                                                                        this.v = g0.K2(g0.K2(gd.L0(2131743792), trim, "%1$s"), k10, "%2$s");
-                                                                        this.w = gd.L0(2131743774);
-                                                                        this.x = g0.K2(gd.L0(2131743791), k10, "%s");
+                                                                        this.v = g0.K2(g0.K2(gd.M0(2131743786), trim, "%1$s"), k10, "%2$s");
+                                                                        this.w = gd.M0(2131743768);
+                                                                        this.x = g0.K2(gd.M0(2131743785), k10, "%s");
                                                                     } else if (i30 != 0) {
                                                                         TLRPC.TL_forumTopic tL_forumTopic3 = new TLRPC.TL_forumTopic();
                                                                         tL_forumTopic3.icon_emoji_id = tL_messageActionTopicEdit.icon_emoji_id;
                                                                         tL_forumTopic3.title = str;
                                                                         tL_forumTopic3.icon_color = qg.a.k[0];
                                                                         CharSequence k11 = qg.c.k(tL_forumTopic3, null, drawableArr);
-                                                                        this.v = g0.K2(g0.K2(gd.L0(2131743780), trim, "%1$s"), k11, "%2$s");
-                                                                        this.w = gd.L0(2131743781);
-                                                                        this.x = g0.K2(gd.L0(2131743779), k11, "%s");
+                                                                        this.v = g0.K2(g0.K2(gd.M0(2131743774), trim, "%1$s"), k11, "%2$s");
+                                                                        this.w = gd.M0(2131743775);
+                                                                        this.x = g0.K2(gd.M0(2131743773), k11, "%s");
                                                                     } else if ((i29 & 1) != 0) {
-                                                                        this.v = g0.K2(g0.K2(gd.L0(2131743773), trim, "%1$s"), tL_messageActionTopicEdit.title, "%2$s");
-                                                                        this.w = gd.L0(2131743774);
-                                                                        this.x = g0.K2(gd.L0(2131743772), tL_messageActionTopicEdit.title, "%s");
+                                                                        this.v = g0.K2(g0.K2(gd.M0(2131743767), trim, "%1$s"), tL_messageActionTopicEdit.title, "%2$s");
+                                                                        this.w = gd.M0(2131743768);
+                                                                        this.x = g0.K2(gd.M0(2131743766), tL_messageActionTopicEdit.title, "%s");
                                                                     }
                                                                 } else if (((TLRPC.TL_messageActionTopicEdit) messageAction8).closed) {
-                                                                    this.v = E5(gd.L0(2131743789), "%s", user);
-                                                                    this.w = gd.L0(2131743790);
+                                                                    this.v = E5(gd.M0(2131743783), "%s", user);
+                                                                    this.w = gd.M0(2131743784);
                                                                 } else {
-                                                                    this.v = E5(gd.L0(2131743770), "%s", user);
-                                                                    this.w = gd.L0(2131743771);
+                                                                    this.v = E5(gd.M0(2131743764), "%s", user);
+                                                                    this.w = gd.M0(2131743765);
                                                                 }
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionGameScore) {
                                                                 m0(user);
                                                             } else if (messageAction6 instanceof TLRPC.TL_messageActionConferenceCall) {
                                                                 TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction6;
                                                                 if (P3()) {
-                                                                    this.v = gd.L0(2131751815);
+                                                                    this.v = gd.M0(2131751814);
                                                                 } else if (tL_messageActionConferenceCall.missed) {
-                                                                    this.v = gd.L0(2131751819);
+                                                                    this.v = gd.M0(2131751818);
                                                                 } else {
-                                                                    this.v = gd.L0(2131751820);
+                                                                    this.v = gd.M0(2131751819);
                                                                 }
                                                                 int i31 = tL_messageActionConferenceCall.duration;
                                                                 if (i31 > 0) {
                                                                     String o17 = gd.o(i31);
-                                                                    String Z = gd.Z(2131752596, this.v, o17);
+                                                                    String Z = gd.Z(2131752595, this.v, o17);
                                                                     this.v = Z;
                                                                     String str12 = Z.toString();
                                                                     int indexOf4 = str12.indexOf(o17);
@@ -7356,7 +7356,7 @@ public class fj {
                                                                         if (length < str12.length() && str12.charAt(length) == ')') {
                                                                             length++;
                                                                         }
-                                                                        spannableString4.setSpan(new i41(Typeface.DEFAULT), indexOf4, length, 0);
+                                                                        spannableString4.setSpan(new l41(Typeface.DEFAULT), indexOf4, length, 0);
                                                                         this.v = spannableString4;
                                                                     }
                                                                 }
@@ -7366,36 +7366,36 @@ public class fj {
                                                                 if (p3() && this.k.from_id.user_id == j10.i(i11).e()) {
                                                                     if (z20) {
                                                                         if (tL_messageActionPhoneCall.video) {
-                                                                            this.v = gd.L0(2131752597);
+                                                                            this.v = gd.M0(2131752596);
                                                                         } else {
-                                                                            this.v = gd.L0(2131752604);
+                                                                            this.v = gd.M0(2131752603);
                                                                         }
                                                                     } else if (tL_messageActionPhoneCall.video) {
-                                                                        this.v = gd.L0(2131752598);
+                                                                        this.v = gd.M0(2131752597);
                                                                     } else {
-                                                                        this.v = gd.L0(2131752605);
+                                                                        this.v = gd.M0(2131752604);
                                                                     }
                                                                 } else if (z20) {
                                                                     if (tL_messageActionPhoneCall.video) {
-                                                                        this.v = gd.L0(2131752599);
+                                                                        this.v = gd.M0(2131752598);
                                                                     } else {
-                                                                        this.v = gd.L0(2131752606);
+                                                                        this.v = gd.M0(2131752605);
                                                                     }
                                                                 } else if (tL_messageActionPhoneCall.reason instanceof TLRPC.TL_phoneCallDiscardReasonBusy) {
                                                                     if (tL_messageActionPhoneCall.video) {
-                                                                        this.v = gd.L0(2131752600);
+                                                                        this.v = gd.M0(2131752599);
                                                                     } else {
-                                                                        this.v = gd.L0(2131752607);
+                                                                        this.v = gd.M0(2131752606);
                                                                     }
                                                                 } else if (tL_messageActionPhoneCall.video) {
-                                                                    this.v = gd.L0(2131752602);
+                                                                    this.v = gd.M0(2131752601);
                                                                 } else {
-                                                                    this.v = gd.L0(2131752609);
+                                                                    this.v = gd.M0(2131752608);
                                                                 }
                                                                 int i32 = tL_messageActionPhoneCall.duration;
                                                                 if (i32 > 0) {
                                                                     String o18 = gd.o(i32);
-                                                                    String Z2 = gd.Z(2131752596, this.v, o18);
+                                                                    String Z2 = gd.Z(2131752595, this.v, o18);
                                                                     this.v = Z2;
                                                                     String str13 = Z2.toString();
                                                                     int indexOf5 = str13.indexOf(o18);
@@ -7408,7 +7408,7 @@ public class fj {
                                                                         if (length2 < str13.length() && str13.charAt(length2) == ')') {
                                                                             length2++;
                                                                         }
-                                                                        spannableString5.setSpan(new i41(Typeface.DEFAULT), indexOf5, length2, 0);
+                                                                        spannableString5.setSpan(new l41(Typeface.DEFAULT), indexOf5, length2, 0);
                                                                         this.v = spannableString5;
                                                                     }
                                                                 }
@@ -7423,37 +7423,37 @@ public class fj {
                                                                     String str14 = tL_messageActionBotAllowed.domain;
                                                                     TLRPC.BotApp botApp = tL_messageActionBotAllowed.app;
                                                                     if (tL_messageActionBotAllowed.from_request) {
-                                                                        this.v = gd.L0(2131754684);
+                                                                        this.v = gd.M0(2131754683);
                                                                     } else if (botApp != null) {
                                                                         String str15 = botApp.title;
                                                                         if (str15 == null) {
                                                                             str15 = str;
                                                                         }
-                                                                        String L04 = gd.L0(2131754685);
-                                                                        int indexOf6 = L04.indexOf("%1$s");
-                                                                        SpannableString spannableString6 = new SpannableString(String.format(L04, str15));
+                                                                        String M04 = gd.M0(2131754684);
+                                                                        int indexOf6 = M04.indexOf("%1$s");
+                                                                        SpannableString spannableString6 = new SpannableString(String.format(M04, str15));
                                                                         TLRPC.User d220 = d2(abstractMap, hVar, A0());
                                                                         if (indexOf6 >= 0 && d220 != null && (o10 = o10.o(d220)) != null) {
                                                                             StringBuilder sb5 = new StringBuilder("https://");
                                                                             com.google.android.gms.internal.vision.e2.r(sb5, mp.u1(i11).X2, "/", o10, "/");
                                                                             sb5.append(botApp.short_name);
-                                                                            spannableString6.setSpan(new q41(sb5.toString()), indexOf6, str15.length() + indexOf6, 33);
+                                                                            spannableString6.setSpan(new t41(sb5.toString()), indexOf6, str15.length() + indexOf6, 33);
                                                                         }
                                                                         this.v = spannableString6;
                                                                     } else {
                                                                         if (str14 == null) {
                                                                             str14 = str;
                                                                         }
-                                                                        String L05 = gd.L0(2131754686);
-                                                                        int indexOf7 = L05.indexOf("%1$s");
-                                                                        SpannableString spannableString7 = new SpannableString(String.format(L05, str14));
+                                                                        String M05 = gd.M0(2131754685);
+                                                                        int indexOf7 = M05.indexOf("%1$s");
+                                                                        SpannableString spannableString7 = new SpannableString(String.format(M05, str14));
                                                                         if (indexOf7 >= 0 && !TextUtils.isEmpty(str14)) {
-                                                                            spannableString7.setSpan(new q41("http://".concat(str14)), indexOf7, str14.length() + indexOf7, 33);
+                                                                            spannableString7.setSpan(new t41("http://".concat(str14)), indexOf7, str14.length() + indexOf7, 33);
                                                                         }
                                                                         this.v = spannableString7;
                                                                     }
                                                                 } else if ((messageAction6 instanceof TLRPC.TL_messageActionAttachMenuBotAllowed) || (z21 && ((TLRPC.TL_messageActionBotAllowed) messageAction6).attach_menu)) {
-                                                                    this.v = gd.L0(2131754687);
+                                                                    this.v = gd.M0(2131754686);
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionSecureValuesSent) {
                                                                     TLRPC.TL_messageActionSecureValuesSent tL_messageActionSecureValuesSent = (TLRPC.TL_messageActionSecureValuesSent) messageAction6;
                                                                     StringBuilder sb6 = new StringBuilder();
@@ -7464,37 +7464,37 @@ public class fj {
                                                                             sb6.append(", ");
                                                                         }
                                                                         if (secureValueType instanceof TLRPC.TL_secureValueTypePhone) {
-                                                                            sb6.append(gd.L0(2131754674));
+                                                                            sb6.append(gd.M0(2131754673));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeEmail) {
-                                                                            sb6.append(gd.L0(2131754680));
+                                                                            sb6.append(gd.M0(2131754679));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeAddress) {
-                                                                            sb6.append(gd.L0(2131754683));
+                                                                            sb6.append(gd.M0(2131754682));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypePersonalDetails) {
-                                                                            sb6.append(gd.L0(2131754679));
+                                                                            sb6.append(gd.M0(2131754678));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypePassport) {
-                                                                            sb6.append(gd.L0(2131754676));
+                                                                            sb6.append(gd.M0(2131754675));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeDriverLicense) {
-                                                                            sb6.append(gd.L0(2131754681));
+                                                                            sb6.append(gd.M0(2131754680));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeIdentityCard) {
-                                                                            sb6.append(gd.L0(2131754678));
+                                                                            sb6.append(gd.M0(2131754677));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeUtilityBill) {
-                                                                            sb6.append(gd.L0(2131754671));
+                                                                            sb6.append(gd.M0(2131754670));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeBankStatement) {
-                                                                            sb6.append(gd.L0(2131754682));
+                                                                            sb6.append(gd.M0(2131754681));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeRentalAgreement) {
-                                                                            sb6.append(gd.L0(2131754673));
+                                                                            sb6.append(gd.M0(2131754672));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeInternalPassport) {
-                                                                            sb6.append(gd.L0(2131754677));
+                                                                            sb6.append(gd.M0(2131754676));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypePassportRegistration) {
-                                                                            sb6.append(gd.L0(2131754675));
+                                                                            sb6.append(gd.M0(2131754674));
                                                                         } else if (secureValueType instanceof TLRPC.TL_secureValueTypeTemporaryRegistration) {
-                                                                            sb6.append(gd.L0(2131754672));
+                                                                            sb6.append(gd.M0(2131754671));
                                                                         }
                                                                     }
                                                                     TLRPC.Peer peer22 = this.k.peer_id;
-                                                                    this.v = gd.Z(2131754670, o10.j(peer22 != null ? d2(abstractMap, hVar, peer22.user_id) : null), sb6.toString());
+                                                                    this.v = gd.Z(2131754669, o10.j(peer22 != null ? d2(abstractMap, hVar, peer22.user_id) : null), sb6.toString());
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionWebViewDataSent) {
-                                                                    this.v = gd.Z(2131754667, ((TLRPC.TL_messageActionWebViewDataSent) messageAction6).text);
+                                                                    this.v = gd.Z(2131754666, ((TLRPC.TL_messageActionWebViewDataSent) messageAction6).text);
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionSetChatTheme) {
                                                                     TLRPC.ChatTheme chatTheme = ((TLRPC.TL_messageActionSetChatTheme) messageAction6).theme;
                                                                     CharSequence f13 = cg.d.f(chatTheme);
@@ -7510,15 +7510,15 @@ public class fj {
                                                                     }
                                                                     boolean C = o10.C(user);
                                                                     if (TextUtils.isEmpty(f13)) {
-                                                                        this.v = C ? gd.U(2131752190, new Object[0]) : gd.U(z22 ? 2131752275 : 2131752191, j25, f13);
+                                                                        this.v = C ? gd.U(2131752189, new Object[0]) : gd.U(z22 ? 2131752274 : 2131752190, j25, f13);
                                                                     } else {
-                                                                        this.v = C ? gd.U(2131752193, f13) : gd.U(z22 ? 2131752276 : 2131752194, j25, f13);
+                                                                        this.v = C ? gd.U(2131752192, f13) : gd.U(z22 ? 2131752275 : 2131752193, j25, f13);
                                                                     }
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionChatJoinedByRequest) {
                                                                     if (o10.C(user)) {
-                                                                        this.v = v3.U(i11, this.k.peer_id.channel_id) ? gd.L0(2131745978) : gd.L0(2131745974);
+                                                                        this.v = v3.U(i11, this.k.peer_id.channel_id) ? gd.M0(2131745977) : gd.M0(2131745973);
                                                                     } else {
-                                                                        this.v = E5(gd.L0(2131743534), "un1", tLObject7);
+                                                                        this.v = E5(gd.M0(2131743528), "un1", tLObject7);
                                                                     }
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionPaidMessagesPrice) {
                                                                     TLRPC.TL_messageActionPaidMessagesPrice tL_messageActionPaidMessagesPrice = (TLRPC.TL_messageActionPaidMessagesPrice) messageAction6;
@@ -7528,10 +7528,10 @@ public class fj {
                                                                             if (j26 > 0) {
                                                                                 this.v = E5(gd.I((int) j26, "PostSuggestionsPriceUpdated"), "un1", tLObject7);
                                                                             } else {
-                                                                                this.v = E5(gd.L0(2131746897), "un1", tLObject7);
+                                                                                this.v = E5(gd.M0(2131746896), "un1", tLObject7);
                                                                             }
                                                                         } else {
-                                                                            this.v = E5(gd.L0(2131746898), "un1", tLObject7);
+                                                                            this.v = E5(gd.M0(2131746897), "un1", tLObject7);
                                                                         }
                                                                     } else if (P3()) {
                                                                         this.v = gd.I((int) tL_messageActionPaidMessagesPrice.stars, "PaidMessagesPriceUpdatedOut");
@@ -7542,9 +7542,9 @@ public class fj {
                                                                     if (P3()) {
                                                                         TLRPC.Message message6 = this.k;
                                                                         TLRPC.Peer peer23 = message6.saved_peer_id;
-                                                                        this.v = E5(gd.L0(2131747990), "un1", peer23 != null ? d2(abstractMap, hVar, n5.o(peer23)) : d2(abstractMap, hVar, n5.o(message6.peer_id)));
+                                                                        this.v = E5(gd.M0(2131747989), "un1", peer23 != null ? d2(abstractMap, hVar, n5.o(peer23)) : d2(abstractMap, hVar, n5.o(message6.peer_id)));
                                                                     } else {
-                                                                        this.v = E5(gd.L0(2131747991), "un1", tLObject7);
+                                                                        this.v = E5(gd.M0(2131747990), "un1", tLObject7);
                                                                     }
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionPaidMessagesRefunded) {
                                                                     TLRPC.TL_messageActionPaidMessagesRefunded tL_messageActionPaidMessagesRefunded = (TLRPC.TL_messageActionPaidMessagesRefunded) messageAction6;
@@ -7571,36 +7571,36 @@ public class fj {
                                                                     }
                                                                     todoItem = null;
                                                                     if (todoItem != null) {
-                                                                        org.telegram.ui.ActionBar.n6.P();
+                                                                        org.telegram.ui.ActionBar.m6.P();
                                                                         Spannable g02 = g0(todoItem);
                                                                         if (P3()) {
-                                                                            this.v = gd.U(!isEmpty ? 2131743827 : 2131743823, g02);
+                                                                            this.v = gd.U(!isEmpty ? 2131743821 : 2131743817, g02);
                                                                         } else {
-                                                                            this.v = E5(gd.U(!isEmpty ? 2131743828 : 2131743824, g02), "un1", tLObject7);
+                                                                            this.v = E5(gd.U(!isEmpty ? 2131743822 : 2131743818, g02), "un1", tLObject7);
                                                                         }
                                                                     } else if (P3()) {
-                                                                        this.v = gd.L0(!isEmpty ? 2131743826 : 2131743822);
+                                                                        this.v = gd.M0(!isEmpty ? 2131743820 : 2131743816);
                                                                     } else {
-                                                                        this.v = E5(gd.L0(!isEmpty ? 2131743825 : 2131743821), "un1", tLObject7);
+                                                                        this.v = E5(gd.M0(!isEmpty ? 2131743819 : 2131743815), "un1", tLObject7);
                                                                     }
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionTodoAppendTasks) {
                                                                     TLRPC.TL_messageActionTodoAppendTasks tL_messageActionTodoAppendTasks = (TLRPC.TL_messageActionTodoAppendTasks) messageAction6;
                                                                     if (P3()) {
                                                                         if (tL_messageActionTodoAppendTasks.list.size() == 1) {
-                                                                            this.v = gd.U(2131743863, g0(tL_messageActionTodoAppendTasks.list.get(0)));
+                                                                            this.v = gd.U(2131743857, g0(tL_messageActionTodoAppendTasks.list.get(0)));
                                                                         } else if (tL_messageActionTodoAppendTasks.list.size() == 2) {
-                                                                            this.v = gd.U(2131743859, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)));
+                                                                            this.v = gd.U(2131743853, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)));
                                                                         } else if (tL_messageActionTodoAppendTasks.list.size() == 3) {
-                                                                            this.v = gd.U(2131743861, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)), g0(tL_messageActionTodoAppendTasks.list.get(2)));
+                                                                            this.v = gd.U(2131743855, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)), g0(tL_messageActionTodoAppendTasks.list.get(2)));
                                                                         } else if (tL_messageActionTodoAppendTasks.list.size() >= 4) {
                                                                             this.v = gd.F("TodoAddedMoreTasksOut", tL_messageActionTodoAppendTasks.list.size() - 3, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)), g0(tL_messageActionTodoAppendTasks.list.get(2)));
                                                                         }
                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() == 1) {
-                                                                        this.v = E5(gd.U(2131743864, g0(tL_messageActionTodoAppendTasks.list.get(0))), "un1", tLObject7);
+                                                                        this.v = E5(gd.U(2131743858, g0(tL_messageActionTodoAppendTasks.list.get(0))), "un1", tLObject7);
                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() == 2) {
-                                                                        this.v = E5(gd.U(2131743860, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1))), "un1", tLObject7);
+                                                                        this.v = E5(gd.U(2131743854, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1))), "un1", tLObject7);
                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() == 3) {
-                                                                        this.v = E5(gd.U(2131743862, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)), g0(tL_messageActionTodoAppendTasks.list.get(2))), "un1", tLObject7);
+                                                                        this.v = E5(gd.U(2131743856, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)), g0(tL_messageActionTodoAppendTasks.list.get(2))), "un1", tLObject7);
                                                                     } else if (tL_messageActionTodoAppendTasks.list.size() >= 4) {
                                                                         this.v = E5(gd.F("TodoAddedMoreTasks", tL_messageActionTodoAppendTasks.list.size() - 3, g0(tL_messageActionTodoAppendTasks.list.get(0)), g0(tL_messageActionTodoAppendTasks.list.get(1)), g0(tL_messageActionTodoAppendTasks.list.get(2))), "un1", tLObject7);
                                                                     }
@@ -7619,7 +7619,7 @@ public class fj {
                                                                     this.v = s0(i35, n5.m(d2(abstractMap, hVar, n5.o(this.k.saved_peer_id))));
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionStarGiftOnchainOffer) {
                                                                     TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer = (TLRPC.TL_messageActionStarGiftOnchainOffer) messageAction6;
-                                                                    this.v = bi.e4.o(message5) ? bi.e4.r(tL_messageActionStarGiftOnchainOffer) : bi.e4.u(tL_messageActionStarGiftOnchainOffer);
+                                                                    this.v = bi.i4.o(message5) ? bi.i4.r(tL_messageActionStarGiftOnchainOffer) : bi.i4.u(tL_messageActionStarGiftOnchainOffer);
                                                                 } else {
                                                                     boolean z23 = messageAction6 instanceof TLRPC.TL_messageActionStarGiftPurchaseOffer;
                                                                     cg.b bVar2 = cg.b.a;
@@ -7632,7 +7632,7 @@ public class fj {
                                                                         String l10 = i5.c.l(tL_messageActionStarGiftPurchaseOffer.gift.num, ',', sb7);
                                                                         String u10 = n5.u(d2(abstractMap, hVar, n5.o(this.k.peer_id)));
                                                                         SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
-                                                                        spannableStringBuilder7.append((CharSequence) g0.W2(gd.Z(n11.a == bVar2 ? N3() ? 2131749704 : 2131749707 : N3() ? 2131749698 : 2131749701, u10, n11.d(), l10)));
+                                                                        spannableStringBuilder7.append((CharSequence) g0.W2(gd.Z(n11.a == bVar2 ? N3() ? 2131749703 : 2131749706 : N3() ? 2131749697 : 2131749700, u10, n11.d(), l10)));
                                                                         this.v = spannableStringBuilder7;
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionChangeCommunity) {
                                                                         TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) messageAction6;
@@ -7651,58 +7651,58 @@ public class fj {
                                                                         StringBuilder sb8 = new StringBuilder();
                                                                         sb8.append(tL_messageActionStarGiftPurchaseOfferDeclined.gift.title);
                                                                         sb8.append(" #");
-                                                                        this.v = g0.W2(gd.Z(tL_messageActionStarGiftPurchaseOfferDeclined.expired ? n12.a == bVar2 ? N3() ? 2131749705 : 2131749706 : N3() ? 2131749699 : 2131749700 : n12.a == bVar2 ? N3() ? 2131749702 : 2131749703 : N3() ? 2131749696 : 2131749697, n5.u(d2(abstractMap, hVar, n5.o(this.k.peer_id))), n12.d(), i5.c.l(tL_messageActionStarGiftPurchaseOfferDeclined.gift.num, ',', sb8)));
+                                                                        this.v = g0.W2(gd.Z(tL_messageActionStarGiftPurchaseOfferDeclined.expired ? n12.a == bVar2 ? N3() ? 2131749704 : 2131749705 : N3() ? 2131749698 : 2131749699 : n12.a == bVar2 ? N3() ? 2131749701 : 2131749702 : N3() ? 2131749695 : 2131749696, n5.u(d2(abstractMap, hVar, n5.o(this.k.peer_id))), n12.d(), i5.c.l(tL_messageActionStarGiftPurchaseOfferDeclined.gift.num, ',', sb8)));
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionPollAppendAnswer) {
                                                                         TLRPC.TL_messageActionPollAppendAnswer tL_messageActionPollAppendAnswer = (TLRPC.TL_messageActionPollAppendAnswer) messageAction6;
                                                                         if (N3()) {
-                                                                            this.v = gd.U(2131746986, h0(tL_messageActionPollAppendAnswer.answer.text, P3()));
+                                                                            this.v = gd.U(2131746985, h0(tL_messageActionPollAppendAnswer.answer.text, P3()));
                                                                         } else {
-                                                                            this.v = gd.U(2131746987, n5.u(d2(abstractMap, hVar, n5.o(this.k.from_id))), h0(tL_messageActionPollAppendAnswer.answer.text, P3()));
+                                                                            this.v = gd.U(2131746986, n5.u(d2(abstractMap, hVar, n5.o(this.k.from_id))), h0(tL_messageActionPollAppendAnswer.answer.text, P3()));
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionPollDeleteAnswer) {
                                                                         TLRPC.TL_messageActionPollDeleteAnswer tL_messageActionPollDeleteAnswer = (TLRPC.TL_messageActionPollDeleteAnswer) messageAction6;
                                                                         if (N3()) {
-                                                                            this.v = gd.U(2131746969, h0(tL_messageActionPollDeleteAnswer.answer.text, P3()));
+                                                                            this.v = gd.U(2131746968, h0(tL_messageActionPollDeleteAnswer.answer.text, P3()));
                                                                         } else {
-                                                                            this.v = gd.U(2131746970, n5.u(d2(abstractMap, hVar, n5.o(this.k.from_id))), h0(tL_messageActionPollDeleteAnswer.answer.text, P3()));
+                                                                            this.v = gd.U(2131746969, n5.u(d2(abstractMap, hVar, n5.o(this.k.from_id))), h0(tL_messageActionPollDeleteAnswer.answer.text, P3()));
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionNoForwardsToggle) {
                                                                         TLRPC.TL_messageActionNoForwardsToggle tL_messageActionNoForwardsToggle = (TLRPC.TL_messageActionNoForwardsToggle) messageAction6;
                                                                         boolean z26 = tL_messageActionNoForwardsToggle.new_value;
                                                                         if (z26 == tL_messageActionNoForwardsToggle.prev_value) {
-                                                                            this.v = gd.L0(z26 ? 2131751415 : 2131751414);
+                                                                            this.v = gd.M0(z26 ? 2131751414 : 2131751413);
                                                                         } else if (N3()) {
-                                                                            this.v = gd.L0(tL_messageActionNoForwardsToggle.new_value ? 2131751413 : 2131751137);
+                                                                            this.v = gd.M0(tL_messageActionNoForwardsToggle.new_value ? 2131751412 : 2131751136);
                                                                         } else {
-                                                                            this.v = gd.Z(tL_messageActionNoForwardsToggle.new_value ? 2131751416 : 2131751138, n5.u(d2(abstractMap, hVar, n5.o(this.k.peer_id))));
+                                                                            this.v = gd.Z(tL_messageActionNoForwardsToggle.new_value ? 2131751415 : 2131751137, n5.u(d2(abstractMap, hVar, n5.o(this.k.peer_id))));
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionNoForwardsRequest) {
                                                                         String u13 = n5.u(d2(abstractMap, hVar, n5.o(message5.peer_id)));
                                                                         if (((TLRPC.TL_messageActionNoForwardsRequest) messageAction6).new_value) {
-                                                                            this.v = N3() ? gd.L0(2131745186) : g0.W2(gd.Z(2131745187, u13));
+                                                                            this.v = N3() ? gd.M0(2131745185) : g0.W2(gd.Z(2131745186, u13));
                                                                         } else {
-                                                                            this.v = N3() ? gd.L0(2131745175) : g0.W2(gd.Z(2131745176, u13));
+                                                                            this.v = N3() ? gd.M0(2131745174) : g0.W2(gd.Z(2131745175, u13));
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionGramTransfer) {
                                                                         TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) messageAction6;
                                                                         TLRPC.User d221 = d2(abstractMap, hVar, n5.o(message5.peer_id));
                                                                         if (N3()) {
-                                                                            this.v = E5(g0.W2(gd.Z(2131742971, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount))), "un1", d221);
+                                                                            this.v = E5(g0.W2(gd.Z(2131742965, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount))), "un1", d221);
                                                                         } else if (o10.B(n5.o(this.k.peer_id)) && !TextUtils.isEmpty(tL_messageActionGramTransfer.onramp_provider_name)) {
-                                                                            this.v = g0.W2(gd.Z(2131742973, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount), org.telegram.ui.Wallet.g.d(tL_messageActionGramTransfer.onramp_provider_name, Locale.getDefault())));
+                                                                            this.v = g0.W2(gd.Z(2131742967, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount), org.telegram.ui.Wallet.g.d(tL_messageActionGramTransfer.onramp_provider_name, Locale.getDefault())));
                                                                         } else if (o10.B(n5.o(this.k.peer_id))) {
-                                                                            this.v = g0.W2(gd.Z(2131742972, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)));
+                                                                            this.v = g0.W2(gd.Z(2131742966, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)));
                                                                         } else {
-                                                                            this.v = E5(g0.W2(gd.Z(2131742974, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount))), "un1", tLObject7);
+                                                                            this.v = E5(g0.W2(gd.Z(2131742968, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount))), "un1", tLObject7);
                                                                         }
                                                                         if (N3()) {
-                                                                            this.w = g0.W2(gd.Z(2131742970, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)));
+                                                                            this.w = g0.W2(gd.Z(2131742964, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)));
                                                                         } else if (o10.B(n5.o(this.k.peer_id)) && !TextUtils.isEmpty(tL_messageActionGramTransfer.onramp_provider_name)) {
-                                                                            this.w = g0.W2(gd.Z(2131742973, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount), org.telegram.ui.Wallet.g.d(tL_messageActionGramTransfer.onramp_provider_name, Locale.getDefault())));
+                                                                            this.w = g0.W2(gd.Z(2131742967, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount), org.telegram.ui.Wallet.g.d(tL_messageActionGramTransfer.onramp_provider_name, Locale.getDefault())));
                                                                         } else if (o10.B(n5.o(this.k.peer_id))) {
-                                                                            this.w = g0.W2(gd.Z(2131742972, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)));
+                                                                            this.w = g0.W2(gd.Z(2131742966, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)));
                                                                         } else {
-                                                                            this.w = g0.W2(gd.Z(2131742974, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)).replace("un1", str).trim());
+                                                                            this.w = g0.W2(gd.Z(2131742968, org.telegram.ui.Wallet.u0.w(tL_messageActionGramTransfer.amount)).replace("un1", str).trim());
                                                                         }
                                                                     }
                                                                 }
@@ -7710,14 +7710,14 @@ public class fj {
                                                         }
                                                     } else if (messageAction6.ttl != 0) {
                                                         if (N3()) {
-                                                            this.v = gd.Z(2131748393, gd.c0(this.k.action.ttl));
+                                                            this.v = gd.Z(2131748392, gd.c0(this.k.action.ttl));
                                                         } else {
-                                                            this.v = gd.Z(2131748394, o10.j(user), gd.c0(this.k.action.ttl));
+                                                            this.v = gd.Z(2131748393, o10.j(user), gd.c0(this.k.action.ttl));
                                                         }
                                                     } else if (N3()) {
-                                                        this.v = gd.L0(2131748391);
+                                                        this.v = gd.M0(2131748390);
                                                     } else {
-                                                        this.v = gd.Z(2131748392, o10.j(user));
+                                                        this.v = gd.Z(2131748391, o10.j(user));
                                                     }
                                                 }
                                             }
@@ -7841,18 +7841,18 @@ public class fj {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            ArrayList arrayList2 = ((c61) obj).d;
+            ArrayList arrayList2 = ((f61) obj).d;
             int size2 = arrayList2.size();
             int i10 = 0;
             while (i10 < size2) {
                 Object obj2 = arrayList2.get(i10);
                 i10++;
-                ((e61) obj2).e(z10);
+                ((h61) obj2).e(z10);
             }
         }
-        this.g3 = f61.a0(this.e3);
-        this.h3 = f61.b0(this.e3);
-        this.i3 = f61.N(this.e3);
+        this.g3 = i61.a0(this.e3);
+        this.h3 = i61.b0(this.e3);
+        this.i3 = i61.N(this.e3);
     }
 
     public final void f(int i7, long j3, boolean z10) {
@@ -7878,8 +7878,8 @@ public class fj {
             return;
         }
         this.t = true;
-        org.telegram.ui.Components.o5.g(this.K1).b(this.o.longValue(), new org.telegram.ui.Components.l5() { // from class: org.telegram.messenger.vi
-            @Override // org.telegram.ui.Components.l5
+        org.telegram.ui.Components.p5.g(this.K1).b(this.o.longValue(), new org.telegram.ui.Components.m5() { // from class: org.telegram.messenger.vi
+            @Override // org.telegram.ui.Components.m5
             public final void a(TLRPC.Document document) {
                 g0.g3(new fi(4, fj.this, document));
             }
@@ -7892,7 +7892,7 @@ public class fj {
             h02 = new SpannableStringBuilder(h02);
         }
         Spannable spannable = (Spannable) h02;
-        spannable.setSpan(new p41("task?" + todoItem.id, 0), 0, h02.length(), 33);
+        spannable.setSpan(new s41("task?" + todoItem.id, 0), 0, h02.length(), 33);
         return spannable;
     }
 
@@ -8073,10 +8073,10 @@ public class fj {
         }
         if (!TextUtils.isEmpty(str)) {
             String str2 = (!this.L2 || (tL_textWithEntities = this.k.translatedVoiceTranscription) == null) ? this.k.voiceTranscription : tL_textWithEntities.text;
-            return !TextUtils.isEmpty(str2) ? j6.m(str2, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false, null, 0) : str2;
+            return !TextUtils.isEmpty(str2) ? j6.m(str2, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0) : str2;
         }
-        SpannableString spannableString = new SpannableString(gd.M0(2131747936, null));
-        spannableString.setSpan(new hi.r9(1), 0, spannableString.length(), 33);
+        SpannableString spannableString = new SpannableString(gd.N0(2131747935, null));
+        spannableString.setSpan(new hi.q9(1), 0, spannableString.length(), 33);
         return spannableString;
     }
 
@@ -8128,8 +8128,8 @@ public class fj {
         }
         if (z10) {
             i7 = !arrayList.isEmpty() ? 1 << (arrayList.size() - 1) : 0;
-            arrayList.add(new n2[]{new p2(1, 2131746895, R.drawable.filled_bot_decline_24), new p2(2, 2131746896, R.drawable.filled_bot_approve_24)});
-            arrayList.add(new n2[]{new p2(3, 2131746894, R.drawable.filled_bot_suggest_24)});
+            arrayList.add(new n2[]{new p2(1, 2131746894, R.drawable.filled_bot_decline_24), new p2(2, 2131746895, R.drawable.filled_bot_approve_24)});
+            arrayList.add(new n2[]{new p2(3, 2131746893, R.drawable.filled_bot_suggest_24)});
         } else {
             i7 = 0;
         }
@@ -8138,7 +8138,7 @@ public class fj {
         }
         b3.j jVar = this.q2;
         if ((jVar != null && !p2()) || ((tL_messageReactions = this.k.reactions) != null && !tL_messageReactions.results.isEmpty())) {
-            org.telegram.ui.ActionBar.n6.Q();
+            org.telegram.ui.ActionBar.m6.Q();
             StringBuilder sb2 = this.F0;
             if (sb2 == null) {
                 this.F0 = new StringBuilder();
@@ -8160,15 +8160,15 @@ public class fj {
                     sb3.append(i12);
                     sb3.append(i14);
                     if ((n2Var instanceof o2) && cg.c.c(((o2) n2Var).a, TL_keyboard.TL_inlineButtonTypeBuy.class) && (n1(this.k).flags & 4) != 0) {
-                        m10 = gd.M0(2131747189, null);
+                        m10 = gd.N0(2131747188, null);
                     } else {
                         String d = n2Var.d();
                         if (d == null) {
                             d = "";
                         }
-                        m10 = j6.m(d, org.telegram.ui.ActionBar.n6.w2.getFontMetricsInt(), false, null, 0);
+                        m10 = j6.m(d, org.telegram.ui.ActionBar.m6.w2.getFontMetricsInt(), false, null, 0);
                     }
-                    StaticLayout staticLayout = new StaticLayout(m10, org.telegram.ui.ActionBar.n6.w2, g0.L(2000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    StaticLayout staticLayout = new StaticLayout(m10, org.telegram.ui.ActionBar.m6.w2, g0.L(2000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     if (staticLayout.getLineCount() > 0) {
                         float lineWidth = staticLayout.getLineWidth(0);
                         float lineLeft = staticLayout.getLineLeft(0);
@@ -8273,8 +8273,8 @@ public class fj {
     }
 
     public final boolean j5() {
-        e61 e61Var;
-        return (!D2(true) || (e61Var = this.g3) == null) ? this.z0 : e61Var.b();
+        h61 h61Var;
+        return (!D2(true) || (h61Var = this.g3) == null) ? this.z0 : h61Var.b();
     }
 
     public final void k(CharSequence charSequence) {
@@ -8284,7 +8284,7 @@ public class fj {
         TLRPC.User c22 = p3() ? mp.u1(this.K1).c2(Long.valueOf(this.k.from_id.user_id)) : null;
         this.v = charSequence;
         ArrayList O0 = O0();
-        TextPaint textPaint = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.n6.x2 : org.telegram.ui.ActionBar.n6.o2;
+        TextPaint textPaint = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
         int[] iArr = i() ? new int[1] : null;
         CharSequence m10 = j6.m(this.v, textPaint.getFontMetricsInt(), false, iArr, 0);
         this.v = m10;
@@ -8364,9 +8364,9 @@ public class fj {
                 if (!F3() || (n1(this.k) instanceof TLRPC.TL_messageMediaGame) || TextUtils.isEmpty(str)) {
                     return;
                 }
-                CharSequence m10 = j6.m(str, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false, null, 0);
+                CharSequence m10 = j6.m(str, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0);
                 this.z = m10;
-                this.z = B5(m10, arrayList, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false);
+                this.z = B5(m10, arrayList, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
                 boolean z12 = z10 || (!(this.k.send_state != 0 ? false : arrayList.isEmpty() ^ true) && (this.T != 0 || (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto_old) || (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto_layer68) || (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto_layer74) || (n1(this.k) instanceof TLRPC.TL_messageMediaDocument_old) || (n1(this.k) instanceof TLRPC.TL_messageMediaDocument_layer68) || (n1(this.k) instanceof TLRPC.TL_messageMediaDocument_layer74) || ((N3() && this.k.send_state != 0) || this.k.id < 0)));
                 if (z12) {
                     if (M(this.z)) {
@@ -8379,7 +8379,7 @@ public class fj {
                     h(P3(), this.z, true, 0, 0, true);
                 }
                 c(this.z, false, z12);
-                this.z = org.telegram.ui.Components.k00.a(this.z, true);
+                this.z = org.telegram.ui.Components.m00.a(this.z, true);
                 if (L4(this.k)) {
                     h(P3(), this.z, true, 3, (int) L0(), false);
                 } else if (I3() || R4(this.k)) {
@@ -8540,9 +8540,9 @@ public class fj {
             this.A = null;
             return;
         }
-        CharSequence m10 = j6.m(str, org.telegram.ui.ActionBar.n6.b3.getFontMetricsInt(), false, null, 0);
+        CharSequence m10 = j6.m(str, org.telegram.ui.ActionBar.m6.b3.getFontMetricsInt(), false, null, 0);
         this.A = m10;
-        Spannable B5 = B5(m10, arrayList, org.telegram.ui.ActionBar.n6.b3.getFontMetricsInt(), false);
+        Spannable B5 = B5(m10, arrayList, org.telegram.ui.ActionBar.m6.b3.getFontMetricsInt(), false);
         this.A = B5;
         b(B5, arrayList, P3(), true, false, false, 0);
     }
@@ -8564,7 +8564,7 @@ public class fj {
             this.T1 = g0.L(530.0f);
         }
         this.U1 = g0.p;
-        TextPaint textPaint = org.telegram.ui.ActionBar.n6.o2;
+        TextPaint textPaint = org.telegram.ui.ActionBar.m6.o2;
         this.W1 = textPaint != null ? textPaint.getTextSize() : 0.0f;
         boolean P2 = P2();
         this.V1 = P2;
@@ -8783,17 +8783,17 @@ public class fj {
         TLRPC.TL_game tL_game = (fjVar == null || m1(fjVar) == null || m1(this.C).game == null) ? null : m1(this.C).game;
         if (tL_game == null) {
             if (user == null || user.id != j10.i(i7).e()) {
-                this.v = E5(gd.a0("ActionUserScored", null, 2131754504, gd.G(this.k.action.score, "Points", new Object[0])), "un1", user);
+                this.v = E5(gd.a0("ActionUserScored", null, 2131754503, gd.G(this.k.action.score, "Points", new Object[0])), "un1", user);
                 return;
             } else {
-                this.v = gd.a0("ActionYouScored", null, 2131754490, gd.G(this.k.action.score, "Points", new Object[0]));
+                this.v = gd.a0("ActionYouScored", null, 2131754489, gd.G(this.k.action.score, "Points", new Object[0]));
                 return;
             }
         }
         if (user == null || user.id != j10.i(i7).e()) {
-            this.v = E5(gd.a0("ActionUserScoredInGame", null, 2131754503, gd.G(this.k.action.score, "Points", new Object[0])), "un1", user);
+            this.v = E5(gd.a0("ActionUserScoredInGame", null, 2131754502, gd.G(this.k.action.score, "Points", new Object[0])), "un1", user);
         } else {
-            this.v = gd.a0("ActionYouScoredInGame", null, 2131754489, gd.G(this.k.action.score, "Points", new Object[0]));
+            this.v = gd.a0("ActionYouScoredInGame", null, 2131754488, gd.G(this.k.action.score, "Points", new Object[0]));
         }
         this.v = E5(this.v, "un2", tL_game);
     }
@@ -9006,18 +9006,18 @@ public class fj {
         CharSequence charSequence4 = this.v;
         this.C2 = (charSequence4 instanceof Spanned) && ((qi.g[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), qi.g.class)).length > 0;
         CharSequence charSequence5 = this.v;
-        this.G2 = (charSequence5 instanceof Spanned) && ((gh0[]) ((Spanned) charSequence5).getSpans(0, charSequence5.length(), gh0.class)).length > 0;
+        this.G2 = (charSequence5 instanceof Spanned) && ((ih0[]) ((Spanned) charSequence5).getSpans(0, charSequence5.length(), ih0.class)).length > 0;
         this.H2 = false;
         this.I2 = false;
-        CharSequence a10 = org.telegram.ui.Components.k00.a(this.v, true);
+        CharSequence a10 = org.telegram.ui.Components.m00.a(this.v, true);
         this.v = a10;
         if (a10 instanceof Spanned) {
             Spanned spanned = (Spanned) a10;
-            hh0[] hh0VarArr = (hh0[]) spanned.getSpans(0, spanned.length(), hh0.class);
-            for (hh0 hh0Var : hh0VarArr) {
-                hh0Var.b = false;
+            jh0[] jh0VarArr = (jh0[]) spanned.getSpans(0, spanned.length(), jh0.class);
+            for (jh0 jh0Var : jh0VarArr) {
+                jh0Var.b = false;
             }
-            this.H2 = hh0VarArr.length == 1 && spanned.getSpanStart(hh0VarArr[0]) == 0 && spanned.getSpanEnd(hh0VarArr[0]) == spanned.length();
+            this.H2 = jh0VarArr.length == 1 && spanned.getSpanStart(jh0VarArr[0]) == 0 && spanned.getSpanEnd(jh0VarArr[0]) == spanned.length();
             qi.g[] gVarArr = (qi.g[]) spanned.getSpans(0, spanned.length(), qi.g.class);
             this.I2 = gVarArr.length == 1 && spanned.getSpanStart(gVarArr[0]) == 0 && spanned.getSpanEnd(gVarArr[0]) == spanned.length();
         }
@@ -9027,11 +9027,11 @@ public class fj {
                 charSequence3 = charSequence6;
             }
             SpannableStringBuilder spannableStringBuilder = charSequence6 instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence6 : new SpannableStringBuilder(charSequence6);
-            j41 j41Var = new j41(true);
-            j41Var.b(-1);
-            j41Var.d();
-            e2 e2Var = new e2(1, j41Var);
-            e2Var.a(org.telegram.ui.ActionBar.n6.Vc);
+            m41 m41Var = new m41(true);
+            m41Var.b(-1);
+            m41Var.d();
+            e2 e2Var = new e2(1, m41Var);
+            e2Var.a(org.telegram.ui.ActionBar.m6.Vc);
             e2Var.n = -g0.L(10.0f);
             spannableStringBuilder.append((CharSequence) " _");
             spannableStringBuilder.setSpan(e2Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
@@ -9046,7 +9046,7 @@ public class fj {
                     L = g0.L(15.0f);
                 }
                 int i23 = l12;
-                TextPaint textPaint4 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.n6.x2 : org.telegram.ui.ActionBar.n6.o2;
+                TextPaint textPaint4 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
                 CharSequence charSequence7 = this.v;
                 StaticLayout g52 = g5(charSequence7, textPaint4, i23, 1.0f, this.R1 < 4 ? -1.0f : 0.0f, this.P1 <= 0, Layout.Alignment.ALIGN_NORMAL);
                 if (this.j2) {
@@ -9058,9 +9058,9 @@ public class fj {
                     }
                     f10 = 32.0f;
                     if (g52.getLineCount() > i24) {
-                        String M0 = gd.M0(2131746176, null);
+                        String N0 = gd.N0(2131746175, null);
                         f11 = 0.0f;
-                        int ceil4 = (int) Math.ceil(textPaint4.measureText("… " + M0) + g0.L(1.0f));
+                        int ceil4 = (int) Math.ceil(textPaint4.measureText("… " + N0) + g0.L(1.0f));
                         int i25 = 0;
                         float f15 = 0.0f;
                         while (i25 < i24) {
@@ -9078,8 +9078,8 @@ public class fj {
                         while (lineEnd >= lineStart && !Character.isWhitespace(charSequence7.charAt(lineEnd))) {
                             lineEnd--;
                         }
-                        SpannableStringBuilder append = new SpannableStringBuilder(charSequence7.subSequence(0, lineEnd)).append((CharSequence) "… ").append((CharSequence) M0);
-                        append.setSpan(new wi(), append.length() - M0.length(), append.length(), 33);
+                        SpannableStringBuilder append = new SpannableStringBuilder(charSequence7.subSequence(0, lineEnd)).append((CharSequence) "… ").append((CharSequence) N0);
+                        append.setSpan(new wi(), append.length() - N0.length(), append.length(), 33);
                         try {
                             g52 = g5(append, textPaint4, i23, 1.0f, this.R1 >= 4 ? -1.0f : 0.0f, this.P1 > 0 ? z21 : false, Layout.Alignment.ALIGN_NORMAL);
                             charSequence = append;
@@ -9165,7 +9165,7 @@ public class fj {
                                                 }
                                                 if (cjVar.I) {
                                                     int i31 = i30 - i29;
-                                                    textPaint = i31 > 220 ? org.telegram.ui.ActionBar.n6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.n6.q2 : org.telegram.ui.ActionBar.n6.p2;
+                                                    textPaint = i31 > 220 ? org.telegram.ui.ActionBar.m6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.m6.q2 : org.telegram.ui.ActionBar.m6.p2;
                                                 } else {
                                                     textPaint = textPaint4;
                                                 }
@@ -9435,9 +9435,9 @@ public class fj {
                                                         if (cjVar.V) {
                                                             this.v2 = Math.max(this.v2, i14);
                                                         } else {
-                                                            vy0 vy0Var = cjVar.M;
-                                                            if (vy0Var != null) {
-                                                                this.v2 = (int) Math.max(this.v2, Math.min(vy0Var.c + g0.L(15.0f), cjVar.e == null ? f11 : r3.getWidth()));
+                                                            xy0 xy0Var = cjVar.M;
+                                                            if (xy0Var != null) {
+                                                                this.v2 = (int) Math.max(this.v2, Math.min(xy0Var.c + g0.L(15.0f), cjVar.e == null ? f11 : r3.getWidth()));
                                                             }
                                                         }
                                                         cjVar.y.clear();
@@ -9741,7 +9741,7 @@ public class fj {
         }
         l12 -= L;
         int i232 = l12;
-        TextPaint textPaint42 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.n6.x2 : org.telegram.ui.ActionBar.n6.o2;
+        TextPaint textPaint42 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
         CharSequence charSequence72 = this.v;
     }
 
@@ -9806,9 +9806,9 @@ public class fj {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.k.reply_to.quote_text);
                 b(spannableStringBuilder, this.k.reply_to.quote_entities, P3(), false, false, false, 0);
                 SpannableString spannableString = new SpannableString("q ");
-                org.telegram.ui.Components.lq lqVar = new org.telegram.ui.Components.lq(R.drawable.mini_quote, 0);
-                lqVar.y = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q6, false);
-                spannableString.setSpan(lqVar, 0, 1, 33);
+                org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.mini_quote, 0);
+                nqVar.y = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q6, false);
+                spannableString.setSpan(nqVar, 0, 1, 33);
                 M2 = new SpannableStringBuilder(spannableString).append((CharSequence) spannableStringBuilder).append('\n').append(M2);
             }
             String charSequence = M2.toString();
@@ -9985,12 +9985,12 @@ public class fj {
                             a8.g(e10, true);
                         }
                     }
-                    CharSequence m10 = j6.m(this.y, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false, null, 0);
+                    CharSequence m10 = j6.m(this.y, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0);
                     this.y = m10;
                     ArrayList arrayList = this.B1;
                     if (arrayList != null) {
                         b(m10, arrayList, N3(), z10, false, !z10, 0);
-                        B5(this.y, this.B1, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false);
+                        B5(this.y, this.B1, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
                     }
                     if (i7 != 0) {
                         if (!(this.y instanceof Spannable)) {
@@ -10168,27 +10168,27 @@ public class fj {
             int i7 = messageAction2.subscription_until_date;
             if (i7 != 0) {
                 if (z10) {
-                    this.v = gd.a0(null, null, 2131747172, k10, str, gd.x(i7, false));
+                    this.v = gd.a0(null, null, 2131747171, k10, str, gd.x(i7, false));
                 } else {
-                    this.v = gd.a0(null, null, 2131747166, str, k10, gd.x(i7, false));
+                    this.v = gd.a0(null, null, 2131747165, str, k10, gd.x(i7, false));
                 }
             } else if (!messageAction2.recurring_init || z10) {
-                this.v = gd.a0(null, null, 2131747170, str, k10);
-            } else {
                 this.v = gd.a0(null, null, 2131747169, str, k10);
+            } else {
+                this.v = gd.a0(null, null, 2131747168, str, k10);
             }
         } else {
             TLRPC.MessageAction messageAction3 = this.k.action;
             if (messageAction3.subscription_until_date != 0) {
                 if (z10) {
-                    this.v = gd.a0(null, null, 2131747171, k10, str, m1(this.C).title, gd.x(this.k.action.subscription_until_date, false));
+                    this.v = gd.a0(null, null, 2131747170, k10, str, m1(this.C).title, gd.x(this.k.action.subscription_until_date, false));
                 } else {
-                    this.v = gd.a0(null, null, 2131747167, str, k10, m1(this.C).title, gd.x(this.k.action.subscription_until_date, false));
+                    this.v = gd.a0(null, null, 2131747166, str, k10, m1(this.C).title, gd.x(this.k.action.subscription_until_date, false));
                 }
             } else if (!messageAction3.recurring_init || z10) {
-                this.v = gd.a0(null, null, 2131747173, str, k10, m1(this.C).title);
+                this.v = gd.a0(null, null, 2131747172, str, k10, m1(this.C).title);
             } else {
-                this.v = gd.a0(null, null, 2131747168, str, k10, m1(this.C).title);
+                this.v = gd.a0(null, null, 2131747167, str, k10, m1(this.C).title);
             }
         }
         this.v = di.pb.T0(this.v);
@@ -10299,107 +10299,107 @@ public class fj {
             TLRPC.Message message = fjVar.k;
             if (!(message instanceof TLRPC.TL_messageEmpty) && !(message.action instanceof TLRPC.TL_messageActionHistoryClear)) {
                 if (fjVar.I3()) {
-                    String M0 = gd.M0(2131754592, null);
+                    String N0 = gd.N0(2131754591, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M0, "un1", chat);
+                    this.v = E5(N0, "un1", chat);
                     return;
                 }
                 if (L4(this.C.k)) {
-                    String M02 = gd.M0(2131754584, null);
+                    String N02 = gd.N0(2131754583, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M02, "un1", chat);
+                    this.v = E5(N02, "un1", chat);
                     return;
                 }
                 if (t3(this.C.k)) {
-                    String M03 = gd.M0(2131754593, null);
+                    String N03 = gd.N0(2131754592, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M03, "un1", chat);
+                    this.v = E5(N03, "un1", chat);
                     return;
                 }
                 if (R4(this.C.k)) {
-                    String M04 = gd.M0(2131754583, null);
+                    String N04 = gd.N0(2131754582, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M04, "un1", chat);
+                    this.v = E5(N04, "un1", chat);
                     return;
                 }
                 if (this.C.h4()) {
-                    String M05 = gd.M0(2131754587, null);
+                    String N05 = gd.N0(2131754586, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M05, "un1", chat);
+                    this.v = E5(N05, "un1", chat);
                     return;
                 }
                 if ((this.C.t4() || this.C.J2()) && !this.C.G2()) {
-                    String M06 = gd.M0(2131754586, null);
+                    String N06 = gd.N0(2131754585, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M06, "un1", chat);
+                    this.v = E5(N06, "un1", chat);
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaDocument) {
-                    String M07 = gd.M0(2131754597, null);
+                    String N07 = gd.N0(2131754596, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M07, "un1", chat);
+                    this.v = E5(N07, "un1", chat);
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaGeo) {
-                    String M08 = gd.M0(2131754595, null);
+                    String N08 = gd.N0(2131754594, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M08, "un1", chat);
+                    this.v = E5(N08, "un1", chat);
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaGeoLive) {
-                    String M09 = gd.M0(2131754594, null);
+                    String N09 = gd.N0(2131754593, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M09, "un1", chat);
+                    this.v = E5(N09, "un1", chat);
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaContact) {
-                    String M010 = gd.M0(2131754598, null);
+                    String N010 = gd.N0(2131754597, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M010, "un1", chat);
+                    this.v = E5(N010, "un1", chat);
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaPoll) {
                     if (((TLRPC.TL_messageMediaPoll) m1(this.C)).poll.quiz) {
-                        String M011 = gd.M0(2131754588, null);
+                        String N011 = gd.N0(2131754587, null);
                         if (user != 0) {
                             chat = user;
                         }
-                        this.v = E5(M011, "un1", chat);
+                        this.v = E5(N011, "un1", chat);
                         return;
                     }
-                    String M012 = gd.M0(2131754589, null);
+                    String N012 = gd.N0(2131754588, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M012, "un1", chat);
+                    this.v = E5(N012, "un1", chat);
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaPhoto) {
-                    String M013 = gd.M0(2131754590, null);
+                    String N013 = gd.N0(2131754589, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M013, "un1", chat);
+                    this.v = E5(N013, "un1", chat);
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaPaidMedia) {
@@ -10407,35 +10407,35 @@ public class fj {
                     return;
                 }
                 if (m1(this.C) instanceof TLRPC.TL_messageMediaGame) {
-                    String a02 = gd.a0("ActionPinnedGame", null, 2131754596, "🎮 " + m1(this.C).game.title);
+                    String a02 = gd.a0("ActionPinnedGame", null, 2131754595, "🎮 " + m1(this.C).game.title);
                     if (user != 0) {
                         chat = user;
                     }
                     CharSequence E5 = E5(a02, "un1", chat);
                     this.v = E5;
-                    this.v = j6.m(E5, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), false, null, 0);
+                    this.v = j6.m(E5, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0);
                     return;
                 }
                 CharSequence charSequence = this.C.v;
                 if (charSequence == null || charSequence.length() <= 0) {
-                    String M014 = gd.M0(2131754591, null);
+                    String N014 = gd.N0(2131754590, null);
                     if (user != 0) {
                         chat = user;
                     }
-                    this.v = E5(M014, "un1", chat);
+                    this.v = E5(N014, "un1", chat);
                     return;
                 }
-                CharSequence cloneSpans = org.telegram.ui.Components.x5.cloneSpans(this.C.v);
+                CharSequence cloneSpans = org.telegram.ui.Components.y5.cloneSpans(this.C.v);
                 if (cloneSpans.length() > 20) {
                     cloneSpans = cloneSpans.subSequence(0, 20);
                     z10 = true;
                 } else {
                     z10 = false;
                 }
-                CharSequence m10 = j6.m(cloneSpans, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt(), true, null, 0);
+                CharSequence m10 = j6.m(cloneSpans, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), true, null, 0);
                 fj fjVar2 = this.C;
                 if (fjVar2 != null && fjVar2.k != null) {
-                    m10 = fjVar2.A5(m10, org.telegram.ui.ActionBar.n6.o2.getFontMetricsInt());
+                    m10 = fjVar2.A5(m10, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt());
                 }
                 ri.h(this.C, (Spannable) m10);
                 if (z10) {
@@ -10445,7 +10445,7 @@ public class fj {
                         m10 = new SpannableStringBuilder(m10).append((CharSequence) "...");
                     }
                 }
-                SpannableStringBuilder m0 = g0.m0(gd.M0(2131754585, null), m10);
+                SpannableStringBuilder m0 = g0.m0(gd.N0(2131754584, null), m10);
                 if (user != 0) {
                     chat = user;
                 }
@@ -10453,11 +10453,11 @@ public class fj {
                 return;
             }
         }
-        String M015 = gd.M0(2131754591, null);
+        String N015 = gd.N0(2131754590, null);
         if (user != 0) {
             chat = user;
         }
-        this.v = E5(M015, "un1", chat);
+        this.v = E5(N015, "un1", chat);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:107:0x01ad, code lost:
@@ -10488,14 +10488,14 @@ public class fj {
         String o4;
         String str = null;
         if (messageMedia instanceof TLRPC.TL_messageMediaGiveaway) {
-            return gd.M0(2131753490, null);
+            return gd.N0(2131753489, null);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
-            return gd.M0(2131753390, null);
+            return gd.N0(2131753389, null);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaStory) {
             if (!messageMedia.via_mention) {
-                return gd.M0(2131750527, null);
+                return gd.N0(2131750526, null);
             }
             int i7 = this.K1;
             TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(messageMedia.user_id));
@@ -10509,7 +10509,7 @@ public class fj {
                 return "";
             }
             SpannableString spannableString = new SpannableString(str);
-            spannableString.setSpan(new r41("https://".concat(str), new dz0()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new u41("https://".concat(str), new fz0()), 0, spannableString.length(), 33);
             return spannableString;
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaDice) {
@@ -10517,12 +10517,12 @@ public class fj {
             return TextUtils.isEmpty(tL_messageMediaDice.emoticon) ? "🎲" : tL_messageMediaDice.emoticon.replace("️", "");
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
-            return ((TLRPC.TL_messageMediaPoll) messageMedia).poll.quiz ? gd.M0(2131746250, null) : gd.M0(2131746992, null);
+            return ((TLRPC.TL_messageMediaPoll) messageMedia).poll.quiz ? gd.N0(2131746249, null) : gd.N0(2131746991, null);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
             TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
             TLRPC.TodoList todoList = tL_messageMediaToDo.todo;
-            return (todoList == null || (tL_textWithEntities = todoList.title) == null || tL_textWithEntities.text.isEmpty()) ? gd.M0(2131748277, null) : gd.V(null, null, 2131748275, h0(tL_messageMediaToDo.todo.title, P3()));
+            return (todoList == null || (tL_textWithEntities = todoList.title) == null || tL_textWithEntities.text.isEmpty()) ? gd.N0(2131748276, null) : gd.V(null, null, 2131748274, h0(tL_messageMediaToDo.todo.title, P3()));
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaPaidMedia) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) messageMedia;
@@ -10541,10 +10541,10 @@ public class fj {
                     break;
                 }
             }
-            return di.pb.T0(gd.a0(null, null, 2131753947, size == 1 ? gd.M0(z10 ? 2131753931 : 2131753946, null) : gd.G(size, z10 ? "Media" : "Photos", new Object[0])));
+            return di.pb.T0(gd.a0(null, null, 2131753946, size == 1 ? gd.N0(z10 ? 2131753930 : 2131753945, null) : gd.G(size, z10 ? "Media" : "Photos", new Object[0])));
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-            return (messageMedia.ttl_seconds == 0 || (this.k instanceof TLRPC.TL_message_secret)) ? c1() != 0 ? gd.M0(2131754303, null) : D3() ? gd.M0(2131753960, null) : gd.M0(2131753946, null) : gd.M0(2131753975, null);
+            return (messageMedia.ttl_seconds == 0 || (this.k instanceof TLRPC.TL_message_secret)) ? c1() != 0 ? gd.N0(2131754302, null) : D3() ? gd.N0(2131753959, null) : gd.N0(2131753945, null) : gd.N0(2131753974, null);
         }
         if (messageMedia != null) {
             if (!K4(messageMedia.document)) {
@@ -10554,22 +10554,22 @@ public class fj {
                     }
                 }
             }
-            return (messageMedia.ttl_seconds == 0 || (this.k instanceof TLRPC.TL_message_secret)) ? gd.M0(2131753931, null) : messageMedia.voice ? gd.M0(2131753927, null) : messageMedia.round ? gd.M0(2131753938, null) : gd.M0(2131753974, null);
+            return (messageMedia.ttl_seconds == 0 || (this.k instanceof TLRPC.TL_message_secret)) ? gd.N0(2131753930, null) : messageMedia.voice ? gd.N0(2131753926, null) : messageMedia.round ? gd.N0(2131753937, null) : gd.N0(2131753973, null);
         }
         if (messageMedia != null && Q4(messageMedia.document)) {
-            return gd.M0(2131753980, null);
+            return gd.N0(2131753979, null);
         }
         if (messageMedia != null && i4(messageMedia.document)) {
-            return gd.M0(2131753939, null);
+            return gd.N0(2131753938, null);
         }
         if ((messageMedia instanceof TLRPC.TL_messageMediaGeo) || (messageMedia instanceof TLRPC.TL_messageMediaVenue)) {
-            return gd.M0(2131753959, null);
+            return gd.N0(2131753958, null);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaGeoLive) {
-            return gd.M0(2131753964, null);
+            return gd.N0(2131753963, null);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaContact) {
-            return gd.M0(2131753977, null);
+            return gd.N0(2131753976, null);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
             return this.k.message;
@@ -10578,26 +10578,26 @@ public class fj {
             return messageMedia.description;
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaUnsupported) {
-            return gd.M0(2131743592, null);
+            return gd.N0(2131743586, null);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaWidget) {
-            return TextUtils.isEmpty(this.k.message) ? gd.M0(2131753924, null) : this.k.message;
+            return TextUtils.isEmpty(this.k.message) ? gd.N0(2131753923, null) : this.k.message;
         }
         if (!(messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
             return null;
         }
         if (u4(messageMedia.document) || K2(messageMedia.document, true)) {
             String U1 = U1();
-            return (U1 == null || U1.length() <= 0) ? gd.M0(2131753934, null) : a8.p0.E(U1, " ", gd.M0(2131753934, null));
+            return (U1 == null || U1.length() <= 0) ? gd.N0(2131753933, null) : a8.p0.E(U1, " ", gd.N0(2131753933, null));
         }
         if (I3()) {
-            return gd.M0(2131753950, null);
+            return gd.N0(2131753949, null);
         }
         if (t3(this.k)) {
-            return gd.M0(2131753969, null);
+            return gd.N0(2131753968, null);
         }
         String B = w7.B(messageMedia.document);
-        return !TextUtils.isEmpty(B) ? B : gd.M0(2131753973, null);
+        return !TextUtils.isEmpty(B) ? B : gd.N0(2131753972, null);
     }
 
     public final boolean q2() {
@@ -11048,7 +11048,7 @@ public class fj {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 boolean z13 = false;
                 if (tL_messageActionSuggestedPostApproval.balance_too_low) {
-                    f3.p(null, null, 2131744132, new Object[]{str2}, spannableStringBuilder);
+                    f3.p(null, null, 2131744126, new Object[]{str2}, spannableStringBuilder);
                     return spannableStringBuilder;
                 }
                 int i10 = 2;
@@ -11062,7 +11062,7 @@ public class fj {
                         z11 = o10 == n5.o(this.C.k.saved_peer_id);
                         z10 = o10 == j10.i(i7).e();
                     }
-                    f3.p(null, null, TextUtils.isEmpty(tL_messageActionSuggestedPostApproval.reject_comment) ? z10 ? 2131744134 : 2131744136 : z10 ? 2131744133 : 2131744135, new Object[]{z11 ? str : str2}, spannableStringBuilder);
+                    f3.p(null, null, TextUtils.isEmpty(tL_messageActionSuggestedPostApproval.reject_comment) ? z10 ? 2131744128 : 2131744130 : z10 ? 2131744127 : 2131744129, new Object[]{z11 ? str : str2}, spannableStringBuilder);
                     if (!TextUtils.isEmpty(tL_messageActionSuggestedPostApproval.reject_comment)) {
                         spannableStringBuilder.append((CharSequence) "\n\n");
                         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.8f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
@@ -11077,24 +11077,24 @@ public class fj {
                     int n22 = (int) mp.u1(i7).A7.i.n2(TimeUnit.HOURS);
                     int i11 = tL_messageActionSuggestedPostApproval.schedule_date;
                     if (i11 > 0) {
-                        f3.p(null, null, tL_messageActionSuggestedPostApproval.schedule_date > ConnectionsManager.getInstance(i7).getCurrentTime() ? z12 ? 2131744130 : 2131744122 : z12 ? 2131744129 : 2131744121, new Object[]{str, gd.x(i11, true)}, spannableStringBuilder);
+                        f3.p(null, null, tL_messageActionSuggestedPostApproval.schedule_date > ConnectionsManager.getInstance(i7).getCurrentTime() ? z12 ? 2131744124 : 2131744116 : z12 ? 2131744123 : 2131744115, new Object[]{str, gd.x(i11, true)}, spannableStringBuilder);
                     } else {
-                        f3.p(null, null, z12 ? 2131744128 : 2131744120, new Object[]{str}, spannableStringBuilder);
+                        f3.p(null, null, z12 ? 2131744122 : 2131744114, new Object[]{str}, spannableStringBuilder);
                     }
                     if (m10 != null) {
                         cg.b bVar = m10.a;
                         if (!m10.l()) {
                             cg.b bVar2 = cg.b.b;
                             boolean z14 = bVar == bVar2;
-                            String a02 = z12 ? gd.a0(null, null, 2131744127, str2, m10.b()) : gd.a0(null, null, 2131744119, m10.b());
+                            String a02 = z12 ? gd.a0(null, null, 2131744121, str2, m10.b()) : gd.a0(null, null, 2131744113, m10.b());
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             spannableStringBuilder.append((CharSequence) di.pb.V0(g0.W2(a02), bVar == bVar2));
-                            int i12 = z14 ? z12 ? 2131744125 : 2131744117 : z12 ? 2131744126 : 2131744118;
+                            int i12 = z14 ? z12 ? 2131744119 : 2131744111 : z12 ? 2131744120 : 2131744112;
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             f3.p(null, null, i12, new Object[]{str, Integer.valueOf(n22)}, spannableStringBuilder);
-                            int i13 = z14 ? z12 ? 2131744123 : 2131744115 : z12 ? 2131744124 : 2131744116;
+                            int i13 = z14 ? z12 ? 2131744117 : 2131744109 : z12 ? 2131744118 : 2131744110;
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             f3.p(null, null, i13, new Object[]{str, Integer.valueOf(n22)}, spannableStringBuilder);
@@ -11432,18 +11432,18 @@ public class fj {
                             if (c22 == null) {
                             }
                         }
-                        return gd.M0(2131750487, null);
+                        return gd.N0(2131750486, null);
                     }
                 } else if (!documentAttribute.voice) {
                     String str2 = documentAttribute.performer;
-                    return (TextUtils.isEmpty(str2) && z10) ? gd.M0(2131753898, null) : str2;
+                    return (TextUtils.isEmpty(str2) && z10) ? gd.N0(2131753897, null) : str2;
                 }
                 z11 = true;
                 if (z11) {
                 }
             }
         }
-        return gd.M0(2131753898, null);
+        return gd.N0(2131753897, null);
     }
 
     public final boolean w2() {
@@ -11524,7 +11524,7 @@ public class fj {
                         return str;
                     }
                     String B = w7.B(F0);
-                    return (TextUtils.isEmpty(B) && z10) ? gd.M0(2131753897, null) : B;
+                    return (TextUtils.isEmpty(B) && z10) ? gd.N0(2131753896, null) : B;
                 }
                 if ((documentAttribute instanceof TLRPC.TL_documentAttributeVideo) && documentAttribute.round_message) {
                     if (!b4(this.k)) {
@@ -11533,11 +11533,11 @@ public class fj {
                     StringBuilder sb2 = new StringBuilder("/");
                     String J1 = J1(this.k);
                     if (J1 == null) {
-                        kg.v1 c10 = kg.w1.f(this.K1).c(I1(this.k));
+                        kg.u1 c10 = kg.v1.f(this.K1).c(I1(this.k));
                         J1 = c10 != null ? c10.b : "";
                     }
                     sb2.append(J1);
-                    return gd.a0(null, null, 2131752715, sb2.toString());
+                    return gd.a0(null, null, 2131752714, sb2.toString());
                 }
             }
             String B2 = w7.B(F0);
@@ -11545,7 +11545,7 @@ public class fj {
                 return B2;
             }
         }
-        return gd.M0(2131753897, null);
+        return gd.N0(2131753896, null);
     }
 
     public final boolean y2() {
@@ -11682,7 +11682,7 @@ public class fj {
         this.K2 = false;
         this.L2 = false;
         this.M2 = false;
-        org.telegram.ui.ActionBar.n6.Q();
+        org.telegram.ui.ActionBar.m6.Q();
         this.j2 = z12;
         this.k2 = z13;
         this.n2 = z14 || B0(message) == j10.i(i7).e();
@@ -11737,9 +11737,9 @@ public class fj {
         k0();
         if (z10) {
             if (n1(this.k) instanceof TLRPC.TL_messageMediaGame) {
-                textPaint = org.telegram.ui.ActionBar.n6.x2;
+                textPaint = org.telegram.ui.ActionBar.m6.x2;
             } else {
-                textPaint = org.telegram.ui.ActionBar.n6.o2;
+                textPaint = org.telegram.ui.ActionBar.m6.o2;
             }
             int[] iArr = i() ? new int[1] : null;
             CharSequence m10 = j6.m(this.v, textPaint.getFontMetricsInt(), r15, iArr, r15);
@@ -11754,7 +11754,7 @@ public class fj {
             L5();
             TLRPC.Document F0 = F0();
             if (F0 != null) {
-                this.H1 = u5.f(F0, org.telegram.ui.ActionBar.n6.cd, 1.0f, null);
+                this.H1 = u5.f(F0, org.telegram.ui.ActionBar.m6.cd, 1.0f, null);
             }
         }
         this.S1 = z10;
@@ -11800,7 +11800,7 @@ public class fj {
         TLRPC.ChannelParticipant channelParticipant;
         TLRPC.ChannelParticipant channelParticipant2;
         TLRPC.User c22;
-        String L0;
+        String M0;
         TLRPC.Chat chat2;
         StringBuilder sb2;
         SpannableString spannableString;
@@ -11809,7 +11809,7 @@ public class fj {
         boolean z11;
         SpannableString spannableString4;
         int i10;
-        String L02;
+        String M02;
         TLRPC.Message message;
         char c10;
         String G;
@@ -11832,7 +11832,7 @@ public class fj {
         TLRPC.MessageFwdHeader messageFwdHeader;
         TLObject O04;
         TLRPC.User user2;
-        String L03;
+        String M03;
         TLRPC.TL_chatBannedRights tL_chatBannedRights;
         StringBuilder sb3;
         boolean z14;
@@ -11879,9 +11879,9 @@ public class fj {
         if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeTitle) {
             String str4 = ((TLRPC.TL_channelAdminLogEventActionChangeTitle) channelAdminLogEventAction).new_value;
             if (chat.megagroup) {
-                this.v = E5(gd.Y(2131751007, "EventLogEditedGroupTitle", str4), "un1", c23);
+                this.v = E5(gd.Y(2131751006, "EventLogEditedGroupTitle", str4), "un1", c23);
             } else {
-                this.v = E5(gd.Y(2131751012, "EventLogEditedChannelTitle", str4), "un1", c23);
+                this.v = E5(gd.Y(2131751011, "EventLogEditedChannelTitle", str4), "un1", c23);
             }
         } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangePhoto) {
             TLRPC.TL_channelAdminLogEventActionChangePhoto tL_channelAdminLogEventActionChangePhoto = (TLRPC.TL_channelAdminLogEventActionChangePhoto) channelAdminLogEventAction;
@@ -11890,30 +11890,30 @@ public class fj {
             if (tL_channelAdminLogEventActionChangePhoto.new_photo instanceof TLRPC.TL_photoEmpty) {
                 tL_messageService.action = new TLRPC.TL_messageActionChatDeletePhoto();
                 if (chat.megagroup) {
-                    this.v = E5(gd.L0(2131750917), "un1", c23);
+                    this.v = E5(gd.M0(2131750916), "un1", c23);
                 } else {
-                    this.v = E5(gd.L0(2131750924), "un1", c23);
+                    this.v = E5(gd.M0(2131750923), "un1", c23);
                 }
             } else {
                 tL_messageService.action = new TLRPC.TL_messageActionChatEditPhoto();
                 this.k.action.photo = tL_channelAdminLogEventActionChangePhoto.new_photo;
                 if (chat.megagroup) {
                     if (I4()) {
-                        this.v = E5(gd.L0(2131751006), "un1", c23);
+                        this.v = E5(gd.M0(2131751005), "un1", c23);
                     } else {
-                        this.v = E5(gd.L0(2131751009), "un1", c23);
+                        this.v = E5(gd.M0(2131751008), "un1", c23);
                     }
                 } else if (I4()) {
-                    this.v = E5(gd.L0(2131751011), "un1", c23);
+                    this.v = E5(gd.M0(2131751010), "un1", c23);
                 } else {
-                    this.v = E5(gd.L0(2131751014), "un1", c23);
+                    this.v = E5(gd.M0(2131751013), "un1", c23);
                 }
             }
         } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantJoin) {
             if (chat.megagroup) {
-                this.v = E5(gd.L0(2131750967), "un1", c23);
+                this.v = E5(gd.M0(2131750966), "un1", c23);
             } else {
-                this.v = E5(gd.L0(2131751035), "un1", c23);
+                this.v = E5(gd.M0(2131751034), "un1", c23);
             }
         } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantLeave) {
             TLRPC.TL_messageService tL_messageService2 = new TLRPC.TL_messageService();
@@ -11921,9 +11921,9 @@ public class fj {
             tL_messageService2.action = new TLRPC.TL_messageActionChatDeleteUser();
             this.k.action.user_id = tL_channelAdminLogEvent2.user_id;
             if (chat.megagroup) {
-                this.v = E5(gd.L0(2131750962), "un1", c23);
+                this.v = E5(gd.M0(2131750961), "un1", c23);
             } else {
-                this.v = E5(gd.L0(2131750963), "un1", c23);
+                this.v = E5(gd.M0(2131750962), "un1", c23);
             }
         } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantInvite) {
             TLRPC.TL_messageService tL_messageService3 = new TLRPC.TL_messageService();
@@ -11938,12 +11938,12 @@ public class fj {
             TLRPC.Peer peer2 = this.k.from_id;
             if ((peer2 instanceof TLRPC.TL_peerUser) && B1 == peer2.user_id) {
                 if (chat.megagroup) {
-                    this.v = E5(gd.L0(2131750967), "un1", c23);
+                    this.v = E5(gd.M0(2131750966), "un1", c23);
                 } else {
-                    this.v = E5(gd.L0(2131751035), "un1", c23);
+                    this.v = E5(gd.M0(2131751034), "un1", c23);
                 }
             } else {
-                CharSequence E5 = E5(gd.L0(2131751066), "un2", O05);
+                CharSequence E5 = E5(gd.M0(2131751065), "un2", O05);
                 this.v = E5;
                 this.v = E5(E5, "un1", c23);
             }
@@ -11963,12 +11963,12 @@ public class fj {
                     tL_message.realId = -1;
                     TLRPC.TL_chatBannedRights tL_chatBannedRights2 = tL_channelAdminLogEventActionDefaultBannedRights.prev_banned_rights;
                     TLRPC.TL_chatBannedRights tL_chatBannedRights3 = tL_channelAdminLogEventActionDefaultBannedRights.new_banned_rights;
-                    StringBuilder sb4 = new StringBuilder(gd.L0(2131751029));
+                    StringBuilder sb4 = new StringBuilder(gd.M0(2131751028));
                     tL_chatBannedRights2 = tL_chatBannedRights2 == null ? new TLRPC.TL_chatBannedRights() : tL_chatBannedRights2;
                     tL_chatBannedRights3 = tL_chatBannedRights3 == null ? new TLRPC.TL_chatBannedRights() : tL_chatBannedRights3;
                     if (tL_chatBannedRights2.send_messages != tL_chatBannedRights3.send_messages) {
                         sb4.append("\n\n");
-                        f3.r(sb4, !tL_chatBannedRights3.send_messages ? '+' : '-', ' ', 2131750906);
+                        f3.r(sb4, !tL_chatBannedRights3.send_messages ? '+' : '-', ' ', 2131750905);
                         z15 = true;
                     } else {
                         z15 = false;
@@ -11982,7 +11982,7 @@ public class fj {
                             z15 = true;
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.send_stickers ? '+' : '-', ' ', 2131750903);
+                        f3.r(sb4, !tL_chatBannedRights3.send_stickers ? '+' : '-', ' ', 2131750902);
                     }
                     if (tL_chatBannedRights2.send_media != tL_chatBannedRights3.send_media) {
                         if (!z15) {
@@ -11990,7 +11990,7 @@ public class fj {
                             z15 = true;
                         }
                         sb4.append(c13);
-                        f3.r(sb4, !tL_chatBannedRights3.send_media ? '+' : '-', ' ', 2131750907);
+                        f3.r(sb4, !tL_chatBannedRights3.send_media ? '+' : '-', ' ', 2131750906);
                     }
                     if (tL_chatBannedRights2.send_polls != tL_chatBannedRights3.send_polls) {
                         if (!z15) {
@@ -11998,7 +11998,7 @@ public class fj {
                             z15 = true;
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.send_polls ? '+' : '-', ' ', 2131750905);
+                        f3.r(sb4, !tL_chatBannedRights3.send_polls ? '+' : '-', ' ', 2131750904);
                     }
                     if (tL_chatBannedRights2.embed_links != tL_chatBannedRights3.embed_links) {
                         if (!z15) {
@@ -12006,7 +12006,7 @@ public class fj {
                             z15 = true;
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.embed_links ? '+' : '-', ' ', 2131750908);
+                        f3.r(sb4, !tL_chatBannedRights3.embed_links ? '+' : '-', ' ', 2131750907);
                     }
                     if (tL_chatBannedRights2.change_info != tL_chatBannedRights3.change_info) {
                         if (!z15) {
@@ -12014,7 +12014,7 @@ public class fj {
                             z15 = true;
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.change_info ? '+' : '-', ' ', 2131750913);
+                        f3.r(sb4, !tL_chatBannedRights3.change_info ? '+' : '-', ' ', 2131750912);
                     }
                     if (tL_chatBannedRights2.invite_users != tL_chatBannedRights3.invite_users) {
                         if (!z15) {
@@ -12022,28 +12022,28 @@ public class fj {
                             z15 = true;
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.invite_users ? '+' : '-', ' ', 2131750911);
+                        f3.r(sb4, !tL_chatBannedRights3.invite_users ? '+' : '-', ' ', 2131750910);
                     }
                     if (tL_chatBannedRights2.pin_messages != tL_chatBannedRights3.pin_messages) {
                         if (!z15) {
                             sb4.append('\n');
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.pin_messages ? '+' : '-', ' ', 2131750910);
+                        f3.r(sb4, !tL_chatBannedRights3.pin_messages ? '+' : '-', ' ', 2131750909);
                     }
                     if (tL_chatBannedRights2.edit_rank != tL_chatBannedRights3.edit_rank) {
                         if (!z15) {
                             sb4.append('\n');
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.edit_rank ? '+' : '-', ' ', 2131750912);
+                        f3.r(sb4, !tL_chatBannedRights3.edit_rank ? '+' : '-', ' ', 2131750911);
                     }
                     if (tL_chatBannedRights2.send_reactions != tL_chatBannedRights3.send_reactions) {
                         if (!z15) {
                             sb4.append('\n');
                         }
                         sb4.append('\n');
-                        f3.r(sb4, !tL_chatBannedRights3.send_reactions ? '+' : '-', ' ', 2131750904);
+                        f3.r(sb4, !tL_chatBannedRights3.send_reactions ? '+' : '-', ' ', 2131750903);
                     }
                     this.v = sb4.toString();
                 } else {
@@ -12139,15 +12139,15 @@ public class fj {
                                 user2 = c23;
                                 str = "";
                                 tL_chatBannedRights = tL_chatBannedRights4;
-                                sb3 = new StringBuilder(gd.L0(2131743447));
+                                sb3 = new StringBuilder(gd.M0(2131743441));
                             }
-                            String L04 = gd.L0(2131750902);
-                            StringBuilder sb5 = new StringBuilder(String.format(L04, e2(O04, this.k.entities, L04.indexOf("%1$s")), sb3.toString()));
+                            String M04 = gd.M0(2131750901);
+                            StringBuilder sb5 = new StringBuilder(String.format(M04, e2(O04, this.k.entities, M04.indexOf("%1$s")), sb3.toString()));
                             TLRPC.TL_chatBannedRights tL_chatBannedRights6 = tL_chatBannedRights == null ? new TLRPC.TL_chatBannedRights() : tL_chatBannedRights;
                             tL_chatBannedRights5 = tL_chatBannedRights5 == null ? new TLRPC.TL_chatBannedRights() : tL_chatBannedRights5;
                             if (tL_chatBannedRights6.view_messages != tL_chatBannedRights5.view_messages) {
                                 sb5.append("\n\n");
-                                f3.r(sb5, !tL_chatBannedRights5.view_messages ? '+' : '-', ' ', 2131750909);
+                                f3.r(sb5, !tL_chatBannedRights5.view_messages ? '+' : '-', ' ', 2131750908);
                                 z14 = true;
                             } else {
                                 z14 = false;
@@ -12158,7 +12158,7 @@ public class fj {
                                     z14 = true;
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.send_messages ? '+' : '-', ' ', 2131750906);
+                                f3.r(sb5, !tL_chatBannedRights5.send_messages ? '+' : '-', ' ', 2131750905);
                             }
                             if (tL_chatBannedRights6.send_stickers == tL_chatBannedRights5.send_stickers && tL_chatBannedRights6.send_inline == tL_chatBannedRights5.send_inline && tL_chatBannedRights6.send_gifs == tL_chatBannedRights5.send_gifs && tL_chatBannedRights6.send_games == tL_chatBannedRights5.send_games) {
                                 c12 = '\n';
@@ -12169,7 +12169,7 @@ public class fj {
                                     z14 = true;
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.send_stickers ? '+' : '-', ' ', 2131750903);
+                                f3.r(sb5, !tL_chatBannedRights5.send_stickers ? '+' : '-', ' ', 2131750902);
                             }
                             if (tL_chatBannedRights6.send_media != tL_chatBannedRights5.send_media) {
                                 if (!z14) {
@@ -12177,7 +12177,7 @@ public class fj {
                                     z14 = true;
                                 }
                                 sb5.append(c12);
-                                f3.r(sb5, !tL_chatBannedRights5.send_media ? '+' : '-', ' ', 2131750907);
+                                f3.r(sb5, !tL_chatBannedRights5.send_media ? '+' : '-', ' ', 2131750906);
                             }
                             if (tL_chatBannedRights6.send_polls != tL_chatBannedRights5.send_polls) {
                                 if (!z14) {
@@ -12185,7 +12185,7 @@ public class fj {
                                     z14 = true;
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.send_polls ? '+' : '-', ' ', 2131750905);
+                                f3.r(sb5, !tL_chatBannedRights5.send_polls ? '+' : '-', ' ', 2131750904);
                             }
                             if (tL_chatBannedRights6.embed_links != tL_chatBannedRights5.embed_links) {
                                 if (!z14) {
@@ -12193,7 +12193,7 @@ public class fj {
                                     z14 = true;
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.embed_links ? '+' : '-', ' ', 2131750908);
+                                f3.r(sb5, !tL_chatBannedRights5.embed_links ? '+' : '-', ' ', 2131750907);
                             }
                             if (tL_chatBannedRights6.change_info != tL_chatBannedRights5.change_info) {
                                 if (!z14) {
@@ -12201,7 +12201,7 @@ public class fj {
                                     z14 = true;
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.change_info ? '+' : '-', ' ', 2131750913);
+                                f3.r(sb5, !tL_chatBannedRights5.change_info ? '+' : '-', ' ', 2131750912);
                             }
                             if (tL_chatBannedRights6.invite_users != tL_chatBannedRights5.invite_users) {
                                 if (!z14) {
@@ -12209,28 +12209,28 @@ public class fj {
                                     z14 = true;
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.invite_users ? '+' : '-', ' ', 2131750911);
+                                f3.r(sb5, !tL_chatBannedRights5.invite_users ? '+' : '-', ' ', 2131750910);
                             }
                             if (tL_chatBannedRights6.pin_messages != tL_chatBannedRights5.pin_messages) {
                                 if (!z14) {
                                     sb5.append('\n');
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.pin_messages ? '+' : '-', ' ', 2131750910);
+                                f3.r(sb5, !tL_chatBannedRights5.pin_messages ? '+' : '-', ' ', 2131750909);
                             }
                             if (tL_chatBannedRights6.edit_rank != tL_chatBannedRights5.edit_rank) {
                                 if (!z14) {
                                     sb5.append('\n');
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.edit_rank ? '+' : '-', ' ', 2131750912);
+                                f3.r(sb5, !tL_chatBannedRights5.edit_rank ? '+' : '-', ' ', 2131750911);
                             }
                             if (tL_chatBannedRights6.send_reactions != tL_chatBannedRights5.send_reactions) {
                                 if (!z14) {
                                     sb5.append('\n');
                                 }
                                 sb5.append('\n');
-                                f3.r(sb5, !tL_chatBannedRights5.send_reactions ? '+' : '-', ' ', 2131750904);
+                                f3.r(sb5, !tL_chatBannedRights5.send_reactions ? '+' : '-', ' ', 2131750903);
                             }
                             this.v = sb5.toString();
                             tL_channelAdminLogEvent2 = tL_channelAdminLogEvent;
@@ -12240,11 +12240,11 @@ public class fj {
                         user2 = c23;
                         str = "";
                         if (tL_chatBannedRights5 != null && (tL_chatBannedRights4 == null || tL_chatBannedRights5.view_messages)) {
-                            L03 = gd.L0(2131751034);
+                            M03 = gd.M0(2131751033);
                         } else {
-                            L03 = gd.L0(2131751033);
+                            M03 = gd.M0(2131751032);
                         }
-                        this.v = String.format(L03, e2(O04, this.k.entities, L03.indexOf("%1$s")));
+                        this.v = String.format(M03, e2(O04, this.k.entities, M03.indexOf("%1$s")));
                         tL_channelAdminLogEvent2 = tL_channelAdminLogEvent;
                         chat2 = chat;
                         user = user2;
@@ -12259,51 +12259,51 @@ public class fj {
                                 TLRPC.Chat O06 = mp.u1(i7).O0(Long.valueOf(tL_channelAdminLogEventActionUpdatePinned.message.fwd_from.from_id.channel_id));
                                 TLRPC.Message message4 = tL_channelAdminLogEventActionUpdatePinned.message;
                                 if (!(message4 instanceof TLRPC.TL_messageEmpty) && message4.pinned) {
-                                    this.v = E5(gd.L0(2131750957), "un1", O06);
+                                    this.v = E5(gd.M0(2131750956), "un1", O06);
                                 } else {
-                                    this.v = E5(gd.L0(2131750879), "un1", O06);
+                                    this.v = E5(gd.M0(2131750878), "un1", O06);
                                 }
                             } else if (!(message2 instanceof TLRPC.TL_messageEmpty) && message2.pinned) {
-                                this.v = E5(gd.L0(2131750957), "un1", user);
+                                this.v = E5(gd.M0(2131750956), "un1", user);
                             } else {
-                                this.v = E5(gd.L0(2131750879), "un1", user);
+                                this.v = E5(gd.M0(2131750878), "un1", user);
                             }
                         } else {
                             user = user3;
                             if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionStopPoll) {
                                 message2 = ((TLRPC.TL_channelAdminLogEventActionStopPoll) channelAdminLogEventAction).message;
                                 if ((n1(message2) instanceof TLRPC.TL_messageMediaPoll) && ((TLRPC.TL_messageMediaPoll) n1(message2)).poll.quiz) {
-                                    this.v = E5(gd.L0(2131750896), "un1", user);
+                                    this.v = E5(gd.M0(2131750895), "un1", user);
                                 } else {
-                                    this.v = E5(gd.L0(2131750897), "un1", user);
+                                    this.v = E5(gd.M0(2131750896), "un1", user);
                                 }
                             } else {
                                 if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleSignatures) {
                                     if (((TLRPC.TL_channelAdminLogEventActionToggleSignatures) channelAdminLogEventAction).new_value) {
-                                        this.v = E5(gd.L0(2131750885), "un1", user);
+                                        this.v = E5(gd.M0(2131750884), "un1", user);
                                     } else {
-                                        this.v = E5(gd.L0(2131750886), "un1", user);
+                                        this.v = E5(gd.M0(2131750885), "un1", user);
                                     }
                                 } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantSubExtend) {
-                                    this.v = E5(gd.L0(2131750895), "un1", user);
+                                    this.v = E5(gd.M0(2131750894), "un1", user);
                                 } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleSignatureProfiles) {
                                     if (((TLRPC.TL_channelAdminLogEventActionToggleSignatureProfiles) channelAdminLogEventAction).value) {
-                                        this.v = E5(gd.L0(2131750883), "un1", user);
+                                        this.v = E5(gd.M0(2131750882), "un1", user);
                                     } else {
-                                        this.v = E5(gd.L0(2131750884), "un1", user);
+                                        this.v = E5(gd.M0(2131750883), "un1", user);
                                     }
                                 } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleInvites) {
                                     if (((TLRPC.TL_channelAdminLogEventActionToggleInvites) channelAdminLogEventAction).new_value) {
-                                        this.v = E5(gd.L0(2131750887), "un1", user);
+                                        this.v = E5(gd.M0(2131750886), "un1", user);
                                     } else {
-                                        this.v = E5(gd.L0(2131750888), "un1", user);
+                                        this.v = E5(gd.M0(2131750887), "un1", user);
                                     }
                                 } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage) {
                                     message2 = ((TLRPC.TL_channelAdminLogEventActionDeleteMessage) channelAdminLogEventAction).message;
                                     if (user != null && user.id == mp.u1(i7).h5) {
-                                        this.v = gd.L0(2131751027).replace("un1", o10.q(user));
+                                        this.v = gd.M0(2131751026).replace("un1", o10.q(user));
                                     } else {
-                                        this.v = E5(gd.L0(2131751027), "un1", user);
+                                        this.v = E5(gd.M0(2131751026), "un1", user);
                                     }
                                 } else {
                                     if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeLinkedChat) {
@@ -12314,23 +12314,23 @@ public class fj {
                                         if (chat2.megagroup) {
                                             if (j3 == 0) {
                                                 TLRPC.Chat O07 = mp.u1(i7).O0(Long.valueOf(j10));
-                                                CharSequence E52 = E5(gd.L0(2131750921), "un1", user);
+                                                CharSequence E52 = E5(gd.M0(2131750920), "un1", user);
                                                 this.v = E52;
                                                 this.v = E5(E52, "un2", O07);
                                             } else {
                                                 TLRPC.Chat O08 = mp.u1(i7).O0(Long.valueOf(j3));
-                                                CharSequence E53 = E5(gd.L0(2131751046), "un1", user);
+                                                CharSequence E53 = E5(gd.M0(2131751045), "un1", user);
                                                 this.v = E53;
                                                 this.v = E5(E53, "un2", O08);
                                             }
                                         } else if (j3 == 0) {
                                             TLRPC.Chat O09 = mp.u1(i7).O0(Long.valueOf(j10));
-                                            CharSequence E54 = E5(gd.L0(2131750920), "un1", user);
+                                            CharSequence E54 = E5(gd.M0(2131750919), "un1", user);
                                             this.v = E54;
                                             this.v = E5(E54, "un2", O09);
                                         } else {
                                             TLRPC.Chat O010 = mp.u1(i7).O0(Long.valueOf(j3));
-                                            CharSequence E55 = E5(gd.L0(2131751045), "un1", user);
+                                            CharSequence E55 = E5(gd.M0(2131751044), "un1", user);
                                             this.v = E55;
                                             this.v = E5(E55, "un2", O010);
                                         }
@@ -12338,13 +12338,13 @@ public class fj {
                                         chat2 = chat;
                                         if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionTogglePreHistoryHidden) {
                                             if (((TLRPC.TL_channelAdminLogEventActionTogglePreHistoryHidden) channelAdminLogEventAction).new_value) {
-                                                this.v = E5(gd.L0(2131750890), "un1", user);
+                                                this.v = E5(gd.M0(2131750889), "un1", user);
                                             } else {
-                                                this.v = E5(gd.L0(2131750889), "un1", user);
+                                                this.v = E5(gd.M0(2131750888), "un1", user);
                                             }
                                         } else {
                                             if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeAbout) {
-                                                this.v = E5(gd.L0(chat2.megagroup ? 2131751010 : 2131751015), "un1", user);
+                                                this.v = E5(gd.M0(chat2.megagroup ? 2131751009 : 2131751014), "un1", user);
                                                 message2 = new TLRPC.TL_message();
                                                 message2.out = false;
                                                 message2.unread = false;
@@ -12364,7 +12364,7 @@ public class fj {
                                                     str2 = str;
                                                     webPage2.display_url = str2;
                                                     webPage2.url = str2;
-                                                    webPage2.site_name = gd.L0(2131750956);
+                                                    webPage2.site_name = gd.M0(2131750955);
                                                     message2.media.webpage.description = ((TLRPC.TL_channelAdminLogEventActionChangeAbout) tL_channelAdminLogEvent.action).prev_value;
                                                 } else {
                                                     str2 = str;
@@ -12374,7 +12374,7 @@ public class fj {
                                                 str = str2;
                                             } else {
                                                 if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeTheme) {
-                                                    this.v = E5(gd.L0(chat2.megagroup ? 2131751008 : 2131751013), "un1", user);
+                                                    this.v = E5(gd.M0(chat2.megagroup ? 2131751007 : 2131751012), "un1", user);
                                                     message = new TLRPC.TL_message();
                                                     message.out = false;
                                                     message.unread = false;
@@ -12393,7 +12393,7 @@ public class fj {
                                                         webPage3.flags = 10;
                                                         webPage3.display_url = str;
                                                         webPage3.url = str;
-                                                        webPage3.site_name = gd.L0(2131750955);
+                                                        webPage3.site_name = gd.M0(2131750954);
                                                         message.media.webpage.description = ((TLRPC.TL_channelAdminLogEventActionChangeTheme) tL_channelAdminLogEvent.action).prev_value;
                                                     } else {
                                                         message.media = new TLRPC.TL_messageMediaEmpty();
@@ -12401,9 +12401,9 @@ public class fj {
                                                 } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeUsername) {
                                                     String str5 = ((TLRPC.TL_channelAdminLogEventActionChangeUsername) channelAdminLogEventAction).new_value;
                                                     if (TextUtils.isEmpty(str5)) {
-                                                        this.v = E5(gd.L0(chat2.megagroup ? 2131750922 : 2131750925), "un1", user);
+                                                        this.v = E5(gd.M0(chat2.megagroup ? 2131750921 : 2131750924), "un1", user);
                                                     } else {
-                                                        this.v = E5(gd.L0(chat2.megagroup ? 2131751047 : 2131751061), "un1", user);
+                                                        this.v = E5(gd.M0(chat2.megagroup ? 2131751046 : 2131751060), "un1", user);
                                                     }
                                                     TLRPC.Message tL_message3 = new TLRPC.TL_message();
                                                     tL_message3.out = false;
@@ -12430,7 +12430,7 @@ public class fj {
                                                         webPage4.flags = 10;
                                                         webPage4.display_url = str;
                                                         webPage4.url = str;
-                                                        webPage4.site_name = gd.L0(2131750954);
+                                                        webPage4.site_name = gd.M0(2131750953);
                                                         tL_message3.media.webpage.description = "https://" + mp.u1(i7).X2 + "/" + ((TLRPC.TL_channelAdminLogEventActionChangeUsername) tL_channelAdminLogEvent.action).prev_value;
                                                     } else {
                                                         tL_message3.media = new TLRPC.TL_messageMediaEmpty();
@@ -12467,17 +12467,17 @@ public class fj {
                                                             TLRPC.MessageMedia n1 = n1(message5);
                                                             TLRPC.MessageMedia n12 = n1(message6);
                                                             if (n12 == null) {
-                                                                i11 = 2131750960;
+                                                                i11 = 2131750959;
                                                                 z12 = false;
                                                                 z13 = true;
                                                             } else {
                                                                 if (n1.getClass() == n12.getClass()) {
                                                                     TLRPC.Photo photo2 = n1.photo;
                                                                     if (photo2 == null || (photo = n12.photo) == null) {
-                                                                        i11 = 2131750960;
+                                                                        i11 = 2131750959;
                                                                         messageMedia = n1;
                                                                     } else {
-                                                                        i11 = 2131750960;
+                                                                        i11 = 2131750959;
                                                                         messageMedia = photo2.id == photo.id ? n1 : messageMedia;
                                                                     }
                                                                     if (messageMedia.document == null || n12.document == null || n1(message5).document.id == n12.document.id) {
@@ -12485,27 +12485,27 @@ public class fj {
                                                                         z13 = false;
                                                                     }
                                                                 } else {
-                                                                    i11 = 2131750960;
+                                                                    i11 = 2131750959;
                                                                 }
                                                                 z12 = true;
                                                                 z13 = false;
                                                             }
                                                             if (z13) {
-                                                                this.v = E5(gd.L0(2131751065), "un1", user);
+                                                                this.v = E5(gd.M0(2131751064), "un1", user);
                                                             } else if (z12 && !equals) {
-                                                                this.v = E5(gd.L0(2131751004), "un1", user);
+                                                                this.v = E5(gd.M0(2131751003), "un1", user);
                                                             } else if (!equals) {
-                                                                this.v = E5(gd.L0(2131751016), "un1", user);
+                                                                this.v = E5(gd.M0(2131751015), "un1", user);
                                                             } else {
-                                                                this.v = E5(gd.L0(2131751005), "un1", user);
+                                                                this.v = E5(gd.M0(2131751004), "un1", user);
                                                             }
                                                             TLRPC.MessageMedia n13 = n1(message5);
                                                             tL_message4.media = n13;
                                                             if (!equals) {
                                                                 n13.webpage = new TLRPC.TL_webPage();
-                                                                tL_message4.media.webpage.site_name = gd.L0(2131750961);
+                                                                tL_message4.media.webpage.site_name = gd.M0(2131750960);
                                                                 if (TextUtils.isEmpty(message6.message)) {
-                                                                    tL_message4.media.webpage.description = gd.L0(i11);
+                                                                    tL_message4.media.webpage.description = gd.M0(i11);
                                                                 } else {
                                                                     tL_message4.media.webpage.description = message6.message;
                                                                     arrayList2 = message6.entities;
@@ -12529,7 +12529,7 @@ public class fj {
                                                             tL_channelAdminLogEvent2 = tL_channelAdminLogEvent;
                                                             arrayList3 = arrayList2;
                                                         } else {
-                                                            this.v = E5(gd.L0(2131751003), "un1", user);
+                                                            this.v = E5(gd.M0(2131751002), "un1", user);
                                                             if (message5.action instanceof TLRPC.TL_messageActionGroupCall) {
                                                                 message5.media = new TLRPC.TL_messageMediaEmpty();
                                                                 tL_message4 = message5;
@@ -12539,9 +12539,9 @@ public class fj {
                                                                 TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage4 = new TLRPC.TL_messageMediaWebPage();
                                                                 tL_message4.media = tL_messageMediaWebPage4;
                                                                 tL_messageMediaWebPage4.webpage = new TLRPC.TL_webPage();
-                                                                tL_message4.media.webpage.site_name = gd.L0(2131750959);
+                                                                tL_message4.media.webpage.site_name = gd.M0(2131750958);
                                                                 if (TextUtils.isEmpty(message6.message)) {
-                                                                    tL_message4.media.webpage.description = gd.L0(2131750960);
+                                                                    tL_message4.media.webpage.description = gd.M0(2131750959);
                                                                 } else {
                                                                     tL_message4.media.webpage.description = message6.message;
                                                                     arrayList2 = message6.entities;
@@ -12640,9 +12640,9 @@ public class fj {
                                                                         this.v = str3;
                                                                     }
                                                                     if (!(n1(this.k) instanceof TLRPC.TL_messageMediaGame)) {
-                                                                        textPaint = org.telegram.ui.ActionBar.n6.x2;
+                                                                        textPaint = org.telegram.ui.ActionBar.m6.x2;
                                                                     } else {
-                                                                        textPaint = org.telegram.ui.ActionBar.n6.o2;
+                                                                        textPaint = org.telegram.ui.ActionBar.m6.o2;
                                                                     }
                                                                     iArr3 = !i() ? new int[1] : iArr2;
                                                                     CharSequence m10 = j6.m(this.v, textPaint.getFontMetricsInt(), false, iArr3, 0);
@@ -12708,28 +12708,28 @@ public class fj {
                                                     if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeEmojiStickerSet) {
                                                         TLRPC.InputStickerSet inputStickerSet = ((TLRPC.TL_channelAdminLogEventActionChangeEmojiStickerSet) channelAdminLogEventAction).new_stickerset;
                                                         if (inputStickerSet != null && !(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
-                                                            this.v = E5(gd.L0(2131751056), "un1", user);
+                                                            this.v = E5(gd.M0(2131751055), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.L0(2131750923), "un1", user);
+                                                            this.v = E5(gd.M0(2131750922), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeStickerSet) {
                                                         TLRPC.InputStickerSet inputStickerSet2 = ((TLRPC.TL_channelAdminLogEventActionChangeStickerSet) channelAdminLogEventAction).new_stickerset;
                                                         if (inputStickerSet2 != null && !(inputStickerSet2 instanceof TLRPC.TL_inputStickerSetEmpty)) {
-                                                            this.v = E5(gd.L0(2131751038), "un1", user);
+                                                            this.v = E5(gd.M0(2131751037), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.L0(2131750918), "un1", user);
+                                                            this.v = E5(gd.M0(2131750917), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeLocation) {
                                                         TLRPC.ChannelLocation channelLocation = ((TLRPC.TL_channelAdminLogEventActionChangeLocation) channelAdminLogEventAction).new_value;
                                                         if (channelLocation instanceof TLRPC.TL_channelLocationEmpty) {
-                                                            this.v = E5(gd.L0(2131750919), "un1", user);
+                                                            this.v = E5(gd.M0(2131750918), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.Y(2131751044, "EventLogChangedLocation", ((TLRPC.TL_channelLocation) channelLocation).address), "un1", user);
+                                                            this.v = E5(gd.Y(2131751043, "EventLogChangedLocation", ((TLRPC.TL_channelLocation) channelLocation).address), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleSlowMode) {
                                                         int i27 = ((TLRPC.TL_channelAdminLogEventActionToggleSlowMode) channelAdminLogEventAction).new_value;
                                                         if (i27 == 0) {
-                                                            this.v = E5(gd.L0(2131750882), "un1", user);
+                                                            this.v = E5(gd.M0(2131750881), "un1", user);
                                                         } else {
                                                             if (i27 < 60) {
                                                                 c11 = 0;
@@ -12744,21 +12744,21 @@ public class fj {
                                                             }
                                                             Object[] objArr = new Object[1];
                                                             objArr[c11] = G2;
-                                                            this.v = E5(gd.Z(2131750881, objArr), "un1", user);
+                                                            this.v = E5(gd.Z(2131750880, objArr), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleAutotranslation) {
-                                                        this.v = E5(gd.L0(((TLRPC.TL_channelAdminLogEventActionToggleAutotranslation) channelAdminLogEventAction).new_value ? 2131750891 : 2131750892), "un1", user);
+                                                        this.v = E5(gd.M0(((TLRPC.TL_channelAdminLogEventActionToggleAutotranslation) channelAdminLogEventAction).new_value ? 2131750890 : 2131750891), "un1", user);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionStartGroupCall) {
                                                         if (v3.T(chat2) && (!chat2.megagroup || chat2.gigagroup)) {
-                                                            this.v = E5(gd.L0(2131750899), "un1", user);
+                                                            this.v = E5(gd.M0(2131750898), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.L0(2131750898), "un1", user);
+                                                            this.v = E5(gd.M0(2131750897), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionDiscardGroupCall) {
                                                         if (v3.T(chat2) && (!chat2.megagroup || chat2.gigagroup)) {
-                                                            this.v = E5(gd.L0(2131750998), "un1", user);
+                                                            this.v = E5(gd.M0(2131750997), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.L0(2131750997), "un1", user);
+                                                            this.v = E5(gd.M0(2131750996), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantMute) {
                                                         long B13 = B1(((TLRPC.TL_channelAdminLogEventActionParticipantMute) channelAdminLogEventAction).participant.peer);
@@ -12767,7 +12767,7 @@ public class fj {
                                                         } else {
                                                             O03 = mp.u1(i7).O0(Long.valueOf(-B13));
                                                         }
-                                                        CharSequence E56 = E5(gd.L0(2131750877), "un1", user);
+                                                        CharSequence E56 = E5(gd.M0(2131750876), "un1", user);
                                                         this.v = E56;
                                                         this.v = E5(E56, "un2", O03);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantUnmute) {
@@ -12777,21 +12777,21 @@ public class fj {
                                                         } else {
                                                             O02 = mp.u1(i7).O0(Long.valueOf(-B14));
                                                         }
-                                                        CharSequence E57 = E5(gd.L0(2131750875), "un1", user);
+                                                        CharSequence E57 = E5(gd.M0(2131750874), "un1", user);
                                                         this.v = E57;
                                                         this.v = E5(E57, "un2", O02);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleGroupCallSetting) {
                                                         if (((TLRPC.TL_channelAdminLogEventActionToggleGroupCallSetting) channelAdminLogEventAction).join_muted) {
-                                                            this.v = E5(gd.L0(2131750876), "un1", user);
+                                                            this.v = E5(gd.M0(2131750875), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.L0(2131750878), "un1", user);
+                                                            this.v = E5(gd.M0(2131750877), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantJoinByInvite) {
                                                         TLRPC.TL_channelAdminLogEventActionParticipantJoinByInvite tL_channelAdminLogEventActionParticipantJoinByInvite = (TLRPC.TL_channelAdminLogEventActionParticipantJoinByInvite) channelAdminLogEventAction;
                                                         if (tL_channelAdminLogEventActionParticipantJoinByInvite.via_chatlist) {
-                                                            this.v = E5(gd.L0(v3.V(chat2) ? 2131754612 : 2131754610), "un1", user);
+                                                            this.v = E5(gd.M0(v3.V(chat2) ? 2131754611 : 2131754609), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.L0(v3.V(chat2) ? 2131754613 : 2131754611), "un1", user);
+                                                            this.v = E5(gd.M0(v3.V(chat2) ? 2131754612 : 2131754610), "un1", user);
                                                         }
                                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = tL_channelAdminLogEventActionParticipantJoinByInvite.invite;
                                                         if (tL_chatInviteExported != null && !TextUtils.isEmpty(tL_chatInviteExported.link)) {
@@ -12802,31 +12802,31 @@ public class fj {
                                                         boolean z18 = v3.T(chat2) && !chat2.megagroup;
                                                         if (tL_channelAdminLogEventActionToggleNoForwards.new_value) {
                                                             if (z18) {
-                                                                this.v = E5(gd.L0(2131754647), "un1", user);
+                                                                this.v = E5(gd.M0(2131754646), "un1", user);
                                                             } else {
-                                                                this.v = E5(gd.L0(2131754646), "un1", user);
+                                                                this.v = E5(gd.M0(2131754645), "un1", user);
                                                             }
                                                         } else if (z18) {
-                                                            this.v = E5(gd.L0(2131754649), "un1", user);
+                                                            this.v = E5(gd.M0(2131754648), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.L0(2131754648), "un1", user);
+                                                            this.v = E5(gd.M0(2131754647), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionExportedInviteDelete) {
-                                                        CharSequence E58 = E5(gd.Z(2131754652, new Object[0]), "un1", user);
+                                                        CharSequence E58 = E5(gd.Z(2131754651, new Object[0]), "un1", user);
                                                         this.v = E58;
                                                         this.v = E5(E58, "un2", ((TLRPC.TL_channelAdminLogEventActionExportedInviteDelete) channelAdminLogEventAction).invite);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke) {
                                                         TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke tL_channelAdminLogEventActionExportedInviteRevoke = (TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke) channelAdminLogEventAction;
-                                                        CharSequence E59 = E5(gd.Z(2131754566, tL_channelAdminLogEventActionExportedInviteRevoke.invite.link), "un1", user);
+                                                        CharSequence E59 = E5(gd.Z(2131754565, tL_channelAdminLogEventActionExportedInviteRevoke.invite.link), "un1", user);
                                                         this.v = E59;
                                                         this.v = E5(E59, "un2", tL_channelAdminLogEventActionExportedInviteRevoke.invite);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionExportedInviteEdit) {
                                                         TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = (TLRPC.TL_channelAdminLogEventActionExportedInviteEdit) channelAdminLogEventAction;
                                                         String str6 = tL_channelAdminLogEventActionExportedInviteEdit.prev_invite.link;
                                                         if (str6 != null && str6.equals(tL_channelAdminLogEventActionExportedInviteEdit.new_invite.link)) {
-                                                            this.v = E5(gd.Z(2131754650, new Object[0]), "un1", user);
+                                                            this.v = E5(gd.Z(2131754649, new Object[0]), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.Z(2131754651, new Object[0]), "un1", user);
+                                                            this.v = E5(gd.Z(2131754650, new Object[0]), "un1", user);
                                                         }
                                                         CharSequence E510 = E5(this.v, "un2", tL_channelAdminLogEventActionExportedInviteEdit.prev_invite);
                                                         this.v = E510;
@@ -12839,7 +12839,7 @@ public class fj {
                                                             O0 = mp.u1(i7).O0(Long.valueOf(-B15));
                                                         }
                                                         double H = v3.H(r10.participant) / 100.0d;
-                                                        CharSequence E511 = E5(gd.Y(2131754499, "ActionVolumeChanged", Integer.valueOf((int) (H > 0.0d ? Math.max(H, 1.0d) : 0.0d))), "un1", user);
+                                                        CharSequence E511 = E5(gd.Y(2131754498, "ActionVolumeChanged", Integer.valueOf((int) (H > 0.0d ? Math.max(H, 1.0d) : 0.0d))), "un1", user);
                                                         this.v = E511;
                                                         this.v = E5(E511, "un2", O0);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeHistoryTTL) {
@@ -12847,14 +12847,14 @@ public class fj {
                                                         if (!chat2.megagroup) {
                                                             int i28 = tL_channelAdminLogEventActionChangeHistoryTTL.new_value;
                                                             if (i28 != 0) {
-                                                                this.v = gd.Y(2131754538, "ActionTTLChannelChanged", gd.c0(i28));
+                                                                this.v = gd.Y(2131754537, "ActionTTLChannelChanged", gd.c0(i28));
                                                             } else {
-                                                                this.v = gd.L0(2131754537);
+                                                                this.v = gd.M0(2131754536);
                                                             }
                                                         } else {
                                                             int i29 = tL_channelAdminLogEventActionChangeHistoryTTL.new_value;
                                                             if (i29 == 0) {
-                                                                this.v = E5(gd.L0(2131754536), "un1", user);
+                                                                this.v = E5(gd.M0(2131754535), "un1", user);
                                                             } else {
                                                                 if (i29 > 86400) {
                                                                     c10 = 0;
@@ -12871,18 +12871,18 @@ public class fj {
                                                                 }
                                                                 Object[] objArr2 = new Object[1];
                                                                 objArr2[c10] = G;
-                                                                this.v = E5(gd.Z(2131754539, objArr2), "un1", user);
+                                                                this.v = E5(gd.Z(2131754538, objArr2), "un1", user);
                                                             }
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantJoinByRequest) {
                                                         TLRPC.TL_channelAdminLogEventActionParticipantJoinByRequest tL_channelAdminLogEventActionParticipantJoinByRequest = (TLRPC.TL_channelAdminLogEventActionParticipantJoinByRequest) channelAdminLogEventAction;
                                                         TLRPC.ExportedChatInvite exportedChatInvite = tL_channelAdminLogEventActionParticipantJoinByRequest.invite;
                                                         if (((exportedChatInvite instanceof TLRPC.TL_chatInviteExported) && "https://t.me/+PublicChat".equals(((TLRPC.TL_chatInviteExported) exportedChatInvite).link)) || (tL_channelAdminLogEventActionParticipantJoinByRequest.invite instanceof TLRPC.TL_chatInvitePublicJoinRequests)) {
-                                                            CharSequence E512 = E5(gd.L0(2131748875), "un1", user);
+                                                            CharSequence E512 = E5(gd.M0(2131748874), "un1", user);
                                                             this.v = E512;
                                                             this.v = E5(E512, "un2", mp.u1(i7).c2(Long.valueOf(tL_channelAdminLogEventActionParticipantJoinByRequest.approved_by)));
                                                         } else {
-                                                            CharSequence E513 = E5(gd.L0(2131748876), "un1", user);
+                                                            CharSequence E513 = E5(gd.M0(2131748875), "un1", user);
                                                             this.v = E513;
                                                             CharSequence E514 = E5(E513, "un2", tL_channelAdminLogEventActionParticipantJoinByRequest.invite);
                                                             this.v = E514;
@@ -12890,39 +12890,39 @@ public class fj {
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionSendMessage) {
                                                         message = ((TLRPC.TL_channelAdminLogEventActionSendMessage) channelAdminLogEventAction).message;
-                                                        this.v = E5(gd.L0(2131750900), "un1", user);
+                                                        this.v = E5(gd.M0(2131750899), "un1", user);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantEditRank) {
                                                         TLRPC.TL_channelAdminLogEventActionParticipantEditRank tL_channelAdminLogEventActionParticipantEditRank = (TLRPC.TL_channelAdminLogEventActionParticipantEditRank) channelAdminLogEventAction;
                                                         if (tL_channelAdminLogEventActionParticipantEditRank.user_id == tL_channelAdminLogEvent.user_id) {
                                                             if (!TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
-                                                                String Z = gd.Z(2131750927, tL_channelAdminLogEventActionParticipantEditRank.prev_rank, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                String Z = gd.Z(2131750926, tL_channelAdminLogEventActionParticipantEditRank.prev_rank, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
                                                                 this.v = Z;
                                                                 this.v = E5(Z, "un1", user);
                                                             } else if (TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
-                                                                String Z2 = gd.Z(2131750928, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                String Z2 = gd.Z(2131750927, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
                                                                 this.v = Z2;
                                                                 this.v = E5(Z2, "un1", user);
                                                             } else {
-                                                                String Z3 = gd.Z(2131750926, tL_channelAdminLogEventActionParticipantEditRank.prev_rank);
+                                                                String Z3 = gd.Z(2131750925, tL_channelAdminLogEventActionParticipantEditRank.prev_rank);
                                                                 this.v = Z3;
                                                                 this.v = E5(Z3, "un1", user);
                                                             }
                                                         } else {
                                                             TLRPC.User c24 = mp.u1(i7).c2(Long.valueOf(tL_channelAdminLogEventActionParticipantEditRank.user_id));
                                                             if (!TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
-                                                                String Z4 = gd.Z(2131750930, tL_channelAdminLogEventActionParticipantEditRank.prev_rank, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                String Z4 = gd.Z(2131750929, tL_channelAdminLogEventActionParticipantEditRank.prev_rank, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
                                                                 this.v = Z4;
                                                                 CharSequence E515 = E5(Z4, "un1", user);
                                                                 this.v = E515;
                                                                 this.v = E5(E515, "un2", c24);
                                                             } else if (TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
-                                                                String Z5 = gd.Z(2131750931, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                String Z5 = gd.Z(2131750930, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
                                                                 this.v = Z5;
                                                                 CharSequence E516 = E5(Z5, "un1", user);
                                                                 this.v = E516;
                                                                 this.v = E5(E516, "un2", c24);
                                                             } else {
-                                                                String Z6 = gd.Z(2131750929, tL_channelAdminLogEventActionParticipantEditRank.prev_rank);
+                                                                String Z6 = gd.Z(2131750928, tL_channelAdminLogEventActionParticipantEditRank.prev_rank);
                                                                 this.v = Z6;
                                                                 CharSequence E517 = E5(Z6, "un1", user);
                                                                 this.v = E517;
@@ -12934,7 +12934,7 @@ public class fj {
                                                         boolean z19 = (tL_channelAdminLogEventActionChangeAvailableReactions.prev_value instanceof TLRPC.TL_chatReactionsSome) && (tL_channelAdminLogEventActionChangeAvailableReactions.new_value instanceof TLRPC.TL_chatReactionsSome);
                                                         CharSequence X1 = X1(tL_channelAdminLogEventActionChangeAvailableReactions.new_value);
                                                         if (z19) {
-                                                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(E5(gd.Z(2131754579, "**new**"), "un1", user));
+                                                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(E5(gd.Z(2131754578, "**new**"), "un1", user));
                                                             int indexOf = spannableStringBuilder.toString().indexOf("**new**");
                                                             if (indexOf > 0) {
                                                                 spannableStringBuilder.replace(indexOf, indexOf + 7, X1);
@@ -12942,7 +12942,7 @@ public class fj {
                                                             this.v = spannableStringBuilder;
                                                         } else {
                                                             CharSequence X12 = X1(tL_channelAdminLogEventActionChangeAvailableReactions.prev_value);
-                                                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(E5(gd.Z(2131754580, "**old**", "**new**"), "un1", user));
+                                                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(E5(gd.Z(2131754579, "**old**", "**new**"), "un1", user));
                                                             int indexOf2 = spannableStringBuilder2.toString().indexOf("**old**");
                                                             if (indexOf2 > 0) {
                                                                 spannableStringBuilder2.replace(indexOf2, indexOf2 + 7, X12);
@@ -12977,7 +12977,7 @@ public class fj {
                                                                     i30++;
                                                                 }
                                                                 if (str7 != null) {
-                                                                    this.v = E5(gd.Y(2131751030, "EventLogDeactivatedUsername", "@".concat(str7)), "un1", user);
+                                                                    this.v = E5(gd.Y(2131751029, "EventLogDeactivatedUsername", "@".concat(str7)), "un1", user);
                                                                 }
                                                             } else if (arrayList5.size() + 1 == arrayList6.size()) {
                                                                 int i31 = 0;
@@ -12997,21 +12997,21 @@ public class fj {
                                                                     i31++;
                                                                 }
                                                                 if (str9 != null) {
-                                                                    this.v = E5(gd.Y(2131751067, "EventLogActivatedUsername", "@".concat(str9)), "un1", user);
+                                                                    this.v = E5(gd.Y(2131751066, "EventLogActivatedUsername", "@".concat(str9)), "un1", user);
                                                                 }
                                                             }
                                                         }
                                                         if (this.v == null) {
-                                                            this.v = E5(gd.Y(2131751062, "EventLogChangeUsernames", f2(arrayList5), f2(arrayList6)), "un1", user);
+                                                            this.v = E5(gd.Y(2131751061, "EventLogChangeUsernames", f2(arrayList5), f2(arrayList6)), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleForum) {
                                                         if (((TLRPC.TL_channelAdminLogEventActionToggleForum) channelAdminLogEventAction).new_value) {
-                                                            this.v = E5(gd.Y(2131750894, "EventLogSwitchToForum", new Object[0]), "un1", user);
+                                                            this.v = E5(gd.Y(2131750893, "EventLogSwitchToForum", new Object[0]), "un1", user);
                                                         } else {
-                                                            this.v = E5(gd.Y(2131750893, "EventLogSwitchToGroup", new Object[0]), "un1", user);
+                                                            this.v = E5(gd.Y(2131750892, "EventLogSwitchToGroup", new Object[0]), "un1", user);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionCreateTopic) {
-                                                        CharSequence E518 = E5(gd.Y(2131751031, "EventLogCreateTopic", new Object[0]), "un1", user);
+                                                        CharSequence E518 = E5(gd.Y(2131751030, "EventLogCreateTopic", new Object[0]), "un1", user);
                                                         this.v = E518;
                                                         this.v = E5(E518, "un2", ((TLRPC.TL_channelAdminLogEventActionCreateTopic) channelAdminLogEventAction).topic);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionEditTopic) {
@@ -13024,7 +13024,7 @@ public class fj {
                                                                 boolean z21 = ((TLRPC.TL_forumTopic) forumTopic).hidden;
                                                                 boolean z22 = ((TLRPC.TL_forumTopic) forumTopic2).hidden;
                                                                 if (z21 != z22) {
-                                                                    this.v = E5(gd.L0(z22 ? 2131743782 : 2131743768), "%s", user);
+                                                                    this.v = E5(gd.M0(z22 ? 2131743776 : 2131743762), "%s", user);
                                                                 }
                                                             }
                                                         }
@@ -13035,61 +13035,61 @@ public class fj {
                                                                 boolean z24 = ((TLRPC.TL_forumTopic) forumTopic3).closed;
                                                                 if (z23 != z24) {
                                                                     if (z24) {
-                                                                        this.v = E5(gd.L0(2131751032), "%s", user);
+                                                                        this.v = E5(gd.M0(2131751031), "%s", user);
                                                                     } else {
-                                                                        this.v = E5(gd.L0(2131750914), "%s", user);
+                                                                        this.v = E5(gd.M0(2131750913), "%s", user);
                                                                     }
                                                                     this.v = E5(this.v, "un2", tL_channelAdminLogEventActionEditTopic.new_topic);
                                                                 }
                                                             }
                                                         }
-                                                        CharSequence E519 = E5(gd.L0(2131751017), "un1", user);
+                                                        CharSequence E519 = E5(gd.M0(2131751016), "un1", user);
                                                         this.v = E519;
                                                         CharSequence E520 = E5(E519, "un2", tL_channelAdminLogEventActionEditTopic.prev_topic);
                                                         this.v = E520;
                                                         this.v = E5(E520, "un3", tL_channelAdminLogEventActionEditTopic.new_topic);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionDeleteTopic) {
-                                                        CharSequence E521 = E5(gd.L0(2131751028), "un1", user);
+                                                        CharSequence E521 = E5(gd.M0(2131751027), "un1", user);
                                                         this.v = E521;
                                                         this.v = E5(E521, "un2", ((TLRPC.TL_channelAdminLogEventActionDeleteTopic) channelAdminLogEventAction).topic);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionPinTopic) {
                                                         TLRPC.TL_channelAdminLogEventActionPinTopic tL_channelAdminLogEventActionPinTopic = (TLRPC.TL_channelAdminLogEventActionPinTopic) channelAdminLogEventAction;
                                                         TLRPC.ForumTopic forumTopic4 = tL_channelAdminLogEventActionPinTopic.new_topic;
                                                         if ((forumTopic4 instanceof TLRPC.TL_forumTopic) && ((TLRPC.TL_forumTopic) forumTopic4).pinned) {
-                                                            CharSequence E522 = E5(gd.Y(2131750958, "EventLogPinTopic", new Object[0]), "un1", user);
+                                                            CharSequence E522 = E5(gd.Y(2131750957, "EventLogPinTopic", new Object[0]), "un1", user);
                                                             this.v = E522;
                                                             this.v = E5(E522, "un2", tL_channelAdminLogEventActionPinTopic.new_topic);
                                                         } else {
-                                                            CharSequence E523 = E5(gd.Y(2131750880, "EventLogUnpinTopic", new Object[0]), "un1", user);
+                                                            CharSequence E523 = E5(gd.Y(2131750879, "EventLogUnpinTopic", new Object[0]), "un1", user);
                                                             this.v = E523;
                                                             this.v = E5(E523, "un2", tL_channelAdminLogEventActionPinTopic.new_topic);
                                                         }
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleAntiSpam) {
                                                         if (((TLRPC.TL_channelAdminLogEventActionToggleAntiSpam) channelAdminLogEventAction).new_value) {
-                                                            L02 = gd.L0(2131750999);
+                                                            M02 = gd.M0(2131750998);
                                                         } else {
-                                                            L02 = gd.L0(2131751018);
+                                                            M02 = gd.M0(2131751017);
                                                         }
-                                                        this.v = E5(L02, "un1", user);
+                                                        this.v = E5(M02, "un1", user);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeColor) {
                                                         boolean V = v3.V(chat2);
                                                         TLRPC.TL_channelAdminLogEventActionChangeColor tL_channelAdminLogEventActionChangeColor = (TLRPC.TL_channelAdminLogEventActionChangeColor) tL_channelAdminLogEvent.action;
-                                                        int i32 = V ? 2131751060 : 2131751059;
+                                                        int i32 = V ? 2131751059 : 2131751058;
                                                         int i33 = tL_channelAdminLogEventActionChangeColor.prev_value;
                                                         int[][] iArr4 = org.telegram.ui.Components.b9.L;
-                                                        this.v = E5(gd.Z(i32, gd.M0(new int[]{2131752001, 2131752006, 2131751997, 2131752007, 2131752008, 2131752009, 2131752002}[i33 % 7], null).toLowerCase(), gd.M0(new int[]{2131752001, 2131752006, 2131751997, 2131752007, 2131752008, 2131752009, 2131752002}[tL_channelAdminLogEventActionChangeColor.new_value % 7], null).toLowerCase()), "un1", user);
+                                                        this.v = E5(gd.Z(i32, gd.N0(new int[]{2131752000, 2131752005, 2131751996, 2131752006, 2131752007, 2131752008, 2131752001}[i33 % 7], null).toLowerCase(), gd.N0(new int[]{2131752000, 2131752005, 2131751996, 2131752006, 2131752007, 2131752008, 2131752001}[tL_channelAdminLogEventActionChangeColor.new_value % 7], null).toLowerCase()), "un1", user);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangePeerColor) {
                                                         boolean V2 = v3.V(chat2);
                                                         TLRPC.TL_channelAdminLogEventActionChangePeerColor tL_channelAdminLogEventActionChangePeerColor = (TLRPC.TL_channelAdminLogEventActionChangePeerColor) tL_channelAdminLogEvent.action;
-                                                        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(gd.L0(V2 ? 2131751042 : 2131751041));
+                                                        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(gd.M0(V2 ? 2131751041 : 2131751040));
                                                         SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                                                         if ((tL_channelAdminLogEventActionChangePeerColor.prev_value.flags & 1) != 0) {
                                                             spannableStringBuilder4.append((CharSequence) "c");
                                                             str = str;
                                                             i10 = i7;
-                                                            my0 my0Var = new my0(false, i10, tL_channelAdminLogEventActionChangePeerColor.prev_value.color);
-                                                            my0Var.a(g0.L(18.0f));
-                                                            spannableStringBuilder4.setSpan(my0Var, spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
+                                                            oy0 oy0Var = new oy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.prev_value.color);
+                                                            oy0Var.a(g0.L(18.0f));
+                                                            spannableStringBuilder4.setSpan(oy0Var, spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
                                                         } else {
                                                             str = str;
                                                             i10 = i7;
@@ -13099,27 +13099,27 @@ public class fj {
                                                                 spannableStringBuilder4.append((CharSequence) ", ");
                                                             }
                                                             spannableStringBuilder4.append((CharSequence) "e");
-                                                            spannableStringBuilder4.setSpan(new org.telegram.ui.Components.x5(tL_channelAdminLogEventActionChangePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
+                                                            spannableStringBuilder4.setSpan(new org.telegram.ui.Components.y5(tL_channelAdminLogEventActionChangePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
                                                         }
                                                         if (spannableStringBuilder4.length() == 0) {
-                                                            spannableStringBuilder4.append((CharSequence) gd.L0(2131751002));
+                                                            spannableStringBuilder4.append((CharSequence) gd.M0(2131751001));
                                                         }
                                                         SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                                                         if ((tL_channelAdminLogEventActionChangePeerColor.new_value.flags & 1) != 0) {
                                                             spannableStringBuilder5.append((CharSequence) "c");
-                                                            my0 my0Var2 = new my0(false, i10, tL_channelAdminLogEventActionChangePeerColor.new_value.color);
-                                                            my0Var2.a(g0.L(18.0f));
-                                                            spannableStringBuilder5.setSpan(my0Var2, spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
+                                                            oy0 oy0Var2 = new oy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.new_value.color);
+                                                            oy0Var2.a(g0.L(18.0f));
+                                                            spannableStringBuilder5.setSpan(oy0Var2, spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
                                                         }
                                                         if ((tL_channelAdminLogEventActionChangePeerColor.new_value.flags & 2) != 0) {
                                                             if (spannableStringBuilder5.length() > 0) {
                                                                 spannableStringBuilder5.append((CharSequence) ", ");
                                                             }
                                                             spannableStringBuilder5.append((CharSequence) "e");
-                                                            spannableStringBuilder5.setSpan(new org.telegram.ui.Components.x5(tL_channelAdminLogEventActionChangePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
+                                                            spannableStringBuilder5.setSpan(new org.telegram.ui.Components.y5(tL_channelAdminLogEventActionChangePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
                                                         }
                                                         if (spannableStringBuilder5.length() == 0) {
-                                                            spannableStringBuilder5.append((CharSequence) gd.L0(2131751002));
+                                                            spannableStringBuilder5.append((CharSequence) gd.M0(2131751001));
                                                         }
                                                         this.v = E5(g0.K2(g0.K2(spannableStringBuilder3, spannableStringBuilder4, "%1$s"), spannableStringBuilder5, "%2$s"), "un1", user);
                                                     } else {
@@ -13127,40 +13127,40 @@ public class fj {
                                                         if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeProfilePeerColor) {
                                                             boolean V3 = v3.V(chat);
                                                             TLRPC.TL_channelAdminLogEventActionChangeProfilePeerColor tL_channelAdminLogEventActionChangeProfilePeerColor = (TLRPC.TL_channelAdminLogEventActionChangeProfilePeerColor) tL_channelAdminLogEvent.action;
-                                                            SpannableStringBuilder spannableStringBuilder6 = new SpannableStringBuilder(gd.L0(V3 ? 2131751040 : 2131751039));
+                                                            SpannableStringBuilder spannableStringBuilder6 = new SpannableStringBuilder(gd.M0(V3 ? 2131751039 : 2131751038));
                                                             SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.flags & 1) != 0) {
                                                                 spannableStringBuilder7.append((CharSequence) "c");
-                                                                my0 my0Var3 = new my0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.color);
-                                                                my0Var3.a(g0.L(18.0f));
-                                                                spannableStringBuilder7.setSpan(my0Var3, spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
+                                                                oy0 oy0Var3 = new oy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.color);
+                                                                oy0Var3.a(g0.L(18.0f));
+                                                                spannableStringBuilder7.setSpan(oy0Var3, spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
                                                             }
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.flags & 2) != 0) {
                                                                 if (spannableStringBuilder7.length() > 0) {
                                                                     spannableStringBuilder7.append((CharSequence) ", ");
                                                                 }
                                                                 spannableStringBuilder7.append((CharSequence) "e");
-                                                                spannableStringBuilder7.setSpan(new org.telegram.ui.Components.x5(tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
+                                                                spannableStringBuilder7.setSpan(new org.telegram.ui.Components.y5(tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
                                                             }
                                                             if (spannableStringBuilder7.length() == 0) {
-                                                                spannableStringBuilder7.append((CharSequence) gd.L0(2131751002));
+                                                                spannableStringBuilder7.append((CharSequence) gd.M0(2131751001));
                                                             }
                                                             SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder();
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.flags & 1) != 0) {
                                                                 spannableStringBuilder8.append((CharSequence) "c");
-                                                                my0 my0Var4 = new my0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.color);
-                                                                my0Var4.a(g0.L(18.0f));
-                                                                spannableStringBuilder8.setSpan(my0Var4, spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
+                                                                oy0 oy0Var4 = new oy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.color);
+                                                                oy0Var4.a(g0.L(18.0f));
+                                                                spannableStringBuilder8.setSpan(oy0Var4, spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
                                                             }
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.flags & 2) != 0) {
                                                                 if (spannableStringBuilder8.length() > 0) {
                                                                     spannableStringBuilder8.append((CharSequence) ", ");
                                                                 }
                                                                 spannableStringBuilder8.append((CharSequence) "e");
-                                                                spannableStringBuilder8.setSpan(new org.telegram.ui.Components.x5(tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
+                                                                spannableStringBuilder8.setSpan(new org.telegram.ui.Components.y5(tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
                                                             }
                                                             if (spannableStringBuilder8.length() == 0) {
-                                                                spannableStringBuilder8.append((CharSequence) gd.L0(2131751002));
+                                                                spannableStringBuilder8.append((CharSequence) gd.M0(2131751001));
                                                             }
                                                             this.v = E5(g0.K2(g0.K2(spannableStringBuilder6, spannableStringBuilder7, "%1$s"), spannableStringBuilder8, "%2$s"), "un1", user);
                                                         } else {
@@ -13169,22 +13169,22 @@ public class fj {
                                                                 tL_channelAdminLogEvent2 = tL_channelAdminLogEvent;
                                                                 TLRPC.TL_channelAdminLogEventActionChangeEmojiStatus tL_channelAdminLogEventActionChangeEmojiStatus = (TLRPC.TL_channelAdminLogEventActionChangeEmojiStatus) tL_channelAdminLogEvent2.action;
                                                                 if (tL_channelAdminLogEventActionChangeEmojiStatus.prev_value instanceof TLRPC.TL_emojiStatusEmpty) {
-                                                                    spannableString3 = new SpannableString(gd.L0(2131751002));
+                                                                    spannableString3 = new SpannableString(gd.M0(2131751001));
                                                                     z11 = true;
                                                                 } else {
                                                                     spannableString3 = new SpannableString("e");
-                                                                    spannableString3.setSpan(new org.telegram.ui.Components.x5(n5.f(tL_channelAdminLogEventActionChangeEmojiStatus.prev_value), org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                    spannableString3.setSpan(new org.telegram.ui.Components.y5(n5.f(tL_channelAdminLogEventActionChangeEmojiStatus.prev_value), org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     z11 = false;
                                                                 }
                                                                 int g10 = n5.g(tL_channelAdminLogEventActionChangeEmojiStatus.new_value);
                                                                 if (tL_channelAdminLogEventActionChangeEmojiStatus.new_value instanceof TLRPC.TL_emojiStatusEmpty) {
-                                                                    spannableString4 = new SpannableString(gd.L0(2131751002));
+                                                                    spannableString4 = new SpannableString(gd.M0(2131751001));
                                                                 } else {
                                                                     SpannableString spannableString5 = new SpannableString("e");
-                                                                    spannableString5.setSpan(new org.telegram.ui.Components.x5(n5.f(tL_channelAdminLogEventActionChangeEmojiStatus.new_value), org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                    spannableString5.setSpan(new org.telegram.ui.Components.y5(n5.f(tL_channelAdminLogEventActionChangeEmojiStatus.new_value), org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     spannableString4 = spannableString5;
                                                                 }
-                                                                SpannableStringBuilder K2 = g0.K2(g0.K2(new SpannableStringBuilder(gd.L0(z11 ? g10 != 0 ? V4 ? 2131751054 : 2131751053 : V4 ? 2131751055 : 2131751048 : g10 != 0 ? V4 ? 2131751051 : 2131751050 : V4 ? 2131751052 : 2131751049)), spannableString3, "%1$s"), spannableString4, "%2$s");
+                                                                SpannableStringBuilder K2 = g0.K2(g0.K2(new SpannableStringBuilder(gd.M0(z11 ? g10 != 0 ? V4 ? 2131751053 : 2131751052 : V4 ? 2131751054 : 2131751047 : g10 != 0 ? V4 ? 2131751050 : 2131751049 : V4 ? 2131751051 : 2131751048)), spannableString3, "%1$s"), spannableString4, "%2$s");
                                                                 this.v = E5(g10 != 0 ? g0.K2(K2, gd.c0((int) ((g10 - tL_channelAdminLogEvent2.date) * 1.05f)), "%3$s") : K2, "un1", user);
                                                             } else {
                                                                 tL_channelAdminLogEvent2 = tL_channelAdminLogEvent;
@@ -13193,7 +13193,7 @@ public class fj {
                                                                     boolean V5 = v3.V(chat);
                                                                     TLRPC.WallPaper wallPaper = tL_channelAdminLogEventActionChangeWallpaper.new_value;
                                                                     if ((wallPaper instanceof TLRPC.TL_wallPaperNoFile) && wallPaper.id == 0 && wallPaper.settings == null) {
-                                                                        this.v = E5(gd.L0(V5 ? 2131750916 : 2131750915), "un1", user);
+                                                                        this.v = E5(gd.M0(V5 ? 2131750915 : 2131750914), "un1", user);
                                                                     } else {
                                                                         ArrayList arrayList7 = new ArrayList();
                                                                         this.p0 = arrayList7;
@@ -13202,24 +13202,24 @@ public class fj {
                                                                             arrayList7.addAll(document.thumbs);
                                                                             this.n0 = tL_channelAdminLogEventActionChangeWallpaper.new_value.document;
                                                                         }
-                                                                        this.v = E5(gd.L0(V5 ? 2131751037 : 2131751036), "un1", user);
+                                                                        this.v = E5(gd.M0(V5 ? 2131751036 : 2131751035), "un1", user);
                                                                     }
                                                                 } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeBackgroundEmoji) {
                                                                     boolean V6 = v3.V(chat);
                                                                     TLRPC.TL_channelAdminLogEventActionChangeBackgroundEmoji tL_channelAdminLogEventActionChangeBackgroundEmoji = (TLRPC.TL_channelAdminLogEventActionChangeBackgroundEmoji) tL_channelAdminLogEvent2.action;
-                                                                    this.v = E5(gd.L0(V6 ? 2131751058 : 2131751057), "un1", user);
+                                                                    this.v = E5(gd.M0(V6 ? 2131751057 : 2131751056), "un1", user);
                                                                     if (tL_channelAdminLogEventActionChangeBackgroundEmoji.prev_value == 0) {
-                                                                        spannableString = new SpannableString(gd.L0(2131751002));
+                                                                        spannableString = new SpannableString(gd.M0(2131751001));
                                                                     } else {
                                                                         spannableString = new SpannableString("e");
-                                                                        spannableString.setSpan(new org.telegram.ui.Components.x5(tL_channelAdminLogEventActionChangeBackgroundEmoji.prev_value, org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                        spannableString.setSpan(new org.telegram.ui.Components.y5(tL_channelAdminLogEventActionChangeBackgroundEmoji.prev_value, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     }
                                                                     this.v = g0.K2(this.v, spannableString, "%1$s");
                                                                     if (tL_channelAdminLogEventActionChangeBackgroundEmoji.new_value == 0) {
-                                                                        spannableString2 = new SpannableString(gd.L0(2131751002));
+                                                                        spannableString2 = new SpannableString(gd.M0(2131751001));
                                                                     } else {
                                                                         spannableString2 = new SpannableString("e");
-                                                                        spannableString2.setSpan(new org.telegram.ui.Components.x5(tL_channelAdminLogEventActionChangeBackgroundEmoji.new_value, org.telegram.ui.ActionBar.n6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                        spannableString2.setSpan(new org.telegram.ui.Components.y5(tL_channelAdminLogEventActionChangeBackgroundEmoji.new_value, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     }
                                                                     this.v = g0.K2(this.v, spannableString2, "%2$s");
                                                                 } else {
@@ -13349,8 +13349,8 @@ public class fj {
                 c22 = mp.u1(i7).c2(Long.valueOf(-B16));
             }
             if (!(channelParticipant instanceof TLRPC.TL_channelParticipantCreator) && (channelParticipant2 instanceof TLRPC.TL_channelParticipantCreator)) {
-                String L05 = gd.L0(2131751043);
-                sb2 = new StringBuilder(String.format(L05, e2(c22, this.k.entities, L05.indexOf("%1$s"))));
+                String M05 = gd.M0(2131751042);
+                sb2 = new StringBuilder(String.format(M05, e2(c22, this.k.entities, M05.indexOf("%1$s"))));
                 chat2 = chat;
             } else {
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = channelParticipant.admin_rights;
@@ -13358,19 +13358,19 @@ public class fj {
                 tL_chatAdminRights = tL_chatAdminRights == null ? new TLRPC.TL_chatAdminRights() : tL_chatAdminRights;
                 tL_chatAdminRights2 = tL_chatAdminRights2 == null ? new TLRPC.TL_chatAdminRights() : tL_chatAdminRights2;
                 if (tL_chatAdminRights2.other) {
-                    L0 = gd.L0(2131750938);
+                    M0 = gd.M0(2131750937);
                 } else {
-                    L0 = gd.L0(2131750953);
+                    M0 = gd.M0(2131750952);
                 }
-                StringBuilder sb6 = new StringBuilder(String.format(L0, e2(c22, this.k.entities, L0.indexOf("%1$s"))));
+                StringBuilder sb6 = new StringBuilder(String.format(M0, e2(c22, this.k.entities, M0.indexOf("%1$s"))));
                 sb6.append("\n");
                 if (!TextUtils.equals(channelParticipant.rank, channelParticipant2.rank)) {
                     if (TextUtils.isEmpty(channelParticipant2.rank)) {
                         sb6.append("\n- ");
-                        sb6.append(gd.L0(2131750934));
+                        sb6.append(gd.M0(2131750933));
                     } else {
                         sb6.append("\n+ ");
-                        sb6.append(gd.Y(2131750932, "EventLogPromotedTitle", channelParticipant2.rank));
+                        sb6.append(gd.Y(2131750931, "EventLogPromotedTitle", channelParticipant2.rank));
                     }
                 }
                 if (tL_chatAdminRights.change_info != tL_chatAdminRights2.change_info) {
@@ -13378,79 +13378,79 @@ public class fj {
                     sb6.append(tL_chatAdminRights2.change_info ? '+' : '-');
                     sb6.append(' ');
                     chat2 = chat;
-                    sb6.append(gd.L0(chat2.megagroup ? 2131750948 : 2131750949));
+                    sb6.append(gd.M0(chat2.megagroup ? 2131750947 : 2131750948));
                 } else {
                     chat2 = chat;
                 }
                 if (!chat2.megagroup) {
                     if (tL_chatAdminRights.post_messages != tL_chatAdminRights2.post_messages) {
                         sb6.append('\n');
-                        f3.r(sb6, tL_chatAdminRights2.post_messages ? '+' : '-', ' ', 2131750936);
+                        f3.r(sb6, tL_chatAdminRights2.post_messages ? '+' : '-', ' ', 2131750935);
                     }
                     if (tL_chatAdminRights.edit_messages != tL_chatAdminRights2.edit_messages) {
                         sb6.append('\n');
-                        f3.r(sb6, tL_chatAdminRights2.edit_messages ? '+' : '-', ' ', 2131750945);
+                        f3.r(sb6, tL_chatAdminRights2.edit_messages ? '+' : '-', ' ', 2131750944);
                     }
                 }
                 if (tL_chatAdminRights.post_stories != tL_chatAdminRights2.post_stories) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.post_stories ? '+' : '-', ' ', 2131750935);
+                    f3.r(sb6, tL_chatAdminRights2.post_stories ? '+' : '-', ' ', 2131750934);
                 }
                 if (tL_chatAdminRights.edit_stories != tL_chatAdminRights2.edit_stories) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.edit_stories ? '+' : '-', ' ', 2131750943);
+                    f3.r(sb6, tL_chatAdminRights2.edit_stories ? '+' : '-', ' ', 2131750942);
                 }
                 if (tL_chatAdminRights.delete_stories != tL_chatAdminRights2.delete_stories) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.delete_stories ? '+' : '-', ' ', 2131750946);
+                    f3.r(sb6, tL_chatAdminRights2.delete_stories ? '+' : '-', ' ', 2131750945);
                 }
                 if (tL_chatAdminRights.delete_messages != tL_chatAdminRights2.delete_messages) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.delete_messages ? '+' : '-', ' ', 2131750947);
+                    f3.r(sb6, tL_chatAdminRights2.delete_messages ? '+' : '-', ' ', 2131750946);
                 }
                 if (tL_chatAdminRights.add_admins != tL_chatAdminRights2.add_admins) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.add_admins ? '+' : '-', ' ', 2131750952);
+                    f3.r(sb6, tL_chatAdminRights2.add_admins ? '+' : '-', ' ', 2131750951);
                 }
                 if (tL_chatAdminRights.anonymous != tL_chatAdminRights2.anonymous) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.anonymous ? '+' : '-', ' ', 2131750933);
+                    f3.r(sb6, tL_chatAdminRights2.anonymous ? '+' : '-', ' ', 2131750932);
                 }
                 if (chat2.megagroup) {
                     if (tL_chatAdminRights.ban_users != tL_chatAdminRights2.ban_users) {
                         sb6.append('\n');
-                        f3.r(sb6, tL_chatAdminRights2.ban_users ? '+' : '-', ' ', 2131750950);
+                        f3.r(sb6, tL_chatAdminRights2.ban_users ? '+' : '-', ' ', 2131750949);
                     }
                     if (tL_chatAdminRights.manage_call != tL_chatAdminRights2.manage_call) {
                         sb6.append('\n');
-                        f3.r(sb6, tL_chatAdminRights2.manage_call ? '+' : '-', ' ', 2131750942);
+                        f3.r(sb6, tL_chatAdminRights2.manage_call ? '+' : '-', ' ', 2131750941);
                     }
                 }
                 if (tL_chatAdminRights.invite_users != tL_chatAdminRights2.invite_users) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.invite_users ? '+' : '-', ' ', 2131750951);
+                    f3.r(sb6, tL_chatAdminRights2.invite_users ? '+' : '-', ' ', 2131750950);
                 }
                 if (chat2.megagroup) {
                     if (tL_chatAdminRights.pin_messages != tL_chatAdminRights2.pin_messages) {
                         sb6.append('\n');
-                        f3.r(sb6, tL_chatAdminRights2.pin_messages ? '+' : '-', ' ', 2131750937);
+                        f3.r(sb6, tL_chatAdminRights2.pin_messages ? '+' : '-', ' ', 2131750936);
                     }
                     if (tL_chatAdminRights.manage_ranks != tL_chatAdminRights2.manage_ranks) {
                         sb6.append('\n');
-                        f3.r(sb6, tL_chatAdminRights2.manage_ranks ? '+' : '-', ' ', 2131750944);
+                        f3.r(sb6, tL_chatAdminRights2.manage_ranks ? '+' : '-', ' ', 2131750943);
                     }
                     if (tL_chatAdminRights.manage_topics != tL_chatAdminRights2.manage_topics) {
                         sb6.append('\n');
-                        f3.r(sb6, tL_chatAdminRights2.manage_topics ? '+' : '-', ' ', 2131750940);
+                        f3.r(sb6, tL_chatAdminRights2.manage_topics ? '+' : '-', ' ', 2131750939);
                     }
                 }
                 if (tL_chatAdminRights.manage_direct_messages != tL_chatAdminRights2.manage_direct_messages) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.manage_direct_messages ? '+' : '-', ' ', 2131750941);
+                    f3.r(sb6, tL_chatAdminRights2.manage_direct_messages ? '+' : '-', ' ', 2131750940);
                 }
                 if (tL_chatAdminRights.manage_welcome_messages != tL_chatAdminRights2.manage_welcome_messages) {
                     sb6.append('\n');
-                    f3.r(sb6, tL_chatAdminRights2.manage_welcome_messages ? '+' : '-', ' ', 2131750939);
+                    f3.r(sb6, tL_chatAdminRights2.manage_welcome_messages ? '+' : '-', ' ', 2131750938);
                 }
                 sb2 = sb6;
             }

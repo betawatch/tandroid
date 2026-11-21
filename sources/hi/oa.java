@@ -1,91 +1,9 @@
 package hi;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.ViewGroup;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.beta.R;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public abstract class oa {
-    public float b;
-    public org.telegram.ui.Cells.d7 d;
-    public ImageReceiver e;
-    public fi.c3 f;
-    public int a = 0;
-    public final RectF c = new RectF();
-
-    public static ma b(org.telegram.ui.Cells.e7 e7Var) {
-        if (e7Var == null) {
-            return null;
-        }
-        org.telegram.ui.Components.q9 imageView = e7Var.getImageView();
-        ma maVar = new ma(imageView, 2);
-        int[] iArr = new int[2];
-        imageView.getLocationOnScreen(iArr);
-        int i7 = iArr[0];
-        float f10 = i7;
-        float f11 = iArr[1];
-        float width = imageView.getWidth() + i7;
-        float height = imageView.getHeight() + iArr[1];
-        RectF rectF = maVar.c;
-        rectF.set(f10, f11, width, height);
-        maVar.d = new org.telegram.ui.Cells.d7(imageView.getContext(), null, false, R.drawable.large_repost_story, e7Var.E);
-        maVar.b = Math.max(rectF.width(), rectF.height()) / 2.0f;
-        return maVar;
-    }
-
-    public static na c(fi.p pVar) {
-        if (pVar == null) {
-            return null;
-        }
-        ImageReceiver imageReceiver = pVar.r;
-        if (pVar.getRootView() == null) {
-            return null;
-        }
-        float f10 = imageReceiver.N0;
-        na naVar = new na(pVar, f10 / 2.0f);
-        float[] fArr = new float[2];
-        pVar.getRootView().getLocationOnScreen(new int[2]);
-        org.telegram.messenger.g0.r1(pVar, (ViewGroup) pVar.getRootView(), fArr);
-        float f11 = r5[0] + fArr[0] + imageReceiver.L0;
-        float f12 = r5[1] + fArr[1] + imageReceiver.M0;
-        naVar.c.set(f11, f12, f11 + f10, f10 + f12);
-        naVar.e = imageReceiver;
-        naVar.b = Math.max(naVar.c.width(), naVar.c.height()) / 2.0f;
-        return naVar;
-    }
-
-    public static ma d(fi.f9 f9Var) {
-        fi.z3 currentPeerView;
-        fi.c3 c3Var;
-        if (f9Var == null) {
-            return null;
-        }
-        ma maVar = new ma(f9Var, 1);
-        fi.v8 v8Var = f9Var.o0;
-        if (v8Var == null || (currentPeerView = v8Var.getCurrentPeerView()) == null || (c3Var = currentPeerView.M0) == null) {
-            return null;
-        }
-        fi.t8 t8Var = f9Var.s;
-        float x10 = t8Var == null ? 0.0f : t8Var.getX();
-        fi.t8 t8Var2 = f9Var.s;
-        float y10 = t8Var2 != null ? t8Var2.getY() : 0.0f;
-        maVar.c.set(c3Var.getX() + currentPeerView.getX() + f9Var.Y + x10 + f9Var.w.getLeft(), c3Var.getY() + currentPeerView.getY() + f9Var.X + y10 + f9Var.w.getTop(), (((x10 + f9Var.Y) + f9Var.w.getRight()) - (f9Var.w.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - c3Var.getRight()), (((y10 + f9Var.X) + f9Var.w.getBottom()) - (f9Var.w.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - c3Var.getBottom()));
-        maVar.a = 1;
-        maVar.b = org.telegram.messenger.g0.L(8.0f);
-        fi.z3 z10 = f9Var.z();
-        if (z10 != null) {
-            maVar.f = z10.M0;
-        }
-        return maVar;
-    }
-
-    public abstract void e();
-
-    public abstract void f(boolean z10);
-
-    public void a(Canvas canvas, float f10) {
-    }
+public interface oa {
+    boolean i(MotionEvent motionEvent);
 }

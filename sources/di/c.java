@@ -3,9 +3,9 @@ package di;
 import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.nq;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -27,15 +27,15 @@ public final /* synthetic */ class c implements Runnable {
                 tVar.b0.setEnabled(tVar.Z > 0 || tVar.Q > currentTime);
                 if (currentTime >= tVar.Q) {
                     tVar.b0.g(null, true);
-                    tVar.b0.i(pb.Z0(false, tVar.Y ? gd.M0(2131752958, null) : gd.H(' ', "BotStarsButtonWithdrawShort", (int) tVar.Z), tVar.d0), true, true);
+                    tVar.b0.i(pb.Z0(false, tVar.Y ? gd.N0(2131752957, null) : gd.H(' ', "BotStarsButtonWithdrawShort", (int) tVar.Z), tVar.d0), true, true);
                     break;
                 } else {
-                    tVar.b0.i(gd.M0(2131752957, null), true, true);
+                    tVar.b0.i(gd.N0(2131752956, null), true, true);
                     if (tVar.s0 == null) {
                         tVar.s0 = new SpannableStringBuilder("l");
-                        lq lqVar = new lq(R.drawable.mini_switch_lock, 0);
-                        lqVar.n = 1;
-                        tVar.s0.setSpan(lqVar, 0, 1, 33);
+                        nq nqVar = new nq(R.drawable.mini_switch_lock, 0);
+                        nqVar.n = 1;
+                        tVar.s0.setSpan(nqVar, 0, 1, 33);
                     }
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) tVar.s0).append((CharSequence) t.x0(tVar.Q - currentTime));
@@ -44,7 +44,7 @@ public final /* synthetic */ class c implements Runnable {
                     if (gcVar != null) {
                         org.telegram.ui.Components.lb lbVar = gcVar.e;
                         if ((lbVar instanceof org.telegram.ui.Components.ob) && lbVar.isAttachedToWindow()) {
-                            org.telegram.messenger.f3.q(null, null, 2131752941, new Object[]{t.x0(tVar.Q - currentTime)}, ((org.telegram.ui.Components.ob) tVar.k0.e).b);
+                            org.telegram.messenger.f3.q(null, null, 2131752940, new Object[]{t.x0(tVar.Q - currentTime)}, ((org.telegram.ui.Components.ob) tVar.k0.e).b);
                         }
                     }
                     org.telegram.messenger.g0.r(cVar);
@@ -56,16 +56,16 @@ public final /* synthetic */ class c implements Runnable {
                 t.b0(tVar);
                 break;
             case 2:
-                vf.c.t(tVar.getParentActivity(), gd.M0(2131752945, null));
+                vf.c.t(tVar.getParentActivity(), gd.N0(2131752944, null));
                 break;
             case 3:
                 t.Z(tVar);
                 break;
             case 4:
-                vf.c.t(tVar.getParentActivity(), gd.M0(2131753018, null));
+                vf.c.t(tVar.getParentActivity(), gd.N0(2131753017, null));
                 break;
             case 5:
-                vf.c.t(tVar.getParentActivity(), gd.M0(2131753038, null));
+                vf.c.t(tVar.getParentActivity(), gd.N0(2131753037, null));
                 break;
             default:
                 tVar.c0.setLoading(false);

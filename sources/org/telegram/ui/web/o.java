@@ -6,7 +6,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements q10 {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class o implements q10 {
                 v0 v0Var3 = this.b;
                 v0Var3.getClass();
                 if (((Boolean) obj).booleanValue()) {
-                    ki.q qVar = v0Var3.k0;
-                    qVar.e = true;
-                    qVar.k();
+                    ki.p pVar = v0Var3.k0;
+                    pVar.e = true;
+                    pVar.k();
                 }
                 v0Var3.v(this.c);
                 break;

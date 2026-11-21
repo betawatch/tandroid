@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class jp0 extends org.telegram.ui.Components.xz {
+public final class jp0 extends org.telegram.ui.Components.zz {
     public final /* synthetic */ so0 e;
     public final /* synthetic */ PhotoViewer f;
 
@@ -13,7 +13,7 @@ public final class jp0 extends org.telegram.ui.Components.xz {
         this.e = so0Var;
     }
 
-    @Override // org.telegram.ui.Components.wm0
+    @Override // org.telegram.ui.Components.zm0
     public final CharSequence d() {
         StringBuilder sb2 = new StringBuilder();
         PhotoViewer photoViewer = this.f;
@@ -27,15 +27,15 @@ public final class jp0 extends org.telegram.ui.Components.xz {
         sb4.append(org.telegram.messenger.gd.G(iArr2[0], "Minutes", new Object[0]));
         sb4.append(' ');
         sb4.append(org.telegram.messenger.gd.G(iArr2[1], "Seconds", new Object[0]));
-        return org.telegram.messenger.gd.a0("AccDescrPlayerDuration", null, 2131754806, sb3, sb4.toString());
+        return org.telegram.messenger.gd.a0("AccDescrPlayerDuration", null, 2131754805, sb3, sb4.toString());
     }
 
-    @Override // org.telegram.ui.Components.xz
+    @Override // org.telegram.ui.Components.zz
     public final float k() {
         return this.f.q3.c();
     }
 
-    @Override // org.telegram.ui.Components.xz
+    @Override // org.telegram.ui.Components.zz
     public final void l(float f10) {
         this.e.a(f10);
         PhotoViewer photoViewer = this.f;

@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class h6 {
     public static HashMap B;
@@ -39,7 +39,7 @@ public class h6 {
     public boolean u;
     public boolean v;
     public boolean w;
-    public final a6 x;
+    public final l4 x;
     public g6 y;
     public boolean z;
     public int a = 0;
@@ -61,7 +61,7 @@ public class h6 {
         this.d = j3;
         this.e = i10;
         this.f = i11;
-        this.x = new a6(3, this, x10Var);
+        this.x = new l4(5, this, x10Var);
         if (i10 != 0 || i11 <= 0) {
             this.k = new TreeSet(Comparator$-CC.reverseOrder());
             this.l = new TreeSet(Comparator$-CC.reverseOrder());
@@ -189,7 +189,7 @@ public class h6 {
             TL_stories.TL_togglePinnedToTop tL_togglePinnedToTop = new TL_stories.TL_togglePinnedToTop();
             tL_togglePinnedToTop.id.addAll(arrayList3);
             tL_togglePinnedToTop.peer = mp.u1(i7).l1(this.d);
-            ConnectionsManager.getInstance(i7).sendRequest(tL_togglePinnedToTop, new k5(3));
+            ConnectionsManager.getInstance(i7).sendRequest(tL_togglePinnedToTop, new l5(3));
         }
     }
 
@@ -488,9 +488,9 @@ public class h6 {
         int i7 = this.a;
         this.a = i7 + 1;
         this.b.add(Integer.valueOf(i7));
-        a6 a6Var = this.x;
-        if (a6Var != null) {
-            org.telegram.messenger.g0.r(a6Var);
+        l4 l4Var = this.x;
+        if (l4Var != null) {
+            org.telegram.messenger.g0.r(l4Var);
         }
         return i7;
     }
@@ -565,7 +565,7 @@ public class h6 {
         int i10 = this.c;
         tL_stories_incrementStoryViews.peer = mp.u1(i10).l1(this.d);
         tL_stories_incrementStoryViews.id.add(Integer.valueOf(i7));
-        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_incrementStoryViews, new k5(9));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_incrementStoryViews, new l5(9));
         ks.f(i10).k(ks.I5, new Object[0]);
         return true;
     }
@@ -635,7 +635,7 @@ public class h6 {
         ArrayList arrayList2 = new ArrayList(this.g);
         c(arrayList, true, true);
         tr a02 = tr.a0(this.c);
-        a02.a.c(new ai.s(this, arrayList, a02, arrayList2, 18));
+        a02.a.c(new ai.r(this, arrayList, a02, arrayList2, 18));
     }
 
     public final fj y(TL_stories.StoryItem storyItem) {
@@ -647,14 +647,14 @@ public class h6 {
     }
 
     public final void z(int i7) {
-        a6 a6Var;
+        l4 l4Var;
         Integer valueOf = Integer.valueOf(i7);
         ArrayList arrayList = this.b;
         arrayList.remove(valueOf);
-        if (!arrayList.isEmpty() || (a6Var = this.x) == null) {
+        if (!arrayList.isEmpty() || (l4Var = this.x) == null) {
             return;
         }
-        org.telegram.messenger.g0.r(a6Var);
-        org.telegram.messenger.g0.h3(a6Var, 300000L);
+        org.telegram.messenger.g0.r(l4Var);
+        org.telegram.messenger.g0.h3(l4Var, 300000L);
     }
 }

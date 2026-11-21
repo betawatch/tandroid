@@ -1,31 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public abstract class vp extends c5.l {
-    public up x0;
+public final class vp implements c5.h {
+    public int a;
+    public final /* synthetic */ hg0 b;
 
-    public vp(Context context) {
-        super(context);
-        b(new tp((fg0) this));
+    public vp(hg0 hg0Var) {
+        this.b = hg0Var;
     }
 
-    @Override // c5.l
-    @Deprecated
-    public void setAdapter(c5.a aVar) {
-        if (!(aVar instanceof up)) {
-            throw new IllegalArgumentException();
+    @Override // c5.h
+    public final void b(float f10, int i7, int i10) {
+        if (i7 == this.b.getCurrentItem() && f10 == 0.0f && this.a == 1) {
+            d();
         }
-        setAdapter((up) aVar);
     }
 
-    public void setAdapter(up upVar) {
-        this.x0 = upVar;
-        super.setAdapter((c5.a) upVar);
-        if (upVar != null) {
-            x(upVar.j(), false);
+    @Override // c5.h
+    public final void c(int i7) {
+        if (i7 == 0) {
+            d();
         }
+        this.a = i7;
+    }
+
+    public final void d() {
+        hg0 hg0Var = this.b;
+        if (hg0Var.x0 != null) {
+            int currentItem = hg0Var.getCurrentItem();
+            int k10 = hg0Var.x0.k(currentItem) + hg0Var.x0.j();
+            if (currentItem != k10) {
+                hg0Var.x(k10, false);
+            }
+        }
+    }
+
+    @Override // c5.h
+    public final void a(int i7) {
     }
 }

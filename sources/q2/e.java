@@ -22,11 +22,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.hn;
-import p4.o0;
+import org.telegram.ui.Components.jn;
 import p4.r0;
+import p4.z;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public final Set E;
@@ -48,7 +48,7 @@ public final class e implements m {
     public final boolean h;
     public final k8.a n;
     public final qb.a r;
-    public final hn s;
+    public final jn s;
     public final long w;
     public final ArrayList x;
     public final Set y;
@@ -65,7 +65,7 @@ public final class e implements m {
         this.h = z11;
         this.r = aVar;
         this.n = new k8.a(23);
-        this.s = new hn(this, 10);
+        this.s = new jn(this, 10);
         this.x = new ArrayList();
         this.y = Collections.newSetFromMap(new IdentityHashMap());
         this.E = Collections.newSetFromMap(new IdentityHashMap());
@@ -99,7 +99,7 @@ public final class e implements m {
         h(false);
         q qVar = this.G;
         qVar.getClass();
-        int J = qVar.J();
+        int H = qVar.H();
         e2.r rVar = uVar.w;
         if (rVar == null) {
             int h = s0.h(uVar.s);
@@ -131,7 +131,7 @@ public final class e implements m {
                 return 1;
             }
         }
-        return J;
+        return H;
     }
 
     @Override // q2.m
@@ -141,7 +141,7 @@ public final class e implements m {
         d dVar = new d(this, jVar);
         Handler handler = this.K;
         handler.getClass();
-        handler.post(new o0(2, dVar, uVar));
+        handler.post(new z(4, dVar, uVar));
         return dVar;
     }
 
@@ -199,7 +199,7 @@ public final class e implements m {
             int h = s0.h(uVar.s);
             q qVar = this.G;
             qVar.getClass();
-            if (qVar.J() != 2 || !r.c) {
+            if (qVar.H() != 2 || !r.c) {
                 int[] iArr = this.f;
                 while (true) {
                     if (i7 >= iArr.length) {
@@ -211,7 +211,7 @@ public final class e implements m {
                     }
                     i7++;
                 }
-                if (i7 != -1 && qVar.J() != 1) {
+                if (i7 != -1 && qVar.H() != 1) {
                     b bVar2 = this.H;
                     if (bVar2 == null) {
                         g0 g0Var = i0.b;

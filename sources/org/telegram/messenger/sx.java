@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sx implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -106,7 +106,7 @@ public final /* synthetic */ class sx implements Runnable {
                 boolean z15 = this.c;
                 TLObject tLObject4 = this.s;
                 if (tL_error3 != null) {
-                    org.telegram.ui.Components.b5.c0(zyVar4.currentAccount, tL_error3, null, tLObject4, new Object[0]);
+                    org.telegram.ui.Components.c5.c0(zyVar4.currentAccount, tL_error3, null, tLObject4, new Object[0]);
                     zyVar4.i0(message5.id, z15);
                     zyVar4.l0(fjVar2);
                     break;
@@ -123,7 +123,7 @@ public final /* synthetic */ class sx implements Runnable {
                         } else if (update instanceof TL_update.TL_updateNewScheduledMessage) {
                             message2 = ((TL_update.TL_updateNewScheduledMessage) update).message;
                         } else if (update instanceof TL_update.TL_updateQuickReplyMessage) {
-                            kg.w1.f(zyVar4.currentAccount).j(update, fj.J1(message5), fj.I1(message5));
+                            kg.v1.f(zyVar4.currentAccount).j(update, fj.J1(message5), fj.I1(message5));
                             message2 = ((TL_update.TL_updateQuickReplyMessage) update).message;
                         }
                         message = message2;
@@ -347,7 +347,7 @@ public final /* synthetic */ class sx implements Runnable {
                                                 z18 = true;
                                             } else {
                                                 if (update2 instanceof TL_update.TL_updateQuickReplyMessage) {
-                                                    kg.w1.f(zyVar8.currentAccount).j(update2, fj.J1(fjVar3.k), fj.I1(fjVar3.k));
+                                                    kg.v1.f(zyVar8.currentAccount).j(update2, fj.J1(fjVar3.k), fj.I1(fjVar3.k));
                                                     TLRPC.Message message11 = ((TL_update.TL_updateQuickReplyMessage) update2).message;
                                                     arrayList5.add(message11);
                                                     arrayList.remove(i19);
@@ -613,7 +613,7 @@ public final /* synthetic */ class sx implements Runnable {
                                                 zyVar12.getMessagesStorage().R1(B12, -B12, arrayList15, null);
                                                 g0.g3(new jw(zyVar12, B12, arrayList15, 0));
                                             }
-                                            g0.g3(new bi.p4(zyVar12, message14, i31, i12, z21));
+                                            g0.g3(new bi.t4(zyVar12, message14, i31, i12, z21));
                                         }
                                         i29 = 5;
                                     }
@@ -628,7 +628,7 @@ public final /* synthetic */ class sx implements Runnable {
                                     int i322 = i30;
                                     if (fj.e3(message14)) {
                                     }
-                                    g0.g3(new bi.p4(zyVar122, message14, i312, i12, z21));
+                                    g0.g3(new bi.t4(zyVar122, message14, i312, i12, z21));
                                 }
                             });
                             z14 = z20;
@@ -646,7 +646,7 @@ public final /* synthetic */ class sx implements Runnable {
                     r62 = z16;
                     tL_error = tL_error4;
                     tLObject = tLObject6;
-                    org.telegram.ui.Components.b5.c0(zyVar12.currentAccount, tL_error, null, tLObject, new Object[0]);
+                    org.telegram.ui.Components.c5.c0(zyVar12.currentAccount, tL_error, null, tLObject, new Object[0]);
                     z10 = true;
                     r52 = zyVar12;
                 }
@@ -654,10 +654,10 @@ public final /* synthetic */ class sx implements Runnable {
                     r52.getMessagesStorage().N0(r62, message3);
                     message3.send_state = i7;
                     if (tL_error != null && (str = tL_error.text) != null && str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                        di.x8.y(r52.currentAccount, false);
-                        message3.errorAllowedPriceStars = di.x8.o(tLObject);
+                        di.y8.y(r52.currentAccount, false);
+                        message3.errorAllowedPriceStars = di.y8.o(tLObject);
                         message3.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23));
-                        di.x8.y(r52.currentAccount, false).d0(Arrays.asList(fjVar));
+                        di.y8.y(r52.currentAccount, false).d0(Arrays.asList(fjVar));
                         r52.getMessagesStorage().X1(fj.B0(message3), message3);
                     }
                     r52.getNotificationCenter().k(23, Integer.valueOf(message3.id));

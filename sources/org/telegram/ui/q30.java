@@ -14,7 +14,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class q30 extends Dialog {
     public final fi.u2 a;
@@ -32,7 +32,7 @@ public final class q30 extends Dialog {
         this.f = new Matrix();
         this.b = uvVar;
         uvVar.setVisibility(4);
-        org.telegram.messenger.g0.l2(new org.telegram.ui.Components.ph(16, this, uvVar), 14.0f);
+        org.telegram.messenger.g0.l2(new org.telegram.ui.Components.rh(16, this, uvVar), 14.0f);
         fi.u2 u2Var = new fi.u2(this, context, uvVar);
         this.a = u2Var;
         u2Var.setOnClickListener(new a(this, 28));
@@ -49,7 +49,7 @@ public final class q30 extends Dialog {
         ofFloat.addUpdateListener(new a3(this, 13));
         this.n.addListener(new di.j6(this, f10, p30Var, 4));
         this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.lr.h);
+        this.n.setInterpolator(org.telegram.ui.Components.nr.h);
         this.n.start();
     }
 

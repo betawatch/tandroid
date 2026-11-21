@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class vy extends FrameLayout {
     public final TextView a;
@@ -22,8 +22,8 @@ public final class vy extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q6, null);
-        i5.c.r(16.0f, 1, 2131751702, textView, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q6, null);
+        i5.c.r(16.0f, 1, 2131751701, textView, null);
         textView.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
         boolean z10 = org.telegram.messenger.gd.a0;
         textView.setPadding(z10 ? 16 : 0, 0, z10 ? 0 : 16, 0);
@@ -33,11 +33,11 @@ public final class vy extends FrameLayout {
         this.b = imageView;
         Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
         Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
-        int i7 = org.telegram.ui.ActionBar.n6.Fi;
+        int i7 = org.telegram.ui.ActionBar.m6.Fi;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        org.telegram.ui.ActionBar.u6.x(this, drawable, i7, null, mode);
-        org.telegram.ui.ActionBar.u6.x(this, drawable2, org.telegram.ui.ActionBar.n6.k7, null, mode);
-        imageView.setImageDrawable(new org.telegram.ui.Components.mq(drawable, drawable2));
+        org.telegram.ui.ActionBar.t6.x(this, drawable, i7, null, mode);
+        org.telegram.ui.ActionBar.t6.x(this, drawable2, org.telegram.ui.ActionBar.m6.k7, null, mode);
+        imageView.setImageDrawable(new org.telegram.ui.Components.oq(drawable, drawable2));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         boolean z12 = org.telegram.messenger.gd.a0;
         addView(imageView, c8.ma.d(32, 32.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f));
@@ -48,7 +48,7 @@ public final class vy extends FrameLayout {
         super.onDraw(canvas);
         if (this.c) {
             TextView textView = this.a;
-            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.n6.k0);
+            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

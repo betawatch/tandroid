@@ -22,12 +22,12 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 import tc.d;
 import tc.e;
 import tc.f;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -117,13 +117,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static nd0 c(HashMap hashMap, t tVar) {
+    public static md0 c(HashMap hashMap, t tVar) {
         String str;
         int i7;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        nd0 nd0Var = null;
+        md0 md0Var = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -163,10 +163,10 @@ public abstract class b {
             g(i7, str2, str3);
             throw null;
         }
-        nd0Var = bd.a(str2);
+        md0Var = bd.a(str2);
         if (bool.booleanValue()) {
         }
-        return nd0Var;
+        return md0Var;
     }
 
     public static LinkedList d(String str, Map map) {

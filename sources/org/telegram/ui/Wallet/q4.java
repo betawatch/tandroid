@@ -3,7 +3,7 @@ package org.telegram.ui.Wallet;
 import org.telegram.messenger.gd;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,8 +46,8 @@ public final /* synthetic */ class q4 implements Runnable {
                         n6Var.I0 = true;
                     }
                 }
-                bi.c6 c6Var = n6Var.a;
-                if (c6Var != null && c6Var.g3 != null) {
+                bi.g6 g6Var = n6Var.a;
+                if (g6Var != null && g6Var.g3 != null) {
                     n6Var.c1(true);
                     break;
                 }
@@ -83,7 +83,7 @@ public final /* synthetic */ class q4 implements Runnable {
                 n6Var.S.post(new q4(n6Var, 4));
                 break;
             case 9:
-                lc.b0(n6Var).N(gd.M0(2131745666, null), gd.M0(2131751094, null)).j();
+                lc.b0(n6Var).N(gd.N0(2131745665, null), gd.N0(2131751093, null)).j();
                 break;
             case 10:
                 n6.j0(n6Var);

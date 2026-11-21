@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yg implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class yg implements Runnable {
                     TLObject tLObject = this.d;
                     if (tLObject == null) {
                         if ("CHANNEL_PRIVATE".equals(this.e.text)) {
-                            org.telegram.messenger.mp.d5(org.telegram.messenger.gd.M0(2131752434, null), bnVar2);
+                            org.telegram.messenger.mp.d5(org.telegram.messenger.gd.N0(2131752433, null), bnVar2);
                             bnVar2.Pc = 0;
                             bnVar2.Qc = false;
                             bnVar2.A0.g1();

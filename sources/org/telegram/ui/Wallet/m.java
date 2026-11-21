@@ -1,9 +1,9 @@
 package org.telegram.ui.Wallet;
 
 import android.view.View;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -69,18 +69,18 @@ public final /* synthetic */ class m implements Runnable {
                 ((org.telegram.ui.Cells.v0) this.b).invalidate();
                 return;
             case 6:
-                ((org.telegram.ui.ActionBar.k5) this.b).a(true);
+                ((org.telegram.ui.ActionBar.j5) this.b).a(true);
                 return;
             case 7:
-                org.telegram.messenger.g0.E2((hi.m3) this.b);
+                org.telegram.messenger.g0.E2((hi.l3) this.b);
                 return;
             case 8:
                 j6 j6Var = (j6) this.b;
-                bi.c6 c6Var = j6Var.c;
-                if (c6Var == null || c6Var.getScrollState() != 0) {
+                bi.g6 g6Var = j6Var.c;
+                if (g6Var == null || g6Var.getScrollState() != 0) {
                     return;
                 }
-                e51 B0 = j6Var.j.B0();
+                h51 B0 = j6Var.j.B0();
                 if ((B0 == null || B0.getScrollState() == 0) && (d = j6Var.d(j6Var.c.f3)) != null) {
                     v4.c0 c0Var = j6Var.c.f3;
                     c0Var.getClass();

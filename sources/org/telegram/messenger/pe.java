@@ -17,11 +17,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.if0;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.kf0;
+import org.telegram.ui.Components.m80;
 import org.telegram.ui.kg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class pe implements kf, m9.t, p4.u {
     public long a;
@@ -35,18 +35,18 @@ public final class pe implements kf, m9.t, p4.u {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public pe(Context context, if0 if0Var, final org.telegram.ui.Components.k8 k8Var, boolean z10, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+    public pe(Context context, kf0 kf0Var, final org.telegram.ui.Components.j8 j8Var, boolean z10, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         int i10;
         final int i11 = 1;
         final int i12 = 0;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(z10 ? R.drawable.popup_fixed_alert : 0, 0, context, i6Var);
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(z10 ? R.drawable.popup_fixed_alert : 0, 0, context, h6Var);
         this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
-        this.d = k8Var;
-        if (if0Var != null) {
-            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, gd.M0(2131753754, null), false, i6Var).setOnClickListener(new org.telegram.ui.Components.i8(if0Var, 0));
+        this.d = j8Var;
+        if (kf0Var != null) {
+            org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, gd.N0(2131753753, null), false, h6Var).setOnClickListener(new org.telegram.ui.Components.h8(kf0Var, 0));
         }
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, gd.M0(2131753879, null), false, i6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.j8
+        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, gd.N0(2131753878, null), false, h6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.i8
             public final /* synthetic */ org.telegram.messenger.pe b;
 
             {
@@ -58,24 +58,24 @@ public final class pe implements kf, m9.t, p4.u {
                 switch (i12) {
                     case 0:
                         this.b.m();
-                        k8Var.R0(86400, 70);
+                        j8Var.R0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        k8Var.R0(604800, 70);
+                        j8Var.R0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        k8Var.R0(2678400, 70);
+                        j8Var.R0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        k8Var.R0(0, 71);
+                        j8Var.R0(0, 71);
                         break;
                 }
             }
         });
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, gd.M0(2131753876, null), false, i6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.j8
+        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, gd.N0(2131753875, null), false, h6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.i8
             public final /* synthetic */ org.telegram.messenger.pe b;
 
             {
@@ -87,25 +87,25 @@ public final class pe implements kf, m9.t, p4.u {
                 switch (i11) {
                     case 0:
                         this.b.m();
-                        k8Var.R0(86400, 70);
+                        j8Var.R0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        k8Var.R0(604800, 70);
+                        j8Var.R0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        k8Var.R0(2678400, 70);
+                        j8Var.R0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        k8Var.R0(0, 71);
+                        j8Var.R0(0, 71);
                         break;
                 }
             }
         });
         final int i13 = 2;
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, gd.M0(2131753878, null), false, i6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.j8
+        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, gd.N0(2131753877, null), false, h6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.i8
             public final /* synthetic */ org.telegram.messenger.pe b;
 
             {
@@ -117,28 +117,28 @@ public final class pe implements kf, m9.t, p4.u {
                 switch (i13) {
                     case 0:
                         this.b.m();
-                        k8Var.R0(86400, 70);
+                        j8Var.R0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        k8Var.R0(604800, 70);
+                        j8Var.R0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        k8Var.R0(2678400, 70);
+                        j8Var.R0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        k8Var.R0(0, 71);
+                        j8Var.R0(0, 71);
                         break;
                 }
             }
         });
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i7 == 1 ? gd.M0(2131753861, null) : gd.M0(2131753862, null), false, i6Var).setOnClickListener(new bi.m6(this, context, i7, i6Var, k8Var));
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, gd.M0(2131753860, null), false, i6Var);
+        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i7 == 1 ? gd.N0(2131753860, null) : gd.N0(2131753861, null), false, h6Var).setOnClickListener(new bi.q6(this, context, i7, h6Var, j8Var));
+        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, gd.N0(2131753859, null), false, h6Var);
         this.c = c10;
         final int i14 = 3;
-        c10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.j8
+        c10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.i8
             public final /* synthetic */ org.telegram.messenger.pe b;
 
             {
@@ -150,57 +150,57 @@ public final class pe implements kf, m9.t, p4.u {
                 switch (i14) {
                     case 0:
                         this.b.m();
-                        k8Var.R0(86400, 70);
+                        j8Var.R0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        k8Var.R0(604800, 70);
+                        j8Var.R0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        k8Var.R0(2678400, 70);
+                        j8Var.R0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        k8Var.R0(0, 71);
+                        j8Var.R0(0, 71);
                         break;
                 }
             }
         });
         if (i7 != 1) {
-            if (i6Var != null) {
-                int i15 = org.telegram.ui.ActionBar.n6.q7;
-                org.telegram.ui.Components.k2 k2Var = new org.telegram.ui.Components.k2(14);
-                org.telegram.ui.Components.k2 k2Var2 = new org.telegram.ui.Components.k2(15);
-                int P = org.telegram.ui.ActionBar.u6.P(i15, -1, 0, 0.0f, null);
-                k2Var2.d(P, c10);
-                org.telegram.ui.ActionBar.o6 w10 = org.telegram.ui.ActionBar.u6.w(100, c10);
+            if (h6Var != null) {
+                int i15 = org.telegram.ui.ActionBar.m6.q7;
+                org.telegram.ui.Components.l2 l2Var = new org.telegram.ui.Components.l2(14);
+                org.telegram.ui.Components.l2 l2Var2 = new org.telegram.ui.Components.l2(15);
+                int P = org.telegram.ui.ActionBar.t6.P(i15, -1, 0, 0.0f, null);
+                l2Var2.d(P, c10);
+                org.telegram.ui.ActionBar.n6 w10 = org.telegram.ui.ActionBar.t6.w(100, c10);
                 w10.c(i15, -1, 0, 0.0f, null);
-                w10.n = k2Var;
-                w10.o = k2Var2;
+                w10.n = l2Var;
+                w10.o = l2Var2;
                 w10.m = false;
                 w10.g = P;
                 i10 = 1;
                 if (i7 == i10) {
-                    org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(context, i6Var);
-                    org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.H8, e1Var, i6Var);
-                    e1Var.setTag(R.id.fit_width_tag, 1);
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var, c8.ma.o(-1, 8));
-                    k80 k80Var = new k80(context, null);
-                    this.e = k80Var;
-                    k80Var.setTag(R.id.fit_width_tag, 1);
-                    k80Var.setPadding(g0.L(13.0f), 0, g0.L(13.0f), g0.L(8.0f));
-                    k80Var.setTextSize(1, 13.0f);
-                    org.telegram.ui.ActionBar.u6.U(k80Var, org.telegram.ui.ActionBar.n6.E8, null);
-                    k80Var.setMovementMethod(LinkMovementMethod.getInstance());
-                    org.telegram.ui.ActionBar.u6.G(k80Var, org.telegram.ui.ActionBar.n6.J6, null);
-                    k80Var.setText(gd.M0(2131753846, null));
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(k80Var, c8.ma.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+                    org.telegram.ui.ActionBar.d1 d1Var = new org.telegram.ui.ActionBar.d1(context, h6Var);
+                    org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.H8, d1Var, h6Var);
+                    d1Var.setTag(R.id.fit_width_tag, 1);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(d1Var, c8.ma.o(-1, 8));
+                    m80 m80Var = new m80(context, null);
+                    this.e = m80Var;
+                    m80Var.setTag(R.id.fit_width_tag, 1);
+                    m80Var.setPadding(g0.L(13.0f), 0, g0.L(13.0f), g0.L(8.0f));
+                    m80Var.setTextSize(1, 13.0f);
+                    org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.E8, null);
+                    m80Var.setMovementMethod(LinkMovementMethod.getInstance());
+                    org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.J6, null);
+                    m80Var.setText(gd.N0(2131753845, null));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(m80Var, c8.ma.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
                     return;
                 }
                 return;
             }
-            int i16 = org.telegram.ui.ActionBar.n6.q7;
+            int i16 = org.telegram.ui.ActionBar.m6.q7;
             c10.c(i16, i16);
         }
         i10 = 1;
@@ -210,25 +210,25 @@ public final class pe implements kf, m9.t, p4.u {
 
     @Override // p4.u
     public void b(int i7, p4.n1 n1Var, boolean z10, boolean z11, int i10) {
-        p4.m0 m0Var = (p4.m0) this.e;
-        m0Var.p0(m0Var.h.t);
+        p4.n0 n0Var = (p4.n0) this.e;
+        n0Var.p0(n0Var.h.t);
     }
 
     @Override // p4.u
     public void e(int i7, e2.y0 y0Var) {
-        p4.m0 m0Var = (p4.m0) this.e;
-        p4.i1 i1Var = m0Var.h.t;
+        p4.n0 n0Var = (p4.n0) this.e;
+        p4.i1 i1Var = n0Var.h.t;
         int i10 = i1Var.p0(20) ? 4 : 0;
-        if (m0Var.t != i10) {
-            m0Var.t = i10;
-            ((q4.l) m0Var.n.b).a.setFlags(i10 | 3);
+        if (n0Var.t != i10) {
+            n0Var.t = i10;
+            ((q4.l) n0Var.n.b).a.setFlags(i10 | 3);
         }
-        m0Var.p0(i1Var);
+        n0Var.p0(i1Var);
     }
 
     @Override // m9.t
     public void h(Throwable th2) {
-        if (this != ((p4.m0) ((pe) this.e).e).s) {
+        if (this != ((p4.n0) ((pe) this.e).e).s) {
             return;
         }
         h2.a.l("MediaSessionLegacyStub", "Failed to load bitmap: " + th2.getMessage());
@@ -247,7 +247,7 @@ public final class pe implements kf, m9.t, p4.u {
                 bundle = bundle3;
             }
         }
-        q4.q qVar = ((p4.m0) this.e).n;
+        q4.q qVar = ((p4.n0) this.e).n;
         String str = k1Var.b;
         qVar.getClass();
         if (TextUtils.isEmpty(str)) {
@@ -285,43 +285,43 @@ public final class pe implements kf, m9.t, p4.u {
     }
 
     public void m() {
-        ((org.telegram.ui.Components.k8) this.d).dismiss();
+        ((org.telegram.ui.Components.j8) this.d).dismiss();
         this.a = System.currentTimeMillis();
     }
 
     public void n() {
-        p4.m0 m0Var = (p4.m0) this.e;
-        p4.i1 i1Var = m0Var.h.t;
+        p4.n0 n0Var = (p4.n0) this.e;
+        p4.i1 i1Var = n0Var.h.t;
         i1Var.K().getClass();
-        ((q4.l) m0Var.n.b).a.setPlaybackToLocal((i1Var.p0(21) ? i1Var.H() : e2.e.i).b());
+        ((q4.l) n0Var.n.b).a.setPlaybackToLocal((i1Var.p0(21) ? i1Var.H() : e2.e.i).b());
     }
 
     public void o(e2.l0 l0Var) {
-        p4.m0 m0Var = (p4.m0) this.e;
-        q4.q qVar = m0Var.n;
+        p4.n0 n0Var = (p4.n0) this.e;
+        q4.q qVar = n0Var.n;
         v();
         if (l0Var == null) {
             ((q4.l) qVar.b).a.setRatingType(0);
         } else {
             ((q4.l) qVar.b).a.setRatingType(p4.n.e(l0Var.d.i));
         }
-        m0Var.p0(m0Var.h.t);
+        n0Var.p0(n0Var.h.t);
     }
 
     @Override // m9.t
     public void onSuccess(Object obj) {
         Bitmap bitmap = (Bitmap) obj;
-        p4.m0 m0Var = (p4.m0) ((pe) this.e).e;
-        if (this != m0Var.s) {
+        p4.n0 n0Var = (p4.n0) ((pe) this.e).e;
+        if (this != n0Var.s) {
             return;
         }
-        p4.m0.f0(m0Var.n, p4.n.b((e2.o0) this.b, (String) this.c, (Uri) this.d, this.a, bitmap));
-        p4.d0 d0Var = m0Var.h;
-        h2.l0.W(d0Var.o, new p4.y(d0Var, 1));
+        p4.n0.f0(n0Var.n, p4.n.b((e2.o0) this.b, (String) this.c, (Uri) this.d, this.a, bitmap));
+        p4.e0 e0Var = n0Var.h;
+        h2.l0.W(e0Var.o, new p4.y(e0Var, 1));
     }
 
     public void p(int i7, p4.i1 i1Var) {
-        p4.m0 m0Var = (p4.m0) this.e;
+        p4.n0 n0Var = (p4.n0) this.e;
         t(i1Var.T0());
         q(i1Var.p0(18) ? i1Var.k0() : e2.o0.L);
         i1Var.U0();
@@ -331,30 +331,30 @@ public final class pe implements kf, m9.t, p4.u {
         i1Var.K();
         n();
         int i10 = i1Var.p0(20) ? 4 : 0;
-        if (m0Var.t != i10) {
-            m0Var.t = i10;
-            ((q4.l) m0Var.n.b).a.setFlags(i10 | 3);
+        if (n0Var.t != i10) {
+            n0Var.t = i10;
+            ((q4.l) n0Var.n.b).a.setFlags(i10 | 3);
         }
         o(i1Var.S0());
     }
 
     public void q(e2.o0 o0Var) {
-        p4.m0 m0Var = (p4.m0) this.e;
-        q4.q qVar = m0Var.n;
+        p4.n0 n0Var = (p4.n0) this.e;
+        q4.q qVar = n0Var.n;
         CharSequence queueTitle = ((q4.f) ((q4.u) qVar.c).a).a.getQueueTitle();
         CharSequence charSequence = o0Var.a;
         if (TextUtils.equals(queueTitle, charSequence)) {
             return;
         }
-        p4.i1 i1Var = m0Var.h.t;
-        if (!m0Var.y.a(17) || !i1Var.t().a(17)) {
+        p4.i1 i1Var = n0Var.h.t;
+        if (!n0Var.y.a(17) || !i1Var.t().a(17)) {
             charSequence = null;
         }
         ((q4.l) qVar.b).a.setQueueTitle(charSequence);
     }
 
     public void r(int i7) {
-        q4.q qVar = ((p4.m0) this.e).n;
+        q4.q qVar = ((p4.n0) this.e).n;
         int i10 = p4.n.a;
         int i11 = 0;
         if (i7 != 0) {
@@ -383,7 +383,7 @@ public final class pe implements kf, m9.t, p4.u {
     }
 
     public void s(boolean z10) {
-        q4.q qVar = ((p4.m0) this.e).n;
+        q4.q qVar = ((p4.n0) this.e).n;
         int i7 = p4.n.a;
         q4.l lVar = (q4.l) qVar.b;
         if (lVar.k != z10) {
@@ -407,13 +407,13 @@ public final class pe implements kf, m9.t, p4.u {
     }
 
     public void u(int i7) {
-        org.telegram.ui.ActionBar.z0 z0Var = (org.telegram.ui.ActionBar.z0) this.c;
+        org.telegram.ui.ActionBar.y0 y0Var = (org.telegram.ui.ActionBar.y0) this.c;
         if (System.currentTimeMillis() - this.a < 200) {
             g0.g3(new org.telegram.ui.ii(this, i7, 5));
         } else if (i7 == 0) {
-            z0Var.setVisibility(8);
+            y0Var.setVisibility(8);
         } else {
-            z0Var.setVisibility(0);
+            y0Var.setVisibility(0);
         }
     }
 
@@ -422,9 +422,9 @@ public final class pe implements kf, m9.t, p4.u {
         Uri uri;
         e2.o0 o0Var;
         Uri uri2;
-        p4.m0 m0Var = (p4.m0) this.e;
-        p4.d0 d0Var = m0Var.h;
-        p4.i1 i1Var = d0Var.t;
+        p4.n0 n0Var = (p4.n0) this.e;
+        p4.e0 e0Var = n0Var.h;
+        p4.i1 i1Var = e0Var.t;
         e2.l0 S0 = i1Var.S0();
         e2.o0 U0 = i1Var.U0();
         long j10 = -9223372036854775807L;
@@ -441,20 +441,20 @@ public final class pe implements kf, m9.t, p4.u {
         this.d = uri3;
         this.b = U0;
         this.a = j10;
-        m9.y O = d0Var.m.O(U0);
+        m9.y O = e0Var.m.O(U0);
         if (O != null) {
-            m0Var.s = null;
+            n0Var.s = null;
             if (!O.isDone()) {
                 j3 = j10;
                 uri = uri3;
                 o0Var = U0;
                 pe peVar = new pe(this, o0Var, str, uri, j3);
                 str = str;
-                m0Var.s = peVar;
-                Handler handler = d0Var.l;
+                n0Var.s = peVar;
+                Handler handler = e0Var.l;
                 Objects.requireNonNull(handler);
                 O.b(new m9.u(0, O, peVar), new l2.d0(handler, 1));
-                p4.m0.f0(m0Var.n, p4.n.b(o0Var, str, uri, j3, bitmap));
+                p4.n0.f0(n0Var.n, p4.n.b(o0Var, str, uri, j3, bitmap));
             }
             try {
                 bitmap = (Bitmap) c8.t9.a(O);
@@ -465,15 +465,15 @@ public final class pe implements kf, m9.t, p4.u {
         j3 = j10;
         uri = uri3;
         o0Var = U0;
-        p4.m0.f0(m0Var.n, p4.n.b(o0Var, str, uri, j3, bitmap));
+        p4.n0.f0(n0Var.n, p4.n.b(o0Var, str, uri, j3, bitmap));
     }
 
     public void w(e2.l1 l1Var) {
-        p4.m0 m0Var = (p4.m0) this.e;
-        p4.d0 d0Var = m0Var.h;
-        p4.i1 i1Var = d0Var.t;
-        if (!m0Var.y.a(17) || !i1Var.t().a(17) || l1Var.p()) {
-            p4.m0.e0(m0Var.n, null);
+        p4.n0 n0Var = (p4.n0) this.e;
+        p4.e0 e0Var = n0Var.h;
+        p4.i1 i1Var = e0Var.t;
+        if (!n0Var.y.a(17) || !i1Var.t().a(17) || l1Var.p()) {
+            p4.n0.e0(n0Var.n, null);
             return;
         }
         int i7 = p4.n.a;
@@ -490,9 +490,9 @@ public final class pe implements kf, m9.t, p4.u {
                 arrayList2.add(null);
                 kg0Var.run();
             } else {
-                m9.y t02 = d0Var.m.t0(bArr);
+                m9.y t02 = e0Var.m.t0(bArr);
                 arrayList2.add(t02);
-                Handler handler = d0Var.l;
+                Handler handler = e0Var.l;
                 Objects.requireNonNull(handler);
                 t02.b(kg0Var, new l2.d0(handler, 1));
             }
@@ -515,8 +515,8 @@ public final class pe implements kf, m9.t, p4.u {
     public /* synthetic */ void i(int i7, p4.o oVar) {
     }
 
-    public pe(p4.m0 m0Var) {
-        this.e = m0Var;
+    public pe(p4.n0 n0Var) {
+        this.e = n0Var;
         this.b = e2.o0.L;
         this.c = "";
         this.a = -9223372036854775807L;

@@ -8,9 +8,9 @@ import android.os.Build;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class j30 implements org.telegram.ui.Components.ui0 {
+public final class j30 implements org.telegram.ui.Components.wi0 {
     public final Path a = new Path();
     public final Paint b;
     public final /* synthetic */ f40 c;
@@ -22,12 +22,12 @@ public final class j30 implements org.telegram.ui.Components.ui0 {
         paint.setColor(-14603467);
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final boolean E() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final void g(View view, ch.p0 p0Var, boolean z10, boolean z11) {
         TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
         String str = p0Var.f;
@@ -59,17 +59,17 @@ public final class j30 implements org.telegram.ui.Components.ui0 {
         f40Var.F1.n();
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final boolean o() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final /* synthetic */ boolean q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final void x(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
         Paint paint = this.b;
         if (f10 > 0.0f) {
@@ -100,7 +100,7 @@ public final class j30 implements org.telegram.ui.Components.ui0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public final /* synthetic */ void z() {
     }
 }

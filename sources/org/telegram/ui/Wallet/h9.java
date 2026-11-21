@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h9 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class h9 implements TextView.OnEditorActionListener
             case 1:
                 da daVar = (da) this.b;
                 if (i7 == 6) {
-                    hi.d dVar = daVar.e0;
-                    if (dVar.e0) {
-                        dVar.performClick();
+                    hi.e eVar = daVar.e0;
+                    if (eVar.e0) {
+                        eVar.performClick();
                         return true;
                     }
                 } else {

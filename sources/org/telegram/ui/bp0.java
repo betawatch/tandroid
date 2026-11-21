@@ -7,15 +7,15 @@ import android.view.ContextThemeWrapper;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class bp0 extends org.telegram.ui.Components.yc {
     public final Path t1;
     public final /* synthetic */ PhotoViewer u1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bp0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, vq0 vq0Var, org.telegram.ui.Components.au0 au0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.Components.ca caVar, hn0 hn0Var) {
-        super(contextThemeWrapper, vq0Var, au0Var, frameLayout, i6Var, caVar, hn0Var);
+    public bp0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, vq0 vq0Var, org.telegram.ui.Components.du0 du0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.Components.ca caVar, hn0 hn0Var) {
+        super(contextThemeWrapper, vq0Var, du0Var, frameLayout, h6Var, caVar, hn0Var);
         this.u1 = photoViewer;
         this.t1 = new Path();
     }
@@ -40,7 +40,7 @@ public final class bp0 extends org.telegram.ui.Components.yc {
         return uq0Var != null && uq0Var.l();
     }
 
-    @Override // hi.n
+    @Override // hi.o
     public final boolean e() {
         PhotoViewer photoViewer = this.u1;
         org.telegram.ui.Components.gc gcVar = photoViewer.n7;
@@ -50,12 +50,12 @@ public final class bp0 extends org.telegram.ui.Components.yc {
         return false;
     }
 
-    @Override // hi.n
+    @Override // hi.o
     public final boolean g() {
         return true;
     }
 
-    @Override // hi.n
+    @Override // hi.o
     public final void h(org.telegram.ui.Components.ga gaVar, Canvas canvas, RectF rectF, float f10, boolean z10, float f11, float f12, boolean z11) {
         canvas.save();
         Path path = this.t1;
@@ -68,7 +68,7 @@ public final class bp0 extends org.telegram.ui.Components.yc {
         } else {
             canvas.translate(f11, f12);
         }
-        photoViewer.N0(canvas, gaVar, org.telegram.ui.ActionBar.n6.r1(1.0f, z10 ? -8882056 : -14277082), org.telegram.ui.ActionBar.n6.r1(1.0f, z11 ? z10 ? 0 : 855638016 : 1140850688), false, !z10, !z10 && z11);
+        photoViewer.N0(canvas, gaVar, org.telegram.ui.ActionBar.m6.r1(1.0f, z10 ? -8882056 : -14277082), org.telegram.ui.ActionBar.m6.r1(1.0f, z11 ? z10 ? 0 : 855638016 : 1140850688), false, !z10, !z10 && z11);
         canvas.restore();
     }
 
@@ -81,12 +81,12 @@ public final class bp0 extends org.telegram.ui.Components.yc {
         super.invalidate();
     }
 
-    @Override // hi.n
+    @Override // hi.o
     public final boolean l(float f10, float f11) {
         return (this.p0 || this.u1.u4 == 0) ? false : true;
     }
 
-    @Override // hi.n
+    @Override // hi.o
     public final void w() {
         this.N.setReversed(true);
         this.N.getAdapter().c = false;
@@ -108,7 +108,7 @@ public final class bp0 extends org.telegram.ui.Components.yc {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.yc, hi.n
+    @Override // org.telegram.ui.Components.yc, hi.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -147,11 +147,11 @@ public final class bp0 extends org.telegram.ui.Components.yc {
         }
     }
 
-    @Override // hi.n
+    @Override // hi.o
     public final void y() {
-        hi.i iVar = this.N;
-        if (iVar != null) {
-            iVar.setTranslationY(getEditTextHeight());
+        hi.j jVar = this.N;
+        if (jVar != null) {
+            jVar.setTranslationY(getEditTextHeight());
         }
     }
 }

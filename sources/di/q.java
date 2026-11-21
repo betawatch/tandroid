@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class q extends EditTextBoldCursor {
     public final /* synthetic */ int M1;
@@ -17,7 +17,7 @@ public final class q extends EditTextBoldCursor {
         this.M1 = i7;
     }
 
-    @Override // org.telegram.ui.Components.pt, android.view.View
+    @Override // org.telegram.ui.Components.rt, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.M1) {
             case 1:
@@ -27,7 +27,7 @@ public final class q extends EditTextBoldCursor {
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.rt, android.view.View
     public void onDetachedFromWindow() {
         switch (this.M1) {
             case 0:

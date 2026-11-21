@@ -3,32 +3,32 @@ package zh;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.view.ViewGroup;
-import hi.r2;
+import hi.q2;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.mj0;
 import v4.f1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g extends bk0 {
+public final class g extends dk0 {
     public final /* synthetic */ l c;
 
     public g(l lVar) {
         this.c = lVar;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(f1 f1Var) {
         return f1Var.f == 0;
     }
@@ -96,7 +96,7 @@ public final class g extends bk0 {
         LongSparseArray longSparseArray = lVar.d;
         TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i11);
         boolean z10 = i11 != arrayList.size() - 1 || lVar.x;
-        n5 n5Var = g5Var.d;
+        m5 m5Var = g5Var.d;
         g5Var.e = tL_chatInviteImporter;
         g5Var.f = z10;
         g5Var.setWillNotDraw(!z10);
@@ -107,19 +107,19 @@ public final class g extends bk0 {
         g5Var.c.l(o10.q(user), false);
         String s5 = gd.s(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
-            n5Var.l(gd.M0(2131748877, null), false);
+            m5Var.l(gd.N0(2131748876, null), false);
             return;
         }
         long j3 = tL_chatInviteImporter.approved_by;
         if (j3 == 0) {
-            n5Var.l(gd.a0("RequestedToJoinAt", null, 2131745965, s5), false);
+            m5Var.l(gd.a0("RequestedToJoinAt", null, 2131745964, s5), false);
             return;
         }
         TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j3);
         if (user2 != null) {
-            n5Var.l(gd.a0("AddedBy", null, 2131754359, o10.k(user2, true), s5), false);
+            m5Var.l(gd.a0("AddedBy", null, 2131754358, o10.k(user2, true), s5), false);
         } else {
-            n5Var.l("", false);
+            m5Var.l("", false);
         }
     }
 
@@ -139,19 +139,19 @@ public final class g extends bk0 {
         } else if (i7 != 4) {
             view = new g5(viewGroup.getContext(), lVar, z10);
         } else {
-            h2 h2Var = lVar.g;
-            r2 r2Var = new r2(3, h2Var.getParentActivity(), h2Var.getResourceProvider());
+            g2 g2Var = lVar.g;
+            q2 q2Var = new q2(3, g2Var.getParentActivity(), g2Var.getResourceProvider());
             if (lVar.B) {
-                u6.h(n6.d6, r2Var, h2Var.getResourceProvider());
+                t6.h(m6.d6, q2Var, g2Var.getResourceProvider());
             }
-            r2Var.e(n6.d6, n6.a7, -1);
-            r2Var.setViewType(15);
-            r2Var.setMemberRequestButton(z10);
-            r2Var.setIsSingleCell(true);
-            r2Var.setItemsCount(1);
-            r2Var.setTag(-33024);
-            view = r2Var;
+            q2Var.e(m6.d6, m6.a7, -1);
+            q2Var.setViewType(15);
+            q2Var.setMemberRequestButton(z10);
+            q2Var.setIsSingleCell(true);
+            q2Var.setItemsCount(1);
+            q2Var.setTag(-33024);
+            view = q2Var;
         }
-        return new kj0(view);
+        return new mj0(view);
     }
 }

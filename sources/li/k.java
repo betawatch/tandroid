@@ -6,10 +6,10 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.lr;
 import org.telegram.messenger.v10;
 import org.telegram.messenger.w10;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.o41;
 import r0.l1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements v10, w10, r0.m, lr {
     public final /* synthetic */ p a;
@@ -26,8 +26,8 @@ public final /* synthetic */ class k implements v10, w10, r0.m, lr {
     }
 
     @Override // org.telegram.messenger.w10
-    public Boolean a(l41 l41Var, View view, Integer num, Float f10, Float f11) {
-        return Boolean.valueOf(p.Z(this.a, l41Var, view));
+    public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(p.Z(this.a, o41Var, view));
     }
 
     @Override // org.telegram.messenger.lr
@@ -39,6 +39,6 @@ public final /* synthetic */ class k implements v10, w10, r0.m, lr {
 
     @Override // org.telegram.messenger.v10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        p.a0(this.a, (l41) obj);
+        p.a0(this.a, (o41) obj);
     }
 }

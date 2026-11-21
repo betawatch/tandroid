@@ -36,9 +36,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bd0;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.jm;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.lm;
 import r0.a0;
 import r0.i0;
 import r0.j;
@@ -53,7 +53,7 @@ import u0.f;
 import u0.g;
 import u0.h;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements l {
     public static final float U = (float) (Math.log(0.78d) / Math.log(0.9d));
@@ -74,7 +74,7 @@ public class NestedScrollView extends FrameLayout implements l {
     public final j Q;
     public float R;
     public g S;
-    public final jm T;
+    public final lm T;
     public final float a;
     public long b;
     public final Rect c;
@@ -672,17 +672,17 @@ public class NestedScrollView extends FrameLayout implements l {
         }
         x(-((int) (getVerticalScrollFactorCompat() * f10)), i7, motionEvent, i10, 1, (motionEvent.getSource() & 8194) == 8194);
         if (i7 != 0) {
-            jm jmVar = this.T;
-            NestedScrollView nestedScrollView4 = (NestedScrollView) ((hn) jmVar.f).b;
-            int[] iArr = (int[]) jmVar.h;
+            lm lmVar = this.T;
+            NestedScrollView nestedScrollView4 = (NestedScrollView) ((jn) lmVar.f).b;
+            int[] iArr = (int[]) lmVar.h;
             int source = motionEvent.getSource();
             int deviceId = motionEvent.getDeviceId();
             int i15 = 1;
-            if (jmVar.c == source && jmVar.d == deviceId && jmVar.b == i7) {
+            if (lmVar.c == source && lmVar.d == deviceId && lmVar.b == i7) {
                 z10 = false;
                 i11 = 0;
             } else {
-                Context context = (Context) jmVar.e;
+                Context context = (Context) lmVar.e;
                 ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
                 int deviceId2 = motionEvent.getDeviceId();
                 i11 = 0;
@@ -726,24 +726,24 @@ public class NestedScrollView extends FrameLayout implements l {
                     i13 = Integer.MIN_VALUE;
                 }
                 iArr[1] = i13;
-                jmVar.c = source;
-                jmVar.d = deviceId;
-                jmVar.b = i7;
+                lmVar.c = source;
+                lmVar.d = deviceId;
+                lmVar.b = i7;
                 z10 = true;
             }
             if (iArr[i11] == Integer.MAX_VALUE) {
-                VelocityTracker velocityTracker = (VelocityTracker) jmVar.g;
+                VelocityTracker velocityTracker = (VelocityTracker) lmVar.g;
                 if (velocityTracker == null) {
                     return true;
                 }
                 velocityTracker.recycle();
-                jmVar.g = null;
+                lmVar.g = null;
                 return true;
             }
-            if (((VelocityTracker) jmVar.g) == null) {
-                jmVar.g = VelocityTracker.obtain();
+            if (((VelocityTracker) lmVar.g) == null) {
+                lmVar.g = VelocityTracker.obtain();
             }
-            VelocityTracker velocityTracker2 = (VelocityTracker) jmVar.g;
+            VelocityTracker velocityTracker2 = (VelocityTracker) lmVar.g;
             Map map = s.a;
             velocityTracker2.addMovement(motionEvent);
             int i17 = 20;
@@ -862,7 +862,7 @@ public class NestedScrollView extends FrameLayout implements l {
             }
             float f17 = f11 * (-nestedScrollView.getVerticalScrollFactorCompat());
             float signum = Math.signum(f17);
-            if (z10 || !(signum == Math.signum(jmVar.a) || signum == 0.0f)) {
+            if (z10 || !(signum == Math.signum(lmVar.a) || signum == 0.0f)) {
                 nestedScrollView2 = nestedScrollView;
                 nestedScrollView2.d.abortAnimation();
             } else {
@@ -877,7 +877,7 @@ public class NestedScrollView extends FrameLayout implements l {
                     nestedScrollView2.i((int) max);
                     f12 = max;
                 }
-                jmVar.a = f12;
+                lmVar.a = f12;
                 return true;
             }
         }
@@ -1101,7 +1101,7 @@ public class NestedScrollView extends FrameLayout implements l {
         super.onScrollChanged(i7, i10, i11, i12);
         g gVar = this.S;
         if (gVar != null) {
-            ((bd0) gVar).a.K0(!r1.u1);
+            ((cd0) gVar).a.K0(!r1.u1);
         }
     }
 
@@ -1728,7 +1728,7 @@ public class NestedScrollView extends FrameLayout implements l {
         this.J = -1;
         this.K = new int[2];
         this.L = new int[2];
-        this.T = new jm(getContext(), new hn(this, 21));
+        this.T = new lm(getContext(), new jn(this, 21));
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 31) {
             edgeEffect = c.a(context, attributeSet);

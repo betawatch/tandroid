@@ -5,17 +5,17 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class z7 extends ImageReceiver {
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 K1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 K1;
     public final /* synthetic */ a8 L1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z7(a8 a8Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public z7(a8 a8Var, org.telegram.ui.ActionBar.h6 h6Var) {
         super(null);
         this.L1 = a8Var;
-        this.K1 = i6Var;
+        this.K1 = h6Var;
     }
 
     @Override // org.telegram.messenger.ImageReceiver
@@ -26,12 +26,12 @@ public final class z7 extends ImageReceiver {
             int J0 = org.telegram.messenger.g0.J0(((BitmapDrawable) drawable).getBitmap());
             a8Var.L = J0;
             if (J0 == -1 || J0 == 0) {
-                int i11 = org.telegram.ui.ActionBar.n6.q5;
-                org.telegram.ui.ActionBar.i6 i6Var = this.K1;
-                a8Var.L = org.telegram.ui.ActionBar.n6.w0(i11, i6Var);
-                org.telegram.ui.ActionBar.u6.B(imageView, org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(12.0f), a8Var.L), org.telegram.ui.ActionBar.u6.M(i11), i6Var);
+                int i11 = org.telegram.ui.ActionBar.m6.q5;
+                org.telegram.ui.ActionBar.h6 h6Var = this.K1;
+                a8Var.L = org.telegram.ui.ActionBar.m6.w0(i11, h6Var);
+                org.telegram.ui.ActionBar.t6.B(imageView, org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(12.0f), a8Var.L), org.telegram.ui.ActionBar.t6.M(i11), h6Var);
             } else {
-                imageView.setBackground(org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(12.0f), a8Var.L));
+                imageView.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(12.0f), a8Var.L));
             }
             invalidate();
         }

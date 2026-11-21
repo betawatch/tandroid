@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ad1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ cd1 a;
@@ -23,7 +23,7 @@ public final class ad1 extends org.telegram.ui.ActionBar.j {
             }
         } else if (fjVar != null) {
             fjVar.k.with_my_score = false;
-            cd1Var.showDialog(org.telegram.ui.Components.yo0.O0(cd1Var.getParentActivity(), fjVar, null, false, cd1Var.h));
+            cd1Var.showDialog(org.telegram.ui.Components.ap0.O0(cd1Var.getParentActivity(), fjVar, null, false, cd1Var.h));
         }
     }
 }

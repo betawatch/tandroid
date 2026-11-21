@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ao implements x10 {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class ao implements x10 {
                 if (mpVar.n8 != messages_availableeffects) {
                     mpVar.n8 = messages_availableeffects;
                     if (messages_availableeffects != null) {
-                        org.telegram.ui.Components.o5.g(mpVar.currentAccount).f(mpVar.n8.documents);
+                        org.telegram.ui.Components.p5.g(mpVar.currentAccount).f(mpVar.n8.documents);
                     }
                     mpVar.getNotificationCenter().k(ks.w3, new Object[0]);
                 }

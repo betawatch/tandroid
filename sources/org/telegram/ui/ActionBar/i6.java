@@ -1,31 +1,53 @@
 package org.telegram.ui.ActionBar;
 
+import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public interface i6 {
-    boolean d();
+public final class i6 extends Drawable {
+    public float[] b;
+    public Path a = new Path();
+    public boolean c = true;
 
-    void e(float f10, float f11, int i7, int i10);
+    public i6(float f10, float f11) {
+        this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
+        float L = org.telegram.messenger.g0.L(f10);
+        float L2 = org.telegram.messenger.g0.L(f11);
+    }
 
-    ColorFilter f();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Path path = this.a;
+        if (this.c) {
+            this.c = false;
+            path.reset();
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(getBounds());
+            path.addRoundRect(rectF, this.b, Path.Direction.CW);
+        }
+        canvas.drawPath(path, m6.z);
+    }
 
-    Paint g(String str);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
 
-    Drawable getDrawable(String str);
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.c = true;
+    }
 
-    boolean h();
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
 
-    int i(int i7);
-
-    boolean j();
-
-    int k(int i7);
-
-    void l(int i7, int i10);
-
-    int m(int i7);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+    }
 }

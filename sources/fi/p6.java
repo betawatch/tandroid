@@ -31,12 +31,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class p6 {
     public static final Comparator X = Comparator$-CC.comparingInt(new bg.d(8));
     public TL_stories.TL_storiesStealthMode B;
-    public final ai.w0 K;
+    public final ai.y0 K;
     public int N;
     public boolean R;
     public j6 S;
@@ -118,8 +118,8 @@ public final class p6 {
         }
         this.B = tL_storiesStealthMode;
         c7 c7Var2 = this.k;
-        c7Var2.b.a.c(new a6(10, c7Var2, new o5(this, 1)));
-        this.K = new ai.w0(this, i7, 8);
+        c7Var2.b.a.c(new l4(12, c7Var2, new p5(this, 1)));
+        this.K = new ai.y0(this, i7, 8);
         this.w = new hi.b1(i7);
     }
 
@@ -279,7 +279,7 @@ public final class p6 {
             if (h6Var != null || !z10) {
                 return h6Var;
             }
-            h6 h6Var2 = new h6(this.a, j3, i7, i10, new o5(this, 0));
+            h6 h6Var2 = new h6(this.a, j3, i7, i10, new p5(this, 0));
             hashMap3.put(Integer.valueOf(i10), h6Var2);
             return h6Var2;
         }
@@ -294,13 +294,13 @@ public final class p6 {
         if (i7 == 4) {
             HashMap hashMap4 = hashMapArr[i7];
             Long valueOf2 = Long.valueOf(j3);
-            z5 z5Var = new z5(this.a, j3, null, new o5(this, 0));
-            hashMap4.put(valueOf2, z5Var);
-            return z5Var;
+            a6 a6Var = new a6(this.a, j3, null, new p5(this, 0));
+            hashMap4.put(valueOf2, a6Var);
+            return a6Var;
         }
         HashMap hashMap5 = hashMapArr[i7];
         Long valueOf3 = Long.valueOf(j3);
-        h6 h6Var4 = new h6(this.a, j3, i7, i10, new o5(this, 0));
+        h6 h6Var4 = new h6(this.a, j3, i7, i10, new p5(this, 0));
         hashMap5.put(valueOf3, h6Var4);
         return h6Var4;
     }
@@ -471,7 +471,7 @@ public final class p6 {
         TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
         int i7 = this.a;
         tL_stories_getPeerStories.peer = mp.u1(i7).l1(j3);
-        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_getPeerStories, new r5(this, j3, 0));
+        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_getPeerStories, new s5(this, j3, 0));
     }
 
     public final void S() {
@@ -483,7 +483,7 @@ public final class p6 {
         tL_contacts_getBlocked.my_stories_from = true;
         tL_contacts_getBlocked.offset = this.L.size();
         tL_contacts_getBlocked.limit = 25;
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_contacts_getBlocked, new n5(this, 2));
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_contacts_getBlocked, new o5(this, 2));
     }
 
     public final void T(boolean z10) {
@@ -510,7 +510,7 @@ public final class p6 {
                 tL_stories_getAllStories.next = true;
             }
             tL_stories_getAllStories.include_hidden = z10;
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_stories_getAllStories, new v5(this, z10, tL_stories_getAllStories, z11));
+            ConnectionsManager.getInstance(this.a).sendRequest(tL_stories_getAllStories, new w5(this, z10, tL_stories_getAllStories, z11));
         }
     }
 
@@ -519,7 +519,7 @@ public final class p6 {
             return;
         }
         this.U = true;
-        ConnectionsManager.getInstance(this.a).sendRequest(new TL_stories.TL_stories_getChatsToSend(), new n5(this, 1));
+        ConnectionsManager.getInstance(this.a).sendRequest(new TL_stories.TL_stories_getChatsToSend(), new o5(this, 1));
     }
 
     public final void V(final TL_stories.PeerStories peerStories, final boolean z10) {
@@ -551,10 +551,10 @@ public final class p6 {
             tL_stories_getStoriesByID.id = arrayList;
             int i10 = this.a;
             tL_stories_getStoriesByID.peer = mp.u1(i10).l1(o4);
-            ConnectionsManager.getInstance(i10).sendRequest(tL_stories_getStoriesByID, new RequestDelegate() { // from class: fi.q5
+            ConnectionsManager.getInstance(i10).sendRequest(tL_stories_getStoriesByID, new RequestDelegate() { // from class: fi.r5
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    org.telegram.messenger.g0.g3(new t5(p6.this, j3, z10, peerStories, o4, tLObject));
+                    org.telegram.messenger.g0.g3(new u5(p6.this, j3, z10, peerStories, o4, tLObject));
                 }
             });
         }
@@ -563,9 +563,9 @@ public final class p6 {
     public final void W() {
         if (this.A) {
             this.n = true;
-            o5 o5Var = new o5(this, 2);
+            p5 p5Var = new p5(this, 2);
             c7 c7Var = this.k;
-            c7Var.b.a.c(new a6(7, c7Var, o5Var));
+            c7Var.b.a.c(new l4(9, c7Var, p5Var));
         } else {
             T(false);
             T(true);
@@ -574,7 +574,7 @@ public final class p6 {
     }
 
     public final void X(int i7, long j3) {
-        org.telegram.messenger.g0.g3(new di.b9(this, j3, i7, 1));
+        org.telegram.messenger.g0.g3(new di.c9(this, j3, i7, 1));
     }
 
     public final boolean Y(TL_stories.PeerStories peerStories, TL_stories.StoryItem storyItem, boolean z10) {
@@ -635,9 +635,9 @@ public final class p6 {
                                 org.telegram.messenger.w7.G(i7).W(tL_availableReaction.select_animation, d, 0, 0);
                             }
                         } else {
-                            org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(1, i7, d.g);
-                            o5Var.m = true;
-                            o5Var.u();
+                            org.telegram.ui.Components.p5 p5Var = new org.telegram.ui.Components.p5(1, i7, d.g);
+                            p5Var.m = true;
+                            p5Var.u();
                         }
                     }
                 }
@@ -802,13 +802,13 @@ public final class p6 {
         }
         if (!z11) {
             ArrayList<TL_stories.PeerStories> arrayList4 = tL_stories_allStories.peer_stories;
-            ai.o oVar = new ai.o(15);
+            ai.n nVar = new ai.n(15);
             c7 c7Var = this.k;
-            c7Var.b.a.c(new p5(c7Var, arrayList4, z12, z10, oVar, 1));
+            c7Var.b.a.c(new q5(c7Var, arrayList4, z12, z10, nVar, 1));
         }
-        ai.w0 w0Var = this.K;
-        org.telegram.messenger.g0.r(w0Var);
-        w0Var.run();
+        ai.y0 y0Var = this.K;
+        org.telegram.messenger.g0.r(y0Var);
+        y0Var.run();
     }
 
     public final void c(int i7, long j3, TL_stories.StoryItem storyItem) {
@@ -831,13 +831,13 @@ public final class p6 {
         if (o4 > 0) {
             user = mp.u1(this.a).c2(Long.valueOf(o4));
             if (user != null && (O(user) || user.self)) {
-                c7Var.b.a.c(new a6(8, c7Var, tL_updateStory));
+                c7Var.b.a.c(new l4(10, c7Var, tL_updateStory));
             }
         } else {
-            c7Var.b.a.c(new a6(8, c7Var, tL_updateStory));
+            c7Var.b.a.c(new l4(10, c7Var, tL_updateStory));
             user = null;
         }
-        org.telegram.messenger.g0.g3(new di.i2(this, o4, tL_updateStory, user, 7));
+        org.telegram.messenger.g0.g3(new di.j2(this, o4, tL_updateStory, user, 7));
     }
 
     public final void d(long j3, o6 o6Var, a0.h hVar, boolean z10) {
@@ -1057,7 +1057,7 @@ public final class p6 {
         tL_stories_getStoriesByID.id.add(Integer.valueOf(i7));
         int i11 = this.a;
         tL_stories_getStoriesByID.peer = mp.u1(i11).l1(j3);
-        ConnectionsManager.getInstance(i11).sendRequest(tL_stories_getStoriesByID, new x5(this, j10, x10Var));
+        ConnectionsManager.getInstance(i11).sendRequest(tL_stories_getStoriesByID, new y5(this, j10, x10Var));
     }
 
     public final boolean h(long j3) {
@@ -1139,14 +1139,14 @@ public final class p6 {
             storyItem.sent_reaction = tL_reactionEmoji;
         }
         s0(j3, storyItem, false);
-        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_sendReaction, new k5(1));
+        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_sendReaction, new l5(1));
     }
 
-    public final void k(long j3, x10 x10Var, boolean z10, org.telegram.ui.ActionBar.i6 i6Var) {
+    public final void k(long j3, x10 x10Var, boolean z10, org.telegram.ui.ActionBar.h6 h6Var) {
         TL_stories.TL_stories_canSendStory tL_stories_canSendStory = new TL_stories.TL_stories_canSendStory();
         int i7 = this.a;
         tL_stories_canSendStory.peer = mp.u1(i7).l1(j3);
-        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_canSendStory, new di.j(this, z10, j3, x10Var, i6Var), 1024);
+        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_canSendStory, new di.j(this, z10, j3, x10Var, h6Var), 1024);
     }
 
     public final void l(ArrayList arrayList) {
@@ -1207,9 +1207,9 @@ public final class p6 {
             while (true) {
                 if (i10 >= arrayList2.size()) {
                     arrayList2.add(0, peerStories);
-                    ai.w0 w0Var = this.K;
-                    org.telegram.messenger.g0.r(w0Var);
-                    w0Var.run();
+                    ai.y0 y0Var = this.K;
+                    org.telegram.messenger.g0.r(y0Var);
+                    y0Var.run();
                     break;
                 }
                 if (org.telegram.messenger.n5.o(((TL_stories.PeerStories) arrayList2.get(i10)).peer) == j3) {
@@ -1237,7 +1237,7 @@ public final class p6 {
             TL_stories.TL_stories_togglePeerStoriesHidden tL_stories_togglePeerStoriesHidden = new TL_stories.TL_stories_togglePeerStoriesHidden();
             tL_stories_togglePeerStoriesHidden.peer = mp.u1(i11).l1(j3);
             tL_stories_togglePeerStoriesHidden.hidden = z10;
-            ConnectionsManager.getInstance(i11).sendRequest(tL_stories_togglePeerStoriesHidden, new k5(1));
+            ConnectionsManager.getInstance(i11).sendRequest(tL_stories_togglePeerStoriesHidden, new l5(1));
         }
     }
 
@@ -1390,7 +1390,7 @@ public final class p6 {
         }
         TL_stories.TL_stories_canSendStory tL_stories_canSendStory = new TL_stories.TL_stories_canSendStory();
         tL_stories_canSendStory.peer = mp.u1(i7).l1(j10.i(i7).e());
-        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_canSendStory, new n5(this, 5), 1024);
+        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_canSendStory, new o5(this, 5), 1024);
         return null;
     }
 
@@ -1519,7 +1519,7 @@ public final class p6 {
         if (this.s) {
             return;
         }
-        ConnectionsManager.getInstance(this.a).sendRequest(new TL_stories.TL_stories_getAllReadPeerStories(), new n5(this, 0));
+        ConnectionsManager.getInstance(this.a).sendRequest(new TL_stories.TL_stories_getAllReadPeerStories(), new o5(this, 0));
     }
 
     public final void q0(long j3, List list, boolean z10) {
@@ -1574,7 +1574,7 @@ public final class p6 {
         TL_stories.TL_createAlbum tL_createAlbum = new TL_stories.TL_createAlbum();
         tL_createAlbum.peer = mp.u1(i7).l1(B.b);
         tL_createAlbum.title = str;
-        ConnectionsManager.getInstance(i7).sendRequest(tL_createAlbum, new bi.k1(13, B, x10Var));
+        ConnectionsManager.getInstance(i7).sendRequest(tL_createAlbum, new bi.o1(13, B, x10Var));
     }
 
     public final void r0(long j3, ArrayList arrayList, boolean z10, w2 w2Var) {
@@ -1654,11 +1654,11 @@ public final class p6 {
                 }
             }
         }
-        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_deleteStories, new n5(this, 3));
+        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_deleteStories, new o5(this, 3));
         n0(j3, arrayList);
         ArrayList<Integer> arrayList2 = tL_stories_deleteStories.id;
         c7 c7Var = this.k;
-        c7Var.b.a.c(new bi.m2(c7Var, arrayList2, j3, 9));
+        c7Var.b.a.c(new bi.q2(c7Var, arrayList2, j3, 9));
         ks.f(i7).k(ks.y5, new Object[0]);
     }
 

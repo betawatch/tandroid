@@ -12,9 +12,9 @@ import org.telegram.messenger.fc;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class q8 {
     public int[] A;
@@ -75,7 +75,7 @@ public final class q8 {
     public int[] z;
 
     public q8(r8 r8Var, TL_wallet.nftItem nftitem) {
-        org.telegram.ui.ActionBar.h2 h2Var = r8Var.a;
+        org.telegram.ui.ActionBar.g2 g2Var = r8Var.a;
         this.d0 = r8Var;
         this.c = new fi.s2(this, r8Var, 6);
         this.d = new ImageReceiver(r8Var.N);
@@ -132,8 +132,8 @@ public final class q8 {
         fi.s2 s2Var = this.c;
         s2Var.h1 = h3Var;
         this.d.h1 = h3Var;
-        s2Var.d = h2Var.getCurrentAccount();
-        this.d.d = h2Var.getCurrentAccount();
+        s2Var.d = g2Var.getCurrentAccount();
+        this.d.d = g2Var.getCurrentAccount();
         fi.s2 s2Var2 = this.c;
         s2Var2.v0 = false;
         s2Var2.W(1);
@@ -152,7 +152,7 @@ public final class q8 {
         if (n10 == null || n10.isRecycled()) {
             return this.u;
         }
-        mh0 B = s2Var.B();
+        oh0 B = s2Var.B();
         int i7 = B == null ? 0 : B.b0;
         Bitmap bitmap = this.v;
         if (bitmap != null && this.G == n10 && this.E == i7) {

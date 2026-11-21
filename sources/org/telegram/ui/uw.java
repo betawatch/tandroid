@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uw implements Runnable {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final /* synthetic */ class uw implements Runnable {
                 vw vwVar = this.b;
                 cx cxVar = vwVar.o0;
                 Context context = vwVar.getContext();
-                i7 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
-                cxVar.showDialog(new ug.l0(3, i7, context, cxVar, null));
+                i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
+                cxVar.showDialog(new ug.k0(3, i7, context, cxVar, null));
                 break;
             default:
                 cx cxVar2 = this.b.o0;

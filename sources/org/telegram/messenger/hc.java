@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class hc {
     public String a;
@@ -41,10 +41,10 @@ public final class hc {
             } else {
                 Drawable drawable = this.d;
                 if (drawable != null) {
-                    if (drawable instanceof mh0) {
-                        ((mh0) drawable).C(false);
-                    } else if (drawable instanceof org.telegram.ui.Components.b6) {
-                        ((org.telegram.ui.Components.b6) drawable).u();
+                    if (drawable instanceof oh0) {
+                        ((oh0) drawable).C(false);
+                    } else if (drawable instanceof org.telegram.ui.Components.c6) {
+                        ((org.telegram.ui.Components.c6) drawable).u();
                     } else if (drawable instanceof BitmapDrawable) {
                         ((BitmapDrawable) drawable).getBitmap().recycle();
                     }

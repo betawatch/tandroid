@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class f9 implements te.f, we.a {
     public final ImageReceiver a;
@@ -17,7 +17,7 @@ public final class f9 implements te.f, we.a {
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.a = imageReceiver;
         imageReceiver.J0(g9Var.e / 2);
-        b9 b9Var = new b9((org.telegram.ui.ActionBar.i6) null);
+        b9 b9Var = new b9((org.telegram.ui.ActionBar.h6) null);
         this.b = b9Var;
         b9Var.u(org.telegram.messenger.g0.L(22.0f));
     }

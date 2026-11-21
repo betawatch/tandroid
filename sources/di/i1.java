@@ -13,9 +13,9 @@ import org.telegram.messenger.q10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.a70;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -112,7 +112,7 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                     f6Var.b2();
                     break;
                 } else {
-                    org.telegram.messenger.f3.n(null, 2131749816, f6Var.k(), R.raw.info, 36);
+                    org.telegram.messenger.f3.n(null, 2131749815, f6Var.k(), R.raw.info, 36);
                     break;
                 }
                 break;
@@ -158,11 +158,11 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 break;
             case 23:
                 if (view.getAlpha() >= 1.0f) {
-                    hi.d dVar = f6Var.g2;
-                    dVar.i(gd.M0(2131749771, null), true, true);
-                    dVar.g(null, true);
-                    dVar.setOnClickListener(new p3(f6Var, 4));
-                    f6Var.b2.i(3, gd.M0(2131749763, null), gd.M0(2131749764, null), null);
+                    hi.e eVar = f6Var.g2;
+                    eVar.i(gd.N0(2131749770, null), true, true);
+                    eVar.g(null, true);
+                    eVar.setOnClickListener(new p3(f6Var, 4));
+                    f6Var.b2.i(3, gd.N0(2131749762, null), gd.N0(2131749763, null), null);
                     f6Var.H2(3, true, null);
                     break;
                 }
@@ -211,14 +211,14 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 TL_stars.TL_starGiftUnique M13 = f6Var.M1();
                 n4 n4Var = f6Var.U1;
                 n4Var.getLocationInWindow(new int[2]);
-                y60 G = y60.G(n4Var, f6Var.J0, view);
-                boolean z15 = (f6Var.M1() == null || !f6.S1(f6Var.a, org.telegram.messenger.n5.o(f6Var.M1().owner_id)) || !(f6Var.C2 instanceof o8) || f6Var.B2 == null || f6Var.G1() == null) ? false : true;
+                a70 G = a70.G(n4Var, f6Var.J0, view);
+                boolean z15 = (f6Var.M1() == null || !f6.S1(f6Var.a, org.telegram.messenger.n5.o(f6Var.M1().owner_id)) || !(f6Var.C2 instanceof p8) || f6Var.B2 == null || f6Var.G1() == null) ? false : true;
                 TL_stars.SavedStarGift savedStarGift = f6Var.B2;
-                G.l((savedStarGift == null || !savedStarGift.pinned_to_top) ? R.drawable.msg_pin : R.drawable.msg_unpin, gd.M0((savedStarGift == null || !savedStarGift.pinned_to_top) ? 2131750062 : 2131749868, null), new k1(f6Var, 18), z15);
-                G.l(R.drawable.outline_craft, gd.M0(2131749785, null), new k1(f6Var, 25), f6Var.r1());
-                G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 26), (f6Var.M1() == null || !f6.S1(f6Var.a, org.telegram.messenger.n5.o(f6Var.M1().owner_id)) || f6Var.M1().resell_amount == null || bi.u4.u(f6Var.M1())) ? false : true);
-                G.l(R.drawable.msg_link, gd.M0(2131751751, null), new h3(f6Var, H1, 7), H1 != null);
-                G.l(R.drawable.msg_share, gd.M0(2131745264, null), new k1(f6Var, 27), H1 != null);
+                G.l((savedStarGift == null || !savedStarGift.pinned_to_top) ? R.drawable.msg_pin : R.drawable.msg_unpin, gd.N0((savedStarGift == null || !savedStarGift.pinned_to_top) ? 2131750061 : 2131749867, null), new k1(f6Var, 18), z15);
+                G.l(R.drawable.outline_craft, gd.N0(2131749784, null), new k1(f6Var, 25), f6Var.r1());
+                G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 26), (f6Var.M1() == null || !f6.S1(f6Var.a, org.telegram.messenger.n5.o(f6Var.M1().owner_id)) || f6Var.M1().resell_amount == null || bi.y4.u(f6Var.M1())) ? false : true);
+                G.l(R.drawable.msg_link, gd.N0(2131751750, null), new h3(f6Var, H1, 7), H1 != null);
+                G.l(R.drawable.msg_share, gd.N0(2131745263, null), new k1(f6Var, 27), H1 != null);
                 if (f6Var.e3 == null) {
                     int i12 = f6Var.a;
                     TL_stars.TL_starGiftUnique M14 = f6Var.M1();
@@ -233,27 +233,27 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                             j3 = 0;
                         }
                         objArr = false;
-                        HashMap hashMap = bi.e4.a;
+                        HashMap hashMap = bi.i4.a;
                         if (M14 != null && !TextUtils.isEmpty(M14.gift_address) && !TextUtils.isEmpty(M14.owner_address) && !TextUtils.isEmpty(M14.slug) && objArr == false && M14.offer_min_amount > j3 && (((arrayList = M14.resell_amount) == null || arrayList.isEmpty()) && ((org.telegram.messenger.h0) mp.u1(i12).A7.p0.b).c)) {
                             o10 = org.telegram.messenger.n5.o(M14.owner_id);
                             if ((o10 != j3 || o10 != j10.i(i12).e()) && (TextUtils.isEmpty(M14.owner_address) || (y10 = org.telegram.ui.Wallet.u0.D(i12).y()) == null || !org.telegram.ui.Wallet.u0.c(M14.owner_address, y10))) {
                                 z10 = true;
-                                G.l(R.drawable.input_suggest_paid_24, gd.M0(2131749670, null), new k1(f6Var, 28), z10);
+                                G.l(R.drawable.input_suggest_paid_24, gd.N0(2131749669, null), new k1(f6Var, 28), z10);
                                 if (f6Var.e3 == null) {
-                                    HashMap hashMap2 = bi.e4.a;
+                                    HashMap hashMap2 = bi.i4.a;
                                     if (M13 != null && TextUtils.isEmpty(M13.owner_address) && M13.offer_min_stars > 0 && M13.owner_id != null) {
                                         z11 = true;
-                                        G.l(R.drawable.input_suggest_paid_24, gd.M0(2131749670, null), new k1(f6Var, 29), z11);
+                                        G.l(R.drawable.input_suggest_paid_24, gd.N0(2131749669, null), new k1(f6Var, 29), z11);
                                         M1 = f6Var.M1();
                                         if (M1 != null && M1.theme_available) {
                                             o4 = org.telegram.messenger.n5.o(M1.owner_id);
                                             long o11 = org.telegram.messenger.n5.o(M1.host_id);
                                             if ((o4 > j3 && f6.S1(f6Var.a, o4)) || (o11 > j3 && f6.S1(f6Var.a, o11))) {
                                                 z12 = true;
-                                                G.l(R.drawable.msg_colors, gd.M0(2131749421, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
+                                                G.l(R.drawable.msg_colors, gd.N0(2131749420, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
                                                 boolean z16 = f6Var.b3 != null && f6Var.A2 && f6Var.B2 != null && f6.R1(f6Var.a, f6Var.T1);
                                                 TL_stars.SavedStarGift savedStarGift2 = f6Var.B2;
-                                                G.l((savedStarGift2 != null || savedStarGift2.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.M0((savedStarGift2 != null || savedStarGift2.unsaved) ? 2131749964 : 2131750172, null), new k1(f6Var, 8), z16);
+                                                G.l((savedStarGift2 != null || savedStarGift2.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.N0((savedStarGift2 != null || savedStarGift2.unsaved) ? 2131749963 : 2131750171, null), new k1(f6Var, 8), z16);
                                                 if (f6Var.b3 == null) {
                                                     if (f6Var.G1() != null) {
                                                         fj fjVar = f6Var.D2;
@@ -266,15 +266,15 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                                                                     if (starGift instanceof TL_stars.TL_starGiftUnique) {
                                                                         tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift;
                                                                         S1 = f6.S1(f6Var.a, org.telegram.messenger.n5.o(tL_starGiftUnique.owner_id));
-                                                                        if (S1 && !bi.u4.m(M13)) {
+                                                                        if (S1 && !bi.y4.m(M13)) {
                                                                             z13 = true;
-                                                                            G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                                                                            G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                                                                            G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                                                                            G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                                                                            G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                                                                            G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                                                                            G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                                                                            G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                                                                            G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                                                                            G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                                                                            G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                                                                            G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                                                                            G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                                                                            G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                                                                             G.t = false;
                                                                             G.b0 = true;
                                                                             G.s = 0;
@@ -294,13 +294,13 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                                                                 S1 = f6.S1(f6Var.a, org.telegram.messenger.n5.o(tL_starGiftUnique.owner_id));
                                                                 if (S1) {
                                                                     z13 = true;
-                                                                    G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                                                                    G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                                                                    G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                                                                    G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                                                                    G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                                                                    G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                                                                    G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                                                                    G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                                                                    G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                                                                    G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                                                                    G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                                                                    G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                                                                    G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                                                                    G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                                                                     G.t = false;
                                                                     G.b0 = true;
                                                                     G.s = 0;
@@ -317,13 +317,13 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                                                     }
                                                 }
                                                 z13 = false;
-                                                G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                                                G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                                                G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                                                G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                                                G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                                                G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                                                G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                                                G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                                                G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                                                G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                                                G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                                                G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                                                G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                                                G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                                                 G.t = false;
                                                 G.b0 = true;
                                                 G.s = 0;
@@ -332,21 +332,21 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                                             }
                                         }
                                         z12 = false;
-                                        G.l(R.drawable.msg_colors, gd.M0(2131749421, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
+                                        G.l(R.drawable.msg_colors, gd.N0(2131749420, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
                                         if (f6Var.b3 != null) {
                                         }
                                         TL_stars.SavedStarGift savedStarGift22 = f6Var.B2;
-                                        G.l((savedStarGift22 != null || savedStarGift22.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.M0((savedStarGift22 != null || savedStarGift22.unsaved) ? 2131749964 : 2131750172, null), new k1(f6Var, 8), z16);
+                                        G.l((savedStarGift22 != null || savedStarGift22.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.N0((savedStarGift22 != null || savedStarGift22.unsaved) ? 2131749963 : 2131750171, null), new k1(f6Var, 8), z16);
                                         if (f6Var.b3 == null) {
                                         }
                                         z13 = false;
-                                        G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                                        G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                                        G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                                        G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                                        G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                                        G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                                        G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                                        G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                                        G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                                        G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                                        G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                                        G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                                        G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                                        G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                                         G.t = false;
                                         G.b0 = true;
                                         G.s = 0;
@@ -355,28 +355,28 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                                     }
                                 }
                                 z11 = false;
-                                G.l(R.drawable.input_suggest_paid_24, gd.M0(2131749670, null), new k1(f6Var, 29), z11);
+                                G.l(R.drawable.input_suggest_paid_24, gd.N0(2131749669, null), new k1(f6Var, 29), z11);
                                 M1 = f6Var.M1();
                                 if (M1 != null) {
                                     o4 = org.telegram.messenger.n5.o(M1.owner_id);
                                     long o112 = org.telegram.messenger.n5.o(M1.host_id);
                                     if (o4 > j3) {
                                         z12 = true;
-                                        G.l(R.drawable.msg_colors, gd.M0(2131749421, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
+                                        G.l(R.drawable.msg_colors, gd.N0(2131749420, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
                                         if (f6Var.b3 != null) {
                                         }
                                         TL_stars.SavedStarGift savedStarGift222 = f6Var.B2;
-                                        G.l((savedStarGift222 != null || savedStarGift222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.M0((savedStarGift222 != null || savedStarGift222.unsaved) ? 2131749964 : 2131750172, null), new k1(f6Var, 8), z16);
+                                        G.l((savedStarGift222 != null || savedStarGift222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.N0((savedStarGift222 != null || savedStarGift222.unsaved) ? 2131749963 : 2131750171, null), new k1(f6Var, 8), z16);
                                         if (f6Var.b3 == null) {
                                         }
                                         z13 = false;
-                                        G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                                        G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                                        G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                                        G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                                        G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                                        G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                                        G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                                        G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                                        G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                                        G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                                        G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                                        G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                                        G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                                        G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                                         G.t = false;
                                         G.b0 = true;
                                         G.s = 0;
@@ -384,21 +384,21 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                                         f6Var.I0(view, G, false);
                                     }
                                     z12 = true;
-                                    G.l(R.drawable.msg_colors, gd.M0(2131749421, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
+                                    G.l(R.drawable.msg_colors, gd.N0(2131749420, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
                                     if (f6Var.b3 != null) {
                                     }
                                     TL_stars.SavedStarGift savedStarGift2222 = f6Var.B2;
-                                    G.l((savedStarGift2222 != null || savedStarGift2222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.M0((savedStarGift2222 != null || savedStarGift2222.unsaved) ? 2131749964 : 2131750172, null), new k1(f6Var, 8), z16);
+                                    G.l((savedStarGift2222 != null || savedStarGift2222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.N0((savedStarGift2222 != null || savedStarGift2222.unsaved) ? 2131749963 : 2131750171, null), new k1(f6Var, 8), z16);
                                     if (f6Var.b3 == null) {
                                     }
                                     z13 = false;
-                                    G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                                    G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                                    G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                                    G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                                    G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                                    G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                                    G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                                    G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                                    G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                                    G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                                    G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                                    G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                                    G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                                    G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                                     G.t = false;
                                     G.b0 = true;
                                     G.s = 0;
@@ -406,21 +406,21 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                                     f6Var.I0(view, G, false);
                                 }
                                 z12 = false;
-                                G.l(R.drawable.msg_colors, gd.M0(2131749421, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
+                                G.l(R.drawable.msg_colors, gd.N0(2131749420, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
                                 if (f6Var.b3 != null) {
                                 }
                                 TL_stars.SavedStarGift savedStarGift22222 = f6Var.B2;
-                                G.l((savedStarGift22222 != null || savedStarGift22222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.M0((savedStarGift22222 != null || savedStarGift22222.unsaved) ? 2131749964 : 2131750172, null), new k1(f6Var, 8), z16);
+                                G.l((savedStarGift22222 != null || savedStarGift22222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.N0((savedStarGift22222 != null || savedStarGift22222.unsaved) ? 2131749963 : 2131750171, null), new k1(f6Var, 8), z16);
                                 if (f6Var.b3 == null) {
                                 }
                                 z13 = false;
-                                G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                                G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                                G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                                G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                                G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                                G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                                G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                                G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                                G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                                G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                                G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                                G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                                G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                                G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                                 G.t = false;
                                 G.b0 = true;
                                 G.s = 0;
@@ -430,36 +430,36 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                         }
                     }
                     objArr = true;
-                    HashMap hashMap3 = bi.e4.a;
+                    HashMap hashMap3 = bi.i4.a;
                     if (M14 != null) {
                         o10 = org.telegram.messenger.n5.o(M14.owner_id);
                         if (o10 != j3) {
                         }
                         z10 = true;
-                        G.l(R.drawable.input_suggest_paid_24, gd.M0(2131749670, null), new k1(f6Var, 28), z10);
+                        G.l(R.drawable.input_suggest_paid_24, gd.N0(2131749669, null), new k1(f6Var, 28), z10);
                         if (f6Var.e3 == null) {
                         }
                         z11 = false;
-                        G.l(R.drawable.input_suggest_paid_24, gd.M0(2131749670, null), new k1(f6Var, 29), z11);
+                        G.l(R.drawable.input_suggest_paid_24, gd.N0(2131749669, null), new k1(f6Var, 29), z11);
                         M1 = f6Var.M1();
                         if (M1 != null) {
                         }
                         z12 = false;
-                        G.l(R.drawable.msg_colors, gd.M0(2131749421, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
+                        G.l(R.drawable.msg_colors, gd.N0(2131749420, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
                         if (f6Var.b3 != null) {
                         }
                         TL_stars.SavedStarGift savedStarGift222222 = f6Var.B2;
-                        G.l((savedStarGift222222 != null || savedStarGift222222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.M0((savedStarGift222222 != null || savedStarGift222222.unsaved) ? 2131749964 : 2131750172, null), new k1(f6Var, 8), z16);
+                        G.l((savedStarGift222222 != null || savedStarGift222222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.N0((savedStarGift222222 != null || savedStarGift222222.unsaved) ? 2131749963 : 2131750171, null), new k1(f6Var, 8), z16);
                         if (f6Var.b3 == null) {
                         }
                         z13 = false;
-                        G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                        G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                        G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                        G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                        G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                        G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                        G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                        G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                        G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                        G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                        G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                        G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                        G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                        G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                         G.t = false;
                         G.b0 = true;
                         G.s = 0;
@@ -470,30 +470,30 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                     j3 = 0;
                 }
                 z10 = false;
-                G.l(R.drawable.input_suggest_paid_24, gd.M0(2131749670, null), new k1(f6Var, 28), z10);
+                G.l(R.drawable.input_suggest_paid_24, gd.N0(2131749669, null), new k1(f6Var, 28), z10);
                 if (f6Var.e3 == null) {
                 }
                 z11 = false;
-                G.l(R.drawable.input_suggest_paid_24, gd.M0(2131749670, null), new k1(f6Var, 29), z11);
+                G.l(R.drawable.input_suggest_paid_24, gd.N0(2131749669, null), new k1(f6Var, 29), z11);
                 M1 = f6Var.M1();
                 if (M1 != null) {
                 }
                 z12 = false;
-                G.l(R.drawable.msg_colors, gd.M0(2131749421, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
+                G.l(R.drawable.msg_colors, gd.N0(2131749420, null), new r3(f6Var, objArr2 == true ? 1 : 0), z12);
                 if (f6Var.b3 != null) {
                 }
                 TL_stars.SavedStarGift savedStarGift2222222 = f6Var.B2;
-                G.l((savedStarGift2222222 != null || savedStarGift2222222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.M0((savedStarGift2222222 != null || savedStarGift2222222.unsaved) ? 2131749964 : 2131750172, null), new k1(f6Var, 8), z16);
+                G.l((savedStarGift2222222 != null || savedStarGift2222222.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, gd.N0((savedStarGift2222222 != null || savedStarGift2222222.unsaved) ? 2131749963 : 2131750171, null), new k1(f6Var, 8), z16);
                 if (f6Var.b3 == null) {
                 }
                 z13 = false;
-                G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new r3(f6Var, i10), z13);
-                G.l(R.drawable.menu_transfer, gd.M0(2131749902, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
-                G.l(R.drawable.menu_feature_paid, gd.M0(2131749525, null), new k1(f6Var, 20), (f6Var.t1() || bi.u4.m(M13)) ? false : true);
-                G.l(R.drawable.menu_edit_price, gd.M0(2131750248, null), new k1(f6Var, 21), !f6Var.t1() && bi.u4.m(M13));
-                G.l(R.drawable.msg_delete, gd.M0(2131750416, null), new k1(f6Var, 22), !f6Var.t1() && bi.u4.m(M13));
-                G.l(R.drawable.msg_view_file, gd.M0(2131749830, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
-                G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.M0(2131750202, null), f6Var.s1(), true);
+                G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new r3(f6Var, i10), z13);
+                G.l(R.drawable.menu_transfer, gd.N0(2131749901, null), new k1(f6Var, 19), f6Var.b3 == null || (f6Var.e3 == null && (f6Var.F2(M13) || f6Var.T1(M13))));
+                G.l(R.drawable.menu_feature_paid, gd.N0(2131749524, null), new k1(f6Var, 20), (f6Var.t1() || bi.y4.m(M13)) ? false : true);
+                G.l(R.drawable.menu_edit_price, gd.N0(2131750247, null), new k1(f6Var, 21), !f6Var.t1() && bi.y4.m(M13));
+                G.l(R.drawable.msg_delete, gd.N0(2131750415, null), new k1(f6Var, 22), !f6Var.t1() && bi.y4.m(M13));
+                G.l(R.drawable.msg_view_file, gd.N0(2131749829, null), new k1(f6Var, 23), (f6Var.B2 == null || f6Var.C1() == j3) ? false : true);
+                G.m(R.drawable.msg_delete, new k1(f6Var, 24), gd.N0(2131750201, null), f6Var.s1(), true);
                 G.t = false;
                 G.b0 = true;
                 G.s = 0;

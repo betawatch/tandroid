@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -53,14 +53,14 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                 }
                 break;
             case 2:
-                de0 de0Var = (de0) this.b;
+                ce0 ce0Var = (ce0) this.b;
                 if (i7 != 0) {
-                    ProfileActivity.Y4(de0Var.h0.getParentActivity(), false);
+                    ProfileActivity.Y4(ce0Var.h0.getParentActivity(), false);
                     break;
                 } else {
                     org.telegram.messenger.s2.a = !org.telegram.messenger.s2.a;
                     org.telegram.messenger.t0.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", org.telegram.messenger.s2.a).commit();
-                    org.telegram.ui.Components.lc.b0(de0Var.h0).Q(R.raw.chats_infotip, 36, org.telegram.messenger.s2.a ? "Logs enabled." : "Logs disabled.").j();
+                    org.telegram.ui.Components.lc.b0(ce0Var.h0).Q(R.raw.chats_infotip, 36, org.telegram.messenger.s2.a ? "Logs enabled." : "Logs disabled.").j();
                     if (org.telegram.messenger.s2.a) {
                         i5.c.v(org.telegram.messenger.t0.s, new StringBuilder("app start time = "));
                         try {
@@ -81,12 +81,12 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                         break;
                     } else {
                         hk0Var.x = "female";
-                        hk0Var.Z[4].setText(org.telegram.messenger.gd.M0(2131747376, null));
+                        hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747375, null));
                         break;
                     }
                 } else {
                     hk0Var.x = "male";
-                    hk0Var.Z[4].setText(org.telegram.messenger.gd.M0(2131747315, null));
+                    hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747314, null));
                     break;
                 }
         }

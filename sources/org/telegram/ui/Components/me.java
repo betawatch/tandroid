@@ -8,7 +8,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class me implements Runnable {
             case 2:
                 break;
             case 3:
-                int i7 = rn.s1;
+                int i7 = tn.s1;
                 break;
             case 4:
                 PhotoViewer.p1().z0(false, false);
@@ -38,7 +38,7 @@ public final /* synthetic */ class me implements Runnable {
                 PhotoViewer.p1().z0(false, false);
                 break;
             case 6:
-                int[] iArr = mt.d2;
+                int[] iArr = ot.d2;
                 break;
             case 7:
                 org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.F2, new Object[0]);
@@ -56,29 +56,29 @@ public final /* synthetic */ class me implements Runnable {
                 org.telegram.messenger.ks.e().k(99, 512);
                 break;
             case 11:
-                org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
                 if (Q != null) {
-                    org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
-                    f2Var.a = true;
-                    Q.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), f2Var);
+                    org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
+                    e2Var.a = true;
+                    Q.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), e2Var);
                     break;
                 }
                 break;
             case 12:
-                int i10 = wy0.f;
+                int i10 = yy0.f;
                 break;
             case 13:
                 SharedPreferences.Editor edit = org.telegram.messenger.mp.g1().edit();
-                mz0.f = Boolean.TRUE;
+                oz0.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
             case 14:
                 SharedPreferences.Editor edit2 = org.telegram.messenger.mp.g1().edit();
-                mz0.f = Boolean.TRUE;
+                oz0.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
             case 15:
-                int i11 = z11.m0;
+                int i11 = b21.m0;
                 break;
             case 16:
                 org.telegram.messenger.pv.h();
@@ -99,7 +99,7 @@ public final /* synthetic */ class me implements Runnable {
                 org.telegram.ui.Components.voip.i2.g();
                 break;
             case 22:
-                fi.m5.J0();
+                fi.n5.J0();
                 break;
             case 23:
                 org.telegram.ui.f40 f40Var = org.telegram.ui.f40.C5;

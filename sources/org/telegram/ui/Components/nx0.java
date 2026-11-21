@@ -1,41 +1,29 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public class nx0 {
-    public int a;
-    public int b;
-    public int c;
+public final class nx0 extends ArrayList {
+    public final Class a;
+    public final Class b;
 
-    public nx0() {
-        c();
+    public nx0(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
     }
 
-    public int a(wx0 wx0Var, px0 px0Var, ix0 ix0Var, int i7, boolean z10) {
-        return this.a - ix0Var.a(px0Var, i7);
-    }
-
-    public void b(int i7, int i10) {
-        this.a = Math.max(this.a, i7);
-        this.b = Math.max(this.b, i10);
-    }
-
-    public void c() {
-        this.a = TLObject.FLAG_31;
-        this.b = TLObject.FLAG_31;
-        this.c = 2;
-    }
-
-    public int d(boolean z10) {
-        if (!z10) {
-            int i7 = this.c;
-            ix0 ix0Var = wx0.T;
-            if ((i7 & 2) != 0) {
-                return 100000;
-            }
+    /* JADX WARN: Multi-variable type inference failed */
+    public final h6.m f() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i7 = 0; i7 < size; i7++) {
+            objArr[i7] = ((Pair) get(i7)).first;
+            objArr2[i7] = ((Pair) get(i7)).second;
         }
-        return this.a + this.b;
+        return new h6.m(objArr, objArr2);
     }
 }

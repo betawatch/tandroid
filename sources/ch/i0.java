@@ -10,19 +10,19 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.fj;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.ti0;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.vi0;
 import org.telegram.ui.bj;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
-    public final /* synthetic */ h2 a;
+    public final /* synthetic */ g2 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ fj d;
@@ -37,10 +37,10 @@ public final class i0 extends FrameLayout {
     public final /* synthetic */ l0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(l0 l0Var, Context context, h2 h2Var, View view, boolean z10, fj fjVar, bn bnVar, int i7, int i10, boolean z11, float f10, float f11, float f12, p0 p0Var) {
+    public i0(l0 l0Var, Context context, g2 g2Var, View view, boolean z10, fj fjVar, bn bnVar, int i7, int i10, boolean z11, float f10, float f11, float f12, p0 p0Var) {
         super(context);
         this.y = l0Var;
-        this.a = h2Var;
+        this.a = g2Var;
         this.b = view;
         this.c = z10;
         this.d = fjVar;
@@ -154,14 +154,14 @@ public final class i0 extends FrameLayout {
             invalidate();
             return;
         }
-        ti0 ti0Var = l0Var2.t;
-        if (ti0Var != null) {
-            ti0Var.a.setAlpha(0.0f);
+        vi0 vi0Var = l0Var2.t;
+        if (vi0Var != null) {
+            vi0Var.a.setAlpha(0.0f);
             this.y.t.c.setAlpha(0.0f);
         }
-        h2 h2Var = this.a;
-        if (h2Var instanceof bn) {
-            bn bnVar2 = (bn) h2Var;
+        g2 g2Var = this.a;
+        if (g2Var instanceof bn) {
+            bn bnVar2 = (bn) g2Var;
             int i11 = this.y.n;
             bj bjVar = bnVar2.A0;
             if (bjVar != null) {
@@ -246,8 +246,8 @@ public final class i0 extends FrameLayout {
                 f12 = l0Var5.r;
             }
         }
-        h2 h2Var2 = this.a;
-        if (h2Var2 != null && h2Var2.getParentActivity() != null && this.a.getFragmentView() != null && this.a.getFragmentView().getParent() != null && this.a.getFragmentView().getVisibility() == 0 && this.a.getFragmentView() != null) {
+        g2 g2Var2 = this.a;
+        if (g2Var2 != null && g2Var2.getParentActivity() != null && this.a.getFragmentView() != null && this.a.getFragmentView().getParent() != null && this.a.getFragmentView().getVisibility() == 0 && this.a.getFragmentView() != null) {
             this.a.getFragmentView().getLocationOnScreen(this.y.j);
             setAlpha(((View) this.a.getFragmentView().getParent()).getAlpha());
         } else if (!this.c && !(view instanceof nh.c)) {
@@ -268,16 +268,16 @@ public final class i0 extends FrameLayout {
                 f27 = (getMeasuredWidth() + this.y.j[0]) - this.f;
             }
         }
-        lr lrVar = lr.f;
-        float interpolation = lrVar.getInterpolation(this.y.h);
+        nr nrVar = nr.f;
+        float interpolation = nrVar.getInterpolation(this.y.h);
         if (this.h == 2) {
-            f13 = lr.h.getInterpolation(interpolation);
-            f14 = lrVar.getInterpolation(interpolation);
+            f13 = nr.h.getInterpolation(interpolation);
+            f14 = nrVar.getInterpolation(interpolation);
             l0Var = null;
         } else if (this.n) {
             l0Var = null;
-            f13 = lr.h.getInterpolation(this.y.g);
-            f14 = lrVar.getInterpolation(this.y.g);
+            f13 = nr.h.getInterpolation(this.y.g);
+            f14 = nrVar.getInterpolation(this.y.g);
         } else {
             l0Var = null;
             f13 = this.y.g;
@@ -364,7 +364,7 @@ public final class i0 extends FrameLayout {
                     if (!this.y.x.isEmpty()) {
                         j0 j0Var3 = this.y.b;
                         if (j0Var3.H) {
-                            mh0 B = j0Var3.getImageReceiver().B();
+                            oh0 B = j0Var3.getImageReceiver().B();
                             int i15 = 0;
                             while (i15 < this.y.x.size()) {
                                 k0 k0Var = (k0) this.y.x.get(i15);
@@ -475,7 +475,7 @@ public final class i0 extends FrameLayout {
                         l0Var9.s = true;
                         l0Var9.y = System.currentTimeMillis();
                         this.y.f.i.setTag(R.id.parent_tag, 1);
-                        animate().scaleX(0.0f).scaleY(0.0f).setStartDelay(1000L).setDuration(150L).setListener(new ai.j0(this, 5));
+                        animate().scaleX(0.0f).scaleY(0.0f).setStartDelay(1000L).setDuration(150L).setListener(new ai.k0(this, 5));
                     }
                 }
                 l0 l0Var10 = this.y;

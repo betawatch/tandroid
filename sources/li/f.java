@@ -9,22 +9,22 @@ import android.widget.TextView;
 import c8.ma;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class f extends FrameLayout implements c6 {
+public final class f extends FrameLayout implements b6 {
     public final q9 a;
-    public final i6 b;
+    public final h6 b;
     public final TextView c;
     public final TextView d;
 
-    public f(Context context, i6 i6Var) {
+    public f(Context context, h6 h6Var) {
         super(context);
-        this.b = i6Var;
+        this.b = h6Var;
         q9 q9Var = new q9(context);
         this.a = q9Var;
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(20.0f));
@@ -44,16 +44,16 @@ public final class f extends FrameLayout implements c6 {
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(n6.G6));
-        hashSet.add(Integer.valueOf(n6.z6));
+        hashSet.add(Integer.valueOf(m6.G6));
+        hashSet.add(Integer.valueOf(m6.z6));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        Drawable drawable = n6.S0;
+        Drawable drawable = m6.S0;
         q9 q9Var = this.a;
         bg.t.a(canvas, drawable, (q9Var.getWidth() / 2.0f) + q9Var.getLeft(), (q9Var.getHeight() / 2.0f) + q9Var.getTop(), q9Var.getHeight());
     }
@@ -71,11 +71,11 @@ public final class f extends FrameLayout implements c6 {
         this.c.setText(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = n6.G6;
-        i6 i6Var = this.b;
-        this.c.setTextColor(n6.w0(i7, i6Var));
-        this.d.setTextColor(n6.w0(n6.z6, i6Var));
+        int i7 = m6.G6;
+        h6 h6Var = this.b;
+        this.c.setTextColor(m6.w0(i7, h6Var));
+        this.d.setTextColor(m6.w0(m6.z6, h6Var));
     }
 }

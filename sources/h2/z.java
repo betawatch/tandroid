@@ -13,11 +13,11 @@ import e2.x1;
 import e2.y0;
 import e2.z0;
 import java.util.List;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.y40;
+import org.telegram.ui.Components.b50;
+import org.telegram.ui.Components.i61;
 import zi.u0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class z implements a1 {
     public final /* synthetic */ int a;
@@ -37,11 +37,11 @@ public final class z implements a1 {
     public final void D(int i7, boolean z10) {
         switch (this.a) {
             case 1:
-                f61 f61Var = (f61) this.b;
-                if (!f61Var.I && i7 == 3) {
-                    f61Var.I = true;
-                    if (f61Var.H && f61Var.J) {
-                        f61Var.h0();
+                i61 i61Var = (i61) this.b;
+                if (!i61Var.I && i7 == 3) {
+                    i61Var.I = true;
+                    if (i61Var.H && i61Var.J) {
+                        i61Var.h0();
                         break;
                     }
                 }
@@ -221,7 +221,7 @@ public final class z implements a1 {
             default:
                 u0 u0Var = (u0) this.b;
                 if (u0Var.a0 == 5) {
-                    y40.o((y40) u0Var.d.b);
+                    b50.o((b50) u0Var.d.b);
                     break;
                 }
                 break;

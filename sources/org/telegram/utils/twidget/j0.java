@@ -2,7 +2,7 @@ package org.telegram.utils.twidget;
 
 import android.content.Context;
 import android.text.TextUtils;
-import di.i9;
+import di.j9;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.mp;
@@ -11,7 +11,7 @@ import org.telegram.messenger.tr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class j0 implements Runnable {
                                             tL_messageMediaWidget.public_data_hash = j10;
                                         }
                                         tr a02 = tr.a0(i10);
-                                        a02.a.c(new i9(a02, k0Var3.d, k0Var3.c, str == null ? "" : str, j10, (String) null));
+                                        a02.a.c(new j9(a02, k0Var3.d, k0Var3.c, str == null ? "" : str, j10, (String) null));
                                         str = str;
                                     }
                                 }

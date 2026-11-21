@@ -3,17 +3,17 @@ package jg;
 import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.a8;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b2 extends a8 {
     public final /* synthetic */ int P;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b2(int i7, Context context, i6 i6Var, boolean z10) {
-        super(context, i6Var, z10);
+    public /* synthetic */ b2(int i7, Context context, h6 h6Var, boolean z10) {
+        super(context, h6Var, z10);
         this.P = i7;
     }
 

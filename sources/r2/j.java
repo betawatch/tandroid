@@ -26,8 +26,8 @@ import java.util.Map;
 import l2.p1;
 import l2.r0;
 import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.of;
-import p4.o0;
+import org.telegram.ui.Components.qf;
+import p4.z;
 import r0.f1;
 import s2.u;
 import s2.w;
@@ -36,12 +36,12 @@ import x2.d1;
 import x2.e0;
 import x2.r1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class j implements e0, u {
     public final int E;
     public final m2.i F;
-    public final of G = new of(this, 14);
+    public final qf G = new qf(this, 14);
     public d0 H;
     public int I;
     public r1 J;
@@ -170,7 +170,7 @@ public final class j implements e0, u {
                         iVar.b0 = i10 < 0 ? 0L : ((s2.h) (i10 < i0Var.size() ? ((s2.j) i0Var.get(i10)).y : b10.s).get(i7)).c;
                     }
                 } else if (c10 == 0) {
-                    pVar.I.post(new o0(6, pVar, iVar));
+                    pVar.I.post(new z(8, pVar, iVar));
                 } else if (c10 == 2 && !pVar.k0 && pVar2.d()) {
                     pVar2.b();
                 }

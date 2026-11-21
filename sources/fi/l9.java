@@ -7,9 +7,9 @@ import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class l9 extends ReplacementSpan {
     public View a;
@@ -20,7 +20,7 @@ public final class l9 extends ReplacementSpan {
     public boolean r;
     public int b = 1;
     public int c = 2;
-    public final lr h = new lr(0.0f, 0.5f, 0.5f, 1.0f);
+    public final nr h = new nr(0.0f, 0.5f, 0.5f, 1.0f);
 
     public static CharSequence a(TextView textView, String str) {
         int i7;

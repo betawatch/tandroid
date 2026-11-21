@@ -43,15 +43,14 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.md0;
 import q0.a;
 import r0.a0;
 import r0.j;
 import r0.j0;
-import tg.x;
+import tg.y;
 import u0.b;
-import ug.n0;
 import v4.b0;
 import v4.b1;
 import v4.c0;
@@ -68,6 +67,7 @@ import v4.k;
 import v4.l0;
 import v4.l1;
 import v4.m0;
+import v4.n0;
 import v4.o0;
 import v4.p0;
 import v4.q0;
@@ -80,7 +80,7 @@ import v4.x0;
 import v4.y0;
 import v4.z0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] R0 = {R.attr.clipToPadding};
@@ -127,11 +127,11 @@ public class RecyclerView extends ViewGroup {
     public EdgeEffect b0;
     public z0 c;
     public EdgeEffect c0;
-    public final n0 d;
-    public v4.n0 d0;
-    public final nd0 e;
+    public final ug.m0 d;
+    public n0 d0;
+    public final md0 e;
     public int e0;
-    public final x f;
+    public final y f;
     public int f0;
     public VelocityTracker g0;
     public boolean h;
@@ -638,7 +638,7 @@ public class RecyclerView extends ViewGroup {
     }
 
     public final boolean b0() {
-        v4.n0 n0Var = this.d0;
+        n0 n0Var = this.d0;
         return n0Var != null && n0Var.k();
     }
 
@@ -1150,7 +1150,7 @@ public class RecyclerView extends ViewGroup {
         return ((ArrayList) this.e.d).size();
     }
 
-    public v4.n0 getItemAnimator() {
+    public n0 getItemAnimator() {
         return this.d0;
     }
 
@@ -1206,11 +1206,11 @@ public class RecyclerView extends ViewGroup {
             this.e.k(-1, view, true);
             return;
         }
-        nd0 nd0Var = this.e;
-        int indexOfChild = ((RecyclerView) ((of) nd0Var.b).b).indexOfChild(view);
+        md0 md0Var = this.e;
+        int indexOfChild = ((RecyclerView) ((qf) md0Var.b).b).indexOfChild(view);
         if (indexOfChild >= 0) {
-            ((va) nd0Var.c).K(indexOfChild);
-            nd0Var.B(view);
+            ((va) md0Var.c).K(indexOfChild);
+            md0Var.B(view);
         } else {
             throw new IllegalArgumentException("view is not a child, cannot hide " + view);
         }
@@ -1430,11 +1430,11 @@ public class RecyclerView extends ViewGroup {
     public final void o0(f1 f1Var, r0 r0Var) {
         f1Var.p(0, TLObject.FLAG_13);
         boolean z10 = this.v0.h;
-        x xVar = this.f;
+        y yVar = this.f;
         if (z10 && f1Var.m() && !f1Var.j() && !f1Var.r()) {
-            ((h) xVar.c).k(f1Var, Q(f1Var));
+            ((h) yVar.c).k(f1Var, Q(f1Var));
         }
-        a0.f fVar = (a0.f) xVar.b;
+        a0.f fVar = (a0.f) yVar.b;
         l1 l1Var = (l1) fVar.get(f1Var);
         if (l1Var == null) {
             l1Var = l1.a();
@@ -1487,7 +1487,7 @@ public class RecyclerView extends ViewGroup {
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        v4.n0 n0Var = this.d0;
+        n0 n0Var = this.d0;
         if (n0Var != null) {
             n0Var.g();
         }
@@ -1979,11 +1979,11 @@ public class RecyclerView extends ViewGroup {
             Trace.endSection();
             return;
         }
-        n0 n0Var = this.d;
-        if (n0Var.g()) {
-            int i10 = n0Var.b;
+        ug.m0 m0Var = this.d;
+        if (m0Var.g()) {
+            int i10 = m0Var.b;
             if ((i10 & 4) == 0 || (i10 & 11) != 0) {
-                if (n0Var.g()) {
+                if (m0Var.g()) {
                     int i11 = n0.g.a;
                     Trace.beginSection("RV FullInvalidate");
                     s();
@@ -1996,21 +1996,21 @@ public class RecyclerView extends ViewGroup {
             Trace.beginSection("RV PartialInvalidate");
             z0();
             h0();
-            n0Var.k();
+            m0Var.k();
             if (!this.L) {
-                nd0 nd0Var = this.e;
-                int u10 = nd0Var.u();
+                md0 md0Var = this.e;
+                int u10 = md0Var.u();
                 int i13 = 0;
                 while (true) {
                     if (i13 < u10) {
-                        f1 U = U(nd0Var.t(i13));
+                        f1 U = U(md0Var.t(i13));
                         if (U != null && !U.r() && U.m()) {
                             s();
                             break;
                         }
                         i13++;
                     } else {
-                        n0Var.b();
+                        m0Var.b();
                         break;
                     }
                 }
@@ -2022,7 +2022,7 @@ public class RecyclerView extends ViewGroup {
     }
 
     public final void p0() {
-        v4.n0 n0Var = this.d0;
+        n0 n0Var = this.d0;
         if (n0Var != null) {
             n0Var.g();
         }
@@ -2193,8 +2193,8 @@ public class RecyclerView extends ViewGroup {
             this.y.p0(this);
             u();
         } else {
-            n0 n0Var = this.d;
-            if ((((ArrayList) n0Var.e).isEmpty() || ((ArrayList) n0Var.d).isEmpty()) && this.y.m == getWidth() && this.y.n == getHeight()) {
+            ug.m0 m0Var = this.d;
+            if ((((ArrayList) m0Var.e).isEmpty() || ((ArrayList) m0Var.d).isEmpty()) && this.y.m == getWidth() && this.y.n == getHeight()) {
                 this.y.p0(this);
             } else {
                 this.y.p0(this);
@@ -2207,7 +2207,7 @@ public class RecyclerView extends ViewGroup {
         c1Var.d = 1;
         boolean z14 = c1Var.j;
         x0 x0Var = this.b;
-        x xVar = this.f;
+        y yVar = this.f;
         if (z14) {
             try {
                 for (int u10 = this.e.u() - 1; u10 >= 0; u10--) {
@@ -2221,22 +2221,22 @@ public class RecyclerView extends ViewGroup {
                         r0Var.b = view.getTop();
                         view.getRight();
                         view.getBottom();
-                        h hVar = (h) xVar.c;
-                        a0.f fVar = (a0.f) xVar.b;
+                        h hVar = (h) yVar.c;
+                        a0.f fVar = (a0.f) yVar.b;
                         f1 f1Var2 = (f1) hVar.f(Q);
                         if (f1Var2 == null || f1Var2.r()) {
-                            xVar.b(U, r0Var);
+                            yVar.b(U, r0Var);
                         } else {
                             l1 l1Var2 = (l1) fVar.get(f1Var2);
                             ?? r15 = (l1Var2 == null || (l1Var2.a & 1) == 0) ? false : true;
                             l1 l1Var3 = (l1) fVar.get(U);
                             ?? r14 = (l1Var3 == null || (l1Var3.a & 1) == 0) ? false : true;
                             if (r15 == true && f1Var2 == U) {
-                                xVar.b(U, r0Var);
+                                yVar.b(U, r0Var);
                             } else {
-                                r0 e10 = xVar.e(f1Var2, 4);
-                                xVar.b(U, r0Var);
-                                r0 e11 = xVar.e(U, 8);
+                                r0 e10 = yVar.e(f1Var2, 4);
+                                yVar.b(U, r0Var);
+                                r0 e11 = yVar.e(U, 8);
                                 if (e10 == null) {
                                     Y(Q, U, f1Var2);
                                 } else {
@@ -2273,7 +2273,7 @@ public class RecyclerView extends ViewGroup {
                         }
                     }
                 }
-                a0.f fVar2 = (a0.f) xVar.b;
+                a0.f fVar2 = (a0.f) yVar.b;
                 int i15 = fVar2.c - 1;
                 while (i15 >= 0) {
                     f1 f1Var3 = (f1) fVar2.f(i15);
@@ -2417,8 +2417,8 @@ public class RecyclerView extends ViewGroup {
         this.y.c0(c1Var);
         i0(z15);
         A0(false);
-        ((a0.f) xVar.b).clear();
-        ((h) xVar.c).b();
+        ((a0.f) yVar.b).clear();
+        ((h) yVar.c).b();
         int[] iArr = this.D0;
         int i23 = iArr[0];
         int i24 = iArr[z15 ? 1 : 0];
@@ -2591,10 +2591,10 @@ public class RecyclerView extends ViewGroup {
             this.x.getClass();
         }
         p0();
-        n0 n0Var = this.d;
-        n0Var.l((ArrayList) n0Var.d);
-        n0Var.l((ArrayList) n0Var.e);
-        n0Var.b = 0;
+        ug.m0 m0Var = this.d;
+        m0Var.l((ArrayList) m0Var.d);
+        m0Var.l((ArrayList) m0Var.e);
+        m0Var.b = 0;
         i0 i0Var3 = this.x;
         this.x = i0Var;
         if (i0Var != null) {
@@ -2657,8 +2657,8 @@ public class RecyclerView extends ViewGroup {
         this.I = z10;
     }
 
-    public void setItemAnimator(v4.n0 n0Var) {
-        v4.n0 n0Var2 = this.d0;
+    public void setItemAnimator(n0 n0Var) {
+        n0 n0Var2 = this.d0;
         if (n0Var2 != null) {
             n0Var2.g();
             this.d0.a = null;
@@ -2688,7 +2688,7 @@ public class RecyclerView extends ViewGroup {
         p0 p0Var2 = this.y;
         x0 x0Var = this.b;
         if (p0Var2 != null) {
-            v4.n0 n0Var = this.d0;
+            n0 n0Var = this.d0;
             if (n0Var != null) {
                 n0Var.g();
             }
@@ -2859,18 +2859,18 @@ public class RecyclerView extends ViewGroup {
         D(c1Var);
         c1Var.i = false;
         z0();
-        x xVar = this.f;
-        a0.f fVar = (a0.f) xVar.b;
-        a0.f fVar2 = (a0.f) xVar.b;
+        y yVar = this.f;
+        a0.f fVar = (a0.f) yVar.b;
+        a0.f fVar2 = (a0.f) yVar.b;
         fVar.clear();
-        h hVar = (h) xVar.c;
+        h hVar = (h) yVar.c;
         hVar.b();
         h0();
         if (this.R) {
-            n0 n0Var = this.d;
-            n0Var.l((ArrayList) n0Var.d);
-            n0Var.l((ArrayList) n0Var.e);
-            n0Var.b = 0;
+            ug.m0 m0Var = this.d;
+            m0Var.l((ArrayList) m0Var.d);
+            m0Var.l((ArrayList) m0Var.e);
+            m0Var.b = 0;
             if (this.S) {
                 this.y.W(this);
             }
@@ -2917,7 +2917,7 @@ public class RecyclerView extends ViewGroup {
             for (int i7 = 0; i7 < u10; i7++) {
                 f1 U = U(this.e.t(i7));
                 if (!U.r() && (!U.h() || this.x.b)) {
-                    r0 l10 = this.d0.l(c1Var, U, v4.n0.b(U), U.d());
+                    r0 l10 = this.d0.l(c1Var, U, n0.b(U), U.d());
                     l1 l1Var2 = (l1) fVar2.get(U);
                     if (l1Var2 == null) {
                         l1Var2 = l1.a();
@@ -2949,7 +2949,7 @@ public class RecyclerView extends ViewGroup {
             for (int i11 = 0; i11 < this.e.u(); i11++) {
                 f1 U3 = U(this.e.t(i11));
                 if (!U3.r() && ((l1Var = (l1) fVar2.get(U3)) == null || (l1Var.a & 4) == 0)) {
-                    int b10 = v4.n0.b(U3);
+                    int b10 = n0.b(U3);
                     boolean e10 = U3.e(TLObject.FLAG_13);
                     if (!e10) {
                         b10 |= TLObject.FLAG_12;
@@ -3113,10 +3113,10 @@ public class RecyclerView extends ViewGroup {
         int m0 = i7 != 0 ? this.y.m0(i7, x0Var, c1Var) : 0;
         int o02 = i10 != 0 ? this.y.o0(i10, x0Var, c1Var) : 0;
         Trace.endSection();
-        nd0 nd0Var = this.e;
-        int u10 = nd0Var.u();
+        md0 md0Var = this.e;
+        int u10 = md0Var.u();
         for (int i12 = 0; i12 < u10; i12++) {
-            View t6 = nd0Var.t(i12);
+            View t6 = md0Var.t(i12);
             f1 T = T(t6);
             if (T != null && (f1Var = T.k) != null) {
                 View view = f1Var.a;
@@ -3272,7 +3272,7 @@ public class RecyclerView extends ViewGroup {
         float a11;
         this.a = new m1(this, 2);
         this.b = new x0(this);
-        this.f = new x(3, (byte) 0);
+        this.f = new y(3, (byte) 0);
         this.n = new h0(this, 0);
         this.r = new Rect();
         this.s = new Rect();
@@ -3352,8 +3352,8 @@ public class RecyclerView extends ViewGroup {
         this.o0 = viewConfiguration.getScaledMaximumFlingVelocity();
         setWillNotDraw(getOverScrollMode() == 2);
         this.d0.a = gVar;
-        this.d = new n0(new f0(this));
-        this.e = new nd0(new of(this, 24), (char) 0);
+        this.d = new ug.m0(new f0(this));
+        this.e = new md0(new qf(this, 24), (char) 0);
         WeakHashMap weakHashMap = r0.i0.a;
         if ((i10 >= 26 ? r0.c0.a(this) : 0) == 0 && i10 >= 26) {
             r0.c0.b(this, 8);

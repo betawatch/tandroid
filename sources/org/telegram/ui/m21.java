@@ -1,37 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class m21 extends org.telegram.ui.ActionBar.x2 {
-    public static final /* synthetic */ int p1 = 0;
-    public TLRPC.TL_authorization m1;
-    public SessionsActivity n1;
-    public org.telegram.ui.Components.ph0 o1;
+public final class m21 implements View.OnClickListener {
+    public final /* synthetic */ x21 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ SessionsActivity c;
+    public final /* synthetic */ n21 d;
 
-    public static void J0(m21 m21Var, String str) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m21Var.getContext());
-        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.M0(2131751756, null)}, new og.j(12, m21Var, str));
-        alertDialog$Builder.p();
+    public m21(n21 n21Var, x21 x21Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
+        this.d = n21Var;
+        this.a = x21Var;
+        this.b = tL_authorization;
+        this.c = sessionsActivity;
     }
 
-    public static void K0(m21 m21Var) {
-        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
-        TLRPC.TL_authorization tL_authorization = m21Var.m1;
-        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
-        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
-        changeauthorizationsettings.flags = 3;
-        changeauthorizationsettings.hash = tL_authorization.hash;
-        ConnectionsManager.getInstance(m21Var.a).sendRequest(changeauthorizationsettings, new fi.k5(28));
-    }
-
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
-    public final void show() {
-        super.show();
-        this.o1.d();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.n1.getParentActivity());
+        String N0 = org.telegram.messenger.gd.N0(2131743963, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.U = N0;
+        t1Var.S = org.telegram.messenger.gd.N0(2131754070, null);
+        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131743968, null), new z6(this, this.a, this.b, 21));
+        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        this.c.showDialog(t1Var);
+        TextView textView = (TextView) t1Var.d(-1);
+        if (textView != null) {
+            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
+        }
     }
 }

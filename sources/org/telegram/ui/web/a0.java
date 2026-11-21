@@ -9,7 +9,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.bn;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class a0 extends bn {
     public boolean vd;
@@ -25,13 +25,13 @@ public final class a0 extends bn {
         this.xd = j3;
     }
 
-    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.h2
+    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.g2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
         if (this.vd) {
             return;
         }
         this.vd = true;
-        lc.b0(this).I(R.raw.contact_check, gd.a0(null, null, 2131751728, o10.q(this.wd)), org.telegram.messenger.g0.T2(gd.a0(null, null, 2131751729, o10.q(this.yd.V)), new qx0(this, this.xd, 2))).j();
+        lc.b0(this).I(R.raw.contact_check, gd.a0(null, null, 2131751727, o10.q(this.wd)), org.telegram.messenger.g0.T2(gd.a0(null, null, 2131751728, o10.q(this.yd.V)), new qx0(this, this.xd, 2))).j();
     }
 }

@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class yi implements org.telegram.ui.Components.oo {
+public final class yi implements org.telegram.ui.Components.qo {
     public final /* synthetic */ bn a;
 
     public yi(bn bnVar) {
         this.a = bnVar;
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void B(int i7) {
         bn bnVar = this.a;
         if (i7 != 0) {
@@ -31,19 +31,19 @@ public final class yi implements org.telegram.ui.Components.oo {
         }
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void dismiss() {
         this.a.j0.V(null, null);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void s() {
         bn bnVar = this.a;
         bnVar.Ic(true);
         org.telegram.ui.Components.lc.A(bnVar, bnVar.getMessagesController().u2(bnVar.l6, bnVar.d(), null), bnVar.Ba).j();
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void u() {
         bn bnVar = this.a;
         if (bnVar.l6 == 0 || bnVar.g4 == 3) {
@@ -60,11 +60,11 @@ public final class yi implements org.telegram.ui.Components.oo {
         bnVar.presentFragment(new jx0(bundle, bnVar.Ba));
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final void w() {
         int i7;
         bn bnVar = this.a;
-        i7 = ((org.telegram.ui.ActionBar.h2) bnVar).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
         SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i7).g7;
         boolean z10 = sharedPreferences.getBoolean("sound_enabled_" + org.telegram.messenger.xs.v(bnVar.l6, bnVar.d(), false), true);
         boolean z11 = !z10;
@@ -75,7 +75,7 @@ public final class yi implements org.telegram.ui.Components.oo {
         bnVar.yd(false);
     }
 
-    @Override // org.telegram.ui.Components.oo
+    @Override // org.telegram.ui.Components.qo
     public final /* synthetic */ void p() {
     }
 }

@@ -5,7 +5,7 @@ import android.graphics.Shader;
 import java.security.SecureRandom;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e40 {
     public float c;
@@ -61,7 +61,7 @@ public final class e40 {
         if (f14 > f15) {
             this.f = f15;
         }
-        float interpolation = org.telegram.ui.Components.lr.g.getInterpolation(this.f / f15);
+        float interpolation = org.telegram.ui.Components.nr.g.getInterpolation(this.f / f15);
         float f16 = i11;
         float f17 = this.c;
         float f18 = (((((this.a - f17) * interpolation) + f17) * f16) + i10) - 200.0f;

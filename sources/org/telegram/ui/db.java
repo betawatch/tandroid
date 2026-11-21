@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class db implements org.telegram.ui.Cells.m1 {
     public final /* synthetic */ ib a;
@@ -72,7 +72,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
     @Override // org.telegram.ui.Cells.m1
     public final void S1(org.telegram.messenger.fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
         lb lbVar = this.a.n;
-        org.telegram.ui.Components.gu.O0(lbVar, fjVar, lbVar.C0, str2, str3, str4, str, i7, i10, -1, false);
+        org.telegram.ui.Components.iu.O0(lbVar, fjVar, lbVar.C0, str2, str3, str4, str, i7, i10, -1, false);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -93,41 +93,41 @@ public final class db implements org.telegram.ui.Cells.m1 {
             return;
         }
         org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
-        if (characterStyle instanceof org.telegram.ui.Components.o41) {
-            org.telegram.ui.Components.o41 o41Var = (org.telegram.ui.Components.o41) characterStyle;
-            org.telegram.messenger.g0.g(o41Var.a.subSequence(o41Var.b, o41Var.c).toString());
+        if (characterStyle instanceof org.telegram.ui.Components.r41) {
+            org.telegram.ui.Components.r41 r41Var = (org.telegram.ui.Components.r41) characterStyle;
+            org.telegram.messenger.g0.g(r41Var.a.subSequence(r41Var.b, r41Var.c).toString());
             if (org.telegram.messenger.g0.G3()) {
-                Toast.makeText(lbVar.getParentActivity(), org.telegram.messenger.gd.M0(2131743959, null), 0).show();
+                Toast.makeText(lbVar.getParentActivity(), org.telegram.messenger.gd.N0(2131743953, null), 0).show();
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.s41) {
-            Long A = Utilities.A(((org.telegram.ui.Components.s41) characterStyle).getURL());
+        if (characterStyle instanceof org.telegram.ui.Components.v41) {
+            Long A = Utilities.A(((org.telegram.ui.Components.v41) characterStyle).getURL());
             long longValue = A.longValue();
             if (longValue > 0) {
-                i12 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                 TLRPC.User c22 = org.telegram.messenger.mp.u1(i12).c2(A);
                 if (c22 != null) {
-                    i13 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                    i13 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                     org.telegram.messenger.mp.u1(i13).G3(c22, null, lbVar, 0);
                     return;
                 }
                 return;
             }
-            i10 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
             TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i10).O0(Long.valueOf(-longValue));
             if (O0 != null) {
-                i11 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                 org.telegram.messenger.mp.u1(i11).G3(null, O0, lbVar, 0);
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.p41) {
-            String url = ((org.telegram.ui.Components.p41) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.s41) {
+            String url = ((org.telegram.ui.Components.s41) characterStyle).getURL();
             if (url.startsWith("@")) {
-                i7 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                i7 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                 org.telegram.messenger.mp.u1(i7).F3(url.substring(1), lbVar, 0, null);
                 return;
             } else {
@@ -142,30 +142,30 @@ public final class db implements org.telegram.ui.Cells.m1 {
         }
         String url2 = ((URLSpan) characterStyle).getURL();
         if (z10) {
-            org.telegram.ui.ActionBar.x2 j3 = org.telegram.messenger.n10.j(lbVar.getParentActivity(), false, 1, null);
+            org.telegram.ui.ActionBar.w2 j3 = org.telegram.messenger.n10.j(lbVar.getParentActivity(), false, 1, null);
             j3.P = url2;
             j3.Q = false;
-            CharSequence[] charSequenceArr = {org.telegram.messenger.gd.M0(2131747624, null), org.telegram.messenger.gd.M0(2131751756, null)};
+            CharSequence[] charSequenceArr = {org.telegram.messenger.gd.N0(2131747623, null), org.telegram.messenger.gd.N0(2131751755, null)};
             og.j jVar = new og.j(2, this, url2);
             j3.M = charSequenceArr;
             j3.L = jVar;
             lbVar.showDialog(j3);
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.r41) {
-            String url3 = ((org.telegram.ui.Components.r41) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.u41) {
+            String url3 = ((org.telegram.ui.Components.u41) characterStyle).getURL();
             if (vf.c.g(Uri.parse(url3), false, null)) {
                 vf.c.p(lbVar.getParentActivity(), url3, true);
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lbVar.getParentActivity());
-            String M0 = org.telegram.messenger.gd.M0(2131747586, null);
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.S = M0;
-            u1Var.U = org.telegram.messenger.gd.a0(null, null, 2131747589, url3);
-            alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747624, null), new oi.e0(7, lbVar, url3));
-            alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
-            lbVar.showDialog(u1Var);
+            String N0 = org.telegram.messenger.gd.N0(2131747585, null);
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.S = N0;
+            t1Var.U = org.telegram.messenger.gd.a0(null, null, 2131747588, url3);
+            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747623, null), new oi.f0(7, lbVar, url3));
+            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+            lbVar.showDialog(t1Var);
             return;
         }
         TLRPC.MessageMedia messageMedia = messageObject.k.media;
@@ -224,7 +224,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
         if (i7 != 0) {
             bundle.putInt("message_id", i7);
         }
-        i10 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
         if (org.telegram.messenger.mp.u1(i10).E(bundle, lbVar, null, null)) {
             lbVar.presentFragment(new bn(bundle), true);
         }
@@ -278,18 +278,18 @@ public final class db implements org.telegram.ui.Cells.m1 {
         lb lbVar = this.a.n;
         if (user != null) {
             long j3 = user.id;
-            i7 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
             if (j3 != org.telegram.messenger.j10.i(i7).e()) {
                 c5[] c5VarArr = {c5.d, c5.h};
                 TLRPC.UserFull d2 = lbVar.getMessagesController().d2(user.id);
                 if (d2 != null) {
                     b10 = w4.c(user, d2, c5VarArr);
                 } else {
-                    i10 = ((org.telegram.ui.ActionBar.h2) lbVar).classGuid;
+                    i10 = ((org.telegram.ui.ActionBar.g2) lbVar).classGuid;
                     b10 = w4.b(user, i10, c5VarArr);
                 }
                 if (ab.q.h(b10)) {
-                    ab.q.o().D((ViewGroup) lbVar.fragmentView, lbVar.getResourceProvider(), b10, new oi.e0(this, r1Var, user));
+                    ab.q.o().D((ViewGroup) lbVar.fragmentView, lbVar.getResourceProvider(), b10, new oi.f0(this, r1Var, user));
                     return true;
                 }
             }
@@ -380,7 +380,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ boolean p0(org.telegram.ui.Components.x5 x5Var) {
+    public final /* synthetic */ boolean p0(org.telegram.ui.Components.y5 y5Var) {
         return false;
     }
 
@@ -398,7 +398,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
             bn bnVar = new bn(bundle);
             if (org.telegram.messenger.v3.c0(lbVar.f)) {
                 long B0 = org.telegram.messenger.fj.B0(messageObject.k);
-                i10 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                 qg.c.a(bnVar, org.telegram.messenger.sr.a(B0, org.telegram.messenger.fj.b2(i10, messageObject.k, true, false)));
             }
             lbVar.presentFragment(bnVar);
@@ -436,7 +436,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             bufferedWriter.write(str);
             bufferedWriter.close();
-            lbVar.showDialog(new org.telegram.ui.Components.ld0(lbVar, null, c22, null, file, null, str2, str3, null));
+            lbVar.showDialog(new org.telegram.ui.Components.md0(lbVar, null, c22, null, file, null, str2, str3, null));
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
@@ -461,7 +461,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
         if (lbVar.getParentActivity() == null) {
             return;
         }
-        lbVar.showDialog(org.telegram.ui.Components.yo0.O0(ibVar.c, r1Var.getMessageObject(), null, org.telegram.messenger.v3.T(lbVar.f) && !lbVar.f.megagroup, null));
+        lbVar.showDialog(org.telegram.ui.Components.ap0.O0(ibVar.c, r1Var.getMessageObject(), null, org.telegram.messenger.v3.T(lbVar.f) && !lbVar.f.megagroup, null));
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -469,7 +469,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
         int i7;
         if (user != null) {
             long j3 = user.id;
-            i7 = ((org.telegram.ui.ActionBar.h2) this.a.n).currentAccount;
+            i7 = ((org.telegram.ui.ActionBar.g2) this.a.n).currentAccount;
             if (j3 != org.telegram.messenger.j10.i(i7).e()) {
                 a(user);
             }
@@ -495,7 +495,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
         lb lbVar = this.a.n;
         org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
         if (org.telegram.messenger.fj.j1(messageObject.k) != null) {
-            lbVar.showDialog(new org.telegram.ui.Components.iw0(lbVar.getParentActivity(), lbVar, org.telegram.messenger.fj.j1(messageObject.k), null, null, null));
+            lbVar.showDialog(new org.telegram.ui.Components.kw0(lbVar.getParentActivity(), lbVar, org.telegram.messenger.fj.j1(messageObject.k), null, null, null));
             return;
         }
         File file2 = null;
@@ -562,9 +562,9 @@ public final class db implements org.telegram.ui.Cells.m1 {
                 if (b0Var != null) {
                     if (b0Var.N0() < lbVar.y.B() - 1) {
                         lbVar.h0 = lbVar.y.L0();
-                        org.telegram.ui.Components.kj0 kj0Var = (org.telegram.ui.Components.kj0) lbVar.w.K(lbVar.h0);
-                        if (kj0Var != null) {
-                            lbVar.i0 = kj0Var.a.getTop();
+                        org.telegram.ui.Components.mj0 mj0Var = (org.telegram.ui.Components.mj0) lbVar.w.K(lbVar.h0);
+                        if (mj0Var != null) {
+                            lbVar.i0 = mj0Var.a.getTop();
                         } else {
                             lbVar.h0 = -1;
                         }
@@ -572,7 +572,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
                         lbVar.h0 = -1;
                     }
                 }
-                org.telegram.ui.ActionBar.m6 v = org.telegram.ui.ActionBar.n6.v(file, messageObject.I0(), null, true);
+                org.telegram.ui.ActionBar.l6 v = org.telegram.ui.ActionBar.m6.v(file, messageObject.I0(), null, true);
                 if (v != null) {
                     lbVar.presentFragment(new x71(v));
                     return;

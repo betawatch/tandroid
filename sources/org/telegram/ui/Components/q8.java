@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class q8 extends au0 {
+public final class q8 extends du0 {
     public final e2.r0 g0;
     public final /* synthetic */ y8 h0;
     public boolean i0;
@@ -31,7 +31,7 @@ public final class q8 extends au0 {
         this.g0 = new e2.r0();
     }
 
-    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -93,11 +93,11 @@ public final class q8 extends au0 {
         if (view == y8Var.I) {
             return true;
         }
-        kVar = ((org.telegram.ui.ActionBar.h2) y8Var).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.g2) y8Var).actionBar;
         if (view != kVar || y8Var.O <= 0.0f) {
             canvas2 = canvas;
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false));
+            paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false));
             paint.setAlpha((int) (y8Var.O * 255.0f));
             canvas2 = canvas;
             canvas2.drawRect(0.0f, 0.0f, view.getMeasuredWidth(), view.getMeasuredHeight(), paint);
@@ -163,7 +163,7 @@ public final class q8 extends au0 {
             super.onMeasure(i7, i10);
             if (y8Var.M) {
                 int i12 = -y8Var.b.getTop();
-                kVar = ((org.telegram.ui.ActionBar.h2) y8Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) y8Var).actionBar;
                 i11 = org.telegram.messenger.g0.L(8.0f) + kVar.getMeasuredHeight() + i12;
             } else {
                 i11 = 0;
@@ -189,7 +189,7 @@ public final class q8 extends au0 {
                 y8Var.N.addUpdateListener(new t8(y8Var, f11, f10, z13));
                 y8Var.N.addListener(new n8(y8Var, 1));
                 y8Var.N.setDuration(250L);
-                y8Var.N.setInterpolator(org.telegram.ui.ActionBar.j1.w);
+                y8Var.N.setInterpolator(org.telegram.ui.ActionBar.i1.w);
                 y8Var.N.start();
             }
         }

@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oa implements eh.a {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class oa implements eh.a {
                 break;
             case 2:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
-                org.telegram.ui.Components.ck0 ck0Var = premiumPreviewFragment.a;
-                ih.d.a(ck0Var, canvas, rectF, ck0Var, premiumPreviewFragment.e0);
+                org.telegram.ui.Components.ek0 ek0Var = premiumPreviewFragment.a;
+                ih.d.a(ek0Var, canvas, rectF, ek0Var, premiumPreviewFragment.e0);
                 break;
             case 3:
                 RectF rectF2 = ProfileActivity.Z6;
@@ -53,12 +53,12 @@ public final /* synthetic */ class oa implements eh.a {
                 zw0Var.P = false;
                 break;
             default:
-                org.telegram.ui.Components.ck0 ck0Var2 = (org.telegram.ui.Components.ck0) obj;
-                org.telegram.ui.Components.v9 v9Var = ck0Var2.S2;
+                org.telegram.ui.Components.ek0 ek0Var2 = (org.telegram.ui.Components.ek0) obj;
+                org.telegram.ui.Components.v9 v9Var = ek0Var2.S2;
                 if (v9Var == null) {
-                    org.telegram.ui.Components.mj0 mj0Var = ck0Var2.H2;
-                    if (mj0Var != null) {
-                        mj0Var.d(canvas, rectF);
+                    org.telegram.ui.Components.oj0 oj0Var = ek0Var2.H2;
+                    if (oj0Var != null) {
+                        oj0Var.d(canvas, rectF);
                         break;
                     }
                 } else {

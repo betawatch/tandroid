@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class tr extends c1 {
     public static volatile tr[] f0 = new tr[4];
@@ -6338,11 +6338,11 @@ public final class tr extends c1 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            String lowerCase2 = gd.L0(2131745706).toLowerCase();
-            String lowerCase3 = gd.L0(2131746071).toLowerCase();
+            String lowerCase2 = gd.M0(2131745705).toLowerCase();
+            String lowerCase3 = gd.M0(2131746070).toLowerCase();
             String str11 = "replies";
-            String R0 = gd.E0().R0(lowerCase);
-            if (!lowerCase.equals(R0)) {
+            String S0 = gd.E0().S0(lowerCase);
+            if (!lowerCase.equals(S0)) {
                 try {
                 } catch (Exception e11) {
                     e = e11;
@@ -6366,12 +6366,12 @@ public final class tr extends c1 {
                     throw th;
                 }
             }
-            R0 = null;
-            int i19 = 1 + (R0 != null ? 1 : 0);
+            S0 = null;
+            int i19 = 1 + (S0 != null ? 1 : 0);
             String[] strArr2 = new String[i19];
             strArr2[0] = lowerCase;
-            if (R0 != null) {
-                strArr2[1] = R0;
+            if (S0 != null) {
+                strArr2[1] = S0;
             }
             ArrayList arrayList8 = new ArrayList();
             ArrayList arrayList9 = new ArrayList();
@@ -6441,7 +6441,7 @@ public final class tr extends c1 {
                     if (c22 != null) {
                         jg.d0 d0Var2 = new jg.d0();
                         d0Var2.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                        d0Var2.c = gd.L0(2131746071);
+                        d0Var2.c = gd.M0(2131746070);
                         d0Var2.a = c22;
                         hVar6.k(d0Var2, c22.id);
                         i12++;
@@ -6460,9 +6460,9 @@ public final class tr extends c1 {
                     SQLiteCursor queryFinalized2 = R.queryFinalized("SELECT data, status, name FROM users WHERE uid IN(" + TextUtils.join(",", arrayList8) + ")", new Object[0]);
                     while (queryFinalized2.next()) {
                         String stringValue = queryFinalized2.stringValue(2);
-                        String R02 = gd.E0().R0(stringValue);
-                        if (stringValue.equals(R02)) {
-                            R02 = null;
+                        String S02 = gd.E0().S0(stringValue);
+                        if (stringValue.equals(S02)) {
+                            S02 = null;
                         }
                         int lastIndexOf = stringValue.lastIndexOf(str16);
                         int i20 = i12;
@@ -6484,15 +6484,15 @@ public final class tr extends c1 {
                             } else {
                                 arrayList7 = arrayList10;
                                 if (!stringValue.contains(" " + str19)) {
-                                    if (R02 != null) {
-                                        if (!R02.startsWith(str19)) {
-                                            if (R02.contains(" " + str19)) {
+                                    if (S02 != null) {
+                                        if (!S02.startsWith(str19)) {
+                                            if (S02.contains(" " + str19)) {
                                             }
                                         }
                                     }
                                     r52 = (substring == null || !substring.startsWith(str19)) ? z10 : 2;
                                     if (r52 == 0) {
-                                        str8 = R02;
+                                        str8 = S02;
                                         str9 = substring;
                                         NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(0);
                                         if (byteBufferValue == null) {
@@ -6517,14 +6517,14 @@ public final class tr extends c1 {
                                             i17 = i22;
                                         }
                                     } else {
-                                        str8 = R02;
+                                        str8 = S02;
                                         hVar5 = hVar6;
                                         str9 = substring;
                                         i17 = i22;
                                         str10 = stringValue;
                                     }
                                     i23 = i24 + 1;
-                                    R02 = str8;
+                                    S02 = str8;
                                     substring = str9;
                                     stringValue = str10;
                                     i22 = i17;
@@ -6537,7 +6537,7 @@ public final class tr extends c1 {
                             if (r52 == 0) {
                             }
                             i23 = i24 + 1;
-                            R02 = str8;
+                            S02 = str8;
                             substring = str9;
                             stringValue = str10;
                             i22 = i17;
@@ -6571,9 +6571,9 @@ public final class tr extends c1 {
                     while (queryFinalized3.next()) {
                         try {
                             String stringValue2 = queryFinalized3.stringValue(1);
-                            String R03 = gd.E0().R0(stringValue2);
-                            if (stringValue2.equals(R03)) {
-                                R03 = null;
+                            String S03 = gd.E0().S0(stringValue2);
+                            if (stringValue2.equals(S03)) {
+                                S03 = null;
                             }
                             int i27 = i13;
                             int i28 = 0;
@@ -6581,8 +6581,8 @@ public final class tr extends c1 {
                                 String str20 = strArr[i28];
                                 if (!stringValue2.startsWith(str20)) {
                                     if (!stringValue2.contains(" " + str20)) {
-                                        if (R03 != null) {
-                                            if (!R03.startsWith(str20)) {
+                                        if (S03 != null) {
+                                            if (!S03.startsWith(str20)) {
                                             }
                                         }
                                         sQLiteCursor2 = queryFinalized3;
@@ -6621,21 +6621,21 @@ public final class tr extends c1 {
                                             j10 = "";
                                         }
                                         String lowerCase4 = j10.toLowerCase();
-                                        String R04 = gd.E0().R0(lowerCase4);
-                                        if (lowerCase4.equals(R04)) {
-                                            R04 = null;
+                                        String S04 = gd.E0().S0(lowerCase4);
+                                        if (lowerCase4.equals(S04)) {
+                                            S04 = null;
                                         }
                                         if (!lowerCase4.startsWith(str20)) {
                                             if (!lowerCase4.contains(" " + str20)) {
-                                                if (R04 != null) {
-                                                    if (!R04.startsWith(str20)) {
-                                                        if (R04.contains(" " + str20)) {
+                                                if (S04 != null) {
+                                                    if (!S04.startsWith(str20)) {
+                                                        if (S04.contains(" " + str20)) {
                                                         }
                                                     }
                                                 }
-                                                String str21 = R04;
+                                                String str21 = S04;
                                                 stringValue2 = lowerCase4;
-                                                R03 = str21;
+                                                S03 = str21;
                                             }
                                         }
                                     }
@@ -6688,9 +6688,9 @@ public final class tr extends c1 {
                     SQLiteCursor queryFinalized4 = R3.queryFinalized("SELECT q.data, u.name, q.user, q.g, q.authkey, q.ttl, u.data, u.status, q.layer, q.seq_in, q.seq_out, q.use_count, q.exchange_id, q.key_date, q.fprint, q.fauthkey, q.khash, q.in_seq_no, q.admin_id, q.mtproto_seq FROM enc_chats as q INNER JOIN users as u ON q.user = u.uid WHERE q.uid IN(" + TextUtils.join(",", arrayList5) + ")", new Object[0]);
                     while (queryFinalized4.next()) {
                         String stringValue3 = queryFinalized4.stringValue(1);
-                        String R05 = gd.E0().R0(stringValue3);
-                        if (stringValue3.equals(R05)) {
-                            R05 = null;
+                        String S05 = gd.E0().S0(stringValue3);
+                        if (stringValue3.equals(S05)) {
+                            S05 = null;
                         }
                         String str22 = str3;
                         int lastIndexOf2 = stringValue3.lastIndexOf(str22);
@@ -6704,9 +6704,9 @@ public final class tr extends c1 {
                             String str23 = strArr[i29];
                             if (!stringValue3.startsWith(str23)) {
                                 if (!stringValue3.contains(str17 + str23)) {
-                                    if (R05 != null) {
-                                        if (!R05.startsWith(str23)) {
-                                            if (R05.contains(str17 + str23)) {
+                                    if (S05 != null) {
+                                        if (!S05.startsWith(str23)) {
+                                            if (S05.contains(str17 + str23)) {
                                             }
                                         }
                                     }
@@ -6759,7 +6759,7 @@ public final class tr extends c1 {
                                             if (c10 == 1) {
                                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(i5.n(user.first_name, user.last_name));
                                                 d0Var4.c = spannableStringBuilder;
-                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.n6.v0(org.telegram.ui.ActionBar.n6.Z8)), 0, d0Var4.c.length(), 33);
+                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.m6.v0(org.telegram.ui.ActionBar.m6.Z8)), 0, d0Var4.c.length(), 33);
                                             } else {
                                                 d0Var4.c = g0.r0("@" + o10.o(user), null, "@" + str23);
                                             }
@@ -6805,9 +6805,9 @@ public final class tr extends c1 {
                 while (queryFinalized.next()) {
                     if (hVar2.h(queryFinalized.longValue(3)) < 0) {
                         String stringValue4 = queryFinalized.stringValue(2);
-                        String R06 = gd.E0().R0(stringValue4);
-                        if (stringValue4.equals(R06)) {
-                            R06 = null;
+                        String S06 = gd.E0().S0(stringValue4);
+                        if (stringValue4.equals(S06)) {
+                            S06 = null;
                         }
                         int lastIndexOf3 = stringValue4.lastIndexOf(str5);
                         String substring3 = lastIndexOf3 != -1 ? stringValue4.substring(lastIndexOf3 + 3) : null;
@@ -6830,9 +6830,9 @@ public final class tr extends c1 {
                                 sb2.append(str6);
                                 sb2.append(str24);
                                 if (!stringValue4.contains(sb2.toString())) {
-                                    if (R06 != null) {
-                                        if (!R06.startsWith(str24)) {
-                                            if (R06.contains(str6 + str24)) {
+                                    if (S06 != null) {
+                                        if (!S06.startsWith(str24)) {
+                                            if (S06.contains(str6 + str24)) {
                                             }
                                         }
                                     }
@@ -7240,7 +7240,7 @@ public final class tr extends c1 {
         if (!z10) {
             return Q0(i7, i10, j3, arrayList, z11);
         }
-        this.a.c(new bi.m4(this, j3, arrayList, z11, i7, i10));
+        this.a.c(new bi.q4(this, j3, arrayList, z11, i7, i10));
         return null;
     }
 
@@ -10984,7 +10984,7 @@ public final class tr extends c1 {
             str = "";
         }
         int i7 = 0;
-        String S0 = E0.S0(str, true, false);
+        String T0 = E0.T0(str, true, false);
         ArrayList<TLRPC.ReactionCount> arrayList2 = message.reactions.results;
         int size = arrayList2.size();
         while (i7 < size) {
@@ -10998,7 +10998,7 @@ public final class tr extends c1 {
                 sQLitePreparedStatement.bindLong(2, fj.Q1(e10, message));
                 TLRPC.Reaction reaction2 = reactionCount2.reaction;
                 sQLitePreparedStatement.bindLong(3, reaction2 instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction2).emoticon.hashCode() : reaction2 instanceof TLRPC.TL_reactionCustomEmoji ? ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id : 0L);
-                sQLitePreparedStatement.bindString(4, S0 == null ? "" : S0);
+                sQLitePreparedStatement.bindString(4, T0 == null ? "" : T0);
                 sQLitePreparedStatement.step();
             }
         }
@@ -11159,7 +11159,7 @@ public final class tr extends c1 {
     }
 
     public final void h2(int i7, long j3, long j10, boolean z10) {
-        this.a.c(new di.i8(this, j10, z10, "unread_poll_votes", j3, i7, "poll_votes_mentions_topics", "unread_poll_votes", "poll_votes_mentions"));
+        this.a.c(new di.j8(this, j10, z10, "unread_poll_votes", j3, i7, "poll_votes_mentions_topics", "unread_poll_votes", "poll_votes_mentions"));
     }
 
     public final void i(Long l10) {
@@ -11206,7 +11206,7 @@ public final class tr extends c1 {
     }
 
     public final void i2(int i7, long j3, long j10, boolean z10) {
-        this.a.c(new di.i8(this, j10, z10, "unread_reactions", j3, i7, "reaction_mentions_topics", "unread_reactions", "reaction_mentions"));
+        this.a.c(new di.j8(this, j10, z10, "unread_reactions", j3, i7, "reaction_mentions_topics", "unread_reactions", "reaction_mentions"));
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor

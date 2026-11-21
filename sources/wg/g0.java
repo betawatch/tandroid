@@ -7,40 +7,40 @@ import android.widget.FrameLayout;
 import c8.ma;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.cx;
 import org.telegram.ui.wc1;
-import ug.i1;
+import ug.h1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g0 extends i1 {
+public final class g0 extends h1 {
     public static g0 O2;
     public final yg.a M2;
     public final String N2;
 
-    public g0(h2 h2Var, int i7, TLRPC.User user, ug.j jVar, String str, boolean z10, i6 i6Var) {
-        super(h2Var, i7, user, jVar, null, i6Var);
+    public g0(g2 g2Var, int i7, TLRPC.User user, ug.j jVar, String str, boolean z10, h6 h6Var) {
+        super(g2Var, i7, user, jVar, null, h6Var);
         this.N2 = str;
         gc.a((FrameLayout) this.b, new bi.t(16));
         if (!z10) {
-            ck0 ck0Var = this.o1;
+            ek0 ek0Var = this.o1;
             int i10 = this.u0;
-            ck0Var.setPadding(i10, 0, i10, org.telegram.messenger.g0.L(68.0f));
+            ek0Var.setPadding(i10, 0, i10, org.telegram.messenger.g0.L(68.0f));
             yg.a aVar = new yg.a(getContext(), this.J0);
             this.M2 = aVar;
-            aVar.setOnClickListener(new sh.b(this, 5));
+            aVar.setOnClickListener(new tg.u(this, 4));
             yg.a aVar2 = this.M2;
             aVar2.e = true;
-            hi.d dVar = aVar2.a;
-            dVar.setEnabled(true);
-            dVar.i(gd.M0(2131749503, null), false, true);
-            u6.h(n6.h5, aVar2.b, aVar2.c);
+            hi.e eVar = aVar2.a;
+            eVar.setEnabled(true);
+            eVar.i(gd.N0(2131749502, null), false, true);
+            t6.h(m6.h5, aVar2.b, aVar2.c);
             this.b.addView(this.M2, ma.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         O();
@@ -54,23 +54,23 @@ public final class g0 extends i1 {
         g0Var.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void L() {
         super.L();
         O2 = null;
     }
 
-    @Override // ug.i1
+    @Override // ug.h1
     public final int g1() {
         return 6;
     }
 
-    @Override // ug.i1
+    @Override // ug.h1
     public final void h1(View view) {
         ((yg.t) view).setSlug(this.N2);
     }
 
-    @Override // ug.i1
+    @Override // ug.h1
     public final View i1(Context context, int i7) {
         if (i7 != 6) {
             return null;
@@ -80,16 +80,16 @@ public final class g0 extends i1 {
         return tVar;
     }
 
-    @Override // ug.i1
+    @Override // ug.h1
     public final void k1(boolean z10) {
         super.k1(z10);
         this.L2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(14.0f);
         ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(12.0f);
-        this.L2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.R2(gd.M0(2131749507, "GiftPremiumAboutThisLink"), n6.Xc, 0, new e0(this, 0), null), org.telegram.messenger.g0.W2(gd.M0(2131749506, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
+        this.L2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.R2(gd.N0(2131749506, "GiftPremiumAboutThisLink"), m6.Xc, 0, new e0(this, 0), null), org.telegram.messenger.g0.W2(gd.N0(2131749505, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
     }
 
-    @Override // ug.i1
+    @Override // ug.h1
     public final void l1() {
         int i7 = this.b2;
         this.c2 = i7;

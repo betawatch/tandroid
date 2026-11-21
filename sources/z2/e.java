@@ -23,14 +23,15 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import k2.h;
+import kg.x1;
 import l2.w;
 import l2.z;
-import oi.y3;
+import oi.z3;
 import v4.f0;
 import x2.d1;
 import x2.g0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e extends l2.b implements Handler.Callback {
     public final sa.d J;
@@ -178,7 +179,7 @@ public final class e extends l2.b implements Handler.Callback {
         zVar.a.m.e(27, new w(0, t1Var));
         l2.f0 f0Var = zVar.a;
         f0Var.e0 = cVar;
-        f0Var.m.e(27, new ki.e(cVar, 6));
+        f0Var.m.e(27, new x1(cVar, 7));
     }
 
     public final void K() {
@@ -317,7 +318,7 @@ public final class e extends l2.b implements Handler.Callback {
         u uVar = uVarArr[0];
         this.Z = uVar;
         if (Objects.equals(uVar.s, "application/x-media3-cues")) {
-            this.L = this.Z.Q == 1 ? new c() : new y3(3);
+            this.L = this.Z.Q == 1 ? new c() : new z3(3);
             return;
         }
         F();

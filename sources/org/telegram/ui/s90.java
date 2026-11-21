@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s90 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -34,11 +34,11 @@ public final class s90 {
     public final int b;
     public final vf.b c;
     public final boolean d;
-    public org.telegram.ui.ActionBar.u1 e;
+    public org.telegram.ui.ActionBar.t1 e;
     public boolean f;
     public boolean g;
     public int h = -1;
-    public ai.g1 i;
+    public ai.i1 i;
     public boolean j;
 
     public s90(LaunchActivity launchActivity, int i7, vf.b bVar, boolean z10) {
@@ -49,7 +49,7 @@ public final class s90 {
     }
 
     public static org.telegram.ui.Components.lc d() {
-        org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+        org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
         return T == null ? org.telegram.ui.Components.lc.Y() : org.telegram.ui.Components.lc.b0(T);
     }
 
@@ -330,9 +330,9 @@ public final class s90 {
 
     public final void b() {
         this.j = true;
-        ai.g1 g1Var = this.i;
-        if (g1Var != null) {
-            org.telegram.messenger.g0.r(g1Var);
+        ai.i1 i1Var = this.i;
+        if (i1Var != null) {
+            org.telegram.messenger.g0.r(i1Var);
         }
         if (this.h >= 0) {
             ConnectionsManager.getInstance(this.b).cancelRequest(this.h, true);
@@ -344,9 +344,9 @@ public final class s90 {
         if (this.g) {
             return;
         }
-        org.telegram.ui.ActionBar.u1 u1Var = this.e;
-        if (u1Var != null) {
-            u1Var.dismiss();
+        org.telegram.ui.ActionBar.t1 t1Var = this.e;
+        if (t1Var != null) {
+            t1Var.dismiss();
         }
         vf.b bVar = this.c;
         if (bVar != null) {
@@ -355,7 +355,7 @@ public final class s90 {
         this.g = true;
     }
 
-    public final org.telegram.ui.ActionBar.s4 e() {
+    public final org.telegram.ui.ActionBar.r4 e() {
         return this.a.M();
     }
 
@@ -369,7 +369,7 @@ public final class s90 {
     /* JADX WARN: Type inference failed for: r0v71 */
     /* JADX WARN: Type inference failed for: r18v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r19v0, types: [java.lang.Object, org.telegram.ui.s90] */
-    /* JADX WARN: Type inference failed for: r3v34, types: [hi.n9, hi.o7] */
+    /* JADX WARN: Type inference failed for: r3v34, types: [hi.m9, hi.n7] */
     public final boolean g(Uri uri) {
         String str;
         Uri s5;
@@ -599,7 +599,7 @@ public final class s90 {
                                 if ("live".equalsIgnoreCase(str8)) {
                                     r02 = -1;
                                 }
-                                hi.ta D = hi.ta.D(launchActivity, i10);
+                                hi.sa D = hi.sa.D(launchActivity, i10);
                                 if (D.P1 == r02) {
                                     z10 = true;
                                 } else {
@@ -610,9 +610,9 @@ public final class s90 {
                                     }
                                     z10 = true;
                                     D.h0(r02 == 1, true);
-                                    hi.z zVar = D.J0;
-                                    if (zVar != null) {
-                                        zVar.a(false, true);
+                                    hi.a0 a0Var = D.J0;
+                                    if (a0Var != null) {
+                                        a0Var.a(false, true);
                                     }
                                     D.l0(false);
                                 }
@@ -690,13 +690,13 @@ public final class s90 {
             tL_requestPeerTypeCreateBot.flags |= 4;
             tL_requestPeerTypeCreateBot.suggested_username = str2;
         }
-        org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+        org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
         if (T == null || T.getContext() == null) {
             return;
         }
         o();
         TLRPC.User[] userArr = {null};
-        org.telegram.messenger.mp.u1(this.b).f2().a(str, null, new x(this, userArr, new org.telegram.ui.Components.n20(this, T, userArr, tL_requestPeerTypeCreateBot, 21), 10));
+        org.telegram.messenger.mp.u1(this.b).f2().a(str, null, new x(this, userArr, new org.telegram.ui.Components.q20(this, T, userArr, tL_requestPeerTypeCreateBot, 21), 10));
     }
 
     public final boolean k(Uri uri, String str) {
@@ -710,7 +710,7 @@ public final class s90 {
         TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
         tL_messages_requestUrlAuth.flags |= 4;
         tL_messages_requestUrlAuth.url = uri.toString();
-        ConnectionsManager.getInstance(this.b).sendRequestTyped(tL_messages_requestUrlAuth, new d3.b(1), new bi.l6(23, this, tL_messages_requestUrlAuth));
+        ConnectionsManager.getInstance(this.b).sendRequestTyped(tL_messages_requestUrlAuth, new d3.b(1), new bi.p6(23, this, tL_messages_requestUrlAuth));
         return true;
     }
 
@@ -777,12 +777,12 @@ public final class s90 {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:605:0x0a9a  */
-    /* JADX WARN: Removed duplicated region for block: B:608:0x0aa7  */
-    /* JADX WARN: Removed duplicated region for block: B:611:0x0ab4  */
-    /* JADX WARN: Removed duplicated region for block: B:614:0x0abf  */
-    /* JADX WARN: Removed duplicated region for block: B:617:0x0acc  */
-    /* JADX WARN: Removed duplicated region for block: B:620:0x0ad9  */
+    /* JADX WARN: Removed duplicated region for block: B:604:0x0a98  */
+    /* JADX WARN: Removed duplicated region for block: B:607:0x0aa5  */
+    /* JADX WARN: Removed duplicated region for block: B:610:0x0ab2  */
+    /* JADX WARN: Removed duplicated region for block: B:613:0x0abd  */
+    /* JADX WARN: Removed duplicated region for block: B:616:0x0aca  */
+    /* JADX WARN: Removed duplicated region for block: B:619:0x0ad7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -794,7 +794,7 @@ public final class s90 {
         String str2;
         int i10;
         int i11;
-        org.telegram.ui.ActionBar.h2 T;
+        org.telegram.ui.ActionBar.g2 T;
         me0 me0Var;
         if (list == null) {
             return false;
@@ -826,815 +826,813 @@ public final class s90 {
                 x("ttlRow");
                 return true;
             }
+        } else if ("folders".equalsIgnoreCase(str3)) {
+            FiltersSetupActivity filtersSetupActivity = new FiltersSetupActivity();
+            t(new FiltersSetupActivity());
+            if ("create".equalsIgnoreCase(str4)) {
+                org.telegram.messenger.g0.h3(new h60(13, this, filtersSetupActivity), 300L);
+            }
+            if ("show-tags".equalsIgnoreCase(str4)) {
+                x("showTagsRow");
+                return true;
+            }
         } else {
-            int i12 = 11;
-            if ("folders".equalsIgnoreCase(str3)) {
-                FiltersSetupActivity filtersSetupActivity = new FiltersSetupActivity();
-                t(new FiltersSetupActivity());
-                if ("create".equalsIgnoreCase(str4)) {
-                    org.telegram.messenger.g0.h3(new o60(i12, this, filtersSetupActivity), 300L);
-                }
-                if ("show-tags".equalsIgnoreCase(str4)) {
-                    x("showTagsRow");
+            if ("change_number".equalsIgnoreCase(str3)) {
+                u(new g(3), true);
+                return true;
+            }
+            if (!"language".equalsIgnoreCase(str3)) {
+                if ("auto_delete".equalsIgnoreCase(str3)) {
+                    t(new p4());
                     return true;
                 }
-            } else {
-                if ("change_number".equalsIgnoreCase(str3)) {
-                    u(new g(3), true);
+                if ("phone_privacy".equalsIgnoreCase(str3)) {
+                    t(new PrivacyControlActivity(6));
                     return true;
                 }
-                if (!"language".equalsIgnoreCase(str3)) {
-                    if ("auto_delete".equalsIgnoreCase(str3)) {
-                        t(new p4());
-                        return true;
-                    }
-                    if ("phone_privacy".equalsIgnoreCase(str3)) {
-                        t(new PrivacyControlActivity(6));
-                        return true;
-                    }
-                    if ("premium_sms".equalsIgnoreCase(str3)) {
-                        org.telegram.messenger.t0 t0Var = org.telegram.messenger.t0.a;
-                    }
-                    boolean equalsIgnoreCase = "login_email".equalsIgnoreCase(str3);
-                    int i13 = this.b;
-                    if (equalsIgnoreCase) {
-                        o();
-                        this.h = ConnectionsManager.getInstance(i13).sendRequest(new TL_account.getPassword(), new l(this, i12), 10);
-                        return true;
-                    }
-                    if ("chats".equalsIgnoreCase(str3)) {
-                        org.telegram.ui.ActionBar.s4 e10 = e();
-                        int size = e10.getFragmentStack().size() - 1;
-                        while (true) {
-                            z10 = z12;
-                            if (size < 0) {
-                                me0Var = null;
-                                break;
-                            }
-                            if (e10.getFragmentStack().get(size) instanceof me0) {
-                                me0Var = (me0) e10.getFragmentStack().get(size);
-                                break;
-                            }
-                            if (size > 0) {
-                                ((ActionBarLayout) e10).b0(size);
-                            }
-                            size++;
-                            z12 = z10;
+                if ("premium_sms".equalsIgnoreCase(str3)) {
+                    org.telegram.messenger.t0 t0Var = org.telegram.messenger.t0.a;
+                }
+                boolean equalsIgnoreCase = "login_email".equalsIgnoreCase(str3);
+                int i12 = 11;
+                int i13 = this.b;
+                if (equalsIgnoreCase) {
+                    o();
+                    this.h = ConnectionsManager.getInstance(i13).sendRequest(new TL_account.getPassword(), new l(this, i12), 10);
+                    return true;
+                }
+                if ("chats".equalsIgnoreCase(str3)) {
+                    org.telegram.ui.ActionBar.r4 e10 = e();
+                    int size = e10.getFragmentStack().size() - 1;
+                    while (true) {
+                        z10 = z12;
+                        if (size < 0) {
+                            me0Var = null;
+                            break;
                         }
-                        if (me0Var != null && "search".equalsIgnoreCase(str4)) {
-                            me0Var.c.A(2);
-                            return z10;
+                        if (e10.getFragmentStack().get(size) instanceof me0) {
+                            me0Var = (me0) e10.getFragmentStack().get(size);
+                            break;
                         }
-                    } else {
-                        z10 = true;
+                        if (size > 0) {
+                            ((ActionBarLayout) e10).b0(size);
+                        }
+                        size++;
+                        z12 = z10;
                     }
-                    if ("saved-messages".equalsIgnoreCase(str3)) {
-                        t(bn.ua(f().e()));
+                    if (me0Var != null && "search".equalsIgnoreCase(str4)) {
+                        me0Var.c.A(2);
                         return z10;
                     }
-                    if ("calls".equalsIgnoreCase(str3)) {
-                        if ("start-call".equalsIgnoreCase(str4)) {
-                            boolean z13 = z10;
-                            t(new p90(this, a8.p0.k("isCall", z13)));
-                            return z13;
-                        }
-                        boolean z14 = z10;
-                        t(new i9());
-                        return z14;
+                } else {
+                    z10 = true;
+                }
+                if ("saved-messages".equalsIgnoreCase(str3)) {
+                    t(bn.ua(f().e()));
+                    return z10;
+                }
+                if ("calls".equalsIgnoreCase(str3)) {
+                    if ("start-call".equalsIgnoreCase(str4)) {
+                        boolean z13 = z10;
+                        t(new p90(this, a8.p0.k("isCall", z13)));
+                        return z13;
                     }
-                    if ("qr-code".equalsIgnoreCase(str3)) {
-                        if ("scan".equalsIgnoreCase(str4) && (T = LaunchActivity.T()) != null) {
-                            ci.j0.e0(T);
-                            return z10;
+                    boolean z14 = z10;
+                    t(new j9());
+                    return z14;
+                }
+                if ("qr-code".equalsIgnoreCase(str3)) {
+                    if ("scan".equalsIgnoreCase(str4) && (T = LaunchActivity.T()) != null) {
+                        ci.j0.e0(T);
+                        return z10;
+                    }
+                    if ("share".equalsIgnoreCase(str4)) {
+                        Bundle bundle = new Bundle();
+                        bundle.putLong("user_id", f().e());
+                        t(new q90(bundle));
+                        return true;
+                    }
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putLong("user_id", f().e());
+                    t(new ci.j0(bundle2));
+                    return true;
+                }
+                String str8 = str7;
+                if (!"chat".equalsIgnoreCase(str3) || !"browser".equalsIgnoreCase(str4)) {
+                    String str9 = str5;
+                    if ("edit".equalsIgnoreCase(str3)) {
+                        t(new UserInfoActivity());
+                        if ("first-name".equalsIgnoreCase(str4)) {
+                            x("firstNameRow");
                         }
-                        if ("share".equalsIgnoreCase(str4)) {
-                            Bundle bundle = new Bundle();
-                            bundle.putLong("user_id", f().e());
-                            t(new q90(bundle));
+                        if ("last-name".equalsIgnoreCase(str4)) {
+                            x("lastNameRow");
+                        }
+                        if ("bio".equalsIgnoreCase(str4)) {
+                            x("bioRow");
+                        }
+                        if ("birthday".equalsIgnoreCase(str4)) {
+                            x("birthdayRow");
+                        }
+                        if ("change-number".equalsIgnoreCase(str4)) {
+                            x("numberRow");
+                        }
+                        if ("username".equalsIgnoreCase(str4)) {
+                            x("usernameRow");
+                        }
+                        if ("channel".equalsIgnoreCase(str4)) {
+                            x("channelRow");
+                        }
+                        if ("add-account".equalsIgnoreCase(str4)) {
+                            x("addAccountRow");
+                        }
+                        if ("log-out".equalsIgnoreCase(str4)) {
+                            x("logoutRow");
                             return true;
                         }
-                        Bundle bundle2 = new Bundle();
-                        bundle2.putLong("user_id", f().e());
-                        t(new ci.j0(bundle2));
-                        return true;
-                    }
-                    String str8 = str7;
-                    if (!"chat".equalsIgnoreCase(str3) || !"browser".equalsIgnoreCase(str4)) {
-                        String str9 = str5;
-                        if ("edit".equalsIgnoreCase(str3)) {
-                            t(new UserInfoActivity());
-                            if ("first-name".equalsIgnoreCase(str4)) {
-                                x("firstNameRow");
-                            }
-                            if ("last-name".equalsIgnoreCase(str4)) {
-                                x("lastNameRow");
-                            }
-                            if ("bio".equalsIgnoreCase(str4)) {
-                                x("bioRow");
-                            }
-                            if ("birthday".equalsIgnoreCase(str4)) {
-                                x("birthdayRow");
-                            }
-                            if ("change-number".equalsIgnoreCase(str4)) {
-                                x("numberRow");
-                            }
-                            if ("username".equalsIgnoreCase(str4)) {
-                                x("usernameRow");
-                            }
-                            if ("channel".equalsIgnoreCase(str4)) {
-                                x("channelRow");
-                            }
-                            if ("add-account".equalsIgnoreCase(str4)) {
-                                x("addAccountRow");
-                            }
-                            if ("log-out".equalsIgnoreCase(str4)) {
-                                x("logoutRow");
+                        z11 = true;
+                    } else {
+                        if ("my-profile".equalsIgnoreCase(str3)) {
+                            if ("edit".equalsIgnoreCase(str4)) {
+                                t(new UserInfoActivity());
                                 return true;
                             }
-                            z11 = true;
-                        } else {
-                            if ("my-profile".equalsIgnoreCase(str3)) {
-                                if ("edit".equalsIgnoreCase(str4)) {
-                                    t(new UserInfoActivity());
-                                    return true;
-                                }
-                                Bundle bundle3 = new Bundle();
-                                bundle3.putLong("user_id", f().e());
-                                bundle3.putBoolean("my_profile", true);
-                                if ("gifts".equalsIgnoreCase(str4)) {
-                                    bundle3.putBoolean("open_gifts", true);
-                                }
-                                ProfileActivity profileActivity = new ProfileActivity(bundle3);
-                                if ("gifts".equalsIgnoreCase(str4)) {
-                                    profileActivity.whenFullyVisible(new n90(profileActivity, 2));
-                                }
-                                if ("posts".equalsIgnoreCase(str4)) {
-                                    profileActivity.whenFullyVisible(new n90(profileActivity, 3));
-                                }
-                                t(profileActivity);
-                                return true;
+                            Bundle bundle3 = new Bundle();
+                            bundle3.putLong("user_id", f().e());
+                            bundle3.putBoolean("my_profile", true);
+                            if ("gifts".equalsIgnoreCase(str4)) {
+                                bundle3.putBoolean("open_gifts", true);
                             }
-                            if ("notifications".equalsIgnoreCase(str3)) {
-                                if (!TextUtils.isEmpty(str9) && ("private-chats".equalsIgnoreCase(str4) || "groups".equalsIgnoreCase(str4) || "channels".equalsIgnoreCase(str4) || "stories".equalsIgnoreCase(str4) || "reactions".equalsIgnoreCase(str4))) {
-                                    if ("private-chats".equalsIgnoreCase(str4)) {
-                                        i11 = 1;
-                                    } else {
-                                        if (!"groups".equalsIgnoreCase(str4)) {
-                                            if ("channels".equalsIgnoreCase(str4)) {
-                                                i11 = 2;
-                                            } else if ("stories".equalsIgnoreCase(str4)) {
-                                                i11 = 3;
-                                            } else if ("reactions".equalsIgnoreCase(str4)) {
-                                                i11 = 4;
-                                            }
-                                        }
-                                        i11 = 0;
-                                    }
-                                    NotificationsSettingsActivity notificationsSettingsActivity = new NotificationsSettingsActivity();
-                                    o();
-                                    notificationsSettingsActivity.F0(new org.telegram.ui.Components.kp0(this, notificationsSettingsActivity, i11, str9, 10));
-                                    return true;
-                                }
-                                t(new NotificationsSettingsActivity());
-                                if ("accounts".equalsIgnoreCase(str4)) {
-                                    x("accountsAllRow");
-                                }
+                            ProfileActivity profileActivity = new ProfileActivity(bundle3);
+                            if ("gifts".equalsIgnoreCase(str4)) {
+                                profileActivity.whenFullyVisible(new n90(profileActivity, 2));
+                            }
+                            if ("posts".equalsIgnoreCase(str4)) {
+                                profileActivity.whenFullyVisible(new n90(profileActivity, 3));
+                            }
+                            t(profileActivity);
+                            return true;
+                        }
+                        if ("notifications".equalsIgnoreCase(str3)) {
+                            if (!TextUtils.isEmpty(str9) && ("private-chats".equalsIgnoreCase(str4) || "groups".equalsIgnoreCase(str4) || "channels".equalsIgnoreCase(str4) || "stories".equalsIgnoreCase(str4) || "reactions".equalsIgnoreCase(str4))) {
                                 if ("private-chats".equalsIgnoreCase(str4)) {
-                                    x("privateRow");
-                                }
-                                if ("groups".equalsIgnoreCase(str4)) {
-                                    x("groupRow");
-                                }
-                                if ("channels".equalsIgnoreCase(str4)) {
-                                    x("channelsRow");
-                                }
-                                if ("stories".equalsIgnoreCase(str4)) {
-                                    x("storiesRow");
-                                }
-                                if ("reactions".equalsIgnoreCase(str4)) {
-                                    x("reactionsRow");
-                                }
-                                if ("in-app-sounds".equalsIgnoreCase(str4)) {
-                                    x("inappSoundRow");
-                                }
-                                if ("in-app-vibrate".equalsIgnoreCase(str4)) {
-                                    x("inappVibrateRow");
-                                }
-                                if ("in-app-preview".equalsIgnoreCase(str4)) {
-                                    x("inappPreviewRow");
-                                }
-                                if ("in-chat-sounds".equalsIgnoreCase(str4)) {
-                                    x("inchatSoundRow");
-                                }
-                                if ("in-app-popup".equalsIgnoreCase(str4)) {
-                                    x("inappPriorityRow");
-                                }
-                                if ("show-badge-icon".equalsIgnoreCase(str4)) {
-                                    x("badgeNumberShowRow");
-                                }
-                                if ("include-muted-chats".equalsIgnoreCase(str4)) {
-                                    x("badgeNumberMutedRow");
-                                }
-                                if ("count-unread-messages".equalsIgnoreCase(str4)) {
-                                    x("badgeNumberMessagesRow");
-                                }
-                                if ("new-contacts".equalsIgnoreCase(str4)) {
-                                    x("contactJoinedRow");
-                                }
-                                if ("pinned-messages".equalsIgnoreCase(str4)) {
-                                    x("pinnedMessageRow");
-                                }
-                                if ("reset".equalsIgnoreCase(str4)) {
-                                    x("resetNotificationsRow");
-                                    return true;
-                                }
-                            } else if ("privacy".equalsIgnoreCase(str3)) {
-                                if ("data-settings".equalsIgnoreCase(str4) && "delete-cloud-drafts".equalsIgnoreCase(str9)) {
-                                    t(new DataSettingsActivity());
-                                    x("clearDraftsRow");
-                                    return true;
-                                }
-                                if (!TextUtils.isEmpty(str9) && "blocked".equalsIgnoreCase(str4)) {
-                                    t(new st0());
-                                    return true;
-                                }
-                                if (!TextUtils.isEmpty(str9) && "active-websites".equalsIgnoreCase(str4)) {
-                                    t(new SessionsActivity(1));
-                                    if (!"disconnect-all".equalsIgnoreCase(str9)) {
-                                        return true;
-                                    }
-                                    x("terminateAllSessionsRow");
-                                    return true;
-                                }
-                                if (!TextUtils.isEmpty(str9) && "passcode".equalsIgnoreCase(str4)) {
-                                    l90 l90Var = new l90(this, str9, 0);
-                                    org.telegram.ui.ActionBar.h2 p02 = PasscodeActivity.p0();
-                                    t(p02);
-                                    if (p02 instanceof g) {
-                                        ((g) p02).e0(l90Var);
-                                        return true;
-                                    }
-                                    if (p02 instanceof PasscodeActivity) {
-                                        ((PasscodeActivity) p02).x0(l90Var);
-                                        return true;
-                                    }
+                                    i11 = 1;
                                 } else {
-                                    if (!TextUtils.isEmpty(str9) && "2sv".equalsIgnoreCase(str4)) {
-                                        o();
-                                        this.h = ConnectionsManager.getInstance(i13).sendRequest(new TL_account.getPassword(), new e00(6, this, str9), 10);
-                                        return true;
-                                    }
-                                    if (TextUtils.isEmpty(str9) || !"passkey".equalsIgnoreCase(str4)) {
-                                        str = "data-settings";
-                                        str2 = "birthdayRow";
-                                    } else {
-                                        str = "data-settings";
-                                        str2 = "birthdayRow";
-                                        if (Build.VERSION.SDK_INT >= 28) {
-                                            o();
-                                            this.h = ConnectionsManager.getInstance(i13).sendRequestTyped(new TL_account.getPasskeys(), new d3.b(2), new m90(this, str9, 0));
-                                            return true;
+                                    if (!"groups".equalsIgnoreCase(str4)) {
+                                        if ("channels".equalsIgnoreCase(str4)) {
+                                            i11 = 2;
+                                        } else if ("stories".equalsIgnoreCase(str4)) {
+                                            i11 = 3;
+                                        } else if ("reactions".equalsIgnoreCase(str4)) {
+                                            i11 = 4;
                                         }
                                     }
-                                    if (!TextUtils.isEmpty(str9) && "auto-delete".equalsIgnoreCase(str4) && f().h() >= 0) {
-                                        t(new p4());
-                                        return true;
-                                    }
-                                    if (!TextUtils.isEmpty(str9) && ("phone-number".equalsIgnoreCase(str4) || "last-seen".equalsIgnoreCase(str4) || "profile-photos".equalsIgnoreCase(str4) || "bio".equalsIgnoreCase(str4) || "gifts".equalsIgnoreCase(str4) || "birthday".equalsIgnoreCase(str4) || "saved-music".equalsIgnoreCase(str4) || "forwards".equalsIgnoreCase(str4) || "calls".equalsIgnoreCase(str4) || "voice".equalsIgnoreCase(str4) || "messages".equalsIgnoreCase(str4) || "invites".equalsIgnoreCase(str4))) {
-                                        if ("phone-number".equalsIgnoreCase(str4)) {
-                                            i10 = 6;
-                                        } else {
-                                            if (!"last-seen".equalsIgnoreCase(str4)) {
-                                                if ("profile-photos".equalsIgnoreCase(str4)) {
-                                                    i10 = 4;
-                                                } else if ("bio".equalsIgnoreCase(str4)) {
-                                                    i10 = 9;
-                                                } else if ("gifts".equalsIgnoreCase(str4)) {
-                                                    i10 = 12;
-                                                } else if ("birthday".equalsIgnoreCase(str4)) {
-                                                    i10 = 11;
-                                                } else if ("saved-music".equalsIgnoreCase(str4)) {
-                                                    i10 = 14;
-                                                } else if ("forwards".equalsIgnoreCase(str4)) {
-                                                    i10 = 5;
-                                                } else if ("calls".equalsIgnoreCase(str4)) {
-                                                    i10 = "p2p".equalsIgnoreCase(str9) ? 3 : 2;
-                                                } else if ("voice".equalsIgnoreCase(str4)) {
-                                                    i10 = 8;
-                                                } else if ("messages".equalsIgnoreCase(str4)) {
-                                                    i10 = 10;
-                                                } else if ("invites".equalsIgnoreCase(str4)) {
-                                                    i10 = 1;
-                                                }
-                                            }
-                                            i10 = 0;
-                                        }
-                                        t(new PrivacyControlActivity(i10));
-                                        if ("birthday".equalsIgnoreCase(str4) && "add".equalsIgnoreCase(str9)) {
-                                            x("setBirthdayRow");
-                                        }
-                                        if ("always-share".equalsIgnoreCase(str9) || "always-share".equalsIgnoreCase(str6) || "always".equalsIgnoreCase(str9) || "always".equalsIgnoreCase(str6)) {
-                                            x("everybodyRow");
-                                        }
-                                        if ("never-share".equalsIgnoreCase(str9) || "never-share".equalsIgnoreCase(str6) || "never".equalsIgnoreCase(str9) || "never".equalsIgnoreCase(str6)) {
-                                            x("nobodyRow");
-                                        }
-                                        if ("gifts".equalsIgnoreCase(str4) && "show-icon".equalsIgnoreCase(str9)) {
-                                            x("showGiftIconRow");
-                                        }
-                                        if ("gifts".equalsIgnoreCase(str4) && "accepted-types".equalsIgnoreCase(str9)) {
-                                            x("giftTypesHeaderRow");
-                                        }
-                                        if ("messages".equalsIgnoreCase(str4) && "set-price".equalsIgnoreCase(str9)) {
-                                            x("priceRow");
-                                        }
-                                        if ("messages".equalsIgnoreCase(str4) && "remove-fee".equalsIgnoreCase(str9)) {
-                                            x("alwaysShareRow");
-                                        }
-                                        if ("last-seen".equalsIgnoreCase(str4) && "hide-read-time".equalsIgnoreCase(str9)) {
-                                            x("readRow");
-                                        }
-                                        if ("profile-photos".equalsIgnoreCase(str4)) {
-                                            if ("set-public".equalsIgnoreCase(str9)) {
-                                                x("photoForRestRow");
-                                            }
-                                            if ("update-public".equalsIgnoreCase(str9)) {
-                                                x("photoForRestRow");
-                                            }
-                                            if ("remove-public".equalsIgnoreCase(str9)) {
-                                                x("currentPhotoForRestRow");
-                                                return true;
-                                            }
-                                        }
-                                    } else if (org.telegram.messenger.mp.u1(i13).b4 || !"archive-and-mute".equalsIgnoreCase(str4)) {
-                                        t(new PrivacySettingsActivity());
-                                        if ("blocked".equalsIgnoreCase(str4)) {
-                                            x("blockedRow");
-                                        }
-                                        if ("active-websites".equalsIgnoreCase(str4)) {
-                                            x("webSessionsRow");
-                                        }
-                                        if ("passcode".equalsIgnoreCase(str4)) {
-                                            x("passcodeRow");
-                                        }
-                                        if ("2sv".equalsIgnoreCase(str4)) {
-                                            x("passwordRow");
-                                        }
-                                        if ("passkey".equalsIgnoreCase(str4)) {
-                                            x("passkeysRow");
-                                        }
-                                        if ("auto-delete".equalsIgnoreCase(str4)) {
-                                            x("autoDeleteMesages");
-                                        }
-                                        if ("login-email".equalsIgnoreCase(str4)) {
-                                            x("emailLoginRow");
-                                        }
-                                        if ("phone-number".equalsIgnoreCase(str4)) {
-                                            x("phoneNumberRow");
-                                        }
-                                        if ("last-seen".equalsIgnoreCase(str4)) {
-                                            x("lastSeenRow");
-                                        }
-                                        if ("profile-photos".equalsIgnoreCase(str4)) {
-                                            x("profilePhotoRow");
-                                        }
-                                        if ("bio".equalsIgnoreCase(str4)) {
-                                            x("bioRow");
-                                        }
-                                        if ("gifts".equalsIgnoreCase(str4)) {
-                                            x("giftsRow");
-                                        }
-                                        if ("birthday".equalsIgnoreCase(str4)) {
-                                            x(str2);
-                                        }
-                                        if ("saved-music".equalsIgnoreCase(str4)) {
-                                            x("musicRow");
-                                        }
-                                        if ("forwards".equalsIgnoreCase(str4)) {
-                                            x("forwardsRow");
-                                        }
-                                        if ("calls".equalsIgnoreCase(str4)) {
-                                            x("callsRow");
-                                        }
-                                        if ("voice".equalsIgnoreCase(str4)) {
-                                            x("voicesRow");
-                                        }
-                                        if ("messages".equalsIgnoreCase(str4)) {
-                                            x("noncontactsRow");
-                                        }
-                                        if ("invites".equalsIgnoreCase(str4)) {
-                                            x("groupsRow");
-                                        }
-                                        if ("self-destruct".equalsIgnoreCase(str4)) {
-                                            x("deleteAccountRow");
-                                        }
-                                        if ("archive-and-mute".equalsIgnoreCase(str4)) {
-                                            x("newChatsRow");
-                                        }
-                                        if (str.equalsIgnoreCase(str4)) {
-                                            if ("sync-contacts".equalsIgnoreCase(str9)) {
-                                                x("contactsSyncRow");
-                                            }
-                                            if ("delete-synced".equalsIgnoreCase(str9)) {
-                                                x("contactsDeleteRow");
-                                            }
-                                            if ("suggest-contacts".equalsIgnoreCase(str9)) {
-                                                x("contactsSuggestRow");
-                                            }
-                                            if ("clear-payment-info".equalsIgnoreCase(str9)) {
-                                                x("paymentsClearRow");
-                                            }
-                                            if ("link-previews".equalsIgnoreCase(str9)) {
-                                                x("secretWebpageRow");
-                                            }
-                                            if ("map-provider".equalsIgnoreCase(str9)) {
-                                                x("secretMapRow");
-                                                return true;
-                                            }
-                                        }
-                                    }
+                                    i11 = 0;
                                 }
-                            } else if ("data".equalsIgnoreCase(str3)) {
-                                if ("storage".equalsIgnoreCase(str4)) {
-                                    "clear-cache".equalsIgnoreCase(str9);
-                                    t(new x6());
+                                NotificationsSettingsActivity notificationsSettingsActivity = new NotificationsSettingsActivity();
+                                o();
+                                notificationsSettingsActivity.F0(new org.telegram.ui.Components.mp0(this, notificationsSettingsActivity, i11, str9, 10));
+                                return true;
+                            }
+                            t(new NotificationsSettingsActivity());
+                            if ("accounts".equalsIgnoreCase(str4)) {
+                                x("accountsAllRow");
+                            }
+                            if ("private-chats".equalsIgnoreCase(str4)) {
+                                x("privateRow");
+                            }
+                            if ("groups".equalsIgnoreCase(str4)) {
+                                x("groupRow");
+                            }
+                            if ("channels".equalsIgnoreCase(str4)) {
+                                x("channelsRow");
+                            }
+                            if ("stories".equalsIgnoreCase(str4)) {
+                                x("storiesRow");
+                            }
+                            if ("reactions".equalsIgnoreCase(str4)) {
+                                x("reactionsRow");
+                            }
+                            if ("in-app-sounds".equalsIgnoreCase(str4)) {
+                                x("inappSoundRow");
+                            }
+                            if ("in-app-vibrate".equalsIgnoreCase(str4)) {
+                                x("inappVibrateRow");
+                            }
+                            if ("in-app-preview".equalsIgnoreCase(str4)) {
+                                x("inappPreviewRow");
+                            }
+                            if ("in-chat-sounds".equalsIgnoreCase(str4)) {
+                                x("inchatSoundRow");
+                            }
+                            if ("in-app-popup".equalsIgnoreCase(str4)) {
+                                x("inappPriorityRow");
+                            }
+                            if ("show-badge-icon".equalsIgnoreCase(str4)) {
+                                x("badgeNumberShowRow");
+                            }
+                            if ("include-muted-chats".equalsIgnoreCase(str4)) {
+                                x("badgeNumberMutedRow");
+                            }
+                            if ("count-unread-messages".equalsIgnoreCase(str4)) {
+                                x("badgeNumberMessagesRow");
+                            }
+                            if ("new-contacts".equalsIgnoreCase(str4)) {
+                                x("contactJoinedRow");
+                            }
+                            if ("pinned-messages".equalsIgnoreCase(str4)) {
+                                x("pinnedMessageRow");
+                            }
+                            if ("reset".equalsIgnoreCase(str4)) {
+                                x("resetNotificationsRow");
+                                return true;
+                            }
+                        } else if ("privacy".equalsIgnoreCase(str3)) {
+                            if ("data-settings".equalsIgnoreCase(str4) && "delete-cloud-drafts".equalsIgnoreCase(str9)) {
+                                t(new DataSettingsActivity());
+                                x("clearDraftsRow");
+                                return true;
+                            }
+                            if (!TextUtils.isEmpty(str9) && "blocked".equalsIgnoreCase(str4)) {
+                                t(new st0());
+                                return true;
+                            }
+                            if (!TextUtils.isEmpty(str9) && "active-websites".equalsIgnoreCase(str4)) {
+                                t(new SessionsActivity(1));
+                                if (!"disconnect-all".equalsIgnoreCase(str9)) {
                                     return true;
                                 }
-                                if ("usage".equalsIgnoreCase(str4)) {
-                                    pt ptVar = new pt();
-                                    t(ptVar);
-                                    if ("mobile".equalsIgnoreCase(str9)) {
-                                        ptVar.b.e(1, 1);
-                                    }
-                                    if ("wifi".equalsIgnoreCase(str9)) {
-                                        ptVar.b.e(2, 2);
-                                    }
-                                    if ("roaming".equalsIgnoreCase(str9)) {
-                                        ptVar.b.e(3, 3);
-                                    }
-                                    if ("reset".equalsIgnoreCase(str9)) {
-                                        ptVar.x0();
-                                        return true;
-                                    }
-                                } else {
-                                    if ("auto-download".equalsIgnoreCase(str4)) {
-                                        if ("mobile".equalsIgnoreCase(str9) || "wifi".equalsIgnoreCase(str9) || "roaming".equalsIgnoreCase(str9)) {
-                                            if (!"mobile".equalsIgnoreCase(str9)) {
-                                                if ("wifi".equalsIgnoreCase(str9)) {
-                                                    i7 = 1;
-                                                } else if ("roaming".equalsIgnoreCase(str9)) {
-                                                    i7 = 2;
-                                                }
-                                                t(new DataAutoDownloadActivity(i7));
-                                                if ("enable".equalsIgnoreCase(str6)) {
-                                                    x("autoDownloadRow");
-                                                }
-                                                if ("usage".equalsIgnoreCase(str6)) {
-                                                    x("usageProgressRow");
-                                                }
-                                                if ("photos".equalsIgnoreCase(str6)) {
-                                                    x("photosRow");
-                                                }
-                                                if ("stories".equalsIgnoreCase(str6)) {
-                                                    x("storiesRow");
-                                                }
-                                                if ("videos".equalsIgnoreCase(str6)) {
-                                                    x("videosRow");
-                                                }
-                                                if ("files".equalsIgnoreCase(str6)) {
-                                                    x("filesRow");
-                                                    return true;
-                                                }
-                                            }
-                                            i7 = 0;
-                                            t(new DataAutoDownloadActivity(i7));
-                                            if ("enable".equalsIgnoreCase(str6)) {
-                                            }
-                                            if ("usage".equalsIgnoreCase(str6)) {
-                                            }
-                                            if ("photos".equalsIgnoreCase(str6)) {
-                                            }
-                                            if ("stories".equalsIgnoreCase(str6)) {
-                                            }
-                                            if ("videos".equalsIgnoreCase(str6)) {
-                                            }
-                                            if ("files".equalsIgnoreCase(str6)) {
-                                            }
-                                        } else if ("reset".equalsIgnoreCase(str9)) {
-                                            t(new DataSettingsActivity());
-                                            x("resetDownloadRow");
-                                            return true;
-                                        }
-                                    }
-                                    if (!TextUtils.isEmpty(str6) && "save-to-photos".equalsIgnoreCase(str4)) {
-                                        t(new SaveToGallerySettingsActivity(p5.c.f("groups".equalsIgnoreCase(str9) ? 2 : "channels".equalsIgnoreCase(str9) ? 4 : 1, TeXSymbolParser.TYPE_ATTR)));
-                                        if ("max-video-size".equalsIgnoreCase(str6)) {
-                                            x("maxVideoSizeRow");
-                                        }
-                                        if ("add-exception".equalsIgnoreCase(str6)) {
-                                            x("addExceptionRow");
-                                        }
-                                        if ("delete-all".equalsIgnoreCase(str6)) {
-                                            x("deleteAllExceptionsRow");
-                                            return true;
-                                        }
-                                    } else if (!TextUtils.isEmpty(str9) && "proxy".equalsIgnoreCase(str4)) {
-                                        t(new ProxyListActivity());
-                                        if ("use-proxy".equalsIgnoreCase(str9)) {
-                                            x("useProxyRow");
-                                        }
-                                        if ("add-proxy".equalsIgnoreCase(str9)) {
-                                            x("proxyAddRow");
-                                            return true;
-                                        }
-                                    } else {
-                                        if ("pause-music".equalsIgnoreCase(str4)) {
-                                            t(new ThemeActivity(0));
-                                            x("pauseOnMediaRow");
-                                            return true;
-                                        }
-                                        if ("pause-music-on-record".equalsIgnoreCase(str4)) {
-                                            t(new ThemeActivity(0));
-                                            x("pauseOnRecordRow");
-                                            return true;
-                                        }
-                                        if ("raise-to-listen".equalsIgnoreCase(str4)) {
-                                            t(new ThemeActivity(0));
-                                            x("raiseToListenRow");
-                                            return true;
-                                        }
-                                        if ("raise-to-speak".equalsIgnoreCase(str4)) {
-                                            t(new ThemeActivity(0));
-                                            x("raiseToSpeakRow");
-                                            return true;
-                                        }
-                                        if ("show-18-contnet".equalsIgnoreCase(str4)) {
-                                            t(new ThemeActivity(0));
-                                            x("sensitiveContentRow");
-                                            return true;
-                                        }
-                                        t(new DataSettingsActivity());
-                                        if ("save-to-photos".equalsIgnoreCase(str4)) {
-                                            if ("chats".equalsIgnoreCase(str9)) {
-                                                x("saveToGalleryPeerRow");
-                                            }
-                                            if ("groups".equalsIgnoreCase(str9)) {
-                                                x("saveToGalleryGroupsRow");
-                                            }
-                                            if ("channels".equalsIgnoreCase(str9)) {
-                                                x("saveToGalleryChannelsRow");
-                                            }
-                                        }
-                                        if ("use-less-data".equalsIgnoreCase(str4)) {
-                                            x("useLessDataForCallsRow");
-                                        }
-                                        if ("proxy".equalsIgnoreCase(str4)) {
-                                            x("proxyRow");
-                                            return true;
-                                        }
-                                    }
+                                x("terminateAllSessionsRow");
+                                return true;
+                            }
+                            if (!TextUtils.isEmpty(str9) && "passcode".equalsIgnoreCase(str4)) {
+                                l90 l90Var = new l90(this, str9, 0);
+                                org.telegram.ui.ActionBar.g2 p02 = PasscodeActivity.p0();
+                                t(p02);
+                                if (p02 instanceof g) {
+                                    ((g) p02).e0(l90Var);
+                                    return true;
                                 }
-                            } else if ("appearance".equalsIgnoreCase(str3)) {
-                                if ("themes".equalsIgnoreCase(str4) || "theme".equalsIgnoreCase(str4)) {
-                                    t(new ThemeActivity(3));
-                                    if ("create".equalsIgnoreCase(str9)) {
-                                        x("createNewThemeRow");
-                                        return true;
-                                    }
-                                } else if (!TextUtils.isEmpty(str9) && ("wallpaper".equalsIgnoreCase(str4) || "wallpapers".equalsIgnoreCase(str4))) {
-                                    t(new WallpapersListActivity(0));
-                                    if ("set".equalsIgnoreCase(str9) || "choose-photo".equalsIgnoreCase(str9)) {
-                                        x("uploadImageRow");
-                                        return true;
-                                    }
-                                } else {
-                                    if (!TextUtils.isEmpty(str9) && ("your-color".equalsIgnoreCase(str4) || "color".equalsIgnoreCase(str4))) {
-                                        t(new lm0());
-                                        return true;
-                                    }
-                                    if (TextUtils.isEmpty(str9) || !"stickers-and-emoji".equalsIgnoreCase(str4)) {
-                                        t(new ThemeActivity(0));
-                                        if ("wallpaper".equalsIgnoreCase(str4) || "wallpapers".equalsIgnoreCase(str4)) {
-                                            x("backgroundRow");
-                                        }
-                                        if ("your-color".equalsIgnoreCase(str4) || "color".equalsIgnoreCase(str4)) {
-                                            x("changeUserColor");
-                                        }
-                                        if ("auto-night-mode".equalsIgnoreCase(str4)) {
-                                            x("nightThemeRow");
-                                        }
-                                        if ("text-size".equalsIgnoreCase(str4)) {
-                                            x("textSizeRow");
-                                        }
-                                        if ("message-corners".equalsIgnoreCase(str4)) {
-                                            x("bubbleRadiusRow");
-                                        }
-                                        if ("animations".equalsIgnoreCase(str4)) {
-                                            x("liteModeRow");
-                                        }
-                                        if ("stickers-and-emoji".equalsIgnoreCase(str4)) {
-                                            x("stickersRow");
-                                        }
-                                        if ("app-icon".equalsIgnoreCase(str4)) {
-                                            x("appIconSelectorRow");
-                                        }
-                                        if ("tap-for-next-media".equalsIgnoreCase(str4)) {
-                                            x("nextMediaTapRow");
-                                            return true;
-                                        }
-                                        z11 = true;
-                                    } else {
-                                        if (!TextUtils.isEmpty(str6) && "archived".equalsIgnoreCase(str9)) {
-                                            t(new o(0));
-                                            return true;
-                                        }
-                                        if (!"emoji".equalsIgnoreCase(str9) || TextUtils.isEmpty(str6) || "large".equalsIgnoreCase(str6) || "dynamic-order".equalsIgnoreCase(str6)) {
-                                            t(new StickersActivity(0, null));
-                                            if ("trending".equalsIgnoreCase(str9)) {
-                                                x("featuredRow");
-                                            }
-                                            if ("archived".equalsIgnoreCase(str9)) {
-                                                x("archivedRow");
-                                            }
-                                            if ("emoji".equalsIgnoreCase(str9) && "large".equalsIgnoreCase(str6)) {
-                                                x("largeEmojiRow");
-                                                return true;
-                                            }
-                                            if ("emoji".equalsIgnoreCase(str9) && "dynamic-order".equalsIgnoreCase(str6)) {
-                                                x("dynamicPackOrder");
-                                                return true;
-                                            }
-                                            if ("emoji".equalsIgnoreCase(str9)) {
-                                                x("emojiPacksRow");
-                                                return true;
-                                            }
-                                        } else {
-                                            if (!TextUtils.isEmpty(str8) && "archived".equalsIgnoreCase(str6)) {
-                                                t(new o(5));
-                                                return true;
-                                            }
-                                            t(new StickersActivity(5, null));
-                                            if ("suggest".equalsIgnoreCase(str6)) {
-                                                x("suggestRow");
-                                                return true;
-                                            }
-                                        }
-                                    }
+                                if (p02 instanceof PasscodeActivity) {
+                                    ((PasscodeActivity) p02).x0(l90Var);
+                                    return true;
                                 }
                             } else {
-                                if (!"power-saving".equalsIgnoreCase(str3)) {
-                                    boolean equalsIgnoreCase2 = "stars".equalsIgnoreCase(str3);
-                                    LaunchActivity launchActivity = this.a;
-                                    if (equalsIgnoreCase2) {
-                                        if ("top-up".equalsIgnoreCase(str4)) {
-                                            new di.gb(launchActivity, null).show();
-                                            return true;
-                                        }
-                                        if ("stats".equalsIgnoreCase(str4)) {
-                                            t(new di.t(0, f().e()));
-                                            return true;
-                                        }
-                                        if ("gift".equalsIgnoreCase(str4)) {
-                                            di.x8.w(i13).u();
-                                            bi.a2.m1(org.telegram.messenger.v1.a(i13).b());
-                                            return true;
-                                        }
-                                        if ("earn".equalsIgnoreCase(str4)) {
-                                            t(new ki.i3(f().e()));
-                                            return true;
-                                        }
-                                        t(new di.pb());
-                                        return true;
-                                    }
-                                    if ("premium".equalsIgnoreCase(str3)) {
-                                        t(new PremiumPreviewFragment());
-                                        return true;
-                                    }
-                                    if ("business".equalsIgnoreCase(str3)) {
-                                        t(new PremiumPreviewFragment(1, "link"));
-                                        if (!"do-not-hide-ads".equalsIgnoreCase(str4)) {
-                                            return true;
-                                        }
-                                        x("showAdsRow");
-                                        return true;
-                                    }
-                                    if ("ton".equalsIgnoreCase(str3)) {
-                                        t(new ii.t());
-                                        return true;
-                                    }
-                                    if ("send-gift".equalsIgnoreCase(str3)) {
-                                        if ("self".equalsIgnoreCase(str4)) {
-                                            new bi.j3(this.a, this.b, f().e(), null, null).show();
-                                            return true;
-                                        }
-                                        bi.a2.l1(false, org.telegram.messenger.v1.a(i13).b());
-                                        return true;
-                                    }
-                                    if ("ask-question".equalsIgnoreCase(str3) || "ask-a-question".equalsIgnoreCase(str3)) {
-                                        org.telegram.ui.Components.b5.R(LaunchActivity.T(), null).show();
-                                        return true;
-                                    }
-                                    if ("faq".equalsIgnoreCase(str3)) {
-                                        vf.c.t(launchActivity, org.telegram.messenger.gd.L0(2131744005));
-                                        return true;
-                                    }
-                                    if ("features".equalsIgnoreCase(str3)) {
-                                        vf.c.t(launchActivity, org.telegram.messenger.gd.L0(2131744003));
-                                        return true;
-                                    }
-                                    if ("privacy-policy".equalsIgnoreCase(str3)) {
-                                        vf.c.t(launchActivity, org.telegram.messenger.gd.L0(2131746588));
-                                        return true;
-                                    }
-                                    t(new o31());
+                                if (!TextUtils.isEmpty(str9) && "2sv".equalsIgnoreCase(str4)) {
+                                    o();
+                                    this.h = ConnectionsManager.getInstance(i13).sendRequest(new TL_account.getPassword(), new e00(6, this, str9), 10);
                                     return true;
                                 }
-                                z90 z90Var = new z90();
-                                t(z90Var);
-                                if ("videos".equalsIgnoreCase(str4)) {
-                                    z90Var.a0(1024);
+                                if (TextUtils.isEmpty(str9) || !"passkey".equalsIgnoreCase(str4)) {
+                                    str = "data-settings";
+                                    str2 = "birthdayRow";
+                                } else {
+                                    str = "data-settings";
+                                    str2 = "birthdayRow";
+                                    if (Build.VERSION.SDK_INT >= 28) {
+                                        o();
+                                        this.h = ConnectionsManager.getInstance(i13).sendRequestTyped(new TL_account.getPasskeys(), new d3.b(2), new m90(this, str9, 0));
+                                        return true;
+                                    }
                                 }
-                                if ("gifs".equalsIgnoreCase(str4)) {
-                                    z90Var.a0(2048);
+                                if (!TextUtils.isEmpty(str9) && "auto-delete".equalsIgnoreCase(str4) && f().h() >= 0) {
+                                    t(new p4());
+                                    return true;
                                 }
-                                if ("stickers".equalsIgnoreCase(str4)) {
-                                    z90Var.a0(3);
-                                }
-                                if ("emoji".equalsIgnoreCase(str4)) {
-                                    z90Var.a0(28700);
-                                }
-                                if ("effects".equalsIgnoreCase(str4)) {
-                                    z90Var.a0(360928);
-                                }
-                                if ("call-animations".equalsIgnoreCase(str4)) {
-                                    z90Var.a0(512);
-                                }
-                                if ("particles".equalsIgnoreCase(str4)) {
-                                    z90Var.a0(131072);
-                                }
-                                if ("transitions".equalsIgnoreCase(str4)) {
-                                    int i14 = 0;
-                                    while (true) {
-                                        ArrayList arrayList = z90Var.s;
-                                        if (i14 >= arrayList.size()) {
-                                            break;
+                                if (!TextUtils.isEmpty(str9) && ("phone-number".equalsIgnoreCase(str4) || "last-seen".equalsIgnoreCase(str4) || "profile-photos".equalsIgnoreCase(str4) || "bio".equalsIgnoreCase(str4) || "gifts".equalsIgnoreCase(str4) || "birthday".equalsIgnoreCase(str4) || "saved-music".equalsIgnoreCase(str4) || "forwards".equalsIgnoreCase(str4) || "calls".equalsIgnoreCase(str4) || "voice".equalsIgnoreCase(str4) || "messages".equalsIgnoreCase(str4) || "invites".equalsIgnoreCase(str4))) {
+                                    if ("phone-number".equalsIgnoreCase(str4)) {
+                                        i10 = 6;
+                                    } else {
+                                        if (!"last-seen".equalsIgnoreCase(str4)) {
+                                            if ("profile-photos".equalsIgnoreCase(str4)) {
+                                                i10 = 4;
+                                            } else if ("bio".equalsIgnoreCase(str4)) {
+                                                i10 = 9;
+                                            } else if ("gifts".equalsIgnoreCase(str4)) {
+                                                i10 = 12;
+                                            } else if ("birthday".equalsIgnoreCase(str4)) {
+                                                i10 = 11;
+                                            } else if ("saved-music".equalsIgnoreCase(str4)) {
+                                                i10 = 14;
+                                            } else if ("forwards".equalsIgnoreCase(str4)) {
+                                                i10 = 5;
+                                            } else if ("calls".equalsIgnoreCase(str4)) {
+                                                i10 = "p2p".equalsIgnoreCase(str9) ? 3 : 2;
+                                            } else if ("voice".equalsIgnoreCase(str4)) {
+                                                i10 = 8;
+                                            } else if ("messages".equalsIgnoreCase(str4)) {
+                                                i10 = 10;
+                                            } else if ("invites".equalsIgnoreCase(str4)) {
+                                                i10 = 1;
+                                            }
                                         }
-                                        if (((u90) arrayList.get(i14)).f == 1) {
-                                            z90Var.b.e1(new ai.s1(z90Var, i14, 15), 700, true);
+                                        i10 = 0;
+                                    }
+                                    t(new PrivacyControlActivity(i10));
+                                    if ("birthday".equalsIgnoreCase(str4) && "add".equalsIgnoreCase(str9)) {
+                                        x("setBirthdayRow");
+                                    }
+                                    if ("always-share".equalsIgnoreCase(str9) || "always-share".equalsIgnoreCase(str6) || "always".equalsIgnoreCase(str9) || "always".equalsIgnoreCase(str6)) {
+                                        x("everybodyRow");
+                                    }
+                                    if ("never-share".equalsIgnoreCase(str9) || "never-share".equalsIgnoreCase(str6) || "never".equalsIgnoreCase(str9) || "never".equalsIgnoreCase(str6)) {
+                                        x("nobodyRow");
+                                    }
+                                    if ("gifts".equalsIgnoreCase(str4) && "show-icon".equalsIgnoreCase(str9)) {
+                                        x("showGiftIconRow");
+                                    }
+                                    if ("gifts".equalsIgnoreCase(str4) && "accepted-types".equalsIgnoreCase(str9)) {
+                                        x("giftTypesHeaderRow");
+                                    }
+                                    if ("messages".equalsIgnoreCase(str4) && "set-price".equalsIgnoreCase(str9)) {
+                                        x("priceRow");
+                                    }
+                                    if ("messages".equalsIgnoreCase(str4) && "remove-fee".equalsIgnoreCase(str9)) {
+                                        x("alwaysShareRow");
+                                    }
+                                    if ("last-seen".equalsIgnoreCase(str4) && "hide-read-time".equalsIgnoreCase(str9)) {
+                                        x("readRow");
+                                    }
+                                    if ("profile-photos".equalsIgnoreCase(str4)) {
+                                        if ("set-public".equalsIgnoreCase(str9)) {
+                                            x("photoForRestRow");
+                                        }
+                                        if ("update-public".equalsIgnoreCase(str9)) {
+                                            x("photoForRestRow");
+                                        }
+                                        if ("remove-public".equalsIgnoreCase(str9)) {
+                                            x("currentPhotoForRestRow");
                                             return true;
                                         }
-                                        i14++;
                                     }
+                                } else if (org.telegram.messenger.mp.u1(i13).b4 || !"archive-and-mute".equalsIgnoreCase(str4)) {
+                                    t(new PrivacySettingsActivity());
+                                    if ("blocked".equalsIgnoreCase(str4)) {
+                                        x("blockedRow");
+                                    }
+                                    if ("active-websites".equalsIgnoreCase(str4)) {
+                                        x("webSessionsRow");
+                                    }
+                                    if ("passcode".equalsIgnoreCase(str4)) {
+                                        x("passcodeRow");
+                                    }
+                                    if ("2sv".equalsIgnoreCase(str4)) {
+                                        x("passwordRow");
+                                    }
+                                    if ("passkey".equalsIgnoreCase(str4)) {
+                                        x("passkeysRow");
+                                    }
+                                    if ("auto-delete".equalsIgnoreCase(str4)) {
+                                        x("autoDeleteMesages");
+                                    }
+                                    if ("login-email".equalsIgnoreCase(str4)) {
+                                        x("emailLoginRow");
+                                    }
+                                    if ("phone-number".equalsIgnoreCase(str4)) {
+                                        x("phoneNumberRow");
+                                    }
+                                    if ("last-seen".equalsIgnoreCase(str4)) {
+                                        x("lastSeenRow");
+                                    }
+                                    if ("profile-photos".equalsIgnoreCase(str4)) {
+                                        x("profilePhotoRow");
+                                    }
+                                    if ("bio".equalsIgnoreCase(str4)) {
+                                        x("bioRow");
+                                    }
+                                    if ("gifts".equalsIgnoreCase(str4)) {
+                                        x("giftsRow");
+                                    }
+                                    if ("birthday".equalsIgnoreCase(str4)) {
+                                        x(str2);
+                                    }
+                                    if ("saved-music".equalsIgnoreCase(str4)) {
+                                        x("musicRow");
+                                    }
+                                    if ("forwards".equalsIgnoreCase(str4)) {
+                                        x("forwardsRow");
+                                    }
+                                    if ("calls".equalsIgnoreCase(str4)) {
+                                        x("callsRow");
+                                    }
+                                    if ("voice".equalsIgnoreCase(str4)) {
+                                        x("voicesRow");
+                                    }
+                                    if ("messages".equalsIgnoreCase(str4)) {
+                                        x("noncontactsRow");
+                                    }
+                                    if ("invites".equalsIgnoreCase(str4)) {
+                                        x("groupsRow");
+                                    }
+                                    if ("self-destruct".equalsIgnoreCase(str4)) {
+                                        x("deleteAccountRow");
+                                    }
+                                    if ("archive-and-mute".equalsIgnoreCase(str4)) {
+                                        x("newChatsRow");
+                                    }
+                                    if (str.equalsIgnoreCase(str4)) {
+                                        if ("sync-contacts".equalsIgnoreCase(str9)) {
+                                            x("contactsSyncRow");
+                                        }
+                                        if ("delete-synced".equalsIgnoreCase(str9)) {
+                                            x("contactsDeleteRow");
+                                        }
+                                        if ("suggest-contacts".equalsIgnoreCase(str9)) {
+                                            x("contactsSuggestRow");
+                                        }
+                                        if ("clear-payment-info".equalsIgnoreCase(str9)) {
+                                            x("paymentsClearRow");
+                                        }
+                                        if ("link-previews".equalsIgnoreCase(str9)) {
+                                            x("secretWebpageRow");
+                                        }
+                                        if ("map-provider".equalsIgnoreCase(str9)) {
+                                            x("secretMapRow");
+                                            return true;
+                                        }
+                                    }
+                                }
+                            }
+                        } else if ("data".equalsIgnoreCase(str3)) {
+                            if ("storage".equalsIgnoreCase(str4)) {
+                                "clear-cache".equalsIgnoreCase(str9);
+                                t(new x6());
+                                return true;
+                            }
+                            if ("usage".equalsIgnoreCase(str4)) {
+                                pt ptVar = new pt();
+                                t(ptVar);
+                                if ("mobile".equalsIgnoreCase(str9)) {
+                                    ptVar.b.e(1, 1);
+                                }
+                                if ("wifi".equalsIgnoreCase(str9)) {
+                                    ptVar.b.e(2, 2);
+                                }
+                                if ("roaming".equalsIgnoreCase(str9)) {
+                                    ptVar.b.e(3, 3);
+                                }
+                                if ("reset".equalsIgnoreCase(str9)) {
+                                    ptVar.x0();
+                                    return true;
+                                }
+                            } else {
+                                if ("auto-download".equalsIgnoreCase(str4)) {
+                                    if ("mobile".equalsIgnoreCase(str9) || "wifi".equalsIgnoreCase(str9) || "roaming".equalsIgnoreCase(str9)) {
+                                        if (!"mobile".equalsIgnoreCase(str9)) {
+                                            if ("wifi".equalsIgnoreCase(str9)) {
+                                                i7 = 1;
+                                            } else if ("roaming".equalsIgnoreCase(str9)) {
+                                                i7 = 2;
+                                            }
+                                            t(new DataAutoDownloadActivity(i7));
+                                            if ("enable".equalsIgnoreCase(str6)) {
+                                                x("autoDownloadRow");
+                                            }
+                                            if ("usage".equalsIgnoreCase(str6)) {
+                                                x("usageProgressRow");
+                                            }
+                                            if ("photos".equalsIgnoreCase(str6)) {
+                                                x("photosRow");
+                                            }
+                                            if ("stories".equalsIgnoreCase(str6)) {
+                                                x("storiesRow");
+                                            }
+                                            if ("videos".equalsIgnoreCase(str6)) {
+                                                x("videosRow");
+                                            }
+                                            if ("files".equalsIgnoreCase(str6)) {
+                                                x("filesRow");
+                                                return true;
+                                            }
+                                        }
+                                        i7 = 0;
+                                        t(new DataAutoDownloadActivity(i7));
+                                        if ("enable".equalsIgnoreCase(str6)) {
+                                        }
+                                        if ("usage".equalsIgnoreCase(str6)) {
+                                        }
+                                        if ("photos".equalsIgnoreCase(str6)) {
+                                        }
+                                        if ("stories".equalsIgnoreCase(str6)) {
+                                        }
+                                        if ("videos".equalsIgnoreCase(str6)) {
+                                        }
+                                        if ("files".equalsIgnoreCase(str6)) {
+                                        }
+                                    } else if ("reset".equalsIgnoreCase(str9)) {
+                                        t(new DataSettingsActivity());
+                                        x("resetDownloadRow");
+                                        return true;
+                                    }
+                                }
+                                if (!TextUtils.isEmpty(str6) && "save-to-photos".equalsIgnoreCase(str4)) {
+                                    t(new SaveToGallerySettingsActivity(p5.c.f("groups".equalsIgnoreCase(str9) ? 2 : "channels".equalsIgnoreCase(str9) ? 4 : 1, TeXSymbolParser.TYPE_ATTR)));
+                                    if ("max-video-size".equalsIgnoreCase(str6)) {
+                                        x("maxVideoSizeRow");
+                                    }
+                                    if ("add-exception".equalsIgnoreCase(str6)) {
+                                        x("addExceptionRow");
+                                    }
+                                    if ("delete-all".equalsIgnoreCase(str6)) {
+                                        x("deleteAllExceptionsRow");
+                                        return true;
+                                    }
+                                } else if (!TextUtils.isEmpty(str9) && "proxy".equalsIgnoreCase(str4)) {
+                                    t(new ProxyListActivity());
+                                    if ("use-proxy".equalsIgnoreCase(str9)) {
+                                        x("useProxyRow");
+                                    }
+                                    if ("add-proxy".equalsIgnoreCase(str9)) {
+                                        x("proxyAddRow");
+                                        return true;
+                                    }
+                                } else {
+                                    if ("pause-music".equalsIgnoreCase(str4)) {
+                                        t(new ThemeActivity(0));
+                                        x("pauseOnMediaRow");
+                                        return true;
+                                    }
+                                    if ("pause-music-on-record".equalsIgnoreCase(str4)) {
+                                        t(new ThemeActivity(0));
+                                        x("pauseOnRecordRow");
+                                        return true;
+                                    }
+                                    if ("raise-to-listen".equalsIgnoreCase(str4)) {
+                                        t(new ThemeActivity(0));
+                                        x("raiseToListenRow");
+                                        return true;
+                                    }
+                                    if ("raise-to-speak".equalsIgnoreCase(str4)) {
+                                        t(new ThemeActivity(0));
+                                        x("raiseToSpeakRow");
+                                        return true;
+                                    }
+                                    if ("show-18-contnet".equalsIgnoreCase(str4)) {
+                                        t(new ThemeActivity(0));
+                                        x("sensitiveContentRow");
+                                        return true;
+                                    }
+                                    t(new DataSettingsActivity());
+                                    if ("save-to-photos".equalsIgnoreCase(str4)) {
+                                        if ("chats".equalsIgnoreCase(str9)) {
+                                            x("saveToGalleryPeerRow");
+                                        }
+                                        if ("groups".equalsIgnoreCase(str9)) {
+                                            x("saveToGalleryGroupsRow");
+                                        }
+                                        if ("channels".equalsIgnoreCase(str9)) {
+                                            x("saveToGalleryChannelsRow");
+                                        }
+                                    }
+                                    if ("use-less-data".equalsIgnoreCase(str4)) {
+                                        x("useLessDataForCallsRow");
+                                    }
+                                    if ("proxy".equalsIgnoreCase(str4)) {
+                                        x("proxyRow");
+                                        return true;
+                                    }
+                                }
+                            }
+                        } else if ("appearance".equalsIgnoreCase(str3)) {
+                            if ("themes".equalsIgnoreCase(str4) || "theme".equalsIgnoreCase(str4)) {
+                                t(new ThemeActivity(3));
+                                if ("create".equalsIgnoreCase(str9)) {
+                                    x("createNewThemeRow");
+                                    return true;
+                                }
+                            } else if (!TextUtils.isEmpty(str9) && ("wallpaper".equalsIgnoreCase(str4) || "wallpapers".equalsIgnoreCase(str4))) {
+                                t(new WallpapersListActivity(0));
+                                if ("set".equalsIgnoreCase(str9) || "choose-photo".equalsIgnoreCase(str9)) {
+                                    x("uploadImageRow");
+                                    return true;
+                                }
+                            } else {
+                                if (!TextUtils.isEmpty(str9) && ("your-color".equalsIgnoreCase(str4) || "color".equalsIgnoreCase(str4))) {
+                                    t(new lm0());
+                                    return true;
+                                }
+                                if (TextUtils.isEmpty(str9) || !"stickers-and-emoji".equalsIgnoreCase(str4)) {
+                                    t(new ThemeActivity(0));
+                                    if ("wallpaper".equalsIgnoreCase(str4) || "wallpapers".equalsIgnoreCase(str4)) {
+                                        x("backgroundRow");
+                                    }
+                                    if ("your-color".equalsIgnoreCase(str4) || "color".equalsIgnoreCase(str4)) {
+                                        x("changeUserColor");
+                                    }
+                                    if ("auto-night-mode".equalsIgnoreCase(str4)) {
+                                        x("nightThemeRow");
+                                    }
+                                    if ("text-size".equalsIgnoreCase(str4)) {
+                                        x("textSizeRow");
+                                    }
+                                    if ("message-corners".equalsIgnoreCase(str4)) {
+                                        x("bubbleRadiusRow");
+                                    }
+                                    if ("animations".equalsIgnoreCase(str4)) {
+                                        x("liteModeRow");
+                                    }
+                                    if ("stickers-and-emoji".equalsIgnoreCase(str4)) {
+                                        x("stickersRow");
+                                    }
+                                    if ("app-icon".equalsIgnoreCase(str4)) {
+                                        x("appIconSelectorRow");
+                                    }
+                                    if ("tap-for-next-media".equalsIgnoreCase(str4)) {
+                                        x("nextMediaTapRow");
+                                        return true;
+                                    }
+                                    z11 = true;
+                                } else {
+                                    if (!TextUtils.isEmpty(str6) && "archived".equalsIgnoreCase(str9)) {
+                                        t(new o(0));
+                                        return true;
+                                    }
+                                    if (!"emoji".equalsIgnoreCase(str9) || TextUtils.isEmpty(str6) || "large".equalsIgnoreCase(str6) || "dynamic-order".equalsIgnoreCase(str6)) {
+                                        t(new StickersActivity(0, null));
+                                        if ("trending".equalsIgnoreCase(str9)) {
+                                            x("featuredRow");
+                                        }
+                                        if ("archived".equalsIgnoreCase(str9)) {
+                                            x("archivedRow");
+                                        }
+                                        if ("emoji".equalsIgnoreCase(str9) && "large".equalsIgnoreCase(str6)) {
+                                            x("largeEmojiRow");
+                                            return true;
+                                        }
+                                        if ("emoji".equalsIgnoreCase(str9) && "dynamic-order".equalsIgnoreCase(str6)) {
+                                            x("dynamicPackOrder");
+                                            return true;
+                                        }
+                                        if ("emoji".equalsIgnoreCase(str9)) {
+                                            x("emojiPacksRow");
+                                            return true;
+                                        }
+                                    } else {
+                                        if (!TextUtils.isEmpty(str8) && "archived".equalsIgnoreCase(str6)) {
+                                            t(new o(5));
+                                            return true;
+                                        }
+                                        t(new StickersActivity(5, null));
+                                        if ("suggest".equalsIgnoreCase(str6)) {
+                                            x("suggestRow");
+                                            return true;
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            if (!"power-saving".equalsIgnoreCase(str3)) {
+                                boolean equalsIgnoreCase2 = "stars".equalsIgnoreCase(str3);
+                                LaunchActivity launchActivity = this.a;
+                                if (equalsIgnoreCase2) {
+                                    if ("top-up".equalsIgnoreCase(str4)) {
+                                        new di.gb(launchActivity, null).show();
+                                        return true;
+                                    }
+                                    if ("stats".equalsIgnoreCase(str4)) {
+                                        t(new di.t(0, f().e()));
+                                        return true;
+                                    }
+                                    if ("gift".equalsIgnoreCase(str4)) {
+                                        di.y8.w(i13).u();
+                                        bi.e2.m1(org.telegram.messenger.v1.a(i13).b());
+                                        return true;
+                                    }
+                                    if ("earn".equalsIgnoreCase(str4)) {
+                                        t(new ki.h3(f().e()));
+                                        return true;
+                                    }
+                                    t(new di.pb());
+                                    return true;
+                                }
+                                if ("premium".equalsIgnoreCase(str3)) {
+                                    t(new PremiumPreviewFragment());
+                                    return true;
+                                }
+                                if ("business".equalsIgnoreCase(str3)) {
+                                    t(new PremiumPreviewFragment(1, "link"));
+                                    if (!"do-not-hide-ads".equalsIgnoreCase(str4)) {
+                                        return true;
+                                    }
+                                    x("showAdsRow");
+                                    return true;
+                                }
+                                if ("ton".equalsIgnoreCase(str3)) {
+                                    t(new ii.t());
+                                    return true;
+                                }
+                                if ("send-gift".equalsIgnoreCase(str3)) {
+                                    if ("self".equalsIgnoreCase(str4)) {
+                                        new bi.n3(this.a, this.b, f().e(), null, null).show();
+                                        return true;
+                                    }
+                                    bi.e2.l1(false, org.telegram.messenger.v1.a(i13).b());
+                                    return true;
+                                }
+                                if ("ask-question".equalsIgnoreCase(str3) || "ask-a-question".equalsIgnoreCase(str3)) {
+                                    org.telegram.ui.Components.c5.R(LaunchActivity.T(), null).show();
+                                    return true;
+                                }
+                                if ("faq".equalsIgnoreCase(str3)) {
+                                    vf.c.t(launchActivity, org.telegram.messenger.gd.M0(2131743999));
+                                    return true;
+                                }
+                                if ("features".equalsIgnoreCase(str3)) {
+                                    vf.c.t(launchActivity, org.telegram.messenger.gd.M0(2131743997));
+                                    return true;
+                                }
+                                if ("privacy-policy".equalsIgnoreCase(str3)) {
+                                    vf.c.t(launchActivity, org.telegram.messenger.gd.M0(2131746587));
+                                    return true;
+                                }
+                                t(new o31());
+                                return true;
+                            }
+                            z90 z90Var = new z90();
+                            t(z90Var);
+                            if ("videos".equalsIgnoreCase(str4)) {
+                                z90Var.a0(1024);
+                            }
+                            if ("gifs".equalsIgnoreCase(str4)) {
+                                z90Var.a0(2048);
+                            }
+                            if ("stickers".equalsIgnoreCase(str4)) {
+                                z90Var.a0(3);
+                            }
+                            if ("emoji".equalsIgnoreCase(str4)) {
+                                z90Var.a0(28700);
+                            }
+                            if ("effects".equalsIgnoreCase(str4)) {
+                                z90Var.a0(360928);
+                            }
+                            if ("call-animations".equalsIgnoreCase(str4)) {
+                                z90Var.a0(512);
+                            }
+                            if ("particles".equalsIgnoreCase(str4)) {
+                                z90Var.a0(131072);
+                            }
+                            if ("transitions".equalsIgnoreCase(str4)) {
+                                int i14 = 0;
+                                while (true) {
+                                    ArrayList arrayList = z90Var.s;
+                                    if (i14 >= arrayList.size()) {
+                                        break;
+                                    }
+                                    if (((u90) arrayList.get(i14)).f == 1) {
+                                        z90Var.b.e1(new ai.u1(z90Var, i14, 15), 700, true);
+                                        return true;
+                                    }
+                                    i14++;
                                 }
                             }
                         }
-                        return z11;
                     }
-                    if (TextUtils.isEmpty(str5)) {
-                        t(new ThemeActivity(0));
-                        x("browserRow");
-                        return true;
-                    }
-                    t(new org.telegram.ui.web.n1(null));
-                    if ("enable-browser".equalsIgnoreCase(str5)) {
-                        x("enableRow");
-                    }
-                    if ("clear-cookies".equalsIgnoreCase(str5)) {
-                        x("clearCookiesRow");
-                    }
-                    if ("clear-cache".equalsIgnoreCase(str5)) {
-                        x("clearCacheRow");
-                    }
-                    if ("history".equalsIgnoreCase(str5)) {
-                        x("historyRow");
-                    }
-                    if ("clear-history".equalsIgnoreCase(str5)) {
-                        x("clearHistoryRow");
-                    }
-                    if ("never-open".equalsIgnoreCase(str5)) {
-                        x("neverOpenRow");
-                    }
-                    if ("clear-list".equalsIgnoreCase(str5)) {
-                        x("clearListRow");
-                    }
-                    if ("search".equalsIgnoreCase(str5)) {
-                        x("searchRow");
-                        return true;
-                    }
+                    return z11;
+                }
+                if (TextUtils.isEmpty(str5)) {
+                    t(new ThemeActivity(0));
+                    x("browserRow");
                     return true;
                 }
-                if ("do-not-translate".equalsIgnoreCase(str4)) {
-                    t(new sy0());
+                t(new org.telegram.ui.web.n1(null));
+                if ("enable-browser".equalsIgnoreCase(str5)) {
+                    x("enableRow");
+                }
+                if ("clear-cookies".equalsIgnoreCase(str5)) {
+                    x("clearCookiesRow");
+                }
+                if ("clear-cache".equalsIgnoreCase(str5)) {
+                    x("clearCacheRow");
+                }
+                if ("history".equalsIgnoreCase(str5)) {
+                    x("historyRow");
+                }
+                if ("clear-history".equalsIgnoreCase(str5)) {
+                    x("clearHistoryRow");
+                }
+                if ("never-open".equalsIgnoreCase(str5)) {
+                    x("neverOpenRow");
+                }
+                if ("clear-list".equalsIgnoreCase(str5)) {
+                    x("clearListRow");
+                }
+                if ("search".equalsIgnoreCase(str5)) {
+                    x("searchRow");
                     return true;
                 }
-                t(new LanguageSelectActivity());
-                if ("show-button".equalsIgnoreCase(str4)) {
-                    x("manualTranslationPosition");
-                }
-                if ("translate-chats".equalsIgnoreCase(str4)) {
-                    x("autoTranslationPosition");
-                    return true;
-                }
+                return true;
+            }
+            if ("do-not-translate".equalsIgnoreCase(str4)) {
+                t(new sy0());
+                return true;
+            }
+            t(new LanguageSelectActivity());
+            if ("show-button".equalsIgnoreCase(str4)) {
+                x("manualTranslationPosition");
+            }
+            if ("translate-chats".equalsIgnoreCase(str4)) {
+                x("autoTranslationPosition");
+                return true;
             }
         }
         return true;
@@ -1700,7 +1698,7 @@ public final class s90 {
         vf.b bVar = this.c;
         if (bVar == null) {
             if (this.e == null) {
-                this.e = new org.telegram.ui.ActionBar.u1(3, this.a, null);
+                this.e = new org.telegram.ui.ActionBar.t1(3, this.a, null);
             }
             this.e.setOnCancelListener(new wf(this, 3));
             this.e.r(300L);
@@ -1711,13 +1709,13 @@ public final class s90 {
         this.f = true;
     }
 
-    public final void t(org.telegram.ui.ActionBar.h2 h2Var) {
-        u(h2Var, false);
+    public final void t(org.telegram.ui.ActionBar.g2 g2Var) {
+        u(g2Var, false);
     }
 
-    public final void u(org.telegram.ui.ActionBar.h2 h2Var, boolean z10) {
+    public final void u(org.telegram.ui.ActionBar.g2 g2Var, boolean z10) {
         LaunchActivity launchActivity = this.a;
-        launchActivity.u0(h2Var, z10, false);
+        launchActivity.u0(g2Var, z10, false);
         if (org.telegram.messenger.g0.Q1()) {
             launchActivity.p0.X(true, true);
             launchActivity.r0.X(true, true);
@@ -1730,7 +1728,7 @@ public final class s90 {
             if (!launchActivity.isFinishing() && !launchActivity.isDestroyed()) {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 tonconnectgetpending.dapp_client_id = str;
-                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new d3.b(1), new m60(this, str, str2, str3, i7));
+                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new d3.b(1), new n60(this, str, str2, str3, i7));
                 return;
             }
         }

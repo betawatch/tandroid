@@ -8,7 +8,7 @@ import org.telegram.messenger.mp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h3 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,12 +35,12 @@ public final /* synthetic */ class h3 implements Runnable {
                 f6Var.g2.setLoading(false);
                 if (!TextUtils.isEmpty(str)) {
                     f6Var.dismiss();
-                    org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                    org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
                     if (Q != null) {
                         if (Q instanceof bn) {
                             bn bnVar = (bn) Q;
                             if (bnVar.a() == j3) {
-                                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.gift, gd.M0(2131744861, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744859, org.telegram.messenger.n5.t(j3)))).k(true);
+                                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.gift, gd.N0(2131744855, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744853, org.telegram.messenger.n5.t(j3)))).k(true);
                                 break;
                             }
                         }
@@ -50,7 +50,7 @@ public final /* synthetic */ class h3 implements Runnable {
                         f10.k(6, valueOf, bool);
                         ks.f(f6Var.a).k(5, Long.valueOf(j3), bool);
                         bn ua2 = bn.ua(j3);
-                        ua2.whenFullyVisible(new w2(3, f6Var, ua2));
+                        ua2.whenFullyVisible(new f2(5, f6Var, ua2));
                         Q.presentFragment(ua2);
                         break;
                     }

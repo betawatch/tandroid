@@ -13,7 +13,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g9 extends Drawable {
     public final View a;
@@ -22,7 +22,7 @@ public final class g9 extends Drawable {
     public final int e;
     public final int f;
     public final float g;
-    public final te.h c = new te.h(new hi.w4(this, 29), lr.h, 380);
+    public final te.h c = new te.h(new hi.w4(this, 29), nr.h, 380);
     public final ArrayList h = new ArrayList();
     public int i = org.telegram.messenger.ks.e4;
 
@@ -94,7 +94,7 @@ public final class g9 extends Drawable {
             float f17 = f11 + f15;
             canvas.save();
             canvas.scale(c10, c10, f16, f17);
-            canvas.drawCircle(f16, f17, f15 + this.g, org.telegram.ui.ActionBar.n6.Fm);
+            canvas.drawCircle(f16, f17, f15 + this.g, org.telegram.ui.ActionBar.m6.Fm);
             f9 f9Var = (f9) obj;
             f9Var.a.y0(f14, f11, width, width);
             f9Var.a.setAlpha((this.i / 255.0f) * i7.c());

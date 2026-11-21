@@ -1,19 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g0 extends org.telegram.ui.i11 {
-    public final /* synthetic */ h0 e;
+public final class g0 extends org.telegram.ui.s11 {
+    public final /* synthetic */ org.telegram.ui.j11[] f2;
+    public final /* synthetic */ i0 g2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(h0 h0Var, f0 f0Var) {
-        super(f0Var);
-        this.e = h0Var;
+    public g0(i0 i0Var, Context context, Integer num, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.j11[] j11VarArr) {
+        super(null, context, true, num, 15, h6Var);
+        this.g2 = i0Var;
+        this.f2 = j11VarArr;
     }
 
-    @Override // org.telegram.ui.i11, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.e2 = null;
+    @Override // org.telegram.ui.s11
+    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        return tL_starGiftUnique == null || di.y8.y(this.g2.a, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.mp.g1().getInt("statusgiftpage", 0) >= 2;
+    }
+
+    @Override // org.telegram.ui.s11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        i0 i0Var = this.g2;
+        i0Var.d2 = l10;
+        i0Var.g1();
+        i0Var.f1();
+        org.telegram.ui.j11 j11Var = this.f2[0];
+        if (j11Var != null) {
+            i0Var.e2 = null;
+            j11Var.dismiss();
+        }
     }
 }

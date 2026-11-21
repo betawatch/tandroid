@@ -1,25 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import org.telegram.ui.um;
+import org.telegram.ui.wm;
+import org.telegram.ui.zm;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class q4 {
-    public final h2 a;
-    public boolean b;
-    public boolean c;
-    public boolean d = true;
+    public final l6 a;
+    public final int b;
+    public final boolean c;
+    public final boolean d;
     public boolean e;
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public boolean g;
+    public aa.c0 h;
+    public um i;
+    public um j;
+    public wm k;
+    public zm m;
+    public boolean f = true;
+    public boolean g = true;
+    public long l = 200;
 
-    public q4(h2 h2Var) {
-        this.a = h2Var;
-    }
-
-    public final void a() {
-        this.c = true;
-    }
-
-    public final void b(boolean z10) {
-        this.b = z10;
+    public q4(l6 l6Var, int i7, boolean z10, boolean z11) {
+        this.a = l6Var;
+        this.b = i7;
+        this.c = z10;
+        this.d = z11;
     }
 }

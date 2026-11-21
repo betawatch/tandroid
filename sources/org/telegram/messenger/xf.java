@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xf implements Runnable {
     public final /* synthetic */ int a;
@@ -812,8 +812,8 @@ public final /* synthetic */ class xf implements Runnable {
                     g0.b bVar = new g0.b();
                     bVar.a = context;
                     bVar.b = "compose";
-                    bVar.e = gd.M0(2131748083, null);
-                    bVar.f = gd.M0(2131748083, null);
+                    bVar.e = gd.N0(2131748082, null);
+                    bVar.f = gd.N0(2131748082, null);
                     bVar.h = IconCompat.d(t0.b, R.drawable.shortcut_compose);
                     bVar.m = 0;
                     bVar.c = new Intent[]{intent};

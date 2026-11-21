@@ -1,69 +1,41 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d3 extends View {
-    public final f3 a;
-    public CharSequence b;
+public final /* synthetic */ class d3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g3 b;
+    public final /* synthetic */ boolean c;
 
-    public d3(Context context) {
-        super(context);
-        f3 f3Var = new f3(this, 1.0f);
-        this.a = f3Var;
-        f3Var.setCallback(this);
+    public /* synthetic */ d3(g3 g3Var, boolean z10, int i7) {
+        this.a = i7;
+        this.b = g3Var;
+        this.c = z10;
     }
 
-    public final void a(int i7, int i10) {
-        ((Paint) this.a.b).setShader(new LinearGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-    }
-
-    public final void b(String str, boolean z10) {
-        this.b = str;
-        this.a.g(z10 ? 10 : 11, str, z10);
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int width = getWidth();
-        int height = getHeight();
-        f3 f3Var = this.a;
-        f3Var.setBounds(0, 0, width, height);
-        f3Var.draw(canvas);
-    }
-
-    public CharSequence getText() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f));
-    }
-
-    public void setBackdrop(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
-        this.a.e(stargiftattributebackdrop, false, false);
-        invalidate();
-    }
-
-    public void setColor(int i7) {
-        this.a.f(i7);
-    }
-
-    public void setStrokeColor(int i7) {
-        this.a.r.setColor(i7);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.a == drawable || super.verifyDrawable(drawable);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean z10 = this.c;
+                g3 g3Var = this.b;
+                if (!z10) {
+                    g3Var.H.setVisibility(8);
+                    break;
+                } else {
+                    g3Var.getClass();
+                    break;
+                }
+            default:
+                boolean z11 = this.c;
+                g3 g3Var2 = this.b;
+                if (!z11) {
+                    g3Var2.w.setVisibility(8);
+                    break;
+                } else {
+                    g3Var2.getClass();
+                    break;
+                }
+        }
     }
 }

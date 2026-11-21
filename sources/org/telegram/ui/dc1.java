@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class dc1 extends LinearLayout {
     public final /* synthetic */ hc1 a;
@@ -29,9 +29,9 @@ public final class dc1 extends LinearLayout {
         StringBuilder sb2 = new StringBuilder(text);
         sb2.append(", ");
         if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
-            sb2.append(org.telegram.messenger.gd.M0(2131743063, null));
+            sb2.append(org.telegram.messenger.gd.N0(2131743057, null));
         } else {
-            sb2.append(org.telegram.messenger.gd.M0(2131743060, null));
+            sb2.append(org.telegram.messenger.gd.N0(2131743054, null));
         }
         long callDuration = sharedState.getCallDuration();
         if (callDuration > 0) {

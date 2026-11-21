@@ -19,7 +19,7 @@ import org.telegram.messenger.f3;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class f {
     public static final float S;
@@ -132,12 +132,12 @@ public final class f {
             HashMap hashMap = new HashMap();
             hashMap.put(bc.b.a, bVar);
             hashMap.put(bc.b.c, 0);
-            ji.q qVar = new ji.q(1);
+            ji.s sVar = new ji.s(1);
             if (colorDrawable != null) {
-                qVar.g = colorDrawable;
+                sVar.g = colorDrawable;
             }
             e eVar = new e();
-            Bitmap a10 = qVar.a(str, i7, i7, hashMap, null, f10, 0, -1);
+            Bitmap a10 = sVar.a(str, i7, i7, hashMap, null, f10, 0, -1);
             eVar.b = a10.getWidth();
             int i10 = ((cc.c) ic.b.b(str, bVar, hashMap).f).b;
             eVar.e = i10;
@@ -175,7 +175,7 @@ public final class f {
             Rect rect = eVar.c;
             int i18 = eVar.b;
             rect.set(0, 0, i18, i18);
-            int i19 = qVar.e;
+            int i19 = sVar.e;
             eVar.l = i19;
             int round = Math.round(i19 / eVar.f) + 2;
             int i20 = (eVar.e - round) / 2;

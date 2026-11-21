@@ -1,7 +1,7 @@
 package pb;
 
 import a8.r7;
-import ai.k0;
+import ai.l0;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Paint;
@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.u;
 import f3.b0;
 import h9.g1;
-import hi.u5;
+import hi.t5;
 import hi.w4;
 import j$.util.DesugarCollections;
 import java.io.ByteArrayOutputStream;
@@ -56,7 +56,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Cells.c0;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Cells.m1;
@@ -64,14 +64,14 @@ import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.s0;
 import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.y5;
 import org.telegram.ui.fr0;
 import org.xml.sax.Attributes;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.google.android.gms.common.api.internal.q, u9.d, q5.b, IMapsProvider, gh.a, m1, s0, OnFailureListener, s2.t, u4.c, x5.a {
+public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.google.android.gms.common.api.internal.q, u9.d, q5.b, IMapsProvider, gh.a, m1, s0, OnFailureListener, s2.t, u4.c, x5.a {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i7) {
@@ -107,11 +107,11 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
             if (z10) {
                 String a10 = bg.n.a("data-document-id", attributes);
                 if (a10 != null) {
-                    editable.setSpan(new x5(Long.parseLong(a10), (Paint.FontMetricsInt) null), editable.length(), editable.length(), 17);
+                    editable.setSpan(new y5(Long.parseLong(a10), (Paint.FontMetricsInt) null), editable.length(), editable.length(), 17);
                     return true;
                 }
             } else {
-                Object[] spans = editable.getSpans(0, editable.length(), x5.class);
+                Object[] spans = editable.getSpans(0, editable.length(), y5.class);
                 if (spans.length != 0) {
                     int length = spans.length;
                     while (true) {
@@ -126,7 +126,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
                         length--;
                     }
                 }
-                Object obj2 = (x5) obj;
+                Object obj2 = (y5) obj;
                 if (obj2 != null) {
                     int spanStart = editable.getSpanStart(obj2);
                     editable.removeSpan(obj2);
@@ -293,7 +293,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.s0
-    public /* synthetic */ h2 G() {
+    public /* synthetic */ g2 G() {
         return null;
     }
 
@@ -538,7 +538,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
 
     @Override // org.telegram.messenger.IMapsProvider
     public int getInstallMapsString() {
-        return 2131749004;
+        return 2131749003;
     }
 
     @Override // org.telegram.messenger.IMapsProvider
@@ -696,20 +696,20 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
 
     @Override // org.telegram.messenger.IMapsProvider
     public va onCreateLatLngBoundsBuilder() {
-        u5 u5Var = new u5(26);
+        t5 t5Var = new t5(26);
         m8.d dVar = new m8.d(0);
         dVar.b = Double.POSITIVE_INFINITY;
         dVar.c = Double.NEGATIVE_INFINITY;
         dVar.d = Double.NaN;
         dVar.e = Double.NaN;
-        u5Var.b = dVar;
-        return u5Var;
+        t5Var.b = dVar;
+        return t5Var;
     }
 
     @Override // org.telegram.messenger.IMapsProvider
     public xa onCreateMapView(Context context) {
         r7 r7Var = new r7(13, (byte) 0);
-        r7Var.b = new k0(r7Var, context);
+        r7Var.b = new l0(r7Var, context);
         return r7Var;
     }
 
@@ -735,7 +735,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean p0(x5 x5Var) {
+    public /* synthetic */ boolean p0(y5 y5Var) {
         return false;
     }
 
@@ -838,7 +838,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
     public /* synthetic */ void c() {
     }
 
-    @Override // org.telegram.ui.Components.nm0
+    @Override // org.telegram.ui.Components.qm0
     public void finish() {
     }
 
@@ -878,7 +878,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
     public /* synthetic */ void E(r1 r1Var) {
     }
 
-    @Override // org.telegram.ui.Components.nm0
+    @Override // org.telegram.ui.Components.qm0
     public void F(u2 u2Var) {
     }
 
@@ -959,7 +959,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, nm0, com.goo
     public /* synthetic */ void l0(r1 r1Var) {
     }
 
-    @Override // org.telegram.ui.Components.nm0
+    @Override // org.telegram.ui.Components.qm0
     public void o(float f10) {
     }
 

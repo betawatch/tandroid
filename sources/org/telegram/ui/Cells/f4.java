@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.pc;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class f4 {
     public float a;
@@ -33,9 +33,9 @@ public final class f4 {
         w9Var2.b = f11;
         w9Var.b();
         w9Var2.b();
-        int i11 = org.telegram.ui.ActionBar.n6.hh;
-        w9Var.d.setColor(i0.a.o(org.telegram.ui.ActionBar.n6.x0(null, i11, false), 38));
-        w9Var2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.n6.x0(null, i11, false), 38));
+        int i11 = org.telegram.ui.ActionBar.m6.hh;
+        w9Var.d.setColor(i0.a.o(org.telegram.ui.ActionBar.m6.x0(null, i11, false), 38));
+        w9Var2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.m6.x0(null, i11, false), 38));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
@@ -48,7 +48,7 @@ public final class f4 {
             float f12 = (this.a * 0.4f) + 0.8f;
             if (this.e || this.d != 0.0f) {
                 canvas.save();
-                float interpolation = lr.f.getInterpolation(this.d) * f12;
+                float interpolation = nr.f.getInterpolation(this.d) * f12;
                 canvas.scale(interpolation, interpolation, f10, f11);
                 boolean z10 = this.h;
                 org.telegram.ui.Components.w9 w9Var = this.f;
@@ -62,7 +62,7 @@ public final class f4 {
                             if (f14 > 1.0f) {
                                 this.j = 1.0f;
                             }
-                            w9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.hh, false), org.telegram.ui.ActionBar.n6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.n6.jh : org.telegram.ui.ActionBar.n6.gh, false)), 38));
+                            w9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.hh, false), org.telegram.ui.ActionBar.m6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.m6.jh : org.telegram.ui.ActionBar.m6.gh, false)), 38));
                         }
                     }
                     if (i7 == 1) {
@@ -75,7 +75,7 @@ public final class f4 {
                             }
                         }
                     }
-                    w9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.hh, false), org.telegram.ui.ActionBar.n6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.n6.jh : org.telegram.ui.ActionBar.n6.gh, false)), 38));
+                    w9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.hh, false), org.telegram.ui.ActionBar.m6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.m6.jh : org.telegram.ui.ActionBar.m6.gh, false)), 38));
                 }
                 w9Var.e(this.a, 1.0f);
                 Paint paint = w9Var.d;
@@ -94,7 +94,7 @@ public final class f4 {
 
     public final float b() {
         float f10 = (this.a * 0.2f) + 0.9f;
-        float interpolation = lr.g.getInterpolation(this.d);
+        float interpolation = nr.g.getInterpolation(this.d);
         return com.google.android.gms.internal.vision.e2.z(1.0f, interpolation, 1.0f, f10 * interpolation);
     }
 

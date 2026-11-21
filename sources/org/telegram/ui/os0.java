@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class os0 extends i11 {
+public final class os0 extends j11 {
     public final /* synthetic */ PremiumPreviewFragment e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -11,7 +11,7 @@ public final class os0 extends i11 {
         this.e = premiumPreviewFragment;
     }
 
-    @Override // org.telegram.ui.i11, android.widget.PopupWindow
+    @Override // org.telegram.ui.j11, android.widget.PopupWindow
     public final void dismiss() {
         super.dismiss();
         this.e.v0 = null;

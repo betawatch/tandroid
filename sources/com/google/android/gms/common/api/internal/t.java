@@ -3,17 +3,17 @@ package com.google.android.gms.common.api.internal;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.bz;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.o61;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.dq0;
-import org.telegram.ui.if0;
+import org.telegram.ui.hf0;
 import p4.o1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class t implements o61 {
+public final class t implements r61 {
     public int a;
     public boolean b;
     public Object c;
@@ -48,7 +48,7 @@ public final class t implements o61 {
 
     public void c(int i7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = p61.g0;
+        Object obj = s61.g0;
         if (i7 == 2) {
             Drawable[] drawableArr = PhotoViewer.Z8;
             photoViewer.n0();
@@ -59,8 +59,8 @@ public final class t implements o61 {
             }
             dq0 dq0Var = photoViewer.g0;
             if (dq0Var == null || !dq0Var.y) {
-                f61 f61Var = photoViewer.G2;
-                if (f61Var == null || !f61Var.d0()) {
+                i61 i61Var = photoViewer.G2;
+                if (i61Var == null || !i61Var.d0()) {
                     z10 = false;
                 }
             } else {
@@ -77,16 +77,16 @@ public final class t implements o61 {
 
     public void d(int i7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        if0 if0Var = (if0) this.c;
-        if (if0Var != null) {
-            org.telegram.messenger.g0.r(if0Var);
-            ((if0) this.c).run();
+        hf0 hf0Var = (hf0) this.c;
+        if (hf0Var != null) {
+            org.telegram.messenger.g0.r(hf0Var);
+            ((hf0) this.c).run();
         }
         Drawable[] drawableArr = PhotoViewer.Z8;
         photoViewer.n0();
         int i10 = photoViewer.d2;
         if (i10 == 1 && photoViewer.A2 != null) {
-            Object obj = p61.g0;
+            Object obj = s61.g0;
             if (i7 == 2) {
                 photoViewer.l0();
                 photoViewer.V7 = photoViewer.v8;
@@ -114,11 +114,11 @@ public final class t implements o61 {
 
     public void f(float f10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        f61 f61Var = photoViewer.G2;
-        if (f61Var == null) {
+        i61 i61Var = photoViewer.G2;
+        if (i61Var == null) {
             return;
         }
-        if (f61Var.d0()) {
+        if (i61Var.d0()) {
             photoViewer.H2 = false;
             photoViewer.G2.g0();
             photoViewer.f0.invalidate();
@@ -150,10 +150,10 @@ public final class t implements o61 {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
         this.a = (int) (photoViewer.i8 * f10);
         if (bz.o() != 2) {
-            if (((if0) this.c) == null) {
-                if0 if0Var = new if0(this, 18);
-                this.c = if0Var;
-                org.telegram.messenger.g0.h3(if0Var, 100L);
+            if (((hf0) this.c) == null) {
+                hf0 hf0Var = new hf0(this, 18);
+                this.c = hf0Var;
+                org.telegram.messenger.g0.h3(hf0Var, 100L);
                 return;
             }
             return;

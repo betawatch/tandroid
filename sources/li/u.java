@@ -15,18 +15,18 @@ import org.telegram.messenger.v10;
 import org.telegram.messenger.v3;
 import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.p70;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.r70;
 import org.telegram.ui.bn;
 import org.telegram.ui.y91;
 import r0.i1;
 import r0.l1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements v10, r0.m, w10 {
     public final /* synthetic */ int a;
@@ -50,13 +50,13 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
     }
 
     @Override // org.telegram.messenger.w10
-    public Boolean a(l41 l41Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         boolean z10;
         long j3;
         boolean z11;
         boolean z12;
         int i7 = d0.Q1;
-        Object obj = l41Var.H;
+        Object obj = o41Var.H;
         boolean z13 = obj instanceof TLRPC.Chat;
         d0 d0Var = this.b;
         boolean z14 = true;
@@ -83,8 +83,8 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
         z12 = V;
         z11 = false;
         if (z10) {
-            y60 G = y60.G(d0Var.c, null, view);
-            G.c(R.drawable.msg_cancel, gd.M0(2131751904, null), new m(d0Var, z11, z12, j3, 1), true);
+            a70 G = a70.G(d0Var.c, null, view);
+            G.c(R.drawable.msg_cancel, gd.N0(2131751903, null), new m(d0Var, z11, z12, j3, 1), true);
             G.X(d0Var.v1.d.U0(view, true));
             G.a0();
             return Boolean.valueOf(z14);
@@ -101,27 +101,27 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
         d0 d0Var = this.b;
         switch (i7) {
             case 0:
-                d0Var.M0((l41) obj);
+                d0Var.M0((o41) obj);
                 break;
             case 1:
             default:
                 int i10 = d0.Q1;
-                d0Var.J0((l41) obj);
+                d0Var.J0((o41) obj);
                 break;
             case 2:
                 int i11 = d0.Q1;
-                d0Var.M0((l41) obj);
+                d0Var.M0((o41) obj);
                 break;
             case 3:
-                l41 l41Var = (l41) obj;
+                o41 o41Var = (o41) obj;
                 View view = (View) obj2;
-                h2 h2Var = d0Var.u1;
-                if (!d0Var.J0(l41Var)) {
-                    int i12 = l41Var.d;
+                g2 g2Var = d0Var.u1;
+                if (!d0Var.J0(o41Var)) {
+                    int i12 = o41Var.d;
                     boolean z10 = false;
                     if (i12 != 101) {
                         if (i12 != 100) {
-                            Object obj3 = l41Var.H;
+                            Object obj3 = o41Var.H;
                             if (obj3 instanceof TLRPC.Chat) {
                                 TLRPC.Chat chat2 = (TLRPC.Chat) obj3;
                                 z10 = v3.V(chat2);
@@ -135,18 +135,18 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
                             if (b10 != 1 && b10 != 2) {
                                 if (b10 != 3) {
                                     if (b10 == 4) {
-                                        f3.n(null, z10 ? 2131751919 : 2131751916, new lc((FrameLayout) d0Var.b, d0Var.J0), R.raw.e_hand_2, 36);
+                                        f3.n(null, z10 ? 2131751918 : 2131751915, new lc((FrameLayout) d0Var.b, d0Var.J0), R.raw.e_hand_2, 36);
                                         break;
                                     }
                                 } else {
-                                    p70 p70Var = new p70(d0Var.getContext(), chat, null, d0Var.u1, d0Var.J0);
-                                    p70Var.t1 = new lc((FrameLayout) d0Var.b, d0Var.J0);
-                                    p70Var.show();
+                                    r70 r70Var = new r70(d0Var.getContext(), chat, null, d0Var.u1, d0Var.J0);
+                                    r70Var.t1 = new lc((FrameLayout) d0Var.b, d0Var.J0);
+                                    r70Var.show();
                                     break;
                                 }
                             } else {
-                                if (h2Var instanceof bn) {
-                                    bn bnVar = (bn) h2Var;
+                                if (g2Var instanceof bn) {
+                                    bn bnVar = (bn) g2Var;
                                     TLRPC.Chat chat3 = bnVar.e;
                                     TLRPC.User j10 = bnVar.j();
                                     if ((chat3 != null && chat3.id == (-j3)) || (j10 != null && j10.id == j3)) {
@@ -161,13 +161,13 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
                                     bundle.putLong("chat_id", -j3);
                                 }
                                 if (!v3.c0(chat)) {
-                                    h2Var.presentFragment(new bn(bundle));
+                                    g2Var.presentFragment(new bn(bundle));
                                 } else if (v3.a(chat)) {
                                     bn bnVar2 = new bn(bundle);
                                     qg.c.a(bnVar2, sr.a(j3, mp.u1(d0Var.a).h7.getLong(p0.o(chat.id, "forumlasttopic"), 1L)));
-                                    h2Var.presentFragment(bnVar2);
+                                    g2Var.presentFragment(bnVar2);
                                 } else {
-                                    h2Var.presentFragment(new y91(bundle));
+                                    g2Var.presentFragment(new y91(bundle));
                                 }
                                 d0Var.dismiss();
                                 break;

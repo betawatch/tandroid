@@ -5,22 +5,22 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.fj;
-import org.telegram.ui.Components.vi0;
-import org.telegram.ui.Components.z40;
+import org.telegram.ui.Components.c50;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class k7 extends c5.a {
     public final /* synthetic */ Context c;
     public final /* synthetic */ f9 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 e;
     public final /* synthetic */ w f;
 
-    public k7(w wVar, Context context, f9 f9Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public k7(w wVar, Context context, f9 f9Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.f = wVar;
         this.c = context;
         this.d = f9Var;
-        this.e = i6Var;
+        this.e = h6Var;
     }
 
     @Override // c5.a
@@ -54,20 +54,20 @@ public final class k7 extends c5.a {
             j7Var = (z3) arrayList.remove(0);
             j7Var.Y0.a.getImageReceiver().O0(true, true);
             if (j7Var.O1 != null) {
-                j7Var.L1.m1();
+                j7Var.L1.q1();
                 j7Var.L1.setAlpha(1.0f - j7Var.O3);
             }
-            vi0 vi0Var = j7Var.P1;
-            if (vi0Var != null) {
-                vi0Var.n();
+            xi0 xi0Var = j7Var.P1;
+            if (xi0Var != null) {
+                xi0Var.n();
             }
-            vi0 vi0Var2 = j7Var.b3;
-            if (vi0Var2 != null) {
-                vi0Var2.n();
+            xi0 xi0Var2 = j7Var.b3;
+            if (xi0Var2 != null) {
+                xi0Var2.n();
             }
-            z40 z40Var = j7Var.t2;
-            if (z40Var != null) {
-                org.telegram.messenger.g0.E2(z40Var);
+            c50 c50Var = j7Var.t2;
+            if (c50Var != null) {
+                org.telegram.messenger.g0.E2(c50Var);
                 j7Var.t2.d(true);
                 j7Var.t2 = null;
             }

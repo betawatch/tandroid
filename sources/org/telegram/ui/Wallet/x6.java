@@ -30,11 +30,11 @@ import org.telegram.messenger.j10;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.o10;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.w01;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.y01;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class x6 extends FrameLayout implements fs {
     public static Typeface k0;
@@ -42,11 +42,11 @@ public class x6 extends FrameLayout implements fs {
     public final s6 E;
     public final FrameLayout F;
     public View.OnClickListener G;
-    public final org.telegram.ui.ActionBar.o2 H;
+    public final org.telegram.ui.ActionBar.n2 H;
     public final uv I;
     public final Paint J;
     public float K;
-    public final org.telegram.ui.Components.c6 L;
+    public final org.telegram.ui.Components.d6 L;
     public final View M;
     public final LinearLayout N;
     public final v6 O;
@@ -70,9 +70,9 @@ public class x6 extends FrameLayout implements fs {
     public float e0;
     public final RectF f;
     public float f0;
-    public final org.telegram.ui.Components.c6 g0;
+    public final org.telegram.ui.Components.d6 g0;
     public float h;
-    public final org.telegram.ui.Components.c6 h0;
+    public final org.telegram.ui.Components.d6 h0;
     public f7 i0;
     public boolean j0;
     public boolean n;
@@ -215,8 +215,8 @@ public class x6 extends FrameLayout implements fs {
         Matrix matrix2 = (Matrix) s6Var.e.d;
         Matrix matrix3 = this.w;
         matrix3.set(matrix2);
-        w01 w01Var = s6Var.f;
-        matrix3.preTranslate(w01Var.getLeft(), w01Var.getTop());
+        y01 y01Var = s6Var.f;
+        matrix3.preTranslate(y01Var.getLeft(), y01Var.getTop());
         k(view2, matrix);
         matrix.preConcat(matrix3);
         matrix.preTranslate(this.F.getLeft() - r0.getScrollX(), this.F.getTop() - r0.getScrollY());
@@ -239,7 +239,7 @@ public class x6 extends FrameLayout implements fs {
         return this.N;
     }
 
-    public org.telegram.ui.Components.n6 getBalanceView() {
+    public org.telegram.ui.Components.o6 getBalanceView() {
         return this.O;
     }
 
@@ -277,8 +277,8 @@ public class x6 extends FrameLayout implements fs {
         float bottom = ((r3.getBottom() + r3.getTop()) / 2.0f) + f11;
         float height = (r3.getHeight() * b10) / 2.0f;
         arrayList.add(new RectF(f10, bottom - height, c10 + f10, bottom + height));
-        org.telegram.ui.ActionBar.o2 o2Var = this.H;
-        arrayList.add(new RectF(o2Var.getLeft(), o2Var.getTop(), o2Var.getLeft() + Math.min(o2Var.getWidth(), o2Var.getPaint().measureText(o2Var.getText().toString())), o2Var.getBottom()));
+        org.telegram.ui.ActionBar.n2 n2Var = this.H;
+        arrayList.add(new RectF(n2Var.getLeft(), n2Var.getTop(), n2Var.getLeft() + Math.min(n2Var.getWidth(), n2Var.getPaint().measureText(n2Var.getText().toString())), n2Var.getBottom()));
         arrayList.add(new RectF(this.F.getWidth() - (34.0f * width), 18.0f * width, this.F.getWidth() - (12.0f * width), width * 187.0f));
         Path path = new Path();
         h(path, this.F.getWidth(), this.F.getHeight());
@@ -294,7 +294,7 @@ public class x6 extends FrameLayout implements fs {
         return this.b0;
     }
 
-    public org.telegram.ui.Components.n6 getUsdBalanceView() {
+    public org.telegram.ui.Components.o6 getUsdBalanceView() {
         return this.P;
     }
 
@@ -325,8 +325,8 @@ public class x6 extends FrameLayout implements fs {
         spannableStringBuilder.append((CharSequence) e(j3));
         spannableStringBuilder.append((CharSequence) " ");
         int length = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) gd.M0(2131749341, null));
-        spannableStringBuilder.setSpan(new oi.v5(this, 5), length, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) gd.N0(2131749340, null));
+        spannableStringBuilder.setSpan(new oi.w5(this, 5), length, spannableStringBuilder.length(), 33);
         this.O.setText(spannableStringBuilder);
         long round = Math.round((j3 / 1.0E9d) * ((org.telegram.messenger.i0) mp.u1(i7).A7.l.b).a * 100.0d);
         org.telegram.messenger.r1 i10 = org.telegram.messenger.r1.i();
@@ -629,11 +629,11 @@ public class x6 extends FrameLayout implements fs {
                 }
             }
         };
-        lr lrVar = lr.h;
-        this.L = new org.telegram.ui.Components.c6(runnable, 240L, lrVar, 0);
+        nr nrVar = nr.h;
+        this.L = new org.telegram.ui.Components.d6(runnable, 240L, nrVar, 0);
         this.W = j10.t0;
         final int i12 = 1;
-        this.g0 = new org.telegram.ui.Components.c6(new Runnable(this) { // from class: org.telegram.ui.Wallet.t6
+        this.g0 = new org.telegram.ui.Components.d6(new Runnable(this) { // from class: org.telegram.ui.Wallet.t6
             public final /* synthetic */ x6 b;
 
             {
@@ -656,9 +656,9 @@ public class x6 extends FrameLayout implements fs {
                         break;
                 }
             }
-        }, 240L, lrVar, 0);
+        }, 240L, nrVar, 0);
         final int i13 = 2;
-        this.h0 = new org.telegram.ui.Components.c6(new Runnable(this) { // from class: org.telegram.ui.Wallet.t6
+        this.h0 = new org.telegram.ui.Components.d6(new Runnable(this) { // from class: org.telegram.ui.Wallet.t6
             public final /* synthetic */ x6 b;
 
             {
@@ -681,7 +681,7 @@ public class x6 extends FrameLayout implements fs {
                         break;
                 }
             }
-        }, 240L, lrVar, 0);
+        }, 240L, nrVar, 0);
         this.S = i7;
         this.T = i10;
         setClipChildren(false);
@@ -698,8 +698,8 @@ public class x6 extends FrameLayout implements fs {
         setUseGyroscope(this.s);
         this.E.setOnClickListener(this.G);
         addView(this.E, 0, c8.ma.c(-2.0f, -1));
-        org.telegram.ui.ActionBar.o2 o2Var = new org.telegram.ui.ActionBar.o2(9, context, this);
-        this.H = o2Var;
+        org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2(9, context, this);
+        this.H = n2Var;
         if (l0 == null) {
             if (Build.VERSION.SDK_INT >= 26) {
                 l0 = new Typeface.Builder(context.getAssets(), "fonts/rmono_var.ttf").setFontVariationSettings("'wght' 500").setWeight(500).build();
@@ -707,13 +707,13 @@ public class x6 extends FrameLayout implements fs {
                 l0 = org.telegram.messenger.g0.o1("fonts/rmono.ttf");
             }
         }
-        o2Var.setTypeface(l0);
-        o2Var.setTextColor(-1);
-        o2Var.setTextSize(1, 13.0f);
-        o2Var.setEllipsize(TextUtils.TruncateAt.END);
-        o2Var.setMaxLines(1);
-        o2Var.setSingleLine();
-        this.F.addView(o2Var, c8.ma.d(-1, -2.0f, 83, 24.0f, 0.0f, 64.0f, 17.2f));
+        n2Var.setTypeface(l0);
+        n2Var.setTextColor(-1);
+        n2Var.setTextSize(1, 13.0f);
+        n2Var.setEllipsize(TextUtils.TruncateAt.END);
+        n2Var.setMaxLines(1);
+        n2Var.setSingleLine();
+        this.F.addView(n2Var, c8.ma.d(-1, -2.0f, 83, 24.0f, 0.0f, 64.0f, 17.2f));
         uv uvVar = new uv(12, context, this);
         this.I = uvVar;
         this.F.addView(uvVar, c8.ma.c(-1.0f, -1));
@@ -731,7 +731,7 @@ public class x6 extends FrameLayout implements fs {
         v6 v6Var = new v6(this, context, 0);
         this.O = v6Var;
         v6Var.getDrawable().N = org.telegram.messenger.g0.L(4096.0f);
-        v6Var.c.m(0.35f, 320L, 3.5f, lrVar);
+        v6Var.c.m(0.35f, 320L, 3.5f, nrVar);
         v6Var.setScaleProperty(0.6f);
         v6Var.setTypeface(org.telegram.messenger.g0.o1("fonts/gram.ttf"));
         v6Var.setTextSize(org.telegram.messenger.g0.L(23.0f));
@@ -740,7 +740,7 @@ public class x6 extends FrameLayout implements fs {
         linearLayout.addView(v6Var, c8.ma.o(-1, 28));
         v6 v6Var2 = new v6(this, context, 1);
         this.P = v6Var2;
-        v6Var2.c.m(0.35f, 320L, 3.5f, lrVar);
+        v6Var2.c.m(0.35f, 320L, 3.5f, nrVar);
         v6Var2.setScaleProperty(0.6f);
         v6Var2.setTypeface(org.telegram.messenger.g0.o1("fonts/gram.ttf"));
         v6Var2.setTextSize(org.telegram.messenger.g0.L(14.0f));

@@ -2,16 +2,17 @@ package jg;
 
 import android.content.Context;
 import android.text.style.CharacterStyle;
-import hi.u5;
+import hi.t5;
 import hi.w4;
 import java.util.ArrayList;
 import java.util.HashMap;
-import ki.d4;
-import ki.u3;
-import oi.d5;
-import oi.l5;
-import oi.t5;
-import oi.z5;
+import ki.c4;
+import ki.t3;
+import oi.a6;
+import oi.e5;
+import oi.m5;
+import oi.u5;
+import oi.v5;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.f5;
@@ -32,7 +33,7 @@ import org.telegram.ui.Wallet.q6;
 import org.telegram.ui.Wallet.s6;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -80,18 +81,18 @@ public final /* synthetic */ class o1 implements Runnable {
                 int length = lowerCase.length();
                 int i14 = this.b;
                 if (length == 0) {
-                    org.telegram.messenger.g0.g3(new ai.g1(s1Var, i14, new ArrayList(), new ArrayList(), s1Var.I, 5));
+                    org.telegram.messenger.g0.g3(new ai.i1(s1Var, i14, new ArrayList(), new ArrayList(), s1Var.I, 5));
                     break;
                 } else {
-                    String S0 = gd.E0().S0(lowerCase, true, false);
-                    if (lowerCase.equals(S0) || S0.length() == 0) {
-                        S0 = null;
+                    String T0 = gd.E0().T0(lowerCase, true, false);
+                    if (lowerCase.equals(T0) || T0.length() == 0) {
+                        T0 = null;
                     }
-                    int i15 = (S0 != null ? 1 : 0) + 1;
+                    int i15 = (T0 != null ? 1 : 0) + 1;
                     String[] strArr = new String[i15];
                     strArr[0] = lowerCase;
-                    if (S0 != null) {
-                        strArr[1] = S0;
+                    if (T0 != null) {
+                        strArr[1] = T0;
                     }
                     ArrayList arrayList3 = new ArrayList();
                     ArrayList arrayList4 = new ArrayList();
@@ -106,17 +107,17 @@ public final /* synthetic */ class o1 implements Runnable {
                             i7 = i12;
                             strArr3[0] = i5.m(0, c22.first_name, c22.last_name).toLowerCase();
                             arrayList = arrayList2;
-                            String S02 = gd.E0().S0(strArr3[0], true, false);
-                            strArr3[1] = S02;
-                            if (strArr3[0].equals(S02)) {
+                            String T02 = gd.E0().T0(strArr3[0], true, false);
+                            strArr3[1] = T02;
+                            if (strArr3[0].equals(T02)) {
                                 strArr3[1] = str2;
                             }
                             if (o10.A(c22)) {
-                                strArr3[2] = gd.M0(2131746071, str2).toLowerCase();
+                                strArr3[2] = gd.N0(2131746070, str2).toLowerCase();
                             } else {
                                 String str3 = str2;
                                 if (c22.self) {
-                                    strArr3[2] = gd.M0(2131745706, str3).toLowerCase();
+                                    strArr3[2] = gd.N0(2131745705, str3).toLowerCase();
                                 }
                             }
                             char c11 = 0;
@@ -186,90 +187,90 @@ public final /* synthetic */ class o1 implements Runnable {
                     }
                     for (int i21 = 0; i21 < s1Var.H.size(); i21++) {
                         r1 r1Var2 = (r1) s1Var.H.get(i21);
-                        if ((S0 != null && (r1Var2.a.toLowerCase().contains(S0) || r1Var2.a.toLowerCase().contains(S0))) || r1Var2.a.toLowerCase().contains(lowerCase) || r1Var2.a.toLowerCase().contains(lowerCase)) {
+                        if ((T0 != null && (r1Var2.a.toLowerCase().contains(T0) || r1Var2.a.toLowerCase().contains(T0))) || r1Var2.a.toLowerCase().contains(lowerCase) || r1Var2.a.toLowerCase().contains(lowerCase)) {
                             arrayList5.add(r1Var2.b);
                         }
                     }
-                    org.telegram.messenger.g0.g3(new ai.g1(s1Var, i14, arrayList3, arrayList4, arrayList5, 5));
+                    org.telegram.messenger.g0.g3(new ai.i1(s1Var, i14, arrayList3, arrayList4, arrayList5, 5));
                     break;
                 }
                 break;
             case 1:
                 TLRPC.Document document = (TLRPC.Document) obj2;
-                d4.g(i13, (TLRPC.User) obj3, document, i12, new u3((org.telegram.ui.web.o) obj, document, i11));
+                c4.g(i13, (TLRPC.User) obj3, document, i12, new t3((org.telegram.ui.web.o) obj, document, i11));
                 break;
             case 2:
-                oi.e1 e1Var = (oi.e1) obj2;
+                oi.f1 f1Var = (oi.f1) obj2;
                 j9 j9Var = (j9) obj;
-                oi.p0 p0Var = ((oi.m0) obj3).a;
-                if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && j9Var.j0(p0Var, 0, i12, i13)) {
-                    p0Var.n = true;
-                    e1Var.setSelection(i13);
-                    p0Var.n = false;
+                oi.q0 q0Var = ((oi.n0) obj3).a;
+                if (f1Var.length() >= i13 && f1Var.getSelectionStart() != f1Var.getSelectionEnd() && j9Var.j0(q0Var, 0, i12, i13)) {
+                    q0Var.n = true;
+                    f1Var.setSelection(i13);
+                    q0Var.n = false;
                     break;
                 }
                 break;
             case 3:
-                oi.e1 e1Var2 = (oi.e1) obj2;
+                oi.f1 f1Var2 = (oi.f1) obj2;
                 j9 j9Var2 = (j9) obj;
-                d5 d5Var = (d5) ((w4) obj3).b;
-                if (e1Var2.length() >= i13 && e1Var2.getSelectionStart() != e1Var2.getSelectionEnd()) {
+                e5 e5Var = (e5) ((w4) obj3).b;
+                if (f1Var2.length() >= i13 && f1Var2.getSelectionStart() != f1Var2.getSelectionEnd()) {
                     if (j9Var2.x()) {
-                        d5Var.x = true;
-                        e1Var2.setSelection(i13);
-                        d5Var.x = false;
+                        e5Var.x = true;
+                        f1Var2.setSelection(i13);
+                        e5Var.x = false;
                         break;
-                    } else if (j9Var2.j0(d5Var, 0, i12, i13)) {
-                        d5Var.x = true;
-                        e1Var2.setSelection(i13);
-                        d5Var.x = false;
+                    } else if (j9Var2.j0(e5Var, 0, i12, i13)) {
+                        e5Var.x = true;
+                        f1Var2.setSelection(i13);
+                        e5Var.x = false;
                         break;
                     }
                 }
                 break;
             case 4:
-                oi.e1 e1Var3 = (oi.e1) obj2;
+                oi.f1 f1Var3 = (oi.f1) obj2;
                 j9 j9Var3 = (j9) obj;
-                l5 l5Var = (l5) ((u5) obj3).b;
-                if (e1Var3.length() >= i13 && e1Var3.getSelectionStart() != e1Var3.getSelectionEnd() && j9Var3.j0(l5Var, 0, i12, i13)) {
-                    l5Var.H = true;
-                    e1Var3.setSelection(i13);
-                    l5Var.H = false;
+                m5 m5Var = (m5) ((t5) obj3).b;
+                if (f1Var3.length() >= i13 && f1Var3.getSelectionStart() != f1Var3.getSelectionEnd() && j9Var3.j0(m5Var, 0, i12, i13)) {
+                    m5Var.H = true;
+                    f1Var3.setSelection(i13);
+                    m5Var.H = false;
                     break;
                 }
                 break;
             case 5:
-                oi.e1 e1Var4 = (oi.e1) obj2;
+                oi.f1 f1Var4 = (oi.f1) obj2;
                 j9 j9Var4 = (j9) obj;
-                z5 z5Var = ((t5) obj3).a;
-                if (e1Var4.length() >= i13 && e1Var4.getSelectionStart() != e1Var4.getSelectionEnd()) {
+                a6 a6Var = ((u5) obj3).a;
+                if (f1Var4.length() >= i13 && f1Var4.getSelectionStart() != f1Var4.getSelectionEnd()) {
                     if (j9Var4.x()) {
-                        z5Var.G = true;
-                        e1Var4.setSelection(i13);
-                        z5Var.G = false;
+                        a6Var.G = true;
+                        f1Var4.setSelection(i13);
+                        a6Var.G = false;
                         break;
-                    } else if (j9Var4.j0(z5Var, 0, i12, i13)) {
-                        z5Var.G = true;
-                        e1Var4.setSelection(i13);
-                        z5Var.G = false;
+                    } else if (j9Var4.j0(a6Var, 0, i12, i13)) {
+                        a6Var.G = true;
+                        f1Var4.setSelection(i13);
+                        a6Var.G = false;
                         break;
                     }
                 }
                 break;
             case 6:
-                oi.e1 e1Var5 = (oi.e1) obj2;
+                oi.f1 f1Var5 = (oi.f1) obj2;
                 j9 j9Var5 = (j9) obj;
-                z5 z5Var2 = ((oi.u5) obj3).a;
-                if (e1Var5.length() >= i13 && e1Var5.getSelectionStart() != e1Var5.getSelectionEnd()) {
+                a6 a6Var2 = ((v5) obj3).a;
+                if (f1Var5.length() >= i13 && f1Var5.getSelectionStart() != f1Var5.getSelectionEnd()) {
                     if (j9Var5.x()) {
-                        z5Var2.n = true;
-                        e1Var5.setSelection(i13);
-                        z5Var2.n = false;
+                        a6Var2.n = true;
+                        f1Var5.setSelection(i13);
+                        a6Var2.n = false;
                         break;
-                    } else if (j9Var5.j0(z5Var2, 1, i12, i13)) {
-                        z5Var2.n = true;
-                        e1Var5.setSelection(i13);
-                        z5Var2.n = false;
+                    } else if (j9Var5.j0(a6Var2, 1, i12, i13)) {
+                        a6Var2.n = true;
+                        f1Var5.setSelection(i13);
+                        a6Var2.n = false;
                         break;
                     }
                 }

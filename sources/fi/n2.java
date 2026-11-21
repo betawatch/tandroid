@@ -3,25 +3,25 @@ package fi;
 import android.app.Activity;
 import android.content.Context;
 import java.util.WeakHashMap;
-import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui;
 import org.telegram.ui.bn;
 import org.telegram.ui.pl;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class n2 extends si {
+public final class n2 extends ui {
     public final /* synthetic */ int J4;
     public final /* synthetic */ Object K4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n2(org.telegram.ui.ActionBar.h2 h2Var, Activity activity, org.telegram.ui.ActionBar.h2 h2Var2, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
-        super(activity, h2Var2, false, false, true, i6Var);
+    public /* synthetic */ n2(org.telegram.ui.ActionBar.g2 g2Var, Activity activity, org.telegram.ui.ActionBar.g2 g2Var2, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+        super(activity, g2Var2, false, false, true, h6Var);
         this.J4 = i7;
-        this.K4 = h2Var;
+        this.K4 = g2Var;
     }
 
-    @Override // org.telegram.ui.Components.si, org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.Components.ui, org.telegram.ui.ActionBar.w2
     public void L() {
         int i7;
         int i10;
@@ -33,7 +33,7 @@ public final class n2 extends si {
                 n2 n2Var = nVar.M;
                 if (n2Var != null && n2Var.isShowing()) {
                     Activity parentActivity = nVar.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.h2) nVar).classGuid;
+                    i7 = ((org.telegram.ui.ActionBar.g2) nVar).classGuid;
                     org.telegram.messenger.g0.Z2(parentActivity, i7);
                 }
                 super.L();
@@ -43,7 +43,7 @@ public final class n2 extends si {
                 n2 n2Var2 = bnVar.Y1;
                 if (n2Var2 != null && (n2Var2.isShowing() || this.s2)) {
                     Activity parentActivity2 = bnVar.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.h2) bnVar).classGuid;
+                    i10 = ((org.telegram.ui.ActionBar.g2) bnVar).classGuid;
                     org.telegram.messenger.g0.Z2(parentActivity2, i10);
                 }
                 super.L();
@@ -69,7 +69,7 @@ public final class n2 extends si {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public void n0() {
         int i7;
         int i10;
@@ -98,7 +98,7 @@ public final class n2 extends si {
                 n2 n2Var3 = nVar.M;
                 if (n2Var3 != null && n2Var3.isShowing()) {
                     Activity parentActivity = nVar.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.h2) nVar).classGuid;
+                    i7 = ((org.telegram.ui.ActionBar.g2) nVar).classGuid;
                     org.telegram.messenger.g0.Z2(parentActivity, i7);
                     break;
                 }
@@ -130,7 +130,7 @@ public final class n2 extends si {
                     n2 n2Var5 = bnVar.Y1;
                     if (n2Var5 != null && n2Var5.isShowing()) {
                         Activity parentActivity2 = bnVar.getParentActivity();
-                        i10 = ((org.telegram.ui.ActionBar.h2) bnVar).classGuid;
+                        i10 = ((org.telegram.ui.ActionBar.g2) bnVar).classGuid;
                         org.telegram.messenger.g0.Z2(parentActivity2, i10);
                     }
                     bnVar.wa(false, false);
@@ -146,15 +146,15 @@ public final class n2 extends si {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(Context context, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.i6 i6Var, Runnable runnable) {
-        super(context, h2Var, false, false, true, i6Var);
+    public n2(Context context, org.telegram.ui.ActionBar.g2 g2Var, org.telegram.ui.ActionBar.h6 h6Var, Runnable runnable) {
+        super(context, g2Var, false, false, true, h6Var);
         this.J4 = 3;
         this.K4 = runnable;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(z3 z3Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, null, false, false, true, i6Var);
+    public n2(z3 z3Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, null, false, false, true, h6Var);
         this.J4 = 0;
         this.K4 = z3Var;
     }

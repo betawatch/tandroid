@@ -14,16 +14,16 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.x10;
 import org.telegram.messenger.zy;
 import org.telegram.ui.Cells.oa;
-import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.gu;
+import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.iu;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.dd0;
+import org.telegram.ui.cd0;
 import org.telegram.ui.qc;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements x10 {
     public final /* synthetic */ int a;
@@ -52,15 +52,15 @@ public final /* synthetic */ class e implements x10 {
                 break;
             case 3:
                 View view2 = (View) obj;
-                if (view2 instanceof kg.s1) {
-                    ((kg.s1) view2).c.invalidate();
+                if (view2 instanceof kg.r1) {
+                    ((kg.r1) view2).c.invalidate();
                     break;
                 }
                 break;
             case 4:
                 View view3 = (View) obj;
-                if (view3 instanceof kg.s1) {
-                    ((kg.s1) view3).d.a(false, true);
+                if (view3 instanceof kg.r1) {
+                    ((kg.r1) view3).d.a(false, true);
                     break;
                 }
                 break;
@@ -68,10 +68,10 @@ public final /* synthetic */ class e implements x10 {
                 org.telegram.messenger.q5 q5Var = zy.J;
                 break;
             case 6:
-                HashMap hashMap = org.telegram.ui.ActionBar.g3.L;
+                HashMap hashMap = org.telegram.ui.ActionBar.f3.L;
                 break;
             case 7:
-                int i10 = org.telegram.ui.ActionBar.e3.r;
+                int i10 = org.telegram.ui.ActionBar.d3.r;
                 break;
             case 8:
                 int i11 = oa.n;
@@ -95,12 +95,12 @@ public final /* synthetic */ class e implements x10 {
                 }
                 break;
             case 12:
-                gu guVar = gu.S1;
+                iu iuVar = iu.S1;
                 break;
             case 13:
                 View view6 = (View) obj;
-                if (view6 instanceof org.telegram.ui.ActionBar.q2) {
-                    ((org.telegram.ui.ActionBar.q2) view6).getTextView().invalidate();
+                if (view6 instanceof org.telegram.ui.ActionBar.p2) {
+                    ((org.telegram.ui.ActionBar.p2) view6).getTextView().invalidate();
                     break;
                 } else {
                     view6.invalidate();
@@ -113,8 +113,8 @@ public final /* synthetic */ class e implements x10 {
                     h5Var.b.invalidate();
                     h5Var.c.invalidate();
                     break;
-                } else if (view7 instanceof kg.s1) {
-                    ((kg.s1) view7).c.invalidate();
+                } else if (view7 instanceof kg.r1) {
+                    ((kg.r1) view7).c.invalidate();
                     break;
                 } else {
                     view7.invalidate();
@@ -136,8 +136,8 @@ public final /* synthetic */ class e implements x10 {
                 break;
             case 17:
                 View view10 = (View) obj;
-                if (view10 instanceof d11) {
-                    ((d11) view10).a(true);
+                if (view10 instanceof f11) {
+                    ((f11) view10).a(true);
                     break;
                 }
                 break;
@@ -149,13 +149,13 @@ public final /* synthetic */ class e implements x10 {
             case 20:
                 Long l10 = (Long) obj;
                 if (l10 != null && l10.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T != null) {
                         T.presentFragment(ProfileActivity.D4(l10.longValue()));
                         break;
                     }
                 } else {
-                    org.telegram.messenger.g0.g3(new dd0(i7));
+                    org.telegram.messenger.g0.g3(new cd0(i7));
                     break;
                 }
                 break;

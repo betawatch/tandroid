@@ -11,27 +11,27 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.u60;
+import org.telegram.ui.Components.w60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class e8 extends bi.c3 {
+public final class e8 extends bi.g3 {
     public boolean A0;
     public ValueAnimator B0;
     public TL_wallet.nftItem x0;
     public r8 y0;
     public float z0;
 
-    @Override // bi.c3
-    public final void b(u60 u60Var, Canvas canvas, float f10, float f11, float f12) {
+    @Override // bi.g3
+    public final void b(w60 w60Var, Canvas canvas, float f10, float f11, float f12) {
         if (this.z0 == 1.0f) {
-            super.b(u60Var, canvas, f10, f11, f12);
+            super.b(w60Var, canvas, f10, f11, f12);
             return;
         }
         canvas.save();
         float f13 = this.z0;
         canvas.scale(f13, f13, f10 / 2.0f, f11 / 2.0f);
-        super.b(u60Var, canvas, f10, f11, f12);
+        super.b(w60Var, canvas, f10, f11, f12);
         canvas.restore();
     }
 
@@ -174,6 +174,6 @@ public final class e8 extends bi.c3 {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
-        hi.r2.W = getMeasuredHeight();
+        hi.q2.W = getMeasuredHeight();
     }
 }

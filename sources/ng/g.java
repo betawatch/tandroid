@@ -1,10 +1,10 @@
 package ng;
 
 import android.widget.TextView;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g extends e {
     public TextView N;
@@ -17,7 +17,7 @@ public final class g extends e {
             return;
         }
         super.b();
-        u6.U(textView, n6.j5, null);
+        t6.U(textView, m6.j5, null);
     }
 
     @Override // ng.e

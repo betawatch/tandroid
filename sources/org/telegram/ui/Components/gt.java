@@ -1,27 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gt implements org.telegram.messenger.x10 {
-    public final /* synthetic */ mt a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class gt extends n6 {
+    public final /* synthetic */ int e0;
+    public final /* synthetic */ ot f0;
 
-    public /* synthetic */ gt(mt mtVar, int i7, int i10) {
-        this.a = mtVar;
-        this.b = i7;
-        this.c = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ gt(ot otVar, int i7) {
+        super(false, false, false);
+        this.e0 = i7;
+        this.f0 = otVar;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        mt mtVar = this.a;
-        Editable text = mtVar.getText();
-        int i7 = this.b;
-        text.replace(i7, this.c, charSequence);
-        mtVar.setSelection(i7, charSequence.length() + i7);
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.e0) {
+            case 0:
+                this.f0.invalidate();
+                break;
+            default:
+                this.f0.invalidate();
+                break;
+        }
     }
 }

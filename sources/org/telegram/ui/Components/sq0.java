@@ -1,43 +1,36 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class sq0 extends v4.u0 {
-    public final /* synthetic */ iq0 a;
-    public final /* synthetic */ jq0 b;
-    public final /* synthetic */ gt0 c;
+public final class sq0 implements org.telegram.ui.e50 {
+    public final /* synthetic */ jt0 a;
 
-    public sq0(gt0 gt0Var, iq0 iq0Var, jq0 jq0Var) {
-        this.c = gt0Var;
-        this.a = iq0Var;
-        this.b = jq0Var;
+    public sq0(jt0 jt0Var) {
+        this.a = jt0Var;
     }
 
-    @Override // v4.u0
-    public final void a(RecyclerView recyclerView, int i7) {
-        this.c.e1 = i7 != 0;
-    }
-
-    @Override // v4.u0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        int i11;
-        int i12;
-        gt0 gt0Var = this.c;
-        vs0[] vs0VarArr = gt0Var.w1;
-        jq0 jq0Var = this.b;
-        iq0 iq0Var = this.a;
-        gt0Var.O(iq0Var, (ck0) recyclerView, jq0Var);
-        if (i10 != 0 && ((i12 = gt0Var.n0[0].F) == 0 || i12 == 5)) {
-            vs0VarArr[0].a.isEmpty();
+    @Override // org.telegram.ui.e50
+    public final void c(org.telegram.ui.f50 f50Var, long j3) {
+        Bundle bundle = new Bundle();
+        bundle.putLong("chat_id", j3);
+        bundle.putBoolean("just_created_chat", true);
+        f50Var.presentFragment(new org.telegram.ui.bn(bundle), true);
+        wr0 wr0Var = this.a.S;
+        org.telegram.ui.ActionBar.g2 g2Var = wr0Var.r.y1;
+        if (wr0Var.n != 0) {
+            g2Var.getConnectionsManager().cancelRequest(wr0Var.n, true);
+            wr0Var.n = 0;
         }
-        if (i10 != 0 && ((i11 = iq0Var.F) == 0 || gt0.z0(i11))) {
-            gt0.s(iq0Var, vs0VarArr, true);
-        }
-        iq0Var.h.L0(true);
-        if (iq0Var.G != null) {
-            iq0Var.invalidate();
+        wr0Var.d.clear();
+        wr0Var.e = false;
+        wr0Var.h = false;
+        wr0Var.E(0L);
+        TLRPC.User c22 = g2Var.getMessagesController().c2(Long.valueOf(wr0Var.F()));
+        if (c22 != null) {
+            g2Var.getMessagesController().c3(c22, g2Var.getClassGuid(), true, null);
         }
     }
 }

@@ -7,12 +7,12 @@ import java.util.Locale;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Cells.c5;
 import org.telegram.ui.f;
-import org.telegram.ui.if0;
+import org.telegram.ui.hf0;
+import org.telegram.ui.md0;
 import org.telegram.ui.ml0;
-import org.telegram.ui.nd0;
 import tc.g;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a extends AsyncTask {
     public final /* synthetic */ String a;
@@ -31,7 +31,7 @@ public final class a extends AsyncTask {
     public final Object doInBackground(Object[] objArr) {
         c5 c5Var = this.d;
         try {
-            nd0 c10 = vc.b.c(sd.a(this.b), new t(this.a, 2));
+            md0 c10 = vc.b.c(sd.a(this.b), new t(this.a, 2));
             Object obj = c5Var.a;
             return new b(c10, null);
         } catch (g e10) {
@@ -44,15 +44,15 @@ public final class a extends AsyncTask {
     public final void onPostExecute(Object obj) {
         b bVar = (b) obj;
         Object obj2 = this.d.a;
-        nd0 nd0Var = bVar.a;
+        md0 md0Var = bVar.a;
         f fVar = this.c;
-        if (nd0Var != null) {
+        if (md0Var != null) {
             ml0 ml0Var = (ml0) fVar.b;
             if (ml0Var.R0) {
                 return;
             }
-            ml0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) nd0Var.b, (String) nd0Var.d);
-            g0.g3(new if0(fVar, 11));
+            ml0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) md0Var.b, (String) md0Var.d);
+            g0.g3(new hf0(fVar, 11));
             return;
         }
         Exception exc = bVar.b;

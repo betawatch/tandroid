@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class o0 implements fs {
     public static final LongSparseArray[] J = new LongSparseArray[4];
@@ -416,16 +416,16 @@ public final class o0 implements fs {
     public final void m() {
         this.s = SystemClock.elapsedRealtime();
         mp u12 = mp.u1(this.a);
-        ai.g0 g0Var = new ai.g0(this, 8);
+        ai.h0 h0Var = new ai.h0(this, 8);
         if (u12.c8) {
             return;
         }
         if (u12.d8 != null && r0.expires > System.currentTimeMillis() / 1000) {
-            g0Var.a(u12.d8);
+            h0Var.a(u12.d8);
             return;
         }
         u12.c8 = true;
-        u12.getConnectionsManager().sendRequest(new TLRPC.TL_contacts_exportContactToken(), new go(u12, g0Var, System.currentTimeMillis(), 7));
+        u12.getConnectionsManager().sendRequest(new TLRPC.TL_contacts_exportContactToken(), new go(u12, h0Var, System.currentTimeMillis(), 7));
     }
 
     public final void n(boolean z10, boolean z11) {

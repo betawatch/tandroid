@@ -30,19 +30,19 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.Components.dw;
-import org.telegram.ui.Components.ui0;
-import org.telegram.ui.Components.vi0;
-import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.zr;
-import org.telegram.ui.Wallet.c5;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.ou;
+import org.telegram.ui.Components.wi0;
+import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.as0;
 import org.telegram.ui.bn;
 import org.telegram.ui.hy0;
@@ -53,11 +53,10 @@ import org.telegram.ui.wt0;
 import p4.g1;
 import p4.k1;
 import p4.l1;
-import ug.z0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class c0 implements ib.b, ui0, ly0 {
+public final class c0 implements ib.b, wi0, ly0 {
     public static c0 f;
     public final /* synthetic */ int a;
     public Object b;
@@ -105,8 +104,8 @@ public final class c0 implements ib.b, ui0, ly0 {
         synchronized (this.b) {
             hVar = (p4.h) ((a0.f) this.d).get(vVar);
         }
-        p4.d0 d0Var = (p4.d0) ((WeakReference) this.e).get();
-        return hVar != null && hVar.e.a(i7) && d0Var != null && d0Var.t.t().a(i7);
+        p4.e0 e0Var = (p4.e0) ((WeakReference) this.e).get();
+        return hVar != null && hVar.e.a(i7) && e0Var != null && e0Var.t.t().a(i7);
     }
 
     public boolean D(p4.v vVar, int i7) {
@@ -128,7 +127,7 @@ public final class c0 implements ib.b, ui0, ly0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ boolean E() {
         switch (this.a) {
         }
@@ -173,11 +172,11 @@ public final class c0 implements ib.b, ui0, ly0 {
                 }
                 ((a0.f) this.c).remove(hVar.a);
                 hVar.b.g();
-                p4.d0 d0Var = (p4.d0) ((WeakReference) this.e).get();
-                if (d0Var == null || d0Var.j()) {
+                p4.e0 e0Var = (p4.e0) ((WeakReference) this.e).get();
+                if (e0Var == null || e0Var.j()) {
                     return;
                 }
-                h2.l0.W(d0Var.l, new p4.e(d0Var, vVar, 0));
+                h2.l0.W(e0Var.l, new p4.e(e0Var, vVar, 0));
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -282,7 +281,7 @@ public final class c0 implements ib.b, ui0, ly0 {
 
     @Override // org.telegram.ui.ly0
     public void a() {
-        org.telegram.messenger.g0.h3(new hy0((h2) this.b, (Context) this.c, (i6) this.d, (dw) this.e, 2), 200L);
+        org.telegram.messenger.g0.h3(new hy0((g2) this.b, (Context) this.c, (h6) this.d, (ou) this.e, 2), 200L);
     }
 
     public void b(Object obj, p4.v vVar, l1 l1Var, y0 y0Var) {
@@ -329,7 +328,7 @@ public final class c0 implements ib.b, ui0, ly0 {
 
     @Override // org.telegram.ui.ly0
     public void d() {
-        org.telegram.messenger.g0.h3(new tr0(26, (h2) this.b, (dw) this.e), 200L);
+        org.telegram.messenger.g0.h3(new tr0(28, (g2) this.b, (ou) this.e), 200L);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:19:0x003e  */
@@ -414,48 +413,48 @@ public final class c0 implements ib.b, ui0, ly0 {
         int L = i7 - org.telegram.messenger.g0.L(25.0f);
         int i10 = 0;
         while (i10 < arrayList.size()) {
-            zr zrVar = (zr) arrayList.get(i10);
-            L = n10.x(4.0f, zrVar.g, L);
+            bs bsVar = (bs) arrayList.get(i10);
+            L = n10.x(4.0f, bsVar.g, L);
             if (L < 0) {
                 break;
             }
             if (gd.a0) {
-                canvas.translate(-zrVar.g, 0.0f);
-                zrVar.a(canvas);
+                canvas.translate(-bsVar.g, 0.0f);
+                bsVar.a(canvas);
                 canvas.translate(-org.telegram.messenger.g0.L(4.0f), 0.0f);
             } else {
-                zrVar.a(canvas);
-                canvas.translate(org.telegram.messenger.g0.L(4.0f) + zrVar.g, 0.0f);
+                bsVar.a(canvas);
+                canvas.translate(org.telegram.messenger.g0.L(4.0f) + bsVar.g, 0.0f);
             }
             i10++;
         }
         if (i10 < arrayList.size()) {
             int size = arrayList.size() - i10;
-            zr zrVar2 = (zr) this.e;
-            if (zrVar2 == null || zrVar2.a != size) {
+            bs bsVar2 = (bs) this.e;
+            if (bsVar2 == null || bsVar2.a != size) {
                 u2 u2Var = (u2) this.b;
-                zr zrVar3 = new zr();
-                zrVar3.a = size;
-                vy0 vy0Var = new vy0(i5.c.i(size, "+"), 10.0f, org.telegram.messenger.g0.o());
-                vy0Var.r(u2Var);
-                zrVar3.c = vy0Var;
+                bs bsVar3 = new bs();
+                bsVar3.a = size;
+                xy0 xy0Var = new xy0(i5.c.i(size, "+"), 10.0f, org.telegram.messenger.g0.o());
+                xy0Var.r(u2Var);
+                bsVar3.c = xy0Var;
                 int L2 = org.telegram.messenger.g0.L(9.32f);
-                vy0 vy0Var2 = zrVar3.c;
-                zrVar3.g = L2 + ((int) vy0Var2.c);
-                vy0Var2.i();
-                int i11 = n6.n8;
-                zrVar3.f = i11;
-                zrVar3.e = true;
-                zrVar3.d = n6.x0(null, i11, false);
-                this.e = zrVar3;
+                xy0 xy0Var2 = bsVar3.c;
+                bsVar3.g = L2 + ((int) xy0Var2.c);
+                xy0Var2.i();
+                int i11 = m6.n8;
+                bsVar3.f = i11;
+                bsVar3.e = true;
+                bsVar3.d = m6.x0(null, i11, false);
+                this.e = bsVar3;
             }
             if (gd.a0) {
-                canvas.translate(-((zr) this.e).g, 0.0f);
-                ((zr) this.e).a(canvas);
+                canvas.translate(-((bs) this.e).g, 0.0f);
+                ((bs) this.e).a(canvas);
                 canvas.translate(-org.telegram.messenger.g0.L(4.0f), 0.0f);
             } else {
-                ((zr) this.e).a(canvas);
-                canvas.translate(org.telegram.messenger.g0.L(4.0f) + ((zr) this.e).g, 0.0f);
+                ((bs) this.e).a(canvas);
+                canvas.translate(org.telegram.messenger.g0.L(4.0f) + ((bs) this.e).g, 0.0f);
             }
         }
         canvas.restore();
@@ -463,7 +462,7 @@ public final class c0 implements ib.b, ui0, ly0 {
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00ec  */
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -491,7 +490,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                     if (k12 == null) {
                         f12 = 0.0f;
                         f10 = f12;
-                        bnVar.Eb(J8, (fj) this.c, (vi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                        bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                         ((as0) this.e).c(false);
                         break;
                     } else {
@@ -501,7 +500,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                     }
                 } else if (!(J8 instanceof v0) || (k10 = (q0Var = ((v0) J8).F0).k(p0Var)) == null) {
                     f10 = 0.0f;
-                    bnVar.Eb(J8, (fj) this.c, (vi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                    bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                     ((as0) this.e).c(false);
                 } else {
                     f16 = q0Var.b + k10.w + (k10.z / 2.0f);
@@ -510,7 +509,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                 }
                 f12 = f11 + (i7 / 2.0f);
                 f10 = f12;
-                bnVar.Eb(J8, (fj) this.c, (vi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                 ((as0) this.e).c(false);
                 break;
             default:
@@ -523,7 +522,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                     if (k13 == null) {
                         f15 = 0.0f;
                         f13 = f15;
-                        bnVar2.Eb(J82, (fj) this.c, (vi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                        bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                         ((i81) this.e).c(false);
                         break;
                     } else {
@@ -533,7 +532,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                     }
                 } else if (!(J82 instanceof v0) || (k11 = (q0Var2 = ((v0) J82).F0).k(p0Var)) == null) {
                     f13 = 0.0f;
-                    bnVar2.Eb(J82, (fj) this.c, (vi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                    bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                     ((i81) this.e).c(false);
                 } else {
                     f17 = q0Var2.b + k11.w + (k11.z / 2.0f);
@@ -542,7 +541,7 @@ public final class c0 implements ib.b, ui0, ly0 {
                 }
                 f15 = f14 + (i10 / 2.0f);
                 f13 = f15;
-                bnVar2.Eb(J82, (fj) this.c, (vi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                 ((i81) this.e).c(false);
                 break;
         }
@@ -555,13 +554,13 @@ public final class c0 implements ib.b, ui0, ly0 {
 
     @Override // org.telegram.ui.ly0
     public void h() {
-        h2 h2Var = (h2) this.b;
-        h2Var.showDialog(new z0(h2Var, 3, true));
+        g2 g2Var = (g2) this.b;
+        g2Var.showDialog(new ug.y0(g2Var, 3, true));
     }
 
     public void k(p4.h hVar) {
-        p4.d0 d0Var = (p4.d0) ((WeakReference) this.e).get();
-        if (d0Var == null) {
+        p4.e0 e0Var = (p4.e0) ((WeakReference) this.e).get();
+        if (e0Var == null) {
             return;
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
@@ -574,7 +573,7 @@ public final class c0 implements ib.b, ui0, ly0 {
             }
             AtomicBoolean atomicBoolean2 = new AtomicBoolean(true);
             p4.h hVar2 = hVar;
-            h2.l0.W(d0Var.l, new c5(d0Var, r(hVar.a), new wt0(this, gVar, atomicBoolean2, hVar2, atomicBoolean, 13)));
+            h2.l0.W(e0Var.l, new u4(e0Var, r(hVar.a), new wt0(this, gVar, atomicBoolean2, hVar2, atomicBoolean, 13)));
             atomicBoolean2.set(false);
             hVar = hVar2;
         }
@@ -594,9 +593,9 @@ public final class c0 implements ib.b, ui0, ly0 {
 
                     @Override // p4.g
                     public final m9.y run() {
-                        d0 d0Var = (d0) ((WeakReference) ab.c0.this.e).get();
-                        if (d0Var != null) {
-                            d0Var.p(this.b);
+                        e0 e0Var = (e0) ((WeakReference) ab.c0.this.e).get();
+                        if (e0Var != null) {
+                            e0Var.p(this.b);
                         }
                         return m9.w.b;
                     }
@@ -640,7 +639,7 @@ public final class c0 implements ib.b, ui0, ly0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ boolean o() {
         switch (this.a) {
         }
@@ -655,7 +654,7 @@ public final class c0 implements ib.b, ui0, ly0 {
         return q10;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ boolean q() {
         switch (this.a) {
         }
@@ -720,7 +719,7 @@ public final class c0 implements ib.b, ui0, ly0 {
         return ((Boolean) this.d).booleanValue();
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ void x(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
         int i10 = this.a;
     }
@@ -735,7 +734,7 @@ public final class c0 implements ib.b, ui0, ly0 {
         return ((Boolean) this.c).booleanValue();
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.wi0
     public /* synthetic */ void z() {
         int i7 = this.a;
     }
@@ -756,12 +755,12 @@ public final class c0 implements ib.b, ui0, ly0 {
         this.b = u2Var;
     }
 
-    public c0(p4.d0 d0Var) {
+    public c0(p4.e0 e0Var) {
         this.a = 13;
         this.c = new a0.f(0);
         this.d = new a0.f(0);
         this.b = new Object();
-        this.e = new WeakReference(d0Var);
+        this.e = new WeakReference(e0Var);
     }
 
     public c0(Typeface typeface, s1.b bVar) {
@@ -869,13 +868,13 @@ public final class c0 implements ib.b, ui0, ly0 {
         TextView textView2 = new TextView(eVar.getContext());
         this.c = textView2;
         linearLayout.addView(textView2, ma.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
-        w5 w5Var = new w5(eVar.getContext());
-        this.b = w5Var;
-        linearLayout.addView(w5Var, ma.o(-1, -2));
+        x5 x5Var = new x5(eVar.getContext());
+        this.b = x5Var;
+        linearLayout.addView(x5Var, ma.o(-1, -2));
         textView2.setGravity(8388611);
-        w5Var.setGravity(8388613);
-        w5Var.setTypeface(org.telegram.messenger.g0.o());
-        w5Var.setTextSize(1, 13.0f);
+        x5Var.setGravity(8388613);
+        x5Var.setTypeface(org.telegram.messenger.g0.o());
+        x5Var.setTextSize(1, 13.0f);
         textView2.setTextSize(1, 13.0f);
     }
 

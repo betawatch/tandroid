@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zu implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class zu implements Runnable {
                 break;
             case 4:
                 cx cxVar = this.b;
-                hi.m3 m3Var = cxVar.r0;
-                if (m3Var != null) {
-                    m3Var.f(true);
+                hi.l3 l3Var = cxVar.r0;
+                if (l3Var != null) {
+                    l3Var.f(true);
                 }
                 cxVar.presentFragment(new PremiumPreviewFragment(0, "stories"));
                 break;
@@ -75,9 +75,9 @@ public final /* synthetic */ class zu implements Runnable {
                 org.telegram.messenger.mp.u1(this.b.currentAccount).l0(null);
                 break;
             case 12:
-                org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
-                f2Var.a = true;
-                this.b.showAsSheet(new PrivacyControlActivity(11, false), f2Var);
+                org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
+                e2Var.a = true;
+                this.b.showAsSheet(new PrivacyControlActivity(11, false), e2Var);
                 break;
             case 13:
                 cx cxVar5 = this.b;

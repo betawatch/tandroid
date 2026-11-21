@@ -7,12 +7,12 @@ import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g extends sh.d {
+public final class g extends sh.c {
     public final fj b;
     public final RadialProgress2 c;
 
@@ -32,10 +32,10 @@ public final class g extends sh.d {
                 radialProgress2.h(t02);
             }
         }
-        radialProgress2.g(n6.Ze, n6.af, n6.ld, n6.md);
+        radialProgress2.g(m6.Ze, m6.af, m6.ld, m6.md);
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void a(View view) {
         super.a(view);
         RadialProgress2 radialProgress2 = this.c;
@@ -44,13 +44,13 @@ public final class g extends sh.d {
         radialProgress2.setIcon(0, false, false);
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void b() {
         super.b();
         this.c.f();
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void c(Canvas canvas, int i7, int i10) {
         RadialProgress2 radialProgress2 = this.c;
         radialProgress2.setCircleRadius(i7 / 2);

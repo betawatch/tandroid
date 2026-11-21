@@ -5,20 +5,20 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n8 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i9 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 c;
+    public final /* synthetic */ j9 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 c;
     public final /* synthetic */ HashSet d;
     public final /* synthetic */ TLRPC.TL_inputGroupCallInviteMessage e;
     public final /* synthetic */ boolean f;
 
-    public /* synthetic */ n8(i9 i9Var, org.telegram.ui.ActionBar.u1 u1Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z10, int i7) {
+    public /* synthetic */ n8(j9 j9Var, org.telegram.ui.ActionBar.t1 t1Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z10, int i7) {
         this.a = i7;
-        this.b = i9Var;
-        this.c = u1Var;
+        this.b = j9Var;
+        this.c = t1Var;
         this.d = hashSet;
         this.e = tL_inputGroupCallInviteMessage;
         this.f = z10;
@@ -29,8 +29,8 @@ public final /* synthetic */ class n8 implements RequestDelegate {
         switch (this.a) {
             case 0:
                 final int i7 = 0;
-                final i9 i9Var = this.b;
-                final org.telegram.ui.ActionBar.u1 u1Var = this.c;
+                final j9 j9Var = this.b;
+                final org.telegram.ui.ActionBar.t1 t1Var = this.c;
                 final HashSet hashSet = this.d;
                 final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage = this.e;
                 final boolean z10 = this.f;
@@ -39,10 +39,10 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                     public final void run() {
                         switch (i7) {
                             case 0:
-                                i9.b0(i9Var, u1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
+                                j9.b0(j9Var, t1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
                                 break;
                             default:
-                                i9.c0(i9Var, u1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
+                                j9.c0(j9Var, t1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
                                 break;
                         }
                     }
@@ -50,8 +50,8 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                 break;
             default:
                 final int i10 = 1;
-                final i9 i9Var2 = this.b;
-                final org.telegram.ui.ActionBar.u1 u1Var2 = this.c;
+                final j9 j9Var2 = this.b;
+                final org.telegram.ui.ActionBar.t1 t1Var2 = this.c;
                 final HashSet hashSet2 = this.d;
                 final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage2 = this.e;
                 final boolean z11 = this.f;
@@ -60,10 +60,10 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                i9.b0(i9Var2, u1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
+                                j9.b0(j9Var2, t1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
                                 break;
                             default:
-                                i9.c0(i9Var2, u1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
+                                j9.c0(j9Var2, t1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
                                 break;
                         }
                     }

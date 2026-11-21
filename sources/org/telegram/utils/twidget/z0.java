@@ -11,6 +11,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
 import j$.util.concurrent.ConcurrentHashMap;
+import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -24,10 +25,10 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.s2;
-import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Components.es0;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class z0 extends l {
     public int i;
@@ -835,7 +836,7 @@ public final class z0 extends l {
                     if (Build.VERSION.SDK_INT < 30 || y0Var.s == 0 || this.n == null) {
                         a8.b(str2);
                     } else {
-                        Utilities.e.d(new sv0((Object) this, (Object) y0Var, str2, 15), 700L);
+                        Utilities.e.d(new es0((Object) this, (Object) y0Var, (Serializable) str2, 16), 700L);
                     }
                 }
                 int size = arrayList.size();

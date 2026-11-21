@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class r1 extends View implements org.telegram.ui.Cells.i9 {
     public TL_iv.pageBlockEmbedPost E;
@@ -37,7 +37,7 @@ public final class r1 extends View implements org.telegram.ui.Cells.i9 {
         this.c = imageReceiver;
         imageReceiver.J0(org.telegram.messenger.g0.L(20.0f));
         imageReceiver.y0(org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
-        this.d = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        this.d = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
     }
 
     @Override // org.telegram.ui.Cells.i9
@@ -161,7 +161,7 @@ public final class r1 extends View implements org.telegram.ui.Cells.i9 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.M0(2131754867, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131754866, null));
         if (this.f != null) {
             sb2.append(", ");
             sb2.append(this.f.d.getText());
@@ -220,7 +220,7 @@ public final class r1 extends View implements org.telegram.ui.Cells.i9 {
                     r14 = org.telegram.messenger.g0.L(4.0f) + height;
                 }
                 TL_iv.pageBlockEmbedPost pageblockembedpost3 = this.E;
-                z2 n11 = g4.n(this.a, this, null, pageblockembedpost3.caption.credit, L, 0, pageblockembedpost3, e4Var.H ? org.telegram.ui.Components.wu0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
+                z2 n11 = g4.n(this.a, this, null, pageblockembedpost3.caption.credit, L, 0, pageblockembedpost3, e4Var.H ? org.telegram.ui.Components.zu0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
                 this.n = n11;
                 if (n11 != null) {
                     r14 += this.n.d.getHeight() + org.telegram.messenger.g0.L(4.0f);
@@ -274,7 +274,7 @@ public final class r1 extends View implements org.telegram.ui.Cells.i9 {
                             }
                             int i12 = L3;
                             TL_iv.pageBlockEmbedPost pageblockembedpost6 = this.E;
-                            z2 n12 = g4.n(this.a, this, null, pageblockembedpost6.caption.credit, L4, 0, pageblockembedpost6, e4Var.H ? org.telegram.ui.Components.wu0.a() : alignment, 0, this.b);
+                            z2 n12 = g4.n(this.a, this, null, pageblockembedpost6.caption.credit, L4, 0, pageblockembedpost6, e4Var.H ? org.telegram.ui.Components.zu0.a() : alignment, 0, this.b);
                             this.n = n12;
                             L3 = n12 != null ? this.n.d.getHeight() + org.telegram.messenger.g0.L(4.0f) + i12 : i12;
                         }

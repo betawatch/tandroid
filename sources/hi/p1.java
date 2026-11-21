@@ -8,9 +8,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bv;
-import org.telegram.ui.Components.vm;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.ax0;
+import org.telegram.ui.Components.ev;
+import org.telegram.ui.Components.xm;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.aj0;
 import org.telegram.ui.f00;
@@ -20,7 +20,7 @@ import org.telegram.ui.j00;
 import org.telegram.ui.kx;
 import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
         boolean z10;
         int i7;
         int i10;
-        String M0;
+        String N0;
         String str;
         int i11;
         int i12;
@@ -53,27 +53,27 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
         Object obj2 = this.b;
         switch (i17) {
             case 0:
-                u1 u1Var = (u1) obj2;
+                t1 t1Var = (t1) obj2;
                 ns p10 = ns.p();
-                di.b1 b1Var = u1Var.b;
-                q1 q1Var = u1Var.f;
-                j2 j2Var = u1Var.r;
-                int i18 = j2.C1;
-                return p10.r(motionEvent, b1Var, (bi.h8) obj, q1Var, j2Var.J0);
+                di.b1 b1Var = t1Var.b;
+                q1 q1Var = t1Var.f;
+                i2 i2Var = t1Var.r;
+                int i18 = i2.C1;
+                return p10.r(motionEvent, b1Var, (bi.l8) obj, q1Var, i2Var.J0);
             case 1:
-                org.telegram.ui.Components.f8 f8Var = (org.telegram.ui.Components.f8) obj2;
+                org.telegram.ui.Components.e8 e8Var = (org.telegram.ui.Components.e8) obj2;
                 org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) obj;
                 if (motionEvent.getAction() != 0) {
                     return false;
                 }
-                org.telegram.ui.Components.g8 g8Var = f8Var.n;
-                g8Var.B1.t(g8Var.s1.T(wVar));
+                org.telegram.ui.Components.f8 f8Var = e8Var.n;
+                f8Var.B1.t(f8Var.s1.T(wVar));
                 return false;
             case 2:
-                bv bvVar = (bv) obj2;
-                return ns.p().r(motionEvent, bvVar.r1, (vm) obj, bvVar.I1, bvVar.J0);
+                ev evVar = (ev) obj2;
+                return ns.p().r(motionEvent, evVar.r1, (xm) obj, evVar.I1, evVar.J0);
             case 3:
-                r10 = ns.p().r(motionEvent, r4.e, (org.telegram.ui.Components.n) obj, r4.getPreviewDelegate(), ((yw0) obj2).b);
+                r10 = ns.p().r(motionEvent, r4.e, (org.telegram.ui.Components.o) obj, r4.getPreviewDelegate(), ((ax0) obj2).b);
                 return r10;
             case 4:
                 hx hxVar = (hx) obj2;
@@ -113,7 +113,7 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                     if (intValue == 8) {
                         try {
                             i10 = 0;
-                            M0 = gd.M0(2131747274, null);
+                            N0 = gd.N0(2131747273, null);
                             str = null;
                             i11 = 20;
                             i7 = 0;
@@ -126,7 +126,7 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                     } else {
                         i7 = -120;
                         i10 = -18;
-                        M0 = gd.M0(2131747275, null);
+                        N0 = gd.N0(2131747274, null);
                         str = null;
                         i11 = 0;
                     }
@@ -150,9 +150,9 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                         z11 = false;
                     }
                     String str2 = str;
-                    AlertDialog$Builder w10 = org.telegram.ui.Components.b5.w(context, i7, i11, i15, i12, i14, i16, M0, z11, new ai.r1(hk0Var, intValue, editTextBoldCursor, 15));
+                    AlertDialog$Builder w10 = org.telegram.ui.Components.c5.w(context, i7, i11, i15, i12, i14, i16, N0, z11, new ai.t1(hk0Var, intValue, editTextBoldCursor, 15));
                     if (intValue == 8) {
-                        w10.h(gd.M0(2131747272, str2), new aj0(0, hk0Var, editTextBoldCursor));
+                        w10.h(gd.N0(2131747271, str2), new aj0(0, hk0Var, editTextBoldCursor));
                     }
                     hk0Var.showDialog(w10.a);
                     return true;

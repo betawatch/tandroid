@@ -5,13 +5,13 @@ import android.graphics.Rect;
 import android.os.Handler;
 import android.util.SparseArray;
 import android.view.View;
-import fi.p5;
+import fi.q5;
 import java.util.ArrayList;
 import org.telegram.messenger.fj;
-import org.telegram.ui.Wallet.c5;
+import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class b3 implements m9.t {
     public boolean a;
@@ -116,10 +116,10 @@ public final class b3 implements m9.t {
     @Override // m9.t
     public void onSuccess(Object obj) {
         p4.w wVar = (p4.w) obj;
-        p4.d0 d0Var = ((p4.m0) this.d).h;
-        Handler handler = d0Var.l;
+        p4.e0 e0Var = ((p4.n0) this.d).h;
+        Handler handler = e0Var.l;
         p4.v vVar = (p4.v) this.c;
-        h2.l0.W(handler, new c5(d0Var, vVar, new p5(this, wVar, this.a, this.b, vVar, 4)));
+        h2.l0.W(handler, new u4(e0Var, vVar, new q5(this, wVar, this.a, this.b, vVar, 4)));
     }
 
     public b3() {

@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z81 implements zh.c, org.telegram.messenger.xo, r0.m, org.telegram.ui.Components.rj0 {
+public final /* synthetic */ class z81 implements zh.c, org.telegram.messenger.xo, r0.m, org.telegram.ui.Components.tj0 {
     public final /* synthetic */ y91 a;
 
     public /* synthetic */ z81(y91 y91Var) {
@@ -36,7 +36,7 @@ public final /* synthetic */ class z81 implements zh.c, org.telegram.messenger.x
         return y91.Z(this.a, tL_error);
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public boolean f(float f10, float f11, int i7, View view) {
         return y91.b0(this.a, view, f10);
     }
@@ -47,11 +47,11 @@ public final /* synthetic */ class z81 implements zh.c, org.telegram.messenger.x
         y91Var.V0.j(y91Var.S0.b(), z10, z11);
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public /* synthetic */ void r(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.rj0
+    @Override // org.telegram.ui.Components.tj0
     public /* synthetic */ void j() {
     }
 }

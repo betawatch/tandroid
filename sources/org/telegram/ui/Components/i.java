@@ -1,10 +1,10 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements Runnable {
+public final /* synthetic */ class i implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ EditTextBoldCursor b;
 
@@ -13,60 +13,14 @@ public final /* synthetic */ class i implements Runnable {
         this.b = editTextBoldCursor;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                int i7 = 0;
-                editTextBoldCursor.y = false;
-                editTextBoldCursor.d = false;
-                editTextBoldCursor.h();
-                ArrayList arrayList = editTextBoldCursor.a;
-                if (!arrayList.isEmpty()) {
-                    ((xh.f) arrayList.get(0)).q = new i(editTextBoldCursor, 2);
-                    float sqrt = (float) Math.sqrt(Math.pow(editTextBoldCursor.getHeight(), 2.0d) + Math.pow(editTextBoldCursor.getWidth(), 2.0d));
-                    int size = arrayList.size();
-                    while (i7 < size) {
-                        Object obj = arrayList.get(i7);
-                        i7++;
-                        ((xh.f) obj).j(editTextBoldCursor.w, editTextBoldCursor.x, sqrt, true);
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                EditTextBoldCursor editTextBoldCursor2 = this.b;
-                editTextBoldCursor2.post(new i(editTextBoldCursor2, 3));
-                break;
-            case 3:
-                this.b.j(false, true);
-                break;
-            case 4:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 5:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 6:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 7:
-                org.telegram.messenger.g0.I3(this.b);
-                break;
-            case 8:
-                EditTextBoldCursor editTextBoldCursor3 = this.b;
-                editTextBoldCursor3.requestFocus();
-                org.telegram.messenger.g0.I3(editTextBoldCursor3);
+                this.b.setText("");
                 break;
             default:
-                EditTextBoldCursor editTextBoldCursor4 = this.b;
-                editTextBoldCursor4.requestFocus();
-                editTextBoldCursor4.setSelection(0, editTextBoldCursor4.length());
-                org.telegram.messenger.g0.I3(editTextBoldCursor4);
+                this.b.setText("");
                 break;
         }
     }

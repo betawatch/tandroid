@@ -16,16 +16,16 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.bz;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.x2;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class s0 extends WebView {
     public static final /* synthetic */ int W = 0;
     public String E;
     public boolean F;
-    public x2 G;
+    public w2 G;
     public int H;
     public int I;
     public Runnable J;
@@ -180,9 +180,9 @@ public final class s0 extends WebView {
     }
 
     public final void e(String str, z1 z1Var) {
-        x2 x2Var = this.G;
-        if (x2Var != null) {
-            x2Var.dismiss();
+        w2 w2Var = this.G;
+        if (w2Var != null) {
+            w2Var.dismiss();
             this.G = null;
         }
         b(z1Var);
@@ -278,9 +278,9 @@ public final class s0 extends WebView {
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str) {
-        x2 x2Var = this.G;
-        if (x2Var != null) {
-            x2Var.dismiss();
+        w2 w2Var = this.G;
+        if (w2Var != null) {
+            w2Var.dismiss();
             this.G = null;
         }
         if (!this.c) {
@@ -453,9 +453,9 @@ public final class s0 extends WebView {
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str, Map map) {
-        x2 x2Var = this.G;
-        if (x2Var != null) {
-            x2Var.dismiss();
+        w2 w2Var = this.G;
+        if (w2Var != null) {
+            w2Var.dismiss();
             this.G = null;
         }
         if (!this.c) {

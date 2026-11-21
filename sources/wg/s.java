@@ -2,14 +2,13 @@ package wg;
 
 import android.text.TextUtils;
 import android.util.Pair;
-import bi.m1;
+import bi.q1;
 import di.m7;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import ki.t2;
 import org.json.JSONObject;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.j10;
@@ -23,9 +22,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class s {
     public static HashMap a;
@@ -37,7 +36,7 @@ public abstract class s {
         tL_premium_applyBoost.peer = u12.l1(-j3);
         tL_premium_applyBoost.flags |= 1;
         tL_premium_applyBoost.slots.addAll(list);
-        connectionsManager.sendRequest(tL_premium_applyBoost, new m1(x10Var2, u12, x10Var, 24), 66);
+        connectionsManager.sendRequest(tL_premium_applyBoost, new q1(x10Var2, u12, x10Var, 24), 66);
     }
 
     public static ArrayList b(int i7, List list) {
@@ -147,7 +146,7 @@ public abstract class s {
         return connectionsManager.sendRequest(tL_payments_getPremiumGiftCodeOptions, new jg.u(chat, i7, x10Var, 9));
     }
 
-    public static void k(ArrayList arrayList, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, TLRPC.Chat chat, TLRPC.TL_textWithEntities tL_textWithEntities, h2 h2Var, x10 x10Var, x10 x10Var2) {
+    public static void k(ArrayList arrayList, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, TLRPC.Chat chat, TLRPC.TL_textWithEntities tL_textWithEntities, g2 g2Var, x10 x10Var, x10 x10Var2) {
         int i7 = j10.t0;
         HashMap hashMap = a;
         if (hashMap != null) {
@@ -179,7 +178,7 @@ public abstract class s {
             f5.a aVar = new f5.a();
             aVar.c = "inapp";
             aVar.b = tL_premiumGiftCodeOption.store_product;
-            r1.i().o(Arrays.asList(aVar.a()), new org.telegram.ui.Components.b1(tL_inputStorePaymentPremiumGiftCode, tL_premiumGiftCodeOption, connectionsManager, x10Var2, x10Var, h2Var, 2));
+            r1.i().o(Arrays.asList(aVar.a()), new org.telegram.ui.Components.c1(tL_inputStorePaymentPremiumGiftCode, tL_premiumGiftCodeOption, connectionsManager, x10Var2, x10Var, g2Var, 2));
             return;
         }
         mp u13 = mp.u1(j10.t0);
@@ -210,7 +209,7 @@ public abstract class s {
         tL_inputStorePaymentPremiumGiftCode2.amount = tL_premiumGiftCodeOption.amount;
         tL_inputInvoicePremiumGiftCode.purpose = tL_inputStorePaymentPremiumGiftCode2;
         tL_inputInvoicePremiumGiftCode.option = tL_premiumGiftCodeOption;
-        JSONObject u10 = t2.u(h2Var.getResourceProvider(), false);
+        JSONObject u10 = ki.s2.u(g2Var.getResourceProvider(), false);
         if (u10 != null) {
             TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
             tL_payments_getPaymentForm.theme_params = tL_dataJSON;
@@ -218,7 +217,7 @@ public abstract class s {
             tL_payments_getPaymentForm.flags |= 1;
         }
         tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftCode;
-        connectionsManager2.sendRequest(tL_payments_getPaymentForm, new m7(x10Var2, u13, tL_inputInvoicePremiumGiftCode, h2Var, x10Var));
+        connectionsManager2.sendRequest(tL_payments_getPaymentForm, new m7(x10Var2, u13, tL_inputInvoicePremiumGiftCode, g2Var, x10Var));
     }
 
     public static int l(long j3) {

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l5 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class l5 implements org.telegram.messenger.x10 {
                 this.b.V = (org.telegram.messenger.g3) obj;
                 break;
             default:
-                org.telegram.messenger.g0.g3(new oi.s2(25, this.b, (TL_stories.TL_premium_boostsStatus) obj));
+                org.telegram.messenger.g0.g3(new oi.t(27, this.b, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
         }
     }

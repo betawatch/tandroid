@@ -7,14 +7,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ScrollView;
-import bi.h4;
-import di.ga;
+import bi.l4;
+import di.a8;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
@@ -25,17 +24,17 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.oa0;
-import org.telegram.ui.Components.oo;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.qo;
 import org.telegram.ui.bn;
 import org.webrtc.ScreenCapturerAndroid;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +51,7 @@ public final /* synthetic */ class q implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f61 f61Var;
+        i61 i61Var;
         switch (this.a) {
             case 0:
                 int i7 = this.b;
@@ -143,10 +142,10 @@ public final /* synthetic */ class q implements Runnable {
                         }
                     }
                     Collections.sort(arrayList4, new w(0));
-                    org.telegram.messenger.g0.g3(new ga(f0Var, arrayList4, hVar, 21));
+                    org.telegram.messenger.g0.g3(new a8(f0Var, arrayList4, hVar, 22));
                     break;
                 } catch (Exception e10) {
-                    a8.g(e10, true);
+                    org.telegram.messenger.a8.g(e10, true);
                     return;
                 }
                 break;
@@ -163,13 +162,13 @@ public final /* synthetic */ class q implements Runnable {
                 break;
             case 3:
                 MediaController mediaController = (MediaController) ((b3.j) this.d).c;
-                if (this.b == mediaController.l0 && this.c == 4 && (f61Var = mediaController.k0) != null) {
+                if (this.b == mediaController.l0 && this.c == 4 && (i61Var = mediaController.k0) != null) {
                     try {
-                        f61Var.m0();
+                        i61Var.m0();
                         mediaController.k0 = null;
                         break;
                     } catch (Exception e11) {
-                        a8.g(e11, true);
+                        org.telegram.messenger.a8.g(e11, true);
                         return;
                     }
                 }
@@ -196,37 +195,37 @@ public final /* synthetic */ class q implements Runnable {
                 }
                 break;
             case 10:
-                h2 h2Var = (h2) this.d;
+                g2 g2Var = (g2) this.d;
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", j10.i(this.b).e());
                 bundle.putInt("message_id", this.c);
-                h2Var.presentFragment(new bn(bundle));
+                g2Var.presentFragment(new bn(bundle));
                 break;
             case 11:
                 ((ScrollView) this.d).scrollTo(0, Math.max(0, (org.telegram.messenger.g0.L(44.0f) * this.b) - (this.c / 2)));
                 break;
             case 12:
-                oo ooVar = (oo) this.d;
+                qo qoVar = (qo) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
                     SharedPreferences sharedPreferences = mp.u1(this.c).g7;
                     sharedPreferences.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", sharedPreferences.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                ooVar.B(i18);
+                qoVar.B(i18);
                 break;
             case 13:
-                h4 h4Var = (h4) this.d;
+                l4 l4Var = (l4) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
                     SharedPreferences sharedPreferences2 = mp.u1(this.c).g7;
                     sharedPreferences2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                h4Var.a(Integer.valueOf(i19));
+                l4Var.a(Integer.valueOf(i19));
                 break;
             case 14:
-                oa0 oa0Var = (oa0) ((di.b1) this.d).g3;
-                View d = oa0Var.d();
-                di.b1 b1Var = oa0Var.f;
+                qa0 qa0Var = (qa0) ((di.b1) this.d).g3;
+                View d = qa0Var.d();
+                di.b1 b1Var = qa0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;

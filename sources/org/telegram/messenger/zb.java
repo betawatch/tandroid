@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class zb extends AsyncTask {
     public static final /* synthetic */ int i = 0;
@@ -271,7 +271,7 @@ public final class zb extends AsyncTask {
                 tL_upload_getWebFile.location = h20Var.b;
                 tL_upload_getWebFile.offset = 0;
                 tL_upload_getWebFile.limit = 0;
-                ConnectionsManager.getInstance(sbVar.o).sendRequest(tL_upload_getWebFile, new fi.k5(10));
+                ConnectionsManager.getInstance(sbVar.o).sendRequest(tL_upload_getWebFile, new fi.l5(10));
             }
             str2 = this.f;
             if (str2 != null) {

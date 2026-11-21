@@ -1,77 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class tg0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ug0 b;
+public final class tg0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ wg0 b;
 
-    public /* synthetic */ tg0(ug0 ug0Var, int i7) {
-        this.a = i7;
-        this.b = ug0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tg0(wg0 wg0Var, Activity activity) {
+        super(activity);
+        this.b = wg0Var;
+        this.a = false;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                ug0 ug0Var = this.b;
-                AnimatorSet animatorSet = ug0Var.s;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    ug0Var.s = null;
-                    ug0Var.getClass();
-                    break;
-                }
-                break;
-            case 2:
-                ug0 ug0Var2 = this.b;
-                AnimatorSet animatorSet2 = ug0Var2.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ug0Var2.s = null;
-                    ug0Var2.getClass();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        wg0 wg0Var = this.b;
+        tb0 tb0Var = wg0Var.I;
+        tb0 tb0Var2 = wg0Var.H;
+        this.a = true;
+        Point point = org.telegram.messenger.g0.q;
+        int i11 = point.x > point.y ? 3 : 5;
+        tb0Var2.setItemCount(i11);
+        tb0Var.setItemCount(i11);
+        tb0Var2.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * i11;
+        tb0Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * i11;
+        this.a = false;
+        int size = View.MeasureSpec.getSize(i7);
+        wg0Var.O = size;
+        if (size != 0) {
+            wg0Var.c(false);
         }
+        super.onMeasure(i7, i10);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7 = this.a;
-        ug0 ug0Var = this.b;
-        switch (i7) {
-            case 0:
-                AnimatorSet animatorSet = ug0Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    ug0Var.h = null;
-                }
-                org.telegram.messenger.ks.e().k(99, 512);
-                break;
-            case 1:
-                AnimatorSet animatorSet2 = ug0Var.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ug0Var.s = null;
-                    if (ug0Var.x) {
-                        ug0Var.setLayerType(0, null);
-                    }
-                }
-                org.telegram.messenger.ks.e().k(99, 512);
-                break;
-            default:
-                AnimatorSet animatorSet3 = ug0Var.s;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    ug0Var.s = null;
-                    org.telegram.messenger.g0.g3(new gb0(this, 11));
-                }
-                org.telegram.messenger.ks.e().k(99, 512);
-                break;
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

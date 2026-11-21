@@ -1,21 +1,24 @@
 package ai;
 
 import android.util.Log;
+import java.util.HashMap;
+import org.telegram.ui.Components.h21;
+import org.telegram.ui.Components.j21;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ float[] b;
     public final /* synthetic */ android.support.v4.media.session.a0 c;
-    public final /* synthetic */ ii.h d;
+    public final /* synthetic */ h21 d;
     public final /* synthetic */ boolean[] e;
 
-    public /* synthetic */ k(float[] fArr, android.support.v4.media.session.a0 a0Var, ii.h hVar, boolean[] zArr) {
+    public /* synthetic */ k(float[] fArr, android.support.v4.media.session.a0 a0Var, h21 h21Var, boolean[] zArr) {
         this.b = fArr;
         this.c = a0Var;
-        this.d = hVar;
+        this.d = h21Var;
         this.e = zArr;
     }
 
@@ -25,26 +28,35 @@ public final /* synthetic */ class k implements Runnable {
             case 0:
                 final boolean[] zArr = this.e;
                 final android.support.v4.media.session.a0 a0Var = this.c;
-                final ii.h hVar = this.d;
+                final h21 h21Var = this.d;
                 final float[] fArr = this.b;
                 t[] tVarArr = DictationAsr.a;
                 if (!zArr[0]) {
-                    DictationAsr.Y((t) a0Var.b, new u() { // from class: ai.m
+                    DictationAsr.f0((t) a0Var.b, new u() { // from class: ai.m
                         @Override // ai.u
                         public final void a(boolean z10) {
                             boolean[] zArr2 = zArr;
-                            ii.h hVar2 = hVar;
-                            float[] fArr2 = fArr;
                             android.support.v4.media.session.a0 a0Var2 = a0Var;
+                            h21 h21Var2 = h21Var;
+                            float[] fArr2 = fArr;
                             t[] tVarArr2 = DictationAsr.a;
                             if (zArr2[0]) {
                                 return;
                             }
                             if (z10) {
-                                new Thread(new k(fArr2, a0Var2, hVar2, zArr2), "DictationAsrFile").start();
-                            } else {
-                                hVar2.a(null, null, true);
+                                new Thread(new k(fArr2, a0Var2, h21Var2, zArr2), "DictationAsrFile").start();
+                                return;
                             }
+                            t tVar = (t) a0Var2.b;
+                            if (tVar == null || tVar.f != 0 || DictationAsr.y(tVar) || l1.b()) {
+                                h21Var2.a(null, null, true);
+                                return;
+                            }
+                            HashMap hashMap = j21.S;
+                            Integer num = h21Var2.a;
+                            hashMap.remove(num);
+                            j21.R.remove(num);
+                            j21.n(h21Var2.b);
                         }
                     });
                     break;
@@ -53,22 +65,22 @@ public final /* synthetic */ class k implements Runnable {
             default:
                 float[] fArr2 = this.b;
                 android.support.v4.media.session.a0 a0Var2 = this.c;
-                ii.h hVar2 = this.d;
+                h21 h21Var2 = this.d;
                 boolean[] zArr2 = this.e;
                 try {
-                    DictationAsr.V(fArr2, a0Var2, hVar2, zArr2);
+                    DictationAsr.b0(fArr2, a0Var2, h21Var2, zArr2);
                     break;
                 } catch (Throwable th2) {
                     Log.e("Dictation", "tinyasr: transcription failed", th2);
-                    org.telegram.messenger.g0.g3(new i(zArr2, hVar2, 2));
+                    org.telegram.messenger.g0.g3(new j(zArr2, h21Var2, 1));
                 }
         }
     }
 
-    public /* synthetic */ k(boolean[] zArr, android.support.v4.media.session.a0 a0Var, ii.h hVar, float[] fArr) {
+    public /* synthetic */ k(boolean[] zArr, android.support.v4.media.session.a0 a0Var, h21 h21Var, float[] fArr) {
         this.e = zArr;
         this.c = a0Var;
-        this.d = hVar;
+        this.d = h21Var;
         this.b = fArr;
     }
 }

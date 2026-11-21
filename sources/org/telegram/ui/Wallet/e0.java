@@ -17,12 +17,12 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
-import org.telegram.ui.m60;
+import org.telegram.ui.n60;
 import org.telegram.ui.p51;
 import org.telegram.ui.u60;
 import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements q10 {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class e0 implements q10 {
                 break;
             case 2:
                 String str3 = (String) this.b;
-                ai.y1 y1Var = (ai.y1) this.c;
+                ai.a2 a2Var = (ai.a2) this.c;
                 TL_toncenter.apiResponse apiresponse = (TL_toncenter.apiResponse) obj;
                 if (((TLRPC.TL_error) obj2) == null && apiresponse != null && apiresponse.response != null) {
                     try {
@@ -80,7 +80,7 @@ public final /* synthetic */ class e0 implements q10 {
                             if (str3.equals(jSONObject.optString("domain"))) {
                                 String optString = jSONObject.optString("dns_wallet", "");
                                 if (WalletEngine2.isValidAddress(optString)) {
-                                    r1 = optString;
+                                    r3 = optString;
                                 }
                             }
                         }
@@ -88,7 +88,7 @@ public final /* synthetic */ class e0 implements q10 {
                         org.telegram.messenger.a8.g(e10, true);
                     }
                 }
-                y1Var.a(r1);
+                a2Var.a(r3);
                 break;
             case 3:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.b;
@@ -102,7 +102,7 @@ public final /* synthetic */ class e0 implements q10 {
                 break;
             case 4:
                 ((r0) this.b).close();
-                ((m60) this.c).a((h2) obj, (String) obj2);
+                ((n60) this.c).a((h2) obj, (String) obj2);
                 break;
             case 5:
                 ((r0) this.b).close();
@@ -123,27 +123,27 @@ public final /* synthetic */ class e0 implements q10 {
                     break;
                 }
             case 8:
-                sh.p pVar = (sh.p) this.b;
+                sh.o oVar2 = (sh.o) this.b;
                 String str5 = (String) this.c;
                 TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                int i10 = pVar.a;
+                int i10 = oVar2.a;
                 if (webpagepreview != null) {
                     mp.u1(i10).f4(webpagepreview.users, false);
                     mp.u1(i10).Z3(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia = webpagepreview.media;
                     if (messageMedia != null) {
-                        r1 = messageMedia.webpage;
+                        r3 = messageMedia.webpage;
                     }
                 }
-                pVar.b.put(str5, r1);
-                ArrayList arrayList = (ArrayList) pVar.c.remove(str5);
+                oVar2.b.put(str5, r3);
+                ArrayList arrayList = (ArrayList) oVar2.c.remove(str5);
                 if (arrayList != null) {
                     int size = arrayList.size();
                     while (i7 < size) {
                         Object obj3 = arrayList.get(i7);
                         i7++;
-                        ((q10) obj3).a(r1, tL_error2);
+                        ((q10) obj3).a(r3, tL_error2);
                     }
                     break;
                 }
@@ -155,20 +155,20 @@ public final /* synthetic */ class e0 implements q10 {
                 String str6 = (String) obj2;
                 a0Var.m2.a.setLoading(false);
                 if (a0Var.getContext() != null) {
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     u80 u80Var = LaunchActivity.H1.w0;
                     if (T != null) {
                         if (!bool.booleanValue()) {
                             if (str6 != null) {
                                 a0Var.dismiss();
-                                lc.b0(T).Q(R.raw.error, 36, gd.a0(null, null, 2131743641, str6)).j();
+                                lc.b0(T).Q(R.raw.error, 36, gd.a0(null, null, 2131743635, str6)).j();
                                 break;
                             }
                         } else {
                             a0Var.dismiss();
                             bn ua2 = bn.ua(-a0Var.X1.id);
                             T.presentFragment(ua2);
-                            T.whenFullyVisible(new wg.r(1, ua2, tL_starsGiveawayOption));
+                            T.whenFullyVisible(new wg.q(3, ua2, tL_starsGiveawayOption));
                             if (u80Var != null) {
                                 u80Var.c(true);
                                 break;

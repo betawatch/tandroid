@@ -8,11 +8,11 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.hc1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class r2 extends FrameLayout {
     public Activity a;
@@ -74,7 +74,7 @@ public abstract class r2 extends FrameLayout {
             }
         } else {
             this.c.d();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new y9(this, 19)).setDuration(j3).setInterpolator(lr.f).start();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new y9(this, 19)).setDuration(j3).setInterpolator(nr.f).start();
         }
     }
 
@@ -105,7 +105,7 @@ public abstract class r2 extends FrameLayout {
         }
         setTranslationY(getMeasuredHeight());
         setAlpha(0.0f);
-        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(lr.f).start();
+        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(nr.f).start();
     }
 
     @Override // android.view.View

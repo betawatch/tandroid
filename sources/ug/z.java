@@ -19,14 +19,14 @@ import org.telegram.messenger.v3;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.ec;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements x10 {
     public final /* synthetic */ int a;
@@ -44,14 +44,14 @@ public final /* synthetic */ class z implements x10 {
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                ((l0) obj2).z1((HashMap) obj);
+                ((k0) obj2).z1((HashMap) obj);
                 break;
             case 1:
-                u1 u1Var = (u1) obj2;
+                t1 t1Var = (t1) obj2;
                 boolean e10 = pc.e(131072);
-                if (u1Var.e != e10) {
-                    u1Var.e = e10;
-                    u1Var.invalidate();
+                if (t1Var.e != e10) {
+                    t1Var.e = e10;
+                    t1Var.invalidate();
                     break;
                 }
                 break;
@@ -79,7 +79,7 @@ public final /* synthetic */ class z implements x10 {
                 }
                 TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
                 long j3 = 1000 * fjVar.k.date;
-                h2 Q = LaunchActivity.Q();
+                g2 Q = LaunchActivity.Q();
                 if (Q != null) {
                     String b10 = wg.h.b(fjVar);
                     TLRPC.Chat O0 = mp.u1(j10.t0).O0(Long.valueOf(-fjVar.Z0()));
@@ -87,21 +87,21 @@ public final /* synthetic */ class z implements x10 {
                     ob obVar = new ob(Q.getParentActivity(), Q.getResourceProvider());
                     if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
                         obVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                        obVar.b.setText(gd.M0(2131753369, null));
+                        obVar.b.setText(gd.N0(2131753368, null));
                     } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
                         if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
                             obVar.c(R.raw.forward, 30, 30, new String[0]);
-                            obVar.b.setText(gd.M0(2131753367, null));
+                            obVar.b.setText(gd.N0(2131753366, null));
                         } else {
                             obVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                            obVar.b.setText(gd.M0(2131753368, null));
+                            obVar.b.setText(gd.N0(2131753367, null));
                         }
                     }
                     obVar.b.setSingleLine(false);
                     obVar.b.setMaxLines(2);
                     ec ecVar = new ec(Q.getParentActivity(), Q.getResourceProvider(), true);
-                    ecVar.e(gd.M0(2131748818, null));
-                    ecVar.b = new ai.n(payments_giveawayinfo, z10, b10, j3, tL_messageMediaGiveaway2, Q);
+                    ecVar.e(gd.N0(2131748817, null));
+                    ecVar.b = new ai.i(payments_giveawayinfo, z10, b10, j3, tL_messageMediaGiveaway2, Q);
                     obVar.setButton(ecVar);
                     gc.g(Q, obVar, 2750).j();
                     break;
@@ -125,8 +125,8 @@ public final /* synthetic */ class z implements x10 {
                     hVar.M = paint;
                     paint.setShader(hVar.K);
                     ColorMatrix colorMatrix = new ColorMatrix();
-                    org.telegram.messenger.g0.i(colorMatrix, n6.I.q() ? 0.08f : 1.25f);
-                    org.telegram.messenger.g0.h(colorMatrix, n6.I.q() ? 0.02f : -0.15f);
+                    org.telegram.messenger.g0.i(colorMatrix, m6.I.q() ? 0.08f : 1.25f);
+                    org.telegram.messenger.g0.h(colorMatrix, m6.I.q() ? 0.02f : -0.15f);
                     hVar.M.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
                     matrix.reset();
                     matrix.setScale(15.0f, 15.0f);

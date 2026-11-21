@@ -26,20 +26,20 @@ import org.telegram.messenger.ri;
 import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.ph0;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.rh0;
 import org.telegram.ui.ne0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements ne0, te.b, c6 {
+public final class b extends FrameLayout implements ne0, te.b, b6 {
     public static final RectF W = new RectF();
     public a E;
     public TLRPC.TL_attachMenuBot F;
@@ -60,11 +60,11 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
     public TextPaint U;
     public b9 V;
     public final TextView a;
-    public final ph0 b;
+    public final rh0 b;
     public q9 c;
-    public i6 d;
+    public h6 d;
     public final Paint e;
-    public final m6 f;
+    public final n6 f;
     public final te.a h;
     public final te.a n;
     public final te.a r;
@@ -77,14 +77,14 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         super(context);
         this.e = new Paint(1);
         this.h = new te.a(0, this, se.a.a, 320L, false);
-        lr lrVar = lr.h;
-        this.n = new te.a(1, this, lrVar, 380L, false);
-        this.r = new te.a(2, this, lrVar, 380L, false);
+        nr nrVar = nr.h;
+        this.n = new te.a(1, this, nrVar, 380L, false);
+        this.r = new te.a(2, this, nrVar, 380L, false);
         this.T = 1.0f;
-        ph0 ph0Var = new ph0(context);
-        this.b = ph0Var;
-        addView(ph0Var, ma.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
-        ph0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
+        rh0 rh0Var = new rh0(context);
+        this.b = rh0Var;
+        addView(rh0Var, ma.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
+        rh0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 12.0f);
@@ -95,25 +95,25 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         textView.setGravity(17);
         this.G = new TextPaint(textView.getPaint());
         addView(textView, ma.d(-1, -2.0f, 49, 0.0f, 28.33f, 0.0f, 0.0f));
-        m6 m6Var = new m6(false, false, false);
-        this.f = m6Var;
-        m6Var.x(g0.o());
-        m6Var.setCallback(this);
-        m6Var.b = 17;
-        m6Var.u(-1);
-        m6Var.w(g0.L(10.0f));
+        n6 n6Var = new n6(false, false, false);
+        this.f = n6Var;
+        n6Var.x(g0.o());
+        n6Var.setCallback(this);
+        n6Var.b = 17;
+        n6Var.u(-1);
+        n6Var.w(g0.L(10.0f));
     }
 
-    public static b c(Context context, i6 i6Var, a aVar, int i7) {
+    public static b c(Context context, h6 h6Var, a aVar, int i7) {
         b bVar = new b(context);
-        bVar.d = i6Var;
+        bVar.d = h6Var;
         bVar.E = aVar;
-        bVar.a.setText(gd.M0(i7, null));
+        bVar.a.setText(gd.N0(i7, null));
         bVar.b(false);
         bVar.b.setLayoutParams(ma.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.x = n6.w0(n6.Tl, i6Var);
-        bVar.s = n6.w0(n6.Rl, i6Var);
-        bVar.w = n6.w0(n6.Sl, i6Var);
+        bVar.x = m6.w0(m6.Tl, h6Var);
+        bVar.s = m6.w0(m6.Rl, h6Var);
+        bVar.w = m6.w0(m6.Sl, h6Var);
         bVar.a();
         return bVar;
     }
@@ -142,11 +142,11 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         this.a.setTextColor(f11);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(n6.Tl));
-        hashSet.add(Integer.valueOf(n6.Rl));
-        hashSet.add(Integer.valueOf(n6.Sl));
+        hashSet.add(Integer.valueOf(m6.Tl));
+        hashSet.add(Integer.valueOf(m6.Rl));
+        hashSet.add(Integer.valueOf(m6.Sl));
     }
 
     public final void b(boolean z10) {
@@ -179,7 +179,7 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
             if (tL_attachMenuBotIcon == null || (document = tL_attachMenuBotIcon.icon) == null) {
                 this.c.b();
             } else if (this.Q != document.id) {
-                this.c.m(fc.b(document), "24_24_lastframe", fc.b(document), "24_24_lastframe", z12 ? null : u5.f(document, n6.a7, 1.0f, null), this.F);
+                this.c.m(fc.b(document), "24_24_lastframe", fc.b(document), "24_24_lastframe", z12 ? null : u5.f(document, m6.a7, 1.0f, null), this.F);
                 this.Q = document.id;
             }
             a();
@@ -192,9 +192,9 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         int i10 = aVar.b;
         int i11 = aVar.a;
         int i12 = aVar.c;
-        ph0 ph0Var = this.b;
+        rh0 rh0Var = this.b;
         if (i12 != -1) {
-            ph0Var.setImageResource(i12);
+            rh0Var.setImageResource(i12);
             a();
             return;
         }
@@ -203,11 +203,11 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
             boolean z13 = this.O != z11;
             if (this.P != i13) {
                 this.P = i13;
-                ph0Var.f(i13, 24, 24, null);
+                rh0Var.f(i13, 24, 24, null);
                 z13 = true;
             }
             if (z13) {
-                mh0 animatedDrawable = ph0Var.getAnimatedDrawable();
+                oh0 animatedDrawable = rh0Var.getAnimatedDrawable();
                 if (animatedDrawable == null) {
                     return;
                 }
@@ -241,23 +241,23 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         if (i11 != i10) {
             if (this.P != i13) {
                 this.P = i13;
-                ph0Var.f(i13, 24, 24, null);
-                ph0Var.getAnimatedDrawable().h = false;
+                rh0Var.f(i13, 24, 24, null);
+                rh0Var.getAnimatedDrawable().h = false;
                 if (!z10) {
-                    ph0Var.getAnimatedDrawable().T(true, 0.99f);
+                    rh0Var.getAnimatedDrawable().T(true, 0.99f);
                     return;
                 } else {
-                    ph0Var.getAnimatedDrawable().M(0);
-                    ph0Var.d();
+                    rh0Var.getAnimatedDrawable().M(0);
+                    rh0Var.d();
                     return;
                 }
             }
             return;
         }
-        if (ph0Var.getAnimatedDrawable() == null) {
-            ph0Var.f(this.E.a, 24, 24, null);
+        if (rh0Var.getAnimatedDrawable() == null) {
+            rh0Var.f(this.E.a, 24, 24, null);
         }
-        mh0 animatedDrawable2 = ph0Var.getAnimatedDrawable();
+        oh0 animatedDrawable2 = rh0Var.getAnimatedDrawable();
         if (animatedDrawable2 == null) {
             return;
         }
@@ -273,7 +273,7 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
                 animatedDrawable2.M(iArr[0]);
                 animatedDrawable2.P(0);
             }
-            ph0Var.d();
+            rh0Var.d();
         }
     }
 
@@ -289,7 +289,7 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         RectF rectF = W;
         Paint paint = this.e;
         if (f10 > 0.0f && !this.L) {
-            paint.setColor(n6.r1(se.a.a.getInterpolation(f10) * 0.09f, this.s));
+            paint.setColor(m6.r1(se.a.a.getInterpolation(f10) * 0.09f, this.s));
             rectF.set(0.0f, 0.0f, width, getHeight());
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
             float a10 = l9.a(this.T, 0.0f, 1.0f) * g0.T1(0.6f, 1.0f, f10);
@@ -310,15 +310,15 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
             float N2 = g0.N(11.0f) + (width / 2.0f);
             float N3 = g0.N(10.0f);
             float N4 = g0.N(16.0f);
-            m6 m6Var = this.f;
-            float max = Math.max(N4, m6Var.c() + g0.L(8.0f));
+            n6 n6Var = this.f;
+            float max = Math.max(N4, n6Var.c() + g0.L(8.0f));
             float N5 = g0.N(9.333f);
             float N6 = g0.N(8.0f);
             float f12 = max / 2.0f;
             float f13 = N4 / 2.0f;
             rectF.set((N2 - f12) - N, (N3 - f13) - N, f12 + N2 + N, f13 + N3 + N);
             canvas.scale(f11, f11, N2, N3);
-            canvas.drawRoundRect(rectF, N5, N5, n6.Fm);
+            canvas.drawRoundRect(rectF, N5, N5, m6.Fm);
             rectF.inset(N, N);
             if (this.y) {
                 if (this.M == null) {
@@ -331,10 +331,10 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
                 this.M.setBounds(N7, N8, g0.L(14.0f) + N7, g0.L(14.0f) + N8);
                 this.M.draw(canvas);
             } else {
-                paint.setColor(i0.a.f(this.r.e, n6.x0(null, n6.Yl, false), n6.x0(null, n6.r7, false)));
+                paint.setColor(i0.a.f(this.r.e, m6.x0(null, m6.Yl, false), m6.x0(null, m6.r7, false)));
                 canvas.drawRoundRect(rectF, N6, N6, paint);
-                m6Var.p(rectF);
-                m6Var.draw(canvas);
+                n6Var.p(rectF);
+                n6Var.draw(canvas);
             }
             canvas.restore();
         }
@@ -356,9 +356,9 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
     }
 
     public final void g() {
-        this.x = n6.w0(n6.Tl, this.d);
-        this.s = n6.w0(n6.Rl, this.d);
-        this.w = n6.w0(n6.Sl, this.d);
+        this.x = m6.w0(m6.Tl, this.d);
+        this.s = m6.w0(m6.Rl, this.d);
+        this.w = m6.w0(m6.Sl, this.d);
         a();
         invalidate();
     }
@@ -395,9 +395,9 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         TextView textView = this.a;
         textView.setScaleX(f10);
         textView.setScaleY(f10);
-        ph0 ph0Var = this.b;
-        ph0Var.setScaleX(f10);
-        ph0Var.setScaleY(f10);
+        rh0 rh0Var = this.b;
+        rh0Var.setScaleX(f10);
+        rh0Var.setScaleY(f10);
         q9 q9Var = this.c;
         if (q9Var != null) {
             q9Var.setScaleX(f10);
@@ -451,9 +451,9 @@ public final class b extends FrameLayout implements ne0, te.b, c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        if (this.x == n6.w0(n6.Tl, this.d) && this.s == n6.w0(n6.Rl, this.d) && this.w == n6.w0(n6.Sl, this.d)) {
+        if (this.x == m6.w0(m6.Tl, this.d) && this.s == m6.w0(m6.Rl, this.d) && this.w == m6.w0(m6.Sl, this.d)) {
             return;
         }
         g();

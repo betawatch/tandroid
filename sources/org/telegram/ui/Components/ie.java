@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ie extends ImageView {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class ie extends ImageView {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 0:
-                if (getAlpha() < 0.5f || this.b.w1 > 0.0f) {
+                if (getAlpha() < 0.5f || this.b.y1 > 0.0f) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -36,13 +36,13 @@ public final class ie extends ImageView {
         switch (this.a) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                float f10 = chatActivityEnterView.w1;
+                float f10 = chatActivityEnterView.y1;
                 if (f10 < 1.0f) {
                     if (f10 <= 0.0f) {
                         super.draw(canvas);
                         break;
                     } else {
-                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.w1) * 255.0f));
+                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.y1) * 255.0f));
                         super.draw(canvas);
                         canvas.restoreToCount(saveLayerAlpha);
                         break;
@@ -86,7 +86,7 @@ public final class ie extends ImageView {
         switch (this.a) {
             case 1:
                 super.setAlpha(f10);
-                se seVar = this.b.x2;
+                se seVar = this.b.z2;
                 if (seVar != null) {
                     seVar.setTranslationX(seVar.a);
                     break;
@@ -94,7 +94,7 @@ public final class ie extends ImageView {
                 break;
             case 2:
                 super.setAlpha(f10);
-                se seVar2 = this.b.x2;
+                se seVar2 = this.b.z2;
                 if (seVar2 != null) {
                     seVar2.setTranslationX(seVar2.a);
                     break;

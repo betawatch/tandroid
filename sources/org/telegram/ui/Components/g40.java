@@ -1,36 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g40 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ c40 b;
-    public final /* synthetic */ z40 c;
+public final class g40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c50 b;
 
-    public g40(z40 z40Var, boolean[] zArr, c40 c40Var) {
-        this.c = z40Var;
-        this.a = zArr;
-        this.b = c40Var;
+    public /* synthetic */ g40(c50 c50Var, int i7) {
+        this.a = i7;
+        this.b = c50Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        if (floatValue > 0.5f) {
-            boolean[] zArr = this.a;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                this.b.run();
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                c50 c50Var = this.b;
+                if (animator.equals(c50Var.L)) {
+                    c50Var.L = null;
+                    break;
+                }
+                break;
+            case 1:
+                c50 c50Var2 = this.b;
+                if (c50Var2.l1 != null) {
+                    c50Var2.l1 = null;
+                    break;
+                }
+                break;
+            default:
+                c50 c50Var3 = this.b;
+                if (animator.equals(c50Var3.e0)) {
+                    c50Var3.d(true);
+                    c50Var3.g1 = false;
+                    c50Var3.setVisibility(4);
+                    break;
+                }
+                break;
         }
-        if (floatValue >= 0.5f) {
-            floatValue -= 1.0f;
-        }
-        float f10 = floatValue * 180.0f;
-        z40 z40Var = this.c;
-        z40Var.f.setRotationY(f10);
-        z40Var.r0.setRotationY(f10);
     }
 }

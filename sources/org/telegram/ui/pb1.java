@@ -8,9 +8,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class pb1 extends org.telegram.ui.Components.g71 {
+public final class pb1 extends org.telegram.ui.Components.j71 {
     public boolean W;
     public final Path a0;
     public final /* synthetic */ qb1 b0;
@@ -40,7 +40,7 @@ public final class pb1 extends org.telegram.ui.Components.g71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final boolean e(MotionEvent motionEvent) {
         Object c02 = ((me0) this.b0).c0();
         if (c02 instanceof le0) {
@@ -49,7 +49,7 @@ public final class pb1 extends org.telegram.ui.Components.g71 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final boolean f(MotionEvent motionEvent) {
         Object c02 = ((me0) this.b0).c0();
         if (c02 instanceof le0) {
@@ -58,12 +58,12 @@ public final class pb1 extends org.telegram.ui.Components.g71 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public float getAvailableTranslationX() {
         return getMeasuredWidth();
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public long getManualScrollDuration() {
         return 320L;
     }
@@ -73,12 +73,12 @@ public final class pb1 extends org.telegram.ui.Components.g71 {
         super.onLayout(z10, i7, i10, i11, i12);
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void p(View view, View view2, int i7, int i10) {
         this.b0.Z();
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void q() {
         cx cxVar;
         qb1 qb1Var = this.b0;
@@ -107,7 +107,7 @@ public final class pb1 extends org.telegram.ui.Components.g71 {
         qb1Var.Z();
     }
 
-    @Override // org.telegram.ui.Components.g71
+    @Override // org.telegram.ui.Components.j71
     public final void s(boolean z10) {
         qb1 qb1Var = this.b0;
         me0 me0Var = (me0) qb1Var;

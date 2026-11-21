@@ -24,11 +24,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.b31;
 import org.telegram.ui.sy0;
 import org.telegram.ui.zn0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class z00 extends c1 {
     public static final List N = Arrays.asList("en", "ar", "zh", "fr", "de", "it", "ja", "ko", "pt", "ru", "es", "uk");
@@ -116,8 +116,8 @@ public final class z00 extends c1 {
             if ("no".equals(str)) {
                 s00Var.a = "nb";
             }
-            s00Var.b = y21.L0(y21.P0(s00Var.a, null, null));
-            s00Var.c = y21.L0(y21.X0(s00Var.a, true));
+            s00Var.b = b31.L0(b31.P0(s00Var.a, null, null));
+            s00Var.c = b31.L0(b31.X0(s00Var.a, true));
             if (s00Var.b != null) {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(s00Var.b);
@@ -169,7 +169,7 @@ public final class z00 extends c1 {
                             if (locale != null && locale.contains("_")) {
                                 locale = locale.split("_")[0];
                             }
-                            if (y21.P0(locale, null, null) != null) {
+                            if (b31.P0(locale, null, null) != null) {
                                 linkedHashSet.add(locale);
                             }
                         }
@@ -190,8 +190,8 @@ public final class z00 extends c1 {
                     if ("no".equals(str2)) {
                         s00Var.a = "nb";
                     }
-                    s00Var.b = y21.L0(y21.P0(s00Var.a, null, null));
-                    s00Var.c = y21.L0(y21.X0(s00Var.a, true));
+                    s00Var.b = b31.L0(b31.P0(s00Var.a, null, null));
+                    s00Var.c = b31.L0(b31.X0(s00Var.a, true));
                     if (s00Var.b != null) {
                         s00Var.d = (s00Var.b + " " + s00Var.c).toLowerCase();
                         arrayList.add(s00Var);
@@ -560,7 +560,7 @@ public final class z00 extends c1 {
             longSparseArray.put(j10, bool);
         }
         ks.f(z00Var.currentAccount).k(ks.P1, Long.valueOf(j10), bool);
-        y21.U0(str2);
+        b31.U0(str2);
     }
 
     public final void J(long j3, boolean z10, boolean z11) {
@@ -623,7 +623,7 @@ public final class z00 extends c1 {
             return;
         }
         f3.s sVar = new f3.s(fjVar);
-        String N0 = y21.N0();
+        String N0 = b31.N0();
         TLRPC.Message message = fjVar.k;
         if (message.translatedText != null && TextUtils.equals(message.translatedToLanguage, N0)) {
             zn0Var.run();
@@ -682,7 +682,7 @@ public final class z00 extends c1 {
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0025, code lost:
     
-        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.ui.Components.y21.N0()) != false) goto L18;
+        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.ui.Components.b31.N0()) != false) goto L18;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1430,13 +1430,13 @@ public final class z00 extends c1 {
         this.y.clear();
     }
 
-    public final void k(fj fjVar, di.o9 o9Var) {
+    public final void k(fj fjVar, di.p9 p9Var) {
         TLRPC.Message message = fjVar.k;
         if (message == null || TextUtils.isEmpty(message.message)) {
             return;
         }
         if (!TextUtils.isEmpty(fjVar.k.originalLanguage)) {
-            o9Var.a(fjVar.k.originalLanguage);
+            p9Var.a(fjVar.k.originalLanguage);
             return;
         }
         f3.s sVar = new f3.s(fjVar);
@@ -1445,7 +1445,7 @@ public final class z00 extends c1 {
             return;
         }
         hashSet.add(sVar);
-        c6.d(fjVar.k.message, new f00(this, fjVar, sVar, o9Var), new f00(this, fjVar, sVar, o9Var), false);
+        c6.d(fjVar.k.message, new f00(this, fjVar, sVar, p9Var), new f00(this, fjVar, sVar, p9Var), false);
     }
 
     public final void l(TL_stories.StoryItem storyItem) {
@@ -1464,7 +1464,7 @@ public final class z00 extends c1 {
 
     public final String m(long j3) {
         String str = (String) this.d.get(Long.valueOf(j3));
-        if (str == null && ((str = y21.N0()) == null || str.equals((String) this.e.get(Long.valueOf(j3))))) {
+        if (str == null && ((str = b31.N0()) == null || str.equals((String) this.e.get(Long.valueOf(j3))))) {
             str = j();
         }
         return "nb".equals(str) ? "no" : str;

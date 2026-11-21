@@ -22,16 +22,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.Cells.c5;
-import org.telegram.ui.Components.i10;
-import org.telegram.ui.Components.j10;
-import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.l10;
 import org.telegram.ui.Components.m10;
-import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.n10;
+import org.telegram.ui.Components.o10;
+import org.telegram.ui.Components.p10;
+import org.telegram.ui.Components.qf;
 import org.telegram.ui.PhotoViewer;
 import s4.o0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class q extends Handler {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final class q extends Handler {
                         return;
                     }
                     try {
-                        bVar.b.D(((q2.v) obj2).a);
+                        bVar.b.C(((q2.v) obj2).a);
                         aVar2.c = null;
                         HashSet hashSet = (HashSet) aVar2.b;
                         i0 q10 = i0.q(hashSet);
@@ -107,10 +107,10 @@ public final class q extends Handler {
         if (obj == bVar3.x && bVar3.k()) {
             bVar3.x = null;
             synchronized (bVar3.o) {
-                of ofVar = bVar3.y;
-                ofVar.getClass();
+                qf qfVar = bVar3.y;
+                qfVar.getClass();
                 aVar = new nb.a(22);
-                ((f0) ofVar.b).f();
+                ((f0) qfVar.b).f();
                 bVar3.y = null;
             }
             if ((obj2 instanceof Exception) || (obj2 instanceof NoSuchMethodError)) {
@@ -118,12 +118,12 @@ public final class q extends Handler {
                 return;
             }
             try {
-                byte[] C = bVar3.b.C(bVar3.v, ((q2.v) obj2).a);
-                if (bVar3.w != null && C != null && C.length != 0) {
-                    bVar3.w = C;
+                byte[] A = bVar3.b.A(bVar3.v, ((q2.v) obj2).a);
+                if (bVar3.w != null && A != null && A.length != 0) {
+                    bVar3.w = A;
                 }
                 bVar3.p = 4;
-                bVar3.i(new org.telegram.ui.ActionBar.p(aVar, 19));
+                bVar3.i(new org.telegram.tgnet.u(aVar, 20));
             } catch (Exception e11) {
                 e = e11;
                 bVar3.m(e, true);
@@ -231,59 +231,59 @@ public final class q extends Handler {
                 ((org.telegram.messenger.b) this.b).i = false;
                 return;
             case 5:
-                k10 k10Var = (k10) this.b;
-                j10 j10Var = k10Var.g;
+                n10 n10Var = (n10) this.b;
+                m10 m10Var = n10Var.g;
                 int i11 = message.what;
                 if (i11 == 1) {
-                    j10Var.getClass();
+                    m10Var.getClass();
                     return;
                 }
                 if (i11 == 2) {
-                    k10Var.f.removeMessages(3);
-                    k10Var.j = false;
-                    k10Var.k = true;
-                    j10Var.onLongPress(k10Var.n);
+                    n10Var.f.removeMessages(3);
+                    n10Var.j = false;
+                    n10Var.k = true;
+                    m10Var.onLongPress(n10Var.n);
                     return;
                 }
                 if (i11 != 3) {
                     throw new RuntimeException("Unknown message " + message);
                 }
-                i10 i10Var = k10Var.h;
-                if (i10Var != null) {
-                    if (k10Var.i) {
-                        k10Var.j = true;
+                l10 l10Var = n10Var.h;
+                if (l10Var != null) {
+                    if (n10Var.i) {
+                        n10Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) i10Var).Y1(k10Var.n);
+                        ((PhotoViewer) l10Var).Y1(n10Var.n);
                         return;
                     }
                 }
                 return;
             case 6:
-                l10 l10Var = (l10) this.b;
-                m10 m10Var = l10Var.f;
+                o10 o10Var = (o10) this.b;
+                p10 p10Var = o10Var.f;
                 int i12 = message.what;
                 if (i12 == 1) {
-                    m10Var.onShowPress(l10Var.m);
+                    p10Var.onShowPress(o10Var.m);
                     return;
                 }
                 if (i12 == 2) {
-                    l10Var.e.removeMessages(3);
-                    l10Var.i = false;
-                    l10Var.j = true;
-                    m10Var.onLongPress(l10Var.m);
+                    o10Var.e.removeMessages(3);
+                    o10Var.i = false;
+                    o10Var.j = true;
+                    p10Var.onLongPress(o10Var.m);
                     return;
                 }
                 if (i12 != 3) {
                     throw new RuntimeException("Unknown message " + message);
                 }
-                m10 m10Var2 = l10Var.g;
-                if (m10Var2 != null) {
-                    if (l10Var.h) {
-                        l10Var.i = true;
+                p10 p10Var2 = o10Var.g;
+                if (p10Var2 != null) {
+                    if (o10Var.h) {
+                        o10Var.i = true;
                         return;
                     } else {
-                        m10Var2.onSingleTapConfirmed(l10Var.m);
+                        p10Var2.onSingleTapConfirmed(o10Var.m);
                         return;
                     }
                 }

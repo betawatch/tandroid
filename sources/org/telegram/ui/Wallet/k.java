@@ -3,10 +3,10 @@ package org.telegram.ui.Wallet;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.m80;
 import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements x10 {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class k implements x10 {
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                ((ai.u2) obj2).a(Boolean.valueOf(((String) obj) == null));
+                ((ai.w2) obj2).a(Boolean.valueOf(((String) obj) == null));
                 break;
             case 1:
                 String str = (String) obj;
@@ -37,7 +37,7 @@ public final /* synthetic */ class k implements x10 {
                 ((u60) obj2).a(str2);
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new c5(7, (r8) obj2, (TLRPC.UserFull) obj));
+                org.telegram.messenger.g0.g3(new u4(9, (r8) obj2, (TLRPC.UserFull) obj));
                 break;
             default:
                 u8 u8Var = (u8) obj2;
@@ -47,18 +47,18 @@ public final /* synthetic */ class k implements x10 {
                     u8Var.a = i10;
                     u8Var.b0(u8Var.getParentActivity());
                     u8Var.d0();
-                    k80 k80Var = u8Var.h;
+                    m80 m80Var = u8Var.h;
                     byte[] bArr = u8Var.s;
                     Integer valueOf = Integer.valueOf(i10);
                     Object[] objArr = new Object[1];
                     if (bArr != null) {
                         objArr[0] = valueOf;
-                        V = gd.V(null, null, 2131742854, objArr);
+                        V = gd.V(null, null, 2131742848, objArr);
                     } else {
                         objArr[0] = valueOf;
-                        V = gd.V(null, null, 2131742852, objArr);
+                        V = gd.V(null, null, 2131742846, objArr);
                     }
-                    k80Var.setText(V);
+                    m80Var.setText(V);
                     break;
                 }
                 break;

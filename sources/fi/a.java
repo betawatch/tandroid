@@ -17,13 +17,13 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.n10;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class a extends FrameLayout {
     public final ImageView a;
-    public final org.telegram.ui.Components.m6 b;
+    public final org.telegram.ui.Components.n6 b;
     public final Paint c;
     public final Paint d;
     public boolean e;
@@ -39,13 +39,13 @@ public final class a extends FrameLayout {
         this.d = paint2;
         this.h = 1.0f;
         ra.a(this);
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true);
-        this.b = m6Var;
-        m6Var.u(-9866632);
-        m6Var.w(org.telegram.messenger.g0.L(9.0f));
-        m6Var.setCallback(this);
-        m6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        m6Var.K = true;
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true);
+        this.b = n6Var;
+        n6Var.u(-9866632);
+        n6Var.w(org.telegram.messenger.g0.L(9.0f));
+        n6Var.setCallback(this);
+        n6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        n6Var.K = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -77,7 +77,7 @@ public final class a extends FrameLayout {
         this.e = z10;
         ImageView imageView = this.a;
         if (z11) {
-            n10.o(imageView.animate().rotation(z10 ? 0.0f : 180.0f), lr.h, 420L);
+            n10.o(imageView.animate().rotation(z10 ? 0.0f : 180.0f), nr.h, 420L);
         } else {
             imageView.setRotation(z10 ? 0.0f : 180.0f);
         }
@@ -88,9 +88,9 @@ public final class a extends FrameLayout {
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
         super.dispatchDraw(canvas);
         float f10 = this.h;
-        org.telegram.ui.Components.m6 m6Var = this.b;
-        float i7 = m6Var.i() * f10;
-        float max = Math.max(org.telegram.messenger.g0.L(12.0f), m6Var.c() + org.telegram.messenger.g0.L(6.0f));
+        org.telegram.ui.Components.n6 n6Var = this.b;
+        float i7 = n6Var.i() * f10;
+        float max = Math.max(org.telegram.messenger.g0.L(12.0f), n6Var.c() + org.telegram.messenger.g0.L(6.0f));
         canvas.save();
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
@@ -99,8 +99,8 @@ public final class a extends FrameLayout {
         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.d);
         rectF.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.c);
-        canvas.translate(((max - m6Var.c()) / 2.0f) + rectF.left, org.telegram.messenger.g0.L(7.0f));
-        m6Var.draw(canvas);
+        canvas.translate(((max - n6Var.c()) / 2.0f) + rectF.left, org.telegram.messenger.g0.L(7.0f));
+        n6Var.draw(canvas);
         canvas.restore();
         canvas.restore();
     }
@@ -116,7 +116,7 @@ public final class a extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.n = ofFloat;
             ofFloat.addUpdateListener(new ah.g(this, 12));
-            this.n.addListener(new ai.j0(this, 8));
+            this.n.addListener(new ai.k0(this, 8));
             org.telegram.ui.Cells.c0.q(2.5f, this.n);
             this.n.setDuration(200L);
             this.n.start();

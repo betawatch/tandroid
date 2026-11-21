@@ -9,9 +9,9 @@ import android.text.TextPaint;
 import com.google.android.gms.internal.vision.e2;
 import fi.d4;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // lg.g
@@ -442,7 +442,7 @@ public final class k extends g {
                     } else {
                         if (charSequenceArr == null || arrayList.size() < 2) {
                             i13 = i19;
-                            textPaint2.setColor(n6.w0(n6.Pj, this.X0));
+                            textPaint2.setColor(m6.w0(m6.Pj, this.X0));
                             textPaint2.setAlpha((int) e2.D(dVar2.f, this.f, f13, f10));
                         } else {
                             i13 = i19;

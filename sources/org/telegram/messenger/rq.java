@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.nu0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rq implements Runnable {
     public final /* synthetic */ int a;
@@ -264,7 +264,7 @@ public final /* synthetic */ class rq implements Runnable {
         switch (this.a) {
             case 0:
                 tr trVar = (tr) this.b;
-                ai.u2 u2Var = (ai.u2) this.c;
+                ai.w2 w2Var = (ai.w2) this.c;
                 try {
                     try {
                         trVar.b.beginTransaction();
@@ -320,7 +320,7 @@ public final /* synthetic */ class rq implements Runnable {
                                             if (sQLitePreparedStatement != null) {
                                             }
                                             i7 = i11;
-                                            g0.g3(new x0(u2Var, i7, 9));
+                                            g0.g3(new x0(w2Var, i7, 9));
                                             return;
                                         } catch (Throwable th2) {
                                             th = th2;
@@ -376,7 +376,7 @@ public final /* synthetic */ class rq implements Runnable {
                                                         sQLitePreparedStatement.dispose();
                                                     }
                                                     i7 = i11;
-                                                    g0.g3(new x0(u2Var, i7, 9));
+                                                    g0.g3(new x0(w2Var, i7, 9));
                                                     return;
                                                 }
                                             } else {
@@ -435,7 +435,7 @@ public final /* synthetic */ class rq implements Runnable {
                                 if (sQLitePreparedStatement != null) {
                                 }
                                 i7 = i11;
-                                g0.g3(new x0(u2Var, i7, 9));
+                                g0.g3(new x0(w2Var, i7, 9));
                                 return;
                             }
                         }
@@ -446,7 +446,7 @@ public final /* synthetic */ class rq implements Runnable {
                     } catch (Exception e14) {
                         e = e14;
                     }
-                    g0.g3(new x0(u2Var, i7, 9));
+                    g0.g3(new x0(w2Var, i7, 9));
                     return;
                 } catch (Throwable th5) {
                     th = th5;

@@ -8,40 +8,39 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.z;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.y;
+import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.z41;
-import org.telegram.ui.c51;
 import org.telegram.ui.o41;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends sa {
-    public z41 T1;
+    public c51 T1;
     public final o41 U1;
     public boolean V1;
     public int W1;
 
-    public h(Activity activity, i6 i6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
-        super(activity, null, true, false, 2, i6Var);
-        v0(n6.w0(n6.a7, i6Var));
+    public h(Activity activity, h6 h6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
+        super(activity, null, true, false, 2, h6Var);
+        v0(m6.w0(m6.a7, h6Var));
         this.x = true;
         this.n = false;
         this.G1 = false;
         this.F1 = g0.L(12.0f);
-        this.U1 = c51.i0(tL_statsPollStats.votes_graph, gd.M0(2131746926, null), 2, false);
-        ck0 ck0Var = this.o1;
+        this.U1 = org.telegram.ui.c51.i0(tL_statsPollStats.votes_graph, gd.N0(2131746925, null), 2, false);
+        ek0 ek0Var = this.o1;
         int i7 = this.u0;
-        ck0Var.setPadding(i7, 0, i7, g0.n);
+        ek0Var.setPadding(i7, 0, i7, g0.n);
         this.o1.setClipToPadding(false);
         this.o1.setSections(true);
-        z t6 = this.p1.t();
-        t6.a(-1, R.drawable.ic_close_white);
-        t6.setTranslationX(-g0.L(5.0f));
+        y s5 = this.p1.s();
+        s5.a(-1, R.drawable.ic_close_white);
+        s5.setTranslationX(-g0.L(5.0f));
         this.T1.O(false);
     }
 
@@ -53,23 +52,23 @@ public final class h extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final bk0 M0(ck0 ck0Var) {
-        z41 z41Var = new z41(ck0Var, getContext(), this.a, 0, true, new org.telegram.ui.web.b(this, 3), this.J0);
-        this.T1 = z41Var;
-        z41Var.r = false;
-        return z41Var;
+    public final dk0 M0(ek0 ek0Var) {
+        c51 c51Var = new c51(ek0Var, getContext(), this.a, 0, true, new org.telegram.ui.web.b(this, 3), this.J0);
+        this.T1 = c51Var;
+        c51Var.r = false;
+        return c51Var;
     }
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.M0(2131746927, null);
+        return gd.N0(2131746926, null);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void s0() {
         super.s0();
         try {
-            int w02 = n6.w0(n6.a7, this.J0);
+            int w02 = m6.w0(m6.a7, this.J0);
             if (this.V1 && w02 == this.W1) {
                 return;
             }

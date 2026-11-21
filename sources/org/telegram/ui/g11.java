@@ -1,26 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g11 extends org.telegram.ui.Components.iv0 {
-    public final /* synthetic */ j01 H3;
+public final /* synthetic */ class g11 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bi.u b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g11(j01 j01Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(i7, context, i6Var);
-        this.H3 = j01Var;
+    public /* synthetic */ g11(bi.u uVar, int i7) {
+        this.a = i7;
+        this.b = uVar;
     }
 
-    @Override // org.telegram.ui.Components.iv0
-    public final boolean D1() {
-        return org.telegram.messenger.pc.e(16388) || this.H3.G.a0 == 4;
-    }
-
-    @Override // org.telegram.ui.Components.iv0
-    public final void H1(int i7) {
-        super.H1(i7);
-        this.H3.d(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.I3(((k01) this.b.f2).h);
+                break;
+            default:
+                this.b.requestFocus();
+                break;
+        }
     }
 }

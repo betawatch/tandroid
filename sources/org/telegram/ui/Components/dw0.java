@@ -1,23 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class dw0 extends org.telegram.ui.Cells.a8 {
-    public final /* synthetic */ ew0 P;
+public final class dw0 extends v4.y {
+    public int e;
+    public final /* synthetic */ kw0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dw0(ew0 ew0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i6Var, false);
-        this.P = ew0Var;
+    public dw0(kw0 kw0Var) {
+        this.f = kw0Var;
+        this.d = 15;
+        this.e = -1;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        ew0 ew0Var = this.P;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(ew0Var.r.J1, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(ew0Var.r.J1, TLObject.FLAG_30));
+    @Override // v4.w
+    public final boolean n(RecyclerView recyclerView, v4.f1 f1Var, v4.f1 f1Var2) {
+        int i7 = f1Var.f;
+        if (i7 == 3 || i7 != f1Var2.f) {
+            return false;
+        }
+        kw0 kw0Var = this.f;
+        if (kw0Var.N1 == null) {
+            return false;
+        }
+        int b10 = f1Var.b();
+        int b11 = f1Var2.b();
+        kw0Var.N1.documents.add(b11, kw0Var.N1.documents.remove(b10));
+        kw0Var.o1.j(b10, b11);
+        this.e = b11;
+        return true;
+    }
+
+    @Override // v4.w
+    public final void p(v4.f1 f1Var, int i7) {
+        kw0 kw0Var = this.f;
+        if (i7 != 0 || kw0Var.q1 == null || this.e <= 0) {
+            if (i7 == 2) {
+                kw0Var.q1 = ((org.telegram.ui.Cells.a8) f1Var.a).getSticker();
+            }
+        } else {
+            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
+            tL_stickers_changeStickerPosition.position = this.e;
+            tL_stickers_changeStickerPosition.sticker = org.telegram.messenger.ri.c0(kw0Var.q1, "").document;
+            this.e = -1;
+            kw0Var.q1 = null;
+        }
+    }
+
+    @Override // v4.w
+    public final void q(v4.f1 f1Var) {
+    }
+
+    @Override // v4.w
+    public final void o(RecyclerView recyclerView, v4.f1 f1Var, v4.f1 f1Var2, int i7, int i10, int i11) {
     }
 }

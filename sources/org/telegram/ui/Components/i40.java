@@ -1,22 +1,27 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class i40 {
-    public final ByteBuffer[] a = new ByteBuffer[10];
-    public final long[] b = new long[10];
-    public final int[] c = new int[10];
-    public int d;
-    public int e;
-    public boolean f;
+public final class i40 extends q40 {
+    public final /* synthetic */ c50 d;
 
-    public i40() {
-        for (int i7 = 0; i7 < 10; i7++) {
-            this.a[i7] = ByteBuffer.allocateDirect(2048);
-            this.a[i7].order(ByteOrder.nativeOrder());
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i40(c50 c50Var, Context context) {
+        super(c50Var, context);
+        this.d = c50Var;
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        super.setAlpha(f10);
+        this.d.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void setRotationY(float f10) {
+        super.setRotationY(f10);
+        this.d.invalidate();
     }
 }

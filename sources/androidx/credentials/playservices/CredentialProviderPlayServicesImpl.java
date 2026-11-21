@@ -15,11 +15,11 @@ import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.common.api.m;
 import com.google.android.gms.identitycredentials.GetCredentialRequest;
 import com.google.android.gms.tasks.Task;
-import di.c7;
 import di.l6;
+import di.v6;
 import f7.v;
 import gd.k;
-import hi.u5;
+import hi.t5;
 import hi.w4;
 import j7.c;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ import w0.a;
 import w0.h;
 import w7.s;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements i {
     public static final g Companion = new g();
@@ -258,7 +258,8 @@ public final class CredentialProviderPlayServicesImpl implements i {
             throw new UnsupportedOperationException("Create Credential request is unsupported, not password or publickeycredential");
         }
         boolean isAvailableOnDevice = isAvailableOnDevice(PRE_U_MIN_GMS_APK_VERSION);
-        int i7 = 1;
+        int i7 = 3;
+        int i10 = 1;
         com.google.android.gms.common.api.a aVar = com.google.android.gms.common.api.b.j;
         if (isAvailableOnDevice) {
             e1.d dVar = new e1.d(context);
@@ -274,11 +275,11 @@ public final class CredentialProviderPlayServicesImpl implements i {
             k7.g gVar3 = new k7.g(context, k7.g.l, aVar, com.google.android.gms.common.api.i.c);
             t b10 = u.b();
             b10.d = new n6.c[]{t7.b.b};
-            b10.c = new u5(gVar2, 7);
+            b10.c = new t5(gVar2, 7);
             b10.a = 32704;
             Task e10 = gVar3.e(1, b10.a());
             j.d(e10, "doWrite(...)");
-            e10.addOnSuccessListener(new c7(new e1.b(cancellationSignal, dVar, executor, callback, 0), 2)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
+            e10.addOnSuccessListener(new v6(new e1.b(cancellationSignal, dVar, executor, callback, 0), i7)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
             return;
         }
         v0.e eVar2 = (v0.e) request;
@@ -296,7 +297,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
             t b11 = u.b();
             b11.c = new d6.i(aVar2, e11);
             b11.a = 5407;
-            aVar2.e(0, b11.a()).addOnSuccessListener(new a1.c(new ae.d(3, cancellationSignal, eVar3), 18)).addOnFailureListener(new ab.g(12, eVar3, cancellationSignal));
+            aVar2.e(0, b11.a()).addOnSuccessListener(new a1.c(new ae.d(i7, cancellationSignal, eVar3), 19)).addOnFailureListener(new ab.g(12, eVar3, cancellationSignal));
         } catch (JSONException e12) {
             Companion.getClass();
             if (g.a(cancellationSignal)) {
@@ -304,7 +305,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
             }
             Executor executor2 = eVar3.g;
             if (executor2 != null) {
-                executor2.execute(new d1.b(eVar3, e12, i7));
+                executor2.execute(new d1.b(eVar3, e12, i10));
             } else {
                 j.h("executor");
                 throw null;
@@ -316,7 +317,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
             }
             Executor executor3 = eVar3.g;
             if (executor3 != null) {
-                executor3.execute(new d1.c(eVar3, th2, i7));
+                executor3.execute(new d1.c(eVar3, th2, i10));
             } else {
                 j.h("executor");
                 throw null;
@@ -406,7 +407,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
                 GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, bundle, null, new ResultReceiver(null));
                 Context context2 = aVar2.e;
                 j.e(context2, "context");
-                new k7.g(context2, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest).addOnSuccessListener(new c7(new e1.b(cancellationSignal, aVar2, executor, callback, 1), 3)).addOnFailureListener(new l6(request, aVar2, callback, executor, cancellationSignal));
+                new k7.g(context2, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest).addOnSuccessListener(new v6(new e1.b(cancellationSignal, aVar2, executor, callback, 1), 4)).addOnFailureListener(new l6(request, aVar2, callback, executor, cancellationSignal));
                 return;
             }
         } while (!(((v0.h) it.next()) instanceof o));
@@ -439,7 +440,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
         GetCredentialRequest getCredentialRequest2 = new GetCredentialRequest(arrayList2, bundle2, null, new ResultReceiver(null));
         Context context3 = aVar3.e;
         j.e(context3, "context");
-        new k7.g(context3, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest2).addOnSuccessListener(new c7(new ae.d(4, cancellationSignal, aVar3), 12)).addOnFailureListener(new a3.h(aVar3, cancellationSignal, executor, callback));
+        new k7.g(context3, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest2).addOnSuccessListener(new v6(new ae.d(4, cancellationSignal, aVar3), 13)).addOnFailureListener(new a3.h(aVar3, cancellationSignal, executor, callback));
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {

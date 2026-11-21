@@ -1,24 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ji0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ vi0 b;
+public final class ji0 extends v4.o0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xi0 b;
 
-    public ji0(vi0 vi0Var, float f10) {
-        this.b = vi0Var;
-        this.a = f10;
+    public /* synthetic */ ji0(xi0 xi0Var, int i7) {
+        this.a = i7;
+        this.b = xi0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        vi0 vi0Var = this.b;
-        vi0Var.p0 = floatValue;
-        vi0Var.o0 = (1.0f - vi0Var.p0) * this.a;
-        vi0Var.invalidate();
+    @Override // v4.o0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
+        switch (this.a) {
+            case 0:
+                super.e(rect, view, recyclerView, c1Var);
+                xi0 xi0Var = this.b;
+                if (!xi0Var.q()) {
+                    int R = RecyclerView.R(view);
+                    if (R == 0) {
+                        rect.left = org.telegram.messenger.g0.L(6.0f);
+                    }
+                    rect.right = org.telegram.messenger.g0.L(4.0f);
+                    if (R == xi0Var.b0.b() - 1) {
+                        if ((!xi0Var.V.isEmpty() && !org.telegram.messenger.mp.u1(xi0Var.K).K3()) || xi0Var.q()) {
+                            rect.right = org.telegram.messenger.g0.L(2.0f);
+                            break;
+                        } else {
+                            rect.right = org.telegram.messenger.g0.L(6.0f);
+                            break;
+                        }
+                    }
+                } else {
+                    rect.left = 0;
+                    rect.right = 0;
+                    break;
+                }
+                break;
+            default:
+                int R2 = RecyclerView.R(view);
+                if (R2 == 0) {
+                    rect.left = org.telegram.messenger.g0.L(8.0f);
+                }
+                if (R2 == this.b.b0.b() - 1) {
+                    rect.right = org.telegram.messenger.g0.L(8.0f);
+                    break;
+                }
+                break;
+        }
     }
 }

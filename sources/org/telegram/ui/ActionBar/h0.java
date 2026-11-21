@@ -2,29 +2,51 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r0 b;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ q0 c;
 
-    public /* synthetic */ h0(r0 r0Var, int i7) {
+    public /* synthetic */ h0(q0 q0Var, ArrayList arrayList, int i7) {
         this.a = i7;
-        this.b = r0Var;
+        this.c = q0Var;
+        this.b = arrayList;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                r0 r0Var = this.b;
-                r0Var.s.setVisibility(4);
-                r0Var.w = null;
-                break;
+                q0 q0Var = this.c;
+                q0Var.G.setAlpha(0.0f);
+                int i7 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    if (i7 >= arrayList.size()) {
+                        q0Var.G.setVisibility(8);
+                        break;
+                    } else {
+                        ((View) arrayList.get(i7)).setAlpha(1.0f);
+                        i7++;
+                    }
+                }
             default:
-                this.b.w = null;
-                break;
+                this.c.G.setAlpha(1.0f);
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.b;
+                    if (i10 >= arrayList2.size()) {
+                        break;
+                    } else {
+                        ((View) arrayList2.get(i10)).setAlpha(0.0f);
+                        i10++;
+                    }
+                }
         }
     }
 }

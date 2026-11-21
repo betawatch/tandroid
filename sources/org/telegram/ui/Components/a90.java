@@ -2,8 +2,194 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class a90 extends TL_iv.RichText {
+public final class a90 extends c8.f1 {
     public int a;
+    public final TL_iv.PageBlock b;
+    public TL_iv.textConcat c = new TL_iv.textConcat();
+
+    public a90(TL_iv.PageBlock pageBlock) {
+        this.b = pageBlock;
+    }
+
+    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
+        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
+    }
+
+    @Override // c8.f1
+    public final void a(kf.b bVar) {
+        int i7 = this.a;
+        if (i7 >= 64) {
+            return;
+        }
+        this.a = i7 + 1;
+        try {
+            v(bVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // c8.f1
+    public final void b(kf.c cVar) {
+        int i7 = this.a;
+        if (i7 >= 64) {
+            return;
+        }
+        this.a = i7 + 1;
+        try {
+            v(cVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // c8.f1
+    public final void c(kf.d dVar) {
+        TL_iv.textFixed textfixed = new TL_iv.textFixed();
+        textfixed.text = d90.n(dVar.h);
+        w(textfixed);
+    }
+
+    @Override // c8.f1
+    public final void d(kf.e eVar) {
+        if (eVar instanceof cf.a) {
+            TL_iv.textStrike textstrike = new TL_iv.textStrike();
+            textstrike.text = y(eVar);
+            w(textstrike);
+        } else if (eVar instanceof zc.d) {
+            w(d90.c(((zc.d) eVar).g));
+        } else {
+            v(eVar);
+        }
+    }
+
+    @Override // c8.f1
+    public final void e(kf.g gVar) {
+        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+        textitalic.text = y(gVar);
+        w(textitalic);
+    }
+
+    @Override // c8.f1
+    public final void i(kf.k kVar) {
+        w(y(kVar));
+    }
+
+    @Override // c8.f1
+    public final void k(kf.n nVar) {
+        if (!(nVar instanceof zc.a)) {
+            v(nVar);
+            return;
+        }
+        if (!this.c.texts.isEmpty()) {
+            w(d90.n("\n"));
+        }
+        w(d90.c(((zc.a) nVar).g));
+        w(d90.n("\n"));
+    }
+
+    @Override // c8.f1
+    public final void l(kf.o oVar) {
+        int i7 = this.a;
+        if (i7 >= 64) {
+            return;
+        }
+        this.a = i7 + 1;
+        try {
+            v(oVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // c8.f1
+    public final void m(kf.q qVar) {
+        int i7 = this.a;
+        if (i7 >= 64) {
+            return;
+        }
+        this.a = i7 + 1;
+        try {
+            v(qVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // c8.f1
+    public final void n(kf.r rVar) {
+        if (!this.c.texts.isEmpty()) {
+            w(d90.n("\n\n"));
+        }
+        v(rVar);
+    }
+
+    @Override // c8.f1
+    public final void o(kf.s sVar) {
+        w(d90.n(sVar.g));
+    }
+
+    @Override // c8.f1
+    public final void q(kf.d dVar) {
+        w(d90.n(dVar.h));
+    }
+
+    @Override // c8.f1
+    public final void r(kf.g gVar) {
+        w(d90.n("\n"));
+    }
+
+    @Override // c8.f1
+    public final void s(kf.k kVar) {
+        String str = kVar.h;
+        if (str == null) {
+            str = "";
+        }
+        String trim = str.trim();
+        if (trim.startsWith("mailto:")) {
+            TL_iv.RichText textemail = new TL_iv.textEmail();
+            textemail.text = y(kVar);
+            textemail.email = trim.substring(7);
+            w(textemail);
+            return;
+        }
+        if (trim.startsWith("tel:")) {
+            TL_iv.textPhone textphone = new TL_iv.textPhone();
+            textphone.text = y(kVar);
+            textphone.phone = trim.substring(4);
+            w(textphone);
+            return;
+        }
+        TL_iv.RichText texturl = new TL_iv.textUrl();
+        texturl.text = y(kVar);
+        texturl.url = trim;
+        w(texturl);
+    }
+
+    @Override // c8.f1
+    public final void t(kf.g gVar) {
+        w(d90.n(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
+    }
+
+    @Override // c8.f1
+    public final void u(kf.g gVar) {
+        TL_iv.textBold textbold = new TL_iv.textBold();
+        textbold.text = y(gVar);
+        w(textbold);
+    }
+
+    public final void w(TL_iv.RichText richText) {
+        this.c.texts.add(richText);
+    }
+
+    public final TL_iv.RichText y(kf.p pVar) {
+        TL_iv.textConcat textconcat = this.c;
+        this.c = new TL_iv.textConcat();
+        v(pVar);
+        TL_iv.RichText x10 = x(this.c);
+        this.c = textconcat;
+        return x10;
+    }
 }

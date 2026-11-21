@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class fz0 implements Runnable {
                 org.telegram.messenger.g0.h3(new fz0(secretMediaViewer, i10), 50L);
                 break;
             case 1:
-                ai.k0 k0Var = secretMediaViewer.e;
-                if (k0Var != null) {
-                    k0Var.setLayerType(0, null);
+                ai.l0 l0Var = secretMediaViewer.e;
+                if (l0Var != null) {
+                    l0Var.setLayerType(0, null);
                     secretMediaViewer.e.setVisibility(4);
                     secretMediaViewer.l0 = 0;
                     secretMediaViewer.s = false;
@@ -61,9 +61,9 @@ public final /* synthetic */ class fz0 implements Runnable {
                         U = 0;
                     }
                     if (U > 0) {
-                        org.telegram.ui.Components.h61 h61Var = secretMediaViewer.P;
-                        if (!h61Var.f) {
-                            h61Var.h(false, S / U);
+                        org.telegram.ui.Components.k61 k61Var = secretMediaViewer.P;
+                        if (!k61Var.f) {
+                            k61Var.h(false, S / U);
                             secretMediaViewer.Q.invalidate();
                         }
                     }
@@ -84,9 +84,9 @@ public final /* synthetic */ class fz0 implements Runnable {
                     String format = i11 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i11 / 60), Integer.valueOf(iArr[0] % 60), Integer.valueOf(iArr[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i11), Integer.valueOf(iArr[1]));
                     int i12 = iArr2[0];
                     String format2 = i12 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i12 / 60), Integer.valueOf(iArr2[0] % 60), Integer.valueOf(iArr2[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i12), Integer.valueOf(iArr2[1]));
-                    org.telegram.ui.ActionBar.n5 n5Var = secretMediaViewer.R;
+                    org.telegram.ui.ActionBar.m5 m5Var = secretMediaViewer.R;
                     Locale locale = Locale.ROOT;
-                    n5Var.l(format + " / " + format2, false);
+                    m5Var.l(format + " / " + format2, false);
                     if (secretMediaViewer.E.d0()) {
                         org.telegram.messenger.g0.h3(secretMediaViewer.h1, 17L);
                         break;

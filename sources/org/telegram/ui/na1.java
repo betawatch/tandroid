@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class na1 extends org.telegram.ui.Components.bk0 {
+public final class na1 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public final /* synthetic */ TwoStepVerificationActivity d;
 
@@ -15,7 +15,7 @@ public final class na1 extends org.telegram.ui.Components.bk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return f1Var.f == 0;
     }
@@ -48,36 +48,36 @@ public final class na1 extends org.telegram.ui.Components.bk0 {
             }
             org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
             if (i7 == twoStepVerificationActivity.Q) {
-                a9Var.setText(org.telegram.messenger.gd.M0(2131745353, null));
+                a9Var.setText(org.telegram.messenger.gd.N0(2131745352, null));
                 return;
             } else {
                 if (i7 == twoStepVerificationActivity.T) {
-                    a9Var.setText(org.telegram.messenger.gd.M0(2131751131, null));
+                    a9Var.setText(org.telegram.messenger.gd.N0(2131751130, null));
                     return;
                 }
                 return;
             }
         }
         org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) view;
-        int i13 = org.telegram.ui.ActionBar.n6.G6;
+        int i13 = org.telegram.ui.ActionBar.m6.G6;
         x9Var.setTag(Integer.valueOf(i13));
-        org.telegram.ui.ActionBar.u6.U(x9Var.getTextView(), i13, null);
+        org.telegram.ui.ActionBar.t6.U(x9Var.getTextView(), i13, null);
         i10 = twoStepVerificationActivity.changePasswordRow;
         if (i7 == i10) {
-            x9Var.b(org.telegram.messenger.gd.M0(2131752530, null), true);
+            x9Var.b(org.telegram.messenger.gd.N0(2131752529, null), true);
             return;
         }
         if (i7 == twoStepVerificationActivity.P) {
-            x9Var.b(org.telegram.messenger.gd.M0(2131745354, null), true);
+            x9Var.b(org.telegram.messenger.gd.N0(2131745353, null), true);
             return;
         }
         i11 = twoStepVerificationActivity.turnPasswordOffRow;
         if (i7 == i11) {
-            x9Var.b(org.telegram.messenger.gd.M0(2131743705, null), true);
+            x9Var.b(org.telegram.messenger.gd.N0(2131743699, null), true);
         } else if (i7 == twoStepVerificationActivity.S) {
-            x9Var.b(org.telegram.messenger.gd.M0(2131752520, null), false);
+            x9Var.b(org.telegram.messenger.gd.N0(2131752519, null), false);
         } else if (i7 == twoStepVerificationActivity.R) {
-            x9Var.b(org.telegram.messenger.gd.M0(2131745320, null), false);
+            x9Var.b(org.telegram.messenger.gd.N0(2131745319, null), false);
         }
     }
 
@@ -89,8 +89,8 @@ public final class na1 extends org.telegram.ui.Components.bk0 {
             x9Var = new org.telegram.ui.Cells.a9(context);
         } else {
             x9Var = new org.telegram.ui.Cells.x9(context);
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, x9Var, null);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, x9Var, null);
         }
-        return new org.telegram.ui.Components.kj0(x9Var);
+        return new org.telegram.ui.Components.mj0(x9Var);
     }
 }

@@ -2,13 +2,13 @@ package sg;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import hi.t6;
+import hi.s6;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.r5;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class b1 {
     public static final r5 m = new r5("ShapeDetector", true);
@@ -17,7 +17,7 @@ public final class b1 {
     public ArrayList b;
     public ArrayList c;
     public boolean d;
-    public t6 e;
+    public s6 e;
     public Context f;
     public SharedPreferences g;
     public boolean h;

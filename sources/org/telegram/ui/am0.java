@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class am0 extends org.telegram.ui.Cells.ba {
     public final /* synthetic */ int I = 1;
 
-    public /* synthetic */ am0(Context context, org.telegram.ui.ActionBar.s4 s4Var, int i7) {
-        super(context, s4Var, i7);
+    public /* synthetic */ am0(Context context, org.telegram.ui.ActionBar.r4 r4Var, int i7) {
+        super(context, r4Var, i7);
     }
 
     @Override // android.view.View
@@ -42,7 +42,7 @@ public final class am0 extends org.telegram.ui.Cells.ba {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    public /* synthetic */ am0(Context context, org.telegram.ui.ActionBar.s4 s4Var, int i7, long j3, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, s4Var, i7, j3, i6Var);
+    public /* synthetic */ am0(Context context, org.telegram.ui.ActionBar.r4 r4Var, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, r4Var, i7, j3, h6Var);
     }
 }

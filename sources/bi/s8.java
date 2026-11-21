@@ -1,69 +1,105 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.au0;
+import android.animation.ValueAnimator;
+import hi.u9;
+import org.telegram.messenger.q10;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s8 extends au0 {
-    public int g0;
-    public final /* synthetic */ z8 h0;
+public final /* synthetic */ class s8 implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s8(z8 z8Var, Context context) {
-        super(context, null);
-        this.h0 = z8Var;
-        this.g0 = -1;
+    public /* synthetic */ s8(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.au0
-    public final boolean O() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.au0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.au0
-    public final void S() {
-        this.h0.o1.invalidate();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view == this.M) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // org.telegram.ui.Components.au0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        z8 z8Var = this.h0;
-        z8Var.e2.setTranslationY(((i12 - i10) - r4.getMeasuredHeight()) / 2.0f);
-        z8Var.g2.k0(z8Var.g2.getY() + z8Var.e2.getY(), getBackgroundSizeY());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        if (this.g0 != -1) {
-            super.onMeasure(i7, i10);
-            int measuredHeight = getMeasuredHeight();
-            int i11 = this.g0;
-            if (measuredHeight < i11) {
-                i10 = View.MeasureSpec.makeMeasureSpec(Math.max(i11, getMeasuredHeight()), TLObject.FLAG_31);
-            }
-        }
-        super.onMeasure(i7, i10);
-        int i12 = this.g0;
-        if (i12 == -1) {
-            this.g0 = Math.max(i12, getMeasuredHeight());
+    @Override // q0.a
+    public final void accept(Object obj) {
+        int i7 = this.a;
+        int i10 = 0;
+        char c10 = 1;
+        char c11 = 1;
+        Object obj2 = this.b;
+        switch (i7) {
+            case 0:
+                d9 d9Var = (d9) obj2;
+                if (((f5.f) obj).a == 0) {
+                    org.telegram.messenger.g0.g3(new r8(d9Var, c10 == true ? 1 : 0));
+                    break;
+                }
+                break;
+            case 1:
+                q10 q10Var = (q10) obj2;
+                int i11 = ((f5.f) obj).a;
+                boolean z10 = i11 == 0;
+                String j3 = z10 ? null : org.telegram.messenger.r1.j(i11);
+                org.telegram.messenger.a8.b("StarsController.buy onResult " + z10 + " " + j3);
+                org.telegram.messenger.g0.g3(new di.p6(q10Var, z10, j3, i10));
+                break;
+            case 2:
+                hi.k5.Y((u9) obj2, (Integer) obj);
+                break;
+            case 3:
+                ((jg.m) obj2).S.T4(((Float) obj).floatValue());
+                break;
+            case 4:
+                ki.s2 s2Var = (ki.s2) obj2;
+                Float f10 = (Float) obj;
+                s2Var.F.setLoadProgressAnimated(f10.floatValue());
+                if (f10.floatValue() == 1.0f) {
+                    ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration.setInterpolator(nr.f);
+                    duration.addUpdateListener(new ki.r1(s2Var, 1));
+                    duration.addListener(new ai.k0(s2Var, 29));
+                    duration.start();
+                    break;
+                }
+                break;
+            case 5:
+                ki.s3 s3Var = (ki.s3) obj2;
+                Float f11 = (Float) obj;
+                s3Var.J.setLoadProgressAnimated(f11.floatValue());
+                if (f11.floatValue() == 1.0f) {
+                    ValueAnimator duration2 = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration2.setInterpolator(nr.f);
+                    duration2.addUpdateListener(new ki.k3(s3Var, c11 == true ? 1 : 0));
+                    duration2.addListener(new ki.m3(s3Var, 0));
+                    duration2.start();
+                    s3Var.Q();
+                    break;
+                }
+                break;
+            default:
+                androidx.activity.n nVar = (androidx.activity.n) obj2;
+                int intValue = ((Integer) obj).intValue();
+                switch (nVar.a) {
+                    case 1:
+                        u9 u9Var = (u9) nVar.d;
+                        u9Var.F0(false);
+                        sg.k0 k0Var = (sg.k0) nVar.c;
+                        k0Var.h(intValue, true);
+                        k0Var.g();
+                        u9Var.setNewColor(intValue);
+                        hi.s4 s4Var = u9Var.g1;
+                        s4Var.setSelectedColorIndex(k0Var.d());
+                        s4Var.getAdapter().f();
+                        break;
+                    default:
+                        vp0 vp0Var = (vp0) nVar.d;
+                        vp0Var.w0(false);
+                        sg.k0 k0Var2 = vp0Var.F1;
+                        k0Var2.h(intValue, true);
+                        k0Var2.g();
+                        vp0Var.setNewColor(intValue);
+                        tg.e0 e0Var = vp0Var.q1;
+                        e0Var.setSelectedColorIndex(k0Var2.d());
+                        e0Var.getAdapter().f();
+                        break;
+                }
         }
     }
 }

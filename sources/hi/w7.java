@@ -1,9 +1,28 @@
 package hi;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public interface w7 {
-    void i(o8 o8Var, boolean z10, boolean z11, boolean z12, boolean z13, TLRPC.InputPeer inputPeer, int i7, r1 r1Var, k kVar);
+public final class w7 extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+
+    public w7(Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
+        super(context);
+        setOrientation(1);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.messenger.f3.l(textView, org.telegram.ui.ActionBar.m6.j5, h6Var, 1, 20.0f);
+        addView(textView, c8.ma.t(-1, -2, 55, 27, 16, 27, z10 ? 4 : 13));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.q5, h6Var);
+        textView2.setTextSize(1, 14.0f);
+        if (z10) {
+            addView(textView2, c8.ma.t(-1, -2, 55, 27, 0, 27, 13));
+        }
+    }
 }

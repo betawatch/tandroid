@@ -1,87 +1,37 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.Components.fj0;
-import org.telegram.ui.Components.ry;
-import org.telegram.ui.Components.wt;
-import org.telegram.ui.Components.y40;
-import org.telegram.ui.yp;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class k2 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ k2(Object obj, int i7, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = i7;
+    public /* synthetic */ k2(int i7, Runnable runnable) {
+        this.a = i7;
+        this.b = runnable;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i7;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                x2 x2Var = (x2) this.c;
-                x2Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                x2Var.C0(this.b, intValue, intValue);
+                this.b.run();
                 break;
             case 1:
-                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.c;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == this.b) {
-                    r1Var.setSelectedBackgroundProgress(floatValue);
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
-                break;
-            case 2:
-                wt wtVar = (wt) this.c;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wtVar.d.setTranslationY(floatValue2);
-                int i10 = this.b;
-                float f10 = i10;
-                float f11 = 1.0f - (floatValue2 / f10);
-                wtVar.S = f11;
-                if (i10 > 0 && ((i7 = wtVar.M) == 2 || i7 == 3)) {
-                    wtVar.d.setAlpha(f11);
-                }
-                wtVar.c(floatValue2 - f10);
-                break;
-            case 3:
-                ((ry) this.c).R0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 4:
-                y40 y40Var = (y40) this.c;
-                if (this.b == y40Var.u0) {
-                    float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    if (floatValue3 >= 0.5f) {
-                        floatValue3 -= 1.0f;
-                    }
-                    y40Var.x.setRotationY(floatValue3 * 180.0f);
-                    break;
-                }
-                break;
-            case 5:
-                yp ypVar = (yp) this.c;
-                ypVar.getClass();
-                Float f12 = (Float) valueAnimator.getAnimatedValue();
-                fj0 fj0Var = (fj0) ypVar.d;
-                fj0Var.b.put(this.b, f12);
-                fj0Var.d = true;
-                fj0Var.a.invalidate();
                 break;
             default:
-                xh.f fVar = (xh.f) this.c;
-                fVar.getClass();
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fVar.n = floatValue4;
-                fVar.setAlpha((int) ((1.0f - floatValue4) * this.b));
-                fVar.p = true;
-                fVar.invalidateSelf();
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
                 break;
         }
     }

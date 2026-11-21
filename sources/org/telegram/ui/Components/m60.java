@@ -1,33 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m60 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class m60 implements org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ a70 b;
 
-    public /* synthetic */ m60(Object obj, int i7) {
+    public /* synthetic */ m60(a70 a70Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = a70Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    @Override // org.telegram.ui.ActionBar.e1
+    public final void j(KeyEvent keyEvent) {
+        a70 a70Var;
+        t60 t60Var;
+        a70 a70Var2;
+        t60 t60Var2;
         switch (this.a) {
             case 0:
-                y60 y60Var = (y60) this.b;
-                if (y60Var.E()) {
-                    y60Var.P();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (t60Var = (a70Var = this.b).m) != null && t60Var.isShowing()) {
+                    a70Var.v();
                     break;
                 }
                 break;
             default:
-                pv0 pv0Var = (pv0) this.b;
-                di.xb xbVar = pv0Var.h;
-                if (xbVar != null && xbVar.getLayout() != null) {
-                    pv0Var.G = xbVar.getLayout().getLineWidth(0);
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (t60Var2 = (a70Var2 = this.b).m) != null && t60Var2.isShowing()) {
+                    a70Var2.v();
                     break;
                 }
                 break;

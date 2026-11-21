@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class u8 extends v {
     public final /* synthetic */ f9 d;
@@ -21,10 +21,10 @@ public final class u8 extends v {
     public final void dispatchDraw(Canvas canvas) {
         f9 f9Var = this.d;
         z3 currentPeerView = f9Var.o0.getCurrentPeerView();
-        i5 i5Var = f9Var.x;
-        if (i5Var != null && currentPeerView != null) {
+        j5 j5Var = f9Var.x;
+        if (j5Var != null && currentPeerView != null) {
             c3 c3Var = currentPeerView.M0;
-            i5Var.setOffset(f9Var.f0);
+            j5Var.setOffset(f9Var.f0);
             if (f9Var.x.f == 1.0f) {
                 f9Var.o0.setVisibility(4);
             } else {

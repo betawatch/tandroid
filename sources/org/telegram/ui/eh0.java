@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class eh0 extends AnimatedPhoneNumberEditText {
     public final /* synthetic */ int b2;
@@ -19,11 +19,11 @@ public final class eh0 extends AnimatedPhoneNumberEditText {
         this.c2 = fh0Var;
     }
 
-    @Override // org.telegram.ui.Components.g30, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.j30, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.rt, android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.b2) {
             case 1:
-                this.M1.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.H6, false));
+                this.M1.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.H6, false));
                 super.onDraw(canvas);
                 break;
             default:
@@ -38,16 +38,16 @@ public final class eh0 extends AnimatedPhoneNumberEditText {
             case 0:
                 super.onFocusChanged(z10, i7, rect);
                 fh0 fh0Var = this.c2;
-                org.telegram.ui.Components.xb0 xb0Var = fh0Var.t1;
+                org.telegram.ui.Components.yb0 yb0Var = fh0Var.t1;
                 float f10 = (z10 || fh0Var.K1.isFocused()) ? 1.0f : 0.0f;
-                xb0Var.b(f10, f10, true);
+                yb0Var.b(f10, f10, true);
                 break;
             default:
                 super.onFocusChanged(z10, i7, rect);
                 fh0 fh0Var2 = this.c2;
-                org.telegram.ui.Components.xb0 xb0Var2 = fh0Var2.t1;
+                org.telegram.ui.Components.yb0 yb0Var2 = fh0Var2.t1;
                 float f11 = (z10 || fh0Var2.I1.isFocused()) ? 1.0f : 0.0f;
-                xb0Var2.b(f11, f11, true);
+                yb0Var2.b(f11, f11, true);
                 break;
         }
     }

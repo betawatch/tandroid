@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class n7 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final class n7 implements Runnable {
                         break;
                     }
                 } else {
-                    g8 g8Var = o7Var.I;
-                    g8Var.B2 = -1;
-                    g8Var.C2 = MediaController.B().v0.b0;
+                    f8 f8Var = o7Var.I;
+                    f8Var.B2 = -1;
+                    f8Var.C2 = MediaController.B().v0.b0;
                     o7Var.x = System.currentTimeMillis();
                     org.telegram.messenger.g0.h3(this, 2000L);
                     org.telegram.messenger.g0.g3(o7Var.F);
@@ -37,11 +37,11 @@ public final class n7 implements Runnable {
                 break;
             default:
                 o7 o7Var2 = this.b;
-                g8 g8Var2 = o7Var2.I;
-                f61 f61Var = MediaController.B().j0;
-                long U = f61Var == null ? 0L : f61Var.U();
+                f8 f8Var2 = o7Var2.I;
+                i61 i61Var = MediaController.B().j0;
+                long U = i61Var == null ? 0L : i61Var.U();
                 if (U != 0 && U != -9223372036854775807L) {
-                    float f10 = g8Var2.C2;
+                    float f10 = f8Var2.C2;
                     long currentTimeMillis = System.currentTimeMillis();
                     long j3 = currentTimeMillis - o7Var2.x;
                     o7Var2.x = currentTimeMillis;
@@ -51,25 +51,25 @@ public final class n7 implements Runnable {
                     if (f11 < 0.0f) {
                         f11 = 0.0f;
                     }
-                    g8Var2.C2 = f11;
+                    f8Var2.C2 = f11;
                     org.telegram.messenger.fj fjVar = MediaController.B().v0;
                     if (fjVar != null && fjVar.I3()) {
-                        g8Var2.c1(fjVar, false);
+                        f8Var2.c1(fjVar, false);
                     }
-                    if (g8Var2.B2 == -1 && o7Var2.w > 0) {
-                        if (j10 > 200 || g8Var2.C2 == 0.0f) {
+                    if (f8Var2.B2 == -1 && o7Var2.w > 0) {
+                        if (j10 > 200 || f8Var2.C2 == 0.0f) {
                             o7Var2.y = currentTimeMillis;
-                            if (g8Var2.C2 == 0.0f) {
+                            if (f8Var2.C2 == 0.0f) {
                                 MediaController.B().i0(MediaController.B().v0, 0.0f);
-                                f61 f61Var2 = MediaController.B().j0;
-                                if (f61Var2 != null) {
-                                    f61Var2.g0();
+                                i61 i61Var2 = MediaController.B().j0;
+                                if (i61Var2 != null) {
+                                    i61Var2.g0();
                                 }
                             } else {
                                 MediaController.B().i0(MediaController.B().v0, f11);
                             }
                         }
-                        if (o7Var2.w > 0 && g8Var2.C2 > 0.0f) {
+                        if (o7Var2.w > 0 && f8Var2.C2 > 0.0f) {
                             org.telegram.messenger.g0.h3(o7Var2.F, 16L);
                             break;
                         }

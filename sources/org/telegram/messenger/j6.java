@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class j6 {
     public static final HashMap a = new HashMap();
@@ -528,20 +528,20 @@ public abstract class j6 {
         if (j3.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.x5.class);
-        org.telegram.ui.Components.lq[] lqVarArr = (org.telegram.ui.Components.lq[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.lq.class);
+        org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.y5.class);
+        org.telegram.ui.Components.nq[] nqVarArr = (org.telegram.ui.Components.nq[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.nq.class);
         int i13 = (bz.o() >= 2 ? 100 : 50) - i10;
         for (int i14 = 0; i14 < j3.size(); i14++) {
             try {
                 h6 h6Var = (h6) j3.get(i14);
-                if (x5VarArr != null && x5VarArr.length > 0) {
-                    for (org.telegram.ui.Components.x5 x5Var : x5VarArr) {
-                        i12 = (x5Var != null && newSpannable.getSpanStart(x5Var) == h6Var.a && newSpannable.getSpanEnd(x5Var) == h6Var.b) ? 0 : i12 + 1;
+                if (y5VarArr != null && y5VarArr.length > 0) {
+                    for (org.telegram.ui.Components.y5 y5Var : y5VarArr) {
+                        i12 = (y5Var != null && newSpannable.getSpanStart(y5Var) == h6Var.a && newSpannable.getSpanEnd(y5Var) == h6Var.b) ? 0 : i12 + 1;
                     }
                 }
-                if (lqVarArr != null && lqVarArr.length > 0) {
-                    for (org.telegram.ui.Components.lq lqVar : lqVarArr) {
-                        i11 = (lqVar != null && newSpannable.getSpanStart(lqVar) == h6Var.a && newSpannable.getSpanEnd(lqVar) == h6Var.b) ? 0 : i11 + 1;
+                if (nqVarArr != null && nqVarArr.length > 0) {
+                    for (org.telegram.ui.Components.nq nqVar : nqVarArr) {
+                        i11 = (nqVar != null && newSpannable.getSpanStart(nqVar) == h6Var.a && newSpannable.getSpanEnd(nqVar) == h6Var.b) ? 0 : i11 + 1;
                     }
                 }
                 f6 g10 = g(h6Var.c);
@@ -575,7 +575,7 @@ public abstract class j6 {
     public static CharSequence o(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, int i7, Runnable runnable) {
         h6 h6Var;
         TLRPC.Document document;
-        org.telegram.ui.Components.x5 x5Var;
+        org.telegram.ui.Components.y5 y5Var;
         int i10;
         if (bz.U0 || charSequence == null || charSequence.length() == 0) {
             return charSequence;
@@ -589,14 +589,14 @@ public abstract class j6 {
         if (j3.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.x5.class);
+        org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.y5.class);
         int i12 = bz.o() >= 2 ? 100 : 50;
         for (int i13 = 0; i13 < j3.size(); i13++) {
             try {
                 h6Var = (h6) j3.get(i13);
-                if (x5VarArr != null) {
-                    for (org.telegram.ui.Components.x5 x5Var2 : x5VarArr) {
-                        i10 = (x5Var2 != null && newSpannable.getSpanStart(x5Var2) == h6Var.a && newSpannable.getSpanEnd(x5Var2) == h6Var.b) ? 0 : i10 + 1;
+                if (y5VarArr != null) {
+                    for (org.telegram.ui.Components.y5 y5Var2 : y5VarArr) {
+                        i10 = (y5Var2 != null && newSpannable.getSpanStart(y5Var2) == h6Var.a && newSpannable.getSpanEnd(y5Var2) == h6Var.b) ? 0 : i10 + 1;
                     }
                 }
                 if (n02 != null) {
@@ -613,14 +613,14 @@ public abstract class j6 {
                     }
                 }
                 document = null;
-                x5Var = document != null ? new org.telegram.ui.Components.x5(document, fontMetricsInt) : new org.telegram.ui.Components.x5(0L, fontMetricsInt);
-                x5Var.emoji = h6Var.c.toString();
+                y5Var = document != null ? new org.telegram.ui.Components.y5(document, fontMetricsInt) : new org.telegram.ui.Components.y5(0L, fontMetricsInt);
+                y5Var.emoji = h6Var.c.toString();
             } catch (Exception e10) {
                 e = e10;
             }
             try {
-                x5Var.cacheType = i7;
-                newSpannable.setSpan(x5Var, h6Var.a, h6Var.b, 33);
+                y5Var.cacheType = i7;
+                newSpannable.setSpan(y5Var, h6Var.a, h6Var.b, 33);
             } catch (Exception e11) {
                 e = e11;
                 a8.g(e, true);

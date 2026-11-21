@@ -1,63 +1,76 @@
 package tg;
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import c8.l9;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class k1 extends GestureDetector.SimpleOnGestureListener {
-    public float a;
-    public boolean b;
-    public float c;
-    public final /* synthetic */ m1 d;
+public final class k1 extends ek0 implements fs {
+    public final Path f3;
+    public q0.a g3;
 
-    public k1(m1 m1Var) {
-        this.d = m1Var;
+    public k1(Context context) {
+        super(context, null);
+        this.f3 = new Path();
+        setWillNotDraw(false);
+        setLayoutManager(new v4.c0());
+        setAdapter(new j1());
+        setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+        setClipToPadding(false);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        m1 m1Var = this.d;
-        boolean contains = m1Var.e.contains(motionEvent.getX(), motionEvent.getY());
-        if (m1Var.f != contains) {
-            m1Var.f = contains;
-            m1Var.invalidate();
-            if (contains) {
-                l1 l1Var = m1Var.L;
-                this.a = l1Var != null ? l1Var.get() : m1Var.I.c;
-                this.b = false;
-            }
-        }
-        return m1Var.f;
+    @Override // org.telegram.ui.Components.ek0
+    public final Integer V0(int i7) {
+        return 285212671;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        m1 m1Var = this.d;
-        if (m1Var.f) {
-            if (!this.b) {
-                this.c = motionEvent.getY() - motionEvent2.getY();
-                this.b = true;
-            }
-            float f12 = this.a;
-            float y10 = ((motionEvent.getY() - motionEvent2.getY()) - this.c) / m1Var.e.height();
-            float f13 = m1Var.H;
-            float f14 = m1Var.G;
-            float a10 = l9.a(com.google.android.gms.internal.vision.e2.z(f13, f14, y10, f12), f14, f13);
-            l1 l1Var = m1Var.L;
-            if (l1Var != null) {
-                l1Var.y1(a10);
-            } else {
-                m1Var.I.c = a10;
-            }
-            m1Var.x.e(true, a10);
-            Runnable runnable = m1Var.J;
-            if (runnable != null) {
-                runnable.run();
-            }
-            m1Var.invalidate();
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == ks.F5) {
+            getAdapter().f();
         }
-        return m1Var.f;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        q0.a aVar = this.g3;
+        if (aVar != null) {
+            Path path = this.f3;
+            aVar.accept(path);
+            canvas.save();
+            canvas.clipPath(path);
+        }
+        super.draw(canvas);
+        if (this.g3 != null) {
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ks.e().c(this, ks.F5);
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        ks.e().n(this, ks.F5);
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, n10.C(16.0f, org.telegram.messenger.g0.L(48.0f) * Math.min(sg.a0.c().size(), 6), TLObject.FLAG_30));
+    }
+
+    public void setMaskProvider(q0.a aVar) {
+        this.g3 = aVar;
+        invalidate();
     }
 }

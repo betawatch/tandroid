@@ -1,10 +1,10 @@
 package tf;
 
 import java.io.EOFException;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.nd0;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -15,22 +15,22 @@ public final class f {
     public final boolean f;
     public final int g;
 
-    public f(nd0 nd0Var) {
+    public f(md0 md0Var) {
         byte b10;
         byte b11;
-        uf.a aVar = (uf.a) nd0Var.b;
+        uf.a aVar = (uf.a) md0Var.b;
         long j3 = aVar.b;
-        hn hnVar = (hn) nd0Var.d;
-        h hVar = (h) nd0Var.c;
+        jn jnVar = (jn) md0Var.d;
+        h hVar = (h) md0Var.c;
         int i7 = hVar.a;
         int i10 = hVar.a;
         byte b12 = 2;
         if (i7 == 2) {
-            hnVar.getClass();
+            jnVar.getClass();
             byte[] bArr = new byte[3];
             int i11 = 0;
             while (i11 < 3) {
-                int read = ((ab.d) hnVar.b).read(bArr, i11, 3 - i11);
+                int read = ((ab.d) jnVar.b).read(bArr, i11, 3 - i11);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -38,11 +38,11 @@ public final class f {
             }
             this.a = new String(bArr, "ISO-8859-1");
         } else {
-            hnVar.getClass();
+            jnVar.getClass();
             byte[] bArr2 = new byte[4];
             int i12 = 0;
             while (i12 < 4) {
-                int read2 = ((ab.d) hnVar.b).read(bArr2, i12, 4 - i12);
+                int read2 = ((ab.d) jnVar.b).read(bArr2, i12, 4 - i12);
                 if (read2 <= 0) {
                     throw new EOFException();
                 }
@@ -52,15 +52,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i10 == 2) {
-            this.c = ((hnVar.Q() & 255) << 16) | ((hnVar.Q() & 255) << 8) | (hnVar.Q() & 255);
+            this.c = ((jnVar.Q() & 255) << 16) | ((jnVar.Q() & 255) << 8) | (jnVar.Q() & 255);
         } else if (i10 == 3) {
-            this.c = hnVar.R();
+            this.c = jnVar.R();
         } else {
-            this.c = hnVar.S();
+            this.c = jnVar.S();
         }
         if (i10 > 2) {
-            hnVar.Q();
-            byte Q = hnVar.Q();
+            jnVar.Q();
+            byte Q = jnVar.Q();
             byte b14 = 64;
             if (i10 == 3) {
                 b13 = 128;
@@ -79,28 +79,28 @@ public final class f {
             this.f = z11;
             if (i10 == 3) {
                 if (z10) {
-                    this.g = hnVar.R();
+                    this.g = jnVar.R();
                     this.c -= 4;
                 }
                 if (z11) {
-                    hnVar.Q();
+                    jnVar.Q();
                     this.c--;
                 }
                 if ((Q & b10) != 0) {
-                    hnVar.Q();
+                    jnVar.Q();
                     this.c--;
                 }
             } else {
                 if ((Q & b10) != 0) {
-                    hnVar.Q();
+                    jnVar.Q();
                     this.c--;
                 }
                 if (z11) {
-                    hnVar.Q();
+                    jnVar.Q();
                     this.c--;
                 }
                 if ((Q & b11) != 0) {
-                    this.g = hnVar.S();
+                    this.g = jnVar.S();
                     this.c -= 4;
                 }
             }

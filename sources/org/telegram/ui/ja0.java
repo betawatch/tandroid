@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ja0 implements org.telegram.ui.Components.vr0 {
+public final class ja0 implements org.telegram.ui.Components.xr0 {
     public final /* synthetic */ qa0 a;
 
     public ja0(qa0 qa0Var) {
         this.a = qa0Var;
     }
 
-    @Override // org.telegram.ui.Components.vr0
+    @Override // org.telegram.ui.Components.xr0
     public final void W() {
         qa0 qa0Var = this.a;
         ka0 ka0Var = qa0Var.R0;
@@ -27,32 +27,32 @@ public final class ja0 implements org.telegram.ui.Components.vr0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vr0
+    @Override // org.telegram.ui.Components.xr0
     public final boolean Y() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vr0
-    public final org.telegram.ui.Components.ck0 f() {
+    @Override // org.telegram.ui.Components.xr0
+    public final org.telegram.ui.Components.ek0 f() {
         return this.a.R;
     }
 
-    @Override // org.telegram.ui.Components.vr0
+    @Override // org.telegram.ui.Components.xr0
     public final TLRPC.Chat g() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.vr0
+    @Override // org.telegram.ui.Components.xr0
     public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vr0
+    @Override // org.telegram.ui.Components.xr0
     public final boolean t() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.vr0
+    @Override // org.telegram.ui.Components.xr0
     public final void J() {
     }
 }

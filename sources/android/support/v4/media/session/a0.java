@@ -54,11 +54,11 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import gb.k0;
 import h9.g1;
-import hi.d7;
-import hi.fa;
-import hi.s8;
+import hi.c7;
+import hi.ea;
+import hi.r8;
+import hi.ra;
 import hi.sa;
-import hi.ta;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -94,16 +94,16 @@ import org.telegram.messenger.y10;
 import org.telegram.messenger.yy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.eh;
-import org.telegram.ui.Components.qi;
+import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui;
 import org.telegram.ui.pm0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal.q, ib.b, qi {
+public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal.q, ib.b, si {
     public static int e;
     public static a0 f;
     public final /* synthetic */ int a;
@@ -186,7 +186,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         }
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public boolean V1() {
         return true;
     }
@@ -367,7 +367,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         if (str == null) {
             return;
         }
-        Utilities.e.c(new ai.s(str, (y10) this.b, (h2) this.c, (x10) this.d, 6));
+        Utilities.e.c(new ai.r(str, (y10) this.b, (g2) this.c, (x10) this.d, 6));
     }
 
     public int e() {
@@ -385,12 +385,12 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         return (e11 == null || !e11.hasEnrolledFingerprints()) ? 11 : 0;
     }
 
-    @Override // org.telegram.ui.Components.qi
-    public void f0(eh ehVar) {
-        ehVar.run();
+    @Override // org.telegram.ui.Components.si
+    public void f0(gh ghVar) {
+        ghVar.run();
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ boolean g0() {
         return false;
     }
@@ -403,7 +403,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         kotlin.jvm.internal.j.e(appContext, "appContext");
         kotlin.jvm.internal.j.e(blockingDispatcher, "blockingDispatcher");
         kotlin.jvm.internal.j.e(sessionDataSerializer, "sessionDataSerializer");
-        return gb.q.a(sessionDataSerializer, new g1(new c1.b(sessionDataSerializer, 3), 13), zd.b0.b(blockingDispatcher), new gb.p(appContext, 1));
+        return gb.q.a(sessionDataSerializer, new g1(new c1.c(sessionDataSerializer, 3), 13), zd.b0.b(blockingDispatcher), new gb.p(appContext, 1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x00bd  */
@@ -954,14 +954,14 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         }
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
-        sa saVar;
+        ra raVar;
         String str = (String) this.c;
         gi.q qVar = (gi.q) this.d;
         long j11 = qVar.d;
-        si siVar = (si) this.b;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = siVar.e2;
+        ui uiVar = (ui) this.b;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = uiVar.e2;
         if (chatAttachAlertPhotoLayout.getSelectedPhotos().isEmpty()) {
             return;
         }
@@ -972,11 +972,11 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         }
         Object next = selectedPhotos.values().iterator().next();
         if (next instanceof ef) {
-            d7 l10 = d7.l((ef) next);
+            c7 l10 = c7.l((ef) next);
             l10.J0 = j11;
             l10.K0 = str;
             l10.A();
-            ta D = ta.D(qVar.a.getParentActivity(), qVar.b);
+            sa D = sa.D(qVar.a.getParentActivity(), qVar.b);
             RectF rectF = D.I;
             WindowManager.LayoutParams layoutParams = D.h;
             int i12 = D.c;
@@ -990,7 +990,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
                     D.v0 = false;
                     D.e = false;
                     D.C2 = false;
-                    if (windowManager != null && (saVar = D.n) != null && saVar.getParent() == null) {
+                    if (windowManager != null && (raVar = D.n) != null && raVar.getParent() == null) {
                         g0.w3(windowManager, D.n, layoutParams);
                         windowManager.addView(D.n, layoutParams);
                         D.f0();
@@ -1006,9 +1006,9 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
                     rectF.set(0.0f, L, point.x, g0.L(100.0f) + point.y);
                     D.H = g0.L(8.0f);
                     D.r.c();
-                    fa faVar = D.i0;
+                    ea eaVar = D.i0;
                     int i13 = D.K;
-                    faVar.setBackgroundColor((i13 == 1 || i13 == 0) ? 0 : -14737633);
+                    eaVar.setBackgroundColor((i13 == 1 || i13 == 0) ? 0 : -14737633);
                     D.r.setTranslationX(0.0f);
                     D.r.setTranslationY(0.0f);
                     D.r.b(0.0f);
@@ -1016,19 +1016,19 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
                     D.r.setScaleY(1.0f);
                     D.L = 0.0f;
                     g0.g2(D.b);
-                    d7 d7Var = D.L1;
-                    if (d7Var != null) {
-                        D.d1.setText(d7Var.C0);
+                    c7 c7Var = D.L1;
+                    if (c7Var != null) {
+                        D.d1.setText(c7Var.C0);
                     }
                     D.J(1, false);
                     D.k0(-1, false, false);
                     D.c1.b(false, false);
                     D.c1.b(true, true);
-                    D.f(1.0f, true, new s8(D, 6));
+                    D.f(1.0f, true, new r8(D, 6));
                     D.d();
                 }
             }
-            g0.h3(new f2.a(siVar, 25), 400L);
+            g0.h3(new f2.a(uiVar, 25), 400L);
         }
     }
 
@@ -1104,7 +1104,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         }
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void K0() {
     }
 
@@ -1112,7 +1112,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
     public void p() {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void v0() {
     }
 
@@ -1123,11 +1123,11 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         this.d = new HashMap();
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void R0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void h1(TLRPC.User user) {
     }
 
@@ -1234,14 +1234,14 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
         throw new IllegalArgumentException("context must not be null");
     }
 
-    public a0(gi.q qVar, si siVar, String str) {
+    public a0(gi.q qVar, ui uiVar, String str) {
         this.a = 29;
         this.d = qVar;
-        this.b = siVar;
+        this.b = uiVar;
         this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.qi
+    @Override // org.telegram.ui.Components.si
     public /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
     }
 }

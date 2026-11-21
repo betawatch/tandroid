@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import bi.q1;
+import bi.u1;
 import c8.l9;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,12 +15,12 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.zi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.r1;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.bj;
 import org.telegram.ui.bn;
 import org.telegram.ui.mj;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class s extends FrameLayout {
     public final int[] E;
@@ -48,7 +48,7 @@ public final class s extends FrameLayout {
         this.a = bnVar;
         setClipToPadding(false);
         setClipChildren(false);
-        bnVar.A0.j(new q1(this, 4));
+        bnVar.A0.j(new u1(this, 4));
     }
 
     public final void a(boolean z10) {
@@ -60,7 +60,7 @@ public final class s extends FrameLayout {
         this.y = false;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
         duration.addUpdateListener(new ah.g(this, 2));
-        duration.addListener(new ai.j0(this, 4));
+        duration.addListener(new ai.k0(this, 4));
         duration.start();
     }
 
@@ -173,7 +173,7 @@ public final class s extends FrameLayout {
                     if (!z10) {
                         this.n = this.r;
                     }
-                    float interpolation = (lr.f.getInterpolation(this.n) * this.s) + y10;
+                    float interpolation = (nr.f.getInterpolation(this.n) * this.s) + y10;
                     r rVar3 = this.b;
                     if (rVar3 == null) {
                         return;

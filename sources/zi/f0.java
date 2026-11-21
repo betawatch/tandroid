@@ -5,14 +5,14 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.e20;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.d50;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.y40;
+import org.telegram.ui.Components.b50;
+import org.telegram.ui.Components.g50;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.ee;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class f0 implements Runnable {
     public final void run() {
         File file;
         rj rjVar;
-        t61 t61Var;
+        w61 w61Var;
         switch (this.a) {
             case 0:
                 u0 u0Var = this.b;
@@ -66,17 +66,17 @@ public final /* synthetic */ class f0 implements Runnable {
                     u0Var2.W.Z0(5, u0Var2.K);
                     u0Var2.m.b("preview player prepared: durationMs=" + u0Var2.I + ", trim=" + u0Var2.K + ".." + u0Var2.L);
                     u0Var2.x(5);
-                    of ofVar = u0Var2.d;
+                    qf qfVar = u0Var2.d;
                     long j11 = u0Var2.I;
                     long j12 = u0Var2.K;
                     long j13 = u0Var2.L;
-                    ((y40) ofVar.b).w.setProgress(((float) j11) / 60000.0f);
-                    y40 y40Var = (y40) ofVar.b;
-                    y40Var.k0 = false;
-                    y40Var.I.setAlpha(0.0f);
-                    y40 y40Var2 = (y40) ofVar.b;
-                    if (y40Var2.V == null) {
-                        u0 u0Var3 = y40Var2.P;
+                    ((b50) qfVar.b).w.setProgress(((float) j11) / 60000.0f);
+                    b50 b50Var = (b50) qfVar.b;
+                    b50Var.k0 = false;
+                    b50Var.I.setAlpha(0.0f);
+                    b50 b50Var2 = (b50) qfVar.b;
+                    if (b50Var2.V == null) {
+                        u0 u0Var3 = b50Var2.P;
                         if (u0Var3 == null) {
                             file = null;
                         } else {
@@ -84,23 +84,23 @@ public final /* synthetic */ class f0 implements Runnable {
                             file = u0Var3.V;
                         }
                         if (file != null) {
-                            y40 y40Var3 = (y40) ofVar.b;
-                            y40Var3.U = y40Var3.t(file, j11, null);
-                            y40 y40Var4 = (y40) ofVar.b;
-                            e20 e20Var = y40Var4.U;
+                            b50 b50Var3 = (b50) qfVar.b;
+                            b50Var3.U = b50Var3.t(file, j11, null);
+                            b50 b50Var4 = (b50) qfVar.b;
+                            e20 e20Var = b50Var4.U;
                             e20Var.a = j12 > 0 ? j12 : -1L;
                             e20Var.b = j13 < j11 ? j13 : -1L;
-                            ks.f(y40Var4.f).k(ks.s2, Integer.valueOf(((y40) ofVar.b).h), ((y40) ofVar.b).U, file.getAbsolutePath(), new ArrayList());
+                            ks.f(b50Var4.f).k(ks.s2, Integer.valueOf(((b50) qfVar.b).h), ((b50) qfVar.b).U, file.getAbsolutePath(), new ArrayList());
                             float max = Math.max(1L, j11);
-                            y40 y40Var5 = (y40) ofVar.b;
+                            b50 b50Var5 = (b50) qfVar.b;
                             float f10 = j12 / max;
                             float f11 = j13 / max;
-                            d50 d50Var = y40Var5.b;
-                            if (d50Var != null && (rjVar = ((ee) d50Var).b.a0) != null && (t61Var = rjVar.g1) != null) {
+                            g50 g50Var = b50Var5.b;
+                            if (g50Var != null && (rjVar = ((ee) g50Var).b.a0) != null && (w61Var = rjVar.g1) != null) {
                                 float max2 = Math.max(0.0f, Math.min(1.0f, f10));
-                                t61Var.b = max2;
-                                t61Var.c = Math.max(max2, Math.min(1.0f, f11));
-                                t61Var.invalidate();
+                                w61Var.b = max2;
+                                w61Var.c = Math.max(max2, Math.min(1.0f, f11));
+                                w61Var.invalidate();
                             }
                         }
                     }

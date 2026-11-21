@@ -1,44 +1,67 @@
 package hi;
 
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.CameraView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g6 implements CameraView.CameraViewDelegate, CameraController.VideoTakeCallback {
-    public final /* synthetic */ j6 a;
+public final /* synthetic */ class g6 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ g6(j6 j6Var) {
-        this.a = j6Var;
+    public /* synthetic */ g6(Object obj, float f10, float f11, float f12, float f13, int i7) {
+        this.a = i7;
+        this.f = obj;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
+        this.e = f13;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public void onCameraInit() {
-        j6 j6Var = this.a;
-        i6 i6Var = j6Var.a;
-        if (j6Var.c > 0) {
-            return;
-        }
-        CameraController.getInstance().recordVideo(i6Var.getCameraSessionObject(), j6Var.b, false, new g6(j6Var), new f6(j6Var, 1), i6Var, true);
-    }
-
-    @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
-    public void onFinishVideoRecording(String str, long j3) {
-        long currentTimeMillis = System.currentTimeMillis();
-        j6 j6Var = this.a;
-        j6Var.d = currentTimeMillis;
-        org.telegram.messenger.g0.r(j6Var.h);
-        if (j6Var.y) {
-            return;
-        }
-        if (j3 <= 1000) {
-            j6Var.a(false);
-            return;
-        }
-        j6Var.a.destroy(true, null);
-        fi.b0 b0Var = j6Var.n;
-        if (b0Var != null) {
-            b0Var.a(j6Var.b, str, Long.valueOf(j3));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                r rVar = (r) this.f;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h6 h6Var = rVar.a;
+                float f10 = this.b;
+                float f11 = this.c;
+                h6Var.setScaleX(org.telegram.messenger.g0.T1(f10, f11, floatValue));
+                h6Var.setScaleY(org.telegram.messenger.g0.T1(f10, f11, floatValue));
+                h6Var.setTranslationX(this.d * floatValue);
+                h6Var.setTranslationY(this.e * floatValue);
+                float f12 = 1.0f - floatValue;
+                h6Var.setAlpha(f12);
+                rVar.s = f12;
+                rVar.invalidate();
+                break;
+            case 1:
+                lg.j jVar = (lg.j) this.f;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f13 = this.c;
+                float f14 = this.b;
+                jVar.k = com.google.android.gms.internal.vision.e2.z(f13, f14, floatValue2, f14);
+                float f15 = this.e;
+                float f16 = this.d;
+                jVar.l = com.google.android.gms.internal.vision.e2.z(f15, f16, floatValue2, f16);
+                jVar.a.a(f13, f15, false);
+                break;
+            default:
+                org.telegram.ui.Cells.z9 z9Var = (org.telegram.ui.Cells.z9) this.f;
+                z9Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vg.f fVar = ((vg.e) z9Var.b).a;
+                float f17 = this.c;
+                float f18 = this.b;
+                fVar.d = com.google.android.gms.internal.vision.e2.z(f17, f18, floatValue3, f18);
+                float f19 = this.e;
+                float f20 = this.d;
+                fVar.i = com.google.android.gms.internal.vision.e2.z(f19, f20, floatValue3, f20);
+                break;
         }
     }
 }

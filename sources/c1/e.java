@@ -16,7 +16,7 @@ import c8.cc;
 import c8.je;
 import c8.y9;
 import c8.yc;
-import di.w2;
+import di.f2;
 import f7.k;
 import f7.l;
 import f7.u;
@@ -31,7 +31,7 @@ import w0.g;
 import w0.h;
 import w0.i;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class e extends ResultReceiver {
         Bundle bundle;
         v0.c a10;
         w0.d a11;
-        int i10 = 18;
+        int i10 = 20;
         int i11 = 0;
         int i12 = 2;
         q4.d dVar2 = null;
@@ -71,7 +71,7 @@ public final class e extends ResultReceiver {
                     Log.w("BeginSignIn", "Returned request code " + i15 + " which  does not match what was given " + i14);
                     return;
                 }
-                if (e7.b(i7, new b1.e(i13), new b(fVar, i11), fVar.h)) {
+                if (e7.b(i7, new b1.e(i13), new c(fVar, i11), fVar.h)) {
                     return;
                 }
                 try {
@@ -90,7 +90,7 @@ public final class e extends ResultReceiver {
                     if (a1.g.a(cancellationSignal)) {
                         return;
                     }
-                    fVar.g().execute(new a1.e(28, fVar, rVar));
+                    fVar.g().execute(new a(i11, fVar, rVar));
                     return;
                 } catch (i e11) {
                     CancellationSignal cancellationSignal2 = fVar.h;
@@ -98,7 +98,7 @@ public final class e extends ResultReceiver {
                     if (a1.g.a(cancellationSignal2)) {
                         return;
                     }
-                    fVar.g().execute(new a(fVar, e11, i13));
+                    fVar.g().execute(new b(fVar, e11, i13));
                     return;
                 } catch (Throwable th2) {
                     h hVar = new h(2, th2.getMessage());
@@ -107,7 +107,7 @@ public final class e extends ResultReceiver {
                     if (a1.g.a(cancellationSignal3)) {
                         return;
                     }
-                    fVar.g().execute(new a1.e(29, fVar, hVar));
+                    fVar.g().execute(new a(i13, fVar, hVar));
                     return;
                 }
             case 1:
@@ -134,7 +134,7 @@ public final class e extends ResultReceiver {
                     Log.w("CreatePublicKey", "Returned request code " + i17 + " does not match what was given " + i16);
                     return;
                 }
-                if (b1.d.c(i7, new b1.e(i12), new b(eVar, i13), eVar.h)) {
+                if (b1.d.c(i7, new b1.e(i12), new c(eVar, i13), eVar.h)) {
                     return;
                 }
                 byte[] byteArrayExtra = intent2 != null ? intent2.getByteArrayExtra("FIDO2_CREDENTIAL_EXTRA") : null;
@@ -195,7 +195,7 @@ public final class e extends ResultReceiver {
                     }
                     Executor executor4 = eVar.g;
                     if (executor4 != null) {
-                        executor4.execute(new c(i10, eVar, f10));
+                        executor4.execute(new a(i10, eVar, f10));
                         return;
                     } else {
                         j.h("executor");
@@ -254,7 +254,7 @@ public final class e extends ResultReceiver {
                     Log.w("CreatePublicKey", "Returned request code " + i19 + " does not match what was given " + i18);
                     return;
                 }
-                if (b1.d.c(i7, new b1.e(4), new b(dVar6, i12), dVar6.h)) {
+                if (b1.d.c(i7, new b1.e(4), new c(dVar6, i12), dVar6.h)) {
                     return;
                 }
                 if (intent3 == null) {
@@ -287,7 +287,7 @@ public final class e extends ResultReceiver {
                     }
                     Executor executor9 = dVar6.g;
                     if (executor9 != null) {
-                        executor9.execute(new w2(i10, dVar6, a10));
+                        executor9.execute(new f2(i10, dVar6, a10));
                         return;
                     } else {
                         j.h("executor");

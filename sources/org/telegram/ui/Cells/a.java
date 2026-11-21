@@ -4,13 +4,13 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import org.telegram.messenger.fj;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.ph0;
+import org.telegram.ui.Components.rh0;
 import org.telegram.ui.a00;
 import org.telegram.ui.c00;
 import org.telegram.ui.qi0;
 import org.telegram.ui.qm0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((v) obj).toggle();
                 break;
             case 3:
-                ph0 ph0Var = ((a3) obj).f;
-                if (!ph0Var.b()) {
-                    ph0Var.setProgress(0.0f);
-                    ph0Var.d();
+                rh0 rh0Var = ((a3) obj).f;
+                if (!rh0Var.b()) {
+                    rh0Var.setProgress(0.0f);
+                    rh0Var.d();
                     break;
                 }
                 break;

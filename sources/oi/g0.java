@@ -1,28 +1,61 @@
 package oi;
 
-import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.j9;
+import android.graphics.Rect;
+import android.text.Layout;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public interface g0 {
-    j9 P0();
+public final class g0 implements u9 {
+    public final /* synthetic */ Layout a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ i0 d;
 
-    void S0(CharSequence charSequence);
+    public g0(i0 i0Var, Layout layout, int i7, int i10) {
+        this.d = i0Var;
+        this.a = layout;
+        this.b = i7;
+        this.c = i10;
+    }
 
-    i9 a1();
+    @Override // org.telegram.ui.Cells.u9
+    public final Layout a() {
+        return this.a;
+    }
 
-    a c1();
+    @Override // org.telegram.ui.Cells.u9
+    public final /* synthetic */ Rect c() {
+        return null;
+    }
 
-    void e(e1 e1Var);
+    @Override // org.telegram.ui.Cells.u9
+    public final /* synthetic */ CharSequence getPrefix() {
+        return null;
+    }
 
-    boolean g1();
+    @Override // org.telegram.ui.Cells.u9
+    public final int getRow() {
+        return 0;
+    }
 
-    void k2();
+    @Override // org.telegram.ui.Cells.u9
+    public final CharSequence getText() {
+        TL_iv.PageBlock pageBlock;
+        TL_iv.PageCaption pageCaption;
+        TL_iv.RichText richText;
+        a c12 = this.d.c.c1();
+        return (c12 == null || (pageBlock = c12.b) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) ? "" : c6.r(richText, null, true);
+    }
 
-    void l1(int i7, int i10);
+    @Override // org.telegram.ui.Cells.u9
+    public final int getX() {
+        return this.b;
+    }
 
-    void u();
-
-    void u1();
+    @Override // org.telegram.ui.Cells.u9
+    public final int getY() {
+        return this.c;
+    }
 }

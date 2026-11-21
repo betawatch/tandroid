@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pq implements Runnable {
     public final /* synthetic */ int a;
@@ -320,7 +320,7 @@ public final /* synthetic */ class pq implements Runnable {
                             byteBufferValue.reuse();
                             break;
                         case 4:
-                            g0.g3(new di.b8(trVar, byteBufferValue.readInt64(false), byteBufferValue.readBool(false), TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), longValue));
+                            g0.g3(new di.c8(trVar, byteBufferValue.readInt64(false), byteBufferValue.readBool(false), TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), longValue));
                             byteBufferValue.reuse();
                             break;
                         case 6:
@@ -494,18 +494,18 @@ public final /* synthetic */ class pq implements Runnable {
                             byteBufferValue.reuse();
                             break;
                         case 21:
-                            org.telegram.ui.ActionBar.e6 e6Var = new org.telegram.ui.ActionBar.e6();
+                            org.telegram.ui.ActionBar.d6 d6Var = new org.telegram.ui.ActionBar.d6();
                             byteBufferValue.readInt64(false);
-                            e6Var.i = byteBufferValue.readBool(false);
-                            e6Var.j = byteBufferValue.readBool(false);
-                            e6Var.d = byteBufferValue.readInt32(false);
-                            e6Var.e = byteBufferValue.readInt32(false);
-                            e6Var.h = byteBufferValue.readInt32(false);
-                            e6Var.k = (float) byteBufferValue.readDouble(false);
+                            d6Var.i = byteBufferValue.readBool(false);
+                            d6Var.j = byteBufferValue.readBool(false);
+                            d6Var.d = byteBufferValue.readInt32(false);
+                            d6Var.e = byteBufferValue.readInt32(false);
+                            d6Var.h = byteBufferValue.readInt32(false);
+                            d6Var.k = (float) byteBufferValue.readDouble(false);
                             boolean readBool4 = byteBufferValue.readBool(false);
-                            e6Var.c = byteBufferValue.readString(false);
-                            e6Var.b = byteBufferValue.readString(false);
-                            g0.g3(new pg(trVar, e6Var, readBool4, longValue, 5));
+                            d6Var.c = byteBufferValue.readString(false);
+                            d6Var.b = byteBufferValue.readString(false);
+                            g0.g3(new pg(trVar, d6Var, readBool4, longValue, 5));
                             byteBufferValue.reuse();
                             break;
                         case 22:

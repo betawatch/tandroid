@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class r10 implements View.OnClickListener {
     public final m4 a = new m4(this, 6);
@@ -23,13 +23,13 @@ public final class r10 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.Components.j30 j30Var;
+        org.telegram.ui.Components.m30 m30Var;
         int i7;
         f40 f40Var = this.b;
         p10 p10Var = f40Var.x1;
         ArrayList arrayList = f40Var.l2;
         org.telegram.ui.Components.voip.q2 q2Var = f40Var.w1;
-        org.telegram.ui.Components.mh0 mh0Var = f40Var.F2;
+        org.telegram.ui.Components.oh0 oh0Var = f40Var.F2;
         org.telegram.messenger.c cVar = f40Var.o1;
         if (f40Var.V2 == null || f40Var.E3 == 3) {
             return;
@@ -112,8 +112,8 @@ public final class r10 implements View.OnClickListener {
             return;
         }
         if (i12 == 7 || i12 == 6) {
-            if (i12 == 6 && (j30Var = f40Var.i2) != null) {
-                j30Var.a();
+            if (i12 == 6 && (m30Var = f40Var.i2) != null) {
+                m30Var.a();
             }
             TL_phone.toggleGroupCallStartSubscription togglegroupcallstartsubscription = new TL_phone.toggleGroupCallStartSubscription();
             org.telegram.messenger.t3 t3Var2 = f40Var.V2;
@@ -170,7 +170,7 @@ public final class r10 implements View.OnClickListener {
                 }
                 LaunchActivity launchActivity = f40Var.d2;
                 if (launchActivity != null && launchActivity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                    c8.na.c(R.raw.permission_request_microphone, 2131743046, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new fi.e(18));
+                    c8.na.c(R.raw.permission_request_microphone, 2131743040, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new fi.e(18));
                     return;
                 }
                 f40Var.S1(1, true);
@@ -207,10 +207,10 @@ public final class r10 implements View.OnClickListener {
             i10 = i14;
             i14 = i15;
         }
-        mh0Var.P(i14);
-        mh0Var.S(i14 - 1, this.a);
-        p10Var.setAnimation(mh0Var);
-        mh0Var.M(i10);
+        oh0Var.P(i14);
+        oh0Var.S(i14 - 1, this.a);
+        p10Var.setAnimation(oh0Var);
+        oh0Var.M(i10);
         p10Var.d();
         if (f40Var.E3 == 2) {
             long B1 = org.telegram.messenger.fj.B1(((TLRPC.GroupCallParticipant) f40Var.V2.d.f(org.telegram.messenger.fj.B1(f40Var.v2))).peer);

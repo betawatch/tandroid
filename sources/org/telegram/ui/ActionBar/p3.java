@@ -1,151 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.a8;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class p3 extends FrameLayout {
-    public s4 a;
-    public ActionBarLayout b;
-    public boolean c;
-    public final Paint d;
-    public r0.l1 e;
-    public i0.b f;
-    public i0.b h;
+public final class p3 {
+    public static final p3 a;
+    public static final p3 b;
+    public static final p3 c;
+    public static final /* synthetic */ p3[] d;
 
-    public p3(Activity activity) {
-        super(activity);
-        this.d = new Paint(1);
-        i0.b bVar = i0.b.e;
-        this.f = bVar;
-        this.h = bVar;
-        p pVar = new p(this, 5);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(this, pVar);
-        setSystemUiVisibility(1280);
+    static {
+        p3 p3Var = new p3("NONE", 0);
+        a = p3Var;
+        p3 p3Var2 = new p3("VERTICAL", 1);
+        b = p3Var2;
+        p3 p3Var3 = new p3("FULL", 2);
+        c = p3Var3;
+        d = new p3[]{p3Var, p3Var2, p3Var3};
     }
 
-    @Override // android.view.ViewGroup
-    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
-        super.addView(view, i7, layoutParams);
-        r0.l1 l1Var = this.e;
-        if (l1Var != null) {
-            if ((view instanceof ActionBarLayout) || view.getTag() == null) {
-                r0.i0.b(view, l1Var);
-            }
-        }
+    public static p3 valueOf(String str) {
+        return (p3) Enum.valueOf(p3.class, str);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ActionBarLayout actionBarLayout = this.b;
-        if (actionBarLayout != null && actionBarLayout.getParent() == this) {
-            this.b.Q(canvas, this);
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    public Paint getInternalNavbarPaint() {
-        return this.d;
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return ((ActionBarLayout) this.a).i();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        this.c = true;
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt.getVisibility() != 8) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                try {
-                    childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    boolean z11 = org.telegram.messenger.s2.a;
-                    throw e10;
-                }
-            }
-        }
-        this.c = false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        int size2 = View.MeasureSpec.getSize(i10);
-        setMeasuredDimension(size, size2);
-        i0.b bVar = this.f;
-        int i11 = (size - bVar.a) - bVar.c;
-        int i12 = (size2 - bVar.b) - bVar.d;
-        Point point = org.telegram.messenger.g0.q;
-        point.x = i11;
-        point.y = i12;
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt.getVisibility() != 8) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
-                int i14 = layoutParams.height;
-                int makeMeasureSpec2 = i14 > 0 ? View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
-                if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).i0()) {
-                    childAt.forceLayout();
-                }
-                childAt.measure(makeMeasureSpec, makeMeasureSpec2);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    public void setActionBarLayout(ActionBarLayout actionBarLayout) {
-        this.b = actionBarLayout;
-    }
-
-    public void setInternalNavigationBarColor(int i7) {
-        Paint paint = this.d;
-        if (paint.getColor() != i7) {
-            paint.setColor(i7);
-            invalidate();
-            int childCount = getChildCount();
-            for (int i10 = 0; i10 < childCount; i10++) {
-                getChildAt(i10).invalidate();
-            }
-        }
-    }
-
-    public void setParentActionBarLayout(s4 s4Var) {
-        this.a = s4Var;
+    public static p3[] values() {
+        return (p3[]) d.clone();
     }
 }

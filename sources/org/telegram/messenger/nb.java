@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nb implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -19,12 +19,12 @@ public final /* synthetic */ class nb implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ nb(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, x10 x10Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public /* synthetic */ nb(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, x10 x10Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.c = i7;
         this.b = j3;
         this.d = activity;
         this.e = arrayList;
-        this.f = i6Var;
+        this.f = h6Var;
         this.h = x10Var;
         this.n = hashMap;
     }
@@ -111,17 +111,17 @@ public final /* synthetic */ class nb implements Runnable {
             case 3:
                 Activity activity = (Activity) obj2;
                 ArrayList arrayList2 = (ArrayList) obj5;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj4;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj4;
                 x10 x10Var = (x10) obj3;
                 HashMap hashMap = (HashMap) obj;
-                long j11 = di.x8.y(i10, false).p().amount;
+                long j11 = di.y8.y(i10, false).p().amount;
                 long j12 = this.b;
                 if (j11 >= j12) {
                     x10Var.a(hashMap);
                     break;
                 } else if (activity != null) {
                     long longValue = ((Long) arrayList2.get(0)).longValue();
-                    new di.fb(activity, i6Var, j12, 13, n5.s(i10, longValue), new org.telegram.ui.Components.f2(x10Var, hashMap, 0), longValue).show();
+                    new di.fb(activity, h6Var, j12, 13, n5.s(i10, longValue), new org.telegram.ui.Components.g2(x10Var, hashMap, 0), longValue).show();
                     break;
                 }
                 break;

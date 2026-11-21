@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k7 extends f7 {
     public final ArrayList n;
@@ -48,13 +48,13 @@ public final class k7 extends f7 {
         view.setTag(bVar);
         File file = bVar.a;
         long lastModified = file.lastModified();
-        String M0 = bVar.h == 5 ? org.telegram.messenger.gd.M0(2131753939, null) : file.getName();
+        String N0 = bVar.h == 5 ? org.telegram.messenger.gd.N0(2131753938, null) : file.getName();
         String s5 = org.telegram.messenger.gd.s(lastModified / 1000, true);
         String name = file.getName();
         Pattern pattern = Utilities.a;
         int lastIndexOf = name.lastIndexOf(46);
         String substring = lastIndexOf != -1 ? name.substring(lastIndexOf + 1) : null;
-        i7Var.d(M0, s5, substring != null ? substring.toUpperCase() : null, null, 0, z11);
+        i7Var.d(N0, s5, substring != null ? substring.toUpperCase() : null, null, 0, z11);
         if (!z10) {
             i7Var.setPhoto(file.getPath());
         }
@@ -69,6 +69,6 @@ public final class k7 extends f7 {
         j7 j7Var = new j7(this, viewGroup.getContext(), 0);
         j7Var.e = 2;
         j7Var.b.addView(new org.telegram.ui.Cells.i7(3, viewGroup.getContext(), null));
-        return new org.telegram.ui.Components.kj0(j7Var);
+        return new org.telegram.ui.Components.mj0(j7Var);
     }
 }

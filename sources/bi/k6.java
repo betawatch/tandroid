@@ -1,47 +1,66 @@
 package bi;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
+import android.widget.ScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class k6 extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class k6 extends ScrollView {
+    public final /* synthetic */ int a;
 
-    static {
-        k41.h(new k6());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k6(Context context, int i7) {
+        super(context);
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        k80 k80Var = (k80) view;
-        k80Var.setGravity(l41Var.A);
-        Object obj = l41Var.I;
-        if (obj instanceof Integer) {
-            int intValue = ((Integer) obj).intValue();
-            Object obj2 = l41Var.H;
-            org.telegram.ui.ActionBar.u6.U(k80Var, intValue, obj2 instanceof org.telegram.ui.ActionBar.i6 ? (org.telegram.ui.ActionBar.i6) obj2 : null);
-        } else {
-            org.telegram.ui.ActionBar.t6 t6Var = org.telegram.ui.ActionBar.u6.a;
-            k80Var.setTag(R.id.theme_bind, null);
-            k80Var.setTextColor((int) l41Var.C);
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(260.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 1:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(260.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 2:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i10), Math.min(org.telegram.messenger.g0.q.y * 0.35f, org.telegram.messenger.g0.L(400.0f))), View.MeasureSpec.getMode(i10)));
+                break;
+            case 3:
+            default:
+                super.onMeasure(i7, i10);
+                break;
+            case 4:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(320.0f)), TLObject.FLAG_31));
+                break;
+            case 5:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(360.0f)), TLObject.FLAG_31));
+                break;
         }
-        k80Var.setTextSize(1, l41Var.B);
-        k80Var.setTypeface(l41Var.r ? org.telegram.messenger.g0.o() : null);
-        int i7 = l41Var.i;
-        k80Var.setPadding(i7, 0, i7, l41Var.k);
-        k80Var.setText(l41Var.m);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new q2(2, context, null);
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i7, Rect rect) {
+        switch (this.a) {
+            case 3:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i7, rect);
+        }
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 3:
+                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                rect.top = org.telegram.messenger.g0.L(20.0f) + rect.top;
+                rect.bottom = org.telegram.messenger.g0.L(50.0f) + rect.bottom;
+                break;
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

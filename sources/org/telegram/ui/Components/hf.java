@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class hf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -19,11 +19,11 @@ public final class hf implements View.OnKeyListener {
      */
     /* JADX WARN: Code restructure failed: missing block: B:65:0x00d9, code lost:
     
-        if (r6.N2 != null) goto L71;
+        if (r6.P2 != null) goto L71;
      */
     /* JADX WARN: Code restructure failed: missing block: B:66:0x00db, code lost:
     
-        r6.r1();
+        r6.v1();
      */
     /* JADX WARN: Code restructure failed: missing block: B:67:0x00de, code lost:
     
@@ -39,41 +39,41 @@ public final class hf implements View.OnKeyListener {
             chatActivityEnterView.E0 = keyEvent.isShiftPressed();
             chatActivityEnterView.D0 = keyEvent.isCtrlPressed();
         }
-        if (i7 == 4 && !chatActivityEnterView.n3 && chatActivityEnterView.O0() && keyEvent.getAction() == 1) {
+        if (i7 == 4 && !chatActivityEnterView.p3 && chatActivityEnterView.S0() && keyEvent.getAction() == 1) {
             if (org.telegram.ui.ns.g0 != null && org.telegram.ui.ns.p().E) {
                 org.telegram.ui.ns.p().n();
                 return true;
             }
-            if (chatActivityEnterView.T2 != 1 || chatActivityEnterView.a3 == null) {
+            if (chatActivityEnterView.V2 != 1 || chatActivityEnterView.c3 == null) {
                 if (keyEvent.getAction() == 1) {
-                    if (chatActivityEnterView.T2 == 1 && chatActivityEnterView.a3 != null) {
-                        org.telegram.messenger.mp.u1(chatActivityEnterView.R).h7.edit().putInt("hidekeyboard_" + chatActivityEnterView.E3, chatActivityEnterView.a3.e1()).commit();
+                    if (chatActivityEnterView.V2 == 1 && chatActivityEnterView.c3 != null) {
+                        org.telegram.messenger.mp.u1(chatActivityEnterView.R).h7.edit().putInt("hidekeyboard_" + chatActivityEnterView.G3, chatActivityEnterView.c3.e1()).commit();
                     }
-                    if (chatActivityEnterView.F2 != 0) {
-                        chatActivityEnterView.L1(0, true);
-                        cg cgVar = chatActivityEnterView.V0;
-                        if (cgVar != null) {
-                            cgVar.t(true);
+                    if (chatActivityEnterView.H2 != 0) {
+                        chatActivityEnterView.P1(0, true);
+                        fg fgVar = chatActivityEnterView.V0;
+                        if (fgVar != null) {
+                            fgVar.t(true);
                         }
                         chatActivityEnterView.F0.requestFocus();
                         return true;
                     }
-                    if (chatActivityEnterView.n4) {
-                        chatActivityEnterView.M1(false, true, false, true);
+                    if (chatActivityEnterView.p4) {
+                        chatActivityEnterView.Q1(false, true, false, true);
                         return true;
                     }
-                    if (chatActivityEnterView.p4 == null) {
-                        if (chatActivityEnterView.a3 != null && chatActivityEnterView.T2 != 1 && TextUtils.isEmpty(chatActivityEnterView.F0.getTextToUse())) {
-                            chatActivityEnterView.T1(1, 1, true, true);
+                    if (chatActivityEnterView.r4 == null) {
+                        if (chatActivityEnterView.c3 != null && chatActivityEnterView.V2 != 1 && TextUtils.isEmpty(chatActivityEnterView.F0.getTextToUse())) {
+                            chatActivityEnterView.X1(1, 1, true, true);
                             return true;
                         }
-                        chatActivityEnterView.T1(0, 0, true, false);
+                        chatActivityEnterView.X1(0, 0, true, false);
                     }
                 }
                 return true;
             }
         } else if (i7 == 66 && !keyEvent.isShiftPressed()) {
-            if (chatActivityEnterView.p3) {
+            if (chatActivityEnterView.r3) {
             }
         }
         return false;

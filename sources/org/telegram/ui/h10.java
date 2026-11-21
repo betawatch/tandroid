@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h10 extends v4.u0 {
     public final /* synthetic */ f40 a;
@@ -14,27 +14,27 @@ public final class h10 extends v4.u0 {
 
     @Override // v4.u0
     public final void a(RecyclerView recyclerView, int i7) {
-        org.telegram.ui.Components.kj0 kj0Var;
+        org.telegram.ui.Components.mj0 mj0Var;
         f40 f40Var = this.a;
         n30 n30Var = f40Var.L1;
         if (i7 != 0) {
-            org.telegram.ui.Components.j30 j30Var = f40Var.h2;
-            if (j30Var != null) {
-                j30Var.a();
+            org.telegram.ui.Components.m30 m30Var = f40Var.h2;
+            if (m30Var != null) {
+                m30Var.a();
             }
-            org.telegram.ui.Components.j30 j30Var2 = f40Var.i2;
-            if (j30Var2 != null) {
-                j30Var2.a();
+            org.telegram.ui.Components.m30 m30Var2 = f40Var.i2;
+            if (m30Var2 != null) {
+                m30Var2.a();
                 return;
             }
             return;
         }
         float L = f40Var.t2 - org.telegram.messenger.g0.L(74.0f);
         n30Var.getChildAt(0);
-        if (L + f40Var.t0 >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || !n30Var.canScrollVertically(1) || (kj0Var = (org.telegram.ui.Components.kj0) n30Var.K(0)) == null) {
+        if (L + f40Var.t0 >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || !n30Var.canScrollVertically(1) || (mj0Var = (org.telegram.ui.Components.mj0) n30Var.K(0)) == null) {
             return;
         }
-        View view = kj0Var.a;
+        View view = mj0Var.a;
         if (view.getTop() > 0) {
             n30Var.w0(0, view.getTop(), null);
         }

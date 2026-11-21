@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vf implements Runnable {
     public final /* synthetic */ int a;
@@ -21,11 +21,11 @@ public final /* synthetic */ class vf implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.ActionBar.z0 z0Var;
+        org.telegram.ui.ActionBar.y0 y0Var;
         rj rjVar;
         View sendButton;
         View sendButton2;
-        hi.m3 m3Var;
+        hi.l3 l3Var;
         int i7 = this.a;
         bn bnVar = this.b;
         switch (i7) {
@@ -33,9 +33,9 @@ public final /* synthetic */ class vf implements Runnable {
                 bnVar.x8(false, true, 0.0f);
                 break;
             case 1:
-                org.telegram.ui.ActionBar.z0[] z0VarArr = bnVar.k9;
-                if (z0VarArr != null && z0VarArr.length > 0 && (z0Var = z0VarArr[0]) != null) {
-                    z0Var.requestFocus();
+                org.telegram.ui.ActionBar.y0[] y0VarArr = bnVar.k9;
+                if (y0VarArr != null && y0VarArr.length > 0 && (y0Var = y0VarArr[0]) != null) {
+                    y0Var.requestFocus();
                     bnVar.k9[0].performAccessibilityAction(64, null);
                     bnVar.k9[0].sendAccessibilityEvent(8);
                     break;
@@ -63,11 +63,11 @@ public final /* synthetic */ class vf implements Runnable {
                     edit.putLong("scheduledOrNoSoundHintSeenAt", org.telegram.messenger.bz.L);
                     edit.apply();
                     if (bnVar.v2 == null) {
-                        hi.m3 E6 = bnVar.E6(280.0f, 3, -1, true);
+                        hi.l3 E6 = bnVar.E6(280.0f, 3, -1, true);
                         bnVar.v2 = E6;
                         E6.v0 = 0.0f;
                         E6.w0 = org.telegram.messenger.g0.L(56.0f) / 2.0f;
-                        bnVar.v2.v(org.telegram.messenger.gd.M0(2131745652, null));
+                        bnVar.v2.v(org.telegram.messenger.gd.N0(2131745651, null));
                     }
                     bnVar.v2.z(sendButton, true);
                     bnVar.w2 = true;
@@ -88,10 +88,10 @@ public final /* synthetic */ class vf implements Runnable {
                     edit2.putLong("scheduledHintSeenAt", org.telegram.messenger.bz.N);
                     edit2.apply();
                     if (bnVar.x2 == null) {
-                        hi.m3 E62 = bnVar.E6(280.0f, 3, -1, true);
+                        hi.l3 E62 = bnVar.E6(280.0f, 3, -1, true);
                         bnVar.x2 = E62;
                         E62.v0 = 0.0f;
-                        E62.v(org.telegram.messenger.gd.M0(2131745654, null));
+                        E62.v(org.telegram.messenger.gd.N0(2131745653, null));
                     }
                     bnVar.x2.z(sendButton2, true);
                     bnVar.y2 = true;
@@ -157,9 +157,9 @@ public final /* synthetic */ class vf implements Runnable {
                 bnVar.x8(false, true, 0.0f);
                 break;
             case 11:
-                org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, bnVar.getParentActivity(), bnVar.Ba);
-                bnVar.Tb = u1Var;
-                u1Var.setOnShowListener(new xe(bnVar, 1));
+                org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, bnVar.getParentActivity(), bnVar.Ba);
+                bnVar.Tb = t1Var;
+                t1Var.setOnShowListener(new xe(bnVar, 1));
                 bnVar.Tb.setOnCancelListener(bnVar.Ja);
                 bnVar.Tb.r(500L);
                 break;
@@ -190,7 +190,7 @@ public final /* synthetic */ class vf implements Runnable {
                 break;
             case 19:
                 bnVar.P7(true);
-                org.telegram.messenger.f3.n(null, 2131743733, org.telegram.ui.Components.lc.b0(bnVar), R.raw.chats_infotip, 36);
+                org.telegram.messenger.f3.n(null, 2131743727, org.telegram.ui.Components.lc.b0(bnVar), R.raw.chats_infotip, 36);
                 break;
             case 20:
                 bnVar.finishFragment();
@@ -219,8 +219,8 @@ public final /* synthetic */ class vf implements Runnable {
                 break;
             case 25:
                 uj ujVar = bnVar.g3;
-                if ((ujVar == null || ujVar.getVisibility() != 0) && (m3Var = bnVar.L1) != null) {
-                    m3Var.x();
+                if ((ujVar == null || ujVar.getVisibility() != 0) && (l3Var = bnVar.L1) != null) {
+                    l3Var.x();
                     break;
                 }
                 break;

@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class il0 extends FrameLayout {
     public final Paint a;
@@ -55,10 +55,10 @@ public final class il0 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int i7 = org.telegram.ui.ActionBar.n6.O6;
+        int i7 = org.telegram.ui.ActionBar.m6.O6;
         ml0 ml0Var = this.d;
         canvas.drawColor(ml0Var.getThemedColor(i7));
-        int themedColor = ml0Var.getThemedColor(org.telegram.ui.ActionBar.n6.Vi);
+        int themedColor = ml0Var.getThemedColor(org.telegram.ui.ActionBar.m6.Vi);
         Paint paint = this.a;
         paint.setColor(themedColor);
         canvas.drawCircle(org.telegram.messenger.gd.a0 ? getWidth() - org.telegram.messenger.g0.L(28.0f) : org.telegram.messenger.g0.L(28.0f), -org.telegram.messenger.g0.L(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);

@@ -1,55 +1,58 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.q9;
-import org.telegram.ui.Components.z41;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class x1 extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class x1 extends ReplacementSpan {
+    public final TextPaint a;
+    public final Paint b;
+    public final RectF c;
+    public final boolean d;
 
-    static {
-        k41.h(new x1());
+    public x1(int i7, boolean z10) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new RectF();
+        this.d = z10;
+        textPaint.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
+        textPaint.setColor(i7);
+        paint.setColor(org.telegram.ui.ActionBar.m6.r1(0.08f, i7));
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        ah.r rVar = (ah.r) view;
-        Drawable drawable = l41Var.l;
-        CharSequence charSequence = l41Var.m;
-        CharSequence charSequence2 = l41Var.n;
-        rVar.x.setVisibility(8);
-        rVar.I = null;
-        rVar.J = null;
-        q9 q9Var = rVar.c;
-        q9Var.setRoundRadius(org.telegram.messenger.g0.L(20.0f));
-        q9Var.setImageDrawable(drawable);
-        fi.u3 u3Var = rVar.d;
-        u3Var.k(charSequence);
-        boolean[] zArr = rVar.s;
-        zArr[0] = false;
-        rVar.setSubtitle(charSequence2);
-        org.telegram.ui.ActionBar.u6.X(rVar.e, zArr[0] ? org.telegram.ui.ActionBar.n6.n5 : org.telegram.ui.ActionBar.n6.r5, rVar.a);
-        mp mpVar = rVar.w;
-        if (mpVar != null) {
-            mpVar.setAlpha(1.0f);
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        TextPaint textPaint = this.a;
+        float measureText = textPaint.measureText(charSequence, i7, i10);
+        float f11 = (i11 + i13) / 2.0f;
+        RectF rectF = this.c;
+        rectF.set(f10, f11 - org.telegram.messenger.g0.L(9.5f), f10 + measureText + org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(9.5f) + f11);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), this.b);
+        if (this.d) {
+            int color = textPaint.getColor();
+            int r12 = org.telegram.ui.ActionBar.m6.r1(0.0f, color);
+            float L = f10 + org.telegram.messenger.g0.L(4.0f);
+            textPaint.setShader(new LinearGradient(L, 0.0f, L + measureText, 0.0f, new int[]{color, r12, r12, color}, new float[]{0.17f, 0.41f, 0.59f, 0.87f}, Shader.TileMode.CLAMP));
         }
-        u3Var.i(null);
-        rVar.setDivider(z10);
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        canvas.drawText(charSequence, i7, i10, f10 + org.telegram.messenger.g0.L(4.0f), f11 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f), textPaint);
+        textPaint.setShader(null);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        ah.r rVar = new ah.r(context, false, false, i6Var, false);
-        rVar.setCellBackgroundVisible(false);
-        return rVar;
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            paint.getFontMetricsInt(fontMetricsInt);
+        }
+        return org.telegram.messenger.g0.L(11.0f) + ((int) Math.ceil(this.a.measureText(charSequence, i7, i10)));
     }
 }

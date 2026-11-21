@@ -17,13 +17,13 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import h2.l0;
-import hi.u5;
+import hi.t5;
 import java.util.ArrayList;
 import q4.p;
 import q4.v;
 import q4.w;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class e implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -292,7 +292,7 @@ public final class e implements Parcelable.Creator {
                 if (iBinder == null) {
                     gVar.d = null;
                 } else {
-                    gVar.d = new u5(a7.b.m1(iBinder));
+                    gVar.d = new t5(a7.b.m1(iBinder));
                 }
                 gVar.e = f17;
                 gVar.f = f18;

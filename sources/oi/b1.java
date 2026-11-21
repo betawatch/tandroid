@@ -1,47 +1,69 @@
 package oi;
 
 import android.os.SystemClock;
-import org.telegram.ui.ActionBar.n6;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class b1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e1 b;
+public final class b1 implements TextWatcher {
+    public final /* synthetic */ f1 a;
 
-    public /* synthetic */ b1(e1 e1Var, int i7) {
-        this.a = i7;
-        this.b = e1Var;
+    public b1(f1 f1Var) {
+        this.a = f1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e1 e1Var = this.b;
-                if (e1Var.z2 >= 0) {
-                    long uptimeMillis = (e1Var.y2 + 500) - SystemClock.uptimeMillis();
-                    if (uptimeMillis > 0 && e1Var.isFocused()) {
-                        e1Var.postDelayed(this, uptimeMillis);
-                        break;
-                    } else {
-                        int i7 = e1Var.z2;
-                        e1Var.z2 = -1;
-                        e1Var.setInputType(i7);
-                        break;
-                    }
-                }
-                break;
-            default:
-                boolean h12 = n6.h1();
-                e1 e1Var2 = this.b;
-                if (!h12) {
-                    e1Var2.J();
-                    break;
-                } else {
-                    e1Var2.postDelayed(this, 100L);
-                    break;
-                }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        Editable editable2;
+        f1 f1Var = this.a;
+        if (f1Var.i2 || f1Var.e2 == null) {
+            return;
         }
+        if (!f1Var.q2 || editable.length() <= 0) {
+            editable2 = editable;
+        } else {
+            editable2 = editable;
+            c6.o(editable2, 0, editable.length(), 1, true, f1Var.x2);
+        }
+        if (f1Var.n2 || f1Var.j2 || f1Var.k2) {
+            f1Var.e2.s1(editable2);
+            return;
+        }
+        f1Var.i2 = true;
+        boolean z10 = false;
+        for (int length = editable2.length() - 1; length >= 0; length--) {
+            if (editable2.charAt(length) == '\n') {
+                editable2.delete(length, length + 1);
+                z10 = true;
+            }
+        }
+        f1Var.i2 = false;
+        if (z10) {
+            f1Var.e2.x0(f1Var);
+        } else {
+            f1Var.e2.s1(editable2);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        e1 e1Var;
+        f1 f1Var = this.a;
+        if (f1Var.i2 || (e1Var = f1Var.e2) == null) {
+            return;
+        }
+        e1Var.A(i10, i11);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        f1 f1Var = this.a;
+        if (i10 > 0 && i11 == 0) {
+            f1Var.y2 = SystemClock.uptimeMillis();
+        }
+        f1Var.v2 = true;
+        f1Var.N();
+        f1Var.setLongClickable(f1Var.length() == 0);
     }
 }

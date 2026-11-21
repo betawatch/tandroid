@@ -6,10 +6,10 @@ import android.view.SurfaceHolder;
 import android.view.TextureView;
 import e2.w1;
 import java.util.ArrayList;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class z implements d3.h0, n2.s, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
     public final /* synthetic */ f0 a;
@@ -21,9 +21,9 @@ public final class z implements d3.h0, n2.s, SurfaceHolder.Callback, TextureView
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
         f0 f0Var = this.a;
-        y51 y51Var = f0Var.s0;
-        if (y51Var != null) {
-            y51Var.execute(new x(this, surfaceTexture, i7, i10, 0));
+        b61 b61Var = f0Var.s0;
+        if (b61Var != null) {
+            b61Var.execute(new x(this, surfaceTexture, i7, i10, 0));
             return;
         }
         Surface surface = new Surface(surfaceTexture);
@@ -41,13 +41,13 @@ public final class z implements d3.h0, n2.s, SurfaceHolder.Callback, TextureView
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            if (((f61) ((w1) obj)).K.onSurfaceDestroyed(surfaceTexture)) {
+            if (((i61) ((w1) obj)).K.onSurfaceDestroyed(surfaceTexture)) {
                 return false;
             }
         }
-        y51 y51Var = f0Var.s0;
-        if (y51Var != null) {
-            y51Var.execute(new kg.j0(this, surfaceTexture));
+        b61 b61Var = f0Var.s0;
+        if (b61Var != null) {
+            b61Var.execute(new kg.i0(this, surfaceTexture));
             return true;
         }
         f0Var.x1(null);
@@ -58,9 +58,9 @@ public final class z implements d3.h0, n2.s, SurfaceHolder.Callback, TextureView
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
         f0 f0Var = this.a;
-        y51 y51Var = f0Var.s0;
-        if (y51Var != null) {
-            y51Var.execute(new jg.q(this, surfaceTexture, i7, i10));
+        b61 b61Var = f0Var.s0;
+        if (b61Var != null) {
+            b61Var.execute(new jg.q(this, surfaceTexture, i7, i10));
         } else {
             f0Var.q1(i7, i10);
         }
@@ -69,9 +69,9 @@ public final class z implements d3.h0, n2.s, SurfaceHolder.Callback, TextureView
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         f0 f0Var = this.a;
-        y51 y51Var = f0Var.s0;
-        if (y51Var != null) {
-            y51Var.execute(new kg.h0(15, this, surfaceTexture));
+        b61 b61Var = f0Var.s0;
+        if (b61Var != null) {
+            b61Var.execute(new ji.i(17, this, surfaceTexture));
             return;
         }
         ArrayList arrayList = f0Var.t0;
@@ -80,7 +80,7 @@ public final class z implements d3.h0, n2.s, SurfaceHolder.Callback, TextureView
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            ((f61) ((w1) obj)).K.onSurfaceTextureUpdated(surfaceTexture);
+            ((i61) ((w1) obj)).K.onSurfaceTextureUpdated(surfaceTexture);
         }
     }
 

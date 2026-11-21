@@ -6,12 +6,12 @@ import android.view.WindowManager;
 import fi.u2;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
-import org.telegram.ui.Components.m10;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.a61;
+import org.telegram.ui.Components.p10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class g extends m10 {
+public final class g extends p10 {
     public float a;
     public float b;
     public final /* synthetic */ int c;
@@ -22,7 +22,7 @@ public final class g extends m10 {
         this.c = i7;
     }
 
-    @Override // org.telegram.ui.Components.m10
+    @Override // org.telegram.ui.Components.p10
     public final boolean a() {
         h hVar = this.d;
         return (hVar.K || hVar.H || !hVar.c()) ? false : true;
@@ -31,7 +31,7 @@ public final class g extends m10 {
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
     public final boolean onDoubleTap(MotionEvent motionEvent) {
         h hVar = this.d;
-        x51 x51Var = hVar.F;
+        a61 a61Var = hVar.F;
         l lVar = hVar.b;
         if (hVar.b() && hVar.c()) {
             boolean z10 = motionEvent.getX() >= ((float) hVar.x) * 0.5f;
@@ -47,13 +47,13 @@ public final class g extends m10 {
                 return true;
             }
             if (l10 != j3) {
-                x51Var.e(true);
-                x51Var.d(!z10);
-                long j10 = x51Var.o + 10000;
-                x51Var.o = j10;
-                x51Var.p = gd.G((int) (j10 / 1000), "Seconds", new Object[0]);
+                a61Var.e(true);
+                a61Var.d(!z10);
+                long j10 = a61Var.o + 10000;
+                a61Var.o = j10;
+                a61Var.p = gd.G((int) (j10 / 1000), "Seconds", new Object[0]);
                 lVar.c(j3);
-                x51Var.g(0L);
+                a61Var.g(0L);
                 hVar.I = j3 / duration;
                 u2 u2Var = hVar.o;
                 if (u2Var != null) {

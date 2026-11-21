@@ -2,18 +2,18 @@ package org.telegram.ui;
 
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class t20 extends LinearLayout {
     public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.sb0 b;
+    public final /* synthetic */ org.telegram.ui.Components.tb0 b;
     public final /* synthetic */ p20 c;
     public final /* synthetic */ q20 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t20(LaunchActivity launchActivity, org.telegram.ui.Components.sb0 sb0Var, p20 p20Var, q20 q20Var) {
+    public t20(LaunchActivity launchActivity, org.telegram.ui.Components.tb0 tb0Var, p20 p20Var, q20 q20Var) {
         super(launchActivity);
-        this.b = sb0Var;
+        this.b = tb0Var;
         this.c = p20Var;
         this.d = q20Var;
         this.a = false;
@@ -22,13 +22,13 @@ public final class t20 extends LinearLayout {
     @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         this.a = true;
-        org.telegram.ui.Components.sb0 sb0Var = this.b;
-        sb0Var.setItemCount(5);
+        org.telegram.ui.Components.tb0 tb0Var = this.b;
+        tb0Var.setItemCount(5);
         p20 p20Var = this.c;
         p20Var.setItemCount(5);
         q20 q20Var = this.d;
         q20Var.setItemCount(5);
-        sb0Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
+        tb0Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
         p20Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
         q20Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
         this.a = false;

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class zq extends er {
     public final /* synthetic */ int h2;
@@ -26,7 +26,7 @@ public final class zq extends er {
         this.W1 = 1.0f;
         this.c2 = false;
         setBackground(null);
-        org.telegram.ui.ActionBar.u6.U(this, org.telegram.ui.ActionBar.n6.G6, null);
+        org.telegram.ui.ActionBar.t6.U(this, org.telegram.ui.ActionBar.m6.G6, null);
         setMovementMethod(null);
         addTextChangedListener(new m0(this, 6));
     }

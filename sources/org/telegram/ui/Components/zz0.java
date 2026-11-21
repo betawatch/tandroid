@@ -1,59 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zz0 extends bk0 {
-    public Context c;
-    public ArrayList d;
+public final class zz0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a01 b;
 
-    @Override // org.telegram.ui.Components.bk0
-    public final boolean D(v4.f1 f1Var) {
-        return true;
+    public zz0(a01 a01Var, int i7) {
+        this.b = a01Var;
+        this.a = i7;
     }
 
-    @Override // v4.i0
-    public final int b() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0;
+    /* JADX WARN: Removed duplicated region for block: B:15:0x007f A[LOOP:0: B:13:0x0075->B:15:0x007f, LOOP_END] */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        int i7;
+        int i10;
+        int i11;
+        a01 a01Var = this.b;
+        EditTextBoldCursor[] editTextBoldCursorArr = a01Var.n;
+        ThemeEditorView.EditorAlert editorAlert = a01Var.J;
+        if (editorAlert.F1) {
+            return;
         }
-        return arrayList.size() + 1;
-    }
-
-    @Override // v4.i0
-    public final int d(int i7) {
-        return i7 == 0 ? 1 : 0;
-    }
-
-    @Override // v4.i0
-    public final void t(v4.f1 f1Var, int i7) {
-        if (f1Var.f == 0) {
-            org.telegram.ui.ActionBar.w6 w6Var = (org.telegram.ui.ActionBar.w6) ((ArrayList) this.d.get(i7 - 1)).get(0);
-            int c10 = w6Var.e == org.telegram.ui.ActionBar.n6.Ee ? 0 : w6Var.c();
-            org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) f1Var.a;
-            v8Var.a.setText(org.telegram.ui.ActionBar.w4.c(w6Var.e));
-            v8Var.b = c10;
-            v8Var.setWillNotDraw(c10 == 0);
-            v8Var.invalidate();
+        editorAlert.F1 = true;
+        int intValue = Utilities.z(editable.toString()).intValue();
+        int i12 = this.a;
+        if (intValue < 0) {
+            editTextBoldCursorArr[i12].setText("0");
+            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i12];
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            intValue = 0;
+        } else if (intValue > 255) {
+            editTextBoldCursorArr[i12].setText("255");
+            EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursorArr[i12];
+            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
+            intValue = 255;
         }
-    }
-
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        View v8Var;
-        Context context = this.c;
-        if (i7 != 0) {
-            v8Var = new View(context);
-            v8Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
+        int b10 = a01Var.b();
+        if (i12 == 2) {
+            i7 = b10 & (-256);
+            i10 = intValue & org.telegram.messenger.ks.e4;
+        } else if (i12 == 1) {
+            i7 = b10 & (-65281);
+            i10 = (intValue & org.telegram.messenger.ks.e4) << 8;
         } else {
-            v8Var = new org.telegram.ui.Cells.v8(context);
-            v8Var.setLayoutParams(new v4.q0(-1, -2));
+            if (i12 != 0) {
+                if (i12 == 3) {
+                    i7 = b10 & 16777215;
+                    i10 = (intValue & org.telegram.messenger.ks.e4) << 24;
+                }
+                a01Var.c(b10);
+                for (i11 = 0; i11 < ThemeEditorView.this.e.size(); i11++) {
+                    ((org.telegram.ui.ActionBar.v6) ThemeEditorView.this.e.get(i11)).e(a01Var.b(), false, true);
+                }
+                ThemeEditorView.a(ThemeEditorView.this);
+                editorAlert.F1 = false;
+            }
+            i7 = b10 & (-16711681);
+            i10 = (intValue & org.telegram.messenger.ks.e4) << 16;
         }
-        return new kj0(v8Var);
+        b10 = i7 | i10;
+        a01Var.c(b10);
+        while (i11 < ThemeEditorView.this.e.size()) {
+        }
+        ThemeEditorView.a(ThemeEditorView.this);
+        editorAlert.F1 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

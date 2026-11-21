@@ -2,20 +2,20 @@ package org.telegram.ui.Cells;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h3 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mt b;
+    public final /* synthetic */ ot b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ i3 d;
 
-    public h3(i3 i3Var, int i7, mt mtVar, boolean z10) {
+    public h3(i3 i3Var, int i7, ot otVar, boolean z10) {
         this.d = i3Var;
         this.a = i7;
-        this.b = mtVar;
+        this.b = otVar;
         this.c = z10;
     }
 
@@ -28,9 +28,9 @@ public final class h3 implements TextWatcher {
             if (i7 > 0 && editable != null && editable.length() > i7) {
                 i3Var.a = true;
                 CharSequence subSequence = editable.subSequence(0, i7);
-                mt mtVar = this.b;
-                mtVar.setText(subSequence);
-                mtVar.setSelection(mtVar.length());
+                ot otVar = this.b;
+                otVar.setText(subSequence);
+                otVar.setSelection(otVar.length());
                 i3Var.a = false;
             }
             i3Var.b(editable);
@@ -45,11 +45,11 @@ public final class h3 implements TextWatcher {
                 }
             }
         }
-        org.telegram.ui.Components.m6 m6Var = i3Var.y;
-        if (m6Var == null || i7 <= 0) {
+        org.telegram.ui.Components.n6 n6Var = i3Var.y;
+        if (n6Var == null || i7 <= 0) {
             return;
         }
-        m6Var.a();
+        n6Var.a();
         i3Var.c();
     }
 

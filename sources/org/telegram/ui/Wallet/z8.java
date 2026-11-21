@@ -8,7 +8,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z8 implements x10 {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class z8 implements x10 {
                 d9Var.getClass();
                 bVar.b();
                 if (str == null) {
-                    org.telegram.ui.ActionBar.s4 parentLayout = d9Var.getParentLayout();
+                    org.telegram.ui.ActionBar.r4 parentLayout = d9Var.getParentLayout();
                     if (parentLayout != null) {
                         ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
                         int size = arrayList.size();
@@ -40,9 +40,9 @@ public final /* synthetic */ class z8 implements x10 {
                         while (i10 < size) {
                             Object obj2 = arrayList.get(i10);
                             i10++;
-                            org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj2;
-                            if ((h2Var instanceof na) || (h2Var instanceof l9) || (h2Var instanceof va) || (h2Var instanceof d9)) {
-                                ((ActionBarLayout) parentLayout).d0(h2Var, false);
+                            org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj2;
+                            if ((g2Var instanceof na) || (g2Var instanceof l9) || (g2Var instanceof va) || (g2Var instanceof d9)) {
+                                ((ActionBarLayout) parentLayout).d0(g2Var, false);
                             }
                         }
                         d9Var.finishFragment();
@@ -58,7 +58,7 @@ public final /* synthetic */ class z8 implements x10 {
                 break;
             default:
                 bVar.c(false);
-                org.telegram.ui.ActionBar.s4 parentLayout2 = d9Var.getParentLayout();
+                org.telegram.ui.ActionBar.r4 parentLayout2 = d9Var.getParentLayout();
                 if (parentLayout2 != null) {
                     ArrayList arrayList2 = new ArrayList(parentLayout2.getFragmentStack());
                     int size2 = arrayList2.size();
@@ -66,14 +66,14 @@ public final /* synthetic */ class z8 implements x10 {
                     while (i11 < size2) {
                         Object obj3 = arrayList2.get(i11);
                         i11++;
-                        org.telegram.ui.ActionBar.h2 h2Var2 = (org.telegram.ui.ActionBar.h2) obj3;
-                        if ((h2Var2 instanceof na) || (h2Var2 instanceof l9) || (h2Var2 instanceof va)) {
-                            ((ActionBarLayout) parentLayout2).d0(h2Var2, false);
+                        org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) obj3;
+                        if ((g2Var2 instanceof na) || (g2Var2 instanceof l9) || (g2Var2 instanceof va)) {
+                            ((ActionBarLayout) parentLayout2).d0(g2Var2, false);
                         }
                     }
                 }
                 if (str == null) {
-                    gc I = lc.b0(d9Var).I(R.raw.contact_check, gd.M0(2131742953, null), gd.M0(2131742951, null));
+                    gc I = lc.b0(d9Var).I(R.raw.contact_check, gd.N0(2131742947, null), gd.N0(2131742945, null));
                     I.j = 5000;
                     I.j();
                     break;

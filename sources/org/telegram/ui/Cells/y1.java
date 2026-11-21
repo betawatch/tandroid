@@ -16,11 +16,11 @@ import org.telegram.messenger.ev;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.zt;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.sy;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.uy;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class y1 {
     public boolean A;
@@ -79,7 +79,7 @@ public final class y1 {
     public boolean O1;
     public boolean O2;
     public int P;
-    public org.telegram.ui.Components.t5 P0;
+    public org.telegram.ui.Components.u5 P0;
     public int P1;
     public boolean P2;
     public int Q;
@@ -93,7 +93,7 @@ public final class y1 {
     public StaticLayout S0;
     public boolean S2;
     public boolean T;
-    public org.telegram.ui.Components.t5 T0;
+    public org.telegram.ui.Components.u5 T0;
     public float T1;
     public int T2;
     public StaticLayout U;
@@ -183,7 +183,7 @@ public final class y1 {
     public float m0;
     public boolean m1;
     public boolean m2;
-    public org.telegram.ui.Components.t5 m3;
+    public org.telegram.ui.Components.u5 m3;
     public StaticLayout n;
     public float n0;
     public boolean n1;
@@ -307,7 +307,7 @@ public final class y1 {
         StaticLayout staticLayout;
         m0 m0Var;
         ev evVar;
-        org.telegram.ui.Components.v5 v5Var;
+        org.telegram.ui.Components.w5 w5Var;
         boolean z14 = false;
         if (!this.w0) {
             return false;
@@ -336,18 +336,18 @@ public final class y1 {
                     String charSequence = ((cj) r1Var.Q5.B2.get(i13)).e == null ? null : ((cj) r1Var.Q5.B2.get(i13)).e.getText().toString();
                     String charSequence2 = ((cj) this.J0.get(i13)).e == null ? null : ((cj) this.J0.get(i13)).e.getText().toString();
                     if ((charSequence != null || charSequence2 == null) && ((charSequence == null || charSequence2 != null) && charSequence.equals(charSequence2))) {
-                        org.telegram.ui.Components.t5 t5Var = r1Var.Aa;
-                        if (t5Var != null) {
+                        org.telegram.ui.Components.u5 u5Var = r1Var.Aa;
+                        if (u5Var != null) {
                             StaticLayout staticLayout2 = ((cj) r1Var.Q5.B2.get(i13)).e;
                             StaticLayout staticLayout3 = ((cj) this.J0.get(i13)).e;
-                            HashMap hashMap = t5Var.b;
-                            if (staticLayout3 != null && (v5Var = (org.telegram.ui.Components.v5) hashMap.remove(staticLayout3)) != null) {
-                                ArrayList arrayList4 = v5Var.b;
-                                v5Var.a = staticLayout2;
+                            HashMap hashMap = u5Var.b;
+                            if (staticLayout3 != null && (w5Var = (org.telegram.ui.Components.w5) hashMap.remove(staticLayout3)) != null) {
+                                ArrayList arrayList4 = w5Var.b;
+                                w5Var.a = staticLayout2;
                                 for (int i14 = 0; i14 < arrayList4.size(); i14++) {
-                                    ((org.telegram.ui.Components.s5) arrayList4.get(i14)).c = staticLayout2;
+                                    ((org.telegram.ui.Components.t5) arrayList4.get(i14)).c = staticLayout2;
                                 }
-                                hashMap.put(staticLayout2, v5Var);
+                                hashMap.put(staticLayout2, w5Var);
                             }
                         }
                     }
@@ -357,11 +357,11 @@ public final class y1 {
                     ArrayList arrayList5 = this.J0;
                     this.I0 = arrayList5;
                     this.O0 = this.p2;
-                    this.P0 = org.telegram.ui.Components.x5.update(0, (View) r1Var, this.P0, (ArrayList<cj>) arrayList5, true);
-                    r1Var.Aa = org.telegram.ui.Components.x5.update(0, r1Var, r1Var.Aa, (ArrayList<cj>) r1Var.Q5.B2);
+                    this.P0 = org.telegram.ui.Components.y5.update(0, (View) r1Var, this.P0, (ArrayList<cj>) arrayList5, true);
+                    r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, r1Var.Aa, (ArrayList<cj>) r1Var.Q5.B2);
                     z10 = true;
                 } else {
-                    r1Var.Aa = org.telegram.ui.Components.x5.update(0, r1Var, r1Var.Aa, (ArrayList<cj>) r1Var.Q5.B2);
+                    r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, r1Var.Aa, (ArrayList<cj>) r1Var.Q5.B2);
                 }
             }
             z17 = false;
@@ -397,7 +397,7 @@ public final class y1 {
                         if (arrayList6.size() == 1 && arrayList7.size() == 1) {
                             zt ztVar = (zt) arrayList6.get(0);
                             zt ztVar2 = (zt) arrayList7.get(0);
-                            boolean z19 = (ztVar instanceof pk0) && (ztVar2 instanceof pk0) && TextUtils.equals(((pk0) ztVar).X.url, ((pk0) ztVar2).X.url);
+                            boolean z19 = (ztVar instanceof rk0) && (ztVar2 instanceof rk0) && TextUtils.equals(((rk0) ztVar).X.url, ((rk0) ztVar2).X.url);
                         }
                     }
                 }
@@ -428,26 +428,26 @@ public final class y1 {
                 StaticLayout staticLayout6 = this.F2;
                 this.S0 = staticLayout6;
                 this.K2 = this.J2;
-                this.T0 = org.telegram.ui.Components.x5.update(0, (View) this.a, false, this.T0, true, staticLayout6);
+                this.T0 = org.telegram.ui.Components.y5.update(0, (View) this.a, false, this.T0, true, staticLayout6);
                 z10 = true;
             }
         }
         boolean z20 = r1Var.jb;
         if (z20 && !this.a1 && r1Var.z9 != null) {
-            String M0 = gd.M0(2131751199, "EditedMessage");
+            String N0 = gd.N0(2131751198, "EditedMessage");
             CharSequence text2 = r1Var.z9.getText();
-            int indexOf = text2.toString().indexOf(M0);
+            int indexOf = text2.toString().indexOf(N0);
             if (indexOf >= 0) {
                 if (indexOf == 0) {
-                    TextPaint textPaint = org.telegram.ui.ActionBar.n6.T2;
+                    TextPaint textPaint = org.telegram.ui.ActionBar.m6.T2;
                     int L = org.telegram.messenger.g0.L(100.0f) + r1Var.B9;
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    this.V0 = new StaticLayout(M0, textPaint, L, alignment, 1.0f, 0.0f, false);
+                    this.V0 = new StaticLayout(N0, textPaint, L, alignment, 1.0f, 0.0f, false);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) M0);
-                    spannableStringBuilder.append(text2.subSequence(M0.length(), text2.length()));
-                    spannableStringBuilder.setSpan(new sy(z14), 0, M0.length(), 0);
-                    this.W0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.n6.T2, org.telegram.messenger.g0.L(100.0f) + r1Var.B9, alignment, 1.0f, 0.0f, false);
+                    spannableStringBuilder.append((CharSequence) N0);
+                    spannableStringBuilder.append(text2.subSequence(N0.length(), text2.length()));
+                    spannableStringBuilder.setSpan(new uy(z14), 0, N0.length(), 0);
+                    this.W0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.m6.T2, org.telegram.messenger.g0.L(100.0f) + r1Var.B9, alignment, 1.0f, 0.0f, false);
                     this.Z0 = r1Var.A9 - this.Y0;
                 } else {
                     this.Z0 = 0;
@@ -579,10 +579,10 @@ public final class y1 {
             this.b1 = true;
             dj djVar6 = this.d1;
             this.c1 = djVar6;
-            this.P0 = org.telegram.ui.Components.x5.update(0, r1Var, (org.telegram.ui.Components.t5) null, (ArrayList<cj>) (djVar6 == null ? null : djVar6.e));
-            org.telegram.ui.Components.t5 t5Var2 = r1Var.Aa;
+            this.P0 = org.telegram.ui.Components.y5.update(0, r1Var, (org.telegram.ui.Components.u5) null, (ArrayList<cj>) (djVar6 == null ? null : djVar6.e));
+            org.telegram.ui.Components.u5 u5Var2 = r1Var.Aa;
             dj djVar7 = r1Var.m3;
-            r1Var.Aa = org.telegram.ui.Components.x5.update(0, r1Var, t5Var2, (ArrayList<cj>) (djVar7 == null ? null : djVar7.e));
+            r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, u5Var2, (ArrayList<cj>) (djVar7 == null ? null : djVar7.e));
             if (this.F0 != r1Var.Y6 || this.e1 != z21) {
                 this.t0 = true;
                 this.r0 = this.f;
@@ -796,7 +796,7 @@ public final class y1 {
                                 return z10;
                             }
                             this.l3 = staticLayout;
-                            this.m3 = org.telegram.ui.Components.x5.update(0, (View) r1Var, false, this.m3, staticLayout);
+                            this.m3 = org.telegram.ui.Components.y5.update(0, (View) r1Var, false, this.m3, staticLayout);
                             return true;
                         }
                         this.u2 = true;
@@ -965,9 +965,9 @@ public final class y1 {
         this.d = s2Var.N0;
         this.e = s2Var.O0;
         System.arraycopy(s2Var.X0, 0, this.u0, 0, 4);
-        org.telegram.ui.ActionBar.v4 v4Var = r1Var.L6;
-        if (v4Var != null) {
-            this.E0.set(v4Var.getBounds());
+        org.telegram.ui.ActionBar.u4 u4Var = r1Var.L6;
+        if (u4Var != null) {
+            this.E0.set(u4Var.getBounds());
         }
         this.F0 = r1Var.Y6;
         fj fjVar = r1Var.Q5;
@@ -1041,9 +1041,9 @@ public final class y1 {
         this.I2 = i7;
         this.D2 = r1Var.r9;
         this.j1 = r1Var.getCurrentBackgroundLeft();
-        org.telegram.ui.ActionBar.v4 v4Var2 = r1Var.L6;
-        if (v4Var2 != null) {
-            this.k1 = v4Var2.getBounds().right;
+        org.telegram.ui.ActionBar.u4 u4Var2 = r1Var.L6;
+        if (u4Var2 != null) {
+            this.k1 = u4Var2.getBounds().right;
         }
         fj fjVar4 = r1Var.Q5;
         this.p2 = fjVar4 != null ? fjVar4.x2 : 0.0f;
@@ -1138,7 +1138,7 @@ public final class y1 {
         this.b1 = false;
         this.D0 = false;
         this.c1 = null;
-        org.telegram.ui.Components.x5.release(r1Var, this.P0);
+        org.telegram.ui.Components.y5.release(r1Var, this.P0);
         this.P0 = null;
         this.t0 = false;
         this.K1 = false;
@@ -1198,7 +1198,7 @@ public final class y1 {
             ((ch.n0) arrayList.get(i10)).b = 0;
         }
         this.l3 = null;
-        org.telegram.ui.Components.x5.release(r1Var, this.m3);
+        org.telegram.ui.Components.y5.release(r1Var, this.m3);
     }
 
     public final void f() {

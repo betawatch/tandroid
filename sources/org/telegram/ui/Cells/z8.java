@@ -12,7 +12,7 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class z8 extends FrameLayout {
     public final TextView a;
@@ -25,7 +25,7 @@ public class z8 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
         n10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -33,7 +33,7 @@ public class z8 extends FrameLayout {
         addView(textView, c8.ma.d(-2, -2.0f, (gd.a0 ? 5 : 3) | 48, 21.0f, 10.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.z6, null);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(gd.a0 ? 5 : 3);
         textView2.setLines(1);
@@ -44,7 +44,7 @@ public class z8 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        org.telegram.ui.ActionBar.u6.s(imageView, org.telegram.ui.ActionBar.n6.m6, null, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.m6, null, PorterDuff.Mode.MULTIPLY);
         imageView.setVisibility(8);
         addView(imageView, c8.ma.d(52, 52.0f, (gd.a0 ? 5 : 3) | 48, 8.0f, 6.0f, 8.0f, 0.0f));
     }
@@ -89,7 +89,7 @@ public class z8 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         float L;
         int i7;
-        if (!this.d || org.telegram.ui.ActionBar.n6.k0 == null) {
+        if (!this.d || org.telegram.ui.ActionBar.m6.k0 == null) {
             return;
         }
         boolean z10 = gd.a0;
@@ -107,7 +107,7 @@ public class z8 extends FrameLayout {
         } else {
             i7 = 0;
         }
-        canvas.drawLine(f10, measuredHeight, measuredWidth - i7, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+        canvas.drawLine(f10, measuredHeight, measuredWidth - i7, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

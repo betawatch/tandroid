@@ -3,7 +3,7 @@ package oi;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements ViewTreeObserver.OnGlobalFocusChangeListener {
     public final /* synthetic */ int a;
@@ -21,22 +21,22 @@ public final /* synthetic */ class h implements ViewTreeObserver.OnGlobalFocusCh
                 ((o) this.b).e0();
                 break;
             case 1:
-                ((z1) this.b).B0();
+                ((b2) this.b).B0();
                 break;
             case 2:
-                s3 s3Var = (s3) this.b;
-                s3Var.i3 = (view2 == null || s3Var.F(view2) == null) ? false : true;
-                if (view2 instanceof e1) {
-                    s3Var.T3 = (e1) view2;
+                t3 t3Var = (t3) this.b;
+                t3Var.i3 = (view2 == null || t3Var.F(view2) == null) ? false : true;
+                if (view2 instanceof f1) {
+                    t3Var.T3 = (f1) view2;
                     break;
                 }
                 break;
             default:
-                l5 l5Var = (l5) this.b;
-                l5Var.z();
-                n5 n5Var = l5Var.w;
-                if (n5Var != null) {
-                    n5Var.invalidate();
+                m5 m5Var = (m5) this.b;
+                m5Var.z();
+                o5 o5Var = m5Var.w;
+                if (o5Var != null) {
+                    o5Var.invalidate();
                     break;
                 }
                 break;

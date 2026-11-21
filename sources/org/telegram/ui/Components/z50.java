@@ -1,6 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.content.Context;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class z50 extends v4.k {
+public final class z50 extends org.telegram.ui.Cells.a9 {
+    public final /* synthetic */ a60 E;
+    public final ik x;
+    public boolean y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z50(a60 a60Var, Context context) {
+        super(context);
+        this.E = a60Var;
+        this.x = new ik(this, 9);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ik ikVar = this.x;
+        org.telegram.messenger.g0.r(ikVar);
+        if (this.y) {
+            org.telegram.messenger.g0.h3(ikVar, 500L);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.g0.r(this.x);
+    }
 }

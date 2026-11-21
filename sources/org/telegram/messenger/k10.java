@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k10 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class k10 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.ActionBar.h2 Q;
+        org.telegram.ui.ActionBar.g2 Q;
         int i7 = this.a;
         int i10 = 0;
         Object obj = this.e;
@@ -70,7 +70,7 @@ public final /* synthetic */ class k10 implements Runnable {
                             }
                             String str3 = tL_error.text;
                             if (str3 != null && str3.contains("FLOOD_WAIT") && (Q = LaunchActivity.Q()) != null) {
-                                f3.o(null, 2131750671, org.telegram.ui.Components.lc.b0(Q), null);
+                                f3.o(null, 2131750670, org.telegram.ui.Components.lc.b0(Q), null);
                                 break;
                             }
                         }

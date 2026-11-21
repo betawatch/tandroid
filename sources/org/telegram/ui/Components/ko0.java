@@ -1,130 +1,58 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ko0 extends org.telegram.ui.ActionBar.j1 {
-    public final /* synthetic */ lo0 x;
+public final class ko0 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final Rect b;
+    public final /* synthetic */ ap0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ko0(lo0 lo0Var, lo0 lo0Var2) {
-        super(lo0Var2);
-        this.x = lo0Var;
+    public ko0(ap0 ap0Var, int i7) {
+        this.a = i7;
+        switch (i7) {
+            case 1:
+                this.c = ap0Var;
+                this.b = new Rect();
+                break;
+            default:
+                this.c = ap0Var;
+                this.b = new Rect();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.j1
-    public final boolean b() {
-        yo0 yo0Var = this.x.q0;
-        if (yo0Var.J || !yo0Var.U1) {
-            return false;
-        }
-        return !yo0Var.o1.m();
-    }
-
-    @Override // org.telegram.ui.ActionBar.j1
-    public final void e(float f10, float f11, boolean z10) {
-        lo0 lo0Var = this.x;
-        yo0 yo0Var = lo0Var.q0;
-        int i7 = yo0.U2;
-        for (int i10 = 0; i10 < yo0Var.b.getChildCount(); i10++) {
-            View childAt = yo0Var.b.getChildAt(i10);
-            if (childAt != yo0Var.r1 && childAt != yo0Var.w1 && childAt != yo0Var.O1[1] && childAt != yo0Var.y1 && childAt != yo0Var.n1 && childAt != yo0Var.Y1 && childAt != yo0Var.q1) {
-                childAt.setTranslationY(f10);
-            }
-        }
-        ao0 ao0Var = yo0Var.B1;
-        yo0Var.p2 = f10;
-        int i11 = lo0Var.l0;
-        if (i11 != -1) {
-            if (!z10) {
-                f11 = 1.0f - f11;
-            }
-            float f12 = 1.0f - f11;
-            yo0Var.l2 = (int) ((lo0Var.m0 * f11) + (i11 * f12));
-            float f13 = ((i11 - r6) * f12) + f10;
-            ao0Var.setTranslationY(f13);
-            if (z10) {
-                yo0Var.C1.setTranslationY(f13);
-            } else {
-                yo0Var.C1.setTranslationY(f13 + yo0Var.B1.getPaddingTop());
-            }
-        } else {
-            int i12 = lo0Var.n0;
-            if (i12 != -1) {
-                float f14 = 1.0f - f11;
-                yo0Var.l2 = (int) ((lo0Var.o0 * f11) + (i12 * f14));
-                if (!z10) {
-                    f14 = f11;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        ap0 ap0Var;
+        org.telegram.ui.ActionBar.g1 g1Var;
+        ap0 ap0Var2;
+        org.telegram.ui.ActionBar.g1 g1Var2;
+        switch (this.a) {
+            case 0:
+                if (motionEvent.getActionMasked() == 0 && (g1Var = (ap0Var = this.c).F2) != null && g1Var.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        ap0Var.F2.d(true);
+                        break;
+                    }
                 }
-                if (z10) {
-                    ao0Var.setTranslationY(f10 - ((i12 - r6) * f11));
-                } else {
-                    ao0Var.setTranslationY(((r6 - i12) * f14) + f10);
+                break;
+            default:
+                if (motionEvent.getActionMasked() == 0 && (g1Var2 = (ap0Var2 = this.c).F2) != null && g1Var2.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        ap0Var2.F2.d(true);
+                        break;
+                    }
                 }
-            }
+                break;
         }
-        yo0Var.B1.setTopGlowOffset((int) (yo0Var.l2 + yo0Var.p2));
-        yo0Var.m1.setTranslationY(yo0Var.l2 + yo0Var.p2);
-        yo0Var.M1.setTranslationY(yo0Var.l2 + yo0Var.p2);
-        yo0Var.n1.invalidate();
-        yo0Var.F0 = yo0Var.p2;
-        yo0Var.c.invalidate();
-        yo0Var.a1();
-        lo0Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.j1
-    public final void f() {
-        yo0 yo0Var = this.x.q0;
-        eo0 eo0Var = yo0Var.o1;
-        if (eo0Var == null || !eo0Var.m()) {
-            int i7 = yo0Var.J2;
-            org.telegram.messenger.g0.L(20.0f);
-        }
-        yo0Var.n2 = false;
-        int i10 = yo0Var.l2;
-        yo0Var.m2 = i10;
-        yo0Var.B1.setTopGlowOffset(i10);
-        yo0Var.m1.setTranslationY(yo0Var.l2);
-        yo0Var.M1.setTranslationY(yo0Var.l2);
-        yo0Var.B1.setTranslationY(0.0f);
-        yo0Var.C1.setTranslationY(0.0f);
-        yo0Var.a1();
-    }
-
-    @Override // org.telegram.ui.ActionBar.j1
-    public final void g(int i7, boolean z10) {
-        lo0 lo0Var = this.x;
-        yo0 yo0Var = lo0Var.q0;
-        int i10 = yo0Var.m2;
-        int i11 = yo0Var.l2;
-        if (i10 != i11) {
-            lo0Var.l0 = i10;
-            lo0Var.m0 = i11;
-            yo0Var.n2 = true;
-            yo0Var.l2 = i10;
-        } else {
-            lo0Var.l0 = -1;
-        }
-        int i12 = lo0Var.j0;
-        int i13 = lo0Var.k0;
-        if (i12 != i13) {
-            lo0Var.n0 = 0;
-            lo0Var.o0 = 0;
-            yo0Var.n2 = true;
-            if (z10) {
-                lo0Var.o0 = i12 - i13;
-            } else {
-                lo0Var.o0 = 0 - (i12 - i13);
-            }
-            yo0Var.l2 = z10 ? lo0Var.l0 : lo0Var.m0;
-        } else {
-            lo0Var.n0 = -1;
-        }
-        yo0Var.B1.setTopGlowOffset((int) (yo0Var.p2 + yo0Var.l2));
-        yo0Var.m1.setTranslationY(yo0Var.p2 + yo0Var.l2);
-        yo0Var.M1.setTranslationY(yo0Var.p2 + yo0Var.l2);
-        lo0Var.invalidate();
+        return false;
     }
 }

@@ -7,20 +7,20 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class j6 extends v4.s0 {
     public RecyclerView a;
-    public bi.c6 c;
+    public bi.g6 c;
     public boolean d;
     public boolean e;
     public boolean f;
     public float g;
     public float h;
     public final /* synthetic */ n6 j;
-    public final hi.f8 b = new hi.f8(this);
+    public final hi.e8 b = new hi.e8(this);
     public final m i = new m(this, 8);
 
     public j6(n6 n6Var) {
@@ -47,7 +47,7 @@ public final class j6 extends v4.s0 {
                     n6 n6Var = this.j;
                     if (n6Var.C0()) {
                         int i12 = i10 > 0 ? 1 : -1;
-                        e51 B0 = n6Var.B0();
+                        h51 B0 = n6Var.B0();
                         if (this.c.canScrollVertically(i12) && (i12 >= 0 || B0 == null || !B0.canScrollVertically(-1))) {
                             i11 = i12 > 0 ? layoutManager.B() - 1 : 0;
                             if (i11 != -1) {
@@ -66,30 +66,30 @@ public final class j6 extends v4.s0 {
         return false;
     }
 
-    public final void b(bi.c6 c6Var) {
-        bi.c6 c6Var2 = this.c;
-        if (c6Var2 != null) {
-            c6Var2.removeCallbacks(this.i);
+    public final void b(bi.g6 g6Var) {
+        bi.g6 g6Var2 = this.c;
+        if (g6Var2 != null) {
+            g6Var2.removeCallbacks(this.i);
         }
-        this.c = c6Var;
+        this.c = g6Var;
         RecyclerView recyclerView = this.a;
-        if (recyclerView == c6Var) {
+        if (recyclerView == g6Var) {
             return;
         }
-        hi.f8 f8Var = this.b;
+        hi.e8 e8Var = this.b;
         if (recyclerView != null) {
             ArrayList arrayList = recyclerView.x0;
             if (arrayList != null) {
-                arrayList.remove(f8Var);
+                arrayList.remove(e8Var);
             }
             this.a.setOnFlingListener(null);
         }
-        this.a = c6Var;
-        if (c6Var != null) {
-            if (c6Var.getOnFlingListener() != null) {
+        this.a = g6Var;
+        if (g6Var != null) {
+            if (g6Var.getOnFlingListener() != null) {
                 throw new IllegalStateException("An instance of OnFlingListener already set.");
             }
-            this.a.j(f8Var);
+            this.a.j(e8Var);
             this.a.setOnFlingListener(this);
             new Scroller(this.a.getContext(), new DecelerateInterpolator());
             f();
@@ -100,19 +100,19 @@ public final class j6 extends v4.s0 {
         this.e = false;
         this.f = false;
         this.d = false;
-        bi.c6 c6Var = this.c;
-        if (c6Var != null) {
-            c6Var.removeCallbacks(this.i);
+        bi.g6 g6Var = this.c;
+        if (g6Var != null) {
+            g6Var.removeCallbacks(this.i);
         }
     }
 
     public final View d(v4.p0 p0Var) {
-        bi.c6 c6Var;
-        if (this.e || (c6Var = this.c) == null || c6Var.getScrollState() != 0) {
+        bi.g6 g6Var;
+        if (this.e || (g6Var = this.c) == null || g6Var.getScrollState() != 0) {
             return null;
         }
         n6 n6Var = this.j;
-        e51 B0 = n6Var.B0();
+        h51 B0 = n6Var.B0();
         if ((B0 != null && B0.getScrollState() != 0) || !this.d) {
             return null;
         }

@@ -23,13 +23,13 @@ import java.io.RandomAccessFile;
 import java.util.Arrays;
 import org.telegram.messenger.secretmedia.EncryptedFileInputStream;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bb0;
-import org.telegram.ui.Components.f01;
-import org.telegram.ui.Components.iu0;
-import org.telegram.ui.Components.kh0;
+import org.telegram.ui.Components.cb0;
+import org.telegram.ui.Components.h01;
+import org.telegram.ui.Components.lu0;
 import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class tb implements Runnable {
     public Thread a;
@@ -70,12 +70,12 @@ public final class tb implements Runnable {
             int o13 = i0.a.o(wallPaper.settings.third_background_color, ks.e4);
             int i10 = wallPaper.settings.fourth_background_color;
             int o14 = i10 == 0 ? 0 : i0.a.o(i10, ks.e4);
-            int g10 = bb0.g(o11, o12, o13, o14);
-            bb0 bb0Var = new bb0();
-            bb0Var.n(o11, o12, o13, o14);
-            bb0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-            bb0Var.s(wallPaper.settings.intensity, bitmap);
-            bb0Var.draw(canvas);
+            int g10 = cb0.g(o11, o12, o13, o14);
+            cb0 cb0Var = new cb0();
+            cb0Var.n(o11, o12, o13, o14);
+            cb0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+            cb0Var.s(wallPaper.settings.intensity, bitmap);
+            cb0Var.draw(canvas);
             z10 = false;
             i7 = g10;
         }
@@ -88,7 +88,7 @@ public final class tb implements Runnable {
         return createBitmap;
     }
 
-    public final void b(mh0 mh0Var, int i7, int i10, boolean z10, boolean z11) {
+    public final void b(oh0 oh0Var, int i7, int i10, boolean z10, boolean z11) {
         Bitmap createBitmap;
         Canvas canvas;
         BitmapDrawable bitmapDrawable;
@@ -102,11 +102,11 @@ public final class tb implements Runnable {
             createBitmap = Bitmap.createBitmap(i7, i10, Bitmap.Config.ARGB_8888);
             canvas = new Canvas(createBitmap);
         }
-        mh0Var.b();
-        Bitmap createBitmap2 = Bitmap.createBitmap(mh0Var.b, mh0Var.c, Bitmap.Config.ARGB_8888);
-        mh0Var.D0 = z10 ? mh0Var.e[0] - 1 : 0;
-        mh0Var.a(createBitmap2);
-        mh0Var.c();
+        oh0Var.b();
+        Bitmap createBitmap2 = Bitmap.createBitmap(oh0Var.b, oh0Var.c, Bitmap.Config.ARGB_8888);
+        oh0Var.D0 = z10 ? oh0Var.e[0] - 1 : 0;
+        oh0Var.a(createBitmap2);
+        oh0Var.c();
         canvas.save();
         if (!z10 || !z11) {
             canvas.scale(createBitmap2.getWidth() / i7, createBitmap2.getHeight() / i10, i7 / 2.0f, i10 / 2.0f);
@@ -120,7 +120,7 @@ public final class tb implements Runnable {
             canvas.drawBitmap(createBitmap2, 0.0f, 0.0f, paint);
             bitmapDrawable = new BitmapDrawable(createBitmap);
         }
-        mh0Var.C(false);
+        oh0Var.C(false);
         createBitmap2.recycle();
         c(bitmapDrawable);
     }
@@ -255,7 +255,7 @@ public final class tb implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void d() {
-        f01 f01Var;
+        h01 h01Var;
         boolean z10;
         boolean z11;
         Bitmap bitmap;
@@ -341,7 +341,7 @@ public final class tb implements Runnable {
         MediaMetadataRetriever mediaMetadataRetriever;
         bg.f fVar;
         boolean z52;
-        org.telegram.ui.Components.b6 b6Var;
+        org.telegram.ui.Components.c6 c6Var;
         int i17;
         int i18;
         boolean z53;
@@ -367,8 +367,8 @@ public final class tb implements Runnable {
         bg.f fVar3;
         int i24;
         int i25;
-        mh0 mh0Var;
-        mh0 mh0Var2;
+        oh0 oh0Var;
+        oh0 oh0Var2;
         byte[] bArr3;
         boolean z61;
         int i26;
@@ -400,12 +400,12 @@ public final class tb implements Runnable {
                 if (i31 == 5) {
                     try {
                         sb sbVar2 = this.c;
-                        f01Var = new f01(sbVar2.p, (t5) sbVar2.i.i);
+                        h01Var = new h01(sbVar2.p, (t5) sbVar2.i.i);
                     } catch (Throwable th3) {
                         a8.f(th3);
-                        f01Var = null;
+                        h01Var = null;
                     }
-                    c(f01Var);
+                    c(h01Var);
                     return;
                 }
                 boolean z66 = false;
@@ -595,7 +595,7 @@ public final class tb implements Runnable {
                     }
                     try {
                         if (str8 != null) {
-                            mh0Var2 = "🎰".equals(str8) ? new iu0(str8, i21, i20) : new kh0(str8, i21, i20);
+                            oh0Var2 = "🎰".equals(str8) ? new lu0(str8, i21, i20) : new mh0(str8, i21, i20);
                             i24 = i20;
                             i25 = i21;
                         } else {
@@ -630,10 +630,10 @@ public final class tb implements Runnable {
                                     }
                                     if (z60) {
                                     }
-                                    mh0Var2 = mh0Var;
+                                    oh0Var2 = oh0Var;
                                     if (z58) {
                                     }
-                                    b(mh0Var2, i24, i25, z58, z56);
+                                    b(oh0Var2, i24, i25, z58, z56);
                                 }
                             } catch (Exception e12) {
                                 e = e12;
@@ -684,13 +684,13 @@ public final class tb implements Runnable {
                                         File file = this.c.p;
                                         i24 = i20;
                                         i25 = i21;
-                                        mh0Var = new mh0(file, ec.o(file), i25, i24, fVar3, z59, i23, z68);
+                                        oh0Var = new oh0(file, ec.o(file), i25, i24, fVar3, z59, i23, z68);
                                     } else {
                                         i24 = i20;
                                         i25 = i21;
-                                        mh0Var = new mh0(this.c.p, null, i25, i24, fVar3, z59, i23, z68);
+                                        oh0Var = new oh0(this.c.p, null, i25, i24, fVar3, z59, i23, z68);
                                     }
-                                    mh0Var2 = mh0Var;
+                                    oh0Var2 = oh0Var;
                                 }
                             }
                             z61 = false;
@@ -711,13 +711,13 @@ public final class tb implements Runnable {
                             }
                             if (z60) {
                             }
-                            mh0Var2 = mh0Var;
+                            oh0Var2 = oh0Var;
                         }
                         if (!z58 || z55) {
-                            b(mh0Var2, i24, i25, z58, z56);
+                            b(oh0Var2, i24, i25, z58, z56);
                         } else {
-                            mh0Var2.K(i22);
-                            c(mh0Var2);
+                            oh0Var2.K(i22);
+                            c(oh0Var2);
                         }
                     } catch (Throwable th5) {
                         randomAccessFile = r22;
@@ -1450,9 +1450,9 @@ public final class tb implements Runnable {
                                                         bitmap2 = MediaStore.Images.Thumbnails.getThumbnail(t0.b.getContentResolver(), l11.longValue(), 1, options);
                                                     } else if (l11.longValue() == 0) {
                                                         try {
-                                                            org.telegram.ui.Components.b6 b6Var2 = new org.telegram.ui.Components.b6(file2, true, 0L, 0, null, null, null, 0L, 0, true);
-                                                            bitmap2 = b6Var2.q(0L, true);
-                                                            b6Var2.u();
+                                                            org.telegram.ui.Components.c6 c6Var2 = new org.telegram.ui.Components.c6(file2, true, 0L, 0, null, null, null, 0L, 0, true);
+                                                            bitmap2 = c6Var2.q(0L, true);
+                                                            c6Var2.u();
                                                         } catch (Throwable th23) {
                                                             th = th23;
                                                             file2 = file2;
@@ -2030,24 +2030,24 @@ public final class tb implements Runnable {
                             int i45 = this.c.n;
                             int i46 = i45 > 1 ? i45 : i44;
                             sb sbVar8 = this.c;
-                            org.telegram.ui.Components.b6 b6Var3 = new org.telegram.ui.Components.b6(sbVar8.p, z51, z50 ? 0L : j10, sbVar8.a, z50 ? null : document2, (document2 != null || z50) ? null : sbVar8.i, sbVar8.j, j3, sbVar8.o, false, 0, 0, fVar, i46, !"gl".equals(sbVar8.f));
+                            org.telegram.ui.Components.c6 c6Var3 = new org.telegram.ui.Components.c6(sbVar8.p, z51, z50 ? 0L : j10, sbVar8.a, z50 ? null : document2, (document2 != null || z50) ? null : sbVar8.i, sbVar8.j, j3, sbVar8.o, false, 0, 0, fVar, i46, !"gl".equals(sbVar8.f));
                             z52 = z51;
                             boolean z83 = (document2 != null && "video/webm".equals(document2.mime_type)) || fj.N4(document2) || ec.I(this.c.f);
-                            b6Var3.o0 = z83;
+                            c6Var3.o0 = z83;
                             if (z83) {
-                                b6Var3.b = false;
-                                b6Var3.w0 = true;
+                                c6Var3.b = false;
+                                c6Var3.w0 = true;
                             }
-                            b6Var = b6Var3;
+                            c6Var = c6Var3;
                             if (!z52) {
-                                b6Var.A(z47);
+                                c6Var.A(z47);
                                 Thread.interrupted();
-                                c(b6Var);
+                                c(c6Var);
                                 return;
                             }
-                            Bitmap q10 = b6Var.q(0L, false);
+                            Bitmap q10 = c6Var.q(0L, false);
                             Thread.interrupted();
-                            b6Var.u();
+                            c6Var.u();
                             if (q10 == null) {
                                 c(null);
                                 return;
@@ -2072,13 +2072,13 @@ public final class tb implements Runnable {
                             int i48 = this.c.n;
                             int i49 = i48 <= 1 ? i48 : i47;
                             sb sbVar9 = this.c;
-                            b6Var = new org.telegram.ui.Components.b6(sbVar9.p, z84, 0L, sbVar9.a, !z50 ? null : sbVar9.i.i, null, null, j3, sbVar9.o, false, i17, i18, fVar, i49, true);
+                            c6Var = new org.telegram.ui.Components.c6(sbVar9.p, z84, 0L, sbVar9.a, !z50 ? null : sbVar9.i.i, null, null, j3, sbVar9.o, false, i17, i18, fVar, i49, true);
                             TLRPC.Document document3 = this.c.i.i;
                             z53 = !(document3 == null && "video/webm".equals(document3.mime_type)) || fj.N4(this.c.i.i) || ec.I(this.c.f);
-                            b6Var.o0 = z53;
+                            c6Var.o0 = z53;
                             if (z53) {
-                                b6Var.b = false;
-                                b6Var.w0 = true;
+                                c6Var.b = false;
+                                c6Var.w0 = true;
                             }
                             if (!z52) {
                             }
@@ -2094,11 +2094,11 @@ public final class tb implements Runnable {
                     if (i482 <= 1) {
                     }
                     sb sbVar92 = this.c;
-                    b6Var = new org.telegram.ui.Components.b6(sbVar92.p, z84, 0L, sbVar92.a, !z50 ? null : sbVar92.i.i, null, null, j3, sbVar92.o, false, i17, i18, fVar, i49, true);
+                    c6Var = new org.telegram.ui.Components.c6(sbVar92.p, z84, 0L, sbVar92.a, !z50 ? null : sbVar92.i.i, null, null, j3, sbVar92.o, false, i17, i18, fVar, i49, true);
                     TLRPC.Document document32 = this.c.i.i;
                     if (document32 == null && "video/webm".equals(document32.mime_type)) {
                     }
-                    b6Var.o0 = z53;
+                    c6Var.o0 = z53;
                     if (z53) {
                     }
                     if (!z52) {

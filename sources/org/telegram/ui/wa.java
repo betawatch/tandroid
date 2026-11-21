@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class wa extends org.telegram.ui.Components.so {
+public final class wa extends org.telegram.ui.Components.uo {
     public final /* synthetic */ int s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h2 w;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g2 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wa(int i7, Context context, org.telegram.ui.ActionBar.h2 h2Var) {
+    public wa(int i7, Context context, org.telegram.ui.ActionBar.g2 g2Var) {
         super(context);
         this.s = i7;
-        this.w = h2Var;
+        this.w = g2Var;
         setOrientation(1);
     }
 

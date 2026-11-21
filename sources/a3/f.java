@@ -5,7 +5,7 @@ import a8.u6;
 import a8.v6;
 import ab.c0;
 import ab.o0;
-import ai.n2;
+import ai.p2;
 import ai.z;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -23,15 +23,15 @@ import androidx.fragment.app.j0;
 import androidx.fragment.app.u0;
 import androidx.lifecycle.e0;
 import bi.a5;
-import bi.f3;
-import bi.h3;
+import bi.b1;
+import bi.c3;
+import bi.e5;
 import bi.j3;
-import bi.p6;
+import bi.l3;
+import bi.n3;
 import bi.t0;
-import bi.u7;
-import bi.w4;
-import bi.x0;
-import bi.y2;
+import bi.t6;
+import bi.y7;
 import c8.ke;
 import c8.m0;
 import c8.n0;
@@ -45,10 +45,10 @@ import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.c51;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -59,11 +59,11 @@ public final /* synthetic */ class f implements Runnable {
         this.b = lVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0093, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0099, code lost:
     
         r8 = org.telegram.ui.Dictation.DictationAsr.nativeFileNext(r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x01a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01b1, code lost:
     
         r7 = org.telegram.ui.Dictation.DictationAsr.nativeSessionFinish(r3);
         r2.a(r7);
@@ -79,31 +79,32 @@ public final /* synthetic */ class f implements Runnable {
         long nativeFileNew;
         String nativeFileNext;
         ai.w wVar = (ai.w) this.b;
-        long j3 = DictationAsr.j(wVar.b);
-        long j10 = 0;
-        if (j3 == 0) {
+        long k10 = DictationAsr.k(wVar.b);
+        long j3 = 0;
+        if (k10 == 0) {
             wVar.b(wVar.o);
             return;
         }
-        DictationAsr.J();
+        DictationAsr.M();
         z zVar = wVar.a;
         synchronized (zVar.a) {
             z10 = zVar.d;
         }
         int i7 = 0;
         if (!z10) {
-            String str = wVar.c.split(",")[0];
-            nativeSessionNew = DictationAsr.nativeSessionNew(j3, wVar.c, str, bz.o() == 0 ? 2 : 4);
+            String a10 = wVar.b.a(wVar.c);
+            String str = a10.split(",")[0];
+            nativeSessionNew = DictationAsr.nativeSessionNew(k10, a10, str, bz.o() == 0 ? 2 : 4);
             StringBuilder sb2 = new StringBuilder("tinyasr: session ");
-            sb2.append(wVar.b.a);
-            sb2.append(" in ");
-            e2.r(sb2, wVar.c, " (from ", str, "), audio from ");
+            e2.r(sb2, wVar.b.a, " in ", a10, " (from ");
+            sb2.append(str);
+            sb2.append("), audio from ");
             sb2.append(0);
             sb2.append(" ms");
             Log.d("Dictation", sb2.toString());
             long elapsedRealtime = SystemClock.elapsedRealtime();
             int i10 = 0;
-            long j11 = 0;
+            long j10 = 0;
             while (true) {
                 try {
                     if (wVar.l) {
@@ -117,7 +118,7 @@ public final /* synthetic */ class f implements Runnable {
                         long elapsedRealtime2 = SystemClock.elapsedRealtime();
                         nativeSessionPush = DictationAsr.nativeSessionPush(nativeSessionNew, b10, 0, b10.length);
                         wVar.a(nativeSessionPush);
-                        j11 += SystemClock.elapsedRealtime() - elapsedRealtime2;
+                        j10 += SystemClock.elapsedRealtime() - elapsedRealtime2;
                         wVar.m = min;
                         i10 = min;
                     } else if (z11) {
@@ -128,12 +129,12 @@ public final /* synthetic */ class f implements Runnable {
                 } catch (InterruptedException unused) {
                 } catch (Throwable th2) {
                     DictationAsr.nativeSessionFree(nativeSessionNew);
-                    DictationAsr.M(wVar.b);
+                    DictationAsr.Q(wVar.b);
                     throw th2;
                 }
             }
             DictationAsr.nativeSessionFree(nativeSessionNew);
-            DictationAsr.M(wVar.b);
+            DictationAsr.Q(wVar.b);
             wVar.b(wVar.o);
             return;
         }
@@ -147,16 +148,16 @@ public final /* synthetic */ class f implements Runnable {
             int i11 = i7 * 2;
             fArr[i7] = ((short) ((b11[i11] & 255) | (b11[i11 + 1] << 8))) / 32768.0f;
             i7++;
-            j10 = j10;
+            j3 = j3;
         }
-        long j12 = j10;
-        nativeFileNew = DictationAsr.nativeFileNew(j3, fArr, wVar.c, bz.o() == 0 ? 2 : 4);
+        long j11 = j3;
+        nativeFileNew = DictationAsr.nativeFileNew(k10, fArr, wVar.b.a(wVar.c), bz.o() == 0 ? 2 : 4);
         try {
-            if (nativeFileNew == j12) {
-                if (nativeFileNew != j12) {
+            if (nativeFileNew == j11) {
+                if (nativeFileNew != j11) {
                     DictationAsr.nativeFileFree(nativeFileNew);
                 }
-                DictationAsr.M(wVar.b);
+                DictationAsr.Q(wVar.b);
                 while (!wVar.k && !wVar.l) {
                     Thread.sleep(10L);
                 }
@@ -164,16 +165,16 @@ public final /* synthetic */ class f implements Runnable {
                 while (!wVar.l && nativeFileNext != null) {
                     try {
                         try {
-                            DictationAsr.m(wVar.e, new JSONArray(nativeFileNext), null);
+                            DictationAsr.n(wVar.e, new JSONArray(nativeFileNext), null);
                         } catch (Exception e10) {
                             Log.e("Dictation", "tinyasr: words " + nativeFileNext, e10);
                         }
                         wVar.b(null);
                     } catch (Throwable th3) {
-                        if (nativeFileNew != j12) {
+                        if (nativeFileNew != j11) {
                             DictationAsr.nativeFileFree(nativeFileNew);
                         }
-                        DictationAsr.M(wVar.b);
+                        DictationAsr.Q(wVar.b);
                         while (!wVar.k && !wVar.l) {
                             try {
                                 Thread.sleep(10L);
@@ -185,10 +186,10 @@ public final /* synthetic */ class f implements Runnable {
                     }
                 }
                 Log.d("Dictation", "tinyasr: file pass in " + wVar.c + ", " + (length / 16) + " ms of audio in " + (SystemClock.elapsedRealtime() - elapsedRealtime3) + " ms");
-                if (nativeFileNew != j12) {
+                if (nativeFileNew != j11) {
                     DictationAsr.nativeFileFree(nativeFileNew);
                 }
-                DictationAsr.M(wVar.b);
+                DictationAsr.Q(wVar.b);
                 while (!wVar.k && !wVar.l) {
                     Thread.sleep(10L);
                 }
@@ -370,7 +371,7 @@ public final /* synthetic */ class f implements Runnable {
                 g0.I3((EditText) this.b);
                 return;
             case 8:
-                DictationAsr.Y((ai.t) ((a0) this.b).b, new n2());
+                DictationAsr.f0((ai.t) ((a0) this.b).b, new p2());
                 return;
             case 9:
                 ((androidx.activity.l) this.b).invalidateOptionsMenu();
@@ -447,56 +448,56 @@ public final /* synthetic */ class f implements Runnable {
                 ((t0) this.b).onBackPressed();
                 return;
             case 20:
-                x0 x0Var = (x0) this.b;
-                Drawable drawable = x0Var.O;
-                if (drawable != null && !x0Var.Q) {
+                b1 b1Var = (b1) this.b;
+                Drawable drawable = b1Var.Q;
+                if (drawable != null && !b1Var.S) {
                     drawable.setAlpha(ks.e4);
                 }
-                x0Var.a.setAlpha(1.0f);
-                if (x0Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) x0Var.getParent()).removeView(x0Var);
+                b1Var.a.setAlpha(1.0f);
+                if (b1Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) b1Var.getParent()).removeView(b1Var);
                 }
-                Runnable runnable2 = x0Var.P;
+                Runnable runnable2 = b1Var.R;
                 if (runnable2 != null) {
                     runnable2.run();
                     return;
                 }
                 return;
             case 21:
-                z41 z41Var = ((j3) this.b).U1;
-                if (z41Var != null) {
-                    z41Var.O(false);
+                c51 c51Var = ((n3) this.b).U1;
+                if (c51Var != null) {
+                    c51Var.O(false);
                     return;
                 }
                 return;
             case 22:
-                ((y2) this.b).c();
+                ((c3) this.b).c();
                 return;
             case 23:
-                ((f3) this.b).invalidateSelf();
+                ((j3) this.b).invalidateSelf();
                 return;
             case 24:
-                h3 h3Var = (h3) this.b;
-                ec ecVar = h3Var.e;
+                l3 l3Var = (l3) this.b;
+                ec ecVar = l3Var.e;
                 if (ecVar != null) {
                     ecVar.d();
-                    h3Var.invalidateSelf();
+                    l3Var.invalidateSelf();
                     return;
                 }
                 return;
             case 25:
-                ((w4) this.b).run();
+                ((a5) this.b).run();
                 return;
             case 26:
-                EditTextBoldCursor editTextBoldCursor = ((a5) this.b).o1;
+                EditTextBoldCursor editTextBoldCursor = ((e5) this.b).o1;
                 editTextBoldCursor.requestFocus();
                 g0.I3(editTextBoldCursor);
                 return;
             case 27:
-                ((p6) this.b).p();
+                ((t6) this.b).p();
                 return;
             case 28:
-                ((u7) this.b).c.a(Boolean.TRUE);
+                ((y7) this.b).c.a(Boolean.TRUE);
                 return;
             default:
                 ((c1.f) this.b).f().a(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));

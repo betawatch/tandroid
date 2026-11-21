@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import zd.l;
 import zd.m;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class h {
     public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "head$volatile");
@@ -44,7 +44,7 @@ public class h {
                 k kVar = k.a;
                 if (andDecrement > 0) {
                     d.g.set(dVar, null);
-                    mVar.C(kVar, mVar.c, new b(new c1.b(dVar, cVar), 2));
+                    mVar.C(kVar, mVar.c, new b(new c1.c(dVar, cVar), 2));
                     return;
                 }
                 AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d;
@@ -95,7 +95,7 @@ public class h {
                             }
                         }
                         d.g.set(dVar, null);
-                        mVar.C(kVar, mVar.c, new b(new c1.b(dVar, cVar), 2));
+                        mVar.C(kVar, mVar.c, new b(new c1.c(dVar, cVar), 2));
                         return;
                     }
                 }

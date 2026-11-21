@@ -1,388 +1,437 @@
 package ki;
 
-import android.security.keystore.KeyGenParameterSpec;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.Pair;
-import j$.util.Collection;
-import j$.util.stream.Collectors;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.security.KeyStore;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.ma;
+import di.r9;
+import fi.l5;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.GCMParameterSpec;
-import org.json.JSONObject;
-import org.telegram.messenger.a8;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
-import org.telegram.messenger.n5;
+import org.telegram.messenger.j6;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.sr;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.b9;
+import org.telegram.ui.Components.cb0;
+import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.yb0;
+import org.telegram.ui.cx;
+import org.telegram.ui.ww;
+import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class l1 {
-    public final int a;
-    public final long b;
-    public final long c;
-    public final boolean d;
-    public String e;
+public final /* synthetic */ class l1 implements ww, org.telegram.ui.ActionBar.q1, ResultCallback, qi.m {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public l1(int i7, long j3, long j10, boolean z10) {
-        this.a = i7;
-        this.b = j10;
+    public /* synthetic */ l1(int i7, int i10, long j3, Object obj, Object obj2) {
+        this.a = i10;
+        this.d = obj;
         this.c = j3;
-        this.d = z10;
+        this.e = obj2;
+        this.b = i7;
     }
 
-    public static File b() {
-        try {
-            File filesDir = org.telegram.messenger.t0.b.getFilesDir();
-            if (filesDir != null) {
-                File file = new File(filesDir, "apps_storage/");
-                file.mkdirs();
-                if (filesDir.exists() || filesDir.mkdirs()) {
-                    if (filesDir.canWrite()) {
-                        return file;
-                    }
-                }
-            }
-        } catch (Exception unused) {
-        }
-        return new File("");
+    @Override // org.telegram.ui.ww
+    public /* synthetic */ boolean G() {
+        return false;
     }
 
-    public static SecretKey g() {
-        KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-        keyStore.load(null);
-        if (!keyStore.containsAlias("MiniAppsKey")) {
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
-            keyGenerator.init(new KeyGenParameterSpec.Builder("MiniAppsKey", 3).setBlockModes("GCM").setEncryptionPaddings("NoPadding").setUserAuthenticationRequired(false).build());
-            keyGenerator.generateKey();
-        }
-        return (SecretKey) keyStore.getKey("MiniAppsKey", null);
+    @Override // org.telegram.ui.ww
+    public /* synthetic */ boolean P(cx cxVar) {
+        return false;
     }
 
-    public static HashMap i() {
-        HashMap hashMap = new HashMap();
-        try {
-            File file = new File(b(), "secure_config.json");
-            FileInputStream fileInputStream = new FileInputStream(file);
-            try {
-                byte[] bArr = new byte[(int) file.length()];
-                fileInputStream.read(bArr);
-                fileInputStream.close();
-                JSONObject jSONObject = new JSONObject(new String(bArr));
-                Iterator<String> keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    String next = keys.next();
-                    JSONObject jSONObject2 = jSONObject.getJSONObject(next);
-                    k1 k1Var = new k1();
-                    k1Var.a = next;
-                    k1Var.b = jSONObject2.getLong("user_id");
-                    k1Var.c = jSONObject2.getString("user_name");
-                    k1Var.d = jSONObject2.getLong("created_at");
-                    k1Var.e = jSONObject2.getLong("edited_at");
-                    hashMap.put(next, k1Var);
-                }
-                return hashMap;
-            } catch (OutOfMemoryError e10) {
-                a8.g(e10, true);
-                throw new RuntimeException("QUOTA_EXCEEDED");
-            }
-        } catch (Exception e11) {
-            a8.g(e11, true);
-            return hashMap;
-        }
-    }
-
-    public static void k(HashMap hashMap) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            for (Map.Entry entry : hashMap.entrySet()) {
-                JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("user_id", ((k1) entry.getValue()).b);
-                jSONObject2.put("user_name", ((k1) entry.getValue()).c);
-                jSONObject2.put("created_at", ((k1) entry.getValue()).d);
-                jSONObject2.put("edited_at", ((k1) entry.getValue()).e);
-                jSONObject.put((String) entry.getKey(), jSONObject2);
-            }
-            File file = new File(b(), "secure_config.json");
-            byte[] bytes = jSONObject.toString().getBytes();
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            fileOutputStream.write(bytes);
-            fileOutputStream.close();
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
-    }
-
-    public final byte[] a(File file) {
-        byte[] bArr;
-        FileInputStream fileInputStream = new FileInputStream(file);
-        int length = (int) file.length();
-        boolean z10 = this.d;
-        if (z10) {
-            int read = fileInputStream.read();
-            bArr = new byte[read];
-            length = (length - 1) - read;
-            fileInputStream.read(bArr);
-        } else {
-            bArr = null;
-        }
-        try {
-            byte[] bArr2 = new byte[length];
-            fileInputStream.read(bArr2);
-            fileInputStream.close();
-            if (!z10) {
-                return bArr2;
-            }
-            try {
-                Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-                cipher.init(2, g(), new GCMParameterSpec(128, bArr));
-                return cipher.doFinal(bArr2);
-            } catch (Exception e10) {
-                a8.g(e10, true);
-                l(file, "{}".getBytes());
-                throw new RuntimeException("UNKNOWN_ERROR");
-            }
-        } catch (OutOfMemoryError e11) {
-            a8.g(e11, true);
-            throw new RuntimeException("QUOTA_EXCEEDED");
-        }
-    }
-
-    public final File c() {
-        long j3;
-        if (this.d && TextUtils.isEmpty(this.e)) {
-            HashMap i7 = i();
-            Iterator it = i7.entrySet().iterator();
-            while (true) {
-                boolean hasNext = it.hasNext();
-                j3 = this.c;
-                if (!hasNext) {
-                    break;
-                }
-                Map.Entry entry = (Map.Entry) it.next();
-                if (((k1) entry.getValue()).b == j3) {
-                    this.e = (String) entry.getKey();
-                    break;
-                }
-            }
-            if (TextUtils.isEmpty(this.e)) {
-                String uuid = UUID.randomUUID().toString();
-                this.e = uuid;
-                k1 k1Var = new k1();
-                k1Var.a = uuid;
-                k1Var.b = j3;
-                k1Var.c = n5.m(j10.i(this.a).f());
-                long currentTimeMillis = System.currentTimeMillis();
-                k1Var.e = currentTimeMillis;
-                k1Var.d = currentTimeMillis;
-                i7.put(this.e, k1Var);
-                k(i7);
-            }
-        }
-        return d(this.e);
-    }
-
-    public final File d(String str) {
-        File b10 = b();
-        StringBuilder sb2 = new StringBuilder();
+    @Override // qi.m
+    public void a(ji.l lVar) {
+        boolean z10;
+        qi.i iVar = (qi.i) this.d;
         long j3 = this.c;
-        boolean z10 = this.d;
-        Object obj = str;
-        if (!z10) {
-            obj = Long.valueOf(j3);
-        }
-        sb2.append(obj);
-        sb2.append("_");
-        long j10 = this.b;
-        sb2.append(j10);
-        sb2.append(z10 ? "_s" : "");
-        File file = new File(b10, sb2.toString());
-        File b11 = b();
-        StringBuilder sb3 = new StringBuilder();
-        sb3.append(j10);
-        sb3.append(z10 ? "_s" : "");
-        File file2 = new File(b11, sb3.toString());
-        if (!file.exists() && file2.exists()) {
-            file2.renameTo(file);
-            return file;
-        }
-        if (z10) {
-            File file3 = new File(b(), j3 + "_" + j10 + "_s");
-            if (!file.exists() && file3.exists()) {
-                file3.renameTo(file);
-            }
-        }
-        return file;
-    }
-
-    public final JSONObject e(File file) {
-        if (!file.exists() || file.length() > 5242880) {
-            return new JSONObject();
-        }
-        try {
-            return new JSONObject(new String(a(file)));
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return new JSONObject();
-        }
-    }
-
-    public final Pair f(String str) {
-        JSONObject e10 = e(c());
-        String optString = e10.optString(str);
-        boolean z10 = false;
-        if (this.d && optString == null && !e10.keys().hasNext()) {
-            HashSet hashSet = new HashSet();
-            for (int i7 = 0; i7 < 4; i7++) {
-                j10 i10 = j10.i(i7);
-                if (i10.p()) {
-                    hashSet.add(Long.valueOf(i10.e()));
+        qi.f fVar = (qi.f) this.e;
+        int i7 = this.b;
+        synchronized (qi.j.d) {
+            try {
+                Spannable spannable = (Spannable) iVar.a.get();
+                if (spannable != null && iVar.b.get(Long.valueOf(j3)) == fVar) {
+                    if (!(spannable instanceof qi.d) || ((qi.d) spannable).a) {
+                        z10 = false;
+                    } else {
+                        qi.j.a(spannable, i7, (com.google.android.gms.internal.play_billing.s0) lVar.b);
+                        z10 = true;
+                    }
+                    org.telegram.messenger.g0.g3(new org.telegram.messenger.voip.p(iVar, j3, fVar, i7, z10, lVar));
                 }
+            } finally {
             }
-            Iterator it = ((Set) Collection.-EL.stream(i().values()).filter(new i1(hashSet, 0)).collect(Collectors.toSet())).iterator();
-            while (true) {
-                if (!it.hasNext()) {
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        int i10 = this.a;
+        Object obj = this.e;
+        int i11 = this.b;
+        long j3 = this.c;
+        Object obj2 = this.d;
+        int i12 = 0;
+        switch (i10) {
+            case 1:
+                Runnable runnable = (Runnable) obj;
+                TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
+                tL_messages_toggleBotInAttachMenu.bot = mp.u1(i11).q1(j3);
+                tL_messages_toggleBotInAttachMenu.enabled = false;
+                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new b2(i11, i12), 66);
+                ((TLRPC.TL_attachMenuBot) obj2).show_in_side_menu = false;
+                ks.f(i11).k(ks.Z4, new Object[0]);
+                ri.d0(i11).n2(ri.f2, j3);
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
-                try {
-                    File d = d(((k1) it.next()).a);
-                    if (d.exists() && e(d).has(str)) {
-                        z10 = true;
-                        break;
+                break;
+            default:
+                EditText editText = (EditText) obj2;
+                EditText editText2 = (EditText) obj;
+                if (editText.getText() != null) {
+                    if (j3 <= 0) {
+                        long j10 = -j3;
+                        TLRPC.Chat O0 = mp.u1(i11).O0(Long.valueOf(j10));
+                        String obj3 = editText.getText().toString();
+                        String str = O0.title;
+                        if (str != null && str.equals(obj3)) {
+                            t1Var.dismiss();
+                            break;
+                        } else {
+                            O0.title = obj3;
+                            ks.f(i11).k(2, 16);
+                            mp.u1(i11).C(j10, obj3, null);
+                            ks.e().k(ks.S4, 3, Long.valueOf(j3));
+                        }
+                    } else {
+                        TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(j3));
+                        String obj4 = editText.getText().toString();
+                        String obj5 = editText2.getText().toString();
+                        String str2 = c22.first_name;
+                        String str3 = c22.last_name;
+                        if (str2 == null) {
+                            str2 = "";
+                        }
+                        if (str3 == null) {
+                            str3 = "";
+                        }
+                        if (str2.equals(obj4) && str3.equals(obj5)) {
+                            t1Var.dismiss();
+                            break;
+                        } else {
+                            TL_account.updateProfile updateprofile = new TL_account.updateProfile();
+                            updateprofile.flags = 3;
+                            updateprofile.first_name = obj4;
+                            c22.first_name = obj4;
+                            updateprofile.last_name = obj5;
+                            c22.last_name = obj5;
+                            TLRPC.User c23 = mp.u1(i11).c2(Long.valueOf(j10.i(i11).e()));
+                            if (c23 != null) {
+                                c23.first_name = updateprofile.first_name;
+                                c23.last_name = updateprofile.last_name;
+                            }
+                            j10.i(i11).v(true);
+                            ks.f(i11).k(46, new Object[0]);
+                            ks.f(i11).k(2, 1);
+                            ConnectionsManager.getInstance(i11).sendRequest(updateprofile, new l5(18));
+                            ks.e().k(ks.S4, 3, Long.valueOf(j3));
+                        }
                     }
-                } catch (Exception e11) {
-                    a8.g(e11, true);
+                    t1Var.dismiss();
+                    break;
                 }
-            }
+                break;
         }
-        return new Pair(optString, Boolean.valueOf(z10));
     }
 
-    public final ArrayList h(String str) {
-        if (e(c()).keys().hasNext()) {
-            throw new RuntimeException("STORAGE_NOT_EMPTY");
+    @Override // org.telegram.tgnet.ResultCallback
+    public void onComplete(Object obj) {
+        l01 l01Var = (l01) this.d;
+        org.telegram.ui.Components.mp mpVar = (org.telegram.ui.Components.mp) this.e;
+        Pair pair = (Pair) obj;
+        if (pair == null || ((Long) pair.first).longValue() != this.c) {
+            return;
         }
-        ArrayList arrayList = new ArrayList();
-        HashSet hashSet = new HashSet();
-        for (int i7 = 0; i7 < 4; i7++) {
-            j10 i10 = j10.i(i7);
-            if (i10.p()) {
-                hashSet.add(Long.valueOf(i10.e()));
+        Drawable drawable = mpVar.b;
+        if (drawable instanceof cb0) {
+            cb0 cb0Var = (cb0) drawable;
+            cb0Var.s(this.b >= 0 ? 100 : -100, l01.e((Bitmap) pair.second));
+            cb0Var.t(l01Var.M);
+        }
+        l01Var.invalidate();
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.k.a(this, th2);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v18 */
+    /* JADX WARN: Type inference failed for: r4v3 */
+    /* JADX WARN: Type inference failed for: r4v4, types: [boolean, int] */
+    @Override // org.telegram.ui.ww
+    public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
+        int i11;
+        String str;
+        TLRPC.User user;
+        TLRPC.Chat chat;
+        ?? r42;
+        TLRPC.Chat chat2;
+        cx cxVar2 = (cx) this.d;
+        final TL_bots.BotVerifierSettings botVerifierSettings = (TL_bots.BotVerifierSettings) this.e;
+        if (arrayList.isEmpty()) {
+            return false;
+        }
+        final long j3 = ((sr) arrayList.get(0)).a;
+        Activity parentActivity = cxVar2.getParentActivity();
+        final int i12 = this.b;
+        final bi.v3 v3Var = new bi.v3(y91Var, cxVar2, j3, i12);
+        if (parentActivity == null) {
+            return true;
+        }
+        mp u12 = mp.u1(i12);
+        final long j10 = this.c;
+        u12.c2(Long.valueOf(j10));
+        int i13 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
+        if (i13 >= 0) {
+            TLRPC.User c22 = mp.u1(i12).c2(Long.valueOf(j3));
+            str = o10.l(c22);
+            i11 = i13;
+            if (c22.bot_verification_icon == botVerifierSettings.icon) {
+                o1.a(parentActivity, i12, j10, j3, botVerifierSettings, v3Var);
+                return true;
             }
+            v3Var = v3Var;
+            r42 = 1;
+            chat = null;
+            user = c22;
+            chat2 = c22;
+        } else {
+            i11 = i13;
+            TLRPC.Chat O0 = mp.u1(i12).O0(Long.valueOf(-j3));
+            str = O0 == null ? "" : O0.title;
+            if (O0.bot_verification_icon == botVerifierSettings.icon) {
+                o1.a(parentActivity, i12, j10, j3, botVerifierSettings, v3Var);
+                return true;
+            }
+            parentActivity = parentActivity;
+            user = null;
+            chat = O0;
+            r42 = 1;
+            chat2 = O0;
         }
-        for (k1 k1Var : (Set) Collection.-EL.stream(i().values()).filter(new i1(hashSet, 1)).collect(Collectors.toSet())) {
-            try {
-                File d = d(k1Var.a);
-                if (d.exists() && e(d).has(str)) {
-                    arrayList.add(k1Var);
+        final org.telegram.ui.ActionBar.w2 j11 = n10.j(parentActivity, r42, r42, null);
+        LinearLayout f10 = org.telegram.messenger.f3.f(parentActivity, r42);
+        TLRPC.User user2 = user;
+        TLRPC.Chat chat3 = chat;
+        f10.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
+        f10.setClipChildren(false);
+        f10.setClipToPadding(false);
+        FrameLayout frameLayout = new FrameLayout(parentActivity);
+        int L = org.telegram.messenger.g0.L(28.0f);
+        int L2 = org.telegram.messenger.g0.L(28.0f);
+        int i14 = m6.Ti;
+        ShapeDrawable e02 = m6.e0(L, L2, m6.x0(null, i14, false));
+        p6 M = t6.M(i14);
+        frameLayout.setBackground(e02);
+        t6.j(frameLayout, e02, M, null, null);
+        q9 q9Var = new q9(parentActivity);
+        q9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
+        b9 b9Var = new b9((h6) null);
+        b9Var.l(chat2);
+        q9Var.f(chat2, b9Var);
+        frameLayout.addView(q9Var, ma.e(28, 28, 51));
+        q9 q9Var2 = new q9(parentActivity);
+        q9Var2.setEmojiColorFilter(new PorterDuffColorFilter(m6.x0(null, m6.z9, false), PorterDuff.Mode.SRC_IN));
+        q9Var2.setAnimatedEmojiDrawable(p5.m(i12, botVerifierSettings.icon, null, 3));
+        frameLayout.addView(q9Var2, ma.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
+        m5 m5Var = new m5(parentActivity);
+        t6.X(m5Var, m6.j5, null);
+        m5Var.setTextSize(13);
+        m5Var.setEllipsizeByGradient(true);
+        m5Var.l(str, false);
+        m5Var.setWidthWrapContent(true);
+        frameLayout.addView(m5Var, ma.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        f10.addView(frameLayout, ma.t(-2, -2, 1, 16, 0, 16, 0));
+        TextView textView = new TextView(parentActivity);
+        int i15 = m6.G6;
+        t6.U(textView, i15, null);
+        textView.setTextSize(1, 20.0f);
+        textView.setGravity(17);
+        if (o10.u(user2)) {
+            textView.setText(gd.N0(2131752916, null));
+        } else if (user2 != null) {
+            textView.setText(gd.N0(2131752909, null));
+        } else if (org.telegram.messenger.v3.V(chat3)) {
+            textView.setText(gd.N0(2131752915, null));
+        } else {
+            textView.setText(gd.N0(2131752911, null));
+        }
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        f10.addView(textView, ma.k(24.0f, 21.0f, 24.0f, 8.33f, -1, -2));
+        TextView textView2 = new TextView(parentActivity);
+        t6.U(textView2, i15, null);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        ks.i(textView2);
+        textView2.setText(j6.m(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131752910, str)), textView2.getPaint().getFontMetricsInt(), false, null, 0));
+        f10.addView(textView2, ma.k(24.0f, 0.0f, 24.0f, 22.0f, -1, -2));
+        final int i16 = mp.u1(i12).m6;
+        final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(parentActivity);
+        final yb0 yb0Var = new yb0(parentActivity, null);
+        yb0Var.setForceForceUseCenter(true);
+        yb0Var.setText(gd.N0(2131752914, null));
+        yb0Var.setLeftPadding(org.telegram.messenger.g0.L(2.0f));
+        t6.U(editTextBoldCursor, i15, null);
+        editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setBackground(null);
+        editTextBoldCursor.setTextSize(1, 18.0f);
+        editTextBoldCursor.setMaxLines(15);
+        editTextBoldCursor.setInputType(180225);
+        editTextBoldCursor.setTypeface(Typeface.DEFAULT);
+        editTextBoldCursor.setSelectAllOnFocus(true);
+        t6.C(editTextBoldCursor, m6.lg, null);
+        t6.l(editTextBoldCursor, 36, m6.mg, null);
+        editTextBoldCursor.setGravity(gd.a0 ? 5 : 3);
+        editTextBoldCursor.setOnFocusChangeListener(new r9(yb0Var, editTextBoldCursor, 1));
+        yb0Var.e(editTextBoldCursor);
+        yb0Var.addView(editTextBoldCursor, ma.d(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
+        f10.addView(yb0Var, ma.o(-1, -2));
+        editTextBoldCursor.addTextChangedListener(new org.telegram.ui.Cells.k3());
+        editTextBoldCursor.addTextChangedListener(new n1(editTextBoldCursor, i16, yb0Var));
+        TLRPC.TL_textWithEntities tL_textWithEntities = botVerifierSettings.custom_description;
+        if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
+            editTextBoldCursor.setText(botVerifierSettings.custom_description.text);
+            if (!botVerifierSettings.can_modify_custom_description) {
+                editTextBoldCursor.setEnabled(false);
+                editTextBoldCursor.setFocusable(false);
+                editTextBoldCursor.setFocusableInTouchMode(false);
+            }
+        } else if (!botVerifierSettings.can_modify_custom_description) {
+            yb0Var.setVisibility(8);
+        }
+        if (botVerifierSettings.can_modify_custom_description) {
+            TextView textView3 = new TextView(parentActivity);
+            t6.U(textView3, m6.B6, null);
+            textView3.setTextSize(1, 12.0f);
+            textView3.setText(gd.N0(i11 >= 0 ? 2131752913 : 2131752912, null));
+            textView3.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(27.0f));
+            f10.addView(textView3, ma.c(-2.0f, -1));
+        } else {
+            f10.addView(new View(parentActivity), ma.c(12.0f, -1));
+        }
+        final hi.e eVar = new hi.e(parentActivity, null, true);
+        eVar.i(textView.getText(), false, true);
+        f10.addView(eVar, ma.o(-1, 48));
+        j11.O = f10;
+        eVar.setOnClickListener(new View.OnClickListener() { // from class: ki.m1
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                hi.e eVar2 = hi.e.this;
+                if (eVar2.R) {
+                    return;
                 }
-            } catch (Exception e10) {
-                a8.g(e10, true);
-            }
-        }
-        return arrayList;
-    }
-
-    public final void j(String str) {
-        if (e(c()).keys().hasNext()) {
-            throw new RuntimeException("STORAGE_NOT_EMPTY");
-        }
-        HashSet hashSet = new HashSet();
-        for (int i7 = 0; i7 < 4; i7++) {
-            j10 i10 = j10.i(i7);
-            if (i10.p()) {
-                hashSet.add(Long.valueOf(i10.e()));
-            }
-        }
-        HashMap i11 = i();
-        k1 k1Var = (k1) i11.get(str);
-        if (k1Var == null) {
-            throw new RuntimeException("STORAGE_NOT_FOUND");
-        }
-        k1Var.b = this.c;
-        k1Var.c = n5.m(j10.i(this.a).f());
-        k1Var.e = System.currentTimeMillis();
-        k(i11);
-        this.e = k1Var.a;
-    }
-
-    public final void l(File file, byte[] bArr) {
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
-        if (this.d) {
-            try {
-                Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-                cipher.init(1, g());
-                byte[] iv = cipher.getIV();
-                fileOutputStream.write(iv.length);
-                fileOutputStream.write(iv);
-                bArr = cipher.doFinal(bArr);
-            } catch (Exception e10) {
-                a8.g(e10, true);
-                throw new RuntimeException("UNKNOWN_ERROR");
-            }
-        }
-        fileOutputStream.write(bArr);
-        fileOutputStream.close();
-    }
-
-    public final void m(JSONObject jSONObject) {
-        try {
-            byte[] bytes = jSONObject.toString().getBytes();
-            if (bytes.length > 5242880) {
-                throw new RuntimeException("QUOTA_EXCEEDED");
-            }
-            try {
-                l(c(), bytes);
-            } catch (Exception e10) {
-                a8.g(e10, true);
-                throw new RuntimeException("UNKNOWN_ERROR");
-            }
-        } catch (Exception e11) {
-            a8.g(e11, true);
-            throw new RuntimeException("UNKNOWN_ERROR");
-        } catch (OutOfMemoryError e12) {
-            a8.g(e12, true);
-            throw new RuntimeException("QUOTA_EXCEEDED");
-        }
-    }
-
-    public final void n(String str, String str2) {
-        if (str2.length() + str.length() > 5242880) {
-            throw new RuntimeException("QUOTA_EXCEEDED");
-        }
-        JSONObject e10 = e(c());
-        try {
-            e10.put(str, str2);
-            int length = e10.length();
-            boolean z10 = this.d;
-            if (length > 10 && z10) {
-                throw new RuntimeException("QUOTA_EXCEEDED");
-            }
-            m(e10);
-            if (z10) {
-                try {
-                    HashMap i7 = i();
-                    k1 k1Var = (k1) i7.get(this.e);
-                    if (k1Var != null) {
-                        k1Var.e = System.currentTimeMillis();
-                        k(i7);
+                TL_bots.BotVerifierSettings botVerifierSettings2 = botVerifierSettings;
+                boolean z12 = botVerifierSettings2.can_modify_custom_description;
+                EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
+                if (z12 && editTextBoldCursor2.getText().length() > i16) {
+                    yb0 yb0Var2 = yb0Var;
+                    yb0Var2.a(1.0f);
+                    org.telegram.messenger.g0.E3(-6.0f, yb0Var2, null);
+                    return;
+                }
+                eVar2.setLoading(true);
+                TL_bots.setCustomVerification setcustomverification = new TL_bots.setCustomVerification();
+                setcustomverification.enabled = true;
+                setcustomverification.flags = 1 | setcustomverification.flags;
+                int i17 = i12;
+                setcustomverification.bot = mp.u1(i17).q1(j10);
+                setcustomverification.peer = mp.u1(i17).l1(j3);
+                if (botVerifierSettings2.can_modify_custom_description) {
+                    String obj = editTextBoldCursor2.getText().toString();
+                    if (!TextUtils.isEmpty(obj)) {
+                        TLRPC.TL_textWithEntities tL_textWithEntities2 = new TLRPC.TL_textWithEntities();
+                        setcustomverification.custom_description = tL_textWithEntities2;
+                        tL_textWithEntities2.text = obj;
                     }
-                } catch (Exception unused) {
+                } else {
+                    setcustomverification.custom_description = botVerifierSettings2.custom_description;
                 }
+                ConnectionsManager.getInstance(i17).sendRequest(setcustomverification, new bi.q1(eVar2, j11, v3Var, 13));
             }
-        } catch (Exception e11) {
-            a8.g(e11, true);
-            throw new RuntimeException("UNKNOWN_ERROR");
-        }
+        });
+        j11.Q0 = true;
+        j11.R0 = true;
+        j11.show();
+        return true;
+    }
+
+    public /* synthetic */ l1(int i7, long j3, TLRPC.TL_attachMenuBot tL_attachMenuBot, Runnable runnable) {
+        this.a = 1;
+        this.b = i7;
+        this.c = j3;
+        this.d = tL_attachMenuBot;
+        this.e = runnable;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
+        org.telegram.tgnet.k.b(this, tL_error);
+    }
+
+    public /* synthetic */ l1(EditText editText, long j3, int i7, EditText editText2) {
+        this.a = 2;
+        this.d = editText;
+        this.c = j3;
+        this.b = i7;
+        this.e = editText2;
+    }
+
+    public /* synthetic */ l1(cx cxVar, int i7, long j3, TL_bots.BotVerifierSettings botVerifierSettings) {
+        this.a = 0;
+        this.d = cxVar;
+        this.b = i7;
+        this.c = j3;
+        this.e = botVerifierSettings;
     }
 }

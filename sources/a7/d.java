@@ -11,16 +11,16 @@ import androidx.mediarouter.app.z;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.cx;
-import org.telegram.ui.vs;
+import org.telegram.ui.ss;
 import org.telegram.ui.xt;
 import s4.v;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,6 +42,7 @@ public final class d implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
+        int i7 = 4;
         switch (this.a) {
             case 0:
                 try {
@@ -66,45 +67,45 @@ public final class d implements View.OnClickListener {
                     SharedPreferences sharedPreferences = t0.b.getSharedPreferences("themeconfig", 0);
                     String str = "Blue";
                     String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                    if (n6.Q0(string) == null || n6.Q0(string).q()) {
+                    if (m6.Q0(string) == null || m6.Q0(string).q()) {
                         string = "Blue";
                     }
                     String str2 = "Dark Blue";
                     String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                    if (n6.Q0(string2) == null || !n6.Q0(string2).q()) {
+                    if (m6.Q0(string2) == null || !m6.Q0(string2).q()) {
                         string2 = "Dark Blue";
                     }
-                    m6 m6Var = n6.I;
+                    l6 l6Var = m6.I;
                     if (!string.equals(string2)) {
                         str2 = string2;
-                    } else if (m6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                    } else if (l6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        boolean q10 = n6.I.q();
+                        boolean q10 = m6.I.q();
                         boolean z10 = !q10;
-                        m6 Q0 = q10 ? n6.Q0(str2) : n6.Q0(str);
-                        mh0 mh0Var = ((xt) this.c).d;
-                        mh0Var.P(q10 ? mh0Var.e[0] - 1 : 0);
+                        l6 Q0 = q10 ? m6.Q0(str2) : m6.Q0(str);
+                        oh0 oh0Var = ((xt) this.c).d;
+                        oh0Var.P(q10 ? oh0Var.e[0] - 1 : 0);
                         ((xt) this.c).e.getImageView().d();
                         int[] iArr = {(((xt) this.c).e.getImageView().getMeasuredWidth() / 2) + r6, f3.C(3.0f, ((xt) this.c).e.getImageView().getMeasuredHeight() / 2, r6)};
                         ((xt) this.c).e.getImageView().getLocationInWindow(iArr);
-                        int i7 = iArr[0];
-                        int i10 = iArr[1];
-                        ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new vs(2, this, (h2) this.b));
+                        int i10 = iArr[0];
+                        int i11 = iArr[1];
+                        ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
                         break;
                     }
                     str = string;
-                    boolean q102 = n6.I.q();
+                    boolean q102 = m6.I.q();
                     boolean z102 = !q102;
                     if (q102) {
                     }
-                    mh0 mh0Var2 = ((xt) this.c).d;
-                    mh0Var2.P(q102 ? mh0Var2.e[0] - 1 : 0);
+                    oh0 oh0Var2 = ((xt) this.c).d;
+                    oh0Var2.P(q102 ? oh0Var2.e[0] - 1 : 0);
                     ((xt) this.c).e.getImageView().d();
-                    int[] iArr2 = {(((xt) this.c).e.getImageView().getMeasuredWidth() / 2) + i7, f3.C(3.0f, ((xt) this.c).e.getImageView().getMeasuredHeight() / 2, i10)};
+                    int[] iArr2 = {(((xt) this.c).e.getImageView().getMeasuredWidth() / 2) + i10, f3.C(3.0f, ((xt) this.c).e.getImageView().getMeasuredHeight() / 2, i11)};
                     ((xt) this.c).e.getImageView().getLocationInWindow(iArr2);
-                    int i72 = iArr2[0];
-                    int i102 = iArr2[1];
-                    ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new vs(2, this, (h2) this.b));
+                    int i102 = iArr2[0];
+                    int i112 = iArr2[1];
+                    ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
                 }
                 break;
         }

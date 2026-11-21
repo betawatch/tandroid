@@ -1,38 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class aj extends k41 {
-    static {
-        k41.h(new aj());
+public final class aj extends FragmentContextView {
+    public final /* synthetic */ FrameLayout Y0;
+    public final /* synthetic */ ej Z0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public aj(ej ejVar, Context context, org.telegram.ui.ActionBar.g2 g2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.h6 h6Var, FrameLayout frameLayout2) {
+        super(context, g2Var, frameLayout, false, h6Var);
+        this.Z0 = ejVar;
+        this.Y0 = frameLayout2;
     }
 
-    public static l41 i(CharSequence charSequence, String str) {
-        l41 K = l41.K(aj.class);
-        K.m = str;
-        K.n = charSequence;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        bj bjVar = (bj) view;
-        CharSequence charSequence = l41Var.m;
-        CharSequence charSequence2 = l41Var.n;
-        bjVar.b.setText(charSequence);
-        bjVar.c.setText(charSequence2);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        return new bj(context, i6Var);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final boolean f() {
-        return false;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i7) {
+        this.Z0.y.j(this.Y0, i7 == 0, true);
     }
 }

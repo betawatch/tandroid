@@ -1,84 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class r implements TextWatcher {
-    public final /* synthetic */ ImageView a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ TextView f;
-    public final /* synthetic */ ScrollView h;
+public final class r extends v4.k {
+    public final /* synthetic */ n0 F;
 
-    public r(ImageView imageView, int i7, int i10, LinearLayout linearLayout, ArrayList arrayList, TextView textView, ScrollView scrollView) {
-        this.a = imageView;
-        this.b = i7;
-        this.c = i10;
-        this.d = linearLayout;
-        this.e = arrayList;
-        this.f = textView;
-        this.h = scrollView;
+    public r(n0 n0Var) {
+        this.F = n0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        LinearLayout linearLayout;
-        int i7;
-        String str;
-        String lowerCase = editable.toString().trim().toLowerCase();
-        boolean isEmpty = lowerCase.isEmpty();
-        int i10 = 8;
-        this.a.setVisibility(editable.length() > 0 ? 0 : 8);
-        int i11 = this.b;
-        while (true) {
-            linearLayout = this.d;
-            i7 = this.c;
-            if (i11 >= i7) {
-                break;
-            }
-            linearLayout.getChildAt(i11).setVisibility(!isEmpty ? 8 : 0);
-            i11++;
-        }
-        int i12 = 0;
-        int i13 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i12 >= arrayList.size() || i7 + i12 >= linearLayout.getChildCount()) {
-                break;
-            }
-            org.telegram.messenger.s00 s00Var = (org.telegram.messenger.s00) arrayList.get(i12);
-            String str2 = s00Var.d;
-            if (str2 == null) {
-                str2 = (s00Var.b + " " + s00Var.c).toLowerCase();
-            }
-            boolean z10 = isEmpty || str2.contains(lowerCase) || ((str = s00Var.a) != null && str.toLowerCase().startsWith(lowerCase));
-            linearLayout.getChildAt(i7 + i12).setVisibility(z10 ? 0 : 8);
-            if (z10) {
-                i13++;
-            }
-            i12++;
-        }
-        if (!isEmpty && i13 == 0) {
-            i10 = 0;
-        }
-        this.f.setVisibility(i10);
-        this.h.scrollTo(0, 0);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    @Override // v4.k
+    public final void P(v4.f1 f1Var) {
+        this.F.b.invalidate();
     }
 }

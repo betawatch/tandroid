@@ -2,14 +2,14 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.fj;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.g21;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.j21;
+import org.telegram.ui.Components.q80;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -25,16 +25,16 @@ public final /* synthetic */ class f implements Runnable {
         switch (this.a) {
             case 0:
                 g gVar = (g) this.b;
-                o80 o80Var = gVar.d;
-                if (o80Var != null) {
-                    gVar.h.F.n(o80Var, true);
+                q80 q80Var = gVar.d;
+                if (q80Var != null) {
+                    gVar.h.F.n(q80Var, true);
                     break;
                 }
                 break;
             case 1:
                 fj fjVar = (fj) this.b;
-                if (g21.j(fjVar)) {
-                    g21.x(fjVar, false, null);
+                if (j21.j(fjVar)) {
+                    j21.y(fjVar, false, null);
                     break;
                 }
                 break;
@@ -49,7 +49,7 @@ public final /* synthetic */ class f implements Runnable {
                 ((e2) this.b).a();
                 break;
             case 4:
-                org.telegram.messenger.g0.v1(((bi.t8) this.b).b.getEditText());
+                org.telegram.messenger.g0.v1(((bi.x8) this.b).b.getEditText());
                 break;
             case 5:
                 org.telegram.messenger.g0.v1(((l3) this.b).d);
@@ -59,11 +59,11 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 7:
                 h6 h6Var = (h6) this.b;
-                if (!(h6Var.getParent() instanceof ck0)) {
+                if (!(h6Var.getParent() instanceof ek0)) {
                     h6Var.callOnClick();
                     break;
                 } else {
-                    ((ck0) h6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(h6Var), h6Var);
+                    ((ek0) h6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(h6Var), h6Var);
                     break;
                 }
             case 8:
@@ -99,9 +99,9 @@ public final /* synthetic */ class f implements Runnable {
                 cxVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
-                org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) this.b;
-                x2Var.c0 = true;
-                x2Var.d0 = true;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) this.b;
+                w2Var.c0 = true;
+                w2Var.d0 = true;
                 break;
         }
     }

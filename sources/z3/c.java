@@ -26,10 +26,10 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.qf;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -2156,7 +2156,7 @@ public abstract class c {
         int i39;
         String str5;
         int i40;
-        hn hnVar;
+        jn jnVar;
         String str6;
         int i41;
         int i42;
@@ -2503,7 +2503,7 @@ public abstract class c {
                             if (m11 == 1986361461) {
                                 xVar.N(i60 + 8);
                                 int i109 = xVar.b;
-                                hn hnVar2 = null;
+                                jn jnVar2 = null;
                                 while (i109 - i60 < m10) {
                                     xVar.N(i109);
                                     int m12 = xVar.m();
@@ -2515,7 +2515,7 @@ public abstract class c {
                                             if (i110 - i109 >= m12) {
                                                 str5 = str10;
                                                 i40 = i109;
-                                                hnVar = null;
+                                                jnVar = null;
                                                 break;
                                             }
                                             xVar.N(i110);
@@ -2526,13 +2526,13 @@ public abstract class c {
                                                 int A9 = xVar.A();
                                                 str5 = str10;
                                                 i40 = i109;
-                                                hnVar = new hn(new ia.a((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i49), 29);
+                                                jnVar = new jn(new ia.a((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i49), 29);
                                             } else {
                                                 i110 += m13;
                                                 i49 = 8;
                                             }
                                         }
-                                        hnVar2 = hnVar;
+                                        jnVar2 = jnVar;
                                     } else {
                                         str5 = str10;
                                         i40 = i109;
@@ -2541,9 +2541,9 @@ public abstract class c {
                                     str10 = str5;
                                     i49 = 8;
                                 }
-                                of ofVar = hnVar2 == null ? null : new of(hnVar2, 29);
-                                if (ofVar != null) {
-                                    ia.a aVar = (ia.a) ((hn) ofVar.b).b;
+                                qf qfVar = jnVar2 == null ? null : new qf(jnVar2, 29);
+                                if (qfVar != null) {
+                                    ia.a aVar = (ia.a) ((jn) qfVar.b).b;
                                     if (eVar4 == null || ((i0) eVar4.a).size() < 2) {
                                         i39 = i50;
                                         if (i39 == -1) {

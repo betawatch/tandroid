@@ -1,64 +1,65 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.CountDownLatch;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vz0 implements Runnable {
+public final /* synthetic */ class vz0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r11 b;
+    public final /* synthetic */ s11 b;
 
-    public /* synthetic */ vz0(r11 r11Var, int i7) {
+    public /* synthetic */ vz0(s11 s11Var, int i7) {
         this.a = i7;
-        this.b = r11Var;
+        this.b = s11Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                r11 r11Var = this.b;
-                r11Var.getClass();
-                HashSet hashSet = ch.f0.a;
-                com.google.android.gms.internal.cast.b0 b0Var = org.telegram.messenger.ec.D().p;
-                if (((CountDownLatch) b0Var.c) == null) {
-                    b0Var.c = new CountDownLatch(1);
-                }
-                ch.f0.b = true;
-                ch.f0.e = false;
-                ch.f0.g = false;
-                org.telegram.messenger.g0.h3(new vz0(r11Var, 2), 0L);
+                s11 s11Var = this.b;
+                s11Var.getClass();
+                s11Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                r11 r11Var2 = this.b;
-                ArrayList arrayList = r11Var2.C1;
-                if (arrayList != null) {
-                    arrayList.clear();
-                }
-                ArrayList arrayList2 = r11Var2.D1;
-                if (arrayList2 != null) {
-                    arrayList2.clear();
-                }
-                ArrayList arrayList3 = r11Var2.F1;
-                if (arrayList3 != null) {
-                    arrayList3.clear();
-                }
-                r11Var2.r0.E(true);
+                this.b.m();
                 break;
             case 2:
-                this.b.W1.start();
-                break;
-            case 3:
-                this.b.B(true, true, true);
+                s11 s11Var2 = this.b;
+                View view = s11Var2.u0;
+                if (view != null) {
+                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                }
+                int w10 = org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G8, s11Var2.a1), i0.a.o(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
+                View view2 = s11Var2.n0;
+                if (view2 != null) {
+                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(w10, PorterDuff.Mode.MULTIPLY));
+                }
+                org.telegram.ui.Components.ln lnVar = s11Var2.o0;
+                if (lnVar != null) {
+                    lnVar.getBackground().setColorFilter(new PorterDuffColorFilter(w10, PorterDuff.Mode.MULTIPLY));
+                    break;
+                }
                 break;
             default:
-                r11 r11Var3 = this.b;
-                org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
-                vz0 vz0Var = r11Var3.T1;
-                e10.e.remove(vz0Var);
-                org.telegram.messenger.ks.e().d(vz0Var);
+                s11 s11Var3 = this.b;
+                n01 n01Var = s11Var3.b0;
+                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s11Var3.setTranslationY((1.0f - floatValue) * org.telegram.messenger.g0.L(8.0f));
+                View view3 = s11Var3.n0;
+                if (view3 != null) {
+                    view3.setAlpha(floatValue);
+                }
+                org.telegram.ui.Components.ln lnVar2 = s11Var3.o0;
+                if (lnVar2 != null) {
+                    lnVar2.setAlpha(floatValue * floatValue);
+                }
+                n01Var.setAlpha(floatValue);
+                n01Var.invalidate();
+                s11Var3.invalidate();
                 break;
         }
     }

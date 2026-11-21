@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yj implements Runnable {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class yj implements Runnable {
         String str7;
         String str8;
         String str9;
-        String M0;
+        String N0;
         TLRPC.TL_messageMediaVenue tL_messageMediaVenue4;
         String c10;
         Address address;
@@ -755,7 +755,7 @@ public final /* synthetic */ class yj implements Runnable {
                                 tL_messageMediaVenue2.emoji = qd.b(str8);
                                 if (z15) {
                                     try {
-                                        M0 = gd.M0(2131751743, null);
+                                        N0 = gd.N0(2131751742, null);
                                     } catch (Exception unused10) {
                                         tL_messageMediaVenue5 = null;
                                         str2 = String.format(Locale.US, "Unknown address (%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()));
@@ -765,9 +765,9 @@ public final /* synthetic */ class yj implements Runnable {
                                         return;
                                     }
                                 } else {
-                                    M0 = gd.M0(2131747402, null);
+                                    N0 = gd.N0(2131747401, null);
                                 }
-                                tL_messageMediaVenue2.address = M0;
+                                tL_messageMediaVenue2.address = N0;
                                 tL_messageMediaVenue2.geoAddress = tL_geoPointAddress;
                                 tL_geoPointAddress.country_iso2 = str8;
                                 if (!z15) {
@@ -803,7 +803,7 @@ public final /* synthetic */ class yj implements Runnable {
                                     tL_messageMediaVenue4.query_id = -1L;
                                     tL_messageMediaVenue4.title = str5;
                                     tL_messageMediaVenue4.icon = "pin";
-                                    tL_messageMediaVenue4.address = gd.M0(2131747267, null);
+                                    tL_messageMediaVenue4.address = gd.N0(2131747266, null);
                                     tL_messageMediaVenue4.geoAddress = tL_geoPointAddress2;
                                     tL_geoPointAddress2.country_iso2 = str8;
                                     if (!TextUtils.isEmpty(str4)) {

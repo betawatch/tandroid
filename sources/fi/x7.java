@@ -21,12 +21,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.t9;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public class x7 extends NestedScrollView implements x60 {
+public class x7 extends NestedScrollView implements z60 {
     public final t9 a0;
     public final r1.g b0;
     public final w7 c0;
@@ -52,7 +52,7 @@ public class x7 extends NestedScrollView implements x60 {
     public boolean w0;
     public boolean x0;
 
-    public x7(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public x7(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.r0 = -1;
@@ -64,7 +64,7 @@ public class x7 extends NestedScrollView implements x60 {
         ks.i(this);
         w7 w7Var = new w7(this, getContext());
         this.c0 = w7Var;
-        t9 t9Var = new t9(w7Var, i6Var);
+        t9 t9Var = new t9(w7Var, h6Var);
         this.a0 = t9Var;
         t9Var.h0 = false;
         frameLayout.addView(w7Var, -1, -2);
@@ -124,7 +124,7 @@ public class x7 extends NestedScrollView implements x60 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new p7(this, scrollY, f10, 0));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(lr.f);
+            ofFloat.setInterpolator(nr.f);
             ofFloat.start();
         }
     }
@@ -137,7 +137,7 @@ public class x7 extends NestedScrollView implements x60 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new p7(this, scrollY, f10, 1));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(lr.f);
+            ofFloat.setInterpolator(nr.f);
             ofFloat.start();
         }
     }
@@ -296,7 +296,7 @@ public class x7 extends NestedScrollView implements x60 {
         this.a0.w();
     }
 
-    @Override // org.telegram.ui.Components.x60
+    @Override // org.telegram.ui.Components.z60
     public final void f(RectF rectF) {
         v7 v7Var;
         w7 w7Var = this.c0;
@@ -346,7 +346,7 @@ public class x7 extends NestedScrollView implements x60 {
         return 1.0f;
     }
 
-    @Override // org.telegram.ui.Components.x60
+    @Override // org.telegram.ui.Components.z60
     public final void h(Canvas canvas, float f10) {
         v7 v7Var;
         w7 w7Var = this.c0;
@@ -456,12 +456,12 @@ public class x7 extends NestedScrollView implements x60 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.x60
+    @Override // org.telegram.ui.Components.z60
     public /* bridge */ /* synthetic */ void setScrimHidden(boolean z10) {
         org.telegram.ui.Cells.c0.d(this, z10);
     }
 
-    public void F(org.telegram.ui.Components.x5 x5Var) {
+    public void F(org.telegram.ui.Components.y5 y5Var) {
     }
 
     public void I(s7 s7Var) {

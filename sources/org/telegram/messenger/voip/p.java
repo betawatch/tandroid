@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Spannable;
-import bi.c5;
+import bi.g5;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import org.json.JSONObject;
@@ -11,15 +11,15 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.w2;
 import org.telegram.ui.Wallet.z2;
 import org.telegram.utils.twidget.d1;
 import org.telegram.utils.twidget.p1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -89,7 +89,7 @@ public final /* synthetic */ class p implements Runnable {
                     long j10 = h7.n;
                     if (j10 != 0) {
                         user = mp.u1(h7.b).c2(Long.valueOf(j10));
-                        h2 T = LaunchActivity.T();
+                        g2 T = LaunchActivity.T();
                         if (h7 != null || !org.telegram.utils.twidget.n0.F(h7) || user == null || !user.bot) {
                             d1Var.b(5, null, j3);
                             return;
@@ -101,25 +101,25 @@ public final /* synthetic */ class p implements Runnable {
                         byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
                         Context context = T.getContext();
                         int i10 = h7.b;
-                        i6 resourceProvider = T.getResourceProvider();
+                        h6 resourceProvider = T.getResourceProvider();
                         org.telegram.utils.twidget.i0 i0Var = new org.telegram.utils.twidget.i0(h7, d1Var, j3, bytes);
                         ArrayList arrayList = z2.a;
                         w2 w2Var = new w2(new boolean[]{false}, i0Var);
                         org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i10);
                         boolean[] zArr = {false};
-                        c5 c5Var = new c5(zArr, context, i10, user, jSONObject, resourceProvider, w2Var);
+                        g5 g5Var = new g5(zArr, context, i10, user, jSONObject, resourceProvider, w2Var);
                         if (D.N()) {
-                            c5Var.run();
+                            g5Var.run();
                             return;
                         }
-                        z2.a.add(c5Var);
-                        D.x0(c5Var);
-                        org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.p(c5Var, zArr, w2Var, 8), 10000L);
+                        z2.a.add(g5Var);
+                        D.x0(g5Var);
+                        org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.p(g5Var, zArr, w2Var, 8), 10000L);
                         return;
                     }
                 }
                 user = null;
-                h2 T2 = LaunchActivity.T();
+                g2 T2 = LaunchActivity.T();
                 if (h7 != null) {
                 }
                 d1Var.b(5, null, j3);
@@ -130,7 +130,7 @@ public final /* synthetic */ class p implements Runnable {
                 qi.f fVar = (qi.f) this.f;
                 int i11 = this.b;
                 boolean z12 = this.d;
-                ji.j jVar = (ji.j) this.h;
+                ji.l lVar = (ji.l) this.h;
                 synchronized (qi.j.d) {
                     try {
                         Spannable spannable = (Spannable) iVar.a.get();
@@ -143,7 +143,7 @@ public final /* synthetic */ class p implements Runnable {
                                 }
                                 z10 = true;
                                 if (z10 && !z12) {
-                                    qi.j.a(spannable, i11, (com.google.android.gms.internal.play_billing.s0) jVar.b);
+                                    qi.j.a(spannable, i11, (com.google.android.gms.internal.play_billing.s0) lVar.b);
                                 }
                                 iVar.b.remove(Long.valueOf(j11));
                                 if (iVar.b.isEmpty()) {
@@ -159,7 +159,7 @@ public final /* synthetic */ class p implements Runnable {
                             }
                             z10 = false;
                             if (z10) {
-                                qi.j.a(spannable, i11, (com.google.android.gms.internal.play_billing.s0) jVar.b);
+                                qi.j.a(spannable, i11, (com.google.android.gms.internal.play_billing.s0) lVar.b);
                             }
                             iVar.b.remove(Long.valueOf(j11));
                             if (iVar.b.isEmpty()) {
@@ -184,12 +184,12 @@ public final /* synthetic */ class p implements Runnable {
         this.d = z10;
     }
 
-    public /* synthetic */ p(qi.i iVar, long j3, qi.f fVar, int i7, boolean z10, ji.j jVar) {
+    public /* synthetic */ p(qi.i iVar, long j3, qi.f fVar, int i7, boolean z10, ji.l lVar) {
         this.e = iVar;
         this.c = j3;
         this.f = fVar;
         this.b = i7;
         this.d = z10;
-        this.h = jVar;
+        this.h = lVar;
     }
 }

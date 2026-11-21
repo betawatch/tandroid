@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ze implements Runnable {
     public final /* synthetic */ int a;
@@ -182,11 +182,11 @@ public final /* synthetic */ class ze implements Runnable {
                 }
             default:
                 af afVar4 = this.b;
-                org.telegram.ui.ActionBar.u1 u1Var = afVar4.b;
+                org.telegram.ui.ActionBar.t1 t1Var = afVar4.b;
                 c cVar2 = afVar4.a;
                 try {
-                    if (u1Var.isShowing()) {
-                        u1Var.dismiss();
+                    if (t1Var.isShowing()) {
+                        t1Var.dismiss();
                     } else {
                         afVar4.h = true;
                     }

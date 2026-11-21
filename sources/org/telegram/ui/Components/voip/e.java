@@ -20,12 +20,12 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -45,7 +45,7 @@ public final class e extends View {
     public boolean S;
     public org.telegram.ui.Cells.y T;
     public final Paint U;
-    public final mh0 V;
+    public final oh0 V;
     public final Drawable W;
     public final FabBackgroundDrawable a;
     public final o0 a0;
@@ -98,27 +98,27 @@ public final class e extends View {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
         textPaint.setColor(-1);
-        String M0 = gd.M0(2131754716, null);
-        String M02 = gd.M0(2131751592, null);
-        String M03 = gd.M0(2131745856, null);
-        int measureText = (int) textPaint.measureText(M0);
+        String N0 = gd.N0(2131754715, null);
+        String N02 = gd.N0(2131751591, null);
+        String N03 = gd.N0(2131745855, null);
+        int measureText = (int) textPaint.measureText(N0);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-        this.e = new StaticLayout(M0, textPaint, measureText, alignment, 1.0f, 0.0f, false);
-        this.f = new StaticLayout(M02, textPaint, (int) textPaint.measureText(M02), alignment, 1.0f, 0.0f, false);
-        this.h = new StaticLayout(M03, textPaint, (int) textPaint.measureText(M03), alignment, 1.0f, 0.0f, false);
+        this.e = new StaticLayout(N0, textPaint, measureText, alignment, 1.0f, 0.0f, false);
+        this.f = new StaticLayout(N02, textPaint, (int) textPaint.measureText(N02), alignment, 1.0f, 0.0f, false);
+        this.h = new StaticLayout(N03, textPaint, (int) textPaint.measureText(N03), alignment, 1.0f, 0.0f, false);
         this.c = activity.getDrawable(R.drawable.calls_decline).mutate();
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        mh0 mh0Var = new mh0(R.raw.call_accept, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), true, null);
-        this.V = mh0Var;
-        mh0Var.K(1);
-        mh0Var.P(90);
-        mh0Var.R(this);
+        oh0 oh0Var = new oh0(R.raw.call_accept, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), true, null);
+        this.V = oh0Var;
+        oh0Var.K(1);
+        oh0Var.P(90);
+        oh0Var.R(this);
         this.W = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.y j02 = n6.j0(org.telegram.messenger.g0.L(52.0f), 0, i0.a.o(-1, 76));
+        org.telegram.ui.Cells.y j02 = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, i0.a.o(-1, 76));
         this.T = j02;
         j02.setCallback(this);
     }
@@ -382,7 +382,7 @@ public final class e extends View {
             motionEvent.getX();
             this.I = motionEvent.getY();
             if (this.P == null && this.O.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.T = n6.j0(org.telegram.messenger.g0.L(52.0f), 0, this.S ? n6.x0(null, n6.i6, false) : -51130);
+                this.T = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, this.S ? m6.x0(null, m6.i6, false) : -51130);
                 this.G = true;
                 this.H = true;
                 mcVar2.c(true);
@@ -392,7 +392,7 @@ public final class e extends View {
                 return true;
             }
             if (this.Q == null && this.N.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.T = n6.j0(org.telegram.messenger.g0.L(52.0f), 0, -11677354);
+                this.T = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, -11677354);
                 this.G = true;
                 this.H = false;
                 mcVar2.c(false);

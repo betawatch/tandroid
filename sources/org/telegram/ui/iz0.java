@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iz0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -30,46 +30,46 @@ public final /* synthetic */ class iz0 implements ValueAnimator.AnimatorUpdateLi
                 secretMediaViewer2.Z.invalidate();
                 break;
             case 2:
-                ((SecretMediaViewer) ((org.telegram.ui.Components.al0) this.b).b).Z.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((SecretMediaViewer) ((org.telegram.ui.Components.cl0) this.b).b).Z.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 3:
-                tz0 tz0Var = (tz0) this.b;
-                tz0Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (tz0Var.T) {
-                    tz0Var.O.invalidate();
+                uz0 uz0Var = (uz0) this.b;
+                uz0Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (uz0Var.T) {
+                    uz0Var.O.invalidate();
                     break;
                 }
                 break;
             case 4:
-                ((i01) this.b).e.V0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((j01) this.b).e.V0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 5:
-                j01 j01Var = (j01) this.b;
+                k01 k01Var = (k01) this.b;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j01Var.r = floatValue;
-                View view = j01Var.e;
+                k01Var.r = floatValue;
+                View view = k01Var.e;
                 if (view != null) {
                     view.setAlpha(floatValue);
                     break;
                 } else {
-                    hi.q3 q3Var = j01Var.d;
-                    if (q3Var != null) {
-                        q3Var.invalidate();
+                    hi.p3 p3Var = k01Var.d;
+                    if (p3Var != null) {
+                        p3Var.invalidate();
                         break;
                     }
                 }
                 break;
             case 6:
-                n11 n11Var = (n11) this.b;
+                o11 o11Var = (o11) this.b;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n11Var.M = floatValue2;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = n11Var.w;
+                o11Var.M = floatValue2;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = o11Var.w;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(floatValue2);
                 d61 d61Var = actionBarPopupWindow$ActionBarPopupWindowLayout.M;
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.lr.g.getInterpolation(n11Var.M));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.nr.g.getInterpolation(o11Var.M));
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i7 = 0; i7 < itemsCount; i7++) {
-                    float s5 = org.telegram.messenger.g0.s(n11Var.M, i7, itemsCount, 4.0f);
+                    float s5 = org.telegram.messenger.g0.s(o11Var.M, i7, itemsCount, 4.0f);
                     d61Var.getChildAt(i7).setTranslationY((1.0f - s5) * org.telegram.messenger.g0.L(-12.0f));
                     d61Var.getChildAt(i7).setAlpha(s5);
                 }

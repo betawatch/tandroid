@@ -4,10 +4,10 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.n5;
 import org.telegram.tgnet.TLRPC;
-import ug.a0;
-import wg.z0;
+import wg.a1;
+import wg.y0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g extends rg.a {
     public TLRPC.User c;
@@ -19,10 +19,10 @@ public final class g extends rg.a {
     public int i;
     public boolean j;
     public int k;
-    public a0 l;
-    public a0 m;
-    public z0 n;
-    public z0 o;
+    public y0 l;
+    public y0 m;
+    public a1 n;
+    public a1 o;
     public View p;
 
     public g(int i7, boolean z10) {

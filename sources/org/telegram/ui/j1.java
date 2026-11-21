@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class j1 extends View implements Drawable.Callback, org.telegram.ui.Cells.i9 {
     public final p50 a;
@@ -27,7 +27,7 @@ public final class j1 extends View implements Drawable.Callback, org.telegram.ui
         super(context);
         this.a = p50Var;
         this.b = e4Var;
-        this.f = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.y6, false), true);
+        this.f = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.y6, false), true);
     }
 
     @Override // android.view.View, android.graphics.drawable.Drawable.Callback
@@ -94,9 +94,9 @@ public final class j1 extends View implements Drawable.Callback, org.telegram.ui
         if (z2Var != null && (h = g4.h(this.a, this.b, z2Var)) != null) {
             spannableStringBuilder.append(h).append((CharSequence) ", ");
         }
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.M0(2131754869, null)).append((CharSequence) ", ");
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131754868, null)).append((CharSequence) ", ");
         TL_iv.pageBlockDetails pageblockdetails = this.h;
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.M0((pageblockdetails == null || !pageblockdetails.open) ? 2131754870 : 2131754866, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0((pageblockdetails == null || !pageblockdetails.open) ? 2131754869 : 2131754865, null));
         accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 
@@ -114,7 +114,7 @@ public final class j1 extends View implements Drawable.Callback, org.telegram.ui
             int L2 = size - org.telegram.messenger.g0.L(54);
             TL_iv.pageBlockDetails pageblockdetails2 = this.h;
             e4 e4Var = this.b;
-            z2 n10 = g4.n(p50Var, this, null, richText, L2, 0, pageblockdetails2, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.wu0.a(), 0, this.b);
+            z2 n10 = g4.n(p50Var, this, null, richText, L2, 0, pageblockdetails2, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.zu0.a(), 0, this.b);
             this.c = n10;
             if (n10 != null) {
                 L = Math.max(L, this.c.d.getHeight() + org.telegram.messenger.g0.L(21.0f));

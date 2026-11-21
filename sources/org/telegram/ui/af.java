@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class af implements Runnable {
     public final /* synthetic */ int a;
@@ -49,10 +49,10 @@ public final /* synthetic */ class af implements Runnable {
                 break;
             case 4:
                 bnVar.P7(false);
-                ug.z0 z0Var = new ug.z0((org.telegram.ui.ActionBar.h2) bnVar, 24, true);
-                z0Var.p0 = false;
-                z0Var.I0 = new ke(bnVar, 7);
-                z0Var.show();
+                ug.y0 y0Var = new ug.y0((org.telegram.ui.ActionBar.g2) bnVar, 24, true);
+                y0Var.p0 = false;
+                y0Var.I0 = new ke(bnVar, 7);
+                y0Var.show();
                 break;
             case 5:
                 bnVar.cd();
@@ -64,17 +64,17 @@ public final /* synthetic */ class af implements Runnable {
                 if (bnVar.getUserConfig().q()) {
                     bnVar.qc = null;
                     bnVar.zd(true);
-                    org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.gd.M0(2131754486, null)).j();
+                    org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.gd.N0(2131754485, null)).j();
                     bnVar.getMessagesController().p0(true);
                     break;
                 } else {
-                    bnVar.showDialog(new ug.z0((org.telegram.ui.ActionBar.h2) bnVar, 3, true));
+                    bnVar.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) bnVar, 3, true));
                     break;
                 }
             case 8:
                 rj rjVar = bnVar.a0;
                 if (rjVar != null) {
-                    rjVar.K0(true);
+                    rjVar.O0(true);
                     break;
                 }
                 break;
@@ -99,9 +99,9 @@ public final /* synthetic */ class af implements Runnable {
                 bnVar.getMessagesController().v3(bnVar.l6, bnVar.d());
                 bnVar.E6 = true;
                 bnVar.rc(false);
-                org.telegram.ui.ActionBar.h1 h1Var = bnVar.g9;
-                if (h1Var != null) {
-                    h1Var.dismiss();
+                org.telegram.ui.ActionBar.g1 g1Var = bnVar.g9;
+                if (g1Var != null) {
+                    g1Var.dismiss();
                     break;
                 }
                 break;
@@ -113,9 +113,9 @@ public final /* synthetic */ class af implements Runnable {
                 bnVar.A1 = 0;
                 bnVar.jd(true);
                 bnVar.getMessagesController().A3(bnVar.l6, bnVar.d());
-                org.telegram.ui.ActionBar.h1 h1Var2 = bnVar.g9;
-                if (h1Var2 != null) {
-                    h1Var2.dismiss();
+                org.telegram.ui.ActionBar.g1 g1Var2 = bnVar.g9;
+                if (g1Var2 != null) {
+                    g1Var2.dismiss();
                     break;
                 }
                 break;
@@ -133,9 +133,9 @@ public final /* synthetic */ class af implements Runnable {
                 bnVar.B1 = 0;
                 bnVar.id(true);
                 bnVar.getMessagesController().z3(bnVar.l6, bnVar.d());
-                org.telegram.ui.ActionBar.h1 h1Var3 = bnVar.g9;
-                if (h1Var3 != null) {
-                    h1Var3.dismiss();
+                org.telegram.ui.ActionBar.g1 g1Var3 = bnVar.g9;
+                if (g1Var3 != null) {
+                    g1Var3.dismiss();
                     break;
                 }
                 break;
@@ -157,7 +157,7 @@ public final /* synthetic */ class af implements Runnable {
                 org.telegram.messenger.g0.E2(bnVar.Y0);
                 break;
             case 18:
-                bnVar.a0.e1();
+                bnVar.a0.i1();
                 break;
             case 19:
                 bnVar.Q4 = null;
@@ -165,7 +165,7 @@ public final /* synthetic */ class af implements Runnable {
                 bnVar.O9();
                 break;
             case 20:
-                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.chats_infotip, org.telegram.messenger.gd.M0(2131753288, null), org.telegram.messenger.gd.M0(2131753289, null)).j();
+                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.chats_infotip, org.telegram.messenger.gd.N0(2131753287, null), org.telegram.messenger.gd.N0(2131753288, null)).j();
                 break;
             case 21:
                 bnVar.Pc(false);
@@ -179,14 +179,14 @@ public final /* synthetic */ class af implements Runnable {
                 break;
             case 24:
                 bnVar.I7 = null;
-                org.telegram.ui.Components.e50 e50Var = bnVar.q3;
-                if (e50Var != null) {
-                    org.telegram.ui.Components.b50 cameraContainer = e50Var.getCameraContainer();
+                org.telegram.ui.Components.h50 h50Var = bnVar.q3;
+                if (h50Var != null) {
+                    org.telegram.ui.Components.e50 cameraContainer = h50Var.getCameraContainer();
                     AnimatorSet animatorSet = new AnimatorSet();
-                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.b50, Float>) View.SCALE_X, 0.5f);
-                    ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.b50, Float>) View.SCALE_Y, 0.5f);
+                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e50, Float>) View.SCALE_X, 0.5f);
+                    ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e50, Float>) View.SCALE_Y, 0.5f);
                     Property property = View.ALPHA;
-                    animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.b50, Float>) property, 0.0f), ObjectAnimator.ofFloat(bnVar.q3.getButtonsLayout(), (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(bnVar.q3.getPaint(), org.telegram.ui.Components.q6.b, 0), ObjectAnimator.ofFloat(bnVar.q3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
+                    animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e50, Float>) property, 0.0f), ObjectAnimator.ofFloat(bnVar.q3.getButtonsLayout(), (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(bnVar.q3.getPaint(), org.telegram.ui.Components.r6.b, 0), ObjectAnimator.ofFloat(bnVar.q3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
                     animatorSet.addListener(new ei(bnVar, i10));
                     animatorSet.start();
                     break;
@@ -198,14 +198,14 @@ public final /* synthetic */ class af implements Runnable {
             case 26:
                 rj rjVar2 = bnVar.a0;
                 if (rjVar2 != null && bnVar.kd != null) {
-                    if (rjVar2.O0()) {
-                        bnVar.a0.G0(false);
+                    if (rjVar2.S0()) {
+                        bnVar.a0.K0(false);
                         org.telegram.messenger.g0.I3(bnVar.kd.a);
                         ((te.a) bnVar.kd.b.b).a(false, true);
                         break;
                     } else {
-                        bnVar.a0.t1(false, false, false);
-                        bnVar.a0.S1();
+                        bnVar.a0.x1(false, false, false);
+                        bnVar.a0.W1();
                         ((te.a) bnVar.kd.b.b).a(true, true);
                         break;
                     }

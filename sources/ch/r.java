@@ -2,11 +2,11 @@ package ch;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
-import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class r extends vi0 {
+public final class r extends xi0 {
     public float n1;
     public long o1;
 

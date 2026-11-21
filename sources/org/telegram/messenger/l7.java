@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l7 implements Runnable {
     public final /* synthetic */ int a;
@@ -457,7 +457,7 @@ public final /* synthetic */ class l7 implements Runnable {
                         arrayList.remove(i16);
                         a6Var.getNotificationCenter().k(ks.e5, new Object[0]);
                         if (i15 == 0) {
-                            ks.e().k(ks.S4, 1, gd.a0("MessageNotFound", null, 2131748360, new Object[0]));
+                            ks.e().k(ks.S4, 1, gd.a0("MessageNotFound", null, 2131748359, new Object[0]));
                             return;
                         } else {
                             if (i15 == -1) {
@@ -793,9 +793,9 @@ public final /* synthetic */ class l7 implements Runnable {
             case 15:
                 mp mpVar3 = (mp) this.c;
                 int i31 = this.b;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.d;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
                 mpVar3.getConnectionsManager().cancelRequest(i31, true);
-                h2Var.setVisibleDialog(null);
+                g2Var.setVisibleDialog(null);
                 return;
             case 16:
                 uo uoVar = (uo) this.c;

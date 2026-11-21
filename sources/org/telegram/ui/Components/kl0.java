@@ -1,79 +1,127 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kl0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ ql0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
+public abstract class kl0 extends HorizontalScrollView {
+    public boolean a;
+    public LinearLayout b;
+    public ValueAnimator c;
+    public boolean d;
+    public int e;
+    public ValueAnimator f;
 
-    public /* synthetic */ kl0(ql0 ql0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.b = ql0Var;
-        this.c = str;
-        this.d = arrayList;
-        this.e = arrayList2;
+    public kl0(Context context) {
+        super(context);
+        this.e = -1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        ArrayList arrayList = this.e;
-        ArrayList arrayList2 = this.d;
-        String str = this.c;
-        ql0 ql0Var = this.b;
-        switch (i7) {
-            case 0:
-                int i10 = ql0Var.d;
-                ArrayList arrayList3 = new ArrayList();
-                ArrayList arrayList4 = new ArrayList();
-                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    String B = org.telegram.messenger.w7.B(((org.telegram.messenger.fj) arrayList2.get(i11)).F0());
-                    if (B != null && B.toLowerCase().contains(str)) {
-                        org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(i10, ((org.telegram.messenger.fj) arrayList2.get(i11)).k, false, false);
-                        fjVar.z0 = ((org.telegram.messenger.fj) arrayList2.get(i11)).z0;
-                        fjVar.K5(ql0Var.L, true);
-                        arrayList3.add(fjVar);
-                    }
+    public final void a(int i7) {
+        if (this.e == i7) {
+            return;
+        }
+        this.e = i7;
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (getScrollX() == i7) {
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i7);
+        this.f = ofFloat;
+        ofFloat.addUpdateListener(new h60(this, 15));
+        this.f.setInterpolator(nr.h);
+        this.f.setDuration(250L);
+        this.f.addListener(new s60(this, 16));
+        this.f.start();
+    }
+
+    public final void b(int i7, int i10) {
+        int measuredWidth;
+        if (getChildCount() <= 0) {
+            return;
+        }
+        int L = org.telegram.messenger.g0.L(50.0f);
+        if (i7 < getScrollX() + L) {
+            measuredWidth = i7 - L;
+        } else {
+            if (i10 <= (getMeasuredWidth() - L) + getScrollX()) {
+                return;
+            } else {
+                measuredWidth = (i10 - getMeasuredWidth()) + L;
+            }
+        }
+        a(c8.l9.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
+    }
+
+    public final void c() {
+        p5 p5Var;
+        fi.s2 s2Var;
+        oh0 oh0Var;
+        ValueAnimator valueAnimator;
+        int childCount = this.b.getChildCount();
+        for (int i7 = 0; i7 < childCount; i7++) {
+            View childAt = this.b.getChildAt(i7);
+            if (childAt instanceof kv) {
+                kv kvVar = (kv) childAt;
+                boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
+                boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
+                if (!kvVar.E && z10 && (oh0Var = kvVar.e) != null && !oh0Var.l0 && !z11) {
+                    kvVar.e.T(true, 0.0f);
+                    kvVar.e.start();
                 }
-                for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    String B2 = org.telegram.messenger.w7.B(((org.telegram.messenger.fj) arrayList.get(i12)).F0());
-                    if (B2 != null && B2.toLowerCase().contains(str)) {
-                        org.telegram.messenger.fj fjVar2 = new org.telegram.messenger.fj(i10, ((org.telegram.messenger.fj) arrayList.get(i12)).k, false, false);
-                        fjVar2.z0 = ((org.telegram.messenger.fj) arrayList.get(i12)).z0;
-                        fjVar2.K5(ql0Var.L, true);
-                        arrayList4.add(fjVar2);
+                if (kvVar.E != z10) {
+                    kvVar.E = z10;
+                    if (z10) {
+                        kvVar.invalidate();
+                        ug.b1 b1Var = kvVar.f;
+                        if (b1Var != null) {
+                            b1Var.invalidate();
+                        }
+                        ug.b1 b1Var2 = kvVar.f;
+                        if (b1Var2 != null && (p5Var = kvVar.x) != null && (s2Var = p5Var.k) != null) {
+                            b1Var2.setImageReceiver(s2Var);
+                        }
+                        q9 q9Var = kvVar.d;
+                        if (q9Var != null) {
+                            q9Var.invalidate();
+                        }
+                    } else {
+                        kvVar.b();
                     }
+                    kvVar.c();
                 }
-                org.telegram.messenger.g0.g3(new kl0(ql0Var, str, arrayList3, arrayList4));
-                break;
-            default:
-                kv0 kv0Var = ql0Var.a;
-                if (str.equals(ql0Var.M)) {
-                    if (ql0Var.r == 0) {
-                        ql0Var.O.b(0);
-                    }
-                    ql0Var.e(arrayList2, arrayList, true);
-                    if (ql0Var.r == 0) {
-                        kv0Var.e(false, true);
-                        k80 k80Var = kv0Var.e;
-                        kv0Var.d.setText(org.telegram.messenger.gd.M0(2131745605, null));
-                        k80Var.setVisibility(0);
-                        k80Var.setText(org.telegram.messenger.gd.M0(2131745612, null));
-                        break;
-                    }
-                }
-                break;
+            }
         }
     }
 
-    public /* synthetic */ kl0(ql0 ql0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
-        this.b = ql0Var;
-        this.d = arrayList;
-        this.c = str;
-        this.e = arrayList2;
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        c();
+    }
+
+    @Override // android.view.View
+    public final void onScrollChanged(int i7, int i10, int i11, int i12) {
+        super.onScrollChanged(i7, i10, i11, i12);
+        if ((Math.abs(i10 - i12) < 2 || i10 >= getMeasuredHeight() || i10 == 0) && !this.a) {
+            requestDisallowInterceptTouchEvent(false);
+        }
+        c();
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
+            motionEvent.getAction();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

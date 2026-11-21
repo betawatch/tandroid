@@ -14,20 +14,20 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class mc extends org.telegram.ui.Components.bk0 {
+public final class mc extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
     public final /* synthetic */ oc e;
 
-    public mc(oc ocVar, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+    public mc(oc ocVar, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         this.e = ocVar;
         this.c = i7;
-        this.d = i6Var;
+        this.d = h6Var;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return true;
     }
@@ -49,10 +49,10 @@ public final class mc extends org.telegram.ui.Components.bk0 {
         int h;
         int intValue;
         String[] split;
-        org.telegram.ui.Components.j01 j01Var = (org.telegram.ui.Components.j01) f1Var.a;
+        org.telegram.ui.Components.l01 l01Var = (org.telegram.ui.Components.l01) f1Var.a;
         oc ocVar = this.e;
         ArrayList arrayList = ocVar.c;
-        org.telegram.ui.ActionBar.m6 i10 = ((org.telegram.ui.Components.kp) arrayList.get(i7)).a.i(((org.telegram.ui.Components.kp) arrayList.get(i7)).c);
+        org.telegram.ui.ActionBar.l6 i10 = ((org.telegram.ui.Components.mp) arrayList.get(i7)).a.i(((org.telegram.ui.Components.mp) arrayList.get(i7)).c);
         if (i10 != null && i10.b != null && !i10.U && new File(i10.b).exists()) {
             HashMap hashMap = ocVar.y;
             if (i10.b != null) {
@@ -146,7 +146,7 @@ public final class mc extends org.telegram.ui.Components.bk0 {
                                                 break;
                                             }
                                             int indexOf = str.indexOf(61);
-                                            if (indexOf != -1 && ((h = org.telegram.ui.ActionBar.w4.h(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.n6.ra || h == org.telegram.ui.ActionBar.n6.rb || h == org.telegram.ui.ActionBar.n6.Ee || h == org.telegram.ui.ActionBar.n6.Fe || h == org.telegram.ui.ActionBar.n6.Ge || h == org.telegram.ui.ActionBar.n6.He)) {
+                                            if (indexOf != -1 && ((h = org.telegram.ui.ActionBar.v4.h(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.m6.ra || h == org.telegram.ui.ActionBar.m6.rb || h == org.telegram.ui.ActionBar.m6.Ee || h == org.telegram.ui.ActionBar.m6.Fe || h == org.telegram.ui.ActionBar.m6.Ge || h == org.telegram.ui.ActionBar.m6.He)) {
                                                 String substring2 = str.substring(indexOf + 1);
                                                 if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
                                                     intValue = Utilities.z(substring2).intValue();
@@ -157,17 +157,17 @@ public final class mc extends org.telegram.ui.Components.bk0 {
                                                         intValue = Utilities.z(substring2).intValue();
                                                     }
                                                 }
-                                                if (h == org.telegram.ui.ActionBar.n6.ra) {
+                                                if (h == org.telegram.ui.ActionBar.m6.ra) {
                                                     i10.R = intValue;
-                                                } else if (h == org.telegram.ui.ActionBar.n6.rb) {
+                                                } else if (h == org.telegram.ui.ActionBar.m6.rb) {
                                                     i10.S = intValue;
-                                                } else if (h == org.telegram.ui.ActionBar.n6.Ee) {
+                                                } else if (h == org.telegram.ui.ActionBar.m6.Ee) {
                                                     i10.M = intValue;
-                                                } else if (h == org.telegram.ui.ActionBar.n6.Fe) {
+                                                } else if (h == org.telegram.ui.ActionBar.m6.Fe) {
                                                     i10.N = intValue;
-                                                } else if (h == org.telegram.ui.ActionBar.n6.Ge) {
+                                                } else if (h == org.telegram.ui.ActionBar.m6.Ge) {
                                                     i10.O = intValue;
-                                                } else if (h == org.telegram.ui.ActionBar.n6.He) {
+                                                } else if (h == org.telegram.ui.ActionBar.m6.He) {
                                                     i10.P = intValue;
                                                 }
                                             }
@@ -211,12 +211,12 @@ public final class mc extends org.telegram.ui.Components.bk0 {
                 if (i10.c == null || i10.f || new File(i10.c).exists()) {
                     z10 = true;
                     i10.U = true;
-                    org.telegram.ui.Components.kp kpVar = (org.telegram.ui.Components.kp) arrayList.get(i7);
-                    j01Var.setEnabled(z10);
-                    org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.i5, j01Var, null);
-                    j01Var.f(kpVar, 0L, false);
-                    j01Var.g(kpVar.d, false);
-                    j01Var.setFallbackWallpaper(kpVar.a.b ? null : ocVar.w);
+                    org.telegram.ui.Components.mp mpVar = (org.telegram.ui.Components.mp) arrayList.get(i7);
+                    l01Var.setEnabled(z10);
+                    org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.i5, l01Var, null);
+                    l01Var.f(mpVar, 0L, false);
+                    l01Var.g(mpVar.d, false);
+                    l01Var.setFallbackWallpaper(mpVar.a.b ? null : ocVar.w);
                 }
                 if (!hashMap.containsKey(i10)) {
                     hashMap.put(i10, i10.e);
@@ -229,17 +229,17 @@ public final class mc extends org.telegram.ui.Components.bk0 {
             }
         }
         z10 = true;
-        org.telegram.ui.Components.kp kpVar2 = (org.telegram.ui.Components.kp) arrayList.get(i7);
-        j01Var.setEnabled(z10);
-        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.i5, j01Var, null);
-        j01Var.f(kpVar2, 0L, false);
-        j01Var.g(kpVar2.d, false);
-        j01Var.setFallbackWallpaper(kpVar2.a.b ? null : ocVar.w);
+        org.telegram.ui.Components.mp mpVar2 = (org.telegram.ui.Components.mp) arrayList.get(i7);
+        l01Var.setEnabled(z10);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.i5, l01Var, null);
+        l01Var.f(mpVar2, 0L, false);
+        l01Var.g(mpVar2.d, false);
+        l01Var.setFallbackWallpaper(mpVar2.a.b ? null : ocVar.w);
     }
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        return new org.telegram.ui.Components.kj0(new lc(this.c, 3, viewGroup.getContext(), this.d));
+        return new org.telegram.ui.Components.mj0(new lc(this.c, 3, viewGroup.getContext(), this.d));
     }
 
     @Override // v4.i0
@@ -251,9 +251,9 @@ public final class mc extends org.telegram.ui.Components.bk0 {
         if (b10 < 0 || b10 >= arrayList.size()) {
             return;
         }
-        org.telegram.ui.Components.kp kpVar = (org.telegram.ui.Components.kp) arrayList.get(b10);
-        org.telegram.ui.Components.j01 j01Var = (org.telegram.ui.Components.j01) view;
-        j01Var.g(kpVar.d, false);
-        j01Var.setFallbackWallpaper(kpVar.a.b ? null : ocVar.w);
+        org.telegram.ui.Components.mp mpVar = (org.telegram.ui.Components.mp) arrayList.get(b10);
+        org.telegram.ui.Components.l01 l01Var = (org.telegram.ui.Components.l01) view;
+        l01Var.g(mpVar.d, false);
+        l01Var.setFallbackWallpaper(mpVar.a.b ? null : ocVar.w);
     }
 }

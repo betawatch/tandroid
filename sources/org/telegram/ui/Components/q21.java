@@ -1,23 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class q21 extends y21 {
-    public final /* synthetic */ org.telegram.ui.vf U1;
+public final /* synthetic */ class q21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.q10 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q21(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i7, TL_iv.RichMessage richMessage, org.telegram.ui.vf vfVar) {
-        super(activity, str, str2, null, inputPeer, i7, false, richMessage);
-        this.U1 = vfVar;
+    public /* synthetic */ q21(String str, int i7, org.telegram.messenger.q10 q10Var) {
+        this.a = i7;
+        this.b = q10Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.y21, org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
-    public final void dismiss() {
-        super.dismiss();
-        this.U1.run();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.q10 q10Var = this.b;
+                if (q10Var != null) {
+                    q10Var.a(this.c, Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.a(null, this.c);
+                break;
+            case 2:
+                this.b.a(null, this.c);
+                break;
+            default:
+                this.b.a(null, this.c);
+                break;
+        }
     }
 }

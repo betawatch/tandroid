@@ -3,7 +3,7 @@ package di;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d7 implements q0.a {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class d7 implements q0.a {
         switch (this.a) {
             case 0:
                 f5.f fVar = (f5.f) this.b;
-                bi.b8 b8Var = (bi.b8) this.c;
+                bi.f8 f8Var = (bi.f8) this.c;
                 int i7 = fVar.a;
                 boolean z10 = i7 == 0;
-                org.telegram.messenger.g0.g3(new p6(b8Var, z10, z10 ? null : org.telegram.messenger.r1.j(i7), 2));
+                org.telegram.messenger.g0.g3(new p6(f8Var, z10, z10 ? null : org.telegram.messenger.r1.j(i7), 2));
                 break;
             case 1:
                 f5.f fVar2 = (f5.f) this.b;
@@ -34,7 +34,7 @@ public final /* synthetic */ class d7 implements q0.a {
                 org.telegram.messenger.g0.g3(new p6(e0Var, z11, z11 ? null : org.telegram.messenger.r1.j(i10), 1));
                 break;
             case 2:
-                hi.l5.X((hi.v9) this.b, (sg.k0) this.c, (Integer) obj);
+                hi.k5.X((hi.u9) this.b, (sg.k0) this.c, (Integer) obj);
                 break;
             case 3:
                 org.telegram.ui.b5 b5Var = (org.telegram.ui.b5) this.b;
@@ -57,7 +57,7 @@ public final /* synthetic */ class d7 implements q0.a {
                 f5.f fVar3 = (f5.f) this.b;
                 x10 x10Var = (x10) this.c;
                 if (fVar3.a == 0) {
-                    org.telegram.messenger.g0.g3(new hi.i9(x10Var, 2));
+                    org.telegram.messenger.g0.g3(new hi.h9(x10Var, 2));
                     break;
                 }
                 break;

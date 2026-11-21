@@ -1,112 +1,87 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.content.Intent;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ei extends org.telegram.ui.ActionBar.j1 {
-    public final /* synthetic */ fi x;
+public final class ei implements ck {
+    public final /* synthetic */ ui a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ei(fi fiVar, fi fiVar2) {
-        super(fiVar2);
-        this.x = fiVar;
+    public ei(ui uiVar) {
+        this.a = uiVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j1
-    public final boolean b() {
-        ry ryVar;
-        si siVar = this.x.l0;
-        if ((!siVar.J || siVar.s2) && siVar.q3) {
-            ki kiVar = siVar.w2;
-            if (kiVar != siVar.h2 && kiVar != siVar.i2 && !siVar.b1().m()) {
-                return true;
-            }
-            ki kiVar2 = siVar.w2;
-            rn rnVar = siVar.h2;
-            if (kiVar2 == rnVar && ((ryVar = rnVar.F) == null || ryVar.getVisibility() != 0)) {
-                return true;
-            }
-            ki kiVar3 = siVar.w2;
-            rn rnVar2 = siVar.i2;
-            if (kiVar3 == rnVar2) {
-                ry ryVar2 = rnVar2.F;
-                return ryVar2 == null || ryVar2.getVisibility() != 0;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j1
-    public final void e(float f10, float f11, boolean z10) {
-        fi fiVar = this.x;
-        si siVar = fiVar.l0;
-        siVar.j4 = f10;
-        float f12 = siVar.b4;
-        if (f12 > 0.0f) {
-            siVar.j4 = com.google.android.gms.internal.vision.e2.z(f12, siVar.c4, (siVar.w2 != siVar.r2 || z10) ? 1.0f - f11 : f11, f10);
-        }
-        siVar.V2.setTranslationY(siVar.j4);
-        siVar.Y2.setTranslationY(siVar.j4);
-        org.telegram.ui.ActionBar.r0 r0Var = siVar.c3;
-        if (r0Var != null) {
-            r0Var.setTranslationY(siVar.j4);
-        }
-        org.telegram.ui.ActionBar.r0 r0Var2 = siVar.a3;
-        if (r0Var2 != null) {
-            r0Var2.setTranslationY(siVar.Y2.getTranslationY());
-        }
-        hi.m3 m3Var = siVar.b3;
-        if (m3Var != null) {
-            m3Var.setTranslationY(siVar.Y2.getTranslationY());
-        }
-        siVar.d3.setTranslationY(siVar.j4);
-        siVar.Q1(0);
-        siVar.F0 = siVar.w2 != siVar.r2 ? siVar.j4 : 0.0f;
-        siVar.c.invalidate();
-        fiVar.invalidate();
-        siVar.B2.invalidate();
-        siVar.K1();
-        ki kiVar = siVar.w2;
-        if (kiVar != null) {
-            kiVar.n(siVar.j4, f11);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j1
-    public final void f() {
-        si siVar = this.x.l0;
-        siVar.N1(siVar.w2, 0);
-        siVar.a4 = siVar.Z3[0];
-        siVar.w2.y();
-        if (!(siVar.w2 instanceof ki.t3) || siVar.B3) {
+    @Override // org.telegram.ui.Components.ck
+    public final void A() {
+        ui uiVar = this.a;
+        ck ckVar = uiVar.S1;
+        if (ckVar != null) {
+            ckVar.A();
             return;
         }
-        int L = siVar.d ? org.telegram.messenger.g0.L(84.0f) : 0;
-        for (int i7 = 0; i7 < siVar.v2.size(); i7++) {
-            ((ki.t3) siVar.v2.valueAt(i7)).setMeasureOffsetY(L);
+        Object obj = uiVar.a2;
+        if (obj instanceof ck) {
+            ((ck) obj).A();
+            return;
+        }
+        if (obj instanceof org.telegram.ui.hk0) {
+            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
+            try {
+                Intent intent = new Intent("android.intent.action.GET_CONTENT");
+                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+                intent.setType("*/*");
+                hk0Var.startActivityForResult(intent, 21);
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+            }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.j1
-    public final void g(int i7, boolean z10) {
-        int i10;
-        fi fiVar = this.x;
-        si siVar = fiVar.l0;
-        int i11 = siVar.a4;
-        if (i11 <= 0 || i11 == (i10 = siVar.Z3[0]) || !(z10 || siVar.w2 == siVar.r2)) {
-            siVar.b4 = -1.0f;
-        } else {
-            siVar.b4 = i11;
-            siVar.c4 = i10;
+    @Override // org.telegram.ui.Components.ck
+    public final void T() {
+        this.a.q1(true);
+    }
+
+    @Override // org.telegram.ui.Components.ck
+    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
+        ui uiVar = this.a;
+        ck ckVar = uiVar.S1;
+        if (ckVar != null) {
+            ckVar.n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
+            return;
         }
-        fiVar.invalidate();
-        sh shVar = siVar.v3;
-        if ((siVar.w2 instanceof ki.t3) && !siVar.B3) {
-            if (z10) {
-                shVar.setVisibility(8);
-            } else {
-                shVar.setVisibility(0);
+        Object obj = uiVar.a2;
+        if (obj instanceof ck) {
+            ((ck) obj).n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
+            return;
+        }
+        if (obj instanceof org.telegram.ui.hk0) {
+            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
+            ArrayList arrayList4 = new ArrayList();
+            int size = arrayList.size();
+            for (int i10 = 0; i10 < size; i10++) {
+                org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
+                yyVar.c = (String) arrayList.get(i10);
+                arrayList4.add(yyVar);
             }
+            hk0Var.K1(arrayList4);
         }
-        siVar.w2.z(i7, z10);
+    }
+
+    @Override // org.telegram.ui.Components.ck
+    public final void p(ArrayList arrayList, boolean z10, int i7, long j3) {
+        ui uiVar = this.a;
+        ck ckVar = uiVar.S1;
+        if (ckVar != null) {
+            ckVar.p(arrayList, z10, i7, j3);
+            return;
+        }
+        org.telegram.ui.ActionBar.g2 g2Var = uiVar.a2;
+        if (g2Var instanceof org.telegram.ui.bn) {
+            ((org.telegram.ui.bn) g2Var).p(arrayList, z10, i7, j3);
+        } else if (g2Var instanceof org.telegram.ui.hk0) {
+            ((org.telegram.ui.hk0) g2Var).K1(arrayList);
+        }
     }
 }

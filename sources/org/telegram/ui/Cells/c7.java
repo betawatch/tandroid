@@ -2,15 +2,15 @@ package org.telegram.ui.Cells;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c7 extends org.telegram.ui.Components.b9 {
     public final /* synthetic */ int M;
     public final /* synthetic */ FrameLayout N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c7(FrameLayout frameLayout, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
-        super(i6Var);
+    public /* synthetic */ c7(FrameLayout frameLayout, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+        super(h6Var);
         this.M = i7;
         this.N = frameLayout;
     }

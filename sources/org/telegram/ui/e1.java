@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class e1 extends v4.i0 {
     public final /* synthetic */ h1 c;
@@ -52,6 +52,6 @@ public final class e1 extends v4.i0 {
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         h1 h1Var = this.c;
-        return new org.telegram.ui.Components.kj0(i7 != 0 ? new v2(h1Var.getContext(), h1Var.y, h1Var.x, 2) : new a2(h1Var.getContext(), h1Var.y, h1Var.x, 2));
+        return new org.telegram.ui.Components.mj0(i7 != 0 ? new v2(h1Var.getContext(), h1Var.y, h1Var.x, 2) : new a2(h1Var.getContext(), h1Var.y, h1Var.x, 2));
     }
 }

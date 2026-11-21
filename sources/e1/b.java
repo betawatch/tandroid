@@ -9,7 +9,7 @@ import androidx.credentials.playservices.controllers.identityauth.HiddenActivity
 import c8.e1;
 import c8.ub;
 import c8.yc;
-import di.w2;
+import di.f2;
 import gd.k;
 import j7.f;
 import j7.h;
@@ -24,7 +24,7 @@ import q1.e;
 import rd.l;
 import v0.g;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class b implements l {
                         if (a10 instanceof v0.f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!a1.g.a(cancellationSignal)) {
-                                executor.execute(new w2(17, gVar, (v0.f) a10));
+                                executor.execute(new f2(19, gVar, (v0.f) a10));
                             }
                         }
                     }

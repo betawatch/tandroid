@@ -1,48 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class g90 implements vr0 {
-    public final /* synthetic */ i90 a;
+public final /* synthetic */ class g90 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k90 b;
 
-    public g90(i90 i90Var) {
-        this.a = i90Var;
+    public /* synthetic */ g90(k90 k90Var, int i7) {
+        this.a = i7;
+        this.b = k90Var;
     }
 
-    @Override // org.telegram.ui.Components.vr0
-    public final void W() {
-        this.a.g0();
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final boolean Y() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final ck0 f() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final boolean t() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.vr0
-    public final void J() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        k90 k90Var = this.b;
+        switch (i7) {
+            case 0:
+                k90Var.b0();
+                break;
+            default:
+                Activity parentActivity = k90Var.getParentActivity();
+                Activity parentActivity2 = k90Var.getParentActivity();
+                org.telegram.messenger.r5 r5Var = sg.b1.m;
+                boolean z10 = parentActivity2.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false);
+                SharedPreferences.Editor edit = parentActivity.getSharedPreferences("shapedetector_conf", 0).edit();
+                if (z10) {
+                    edit.clear();
+                } else {
+                    edit.putBoolean("learning", true);
+                }
+                edit.apply();
+                break;
+        }
     }
 }

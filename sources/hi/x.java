@@ -1,115 +1,252 @@
 package hi;
 
 import android.content.Context;
-import android.graphics.Point;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.util.LongSparseArray;
 import android.view.KeyEvent;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.aj;
-import org.telegram.messenger.fj;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.eg0;
-import org.telegram.ui.fg0;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.ev;
+import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class x extends v4.i0 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ KeyEvent.Callback f;
+public final class x extends ek0 {
+    public final /* synthetic */ int f3 = 0;
+    public final Object g3;
+    public final /* synthetic */ KeyEvent.Callback h3;
 
-    public /* synthetic */ x(KeyEvent.Callback callback, Context context, Object obj, int i7) {
-        this.c = i7;
-        this.f = callback;
-        this.d = context;
-        this.e = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(a0 a0Var, Context context) {
+        super(context, null);
+        this.h3 = a0Var;
+        this.g3 = new h6.m(29);
     }
 
-    @Override // v4.i0
-    public final int b() {
-        switch (this.c) {
+    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int i7 = this.f3;
+        KeyEvent.Callback callback = this.h3;
+        Object obj = this.g3;
+        switch (i7) {
             case 0:
-                return u.a().size();
+                a0 a0Var = (a0) callback;
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (a0Var.d * 255.0f), 31);
+                canvas.save();
+                float paddingLeft = getPaddingLeft();
+                float width = getWidth() - getPaddingRight();
+                canvas.clipRect(paddingLeft, 0.0f, width, getHeight());
+                canvas.translate((1.0f - a0Var.d) * width, 0.0f);
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                canvas.save();
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(paddingLeft, 0.0f, org.telegram.messenger.g0.L(12.0f) + paddingLeft, getHeight());
+                h6.m mVar = (h6.m) obj;
+                mVar.n(canvas, rectF, 0, a0Var.d);
+                rectF.set(width - org.telegram.messenger.g0.L(12.0f), 0.0f, width, getHeight());
+                mVar.n(canvas, rectF, 2, a0Var.d);
+                canvas.restore();
+                canvas.restore();
+                break;
+            case 1:
+                HashSet hashSet = org.telegram.ui.g4.d1;
+                ((org.telegram.ui.g4) obj).l();
+                super.dispatchDraw(canvas);
+                break;
             default:
-                return ((fg0) this.f).N.size();
+                Paint paint = (Paint) obj;
+                ev evVar = (ev) callback;
+                org.telegram.ui.Components.d6 d6Var = evVar.H1;
+                if (d6Var != null && evVar.F1 >= 0 && evVar.G1 >= 0 && evVar.s1 != null && this.H) {
+                    float e10 = d6Var.e(false, 0.0f);
+                    if (e10 > 0.0f) {
+                        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                        int i11 = TLObject.FLAG_31;
+                        for (int i12 = 0; i12 < getChildCount(); i12++) {
+                            View childAt = getChildAt(i12);
+                            int R = RecyclerView.R(childAt);
+                            if (R != -1 && R >= evVar.F1 && R <= evVar.G1) {
+                                i10 = Math.min(i10, childAt.getTop() + ((int) childAt.getTranslationY()));
+                                i11 = Math.max(i11, childAt.getBottom() + ((int) childAt.getTranslationY()));
+                            }
+                        }
+                        if (i10 < i11) {
+                            paint.setColor(org.telegram.ui.ActionBar.m6.r1(e10, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ce, this.o2)));
+                            canvas.drawRect(0.0f, i10, getMeasuredWidth(), i11, paint);
+                        }
+                        invalidate();
+                    }
+                }
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // v4.i0
-    public final void t(v4.f1 f1Var, int i7) {
-        switch (this.c) {
+    @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
             case 0:
-                y yVar = (y) f1Var.a;
-                u uVar = (u) u.a().get(i7);
-                boolean z10 = i7 == yVar.s;
-                yVar.setDrawable(new v(uVar, false));
-                yVar.b(uVar.equals(((z) this.f).b), z10);
-                yVar.s = i7;
-                break;
-            default:
-                fg0 fg0Var = (fg0) this.f;
-                ArrayList arrayList = fg0Var.N;
-                fj fjVar = (fj) arrayList.get((b() - 1) - i7);
-                org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) f1Var.a;
-                aj l10 = fg0Var.l(fjVar);
-                int i10 = 0;
-                r1Var.setInvalidatesParent(l10 != null);
-                r1Var.y3(fjVar, l10, false, false, false, false);
-                if (!fg0Var.P.i() && arrayList.size() >= 10) {
-                    i10 = arrayList.size() % 10;
-                }
-                if (i7 == i10 && !fjVar.n5()) {
-                    fg0Var.Q = r1Var;
-                    Point point = org.telegram.messenger.g0.q;
-                    r1Var.A3(point.x, point.y);
-                    fg0Var.R = fjVar.e1();
+                if (motionEvent.getX() > getPaddingLeft() && motionEvent.getX() < getWidth() - getPaddingRight()) {
                     break;
                 }
                 break;
         }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // v4.i0
-    public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        switch (this.c) {
-            case 0:
-                y yVar = new y(this.d);
-                yVar.setLayoutParams(new v4.q0(org.telegram.messenger.g0.L(46.0f), org.telegram.messenger.g0.L(56.0f)));
-                yVar.setBackground(org.telegram.ui.ActionBar.n6.h0(553648127, 1, -1));
-                return new kj0(yVar);
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.f3) {
+            case 2:
+                return false;
             default:
-                fg0 fg0Var = (fg0) this.f;
-                eg0 eg0Var = new eg0(fg0Var, this.d, fg0Var.c, (org.telegram.ui.ActionBar.i6) this.e);
-                eg0Var.setDelegate(new nb.a(19));
-                return new kj0(eg0Var);
+                return super.drawChild(canvas, view, j3);
         }
     }
 
-    @Override // v4.i0
-    public void y(v4.f1 f1Var) {
-        switch (this.c) {
-            case 0:
-                y yVar = (y) f1Var.a;
-                ((o2) this.e).a(yVar);
-                int i7 = yVar.s;
-                if (i7 >= 0 && i7 < u.a().size()) {
-                    u uVar = (u) u.a().get(yVar.s);
-                    yVar.setDrawable(new v(uVar, false));
-                    yVar.b(uVar.equals(((z) this.f).b), false);
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public void l0(int i7) {
+        org.telegram.ui.s3 s3Var;
+        switch (this.f3) {
+            case 1:
+                org.telegram.ui.t3 t3Var = ((org.telegram.ui.g4) this.g3).L;
+                if (t3Var != null && (s3Var = t3Var.c) != null) {
+                    s3Var.invalidate();
                     break;
                 }
                 break;
+            case 2:
+                ev evVar = (ev) this.h3;
+                evVar.q1.a();
+                evVar.b.invalidate();
+                break;
         }
     }
 
-    @Override // v4.i0
-    public void z(v4.f1 f1Var) {
-        switch (this.c) {
-            case 0:
-                o2 o2Var = (o2) this.e;
-                o2Var.d.remove((y) f1Var.a);
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.f3) {
+            case 2:
+                super.onDetachedFromWindow();
+                ev evVar = (ev) this.h3;
+                org.telegram.ui.Components.y5.release(evVar.b, (LongSparseArray<org.telegram.ui.Components.p5>) evVar.m1);
+                break;
+            default:
+                super.onDetachedFromWindow();
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        MotionEvent motionEvent2;
+        org.telegram.ui.ActionBar.g1 g1Var;
+        switch (this.f3) {
+            case 0:
+                if (motionEvent.getX() <= getPaddingLeft() || motionEvent.getX() >= getWidth() - getPaddingRight()) {
+                    return false;
+                }
+                getParent().requestDisallowInterceptTouchEvent(true);
+                return super.onInterceptTouchEvent(motionEvent);
+            case 1:
+                org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.g3;
+                if (g4Var.d != null && g4Var.b == null && (((g1Var = g4Var.I) == null || !g1Var.isShowing()) && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3))) {
+                    g4Var.b = null;
+                    g4Var.d = null;
+                    g4Var.f = null;
+                } else if (g4Var.d != null && g4Var.b != null && motionEvent.getAction() == 1 && (getAdapter() instanceof org.telegram.ui.e4)) {
+                    motionEvent2 = motionEvent;
+                    org.telegram.ui.g4.j(g4Var, (org.telegram.ui.e4) getAdapter(), motionEvent2, g4Var.f, g4Var.d, 0, 0);
+                    return super.onInterceptTouchEvent(motionEvent2);
+                }
+                motionEvent2 = motionEvent;
+                return super.onInterceptTouchEvent(motionEvent2);
+            default:
+                ns p10 = ns.p();
+                ev evVar = (ev) this.h3;
+                return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, evVar.r1, evVar.I1, this.o2);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.f3) {
+            case 1:
+                z1(z10, i7, i10, i11, i12);
+                ((org.telegram.ui.k3) this.h3).K = -1.0f;
+                break;
+            case 2:
+                super.onLayout(z10, i7, i10, i11, i12);
+                ((ev) this.h3).q1.a();
+                break;
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.f3) {
+            case 2:
+                View.MeasureSpec.getSize(i7);
+                ((ev) this.h3).y1.y1(40);
+                super.onMeasure(i7, i10);
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.g1 g1Var;
+        switch (this.f3) {
+            case 1:
+                org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.g3;
+                if (g4Var.d != null && g4Var.b == null && (((g1Var = g4Var.I) == null || !g1Var.isShowing()) && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3))) {
+                    g4Var.b = null;
+                    g4Var.d = null;
+                    g4Var.f = null;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    public void z1(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        int childCount = getChildCount();
+        for (int i13 = 0; i13 < childCount; i13++) {
+            View childAt = getChildAt(i13);
+            if ((childAt.getTag() instanceof Integer) && ((Integer) childAt.getTag()).intValue() == 90 && childAt.getBottom() < getMeasuredHeight()) {
+                int measuredHeight = getMeasuredHeight();
+                childAt.layout(0, measuredHeight - childAt.getMeasuredHeight(), childAt.getMeasuredWidth(), measuredHeight);
+                return;
+            }
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(ev evVar, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        this.h3 = evVar;
+        this.g3 = new Paint(1);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(org.telegram.ui.k3 k3Var, Context context) {
+        super(context, null);
+        this.h3 = k3Var;
+        this.g3 = k3Var.M;
     }
 }

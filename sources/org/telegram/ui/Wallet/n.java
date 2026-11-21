@@ -14,9 +14,9 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.b31;
+import org.telegram.ui.mz0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ x10 E;
@@ -63,14 +63,14 @@ public final /* synthetic */ class n implements Runnable {
                 n nVar = new n(u0Var, str, x10Var, this.e, this.f, this.h, this.n, this.r, this.s, this.w, this.x, this.y, this.E, this.F, 1);
                 if (u0Var.S() && !u0Var.R()) {
                     u0.P("send " + str + ": asking passcode");
-                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                     if (T != null) {
-                        org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
-                        f2Var.a = true;
+                        org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
+                        e2Var.a = true;
                         boolean[] zArr = {false};
                         f0 f0Var = new f0(zArr, x10Var);
-                        f0Var.W = new b31(25, zArr, nVar);
-                        T.showAsSheet(f0Var, f2Var);
+                        f0Var.W = new mz0(27, zArr, nVar);
+                        T.showAsSheet(f0Var, e2Var);
                         break;
                     } else {
                         x10Var.a("PASSCODE_FAILED");

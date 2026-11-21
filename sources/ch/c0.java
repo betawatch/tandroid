@@ -3,11 +3,11 @@ package ch;
 import android.text.TextUtils;
 import android.view.View;
 import di.u0;
-import oi.z5;
+import oi.a6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.t4;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class c0 implements View.OnFocusChangeListener {
                 ((u0) this.b).m1.c(z10, !TextUtils.isEmpty(r2.n1.getText()));
                 break;
             case 4:
-                z5.a((z5) this.b, z10);
+                a6.a((a6) this.b, z10);
                 break;
             case 5:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) ((t4) this.b).f;

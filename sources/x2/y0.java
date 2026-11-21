@@ -3,14 +3,13 @@ package x2;
 import android.net.Uri;
 import android.os.Looper;
 import j$.util.Objects;
-import org.telegram.ui.nd0;
-import tg.z1;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class y0 extends a {
     public final j2.g h;
-    public final z1 i;
+    public final tg.o1 i;
     public final q2.m j;
     public final qb.a k;
     public final int l;
@@ -23,10 +22,10 @@ public final class y0 extends a {
     public j2.c0 s;
     public e2.l0 t;
 
-    public y0(e2.l0 l0Var, j2.g gVar, z1 z1Var, q2.m mVar, qb.a aVar, int i7, e2.u uVar) {
+    public y0(e2.l0 l0Var, j2.g gVar, tg.o1 o1Var, q2.m mVar, qb.a aVar, int i7, e2.u uVar) {
         this.t = l0Var;
         this.h = gVar;
-        this.i = z1Var;
+        this.i = o1Var;
         this.j = mVar;
         this.k = aVar;
         this.l = i7;
@@ -52,7 +51,7 @@ public final class y0 extends a {
         g0Var2.getClass();
         Uri uri = g0Var2.a;
         this.g.getClass();
-        return new w0(uri, createDataSource, new nd0((f3.r) this.i.b), this.j, new q2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, mVar, g0Var2.f, this.l, this.m, h2.l0.S(g0Var2.h), null);
+        return new w0(uri, createDataSource, new md0((f3.r) this.i.b), this.j, new q2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, mVar, g0Var2.f, this.l, this.m, h2.l0.S(g0Var2.h), null);
     }
 
     @Override // x2.a

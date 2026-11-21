@@ -12,18 +12,18 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class c9 extends LinearLayout implements org.telegram.ui.ActionBar.c6 {
-    public final org.telegram.ui.ActionBar.i6 a;
+public final class c9 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.ActionBar.h6 a;
     public final TextView b;
     public final TextView c;
     public final ImageView d;
 
-    public c9(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+    public c9(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         setOrientation(0);
-        this.a = i6Var;
+        this.a = h6Var;
         setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
         g10.setPadding(0, org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f));
@@ -44,10 +44,10 @@ public final class c9 extends LinearLayout implements org.telegram.ui.ActionBar.
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.z6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.z6));
     }
 
     @Override // android.widget.LinearLayout, android.view.View
@@ -55,13 +55,13 @@ public final class c9 extends LinearLayout implements org.telegram.ui.ActionBar.
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.n6.G6;
-        org.telegram.ui.ActionBar.i6 i6Var = this.a;
-        this.b.setTextColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
-        int i10 = org.telegram.ui.ActionBar.n6.z6;
-        this.c.setTextColor(org.telegram.ui.ActionBar.n6.w0(i10, i6Var));
-        this.d.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.w0(i10, i6Var), PorterDuff.Mode.SRC_IN));
+        int i7 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.h6 h6Var = this.a;
+        this.b.setTextColor(org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
+        int i10 = org.telegram.ui.ActionBar.m6.z6;
+        this.c.setTextColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
+        this.d.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.w0(i10, h6Var), PorterDuff.Mode.SRC_IN));
     }
 }

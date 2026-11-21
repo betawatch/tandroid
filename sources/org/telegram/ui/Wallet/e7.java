@@ -9,15 +9,15 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.PathInterpolator;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class e7 {
     public final ViewGroup a;
     public final View b;
-    public final si c;
+    public final ui c;
     public final m7 d;
     public final bn e;
     public final TL_wallet.walletTransaction f;
@@ -43,7 +43,7 @@ public final class e7 {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v3, types: [java.lang.Runnable, org.telegram.ui.Wallet.a7] */
     /* JADX WARN: Type inference failed for: r7v0, types: [org.telegram.ui.Wallet.a7] */
-    public e7(ViewGroup viewGroup, View view, m7 m7Var, bn bnVar, TL_wallet.walletTransaction wallettransaction, Runnable runnable, si siVar) {
+    public e7(ViewGroup viewGroup, View view, m7 m7Var, bn bnVar, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ui uiVar) {
         AnimatorSet animatorSet = new AnimatorSet();
         this.m = animatorSet;
         this.o = new RectF();
@@ -121,7 +121,7 @@ public final class e7 {
             }
         };
         this.x = r12;
-        this.c = siVar;
+        this.c = uiVar;
         this.a = viewGroup;
         this.b = view;
         this.d = m7Var;
@@ -298,7 +298,7 @@ public final class e7 {
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addUpdateListener(new z3(this, 3));
         animatorSet.playTogether(ofFloat);
-        animatorSet.addListener(new d7(this, siVar, m7Var));
+        animatorSet.addListener(new d7(this, uiVar, m7Var));
         b7Var.post(r12);
     }
 
@@ -341,14 +341,14 @@ public final class e7 {
         b7Var.removeView(m7Var);
         b7Var.setClickable(false);
         this.d.setAlpha(this.l);
-        si siVar = this.c;
-        if (siVar == null) {
+        ui uiVar = this.c;
+        if (uiVar == null) {
             this.b.setTranslationY(0.0f);
         } else {
-            siVar.y1(1.0f);
+            uiVar.y1(1.0f);
         }
         ViewGroup viewGroup = this.a;
-        if (siVar != null && z10 && this.j.d()) {
+        if (uiVar != null && z10 && this.j.d()) {
             bn bnVar = this.e;
             if (bnVar.getParentLayout() != null) {
                 ViewGroup view = bnVar.getParentLayout().getView();
@@ -364,7 +364,7 @@ public final class e7 {
             }
         }
         this.g.run();
-        org.telegram.messenger.g0.h3(new c5(5, this, viewGroup), 650L);
+        org.telegram.messenger.g0.h3(new u4(7, this, viewGroup), 650L);
     }
 
     public final void b(float f10, float f11, float f12) {
@@ -386,9 +386,9 @@ public final class e7 {
     }
 
     public final RectF c(l4 l4Var) {
-        si siVar = this.c;
+        ui uiVar = this.c;
         ViewGroup viewGroup = this.a;
-        if (siVar == null) {
+        if (uiVar == null) {
             return ra.a(l4Var, viewGroup);
         }
         ViewGroup viewGroup2 = (ViewGroup) l4Var.getRootView();
@@ -429,13 +429,13 @@ public final class e7 {
             if (rootView != viewGroup.getRootView()) {
                 return;
             }
-            si siVar = this.c;
+            ui uiVar = this.c;
             RectF rectF = this.n;
-            if (siVar == null) {
+            if (uiVar == null) {
                 ra.f(m7Var, this.b, viewGroup, rectF);
             } else {
                 rectF.set(ra.a(m7Var, viewGroup));
-                rectF.offset(0.0f, siVar.j4 - siVar.t2);
+                rectF.offset(0.0f, uiVar.j4 - uiVar.t2);
             }
         }
     }

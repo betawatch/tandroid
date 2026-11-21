@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u60 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -51,25 +51,25 @@ public final /* synthetic */ class u60 implements org.telegram.messenger.x10 {
                 if (bVar != null) {
                     bVar.b();
                 }
-                org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
                 if (Q instanceof me0) {
                     Q = ((me0) Q).c0();
                 }
-                org.telegram.ui.ActionBar.h2 h2Var = Q;
-                if (h2Var != null) {
-                    org.telegram.ui.ActionBar.i6 resourceProvider = h2Var.getResourceProvider();
-                    if (h2Var.getLastStoryViewer() != null && h2Var.getLastStoryViewer().K0) {
-                        resourceProvider = h2Var.getLastStoryViewer().E;
+                org.telegram.ui.ActionBar.g2 g2Var = Q;
+                if (g2Var != null) {
+                    org.telegram.ui.ActionBar.h6 resourceProvider = g2Var.getResourceProvider();
+                    if (g2Var.getLastStoryViewer() != null && g2Var.getLastStoryViewer().K0) {
+                        resourceProvider = g2Var.getLastStoryViewer().E;
                     }
-                    ug.l0 l0Var = new ug.l0(19, launchActivity.P, launchActivity, h2Var, resourceProvider);
-                    l0Var.B1(g3Var);
-                    if (!(h2Var instanceof bn) ? !(!(h2Var instanceof cx) || (xvVar = ((cx) h2Var).H3) == null || xvVar.getCurrentFragmetDialogId() != l10.longValue()) : ((bn) h2Var).a() == l10.longValue()) {
+                    ug.k0 k0Var = new ug.k0(19, launchActivity.P, launchActivity, g2Var, resourceProvider);
+                    k0Var.B1(g3Var);
+                    if (!(g2Var instanceof bn) ? !(!(g2Var instanceof cx) || (xvVar = ((cx) g2Var).H3) == null || xvVar.getCurrentFragmetDialogId() != l10.longValue()) : ((bn) g2Var).a() == l10.longValue()) {
                         z10 = true;
                     }
-                    l0Var.A1(tL_premium_boostsStatus, z10);
-                    l0Var.C1(l10.longValue());
-                    l0Var.c2 = r1Var;
-                    h2Var.showDialog(l0Var);
+                    k0Var.A1(tL_premium_boostsStatus, z10);
+                    k0Var.C1(l10.longValue());
+                    k0Var.c2 = r1Var;
+                    g2Var.showDialog(k0Var);
                     if (runnable != null) {
                         try {
                             runnable.run();
@@ -106,10 +106,10 @@ public final /* synthetic */ class u60 implements org.telegram.messenger.x10 {
             case 2:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj5;
                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) obj4;
-                org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) obj3;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) obj3;
                 bg.m0 m0Var = (bg.m0) obj2;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
-                ((org.telegram.ui.ActionBar.x2[]) obj7)[0] = null;
+                ((org.telegram.ui.ActionBar.w2[]) obj7)[0] = null;
                 gi0.a = null;
                 if (!((boolean[]) obj6)[0]) {
                     inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
@@ -117,8 +117,8 @@ public final /* synthetic */ class u60 implements org.telegram.messenger.x10 {
                         m0Var.run();
                         break;
                     } else {
-                        gi0.a = x2Var;
-                        x2Var.show();
+                        gi0.a = w2Var;
+                        w2Var.show();
                         break;
                     }
                 } else {
@@ -127,18 +127,18 @@ public final /* synthetic */ class u60 implements org.telegram.messenger.x10 {
                 }
                 break;
             case 3:
-                hi.d dVar = (hi.d) obj6;
+                hi.e eVar = (hi.e) obj6;
                 org.telegram.ui.Wallet.d3 d3Var = (org.telegram.ui.Wallet.d3) obj5;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj4;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj4;
                 org.telegram.ui.Wallet.p pVar = (org.telegram.ui.Wallet.p) obj3;
-                org.telegram.ui.Wallet.h2 h2Var2 = (org.telegram.ui.Wallet.h2) obj2;
+                org.telegram.ui.Wallet.h2 h2Var = (org.telegram.ui.Wallet.h2) obj2;
                 String str3 = (String) obj;
-                ((hi.d) obj7).setLoading(false);
-                dVar.setLoading(false);
+                ((hi.e) obj7).setLoading(false);
+                eVar.setLoading(false);
                 if (str3 != null) {
-                    org.telegram.ui.Components.lc.d0(str3, d3Var.F, i6Var);
+                    org.telegram.ui.Components.lc.d0(str3, d3Var.F, h6Var);
                     pVar.run();
-                    dVar.setEnabled((h2Var2.n || h2Var2.o) ? false : true);
+                    eVar.setEnabled((h2Var.n || h2Var.o) ? false : true);
                     break;
                 } else {
                     d3Var.dismiss();
@@ -147,14 +147,14 @@ public final /* synthetic */ class u60 implements org.telegram.messenger.x10 {
                 break;
             default:
                 org.telegram.ui.Wallet.e3 e3Var = (org.telegram.ui.Wallet.e3) obj4;
-                org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) obj3;
+                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) obj3;
                 jg.w0 w0Var = (jg.w0) obj2;
                 String str4 = (String) obj;
-                ((hi.d) obj7).setLoading(false);
-                ((hi.d) obj6).setEnabled(true);
+                ((hi.e) obj7).setLoading(false);
+                ((hi.e) obj6).setEnabled(true);
                 ((ImageView) obj5).setEnabled(true);
                 if (str4 != null) {
-                    org.telegram.ui.Components.lc.d0(str4, e3Var.F, i6Var2);
+                    org.telegram.ui.Components.lc.d0(str4, e3Var.F, h6Var2);
                     w0Var.run();
                     break;
                 } else {

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import java.util.ArrayList;
 import org.telegram.messenger.ks;
-import org.telegram.ui.Components.e50;
+import org.telegram.ui.Components.h50;
 import org.telegram.ui.bc;
 import org.telegram.ui.bc1;
 import org.telegram.ui.bh;
@@ -19,8 +19,8 @@ import org.telegram.ui.cx;
 import org.telegram.ui.du;
 import org.telegram.ui.eu;
 import org.telegram.ui.gv;
-import org.telegram.ui.ih;
 import org.telegram.ui.il;
+import org.telegram.ui.jh;
 import org.telegram.ui.kl;
 import org.telegram.ui.lb;
 import org.telegram.ui.qc;
@@ -35,7 +35,7 @@ import org.telegram.ui.yw;
 import org.telegram.ui.zs;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class y9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -54,10 +54,10 @@ public final class y9 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
-                org.telegram.ui.ActionBar.i1 i1Var = (org.telegram.ui.ActionBar.i1) this.b;
-                ((aa) ((z9) i1Var.b).b).getTransitionParams().e();
-                ((aa) ((z9) i1Var.b).b).getTransitionParams().h = false;
-                ((aa) ((z9) i1Var.b).b).getTransitionParams().L1 = 1.0f;
+                org.telegram.ui.ActionBar.h1 h1Var = (org.telegram.ui.ActionBar.h1) this.b;
+                ((aa) ((z9) h1Var.b).b).getTransitionParams().e();
+                ((aa) ((z9) h1Var.b).b).getTransitionParams().h = false;
+                ((aa) ((z9) h1Var.b).b).getTransitionParams().L1 = 1.0f;
                 break;
             case 1:
                 org.telegram.ui.g3 g3Var = (org.telegram.ui.g3) this.b;
@@ -89,36 +89,36 @@ public final class y9 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 5:
-                ih ihVar = (ih) this.b;
-                if (ihVar.a) {
-                    ihVar.d.setTranslationY(0.0f);
+                jh jhVar = (jh) this.b;
+                if (jhVar.a) {
+                    jhVar.d.setTranslationY(0.0f);
                 }
-                if (ihVar.b) {
-                    ihVar.e.setTranslationY(0.0f);
+                if (jhVar.b) {
+                    jhVar.e.setTranslationY(0.0f);
                 }
-                if (ihVar.f) {
-                    ihVar.h.setTranslationY(0.0f);
+                if (jhVar.f) {
+                    jhVar.h.setTranslationY(0.0f);
                 }
-                org.telegram.ui.Components.q9 q9Var = ihVar.c;
+                org.telegram.ui.Components.q9 q9Var = jhVar.c;
                 if (q9Var != null) {
                     q9Var.setTranslationY(0.0f);
                 }
-                ihVar.n.W2[1] = null;
+                jhVar.n.W2[1] = null;
                 break;
             case 6:
                 rj rjVar = (rj) this.b;
                 rjVar.setAnimatedTop(0);
-                View view = rjVar.u2;
+                View view = rjVar.w2;
                 if (view != null && view.getVisibility() == 0) {
-                    rjVar.u2.setTranslationY(((1.0f - rjVar.getTopViewEnterProgress()) * rjVar.u2.getLayoutParams().height) + rjVar.H2);
+                    rjVar.w2.setTranslationY(((1.0f - rjVar.getTopViewEnterProgress()) * rjVar.w2.getLayoutParams().height) + rjVar.J2);
                 }
-                rjVar.r7.M9 = null;
+                rjVar.w7.M9 = null;
                 break;
             case 7:
                 ah.l lVar = (ah.l) this.b;
-                e50 e50Var = ((il) lVar.c).c.R.q3;
-                if (e50Var != null) {
-                    e50Var.setIsMessageTransition(false);
+                h50 h50Var = ((il) lVar.c).c.R.q3;
+                if (h50Var != null) {
+                    h50Var.setIsMessageTransition(false);
                     ((il) lVar.c).c.R.q3.d(true);
                     ((il) lVar.c).c.R.q3.setVisibility(4);
                     break;
@@ -285,7 +285,7 @@ public final class y9 extends AnimatorListenerAdapter {
                 euVar.n = false;
                 cuVar.c = false;
                 cuVar.b = false;
-                kVar = ((org.telegram.ui.ActionBar.h2) euVar).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) euVar).actionBar;
                 kVar.setEnabled(true);
                 euVar.e.setEnabled(true);
                 break;
@@ -325,7 +325,7 @@ public final class y9 extends AnimatorListenerAdapter {
                 cx.i1(cxVar2, true);
                 cxVar2.j3 = false;
                 cxVar2.p3 = false;
-                kVar2 = ((org.telegram.ui.ActionBar.h2) cxVar2).actionBar;
+                kVar2 = ((org.telegram.ui.ActionBar.g2) cxVar2).actionBar;
                 kVar2.setEnabled(true);
                 cxVar2.A0.setEnabled(true);
                 cxVar2.C3(cxVar2.f0[0]);

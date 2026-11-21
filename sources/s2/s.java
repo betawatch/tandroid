@@ -30,9 +30,9 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class s implements b3.r {
     public final p a;
@@ -186,7 +186,7 @@ public final class s implements b3.r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static m d(p pVar, m mVar, nd0 nd0Var, Uri uri, org.telegram.utils.twidget.w wVar) {
+    public static m d(p pVar, m mVar, md0 md0Var, Uri uri, org.telegram.utils.twidget.w wVar) {
         HashMap hashMap;
         Iterator it;
         g gVar;
@@ -292,7 +292,7 @@ public final class s implements b3.r {
             int i23 = i18;
             String str19 = "POINT";
             l lVar2 = lVar;
-            if (!nd0Var.A()) {
+            if (!md0Var.A()) {
                 ArrayList arrayList16 = arrayList12;
                 ArrayList arrayList17 = arrayList13;
                 ArrayList arrayList18 = arrayList14;
@@ -369,7 +369,7 @@ public final class s implements b3.r {
                 }
                 return new m(i21, uri.toString(), arrayList19, j15, z14, j19, z13, i19, j17, i22, j16, j14, z12, z15, j19 != 0, rVar6, arrayList16, arrayList17, lVar2, hashMap6, arrayList21, jVar2);
             }
-            String D = nd0Var.D();
+            String D = md0Var.D();
             HashMap hashMap7 = hashMap4;
             if (D.startsWith("#EXT")) {
                 arrayList15.add(D);
@@ -1710,7 +1710,7 @@ public final class s implements b3.r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static p e(nd0 nd0Var, Uri uri, org.telegram.utils.twidget.w wVar) {
+    public static p e(md0 md0Var, Uri uri, org.telegram.utils.twidget.w wVar) {
         int i7;
         char c10;
         ArrayList arrayList;
@@ -1763,7 +1763,7 @@ public final class s implements b3.r {
         boolean z11 = false;
         boolean z12 = false;
         while (true) {
-            boolean A = nd0Var.A();
+            boolean A = md0Var.A();
             Pattern pattern = m0;
             ArrayList arrayList17 = arrayList13;
             boolean z13 = z11;
@@ -2039,7 +2039,7 @@ public final class s implements b3.r {
                 }
                 return new p(uri.toString(), arrayList19, arrayList25, arrayList20, arrayList21, arrayList22, arrayList17, uVar2, z13 ? Collections.EMPTY_LIST : arrayList27, z14, hashMap5, arrayList23);
             }
-            String D = nd0Var.D();
+            String D = md0Var.D();
             ArrayList arrayList34 = arrayList12;
             if (D.startsWith("#EXT")) {
                 arrayList16.add(D);
@@ -2199,10 +2199,10 @@ public final class s implements b3.r {
                         if (startsWith) {
                             g10 = h2.e.g(uri2, j(D, pattern, hashMap5, wVar));
                         } else {
-                            if (!nd0Var.A()) {
+                            if (!md0Var.A()) {
                                 throw t0.b("#EXT-X-STREAM-INF must be followed by another line", null);
                             }
-                            g10 = h2.e.g(uri2, k(nd0Var.D(), hashMap5, wVar));
+                            g10 = h2.e.g(uri2, k(md0Var.D(), hashMap5, wVar));
                         }
                         Uri uri4 = g10;
                         e2.t tVar2 = new e2.t();
@@ -2499,7 +2499,7 @@ public final class s implements b3.r {
                             arrayDeque.add(trim);
                         } else {
                             arrayDeque.add(trim);
-                            p e10 = e(new nd0(arrayDeque, bufferedReader), uri, wVar);
+                            p e10 = e(new md0(arrayDeque, bufferedReader), uri, wVar);
                             try {
                                 bufferedReader.close();
                             } catch (IOException unused2) {
@@ -2509,7 +2509,7 @@ public final class s implements b3.r {
                     }
                 }
                 arrayDeque.add(trim);
-                m d2 = d(this.a, this.b, new nd0(arrayDeque, bufferedReader), uri, wVar);
+                m d2 = d(this.a, this.b, new md0(arrayDeque, bufferedReader), uri, wVar);
                 try {
                     bufferedReader.close();
                 } catch (IOException unused3) {

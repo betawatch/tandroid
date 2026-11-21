@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import c8.ma;
+import hi.o4;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,20 +23,20 @@ import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.a8;
 import org.telegram.ui.Cells.k8;
 import org.telegram.ui.Cells.n3;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class c2 extends bk0 {
+public final class c2 extends dk0 {
     public int E;
     public ImageView M;
     public TextView N;
@@ -44,9 +45,9 @@ public final class c2 extends bk0 {
     public int Q;
     public boolean R;
     public String S;
-    public final i6 U;
+    public final h6 U;
     public final Context d;
-    public final v31 e;
+    public final y31 e;
     public final TLRPC.StickerSetCovered[] f;
     public final LongSparseArray h;
     public final LongSparseArray n;
@@ -65,16 +66,16 @@ public final class c2 extends bk0 {
     public final SparseArray L = new SparseArray();
     public final a2 T = new a2(this);
 
-    public c2(Context context, v31 v31Var, TLRPC.StickerSetCovered[] stickerSetCoveredArr, LongSparseArray longSparseArray, LongSparseArray longSparseArray2, i6 i6Var) {
+    public c2(Context context, y31 y31Var, TLRPC.StickerSetCovered[] stickerSetCoveredArr, LongSparseArray longSparseArray, LongSparseArray longSparseArray2, h6 h6Var) {
         this.d = context;
-        this.e = v31Var;
+        this.e = y31Var;
         this.f = stickerSetCoveredArr;
         this.h = longSparseArray;
         this.n = longSparseArray2;
-        this.U = i6Var;
+        this.U = h6Var;
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return false;
     }
@@ -282,7 +283,7 @@ public final class c2 extends bk0 {
     /* JADX WARN: Type inference failed for: r6v21, types: [org.telegram.tgnet.TLRPC$TL_messages_stickerSet, org.telegram.tgnet.TLRPC$messages_StickerSet] */
     @Override // v4.i0
     public final void f() {
-        v31 v31Var;
+        y31 y31Var;
         int i7;
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -312,9 +313,9 @@ public final class c2 extends bk0 {
         int i13 = 0;
         while (i12 < size + size2 + i11) {
             SparseArray sparseArray6 = this.w;
-            v31 v31Var2 = this.e;
+            y31 y31Var2 = this.e;
             if (i12 < size2) {
-                v31Var = v31Var2;
+                y31Var = y31Var2;
                 ?? r62 = (TLRPC.TL_messages_stickerSet) arrayList6.get(i12);
                 i7 = size;
                 arrayList3 = r62.documents;
@@ -324,7 +325,7 @@ public final class c2 extends bk0 {
                 i10 = i11;
                 stickerSetCovered = r62;
             } else {
-                v31Var = v31Var2;
+                y31Var = y31Var2;
                 i7 = size;
                 int i14 = i12 - size2;
                 if (i14 < i11) {
@@ -350,7 +351,7 @@ public final class c2 extends bk0 {
                             String str3 = str;
                             int i20 = this.E + i16;
                             int i21 = size4;
-                            int a10 = (i16 / v31Var.a()) + i13;
+                            int a10 = (i16 / y31Var.a()) + i13;
                             int i22 = i19;
                             TLRPC.Document document = (TLRPC.Document) arrayList8.get(i19);
                             sparseArray3.put(i20, document);
@@ -373,11 +374,11 @@ public final class c2 extends bk0 {
                     }
                     sparseArray = sparseArray5;
                     arrayList2 = arrayList7;
-                    int ceil = (int) Math.ceil(i16 / v31Var.a());
+                    int ceil = (int) Math.ceil(i16 / y31Var.a());
                     for (int i24 = 0; i24 < ceil; i24++) {
                         sparseArray2.put(i13 + i24, Integer.valueOf(i16));
                     }
-                    this.E = (v31Var.a() * ceil) + this.E;
+                    this.E = (y31Var.a() * ceil) + this.E;
                     i13 += ceil;
                     arrayList4 = arrayList5;
                     i12++;
@@ -398,7 +399,7 @@ public final class c2 extends bk0 {
                 }
             }
             if (!arrayList3.isEmpty()) {
-                int ceil2 = (int) Math.ceil(arrayList3.size() / v31Var.a());
+                int ceil2 = (int) Math.ceil(arrayList3.size() / y31Var.a());
                 sparseArray3.put(this.E, stickerSetCovered);
                 if (i12 >= size2 && (stickerSetCovered instanceof TLRPC.StickerSetCovered)) {
                     sparseArray4.put(this.E, stickerSetCovered);
@@ -410,7 +411,7 @@ public final class c2 extends bk0 {
                     int i26 = i25 + 1;
                     int i27 = ceil2;
                     int i28 = this.E + i26;
-                    int a11 = i25 / v31Var.a();
+                    int a11 = i25 / y31Var.a();
                     ArrayList arrayList10 = arrayList5;
                     sparseArray3.put(i28, arrayList3.get(i25));
                     sparseArray6.put(i28, stickerSetCovered);
@@ -428,7 +429,7 @@ public final class c2 extends bk0 {
                 for (int i31 = 0; i31 < i30; i31++) {
                     sparseArray2.put(i13 + i31, stickerSetCovered);
                 }
-                this.E = (v31Var.a() * i29) + 1 + this.E;
+                this.E = (y31Var.a() * i29) + 1 + this.E;
                 i13 += i30;
                 i12++;
                 size = i7;
@@ -506,10 +507,10 @@ public final class c2 extends bk0 {
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         FrameLayout frameLayout;
-        i6 i6Var = this.U;
+        h6 h6Var = this.U;
         Context context = this.d;
         if (i7 == 0) {
-            b2 b2Var = new b2(0, context, i6Var, false ? 1 : 0);
+            b2 b2Var = new b2(0, context, h6Var, false ? 1 : 0);
             b2Var.getImageView().E0(3);
             frameLayout = b2Var;
         } else if (i7 == 1) {
@@ -518,7 +519,7 @@ public final class c2 extends bk0 {
             frameLayout = new k8(this.d, false, true, this.U, false);
         } else if (i7 == 3) {
             v3 v3Var = new v3(17, this.d, this.U, true, true);
-            v3Var.setAddOnClickListener(new hi.o0(this, 7));
+            v3Var.setAddOnClickListener(new o4(this, 6));
             frameLayout = v3Var;
         } else if (i7 != 4) {
             frameLayout = null;
@@ -531,15 +532,15 @@ public final class c2 extends bk0 {
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 this.M.setImageResource(R.drawable.stickers_empty);
                 ImageView imageView2 = this.M;
-                int i10 = n6.Df;
-                u6.s(imageView2, i10, i6Var, PorterDuff.Mode.MULTIPLY);
+                int i10 = m6.Df;
+                t6.s(imageView2, i10, h6Var, PorterDuff.Mode.MULTIPLY);
                 linearLayout.addView(this.M, ma.o(-2, -2));
                 linearLayout.addView(new Space(context), ma.o(-1, 15));
                 TextView textView = new TextView(context);
                 this.N = textView;
-                textView.setText(gd.M0(2131747957, null));
+                textView.setText(gd.N0(2131747956, null));
                 this.N.setTextSize(1, 16.0f);
-                u6.U(this.N, i10, i6Var);
+                t6.U(this.N, i10, h6Var);
                 linearLayout.addView(this.N, ma.o(-2, -2));
                 linearLayout.setMinimumHeight(org.telegram.messenger.g0.L(112.0f));
                 linearLayout.setLayoutParams(ma.c(-1.0f, -1));
@@ -548,6 +549,6 @@ public final class c2 extends bk0 {
         } else {
             frameLayout = new View(context);
         }
-        return new kj0(frameLayout);
+        return new mj0(frameLayout);
     }
 }

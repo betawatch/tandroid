@@ -1,80 +1,39 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class a21 implements org.telegram.messenger.fs {
-    public final int a;
-    public final TLRPC.Chat b;
-    public TLRPC.ChannelParticipantsFilter c;
-    public boolean f;
-    public boolean h;
-    public boolean r;
-    public boolean s;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public int n = -1;
+public final class a21 extends View {
+    public final Paint a;
+    public int b;
+    public LinearGradient c;
+    public final /* synthetic */ c21 d;
 
-    public a21(int i7, long j3, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
-        this.a = i7;
-        this.b = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(j3));
-        TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(i7).P0(j3);
-        this.c = channelParticipantsFilter;
-        if (P0 == null) {
-            if (!this.s) {
-                this.s = true;
-                org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.T);
-            }
-            org.telegram.messenger.mp.u1(i7).b3(0, j3, false);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a21(c21 c21Var, Context context) {
+        super(context);
+        this.d = c21Var;
+        this.a = new Paint(1);
+        this.b = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, c21Var.J0);
+        this.c = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(68.0f), new int[]{org.telegram.ui.ActionBar.m6.r1(0.0f, this.b), this.b}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
     }
 
-    public final void a() {
-        if (this.s) {
-            this.s = false;
-            int i7 = this.a;
-            org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.T);
-            if (this.n >= 0) {
-                ConnectionsManager.getInstance(i7).cancelRequest(this.n, true);
-                this.n = -1;
-            }
-            this.f = false;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, this.d.J0);
+        if (w02 != this.b) {
+            this.b = w02;
+            this.c = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(68.0f), new int[]{org.telegram.ui.ActionBar.m6.r1(0.0f, w02), w02}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
         }
-    }
-
-    public final void b() {
-        if (this.f || this.h) {
-            return;
-        }
-        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = this.c;
-        if ((channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) && TextUtils.isEmpty(channelParticipantsFilter.q)) {
-            return;
-        }
-        this.f = true;
-        TLRPC.Chat chat = this.b;
-        if (org.telegram.messenger.v3.T(chat)) {
-            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-            tL_channels_getParticipants.channel = org.telegram.messenger.mp.k1(chat);
-            tL_channels_getParticipants.filter = this.c;
-            tL_channels_getParticipants.limit = 30;
-            tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
-            ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_channels_getParticipants, new d3.b(1), new a5(this, 25));
-        }
-    }
-
-    @Override // org.telegram.messenger.fs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.T) {
-            long j3 = ((TLRPC.ChatFull) objArr[0]).id;
-            TLRPC.Chat chat = this.b;
-            if (j3 == chat.id && !org.telegram.messenger.v3.T(chat) && this.f) {
-                this.f = false;
-                b();
-            }
-        }
+        LinearGradient linearGradient = this.c;
+        Paint paint = this.a;
+        paint.setShader(linearGradient);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
     }
 }

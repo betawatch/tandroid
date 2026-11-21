@@ -3,17 +3,17 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ik extends org.telegram.ui.Components.vi0 {
+public final class ik extends org.telegram.ui.Components.xi0 {
     public final int[] n1;
     public ValueAnimator o1;
     public boolean p1;
     public final /* synthetic */ bn q1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ik(bn bnVar, bn bnVar2, Activity activity, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(3, i7, activity, bnVar2, i6Var);
+    public ik(bn bnVar, bn bnVar2, Activity activity, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(3, i7, activity, bnVar2, h6Var);
         this.q1 = bnVar;
         this.n1 = new int[2];
         this.p1 = true;
@@ -23,8 +23,8 @@ public final class ik extends org.telegram.ui.Components.vi0 {
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         org.telegram.ui.ActionBar.k kVar;
         super.onLayout(z10, i7, i10, i11, i12);
-        kVar = ((org.telegram.ui.ActionBar.h2) this.q1).actionBar;
-        org.telegram.ui.ActionBar.r0 j3 = kVar.q(null).j(28);
+        kVar = ((org.telegram.ui.ActionBar.g2) this.q1).actionBar;
+        org.telegram.ui.ActionBar.q0 j3 = kVar.p(null).j(28);
         if (j3 != null) {
             int[] iArr = this.n1;
             getLocationInWindow(iArr);
@@ -57,7 +57,7 @@ public final class ik extends org.telegram.ui.Components.vi0 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.V0, f10);
         this.o1 = ofFloat;
         ofFloat.addUpdateListener(new a3(this, 5));
-        this.o1.setInterpolator(org.telegram.ui.Components.lr.h);
+        this.o1.setInterpolator(org.telegram.ui.Components.nr.h);
         this.o1.setDuration(420L);
         this.o1.start();
     }

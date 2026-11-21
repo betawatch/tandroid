@@ -5,9 +5,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mu implements org.telegram.ui.Components.oj0 {
+public final /* synthetic */ class mu implements org.telegram.ui.Components.qj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ cx b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class mu implements org.telegram.ui.Components.oj0 
         this.b = cxVar;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.qj0
     public final void c(int i7, View view) {
         switch (this.a) {
             case 0:
@@ -28,7 +28,7 @@ public final /* synthetic */ class mu implements org.telegram.ui.Components.oj0 
                         Bundle f10 = p5.c.f(3, TeXSymbolParser.TYPE_ATTR);
                         f10.putString("hashtag", b6Var.C);
                         f10.putInt("storiesCount", b6Var.J);
-                        cxVar.presentFragment(new org.telegram.ui.Components.i90(f10, null));
+                        cxVar.presentFragment(new org.telegram.ui.Components.k90(f10, null));
                         break;
                     }
                 } else {

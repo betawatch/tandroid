@@ -20,18 +20,18 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 import org.telegram.ui.fr0;
 import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class c3 extends v {
-    public final org.telegram.ui.Components.c6 d;
-    public final org.telegram.ui.Components.c6 e;
+    public final org.telegram.ui.Components.d6 d;
+    public final org.telegram.ui.Components.d6 e;
     public final org.telegram.ui.Components.voip.n f;
-    public final org.telegram.ui.Components.c6 h;
-    public final org.telegram.ui.Components.c6 n;
+    public final org.telegram.ui.Components.d6 h;
+    public final org.telegram.ui.Components.d6 n;
     public boolean r;
     public boolean s;
     public final /* synthetic */ w3 w;
@@ -44,16 +44,16 @@ public final class c3 extends v {
         this.y = z3Var;
         this.w = w3Var;
         this.x = f9Var;
-        lr lrVar = lr.f;
-        this.d = new org.telegram.ui.Components.c6(this, 150L, lrVar);
-        this.e = new org.telegram.ui.Components.c6(this, 150L, lrVar);
+        nr nrVar = nr.f;
+        this.d = new org.telegram.ui.Components.d6(this, 150L, nrVar);
+        this.e = new org.telegram.ui.Components.d6(this, 150L, nrVar);
         this.f = new org.telegram.ui.Components.voip.n(32, ks.n1, ks.P3);
-        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this);
-        this.h = c6Var;
-        org.telegram.ui.Components.c6 c6Var2 = new org.telegram.ui.Components.c6(this);
-        this.n = c6Var2;
-        c6Var.g = 500L;
-        c6Var2.g = 100L;
+        org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(this);
+        this.h = d6Var;
+        org.telegram.ui.Components.d6 d6Var2 = new org.telegram.ui.Components.d6(this);
+        this.n = d6Var2;
+        d6Var.g = 500L;
+        d6Var2.g = 100L;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0157, code lost:
@@ -182,25 +182,25 @@ public final class c3 extends v {
             f14 = 2.0f;
             v3 v3Var = z3Var.Y0;
             f15 = 8.0f;
-            org.telegram.ui.Components.m6 m6Var = (org.telegram.ui.Components.m6) nVar.d;
+            org.telegram.ui.Components.n6 n6Var = (org.telegram.ui.Components.n6) nVar.d;
             int i15 = (g10 << 12) + i14;
             if (nVar.a != i15) {
                 nVar.a = i15;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) String.valueOf(i14 + 1)).append((CharSequence) nVar.b).append((CharSequence) "/").append((CharSequence) nVar.c).append((CharSequence) String.valueOf(g10));
-                m6Var.t(spannableStringBuilder, false, true);
+                n6Var.t(spannableStringBuilder, false, true);
             }
             canvas.save();
             float y11 = v3Var.getY();
             u3 u3Var = v3Var.b;
-            float top = ((m6Var.e / 2.0f) + (y11 + u3Var.getTop())) - 1.0f;
-            u3Var.setRightPadding((int) m6Var.c());
+            float top = ((n6Var.e / 2.0f) + (y11 + u3Var.getTop())) - 1.0f;
+            u3Var.setRightPadding((int) n6Var.c());
             canvas.translate((u3Var.getRightDrawableWidth() + (u3Var.getTextWidth() + (u3Var.getLeft() + (v3Var.getLeft() + org.telegram.messenger.g0.L(4.0f))))) - Utilities.j(((u3Var.getRightDrawableWidth() + u3Var.getTextWidth()) + r0) - u3Var.getWidth(), r0, 0), top);
             float L = org.telegram.messenger.g0.L(8.0f);
             float L2 = org.telegram.messenger.g0.L(2.0f);
-            org.telegram.messenger.g0.P.set(-L, -L2, m6Var.c() + L, m6Var.e + L2);
-            m6Var.C = (int) (f21 * 160.0f);
-            m6Var.draw(canvas);
+            org.telegram.messenger.g0.P.set(-L, -L2, n6Var.c() + L, n6Var.e + L2);
+            n6Var.C = (int) (f21 * 160.0f);
+            n6Var.draw(canvas);
             canvas.restore();
         }
         canvas.save();
@@ -235,7 +235,7 @@ public final class c3 extends v {
                 canvas.save();
                 textPaint.setAlpha((int) (d10 * 255.0f));
                 z10 = z14;
-                textPaint.setShadowLayer(org.telegram.messenger.g0.L(3.0f), 0.0f, org.telegram.messenger.g0.L(f12), org.telegram.ui.ActionBar.n6.r1(d10, 805306368));
+                textPaint.setShadowLayer(org.telegram.messenger.g0.L(3.0f), 0.0f, org.telegram.messenger.g0.L(f12), org.telegram.ui.ActionBar.m6.r1(d10, 805306368));
                 canvas.translate(((measuredWidth - e8Var2.f) / f14) - e8Var2.e, org.telegram.messenger.g0.W1(d10, org.telegram.messenger.g0.L(f13), org.telegram.messenger.g0.L(16.0f)));
                 e8Var2.d.draw(canvas);
                 canvas.restore();
@@ -391,7 +391,7 @@ public final class c3 extends v {
         boolean z11;
         float f14;
         boolean z12;
-        org.telegram.ui.Components.c6 c6Var;
+        org.telegram.ui.Components.d6 d6Var;
         boolean L;
         ui.f fVar;
         e9 e9Var;
@@ -446,11 +446,11 @@ public final class c3 extends v {
                     s2Var.h(canvas2, null);
                     canvas2.restore();
                     z12 = z3Var.I2;
-                    org.telegram.ui.Components.c6 c6Var2 = this.h;
-                    c6Var = this.n;
+                    org.telegram.ui.Components.d6 d6Var2 = this.h;
+                    d6Var = this.n;
                     if (z12) {
-                        c6Var2.e(true, f14);
-                        c6Var.e(true, f14);
+                        d6Var2.e(true, f14);
+                        d6Var.e(true, f14);
                     }
                     if (!x3Var.f) {
                         c1 c1Var = (c1) y3Var.b;
@@ -479,12 +479,12 @@ public final class c3 extends v {
                     } else {
                         L = s2Var.L();
                     }
-                    c6Var2.e(false, (z3Var.u1 || L || x3Var.b != null) ? 0.0f : 1.0f);
-                    c6Var.e(false, c6Var2.c != 1.0f ? 1.0f : 0.0f);
-                    if (c6Var.c > 0.0f) {
+                    d6Var2.e(false, (z3Var.u1 || L || x3Var.b != null) ? 0.0f : 1.0f);
+                    d6Var.e(false, d6Var2.c != 1.0f ? 1.0f : 0.0f);
+                    if (d6Var.c > 0.0f) {
                         RectF rectF = org.telegram.messenger.g0.P;
                         rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                        int i7 = (int) (c6Var.c * 255.0f);
+                        int i7 = (int) (d6Var.c * 255.0f);
                         org.telegram.ui.Components.voip.n nVar = this.f;
                         nVar.a.setAlpha(i7);
                         nVar.c.setAlpha(i7);
@@ -522,15 +522,15 @@ public final class c3 extends v {
             f14 = 0.0f;
             canvas2.restore();
             z12 = z3Var.I2;
-            org.telegram.ui.Components.c6 c6Var22 = this.h;
-            c6Var = this.n;
+            org.telegram.ui.Components.d6 d6Var22 = this.h;
+            d6Var = this.n;
             if (z12) {
             }
             if (!x3Var.f) {
             }
-            c6Var22.e(false, (z3Var.u1 || L || x3Var.b != null) ? 0.0f : 1.0f);
-            c6Var.e(false, c6Var22.c != 1.0f ? 1.0f : 0.0f);
-            if (c6Var.c > 0.0f) {
+            d6Var22.e(false, (z3Var.u1 || L || x3Var.b != null) ? 0.0f : 1.0f);
+            d6Var.e(false, d6Var22.c != 1.0f ? 1.0f : 0.0f);
+            if (d6Var.c > 0.0f) {
             }
             z3Var.I2 = false;
             c10 = 0;
@@ -745,7 +745,7 @@ public final class c3 extends v {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.y.U0.i();
-        setTag(R.id.bulletin_delegate_tag, new bi.e1(this, 2));
+        setTag(R.id.bulletin_delegate_tag, new bi.i1(this, 2));
     }
 
     @Override // android.view.ViewGroup, android.view.View

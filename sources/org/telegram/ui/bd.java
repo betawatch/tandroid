@@ -2,22 +2,22 @@ package org.telegram.ui;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bd implements org.telegram.ui.Components.mt0, org.telegram.ui.ActionBar.r1, org.telegram.messenger.v10 {
+public final /* synthetic */ class bd implements org.telegram.ui.Components.pt0, org.telegram.ui.ActionBar.q1, org.telegram.messenger.v10 {
     public final /* synthetic */ xd a;
 
     public /* synthetic */ bd(xd xdVar) {
         this.a = xdVar;
     }
 
-    @Override // org.telegram.ui.Components.mt0
+    @Override // org.telegram.ui.Components.pt0
     public int b() {
         return this.a.S0;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         this.a.n0.presentFragment(new bb1(6, null));
     }
 
@@ -27,10 +27,10 @@ public final /* synthetic */ class bd implements org.telegram.ui.Components.mt0,
         cd cdVar = xdVar.t1;
         int i7 = xdVar.p0;
         long j3 = xdVar.q0;
-        int i10 = ((org.telegram.ui.Components.l41) obj).d;
+        int i10 = ((org.telegram.ui.Components.o41) obj).d;
         if (i10 != 1) {
             if (i10 == 4) {
-                xdVar.n0.presentFragment(new ki.i3(j3));
+                xdVar.n0.presentFragment(new ki.h3(j3));
             }
         } else {
             if (xdVar.s0 >= org.telegram.messenger.mp.u1(i7).C4) {
@@ -43,10 +43,10 @@ public final /* synthetic */ class bd implements org.telegram.ui.Components.mt0,
             if (xdVar.r0 == null) {
                 return;
             }
-            ug.l0 l0Var = new ug.l0(30, xdVar.p0, xdVar.getContext(), xdVar.n0, xdVar.o0);
-            l0Var.C1(j3);
-            l0Var.A1(xdVar.r0, true);
-            org.telegram.messenger.mp.u1(i7).I0().b(j3, xdVar.r0, new li.d(12, xdVar, l0Var));
+            ug.k0 k0Var = new ug.k0(30, xdVar.p0, xdVar.getContext(), xdVar.n0, xdVar.o0);
+            k0Var.C1(j3);
+            k0Var.A1(xdVar.r0, true);
+            org.telegram.messenger.mp.u1(i7).I0().b(j3, xdVar.r0, new li.d(12, xdVar, k0Var));
         }
     }
 }

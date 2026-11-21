@@ -1,92 +1,101 @@
 package oi;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.z41;
+import androidx.recyclerview.widget.RecyclerView;
+import c8.fa;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Cells.i9;
+import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class u0 extends k41 {
-    public static final /* synthetic */ int b = 0;
+public final class u0 extends y implements org.telegram.ui.ActionBar.b6, i9 {
+    public final h6 n;
+    public final Paint r;
+    public final Paint s;
+    public r2 w;
+    public boolean x;
 
-    static {
-        k41.h(new u0());
+    public u0(Context context, h6 h6Var) {
+        super(context);
+        this.r = new Paint(1);
+        this.s = new Paint(1);
+        this.n = h6Var;
+        setWillNotDraw(false);
+        updateColors();
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
-        fj fjVar;
-        r rVar;
-        v0 v0Var = (v0) view;
-        a aVar = (a) l41Var.H;
-        n3 n3Var = (n3) l41Var.I;
-        v0Var.a = aVar;
-        v0Var.T = n3Var;
-        v0Var.N = gd.a0;
-        v0Var.c(aVar);
-        v0Var.G.b();
-        TLRPC.Document h = v0Var.h();
-        if (v0Var.V != h) {
-            v0Var.V = h;
-            if (h == null) {
-                fjVar = null;
-            } else {
-                TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                tL_message.out = true;
-                tL_message.id = -Long.valueOf(h.id).hashCode();
-                tL_message.peer_id = new TLRPC.TL_peerUser();
-                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                tL_message.from_id = tL_peerUser;
-                TLRPC.Peer peer = tL_message.peer_id;
-                int i7 = v0Var.n;
-                long e10 = j10.i(i7).e();
-                peer.user_id = e10;
-                tL_peerUser.user_id = e10;
-                tL_message.date = (int) (System.currentTimeMillis() / 1000);
-                tL_message.message = "";
-                TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
-                tL_message.media = tL_messageMediaDocument;
-                tL_messageMediaDocument.flags |= 3;
-                tL_messageMediaDocument.document = h;
-                tL_message.flags |= 768;
-                a aVar2 = v0Var.a;
-                if (aVar2 != null && (rVar = aVar2.g) != null && !TextUtils.isEmpty(rVar.e)) {
-                    tL_message.attachPath = v0Var.a.g.e;
-                }
-                fjVar = new fj(i7, tL_message, false, true);
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(m6.ml));
+        hashSet.add(Integer.valueOf(m6.lg));
+    }
+
+    @Override // oi.y
+    public final void e(int i7) {
+        invalidate();
+    }
+
+    public final int g() {
+        return getMeasuredWidth() - (this.x ? this.c : 0);
+    }
+
+    public a getRow() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.i9
+    public final void k(ArrayList arrayList) {
+        int i7 = this.x ? 0 : this.c;
+        int g10 = (g() - i7) / 4;
+        arrayList.add(fa.a((i7 + g10) - org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f) + (g() - g10), org.telegram.messenger.g0.L(12.0f)));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        j9 textSelectionHelper;
+        int i7 = this.x ? 0 : this.c;
+        int g10 = (g() - i7) / 4;
+        int i10 = i7 + g10;
+        int g11 = g() - g10;
+        r2 r2Var = this.w;
+        if (r2Var != null && (textSelectionHelper = r2Var.a.getTextSelectionHelper()) != null && textSelectionHelper.x() && (getParent() instanceof RecyclerView)) {
+            ((RecyclerView) getParent()).getClass();
+            int R = RecyclerView.R(this);
+            if (R >= 0 && R >= textSelectionHelper.p0 && R <= textSelectionHelper.s0) {
+                canvas2 = canvas;
+                canvas2.drawRoundRect(i10 - org.telegram.messenger.g0.L(12.0f), 0.0f, org.telegram.messenger.g0.L(12.0f) + g11, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), this.s);
+                float L = (org.telegram.messenger.g0.L(12.0f) - org.telegram.messenger.g0.L(1.0f)) / 2.0f;
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(i10, L, g11, org.telegram.messenger.g0.L(1.0f) + L);
+                canvas2.drawRoundRect(rectF, org.telegram.messenger.g0.L(0.5f), org.telegram.messenger.g0.L(0.5f), this.r);
             }
-            v0Var.U = fjVar;
         }
-        v0Var.g(h);
-        v0Var.l();
-        if (v0Var.O) {
-            v0Var.m(false);
-        }
-        v0Var.requestLayout();
-        v0Var.invalidate();
+        canvas2 = canvas;
+        float L2 = (org.telegram.messenger.g0.L(12.0f) - org.telegram.messenger.g0.L(1.0f)) / 2.0f;
+        RectF rectF2 = org.telegram.messenger.g0.P;
+        rectF2.set(i10, L2, g11, org.telegram.messenger.g0.L(1.0f) + L2);
+        canvas2.drawRoundRect(rectF2, org.telegram.messenger.g0.L(0.5f), org.telegram.messenger.g0.L(0.5f), this.r);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
-        v0 v0Var = new v0(i7, context, i6Var);
-        v0Var.setBackground(new w1(n6.w0(n6.d6, i6Var)));
-        v0Var.a0 = true;
-        return v0Var;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(12.0f));
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean f() {
-        return false;
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int i7 = m6.ml;
+        h6 h6Var = this.n;
+        this.r.setColor(m6.w0(i7, h6Var));
+        this.s.setColor(m6.w0(m6.lg, h6Var));
     }
 }

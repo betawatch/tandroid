@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class bf implements View.OnTouchListener {
     public final /* synthetic */ int a = 0;
@@ -18,8 +18,8 @@ public final class bf implements View.OnTouchListener {
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
         cf cfVar;
-        org.telegram.ui.ActionBar.h1 h1Var;
-        org.telegram.ui.ActionBar.h1 h1Var2;
+        org.telegram.ui.ActionBar.g1 g1Var;
+        org.telegram.ui.ActionBar.g1 g1Var2;
         switch (this.a) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
@@ -34,7 +34,7 @@ public final class bf implements View.OnTouchListener {
                 break;
             case 1:
                 org.telegram.ui.qm0 qm0Var = (org.telegram.ui.qm0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (h1Var = qm0Var.J) != null && h1Var.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (g1Var = qm0Var.J) != null && g1Var.isShowing()) {
                     Rect rect2 = this.b;
                     view.getHitRect(rect2);
                     if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
@@ -45,7 +45,7 @@ public final class bf implements View.OnTouchListener {
                 break;
             default:
                 org.telegram.ui.cn0 cn0Var = (org.telegram.ui.cn0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (h1Var2 = cn0Var.n0) != null && h1Var2.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (g1Var2 = cn0Var.n0) != null && g1Var2.isShowing()) {
                     Rect rect3 = this.b;
                     view.getHitRect(rect3);
                     if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {

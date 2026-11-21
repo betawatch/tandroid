@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ci implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class ci implements RequestDelegate {
                 break;
             case 3:
                 mp mpVar = (mp) c1Var;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj2;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj2;
                 TLRPC.TL_messages_createChat tL_messages_createChat = (TLRPC.TL_messages_createChat) obj;
                 if (tL_error == null) {
                     if (tLObject instanceof TLRPC.TL_messages_invitedUsers) {
@@ -65,13 +65,13 @@ public final /* synthetic */ class ci implements RequestDelegate {
                         break;
                     }
                 } else {
-                    g0.g3(new tl(mpVar, tL_error, h2Var, tL_messages_createChat, 2));
+                    g0.g3(new tl(mpVar, tL_error, g2Var, tL_messages_createChat, 2));
                     break;
                 }
                 break;
             case 4:
                 mp mpVar2 = (mp) c1Var;
-                org.telegram.ui.ActionBar.h2 h2Var2 = (org.telegram.ui.ActionBar.h2) obj2;
+                org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) obj2;
                 TLRPC.TL_channels_createChannel tL_channels_createChannel = (TLRPC.TL_channels_createChannel) obj;
                 if (tL_error == null) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
@@ -79,7 +79,7 @@ public final /* synthetic */ class ci implements RequestDelegate {
                     g0.g3(new fi(21, mpVar2, updates));
                     break;
                 } else {
-                    g0.g3(new tl(mpVar2, tL_error, h2Var2, tL_channels_createChannel, 1));
+                    g0.g3(new tl(mpVar2, tL_error, g2Var2, tL_channels_createChannel, 1));
                     break;
                 }
             case 5:
@@ -148,10 +148,10 @@ public final /* synthetic */ class ci implements RequestDelegate {
                 break;
             default:
                 zy zyVar = (zy) c1Var;
-                org.telegram.ui.ActionBar.h2 h2Var3 = (org.telegram.ui.ActionBar.h2) obj2;
+                org.telegram.ui.ActionBar.g2 g2Var3 = (org.telegram.ui.ActionBar.g2) obj2;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
                 if (tL_error != null) {
-                    g0.g3(new mw(zyVar, tL_error, h2Var3, tL_messages_editMessage, 0));
+                    g0.g3(new mw(zyVar, tL_error, g2Var3, tL_messages_editMessage, 0));
                     break;
                 } else {
                     zyVar.getMessagesController().V3((TLRPC.Updates) tLObject, false);

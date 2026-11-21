@@ -10,7 +10,7 @@ import org.telegram.messenger.lz;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class e3 extends LinearLayout implements fs {
     public int a;
@@ -33,7 +33,7 @@ public abstract class e3 extends LinearLayout implements fs {
             q9Var.getImageReceiver().f();
             return;
         }
-        lz d = org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.n6.a7, 0.2f, false);
+        lz d = org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.m6.a7, 0.2f, false);
         if (d != null) {
             d.e = 512;
             d.f = 512;
@@ -66,21 +66,21 @@ public abstract class e3 extends LinearLayout implements fs {
         TextView textView2 = this.c;
         TextView textView3 = this.e;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            textView2.setText(gd.M0(2131747952, null));
-            textView.setText(gd.M0(2131747951, null));
+            textView2.setText(gd.N0(2131747951, null));
+            textView.setText(gd.N0(2131747950, null));
             textView3.setVisibility(0);
-            textView3.setText(gd.M0(2131751741, null));
+            textView3.setText(gd.N0(2131751740, null));
             return;
         }
         if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) {
-            textView2.setText(gd.M0(2131747948, null));
-            textView.setText(gd.M0(2131747947, null));
+            textView2.setText(gd.N0(2131747947, null));
+            textView.setText(gd.N0(2131747946, null));
             textView3.setVisibility(8);
         } else {
-            textView2.setText(gd.M0(2131747950, null));
-            textView.setText(gd.M0(2131747949, null));
+            textView2.setText(gd.N0(2131747949, null));
+            textView.setText(gd.N0(2131747948, null));
             textView3.setVisibility(0);
-            textView3.setText(gd.M0(2131751735, null));
+            textView3.setText(gd.N0(2131751734, null));
         }
     }
 }

@@ -2,18 +2,18 @@ package di;
 
 import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u6 implements x10 {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ x8 b;
+    public final /* synthetic */ y8 b;
     public final /* synthetic */ int c;
     public final /* synthetic */ x10 d;
     public final /* synthetic */ boolean[] e;
     public final /* synthetic */ x10 f;
 
-    public /* synthetic */ u6(x8 x8Var, int i7, x10 x10Var, boolean[] zArr, x10 x10Var2) {
-        this.b = x8Var;
+    public /* synthetic */ u6(y8 y8Var, int i7, x10 x10Var, boolean[] zArr, x10 x10Var2) {
+        this.b = y8Var;
         this.c = i7;
         this.d = x10Var;
         this.e = zArr;
@@ -57,8 +57,8 @@ public final /* synthetic */ class u6 implements x10 {
         }
     }
 
-    public /* synthetic */ u6(x8 x8Var, boolean[] zArr, int i7, x10 x10Var, x10 x10Var2) {
-        this.b = x8Var;
+    public /* synthetic */ u6(y8 y8Var, boolean[] zArr, int i7, x10 x10Var, x10 x10Var2) {
+        this.b = y8Var;
         this.e = zArr;
         this.c = i7;
         this.d = x10Var;

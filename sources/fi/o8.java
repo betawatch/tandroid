@@ -5,9 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.SurfaceView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.bz;
-import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.sh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class o8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class o8 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         z3 z10;
-        qh0 qh0Var;
+        sh0 sh0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -49,14 +49,14 @@ public final class o8 extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     c9Var.c.O0(true, true);
                 }
-                if (c9Var.d != null && (z10 = f9Var.z()) != null && (qh0Var = z10.Y0.d) != null) {
-                    qh0 qh0Var2 = c9Var.d;
-                    qh0Var2.getClass();
-                    qh0Var2.c = qh0Var.c;
-                    qh0Var2.f = qh0Var.f;
-                    qh0Var2.b = qh0Var.b;
-                    qh0Var2.a = System.currentTimeMillis();
-                    qh0Var2.c();
+                if (c9Var.d != null && (z10 = f9Var.z()) != null && (sh0Var = z10.Y0.d) != null) {
+                    sh0 sh0Var2 = c9Var.d;
+                    sh0Var2.getClass();
+                    sh0Var2.c = sh0Var.c;
+                    sh0Var2.f = sh0Var.f;
+                    sh0Var2.b = sh0Var.b;
+                    sh0Var2.a = System.currentTimeMillis();
+                    sh0Var2.c();
                 }
                 y3 y3Var = f9Var.G0;
                 if (y3Var != null) {
@@ -138,7 +138,7 @@ public final class o8 extends AnimatorListenerAdapter {
                     }
                     t6 t6Var3 = f9Var3.u1;
                     if (t6Var3 != null) {
-                        t6Var3.setOnClickListener(new ah.d(this, 26));
+                        t6Var3.setOnClickListener(new ah.d(this, 25));
                         f9Var3.u1.animate().alpha(1.0f).setDuration(150L).setListener(new y8(this, 1)).start();
                     }
                     bz.G(true);

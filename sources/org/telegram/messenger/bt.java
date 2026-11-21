@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bt implements q10 {
     public final /* synthetic */ int a = 0;
@@ -26,7 +26,7 @@ public final /* synthetic */ class bt implements q10 {
 
     @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
-        org.telegram.ui.ActionBar.h2 T;
+        org.telegram.ui.ActionBar.g2 T;
         int i7 = this.a;
         Object obj3 = this.d;
         Object obj4 = this.c;
@@ -117,7 +117,7 @@ public final /* synthetic */ class bt implements q10 {
                     break;
                 } else if (tL_error != null) {
                     if ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) && (T = LaunchActivity.T()) != null) {
-                        org.telegram.ui.Components.gc K = org.telegram.ui.Components.lc.b0(T).K(R.raw.star_premium_2, gd.M0(2131744096, null), gd.M0(2131744095, null), new ln(3, T));
+                        org.telegram.ui.Components.gc K = org.telegram.ui.Components.lc.b0(T).K(R.raw.star_premium_2, gd.N0(2131744090, null), gd.N0(2131744089, null), new ln(3, T));
                         K.j = 5000;
                         K.k(true);
                     }

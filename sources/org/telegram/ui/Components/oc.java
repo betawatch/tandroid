@@ -6,25 +6,25 @@ import android.graphics.RectF;
 import android.text.SpannableString;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class oc extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.i6 a;
+    public final org.telegram.ui.ActionBar.h6 a;
     public final Paint b = new Paint(1);
-    public final vy0 c;
+    public final xy0 c;
     public final Runnable d;
     public mc e;
     public Integer f;
 
-    public oc(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.i6 i6Var) {
-        this.a = i6Var;
+    public oc(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.h6 h6Var) {
+        this.a = h6Var;
         this.d = runnable;
-        this.c = new vy0(charSequence, 12.0f, null);
+        this.c = new xy0(charSequence, 12.0f, null);
     }
 
-    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.i6 i6Var, Integer num) {
+    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.h6 h6Var, Integer num) {
         SpannableString spannableString = new SpannableString("btn");
-        oc ocVar = new oc(charSequence, runnable, i6Var);
+        oc ocVar = new oc(charSequence, runnable, h6Var);
         spannableString.setSpan(ocVar, 0, spannableString.length(), 33);
         ocVar.f = num;
         return spannableString;
@@ -53,8 +53,8 @@ public final class oc extends ReplacementSpan {
         canvas.save();
         canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
         Integer num = this.f;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fi, this.a);
-        int r12 = org.telegram.ui.ActionBar.n6.r1(0.15f, intValue);
+        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Fi, this.a);
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.15f, intValue);
         Paint paint2 = this.b;
         paint2.setColor(r12);
         canvas.drawRoundRect(rectF, f12, f12, paint2);

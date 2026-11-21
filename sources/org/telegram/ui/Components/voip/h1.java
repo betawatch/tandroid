@@ -8,12 +8,12 @@ import org.telegram.messenger.fc;
 import org.telegram.messenger.ks;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.b9;
 import org.webrtc.JavaI420Buffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h1 {
     public final ImageReceiver a;
@@ -24,14 +24,14 @@ public final class h1 {
         this.a = imageReceiver;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         TLRPC.Chat chat = sharedInstance != null ? sharedInstance.getChat() : null;
-        b9 b9Var = new b9((i6) null);
+        b9 b9Var = new b9((h6) null);
         if (chat != null) {
             sharedInstance.getAccount();
             b9Var.q(chat);
             imageReceiver.d = sharedInstance.getAccount();
         }
         imageReceiver.J0(60);
-        imageReceiver.h1 = new org.telegram.ui.ActionBar.p(this, 8);
+        imageReceiver.h1 = new org.telegram.tgnet.u(this, 9);
         imageReceiver.P();
         imageReceiver.q0(chat != null ? fc.a(1, chat) : null, "100_100", b9Var, null, chat, 0);
         a();

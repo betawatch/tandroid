@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ew0 extends org.telegram.ui.Cells.y8 {
     public final /* synthetic */ lw0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ew0(lw0 lw0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, boolean z11) {
-        super(18, context, i6Var, z10, z11);
+    public ew0(lw0 lw0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11) {
+        super(18, context, h6Var, z10, z11);
         this.r = lw0Var;
     }
 

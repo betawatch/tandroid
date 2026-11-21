@@ -20,20 +20,20 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.pc;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h1;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.g1;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.ti0;
+import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.vi0;
-import org.telegram.ui.b11;
+import org.telegram.ui.Components.xi0;
 import org.telegram.ui.bn;
+import org.telegram.ui.c11;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l0 {
     public static l0 B;
@@ -59,7 +59,7 @@ public final class l0 {
     public float q;
     public float r;
     public boolean s;
-    public final ti0 t;
+    public final vi0 t;
     public boolean u;
     public final View v;
     public boolean w;
@@ -95,20 +95,20 @@ public final class l0 {
     /* JADX WARN: Type inference failed for: r11v4, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v39, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r5v47, types: [org.telegram.ui.Components.mh0] */
-    /* JADX WARN: Type inference failed for: r5v51, types: [org.telegram.ui.Components.mh0] */
+    /* JADX WARN: Type inference failed for: r5v47, types: [org.telegram.ui.Components.oh0] */
+    /* JADX WARN: Type inference failed for: r5v51, types: [org.telegram.ui.Components.oh0] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public l0(Context context, h2 h2Var, vi0 vi0Var, View view, View view2, float f10, float f11, p0 p0Var, int i7, int i10, boolean z10) {
+    public l0(Context context, g2 g2Var, xi0 xi0Var, View view, View view2, float f10, float f11, p0 p0Var, int i7, int i10, boolean z10) {
         fj fjVar;
         Context context2;
-        h2 h2Var2;
+        g2 g2Var2;
         View view3;
         n0 n0Var;
         long j3;
         fj fjVar2;
-        vi0 vi0Var2;
+        xi0 xi0Var2;
         View view4;
         float f12;
         float f13;
@@ -160,31 +160,31 @@ public final class l0 {
             n0Var = k10;
             j3 = 0;
             fjVar2 = fjVar;
-            vi0Var2 = vi0Var;
-            h2Var2 = h2Var;
-            l0 l0Var = new l0(context, h2Var2, vi0Var2, view, view3, f10, f11, p0Var, i7, 1, true);
+            xi0Var2 = xi0Var;
+            g2Var2 = g2Var;
+            l0 l0Var = new l0(context, g2Var2, xi0Var2, view, view3, f10, f11, p0Var, i7, 1, true);
             context2 = context;
             this.f = l0Var;
             C = l0Var;
         } else {
             context2 = context;
-            h2Var2 = h2Var;
+            g2Var2 = g2Var;
             view3 = view2;
             n0Var = k10;
             j3 = 0;
             fjVar2 = fjVar;
-            vi0Var2 = vi0Var;
+            xi0Var2 = xi0Var;
         }
-        bn bnVar2 = h2Var2 instanceof bn ? (bn) h2Var2 : null;
-        if (vi0Var2 != null) {
-            b1 b1Var = vi0Var2.b;
+        bn bnVar2 = g2Var2 instanceof bn ? (bn) g2Var2 : null;
+        if (xi0Var2 != null) {
+            b1 b1Var = xi0Var2.b;
             int i18 = 0;
             while (true) {
                 if (i18 >= b1Var.getChildCount()) {
                     break;
                 }
-                if ((b1Var.getChildAt(i18) instanceof ti0) && ((ti0) b1Var.getChildAt(i18)).e.equals(this.p)) {
-                    this.t = (ti0) b1Var.getChildAt(i18);
+                if ((b1Var.getChildAt(i18) instanceof vi0) && ((vi0) b1Var.getChildAt(i18)).e.equals(this.p)) {
+                    this.t = (vi0) b1Var.getChildAt(i18);
                     break;
                 }
                 i18++;
@@ -198,7 +198,7 @@ public final class l0 {
                 int i20 = 0;
                 while (i20 < arrayList.size()) {
                     if (this.p.equals(arrayList.get(i20).reaction) && arrayList.get(i20).unread) {
-                        b9 b9Var = new b9((i6) null);
+                        b9 b9Var = new b9((h6) null);
                         i17 = i19;
                         ImageReceiver imageReceiver = new ImageReceiver(null);
                         long B1 = fj.B1(arrayList.get(i20).peer_id);
@@ -288,11 +288,11 @@ public final class l0 {
         }
         bn bnVar4 = bnVar2;
         int i23 = i19;
-        ti0 ti0Var = this.t;
-        ?? r10 = (ti0Var == null && (f10 == 0.0f || f11 == 0.0f)) ? 0 : i23;
+        vi0 vi0Var = this.t;
+        ?? r10 = (vi0Var == null && (f10 == 0.0f || f11 == 0.0f)) ? 0 : i23;
         if (view3 == null) {
-            if (ti0Var != null) {
-                ti0Var.getLocationOnScreen(this.j);
+            if (vi0Var != null) {
+                vi0Var.getLocationOnScreen(this.j);
                 float x10 = this.j[0] + this.t.b.getX();
                 float y10 = this.j[i23] + this.t.b.getY();
                 f12 = this.t.getScaleX() * this.t.b.getWidth();
@@ -359,7 +359,7 @@ public final class l0 {
             int i26 = i12;
             fj fjVar4 = fjVar2;
             r15 = i11;
-            i0Var = new i0(this, context2, h2Var, view5, z10, fjVar4, bnVar4, i13, i10, r10, f31, f13, f14, p0Var);
+            i0Var = new i0(this, context2, g2Var, view5, z10, fjVar4, bnVar4, i13, i10, r10, f31, f13, f14, p0Var);
             this.i = i0Var;
             j0Var = new j0(this, context2);
             this.b = j0Var;
@@ -428,28 +428,28 @@ public final class l0 {
                 r11 = 0;
                 if (i10 == 0) {
                     i14 = i7;
-                    o5 o5Var = new o5(r15 == true ? 1 : 0, i14, p0Var.g);
-                    o5Var.n(j0Var2);
-                    j0Var2.I = o5Var;
+                    p5 p5Var = new p5(r15 == true ? 1 : 0, i14, p0Var.g);
+                    p5Var.n(j0Var2);
+                    j0Var2.I = p5Var;
                     if (j0Var2.K) {
-                        o5Var.a(j0Var2);
+                        p5Var.a(j0Var2);
                     }
                 } else {
                     i14 = i7;
                     if (i10 == 2) {
                         j0Var3 = j0Var4;
                         fjVar3 = fjVar4;
-                        o5 o5Var2 = new o5(2, i14, p0Var.g);
-                        o5Var2.n(j0Var2);
-                        j0Var2.I = o5Var2;
+                        p5 p5Var2 = new p5(2, i14, p0Var.g);
+                        p5Var2.n(j0Var2);
+                        j0Var2.I = p5Var2;
                         if (j0Var2.K) {
-                            o5Var2.a(j0Var2);
+                            p5Var2.a(j0Var2);
                         }
                         if (i10 != 0 || i10 == r15) {
-                            o5 o5Var3 = new o5(2, i14, p0Var.g);
-                            o5Var3.setColorFilter(new PorterDuffColorFilter(fjVar3 == null ? n6.w0(fjVar3.P5() ? fjVar3.P3() ? n6.Jc : n6.tk : fjVar3.P3() ? n6.xk : n6.wk, h2Var != null ? h2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                            p5 p5Var3 = new p5(2, i14, p0Var.g);
+                            p5Var3.setColorFilter(new PorterDuffColorFilter(fjVar3 == null ? m6.w0(fjVar3.P5() ? fjVar3.P3() ? m6.Jc : m6.tk : fjVar3.P3() ? m6.xk : m6.wk, g2Var != null ? g2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                             boolean z13 = i10 != 0 ? r15 == true ? 1 : 0 : false;
-                            j0Var.J = d.a(o5Var3, z13, !z13);
+                            j0Var.J = d.a(p5Var3, z13, !z13);
                             i0Var.setClipChildren(false);
                         }
                     }
@@ -458,13 +458,13 @@ public final class l0 {
                 fjVar3 = fjVar4;
                 if (i10 != 0) {
                 }
-                o5 o5Var32 = new o5(2, i14, p0Var.g);
+                p5 p5Var32 = new p5(2, i14, p0Var.g);
                 if (fjVar3 == null) {
                 }
-                o5Var32.setColorFilter(new PorterDuffColorFilter(fjVar3 == null ? n6.w0(fjVar3.P5() ? fjVar3.P3() ? n6.Jc : n6.tk : fjVar3.P3() ? n6.xk : n6.wk, h2Var != null ? h2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                p5Var32.setColorFilter(new PorterDuffColorFilter(fjVar3 == null ? m6.w0(fjVar3.P5() ? fjVar3.P3() ? m6.Jc : m6.tk : fjVar3.P3() ? m6.xk : m6.wk, g2Var != null ? g2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                 if (i10 != 0) {
                 }
-                j0Var.J = d.a(o5Var32, z13, !z13);
+                j0Var.J = d.a(p5Var32, z13, !z13);
                 i0Var.setClipChildren(false);
             }
             j0Var2.getImageReceiver().W(r11);
@@ -517,8 +517,8 @@ public final class l0 {
         f15 = iArr2[0];
         f16 = iArr2[i23];
         f12 = view3.getScaleX() * view3.getWidth();
-        if (view3 instanceof b11) {
-            float f32 = ((b11) view3).H;
+        if (view3 instanceof c11) {
+            float f32 = ((c11) view3).H;
             if (f32 > 0.0f) {
                 f12 = view3.getWidth() * ((f32 * 2.0f) + 1.0f);
                 f15 = f3.y(f12, view3.getWidth(), 2.0f, f15);
@@ -543,7 +543,7 @@ public final class l0 {
         int i262 = i12;
         fj fjVar42 = fjVar2;
         r15 = i11;
-        i0Var = new i0(this, context2, h2Var, view52, z10, fjVar42, bnVar4, i13, i10, r10, f312, f13, f14, p0Var);
+        i0Var = new i0(this, context2, g2Var, view52, z10, fjVar42, bnVar4, i13, i10, r10, f312, f13, f14, p0Var);
         this.i = i0Var;
         j0Var = new j0(this, context2);
         this.b = j0Var;
@@ -629,27 +629,27 @@ public final class l0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(h2 h2Var, vi0 vi0Var, View view, View view2, float f10, float f11, p0 p0Var, int i7, int i10) {
-        if (view == null || p0Var == null || h2Var == null || h2Var.getParentActivity() == null) {
+    public static void d(g2 g2Var, xi0 xi0Var, View view, View view2, float f10, float f11, p0 p0Var, int i7, int i10) {
+        if (view == null || p0Var == null || g2Var == null || g2Var.getParentActivity() == null) {
             return;
         }
         boolean z10 = true;
         if (mp.g1().getBoolean("view_animations", true)) {
             if (i10 == 2 || i10 == 0) {
-                d(h2Var, null, view, view2, 0.0f, 0.0f, p0Var, i7, 1);
+                d(g2Var, null, view, view2, 0.0f, 0.0f, p0Var, i7, 1);
             }
-            l0 l0Var = new l0(h2Var.getParentActivity(), h2Var, vi0Var, view, view2, f10, f11, p0Var, i7, i10, false);
+            l0 l0Var = new l0(g2Var.getParentActivity(), g2Var, xi0Var, view, view2, f10, f11, p0Var, i7, i10, false);
             if (i10 == 1) {
                 C = l0Var;
             } else {
                 B = l0Var;
             }
-            if (h2Var instanceof bn) {
-                bn bnVar = (bn) h2Var;
+            if (g2Var instanceof bn) {
+                bn bnVar = (bn) g2Var;
                 if (i10 != 0) {
                 }
-                h1 h1Var = bnVar.g9;
-                if (h1Var != null) {
+                g1 g1Var = bnVar.g9;
+                if (g1Var != null) {
                 }
             }
             z10 = false;
@@ -661,12 +661,12 @@ public final class l0 {
                 layoutParams.type = 1000;
                 layoutParams.flags = 65816;
                 layoutParams.format = -3;
-                WindowManager windowManager = h2Var.getParentActivity().getWindowManager();
+                WindowManager windowManager = g2Var.getParentActivity().getWindowManager();
                 l0Var.k = windowManager;
                 org.telegram.messenger.g0.w3(windowManager, l0Var.i, layoutParams);
                 l0Var.k.addView(l0Var.i, layoutParams);
             } else {
-                ((FrameLayout) h2Var.getParentActivity().getWindow().getDecorView()).addView(l0Var.i);
+                ((FrameLayout) g2Var.getParentActivity().getWindow().getDecorView()).addView(l0Var.i);
             }
             view.invalidate();
             if (!(view instanceof r1) || ((r1) view).getCurrentMessagesGroup() == null || view.getParent() == null) {

@@ -9,15 +9,15 @@ import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.sj0;
 import org.telegram.ui.cx;
 import org.telegram.ui.mw;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements f0, qj0 {
+public final /* synthetic */ class s implements f0, sj0 {
     public final /* synthetic */ h0 a;
 
     public /* synthetic */ s(h0 h0Var) {
@@ -45,7 +45,7 @@ public final /* synthetic */ class s implements f0, qj0 {
         h0Var.f();
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
         TLRPC.User c22;
         mw mwVar = this.a.V;
@@ -55,16 +55,16 @@ public final /* synthetic */ class s implements f0, qj0 {
             cx cxVar = mwVar.a;
             if (cxVar.getParentActivity() != null && (c22 = cxVar.getMessagesController().c2(l10)) != null) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cxVar.getParentActivity());
-                String M0 = gd.M0(2131752223, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.S = M0;
-                u1Var.U = org.telegram.messenger.g0.W2(gd.a0("ChatHintsDeleteAlert", null, 2131752224, i5.m(0, c22.first_name, c22.last_name)));
-                alertDialog$Builder.k(gd.M0(2131744620, null), new ai.d0(mwVar, longValue, 9));
-                alertDialog$Builder.h(gd.M0(2131752578, null), null);
-                cxVar.showDialog(u1Var);
-                TextView textView = (TextView) u1Var.d(-1);
+                String N0 = gd.N0(2131752222, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = N0;
+                t1Var.U = org.telegram.messenger.g0.W2(gd.a0("ChatHintsDeleteAlert", null, 2131752223, i5.m(0, c22.first_name, c22.last_name)));
+                alertDialog$Builder.k(gd.N0(2131744614, null), new ai.d0(mwVar, longValue, 9));
+                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                cxVar.showDialog(t1Var);
+                TextView textView = (TextView) t1Var.d(-1);
                 if (textView != null) {
-                    u6.U(textView, n6.q7, cxVar.getResourceProvider());
+                    t6.U(textView, m6.q7, cxVar.getResourceProvider());
                 }
             }
         }

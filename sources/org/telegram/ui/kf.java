@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kf implements org.telegram.ui.Components.di0 {
+public final /* synthetic */ class kf implements org.telegram.ui.Components.fi0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
     public final /* synthetic */ boolean c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.di0 
         this.d = fjVar;
     }
 
-    @Override // org.telegram.ui.Components.di0
+    @Override // org.telegram.ui.Components.fi0
     public final void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -51,7 +51,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.di0 
                                         } else {
                                             bnVar2.getClass();
                                         }
-                                        new org.telegram.ui.Components.yr(bnVar2, bnVar2.e, arrayList, arrayList2, channelParticipantArr2, bnVar2.d7, (int) bnVar2.d(), bnVar2.g4, true, new org.telegram.messenger.j2(20)).show();
+                                        new org.telegram.ui.Components.as(bnVar2, bnVar2.e, arrayList, arrayList2, channelParticipantArr2, bnVar2.d7, (int) bnVar2.d(), bnVar2.g4, true, new org.telegram.messenger.j2(20)).show();
                                         break;
                                     default:
                                         bn bnVar3 = bnVar;
@@ -63,7 +63,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.di0 
                                         } else {
                                             bnVar3.getClass();
                                         }
-                                        new org.telegram.ui.Components.yr(bnVar3, bnVar3.e, arrayList, arrayList2, channelParticipantArr3, bnVar3.d7, (int) bnVar3.d(), bnVar3.g4, true, new org.telegram.messenger.j2(20)).show();
+                                        new org.telegram.ui.Components.as(bnVar3, bnVar3.e, arrayList, arrayList2, channelParticipantArr3, bnVar3.d7, (int) bnVar3.d(), bnVar3.g4, true, new org.telegram.messenger.j2(20)).show();
                                         break;
                                 }
                             }
@@ -102,7 +102,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.di0 
                                     } else {
                                         bnVar22.getClass();
                                     }
-                                    new org.telegram.ui.Components.yr(bnVar22, bnVar22.e, arrayList3, arrayList4, channelParticipantArr22, bnVar22.d7, (int) bnVar22.d(), bnVar22.g4, true, new org.telegram.messenger.j2(20)).show();
+                                    new org.telegram.ui.Components.as(bnVar22, bnVar22.e, arrayList3, arrayList4, channelParticipantArr22, bnVar22.d7, (int) bnVar22.d(), bnVar22.g4, true, new org.telegram.messenger.j2(20)).show();
                                     break;
                                 default:
                                     bn bnVar3 = bnVar2;
@@ -114,7 +114,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.di0 
                                     } else {
                                         bnVar3.getClass();
                                     }
-                                    new org.telegram.ui.Components.yr(bnVar3, bnVar3.e, arrayList3, arrayList4, channelParticipantArr3, bnVar3.d7, (int) bnVar3.d(), bnVar3.g4, true, new org.telegram.messenger.j2(20)).show();
+                                    new org.telegram.ui.Components.as(bnVar3, bnVar3.e, arrayList3, arrayList4, channelParticipantArr3, bnVar3.d7, (int) bnVar3.d(), bnVar3.g4, true, new org.telegram.messenger.j2(20)).show();
                                     break;
                             }
                         }

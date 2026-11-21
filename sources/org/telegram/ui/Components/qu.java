@@ -1,21 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class qu extends yo0 {
-    public final /* synthetic */ bv V2;
+public final class qu extends cv {
+    public final /* synthetic */ ev h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qu(bv bvVar, Context context, String str, String str2, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, null, str, false, str2, false, i6Var);
-        this.V2 = bvVar;
-    }
-
-    @Override // org.telegram.ui.Components.yo0
-    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        org.telegram.messenger.g0.h3(new org.telegram.ui.b0(this, hVar, i7, 10), 100L);
+    public qu(int i7, ArrayList arrayList, ev evVar) {
+        super(i7, arrayList, evVar);
+        this.h = evVar;
     }
 }

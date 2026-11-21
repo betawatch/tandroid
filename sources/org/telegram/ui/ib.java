@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ib extends v4.i0 {
     public final Context c;
@@ -184,14 +184,14 @@ public final class ib extends v4.i0 {
             if (z10) {
                 TLRPC.TL_forumTopic tL_forumTopic = fjVar.j1;
                 if (tL_forumTopic == null) {
-                    i13 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                    i13 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                     j11 = org.telegram.messenger.fj.b2(i13, fjVar.k, true, false);
                 } else {
                     j11 = tL_forumTopic.id;
                 }
                 TLRPC.TL_forumTopic tL_forumTopic2 = fjVar2.j1;
                 if (tL_forumTopic2 == null) {
-                    i12 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                     r1Var = r1Var2;
                     j12 = org.telegram.messenger.fj.b2(i12, fjVar2.k, true, false);
                 } else {
@@ -207,7 +207,7 @@ public final class ib extends v4.i0 {
                 if (z13) {
                     TLRPC.TL_forumTopic tL_forumTopic3 = fjVar.j1;
                     if (tL_forumTopic3 == null) {
-                        i11 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                        i11 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                         z12 = true;
                         j3 = org.telegram.messenger.fj.b2(i11, fjVar.k, true, false);
                     } else {
@@ -216,7 +216,7 @@ public final class ib extends v4.i0 {
                     }
                     TLRPC.TL_forumTopic tL_forumTopic4 = fjVar3.j1;
                     if (tL_forumTopic4 == null) {
-                        i10 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                        i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                         j10 = org.telegram.messenger.fj.b2(i10, fjVar3.k, z12, false);
                     } else {
                         j10 = tL_forumTopic4.id;
@@ -250,7 +250,7 @@ public final class ib extends v4.i0 {
     /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Cells.v0] */
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         ViewGroup viewGroup2;
         int i10;
         ViewGroup viewGroup3;
@@ -259,7 +259,7 @@ public final class ib extends v4.i0 {
         Context context = this.c;
         if (i7 == 0) {
             if (arrayList.isEmpty()) {
-                i10 = ((org.telegram.ui.ActionBar.h2) lbVar).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                 viewGroup3 = new org.telegram.ui.Cells.r1(context, i10);
             } else {
                 ?? r52 = (View) arrayList.get(0);
@@ -277,8 +277,8 @@ public final class ib extends v4.i0 {
         } else if (i7 == 2) {
             viewGroup2 = new org.telegram.ui.Cells.a2(context, null);
         } else if (i7 == 10) {
-            i6Var = ((org.telegram.ui.ActionBar.h2) lbVar).resourceProvider;
-            ?? z1Var = new org.telegram.ui.Cells.z1(context, i6Var);
+            h6Var = ((org.telegram.ui.ActionBar.g2) lbVar).resourceProvider;
+            ?? z1Var = new org.telegram.ui.Cells.z1(context, h6Var);
             z1Var.setDelegate(new f(this, 8));
             viewGroup2 = z1Var;
         } else {

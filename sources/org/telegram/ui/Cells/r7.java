@@ -9,9 +9,9 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.qd;
-import org.telegram.ui.Components.kl;
+import org.telegram.ui.Components.ml;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,13 +79,13 @@ public final /* synthetic */ class r7 implements Runnable {
                 s7Var2.J = d11;
                 s7Var2.H = false;
                 CharSequence charSequence = s7Var2.L;
-                org.telegram.ui.ActionBar.n5 n5Var = s7Var2.d;
-                CharSequence m10 = org.telegram.messenger.j6.m(charSequence, n5Var.getPaint().getFontMetricsInt(), false, null, 0);
+                org.telegram.ui.ActionBar.m5 m5Var = s7Var2.d;
+                CharSequence m10 = org.telegram.messenger.j6.m(charSequence, m5Var.getPaint().getFontMetricsInt(), false, null, 0);
                 s7Var2.L = m10;
-                n5Var.l(m10, false);
+                m5Var.l(m10, false);
                 break;
             default:
-                ((kl) this.b).h0(this.c, this.d);
+                ((ml) this.b).h0(this.c, this.d);
                 break;
         }
     }

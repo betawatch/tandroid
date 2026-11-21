@@ -1,10 +1,10 @@
 package ii;
 
 import android.content.Context;
-import di.c7;
 import di.m3;
+import di.v6;
 import fi.h0;
-import ki.z0;
+import ki.y0;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.j10;
@@ -16,15 +16,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.e70;
-import org.telegram.ui.Components.h01;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.Components.g70;
+import org.telegram.ui.Components.j01;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.iy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -54,7 +54,7 @@ public final /* synthetic */ class c implements RequestDelegate {
             case 0:
                 final ConnectionsManager connectionsManager = (ConnectionsManager) this.e;
                 final TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.f;
-                final h2 h2Var = (h2) this.c;
+                final g2 g2Var = (g2) this.c;
                 final q10 q10Var = (q10) this.g;
                 final Runnable runnable = (Runnable) this.h;
                 final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.i;
@@ -66,7 +66,7 @@ public final /* synthetic */ class c implements RequestDelegate {
                         TLRPC.TL_error tL_error2 = TLRPC.TL_error.this;
                         ConnectionsManager connectionsManager2 = connectionsManager;
                         TwoStepVerificationActivity twoStepVerificationActivity2 = twoStepVerificationActivity;
-                        h2 h2Var2 = h2Var;
+                        g2 g2Var2 = g2Var;
                         long j10 = j3;
                         q10 q10Var2 = q10Var;
                         Runnable runnable2 = runnable;
@@ -76,11 +76,11 @@ public final /* synthetic */ class c implements RequestDelegate {
                             tL_payments_withdrawStarsRevenueToWallet.ton = true;
                             tL_payments_withdrawStarsRevenueToWallet.peer = mp.u1(i10).l1(j10.i(i10).e());
                             tL_payments_withdrawStarsRevenueToWallet.tmp_password = ((TL_account.tmpPassword) tLObject).tmp_password;
-                            connectionsManager2.sendRequest(tL_payments_withdrawStarsRevenueToWallet, new f(i10, q10Var2, inputCheckPasswordSRP, twoStepVerificationActivity2, runnable2, h2Var2, j10));
+                            connectionsManager2.sendRequest(tL_payments_withdrawStarsRevenueToWallet, new f(i10, q10Var2, inputCheckPasswordSRP, twoStepVerificationActivity2, runnable2, g2Var2, j10));
                             return;
                         }
                         if ("SRP_ID_INVALID".equals(tL_error2.text)) {
-                            connectionsManager2.sendRequest(new TL_account.getPassword(), new e(twoStepVerificationActivity2, h2Var2, j10, q10Var2, runnable2, i10), 8);
+                            connectionsManager2.sendRequest(new TL_account.getPassword(), new e(twoStepVerificationActivity2, g2Var2, j10, q10Var2, runnable2, i10), 8);
                             return;
                         }
                         n.a[i10] = false;
@@ -96,18 +96,18 @@ public final /* synthetic */ class c implements RequestDelegate {
                             return;
                         }
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, twoStepVerificationActivity2.getParentActivity(), twoStepVerificationActivity2.getResourceProvider());
-                        String M0 = gd.M0(2131751286, null);
-                        u1 u1Var = alertDialog$Builder.a;
-                        u1Var.S = M0;
-                        u1Var.U = gd.M0(2131749328, null);
-                        alertDialog$Builder.h(gd.M0(2131752578, null), null);
-                        alertDialog$Builder.k(gd.M0(2131751280, null), new c7(twoStepVerificationActivity2, 23));
-                        twoStepVerificationActivity2.showDialog(u1Var);
+                        String N0 = gd.N0(2131751285, null);
+                        t1 t1Var = alertDialog$Builder.a;
+                        t1Var.S = N0;
+                        t1Var.U = gd.N0(2131749327, null);
+                        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                        alertDialog$Builder.k(gd.N0(2131751279, null), new v6(twoStepVerificationActivity2, 24));
+                        twoStepVerificationActivity2.showDialog(t1Var);
                     }
                 });
                 break;
             case 1:
-                g0.g3(new z0((u1) this.e, tLObject, (org.telegram.messenger.c) this.f, (e70) this.g, this.b, (Context) this.h, (h2) this.c, this.d, (TLRPC.Peer) this.i));
+                g0.g3(new y0((t1) this.e, tLObject, (org.telegram.messenger.c) this.f, (g70) this.g, this.b, (Context) this.h, (g2) this.c, this.d, (TLRPC.Peer) this.i));
                 break;
             default:
                 Context context = (Context) this.e;
@@ -124,7 +124,7 @@ public final /* synthetic */ class c implements RequestDelegate {
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            g0.h3(new h01(aVar, lcVar, this.d, 15), 200L);
+                            g0.h3(new j01(aVar, lcVar, this.d, 15), 200L);
                             break;
                         }
                     } else {
@@ -139,10 +139,10 @@ public final /* synthetic */ class c implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ c(ConnectionsManager connectionsManager, TwoStepVerificationActivity twoStepVerificationActivity, h2 h2Var, long j3, q10 q10Var, Runnable runnable, int i7, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP) {
+    public /* synthetic */ c(ConnectionsManager connectionsManager, TwoStepVerificationActivity twoStepVerificationActivity, g2 g2Var, long j3, q10 q10Var, Runnable runnable, int i7, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP) {
         this.e = connectionsManager;
         this.f = twoStepVerificationActivity;
-        this.c = h2Var;
+        this.c = g2Var;
         this.b = j3;
         this.g = q10Var;
         this.h = runnable;
@@ -150,13 +150,13 @@ public final /* synthetic */ class c implements RequestDelegate {
         this.i = inputCheckPasswordSRP;
     }
 
-    public /* synthetic */ c(u1 u1Var, org.telegram.messenger.c cVar, e70 e70Var, long j3, Context context, h2 h2Var, int i7, TLRPC.Peer peer) {
-        this.e = u1Var;
+    public /* synthetic */ c(t1 t1Var, org.telegram.messenger.c cVar, g70 g70Var, long j3, Context context, g2 g2Var, int i7, TLRPC.Peer peer) {
+        this.e = t1Var;
         this.f = cVar;
-        this.g = e70Var;
+        this.g = g70Var;
         this.b = j3;
         this.h = context;
-        this.c = h2Var;
+        this.c = g2Var;
         this.d = i7;
         this.i = peer;
     }

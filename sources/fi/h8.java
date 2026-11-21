@@ -14,10 +14,10 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import j$.util.Objects;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.zt;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public class h8 extends View {
     public final boolean E;
@@ -25,7 +25,7 @@ public class h8 extends View {
     public long G;
     public final Path H;
     public final f2.a I;
-    public final org.telegram.ui.Components.c6 a;
+    public final org.telegram.ui.Components.d6 a;
     public final TL_stories.MediaArea b;
     public final Paint c;
     public final Paint d;
@@ -46,7 +46,7 @@ public class h8 extends View {
         Paint paint = new Paint(1);
         this.d = paint;
         this.h = new Matrix();
-        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(1174405119, 2, -1);
+        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(1174405119, 2, -1);
         this.n = h02;
         this.r = new mc(this);
         this.s = false;
@@ -64,7 +64,7 @@ public class h8 extends View {
         this.x = z10;
         this.E = z10;
         this.y = z10;
-        this.a = new org.telegram.ui.Components.c6(view, 0L, 120L, new LinearInterpolator());
+        this.a = new org.telegram.ui.Components.d6(view, 0L, 120L, new LinearInterpolator());
         paint.setStyle(Paint.Style.STROKE);
         h02.setCallback(this);
     }
@@ -97,7 +97,7 @@ public class h8 extends View {
             if (getParent() instanceof View) {
                 View view = (View) getParent();
                 Objects.requireNonNull(view);
-                mcVar.f = new zt(1, view);
+                mcVar.f = new bu(1, view);
             }
             mcVar.c(true);
             yVar.setHotspot(motionEvent.getX(), motionEvent.getY());

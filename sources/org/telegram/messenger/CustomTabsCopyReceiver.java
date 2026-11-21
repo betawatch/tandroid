@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class CustomTabsCopyReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -13,7 +13,7 @@ public class CustomTabsCopyReceiver extends BroadcastReceiver {
         String dataString = intent.getDataString();
         if (dataString != null) {
             g0.g(dataString);
-            Toast.makeText(context, gd.M0(2131748729, null), 0).show();
+            Toast.makeText(context, gd.N0(2131748728, null), 0).show();
         }
     }
 }

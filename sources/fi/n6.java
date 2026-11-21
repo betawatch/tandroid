@@ -7,7 +7,7 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n6 implements x10 {
     public final /* synthetic */ int a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class n6 implements x10 {
         o6 o6Var = this.b;
         switch (i7) {
             case 0:
-                hi.d7 d7Var = o6Var.c;
-                d7Var.c0 = (TLRPC.Document) obj;
+                hi.c7 c7Var = o6Var.c;
+                c7Var.c0 = (TLRPC.Document) obj;
                 TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
-                TLRPC.Document document = d7Var.c0;
+                TLRPC.Document document = c7Var.c0;
                 int i10 = mp.I8;
                 TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
                 tL_inputDocument.id = document.id;

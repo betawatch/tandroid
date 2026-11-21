@@ -22,10 +22,10 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.fa;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class o3 {
     public Object a;
@@ -104,7 +104,7 @@ public final class o3 {
             if (y12 == null) {
                 return;
             }
-            ((cb.c) this.f).p(new h6.m((ai.k0) this.e, y12));
+            ((cb.c) this.f).p(new h6.m((ai.l0) this.e, y12));
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
@@ -132,7 +132,7 @@ public final class o3 {
         this.b = eVar;
     }
 
-    public o3(Context context, i6 i6Var) {
+    public o3(Context context, h6 h6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         Paint paint = new Paint();
@@ -149,6 +149,6 @@ public final class o3 {
         Drawable mutate2 = context.getDrawable(org.telegram.messenger.beta.R.drawable.filled_views).mutate();
         this.d = mutate2;
         mutate2.setBounds(0, 0, (int) (mutate2.getIntrinsicWidth() * 0.7f), (int) (mutate2.getIntrinsicHeight() * 0.7f));
-        paint.setColor(n6.w0(n6.Ci, i6Var));
+        paint.setColor(m6.w0(m6.Ci, h6Var));
     }
 }

@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.z80;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class t0 extends Application {
     public static volatile boolean E = true;
@@ -328,7 +328,7 @@ public abstract class t0 extends Application {
             }
         }
         ((t0) b).getClass();
-        g0.h3(new ai.o(29), 1000L);
+        g0.h3(new ai.n(29), 1000L);
         if (s2.a) {
             a8.b("app initied");
         }
@@ -340,7 +340,7 @@ public abstract class t0 extends Application {
             a6.q(i10);
         }
         r1.i().q();
-        g0.h3(new ai.o(25), 3000L);
+        g0.h3(new ai.n(25), 3000L);
     }
 
     public static void x() {
@@ -368,7 +368,7 @@ public abstract class t0 extends Application {
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         try {
-            gd.E0().W0(configuration);
+            gd.E0().X0(configuration);
             g0.v(b, configuration);
             VideoCapturerDevice.checkScreenCapturerSize();
             g0.c3();
@@ -428,12 +428,12 @@ public abstract class t0 extends Application {
         try {
             ConnectionsManager.native_setJava(false);
             new r0(this);
-            new b(new ai.o(26));
+            new b(new ai.n(26));
             if (s2.a) {
                 a8.b("load libs time = " + (SystemClock.elapsedRealtime() - s));
             }
             d = new Handler(b.getMainLooper());
-            g0.g3(new ai.o(27));
+            g0.g3(new ai.n(27));
             z80[] values = z80.values();
             int length = values.length;
             int i11 = 0;

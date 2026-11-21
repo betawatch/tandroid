@@ -8,7 +8,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class iz extends ReplacementSpan {
     public final TextPaint a;
@@ -20,7 +20,7 @@ public class iz extends ReplacementSpan {
     public final int h;
     public boolean n;
     public int r;
-    public org.telegram.ui.ActionBar.i6 s;
+    public org.telegram.ui.ActionBar.h6 s;
     public CharSequence w;
 
     public iz(int i7) {
@@ -48,7 +48,7 @@ public class iz extends ReplacementSpan {
     public void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
         a();
         if (this.n) {
-            this.f = org.telegram.ui.ActionBar.n6.w0(this.r, this.s);
+            this.f = org.telegram.ui.ActionBar.m6.w0(this.r, this.s);
         }
         int i14 = this.f;
         if (i14 == 0) {

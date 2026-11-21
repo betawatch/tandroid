@@ -10,19 +10,19 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class u7 extends FrameLayout {
     public final RectF a;
     public boolean b;
     public int c;
     public int d;
-    public final /* synthetic */ g8 e;
+    public final /* synthetic */ f8 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u7(g8 g8Var, Context context) {
+    public u7(f8 f8Var, Context context) {
         super(context);
-        this.e = g8Var;
+        this.e = f8Var;
         this.a = new RectF();
         this.b = false;
     }
@@ -30,7 +30,7 @@ public final class u7 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        setTag(R.id.bulletin_delegate_tag, new bi.e1(this, 6));
+        setTag(R.id.bulletin_delegate_tag, new bi.i1(this, 6));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -45,13 +45,13 @@ public final class u7 extends FrameLayout {
         float f11;
         float f12;
         float f13;
-        g8 g8Var = this.e;
-        r7 r7Var = g8Var.s1;
-        v7 v7Var = g8Var.n1;
-        boolean z10 = g8Var.o2;
-        if (g8Var.r2.size() <= 1) {
-            g8Var.s0.setBounds(0, (getMeasuredHeight() - g8Var.y1.getMeasuredHeight()) - g8Var.t0, getMeasuredWidth(), getMeasuredHeight());
-            g8Var.s0.draw(canvas);
+        f8 f8Var = this.e;
+        r7 r7Var = f8Var.s1;
+        v7 v7Var = f8Var.n1;
+        boolean z10 = f8Var.o2;
+        if (f8Var.r2.size() <= 1) {
+            f8Var.s0.setBounds(0, (getMeasuredHeight() - f8Var.y1.getMeasuredHeight()) - f8Var.t0, getMeasuredWidth(), getMeasuredHeight());
+            f8Var.s0.draw(canvas);
             if (z10) {
                 v7Var.setVisibility(8);
                 return;
@@ -62,20 +62,20 @@ public final class u7 extends FrameLayout {
             return;
         }
         int L = org.telegram.messenger.g0.L(13.0f);
-        int translationY = (int) (r7Var.getTranslationY() + ((g8Var.u2 - g8Var.t0) - L));
+        int translationY = (int) (r7Var.getTranslationY() + ((f8Var.u2 - f8Var.t0) - L));
         if (z10) {
             translationY = (translationY - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) + org.telegram.messenger.g0.L(10.0f);
         }
         int L2 = org.telegram.messenger.g0.L(20.0f) + translationY;
         int L3 = org.telegram.messenger.g0.L(15.0f) + getMeasuredHeight();
-        int i7 = g8Var.t0;
+        int i7 = f8Var.t0;
         int i10 = L3 + i7;
         if (z10 || i7 + translationY >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
             f10 = 0.0f;
             f11 = 1.0f;
         } else {
             float L4 = org.telegram.messenger.g0.L(4.0f) + L;
-            f10 = Math.min(1.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - translationY) - g8Var.t0) / L4);
+            f10 = Math.min(1.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - translationY) - f8Var.t0) / L4);
             int currentActionBarHeight = (int) ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - L4) * f10);
             translationY -= currentActionBarHeight;
             L2 -= currentActionBarHeight;
@@ -85,33 +85,33 @@ public final class u7 extends FrameLayout {
         int i11 = (int) ((1.0f - f10) * org.telegram.messenger.g0.m);
         int i12 = translationY + i11;
         int i13 = L2 + i11;
-        g8Var.s0.setBounds(0, i12, getMeasuredWidth(), i10);
-        g8Var.s0.draw(canvas);
+        f8Var.s0.setBounds(0, i12, getMeasuredWidth(), i10);
+        f8Var.s0.draw(canvas);
         RectF rectF = this.a;
         if (z10 || f11 == 1.0f) {
             f12 = 20.0f;
             f13 = 4.0f;
         } else {
             f12 = 20.0f;
-            org.telegram.ui.ActionBar.n6.t0.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, g8Var.J0));
+            org.telegram.ui.ActionBar.m6.t0.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, f8Var.J0));
             f13 = 4.0f;
-            rectF.set(g8Var.u0, g8Var.t0 + i12, getMeasuredWidth() - g8Var.u0, org.telegram.messenger.g0.L(24.0f) + g8Var.t0 + i12);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.ui.ActionBar.n6.t0);
+            rectF.set(f8Var.u0, f8Var.t0 + i12, getMeasuredWidth() - f8Var.u0, org.telegram.messenger.g0.L(24.0f) + f8Var.t0 + i12);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.ui.ActionBar.m6.t0);
         }
         if (!z10 && f11 != 0.0f) {
             int L5 = org.telegram.messenger.g0.L(36.0f);
             rectF.set((getMeasuredWidth() - L5) / 2, i13, (getMeasuredWidth() + L5) / 2, org.telegram.messenger.g0.L(f13) + i13);
-            int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.zj, g8Var.J0);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.zj, f8Var.J0);
             int alpha = Color.alpha(w02);
-            org.telegram.ui.ActionBar.n6.t0.setColor(w02);
-            org.telegram.ui.ActionBar.n6.t0.setAlpha((int) (alpha * 1.0f * f11));
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.n6.t0);
+            org.telegram.ui.ActionBar.m6.t0.setColor(w02);
+            org.telegram.ui.ActionBar.m6.t0.setAlpha((int) (alpha * 1.0f * f11));
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.m6.t0);
         }
         if (z10) {
             v7Var.setVisibility(0);
-            float max = Math.max(0.0f, com.google.android.gms.internal.vision.e2.z(1.0f, g8Var.L2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(f12) + ((i12 - org.telegram.messenger.g0.m) - g8Var.t0)) - v7Var.getTop());
+            float max = Math.max(0.0f, com.google.android.gms.internal.vision.e2.z(1.0f, f8Var.L2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(f12) + ((i12 - org.telegram.messenger.g0.m) - f8Var.t0)) - v7Var.getTop());
             v7Var.setTranslationY(max);
-            g8Var.o1.setTranslationY(max);
+            f8Var.o1.setTranslationY(max);
         }
     }
 
@@ -137,9 +137,9 @@ public final class u7 extends FrameLayout {
     */
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
-            g8 g8Var = this.e;
-            if (g8Var.u2 != 0 && g8Var.n1.getAlpha() == 0.0f) {
-                if (g8Var.u1.b() > 0) {
+            f8 f8Var = this.e;
+            if (f8Var.u2 != 0 && f8Var.n1.getAlpha() == 0.0f) {
+                if (f8Var.u1.b() > 0) {
                 }
             }
         }
@@ -149,57 +149,57 @@ public final class u7 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         super.onLayout(z10, i7, i10, i11, i12);
-        g8 g8Var = this.e;
-        g8.J0(g8Var);
-        g8Var.a1();
+        f8 f8Var = this.e;
+        f8.J0(f8Var);
+        f8Var.a1();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         int L;
-        g8 g8Var = this.e;
-        m7 m7Var = g8Var.y1;
-        m7 m7Var2 = g8Var.c2;
-        r7 r7Var = g8Var.s1;
+        f8 f8Var = this.e;
+        m7 m7Var = f8Var.y1;
+        m7 m7Var2 = f8Var.c2;
+        r7 r7Var = f8Var.s1;
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i7);
         if (size != this.c || size2 != this.d) {
             if (m7Var2.getTag() != null) {
-                g8Var.X0(false, false);
+                f8Var.X0(false, false);
             }
             this.d = size2;
             this.c = size;
         }
         this.b = true;
-        m7Var.setVisibility((g8Var.q1 || g8Var.d) ? 4 : 0);
-        g8Var.p1.setVisibility(m7Var.getVisibility());
+        m7Var.setVisibility((f8Var.q1 || f8Var.d) ? 4 : 0);
+        f8Var.p1.setVisibility(m7Var.getVisibility());
         int paddingTop = size - getPaddingTop();
         ((FrameLayout.LayoutParams) r7Var.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m;
-        ((FrameLayout.LayoutParams) g8Var.o1.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m;
+        ((FrameLayout.LayoutParams) f8Var.o1.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m;
         ((FrameLayout.LayoutParams) m7Var2.getLayoutParams()).topMargin = -getPaddingTop();
-        int L2 = org.telegram.messenger.g0.L(org.telegram.messenger.ks.J2 + ((g8Var.P0() || g8Var.t2) ? 0 : 52));
-        if (g8Var.r2.size() > 1) {
-            L2 += (org.telegram.messenger.g0.L(56.0f) * g8Var.r2.size()) + g8Var.t0;
+        int L2 = org.telegram.messenger.g0.L(org.telegram.messenger.ks.J2 + ((f8Var.P0() || f8Var.t2) ? 0 : 52));
+        if (f8Var.r2.size() > 1) {
+            L2 += (org.telegram.messenger.g0.L(56.0f) * f8Var.r2.size()) + f8Var.t0;
         }
-        if (g8Var.r1 || g8Var.d) {
+        if (f8Var.r1 || f8Var.d) {
             L = org.telegram.messenger.g0.L(8.0f);
         } else {
             if (L2 >= paddingTop) {
                 L2 = (int) ((paddingTop / 5) * 3.5f);
             }
             L = org.telegram.messenger.g0.L(8.0f) + (paddingTop - L2);
-            if (L > paddingTop - org.telegram.messenger.g0.L(((g8Var.P0() || g8Var.t2) ? 0 : 52) + org.telegram.messenger.ks.A5)) {
-                L = paddingTop - org.telegram.messenger.g0.L(((g8Var.P0() || g8Var.t2) ? 0 : 52) + org.telegram.messenger.ks.A5);
+            if (L > paddingTop - org.telegram.messenger.g0.L(((f8Var.P0() || f8Var.t2) ? 0 : 52) + org.telegram.messenger.ks.A5)) {
+                L = paddingTop - org.telegram.messenger.g0.L(((f8Var.P0() || f8Var.t2) ? 0 : 52) + org.telegram.messenger.ks.A5);
             }
             if (L < 0) {
                 L = 0;
             }
         }
-        if (g8Var.p2) {
+        if (f8Var.p2) {
             L = 0;
         }
         if (r7Var.getPaddingTop() != L) {
-            r7Var.setPadding(0, L, 0, (g8Var.r1 && g8Var.d) ? 0 : r7Var.getPaddingBottom());
+            r7Var.setPadding(0, L, 0, (f8Var.r1 && f8Var.d) ? 0 : r7Var.getPaddingBottom());
         }
         this.b = false;
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));

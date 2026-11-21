@@ -3,9 +3,9 @@ package org.telegram.ui.Wallet;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.j71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class p5 extends e3 {
     public final /* synthetic */ ViewGroup X1;
@@ -13,8 +13,8 @@ public final class p5 extends e3 {
     public final /* synthetic */ Context Z1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.i6 i6Var, ViewGroup viewGroup2, View[] viewArr, Context context2) {
-        super(context, viewGroup, i6Var);
+    public p5(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.h6 h6Var, ViewGroup viewGroup2, View[] viewArr, Context context2) {
+        super(context, viewGroup, h6Var);
         this.X1 = viewGroup2;
         this.Y1 = viewArr;
         this.Z1 = context2;
@@ -23,25 +23,25 @@ public final class p5 extends e3 {
     @Override // org.telegram.ui.Wallet.e3, org.telegram.ui.Components.sa
     public final void U0(float f10) {
         super.U0(f10);
-        if (this.X1 instanceof g71) {
+        if (this.X1 instanceof j71) {
             this.s0.setBounds(0, (int) f10, this.b.getWidth(), this.b.getHeight());
         }
     }
 
     @Override // org.telegram.ui.Components.sa
     public final boolean a1() {
-        return !(this.X1 instanceof g71);
+        return !(this.X1 instanceof j71);
     }
 
     @Override // org.telegram.ui.Wallet.e3
     public final int e1() {
-        return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, this.J0);
+        return org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, this.J0);
     }
 
-    @Override // org.telegram.ui.Wallet.e3, org.telegram.ui.ActionBar.x2, android.app.Dialog
+    @Override // org.telegram.ui.Wallet.e3, org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         super.show();
-        if (this.X1 instanceof g71) {
+        if (this.X1 instanceof j71) {
             View[] viewArr = this.Y1;
             if (viewArr[0] == null) {
                 jh.h hVar = new jh.h(this, this.Z1);

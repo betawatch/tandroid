@@ -1,78 +1,23 @@
 package hi;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class u {
-    public static ArrayList f;
-    public final String a;
+    public final v a;
     public final int b;
     public final int c;
-    public final int[] d;
-    public final ArrayList e = new ArrayList();
 
-    public u(String str) {
-        str = str == null ? "." : str;
-        this.a = str;
-        String[] split = str.split("/");
-        int length = split.length;
-        this.c = length;
-        this.d = new int[length];
-        int i7 = 0;
-        for (int i10 = 0; i10 < split.length; i10++) {
-            this.d[i10] = split[i10].length();
-            i7 = Math.max(i7, split[i10].length());
-        }
+    public u(v vVar, int i7, int i10) {
+        this.a = vVar;
         this.b = i7;
-        for (int i11 = 0; i11 < split.length; i11++) {
-            for (int i12 = 0; i12 < split[i11].length(); i12++) {
-                this.e.add(new t(this, i12, i11));
-            }
-        }
+        this.c = i10;
     }
 
-    public static ArrayList a() {
-        if (f == null) {
-            ArrayList arrayList = new ArrayList();
-            f = arrayList;
-            arrayList.add(new u("./."));
-            f.add(new u(".."));
-            f.add(new u("../."));
-            f.add(new u("./.."));
-            f.add(new u("././."));
-            f.add(new u("..."));
-            f.add(new u("../.."));
-            f.add(new u("./../.."));
-            f.add(new u("../../."));
-            f.add(new u("../../.."));
-            boolean z10 = org.telegram.messenger.s2.a;
-        }
-        return f;
+    public final float a(float f10) {
+        return (f10 / this.a.d[this.c]) * this.b;
     }
 
-    public static int b() {
-        ArrayList a10 = a();
-        int size = a10.size();
-        int i7 = 0;
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = a10.get(i10);
-            i10++;
-            i7 = Math.max(i7, ((u) obj).e.size());
-        }
-        return i7;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof u)) {
-            return false;
-        }
-        return TextUtils.equals(this.a, ((u) obj).a);
-    }
-
-    public final String toString() {
-        return this.a;
+    public final float b(float f10) {
+        return (f10 / this.a.d[this.c]) * (this.b + 1);
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.lm0;
 import org.telegram.ui.nl0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e3 implements q10 {
     public final /* synthetic */ int a;
@@ -31,15 +31,15 @@ public final /* synthetic */ class e3 implements q10 {
             case 0:
                 f6 f6Var = (f6) this.d;
                 vf.b bVar = (vf.b) this.e;
-                bi.g1 g1Var = (bi.g1) this.f;
+                bi.k1 k1Var = (bi.k1) this.f;
                 bVar.b();
                 if (((Boolean) obj).booleanValue()) {
                     m4 m4Var = f6Var.N2;
                     if (m4Var != null) {
-                        m4Var.a(this.b, this.c, g1Var != null);
+                        m4Var.a(this.b, this.c, k1Var != null);
                     }
-                    if (g1Var != null) {
-                        org.telegram.messenger.g0.g3(new bi.y0(g1Var, 3));
+                    if (k1Var != null) {
+                        org.telegram.messenger.g0.g3(new bi.c1(k1Var, 3));
                         f6Var.O0 = true;
                     }
                     f6Var.dismiss();

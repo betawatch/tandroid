@@ -7,7 +7,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kh implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -139,7 +139,7 @@ public final /* synthetic */ class kh implements Runnable {
                                             try {
                                                 i19 = i25;
                                                 try {
-                                                    e10 = org.telegram.ui.Components.o5.e(riVar.currentAccount, Long.parseLong(((String) arrayList7.get(i24)).substring(9)));
+                                                    e10 = org.telegram.ui.Components.p5.e(riVar.currentAccount, Long.parseLong(((String) arrayList7.get(i24)).substring(9)));
                                                     V = fj.V(e10, null, null);
                                                 } catch (Exception unused) {
                                                 }
@@ -414,10 +414,10 @@ public final /* synthetic */ class kh implements Runnable {
             case 1:
                 mp mpVar = (mp) obj5;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj2;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj2;
                 TLObject tLObject = (TLObject) obj;
                 if (((xo) obj4).e(tL_error)) {
-                    org.telegram.ui.Components.b5.c0(mpVar.currentAccount, tL_error, h2Var, tLObject, Boolean.valueOf(z11 && !z10));
+                    org.telegram.ui.Components.c5.c0(mpVar.currentAccount, tL_error, g2Var, tLObject, Boolean.valueOf(z11 && !z10));
                     break;
                 }
                 break;
@@ -452,11 +452,11 @@ public final /* synthetic */ class kh implements Runnable {
         this.n = runnable;
     }
 
-    public /* synthetic */ kh(mp mpVar, xo xoVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.h2 h2Var, TLObject tLObject, boolean z10, boolean z11) {
+    public /* synthetic */ kh(mp mpVar, xo xoVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.g2 g2Var, TLObject tLObject, boolean z10, boolean z11) {
         this.d = mpVar;
         this.e = xoVar;
         this.f = tL_error;
-        this.h = h2Var;
+        this.h = g2Var;
         this.n = tLObject;
         this.b = z10;
         this.c = z11;

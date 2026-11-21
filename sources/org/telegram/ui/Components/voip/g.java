@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.f40;
 import org.telegram.ui.pe;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class g {
     public static boolean a;
@@ -30,19 +30,19 @@ public abstract class g {
             t3 t3Var2 = sharedInstance.groupCall;
             TLRPC.GroupCallParticipant groupCallParticipant = t3Var2 != null ? (TLRPC.GroupCallParticipant) t3Var2.d.f(sharedInstance.getSelfId()) : null;
             boolean z11 = (groupCallParticipant == null || groupCallParticipant.raise_hand_rating == 0) ? false : true;
-            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, gd.M0(z11 ? 2131743157 : 2131743053, null), !z11), 100, 0));
+            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, gd.N0(z11 ? 2131743151 : 2131743047, null), !z11), 100, 0));
         } else if (sharedInstance.isMicMute()) {
-            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, gd.M0(2131742993, null), true), 100, 0));
+            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_muted, gd.N0(2131742987, null), true), 100, 0));
         } else {
-            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_unmuted, gd.M0(2131743056, null), true), 100, 0));
+            arrayList.add(new f(new wi.k(1, R.drawable.msg_voice_unmuted, gd.N0(2131743050, null), true), 100, 0));
         }
         int videoState = sharedInstance.getVideoState(false);
         if (videoState == 2) {
-            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_on, gd.M0(2131743000, null), true), 90, 1));
+            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_on, gd.N0(2131742994, null), true), 90, 1));
         } else if (a || videoState == 1) {
-            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_off, gd.M0(2131743001, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z10 || ((t3Var = sharedInstance.groupCall) != null && t3Var.c()))), 60, 1));
+            arrayList.add(new f(new wi.k(2, R.drawable.pip_camera_off, gd.N0(2131742995, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z10 || ((t3Var = sharedInstance.groupCall) != null && t3Var.c()))), 60, 1));
         }
-        arrayList.add(new f(new wi.k(3, R.drawable.msg_endcall, gd.M0(z10 ? 2131743127 : 2131743175, null), true), 80, 2));
+        arrayList.add(new f(new wi.k(3, R.drawable.msg_endcall, gd.N0(z10 ? 2131743121 : 2131743169, null), true), 80, 2));
         Collections.sort(arrayList, new pe(19));
         while (arrayList.size() > i7) {
             a8.p0.z(1, arrayList);

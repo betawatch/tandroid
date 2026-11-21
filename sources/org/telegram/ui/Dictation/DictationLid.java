@@ -2,12 +2,12 @@ package org.telegram.ui.Dictation;
 
 import ai.a1;
 import ai.c1;
-import ai.d1;
-import ai.j1;
-import ai.v0;
-import ai.w0;
+import ai.e1;
+import ai.f1;
+import ai.l1;
 import ai.x0;
 import ai.y0;
+import ai.z0;
 import android.content.Context;
 import android.os.SystemClock;
 import android.util.Log;
@@ -22,7 +22,7 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public abstract class DictationLid {
     public static volatile long c;
@@ -30,7 +30,7 @@ public abstract class DictationLid {
     public static boolean e;
     public static volatile boolean f;
     public static volatile boolean g;
-    public static final ExecutorService a = Executors.newSingleThreadExecutor(new y0(0));
+    public static final ExecutorService a = Executors.newSingleThreadExecutor(new a1(0));
     public static final ExecutorService b = Executors.newSingleThreadExecutor();
     public static final Object h = new Object();
     public static final String[][] i = {new String[]{"ru", "uk", "be", "pl", "cs", "sk", "bg", "sr", "hr", "bs", "sl", "mk"}, new String[]{"sv", "no", "nb", "nn", "da"}, new String[]{"es", "pt", "ca", "gl", "it"}, new String[]{"nl", "de", "af"}, new String[]{"ms", "id"}, new String[]{"hi", "ur"}};
@@ -58,7 +58,7 @@ public abstract class DictationLid {
         }
     }
 
-    public static /* synthetic */ void c(byte[] bArr, int i7, c1 c1Var) {
+    public static /* synthetic */ void c(byte[] bArr, int i7, e1 e1Var) {
         long j3 = c;
         if (j3 == 0) {
             return;
@@ -67,10 +67,10 @@ public abstract class DictationLid {
         byte[] m10 = m(bArr);
         int length = m10.length / 32;
         if (length < i7) {
-            g0.g3(new w0(c1Var, length, 0));
+            g0.g3(new y0(e1Var, length, 0));
         } else {
             float[] fArr = new float[d.length];
-            g0.g3(new x0(c1Var, nativePredict(j3, m10, 0, m10.length, false, fArr), fArr, SystemClock.elapsedRealtime() - elapsedRealtime, length));
+            g0.g3(new z0(e1Var, nativePredict(j3, m10, 0, m10.length, false, fArr), fArr, SystemClock.elapsedRealtime() - elapsedRealtime, length));
         }
     }
 
@@ -82,16 +82,16 @@ public abstract class DictationLid {
         if (file.exists()) {
             k(applicationContext);
         }
-        if (file.exists() || j1.b()) {
+        if (file.exists() || l1.b()) {
             if ((!file.exists() || z10) && !f) {
                 f = true;
                 File file2 = new File(applicationContext.getFilesDir(), "tinylid.bin");
                 if (!file2.exists()) {
-                    TLRPC.TL_transcriptionModel f10 = j1.f(j1.a(), "tinylid");
+                    TLRPC.TL_transcriptionModel f10 = l1.f(l1.a(), "tinylid");
                     DictationAsr.h.putIfAbsent("tinylid.bin", new long[]{0, Math.max(f10 != null ? f10.document.size : 0L, 4400000L)});
-                    DictationAsr.n();
+                    DictationAsr.p();
                 }
-                b.execute(new v0(file2, i7));
+                b.execute(new x0(file2, i7));
             }
         }
     }
@@ -189,11 +189,11 @@ public abstract class DictationLid {
         return i7 < 10000 ? 0.6f : 0.5f;
     }
 
-    public static void j(byte[] bArr, int i7, c1 c1Var) {
+    public static void j(byte[] bArr, int i7, e1 e1Var) {
         if (c == 0) {
             return;
         }
-        a.execute(new a1(bArr, i7, c1Var, 0));
+        a.execute(new c1(bArr, i7, e1Var, 0));
     }
 
     public static void k(Context context) {
@@ -204,7 +204,7 @@ public abstract class DictationLid {
         if (file.exists()) {
             e = true;
             g = true;
-            a.execute(new v0(file, 1));
+            a.execute(new x0(file, 1));
         }
     }
 
@@ -266,7 +266,7 @@ public abstract class DictationLid {
         return bArr2;
     }
 
-    public static d1 n(float f10, float[] fArr) {
+    public static f1 n(float f10, float[] fArr) {
         String[] strArr = d;
         if (fArr == null || strArr == null || strArr.length != fArr.length) {
             return null;
@@ -284,7 +284,7 @@ public abstract class DictationLid {
         if (z11 && f11 >= f10) {
             z10 = true;
         }
-        return new d1(str, f11, z10);
+        return new f1(str, f11, z10);
     }
 
     private static native void nativeFree(long j3);

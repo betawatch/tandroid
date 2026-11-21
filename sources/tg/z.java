@@ -1,31 +1,34 @@
 package tg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.PointF;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.yt0;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class z extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g0 b;
+public final class z extends g2 {
+    public final /* synthetic */ h0 z0;
 
-    public /* synthetic */ z(g0 g0Var, int i7) {
-        this.a = i7;
-        this.b = g0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z(h0 h0Var, Context context, PointF pointF, float f10, float f11, yt0 yt0Var, TLRPC.Document document, Object obj) {
+        super(context, pointF, f10, f11, yt0Var, document, obj);
+        this.z0 = h0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.P1.setTranslationY(0.0f);
-                break;
-            default:
-                g0 g0Var = this.b;
-                g0Var.S1 = false;
-                g0Var.P1.setTranslationY(0.0f);
-                g0Var.l0();
-                break;
+    @Override // tg.g2
+    public final void q(oh0 oh0Var) {
+        PhotoViewer photoViewer = ((vp0) this.z0).Y1;
+        i61 i61Var = photoViewer.G2;
+        if (i61Var == null) {
+            return;
         }
+        long S = i61Var.S();
+        long j3 = photoViewer.m8;
+        oh0Var.U(S - (j3 > 0 ? j3 / 1000 : 0L));
     }
 }

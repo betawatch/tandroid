@@ -1,59 +1,47 @@
 package oi;
 
-import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ak;
-import org.telegram.ui.Components.si;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.bj;
+import org.telegram.ui.Components.ll;
+import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class p1 implements ak {
-    public final /* synthetic */ si a;
-    public final /* synthetic */ z1 b;
+public final /* synthetic */ class p1 implements ll, bj {
+    public final /* synthetic */ b2 a;
+    public final /* synthetic */ ui b;
 
-    public p1(z1 z1Var, si siVar) {
-        this.b = z1Var;
-        this.a = siVar;
+    public /* synthetic */ p1(b2 b2Var, ui uiVar) {
+        this.a = b2Var;
+        this.b = uiVar;
     }
 
-    @Override // org.telegram.ui.Components.ak
-    public final void A() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("*/*");
-            this.b.startActivityForResult(intent, 21);
-        } catch (Exception e10) {
-            a8.g(e10, true);
+    @Override // org.telegram.ui.Components.ll
+    public void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
+        b2 b2Var = this.a;
+        b2Var.getClass();
+        ui uiVar = this.b;
+        if (messageMedia == null || messageMedia.geo == null) {
+            uiVar.a(true);
+            return;
         }
+        TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
+        pageblockmap.geo = messageMedia.geo;
+        pageblockmap.zoom = 15;
+        pageblockmap.w = 600;
+        pageblockmap.h = 400;
+        b2Var.Q.V1(pageblockmap);
+        uiVar.a(true);
     }
 
-    @Override // org.telegram.ui.Components.ak
-    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
-        boolean isEmpty = arrayList.isEmpty();
-        z1 z1Var = this.b;
-        if (!isEmpty) {
-            z1Var.Q.f2((String) arrayList.get(0));
-        } else if (!arrayList3.isEmpty()) {
-            s3 s3Var = z1Var.Q;
-            fj fjVar = (fj) arrayList3.get(0);
-            s3Var.getClass();
-            if (fjVar != null && fjVar.F0() != null) {
-                TLRPC.Document F0 = fjVar.F0();
-                TLRPC.Message message = fjVar.k;
-                s3Var.g2(F0, message != null ? message.attachPath : null);
-            }
+    @Override // org.telegram.ui.Components.bj
+    public void i(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
+        if (!arrayList.isEmpty()) {
+            this.a.Q.e2((fj) arrayList.get(0));
         }
-        this.a.a(true);
-    }
-
-    @Override // org.telegram.ui.Components.ak
-    public final /* synthetic */ void T() {
-    }
-
-    @Override // org.telegram.ui.Components.ak
-    public final /* synthetic */ void p(ArrayList arrayList, boolean z10, int i7, long j3) {
+        this.b.a(true);
     }
 }

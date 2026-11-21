@@ -6,12 +6,11 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.view.SurfaceView;
 import android.view.WindowManager;
-import di.ga;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class w8 implements s3 {
     public final /* synthetic */ h6 a;
@@ -37,16 +36,16 @@ public final class w8 implements s3 {
 
     public final void b(boolean z10) {
         f9 f9Var = this.d;
-        org.telegram.ui.ActionBar.h2 h2Var = f9Var.f;
+        org.telegram.ui.ActionBar.g2 g2Var = f9Var.f;
         if (f9Var.b) {
             if (f9Var.c) {
                 return;
             }
             if (z10) {
-                org.telegram.messenger.g0.Y2(h2Var.getParentActivity(), h2Var.getClassGuid());
+                org.telegram.messenger.g0.Y2(g2Var.getParentActivity(), g2Var.getClassGuid());
                 return;
             } else {
-                org.telegram.messenger.g0.Z2(h2Var.getParentActivity(), h2Var.getClassGuid());
+                org.telegram.messenger.g0.Z2(g2Var.getParentActivity(), g2Var.getClassGuid());
                 return;
             }
         }
@@ -65,9 +64,9 @@ public final class w8 implements s3 {
         f9 f9Var = this.d;
         ArrayList arrayList = f9Var.M0;
         if (f9Var.H0 || f9Var.V < 0.9f) {
-            hi.r3 r3Var = f9Var.E0;
-            if (r3Var != null) {
-                r3Var.b(0L, null);
+            hi.q3 q3Var = f9Var.E0;
+            if (q3Var != null) {
+                q3Var.b(0L, null);
             }
             c1 c1Var = f9Var.B0;
             if (c1Var != null) {
@@ -88,9 +87,9 @@ public final class w8 implements s3 {
         boolean equals = TextUtils.equals(uri2 == null ? null : uri2.toString(), uri == null ? null : uri.toString());
         if (!equals || (e9Var = f9Var.A0) == null) {
             f9Var.F0 = uri;
-            hi.r3 r3Var2 = f9Var.E0;
-            if (r3Var2 != null) {
-                r3Var2.b(0L, null);
+            hi.q3 q3Var2 = f9Var.E0;
+            if (q3Var2 != null) {
+                q3Var2.b(0L, null);
             }
             c1 c1Var2 = f9Var.B0;
             if (c1Var2 != null) {
@@ -229,9 +228,9 @@ public final class w8 implements s3 {
 
     public final void i(boolean z10, boolean z11) {
         f9 f9Var = this.d;
-        hi.r3 r3Var = f9Var.E0;
-        if (r3Var != null) {
-            r3Var.setVisibility(z10 ? 0 : 8);
+        hi.q3 q3Var = f9Var.E0;
+        if (q3Var != null) {
+            q3Var.setVisibility(z10 ? 0 : 8);
         }
         SurfaceView surfaceView = f9Var.D0;
         if (surfaceView != null) {
@@ -255,7 +254,7 @@ public final class w8 implements s3 {
             }
             arrayList.remove(indexOf);
             if (f9Var.o0.E(true)) {
-                f9Var.o0.H0 = new ai.a1(this, arrayList, indexOf, 12);
+                f9Var.o0.H0 = new ai.c1(this, arrayList, indexOf, 12);
                 return;
             } else {
                 f9Var.u(false);
@@ -273,7 +272,7 @@ public final class w8 implements s3 {
         }
         arrayList2.remove(indexOf2);
         if (f9Var.o0.E(true)) {
-            f9Var.o0.H0 = new ga(this, h6Var, arrayList2, 7);
+            f9Var.o0.H0 = new di.a8(this, h6Var, arrayList2, 8);
         } else {
             f9Var.u(false);
         }

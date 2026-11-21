@@ -18,13 +18,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ke;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.eh0;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.m6;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.gh0;
 import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -38,20 +38,20 @@ public final class g {
 
     public g(View view) {
         this.h = new Paint(1);
-        this.d = new c6(view, 350L, lr.h);
-        this.f = new eh0(view);
+        this.d = new d6(view, 350L, nr.h);
+        this.f = new gh0(view);
         this.g = new mc(view);
-        m6 m6Var = new m6(false, false, false);
-        this.e = m6Var;
-        m6Var.w(org.telegram.messenger.g0.L(11.0f));
-        m6Var.r(true, true);
-        m6Var.setCallback(view);
-        m6Var.N = (int) (org.telegram.messenger.g0.q.x * 0.3f);
+        n6 n6Var = new n6(false, false, false);
+        this.e = n6Var;
+        n6Var.w(org.telegram.messenger.g0.L(11.0f));
+        n6Var.r(true, true);
+        n6Var.setCallback(view);
+        n6Var.N = (int) (org.telegram.messenger.g0.q.x * 0.3f);
         this.b = false;
-        m6Var.t(gd.M0(2131746244, null), false, true);
-        String M0 = gd.M0(2131746243, null);
-        TextPaint textPaint = m6Var.a;
-        this.a = (int) Math.ceil(Math.max(textPaint.measureText(M0), textPaint.measureText(gd.M0(2131746244, null))));
+        n6Var.t(gd.N0(2131746243, null), false, true);
+        String N0 = gd.N0(2131746242, null);
+        TextPaint textPaint = n6Var.a;
+        this.a = (int) Math.ceil(Math.max(textPaint.measureText(N0), textPaint.measureText(gd.N0(2131746243, null))));
     }
 
     public void a(l0 l0Var) {
@@ -119,38 +119,38 @@ public final class g {
 
     public void d(Canvas canvas, RectF rectF, float f10, float f11, int i7, boolean z10, boolean z11) {
         Paint paint = (Paint) this.h;
-        eh0 eh0Var = (eh0) this.f;
-        m6 m6Var = (m6) this.e;
+        gh0 gh0Var = (gh0) this.f;
+        n6 n6Var = (n6) this.e;
         if (z10 != this.b) {
             this.b = z10;
-            m6Var.t(gd.M0(z10 ? 2131746243 : 2131746244, null), true, true);
+            n6Var.t(gd.N0(z10 ? 2131746242 : 2131746243, null), true, true);
         }
-        int c10 = (int) (m6Var.c() + org.telegram.messenger.g0.L(23.66f));
+        int c10 = (int) (n6Var.c() + org.telegram.messenger.g0.L(23.66f));
         float L = org.telegram.messenger.g0.L(17.66f);
         rectF.set(f10 - c10, f11 - L, f10, f11);
-        float a10 = ((mc) this.g).a(0.02f) * ((c6) this.d).d(z11);
+        float a10 = ((mc) this.g).a(0.02f) * ((d6) this.d).d(z11);
         if (a10 > 0.0f) {
             paint.setColor(i0.a.o(i7, 30));
             canvas.save();
             canvas.scale(a10, a10, f10, f11);
             float f12 = L / 2.0f;
             canvas.drawRoundRect(rectF, f12, f12, paint);
-            m6Var.setBounds((int) (rectF.left + org.telegram.messenger.g0.L(6.0f)), (int) rectF.top, (int) (rectF.right - org.telegram.messenger.g0.L(17.66f)), (int) rectF.bottom);
-            m6Var.u(i7);
-            m6Var.draw(canvas);
+            n6Var.setBounds((int) (rectF.left + org.telegram.messenger.g0.L(6.0f)), (int) rectF.top, (int) (rectF.right - org.telegram.messenger.g0.L(17.66f)), (int) rectF.bottom);
+            n6Var.u(i7);
+            n6Var.draw(canvas);
             float L2 = org.telegram.messenger.g0.L(14.0f);
             int L3 = (int) ((rectF.right - org.telegram.messenger.g0.L(3.33f)) - L2);
             float f13 = L2 / 2.0f;
-            eh0Var.setBounds(L3, (int) ((rectF.centerY() - f13) + org.telegram.messenger.g0.L(0.33f)), (int) (rectF.right - org.telegram.messenger.g0.L(3.33f)), (int) (rectF.centerY() + f13 + org.telegram.messenger.g0.L(0.33f)));
-            Paint paint2 = eh0Var.b;
+            gh0Var.setBounds(L3, (int) ((rectF.centerY() - f13) + org.telegram.messenger.g0.L(0.33f)), (int) (rectF.right - org.telegram.messenger.g0.L(3.33f)), (int) (rectF.centerY() + f13 + org.telegram.messenger.g0.L(0.33f)));
+            Paint paint2 = gh0Var.b;
             paint2.setColor(i7);
-            paint2.setAlpha(eh0Var.d);
+            paint2.setAlpha(gh0Var.d);
             boolean z12 = !z10;
-            if (eh0Var.e != z12) {
-                eh0Var.e = z12;
-                eh0Var.a.invalidate();
+            if (gh0Var.e != z12) {
+                gh0Var.e = z12;
+                gh0Var.a.invalidate();
             }
-            eh0Var.draw(canvas);
+            gh0Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -202,7 +202,7 @@ public final class g {
         if (gVar != null) {
             y3Var.d = gVar;
             y3Var.a = false;
-            y3Var.e = new ji.j(this, keVar, false, 9);
+            y3Var.e = new ji.l(this, keVar, false, 9);
             y3Var.f = new k8.a(8, this, keVar);
             y3Var.g = new nb.a(17);
             this.e = new yi.j(y3Var);

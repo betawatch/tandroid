@@ -1,23 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class ew extends ey {
-    public final /* synthetic */ ry I;
+public final class ew extends v4.t {
+    public final /* synthetic */ ty Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ew(ry ryVar, Context context) {
-        super(ryVar, context, 0);
-        this.I = ryVar;
+    public ew(ty tyVar) {
+        super(5);
+        this.Q = tyVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (f10 != getTranslationY()) {
-            super.setTranslationY(f10);
-            this.I.y0.invalidate();
+    @Override // v4.t, v4.c0, v4.p0
+    public final int o0(int i7, v4.x0 x0Var, v4.c1 c1Var) {
+        int o02 = super.o0(i7, x0Var, c1Var);
+        ty tyVar = this.Q;
+        if (o02 != 0 && tyVar.E0.getScrollState() == 1) {
+            tyVar.Y1 = false;
+            tyVar.Z();
+        }
+        if (tyVar.U0 == null) {
+            jg.d1 d1Var = new jg.d1(tyVar, tyVar.d1, tyVar.u1.a(), tyVar.u1.f(), 1);
+            tyVar.U0 = d1Var;
+            d1Var.a();
+        }
+        tyVar.U0.b();
+        return o02;
+    }
+
+    @Override // v4.c0, v4.p0
+    public final void v0(RecyclerView recyclerView, v4.c1 c1Var, int i7) {
+        try {
+            pi.l lVar = new pi.l(recyclerView.getContext(), 2);
+            lVar.a = i7;
+            w0(lVar);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 }

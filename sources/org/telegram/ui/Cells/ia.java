@@ -14,38 +14,38 @@ import org.telegram.messenger.fs;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.a81;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public abstract class ia extends ck0 implements fs {
+public abstract class ia extends ek0 implements fs {
     public static final byte[] q3 = new byte[1024];
     public boolean f3;
     public final jg.b0 g3;
     public final HashMap h3;
     public final HashMap i3;
-    public org.telegram.ui.ActionBar.m6 j3;
+    public org.telegram.ui.ActionBar.l6 j3;
     public final ha k3;
     public final ArrayList l3;
     public final ArrayList m3;
     public final int n3;
     public int o3;
-    public final org.telegram.ui.ActionBar.h2 p3;
+    public final org.telegram.ui.ActionBar.g2 p3;
 
-    public ia(Context context, org.telegram.ui.ActionBar.h2 h2Var, int i7, ArrayList arrayList, ArrayList arrayList2) {
+    public ia(Context context, org.telegram.ui.ActionBar.g2 g2Var, int i7, ArrayList arrayList, ArrayList arrayList2) {
         super(context, null);
         this.h3 = new HashMap();
         this.i3 = new HashMap();
         this.l3 = arrayList2;
         this.m3 = arrayList;
         this.n3 = i7;
-        this.p3 = h2Var;
+        this.p3 = g2Var;
         if (i7 == 2) {
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.h5, this, null);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.h5, this, null);
         } else {
-            org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, this, null);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, this, null);
         }
         setItemAnimator(null);
         setLayoutAnimation(null);
@@ -58,8 +58,8 @@ public abstract class ia extends ck0 implements fs {
         ha haVar = new ha(this, context);
         this.k3 = haVar;
         setAdapter(haVar);
-        setOnItemClickListener(new oj0() { // from class: org.telegram.ui.Cells.da
-            @Override // org.telegram.ui.Components.oj0
+        setOnItemClickListener(new qj0() { // from class: org.telegram.ui.Cells.da
+            @Override // org.telegram.ui.Components.qj0
             public final void c(int i10, View view) {
                 ia iaVar = ia.this;
                 iaVar.getClass();
@@ -84,7 +84,7 @@ public abstract class ia extends ck0 implements fs {
         if (i7 == 0) {
             return;
         }
-        org.telegram.ui.ActionBar.m6 D0 = this.n3 == 1 ? org.telegram.ui.ActionBar.n6.J : org.telegram.ui.ActionBar.n6.D0();
+        org.telegram.ui.ActionBar.l6 D0 = this.n3 == 1 ? org.telegram.ui.ActionBar.m6.J : org.telegram.ui.ActionBar.m6.D0();
         this.j3 = D0;
         ArrayList arrayList = this.m3;
         int indexOf = arrayList.indexOf(D0);
@@ -93,40 +93,40 @@ public abstract class ia extends ck0 implements fs {
         }
     }
 
-    public final void B1(org.telegram.ui.ActionBar.m6 m6Var, View view) {
-        TLRPC.TL_theme tL_theme = m6Var.G;
+    public final void B1(org.telegram.ui.ActionBar.l6 l6Var, View view) {
+        TLRPC.TL_theme tL_theme = l6Var.G;
         if (tL_theme != null) {
-            if (!m6Var.V) {
+            if (!l6Var.V) {
                 return;
             }
             if (tL_theme.document == null) {
-                org.telegram.ui.ActionBar.h2 h2Var = this.p3;
-                if (h2Var != null) {
-                    h2Var.presentFragment(new a81(m6Var, null, true));
+                org.telegram.ui.ActionBar.g2 g2Var = this.p3;
+                if (g2Var != null) {
+                    g2Var.presentFragment(new a81(l6Var, null, true));
                     return;
                 }
                 return;
             }
         }
-        if (!TextUtils.isEmpty(m6Var.d)) {
-            org.telegram.ui.ActionBar.h6.a(false);
+        if (!TextUtils.isEmpty(l6Var.d)) {
+            org.telegram.ui.ActionBar.g6.a(false);
         }
         SharedPreferences.Editor edit = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0).edit();
-        edit.putString((this.n3 == 1 || m6Var.q()) ? "lastDarkTheme" : "lastDayTheme", m6Var.m());
+        edit.putString((this.n3 == 1 || l6Var.q()) ? "lastDarkTheme" : "lastDayTheme", l6Var.m());
         edit.commit();
         if (this.n3 == 1) {
-            if (m6Var == org.telegram.ui.ActionBar.n6.J) {
+            if (l6Var == org.telegram.ui.ActionBar.m6.J) {
                 return;
             }
-            boolean z10 = org.telegram.ui.ActionBar.n6.I == org.telegram.ui.ActionBar.n6.J;
-            org.telegram.ui.ActionBar.n6.J = m6Var;
+            boolean z10 = org.telegram.ui.ActionBar.m6.I == org.telegram.ui.ActionBar.m6.J;
+            org.telegram.ui.ActionBar.m6.J = l6Var;
             if (z10) {
-                org.telegram.ui.ActionBar.n6.m(true);
+                org.telegram.ui.ActionBar.m6.m(true);
             }
-        } else if (m6Var == org.telegram.ui.ActionBar.n6.D0()) {
+        } else if (l6Var == org.telegram.ui.ActionBar.m6.D0()) {
             return;
         } else {
-            org.telegram.ui.ActionBar.n6.K1(m6Var, false, -1, view);
+            org.telegram.ui.ActionBar.m6.K1(l6Var, false, -1, view);
         }
         D1();
         int childCount = getChildCount();
@@ -134,12 +134,12 @@ public abstract class ia extends ck0 implements fs {
             View childAt = getChildAt(i7);
             if (childAt instanceof ThemesHorizontalListCell$InnerThemeView) {
                 ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) childAt;
-                themesHorizontalListCell$InnerThemeView.a.a(themesHorizontalListCell$InnerThemeView.b == (themesHorizontalListCell$InnerThemeView.b0.n3 == 1 ? org.telegram.ui.ActionBar.n6.J : org.telegram.ui.ActionBar.n6.D0()), true);
+                themesHorizontalListCell$InnerThemeView.a.a(themesHorizontalListCell$InnerThemeView.b == (themesHorizontalListCell$InnerThemeView.b0.n3 == 1 ? org.telegram.ui.ActionBar.m6.J : org.telegram.ui.ActionBar.m6.D0()), true);
             }
         }
-        org.telegram.ui.ActionBar.t3.q(m6Var, m6Var.Z);
+        org.telegram.ui.ActionBar.s3.q(l6Var, l6Var.Z);
         if (this.n3 != 1) {
-            org.telegram.ui.ActionBar.n6.M1(this.p3);
+            org.telegram.ui.ActionBar.m6.M1(this.p3);
         }
     }
 
@@ -156,18 +156,18 @@ public abstract class ia extends ck0 implements fs {
         }
         String str = (String) objArr[0];
         File file = (File) objArr[1];
-        org.telegram.ui.ActionBar.m6 m6Var = (org.telegram.ui.ActionBar.m6) this.h3.get(str);
-        if (m6Var != null) {
+        org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) this.h3.get(str);
+        if (l6Var != null) {
             this.h3.remove(str);
-            if (this.i3.remove(m6Var) != null) {
-                Utilities.e.c(new kg.i0(this, m6Var, file, 28));
+            if (this.i3.remove(l6Var) != null) {
+                Utilities.e.c(new kg.y(this, l6Var, file, 29));
             } else {
-                z1(m6Var);
+                z1(l6Var);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (int i7 = 0; i7 < 4; i7++) {
@@ -176,7 +176,7 @@ public abstract class ia extends ck0 implements fs {
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         for (int i7 = 0; i7 < 4; i7++) {
@@ -189,11 +189,11 @@ public abstract class ia extends ck0 implements fs {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.f3) {
-            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 
-    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (getParent() != null && getParent().getParent() != null) {
             getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
@@ -211,13 +211,13 @@ public abstract class ia extends ck0 implements fs {
         this.f3 = z10;
     }
 
-    public final void z1(org.telegram.ui.ActionBar.m6 m6Var) {
+    public final void z1(org.telegram.ui.ActionBar.l6 l6Var) {
         int childCount = getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = getChildAt(i7);
             if (childAt instanceof ThemesHorizontalListCell$InnerThemeView) {
                 ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) childAt;
-                if (themesHorizontalListCell$InnerThemeView.b == m6Var && themesHorizontalListCell$InnerThemeView.c()) {
+                if (themesHorizontalListCell$InnerThemeView.b == l6Var && themesHorizontalListCell$InnerThemeView.c()) {
                     themesHorizontalListCell$InnerThemeView.b.V = true;
                     themesHorizontalListCell$InnerThemeView.a();
                 }
@@ -225,6 +225,6 @@ public abstract class ia extends ck0 implements fs {
         }
     }
 
-    public void C1(org.telegram.ui.ActionBar.m6 m6Var) {
+    public void C1(org.telegram.ui.ActionBar.l6 l6Var) {
     }
 }

@@ -2,89 +2,47 @@ package fi;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class g5 extends FrameLayout implements r0.l {
-    public final e2.r0 a;
-    public final /* synthetic */ i5 b;
+public final class g5 extends c5.a {
+    public final /* synthetic */ f9 c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ j5 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g5(i5 i5Var, Context context) {
-        super(context);
-        this.b = i5Var;
-        this.a = new e2.r0();
+    public g5(Context context, j5 j5Var, f9 f9Var) {
+        this.e = j5Var;
+        this.c = f9Var;
+        this.d = context;
     }
 
-    @Override // r0.k
-    public final void k(int i7, View view) {
-        this.a.a = 0;
+    @Override // c5.a
+    public final void a(c5.l lVar, Object obj) {
+        lVar.removeView((View) obj);
+        this.e.H.remove(obj);
     }
 
-    @Override // r0.l
-    public final void l(View view, int i7, int i10, int i11, int i12, int i13, int[] iArr) {
-        i5 i5Var = this.b;
-        f9 f9Var = i5Var.r;
-        if (i5Var.y <= 0 && i12 != 0 && i10 == 0) {
-            float f10 = f9Var.f0;
-            float f11 = i12 + f10;
-            if (f11 <= f10) {
-                f10 = f11;
-            }
-            i5Var.setOffset(f10);
-            f9Var.f0 = f10;
-            z3 currentPeerView = f9Var.o0.getCurrentPeerView();
-            if (currentPeerView != null) {
-                currentPeerView.invalidate();
-            }
-            u8 u8Var = f9Var.w;
-            if (u8Var != null) {
-                u8Var.invalidate();
-            }
-        }
+    @Override // c5.a
+    public final int b() {
+        return this.e.G.size();
     }
 
-    @Override // r0.k
-    public final boolean o(View view, View view2, int i7, int i10) {
-        return this.b.y <= 0 && i7 == 2;
+    @Override // c5.a
+    public final Object e(c5.l lVar, int i7) {
+        j5 j5Var = this.e;
+        f5 f5Var = new f5(this, this.c, this.d, j5Var.I, new ai.h0(this, 18));
+        f5Var.setTag(Integer.valueOf(i7));
+        f5Var.setShadowDrawable(j5Var.s);
+        f5Var.setPadding(0, org.telegram.messenger.g0.L(16.0f), 0, 0);
+        f5Var.g(j5Var.E, (i5) j5Var.G.get(i7));
+        f5Var.setListBottomPadding(j5Var.d);
+        lVar.addView(f5Var);
+        j5Var.H.add(f5Var);
+        return f5Var;
     }
 
-    @Override // r0.k
-    public final void r(View view, View view2, int i7, int i10) {
-        this.a.a = i7;
-    }
-
-    @Override // r0.k
-    public final void s(View view, int i7, int i10, int[] iArr, int i11) {
-        i5 i5Var = this.b;
-        f9 f9Var = i5Var.r;
-        if (i5Var.y > 0) {
-            return;
-        }
-        float f10 = f9Var.f0;
-        float f11 = i5Var.c;
-        if (f10 >= f11 || i10 <= 0) {
-            return;
-        }
-        float f12 = f10 + i10;
-        iArr[1] = i10;
-        if (f12 <= f11) {
-            f11 = f12;
-        }
-        i5Var.setOffset(f11);
-        f9Var.f0 = f11;
-        z3 currentPeerView = f9Var.o0.getCurrentPeerView();
-        if (currentPeerView != null) {
-            currentPeerView.invalidate();
-        }
-        u8 u8Var = f9Var.w;
-        if (u8Var != null) {
-            u8Var.invalidate();
-        }
-    }
-
-    @Override // r0.k
-    public final void m(View view, int i7, int i10, int i11, int i12, int i13) {
+    @Override // c5.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

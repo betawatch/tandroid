@@ -6,11 +6,11 @@ import org.telegram.messenger.fc;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class h extends sh.d {
+public final class h extends sh.c {
     public final TLRPC.Document b;
     public final Object c;
 
@@ -21,10 +21,10 @@ public final class h extends sh.d {
         ImageReceiver imageReceiver = this.a;
         boolean z10 = fj.u4(document) || fj.N4(document);
         fj.K2(document, true);
-        imageReceiver.p0(fc.b(document), "38_38", u5.f(document, n6.cd, 1.0f, null), document.size, z10 ? "webp" : null, obj, 0);
+        imageReceiver.p0(fc.b(document), "38_38", u5.f(document, m6.cd, 1.0f, null), document.size, z10 ? "webp" : null, obj, 0);
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void c(Canvas canvas, int i7, int i10) {
         ImageReceiver imageReceiver = this.a;
         imageReceiver.y0(0.0f, 0.0f, i7, i10);

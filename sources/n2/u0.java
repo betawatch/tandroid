@@ -23,7 +23,7 @@ import java.util.List;
 import l2.m1;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class u0 extends u2.r implements l2.t0 {
     public final Context a1;
@@ -502,7 +502,7 @@ public final class u0 extends u2.r implements l2.t0 {
         k8.a aVar = this.b1;
         Handler handler = (Handler) aVar.b;
         if (handler != null) {
-            handler.post(new kg.h0(24, aVar, cVar));
+            handler.post(new ji.i(26, aVar, cVar));
         }
     }
 
@@ -511,7 +511,7 @@ public final class u0 extends u2.r implements l2.t0 {
         k8.a aVar = this.b1;
         Handler handler = (Handler) aVar.b;
         if (handler != null) {
-            handler.post(new kg.h0(23, aVar, str));
+            handler.post(new ji.i(25, aVar, str));
         }
     }
 
@@ -529,7 +529,7 @@ public final class u0 extends u2.r implements l2.t0 {
         k8.a aVar2 = this.b1;
         Handler handler = (Handler) aVar2.b;
         if (handler != null) {
-            handler.post(new kg.i0(aVar2, uVar, e02, 12));
+            handler.post(new kg.y(aVar2, uVar, e02, 13));
         }
         return e02;
     }
@@ -656,13 +656,13 @@ public final class u0 extends u2.r implements l2.t0 {
         this.q1 = -9223372036854775807L;
         if (this.i1 != null && (i10 & 2) != 0) {
             lVar.getClass();
-            lVar.d(i7);
+            lVar.e(i7);
             return true;
         }
         x xVar = this.c1;
         if (z10) {
             if (lVar != null) {
-                lVar.d(i7);
+                lVar.e(i7);
             }
             this.P0.f += i11;
             ((r0) xVar).E = true;
@@ -674,7 +674,7 @@ public final class u0 extends u2.r implements l2.t0 {
                 return false;
             }
             if (lVar != null) {
-                lVar.d(i7);
+                lVar.e(i7);
             }
             this.P0.e += i11;
             return true;

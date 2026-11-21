@@ -9,12 +9,12 @@ import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.tr;
 import org.telegram.messenger.wq;
-import org.telegram.ui.Components.a81;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.z71;
+import org.telegram.ui.Components.c81;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.rk0;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class d1 {
     public boolean A;
@@ -27,7 +27,7 @@ public final class d1 {
     public sa.d e;
     public p1 f;
     public n1 g;
-    public a81 h;
+    public d81 h;
     public int i;
     public int j;
     public int k;
@@ -177,9 +177,9 @@ public final class d1 {
         if (this.e != null) {
             a8.d("widget " + this.a + ": " + str);
         }
-        a81 a81Var = this.h;
-        if (a81Var != null) {
-            a81Var.a.h();
+        d81 d81Var = this.h;
+        if (d81Var != null) {
+            d81Var.a.h();
         }
     }
 
@@ -187,7 +187,7 @@ public final class d1 {
     public final void g(p1 p1Var) {
         n1 n1Var;
         k0 h;
-        a81 a81Var;
+        d81 d81Var;
         if (p1Var == this.f && (n1Var = p1Var.N) != null) {
             if (this.g == null || p1Var.B) {
                 this.g = null;
@@ -198,13 +198,13 @@ public final class d1 {
                 int max = Math.max(1, n1Var.e);
                 boolean z11 = max != this.i;
                 this.i = max;
-                a81 a81Var2 = this.h;
-                if (a81Var2 != null) {
-                    z71 z71Var = a81Var2.a;
+                d81 d81Var2 = this.h;
+                if (d81Var2 != null) {
+                    c81 c81Var = d81Var2.a;
                     if (z11) {
-                        z71Var.j();
+                        c81Var.j();
                     }
-                    z71Var.h();
+                    c81Var.h();
                 }
                 if ((z11 || objArr != false) && this.e != null && (h = n0.h(this)) != null && this.i > 0) {
                     int f10 = n0.f(this.k);
@@ -214,17 +214,17 @@ public final class d1 {
                         tr a02 = tr.a0(h.b);
                         a02.a.c(new wq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
                     }
-                    pk0 pk0Var = h.u;
-                    if (pk0Var != null) {
-                        pk0Var.p0("frame off screen");
+                    rk0 rk0Var = h.u;
+                    if (rk0Var != null) {
+                        rk0Var.p0("frame off screen");
                     }
                 }
-                if (!e() || z11 || (a81Var = this.h) == null) {
+                if (!e() || z11 || (d81Var = this.h) == null) {
                     return;
                 }
-                z71 z71Var2 = a81Var.a;
-                z71Var2.j();
-                z71Var2.h();
+                c81 c81Var2 = d81Var.a;
+                c81Var2.j();
+                c81Var2.h();
             }
         }
     }

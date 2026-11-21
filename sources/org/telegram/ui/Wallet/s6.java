@@ -13,11 +13,11 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gk;
-import org.telegram.ui.Components.w01;
+import org.telegram.ui.Components.ik;
+import org.telegram.ui.Components.y01;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class s6 extends FrameLayout implements SensorEventListener {
     public static final Object o0 = new Object();
@@ -50,19 +50,19 @@ public final class s6 extends FrameLayout implements SensorEventListener {
     public float d0;
     public final org.telegram.ui.Cells.x0 e;
     public float e0;
-    public final w01 f;
+    public final y01 f;
     public float f0;
     public float g0;
-    public final hi.m5 h;
+    public final hi.l5 h;
     public float h0;
     public float i0;
     public int j0;
     public int k0;
-    public final gk l0;
+    public final ik l0;
     public float m0;
     public final r6 n;
     public float n0;
-    public final w01 r;
+    public final y01 r;
     public final ga.d s;
     public final float[] w;
     public final SensorManager x;
@@ -81,7 +81,7 @@ public final class s6 extends FrameLayout implements SensorEventListener {
         this.f0 = 1.0f;
         this.h0 = Float.NaN;
         this.i0 = Float.NaN;
-        this.l0 = new gk(this, 28);
+        this.l0 = new ik(this, 28);
         this.c = i7;
         boolean z10 = false;
         setClipChildren(false);
@@ -92,27 +92,27 @@ public final class s6 extends FrameLayout implements SensorEventListener {
         org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(this, context);
         this.e = x0Var;
         addView(x0Var, c8.ma.e(-1, -1, 17));
-        w01 w01Var = new w01(context, 4);
-        this.f = w01Var;
-        w01Var.setPadding(2, 2, 2, 2);
-        w01Var.setLayerType(2, null);
+        y01 y01Var = new y01(context, 4);
+        this.f = y01Var;
+        y01Var.setPadding(2, 2, 2, 2);
+        y01Var.setLayerType(2, null);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
         layoutParams.setMargins(-2, -2, -2, -2);
-        x0Var.addView(w01Var, layoutParams);
-        hi.m5 m5Var = new hi.m5(this, context);
-        this.h = m5Var;
-        w01Var.addView(m5Var, c8.ma.e(-1, -1, 17));
+        x0Var.addView(y01Var, layoutParams);
+        hi.l5 l5Var = new hi.l5(this, context);
+        this.h = l5Var;
+        y01Var.addView(l5Var, c8.ma.e(-1, -1, 17));
         r6 r6Var = new r6(this, context);
         this.n = r6Var;
-        w01Var.addView(r6Var, c8.ma.e(-1, -1, 17));
-        w01 w01Var2 = new w01(3, context, this);
-        this.r = w01Var2;
-        w01Var2.setClipChildren(false);
-        w01Var2.setClipToPadding(false);
-        w01Var2.setLayerType(2, null);
-        w01Var2.setPivotX(0.0f);
-        w01Var2.setPivotY(0.0f);
-        w01Var.addView(w01Var2, c8.ma.e(ks.H5, ks.j3, 51));
+        y01Var.addView(r6Var, c8.ma.e(-1, -1, 17));
+        y01 y01Var2 = new y01(3, context, this);
+        this.r = y01Var2;
+        y01Var2.setClipChildren(false);
+        y01Var2.setClipToPadding(false);
+        y01Var2.setLayerType(2, null);
+        y01Var2.setPivotX(0.0f);
+        y01Var2.setPivotY(0.0f);
+        y01Var.addView(y01Var2, c8.ma.e(ks.H5, ks.j3, 51));
         this.I = ViewConfiguration.get(context).getScaledTouchSlop();
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.x = sensorManager;
@@ -150,7 +150,7 @@ public final class s6 extends FrameLayout implements SensorEventListener {
         this.c0 = ofFloat;
         ofFloat.setDuration(600L);
         org.telegram.ui.Cells.c0.q(1.2f, this.c0);
-        this.c0.addUpdateListener(new hi.j9(this, f10, f11, 5));
+        this.c0.addUpdateListener(new hi.i9(this, f10, f11, 6));
         this.c0.addListener(new k71(this, 9));
         this.c0.start();
     }
@@ -275,8 +275,8 @@ public final class s6 extends FrameLayout implements SensorEventListener {
                 return;
             }
             this.b0 = z10;
-            gk gkVar = this.l0;
-            removeCallbacks(gkVar);
+            ik ikVar = this.l0;
+            removeCallbacks(ikVar);
             if (!z10) {
                 sensorManager.unregisterListener(this);
                 return;
@@ -286,7 +286,7 @@ public final class s6 extends FrameLayout implements SensorEventListener {
             if (sensor != null) {
                 sensorManager.registerListener(this, sensor, 1);
             }
-            postOnAnimation(gkVar);
+            postOnAnimation(ikVar);
         }
     }
 
@@ -392,9 +392,9 @@ public final class s6 extends FrameLayout implements SensorEventListener {
     @Override // android.view.View
     public final void onSizeChanged(int i7, int i10, int i11, int i12) {
         super.onSizeChanged(i7, i10, i11, i12);
-        w01 w01Var = this.r;
-        w01Var.setScaleX(i7 / org.telegram.messenger.g0.L(336.0f));
-        w01Var.setScaleY(i10 / org.telegram.messenger.g0.L(205.0f));
+        y01 y01Var = this.r;
+        y01Var.setScaleX(i7 / org.telegram.messenger.g0.L(336.0f));
+        y01Var.setScaleY(i10 / org.telegram.messenger.g0.L(205.0f));
         b(this.d0, this.g0);
     }
 
@@ -522,10 +522,10 @@ public final class s6 extends FrameLayout implements SensorEventListener {
     }
 
     public void setStickerStyle(float[] fArr) {
-        hi.m5 m5Var = this.h;
-        m5Var.b = fArr;
+        hi.l5 l5Var = this.h;
+        l5Var.b = fArr;
         this.e.invalidate();
-        m5Var.invalidate();
+        l5Var.invalidate();
         this.n.invalidate();
     }
 

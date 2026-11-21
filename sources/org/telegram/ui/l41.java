@@ -5,10 +5,10 @@ import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.text.TextPaint;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class l41 {
-    public final org.telegram.ui.Components.vz a;
+    public final org.telegram.ui.Components.xz a;
     public ng.f b;
     public final int c;
     public final /* synthetic */ m41 d;
@@ -16,21 +16,21 @@ public final class l41 {
     public l41(m41 m41Var, int i7) {
         this.d = m41Var;
         this.c = i7;
-        org.telegram.ui.Components.vz vzVar = new org.telegram.ui.Components.vz(m41Var.getContext());
-        vzVar.c = true;
+        org.telegram.ui.Components.xz xzVar = new org.telegram.ui.Components.xz(m41Var.getContext());
+        xzVar.c = true;
         TextPaint textPaint = new TextPaint(1);
-        vzVar.e = textPaint;
-        vzVar.f = new Paint(1);
+        xzVar.e = textPaint;
+        xzVar.f = new Paint(1);
         Paint paint = new Paint(1);
-        vzVar.h = paint;
+        xzVar.h = paint;
         Paint paint2 = new Paint(1);
-        vzVar.n = paint2;
-        vzVar.x = org.telegram.messenger.g0.L(35.0f);
-        vzVar.y = org.telegram.messenger.g0.L(22.0f);
-        vzVar.E = org.telegram.messenger.g0.L(8.0f);
-        vzVar.F = org.telegram.messenger.g0.L(3.5f);
-        vzVar.G = new RectF();
-        vzVar.H = 0.0f;
+        xzVar.n = paint2;
+        xzVar.x = org.telegram.messenger.g0.L(35.0f);
+        xzVar.y = org.telegram.messenger.g0.L(22.0f);
+        xzVar.E = org.telegram.messenger.g0.L(8.0f);
+        xzVar.F = org.telegram.messenger.g0.L(3.5f);
+        xzVar.G = new RectF();
+        xzVar.H = 0.0f;
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
@@ -40,9 +40,9 @@ public final class l41 {
         paint2.setStyle(style);
         paint2.setStrokeCap(Paint.Cap.ROUND);
         paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        this.a = vzVar;
-        vzVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        m41Var.h.addView(vzVar);
+        this.a = xzVar;
+        xzVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
+        m41Var.h.addView(xzVar);
         m41Var.n.add(this);
     }
 }

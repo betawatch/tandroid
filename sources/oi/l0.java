@@ -1,13 +1,9 @@
 package oi;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
-/* loaded from: classes4.dex */
-public final class l0 {
-    public static long a = 1;
+import org.telegram.ui.Components.a70;
 
-    public static long a() {
-        long j3 = a;
-        a = 1 + j3;
-        return j3;
-    }
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* loaded from: classes4.dex */
+public interface l0 {
+    a70 j(f1 f1Var);
 }

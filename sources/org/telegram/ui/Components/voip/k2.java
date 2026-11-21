@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.n10;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class k2 extends FrameLayout {
     public TextView[] a;
@@ -32,7 +32,7 @@ public final class k2 extends FrameLayout {
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ch.w(18, view2, view));
         this.h.addListener(new jg.j0((FrameLayout) this, view, view2, (Object) runnable, 3));
-        this.h.setDuration(250L).setInterpolator(lr.f);
+        this.h.setDuration(250L).setInterpolator(nr.f);
         this.h.start();
     }
 
@@ -43,7 +43,7 @@ public final class k2 extends FrameLayout {
         if (z10) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             SpannableString spannableString = new SpannableString(".");
-            spannableString.setSpan(new kg.r1(textViewArr), 0, 1, 33);
+            spannableString.setSpan(new kg.q1(textViewArr), 0, 1, 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             str = spannableStringBuilder;
         }
@@ -74,7 +74,7 @@ public final class k2 extends FrameLayout {
                 return;
             }
             textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new oi.a2(this, 21));
+            a(textViewArr[0], textViewArr[1], new oi.c2(this, 21));
         }
     }
 
@@ -84,7 +84,7 @@ public final class k2 extends FrameLayout {
             if (frameLayout.getVisibility() == 8) {
                 return;
             }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(lr.f).setListener(new j2(this, 1)).setDuration(300L).start();
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(nr.f).setListener(new j2(this, 1)).setDuration(300L).start();
         } else {
             if (frameLayout.getVisibility() == 0) {
                 return;
@@ -94,7 +94,7 @@ public final class k2 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            n10.o(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), lr.k, 300L);
+            n10.o(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), nr.k, 300L);
         }
     }
 

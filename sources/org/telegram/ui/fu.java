@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fu implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class fu implements Runnable {
         Context context = this.b;
         switch (i7) {
             case 0:
-                org.telegram.ui.ActionBar.n6.K(context, false);
+                org.telegram.ui.ActionBar.m6.K(context, false);
                 break;
             case 1:
                 Activity W = org.telegram.messenger.g0.W(context);
@@ -51,7 +51,7 @@ public final /* synthetic */ class fu implements Runnable {
                 vf.c.t(context, "https://promote.telegram.org/guidelines");
                 break;
             default:
-                vf.c.t(context, org.telegram.messenger.gd.M0(2131742685, null));
+                vf.c.t(context, org.telegram.messenger.gd.N0(2131742679, null));
                 break;
         }
     }

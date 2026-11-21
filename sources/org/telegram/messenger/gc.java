@@ -7,9 +7,9 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class gc {
     public Paint A;
@@ -19,8 +19,8 @@ public final class gc {
     public long c;
     public int d;
     public BitmapShader e;
-    public org.telegram.ui.Components.b6 f;
-    public mh0 g;
+    public org.telegram.ui.Components.c6 f;
+    public oh0 g;
     public int[] h;
     public BitmapShader i;
     public Drawable j;

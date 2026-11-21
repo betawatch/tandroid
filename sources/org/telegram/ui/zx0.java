@@ -8,9 +8,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0 {
+public final /* synthetic */ class zx0 implements org.telegram.ui.Components.qj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.qj0
     public final void c(int i7, View view) {
         v4.f1 K;
         int i10 = this.a;
@@ -37,21 +37,21 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                 zy0.a0((zy0) obj, i7);
                 break;
             case 3:
-                b21 b21Var = (b21) obj;
-                org.telegram.ui.Components.l41 G = b21Var.e2.G(i7 - 1);
+                c21 c21Var = (c21) obj;
+                org.telegram.ui.Components.o41 G = c21Var.e2.G(i7 - 1);
                 if (G != null) {
                     Object obj2 = G.H;
                     if ((obj2 instanceof TLRPC.User) || (obj2 instanceof TLRPC.Chat)) {
                         ((org.telegram.ui.Cells.h6) view).w(true, true);
-                        b21Var.W1 = (TLObject) G.H;
-                        b21Var.g1(true);
-                        b21Var.e2.O(true);
+                        c21Var.W1 = (TLObject) G.H;
+                        c21Var.g1(true);
+                        c21Var.e2.O(true);
                         break;
                     }
                 }
                 break;
             case 4:
-                ((d21) obj).f1(i7, view);
+                ((e21) obj).f1(i7, view);
                 break;
             case 5:
                 SessionsActivity.Z((SessionsActivity) obj, i7);
@@ -146,17 +146,17 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                         p81Var.w = -1;
                         p81Var.n.animate().setListener(null).cancel();
                         p81Var.n.animate().translationY(i20).setDuration(200L).setListener(new l81(p81Var, i11)).start();
-                        org.telegram.ui.Components.ck0 ck0Var = p81Var.s.getVisibility() == 0 ? p81Var.b : p81Var.a;
-                        ck0Var.d1(false);
-                        int N0 = ((v4.c0) ck0Var.getLayoutManager()).N0();
-                        if ((N0 == ck0Var.getAdapter().b() - 1 || (N0 == ck0Var.getAdapter().b() - 2 && ck0Var == p81Var.a)) && (K = ck0Var.K(N0)) != null) {
+                        org.telegram.ui.Components.ek0 ek0Var = p81Var.s.getVisibility() == 0 ? p81Var.b : p81Var.a;
+                        ek0Var.d1(false);
+                        int N0 = ((v4.c0) ek0Var.getLayoutManager()).N0();
+                        if ((N0 == ek0Var.getAdapter().b() - 1 || (N0 == ek0Var.getAdapter().b() - 2 && ek0Var == p81Var.a)) && (K = ek0Var.K(N0)) != null) {
                             int bottom = K.a.getBottom();
                             if (N0 == p81Var.d.c - 2) {
                                 bottom += org.telegram.messenger.g0.L(12.0f);
                             }
-                            if (ck0Var.getMeasuredHeight() - bottom <= i20) {
-                                ck0Var.setTranslationY(-(ck0Var.getMeasuredHeight() - bottom));
-                                ck0Var.animate().translationY(0.0f).setDuration(200L).start();
+                            if (ek0Var.getMeasuredHeight() - bottom <= i20) {
+                                ek0Var.setTranslationY(-(ek0Var.getMeasuredHeight() - bottom));
+                                ek0Var.animate().translationY(0.0f).setDuration(200L).start();
                             }
                         }
                         p81Var.a.setPadding(0, 0, 0, 0);
@@ -172,13 +172,13 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                         p81Var.b.setPadding(0, 0, 0, i20);
                     }
                     if (!hashSet.isEmpty()) {
-                        p81Var.c.setText(org.telegram.messenger.gd.a0("LeaveChats", null, 2131748807, org.telegram.messenger.gd.G(hashSet.size(), "Chats", new Object[0])));
+                        p81Var.c.setText(org.telegram.messenger.gd.a0("LeaveChats", null, 2131748806, org.telegram.messenger.gd.G(hashSet.size(), "Chats", new Object[0])));
                     }
                     if (!hashSet.isEmpty()) {
-                        org.telegram.ui.Components.ck0 ck0Var2 = p81Var.s.getVisibility() == 0 ? p81Var.b : p81Var.a;
-                        int height = ck0Var2.getHeight() - view.getBottom();
+                        org.telegram.ui.Components.ek0 ek0Var2 = p81Var.s.getVisibility() == 0 ? p81Var.b : p81Var.a;
+                        int height = ek0Var2.getHeight() - view.getBottom();
                         if (height < i20) {
-                            ck0Var2.w0(0, i20 - height, null);
+                            ek0Var2.w0(0, i20 - height, null);
                             break;
                         }
                     }
@@ -208,11 +208,11 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.oj0
                 break;
             default:
                 uc1 uc1Var = (uc1) obj;
-                String M0 = org.telegram.messenger.gd.M0(2131753736, null);
-                StringBuilder n10 = p5.c.n(M0, " ");
+                String N02 = org.telegram.messenger.gd.N0(2131753735, null);
+                StringBuilder n10 = p5.c.n(N02, " ");
                 String[] strArr = WallpapersListActivity.k0;
                 SpannableString spannableString = new SpannableString(i5.c.k(WallpapersListActivity.l0[i7], strArr[i7], n10));
-                spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.B8, false)), M0.length(), spannableString.length(), 33);
+                spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.B8, false)), N02.length(), spannableString.length(), 33);
                 WallpapersListActivity wallpapersListActivity = uc1Var.F;
                 wallpapersListActivity.K.setSearchFieldCaption(spannableString);
                 wallpapersListActivity.K.setSearchFieldHint(null);

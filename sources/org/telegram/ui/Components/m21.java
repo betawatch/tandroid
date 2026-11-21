@@ -1,21 +1,14 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class m21 extends v4.k {
-    public final /* synthetic */ y21 F;
-
-    public m21(y21 y21Var) {
-        this.F = y21Var;
-    }
-
-    @Override // v4.k
-    public final void O() {
-        this.F.b.invalidate();
-    }
-
-    @Override // v4.k
-    public final void P(v4.f1 f1Var) {
-        this.F.b.invalidate();
+public final class m21 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 }

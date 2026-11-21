@@ -1,82 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import java.io.Serializable;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class vv0 implements TextWatcher {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ Serializable c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ org.telegram.messenger.fs e;
+public final /* synthetic */ class vv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kw0 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public vv0(iw0 iw0Var, int[] iArr, TextView textView, EditTextBoldCursor editTextBoldCursor) {
-        this.e = iw0Var;
-        this.c = iArr;
-        this.d = textView;
-        this.b = editTextBoldCursor;
+    public /* synthetic */ vv0(kw0 kw0Var, int i7) {
+        this.a = i7;
+        this.b = kw0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
+                this.b.o1.f();
+                break;
+            case 1:
+                this.b.o1.f();
+                break;
+            case 2:
+                kw0 kw0Var = this.b;
+                kw0Var.dismiss();
+                org.telegram.messenger.ri.d0(kw0Var.a).k2(kw0Var.getContext(), kw0Var.N1, 1, kw0Var.G1, false, false);
+                break;
+            case 3:
+                kw0 kw0Var2 = this.b;
+                org.telegram.messenger.mp.u1(kw0Var2.a).F3("stickers", kw0Var2.G1, 1, null);
                 break;
             default:
-                org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) this.e;
-                String str = (String) this.c;
-                boolean z10 = ((HashMap) this.d) == hk0Var.u1;
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                org.telegram.ui.hk0.N0(hk0Var, editTextBoldCursor, str, editable, z10);
-                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
-                EditTextBoldCursor editTextBoldCursor2 = hk0Var.Z[intValue];
-                if (intValue == 6) {
-                    hk0Var.c1(true);
-                    break;
-                }
+                kw0 kw0Var3 = this.b;
+                kw0Var3.dismiss();
+                org.telegram.messenger.ri.d0(kw0Var3.a).k2(kw0Var3.getContext(), kw0Var3.N1, 1, kw0Var3.G1, false, false);
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                if (((int[]) this.c)[0] == 2) {
-                    ((iw0) this.e).L0((TextView) this.d, this.b.getText().toString(), false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    public vv0(org.telegram.ui.hk0 hk0Var, EditTextBoldCursor editTextBoldCursor, String str, HashMap hashMap) {
-        this.e = hk0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
-        this.d = hashMap;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

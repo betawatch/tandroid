@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class me implements org.telegram.messenger.x10 {
                 bn bnVar2 = this.b;
                 bnVar2.y5 = kjVar;
                 bnVar2.H5.k.suggested_post = kjVar.c();
-                bnVar2.gc(true, null, bnVar2.H5, null, null, true, 0, null, false, 0L, null, true);
+                bnVar2.fc(true, null, bnVar2.H5, null, null, true, 0, null, false, 0L);
                 break;
             case 1:
                 bnVar.kc((org.telegram.messenger.kj) obj);
@@ -109,14 +109,14 @@ public final /* synthetic */ class me implements org.telegram.messenger.x10 {
                 break;
             case 7:
                 Long l10 = (Long) obj;
-                org.telegram.ui.Components.z11 z11Var = bnVar.g2;
-                if (z11Var != null) {
-                    z11Var.n(l10.longValue(), true);
+                org.telegram.ui.Components.b21 b21Var = bnVar.g2;
+                if (b21Var != null) {
+                    b21Var.n(l10.longValue(), true);
                     break;
                 }
                 break;
             case 8:
-                bnVar.f0.c.add(((org.telegram.ui.ActionBar.r0) obj).getIconView());
+                bnVar.f0.c.add(((org.telegram.ui.ActionBar.q0) obj).getIconView());
                 break;
             case 9:
                 int intValue = ((Integer) obj).intValue();

@@ -9,13 +9,13 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class fk0 extends FrameLayout implements org.telegram.messenger.y5 {
     public final TextView a;
     public final TextView b;
     public final org.telegram.ui.Components.q9 c;
-    public final org.telegram.ui.Components.qh0 d;
+    public final org.telegram.ui.Components.sh0 d;
     public int e;
     public org.telegram.messenger.yv f;
     public final int h;
@@ -26,15 +26,15 @@ public final class fk0 extends FrameLayout implements org.telegram.messenger.y5 
         super(activity);
         int i7;
         this.n = hk0Var;
-        i7 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
         this.h = org.telegram.messenger.a6.q(i7).k();
-        this.d = new org.telegram.ui.Components.qh0(this);
+        this.d = new org.telegram.ui.Components.sh0(this);
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(activity);
         this.c = q9Var;
         addView(q9Var, c8.ma.d(48, 48.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 21.0f, 8.0f, 21.0f, 0.0f));
         TextView textView = new TextView(activity);
         this.a = textView;
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
         org.telegram.messenger.n10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -43,7 +43,7 @@ public final class fk0 extends FrameLayout implements org.telegram.messenger.y5 
         addView(textView, c8.ma.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 81, 10.0f, z10 ? 81 : 21, 0.0f));
         TextView textView2 = new TextView(activity);
         this.b = textView2;
-        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.z6, null);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
         textView2.setLines(1);
@@ -75,9 +75,9 @@ public final class fk0 extends FrameLayout implements org.telegram.messenger.y5 
         org.telegram.messenger.w7.G(org.telegram.messenger.j10.t0);
         boolean exists = org.telegram.messenger.w7.I(this.f).exists();
         boolean isEmpty = TextUtils.isEmpty(r10);
-        org.telegram.ui.Components.qh0 qh0Var = this.d;
+        org.telegram.ui.Components.sh0 sh0Var = this.d;
         if (isEmpty) {
-            qh0Var.d(null, false, false);
+            sh0Var.d(null, false, false);
             return;
         }
         org.telegram.messenger.yv yvVar = this.f;
@@ -85,35 +85,35 @@ public final class fk0 extends FrameLayout implements org.telegram.messenger.y5 
         hk0 hk0Var = this.n;
         if (str != null) {
             if (yvVar.d != null) {
-                i12 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
                 org.telegram.messenger.a6.q(i12).v(this);
-                qh0Var.d(null, false, z10);
+                sh0Var.d(null, false, z10);
                 this.e = -1;
                 return;
             }
-            i11 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
             org.telegram.messenger.a6.q(i11).a(this.f.c, null, this);
             this.e = 1;
             Float w10 = org.telegram.messenger.ec.D().w(this.f.c);
-            qh0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
-            qh0Var.e(false, w10 != null ? w10.floatValue() : 0.0f);
+            sh0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+            sh0Var.e(false, w10 != null ? w10.floatValue() : 0.0f);
             invalidate();
             return;
         }
         if (exists) {
-            i10 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
             org.telegram.messenger.a6.q(i10).v(this);
             this.e = -1;
-            qh0Var.d(null, false, z10);
+            sh0Var.d(null, false, z10);
             invalidate();
             return;
         }
-        i7 = ((org.telegram.ui.ActionBar.h2) hk0Var).currentAccount;
+        i7 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
         org.telegram.messenger.a6.q(i7).a(r10, null, this);
         this.e = 1;
         Float w11 = org.telegram.messenger.ec.D().w(r10);
-        qh0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
-        qh0Var.e(z10, w11 != null ? w11.floatValue() : 0.0f);
+        sh0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+        sh0Var.e(z10, w11 != null ? w11.floatValue() : 0.0f);
         invalidate();
     }
 
@@ -152,7 +152,7 @@ public final class fk0 extends FrameLayout implements org.telegram.messenger.y5 
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawLine(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
+        canvas.drawLine(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

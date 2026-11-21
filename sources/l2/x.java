@@ -21,12 +21,12 @@ import org.telegram.messenger.uo;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.h01;
+import org.telegram.ui.Components.j01;
 import org.telegram.ui.ax;
 import org.telegram.ui.bn;
 import org.telegram.ui.bx;
@@ -35,7 +35,7 @@ import org.telegram.ui.fl;
 import org.telegram.ui.kl;
 import org.telegram.ui.mm;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -256,7 +256,7 @@ public final /* synthetic */ class x implements Runnable {
                                         bxVar.a.w0(0, -org.telegram.messenger.g0.L(bz.p1 ? 76.0f : 70.0f), null);
                                     }
                                 }
-                                i7 = ((h2) cxVar).currentAccount;
+                                i7 = ((g2) cxVar).currentAccount;
                                 cxVar.T1.add(0, (TLRPC.Dialog) cxVar.d4(i7, bxVar.s, cxVar.Y2, false).get(0));
                                 bxVar.q(true);
                                 org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.zw
@@ -281,8 +281,8 @@ public final /* synthetic */ class x implements Runnable {
                                         if (u2Var.b2.n == 2) {
                                             u2Var.c2 = true;
                                             u2Var.d2 = 0.0f;
-                                            n6.u1.T(true, 0.0f);
-                                            n6.u1.start();
+                                            m6.u1.T(true, 0.0f);
+                                            m6.u1.start();
                                             u2Var.invalidate();
                                         }
                                     }
@@ -308,7 +308,7 @@ public final /* synthetic */ class x implements Runnable {
                             }
                             UndoView l42 = cxVar.l4();
                             if (l42 != null) {
-                                l42.l(dialog.id, r6 != 0 ? 2 : 3, null, new h01(axVar, dialog, i18, i11));
+                                l42.l(dialog.id, r6 != 0 ? 2 : 3, null, new j01(axVar, dialog, i18, i11));
                             }
                         }
                         if (cxVar.Y2 != 0 && cxVar.T1.isEmpty()) {

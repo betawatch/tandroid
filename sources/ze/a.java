@@ -3,9 +3,9 @@ package ze;
 import ab.c0;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import ug.n0;
+import ug.m0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -65,7 +65,7 @@ public final class a {
         return new c0(bVar, obj, obj2, new Object[]{obj3}, false, 16);
     }
 
-    public final n0 d(String str, String str2, String str3, String str4, String str5) {
+    public final m0 d(String str, String str2, String str3, String str4, String str5) {
         int parseInt = Integer.parseInt("1", 16);
         ClassLoader classLoader = this.a;
         Class a10 = a(classLoader, str2);
@@ -88,18 +88,18 @@ public final class a {
             clsArr2[i11] = a(classLoader, stringTokenizer3.nextToken());
         }
         Class a11 = a(classLoader, str5);
-        n0 n0Var = new n0(2);
-        n0Var.b = parseInt;
-        n0Var.c = str;
-        n0Var.e = a10;
-        n0Var.g = clsArr;
-        n0Var.h = a11;
-        return n0Var;
+        m0 m0Var = new m0(2);
+        m0Var.b = parseInt;
+        m0Var.c = str;
+        m0Var.e = a10;
+        m0Var.g = clsArr;
+        m0Var.h = a11;
+        return m0Var;
     }
 
-    public final b e(n0 n0Var) {
+    public final b e(m0 m0Var) {
         b bVar = new b();
-        bVar.b = n0Var;
+        bVar.b = m0Var;
         return bVar;
     }
 }

@@ -20,9 +20,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 import m.o3;
-import org.telegram.ui.nd0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class l0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -43,7 +43,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     public l0(g gVar, com.google.android.gms.common.api.j jVar) {
         this.o = gVar;
         Looper looper = gVar.y.getLooper();
-        nd0 a10 = jVar.a();
+        md0 a10 = jVar.a();
         a0.g gVar2 = (a0.g) a10.b;
         String str = (String) a10.d;
         String str2 = (String) a10.c;
@@ -71,7 +71,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
         }
         Context context = gVar.e;
         com.google.android.gms.internal.cast.y yVar = gVar.y;
-        nd0 a12 = jVar.a();
+        md0 a12 = jVar.a();
         this.j = new x0(context, yVar, new o3((a0.g) a12.b, null, (String) a12.d, (String) a12.c, aVar));
     }
 

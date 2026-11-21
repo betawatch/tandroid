@@ -12,13 +12,13 @@ import bg.q0;
 import c8.ma;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout {
     public final TableRow E;
@@ -29,14 +29,14 @@ public final class c0 extends FrameLayout {
     public final TextView e;
     public final q9 f;
     public final q9 h;
-    public final i6 n;
+    public final h6 n;
     public final Paint r;
     public final Path s;
     public final RectF w;
     public final FrameLayout x;
     public final FrameLayout y;
 
-    public c0(Context context, i6 i6Var) {
+    public c0(Context context, h6 h6Var) {
         super(context);
         boolean z10;
         Paint paint = new Paint();
@@ -44,12 +44,12 @@ public final class c0 extends FrameLayout {
         this.s = new Path();
         this.w = new RectF();
         paint.setStyle(Paint.Style.STROKE);
-        this.n = i6Var;
-        TextView a10 = a(gd.M0(2131753521, null), false);
-        TextView a11 = a(gd.M0(2131753177, null), false);
-        TextView a12 = a(gd.M0(2131753499, null), false);
-        TextView a13 = a(gd.M0(2131753320, null), false);
-        TextView a14 = a(gd.M0(2131753538, null), false);
+        this.n = h6Var;
+        TextView a10 = a(gd.N0(2131753520, null), false);
+        TextView a11 = a(gd.N0(2131753176, null), false);
+        TextView a12 = a(gd.N0(2131753498, null), false);
+        TextView a13 = a(gd.N0(2131753319, null), false);
+        TextView a14 = a(gd.N0(2131753537, null), false);
         TextView a15 = a(null, true);
         this.a = a15;
         TextView a16 = a(null, true);
@@ -125,7 +125,7 @@ public final class c0 extends FrameLayout {
             tableRow5.addView(a14, new TableRow.LayoutParams(-2, -2));
             tableRow5.addView(a19, new TableRow.LayoutParams(-2, -2));
         }
-        b0 b0Var = new b0(this, context, i6Var);
+        b0 b0Var = new b0(this, context, h6Var);
         b0Var.addView(tableRow);
         b0Var.addView(tableRow2);
         b0Var.addView(tableRow3);
@@ -146,14 +146,14 @@ public final class c0 extends FrameLayout {
 
     public final TextView a(String str, boolean z10) {
         TextView textView;
-        i6 i6Var = this.n;
+        h6 h6Var = this.n;
         if (z10) {
-            textView = new k80(getContext(), i6Var);
-            u6.G(textView, n6.J6, i6Var);
+            textView = new m80(getContext(), h6Var);
+            t6.G(textView, m6.J6, h6Var);
         } else {
             textView = new TextView(getContext());
         }
-        u6.U(textView, z10 ? n6.m5 : n6.j5, i6Var);
+        t6.U(textView, z10 ? m6.m5 : m6.j5, h6Var);
         textView.setTextSize(1, 14.0f);
         if (!z10) {
             textView.setGravity(gd.a0 ? 5 : 3);
@@ -166,7 +166,7 @@ public final class c0 extends FrameLayout {
         }
         textView.setTypeface(g0.o());
         textView.setText(str);
-        u6.h(n6.e7, textView, i6Var);
+        t6.h(m6.e7, textView, h6Var);
         textView.setPadding(g0.L(gd.a0 ? 32.0f : 12.0f), g0.L(11.0f), g0.L(gd.a0 ? 12.0f : 32.0f), g0.L(11.0f));
         return textView;
     }

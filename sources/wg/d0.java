@@ -3,18 +3,18 @@ package wg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d0 extends hi.d {
+public final class d0 extends hi.e {
     public final RectF m0;
     public boolean n0;
     public float o0;
     public final org.telegram.ui.Components.voip.n p0;
 
-    public d0(Context context, i6 i6Var) {
-        super(context, i6Var, true);
+    public d0(Context context, h6 h6Var) {
+        super(context, h6Var, true);
         this.m0 = new RectF();
         org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
         this.p0 = nVar;
@@ -23,7 +23,7 @@ public final class d0 extends hi.d {
         nVar.m = 4.0f;
     }
 
-    @Override // hi.d, android.view.View
+    @Override // hi.e, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.n0) {
             float f10 = this.o0 + 0.016f;

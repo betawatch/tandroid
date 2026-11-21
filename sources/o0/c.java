@@ -12,7 +12,7 @@ import android.os.Build;
 import android.os.Trace;
 import c8.ke;
 import h9.g1;
-import hi.u5;
+import hi.t5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import jg.w;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
@@ -102,13 +102,13 @@ public abstract class c {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a u5Var = Build.VERSION.SDK_INT < 24 ? new u5(context, build) : new g1(context, build);
+            a t5Var = Build.VERSION.SDK_INT < 24 ? new t5(context, build) : new g1(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
                 ke.a("ContentQueryWrapper.query");
                 try {
-                    cursor = u5Var.c(build, strArr, new String[]{dVar.c});
+                    cursor = t5Var.c(build, strArr, new String[]{dVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -127,7 +127,7 @@ public abstract class c {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    u5Var.close();
+                    t5Var.close();
                     return (h[]) arrayList.toArray(new h[0]);
                 } finally {
                 }
@@ -135,7 +135,7 @@ public abstract class c {
                 if (cursor != null) {
                     cursor.close();
                 }
-                u5Var.close();
+                t5Var.close();
                 throw th2;
             }
         } finally {

@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class m0 {
     public final a a;
@@ -28,9 +28,9 @@ public final class m0 {
     }
 
     public final String toString() {
-        ji.j jVar = new ji.j(this);
-        jVar.E(this.a, "key");
-        jVar.E(this.b, "feature");
-        return jVar.toString();
+        ji.l lVar = new ji.l(this);
+        lVar.E(this.a, "key");
+        lVar.E(this.b, "feature");
+        return lVar.toString();
     }
 }

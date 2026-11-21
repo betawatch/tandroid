@@ -5,21 +5,19 @@ import android.text.Layout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class h5 implements u9 {
     public final /* synthetic */ Layout a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ TL_iv.pageTableCell e;
+    public final /* synthetic */ m5 d;
 
-    public h5(Layout layout, int i7, int i10, int i11, TL_iv.pageTableCell pagetablecell) {
+    public h5(m5 m5Var, Layout layout, int i7, int i10) {
+        this.d = m5Var;
         this.a = layout;
         this.b = i7;
         this.c = i10;
-        this.d = i11;
-        this.e = pagetablecell;
     }
 
     @Override // org.telegram.ui.Cells.u9
@@ -39,12 +37,18 @@ public final class h5 implements u9 {
 
     @Override // org.telegram.ui.Cells.u9
     public final int getRow() {
-        return this.d;
+        return 0;
     }
 
     @Override // org.telegram.ui.Cells.u9
     public final CharSequence getText() {
-        return d6.h(this.e);
+        TL_iv.RichText richText;
+        a aVar = this.d.a;
+        if (aVar == null) {
+            return "";
+        }
+        TL_iv.PageBlock pageBlock = aVar.b;
+        return (!(pageBlock instanceof TL_iv.pageBlockTable) || (richText = ((TL_iv.pageBlockTable) pageBlock).title) == null) ? "" : c6.r(richText, null, true);
     }
 
     @Override // org.telegram.ui.Cells.u9

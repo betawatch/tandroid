@@ -1,28 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class mx extends e51 {
-    public mx(Context context, int i7, org.telegram.messenger.q10 q10Var, org.telegram.messenger.v10 v10Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, i7, -1, false, q10Var, v10Var, null, i6Var, -1, 0);
-        this.z2 = true;
-        setOverScrollMode(2);
+public final class mx {
+    public final TLRPC.StickerSetCovered a;
+    public final TLRPC.TL_messages_stickerSet b;
+    public final TLRPC.StickerSet c;
+    public final ArrayList d;
+    public final TLRPC.Document e;
+
+    public mx(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
+        TLRPC.Document document = null;
+        this.a = null;
+        this.b = tL_messages_stickerSet;
+        this.c = tL_messages_stickerSet.set;
+        this.d = arrayList;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            document = (TLRPC.Document) arrayList.get(0);
+        }
+        this.e = document;
     }
 
-    public final void L1(View view) {
-        if (view == null) {
-            return;
-        }
-        float L = org.telegram.messenger.g0.L(92.0f);
-        float width = getWidth() - L;
-        float x10 = view.getX();
-        float width2 = view.getWidth() + x10;
-        int i7 = x10 < L ? (int) (x10 - L) : width2 > width ? (int) (width2 - width) : 0;
-        if (i7 != 0) {
-            org.telegram.messenger.g0.J(this, new h01(this, view, i7, 24));
-        }
+    public mx(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
+        this.a = stickerSetCovered;
+        this.b = null;
+        this.c = stickerSetCovered.set;
+        this.d = arrayList;
+        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
     }
 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.fs;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class s0 implements fs {
     public final int a;
@@ -18,7 +18,7 @@ public final class s0 implements fs {
     public final r0 e;
     public final p0 f;
 
-    public s0(int i7, d7 d7Var, File file, q0 q0Var, r0 r0Var, p0 p0Var) {
+    public s0(int i7, c7 c7Var, File file, q0 q0Var, r0 r0Var, p0 p0Var) {
         this.a = i7;
         this.b = file;
         this.d = q0Var;
@@ -34,7 +34,7 @@ public final class s0 implements fs {
         tL_message.id = 1;
         tL_message.attachPath = file.getAbsolutePath();
         this.c = new fj(i7, tL_message, null, false, false);
-        d7Var.s(new ai.g0(this, 23));
+        c7Var.s(new ai.h0(this, 23));
     }
 
     public final void a(boolean z10) {

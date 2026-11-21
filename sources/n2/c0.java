@@ -4,21 +4,21 @@ import android.media.AudioDeviceInfo;
 import android.media.AudioRouting;
 import android.media.AudioTrack;
 import android.os.Handler;
-import hi.u5;
+import hi.t5;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final AudioTrack a;
-    public final u5 b;
+    public final t5 b;
     public final Handler c;
     public b0 d;
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v0, types: [android.media.AudioRouting$OnRoutingChangedListener, n2.b0] */
-    public c0(AudioTrack audioTrack, u5 u5Var) {
+    public c0(AudioTrack audioTrack, t5 t5Var) {
         this.a = audioTrack;
-        this.b = u5Var;
+        this.b = t5Var;
         Handler q10 = h2.l0.q(null);
         this.c = q10;
         ?? r02 = new AudioRouting.OnRoutingChangedListener() { // from class: n2.b0
@@ -28,7 +28,7 @@ public final class c0 {
                 if (c0Var.d == null) {
                     return;
                 }
-                h2.a.e().execute(new kg.h0(25, c0Var, audioRouting));
+                h2.a.e().execute(new ji.i(27, c0Var, audioRouting));
             }
         };
         this.d = r02;
@@ -38,7 +38,7 @@ public final class c0 {
     public static /* synthetic */ void a(c0 c0Var, AudioRouting audioRouting) {
         AudioDeviceInfo routedDevice = audioRouting.getRoutedDevice();
         if (routedDevice != null) {
-            c0Var.c.post(new kg.h0(26, c0Var, routedDevice));
+            c0Var.c.post(new ji.i(28, c0Var, routedDevice));
         }
     }
 

@@ -1,63 +1,123 @@
 package oi;
 
-import android.graphics.Rect;
-import android.text.Layout;
+import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class g5 implements u9 {
-    public final /* synthetic */ Layout a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ l5 d;
+public final class g5 implements e1 {
+    public final /* synthetic */ p5 a;
+    public final /* synthetic */ m5 b;
 
-    public g5(l5 l5Var, Layout layout, int i7, int i10) {
-        this.d = l5Var;
-        this.a = layout;
-        this.b = i7;
-        this.c = i10;
+    public g5(m5 m5Var, p5 p5Var) {
+        this.b = m5Var;
+        this.a = p5Var;
     }
 
-    @Override // org.telegram.ui.Cells.u9
-    public final Layout a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final /* synthetic */ Rect c() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final /* synthetic */ CharSequence getPrefix() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final int getRow() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final CharSequence getText() {
-        TL_iv.RichText richText;
-        a aVar = this.d.a;
-        if (aVar == null) {
-            return "";
+    @Override // oi.e1
+    public final void A(int i7, int i10) {
+        g2 g2Var;
+        m5 m5Var = this.b;
+        b3 b3Var = m5Var.F;
+        if (b3Var == null || m5Var.a == null || (g2Var = b3Var.a.R3) == null) {
+            return;
         }
-        TL_iv.PageBlock pageBlock = aVar.b;
-        return (!(pageBlock instanceof TL_iv.pageBlockTable) || (richText = ((TL_iv.pageBlockTable) pageBlock).title) == null) ? "" : b6.r(richText, null, true);
+        g2Var.f(i7, i10);
     }
 
-    @Override // org.telegram.ui.Cells.u9
-    public final int getX() {
-        return this.b;
+    @Override // oi.e1
+    public final boolean E1(boolean z10) {
+        return this.b.u(this.a, z10);
     }
 
-    @Override // org.telegram.ui.Cells.u9
-    public final int getY() {
-        return this.c;
+    @Override // oi.e1
+    public final /* synthetic */ boolean J(f1 f1Var) {
+        return false;
+    }
+
+    @Override // oi.e1
+    public final void b1(CharSequence charSequence) {
+        b3 b3Var = this.b.F;
+        if (b3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        b3Var.a.w4(charSequence.toString());
+    }
+
+    @Override // oi.e1
+    public final /* synthetic */ boolean d2(f1 f1Var) {
+        return false;
+    }
+
+    @Override // oi.e1
+    public final void e(f1 f1Var) {
+        b3 b3Var = this.b.F;
+        if (b3Var != null) {
+            t3 t3Var = b3Var.a;
+            t3.Q1(t3Var, f1Var);
+            t3Var.p3.k(f1Var, true);
+        }
+    }
+
+    @Override // oi.e1
+    public final boolean o() {
+        m5 m5Var = this.b;
+        b3 b3Var = m5Var.F;
+        if (b3Var == null || m5Var.a == null) {
+            return false;
+        }
+        return b3Var.a.V4();
+    }
+
+    @Override // oi.e1
+    public final void r1(final f1 f1Var, final int i7, final int i10) {
+        b3 b3Var;
+        final j9 textSelectionHelper;
+        final int l10;
+        m5 m5Var = this.b;
+        if (m5Var.H || i7 == i10 || (b3Var = m5Var.F) == null || (textSelectionHelper = b3Var.a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        if (!(textSelectionHelper.x() && textSelectionHelper.W == m5Var) && (l10 = m5Var.l(this.a.b)) >= 0) {
+            m5Var.post(new Runnable() { // from class: oi.f5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    m5 m5Var2 = g5.this.b;
+                    f1 f1Var2 = f1Var;
+                    int length = f1Var2.length();
+                    int i11 = i10;
+                    if (length < i11 || f1Var2.getSelectionStart() == f1Var2.getSelectionEnd() || !textSelectionHelper.j0(m5Var2, l10, i7, i11)) {
+                        return;
+                    }
+                    m5Var2.H = true;
+                    f1Var2.setSelection(i11);
+                    m5Var2.H = false;
+                }
+            });
+        }
+    }
+
+    @Override // oi.e1
+    public final void s1(Editable editable) {
+        TL_iv.pageTableCell pagetablecell = this.a.b;
+        if (pagetablecell != null) {
+            e6.d(pagetablecell, editable);
+        }
+        m5 m5Var = this.b;
+        m5Var.w.requestLayout();
+        b3 b3Var = m5Var.F;
+        if (b3Var == null || m5Var.a == null) {
+            return;
+        }
+        b3Var.a();
+    }
+
+    @Override // oi.e1
+    public final /* synthetic */ void E0() {
+    }
+
+    @Override // oi.e1
+    public final /* synthetic */ void x0(f1 f1Var) {
     }
 }

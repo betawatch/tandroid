@@ -8,9 +8,9 @@ import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
 import m.o3;
-import tg.x;
+import tg.y;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class g extends q6.h {
     public final z5.b F;
@@ -18,14 +18,14 @@ public final class g extends q6.h {
     public g(Context context, Looper looper, o3 o3Var, z5.b bVar, k kVar, l lVar) {
         super(context, looper, 68, o3Var, kVar, lVar, 0);
         bVar = bVar == null ? z5.b.c : bVar;
-        x xVar = new x(9, (byte) 0);
-        xVar.b = Boolean.FALSE;
+        y yVar = new y(9, (byte) 0);
+        yVar.b = Boolean.FALSE;
         z5.b bVar2 = z5.b.c;
         bVar.getClass();
-        xVar.b = Boolean.valueOf(bVar.a);
-        xVar.c = bVar.b;
-        xVar.c = e.a();
-        this.F = new z5.b(xVar);
+        yVar.b = Boolean.valueOf(bVar.a);
+        yVar.c = bVar.b;
+        yVar.c = e.a();
+        this.F = new z5.b(yVar);
     }
 
     @Override // q6.d, com.google.android.gms.common.api.c

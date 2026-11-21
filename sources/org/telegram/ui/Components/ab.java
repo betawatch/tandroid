@@ -6,7 +6,7 @@ import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class ab implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;
@@ -25,13 +25,13 @@ public final class ab implements View.OnLayoutChangeListener {
         lbVar.removeOnLayoutChangeListener(this);
         if (gcVar.l) {
             lbVar.onShow();
-            org.telegram.ui.ActionBar.h2 h2Var = gcVar.g;
+            org.telegram.ui.ActionBar.g2 g2Var = gcVar.g;
             boolean z10 = this.a;
-            if (z10 && (h2Var instanceof qb1)) {
-                h2Var = ((qb1) h2Var).c0();
+            if (z10 && (g2Var instanceof qb1)) {
+                g2Var = ((qb1) g2Var).c0();
             }
             FrameLayout frameLayout = gcVar.h;
-            if (h2Var == null || (fbVar = h2Var.getBulletinDelegate()) == null) {
+            if (g2Var == null || (fbVar = g2Var.getBulletinDelegate()) == null) {
                 if (frameLayout != null) {
                     Object tag = frameLayout.getTag(R.id.bulletin_delegate_tag);
                     if (tag instanceof fb) {
@@ -42,8 +42,8 @@ public final class ab implements View.OnLayoutChangeListener {
             }
             gcVar.p = fbVar;
             int i17 = 1;
-            if (fbVar == null && h2Var != null) {
-                gcVar.p = new org.telegram.ui.ActionBar.b2(i17, h2Var);
+            if (fbVar == null && g2Var != null) {
+                gcVar.p = new org.telegram.ui.ActionBar.a2(i17, g2Var);
             }
             r1.g gVar = gcVar.d;
             if (gVar == null || !gVar.f) {
@@ -54,8 +54,8 @@ public final class ab implements View.OnLayoutChangeListener {
             if (fbVar3 != null) {
                 fbVar3.b(gcVar);
             }
-            if (h2Var != null) {
-                h2Var.setupBulletinGlass(gcVar);
+            if (g2Var != null) {
+                g2Var.setupBulletinGlass(gcVar);
             }
             if (org.telegram.messenger.mp.g1().getBoolean("view_animations", true) && !gcVar.s) {
                 if (lbVar != null && gcVar.q == null) {
@@ -66,7 +66,7 @@ public final class ab implements View.OnLayoutChangeListener {
                 lbVar.invalidate();
                 kb kbVar = gcVar.q;
                 Objects.requireNonNull(lbVar);
-                kbVar.u(lbVar, new wa(lbVar, 1), new lg(this, 15), new pl(2, this, z10));
+                kbVar.J(lbVar, new wa(lbVar, 1), new og(this, 15), new rl(2, this, z10));
                 return;
             }
             fb fbVar4 = gcVar.p;

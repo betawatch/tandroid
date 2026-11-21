@@ -28,15 +28,15 @@ import org.telegram.messenger.f3;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.ks;
-import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.ob;
-import tg.z1;
+import tg.o1;
 import ug.z;
-import wg.r;
+import wg.q;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF c0 = new RectF();
@@ -59,7 +59,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public float Y;
     public float Z;
     public final i a;
-    public final r b;
+    public final q b;
     public final LinearGradient f;
     public final d[] x;
     public final Drawable y;
@@ -82,8 +82,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(560L);
     public final ObjectAnimator b0 = ObjectAnimator.ofFloat(this, g0, 1.0f).setDuration(240L);
 
-    public h(i iVar, r1 r1Var, ArrayList arrayList, r rVar) {
-        this.b = rVar;
+    public h(i iVar, r1 r1Var, ArrayList arrayList, q qVar) {
+        this.b = qVar;
         this.a = iVar;
         this.E = r1Var;
         this.F = r1Var.getMessageObject();
@@ -98,8 +98,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 this.y = mutate;
                 r1Var.setHideSideButtonByQuickShare(true);
                 iVar.performHapticFeedback(3, 1);
-                int w02 = n6.w0(n6.G8, this.E.getResourcesProvider());
-                mutate.setColorFilter(new PorterDuffColorFilter(n6.x0(null, n6.Ke, false), PorterDuff.Mode.MULTIPLY));
+                int w02 = m6.w0(m6.G8, this.E.getResourcesProvider());
+                mutate.setColorFilter(new PorterDuffColorFilter(m6.x0(null, m6.Ke, false), PorterDuff.Mode.MULTIPLY));
                 LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, g0.L(100.0f), new int[]{w02, 16777215 & w02}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                 this.f = linearGradient;
                 this.c.setShader(linearGradient);
@@ -173,7 +173,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
         this.b0.start();
         this.P = true;
         if (this.N && !this.U) {
-            b bVar = new b(new z1(this, 14));
+            b bVar = new b(new o1(this, 15));
             this.Q = bVar;
             RectF rectF = this.r;
             int width = (int) rectF.width();
@@ -344,10 +344,10 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                         a22.setAlpha(alpha2);
                                     }
                                     if (h22 || paint != null) {
-                                        int alpha3 = n6.h2.getAlpha();
-                                        n6.h2.setAlpha((int) (alpha3 * f26));
-                                        canvas2.drawRoundRect(rectF3, L4, L4, n6.h2);
-                                        n6.h2.setAlpha(alpha3);
+                                        int alpha3 = m6.h2.getAlpha();
+                                        m6.h2.setAlpha((int) (alpha3 * f26));
+                                        canvas2.drawRoundRect(rectF3, L4, L4, m6.h2);
+                                        m6.h2.setAlpha(alpha3);
                                     }
                                     canvas2.save();
                                     canvas2.translate(f24 + g0.L(f27), ((g0.L(f23) - dVar2.h.getHeight()) / 2.0f) + f25);
@@ -515,10 +515,10 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                                     a22.setAlpha(alpha2);
                                                 }
                                                 if (h22 || paint2 != null) {
-                                                    int alpha3 = n6.h2.getAlpha();
-                                                    n6.h2.setAlpha((int) (alpha3 * f262));
-                                                    canvas2.drawRoundRect(rectF32, L42, L42, n6.h2);
-                                                    n6.h2.setAlpha(alpha3);
+                                                    int alpha3 = m6.h2.getAlpha();
+                                                    m6.h2.setAlpha((int) (alpha3 * f262));
+                                                    canvas2.drawRoundRect(rectF32, L42, L42, m6.h2);
+                                                    m6.h2.setAlpha(alpha3);
                                                 }
                                                 canvas2.save();
                                                 canvas2.translate(f242 + g0.L(f272), ((g0.L(f232) - dVar22.h.getHeight()) / 2.0f) + f252);
@@ -588,13 +588,13 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     @Override // android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ObjectAnimator objectAnimator = this.a0;
-        r rVar = this.b;
+        q qVar = this.b;
         if (animator == objectAnimator) {
             this.E.setHideSideButtonByQuickShare(false);
             this.N = true;
             invalidateSelf();
             if (this.O) {
-                rVar.run();
+                qVar.run();
                 return;
             }
             return;
@@ -607,7 +607,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 obVar.a.setVisibility(0);
             }
             if (this.N) {
-                rVar.run();
+                qVar.run();
             }
         }
     }

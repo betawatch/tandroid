@@ -6,12 +6,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import bi.f1;
-import bi.g1;
+import bi.j1;
+import bi.k1;
 import di.f6;
-import hi.b7;
-import hi.d7;
-import hi.w5;
+import hi.a7;
+import hi.c7;
+import hi.v5;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledFuture;
@@ -20,13 +20,13 @@ import org.telegram.messenger.q10;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.Cells.d2;
-import org.telegram.ui.Components.t30;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.z4;
+import org.telegram.ui.Components.a5;
+import org.telegram.ui.Components.w30;
+import org.telegram.ui.Components.yk0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.bn;
@@ -35,31 +35,31 @@ import org.telegram.ui.f40;
 import org.telegram.ui.oa1;
 import org.telegram.ui.rv0;
 import org.telegram.ui.wq0;
-import p4.o0;
+import p4.z;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f0 implements t30, f1, b7, oa1, z4, r1, w5.b, v9.g {
+public final /* synthetic */ class f0 implements w30, j1, a7, oa1, a5, q1, w5.b, v9.g {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ f0(Object obj, long j3, h2 h2Var, Object obj2, int i7) {
+    public /* synthetic */ f0(Object obj, long j3, g2 g2Var, Object obj2, int i7) {
         this.a = i7;
         this.c = obj;
         this.b = j3;
-        this.d = h2Var;
+        this.d = g2Var;
         this.e = obj2;
     }
 
-    @Override // org.telegram.ui.Components.z4
+    @Override // org.telegram.ui.Components.a5
     public void O(int i7, int i10, boolean z10) {
-        bn.A1((bn) this.c, (ArrayList) this.d, this.b, (wk0) this.e, z10, i7);
+        bn.A1((bn) this.c, (ArrayList) this.d, this.b, (yk0) this.e, z10, i7);
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public void V(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
         bn bnVar = (bn) this.c;
         TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
@@ -100,46 +100,46 @@ public final /* synthetic */ class f0 implements t30, f1, b7, oa1, z4, r1, w5.b,
                 return fVar2.b.schedule(new Callable() { // from class: v9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new o0(24, callable, f0Var));
+                        return f.this.a.submit(new z(26, callable, f0Var));
                     }
                 }, this.b, (TimeUnit) this.e);
         }
     }
 
-    @Override // bi.f1
+    @Override // bi.j1
     public void b(TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
         f6 f6Var = (f6) this.c;
-        g1 g1Var = (g1) this.d;
+        k1 k1Var = (k1) this.d;
         TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.e;
         f6Var.getClass();
-        if (g1Var.G1) {
+        if (k1Var.G1) {
             return;
         }
-        f6Var.p1(tL_starGiftUnique, this.b, tL_textWithEntities, z10, g1Var);
+        f6Var.p1(tL_starGiftUnique, this.b, tL_textWithEntities, z10, k1Var);
     }
 
-    @Override // hi.b7
+    @Override // hi.a7
     public Bitmap c(BitmapFactory.Options options) {
-        w5 w5Var = (w5) this.c;
-        d7 d7Var = (d7) this.d;
+        v5 v5Var = (v5) this.c;
+        c7 c7Var = (c7) this.d;
         long j3 = this.b;
         String str = (String) this.e;
-        if (!d7Var.K) {
+        if (!c7Var.K) {
             return BitmapFactory.decodeFile(str, options);
         }
-        String str2 = d7Var.N;
+        String str2 = c7Var.N;
         if (str2 != null) {
             return BitmapFactory.decodeFile(str2, options);
         }
         try {
-            return MediaStore.Video.Thumbnails.getThumbnail(w5Var.getContext().getContentResolver(), j3, 1, options);
+            return MediaStore.Video.Thumbnails.getThumbnail(v5Var.getContext().getContentResolver(), j3, 1, options);
         } catch (Throwable unused) {
-            w5Var.invalidate();
+            v5Var.invalidate();
             return null;
         }
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public /* synthetic */ boolean e() {
         return true;
     }
@@ -177,18 +177,18 @@ public final /* synthetic */ class f0 implements t30, f1, b7, oa1, z4, r1, w5.b,
         return null;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public /* synthetic */ wq0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(t1 t1Var, int i7) {
         switch (this.a) {
             case 5:
                 t3 t3Var = (t3) this.c;
@@ -224,19 +224,19 @@ public final /* synthetic */ class f0 implements t30, f1, b7, oa1, z4, r1, w5.b,
 
     @Override // org.telegram.ui.oa1
     public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        h2 h2Var = (h2) this.c;
+        g2 g2Var = (g2) this.c;
         TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
         q10 q10Var = (q10) this.e;
-        int currentAccount = h2Var.getCurrentAccount();
+        int currentAccount = g2Var.getCurrentAccount();
         boolean[] zArr = ii.n.a;
         if (zArr[currentAccount]) {
             return;
         }
         zArr[currentAccount] = true;
-        ii.n.b(h2Var, this.b, tL_inputCheckPasswordSRP, twoStepVerificationActivity, q10Var, null);
+        ii.n.b(g2Var, this.b, tL_inputCheckPasswordSRP, twoStepVerificationActivity, q10Var, null);
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public /* synthetic */ boolean x() {
         return false;
     }
@@ -257,15 +257,15 @@ public final /* synthetic */ class f0 implements t30, f1, b7, oa1, z4, r1, w5.b,
         this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public /* synthetic */ void U() {
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public /* synthetic */ void I(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.t30
+    @Override // org.telegram.ui.Components.w30
     public /* synthetic */ void Q(boolean z10, boolean z11) {
     }
 }

@@ -1,34 +1,49 @@
 package hi;
 
-import android.os.Build;
-import c8.dd;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.ViewGroup;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r6 implements ri.n, ri.m {
-    public final /* synthetic */ v6 a;
+public final /* synthetic */ class r6 implements eh.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2 b;
 
-    public /* synthetic */ r6(v6 v6Var) {
-        this.a = v6Var;
+    public /* synthetic */ r6(org.telegram.ui.ActionBar.w2 w2Var, int i7) {
+        this.a = i7;
+        this.b = w2Var;
     }
 
-    @Override // ri.n
-    public int e() {
-        v6 v6Var = this.a;
-        v6Var.getClass();
-        return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, v6Var.J0);
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // eh.a
+    public final void c(dh.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
     }
 
-    @Override // ri.m
-    public void l(int i7) {
-        v6 v6Var = this.a;
-        dh.g gVar = v6Var.h2;
-        if (Build.VERSION.SDK_INT < 31 || gVar == null) {
-            return;
+    @Override // eh.a
+    public final void d(Canvas canvas, RectF rectF) {
+        switch (this.a) {
+            case 0:
+                u6 u6Var = (u6) this.b;
+                ek0 ek0Var = u6Var.o1;
+                ih.d.b(ek0Var, canvas, rectF, ek0Var, u6Var.b, ks.e4);
+                break;
+            default:
+                org.telegram.ui.ActionBar.w2 w2Var = this.b;
+                ViewGroup viewGroup = w2Var.b;
+                if (viewGroup != null && viewGroup.getVisibility() == 0 && viewGroup.getParent() == w2Var.c) {
+                    canvas.save();
+                    canvas.translate(viewGroup.getX(), viewGroup.getY());
+                    viewGroup.draw(canvas);
+                    canvas.restore();
+                    break;
+                }
+                break;
         }
-        if (dd.a(i7, 4)) {
-            gVar.h(v6Var.Y0.e());
-        }
-        gVar.e(v6Var.k2, v6Var.b.getWidth(), v6Var.b.getHeight());
     }
 }

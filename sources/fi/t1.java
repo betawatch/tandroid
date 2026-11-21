@@ -19,10 +19,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Cells.w9;
-import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,16 +60,16 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                 TL_stories.StoryItem storyItem = z3Var.y1.a;
                 if (storyItem != null) {
                     if (z3Var.m1) {
-                        z3Var.D0(storyItem.privacy.isEmpty() ? new hi.o8(3, z3Var.m2, new ArrayList()) : new hi.o8(z3Var.m2, storyItem.privacy), storyItem);
+                        z3Var.D0(storyItem.privacy.isEmpty() ? new hi.n8(3, z3Var.m2, new ArrayList()) : new hi.n8(z3Var.m2, storyItem.privacy), storyItem);
                         break;
                     } else {
                         if (z3Var.p0 == null) {
-                            hi.m3 m3Var = new hi.m3(z3Var.getContext(), 1);
-                            m3Var.r(true);
-                            m3Var.L = Layout.Alignment.ALIGN_CENTER;
-                            m3Var.r0 = new r1(z3Var, 9);
-                            z3Var.p0 = m3Var;
-                            m3Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+                            hi.l3 l3Var = new hi.l3(z3Var.getContext(), 1);
+                            l3Var.r(true);
+                            l3Var.L = Layout.Alignment.ALIGN_CENTER;
+                            l3Var.r0 = new r1(z3Var, 9);
+                            z3Var.p0 = l3Var;
+                            l3Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
                             c3Var.addView(z3Var.p0, ma.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
                         }
                         TLRPC.User c22 = mp.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1));
@@ -81,14 +81,14 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                             }
                             if (storyItem.close_friends) {
                                 z3Var.p0.n(15.0f, 8.0f, 15.0f, 8.0f);
-                                W2 = org.telegram.messenger.g0.W2(gd.a0("StoryCloseFriendsHint", null, 2131744471, str));
+                                W2 = org.telegram.messenger.g0.W2(gd.a0("StoryCloseFriendsHint", null, 2131744465, str));
                             } else if (storyItem.contacts) {
                                 z3Var.p0.n(11.0f, 6.0f, 11.0f, 7.0f);
-                                W2 = org.telegram.messenger.g0.W2(gd.a0("StoryContactsHint", null, 2131744467, str));
+                                W2 = org.telegram.messenger.g0.W2(gd.a0("StoryContactsHint", null, 2131744461, str));
                                 z10 = false;
                                 CharSequence m10 = org.telegram.messenger.j6.m(W2, z3Var.p0.getTextPaint().getFontMetricsInt(), false, null, 0);
-                                hi.m3 m3Var2 = z3Var.p0;
-                                m3Var2.h = !z10 ? hi.m3.a(m10, m3Var2.getTextPaint()) : c3Var.getMeasuredWidth();
+                                hi.l3 l3Var2 = z3Var.p0;
+                                l3Var2.h = !z10 ? hi.l3.a(m10, l3Var2.getTextPaint()) : c3Var.getMeasuredWidth();
                                 z3Var.p0.v(m10);
                                 z3Var.p0.o(1.0f, (-(c3Var.getWidth() - z3Var.m0.getCenterX())) / org.telegram.messenger.g0.p);
                                 f9 f9Var2 = ((w8) z3Var.A1).d;
@@ -101,12 +101,12 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                                 break;
                             } else if (storyItem.selected_contacts) {
                                 z3Var.p0.n(15.0f, 8.0f, 15.0f, 8.0f);
-                                W2 = org.telegram.messenger.g0.W2(gd.a0("StorySelectedContactsHint", null, 2131744244, str));
+                                W2 = org.telegram.messenger.g0.W2(gd.a0("StorySelectedContactsHint", null, 2131744238, str));
                             }
                             z10 = true;
                             CharSequence m102 = org.telegram.messenger.j6.m(W2, z3Var.p0.getTextPaint().getFontMetricsInt(), false, null, 0);
-                            hi.m3 m3Var22 = z3Var.p0;
-                            m3Var22.h = !z10 ? hi.m3.a(m102, m3Var22.getTextPaint()) : c3Var.getMeasuredWidth();
+                            hi.l3 l3Var22 = z3Var.p0;
+                            l3Var22.h = !z10 ? hi.l3.a(m102, l3Var22.getTextPaint()) : c3Var.getMeasuredWidth();
                             z3Var.p0.v(m102);
                             z3Var.p0.o(1.0f, (-(c3Var.getWidth() - z3Var.m0.getCenterX())) / org.telegram.messenger.g0.p);
                             f9 f9Var22 = ((w8) z3Var.A1).d;
@@ -165,7 +165,7 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
             case 6:
                 a2 a2Var = z3Var.v0;
                 if (!z3Var.B0(false)) {
-                    di.x8 y10 = di.x8.y(z3Var.m2, false);
+                    di.y8 y10 = di.y8.y(z3Var.m2, false);
                     if (y10.e && y10.f.amount <= 0) {
                         a2Var.k(z3Var.B0(false));
                         break;
@@ -180,9 +180,9 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                 break;
             case 7:
                 Context context = z3Var.getContext();
-                org.telegram.ui.ActionBar.i6 i6Var = z3Var.l0;
-                org.telegram.ui.ActionBar.x2 x2Var = new org.telegram.ui.ActionBar.x2(1, context, i6Var, false);
-                x2Var.P(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, i6Var));
+                org.telegram.ui.ActionBar.h6 h6Var = z3Var.l0;
+                org.telegram.ui.ActionBar.w2 w2Var = new org.telegram.ui.ActionBar.w2(1, context, h6Var, false);
+                w2Var.P(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, h6Var));
                 LinearLayout linearLayout = new LinearLayout(z3Var.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
@@ -193,26 +193,26 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                 TextView textView = new TextView(z3Var.getContext());
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 textView.setGravity(17);
-                org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, i6Var);
-                i5.c.r(20.0f, 1, 2131744271, textView, null);
+                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
+                i5.c.r(20.0f, 1, 2131744265, textView, null);
                 linearLayout.addView(textView, ma.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(z3Var.getContext());
                 textView2.setGravity(17);
-                org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.r5, i6Var);
+                org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.r5, h6Var);
                 textView2.setTextSize(1, 14.0f);
-                textView2.setText(org.telegram.messenger.g0.W2(gd.M0(2131744270, null)));
+                textView2.setText(org.telegram.messenger.g0.W2(gd.N0(2131744264, null)));
                 linearLayout.addView(textView2, ma.t(-1, -2, 1, 32, 9, 32, 19));
-                hi.d dVar = new hi.d(z3Var.getContext(), i6Var, true);
-                dVar.i(gd.M0(2131744274, null), false, true);
+                hi.e eVar = new hi.e(z3Var.getContext(), h6Var, true);
+                eVar.i(gd.N0(2131744268, null), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
-                lq lqVar = new lq(R.drawable.mini_switch_lock, 0);
-                lqVar.n = 1;
-                spannableStringBuilder.setSpan(lqVar, 0, 1, 33);
-                dVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) gd.M0(2131747578, null)), false);
-                linearLayout.addView(dVar, ma.r(-1, 48, 1));
-                dVar.setOnClickListener(new ai.v2(20, z3Var, x2Var));
-                x2Var.O = linearLayout;
-                ((w8) z3Var.A1).h(x2Var);
+                nq nqVar = new nq(R.drawable.mini_switch_lock, 0);
+                nqVar.n = 1;
+                spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
+                eVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) gd.N0(2131747577, null)), false);
+                linearLayout.addView(eVar, ma.r(-1, 48, 1));
+                eVar.setOnClickListener(new ai.x2(19, z3Var, w2Var));
+                w2Var.O = linearLayout;
+                ((w8) z3Var.A1).h(w2Var);
                 r3 r3Var = z3Var.d1;
                 if (r3Var != null) {
                     r3Var.a();
@@ -221,9 +221,9 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                 break;
             case 8:
                 if (z3Var.U2) {
-                    m5.J0();
+                    n5.J0();
                 } else {
-                    ((w8) z3Var.A1).h(new m5(z3Var.getContext(), z3Var.M0.getY() + z3Var.getY(), 0, z3Var.l0));
+                    ((w8) z3Var.A1).h(new n5(z3Var.getContext(), z3Var.M0.getY() + z3Var.getY(), 0, z3Var.l0));
                 }
                 r3 r3Var2 = z3Var.d1;
                 if (r3Var2 != null) {
@@ -232,7 +232,7 @@ public final /* synthetic */ class t1 implements View.OnClickListener {
                 }
                 break;
             case 9:
-                ((w8) z3Var.A1).h(new m5(z3Var.getContext(), z3Var.M0.getY() + z3Var.getY(), 0, z3Var.l0));
+                ((w8) z3Var.A1).h(new n5(z3Var.getContext(), z3Var.M0.getY() + z3Var.getY(), 0, z3Var.l0));
                 r3 r3Var3 = z3Var.d1;
                 if (r3Var3 != null) {
                     r3Var3.a();

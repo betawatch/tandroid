@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class be extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,44 +21,44 @@ public final class be extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.c;
-                au0 au0Var = chatActivityEnterView.a2;
-                chatActivityEnterView.o4 = false;
-                chatActivityEnterView.p4 = null;
-                cg cgVar = chatActivityEnterView.V0;
-                if (cgVar != null) {
-                    if (chatActivityEnterView.c7 == null) {
-                        cgVar.getLayoutParams().height = this.b;
+                du0 du0Var = chatActivityEnterView.c2;
+                chatActivityEnterView.q4 = false;
+                chatActivityEnterView.r4 = null;
+                fg fgVar = chatActivityEnterView.V0;
+                if (fgVar != null) {
+                    if (chatActivityEnterView.e7 == null) {
+                        fgVar.getLayoutParams().height = this.b;
                     }
                     chatActivityEnterView.V0.setLayerType(0, null);
                 }
-                if (au0Var != null) {
-                    au0Var.requestLayout();
-                    au0Var.setForeground(null);
-                    au0Var.setWillNotDraw(false);
+                if (du0Var != null) {
+                    du0Var.requestLayout();
+                    du0Var.setForeground(null);
+                    du0Var.setWillNotDraw(false);
                 }
-                if (chatActivityEnterView.n3 && chatActivityEnterView.O0()) {
-                    chatActivityEnterView.T1(0, chatActivityEnterView.T2, true, true);
+                if (chatActivityEnterView.p3 && chatActivityEnterView.S0()) {
+                    chatActivityEnterView.X1(0, chatActivityEnterView.V2, true, true);
                 }
                 dd ddVar = chatActivityEnterView.s0;
                 if (ddVar != null) {
                     ddVar.run();
                     chatActivityEnterView.s0 = null;
                 }
-                chatActivityEnterView.z4.e();
+                chatActivityEnterView.B4.e();
                 break;
             default:
                 int i7 = this.b;
                 ChatActivityEnterView chatActivityEnterView2 = this.c;
                 if (i7 == 0) {
-                    chatActivityEnterView2.o3 = 0;
+                    chatActivityEnterView2.q3 = 0;
                 }
                 chatActivityEnterView2.W0 = null;
-                chatActivityEnterView2.v2.setTranslationY(0.0f);
-                chatActivityEnterView2.v2.setVisibility(8);
-                chatActivityEnterView2.z4.e();
-                kg kgVar = chatActivityEnterView2.N3;
-                if (kgVar != null) {
-                    kgVar.x(0.0f);
+                chatActivityEnterView2.x2.setTranslationY(0.0f);
+                chatActivityEnterView2.x2.setVisibility(8);
+                chatActivityEnterView2.B4.e();
+                ng ngVar = chatActivityEnterView2.P3;
+                if (ngVar != null) {
+                    ngVar.x(0.0f);
                 }
                 chatActivityEnterView2.requestLayout();
                 break;

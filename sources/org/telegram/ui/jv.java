@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class jv extends org.telegram.ui.Components.xg0 {
+public final class jv extends org.telegram.ui.Components.zg0 {
     public final /* synthetic */ int f0 = 0;
     public final /* synthetic */ Object g0;
 
@@ -14,7 +14,7 @@ public final class jv extends org.telegram.ui.Components.xg0 {
         this.g0 = y91Var;
     }
 
-    @Override // org.telegram.ui.Components.xg0
+    @Override // org.telegram.ui.Components.zg0
     public final float d() {
         switch (this.f0) {
             case 0:

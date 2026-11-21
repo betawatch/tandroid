@@ -12,13 +12,13 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class tq0 extends FrameLayout implements org.telegram.messenger.fs {
     public final FrameLayout a;
     public final ih0 b;
-    public final org.telegram.ui.ActionBar.n5[] c;
-    public final org.telegram.ui.Components.n6 d;
+    public final org.telegram.ui.ActionBar.m5[] c;
+    public final org.telegram.ui.Components.o6 d;
     public AnimatorSet e;
     public AnimatorSet f;
     public boolean h;
@@ -38,9 +38,9 @@ public final class tq0 extends FrameLayout implements org.telegram.messenger.fs 
         ih0Var.setPadding(org.telegram.messenger.g0.L(16.0f), 0, 0, 0);
         ih0Var.setClipToPadding(false);
         frameLayout.addView(ih0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
-        this.c = new org.telegram.ui.ActionBar.n5[2];
+        this.c = new org.telegram.ui.ActionBar.m5[2];
         for (int i7 = 0; i7 < 2; i7++) {
-            this.c[i7] = new org.telegram.ui.ActionBar.n5(activity);
+            this.c[i7] = new org.telegram.ui.ActionBar.m5(activity);
             this.c[i7].setGravity(19);
             this.c[i7].setTextColor(-1);
             this.c[i7].setTextSize(20);
@@ -49,23 +49,23 @@ public final class tq0 extends FrameLayout implements org.telegram.messenger.fs 
             this.c[i7].setScrollNonFitText(true);
             this.b.addView(this.c[i7], c8.ma.e(-1, -2, 19));
         }
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(activity, true, false, false);
-        this.d = n6Var;
-        n6Var.b(0.4f, 320L, org.telegram.ui.Components.lr.h);
-        n6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        n6Var.setGravity(19);
-        n6Var.setTextColor(-1);
-        n6Var.setEllipsizeByGradient(true);
-        n6Var.setImportantForAccessibility(1);
-        n6Var.setAccessibilityLiveRegion(1);
-        this.a.addView(n6Var, c8.ma.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(activity, true, false, false);
+        this.d = o6Var;
+        o6Var.b(0.4f, 320L, org.telegram.ui.Components.nr.h);
+        o6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        o6Var.setGravity(19);
+        o6Var.setTextColor(-1);
+        o6Var.setEllipsizeByGradient(true);
+        o6Var.setImportantForAccessibility(1);
+        o6Var.setAccessibilityLiveRegion(1);
+        this.a.addView(o6Var, c8.ma.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public final void a(CharSequence charSequence, boolean z10) {
         boolean isEmpty = TextUtils.isEmpty(charSequence);
         boolean z11 = !isEmpty;
         boolean z12 = this.h;
-        org.telegram.ui.Components.n6 n6Var = this.d;
+        org.telegram.ui.Components.o6 o6Var = this.d;
         if (z11 != z12) {
             this.h = z11;
             AnimatorSet animatorSet = this.f;
@@ -77,62 +77,62 @@ public final class tq0 extends FrameLayout implements org.telegram.messenger.fs 
             ih0 ih0Var = this.b;
             if (z10) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(ObjectAnimator.ofFloat(n6Var, (Property<org.telegram.ui.Components.n6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(o6Var, (Property<org.telegram.ui.Components.o6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
                 float[] fArr = {L};
                 Property property = View.TRANSLATION_Y;
-                arrayList.add(ObjectAnimator.ofFloat(n6Var, (Property<org.telegram.ui.Components.n6, Float>) property, fArr));
+                arrayList.add(ObjectAnimator.ofFloat(o6Var, (Property<org.telegram.ui.Components.o6, Float>) property, fArr));
                 arrayList.add(ObjectAnimator.ofFloat(ih0Var, (Property<ih0, Float>) property, isEmpty ? 0.0f : org.telegram.messenger.g0.L(-12.0f)));
                 arrayList.add(ObjectAnimator.ofFloat(ih0Var, (Property<ih0, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(ih0Var, (Property<ih0, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 this.f = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                this.f.setInterpolator(org.telegram.ui.Components.lr.h);
+                this.f.setInterpolator(org.telegram.ui.Components.nr.h);
                 this.f.start();
             } else {
-                n6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
-                n6Var.setTranslationY(L);
+                o6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
+                o6Var.setTranslationY(L);
                 ih0Var.setTranslationY(isEmpty ? 0.0f : org.telegram.messenger.g0.L(-12.0f));
                 ih0Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
                 ih0Var.setScaleY(isEmpty ? 1.0f : 0.87f);
             }
         }
-        n6Var.c(charSequence, z10, true);
+        o6Var.c(charSequence, z10, true);
         if (TextUtils.isEmpty(charSequence)) {
             charSequence = null;
         }
-        n6Var.setContentDescription(charSequence);
+        o6Var.setContentDescription(charSequence);
     }
 
     public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.n5[] n5VarArr = this.c;
-        n5VarArr[0].getPaint().setShadowLayer(org.telegram.messenger.g0.N(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
-        n5VarArr[1].getPaint().setShadowLayer(org.telegram.messenger.g0.N(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
+        org.telegram.ui.ActionBar.m5[] m5VarArr = this.c;
+        m5VarArr[0].getPaint().setShadowLayer(org.telegram.messenger.g0.N(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
+        m5VarArr[1].getPaint().setShadowLayer(org.telegram.messenger.g0.N(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
         this.d.getDrawable().s(org.telegram.messenger.g0.N(0.66f), 1.0f, z10 ? 1912602624 : 0);
     }
 
     public final void c(CharSequence charSequence) {
-        org.telegram.ui.ActionBar.n5[] n5VarArr = this.c;
-        n5VarArr[1].setAlpha(0.0f);
-        n5VarArr[1].setVisibility(8);
-        CharSequence text = n5VarArr[0].getText();
+        org.telegram.ui.ActionBar.m5[] m5VarArr = this.c;
+        m5VarArr[1].setAlpha(0.0f);
+        m5VarArr[1].setVisibility(8);
+        CharSequence text = m5VarArr[0].getText();
         if (text != null || charSequence != null) {
             r1 = (text == null) != (charSequence == null) ? false : TextUtils.equals(text.toString(), charSequence.toString());
         }
         if (!r1) {
-            org.telegram.ui.ActionBar.n5 n5Var = n5VarArr[0];
-            n5Var.S = 0.0f;
-            n5Var.b();
+            org.telegram.ui.ActionBar.m5 m5Var = m5VarArr[0];
+            m5Var.S = 0.0f;
+            m5Var.b();
         }
-        n5VarArr[0].k(charSequence);
-        n5VarArr[0].setAlpha(1.0f);
-        n5VarArr[0].setTranslationX(0.0f);
-        n5VarArr[0].setTranslationY(0.0f);
+        m5VarArr[0].k(charSequence);
+        m5VarArr[0].setAlpha(1.0f);
+        m5VarArr[0].setTranslationX(0.0f);
+        m5VarArr[0].setTranslationY(0.0f);
     }
 
     public final void d(CharSequence charSequence, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.n5[] n5VarArr = this.c;
-        CharSequence text = n5VarArr[0].getText();
+        org.telegram.ui.ActionBar.m5[] m5VarArr = this.c;
+        CharSequence text = m5VarArr[0].getText();
         if (text == null ? false : TextUtils.equals(text.toString(), charSequence.toString())) {
             return;
         }
@@ -141,59 +141,59 @@ public final class tq0 extends FrameLayout implements org.telegram.messenger.fs 
             animatorSet.cancel();
             this.e = null;
         }
-        org.telegram.ui.ActionBar.n5 n5Var = n5VarArr[1];
-        org.telegram.ui.ActionBar.n5 n5Var2 = n5VarArr[0];
-        n5Var.getClass();
-        n5Var.S = n5Var2.S;
-        n5Var.b();
-        n5VarArr[1].k(n5VarArr[0].getText());
-        n5VarArr[1].setRightPadding((int) this.r);
-        org.telegram.ui.ActionBar.n5 n5Var3 = n5VarArr[0];
-        n5Var3.S = 0.0f;
-        n5Var3.b();
-        n5VarArr[0].k(charSequence);
+        org.telegram.ui.ActionBar.m5 m5Var = m5VarArr[1];
+        org.telegram.ui.ActionBar.m5 m5Var2 = m5VarArr[0];
+        m5Var.getClass();
+        m5Var.S = m5Var2.S;
+        m5Var.b();
+        m5VarArr[1].k(m5VarArr[0].getText());
+        m5VarArr[1].setRightPadding((int) this.r);
+        org.telegram.ui.ActionBar.m5 m5Var3 = m5VarArr[0];
+        m5Var3.S = 0.0f;
+        m5Var3.b();
+        m5VarArr[0].k(charSequence);
         float L = org.telegram.messenger.g0.L(8.0f) * (z11 ? 1 : -1);
-        n5VarArr[1].setTranslationX(0.0f);
-        n5VarArr[1].setTranslationY(0.0f);
+        m5VarArr[1].setTranslationX(0.0f);
+        m5VarArr[1].setTranslationY(0.0f);
         if (z10) {
-            n5VarArr[0].setTranslationX(0.0f);
-            n5VarArr[0].setTranslationY(-L);
+            m5VarArr[0].setTranslationX(0.0f);
+            m5VarArr[0].setTranslationY(-L);
         } else {
-            n5VarArr[0].setTranslationX(-L);
-            n5VarArr[0].setTranslationY(0.0f);
+            m5VarArr[0].setTranslationX(-L);
+            m5VarArr[0].setTranslationY(0.0f);
         }
-        n5VarArr[0].setAlpha(0.0f);
-        n5VarArr[1].setAlpha(1.0f);
-        n5VarArr[0].setVisibility(0);
-        n5VarArr[1].setVisibility(0);
+        m5VarArr[0].setAlpha(0.0f);
+        m5VarArr[1].setAlpha(1.0f);
+        m5VarArr[0].setVisibility(0);
+        m5VarArr[1].setVisibility(0);
         ArrayList arrayList = new ArrayList();
         Property property = View.ALPHA;
-        arrayList.add(ObjectAnimator.ofFloat(n5VarArr[1], (Property<org.telegram.ui.ActionBar.n5, Float>) property, 0.0f));
-        arrayList.add(ObjectAnimator.ofFloat(n5VarArr[0], (Property<org.telegram.ui.ActionBar.n5, Float>) property, 1.0f));
-        org.telegram.ui.ActionBar.n5 n5Var4 = n5VarArr[1];
+        arrayList.add(ObjectAnimator.ofFloat(m5VarArr[1], (Property<org.telegram.ui.ActionBar.m5, Float>) property, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(m5VarArr[0], (Property<org.telegram.ui.ActionBar.m5, Float>) property, 1.0f));
+        org.telegram.ui.ActionBar.m5 m5Var4 = m5VarArr[1];
         Property property2 = View.TRANSLATION_X;
         Property property3 = View.TRANSLATION_Y;
-        arrayList.add(ObjectAnimator.ofFloat(n5Var4, (Property<org.telegram.ui.ActionBar.n5, Float>) (z10 ? property3 : property2), L));
-        org.telegram.ui.ActionBar.n5 n5Var5 = n5VarArr[0];
+        arrayList.add(ObjectAnimator.ofFloat(m5Var4, (Property<org.telegram.ui.ActionBar.m5, Float>) (z10 ? property3 : property2), L));
+        org.telegram.ui.ActionBar.m5 m5Var5 = m5VarArr[0];
         if (z10) {
             property2 = property3;
         }
-        arrayList.add(ObjectAnimator.ofFloat(n5Var5, (Property<org.telegram.ui.ActionBar.n5, Float>) property2, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(m5Var5, (Property<org.telegram.ui.ActionBar.m5, Float>) property2, 0.0f));
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.e = animatorSet2;
         animatorSet2.playTogether(arrayList);
         this.e.addListener(new ay(this, 19));
         this.e.setDuration(320L);
-        this.e.setInterpolator(org.telegram.ui.Components.lr.h);
+        this.e.setInterpolator(org.telegram.ui.Components.nr.h);
         this.e.start();
     }
 
     @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i7 == org.telegram.messenger.ks.l4) {
-            org.telegram.ui.ActionBar.n5[] n5VarArr = this.c;
-            n5VarArr[0].invalidate();
-            n5VarArr[1].invalidate();
+            org.telegram.ui.ActionBar.m5[] m5VarArr = this.c;
+            m5VarArr[0].invalidate();
+            m5VarArr[1].invalidate();
             this.d.invalidate();
         }
     }

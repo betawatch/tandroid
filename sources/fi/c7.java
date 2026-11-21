@@ -22,7 +22,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class c7 {
     public int a;
@@ -37,7 +37,7 @@ public final class c7 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void a(c7 c7Var, o5 o5Var) {
+    public static void a(c7 c7Var, p5 p5Var) {
         boolean z10;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
@@ -74,7 +74,7 @@ public final class c7 {
                         sQLiteCursor = queryFinalized;
                         try {
                             org.telegram.messenger.a8.g(th, z10);
-                            org.telegram.messenger.g0.g3(new f2.a(o5Var, 15));
+                            org.telegram.messenger.g0.g3(new f2.a(p5Var, 15));
                             return;
                         } finally {
                             if (sQLiteCursor != null) {
@@ -162,7 +162,7 @@ public final class c7 {
                         z10 = true;
                         sQLiteCursor = sQLiteCursor2;
                         org.telegram.messenger.a8.g(th, z10);
-                        org.telegram.messenger.g0.g3(new f2.a(o5Var, 15));
+                        org.telegram.messenger.g0.g3(new f2.a(p5Var, 15));
                         return;
                     }
                 }
@@ -219,7 +219,7 @@ public final class c7 {
                     i18++;
                 }
                 Collections.sort(tL_stories_allStories.peer_stories, Comparator$-CC.comparingInt(new bg.d(9)));
-                org.telegram.messenger.g0.g3(new a6(11, o5Var, tL_stories_allStories));
+                org.telegram.messenger.g0.g3(new l4(13, p5Var, tL_stories_allStories));
             } catch (Throwable th4) {
                 th = th4;
                 sQLiteCursor2 = queryFinalized;
@@ -553,7 +553,7 @@ public final class c7 {
         if (j3 == 0) {
             return;
         }
-        this.b.a.c(new bi.m2(this, j3, storyItem, 8));
+        this.b.a.c(new bi.q2(this, j3, storyItem, 8));
     }
 
     public final void l(long j3, TL_stories.StoryItem storyItem) {

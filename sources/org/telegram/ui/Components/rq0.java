@@ -1,62 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import java.util.ArrayList;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class rq0 extends org.telegram.ui.bn {
-    public boolean vd;
-    public final /* synthetic */ int wd;
-    public final /* synthetic */ gt0 xd;
+public final class rq0 extends v4.o0 {
+    public final /* synthetic */ kq0 a;
+    public final /* synthetic */ jt0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rq0(gt0 gt0Var, Bundle bundle, int i7) {
-        super(bundle);
-        this.xd = gt0Var;
-        this.wd = i7;
-        this.vd = true;
+    public rq0(jt0 jt0Var, kq0 kq0Var) {
+        this.b = jt0Var;
+        this.a = kq0Var;
     }
 
-    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.h2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        gt0 gt0Var = this.xd;
-        ss0 ss0Var = gt0Var.V;
-        if (this.vd) {
-            if (this.k0 != null) {
-                Oa("");
-                this.k0.Q(ss0Var.x, false);
+    @Override // v4.o0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
+        kq0 kq0Var = this.a;
+        if (kq0Var.h.getAdapter() == this.b.R) {
+            int R = RecyclerView.R(view);
+            rect.left = 0;
+            rect.bottom = 0;
+            lq0 lq0Var = kq0Var.x;
+            lq0Var.B1();
+            if (R <= lq0Var.U) {
+                rect.top = 0;
+            } else {
+                rect.top = org.telegram.messenger.g0.L(2.0f);
             }
-            org.telegram.ui.bk bkVar = this.D1;
-            if (bkVar != null) {
-                bkVar.e(ss0Var.y, false);
-            }
-            org.telegram.messenger.ri mediaDataController = gt0Var.y1.getMediaDataController();
-            int classGuid = getClassGuid();
-            ch.p0 p0Var = ss0Var.y;
-            String str = ss0Var.x;
-            ArrayList arrayList = ss0Var.n;
-            ArrayList arrayList2 = ss0Var.h;
-            int i7 = ss0Var.w;
-            boolean z12 = ss0Var.s;
-            mediaDataController.R0 = p0Var;
-            mediaDataController.e1 = str;
-            boolean[] zArr = mediaDataController.Y0;
-            zArr[0] = z12;
-            zArr[1] = true;
-            ArrayList arrayList3 = mediaDataController.a1;
-            arrayList3.clear();
-            arrayList3.addAll(arrayList2);
-            mediaDataController.b1.clear();
-            mediaDataController.b1.addAll(arrayList);
-            mediaDataController.p2();
-            int[] iArr = mediaDataController.X0;
-            iArr[0] = i7;
-            iArr[1] = 0;
-            mediaDataController.f1 = this.wd;
-            mediaDataController.getNotificationCenter().k(org.telegram.messenger.ks.H0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.e0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.f1), Integer.valueOf(mediaDataController.l0()), Boolean.TRUE);
-            this.vd = false;
+            rect.right = kq0Var.x.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
+            return;
         }
-        super.onTransitionAnimationStart(z10, z11);
+        if (!(view instanceof org.telegram.ui.Cells.p7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
+        }
+        org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
+        kq0Var.h.getClass();
+        int R2 = RecyclerView.R(p7Var);
+        int i7 = kq0Var.x.J;
+        p7Var.b0 = R2 < i7;
+        int i10 = R2 % i7;
+        p7Var.W = i10 == 0;
+        p7Var.a0 = i10 == i7 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

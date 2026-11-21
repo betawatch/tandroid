@@ -1,20 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class nb0 implements Runnable {
-    public boolean a;
-    public final /* synthetic */ sb0 b;
+public final class nb0 extends zm0 {
+    public final /* synthetic */ tb0 d;
 
-    public nb0(sb0 sb0Var) {
-        this.b = sb0Var;
+    public nb0(tb0 tb0Var) {
+        this.d = tb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10 = this.a;
-        sb0 sb0Var = this.b;
-        sb0Var.a(z10);
-        sb0Var.postDelayed(this, sb0Var.N);
+    @Override // org.telegram.ui.Components.zm0
+    public final boolean a() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.zm0
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.zm0
+    public final void c(boolean z10) {
+        this.d.a(!z10);
+    }
+
+    @Override // org.telegram.ui.Components.zm0
+    public final CharSequence d() {
+        tb0 tb0Var = this.d;
+        org.telegram.messenger.y10 y10Var = tb0Var.v0;
+        return y10Var != null ? (CharSequence) y10Var.a(Integer.valueOf(tb0Var.I)) : tb0Var.d(tb0Var.I);
     }
 }

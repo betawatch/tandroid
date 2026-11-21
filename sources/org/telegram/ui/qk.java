@@ -8,7 +8,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class qk extends org.telegram.ui.Components.q9 {
     public final /* synthetic */ int H = 0;
@@ -27,7 +27,7 @@ public final class qk extends org.telegram.ui.Components.q9 {
                 xh.f fVar = (xh.f) this.J;
                 Path path = (Path) this.I;
                 super.draw(canvas);
-                if (((org.telegram.ui.Components.qo) this.K).h) {
+                if (((org.telegram.ui.Components.so) this.K).h) {
                     path.rewind();
                     RectF rectF = org.telegram.messenger.g0.P;
                     ImageReceiver imageReceiver = this.a;
@@ -93,9 +93,9 @@ public final class qk extends org.telegram.ui.Components.q9 {
             case 2:
                 org.telegram.ui.Components.voip.n nVar = (org.telegram.ui.Components.voip.n) this.J;
                 super.onDraw(canvas);
-                org.telegram.ui.Components.z40 z40Var = (org.telegram.ui.Components.z40) this.K;
-                if (z40Var.x0) {
-                    int i7 = z40Var.X0;
+                org.telegram.ui.Components.c50 c50Var = (org.telegram.ui.Components.c50) this.K;
+                if (c50Var.x0) {
+                    int i7 = c50Var.X0;
                     nVar.f = i7;
                     RectF rectF2 = org.telegram.messenger.g0.P;
                     float f14 = i7;
@@ -111,7 +111,7 @@ public final class qk extends org.telegram.ui.Components.q9 {
             case 3:
                 org.telegram.ui.Components.voip.n nVar2 = (org.telegram.ui.Components.voip.n) this.J;
                 super.onDraw(canvas);
-                if (((org.telegram.ui.Components.y40) this.K).n0) {
+                if (((org.telegram.ui.Components.b50) this.K).n0) {
                     float min = Math.min(getWidth(), getHeight()) * 0.5f;
                     RectF rectF3 = org.telegram.messenger.g0.P;
                     rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -127,25 +127,25 @@ public final class qk extends org.telegram.ui.Components.q9 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk(org.telegram.ui.Components.qo qoVar, Context context, xh.f fVar) {
+    public qk(org.telegram.ui.Components.so soVar, Context context, xh.f fVar) {
         super(context);
-        this.K = qoVar;
+        this.K = soVar;
         this.J = fVar;
         this.I = new Path();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk(org.telegram.ui.Components.y40 y40Var, Context context, Paint paint) {
+    public qk(org.telegram.ui.Components.b50 b50Var, Context context, Paint paint) {
         super(context);
-        this.K = y40Var;
+        this.K = b50Var;
         this.I = paint;
         this.J = new org.telegram.ui.Components.voip.n();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk(org.telegram.ui.Components.z40 z40Var, Context context, Paint paint) {
+    public qk(org.telegram.ui.Components.c50 c50Var, Context context, Paint paint) {
         super(context);
-        this.K = z40Var;
+        this.K = c50Var;
         this.I = paint;
         this.J = new org.telegram.ui.Components.voip.n();
     }

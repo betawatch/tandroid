@@ -60,7 +60,7 @@ import fi.c9;
 import fi.e3;
 import g.s;
 import gb.p0;
-import hi.u5;
+import hi.t5;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.InvocationHandler;
@@ -94,9 +94,9 @@ import org.telegram.messenger.jc;
 import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.nt0;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.qt0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.cv0;
@@ -105,9 +105,9 @@ import q6.m;
 import q7.l1;
 import q7.m1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final class i implements SuccessContinuation, androidx.activity.result.b, b3.k, te.b, q0, i0, q, nt0, jc, WebMessageListenerBoundaryInterface, b9, w, OnSuccessListener, OnCompleteListener, ib.b {
+public final class i implements SuccessContinuation, androidx.activity.result.b, b3.k, te.b, q0, i0, q, qt0, jc, WebMessageListenerBoundaryInterface, b9, w, OnSuccessListener, OnCompleteListener, ib.b {
     public static i c;
     public final /* synthetic */ int a;
     public final Object b;
@@ -191,7 +191,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    @Override // org.telegram.ui.Components.nt0
+    @Override // org.telegram.ui.Components.qt0
     public void G(boolean z10) {
         te.a aVar = ((t) this.b).s;
         if (aVar != null) {
@@ -217,10 +217,10 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    @Override // org.telegram.ui.Components.nt0
+    @Override // org.telegram.ui.Components.qt0
     public float U0() {
         i0.b bVar;
-        bVar = ((h2) ((t) this.b)).mSystemInsets;
+        bVar = ((g2) ((t) this.b)).mSystemInsets;
         return i5.c.d(9.66f, ri.a.d(bVar.b), 0);
     }
 
@@ -446,10 +446,10 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    @Override // org.telegram.ui.Components.nt0
+    @Override // org.telegram.ui.Components.qt0
     public int j1() {
         i0.b bVar;
-        bVar = ((h2) ((t) this.b)).mSystemInsets;
+        bVar = ((g2) ((t) this.b)).mSystemInsets;
         return bVar.d;
     }
 
@@ -531,7 +531,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
 
     @Override // org.telegram.messenger.jc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        mh0 B;
+        oh0 B;
         boolean[] zArr = (boolean[]) this.b;
         if (!z10 || (B = imageReceiver.B()) == null || zArr[0]) {
             return;
@@ -638,7 +638,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
             SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(v, 0);
             if (i7 != 0) {
                 com.google.android.gms.common.api.internal.t b11 = com.google.android.gms.common.api.internal.u.b();
-                b11.c = new u5(sVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"}, 4);
+                b11.c = new t5(sVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"}, 4);
                 b11.d = new n6.c[]{y.c};
                 b11.b = false;
                 b11.a = 8426;

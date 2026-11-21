@@ -1,8 +1,8 @@
 package sg;
 
-import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class e0 implements Runnable {
             case 0:
                 i0 i0Var = this.b;
                 i0Var.c = null;
-                hn hnVar = i0Var.a;
-                if (hnVar != null) {
-                    hnVar.l();
+                jn jnVar = i0Var.a;
+                if (jnVar != null) {
+                    jnVar.l();
                     break;
                 }
                 break;

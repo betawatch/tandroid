@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class hq0 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        hi.w wVar;
+        hi.x xVar;
         ArrayList arrayList;
         int i7;
         int i10;
@@ -69,7 +69,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 }
                 break;
             case 2:
-                ((ai.a1) this.b).run();
+                ((ai.c1) this.b).run();
                 break;
             case 3:
                 k kVar = (k) this.b;
@@ -122,7 +122,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 int[] iArr = new int[i16];
                 int[] iArr2 = new int[i16];
                 k3 k3Var = g4Var3.v0[0];
-                if (k3Var != null && (wVar = k3Var.b) != null) {
+                if (k3Var != null && (xVar = k3Var.b) != null) {
                     Point point = org.telegram.messenger.g0.q;
                     int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(point.x, TLObject.FLAG_31);
                     int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31);
@@ -136,7 +136,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                             int i19 = z12 ? i17 - 1 : i17;
                             TL_iv.PageBlock pageBlock2 = (i19 < 0 || i19 >= arrayList2.size()) ? pageBlock : (TL_iv.PageBlock) arrayList2.get(i19);
                             if (pageBlock2 == null || pageBlock2.cachedHeight == 0 || pageBlock2.cachedWidth != View.MeasureSpec.getSize(makeMeasureSpec)) {
-                                v4.f1 a10 = e4Var.a(wVar, e4.I(pageBlock2));
+                                v4.f1 a10 = e4Var.a(xVar, e4.I(pageBlock2));
                                 View view2 = a10.a;
                                 int i20 = i18;
                                 TL_iv.PageBlock pageBlock3 = pageBlock2;
@@ -185,7 +185,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 b5 b5Var = (b5) this.b;
                 if (!b5Var.x) {
                     b5Var.x = true;
-                    org.telegram.ui.Components.wk0.d(new a5(b5Var, i12));
+                    org.telegram.ui.Components.yk0.d(new a5(b5Var, i12));
                     break;
                 }
                 break;
@@ -322,16 +322,16 @@ public final /* synthetic */ class hq0 implements Runnable {
                 ((org.telegram.ui.ActionBar.k) this.b).invalidate();
                 break;
             case 26:
-                ((org.telegram.ui.ActionBar.z0) this.b).performClick();
+                ((org.telegram.ui.ActionBar.y0) this.b).performClick();
                 break;
             case 27:
-                ((org.telegram.ui.Components.y60) this.b).s();
+                ((org.telegram.ui.Components.a70) this.b).s();
                 break;
             case 28:
                 ((x) this.b).a(Boolean.FALSE);
                 break;
             default:
-                ((org.telegram.ui.ActionBar.h1) this.b).dismiss();
+                ((org.telegram.ui.ActionBar.g1) this.b).dismiss();
                 break;
         }
     }

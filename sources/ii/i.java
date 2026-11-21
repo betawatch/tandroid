@@ -1,7 +1,7 @@
 package ii;
 
-import ai.a1;
-import ai.v1;
+import ai.c1;
+import ai.x1;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -9,13 +9,13 @@ import android.text.TextUtils;
 import bi.h0;
 import di.e0;
 import di.j0;
-import di.x8;
-import hi.mb;
+import di.y8;
+import hi.lb;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+import ki.x0;
 import ki.y0;
-import ki.z0;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ec;
@@ -34,12 +34,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.u6;
+import org.telegram.ui.Components.v6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.u0;
@@ -50,7 +51,7 @@ import org.telegram.ui.wp;
 import org.telegram.ui.y60;
 import org.telegram.ui.zc1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -63,14 +64,14 @@ public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ long n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ i(int i7, TLRPC.TL_error tL_error, q10 q10Var, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, TwoStepVerificationActivity twoStepVerificationActivity, Runnable runnable, h2 h2Var, long j3) {
+    public /* synthetic */ i(int i7, TLRPC.TL_error tL_error, q10 q10Var, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, TwoStepVerificationActivity twoStepVerificationActivity, Runnable runnable, g2 g2Var, long j3) {
         this.b = i7;
         this.c = tL_error;
         this.d = q10Var;
         this.r = inputCheckPasswordSRP;
         this.e = twoStepVerificationActivity;
         this.f = runnable;
-        this.h = h2Var;
+        this.h = g2Var;
         this.n = j3;
     }
 
@@ -80,7 +81,7 @@ public final /* synthetic */ class i implements Runnable {
         if (r3.equals("WALLET_CREATING") == false) goto L131;
      */
     /* JADX WARN: Type inference failed for: r3v21 */
-    /* JADX WARN: Type inference failed for: r3v22, types: [java.lang.String, org.telegram.ui.ActionBar.i6] */
+    /* JADX WARN: Type inference failed for: r3v22, types: [java.lang.String, org.telegram.ui.ActionBar.h6] */
     /* JADX WARN: Type inference failed for: r3v27 */
     @Override // java.lang.Runnable
     /*
@@ -110,14 +111,14 @@ public final /* synthetic */ class i implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
                 TLObject tLObject = (TLObject) obj5;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj4;
-                h2 h2Var = (h2) obj3;
+                g2 g2Var = (g2) obj3;
                 q10 q10Var = (q10) obj2;
                 Runnable runnable = (Runnable) obj;
                 if (tL_error == null) {
                     TL_account.Password password = (TL_account.Password) tLObject;
                     twoStepVerificationActivity.J = password;
                     TwoStepVerificationActivity.r0(password);
-                    n.b(h2Var, this.n, twoStepVerificationActivity.q0(), twoStepVerificationActivity, q10Var, runnable);
+                    n.b(g2Var, this.n, twoStepVerificationActivity.q0(), twoStepVerificationActivity, q10Var, runnable);
                     break;
                 } else {
                     zArr[i12] = false;
@@ -131,7 +132,7 @@ public final /* synthetic */ class i implements Runnable {
                 TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) obj5;
                 TwoStepVerificationActivity twoStepVerificationActivity2 = (TwoStepVerificationActivity) obj4;
                 Runnable runnable2 = (Runnable) obj;
-                h2 h2Var2 = (h2) obj3;
+                g2 g2Var2 = (g2) obj3;
                 zArr[i12] = false;
                 if (tL_error2 != null && (("API_WITHDRAWAL_FEATURE_DISABLED".equals(tL_error2.text) || "FEATURE_DISABLED".equals(tL_error2.text)) && q10Var2 != null)) {
                     q10Var2.a(inputCheckPasswordSRP, twoStepVerificationActivity2);
@@ -200,27 +201,27 @@ public final /* synthetic */ class i implements Runnable {
                                     switch (c10) {
                                         case 0:
                                         case 6:
-                                            i7 = 2131749327;
+                                            i7 = 2131749326;
                                             break;
                                         case 1:
                                         case 3:
-                                            i7 = 2131749320;
+                                            i7 = 2131749319;
                                             break;
                                         case 2:
-                                            i7 = 2131749623;
+                                            i7 = 2131749622;
                                             break;
                                         case 4:
-                                            i7 = 2131749326;
+                                            i7 = 2131749325;
                                             break;
                                         case 5:
-                                            i7 = 2131749621;
+                                            i7 = 2131749620;
                                             break;
                                         default:
                                             i7 = 0;
                                             break;
                                     }
                                     if (i7 != 0) {
-                                        f3.n(null, i7, runnable2 != null ? lc.Y() : lc.b0(h2Var2), R.raw.error, 36);
+                                        f3.n(null, i7, runnable2 != null ? lc.Y() : lc.b0(g2Var2), R.raw.error, 36);
                                         break;
                                     } else {
                                         lc.e0(tL_error2);
@@ -228,11 +229,11 @@ public final /* synthetic */ class i implements Runnable {
                                     }
                                 } else {
                                     Y = lc.Y();
-                                    i10 = 2131749321;
+                                    i10 = 2131749320;
                                 }
                             } else {
                                 Y = lc.Y();
-                                i10 = 2131750671;
+                                i10 = 2131750670;
                                 str = null;
                             }
                             f3.n(str, i10, Y, R.raw.error, 36);
@@ -242,17 +243,17 @@ public final /* synthetic */ class i implements Runnable {
                                 runnable2.run();
                                 z10 = true;
                             } else {
-                                int currentAccount = h2Var2.getCurrentAccount();
-                                m mVar = new m(currentAccount, this.n, h2Var2);
+                                int currentAccount = g2Var2.getCurrentAccount();
+                                m mVar = new m(currentAccount, this.n, g2Var2);
                                 n.b[currentAccount] = mVar;
                                 ks.f(currentAccount).k(ks.B3, new Object[0]);
                                 g0.h3(new g(mVar, 0), 1000L);
                                 z10 = true;
                                 if (q10Var2 != null) {
-                                    x8.y(i12, true).R(true);
+                                    y8.y(i12, true).R(true);
                                 }
                             }
-                            x8.y(i12, z10).N();
+                            y8.y(i12, z10).N();
                             e0.g(i12).l(j10.i(i12).e());
                             e0.g(i12).j(j10.i(i12).e(), z10);
                             u0.D(i12).K();
@@ -263,9 +264,9 @@ public final /* synthetic */ class i implements Runnable {
                 break;
             case 2:
                 TLObject tLObject2 = (TLObject) obj5;
-                u1 u1Var = (u1) obj6;
+                t1 t1Var = (t1) obj6;
                 Context context = (Context) obj4;
-                i6 i6Var = (i6) obj3;
+                h6 h6Var = (h6) obj3;
                 org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) obj2;
                 h0 h0Var = (h0) obj;
                 if (tLObject2 instanceof TLRPC.TL_messages_preparedInlineMessage) {
@@ -278,18 +279,18 @@ public final /* synthetic */ class i implements Runnable {
                         TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
                         if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
                             String str5 = tL_botInlineMessageMediaWebPage.url;
-                            y0 y0Var = new y0(u1Var, context, i13, j3, tL_messages_preparedInlineMessage, i6Var, qVar, h0Var);
+                            x0 x0Var = new x0(t1Var, context, i13, j3, tL_messages_preparedInlineMessage, h6Var, qVar, h0Var);
                             int[] iArr = new int[1];
                             fs[] fsVarArr = new fs[1];
                             TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                             getwebpagepreview.message = str5;
-                            iArr[0] = ConnectionsManager.getInstance(i13).sendRequestTyped(getwebpagepreview, new d3.b(1), new j0(iArr, y0Var, fsVarArr, i13, 2));
-                            u1Var.setOnCancelListener(new mb(new a1(iArr, i13, fsVarArr, 21), 1));
+                            iArr[0] = ConnectionsManager.getInstance(i13).sendRequestTyped(getwebpagepreview, new d3.b(1), new j0(iArr, x0Var, fsVarArr, i13, 2));
+                            t1Var.setOnCancelListener(new lb(new c1(iArr, i13, fsVarArr, 21), 1));
                             break;
                         }
                     }
                     File[] fileArr = new File[1];
-                    z0 z0Var = new z0(u1Var, context, i13, j3, tL_messages_preparedInlineMessage, fileArr, i6Var, qVar, h0Var);
+                    y0 y0Var = new y0(t1Var, context, i13, j3, tL_messages_preparedInlineMessage, fileArr, h6Var, qVar, h0Var);
                     TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
                     if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
                         TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
@@ -300,19 +301,19 @@ public final /* synthetic */ class i implements Runnable {
                             String C = TextUtils.isEmpty(B) ? w7.C(tL_messages_preparedInlineMessage.result.content.mime_type) : p5.c.k(".", B);
                             File file = new File(w7.z(4), Utilities.a(str6) + C);
                             if (file.exists()) {
-                                z0Var.run();
+                                y0Var.run();
                                 break;
                             } else {
-                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new v1(28, fileArr, z0Var), null);
+                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new x1(28, fileArr, y0Var), null);
                                 httpGetFileTask.setDestFile(file);
                                 httpGetFileTask.setMaxSize(8388608L);
                                 httpGetFileTask.execute(str6);
-                                u1Var.setOnCancelListener(new mb(httpGetFileTask, 2));
+                                t1Var.setOnCancelListener(new lb(httpGetFileTask, 2));
                                 break;
                             }
                         }
                     }
-                    z0Var.run();
+                    y0Var.run();
                     break;
                 } else {
                     h0Var.a("MESSAGE_EXPIRED", null);
@@ -344,9 +345,9 @@ public final /* synthetic */ class i implements Runnable {
                         LaunchActivity.G0(launchActivity, launchActivity.P, tL_attachMenuBot, str8, false);
                         break;
                     } else {
-                        h2 h2Var3 = (h2) i5.c.h(1, arrayList2);
-                        if (g0.Q1() && !(h2Var3 instanceof bn) && !arrayList.isEmpty()) {
-                            h2Var3 = (h2) i5.c.h(1, arrayList);
+                        g2 g2Var3 = (g2) i5.c.h(1, arrayList2);
+                        if (g0.Q1() && !(g2Var3 instanceof bn) && !arrayList.isEmpty()) {
+                            g2Var3 = (g2) i5.c.h(1, arrayList);
                         }
                         ArrayList arrayList4 = new ArrayList();
                         if (!TextUtils.isEmpty(str9)) {
@@ -398,16 +399,16 @@ public final /* synthetic */ class i implements Runnable {
                             cxVar.E2 = new y60(launchActivity, user, str10, i14);
                         }
                         if (tL_attachMenuBot.inactive) {
-                            u6 u6Var = new u6(launchActivity);
-                            u6Var.setColor(n6.x0(null, n6.ia, false));
-                            org.telegram.ui.ActionBar.u6.h(n6.L5, u6Var, null);
-                            u6Var.setAttachBot(tL_attachMenuBot);
-                            zc1.a(launchActivity, new wp(launchActivity, i14, this.n, cxVar, h2Var3, user, str10), null);
+                            v6 v6Var = new v6(launchActivity);
+                            v6Var.setColor(m6.x0(null, m6.ia, false));
+                            t6.h(m6.L5, v6Var, null);
+                            v6Var.setAttachBot(tL_attachMenuBot);
+                            zc1.a(launchActivity, new wp(launchActivity, i14, this.n, cxVar, g2Var3, user, str10), null);
                             break;
                         } else {
                             if (cxVar != null) {
-                                if (h2Var3 != null) {
-                                    h2Var3.dismissCurrentDialog();
+                                if (g2Var3 != null) {
+                                    g2Var3.dismissCurrentDialog();
                                 }
                                 for (int i20 = 0; i20 < arrayList3.size(); i20++) {
                                     if (((Dialog) arrayList3.get(i20)).isShowing()) {
@@ -417,25 +418,25 @@ public final /* synthetic */ class i implements Runnable {
                                 arrayList3.clear();
                                 launchActivity.t0(cxVar);
                             } else {
-                                if (h2Var3 instanceof bn) {
-                                    bn bnVar = (bn) h2Var3;
+                                if (g2Var3 instanceof bn) {
+                                    bn bnVar = (bn) g2Var3;
                                     if (ri.v(tL_attachMenuBot, bnVar.j() != null ? bnVar.j() : bnVar.e)) {
                                         bnVar.za(user.id, str10, false);
                                     } else {
-                                        b02 = lc.b0(h2Var3);
+                                        b02 = lc.b0(g2Var3);
                                         r32 = 0;
                                     }
                                 } else {
                                     r32 = 0;
-                                    b02 = lc.b0(h2Var3);
+                                    b02 = lc.b0(g2Var3);
                                 }
-                                f3.o(r32, 2131753138, b02, r32);
+                                f3.o(r32, 2131753137, b02, r32);
                             }
                             break;
                         }
                     }
                 } else {
-                    f3.o(null, 2131753107, lc.b0((h2) i5.c.h(1, arrayList2)), null);
+                    f3.o(null, 2131753106, lc.b0((g2) i5.c.h(1, arrayList2)), null);
                     break;
                 }
                 break;
@@ -453,22 +454,22 @@ public final /* synthetic */ class i implements Runnable {
         this.n = j3;
     }
 
-    public /* synthetic */ i(TLObject tLObject, int i7, u1 u1Var, Context context, long j3, i6 i6Var, org.telegram.ui.web.q qVar, h0 h0Var) {
+    public /* synthetic */ i(TLObject tLObject, int i7, t1 t1Var, Context context, long j3, h6 h6Var, org.telegram.ui.web.q qVar, h0 h0Var) {
         this.r = tLObject;
         this.b = i7;
-        this.c = u1Var;
+        this.c = t1Var;
         this.e = context;
         this.n = j3;
-        this.h = i6Var;
+        this.h = h6Var;
         this.d = qVar;
         this.f = h0Var;
     }
 
-    public /* synthetic */ i(TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, h2 h2Var, long j3, q10 q10Var, Runnable runnable, int i7) {
+    public /* synthetic */ i(TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, g2 g2Var, long j3, q10 q10Var, Runnable runnable, int i7) {
         this.c = tL_error;
         this.r = tLObject;
         this.e = twoStepVerificationActivity;
-        this.h = h2Var;
+        this.h = g2Var;
         this.n = j3;
         this.d = q10Var;
         this.f = runnable;

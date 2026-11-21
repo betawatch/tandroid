@@ -18,7 +18,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.Intro;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class u50 extends org.telegram.messenger.r5 {
     public static final /* synthetic */ int E = 0;
@@ -32,7 +32,7 @@ public final class u50 extends org.telegram.messenger.r5 {
     public final int[] n;
     public float r;
     public long s;
-    public final org.telegram.ui.Components.wb0 w;
+    public final org.telegram.ui.Components.xb0 w;
     public final m4 x;
     public final /* synthetic */ v50 y;
 
@@ -41,7 +41,7 @@ public final class u50 extends org.telegram.messenger.r5 {
         super("EGLThread", true);
         this.y = v50Var;
         this.n = new int[24];
-        this.w = new org.telegram.ui.Components.wb0(28);
+        this.w = new org.telegram.ui.Components.xb0(28);
         this.x = new m4(this, 9);
         this.a = surfaceTexture;
     }
@@ -182,12 +182,12 @@ public final class u50 extends org.telegram.messenger.r5 {
                             a(R.drawable.intro_knot_up, 14, 0, false);
                             a(R.drawable.intro_powerful_infinity_white, 15, 0, false);
                             a(R.drawable.intro_powerful_infinity, 16, 0, false);
-                            a(R.drawable.intro_powerful_mask, 17, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false), false);
+                            a(R.drawable.intro_powerful_mask, 17, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false), false);
                             a(R.drawable.intro_powerful_star, 18, 0, false);
                             a(R.drawable.intro_private_door, 19, 0, false);
                             a(R.drawable.intro_private_screw, 20, 0, false);
                             a(R.drawable.intro_tg_plane, 21, 0, false);
-                            b(new org.telegram.ui.Components.wb0(29), 22, false);
+                            b(new org.telegram.ui.Components.xb0(29), 22, false);
                             b(this.w, 23, false);
                             d();
                             c();

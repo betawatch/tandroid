@@ -10,9 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class d3 extends org.telegram.ui.ActionBar.x2 {
+public final class d3 extends org.telegram.ui.ActionBar.w2 {
     public final hi.i1 m1;
     public final ArrayList n1;
     public boolean o1;
@@ -20,8 +20,8 @@ public final class d3 extends org.telegram.ui.ActionBar.x2 {
     public Integer q1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d3(Context context, org.telegram.ui.ActionBar.i6 i6Var, View... viewArr) {
-        super(1, context, i6Var, true);
+    public d3(Context context, org.telegram.ui.ActionBar.h6 h6Var, View... viewArr) {
+        super(1, context, h6Var, true);
         List asList = Arrays.asList(viewArr);
         ArrayList arrayList = new ArrayList();
         this.n1 = arrayList;
@@ -37,12 +37,12 @@ public final class d3 extends org.telegram.ui.ActionBar.x2 {
         a3Var.addView(i1Var, c8.ma.e(-1, -1, ks.E1));
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final boolean G() {
         return this.m1.getCurrentPosition() == 0;
     }
 
-    @Override // org.telegram.ui.ActionBar.x2
+    @Override // org.telegram.ui.ActionBar.w2
     public final boolean J(MotionEvent motionEvent) {
         return this.m1.getCurrentPosition() == 0;
     }
@@ -81,7 +81,7 @@ public final class d3 extends org.telegram.ui.ActionBar.x2 {
         ((a3) this.b).requestLayout();
     }
 
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void onBackPressed() {
         hi.i1 i1Var = this.m1;
         if (i1Var.getCurrentPosition() <= 0) {
@@ -96,7 +96,7 @@ public final class d3 extends org.telegram.ui.ActionBar.x2 {
         i1Var.A(i1Var.getCurrentPosition() - 1);
     }
 
-    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         if (!this.o1) {
             this.o1 = true;

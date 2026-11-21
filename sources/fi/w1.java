@@ -1,7 +1,7 @@
 package fi;
 
-import hi.oa;
-import hi.ta;
+import hi.na;
+import hi.sa;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.fj;
@@ -10,13 +10,13 @@ import org.telegram.messenger.mp;
 import org.telegram.messenger.u10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ph0;
-import org.telegram.ui.Components.ss0;
+import org.telegram.ui.Components.rh0;
+import org.telegram.ui.Components.vs0;
 import org.telegram.ui.cx;
 import org.telegram.ui.p51;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w1 implements u10 {
     public final /* synthetic */ int a;
@@ -36,12 +36,12 @@ public final /* synthetic */ class w1 implements u10 {
     */
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         tv tvVar;
-        org.telegram.ui.ActionBar.h2 h2Var;
-        org.telegram.ui.ActionBar.s4 parentLayout;
+        org.telegram.ui.ActionBar.g2 g2Var;
+        org.telegram.ui.ActionBar.r4 parentLayout;
         switch (this.a) {
             case 0:
                 z3 z3Var = (z3) this.b;
-                ta taVar = (ta) this.c;
+                sa saVar = (sa) this.c;
                 Long l10 = (Long) obj;
                 Runnable runnable = (Runnable) obj2;
                 Boolean bool = (Boolean) obj3;
@@ -56,9 +56,9 @@ public final /* synthetic */ class w1 implements u10 {
                         y3Var.a = false;
                         e9Var.setOnReadyListener(new y1(0, currentTimeMillis, runnable));
                         ((w8) z3Var.A1).g(false);
-                        ph0 ph0Var = z3Var.j0;
-                        if (ph0Var != null) {
-                            ph0Var.setAnimation(z3Var.h1.u);
+                        rh0 rh0Var = z3Var.j0;
+                        if (rh0Var != null) {
+                            rh0Var.setAnimation(z3Var.h1.u);
                         }
                         if (z3Var.B2 > 0 && l10.longValue() > z3Var.B2 - 1400) {
                             l10 = 0L;
@@ -74,7 +74,7 @@ public final /* synthetic */ class w1 implements u10 {
                         ((w8) z3Var.A1).g(false);
                         z3Var.setActive(true);
                         z3Var.E3 = false;
-                        z3Var.S0 = new ai.z0(1, runnable);
+                        z3Var.S0 = new ai.b1(1, runnable);
                         if (bool.booleanValue()) {
                             z3Var.d1(false);
                         }
@@ -82,68 +82,68 @@ public final /* synthetic */ class w1 implements u10 {
                         break;
                     }
                 } else {
-                    org.telegram.ui.ActionBar.h2 h2Var2 = f9Var.f;
-                    if (h2Var2 != null && (parentLayout = h2Var2.getParentLayout()) != null) {
+                    org.telegram.ui.ActionBar.g2 g2Var2 = f9Var.f;
+                    if (g2Var2 != null && (parentLayout = g2Var2.getParentLayout()) != null) {
                         List fragmentStack = parentLayout.getFragmentStack();
                         ArrayList arrayList = new ArrayList();
                         for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                            org.telegram.ui.ActionBar.h2 h2Var3 = (org.telegram.ui.ActionBar.h2) fragmentStack.get(size);
-                            if (h2Var3 instanceof cx) {
-                                cx cxVar = (cx) h2Var3;
+                            org.telegram.ui.ActionBar.g2 g2Var3 = (org.telegram.ui.ActionBar.g2) fragmentStack.get(size);
+                            if (g2Var3 instanceof cx) {
+                                cx cxVar = (cx) g2Var3;
                                 cxVar.W3();
                                 tvVar = cxVar.F0;
                                 r3 = tvVar != null ? tvVar.e(l11.longValue()) : null;
                                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                                    ((ActionBarLayout) parentLayout).d0((org.telegram.ui.ActionBar.h2) arrayList.get(i7), false);
+                                    ((ActionBarLayout) parentLayout).d0((org.telegram.ui.ActionBar.g2) arrayList.get(i7), false);
                                 }
-                                h2Var = f9Var.f;
-                                if (h2Var != null) {
-                                    h2Var.clearSheets();
+                                g2Var = f9Var.f;
+                                if (g2Var != null) {
+                                    g2Var.clearSheets();
                                 }
                                 f9Var.B();
                                 z3Var.E3 = false;
                                 if (tvVar != null || !tvVar.k(l11.longValue())) {
-                                    taVar.X(oa.c(r3));
+                                    saVar.X(na.c(r3));
                                     org.telegram.messenger.g0.h3(runnable, 400L);
                                     break;
                                 } else {
-                                    tvVar.c0.add(new ai.b(r3, tvVar, l11, taVar, runnable, 11));
+                                    tvVar.c0.add(new ai.b(r3, tvVar, l11, saVar, runnable, 11));
                                     break;
                                 }
                             } else {
-                                arrayList.add(h2Var3);
+                                arrayList.add(g2Var3);
                             }
                         }
                     }
                     tvVar = null;
-                    h2Var = f9Var.f;
-                    if (h2Var != null) {
+                    g2Var = f9Var.f;
+                    if (g2Var != null) {
                     }
                     f9Var.B();
                     z3Var.E3 = false;
                     if (tvVar != null) {
                     }
-                    taVar.X(oa.c(r3));
+                    saVar.X(na.c(r3));
                     org.telegram.messenger.g0.h3(runnable, 400L);
                 }
                 break;
             case 1:
-                ss0 ss0Var = (ss0) this.b;
+                vs0 vs0Var = (vs0) this.b;
                 org.telegram.ui.b0 b0Var = (org.telegram.ui.b0) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i10 = ss0Var.d;
+                int i10 = vs0Var.d;
                 mp.u1(i10).f4((ArrayList) obj2, true);
                 mp.u1(i10).Z3((ArrayList) obj3, true);
-                org.telegram.ui.Components.o5.g(i10).d((ArrayList) obj4);
+                org.telegram.ui.Components.p5.g(i10).d((ArrayList) obj4);
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                     fj fjVar = (fj) arrayList2.get(i11);
                     if (fjVar.z2() && fjVar.k.reactions != null) {
                         fjVar.S2 = true;
                     }
-                    fjVar.K5(ss0Var.x, true);
-                    ss0Var.n.add(fjVar);
+                    fjVar.K5(vs0Var.x, true);
+                    vs0Var.n.add(fjVar);
                 }
-                ss0Var.G(true);
+                vs0Var.G(true);
                 org.telegram.messenger.g0.h3(b0Var, 540L);
                 break;
             default:

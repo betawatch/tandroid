@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.appcompat.widget.ActionMenuView;
-import hi.u5;
+import hi.t5;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class h implements l.x {
     public int E;
@@ -40,7 +40,7 @@ public final class h implements l.x {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray I = new SparseBooleanArray();
-    public final u5 N = new u5(this, 12);
+    public final t5 N = new t5(this, 12);
 
     public h(Context context) {
         this.a = context;

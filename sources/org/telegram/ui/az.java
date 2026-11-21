@@ -4,14 +4,14 @@ import android.content.Context;
 import android.view.ViewPropertyAnimator;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class az extends org.telegram.ui.Cells.o4 {
     public final /* synthetic */ kz E;
     public final TextView r;
     public final di.db s;
     public int w;
-    public final org.telegram.ui.Components.f5 x;
+    public final org.telegram.ui.Components.g5 x;
     public boolean y;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -20,15 +20,15 @@ public final class az extends org.telegram.ui.Cells.o4 {
     */
     public az(kz kzVar, Context context) {
         super(context, r2, 22, 15, false, r6);
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         this.E = kzVar;
-        int i7 = org.telegram.ui.ActionBar.n6.L6;
-        i6Var = ((org.telegram.ui.ActionBar.h2) kzVar).resourceProvider;
+        int i7 = org.telegram.ui.ActionBar.m6.L6;
+        h6Var = ((org.telegram.ui.ActionBar.g2) kzVar).resourceProvider;
         TextView textView = new TextView(getContext());
         this.r = textView;
         textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.z6, kzVar.getResourceProvider());
-        textView.setText(org.telegram.messenger.gd.M0(kzVar.getUserConfig().q() ? 2131750604 : 2131750603, null));
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.z6, kzVar.getResourceProvider());
+        textView.setText(org.telegram.messenger.gd.N0(kzVar.getUserConfig().q() ? 2131750603 : 2131750602, null));
         textView.setGravity(5);
         int i10 = (org.telegram.messenger.gd.a0 ? 3 : 5) | 48;
         float f10 = this.b;
@@ -36,7 +36,7 @@ public final class az extends org.telegram.ui.Cells.o4 {
         textView.setAlpha(0.0f);
         di.db dbVar = new di.db(this, getContext());
         this.s = dbVar;
-        this.x = new org.telegram.ui.Components.f5(dbVar, 320L, org.telegram.ui.Components.lr.h, 0);
+        this.x = new org.telegram.ui.Components.g5(dbVar, 320L, org.telegram.ui.Components.nr.h, 0);
         dbVar.setTextSize(org.telegram.messenger.g0.L(10.0f));
         dbVar.setTypeface(org.telegram.messenger.g0.o());
         dbVar.setGravity(5);
@@ -48,13 +48,13 @@ public final class az extends org.telegram.ui.Cells.o4 {
 
     public final void d(int i7, boolean z10) {
         kz kzVar = this.E;
-        String M0 = org.telegram.messenger.gd.M0(kzVar.getUserConfig().q() ? 2131750604 : 2131750603, null);
+        String N0 = org.telegram.messenger.gd.N0(kzVar.getUserConfig().q() ? 2131750603 : 2131750602, null);
         TextView textView = this.r;
-        textView.setText(M0);
+        textView.setText(N0);
         int i10 = 0;
         boolean z11 = i7 < 0;
         if (!z11) {
-            int[] iArr = org.telegram.ui.ActionBar.n6.r8;
+            int[] iArr = org.telegram.ui.ActionBar.m6.r8;
             i10 = kzVar.getThemedColor(iArr[i7 % iArr.length]);
         }
         this.w = i10;
@@ -68,9 +68,9 @@ public final class az extends org.telegram.ui.Cells.o4 {
         if (z11 != this.y) {
             this.y = z11;
             ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
-            org.telegram.ui.Components.lr lrVar = org.telegram.ui.Components.lr.h;
-            duration.setInterpolator(lrVar).start();
-            dbVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(lrVar).start();
+            org.telegram.ui.Components.nr nrVar = org.telegram.ui.Components.nr.h;
+            duration.setInterpolator(nrVar).start();
+            dbVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(nrVar).start();
         }
     }
 

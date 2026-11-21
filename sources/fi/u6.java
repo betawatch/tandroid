@@ -11,15 +11,15 @@ import org.telegram.messenger.ks;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class u6 extends View {
     public final w3 a;
     public boolean b;
-    public final org.telegram.ui.Components.c6 c;
+    public final org.telegram.ui.Components.d6 c;
     public final ImageReceiver d;
     public final ImageReceiver e;
-    public org.telegram.ui.Components.o5 f;
+    public org.telegram.ui.Components.p5 f;
     public boolean h;
     public boolean n;
     public boolean r;
@@ -27,7 +27,7 @@ public final class u6 extends View {
 
     public u6(Context context, w3 w3Var) {
         super(context);
-        this.c = new org.telegram.ui.Components.c6(this);
+        this.c = new org.telegram.ui.Components.d6(this);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.d = imageReceiver;
         this.e = new ImageReceiver(this);
@@ -43,9 +43,9 @@ public final class u6 extends View {
         this.d.P();
         this.e.P();
         this.s = true;
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.a(this);
+        org.telegram.ui.Components.p5 p5Var = this.f;
+        if (p5Var != null) {
+            p5Var.a(this);
         }
     }
 
@@ -55,9 +55,9 @@ public final class u6 extends View {
         this.d.R();
         this.e.R();
         this.s = false;
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.n(this);
+        org.telegram.ui.Components.p5 p5Var = this.f;
+        if (p5Var != null) {
+            p5Var.n(this);
         }
     }
 
@@ -91,9 +91,9 @@ public final class u6 extends View {
         if (!this.h) {
             return;
         }
-        org.telegram.ui.Components.o5 o5Var = this.f;
+        org.telegram.ui.Components.p5 p5Var = this.f;
         ImageReceiver imageReceiver = this.d;
-        ImageReceiver imageReceiver2 = o5Var != null ? o5Var.k : imageReceiver;
+        ImageReceiver imageReceiver2 = p5Var != null ? p5Var.k : imageReceiver;
         if (this.r) {
             ImageReceiver imageReceiver3 = this.e;
             if (imageReceiver3.n() != null) {
@@ -137,22 +137,22 @@ public final class u6 extends View {
         } else {
             this.b = true;
         }
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.n(this);
+        org.telegram.ui.Components.p5 p5Var = this.f;
+        if (p5Var != null) {
+            p5Var.n(this);
         }
         this.f = null;
         if (p0Var != null) {
             if (p0Var.g != 0) {
-                org.telegram.ui.Components.o5 o5Var2 = new org.telegram.ui.Components.o5(3, j10.t0, p0Var.g);
-                this.f = o5Var2;
+                org.telegram.ui.Components.p5 p5Var2 = new org.telegram.ui.Components.p5(3, j10.t0, p0Var.g);
+                this.f = p5Var2;
                 if (this.s) {
-                    o5Var2.a(this);
+                    p5Var2.a(this);
                 }
             } else {
                 TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(j10.t0).r.get(p0Var.f);
                 if (tL_availableReaction != null) {
-                    this.d.q0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.n6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
+                    this.d.q0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
                 }
             }
         }

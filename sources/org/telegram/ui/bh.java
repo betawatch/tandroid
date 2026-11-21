@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bh implements Runnable {
     public final /* synthetic */ int a;
@@ -37,13 +37,13 @@ public final /* synthetic */ class bh implements Runnable {
                 ((m6) obj).a(Boolean.FALSE, null);
                 break;
             case 1:
-                hi.y4 y4Var = (hi.y4) obj;
-                i7 = ((org.telegram.ui.ActionBar.h2) ((bn) y4Var.e)).currentAccount;
-                org.telegram.messenger.ks.f(i7).j(y4Var.b);
+                bi.z0 z0Var = (bi.z0) obj;
+                i7 = ((org.telegram.ui.ActionBar.g2) ((bn) z0Var.e)).currentAccount;
+                org.telegram.messenger.ks.f(i7).j(z0Var.b);
                 break;
             case 2:
                 ki kiVar = (ki) obj;
-                i10 = ((org.telegram.ui.ActionBar.h2) ((bn) kiVar.e)).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.g2) ((bn) kiVar.e)).currentAccount;
                 org.telegram.messenger.ks.f(i10).j(kiVar.c);
                 break;
             case 3:
@@ -58,7 +58,7 @@ public final /* synthetic */ class bh implements Runnable {
             case 6:
                 Bundle bundle = new Bundle();
                 kl klVar = ((el) obj).c.a;
-                i11 = ((org.telegram.ui.ActionBar.h2) klVar.R).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.g2) klVar.R).currentAccount;
                 bundle.putLong("user_id", org.telegram.messenger.j10.i(i11).n);
                 klVar.R.presentFragment(new ProfileActivity(bundle, null));
                 break;
@@ -86,7 +86,7 @@ public final /* synthetic */ class bh implements Runnable {
             case 11:
                 rn rnVar = ((pn) obj).a;
                 rnVar.e.setImageDrawable(rnVar.r);
-                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.M0(2131752201, "ChatSetPhotoOrVideo"), true);
+                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.N0(2131752200, "ChatSetPhotoOrVideo"), true);
                 TLRPC.User user = rnVar.D0;
                 if (user != null) {
                     user.photo = null;
@@ -94,7 +94,7 @@ public final /* synthetic */ class bh implements Runnable {
                 }
                 rnVar.P0 = true;
                 if (rnVar.S0 == null) {
-                    rnVar.S0 = new org.telegram.ui.Components.mh0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
+                    rnVar.S0 = new org.telegram.ui.Components.oh0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
                 }
                 rnVar.c0.e.setTranslationX(-org.telegram.messenger.g0.L(8.0f));
                 rnVar.c0.e.setAnimation(rnVar.S0);
@@ -123,11 +123,11 @@ public final /* synthetic */ class bh implements Runnable {
                 ((js) obj).a.o();
                 break;
             case 17:
-                org.telegram.ui.ActionBar.x2[] x2VarArr = (org.telegram.ui.ActionBar.x2[]) obj;
-                org.telegram.ui.ActionBar.x2 x2Var = x2VarArr[0];
-                if (x2Var != null) {
-                    x2Var.dismiss();
-                    x2VarArr[0] = null;
+                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) obj;
+                org.telegram.ui.ActionBar.w2 w2Var = w2VarArr[0];
+                if (w2Var != null) {
+                    w2Var.dismiss();
+                    w2VarArr[0] = null;
                     break;
                 }
                 break;
@@ -150,14 +150,14 @@ public final /* synthetic */ class bh implements Runnable {
             case 23:
                 Bundle bundle2 = new Bundle();
                 cx cxVar = ((ow) obj).a;
-                i12 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
                 bundle2.putLong("user_id", org.telegram.messenger.j10.i(i12).e());
                 bundle2.putBoolean("my_profile", true);
                 cxVar.presentFragment(new ProfileActivity(bundle2, null));
                 break;
             case 24:
                 cx cxVar2 = ((rw) obj).I0;
-                cxVar2.showDialog(new ug.z0((org.telegram.ui.ActionBar.h2) cxVar2, 9, true));
+                cxVar2.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) cxVar2, 9, true));
                 cxVar2.A0.setIsEditing(false);
                 cxVar2.c5(false);
                 break;

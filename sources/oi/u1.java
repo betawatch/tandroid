@@ -1,129 +1,53 @@
 package oi;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.Components.sg;
-import org.telegram.ui.Components.yo0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cx;
+import android.view.View;
+import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class u1 extends sg {
-    public final /* synthetic */ int y0 = 1;
-    public final /* synthetic */ Object z0;
+public final class u1 extends HorizontalScrollView {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(x3 x3Var, Context context, i6 i6Var) {
-        super(R.drawable.send_plane_24, context, i6Var, true);
-        this.z0 = x3Var;
+    public /* synthetic */ u1(Context context, int i7) {
+        super(context);
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.sg
-    public boolean b() {
-        switch (this.y0) {
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        switch (this.a) {
             case 0:
-                return ((z1) this.z0).q0();
-            case 1:
-            case 2:
-            default:
-                return super.b();
-            case 3:
-                return false;
-            case 4:
-                return false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.sg
-    public final boolean d() {
-        switch (this.y0) {
-            case 0:
-                if (((z1) this.z0).M0 || this.w > 0) {
+                int mode = View.MeasureSpec.getMode(i7);
+                int size = View.MeasureSpec.getSize(i7);
+                if (mode != 1073741824) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 0), i10);
+                    int measuredWidth = getMeasuredWidth();
+                    if (mode == Integer.MIN_VALUE) {
+                        measuredWidth = Math.min(measuredWidth, size);
+                    }
+                    setMeasuredDimension(measuredWidth, getMeasuredHeight());
+                    break;
+                } else {
+                    super.onMeasure(i7, i10);
+                    break;
                 }
-                break;
-            case 1:
-                if (((x3) this.z0).a0 || this.w > 0) {
+            default:
+                int mode2 = View.MeasureSpec.getMode(i7);
+                int size2 = View.MeasureSpec.getSize(i7);
+                if (mode2 != 1073741824) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size2, 0), i10);
+                    int measuredWidth2 = getMeasuredWidth();
+                    if (mode2 == Integer.MIN_VALUE) {
+                        measuredWidth2 = Math.min(measuredWidth2, size2);
+                    }
+                    setMeasuredDimension(measuredWidth2, getMeasuredHeight());
+                    break;
+                } else {
+                    super.onMeasure(i7, i10);
+                    break;
                 }
-                break;
         }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.sg
-    public int getFillColor() {
-        int i7 = this.y0;
-        Object obj = this.z0;
-        switch (i7) {
-            case 2:
-                return n6.w0(n6.S5, ((yo0) obj).J0);
-            case 3:
-            default:
-                return super.getFillColor();
-            case 4:
-                int i10 = n6.qg;
-                Drawable[] drawableArr = PhotoViewer.Z8;
-                return ((PhotoViewer) obj).w1(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.sg
-    public boolean j() {
-        switch (this.y0) {
-            case 2:
-                return true;
-            case 3:
-                return true;
-            case 4:
-                return true;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.y0) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(gd.G(((cx) this.z0).K2.size(), "AccDescrShareInChats", new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(z1 z1Var, Context context, int i7, i6 i6Var) {
-        super(i7, context, i6Var, true);
-        this.z0 = z1Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(yo0 yo0Var, Context context, i6 i6Var) {
-        super(R.drawable.send_plane_24, context, i6Var, false);
-        this.z0 = yo0Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(cx cxVar, Context context, i6 i6Var) {
-        super(R.drawable.send_plane_24, context, i6Var, false);
-        this.z0 = cxVar;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(PhotoViewer photoViewer, Context context, i6 i6Var) {
-        super(R.drawable.send_plane_24, context, i6Var, false);
-        this.z0 = photoViewer;
     }
 }

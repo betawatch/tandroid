@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -70,13 +70,13 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                             TextView textView = b5Var2.L;
                             b5Var2.i0 = true;
                             b5Var2.k0 = false;
-                            hi.m3 m3Var = b5Var2.U;
-                            if (m3Var != null) {
-                                m3Var.f(true);
+                            hi.l3 l3Var = b5Var2.U;
+                            if (l3Var != null) {
+                                l3Var.f(true);
                                 b5Var2.U = null;
                             }
                             textView.setText("");
-                            b5Var2.M.setText(gd.a0(null, null, 2131749760, ki.k.J0(b5Var2.getGiftsSuccessChance())));
+                            b5Var2.M.setText(gd.a0(null, null, 2131749759, ki.j.J0(b5Var2.getGiftsSuccessChance())));
                             for (int i10 = 0; i10 < z4VarArr.length; i10++) {
                                 z4 z4Var3 = z4VarArr[i10];
                                 if (z4Var3 != null) {
@@ -122,7 +122,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                                     arrayList2.add(starGift4);
                                 }
                             }
-                            b5Var2.f0.a(arrayList2, new bi.l6(3, b5Var2, arrayList2), new ca.r(b5Var2, 18));
+                            b5Var2.f0.a(arrayList2, new bi.p6(3, b5Var2, arrayList2), new ca.r(b5Var2, 18));
                             break;
                         } else {
                             org.telegram.messenger.g0.F3(linearLayout);
@@ -158,7 +158,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                             i12++;
                         }
                     }
-                    b5Var.g0.a(new ai.v1(11, b5Var, z4Var7), Boolean.valueOf(z10));
+                    b5Var.g0.a(new ai.x1(11, b5Var, z4Var7), Boolean.valueOf(z10));
                     break;
                 }
                 break;

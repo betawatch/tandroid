@@ -11,11 +11,11 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gh0;
-import org.telegram.ui.Components.hh0;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.ih0;
+import org.telegram.ui.Components.jh0;
+import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class dj {
     public final CharSequence a;
@@ -168,19 +168,19 @@ public final class dj {
             z22 = mp.u1(fjVar.K1).G2(fj.B0(fjVar.k));
         }
         boolean z23 = z22;
-        boolean z24 = fjVar != null && fjVar.P2() && !fjVar.P3() && textPaint == org.telegram.ui.ActionBar.n6.o2;
+        boolean z24 = fjVar != null && fjVar.P2() && !fjVar.P3() && textPaint == org.telegram.ui.ActionBar.m6.o2;
         boolean z25 = charSequence4 instanceof Spanned;
         this.f = z25 && ((qi.g[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), qi.g.class)).length > 0;
-        this.i = z25 && ((gh0[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), gh0.class)).length > 0;
+        this.i = z25 && ((ih0[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), ih0.class)).length > 0;
         this.k = false;
         this.h = false;
         if (z25) {
             Spanned spanned = (Spanned) charSequence4;
-            hh0[] hh0VarArr = (hh0[]) spanned.getSpans(0, spanned.length(), hh0.class);
-            for (hh0 hh0Var : hh0VarArr) {
-                hh0Var.b = false;
+            jh0[] jh0VarArr = (jh0[]) spanned.getSpans(0, spanned.length(), jh0.class);
+            for (jh0 jh0Var : jh0VarArr) {
+                jh0Var.b = false;
             }
-            this.k = hh0VarArr.length == 1 && spanned.getSpanStart(hh0VarArr[0]) == 0 && spanned.getSpanEnd(hh0VarArr[0]) == spanned.length();
+            this.k = jh0VarArr.length == 1 && spanned.getSpanStart(jh0VarArr[0]) == 0 && spanned.getSpanEnd(jh0VarArr[0]) == spanned.length();
             qi.g[] gVarArr = (qi.g[]) spanned.getSpans(0, spanned.length(), qi.g.class);
             this.h = gVarArr.length == 1 && spanned.getSpanStart(gVarArr[0]) == 0 && spanned.getSpanEnd(gVarArr[0]) == spanned.length();
         }
@@ -195,12 +195,12 @@ public final class dj {
                         i21 = fjVar.D == 0 ? fjVar.z2() ? 7 : 12 : 22;
                         i21 = fjVar.Z4() ? i21 - 8 : i21;
                         if (g52.getLineCount() > i21) {
-                            String M0 = gd.M0(2131746176, null);
+                            String N0 = gd.N0(2131746175, null);
                             f10 = 15.0f;
                             f11 = 32.0f;
                             boolean z26 = true;
                             z10 = z23;
-                            int ceil3 = (int) Math.ceil(textPaint.measureText("… " + M0) + g0.L(1.0f));
+                            int ceil3 = (int) Math.ceil(textPaint.measureText("… " + N0) + g0.L(1.0f));
                             int i22 = 0;
                             float f18 = 0.0f;
                             while (i22 < i21) {
@@ -218,8 +218,8 @@ public final class dj {
                             while (lineEnd >= lineStart && !Character.isWhitespace(charSequence4.charAt(lineEnd))) {
                                 lineEnd--;
                             }
-                            SpannableStringBuilder append = new SpannableStringBuilder(charSequence4.subSequence(0, lineEnd)).append((CharSequence) "… ").append((CharSequence) M0);
-                            append.setSpan(new hi.r9(2), append.length() - M0.length(), append.length(), 33);
+                            SpannableStringBuilder append = new SpannableStringBuilder(charSequence4.subSequence(0, lineEnd)).append((CharSequence) "… ").append((CharSequence) N0);
+                            append.setSpan(new hi.q9(2), append.length() - N0.length(), append.length(), 33);
                             try {
                                 f12 = 0.0f;
                                 g52 = fj.g5(append, textPaint, i10, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
@@ -331,7 +331,7 @@ public final class dj {
                                                         z16 = z15;
                                                         int i31 = i30 - i29;
                                                         staticLayout = staticLayout6;
-                                                        textPaint2 = i31 > 220 ? org.telegram.ui.ActionBar.n6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.n6.q2 : org.telegram.ui.ActionBar.n6.p2;
+                                                        textPaint2 = i31 > 220 ? org.telegram.ui.ActionBar.m6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.m6.q2 : org.telegram.ui.ActionBar.m6.p2;
                                                     }
                                                     if (!cjVar.J) {
                                                         c10 = g0.L(f11);
@@ -614,9 +614,9 @@ public final class dj {
                                                         if (cjVar.V) {
                                                             this.c = Math.max(this.c, i11);
                                                         } else {
-                                                            vy0 vy0Var = cjVar.M;
-                                                            if (vy0Var != null) {
-                                                                this.c = (int) Math.max(this.c, Math.min(vy0Var.c + g0.L(f10), cjVar.e == null ? f14 : r5.getWidth()));
+                                                            xy0 xy0Var = cjVar.M;
+                                                            if (xy0Var != null) {
+                                                                this.c = (int) Math.max(this.c, Math.min(xy0Var.c + g0.L(f10), cjVar.e == null ? f14 : r5.getWidth()));
                                                             }
                                                         }
                                                         if (fjVar != null && !fjVar.N0 && !fjVar.K2) {

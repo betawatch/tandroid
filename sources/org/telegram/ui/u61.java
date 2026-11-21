@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class u61 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -41,9 +41,9 @@ public final class u61 extends FrameLayout {
                 u61 u61Var = x71Var.F0;
                 n71 n71Var = x71Var.z0;
                 w61 w61Var = x71Var.a;
-                org.telegram.ui.ActionBar.n6.t(u61Var, n71Var, w61Var);
+                org.telegram.ui.ActionBar.m6.t(u61Var, n71Var, w61Var);
                 canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, w61Var.g("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.n6.d1()) {
+                if (org.telegram.ui.ActionBar.m6.d1()) {
                     canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, w61Var.g("paintChatActionBackgroundDarken"));
                     break;
                 }
@@ -57,9 +57,9 @@ public final class u61 extends FrameLayout {
                 u61 u61Var2 = x71Var2.G0;
                 n71 n71Var2 = x71Var2.z0;
                 w61 w61Var2 = x71Var2.a;
-                org.telegram.ui.ActionBar.n6.t(u61Var2, n71Var2, w61Var2);
+                org.telegram.ui.ActionBar.m6.t(u61Var2, n71Var2, w61Var2);
                 canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, w61Var2.g("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.n6.d1()) {
+                if (org.telegram.ui.ActionBar.m6.d1()) {
                     canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, w61Var2.g("paintChatActionBackgroundDarken"));
                     break;
                 }

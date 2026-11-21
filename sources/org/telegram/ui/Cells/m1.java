@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public interface m1 {
     void A0();
@@ -161,7 +161,7 @@ public interface m1 {
 
     void p(r1 r1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i7);
 
-    boolean p0(org.telegram.ui.Components.x5 x5Var);
+    boolean p0(org.telegram.ui.Components.y5 y5Var);
 
     void p1(r1 r1Var, int i7);
 

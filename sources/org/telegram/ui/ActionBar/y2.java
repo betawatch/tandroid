@@ -1,27 +1,56 @@
 package org.telegram.ui.ActionBar;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.view.WindowInsets;
+import java.util.HashSet;
+import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y2 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ int a;
+public final class y2 extends View implements b6 {
+    public final /* synthetic */ a3 a;
 
-    public /* synthetic */ y2(int i7) {
-        this.a = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y2(a3 a3Var, Context context) {
+        super(context);
+        this.a = a3Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        switch (this.a) {
-            case 0:
-                return b3.a(view, windowInsets);
-            case 1:
-                return org.telegram.ui.g4.c(windowInsets);
-            default:
-                view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
-                return windowInsets;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a.d);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.n);
+        setTranslationY(org.telegram.messenger.g0.n);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        a3 a3Var = this.a;
+        Paint paint = a3Var.d;
+        try {
+            j3 j3Var = a3Var.a;
+            if (j3Var == null) {
+                return;
+            }
+            int e10 = j3Var.e(m6.x0(null, m6.a7, false));
+            if (paint.getColor() != e10) {
+                paint.setColor(e10);
+                invalidate();
+                org.telegram.messenger.g0.s3(a3Var, e10, true, null);
+                org.telegram.messenger.g0.m3(a3Var, org.telegram.messenger.g0.B(e10) >= 0.721f);
+            }
+        } catch (Exception e11) {
+            a8.g(e11, true);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

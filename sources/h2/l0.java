@@ -24,11 +24,11 @@ import c8.u0;
 import c8.v0;
 import c8.w0;
 import com.google.android.gms.internal.vision.e2;
-import di.ga;
+import di.a8;
 import e2.c1;
 import e2.s0;
 import e2.t0;
-import fi.a6;
+import fi.l4;
 import j$.util.DesugarTimeZone;
 import j$.util.Objects;
 import java.io.IOException;
@@ -54,7 +54,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public abstract class l0 {
     public static final String a;
@@ -894,10 +894,10 @@ public abstract class l0 {
 
     public static m9.e0 g0(m9.y yVar, m9.q qVar) {
         m9.e0 e0Var = new m9.e0();
-        a6 a6Var = new a6(24, e0Var, yVar);
+        l4 l4Var = new l4(26, e0Var, yVar);
         m9.r rVar = m9.r.a;
-        e0Var.b(a6Var, rVar);
-        yVar.b(new ga(yVar, e0Var, qVar, 9), rVar);
+        e0Var.b(l4Var, rVar);
+        yVar.b(new a8(yVar, e0Var, qVar, 10), rVar);
         return e0Var;
     }
 

@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public class nx implements org.telegram.messenger.fs {
     public static final HashSet M = new HashSet();
@@ -25,7 +25,7 @@ public class nx implements org.telegram.messenger.fs {
     public bh E;
     public m9.u F;
     public final FrameLayout H;
-    public final org.telegram.ui.Components.ck0 I;
+    public final org.telegram.ui.Components.ek0 I;
     public final long J;
     public final long K;
     public HashMap L;
@@ -477,7 +477,7 @@ public class nx implements org.telegram.messenger.fs {
                     JSONArray jSONArray = new JSONObject(tL_sendMessageEmojiInteraction.interaction.data).getJSONArray("a");
                     for (int i13 = 0; i13 < jSONArray.length(); i13++) {
                         JSONObject jSONObject = jSONArray.getJSONObject(i13);
-                        org.telegram.messenger.g0.h3(new org.telegram.ui.Components.rb0(this, i12, jSONObject.optInt("i", 1) - 1), (long) (jSONObject.optDouble("t", 0.0d) * 1000.0d));
+                        org.telegram.messenger.g0.h3(new org.telegram.ui.Components.sb0(this, i12, jSONObject.optInt("i", 1) - 1), (long) (jSONObject.optDouble("t", 0.0d) * 1000.0d));
                     }
                 } catch (JSONException e10) {
                     e10.printStackTrace();
@@ -720,13 +720,13 @@ public class nx implements org.telegram.messenger.fs {
                 if ((gcVar == null || !gcVar.l) && org.telegram.messenger.bz.d1 > 0 && org.telegram.messenger.j10.i(this.b).e() != bnVar.f.id) {
                     org.telegram.messenger.bz.d1--;
                     org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("emojiInteractionsHintCount", org.telegram.messenger.bz.d1).apply();
-                    org.telegram.ui.Components.mv0 mv0Var = new org.telegram.ui.Components.mv0(bnVar.getParentActivity(), null, 1, -1, r1Var.getMessageObject().F2() ? r1Var.getMessageObject().F0() : org.telegram.messenger.ri.d0(this.b).V(r1Var.getMessageObject().V1()), bnVar.getResourceProvider());
-                    mv0Var.c.setVisibility(8);
-                    mv0Var.b.setText(org.telegram.messenger.j6.m(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("EmojiInteractionTapHint", null, 2131751166, bnVar.f.first_name)), mv0Var.b.getPaint().getFontMetricsInt(), false, null, 0));
-                    mv0Var.b.setTypeface(null);
-                    mv0Var.b.setMaxLines(3);
-                    mv0Var.b.setSingleLine(false);
-                    m9.u uVar = new m9.u(this, org.telegram.ui.Components.gc.g(bnVar, mv0Var, 2750), z11, 29);
+                    org.telegram.ui.Components.pv0 pv0Var = new org.telegram.ui.Components.pv0(bnVar.getParentActivity(), null, 1, -1, r1Var.getMessageObject().F2() ? r1Var.getMessageObject().F0() : org.telegram.messenger.ri.d0(this.b).V(r1Var.getMessageObject().V1()), bnVar.getResourceProvider());
+                    pv0Var.c.setVisibility(8);
+                    pv0Var.b.setText(org.telegram.messenger.j6.m(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("EmojiInteractionTapHint", null, 2131751165, bnVar.f.first_name)), pv0Var.b.getPaint().getFontMetricsInt(), false, null, 0));
+                    pv0Var.b.setTypeface(null);
+                    pv0Var.b.setMaxLines(3);
+                    pv0Var.b.setSingleLine(false);
+                    m9.u uVar = new m9.u(this, org.telegram.ui.Components.gc.g(bnVar, pv0Var, 2750), z11, 29);
                     this.F = uVar;
                     org.telegram.messenger.g0.h3(uVar, 1500L);
                 }
@@ -796,22 +796,22 @@ public class nx implements org.telegram.messenger.fs {
         if (bnVar == null || org.telegram.messenger.mp.u1(this.b).K3() || bnVar.getParentActivity() == null) {
             return;
         }
-        org.telegram.ui.Components.mv0 mv0Var = new org.telegram.ui.Components.mv0(this.H.getContext(), null, 1, -1, fjVar.F0(), bnVar.getResourceProvider());
-        mv0Var.b.setText(tL_messages_stickerSet.set.title);
-        mv0Var.c.setText(org.telegram.messenger.gd.M0(2131746755, null));
+        org.telegram.ui.Components.pv0 pv0Var = new org.telegram.ui.Components.pv0(this.H.getContext(), null, 1, -1, fjVar.F0(), bnVar.getResourceProvider());
+        pv0Var.b.setText(tL_messages_stickerSet.set.title);
+        pv0Var.c.setText(org.telegram.messenger.gd.N0(2131746754, null));
         org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(bnVar.getParentActivity(), bnVar.getResourceProvider(), true);
-        mv0Var.setButton(ecVar);
-        ecVar.b = new vs(10, this, fjVar);
-        ecVar.e(org.telegram.messenger.gd.M0(2131743326, null));
-        org.telegram.ui.Components.gc g10 = org.telegram.ui.Components.gc.g(bnVar, mv0Var, 2750);
+        pv0Var.setButton(ecVar);
+        ecVar.b = new ss(12, this, fjVar);
+        ecVar.e(org.telegram.messenger.gd.N0(2131743320, null));
+        org.telegram.ui.Components.gc g10 = org.telegram.ui.Components.gc.g(bnVar, pv0Var, 2750);
         g10.b = fjVar.e1();
         g10.j();
     }
 
-    public nx(bn bnVar, FrameLayout frameLayout, org.telegram.ui.Components.ck0 ck0Var, int i7, long j3, long j10) {
+    public nx(bn bnVar, FrameLayout frameLayout, org.telegram.ui.Components.ek0 ek0Var, int i7, long j3, long j10) {
         this.a = bnVar;
         this.H = frameLayout;
-        this.I = ck0Var;
+        this.I = ek0Var;
         this.b = i7;
         this.J = j3;
         this.K = j10;

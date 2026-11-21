@@ -6,8 +6,8 @@ import android.media.MediaFormat;
 import android.media.MediaMuxer;
 import android.os.Build;
 import com.google.android.gms.internal.vision.e2;
-import hi.c7;
-import hi.u;
+import hi.b7;
+import hi.v;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import org.telegram.messenger.pe;
 import org.telegram.messenger.we;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MAX_DECODER_INPUTS_PER_LOOP = 8;
@@ -44,14 +44,14 @@ public class MediaCodecVideoConvertor {
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -60,7 +60,7 @@ public class MediaCodecVideoConvertor {
         String blurPath;
         File cacheFile;
         kf callback;
-        u collage;
+        v collage;
         ArrayList<d20> collageParts;
         we cropState;
         long duration;
@@ -68,7 +68,7 @@ public class MediaCodecVideoConvertor {
         int framerate;
         Integer gradientBottomColor;
         Integer gradientTopColor;
-        c7 hdrInfo;
+        b7 hdrInfo;
         boolean isDark;
         boolean isPhoto;
         boolean isRound;
@@ -144,7 +144,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public class DecoderFeeder extends Thread {
         private ByteBuffer audioBuffer;
         private final int audioIndex;
@@ -267,7 +267,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -488,7 +488,7 @@ public class MediaCodecVideoConvertor {
         return sb2.toString();
     }
 
-    private static String hdrFragmentShader(int i7, int i10, int i11, int i12, boolean z10, c7 c7Var, int i13, boolean z11) {
+    private static String hdrFragmentShader(int i7, int i10, int i11, int i12, boolean z10, b7 b7Var, int i13, boolean z11) {
         if (!z10) {
             return createFragmentShader(i7, i10, i11, i12, false, i13, z11);
         }
@@ -537,7 +537,7 @@ public class MediaCodecVideoConvertor {
         String glslFloat5 = glslFloat(min * min2);
         String glslFloat6 = glslFloat(1.0f / f10);
         String glslFloat7 = glslFloat(1.0f / f12);
-        String y22 = c7Var.a() == 1 ? g0.y2(null, R.raw.hdr2sdr_hlg) : g0.y2(null, R.raw.hdr2sdr_pq);
+        String y22 = b7Var.a() == 1 ? g0.y2(null, R.raw.hdr2sdr_hlg) : g0.y2(null, R.raw.hdr2sdr_pq);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(y22);
         sb2.append("\nvarying vec2 vTextureCoord;\nconst float offsetX = ");
@@ -819,7 +819,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;

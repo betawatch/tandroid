@@ -1,51 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zp extends FrameLayout {
-    public final View a;
-    public final TextView b;
+public final class zp extends LinearLayout {
+    public final /* synthetic */ cq a;
 
-    public zp(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zp(cq cqVar, Context context) {
         super(context);
-        View view = new View(context);
-        this.a = view;
-        int L = org.telegram.messenger.g0.L(4.0f);
-        int i7 = org.telegram.ui.ActionBar.n6.Fi;
-        int v02 = org.telegram.ui.ActionBar.n6.v0(i7);
-        int i10 = org.telegram.ui.ActionBar.n6.Hi;
-        int v03 = org.telegram.ui.ActionBar.n6.v0(i10);
-        Drawable k02 = org.telegram.ui.ActionBar.n6.k0(L, L, L, L, v02, v03, v03);
-        org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i7);
-        org.telegram.ui.ActionBar.q6 M2 = org.telegram.ui.ActionBar.u6.M(i10);
-        view.setBackground(k02);
-        org.telegram.ui.ActionBar.u6.j(view, k02, M, M2, null);
-        addView(view, c8.ma.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(17);
-        org.telegram.messenger.f3.l(textView, org.telegram.ui.ActionBar.n6.Ji, null, 1, 14.0f);
-        addView(textView, c8.ma.e(-2, -2, 17));
+        this.a = cqVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        cq.J0(this.a);
     }
 }

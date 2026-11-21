@@ -11,7 +11,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class qd extends c1 implements fs, na, oa {
     public static volatile qd[] P = new qd[4];
@@ -36,7 +36,7 @@ public final class qd extends c1 implements fs, na, oa {
     public final od f;
     public final od h;
     public final od n;
-    public final hi.u5 r;
+    public final hi.t5 r;
     public Location s;
     public long w;
     public boolean x;
@@ -52,7 +52,7 @@ public final class qd extends c1 implements fs, na, oa {
         this.f = new od(this, i10);
         this.h = new od(this, i10);
         this.n = new od(this, i10);
-        this.r = new hi.u5(this, 27);
+        this.r = new hi.t5(this, 27);
         this.x = true;
         this.G = new SparseIntArray();
         this.H = new a0.h();
@@ -499,7 +499,7 @@ public final class qd extends c1 implements fs, na, oa {
         if (pdVar != null) {
             pdVar.f = i7;
         }
-        getMessagesStorage().a.c(new di.b9(this, i7, j3, 2));
+        getMessagesStorage().a.c(new di.c9(this, i7, j3, 2));
         if (z10) {
             Utilities.d.c(new hd(this, 3));
         }

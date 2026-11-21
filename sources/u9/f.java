@@ -16,9 +16,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-import p4.o0;
+import p4.z;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class f implements b {
     public static final ab.m n = new ab.m(1);
@@ -254,7 +254,7 @@ public final class f implements b {
                 for (q qVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(qVar)) {
-                        arrayList2.add(new o0(16, (o) ((ua.b) hashMap.get(qVar)), bVar));
+                        arrayList2.add(new z(18, (o) ((ua.b) hashMap.get(qVar)), bVar));
                     } else {
                         hashMap.put(qVar, bVar);
                     }
@@ -285,7 +285,7 @@ public final class f implements b {
                 n nVar = (n) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new o0(17, nVar, (ua.b) it.next()));
+                    arrayList.add(new z(19, nVar, (ua.b) it.next()));
                 }
             } else {
                 q qVar2 = (q) entry2.getKey();

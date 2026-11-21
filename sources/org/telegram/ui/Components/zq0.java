@@ -2,20 +2,20 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class zq0 extends FragmentContextView {
-    public final /* synthetic */ gt0 Y0;
+public final class zq0 extends nv0 {
+    public final /* synthetic */ jt0 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zq0(gt0 gt0Var, Context context, org.telegram.ui.ActionBar.h2 h2Var, gt0 gt0Var2, org.telegram.ui.ActionBar.i6 i6Var) {
-        super(context, h2Var, gt0Var2, false, i6Var);
-        this.Y0 = gt0Var;
+    public zq0(jt0 jt0Var, Context context, yz yzVar) {
+        super(context, yzVar, 1, null);
+        this.L = jt0Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i7) {
-        gt0 gt0Var = this.Y0;
-        gt0Var.S0.j(gt0Var.T0, i7 == 0, true);
+    @Override // org.telegram.ui.Components.nv0
+    public final void a() {
+        invalidate();
+        this.L.Q0();
     }
 }

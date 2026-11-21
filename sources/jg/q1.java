@@ -7,12 +7,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.z4;
-import org.telegram.ui.Components.ck;
-import org.telegram.ui.Components.hn0;
+import org.telegram.ui.Components.ek;
+import org.telegram.ui.ss;
 import org.telegram.ui.w50;
 import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class q1 extends TimerTask {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final class q1 extends TimerTask {
                 }
                 String str = (String) this.b;
                 s1Var.getClass();
-                org.telegram.messenger.g0.g3(new hi.r1(24, s1Var, str));
+                org.telegram.messenger.g0.g3(new hi.c(26, s1Var, str));
                 return;
             case 1:
                 synchronized (((MediaController) this.c).x1) {
@@ -47,12 +47,12 @@ public final class q1 extends TimerTask {
                 return;
             case 2:
                 try {
-                    ((Timer) ((ck) this.c).h).cancel();
-                    ((ck) this.c).h = null;
+                    ((Timer) ((ek) this.c).h).cancel();
+                    ((ek) this.c).h = null;
                 } catch (Exception e11) {
                     a8.g(e11, true);
                 }
-                Utilities.g.c(new hn0(28, (ck) this.c, (String) this.b));
+                Utilities.g.c(new ss(0, (ek) this.c, (String) this.b));
                 return;
             default:
                 x50 x50Var = (x50) this.c;

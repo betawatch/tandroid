@@ -2,7 +2,7 @@ package m2;
 
 import a8.b8;
 import a8.la;
-import ai.s1;
+import ai.u1;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.SparseArray;
@@ -15,6 +15,7 @@ import e2.l1;
 import e2.o0;
 import e2.q0;
 import e2.q1;
+import e2.s1;
 import e2.v0;
 import e2.w0;
 import e2.x1;
@@ -38,7 +39,7 @@ import x2.c0;
 import x2.k0;
 import x2.u;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class d implements a1, k0, k {
     public final g0 a;
@@ -328,7 +329,7 @@ public final class d implements a1, k0, k {
     @Override // x2.k0
     public final void r(int i7, x2.g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z10) {
         a T = T(i7, g0Var);
-        V(T, 1003, new ki.e(T, uVar, c0Var, iOException, z10));
+        V(T, 1003, new kg.x1(T, uVar, c0Var, iOException, z10));
     }
 
     @Override // e2.a1
@@ -341,7 +342,7 @@ public final class d implements a1, k0, k {
         b8 b8Var = this.d;
         b8Var.d = b8.f(c1Var, (h9.i0) b8Var.b, (x2.g0) b8Var.e, (i1) b8Var.a);
         a Q = Q();
-        V(Q, 11, new s1(Q, i7, b1Var, b1Var2));
+        V(Q, 11, new u1(Q, i7, b1Var, b1Var2));
     }
 
     @Override // e2.a1
@@ -351,7 +352,7 @@ public final class d implements a1, k0, k {
     }
 
     @Override // e2.a1
-    public final void u(e2.s1 s1Var) {
+    public final void u(s1 s1Var) {
         a Q = Q();
         V(Q, 2, new li.c(Q, s1Var, 12));
     }
@@ -378,7 +379,7 @@ public final class d implements a1, k0, k {
     public final void y(v0 v0Var) {
         x2.g0 g0Var;
         a Q = (!(v0Var instanceof l) || (g0Var = ((l) v0Var).F) == null) ? Q() : S(g0Var);
-        V(Q, 10, new ki.e(Q, v0Var, 10));
+        V(Q, 10, new kg.x1(Q, v0Var, 11));
     }
 
     @Override // q2.k

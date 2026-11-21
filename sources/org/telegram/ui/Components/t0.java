@@ -1,45 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t0 implements org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.v2 b;
 
-    public /* synthetic */ t0(Context context, int i7) {
+    public /* synthetic */ t0(org.telegram.ui.ActionBar.v2 v2Var, int i7) {
         this.a = i7;
-        this.b = context;
+        this.b = v2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Context context = this.b;
-                try {
-                    context.startActivity(new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES", Uri.parse("package:" + context.getPackageName())));
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            case 1:
-                vf.c.t(this.b, org.telegram.messenger.s2.g);
+                this.b.invalidateSelf();
                 break;
             default:
-                Context context2 = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    context2.startActivity(intent);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                }
+                org.telegram.ui.ActionBar.v2 v2Var = this.b;
+                ((d6) v2Var.d).e(true, 0.0f);
+                v2Var.invalidateSelf();
+                break;
         }
     }
 }

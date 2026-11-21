@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class om0 extends org.telegram.ui.Components.au0 {
+public final class om0 extends org.telegram.ui.Components.du0 {
     public int g0;
     public boolean h0;
     public final /* synthetic */ qm0 i0;
@@ -23,7 +23,7 @@ public final class om0 extends org.telegram.ui.Components.au0 {
     /* JADX WARN: Removed duplicated region for block: B:40:0x00c3  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x00cd  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00a7  */
-    @Override // org.telegram.ui.Components.au0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.du0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -34,7 +34,7 @@ public final class om0 extends org.telegram.ui.Components.au0 {
         int i16;
         int i17;
         int i18;
-        org.telegram.ui.Components.wt wtVar;
+        org.telegram.ui.Components.yt ytVar;
         int measuredHeight;
         int measuredHeight2;
         int i19 = this.g0;
@@ -42,8 +42,8 @@ public final class om0 extends org.telegram.ui.Components.au0 {
         qm0 qm0Var = this.i0;
         if (i19 != i20) {
             this.g0 = i20;
-            org.telegram.ui.ActionBar.h1 h1Var = qm0Var.J;
-            if (h1Var != null && h1Var.isShowing()) {
+            org.telegram.ui.ActionBar.g1 g1Var = qm0Var.J;
+            if (g1Var != null && g1Var.isShowing()) {
                 qm0Var.J.d(true);
             }
         }
@@ -76,8 +76,8 @@ public final class om0 extends org.telegram.ui.Components.au0 {
                             i16 = ((i12 - emojiPadding) - i10) - measuredHeight3;
                             i17 = layoutParams.bottomMargin;
                         }
-                        wtVar = qm0Var.N;
-                        if (wtVar != null && wtVar.l(childAt)) {
+                        ytVar = qm0Var.N;
+                        if (ytVar != null && ytVar.l(childAt)) {
                             if (org.telegram.messenger.g0.Q1()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -93,8 +93,8 @@ public final class om0 extends org.telegram.ui.Components.au0 {
                         i17 = layoutParams.bottomMargin;
                     }
                     i18 = i16 - i17;
-                    wtVar = qm0Var.N;
-                    if (wtVar != null) {
+                    ytVar = qm0Var.N;
+                    if (ytVar != null) {
                         if (org.telegram.messenger.g0.Q1()) {
                         }
                         i18 = measuredHeight - measuredHeight2;
@@ -108,8 +108,8 @@ public final class om0 extends org.telegram.ui.Components.au0 {
                 if (i23 == 16) {
                 }
                 i18 = i16 - i17;
-                wtVar = qm0Var.N;
-                if (wtVar != null) {
+                ytVar = qm0Var.N;
+                if (ytVar != null) {
                 }
                 childAt.layout(i15, i18, measuredWidth + i15, measuredHeight3 + i18);
             }
@@ -139,8 +139,8 @@ public final class om0 extends org.telegram.ui.Components.au0 {
         while (i12 < childCount) {
             View childAt = getChildAt(i12);
             if (childAt != null && childAt.getVisibility() != 8) {
-                org.telegram.ui.Components.wt wtVar = qm0Var.N;
-                if (wtVar == null || !wtVar.l(childAt)) {
+                org.telegram.ui.Components.yt ytVar = qm0Var.N;
+                if (ytVar == null || !ytVar.l(childAt)) {
                     i11 = i7;
                     measureChildWithMargins(childAt, i11, 0, i13, 0);
                     i12++;

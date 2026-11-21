@@ -6,7 +6,7 @@ import android.os.Build;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class g3 extends v4.u0 {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final class g3 extends v4.u0 {
     public void a(RecyclerView recyclerView, int i7) {
         org.telegram.ui.ActionBar.k kVar;
         View m10;
-        org.telegram.ui.ActionBar.a5 a5Var;
-        org.telegram.ui.ActionBar.a5 a5Var2;
+        org.telegram.ui.ActionBar.z4 z4Var;
+        org.telegram.ui.ActionBar.z4 z4Var2;
         org.telegram.ui.ActionBar.k kVar2;
         switch (this.a) {
             case 0:
@@ -66,7 +66,7 @@ public final class g3 extends v4.u0 {
                 break;
             case 9:
                 if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(((ts) this.b).getParentActivity().getCurrentFocus());
+                    org.telegram.messenger.g0.v1(((us) this.b).getParentActivity().getCurrentFocus());
                     break;
                 }
                 break;
@@ -92,7 +92,7 @@ public final class g3 extends v4.u0 {
                 if (i7 == 0) {
                     float f10 = m40Var.B0;
                     if (f10 >= 0.5f && f10 < 1.0f) {
-                        kVar = ((org.telegram.ui.ActionBar.h2) m40Var).actionBar;
+                        kVar = ((org.telegram.ui.ActionBar.g2) m40Var).actionBar;
                         int bottom = kVar.getBottom();
                         v4.p0 layoutManager = m40Var.N.getLayoutManager();
                         if (layoutManager != null && (m10 = layoutManager.m(0)) != null) {
@@ -131,10 +131,10 @@ public final class g3 extends v4.u0 {
             case 17:
                 a60 a60Var = (a60) this.b;
                 if (i7 == 1) {
-                    a5Var = ((org.telegram.ui.ActionBar.h2) a60Var).simpleActionBar;
-                    if (a5Var.G) {
-                        a5Var2 = ((org.telegram.ui.ActionBar.h2) a60Var).simpleActionBar;
-                        org.telegram.messenger.g0.v1(a5Var2.getSearchField());
+                    z4Var = ((org.telegram.ui.ActionBar.g2) a60Var).simpleActionBar;
+                    if (z4Var.G) {
+                        z4Var2 = ((org.telegram.ui.ActionBar.g2) a60Var).simpleActionBar;
+                        org.telegram.messenger.g0.v1(z4Var2.getSearchField());
                         break;
                     }
                 }
@@ -166,7 +166,7 @@ public final class g3 extends v4.u0 {
             case 25:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
                 if (i7 == 0) {
-                    kVar2 = ((org.telegram.ui.ActionBar.h2) premiumPreviewFragment).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.g2) premiumPreviewFragment).actionBar;
                     int L2 = org.telegram.messenger.g0.L(16.0f) + kVar2.getBottom();
                     if (premiumPreviewFragment.g0 <= 0.5f) {
                         View m12 = premiumPreviewFragment.a.getLayoutManager() != null ? premiumPreviewFragment.a.getLayoutManager().m(0) : null;
@@ -198,12 +198,12 @@ public final class g3 extends v4.u0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b(RecyclerView recyclerView, int i7, int i10) {
-        org.telegram.ui.ActionBar.a5 a5Var;
+        org.telegram.ui.ActionBar.z4 z4Var;
         fz fzVar;
         org.telegram.ui.Cells.g3 g3Var;
         org.telegram.ui.ActionBar.k kVar;
         dh.g gVar;
-        org.telegram.ui.Components.j30 j30Var;
+        org.telegram.ui.Components.m30 m30Var;
         dh.g gVar2;
         int i11 = this.a;
         boolean z10 = false;
@@ -253,7 +253,7 @@ public final class g3 extends v4.u0 {
             case 3:
                 x6 x6Var = (x6) obj;
                 if (!x6Var.b.canScrollVertically(-1)) {
-                    a5Var = ((org.telegram.ui.ActionBar.h2) x6Var).simpleActionBar;
+                    z4Var = ((org.telegram.ui.ActionBar.g2) x6Var).simpleActionBar;
                     break;
                 }
                 z10 = true;
@@ -289,8 +289,8 @@ public final class g3 extends v4.u0 {
                 au auVar = (au) obj;
                 org.telegram.ui.Components.la laVar = auVar.u1;
                 if (laVar != null) {
-                    org.telegram.ui.Components.jb0 jb0Var = laVar.i0;
-                    if (jb0Var != null && jb0Var.getTop() == laVar.k0) {
+                    org.telegram.ui.Components.kb0 kb0Var = laVar.i0;
+                    if (kb0Var != null && kb0Var.getTop() == laVar.k0) {
                         z11 = true;
                     }
                     auVar.w1 = !z11;
@@ -319,7 +319,7 @@ public final class g3 extends v4.u0 {
                     m40Var.A0 = (jc) m40Var.F0(m40Var.a0);
                 }
                 int measuredHeight = m40Var.A0.getMeasuredHeight();
-                kVar = ((org.telegram.ui.ActionBar.h2) m40Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.g2) m40Var).actionBar;
                 int measuredHeight2 = measuredHeight - kVar.getMeasuredHeight();
                 float top = m40Var.A0.getTop() * (-1);
                 float f10 = measuredHeight2;
@@ -349,7 +349,7 @@ public final class g3 extends v4.u0 {
                 }
                 break;
             case 19:
-                ((fg0) obj).K.invalidate();
+                ((eg0) obj).K.invalidate();
                 break;
             case 20:
                 og0 og0Var = (og0) obj;
@@ -374,12 +374,12 @@ public final class g3 extends v4.u0 {
                 break;
             case 24:
                 pr0 pr0Var = (pr0) obj;
-                if (i10 != 0 && (j30Var = pr0Var.h) != null) {
-                    j30Var.a();
+                if (i10 != 0 && (m30Var = pr0Var.h) != null) {
+                    m30Var.a();
                 }
-                org.telegram.ui.Components.yw0 yw0Var = pr0Var.R;
-                if (yw0Var != null && yw0Var.s) {
-                    org.telegram.ui.Components.ww0 delegate = yw0Var.getDelegate();
+                org.telegram.ui.Components.ax0 ax0Var = pr0Var.R;
+                if (ax0Var != null && ax0Var.s) {
+                    org.telegram.ui.Components.yw0 delegate = ax0Var.getDelegate();
                     if (!(delegate instanceof org.telegram.ui.Cells.b6)) {
                         pr0Var.R.f();
                         break;

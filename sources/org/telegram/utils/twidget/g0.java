@@ -15,12 +15,12 @@ import org.telegram.messenger.tr;
 import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.h2;
-import org.telegram.ui.Components.a81;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.ActionBar.g2;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.rk0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,10 +47,10 @@ public final /* synthetic */ class g0 implements Runnable {
         ArrayList arrayList;
         String str3;
         d1 d1Var;
-        a81 a81Var;
+        d81 d81Var;
         d1 d1Var2;
-        h2 T;
-        pk0 pk0Var;
+        g2 T;
+        rk0 rk0Var;
         d1 d1Var3;
         int i7 = 2;
         r5 = null;
@@ -181,9 +181,9 @@ public final /* synthetic */ class g0 implements Runnable {
                     d1Var4.t = str3;
                     d1Var4.u = jSONObject3;
                 }
-                pk0 pk0Var2 = k0Var3.u;
-                if (pk0Var2 != null && (d1Var4 == null || d1Var4.i <= 0)) {
-                    pk0Var2.p0("cached heights read");
+                rk0 rk0Var2 = k0Var3.u;
+                if (rk0Var2 != null && (d1Var4 == null || d1Var4.i <= 0)) {
+                    rk0Var2.p0("cached heights read");
                 }
                 if (k0Var3.A) {
                     k0Var3.A = false;
@@ -199,11 +199,11 @@ public final /* synthetic */ class g0 implements Runnable {
             case 5:
                 p1 p1Var = (p1) this.b;
                 String str5 = (String) this.c;
-                if (p1Var.A || (d1Var = p1Var.R) == null || (a81Var = d1Var.h) == null) {
+                if (p1Var.A || (d1Var = p1Var.R) == null || (d81Var = d1Var.h) == null) {
                     return;
                 }
-                if (a81Var.F || (a81Var.w && a81Var.E)) {
-                    a81Var.a.f(str5);
+                if (d81Var.F || (d81Var.w && d81Var.E)) {
+                    d81Var.a.f(str5);
                     return;
                 }
                 return;
@@ -220,8 +220,8 @@ public final /* synthetic */ class g0 implements Runnable {
                 String optString = jSONObject4.optString("kind");
                 if (!"openLink".equals(optString) && !"openTelegramLink".equals(optString)) {
                     if ("haptic".equals(optString)) {
-                        if (h != null && h.x > 0 && (pk0Var = h.w) != null) {
-                            view = pk0Var.W;
+                        if (h != null && h.x > 0 && (rk0Var = h.w) != null) {
+                            view = rk0Var.W;
                         }
                         if (view != null) {
                             String optString2 = jSONObject4.optString("haptic");
@@ -244,13 +244,13 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 n0.i = true;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, T.getResourceProvider());
-                alertDialog$Builder.a.S = gd.M0(2131742614, null);
-                alertDialog$Builder.a.U = gd.a0(null, null, 2131742615, optString3);
-                alertDialog$Builder.k(gd.M0(2131747624, null), new v(i7, optString3, parentActivity));
-                alertDialog$Builder.h(gd.M0(2131752578, null), null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.setOnDismissListener(new hi.f1(7));
-                if (T.showDialog(u1Var) == null) {
+                alertDialog$Builder.a.S = gd.N0(2131742608, null);
+                alertDialog$Builder.a.U = gd.a0(null, null, 2131742609, optString3);
+                alertDialog$Builder.k(gd.N0(2131747623, null), new v(i7, optString3, parentActivity));
+                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.setOnDismissListener(new hi.f1(7));
+                if (T.showDialog(t1Var) == null) {
                     n0.i = false;
                     return;
                 }

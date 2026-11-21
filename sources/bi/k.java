@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -27,31 +27,31 @@ public final /* synthetic */ class k implements DialogInterface.OnDismissListene
         switch (this.a) {
             case 0:
                 u uVar = (u) this.c;
-                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.d;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
                 Activity activity = (Activity) this.b;
                 org.telegram.messenger.g0.v1(uVar);
-                if (h2Var != null) {
-                    org.telegram.messenger.g0.Z2(activity, h2Var.getClassGuid());
+                if (g2Var != null) {
+                    org.telegram.messenger.g0.Z2(activity, g2Var.getClassGuid());
                     break;
                 }
                 break;
             case 1:
-                p6 p6Var = (p6) this.c;
-                q5 q5Var = (q5) this.d;
+                t6 t6Var = (t6) this.c;
+                u5 u5Var = (u5) this.d;
                 Activity activity2 = (Activity) this.b;
-                org.telegram.messenger.g0.v1(q5Var);
-                org.telegram.messenger.g0.Z2(activity2, p6Var.a.getClassGuid());
+                org.telegram.messenger.g0.v1(u5Var);
+                org.telegram.messenger.g0.Z2(activity2, t6Var.a.getClassGuid());
                 break;
             case 2:
-                ki.s0 s0Var = (ki.s0) this.c;
+                ki.r0 r0Var = (ki.r0) this.c;
                 boolean[] zArr = (boolean[]) this.d;
                 org.telegram.ui.web.o oVar = (org.telegram.ui.web.o) this.b;
-                s0Var.getClass();
+                r0Var.getClass();
                 if (!zArr[0]) {
-                    s0Var.d = true;
-                    s0Var.e = false;
-                    s0Var.k();
-                    Iterator it = s0Var.f.iterator();
+                    r0Var.d = true;
+                    r0Var.e = false;
+                    r0Var.k();
+                    Iterator it = r0Var.f.iterator();
                     while (it.hasNext()) {
                         ((Runnable) it.next()).run();
                     }
@@ -71,20 +71,20 @@ public final /* synthetic */ class k implements DialogInterface.OnDismissListene
                 }
                 break;
             case 4:
-                org.telegram.ui.Components.a5 a5Var = (org.telegram.ui.Components.a5) this.c;
-                org.telegram.ui.ActionBar.h2 h2Var2 = (org.telegram.ui.ActionBar.h2) this.d;
+                org.telegram.ui.Components.b5 b5Var = (org.telegram.ui.Components.b5) this.c;
+                org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) this.d;
                 Activity activity3 = (Activity) this.b;
-                org.telegram.messenger.g0.v1(a5Var);
-                if (h2Var2 != null) {
-                    org.telegram.messenger.g0.Z2(activity3, h2Var2.getClassGuid());
+                org.telegram.messenger.g0.v1(b5Var);
+                if (g2Var2 != null) {
+                    org.telegram.messenger.g0.Z2(activity3, g2Var2.getClassGuid());
                     break;
                 }
                 break;
             case 5:
                 x10 x10Var2 = (x10) this.c;
-                org.telegram.ui.Components.u3 u3Var = (org.telegram.ui.Components.u3) this.d;
-                org.telegram.ui.Components.w3 w3Var = (org.telegram.ui.Components.w3) this.b;
-                x10Var2.a(Integer.valueOf(w3Var.getValue() + (u3Var.getValue() * 60)));
+                org.telegram.ui.Components.v3 v3Var = (org.telegram.ui.Components.v3) this.d;
+                org.telegram.ui.Components.x3 x3Var = (org.telegram.ui.Components.x3) this.b;
+                x10Var2.a(Integer.valueOf(x3Var.getValue() + (v3Var.getValue() * 60)));
                 break;
             default:
                 org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) this.c;

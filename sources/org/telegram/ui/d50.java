@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class d50 extends org.telegram.ui.Components.bk0 {
+public final class d50 extends org.telegram.ui.Components.dk0 {
     public final Context c;
     public int d;
     public final ArrayList e = new ArrayList();
@@ -26,7 +26,7 @@ public final class d50 extends org.telegram.ui.Components.bk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         int i7 = f1Var.f;
         if (i7 == 3 || i7 == 4) {
@@ -53,10 +53,10 @@ public final class d50 extends org.telegram.ui.Components.bk0 {
         f50 f50Var = this.f;
         if (f50Var.Q == 5) {
             arrayList.add(new c50(6, true));
-            arrayList.add(new c50(org.telegram.messenger.gd.M0(2131750572, null)));
+            arrayList.add(new c50(org.telegram.messenger.gd.N0(2131750571, null)));
         } else {
             arrayList.add(new c50(4, true));
-            arrayList.add(new c50(org.telegram.messenger.gd.M0(2131749263, null)));
+            arrayList.add(new c50(org.telegram.messenger.gd.N0(2131749262, null)));
         }
         if (f50Var.U != null) {
             arrayList.add(new c50(1, true));
@@ -85,7 +85,7 @@ public final class d50 extends org.telegram.ui.Components.bk0 {
             case 1:
                 org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
                 if (f50Var.U != null && i7 == 1) {
-                    o4Var.setText(org.telegram.messenger.gd.M0(2131753959, null));
+                    o4Var.setText(org.telegram.messenger.gd.N0(2131753958, null));
                     break;
                 } else {
                     o4Var.setText(org.telegram.messenger.gd.G(f50Var.L.size(), "Members", new Object[0]));
@@ -102,17 +102,17 @@ public final class d50 extends org.telegram.ui.Components.bk0 {
             case 4:
                 org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
                 int i11 = f50Var.X;
-                String M0 = i11 == 0 ? org.telegram.messenger.gd.M0(2131747246, null) : org.telegram.messenger.gd.c0(i11);
-                String M02 = org.telegram.messenger.gd.M0(2131753848, null);
-                z10 = ((org.telegram.ui.ActionBar.h2) f50Var).fragmentBeginToShow;
-                n8Var.u(M02, M0, z10, R.drawable.msg_autodelete, false);
+                String N0 = i11 == 0 ? org.telegram.messenger.gd.N0(2131747245, null) : org.telegram.messenger.gd.c0(i11);
+                String N02 = org.telegram.messenger.gd.N0(2131753847, null);
+                z10 = ((org.telegram.ui.ActionBar.g2) f50Var).fragmentBeginToShow;
+                n8Var.u(N02, N0, z10, R.drawable.msg_autodelete, false);
                 break;
             case 5:
                 ((org.telegram.ui.Cells.a9) view).setText(((c50) arrayList.get(i7)).c);
                 break;
             case 6:
                 org.telegram.ui.Cells.n8 n8Var2 = (org.telegram.ui.Cells.n8) view;
-                n8Var2.n(R.drawable.msg_topics, org.telegram.messenger.gd.M0(2131752270, null), true);
+                n8Var2.n(R.drawable.msg_topics, org.telegram.messenger.gd.N0(2131752269, null), true);
                 n8Var2.getCheckBox().setAlpha(0.75f);
                 break;
         }
@@ -143,6 +143,6 @@ public final class d50 extends org.telegram.ui.Components.bk0 {
             view2.setTag(-33024);
             view = view2;
         }
-        return new org.telegram.ui.Components.kj0(view);
+        return new org.telegram.ui.Components.mj0(view);
     }
 }

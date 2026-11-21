@@ -2,45 +2,29 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qz0 implements r0.m, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class qz0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tz0 b;
+    public final /* synthetic */ uz0 b;
 
-    public /* synthetic */ qz0(tz0 tz0Var, int i7) {
+    public /* synthetic */ qz0(uz0 uz0Var, int i7) {
         this.a = i7;
-        this.b = tz0Var;
+        this.b = uz0Var;
     }
 
-    @Override // r0.m
-    public r0.l1 P0(View view, r0.l1 l1Var) {
-        i0.b I0 = org.telegram.messenger.g0.I0(l1Var, false);
-        tz0 tz0Var = this.b;
-        tz0Var.e = I0;
-        tz0Var.c.setPadding(I0.a, I0.b, I0.c, I0.d);
-        tz0Var.b.requestLayout();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
-            case 1:
-                org.telegram.ui.ActionBar.u1 u1Var2 = this.b.d0;
-                if (u1Var2 != null) {
-                    u1Var2.dismiss();
+            case 0:
+                uz0 uz0Var = this.b;
+                if (uz0Var.Z == null) {
+                    uz0Var.dismiss();
                     break;
                 }
                 break;
             default:
-                tz0 tz0Var = this.b;
-                org.telegram.ui.ActionBar.u1 u1Var3 = tz0Var.d0;
-                if (u1Var3 != null) {
-                    u1Var3.dismiss();
-                    tz0Var.d0 = null;
-                }
-                tz0Var.dismiss();
+                this.b.dismiss();
                 break;
         }
     }

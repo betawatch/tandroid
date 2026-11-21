@@ -25,9 +25,9 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.bz;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.w7;
-import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class i {
     public static int A;
@@ -150,7 +150,7 @@ public final class i {
         A = i7;
         if (i7 <= 0) {
             A = 0;
-            mh0.U0.postRunnable(new ai.o(3));
+            oh0.U0.postRunnable(new ai.n(3));
         }
     }
 

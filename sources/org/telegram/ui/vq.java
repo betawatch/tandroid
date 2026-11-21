@@ -6,33 +6,33 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class vq {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
     public final LinearLayout b;
     public final qn0 c;
 
-    public vq(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.if0 if0Var, qn0 qn0Var) {
+    public vq(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.kf0 kf0Var, qn0 qn0Var) {
         this.c = qn0Var;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, org.telegram.messenger.gd.M0(2131753754, null), false, null);
-        c10.setOnClickListener(new uq(if0Var, 0));
+        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, org.telegram.messenger.gd.N0(2131753753, null), false, null);
+        c10.setOnClickListener(new uq(kf0Var, 0));
         c10.d(-328966, -328966);
         c10.setSelectorColor(268435455);
-        View p2Var = new bi.p2(contextThemeWrapper, 12);
-        p2Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
-        p2Var.setBackgroundColor(-15198184);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(p2Var);
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) p2Var.getLayoutParams();
+        View t2Var = new bi.t2(contextThemeWrapper, 12);
+        t2Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
+        t2Var.setBackgroundColor(-15198184);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(t2Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) t2Var.getLayoutParams();
         if (org.telegram.messenger.gd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
         layoutParams.height = org.telegram.messenger.g0.L(8.0f);
-        p2Var.setLayoutParams(layoutParams);
+        t2Var.setLayoutParams(layoutParams);
         LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
         this.b = linearLayout;
         linearLayout.setOrientation(1);

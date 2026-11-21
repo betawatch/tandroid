@@ -6,10 +6,10 @@ import android.view.View;
 import org.json.JSONObject;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.y60;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -30,19 +30,19 @@ public final /* synthetic */ class r1 implements View.OnClickListener {
             case 0:
                 JSONObject jSONObject = (JSONObject) this.b;
                 d3 d3Var = (d3) this.c;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.d;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.d;
                 if (org.telegram.messenger.g0.g(jSONObject.optString("text"))) {
-                    n10.t(null, 2131742751, new lc(d3Var.F, i6Var));
+                    n10.t(null, 2131742745, new lc(d3Var.F, h6Var));
                     break;
                 }
                 break;
             case 1:
-                n6.l0((n6) this.b, (Context) this.c, (org.telegram.ui.ActionBar.h5) this.d, view);
+                n6.l0((n6) this.b, (Context) this.c, (org.telegram.ui.ActionBar.g5) this.d, view);
                 break;
             case 2:
                 u0 u0Var = (u0) this.b;
                 TL_wallet.currencyRate currencyrate = (TL_wallet.currencyRate) this.c;
-                y60 y60Var = (y60) this.d;
+                a70 a70Var = (a70) this.d;
                 g gVar = u0Var.h;
                 String str = currencyrate.currency;
                 if (!TextUtils.equals(gVar.f, str)) {
@@ -54,14 +54,14 @@ public final /* synthetic */ class r1 implements View.OnClickListener {
                     }
                     gVar.b.T();
                 }
-                y60Var.v();
+                a70Var.v();
                 break;
             default:
                 g9 g9Var = (g9) this.b;
-                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.c;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.c;
                 Runnable runnable = (Runnable) this.d;
                 g9Var.getClass();
-                u1VarArr[0].dismiss();
+                t1VarArr[0].dismiss();
                 org.telegram.messenger.g0.g(g9Var.s);
                 runnable.run();
                 break;

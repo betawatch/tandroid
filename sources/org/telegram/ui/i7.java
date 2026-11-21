@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class i7 extends e7 {
     public final ArrayList f;
@@ -19,7 +19,7 @@ public final class i7 extends e7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.bk0
+    @Override // org.telegram.ui.Components.dk0
     public final boolean D(v4.f1 f1Var) {
         return true;
     }
@@ -57,7 +57,7 @@ public final class i7 extends e7 {
         r6 r6Var2 = w6Var.a;
         boolean z10 = r6Var2 != null && r6Var2.a == r6Var.a;
         if (r6Var.a == Long.MAX_VALUE) {
-            H = org.telegram.messenger.gd.M0(2131752636, null);
+            H = org.telegram.messenger.gd.N0(2131752635, null);
             w6Var.getImageView().getAvatarDrawable().g(14);
             w6Var.getImageView().f(null, w6Var.getImageView().getAvatarDrawable());
         } else {
@@ -68,21 +68,21 @@ public final class i7 extends e7 {
         w6Var.getImageView().setRoundRadius(org.telegram.messenger.g0.L(((g22 instanceof TLRPC.Chat) && ((TLRPC.Chat) g22).forum) ? 12.0f : 19.0f));
         String i02 = org.telegram.messenger.g0.i0(r6Var.c, false, false);
         boolean z11 = i7 < arrayList.size() - 1;
-        org.telegram.ui.Components.n6 n6Var = w6Var.d;
+        org.telegram.ui.Components.o6 o6Var = w6Var.d;
         TextView textView = w6Var.c;
         textView.setText(org.telegram.messenger.j6.m(H, textView.getPaint().getFontMetricsInt(), false, null, 0));
-        n6Var.c(i02, false, true);
-        n6Var.setVisibility(0);
+        o6Var.c(i02, false, true);
+        o6Var.setVisibility(0);
         w6Var.f = z11;
         w6Var.setWillNotDraw(!z11);
         w6Var.requestLayout();
         boolean contains = s7Var.h.l.contains(Long.valueOf(r6Var.a));
-        org.telegram.ui.Components.mp mpVar = w6Var.n;
-        if (mpVar != null || contains) {
-            if (mpVar == null) {
-                org.telegram.ui.Components.mp mpVar2 = new org.telegram.ui.Components.mp(21, w6Var.getContext(), w6Var.b);
-                w6Var.n = mpVar2;
-                mpVar2.b(-1, org.telegram.ui.ActionBar.n6.d6, org.telegram.ui.ActionBar.n6.k7);
+        org.telegram.ui.Components.op opVar = w6Var.n;
+        if (opVar != null || contains) {
+            if (opVar == null) {
+                org.telegram.ui.Components.op opVar2 = new org.telegram.ui.Components.op(21, w6Var.getContext(), w6Var.b);
+                w6Var.n = opVar2;
+                opVar2.b(-1, org.telegram.ui.ActionBar.m6.d6, org.telegram.ui.ActionBar.m6.k7);
                 w6Var.n.setDrawUnchecked(false);
                 w6Var.n.setDrawBackgroundAsArc(3);
                 w6Var.addView(w6Var.n, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
@@ -93,6 +93,6 @@ public final class i7 extends e7 {
 
     @Override // v4.i0
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
-        return new org.telegram.ui.Components.kj0(i7 == 1 ? new w6(this.h.getContext(), null) : null);
+        return new org.telegram.ui.Components.mj0(i7 == 1 ? new w6(this.h.getContext(), null) : null);
     }
 }

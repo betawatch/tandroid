@@ -1,47 +1,147 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class kr extends Drawable {
     public final Drawable a;
-    public final Drawable b;
-    public float c;
-    public float d = 255.0f;
+    public final RectF b = new RectF();
+    public final Paint c;
+    public final Paint d;
+    public int e;
+    public final int f;
+    public float g;
+    public boolean h;
+    public float i;
+    public float j;
+    public float k;
 
-    public kr(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
-        if (drawable != null) {
-            drawable.setCallback(new jr(this, 0));
-        }
-        if (drawable2 != null) {
-            drawable2.setCallback(new jr(this, 1));
+    public kr(Context context, int i7, int i10) {
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        this.a = context.getDrawable(i7);
+        this.f = i10;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.7f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setColor(-16777216);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        paint2.setStyle(style);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.N(2.5f));
+    }
+
+    public final void a(boolean z10, boolean z11) {
+        if (this.h != z10) {
+            this.h = z10;
+            if (z11) {
+                this.g = z10 ? 0.0f : 1.0f;
+            } else {
+                this.g = z10 ? 1.0f : 0.0f;
+            }
+            invalidateSelf();
         }
     }
 
-    public final void a(float f10) {
-        this.c = f10;
-        invalidateSelf();
-    }
-
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x003b  */
     @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void draw(Canvas canvas) {
-        int i7 = (int) ((1.0f - this.c) * this.d);
-        Drawable drawable = this.a;
-        drawable.setAlpha(i7);
-        int i10 = (int) (this.d * this.c);
-        Drawable drawable2 = this.b;
-        drawable2.setAlpha(i10);
-        if (i7 > 0) {
-            drawable.draw(canvas);
+        int x02;
+        int i7;
+        boolean z10 = this.h;
+        if (z10) {
+            float f10 = this.g;
+            if (f10 != 1.0f) {
+                this.g = f10 + 0.10666667f;
+                invalidateSelf();
+                if (this.g > 1.0f) {
+                    this.g = 1.0f;
+                }
+                int i10 = this.f;
+                x02 = i10 >= 0 ? -1 : org.telegram.ui.ActionBar.m6.x0(null, i10, false);
+                i7 = this.e;
+                Drawable drawable = this.a;
+                Paint paint = this.c;
+                if (i7 != x02) {
+                    this.e = x02;
+                    paint.setColor(x02);
+                    drawable.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.MULTIPLY));
+                }
+                if (this.g != 0.0f) {
+                    drawable.draw(canvas);
+                    return;
+                }
+                Rect bounds = drawable.getBounds();
+                RectF rectF = this.b;
+                rectF.set(bounds);
+                canvas.saveLayerAlpha(rectF, org.telegram.messenger.ks.e4, 31);
+                drawable.draw(canvas);
+                float N = org.telegram.messenger.g0.N(4.5f) + rectF.left + this.i + this.j;
+                float N2 = ((org.telegram.messenger.g0.N(4.5f) + rectF.top) - org.telegram.messenger.g0.L(1.0f)) + this.j;
+                float L = ((rectF.right - org.telegram.messenger.g0.L(3.0f)) + this.i) - this.k;
+                float L2 = ((rectF.bottom - org.telegram.messenger.g0.L(1.0f)) - org.telegram.messenger.g0.L(3.0f)) - this.k;
+                if (this.h) {
+                    float f11 = this.g;
+                    L = ((L - N) * f11) + N;
+                    L2 = com.google.android.gms.internal.vision.e2.z(L2, N2, f11, N2);
+                } else {
+                    float f12 = this.g;
+                    N = com.google.android.gms.internal.vision.e2.z(1.0f, f12, L - N, N);
+                    N2 = com.google.android.gms.internal.vision.e2.z(1.0f, f12, L2 - N2, N2);
+                }
+                float f13 = L2;
+                float f14 = N2;
+                float f15 = L;
+                float f16 = N;
+                float strokeWidth = f14 - paint.getStrokeWidth();
+                float strokeWidth2 = f13 - paint.getStrokeWidth();
+                Paint paint2 = this.d;
+                canvas.drawLine(f16, strokeWidth, f15, strokeWidth2, paint2);
+                float strokeWidth3 = ((paint2.getStrokeWidth() - paint.getStrokeWidth()) / 2.0f) + 1.0f;
+                canvas.drawLine(f16, f14 - strokeWidth3, f15, f13 - strokeWidth3, paint2);
+                canvas.drawLine(f16, f14, f15, f13, paint);
+                canvas.restore();
+                return;
+            }
         }
-        if (i10 > 0) {
-            drawable2.draw(canvas);
+        if (!z10) {
+            float f17 = this.g;
+            if (f17 != 0.0f) {
+                this.g = f17 - 0.10666667f;
+                invalidateSelf();
+                if (this.g < 0.0f) {
+                    this.g = 0.0f;
+                }
+            }
+        }
+        int i102 = this.f;
+        if (i102 >= 0) {
+        }
+        i7 = this.e;
+        Drawable drawable2 = this.a;
+        Paint paint3 = this.c;
+        if (i7 != x02) {
+        }
+        if (this.g != 0.0f) {
         }
     }
 
@@ -57,22 +157,20 @@ public final class kr extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return -3;
+        return -2;
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-        this.b.setBounds(rect);
+    public final void setBounds(int i7, int i10, int i11, int i12) {
+        super.setBounds(i7, i10, i11, i12);
+        this.a.setBounds(i7, i10, i11, i12);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i7) {
-        this.d = i7;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

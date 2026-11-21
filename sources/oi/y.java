@@ -1,104 +1,77 @@
 package oi;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import org.telegram.ui.Cells.u9;
-import org.telegram.ui.Components.pk0;
+import android.content.Context;
+import android.widget.FrameLayout;
+import c8.ea;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class y implements u9 {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final /* synthetic */ Object c;
+public abstract class y extends FrameLayout implements j4 {
+    public a a;
+    public final m5.b b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
 
-    public y(Layout layout, Rect rect) {
-        this.b = layout;
-        this.c = rect;
+    public y(Context context) {
+        super(context);
+        m5.b bVar = new m5.b();
+        bVar.a = Long.MIN_VALUE;
+        bVar.b = -1;
+        this.b = bVar;
     }
 
-    @Override // org.telegram.ui.Cells.u9
-    public final Layout a() {
-        switch (this.a) {
-            case 0:
-                return (Layout) this.b;
-            default:
-                org.telegram.utils.twidget.t1 t1Var = (org.telegram.utils.twidget.t1) this.b;
-                if (t1Var.h == null) {
-                    t1Var.h = new org.telegram.utils.twidget.u1(t1Var);
-                }
-                return t1Var.h;
+    public final void c(a aVar) {
+        this.b.a(aVar, new kg.x1(this, 19));
+    }
+
+    public int d() {
+        return 0;
+    }
+
+    public void e(int i7) {
+        int i10;
+        int d = ea.d(this.a);
+        int i11 = 0;
+        int d2 = (i7 > 0 || d > 0) ? d() : 0;
+        a aVar = this.a;
+        if (aVar == null || !aVar.n) {
+            i10 = this.e;
+        } else {
+            i10 = aVar.l <= 0 ? 0 : org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r3, 1, 16, 10));
+        }
+        a aVar2 = this.a;
+        if (aVar2 == null || !aVar2.o) {
+            i11 = this.h;
+        } else {
+            if (aVar2.m > 0) {
+                i11 = org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r7, 1, 16, 10));
+            }
+        }
+        int i12 = i7 + d2;
+        int i13 = d + d2;
+        int i14 = this.d;
+        int i15 = this.f;
+        if (gd.a0) {
+            setPadding(i14 + i13, i10, i15 + i12, i11);
+        } else {
+            setPadding(i14 + i12, i10, i15 + i13, i11);
         }
     }
 
-    @Override // org.telegram.ui.Cells.u9
-    public final Rect c() {
-        switch (this.a) {
-            case 0:
-                return (Rect) this.c;
-            default:
-                return null;
+    public final void f(int i7, int i10, int i11, int i12) {
+        this.d = i7;
+        this.e = i10;
+        this.f = i11;
+        this.h = i12;
+        int i13 = this.c;
+        if (gd.a0) {
+            setPadding(i7, i10, i11 + i13, i12);
+        } else {
+            setPadding(i7 + i13, i10, i11, i12);
         }
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final /* synthetic */ CharSequence getPrefix() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final int getRow() {
-        switch (this.a) {
-            case 0:
-                return 0;
-            default:
-                return ((pk0) this.c).V;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final CharSequence getText() {
-        switch (this.a) {
-            case 0:
-                Layout a10 = a();
-                if (a10 == null) {
-                    return null;
-                }
-                return a10.getText();
-            default:
-                Layout a11 = a();
-                if (a11 == null) {
-                    return null;
-                }
-                return a11.getText();
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final int getX() {
-        switch (this.a) {
-            case 0:
-                return 0;
-            default:
-                pk0 pk0Var = (pk0) this.c;
-                return (pk0Var.T - pk0Var.k0) + ((org.telegram.utils.twidget.t1) this.b).b;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final int getY() {
-        switch (this.a) {
-            case 0:
-                return 0;
-            default:
-                return ((pk0) this.c).U + ((org.telegram.utils.twidget.t1) this.b).c;
-        }
-    }
-
-    public y(pk0 pk0Var, org.telegram.utils.twidget.t1 t1Var) {
-        this.c = pk0Var;
-        this.b = t1Var;
     }
 }

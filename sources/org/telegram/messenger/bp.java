@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final class bp {
     public boolean b;
@@ -116,23 +116,23 @@ public final class bp {
         return h(z10);
     }
 
-    public final int e(int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+    public final int e(int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         int i10;
         if (i7 < 0 || i7 > 5) {
             return 0;
         }
         if (!this.b || (i10 = this.c) < 0 || i10 >= 7) {
-            return (i6Var != null ? i6Var.d() : org.telegram.ui.ActionBar.n6.I.q() ? this.h : this.g)[i7];
+            return (h6Var != null ? h6Var.d() : org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[i7];
         }
-        return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.r8[i10], i6Var);
+        return org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.r8[i10], h6Var);
     }
 
     public final int f() {
-        return (org.telegram.ui.ActionBar.n6.I.q() ? this.h : this.g)[0];
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[0];
     }
 
     public final int g() {
-        return (org.telegram.ui.ActionBar.n6.I.q() ? this.h : this.g)[1];
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[1];
     }
 
     public final int h(boolean z10) {
@@ -140,7 +140,7 @@ public final class bp {
     }
 
     public final int i() {
-        return (org.telegram.ui.ActionBar.n6.I.q() ? this.h : this.g)[2];
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[2];
     }
 
     public final int j(boolean z10) {
@@ -148,7 +148,7 @@ public final class bp {
     }
 
     public final int k() {
-        return (org.telegram.ui.ActionBar.n6.I.q() ? this.h : this.g)[4];
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[4];
     }
 
     public final int l(boolean z10) {

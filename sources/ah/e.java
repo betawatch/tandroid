@@ -14,45 +14,45 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.gd;
 import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y1;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.x1;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public class e extends FrameLayout implements c6 {
+public class e extends FrameLayout implements b6 {
     public int a;
-    public final i6 b;
+    public final h6 b;
     public final ImageView c;
     public final TextView d;
     public Runnable e;
-    public final y1 f;
+    public final x1 f;
     public final Paint h;
 
-    public e(Context context, i6 i6Var) {
+    public e(Context context, h6 h6Var) {
         super(context);
         this.h = new Paint(1);
-        this.b = i6Var;
+        this.b = h6Var;
         TextView textView = new TextView(context);
         this.d = textView;
         n10.p(textView, 1, 20.0f);
         textView.setGravity(gd.a0 ? 5 : 3);
-        int i7 = n6.j5;
-        u6.U(textView, i7, i6Var);
+        int i7 = m6.j5;
+        t6.U(textView, i7, h6Var);
         boolean z10 = gd.a0;
         addView(textView, ma.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
-        y1 y1Var = new y1(false);
-        this.f = y1Var;
-        imageView.setImageDrawable(y1Var);
-        int w02 = n6.w0(i7, i6Var);
+        x1 x1Var = new x1(false);
+        this.f = x1Var;
+        imageView.setImageDrawable(x1Var);
+        int w02 = m6.w0(i7, h6Var);
         this.a = w02;
-        y1Var.a(w02);
-        y1Var.b(n6.w0(i7, i6Var));
-        y1Var.k = 220.0f;
+        x1Var.a(w02);
+        x1Var.b(m6.w0(i7, h6Var));
+        x1Var.k = 220.0f;
         addView(imageView, ma.d(24, 24.0f, (gd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new d(this, 0));
     }
@@ -60,7 +60,7 @@ public class e extends FrameLayout implements c6 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int w02 = n6.w0(n6.d7, this.b);
+        int w02 = m6.w0(m6.d7, this.b);
         Paint paint = this.h;
         paint.setColor(w02);
         canvas.drawRect(0.0f, getHeight() - g0.f1(), getWidth(), getHeight(), paint);
@@ -93,18 +93,18 @@ public class e extends FrameLayout implements c6 {
         this.d.setText(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        y1 y1Var = this.f;
-        if (y1Var == null) {
+        x1 x1Var = this.f;
+        if (x1Var == null) {
             return;
         }
         try {
-            int w02 = n6.w0(n6.j5, this.b);
+            int w02 = m6.w0(m6.j5, this.b);
             if (w02 != this.a) {
                 this.a = w02;
-                y1Var.a(w02);
-                y1Var.b(w02);
+                x1Var.a(w02);
+                x1Var.b(w02);
                 ImageView imageView = this.c;
                 if (imageView != null) {
                     imageView.invalidate();
@@ -115,7 +115,7 @@ public class e extends FrameLayout implements c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,32 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Vibrator;
-import android.text.Spanned;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class s3 extends eq {
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ NumberTextView c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s3(int i7, Context context, NumberTextView numberTextView) {
-        super(i7);
-        this.b = context;
-        this.c = numberTextView;
-    }
-
-    @Override // org.telegram.ui.Components.eq, android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i7, int i10, Spanned spanned, int i11, int i12) {
-        CharSequence filter = super.filter(charSequence, i7, i10, spanned, i11, i12);
-        if (filter != null && charSequence != null && filter.length() != charSequence.length()) {
-            Vibrator vibrator = (Vibrator) this.b.getSystemService("vibrator");
-            if (vibrator != null) {
-                vibrator.vibrate(200L);
-            }
-            org.telegram.messenger.g0.D3(this.c);
-        }
-        return filter;
+public final class s3 extends TextView {
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
     }
 }

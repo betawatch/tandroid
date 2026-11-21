@@ -3,23 +3,41 @@ package fi;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.w60;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
-public final class w5 implements RequestDelegate {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ w60 b;
-    public final /* synthetic */ p6 c;
+public final /* synthetic */ class w5 implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public w5(p6 p6Var, long j3, w60 w60Var) {
-        this.c = p6Var;
-        this.a = j3;
-        this.b = w60Var;
+    public /* synthetic */ w5(p6 p6Var, boolean z10, TL_stories.TL_stories_getAllStories tL_stories_getAllStories, boolean z11) {
+        this.d = p6Var;
+        this.b = z10;
+        this.e = tL_stories_getAllStories;
+        this.c = z11;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        org.telegram.messenger.g0.g3(new di.i2(this, tLObject, this.a, this.b, 8));
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.g3(new q5((p6) this.d, this.b, (TL_stories.TL_stories_getAllStories) this.e, tLObject, this.c));
+                break;
+            default:
+                org.telegram.messenger.g0.g3(new org.telegram.ui.ActionBar.p((TwoStepVerificationActivity) this.d, tL_error, tLObject, this.b, this.c, (Runnable) this.e));
+                break;
+        }
+    }
+
+    public /* synthetic */ w5(TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, boolean z11, Runnable runnable) {
+        this.d = twoStepVerificationActivity;
+        this.b = z10;
+        this.c = z11;
+        this.e = runnable;
     }
 }

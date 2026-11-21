@@ -8,12 +8,12 @@ import android.util.Pair;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import hi.b7;
+import hi.a7;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t implements Continuation, b7 {
+public final /* synthetic */ class t implements Continuation, a7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
 
@@ -22,7 +22,7 @@ public final /* synthetic */ class t implements Continuation, b7 {
         this.b = str;
     }
 
-    @Override // hi.b7
+    @Override // hi.a7
     public Bitmap c(BitmapFactory.Options options) {
         return BitmapFactory.decodeFile(this.b, options);
     }

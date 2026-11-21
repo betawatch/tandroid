@@ -15,7 +15,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f3 implements q0.a {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class f3 implements q0.a {
                 }
                 return;
             case 1:
-                ((org.telegram.ui.Components.ei0) this.b).h((List) obj);
+                ((org.telegram.ui.Components.gi0) this.b).h((List) obj);
                 return;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;
@@ -96,14 +96,14 @@ public final /* synthetic */ class f3 implements q0.a {
             case 3:
                 qa0 qa0Var = (qa0) this.b;
                 qa0Var.F = (org.telegram.messenger.da) obj;
-                int i11 = org.telegram.messenger.g0.B(qa0Var.getThemedColor(org.telegram.ui.ActionBar.n6.d6)) < 0.721f ? R.raw.mapstyle_night : 0;
+                int i11 = org.telegram.messenger.g0.B(qa0Var.getThemedColor(org.telegram.ui.ActionBar.m6.d6)) < 0.721f ? R.raw.mapstyle_night : 0;
                 if (i11 != 0) {
                     qa0Var.i0 = true;
                     qa0Var.F.i(((pb.b) org.telegram.messenger.t0.k()).loadRawResourceStyle(org.telegram.messenger.t0.b, i11));
                 }
                 qa0Var.F.n(org.telegram.messenger.g0.L(70.0f), 0, org.telegram.messenger.g0.L(70.0f), qa0Var.t0());
                 if (qa0Var.F != null) {
-                    ((ai.k0) ((a8.r7) qa0Var.H).b).animate().alpha(1.0f).setStartDelay(200L).setDuration(100L).setUpdateListener(new a3(qa0Var, 15)).start();
+                    ((ai.l0) ((a8.r7) qa0Var.H).b).animate().alpha(1.0f).setStartDelay(200L).setDuration(100L).setUpdateListener(new a3(qa0Var, 15)).start();
                     float f11 = qa0Var.U0 ? qa0Var.F.f() + 4.0f : qa0Var.F.e() - 4.0f;
                     TLRPC.TL_channelLocation tL_channelLocation = qa0Var.H0;
                     if (tL_channelLocation != null) {
@@ -190,7 +190,7 @@ public final /* synthetic */ class f3 implements q0.a {
                     qa0Var.F.g().B2();
                     qa0Var.F.g().r2();
                     qa0Var.F.l(new da0(qa0Var, 7));
-                    qa0Var.F.m(new l60(i10));
+                    qa0Var.F.m(new m60(i10));
                     org.telegram.messenger.da daVar2 = qa0Var.F;
                     aa0 aa0Var = new aa0(qa0Var, 6);
                     k8.a aVar = daVar2.a;
@@ -241,12 +241,12 @@ public final /* synthetic */ class f3 implements q0.a {
             case 4:
                 r3 r3Var = (r3) this.b;
                 int i12 = ((f5.f) obj).a;
-                org.telegram.messenger.g0.g3(new o60(25, r3Var, i12 != 0 ? org.telegram.messenger.r1.j(i12) : null));
+                org.telegram.messenger.g0.g3(new h60(27, r3Var, i12 != 0 ? org.telegram.messenger.r1.j(i12) : null));
                 return;
             case 5:
-                xf0 xf0Var = (xf0) this.b;
+                wf0 wf0Var = (wf0) this.b;
                 if (((f5.f) obj).a == 0) {
-                    org.telegram.messenger.g0.g3(xf0Var);
+                    org.telegram.messenger.g0.g3(wf0Var);
                     return;
                 }
                 return;

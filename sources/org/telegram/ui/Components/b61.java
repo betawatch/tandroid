@@ -1,49 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class b61 implements j2.h {
-    public final j2.h a;
-    public final long b;
+public final /* synthetic */ class b61 implements Executor {
+    public final /* synthetic */ org.telegram.messenger.r5 a;
 
-    public b61(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
-        this.a = extendedDefaultDataSource;
-        this.b = j3;
+    public /* synthetic */ b61(org.telegram.messenger.r5 r5Var) {
+        this.a = r5Var;
     }
 
-    @Override // j2.h
-    public final void addTransferListener(j2.c0 c0Var) {
-        this.a.addTransferListener(c0Var);
-    }
-
-    @Override // j2.h
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // j2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // j2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // j2.h
-    public final long open(j2.m mVar) {
-        j2.l a10 = mVar.a();
-        a10.b = mVar.e + this.b;
-        return this.a.open(a10.d());
-    }
-
-    @Override // e2.n
-    public final int read(byte[] bArr, int i7, int i10) {
-        return this.a.read(bArr, i7, i10);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.postRunnable(runnable);
     }
 }

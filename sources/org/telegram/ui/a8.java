@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
 public final class a8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -47,14 +47,14 @@ public final class a8 implements View.OnClickListener {
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).getSwipeBack().b(true);
                 break;
             case 2:
-                if (((a31) this.b).a.getImageReceiver().B() != null && !((a31) this.b).a.getImageReceiver().B().l0) {
-                    ((a31) this.b).a.getImageReceiver().B().N(0, false, false);
-                    ((a31) this.b).a.getImageReceiver().B().H(false);
+                if (((b31) this.b).a.getImageReceiver().B() != null && !((b31) this.b).a.getImageReceiver().B().l0) {
+                    ((b31) this.b).a.getImageReceiver().B().N(0, false, false);
+                    ((b31) this.b).a.getImageReceiver().B().H(false);
                     break;
                 }
                 break;
             case 3:
-                vf.c.t((Context) this.b, org.telegram.messenger.gd.M0(2131745020, null));
+                vf.c.t((Context) this.b, org.telegram.messenger.gd.N0(2131745014, null));
                 break;
             default:
                 ((y91) this.b).L0(true);

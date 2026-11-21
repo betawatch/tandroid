@@ -1,70 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class pu0 extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+public final class pu0 extends Drawable implements Drawable.Callback {
+    public final n6 a;
+    public final Paint b;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    public pu0() {
+        n6 n6Var = new n6(false, true, true);
+        this.a = n6Var;
+        n6Var.setCallback(this);
+        n6Var.n(0.3f, 165L, nr.h);
+        n6Var.b = 1;
+        n6Var.x(org.telegram.messenger.g0.o());
+        n6Var.w(org.telegram.messenger.g0.L(10.0f));
+        Paint.Style style = Paint.Style.FILL_AND_STROKE;
+        TextPaint textPaint = n6Var.a;
+        textPaint.setStyle(style);
+        textPaint.setStrokeWidth(org.telegram.messenger.g0.N(0.6f));
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
+    public static String a(float f10) {
+        Math.abs(f10 - 0.25f);
+        float round = Math.round(f10 * 10.0f) / 10.0f;
+        long j3 = (long) round;
+        if (round == j3) {
+            return a8.p0.o(j3, "");
+        }
+        return "" + round;
     }
 
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
+    public final void b(boolean z10, float f10) {
+        String str = a(f10) + "X";
+        n6 n6Var = this.a;
+        if (z10 && TextUtils.equals(n6Var.i, str)) {
+            return;
+        }
+        n6Var.a();
+        n6Var.t(str, z10, true);
+        invalidateSelf();
     }
 
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        n6 n6Var = this.a;
+        Paint paint = this.b;
+        if (paint != null) {
+            paint.setStrokeWidth(org.telegram.messenger.g0.N(1.6f));
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(((org.telegram.messenger.g0.L(24.0f) - n6Var.c()) / 2.0f) - org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(0.2f) + ((org.telegram.messenger.g0.L(24.0f) - n6Var.e) / 2.0f), org.telegram.messenger.g0.N(3.0f) + ((n6Var.c() + org.telegram.messenger.g0.L(24.0f)) / 2.0f), (org.telegram.messenger.g0.L(24.0f) + n6Var.e) / 2.0f);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(3.0f), paint);
+        }
+        n6Var.a.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
+        n6Var.setBounds(0, (int) ((org.telegram.messenger.g0.L(24.0f) - n6Var.e) / 2.0f), org.telegram.messenger.g0.L(24.0f), (int) ((org.telegram.messenger.g0.L(24.0f) + n6Var.e) / 2.0f));
+        n6Var.draw(canvas);
     }
 
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.ou0
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
-                int i7;
-                pu0 pu0Var = pu0.this;
-                int i10 = pu0Var.a;
-                if (i10 <= 0 || (i7 = pu0Var.b) <= 0) {
-                    pu0Var.end();
-                    return;
-                }
-                int i11 = i10 - 1;
-                pu0Var.a = i11;
-                if (pu0Var.c != null) {
-                    float[] fArr = pu0Var.e;
-                    if (fArr == null || fArr.length != 2) {
-                        pu0Var.end();
-                        return;
-                    }
-                    float interpolation = pu0Var.getInterpolator().getInterpolation(1.0f - (i11 / i7));
-                    float[] fArr2 = pu0Var.e;
-                    float f10 = fArr2[0];
-                    pu0Var.d = Float.valueOf(((fArr2[1] - f10) * interpolation) + f10);
-                    pu0Var.c.onAnimationUpdate(pu0Var);
-                }
-            }
-        });
-        int duration = (int) (getDuration() / org.telegram.messenger.g0.t);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        scheduleSelf(runnable, j3);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.a.C = i7;
+        Paint paint = this.b;
+        if (paint != null) {
+            paint.setAlpha(i7);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

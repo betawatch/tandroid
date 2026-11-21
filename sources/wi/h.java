@@ -18,26 +18,26 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.hn;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.ut0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.a61;
+import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.Components.xt0;
 import org.telegram.ui.k71;
-import tg.x1;
+import tg.z1;
 import ug.x;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes4.dex */
 public final class h {
-    public static final ut0 Q = new ut0(new x(22), new x(23));
-    public static final ut0 R = new ut0(new x(24), new x(25));
+    public static final xt0 Q = new xt0(new x(22), new x(23));
+    public static final xt0 R = new xt0(new x(24), new x(25));
     public float B;
     public float C;
     public r1.g D;
     public r1.g E;
-    public cn0 G;
+    public fn0 G;
     public boolean H;
     public float I;
     public float J;
@@ -58,7 +58,7 @@ public final class h {
     public ImageView n;
     public u2 o;
     public ScaleGestureDetector p;
-    public of q;
+    public qf q;
     public boolean r;
     public boolean s;
     public View t;
@@ -70,7 +70,7 @@ public final class h {
     public final WindowManager.LayoutParams e = new WindowManager.LayoutParams();
     public float z = 1.0f;
     public float A = 1.4f;
-    public final x51 F = new x51(false);
+    public final a61 F = new a61(false);
     public final float[] M = new float[2];
     public final b N = new b(this, 1);
     public final e O = new e(this, 0);
@@ -93,7 +93,7 @@ public final class h {
 
     public static void j(RectF rectF, int i7, int i10) {
         float f10 = (i7 <= 0 || i10 <= 0) ? 0.5625f : i10 / i7;
-        hn m10 = hn.m();
+        jn m10 = jn.m();
         float f11 = ((SharedPreferences) m10.b).getFloat("scale_factor", 1.0f);
         float i11 = i(f10) * f11;
         float i12 = ((int) (i(f10) * f10)) * f11;
@@ -244,8 +244,8 @@ public final class h {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.v = duration;
-        duration.setInterpolator(lr.f);
-        this.v.addUpdateListener(new x1(this, 7));
+        duration.setInterpolator(nr.f);
+        this.v.addUpdateListener(new z1(this, 7));
         this.v.addListener(new k71(this, 25));
         this.v.start();
     }

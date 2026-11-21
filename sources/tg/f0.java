@@ -1,123 +1,135 @@
 package tg;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import c8.ma;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.lr;
-import org.telegram.ui.k71;
-import org.telegram.ui.y61;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.SweepGradient;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.y01;
+import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes3.dex */
-public final class f0 extends LinearLayout {
-    public final TextView a;
-    public final y61 b;
-    public ImageView c;
-    public ImageView d;
-    public float e;
-    public boolean f;
-    public ValueAnimator h;
-    public final ImageView n;
-    public final /* synthetic */ g0 r;
+public final class f0 extends FrameLayout {
+    public float a;
+    public float b;
+    public final /* synthetic */ vp0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(g0 g0Var, Context context) {
+    public f0(vp0 vp0Var, Context context) {
         super(context);
-        this.r = g0Var;
-        setOrientation(0);
-        int i7 = n6.i6;
-        u uVar = g0Var.A1;
-        setBackground(n6.h0(n6.w0(i7, uVar), 2, -1));
-        y61 y61Var = new y61(this, context);
-        this.b = y61Var;
-        addView(y61Var, ma.t(-2, -2, 19, 16, 0, 16, 0));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        ImageView imageView2 = this.c;
-        int i10 = n6.E8;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
-        u6.s(imageView2, i10, uVar, mode);
-        y61Var.addView(this.c, ma.e(-2, -2, 17));
-        ImageView imageView3 = new ImageView(context);
-        this.d = imageView3;
-        imageView3.setScaleType(scaleType);
-        u6.s(this.d, i10, uVar, mode);
-        this.d.setVisibility(8);
-        y61Var.addView(this.d, ma.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        u6.U(textView, i10, uVar);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, ma.t(-2, -2, 19, 0, 0, 16, 0));
-        ImageView imageView4 = new ImageView(context);
-        this.n = imageView4;
-        imageView4.setImageResource(R.drawable.msg_text_check);
-        imageView4.setScaleType(scaleType);
-        u6.s(imageView4, n6.h7, uVar, PorterDuff.Mode.MULTIPLY);
-        imageView4.setVisibility(8);
-        addView(imageView4, ma.o(50, -1));
-    }
-
-    public final void a(int i7, boolean z10, boolean z11) {
-        if (!z11) {
-            this.c.setImageResource(i7);
-            return;
-        }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.h = null;
-            a(i7, false, false);
-            return;
-        }
-        this.f = z10;
-        this.d.setImageResource(i7);
-        this.d.setVisibility(0);
-        this.d.setAlpha(1.0f);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new ch.v(12, this, z10));
-        this.h.addListener(new k71(this, 17));
-        this.h.setInterpolator(lr.h);
-        this.h.setDuration(420L);
-        this.h.start();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return true;
+        this.c = vp0Var;
+        new Path();
+        setWillNotDraw(false);
+        Paint paint = vp0Var.r1;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
     }
 
     @Override // android.view.View
-    public final boolean performClick() {
-        g0 g0Var = this.r;
-        org.telegram.ui.ActionBar.h1 h1Var = g0Var.B1;
-        if (h1Var != null && h1Var.isShowing()) {
-            g0Var.B1.d(true);
+    public final void onDraw(Canvas canvas) {
+        ViewGroup barView;
+        Canvas canvas2 = canvas;
+        super.onDraw(canvas);
+        vp0 vp0Var = this.c;
+        sg.h1 h1Var = vp0Var.u1;
+        Paint paint = vp0Var.s1;
+        Paint paint2 = vp0Var.r1;
+        Paint paint3 = vp0Var.t1;
+        barView = vp0Var.getBarView();
+        Rect rect = org.telegram.messenger.g0.Q;
+        int left = barView.getLeft();
+        e0 e0Var = vp0Var.q1;
+        rect.set(org.telegram.messenger.g0.W1(vp0Var.x1, left, e0Var.getLeft()), org.telegram.messenger.g0.W1(vp0Var.x1, barView.getTop(), e0Var.getTop()), org.telegram.messenger.g0.W1(vp0Var.x1, barView.getRight(), e0Var.getRight()), org.telegram.messenger.g0.W1(vp0Var.x1, barView.getBottom(), e0Var.getBottom()));
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(rect);
+        float W1 = org.telegram.messenger.g0.W1(vp0Var.x1, org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(24.0f));
+        if (vp0Var.M1 != null) {
+            rect.inset(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f));
+            vp0Var.M1.r(W1);
+            vp0Var.M1.setBounds(rect);
+            vp0Var.M1.draw(canvas2);
+        } else {
+            canvas2.drawRoundRect(rectF, W1, W1, vp0Var.y1);
         }
-        return super.performClick();
-    }
-
-    public void setIcon(int i7) {
-        a(i7, true, false);
+        if (barView.getChildCount() < 1 || vp0Var.x1 == 1.0f) {
+            return;
+        }
+        canvas2.save();
+        canvas2.translate(barView.getLeft(), barView.getTop());
+        View childAt = barView.getChildAt(0);
+        if (barView instanceof f1) {
+            childAt = ((f1) barView).getColorClickableView();
+        }
+        if (childAt.getAlpha() != 0.0f) {
+            canvas2.scale(childAt.getScaleX(), childAt.getScaleY(), childAt.getPivotX(), childAt.getPivotY());
+            paint2.setAlpha((int) (childAt.getAlpha() * (1.0f - vp0Var.x1) * 255.0f));
+            int width = (childAt.getWidth() - childAt.getPaddingLeft()) - childAt.getPaddingRight();
+            int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
+            float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
+            float y10 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
+            int i7 = h1Var.a;
+            int i10 = vp0Var.R0;
+            View view = childAt;
+            if (i10 != -1) {
+                ViewGroup viewGroup = i10 == 0 ? vp0Var.d1 : i10 == 2 ? vp0Var.e1 : null;
+                View childAt2 = (viewGroup == null ? barView : viewGroup).getChildAt(0);
+                if (viewGroup instanceof f1) {
+                    childAt2 = ((f1) viewGroup).getColorClickableView();
+                }
+                x10 = org.telegram.messenger.g0.T1(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), vp0Var.S0);
+                y10 = org.telegram.messenger.g0.T1(y10, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), vp0Var.S0);
+            }
+            if (e0Var != null && e0Var.getChildCount() > 0) {
+                View childAt3 = e0Var.getChildAt(0);
+                x10 = org.telegram.messenger.g0.T1(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (e0Var.getX() - barView.getLeft()), vp0Var.x1);
+                y10 = org.telegram.messenger.g0.T1(y10, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (e0Var.getY() - barView.getTop()), vp0Var.x1);
+                i7 = i0.a.f(vp0Var.x1, h1Var.a, vp0Var.F1.b(0));
+            }
+            float f10 = x10;
+            float f11 = y10;
+            if (f10 != this.a || f11 != this.b) {
+                this.a = f10;
+                this.b = f11;
+                paint2.setShader(new SweepGradient(f10, f11, new int[]{-1356981, -1146130, -10452764, -16711681, -7352832, -256, -23296, -1356981}, (float[]) null));
+            }
+            float min = (Math.min(width, height) / 2.0f) - org.telegram.messenger.g0.L(0.5f);
+            if (e0Var != null && e0Var.getChildCount() > 0) {
+                View childAt4 = e0Var.getChildAt(0);
+                min = org.telegram.messenger.g0.T1(min, (Math.min((childAt4.getWidth() - childAt4.getPaddingLeft()) - childAt4.getPaddingRight(), (childAt4.getHeight() - childAt4.getPaddingTop()) - childAt4.getPaddingBottom()) / 2.0f) - org.telegram.messenger.g0.L(2.0f), vp0Var.x1);
+            }
+            float f12 = min;
+            rectF.set(f10 - f12, f11 - f12, f10 + f12, f11 + f12);
+            canvas2 = canvas;
+            canvas2.drawArc(rectF, 0.0f, 360.0f, false, paint2);
+            paint.setColor(i7);
+            paint.setAlpha((int) (view.getAlpha() * paint.getAlpha()));
+            paint3.setColor(i7);
+            paint3.setAlpha((int) (view.getAlpha() * 255.0f));
+            float L = f12 - org.telegram.messenger.g0.L(3.0f);
+            if (e0Var != null && e0Var.getSelectedColorIndex() != 0) {
+                L = org.telegram.messenger.g0.T1(f12 - org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(2.0f) + f12, vp0Var.x1);
+            }
+            z0.A1(f10, f11, L, paint.getColor(), canvas2);
+            if (e0Var != null && e0Var.getSelectedColorIndex() == 0) {
+                paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * vp0Var.x1));
+                canvas2.drawCircle(f10, f11, com.google.android.gms.internal.vision.e2.t(1.0f, vp0Var.x1, paint3.getStrokeWidth() + org.telegram.messenger.g0.L(3.0f), f12), paint3);
+            }
+        }
+        canvas2.restore();
     }
 
     @Override // android.view.View
-    public void setSelected(boolean z10) {
-        this.n.setVisibility(z10 ? 0 : 8);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        y01 y01Var = this.c.N0;
+        if (y01Var != null) {
+            y01Var.invalidate();
+        }
     }
 }

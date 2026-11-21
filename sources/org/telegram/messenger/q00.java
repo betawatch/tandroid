@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-a4c6b52504eee81d9989a27b4cad24aea8b0660ac2a1b1abfc07e23e193455ab */
+/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q00 implements x10 {
     public final /* synthetic */ int a;
@@ -84,18 +84,18 @@ public final /* synthetic */ class q00 implements x10 {
                 mp mpVar = (mp) obj4;
                 boolean[] zArr = (boolean[]) obj3;
                 org.telegram.ui.zd zdVar = (org.telegram.ui.zd) obj2;
-                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (((Boolean) obj).booleanValue()) {
                     mpVar.b8.add(Long.valueOf(j3));
                     mpVar.Q4(true);
                     if (T != null) {
-                        org.telegram.ui.Components.lc.b0(T).P(R.raw.chats_infotip, g0.H2(g0.x2(gd.M0(2131745379, null), new ln(i10, T)), true)).k(true);
+                        org.telegram.ui.Components.lc.b0(T).P(R.raw.chats_infotip, g0.H2(g0.x2(gd.N0(2131745378, null), new ln(i10, T)), true)).k(true);
                     }
                     zArr[0] = true;
                     zdVar.run();
                     break;
                 } else if (T != null) {
-                    org.telegram.ui.Components.lc.b0(T).I(R.raw.error, gd.M0(2131754309, null), gd.M0(2131754310, null)).j();
+                    org.telegram.ui.Components.lc.b0(T).I(R.raw.error, gd.N0(2131754308, null), gd.N0(2131754309, null)).j();
                     break;
                 }
                 break;
